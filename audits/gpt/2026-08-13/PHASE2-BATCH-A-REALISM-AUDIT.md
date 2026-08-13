@@ -1,69 +1,32 @@
-# Phase 2 Batch A REALISM_REVIEW
+# Phase 2 Batch A — Realism Audit
 
-## 결론
+- Frozen head: `ffa43e0344c1c08c076bbdaac0323bd20dffefd0`
+- Scope: `MA-Q-0011`–`MA-Q-0050` (`INITIAL_BATCH`, 40 items)
+- Audit: `AUDIT-GPT-PHASE2-A-REALISM-2026-08-13`
+- Style profile: `MPJE-MA-PRE2027` v1 / `293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c`
+- Status: `FULLY_ADJUDICATED`
+- Canonical question edits: 없음
 
-| Verdict | Count |
+## 결과
+
+| Realism | Count |
 |---|---:|
-| `KEEP` | 12 |
-| `MINOR_EDIT` | 12 |
-| `MAJOR_REWRITE` | 16 |
-| `DELETE` | 0 |
+| `PASS` | 0 |
+| `FAIL` | 40 |
 
-- `PASS`: 12
-- `FAIL`: 28
-- realism-failure IDs: `MA-Q-0011`, `MA-Q-0013`, `MA-Q-0014`, `MA-Q-0016`, `MA-Q-0018`, `MA-Q-0019`, `MA-Q-0023`, `MA-Q-0025`, `MA-Q-0027`, `MA-Q-0028`, `MA-Q-0029`, `MA-Q-0031`, `MA-Q-0032`, `MA-Q-0034`, `MA-Q-0035`, `MA-Q-0036`, `MA-Q-0037`, `MA-Q-0038`, `MA-Q-0041`, `MA-Q-0042`, `MA-Q-0043`, `MA-Q-0044`, `MA-Q-0045`, `MA-Q-0046`, `MA-Q-0047`, `MA-Q-0048`, `MA-Q-0049`, `MA-Q-0050`
+| Required edit | Count |
+|---|---:|
+| `MINOR_EDIT` | 10 |
+| `MAJOR_REWRITE` | 30 |
+| `DELETE` | 0 |
 
 ## Bank-level discriminator
 
-공식 [NABP public MPJE sample items](https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf), [pre-2027 competency statements](https://nabp.pharmacy/wp-content/uploads/2020/04/MPJE-Competency-Statements-Sample-Questions.pdf), [current exam preparation page](https://nabp.pharmacy/programs/examinations/mpje/prepare-for-the-exam/)만 style comparator로 사용했다. Protected 또는 recalled item은 사용하지 않았다.
+- `MA-Q-0011`–`MA-Q-0040`: 동일한 generic distractor 세트 반복 — `MAJOR_REWRITE`.
+- `MA-Q-0041`–`MA-Q-0050`: 모든 SATA가 canonical key `A/C` — `MINOR_EDIT`.
 
-전체 80-item frozen bank에서 stock four-word stem opener는 28개뿐이고, 20개 주요 opener가 cycle로 반복됐다. Choices에는 `if its alternate trigger can be documented`가 8회, `after documenting whether`가 10회, six fixed SATA lead-ins가 합계 129회 나타났다. 이 반복은 item 단위 문법 결함뿐 아니라 `distinct_from_bank`와 `public_style_without_copying` 판정에 반영했다.
+runtime choice shuffle가 일부 position leakage를 가릴 수는 있지만, canonical export·정적 학습 artifact·회귀 테스트에서 구조가 그대로 노출된다. 또한 SBA distractor는 실제 법적 혼동이 아니라 unrelated template이므로 shuffle로 해결되지 않는다.
 
-## Item-by-item adjudication
+## 암기 안전성
 
-| Question_ID | Verdict | Realism_Verdict | Failed criteria | Notes |
-|---|---|---|---|---|
-| `MA-Q-0011` | `MAJOR_REWRITE` | `FAIL` | `jurisprudence_reasoning`, `authentic_distractors`, `reasoning_not_trivia`, `distinct_from_bank`, `not_schedule_flashcard` | drug schedule 하나를 확인하면 즉시 답이 드러나는 no-refill 또는 MassPAT flashcard이며, 같은 bank 안의 parallel item과 decision structure가 중복된다. exception·federal/state interaction을 추가한 새 scenario가 필요하다. |
-| `MA-Q-0012` | `KEEP` | `PASS` | — | MA-CII-VALIDITY-30D, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0013` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0014` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0015` | `KEEP` | `PASS` | — | MA-OPIOID-SEVEN-DAY, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0016` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0017` | `KEEP` | `PASS` | — | MA-OPIOID-SEVEN-DAY, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0018` | `MAJOR_REWRITE` | `FAIL` | `jurisprudence_reasoning`, `authentic_distractors`, `reasoning_not_trivia`, `distinct_from_bank`, `not_schedule_flashcard` | drug schedule 하나를 확인하면 즉시 답이 드러나는 no-refill 또는 MassPAT flashcard이며, 같은 bank 안의 parallel item과 decision structure가 중복된다. exception·federal/state interaction을 추가한 새 scenario가 필요하다. |
-| `MA-Q-0019` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0020` | `KEEP` | `PASS` | — | MA-OUTSTATE-CII-NARCOTIC, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0021` | `KEEP` | `PASS` | — | FED-CII-PARTIAL-PATIENT, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0022` | `KEEP` | `PASS` | — | MA-CII-VALIDITY-30D, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0023` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. 특히 option A는 later follow-up prescription과 emergency quantity predicate를 한 문장에 잘못 결합해 정상적으로 해석하기 어렵다. |
-| `MA-Q-0024` | `KEEP` | `PASS` | — | MA-CS-QUANTITY-II-III, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0025` | `MAJOR_REWRITE` | `FAIL` | `practice_plausibility`, `authentic_distractors`, `wording_not_guessable`, `appropriate_drug_context`, `public_style_without_copying` | Sublocade가 specialty pharmacy에서 provider로 shipped되는지, pharmacy에서 administered되는지, ultimate user에게 어떤 dispensing transaction으로 기록되는지가 제시되지 않았다. reporting conclusion을 묻기 전에 실제 workflow predicate를 명시해야 한다. |
-| `MA-Q-0026` | `KEEP` | `PASS` | — | FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0027` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0028` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0029` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0030` | `KEEP` | `PASS` | — | FED-EPCS-TRANSFER, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0031` | `MAJOR_REWRITE` | `FAIL` | `jurisprudence_reasoning`, `authentic_distractors`, `reasoning_not_trivia`, `distinct_from_bank`, `not_schedule_flashcard` | drug schedule 하나를 확인하면 즉시 답이 드러나는 no-refill 또는 MassPAT flashcard이며, 같은 bank 안의 parallel item과 decision structure가 중복된다. exception·federal/state interaction을 추가한 새 scenario가 필요하다. |
-| `MA-Q-0032` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0033` | `KEEP` | `PASS` | — | FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0034` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0035` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0036` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0037` | `MAJOR_REWRITE` | `FAIL` | `jurisprudence_reasoning`, `authentic_distractors`, `reasoning_not_trivia`, `distinct_from_bank`, `not_schedule_flashcard` | drug schedule 하나를 확인하면 즉시 답이 드러나는 no-refill 또는 MassPAT flashcard이며, 같은 bank 안의 parallel item과 decision structure가 중복된다. exception·federal/state interaction을 추가한 새 scenario가 필요하다. |
-| `MA-Q-0038` | `MINOR_EDIT` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | distractor에 반복 삽입된 'if its alternate trigger can be documented' 또는 'after documenting whether ...' 문구가 문법과 meaning을 훼손하고 generator template을 노출한다. core legal scenario는 살릴 수 있으나 distractor를 자연스러운 competing rule로 다시 써야 한다. |
-| `MA-Q-0039` | `KEEP` | `PASS` | — | FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0040` | `KEEP` | `PASS` | — | MA-OPIOID-SEVEN-DAY, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다. |
-| `MA-Q-0041` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. stem의 'canonical rules'는 internal authoring vocabulary를 노출한다. |
-| `MA-Q-0042` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0043` | `MAJOR_REWRITE` | `FAIL` | `jurisprudence_reasoning`, `authentic_distractors`, `wording_not_guessable`, `natural_rule_combination`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. option B는 permissive quantity rule을 undefined mandatory duty로 바꾸어 legal ambiguity까지 만든다. |
-| `MA-Q-0044` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0045` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0046` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0047` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. 'rEMS' capitalization 오류도 반복된다. |
-| `MA-Q-0048` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0049` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-| `MA-Q-0050` | `MAJOR_REWRITE` | `FAIL` | `authentic_distractors`, `wording_not_guessable`, `distinct_from_bank`, `public_style_without_copying` | SATA options가 'On this record/For this scenario/Under these facts/In this setting/At this stage/Given the described event'를 position별로 반복하고 drug name을 문장 끝에 기계적으로 덧붙인다. option grammar와 answer leakage를 제거하고 실제 practice facts로 다시 구성해야 한다. |
-
-## 판정 원칙
-
-`PASS`는 schema의 10 criteria가 모두 true일 때만 부여했다. Legal key가 맞더라도 schedule-only flashcard, implausible workflow, vague proposition, generator phrase, position-based SATA lead-in, bank-level near-template이면 `FAIL`로 판정했다. Canonical item은 수정하지 않았다.
+`MA-Q-0011`–`MA-Q-0050` 전 문항은 현재 canonical presentation을 그대로 암기하기에 안전하지 않다. Legal key가 맞는 문항도 distractor realism과 answer-pattern 문제가 해결되고 re-audit되기 전까지 release candidate로 취급해서는 안 된다.

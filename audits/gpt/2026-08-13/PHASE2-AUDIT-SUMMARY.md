@@ -1,61 +1,45 @@
-# Phase 2 GPT independent REAUDIT summary
+# Phase 2 GPT Audit Summary
 
-## 최종 audit 결론
+- Frozen target: `feature/mpje-content-phase2 @ ffa43e0344c1c08c076bbdaac0323bd20dffefd0`
+- Batch A: `MA-Q-0011`–`MA-Q-0050`
+- Batch B: `MA-Q-0051`–`MA-Q-0090`
+- Audit date: `2026-08-13`
+- Canonical question edits: 없음
 
-| Review | KEEP | MINOR_EDIT | MAJOR_REWRITE | DELETE |
-|---|---:|---:|---:|---:|
-| `LEGAL_VERIFICATION` | 75 | 3 | 2 | 0 |
-| `REALISM_REVIEW` | 29 | 27 | 24 | 0 |
+## Legal verdicts
 
-- `REALISM_REVIEW`: `PASS` 29, `FAIL` 51
-- frozen target: `repair/mpje-phase2-realism-v2` @ `67464e7a7ff2cfe88285c7c0f0f4164e92df46cd`
-- branch: `audit/gpt-phase2-reaudit-v2`
-- audit date: `2026-08-13`
+| Verdict | Batch A | Batch B | Total |
+|---|---:|---:|---:|
+| `KEEP` | 38 | 37 | 75 |
+| `MINOR_EDIT` | 1 | 2 | 3 |
+| `MAJOR_REWRITE` | 1 | 1 | 2 |
+| `DELETE` | 0 | 0 | 0 |
 
-## Confirmed legal errors
+- Confirmed legal errors: 2 (`MA-Q-0067`, `MA-Q-0089`)
+- Ambiguous items: 2 (`MA-Q-0033`, `MA-Q-0090`)
+- Drug errors: 1 (`MA-Q-0021` — discontinued `OPANA` brand presentation)
+- Authority problems: 0
 
-- `MA-Q-0043`: option B는 M.G.L. c. 94C, § 23의 permissive 90-day pathway를 source에 없는 mandatory-consideration duty로 바꾼다. 현재 key의 B 포함은 지지되지 않는다.
-- `MA-Q-0081`: option B는 current 247 CMR 16.02(1)(c)의 five-year/grandfather/equivalent qualification을 생략해 new entrant에게 PharmD alone가 충분한 것처럼 읽힌다.
+## Realism verdicts
 
-## Ambiguous items
+| Result | Batch A | Batch B | Total |
+|---|---:|---:|---:|
+| `PASS` | 0 | 0 | 0 |
+| `FAIL` | 40 | 40 | 80 |
+| `MINOR_EDIT` | 10 | 16 | 26 |
+| `MAJOR_REWRITE` | 30 | 24 | 54 |
 
-- `MA-Q-0043`: 'may apply' stem과 'required to be considered' option이 서로 다른 legal modality를 사용한다.
-- `MA-Q-0081`: statute shorthand와 stricter current promulgated regulation이 한 compound option에 섞여 있다.
+주된 원인은 52개 SBA의 unrelated generic distractor 반복, 26개 SATA의 고정 `A/C` key pattern, 2개 ORDERED_RESPONSE의 동일 `B-D-A-C` template 및 timing ambiguity다.
 
-## Realism failures
+## 암기 금지 목록
 
-`MA-Q-0011`, `MA-Q-0013`, `MA-Q-0014`, `MA-Q-0016`, `MA-Q-0018`, `MA-Q-0019`, `MA-Q-0023`, `MA-Q-0025`, `MA-Q-0027`, `MA-Q-0028`, `MA-Q-0029`, `MA-Q-0031`, `MA-Q-0032`, `MA-Q-0034`, `MA-Q-0035`, `MA-Q-0036`, `MA-Q-0037`, `MA-Q-0038`, `MA-Q-0041`, `MA-Q-0042`, `MA-Q-0043`, `MA-Q-0044`, `MA-Q-0045`, `MA-Q-0046`, `MA-Q-0047`, `MA-Q-0048`, `MA-Q-0049`, `MA-Q-0050`, `MA-Q-0052`, `MA-Q-0054`, `MA-Q-0058`, `MA-Q-0066`, `MA-Q-0068`, `MA-Q-0073`, `MA-Q-0074`, `MA-Q-0075`, `MA-Q-0076`, `MA-Q-0077`, `MA-Q-0078`, `MA-Q-0079`, `MA-Q-0080`, `MA-Q-0081`, `MA-Q-0082`, `MA-Q-0083`, `MA-Q-0084`, `MA-Q-0085`, `MA-Q-0086`, `MA-Q-0087`, `MA-Q-0088`, `MA-Q-0089`, `MA-Q-0090`
+- Legal content correction 전 특히 암기 금지: `MA-Q-0021`, `MA-Q-0033`, `MA-Q-0067`, `MA-Q-0089`, `MA-Q-0090`.
+- Realism/release 관점에서 암기 금지: `MA-Q-0011`–`MA-Q-0090` 전체.
 
-핵심 원인은 18개의 malformed conditional distractor, 129개의 six-position SATA lead-in, 20-opener cycle, schedule-only flashcard, vague/tautological options이다.
+각 canonical JSON은 frozen question hash를 보존하며 `FULLY_ADJUDICATED`로 기록된다. 이 audit는 release 또는 merge 승인이 아니며, editor correction 후 changed hash에 대한 re-audit가 필요하다.
 
-## Drug errors
+## Verification
 
-- `MA-Q-0024`: generic buprenorphine products는 current이나 `Subutex` NDA product는 discontinued이다. related fact는 current generic product와 discontinued legacy brand를 구분해야 한다.
-- 그 밖의 39 drug-linked item은 current DailyMed labeling과 21 CFR Part 1308에서 indication·dosage form·schedule의 material mismatch를 확인하지 못했다. `MA-Q-0021`의 discontinued `OPANA` disclosure는 정확했다.
-
-## Authority problems
-
-- `MA-Q-0023`: explanation이 21 CFR 1306.11(d)의 7-day follow-up prescription deadline을 누락한다.
-- `MA-Q-0058`: explanation이 1-business-day written notice와 45-calendar-day Form 106 completion을 분리하지 않는다.
-- `MA-Q-0081`: statute alone shorthand로는 current 247 CMR 16.02 qualification을 충족하지 못한다.
-
-## Unsafe-to-memorize IDs
-
-Legal non-`KEEP` item은 교정 전 암기 금지로 분류했다: `MA-Q-0023`, `MA-Q-0024`, `MA-Q-0043`, `MA-Q-0058`, `MA-Q-0081`.
-
-Realism `FAIL`은 legal conclusion이 맞는 경우에도 public MPJE-like writing exemplar로 암기하거나 재사용하면 안 된다.
-
-## Frozen input and validation
-
-- initial remote SHA check: `PASS` — `67464e7a7ff2cfe88285c7c0f0f4164e92df46cd`
-- pre-publication remote SHA check: `PASS` — `67464e7a7ff2cfe88285c7c0f0f4164e92df46cd`
-- exact exported `question_hashes`: `PASS` — 네 frozen package에서 output으로 value-preserved
-- `python scripts/validate_all.py`: `PASS` — `all: 0 error(s), 0 warning(s)`
-- `python -m pytest -q`: `PASS` — `74 passed, 1 skipped in 3.07s`
-- canonical question/rule/drug/style/release/validator/schema/test/generated-site edits: 없음
-
-## Publication
-
-- Draft PR: [#10](https://github.com/woojunxnam/oddments/pull/10)
-- base: `repair/mpje-phase2-realism-v2`
-- merge: 수행하지 않음
+- `python scripts/validate_all.py`: `0 error(s), 0 warning(s)`.
+- `pytest`: `70 passed, 1 skipped, 1 failed`.
+- 실패한 `tests/test_schemas.py::test_valid_question_fixture_passes_registry_validation`은 임시 단일-question fixture가 실제 `data/audits/`를 계속 읽어 80개 audit ID를 `unknown question ID`로 판정하는 기존 test-isolation 결함이다. Audit schema/content validation은 통과했으며, issue의 audit-outputs-only 범위를 지키기 위해 validator 또는 test는 변경하지 않았다.
