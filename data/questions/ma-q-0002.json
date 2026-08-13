@@ -1,0 +1,69 @@
+{
+  "question_id": "MA-Q-0002",
+  "family_id": "MASSPAT_DRUG_CLASSIFICATION",
+  "area": 3,
+  "topic": "Prescription monitoring program",
+  "subtopic": "Reportable dispensing",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "stem": "Which covered Massachusetts outpatient dispensings belong in the MassPAT submission stream on the basis of the listed drug? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Gabapentin prescribed for postherpetic neuralgia"
+    },
+    {
+      "id": "B",
+      "text": "Pregabalin prescribed for neuropathic pain"
+    },
+    {
+      "id": "C",
+      "text": "Pseudoephedrine sold in an ordinary CMEA retail transaction"
+    },
+    {
+      "id": "D",
+      "text": "None of the listed transactions"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "Massachusetts MassPAT reporting covers Schedule II through V dispensing and designated additional drugs. Pregabalin is Schedule V, and gabapentin is the designated Massachusetts Schedule VI additional drug in this fixture.",
+    "choice_analysis": {
+      "A": "Gabapentin is federally noncontrolled but specifically reportable to MassPAT as a Massachusetts additional drug.",
+      "B": "Pregabalin is Schedule V, so a covered outpatient dispensing is included in the reporting stream.",
+      "C": "CMEA retail controls do not by themselves convert an ordinary pseudoephedrine sale into a MassPAT dispensing record.",
+      "D": "This is incorrect because both gabapentin and pregabalin are reportable on the stated facts."
+    },
+    "related_facts": [
+      "Gabapentin reportability does not change its federal controlled status.",
+      "The current dispenser standard generally uses a 24-hour or next-business-day submission framework."
+    ],
+    "mpje_trap": "Treating MassPAT reporting status as if it were a federal schedule."
+  },
+  "rule_ids": [
+    "MA-PMP-REPORTING",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "gabapentin",
+    "pregabalin",
+    "pseudoephedrine"
+  ],
+  "reasoning_steps": [
+    "Classify each drug",
+    "Apply the Massachusetts MassPAT reporting categories"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true,
+  "source_signal_ids": []
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/rule.schema.json",
+  "title": "MPJE Rule Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "content_version",
+    "content_hash",
+    "title",
+    "jurisdiction",
+    "area",
+    "topic",
+    "subtopic",
+    "rule_summary",
+    "exam_relevance",
+    "authority",
+    "status",
+    "effective_date",
+    "supersedes",
+    "last_verified",
+    "numeric_facts",
+    "exceptions",
+    "common_confusions",
+    "related_rule_ids",
+    "verification_status",
+    "verification_notes"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+    },
+    "content_version": {"type": "integer", "minimum": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "title": {
+      "type": "string",
+      "minLength": 5
+    },
+    "jurisdiction": {
+      "enum": ["MA", "FEDERAL"]
+    },
+    "area": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 2
+    },
+    "subtopic": {
+      "type": "string",
+      "minLength": 2
+    },
+    "rule_summary": {
+      "type": "string",
+      "minLength": 20
+    },
+    "exam_relevance": {
+      "type": "string",
+      "minLength": 10
+    },
+    "authority": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/authority"
+      }
+    },
+    "status": {
+      "enum": ["CURRENT", "DRAFT", "SUPERSEDED", "TEMPORARY", "UNCLEAR"]
+    },
+    "effective_date": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "supersedes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+      }
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "numeric_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fact", "value", "unit", "conditions"],
+        "properties": {
+          "fact": {"type": "string", "minLength": 2},
+          "value": {"type": ["number", "integer", "string"]},
+          "unit": {"type": "string"},
+          "conditions": {"type": "string"}
+        }
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 3}
+    },
+    "common_confusions": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 3}
+    },
+    "related_rule_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+      }
+    },
+    "verification_status": {
+      "enum": ["HOLD", "PRIMARY_VERIFIED", "OFFICIAL_POLICY_VERIFIED"]
+    },
+    "verification_notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "name", "section", "url"],
+      "properties": {
+        "type": {
+          "enum": [
+            "STATUTE",
+            "PROMULGATED_REGULATION",
+            "BOARD_POLICY",
+            "OFFICIAL_GUIDANCE",
+            "FEDERAL_REGULATION"
+          ]
+        },
+        "name": {"type": "string", "minLength": 2},
+        "section": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    }
+  }
+}

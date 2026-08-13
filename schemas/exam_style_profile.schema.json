@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/exam_style_profile.schema.json",
+  "title": "MPJE Exam Style Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_id",
+    "content_version",
+    "content_hash",
+    "jurisdiction",
+    "valid_for_exams_before",
+    "last_reviewed",
+    "sources",
+    "exam_format",
+    "item_types",
+    "style_characteristics",
+    "target_reasoning_depth",
+    "distractor_archetypes",
+    "familiarity_goal",
+    "prohibited_similarity_methods"
+  ],
+  "properties": {
+    "profile_id": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
+    "content_version": {"type": "integer", "minimum": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "jurisdiction": {"const": "Massachusetts"},
+    "valid_for_exams_before": {"type": "string", "format": "date"},
+    "last_reviewed": {"type": "string", "format": "date"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_class", "source_name", "url", "last_checked", "allowed_use"],
+        "properties": {
+          "source_class": {"const": "PUBLIC_OFFICIAL"},
+          "source_name": {"type": "string", "minLength": 2},
+          "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+          "last_checked": {"type": "string", "format": "date"},
+          "allowed_use": {"enum": ["FORMAT", "COMPETENCY", "PUBLIC_SAMPLE_STYLE"]}
+        }
+      }
+    },
+    "exam_format": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_count", "duration_minutes", "delivery"],
+      "properties": {
+        "question_count": {"type": "integer", "minimum": 1},
+        "duration_minutes": {"type": "integer", "minimum": 1},
+        "delivery": {"type": "string", "minLength": 2}
+      }
+    },
+    "item_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["SBA", "SATA", "ORDERED_RESPONSE"]}
+    },
+    "style_characteristics": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "target_reasoning_depth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["difficulty_3", "difficulty_4", "difficulty_5"],
+      "properties": {
+        "difficulty_3": {"type": "integer", "minimum": 1},
+        "difficulty_4": {"type": "integer", "minimum": 1},
+        "difficulty_5": {"type": "integer", "minimum": 1}
+      }
+    },
+    "distractor_archetypes": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 5}
+    },
+    "familiarity_goal": {"type": "string", "minLength": 20},
+    "prohibited_similarity_methods": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 5}
+    }
+  }
+}
