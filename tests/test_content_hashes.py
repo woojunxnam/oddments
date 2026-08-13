@@ -5,6 +5,13 @@ from copy import deepcopy
 from qa_common import semantic_content_hash
 
 
+def test_answer_distribution_report_quantizes_platform_float() -> None:
+    from check_answer_distribution import analyze_answer_distribution
+
+    report, _ = analyze_answer_distribution()
+    assert report["p_value_approx"] == round(report["p_value_approx"], 12)
+
+
 def test_semantic_hash_ignores_whitespace_and_unordered_list_order(registry_indexes) -> None:
     rules, _ = registry_indexes
     original = rules["MA-RX-CV-REFILL"]

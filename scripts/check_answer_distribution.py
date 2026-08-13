@@ -34,7 +34,9 @@ def analyze_answer_distribution() -> tuple[dict, bool]:
         "frequencies": dict(counts),
         "chi_square": round(chi_square, 6),
         "degrees_of_freedom": degrees,
-        "p_value_approx": p_value,
+        # libm implementations can differ in the final floating-point bits.
+        # Quantize tracked output so Windows and Linux regenerate byte-identical JSON.
+        "p_value_approx": round(p_value, 12),
         "max_answer_share": round(max_share, 6),
         "severity": severity,
         "thresholds": {
@@ -65,4 +67,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
