@@ -28,7 +28,6 @@
     "duplicate_review_status",
     "independent_audit_status",
     "final_adjudication",
-    "realism",
     "development_fixture"
   ],
   "properties": {
@@ -138,43 +137,14 @@
             "verified_dependencies": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["rules", "drugs"],
+              "required": ["rules", "drugs", "blueprint", "style_profile"],
               "properties": {
                 "rules": {"$ref": "#/$defs/ruleDependencyMap"},
-                "drugs": {"$ref": "#/$defs/drugDependencyMap"}
+                "drugs": {"$ref": "#/$defs/drugDependencyMap"},
+                "blueprint": {"$ref": "#/$defs/namedDependencySnapshot"},
+                "style_profile": {"$ref": "#/$defs/namedDependencySnapshot"}
               }
             }
-          }
-        }
-      ]
-    },
-    "realism": {
-      "oneOf": [
-        {"type": "null"},
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "profile_id",
-            "score",
-            "scenario_realism",
-            "distractor_quality",
-            "multi_rule_reasoning",
-            "wording_naturalness",
-            "reviewer",
-            "reviewed_date",
-            "notes"
-          ],
-          "properties": {
-            "profile_id": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
-            "score": {"type": "integer", "minimum": 1, "maximum": 5},
-            "scenario_realism": {"type": "integer", "minimum": 1, "maximum": 5},
-            "distractor_quality": {"type": "integer", "minimum": 1, "maximum": 5},
-            "multi_rule_reasoning": {"type": "integer", "minimum": 1, "maximum": 5},
-            "wording_naturalness": {"type": "integer", "minimum": 1, "maximum": 5},
-            "reviewer": {"type": "string", "minLength": 2},
-            "reviewed_date": {"type": "string", "format": "date"},
-            "notes": {"type": "string"}
           }
         }
       ]
@@ -221,6 +191,16 @@
       "additionalProperties": false,
       "required": ["content_version", "content_hash"],
       "properties": {
+        "content_version": {"type": "integer", "minimum": 1},
+        "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "namedDependencySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "content_version", "content_hash"],
+      "properties": {
+        "id": {"type": "string", "minLength": 2},
         "content_version": {"type": "integer", "minimum": 1},
         "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
       }

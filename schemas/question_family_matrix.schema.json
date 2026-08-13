@@ -32,7 +32,8 @@
         "target_difficulties",
         "target_item_types",
         "max_questions_in_final_bank",
-        "current_question_count"
+        "current_candidate_count",
+        "current_released_count"
       ],
       "properties": {
         "family_id": {"type": "string", "pattern": "^[A-Z0-9]+(?:_[A-Z0-9]+)*$"},
@@ -76,7 +77,8 @@
           "items": {"enum": ["SBA", "SATA", "ORDERED_RESPONSE"]}
         },
         "max_questions_in_final_bank": {"type": "integer", "minimum": 1},
-        "current_question_count": {"type": "integer", "minimum": 0}
+        "current_candidate_count": {"type": "integer", "minimum": 0},
+        "current_released_count": {"type": "integer", "minimum": 0}
       }
     }
   }

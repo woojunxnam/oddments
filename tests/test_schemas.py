@@ -26,14 +26,23 @@ def test_all_canonical_records_validate_against_schemas(root: Path) -> None:
     assert errors == []
 
     standalone = {
+        root / "data" / "blueprint.json": "blueprint.schema.json",
         root / "data" / "exam_style" / "mpje_style_profile.json": "exam_style_profile.schema.json",
         root / "data" / "exam_style" / "question_family_matrix.json": "question_family_matrix.schema.json",
+        root / "data" / "release_requirements.json": "release_requirements.schema.json",
     }
     for path, schema_name in standalone.items():
         schema = json.loads((root / "schemas" / schema_name).read_text(encoding="utf-8"))
         record = json.loads(path.read_text(encoding="utf-8"))
         validator = Draft202012Validator(schema, format_checker=FormatChecker())
         assert list(validator.iter_errors(record)) == []
+
+
+def test_question_cannot_store_duplicate_realism_metadata(root: Path, canonical_question) -> None:
+    schema = json.loads((root / "schemas" / "question.schema.json").read_text(encoding="utf-8"))
+    canonical_question["realism"] = {"score": 5}
+    errors = list(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(canonical_question))
+    assert errors
 
 
 def test_valid_question_fixture_passes_registry_validation(tmp_path, monkeypatch, canonical_question, registry_indexes) -> None:

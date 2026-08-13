@@ -41,13 +41,17 @@ def validate_audits(
             if audit.get("review_type") == "LEGAL_VERIFICATION":
                 if result.get("Existing_Answer_Correct") == "NOT_ASSESSED":
                     report.error(f"{path}: {question_id} is fully adjudicated but answer was not assessed")
-                if not result.get("Law_Checked_Date"):
-                    report.error(f"{path}: {question_id} is fully adjudicated but lacks Law_Checked_Date")
-                for field in ("Authority", "Exact_Section"):
-                    if not str(result.get(field, "")).strip():
-                        report.error(f"{path}: {question_id} is fully adjudicated but lacks {field}")
-                if not _valid_official_url(result.get("Official_URL")):
-                    report.error(f"{path}: {question_id} has invalid Official_URL")
+                authorities = result.get("authorities", [])
+                if not authorities:
+                    report.error(f"{path}: {question_id} is fully adjudicated but lacks authorities")
+                for index, authority in enumerate(authorities):
+                    label = f"{question_id} authority[{index}]"
+                    for field in ("authority", "source_type", "exact_section", "law_checked_date"):
+                        value = authority.get(field)
+                        if value is None or not str(value).strip():
+                            report.error(f"{path}: {label} lacks {field}")
+                    if not _valid_official_url(authority.get("official_url")):
+                        report.error(f"{path}: {label} has invalid official_url")
             elif audit.get("review_type") == "REALISM_REVIEW":
                 criteria = result.get("Criteria", {})
                 if result.get("Realism_Verdict") == "PASS" and not all(criteria.values()):

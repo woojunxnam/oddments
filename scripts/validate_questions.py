@@ -7,6 +7,7 @@ from qa_common import (
     BLOCKED_RULE_STATUSES,
     DATA,
     HEDGE_WORDS,
+    ROOT,
     SCHEMAS,
     VERIFIED_DRUG_STATUSES,
     VERIFIED_RULE_STATUSES,
@@ -15,12 +16,14 @@ from qa_common import (
     drug_consequence_rule_ids,
     find_placeholders,
     index_records,
+    load_json,
     load_records,
     normalize_text,
     print_report,
     question_audit_hash,
     validate_schema_records,
 )
+from release_context import named_dependency_snapshot, style_profile_snapshot
 from validate_audits import validate_audits
 from validate_drugs import validate_drugs
 from validate_rules import validate_rules
@@ -30,6 +33,9 @@ def validate_questions(
     rules: dict[str, dict] | None = None,
     drugs: dict[str, dict] | None = None,
     audits: dict[str, dict] | None = None,
+    release_requirements: dict | None = None,
+    blueprint: dict | None = None,
+    style_profile: dict | None = None,
 ) -> tuple[QAReport, dict[str, dict]]:
     report = QAReport()
     if rules is None:
@@ -44,6 +50,12 @@ def validate_questions(
     if audits is None:
         audit_report, audits = validate_audits(set(questions))
         report.extend(audit_report)
+    if release_requirements is None:
+        release_requirements = load_json(ROOT / "data" / "release_requirements.json")
+    if blueprint is None:
+        blueprint = load_json(ROOT / "data" / "blueprint.json")
+    if style_profile is None:
+        style_profile = load_json(ROOT / "data" / "exam_style" / "mpje_style_profile.json")
     core_explanations: dict[str, list[str]] = defaultdict(list)
     family_counts: Counter[str] = Counter()
     topic_counts: Counter[str] = Counter()
@@ -127,11 +139,14 @@ def validate_questions(
             if question.get("duplicate_review_status") != "CLEAR":
                 report.error(f"{path}: released question has unresolved duplicate-family review")
             final_adjudication = question.get("final_adjudication")
-            if final_adjudication is None:
+            if release_requirements.get("final_adjudication_required") and final_adjudication is None:
                 report.error(f"{path}: released question lacks final adjudication")
-            elif final_adjudication.get("decision") != "KEEP":
-                report.error(f"{path}: released question final adjudication must be KEEP")
-            else:
+            elif final_adjudication is not None:
+                required_decision = release_requirements.get("final_decision_required")
+                if final_adjudication.get("decision") != required_decision:
+                    report.error(
+                        f"{path}: released question final adjudication must be {required_decision}"
+                    )
                 expected_dependencies = {
                     "rules": {rule_id: dependency_snapshot(rules[rule_id]) for rule_id in rule_ids if rule_id in rules},
                     "drugs": {
@@ -139,13 +154,13 @@ def validate_questions(
                         for drug_id in question.get("drug_ids", [])
                         if drug_id in drugs
                     },
+                    "blueprint": named_dependency_snapshot(blueprint, "blueprint_id"),
+                    "style_profile": named_dependency_snapshot(style_profile, "profile_id"),
                 }
                 if final_adjudication.get("verified_dependencies") != expected_dependencies:
                     report.error(f"{path}: adjudicated dependency versions/hashes do not match current canonical dependencies")
             if not question.get("last_legal_review"):
                 report.error(f"{path}: released question lacks legal-review date")
-            if question.get("realism") is None:
-                report.error(f"{path}: released question lacks structured realism review")
 
             audit_ids = question.get("audits", [])
             if not audit_ids:
@@ -158,8 +173,9 @@ def validate_questions(
                 else:
                     resolved_audits.append(audit)
             current_question_hash = question_audit_hash(question)
-            legal_pass = False
-            realism_pass = False
+            legal_passes: list[dict] = []
+            realism_passes: list[dict] = []
+            referenced_audit_ids = {audit.get("audit_id") for audit in resolved_audits}
             for audit in resolved_audits:
                 if question.get("question_id") not in audit.get("question_ids", []):
                     report.error(f"{path}: audit {audit.get('audit_id')} does not cover {qid}")
@@ -173,21 +189,83 @@ def validate_questions(
                     (item for item in audit.get("results", []) if item.get("Question_ID") == qid),
                     None,
                 )
-                if result is None or result.get("Verdict") != "KEEP":
+                if result is None:
                     continue
-                if audit.get("review_type") == "LEGAL_VERIFICATION" and result.get("Existing_Answer_Correct") == "YES":
-                    legal_pass = True
-                if (
+                if audit.get("review_type") == "LEGAL_VERIFICATION":
+                    if result.get("Verdict") == "KEEP" and result.get("Existing_Answer_Correct") == "YES":
+                        legal_passes.append(audit)
+                    else:
+                        report.error(
+                            f"{path}: current legal audit {audit.get('audit_id')} does not independently pass"
+                        )
+                elif audit.get("review_type") == "REALISM_REVIEW":
+                    if audit.get("style_profile") != style_profile_snapshot(style_profile):
+                        report.error(
+                            f"{path}: realism audit {audit.get('audit_id')} uses a stale style profile"
+                        )
+                    elif result.get("Verdict") == "KEEP" and result.get("Realism_Verdict") == "PASS":
+                        realism_passes.append(audit)
+                    else:
+                        report.error(
+                            f"{path}: current realism audit {audit.get('audit_id')} does not pass"
+                        )
+
+            # A failed fully adjudicated audit on the current question content cannot be
+            # hidden by removing its ID from the question's selected release evidence.
+            for audit in audits.values():
+                if audit.get("audit_id") in referenced_audit_ids:
+                    continue
+                if not audit.get("independent") or audit.get("audit_status") != "FULLY_ADJUDICATED":
+                    continue
+                if audit.get("question_hashes", {}).get(qid) != current_question_hash:
+                    continue
+                result = next(
+                    (item for item in audit.get("results", []) if item.get("Question_ID") == qid),
+                    None,
+                )
+                if result is None:
+                    continue
+                if audit.get("review_type") == "LEGAL_VERIFICATION":
+                    if result.get("Verdict") != "KEEP" or result.get("Existing_Answer_Correct") != "YES":
+                        report.error(
+                            f"{path}: current legal audit {audit.get('audit_id')} does not independently pass"
+                        )
+                elif (
                     audit.get("review_type") == "REALISM_REVIEW"
-                    and result.get("Realism_Verdict") == "PASS"
-                    and question.get("realism")
-                    and result.get("Profile_ID") == question["realism"].get("profile_id")
+                    and audit.get("style_profile") == style_profile_snapshot(style_profile)
+                    and (result.get("Verdict") != "KEEP" or result.get("Realism_Verdict") != "PASS")
                 ):
-                    realism_pass = True
-            if not legal_pass:
-                report.error(f"{path}: released question lacks a current independent fully adjudicated legal KEEP audit")
-            if not realism_pass:
-                report.error(f"{path}: released question lacks a current independent fully adjudicated realism PASS audit")
+                    report.error(
+                        f"{path}: current realism audit {audit.get('audit_id')} does not pass"
+                    )
+
+            for label, passes, requirement in (
+                ("legal", legal_passes, release_requirements.get("legal_verification", {})),
+                ("realism", realism_passes, release_requirements.get("realism_review", {})),
+            ):
+                if len(passes) < requirement.get("minimum_passes", 1):
+                    report.error(f"{path}: insufficient current independent {label} audit passes")
+                auditors = {audit.get("auditor") for audit in passes}
+                if len(auditors) < requirement.get("minimum_distinct_auditors", 1):
+                    report.error(f"{path}: insufficient distinct {label} auditors")
+                missing_auditors = set(requirement.get("required_auditor_types", [])) - auditors
+                if missing_auditors:
+                    report.error(
+                        f"{path}: missing required {label} auditor types {sorted(missing_auditors)}"
+                    )
+
+            if release_requirements.get("initial_batch_history_required"):
+                initial_history = any(
+                    audit.get("audit_scope") == "INITIAL_BATCH"
+                    and audit.get("review_type") == "LEGAL_VERIFICATION"
+                    and audit.get("independent")
+                    and audit.get("audit_status") == "FULLY_ADJUDICATED"
+                    and qid in audit.get("question_ids", [])
+                    and any(result.get("Question_ID") == qid for result in audit.get("results", []))
+                    for audit in audits.values()
+                )
+                if not initial_history:
+                    report.error(f"{path}: released question lacks valid INITIAL_BATCH audit history")
             if question.get("independent_audit_status") != "PASSED":
                 report.error(f"{path}: released question status summary must be PASSED after stored audit gates pass")
 

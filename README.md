@@ -7,6 +7,7 @@
 현재 foundation에는 다음 항목만 있습니다.
 
 - semantic version/hash가 있는 verified rule 8개와 drug 5개
+- version/hash가 고정된 pre-2027 blueprint와 style profile
 - `AUDIT_PENDING`인 original development fixture 10개
 - fail-closed schema·validator·audit·release gate
 - 공개 NABP 자료만 사용한 `MPJE-MA-PRE2027` style profile
@@ -23,9 +24,10 @@ PERMITTED PUBLIC SOURCE
         -> VERIFIED OFFICIAL RULE
         -> FRESH SCENARIO + FRESH DISTRACTORS
         -> AUTOMATED QA
-        -> LEGAL_VERIFICATION
-        -> REALISM_REVIEW
-        -> FINAL KEEP ADJUDICATION
+        -> GPT LEGAL AUDIT
+        -> CLAUDE LEGAL AUDIT
+        -> INDEPENDENT REALISM REVIEW
+        -> FINAL HUMAN/EDITOR KEEP ADJUDICATION
         -> RELEASED OUTPUT
 ```
 
@@ -55,5 +57,7 @@ python -m http.server 8000 --directory site
 ```
 
 `--include-fixtures`를 생략한 release build에는 모든 release gate를 통과한 `RELEASED` question만 포함됩니다. 빈 release payload는 `NO_RELEASED_QUESTIONS`이며 안전하다는 뜻으로 표시되지 않습니다.
+
+Release build는 기본적으로 실행일을 target exam date로 사용합니다. Historical pre-2027 output을 의도적으로 검증할 때만 `--target-exam-date YYYY-MM-DD`를 지정할 수 있습니다. 2027-03-01 이후 target에 pre-2027 blueprint/profile을 사용하면 `BLUEPRINT_REVIEW_REQUIRED`로 실패합니다.
 
 관련 문서: [Architecture](docs/ARCHITECTURE.md), [Question Authoring Standard](docs/QUESTION_AUTHORING_STANDARD.md), [Audit Workflow](docs/AUDIT_WORKFLOW.md), [Release Policy](docs/RELEASE_POLICY.md).

@@ -1,13 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/woojunxnam/oddments/schemas/audit.schema.json",
-  "title": "Independent MPJE Audit Batch",
+  "title": "Independent MPJE Audit",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "audit_id",
     "auditor",
     "audit_date",
+    "audit_scope",
     "review_type",
     "independent",
     "audit_status",
@@ -19,42 +20,95 @@
     "audit_id": {"type": "string", "pattern": "^AUDIT-[A-Z0-9-]+$"},
     "auditor": {"enum": ["CLAUDE", "GPT", "HUMAN"]},
     "audit_date": {"type": "string", "format": "date"},
+    "audit_scope": {"enum": ["INITIAL_BATCH", "REAUDIT"]},
     "review_type": {"enum": ["LEGAL_VERIFICATION", "REALISM_REVIEW"]},
     "independent": {"type": "boolean"},
     "audit_status": {"enum": ["FULLY_ADJUDICATED", "STRUCTURAL_TRIAGE_ONLY"]},
+    "style_profile": {"$ref": "#/$defs/styleProfileDependency"},
     "question_ids": {
       "type": "array",
-      "minItems": 30,
       "maxItems": 40,
       "uniqueItems": true,
       "items": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"}
     },
     "question_hashes": {
       "type": "object",
-      "minProperties": 30,
       "maxProperties": 40,
       "patternProperties": {
         "^MA-Q-[0-9]{4}$": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
       },
       "additionalProperties": false
     },
-    "results": {
-      "type": "array",
-      "minItems": 30,
-      "maxItems": 40
-    }
+    "results": {"type": "array", "maxItems": 40}
   },
   "allOf": [
+    {
+      "if": {"properties": {"audit_scope": {"const": "INITIAL_BATCH"}}},
+      "then": {
+        "properties": {
+          "question_ids": {"minItems": 30},
+          "question_hashes": {"minProperties": 30},
+          "results": {"minItems": 30}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"audit_scope": {"const": "REAUDIT"}}},
+      "then": {
+        "properties": {
+          "question_ids": {"minItems": 1},
+          "question_hashes": {"minProperties": 1},
+          "results": {"minItems": 1}
+        }
+      }
+    },
     {
       "if": {"properties": {"review_type": {"const": "LEGAL_VERIFICATION"}}},
       "then": {"properties": {"results": {"items": {"$ref": "#/$defs/legalResult"}}}}
     },
     {
       "if": {"properties": {"review_type": {"const": "REALISM_REVIEW"}}},
-      "then": {"properties": {"results": {"items": {"$ref": "#/$defs/realismResult"}}}}
+      "then": {
+        "required": ["style_profile"],
+        "properties": {"results": {"items": {"$ref": "#/$defs/realismResult"}}}
+      }
     }
   ],
   "$defs": {
+    "styleProfileDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile_id", "content_version", "content_hash"],
+      "properties": {
+        "profile_id": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
+        "content_version": {"type": "integer", "minimum": 1},
+        "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authority", "source_type", "exact_section", "official_url", "law_checked_date"],
+      "properties": {
+        "authority": {"type": "string"},
+        "source_type": {
+          "enum": [
+            "MA_STATUTE",
+            "MA_PROMULGATED_REGULATION",
+            "MA_BOARD_POLICY",
+            "MA_DCP_GUIDANCE",
+            "FEDERAL_STATUTE",
+            "FEDERAL_REGULATION",
+            "DEA_OFFICIAL",
+            "FDA_OFFICIAL",
+            "OTHER_OFFICIAL"
+          ]
+        },
+        "exact_section": {"type": "string"},
+        "official_url": {"type": "string"},
+        "law_checked_date": {"type": ["string", "null"], "format": "date"}
+      }
+    },
     "legalResult": {
       "type": "object",
       "additionalProperties": false,
@@ -63,10 +117,7 @@
         "Verdict",
         "Severity",
         "Existing_Answer_Correct",
-        "Authority",
-        "Exact_Section",
-        "Official_URL",
-        "Law_Checked_Date",
+        "authorities",
         "Problem",
         "Proposed_Answer",
         "Proposed_Rewrite",
@@ -77,10 +128,7 @@
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
         "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
         "Existing_Answer_Correct": {"enum": ["YES", "NO", "PARTIALLY", "NOT_ASSESSED"]},
-        "Authority": {"type": "string"},
-        "Exact_Section": {"type": "string"},
-        "Official_URL": {"type": "string"},
-        "Law_Checked_Date": {"type": ["string", "null"], "format": "date"},
+        "authorities": {"type": "array", "items": {"$ref": "#/$defs/authority"}},
         "Problem": {"type": "string"},
         "Proposed_Answer": {"type": "string"},
         "Proposed_Rewrite": {"type": "string"},
@@ -90,22 +138,12 @@
     "realismResult": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "Question_ID",
-        "Verdict",
-        "Severity",
-        "Realism_Verdict",
-        "Profile_ID",
-        "Reviewed_Date",
-        "Criteria",
-        "Notes"
-      ],
+      "required": ["Question_ID", "Verdict", "Severity", "Realism_Verdict", "Reviewed_Date", "Criteria", "Notes"],
       "properties": {
         "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
         "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
         "Realism_Verdict": {"enum": ["PASS", "FAIL"]},
-        "Profile_ID": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
         "Reviewed_Date": {"type": "string", "format": "date"},
         "Criteria": {
           "type": "object",

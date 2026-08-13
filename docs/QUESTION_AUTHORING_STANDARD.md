@@ -8,7 +8,7 @@
 4. 허용된 Class B research가 있다면 source text가 아닌 abstract signal만 저장합니다.
 5. Official rule에서 fresh scenario와 fresh distractors를 독립적으로 설계합니다.
 6. `question_family_matrix.json`에서 family cap과 중복을 확인합니다.
-7. Automated QA, `LEGAL_VERIFICATION`, `REALISM_REVIEW`, final `KEEP` 전에는 `AUDIT_PENDING`을 유지합니다.
+7. Automated QA, GPT legal audit, Claude legal audit, independent `REALISM_REVIEW`, final human/editor `KEEP` 전에는 `AUDIT_PENDING`을 유지합니다.
 
 Raw-source question -> paraphrase -> public question 변환은 금지됩니다.
 
@@ -31,7 +31,9 @@ Raw-source question -> paraphrase -> public question 변환은 금지됩니다.
 
 Realism은 문장 복제 정도가 아니라 jurisprudence reasoning의 종류로 평가합니다. 높은 score는 plausible practice scenario, genuine legal confusion 기반 distractor, federal-state interaction, competing deadlines, exceptions, personnel scope, natural multi-rule application에서 나옵니다.
 
-`RELEASED` question의 `realism`에는 현재 profile ID, 1-5 component scores, reviewer, date가 필요합니다. 별도의 stored `REALISM_REVIEW` audit도 PASS해야 합니다.
+Realism metadata는 question JSON에 기록하지 않습니다. Canonical `REALISM_REVIEW` audit가 current question hash, exact style-profile version/hash, criteria, reviewer/auditor, date를 단일 source of truth로 보존합니다. Derived website metadata도 이 audit에서 생성합니다.
+
+Question family는 matrix에 먼저 계획할 수 있으며 `current_candidate_count: 0`, `current_released_count: 0`을 가질 수 있습니다. Candidate를 final cap보다 많이 연구할 수 있지만 released count는 `max_questions_in_final_bank`를 넘을 수 없습니다.
 
 ## Familiarity target
 

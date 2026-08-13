@@ -63,6 +63,31 @@ SEMANTIC_FIELDS = {
         "verified_rule_dependencies",
         "verification_status",
     ),
+    "blueprint": (
+        "blueprint_id",
+        "schema_version",
+        "exam",
+        "target",
+        "target_question_count_per_mock",
+        "exam_duration_minutes",
+        "areas",
+        "applies_to_exams_before",
+        "sources",
+        "release_guard",
+    ),
+    "style_profile": (
+        "profile_id",
+        "jurisdiction",
+        "valid_for_exams_before",
+        "sources",
+        "exam_format",
+        "item_types",
+        "style_characteristics",
+        "target_reasoning_depth",
+        "distractor_archetypes",
+        "familiarity_goal",
+        "prohibited_similarity_methods",
+    ),
 }
 
 QUESTION_AUDIT_FIELDS = (
@@ -139,6 +164,11 @@ def deterministic_hash(value: Any, *, sort_lists: bool = False) -> str:
 def semantic_content_hash(record: dict[str, Any], record_type: str) -> str:
     fields = SEMANTIC_FIELDS[record_type]
     semantic = {field: record.get(field) for field in fields}
+    if record_type == "style_profile":
+        semantic["sources"] = [
+            {key: value for key, value in source.items() if key != "last_checked"}
+            for source in semantic.get("sources", [])
+        ]
     return deterministic_hash(semantic, sort_lists=True)
 
 

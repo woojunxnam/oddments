@@ -18,19 +18,20 @@ Semantic dependency 변경, question content 변경, stale audit, failed legal/r
 1. `verification_status`와 `lifecycle_status`가 모두 `RELEASED`.
 2. 모든 direct rule이 `CURRENT`이고 verified이며 schema와 stored semantic hash가 유효함.
 3. 모든 drug가 verified이고, legal consequence rule이 존재하며 current/verified이고, drug의 transitive dependency snapshots가 current임.
-4. Final adjudication의 direct rule/drug version/hash snapshot이 현재 canonical dependencies와 정확히 일치함.
-5. `SBA`는 1 answer, `SATA`는 1개 이상, `ORDERED_RESPONSE`는 모든 choice의 complete unique order.
-6. Placeholder가 없고 모든 choice rationale가 존재하며 중복되지 않음.
-7. `duplicate_review_status == CLEAR`.
-8. Difficulty/reasoning-step contract를 만족함.
-9. 최소 1개 audit ID가 있고 모든 ID가 `data/audits/` record로 resolve됨.
-10. Current question hash를 대상으로 한 independent `FULLY_ADJUDICATED` `LEGAL_VERIFICATION` result가 `KEEP`이고 answer가 `YES`.
-11. Current question hash를 대상으로 한 independent `FULLY_ADJUDICATED` `REALISM_REVIEW` result가 `KEEP`/`PASS`.
-12. 현재 style profile을 사용한 structured `realism` assessment가 있음.
+4. Blueprint와 style profile의 stored semantic hash가 current이며 target exam date가 release window 안에 있음.
+5. Final adjudication의 rule/drug/blueprint/style-profile version/hash snapshot이 현재 canonical dependencies와 정확히 일치함.
+6. `SBA`는 1 answer, `SATA`는 1개 이상, `ORDERED_RESPONSE`는 모든 choice의 complete unique order.
+7. Placeholder가 없고 모든 choice rationale가 존재하며 중복되지 않음.
+8. `duplicate_review_status == CLEAR`이고 difficulty/reasoning-step contract를 만족함.
+9. Valid independent fully adjudicated legal `INITIAL_BATCH` audit history가 있음.
+10. 모든 current evidence audit ID가 `data/audits/` record로 resolve되고 current question hash를 대상으로 함.
+11. GPT와 Claude가 각각 independent `FULLY_ADJUDICATED` legal `KEEP` 및 answer `YES`를 기록함.
+12. Current style-profile version/hash를 사용한 independent realism `KEEP`/`PASS`가 있음.
 13. `final_adjudication.decision == KEEP`.
-14. Full QA와 tracked artifact drift check가 통과함.
+14. Family의 `current_released_count <= max_questions_in_final_bank`.
+15. Full QA와 tracked artifact drift check가 통과함.
 
-`independent_audit_status: PASSED` 같은 summary field만으로는 9-11을 대체할 수 없습니다. `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT`는 release를 승인하지 않습니다. Edit 후 current content에 대한 재감사와 새 `KEEP` adjudication이 필요합니다.
+정확한 pass/distinct-auditor/required-model 수는 `data/release_requirements.json`에서 schema-validated configuration으로 관리합니다. 현재 policy는 GPT+Claude legal passes 2개와 distinct auditor 2개를 요구합니다. `independent_audit_status: PASSED` 같은 summary field나 human override는 audit evidence를 대체할 수 없습니다. `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT` 또는 wrong-answer finding 후에는 current content에 대한 재감사와 새 `KEEP` adjudication이 필요합니다.
 
 ## Output status
 

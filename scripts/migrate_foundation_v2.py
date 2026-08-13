@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qa_common import DATA, dependency_snapshot, load_records, semantic_content_hash, write_json
+from qa_common import DATA, dependency_snapshot, load_json, load_records, semantic_content_hash, write_json
 
 
 CONSEQUENCE_RULES = {
@@ -77,6 +77,27 @@ SCOPE_LIMITED_SUMMARIES = {
 
 
 def main() -> int:
+    blueprint_path = DATA / "blueprint.json"
+    blueprint = load_json(blueprint_path)
+    blueprint.setdefault("blueprint_id", "MPJE-MA-PRE2027-BLUEPRINT")
+    blueprint.setdefault("content_version", 1)
+    blueprint["content_hash"] = semantic_content_hash(blueprint, "blueprint")
+    write_json(blueprint_path, blueprint)
+
+    profile_path = DATA / "exam_style" / "mpje_style_profile.json"
+    profile = load_json(profile_path)
+    profile.setdefault("content_version", 1)
+    profile["content_hash"] = semantic_content_hash(profile, "style_profile")
+    write_json(profile_path, profile)
+
+    matrix_path = DATA / "exam_style" / "question_family_matrix.json"
+    matrix = load_json(matrix_path)
+    for family in matrix.get("families", []):
+        old_count = family.pop("current_question_count", None)
+        family.setdefault("current_candidate_count", old_count if old_count is not None else 0)
+        family.setdefault("current_released_count", 0)
+    write_json(matrix_path, matrix)
+
     rules: dict[str, dict] = {}
     for path, rule in load_records(DATA / "rules"):
         rule.setdefault("content_version", 1)
@@ -104,8 +125,8 @@ def main() -> int:
 
     for path, question in load_records(DATA / "questions"):
         question.pop("allow_zero_correct", None)
+        question.pop("realism", None)
         question.setdefault("source_signal_ids", [])
-        question.setdefault("realism", None)
         write_json(path, question)
     return 0
 

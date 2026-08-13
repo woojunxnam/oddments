@@ -4,19 +4,22 @@ import argparse
 from datetime import date
 from pathlib import Path
 
-from qa_common import DATA, ROOT, load_records, question_audit_hash, write_json
+from qa_common import DATA, ROOT, load_json, load_records, question_audit_hash, write_json
+from release_context import style_profile_snapshot
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--auditor", choices=["CLAUDE", "GPT", "HUMAN"], required=True)
     parser.add_argument("--review-type", choices=["LEGAL_VERIFICATION", "REALISM_REVIEW"], required=True)
+    parser.add_argument("--audit-scope", choices=["INITIAL_BATCH", "REAUDIT"], required=True)
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--count", type=int, default=40)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    if not 30 <= args.count <= 40:
-        parser.error("--count must be between 30 and 40")
+    minimum = 30 if args.audit_scope == "INITIAL_BATCH" else 1
+    if not minimum <= args.count <= 40:
+        parser.error(f"--count must be between {minimum} and 40 for {args.audit_scope}")
     records = [record for _, record in load_records(DATA / "questions")]
     batch = records[args.start : args.start + args.count]
     if len(batch) != args.count:
@@ -30,10 +33,7 @@ def main() -> int:
         "Verdict",
         "Severity",
         "Existing_Answer_Correct",
-        "Authority",
-        "Exact_Section",
-        "Official_URL",
-        "Law_Checked_Date",
+        "authorities",
         "Problem",
         "Proposed_Answer",
         "Proposed_Rewrite",
@@ -44,7 +44,6 @@ def main() -> int:
         "Verdict",
         "Severity",
         "Realism_Verdict",
-        "Profile_ID",
         "Reviewed_Date",
         "Criteria",
         "Notes",
@@ -53,6 +52,7 @@ def main() -> int:
         "audit_id": audit_id,
         "auditor": args.auditor,
         "audit_date": audit_date,
+        "audit_scope": args.audit_scope,
         "review_type": args.review_type,
         "independent": True,
         "audit_status": "STRUCTURAL_TRIAGE_ONLY",
@@ -66,6 +66,9 @@ def main() -> int:
             ),
         },
     }
+    if args.review_type == "REALISM_REVIEW":
+        profile = load_json(DATA / "exam_style" / "mpje_style_profile.json")
+        payload["style_profile"] = style_profile_snapshot(profile)
     write_json(output, payload)
     print(f"exported {len(batch)} questions to {output}")
     return 0
