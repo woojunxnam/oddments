@@ -48,7 +48,7 @@ Realism `FAIL`은 legal conclusion이 맞는 경우에도 public MPJE-like writi
 ## Frozen input and validation
 
 - initial remote SHA check: `PASS` — `67464e7a7ff2cfe88285c7c0f0f4164e92df46cd`
-- pre-publication remote SHA check: `PENDING`
+- pre-publication remote SHA check: `PASS` — `67464e7a7ff2cfe88285c7c0f0f4164e92df46cd`
 - exact exported `question_hashes`: `PASS` — 네 frozen package에서 output으로 value-preserved
 - `python scripts/validate_all.py`: `PASS` — `all: 0 error(s), 0 warning(s)`
 - `python -m pytest -q`: `PASS` — `74 passed, 1 skipped in 3.07s`
@@ -56,6 +56,6 @@ Realism `FAIL`은 legal conclusion이 맞는 경우에도 public MPJE-like writi
 
 ## Publication
 
-- Draft PR: `PENDING`
+- Draft PR: [#10](https://github.com/woojunxnam/oddments/pull/10)
 - base: `repair/mpje-phase2-realism-v2`
 - merge: 수행하지 않음
