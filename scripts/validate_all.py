@@ -5,8 +5,12 @@ import json
 from check_answer_distribution import analyze_answer_distribution
 from check_placeholders import check_placeholders
 from detect_duplicates import detect_duplicates
-from qa_common import DATA, ROOT, QAReport, print_report, write_json
+from check_private_paths import check_private_paths
+from generate_artifacts import check_generated_artifacts
+from qa_common import DATA, QAReport, print_report
+from validate_audits import validate_audits
 from validate_drugs import validate_drugs
+from validate_governance import validate_governance
 from validate_questions import validate_questions
 from validate_rules import validate_rules
 
@@ -34,24 +38,28 @@ def main() -> int:
     combined = QAReport()
     rule_report, rules = validate_rules()
     combined.extend(rule_report)
-    drug_report, drugs = validate_drugs()
+    drug_report, drugs = validate_drugs(rules)
     combined.extend(drug_report)
-    question_report, _ = validate_questions(rules, drugs)
+    _, audits = validate_audits()
+    question_report, questions = validate_questions(rules, drugs, audits)
     combined.extend(question_report)
+    audit_report, _ = validate_audits(set(questions))
+    combined.extend(audit_report)
+    combined.extend(validate_governance(rules, questions))
     combined.extend(check_placeholders())
+    combined.extend(check_private_paths())
     combined.extend(validate_blueprint())
 
     duplicate_report = detect_duplicates()
-    write_json(ROOT / "duplicate_report.json", duplicate_report)
     if duplicate_report["finding_count"]:
         combined.error(f"duplicate detector found {duplicate_report['finding_count']} pair(s); manual review required")
 
     distribution_report, distribution_failed = analyze_answer_distribution()
-    write_json(ROOT / "answer_distribution_report.json", distribution_report)
     if distribution_report["severity"] == "WARNING":
         combined.warn("answer-position distribution exceeded warning threshold")
     elif distribution_failed:
         combined.error("answer-position distribution exceeded error threshold")
+    combined.extend(check_generated_artifacts())
 
     return print_report("all", combined)
 

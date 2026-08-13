@@ -4,11 +4,23 @@
   "title": "Independent MPJE Audit Batch",
   "type": "object",
   "additionalProperties": false,
-  "required": ["audit_id", "auditor", "audit_date", "audit_status", "question_ids", "results"],
+  "required": [
+    "audit_id",
+    "auditor",
+    "audit_date",
+    "review_type",
+    "independent",
+    "audit_status",
+    "question_ids",
+    "question_hashes",
+    "results"
+  ],
   "properties": {
     "audit_id": {"type": "string", "pattern": "^AUDIT-[A-Z0-9-]+$"},
     "auditor": {"enum": ["CLAUDE", "GPT", "HUMAN"]},
     "audit_date": {"type": "string", "format": "date"},
+    "review_type": {"enum": ["LEGAL_VERIFICATION", "REALISM_REVIEW"]},
+    "independent": {"type": "boolean"},
     "audit_status": {"enum": ["FULLY_ADJUDICATED", "STRUCTURAL_TRIAGE_ONLY"]},
     "question_ids": {
       "type": "array",
@@ -17,15 +29,33 @@
       "uniqueItems": true,
       "items": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"}
     },
+    "question_hashes": {
+      "type": "object",
+      "minProperties": 30,
+      "maxProperties": 40,
+      "patternProperties": {
+        "^MA-Q-[0-9]{4}$": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
     "results": {
       "type": "array",
       "minItems": 30,
-      "maxItems": 40,
-      "items": {"$ref": "#/$defs/result"}
+      "maxItems": 40
     }
   },
+  "allOf": [
+    {
+      "if": {"properties": {"review_type": {"const": "LEGAL_VERIFICATION"}}},
+      "then": {"properties": {"results": {"items": {"$ref": "#/$defs/legalResult"}}}}
+    },
+    {
+      "if": {"properties": {"review_type": {"const": "REALISM_REVIEW"}}},
+      "then": {"properties": {"results": {"items": {"$ref": "#/$defs/realismResult"}}}}
+    }
+  ],
   "$defs": {
-    "result": {
+    "legalResult": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -49,12 +79,63 @@
         "Existing_Answer_Correct": {"enum": ["YES", "NO", "PARTIALLY", "NOT_ASSESSED"]},
         "Authority": {"type": "string"},
         "Exact_Section": {"type": "string"},
-        "Official_URL": {"type": "string", "format": "uri"},
+        "Official_URL": {"type": "string"},
         "Law_Checked_Date": {"type": ["string", "null"], "format": "date"},
         "Problem": {"type": "string"},
         "Proposed_Answer": {"type": "string"},
         "Proposed_Rewrite": {"type": "string"},
         "Proposed_Explanation": {"type": "string"}
+      }
+    },
+    "realismResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Question_ID",
+        "Verdict",
+        "Severity",
+        "Realism_Verdict",
+        "Profile_ID",
+        "Reviewed_Date",
+        "Criteria",
+        "Notes"
+      ],
+      "properties": {
+        "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
+        "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
+        "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
+        "Realism_Verdict": {"enum": ["PASS", "FAIL"]},
+        "Profile_ID": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
+        "Reviewed_Date": {"type": "string", "format": "date"},
+        "Criteria": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "jurisprudence_reasoning",
+            "practice_plausibility",
+            "authentic_distractors",
+            "wording_not_guessable",
+            "reasoning_not_trivia",
+            "natural_rule_combination",
+            "appropriate_drug_context",
+            "distinct_from_bank",
+            "not_schedule_flashcard",
+            "public_style_without_copying"
+          ],
+          "properties": {
+            "jurisprudence_reasoning": {"type": "boolean"},
+            "practice_plausibility": {"type": "boolean"},
+            "authentic_distractors": {"type": "boolean"},
+            "wording_not_guessable": {"type": "boolean"},
+            "reasoning_not_trivia": {"type": "boolean"},
+            "natural_rule_combination": {"type": "boolean"},
+            "appropriate_drug_context": {"type": "boolean"},
+            "distinct_from_bank": {"type": "boolean"},
+            "not_schedule_flashcard": {"type": "boolean"},
+            "public_style_without_copying": {"type": "boolean"}
+          }
+        },
+        "Notes": {"type": "string"}
       }
     }
   }

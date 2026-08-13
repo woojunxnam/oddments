@@ -11,13 +11,17 @@ from qa_common import (
     VERIFIED_DRUG_STATUSES,
     VERIFIED_RULE_STATUSES,
     QAReport,
+    dependency_snapshot,
+    drug_consequence_rule_ids,
     find_placeholders,
     index_records,
     load_records,
     normalize_text,
     print_report,
+    question_audit_hash,
     validate_schema_records,
 )
+from validate_audits import validate_audits
 from validate_drugs import validate_drugs
 from validate_rules import validate_rules
 
@@ -25,17 +29,21 @@ from validate_rules import validate_rules
 def validate_questions(
     rules: dict[str, dict] | None = None,
     drugs: dict[str, dict] | None = None,
+    audits: dict[str, dict] | None = None,
 ) -> tuple[QAReport, dict[str, dict]]:
     report = QAReport()
     if rules is None:
         rule_report, rules = validate_rules()
         report.extend(rule_report)
     if drugs is None:
-        drug_report, drugs = validate_drugs()
+        drug_report, drugs = validate_drugs(rules)
         report.extend(drug_report)
     records = load_records(DATA / "questions")
     validate_schema_records(records, SCHEMAS / "question.schema.json", report)
     questions = index_records(records, "question_id", report)
+    if audits is None:
+        audit_report, audits = validate_audits(set(questions))
+        report.extend(audit_report)
     core_explanations: dict[str, list[str]] = defaultdict(list)
     family_counts: Counter[str] = Counter()
     topic_counts: Counter[str] = Counter()
@@ -51,15 +59,18 @@ def validate_questions(
         if len(choice_ids) != len(set(choice_ids)):
             report.error(f"{path}: duplicate choice ID")
         correct_ids = question.get("correct_choice_ids", [])
-        if not correct_ids and not question.get("allow_zero_correct", False):
+        if not correct_ids:
             report.error(f"{path}: missing answer")
         unknown_correct = sorted(set(correct_ids) - set(choice_ids))
         if unknown_correct:
             report.error(f"{path}: correct choice not found in choices: {unknown_correct}")
         if question.get("question_type") == "SBA" and len(correct_ids) != 1:
             report.error(f"{path}: SBA must have exactly one answer")
-        if question.get("question_type") == "SATA" and not correct_ids and not question.get("allow_zero_correct", False):
-            report.error(f"{path}: SATA has zero answers without explicit allowance")
+        if question.get("question_type") == "SATA" and not correct_ids:
+            report.error(f"{path}: SATA must have at least one answer")
+        if question.get("question_type") == "ORDERED_RESPONSE":
+            if len(correct_ids) != len(choice_ids) or set(correct_ids) != set(choice_ids):
+                report.error(f"{path}: ORDERED_RESPONSE must use every choice exactly once in the correct order")
 
         choice_analysis = question.get("explanation", {}).get("choice_analysis", {})
         missing_analysis = sorted(set(choice_ids) - set(choice_analysis))
@@ -96,16 +107,89 @@ def validate_questions(
                     report.error(f"{path}: released question references HOLD/unverified rule {rule_id}")
             for drug_id in question.get("drug_ids", []):
                 drug = drugs.get(drug_id)
-                if drug and drug.get("verification_status") not in VERIFIED_DRUG_STATUSES:
-                    report.error(f"{path}: released question references HOLD/unverified drug {drug_id}")
+                if drug:
+                    if drug.get("verification_status") not in VERIFIED_DRUG_STATUSES:
+                        report.error(f"{path}: released question references HOLD/unverified drug {drug_id}")
+                    for transitive_rule_id in sorted(drug_consequence_rule_ids(drug)):
+                        transitive_rule = rules.get(transitive_rule_id)
+                        if transitive_rule is None:
+                            continue
+                        if transitive_rule.get("status") != "CURRENT" or transitive_rule.get("status") in BLOCKED_RULE_STATUSES:
+                            report.error(
+                                f"{path}: released question drug {drug_id} depends on blocked rule "
+                                f"{transitive_rule_id} ({transitive_rule.get('status')})"
+                            )
+                        if transitive_rule.get("verification_status") not in VERIFIED_RULE_STATUSES:
+                            report.error(
+                                f"{path}: released question drug {drug_id} depends on HOLD/unverified rule "
+                                f"{transitive_rule_id}"
+                            )
             if question.get("duplicate_review_status") != "CLEAR":
                 report.error(f"{path}: released question has unresolved duplicate-family review")
-            if question.get("independent_audit_status") != "PASSED":
-                report.error(f"{path}: released question lacks passed independent audit")
-            if question.get("final_adjudication") is None:
+            final_adjudication = question.get("final_adjudication")
+            if final_adjudication is None:
                 report.error(f"{path}: released question lacks final adjudication")
+            elif final_adjudication.get("decision") != "KEEP":
+                report.error(f"{path}: released question final adjudication must be KEEP")
+            else:
+                expected_dependencies = {
+                    "rules": {rule_id: dependency_snapshot(rules[rule_id]) for rule_id in rule_ids if rule_id in rules},
+                    "drugs": {
+                        drug_id: dependency_snapshot(drugs[drug_id])
+                        for drug_id in question.get("drug_ids", [])
+                        if drug_id in drugs
+                    },
+                }
+                if final_adjudication.get("verified_dependencies") != expected_dependencies:
+                    report.error(f"{path}: adjudicated dependency versions/hashes do not match current canonical dependencies")
             if not question.get("last_legal_review"):
                 report.error(f"{path}: released question lacks legal-review date")
+            if question.get("realism") is None:
+                report.error(f"{path}: released question lacks structured realism review")
+
+            audit_ids = question.get("audits", [])
+            if not audit_ids:
+                report.error(f"{path}: released question must reference at least one canonical audit")
+            resolved_audits = []
+            for audit_id in audit_ids:
+                audit = audits.get(audit_id)
+                if audit is None:
+                    report.error(f"{path}: referenced audit does not exist: {audit_id}")
+                else:
+                    resolved_audits.append(audit)
+            current_question_hash = question_audit_hash(question)
+            legal_pass = False
+            realism_pass = False
+            for audit in resolved_audits:
+                if question.get("question_id") not in audit.get("question_ids", []):
+                    report.error(f"{path}: audit {audit.get('audit_id')} does not cover {qid}")
+                    continue
+                if audit.get("question_hashes", {}).get(qid) != current_question_hash:
+                    report.error(f"{path}: audit {audit.get('audit_id')} was not performed on current question content")
+                    continue
+                if not audit.get("independent") or audit.get("audit_status") != "FULLY_ADJUDICATED":
+                    continue
+                result = next(
+                    (item for item in audit.get("results", []) if item.get("Question_ID") == qid),
+                    None,
+                )
+                if result is None or result.get("Verdict") != "KEEP":
+                    continue
+                if audit.get("review_type") == "LEGAL_VERIFICATION" and result.get("Existing_Answer_Correct") == "YES":
+                    legal_pass = True
+                if (
+                    audit.get("review_type") == "REALISM_REVIEW"
+                    and result.get("Realism_Verdict") == "PASS"
+                    and question.get("realism")
+                    and result.get("Profile_ID") == question["realism"].get("profile_id")
+                ):
+                    realism_pass = True
+            if not legal_pass:
+                report.error(f"{path}: released question lacks a current independent fully adjudicated legal KEEP audit")
+            if not realism_pass:
+                report.error(f"{path}: released question lacks a current independent fully adjudicated realism PASS audit")
+            if question.get("independent_audit_status") != "PASSED":
+                report.error(f"{path}: released question status summary must be PASSED after stored audit gates pass")
 
         if question.get("difficulty") == 5 and len(question.get("reasoning_steps", [])) < 3:
             report.error(f"{path}: difficulty 5 requires at least three reasoning steps")
@@ -156,4 +240,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

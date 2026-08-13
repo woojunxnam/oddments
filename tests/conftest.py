@@ -43,7 +43,7 @@ def registry_indexes() -> tuple[dict, dict]:
     from validate_rules import validate_rules
 
     rule_report, rules = validate_rules()
-    drug_report, drugs = validate_drugs()
+    drug_report, drugs = validate_drugs(rules)
     assert rule_report.ok
     assert drug_report.ok
     return deepcopy(rules), deepcopy(drugs)
@@ -53,4 +53,3 @@ def write_question(temp_data: Path, question: dict, filename: str = "question.js
     directory = temp_data / "questions"
     directory.mkdir(parents=True, exist_ok=True)
     (directory / filename).write_text(json.dumps(question, indent=2) + "\n", encoding="utf-8")
-

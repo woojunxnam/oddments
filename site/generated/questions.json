@@ -2,7 +2,7 @@
   "meta": {
     "canonical_source": "data/",
     "development_fixture_mode": true,
-    "safe_to_memorize": false,
+    "release_status": "DEVELOPMENT_ONLY",
     "question_count": 10
   },
   "blueprint": {
@@ -84,7 +84,6 @@
       "correct_choice_ids": [
         "C"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Pregabalin is Schedule V, and Massachusetts independently limits a Schedule V prescription to five refills within six months after issue. The refill count is exhausted even though five months have elapsed.",
         "choice_analysis": {
@@ -119,6 +118,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-RX-CV-REFILL",
@@ -180,11 +181,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Massachusetts permits no more than five refills and none later than six months after issue.",
-            "transfer": "Apply the current federal and Massachusetts Schedule V transfer rules; this fixture does not independently establish every transfer pathway.",
-            "partial_fill": "Apply the current Schedule V dispensing and record rules; do not import Schedule II remainder rules.",
-            "masspat": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
-            "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug."
+            "refill": {
+              "summary": "Massachusetts permits no more than five refills and none later than six months after issue.",
+              "rule_ids": [
+                "MA-RX-CV-REFILL"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish every transfer pathway.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish a complete partial-fill rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -214,7 +240,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited."
+          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "MA-RX-CV-REFILL": {
+              "content_version": 1,
+              "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+            }
+          },
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
         }
       ]
     },
@@ -250,7 +296,6 @@
         "A",
         "B"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Massachusetts MassPAT reporting covers Schedule II through V dispensing and designated additional drugs. Pregabalin is Schedule V, and gabapentin is the designated Massachusetts Schedule VI additional drug in this fixture.",
         "choice_analysis": {
@@ -286,6 +331,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-PMP-REPORTING",
@@ -338,11 +385,36 @@
             "drug_of_concern": true
           },
           "legal_consequences": {
-            "refill": "Massachusetts Schedule VI prescription-validity rules apply; do not substitute the federal CIII-IV refill rule.",
-            "transfer": "Apply the current Massachusetts Schedule VI prescription-transfer rules.",
-            "partial_fill": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
-            "masspat": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin."
+            "refill": {
+              "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete refill rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete transfer rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -366,7 +438,23 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment."
+          "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
         },
         {
           "drug_id": "pregabalin",
@@ -391,11 +479,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Massachusetts permits no more than five refills and none later than six months after issue.",
-            "transfer": "Apply the current federal and Massachusetts Schedule V transfer rules; this fixture does not independently establish every transfer pathway.",
-            "partial_fill": "Apply the current Schedule V dispensing and record rules; do not import Schedule II remainder rules.",
-            "masspat": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
-            "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug."
+            "refill": {
+              "summary": "Massachusetts permits no more than five refills and none later than six months after issue.",
+              "rule_ids": [
+                "MA-RX-CV-REFILL"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish every transfer pathway.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish a complete partial-fill rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -425,7 +538,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited."
+          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "MA-RX-CV-REFILL": {
+              "content_version": 1,
+              "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+            }
+          },
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
         },
         {
           "drug_id": "pseudoephedrine",
@@ -447,11 +580,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "transfer": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "partial_fill": "Schedule II partial-fill rules do not apply.",
-            "masspat": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
-            "quantity_limit": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser."
+            "refill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription refill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription transfer analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription partial-fill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "masspat": {
+              "summary": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            }
           },
           "authorities": [
             {
@@ -469,7 +627,19 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule."
+          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-PSE-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "5e2218707971cc026bfdfdef108515f54c84ee6a7a56f5beebafb9359ba3ee84"
         }
       ]
     },
@@ -504,7 +674,6 @@
       "correct_choice_ids": [
         "B"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "The patient-requested Schedule II remainder is not a refill. Massachusetts ties completion of that remainder to the pharmacy that made the original partial dispensing and to the statutory deadline.",
         "choice_analysis": {
@@ -538,6 +707,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-CII-PARTIAL-PATIENT",
@@ -584,11 +755,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Schedule II prescriptions may not be refilled.",
-            "transfer": "A patient-requested partial-fill remainder is not a transferable refill.",
-            "partial_fill": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
-            "masspat": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met."
+            "refill": {
+              "summary": "This foundation verifies Schedule II classification but does not yet store the federal no-refill rule as a canonical dependency.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "transfer": {
+              "summary": "A patient-requested partial-fill remainder is not a transferable refill.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "masspat": {
+              "summary": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -618,7 +814,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item."
+          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CII-PARTIAL-PATIENT": {
+              "content_version": 1,
+              "content_hash": "215ab25f8d35cd6e8d4787d8f98eef739e4bb7a6898ed7c25ae7cce5efe3c3d4"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
         }
       ]
     },
@@ -653,7 +869,6 @@
       "correct_choice_ids": [
         "D"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Methylphenidate is a nonnarcotic Schedule II drug, so the narcotic issuing-state list is not the controlling branch. The prescription nevertheless fails the Massachusetts five-day presentation window on day six.",
         "choice_analysis": {
@@ -687,6 +902,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-CII-OUTSTATE",
@@ -740,11 +957,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Schedule II prescriptions may not be refilled.",
-            "transfer": "A patient-requested partial-fill remainder is not a transferable refill.",
-            "partial_fill": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
-            "masspat": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met."
+            "refill": {
+              "summary": "This foundation verifies Schedule II classification but does not yet store the federal no-refill rule as a canonical dependency.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "transfer": {
+              "summary": "A patient-requested partial-fill remainder is not a transferable refill.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "masspat": {
+              "summary": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -774,7 +1016,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item."
+          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CII-PARTIAL-PATIENT": {
+              "content_version": 1,
+              "content_hash": "215ab25f8d35cd6e8d4787d8f98eef739e4bb7a6898ed7c25ae7cce5efe3c3d4"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
         }
       ]
     },
@@ -809,7 +1071,6 @@
       "correct_choice_ids": [
         "B"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Four grams of pseudoephedrine base exceeds the 3.6-gram daily retail limit. With no prior purchases, the customer's 30-day total remains below the 9-gram limit.",
         "choice_analysis": {
@@ -841,6 +1102,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "FED-PSE-QUANTITY",
@@ -871,11 +1134,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "transfer": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "partial_fill": "Schedule II partial-fill rules do not apply.",
-            "masspat": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
-            "quantity_limit": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser."
+            "refill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription refill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription transfer analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription partial-fill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "masspat": {
+              "summary": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            }
           },
           "authorities": [
             {
@@ -893,7 +1181,19 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule."
+          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-PSE-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "5e2218707971cc026bfdfdef108515f54c84ee6a7a56f5beebafb9359ba3ee84"
         }
       ]
     },
@@ -928,7 +1228,6 @@
       "correct_choice_ids": [
         "C"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Buprenorphine-naloxone remains Schedule III. Massachusetts Policy 2024-05 recognizes a qualifying 90-day single-fill pathway for a drug used to treat opioid use disorder when all conditions are met.",
         "choice_analysis": {
@@ -965,6 +1264,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-CS-QUANTITY-II-III",
@@ -1037,11 +1338,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Schedule III federal and Massachusetts refill limits apply.",
-            "transfer": "Apply the current federal and Massachusetts Schedule III transfer rules.",
-            "partial_fill": "Do not apply Schedule II-only partial-fill remainder rules.",
-            "masspat": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met."
+            "refill": {
+              "summary": "Schedule III federal and Massachusetts refill limits apply.",
+              "rule_ids": [
+                "FED-CS-REFILL-III-IV"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation verifies Schedule III classification but does not yet establish a complete transfer rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Schedule III classification does not activate this registry's Schedule II-only partial-fill rule; a complete Schedule III partial-fill pathway is not modeled.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1065,7 +1391,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked."
+          "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-REFILL-III-IV": {
+              "content_version": 1,
+              "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
         }
       ]
     },
@@ -1103,7 +1449,6 @@
         "A",
         "C"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "This ordered item uses explicit temporal predicates rather than a debatable best-practice workflow. The request precedes the initial partial dispensing, and a later same-pharmacy remainder must be completed within the statutory outer deadline.",
         "choice_analysis": {
@@ -1136,6 +1481,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "MA-CII-PARTIAL-PATIENT",
@@ -1178,7 +1525,6 @@
       "correct_choice_ids": [
         "A"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Buprenorphine-naloxone is Schedule III. Federal law measures the six-month refill window from the prescription's issue date, and unused authorized refills do not survive that deadline.",
         "choice_analysis": {
@@ -1212,6 +1558,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "FED-CS-REFILL-III-IV",
@@ -1256,11 +1604,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Schedule III federal and Massachusetts refill limits apply.",
-            "transfer": "Apply the current federal and Massachusetts Schedule III transfer rules.",
-            "partial_fill": "Do not apply Schedule II-only partial-fill remainder rules.",
-            "masspat": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met."
+            "refill": {
+              "summary": "Schedule III federal and Massachusetts refill limits apply.",
+              "rule_ids": [
+                "FED-CS-REFILL-III-IV"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation verifies Schedule III classification but does not yet establish a complete transfer rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Schedule III classification does not activate this registry's Schedule II-only partial-fill rule; a complete Schedule III partial-fill pathway is not modeled.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1284,7 +1657,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked."
+          "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-REFILL-III-IV": {
+              "content_version": 1,
+              "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
         }
       ]
     },
@@ -1321,7 +1714,6 @@
         "B",
         "C"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "Drug classification and legal consequence must be matched separately. Pregabalin is Schedule V, gabapentin has a Massachusetts-specific Schedule VI and reporting consequence, and methylphenidate is Schedule II; CMEA controls do not make pseudoephedrine Schedule V.",
         "choice_analysis": {
@@ -1362,6 +1754,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "FED-CS-SCHEDULES",
@@ -1430,11 +1824,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Massachusetts permits no more than five refills and none later than six months after issue.",
-            "transfer": "Apply the current federal and Massachusetts Schedule V transfer rules; this fixture does not independently establish every transfer pathway.",
-            "partial_fill": "Apply the current Schedule V dispensing and record rules; do not import Schedule II remainder rules.",
-            "masspat": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
-            "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug."
+            "refill": {
+              "summary": "Massachusetts permits no more than five refills and none later than six months after issue.",
+              "rule_ids": [
+                "MA-RX-CV-REFILL"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish every transfer pathway.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation verifies Schedule V classification but does not yet establish a complete partial-fill rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1464,7 +1883,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited."
+          "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "MA-RX-CV-REFILL": {
+              "content_version": 1,
+              "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+            }
+          },
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
         },
         {
           "drug_id": "gabapentin",
@@ -1487,11 +1926,36 @@
             "drug_of_concern": true
           },
           "legal_consequences": {
-            "refill": "Massachusetts Schedule VI prescription-validity rules apply; do not substitute the federal CIII-IV refill rule.",
-            "transfer": "Apply the current Massachusetts Schedule VI prescription-transfer rules.",
-            "partial_fill": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
-            "masspat": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin."
+            "refill": {
+              "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete refill rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete transfer rule.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "masspat": {
+              "summary": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1515,7 +1979,23 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment."
+          "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
         },
         {
           "drug_id": "methylphenidate",
@@ -1539,11 +2019,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Schedule II prescriptions may not be refilled.",
-            "transfer": "A patient-requested partial-fill remainder is not a transferable refill.",
-            "partial_fill": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
-            "masspat": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
-            "quantity_limit": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met."
+            "refill": {
+              "summary": "This foundation verifies Schedule II classification but does not yet store the federal no-refill rule as a canonical dependency.",
+              "rule_ids": [
+                "FED-CS-SCHEDULES"
+              ]
+            },
+            "transfer": {
+              "summary": "A patient-requested partial-fill remainder is not a transferable refill.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
+              "rule_ids": [
+                "MA-CII-PARTIAL-PATIENT"
+              ]
+            },
+            "masspat": {
+              "summary": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met.",
+              "rule_ids": [
+                "MA-CS-QUANTITY-II-III"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1573,7 +2078,27 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "OFFICIAL_POLICY_VERIFIED",
-          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item."
+          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            },
+            "MA-CII-PARTIAL-PATIENT": {
+              "content_version": 1,
+              "content_hash": "215ab25f8d35cd6e8d4787d8f98eef739e4bb7a6898ed7c25ae7cce5efe3c3d4"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
         },
         {
           "drug_id": "pseudoephedrine",
@@ -1595,11 +2120,36 @@
             "drug_of_concern": false
           },
           "legal_consequences": {
-            "refill": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "transfer": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-            "partial_fill": "Schedule II partial-fill rules do not apply.",
-            "masspat": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
-            "quantity_limit": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser."
+            "refill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription refill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "transfer": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription transfer analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "partial_fill": {
+              "summary": "This foundation models ordinary nonprescription retail sales; prescription partial-fill analysis is outside this fixture's scope.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            },
+            "masspat": {
+              "summary": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
+              "rule_ids": [
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser.",
+              "rule_ids": [
+                "FED-PSE-QUANTITY"
+              ]
+            }
           },
           "authorities": [
             {
@@ -1617,7 +2167,19 @@
           ],
           "last_verified": "2026-08-13",
           "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule."
+          "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule.",
+          "content_version": 1,
+          "verified_rule_dependencies": {
+            "FED-PSE-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "content_hash": "5e2218707971cc026bfdfdef108515f54c84ee6a7a56f5beebafb9359ba3ee84"
         }
       ]
     },
@@ -1652,7 +2214,6 @@
       "correct_choice_ids": [
         "D"
       ],
-      "allow_zero_correct": false,
       "explanation": {
         "core_reasoning": "The controlling analysis includes both federal and Massachusetts law. Although the cited federal section addresses Schedule III and IV refills, Massachusetts separately imposes a five-refill and six-month framework on Schedule V prescriptions.",
         "choice_analysis": {
@@ -1684,6 +2245,8 @@
       "independent_audit_status": "PENDING",
       "final_adjudication": null,
       "development_fixture": true,
+      "source_signal_ids": [],
+      "realism": null,
       "authorities": [
         {
           "rule_id": "FED-CS-REFILL-III-IV",

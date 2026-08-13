@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/question_family_matrix.schema.json",
+  "title": "MPJE Question Family Design Matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["matrix_id", "profile_id", "last_reviewed", "families"],
+  "properties": {
+    "matrix_id": {"type": "string", "pattern": "^MATRIX-[A-Z0-9-]+$"},
+    "profile_id": {"type": "string", "pattern": "^MPJE-MA-[A-Z0-9-]+$"},
+    "last_reviewed": {"type": "string", "format": "date"},
+    "families": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/family"}
+    }
+  },
+  "$defs": {
+    "family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family_id",
+        "area",
+        "topic",
+        "subtopic",
+        "primary_rule_ids",
+        "secondary_rule_ids",
+        "drug_required",
+        "scenario_types",
+        "common_traps",
+        "target_difficulties",
+        "target_item_types",
+        "max_questions_in_final_bank",
+        "current_question_count"
+      ],
+      "properties": {
+        "family_id": {"type": "string", "pattern": "^[A-Z0-9]+(?:_[A-Z0-9]+)*$"},
+        "area": {"type": "integer", "minimum": 1, "maximum": 4},
+        "topic": {"type": "string", "minLength": 2},
+        "subtopic": {"type": "string", "minLength": 2},
+        "primary_rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"}
+        },
+        "secondary_rule_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"}
+        },
+        "drug_required": {"type": "boolean"},
+        "scenario_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 2}
+        },
+        "common_traps": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "target_difficulties": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": [3, 4, 5]}
+        },
+        "target_item_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["SBA", "SATA", "ORDERED_RESPONSE"]}
+        },
+        "max_questions_in_final_bank": {"type": "integer", "minimum": 1},
+        "current_question_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

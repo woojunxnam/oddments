@@ -1,47 +1,52 @@
 # Question Authoring Standard
 
-## Source-first authoring
+## Source-first independent authoring
 
-1. Add or update the controlling rule record from an official source.
-2. Record an exact section, URL, effective date when available, and verification date.
-3. Add material drug data only from authoritative label and legal sources.
-4. Write an original scenario from the verified rule. Do not paraphrase recalled or commercial questions.
-5. Keep the question `AUDIT_PENDING` until automated QA, independent audit, and adjudication pass.
+1. `docs/SOURCE_USE_POLICY.md`에 따라 source class와 permissions를 확정합니다.
+2. Official source에서 controlling rule을 검증하고 exact section·URL·date를 기록합니다.
+3. Material drug consequence가 있으면 source rule IDs와 verified dependency snapshot을 기록합니다.
+4. 허용된 Class B research가 있다면 source text가 아닌 abstract signal만 저장합니다.
+5. Official rule에서 fresh scenario와 fresh distractors를 독립적으로 설계합니다.
+6. `question_family_matrix.json`에서 family cap과 중복을 확인합니다.
+7. Automated QA, `LEGAL_VERIFICATION`, `REALISM_REVIEW`, final `KEEP` 전에는 `AUDIT_PENDING`을 유지합니다.
 
-## Item requirements
+Raw-source question -> paraphrase -> public question 변환은 금지됩니다.
 
-- `SBA`: exactly one defensible answer.
-- `SATA`: at least one correct answer unless an explicitly signaled zero-answer design is approved; the default is prohibited.
-- `ORDERED_RESPONSE`: use only when law or an authoritative procedure fixes a unique sequence. General best-practice chronology is insufficient.
-- Every choice needs a distinct rationale that explains why that choice is right or wrong.
-- The stem must include every fact needed to select the answer and exclude facts that do not alter the decision.
-- Do not use `always`, `never`, `only`, `all`, or `none` as giveaway language without legal necessity.
-- Do not make the correct option materially longer, more qualified, or more precise than all distractors.
+## Item contract
 
-## Difficulty
+- `SBA`: 정확히 1개 answer
+- `SATA`: 최소 1개 answer; zero-answer design은 schema 차원에서 불가능
+- `ORDERED_RESPONSE`: 모든 choice를 정확히 한 번 사용한 unique complete order
+- “정답 없음”을 의도하면 `None of the above.` 같은 explicit choice를 사용
+- 모든 choice에는 서로 다른 rationale 필요
+- stem에는 판단에 필요한 사실만 포함
+- `always`, `never`, `only`, `all`, `none`은 법적 필요 없이 giveaway로 사용하지 않음
+- correct option만 길거나 qualified하게 만들지 않음
 
-- `3`: one meaningful legal determination with modest application.
-- `4`: two linked determinations or a realistic exception/interaction.
-- `5`: normally at least three meaningful determinations. The `reasoning_steps` array must contain at least three distinct steps.
+## Difficulty and realism
 
-Length, obscurity, and trivia do not create difficulty.
+- `3`: 의미 있는 legal determination 1개
+- `4`: 연결된 determination 2개 또는 realistic exception/interaction
+- `5`: 통상 3개 이상의 distinct reasoning steps; schema도 최소 3개를 요구
 
-## Drug content
+Realism은 문장 복제 정도가 아니라 jurisprudence reasoning의 종류로 평가합니다. 높은 score는 plausible practice scenario, genuine legal confusion 기반 distractor, federal-state interaction, competing deadlines, exceptions, personnel scope, natural multi-rule application에서 나옵니다.
 
-Use drug data only when it materially changes the legal reasoning. Include concise generic, brand, main indication, federal status, Massachusetts status, MassPAT status when relevant, and the legal consequence being tested. Do not turn explanations into NAPLEX pharmacotherapy reviews.
+`RELEASED` question의 `realism`에는 현재 profile ID, 1-5 component scores, reviewer, date가 필요합니다. 별도의 stored `REALISM_REVIEW` audit도 PASS해야 합니다.
 
-## Explanation contract
+## Familiarity target
 
-An explanation contains:
+다음 구조를 반복 학습하게 합니다.
 
-- `core_reasoning`: the controlling rule applied to the facts;
-- `choice_analysis`: one unique rationale for every option;
-- no more than three `related_facts`;
-- one `mpje_trap` identifying the precise confusion.
+- realistic stem structure와 distractor logic
+- federal-vs-Massachusetts conflicts
+- generic/brand recognition이 법적 판단에 실제로 필요한 경우
+- deadlines와 competing clocks
+- exceptions와 personnel-scope distinctions
+- multi-step legal application
+- mixed-subject mock exams와 timed 120-question simulation
 
-No placeholder, boilerplate block, or broad citation may substitute for reasoning.
+목표는 새 MPJE question의 decision structure가 익숙해지는 것입니다. Protected question을 사실상 미리 보게 만드는 것이 아닙니다.
 
 ## Prohibited content
 
-Do not store Pre-MPJE questions, recalled MPJE questions, leaked questions, NDA-protected material, or paid/commercial question-bank text. This repository is public.
-
+Pre-MPJE content, recalled/leaked/NDA-protected items, exam dumps, screenshots/transcriptions, unlicensed commercial text, close paraphrases, embeddings와 그 derived questions는 canonical pipeline에 들어갈 수 없습니다.

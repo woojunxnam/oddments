@@ -6,6 +6,8 @@
   "additionalProperties": false,
   "required": [
     "rule_id",
+    "content_version",
+    "content_hash",
     "title",
     "jurisdiction",
     "area",
@@ -30,6 +32,8 @@
       "type": "string",
       "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
     },
+    "content_version": {"type": "integer", "minimum": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "title": {
       "type": "string",
       "minLength": 5
@@ -143,4 +147,3 @@
     }
   }
 }
-

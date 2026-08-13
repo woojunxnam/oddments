@@ -35,7 +35,13 @@ def build_site_payload(include_fixtures: bool = False) -> dict:
         "meta": {
             "canonical_source": "data/",
             "development_fixture_mode": include_fixtures,
-            "safe_to_memorize": False if include_fixtures else True,
+            "release_status": (
+                "DEVELOPMENT_ONLY"
+                if include_fixtures
+                else "RELEASE_AVAILABLE"
+                if questions
+                else "NO_RELEASED_QUESTIONS"
+            ),
             "question_count": len(questions),
         },
         "blueprint": __import__("json").loads((DATA / "blueprint.json").read_text(encoding="utf-8")),
@@ -49,7 +55,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=ROOT / "site" / "generated" / "questions.json")
     args = parser.parse_args()
     rule_report, rules = validate_rules()
-    drug_report, drugs = validate_drugs()
+    drug_report, drugs = validate_drugs(rules)
     question_report, _ = validate_questions(rules, drugs)
     rule_report.extend(drug_report)
     rule_report.extend(question_report)

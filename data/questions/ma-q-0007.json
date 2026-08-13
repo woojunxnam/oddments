@@ -9,13 +9,29 @@
   "provenance": "GEN",
   "stem": "Place these events in chronological order for a compliant patient-requested Massachusetts Schedule II partial fill when the full remainder is ultimately dispensed.",
   "choices": [
-    {"id": "A", "text": "The patient later asks the same pharmacy for some or all of the remainder."},
-    {"id": "B", "text": "Before the initial dispensing, the patient requests less than the prescribed quantity."},
-    {"id": "C", "text": "The original pharmacy completes the remainder no later than 30 days after issue."},
-    {"id": "D", "text": "The original pharmacy makes the initial partial dispensing within five days after issue."}
+    {
+      "id": "A",
+      "text": "The patient later asks the same pharmacy for some or all of the remainder."
+    },
+    {
+      "id": "B",
+      "text": "Before the initial dispensing, the patient requests less than the prescribed quantity."
+    },
+    {
+      "id": "C",
+      "text": "The original pharmacy completes the remainder no later than 30 days after issue."
+    },
+    {
+      "id": "D",
+      "text": "The original pharmacy makes the initial partial dispensing within five days after issue."
+    }
   ],
-  "correct_choice_ids": ["B", "D", "A", "C"],
-  "allow_zero_correct": false,
+  "correct_choice_ids": [
+    "B",
+    "D",
+    "A",
+    "C"
+  ],
   "explanation": {
     "core_reasoning": "This ordered item uses explicit temporal predicates rather than a debatable best-practice workflow. The request precedes the initial partial dispensing, and a later same-pharmacy remainder must be completed within the statutory outer deadline.",
     "choice_analysis": {
@@ -30,7 +46,9 @@
     ],
     "mpje_trap": "Turning a legally fixed timeline into a general operational sequence, or mixing in a different partial-fill pathway."
   },
-  "rule_ids": ["MA-CII-PARTIAL-PATIENT"],
+  "rule_ids": [
+    "MA-CII-PARTIAL-PATIENT"
+  ],
   "drug_ids": [],
   "reasoning_steps": [
     "Identify the patient-requested pathway",
@@ -45,5 +63,7 @@
   "duplicate_review_status": "PENDING",
   "independent_audit_status": "PENDING",
   "final_adjudication": null,
-  "development_fixture": true
+  "development_fixture": true,
+  "source_signal_ids": [],
+  "realism": null
 }

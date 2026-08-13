@@ -1,7 +1,9 @@
 {
   "drug_id": "gabapentin",
   "generic_name": "gabapentin",
-  "brand_names": ["Neurontin"],
+  "brand_names": [
+    "Neurontin"
+  ],
   "main_indications": [
     "Postherpetic neuralgia in adults",
     "Adjunctive treatment of partial-onset seizures"
@@ -17,11 +19,36 @@
     "drug_of_concern": true
   },
   "legal_consequences": {
-    "refill": "Massachusetts Schedule VI prescription-validity rules apply; do not substitute the federal CIII-IV refill rule.",
-    "transfer": "Apply the current Massachusetts Schedule VI prescription-transfer rules.",
-    "partial_fill": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
-    "masspat": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
-    "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin."
+    "refill": {
+      "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete refill rule.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "transfer": {
+      "summary": "This foundation records the Massachusetts Schedule VI framework but does not yet establish a complete transfer rule.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "partial_fill": {
+      "summary": "Schedule II partial-fill remainder rules do not apply merely because gabapentin is MassPAT-reportable.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "masspat": {
+      "summary": "Gabapentin is a DPH-designated additional drug and covered dispensing transactions are MassPAT-reportable.",
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ]
+    },
+    "quantity_limit": {
+      "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern gabapentin.",
+      "rule_ids": [
+        "MA-CS-QUANTITY-II-III"
+      ]
+    }
   },
   "authorities": [
     {
@@ -45,6 +72,21 @@
   ],
   "last_verified": "2026-08-13",
   "verification_status": "OFFICIAL_POLICY_VERIFIED",
-  "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment."
+  "verification_notes": "DailyMed confirms indications and no federal DEA schedule; Massachusetts regulation and the current official dispenser guide confirm Schedule VI and MassPAT treatment.",
+  "content_version": 1,
+  "verified_rule_dependencies": {
+    "FED-CS-SCHEDULES": {
+      "content_version": 1,
+      "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+    },
+    "MA-CS-QUANTITY-II-III": {
+      "content_version": 1,
+      "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+    },
+    "MA-PMP-REPORTING": {
+      "content_version": 1,
+      "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+    }
+  },
+  "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
 }
-

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/source_manifest.schema.json",
+  "title": "Research Source Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "source_class",
+    "title",
+    "publisher",
+    "url",
+    "access_type",
+    "authority_level",
+    "permission_status",
+    "legal_authority_allowed",
+    "question_text_storage_allowed",
+    "ai_processing_allowed",
+    "public_repo_allowed",
+    "notes",
+    "last_reviewed"
+  ],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^SOURCE-[A-Z0-9-]+$"},
+    "source_class": {
+      "enum": ["PUBLIC_OFFICIAL", "PUBLIC_NON_OFFICIAL", "LICENSED_PRIVATE", "CONFIDENTIAL_PROHIBITED"]
+    },
+    "title": {"type": "string", "minLength": 2},
+    "publisher": {"type": "string", "minLength": 2},
+    "url": {"type": ["string", "null"], "format": "uri"},
+    "access_type": {"enum": ["PUBLIC", "LICENSED", "CONFIDENTIAL", "UNKNOWN"]},
+    "authority_level": {"enum": ["PRIMARY_OFFICIAL", "OFFICIAL_INFORMATIONAL", "NON_AUTHORITY", "PROHIBITED"]},
+    "permission_status": {"enum": ["VERIFIED", "HOLD", "PROHIBITED"]},
+    "legal_authority_allowed": {"type": "boolean", "default": false},
+    "question_text_storage_allowed": {"type": "boolean", "default": false},
+    "ai_processing_allowed": {"type": "boolean", "default": false},
+    "public_repo_allowed": {"type": "boolean", "default": false},
+    "notes": {"type": "string"},
+    "last_reviewed": {"type": "string", "format": "date"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"access_type": {"const": "UNKNOWN"}}},
+      "then": {
+        "properties": {
+          "permission_status": {"const": "HOLD"},
+          "legal_authority_allowed": {"const": false},
+          "question_text_storage_allowed": {"const": false},
+          "ai_processing_allowed": {"const": false},
+          "public_repo_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"permission_status": {"enum": ["HOLD", "PROHIBITED"]}}},
+      "then": {
+        "properties": {
+          "legal_authority_allowed": {"const": false},
+          "question_text_storage_allowed": {"const": false},
+          "ai_processing_allowed": {"const": false},
+          "public_repo_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"source_class": {"const": "PUBLIC_NON_OFFICIAL"}}},
+      "then": {
+        "properties": {
+          "legal_authority_allowed": {"const": false},
+          "question_text_storage_allowed": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"source_class": {"const": "LICENSED_PRIVATE"}}},
+      "then": {"properties": {"public_repo_allowed": {"const": false}}}
+    },
+    {
+      "if": {"properties": {"source_class": {"const": "CONFIDENTIAL_PROHIBITED"}}},
+      "then": {
+        "properties": {
+          "permission_status": {"const": "PROHIBITED"},
+          "authority_level": {"const": "PROHIBITED"},
+          "legal_authority_allowed": {"const": false},
+          "question_text_storage_allowed": {"const": false},
+          "ai_processing_allowed": {"const": false},
+          "public_repo_allowed": {"const": false}
+        }
+      }
+    }
+  ]
+}

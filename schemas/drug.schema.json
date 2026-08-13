@@ -6,6 +6,8 @@
   "additionalProperties": false,
   "required": [
     "drug_id",
+    "content_version",
+    "content_hash",
     "generic_name",
     "brand_names",
     "main_indications",
@@ -13,6 +15,7 @@
     "federal_status",
     "massachusetts_status",
     "legal_consequences",
+    "verified_rule_dependencies",
     "authorities",
     "last_verified",
     "verification_status",
@@ -23,6 +26,8 @@
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
+    "content_version": {"type": "integer", "minimum": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "generic_name": {"type": "string", "minLength": 2},
     "brand_names": {
       "type": "array",
@@ -47,12 +52,19 @@
       "additionalProperties": false,
       "required": ["refill", "transfer", "partial_fill", "masspat", "quantity_limit"],
       "properties": {
-        "refill": {"type": "string"},
-        "transfer": {"type": "string"},
-        "partial_fill": {"type": "string"},
-        "masspat": {"type": "string"},
-        "quantity_limit": {"type": "string"}
+        "refill": {"$ref": "#/$defs/legalConsequence"},
+        "transfer": {"$ref": "#/$defs/legalConsequence"},
+        "partial_fill": {"$ref": "#/$defs/legalConsequence"},
+        "masspat": {"$ref": "#/$defs/legalConsequence"},
+        "quantity_limit": {"$ref": "#/$defs/legalConsequence"}
       }
+    },
+    "verified_rule_dependencies": {
+      "type": "object",
+      "patternProperties": {
+        "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$": {"$ref": "#/$defs/dependencySnapshot"}
+      },
+      "additionalProperties": false
     },
     "authorities": {
       "type": "array",
@@ -66,6 +78,29 @@
     "verification_notes": {"type": "string"}
   },
   "$defs": {
+    "dependencySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_version", "content_hash"],
+      "properties": {
+        "content_version": {"type": "integer", "minimum": 1},
+        "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "legalConsequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "rule_ids"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 3},
+        "rule_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"}
+        }
+      }
+    },
     "federalStatus": {
       "type": "object",
       "additionalProperties": false,
@@ -117,4 +152,3 @@
     }
   }
 }
-

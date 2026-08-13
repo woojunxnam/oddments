@@ -297,7 +297,8 @@ function renderDrugChecks(drugs) {
         <dt>Federal</dt><dd>${escapeHtml(drug.federal_status.schedule)}</dd>
         <dt>Massachusetts</dt><dd>${escapeHtml(drug.massachusetts_status.schedule)}</dd>
         <dt>MassPAT</dt><dd>${drug.massachusetts_status.masspat_reportable ? "Reportable" : "Not reportable on status alone"}</dd>
-        <dt>Consequence</dt><dd>${escapeHtml(drug.legal_consequences.masspat)} ${escapeHtml(drug.legal_consequences.quantity_limit)}</dd>
+        <dt>Consequence</dt><dd>${escapeHtml(drug.legal_consequences.masspat.summary)} ${escapeHtml(drug.legal_consequences.quantity_limit.summary)}</dd>
+        <dt>Rule IDs</dt><dd>${[...new Set([...drug.legal_consequences.masspat.rule_ids, ...drug.legal_consequences.quantity_limit.rule_ids])].map(escapeHtml).join(", ")}</dd>
       </dl>`;
     return card;
   }));

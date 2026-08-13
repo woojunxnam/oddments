@@ -1,7 +1,9 @@
 {
   "drug_id": "pregabalin",
   "generic_name": "pregabalin",
-  "brand_names": ["Lyrica"],
+  "brand_names": [
+    "Lyrica"
+  ],
   "main_indications": [
     "Neuropathic pain associated with diabetic peripheral neuropathy or spinal cord injury",
     "Postherpetic neuralgia",
@@ -19,11 +21,36 @@
     "drug_of_concern": false
   },
   "legal_consequences": {
-    "refill": "Massachusetts permits no more than five refills and none later than six months after issue.",
-    "transfer": "Apply the current federal and Massachusetts Schedule V transfer rules; this fixture does not independently establish every transfer pathway.",
-    "partial_fill": "Apply the current Schedule V dispensing and record rules; do not import Schedule II remainder rules.",
-    "masspat": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
-    "quantity_limit": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug."
+    "refill": {
+      "summary": "Massachusetts permits no more than five refills and none later than six months after issue.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    "transfer": {
+      "summary": "This foundation verifies Schedule V classification but does not yet establish every transfer pathway.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "partial_fill": {
+      "summary": "This foundation verifies Schedule V classification but does not yet establish a complete partial-fill rule.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "masspat": {
+      "summary": "Report covered dispensing transactions to MassPAT under the current dispenser standard.",
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ]
+    },
+    "quantity_limit": {
+      "summary": "The Massachusetts Schedule II and III quantity policy does not directly govern this Schedule V drug.",
+      "rule_ids": [
+        "MA-CS-QUANTITY-II-III"
+      ]
+    }
   },
   "authorities": [
     {
@@ -53,6 +80,25 @@
   ],
   "last_verified": "2026-08-13",
   "verification_status": "PRIMARY_VERIFIED",
-  "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited."
+  "verification_notes": "Identity and indications were checked against DailyMed; schedule, MA refill consequence, and MassPAT status were checked against official legal sources. Transfer text is intentionally scope-limited.",
+  "content_version": 1,
+  "verified_rule_dependencies": {
+    "FED-CS-SCHEDULES": {
+      "content_version": 1,
+      "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+    },
+    "MA-CS-QUANTITY-II-III": {
+      "content_version": 1,
+      "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+    },
+    "MA-PMP-REPORTING": {
+      "content_version": 1,
+      "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+    },
+    "MA-RX-CV-REFILL": {
+      "content_version": 1,
+      "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+    }
+  },
+  "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
 }
-

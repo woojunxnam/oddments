@@ -11,6 +11,9 @@ def test_all_canonical_records_validate_against_schemas(root: Path) -> None:
         "rules": "rule.schema.json",
         "drugs": "drug.schema.json",
         "questions": "question.schema.json",
+        "audits": "audit.schema.json",
+        "source_manifests": "source_manifest.schema.json",
+        "source_signals": "source_signal.schema.json",
     }
     errors = []
     for registry, schema_name in registries.items():
@@ -21,6 +24,16 @@ def test_all_canonical_records_validate_against_schemas(root: Path) -> None:
             for error in validator.iter_errors(record):
                 errors.append(f"{path}: {error.message}")
     assert errors == []
+
+    standalone = {
+        root / "data" / "exam_style" / "mpje_style_profile.json": "exam_style_profile.schema.json",
+        root / "data" / "exam_style" / "question_family_matrix.json": "question_family_matrix.schema.json",
+    }
+    for path, schema_name in standalone.items():
+        schema = json.loads((root / "schemas" / schema_name).read_text(encoding="utf-8"))
+        record = json.loads(path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+        assert list(validator.iter_errors(record)) == []
 
 
 def test_valid_question_fixture_passes_registry_validation(tmp_path, monkeypatch, canonical_question, registry_indexes) -> None:
@@ -34,4 +47,3 @@ def test_valid_question_fixture_passes_registry_validation(tmp_path, monkeypatch
     report, questions = module.validate_questions(rules, drugs)
     assert report.errors == []
     assert list(questions) == ["MA-Q-0001"]
-

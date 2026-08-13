@@ -1,7 +1,9 @@
 {
   "drug_id": "pseudoephedrine",
   "generic_name": "pseudoephedrine",
-  "brand_names": ["Sudafed"],
+  "brand_names": [
+    "Sudafed"
+  ],
   "main_indications": [
     "Temporary relief of nasal and sinus congestion associated with colds or upper respiratory allergies"
   ],
@@ -16,11 +18,36 @@
     "drug_of_concern": false
   },
   "legal_consequences": {
-    "refill": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-    "transfer": "Not applicable to ordinary nonprescription pseudoephedrine sales.",
-    "partial_fill": "Schedule II partial-fill rules do not apply.",
-    "masspat": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
-    "quantity_limit": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser."
+    "refill": {
+      "summary": "This foundation models ordinary nonprescription retail sales; prescription refill analysis is outside this fixture's scope.",
+      "rule_ids": [
+        "FED-PSE-QUANTITY"
+      ]
+    },
+    "transfer": {
+      "summary": "This foundation models ordinary nonprescription retail sales; prescription transfer analysis is outside this fixture's scope.",
+      "rule_ids": [
+        "FED-PSE-QUANTITY"
+      ]
+    },
+    "partial_fill": {
+      "summary": "This foundation models ordinary nonprescription retail sales; prescription partial-fill analysis is outside this fixture's scope.",
+      "rule_ids": [
+        "FED-PSE-QUANTITY"
+      ]
+    },
+    "masspat": {
+      "summary": "Ordinary nonprescription pseudoephedrine sales are not MassPAT dispensing transactions solely because of CMEA controls.",
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ]
+    },
+    "quantity_limit": {
+      "summary": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser.",
+      "rule_ids": [
+        "FED-PSE-QUANTITY"
+      ]
+    }
   },
   "authorities": [
     {
@@ -38,5 +65,17 @@
   ],
   "last_verified": "2026-08-13",
   "verification_status": "PRIMARY_VERIFIED",
-  "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule."
+  "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule.",
+  "content_version": 1,
+  "verified_rule_dependencies": {
+    "FED-PSE-QUANTITY": {
+      "content_version": 1,
+      "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+    },
+    "MA-PMP-REPORTING": {
+      "content_version": 1,
+      "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+    }
+  },
+  "content_hash": "5e2218707971cc026bfdfdef108515f54c84ee6a7a56f5beebafb9359ba3ee84"
 }

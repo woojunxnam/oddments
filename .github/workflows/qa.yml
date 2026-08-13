@@ -34,3 +34,6 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+
+      - name: Prove tracked generated artifacts are current
+        run: python scripts/generate_artifacts.py --write && git diff --exit-code

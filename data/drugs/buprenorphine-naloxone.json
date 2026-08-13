@@ -1,7 +1,9 @@
 {
   "drug_id": "buprenorphine-naloxone",
   "generic_name": "buprenorphine and naloxone",
-  "brand_names": ["Suboxone"],
+  "brand_names": [
+    "Suboxone"
+  ],
   "main_indications": [
     "Treatment of opioid dependence as part of a complete treatment plan"
   ],
@@ -16,11 +18,36 @@
     "drug_of_concern": false
   },
   "legal_consequences": {
-    "refill": "Schedule III federal and Massachusetts refill limits apply.",
-    "transfer": "Apply the current federal and Massachusetts Schedule III transfer rules.",
-    "partial_fill": "Do not apply Schedule II-only partial-fill remainder rules.",
-    "masspat": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
-    "quantity_limit": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met."
+    "refill": {
+      "summary": "Schedule III federal and Massachusetts refill limits apply.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    "transfer": {
+      "summary": "This foundation verifies Schedule III classification but does not yet establish a complete transfer rule.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "partial_fill": {
+      "summary": "Schedule III classification does not activate this registry's Schedule II-only partial-fill rule; a complete Schedule III partial-fill pathway is not modeled.",
+      "rule_ids": [
+        "FED-CS-SCHEDULES"
+      ]
+    },
+    "masspat": {
+      "summary": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ]
+    },
+    "quantity_limit": {
+      "summary": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met.",
+      "rule_ids": [
+        "MA-CS-QUANTITY-II-III"
+      ]
+    }
   },
   "authorities": [
     {
@@ -44,6 +71,25 @@
   ],
   "last_verified": "2026-08-13",
   "verification_status": "OFFICIAL_POLICY_VERIFIED",
-  "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked."
+  "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked.",
+  "content_version": 1,
+  "verified_rule_dependencies": {
+    "FED-CS-REFILL-III-IV": {
+      "content_version": 1,
+      "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+    },
+    "FED-CS-SCHEDULES": {
+      "content_version": 1,
+      "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+    },
+    "MA-CS-QUANTITY-II-III": {
+      "content_version": 1,
+      "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+    },
+    "MA-PMP-REPORTING": {
+      "content_version": 1,
+      "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+    }
+  },
+  "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
 }
-

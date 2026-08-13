@@ -8,6 +8,7 @@ from qa_common import (
     index_records,
     load_records,
     print_report,
+    semantic_content_hash,
     validate_schema_records,
 )
 
@@ -28,6 +29,9 @@ def validate_rules() -> tuple[QAReport, dict[str, dict]]:
                 report.error(f"{path}: authority missing source section")
         if not rule.get("last_verified"):
             report.error(f"{path}: missing verification date")
+        expected_hash = semantic_content_hash(rule, "rule")
+        if rule.get("content_hash") != expected_hash:
+            report.error(f"{path}: content_hash mismatch; run scripts/update_content_hashes.py")
         for related_id in rule.get("related_rule_ids", []):
             if related_id not in rules:
                 report.error(f"{path}: unknown related_rule_id {related_id}")
@@ -44,4 +48,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

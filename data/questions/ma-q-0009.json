@@ -9,13 +9,28 @@
   "provenance": "GEN",
   "stem": "Which drug-status and Massachusetts legal-consequence pairings are accurate? Select all that apply.",
   "choices": [
-    {"id": "A", "text": "Pregabalin is Schedule V, and covered dispensing is MassPAT-reportable."},
-    {"id": "B", "text": "Gabapentin is federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."},
-    {"id": "C", "text": "Methylphenidate is Schedule II and may not be refilled."},
-    {"id": "D", "text": "Pseudoephedrine is Schedule V because CMEA restricts retail sales."}
+    {
+      "id": "A",
+      "text": "Pregabalin is Schedule V, and covered dispensing is MassPAT-reportable."
+    },
+    {
+      "id": "B",
+      "text": "Gabapentin is federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."
+    },
+    {
+      "id": "C",
+      "text": "Methylphenidate is Schedule II and may not be refilled."
+    },
+    {
+      "id": "D",
+      "text": "Pseudoephedrine is Schedule V because CMEA restricts retail sales."
+    }
   ],
-  "correct_choice_ids": ["A", "B", "C"],
-  "allow_zero_correct": false,
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
   "explanation": {
     "core_reasoning": "Drug classification and legal consequence must be matched separately. Pregabalin is Schedule V, gabapentin has a Massachusetts-specific Schedule VI and reporting consequence, and methylphenidate is Schedule II; CMEA controls do not make pseudoephedrine Schedule V.",
     "choice_analysis": {
@@ -30,8 +45,18 @@
     ],
     "mpje_trap": "Converting every monitored or restricted product into a federally scheduled drug."
   },
-  "rule_ids": ["FED-CS-SCHEDULES", "MA-PMP-REPORTING", "MA-RX-CV-REFILL", "FED-PSE-QUANTITY"],
-  "drug_ids": ["pregabalin", "gabapentin", "methylphenidate", "pseudoephedrine"],
+  "rule_ids": [
+    "FED-CS-SCHEDULES",
+    "MA-PMP-REPORTING",
+    "MA-RX-CV-REFILL",
+    "FED-PSE-QUANTITY"
+  ],
+  "drug_ids": [
+    "pregabalin",
+    "gabapentin",
+    "methylphenidate",
+    "pseudoephedrine"
+  ],
   "reasoning_steps": [
     "Identify each federal status",
     "Identify each Massachusetts schedule",
@@ -45,6 +70,7 @@
   "duplicate_review_status": "PENDING",
   "independent_audit_status": "PENDING",
   "final_adjudication": null,
-  "development_fixture": true
+  "development_fixture": true,
+  "source_signal_ids": [],
+  "realism": null
 }
-

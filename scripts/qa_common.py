@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import re
 from collections import Counter
@@ -28,6 +29,60 @@ HEDGE_WORDS = re.compile(
 BLOCKED_RULE_STATUSES = {"DRAFT", "SUPERSEDED", "TEMPORARY", "UNCLEAR"}
 VERIFIED_RULE_STATUSES = {"PRIMARY_VERIFIED", "OFFICIAL_POLICY_VERIFIED"}
 VERIFIED_DRUG_STATUSES = {"PRIMARY_VERIFIED", "OFFICIAL_POLICY_VERIFIED"}
+
+SEMANTIC_FIELDS = {
+    "rule": (
+        "rule_id",
+        "title",
+        "jurisdiction",
+        "area",
+        "topic",
+        "subtopic",
+        "rule_summary",
+        "exam_relevance",
+        "authority",
+        "status",
+        "effective_date",
+        "supersedes",
+        "numeric_facts",
+        "exceptions",
+        "common_confusions",
+        "related_rule_ids",
+        "verification_status",
+    ),
+    "drug": (
+        "drug_id",
+        "generic_name",
+        "brand_names",
+        "main_indications",
+        "therapeutic_class",
+        "federal_status",
+        "massachusetts_status",
+        "legal_consequences",
+        "authorities",
+        "verified_rule_dependencies",
+        "verification_status",
+    ),
+}
+
+QUESTION_AUDIT_FIELDS = (
+    "question_id",
+    "family_id",
+    "area",
+    "topic",
+    "subtopic",
+    "difficulty",
+    "question_type",
+    "provenance",
+    "source_signal_ids",
+    "stem",
+    "choices",
+    "correct_choice_ids",
+    "explanation",
+    "rule_ids",
+    "drug_ids",
+    "reasoning_steps",
+)
 
 
 @dataclass
@@ -57,6 +112,54 @@ def load_json(path: Path) -> Any:
 def write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _canonicalize(value: Any, *, sort_lists: bool) -> Any:
+    if isinstance(value, str):
+        return " ".join(value.split())
+    if isinstance(value, dict):
+        return {key: _canonicalize(value[key], sort_lists=sort_lists) for key in sorted(value)}
+    if isinstance(value, list):
+        normalized = [_canonicalize(item, sort_lists=sort_lists) for item in value]
+        if sort_lists:
+            return sorted(
+                normalized,
+                key=lambda item: json.dumps(item, ensure_ascii=False, sort_keys=True, separators=(",", ":")),
+            )
+        return normalized
+    return value
+
+
+def deterministic_hash(value: Any, *, sort_lists: bool = False) -> str:
+    canonical = _canonicalize(value, sort_lists=sort_lists)
+    encoded = json.dumps(canonical, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def semantic_content_hash(record: dict[str, Any], record_type: str) -> str:
+    fields = SEMANTIC_FIELDS[record_type]
+    semantic = {field: record.get(field) for field in fields}
+    return deterministic_hash(semantic, sort_lists=True)
+
+
+def dependency_snapshot(record: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "content_version": record.get("content_version"),
+        "content_hash": record.get("content_hash"),
+    }
+
+
+def question_audit_hash(question: dict[str, Any]) -> str:
+    content = {field: question.get(field) for field in QUESTION_AUDIT_FIELDS}
+    return deterministic_hash(content)
+
+
+def drug_consequence_rule_ids(drug: dict[str, Any]) -> set[str]:
+    rule_ids: set[str] = set()
+    for consequence in drug.get("legal_consequences", {}).values():
+        if isinstance(consequence, dict):
+            rule_ids.update(consequence.get("rule_ids", []))
+    return rule_ids
 
 
 def iter_json_files(directory: Path) -> list[Path]:
@@ -159,4 +262,3 @@ def print_report(label: str, report: QAReport) -> int:
         print(f"ERROR [{label}] {error}")
     print(f"{label}: {len(report.errors)} error(s), {len(report.warnings)} warning(s)")
     return 0 if report.ok else 1
-

@@ -28,9 +28,8 @@ def test_blank_answer_rejected(tmp_path, monkeypatch, canonical_question, regist
 def test_zero_answer_sata_rejected(tmp_path, monkeypatch, canonical_sata, registry_indexes) -> None:
     question = deepcopy(canonical_sata)
     question["correct_choice_ids"] = []
-    question["allow_zero_correct"] = False
     report = run_question_validation(tmp_path, monkeypatch, question, registry_indexes)
-    assert any("SATA has zero answers" in error for error in report.errors)
+    assert any("SATA must have at least one answer" in error for error in report.errors)
 
 
 @pytest.mark.parametrize("placeholder", ["TODO", "TBD", "FIXME", "{drug_ref(x)}", "{d.indication}"])
@@ -138,4 +137,3 @@ def test_released_question_referencing_hold_drug_rejected(
     drugs[blocked_id]["verification_status"] = "HOLD"
     report, _ = module.validate_questions(rules, drugs)
     assert any(f"released question references HOLD/unverified drug {blocked_id}" in error for error in report.errors)
-
