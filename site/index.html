@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Source-first Massachusetts MPJE study and audit system." />
+    <title>Massachusetts MPJE Study System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Source-first pharmacy law</p>
+        <h1>Massachusetts MPJE Study System</h1>
+        <p class="lede">Canonical rules, auditable questions, and no recalled exam content.</p>
+      </div>
+      <button id="bookmark-button" class="ghost-button" type="button" disabled>Bookmark</button>
+    </header>
+
+    <div id="fixture-warning" class="warning-banner" hidden>
+      Development fixtures are visible. They are <strong>AUDIT_PENDING</strong> and are not declared safe to memorize.
+    </div>
+
+    <main>
+      <section class="mode-panel" aria-labelledby="mode-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose a workflow</p>
+            <h2 id="mode-heading">Start a session</h2>
+          </div>
+          <p id="data-summary" class="status-copy">Loading canonical site data...</p>
+        </div>
+
+        <div class="mode-grid">
+          <button type="button" data-mode="study">Study Mode</button>
+          <button type="button" data-mode="random">Random Quiz</button>
+          <button type="button" data-mode="mock">Mock Exam</button>
+          <button type="button" data-mode="drug">Drug Drill</button>
+          <button type="button" data-mode="browse">Browse by Subject</button>
+        </div>
+
+        <div class="filters" aria-label="Question filters">
+          <label>Area<select id="area-filter"><option value="">All areas</option></select></label>
+          <label>Topic<select id="topic-filter"><option value="">All topics</option></select></label>
+          <label>Difficulty<select id="difficulty-filter"><option value="">All levels</option></select></label>
+          <label>Question type<select id="type-filter"><option value="">All types</option></select></label>
+          <label class="checkbox-filter"><input id="drug-filter" type="checkbox" /> Drug questions only</label>
+        </div>
+      </section>
+
+      <section id="empty-state" class="empty-state">
+        <h2>Foundation build</h2>
+        <p>Select a mode to inspect the small development fixture set. Released data remains empty until independent audit and adjudication pass.</p>
+      </section>
+
+      <section id="question-panel" class="question-panel" hidden aria-live="polite">
+        <div class="question-meta">
+          <span id="question-position"></span>
+          <span id="question-area"></span>
+          <span id="question-difficulty"></span>
+          <span id="question-type"></span>
+        </div>
+        <h2 id="question-stem"></h2>
+        <p id="ordered-help" class="ordered-help" hidden>Select the steps in the order they should occur.</p>
+        <form id="choice-form" class="choices"></form>
+        <p id="selected-order" class="selected-order" hidden></p>
+
+        <div class="question-actions">
+          <button id="check-answer" type="button">Check Answer</button>
+          <button id="reveal-answer" class="secondary-button" type="button" hidden>Reveal Answer</button>
+          <button id="reset-order" class="secondary-button" type="button" hidden>Reset Order</button>
+          <button id="next-question" class="ghost-button" type="button" disabled>Next</button>
+        </div>
+
+        <div id="result" class="result" hidden></div>
+
+        <details id="explanation" class="explanation" hidden>
+          <summary>Explanation and source audit</summary>
+          <div class="explanation-grid">
+            <section>
+              <h3>Correct Answer</h3>
+              <p id="correct-answer"></p>
+            </section>
+            <section>
+              <h3>Why</h3>
+              <p id="core-reasoning"></p>
+            </section>
+            <section class="full-width">
+              <h3>Choice-by-choice analysis</h3>
+              <dl id="choice-analysis"></dl>
+            </section>
+            <section id="drug-check-section" class="full-width" hidden>
+              <h3>Drug Check</h3>
+              <div id="drug-checks" class="drug-grid"></div>
+            </section>
+            <section>
+              <h3>Related Facts</h3>
+              <ul id="related-facts"></ul>
+            </section>
+            <section>
+              <h3>MPJE Trap</h3>
+              <p id="mpje-trap"></p>
+            </section>
+            <section class="full-width">
+              <details class="authority-details">
+                <summary>Authority / Last Verified</summary>
+                <ul id="authorities"></ul>
+              </details>
+            </section>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>No backend, authentication, analytics, or personal data collection. Progress is stored only in this browser.</p>
+    </footer>
+
+    <script src="shuffle.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
