@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/drug.schema.json",
+  "title": "MPJE Drug Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "drug_id",
+    "generic_name",
+    "brand_names",
+    "main_indications",
+    "therapeutic_class",
+    "federal_status",
+    "massachusetts_status",
+    "legal_consequences",
+    "authorities",
+    "last_verified",
+    "verification_status",
+    "verification_notes"
+  ],
+  "properties": {
+    "drug_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "generic_name": {"type": "string", "minLength": 2},
+    "brand_names": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "main_indications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3, "maxLength": 180}
+    },
+    "therapeutic_class": {"type": "string", "minLength": 2},
+    "federal_status": {
+      "$ref": "#/$defs/federalStatus"
+    },
+    "massachusetts_status": {
+      "$ref": "#/$defs/massachusettsStatus"
+    },
+    "legal_consequences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["refill", "transfer", "partial_fill", "masspat", "quantity_limit"],
+      "properties": {
+        "refill": {"type": "string"},
+        "transfer": {"type": "string"},
+        "partial_fill": {"type": "string"},
+        "masspat": {"type": "string"},
+        "quantity_limit": {"type": "string"}
+      }
+    },
+    "authorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/authority"}
+    },
+    "last_verified": {"type": "string", "format": "date"},
+    "verification_status": {
+      "enum": ["HOLD", "PRIMARY_VERIFIED", "OFFICIAL_POLICY_VERIFIED"]
+    },
+    "verification_notes": {"type": "string"}
+  },
+  "$defs": {
+    "federalStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["controlled", "schedule"],
+      "properties": {
+        "controlled": {"type": "boolean"},
+        "schedule": {"enum": ["I", "II", "III", "IV", "V", "NONCONTROLLED"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"controlled": {"const": false}}},
+          "then": {"properties": {"schedule": {"const": "NONCONTROLLED"}}}
+        },
+        {
+          "if": {"properties": {"controlled": {"const": true}}},
+          "then": {"properties": {"schedule": {"enum": ["I", "II", "III", "IV", "V"]}}}
+        }
+      ]
+    },
+    "massachusettsStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schedule", "masspat_reportable", "drug_of_concern"],
+      "properties": {
+        "schedule": {"enum": ["I", "II", "III", "IV", "V", "VI", "NONCONTROLLED"]},
+        "masspat_reportable": {"type": "boolean"},
+        "drug_of_concern": {"type": "boolean"}
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "name", "section", "url"],
+      "properties": {
+        "type": {
+          "enum": [
+            "FDA_LABEL",
+            "FEDERAL_REGULATION",
+            "FEDERAL_STATUTE",
+            "STATE_REGULATION",
+            "BOARD_POLICY",
+            "OFFICIAL_GUIDANCE"
+          ]
+        },
+        "name": {"type": "string", "minLength": 2},
+        "section": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    }
+  }
+}
+
