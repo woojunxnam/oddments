@@ -8,54 +8,55 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A retail collaborating pharmacist issues an authorized Schedule VI prescription for a referred diagnosis. Select all supported duties.",
+  "stem": "During a controlled-substance review, a retail collaborating pharmacist issues an authorized Schedule VI prescription for a referred diagnosis. Select all supported duties.",
   "choices": [
     {
       "id": "A",
-      "text": "Keep the prescription within the diagnosis and agreement scope."
+      "text": "At this stage, add Schedule II refills to the same prescription."
     },
     {
       "id": "B",
-      "text": "Add Schedule II refills to the same prescription."
+      "text": "For this scenario, keep the prescription within the diagnosis and agreement scope."
     },
     {
       "id": "C",
-      "text": "Send a copy of the prescription to the supervising physician within 24 hours."
+      "text": "Under these facts, send a copy of the prescription to the supervising physician within 24 hours."
     },
     {
       "id": "D",
-      "text": "Delay notice until the biennial agreement renewal."
+      "text": "Given the described event, delay notice until the biennial agreement renewal."
     },
     {
       "id": "E",
-      "text": "Use the authority for an unrelated walk-in diagnosis."
+      "text": "In this setting, the pharmacist must document the authorized Schedule VI prescription within the patient-specific collaborative workflow."
     }
   ],
   "correct_choice_ids": [
-    "A",
-    "C"
+    "B",
+    "C",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Apply each proposition independently. A properly authorized retail collaborating pharmacist may issue Schedule VI prescriptions for the referred diagnosis and must send a copy to the supervising physician within 24 hours.",
+    "core_reasoning": "Assess each proposition in 'During a controlled-substance review, a retail collaborating pharmacist issues an authorized Schedule VI prescription for a referred diagnosis. Select all supported duties.' independently. 'For this scenario, keep the prescription within the diagnosis and agreement scope.' satisfies Schedule VI; 'At this stage, add Schedule II refills to the same prescription.' changes its legal premise.",
     "choice_analysis": {
-      "A": "The proposition 'Keep the prescription within the diagnosis and agreement scope.' is supported by Retail CDTM Schedule VI prescribing: A properly authorized retail collaborating pharmacist may issue Schedule VI prescriptions for the referred diagnosis and must send a copy to the supervising physician within 24 hours.",
-      "B": "This statement imports Schedule II prescriptions may not be refilled without its required trigger and is not supported by the scenario.",
-      "C": "The proposition 'Send a copy of the prescription to the supervising physician within 24 hours.' is supported by Retail CDTM Schedule VI prescribing: A properly authorized retail collaborating pharmacist may issue Schedule VI prescriptions for the referred diagnosis and must send a copy to the supervising physician within 24 hours.",
-      "D": "This statement imports Massachusetts Schedule VI prescription-drug status without its required trigger and is not supported by the scenario.",
-      "E": "This statement imports Schedule II partial fill caused by pharmacy inability without its required trigger and is not supported by the scenario."
+      "A": "'At this stage, add Schedule II refills to the same prescription.': Schedule VI contradicts this proposition.",
+      "B": "'For this scenario, keep the prescription within the diagnosis and agreement scope.': Schedule VI supports this proposition.",
+      "C": "'Under these facts, send a copy of the prescription to the supervising physician within 24 hours.': Schedule VI supports this proposition.",
+      "D": "'Given the described event, delay notice until the biennial agreement renewal.': Schedule VI contradicts this proposition.",
+      "E": "'In this setting, the pharmacist must document the authorized Schedule VI prescription within the patient-specific collaborative workflow.': Schedule VI supports this proposition."
     },
     "related_facts": [
       "A properly authorized retail collaborating pharmacist may issue Schedule VI prescriptions for the referred diagnosis and must send a copy to the supervising physician within 24 hours."
     ],
-    "mpje_trap": "Selecting a familiar statement without checking whether its schedule, setting, deadline, and exception match the facts."
+    "mpje_trap": "Answer positions prove nothing. Test 'At this stage, add Schedule II refills to the same prescription.' independently, then analyze the rest."
   },
   "rule_ids": [
     "MA-CDTM-SVI-RX"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Retail CDTM Schedule VI prescribing",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Retail CDTM Schedule VI prescribing",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Schedule VI"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

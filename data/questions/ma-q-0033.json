@@ -8,46 +8,46 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Restoril prescription reaches six months after issue with one authorized refill unused. What should the pharmacist do?",
+  "stem": "A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?",
   "choices": [
     {
       "id": "A",
-      "text": "Use the out-of-state prescription rule when its schedule, age, and verification conditions have not been checked."
+      "text": "Dispense because one authorized refill remains on the profile."
     },
     {
       "id": "B",
-      "text": "Process another refill because an authorization written by the prescriber overrides schedule limits."
+      "text": "Measure six months from the most recent refill date."
     },
     {
       "id": "C",
-      "text": "Decline the refill because the federal issue-date window has ended."
+      "text": "Decline the refill because the prescription is now more than six months past its issue date."
     },
     {
       "id": "D",
-      "text": "Treat the request as an insufficient-stock partial fill and use the 72-hour remainder rule."
+      "text": "Transfer the record and let the receiving pharmacy restart the clock."
     },
     {
       "id": "E",
-      "text": "Handle the drug or transaction as ordinary Massachusetts Schedule VI activity."
+      "text": "Use the Massachusetts 30-day Schedule II validity rule."
     }
   ],
   "correct_choice_ids": [
     "C"
   ],
   "explanation": {
-    "core_reasoning": "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner. temazepam (Restoril) is used for short-term treatment of insomnia. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+    "core_reasoning": "'Decline the refill because the prescription is now more than six months past its issue date.' is the governing result. By contrast, 'Dispense because one authorized refill remains on the profile.' would require that unused authorization survived after the prescription became more than six months old. The decisive cue appears in 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?'.",
     "choice_analysis": {
-      "A": "That choice belongs, if at all, to Out-of-state Schedule III through VI prescriptions; its trigger does not match this scenario.",
-      "B": "That choice belongs, if at all, to Federal Schedule III and IV refill limits; its trigger does not match this scenario.",
-      "C": "This applies Federal Schedule III and IV refill limits: A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner.",
-      "D": "That choice belongs, if at all, to Schedule II partial fill caused by pharmacy inability; its trigger does not match this scenario.",
-      "E": "That choice belongs, if at all, to Massachusetts Schedule VI prescription-drug status; its trigger does not match this scenario."
+      "A": "'Dispense because one authorized refill remains on the profile.' would apply only if unused authorization survived after the prescription became more than six months old; 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?' states otherwise.",
+      "B": "'Measure six months from the most recent refill date.' would apply only if 21 CFR 1306.22 measured from last dispensing rather than issue; 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?' states otherwise.",
+      "C": "'Decline the refill because the prescription is now more than six months past its issue date.': supported by schedule iii-iv refills.",
+      "D": "'Transfer the record and let the receiving pharmacy restart the clock.' would apply only if transfer created a new issue date; 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?' states otherwise.",
+      "E": "'Use the Massachusetts 30-day Schedule II validity rule.' would apply only if temazepam were Schedule II rather than Schedule IV; 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?' states otherwise."
     },
     "related_facts": [
-      "temazepam (Restoril) is used for short-term treatment of insomnia. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+      "temazepam (Restoril) is used for short-term treatment of insomnia; it is federal Schedule IV and Massachusetts Schedule IV.",
       "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner."
     ],
-    "mpje_trap": "Applying insufficient stock to facts controlled by schedule iii-iv refills."
+    "mpje_trap": "'Dispense because one authorized refill remains on the profile.' would apply if unused authorization survived after the prescription became more than six months old. In 'A Restoril prescription issued on January 10 is presented for another refill on July 11; one authorized refill remains. What should the pharmacist do?', that predicate is missing."
   },
   "rule_ids": [
     "FED-CIII-V-REFILL",
@@ -57,7 +57,7 @@
     "temazepam"
   ],
   "reasoning_steps": [
-    "Identify temazepam (Restoril) as federal Schedule IV and Massachusetts Schedule IV"
+    "Classify temazepam under the federal and Massachusetts schedules before selecting a legal pathway"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

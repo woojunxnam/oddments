@@ -8,11 +8,11 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?",
+  "stem": "During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?",
   "choices": [
     {
       "id": "A",
-      "text": "Use the out-of-state prescription rule when its schedule, age, and verification conditions have not been checked."
+      "text": "Omit Belsomra because MassPAT covers benzodiazepines only."
     },
     {
       "id": "B",
@@ -20,34 +20,34 @@
     },
     {
       "id": "C",
-      "text": "Process another refill because an authorization written by the prescriber overrides schedule limits."
+      "text": "Report only Schedule II and III medications."
     },
     {
       "id": "D",
-      "text": "Treat the request as an insufficient-stock partial fill and use the 72-hour remainder rule."
+      "text": "Treat suvorexant as Schedule VI because it is an insomnia drug."
     },
     {
       "id": "E",
-      "text": "Handle the drug or transaction as ordinary Massachusetts Schedule VI activity."
+      "text": "Submit only after the prescription reaches its fifth refill."
     }
   ],
   "correct_choice_ids": [
     "B"
   ],
   "explanation": {
-    "core_reasoning": "Covered pharmacies report dispensing of Schedule II through V controlled substances and DPH-designated additional drugs, including gabapentin, to the Massachusetts PMP under the current submission standard. suvorexant (Belsomra) is used for treatment of insomnia with sleep-onset or sleep-maintenance difficulty. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+    "core_reasoning": "'Report it because Schedule IV status, not benzodiazepine class alone, brings covered dispensing into MassPAT.' is the governing result. By contrast, 'Omit Belsomra because MassPAT covers benzodiazepines only.' would require that reportability depended on therapeutic class instead of Schedule IV status. The decisive cue appears in 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?'.",
     "choice_analysis": {
-      "A": "That choice belongs, if at all, to Out-of-state Schedule III through VI prescriptions; its trigger does not match this scenario.",
-      "B": "This applies Massachusetts pharmacy MassPAT dispensing-data reporting: Covered pharmacies report dispensing of Schedule II through V controlled substances and DPH-designated additional drugs, including gabapentin, to the Massachusetts PMP under the current submission standard.",
-      "C": "That choice belongs, if at all, to Federal Schedule III and IV refill limits; its trigger does not match this scenario.",
-      "D": "That choice belongs, if at all, to Schedule II partial fill caused by pharmacy inability; its trigger does not match this scenario.",
-      "E": "That choice belongs, if at all, to Massachusetts Schedule VI prescription-drug status; its trigger does not match this scenario."
+      "A": "'Omit Belsomra because MassPAT covers benzodiazepines only.' would apply only if reportability depended on therapeutic class instead of Schedule IV status; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
+      "B": "'Report it because Schedule IV status, not benzodiazepine class alone, brings covered dispensing into MassPAT.': supported by dispensing-data submission.",
+      "C": "'Report only Schedule II and III medications.' would apply only if the Massachusetts program excluded Schedules IV and V; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
+      "D": "'Treat suvorexant as Schedule VI because it is an insomnia drug.' would apply only if indication displaced its controlled-substance classification; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
+      "E": "'Submit only after the prescription reaches its fifth refill.' would apply only if refill count rather than dispensing triggered reporting; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise."
     },
     "related_facts": [
-      "suvorexant (Belsomra) is used for treatment of insomnia with sleep-onset or sleep-maintenance difficulty. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+      "suvorexant (Belsomra) is used for treatment of insomnia with sleep-onset or sleep-maintenance difficulty; it is federal Schedule IV and Massachusetts Schedule IV.",
       "Covered pharmacies report dispensing of Schedule II through V controlled substances and DPH-designated additional drugs, including gabapentin, to the Massachusetts PMP under the current submission standard."
     ],
-    "mpje_trap": "Applying insufficient stock to facts controlled by dispensing-data submission."
+    "mpje_trap": "'Omit Belsomra because MassPAT covers benzodiazepines only.' would apply if reportability depended on therapeutic class instead of Schedule IV status. In 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?', that predicate is missing."
   },
   "rule_ids": [
     "MA-PMP-REPORTING",
@@ -57,8 +57,8 @@
     "suvorexant"
   ],
   "reasoning_steps": [
-    "Identify suvorexant (Belsomra) as federal Schedule IV and Massachusetts Schedule IV",
-    "Identify the trigger for Massachusetts pharmacy MassPAT dispensing-data reporting"
+    "Classify suvorexant under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Massachusetts pharmacy MassPAT dispensing-data reporting"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

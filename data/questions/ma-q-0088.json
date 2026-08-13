@@ -8,54 +8,56 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient returns medication that the pharmacy dispensed in error. Select all supported actions.",
+  "stem": "Before accepting an exception, a patient returns medication that the pharmacy dispensed in error. Select all supported actions.",
   "choices": [
     {
       "id": "A",
-      "text": "Accept the returned medication under the error pathway."
+      "text": "Given the described event, accept the returned medication under the error pathway."
     },
     {
       "id": "B",
-      "text": "Place sealed containers directly back on the shelf."
+      "text": "In this setting, place sealed containers directly back on the shelf."
     },
     {
       "id": "C",
-      "text": "Quarantine it and arrange proper disposal rather than returning it to saleable inventory."
+      "text": "On this record, quarantine it and arrange proper disposal rather than returning it to saleable inventory."
     },
     {
       "id": "D",
-      "text": "Resell the medication after changing the patient label."
+      "text": "For this scenario, returned erroneous medication must not be restored to saleable inventory."
     },
     {
       "id": "E",
-      "text": "Refuse the return because all dispensed drugs are categorically excluded."
+      "text": "Under these facts, the pharmacy remains responsible for proper disposition after quarantine."
     }
   ],
   "correct_choice_ids": [
     "A",
-    "C"
+    "C",
+    "D",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Apply each proposition independently. A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it.",
+    "core_reasoning": "Assess each proposition in 'Before accepting an exception, a patient returns medication that the pharmacy dispensed in error. Select all supported actions.' independently. 'Given the described event, accept the returned medication under the error pathway.' satisfies Returned medication; 'In this setting, place sealed containers directly back on the shelf.' changes its legal premise.",
     "choice_analysis": {
-      "A": "The proposition 'Accept the returned medication under the error pathway.' is supported by Returned erroneous or defective medication quarantine: A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it.",
-      "B": "This statement imports Schedule II prescriptions may not be refilled without its required trigger and is not supported by the scenario.",
-      "C": "The proposition 'Quarantine it and arrange proper disposal rather than returning it to saleable inventory.' is supported by Returned erroneous or defective medication quarantine: A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it.",
-      "D": "This statement imports Massachusetts Schedule VI prescription-drug status without its required trigger and is not supported by the scenario.",
-      "E": "This statement imports Schedule II partial fill caused by pharmacy inability without its required trigger and is not supported by the scenario."
+      "A": "'Given the described event, accept the returned medication under the error pathway.': Returned medication supports this proposition.",
+      "B": "'In this setting, place sealed containers directly back on the shelf.': Returned medication contradicts this proposition.",
+      "C": "'On this record, quarantine it and arrange proper disposal rather than returning it to saleable inventory.': Returned medication supports this proposition.",
+      "D": "'For this scenario, returned erroneous medication must not be restored to saleable inventory.': Returned medication supports this proposition.",
+      "E": "'Under these facts, the pharmacy remains responsible for proper disposition after quarantine.': Returned medication supports this proposition."
     },
     "related_facts": [
       "A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it."
     ],
-    "mpje_trap": "Selecting a familiar statement without checking whether its schedule, setting, deadline, and exception match the facts."
+    "mpje_trap": "Answer positions prove nothing. Test 'Given the described event, accept the returned medication under the error pathway.' independently, then analyze the rest."
   },
   "rule_ids": [
     "MA-RETURN-QUARANTINE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Returned erroneous or defective medication quarantine",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Returned erroneous or defective medication quarantine",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Returned medication"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

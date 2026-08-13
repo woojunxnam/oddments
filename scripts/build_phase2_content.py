@@ -4,6 +4,7 @@ from collections import Counter
 from pathlib import Path
 
 from qa_common import DATA, ROOT, load_json, load_records, semantic_content_hash, write_json
+from phase2_repair import repair_questions
 
 
 TODAY = "2026-08-13"
@@ -46,7 +47,7 @@ RULE_SPECS = [
     ("FED-FORM222-60DAY", "DEA Form 222 validity and partial shipments", "FEDERAL", 4, "Controlled substance procurement", "Form validity", "A supplier may make partial shipments on an accepted DEA Form 222 during the 60-day period after execution; the form is generally invalid after 60 days.", "21 CFR 1305.13(b)", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.13"),
     ("FED-FORM222-DEFECT", "Defective DEA Form 222 may not be corrected", "FEDERAL", 4, "Controlled substance procurement", "Defective form", "A supplier may not fill an incomplete, illegible, improperly executed, altered, or erased DEA Form 222; a defective form cannot be corrected and must be replaced.", "21 CFR 1305.15", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.15"),
     ("FED-FORM222-LOSS", "Lost or stolen DEA Form 222 reporting", "FEDERAL", 4, "Controlled substance procurement", "Lost forms", "A registrant must immediately report lost or stolen used or unused DEA Forms 222 to the responsible DEA Special Agent in Charge and retain the required replacement-form statements.", "21 CFR 1305.16", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.16"),
-    ("FED-FORM222-RECORDS", "DEA Form 222 preservation", "FEDERAL", 4, "Controlled substance procurement", "Form records", "Purchasers and suppliers must preserve the required copies or originals of DEA Forms 222 separately and make them available for inspection for two years.", "21 CFR 1305.17", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.17"),
+    ("FED-FORM222-RECORDS", "DEA Form 222 preservation", "FEDERAL", 4, "Controlled substance procurement", "Form records", "Paper DEA Form 222 records must be maintained separately for two years; electronic Form 222 records are deemed separately maintained when they are readily retrievable from other records.", "21 CFR 1305.17(a), (c), and (e)", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.17"),
     ("FED-CSOS", "Controlled Substance Ordering System electronic orders", "FEDERAL", 4, "Controlled substance procurement", "CSOS", "CSOS permits a properly credentialed registrant or authorized subscriber to issue digitally signed electronic Schedule I and II orders in place of paper DEA Form 222.", "21 CFR 1305 Subpart C; 21 CFR 1311", "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/subpart-C"),
     ("FED-FORM41", "Controlled-substance destruction records", "FEDERAL", 4, "Controlled substance disposal", "DEA Form 41", "A registrant that destroys or causes destruction of controlled substances must maintain the required destruction record, generally using DEA Form 41, with the required substance, method, place, date, and witness information.", "21 CFR 1304.21(e); 21 CFR 1317.95", "https://www.ecfr.gov/current/title-21/chapter-II/part-1317/section-1317.95"),
     ("FED-DISPOSAL-NONRETRIEVABLE", "Non-retrievable standard for controlled-substance destruction", "FEDERAL", 4, "Controlled substance disposal", "Destruction standard", "Controlled substances destroyed by a registrant must be rendered non-retrievable so their physical or chemical condition is permanently altered and unavailable for practical use.", "21 CFR 1317.90; 1317.95", "https://www.ecfr.gov/current/title-21/chapter-II/part-1317/section-1317.90"),
@@ -100,7 +101,7 @@ DRUG_SPECS = [
     ("hydromorphone", "hydromorphone", ["Dilaudid"], "Pain severe enough to require an opioid when alternatives are inadequate", "Opioid analgesic", "II"),
     ("morphine", "morphine", ["MS Contin"], "Severe and persistent pain requiring extended opioid treatment", "Opioid analgesic", "II"),
     ("fentanyl", "fentanyl", ["Duragesic"], "Severe persistent pain in opioid-tolerant patients requiring continuous opioid treatment", "Opioid analgesic", "II"),
-    ("oxymorphone", "oxymorphone", ["Opana"], "Pain severe enough to require an opioid when alternatives are inadequate", "Opioid analgesic", "II"),
+    ("oxymorphone", "oxymorphone", ["Opana (discontinued)", "Opana ER (discontinued)"], "Pain severe enough to require an opioid when alternatives are inadequate", "Opioid analgesic", "II"),
     ("meperidine", "meperidine", ["Demerol"], "Pain severe enough to require an opioid when alternatives are inadequate", "Opioid analgesic", "II"),
     ("tapentadol", "tapentadol", ["Nucynta"], "Acute pain severe enough to require an opioid and certain neuropathic pain formulations", "Opioid analgesic", "II"),
     ("buprenorphine", "buprenorphine", ["Subutex"], "Treatment of opioid dependence", "Partial opioid agonist", "III"),
@@ -602,6 +603,8 @@ def main() -> int:
         questions.append(make_sata(offset, case, rules, drugs))
     for offset, case in enumerate(ORDERED_CASES, 78):
         questions.append(make_ordered(offset, case, rules))
+
+    questions = repair_questions(questions, rules, drugs)
 
     if len(questions) != 80:
         raise ValueError(f"expected 80 questions, built {len(questions)}")

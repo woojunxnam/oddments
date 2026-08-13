@@ -8,54 +8,55 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A resident pharmacy has closed. Select all post-closure duties supported by the rule.",
+  "stem": "During pharmacist consultation, a resident pharmacy has closed. Select all post-closure duties supported by the rule.",
   "choices": [
     {
       "id": "A",
-      "text": "Submit original licenses and the controlled-substance registration within 14 days."
+      "text": "On this record, keep unused controlled stock indefinitely at the closed location."
     },
     {
       "id": "B",
-      "text": "Keep unused controlled stock indefinitely at the closed location."
+      "text": "Submit original licenses and the controlled-substance registration inside 14 days."
     },
     {
       "id": "C",
-      "text": "Attest to lawful controlled-substance disposal or transfer."
+      "text": "At this stage, attest to lawful controlled-substance disposal or transfer."
     },
     {
       "id": "D",
-      "text": "Wait one year before notifying the Board."
+      "text": "For this scenario, wait one year before notifying the Board."
     },
     {
       "id": "E",
-      "text": "Treat Form 222 records as patient property."
+      "text": "Given the described event, the post-closure submission deadline is 14 days after the pharmacy closes."
     }
   ],
   "correct_choice_ids": [
-    "A",
-    "C"
+    "B",
+    "C",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Apply each proposition independently. Within 14 days after closure, the resident pharmacy submits original licenses and controlled-substance registration plus an attestation of lawful controlled-substance disposal or transfer.",
+    "core_reasoning": "Assess each proposition in 'During pharmacist consultation, a resident pharmacy has closed. Select all post-closure duties supported by the rule.' independently. 'Submit original licenses and the controlled-substance registration inside 14 days.' satisfies Closure disposition; 'On this record, keep unused controlled stock indefinitely at the closed location.' changes its legal premise.",
     "choice_analysis": {
-      "A": "The proposition 'Submit original licenses and the controlled-substance registration within 14 days.' is supported by Controlled substances and credentials after pharmacy closure: Within 14 days after closure, the resident pharmacy submits original licenses and controlled-substance registration plus an attestation of lawful controlled-substance disposal or transfer.",
-      "B": "This statement imports Schedule II prescriptions may not be refilled without its required trigger and is not supported by the scenario.",
-      "C": "The proposition 'Attest to lawful controlled-substance disposal or transfer.' is supported by Controlled substances and credentials after pharmacy closure: Within 14 days after closure, the resident pharmacy submits original licenses and controlled-substance registration plus an attestation of lawful controlled-substance disposal or transfer.",
-      "D": "This statement imports Massachusetts Schedule VI prescription-drug status without its required trigger and is not supported by the scenario.",
-      "E": "This statement imports Schedule II partial fill caused by pharmacy inability without its required trigger and is not supported by the scenario."
+      "A": "'On this record, keep unused controlled stock indefinitely at the closed location.': Closure disposition contradicts this proposition.",
+      "B": "'Submit original licenses and the controlled-substance registration inside 14 days.': Closure disposition supports this proposition.",
+      "C": "'At this stage, attest to lawful controlled-substance disposal or transfer.': Closure disposition supports this proposition.",
+      "D": "'For this scenario, wait one year before notifying the Board.': Closure disposition contradicts this proposition.",
+      "E": "'Given the described event, the post-closure submission deadline is 14 days after the pharmacy closes.': Closure disposition supports this proposition."
     },
     "related_facts": [
       "Within 14 days after closure, the resident pharmacy submits original licenses and controlled-substance registration plus an attestation of lawful controlled-substance disposal or transfer."
     ],
-    "mpje_trap": "Selecting a familiar statement without checking whether its schedule, setting, deadline, and exception match the facts."
+    "mpje_trap": "Answer positions prove nothing. Test 'On this record, keep unused controlled stock indefinitely at the closed location.' independently, then analyze the rest."
   },
   "rule_ids": [
     "MA-PHARMACY-CLOSURE-CS"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Controlled substances and credentials after pharmacy closure",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Controlled substances and credentials after pharmacy closure",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Closure disposition"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

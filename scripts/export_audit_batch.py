@@ -26,7 +26,7 @@ def main() -> int:
         parser.error("the registry does not contain enough questions for the requested 30-40 item batch")
     audit_date = date.today().isoformat()
     review_code = "LEGAL" if args.review_type == "LEGAL_VERIFICATION" else "REALISM"
-    audit_id = f"AUDIT-{args.auditor}-{review_code}-{audit_date}-{args.start + 1:04d}"
+    audit_id = f"AUDIT-{args.auditor}-{review_code}-{args.audit_scope}-{audit_date}-{args.start + 1:04d}"
     output = args.output or ROOT / "audits" / args.auditor.casefold() / audit_date / f"{audit_id}.json"
     legal_fields = [
         "Question_ID",

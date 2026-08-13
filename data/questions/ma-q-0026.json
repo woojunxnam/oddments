@@ -8,7 +8,7 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?",
+  "stem": "While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?",
   "choices": [
     {
       "id": "A",
@@ -16,38 +16,38 @@
     },
     {
       "id": "B",
-      "text": "Use the out-of-state prescription rule when its schedule, age, and verification conditions have not been checked."
+      "text": "Dispense a sixth refill because the prescription is still under six months old."
     },
     {
       "id": "C",
-      "text": "Process another refill because an authorization written by the prescriber overrides schedule limits."
+      "text": "Treat the original notation as a practitioner renewal."
     },
     {
       "id": "D",
-      "text": "Treat the request as an insufficient-stock partial fill and use the 72-hour remainder rule."
+      "text": "Use Massachusetts Schedule V rules instead of the federal Schedule IV rule."
     },
     {
       "id": "E",
-      "text": "Handle the drug or transaction as ordinary Massachusetts Schedule VI activity."
+      "text": "Transfer the prescription to obtain five more refills."
     }
   ],
   "correct_choice_ids": [
     "A"
   ],
   "explanation": {
-    "core_reasoning": "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner. alprazolam (Xanax) is used for anxiety disorder and panic disorder. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+    "core_reasoning": "'Require renewed prescriber authorization because the federal five-refill limit has been reached.' is the governing result. By contrast, 'Dispense a sixth refill because the prescription is still under six months old.' would require that the federal rule imposed only a time limit and no five-refill maximum. The decisive cue appears in 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?'.",
     "choice_analysis": {
-      "A": "This applies Federal Schedule III and IV refill limits: A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner.",
-      "B": "That choice belongs, if at all, to Out-of-state Schedule III through VI prescriptions; its trigger does not match this scenario.",
-      "C": "That choice belongs, if at all, to Federal Schedule III and IV refill limits; its trigger does not match this scenario.",
-      "D": "That choice belongs, if at all, to Schedule II partial fill caused by pharmacy inability; its trigger does not match this scenario.",
-      "E": "That choice belongs, if at all, to Massachusetts Schedule VI prescription-drug status; its trigger does not match this scenario."
+      "A": "'Require renewed prescriber authorization because the federal five-refill limit has been reached.': supported by schedule iii-iv refills.",
+      "B": "'Dispense a sixth refill because the prescription is still under six months old.' would apply only if the federal rule imposed only a time limit and no five-refill maximum; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "C": "'Treat the original notation as a practitioner renewal.' would apply only if renewal occurred without a new or renewed practitioner authorization; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "D": "'Use Massachusetts Schedule V rules instead of the federal Schedule IV rule.' would apply only if alprazolam were Schedule V in Massachusetts; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "E": "'Transfer the prescription to obtain five more refills.' would apply only if transfer reset the federal refill count; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise."
     },
     "related_facts": [
-      "alprazolam (Xanax) is used for anxiety disorder and panic disorder. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+      "alprazolam (Xanax) is used for anxiety disorder and panic disorder; it is federal Schedule IV and Massachusetts Schedule IV.",
       "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner."
     ],
-    "mpje_trap": "Applying schedule vi to facts controlled by schedule iii-iv refills."
+    "mpje_trap": "'Dispense a sixth refill because the prescription is still under six months old.' would apply if the federal rule imposed only a time limit and no five-refill maximum. In 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?', that predicate is missing."
   },
   "rule_ids": [
     "FED-CIII-V-REFILL",
@@ -57,8 +57,8 @@
     "alprazolam"
   ],
   "reasoning_steps": [
-    "Identify alprazolam (Xanax) as federal Schedule IV and Massachusetts Schedule IV",
-    "Identify the trigger for Federal Schedule III and IV refill limits"
+    "Classify alprazolam under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Federal Schedule III and IV refill limits"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

@@ -8,23 +8,23 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "An unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?",
+  "stem": "During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?",
   "choices": [
     {
       "id": "A",
-      "text": "Use the out-of-state prescription rule when its schedule, age, and verification conditions have not been checked."
+      "text": "Permit a second transfer because no dose has been dispensed."
     },
     {
       "id": "B",
-      "text": "Process another refill because an authorization written by the prescriber overrides schedule limits."
+      "text": "Print and fax it so the next transaction is no longer electronic."
     },
     {
       "id": "C",
-      "text": "Treat the request as an insufficient-stock partial fill and use the 72-hour remainder rule."
+      "text": "Return it to the original pharmacy and treat that return as a refill."
     },
     {
       "id": "D",
-      "text": "Handle the drug or transaction as ordinary Massachusetts Schedule VI activity."
+      "text": "Allow another transfer when the patient consents in writing."
     },
     {
       "id": "E",
@@ -35,19 +35,19 @@
     "E"
   ],
   "explanation": {
-    "core_reasoning": "At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists. chlordiazepoxide (Librium) is used for anxiety disorders and acute alcohol withdrawal. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+    "core_reasoning": "'Do not transfer it a second time under the federal one-time electronic controlled-prescription rule.' is the governing result. By contrast, 'Permit a second transfer because no dose has been dispensed.' would require that the federal electronic-transfer limit depended only on dispensing status. The decisive cue appears in 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?'.",
     "choice_analysis": {
-      "A": "That choice belongs, if at all, to Out-of-state Schedule III through VI prescriptions; its trigger does not match this scenario.",
-      "B": "That choice belongs, if at all, to Federal Schedule III and IV refill limits; its trigger does not match this scenario.",
-      "C": "That choice belongs, if at all, to Schedule II partial fill caused by pharmacy inability; its trigger does not match this scenario.",
-      "D": "That choice belongs, if at all, to Massachusetts Schedule VI prescription-drug status; its trigger does not match this scenario.",
-      "E": "This applies One-time transfer of electronic controlled prescriptions: At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists."
+      "A": "'Permit a second transfer because no dose has been dispensed.' would apply only if the federal electronic-transfer limit depended only on dispensing status; 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?' states otherwise.",
+      "B": "'Print and fax it so the next transaction is no longer electronic.' would apply only if changing format avoided the one-transfer ceiling; 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?' states otherwise.",
+      "C": "'Return it to the original pharmacy and treat that return as a refill.' would apply only if a completed transfer preserved a freely reusable original prescription; 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?' states otherwise.",
+      "D": "'Allow another transfer when the patient consents in writing.' would apply only if patient consent created a second-transfer exception; 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?' states otherwise.",
+      "E": "'Do not transfer it a second time under the federal one-time electronic controlled-prescription rule.': supported by electronic prescriptions."
     },
     "related_facts": [
-      "chlordiazepoxide (Librium) is used for anxiety disorders and acute alcohol withdrawal. It is federal Schedule IV and Massachusetts Schedule IV; its legal consequence in this scenario follows the cited schedule-specific rule.",
+      "chlordiazepoxide (Librium) is used for anxiety disorders and acute alcohol withdrawal; it is federal Schedule IV and Massachusetts Schedule IV.",
       "At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists."
     ],
-    "mpje_trap": "Applying schedule vi to facts controlled by electronic prescriptions."
+    "mpje_trap": "'Permit a second transfer because no dose has been dispensed.' would apply if the federal electronic-transfer limit depended only on dispensing status. In 'During prospective legal review, an unfilled electronic Librium prescription has already been transferred once at the patient's request. The patient now seeks a second transfer. What is the result?', that predicate is missing."
   },
   "rule_ids": [
     "FED-EPCS-TRANSFER",
@@ -57,9 +57,9 @@
     "chlordiazepoxide"
   ],
   "reasoning_steps": [
-    "Identify chlordiazepoxide (Librium) as federal Schedule IV and Massachusetts Schedule IV",
-    "Identify the trigger for One-time transfer of electronic controlled prescriptions",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Classify chlordiazepoxide under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to One-time transfer of electronic controlled prescriptions",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Electronic prescriptions"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

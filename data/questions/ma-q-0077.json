@@ -8,54 +8,55 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A licensed pharmacy intern is scheduled without a pharmacist preceptor physically or professionally directing the work. Select all supported conclusions.",
+  "stem": "During a profile review, a licensed pharmacy intern is scheduled without a pharmacist preceptor physically or professionally directing the work. Select all supported conclusions.",
   "choices": [
     {
       "id": "A",
-      "text": "The intern must work under direct supervision of a registered pharmacist preceptor."
+      "text": "In this setting, a senior technician may replace the pharmacist preceptor."
     },
     {
       "id": "B",
-      "text": "A senior technician may replace the pharmacist preceptor."
+      "text": "On this record, the intern must work under direct supervision of a registered pharmacist preceptor."
     },
     {
       "id": "C",
-      "text": "Intern status does not authorize independent pharmacist practice."
+      "text": "At this stage, the intern may verify prescriptions independently after 500 hours."
     },
     {
       "id": "D",
-      "text": "The intern may verify prescriptions independently after 500 hours."
+      "text": "For this scenario, intern status does not authorize independent pharmacist practice."
     },
     {
       "id": "E",
-      "text": "Direct supervision applies only to Schedule II drugs."
+      "text": "Under these facts, the pharmacist preceptor remains responsible for the direct-supervision relationship."
     }
   ],
   "correct_choice_ids": [
-    "A",
-    "C"
+    "B",
+    "D",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Apply each proposition independently. A Massachusetts pharmacy intern works under the direct supervision of a registered pharmacist preceptor.",
+    "core_reasoning": "Assess each proposition in 'During a profile review, a licensed pharmacy intern is scheduled without a pharmacist preceptor physically or professionally directing the work. Select all supported conclusions.' independently. 'On this record, the intern must work under direct supervision of a registered pharmacist preceptor.' satisfies Intern supervision; 'In this setting, a senior technician may replace the pharmacist preceptor.' changes its legal premise.",
     "choice_analysis": {
-      "A": "The proposition 'The intern must work under direct supervision of a registered pharmacist preceptor.' is supported by Direct supervision of Massachusetts pharmacy interns: A Massachusetts pharmacy intern works under the direct supervision of a registered pharmacist preceptor.",
-      "B": "This statement imports Schedule II prescriptions may not be refilled without its required trigger and is not supported by the scenario.",
-      "C": "The proposition 'Intern status does not authorize independent pharmacist practice.' is supported by Direct supervision of Massachusetts pharmacy interns: A Massachusetts pharmacy intern works under the direct supervision of a registered pharmacist preceptor.",
-      "D": "This statement imports Massachusetts Schedule VI prescription-drug status without its required trigger and is not supported by the scenario.",
-      "E": "This statement imports Schedule II partial fill caused by pharmacy inability without its required trigger and is not supported by the scenario."
+      "A": "'In this setting, a senior technician may replace the pharmacist preceptor.': Intern supervision contradicts this proposition.",
+      "B": "'On this record, the intern must work under direct supervision of a registered pharmacist preceptor.': Intern supervision supports this proposition.",
+      "C": "'At this stage, the intern may verify prescriptions independently after 500 hours.': Intern supervision contradicts this proposition.",
+      "D": "'For this scenario, intern status does not authorize independent pharmacist practice.': Intern supervision supports this proposition.",
+      "E": "'Under these facts, the pharmacist preceptor remains responsible for the direct-supervision relationship.': Intern supervision supports this proposition."
     },
     "related_facts": [
       "A Massachusetts pharmacy intern works under the direct supervision of a registered pharmacist preceptor."
     ],
-    "mpje_trap": "Selecting a familiar statement without checking whether its schedule, setting, deadline, and exception match the facts."
+    "mpje_trap": "Answer positions prove nothing. Test 'In this setting, a senior technician may replace the pharmacist preceptor.' independently, then analyze the rest."
   },
   "rule_ids": [
     "MA-INTERN-SUPERVISION"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Direct supervision of Massachusetts pharmacy interns",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Direct supervision of Massachusetts pharmacy interns",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Intern supervision"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

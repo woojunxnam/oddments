@@ -8,54 +8,56 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A lower-cost product is listed as interchangeable and reasonably available. Select all facts that matter before substitution.",
+  "stem": "During a transfer request, a lower-cost product is listed as interchangeable and reasonably available. Select all facts that matter before substitution.",
   "choices": [
     {
       "id": "A",
-      "text": "Determine whether the prescriber validly indicated no substitution."
+      "text": "At this stage, determine whether the prescriber validly indicated no substitution."
     },
     {
       "id": "B",
-      "text": "Substitute any same-class drug without checking the list."
+      "text": "Given the described event, confirm the product is listed as interchangeable under Massachusetts standards."
     },
     {
       "id": "C",
-      "text": "Confirm the product is listed as interchangeable under Massachusetts standards."
+      "text": "Under these facts, substitute any same-class drug without checking the list."
     },
     {
       "id": "D",
-      "text": "Choose the highest-cost product automatically."
+      "text": "On this record, the substitute must be reasonably available at a lower retail price."
     },
     {
       "id": "E",
-      "text": "Treat therapeutic similarity alone as legal interchangeability."
+      "text": "For this scenario, a valid prescriber direction against substitution prevents automatic interchange."
     }
   ],
   "correct_choice_ids": [
     "A",
-    "C"
+    "B",
+    "D",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Apply each proposition independently. A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies.",
+    "core_reasoning": "Assess each proposition in 'During a transfer request, a lower-cost product is listed as interchangeable and reasonably available. Select all facts that matter before substitution.' independently. 'At this stage, determine whether the prescriber validly indicated no substitution.' satisfies Generic interchange; 'Under these facts, substitute any same-class drug without checking the list.' changes its legal premise.",
     "choice_analysis": {
-      "A": "The proposition 'Determine whether the prescriber validly indicated no substitution.' is supported by Massachusetts interchangeable-drug dispensing: A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies.",
-      "B": "This statement imports Schedule II prescriptions may not be refilled without its required trigger and is not supported by the scenario.",
-      "C": "The proposition 'Confirm the product is listed as interchangeable under Massachusetts standards.' is supported by Massachusetts interchangeable-drug dispensing: A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies.",
-      "D": "This statement imports Massachusetts Schedule VI prescription-drug status without its required trigger and is not supported by the scenario.",
-      "E": "This statement imports Schedule II partial fill caused by pharmacy inability without its required trigger and is not supported by the scenario."
+      "A": "'At this stage, determine whether the prescriber validly indicated no substitution.': Generic interchange supports this proposition.",
+      "B": "'Given the described event, confirm the product is listed as interchangeable under Massachusetts standards.': Generic interchange supports this proposition.",
+      "C": "'Under these facts, substitute any same-class drug without checking the list.': Generic interchange contradicts this proposition.",
+      "D": "'On this record, the substitute must be reasonably available at a lower retail price.': Generic interchange supports this proposition.",
+      "E": "'For this scenario, a valid prescriber direction against substitution prevents automatic interchange.': Generic interchange supports this proposition."
     },
     "related_facts": [
       "A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies."
     ],
-    "mpje_trap": "Selecting a familiar statement without checking whether its schedule, setting, deadline, and exception match the facts."
+    "mpje_trap": "Answer positions prove nothing. Test 'At this stage, determine whether the prescriber validly indicated no substitution.' independently, then analyze the rest."
   },
   "rule_ids": [
     "MA-INTERCHANGE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Massachusetts interchangeable-drug dispensing",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Massachusetts interchangeable-drug dispensing",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Generic interchange"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

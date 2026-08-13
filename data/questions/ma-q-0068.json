@@ -8,15 +8,15 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?",
+  "stem": "Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?",
   "choices": [
     {
       "id": "A",
-      "text": "Use the out-of-state prescription rule when its schedule, age, and verification conditions have not been checked."
+      "text": "Email a scanned Form 222 with an ordinary electronic signature after documenting whether an emailed image met CSOS digital-signature and certificate requirements."
     },
     {
       "id": "B",
-      "text": "Process another refill because an authorization written by the prescriber overrides schedule limits."
+      "text": "Use the pharmacy's NPI as the CSOS signing credential."
     },
     {
       "id": "C",
@@ -24,38 +24,38 @@
     },
     {
       "id": "D",
-      "text": "Treat the request as an insufficient-stock partial fill and use the 72-hour remainder rule."
+      "text": "Let any employee submit the order through standard purchasing software."
     },
     {
       "id": "E",
-      "text": "Handle the drug or transaction as ordinary Massachusetts Schedule VI activity."
+      "text": "Send an unsigned spreadsheet if the supplier confirms receipt."
     }
   ],
   "correct_choice_ids": [
     "C"
   ],
   "explanation": {
-    "core_reasoning": "CSOS permits a properly credentialed registrant or authorized subscriber to issue digitally signed electronic Schedule I and II orders in place of paper DEA Form 222. The pharmacy must use the exact trigger and deadline rather than borrowing a nearby controlled-substance rule.",
+    "core_reasoning": "'Use CSOS-enabled software and a valid DEA-issued digital certificate for a compliant electronic order.' is the governing result. By contrast, 'Email a scanned Form 222 with an ordinary electronic signature.' would require that an emailed image met CSOS digital-signature and certificate requirements. The decisive cue appears in 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?'.",
     "choice_analysis": {
-      "A": "That choice belongs, if at all, to Out-of-state Schedule III through VI prescriptions; its trigger does not match this scenario.",
-      "B": "That choice belongs, if at all, to Federal Schedule III and IV refill limits; its trigger does not match this scenario.",
-      "C": "This applies Controlled Substance Ordering System electronic orders: CSOS permits a properly credentialed registrant or authorized subscriber to issue digitally signed electronic Schedule I and II orders in place of paper DEA Form 222.",
-      "D": "That choice belongs, if at all, to Schedule II partial fill caused by pharmacy inability; its trigger does not match this scenario.",
-      "E": "That choice belongs, if at all, to Massachusetts Schedule VI prescription-drug status; its trigger does not match this scenario."
+      "A": "'Email a scanned Form 222 with an ordinary electronic signature.' would apply only if an emailed image met CSOS digital-signature and certificate requirements; 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?' states otherwise.",
+      "B": "'Use the pharmacy's NPI as the CSOS signing credential.' would apply only if the NPI replaced a DEA-issued digital certificate; 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?' states otherwise.",
+      "C": "'Use CSOS-enabled software and a valid DEA-issued digital certificate for a compliant electronic order.': supported by csos.",
+      "D": "'Let any employee submit the order through standard purchasing software.' would apply only if subscriber authorization and compliant CSOS software were unnecessary; 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?' states otherwise.",
+      "E": "'Send an unsigned spreadsheet if the supplier confirms receipt.' would apply only if supplier confirmation supplied the required digital signature; 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?' states otherwise."
     },
     "related_facts": [
       "CSOS permits a properly credentialed registrant or authorized subscriber to issue digitally signed electronic Schedule I and II orders in place of paper DEA Form 222.",
       "21 CFR 1305 Subpart C; 21 CFR 1311"
     ],
-    "mpje_trap": "Applying schedule iii-iv refills to facts controlled by csos."
+    "mpje_trap": "'Email a scanned Form 222 with an ordinary electronic signature.' would apply if an emailed image met CSOS digital-signature and certificate requirements. In 'Before accepting an exception, a purchaser wants to replace paper Form 222 orders with electronic Schedule II ordering. What makes that possible?', that predicate is missing."
   },
   "rule_ids": [
     "FED-CSOS"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the trigger for Controlled Substance Ordering System electronic orders",
-    "Separate the controlling pathway from a nearby rule with a different schedule, deadline, or setting"
+    "Match the scenario's operative facts to Controlled Substance Ordering System electronic orders",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from CSOS"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

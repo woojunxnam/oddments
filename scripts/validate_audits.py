@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from pathlib import Path
 from urllib.parse import urlparse
 
 from qa_common import DATA, SCHEMAS, QAReport, index_records, load_records, print_report, validate_schema_records
@@ -14,9 +15,10 @@ def _valid_official_url(value: object) -> bool:
 
 def validate_audits(
     known_question_ids: set[str] | None = None,
+    data_root: Path | None = None,
 ) -> tuple[QAReport, dict[str, dict]]:
     report = QAReport()
-    records = load_records(DATA / "audits")
+    records = load_records((data_root or DATA) / "audits")
     validate_schema_records(records, SCHEMAS / "audit.schema.json", report)
     audits = index_records(records, "audit_id", report)
 
