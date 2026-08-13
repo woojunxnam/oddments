@@ -22,12 +22,12 @@ def main() -> int:
     parser.add_argument("--count", type=int, default=40)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    if not 1 <= args.count <= 40:
-        parser.error("--count must be between 1 and 40")
+    if not 30 <= args.count <= 40:
+        parser.error("--count must be between 30 and 40")
     records = [record for _, record in load_records(DATA / "questions")]
     batch = records[args.start : args.start + args.count]
-    if not batch:
-        parser.error("selected batch is empty")
+    if len(batch) != args.count:
+        parser.error("the registry does not contain enough questions for the requested 30-40 item batch")
     audit_date = date.today().isoformat()
     audit_id = f"AUDIT-{args.auditor}-{audit_date}-{args.start + 1:04d}"
     output = args.output or ROOT / "audits" / args.auditor.casefold() / audit_date / f"{audit_id}.json"
@@ -64,4 +64,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

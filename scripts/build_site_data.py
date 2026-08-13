@@ -3,7 +3,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from qa_common import DATA, ROOT, load_records, write_json
+from qa_common import DATA, ROOT, load_records, print_report, write_json
+from validate_drugs import validate_drugs
+from validate_questions import validate_questions
+from validate_rules import validate_rules
 
 
 def build_site_payload(include_fixtures: bool = False) -> dict:
@@ -45,6 +48,14 @@ def main() -> int:
     parser.add_argument("--include-fixtures", action="store_true")
     parser.add_argument("--output", type=Path, default=ROOT / "site" / "generated" / "questions.json")
     args = parser.parse_args()
+    rule_report, rules = validate_rules()
+    drug_report, drugs = validate_drugs()
+    question_report, _ = validate_questions(rules, drugs)
+    rule_report.extend(drug_report)
+    rule_report.extend(question_report)
+    if not rule_report.ok:
+        print_report("site-data release gate", rule_report)
+        return 1
     payload = build_site_payload(args.include_fixtures)
     write_json(args.output, payload)
     print(f"built site data: {payload['meta']['question_count']} questions -> {args.output}")
@@ -53,4 +64,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
