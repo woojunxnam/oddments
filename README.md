@@ -2,19 +2,20 @@
 
 이 저장소는 Massachusetts MPJE 학습·감사 시스템의 canonical source of truth입니다. 웹사이트와 향후 PDF는 `data/`에서 생성되는 output이며 독립적인 권위가 아닙니다.
 
-## Foundation status
+## Content status
 
-현재 foundation에는 다음 항목만 있습니다.
+현재 Phase 2 candidate expansion에는 다음 항목이 있습니다.
 
-- semantic version/hash가 있는 verified rule 8개와 drug 5개
+- semantic version/hash가 있는 rule 80개(verified 75개, `HOLD` 5개)와 drug 60개
 - version/hash가 고정된 pre-2027 blueprint와 style profile
-- `AUDIT_PENDING`인 original development fixture 10개
+- `AUDIT_PENDING`인 development candidate 90개(foundation 10개 + Phase 2 신규 80개)
+- 실제 candidate 90개와 planned 40개를 합한 question family 130개
 - fail-closed schema·validator·audit·release gate
 - 공개 NABP 자료만 사용한 `MPJE-MA-PRE2027` style profile
 - question-family matrix와 source-governance boundary
 - deterministic static quiz-site skeleton
 
-현재 `RELEASED` question은 0개입니다. development fixture는 암기 안전성이 확인된 자료가 아닙니다. Phase 2 rule expansion과 question generation은 시작하지 않았습니다.
+현재 `RELEASED` question은 0개입니다. 모든 candidate는 독립적인 legal/realism audit와 최종 adjudication 전이므로 암기 안전성이 확인된 자료가 아닙니다. `HOLD` rule은 question 근거로 사용할 수 없습니다.
 
 ## Canonical pipeline
 
