@@ -1,0 +1,50 @@
+{
+  "question_id": "MA-Q-0007",
+  "family_id": "CII_PATIENT_PARTIAL_FILL_CHRONOLOGY",
+  "area": 3,
+  "topic": "Partial filling",
+  "subtopic": "Patient-requested Schedule II chronology",
+  "difficulty": 5,
+  "question_type": "ORDERED_RESPONSE",
+  "provenance": "GEN",
+  "stem": "Place these events in chronological order for a compliant patient-requested Massachusetts Schedule II partial fill when the full remainder is ultimately dispensed.",
+  "choices": [
+    {"id": "A", "text": "Before the initial dispensing, the patient requests less than the prescribed quantity."},
+    {"id": "B", "text": "The original pharmacy makes the initial partial dispensing within five days after issue."},
+    {"id": "C", "text": "The patient later asks the same pharmacy for some or all of the remainder."},
+    {"id": "D", "text": "The original pharmacy completes the remainder no later than 30 days after issue."}
+  ],
+  "correct_choice_ids": ["A", "B", "C", "D"],
+  "allow_zero_correct": false,
+  "explanation": {
+    "core_reasoning": "This ordered item uses explicit temporal predicates rather than a debatable best-practice workflow. The request precedes the initial partial dispensing, and a later same-pharmacy remainder must be completed within the statutory outer deadline.",
+    "choice_analysis": {
+      "A": "This is first because patient request is the predicate for using this partial-fill pathway before the initial dispensing.",
+      "B": "This follows the request and must occur within the initial five-day statutory window.",
+      "C": "This is a later request for the remainder and must return to the pharmacy that made the initial partial dispensing.",
+      "D": "This is last because it is the final dispensing event and must occur no later than the 30-day deadline."
+    },
+    "related_facts": [
+      "The remainder is not a refill.",
+      "Other Schedule II partial-fill pathways use different predicates."
+    ],
+    "mpje_trap": "Turning a legally fixed timeline into a general operational sequence, or mixing in a different partial-fill pathway."
+  },
+  "rule_ids": ["MA-CII-PARTIAL-PATIENT"],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the patient-requested pathway",
+    "Apply the initial five-day timing requirement",
+    "Apply the same-pharmacy remainder condition",
+    "Apply the 30-day outer deadline"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}
+
