@@ -44,7 +44,7 @@ def main() -> int:
     duplicate_report = detect_duplicates()
     write_json(ROOT / "duplicate_report.json", duplicate_report)
     if duplicate_report["finding_count"]:
-        combined.warn(f"duplicate detector found {duplicate_report['finding_count']} pair(s); manual review required")
+        combined.error(f"duplicate detector found {duplicate_report['finding_count']} pair(s); manual review required")
 
     distribution_report, distribution_failed = analyze_answer_distribution()
     write_json(ROOT / "answer_distribution_report.json", distribution_report)

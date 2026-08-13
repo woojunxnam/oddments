@@ -100,9 +100,8 @@ def main() -> int:
     report = detect_duplicates(args.threshold)
     write_json(args.output, report)
     print(f"duplicate detector: {report['finding_count']} finding(s); report={args.output}")
-    return 0
+    return 1 if report["finding_count"] else 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
