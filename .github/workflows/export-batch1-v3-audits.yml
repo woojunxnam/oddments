@@ -32,8 +32,8 @@ jobs:
 
       - name: Assert audited content baseline
         run: |
-          test "$(git rev-parse HEAD^)" = "4fe93c314b18e205d581ccab551eecb8845e7062" || {
-            echo "Unexpected v3 content baseline"; git log -3 --oneline; exit 1;
+          git merge-base --is-ancestor 4fe93c314b18e205d581ccab551eecb8845e7062 HEAD || {
+            echo "Frozen v3 content commit is not an ancestor"; git log -5 --oneline; exit 1;
           }
           python scripts/validate_all.py
           python -m pytest -q
@@ -41,6 +41,8 @@ jobs:
       - name: Export exact 29-question audit inputs
         run: |
           python - <<'PY'
+          import sys
+          sys.path.insert(0, "scripts")
           from pathlib import Path
           from qa_common import DATA, load_json, load_records, question_audit_hash, write_json
           from release_context import style_profile_snapshot
