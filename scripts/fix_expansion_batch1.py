@@ -49,11 +49,13 @@ PATCHES = {
         "choices": {
             "A": "Compounding CE is entirely federal and adds no Massachusetts pharmacist requirement.",
             "B": "Technician training replaces the pharmacist’s ordinary renewal CE.",
+            "C": "Covered sterile or complex nonsterile compounding triggers the applicable additional annual pharmacist CE.",
             "E": "The compounding CE rule applies to patients rather than pharmacists."
         },
         "choice_analysis": {
             "A": "Massachusetts has a pharmacist CE requirement tied to covered compounding activity.",
             "B": "Compounding CE supplements rather than replaces the general pharmacist renewal framework.",
+            "C": "This is the role-based additional CE requirement described in 247 CMR 4.03(4)(c)-(d).",
             "E": "The requirement is imposed on pharmacists engaged in or overseeing the covered activity."
         },
     },
