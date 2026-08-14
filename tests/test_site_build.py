@@ -16,7 +16,7 @@ def test_release_site_data_excludes_audit_pending_fixtures() -> None:
 
 def test_development_site_data_is_explicitly_unsafe() -> None:
     payload = build_site_payload(include_fixtures=True)
-    assert len(payload["questions"]) == 10
+    assert len(payload["questions"]) == 90
     assert payload["meta"]["development_fixture_mode"] is True
     assert payload["meta"]["release_status"] == "DEVELOPMENT_ONLY"
     assert all(question["realism_reviews"] == [] for question in payload["questions"])

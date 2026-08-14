@@ -1,0 +1,72 @@
+{
+  "question_id": "MA-Q-0019",
+  "family_id": "P2_0019_FED_EPCS_TRANSFER",
+  "area": 3,
+  "topic": "Prescription transfer",
+  "subtopic": "Electronic prescriptions",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At the patient's request, one DEA-registered retail pharmacy is asked to transfer an unfilled electronic MS Contin prescription to another DEA-registered retail pharmacy. Which pathway applies?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Print the electronic prescription and fax the image."
+    },
+    {
+      "id": "B",
+      "text": "Transfer it repeatedly while no quantity has been dispensed."
+    },
+    {
+      "id": "C",
+      "text": "Have technicians at both pharmacies complete the transfer without pharmacist communication."
+    },
+    {
+      "id": "D",
+      "text": "Use a one-time pharmacist-to-pharmacist electronic transfer after confirming state permission and federal compliance."
+    },
+    {
+      "id": "E",
+      "text": "Treat the transaction as a Schedule II refill at the receiving pharmacy."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "Use a one-time pharmacist-to-pharmacist electronic transfer after confirming state permission and federal compliance. By contrast, 'Print the electronic prescription and fax the image.' uses a legal trigger absent from the stem.",
+    "choice_analysis": {
+      "A": "This near-miss uses a different trigger: Print the electronic prescription and fax the image.",
+      "B": "This near-miss uses a different trigger: Transfer it repeatedly while no quantity has been dispensed.",
+      "C": "This near-miss uses a different trigger: Have technicians at both pharmacies complete the transfer without pharmacist communication.",
+      "D": "The stated facts support this result: Use a one-time pharmacist-to-pharmacist electronic transfer after confirming state permission and federal compliance.",
+      "E": "This near-miss uses a different trigger: Treat the transaction as a Schedule II refill at the receiving pharmacy."
+    },
+    "related_facts": [
+      "morphine (MS Contin) is used for severe and persistent pain requiring extended opioid treatment; it is federal Schedule II and Massachusetts Schedule II.",
+      "At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists."
+    ],
+    "mpje_trap": "Reject 'Print the electronic prescription and fax the image.' because its legal trigger is absent."
+  },
+  "rule_ids": [
+    "FED-EPCS-TRANSFER",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "morphine"
+  ],
+  "reasoning_steps": [
+    "Classify morphine under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to One-time transfer of electronic controlled prescriptions",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Electronic prescriptions"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

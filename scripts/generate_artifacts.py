@@ -5,15 +5,18 @@ import json
 
 from build_site_data import build_site_payload
 from check_answer_distribution import analyze_answer_distribution
+from check_structural_patterns import analyze_structural_patterns
 from detect_duplicates import detect_duplicates
 from qa_common import ROOT, QAReport, load_json, print_report, write_json
 
 
 def artifact_payloads() -> dict:
     distribution, _ = analyze_answer_distribution()
+    structural_patterns, _ = analyze_structural_patterns()
     return {
         ROOT / "duplicate_report.json": detect_duplicates(),
         ROOT / "answer_distribution_report.json": distribution,
+        ROOT / "structural_pattern_report.json": structural_patterns,
         ROOT / "site" / "generated" / "questions.json": build_site_payload(include_fixtures=True),
     }
 

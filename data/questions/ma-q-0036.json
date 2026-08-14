@@ -1,0 +1,71 @@
+{
+  "question_id": "MA-Q-0036",
+  "family_id": "P2_0036_FED_EPCS_TRANSFER",
+  "area": 3,
+  "topic": "Prescription transfer",
+  "subtopic": "Electronic prescriptions",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient requests transfer of an unfilled electronic Sonata prescription to a second DEA-registered retail pharmacy. Both pharmacists can communicate directly. What else must be confirmed?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Confirm no prior transfer, preserve the electronic record, and verify state permission."
+    },
+    {
+      "id": "B",
+      "text": "Transfer it even if the original prescription was paper."
+    },
+    {
+      "id": "C",
+      "text": "Permit repeated transfers until the first dispensing."
+    },
+    {
+      "id": "D",
+      "text": "Let a technician transmit the record without pharmacist communication."
+    },
+    {
+      "id": "E",
+      "text": "Ignore Massachusetts transfer restrictions because federal permission preempts every state condition."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "Confirm no prior transfer, preserve the electronic record, and verify state permission. By contrast, 'Transfer it even if the original prescription was paper.' uses a legal trigger absent from the stem.",
+    "choice_analysis": {
+      "A": "The stated facts support this result: Confirm no prior transfer, preserve the electronic record, and verify state permission.",
+      "B": "This near-miss uses a different trigger: Transfer it even if the original prescription was paper.",
+      "C": "This near-miss uses a different trigger: Permit repeated transfers until the first dispensing.",
+      "D": "This near-miss uses a different trigger: Let a technician transmit the record without pharmacist communication.",
+      "E": "This near-miss uses a different trigger: Ignore Massachusetts transfer restrictions because federal permission preempts every state condition."
+    },
+    "related_facts": [
+      "zaleplon (Sonata) is used for short-term treatment of insomnia; it is federal Schedule IV and Massachusetts Schedule IV.",
+      "At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists."
+    ],
+    "mpje_trap": "Reject 'Transfer it even if the original prescription was paper.' because its legal trigger is absent."
+  },
+  "rule_ids": [
+    "FED-EPCS-TRANSFER",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "zaleplon"
+  ],
+  "reasoning_steps": [
+    "Classify zaleplon under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to One-time transfer of electronic controlled prescriptions"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

@@ -6,6 +6,7 @@ from check_answer_distribution import analyze_answer_distribution
 from check_placeholders import check_placeholders
 from detect_duplicates import detect_duplicates
 from check_private_paths import check_private_paths
+from check_structural_patterns import analyze_structural_patterns
 from generate_artifacts import check_generated_artifacts
 from qa_common import DATA, QAReport, print_report
 from validate_audits import validate_audits
@@ -59,6 +60,10 @@ def main() -> int:
         combined.warn("answer-position distribution exceeded warning threshold")
     elif distribution_failed:
         combined.error("answer-position distribution exceeded error threshold")
+    structural_report, structural_failed = analyze_structural_patterns()
+    if structural_failed:
+        codes = ", ".join(finding["code"] for finding in structural_report["findings"])
+        combined.error(f"structural pattern detector found {structural_report['finding_count']} finding(s): {codes}")
     combined.extend(check_generated_artifacts())
 
     return print_report("all", combined)

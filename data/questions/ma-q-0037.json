@@ -1,0 +1,72 @@
+{
+  "question_id": "MA-Q-0037",
+  "family_id": "P2_0037_MA_PMP_REPORTING",
+  "area": 3,
+  "topic": "Prescription monitoring program",
+  "subtopic": "Dispensing-data submission",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A pharmacist fills Belsomra for home use. A coworker says the transaction is not reportable because the drug is neither an opioid nor a benzodiazepine. Which response is correct?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Agree; MassPAT is limited to those two drug classes."
+    },
+    {
+      "id": "B",
+      "text": "Agree; insomnia drugs are Massachusetts Schedule VI."
+    },
+    {
+      "id": "C",
+      "text": "Report it because covered Schedule IV dispensing is reportable."
+    },
+    {
+      "id": "D",
+      "text": "Report it only after the fifth refill."
+    },
+    {
+      "id": "E",
+      "text": "Omit it unless the prescriber requests reporting."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "Belsomra is Schedule IV, and the stated outpatient dispensing is covered by MassPAT. Reportability does not depend on the drug being an opioid or benzodiazepine.",
+    "choice_analysis": {
+      "A": "MassPAT reporting extends beyond opioids and benzodiazepines.",
+      "B": "Suvorexant remains Schedule IV despite its insomnia indication.",
+      "C": "Correct. Schedule IV status brings the covered dispensing within the reporting rule.",
+      "D": "Reporting occurs for each covered dispensing, not only after a refill threshold.",
+      "E": "Prescriber preference does not control pharmacy PMP reporting."
+    },
+    "related_facts": [
+      "Belsomra (suvorexant) is federal and Massachusetts Schedule IV.",
+      "Covered Massachusetts pharmacy dispensings of Schedule II through V drugs are reportable to MassPAT."
+    ],
+    "mpje_trap": "A nonbenzodiazepine hypnotic can still be controlled and reportable."
+  },
+  "rule_ids": [
+    "MA-PMP-REPORTING",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "suvorexant"
+  ],
+  "reasoning_steps": [
+    "Classify Belsomra as Schedule IV",
+    "Apply the schedule-based MassPAT reporting rule",
+    "Reject therapeutic-class exclusions not found in the reporting rule"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

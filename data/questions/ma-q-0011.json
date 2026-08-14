@@ -1,0 +1,72 @@
+{
+  "question_id": "MA-Q-0011",
+  "family_id": "P2_0011_FED_CII_NO_REFILL",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule II refills",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient says the pharmacy dispensed only 20 of 30 Adderall tablets because stock was short 10 days ago. The profile instead shows all 30 tablets were dispensed, and the original prescription says \"3 refills.\" What should the pharmacist do?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Process one of the printed refills."
+    },
+    {
+      "id": "B",
+      "text": "Dispense 10 tablets as a stock-shortage remainder."
+    },
+    {
+      "id": "C",
+      "text": "Ask the prescriber to add a refill by telephone."
+    },
+    {
+      "id": "D",
+      "text": "Decline further dispensing; require a new lawful prescription."
+    },
+    {
+      "id": "E",
+      "text": "Treat the notation as three future-dated prescriptions."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "Because the record shows the Schedule II prescription was completely dispensed, neither a remainder nor a refill remains. The printed refill notation is ineffective, so further dispensing requires a new lawful prescription.",
+    "choice_analysis": {
+      "A": "The five-refill framework does not apply to Schedule II prescriptions.",
+      "B": "A remainder exists only after an actual, documented partial fill; the record shows the full quantity was dispensed.",
+      "C": "A telephone change cannot add a refill to a completed Schedule II prescription.",
+      "D": "Correct. A completed Schedule II prescription cannot be refilled.",
+      "E": "A refill notation does not create separate prescriptions with their own issue and earliest-fill dates."
+    },
+    "related_facts": [
+      "Adderall is a federal and Massachusetts Schedule II drug.",
+      "Federal law prohibits Schedule II refills; a genuine partial-fill balance is a different legal pathway."
+    ],
+    "mpje_trap": "Do not convert a claimed shortage into a remainder when the dispensing record documents completion."
+  },
+  "rule_ids": [
+    "FED-CII-NO-REFILL",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "amphetamine-dextroamphetamine"
+  ],
+  "reasoning_steps": [
+    "Classify Adderall as Schedule II",
+    "Distinguish a completed dispensing from a documented partial-fill balance",
+    "Reject refill and oral-change pathways for the completed prescription"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

@@ -48,7 +48,7 @@ def validate_questions(
     validate_schema_records(records, SCHEMAS / "question.schema.json", report)
     questions = index_records(records, "question_id", report)
     if audits is None:
-        audit_report, audits = validate_audits(set(questions))
+        audit_report, audits = validate_audits(set(questions), data_root=DATA)
         report.extend(audit_report)
     if release_requirements is None:
         release_requirements = load_json(ROOT / "data" / "release_requirements.json")

@@ -1,0 +1,72 @@
+{
+  "question_id": "MA-Q-0031",
+  "family_id": "P2_0031_MA_PMP_REPORTING",
+  "area": 3,
+  "topic": "Prescription monitoring program",
+  "subtopic": "Dispensing-data submission",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A community pharmacy fills a patient-specific midazolam prescription for home use. The claim is cash-paid and the drug is not an opioid. What should the pharmacist do about MassPAT?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Report the dispensing because it is Schedule IV."
+    },
+    {
+      "id": "B",
+      "text": "Exclude it because the claim was paid in cash."
+    },
+    {
+      "id": "C",
+      "text": "Exclude it because midazolam is not an opioid."
+    },
+    {
+      "id": "D",
+      "text": "Report only if more than seven days are supplied."
+    },
+    {
+      "id": "E",
+      "text": "Submit it with the pharmacy's inventory report at month-end."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "The transaction is a covered outpatient pharmacy dispensing of a Schedule IV drug. Payment method and non-opioid status do not remove it from the Massachusetts dispenser reporting requirement.",
+    "choice_analysis": {
+      "A": "Correct. Covered Schedule IV dispensing is reportable.",
+      "B": "Cash payment is not a reporting exemption.",
+      "C": "MassPAT coverage is not limited to opioids.",
+      "D": "The general reporting trigger does not depend on a seven-day quantity threshold.",
+      "E": "PMP dispensing data are not monthly inventory reports."
+    },
+    "related_facts": [
+      "Midazolam is federal and Massachusetts Schedule IV.",
+      "Covered pharmacies report prescription dispensings of Schedule II through V drugs to MassPAT."
+    ],
+    "mpje_trap": "Separate therapeutic class and payment method from the schedule-based reporting trigger."
+  },
+  "rule_ids": [
+    "MA-PMP-REPORTING",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "midazolam"
+  ],
+  "reasoning_steps": [
+    "Identify a covered outpatient dispensing",
+    "Classify midazolam as Schedule IV",
+    "Reject payment and therapeutic-class distractions"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-13",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}
