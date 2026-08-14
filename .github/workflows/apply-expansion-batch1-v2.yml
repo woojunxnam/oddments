@@ -6,6 +6,12 @@ on:
       - repair/mpje-expansion-batch1-v2
     paths:
       - .github/workflows/apply-expansion-batch1-v2.yml
+      - scripts/apply_expansion_batch1_v2.py
+      - scripts/polish_expansion_batch1_v2.py
+      - repair_specs/exp1_v2/**
+      - schemas/audit.schema.json
+      - schemas/release_requirements.schema.json
+      - data/release_requirements.json
 
 permissions:
   contents: write
@@ -36,7 +42,9 @@ jobs:
         run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
 
       - name: Apply deterministic repair
-        run: python scripts/apply_expansion_batch1_v2.py
+        run: |
+          python scripts/apply_expansion_batch1_v2.py
+          python scripts/polish_expansion_batch1_v2.py
 
       - name: Refresh semantic hashes and generated artifacts
         run: |
