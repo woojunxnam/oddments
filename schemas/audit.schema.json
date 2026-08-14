@@ -19,6 +19,7 @@
   "properties": {
     "audit_id": {"type": "string", "pattern": "^AUDIT-[A-Z0-9-]+$"},
     "auditor": {"enum": ["CLAUDE", "GPT", "HUMAN"]},
+    "auditor_instance": {"type": "string", "minLength": 3, "maxLength": 128, "pattern": "^[A-Z0-9][A-Z0-9._:-]*$"},
     "audit_date": {"type": "string", "format": "date"},
     "audit_scope": {"enum": ["INITIAL_BATCH", "REAUDIT"]},
     "review_type": {"enum": ["LEGAL_VERIFICATION", "REALISM_REVIEW"]},
@@ -112,22 +113,12 @@
     "legalResult": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "Question_ID",
-        "Verdict",
-        "Severity",
-        "Existing_Answer_Correct",
-        "authorities",
-        "Problem",
-        "Proposed_Answer",
-        "Proposed_Rewrite",
-        "Proposed_Explanation"
-      ],
+      "required": ["Question_ID","Verdict","Severity","Existing_Answer_Correct","authorities","Problem","Proposed_Answer","Proposed_Rewrite","Proposed_Explanation"],
       "properties": {
         "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
-        "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
-        "Existing_Answer_Correct": {"enum": ["YES", "NO", "PARTIALLY", "NOT_ASSESSED"]},
+        "Severity": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+        "Existing_Answer_Correct": {"enum": ["YES", "PARTIALLY", "NO", "NOT_ASSESSED"]},
         "authorities": {"type": "array", "items": {"$ref": "#/$defs/authority"}},
         "Problem": {"type": "string"},
         "Proposed_Answer": {"type": "string"},
@@ -138,42 +129,31 @@
     "realismResult": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["Question_ID", "Verdict", "Severity", "Realism_Verdict", "Reviewed_Date", "Criteria", "Notes"],
+      "required": ["Question_ID","Verdict","Severity","Realism_Verdict","Reviewed_Date","Criteria","Notes"],
       "properties": {
         "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
-        "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
+        "Severity": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]},
         "Realism_Verdict": {"enum": ["PASS", "FAIL"]},
         "Reviewed_Date": {"type": "string", "format": "date"},
         "Criteria": {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "jurisprudence_reasoning",
-            "practice_plausibility",
-            "authentic_distractors",
-            "wording_not_guessable",
-            "reasoning_not_trivia",
-            "natural_rule_combination",
-            "appropriate_drug_context",
-            "distinct_from_bank",
-            "not_schedule_flashcard",
-            "public_style_without_copying"
-          ],
+          "required": ["jurisprudence_reasoning","practice_plausibility","authentic_distractors","wording_not_guessable","reasoning_not_trivia","natural_rule_combination","appropriate_drug_context","distinct_from_bank","not_schedule_flashcard","public_style_without_copying"],
           "properties": {
-            "jurisprudence_reasoning": {"type": "boolean"},
-            "practice_plausibility": {"type": "boolean"},
-            "authentic_distractors": {"type": "boolean"},
-            "wording_not_guessable": {"type": "boolean"},
-            "reasoning_not_trivia": {"type": "boolean"},
-            "natural_rule_combination": {"type": "boolean"},
-            "appropriate_drug_context": {"type": "boolean"},
-            "distinct_from_bank": {"type": "boolean"},
-            "not_schedule_flashcard": {"type": "boolean"},
-            "public_style_without_copying": {"type": "boolean"}
+            "jurisprudence_reasoning": {"type":"boolean"},
+            "practice_plausibility": {"type":"boolean"},
+            "authentic_distractors": {"type":"boolean"},
+            "wording_not_guessable": {"type":"boolean"},
+            "reasoning_not_trivia": {"type":"boolean"},
+            "natural_rule_combination": {"type":"boolean"},
+            "appropriate_drug_context": {"type":"boolean"},
+            "distinct_from_bank": {"type":"boolean"},
+            "not_schedule_flashcard": {"type":"boolean"},
+            "public_style_without_copying": {"type":"boolean"}
           }
         },
-        "Notes": {"type": "string"}
+        "Notes": {"type":"string"}
       }
     }
   }
