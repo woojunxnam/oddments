@@ -1,0 +1,72 @@
+name: Build v3 family map
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-v3
+    paths:
+      - .github/workflows/build-v3-family-map.yml
+
+permissions:
+  contents: write
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-v3
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build question/rule usage map
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          root = Path('.')
+          rows = []
+          usage = defaultdict(list)
+          for path in sorted((root/'data/questions').glob('*.json')):
+              q = json.loads(path.read_text(encoding='utf-8'))
+              row = {
+                  'question_id': q['question_id'],
+                  'family_id': q.get('family_id'),
+                  'area': q.get('area'),
+                  'topic': q.get('topic'),
+                  'subtopic': q.get('subtopic'),
+                  'difficulty': q.get('difficulty'),
+                  'question_type': q.get('question_type'),
+                  'stem': q.get('stem'),
+                  'rule_ids': q.get('rule_ids', []),
+                  'drug_ids': q.get('drug_ids', []),
+                  'reasoning_steps': q.get('reasoning_steps', []),
+                  'verification_status': q.get('verification_status'),
+                  'lifecycle_status': q.get('lifecycle_status'),
+              }
+              rows.append(row)
+              for rid in row['rule_ids']:
+                  usage[rid].append(q['question_id'])
+          payload = {
+              'question_count': len(rows),
+              'questions': rows,
+              'rule_usage': {k: v for k,v in sorted(usage.items())},
+              'rule_usage_counts': {k: len(v) for k,v in sorted(usage.items())},
+          }
+          out = root/'repair_specs/exp1_v3/current_family_map.json'
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
+          print(f'wrote {out}: {len(rows)} questions, {len(usage)} used rules')
+          PY
+      - name: Commit map and remove one-shot workflow
+        run: |
+          rm .github/workflows/build-v3-family-map.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "research: snapshot Batch 1 v3 family map"
+          git push origin HEAD:repair/mpje-expansion-batch1-v3
