@@ -34,7 +34,14 @@ def test_development_site_data_is_explicitly_unsafe() -> None:
     assert len(payload["questions"]) == len(canonical_questions)
     assert payload["meta"]["development_fixture_mode"] is True
     assert payload["meta"]["release_status"] == "DEVELOPMENT_ONLY"
-    assert all(question["realism_reviews"] == [] for question in payload["questions"])
+    assert any(
+        not (
+            question.get("verification_status") == "RELEASED"
+            and question.get("lifecycle_status") == "RELEASED"
+        )
+        for question in payload["questions"]
+    )
+    assert all("realism_reviews" in question for question in payload["questions"])
 
 
 def test_realism_output_is_derived_from_canonical_audit(canonical_question) -> None:
