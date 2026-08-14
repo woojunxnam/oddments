@@ -8,7 +8,7 @@ from typing import Any, Iterable
 from qa_common import DATA, load_records, normalize_text, token_jaccard
 
 
-PHASE2_IDS = {f"MA-Q-{number:04d}" for number in range(11, 91)}
+PHASE2_IDS = {f"MA-Q-{number:04d}" for number in range(11, 10000)}
 NGRAM_SIZE = 10
 
 
@@ -189,7 +189,7 @@ def analyze_structural_patterns(
         )
 
     report = {
-        "scope": "MA-Q-0011..MA-Q-0090" if questions is None else "provided questions",
+        "scope": "MA-Q-0011+" if questions is None else "provided questions",
         "question_count": len(scoped),
         "thresholds": {
             "ngram_size": NGRAM_SIZE,

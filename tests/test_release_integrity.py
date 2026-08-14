@@ -43,10 +43,11 @@ def release_fixture(question: dict, rules: dict, drugs: dict) -> tuple[dict, dic
     )
     content_hash = question_audit_hash(question)
 
-    def legal_audit(audit_id: str, auditor: str) -> dict:
+    def legal_audit(audit_id: str, auditor: str, auditor_instance: str) -> dict:
         return {
             "audit_id": audit_id,
             "auditor": auditor,
+            "auditor_instance": auditor_instance,
             "audit_scope": "INITIAL_BATCH",
             "independent": True,
             "audit_status": "FULLY_ADJUDICATED",
@@ -63,11 +64,12 @@ def release_fixture(question: dict, rules: dict, drugs: dict) -> tuple[dict, dic
         }
 
     audits = {
-        audit_ids[0]: legal_audit(audit_ids[0], "GPT"),
-        audit_ids[1]: legal_audit(audit_ids[1], "CLAUDE"),
+        audit_ids[0]: legal_audit(audit_ids[0], "GPT", "GPT-TEST-A"),
+        audit_ids[1]: legal_audit(audit_ids[1], "GPT", "GPT-TEST-B"),
         audit_ids[2]: {
             "audit_id": audit_ids[2],
             "auditor": "HUMAN",
+            "auditor_instance": "HUMAN-REALISM-TEST",
             "audit_scope": "REAUDIT",
             "independent": True,
             "audit_status": "FULLY_ADJUDICATED",
@@ -222,22 +224,26 @@ def test_blocked_transitive_drug_rule_prevents_question_release(
     assert any(f"depends on blocked rule {transitive_only}" in error for error in report.errors)
 
 
-@pytest.mark.parametrize(
-    ("missing_id", "missing_type"),
-    [
-        ("AUDIT-CLAUDE-LEGAL-TEST", "CLAUDE"),
-        ("AUDIT-GPT-LEGAL-TEST", "GPT"),
-    ],
-)
-def test_missing_required_legal_model_fails(
-    tmp_path, monkeypatch, canonical_question, registry_indexes, missing_id, missing_type
+def test_two_current_legal_passes_are_still_required(
+    tmp_path, monkeypatch, canonical_question, registry_indexes
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
+    missing_id = "AUDIT-CLAUDE-LEGAL-TEST"
     question["audits"].remove(missing_id)
     audits.pop(missing_id)
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
-    assert any(missing_type in error and "missing required legal auditor" in error for error in report.errors)
+    assert any("insufficient current independent legal audit passes" in error for error in report.errors)
+
+
+def test_same_model_family_with_distinct_instances_can_satisfy_legal_distinctness(
+    tmp_path, monkeypatch, canonical_question, registry_indexes
+) -> None:
+    rules, drugs = registry_indexes
+    question, audits = release_fixture(canonical_question, rules, drugs)
+    audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor"] = "GPT"
+    report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
+    assert report.errors == []
 
 
 @pytest.mark.parametrize(
@@ -268,12 +274,13 @@ def test_unreferenced_current_failed_legal_audit_blocks_release(
     assert any("AUDIT-HUMAN-LEGAL-FAILED" in error for error in report.errors)
 
 
-def test_duplicate_same_auditor_does_not_satisfy_distinct_requirement(
+def test_duplicate_same_auditor_instance_does_not_satisfy_distinct_requirement(
     tmp_path, monkeypatch, canonical_question, registry_indexes
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
     audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor"] = "GPT"
+    audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor_instance"] = audits["AUDIT-GPT-LEGAL-TEST"]["auditor_instance"]
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("insufficient distinct legal auditors" in error for error in report.errors)
 
