@@ -8,46 +8,46 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist receives a lawful oral alprazolam prescription from an out-of-state practitioner under the Schedule III-V pathway. What follow-up record action does the Massachusetts rule call for?",
+  "stem": "A properly authorized New Hampshire practitioner telephones a lawful alprazolam prescription to a Massachusetts pharmacist. The pharmacist verifies the Schedule IV prescription under the out-of-state pathway. A staff member says the pharmacy must wait for a written prescription before dispensing. Which response is most accurate?",
   "choices": [
     {
       "id": "A",
-      "text": "Record requesting a written prescription within seven days or the shorter period required by federal law."
+      "text": "Treat the call as a Schedule II emergency prescription and require the Schedule II follow-up process before any dispensing."
     },
     {
       "id": "B",
-      "text": "Treat the oral prescription as a Schedule II emergency prescription and demand the Schedule II follow-up form in every case."
+      "text": "Use the Schedule III-V oral pathway; record a request for the practitioner's written prescription within seven days or any shorter controlling federal period."
     },
     {
       "id": "C",
-      "text": "Wait six months before requesting any written record."
+      "text": "Dispense now and wait six months before asking the practitioner for any written record."
     },
     {
       "id": "D",
-      "text": "No follow-up request is ever permitted for an oral Schedule III-V prescription."
+      "text": "Ask the patient to create and sign the written follow-up because the original prescription was oral."
     },
     {
       "id": "E",
-      "text": "Ask the patient, rather than the prescriber, to write the follow-up prescription."
+      "text": "Reject every out-of-state oral Schedule III-V prescription because Massachusetts recognizes only electronic out-of-state prescriptions."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "For the out-of-state oral Schedule III-V pathway, Massachusetts directs the pharmacist to record a request for a written prescription within seven days or any shorter federal period that controls.",
+    "core_reasoning": "Alprazolam is Schedule IV, so the Massachusetts out-of-state oral Schedule III-V pathway applies rather than the Schedule II emergency framework. The pharmacist records the required request to the practitioner for the written prescription within seven days or any shorter federal period that applies.",
     "choice_analysis": {
-      "A": "This states the Massachusetts follow-up request and its timing rule.",
-      "B": "Schedule II emergency requirements should not be imported wholesale into a Schedule III-V scenario.",
-      "C": "Six months is associated with certain refill limits, not this follow-up request.",
-      "D": "The rule expressly contemplates the follow-up request.",
-      "E": "The follow-up prescription comes from the authorized practitioner, not from the patient."
+      "A": "Schedule II emergency follow-up rules should not be transplanted onto a Schedule IV prescription.",
+      "B": "This uses the correct schedule-specific oral pathway and identifies the Massachusetts follow-up record action.",
+      "C": "A six-month refill concept is unrelated to the short written-follow-up request in this setting.",
+      "D": "The authorized practitioner, not the patient, is the source of the follow-up prescription record.",
+      "E": "Massachusetts law expressly contemplates qualifying oral out-of-state Schedule III-V prescriptions."
     },
     "related_facts": [
       "Alprazolam is Schedule IV.",
-      "Out-of-state oral prescription rules and federal Schedule II emergency rules have different triggers."
+      "Oral prescription rules vary by schedule; seeing the word ‘oral’ is not enough to choose the Schedule II emergency rule."
     ],
-    "mpje_trap": "Do not see the word “oral” and automatically jump to the Schedule II emergency framework."
+    "mpje_trap": "Classify the drug before choosing the oral-prescription follow-up pathway."
   },
   "rule_ids": [
     "MA-ORAL-III-V-FOLLOWUP",
@@ -58,15 +58,52 @@
   ],
   "reasoning_steps": [
     "Classify alprazolam as Schedule IV",
-    "Identify that the prescription uses the out-of-state oral III-V pathway",
-    "Apply the seven-day-or-shorter follow-up request rule"
+    "Apply the out-of-state Schedule III-V oral prescription pathway",
+    "Identify the written-follow-up request and timing rule"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ORAL-III-V-FOLLOWUP": {
+          "content_version": 1,
+          "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

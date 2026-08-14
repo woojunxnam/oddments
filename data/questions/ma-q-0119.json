@@ -8,61 +8,90 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacy is purging old controlled-substance prescription files. What minimum retention period does M.G.L. c.94C § 23(e) establish for these prescriptions?",
+  "stem": "A pharmacy’s software marks an alprazolam prescription for deletion seven months after it was issued because the prescription can no longer be used for refills. The pharmacy has no separate serious-event record tied to this prescription. What is the best response under Massachusetts record-retention law?",
   "choices": [
     {
       "id": "A",
-      "text": "30 days."
+      "text": "Delete it because the end of a refill-use window automatically ends every record-retention duty."
     },
     {
       "id": "B",
-      "text": "Six months."
+      "text": "Keep the controlled-substance prescription for the required two-year retention period; refill usability and record retention are different clocks."
     },
     {
       "id": "C",
-      "text": "One year."
+      "text": "Delete it if the prescriber confirms that no more refills will be authorized."
     },
     {
       "id": "D",
-      "text": "Five years for every controlled prescription."
+      "text": "Keep it for five years because every controlled-substance prescription uses the serious-event record period."
     },
     {
       "id": "E",
-      "text": "Two years, with the records available for inspection."
+      "text": "Retention is unnecessary once the pharmacy has scanned the prescription into an electronic profile."
     }
   ],
   "correct_choice_ids": [
-    "E"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "Massachusetts requires controlled-substance prescriptions to be kept for two years and made available for inspection. A different retention rule may apply to a different category of pharmacy record.",
+    "core_reasoning": "A prescription’s ability to support additional dispensing and the pharmacy’s duty to preserve the prescription record are separate legal questions. Massachusetts requires controlled-substance prescriptions to be retained for two years, so a seven-month-old alprazolam record cannot be purged merely because a refill window has ended.",
     "choice_analysis": {
-      "A": "Thirty days is too short for controlled-prescription retention.",
-      "B": "The federal refill window for some schedules is not a records-retention period.",
-      "C": "One year does not meet the Massachusetts two-year requirement.",
-      "D": "Five years applies to other record categories, such as certain serious-event reporting records, not universally to every controlled prescription.",
-      "E": "This states the Massachusetts controlled-prescription retention rule."
+      "A": "A dispensing or refill deadline does not function as the record-destruction date.",
+      "B": "The pharmacy must preserve the controlled-prescription record for the separate two-year period required for inspection.",
+      "C": "A prescriber’s future refill intentions do not shorten the statutory retention period for the existing record.",
+      "D": "Five years applies to a different record category, such as records relating to certain reportable serious events, not every controlled prescription.",
+      "E": "Electronic storage can be a record format, but it does not eliminate the underlying retention duty."
     },
     "related_facts": [
-      "Record-retention questions require identifying the record type before choosing a number.",
-      "Prescription validity, refill windows, and record retention use different clocks."
+      "Alprazolam is Schedule IV.",
+      "Prescription validity, refill limits, and record preservation frequently use different legal clocks."
     ],
-    "mpje_trap": "A six-month refill limit is not a six-month record-retention rule."
+    "mpje_trap": "Do not delete a record merely because the prescription can no longer be used."
   },
   "rule_ids": [
     "MA-RX-RECORDS-2Y"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the record as a controlled-substance prescription",
-    "Apply the two-year Massachusetts retention requirement"
+    "Classify alprazolam as a controlled prescription record",
+    "Separate refill usability from record retention",
+    "Apply the two-year preservation period"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-RX-RECORDS-2Y": {
+          "content_version": 1,
+          "content_hash": "2dead7cac9a3c97ce33a38b48367ecee42c517ad85a46d8756acfa4ece1f0ca2"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

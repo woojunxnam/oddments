@@ -8,48 +8,48 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During a federal controlled-substance inventory, which counting approaches are consistent with 21 CFR 1304.11(e)(6)? Select ALL that apply.",
+  "stem": "During a federal inventory, the pharmacy finds three opened stock containers: Adderall (Schedule II), a 500-tablet alprazolam container, and a 2,000-tablet alprazolam container. Which counting approaches are permitted or required? Select ALL that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Estimate an opened Schedule II bottle whenever the pharmacist believes the estimate is close."
+      "text": "Estimate the opened Adderall quantity because the original bottle contained fewer than 1,000 tablets."
     },
     {
       "id": "B",
-      "text": "Estimate every opened Schedule III-V container regardless of size."
+      "text": "Count or measure the Schedule II Adderall quantity exactly."
     },
     {
       "id": "C",
-      "text": "Use an exact count or measure for Schedule II inventory."
+      "text": "The opened 500-tablet Schedule IV alprazolam container may generally be estimated."
     },
     {
       "id": "D",
-      "text": "An opened Schedule III-V container may generally be estimated when it does not hold more than 1,000 units."
+      "text": "The opened 2,000-tablet Schedule IV alprazolam container may be estimated solely because alprazolam is not Schedule II."
     },
     {
       "id": "E",
-      "text": "Use an exact count for an opened Schedule III-V container holding more than 1,000 units."
+      "text": "Use an exact count for the opened Schedule IV alprazolam container holding more than 1,000 tablets."
     }
   ],
   "correct_choice_ids": [
+    "B",
     "C",
-    "D",
     "E"
   ],
   "explanation": {
-    "core_reasoning": "Federal inventory counting is schedule- and container-size specific. Schedule II requires exact counting or measuring; opened Schedule III-V containers may generally be estimated unless the container holds more than 1,000 units.",
+    "core_reasoning": "Federal inventory counting uses both schedule and container size. Schedule II quantities require an exact count or measure. Opened Schedule III-V containers may generally be estimated unless the container holds more than 1,000 tablets or capsules, in which case an exact count is required.",
     "choice_analysis": {
-      "A": "Schedule II does not use the general opened-container estimation allowance.",
-      "B": "The over-1,000-unit exception prevents a blanket estimation rule for every III-V container.",
-      "C": "Correct. Schedule II inventory requires exact count or measure.",
-      "D": "Correct. This is the general estimation allowance for opened III-V containers at or below the threshold.",
-      "E": "Correct. The larger opened III-V container must be counted exactly."
+      "A": "The opened-container estimation allowance does not replace the exact-count requirement for Schedule II inventory.",
+      "B": "Adderall is Schedule II, so its inventory quantity must be counted or measured exactly.",
+      "C": "An opened Schedule IV container at or below the 1,000-unit threshold may generally be estimated.",
+      "D": "Schedule IV status alone is not enough; the over-1,000-unit container crosses the threshold for exact counting.",
+      "E": "The 2,000-tablet Schedule IV container exceeds the threshold and therefore requires an exact count."
     },
     "related_facts": [
-      "Amphetamine/dextroamphetamine products are Schedule II and therefore fall under the exact-count rule.",
-      "Alprazolam is Schedule IV; whether estimation is permitted depends on the opened-container size threshold."
+      "Adderall contains amphetamine salts and is Schedule II.",
+      "Alprazolam is Schedule IV, so container size determines whether estimation is permitted for an opened container."
     ],
-    "mpje_trap": "Inventory questions often hinge on two variables at once: schedule and whether an opened III-V container exceeds 1,000 units."
+    "mpje_trap": "Use two variables, not one: first schedule, then container size for opened Schedule III-V stock."
   },
   "rule_ids": [
     "FED-INVENTORY-COUNT",
@@ -60,9 +60,9 @@
     "alprazolam"
   ],
   "reasoning_steps": [
-    "Classify the inventory by schedule",
+    "Classify Adderall and alprazolam by schedule",
     "Apply the exact-count rule to Schedule II",
-    "Apply the 1,000-unit threshold to opened Schedule III-V containers"
+    "Apply the 1,000-unit threshold separately to each opened Schedule IV container"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

@@ -25,13 +25,13 @@ Semantic dependency 변경, question content 변경, stale audit, failed legal/r
 8. `duplicate_review_status == CLEAR`이고 difficulty/reasoning-step contract를 만족함.
 9. Valid independent fully adjudicated legal `INITIAL_BATCH` audit history가 있음.
 10. 모든 current evidence audit ID가 `data/audits/` record로 resolve되고 current question hash를 대상으로 함.
-11. GPT와 Claude가 각각 independent `FULLY_ADJUDICATED` legal `KEEP` 및 answer `YES`를 기록함.
+11. 현재 policy가 요구하는 수의 independent `FULLY_ADJUDICATED` legal `KEEP`/answer `YES`가 서로 다른 `auditor_instance`에서 기록되어야 함.
 12. Current style-profile version/hash를 사용한 independent realism `KEEP`/`PASS`가 있음.
 13. `final_adjudication.decision == KEEP`.
 14. Family의 `current_released_count <= max_questions_in_final_bank`.
 15. Full QA와 tracked artifact drift check가 통과함.
 
-정확한 pass/distinct-auditor/required-model 수는 `data/release_requirements.json`에서 schema-validated configuration으로 관리합니다. 현재 policy는 GPT+Claude legal passes 2개와 distinct auditor 2개를 요구합니다. `independent_audit_status: PASSED` 같은 summary field나 human override는 audit evidence를 대체할 수 없습니다. `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT` 또는 wrong-answer finding 후에는 current content에 대한 재감사와 새 `KEEP` adjudication이 필요합니다.
+정확한 pass 수, distinctness 기준, required auditor type은 `data/release_requirements.json`에서 schema-validated configuration으로 관리합니다. 현재 legal policy는 **2개의 pass와 2개의 distinct independent audit instance**를 요구하며 특정 model vendor 조합을 강제하지 않습니다. `auditor`는 model/family provenance이고 `auditor_instance`는 실제 독립 감사 세션 provenance입니다. 같은 instance를 이름만 바꿔 두 번 제출하는 것은 distinct audit로 계산하지 않습니다. `independent_audit_status: PASSED` 같은 summary field나 human override는 audit evidence를 대체할 수 없습니다. `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT` 또는 wrong-answer finding 후에는 current content에 대한 재감사와 새 `KEEP` adjudication이 필요합니다.
 
 ## Output status
 

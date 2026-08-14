@@ -4,50 +4,52 @@
   "area": 4,
   "topic": "Mandatory reporting",
   "subtopic": "Serious event deadline",
-  "difficulty": 4,
-  "question_type": "SBA",
+  "difficulty": 5,
+  "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacy manager of record learns that an improper warfarin dispensing caused a qualifying serious injury. Assuming the event meets 247 CMR 20.02 reporting criteria, what reporting deadline applies?",
+  "stem": "A pharmacist discovers that an improper warfarin dispensing caused a patient to be hospitalized, and the facts meet the serious-injury reporting criteria in 247 CMR 20.02(1). Which statements correctly distinguish the duties triggered by this same event? Select ALL that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Within 24 hours in every case."
+      "text": "The pharmacist’s initial QRE documentation remains subject to the 24-hour discovery-or-notification clock."
     },
     {
       "id": "B",
-      "text": "Within 30 calendar days after the prescription was written."
+      "text": "The seven-business-day Board reporting period is measured from the date the prescription was originally written."
     },
     {
       "id": "C",
-      "text": "Only at license renewal."
+      "text": "The manager of record must report the qualifying improper dispensing within seven business days of discovery of the related serious injury or death."
     },
     {
       "id": "D",
-      "text": "Within seven business days of discovery or employee knowledge of the qualifying event."
+      "text": "Completing the QRE record eliminates the separate serious-event report because both rules concern the same dispensing error."
     },
     {
       "id": "E",
-      "text": "No report is required if the pharmacy already documented a QRE."
+      "text": "The event can trigger both CQI documentation and the separate serious-event reporting pathway because the rules have different purposes and clocks."
     }
   ],
   "correct_choice_ids": [
-    "D"
+    "A",
+    "C",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "For qualifying improper dispensing with serious injury or death and qualifying serious adverse drug events, 247 CMR 20.02 places the reporting responsibility on the manager of record and uses a seven-business-day clock tied to discovery or employee knowledge.",
+    "core_reasoning": "A serious improper dispensing can activate two separate frameworks. The QRE record is initially documented within 24 hours after discovery or notification, while the manager-of-record report under 247 CMR 20.02(1) is due within seven business days of discovering the serious injury or death related to the improper dispensing.",
     "choice_analysis": {
-      "A": "The 24-hour QRE documentation rule is a different obligation.",
-      "B": "The serious-event report is not keyed to a 30-day prescription-issue clock.",
-      "C": "Waiting for renewal would not satisfy the event-specific reporting requirement.",
-      "D": "This identifies the responsible role, trigger, and deadline.",
-      "E": "CQI documentation does not replace a separate mandatory serious-event report when its criteria are met."
+      "A": "The QRE documentation duty retains its own 24-hour trigger even when the event is also reportable.",
+      "B": "The Board-report clock is not measured from prescription issuance; the relevant §20.02(1) trigger is discovery of the serious injury or death related to improper dispensing.",
+      "C": "This states the actor, event category, trigger, and seven-business-day reporting period for the improper-dispensing pathway.",
+      "D": "Internal CQI documentation does not substitute for the separate Board report once the reporting criteria are met.",
+      "E": "The same facts can satisfy both regulatory systems without merging their triggers or deadlines."
     },
     "related_facts": [
-      "A single event can trigger both CQI duties and a separate serious-event reporting duty.",
-      "Warfarin errors may become reportable when they meet the regulation’s serious-injury criteria."
+      "247 CMR 20.02(2) uses a different employee-knowledge trigger for a separate serious adverse drug event category involving pharmacy-manufactured, produced, or compounded products.",
+      "Warfarin errors can qualify for serious-event reporting when the regulation’s injury criteria are met."
     ],
-    "mpje_trap": "Do not substitute the 24-hour QRE documentation clock for the seven-business-day serious-event reporting clock."
+    "mpje_trap": "Do not blend the 24-hour QRE clock, the §20.02(1) discovery trigger, and the separate §20.02(2) employee-knowledge trigger."
   },
   "rule_ids": [
     "MA-SERIOUS-EVENT-REPORT",
@@ -57,16 +59,53 @@
     "warfarin"
   ],
   "reasoning_steps": [
-    "Confirm that the event meets the serious-event reporting criteria",
-    "Identify the manager-of-record reporting duty",
-    "Apply the seven-business-day deadline rather than the QRE documentation clock"
+    "Identify the event as both a QRE and a qualifying improper dispensing with serious injury",
+    "Apply the 24-hour QRE documentation clock",
+    "Apply the distinct manager-of-record seven-business-day reporting clock from discovery of the serious injury"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SERIOUS-EVENT-REPORT": {
+          "content_version": 1,
+          "content_hash": "17755b98641f951490115bf1f6c3fdd379a91a364925365f3d4a700e003821a0"
+        },
+        "MA-QRE-DOCUMENT-24H": {
+          "content_version": 1,
+          "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+        }
+      },
+      "drugs": {
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

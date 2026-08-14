@@ -19,6 +19,16 @@ set(question_ids)
 
 Duplicate, missing, extra, unknown Question_ID는 모두 오류입니다.
 
+## Auditor provenance and independence
+
+- `auditor`는 model/family provenance입니다: `GPT`, `CLAUDE`, `HUMAN`.
+- `auditor_instance`는 실제 독립 감사 세션/instance provenance입니다.
+- Release distinctness는 `data/release_requirements.json`의 `distinctness_basis`에 따라 계산합니다.
+- 현재 legal policy는 `AUDITOR_INSTANCE` 기준으로 2개의 independent current-hash legal passes를 요구합니다.
+- 같은 model family의 두 감사도 서로의 결과를 보지 않은 별도 independent instance라면 distinct할 수 있습니다.
+- 같은 audit session을 두 파일로 나누거나 instance 이름만 바꾸는 것은 독립 감사가 아닙니다.
+- Author/editor가 자신이 방금 수정한 current content를 별도 independent auditor로 자가 인증하면 안 됩니다.
+
 ## Separate reviews
 
 ### LEGAL_VERIFICATION
@@ -54,14 +64,14 @@ Legal accuracy와 분리해 다음을 평가합니다.
 
 ## Procedure
 
-1. `scripts/export_audit_batch.py --audit-scope INITIAL_BATCH|REAUDIT --review-type ...`로 stable batch와 question hashes를 export합니다.
+1. `scripts/export_audit_batch.py --audit-scope INITIAL_BATCH|REAUDIT --review-type ... --auditor-instance ...`로 stable batch와 question hashes를 export합니다.
 2. Auditor는 canonical questions를 수정하지 않고 current official sources 또는 public style profile을 검토합니다.
 3. Completed record를 `data/audits/`에 저장하고 exact set validation을 통과시킵니다.
 4. Editor가 결과를 adjudicate합니다.
-5. `MINOR_EDIT`/`MAJOR_REWRITE`이면 canonical question을 수정하고 GPT/Claude legal audit와 affected realism audit를 current hash에 대해 다시 수행합니다.
+5. `MINOR_EDIT`/`MAJOR_REWRITE`이면 canonical question을 수정하고 required distinct legal audit instances와 affected realism audit를 current hash에 대해 다시 수행합니다.
 6. `DELETE`이면 release하지 않습니다.
-7. GPT와 Claude가 모두 current hash에 `KEEP`/answer `YES`, realism이 current profile에 PASS일 때만 final human/editor `KEEP`을 기록합니다.
+7. Required current-hash legal instances가 모두 `KEEP`/answer `YES`, realism이 current profile에 PASS일 때만 final human/editor `KEEP`을 기록합니다.
 
-GPT와 Claude가 불일치하면 release는 실패합니다. Human/editor는 추가 research와 edit를 수행할 수 있지만 failed current audits를 override해 unchanged question을 release할 수 없습니다.
+Independent auditors가 불일치하면 release는 실패합니다. Human/editor는 추가 research와 edit를 수행할 수 있지만 failed current audits를 override해 unchanged question을 release할 수 없습니다.
 
 Rigorous `DELETE`는 audit 성공이며 억지로 positive result를 만들지 않습니다.

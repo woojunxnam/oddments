@@ -8,61 +8,89 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist wants to use the state pharmacist-prescribing pathway for hormonal contraception. Which product category is within the described statutory and protocol scope?",
+  "stem": "An adult asks a trained Massachusetts pharmacist to prescribe a self-administered oral hormonal contraceptive. She has never previously received a contraceptive prescription. What is the most accurate response under the pharmacist-prescribing statute?",
   "choices": [
     {
       "id": "A",
-      "text": "Eligible hormonal contraceptive patches and self-administered oral hormonal contraceptives after required screening."
+      "text": "A prior prescription is mandatory before a pharmacist may use this pathway."
     },
     {
       "id": "B",
-      "text": "Any implanted contraceptive device selected by the pharmacist without a protocol."
+      "text": "Lack of a prior prescription is not itself a bar; the pharmacist still must follow the required screening and protocol process."
     },
     {
       "id": "C",
-      "text": "Any injectable contraceptive solely because it is prescription-only."
+      "text": "The pharmacist may prescribe any contraceptive dosage form because the patient has no prior prescription."
     },
     {
       "id": "D",
-      "text": "Any Schedule II medication used for a reproductive-health indication."
+      "text": "The patient must first obtain a controlled-substance registration because hormonal contraception is Schedule II."
     },
     {
       "id": "E",
-      "text": "Any hormonal product requested by a patient without screening."
+      "text": "The pharmacist may skip the self-screening risk assessment when the patient is a first-time user."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "The Massachusetts pharmacist-prescribing pathway described in the current rule covers eligible hormonal contraceptive patches and self-administered oral hormonal contraceptives, with required screening and protocol compliance.",
+    "core_reasoning": "Massachusetts expressly permits pharmacist prescribing of covered hormonal contraceptive patches and self-administered oral products regardless of evidence of a previous prescription. That access rule does not remove the required training, self-screening, and protocol safeguards.",
     "choice_analysis": {
-      "A": "This matches the dosage-form scope and required screening described by the Massachusetts pathway.",
-      "B": "The rule does not create an unrestricted pharmacist pathway for implanted devices.",
-      "C": "Prescription-only status alone does not place an injectable product within this specific pathway.",
-      "D": "Controlled-substance status does not expand the contraception protocol.",
-      "E": "Required screening and protocol conditions cannot be omitted simply because the patient requests the product."
+      "A": "Previous practitioner prescribing is not a prerequisite stated in the current statute for the covered products.",
+      "B": "The patient can enter the pharmacist pathway without prior prescription evidence, but the screening and protocol still control eligibility and process.",
+      "C": "The authority remains limited to the product categories authorized by statute and protocol.",
+      "D": "The pathway is not created by treating hormonal contraception as Schedule II controlled-substance prescribing.",
+      "E": "The self-screening risk assessment is a required safeguard, including for a first-time requester."
     },
     "related_facts": [
-      "The pharmacist-prescribing authority is protocol-based and product-category specific.",
-      "The pathway is separate from collaborative drug therapy management."
+      "The statute covers hormonal contraceptive patches and self-administered oral hormonal contraceptives.",
+      "Expanded access does not convert the pharmacist into an unrestricted prescriber."
     ],
-    "mpje_trap": "Do not broaden a narrow pharmacist-prescribing statute into general independent prescribing authority."
+    "mpje_trap": "‘No previous prescription required’ does not mean ‘no screening required.’"
   },
   "rule_ids": [
     "MA-HORMONAL-CONTRACEPTIVE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the specific pharmacist-prescribing pathway",
-    "Match the requested dosage form to the authorized scope"
+    "Determine whether prior prescription evidence is a prerequisite",
+    "Apply the separate screening and protocol conditions"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-HORMONAL-CONTRACEPTIVE": {
+          "content_version": 1,
+          "content_hash": "b275784351139707c04e69da8ad64c8b1b1ea1754c8e50e72635b9121d2e9009"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

@@ -11,6 +11,8 @@ from release_context import style_profile_snapshot
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--auditor", choices=["CLAUDE", "GPT", "HUMAN"], required=True)
+    parser.add_argument("--auditor-instance")
+    parser.add_argument("--audit-id")
     parser.add_argument("--review-type", choices=["LEGAL_VERIFICATION", "REALISM_REVIEW"], required=True)
     parser.add_argument("--audit-scope", choices=["INITIAL_BATCH", "REAUDIT"], required=True)
     parser.add_argument("--start", type=int, default=0)
@@ -23,10 +25,10 @@ def main() -> int:
     records = [record for _, record in load_records(DATA / "questions")]
     batch = records[args.start : args.start + args.count]
     if len(batch) != args.count:
-        parser.error("the registry does not contain enough questions for the requested 30-40 item batch")
+        parser.error("the registry does not contain enough questions for the requested batch")
     audit_date = date.today().isoformat()
     review_code = "LEGAL" if args.review_type == "LEGAL_VERIFICATION" else "REALISM"
-    audit_id = f"AUDIT-{args.auditor}-{review_code}-{args.audit_scope}-{audit_date}-{args.start + 1:04d}"
+    audit_id = args.audit_id or f"AUDIT-{args.auditor}-{review_code}-{args.audit_scope}-{audit_date}-{args.start + 1:04d}"
     output = args.output or ROOT / "audits" / args.auditor.casefold() / audit_date / f"{audit_id}.json"
     legal_fields = [
         "Question_ID",
@@ -61,11 +63,11 @@ def main() -> int:
         "questions": batch,
         "result_contract": {
             "required_fields": legal_fields if args.review_type == "LEGAL_VERIFICATION" else realism_fields,
-            "warning": (
-                "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Auditors must not modify canonical questions."
-            ),
+            "warning": "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Auditors must not modify canonical questions.",
         },
     }
+    if args.auditor_instance:
+        payload["auditor_instance"] = args.auditor_instance
     if args.review_type == "REALISM_REVIEW":
         profile = load_json(DATA / "exam_style" / "mpje_style_profile.json")
         payload["style_profile"] = style_profile_snapshot(profile)

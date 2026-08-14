@@ -8,47 +8,47 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A community pharmacy dispenses a product for which FDA requires a Medication Guide. The patient says she does not want verbal counseling. Which statements correctly distinguish the federal Medication Guide duty from Massachusetts counseling requirements? Select ALL that apply.",
+  "stem": "A pharmacy dispenses a drug for which FDA requires a Medication Guide. The patient accepts the printed material but declines to discuss the medication with the pharmacist. Which statements are correct? Select ALL that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "A counseling refusal does not, by itself, eliminate a federal Medication Guide distribution requirement."
+      "text": "The counseling refusal permits the pharmacy to omit the Medication Guide when the guide would otherwise be required."
     },
     {
       "id": "B",
-      "text": "Once a patient declines verbal counseling, the pharmacy may substitute the counseling refusal for every FDA-required patient document."
+      "text": "The required Medication Guide still must be provided even though the patient declines verbal discussion."
     },
     {
       "id": "C",
-      "text": "The pharmacist should analyze the Medication Guide requirement and the Massachusetts counseling requirement as separate legal duties."
+      "text": "Handing over the Medication Guide automatically proves that every Massachusetts counseling requirement has been satisfied."
     },
     {
       "id": "D",
-      "text": "A Medication Guide is required only when the prescription is for a federally controlled substance."
+      "text": "The federal patient-document duty and the Massachusetts counseling duty should be evaluated as separate requirements."
     },
     {
       "id": "E",
-      "text": "The existence of an FDA Medication Guide automatically eliminates Massachusetts counseling requirements."
+      "text": "Medication Guides are limited to drugs that are federally scheduled controlled substances."
     }
   ],
   "correct_choice_ids": [
-    "A",
-    "C"
+    "B",
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The FDA Medication Guide requirement arises from Part 208 for covered products, while Massachusetts counseling is a separate state practice obligation. A patient’s decision about verbal counseling does not automatically cancel a required federal document.",
+    "core_reasoning": "A required Medication Guide is a federal product-specific patient-document obligation. Massachusetts counseling is a separate practice duty, so a patient’s decision about conversation does not cancel a required federal document or collapse the two analyses into one.",
     "choice_analysis": {
-      "A": "Correct. The federal patient-document requirement has its own trigger and is not extinguished merely by declining conversation.",
-      "B": "A counseling refusal is not a universal substitute for federally required labeling or patient information.",
-      "C": "Correct. The two requirements come from different authorities and must be assessed independently.",
-      "D": "Medication Guide status depends on FDA requirements for the product, not on federal controlled-substance scheduling.",
-      "E": "Federal patient labeling and state counseling duties can coexist; one does not automatically displace the other."
+      "A": "A refusal to converse does not itself remove an FDA Medication Guide distribution requirement.",
+      "B": "The pharmacy must still furnish a required Medication Guide in the covered dispensing situation.",
+      "C": "Document delivery and the state counseling process arise from different authorities and one is not automatic proof of the other.",
+      "D": "Analyzing the federal guide requirement separately from Massachusetts counseling prevents one duty from being mistaken for the other.",
+      "E": "Medication Guide status is based on FDA requirements for the product, not controlled-substance scheduling alone."
     },
     "related_facts": [
-      "FDA-required Medication Guides are a product-specific federal requirement.",
-      "Massachusetts counseling requirements arise under 247 CMR 9.18."
+      "A patient can decline verbal counseling without creating a waiver of unrelated federal labeling duties.",
+      "Different patient-protection rules can apply to the same dispensing event."
     ],
-    "mpje_trap": "When two rules protect the patient in different ways, do not assume satisfying or declining one erases the other."
+    "mpje_trap": "A single patient interaction may satisfy, decline, or trigger different duties independently."
   },
   "rule_ids": [
     "FED-MEDGUIDE",
@@ -56,16 +56,48 @@
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the federal Medication Guide trigger",
-    "Identify the separate Massachusetts counseling duty",
-    "Evaluate each answer without merging the two authorities"
+    "Identify the FDA Medication Guide obligation",
+    "Identify the separate Massachusetts counseling process",
+    "Apply the patient’s refusal to each duty independently"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-MEDGUIDE": {
+          "content_version": 1,
+          "content_hash": "04f79d4419c4f4dea2c276764bd821865189a9d6158ec4f041f734f7490ef6a8"
+        },
+        "MA-COUNSELING": {
+          "content_version": 1,
+          "content_hash": "e8f6fbdb5b0bdb7ec7f1512527eeeac5dbe49e0b761ac0f498fa9da11faedd82"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

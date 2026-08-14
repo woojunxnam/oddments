@@ -8,48 +8,48 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient asks Pharmacy B to obtain the remaining refills of a warfarin prescription from Pharmacy A. Which concepts must the pharmacists account for under Massachusetts transfer standards? Select ALL that apply.",
+  "stem": "A patient asks Pharmacy B to obtain a Massachusetts warfarin prescription from Pharmacy A. The prescription was issued 10 months ago and has three authorized refills remaining. Pharmacy B has a certified pharmacy technician available, and the pharmacist on duty approves the technician’s participation. Which statements are consistent with the current Massachusetts transfer framework? Select ALL that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Applicable pharmacist-to-pharmacist communication requirements."
+      "text": "The pharmacies should act on the patient’s transfer request in a timely manner rather than impose a blanket no-transfer rule."
     },
     {
       "id": "B",
-      "text": "The required transfer annotations and records."
+      "text": "A Schedule VI prescription may be transferred in the same manner as Schedule III-V prescriptions, and the remaining authorized refills may be transferred while the prescription is within the one-year limit."
     },
     {
       "id": "C",
-      "text": "A rule that every prescription transfer must be completed by a pharmacy technician with no pharmacist involvement."
+      "text": "A certified pharmacy technician may perform a Schedule VI prescription transfer when the pharmacist on duty approves the activity."
     },
     {
       "id": "D",
-      "text": "Applicable controlled-substance transfer limits when the drug involved is controlled."
+      "text": "Massachusetts requires the transferring pharmacy to charge the patient a transfer fee before releasing the prescription."
     },
     {
       "id": "E",
-      "text": "A blanket rule that no prescription can ever be transferred in Massachusetts."
+      "text": "The transfer is barred solely because the prescription is more than six months old, even though it was issued less than one year ago."
     }
   ],
   "correct_choice_ids": [
     "A",
     "B",
-    "D"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "Massachusetts transfer practice requires the pharmacists to follow 247 CMR 9.14, including required communication and record annotations, while also respecting any additional limits that apply when the prescription is for a controlled substance.",
+    "core_reasoning": "Current 247 CMR 9.14 requires timely transfer at the patient’s request, permits Schedule VI transfers using the Schedule III-V transfer framework, allows transfer of remaining refills, bars Schedule VI transfers after one year from issuance, and prohibits a transfer fee. Separately, 247 CMR 8.04 permits a certified pharmacy technician to perform Schedule VI transfers with pharmacist-on-duty approval.",
     "choice_analysis": {
-      "A": "Correct. Pharmacist-to-pharmacist communication is part of the transfer framework.",
-      "B": "Correct. The transfer must be reflected in the required prescription records and annotations.",
-      "C": "The rule does not replace pharmacist responsibilities with an unsupervised technician-only transfer process.",
-      "D": "Correct. Controlled-substance status can add restrictions to an otherwise transferable prescription.",
-      "E": "Massachusetts regulates transfers; it does not impose a universal transfer ban."
+      "A": "The current rule affirmatively requires a timely response to the patient or agent’s transfer request.",
+      "B": "At 10 months, the Schedule VI prescription remains inside the one-year transfer window and can carry its remaining authorized refills through the transfer pathway.",
+      "C": "The certified-technician provision is specific to Schedule VI and depends on pharmacist-on-duty approval.",
+      "D": "The Massachusetts rule states that a pharmacy shall not charge a prescription-transfer fee.",
+      "E": "The six-month concept should not be imported into the current one-year Schedule VI transfer limit."
     },
     "related_facts": [
-      "Warfarin is not federally scheduled, so a routine warfarin transfer does not acquire federal controlled-substance restrictions merely from being prescription-only.",
-      "The general transfer rule and schedule-specific transfer limits should be analyzed in sequence."
+      "Warfarin is a Massachusetts Schedule VI prescription drug because it is not federally scheduled.",
+      "Federal controlled-substance transfer rules should not be overgeneralized into a pharmacist-only rule for Massachusetts Schedule VI transfers."
     ],
-    "mpje_trap": "First ask whether the prescription is transferable at all; then ask what communication and documentation the transfer requires."
+    "mpje_trap": "Identify both the prescription’s schedule and the worker’s credential before deciding who may perform the transfer and whether the prescription is still transferable."
   },
   "rule_ids": [
     "MA-RX-TRANSFER"
@@ -58,16 +58,49 @@
     "warfarin"
   ],
   "reasoning_steps": [
-    "Classify the prescription and identify any schedule-specific transfer limits",
-    "Apply the pharmacist communication requirements",
-    "Apply the record-annotation requirements"
+    "Classify warfarin as Massachusetts Schedule VI and check the one-year age limit",
+    "Determine what happens to remaining refills and the transfer fee",
+    "Apply the certified-technician Schedule VI transfer authority with pharmacist approval"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-RX-TRANSFER": {
+          "content_version": 2,
+          "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+        }
+      },
+      "drugs": {
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

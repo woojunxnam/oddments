@@ -8,63 +8,107 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacist explains Massachusetts drug scheduling to a new intern using gabapentin as an example. Which statement about Massachusetts Schedule VI is most accurate as a general rule?",
+  "stem": "A pharmacy system sees ‘Massachusetts Schedule VI’ on a gabapentin record and automatically applies federal Schedule II ordering rules and federal Schedule III-V refill limits. Which correction is most accurate?",
   "choices": [
     {
       "id": "A",
-      "text": "Every Schedule VI drug is federally Schedule VI as well."
+      "text": "Keep the federal flags because every Massachusetts Schedule VI drug is also a federal Schedule II drug."
     },
     {
       "id": "B",
-      "text": "Schedule VI is limited to over-the-counter products."
+      "text": "Remove all prescription controls because Schedule VI means over-the-counter under federal law."
     },
     {
       "id": "C",
-      "text": "Schedule VI automatically means the drug is federally Schedule II."
+      "text": "Do not import federal Schedule II or III-V controls solely from Massachusetts Schedule VI status; determine federal scheduling separately."
     },
     {
       "id": "D",
-      "text": "Massachusetts Schedule VI covers prescription drugs outside Schedules I-V and has no federal counterpart."
+      "text": "Convert gabapentin to federal Schedule IV whenever it is dispensed in Massachusetts."
     },
     {
       "id": "E",
-      "text": "Schedule VI drugs do not require prescriptions in Massachusetts."
+      "text": "Apply federal Form 222 ordering to every Massachusetts prescription drug that is not listed in federal Schedules III-V."
     }
   ],
   "correct_choice_ids": [
-    "D"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "Massachusetts uses Schedule VI for prescription drugs not otherwise assigned to Schedules I-V. Federal law has no Schedule VI category, so Massachusetts Schedule VI status alone does not establish federal controlled status.",
+    "core_reasoning": "Massachusetts Schedule VI captures prescription drugs not included in Schedules I-V and has no federal Schedule VI counterpart. State Schedule VI status can create Massachusetts prescription-law obligations, but it does not by itself make gabapentin federal Schedule II or subject it to federal Schedule III-V rules.",
     "choice_analysis": {
-      "A": "Federal law uses Schedules I-V, not a federal Schedule VI category.",
-      "B": "Schedule VI is a prescription-drug category rather than an OTC-only category.",
-      "C": "State Schedule VI does not convert a drug into federal Schedule II.",
-      "D": "This correctly describes the relationship between Massachusetts Schedule VI and the federal schedules.",
-      "E": "Schedule VI is built around prescription-drug status, so this reverses the rule."
+      "A": "The state Schedule VI label does not convert a drug into federal Schedule II.",
+      "B": "Schedule VI is a prescription-drug category, not an OTC category.",
+      "C": "This preserves Massachusetts regulation while preventing a state classification from being mistaken for a federal controlled-substance schedule.",
+      "D": "Dispensing location does not reclassify gabapentin into federal Schedule IV.",
+      "E": "Form 222/CSOS requirements turn on federal Schedule I-II distribution, not Massachusetts Schedule VI status."
     },
     "related_facts": [
-      "Gabapentin is not federally scheduled; Massachusetts regulation of prescription drugs can still create state-law obligations.",
-      "A state schedule can create state-law obligations without changing the federal schedule."
+      "Gabapentin is not federally scheduled and is treated as a Massachusetts Schedule VI prescription drug.",
+      "State and federal scheduling systems can create different consequences for the same product."
     ],
-    "mpje_trap": "Do not derive every legal consequence from the Roman numeral alone; Massachusetts Schedule VI has no federal counterpart."
+    "mpje_trap": "The Roman numeral ‘VI’ is a Massachusetts category, not a missing sixth federal controlled-substance schedule."
   },
   "rule_ids": [
-    "MA-SCHEDULE-VI"
+    "MA-SCHEDULE-VI",
+    "FED-CS-SCHEDULES",
+    "FED-FORM222-ORDER"
   ],
   "drug_ids": [
     "gabapentin"
   ],
   "reasoning_steps": [
-    "Identify the Massachusetts Schedule VI definition",
-    "Separate state scheduling from federal controlled-substance status"
+    "Identify Massachusetts Schedule VI as a state classification",
+    "Check gabapentin’s separate federal scheduling status",
+    "Reject federal Schedule II or III-V consequences that arise only from the incorrect state-to-federal translation"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        },
+        "FED-FORM222-ORDER": {
+          "content_version": 1,
+          "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+        }
+      },
+      "drugs": {
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
