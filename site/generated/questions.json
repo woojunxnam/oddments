@@ -13497,13 +13497,40 @@
         "Identify the exact recalled lot and affected inventory",
         "Separate inventory action from patient clinical instructions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-RECALL": {
+              "content_version": 1,
+              "content_hash": "8fca475dc68c561d7946a651d5c794066e8e7f17653fc6a93c81bc8774c385bf"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -13515,7 +13542,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Plausible lot-specific recall decision with operational consequences and realistic mishandling distractors.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0092",
@@ -13723,13 +13774,45 @@
         "Identify the excursion as a product-integrity issue",
         "Prevent dispensing until integrity is resolved"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-ADULTERATED-MISBRANDED": {
+              "content_version": 1,
+              "content_hash": "b3c76b1b563dad8f4a25fb253fc290f6d8feedb08bf382e61cae5946770e40b6"
+            }
+          },
+          "drugs": {
+            "insulin-glargine": {
+              "content_version": 1,
+              "content_hash": "3e931b085a0e3d834a5f798ec514299b6eba89ec9c3d2b9c6f2122fbb164d19a"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -13833,7 +13916,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Temperature-excursion verification requires product-label interpretation and a defensible disposition, not isolated temperature recall.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0094",
@@ -13898,13 +14005,49 @@
         "Apply the shortage-specific remainder rule",
         "Reject the refill analogy"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CII-PARTIAL-72H": {
+              "content_version": 1,
+              "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad"
+            },
+            "FED-CII-NO-REFILL": {
+              "content_version": 1,
+              "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+            }
+          },
+          "drugs": {
+            "oxycodone": {
+              "content_version": 1,
+              "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -14023,7 +14166,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Realistic Schedule II stock-shortage follow-up requiring the 72-hour pathway and new-prescription consequence.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0095",
@@ -14350,13 +14517,49 @@
         "Identify the requester as a third party positioned to assist",
         "Apply the Massachusetts opioid-antagonist access rule"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-NALOXONE": {
+              "content_version": 2,
+              "content_hash": "a77e9d0d1e5def6f3838be72d278289e70eb30dc35a4a6505bd1575b28d97469"
+            },
+            "MA-SCHEDULE-VI": {
+              "content_version": 1,
+              "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+            }
+          },
+          "drugs": {
+            "naloxone": {
+              "content_version": 2,
+              "content_hash": "1622b27bee5d235bc6acbdcc0919c056304dce369e5890fe4167ec4587032149"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -14491,7 +14694,31 @@
           "verification_notes": "This record intentionally represents prescription-labeled naloxone. Massachusetts DCP distinguishes it from FDA-labeled OTC naloxone; status rechecked 2026-08-14."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Third-party naloxone access creates a genuine recipient/standing-order decision path.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0098",
@@ -14764,13 +14991,49 @@
         "Apply the partial-fill record and quantity conditions",
         "Apply the six-month outer time limit"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CIII-V-PARTIAL": {
+              "content_version": 1,
+              "content_hash": "916e552af577bf4e10c2a63a72c5f075be9607308e962122f7eb96d6a8a6ff00"
+            },
+            "FED-CS-REFILL-III-IV": {
+              "content_version": 1,
+              "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+            }
+          },
+          "drugs": {
+            "clonazepam": {
+              "content_version": 1,
+              "content_hash": "3005d8e97ca885e86d545627d66deff367dea43282ed5f8a6f68403944155c10"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -14889,7 +15152,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Schedule IV partial-fill recordkeeping and timing impose multiple independent constraints with realistic refill confusions.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0100",
@@ -14950,13 +15237,40 @@
         "Identify the products as prescription drug samples",
         "Separate sample distribution from ordinary pharmacy acquisition and dispensing"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-PDMA-SAMPLES": {
+              "content_version": 1,
+              "content_hash": "80a8f1fb62d9c7aed718d5a1d29add34b72cb9ece569f6c213987ab4f5061611"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -14968,7 +15282,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Plausible sample-diversion scenario turns on lawful distribution channel rather than billing or inventory accounting.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0101",
@@ -15031,13 +15369,45 @@
         "Confirm the patient is choosing a lesser quantity",
         "Document the lesser Schedule II dispensing"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-LESSER-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8308c41441603692cc608b2be42547bf2ee74cf889fb7aa6907f4ccea0060724"
+            }
+          },
+          "drugs": {
+            "oxycodone": {
+              "content_version": 1,
+              "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15149,7 +15519,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Patient-requested lesser Schedule II quantity is operationally plausible and distinct from the stock-shortage partial-fill family.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0102",
@@ -15210,13 +15604,40 @@
         "Separate a security defect from a theft/loss event",
         "Restore compliant restricted access before leaving the inventory unattended"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CS-SECURITY": {
+              "content_version": 1,
+              "content_hash": "8c922e3bbe0c4d3bce99cc33387154205ba1fceaf85935831da1ec0137e220d5"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15228,7 +15649,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Broken controlled-substance storage security is a concrete pharmacy-management decision without inventing a loss event.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0103",
@@ -15289,13 +15734,40 @@
         "Identify the changes as individual-licensee information",
         "Apply the Board's 14-day reporting requirement"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-LICENSEE-CHANGE-14D": {
+              "content_version": 1,
+              "content_hash": "4927d93e63c5e3629f7b14e715a6af553f037b52d64c0e3d9dc2a36236973b5c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15307,7 +15779,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Separates employer HR updates from Board reporting and applies a real deadline to plausible licensee changes.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0104",
@@ -15370,13 +15866,44 @@
         "Determine that the seven-day follow-up deadline passed",
         "Apply the pharmacist's DEA-notification duty"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CII-EMERGENCY-MISSING-FOLLOWUP": {
+              "content_version": 1,
+              "content_hash": "1a6473a17645dca1f4c0e49562e7d21decbb578d2e2f3ff79c63dc65af8e617e"
+            },
+            "FED-CII-EMERGENCY-FOLLOWUP": {
+              "content_version": 1,
+              "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15395,7 +15922,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Emergency oral Schedule II follow-up failure is a realistic escalation with a concrete pharmacist reporting consequence.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0105",
@@ -15457,13 +16008,44 @@
         "Identify whose CSOS certificate would sign the order",
         "Determine whether that individual is the DEA-issued subscriber"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CSOS-CREDENTIAL": {
+              "content_version": 1,
+              "content_hash": "1f25e94f87e7ac9d6c26eae7ebfd708755cc7a514a054f9e324214877e3dd99e"
+            },
+            "FED-CSOS": {
+              "content_version": 1,
+              "content_hash": "af95e99d908cd27f81a02069d5f5af9294ac9e9f50e3caef7773d163e7163606"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15482,7 +16064,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "CSOS credential sharing is a plausible staff-control problem testing individual certificate authority.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0106",
@@ -15550,13 +16156,49 @@
         "Check prescriber certification",
         "Keep REMS separate from Schedule VI status"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-MIFEPRISTONE-REMS": {
+              "content_version": 1,
+              "content_hash": "37ecb49b6784d818b6e83574b1fa2449587b9c73b4b29aa009977c3f90ad07e1"
+            },
+            "MA-SCHEDULE-VI": {
+              "content_version": 1,
+              "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+            }
+          },
+          "drugs": {
+            "mifepristone": {
+              "content_version": 2,
+              "content_hash": "53ddd5ea919fa9e4ef892f08f0e2d38ccbff849cb7aba934c4bcb4e57882c429"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15674,7 +16316,31 @@
           "verification_notes": "Identity, Schedule VI status, and the current FDA Mifepristone REMS pharmacy/prescriber certification pathway checked on 2026-08-14."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Mifepristone REMS creates a genuine federal-program versus Massachusetts scheduling interaction with multiple independent determinations.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0107",
@@ -15738,13 +16404,49 @@
         "Separate quantity compliance from purchaser-ID compliance",
         "Recognize the single-package 60 mg exception"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-PSE-LOG-ID": {
+              "content_version": 1,
+              "content_hash": "f476982a8d1cff2244b543c1c5faddf52039c35ed5e3dc86b1ca069f803dd27c"
+            },
+            "FED-PSE-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+            }
+          },
+          "drugs": {
+            "pseudoephedrine": {
+              "content_version": 2,
+              "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15855,7 +16557,31 @@
           "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "The 60-mg CMEA exception changes the ID/logbook decision and makes the foreign-passport fact purposeful.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0108",
@@ -15919,13 +16645,49 @@
         "Identify the seller as a new physical location",
         "Check training and self-certification as separate prerequisites"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-PSE-SELF-CERT": {
+              "content_version": 1,
+              "content_hash": "2bb931e63faa0f1095c21b89547bf977111465ea3117bd2405992c84d788a019"
+            },
+            "FED-PSE-QUANTITY": {
+              "content_version": 1,
+              "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+            }
+          },
+          "drugs": {
+            "pseudoephedrine": {
+              "content_version": 2,
+              "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16043,7 +16805,31 @@
           "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "New chain location creates a concrete location-specific CMEA certification decision with a plausible corporate-chain distractor.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0109",
@@ -16107,13 +16893,49 @@
         "Determine the current REMS status as of the dispensing date",
         "Separate REMS eligibility from ongoing clinical monitoring"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CLOZAPINE-REMS-REMOVED": {
+              "content_version": 1,
+              "content_hash": "934905d4d429ddf1be9a3a23421597b98e0e3f41a5f8d2c433e8e1ea6bc1d7d0"
+            },
+            "MA-SCHEDULE-VI": {
+              "content_version": 1,
+              "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+            }
+          },
+          "drugs": {
+            "clozapine": {
+              "content_version": 1,
+              "content_hash": "8ae31c9293c499fa3ee841b91f02ab224fe7950d4380cc1efaf60aad6852f32a"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16235,7 +17057,31 @@
           "verification_notes": "FDA labeling, FDA's current removal of the Clozapine REMS, and Massachusetts Schedule VI framework checked on 2026-08-14."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Current clozapine REMS removal distinguishes former federal prerequisites from continuing clinical monitoring.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0110",
@@ -16483,13 +17329,49 @@
         "Identify the stated OUD treatment indication",
         "Apply the statutory exception"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CS-II-III-PAMPHLET": {
+              "content_version": 1,
+              "content_hash": "eba61c8688c5df72921a6a49c67e044e1d5b3fbd7131a85296040f07e05fb218"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "buprenorphine-naloxone": {
+              "content_version": 1,
+              "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16611,7 +17493,31 @@
           "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "A substance-use-disorder treatment exception makes drug indication materially change the Massachusetts pamphlet consequence.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0112",
@@ -16672,13 +17578,40 @@
         "Identify the pharmacy as a covered Schedule II-V dispenser",
         "Check both product availability and counter notice"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PRESCRIPTION-LOCKBOX": {
+              "content_version": 1,
+              "content_hash": "9880590484f1c569481cdc21da710c5ee2d8b365b5293b8bc82dec00192faf06"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16690,7 +17623,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Concrete store-compliance decision combines lockbox-sale availability and counter-signage duties.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0113",
@@ -16751,13 +17708,40 @@
         "Identify the two amounts the statute compares",
         "Select the lesser amount"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-POS-LESSER-PRICE": {
+              "content_version": 1,
+              "content_hash": "5378e51ab9b1dafc38a8e89a52c57e0f3232debe1541981b565162e959b8a489"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16769,7 +17753,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Plausible point-of-sale conflict between insurance cost share and retail cash price has a direct pharmacy consequence.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0114",
@@ -16830,13 +17838,40 @@
         "Identify the product and intended use described by §27",
         "Determine whether the proposed seller is within an authorized category"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-HYPODERMIC-SALE": {
+              "content_version": 1,
+              "content_hash": "b2fb721cb85216084cb1e733a8ee0b7a8b966fe6707bb7454224246271e03340"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -16848,7 +17883,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Front-counter syringe sale tests personnel/seller authority in a plausible workflow rather than schedule memorization.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0115",
@@ -17159,13 +18218,49 @@
         "Separate immediate oral documentation from later follow-up documentation",
         "Apply the narrow Schedule VI exception"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-ORAL-CONTROLLED-DOCUMENTATION": {
+              "content_version": 1,
+              "content_hash": "16354be2ce556e706e3c1761b9ba185f753c94d8eb906408b7c8b27f6732ec36"
+            },
+            "MA-SCHEDULE-VI": {
+              "content_version": 1,
+              "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+            }
+          },
+          "drugs": {
+            "warfarin": {
+              "content_version": 1,
+              "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -17276,7 +18371,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Oral Schedule VI scenario naturally combines immediate documentation, authenticity, and the follow-up exception.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0117",
@@ -17337,13 +18456,40 @@
         "Identify the preparation as outpatient sterile compounded product",
         "Apply the additional compounded label and contact requirements"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPOUND-LABEL-CONTACT": {
+              "content_version": 1,
+              "content_hash": "b05585b9afb5ec9628fe8077d91498182cb9cd3c64a3d620dd0d95706f5fd110"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -17355,7 +18501,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Final check of a compounded outpatient product requires Massachusetts-specific labeling and contact-information consequences.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0118",
@@ -18034,13 +19204,40 @@
         "Apply the separate §5 retail conditions",
         "Distinguish the pathway from ordinary prescription dispensing"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-EXCEPTED-CS-SALE": {
+              "content_version": 1,
+              "content_hash": "5f93a5eda432358f5ae4bb07310e926205b822f6ed831cbe7ab5b0b580d80390"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -18052,7 +19249,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Excepted-preparation retail sale requires classification plus purchaser, record, quantity, and frequency conditions.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0122",
@@ -18886,13 +20107,44 @@
         "Independently identify the altered form as defective",
         "Apply the stricter defect consequence"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-DEFECT": {
+              "content_version": 1,
+              "content_hash": "3e1b34c797914202f16d02be89a90a3d0b7709286b19febfc75bad76f3441709"
+            },
+            "FED-FORM222-60DAY": {
+              "content_version": 1,
+              "content_hash": "bcf16225009bf0f430d6c3cb655c932a153ccdb7f39be5db2ac521dba231a444"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -18911,7 +20163,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Altered Form 222 versus form age creates a realistic procurement decision with a genuine defective-order rule.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0126",
@@ -18973,13 +20249,40 @@
         "Apply the replacement Form 222 and statement procedure",
         "Apply the order-form loss reporting duty"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-LOSS": {
+              "content_version": 2,
+              "content_hash": "3cb6845491863b6691ff28e505a979343a7175f50647da556ed55037ccb169e6"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -18991,7 +20294,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Lost executed Form 222 requires a distinct replacement, statement, retention, and reporting path.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0127",
@@ -19053,13 +20380,44 @@
         "Identify who presently lacks direct registrant signing authority",
         "Apply the DEA power-of-attorney pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-POA": {
+              "content_version": 1,
+              "content_hash": "ac5c8cdbe4e6317c5c86bc33efec2d2b22f2d029054f85bdab01e630ee135181"
+            },
+            "FED-FORM222-ORDER": {
+              "content_version": 1,
+              "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -19078,7 +20436,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Power-of-attorney execution authority is a realistic procurement scope question distinct from loss, cancellation, and defect families.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0128",
@@ -19141,13 +20523,44 @@
         "Independently validate the signing certificate",
         "Reject an order that fails the certificate gate"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CSOS-SUPPLIER-VALIDATION": {
+              "content_version": 1,
+              "content_hash": "02df294135a8389554e3296f0f732d6710ebaa71af50bf5c439f50b3aee8e441"
+            },
+            "FED-CSOS": {
+              "content_version": 1,
+              "content_hash": "af95e99d908cd27f81a02069d5f5af9294ac9e9f50e3caef7773d163e7163606"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -19173,7 +20586,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Revoked CSOS certificate creates a distinct electronic-order validation failure and supplier response.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0129",
@@ -19236,13 +20673,44 @@
         "Identify that only part of the order is being canceled before shipment",
         "Use written notice to the supplier"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+        "date": "2026-08-14",
+        "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-CANCEL": {
+              "content_version": 1,
+              "content_hash": "20846339ada42a7bd2edf56c8c58a35190f8d7b188ef099a2870609bd2bceb8f"
+            },
+            "FED-FORM222-ORDER": {
+              "content_version": 1,
+              "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -19268,7 +20736,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Partial cancellation after submission tests a distinct procurement workflow and supplier documentation consequence.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0130",
