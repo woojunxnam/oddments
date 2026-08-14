@@ -106,9 +106,10 @@ def validate_governance(
         minimum_passes = requirement.get("minimum_passes", 0)
         minimum_distinct = requirement.get("minimum_distinct_auditors", 0)
         required_types = requirement.get("required_auditor_types", [])
+        basis = requirement.get("distinctness_basis", "AUDITOR_TYPE")
         if minimum_distinct > minimum_passes:
             report.error(f"{requirements_path}: {label} distinct-auditor minimum exceeds pass minimum")
-        if len(required_types) > minimum_distinct:
+        if basis == "AUDITOR_TYPE" and len(required_types) > minimum_distinct:
             report.error(f"{requirements_path}: {label} required auditor types exceed distinct-auditor minimum")
 
     matrix_path = DATA / "exam_style" / "question_family_matrix.json"

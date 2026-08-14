@@ -245,10 +245,24 @@ def validate_questions(
             ):
                 if len(passes) < requirement.get("minimum_passes", 1):
                     report.error(f"{path}: insufficient current independent {label} audit passes")
-                auditors = {audit.get("auditor") for audit in passes}
-                if len(auditors) < requirement.get("minimum_distinct_auditors", 1):
+                basis = requirement.get("distinctness_basis", "AUDITOR_TYPE")
+                identities: set[str] = set()
+                for audit in passes:
+                    if basis == "AUDITOR_INSTANCE":
+                        identity = audit.get("auditor_instance")
+                        if not identity:
+                            report.error(
+                                f"{path}: {label} audit {audit.get('audit_id')} lacks auditor_instance required by release policy"
+                            )
+                            continue
+                    else:
+                        identity = audit.get("auditor")
+                    if identity:
+                        identities.add(identity)
+                if len(identities) < requirement.get("minimum_distinct_auditors", 1):
                     report.error(f"{path}: insufficient distinct {label} auditors")
-                missing_auditors = set(requirement.get("required_auditor_types", [])) - auditors
+                auditor_types = {audit.get("auditor") for audit in passes}
+                missing_auditors = set(requirement.get("required_auditor_types", [])) - auditor_types
                 if missing_auditors:
                     report.error(
                         f"{path}: missing required {label} auditor types {sorted(missing_auditors)}"
