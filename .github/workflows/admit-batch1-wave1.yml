@@ -8,6 +8,7 @@ on:
       - .github/workflows/admit-batch1-wave1.yml
       - scripts/admit_batch1_wave1.py
       - tests/test_release_build_semantics.py
+      - tests/test_site_build.py
 
 permissions:
   contents: write
@@ -42,12 +43,6 @@ jobs:
 
       - name: Regenerate tracked artifacts
         run: python scripts/generate_artifacts.py --write
-
-      - name: Migrate legacy empty-release test if present
-        run: |
-          if [ -f tests/test_empty_release_build.py ]; then
-            cp tests/test_release_build_semantics.py tests/test_empty_release_build.py
-          fi
 
       - name: Validate repository and release payload
         run: |
