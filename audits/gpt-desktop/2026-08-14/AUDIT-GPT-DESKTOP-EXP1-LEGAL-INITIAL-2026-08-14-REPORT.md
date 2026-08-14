@@ -124,6 +124,16 @@ Seven-business-day 결론은 맞다. 다만 `247 CMR 20.02(1)`의 improper dispe
 
 각 행의 exact section, official URL, `law_checked_date`, `Problem`, `Proposed_Rewrite` 및 `Proposed_Explanation`은 canonical legal JSON에 완전하게 기록했다.
 
+## Canonical dependency findings
+
+Question defect와 별도로 다음 rule metadata가 materially wrong 또는 incomplete하다. Audit 중에는 이를 수정하지 않았다.
+
+| rule_id | 판정 | 문제 |
+|---|---|---|
+| `MA-TECH-CII` | materially incomplete | `rule_summary`가 ordinary pharmacy technician의 `transporting`과 certified pharmacy technician의 조건부 `handling`을 구분하지 않아 Q105의 role ambiguity를 해소하지 못한다. |
+| `MA-RX-TRANSFER` | materially wrong/incomplete | 모든 transfer에 pharmacist-to-pharmacist communication과 annotations가 적용되는 것처럼 일반화하고, Schedule VI transfer를 approved certified pharmacy technician에게 허용하는 `247 CMR 8.04(4)(d)`를 authority/dependency에 포함하지 않는다. |
+| `MA-CONTROLLED-EPRESCRIBE` | materially incomplete | `105 CMR 721.070(C)`의 otherwise-valid prescription에 대한 pharmacist no-verification rule과 `721.070(A)(9)`의 Schedule VI exemption을 structured rule fields에 반영하지 않는다. |
+
 ## Release consequence
 
 `MINOR_EDIT` 또는 `MAJOR_REWRITE`가 하나라도 있으면 current question hash에 대한 legal pass가 아니다. 따라서 Q105, Q115, Q120, Q123을 canonical에서 수정한 뒤 새 hash에 대해 GPT와 Claude legal re-audit가 필요하다. 별도 realism audit도 Q130을 제외한 39문항을 `FAIL`로 판정했으므로 batch 전체는 현 상태로 release gate를 통과하지 못한다.

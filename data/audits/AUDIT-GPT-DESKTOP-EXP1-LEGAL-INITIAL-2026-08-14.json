@@ -455,7 +455,7 @@
           "law_checked_date": "2026-08-14"
         }
       ],
-      "Problem": "stem은 정의된 category인 “technician”이라고 했지만 247 CMR 8.05(2)는 ordinary pharmacy technician에게 Schedule II의 transporting만, certified pharmacy technician에게 pharmacist supervision·approval·written P&P 아래 transporting과 handling을 허용한다. E는 일반론으로는 맞지만 주어진 category의 handling 권한을 정확히 답하지 않는다.",
+      "Problem": "stem은 정의된 category인 “technician”이라고 했지만 247 CMR 8.05(2)는 ordinary pharmacy technician에게 Schedule II의 transporting만, certified pharmacy technician에게 pharmacist supervision·approval·written P&P 아래 transporting과 handling을 허용한다. E는 일반론으로는 맞지만 주어진 category의 handling 권한을 정확히 답하지 않는다. Canonical dependency MA-TECH-CII도 이 transporting/handling 및 personnel-category 구분을 rule_summary에 담지 않아 materially incomplete하다.",
       "Proposed_Answer": "현 선택지에는 완전한 정답이 없다. ordinary pharmacy technician은 transporting을 assist할 수 있지만 handling은 할 수 없고, certified pharmacy technician만 조건부 handling이 가능하다.",
       "Proposed_Rewrite": "stem에서 “pharmacy technician” 또는 “certified pharmacy technician”을 명시하고, 해당 category의 권한을 직접 묻도록 전면 수정한다.",
       "Proposed_Explanation": "Adderall은 amphetamine salts인 Schedule II이다. 247 CMR 8.05(2)(a)-(b)는 support-personnel category와 transporting/handling을 구분하며 accountability와 security는 pharmacist의 직접 책임이다."
@@ -789,7 +789,7 @@
           "law_checked_date": "2026-08-14"
         }
       ],
-      "Problem": "warfarin은 Massachusetts Schedule VI이고 247 CMR 8.04(4)(d)는 pharmacist approval 아래 certified pharmacy technician의 Schedule VI transfer를 허용한다. 따라서 A를 이 stem의 보편적 pharmacist-to-pharmacist 요건으로 채점한 것은 부정확하다. Federal 21 CFR 1306.25의 direct pharmacist rule은 federal Schedule III-V refill transfer에 적용된다.",
+      "Problem": "warfarin은 Massachusetts Schedule VI이고 247 CMR 8.04(4)(d)는 pharmacist approval 아래 certified pharmacy technician의 Schedule VI transfer를 허용한다. 따라서 A를 이 stem의 보편적 pharmacist-to-pharmacist 요건으로 채점한 것은 부정확하다. Federal 21 CFR 1306.25의 direct pharmacist rule은 federal Schedule III-V refill transfer에 적용된다. Canonical dependency MA-RX-TRANSFER의 rule_summary도 pharmacist-to-pharmacist communication과 annotations를 모든 transfer에 일반화하고 247 CMR 8.04(4)(d)를 authority로 포함하지 않아 materially wrong/incomplete하다.",
       "Proposed_Answer": "B, D. 다만 B는 적용되는 record mechanics를 구체화해야 한다.",
       "Proposed_Rewrite": "warfarin이 Schedule VI임을 명시하고 247 CMR 9.14의 remaining-refill 및 one-year limits와 247 CMR 8.04(4)(d)의 authorized personnel을 사실 패턴으로 직접 테스트한다.",
       "Proposed_Explanation": "Schedule VI prescription은 Schedule III-V와 같은 manner로 transfer되고 remaining authorized refills 전부를 옮길 수 있으나 issue date 후 one year를 넘길 수 없다. Massachusetts는 approved certified pharmacy technician의 Schedule VI transfer도 허용하므로 universal pharmacist-to-pharmacist statement는 피해야 한다."
@@ -874,7 +874,7 @@
           "law_checked_date": "2026-08-14"
         }
       ],
-      "Problem": "A와 B는 general rule과 exceptions를 반영하지만 C는 105 CMR 721.070(C)와 충돌한다. otherwise valid written/oral prescription을 받은 pharmacist는 exception 또는 waiver 해당 여부를 verify할 의무가 없다. 또한 721.070(A)(9)는 Schedule VI prescriptions를 e-prescribing requirement에서 제외한다.",
+      "Problem": "A와 B는 general rule과 exceptions를 반영하지만 C는 105 CMR 721.070(C)와 충돌한다. otherwise valid written/oral prescription을 받은 pharmacist는 exception 또는 waiver 해당 여부를 verify할 의무가 없다. 또한 721.070(A)(9)는 Schedule VI prescriptions를 e-prescribing requirement에서 제외한다. Canonical dependency MA-CONTROLLED-EPRESCRIBE는 authority range를 인용하면서도 두 rule을 rule_summary, exceptions 또는 common_confusions에 구체화하지 않아 materially incomplete하다.",
       "Proposed_Answer": "A, B. C는 오답이어야 한다.",
       "Proposed_Rewrite": "pharmacist가 otherwise valid nonelectronic Schedule II-V prescription을 받았다는 사실을 명시하고, “not required to verify the exception/waiver”를 정답 선택지로 제공한다.",
       "Proposed_Explanation": "Massachusetts는 controlled substances와 devices에 electronic issuance를 general rule로 두지만 enumerated exceptions가 있다. 그 exception을 적법하게 사용하는 책임과 별개로 dispensing pharmacist는 otherwise valid written/oral prescription의 exception 또는 waiver를 verify할 의무가 없다."
