@@ -1,0 +1,99 @@
+name: Export Batch 1 Q0110 final audit packages
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-q0110-final
+    paths:
+      - .github/workflows/export-batch1-q0110-final-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out final Q0110 repair branch
+        uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-q0110-final
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate repair before freezing packages
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          git diff --exit-code
+
+      - name: Export exact Q0110 inputs
+        run: |
+          mkdir -p audits/reaudit/2026-08-14
+          python scripts/export_audit_batch.py \
+            --auditor GPT \
+            --auditor-instance GPT-FRESH-EXP1-Q0110-FINAL-A \
+            --audit-id AUDIT-GPT-FRESH-EXP1-Q0110-FINAL-A-LEGAL-REAUDIT-2026-08-14 \
+            --review-type LEGAL_VERIFICATION \
+            --audit-scope REAUDIT \
+            --start 109 \
+            --count 1 \
+            --output audits/reaudit/2026-08-14/GPT-A-LEGAL-EXP1-Q0110-FINAL.json
+          python scripts/export_audit_batch.py \
+            --auditor GPT \
+            --auditor-instance GPT-FRESH-EXP1-Q0110-FINAL-A \
+            --audit-id AUDIT-GPT-FRESH-EXP1-Q0110-FINAL-A-REALISM-REAUDIT-2026-08-14 \
+            --review-type REALISM_REVIEW \
+            --audit-scope REAUDIT \
+            --start 109 \
+            --count 1 \
+            --output audits/reaudit/2026-08-14/GPT-A-REALISM-EXP1-Q0110-FINAL.json
+
+      - name: Verify package identity and release boundary
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import json
+          from pathlib import Path
+          from qa_common import question_audit_hash
+
+          q = json.loads(Path('data/questions/ma-q-0110.json').read_text())
+          legal = json.loads(Path('audits/reaudit/2026-08-14/GPT-A-LEGAL-EXP1-Q0110-FINAL.json').read_text())
+          realism = json.loads(Path('audits/reaudit/2026-08-14/GPT-A-REALISM-EXP1-Q0110-FINAL.json').read_text())
+          h = question_audit_hash(q)
+          for package in (legal, realism):
+              assert package['question_ids'] == ['MA-Q-0110']
+              assert package['question_hashes'] == {'MA-Q-0110': h}
+              assert package['auditor_instance'] == 'GPT-FRESH-EXP1-Q0110-FINAL-A'
+              assert package['audit_status'] == 'STRUCTURAL_TRIAGE_ONLY'
+          assert legal['review_type'] == 'LEGAL_VERIFICATION'
+          assert realism['review_type'] == 'REALISM_REVIEW'
+          assert legal['question_hashes'] == realism['question_hashes']
+          assert q['verification_status'] == q['lifecycle_status'] == 'AUDIT_PENDING'
+          assert q['audits'] == [] and q['final_adjudication'] is None
+
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 86
+          assert 'MA-Q-0110' not in allow['question_ids']
+          print('Q0110_AUDIT_HASH=' + h)
+          print('Q0110 final package boundary PASS')
+          PY
+          python scripts/validate_all.py
+          python -m pytest -q
+
+      - name: Commit packages and remove one-shot workflow
+        run: |
+          rm .github/workflows/export-batch1-q0110-final-audit.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "audit: freeze final Q0110 re-audit packages"
+          git push origin HEAD:repair/mpje-expansion-batch1-q0110-final
