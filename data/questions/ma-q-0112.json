@@ -1,71 +1,95 @@
 {
   "question_id": "MA-Q-0112",
-  "family_id": "EXP1_0112_QRE_IMMEDIATE_RESPONSE",
-  "area": 4,
-  "topic": "Quality assurance",
-  "subtopic": "QRE notification",
-  "difficulty": 4,
+  "family_id": "V3_0112_PATIENT_LOCKBOX_STORE_DUTY",
+  "area": 1,
+  "topic": "Pharmacy operations",
+  "subtopic": "Prescription lock boxes",
+  "difficulty": 3,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient’s spouse calls the pharmacy after discovering that the patient took the wrong warfarin strength and is now experiencing symptoms that make prescriber involvement professionally indicated. The pharmacy has not yet contacted anyone or provided corrective instructions. What response best matches the immediate QRE duties?",
+  "stem": "During a Board-readiness walkthrough, a Massachusetts community pharmacy that dispenses Schedule II through V prescriptions has no prescription lock boxes for sale and no notice about them near the pharmacy counter. The manager says patients can buy lock boxes online instead. What is the best compliance assessment?",
   "choices": [
     {
       "id": "A",
-      "text": "Finish the root-cause analysis first and wait until the next business day before addressing the patient."
+      "text": "The pharmacy complies because online retail availability satisfies the pharmacy's obligation."
     },
     {
       "id": "B",
-      "text": "Document the event internally but avoid giving any corrective information until the quarterly CQI meeting."
+      "text": "Only pharmacies that dispense more than a threshold number of opioids must carry lock boxes."
     },
     {
       "id": "C",
-      "text": "Promptly address the patient or representative, provide directions to correct or minimize harm, and notify the prescriber as professional judgment indicates."
+      "text": "The pharmacy needs only a verbal counseling script; physical availability and signage are optional."
     },
     {
       "id": "D",
-      "text": "Notify only the Board because patient communication is optional once a medication error has occurred."
+      "text": "The store should make prescription lock boxes available for sale and display the required notice on or near the pharmacy counter."
     },
     {
       "id": "E",
-      "text": "Contact the prescriber but withhold information from the patient and representative until the prescriber authorizes disclosure."
+      "text": "The requirement applies only to institutional pharmacies, not community pharmacies."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The immediate QRE response is patient-protective. The pharmacist should not make internal analysis a prerequisite to notifying the patient or representative, giving corrective or harm-minimization directions, and contacting the prescriber when professional judgment indicates that contact is needed.",
+    "core_reasoning": "This is a facility-operation requirement, not a counseling preference. A covered store must satisfy both the on-site availability and notice components rather than redirecting patients to outside sellers.",
     "choice_analysis": {
-      "A": "Systems analysis is important later, but it should not postpone immediate patient protection.",
-      "B": "Internal documentation alone does not satisfy the patient-facing response required by the event.",
-      "C": "The facts make both harm-minimization directions and professionally indicated prescriber notification part of the appropriate immediate response.",
-      "D": "Board reporting, when separately triggered, does not replace communication and corrective directions to the patient side of the event.",
-      "E": "The regulation does not make patient notification contingent on first obtaining the prescriber’s permission."
+      "A": "The statute places the availability and notice duties on each covered store location.",
+      "B": "The statutory trigger is the covered pharmacy's registration to dispense Schedule II-V prescription drugs, not an opioid-volume threshold.",
+      "C": "The statute specifically addresses lock boxes for sale and a posted notice.",
+      "D": "This is the store-level duty created by M.G.L. c. 94C §21B.",
+      "E": "The statute targets covered pharmacies and excludes specified institutional settings rather than limiting the rule to them."
     },
     "related_facts": [
-      "QRE immediate response and later systems analysis are distinct stages.",
-      "A clinically consequential warfarin error can make prescriber contact professionally indicated."
+      "The duty is tied to each covered store location.",
+      "Patient lock boxes are different from the pharmacy's own controlled-substance storage."
     ],
-    "mpje_trap": "Do not place internal investigation ahead of immediate steps intended to reduce patient harm."
+    "mpje_trap": "Do not confuse a patient-facing lock-box sales requirement with internal pharmacy security controls."
   },
   "rule_ids": [
-    "MA-QRE-NOTIFY"
+    "MA-PRESCRIPTION-LOCKBOX"
   ],
-  "drug_ids": [
-    "warfarin"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Identify the event as requiring immediate patient-protection action",
-    "Use the clinical facts to recognize that prescriber notification is professionally indicated",
-    "Separate immediate response from later CQI analysis"
+    "Identify the pharmacy as a covered Schedule II-V dispenser",
+    "Check both product availability and counter notice"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PRESCRIPTION-LOCKBOX": {
+          "content_version": 1,
+          "content_hash": "9880590484f1c569481cdc21da710c5ee2d8b365b5293b8bc82dec00192faf06"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

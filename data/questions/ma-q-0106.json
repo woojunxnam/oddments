@@ -1,68 +1,111 @@
 {
   "question_id": "MA-Q-0106",
-  "family_id": "EXP1_0106_INTERN_DIRECT_SUPERVISION",
-  "area": 1,
-  "topic": "Pharmacy personnel",
-  "subtopic": "Intern supervision",
-  "difficulty": 3,
-  "question_type": "SBA",
+  "family_id": "V3_0106_MIFEPRISTONE_REMS_GATE",
+  "area": 3,
+  "topic": "Federal drug requirements",
+  "subtopic": "Mifepristone REMS",
+  "difficulty": 5,
+  "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacy intern is working in the prescription department. A licensed pharmacist is physically present, but that pharmacist is not serving as the intern’s registered pharmacist preceptor. The scheduled preceptor is off site. What is the central issue?",
+  "stem": "A Massachusetts retail pharmacy receives a prescription for mifepristone 200 mg for medical termination of pregnancy through 10 weeks. The pharmacy is not currently certified in the Mifepristone REMS Program. Which statements are correct? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Any licensed pharmacist in the building automatically satisfies the cited preceptor requirement regardless of the intern relationship."
+      "text": "Retail pharmacies are categorically prohibited from dispensing mifepristone, even if they become REMS-certified."
     },
     {
       "id": "B",
-      "text": "The intern may practice without a preceptor whenever no Schedule II prescriptions are filled."
+      "text": "The pharmacy must satisfy the current Mifepristone REMS pharmacy-certification requirements before dispensing under this pathway."
     },
     {
       "id": "C",
-      "text": "The intern’s practice is tied to direct supervision by a registered pharmacist preceptor; ordinary coworker presence does not by itself establish that condition."
+      "text": "The prescription must come from a prescriber who satisfies the current Mifepristone REMS prescriber-certification requirement."
     },
     {
       "id": "D",
-      "text": "The preceptor requirement applies only to internship hours performed outside a pharmacy."
+      "text": "Massachusetts Schedule VI status does not erase the separate federal product-specific REMS conditions."
     },
     {
       "id": "E",
-      "text": "The intern may replace direct supervision with a written note from the absent preceptor for that shift."
+      "text": "The pharmacy can substitute ordinary Schedule VI transfer documentation for REMS certification because mifepristone is not federally controlled."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "B",
+    "C",
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The cited Massachusetts internship rule is not satisfied merely because some pharmacist happens to be on the premises. Internship practice is linked to direct supervision by the registered pharmacist preceptor responsible for that training relationship.",
+    "core_reasoning": "The pharmacist must apply both the ordinary Massachusetts prescription framework and the product-specific federal REMS. Retail dispensing is possible, but only through the current certified-pharmacy/certified-prescriber pathway.",
     "choice_analysis": {
-      "A": "Pharmacist presence and preceptor supervision are not interchangeable facts under the cited intern rule.",
-      "B": "Avoiding Schedule II prescriptions does not remove the personnel-supervision requirement.",
-      "C": "The missing registered-preceptor supervision is the operative defect described by the stem.",
-      "D": "The rule governs internship practice in the pharmacy setting rather than only external activities.",
-      "E": "A note from an absent preceptor is not the same as direct supervision."
+      "A": "Current FDA rules allow retail pharmacy dispensing when the pharmacy satisfies the REMS certification requirements.",
+      "B": "Pharmacy certification is a current REMS condition for pharmacy dispensing of the drug for this indication.",
+      "C": "The current REMS requires a certified prescriber for this use.",
+      "D": "State Schedule VI classification and federal REMS requirements operate as different legal layers.",
+      "E": "Ordinary state prescription mechanics do not replace the product-specific federal REMS gate."
     },
     "related_facts": [
-      "Intern supervision is a licensure and training issue rather than a controlled-substance schedule issue.",
-      "The relevant question is who is supervising in the legally recognized role."
+      "FDA permits certified retail pharmacies to dispense mifepristone under the REMS.",
+      "A REMS restriction is distinct from controlled-substance scheduling."
     ],
-    "mpje_trap": "Do not stop at ‘a pharmacist is present’; identify whether the required supervisory relationship is present."
+    "mpje_trap": "Do not infer 'not federally controlled' to mean 'no federal dispensing restriction'."
   },
   "rule_ids": [
-    "MA-INTERN-SUPERVISION"
+    "FED-MIFEPRISTONE-REMS",
+    "MA-SCHEDULE-VI"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "mifepristone"
+  ],
   "reasoning_steps": [
-    "Identify the worker as a pharmacy intern",
-    "Distinguish a pharmacist coworker from the registered pharmacist preceptor required for direct supervision"
+    "Identify the product and REMS-governed indication",
+    "Check pharmacy certification",
+    "Check prescriber certification",
+    "Keep REMS separate from Schedule VI status"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-MIFEPRISTONE-REMS": {
+          "content_version": 1,
+          "content_hash": "37ecb49b6784d818b6e83574b1fa2449587b9c73b4b29aa009977c3f90ad07e1"
+        },
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        }
+      },
+      "drugs": {
+        "mifepristone": {
+          "content_version": 2,
+          "content_hash": "53ddd5ea919fa9e4ef892f08f0e2d38ccbff849cb7aba934c4bcb4e57882c429"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

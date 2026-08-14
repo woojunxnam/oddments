@@ -1,74 +1,95 @@
 {
   "question_id": "MA-Q-0102",
-  "family_id": "EXP1_0102_CDTM_CONTROLLED_LIMIT",
-  "area": 2,
-  "topic": "Collaborative practice",
-  "subtopic": "Schedule II-V limitation",
+  "family_id": "V3_0102_CONTROLLED_STOCK_SECURITY",
+  "area": 1,
+  "topic": "Controlled substance security",
+  "subtopic": "Physical security",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A retail CDTM agreement otherwise permits a pharmacist to initiate drug therapy for the referred condition. The physician proposes adding two options to the pharmacist’s prescribing authority: gabapentin and alprazolam. Which schedule-based conclusion is correct?",
+  "stem": "During closing procedures, a Massachusetts pharmacy discovers that its controlled-substance storage cabinet no longer locks. The inventory reconciles and no theft or loss is known. A technician suggests leaving the controlled stock there overnight because the alarm system covers the building. What is the best response?",
   "choices": [
     {
       "id": "A",
-      "text": "Gabapentin may fit the Schedule VI prescribing boundary, but alprazolam is Schedule IV and cannot be authorized for pharmacist prescribing through retail CDTM."
+      "text": "Leave the stock in place because a theft report is required only after an actual loss is proved."
     },
     {
       "id": "B",
-      "text": "Both drugs may be authorized because every prescription drug is Schedule VI in Massachusetts."
+      "text": "Move or otherwise secure the controlled stock under compliant restricted-access conditions before closing and address the failed security control."
     },
     {
       "id": "C",
-      "text": "Only alprazolam may be authorized because Schedule IV is less restrictive than Schedule VI."
+      "text": "Convert all controlled stock to will-call prescriptions so the cabinet no longer contains pharmacy inventory."
     },
     {
       "id": "D",
-      "text": "Neither drug can ever be addressed in a collaborative agreement because CDTM excludes all prescription medications."
+      "text": "Wait until the next biennial inventory to determine whether the broken lock caused a reportable discrepancy."
     },
     {
       "id": "E",
-      "text": "The schedule distinction matters only if the patient uses insurance rather than paying cash."
+      "text": "File DEA Form 106 immediately even though no theft or significant loss has been discovered."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "Retail CDTM does not permit the agreement to authorize pharmacist prescribing of Schedule II through V controlled substances. Alprazolam is Schedule IV, while gabapentin is not federally scheduled and is treated as Massachusetts Schedule VI, so the schedule boundary produces different results.",
+    "core_reasoning": "Security and loss reporting are separate decisions. Here the pharmacy has discovered a failed security control but no loss; it should secure the controlled substances and restrict access rather than waiting for a discrepancy or inventing a theft report.",
     "choice_analysis": {
-      "A": "This correctly combines the two drug classifications with the retail CDTM Schedule II-V prescribing prohibition.",
-      "B": "Massachusetts Schedule VI captures prescription drugs outside Schedules I-V; it does not absorb alprazolam’s Schedule IV status.",
-      "C": "A lower Roman numeral is not a ranking that expands CDTM prescribing authority; Schedule IV remains within the prohibited II-V range.",
-      "D": "Collaborative practice is specifically designed to manage drug therapy within its legal scope.",
-      "E": "Payment method does not change the statutory controlled-substance boundary."
+      "A": "The absence of a known loss does not eliminate the pharmacy's independent duty to maintain secure controlled-substance storage and access.",
+      "B": "The operative problem is a known physical-security failure; the pharmacy should restore secure storage/access before leaving the stock unattended.",
+      "C": "Changing inventory labels does not cure the underlying physical-security failure.",
+      "D": "Biennial inventory does not substitute for ongoing controlled-substance security.",
+      "E": "A security defect requires correction, but the stated facts do not establish a theft or significant loss for a Form 106 event."
     },
     "related_facts": [
-      "Gabapentin is a Massachusetts Schedule VI prescription drug rather than a federal Schedule I-V controlled substance.",
-      "Alprazolam is a benzodiazepine in Schedule IV."
+      "Controlled-substance security is continuous, not limited to inventory dates.",
+      "A security defect and a confirmed significant loss trigger different duties."
     ],
-    "mpje_trap": "Classify each drug first; do not assume every prescription drug uses the Massachusetts Schedule VI pathway."
+    "mpje_trap": "Do not wait for a theft to occur before correcting a known controlled-substance security failure."
   },
   "rule_ids": [
-    "MA-CDTM-CONTROLLED-LIMIT",
-    "MA-SCHEDULE-VI",
-    "FED-CS-SCHEDULES"
+    "MA-CS-SECURITY"
   ],
-  "drug_ids": [
-    "gabapentin",
-    "alprazolam"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Classify gabapentin and alprazolam separately",
-    "Apply the retail CDTM prohibition on pharmacist prescribing of Schedules II-V",
-    "Identify which drug remains potentially within the Schedule VI pathway"
+    "Separate a security defect from a theft/loss event",
+    "Restore compliant restricted access before leaving the inventory unattended"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CS-SECURITY": {
+          "content_version": 1,
+          "content_hash": "8c922e3bbe0c4d3bce99cc33387154205ba1fceaf85935831da1ec0137e220d5"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

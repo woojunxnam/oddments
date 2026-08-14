@@ -1,68 +1,107 @@
 {
   "question_id": "MA-Q-0109",
-  "family_id": "EXP1_0109_COMPOUNDING_CE_TRIGGER",
-  "area": 1,
-  "topic": "Licensure",
-  "subtopic": "Compounding continuing education",
+  "family_id": "V3_0109_CLOZAPINE_REMS_REMOVED",
+  "area": 3,
+  "topic": "Federal drug requirements",
+  "subtopic": "Clozapine REMS status",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist does not personally prepare compounded doses but is assigned to oversee staff performing covered sterile compounding. The pharmacist has completed the ordinary renewal CE only. What additional issue should be addressed?",
+  "stem": "A patient presents a valid clozapine prescription in August 2026. A pharmacist trained under the former Clozapine REMS tells a colleague that the pharmacy cannot dispense until the patient is enrolled in the REMS and an ANC result is entered into that program. What is the current federal position?",
   "choices": [
     {
       "id": "A",
-      "text": "No additional CE can apply because only the person physically mixing ingredients is covered."
+      "text": "The former REMS enrollment and ANC-verification gate remains mandatory for every clozapine dispensing."
     },
     {
       "id": "B",
-      "text": "The pharmacist may replace all ordinary renewal CE with technician compounding training."
+      "text": "The pharmacy may ignore any clinically significant blood-count information because removal of the REMS ended all clozapine monitoring concerns."
     },
     {
       "id": "C",
-      "text": "Additional compounding CE begins only after the pharmacy reports a compounding error."
+      "text": "The pharmacy must enroll only the prescriber, while pharmacy and patient enrollment are no longer required."
     },
     {
       "id": "D",
-      "text": "The pharmacist’s oversight role can trigger the additional annual CE requirement for covered sterile or complex nonsterile compounding."
+      "text": "FDA removed the Clozapine REMS, so REMS enrollment and REMS ANC verification are no longer federal dispensing prerequisites, although clinical monitoring remains relevant."
     },
     {
       "id": "E",
-      "text": "Compounding CE applies to the patient receiving the preparation rather than to the pharmacist overseeing the activity."
+      "text": "Clozapine became an over-the-counter drug when the REMS was removed."
     }
   ],
   "correct_choice_ids": [
     "D"
   ],
   "explanation": {
-    "core_reasoning": "The Massachusetts continuing-education rule reaches pharmacists who oversee covered compounding as well as pharmacists who directly engage in it. A pharmacist cannot avoid the additional professional-maintenance requirement merely by delegating the hands-on preparation.",
+    "core_reasoning": "FDA removed the Clozapine REMS effective in 2025. The pharmacist should not continue imposing the former program as a legal dispensing gate, while still addressing clinically meaningful monitoring under current labeling and professional practice.",
     "choice_analysis": {
-      "A": "The rule expressly recognizes oversight as a role that can trigger the additional CE obligation.",
-      "B": "Specialized compounding CE supplements rather than replaces the pharmacist’s general renewal requirements.",
-      "C": "The trigger is the pharmacist’s covered compounding role, not the occurrence of an error.",
-      "D": "Oversight of the covered compounding activity is sufficient to make the additional annual CE requirement relevant.",
-      "E": "The CE obligation is imposed on the professional performing or overseeing the covered activity."
+      "A": "FDA removed the Clozapine REMS and no longer requires those program steps as dispensing prerequisites.",
+      "B": "Removal of the REMS did not eliminate the drug's clinical neutropenia risk or labeling-based monitoring recommendations.",
+      "C": "FDA removed the REMS program itself rather than retaining a prescriber-only enrollment gate.",
+      "D": "This reflects FDA's current post-REMS framework.",
+      "E": "Removal of a REMS does not change clozapine from prescription to OTC status."
     },
     "related_facts": [
-      "This item tests a current pharmacist CE rule, not draft Massachusetts compounding practice regulations.",
-      "Supervisory responsibility can carry education obligations even without hands-on compounding."
+      "REMS removal does not convert a prescription drug to OTC status.",
+      "Clinical monitoring and a REMS enrollment gate are different concepts."
     ],
-    "mpje_trap": "Do not equate ‘not physically compounding’ with ‘not responsible for compounding.’"
+    "mpje_trap": "A historical safety program may no longer be a current legal prerequisite even though the underlying clinical risk remains."
   },
   "rule_ids": [
-    "MA-CE-COMPOUNDING"
+    "FED-CLOZAPINE-REMS-REMOVED",
+    "MA-SCHEDULE-VI"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "clozapine"
+  ],
   "reasoning_steps": [
-    "Identify the pharmacist’s role as oversight of covered compounding",
-    "Apply the additional CE trigger to oversight rather than only hands-on preparation"
+    "Determine the current REMS status as of the dispensing date",
+    "Separate REMS eligibility from ongoing clinical monitoring"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CLOZAPINE-REMS-REMOVED": {
+          "content_version": 1,
+          "content_hash": "934905d4d429ddf1be9a3a23421597b98e0e3f41a5f8d2c433e8e1ea6bc1d7d0"
+        },
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        }
+      },
+      "drugs": {
+        "clozapine": {
+          "content_version": 1,
+          "content_hash": "8ae31c9293c499fa3ee841b91f02ab224fe7950d4380cc1efaf60aad6852f32a"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

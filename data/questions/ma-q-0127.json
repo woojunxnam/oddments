@@ -1,75 +1,100 @@
 {
   "question_id": "MA-Q-0127",
-  "family_id": "EXP1_0127_CS_INVENTORY_COUNTING",
-  "area": 4,
-  "topic": "Controlled substance inventory",
-  "subtopic": "Counting method",
-  "difficulty": 5,
-  "question_type": "SATA",
+  "family_id": "V3_0127_FORM222_POA_SIGNATURE",
+  "area": 3,
+  "topic": "Controlled substance procurement",
+  "subtopic": "Form 222 signing authority",
+  "difficulty": 4,
+  "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During a federal inventory, the pharmacy finds three opened stock containers: Adderall (Schedule II), a 500-tablet alprazolam container, and a 2,000-tablet alprazolam container. Which counting approaches are permitted or required? Select ALL that apply.",
+  "stem": "A pharmacy's DEA registrant wants a staff pharmacist to sign paper DEA Forms 222 when the registrant is away. The staff pharmacist is not the person who signed the pharmacy's most recent DEA registration application. Which arrangement can lawfully provide signing authority?",
   "choices": [
     {
       "id": "A",
-      "text": "Estimate the opened Adderall quantity because the original bottle contained fewer than 1,000 tablets."
+      "text": "A verbal instruction from the pharmacy manager made before each order, with no retained authorization record."
     },
     {
       "id": "B",
-      "text": "Count or measure the Schedule II Adderall quantity exactly."
+      "text": "A notation in the pharmacy's employee handbook stating that every licensed pharmacist may sign Form 222 automatically."
     },
     {
       "id": "C",
-      "text": "The opened 500-tablet Schedule IV alprazolam container may generally be estimated."
+      "text": "Use of the registrant's CSOS password to sign the paper form electronically."
     },
     {
       "id": "D",
-      "text": "The opened 2,000-tablet Schedule IV alprazolam container may be estimated solely because alprazolam is not Schedule II."
+      "text": "A supplier's written permission authorizing the staff pharmacist to sign the purchaser's order forms."
     },
     {
       "id": "E",
-      "text": "Use an exact count for the opened Schedule IV alprazolam container holding more than 1,000 tablets."
+      "text": "A compliant power of attorney granted by the registrant and retained so it is available for inspection."
     }
   ],
   "correct_choice_ids": [
-    "B",
-    "C",
     "E"
   ],
   "explanation": {
-    "core_reasoning": "Federal inventory counting uses both schedule and container size. Schedule II quantities require an exact count or measure. Opened Schedule III-V containers may generally be estimated unless the container holds more than 1,000 tablets or capsules, in which case an exact count is required.",
+    "core_reasoning": "Paper Form 222 signing authority can extend beyond the person who signed the DEA registration, but it must be conferred through the DEA power-of-attorney mechanism rather than job title, supplier consent, or shared credentials.",
     "choice_analysis": {
-      "A": "The opened-container estimation allowance does not replace the exact-count requirement for Schedule II inventory.",
-      "B": "Adderall is Schedule II, so its inventory quantity must be counted or measured exactly.",
-      "C": "An opened Schedule IV container at or below the 1,000-unit threshold may generally be estimated.",
-      "D": "Schedule IV status alone is not enough; the over-1,000-unit container crosses the threshold for exact counting.",
-      "E": "The 2,000-tablet Schedule IV container exceeds the threshold and therefore requires an exact count."
+      "A": "Form 222 signing authority is not created by an undocumented verbal instruction.",
+      "B": "Licensure alone does not create the registrant-specific authority required to execute the order form.",
+      "C": "CSOS credentials do not substitute for the paper Form 222 power-of-attorney framework.",
+      "D": "The purchaser's registrant grants the authority; the supplier cannot confer it on the purchaser's employee.",
+      "E": "DEA permits a registrant to grant Form 222 execution authority through a compliant power of attorney."
     },
     "related_facts": [
-      "Adderall contains amphetamine salts and is Schedule II.",
-      "Alprazolam is Schedule IV, so container size determines whether estimation is permitted for an opened container."
+      "The power of attorney is retained for inspection rather than submitted with each order to DEA.",
+      "CSOS certificate authority and paper Form 222 power of attorney are related but distinct mechanisms."
     ],
-    "mpje_trap": "Use two variables, not one: first schedule, then container size for opened Schedule III-V stock."
+    "mpje_trap": "Do not assume 'licensed pharmacist' automatically means 'authorized Form 222 signer'."
   },
   "rule_ids": [
-    "FED-INVENTORY-COUNT",
-    "FED-CS-SCHEDULES"
+    "FED-FORM222-POA",
+    "FED-FORM222-ORDER"
   ],
-  "drug_ids": [
-    "amphetamine-dextroamphetamine",
-    "alprazolam"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Classify Adderall and alprazolam by schedule",
-    "Apply the exact-count rule to Schedule II",
-    "Apply the 1,000-unit threshold separately to each opened Schedule IV container"
+    "Identify who presently lacks direct registrant signing authority",
+    "Apply the DEA power-of-attorney pathway"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-FORM222-POA": {
+          "content_version": 1,
+          "content_hash": "ac5c8cdbe4e6317c5c86bc33efec2d2b22f2d029054f85bdab01e630ee135181"
+        },
+        "FED-FORM222-ORDER": {
+          "content_version": 1,
+          "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

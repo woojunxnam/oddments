@@ -1,7 +1,7 @@
 {
   "drug_id": "mifepristone",
-  "content_version": 1,
-  "content_hash": "2bded1c894fd4e8908cc11ce4c57108434c07dbb00f0eae6c77f1b1be9829347",
+  "content_version": 2,
+  "content_hash": "53ddd5ea919fa9e4ef892f08f0e2d38ccbff849cb7aba934c4bcb4e57882c429",
   "generic_name": "mifepristone",
   "brand_names": [
     "Mifeprex"
@@ -27,15 +27,17 @@
       ]
     },
     "transfer": {
-      "summary": "Apply the current transfer rule and any product-specific REMS restriction.",
+      "summary": "Any dispensing pathway must preserve the current Mifepristone REMS certified-pharmacy and certified-prescriber requirements; ordinary Schedule VI transfer mechanics do not override the REMS.",
       "rule_ids": [
-        "FED-REMS",
-        "MA-RX-TRANSFER"
+        "FED-MIFEPRISTONE-REMS",
+        "MA-RX-TRANSFER",
+        "MA-SCHEDULE-VI"
       ]
     },
     "partial_fill": {
-      "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
+      "summary": "Product-specific Mifepristone REMS dispensing requirements continue to control even though the drug is not federally scheduled.",
       "rule_ids": [
+        "FED-MIFEPRISTONE-REMS",
         "MA-SCHEDULE-VI"
       ]
     },
@@ -53,9 +55,9 @@
     }
   },
   "verified_rule_dependencies": {
-    "FED-REMS": {
+    "FED-MIFEPRISTONE-REMS": {
       "content_version": 1,
-      "content_hash": "b1911934ed7dd0cfc0d54fcecbcd8a143c54d7d785459aa98d7f3f2483eeefd2"
+      "content_hash": "37ecb49b6784d818b6e83574b1fa2449587b9c73b4b29aa009977c3f90ad07e1"
     },
     "MA-PMP-REPORTING": {
       "content_version": 1,
@@ -90,7 +92,7 @@
       "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
     }
   ],
-  "last_verified": "2026-08-13",
+  "last_verified": "2026-08-14",
   "verification_status": "PRIMARY_VERIFIED",
-  "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
+  "verification_notes": "Identity, Schedule VI status, and the current FDA Mifepristone REMS pharmacy/prescriber certification pathway checked on 2026-08-14."
 }

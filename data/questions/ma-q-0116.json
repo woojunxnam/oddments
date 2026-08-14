@@ -1,70 +1,109 @@
 {
   "question_id": "MA-Q-0116",
-  "family_id": "EXP1_0116_SERIOUS_EVENT_RECORDS",
-  "area": 4,
-  "topic": "Mandatory reporting",
-  "subtopic": "Serious event records",
-  "difficulty": 4,
-  "question_type": "SBA",
+  "family_id": "V3_0116_ORAL_SVI_DOCUMENTATION",
+  "area": 3,
+  "topic": "Prescription format",
+  "subtopic": "Oral Schedule VI prescription",
+  "difficulty": 5,
+  "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacy filed a qualifying serious-event report four years ago. The underlying controlled-substance prescription is older than two years, and the manager proposes destroying every record from the case based only on the ordinary controlled-prescription retention period. What is the best response?",
+  "stem": "A known Massachusetts prescriber telephones a new warfarin prescription to the pharmacist. Warfarin is a Massachusetts Schedule VI prescription drug. Which actions correctly apply to this oral prescription? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Destroy everything because every pharmacy record uses the two-year controlled-prescription period."
+      "text": "Because Schedule VI is excluded from §20(c)'s later follow-up-prescription requirement, the pharmacist does not need to create an oral-prescription record."
     },
     {
       "id": "B",
-      "text": "Destroy the serious-event records because electronic filing ended the pharmacy’s retention duty."
+      "text": "The pharmacist should immediately reduce the oral prescription to writing with the information required by Massachusetts law."
     },
     {
       "id": "C",
-      "text": "Keep the records only until the next license renewal because renewal resets all retention periods."
+      "text": "The pharmacist must demand a replacement electronic prescription within two days because §20(c) applies identically to Schedule VI."
     },
     {
       "id": "D",
-      "text": "Use the prescription issue date as the starting point for the five-year serious-event record period."
+      "text": "The Schedule VI exception from the later follow-up document does not eliminate the pharmacist's ordinary authenticity and validity responsibilities."
     },
     {
       "id": "E",
-      "text": "Keep the serious-event records; their retention period is at least five years from report filing."
+      "text": "The pharmacist must convert the prescription to Schedule V before an oral transmission can be accepted."
     }
   ],
   "correct_choice_ids": [
-    "E"
+    "B",
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "Different record categories have different retention rules. Even if the ordinary controlled-prescription record has passed its two-year minimum, records relating to a reportable event under 247 CMR 20.02 must remain readily retrievable for at least five years from the filing of the report.",
+    "core_reasoning": "Massachusetts separates the immediate oral-prescription record from the later follow-up-document rule. Schedule VI is excepted from the latter, not from the pharmacist's contemporaneous documentation and validity duties.",
     "choice_analysis": {
-      "A": "A two-year prescription rule does not override a longer retention rule attached to serious-event reporting records.",
-      "B": "Electronic submission does not eliminate preservation of the underlying report-related records.",
-      "C": "License renewal is not the measuring event for this record category.",
-      "D": "The five-year serious-event period runs from report filing rather than the original prescription date.",
-      "E": "At four years after filing, the serious-event record set remains inside the required five-year preservation period."
+      "A": "The Schedule VI exception concerns the later follow-up document; the pharmacist still immediately reduces the oral prescription to writing.",
+      "B": "Section 20(a) requires contemporaneous reduction of the oral controlled-substance prescription to writing.",
+      "C": "Section 20(c) expressly states that its later electronic/written follow-up requirements do not apply to Schedule VI.",
+      "D": "Schedule VI remains a prescription controlled substance under Massachusetts law; the follow-up exception is not a blanket validity waiver.",
+      "E": "An oral Schedule VI prescription does not become Schedule V; classification is not changed by transmission method."
     },
     "related_facts": [
-      "Massachusetts controlled-substance prescriptions generally have a separate two-year retention rule.",
-      "Record-retention questions should begin by classifying the record before choosing a time period."
+      "M.G.L. c. 94C §20(a) applies to oral controlled-substance prescriptions.",
+      "Section 20(c) expressly excludes Schedule VI from its later follow-up prescription requirement."
     ],
-    "mpje_trap": "One transaction can generate several record types; the shortest retention period does not automatically govern all of them."
+    "mpje_trap": "A statutory exception can be narrow: identify exactly which step it removes and which duties remain."
   },
   "rule_ids": [
-    "MA-SERIOUS-EVENT-RECORDS",
-    "MA-RX-RECORDS-2Y"
+    "MA-ORAL-CONTROLLED-DOCUMENTATION",
+    "MA-SCHEDULE-VI"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "warfarin"
+  ],
   "reasoning_steps": [
-    "Identify that the case contains more than one record category",
-    "Apply the two-year prescription rule only to the prescription category",
-    "Apply the separate five-year-from-filing rule to serious-event-related records"
+    "Classify warfarin as Massachusetts Schedule VI",
+    "Separate immediate oral documentation from later follow-up documentation",
+    "Apply the narrow Schedule VI exception"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ORAL-CONTROLLED-DOCUMENTATION": {
+          "content_version": 1,
+          "content_hash": "16354be2ce556e706e3c1761b9ba185f753c94d8eb906408b7c8b27f6732ec36"
+        },
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        }
+      },
+      "drugs": {
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

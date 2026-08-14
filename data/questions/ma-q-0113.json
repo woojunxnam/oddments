@@ -1,69 +1,95 @@
 {
   "question_id": "MA-Q-0113",
-  "family_id": "EXP1_0113_QRE_SYSTEMS_ANALYSIS",
-  "area": 4,
-  "topic": "Quality assurance",
-  "subtopic": "QRE analysis",
+  "family_id": "V3_0113_POINT_OF_SALE_LESSER_PRICE",
+  "area": 1,
+  "topic": "Pharmacy operations",
+  "subtopic": "Prescription point-of-sale charge",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacy finds that several dispensing errors occurred during evening cross-coverage when staff repeatedly bypassed a barcode warning. Which proposed QRE analysis best fits the Massachusetts systems approach?",
+  "stem": "At a Massachusetts pharmacy, an insured patient's adjudicated cost-sharing amount for a generic prescription is $18. The pharmacy's current retail cash price for the same prescription is $11. The prescription is otherwise ready for sale. What amount does the Massachusetts point-of-sale rule require the pharmacy to charge?",
   "choices": [
     {
       "id": "A",
-      "text": "Record only the name of the last employee who touched each prescription and stop the analysis there."
+      "text": "$18, because an insurer-adjudicated cost share always overrides the pharmacy retail price."
     },
     {
       "id": "B",
-      "text": "Examine the warning design, override workflow, staffing and training patterns, then use the findings to redesign the process."
+      "text": "$14.50, because the pharmacy must split the difference between the two prices."
     },
     {
       "id": "C",
-      "text": "Ignore the barcode process because technology cannot be considered during QRE analysis."
+      "text": "$11, because the pharmacy charges the lesser of the applicable cost-sharing amount and the pharmacy retail price."
     },
     {
       "id": "D",
-      "text": "Analyze only whether the affected prescriptions were paid by insurance or cash."
+      "text": "$18 unless the patient affirmatively asks to be treated as an uninsured cash customer before claim adjudication."
     },
     {
       "id": "E",
-      "text": "Wait for another identical error before examining any common system factor."
+      "text": "$0, because a difference between retail price and cost sharing voids the patient's payment obligation."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "A recurring pattern tied to barcode overrides and cross-coverage calls for systems analysis. Massachusetts CQI looks beyond the last person in the chain to workflow, technology, staffing, training and process changes that can prevent recurrence.",
+    "core_reasoning": "The pharmacist or point-of-sale process compares the two defined amounts. Because the pharmacy retail price is lower than the applicable cost share, the pharmacy charges the retail price.",
     "choice_analysis": {
-      "A": "Individual accountability may matter, but stopping at the last handler fails to examine contributing systems.",
-      "B": "This proposal connects the observed cluster to concrete technology, workflow, staffing and training causes and to preventive redesign.",
-      "C": "Technology is precisely the kind of system factor that can contribute to a recurrent dispensing problem.",
-      "D": "Payment method does not explain the repeated barcode-override pattern described in the stem.",
-      "E": "The existing cluster already supplies a reason to investigate common causes rather than wait for another event."
+      "A": "Massachusetts requires comparison of the applicable cost share and pharmacy retail price rather than automatically collecting the higher cost share.",
+      "B": "The statute does not create an averaging formula.",
+      "C": "The retail price is lower on these facts, so it is the amount the statute selects.",
+      "D": "The point-of-sale rule itself requires the lesser amount; it is not conditioned on a special opt-out request in the stated facts.",
+      "E": "The law chooses the lower amount; it does not automatically eliminate payment."
     },
     "related_facts": [
-      "Clusters of events can reveal system causes more clearly than a single incident.",
-      "The purpose of analysis is prevention, not simply assigning blame."
+      "The comparison is made at the point of sale.",
+      "The rule protects against collecting a cost share that exceeds the pharmacy retail price."
     ],
-    "mpje_trap": "When the stem gives you a recurring workflow pattern, follow the pattern instead of focusing only on the final individual."
+    "mpje_trap": "An insurance claim result is not automatically the amount the pharmacy may collect when state law requires the lower comparison."
   },
   "rule_ids": [
-    "MA-QRE-ANALYSIS"
+    "MA-POS-LESSER-PRICE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Recognize the repeated barcode-override pattern",
-    "Identify multiple plausible system contributors",
-    "Choose an analysis that links causes to preventive process change"
+    "Identify the two amounts the statute compares",
+    "Select the lesser amount"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-POS-LESSER-PRICE": {
+          "content_version": 1,
+          "content_hash": "5378e51ab9b1dafc38a8e89a52c57e0f3232debe1541981b565162e959b8a489"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

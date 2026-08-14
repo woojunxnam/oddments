@@ -1,71 +1,95 @@
 {
   "question_id": "MA-Q-0117",
-  "family_id": "EXP1_0117_RETURN_QUARANTINE",
-  "area": 4,
-  "topic": "Pharmacy operations",
-  "subtopic": "Returned medication quarantine",
+  "family_id": "V3_0117_COMPOUND_PRODUCT_LABEL",
+  "area": 3,
+  "topic": "Compounding",
+  "subtopic": "Compounded product labeling",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient returns an unopened insulin glargine package that the pharmacy dispensed in error. The patient says it stayed refrigerated, and the pharmacy can document the temperature history. The manager wants to put it back into saleable inventory. What is the best response under the Massachusetts returned-medication rule?",
+  "stem": "A Massachusetts pharmacy licensed for sterile compounding prepares a patient-specific sterile compounded infusion for outpatient use. The ordinary prescription label is complete, but the final container does not identify the preparation as compounded and does not display the pharmacy's required pharmacist-contact telephone number. What should happen before the product leaves the pharmacy?",
   "choices": [
     {
       "id": "A",
-      "text": "Return it to saleable inventory because an unopened package is automatically eligible for redispensing."
+      "text": "Dispense it because ordinary prescription-label elements make all compounded-product labeling requirements optional."
     },
     {
       "id": "B",
-      "text": "Return it to inventory after a pharmacist confirms that the temperature history stayed within labeled storage conditions."
+      "text": "Remove the ordinary prescription label and use only the word 'sterile' on the container."
     },
     {
       "id": "C",
-      "text": "For this qualifying return, accept it, quarantine it outside saleable inventory, and arrange proper disposition."
+      "text": "Correct the container to identify the sterile compounded preparation and include the required pharmacist-contact information before outpatient dispensing."
     },
     {
       "id": "D",
-      "text": "Redispense it only to a patient whose prescription is for the same insulin strength and quantity."
+      "text": "Dispense it unchanged if the patient has previously received another compounded medication from the pharmacy."
     },
     {
       "id": "E",
-      "text": "Refuse to accept the product because Massachusetts never permits a pharmacy to receive medication it dispensed in error."
+      "text": "Treat the missing information only as a continuing-education issue for the compounding pharmacist."
     }
   ],
   "correct_choice_ids": [
     "C"
   ],
   "explanation": {
-    "core_reasoning": "The rule distinguishes accepting a qualifying returned medication from making that medication saleable again. A product dispensed in error may be accepted, but it must be quarantined and properly disposed of rather than returned to inventory for another patient.",
+    "core_reasoning": "The pharmacy must verify the compounded product itself, not just the prescription. Massachusetts adds a compounded-preparation designation and, for covered sterile/complex nonsterile compounding pharmacies, required pharmacist contact information for outpatient products.",
     "choice_analysis": {
-      "A": "An intact package does not override the no-return-to-inventory rule for this qualifying returned medication.",
-      "B": "Good storage evidence may inform product quality, but it does not convert this patient return into saleable inventory under the cited rule.",
-      "C": "Acceptance, quarantine, exclusion from inventory, and proper disposition are the operative steps for the returned product described.",
-      "D": "Matching another patient’s prescription does not authorize redispensing a qualifying patient return.",
-      "E": "The regulation permits acceptance in specified circumstances, including medication dispensed in error; the restriction concerns what happens afterward."
+      "A": "Massachusetts imposes additional compounded-preparation labeling and, for covered pharmacies, pharmacist-contact requirements.",
+      "B": "The additional compounded-product information supplements rather than replaces ordinary applicable labeling duties.",
+      "C": "The facts describe a covered outpatient sterile compounded preparation missing the additional statutory label/contact elements.",
+      "D": "Prior patient experience does not waive the product-specific label and communication requirements.",
+      "E": "The defect is on the dispensed product and communication label, not merely the pharmacist's CE record."
     },
     "related_facts": [
-      "Insulin glargine is temperature sensitive, but storage integrity and legal inventory eligibility are different questions.",
-      "Quarantine prevents a returned product from reentering active stock while disposition is arranged."
+      "Compounded-drug labeling is distinct from compounding CE.",
+      "The institutional inpatient exception does not fit an outpatient dispensing."
     ],
-    "mpje_trap": "‘Unopened and properly refrigerated’ can address quality without answering whether the law permits the patient-returned product back into inventory."
+    "mpje_trap": "A complete ordinary prescription label can still be incomplete for a compounded preparation."
   },
   "rule_ids": [
-    "MA-RETURN-QUARANTINE"
+    "MA-COMPOUND-LABEL-CONTACT"
   ],
-  "drug_ids": [
-    "insulin-glargine"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Identify why the return qualifies for pharmacy acceptance",
-    "Separate product-condition evidence from legal inventory eligibility",
-    "Apply quarantine and proper-disposition requirements"
+    "Identify the preparation as outpatient sterile compounded product",
+    "Apply the additional compounded label and contact requirements"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COMPOUND-LABEL-CONTACT": {
+          "content_version": 1,
+          "content_hash": "b05585b9afb5ec9628fe8077d91498182cb9cd3c64a3d620dd0d95706f5fd110"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

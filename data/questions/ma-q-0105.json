@@ -1,73 +1,100 @@
 {
   "question_id": "MA-Q-0105",
-  "family_id": "EXP1_0105_TECH_CII_HANDLING",
-  "area": 1,
-  "topic": "Pharmacy personnel",
-  "subtopic": "Schedule II handling",
+  "family_id": "V3_0105_CSOS_PERSONAL_CERTIFICATE",
+  "area": 3,
+  "topic": "Controlled substance procurement",
+  "subtopic": "CSOS subscriber credential",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A certified pharmacy technician is processing an Adderall prescription. The pharmacy has written Schedule II procedures, and the pharmacist on duty approves and supervises the technician’s participation. Which statement most accurately describes the technician’s role?",
+  "stem": "The pharmacist who normally signs a pharmacy's CSOS Schedule II orders is on vacation. Her DEA-issued CSOS certificate is installed on the ordering workstation, and another pharmacist knows the software password but has not been issued that certificate. May the second pharmacist use the installed certificate to sign today's oxycodone order?",
   "choices": [
     {
       "id": "A",
-      "text": "Certification permits the technician to perform final clinical verification of the Adderall prescription independently."
+      "text": "No. The CSOS certificate may be used to sign orders only by the individual subscriber to whom DEA issued it."
     },
     {
       "id": "B",
-      "text": "Under the stated conditions, the certified technician may assist with transporting and handling Schedule II stock, while pharmacist judgment remains with the pharmacist."
+      "text": "Yes, because any pharmacist working under the same pharmacy DEA registration may use any installed certificate."
     },
     {
       "id": "C",
-      "text": "A certified technician may handle Schedule II stock only when no pharmacist is present in the pharmacy."
+      "text": "Yes, if the second pharmacist prints the electronic order after signing and stores it with paper Forms 222."
     },
     {
       "id": "D",
-      "text": "Schedule II status bars every technician category from any physical contact with the stock bottle."
+      "text": "Yes, but only when the order contains fewer than twenty Schedule II line items."
     },
     {
       "id": "E",
-      "text": "The only relevant rule is the federal prohibition on Schedule II refills; personnel category has no effect on handling."
+      "text": "No, because CSOS can never be used for Schedule II orders when paper Form 222 is available."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "A"
   ],
   "explanation": {
-    "core_reasoning": "Current 247 CMR 8.05 distinguishes support-personnel categories. A certified pharmacy technician may assist in transporting and handling Schedule II controlled substances when the pharmacist supervises and approves the activity and written policies and procedures govern it. That physical handling authority does not include pharmacist professional judgment.",
+    "core_reasoning": "CSOS uses an individual digital identity. The pharmacy may have multiple authorized subscribers, but one employee cannot simply use another subscriber's DEA-issued certificate because the certificate is installed on a shared machine.",
     "choice_analysis": {
-      "A": "Certification broadens specified technical functions but does not delegate final clinical verification.",
-      "B": "The stem supplies the pharmacist supervision, approval, certification, and written-policy conditions for the certified-technician handling pathway.",
-      "C": "The regulation requires pharmacist involvement rather than pharmacist absence for the described handling authority.",
-      "D": "Massachusetts permits specified support personnel to participate with Schedule II substances under defined conditions.",
-      "E": "Refill restrictions and pharmacy-personnel handling are separate regulatory questions."
+      "A": "CSOS signing authority is personal to the named subscriber; access to the workstation or password does not transfer that authority.",
+      "B": "The certificate belongs to the individual subscriber, not to every pharmacist associated with the registrant.",
+      "C": "Printing a record does not cure unauthorized use of another person's digital certificate.",
+      "D": "Line-item limits do not authorize certificate sharing.",
+      "E": "CSOS is an authorized electronic alternative to paper Form 222; the defect here is who would sign with the certificate."
     },
     "related_facts": [
-      "Adderall contains mixed amphetamine salts and is Schedule II.",
-      "An ordinary pharmacy technician’s Schedule II authority is narrower than the certified-technician handling authority."
+      "CSOS certificates are issued to individuals.",
+      "A shared workstation does not make a personal signing certificate a shared credential."
     ],
-    "mpje_trap": "Do not collapse ‘technician’ and ‘certified pharmacy technician’ into one scope category."
+    "mpje_trap": "Separate the pharmacy's DEA registration from the individual subscriber's authority to apply the digital signature."
   },
   "rule_ids": [
-    "MA-TECH-CII",
-    "MA-TECH-SCOPE",
-    "FED-CS-SCHEDULES"
+    "FED-CSOS-CREDENTIAL",
+    "FED-CSOS"
   ],
-  "drug_ids": [
-    "amphetamine-dextroamphetamine"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Classify Adderall as Schedule II",
-    "Identify the worker specifically as a certified pharmacy technician",
-    "Apply the supervision, approval, and written-policy conditions without delegating pharmacist judgment"
+    "Identify whose CSOS certificate would sign the order",
+    "Determine whether that individual is the DEA-issued subscriber"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CSOS-CREDENTIAL": {
+          "content_version": 1,
+          "content_hash": "1f25e94f87e7ac9d6c26eae7ebfd708755cc7a514a054f9e324214877e3dd99e"
+        },
+        "FED-CSOS": {
+          "content_version": 1,
+          "content_hash": "af95e99d908cd27f81a02069d5f5af9294ac9e9f50e3caef7773d163e7163606"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

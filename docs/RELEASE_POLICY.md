@@ -25,13 +25,17 @@ Semantic dependency 변경, question content 변경, stale audit, failed legal/r
 8. `duplicate_review_status == CLEAR`이고 difficulty/reasoning-step contract를 만족함.
 9. Valid independent fully adjudicated legal `INITIAL_BATCH` audit history가 있음.
 10. 모든 current evidence audit ID가 `data/audits/` record로 resolve되고 current question hash를 대상으로 함.
-11. 현재 policy가 요구하는 수의 independent `FULLY_ADJUDICATED` legal `KEEP`/answer `YES`가 서로 다른 `auditor_instance`에서 기록되어야 함.
+11. 현재 policy가 요구하는 independent `FULLY_ADJUDICATED` legal `KEEP`/answer `YES`가 기록되어야 함.
 12. Current style-profile version/hash를 사용한 independent realism `KEEP`/`PASS`가 있음.
 13. `final_adjudication.decision == KEEP`.
 14. Family의 `current_released_count <= max_questions_in_final_bank`.
 15. Full QA와 tracked artifact drift check가 통과함.
 
-정확한 pass 수, distinctness 기준, required auditor type은 `data/release_requirements.json`에서 schema-validated configuration으로 관리합니다. 현재 legal policy는 **2개의 pass와 2개의 distinct independent audit instance**를 요구하며 특정 model vendor 조합을 강제하지 않습니다. `auditor`는 model/family provenance이고 `auditor_instance`는 실제 독립 감사 세션 provenance입니다. 같은 instance를 이름만 바꿔 두 번 제출하는 것은 distinct audit로 계산하지 않습니다. `independent_audit_status: PASSED` 같은 summary field나 human override는 audit evidence를 대체할 수 없습니다. `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT` 또는 wrong-answer finding 후에는 current content에 대한 재감사와 새 `KEEP` adjudication이 필요합니다.
+정확한 pass 수, distinctness 기준, required auditor type은 `data/release_requirements.json`에서 schema-validated configuration으로 관리합니다. 현재 policy는 **1개의 fresh independent auditor instance**가 current question hash에 대해 legal `KEEP`/answer `YES`와 realism `KEEP`/`PASS`를 모두 제공하면 audit-count gate를 충족하도록 설정합니다. Legal과 realism은 별도 canonical audit record로 남길 수 있지만 같은 genuinely independent session의 동일 `auditor_instance`를 사용할 수 있습니다. 특정 model vendor 조합은 강제하지 않습니다.
+
+`auditor`는 model/family provenance이고 `auditor_instance`는 실제 독립 감사 세션 provenance입니다. Author/editor가 자신이 방금 수정한 current content를 independent auditor로 자가 인증할 수 없습니다. 추가 second-opinion audit은 ambiguous authority, conflicting official sources, 또는 editor 판단에 따라 요청할 수 있지만 기본 release gate는 아닙니다. 이미 존재하는 current-hash audit가 `DELETE`, `MAJOR_REWRITE`, `MINOR_EDIT`, wrong-answer 또는 realism `FAIL`을 기록했다면 이를 무시하거나 다른 auditor의 KEEP으로 override해 unchanged question을 release할 수 없습니다. 문제를 수정한 뒤 새 current-hash audit와 새 `KEEP` adjudication이 필요합니다.
+
+`independent_audit_status: PASSED` 같은 summary field나 human override는 canonical audit evidence를 대체할 수 없습니다.
 
 ## Output status
 

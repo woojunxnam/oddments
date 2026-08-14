@@ -1,69 +1,107 @@
 {
   "question_id": "MA-Q-0108",
-  "family_id": "EXP1_0108_PHARMACIST_CE_ANNUAL",
+  "family_id": "V3_0108_PSE_STORE_CERTIFICATION",
   "area": 1,
-  "topic": "Licensure",
-  "subtopic": "Continuing education",
-  "difficulty": 3,
+  "topic": "Restricted nonprescription products",
+  "subtopic": "CMEA seller compliance",
+  "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During a two-year Massachusetts pharmacist renewal cycle, a pharmacist completes 18 hours of general CE plus 2 hours of pharmacy law in Year 1. In Year 2 the pharmacist completes 22 hours of general CE but no pharmacy-law CE. Which conclusion is most accurate?",
+  "stem": "A pharmacy chain opens a new Massachusetts location and stocks pseudoephedrine behind the counter. Employees completed the chain's CMEA training, but the new physical location has not yet completed the DEA self-certification process. May the location begin covered retail pseudoephedrine sales because another store in the chain is already certified?",
   "choices": [
     {
       "id": "A",
-      "text": "The pharmacist is compliant because 42 total hours over two years exceed 40."
+      "text": "Yes, because one current chain-level self-certification automatically covers every future physical store."
     },
     {
       "id": "B",
-      "text": "The pharmacist is deficient only because Year 1 contained fewer than 22 total hours."
+      "text": "No. The new location must satisfy its own applicable CMEA self-certification requirement before covered retail sales begin."
     },
     {
       "id": "C",
-      "text": "The pharmacist still has a Year 2 deficiency because the annual pharmacy-law component is not satisfied by extra general CE."
+      "text": "Yes, if all sales remain below 3.6 grams per purchaser per day."
     },
     {
       "id": "D",
-      "text": "The pharmacist may carry the Year 1 pharmacy-law hours forward and count them again in Year 2."
+      "text": "No, because employee training and DEA self-certification are mutually exclusive alternatives and the chain chose training."
     },
     {
       "id": "E",
-      "text": "No CE is required in Year 2 after completing at least 20 hours in Year 1."
+      "text": "Yes, but only for electronic-logbook sales during the first 30 days after opening."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "The renewal framework is not just a two-year aggregate. It generally requires 20 contact hours in each calendar year, including at least two hours of pharmacy law each year. Extra general CE does not replace the missing Year 2 law component.",
+    "core_reasoning": "CMEA compliance includes store-level seller obligations in addition to transaction-level limits. The new location cannot borrow another location's certification simply because ownership and training materials are shared.",
     "choice_analysis": {
-      "A": "Aggregate hours cannot cure a separate annual pharmacy-law requirement.",
-      "B": "Year 1 reaches the ordinary 20-hour total and includes the required law component on the stated facts.",
-      "C": "Year 2 exceeds the general total but lacks the annual pharmacy-law hours required by the rule.",
-      "D": "The same law hours cannot simply be reused to satisfy a later calendar year’s separate requirement.",
-      "E": "Each calendar year in the renewal cycle carries its own CE obligations."
+      "A": "DEA's current self-certification process treats separate physical retail locations as separately certified locations.",
+      "B": "The physical location needs its own applicable self-certification; another store's certification does not authorize it.",
+      "C": "Quantity compliance does not replace the seller's certification requirement.",
+      "D": "Training and seller self-certification are related compliance duties, not alternatives.",
+      "E": "No startup grace period based on electronic logbook use substitutes for required seller compliance."
     },
     "related_facts": [
-      "The general CE requirement is structured by calendar year within the two-year renewal cycle.",
-      "Massachusetts also limits certain formats and daily CE credit, which are separate issues."
+      "DEA's online process identifies separate physical locations for self-certification.",
+      "Employee training does not replace the location's applicable certification."
     ],
-    "mpje_trap": "When a rule contains both total-hours and category subrequirements, exceeding the total does not erase the category requirement."
+    "mpje_trap": "Distinguish chain ownership from the physical-location unit used for CMEA seller certification."
   },
   "rule_ids": [
-    "MA-PHARMACIST-CE"
+    "FED-PSE-SELF-CERT",
+    "FED-PSE-QUANTITY"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "pseudoephedrine"
+  ],
   "reasoning_steps": [
-    "Evaluate Year 1 against both the total and law components",
-    "Evaluate Year 2 separately",
-    "Determine whether excess general CE can substitute for missing annual law CE"
+    "Identify the seller as a new physical location",
+    "Check training and self-certification as separate prerequisites"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-PSE-SELF-CERT": {
+          "content_version": 1,
+          "content_hash": "2bb931e63faa0f1095c21b89547bf977111465ea3117bd2405992c84d788a019"
+        },
+        "FED-PSE-QUANTITY": {
+          "content_version": 1,
+          "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+        }
+      },
+      "drugs": {
+        "pseudoephedrine": {
+          "content_version": 2,
+          "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

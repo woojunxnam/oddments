@@ -1,73 +1,102 @@
 {
   "question_id": "MA-Q-0101",
-  "family_id": "EXP1_0101_CDTM_SVI_RX_COPY",
-  "area": 2,
-  "topic": "Collaborative practice",
-  "subtopic": "Schedule VI prescribing",
-  "difficulty": 4,
+  "family_id": "V3_0101_CII_LESSER_QUANTITY_ELECTION",
+  "area": 3,
+  "topic": "Partial filling",
+  "subtopic": "Patient lesser-quantity election",
+  "difficulty": 3,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A retail CDTM agreement and patient referral cover diabetes management only. The same patient asks the collaborating pharmacist to issue a new warfarin prescription for atrial fibrillation and promises that the pharmacist can send a copy to the supervising physician within 24 hours. Which statement is most accurate?",
+  "stem": "A patient presents a valid oxycodone Schedule II prescription for 20 tablets and tells the pharmacist, before any dispensing, that she wants only 8 tablets because she is concerned about keeping extra opioid tablets at home. The pharmacy has all 20 tablets in stock. Which action is supported by Massachusetts law?",
   "choices": [
     {
       "id": "A",
-      "text": "The 24-hour copy requirement by itself authorizes any Schedule VI prescription for that patient."
+      "text": "Refuse the request because Schedule II prescriptions must be dispensed only in the exact quantity written."
     },
     {
       "id": "B",
-      "text": "Sending a timely copy does not expand CDTM prescribing beyond the referred diagnosis and agreement scope."
+      "text": "Dispense all 20 tablets and advise the patient to discard the unwanted tablets at home."
     },
     {
       "id": "C",
-      "text": "Warfarin is Schedule II, so the request is barred solely by federal Schedule II refill law."
+      "text": "Change the prescription quantity to 8 only after obtaining a replacement prescription from the prescriber."
     },
     {
       "id": "D",
-      "text": "The request becomes authorized if the patient signs a second consent without a new referral or agreement scope."
+      "text": "Dispense the requested lesser quantity and document the partial dispensing in the patient record."
     },
     {
       "id": "E",
-      "text": "The pharmacist may issue the prescription first and decide afterward whether atrial fibrillation was covered."
+      "text": "Treat the request as a pharmacy-stock shortage and use the federal 72-hour remainder rule."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The retail CDTM Schedule VI prescribing authority is tied to the referred diagnosis and the collaborative agreement. The separate duty to transmit a copy to the supervising physician within 24 hours is a follow-up obligation, not a device for expanding scope.",
+    "core_reasoning": "Massachusetts gives the patient an option to receive less than the prescribed Schedule II quantity. The pharmacist should identify the patient's election and document the lesser dispensing rather than forcing the full amount or misclassifying it as a stock shortage.",
     "choice_analysis": {
-      "A": "Timely communication is required when authorized prescribing occurs, but it does not create authority for an unrelated diagnosis.",
-      "B": "The proposed warfarin prescription falls outside the stated diabetes referral and agreement even if the copy would be sent on time.",
-      "C": "Warfarin is not federal Schedule II; the decisive problem is the CDTM scope described in the stem.",
-      "D": "Patient consent cannot substitute for the physician-pharmacist agreement and referral boundaries.",
-      "E": "Scope must exist before the pharmacist exercises the special prescribing authority."
+      "A": "Massachusetts specifically allows a patient to request a lesser Schedule II quantity.",
+      "B": "The law provides a lesser-quantity option; unnecessary dispensing is not required.",
+      "C": "The patient's statutory lesser-quantity election can be honored without converting it into a new prescriber-written quantity.",
+      "D": "This applies the Massachusetts patient lesser-quantity option and its documentation requirement.",
+      "E": "The pharmacy can supply the full quantity; the predicate is the patient's election, not pharmacy inability."
     },
     "related_facts": [
-      "Massachusetts Schedule VI prescribing can be part of retail CDTM when the statutory conditions are met.",
-      "A copy of an authorized pharmacist-issued prescription must be sent to the supervising physician within the required period."
+      "The lesser-quantity option is patient driven.",
+      "A pharmacy shortage invokes a different partial-fill pathway."
     ],
-    "mpje_trap": "Documentation after an act does not create authority that was missing before the act."
+    "mpje_trap": "The quantity is lower because the patient chose less, not because the pharmacy lacked stock."
   },
   "rule_ids": [
-    "MA-CDTM-SVI-RX",
-    "MA-CDTM-RETAIL-SCOPE",
-    "MA-SCHEDULE-VI"
+    "MA-CII-LESSER-QUANTITY"
   ],
   "drug_ids": [
-    "warfarin"
+    "oxycodone"
   ],
   "reasoning_steps": [
-    "Classify warfarin as a Massachusetts Schedule VI prescription drug",
-    "Compare the requested indication with the referral and agreement",
-    "Treat the 24-hour copy duty as a follow-up requirement rather than a source of authority"
+    "Confirm the patient is choosing a lesser quantity",
+    "Document the lesser Schedule II dispensing"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-LESSER-QUANTITY": {
+          "content_version": 1,
+          "content_hash": "8308c41441603692cc608b2be42547bf2ee74cf889fb7aa6907f4ccea0060724"
+        }
+      },
+      "drugs": {
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

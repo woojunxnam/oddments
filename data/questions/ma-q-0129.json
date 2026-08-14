@@ -1,69 +1,101 @@
 {
   "question_id": "MA-Q-0129",
-  "family_id": "EXP1_0129_FORM222_RECORDS",
-  "area": 4,
+  "family_id": "V3_0129_FORM222_WRITTEN_CANCELLATION",
+  "area": 3,
   "topic": "Controlled substance procurement",
-  "subtopic": "Form 222 records",
+  "subtopic": "Form 222 cancellation",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During an audit, a pharmacy finds that its paper DEA Form 222 records are mixed into ordinary purchase invoices, while its electronic Form 222 records are stored in a system that can retrieve them immediately and separately from other records. Which assessment is most accurate?",
+  "stem": "A pharmacy has already mailed a valid paper DEA Form 222 to its supplier for three Schedule II products. Before shipment, the pharmacy decides it no longer needs one line item but wants the other two. What is the appropriate federal way to stop that portion of the order?",
   "choices": [
     {
       "id": "A",
-      "text": "Both systems are compliant because paper and electronic Form 222 records use exactly the same filing mechanics."
+      "text": "Send the supplier written cancellation of the identified line; the supplier documents the cancellation on the original Form 222."
     },
     {
       "id": "B",
-      "text": "The paper filing needs correction because paper Form 222 records must be maintained separately for the required period, while readily retrievable electronic records can satisfy the separate-maintenance concept electronically."
+      "text": "Ask the supplier to erase the unwanted line from the executed original form before filling the remaining lines."
     },
     {
       "id": "C",
-      "text": "Only the electronic system is defective because federal law requires every Form 222 to be stored as an original paper document."
+      "text": "File DEA Form 106 for the unwanted line because canceling an order is treated as a significant loss."
     },
     {
       "id": "D",
-      "text": "The pharmacy may discard all Form 222 records after receiving the wholesaler shipment if it keeps ordinary invoices."
+      "text": "Cancel the entire pharmacy DEA registration because a submitted Form 222 cannot be changed in part."
     },
     {
       "id": "E",
-      "text": "The distinction matters only for Schedule IV purchases because Schedule II orders do not have a Form 222 record-retention rule."
+      "text": "Wait for delivery, accept the unwanted Schedule II product, and destroy it because pre-shipment cancellation is prohibited."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "A"
   ],
   "explanation": {
-    "core_reasoning": "Federal Form 222 preservation rules distinguish paper from electronic records. Paper forms must be separately maintained for the required two-year period. Electronic Form 222 records are treated as separately maintained when they are readily retrievable from other records, so the two systems should not be forced into identical physical filing mechanics.",
+    "core_reasoning": "Once a paper Form 222 has been submitted, the purchaser does not alter the executed form. It sends written cancellation to the supplier, which documents the canceled item on the original form while processing any remaining valid items.",
     "choice_analysis": {
-      "A": "The federal rule deliberately distinguishes paper separate maintenance from electronic readily retrievable treatment.",
-      "B": "The paper records are improperly mixed, while the described electronic system satisfies the distinct readily retrievable concept.",
-      "C": "A compliant electronic Form 222 record need not be converted into an original paper form merely to satisfy record preservation.",
-      "D": "Purchase invoices do not substitute for the specific Form 222 preservation duty.",
-      "E": "Form 222 concerns Schedule I-II ordering; Schedule IV is not the schedule that creates this Form 222 record rule."
+      "A": "DEA permits written cancellation of part or all of a submitted paper Form 222, with the supplier documenting it on the original.",
+      "B": "Erasure or alteration is not the lawful cancellation procedure for an executed Form 222.",
+      "C": "Cancellation of an unshipped order is not a theft or significant loss of controlled-substance inventory.",
+      "D": "DEA expressly provides a mechanism to cancel part or all of a submitted order.",
+      "E": "The purchaser may cancel before shipment using the written supplier-notification procedure."
     },
     "related_facts": [
-      "The recordkeeping question follows the procurement transaction after the order is completed.",
-      "‘Separately maintained’ is implemented differently for paper and electronic Form 222 records."
+      "DEA permits partial or complete cancellation of a submitted paper Form 222.",
+      "Cancellation is different from a lost form, defective form, or inventory loss."
     ],
-    "mpje_trap": "Do not copy the paper filing rule word-for-word onto a compliant electronic record system."
+    "mpje_trap": "Identify the transaction state: the form exists and is valid, but the purchaser wants to cancel part of an unshipped order."
   },
   "rule_ids": [
-    "FED-FORM222-RECORDS"
+    "FED-FORM222-CANCEL",
+    "FED-FORM222-ORDER"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the record format for each set of Form 222 records",
-    "Apply separate maintenance to paper records",
-    "Apply the readily retrievable standard to the electronic records"
+    "Confirm the submitted Form 222 is otherwise valid",
+    "Identify that only part of the order is being canceled before shipment",
+    "Use written notice to the supplier"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-FORM222-CANCEL": {
+          "content_version": 1,
+          "content_hash": "20846339ada42a7bd2edf56c8c58a35190f8d7b188ef099a2870609bd2bceb8f"
+        },
+        "FED-FORM222-ORDER": {
+          "content_version": 1,
+          "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

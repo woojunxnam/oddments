@@ -43,9 +43,11 @@
       ]
     },
     "quantity_limit": {
-      "summary": "Ordinary non-mail-order federal retail limits are 3.6 grams of pseudoephedrine base per day and 9 grams per 30-day period per purchaser.",
+      "summary": "Covered retail sales require both the federal gram limits and the separate applicable purchaser-ID/logbook and seller self-certification/training controls.",
       "rule_ids": [
-        "FED-PSE-QUANTITY"
+        "FED-PSE-QUANTITY",
+        "FED-PSE-LOG-ID",
+        "FED-PSE-SELF-CERT"
       ]
     }
   },
@@ -63,19 +65,27 @@
       "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1314/section-1314.20"
     }
   ],
-  "last_verified": "2026-08-13",
+  "last_verified": "2026-08-14",
   "verification_status": "PRIMARY_VERIFIED",
-  "verification_notes": "DailyMed confirms the concise OTC use; eCFR confirms federal quantity limits. This fixture does not attempt to model every CMEA identity, logbook, mail-order, or mobile-vendor rule.",
-  "content_version": 1,
+  "verification_notes": "DailyMed identity and current DEA CMEA quantity, ID/logbook, and seller self-certification/training requirements checked on 2026-08-14.",
+  "content_version": 2,
   "verified_rule_dependencies": {
+    "FED-PSE-LOG-ID": {
+      "content_version": 1,
+      "content_hash": "f476982a8d1cff2244b543c1c5faddf52039c35ed5e3dc86b1ca069f803dd27c"
+    },
     "FED-PSE-QUANTITY": {
       "content_version": 1,
       "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+    },
+    "FED-PSE-SELF-CERT": {
+      "content_version": 1,
+      "content_hash": "2bb931e63faa0f1095c21b89547bf977111465ea3117bd2405992c84d788a019"
     },
     "MA-PMP-REPORTING": {
       "content_version": 1,
       "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
     }
   },
-  "content_hash": "5e2218707971cc026bfdfdef108515f54c84ee6a7a56f5beebafb9359ba3ee84"
+  "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
 }

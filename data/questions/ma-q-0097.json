@@ -8,7 +8,7 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A father asks a Massachusetts community pharmacy for naloxone to keep at home because his adult daughter has recently survived an opioid overdose. The daughter is not present. Which conclusion is most defensible?",
+  "stem": "A father asks a Massachusetts community pharmacy to obtain a prescription-labeled naloxone product through the pharmacy's authorized naloxone prescription/standing-order pathway because his adult daughter recently survived an opioid overdose. The daughter is not present. Which conclusion is most defensible?",
   "choices": [
     {
       "id": "A",
@@ -44,13 +44,14 @@
       "E": "The statute contemplates pharmacy access and is not limited to emergency-department transfers."
     },
     "related_facts": [
-      "Naloxone is an opioid antagonist used to reverse overdose.",
-      "Third-party access is designed to place rescue medication with people likely to be present during an overdose."
+      "Prescription naloxone and FDA-labeled OTC naloxone are separate products under current Massachusetts DCP guidance.",
+      "Massachusetts prescription naloxone access can place rescue medication with a third party positioned to assist."
     ],
     "mpje_trap": "The person receiving the naloxone does not have to be the person expected to receive naloxone during an overdose."
   },
   "rule_ids": [
-    "MA-NALOXONE"
+    "MA-NALOXONE",
+    "MA-SCHEDULE-VI"
   ],
   "drug_ids": [
     "naloxone"
@@ -59,12 +60,48 @@
     "Identify the requester as a third party positioned to assist",
     "Apply the Massachusetts opioid-antagonist access rule"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-NALOXONE": {
+          "content_version": 2,
+          "content_hash": "a77e9d0d1e5def6f3838be72d278289e70eb30dc35a4a6505bd1575b28d97469"
+        },
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        }
+      },
+      "drugs": {
+        "naloxone": {
+          "content_version": 2,
+          "content_hash": "1622b27bee5d235bc6acbdcc0919c056304dce369e5890fe4167ec4587032149"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

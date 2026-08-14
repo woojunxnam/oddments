@@ -1,72 +1,101 @@
 {
   "question_id": "MA-Q-0128",
-  "family_id": "EXP1_0128_FORM222_ORDERING",
-  "area": 4,
+  "family_id": "V3_0128_CSOS_SUPPLIER_CERTIFICATE_GATE",
+  "area": 3,
   "topic": "Controlled substance procurement",
-  "subtopic": "Form 222 or CSOS",
+  "subtopic": "CSOS supplier validation",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacy places one wholesaler order containing alprazolam and methylphenidate. The wholesaler’s ordinary commercial ordering system can handle the alprazolam line but asks what additional federal ordering mechanism is needed for the other drug. Which response is correct?",
+  "stem": "A wholesaler receives an electronic CSOS order for oxycodone from a pharmacy. The order data are complete, but the wholesaler's validation system shows that the digital certificate used to sign the order was revoked before the order was transmitted. What should the supplier do?",
   "choices": [
     {
       "id": "A",
-      "text": "Use DEA Form 41 for methylphenidate because Form 41 is the routine Schedule II purchasing form."
+      "text": "Ship the order because complete line-item data are enough even when the signing certificate is invalid."
     },
     {
       "id": "B",
-      "text": "Use DEA Form 106 for methylphenidate because every Schedule II acquisition is treated as a theft-or-loss event."
+      "text": "Print the electronic order and treat the printout as a valid paper DEA Form 222."
     },
     {
       "id": "C",
-      "text": "Use DEA Form 222 or a compliant digitally signed CSOS order for the methylphenidate Schedule II distribution, absent an applicable exception."
+      "text": "Reject the electronic order rather than fill it on the revoked certificate; the purchaser must submit a valid authorized order."
     },
     {
       "id": "D",
-      "text": "Use Form 222 for alprazolam only because Schedule IV drugs have stricter ordering rules than Schedule II drugs."
+      "text": "Ship half the order because a partial shipment reduces the risk created by the revoked certificate."
     },
     {
       "id": "E",
-      "text": "No controlled-substance ordering record is needed for either line because both drugs have accepted medical uses."
+      "text": "Hold the order until 60 days after execution, when the certificate-revocation issue no longer matters."
     }
   ],
   "correct_choice_ids": [
     "C"
   ],
   "explanation": {
-    "core_reasoning": "The mixed order must be classified drug by drug. Methylphenidate is Schedule II and generally requires DEA Form 222 or a compliant CSOS electronic order for distribution. Alprazolam is Schedule IV and does not trigger the Schedule I-II Form 222/CSOS ordering requirement merely by appearing on the same purchase.",
+    "core_reasoning": "The supplier has its own CSOS validity gate. Complete product fields are not enough when the required DEA digital certificate is revoked or otherwise invalid.",
     "choice_analysis": {
-      "A": "Form 41 is associated with controlled-substance destruction rather than routine Schedule II procurement.",
-      "B": "Form 106 addresses theft or significant loss, not ordinary purchasing.",
-      "C": "This matches the federal ordering mechanism triggered by the methylphenidate Schedule II line.",
-      "D": "The Form 222/CSOS rule applies to Schedule I-II distribution, not Schedule IV alprazolam solely because it is controlled.",
-      "E": "Accepted medical use does not remove the procurement controls attached to Schedule II distribution."
+      "A": "CSOS validity requires a valid DEA-issued digital certificate as well as complete order data.",
+      "B": "Printing does not convert an invalid CSOS signature into a valid paper order form.",
+      "C": "Supplier validation includes certificate validity, and a revoked certificate cannot support the required digital signature.",
+      "D": "Partial shipment does not cure an invalid electronic order.",
+      "E": "Time does not cure an invalid/revoked certificate; a valid order is required."
     },
     "related_facts": [
-      "Methylphenidate is Schedule II.",
-      "Alprazolam is Schedule IV, so the two drugs in the same commercial order can require different controlled-substance records."
+      "CSOS relies on certificate validation and digital signature integrity.",
+      "A printout of an invalid electronic order is not a substitute paper Form 222."
     ],
-    "mpje_trap": "A wholesaler order can contain multiple schedules; apply the procurement rule to each line rather than to the invoice as a whole."
+    "mpje_trap": "Electronic transmission is not synonymous with valid electronic authorization."
   },
   "rule_ids": [
-    "FED-FORM222-ORDER",
-    "FED-CS-SCHEDULES"
+    "FED-CSOS-SUPPLIER-VALIDATION",
+    "FED-CSOS"
   ],
-  "drug_ids": [
-    "methylphenidate"
-  ],
+  "drug_ids": [],
   "reasoning_steps": [
-    "Classify methylphenidate and alprazolam separately",
-    "Identify which line is a Schedule II distribution",
-    "Choose the Form 222 or CSOS pathway for that line"
+    "Check the electronic order data",
+    "Independently validate the signing certificate",
+    "Reject an order that fails the certificate gate"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CSOS-SUPPLIER-VALIDATION": {
+          "content_version": 1,
+          "content_hash": "02df294135a8389554e3296f0f732d6710ebaa71af50bf5c439f50b3aee8e441"
+        },
+        "FED-CSOS": {
+          "content_version": 1,
+          "content_hash": "af95e99d908cd27f81a02069d5f5af9294ac9e9f50e3caef7773d163e7163606"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

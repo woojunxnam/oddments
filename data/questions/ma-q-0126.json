@@ -1,69 +1,96 @@
 {
   "question_id": "MA-Q-0126",
-  "family_id": "EXP1_0126_BIENNIAL_CS_INVENTORY",
-  "area": 4,
-  "topic": "Controlled substance inventory",
-  "subtopic": "Biennial inventory",
-  "difficulty": 3,
+  "family_id": "V3_0126_FORM222_LOST_REPLACEMENT",
+  "area": 3,
+  "topic": "Controlled substance procurement",
+  "subtopic": "Lost Form 222 replacement",
+  "difficulty": 5,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacy completed a controlled-substance inventory on January 15, 2025. Management proposes making the next required inventory on July 15, 2027 because the store also performs monthly cycle counts. Which statement best evaluates that plan under the federal biennial inventory rule?",
+  "stem": "A pharmacy mailed an executed paper DEA Form 222 to its supplier. The supplier reports that the form never arrived, no Schedule II goods were shipped, and the pharmacy cannot locate the original. The pharmacy still needs the order. What is the appropriate federal replacement process?",
   "choices": [
     {
       "id": "A",
-      "text": "The plan is acceptable because monthly cycle counts permit a 30-month gap between required inventories."
+      "text": "Send the supplier a photocopy of the lost form and ask it to treat the photocopy as the original order."
     },
     {
       "id": "B",
-      "text": "The plan is acceptable whenever the pharmacy has no Schedule II stock on the later date."
+      "text": "Execute a new Form 222, attach the required statement identifying the lost form and nonreceipt of goods, retain the required copies, and make the applicable DEA loss report."
     },
     {
       "id": "C",
-      "text": "The plan is acceptable because ‘biennial’ means twice during any five-year period."
+      "text": "Ask the supplier to recreate the purchaser's lost form because only suppliers may issue replacement Form 222s."
     },
     {
       "id": "D",
-      "text": "The required inventory cannot be deferred beyond the at-least-every-two-years interval; internal cycle counts do not create a longer federal interval."
+      "text": "Wait 60 days from the lost form's execution date; only after expiration may a replacement order be issued."
     },
     {
       "id": "E",
-      "text": "The next required inventory must occur exactly six months after January 15, 2025."
+      "text": "Treat the missing paper form as an inventory significant loss and file only DEA Form 106 without replacing the order."
     }
   ],
   "correct_choice_ids": [
-    "D"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "After the initial inventory, federal law requires a new controlled-substance inventory at least every two years. A pharmacy can count more often for operational reasons, but monthly cycle counts do not authorize extending the required inventory interval to 30 months.",
+    "core_reasoning": "A lost executed Form 222 is handled through a replacement order plus a statement tying the replacement to the lost form and documenting nonreceipt. The registrant also follows the DEA reporting rule for lost or stolen order forms.",
     "choice_analysis": {
-      "A": "Additional internal counts can be more frequent than federal requirements but do not lengthen the maximum interval between required inventories.",
-      "B": "The biennial inventory obligation is not switched off simply because one schedule happens to be absent.",
-      "C": "Biennial means every two years in this regulation, not two inventories somewhere within five years.",
-      "D": "A July 2027 required inventory would exceed two years from January 15, 2025, so the proposed schedule is too late.",
-      "E": "Federal law permits a longer interval than six months; the maximum is two years."
+      "A": "A photocopy does not become the replacement executed Form 222 required after loss.",
+      "B": "This follows the replacement-statement and reporting framework for a lost Form 222.",
+      "C": "The purchaser executes the replacement order and required statement; the supplier does not recreate the purchaser's lost order form.",
+      "D": "The loss rule does not require waiting for the original form to age out before using the replacement procedure.",
+      "E": "A lost order form has its own Form 222 replacement/reporting procedure; it is not the same as loss of controlled-substance inventory."
     },
     "related_facts": [
-      "A pharmacy may conduct controlled-substance inventories more frequently than the federal minimum schedule.",
-      "Operational cycle counts and the legally required inventory are not automatically the same record."
+      "The replacement statement identifies the lost order form and the fact that goods were not received.",
+      "Loss of an order form and loss of drug inventory are different reportable events."
     ],
-    "mpje_trap": "More frequent internal counting does not buy extra time before the legally required inventory."
+    "mpje_trap": "Do not reach for DEA Form 106 merely because the word 'loss' appears; identify what was lost."
   },
   "rule_ids": [
-    "FED-INVENTORY-BIENNIAL"
+    "FED-FORM222-LOSS"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the date of the last required inventory",
-    "Compare the proposed next date with the two-year maximum interval",
-    "Distinguish internal cycle counts from the required federal inventory"
+    "Determine that the lost item is an executed order form, not drug inventory",
+    "Apply the replacement Form 222 and statement procedure",
+    "Apply the order-form loss reporting duty"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-FORM222-LOSS": {
+          "content_version": 2,
+          "content_hash": "3cb6845491863b6691ff28e505a979343a7175f50647da556ed55037ccb169e6"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

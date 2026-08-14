@@ -1,68 +1,110 @@
 {
   "question_id": "MA-Q-0099",
-  "family_id": "EXP1_0099_CDTM_QUALIFICATIONS",
-  "area": 2,
-  "topic": "Collaborative practice",
-  "subtopic": "Pharmacist qualifications",
+  "family_id": "V3_0099_CIII_V_PARTIAL_AGGREGATE",
+  "area": 3,
+  "topic": "Partial filling",
+  "subtopic": "Schedule III-V aggregate dispensing",
   "difficulty": 4,
-  "question_type": "SBA",
+  "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist has an active license, a qualifying PharmD, the required practice focus, and the additional collaborative-practice CE. The pharmacist has not obtained the professional liability insurance required for CDTM participation. May the pharmacist enter the CDTM arrangement based on the listed facts?",
+  "stem": "A clonazepam Schedule IV prescription is written for 90 tablets. The patient asks to receive 30 tablets today and the rest in later partial dispensings. Which statements describe the federal partial-fill framework? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Yes, because a PharmD automatically substitutes for every other CDTM qualification."
+      "text": "Each partial dispensing is recorded in the same manner as a refill."
     },
     {
       "id": "B",
-      "text": "Yes, if the collaborating physician agrees to assume the pharmacist’s insurance obligation."
+      "text": "The first 30-tablet partial dispensing automatically cancels all authority to dispense the remaining quantity."
     },
     {
       "id": "C",
-      "text": "No; CDTM qualification is cumulative, and the missing required professional liability coverage remains a defect."
+      "text": "The total quantity dispensed through all partial fills may not exceed the quantity prescribed."
     },
     {
       "id": "D",
-      "text": "No, but only because CDTM is prohibited in Massachusetts retail practice."
+      "text": "The partial-dispensing sequence must remain within the applicable six-month federal prescription period."
     },
     {
       "id": "E",
-      "text": "Yes, provided the pharmacist owns a majority interest in the pharmacy."
+      "text": "The patient may extend the partial-dispensing period indefinitely by requesting smaller quantities each month."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "A",
+    "C",
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "Massachusetts CDTM eligibility is a bundle of pharmacist qualifications. Satisfying the education, licensure, focus, and CE components does not make a separate professional liability insurance requirement disappear.",
+    "core_reasoning": "Schedule III-V partial filling is permitted, but it is bounded by recordkeeping, cumulative-quantity, and timing rules. The patient can choose staged dispensing without creating unlimited additional quantity or time.",
     "choice_analysis": {
-      "A": "A qualifying degree can satisfy an education/experience route but does not erase unrelated statutory qualifications.",
-      "B": "The collaborator’s willingness does not substitute for a pharmacist qualification imposed by the statute.",
-      "C": "Because the qualification elements are cumulative, the missing required liability coverage prevents the pharmacist from relying on the arrangement as described.",
-      "D": "Massachusetts permits retail CDTM subject to statutory limits; the problem here is the pharmacist’s incomplete qualification set.",
-      "E": "Pharmacy ownership is not a substitute for the pharmacist qualification that is missing."
+      "A": "Federal law directs the pharmacy to record each Schedule III-V partial filling in the same manner as a refilling.",
+      "B": "Schedule III-V prescriptions may be partially filled when the regulatory conditions are met.",
+      "C": "The aggregate of all partial dispensings is capped by the original prescribed quantity.",
+      "D": "Federal Schedule III-V partial filling may not continue beyond six months after issue.",
+      "E": "Patient requests do not extend the federal time limit."
     },
     "related_facts": [
-      "CDTM authority depends on both pharmacist qualifications and the written collaborative arrangement.",
-      "A candidate can satisfy one qualification pathway while still failing another independent requirement."
+      "Partial fills are recorded like refills.",
+      "Total partial quantities cannot exceed the prescription and must remain within six months."
     ],
-    "mpje_trap": "Do not turn a list of alternative education routes into alternatives to every CDTM qualification."
+    "mpje_trap": "Do not equate permission to partial-fill with permission to enlarge the quantity or extend the prescription clock."
   },
   "rule_ids": [
-    "MA-CDTM-QUALIFICATIONS"
+    "FED-CIII-V-PARTIAL",
+    "FED-CS-REFILL-III-IV"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "clonazepam"
+  ],
   "reasoning_steps": [
-    "Separate the qualifications already satisfied from the missing insurance element",
-    "Decide whether the statutory qualification bundle is complete"
+    "Classify the drug as Schedule IV",
+    "Apply the partial-fill record and quantity conditions",
+    "Apply the six-month outer time limit"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CIII-V-PARTIAL": {
+          "content_version": 1,
+          "content_hash": "916e552af577bf4e10c2a63a72c5f075be9607308e962122f7eb96d6a8a6ff00"
+        },
+        "FED-CS-REFILL-III-IV": {
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+        }
+      },
+      "drugs": {
+        "clonazepam": {
+          "content_version": 1,
+          "content_hash": "3005d8e97ca885e86d545627d66deff367dea43282ed5f8a6f68403944155c10"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
