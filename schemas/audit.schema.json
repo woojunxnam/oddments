@@ -117,8 +117,8 @@
       "properties": {
         "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
-        "Severity": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]},
-        "Existing_Answer_Correct": {"enum": ["YES", "PARTIALLY", "NO", "NOT_ASSESSED"]},
+        "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
+        "Existing_Answer_Correct": {"enum": ["YES", "NO", "PARTIALLY", "NOT_ASSESSED"]},
         "authorities": {"type": "array", "items": {"$ref": "#/$defs/authority"}},
         "Problem": {"type": "string"},
         "Proposed_Answer": {"type": "string"},
@@ -133,7 +133,7 @@
       "properties": {
         "Question_ID": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"},
         "Verdict": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "DELETE"]},
-        "Severity": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+        "Severity": {"enum": ["Low", "Medium", "High", "Critical"]},
         "Realism_Verdict": {"enum": ["PASS", "FAIL"]},
         "Reviewed_Date": {"type": "string", "format": "date"},
         "Criteria": {
