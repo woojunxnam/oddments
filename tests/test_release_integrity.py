@@ -261,7 +261,7 @@ def test_current_realism_failure_blocks_release(
     audits["AUDIT-GPT-REALISM-TEST"]["results"][0]["Realism_Verdict"] = "FAIL"
     audits["AUDIT-GPT-REALISM-TEST"]["results"][0]["Verdict"] = "MAJOR_REWRITE"
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
-    assert any("does not independently pass" in error for error in report.errors)
+    assert any("current realism audit" in error and "does not pass" in error for error in report.errors)
 
 
 def test_unreferenced_current_failed_legal_audit_blocks_release(
