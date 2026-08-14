@@ -14722,74 +14722,110 @@
     },
     {
       "question_id": "MA-Q-0098",
-      "family_id": "EXP1_0098_NALOXONE_PATHWAY",
+      "family_id": "EXP1_0098_NALOXONE_PRODUCT_STATUS",
       "area": 2,
       "topic": "Public health",
-      "subtopic": "Naloxone pharmacy pathway",
+      "subtopic": "Naloxone product status and retail handling",
       "difficulty": 4,
-      "question_type": "SATA",
+      "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A patient at risk of opioid overdose asks a Massachusetts pharmacy for a prescription-labeled naloxone product. The patient has no patient-specific naloxone prescription, but the pharmacy participates in an authorized statewide standing-order prescription pathway. What is the key legal point?",
+      "stem": "During a shelf audit, a Massachusetts pharmacist finds two naloxone nasal-spray cartons mixed together: one is an FDA-labeled OTC package with Drug Facts, while the other is prescription-labeled and states that federal law prohibits dispensing without a prescription. Both contain naloxone. What is the most appropriate correction?",
       "choices": [
         {
           "id": "A",
-          "text": "A patient-specific office prescription is the only lawful pharmacy pathway for naloxone."
+          "text": "Move both cartons to prescription inventory because Massachusetts treats every naloxone product as prescription-only once it enters a pharmacy."
         },
         {
           "id": "B",
-          "text": "The standing-order pathway may authorize dispensing when its requirements are met, so absence of a separate patient-specific prescription is not automatically disqualifying."
+          "text": "Keep the OTC-labeled carton available for ordinary retail sale, but return the prescription-labeled carton to prescription inventory for dispensing only through lawful prescription or standing-order authority."
         },
         {
           "id": "C",
-          "text": "A standing order can be used only for Schedule II opioids and never for an opioid antagonist."
+          "text": "Treat both cartons as OTC when their active ingredient and strength match because the FDA nonprescription status attaches to naloxone itself rather than to the labeled product."
         },
         {
           "id": "D",
-          "text": "The pharmacist must convert naloxone into a controlled-substance Schedule before the standing order can be used."
+          "text": "Treat the OTC-labeled carton as prescription-only whenever a customer wants insurance billed because the payment method changes the product's legal classification."
         },
         {
           "id": "E",
-          "text": "Standing-order authority applies only when the requester is a family member rather than the person at risk."
+          "text": "Allow the prescription-labeled carton to be sold from the shelf without an order whenever the purchaser says the naloxone is for a person at risk of overdose."
         }
       ],
       "correct_choice_ids": [
         "B"
       ],
       "explanation": {
-        "core_reasoning": "Massachusetts pharmacy naloxone access can operate through an authorized standing order. The pharmacist should determine whether that pathway applies rather than assuming that only a conventional patient-specific prescription can support dispensing.",
+        "core_reasoning": "Massachusetts DCP distinguishes FDA-labeled OTC naloxone from prescription naloxone by the product's approved packaging. OTC naloxone may be handled as an OTC retail product, while prescription-labeled naloxone remains subject to the prescription/standing-order dispensing pathway.",
         "choice_analysis": {
-          "A": "Massachusetts provides a broader pharmacy access mechanism than a patient-specific prescription alone.",
-          "B": "A valid standing order can supply the prescribing authority for an otherwise eligible naloxone dispensing encounter.",
-          "C": "The standing-order mechanism is not limited to dispensing the opioids that naloxone is intended to reverse.",
-          "D": "Naloxone’s access does not require assigning it a federal controlled-substance schedule.",
-          "E": "The pathway can serve the person at risk as well as other qualifying recipients."
+          "A": "Current Massachusetts guidance expressly recognizes FDA-labeled OTC naloxone as a separate nonprescription product category.",
+          "B": "The packaging identifies two legally distinct product pathways: ordinary OTC retail sale for the OTC package and prescription or standing-order dispensing for the prescription-labeled package.",
+          "C": "OTC status does not automatically convert every naloxone product; Massachusetts DCP directs users to distinguish the products by their FDA-approved packaging.",
+          "D": "Insurance billing can affect how a transaction is processed, but it does not transform an FDA-labeled OTC package into a prescription-only product.",
+          "E": "Broad naloxone access does not erase the order requirement for a package that remains prescription-labeled; that product requires lawful prescription or standing-order authority."
         },
         "related_facts": [
-          "The statewide standing order can serve as prescription authority for prescription naloxone when its requirements are met.",
-          "FDA-labeled OTC naloxone is a separate product and does not become Schedule VI merely because prescription naloxone also exists."
+          "Massachusetts DCP states that OTC naloxone and prescription naloxone are separate and distinct products governed by different requirements.",
+          "FDA-labeled OTC naloxone may be stocked for direct shelf access; prescription naloxone remains available through patient-specific prescriptions or the statewide standing order."
         ],
-        "mpje_trap": "Ask what authority supports the dispensing, not whether a traditional prescription sheet exists."
+        "mpje_trap": "Do not classify the product only by active ingredient; the FDA-approved package identifies whether the carton is OTC or prescription naloxone."
       },
       "rule_ids": [
-        "MA-NALOXONE",
-        "MA-SCHEDULE-VI"
+        "MA-NALOXONE"
       ],
       "drug_ids": [
-        "naloxone"
+        "naloxone",
+        "naloxone-otc"
       ],
       "reasoning_steps": [
-        "Identify the absence of a patient-specific prescription",
-        "Identify the pharmacy’s standing-order authority",
-        "Determine whether the standing order can support the naloxone dispensing"
+        "Distinguish the two cartons by FDA-approved labeling rather than active ingredient alone",
+        "Apply Massachusetts DCP's separate treatment of OTC and prescription naloxone",
+        "Select the inventory and dispensing pathway that matches each product category"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #31 audit",
+        "date": "2026-08-14",
+        "notes": "Final-two Wave 1 admission after a fresh independent current-hash legal KEEP/YES and realism KEEP/PASS. MA-Q-0110 remains quarantined after realism failure.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-NALOXONE": {
+              "content_version": 2,
+              "content_hash": "a77e9d0d1e5def6f3838be72d278289e70eb30dc35a4a6505bd1575b28d97469"
+            }
+          },
+          "drugs": {
+            "naloxone": {
+              "content_version": 2,
+              "content_hash": "1622b27bee5d235bc6acbdcc0919c056304dce369e5890fe4167ec4587032149"
+            },
+            "naloxone-otc": {
+              "content_version": 1,
+              "content_hash": "ed3b83244d2394e2edfd603f3c80855f9d2490b8e460a32d0f33e648b3cb816b"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -14805,13 +14841,6 @@
           "section": "OTC and prescription naloxone distinction",
           "url": "https://www.mass.gov/news/dcp-regulations-and-over-the-counter-naloxone",
           "last_verified": "2026-08-14"
-        },
-        {
-          "rule_id": "MA-SCHEDULE-VI",
-          "name": "Massachusetts Schedule VI prescription-drug status",
-          "section": "105 CMR 700.002(F)",
-          "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
-          "last_verified": "2026-08-13"
         }
       ],
       "drug_checks": [
@@ -14922,9 +14951,116 @@
           "last_verified": "2026-08-14",
           "verification_status": "PRIMARY_VERIFIED",
           "verification_notes": "This record intentionally represents prescription-labeled naloxone. Massachusetts DCP distinguishes it from FDA-labeled OTC naloxone; status rechecked 2026-08-14."
+        },
+        {
+          "drug_id": "naloxone-otc",
+          "content_version": 1,
+          "content_hash": "ed3b83244d2394e2edfd603f3c80855f9d2490b8e460a32d0f33e648b3cb816b",
+          "generic_name": "naloxone (OTC product)",
+          "brand_names": [
+            "Narcan OTC",
+            "RiVive"
+          ],
+          "main_indications": [
+            "Emergency treatment of known or suspected opioid overdose using an FDA-labeled OTC naloxone product"
+          ],
+          "therapeutic_class": "Opioid antagonist",
+          "federal_status": {
+            "controlled": false,
+            "schedule": "NONCONTROLLED"
+          },
+          "massachusetts_status": {
+            "schedule": "NONCONTROLLED",
+            "masspat_reportable": false,
+            "drug_of_concern": false
+          },
+          "legal_consequences": {
+            "refill": {
+              "summary": "An FDA-labeled OTC naloxone package is sold as a nonprescription product; prescription-refill rules do not create a refill requirement for the OTC package.",
+              "rule_ids": [
+                "MA-NALOXONE"
+              ]
+            },
+            "transfer": {
+              "summary": "An OTC naloxone package is not transferred as a prescription merely because prescription naloxone products also exist.",
+              "rule_ids": [
+                "MA-NALOXONE"
+              ]
+            },
+            "partial_fill": {
+              "summary": "Prescription partial-fill rules do not govern an ordinary sale of an intact FDA-labeled OTC naloxone package.",
+              "rule_ids": [
+                "MA-NALOXONE"
+              ]
+            },
+            "masspat": {
+              "summary": "Ordinary OTC naloxone sales are not MassPAT dispensing transactions.",
+              "rule_ids": [
+                "MA-NALOXONE",
+                "MA-PMP-REPORTING"
+              ]
+            },
+            "quantity_limit": {
+              "summary": "The OTC package follows its retail labeling and applicable general retail law, not Massachusetts Schedule VI prescription quantity rules.",
+              "rule_ids": [
+                "MA-NALOXONE"
+              ]
+            }
+          },
+          "verified_rule_dependencies": {
+            "MA-NALOXONE": {
+              "content_version": 2,
+              "content_hash": "a77e9d0d1e5def6f3838be72d278289e70eb30dc35a4a6505bd1575b28d97469"
+            },
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            }
+          },
+          "authorities": [
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "Massachusetts DCP OTC naloxone advisory",
+              "section": "OTC naloxone outside DCP controlled-substance regulations",
+              "url": "https://www.mass.gov/news/dcp-regulations-and-over-the-counter-naloxone"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "Massachusetts OTC naloxone memorandum",
+              "section": "OTC access and products",
+              "url": "https://www.mass.gov/memorandum/over-the-counter-otc-naloxone"
+            }
+          ],
+          "last_verified": "2026-08-14",
+          "verification_status": "PRIMARY_VERIFIED",
+          "verification_notes": "FDA-labeled OTC naloxone is a separate product category from prescription naloxone under current Massachusetts DCP guidance; checked 2026-08-14."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS. The shelf-audit setting is plausible and the answer turns on a legally meaningful product/package distinction rather than ingredient recall. The distractors reflect genuine confusions about ingredient-wide OTC status, insurance processing, and broad naloxone access. Full-bank comparison found MA-Q-0097 uses the same general naloxone area but tests a different decision path—third-party recipient/standing-order access—whereas MA-Q-0098 tests OTC-versus-prescription product classification and inventory/retail handling.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0099",
@@ -17085,66 +17221,65 @@
     },
     {
       "question_id": "MA-Q-0110",
-      "family_id": "V3_0110_CONTROLLED_LABEL_ELEMENTS",
+      "family_id": "EXP1_0110_CS_PAMPHLET_EXCEPTION",
       "area": 3,
       "topic": "Dispensing",
-      "subtopic": "Controlled-substance label",
+      "subtopic": "Schedule II and III consumer education exceptions",
       "difficulty": 4,
-      "question_type": "SATA",
+      "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "During final verification of a Massachusetts alprazolam prescription, the pharmacist notices that the dispensing label has the patient, drug, directions, pharmacy, prescriber, and prescription number but omits some other information required by M.G.L. c. 94C §21. Which items should be corrected before dispensing? Select all that apply.",
+      "stem": "During final verification, a community pharmacist reviews a morphine extended-release prescription for a patient whose record documents outpatient palliative care under Massachusetts law. The technician has held the bag because the usual Massachusetts Schedule II/III consumer pamphlet is not attached. What is the most appropriate response?",
       "choices": [
         {
           "id": "A",
-          "text": "Add the date the prescription is being filled."
+          "text": "Hold the prescription until the pamphlet is added because every community-pharmacy Schedule II dispensing requires it without exception."
         },
         {
           "id": "B",
-          "text": "Add the patient's health-plan member identification number."
+          "text": "Dispense without the pamphlet only if the prescriber separately writes an order waiving the education requirement for this fill."
         },
         {
           "id": "C",
-          "text": "Add the filling pharmacist's initials."
+          "text": "The pamphlet is not required for this documented outpatient palliative-care patient, although the pharmacist must still satisfy the other applicable dispensing requirements."
         },
         {
           "id": "D",
-          "text": "Add the wholesaler invoice number for the bottle used to fill the prescription."
+          "text": "The pamphlet exception applies to long-term-care residents only, so outpatient palliative care does not change the requirement."
         },
         {
           "id": "E",
-          "text": "Because tablets are being dispensed, add the number of tablets in the container."
+          "text": "The pamphlet may be omitted only when the controlled substance is prescribed for substance-use-disorder or opioid-dependence treatment."
         }
       ],
       "correct_choice_ids": [
-        "A",
-        "C",
-        "E"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "The container label has its own statutory checklist. Final verification should compare the actual label against the Massachusetts dispensing-label requirements rather than importing insurance or wholesaler fields.",
+        "core_reasoning": "Massachusetts generally requires the designated consumer pamphlet when a community pharmacy dispenses a narcotic or other controlled substance in Schedule II or III. The statute expressly creates several exceptions, including a patient receiving outpatient palliative care under M.G.L. c.111 §227.",
         "choice_analysis": {
-          "A": "Massachusetts requires the fill date on the controlled-substance container label.",
-          "B": "The statute does not make the insurance member ID a required controlled-substance container-label element.",
-          "C": "The filling pharmacist's initials are among the statutory label elements.",
-          "D": "The wholesaler invoice number is not a required patient container-label element under this statute.",
-          "E": "For tablets or capsules, the statute requires the number in the container on the label."
+          "A": "The Schedule II/III pamphlet rule is not absolute; the statute lists specific exceptions.",
+          "B": "The outpatient palliative-care exception comes from the statute and does not depend on a prescriber writing a separate pamphlet-waiver order.",
+          "C": "Documented outpatient palliative care is an express statutory exception to the Schedule II/III pamphlet-distribution requirement.",
+          "D": "Long-term-care residence is one exception, but outpatient palliative care is a separate independent exception.",
+          "E": "Substance-use-disorder or opioid-dependence treatment is another exception, not the only one."
         },
         "related_facts": [
-          "The label rule is distinct from the information required on the prescription itself.",
-          "Tablet or capsule count is expressly addressed by the statute."
+          "M.G.L. c.94C §21 lists outpatient palliative care, long-term-care residence, and treatment of substance use disorder or opioid dependence as separate pamphlet exceptions.",
+          "An exception to the pamphlet requirement does not waive unrelated prescription, labeling, counseling, or controlled-substance dispensing obligations."
         ],
-        "mpje_trap": "A valid prescription can still produce a noncompliant dispensed container if required label information is missing."
+        "mpje_trap": "First identify the general Schedule II/III education rule, then check whether the patient's setting or indication matches one of the statute's express exceptions."
       },
       "rule_ids": [
-        "MA-CS-LABEL"
+        "MA-CS-II-III-PAMPHLET"
       ],
       "drug_ids": [
-        "alprazolam"
+        "morphine"
       ],
       "reasoning_steps": [
-        "Identify this as a dispensing-label review",
-        "Match missing fields to M.G.L. c. 94C §21"
+        "Identify morphine as a Schedule II controlled substance and recognize the usual pamphlet trigger",
+        "Identify the documented outpatient palliative-care setting",
+        "Apply the statutory exception without treating it as a waiver of other dispensing duties"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
@@ -17156,7 +17291,7 @@
       "development_fixture": true,
       "authorities": [
         {
-          "rule_id": "MA-CS-LABEL",
+          "rule_id": "MA-CS-II-III-PAMPHLET",
           "name": "Massachusetts General Laws c. 94C",
           "section": "§ 21",
           "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
@@ -17165,31 +17300,31 @@
       ],
       "drug_checks": [
         {
-          "drug_id": "alprazolam",
+          "drug_id": "morphine",
           "content_version": 1,
-          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6",
-          "generic_name": "alprazolam",
+          "content_hash": "f9ae33c7e6276cf2af15610bde5e364a84e025ee5fbae4387e0fecd918681c49",
+          "generic_name": "morphine",
           "brand_names": [
-            "Xanax"
+            "MS Contin"
           ],
           "main_indications": [
-            "Anxiety disorder and panic disorder"
+            "Severe and persistent pain requiring extended opioid treatment"
           ],
-          "therapeutic_class": "Benzodiazepine",
+          "therapeutic_class": "Opioid analgesic",
           "federal_status": {
             "controlled": true,
-            "schedule": "IV"
+            "schedule": "II"
           },
           "massachusetts_status": {
-            "schedule": "IV",
+            "schedule": "II",
             "masspat_reportable": true,
             "drug_of_concern": false
           },
           "legal_consequences": {
             "refill": {
-              "summary": "Apply the refill framework for a IV product before dispensing another fill.",
+              "summary": "Apply the refill framework for a II product before dispensing another fill.",
               "rule_ids": [
-                "FED-CIII-V-REFILL"
+                "FED-CII-NO-REFILL"
               ]
             },
             "transfer": {
@@ -17201,7 +17336,7 @@
             "partial_fill": {
               "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
               "rule_ids": [
-                "FED-CIII-V-PARTIAL"
+                "FED-CII-PARTIAL-PATIENT"
               ]
             },
             "masspat": {
@@ -17213,26 +17348,26 @@
             "quantity_limit": {
               "summary": "Apply the schedule- and indication-specific Massachusetts quantity rule.",
               "rule_ids": [
-                "FED-CS-SCHEDULES"
+                "MA-CS-QUANTITY-II-III"
               ]
             }
           },
           "verified_rule_dependencies": {
-            "FED-CIII-V-PARTIAL": {
+            "FED-CII-NO-REFILL": {
               "content_version": 1,
-              "content_hash": "916e552af577bf4e10c2a63a72c5f075be9607308e962122f7eb96d6a8a6ff00"
+              "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
             },
-            "FED-CIII-V-REFILL": {
+            "FED-CII-PARTIAL-PATIENT": {
               "content_version": 1,
-              "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
-            },
-            "FED-CS-SCHEDULES": {
-              "content_version": 1,
-              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+              "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
             },
             "FED-EPCS-TRANSFER": {
               "content_version": 1,
               "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+            },
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
             },
             "MA-PMP-REPORTING": {
               "content_version": 1,
@@ -17242,14 +17377,14 @@
           "authorities": [
             {
               "type": "FDA_LABEL",
-              "name": "DailyMed label search for alprazolam",
+              "name": "DailyMed label search for morphine",
               "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=alprazolam"
+              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=morphine"
             },
             {
               "type": "FEDERAL_REGULATION",
               "name": "Federal controlled-substance schedules",
-              "section": "21 CFR 1308 (IV)",
+              "section": "21 CFR 1308 (II)",
               "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
             },
             {
