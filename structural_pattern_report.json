@@ -1,6 +1,6 @@
 {
-  "scope": "MA-Q-0011..MA-Q-0090",
-  "question_count": 80,
+  "scope": "MA-Q-0011+",
+  "question_count": 120,
   "thresholds": {
     "ngram_size": 10,
     "distractor_minimum_questions": 3,
@@ -14,42 +14,84 @@
   },
   "distributions": {
     "question_types": {
-      "SATA": 28,
-      "SBA": 52
+      "SATA": 42,
+      "SBA": 78
     },
     "sata_answer_sets": {
       "AB": 1,
-      "ABC": 2,
+      "ABC": 3,
       "ABCD": 2,
       "ABCE": 1,
-      "ABDE": 1,
+      "ABD": 2,
+      "ABDE": 2,
       "ABE": 1,
-      "AC": 1,
-      "ACD": 1,
+      "AC": 2,
+      "ACD": 3,
       "ACDE": 1,
-      "ACE": 1,
+      "ACE": 2,
       "AD": 1,
-      "ADE": 2,
+      "ADE": 3,
       "AE": 1,
       "BC": 1,
-      "BCD": 1,
+      "BCD": 3,
       "BCDE": 1,
       "BCE": 2,
-      "BD": 1,
-      "BDE": 1,
+      "BD": 2,
+      "BDE": 2,
       "CD": 1,
-      "CDE": 2,
+      "CDE": 3,
       "CE": 1,
       "DE": 1
     },
     "sata_correct_counts": {
-      "2": 9,
-      "3": 13,
-      "4": 6
+      "2": 11,
+      "3": 24,
+      "4": 7
     },
     "ordered_response_keys": {}
   },
-  "finding_count": 0,
-  "findings": [],
-  "severity": "PASS"
+  "finding_count": 2,
+  "findings": [
+    {
+      "code": "SATA_CORRECT_COUNT_CONCENTRATION",
+      "detail": "SATA correct-count 3 occurs 24/42 times."
+    },
+    {
+      "code": "SBA_ANSWER_LENGTH_LEAKAGE",
+      "detail": "A correct SBA option is materially longer than every distractor.",
+      "examples": [
+        {
+          "question_id": "MA-Q-0104",
+          "correct_length": 21,
+          "longest_distractor": 13
+        },
+        {
+          "question_id": "MA-Q-0105",
+          "correct_length": 25,
+          "longest_distractor": 14
+        },
+        {
+          "question_id": "MA-Q-0108",
+          "correct_length": 28,
+          "longest_distractor": 12
+        },
+        {
+          "question_id": "MA-Q-0118",
+          "correct_length": 21,
+          "longest_distractor": 13
+        },
+        {
+          "question_id": "MA-Q-0121",
+          "correct_length": 27,
+          "longest_distractor": 13
+        },
+        {
+          "question_id": "MA-Q-0122",
+          "correct_length": 25,
+          "longest_distractor": 10
+        }
+      ]
+    }
+  ],
+  "severity": "ERROR"
 }
