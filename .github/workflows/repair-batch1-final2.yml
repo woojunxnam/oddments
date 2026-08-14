@@ -1,0 +1,99 @@
+name: Repair Batch 1 final two
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-final2
+    paths:
+      - .github/workflows/repair-batch1-final2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-final2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Assert clean main-derived baseline
+        run: |
+          test "$(git merge-base HEAD main)" = "d54be3fff5e5c9fb0be9658f66a6944460cad0ed"
+          python scripts/validate_all.py
+          python -m pytest -q
+
+      - name: Apply two semantic repairs
+        run: |
+          python scripts/repair_batch1_final2.py
+          python scripts/generate_artifacts.py --write
+
+      - name: Validate repaired bank and public boundary
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 85, len(allow['question_ids'])
+          assert 'MA-Q-0098' not in allow['question_ids']
+          assert 'MA-Q-0110' not in allow['question_ids']
+
+          released = 0
+          for number in range(91, 131):
+              q = json.loads(Path(f'data/questions/ma-q-{number:04d}.json').read_text())
+              if q['verification_status'] == 'RELEASED' and q['lifecycle_status'] == 'RELEASED':
+                  released += 1
+          assert released == 38, released
+
+          q98 = json.loads(Path('data/questions/ma-q-0098.json').read_text())
+          q110 = json.loads(Path('data/questions/ma-q-0110.json').read_text())
+          assert q98['question_type'] == 'SBA'
+          assert q98['family_id'] == 'EXP1_0098_NALOXONE_PRODUCT_STATUS'
+          assert q98['drug_ids'] == ['naloxone', 'naloxone-otc']
+          assert q110['question_type'] == 'SBA'
+          assert q110['family_id'] == 'EXP1_0110_CS_PAMPHLET_EXCEPTION'
+          assert q110['rule_ids'] == ['MA-CS-II-III-PAMPHLET']
+          for q in (q98, q110):
+              assert q['verification_status'] == 'AUDIT_PENDING'
+              assert q['lifecycle_status'] == 'AUDIT_PENDING'
+              assert q['audits'] == []
+              assert q['final_adjudication'] is None
+          print('final-two repair boundary PASS: preview=85, Batch1 released=38, final2 audit-pending=2')
+          PY
+
+      - name: Commit repair and remove one-shot workflow
+        run: |
+          rm .github/workflows/repair-batch1-final2.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "repair: rebuild final two Batch 1 realism failures"
+          git push origin HEAD:repair/mpje-expansion-batch1-final2
+
+      - name: Prove deterministic committed state
+        run: |
+          python scripts/generate_artifacts.py --write
+          python scripts/validate_all.py
+          python -m pytest -q
+          git diff --exit-code
