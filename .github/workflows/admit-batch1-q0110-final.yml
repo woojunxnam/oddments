@@ -1,0 +1,221 @@
+name: Admit final Batch 1 Q0110
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-q0110-final
+    paths:
+      - .github/workflows/admit-batch1-q0110-final.yml
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: repair/mpje-expansion-batch1-q0110-final
+          fetch-depth: 0
+
+      - name: Assert exact audited parent
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD^)" = "2697df81050bc78ef4240edd89d6d9f04c1637cd"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Verify fresh audit and admit Q0110
+        shell: bash
+        run: |
+          python - <<'PY'
+          import sys
+          from collections import Counter
+          from pathlib import Path
+
+          sys.path.insert(0, str(Path.cwd() / "scripts"))
+          from qa_common import DATA, ROOT, dependency_snapshot, load_json, load_records, question_audit_hash, write_json
+          from release_context import named_dependency_snapshot
+
+          QID = "MA-Q-0110"
+          EXPECTED_HASH = "5fd53ad47bc0732256244e84ec4013d72bd34313d45078aa2c6628fa5b63a7d7"
+          LEGAL_ID = "AUDIT-GPT-FRESH-EXP1-Q0110-FINAL-A-LEGAL-REAUDIT-2026-08-14"
+          REALISM_ID = "AUDIT-GPT-FRESH-EXP1-Q0110-FINAL-A-REALISM-REAUDIT-2026-08-14"
+          AUDITOR_INSTANCE = "GPT-FRESH-EXP1-Q0110-FINAL-A"
+          TODAY = "2026-08-14"
+
+          legal = load_json(DATA / "audits" / f"{LEGAL_ID}.json")
+          realism = load_json(DATA / "audits" / f"{REALISM_ID}.json")
+          for audit, review_type in ((legal, "LEGAL_VERIFICATION"), (realism, "REALISM_REVIEW")):
+              assert audit["audit_status"] == "FULLY_ADJUDICATED"
+              assert audit["independent"] is True
+              assert audit["auditor_instance"] == AUDITOR_INSTANCE
+              assert audit["review_type"] == review_type
+              assert audit["question_ids"] == [QID]
+              assert audit["question_hashes"] == {QID: EXPECTED_HASH}
+              assert len(audit["results"]) == 1
+              assert audit["results"][0]["Question_ID"] == QID
+
+          legal_result = legal["results"][0]
+          realism_result = realism["results"][0]
+          assert legal_result["Verdict"] == "KEEP"
+          assert legal_result["Existing_Answer_Correct"] == "YES"
+          assert realism_result["Verdict"] == "KEEP"
+          assert realism_result["Realism_Verdict"] == "PASS"
+
+          qpath = DATA / "questions" / "ma-q-0110.json"
+          question = load_json(qpath)
+          assert question["question_id"] == QID
+          assert question_audit_hash(question) == EXPECTED_HASH
+          assert question["verification_status"] == "AUDIT_PENDING"
+          assert question["lifecycle_status"] == "AUDIT_PENDING"
+          assert question.get("audits", []) == []
+          assert question.get("final_adjudication") is None
+
+          rules = {record["rule_id"]: record for _, record in load_records(DATA / "rules")}
+          drugs = {record["drug_id"]: record for _, record in load_records(DATA / "drugs")}
+          blueprint = load_json(DATA / "blueprint.json")
+          style_profile = load_json(DATA / "exam_style" / "mpje_style_profile.json")
+
+          question["audits"] = [LEGAL_ID, REALISM_ID]
+          question["verification_status"] = "RELEASED"
+          question["lifecycle_status"] = "RELEASED"
+          question["last_legal_review"] = TODAY
+          question["duplicate_review_status"] = "CLEAR"
+          question["independent_audit_status"] = "PASSED"
+          question["final_adjudication"] = {
+              "decision": "KEEP",
+              "adjudicator": "GPT-5.6-Sol editor after independent Issue #34 audit",
+              "date": TODAY,
+              "notes": (
+                  "Final Batch 1 admission after a fresh independent current-hash legal KEEP/YES and "
+                  "realism KEEP/PASS on the distinct M.G.L. c.94C §18D decision path."
+              ),
+              "verified_dependencies": {
+                  "rules": {rid: dependency_snapshot(rules[rid]) for rid in question.get("rule_ids", [])},
+                  "drugs": {did: dependency_snapshot(drugs[did]) for did in question.get("drug_ids", [])},
+                  "blueprint": named_dependency_snapshot(blueprint, "blueprint_id"),
+                  "style_profile": named_dependency_snapshot(style_profile, "profile_id"),
+              },
+          }
+          write_json(qpath, question)
+
+          # Synchronize family release counts from canonical question state.
+          released_counts = Counter()
+          for _, q in load_records(DATA / "questions"):
+              if q.get("verification_status") == "RELEASED" and q.get("lifecycle_status") == "RELEASED":
+                  released_counts[q["family_id"]] += 1
+          matrix_path = DATA / "exam_style" / "question_family_matrix.json"
+          matrix = load_json(matrix_path)
+          for family in matrix.get("families", []):
+              family["current_released_count"] = released_counts.get(family["family_id"], 0)
+          matrix["last_reviewed"] = TODAY
+          write_json(matrix_path, matrix)
+
+          # Expand public preview from 86 to 87, adding only the newly released Q0110.
+          allow_path = ROOT / "site" / "generated" / "preview_allowlist.json"
+          allow = load_json(allow_path)
+          ids = list(allow.get("question_ids", []))
+          assert len(ids) == 86, len(ids)
+          assert QID not in ids
+          ids.append(QID)
+          allow["question_ids"] = ids
+          allow["generated_date"] = TODAY
+          allow["source_audits"] = list(dict.fromkeys(list(allow.get("source_audits", [])) + [LEGAL_ID, REALISM_ID]))
+          allow["notice"] = (
+              "Preview contains the prior audited set plus all 40 Expansion Batch 1 questions that passed "
+              "the repository's current legal and realism admission gates."
+          )
+          write_json(allow_path, allow)
+          assert len(ids) == 87
+
+          released_batch1 = []
+          for number in range(91, 131):
+              q = load_json(DATA / "questions" / f"ma-q-{number:04d}.json")
+              if q.get("verification_status") == "RELEASED" and q.get("lifecycle_status") == "RELEASED":
+                  released_batch1.append(q["question_id"])
+          assert len(released_batch1) == 40, released_batch1
+          assert QID in released_batch1
+
+          # Release-state mutation must not alter the audited semantic hash.
+          assert question_audit_hash(load_json(qpath)) == EXPECTED_HASH
+          print("Q0110 admitted: Batch 1 40/40 RELEASED; preview allowlist 87")
+          PY
+
+      - name: Regenerate tracked artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Validate admitted state
+        shell: bash
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/build_site_data.py --output /tmp/release.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          release = json.loads(Path('/tmp/release.json').read_text())
+          ids = {q['question_id'] for q in release['questions']}
+          assert 'MA-Q-0110' in ids
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 87
+          assert allow['question_ids'].count('MA-Q-0110') == 1
+          batch = []
+          for n in range(91, 131):
+              q = json.loads(Path(f'data/questions/ma-q-{n:04d}.json').read_text())
+              if q['verification_status'] == 'RELEASED' and q['lifecycle_status'] == 'RELEASED':
+                  batch.append(q['question_id'])
+          assert len(batch) == 40
+          print(f"production release payload: {release['meta']['question_count']} formal RELEASED; preview: 87; Batch 1: 40/40")
+          PY
+
+      - name: Commit canonical final admission and remove one-shot workflow
+        shell: bash
+        run: |
+          git config user.name "woojunxnam"
+          git config user.email "woojunxnam@gmail.com"
+          git rm .github/workflows/admit-batch1-q0110-final.yml
+          git add -A
+          git status --short
+          git commit -m "release: complete MPJE Expansion Batch 1"
+
+      - name: Prove deterministic committed state
+        shell: bash
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+          python scripts/build_site_data.py --output /tmp/release-final.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          q = json.loads(Path('data/questions/ma-q-0110.json').read_text())
+          assert q['verification_status'] == q['lifecycle_status'] == 'RELEASED'
+          assert q['duplicate_review_status'] == 'CLEAR'
+          assert q['independent_audit_status'] == 'PASSED'
+          assert q['final_adjudication']['decision'] == 'KEEP'
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 87 and 'MA-Q-0110' in allow['question_ids']
+          release = json.loads(Path('/tmp/release-final.json').read_text())
+          assert any(x['question_id'] == 'MA-Q-0110' for x in release['questions'])
+          print('final committed-state assertions PASS')
+          PY
+
+      - name: Push final admission
+        run: git push origin HEAD:repair/mpje-expansion-batch1-q0110-final
