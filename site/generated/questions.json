@@ -17221,65 +17221,67 @@
     },
     {
       "question_id": "MA-Q-0110",
-      "family_id": "EXP1_0110_CS_PAMPHLET_EXCEPTION",
+      "family_id": "EXP1_0110_CII_OPIOID_ANTAGONIST_OFFER",
       "area": 3,
       "topic": "Dispensing",
-      "subtopic": "Schedule II and III consumer education exceptions",
+      "subtopic": "Schedule II opioid safety obligation",
       "difficulty": 4,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "During final verification, a community pharmacist reviews a morphine extended-release prescription for a patient whose record documents outpatient palliative care under Massachusetts law. The technician has held the bag because the usual Massachusetts Schedule II/III consumer pamphlet is not attached. What is the most appropriate response?",
+      "stem": "At pickup, an adult patient is receiving a valid oxycodone prescription. The pharmacist confirms it is a Schedule II opioid. The patient says, 'I already keep unexpired naloxone at home, so we can skip anything else about overdose risk.' Under current Massachusetts law, which response best addresses the pharmacist's specific statutory duty tied to dispensing this oxycodone?",
       "choices": [
         {
           "id": "A",
-          "text": "Hold the prescription until the pamphlet is added because every community-pharmacy Schedule II dispensing requires it without exception."
+          "text": "Skip both steps because having an opioid antagonist at home satisfies the Massachusetts dispensing requirement."
         },
         {
           "id": "B",
-          "text": "Dispense without the pamphlet only if the prescriber separately writes an order waiving the education requirement for this fill."
+          "text": "Inform the patient of the prescription opioid's potential adverse risks and offer to dispense an opioid antagonist; the patient may decline the offer."
         },
         {
           "id": "C",
-          "text": "The pamphlet is not required for this documented outpatient palliative-care patient, although the pharmacist must still satisfy the other applicable dispensing requirements."
+          "text": "Require the patient to accept an opioid antagonist before the Schedule II opioid may be dispensed."
         },
         {
           "id": "D",
-          "text": "The pamphlet exception applies to long-term-care residents only, so outpatient palliative care does not change the requirement."
+          "text": "Make the antagonist offer only when the opioid prescriber has separately ordered one or documented elevated overdose risk."
         },
         {
           "id": "E",
-          "text": "The pamphlet may be omitted only when the controlled substance is prescribed for substance-use-disorder or opioid-dependence treatment."
+          "text": "Make the antagonist offer only for a patient who has never previously received a Schedule II opioid."
         }
       ],
       "correct_choice_ids": [
-        "C"
+        "B"
       ],
       "explanation": {
-        "core_reasoning": "Massachusetts generally requires the designated consumer pamphlet when a community pharmacy dispenses a narcotic or other controlled substance in Schedule II or III. The statute expressly creates several exceptions, including a patient receiving outpatient palliative care under M.G.L. c.111 §227.",
+        "core_reasoning": "M.G.L. c.94C §18D creates a pharmacist-specific duty when dispensing an opioid contained in Schedule II: inform the patient of the prescription opioid’s potential adverse risks and offer to dispense an opioid antagonist. The statute does not make the opioid dispensing contingent on accepting the antagonist and does not state an exception because the patient already possesses naloxone.",
         "choice_analysis": {
-          "A": "The Schedule II/III pamphlet rule is not absolute; the statute lists specific exceptions.",
-          "B": "The outpatient palliative-care exception comes from the statute and does not depend on a prescriber writing a separate pamphlet-waiver order.",
-          "C": "Documented outpatient palliative care is an express statutory exception to the Schedule II/III pamphlet-distribution requirement.",
-          "D": "Long-term-care residence is one exception, but outpatient palliative care is a separate independent exception.",
-          "E": "Substance-use-disorder or opioid-dependence treatment is another exception, not the only one."
+          "A": "Prior possession of naloxone is not stated as an exception to the pharmacist’s §18D risk-information and antagonist-offer duties.",
+          "B": "This matches §18D: the pharmacist must provide the adverse-risk information and make the antagonist offer. An offer does not compel the patient to accept or purchase the antagonist.",
+          "C": "Section 18D requires an offer, not mandatory acceptance of an opioid antagonist as a condition of receiving the otherwise valid Schedule II opioid.",
+          "D": "The statutory trigger is the pharmacist dispensing a Schedule II opioid; it is not conditioned on a separate antagonist prescription or a documented high-risk designation from the prescriber.",
+          "E": "Section 18D does not limit the duty to opioid-naive patients; the relevant trigger is the dispensing of an opioid contained in Schedule II."
         },
         "related_facts": [
-          "M.G.L. c.94C §21 lists outpatient palliative care, long-term-care residence, and treatment of substance use disorder or opioid dependence as separate pamphlet exceptions.",
-          "An exception to the pamphlet requirement does not waive unrelated prescription, labeling, counseling, or controlled-substance dispensing obligations."
+          "Section 18D defines opioid antagonist by FDA approval for treatment of persons experiencing an opioid overdose.",
+          "The pharmacist duty in §18D is distinct from the separate Massachusetts pathways that authorize access to or dispensing of opioid antagonists."
         ],
-        "mpje_trap": "First identify the general Schedule II/III education rule, then check whether the patient's setting or indication matches one of the statute's express exceptions."
+        "mpje_trap": "Do not turn an obligation to inform and offer into a requirement that the patient accept naloxone, and do not invent an exception merely because the patient already has naloxone."
       },
       "rule_ids": [
-        "MA-CS-II-III-PAMPHLET"
+        "MA-CII-OPIOID-ANTAGONIST-OFFER",
+        "FED-CS-SCHEDULES"
       ],
       "drug_ids": [
-        "morphine"
+        "oxycodone"
       ],
       "reasoning_steps": [
-        "Identify morphine as a Schedule II controlled substance and recognize the usual pamphlet trigger",
-        "Identify the documented outpatient palliative-care setting",
-        "Apply the statutory exception without treating it as a waiver of other dispensing duties"
+        "Identify oxycodone as an opioid contained in Schedule II",
+        "Recognize that dispensing the Schedule II opioid triggers M.G.L. c.94C §18D",
+        "Separate the mandatory adverse-risk information and antagonist offer from mandatory antagonist acceptance",
+        "Reject an unstated exception based on the patient already possessing naloxone"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
@@ -17291,21 +17293,35 @@
       "development_fixture": true,
       "authorities": [
         {
-          "rule_id": "MA-CS-II-III-PAMPHLET",
+          "rule_id": "MA-CII-OPIOID-ANTAGONIST-OFFER",
           "name": "Massachusetts General Laws c. 94C",
-          "section": "§ 21",
-          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+          "section": "§ 18D",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18D",
           "last_verified": "2026-08-14"
+        },
+        {
+          "rule_id": "FED-CS-SCHEDULES",
+          "name": "21 CFR Part 1308",
+          "section": "1308.11-1308.15",
+          "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308",
+          "last_verified": "2026-08-13"
+        },
+        {
+          "rule_id": "FED-CS-SCHEDULES",
+          "name": "105 CMR 700",
+          "section": "700.002(A)-(F)",
+          "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+          "last_verified": "2026-08-13"
         }
       ],
       "drug_checks": [
         {
-          "drug_id": "morphine",
+          "drug_id": "oxycodone",
           "content_version": 1,
-          "content_hash": "f9ae33c7e6276cf2af15610bde5e364a84e025ee5fbae4387e0fecd918681c49",
-          "generic_name": "morphine",
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854",
+          "generic_name": "oxycodone",
           "brand_names": [
-            "MS Contin"
+            "OxyContin"
           ],
           "main_indications": [
             "Severe and persistent pain requiring extended opioid treatment"
@@ -17377,9 +17393,9 @@
           "authorities": [
             {
               "type": "FDA_LABEL",
-              "name": "DailyMed label search for morphine",
+              "name": "DailyMed label search for oxycodone",
               "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=morphine"
+              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=oxycodone"
             },
             {
               "type": "FEDERAL_REGULATION",
