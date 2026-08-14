@@ -8,56 +8,60 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?",
+  "stem": "A prescriber telephones an emergency Nucynta order after confirming that immediate treatment is necessary and no signed prescription can be delivered first. What may the pharmacist dispense?",
   "choices": [
     {
       "id": "A",
-      "text": "Dispense the full quantity written in the later follow-up prescription after documenting whether the initial emergency oral quantity were not limited to the emergency period."
+      "text": "A fixed 72-hour supply."
     },
     {
       "id": "B",
-      "text": "Limit the emergency supply to exactly 72 hours."
+      "text": "The amount needed for the emergency period."
     },
     {
       "id": "C",
-      "text": "Dispense no more than the amount necessary for the emergency period and follow the emergency Schedule II documentation pathway."
+      "text": "A fixed seven-day supply."
     },
     {
       "id": "D",
-      "text": "Decline every oral Schedule II order, even in a defined emergency."
+      "text": "The quantity expected on the follow-up prescription."
     },
     {
       "id": "E",
-      "text": "Use a seven-day supply cap as the federal emergency quantity standard."
+      "text": "Nothing, because Schedule II oral orders are never allowed."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "'Dispense no more than the amount necessary for the emergency period and follow the emergency Schedule II documentation pathway.' is the governing result. By contrast, 'Dispense the full quantity written in the later follow-up prescription.' would require that the initial emergency oral quantity were not limited to the emergency period. The decisive cue appears in 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?'.",
+    "core_reasoning": "The pharmacist may dispense only the quantity adequate for the emergency period after immediate communication with and reasonable identification of the prescriber. The prescriber must provide the emergency follow-up prescription within seven days.",
     "choice_analysis": {
-      "A": "'Dispense the full quantity written in the later follow-up prescription.' would apply only if the initial emergency oral quantity were not limited to the emergency period; 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?' states otherwise.",
-      "B": "'Limit the emergency supply to exactly 72 hours.' would apply only if the 72-hour insufficient-stock remainder rule controlled emergency oral prescribing; 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?' states otherwise.",
-      "C": "'Dispense no more than the amount necessary for the emergency period and follow the emergency Schedule II documentation pathway.': supported by emergency schedule ii.",
-      "D": "'Decline every oral Schedule II order, even in a defined emergency.' would apply only if federal law contained no emergency oral exception; 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?' states otherwise.",
-      "E": "'Use a seven-day supply cap as the federal emergency quantity standard.' would apply only if the federal rule set a fixed seven-day quantity rather than the amount necessary for the emergency; 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?' states otherwise."
+      "A": "Federal law does not set a fixed 72-hour emergency quantity.",
+      "B": "Correct. The quantity is limited to the amount adequate for the emergency period.",
+      "C": "Seven days is the follow-up-prescription timing rule, not a supply cap.",
+      "D": "A later follow-up prescription documents the emergency quantity; it does not enlarge the initial emergency dispensing.",
+      "E": "A defined emergency permits an oral Schedule II authorization when all safeguards are met."
     },
     "related_facts": [
-      "tapentadol (Nucynta) is used for acute pain severe enough to require an opioid and certain neuropathic pain formulations; it is federal Schedule II and Massachusetts Schedule II.",
-      "In a defined emergency, a pharmacist may dispense an oral Schedule II prescription only in the quantity necessary for the emergency period after immediate communication with and reasonable identification of the prescriber."
+      "Nucynta (tapentadol) is federal and Massachusetts Schedule II.",
+      "Within seven days after the oral authorization, the prescriber must cause the written follow-up prescription to be delivered or transmit an electronic prescription for the emergency quantity; a mailed paper prescription must be postmarked within that period.",
+      "If the follow-up is not delivered, the pharmacist must notify the nearest DEA office."
     ],
-    "mpje_trap": "'Dispense the full quantity written in the later follow-up prescription.' would apply if the initial emergency oral quantity were not limited to the emergency period. In 'Before the next dispensing, a prescriber telephones an emergency Nucynta order when immediate therapy is necessary and no written prescription can be delivered first. What quantity may be dispensed?', that predicate is missing."
+    "mpje_trap": "Do not confuse the seven-day follow-up clock with the quantity allowed for the emergency period."
   },
   "rule_ids": [
     "FED-CII-EMERGENCY-ORAL",
+    "FED-CII-EMERGENCY-FOLLOWUP",
     "FED-CS-SCHEDULES"
   ],
   "drug_ids": [
     "tapentadol"
   ],
   "reasoning_steps": [
-    "Classify tapentadol under the federal and Massachusetts schedules before selecting a legal pathway"
+    "Confirm that the facts meet the federal emergency definition",
+    "Limit the dispensing to the emergency period",
+    "Apply the separate seven-day follow-up requirement"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

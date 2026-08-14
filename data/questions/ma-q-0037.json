@@ -8,46 +8,46 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?",
+  "stem": "A pharmacist fills Belsomra for home use. A coworker says the transaction is not reportable because the drug is neither an opioid nor a benzodiazepine. Which response is correct?",
   "choices": [
     {
       "id": "A",
-      "text": "Omit Belsomra because MassPAT covers benzodiazepines only."
+      "text": "Agree; MassPAT is limited to those two drug classes."
     },
     {
       "id": "B",
-      "text": "Report it because Schedule IV status, not benzodiazepine class alone, brings covered dispensing into MassPAT."
+      "text": "Agree; insomnia drugs are Massachusetts Schedule VI."
     },
     {
       "id": "C",
-      "text": "Report only Schedule II and III medications."
+      "text": "Report it because covered Schedule IV dispensing is reportable."
     },
     {
       "id": "D",
-      "text": "Treat suvorexant as Schedule VI because it is an insomnia drug."
+      "text": "Report it only after the fifth refill."
     },
     {
       "id": "E",
-      "text": "Submit only after the prescription reaches its fifth refill."
+      "text": "Omit it unless the prescriber requests reporting."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "'Report it because Schedule IV status, not benzodiazepine class alone, brings covered dispensing into MassPAT.' is the governing result. By contrast, 'Omit Belsomra because MassPAT covers benzodiazepines only.' would require that reportability depended on therapeutic class instead of Schedule IV status. The decisive cue appears in 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?'.",
+    "core_reasoning": "Belsomra is Schedule IV, and the stated outpatient dispensing is covered by MassPAT. Reportability does not depend on the drug being an opioid or benzodiazepine.",
     "choice_analysis": {
-      "A": "'Omit Belsomra because MassPAT covers benzodiazepines only.' would apply only if reportability depended on therapeutic class instead of Schedule IV status; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
-      "B": "'Report it because Schedule IV status, not benzodiazepine class alone, brings covered dispensing into MassPAT.': supported by dispensing-data submission.",
-      "C": "'Report only Schedule II and III medications.' would apply only if the Massachusetts program excluded Schedules IV and V; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
-      "D": "'Treat suvorexant as Schedule VI because it is an insomnia drug.' would apply only if indication displaced its controlled-substance classification; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise.",
-      "E": "'Submit only after the prescription reaches its fifth refill.' would apply only if refill count rather than dispensing triggered reporting; 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?' states otherwise."
+      "A": "MassPAT reporting extends beyond opioids and benzodiazepines.",
+      "B": "Suvorexant remains Schedule IV despite its insomnia indication.",
+      "C": "Correct. Schedule IV status brings the covered dispensing within the reporting rule.",
+      "D": "Reporting occurs for each covered dispensing, not only after a refill threshold.",
+      "E": "Prescriber preference does not control pharmacy PMP reporting."
     },
     "related_facts": [
-      "suvorexant (Belsomra) is used for treatment of insomnia with sleep-onset or sleep-maintenance difficulty; it is federal Schedule IV and Massachusetts Schedule IV.",
-      "Covered pharmacies report dispensing of Schedule II through V controlled substances and DPH-designated additional drugs, including gabapentin, to the Massachusetts PMP under the current submission standard."
+      "Belsomra (suvorexant) is federal and Massachusetts Schedule IV.",
+      "Covered Massachusetts pharmacy dispensings of Schedule II through V drugs are reportable to MassPAT."
     ],
-    "mpje_trap": "'Omit Belsomra because MassPAT covers benzodiazepines only.' would apply if reportability depended on therapeutic class instead of Schedule IV status. In 'During a profile review, a pharmacist wonders whether Belsomra dispensing is omitted from MassPAT because it is not a benzodiazepine. What is correct?', that predicate is missing."
+    "mpje_trap": "A nonbenzodiazepine hypnotic can still be controlled and reportable."
   },
   "rule_ids": [
     "MA-PMP-REPORTING",
@@ -57,8 +57,9 @@
     "suvorexant"
   ],
   "reasoning_steps": [
-    "Classify suvorexant under the federal and Massachusetts schedules before selecting a legal pathway",
-    "Match the scenario's operative facts to Massachusetts pharmacy MassPAT dispensing-data reporting"
+    "Classify Belsomra as Schedule IV",
+    "Apply the schedule-based MassPAT reporting rule",
+    "Reject therapeutic-class exclusions not found in the reporting rule"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

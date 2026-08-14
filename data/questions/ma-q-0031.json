@@ -8,46 +8,46 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?",
+  "stem": "A community pharmacy fills a patient-specific midazolam prescription for home use. The claim is cash-paid and the drug is not an opioid. What should the pharmacist do about MassPAT?",
   "choices": [
     {
       "id": "A",
-      "text": "Report the Schedule IV dispensing to MassPAT under the current submission standard."
+      "text": "Report the dispensing because it is Schedule IV."
     },
     {
       "id": "B",
-      "text": "Exclude midazolam because only opioid prescriptions enter MassPAT."
+      "text": "Exclude it because the claim was paid in cash."
     },
     {
       "id": "C",
-      "text": "Report it only if more than a seven-day supply is dispensed."
+      "text": "Exclude it because midazolam is not an opioid."
     },
     {
       "id": "D",
-      "text": "Classify the drug as Schedule VI because the dosage form is not stated."
+      "text": "Report only if more than seven days are supplied."
     },
     {
       "id": "E",
-      "text": "Wait until month-end to combine the transaction with inventory data."
+      "text": "Submit it with the pharmacy's inventory report at month-end."
     }
   ],
   "correct_choice_ids": [
     "A"
   ],
   "explanation": {
-    "core_reasoning": "'Report the Schedule IV dispensing to MassPAT under the current submission standard.' is the governing result. By contrast, 'Exclude midazolam because only opioid prescriptions enter MassPAT.' would require that Massachusetts reporting were limited to opioids. The decisive cue appears in 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?'.",
+    "core_reasoning": "The transaction is a covered outpatient pharmacy dispensing of a Schedule IV drug. Payment method and non-opioid status do not remove it from the Massachusetts dispenser reporting requirement.",
     "choice_analysis": {
-      "A": "'Report the Schedule IV dispensing to MassPAT under the current submission standard.': supported by dispensing-data submission.",
-      "B": "'Exclude midazolam because only opioid prescriptions enter MassPAT.' would apply only if Massachusetts reporting were limited to opioids; 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?' states otherwise.",
-      "C": "'Report it only if more than a seven-day supply is dispensed.' would apply only if the reporting trigger depended on days supply; 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?' states otherwise.",
-      "D": "'Classify the drug as Schedule VI because the dosage form is not stated.' would apply only if midazolam lost its Schedule IV status when formulation details were absent; 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?' states otherwise.",
-      "E": "'Wait until month-end to combine the transaction with inventory data.' would apply only if the current dispenser submission standard permitted monthly reporting; 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?' states otherwise."
+      "A": "Correct. Covered Schedule IV dispensing is reportable.",
+      "B": "Cash payment is not a reporting exemption.",
+      "C": "MassPAT coverage is not limited to opioids.",
+      "D": "The general reporting trigger does not depend on a seven-day quantity threshold.",
+      "E": "PMP dispensing data are not monthly inventory reports."
     },
     "related_facts": [
-      "midazolam (Versed) is used for sedation, anxiolysis, and amnesia for procedures; it is federal Schedule IV and Massachusetts Schedule IV.",
-      "Covered pharmacies report dispensing of Schedule II through V controlled substances and DPH-designated additional drugs, including gabapentin, to the Massachusetts PMP under the current submission standard."
+      "Midazolam is federal and Massachusetts Schedule IV.",
+      "Covered pharmacies report prescription dispensings of Schedule II through V drugs to MassPAT."
     ],
-    "mpje_trap": "'Exclude midazolam because only opioid prescriptions enter MassPAT.' would apply if Massachusetts reporting were limited to opioids. In 'During final verification, a community pharmacy dispenses a covered outpatient midazolam prescription. What is the reporting classification?', that predicate is missing."
+    "mpje_trap": "Separate therapeutic class and payment method from the schedule-based reporting trigger."
   },
   "rule_ids": [
     "MA-PMP-REPORTING",
@@ -57,7 +57,9 @@
     "midazolam"
   ],
   "reasoning_steps": [
-    "Classify midazolam under the federal and Massachusetts schedules before selecting a legal pathway"
+    "Identify a covered outpatient dispensing",
+    "Classify midazolam as Schedule IV",
+    "Reject payment and therapeutic-class distractions"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

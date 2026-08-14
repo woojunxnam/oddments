@@ -8,27 +8,27 @@
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "Before accepting an exception, a patient returns medication that the pharmacy dispensed in error. Select all supported actions.",
+  "stem": "A patient returns an unopened bottle that the pharmacy dispensed in error. Which actions are permitted or required? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Given the described event, accept the returned medication under the error pathway."
+      "text": "Accept the medication under the dispensing-error return pathway."
     },
     {
       "id": "B",
-      "text": "In this setting, place sealed containers directly back on the shelf."
+      "text": "Return the sealed bottle directly to saleable stock."
     },
     {
       "id": "C",
-      "text": "On this record, quarantine it and arrange proper disposal rather than returning it to saleable inventory."
+      "text": "Quarantine it pending proper disposition."
     },
     {
       "id": "D",
-      "text": "For this scenario, returned erroneous medication must not be restored to saleable inventory."
+      "text": "Keep it out of saleable inventory."
     },
     {
       "id": "E",
-      "text": "Under these facts, the pharmacy remains responsible for proper disposition after quarantine."
+      "text": "Arrange proper disposal after quarantine."
     }
   ],
   "correct_choice_ids": [
@@ -38,18 +38,18 @@
     "E"
   ],
   "explanation": {
-    "core_reasoning": "Assess each proposition in 'Before accepting an exception, a patient returns medication that the pharmacy dispensed in error. Select all supported actions.' independently. 'Given the described event, accept the returned medication under the error pathway.' satisfies Returned medication; 'In this setting, place sealed containers directly back on the shelf.' changes its legal premise.",
+    "core_reasoning": "The supported conclusions on these facts are: Accept the medication under the dispensing-error return pathway. Quarantine it pending proper disposition. Keep it out of saleable inventory. Arrange proper disposal after quarantine.",
     "choice_analysis": {
-      "A": "'Given the described event, accept the returned medication under the error pathway.': Returned medication supports this proposition.",
-      "B": "'In this setting, place sealed containers directly back on the shelf.': Returned medication contradicts this proposition.",
-      "C": "'On this record, quarantine it and arrange proper disposal rather than returning it to saleable inventory.': Returned medication supports this proposition.",
-      "D": "'For this scenario, returned erroneous medication must not be restored to saleable inventory.': Returned medication supports this proposition.",
-      "E": "'Under these facts, the pharmacy remains responsible for proper disposition after quarantine.': Returned medication supports this proposition."
+      "A": "Supported: Accept the medication under the dispensing-error return pathway.",
+      "B": "Not supported: Return the sealed bottle directly to saleable stock.",
+      "C": "Supported: Quarantine it pending proper disposition.",
+      "D": "Supported: Keep it out of saleable inventory.",
+      "E": "Supported: Arrange proper disposal after quarantine."
     },
     "related_facts": [
       "A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it."
     ],
-    "mpje_trap": "Answer positions prove nothing. Test 'Given the described event, accept the returned medication under the error pathway.' independently, then analyze the rest."
+    "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Return the sealed bottle directly to saleable stock.'"
   },
   "rule_ids": [
     "MA-RETURN-QUARANTINE"

@@ -8,46 +8,46 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?",
+  "stem": "A patient says the pharmacy dispensed only 20 of 30 Adderall tablets because stock was short 10 days ago. The profile instead shows all 30 tablets were dispensed, and the original prescription says \"3 refills.\" What should the pharmacist do?",
   "choices": [
     {
       "id": "A",
-      "text": "Decline the refill and require a new lawful Schedule II prescription."
+      "text": "Process one of the printed refills."
     },
     {
       "id": "B",
-      "text": "Process the notation under the five-refill, six-month framework."
+      "text": "Dispense 10 tablets as a stock-shortage remainder."
     },
     {
       "id": "C",
-      "text": "Treat each printed refill number as a separate future-dated Schedule II prescription."
+      "text": "Ask the prescriber to add a refill by telephone."
     },
     {
       "id": "D",
-      "text": "Dispense the requested amount as the remainder of a partial fill."
+      "text": "Decline further dispensing; require a new lawful prescription."
     },
     {
       "id": "E",
-      "text": "Accept a new oral authorization from the office for the refill."
+      "text": "Treat the notation as three future-dated prescriptions."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "'Decline the refill and require a new lawful Schedule II prescription.' is the governing result. By contrast, 'Process the notation under the five-refill, six-month framework.' would require that the medication were Schedule III or IV rather than Schedule II. The decisive cue appears in 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?'.",
+    "core_reasoning": "Because the record shows the Schedule II prescription was completely dispensed, neither a remainder nor a refill remains. The printed refill notation is ineffective, so further dispensing requires a new lawful prescription.",
     "choice_analysis": {
-      "A": "'Decline the refill and require a new lawful Schedule II prescription.': supported by schedule ii refills.",
-      "B": "'Process the notation under the five-refill, six-month framework.' would apply only if the medication were Schedule III or IV rather than Schedule II; 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?' states otherwise.",
-      "C": "'Treat each printed refill number as a separate future-dated Schedule II prescription.' would apply only if the prescriber had issued separate prescriptions meeting the multiple-prescription requirements; 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?' states otherwise.",
-      "D": "'Dispense the requested amount as the remainder of a partial fill.' would apply only if the original prescription had been partially filled with a documented balance; 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?' states otherwise.",
-      "E": "'Accept a new oral authorization from the office for the refill.' would apply only if a defined Schedule II emergency existed and the emergency oral-prescription safeguards were followed; 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?' states otherwise."
+      "A": "The five-refill framework does not apply to Schedule II prescriptions.",
+      "B": "A remainder exists only after an actual, documented partial fill; the record shows the full quantity was dispensed.",
+      "C": "A telephone change cannot add a refill to a completed Schedule II prescription.",
+      "D": "Correct. A completed Schedule II prescription cannot be refilled.",
+      "E": "A refill notation does not create separate prescriptions with their own issue and earliest-fill dates."
     },
     "related_facts": [
-      "amphetamine and dextroamphetamine (Adderall) is used for attention deficit hyperactivity disorder and narcolepsy; it is federal Schedule II and Massachusetts Schedule II.",
-      "Federal law prohibits refilling a Schedule II prescription; additional dispensing requires a new lawful prescription or a permitted remainder of a partial fill."
+      "Adderall is a federal and Massachusetts Schedule II drug.",
+      "Federal law prohibits Schedule II refills; a genuine partial-fill balance is a different legal pathway."
     ],
-    "mpje_trap": "'Process the notation under the five-refill, six-month framework.' would apply if the medication were Schedule III or IV rather than Schedule II. In 'During final verification, an Adderall prescription has no quantity remaining, and the patient asks the pharmacist to process the prescriber's printed notation of three refills. What is the lawful response?', that predicate is missing."
+    "mpje_trap": "Do not convert a claimed shortage into a remainder when the dispensing record documents completion."
   },
   "rule_ids": [
     "FED-CII-NO-REFILL",
@@ -57,7 +57,9 @@
     "amphetamine-dextroamphetamine"
   ],
   "reasoning_steps": [
-    "Classify amphetamine and dextroamphetamine under the federal and Massachusetts schedules before selecting a legal pathway"
+    "Classify Adderall as Schedule II",
+    "Distinguish a completed dispensing from a documented partial-fill balance",
+    "Reject refill and oral-change pathways for the completed prescription"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",
