@@ -1,0 +1,72 @@
+name: Build v3 rule gap map
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-v3
+    paths:
+      - .github/workflows/build-v3-rule-gap-map.yml
+
+permissions:
+  contents: write
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-v3
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build rule gap map
+        run: |
+          python - <<'PY'
+          import json
+          from collections import defaultdict
+          from pathlib import Path
+
+          root = Path('.')
+          usage = defaultdict(list)
+          for path in sorted((root/'data/questions').glob('*.json')):
+              q = json.loads(path.read_text(encoding='utf-8'))
+              for rid in q.get('rule_ids', []):
+                  usage[rid].append(q['question_id'])
+          rows=[]
+          for path in sorted((root/'data/rules').glob('*.json')):
+              r=json.loads(path.read_text(encoding='utf-8'))
+              rid=r['rule_id']
+              rows.append({
+                  'rule_id':rid,
+                  'title':r.get('title'),
+                  'jurisdiction':r.get('jurisdiction'),
+                  'area':r.get('area'),
+                  'topic':r.get('topic'),
+                  'subtopic':r.get('subtopic'),
+                  'status':r.get('status'),
+                  'verification_status':r.get('verification_status'),
+                  'rule_summary':r.get('rule_summary'),
+                  'usage_count':len(usage.get(rid,[])),
+                  'question_ids':usage.get(rid,[]),
+              })
+          current=[r for r in rows if r['status']=='CURRENT' and r['verification_status'] in {'PRIMARY_VERIFIED','OFFICIAL_POLICY_VERIFIED'}]
+          payload={
+              'all_verified_current':current,
+              'unused':[r for r in current if r['usage_count']==0],
+              'used_once':[r for r in current if r['usage_count']==1],
+              'used_twice':[r for r in current if r['usage_count']==2],
+          }
+          out=root/'repair_specs/exp1_v3/rule_coverage_gaps.json'
+          out.write_text(json.dumps(payload,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          print('verified current',len(current),'unused',len(payload['unused']),'once',len(payload['used_once']),'twice',len(payload['used_twice']))
+          PY
+      - name: Commit report and remove workflow
+        run: |
+          rm .github/workflows/build-v3-rule-gap-map.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "research: map underused verified rules for Batch 1 v3"
+          git push origin HEAD:repair/mpje-expansion-batch1-v3
