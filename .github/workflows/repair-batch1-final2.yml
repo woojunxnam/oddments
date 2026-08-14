@@ -37,7 +37,7 @@ jobs:
 
       - name: Assert clean main-derived baseline
         run: |
-          test "$(git merge-base HEAD main)" = "d54be3fff5e5c9fb0be9658f66a6944460cad0ed"
+          test "$(git merge-base HEAD origin/main)" = "d54be3fff5e5c9fb0be9658f66a6944460cad0ed"
           python scripts/validate_all.py
           python -m pytest -q
 
