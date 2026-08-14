@@ -1,0 +1,79 @@
+name: Admit Batch 1 Wave 1
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-v2
+    paths:
+      - .github/workflows/admit-batch1-wave1.yml
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: repair/mpje-expansion-batch1-v2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Apply Wave 1 admission
+        run: python scripts/admit_batch1_wave1.py
+
+      - name: Regenerate tracked artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Validate repository and release payload
+        run: |
+          python scripts/validate_all.py
+          python scripts/build_site_data.py --output /tmp/released-questions.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          payload = json.loads(Path('/tmp/released-questions.json').read_text())
+          assert payload['meta']['release_status'] == 'RELEASE_AVAILABLE', payload['meta']
+          assert payload['meta']['question_count'] == 11, payload['meta']
+          print('formal RELEASED question count:', payload['meta']['question_count'])
+          allowlist = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allowlist['question_ids']) == 58
+          print('public preview allowlist count:', len(allowlist['question_ids']))
+          PY
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Commit admission and remove one-shot workflow
+        run: |
+          rm .github/workflows/admit-batch1-wave1.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "release: admit Batch 1 Wave 1 questions"
+
+      - name: Prove clean deterministic state
+        run: |
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+          python scripts/validate_all.py
+          python -m pytest -q
+
+      - name: Push admission
+        run: git push origin HEAD:repair/mpje-expansion-batch1-v2
