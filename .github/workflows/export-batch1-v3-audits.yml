@@ -1,0 +1,126 @@
+name: Export Batch 1 v3 audit packages
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-v3
+    paths:
+      - .github/workflows/export-batch1-v3-audits.yml
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out frozen v3 branch
+        uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-v3
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Assert audited content baseline
+        run: |
+          test "$(git rev-parse HEAD^)" = "4fe93c314b18e205d581ccab551eecb8845e7062" || {
+            echo "Unexpected v3 content baseline"; git log -3 --oneline; exit 1;
+          }
+          python scripts/validate_all.py
+          python -m pytest -q
+
+      - name: Export exact 29-question audit inputs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from qa_common import DATA, load_json, load_records, question_audit_hash, write_json
+          from release_context import style_profile_snapshot
+
+          ids = [
+              "MA-Q-0091","MA-Q-0093","MA-Q-0094","MA-Q-0097","MA-Q-0098",
+              "MA-Q-0099","MA-Q-0100","MA-Q-0101","MA-Q-0102","MA-Q-0103",
+              "MA-Q-0104","MA-Q-0105","MA-Q-0106","MA-Q-0107","MA-Q-0108",
+              "MA-Q-0109","MA-Q-0110","MA-Q-0111","MA-Q-0112","MA-Q-0113",
+              "MA-Q-0114","MA-Q-0116","MA-Q-0117","MA-Q-0121","MA-Q-0125",
+              "MA-Q-0126","MA-Q-0127","MA-Q-0128","MA-Q-0129",
+          ]
+          assert len(ids) == 29 and len(set(ids)) == 29
+          records = {r["question_id"]: r for _, r in load_records(DATA / "questions")}
+          questions = [records[qid] for qid in ids]
+          assert all(q["verification_status"] == "AUDIT_PENDING" for q in questions)
+          assert all(q["lifecycle_status"] == "AUDIT_PENDING" for q in questions)
+          hashes = {q["question_id"]: question_audit_hash(q) for q in questions}
+
+          outdir = Path("audits/reaudit/2026-08-14")
+          outdir.mkdir(parents=True, exist_ok=True)
+          legal_fields = ["Question_ID","Verdict","Severity","Existing_Answer_Correct","authorities","Problem","Proposed_Answer","Proposed_Rewrite","Proposed_Explanation"]
+          realism_fields = ["Question_ID","Verdict","Severity","Realism_Verdict","Reviewed_Date","Criteria","Notes"]
+
+          def package(audit_id, instance, review_type, filename):
+              payload = {
+                  "audit_id": audit_id,
+                  "auditor": "GPT",
+                  "auditor_instance": instance,
+                  "audit_date": "2026-08-14",
+                  "audit_scope": "REAUDIT",
+                  "review_type": review_type,
+                  "independent": True,
+                  "audit_status": "STRUCTURAL_TRIAGE_ONLY",
+                  "question_ids": ids,
+                  "question_hashes": hashes,
+                  "questions": questions,
+                  "result_contract": {
+                      "required_fields": legal_fields if review_type == "LEGAL_VERIFICATION" else realism_fields,
+                      "warning": "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Auditor must independently review current official sources and must not modify canonical questions.",
+                  },
+              }
+              if review_type == "REALISM_REVIEW":
+                  payload["style_profile"] = style_profile_snapshot(load_json(DATA / "exam_style" / "mpje_style_profile.json"))
+              write_json(outdir / filename, payload)
+
+          package("AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14", "GPT-FRESH-EXP1-V3-A", "LEGAL_VERIFICATION", "GPT-A-LEGAL-EXP1-V3-Q29.json")
+          package("AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14", "GPT-FRESH-EXP1-V3-A", "REALISM_REVIEW", "GPT-A-REALISM-EXP1-V3-Q29.json")
+          package("AUDIT-GPT-FRESH-EXP1-V3-B-LEGAL-REAUDIT-2026-08-14", "GPT-FRESH-EXP1-V3-B", "LEGAL_VERIFICATION", "GPT-B-LEGAL-EXP1-V3-Q29.json")
+          print("exported exact frozen audit packages for", len(ids), "questions")
+          PY
+
+      - name: Verify package agreement and public boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          paths = [
+              Path('audits/reaudit/2026-08-14/GPT-A-LEGAL-EXP1-V3-Q29.json'),
+              Path('audits/reaudit/2026-08-14/GPT-A-REALISM-EXP1-V3-Q29.json'),
+              Path('audits/reaudit/2026-08-14/GPT-B-LEGAL-EXP1-V3-Q29.json'),
+          ]
+          docs = [json.loads(p.read_text()) for p in paths]
+          assert all(len(d['question_ids']) == 29 for d in docs)
+          assert docs[0]['question_ids'] == docs[1]['question_ids'] == docs[2]['question_ids']
+          assert docs[0]['question_hashes'] == docs[1]['question_hashes'] == docs[2]['question_hashes']
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 58
+          print('package count: 3; questions each: 29; preview remains:', len(allow['question_ids']))
+          PY
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code -- duplicate_report.json answer_distribution_report.json structural_pattern_report.json site/generated/questions.json
+
+      - name: Commit packages and remove one-shot workflow
+        run: |
+          rm .github/workflows/export-batch1-v3-audits.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "audit: freeze Batch 1 v3 29-question packages"
+          git push origin HEAD:repair/mpje-expansion-batch1-v3
