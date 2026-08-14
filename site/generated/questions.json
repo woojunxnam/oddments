@@ -14783,13 +14783,49 @@
         "Apply Massachusetts DCP's separate treatment of OTC and prescription naloxone",
         "Select the inventory and dispensing pathway that matches each product category"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-14",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14",
+        "AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT-5.6-Sol editor after independent Issue #31 audit",
+        "date": "2026-08-14",
+        "notes": "Final-two Wave 1 admission after a fresh independent current-hash legal KEEP/YES and realism KEEP/PASS. MA-Q-0110 remains quarantined after realism failure.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-NALOXONE": {
+              "content_version": 2,
+              "content_hash": "a77e9d0d1e5def6f3838be72d278289e70eb30dc35a4a6505bd1575b28d97469"
+            }
+          },
+          "drugs": {
+            "naloxone": {
+              "content_version": 2,
+              "content_hash": "1622b27bee5d235bc6acbdcc0919c056304dce369e5890fe4167ec4587032149"
+            },
+            "naloxone-otc": {
+              "content_version": 1,
+              "content_hash": "ed3b83244d2394e2edfd603f3c80855f9d2490b8e460a32d0f33e648b3cb816b"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15000,7 +15036,31 @@
           "verification_notes": "FDA-labeled OTC naloxone is a separate product category from prescription naloxone under current Massachusetts DCP guidance; checked 2026-08-14."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-14",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS. The shelf-audit setting is plausible and the answer turns on a legally meaningful product/package distinction rather than ingredient recall. The distractors reflect genuine confusions about ingredient-wide OTC status, insurance processing, and broad naloxone access. Full-bank comparison found MA-Q-0097 uses the same general naloxone area but tests a different decision path—third-party recipient/standing-order access—whereas MA-Q-0098 tests OTC-versus-prescription product classification and inventory/retail handling.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0099",
