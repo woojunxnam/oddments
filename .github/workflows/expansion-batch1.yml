@@ -6,6 +6,7 @@ on:
       - feature/mpje-expansion-batch1
     paths:
       - scripts/build_expansion_batch1.py
+      - scripts/fix_expansion_batch1.py
       - .github/workflows/expansion-batch1.yml
 
 permissions:
@@ -28,6 +29,9 @@ jobs:
 
       - name: Materialize expansion questions
         run: python scripts/build_expansion_batch1.py
+
+      - name: Apply Batch 1 content fixes
+        run: python scripts/fix_expansion_batch1.py
 
       - name: Regenerate tracked artifacts
         run: python scripts/generate_artifacts.py --write
