@@ -24,10 +24,11 @@ Duplicate, missing, extra, unknown Question_ID는 모두 오류입니다.
 - `auditor`는 model/family provenance입니다: `GPT`, `CLAUDE`, `HUMAN`.
 - `auditor_instance`는 실제 독립 감사 세션/instance provenance입니다.
 - Release distinctness는 `data/release_requirements.json`의 `distinctness_basis`에 따라 계산합니다.
-- 현재 legal policy는 `AUDITOR_INSTANCE` 기준으로 2개의 independent current-hash legal passes를 요구합니다.
-- 같은 model family의 두 감사도 서로의 결과를 보지 않은 별도 independent instance라면 distinct할 수 있습니다.
-- 같은 audit session을 두 파일로 나누거나 instance 이름만 바꾸는 것은 독립 감사가 아닙니다.
+- 현재 policy는 `AUDITOR_INSTANCE` 기준으로 **1개의 fresh independent current-hash auditor instance**를 요구합니다.
+- 동일한 independent session이 별도 `LEGAL_VERIFICATION` record와 `REALISM_REVIEW` record를 제출할 수 있으며 두 record에 같은 `auditor_instance`를 기록합니다.
+- 같은 audit session을 여러 파일이나 여러 instance 이름으로 쪼개어 독립 audit 수를 부풀리면 안 됩니다.
 - Author/editor가 자신이 방금 수정한 current content를 별도 independent auditor로 자가 인증하면 안 됩니다.
+- 두 번째 independent legal opinion은 기본 release requirement가 아닙니다. Authority conflict, ambiguity 또는 editor 판단이 있을 때 추가로 요청할 수 있습니다.
 
 ## Separate reviews
 
@@ -65,13 +66,13 @@ Legal accuracy와 분리해 다음을 평가합니다.
 ## Procedure
 
 1. `scripts/export_audit_batch.py --audit-scope INITIAL_BATCH|REAUDIT --review-type ... --auditor-instance ...`로 stable batch와 question hashes를 export합니다.
-2. Auditor는 canonical questions를 수정하지 않고 current official sources 또는 public style profile을 검토합니다.
-3. Completed record를 `data/audits/`에 저장하고 exact set validation을 통과시킵니다.
+2. Fresh independent auditor는 canonical questions를 수정하지 않고 current official sources와 public style profile을 검토합니다.
+3. 같은 independent session에서 completed legal record와 realism record를 `data/audits/`에 저장할 수 있습니다. 두 record는 동일한 `auditor_instance` provenance를 사용합니다.
 4. Editor가 결과를 adjudicate합니다.
-5. `MINOR_EDIT`/`MAJOR_REWRITE`이면 canonical question을 수정하고 required distinct legal audit instances와 affected realism audit를 current hash에 대해 다시 수행합니다.
+5. `MINOR_EDIT`/`MAJOR_REWRITE`이면 canonical question을 수정하고 affected legal/realism evidence를 새 current hash에 대해 다시 수행합니다.
 6. `DELETE`이면 release하지 않습니다.
-7. Required current-hash legal instances가 모두 `KEEP`/answer `YES`, realism이 current profile에 PASS일 때만 final human/editor `KEEP`을 기록합니다.
+7. Required current-hash legal evidence가 `KEEP`/answer `YES`, realism이 current profile에 `KEEP`/`PASS`일 때만 final human/editor `KEEP`을 기록합니다.
 
-Independent auditors가 불일치하면 release는 실패합니다. Human/editor는 추가 research와 edit를 수행할 수 있지만 failed current audits를 override해 unchanged question을 release할 수 없습니다.
+Current-hash audit가 ambiguity, `MINOR_EDIT`, `MAJOR_REWRITE`, `DELETE`, wrong answer 또는 realism `FAIL`을 기록하면 unchanged question을 다른 opinion으로 override하여 release하지 않습니다. Editor는 추가 research나 optional second opinion을 요청할 수 있지만, release하려면 defect를 해결한 current content에 대한 유효한 fresh audit evidence가 필요합니다.
 
 Rigorous `DELETE`는 audit 성공이며 억지로 positive result를 만들지 않습니다.
