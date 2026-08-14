@@ -63,12 +63,49 @@
     "Apply the 24-hour QRE documentation clock",
     "Apply the distinct manager-of-record seven-business-day reporting clock from discovery of the serious injury"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SERIOUS-EVENT-REPORT": {
+          "content_version": 1,
+          "content_hash": "17755b98641f951490115bf1f6c3fdd379a91a364925365f3d4a700e003821a0"
+        },
+        "MA-QRE-DOCUMENT-24H": {
+          "content_version": 1,
+          "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+        }
+      },
+      "drugs": {
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

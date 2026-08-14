@@ -60,12 +60,45 @@
     "Apply the pharmacist-facing no-verification rule",
     "Preserve all other prescription and controlled-substance requirements"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CONTROLLED-EPRESCRIBE": {
+          "content_version": 2,
+          "content_hash": "3f041439027702fc2a8f1e55c8d6e208aafdd028934e2453afac42e4d1a7a224"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

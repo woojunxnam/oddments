@@ -60,12 +60,44 @@
     "Identify the separate Massachusetts counseling process",
     "Apply the patient’s refusal to each duty independently"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-MEDGUIDE": {
+          "content_version": 1,
+          "content_hash": "04f79d4419c4f4dea2c276764bd821865189a9d6158ec4f041f734f7490ef6a8"
+        },
+        "MA-COUNSELING": {
+          "content_version": 1,
+          "content_hash": "e8f6fbdb5b0bdb7ec7f1512527eeeac5dbe49e0b761ac0f498fa9da11faedd82"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

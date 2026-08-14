@@ -61,12 +61,49 @@
     "Identify each omitted field as a required prescription element",
     "Require the defect to be resolved before dispensing"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V2-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-A-REALISM-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V2-B-LEGAL-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent audit A/B",
+    "date": "2026-08-14",
+    "notes": "Wave 1 admission after independent current-hash legal A/B KEEP/YES and realism A KEEP/PASS.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-RX-REQUIRED-ELEMENTS": {
+          "content_version": 1,
+          "content_hash": "1dbe29f655fd1e170779917c9605ac8146e4ffaed06ee651b389d35fc1cbd266"
+        },
+        "MA-SCHEDULE-VI": {
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+        }
+      },
+      "drugs": {
+        "insulin-glargine": {
+          "content_version": 1,
+          "content_hash": "3e931b085a0e3d834a5f798ec514299b6eba89ec9c3d2b9c6f2122fbb164d19a"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
