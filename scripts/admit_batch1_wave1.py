@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from datetime import date
 
 from qa_common import DATA, ROOT, dependency_snapshot, load_json, load_records, write_json
@@ -29,6 +30,23 @@ WAVE1_CURRENT = {
 }
 WAVE1_UNCHANGED = {"MA-Q-0130"}
 WAVE1 = WAVE1_CURRENT | WAVE1_UNCHANGED
+
+
+def sync_family_release_counts() -> None:
+    released_counts: Counter[str] = Counter()
+    for _, question in load_records(DATA / "questions"):
+        if (
+            question.get("verification_status") == "RELEASED"
+            and question.get("lifecycle_status") == "RELEASED"
+        ):
+            released_counts[question["family_id"]] += 1
+
+    matrix_path = DATA / "exam_style" / "question_family_matrix.json"
+    matrix = load_json(matrix_path)
+    for family in matrix.get("families", []):
+        family["current_released_count"] = released_counts.get(family["family_id"], 0)
+    matrix["last_reviewed"] = TODAY
+    write_json(matrix_path, matrix)
 
 
 def main() -> int:
@@ -77,6 +95,8 @@ def main() -> int:
             },
         }
         write_json(path, question)
+
+    sync_family_release_counts()
 
     allowlist_path = ROOT / "site" / "generated" / "preview_allowlist.json"
     allowlist = load_json(allowlist_path)
