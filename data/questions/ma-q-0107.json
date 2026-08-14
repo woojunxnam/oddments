@@ -1,62 +1,64 @@
 {
   "question_id": "MA-Q-0107",
-  "family_id": "EXP1_0107_INTERN_CREDIT_12H",
-  "area": 1,
-  "topic": "Pharmacy personnel",
-  "subtopic": "Internship credit hours",
-  "difficulty": 3,
+  "family_id": "V3_0107_PSE_ID_EXCEPTION",
+  "area": 3,
+  "topic": "Restricted nonprescription products",
+  "subtopic": "Pseudoephedrine identification",
+  "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacy intern works 11 creditable hours on Monday and 13 creditable hours on Tuesday at an approved training site. Ignoring any other requirements, what is the maximum internship credit that can be recorded for those two days under the daily-credit rule?",
+  "stem": "A visitor from another country asks to buy one small package containing 60 mg total pseudoephedrine. The visitor has only a foreign passport and no identification document accepted by the federal CMEA retail-ID rule. The sale otherwise stays within all quantity limits. Which federal point is most relevant?",
   "choices": [
     {
       "id": "A",
-      "text": "24 hours, because all time physically worked must be credited."
+      "text": "A foreign passport always satisfies the CMEA retail-ID requirement for any pseudoephedrine quantity."
     },
     {
       "id": "B",
-      "text": "23 hours: Monday contributes 11 hours and Tuesday is capped at 12 hours."
+      "text": "The sale is prohibited because every pseudoephedrine purchase, including a 60 mg single package, requires the ordinary logbook and ID process."
     },
     {
       "id": "C",
-      "text": "22 hours, because every internship day is limited to exactly 11 hours."
+      "text": "A single sales package containing no more than 60 mg may use the narrow exception from the ordinary purchaser-ID and logbook transaction requirement."
     },
     {
       "id": "D",
-      "text": "12 hours total, because the daily cap also operates as a two-day cap."
+      "text": "The pharmacist may waive identification for any purchase under the 3.6 gram daily limit."
     },
     {
       "id": "E",
-      "text": "Zero hours for Tuesday, because exceeding 12 hours of work voids all credit for that day."
+      "text": "The visitor may buy any amount if another adult with acceptable identification signs the logbook instead."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "The Massachusetts rule limits internship credit to no more than 12 hours in a single day. Monday’s 11 hours remain creditable, while Tuesday contributes at most 12 of the 13 hours, producing 23 total creditable hours.",
+    "core_reasoning": "This is not a gram-limit question. The decisive fact is that the request is for one sales package containing no more than 60 mg, which DEA identifies as a narrow exception to the ordinary individual ID/logbook transaction requirement.",
     "choice_analysis": {
-      "A": "Physical work beyond the daily credit ceiling does not increase the credit recorded for that day.",
-      "B": "Applying the cap separately to each day yields 11 plus 12 creditable hours.",
-      "C": "The rule sets a maximum rather than requiring every day to be reduced to 11 hours.",
-      "D": "The 12-hour ceiling is daily; it is not a multi-day aggregate ceiling.",
-      "E": "Working beyond the credit ceiling limits the recorded credit but does not make the entire day worth zero under the cited rule."
+      "A": "DEA guidance states that a foreign passport does not itself satisfy the ordinary CMEA identification rule described for these purchases.",
+      "B": "Federal law provides a narrow single-package exception at no more than 60 mg.",
+      "C": "DEA identifies this narrow exception for one sales package containing no more than 60 mg of pseudoephedrine.",
+      "D": "The daily quantity limit and the separate ID/logbook gate are different requirements.",
+      "E": "The purchaser's own identity and transaction must satisfy the applicable rule; another person cannot simply sign in place of the purchaser."
     },
     "related_facts": [
-      "A credit limit is not necessarily an employment-shift limit.",
-      "Daily caps must be applied to each calendar day before totals are combined."
+      "CMEA quantity limits and ID/logbook rules are separate gates.",
+      "The 60 mg rule is a narrow single-package exception, not a general low-dose waiver."
     ],
-    "mpje_trap": "Apply the 12-hour ceiling day by day rather than subtracting hours from the entire multi-day period."
+    "mpje_trap": "Passing the daily quantity limit does not answer the ID question; look for the single-package 60 mg exception."
   },
   "rule_ids": [
-    "MA-INTERN-12H"
+    "FED-PSE-LOG-ID",
+    "FED-PSE-QUANTITY"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "pseudoephedrine"
+  ],
   "reasoning_steps": [
-    "Apply the daily credit ceiling independently to Monday",
-    "Apply the same ceiling independently to Tuesday",
-    "Add the two creditable amounts"
+    "Separate quantity compliance from purchaser-ID compliance",
+    "Recognize the single-package 60 mg exception"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

@@ -1,62 +1,65 @@
 {
   "question_id": "MA-Q-0110",
-  "family_id": "EXP1_0110_CQI_PROGRAM_ELEMENTS",
-  "area": 4,
-  "topic": "Quality assurance",
-  "subtopic": "CQI program",
+  "family_id": "V3_0110_CONTROLLED_LABEL_ELEMENTS",
+  "area": 3,
+  "topic": "Dispensing",
+  "subtopic": "Controlled-substance label",
   "difficulty": 4,
-  "question_type": "SBA",
+  "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacy logs every dispensing error in a spreadsheet but never reviews the events for contributing causes and never changes its processes. Which conclusion best describes the CQI program?",
+  "stem": "During final verification of a Massachusetts alprazolam prescription, the pharmacist notices that the dispensing label has the patient, drug, directions, pharmacy, prescriber, and prescription number but omits some other information required by M.G.L. c. 94C §21. Which items should be corrected before dispensing? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "The spreadsheet alone completes CQI because documentation is the only required program function."
+      "text": "Add the date the prescription is being filled."
     },
     {
       "id": "B",
-      "text": "The program is incomplete because CQI includes assessment and prevention/system improvement in addition to detecting and documenting events."
+      "text": "Add the patient's health-plan member identification number."
     },
     {
       "id": "C",
-      "text": "The pharmacy should delete the log because written QRE documentation is prohibited."
+      "text": "Add the filling pharmacist's initials."
     },
     {
       "id": "D",
-      "text": "CQI analysis is needed only if a patient files a civil lawsuit."
+      "text": "Add the wholesaler invoice number for the bottle used to fill the prescription."
     },
     {
       "id": "E",
-      "text": "The pharmacy may replace CQI with an annual inventory of controlled substances."
+      "text": "Because tablets are being dispensed, add the number of tablets in the container."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "A",
+    "C",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "Massachusetts CQI is a cycle, not an event log. Detecting and documenting events must feed assessment of causes and preventive process improvement; a spreadsheet that never informs analysis or change leaves core CQI functions undone.",
+    "core_reasoning": "The container label has its own statutory checklist. Final verification should compare the actual label against the Massachusetts dispensing-label requirements rather than importing insurance or wholesaler fields.",
     "choice_analysis": {
-      "A": "Documentation is important, but the program also requires assessment and prevention-oriented improvement.",
-      "B": "This identifies the missing steps that turn incident records into continuous quality improvement.",
-      "C": "QRE documentation is part of the program rather than something the pharmacy should erase.",
-      "D": "CQI duties arise from pharmacy regulation and are not contingent on litigation.",
-      "E": "Controlled-substance inventory is a separate operational requirement and does not substitute for CQI."
+      "A": "Massachusetts requires the fill date on the controlled-substance container label.",
+      "B": "The statute does not make the insurance member ID a required controlled-substance container-label element.",
+      "C": "The filling pharmacist's initials are among the statutory label elements.",
+      "D": "The wholesaler invoice number is not a required patient container-label element under this statute.",
+      "E": "For tablets or capsules, the statute requires the number in the container on the label."
     },
     "related_facts": [
-      "CQI is designed to reduce recurrence by learning from events and systems.",
-      "Event-specific duties in 247 CMR 15.03 operate within the broader CQI framework."
+      "The label rule is distinct from the information required on the prescription itself.",
+      "Tablet or capsule count is expressly addressed by the statute."
     ],
-    "mpje_trap": "Recording an error proves that the pharmacy noticed it; it does not prove that the pharmacy learned from it."
+    "mpje_trap": "A valid prescription can still produce a noncompliant dispensed container if required label information is missing."
   },
   "rule_ids": [
-    "MA-CQI-PROGRAM"
+    "MA-CS-LABEL"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "alprazolam"
+  ],
   "reasoning_steps": [
-    "Identify what the pharmacy already does: detection and documentation",
-    "Identify the missing assessment and prevention functions",
-    "Determine whether the remaining process qualifies as a complete CQI program"
+    "Identify this as a dispensing-label review",
+    "Match missing fields to M.G.L. c. 94C §21"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

@@ -1,61 +1,63 @@
 {
   "question_id": "MA-Q-0125",
-  "family_id": "EXP1_0125_INITIAL_CS_INVENTORY",
-  "area": 4,
-  "topic": "Controlled substance inventory",
-  "subtopic": "Initial inventory",
-  "difficulty": 3,
+  "family_id": "V3_0125_FORM222_DEFECT_PRIORITY",
+  "area": 3,
+  "topic": "Controlled substance procurement",
+  "subtopic": "Form 222 defect and validity",
+  "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A new pharmacy’s DEA registration becomes effective July 1, but the pharmacy does not receive or otherwise begin handling any controlled substances until July 10. Which date controls the federal initial controlled-substance inventory under 21 CFR 1304.11(b)?",
+  "stem": "A supplier receives a paper DEA Form 222 twenty days after execution. The form is otherwise timely, but the purchaser altered a Schedule II quantity after signing by writing over the original number. The purchaser asks the supplier to initial the change and ship the order. What is the best response?",
   "choices": [
     {
       "id": "A",
-      "text": "July 1, solely because the registration became effective on that date."
+      "text": "Fill the order because the form arrived within 60 days and timeliness cures execution defects."
     },
     {
       "id": "B",
-      "text": "July 5, because every new registration receives a four-day grace period."
+      "text": "Fill only the unaltered line items and correct the altered line after shipment."
     },
     {
       "id": "C",
-      "text": "July 10, the registrant's first day of controlled-substance activity."
+      "text": "Convert the altered paper form into a CSOS order by scanning it and adding an electronic signature."
     },
     {
       "id": "D",
-      "text": "The last day of July, because initial inventories are always month-end records."
+      "text": "Do not fill the defective form; the purchaser must issue a proper replacement order despite the original form still being within 60 days."
     },
     {
       "id": "E",
-      "text": "Two years after July 1, because the biennial inventory replaces the initial inventory."
+      "text": "Wait until day 61 and then fill the form because expiration removes the need to address the alteration."
     }
   ],
   "correct_choice_ids": [
-    "C"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The federal initial-inventory trigger is the date the registrant first engages in controlled-substance activity, not merely the effective date printed on the registration. Here, that first activity occurs July 10.",
+    "core_reasoning": "A valid Form 222 must satisfy both execution/content rules and the time window. Here the form is timely but defective, so the supplier cannot use the 60-day rule to overlook the alteration.",
     "choice_analysis": {
-      "A": "Registration status is necessary, but the cited initial-inventory timing rule is keyed to first controlled-substance activity.",
-      "B": "The regulation does not create the proposed four-day grace period.",
-      "C": "July 10 is the first day the facts show the registrant engaging in controlled-substance activity.",
-      "D": "The rule is event-based rather than tied to month-end accounting.",
-      "E": "The biennial cycle follows the initial inventory and cannot replace it."
+      "A": "The 60-day validity period does not cure an altered or defective form.",
+      "B": "A supplier may not correct and fill a defective executed form in that manner.",
+      "C": "A paper Form 222 is not converted into a valid CSOS order by scanning it.",
+      "D": "Defect/execution validity is an independent gate from the 60-day time window.",
+      "E": "Expiration would create an additional reason not to fill the order, not cure the alteration."
     },
     "related_facts": [
-      "Initial and biennial inventories are separate federal duties.",
-      "A registration date and the first controlled-substance activity date can be different."
+      "Form validity involves more than age.",
+      "A defective Form 222 cannot be corrected by the supplier and then filled as though properly executed."
     ],
-    "mpje_trap": "When two dates are given, identify which event the regulation actually uses as its trigger."
+    "mpje_trap": "When two gates apply, passing the timing gate does not cure a separate execution defect."
   },
   "rule_ids": [
-    "FED-INVENTORY-INITIAL"
+    "FED-FORM222-DEFECT",
+    "FED-FORM222-60DAY"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Separate registration effective date from first controlled-substance activity",
-    "Apply the federal event-based initial-inventory trigger"
+    "Check the 60-day timing gate",
+    "Independently identify the altered form as defective",
+    "Apply the stricter defect consequence"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",

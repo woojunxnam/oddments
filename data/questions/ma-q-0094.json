@@ -1,63 +1,65 @@
 {
   "question_id": "MA-Q-0094",
-  "family_id": "EXP1_0094_MA_INTERCHANGE_EXCEPTIONS",
+  "family_id": "V3_0094_CII_STOCK_SHORTAGE_REMAINDER",
   "area": 3,
-  "topic": "Drug interchange",
-  "subtopic": "No-substitution and availability",
+  "topic": "Partial filling",
+  "subtopic": "Pharmacy inability",
   "difficulty": 4,
-  "question_type": "SATA",
+  "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A pharmacist is reviewing two Massachusetts prescriptions. Prescription 1 contains a valid no-substitution direction. Prescription 2 has no no-substitution direction, but the less expensive listed interchangeable product is not reasonably available. Which facts can lawfully change the ordinary lower-cost interchange result? Select ALL that apply.",
+  "stem": "A Massachusetts pharmacy receives a valid oxycodone Schedule II prescription for 30 tablets but has only 12 tablets in stock. The patient wants the full prescribed quantity; the pharmacy dispenses 12 solely because it cannot supply the rest. Four days later the remaining stock arrives. What is the controlling federal consequence?",
   "choices": [
     {
       "id": "A",
-      "text": "The valid no-substitution direction on Prescription 1."
+      "text": "The balance may be dispensed within 30 days because every Schedule II partial fill uses the patient-requested 30-day pathway."
     },
     {
       "id": "B",
-      "text": "The patient remembers the brand’s advertising and therefore prefers its package."
+      "text": "The pharmacy may treat the remaining 18 tablets as a refill because the original total quantity was not dispensed."
     },
     {
       "id": "C",
-      "text": "The lack of a less expensive reasonably available interchangeable product for Prescription 2."
+      "text": "The remaining 18 tablets may be transferred to another pharmacy once the original pharmacy receives stock."
     },
     {
       "id": "D",
-      "text": "A technician prefers stocking one manufacturer because its bottle is easier to shelve."
+      "text": "The ordinary 72-hour shortage-remainder period has passed, so further quantity generally requires prescriber notification and a new prescription."
     },
     {
       "id": "E",
-      "text": "The brand manufacturer gives the pharmacy a marketing rebate unrelated to product availability or a prescriber restriction."
+      "text": "The original pharmacy may dispense the balance at any time before the Massachusetts 30-day Schedule II validity period ends."
     }
   ],
   "correct_choice_ids": [
-    "A",
-    "C"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The Massachusetts interchange analysis changes for legally relevant facts such as a valid prescriber no-substitution instruction or the absence of a qualifying less expensive reasonably available product. Marketing and workflow preferences do not create new statutory exceptions.",
+    "core_reasoning": "The reason for the partial fill determines the legal pathway. A pharmacy-stock shortage invokes the federal 72-hour remainder framework, not the patient-requested 30-day framework.",
     "choice_analysis": {
-      "A": "A valid no-substitution direction requires dispensing the exact product prescribed.",
-      "B": "Advertising preference does not replace the prescriber mechanism or the availability condition in the statute.",
-      "C": "The ordinary mandate depends on a qualifying less expensive product actually being reasonably available.",
-      "D": "Shelf convenience is an operational preference, not an interchange exception.",
-      "E": "A rebate does not itself alter the legal predicates for interchange."
+      "A": "The initial partial fill was caused by pharmacy inability, not the patient's election to receive a lesser quantity.",
+      "B": "Schedule II prescriptions are not refilled; the shortage remainder is governed by the specific partial-fill rule.",
+      "C": "A shortage remainder is not transformed into a transferable refill.",
+      "D": "For a partial fill caused by inability to supply the full quantity, the federal shortage pathway generally requires the remainder within 72 hours.",
+      "E": "The general prescription-validity period does not displace the shorter federal shortage-remainder rule."
     },
     "related_facts": [
-      "No-substitution must be indicated in accordance with Massachusetts prescription-format standards.",
-      "Product availability is a legal fact, not merely an inventory-management detail."
+      "Patient-requested and pharmacy-inability partial fills have different predicates.",
+      "A Schedule II remainder is not a refill."
     ],
-    "mpje_trap": "Separate commercially relevant facts from legally relevant interchange predicates."
+    "mpje_trap": "Ask why the first partial fill occurred before choosing a deadline."
   },
   "rule_ids": [
-    "MA-INTERCHANGE"
+    "FED-CII-PARTIAL-72H",
+    "FED-CII-NO-REFILL"
   ],
-  "drug_ids": [],
+  "drug_ids": [
+    "oxycodone"
+  ],
   "reasoning_steps": [
-    "Apply the prescriber no-substitution rule to Prescription 1",
-    "Apply the reasonable-availability prerequisite to Prescription 2",
-    "Reject business preferences that do not alter either legal pathway"
+    "Classify why the first partial fill occurred",
+    "Apply the shortage-specific remainder rule",
+    "Reject the refill analogy"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",
