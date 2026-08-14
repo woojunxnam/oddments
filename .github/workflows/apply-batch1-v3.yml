@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/apply-batch1-v3.yml
       - scripts/apply_expansion_batch1_v3.py
+      - scripts/polish_expansion_batch1_v3.py
 
 permissions:
   contents: write
@@ -55,6 +56,9 @@ jobs:
 
       - name: Apply v3 semantic remediation
         run: python scripts/apply_expansion_batch1_v3.py
+
+      - name: Polish answer-cue balance
+        run: python scripts/polish_expansion_batch1_v3.py
 
       - name: Recompute canonical content and dependency hashes
         run: python scripts/update_content_hashes.py
