@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from build_site_data import build_site_payload, derive_realism_reviews
-from qa_common import question_audit_hash
+from qa_common import DATA, load_records, question_audit_hash
 
 
 def test_release_site_data_excludes_audit_pending_fixtures() -> None:
@@ -16,7 +16,8 @@ def test_release_site_data_excludes_audit_pending_fixtures() -> None:
 
 def test_development_site_data_is_explicitly_unsafe() -> None:
     payload = build_site_payload(include_fixtures=True)
-    assert len(payload["questions"]) == 90
+    canonical_questions = [record for _, record in load_records(DATA / "questions")]
+    assert len(payload["questions"]) == len(canonical_questions)
     assert payload["meta"]["development_fixture_mode"] is True
     assert payload["meta"]["release_status"] == "DEVELOPMENT_ONLY"
     assert all(question["realism_reviews"] == [] for question in payload["questions"])
