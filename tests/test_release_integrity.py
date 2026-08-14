@@ -19,7 +19,7 @@ def release_context() -> tuple[dict, dict, dict]:
 def release_fixture(question: dict, rules: dict, drugs: dict) -> tuple[dict, dict]:
     requirements, blueprint, profile = release_context()
     question = deepcopy(question)
-    audit_ids = ["AUDIT-GPT-LEGAL-TEST", "AUDIT-CLAUDE-LEGAL-TEST", "AUDIT-HUMAN-REALISM-TEST"]
+    audit_ids = ["AUDIT-GPT-LEGAL-TEST", "AUDIT-GPT-REALISM-TEST"]
     question.update(
         {
             "verification_status": "RELEASED",
@@ -43,50 +43,44 @@ def release_fixture(question: dict, rules: dict, drugs: dict) -> tuple[dict, dic
     )
     content_hash = question_audit_hash(question)
 
-    def legal_audit(audit_id: str, auditor: str, auditor_instance: str) -> dict:
-        return {
-            "audit_id": audit_id,
-            "auditor": auditor,
-            "auditor_instance": auditor_instance,
-            "audit_scope": "INITIAL_BATCH",
-            "independent": True,
-            "audit_status": "FULLY_ADJUDICATED",
-            "review_type": "LEGAL_VERIFICATION",
-            "question_ids": [question["question_id"]],
-            "question_hashes": {question["question_id"]: content_hash},
-            "results": [
-                {
-                    "Question_ID": question["question_id"],
-                    "Verdict": "KEEP",
-                    "Existing_Answer_Correct": "YES",
-                }
-            ],
-        }
-
-    audits = {
-        audit_ids[0]: legal_audit(audit_ids[0], "GPT", "GPT-TEST-A"),
-        audit_ids[1]: legal_audit(audit_ids[1], "GPT", "GPT-TEST-B"),
-        audit_ids[2]: {
-            "audit_id": audit_ids[2],
-            "auditor": "HUMAN",
-            "auditor_instance": "HUMAN-REALISM-TEST",
-            "audit_scope": "REAUDIT",
-            "independent": True,
-            "audit_status": "FULLY_ADJUDICATED",
-            "review_type": "REALISM_REVIEW",
-            "style_profile": style_profile_snapshot(profile),
-            "question_ids": [question["question_id"]],
-            "question_hashes": {question["question_id"]: content_hash},
-            "results": [
-                {
-                    "Question_ID": question["question_id"],
-                    "Verdict": "KEEP",
-                    "Realism_Verdict": "PASS",
-                }
-            ],
-        },
+    legal = {
+        "audit_id": audit_ids[0],
+        "auditor": "GPT",
+        "auditor_instance": "GPT-TEST-A",
+        "audit_scope": "INITIAL_BATCH",
+        "independent": True,
+        "audit_status": "FULLY_ADJUDICATED",
+        "review_type": "LEGAL_VERIFICATION",
+        "question_ids": [question["question_id"]],
+        "question_hashes": {question["question_id"]: content_hash},
+        "results": [
+            {
+                "Question_ID": question["question_id"],
+                "Verdict": "KEEP",
+                "Existing_Answer_Correct": "YES",
+            }
+        ],
     }
-    return question, audits
+    realism = {
+        "audit_id": audit_ids[1],
+        "auditor": "GPT",
+        "auditor_instance": "GPT-TEST-A",
+        "audit_scope": "REAUDIT",
+        "independent": True,
+        "audit_status": "FULLY_ADJUDICATED",
+        "review_type": "REALISM_REVIEW",
+        "style_profile": style_profile_snapshot(profile),
+        "question_ids": [question["question_id"]],
+        "question_hashes": {question["question_id"]: content_hash},
+        "results": [
+            {
+                "Question_ID": question["question_id"],
+                "Verdict": "KEEP",
+                "Realism_Verdict": "PASS",
+            }
+        ],
+    }
+    return question, {audit_ids[0]: legal, audit_ids[1]: realism}
 
 
 def run_release_validation(
@@ -200,12 +194,12 @@ def test_triage_only_audit_cannot_release(tmp_path, monkeypatch, canonical_quest
     assert any("insufficient current independent legal audit passes" in error for error in report.errors)
 
 
-def test_old_hash_second_legal_audit_cannot_release(
+def test_stale_current_legal_audit_cannot_release(
     tmp_path, monkeypatch, canonical_question, registry_indexes
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["question_hashes"][question["question_id"]] = "0" * 64
+    audits["AUDIT-GPT-LEGAL-TEST"]["question_hashes"][question["question_id"]] = "0" * 64
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("not performed on current question content" in error for error in report.errors)
 
@@ -224,24 +218,23 @@ def test_blocked_transitive_drug_rule_prevents_question_release(
     assert any(f"depends on blocked rule {transitive_only}" in error for error in report.errors)
 
 
-def test_two_current_legal_passes_are_still_required(
+def test_one_current_legal_pass_is_sufficient(
     tmp_path, monkeypatch, canonical_question, registry_indexes
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
-    missing_id = "AUDIT-CLAUDE-LEGAL-TEST"
-    question["audits"].remove(missing_id)
-    audits.pop(missing_id)
+    legal = [audit for audit in audits.values() if audit["review_type"] == "LEGAL_VERIFICATION"]
+    assert len(legal) == 1
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
-    assert any("insufficient current independent legal audit passes" in error for error in report.errors)
+    assert report.errors == []
 
 
-def test_same_model_family_with_distinct_instances_can_satisfy_legal_distinctness(
+def test_same_independent_instance_can_supply_legal_and_realism(
     tmp_path, monkeypatch, canonical_question, registry_indexes
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor"] = "GPT"
+    assert audits["AUDIT-GPT-LEGAL-TEST"]["auditor_instance"] == audits["AUDIT-GPT-REALISM-TEST"]["auditor_instance"]
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert report.errors == []
 
@@ -250,12 +243,23 @@ def test_same_model_family_with_distinct_instances_can_satisfy_legal_distinctnes
     ("field", "value"),
     [("Verdict", "MAJOR_REWRITE"), ("Existing_Answer_Correct", "NO")],
 )
-def test_any_current_model_failure_blocks_release(
+def test_current_legal_failure_blocks_release(
     tmp_path, monkeypatch, canonical_question, registry_indexes, field, value
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["results"][0][field] = value
+    audits["AUDIT-GPT-LEGAL-TEST"]["results"][0][field] = value
+    report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
+    assert any("does not independently pass" in error for error in report.errors)
+
+
+def test_current_realism_failure_blocks_release(
+    tmp_path, monkeypatch, canonical_question, registry_indexes
+) -> None:
+    rules, drugs = registry_indexes
+    question, audits = release_fixture(canonical_question, rules, drugs)
+    audits["AUDIT-GPT-REALISM-TEST"]["results"][0]["Realism_Verdict"] = "FAIL"
+    audits["AUDIT-GPT-REALISM-TEST"]["results"][0]["Verdict"] = "MAJOR_REWRITE"
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("does not independently pass" in error for error in report.errors)
 
@@ -268,21 +272,11 @@ def test_unreferenced_current_failed_legal_audit_blocks_release(
     failed = deepcopy(audits["AUDIT-GPT-LEGAL-TEST"])
     failed["audit_id"] = "AUDIT-HUMAN-LEGAL-FAILED"
     failed["auditor"] = "HUMAN"
+    failed["auditor_instance"] = "HUMAN-LEGAL-FAILED"
     failed["results"][0]["Verdict"] = "MAJOR_REWRITE"
     audits[failed["audit_id"]] = failed
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("AUDIT-HUMAN-LEGAL-FAILED" in error for error in report.errors)
-
-
-def test_duplicate_same_auditor_instance_does_not_satisfy_distinct_requirement(
-    tmp_path, monkeypatch, canonical_question, registry_indexes
-) -> None:
-    rules, drugs = registry_indexes
-    question, audits = release_fixture(canonical_question, rules, drugs)
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor"] = "GPT"
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["auditor_instance"] = audits["AUDIT-GPT-LEGAL-TEST"]["auditor_instance"]
-    report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
-    assert any("insufficient distinct legal auditors" in error for error in report.errors)
 
 
 def test_reaudit_without_initial_batch_history_cannot_release(
@@ -291,7 +285,6 @@ def test_reaudit_without_initial_batch_history_cannot_release(
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
     audits["AUDIT-GPT-LEGAL-TEST"]["audit_scope"] = "REAUDIT"
-    audits["AUDIT-CLAUDE-LEGAL-TEST"]["audit_scope"] = "REAUDIT"
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("lacks valid INITIAL_BATCH audit history" in error for error in report.errors)
 
@@ -301,6 +294,6 @@ def test_stale_realism_profile_snapshot_cannot_release(
 ) -> None:
     rules, drugs = registry_indexes
     question, audits = release_fixture(canonical_question, rules, drugs)
-    audits["AUDIT-HUMAN-REALISM-TEST"]["style_profile"]["content_hash"] = "0" * 64
+    audits["AUDIT-GPT-REALISM-TEST"]["style_profile"]["content_hash"] = "0" * 64
     report = run_release_validation(tmp_path, monkeypatch, question, rules, drugs, audits)
     assert any("uses a stale style profile" in error for error in report.errors)
