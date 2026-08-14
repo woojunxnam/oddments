@@ -24,10 +24,11 @@
     "auditRequirement": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["minimum_passes", "minimum_distinct_auditors", "required_auditor_types"],
+      "required": ["minimum_passes", "minimum_distinct_auditors", "distinctness_basis", "required_auditor_types"],
       "properties": {
         "minimum_passes": {"type": "integer", "minimum": 1},
         "minimum_distinct_auditors": {"type": "integer", "minimum": 1},
+        "distinctness_basis": {"enum": ["AUDITOR_TYPE", "AUDITOR_INSTANCE"]},
         "required_auditor_types": {
           "type": "array",
           "uniqueItems": true,
