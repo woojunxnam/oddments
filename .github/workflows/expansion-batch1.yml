@@ -32,20 +32,20 @@ jobs:
       - name: Regenerate tracked artifacts
         run: python scripts/generate_artifacts.py --write
 
-      - name: Validate canonical registries and QA gates
-        run: python scripts/validate_all.py
-
-      - name: Run tests
-        run: python -m pytest -q
-
-      - name: Commit generated Batch 1 content
+      - name: Persist generated Batch 1 draft
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/questions data/exam_style/question_family_matrix.json scripts/check_structural_patterns.py duplicate_report.json answer_distribution_report.json structural_pattern_report.json site/generated/questions.json
           if git diff --cached --quiet; then
             echo "No materialized changes to commit."
-            exit 0
+          else
+            git commit -m "Materialize MPJE expansion Batch 1 draft"
+            git push
           fi
-          git commit -m "Materialize MPJE expansion Batch 1"
-          git push
+
+      - name: Validate canonical registries and QA gates
+        run: python scripts/validate_all.py
+
+      - name: Run tests
+        run: python -m pytest -q
