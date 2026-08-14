@@ -1,0 +1,86 @@
+{
+  "audit_id": "AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-EXP1-FINAL2-A",
+  "audit_date": "2026-08-14",
+  "audit_scope": "REAUDIT",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "question_ids": [
+    "MA-Q-0098",
+    "MA-Q-0110"
+  ],
+  "question_hashes": {
+    "MA-Q-0098": "f33699bb74bd94e73106cb7569deb883de424d4c61538ff3f65c8afc71ec4ecc",
+    "MA-Q-0110": "43cb9fde607a509f022b964ee16c0d73208c4f749d98ac90619b84a125b955a2"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0098",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Drug Control Program — DCP Regulations and Over-The-Counter Naloxone",
+          "source_type": "MA_DCP_GUIDANCE",
+          "exact_section": "Advisory dated 10/10/2024 — OTC Naloxone and Prescription Naloxone distinction and packaging",
+          "official_url": "https://www.mass.gov/news/dcp-regulations-and-over-the-counter-naloxone",
+          "law_checked_date": "2026-08-14"
+        },
+        {
+          "authority": "U.S. Food and Drug Administration — Prescription-to-Nonprescription (Rx-to-OTC) Switches",
+          "source_type": "FDA_OFFICIAL",
+          "exact_section": "Types of Rx-to-OTC Switches; Approval of an Rx-to-OTC Switch",
+          "official_url": "https://www.fda.gov/drugs/drug-application-process-nonprescription-drugs/prescription-nonprescription-rx-otc-switches",
+          "law_checked_date": "2026-08-14"
+        },
+        {
+          "authority": "Massachusetts General Laws",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c.94C, §19B(b), (c), (e)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19B",
+          "law_checked_date": "2026-08-14"
+        }
+      ],
+      "Problem": "None identified after independent option-by-option verification. A is false because Massachusetts DCP expressly separates FDA-labeled OTC naloxone from prescription naloxone. B correctly preserves ordinary OTC retail handling for the OTC-labeled product and the lawful prescription/standing-order pathway for the prescription-labeled product. C is false because OTC marketing status is product/label specific rather than an ingredient-wide conversion. D is false because insurance billing or cost-sharing treatment does not convert an FDA-labeled OTC product into a prescription-only product. E is false because the prescription-labeled product remains subject to lawful prescription or standing-order dispensing authority.",
+      "Proposed_Answer": "B (unchanged).",
+      "Proposed_Rewrite": "None.",
+      "Proposed_Explanation": "Classify the cartons by their FDA-approved labeling and packaging, not merely by the shared active ingredient. Massachusetts DCP states that OTC naloxone and prescription naloxone are separate and distinct products: OTC naloxone may be sold as an OTC product, while prescription naloxone requires a lawful prescription or standing-order pathway. Payment or insurance processing does not itself change FDA marketing status."
+    },
+    {
+      "Question_ID": "MA-Q-0110",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts General Laws",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c.94C, §21 — Schedule II/III consumer pamphlet requirement and enumerated exceptions",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+          "law_checked_date": "2026-08-14"
+        },
+        {
+          "authority": "Massachusetts General Laws",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c.111, §227(a) — definition of palliative care",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter111/Section227",
+          "law_checked_date": "2026-08-14"
+        },
+        {
+          "authority": "DailyMed — Morphine Sulfate Extended-Release Tablets",
+          "source_type": "FDA_OFFICIAL",
+          "exact_section": "Drug Label Information — HUMAN PRESCRIPTION DRUG LABEL; DEA Schedule CII; updated May 4, 2026",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=19c7d9cc-6ce2-4c5c-8c3f-c24fd3342804",
+          "law_checked_date": "2026-08-14"
+        }
+      ],
+      "Problem": "None identified after independent option-by-option verification. A is false because §21 contains express exceptions. B is false because the outpatient-palliative-care exception is statutory and does not require a separate prescriber waiver. C is correct because a patient receiving outpatient palliative care pursuant to c.111 §227 is expressly exempt from the §21 pamphlet-distribution requirement, while unrelated dispensing duties remain in force. D is false because long-term-care residence is a separate exception, not the exclusive exception. E is false because substance-use-disorder or opioid-dependence treatment is another separate exception, not the only exception. Current FDA labeling confirms morphine extended-release tablets are Schedule II.",
+      "Proposed_Answer": "C (unchanged).",
+      "Proposed_Rewrite": "None.",
+      "Proposed_Explanation": "Morphine extended-release tablets are Schedule II, so the §21 pamphlet rule is ordinarily triggered in a community-pharmacy dispensing. Section 21 expressly removes the pamphlet requirement when the patient is receiving outpatient palliative care pursuant to c.111 §227. That exception is limited to the pamphlet requirement and does not waive otherwise applicable controlled-substance, prescription, labeling, or dispensing obligations."
+    }
+  ]
+}
