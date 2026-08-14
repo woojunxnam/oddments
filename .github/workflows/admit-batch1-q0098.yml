@@ -1,0 +1,208 @@
+name: Admit Batch 1 Q0098
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch1-final2
+    paths:
+      - .github/workflows/admit-batch1-q0098.yml
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@v6
+        with:
+          ref: repair/mpje-expansion-batch1-final2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate pre-admission state and Issue 31 audit
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          PYTHONPATH=scripts python - <<'PY'
+          import json
+          from pathlib import Path
+          from qa_common import question_audit_hash
+
+          qpath = Path('data/questions/ma-q-0098.json')
+          q = json.loads(qpath.read_text())
+          assert q['verification_status'] == 'AUDIT_PENDING'
+          assert q['lifecycle_status'] == 'AUDIT_PENDING'
+          assert question_audit_hash(q) == 'f33699bb74bd94e73106cb7569deb883de424d4c61538ff3f65c8afc71ec4ecc'
+
+          legal_id = 'AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14'
+          realism_id = 'AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14'
+          legal = json.loads(Path(f'data/audits/{legal_id}.json').read_text())
+          realism = json.loads(Path(f'data/audits/{realism_id}.json').read_text())
+          assert legal['auditor_instance'] == 'GPT-FRESH-EXP1-FINAL2-A'
+          assert realism['auditor_instance'] == 'GPT-FRESH-EXP1-FINAL2-A'
+          assert legal['question_hashes']['MA-Q-0098'] == question_audit_hash(q)
+          assert realism['question_hashes']['MA-Q-0098'] == question_audit_hash(q)
+
+          lr = next(r for r in legal['results'] if r['Question_ID'] == 'MA-Q-0098')
+          rr = next(r for r in realism['results'] if r['Question_ID'] == 'MA-Q-0098')
+          assert lr['Verdict'] == 'KEEP' and lr['Existing_Answer_Correct'] == 'YES'
+          assert rr['Verdict'] == 'KEEP' and rr['Realism_Verdict'] == 'PASS'
+
+          req = json.loads(Path('data/release_requirements.json').read_text())
+          assert req['legal_verification']['minimum_passes'] == 1
+          assert req['realism_review']['minimum_passes'] == 1
+          print('Q0098 current-hash Issue 31 admission gate PASS')
+          PY
+
+      - name: Admit Q0098 and preserve Q0110 quarantine
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import json
+          from pathlib import Path
+
+          def load(path):
+              return json.loads(Path(path).read_text())
+          def write(path, obj):
+              Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=2) + '\n')
+
+          qpath = 'data/questions/ma-q-0098.json'
+          q = load(qpath)
+          q['verification_status'] = 'RELEASED'
+          q['lifecycle_status'] = 'RELEASED'
+          q['audits'] = [
+              'AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14',
+              'AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14',
+          ]
+          q['duplicate_review_status'] = 'CLEAR'
+          q['independent_audit_status'] = 'PASSED'
+
+          rule = load('data/rules/ma-naloxone.json')
+          naloxone = load('data/drugs/naloxone.json')
+          otc = load('data/drugs/naloxone-otc.json')
+          blueprint = load('data/blueprint.json')
+          style = load('data/exam_style/mpje_style_profile.json')
+          q['final_adjudication'] = {
+              'decision': 'KEEP',
+              'adjudicator': 'GPT-5.6-Sol editor after independent Issue #31 audit',
+              'date': '2026-08-14',
+              'notes': 'Final-two Wave 1 admission after a fresh independent current-hash legal KEEP/YES and realism KEEP/PASS. MA-Q-0110 remains quarantined after realism failure.',
+              'verified_dependencies': {
+                  'rules': {
+                      'MA-NALOXONE': {
+                          'content_version': rule['content_version'],
+                          'content_hash': rule['content_hash'],
+                      }
+                  },
+                  'drugs': {
+                      'naloxone': {
+                          'content_version': naloxone['content_version'],
+                          'content_hash': naloxone['content_hash'],
+                      },
+                      'naloxone-otc': {
+                          'content_version': otc['content_version'],
+                          'content_hash': otc['content_hash'],
+                      },
+                  },
+                  'blueprint': {
+                      'id': blueprint['blueprint_id'],
+                      'content_version': blueprint['content_version'],
+                      'content_hash': blueprint['content_hash'],
+                  },
+                  'style_profile': {
+                      'id': style['profile_id'],
+                      'content_version': style['content_version'],
+                      'content_hash': style['content_hash'],
+                  },
+              },
+          }
+          write(qpath, q)
+
+          q110 = load('data/questions/ma-q-0110.json')
+          assert q110['verification_status'] == 'AUDIT_PENDING'
+          assert q110['lifecycle_status'] == 'AUDIT_PENDING'
+          assert q110['final_adjudication'] is None
+
+          allow_path = 'site/generated/preview_allowlist.json'
+          allow = load(allow_path)
+          assert len(allow['question_ids']) == 85
+          assert 'MA-Q-0098' not in allow['question_ids']
+          assert 'MA-Q-0110' not in allow['question_ids']
+          allow['source_audits'].extend([
+              'AUDIT-GPT-FRESH-EXP1-FINAL2-A-LEGAL-REAUDIT-2026-08-14',
+              'AUDIT-GPT-FRESH-EXP1-FINAL2-A-REALISM-REAUDIT-2026-08-14',
+          ])
+          allow['question_ids'].append('MA-Q-0098')
+          allow['notice'] = "Preview contains the prior audited set plus Batch 1 questions that passed the repository's current legal and realism admission gates. MA-Q-0110 remains quarantined and is not shown."
+          write(allow_path, allow)
+
+          matrix_path = 'data/exam_style/question_family_matrix.json'
+          matrix = load(matrix_path)
+          family = next(f for f in matrix['families'] if f['family_id'] == 'EXP1_0098_NALOXONE_PRODUCT_STATUS')
+          family['current_candidate_count'] = 1
+          family['current_released_count'] = 1
+          write(matrix_path, matrix)
+          print('Q0098 admitted; preview 85 -> 86; Q0110 remains quarantined')
+          PY
+
+          python scripts/generate_artifacts.py --write
+
+      - name: Validate post-admission boundary
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          PYTHONPATH=scripts python - <<'PY'
+          import json
+          from pathlib import Path
+
+          allow = json.loads(Path('site/generated/preview_allowlist.json').read_text())
+          assert len(allow['question_ids']) == 86, len(allow['question_ids'])
+          assert allow['question_ids'].count('MA-Q-0098') == 1
+          assert 'MA-Q-0110' not in allow['question_ids']
+
+          q98 = json.loads(Path('data/questions/ma-q-0098.json').read_text())
+          q110 = json.loads(Path('data/questions/ma-q-0110.json').read_text())
+          assert q98['verification_status'] == q98['lifecycle_status'] == 'RELEASED'
+          assert q98['final_adjudication']['decision'] == 'KEEP'
+          assert q110['verification_status'] == q110['lifecycle_status'] == 'AUDIT_PENDING'
+          assert q110['final_adjudication'] is None
+
+          released = 0
+          for n in range(91, 131):
+              q = json.loads(Path(f'data/questions/ma-q-{n:04d}.json').read_text())
+              if q['verification_status'] == 'RELEASED' and q['lifecycle_status'] == 'RELEASED':
+                  released += 1
+          assert released == 39, released
+          print('post-admission boundary PASS: preview=86, Batch1 released=39/40, Q0110 quarantined')
+          PY
+
+      - name: Commit admission and remove one-shot workflow
+        run: |
+          rm .github/workflows/admit-batch1-q0098.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "release: admit Batch 1 Q0098 after Issue 31 audit"
+          git push origin HEAD:repair/mpje-expansion-batch1-final2
+
+      - name: Prove deterministic committed state
+        run: |
+          python scripts/generate_artifacts.py --write
+          python scripts/validate_all.py
+          python -m pytest -q
+          git diff --exit-code
