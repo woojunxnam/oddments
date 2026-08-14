@@ -1,0 +1,105 @@
+{
+  "audit_id": "AUDIT-GPT-FRESH-EXP1-Q0110-FINAL-A-LEGAL-REAUDIT-2026-08-14",
+  "auditor": "GPT",
+  "audit_date": "2026-08-14",
+  "audit_scope": "REAUDIT",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "STRUCTURAL_TRIAGE_ONLY",
+  "question_ids": [
+    "MA-Q-0110"
+  ],
+  "question_hashes": {
+    "MA-Q-0110": "5fd53ad47bc0732256244e84ec4013d72bd34313d45078aa2c6628fa5b63a7d7"
+  },
+  "questions": [
+    {
+      "question_id": "MA-Q-0110",
+      "family_id": "EXP1_0110_CII_OPIOID_ANTAGONIST_OFFER",
+      "area": 3,
+      "topic": "Dispensing",
+      "subtopic": "Schedule II opioid safety obligation",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "At pickup, an adult patient is receiving a valid oxycodone prescription. The pharmacist confirms it is a Schedule II opioid. The patient says, 'I already keep unexpired naloxone at home, so we can skip anything else about overdose risk.' Under current Massachusetts law, which response best addresses the pharmacist's specific statutory duty tied to dispensing this oxycodone?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Skip both steps because having an opioid antagonist at home satisfies the Massachusetts dispensing requirement."
+        },
+        {
+          "id": "B",
+          "text": "Inform the patient of the prescription opioid's potential adverse risks and offer to dispense an opioid antagonist; the patient may decline the offer."
+        },
+        {
+          "id": "C",
+          "text": "Require the patient to accept an opioid antagonist before the Schedule II opioid may be dispensed."
+        },
+        {
+          "id": "D",
+          "text": "Make the antagonist offer only when the opioid prescriber has separately ordered one or documented elevated overdose risk."
+        },
+        {
+          "id": "E",
+          "text": "Make the antagonist offer only for a patient who has never previously received a Schedule II opioid."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "M.G.L. c.94C §18D creates a pharmacist-specific duty when dispensing an opioid contained in Schedule II: inform the patient of the prescription opioid’s potential adverse risks and offer to dispense an opioid antagonist. The statute does not make the opioid dispensing contingent on accepting the antagonist and does not state an exception because the patient already possesses naloxone.",
+        "choice_analysis": {
+          "A": "Prior possession of naloxone is not stated as an exception to the pharmacist’s §18D risk-information and antagonist-offer duties.",
+          "B": "This matches §18D: the pharmacist must provide the adverse-risk information and make the antagonist offer. An offer does not compel the patient to accept or purchase the antagonist.",
+          "C": "Section 18D requires an offer, not mandatory acceptance of an opioid antagonist as a condition of receiving the otherwise valid Schedule II opioid.",
+          "D": "The statutory trigger is the pharmacist dispensing a Schedule II opioid; it is not conditioned on a separate antagonist prescription or a documented high-risk designation from the prescriber.",
+          "E": "Section 18D does not limit the duty to opioid-naive patients; the relevant trigger is the dispensing of an opioid contained in Schedule II."
+        },
+        "related_facts": [
+          "Section 18D defines opioid antagonist by FDA approval for treatment of persons experiencing an opioid overdose.",
+          "The pharmacist duty in §18D is distinct from the separate Massachusetts pathways that authorize access to or dispensing of opioid antagonists."
+        ],
+        "mpje_trap": "Do not turn an obligation to inform and offer into a requirement that the patient accept naloxone, and do not invent an exception merely because the patient already has naloxone."
+      },
+      "rule_ids": [
+        "MA-CII-OPIOID-ANTAGONIST-OFFER",
+        "FED-CS-SCHEDULES"
+      ],
+      "drug_ids": [
+        "oxycodone"
+      ],
+      "reasoning_steps": [
+        "Identify oxycodone as an opioid contained in Schedule II",
+        "Recognize that dispensing the Schedule II opioid triggers M.G.L. c.94C §18D",
+        "Separate the mandatory adverse-risk information and antagonist offer from mandatory antagonist acceptance",
+        "Reject an unstated exception based on the patient already possessing naloxone"
+      ],
+      "verification_status": "AUDIT_PENDING",
+      "lifecycle_status": "AUDIT_PENDING",
+      "last_legal_review": "2026-08-14",
+      "audits": [],
+      "duplicate_review_status": "PENDING",
+      "independent_audit_status": "PENDING",
+      "final_adjudication": null,
+      "development_fixture": true
+    }
+  ],
+  "result_contract": {
+    "required_fields": [
+      "Question_ID",
+      "Verdict",
+      "Severity",
+      "Existing_Answer_Correct",
+      "authorities",
+      "Problem",
+      "Proposed_Answer",
+      "Proposed_Rewrite",
+      "Proposed_Explanation"
+    ],
+    "warning": "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Auditors must not modify canonical questions."
+  },
+  "auditor_instance": "GPT-FRESH-EXP1-Q0110-FINAL-A"
+}
