@@ -1,0 +1,69 @@
+{
+  "question_id": "MA-Q-0177",
+  "family_id": "B2_DRUG_EPT_ANON_LABEL",
+  "area": 2,
+  "topic": "Expedited partner therapy",
+  "subtopic": "Anonymous doxycycline EPT",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A valid Massachusetts doxycycline prescription for a chlamydia partner uses 'EPT' in place of the partner's name and address. The pharmacist will dispense it. Which record setup is appropriate?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Create a separate profile and prescription label using the EPT designation in place of the partner name/address."
+    },
+    {
+      "id": "B",
+      "text": "Place the partner's doxycycline under the index patient's profile as an extra refill."
+    },
+    {
+      "id": "C",
+      "text": "Dispense the drug with no profile or label because the partner is unnamed."
+    },
+    {
+      "id": "D",
+      "text": "Invent a partner date of birth and legal name to make the software accept the prescription."
+    },
+    {
+      "id": "E",
+      "text": "Convert doxycycline to OTC status for this transaction."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "Anonymous doxycycline EPT still receives a pharmacy profile and label, using the EPT designation as permitted.",
+    "choice_analysis": {
+      "A": "That is the anonymous EPT workflow.",
+      "B": "The partner prescription is separate.",
+      "C": "The policy directs creation of both.",
+      "D": "The EPT designation is the permitted identifier.",
+      "E": "EPT does not change prescription status."
+    },
+    "related_facts": [
+      "The partner prescription remains separate from the index patient's prescription."
+    ],
+    "mpje_trap": "Using the index patient's record or skipping the pharmacy record entirely."
+  },
+  "rule_ids": [
+    "MA-EPT"
+  ],
+  "drug_ids": [
+    "doxycycline"
+  ],
+  "reasoning_steps": [
+    "Confirm valid anonymous chlamydia EPT",
+    "Apply the EPT profile/label convention"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-14",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

@@ -1,0 +1,67 @@
+{
+  "question_id": "MA-Q-0133",
+  "family_id": "B2_ADD_PATIENT_ORDER",
+  "area": 4,
+  "topic": "Automated dispensing devices",
+  "subtopic": "Patient-specific order",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient is admitted to a Massachusetts facility with an ADD. The cabinet contains the requested medication, but no valid patient-specific prescription or medication order has yet been entered. What should occur?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Remove a dose because presence in the ADD itself authorizes administration."
+    },
+    {
+      "id": "B",
+      "text": "Use the dose if a technician verbally confirms the usual regimen."
+    },
+    {
+      "id": "C",
+      "text": "Wait for a valid patient-specific prescription or order before dispensing the medication from the ADD."
+    },
+    {
+      "id": "D",
+      "text": "Treat every ADD item as floor stock that needs no patient-specific authorization."
+    },
+    {
+      "id": "E",
+      "text": "Dispense now and obtain the order only if a controlled substance was selected."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "ADD availability does not substitute for a valid patient-specific prescription or order.",
+    "choice_analysis": {
+      "A": "Stocking is not dispensing authority.",
+      "B": "Technician confirmation is not a valid order.",
+      "C": "A valid patient-specific order is required.",
+      "D": "The policy does not create blanket floor-stock authority.",
+      "E": "The order condition is not limited to federal controls."
+    },
+    "related_facts": [
+      "The device stores medication; it does not create prescriptive authority."
+    ],
+    "mpje_trap": "Assuming stocked medication is automatically authorized for a patient."
+  },
+  "rule_ids": [
+    "MA-ADD-CORE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate cabinet inventory from dispensing authority",
+    "Require the patient-specific prescription or order"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-14",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

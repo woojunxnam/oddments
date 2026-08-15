@@ -1,0 +1,1360 @@
+{
+  "base_main_sha": "67626815564062bd7f7bfec5b3667ba0deb03454",
+  "generated_on": "2026-08-14",
+  "question_count": 80,
+  "questions": [
+    {
+      "question_id": "MA-Q-0131",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Facility approval",
+      "intended_decision_path": "Identify that the facility lacks an on-site pharmacy -> Apply the ADD facility-approval condition",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "New facility-authorization fork; not generic controlled-stock security.",
+      "smart_guess_resistance": "Every option names a plausible approval or timing event."
+    },
+    {
+      "question_id": "MA-Q-0132",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Ownership before dispensing",
+      "intended_decision_path": "Identify ADD stock before dispensing -> Locate the policy's ownership-transfer point",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "No existing item tests ownership of ADD contents.",
+      "smart_guess_resistance": "All choices use realistic custody milestones."
+    },
+    {
+      "question_id": "MA-Q-0133",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Patient-specific order",
+      "intended_decision_path": "Separate cabinet inventory from dispensing authority -> Require the patient-specific prescription or order",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Different from Q0118 prescription elements; this is the ADD access prerequisite.",
+      "smart_guess_resistance": "Distractors reflect real floor-stock and verbal-order confusions."
+    },
+    {
+      "question_id": "MA-Q-0134",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Required records",
+      "intended_decision_path": "Identify ADD-specific record categories -> Reject substitutes that omit device-event accountability",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Distinct from DEA two-year controlled-substance retention; this tests ADD event content.",
+      "smart_guess_resistance": "Three operational records compete with two plausible but incomplete substitutes."
+    },
+    {
+      "question_id": "MA-Q-0135",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Package integrity and losses",
+      "intended_decision_path": "Classify acceptable ADD package presentation -> Apply loss-accountability requirements",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "New ADD package/loss fork, not the federal significant-loss reporting question.",
+      "smart_guess_resistance": "Incorrect options are operational shortcuts a real site might consider."
+    },
+    {
+      "question_id": "MA-Q-0136",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Emergency versus routine retail loading",
+      "intended_decision_path": "Classify each ADD by emergency-kit versus routine-dispensing use -> Apply the distinct loader rule for each mode",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Tests device-purpose classification rather than the drug/schedule loader matrix in Q0183.",
+      "smart_guess_resistance": "All options keep the same nurse and machines; the candidate must distinguish ADD mode rather than recognize a drug schedule."
+    },
+    {
+      "question_id": "MA-Q-0137",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Routine retail ADD",
+      "intended_decision_path": "Distinguish routine retail dispensing from emergency-kit use -> Apply machine registration, monitoring, and loader requirements",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "No current question tests machine-specific ADD registration/video controls.",
+      "smart_guess_resistance": "All options describe plausible automation governance choices."
+    },
+    {
+      "question_id": "MA-Q-0138",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "PTT ADD eligibility",
+      "intended_decision_path": "Identify the special technician-stocking policy -> Check on-site pharmacy and MCSR-address prerequisites",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-TECH"
+      ],
+      "distinct_from_existing_bank": "Q0075 tests generic technician scope, not the ADD policy's location gate.",
+      "smart_guess_resistance": "Several answers would be plausible if only credential or schedule mattered."
+    },
+    {
+      "question_id": "MA-Q-0139",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "PTT stocking functions",
+      "intended_decision_path": "Identify trainee rather than licensed-technician privileges -> Apply verification, schedule, and electronic-validation conditions",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-TECH"
+      ],
+      "distinct_from_existing_bank": "This is a narrow inventory/stocking exception, not generic technician judgment.",
+      "smart_guess_resistance": "Wrong choices are adjacent functions that differ by one controlling condition."
+    },
+    {
+      "question_id": "MA-Q-0140",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Technician scope",
+      "subtopic": "Certified-tech ADD stocking",
+      "intended_decision_path": "Identify nationally certified licensed technician status -> Apply Schedule VI, PMP, packaging, and electronic-validation limits -> Reject broader technician privileges",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-TECH"
+      ],
+      "distinct_from_existing_bank": "New credential+schedule+PMP multi-layer pathway.",
+      "smart_guess_resistance": "Every option states a realistic stocking condition; four separate legal facts must be classified."
+    },
+    {
+      "question_id": "MA-Q-0141",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Eligible condition",
+      "intended_decision_path": "Identify the diagnosed infection -> Apply the chlamydia-only EPT policy scope",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "EPT is absent from the current 130-question bank.",
+      "smart_guess_resistance": "Other infectious-condition options are clinically plausible but legally outside this policy."
+    },
+    {
+      "question_id": "MA-Q-0142",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Prescription identity",
+      "intended_decision_path": "Confirm chlamydia EPT context -> Classify each partner-identification route independently",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "New patient-identity exception; Q0118 tests ordinary prescription elements.",
+      "smart_guess_resistance": "Three correct forms and two realistic shortcuts force independent evaluation."
+    },
+    {
+      "question_id": "MA-Q-0143",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Anonymous profile and label",
+      "intended_decision_path": "Recognize an anonymous but valid EPT prescription -> Apply the EPT profile and label instruction",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "Downstream documentation fork rather than EPT eligibility.",
+      "smart_guess_resistance": "Every option offers a plausible way to construct an anonymous record."
+    },
+    {
+      "question_id": "MA-Q-0144",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Unable or unwilling to fill",
+      "intended_decision_path": "Confirm the prescription fits EPT policy -> Apply the unable/unwilling-to-fill referral duty",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "New mandatory EPT referral action.",
+      "smart_guess_resistance": "Distractors are realistic disposition choices for an unfilled prescription."
+    },
+    {
+      "question_id": "MA-Q-0145",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Pharmacist administration",
+      "subtopic": "Statutory categories",
+      "intended_decision_path": "Identify each drug/indication pair -> Match it to a current pharmacist-administration category -> Reject schedule-only reasoning",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-PHARM-ADMIN",
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "New scope domain, separate from contraception prescribing and naloxone access.",
+      "smart_guess_resistance": "Authorized and unauthorized options are all plausible pharmacy-administered therapies."
+    },
+    {
+      "question_id": "MA-Q-0146",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Pharmacist administration",
+      "subtopic": "MH/SUD prescriber direction",
+      "intended_decision_path": "Recognize an eligible product -> Check patient-specific prescriber authorization before administration",
+      "drug_ids": [
+        "naltrexone-er"
+      ],
+      "rule_ids": [
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Administration-authorization fork rather than product-list recognition.",
+      "smart_guess_resistance": "Each choice preserves the same eligible drug but changes authorization."
+    },
+    {
+      "question_id": "MA-Q-0147",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Pharmacist administration",
+      "subtopic": "MH/SUD administration workflow",
+      "intended_decision_path": "Confirm eligible MH/SUD administration -> Apply dose, record, communication, and privacy workflow",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Post-eligibility workflow is different from Q0146 authorization.",
+      "smart_guess_resistance": "All options sound operationally plausible in an immunization-style workflow."
+    },
+    {
+      "question_id": "MA-Q-0148",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Long-term care",
+      "subtopic": "Emergency-kit categories",
+      "intended_decision_path": "Identify an LTC emergency-kit analgesic -> Apply the approved CII-V category and bed-capacity framework",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-LTC-EMERGENCY-KIT"
+      ],
+      "distinct_from_existing_bank": "New special-setting stock authority.",
+      "smart_guess_resistance": "Each distractor represents a believable misreading of schedule versus category limits."
+    },
+    {
+      "question_id": "MA-Q-0149",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Long-term care",
+      "subtopic": "Bed-capacity maximums",
+      "intended_decision_path": "Place 120 beds in the 101-150 tier -> Apply the analgesic maximum for that tier",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-LTC-EMERGENCY-KIT"
+      ],
+      "distinct_from_existing_bank": "No current bank item applies LTC emergency-kit capacity limits.",
+      "smart_guess_resistance": "Four distractors are official neighboring or intuitive values."
+    },
+    {
+      "question_id": "MA-Q-0150",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Long-term care",
+      "subtopic": "Emergency-kit safeguards",
+      "intended_decision_path": "Separate packaging, device, and Schedule VI obligations -> Evaluate each safeguard independently",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-LTC-EMERGENCY-KIT"
+      ],
+      "distinct_from_existing_bank": "New kit-safeguard pathway rather than generic pharmacy security.",
+      "smart_guess_resistance": "Three correct statements cover separate operational dimensions."
+    },
+    {
+      "question_id": "MA-Q-0151",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Hospice pharmacy",
+      "subtopic": "Acute-use supply purpose",
+      "intended_decision_path": "Identify the inpatient hospice acute-use pathway -> Apply its bridge-supply purpose",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-HOSPICE-ACUTE"
+      ],
+      "distinct_from_existing_bank": "New inpatient-hospice stock purpose; no current-bank equivalent.",
+      "smart_guess_resistance": "All options describe plausible institutional-stock purposes."
+    },
+    {
+      "question_id": "MA-Q-0152",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Hospice pharmacy",
+      "subtopic": "ADD security and ownership",
+      "intended_decision_path": "Identify hospice acute-use ADD storage -> Apply registration, monitoring, ownership, and reconciliation rules",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-HOSPICE-ACUTE"
+      ],
+      "distinct_from_existing_bank": "Hospice-specific ADD governance differs from Q0137 routine retail ADD use.",
+      "smart_guess_resistance": "Each option is a realistic machine-control decision."
+    },
+    {
+      "question_id": "MA-Q-0153",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Hospice pharmacy",
+      "subtopic": "Bed-capacity quantity",
+      "intended_decision_path": "Place 18 beds in the 11-20 tier -> Apply the analgesic category maximum",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-HOSPICE-ACUTE"
+      ],
+      "distinct_from_existing_bank": "New hospice-specific quantitative pathway.",
+      "smart_guess_resistance": "Distractors are values actually used elsewhere in the official table."
+    },
+    {
+      "question_id": "MA-Q-0154",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Schedule II fax default",
+      "intended_decision_path": "Identify an ordinary Schedule II fax -> Check whether any fax-as-original exception applies",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "Current bank covers emergency oral and EPCS pathways, not C-II fax exceptions.",
+      "smart_guess_resistance": "Distractors invoke genuine adjacent rules such as confirmation and short supply."
+    },
+    {
+      "question_id": "MA-Q-0155",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "LTCF fax exception",
+      "intended_decision_path": "Identify the patient as an LTCF resident -> Apply the LTCF Schedule II fax exception",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "New setting exception rather than another C-II validity clock.",
+      "smart_guess_resistance": "All answers use real C-II/LTCF concepts but only one identifies the correct fork."
+    },
+    {
+      "question_id": "MA-Q-0156",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Hospice fax exception",
+      "intended_decision_path": "Classify the drug as a Schedule II narcotic -> Confirm hospice status is indicated -> Apply the fax-as-original exception",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "New hospice-narcotic fax fork.",
+      "smart_guess_resistance": "Options deliberately mix hospice with other authentic controlled-substance concepts."
+    },
+    {
+      "question_id": "MA-Q-0157",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 5,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Parenteral-compounding fax exception",
+      "intended_decision_path": "Classify the prescription as a Schedule II narcotic -> Identify the compounded direct-infusion route -> Apply the specific fax exception",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "New formulation/route-driven legal fork.",
+      "smart_guess_resistance": "The same controlled status is maintained across plausible route-based distractors."
+    },
+    {
+      "question_id": "MA-Q-0158",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Multiple Schedule II prescriptions",
+      "intended_decision_path": "Recognize separate C-II prescriptions rather than refills -> Apply total-supply, fill-date, and legitimate-purpose conditions -> Reject postdating",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-MULTIPLE"
+      ],
+      "distinct_from_existing_bank": "Different practical decision from the bank's C-II no-refill items.",
+      "smart_guess_resistance": "Each option tests a separate issuance condition rather than one obvious schedule fact."
+    },
+    {
+      "question_id": "MA-Q-0159",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Earliest-fill instructions",
+      "intended_decision_path": "Distinguish issue date from earliest fill date -> Apply the multiple-prescription documentation rule",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-MULTIPLE"
+      ],
+      "distinct_from_existing_bank": "Documentation fork within the 90-day pathway, not a refill question.",
+      "smart_guess_resistance": "All options are plausible ways to stage monthly controlled medication."
+    },
+    {
+      "question_id": "MA-Q-0160",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Partial filling",
+      "subtopic": "LTCF/terminal 60-day framework",
+      "intended_decision_path": "Identify the LTCF special partial-fill pathway -> Apply its 60-day endpoint",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ],
+      "distinct_from_existing_bank": "New C-II partial-fill exception, not Q0094 or Q0101.",
+      "smart_guess_resistance": "Distractors are real clocks from neighboring controlled-substance rules."
+    },
+    {
+      "question_id": "MA-Q-0161",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Partial filling",
+      "subtopic": "LTCF/terminal documentation",
+      "intended_decision_path": "Identify terminally ill C-II partial filling -> Apply per-dispensing records and special-status documentation -> Apply the 60-day boundary",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ],
+      "distinct_from_existing_bank": "Documentation layer separate from Q0160's deadline.",
+      "smart_guess_resistance": "Three concrete record duties compete with two plausible remainder assumptions."
+    },
+    {
+      "question_id": "MA-Q-0162",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Prescription validity",
+      "subtopic": "Corresponding responsibility",
+      "intended_decision_path": "Separate facial completeness from substantive validity -> Apply pharmacist corresponding responsibility to unresolved red flags",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CORRESPONDING-RESP"
+      ],
+      "distinct_from_existing_bank": "New substantive validity decision rather than required-elements review.",
+      "smart_guess_resistance": "Distractors reflect real workflow temptations: defer, fill-then-check, or alter."
+    },
+    {
+      "question_id": "MA-Q-0163",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Prescription validity",
+      "subtopic": "Red-flag resolution",
+      "intended_decision_path": "Identify unresolved legitimacy concerns -> Use reasonable verification and documentation -> Make an independent dispensing decision",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-CORRESPONDING-RESP"
+      ],
+      "distinct_from_existing_bank": "Process-oriented counterpart to Q0162's final decision.",
+      "smart_guess_resistance": "Options are ordinary pharmacy workflow steps rather than extreme legal slogans."
+    },
+    {
+      "question_id": "MA-Q-0164",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Opioid use disorder",
+      "subtopic": "Methadone OUD vs retail prescription",
+      "intended_decision_path": "Identify methadone and the OUD maintenance indication -> Apply the federal narcotic-treatment pathway rather than ordinary C-II dispensing",
+      "drug_ids": [
+        "methadone"
+      ],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "Q0015 tests methadone pain quantity; this tests OUD treatment authority.",
+      "smart_guess_resistance": "The same Schedule II drug remains constant; indication drives the result."
+    },
+    {
+      "question_id": "MA-Q-0165",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Opioid use disorder",
+      "subtopic": "Non-OTP emergency dispensing",
+      "intended_decision_path": "Identify non-OTP emergency OUD treatment -> Separate dispensing from prescribing -> Apply daily and three-day limits",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "Different from emergency oral Schedule II prescriptions in Q0023/Q0104.",
+      "smart_guess_resistance": "Each option tests a separate feature of the emergency pathway."
+    },
+    {
+      "question_id": "MA-Q-0166",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Opioid use disorder",
+      "subtopic": "Schedule III-V maintenance pathway",
+      "intended_decision_path": "Identify the drug as Schedule III-V narcotic treatment -> Distinguish its federal OUD pathway from Schedule II methadone maintenance",
+      "drug_ids": [],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "New schedule+indication interaction, separate from buprenorphine quantity questions.",
+      "smart_guess_resistance": "All choices remain within OUD treatment rather than using obviously unrelated drugs."
+    },
+    {
+      "question_id": "MA-Q-0167",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Prescriber authority",
+      "subtopic": "MCSR and DEA",
+      "intended_decision_path": "Separate Massachusetts Schedule VI from federal Schedules II-V -> Apply state and federal registration requirements",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-MCSR-DEA"
+      ],
+      "distinct_from_existing_bank": "New prescriber-credential decision path, not prescription-element review.",
+      "smart_guess_resistance": "Every option is a plausible state/federal registration relationship."
+    },
+    {
+      "question_id": "MA-Q-0168",
+      "part": "CORE",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Prescriber authority",
+      "subtopic": "Schedule VI without DEA",
+      "intended_decision_path": "Identify the drug as Massachusetts Schedule VI only -> Apply MCSR-only practitioner authority for Schedule VI",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-MCSR-DEA"
+      ],
+      "distinct_from_existing_bank": "Practical consequence of the credential distinction rather than Q0122's classification question.",
+      "smart_guess_resistance": "Distractors reflect common DEA/MCSR misconceptions."
+    },
+    {
+      "question_id": "MA-Q-0169",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Compliance packaging",
+      "subtopic": "Schedule II/III maintenance medications",
+      "intended_decision_path": "Identify the current Schedule II/III maintenance expansion -> Separate maintenance therapy from acute use",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-COMPLIANCE-PACKAGING"
+      ],
+      "distinct_from_existing_bank": "Compliance packaging is absent from the current question bank.",
+      "smart_guess_resistance": "Correctness depends on maintenance status, not a single schedule keyword."
+    },
+    {
+      "question_id": "MA-Q-0170",
+      "part": "CORE",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Unit integrity and accountability",
+      "intended_decision_path": "Apply package-integrity requirements -> Apply transaction and reconciliation accountability -> Reject convenience shortcuts that destroy traceability",
+      "drug_ids": [],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Capstone operational fork tying package presentation to accountability, not just Q0135 loss handling.",
+      "smart_guess_resistance": "All options are concrete inventory practices a real pharmacy might encounter."
+    },
+    {
+      "question_id": "MA-Q-0171",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Pharmacist administration",
+      "subtopic": "Drug and indication authority",
+      "intended_decision_path": "Identify each real product -> Classify the clinical indication -> Match product/indication to a current administration pathway",
+      "drug_ids": [
+        "testosterone-cypionate",
+        "naltrexone-er",
+        "aripiprazole-er",
+        "insulin-glargine"
+      ],
+      "rule_ids": [
+        "MA-PHARM-ADMIN",
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Cross-category administration matrix absent from the current bank.",
+      "smart_guess_resistance": "Injectability is shared across options, so product/indication must be evaluated."
+    },
+    {
+      "question_id": "MA-Q-0172",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 3,
+      "topic": "Pharmacist administration",
+      "subtopic": "Eligible MH/SUD products",
+      "intended_decision_path": "Recognize each product -> Match it to the official MH/SUD administration list",
+      "drug_ids": [
+        "aripiprazole-er",
+        "paliperidone-palmitate",
+        "naltrexone-er",
+        "insulin-glargine",
+        "testosterone-cypionate"
+      ],
+      "rule_ids": [
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Product-list burden is new; Q0146 tests prescriber direction instead.",
+      "smart_guess_resistance": "All five are plausible chronic injectable therapies."
+    },
+    {
+      "question_id": "MA-Q-0173",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Pharmacist administration",
+      "subtopic": "Vivitrol conditions",
+      "intended_decision_path": "Identify Vivitrol as listed SUD medication -> Confirm patient-specific single-dose and prescriber direction",
+      "drug_ids": [
+        "naltrexone-er"
+      ],
+      "rule_ids": [
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Real-product application of the MH/SUD pathway.",
+      "smart_guess_resistance": "Distractors preserve the same product while changing authority or classification."
+    },
+    {
+      "question_id": "MA-Q-0174",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Pharmacist administration",
+      "subtopic": "Testosterone indication matrix",
+      "intended_decision_path": "Hold the drug identity constant -> Classify the indication for each scenario -> Apply the statutory administration category",
+      "drug_ids": [
+        "testosterone-cypionate"
+      ],
+      "rule_ids": [
+        "MA-PHARM-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Q0041 tests testosterone quantity; this tests indication-driven administration.",
+      "smart_guess_resistance": "Every option uses testosterone, eliminating schedule-only guessing."
+    },
+    {
+      "question_id": "MA-Q-0175",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Pharmacist administration",
+      "subtopic": "Administration follow-through",
+      "intended_decision_path": "Confirm eligible patient-specific LAI administration -> Apply record, prescriber-communication, and privacy duties",
+      "drug_ids": [
+        "aripiprazole-er"
+      ],
+      "rule_ids": [
+        "MA-MH-SUD-ADMIN"
+      ],
+      "distinct_from_existing_bank": "Post-administration real-drug workflow, not product eligibility.",
+      "smart_guess_resistance": "Each choice is a plausible operational step after an injection."
+    },
+    {
+      "question_id": "MA-Q-0176",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Drug and diagnosis pathway",
+      "intended_decision_path": "Keep the drug constant -> Classify the index patient's diagnosis -> Apply the chlamydia-only policy",
+      "drug_ids": [
+        "doxycycline"
+      ],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "Drug+diagnosis pathway rather than Q0141's abstract condition question.",
+      "smart_guess_resistance": "Same drug appears in every option, so diagnosis must be known."
+    },
+    {
+      "question_id": "MA-Q-0177",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Anonymous doxycycline EPT",
+      "intended_decision_path": "Confirm valid anonymous chlamydia EPT -> Apply the EPT profile/label convention",
+      "drug_ids": [
+        "doxycycline"
+      ],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "Real-drug downstream workflow.",
+      "smart_guess_resistance": "All choices are plausible workarounds for missing patient identity."
+    },
+    {
+      "question_id": "MA-Q-0178",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 3,
+      "topic": "Expedited partner therapy",
+      "subtopic": "Prescription construction",
+      "intended_decision_path": "Confirm chlamydia EPT indication -> Evaluate each partner-prescription identity route",
+      "drug_ids": [
+        "doxycycline"
+      ],
+      "rule_ids": [
+        "MA-EPT"
+      ],
+      "distinct_from_existing_bank": "Prescription-construction task with a real EPT drug.",
+      "smart_guess_resistance": "Three valid forms use different wording, preventing position/length shortcuts."
+    },
+    {
+      "question_id": "MA-Q-0179",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "Certified-tech Schedule VI stocking",
+      "intended_decision_path": "Identify each drug's Massachusetts/federal status -> Apply the non-PMP Schedule VI limitation -> Confirm the no-manipulation/electronic-validation facts",
+      "drug_ids": [
+        "warfarin",
+        "insulin-glargine",
+        "doxycycline",
+        "gabapentin",
+        "pregabalin"
+      ],
+      "rule_ids": [
+        "MA-ADD-TECH",
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Credential+drug classification matrix not present in current bank.",
+      "smart_guess_resistance": "Three ordinary prescriptions compete with a Schedule VI/PMP exception and a Schedule V drug."
+    },
+    {
+      "question_id": "MA-Q-0180",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "PTT ADD schedule boundary",
+      "intended_decision_path": "Classify each drug -> Apply the PTT Schedule III-VI boundary",
+      "drug_ids": [
+        "alprazolam",
+        "pregabalin",
+        "gabapentin",
+        "warfarin",
+        "methylphenidate"
+      ],
+      "rule_ids": [
+        "MA-ADD-TECH"
+      ],
+      "distinct_from_existing_bank": "Real-drug application of the PTT inventory exception.",
+      "smart_guess_resistance": "Four plausible controlled/prescription drugs are eligible; the single C-II near-miss is not visually obvious."
+    },
+    {
+      "question_id": "MA-Q-0181",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "Licensed-tech C-II-VI stocking",
+      "intended_decision_path": "Identify licensed-technician rather than PTT status -> Apply S-II-VI scope -> Check verification and facility prerequisites",
+      "drug_ids": [
+        "methylphenidate",
+        "alprazolam",
+        "gabapentin",
+        "pregabalin",
+        "warfarin"
+      ],
+      "rule_ids": [
+        "MA-ADD-TECH"
+      ],
+      "distinct_from_existing_bank": "Different credential pathway from Q0180.",
+      "smart_guess_resistance": "Drug schedule, verification, and location each create realistic near-misses."
+    },
+    {
+      "question_id": "MA-Q-0182",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Technician scope",
+      "subtopic": "Gabapentin ADD credential pathways",
+      "intended_decision_path": "Keep gabapentin identity constant -> Classify the technician credential and verification pathway -> Apply the PMP exclusion only to the no-prior-verification shortcut",
+      "drug_ids": [
+        "gabapentin"
+      ],
+      "rule_ids": [
+        "MA-ADD-TECH",
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Replaces the earlier near-duplicate multi-drug eligibility matrix with a same-drug actor/pathway matrix.",
+      "smart_guess_resistance": "The drug never changes; each option requires independent actor, verification, and PMP-pathway classification."
+    },
+    {
+      "question_id": "MA-Q-0183",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Emergency-kit loader matrix",
+      "intended_decision_path": "Identify emergency-kit ADD rather than routine dispensing -> Classify actor credential -> Classify drug schedule",
+      "drug_ids": [
+        "alprazolam",
+        "gabapentin",
+        "methylphenidate"
+      ],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Real-drug credential matrix for emergency-kit loading.",
+      "smart_guess_resistance": "Four valid actor/drug pairings make one-obvious-answer elimination ineffective."
+    },
+    {
+      "question_id": "MA-Q-0184",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Automated dispensing devices",
+      "subtopic": "Routine ADD drug accountability",
+      "intended_decision_path": "Identify routine retail ADD use -> Recognize the mixed schedule inventory -> Apply machine-level registration, monitoring, and loader controls",
+      "drug_ids": [
+        "methylphenidate",
+        "alprazolam",
+        "gabapentin"
+      ],
+      "rule_ids": [
+        "MA-ADD-CORE"
+      ],
+      "distinct_from_existing_bank": "Drug-stock application of routine ADD controls rather than emergency-kit loading.",
+      "smart_guess_resistance": "All options mention one of the actual drugs but the machine rule remains controlling."
+    },
+    {
+      "question_id": "MA-Q-0185",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "C-II fax exception matrix",
+      "intended_decision_path": "Recognize that every option is Schedule II -> Classify setting, narcotic status, and formulation -> Apply the matching fax exception",
+      "drug_ids": [
+        "methylphenidate",
+        "oxycodone",
+        "fentanyl",
+        "dexmethylphenidate"
+      ],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "Five-C-II independent classification task; no current-bank equivalent.",
+      "smart_guess_resistance": "All options are C-II, so schedule recognition cannot solve the SATA."
+    },
+    {
+      "question_id": "MA-Q-0186",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Hospice oxycodone fax",
+      "intended_decision_path": "Identify oxycodone as a C-II narcotic -> Confirm hospice designation -> Apply the fax-as-original exception",
+      "drug_ids": [
+        "oxycodone"
+      ],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "Single-drug hospice application of the broader matrix.",
+      "smart_guess_resistance": "Every distractor invokes a real adjacent C-II concept."
+    },
+    {
+      "question_id": "MA-Q-0187",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Controlled prescriptions",
+      "subtopic": "LTCF methylphenidate fax",
+      "intended_decision_path": "Identify C-II nonnarcotic drug -> Identify LTCF-resident setting -> Avoid importing the hospice narcotic limitation",
+      "drug_ids": [
+        "methylphenidate"
+      ],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "Nonnarcotic C-II setting fork.",
+      "smart_guess_resistance": "The nonnarcotic drug is chosen specifically to defeat opioid-based guessing."
+    },
+    {
+      "question_id": "MA-Q-0188",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Parenteral fentanyl fax",
+      "intended_decision_path": "Classify fentanyl as a C-II narcotic -> Identify qualifying compounded IV infusion -> Apply the fax-as-original rule",
+      "drug_ids": [
+        "fentanyl"
+      ],
+      "rule_ids": [
+        "FED-CII-FAX"
+      ],
+      "distinct_from_existing_bank": "Formulation-specific real-drug fork.",
+      "smart_guess_resistance": "The same fentanyl identity is retained while route facts control the answer."
+    },
+    {
+      "question_id": "MA-Q-0189",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Partial filling",
+      "subtopic": "LTCF/terminal C-II matrix",
+      "intended_decision_path": "Classify each drug's schedule -> Classify LTCF/terminal status -> Apply the special C-II partial-fill rule",
+      "drug_ids": [
+        "methylphenidate",
+        "morphine",
+        "oxycodone",
+        "alprazolam"
+      ],
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ],
+      "distinct_from_existing_bank": "Real-drug special-setting matrix distinct from stock-short/patient-request partial fills.",
+      "smart_guess_resistance": "Three C-II options include both stimulant and opioids, blocking narcotic-only elimination."
+    },
+    {
+      "question_id": "MA-Q-0190",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Partial filling",
+      "subtopic": "LTCF stimulant partial",
+      "intended_decision_path": "Recognize methylphenidate as Schedule II -> Identify LTCF-resident special partial filling -> Apply the 60-day endpoint",
+      "drug_ids": [
+        "methylphenidate"
+      ],
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ],
+      "distinct_from_existing_bank": "Nonnarcotic real-drug application of the special partial rule.",
+      "smart_guess_resistance": "Every distractor is a real controlled-substance timing number."
+    },
+    {
+      "question_id": "MA-Q-0191",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Partial filling",
+      "subtopic": "Terminally ill opioid partial records",
+      "intended_decision_path": "Classify morphine as Schedule II -> Identify terminally ill special status -> Apply per-partial records and the 60-day limit",
+      "drug_ids": [
+        "morphine"
+      ],
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ],
+      "distinct_from_existing_bank": "Repeated real-opioid record task, not stock-short or patient-request partial filling.",
+      "smart_guess_resistance": "All five options use authentic C-II partial-fill concepts."
+    },
+    {
+      "question_id": "MA-Q-0192",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Multiple C-II real-drug prescriptions",
+      "intended_decision_path": "Confirm each drug is Schedule II -> Distinguish separate prescriptions from refills -> Check issue date, total supply, and earliest-fill instructions",
+      "drug_ids": [
+        "methylphenidate",
+        "lisdexamfetamine",
+        "oxycodone"
+      ],
+      "rule_ids": [
+        "FED-CII-MULTIPLE"
+      ],
+      "distinct_from_existing_bank": "Multi-drug issuance matrix distinct from individual C-II validity questions.",
+      "smart_guess_resistance": "Every option contains a C-II drug; document structure decides correctness."
+    },
+    {
+      "question_id": "MA-Q-0193",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Opioid use disorder",
+      "subtopic": "Methadone indication matrix",
+      "intended_decision_path": "Hold methadone identity constant -> Classify pain versus OUD purpose -> Apply ordinary C-II or narcotic-treatment pathway accordingly",
+      "drug_ids": [
+        "methadone"
+      ],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "Same-drug indication matrix; Q0015 addresses pain quantity only.",
+      "smart_guess_resistance": "Every choice concerns methadone, so schedule recognition alone is useless."
+    },
+    {
+      "question_id": "MA-Q-0194",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Opioid use disorder",
+      "subtopic": "Routine retail methadone OUD prescription",
+      "intended_decision_path": "Identify methadone and OUD maintenance purpose -> Apply the federal narcotic-treatment restriction",
+      "drug_ids": [
+        "methadone"
+      ],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "Direct pharmacist intake decision for OUD methadone.",
+      "smart_guess_resistance": "All distractors keep methadone central rather than surrounding it with ordinary drugs."
+    },
+    {
+      "question_id": "MA-Q-0195",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 4,
+      "topic": "Opioid use disorder",
+      "subtopic": "Three-day emergency methadone",
+      "intended_decision_path": "Identify the non-OTP emergency provision -> Separate dispensing from prescribing -> Apply one-day-at-a-time and three-day limits",
+      "drug_ids": [
+        "methadone"
+      ],
+      "rule_ids": [
+        "FED-OUD-OTP"
+      ],
+      "distinct_from_existing_bank": "Mechanism-focused methadone emergency question, not emergency C-II prescription law.",
+      "smart_guess_resistance": "Every answer uses the same three-day context but changes the legal mechanism."
+    },
+    {
+      "question_id": "MA-Q-0196",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Opioid use disorder",
+      "subtopic": "Buprenorphine versus methadone pathway",
+      "intended_decision_path": "Classify each OUD drug -> Distinguish Schedule III prescription pathway from Schedule II methadone maintenance -> Apply product status without indication-based reclassification",
+      "drug_ids": [
+        "buprenorphine",
+        "buprenorphine-naloxone",
+        "methadone"
+      ],
+      "rule_ids": [
+        "FED-OUD-OTP",
+        "FED-CS-SCHEDULES"
+      ],
+      "distinct_from_existing_bank": "Pathway comparison rather than Q0006/Q0024 quantity questions.",
+      "smart_guess_resistance": "All options concern recognized OUD medications and require product-specific law."
+    },
+    {
+      "question_id": "MA-Q-0197",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Controlled prescriptions",
+      "subtopic": "Massachusetts II/III quantity categories",
+      "intended_decision_path": "Classify each drug as Schedule II/III -> Identify OUD treatment or non-opioid category -> Apply the 90-day versus 30-day Massachusetts rule",
+      "drug_ids": [
+        "methylphenidate",
+        "lisdexamfetamine",
+        "testosterone-cypionate",
+        "buprenorphine",
+        "oxycodone"
+      ],
+      "rule_ids": [
+        "MA-CS-QUANTITY-II-III"
+      ],
+      "distinct_from_existing_bank": "Five-drug independent classification burden beyond existing single-drug examples.",
+      "smart_guess_resistance": "Four controlled drugs qualify for different reasons; one opioid pain drug is the near-miss."
+    },
+    {
+      "question_id": "MA-Q-0198",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 3,
+      "topic": "Prescription monitoring",
+      "subtopic": "MassPAT reporting matrix",
+      "intended_decision_path": "Classify federal schedules -> Recognize gabapentin's Massachusetts drug-of-concern status -> Apply the PMP submission requirement",
+      "drug_ids": [
+        "oxycodone",
+        "alprazolam",
+        "pregabalin",
+        "gabapentin",
+        "warfarin"
+      ],
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Ties the classification matrix directly to current submission action/deadline.",
+      "smart_guess_resistance": "Four reportable drugs span II, IV, V, and the unique VI exception."
+    },
+    {
+      "question_id": "MA-Q-0199",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Prescription monitoring",
+      "subtopic": "Naloxone data and patient profile",
+      "intended_decision_path": "Identify naloxone reporting as a separate data-collection requirement -> Distinguish Clearinghouse submission from MassPAT profile display",
+      "drug_ids": [
+        "naloxone"
+      ],
+      "rule_ids": [
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Q0097/Q0098 address access and OTC/Rx product status, not PMP display.",
+      "smart_guess_resistance": "Distractors connect reporting to plausible but incorrect schedule/access consequences."
+    },
+    {
+      "question_id": "MA-Q-0200",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Prescriber authority",
+      "subtopic": "MCSR/DEA drug matrix",
+      "intended_decision_path": "Classify each drug -> Separate Massachusetts Schedule VI from federal II-V -> Apply MCSR-only versus MCSR+DEA authority",
+      "drug_ids": [
+        "warfarin",
+        "insulin-glargine",
+        "gabapentin",
+        "pregabalin",
+        "methylphenidate"
+      ],
+      "rule_ids": [
+        "MA-MCSR-DEA"
+      ],
+      "distinct_from_existing_bank": "Real-drug credential matrix, not abstract registration recall.",
+      "smart_guess_resistance": "Gabapentin is deliberately paired with Schedule V/II drugs to defeat PMP-based elimination."
+    },
+    {
+      "question_id": "MA-Q-0201",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Prescriber authority",
+      "subtopic": "Gabapentin credential consequences",
+      "intended_decision_path": "Hold gabapentin identity constant -> Separate state schedule, DEA status, and PMP status -> Apply each legal consequence independently",
+      "drug_ids": [
+        "gabapentin"
+      ],
+      "rule_ids": [
+        "MA-MCSR-DEA",
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Consequence matrix for one drug rather than Q0122's basic classification distinction.",
+      "smart_guess_resistance": "Same drug across every option requires separate legal classifications."
+    },
+    {
+      "question_id": "MA-Q-0202",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Compliance packaging",
+      "subtopic": "Maintenance drug matrix",
+      "intended_decision_path": "Classify schedule -> Determine maintenance versus acute use -> Apply the compliance-packaging policy without erasing other rules",
+      "drug_ids": [
+        "methylphenidate",
+        "testosterone-cypionate",
+        "buprenorphine",
+        "oxycodone",
+        "alprazolam"
+      ],
+      "rule_ids": [
+        "MA-COMPLIANCE-PACKAGING"
+      ],
+      "distinct_from_existing_bank": "Real-drug maintenance matrix; no current bank packaging item.",
+      "smart_guess_resistance": "Schedule and chronicity vary independently across plausible therapies."
+    },
+    {
+      "question_id": "MA-Q-0203",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SBA",
+      "difficulty": 3,
+      "topic": "Compliance packaging",
+      "subtopic": "Acute C-II exclusion",
+      "intended_decision_path": "Identify oxycodone as Schedule II -> Classify the course as acute rather than maintenance -> Apply the policy's maintenance limitation",
+      "drug_ids": [
+        "oxycodone"
+      ],
+      "rule_ids": [
+        "MA-COMPLIANCE-PACKAGING"
+      ],
+      "distinct_from_existing_bank": "Acute-vs-maintenance pharmacist decision using a real C-II opioid.",
+      "smart_guess_resistance": "Two opposite schedule-based shortcuts are both offered as distractors."
+    },
+    {
+      "question_id": "MA-Q-0204",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "REMS",
+      "subtopic": "Current isotretinoin pharmacy pathway",
+      "intended_decision_path": "Identify isotretinoin's current iPLEDGE REMS -> Fix the legal date at August 14, 2026 -> Distinguish approved modifications from their delayed implementation",
+      "drug_ids": [
+        "isotretinoin"
+      ],
+      "rule_ids": [
+        "FED-REMS"
+      ],
+      "distinct_from_existing_bank": "Time-sensitive current REMS implementation task absent from the bank.",
+      "smart_guess_resistance": "All options use real 2026 iPLEDGE events; timing, not product notoriety, decides."
+    },
+    {
+      "question_id": "MA-Q-0205",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "REMS",
+      "subtopic": "Restricted-product matrix",
+      "intended_decision_path": "Identify each product -> Determine current REMS/restricted-distribution status -> Account for the clozapine REMS removal",
+      "drug_ids": [
+        "isotretinoin",
+        "mifepristone",
+        "sodium-oxybate",
+        "clozapine",
+        "warfarin"
+      ],
+      "rule_ids": [
+        "FED-REMS"
+      ],
+      "distinct_from_existing_bank": "Cross-product current-status matrix; Q0106 and Q0109 are single-product items.",
+      "smart_guess_resistance": "Three well-known restricted products compete with a formerly restricted product and a high-risk ordinary drug."
+    },
+    {
+      "question_id": "MA-Q-0206",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Long-term care",
+      "subtopic": "Emergency-kit analgesic limits",
+      "intended_decision_path": "Place the facility in the 101-150 bed tier -> Use the 75-unit analgesic cap -> Sum each proposed real-drug configuration",
+      "drug_ids": [
+        "morphine",
+        "oxycodone",
+        "hydromorphone"
+      ],
+      "rule_ids": [
+        "MA-LTC-EMERGENCY-KIT"
+      ],
+      "distinct_from_existing_bank": "Real-drug aggregate-count decision rather than Q0149's single numerical recall.",
+      "smart_guess_resistance": "Correct and incorrect configurations differ by small totals around the exact cap."
+    },
+    {
+      "question_id": "MA-Q-0207",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Long-term care",
+      "subtopic": "Emergency-kit sedative/anticonvulsant limits",
+      "intended_decision_path": "Identify the 101-150 bed tier -> Apply the 25-unit sedative/anticonvulsant category cap -> Sum each proposed configuration",
+      "drug_ids": [
+        "lorazepam",
+        "alprazolam",
+        "pregabalin"
+      ],
+      "rule_ids": [
+        "MA-LTC-EMERGENCY-KIT"
+      ],
+      "distinct_from_existing_bank": "Separate drug category and cap from Q0206 analgesics.",
+      "smart_guess_resistance": "All options use plausible controlled sedative/anticonvulsant products and close totals."
+    },
+    {
+      "question_id": "MA-Q-0208",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Hospice pharmacy",
+      "subtopic": "Acute-use drug categories",
+      "intended_decision_path": "Place 18 beds in the 11-20 tier -> Map each drug category to its separate cap -> Reject shifting unused capacity across categories",
+      "drug_ids": [
+        "morphine",
+        "lorazepam"
+      ],
+      "rule_ids": [
+        "MA-HOSPICE-ACUTE"
+      ],
+      "distinct_from_existing_bank": "Three-category hospice cap matrix rather than one-number recall.",
+      "smart_guess_resistance": "All values cluster at or near the official limits."
+    },
+    {
+      "question_id": "MA-Q-0209",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 4,
+      "topic": "Hospice pharmacy",
+      "subtopic": "Bridge-supply drug scenarios",
+      "intended_decision_path": "Identify acute palliative bridge use -> Apply pharmacy ownership and prescription reconciliation -> Reject routine-stock substitution",
+      "drug_ids": [
+        "morphine",
+        "lorazepam"
+      ],
+      "rule_ids": [
+        "MA-HOSPICE-ACUTE"
+      ],
+      "distinct_from_existing_bank": "Purpose/accountability pathway separate from Q0208 category limits.",
+      "smart_guess_resistance": "Correct and incorrect scenarios all occur in realistic inpatient hospice operations."
+    },
+    {
+      "question_id": "MA-Q-0210",
+      "part": "DRUG_TRIGGERED",
+      "question_type": "SATA",
+      "difficulty": 5,
+      "topic": "Technician scope",
+      "subtopic": "Cross-credential drug stocking",
+      "intended_decision_path": "Classify each technician credential -> Classify each drug schedule/PMP status -> Apply verification and supervision conditions independently",
+      "drug_ids": [
+        "alprazolam",
+        "methylphenidate",
+        "warfarin",
+        "gabapentin"
+      ],
+      "rule_ids": [
+        "MA-ADD-TECH",
+        "MA-PMP-REPORTING"
+      ],
+      "distinct_from_existing_bank": "Capstone cross-credential matrix synthesizes three separate new ADD stocking pathways.",
+      "smart_guess_resistance": "Every option is a close actor/drug pairing differing by one controlling fact."
+    }
+  ]
+}

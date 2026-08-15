@@ -1,0 +1,76 @@
+{
+  "question_id": "MA-Q-0200",
+  "family_id": "B2_DRUG_MCSR_NO_DEA_MATRIX",
+  "area": 1,
+  "topic": "Prescriber authority",
+  "subtopic": "MCSR/DEA drug matrix",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts practitioner has a valid professional license and MCSR authorizing Schedule VI activity but does not yet have a DEA registration. Which prescriptions are within that Schedule VI-only credential situation, assuming no other scope problem? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Warfarin"
+    },
+    {
+      "id": "B",
+      "text": "Insulin glargine"
+    },
+    {
+      "id": "C",
+      "text": "Gabapentin"
+    },
+    {
+      "id": "D",
+      "text": "Pregabalin"
+    },
+    {
+      "id": "E",
+      "text": "Methylphenidate"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "An MCSR-only practitioner can conduct approved Schedule VI activity, but federally controlled Schedules II-V require corresponding DEA registration.",
+    "choice_analysis": {
+      "A": "Warfarin is Massachusetts Schedule VI.",
+      "B": "Insulin glargine is an ordinary Schedule VI prescription drug.",
+      "C": "Gabapentin is Massachusetts Schedule VI even though it is PMP-reportable.",
+      "D": "Pregabalin is federal Schedule V and requires DEA authority.",
+      "E": "Methylphenidate is federal Schedule II and requires DEA authority."
+    },
+    "related_facts": [
+      "Gabapentin's PMP status does not make it federally controlled."
+    ],
+    "mpje_trap": "Using MassPAT reporting as a proxy for DEA scheduling."
+  },
+  "rule_ids": [
+    "MA-MCSR-DEA"
+  ],
+  "drug_ids": [
+    "warfarin",
+    "insulin-glargine",
+    "gabapentin",
+    "pregabalin",
+    "methylphenidate"
+  ],
+  "reasoning_steps": [
+    "Classify each drug",
+    "Separate Massachusetts Schedule VI from federal II-V",
+    "Apply MCSR-only versus MCSR+DEA authority"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-14",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

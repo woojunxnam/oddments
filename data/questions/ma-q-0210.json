@@ -1,0 +1,76 @@
+{
+  "question_id": "MA-Q-0210",
+  "family_id": "B2_DRUG_ADD_CREDENTIAL_CAPSTONE",
+  "area": 1,
+  "topic": "Technician scope",
+  "subtopic": "Cross-credential drug stocking",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At an eligible Massachusetts hospital ADD, evaluate each stocking action independently. Which are permitted under the current technician stocking policy? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "A PTT loads pharmacist-verified alprazolam with electronic validation under pharmacist direction/supervision"
+    },
+    {
+      "id": "B",
+      "text": "A PTT loads pharmacist-verified methylphenidate because the pharmacist is available by phone"
+    },
+    {
+      "id": "C",
+      "text": "A licensed non-PTT technician under pharmacist supervision loads pharmacist-verified methylphenidate with electronic validation"
+    },
+    {
+      "id": "D",
+      "text": "A nationally certified licensed technician, without prior pharmacist verification, transfers sealed non-patient-specific warfarin using electronic validation"
+    },
+    {
+      "id": "E",
+      "text": "A nationally certified licensed technician, without prior pharmacist verification, uses the same shortcut for gabapentin"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "ADD stocking authority depends on the exact credential, schedule, verification status, and for the certified-tech shortcut, PMP status.",
+    "choice_analysis": {
+      "A": "PTTs may stock verified Schedule III-VI.",
+      "B": "PTTs may not use this pathway for Schedule II.",
+      "C": "Licensed non-PTT technicians may stock verified Schedule II-VI.",
+      "D": "That fits the non-PMP Schedule VI shortcut.",
+      "E": "PMP drugs such as gabapentin are excluded."
+    },
+    "related_facts": [
+      "Electronic validation is a common safeguard across these stocking pathways."
+    ],
+    "mpje_trap": "Assuming 'technician' is one legal role or that national certification erases the gabapentin exclusion."
+  },
+  "rule_ids": [
+    "MA-ADD-TECH",
+    "MA-PMP-REPORTING"
+  ],
+  "drug_ids": [
+    "alprazolam",
+    "methylphenidate",
+    "warfarin",
+    "gabapentin"
+  ],
+  "reasoning_steps": [
+    "Classify each technician credential",
+    "Classify each drug schedule/PMP status",
+    "Apply verification and supervision conditions independently"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-14",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

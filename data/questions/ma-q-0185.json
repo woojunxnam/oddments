@@ -1,0 +1,75 @@
+{
+  "question_id": "MA-Q-0185",
+  "family_id": "B2_DRUG_CII_FAX_MATRIX",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "C-II fax exception matrix",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "Each option describes a faxed Schedule II prescription. In which cases may the fax serve as the original under a specific federal exception, assuming all other requirements are satisfied? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Methylphenidate for a resident of a long-term-care facility"
+    },
+    {
+      "id": "B",
+      "text": "Oxycodone for a hospice patient when the prescription indicates hospice status"
+    },
+    {
+      "id": "C",
+      "text": "Fentanyl to be compounded for direct continuous intravenous infusion"
+    },
+    {
+      "id": "D",
+      "text": "Dexmethylphenidate for a hospice patient, relying only on hospice status"
+    },
+    {
+      "id": "E",
+      "text": "Oxycodone tablets for a routine ambulatory patient with no LTCF, hospice, or qualifying infusion facts"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "Schedule II status alone is insufficient; LTCF status, hospice+narcotic status, or a qualifying compounded narcotic route triggers the fax-as-original exceptions.",
+    "choice_analysis": {
+      "A": "The LTCF exception applies to a C-II prescription without a narcotic-only limit.",
+      "B": "A C-II narcotic hospice prescription can qualify.",
+      "C": "A qualifying C-II narcotic compounded infusion can qualify.",
+      "D": "The hospice exception is for a C-II narcotic; this stimulant is nonnarcotic.",
+      "E": "The ordinary fax is not itself the original."
+    },
+    "related_facts": [
+      "The LTCF exception is not limited to narcotics."
+    ],
+    "mpje_trap": "Using one exception's narcotic requirement for all faxed C-II prescriptions."
+  },
+  "rule_ids": [
+    "FED-CII-FAX"
+  ],
+  "drug_ids": [
+    "methylphenidate",
+    "oxycodone",
+    "fentanyl",
+    "dexmethylphenidate"
+  ],
+  "reasoning_steps": [
+    "Recognize that every option is Schedule II",
+    "Classify setting, narcotic status, and formulation",
+    "Apply the matching fax exception"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-14",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}
