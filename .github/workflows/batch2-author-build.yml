@@ -88,8 +88,26 @@ jobs:
             git commit -m 'Build Batch 2 Q0131-Q0210 as audit pending'
           fi
 
-      - name: Exact-head validate_all
-        run: python scripts/validate_all.py
+      - name: Exact-head validate_all diagnostic
+        id: exact_validate
+        shell: bash
+        run: |
+          set +e
+          python scripts/validate_all.py 2>&1 | tee exact-head-validate.log
+          status=${PIPESTATUS[0]}
+          echo "exit_code=${status}" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload exact-head validator log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-head-validator-log
+          path: exact-head-validate.log
+          if-no-files-found: error
+
+      - name: Exact-head require validate_all success
+        run: test '${{ steps.exact_validate.outputs.exit_code }}' = '0'
 
       - name: Exact-head pytest
         run: python -m pytest -q
