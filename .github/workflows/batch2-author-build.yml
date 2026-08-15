@@ -9,6 +9,7 @@ on:
       - 'repair_specs/batch2/**'
       - 'scripts/build_batch2_content.py'
       - 'scripts/repair_batch2_quality.py'
+      - 'scripts/repair_batch2_numeric_option_sets.py'
       - '.github/workflows/batch2-author-build.yml'
 
 permissions:
@@ -43,6 +44,7 @@ jobs:
         run: |
           python scripts/build_batch2_content.py
           python scripts/repair_batch2_quality.py
+          python scripts/repair_batch2_numeric_option_sets.py
 
       - name: Refresh canonical content hashes
         run: python scripts/update_content_hashes.py
