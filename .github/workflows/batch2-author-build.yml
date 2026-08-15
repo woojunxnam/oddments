@@ -8,6 +8,7 @@ on:
     paths:
       - 'repair_specs/batch2/**'
       - 'scripts/build_batch2_content.py'
+      - 'scripts/repair_batch2_quality.py'
       - '.github/workflows/batch2-author-build.yml'
 
 permissions:
@@ -39,7 +40,9 @@ jobs:
         run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
 
       - name: Build Batch 2 canonical source
-        run: python scripts/build_batch2_content.py
+        run: |
+          python scripts/build_batch2_content.py
+          python scripts/repair_batch2_quality.py
 
       - name: Refresh canonical content hashes
         run: python scripts/update_content_hashes.py
@@ -68,9 +71,8 @@ jobs:
           assert all(q['verification_status']=='AUDIT_PENDING' for q in qs)
           assert all(q['development_fixture'] is True for q in qs)
           preview=json.loads(Path('site/generated/questions.json').read_text())
-          # generated full-bank artifact can contain fixtures; public release boundary is governed by release config/allowlist.
           release=json.loads(Path('data/release_requirements.json').read_text())
-          print('Batch2 pending:',len(qs),'release policy loaded:',bool(release))
+          print('Batch2 pending:',len(qs),'release policy loaded:',bool(release),'generated snapshot:',len(preview))
           PY
 
       - name: Commit deterministic generated content
@@ -88,6 +90,7 @@ jobs:
         run: |
           python scripts/validate_all.py
           python -m pytest -q
+          python scripts/check_structural_patterns.py
           python scripts/generate_artifacts.py --write
           git diff --exit-code
 
