@@ -118,11 +118,27 @@ jobs:
       - name: Exact-head regenerate tracked artifacts
         run: python scripts/generate_artifacts.py --write
 
-      - name: Exact-head require clean tree
+      - name: Capture exact-head clean-tree diagnostics
+        if: always()
+        shell: bash
         run: |
+          mkdir -p /tmp/exact-head-clean-tree
+          git status --short > /tmp/exact-head-clean-tree/status.txt
+          git diff --name-only > /tmp/exact-head-clean-tree/diff-names.txt
+          git diff --no-ext-diff --binary > /tmp/exact-head-clean-tree/diff.patch
           git status --short
           git diff --name-only
-          git diff --exit-code
+
+      - name: Upload exact-head clean-tree diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-head-clean-tree-diagnostics
+          path: /tmp/exact-head-clean-tree/
+          if-no-files-found: error
+
+      - name: Exact-head require clean tree
+        run: git diff --exit-code
 
       - name: Push exact validated head
         run: git push origin HEAD:author/mpje-expansion-batch2
