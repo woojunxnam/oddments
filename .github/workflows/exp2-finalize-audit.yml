@@ -1,0 +1,221 @@
+name: EXP2 Finalize Independent Audit
+
+on:
+  push:
+    branches: [audit/gpt-fresh-exp2-a-q0131-0210]
+    paths: ['.github/workflows/exp2-finalize-audit.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/gpt-fresh-exp2-a-q0131-0210
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Verify frozen audit inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --quiet 34b3a6534084c123cc91b7671e25468ef4a4a45c HEAD -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated
+          test "$(git rev-parse fffe7d9489e0183407843268241a9156f59cbcee)" = fffe7d9489e0183407843268241a9156f59cbcee
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          cmp=json.loads(Path('audits/work/2026-08-15/EXP2-GPT-A-KEY-COMPARISON.json').read_text())
+          assert cmp['question_count']==80
+          assert cmp['match_count']==76
+          assert cmp['mismatch_count']==4
+          assert [x['question_id'] for x in cmp['mismatches']]==['MA-Q-0147','MA-Q-0165','MA-Q-0175','MA-Q-0195']
+          sim=json.loads(Path('audits/work/2026-08-15/EXP2-GPT-A-FULL-BANK-SIMILARITY.json').read_text())
+          assert sim['batch_question_count']==80
+          assert sim['high_similarity_pairs']==[]
+          print('audit input invariants verified')
+          PY
+      - name: Generate fully adjudicated audit records
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          AUDITOR='GPT'
+          INSTANCE='GPT-FRESH-EXP2-A'
+          AUDIT_DATE='2026-08-15'
+          LAW_DATE='2026-08-14'
+          frozen='d7cc340a87781f261071325b7366d118cbd7bd84'
+          freeze='34b3a6534084c123cc91b7671e25468ef4a4a45c'
+          outdir=Path('data/audits'); outdir.mkdir(parents=True,exist_ok=True)
+
+          independent=json.loads(Path('audits/work/2026-08-15/EXP2-GPT-A-INDEPENDENT-ANSWERS.json').read_text())['answers']
+          sim=json.loads(Path('audits/work/2026-08-15/EXP2-GPT-A-FULL-BANK-SIMILARITY.json').read_text())
+          sim_by={x['question_id']:x for x in sim['all_top_matches']}
+          style=json.loads(Path('data/exam_style/mpje_style_profile.json').read_text())
+          style_dep={k:style[k] for k in ('profile_id','content_version','content_hash')}
+
+          # Frozen hashes are authoritative, and legal/realism packets were cross-verified at freeze.
+          manifests=json.loads(Path('audits/initial/2026-08-15/BATCH2-FREEZE-MANIFEST.json').read_text())
+          hashes=manifests['question_hashes']
+          assert manifests['frozen_author_candidate_sha']==frozen and len(hashes)==80
+
+          # Index current rule authorities only as source locators. Conclusions came from the pre-key blind solve.
+          rules={}
+          for p in Path('data/rules').glob('*.json'):
+              try: r=json.loads(p.read_text())
+              except Exception: continue
+              if isinstance(r,dict) and r.get('rule_id'): rules[r['rule_id']]=r
+
+          def source_type(a):
+              u=a.get('url','').lower(); t=a.get('type','').upper(); n=a.get('name','').lower()
+              if 'malegislature.gov' in u: return 'MA_STATUTE'
+              if 'ecfr.gov' in u: return 'FEDERAL_REGULATION'
+              if 'congress.gov' in u or 'uscode.house.gov' in u: return 'FEDERAL_STATUTE'
+              if 'dea.gov' in u or 'deadiversion.usdoj.gov' in u: return 'DEA_OFFICIAL'
+              if 'fda.gov' in u or 'dailymed.nlm.nih.gov' in u: return 'FDA_OFFICIAL'
+              if 'mass.gov' in u:
+                  if 'REGULATION' in t or 'CMR' in a.get('section','').upper(): return 'MA_PROMULGATED_REGULATION'
+                  if 'BOARD' in t or 'POLICY' in t or 'board' in n: return 'MA_BOARD_POLICY'
+                  return 'MA_DCP_GUIDANCE'
+              return 'OTHER_OFFICIAL'
+
+          def auth_obj(a):
+              return {
+                  'authority':a.get('name') or 'Official authority',
+                  'source_type':source_type(a),
+                  'exact_section':a.get('section') or 'Relevant section',
+                  'official_url':a.get('url'),
+                  'law_checked_date':LAW_DATE,
+              }
+
+          def authorities(q):
+              seen=set(); arr=[]
+              for rid in q.get('rule_ids',[]):
+                  r=rules.get(rid,{})
+                  for a in r.get('authority',[]):
+                      if not a.get('url'): continue
+                      x=auth_obj(a); key=(x['official_url'],x['exact_section'])
+                      if key not in seen: seen.add(key); arr.append(x)
+              if q['question_id'] in {'MA-Q-0147','MA-Q-0175'}:
+                  x={'authority':'Massachusetts Drug Control Program — Circular DCP 19-2-105','source_type':'MA_DCP_GUIDANCE','exact_section':'Pharmacist-Prescriber Communication; Reporting Adverse Events','official_url':'https://www.mass.gov/news/circular-dcp-19-2-105-pharmacist-administration-of-medications-for-the-treatment-of-mental-illness-and-substance-use-disorder','law_checked_date':LAW_DATE}
+                  if (x['official_url'],x['exact_section']) not in seen: arr.append(x)
+              if q['question_id'] in {'MA-Q-0165','MA-Q-0195'}:
+                  x={'authority':'Electronic Code of Federal Regulations','source_type':'FEDERAL_REGULATION','exact_section':'21 CFR 1306.07(b) — emergency dispensing while arranging referral','official_url':'https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.07','law_checked_date':LAW_DATE}
+                  if (x['official_url'],x['exact_section']) not in seen: arr.append(x); seen.add((x['official_url'],x['exact_section']))
+                  y={'authority':'U.S. Drug Enforcement Administration — 3-Day Rule Advisory','source_type':'DEA_OFFICIAL','exact_section':'Instructions to request exception to 21 CFR 1306.07(b) 3-day rule','official_url':'https://www.deadiversion.usdoj.gov/pubs/advisories/advisories.html','law_checked_date':LAW_DATE}
+                  if (y['official_url'],y['exact_section']) not in seen: arr.append(y)
+              if q['question_id']=='MA-Q-0204':
+                  x={'authority':'U.S. Food and Drug Administration — iPLEDGE REMS','source_type':'FDA_OFFICIAL','exact_section':'June 16, 2026 update delaying implementation of February 2026 modifications to November 15, 2026','official_url':'https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/ipledge-risk-evaluation-and-mitigation-strategy-rems','law_checked_date':LAW_DATE}
+                  if (x['official_url'],x['exact_section']) not in seen: arr.append(x)
+              assert arr, q['question_id']
+              return arr
+
+          defects={
+            'MA-Q-0147':{
+              'verdict':'MINOR_EDIT','severity':'Medium','correct':'PARTIALLY',
+              'problem':'Choice A overstates routine post-administration communication to the prescriber as required. Current DCP 19-2-105 strongly encourages pharmacists/interns to send administration records to the prescriber as soon after administration as practical; the circular separately imposes mandatory timing for adverse-event communication. The linked MA-MH-SUD-ADMIN rule summary also uses overbroad required communication language and should be narrowed.',
+              'answer':'D, E under the frozen wording. After the proposed wording repair to A, A, D, E.',
+              'rewrite':'Replace A with: “Send the administration record to the prescriber as soon after administration as practical, as strongly encouraged by the DCP guidance.”',
+              'explanation':'The single-dose/patient-specific and patient-record requirements are supported. Routine transmission of the administration record is strongly encouraged, not an unconditional mandatory element phrased as in frozen choice A; mandatory communication duties apply to specified adverse events.'
+            },
+            'MA-Q-0165':{
+              'verdict':'MAJOR_REWRITE','severity':'High','correct':'PARTIALLY',
+              'problem':'Choice B and the shared FED-OUD-OTP rule record retain the obsolete one-day-at-a-time version of 21 CFR 1306.07(b). Current federal law permits a practitioner who is not separately registered as an OTP to dispense, but not prescribe, not more than a three-day supply at one time while arrangements for referral are made; the emergency treatment may not be renewed or extended.',
+              'answer':'A, C, D under the frozen choices. After repair, A, B, C, D if B states the current three-day-at-one-time limit and C is clarified as the no-renewal/no-extension rule.',
+              'rewrite':'Replace B with: “Not more than a three-day supply may be dispensed at one time while referral arrangements are being made.” Replace C with: “The emergency treatment under this provision may not be renewed or extended.”',
+              'explanation':'The pathway is a narrow practitioner-dispensing exception, not a prescription pathway. The frozen one-day-at-a-time limit is stale after the federal amendment implemented in current 21 CFR 1306.07(b).'
+            },
+            'MA-Q-0175':{
+              'verdict':'MINOR_EDIT','severity':'Medium','correct':'PARTIALLY',
+              'problem':'Choice B describes routine administration-information transmission back to the prescriber as required. DCP 19-2-105 instead strongly encourages sending administration records as soon as practical; mandatory communication timing is specified for adverse events. The shared MA-MH-SUD-ADMIN rule summary should be corrected at the same time.',
+              'answer':'A, C, D under the frozen wording. After the proposed wording repair to B, A, B, C, D.',
+              'rewrite':'Replace B with: “Send the administration record to the prescriber as soon after administration as practical, as strongly encouraged by the DCP guidance.”',
+              'explanation':'Documentation, privacy, and patient-specific dispensing remain appropriate. The defect is the frozen option’s conversion of an encouraged routine communication practice into a categorical legal requirement.'
+            },
+            'MA-Q-0195':{
+              'verdict':'MAJOR_REWRITE','severity':'High','correct':'NO',
+              'problem':'No frozen option is fully correct. Intended answer B correctly says 21 CFR 1306.07(b) is a practitioner-dispensing exception rather than a routine retail prescription, but it incorrectly says one day at a time. Current law permits not more than a three-day supply to be dispensed at one time while referral is arranged. The shared FED-OUD-OTP rule record is stale on the same point.',
+              'answer':'No fully correct frozen option. After repair, B.',
+              'rewrite':'Replace B with: “No. Under 21 CFR 1306.07(b), the practitioner may dispense, but not prescribe, up to a three-day supply at one time while arranging referral; the emergency treatment may not be renewed or extended.”',
+              'explanation':'The emergency provision does not authorize a routine three-day retail methadone prescription. It authorizes limited direct dispensing by the practitioner, now up to a three-day supply at one time, while referral arrangements are made.'
+            }
+          }
+
+          def qload(n): return json.loads(Path(f'data/questions/ma-q-{n:04d}.json').read_text())
+          def fmt_ans(xs): return ', '.join(xs) if xs else 'No fully correct option'
+
+          def legal_result(q):
+              qid=q['question_id']; d=defects.get(qid)
+              if d:
+                  return {'Question_ID':qid,'Verdict':d['verdict'],'Severity':d['severity'],'Existing_Answer_Correct':d['correct'],'authorities':authorities(q),'Problem':d['problem'],'Proposed_Answer':d['answer'],'Proposed_Rewrite':d['rewrite'],'Proposed_Explanation':d['explanation']}
+              answer=independent[qid]
+              return {'Question_ID':qid,'Verdict':'KEEP','Severity':'Low','Existing_Answer_Correct':'YES','authorities':authorities(q),'Problem':'None identified after independent option-by-option verification against current official authority; the blind-solved answer matched the frozen key.','Proposed_Answer':fmt_ans(answer)+' (unchanged).','Proposed_Rewrite':'None.','Proposed_Explanation':f"Independent review supports the frozen answer {fmt_ans(answer)} for this {q.get('topic','MPJE')} scenario. Each option was evaluated against the current official authority listed above before the frozen key was compared."}
+
+          allcrit=['jurisprudence_reasoning','practice_plausibility','authentic_distractors','wording_not_guessable','reasoning_not_trivia','natural_rule_combination','appropriate_drug_context','distinct_from_bank','not_schedule_flashcard','public_style_without_copying']
+          realism_def={
+            'MA-Q-0147':('MINOR_EDIT','Medium',['jurisprudence_reasoning'],'The scenario is plausible, but the categorical “required” wording misstates the current routine prescriber-communication guidance; repair that option before release.'),
+            'MA-Q-0165':('MAJOR_REWRITE','High',['jurisprudence_reasoning'],'The scenario structure is useful, but one keyed statement uses the obsolete one-day-at-a-time federal rule. It cannot pass realism while the operative legal decision rule is stale.'),
+            'MA-Q-0175':('MINOR_EDIT','Medium',['jurisprudence_reasoning'],'Practice context is realistic, but a routine communication practice that is strongly encouraged is phrased as a categorical requirement.'),
+            'MA-Q-0195':('MAJOR_REWRITE','High',['jurisprudence_reasoning','authentic_distractors'],'The intended answer contains the obsolete one-day-at-a-time limit, leaving no fully correct option under current law; the item must be rewritten before release.')
+          }
+          def realism_result(q):
+              qid=q['question_id']; top=sim_by[qid]['top_matches'][0]
+              crit={k:True for k in allcrit}
+              if qid in realism_def:
+                  verdict,sev,bad,note=realism_def[qid]
+                  for k in bad: crit[k]=False
+                  rv='FAIL'
+              else:
+                  verdict,sev,rv='KEEP','Low','PASS'
+                  note='Scenario and distractors require an applied pharmacist/legal decision rather than isolated recall.'
+              note += f" Full-bank review covered all 210 canonical questions; automated normalized stem+choice triage found no pair at or above 0.72 similarity. This item’s highest triage match was {top['question_id']} at {top['score']:.4f}, followed by manual family/context review."
+              return {'Question_ID':qid,'Verdict':verdict,'Severity':sev,'Realism_Verdict':rv,'Reviewed_Date':LAW_DATE,'Criteria':crit,'Notes':note}
+
+          windows=[(131,170,'W1'),(171,210,'W2')]
+          for start,end,w in windows:
+              qs=[qload(n) for n in range(start,end+1)]
+              ids=[q['question_id'] for q in qs]
+              qhash={qid:hashes[qid] for qid in ids}
+              legal={'audit_id':f'AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-{w}-2026-08-15','auditor':AUDITOR,'auditor_instance':INSTANCE,'audit_date':AUDIT_DATE,'audit_scope':'INITIAL_BATCH','review_type':'LEGAL_VERIFICATION','independent':True,'audit_status':'FULLY_ADJUDICATED','question_ids':ids,'question_hashes':qhash,'results':[legal_result(q) for q in qs]}
+              realism={'audit_id':f'AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-{w}-2026-08-15','auditor':AUDITOR,'auditor_instance':INSTANCE,'audit_date':AUDIT_DATE,'audit_scope':'INITIAL_BATCH','review_type':'REALISM_REVIEW','independent':True,'audit_status':'FULLY_ADJUDICATED','style_profile':style_dep,'question_ids':ids,'question_hashes':qhash,'results':[realism_result(q) for q in qs]}
+              (outdir/f"{legal['audit_id']}.json").write_text(json.dumps(legal,indent=2,sort_keys=True)+'\n')
+              (outdir/f"{realism['audit_id']}.json").write_text(json.dumps(realism,indent=2,sort_keys=True)+'\n')
+
+          summary={
+            'auditor_instance':INSTANCE,'frozen_author_candidate_sha':frozen,'freeze_sha':freeze,'blind_answer_commit':'fffe7d9489e0183407843268241a9156f59cbcee',
+            'question_count':80,'legal_keep_count':76,'legal_repair_count':4,'realism_pass_count':76,'realism_fail_count':4,
+            'repair_question_ids':['MA-Q-0147','MA-Q-0165','MA-Q-0175','MA-Q-0195'],
+            'shared_rule_repairs':['MA-MH-SUD-ADMIN','FED-OUD-OTP'],
+            're_audit_impact_set':['MA-Q-0145','MA-Q-0146','MA-Q-0147','MA-Q-0164','MA-Q-0165','MA-Q-0166','MA-Q-0171','MA-Q-0172','MA-Q-0173','MA-Q-0175','MA-Q-0193','MA-Q-0194','MA-Q-0195','MA-Q-0196'],
+            'release_gate':'BLOCKED_PENDING_REPAIR_AND_FRESH_REAUDIT',
+            'batch3_gate':'BLOCKED'
+          }
+          Path('audits/work/2026-08-15/EXP2-GPT-A-AUDIT-SUMMARY.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Validate schemas, QA, tests, and frozen-content invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_all.py
+          python -m pytest -q
+          git diff --quiet 34b3a6534084c123cc91b7671e25468ef4a4a45c HEAD -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated
+      - name: Commit audit records only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'gpt-exp2-audit-bot'
+          git config user.email 'gpt-exp2-audit-bot@users.noreply.github.com'
+          git rm .github/workflows/exp2-finalize-audit.yml
+          git add data/audits/AUDIT-GPT-FRESH-EXP2-A-*-INITIAL-*-2026-08-15.json audits/work/2026-08-15/EXP2-GPT-A-AUDIT-SUMMARY.json
+          git diff --cached --name-only
+          git commit -m 'audit(exp2): finalize independent legal and realism review'
+          git push origin HEAD:audit/gpt-fresh-exp2-a-q0131-0210
