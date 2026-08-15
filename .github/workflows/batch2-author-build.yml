@@ -88,12 +88,22 @@ jobs:
             git commit -m 'Build Batch 2 Q0131-Q0210 as audit pending'
           fi
 
-      - name: Exact-head validation after commit
+      - name: Exact-head validate_all
+        run: python scripts/validate_all.py
+
+      - name: Exact-head pytest
+        run: python -m pytest -q
+
+      - name: Exact-head structural patterns
+        run: python scripts/check_structural_patterns.py
+
+      - name: Exact-head regenerate tracked artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Exact-head require clean tree
         run: |
-          python scripts/validate_all.py
-          python -m pytest -q
-          python scripts/check_structural_patterns.py
-          python scripts/generate_artifacts.py --write
+          git status --short
+          git diff --name-only
           git diff --exit-code
 
       - name: Push exact validated head
