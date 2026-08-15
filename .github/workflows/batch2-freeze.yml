@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
       - name: Verify frozen author candidate
         shell: bash
         run: |
@@ -66,9 +69,10 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import hashlib, json
+          import hashlib, json, sys
           from pathlib import Path
-          from scripts.qa_common import question_audit_hash
+          sys.path.insert(0, str(Path('scripts').resolve()))
+          from qa_common import question_audit_hash
 
           frozen='d7cc340a87781f261071325b7366d118cbd7bd84'
           root=Path('audits/initial/2026-08-15')
