@@ -27,6 +27,15 @@ jobs:
           node-version: '22'
       - run: python -m pip install -q -r requirements-dev.txt
       - run: python scripts/build_batch2_content.py && python scripts/repair_batch2_quality.py && python scripts/update_content_hashes.py && python scripts/generate_artifacts.py --write
+      - name: Print duplicate and structural reports
+        shell: bash
+        run: |
+          echo '=== duplicate_report.json ==='
+          cat duplicate_report.json
+          echo '=== structural_pattern_report.json ==='
+          cat structural_pattern_report.json
+          echo '=== answer_distribution_report.json ==='
+          cat answer_distribution_report.json
       - name: Annotated validate_all diagnostics
         shell: bash
         run: |
