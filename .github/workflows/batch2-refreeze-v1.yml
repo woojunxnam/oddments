@@ -1,0 +1,166 @@
+name: Batch 2 Re-freeze Impact14
+
+on:
+  push:
+    branches: [freeze/mpje-expansion-batch2-v1]
+    paths: ['.github/workflows/batch2-refreeze-v1.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  refreeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: freeze/mpje-expansion-batch2-v1
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-dev.txt
+
+      - name: Verify repaired candidate is frozen
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPAIR=1c85163367a82c06061f3d5be3f7d05c3748bca2
+          git cat-file -e "$REPAIR^{commit}"
+          git diff --quiet "$REPAIR" HEAD -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated answer_distribution_report.json duplicate_report.json structural_pattern_report.json audits/repair/2026-08-15/BATCH2-REPAIR-V1-MANIFEST.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for n in range(131,211):
+              q=json.loads(Path(f'data/questions/ma-q-{n:04d}.json').read_text())
+              assert q['lifecycle_status']=='AUDIT_PENDING'
+              assert q['verification_status']=='AUDIT_PENDING'
+              assert q['development_fixture'] is True
+          print('repaired candidate frozen; 80/80 questions remain pending')
+          PY
+
+      - name: Generate fresh-auditor source packets and re-freeze manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,sys
+          from pathlib import Path
+          sys.path.insert(0,str(Path('scripts').resolve()))
+          from qa_common import question_audit_hash
+          from release_context import style_profile_snapshot
+
+          INITIAL='34b3a6534084c123cc91b7671e25468ef4a4a45c'
+          REPAIR='1c85163367a82c06061f3d5be3f7d05c3748bca2'
+          INSTANCE='GPT-FRESH-EXP2-B'
+          impact=['MA-Q-0145','MA-Q-0146','MA-Q-0147','MA-Q-0164','MA-Q-0165','MA-Q-0166','MA-Q-0171','MA-Q-0172','MA-Q-0173','MA-Q-0175','MA-Q-0193','MA-Q-0194','MA-Q-0195','MA-Q-0196']
+          expected_changed={'MA-Q-0147','MA-Q-0165','MA-Q-0175','MA-Q-0195'}
+          root=Path('audits/reaudit/2026-08-15'); root.mkdir(parents=True,exist_ok=True)
+          initial=json.loads(Path('audits/initial/2026-08-15/BATCH2-FREEZE-MANIFEST.json').read_text())
+          repair=json.loads(Path('audits/repair/2026-08-15/BATCH2-REPAIR-V1-MANIFEST.json').read_text())
+          assert initial['frozen_author_candidate_sha']=='d7cc340a87781f261071325b7366d118cbd7bd84'
+          assert repair['initial_freeze_sha']==INITIAL
+          assert repair['fresh_reaudit_impact_set']==impact
+
+          questions=[]; new_hashes={}; changed=set(); unchanged=set()
+          for qid in impact:
+              n=int(qid[-4:])
+              q=json.loads(Path(f'data/questions/ma-q-{n:04d}.json').read_text())
+              h=question_audit_hash(q)
+              assert repair['impact_question_hashes'][qid]==h
+              new_hashes[qid]=h
+              questions.append(q)
+              if initial['question_hashes'][qid] != h: changed.add(qid)
+              else: unchanged.add(qid)
+          assert changed==expected_changed, (changed,expected_changed)
+          assert len(unchanged)==10
+
+          # Shared-rule dependency snapshots are frozen separately because question audit hashes do not include rule contents.
+          rule_paths={'MA-MH-SUD-ADMIN':'data/rules/ma-mh-sud-admin.json','FED-OUD-OTP':'data/rules/fed-oud-otp.json'}
+          rule_snapshots={}
+          for rid,path in rule_paths.items():
+              r=json.loads(Path(path).read_text())
+              snap={'content_version':r['content_version'],'content_hash':r['content_hash']}
+              assert snap==repair['shared_rule_repairs'][rid]
+              assert snap['content_version']==2
+              rule_snapshots[rid]=snap
+
+          legal_fields=['Question_ID','Verdict','Severity','Existing_Answer_Correct','authorities','Problem','Proposed_Answer','Proposed_Rewrite','Proposed_Explanation']
+          realism_fields=['Question_ID','Verdict','Severity','Realism_Verdict','Reviewed_Date','Criteria','Notes']
+          common={
+              'auditor':'GPT',
+              'auditor_instance':INSTANCE,
+              'audit_date':'2026-08-15',
+              'audit_scope':'REAUDIT',
+              'independent':True,
+              'audit_status':'STRUCTURAL_TRIAGE_ONLY',
+              'question_ids':impact,
+              'question_hashes':new_hashes,
+              'questions':questions,
+          }
+          legal=dict(common)
+          legal.update({
+              'audit_id':'AUDIT-GPT-FRESH-EXP2-B-LEGAL-REAUDIT-IMPACT14-2026-08-15',
+              'review_type':'LEGAL_VERIFICATION',
+              'result_contract':{'required_fields':legal_fields,'warning':'STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Fresh auditor must independently solve and verify current official law; do not modify canonical questions.'}
+          })
+          realism=dict(common)
+          realism.update({
+              'audit_id':'AUDIT-GPT-FRESH-EXP2-B-REALISM-REAUDIT-IMPACT14-2026-08-15',
+              'review_type':'REALISM_REVIEW',
+              'style_profile':style_profile_snapshot(json.loads(Path('data/exam_style/mpje_style_profile.json').read_text())),
+              'result_contract':{'required_fields':realism_fields,'warning':'STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Fresh auditor must compare against the full canonical bank and must not modify canonical questions.'}
+          })
+          files={
+              'GPT-B-LEGAL-EXP2-REAUDIT-IMPACT14.json':legal,
+              'GPT-B-REALISM-EXP2-REAUDIT-IMPACT14.json':realism,
+          }
+          package_sha={}
+          for name,payload in files.items():
+              p=root/name
+              p.write_text(json.dumps(payload,indent=2,sort_keys=True)+'\n')
+              package_sha[name]=hashlib.sha256(p.read_bytes()).hexdigest()
+
+          manifest={
+              'batch':'EXP2',
+              'initial_frozen_author_candidate_sha':'d7cc340a87781f261071325b7366d118cbd7bd84',
+              'initial_freeze_sha':INITIAL,
+              'repaired_candidate_sha':REPAIR,
+              'fresh_auditor_instance_reserved':INSTANCE,
+              'question_ids':impact,
+              'question_hashes':new_hashes,
+              'question_hash_changes_from_initial_freeze':sorted(changed),
+              'question_hash_unchanged_but_rule_dependency_changed':sorted(unchanged),
+              'shared_rule_dependencies':rule_snapshots,
+              'packages':package_sha,
+              'gates':{
+                  'release':'BLOCKED_PENDING_FRESH_REAUDIT',
+                  'batch3':'BLOCKED',
+                  'merge':'BLOCKED',
+                  'public_preview':'BLOCKED'
+              }
+          }
+          (root/'BATCH2-REPAIR-V1-REFREEZE-MANIFEST.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          print('re-freeze verified:',len(impact),'questions;',len(changed),'question hashes changed;',len(unchanged),'unchanged hashes with shared-rule dependency review')
+          PY
+
+      - name: Validate packets, QA, tests, and artifact freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated answer_distribution_report.json duplicate_report.json structural_pattern_report.json audits/repair/2026-08-15/BATCH2-REPAIR-V1-MANIFEST.json
+
+      - name: Commit re-freeze artifacts only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'batch2-refreeze-bot'
+          git config user.email 'batch2-refreeze-bot@users.noreply.github.com'
+          git rm .github/workflows/batch2-refreeze-v1.yml
+          git add audits/reaudit/2026-08-15
+          git diff --cached --name-only
+          git commit -m 'audit(batch2): re-freeze repaired impact14 for fresh audit'
+          git push origin HEAD:freeze/mpje-expansion-batch2-v1
