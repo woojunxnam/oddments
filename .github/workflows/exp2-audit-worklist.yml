@@ -1,0 +1,89 @@
+name: EXP2 Audit Blind Worklist
+
+on:
+  push:
+    branches:
+      - audit/gpt-fresh-exp2-a-q0131-0210
+    paths:
+      - '.github/workflows/exp2-audit-worklist.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/gpt-fresh-exp2-a-q0131-0210
+          fetch-depth: 0
+      - name: Verify freeze base and build blind work files
+        shell: bash
+        run: |
+          set -euo pipefail
+          FREEZE=34b3a6534084c123cc91b7671e25468ef4a4a45c
+          FROZEN_AUTHOR=d7cc340a87781f261071325b7366d118cbd7bd84
+          git cat-file -e "$FREEZE^{commit}"
+          git cat-file -e "$FROZEN_AUTHOR^{commit}"
+          git diff --quiet "$FREEZE" HEAD -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated
+          mkdir -p audits/work/2026-08-15
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          qdir=Path('data/questions')
+          batch=[]
+          bank=[]
+          source_map=[]
+          for p in sorted(qdir.glob('ma-q-*.json')):
+              q=json.loads(p.read_text())
+              n=int(q['question_id'][-4:])
+              bank.append({
+                  'question_id':q['question_id'],
+                  'family_id':q.get('family_id'),
+                  'area':q.get('area'),
+                  'topic':q.get('topic'),
+                  'subtopic':q.get('subtopic'),
+                  'question_type':q.get('question_type'),
+                  'difficulty':q.get('difficulty'),
+                  'stem':q.get('stem'),
+                  'choice_texts':[c['text'] for c in q.get('choices',[])]
+              })
+              if 131 <= n <= 210:
+                  batch.append({
+                      'question_id':q['question_id'],
+                      'family_id':q.get('family_id'),
+                      'area':q.get('area'),
+                      'topic':q.get('topic'),
+                      'subtopic':q.get('subtopic'),
+                      'difficulty':q.get('difficulty'),
+                      'question_type':q.get('question_type'),
+                      'stem':q.get('stem'),
+                      'choices':q.get('choices'),
+                      'rule_ids':q.get('rule_ids',[]),
+                      'drug_ids':q.get('drug_ids',[])
+                  })
+                  source_map.append({
+                      'question_id':q['question_id'],
+                      'rule_ids':q.get('rule_ids',[]),
+                      'drug_ids':q.get('drug_ids',[])
+                  })
+          assert len(batch)==80
+          assert [x['question_id'] for x in batch]==[f'MA-Q-{n:04d}' for n in range(131,211)]
+          out=Path('audits/work/2026-08-15')
+          (out/'EXP2-GPT-A-BLIND-WORKLIST.jsonl').write_text(''.join(json.dumps(x,sort_keys=True)+'\n' for x in batch))
+          (out/'EXP2-GPT-A-FULL-BANK-INDEX.jsonl').write_text(''.join(json.dumps(x,sort_keys=True)+'\n' for x in bank))
+          (out/'EXP2-GPT-A-SOURCE-MAP.json').write_text(json.dumps({'frozen_author_sha':'d7cc340a87781f261071325b7366d118cbd7bd84','freeze_sha':'34b3a6534084c123cc91b7671e25468ef4a4a45c','questions':source_map},indent=2,sort_keys=True)+'\n')
+          print('blind batch',len(batch),'full bank',len(bank))
+          PY
+      - name: Commit work files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'exp2-audit-prep-bot'
+          git config user.email 'exp2-audit-prep-bot@users.noreply.github.com'
+          git rm .github/workflows/exp2-audit-worklist.yml
+          git add audits/work/2026-08-15
+          git commit -m 'audit(exp2): add blind worklist and bank index'
+          git push origin HEAD:audit/gpt-fresh-exp2-a-q0131-0210
