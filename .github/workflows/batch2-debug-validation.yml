@@ -7,6 +7,7 @@ on:
       - '.github/workflows/batch2-debug-validation.yml'
       - 'repair_specs/batch2/**'
       - 'scripts/build_batch2_content.py'
+      - 'scripts/repair_batch2_quality.py'
 
 permissions:
   contents: read
@@ -25,7 +26,7 @@ jobs:
         with:
           node-version: '22'
       - run: python -m pip install -q -r requirements-dev.txt
-      - run: python scripts/build_batch2_content.py && python scripts/update_content_hashes.py && python scripts/generate_artifacts.py --write
+      - run: python scripts/build_batch2_content.py && python scripts/repair_batch2_quality.py && python scripts/update_content_hashes.py && python scripts/generate_artifacts.py --write
       - name: Annotated validate_all diagnostics
         shell: bash
         run: |
@@ -33,7 +34,7 @@ jobs:
           python scripts/validate_all.py > /tmp/validate.log 2>&1
           code=$?
           if [ $code -ne 0 ]; then
-            tail -n 80 /tmp/validate.log | while IFS= read -r line; do echo "::error::$line"; done
+            tail -n 120 /tmp/validate.log | while IFS= read -r line; do echo "::error::$line"; done
             exit $code
           fi
           cat /tmp/validate.log
@@ -45,7 +46,7 @@ jobs:
           python scripts/check_structural_patterns.py > /tmp/structural.log 2>&1
           code=$?
           if [ $code -ne 0 ]; then
-            tail -n 80 /tmp/structural.log | while IFS= read -r line; do echo "::error::$line"; done
+            tail -n 120 /tmp/structural.log | while IFS= read -r line; do echo "::error::$line"; done
             exit $code
           fi
           cat /tmp/structural.log
@@ -57,7 +58,7 @@ jobs:
           python -m pytest -q > /tmp/pytest.log 2>&1
           code=$?
           if [ $code -ne 0 ]; then
-            tail -n 80 /tmp/pytest.log | while IFS= read -r line; do echo "::error::$line"; done
+            tail -n 120 /tmp/pytest.log | while IFS= read -r line; do echo "::error::$line"; done
             exit $code
           fi
           cat /tmp/pytest.log
