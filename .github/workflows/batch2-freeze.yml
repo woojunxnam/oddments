@@ -1,0 +1,134 @@
+name: Batch 2 Freeze Packages
+
+on:
+  push:
+    branches:
+      - freeze/mpje-expansion-batch2
+    paths:
+      - '.github/workflows/batch2-freeze.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out freeze branch
+        uses: actions/checkout@v4
+        with:
+          ref: freeze/mpje-expansion-batch2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify frozen author candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          FROZEN=d7cc340a87781f261071325b7366d118cbd7bd84
+          git cat-file -e "$FROZEN^{commit}"
+          test "$(git rev-parse "$FROZEN")" = "$FROZEN"
+          git diff --quiet "$FROZEN" HEAD -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          qs=[]
+          for p in sorted(Path('data/questions').glob('ma-q-*.json')):
+              q=json.loads(p.read_text())
+              n=int(q['question_id'][-4:])
+              if 131 <= n <= 210:
+                  qs.append(q)
+          assert len(qs)==80, len(qs)
+          assert [q['question_id'] for q in qs] == [f'MA-Q-{n:04d}' for n in range(131,211)]
+          assert all(q['lifecycle_status']=='AUDIT_PENDING' for q in qs)
+          assert all(q['verification_status']=='AUDIT_PENDING' for q in qs)
+          assert all(q['development_fixture'] is True for q in qs)
+          print('frozen candidate verified:', len(qs), 'questions')
+          PY
+
+      - name: Generate frozen audit packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT=audits/initial/2026-08-15
+          mkdir -p "$OUT"
+          python scripts/export_audit_batch.py --auditor GPT --auditor-instance GPT-FRESH-EXP2-A --audit-id AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W1-2026-08-15 --review-type LEGAL_VERIFICATION --audit-scope INITIAL_BATCH --start 130 --count 40 --output "$OUT/GPT-A-LEGAL-EXP2-Q0131-0170.json"
+          python scripts/export_audit_batch.py --auditor GPT --auditor-instance GPT-FRESH-EXP2-A --audit-id AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W1-2026-08-15 --review-type REALISM_REVIEW --audit-scope INITIAL_BATCH --start 130 --count 40 --output "$OUT/GPT-A-REALISM-EXP2-Q0131-0170.json"
+          python scripts/export_audit_batch.py --auditor GPT --auditor-instance GPT-FRESH-EXP2-A --audit-id AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15 --review-type LEGAL_VERIFICATION --audit-scope INITIAL_BATCH --start 170 --count 40 --output "$OUT/GPT-A-LEGAL-EXP2-Q0171-0210.json"
+          python scripts/export_audit_batch.py --auditor GPT --auditor-instance GPT-FRESH-EXP2-A --audit-id AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15 --review-type REALISM_REVIEW --audit-scope INITIAL_BATCH --start 170 --count 40 --output "$OUT/GPT-A-REALISM-EXP2-Q0171-0210.json"
+
+      - name: Verify package hashes and write manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from scripts.qa_common import question_audit_hash
+
+          frozen='d7cc340a87781f261071325b7366d118cbd7bd84'
+          root=Path('audits/initial/2026-08-15')
+          pairs=[
+              ('GPT-A-LEGAL-EXP2-Q0131-0170.json','GPT-A-REALISM-EXP2-Q0131-0170.json',131,170),
+              ('GPT-A-LEGAL-EXP2-Q0171-0210.json','GPT-A-REALISM-EXP2-Q0171-0210.json',171,210),
+          ]
+          all_hashes={}
+          package_sha256={}
+          for legal_name, realism_name, start, end in pairs:
+              legal=json.loads((root/legal_name).read_text())
+              realism=json.loads((root/realism_name).read_text())
+              expected=[f'MA-Q-{n:04d}' for n in range(start,end+1)]
+              assert legal['question_ids']==expected
+              assert realism['question_ids']==expected
+              assert legal['question_hashes']==realism['question_hashes']
+              assert legal['auditor_instance']=='GPT-FRESH-EXP2-A'
+              assert realism['auditor_instance']=='GPT-FRESH-EXP2-A'
+              for q in legal['questions']:
+                  assert question_audit_hash(q)==legal['question_hashes'][q['question_id']]
+              all_hashes.update(legal['question_hashes'])
+              for name in (legal_name,realism_name):
+                  package_sha256[name]=hashlib.sha256((root/name).read_bytes()).hexdigest()
+          assert len(all_hashes)==80
+          assert sorted(all_hashes)==[f'MA-Q-{n:04d}' for n in range(131,211)]
+          manifest={
+              'batch':'EXP2',
+              'frozen_author_candidate_sha':frozen,
+              'question_range':{'start':'MA-Q-0131','end':'MA-Q-0210','count':80},
+              'auditor_instance':'GPT-FRESH-EXP2-A',
+              'packages':package_sha256,
+              'question_hashes':dict(sorted(all_hashes.items())),
+              'freeze_invariants':{
+                  'canonical_content_modified':False,
+                  'release_modified':False,
+                  'public_preview_modified':False,
+                  'batch3_started':False
+              }
+          }
+          (root/'BATCH2-FREEZE-MANIFEST.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
+          print('verified 80 unique frozen question hashes')
+          PY
+
+      - name: Run QA and freshness checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code -- data/questions data/rules data/drugs data/exam_style data/release_requirements.json site/generated answer_distribution_report.json duplicate_report.json structural_pattern_report.json
+
+      - name: Commit frozen packages only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'batch2-freeze-bot'
+          git config user.email 'batch2-freeze-bot@users.noreply.github.com'
+          git rm .github/workflows/batch2-freeze.yml
+          git add audits/initial/2026-08-15
+          git diff --cached --name-only
+          git commit -m 'audit(batch2): freeze Q0131-Q0210 packages at d7cc340'
+          git push origin HEAD:freeze/mpje-expansion-batch2
