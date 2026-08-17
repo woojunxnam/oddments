@@ -45,6 +45,7 @@ jobs:
           changed = set(subprocess.check_output(["git", "diff", "--name-only", f"{base}..HEAD"], text=True).splitlines())
           expected = {
               "scripts/apply_legacy_salvage_t1_repairs.py",
+              "scripts/polish_legacy_salvage_t1_structural.py",
               ".github/workflows/apply-legacy-salvage-t1-repairs.yml",
           }
           if changed != expected:
@@ -54,6 +55,9 @@ jobs:
 
       - name: Apply editor repairs
         run: python scripts/apply_legacy_salvage_t1_repairs.py
+
+      - name: Polish structural answer patterns
+        run: python scripts/polish_legacy_salvage_t1_structural.py
 
       - name: Regenerate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
