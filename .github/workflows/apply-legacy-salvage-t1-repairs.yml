@@ -62,6 +62,18 @@ jobs:
       - name: Regenerate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
 
+      - name: Show structural distribution
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          with open("structural_pattern_report.json", encoding="utf-8") as fh:
+              report = json.load(fh)
+          print("SATA correct counts:", report["distributions"]["sata_correct_counts"])
+          print("SATA answer sets:", report["distributions"]["sata_answer_sets"])
+          print("Structural findings:", report["findings"])
+          PY
+
       - name: Validate repository
         shell: bash
         run: python scripts/validate_all.py | tee /tmp/validate.log
