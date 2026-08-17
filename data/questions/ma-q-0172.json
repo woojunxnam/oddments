@@ -3,70 +3,42 @@
   "family_id": "B2_DRUG_MHSUD_LIST",
   "area": 2,
   "topic": "Pharmacist administration",
-  "subtopic": "Eligible MH/SUD products",
-  "difficulty": 3,
+  "subtopic": "Applied MH/SUD administration eligibility",
+  "difficulty": 4,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "Which products are on the Massachusetts pharmacist/pharmacy-intern administration list for treatment of mental illness or substance use disorder, assuming the remaining guidance conditions are met? Select all that apply.",
+  "stem": "A Massachusetts pharmacist has completed the required administration training and maintains current CPR certification. Assume each request has a valid patient-specific prescription and is not the patient's first dose unless the option states otherwise. Which requests may proceed under the Massachusetts mental-illness/substance-use-disorder administration guidance? Select all that apply.",
   "choices": [
-    {
-      "id": "A",
-      "text": "Vivitrol (extended-release naltrexone)"
-    },
-    {
-      "id": "B",
-      "text": "Lantus (insulin glargine)"
-    },
-    {
-      "id": "C",
-      "text": "Testosterone cypionate"
-    },
-    {
-      "id": "D",
-      "text": "Abilify Maintena (aripiprazole long-acting injection)"
-    },
-    {
-      "id": "E",
-      "text": "Invega Sustenna (paliperidone palmitate)"
-    }
+    {"id": "A", "text": "A 34-year-old patient presents for a repeat prescribed dose of Vivitrol for substance use disorder"},
+    {"id": "B", "text": "A 42-year-old patient presents for prescribed Lantus administration for diabetes solely because it is an injectable prescription drug"},
+    {"id": "C", "text": "A 29-year-old patient presents for prescribed testosterone cypionate for gender-affirming care and asks to use the MH/SUD guidance as the legal basis"},
+    {"id": "D", "text": "A 17-year-old patient presents for a repeat prescribed dose of Invega Sustenna for treatment of mental illness"},
+    {"id": "E", "text": "A 38-year-old patient presents for a repeat prescribed dose of Abilify Maintena for treatment of mental illness"}
   ],
-  "correct_choice_ids": [
-    "A",
-    "D",
-    "E"
-  ],
+  "correct_choice_ids": ["A", "E"],
   "explanation": {
-    "core_reasoning": "The MH/SUD pathway uses a defined list of LAI antipsychotics plus extended-release naltrexone rather than any injectable prescription product.",
+    "core_reasoning": "The MH/SUD guidance requires more than recognizing an injectable drug. The pharmacist must identify a listed MH/SUD medication, the covered treatment purpose, and the guidance's patient conditions, including the age-18 minimum. A drug that may be administered under a different statutory pathway does not thereby become part of the MH/SUD pathway.",
     "choice_analysis": {
-      "A": "Vivitrol is the listed SUD injectable.",
-      "B": "Insulin is not on the MH/SUD list.",
-      "C": "Testosterone has a separate statutory administration category, not this MH/SUD list.",
-      "D": "Aripiprazole LAI is listed.",
-      "E": "Paliperidone palmitate LAI is listed."
+      "A": "Correct. Vivitrol is the listed SUD medication, and this adult repeat-dose scenario fits the stated conditions.",
+      "B": "Incorrect. Insulin glargine is not made eligible under the MH/SUD guidance merely because it is an injectable prescription drug.",
+      "C": "Incorrect for this question. Testosterone for gender-affirming care has a separate Massachusetts statutory administration category; it is not authorized by being placed on the MH/SUD medication list.",
+      "D": "Incorrect. Although Invega Sustenna is a listed mental-health medication, this guidance permits administration to persons 18 years or older.",
+      "E": "Correct. Abilify Maintena is a listed LAI antipsychotic, and this adult repeat-dose scenario fits the stated conditions."
     },
-    "related_facts": [
-      "Other listed antipsychotics include haloperidol decanoate and risperidone long-acting injection."
-    ],
-    "mpje_trap": "Selecting an injectable merely because pharmacists may administer it under some other law."
+    "related_facts": ["The guidance also excludes the patient's first dose and requires patient-specific prescribing, appropriate training, and current CPR certification."],
+    "mpje_trap": "Memorizing product names without applying age, indication, and the correct statutory or guidance pathway."
   },
-  "rule_ids": [
-    "MA-MH-SUD-ADMIN"
-  ],
-  "drug_ids": [
-    "aripiprazole-er",
-    "paliperidone-palmitate",
-    "naltrexone-er",
-    "insulin-glargine",
-    "testosterone-cypionate"
-  ],
+  "rule_ids": ["MA-MH-SUD-ADMIN"],
+  "drug_ids": ["aripiprazole-er", "paliperidone-palmitate", "naltrexone-er", "insulin-glargine", "testosterone-cypionate"],
   "reasoning_steps": [
-    "Recognize each product",
-    "Match it to the official MH/SUD administration list"
+    "Identify whether each drug belongs to the MH/SUD administration pathway rather than another administration category",
+    "Apply the treatment-purpose and age requirements to each request",
+    "Reject injectable-product status alone as a basis for administration authority"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-14",
+  "last_legal_review": "2026-08-17",
   "audits": [],
   "duplicate_review_status": "PENDING",
   "independent_audit_status": "PENDING",
