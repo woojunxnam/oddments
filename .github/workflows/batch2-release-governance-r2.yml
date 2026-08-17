@@ -1,0 +1,189 @@
+name: Batch 2 Release Governance R2
+
+on:
+  push:
+    branches:
+      - governance/mpje-expansion-batch2-release-r2
+
+permissions:
+  contents: write
+
+jobs:
+  release-governance:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out governance branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Verify exact governance ancestry and audit heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=f85b650c1b3344184186229ec45bf1d233a4e971
+          A=af1fc3609e96a4d18d804e2af2794a64df5afb7e
+          B=02ec4f796edc073d04c7e1d310543d6851e867cd
+          C=561fcdd97bacd4f694b1f1a827713b1573467755
+
+          git merge-base --is-ancestor "$SOURCE" HEAD
+          python - <<'PY'
+          import subprocess
+          source = "f85b650c1b3344184186229ec45bf1d233a4e971"
+          changed = set(subprocess.check_output(["git", "diff", "--name-only", f"{source}..HEAD"], text=True).splitlines())
+          expected = {
+              "scripts/release_batch2_r2.py",
+              ".github/workflows/batch2-release-governance-r2.yml",
+          }
+          if changed != expected:
+              raise SystemExit(f"unexpected pre-governance branch drift: {sorted(changed)}")
+          print("pre-governance branch drift check: PASS")
+          PY
+
+          git fetch --no-tags origin \
+            +refs/heads/audit/gpt-fresh-exp2-a-q0131-0210:refs/remotes/origin/audit/gpt-fresh-exp2-a-q0131-0210 \
+            +refs/heads/audit/issue-39-gpt-fresh-exp2-b:refs/remotes/origin/audit/issue-39-gpt-fresh-exp2-b \
+            +refs/heads/audit/gpt-fresh-exp2-c-realism-r2-impact9:refs/remotes/origin/audit/gpt-fresh-exp2-c-realism-r2-impact9
+
+          test "$(git rev-parse refs/remotes/origin/audit/gpt-fresh-exp2-a-q0131-0210)" = "$A"
+          test "$(git rev-parse refs/remotes/origin/audit/issue-39-gpt-fresh-exp2-b)" = "$B"
+          test "$(git rev-parse refs/remotes/origin/audit/gpt-fresh-exp2-c-realism-r2-impact9)" = "$C"
+          echo "audit head verification: PASS"
+
+      - name: Integrate canonical and historical audit evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          A=af1fc3609e96a4d18d804e2af2794a64df5afb7e
+          B=02ec4f796edc073d04c7e1d310543d6851e867cd
+          C=561fcdd97bacd4f694b1f1a827713b1573467755
+          mkdir -p data/audits audits/reaudit/2026-08-17
+
+          for file in \
+            AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W1-2026-08-15.json \
+            AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15.json \
+            AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W1-2026-08-15.json \
+            AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15.json
+          do
+            git show "$A:data/audits/$file" > "data/audits/$file"
+          done
+
+          git show "$B:audits/reaudit/2026-08-17/GPT-FRESH-EXP2-B-LEGAL-REAUDIT-IMPACT14.json" \
+            > audits/reaudit/2026-08-17/GPT-FRESH-EXP2-B-LEGAL-REAUDIT-IMPACT14.json
+          git show "$B:audits/reaudit/2026-08-17/GPT-FRESH-EXP2-B-REALISM-REAUDIT-IMPACT14.json" \
+            > audits/reaudit/2026-08-17/GPT-FRESH-EXP2-B-REALISM-REAUDIT-IMPACT14.json
+          cp audits/reaudit/2026-08-17/GPT-FRESH-EXP2-B-LEGAL-REAUDIT-IMPACT14.json \
+            data/audits/AUDIT-GPT-FRESH-EXP2-B-LEGAL-REAUDIT-IMPACT14-2026-08-17.json
+
+          git show "$C:audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9.json" \
+            > audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9.json
+          git show "$C:audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9.json" \
+            > audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9.json
+          cp audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9.json \
+            data/audits/AUDIT-GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9.json
+          cp audits/reaudit/2026-08-17/GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9.json \
+            data/audits/AUDIT-GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9.json
+
+      - name: Adjudicate Batch 2 release eligibility
+        run: python scripts/release_batch2_r2.py
+
+      - name: Regenerate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Validate repository
+        shell: bash
+        run: python scripts/validate_all.py | tee /tmp/validate_all.log
+
+      - name: Run full pytest
+        shell: bash
+        run: python -m pytest -q | tee /tmp/pytest.log
+
+      - name: Record pre-commit QA result
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report_path = Path("audits/release/2026-08-17/BATCH2-RELEASE-GOVERNANCE-R2.json")
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          validate_lines = [line.strip() for line in Path("/tmp/validate_all.log").read_text(encoding="utf-8").splitlines() if line.strip()]
+          pytest_lines = [line.strip() for line in Path("/tmp/pytest.log").read_text(encoding="utf-8").splitlines() if line.strip()]
+          report["qa"] = {
+              "status": "PASS_PRECOMMIT_PENDING_EXACT_HEAD_FRESHNESS",
+              "validate_all": validate_lines[-1] if validate_lines else "PASS",
+              "pytest": pytest_lines[-1] if pytest_lines else "PASS",
+              "generated_artifacts": "REGENERATED",
+          }
+          report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Enforce governance write boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re
+          import subprocess
+
+          lines = subprocess.check_output(["git", "status", "--porcelain=v1"], text=True).splitlines()
+          paths = []
+          for line in lines:
+              path = line[3:]
+              if " -> " in path:
+                  path = path.split(" -> ", 1)[1]
+              paths.append(path)
+
+          def allowed(path: str) -> bool:
+              if path.startswith("data/audits/"):
+                  return True
+              if path.startswith("audits/reaudit/2026-08-17/GPT-FRESH-EXP2-"):
+                  return True
+              if path == "audits/release/2026-08-17/BATCH2-RELEASE-GOVERNANCE-R2.json":
+                  return True
+              match = re.fullmatch(r"data/questions/ma-q-(\d{4})\.json", path)
+              if match:
+                  return 131 <= int(match.group(1)) <= 210
+              if path == "data/exam_style/question_family_matrix.json":
+                  return True
+              if path in {"site/generated/preview_allowlist.json", "site/generated/questions.json"}:
+                  return True
+              if path.startswith("generated/") and path.endswith(".json"):
+                  return True
+              return False
+
+          unexpected = sorted(path for path in paths if not allowed(path))
+          if unexpected:
+              raise SystemExit(f"unexpected governance writes: {unexpected}")
+          print(f"governance write boundary: PASS ({len(paths)} changed/untracked paths)")
+          PY
+
+      - name: Commit release-governance candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "governance: adjudicate Batch 2 Round 2 release"
+
+      - name: Prove generated artifacts are current on exact committed head
+        run: python scripts/generate_artifacts.py --write && git diff --exit-code
+
+      - name: Push exact governance head
+        shell: bash
+        run: git push origin HEAD:governance/mpje-expansion-batch2-release-r2
