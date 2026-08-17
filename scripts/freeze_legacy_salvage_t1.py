@@ -114,10 +114,10 @@ def main() -> int:
         **dependency_snapshot(style),
     }
 
-    blueprint_files = sorted((DATA / "blueprints").glob("*.json"))
-    if len(blueprint_files) != 1:
-        raise SystemExit(f"expected exactly one blueprint, found {len(blueprint_files)}")
-    blueprint = load_json(blueprint_files[0])
+    blueprint_path = DATA / "blueprint.json"
+    if not blueprint_path.is_file():
+        raise SystemExit("expected blueprint at data/blueprint.json")
+    blueprint = load_json(blueprint_path)
     blueprint_calculated = semantic_content_hash(blueprint, "blueprint")
     if blueprint.get("content_hash") != blueprint_calculated:
         raise SystemExit("blueprint semantic hash mismatch")
