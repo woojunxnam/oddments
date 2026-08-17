@@ -10,13 +10,31 @@
   "source_signal_ids": [],
   "stem": "A Massachusetts pharmacist has completed the required administration training and maintains current CPR certification. Each option involves a medication that appears on the MH/SUD administration list. Which requests may proceed under the current guidance? Select all that apply.",
   "choices": [
-    {"id": "A", "text": "A 34-year-old patient has a valid patient-specific prescription for a repeat dose of Vivitrol supplied in its single-dose presentation"},
-    {"id": "B", "text": "A 45-year-old patient has a valid patient-specific prescription for Invega Sustenna, but this would be the patient's first dose of the medication"},
-    {"id": "C", "text": "A 39-year-old patient requests Abilify Maintena from anonymous pharmacy floor stock that is not tied to a patient-specific prescribed single dose"},
-    {"id": "D", "text": "A 17-year-old patient has a valid patient-specific prescription for a repeat dose of Invega Sustenna"},
-    {"id": "E", "text": "A 52-year-old patient has a valid patient-specific prescription for a repeat dose of Abilify Maintena supplied as the prescribed single dose"}
+    {
+      "id": "A",
+      "text": "A 34-year-old patient has a valid patient-specific prescription for a repeat dose of Vivitrol supplied in its single-dose presentation"
+    },
+    {
+      "id": "B",
+      "text": "A 45-year-old patient has a valid patient-specific prescription for Invega Sustenna, but this would be the patient's first dose of the medication"
+    },
+    {
+      "id": "C",
+      "text": "A 39-year-old patient requests Abilify Maintena from anonymous pharmacy floor stock that is not tied to a patient-specific prescribed single dose"
+    },
+    {
+      "id": "D",
+      "text": "A 17-year-old patient has a valid patient-specific prescription for a repeat dose of Invega Sustenna"
+    },
+    {
+      "id": "E",
+      "text": "A 52-year-old patient has a valid patient-specific prescription for a repeat dose of Abilify Maintena supplied as the prescribed single dose"
+    }
   ],
-  "correct_choice_ids": ["A", "E"],
+  "correct_choice_ids": [
+    "A",
+    "E"
+  ],
   "explanation": {
     "core_reasoning": "Being on the MH/SUD medication list is only the first gate. The guidance also requires an adult patient, a valid patient-specific prescription, no pharmacist-administered first dose, and an eligible medication available in single-dose packaging and prescribed in single doses.",
     "choice_analysis": {
@@ -26,22 +44,70 @@
       "D": "Incorrect. The guidance applies to persons 18 years or older.",
       "E": "Correct. This adult repeat-dose Abilify Maintena request satisfies the conditions stated in the option."
     },
-    "related_facts": ["Prescriber reassessment, counseling, administration training, current CPR certification, recordkeeping, privacy, and emergency-management requirements also remain applicable."],
+    "related_facts": [
+      "Prescriber reassessment, counseling, administration training, current CPR certification, recordkeeping, privacy, and emergency-management requirements also remain applicable."
+    ],
     "mpje_trap": "Stopping after recognizing a listed drug instead of applying the patient, dose, prescription, and first-dose conditions."
   },
-  "rule_ids": ["MA-MH-SUD-ADMIN"],
-  "drug_ids": ["aripiprazole-er", "paliperidone-palmitate", "naltrexone-er"],
+  "rule_ids": [
+    "MA-MH-SUD-ADMIN"
+  ],
+  "drug_ids": [
+    "aripiprazole-er",
+    "paliperidone-palmitate",
+    "naltrexone-er"
+  ],
   "reasoning_steps": [
     "Recognize that every option uses a listed MH/SUD medication",
     "Apply age, first-dose, patient-specific prescription, and single-dose requirements independently",
     "Select only the requests that satisfy all stated eligibility conditions"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-17",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9",
+    "AUDIT-GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-MH-SUD-ADMIN": {
+          "content_version": 2,
+          "content_hash": "ed0bd545489ad45c3e421c971e314cfa93c76c2b37a0c40ad9b9d178738a3ee2"
+        }
+      },
+      "drugs": {
+        "aripiprazole-er": {
+          "content_version": 1,
+          "content_hash": "2a88add8d9f62ccd983bef6c98ef1d5ddfc10dcf9d494a1858c8da69a632133b"
+        },
+        "paliperidone-palmitate": {
+          "content_version": 1,
+          "content_hash": "67e13f8ce0bf3acf0c991d707693652bf06d82ee5a4ab9ff9eb74d1fec31b67f"
+        },
+        "naltrexone-er": {
+          "content_version": 1,
+          "content_hash": "74b8e2c41fd9460051bcbe4d322793625b582b8a776e8b56e5172bcc1de55d5c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
