@@ -3,50 +3,50 @@
   "family_id": "B2_DRUG_METHADONE_3DAY",
   "area": 3,
   "topic": "Opioid use disorder",
-  "subtopic": "Three-day emergency methadone",
+  "subtopic": "Three-day emergency pathway misuse",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A non-OTP practitioner uses the narrow federal emergency provision while arranging OUD treatment referral and asks a pharmacy whether the rule authorizes a routine three-day methadone prescription. Which answer is correct?",
+  "stem": "A non-OTP practitioner plans to manage a patient's OUD by directly dispensing three-day supplies of methadone every week for the next month. The practitioner has not arranged a treatment referral and says each episode should be lawful because no individual supply will exceed three days. Which assessment is most accurate?",
   "choices": [
     {
       "id": "A",
-      "text": "The provision creates a three-day retail prescription that the pharmacy may dispense in a single fill."
+      "text": "The plan is permitted because each separate dispensing episode is limited to no more than a three-day supply"
     },
     {
       "id": "B",
-      "text": "No. The practitioner may dispense up to a three-day supply at one time while arranging referral; no retail prescription is authorized."
+      "text": "The plan is permitted if the practitioner documents a new emergency before each weekly dispensing episode"
     },
     {
       "id": "C",
-      "text": "The pharmacy may create a three-day methadone prescription after documenting the practitioner's telephone request."
+      "text": "The plan does not fit the exception: it is a short emergency bridge while referral is being arranged, and the emergency treatment may not be renewed or extended"
     },
     {
       "id": "D",
-      "text": "The practitioner cannot use emergency dispensing outside an OTP even while arranging an immediate treatment referral."
+      "text": "The plan is prohibited only because methadone may never be dispensed by a non-OTP practitioner under any emergency circumstance"
     },
     {
       "id": "E",
-      "text": "The practitioner may issue a 30-day prescription and mark the first three days as emergency supply."
+      "text": "The plan becomes permissible if a community pharmacy records each weekly dispensing episode in the patient's profile"
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "The federal three-day rule is a narrow practitioner-dispensing bridge, not authority for a routine three-day methadone retail prescription; current law permits up to a three-day supply to be dispensed at one time while referral is arranged and bars renewal or extension of the emergency treatment.",
+    "core_reasoning": "The federal non-OTP emergency provision is not a recurring maintenance mechanism. It permits a practitioner to dispense a limited emergency supply while arrangements for referral are being made, and the emergency treatment may not be renewed or extended.",
     "choice_analysis": {
-      "A": "The emergency provision is not a routine retail-prescription exception.",
-      "B": "The practitioner, rather than a retail pharmacy acting on a routine prescription, may use the narrow dispensing exception for up to a three-day supply at one time while arranging referral; the emergency treatment may not be renewed or extended.",
-      "C": "A pharmacy cannot create the practitioner's controlled-substance prescribing authority.",
-      "D": "Federal law contains the narrow non-OTP emergency dispensing pathway.",
-      "E": "That structure does not comply with the dispense-only emergency pathway."
+      "A": "Incorrect. Staying at or below three days per episode does not authorize serial weekly use of the emergency exception.",
+      "B": "Incorrect. Re-labeling each planned episode as a new emergency does not avoid the no-renewal/no-extension and referral requirements.",
+      "C": "Correct. The pathway is a temporary bridge tied to arranging referral, not a substitute for ongoing maintenance treatment.",
+      "D": "Incorrect. Federal law does contain a narrow non-OTP emergency dispensing provision.",
+      "E": "Incorrect. Pharmacy documentation cannot transform a recurring maintenance plan into a lawful use of the practitioner's emergency exception."
     },
     "related_facts": [
-      "The emergency provision authorizes dispensing, not a routine methadone prescription, while referral for treatment is arranged."
+      "Under the current rule, the practitioner may dispense up to a three-day supply at one time while arranging referral."
     ],
-    "mpje_trap": "Remembering 'three days' but forgetting who dispenses and how."
+    "mpje_trap": "Treating the three-day quantity ceiling as a renewable weekly maintenance authority instead of reading the referral and no-extension limits together."
   },
   "rule_ids": [
     "FED-OUD-OTP"
@@ -55,16 +55,48 @@
     "methadone"
   ],
   "reasoning_steps": [
-    "Identify the non-OTP emergency provision",
-    "Separate practitioner dispensing from retail prescribing",
-    "Apply the current three-day-at-one-time and no-renewal/no-extension limits"
+    "Identify that the practitioner is proposing recurring maintenance rather than a one-time emergency bridge",
+    "Apply the referral requirement together with the no-renewal/no-extension limit",
+    "Reject quantity-only reasoning based solely on each supply being three days or less"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-14",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-17",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9",
+    "AUDIT-GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-OUD-OTP": {
+          "content_version": 2,
+          "content_hash": "ef4df809bae70126e40643b72a05309e4747d5c934c1866e9c9a1f54c23fbce7"
+        }
+      },
+      "drugs": {
+        "methadone": {
+          "content_version": 1,
+          "content_hash": "16a587b824d54a456d95d17a381339a1e0aa361a52f94bb6f3d381c6e5ad21d8"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
