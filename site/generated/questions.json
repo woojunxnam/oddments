@@ -23963,64 +23963,66 @@
       "family_id": "B2_METHADONE_OUD_RETAIL",
       "area": 3,
       "topic": "Opioid use disorder",
-      "subtopic": "Methadone OUD vs retail prescription",
-      "difficulty": 4,
+      "subtopic": "Methadone indication conflict and corresponding responsibility",
+      "difficulty": 5,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A community pharmacy receives an ordinary Schedule II prescription for methadone written solely for ongoing opioid-use-disorder maintenance. The prescriber is not using an applicable OTP dispensing pathway. Which federal principle controls?",
+      "stem": "A community pharmacy receives an otherwise complete Schedule II methadone prescription that is annotated 'for pain.' During counseling, however, the patient states that the prescriber described the methadone as replacing the patient's opioid-treatment-program maintenance doses, and the pharmacy has no documented pain diagnosis or other explanation for the conflict. What is the pharmacist's best next step?",
       "choices": [
         {
           "id": "A",
-          "text": "Treat it like any routine Schedule II pain prescription because indication never matters."
+          "text": "Dispense immediately because the written words 'for pain' conclusively determine the federal treatment pathway despite contradictory information"
         },
         {
           "id": "B",
-          "text": "Ordinary outpatient prescribing is not the regular federal methadone-maintenance pathway; OTP/narcotic-treatment rules must be satisfied."
+          "text": "Reject every future methadone prescription from that prescriber because methadone can never be dispensed by a community pharmacy"
         },
         {
           "id": "C",
-          "text": "Convert methadone to Schedule III when used for OUD."
+          "text": "Pause dispensing and clarify the prescription's actual medical purpose and treatment pathway with the prescriber before deciding whether ordinary Schedule II dispensing is appropriate"
         },
         {
           "id": "D",
-          "text": "Fill it with five refills because OUD treatment is chronic."
+          "text": "Change the prescription to buprenorphine because a pharmacist may substitute an OUD medication whenever the stated indication is uncertain"
         },
         {
           "id": "E",
-          "text": "Dispense it as OTC medication if the patient has a prior OUD diagnosis."
+          "text": "Rewrite the indication as OUD maintenance and dispense the prescription after documenting that the patient confirmed the intended use"
         }
       ],
       "correct_choice_ids": [
-        "B"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "Methadone's OUD maintenance indication invokes the federal OTP/narcotic-treatment framework rather than ordinary retail Schedule II prescribing.",
+        "core_reasoning": "The pharmacist cannot resolve a material conflict about a controlled-substance prescription's actual purpose by relying on a label alone. Methadone for pain can follow ordinary Schedule II prescription rules, while methadone used for OUD maintenance invokes a different federal narcotic-treatment pathway. The contradictory patient statement is therefore material to corresponding responsibility and should be resolved before dispensing.",
         "choice_analysis": {
-          "A": "OUD indication changes the federal narcotic-treatment pathway.",
-          "B": "Methadone OUD maintenance is specially regulated.",
-          "C": "Indication does not reclassify methadone.",
-          "D": "Methadone remains Schedule II.",
-          "E": "Diagnosis does not create OTC status."
+          "A": "Incorrect. A written indication does not eliminate the pharmacist's responsibility to resolve material information suggesting a different actual medical purpose.",
+          "B": "Incorrect. Methadone may be lawfully prescribed and dispensed for pain; the problem is the unresolved conflict in this specific prescription.",
+          "C": "Correct. Clarifying the actual purpose is necessary before the pharmacist can determine whether the ordinary Schedule II pathway or the OUD-treatment framework controls.",
+          "D": "Incorrect. Corresponding responsibility does not give the pharmacist unilateral authority to substitute a different OUD medication.",
+          "E": "Incorrect. The pharmacist should not rewrite the prescriber's indication or convert an unresolved maintenance-treatment situation into ordinary retail dispensing."
         },
         "related_facts": [
-          "Methadone prescribed for pain follows a different controlled-prescription pathway."
+          "Methadone remains Schedule II regardless of indication, but its lawful dispensing pathway can differ materially between pain and OUD maintenance treatment."
         ],
-        "mpje_trap": "Using schedule alone while ignoring indication."
+        "mpje_trap": "Treating an indication written on the prescription as dispositive even when material facts at the pharmacy directly contradict it."
       },
       "rule_ids": [
-        "FED-OUD-OTP"
+        "FED-OUD-OTP",
+        "FED-CORRESPONDING-RESP"
       ],
       "drug_ids": [
         "methadone"
       ],
       "reasoning_steps": [
-        "Identify methadone and the OUD maintenance indication",
-        "Apply the federal narcotic-treatment pathway rather than ordinary C-II dispensing"
+        "Identify the conflict between the written pain indication and the patient's description of OUD maintenance use",
+        "Recognize that the actual medical purpose determines which methadone pathway applies",
+        "Apply corresponding responsibility by resolving the material conflict before dispensing"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-14",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -24039,6 +24041,13 @@
           "name": "DEA Diversion Control Division",
           "section": "Instructions to request exception to 21 CFR 1306.07(b) 3-day rule",
           "url": "https://www.deadiversion.usdoj.gov/drugreg/registration.html",
+          "last_verified": "2026-08-14"
+        },
+        {
+          "rule_id": "FED-CORRESPONDING-RESP",
+          "name": "Electronic Code of Federal Regulations",
+          "section": "21 CFR 1306.04(a)",
+          "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.04",
           "last_verified": "2026-08-14"
         }
       ],
@@ -25085,52 +25094,51 @@
       "family_id": "B2_DRUG_MHSUD_LIST",
       "area": 2,
       "topic": "Pharmacist administration",
-      "subtopic": "Eligible MH/SUD products",
-      "difficulty": 3,
+      "subtopic": "Applied MH/SUD administration eligibility",
+      "difficulty": 5,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "Which products are on the Massachusetts pharmacist/pharmacy-intern administration list for treatment of mental illness or substance use disorder, assuming the remaining guidance conditions are met? Select all that apply.",
+      "stem": "A Massachusetts pharmacist has completed the required administration training and maintains current CPR certification. Each option involves a medication that appears on the MH/SUD administration list. Which requests may proceed under the current guidance? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Vivitrol (extended-release naltrexone)"
+          "text": "A 34-year-old patient has a valid patient-specific prescription for a repeat dose of Vivitrol supplied in its single-dose presentation"
         },
         {
           "id": "B",
-          "text": "Lantus (insulin glargine)"
+          "text": "A 45-year-old patient has a valid patient-specific prescription for Invega Sustenna, but this would be the patient's first dose of the medication"
         },
         {
           "id": "C",
-          "text": "Testosterone cypionate"
+          "text": "A 39-year-old patient requests Abilify Maintena from anonymous pharmacy floor stock that is not tied to a patient-specific prescribed single dose"
         },
         {
           "id": "D",
-          "text": "Abilify Maintena (aripiprazole long-acting injection)"
+          "text": "A 17-year-old patient has a valid patient-specific prescription for a repeat dose of Invega Sustenna"
         },
         {
           "id": "E",
-          "text": "Invega Sustenna (paliperidone palmitate)"
+          "text": "A 52-year-old patient has a valid patient-specific prescription for a repeat dose of Abilify Maintena supplied as the prescribed single dose"
         }
       ],
       "correct_choice_ids": [
         "A",
-        "D",
         "E"
       ],
       "explanation": {
-        "core_reasoning": "The MH/SUD pathway uses a defined list of LAI antipsychotics plus extended-release naltrexone rather than any injectable prescription product.",
+        "core_reasoning": "Being on the MH/SUD medication list is only the first gate. The guidance also requires an adult patient, a valid patient-specific prescription, no pharmacist-administered first dose, and an eligible medication available in single-dose packaging and prescribed in single doses.",
         "choice_analysis": {
-          "A": "Vivitrol is the listed SUD injectable.",
-          "B": "Insulin is not on the MH/SUD list.",
-          "C": "Testosterone has a separate statutory administration category, not this MH/SUD list.",
-          "D": "Aripiprazole LAI is listed.",
-          "E": "Paliperidone palmitate LAI is listed."
+          "A": "Correct. This is an adult repeat-dose Vivitrol request with a valid patient-specific prescription and single-dose presentation.",
+          "B": "Incorrect. The pharmacist or pharmacy intern may not administer the first dose the patient receives.",
+          "C": "Incorrect. The pathway is patient-specific and tied to prescribed single doses; anonymous floor stock is not a substitute for that requirement.",
+          "D": "Incorrect. The guidance applies to persons 18 years or older.",
+          "E": "Correct. This adult repeat-dose Abilify Maintena request satisfies the conditions stated in the option."
         },
         "related_facts": [
-          "Other listed antipsychotics include haloperidol decanoate and risperidone long-acting injection."
+          "Prescriber reassessment, counseling, administration training, current CPR certification, recordkeeping, privacy, and emergency-management requirements also remain applicable."
         ],
-        "mpje_trap": "Selecting an injectable merely because pharmacists may administer it under some other law."
+        "mpje_trap": "Stopping after recognizing a listed drug instead of applying the patient, dose, prescription, and first-dose conditions."
       },
       "rule_ids": [
         "MA-MH-SUD-ADMIN"
@@ -25138,17 +25146,16 @@
       "drug_ids": [
         "aripiprazole-er",
         "paliperidone-palmitate",
-        "naltrexone-er",
-        "insulin-glargine",
-        "testosterone-cypionate"
+        "naltrexone-er"
       ],
       "reasoning_steps": [
-        "Recognize each product",
-        "Match it to the official MH/SUD administration list"
+        "Recognize that every option uses a listed MH/SUD medication",
+        "Apply age, first-dose, patient-specific prescription, and single-dose requirements independently",
+        "Select only the requests that satisfy all stated eligibility conditions"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-14",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -25394,196 +25401,6 @@
           "last_verified": "2026-08-14",
           "verification_status": "PRIMARY_VERIFIED",
           "verification_notes": "Identity/status authoring record prepared from official sources for Batch 2; fresh independent audit required before release."
-        },
-        {
-          "drug_id": "insulin-glargine",
-          "content_version": 1,
-          "content_hash": "3e931b085a0e3d834a5f798ec514299b6eba89ec9c3d2b9c6f2122fbb164d19a",
-          "generic_name": "insulin glargine",
-          "brand_names": [
-            "Lantus"
-          ],
-          "main_indications": [
-            "Improve glycemic control in adults and pediatric patients with diabetes mellitus"
-          ],
-          "therapeutic_class": "Long-acting insulin",
-          "federal_status": {
-            "controlled": false,
-            "schedule": "NONCONTROLLED"
-          },
-          "massachusetts_status": {
-            "schedule": "VI",
-            "masspat_reportable": false,
-            "drug_of_concern": false
-          },
-          "legal_consequences": {
-            "refill": {
-              "summary": "Apply the refill framework for a NONCONTROLLED product before dispensing another fill.",
-              "rule_ids": [
-                "MA-SCHEDULE-VI"
-              ]
-            },
-            "transfer": {
-              "summary": "Apply the current transfer rule and any product-specific REMS restriction.",
-              "rule_ids": [
-                "MA-RX-TRANSFER"
-              ]
-            },
-            "partial_fill": {
-              "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
-              "rule_ids": [
-                "MA-SCHEDULE-VI"
-              ]
-            },
-            "masspat": {
-              "summary": "This drug is not routinely a Schedule II-V MassPAT transaction; apply any product-specific reporting rule.",
-              "rule_ids": [
-                "MA-PMP-REPORTING"
-              ]
-            },
-            "quantity_limit": {
-              "summary": "Apply the schedule- and indication-specific Massachusetts quantity rule.",
-              "rule_ids": [
-                "MA-SCHEDULE-VI"
-              ]
-            }
-          },
-          "verified_rule_dependencies": {
-            "MA-PMP-REPORTING": {
-              "content_version": 1,
-              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
-            },
-            "MA-RX-TRANSFER": {
-              "content_version": 2,
-              "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
-            },
-            "MA-SCHEDULE-VI": {
-              "content_version": 1,
-              "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
-            }
-          },
-          "authorities": [
-            {
-              "type": "FDA_LABEL",
-              "name": "DailyMed label search for insulin glargine",
-              "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=insulin+glargine"
-            },
-            {
-              "type": "FEDERAL_REGULATION",
-              "name": "Federal controlled-substance schedules",
-              "section": "FDA-approved labeling",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=insulin+glargine"
-            },
-            {
-              "type": "STATE_REGULATION",
-              "name": "Massachusetts controlled-substance schedules",
-              "section": "105 CMR 700.002",
-              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
-            }
-          ],
-          "last_verified": "2026-08-13",
-          "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
-        },
-        {
-          "drug_id": "testosterone-cypionate",
-          "content_version": 1,
-          "content_hash": "f83602d6f873792927cf036bf50db4e05bdc30dfac1a477bf0fb825658415fbc",
-          "generic_name": "testosterone cypionate",
-          "brand_names": [
-            "Depo-Testosterone"
-          ],
-          "main_indications": [
-            "Replacement therapy in males with conditions associated with deficient endogenous testosterone"
-          ],
-          "therapeutic_class": "Androgen",
-          "federal_status": {
-            "controlled": true,
-            "schedule": "III"
-          },
-          "massachusetts_status": {
-            "schedule": "III",
-            "masspat_reportable": true,
-            "drug_of_concern": false
-          },
-          "legal_consequences": {
-            "refill": {
-              "summary": "Apply the refill framework for a III product before dispensing another fill.",
-              "rule_ids": [
-                "FED-CIII-V-REFILL"
-              ]
-            },
-            "transfer": {
-              "summary": "Apply the current transfer rule and any product-specific REMS restriction.",
-              "rule_ids": [
-                "FED-EPCS-TRANSFER"
-              ]
-            },
-            "partial_fill": {
-              "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
-              "rule_ids": [
-                "FED-CIII-V-PARTIAL"
-              ]
-            },
-            "masspat": {
-              "summary": "Report covered dispensing to MassPAT.",
-              "rule_ids": [
-                "MA-PMP-REPORTING"
-              ]
-            },
-            "quantity_limit": {
-              "summary": "Apply the schedule- and indication-specific Massachusetts quantity rule.",
-              "rule_ids": [
-                "MA-CS-QUANTITY-II-III"
-              ]
-            }
-          },
-          "verified_rule_dependencies": {
-            "FED-CIII-V-PARTIAL": {
-              "content_version": 1,
-              "content_hash": "916e552af577bf4e10c2a63a72c5f075be9607308e962122f7eb96d6a8a6ff00"
-            },
-            "FED-CIII-V-REFILL": {
-              "content_version": 1,
-              "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
-            },
-            "FED-EPCS-TRANSFER": {
-              "content_version": 1,
-              "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
-            },
-            "MA-CS-QUANTITY-II-III": {
-              "content_version": 1,
-              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
-            },
-            "MA-PMP-REPORTING": {
-              "content_version": 1,
-              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
-            }
-          },
-          "authorities": [
-            {
-              "type": "FDA_LABEL",
-              "name": "DailyMed label search for testosterone cypionate",
-              "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=testosterone+cypionate"
-            },
-            {
-              "type": "FEDERAL_REGULATION",
-              "name": "Federal controlled-substance schedules",
-              "section": "21 CFR 1308 (III)",
-              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
-            },
-            {
-              "type": "STATE_REGULATION",
-              "name": "Massachusetts controlled-substance schedules",
-              "section": "105 CMR 700.002",
-              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
-            }
-          ],
-          "last_verified": "2026-08-13",
-          "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
       "realism_reviews": []
@@ -25593,50 +25410,50 @@
       "family_id": "B2_DRUG_VIVITROL_SINGLEDOSE",
       "area": 2,
       "topic": "Pharmacist administration",
-      "subtopic": "Vivitrol conditions",
-      "difficulty": 3,
+      "subtopic": "Vivitrol administrator qualification",
+      "difficulty": 4,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A trained Massachusetts pharmacist has a patient-specific prescription for one dose of Vivitrol for substance use disorder, the product is supplied in its single-dose presentation, and the prescriber directs pharmacy administration. What is the best legal characterization?",
+      "stem": "A Massachusetts pharmacist completed the appropriate injection-training program and receives a valid patient-specific prescription for a repeat dose of Vivitrol in its single-dose presentation. The prescriber directs pharmacy administration, but the pharmacist's CPR certification expired last week. What is the best action under the current MH/SUD administration guidance?",
       "choices": [
         {
           "id": "A",
-          "text": "This can fit the Massachusetts MH/SUD pharmacist-administration pathway when the remaining guidance requirements are met."
+          "text": "Administer the dose because the medication, prescription, and repeat-dose requirements are otherwise satisfied"
         },
         {
           "id": "B",
-          "text": "Vivitrol can never be administered by a pharmacist because it treats substance use disorder."
+          "text": "Administer the dose after obtaining an additional written patient consent acknowledging that CPR certification has expired"
         },
         {
           "id": "C",
-          "text": "The pharmacist may administer any quantity from non-patient-specific bulk stock without a prescription."
+          "text": "Postpone pharmacist administration until current CPR certification is restored, because current CPR certification is an administrator requirement"
         },
         {
           "id": "D",
-          "text": "The product becomes Schedule II when administered in a pharmacy."
+          "text": "Administer the dose if another pharmacy employee with current CPR certification remains in the pharmacy during the injection"
         },
         {
           "id": "E",
-          "text": "Only a pharmacy technician may administer this product in Massachusetts."
+          "text": "Administer the dose if the prescriber gives same-day verbal confirmation that the pharmacist may proceed despite the expired certification"
         }
       ],
       "correct_choice_ids": [
-        "A"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "Patient-specific, prescribed single-dose Vivitrol can fit Massachusetts pharmacist administration for SUD when all guidance conditions are met.",
+        "core_reasoning": "Eligibility of the drug and prescription does not cure a missing administrator qualification. Massachusetts guidance requires a pharmacist or pharmacy intern who administers these MH/SUD medications to maintain current CPR certification.",
         "choice_analysis": {
-          "A": "Vivitrol is an eligible product under those conditions.",
-          "B": "It is expressly listed for this pathway.",
-          "C": "The pathway is patient-specific and prescribed.",
-          "D": "Administration location does not reclassify naltrexone.",
-          "E": "The pathway is for pharmacists/pharmacy interns, not technicians."
+          "A": "Incorrect. The drug-specific conditions do not replace the separate current-CPR requirement.",
+          "B": "Incorrect. Patient consent cannot waive an administrator qualification imposed by the guidance.",
+          "C": "Correct. The pharmacist should not administer under this pathway until current CPR certification is restored.",
+          "D": "Incorrect. Another employee's CPR certification does not satisfy the administering pharmacist's own current-certification requirement.",
+          "E": "Incorrect. Prescriber direction does not waive the pharmacist's required current CPR certification."
         },
         "related_facts": [
-          "Prescriber reassessment responsibilities remain part of the treatment relationship."
+          "The pathway also requires appropriate administration training, a valid prescription, an eligible medication, and other patient-specific safeguards."
         ],
-        "mpje_trap": "Assuming a medication used for SUD cannot be pharmacy-administered."
+        "mpje_trap": "Treating prescriber direction or patient consent as a substitute for the pharmacist's own required qualification."
       },
       "rule_ids": [
         "MA-MH-SUD-ADMIN"
@@ -25645,12 +25462,13 @@
         "naltrexone-er"
       ],
       "reasoning_steps": [
-        "Identify Vivitrol as listed SUD medication",
-        "Confirm patient-specific single-dose and prescriber direction"
+        "Confirm that the drug and patient-specific prescription otherwise fit the MH/SUD pathway",
+        "Identify the expired CPR certification as a separate administrator-qualification defect",
+        "Recognize that consent, another employee's certification, or prescriber direction does not waive that defect"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-14",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -25933,53 +25751,52 @@
       "family_id": "B2_DRUG_ADMIN_FOLLOWTHROUGH",
       "area": 2,
       "topic": "Pharmacist administration",
-      "subtopic": "Administration follow-through",
-      "difficulty": 4,
+      "subtopic": "Serious adverse-event follow-through",
+      "difficulty": 5,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A Massachusetts pharmacist administers a patient-specific dose of Abilify Maintena under the mental-illness pathway. Which actions are consistent with the administration guidance? Select all that apply.",
+      "stem": "A Massachusetts pharmacist administers a patient-specific dose of Abilify Maintena under the mental-illness administration pathway. Shortly afterward, the patient develops a severe reaction requiring emergency medical services and evaluation in an emergency department. Which follow-through actions are consistent with current Massachusetts guidance? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Document the administration in the pharmacy's patient record"
+          "text": "Immediately report the adverse event to the prescriber because emergency-department treatment is one of the specified serious outcomes"
         },
         {
           "id": "B",
-          "text": "Send the administration record to the prescriber as soon after administration as practical, as strongly encouraged by DCP guidance"
+          "text": "Record the adverse outcome or adverse event in the pharmacy's administration record"
         },
         {
           "id": "C",
-          "text": "Maintain patient privacy while performing and documenting the injection"
+          "text": "If the event is a dispensing error or a serious adverse drug event, fulfill the pharmacist's or intern's applicable Board reporting responsibility"
         },
         {
           "id": "D",
-          "text": "Keep the administered dose tied to the patient-specific prescription rather than treating it as anonymous floor stock."
+          "text": "Delay prescriber communication until the next routine reassessment because the patient has already been transferred to emergency care"
         },
         {
           "id": "E",
-          "text": "Delegate the injection to an unlicensed cashier after the pharmacist confirms the drug"
+          "text": "Omit the event from the pharmacy record when emergency medical services create their own clinical documentation"
         }
       ],
       "correct_choice_ids": [
         "A",
         "B",
-        "C",
-        "D"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "Pharmacy administration of an eligible LAI remains patient-specific and documented; routine transmission of the administration record to the prescriber is strongly encouraged, and privacy duties continue to apply.",
+        "core_reasoning": "Massachusetts guidance treats adverse-event follow-through differently from routine post-administration communication. Emergency-department treatment is a specified serious outcome requiring immediate prescriber reporting, and adverse outcomes/events are part of the pharmacy administration record. Separate Board reporting duties continue to apply when the event is a dispensing error or serious adverse drug event.",
         "choice_analysis": {
-          "A": "The administration must be traceable.",
-          "B": "DCP guidance strongly encourages sending administration records to the prescriber as soon after administration as practical.",
-          "C": "Privacy duties remain applicable.",
-          "D": "The mental-health administration pathway remains patient-specific.",
-          "E": "The pharmacist/intern authority is not a cashier delegation pathway."
+          "A": "Correct. Additional treatment, testing, or monitoring in a hospital or emergency department is a listed serious outcome requiring immediate reporting to the prescriber.",
+          "B": "Correct. The administration record includes any adverse outcome or adverse event.",
+          "C": "Correct. The guidance preserves applicable Board reporting responsibility for a dispensing error or serious adverse drug event.",
+          "D": "Incorrect. A specified serious outcome is not handled by waiting for routine reassessment or ordinary communication timing.",
+          "E": "Incorrect. Outside emergency documentation does not replace the pharmacy's own required administration record."
         },
         "related_facts": [
-          "The guidance does not remove ordinary pharmacy privacy duties."
+          "Adverse events that do not meet a listed serious-outcome trigger should still be appropriately communicated to the prescriber within 24 hours."
         ],
-        "mpje_trap": "Copying a loose retail-immunization workflow without the MH/SUD safeguards."
+        "mpje_trap": "Applying the guidance's strongly encouraged routine communication standard to a serious adverse event that has an immediate reporting trigger."
       },
       "rule_ids": [
         "MA-MH-SUD-ADMIN"
@@ -25988,12 +25805,13 @@
         "aripiprazole-er"
       ],
       "reasoning_steps": [
-        "Confirm eligible patient-specific LAI administration",
-        "Apply recordkeeping, communication guidance, and privacy requirements"
+        "Identify that emergency-department evaluation is a specified serious adverse-event outcome",
+        "Separate immediate adverse-event reporting from routine administration-record communication",
+        "Apply pharmacy recordkeeping and any separate Board reporting responsibility"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-14",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -31892,50 +31710,50 @@
       "family_id": "B2_DRUG_METHADONE_3DAY",
       "area": 3,
       "topic": "Opioid use disorder",
-      "subtopic": "Three-day emergency methadone",
+      "subtopic": "Three-day emergency pathway misuse",
       "difficulty": 4,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A non-OTP practitioner uses the narrow federal emergency provision while arranging OUD treatment referral and asks a pharmacy whether the rule authorizes a routine three-day methadone prescription. Which answer is correct?",
+      "stem": "A non-OTP practitioner plans to manage a patient's OUD by directly dispensing three-day supplies of methadone every week for the next month. The practitioner has not arranged a treatment referral and says each episode should be lawful because no individual supply will exceed three days. Which assessment is most accurate?",
       "choices": [
         {
           "id": "A",
-          "text": "The provision creates a three-day retail prescription that the pharmacy may dispense in a single fill."
+          "text": "The plan is permitted because each separate dispensing episode is limited to no more than a three-day supply"
         },
         {
           "id": "B",
-          "text": "No. The practitioner may dispense up to a three-day supply at one time while arranging referral; no retail prescription is authorized."
+          "text": "The plan is permitted if the practitioner documents a new emergency before each weekly dispensing episode"
         },
         {
           "id": "C",
-          "text": "The pharmacy may create a three-day methadone prescription after documenting the practitioner's telephone request."
+          "text": "The plan does not fit the exception: it is a short emergency bridge while referral is being arranged, and the emergency treatment may not be renewed or extended"
         },
         {
           "id": "D",
-          "text": "The practitioner cannot use emergency dispensing outside an OTP even while arranging an immediate treatment referral."
+          "text": "The plan is prohibited only because methadone may never be dispensed by a non-OTP practitioner under any emergency circumstance"
         },
         {
           "id": "E",
-          "text": "The practitioner may issue a 30-day prescription and mark the first three days as emergency supply."
+          "text": "The plan becomes permissible if a community pharmacy records each weekly dispensing episode in the patient's profile"
         }
       ],
       "correct_choice_ids": [
-        "B"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "The federal three-day rule is a narrow practitioner-dispensing bridge, not authority for a routine three-day methadone retail prescription; current law permits up to a three-day supply to be dispensed at one time while referral is arranged and bars renewal or extension of the emergency treatment.",
+        "core_reasoning": "The federal non-OTP emergency provision is not a recurring maintenance mechanism. It permits a practitioner to dispense a limited emergency supply while arrangements for referral are being made, and the emergency treatment may not be renewed or extended.",
         "choice_analysis": {
-          "A": "The emergency provision is not a routine retail-prescription exception.",
-          "B": "The practitioner, rather than a retail pharmacy acting on a routine prescription, may use the narrow dispensing exception for up to a three-day supply at one time while arranging referral; the emergency treatment may not be renewed or extended.",
-          "C": "A pharmacy cannot create the practitioner's controlled-substance prescribing authority.",
-          "D": "Federal law contains the narrow non-OTP emergency dispensing pathway.",
-          "E": "That structure does not comply with the dispense-only emergency pathway."
+          "A": "Incorrect. Staying at or below three days per episode does not authorize serial weekly use of the emergency exception.",
+          "B": "Incorrect. Re-labeling each planned episode as a new emergency does not avoid the no-renewal/no-extension and referral requirements.",
+          "C": "Correct. The pathway is a temporary bridge tied to arranging referral, not a substitute for ongoing maintenance treatment.",
+          "D": "Incorrect. Federal law does contain a narrow non-OTP emergency dispensing provision.",
+          "E": "Incorrect. Pharmacy documentation cannot transform a recurring maintenance plan into a lawful use of the practitioner's emergency exception."
         },
         "related_facts": [
-          "The emergency provision authorizes dispensing, not a routine methadone prescription, while referral for treatment is arranged."
+          "Under the current rule, the practitioner may dispense up to a three-day supply at one time while arranging referral."
         ],
-        "mpje_trap": "Remembering 'three days' but forgetting who dispenses and how."
+        "mpje_trap": "Treating the three-day quantity ceiling as a renewable weekly maintenance authority instead of reading the referral and no-extension limits together."
       },
       "rule_ids": [
         "FED-OUD-OTP"
@@ -31944,13 +31762,13 @@
         "methadone"
       ],
       "reasoning_steps": [
-        "Identify the non-OTP emergency provision",
-        "Separate practitioner dispensing from retail prescribing",
-        "Apply the current three-day-at-one-time and no-renewal/no-extension limits"
+        "Identify that the practitioner is proposing recurring maintenance rather than a one-time emergency bridge",
+        "Apply the referral requirement together with the no-renewal/no-extension limit",
+        "Reject quantity-only reasoning based solely on each supply being three days or less"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-14",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
