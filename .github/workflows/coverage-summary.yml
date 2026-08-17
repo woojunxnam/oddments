@@ -1,0 +1,56 @@
+name: MPJE Coverage Summary
+
+on:
+  push:
+    branches: [analysis/mpje-coverage-debt-prep]
+    paths: ['.github/workflows/coverage-summary.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/mpje-coverage-debt-prep
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter,defaultdict
+          from pathlib import Path
+
+          qs=[json.loads(p.read_text()) for p in sorted(Path('data/questions').glob('ma-q-*.json'))]
+          assert len(qs)==210
+          out={'source_sha':'1c85163367a82c06061f3d5be3f7d05c3748bca2','question_count':210,'areas':{}}
+          for a in (1,2,3,4):
+              aq=[q for q in qs if q['area']==a]
+              topics=Counter(q.get('topic') or 'UNSPECIFIED' for q in aq)
+              subs=Counter(q.get('subtopic') or 'UNSPECIFIED' for q in aq)
+              fams=Counter(q.get('family_id') or 'UNSPECIFIED' for q in aq)
+              out['areas'][str(a)]={
+                  'count':len(aq),
+                  'unique_topics':len(topics),
+                  'unique_subtopics':len(subs),
+                  'unique_families':len(fams),
+                  'topics':dict(sorted(topics.items(),key=lambda x:(-x[1],x[0]))),
+                  'subtopics':dict(sorted(subs.items(),key=lambda x:(-x[1],x[0]))),
+              }
+          p=Path('audits/coverage/2026-08-17/PRE-BATCH3-COVERAGE-SUMMARY.json')
+          p.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - shell: bash
+        run: |
+          git config user.name coverage-summary-bot
+          git config user.email coverage-summary-bot@users.noreply.github.com
+          git rm .github/workflows/coverage-summary.yml
+          git add audits/coverage/2026-08-17/PRE-BATCH3-COVERAGE-SUMMARY.json
+          git commit -m 'analysis(mpje): add compact coverage summary'
+          git push origin HEAD:analysis/mpje-coverage-debt-prep
