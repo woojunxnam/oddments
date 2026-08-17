@@ -1,0 +1,90 @@
+{
+  "package_type": "FROZEN_AUDIT_INPUT",
+  "audit_date": "2026-08-17",
+  "audit_scope": "REAUDIT",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-COV-T1-C",
+  "independent": true,
+  "candidate_sha": "6035cd92939bc094d0077b87d93ef8ac0b784415",
+  "tranche": "PRE_BATCH3_LEGACY_SALVAGE_T1_R1",
+  "question_ids": [
+    "MA-Q-0028",
+    "MA-Q-0032",
+    "MA-Q-0036"
+  ],
+  "question_hashes": {
+    "MA-Q-0028": "9479b83d2dae97ceff373869d477e9e402bd6d5970095600387fa47f290c2e23",
+    "MA-Q-0032": "f819dd7808361e9c1722049b7b3c8542d9ad85b0980fa5d140500f10733edd88",
+    "MA-Q-0036": "4a13dec96ebf24eaa258600e797267957d45f1318935daafc594c17edc72c388"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "FED-CIII-V-PARTIAL": {
+        "content_version": 1,
+        "content_hash": "916e552af577bf4e10c2a63a72c5f075be9607308e962122f7eb96d6a8a6ff00"
+      },
+      "FED-CIII-V-REFILL": {
+        "content_version": 1,
+        "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+      },
+      "FED-CS-SCHEDULES": {
+        "content_version": 1,
+        "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+      },
+      "FED-EPCS-TRANSFER": {
+        "content_version": 1,
+        "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+      },
+      "MA-PMP-REPORTING": {
+        "content_version": 1,
+        "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+      }
+    },
+    "drugs": {
+      "clonazepam": {
+        "content_version": 1,
+        "content_hash": "3005d8e97ca885e86d545627d66deff367dea43282ed5f8a6f68403944155c10"
+      },
+      "triazolam": {
+        "content_version": 1,
+        "content_hash": "28ae99f7ce9ffe566546d3f11fbd1c24edcff8e81ceed53b7d89678cff478fa6"
+      },
+      "zaleplon": {
+        "content_version": 1,
+        "content_hash": "0845a7c99705a8fe26d15da1c714a67688a8fe3cf340afe3a36bc17c560e539a"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "blind_question_package": {
+    "path": "audits/remediation/2026-08-17/GPT-C-BLIND-QUESTIONS-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json",
+    "sha256": "6696d1de5e3403fc52e9f9f4e95a9058705f16a496b17a110a91f7236bdb2a30"
+  },
+  "content_boundary": "No question text, keyed answers, explanations, family/editor classifications, or prior-review conclusions are embedded in this contract package. Use the blind package for independent solving and verify canonical hashes mechanically.",
+  "independence_note": "Independently solve all three changed questions before inspecting keyed answers, explanations, prior audit/editor/repair material, or repository conclusions. Current-law decisions must come from independently researched official sources.",
+  "review_type": "LEGAL_VERIFICATION",
+  "source_policy": "Current official primary/official sources only.",
+  "result_contract": {
+    "required_fields": [
+      "Question_ID",
+      "Verdict",
+      "Severity",
+      "Existing_Answer_Correct",
+      "authorities",
+      "Problem",
+      "Proposed_Answer",
+      "Proposed_Rewrite",
+      "Proposed_Explanation"
+    ],
+    "pass_condition": "Verdict=KEEP and Existing_Answer_Correct=YES for changed-item admission; any other result requires adjudication before release."
+  }
+}
