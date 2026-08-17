@@ -52,29 +52,25 @@ Each changed question was directly compared against the full current canonical b
 
 | Question | FULL bank complete | Realism verdict | Disposition | Closest comparison IDs |
 |---|---|---|---|---|
-| `MA-Q-0028` | YES | FAIL | DROP / schema `DELETE` | `MA-Q-0107`, `MA-Q-0114` |
-| `MA-Q-0032` | YES | PASS | KEEP | `MA-Q-0107`, `MA-Q-0114` |
+| `MA-Q-0028` | YES | FAIL | DROP / schema `DELETE` | dominant `MA-Q-0099`; secondary `MA-Q-0003`, `MA-Q-0007`, `MA-Q-0094` |
+| `MA-Q-0032` | YES | PASS | KEEP | `MA-Q-0035`, `MA-Q-0033`, `MA-Q-0029` |
 | `MA-Q-0036` | YES | PASS | KEEP | `MA-Q-0019`, `MA-Q-0030`, `MA-Q-0035` |
 
-For `MA-Q-0028`, nine of ten frozen realism criteria pass; `distinct_from_bank=false`, so the Issue #54 all-criteria rule requires FAIL. `MA-Q-0032` and `MA-Q-0036` pass all ten frozen realism criteria.
+For `MA-Q-0028`, nine of ten frozen realism criteria pass; `distinct_from_bank=false`, so the Issue #54 all-criteria rule requires FAIL. The dominant comparator is `MA-Q-0099`, which substantially repeats the clonazepam/Schedule IV stock-shortage partial-fill reasoning path. `MA-Q-0003`, `MA-Q-0007`, and `MA-Q-0094` are related Schedule II partial-fill comparisons but use different legal mechanics. `MA-Q-0032` and `MA-Q-0036` pass all ten frozen realism criteria.
+
+Post-audit evidence correction: the previously written references to `MA-Q-0107` and `MA-Q-0114` for Q0028/Q0032 were transcription errors in the final documentation only. This correction does not change the Phase 1 lock, independent answers, LEGAL results, or completed REALISM verdicts/dispositions.
 
 The canonical REALISM result artifact is `data/audits/AUDIT-GPT-FRESH-COV-T1-D-REALISM-REAUDIT-2026-08-17.json`.
 
 ## Repository QA, tests, and generated-artifact freshness
 
-GitHub Actions QA run `32072678578` on result commit `3cf3a7e850b8a04f470fc0355ab86c3f06e74021` completed successfully:
-
-- `python scripts/validate_all.py` — PASS (`0 error(s), 1 warning(s)`; existing warning for `MA-Q-0190` answer-length pattern)
-- `python -m pytest -q` — PASS (`80 passed`)
-- `python scripts/generate_artifacts.py --write && git diff --exit-code` — PASS; tracked generated artifacts are current
-
-A final QA run on the branch including this report is required and will be checked before the Draft PR is opened.
+The pre-correction audit branch had already passed GitHub Actions QA. After this documentation-only evidence correction, repository QA, the full test suite, and generated-artifact freshness are rerun on the corrected head before governance handoff.
 
 ## Independence and governance
 
 - Prohibited substantive prior audit/adjudication/editor conclusions were not used.
 - Contamination status: NONE.
 - STALE INPUT status: NONE.
-- No canonical question, rule, drug, family matrix, release configuration, preview allowlist, lifecycle status, or verification status was modified by this audit.
+- No canonical question, rule, drug, family matrix, release configuration, preview allowlist, lifecycle status, or verification status was modified by this audit or evidence correction.
 - No repair, adjudication, merge, release, coverage recomputation, additional remediation tranche, or Batch 3 work was performed.
-- Final audit-output-only diff against frozen HEAD is a mandatory pre-PR gate and is verified separately immediately before opening the Draft PR.
+- Final audit-output-only diff against frozen HEAD is a mandatory post-correction gate and is verified before governance handoff.
