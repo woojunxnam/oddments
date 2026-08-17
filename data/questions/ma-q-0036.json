@@ -1,53 +1,53 @@
 {
   "question_id": "MA-Q-0036",
-  "family_id": "P2_0036_FED_EPCS_TRANSFER",
+  "family_id": "P2_0036_FED_EPCS_TRANSFER_REFILLS",
   "area": 3,
   "topic": "Prescription transfer",
-  "subtopic": "Electronic prescriptions",
+  "subtopic": "Electronic prescription transfer consequences",
   "difficulty": 4,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient requests transfer of an unfilled electronic Sonata prescription to a second DEA-registered retail pharmacy. Both pharmacists can communicate directly. What else must be confirmed?",
+  "stem": "A patient requests a permissible transfer of an unfilled electronic Sonata prescription that includes two authorized refills to another DEA-registered retail pharmacy. The sending pharmacist asks whether only the initial fill can move while the two refills remain at the original pharmacy. What is the correct federal result?",
   "choices": [
     {
       "id": "A",
-      "text": "Confirm no prior transfer, preserve the electronic record, and verify state permission."
+      "text": "Only the initial fill transfers; the authorized refills must remain at the original pharmacy."
     },
     {
       "id": "B",
-      "text": "Transfer it even if the original prescription was paper."
+      "text": "The initial fill transfers now, and each authorized refill may later be transferred separately."
     },
     {
       "id": "C",
-      "text": "Permit repeated transfers until the first dispensing."
+      "text": "The authorized refills transfer with the original prescription, so the entire prescription moves to the receiving pharmacy."
     },
     {
       "id": "D",
-      "text": "Let a technician transmit the record without pharmacist communication."
+      "text": "The receiving pharmacy must cancel both refills because controlled-substance refills cannot transfer electronically."
     },
     {
       "id": "E",
-      "text": "Ignore Massachusetts transfer restrictions because federal permission preempts every state condition."
+      "text": "The patient may divide the refills between both pharmacies if the two pharmacists agree."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "Confirm no prior transfer, preserve the electronic record, and verify state permission. By contrast, 'Transfer it even if the original prescription was paper.' uses a legal trigger absent from the stem.",
+    "core_reasoning": "When an otherwise permissible controlled-substance electronic prescription is transferred for initial filling, any authorized refills transfer with the original prescription. The prescription is not split so that the initial fill occurs at one pharmacy while its refills remain at the sending pharmacy.",
     "choice_analysis": {
-      "A": "The stated facts support this result: Confirm no prior transfer, preserve the electronic record, and verify state permission.",
-      "B": "This near-miss uses a different trigger: Transfer it even if the original prescription was paper.",
-      "C": "This near-miss uses a different trigger: Permit repeated transfers until the first dispensing.",
-      "D": "This near-miss uses a different trigger: Let a technician transmit the record without pharmacist communication.",
-      "E": "This near-miss uses a different trigger: Ignore Massachusetts transfer restrictions because federal permission preempts every state condition."
+      "A": "DEA's electronic-transfer rule does not leave authorized refills behind at the sending pharmacy when the original prescription is transferred.",
+      "B": "Authorized refills move with the original prescription; they are not reserved for separate later transfers.",
+      "C": "This is the federal consequence of transferring the original electronic prescription: its authorized refills accompany it to the receiving pharmacy.",
+      "D": "Authorized refills are not automatically cancelled merely because the controlled electronic prescription is transferred.",
+      "E": "The prescription and its authorized refills are not divided between the sending and receiving pharmacies by pharmacist agreement."
     },
     "related_facts": [
       "zaleplon (Sonata) is used for short-term treatment of insomnia; it is federal Schedule IV and Massachusetts Schedule IV.",
-      "At a patient's request, an unfilled electronic Schedule II through V prescription may be transferred once between DEA-registered retail pharmacies if allowed by state law, kept electronic, unaltered, and communicated directly between pharmacists."
+      "For a permitted patient-requested transfer of an electronic Schedule II-V prescription, DEA requires the prescription to remain electronic and unaltered and to be communicated directly between licensed pharmacists; any authorized refills transfer with the original prescription."
     ],
-    "mpje_trap": "Reject 'Transfer it even if the original prescription was paper.' because its legal trigger is absent."
+    "mpje_trap": "Do not treat the refills as detachable from the original electronic controlled-substance prescription after the prescription is transferred."
   },
   "rule_ids": [
     "FED-EPCS-TRANSFER",
@@ -57,12 +57,13 @@
     "zaleplon"
   ],
   "reasoning_steps": [
-    "Classify zaleplon under the federal and Massachusetts schedules before selecting a legal pathway",
-    "Match the scenario's operative facts to One-time transfer of electronic controlled prescriptions"
+    "Classify zaleplon under the federal and Massachusetts schedules before selecting a transfer pathway",
+    "Assume the stem's transfer is otherwise permissible and focus on what happens to authorized refills",
+    "Apply the rule that authorized refills transfer with the original electronic controlled-substance prescription"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
+  "last_legal_review": "2026-08-17",
   "audits": [],
   "duplicate_review_status": "PENDING",
   "independent_audit_status": "PENDING",
