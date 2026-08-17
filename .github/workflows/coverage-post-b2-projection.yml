@@ -1,0 +1,59 @@
+name: MPJE Post-Batch2 Coverage Projection
+on:
+  push:
+    branches: [analysis/mpje-coverage-debt-prep]
+    paths: ['.github/workflows/coverage-post-b2-projection.yml']
+permissions:
+  contents: write
+jobs:
+  projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/mpje-coverage-debt-prep
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          qs=[json.loads(p.read_text()) for p in sorted(Path('data/questions').glob('ma-q-*.json'))]
+          released=[q for q in qs if q['lifecycle_status']=='RELEASED' and q['verification_status']=='RELEASED' and q.get('independent_audit_status')=='PASSED' and q.get('final_adjudication',{}).get('decision')=='KEEP']
+          batch2=[q for q in qs if 131 <= int(q['question_id'][-4:]) <= 210]
+          assert len(released)==40
+          assert len(batch2)==80
+          assert not ({q['question_id'] for q in released} & {q['question_id'] for q in batch2})
+          projected=released+batch2
+          curr=Counter(q['area'] for q in released)
+          b2=Counter(q['area'] for q in batch2)
+          proj=Counter(q['area'] for q in projected)
+          alloc={1:26,2:40,3:29,4:25}
+          deficit={a:max(0,alloc[a]-proj[a]) for a in alloc}
+          out={
+            'source_sha':'1c85163367a82c06061f3d5be3f7d05c3748bca2',
+            'assumption':'Projection only: all 80 Batch2 Q0131-Q0210 eventually pass Issue #39 and release governance without additional canonical changes. This is NOT a release decision.',
+            'current_release_usable_total':len(released),
+            'current_release_usable_by_area':dict(curr),
+            'batch2_candidate_total':len(batch2),
+            'batch2_by_area':dict(b2),
+            'projected_release_usable_total':len(projected),
+            'projected_release_usable_by_area':dict(proj),
+            'one_mock_required_by_area':alloc,
+            'projected_one_mock_deficit_by_area':deficit,
+            'projected_can_build_one_blueprint_mock_without_reuse':all(v==0 for v in deficit.values()),
+          }
+          p=Path('audits/coverage/2026-08-17/PRE-BATCH3-POST-B2-PROJECTION.json'); p.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - shell: bash
+        run: |
+          git config user.name coverage-projection-bot
+          git config user.email coverage-projection-bot@users.noreply.github.com
+          git rm .github/workflows/coverage-post-b2-projection.yml
+          git add audits/coverage/2026-08-17/PRE-BATCH3-POST-B2-PROJECTION.json
+          git commit -m 'analysis(mpje): add post-Batch2 coverage projection'
+          git push origin HEAD:analysis/mpje-coverage-debt-prep
