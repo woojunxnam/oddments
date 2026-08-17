@@ -1,0 +1,70 @@
+name: MPJE Coverage Gap Global Rescan
+on:
+  push:
+    branches: [analysis/mpje-coverage-debt-prep]
+    paths: ['.github/workflows/coverage-gap-global-rescan.yml']
+permissions:
+  contents: write
+jobs:
+  rescan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/mpje-coverage-debt-prep
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - shell: bash
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          qs=[]
+          for p in sorted(Path('data/questions').glob('ma-q-*.json')):
+              q=json.loads(p.read_text())
+              blob=' '.join([q.get('topic',''),q.get('subtopic',''),q.get('stem',''),q.get('family_id',''),' '.join(q.get('rule_ids',[])),' '.join(c.get('text','') for c in q.get('choices',[])),q.get('explanation',{}).get('core_reasoning',''),' '.join(q.get('reasoning_steps',[]))]).lower()
+              qs.append((q,blob))
+          specs=[
+            ('1.2b',1,'Personnel disciplinary classifications/processes',[r'disciplin',r'revocation',r'suspension',r'sanction',r'probation']),
+            ('1.2c',1,'Impairment/inability-to-practice reporting or participation programs',[r'impair',r'reasonable skill and safety',r'inability to practice',r'rehabilitation program',r'professional recovery',r'diversion program']),
+            ('2.3a',2,'Counseling or offer-to-counsel requirements',[r'counsel',r'offer to counsel']),
+            ('2.3b',2,'Documentation of counseling/offer',[r'document.*counsel',r'counsel.*document',r'documenting.*offer']),
+            ('2.4',2,'Returning or reusing drugs',[r'return(ed|ing)? medication',r'reuse',r'redispens',r'return.*drug',r'drug.*return']),
+            ('3.3a',3,'Prospective drug utilization review',[r'prospective review',r'prospective drug utilization',r'\bdur\b']),
+            ('3.6',3,'Packaging of dispensed drugs',[r'packaging',r'package integrity',r'compliance packaging',r'repackag']),
+            ('3.8b',3,'Nonprescription drug/device labeling',[r'nonprescription.*label',r'otc.*label',r'device.*label']),
+            ('3.8c',3,'Nonprescription/behind-counter packaging or repackaging',[r'nonprescription.*packag',r'otc.*packag',r'behind-the-counter',r'repackag']),
+            ('4.2c',4,'Hazardous-drug training/possession/handling/storage/disposal',[r'hazardous',r'usp.?800',r'chemotherapy',r'cytotoxic']),
+            ('4.4',4,'Permitted/mandated product selection',[r'generic interchange',r'product selection',r'substitution',r'interchangeable',r'biosimilar']),
+            ('4.5a',4,'Sterile compounding',[r'sterile compound',r'usp.?797',r'parenteral compounding',r'compounded sterile']),
+            ('4.5b',4,'Nonsterile compounding',[r'nonsterile compound',r'non-sterile compound',r'usp.?795']),
+            ('4.5c',4,'Hazardous compounding',[r'hazardous compound',r'usp.?800']),
+            ('4.5d',4,'Non-hazardous compounding',[r'nonhazardous compound',r'non-hazardous compound']),
+            ('4.6',4,'Centralized prescription processing / central fill',[r'central fill',r'centralized prescription',r'centralized processing']),
+            ('4.7c',4,'Practice-setting inspection requirements',[r'inspection',r'inspect.*pharmacy',r'preoperational']),
+            ('4.7d',4,'Practice-setting disciplinary actions',[r'pharmacy.*disciplin',r'facility.*disciplin',r'permit.*suspend',r'license.*revok']),
+          ]
+          rows=[]
+          for cid,expected_area,label,pats in specs:
+              cand=[]
+              for q,blob in qs:
+                  hits=[p for p in pats if re.search(p,blob,re.I)]
+                  if hits:
+                      cand.append({'question_id':q['question_id'],'current_area':q['area'],'expected_area':expected_area,'area_match':q['area']==expected_area,'topic':q.get('topic'),'subtopic':q.get('subtopic'),'family_id':q.get('family_id'),'matched_patterns':hits})
+              same=[x for x in cand if x['area_match']]
+              cross=[x for x in cand if not x['area_match']]
+              rows.append({'atomic_id':cid,'label':label,'expected_area':expected_area,'same_area_count':len(same),'cross_area_count':len(cross),'global_candidate_count':len(cand),'same_area_candidates':same,'cross_area_candidates':cross})
+          out={'source_sha':'1c85163367a82c06061f3d5be3f7d05c3748bca2','method':'Global rescan of previously ZERO/THIN proxy competencies without trusting current area tags. Keyword hits remain candidate evidence only.','rows':rows,'still_global_zero':[{'atomic_id':r['atomic_id'],'label':r['label']} for r in rows if r['global_candidate_count']==0],'cross_area_only':[{'atomic_id':r['atomic_id'],'label':r['label'],'candidate_ids':[x['question_id'] for x in r['cross_area_candidates']]} for r in rows if r['same_area_count']==0 and r['cross_area_count']>0]}
+          p=Path('audits/coverage/2026-08-17/PRE-BATCH3-GAP-GLOBAL-RESCAN.json'); p.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'still_global_zero':out['still_global_zero'],'cross_area_only':out['cross_area_only']},indent=2))
+          PY
+      - shell: bash
+        run: |
+          git config user.name coverage-gap-rescan-bot
+          git config user.email coverage-gap-rescan-bot@users.noreply.github.com
+          git rm .github/workflows/coverage-gap-global-rescan.yml
+          git add audits/coverage/2026-08-17/PRE-BATCH3-GAP-GLOBAL-RESCAN.json
+          git commit -m 'analysis(mpje): globally rescan coverage gaps'
+          git push origin HEAD:analysis/mpje-coverage-debt-prep
