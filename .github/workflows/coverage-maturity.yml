@@ -1,0 +1,51 @@
+name: MPJE Coverage Maturity
+on:
+  push:
+    branches: [analysis/mpje-coverage-debt-prep]
+    paths: ['.github/workflows/coverage-maturity.yml']
+permissions:
+  contents: write
+jobs:
+  maturity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/mpje-coverage-debt-prep
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from collections import Counter,defaultdict
+          from pathlib import Path
+          qs=[json.loads(p.read_text()) for p in sorted(Path('data/questions').glob('ma-q-*.json'))]
+          assert len(qs)==210
+          life=Counter(q['lifecycle_status'] for q in qs)
+          verify=Counter(q['verification_status'] for q in qs)
+          indep=Counter(q.get('independent_audit_status','MISSING') for q in qs)
+          by_area={}
+          for a in (1,2,3,4):
+              aq=[q for q in qs if q['area']==a]
+              by_area[str(a)]={
+                  'total':len(aq),
+                  'lifecycle':dict(Counter(q['lifecycle_status'] for q in aq)),
+                  'verification':dict(Counter(q['verification_status'] for q in aq)),
+                  'independent_audit':dict(Counter(q.get('independent_audit_status','MISSING') for q in aq)),
+                  'release_usable_count':sum(q['lifecycle_status']=='RELEASED' and q['verification_status']=='RELEASED' and q.get('independent_audit_status')=='PASSED' and q.get('final_adjudication',{}).get('decision')=='KEEP' for q in aq),
+              }
+          out={'source_sha':'1c85163367a82c06061f3d5be3f7d05c3748bca2','question_count':210,'lifecycle':dict(life),'verification':dict(verify),'independent_audit':dict(indep),'by_area':by_area,'release_usable_total':sum(x['release_usable_count'] for x in by_area.values()),'definition':'release_usable = lifecycle RELEASED + verification RELEASED + independent_audit PASSED + final_adjudication KEEP'}
+          p=Path('audits/coverage/2026-08-17/PRE-BATCH3-COVERAGE-MATURITY.json'); p.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - shell: bash
+        run: |
+          git config user.name coverage-maturity-bot
+          git config user.email coverage-maturity-bot@users.noreply.github.com
+          git rm .github/workflows/coverage-maturity.yml
+          git add audits/coverage/2026-08-17/PRE-BATCH3-COVERAGE-MATURITY.json
+          git commit -m 'analysis(mpje): add coverage maturity snapshot'
+          git push origin HEAD:analysis/mpje-coverage-debt-prep
