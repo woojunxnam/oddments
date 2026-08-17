@@ -140,7 +140,9 @@ jobs:
           import re
           import subprocess
 
-          lines = subprocess.check_output(["git", "status", "--porcelain=v1"], text=True).splitlines()
+          lines = subprocess.check_output(
+              ["git", "status", "--porcelain=v1", "--untracked-files=all"], text=True
+          ).splitlines()
           paths = []
           for line in lines:
               path = line[3:]
