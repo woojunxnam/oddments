@@ -102,7 +102,11 @@ jobs:
                   return True
               if p == "audits/remediation/2026-08-17/T1-EDITOR-REVIEW.json":
                   return True
-              if p in {"site/generated/questions.json"}:
+              if p in {
+                  "site/generated/questions.json",
+                  "answer_distribution_report.json",
+                  "structural_pattern_report.json",
+              }:
                   return True
               if p.startswith("generated/") and p.endswith(".json"):
                   return True
