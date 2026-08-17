@@ -21,6 +21,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
 
       - name: Build exact frozen audit inputs
         shell: bash
@@ -55,7 +60,7 @@ jobs:
               "MA-Q-0175": "2e9b5cf4f107f54631b65519272b2e4e017bcfeb44acfa35c9a87691f31e8489",
               "MA-Q-0193": "41a3734a5932214072b3c01d98dbdf9ecf8746aa679d6f10bf1d170fc799fe18",
               "MA-Q-0194": "4e84e01beeab308ec89754da7539f384054439b50a45a84dc85281bd97314488",
-              "MA-Q-0195": "cefe38dc2fb02cbbca986ff66fcd3f53d159878c1ca22f483226303173200ca8",
+              "MA-Q-0195": "cefe38dc2fb02cbbca986ff66fcd3f53d159878c1ca22f483226303173200ca8"
           }
 
           def load_json(path):
@@ -82,7 +87,7 @@ jobs:
           style_snapshot = {
               "profile_id": style["profile_id"],
               "content_version": style["content_version"],
-              "content_hash": style["content_hash"],
+              "content_hash": style["content_hash"]
           }
 
           common = {
@@ -94,7 +99,7 @@ jobs:
               "independent": True,
               "question_hashes": qhashes,
               "question_ids": question_ids,
-              "questions": questions,
+              "questions": questions
           }
 
           legal = dict(common)
@@ -104,7 +109,7 @@ jobs:
                   "required_fields": ["Question_ID", "Verdict", "Severity", "Existing_Answer_Correct", "authorities", "Problem", "Proposed_Answer", "Proposed_Rewrite", "Proposed_Explanation"],
                   "warning": "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Fresh auditor must independently solve and verify current official law; do not modify canonical questions."
               },
-              "review_type": "LEGAL_VERIFICATION",
+              "review_type": "LEGAL_VERIFICATION"
           })
 
           realism = dict(common)
@@ -115,7 +120,7 @@ jobs:
                   "warning": "STRUCTURAL_TRIAGE_ONLY cannot satisfy release. Fresh auditor must compare against the full canonical bank, including the specified semantic counterparts, and must not modify canonical questions."
               },
               "review_type": "REALISM_REVIEW",
-              "style_profile": style_snapshot,
+              "style_profile": style_snapshot
           })
 
           legal_name = "GPT-C-LEGAL-EXP2-R2-REAUDIT-IMPACT9.json"
@@ -129,7 +134,7 @@ jobs:
 
           package_hashes = {
               legal_name: hashlib.sha256((outdir / legal_name).read_bytes()).hexdigest(),
-              realism_name: hashlib.sha256((outdir / realism_name).read_bytes()).hexdigest(),
+              realism_name: hashlib.sha256((outdir / realism_name).read_bytes()).hexdigest()
           }
 
           manifest = {
