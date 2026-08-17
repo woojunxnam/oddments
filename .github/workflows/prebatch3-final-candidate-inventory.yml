@@ -1,4 +1,4 @@
-name: Pre-Batch3 Final Candidate Inventory
+name: Pre-Batch3 Final Coverage Gate
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  inventory:
+  coverage-gate:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -40,25 +40,48 @@ jobs:
           git show "$PREP:audits/coverage/2026-08-17/PRE-BATCH3-ATOMIC-COVERAGE-PROXY.json" > /tmp/PRE-BATCH3-ATOMIC-COVERAGE-PROXY.json
           echo "source verification: PASS"
 
-      - name: Build refreshed candidate maturity and capacity
+      - name: Rebuild candidate maturity and capacity
         run: python scripts/build_prebatch3_final_candidate_inventory.py
 
-      - name: Validate repository unchanged canonically
-        run: python scripts/validate_all.py
+      - name: Apply semantic 46-atomic adjudication
+        run: python scripts/finalize_prebatch3_coverage_gate.py
+
+      - name: Validate repository
+        shell: bash
+        run: python scripts/validate_all.py | tee /tmp/validate.log
 
       - name: Run full tests
-        run: python -m pytest -q
+        shell: bash
+        run: python -m pytest -q | tee /tmp/pytest.log
 
       - name: Prove generated artifacts current
         run: python scripts/generate_artifacts.py --write && git diff --exit-code -- generated site/generated/questions.json
 
-      - name: Commit analysis artifacts
+      - name: Enforce analysis-only boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess
+          lines = subprocess.check_output(["git", "status", "--porcelain=v1", "--untracked-files=all"], text=True).splitlines()
+          paths = [line[3:].split(" -> ")[-1] for line in lines]
+          allowed_prefix = "audits/coverage/2026-08-17/FINAL-PRE-BATCH3-"
+          unexpected = [p for p in paths if not p.startswith(allowed_prefix)]
+          if unexpected:
+              raise SystemExit(f"unexpected final-gate writes: {unexpected}")
+          print(f"analysis boundary PASS: {len(paths)} artifact paths")
+          PY
+
+      - name: Commit final gate artifacts
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add audits/coverage/2026-08-17/FINAL-PRE-BATCH3-CANDIDATE-MATURITY.json \
-                  audits/coverage/2026-08-17/FINAL-PRE-BATCH3-MOCK-CAPACITY.json
-          git commit -m "analysis: refresh post-Batch2 coverage candidates"
+          git add audits/coverage/2026-08-17/FINAL-PRE-BATCH3-*.json \
+                  audits/coverage/2026-08-17/FINAL-PRE-BATCH3-COVERAGE-DEBT.md
+          if git diff --cached --quiet; then
+            echo "final gate artifacts already current"
+          else
+            git commit -m "analysis: finalize pre-Batch3 coverage gate"
+          fi
           git push origin HEAD:analysis/pre-batch3-coverage-final
