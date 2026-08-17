@@ -3,38 +3,38 @@
   "family_id": "B2_METHADONE_OUD_RETAIL",
   "area": 3,
   "topic": "Opioid use disorder",
-  "subtopic": "Methadone indication adjudication",
-  "difficulty": 4,
+  "subtopic": "Methadone indication conflict and corresponding responsibility",
+  "difficulty": 5,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient with a documented history of opioid use disorder presents an otherwise valid Schedule II methadone prescription from an oncologist. The prescription and clinical context clearly show that methadone is being prescribed for severe cancer pain, not for maintenance or detoxification treatment. Which federal principle should guide the pharmacist?",
+  "stem": "A community pharmacy receives an otherwise complete Schedule II methadone prescription that is annotated 'for pain.' During counseling, however, the patient states that the prescriber described the methadone as replacing the patient's opioid-treatment-program maintenance doses, and the pharmacy has no documented pain diagnosis or other explanation for the conflict. What is the pharmacist's best next step?",
   "choices": [
-    {"id": "A", "text": "Reject the prescription because a prior OUD diagnosis makes every later methadone prescription an OUD-maintenance prescription"},
-    {"id": "B", "text": "Evaluate the prescription under the ordinary Schedule II prescription rules for its stated pain indication; OUD history alone does not convert the prescription into maintenance treatment"},
-    {"id": "C", "text": "Require the oncologist to enroll the patient in an opioid treatment program before methadone may be dispensed for cancer pain"},
-    {"id": "D", "text": "Replace the pain prescription with the non-OTP three-day emergency OUD dispensing pathway because the patient has an OUD history"},
-    {"id": "E", "text": "Require the prescriber to change the medication to buprenorphine before any controlled-substance prescription may be dispensed"}
+    {"id": "A", "text": "Dispense immediately because the written words 'for pain' conclusively determine the federal treatment pathway despite contradictory information"},
+    {"id": "B", "text": "Reject every future methadone prescription from that prescriber because methadone can never be dispensed by a community pharmacy"},
+    {"id": "C", "text": "Pause dispensing and clarify the prescription's actual medical purpose and treatment pathway with the prescriber before deciding whether ordinary Schedule II dispensing is appropriate"},
+    {"id": "D", "text": "Change the prescription to buprenorphine because a pharmacist may substitute an OUD medication whenever the stated indication is uncertain"},
+    {"id": "E", "text": "Rewrite the indication as OUD maintenance and dispense the prescription after documenting that the patient confirmed the intended use"}
   ],
-  "correct_choice_ids": ["B"],
+  "correct_choice_ids": ["C"],
   "explanation": {
-    "core_reasoning": "Federal methadone restrictions for maintenance or detoxification treatment turn on the treatment purpose, not merely the patient's diagnostic history. When an otherwise valid methadone prescription is clearly for pain, the pharmacist evaluates it under the ordinary controlled-prescription pathway rather than automatically treating it as OUD maintenance.",
+    "core_reasoning": "The pharmacist cannot resolve a material conflict about a controlled-substance prescription's actual purpose by relying on a label alone. Methadone for pain can follow ordinary Schedule II prescription rules, while methadone used for OUD maintenance invokes a different federal narcotic-treatment pathway. The contradictory patient statement is therefore material to corresponding responsibility and should be resolved before dispensing.",
     "choice_analysis": {
-      "A": "Incorrect. A patient's prior OUD diagnosis does not by itself change the purpose of a later methadone prescription that is clearly for pain.",
-      "B": "Correct. The pain indication remains an ordinary controlled-prescription use, subject to the usual Schedule II and prescription-validity requirements.",
-      "C": "Incorrect. The OTP maintenance framework does not automatically attach to a methadone prescription whose actual purpose is cancer pain.",
-      "D": "Incorrect. The non-OTP three-day pathway is an emergency OUD-treatment bridge, not a substitute for a legitimate pain prescription.",
-      "E": "Incorrect. Federal law does not require substitution with buprenorphine simply because the patient has an OUD history."
+      "A": "Incorrect. A written indication does not eliminate the pharmacist's responsibility to resolve material information suggesting a different actual medical purpose.",
+      "B": "Incorrect. Methadone may be lawfully prescribed and dispensed for pain; the problem is the unresolved conflict in this specific prescription.",
+      "C": "Correct. Clarifying the actual purpose is necessary before the pharmacist can determine whether the ordinary Schedule II pathway or the OUD-treatment framework controls.",
+      "D": "Incorrect. Corresponding responsibility does not give the pharmacist unilateral authority to substitute a different OUD medication.",
+      "E": "Incorrect. The pharmacist should not rewrite the prescriber's indication or convert an unresolved maintenance-treatment situation into ordinary retail dispensing."
     },
-    "related_facts": ["Methadone remains Schedule II regardless of whether its lawful clinical use is pain treatment or OUD treatment."],
-    "mpje_trap": "Letting a patient's OUD history override the actual indication and legal purpose of the prescription."
+    "related_facts": ["Methadone remains Schedule II regardless of indication, but its lawful dispensing pathway can differ materially between pain and OUD maintenance treatment."],
+    "mpje_trap": "Treating an indication written on the prescription as dispositive even when material facts at the pharmacy directly contradict it."
   },
-  "rule_ids": ["FED-OUD-OTP"],
+  "rule_ids": ["FED-OUD-OTP", "FED-CORRESPONDING-RESP"],
   "drug_ids": ["methadone"],
   "reasoning_steps": [
-    "Separate the patient's OUD history from the stated purpose of the current prescription",
-    "Determine whether the prescription is for pain or for maintenance/detoxification treatment",
-    "Apply the ordinary Schedule II pathway when the actual indication is pain"
+    "Identify the conflict between the written pain indication and the patient's description of OUD maintenance use",
+    "Recognize that the actual medical purpose determines which methadone pathway applies",
+    "Apply corresponding responsibility by resolving the material conflict before dispensing"
   ],
   "verification_status": "AUDIT_PENDING",
   "lifecycle_status": "AUDIT_PENDING",
