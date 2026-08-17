@@ -1,0 +1,145 @@
+name: Admit Pre-Batch3 T1
+
+on:
+  push:
+    branches:
+      - release/pre-batch3-legacy-salvage-t1-r1
+    paths:
+      - .github/workflows/admit-prebatch3-t1.yml
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out guarded admission branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: release/pre-batch3-legacy-salvage-t1-r1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Verify exact source and tooling-only starting boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=2f7dcd6b6ea06787e1e0a5dc76f93b0f2fc78eab
+          ORIGINAL=c99161a7f3e50bb95491de98f895795989d22a16
+          git fetch origin repair/pre-batch3-legacy-salvage-t1-r1
+          test "$(git rev-parse origin/repair/pre-batch3-legacy-salvage-t1-r1)" = "$SOURCE"
+          test "$(git merge-base "$SOURCE" HEAD)" = "$SOURCE"
+          python - <<'PY'
+          import subprocess
+          source = '2f7dcd6b6ea06787e1e0a5dc76f93b0f2fc78eab'
+          changed = set(subprocess.check_output(['git','diff','--name-only',f'{source}...HEAD'], text=True).splitlines())
+          expected = {
+              'scripts/admit_prebatch3_t1.py',
+              '.github/workflows/admit-prebatch3-t1.yml',
+          }
+          if changed != expected:
+              raise SystemExit(f'unexpected pre-admission branch diff: {sorted(changed)}')
+          print('tooling-only starting boundary: PASS')
+          PY
+          if ! git diff --quiet "$ORIGINAL" "$SOURCE" -- data/rules data/drugs data/blueprint.json data/exam_style/mpje_style_profile.json; then
+            echo 'dependency content changed between original audited T1 candidate and release source' >&2
+            exit 1
+          fi
+          echo 'audited dependency immutability boundary: PASS'
+
+      - name: Guarded preflight
+        run: python scripts/admit_prebatch3_t1.py --check
+
+      - name: Apply guarded 29-question admission
+        run: python scripts/admit_prebatch3_t1.py --apply
+
+      - name: Regenerate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Verify guarded post-release state
+        run: python scripts/admit_prebatch3_t1.py --verify-post
+
+      - name: Validate repository
+        run: python scripts/validate_all.py
+
+      - name: Run full tests
+        run: python -m pytest -q
+
+      - name: Stage intended release changes
+        run: git add -A
+
+      - name: Prove generated-artifact freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+
+      - name: Enforce release diff boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          source = '2f7dcd6b6ea06787e1e0a5dc76f93b0f2fc78eab'
+          changed = set(subprocess.check_output(['git','diff','--name-only',source], text=True).splitlines())
+          admitted = {
+              'MA-Q-0004','MA-Q-0009','MA-Q-0013','MA-Q-0015','MA-Q-0016','MA-Q-0017',
+              'MA-Q-0020','MA-Q-0027','MA-Q-0030','MA-Q-0032','MA-Q-0034','MA-Q-0036',
+              'MA-Q-0040','MA-Q-0059','MA-Q-0060','MA-Q-0075','MA-Q-0076','MA-Q-0077',
+              'MA-Q-0078','MA-Q-0079','MA-Q-0080','MA-Q-0081','MA-Q-0082','MA-Q-0083',
+              'MA-Q-0084','MA-Q-0085','MA-Q-0086','MA-Q-0087','MA-Q-0088',
+          }
+          expected_question_paths = {f"data/questions/ma-q-{qid[-4:]}.json" for qid in admitted}
+          actual_question_paths = {p for p in changed if p.startswith('data/questions/')}
+          if actual_question_paths != expected_question_paths:
+              raise SystemExit(
+                  f'question mutation boundary mismatch; expected {sorted(expected_question_paths)}, got {sorted(actual_question_paths)}'
+              )
+          if 'data/questions/ma-q-0028.json' in changed:
+              raise SystemExit('Q0028 substantive/quarantine record changed during release')
+          blocked = [
+              p for p in changed
+              if p.startswith('data/rules/')
+              or p.startswith('data/drugs/')
+              or p == 'data/blueprint.json'
+              or p == 'data/exam_style/mpje_style_profile.json'
+              or p == 'data/questions/ma-q-0190.json'
+          ]
+          if blocked:
+              raise SystemExit(f'blocked release mutations: {blocked}')
+          allowed_non_questions = {
+              'scripts/admit_prebatch3_t1.py',
+              '.github/workflows/admit-prebatch3-t1.yml',
+              'data/exam_style/question_family_matrix.json',
+              'site/generated/preview_allowlist.json',
+              'site/generated/questions.json',
+              'duplicate_report.json',
+              'answer_distribution_report.json',
+              'structural_pattern_report.json',
+              'audits/remediation/2026-08-17/PRE-BATCH3-T1-GUARDED-ADMISSION.json',
+          }
+          unexpected = changed - expected_question_paths - allowed_non_questions
+          if unexpected:
+              raise SystemExit(f'unexpected release diff paths: {sorted(unexpected)}')
+          print(f'release diff boundary PASS: {len(changed)} paths; exactly 29 question records mutated; Q0028 untouched')
+          PY
+
+      - name: Commit guarded admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "release: admit 29 Pre-Batch3 T1 questions"
+
+      - name: Push guarded admission
+        run: git push origin HEAD:release/pre-batch3-legacy-salvage-t1-r1
