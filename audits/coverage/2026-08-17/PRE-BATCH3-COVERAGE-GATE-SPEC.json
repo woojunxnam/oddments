@@ -1,0 +1,63 @@
+{
+  "gate_id": "PRE-BATCH3-FULL-COMPETENCY-COVERAGE-DEBT",
+  "status": "PRELIMINARY_FAIL_FINAL_GATE_BLOCKED",
+  "source_snapshot_sha": "1c85163367a82c06061f3d5be3f7d05c3748bca2",
+  "blocking_issue": 39,
+  "final_run_required_after": "Batch 2 fresh re-audit PASS and Batch 2 release governance completion",
+  "blueprint": {
+    "id": "MPJE-MA-PRE2027-BLUEPRINT",
+    "target_question_count_per_mock": 120,
+    "integer_area_allocation": {"1": 26, "2": 40, "3": 29, "4": 25}
+  },
+  "atomic_competency_count": 46,
+  "pass_criteria": {
+    "atomic_semantic_gaps": 0,
+    "direct_release_usable_evidence_per_atomic_minimum": 1,
+    "headline_family_diversity_default_minimum": 2,
+    "taxonomy_mismatches": 0,
+    "blueprint_faithful_120_question_mock_without_reuse": true,
+    "frozen_reproducible_evidence": true,
+    "qa_tests_artifact_freshness": "PASS"
+  },
+  "preliminary_direct_or_material_gaps": [
+    "1.2b personnel disciplinary classifications/processes",
+    "1.2c impairment/inability-to-practice reporting or participation programs",
+    "2.3b documentation of counseling/offer",
+    "4.2c hazardous-drug training/possession/handling/storage/disposal",
+    "4.5a substantive sterile compounding",
+    "4.5b substantive nonsterile compounding",
+    "4.5c hazardous compounding",
+    "4.5d non-hazardous compounding",
+    "4.6 centralized prescription processing / central fill",
+    "4.7c practice-setting inspection requirements",
+    "4.7d practice-setting disciplinary actions"
+  ],
+  "known_taxonomy_or_maturity_debt": {
+    "MA-Q-0085": "Direct prospective DUR evidence; current Area 2 / AUDIT_PENDING, while competency is NABP 3.3.",
+    "MA-Q-0088": "Direct returned-medication evidence; current Area 4 / AUDIT_PENDING, while competency is NABP 2.4.",
+    "MA-Q-0087": "Direct generic interchange/product-selection evidence; current Area 3 / AUDIT_PENDING, while competency is NABP 4.4.",
+    "MA-Q-0098": "Released direct/partial evidence for OTC-vs-Rx naloxone labeling/product pathway.",
+    "MA-Q-0169": "AUDIT_PENDING special-context evidence for compliance packaging; not automatically sufficient for general packaging coverage."
+  },
+  "capacity": {
+    "current_canonical_by_area": {"1": 23, "2": 38, "3": 96, "4": 53},
+    "current_release_usable_by_area": {"1": 5, "2": 7, "3": 25, "4": 3},
+    "projected_after_clean_batch2_release_by_area": {"1": 17, "2": 22, "3": 55, "4": 26},
+    "projected_after_clean_batch2_one_mock_deficit_by_area": {"1": 9, "2": 18, "3": 0, "4": 0}
+  },
+  "remediation_policy": [
+    "Do not start Batch 3 if the final gate fails.",
+    "Use a separately named pre-Batch3 coverage-remediation tranche.",
+    "Salvage and independently audit sound legacy Q0001-Q0090 content before authoring new questions.",
+    "Author only residual semantic gaps or capacity deficits after legacy salvage.",
+    "Apply the same freeze, independent legal+realism audit, adjudication/repair, re-freeze/re-audit, and release governance process to remediation content.",
+    "Rerun the full coverage gate after remediation; only PASS unlocks Batch 3."
+  ],
+  "locked_now": {
+    "batch3_authoring": "BLOCKED",
+    "coverage_remediation_authoring": "NOT_STARTED",
+    "batch2_release": "BLOCKED_BY_ISSUE_39",
+    "merge": "NO_CHANGE_FROM_EXISTING_LOCKS",
+    "public_preview": "NO_CHANGE_FROM_EXISTING_LOCKS"
+  }
+}
