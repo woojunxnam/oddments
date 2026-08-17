@@ -1723,43 +1723,49 @@
       "difficulty": 5,
       "question_type": "SATA",
       "provenance": "GEN",
-      "stem": "Which drug-status and Massachusetts legal-consequence pairings are accurate? Select all that apply.",
+      "stem": "During a pharmacy-system configuration audit, the pharmacist reviews rules that would automatically control dispensing or monitoring. Which configurations are legally correct? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Pregabalin is Schedule V, and covered dispensing is MassPAT-reportable."
+          "text": "Treat pregabalin as Schedule V and submit covered dispensing to MassPAT."
         },
         {
           "id": "B",
-          "text": "Gabapentin is federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."
+          "text": "Treat gabapentin as federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."
         },
         {
           "id": "C",
-          "text": "Methylphenidate is Schedule II and may not be refilled."
+          "text": "Treat methylphenidate as Schedule II and block prescription refills."
         },
         {
           "id": "D",
-          "text": "Pseudoephedrine is Schedule V because CMEA restricts retail sales."
+          "text": "Apply CMEA retail-sale controls to pseudoephedrine without classifying it as Schedule V solely because of those controls."
+        },
+        {
+          "id": "E",
+          "text": "Apply the federal Schedule III-IV five-refill/six-month rule to gabapentin solely because Massachusetts places it in Schedule VI."
         }
       ],
       "correct_choice_ids": [
         "A",
         "B",
-        "C"
+        "C",
+        "D"
       ],
       "explanation": {
-        "core_reasoning": "Drug classification and legal consequence must be matched separately. Pregabalin is Schedule V, gabapentin has a Massachusetts-specific Schedule VI and reporting consequence, and methylphenidate is Schedule II; CMEA controls do not make pseudoephedrine Schedule V.",
+        "core_reasoning": "A pharmacy system must keep federal schedule, Massachusetts schedule, MassPAT reporting, refill limits, and CMEA retail controls separate. Pregabalin, gabapentin, and methylphenidate require the stated schedule/PMP/refill configurations, while pseudoephedrine requires its separate CMEA retail controls without being converted into Schedule V. Massachusetts Schedule VI status also does not import the federal Schedule III-IV refill rule into gabapentin.",
         "choice_analysis": {
-          "A": "Pregabalin is federally and in Massachusetts Schedule V, and covered dispensing belongs in MassPAT reporting.",
-          "B": "Gabapentin is not federally scheduled but Massachusetts treats it as Schedule VI and an additional MassPAT-reportable drug.",
-          "C": "Methylphenidate is a Schedule II stimulant, so a prescription may not be refilled.",
-          "D": "Pseudoephedrine has federal retail controls as a listed chemical product, but those controls do not create Schedule V status."
+          "A": "Correct. Pregabalin is Schedule V, and covered Massachusetts dispensing is reportable to MassPAT.",
+          "B": "Correct. Gabapentin is not federally scheduled, but Massachusetts treats it as Schedule VI and includes it in PMP reporting.",
+          "C": "Correct. Methylphenidate is Schedule II, for which refills are prohibited.",
+          "D": "Correct. CMEA imposes separate retail-sale controls on pseudoephedrine without making the product Schedule V solely because of those controls.",
+          "E": "Incorrect. Massachusetts Schedule VI classification does not by itself trigger the federal Schedule III-IV refill ceiling."
         },
         "related_facts": [
-          "Reporting status does not change federal schedule.",
-          "A therapeutic class is not a legal schedule."
+          "Monitoring status and controlled-substance schedule are separate legal concepts.",
+          "A state scheduling rule does not automatically change a drug's federal schedule."
         ],
-        "mpje_trap": "Converting every monitored or restricted product into a federally scheduled drug."
+        "mpje_trap": "Do not convert every monitored or behind-the-counter product into a federally scheduled drug or import federal refill rules from an unrelated schedule."
       },
       "rule_ids": [
         "FED-CS-SCHEDULES",
@@ -1774,14 +1780,13 @@
         "pseudoephedrine"
       ],
       "reasoning_steps": [
-        "Identify each federal status",
-        "Identify each Massachusetts schedule",
-        "Apply MassPAT and refill consequences",
-        "Separate CMEA controls from CSA scheduling"
+        "Classify each drug under federal law",
+        "Apply Massachusetts scheduling and PMP rules separately",
+        "Apply the legal consequence tied to the actual schedule or retail-control pathway"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -3108,61 +3113,61 @@
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?",
+      "stem": "An adult patient receives a lawful 14-day outpatient prescription for buprenorphine-naloxone specifically for treatment of opioid use disorder. A staff member says Massachusetts' seven-day initial-opiate statute automatically requires the prescription to be reduced to seven days. What is the best response to that specific claim?",
       "choices": [
         {
           "id": "A",
-          "text": "Treat the prescription as exempt because methadone is always used for opioid dependence."
+          "text": "Agree, because every medication related to an opioid is subject to the seven-day statute regardless of indication."
         },
         {
           "id": "B",
-          "text": "Apply only the general 30-day Schedule II opioid quantity ceiling."
+          "text": "Disagree. The seven-day statute expressly does not apply to medications designed for treatment of substance abuse or opioid dependence; the prescription must instead satisfy the other laws governing its OUD pathway."
         },
         {
           "id": "C",
-          "text": "Allow a 90-day fill because every methadone prescription qualifies for the OUD pathway."
+          "text": "Agree unless the patient has previously filled an opioid prescription in Massachusetts."
         },
         {
           "id": "D",
-          "text": "Dispense ten days because the seven-day limit applies only to minors."
+          "text": "Disagree because buprenorphine-naloxone becomes Massachusetts Schedule VI when used for OUD."
         },
         {
           "id": "E",
-          "text": "The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception."
+          "text": "Reduce the quantity to seven days without prescriber involvement because pharmacists may unilaterally rewrite any opioid prescription to comply with supply limits."
         }
       ],
       "correct_choice_ids": [
-        "E"
+        "B"
       ],
       "explanation": {
-        "core_reasoning": "'The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception.' is the governing result. By contrast, 'Treat the prescription as exempt because methadone is always used for opioid dependence.' would require that the stated indication were opioid-dependence treatment rather than pain. The decisive cue appears in 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?'.",
+        "core_reasoning": "M.G.L. c. 94C, § 19D(c) excludes medications designed for treatment of substance abuse or opioid dependence from the seven-day supply statute. That exclusion answers the narrow seven-day question; it does not waive the separate federal and state requirements that govern buprenorphine-naloxone and OUD treatment.",
         "choice_analysis": {
-          "A": "'Treat the prescription as exempt because methadone is always used for opioid dependence.' would apply only if the stated indication were opioid-dependence treatment rather than pain; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-          "B": "'Apply only the general 30-day Schedule II opioid quantity ceiling.' would apply only if the more restrictive initial-opiate seven-day rule did not apply; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-          "C": "'Allow a 90-day fill because every methadone prescription qualifies for the OUD pathway.' would apply only if the prescription actually met the OUD-treatment exception and all other conditions; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-          "D": "'Dispense ten days because the seven-day limit applies only to minors.' would apply only if the statute did not also cover an adult's first outpatient opiate prescription; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-          "E": "'The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception.': supported by initial supply."
+          "A": "Incorrect. Section 19D contains an express treatment-indication exclusion.",
+          "B": "Correct. The seven-day statute itself does not apply to the described OUD-treatment medication, while other applicable prescribing/dispensing rules remain in force.",
+          "C": "Incorrect. The statutory exclusion here turns on the OUD-treatment purpose, not prior opioid-fill history.",
+          "D": "Incorrect. Buprenorphine-naloxone remains Schedule III; the result comes from the § 19D treatment exclusion.",
+          "E": "Incorrect. The statutory issue does not create a general pharmacist power to rewrite a prescription."
         },
         "related_facts": [
-          "methadone (Dolophine) is used for severe pain requiring an opioid and treatment of opioid use disorder in authorized settings; it is federal Schedule II and Massachusetts Schedule II.",
-          "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+          "The adult first-outpatient seven-day rule and the OUD-treatment exclusion must be read together."
         ],
-        "mpje_trap": "'Treat the prescription as exempt because methadone is always used for opioid dependence.' would apply if the stated indication were opioid-dependence treatment rather than pain. In 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?', that predicate is missing."
+        "mpje_trap": "Do not stop at the word 'opioid'; first determine whether the statute expressly excludes the treatment pathway."
       },
       "rule_ids": [
         "MA-OPIOID-SEVEN-DAY",
         "FED-CS-SCHEDULES"
       ],
       "drug_ids": [
-        "methadone"
+        "buprenorphine-naloxone"
       ],
       "reasoning_steps": [
-        "Classify methadone under the federal and Massachusetts schedules before selecting a legal pathway",
-        "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit"
+        "Identify the medication and its stated OUD-treatment purpose",
+        "Apply the express § 19D(c) exclusion before applying the seven-day ceiling",
+        "Keep separate OUD prescribing/dispensing requirements outside the narrow question"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -3193,70 +3198,88 @@
       ],
       "drug_checks": [
         {
-          "drug_id": "methadone",
-          "content_version": 1,
-          "content_hash": "16a587b824d54a456d95d17a381339a1e0aa361a52f94bb6f3d381c6e5ad21d8",
-          "generic_name": "methadone",
+          "drug_id": "buprenorphine-naloxone",
+          "generic_name": "buprenorphine and naloxone",
           "brand_names": [
-            "Dolophine"
+            "Suboxone"
           ],
           "main_indications": [
-            "Severe pain requiring an opioid and treatment of opioid use disorder in authorized settings"
+            "Treatment of opioid dependence as part of a complete treatment plan"
           ],
-          "therapeutic_class": "Opioid agonist",
+          "therapeutic_class": "Partial opioid agonist and opioid antagonist combination",
           "federal_status": {
             "controlled": true,
-            "schedule": "II"
+            "schedule": "III"
           },
           "massachusetts_status": {
-            "schedule": "II",
+            "schedule": "III",
             "masspat_reportable": true,
             "drug_of_concern": false
           },
           "legal_consequences": {
             "refill": {
-              "summary": "Apply the refill framework for a II product before dispensing another fill.",
+              "summary": "Schedule III federal and Massachusetts refill limits apply.",
               "rule_ids": [
-                "FED-CII-NO-REFILL"
+                "FED-CS-REFILL-III-IV"
               ]
             },
             "transfer": {
-              "summary": "Apply the current transfer rule and any product-specific REMS restriction.",
+              "summary": "This foundation verifies Schedule III classification but does not yet establish a complete transfer rule.",
               "rule_ids": [
-                "FED-EPCS-TRANSFER"
+                "FED-CS-SCHEDULES"
               ]
             },
             "partial_fill": {
-              "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
+              "summary": "Schedule III classification does not activate this registry's Schedule II-only partial-fill rule; a complete Schedule III partial-fill pathway is not modeled.",
               "rule_ids": [
-                "FED-CII-PARTIAL-PATIENT"
+                "FED-CS-SCHEDULES"
               ]
             },
             "masspat": {
-              "summary": "Report covered dispensing to MassPAT.",
+              "summary": "Covered Schedule III dispensing transactions are MassPAT-reportable.",
               "rule_ids": [
                 "MA-PMP-REPORTING"
               ]
             },
             "quantity_limit": {
-              "summary": "Apply the schedule- and indication-specific Massachusetts quantity rule.",
+              "summary": "The Massachusetts qualifying 90-day single-fill pathway may apply to an OUD drug when all conditions are met.",
               "rule_ids": [
                 "MA-CS-QUANTITY-II-III"
               ]
             }
           },
+          "authorities": [
+            {
+              "type": "FDA_LABEL",
+              "name": "DailyMed Suboxone sublingual film label",
+              "section": "1 Indications and Usage; 9.1 Controlled Substance",
+              "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8a5edcf9-828c-4f97-b671-268ab13a8ecd"
+            },
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR 1308.13",
+              "section": "1308.13(e)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13"
+            },
+            {
+              "type": "BOARD_POLICY",
+              "name": "Board Policy 2024-05",
+              "section": "Schedules II and III Quantity Limits",
+              "url": "https://www.mass.gov/doc/policy-2024-05-schedules-ii-and-iii-quantity-limits-pdf/download"
+            }
+          ],
+          "last_verified": "2026-08-13",
+          "verification_status": "OFFICIAL_POLICY_VERIFIED",
+          "verification_notes": "DailyMed label, current federal schedule, Massachusetts PMP framework, and current quantity policy checked.",
+          "content_version": 1,
           "verified_rule_dependencies": {
-            "FED-CII-NO-REFILL": {
+            "FED-CS-REFILL-III-IV": {
               "content_version": 1,
-              "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+              "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
             },
-            "FED-CII-PARTIAL-PATIENT": {
+            "FED-CS-SCHEDULES": {
               "content_version": 1,
-              "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
-            },
-            "FED-EPCS-TRANSFER": {
-              "content_version": 1,
-              "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
             },
             "MA-CS-QUANTITY-II-III": {
               "content_version": 1,
@@ -3267,29 +3290,7 @@
               "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
             }
           },
-          "authorities": [
-            {
-              "type": "FDA_LABEL",
-              "name": "DailyMed label search for methadone",
-              "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=methadone"
-            },
-            {
-              "type": "FEDERAL_REGULATION",
-              "name": "Federal controlled-substance schedules",
-              "section": "21 CFR 1308 (II)",
-              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
-            },
-            {
-              "type": "STATE_REGULATION",
-              "name": "Massachusetts controlled-substance schedules",
-              "section": "105 CMR 700.002",
-              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
-            }
-          ],
-          "last_verified": "2026-08-13",
-          "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
+          "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
         }
       ],
       "realism_reviews": []
@@ -3304,46 +3305,45 @@
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "An adult receiving an outpatient opiate for acute pain for the first time presents an eight-day OxyContin prescription with no exception documentation. What is the key issue?",
+      "stem": "A Massachusetts practitioner issues an adult patient's first outpatient oxycodone prescription for a 10-day supply after an acute fracture. The practitioner documents in the medical record that more than seven days are required for the acute condition and that a non-opiate alternative is not appropriate. What is the most accurate conclusion about the seven-day statute?",
       "choices": [
         {
           "id": "A",
-          "text": "The initial outpatient opiate supply is limited to seven days absent a documented statutory exception."
+          "text": "The prescription must still be limited to seven days because no exception can apply to an adult's first outpatient opiate prescription."
         },
         {
           "id": "B",
-          "text": "Dispense eight days because extended-release products are exempt."
+          "text": "The documented statutory exception can permit the quantity needed for the acute condition; the seven-day ceiling is not absolute on these facts."
         },
         {
           "id": "C",
-          "text": "Use the ordinary 30-day Schedule II opioid quantity limit without further inquiry."
+          "text": "The exception applies only if the patient is a minor."
         },
         {
           "id": "D",
-          "text": "Use the 90-day non-opioid Schedule II pathway."
+          "text": "The exception applies automatically to every Schedule II prescription without documentation."
         },
         {
           "id": "E",
-          "text": "Split the prescription into seven days now and one day as a refill."
+          "text": "A pharmacist may create the missing medical-record documentation after dispensing if the prescriber did not do so."
         }
       ],
       "correct_choice_ids": [
-        "A"
+        "B"
       ],
       "explanation": {
-        "core_reasoning": "The initial outpatient opiate supply is limited to seven days absent a documented statutory exception. By contrast, 'Dispense eight days because extended-release products are exempt.' uses a legal trigger absent from the stem.",
+        "core_reasoning": "Section 19D generally limits an adult's first outpatient opiate prescription to seven days, but subsection (b) permits a greater quantity when the practitioner determines it is required for a qualifying acute condition or other listed purpose and documents both the triggering condition and that a non-opiate alternative was not appropriate.",
         "choice_analysis": {
-          "A": "The stated facts support this result: The initial outpatient opiate supply is limited to seven days absent a documented statutory exception.",
-          "B": "This near-miss uses a different trigger: Dispense eight days because extended-release products are exempt.",
-          "C": "This near-miss uses a different trigger: Use the ordinary 30-day Schedule II opioid quantity limit without further inquiry.",
-          "D": "This near-miss uses a different trigger: Use the 90-day non-opioid Schedule II pathway.",
-          "E": "This near-miss uses a different trigger: Split the prescription into seven days now and one day as a refill."
+          "A": "Incorrect. The statute contains a documented exception.",
+          "B": "Correct. The facts state the findings and documentation that activate the statutory exception.",
+          "C": "Incorrect. The exception can apply to adults or minors when its conditions are met.",
+          "D": "Incorrect. Schedule II status alone does not activate the exception; the statutory clinical findings and documentation matter.",
+          "E": "Incorrect. The statute assigns the clinical judgment and medical-record documentation to the practitioner."
         },
         "related_facts": [
-          "oxycodone (OxyContin) is used for severe and persistent pain requiring extended opioid treatment; it is federal Schedule II and Massachusetts Schedule II.",
-          "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+          "The exception can also address chronic pain management, cancer-related pain, and palliative care when the statutory conditions are met."
         ],
-        "mpje_trap": "Reject 'Dispense eight days because extended-release products are exempt.' because its legal trigger is absent."
+        "mpje_trap": "The seven-day number is a general rule, not an absolute ceiling when the statute's documented exception is satisfied."
       },
       "rule_ids": [
         "MA-OPIOID-SEVEN-DAY",
@@ -3353,12 +3353,13 @@
         "oxycodone"
       ],
       "reasoning_steps": [
-        "Classify oxycodone under the federal and Massachusetts schedules before selecting a legal pathway",
-        "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit"
+        "Identify an adult's first outpatient opiate prescription",
+        "Check whether a statutory exception applies",
+        "Verify the required practitioner documentation before treating the seven-day ceiling as displaced"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -3500,46 +3501,45 @@
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?",
+      "stem": "A 16-year-old patient has received opiates before and now presents a 10-day Norco prescription for outpatient dental pain. No statutory exception is documented. A staff member says the seven-day rule no longer applies because this is not the minor's first opiate prescription. What should the pharmacist recognize?",
       "choices": [
         {
           "id": "A",
-          "text": "Apply the seven-day restriction only if this is the minor's first opiate prescription."
+          "text": "The staff member is correct; the minor rule applies only to a first opiate prescription, just like the adult rule."
         },
         {
           "id": "B",
-          "text": "A minor's opiate prescription is generally limited to seven days unless the prescriber documents a statutory exception."
+          "text": "The staff member is incorrect; the minor provision generally limits an opiate prescription to seven days at any time unless a statutory exception is properly documented."
         },
         {
           "id": "C",
-          "text": "Dispense 12 days if a parent signs at pickup."
+          "text": "The 10-day quantity becomes permissible if a parent signs the prescription at pickup."
         },
         {
           "id": "D",
-          "text": "Use the 30-day Schedule II ceiling because it displaces the minor-specific rule."
+          "text": "The Schedule II quantity rule automatically overrides the minor-specific seven-day provision."
         },
         {
           "id": "E",
-          "text": "Accept the written 12-day quantity as the prescriber's implied exception."
+          "text": "Prior opioid exposure converts the patient to the adult first-prescription rule even though the patient is still a minor."
         }
       ],
       "correct_choice_ids": [
         "B"
       ],
       "explanation": {
-        "core_reasoning": "'A minor's opiate prescription is generally limited to seven days unless the prescriber documents a statutory exception.' is the governing result. By contrast, 'Apply the seven-day restriction only if this is the minor's first opiate prescription.' would require that the minor provision depended on first use, as the adult provision does. The decisive cue appears in 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?'.",
+        "core_reasoning": "Section 19D distinguishes adults from minors. The adult ceiling is tied to the first outpatient opiate prescription, while the minor provision applies to an opiate prescription at any time, subject to the statute's documented exceptions.",
         "choice_analysis": {
-          "A": "'Apply the seven-day restriction only if this is the minor's first opiate prescription.' would apply only if the minor provision depended on first use, as the adult provision does; 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?' states otherwise.",
-          "B": "'A minor's opiate prescription is generally limited to seven days unless the prescriber documents a statutory exception.': supported by initial supply.",
-          "C": "'Dispense 12 days if a parent signs at pickup.' would apply only if parental acknowledgment alone satisfied the prescriber's statutory documentation exception; 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?' states otherwise.",
-          "D": "'Use the 30-day Schedule II ceiling because it displaces the minor-specific rule.' would apply only if the general quantity rule overrode the more restrictive minor provision; 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?' states otherwise.",
-          "E": "'Accept the written 12-day quantity as the prescriber's implied exception.' would apply only if the statute did not require the triggering condition and non-opiate-alternative finding to be documented; 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?' states otherwise."
+          "A": "Incorrect. The minor provision is not limited to the first opiate prescription.",
+          "B": "Correct. Prior opiate history does not remove the minor-specific seven-day rule.",
+          "C": "Incorrect. Parental signature is not a substitute for the practitioner's statutory exception findings and documentation.",
+          "D": "Incorrect. A broader Schedule II quantity rule does not erase the more specific minor supply limit.",
+          "E": "Incorrect. Prior exposure does not change the patient's age or the statutory minor provision."
         },
         "related_facts": [
-          "hydrocodone and acetaminophen (Norco) is used for pain severe enough to require an opioid when alternatives are inadequate; it is federal Schedule II and Massachusetts Schedule II.",
-          "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+          "The statute separately requires discussion with the parent or guardian of a minor about opiate risks and why the prescription is necessary."
         ],
-        "mpje_trap": "'Apply the seven-day restriction only if this is the minor's first opiate prescription.' would apply if the minor provision depended on first use, as the adult provision does. In 'During a profile review, a Norco prescription for a minor is written for 12 days, and the record sent with it contains no qualifying exception. What should the pharmacist recognize?', that predicate is missing."
+        "mpje_trap": "Do not copy the adult 'first prescription' trigger into the separate minor rule."
       },
       "rule_ids": [
         "MA-OPIOID-SEVEN-DAY",
@@ -3549,12 +3549,13 @@
         "hydrocodone-acetaminophen"
       ],
       "reasoning_steps": [
-        "Classify hydrocodone and acetaminophen under the federal and Massachusetts schedules before selecting a legal pathway",
-        "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit"
+        "Identify that the patient is a minor",
+        "Separate the minor rule from the adult first-prescription trigger",
+        "Check for a documented exception before accepting a supply greater than seven days"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -8054,46 +8055,45 @@
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?",
+      "stem": "An adult patient's first outpatient tramadol prescription for acute pain requests a 10-day supply and contains no facts supporting a statutory exception. A technician argues that the Massachusetts seven-day opiate rule cannot apply because tramadol is Schedule IV rather than Schedule II. Which conclusion is most accurate?",
       "choices": [
         {
           "id": "A",
-          "text": "Apply only the five-refill and six-month Schedule IV limits."
+          "text": "The technician is correct because the seven-day statute applies only to Schedule II narcotic prescriptions."
         },
         {
           "id": "B",
-          "text": "Allow ten days because Schedule IV drugs are exempt from the opiate statute."
+          "text": "The technician is correct because Massachusetts excludes every Schedule IV drug from opiate supply limits."
         },
         {
           "id": "C",
-          "text": "Reduce the quantity without contacting the prescriber and discard the balance."
+          "text": "The prescription is exempt whenever the patient pays cash."
         },
         {
           "id": "D",
-          "text": "Use the seven-day restriction only for patients younger than 18."
+          "text": "The pharmacy may ignore the supply issue if MassPAT was checked."
         },
         {
           "id": "E",
-          "text": "Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity."
+          "text": "The technician is incorrect; Schedule IV status does not exempt tramadol from the separate seven-day opiate rule."
         }
       ],
       "correct_choice_ids": [
         "E"
       ],
       "explanation": {
-        "core_reasoning": "'Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity.' is the governing result. By contrast, 'Apply only the five-refill and six-month Schedule IV limits.' would require that the opiate-specific Massachusetts supply limit did not apply to tramadol. The decisive cue appears in 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?'.",
+        "core_reasoning": "The Massachusetts seven-day statute is triggered by an opiate prescription and its patient/use circumstances, not by a requirement that the drug be Schedule II. Tramadol's Schedule IV status therefore does not by itself remove the adult first-outpatient seven-day rule.",
         "choice_analysis": {
-          "A": "'Apply only the five-refill and six-month Schedule IV limits.' would apply only if the opiate-specific Massachusetts supply limit did not apply to tramadol; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-          "B": "'Allow ten days because Schedule IV drugs are exempt from the opiate statute.' would apply only if schedule placement eliminated tramadol's opiate status; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-          "C": "'Reduce the quantity without contacting the prescriber and discard the balance.' would apply only if the pharmacist could unilaterally rewrite the authorized days supply; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-          "D": "'Use the seven-day restriction only for patients younger than 18.' would apply only if the statute did not cover an adult's first outpatient opiate prescription; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-          "E": "'Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity.': supported by initial supply."
+          "A": "Incorrect. The statute is not written as a Schedule-II-only limit.",
+          "B": "Incorrect. Tramadol's Schedule IV classification does not decide whether the opiate supply-limit statute applies.",
+          "C": "Incorrect. Payment method is not the statutory trigger.",
+          "D": "Incorrect. PMP review does not replace compliance with a separate supply-limit statute.",
+          "E": "Correct. Apply schedule consequences and opiate supply limits as separate legal dimensions."
         },
         "related_facts": [
-          "tramadol (Ultram) is used for pain severe enough to require an opioid when alternatives are inadequate; it is federal Schedule IV and Massachusetts Schedule IV.",
-          "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+          "A qualifying documented exception under § 19D(b) can permit a quantity greater than seven days."
         ],
-        "mpje_trap": "'Apply only the five-refill and six-month Schedule IV limits.' would apply if the opiate-specific Massachusetts supply limit did not apply to tramadol. In 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?', that predicate is missing."
+        "mpje_trap": "Do not assume that every opioid-related supply rule is limited to Schedule II drugs."
       },
       "rule_ids": [
         "MA-OPIOID-SEVEN-DAY",
@@ -8103,13 +8103,13 @@
         "tramadol"
       ],
       "reasoning_steps": [
-        "Classify tramadol under the federal and Massachusetts schedules before selecting a legal pathway",
-        "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Initial supply"
+        "Classify tramadol under controlled-substance law",
+        "Separately identify the opiate seven-day statute",
+        "Apply the adult first-outpatient trigger and look for a documented exception"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -12137,58 +12137,61 @@
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "At pickup, a technician trainee encounters a patient question and an unresolved DUR alert. Which assignments comply with Massachusetts personnel rules? Select all that apply.",
+      "stem": "A Massachusetts pharmacy technician trainee is performing data-entry work while a pharmacist is directly supervising the trainee. At pickup, the patient asks whether the new medication can be taken with warfarin, and the profile shows an unresolved DUR alert. Which actions are appropriate for the trainee? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Allow the trainee to counsel the patient independently."
+          "text": "Collect and enter nonclinical demographic information while remaining under direct pharmacist supervision."
         },
         {
           "id": "B",
-          "text": "Allow the trainee to resolve the DUR alert independently."
+          "text": "Counsel the patient on the interaction after reading the drug-information screen."
         },
         {
           "id": "C",
-          "text": "Treat trainee registration as pharmacist-intern licensure."
+          "text": "Perform authorized prescription-processing and staging tasks under direct pharmacist supervision, while leaving final verification to the pharmacist."
         },
         {
           "id": "D",
-          "text": "Limit the trainee to duties authorized for that category under pharmacist supervision."
+          "text": "Continue other authorized clerical or technical trainee functions while under direct pharmacist supervision."
         },
         {
           "id": "E",
-          "text": "Keep professional-judgment decisions with the pharmacist."
+          "text": "Refer the clinical question and unresolved DUR issue to the pharmacist rather than exercising pharmacist professional judgment."
         }
       ],
       "correct_choice_ids": [
+        "A",
+        "C",
         "D",
         "E"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Limit the trainee to duties authorized for that category under pharmacist supervision. Keep professional-judgment decisions with the pharmacist.",
+        "core_reasoning": "A technician trainee may perform authorized clerical, prescription-processing, staging, and other technical support functions under the required direct pharmacist supervision, but may not independently counsel, resolve a clinical DUR problem, or perform final pharmacist verification. The clinical question and unresolved alert therefore go to the pharmacist while ordinary nonclinical trainee work may continue.",
         "choice_analysis": {
-          "A": "Not supported: Allow the trainee to counsel the patient independently.",
-          "B": "Not supported: Allow the trainee to resolve the DUR alert independently.",
-          "C": "Not supported: Treat trainee registration as pharmacist-intern licensure.",
-          "D": "Supported: Limit the trainee to duties authorized for that category under pharmacist supervision.",
-          "E": "Supported: Keep professional-judgment decisions with the pharmacist."
+          "A": "Correct. Nonclinical data collection/entry is a technical support function when performed within the trainee's direct-supervision framework.",
+          "B": "Incorrect. Reading prepared information does not authorize a trainee to provide pharmacist counseling.",
+          "C": "Correct. Authorized processing and staging may remain technical work under direct supervision, but final verification remains pharmacist professional judgment.",
+          "D": "Correct. The trainee may continue authorized technical work under direct pharmacist supervision.",
+          "E": "Correct. Clinical questions and unresolved DUR findings must be referred to the pharmacist."
         },
         "related_facts": [
-          "Pharmacy technicians and trainees may perform only duties allowed by 247 CMR 8 under pharmacist supervision; judgmental pharmacist functions may not be delegated."
+          "Massachusetts distinguishes direct supervision requirements for trainees from broader supervision standards applicable to other technician categories."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Allow the trainee to counsel the patient independently.'"
+        "mpje_trap": "Do not treat registration as a technician trainee as authority to exercise pharmacist clinical judgment."
       },
       "rule_ids": [
         "MA-TECH-SCOPE"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Massachusetts pharmacy technician scope and pharmacist responsibility",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Technician duties"
+        "Identify the worker as a technician trainee",
+        "Apply the direct-supervision and technical-function boundary",
+        "Separate technical support from counseling, DUR resolution, and final verification"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -12216,58 +12219,61 @@
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A pharmacy assigns support personnel to receive and process Schedule II stock. Which safeguards apply? Select all that apply.",
+      "stem": "A Massachusetts pharmacy is assigning staff to receive Schedule II stock. The pharmacist has approved written policies and procedures. Which statements correctly distinguish the current technician pathways? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Use only a personnel category authorized for the assigned step by 247 CMR 8.05."
+          "text": "A registered pharmacy technician may assist with transporting Schedule II stock under pharmacist supervision."
         },
         {
           "id": "B",
-          "text": "Permit every technician trainee to receive Schedule II stock independently."
+          "text": "A registered pharmacy technician who is not certified may assist with Schedule II transport under pharmacist supervision but does not thereby gain the certified technician's broader handling role."
         },
         {
           "id": "C",
-          "text": "Maintain pharmacist supervision and pharmacist-only professional functions."
+          "text": "A certified pharmacy technician may assist with transporting and handling Schedule II stock under pharmacist supervision when the pharmacy's approved policies permit it."
         },
         {
           "id": "D",
-          "text": "Allow a cashier to perform any handling step with manager approval."
+          "text": "A pharmacy technician trainee may independently assume Schedule II accountability because trainee registration is enough to replace pharmacist oversight."
         },
         {
           "id": "E",
-          "text": "Ignore personnel-scope rules because the product is Schedule II."
+          "text": "The pharmacist remains responsible for Schedule II accountability, security, and professional judgment even when authorized support personnel assist."
         }
       ],
       "correct_choice_ids": [
         "A",
-        "C"
+        "B",
+        "C",
+        "E"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Use only a personnel category authorized for the assigned step by 247 CMR 8.05. Maintain pharmacist supervision and pharmacist-only professional functions.",
+        "core_reasoning": "Massachusetts distinguishes the narrower supervised Schedule II transport role available to a registered technician from the broader authorized transport-and-handling assistance available to a certified technician under pharmacist supervision and approved pharmacy policy. Neither pathway transfers Schedule II accountability, security, or professional judgment from the pharmacist.",
         "choice_analysis": {
-          "A": "Supported: Use only a personnel category authorized for the assigned step by 247 CMR 8.05.",
-          "B": "Not supported: Permit every technician trainee to receive Schedule II stock independently.",
-          "C": "Supported: Maintain pharmacist supervision and pharmacist-only professional functions.",
-          "D": "Not supported: Allow a cashier to perform any handling step with manager approval.",
-          "E": "Not supported: Ignore personnel-scope rules because the product is Schedule II."
+          "A": "Correct. The registered technician pathway permits Schedule II transport assistance under pharmacist supervision.",
+          "B": "Correct. Ordinary registered-technician status supports the narrower supervised transport role but does not itself confer the certified technician's broader authorized handling role.",
+          "C": "Correct. A certified technician may perform the broader authorized transport-and-handling support role under pharmacist supervision and approved pharmacy policy.",
+          "D": "Incorrect. Trainee registration does not transfer Schedule II accountability or eliminate required pharmacist oversight.",
+          "E": "Correct. Authorized technical assistance does not transfer pharmacist accountability, security duties, or professional judgment."
         },
         "related_facts": [
-          "Interns and technician categories may handle Schedule II controlled substances only within the specific conditions and supervision requirements of 247 CMR 8.05."
+          "Credential category matters: trainee, registered technician, and certified technician are not interchangeable legal roles."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Permit every technician trainee to receive Schedule II stock independently.'"
+        "mpje_trap": "Do not collapse every technician credential into one Schedule II scope rule."
       },
       "rule_ids": [
         "MA-TECH-CII"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Schedule II handling by pharmacy support personnel",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Schedule II handling"
+        "Identify each support-personnel credential",
+        "Apply the Schedule II task boundary for that credential",
+        "Preserve pharmacist accountability and professional-judgment responsibility"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -12371,62 +12377,65 @@
       "area": 1,
       "topic": "Pharmacy personnel",
       "subtopic": "Intern hours",
-      "difficulty": 4,
+      "difficulty": 3,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A student works a 14-hour pharmacy shift and asks to record every hour as internship credit. Which statements are correct? Select all that apply.",
+      "stem": "A pharmacy student completes 12 hours of qualifying Massachusetts pharmacy-internship activity in one day. The student then remains at the site for a separate two-hour school seminar, and the preceptor proposes recording all 14 hours as Board internship credit. What should be recorded? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "All 14 hours count because the student remained on site."
+          "text": "The preceptor should record no more than 12 qualifying internship hours for that day."
         },
         {
           "id": "B",
-          "text": "No more than 12 hours may be credited for that day."
+          "text": "No more than 12 hours may be credited toward the pharmacy internship in one day."
         },
         {
           "id": "C",
-          "text": "The rule caps credit at eight hours per week."
+          "text": "The extra seminar may be documented separately as school activity, but it cannot increase that day's Board internship credit."
         },
         {
           "id": "D",
-          "text": "Working additional hours does not increase the daily credit cap."
+          "text": "Combining internship work with separately documented educational activity does not raise the Board's maximum internship credit above 12 hours for that day."
         },
         {
           "id": "E",
-          "text": "Only time handling controlled substances counts."
+          "text": "All 14 hours may count as internship credit whenever the preceptor signs both the internship log and the seminar attendance record."
         }
       ],
       "correct_choice_ids": [
+        "A",
         "B",
+        "C",
         "D"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: No more than 12 hours may be credited for that day. Working additional hours does not increase the daily credit cap.",
+        "core_reasoning": "The question concerns credit toward the Massachusetts pharmacy internship, not whether a student may be present for separate educational activity. Board internship credit is capped at 12 hours in one day. The preceptor therefore records at most 12 internship hours; separate school activity can be documented without increasing that day's Board internship credit, and combining the two activity types does not enlarge the daily cap.",
         "choice_analysis": {
-          "A": "Not supported: All 14 hours count because the student remained on site.",
-          "B": "Supported: No more than 12 hours may be credited for that day.",
-          "C": "Not supported: The rule caps credit at eight hours per week.",
-          "D": "Supported: Working additional hours does not increase the daily credit cap.",
-          "E": "Not supported: Only time handling controlled substances counts."
+          "A": "Correct. The daily Board internship-credit record cannot exceed the 12-hour maximum.",
+          "B": "Correct. Twelve hours is the maximum pharmacy internship credit for one day.",
+          "C": "Correct. Separate educational documentation does not convert the additional seminar time into extra Board internship credit for that day.",
+          "D": "Correct. Combining separately documented activities cannot expand the Board's daily internship-credit ceiling.",
+          "E": "Incorrect. Signatures on separate records cannot waive the daily internship-credit ceiling."
         },
         "related_facts": [
-          "A pharmacy intern may receive no more than 12 hours of pharmacy internship credit in one day."
+          "Separate practice-hour/rest rules should not be confused with the distinct internship-credit calculation tested here."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'All 14 hours count because the student remained on site.'"
+        "mpje_trap": "Distinguish time physically spent at a site from hours legally creditable toward the pharmacy internship requirement."
       },
       "rule_ids": [
         "MA-INTERN-12H"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Daily pharmacy internship credit limit",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Intern hours"
+        "Identify that the question asks about internship credit",
+        "Apply the 12-hour daily credit maximum",
+        "Reject attempts to convert additional same-day activity into extra Board credit"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -12617,27 +12626,27 @@
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A Massachusetts pharmacist is evaluating eligibility to enter a collaborative practice agreement that includes prescribing. Which qualifications are required? Select all that apply.",
+      "stem": "A Massachusetts pharmacist is evaluating the current statutory qualifications to enter a collaborative practice agreement. Which statements reflect M.G.L. c.112, § 24B1/2(b)? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Hold a current unrestricted Massachusetts license, practice in the Commonwealth, and maintain the required $1,000,000 liability coverage."
+          "text": "Hold a current Massachusetts pharmacist license, currently practice in the Commonwealth, and maintain at least $1,000,000 of professional liability insurance."
         },
         {
           "id": "B",
-          "text": "Complete five years as a licensed pharmacist or satisfy the pre-July 2017 PharmD grandfather or a Board-equivalent education/residency pathway."
+          "text": "Have earned a PharmD degree or completed five years of experience as a licensed pharmacist, or the equivalent."
         },
         {
           "id": "C",
-          "text": "Devote practice to the defined therapy area and complete five additional related CE contact hours in each agreement year."
+          "text": "Devote a portion of practice to the defined drug-therapy area and complete at least five additional related CE contact hours in each agreement year."
         },
         {
           "id": "D",
-          "text": "For prescriptive practice, maintain the required state controlled-substance registration, complete required training, and submit the MassHealth participation attestation."
+          "text": "Apply for the statute's limited MassHealth ordering/referring participation if implementing regulations governing that participation are promulgated."
         },
         {
           "id": "E",
-          "text": "A current PharmD alone satisfies the experience requirement regardless of when the agreement begins."
+          "text": "A pharmacist with a current PharmD must also complete five years of licensed-practice experience because the degree alternative is no longer recognized by statute."
         }
       ],
       "correct_choice_ids": [
@@ -12647,33 +12656,31 @@
         "D"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Hold a current unrestricted Massachusetts license, practice in the Commonwealth, and maintain the required $1,000,000 liability coverage. Complete five years as a licensed pharmacist or satisfy the pre-July 2017 PharmD grandfather or a Board-equivalent education/residency pathway. Devote practice to the defined therapy area and complete five additional related CE contact hours in each agreement year. For prescriptive practice, maintain the required state controlled-substance registration, complete required training, and submit the MassHealth participation attestation.",
+        "core_reasoning": "The current statute lists licensure/current practice, $1 million liability coverage, a PharmD-or-five-years-or-equivalent qualification, therapy-area practice focus, five additional annual CE contact hours, and a conditional limited MassHealth participation application requirement. The statute does not state that every PharmD holder must also accumulate five years solely to satisfy subsection (b)(3).",
         "choice_analysis": {
-          "A": "Supported: Hold a current unrestricted Massachusetts license, practice in the Commonwealth, and maintain the required $1,000,000 liability coverage.",
-          "B": "Supported: Complete five years as a licensed pharmacist or satisfy the pre-July 2017 PharmD grandfather or a Board-equivalent education/residency pathway.",
-          "C": "Supported: Devote practice to the defined therapy area and complete five additional related CE contact hours in each agreement year.",
-          "D": "Supported: For prescriptive practice, maintain the required state controlled-substance registration, complete required training, and submit the MassHealth participation attestation.",
-          "E": "Not supported: A current PharmD alone satisfies the experience requirement regardless of when the agreement begins."
+          "A": "Correct. These are express statutory baseline qualifications.",
+          "B": "Correct. The current statutory text uses an alternative: PharmD, five years of licensed experience, or equivalent.",
+          "C": "Correct. Practice focus and five additional related CE contact hours per agreement year are statutory requirements.",
+          "D": "Correct. The MassHealth limited-participation application duty is conditional on the implementing regulations described by the statute.",
+          "E": "Incorrect. It contradicts the current statutory PharmD-or-experience alternative."
         },
         "related_facts": [
-          "247 CMR 16.02(1)(a)-(e) requires current unrestricted Massachusetts licensure and practice, specified liability coverage, an experience or qualifying alternative pathway, therapy-area practice, and five additional related CE contact hours each agreement year.",
-          "The experience alternatives are a PharmD plus an agreement entered by June 30, 2017, or education/residency criteria the Board determines equivalent to five years of licensed experience.",
-          "When prescribing is included, 247 CMR 16.02(1)(f) adds state controlled-substance registration, statutory training, and a signed MassHealth participation/application attestation."
+          "Promulgated regulations can add operational requirements, but an exam item should not use older regulatory wording to erase an alternative expressly present in the current statute."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'A current PharmD alone satisfies the experience requirement regardless of when the agreement begins.'"
+        "mpje_trap": "Do not memorize an older grandfather formulation without checking the current statute."
       },
       "rule_ids": [
         "MA-CDTM-QUALIFICATIONS"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Apply the baseline licensure, insurance, experience, practice-focus, and CE requirements",
-        "Distinguish five years of experience from the grandfather and Board-equivalent pathways",
-        "Add the subsection (f) requirements because prescribing is included"
+        "Read the current statutory qualification list",
+        "Recognize the PharmD-or-five-years-or-equivalent structure",
+        "Separate statutory baseline qualifications from other operational requirements of a particular agreement"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -12932,34 +12939,34 @@
     {
       "question_id": "MA-Q-0085",
       "family_id": "P2_0085_MA_PRODUR",
-      "area": 2,
+      "area": 3,
       "topic": "Patient care",
       "subtopic": "Prospective review",
       "difficulty": 4,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "Prospective review identifies a clinically significant interaction before dispensing. Which actions are appropriate? Select all that apply.",
+      "stem": "Before dispensing a new prescription, a Massachusetts pharmacist's prospective review identifies a clinically significant interaction. Which actions are consistent with the current prospective drug-review duty? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Ignore the alert because the prescription was electronically signed."
+          "text": "Let a technician independently resolve the interaction if the dispensing software supplies a recommended override code."
         },
         {
           "id": "B",
-          "text": "Delegate final resolution to a cashier."
+          "text": "Skip prospective review because the prescriber sent the prescription electronically."
         },
         {
           "id": "C",
-          "text": "Evaluate and resolve the issue before dispensing using professional judgment."
+          "text": "Ensure the pharmacist conducts prospective drug review before the new prescription is dispensed or delivered."
         },
         {
           "id": "D",
-          "text": "Dispense first and review the interaction next month."
+          "text": "Automatically refuse every prescription that generates an alert without considering the specific problem or communicating when appropriate."
         },
         {
           "id": "E",
-          "text": "Contact the prescriber or patient when needed to resolve the concern."
+          "text": "Take appropriate measures to resolve an identified therapy problem, which may include consultation with the prescriber or patient and documentation of the measures taken."
         }
       ],
       "correct_choice_ids": [
@@ -12967,30 +12974,31 @@
         "E"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Evaluate and resolve the issue before dispensing using professional judgment. Contact the prescriber or patient when needed to resolve the concern.",
+        "core_reasoning": "Massachusetts requires pharmacist prospective review before each new prescription is dispensed or delivered. When a potential therapy problem is identified, the pharmacist must use professional judgment and take appropriate measures to resolve it; electronic transmission and a software alert do not transfer that duty to a technician or make automatic refusal the only lawful response.",
         "choice_analysis": {
-          "A": "Not supported: Ignore the alert because the prescription was electronically signed.",
-          "B": "Not supported: Delegate final resolution to a cashier.",
-          "C": "Supported: Evaluate and resolve the issue before dispensing using professional judgment.",
-          "D": "Not supported: Dispense first and review the interaction next month.",
-          "E": "Supported: Contact the prescriber or patient when needed to resolve the concern."
+          "A": "Incorrect. Clinical resolution of a DUR problem requires pharmacist professional judgment.",
+          "B": "Incorrect. Electronic prescribing does not remove the prospective-review requirement.",
+          "C": "Correct. The prospective review occurs before dispensing or delivery of a new prescription.",
+          "D": "Incorrect. The rule requires appropriate resolution, not automatic refusal of every alert.",
+          "E": "Correct. Appropriate resolution can involve prescriber/patient consultation and documentation of the action taken."
         },
         "related_facts": [
-          "Before dispensing, a pharmacist must perform the prospective drug utilization review required by 247 CMR 9.17 and resolve clinically significant issues through professional judgment and communication."
+          "Potential problems include therapeutic duplication, contraindications, interactions, dosage or duration problems, allergies, and abuse or misuse."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Ignore the alert because the prescription was electronically signed.'"
+        "mpje_trap": "A computer alert is an input to pharmacist review, not a substitute for pharmacist judgment."
       },
       "rule_ids": [
         "MA-PRODUR"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Prospective drug utilization review",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Prospective review"
+        "Identify the prescription as new",
+        "Apply the prospective-review timing requirement",
+        "Use pharmacist judgment to resolve and document a clinically significant problem"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -13018,58 +13026,62 @@
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A pharmacy redesigns its patient-counseling workflow around a pickup signature. Which principles remain applicable? Select all that apply.",
+      "stem": "At pickup of a new prescription, the pharmacist or designee makes the required offer to counsel and the patient declines. Which Massachusetts documentation statements are correct? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Provide the meaningful counseling opportunity required by 247 CMR 9.18."
+          "text": "Reasonable efforts to obtain, record, and maintain patient information include recording a patient's failure to accept the pharmacist's offer to counsel."
         },
         {
           "id": "B",
-          "text": "Treat every pickup signature as proof that counseling was adequate."
+          "text": "The refusal information may be recorded in the patient profile, prescription signature log, or another system of records."
         },
         {
           "id": "C",
-          "text": "Delegate counseling to an unlicensed cashier."
+          "text": "If there is no record that the patient failed to accept the offer, the statute creates a presumption that counseling was provided."
         },
         {
           "id": "D",
-          "text": "Use pharmacist judgment and patient-specific information."
+          "text": "A notarized waiver is not required; the refusal may be documented through the record systems permitted by the statute."
         },
         {
           "id": "E",
-          "text": "Omit counseling whenever a Medication Guide is supplied."
+          "text": "Because a designee may participate in making the offer, a technician may also provide the pharmacist counseling if the patient later changes their mind."
         }
       ],
       "correct_choice_ids": [
         "A",
+        "B",
+        "C",
         "D"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Provide the meaningful counseling opportunity required by 247 CMR 9.18. Use pharmacist judgment and patient-specific information.",
+        "core_reasoning": "Massachusetts separates the offer to counsel from the record consequence when a patient declines. M.G.L. c.94C, § 21A requires reasonable efforts to record and maintain specified patient information including a failure to accept the offer, permits the patient profile, prescription signature log, or another record system, and creates a presumption that counseling was provided when no refusal is recorded. The statute does not require a notarized refusal waiver, and a designee's role in making the offer does not transfer pharmacist counseling authority to a technician.",
         "choice_analysis": {
-          "A": "Supported: Provide the meaningful counseling opportunity required by 247 CMR 9.18.",
-          "B": "Not supported: Treat every pickup signature as proof that counseling was adequate.",
-          "C": "Not supported: Delegate counseling to an unlicensed cashier.",
-          "D": "Supported: Use pharmacist judgment and patient-specific information.",
-          "E": "Not supported: Omit counseling whenever a Medication Guide is supplied."
+          "A": "Correct. Failure to accept the offer is expressly included in the patient information the pharmacy should reasonably attempt to record and maintain.",
+          "B": "Correct. The statute permits the profile, signature log, or another record system.",
+          "C": "Correct. Absence of a recorded failure to accept creates the statutory presumption that counseling was provided.",
+          "D": "Correct. The statute permits specified pharmacy record systems and does not condition a counseling refusal on a notarized waiver.",
+          "E": "Incorrect. Authority to participate in the offer does not make a technician the pharmacist who provides counseling."
         },
         "related_facts": [
-          "A pharmacist must comply with the patient-counseling requirements of 247 CMR 9.18, including a meaningful offer or provision in the settings and circumstances governed by the regulation."
+          "A patient may decline counseling; the documentation consequence is a separate legal issue from whether the offer was made."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Treat every pickup signature as proof that counseling was adequate.'"
+        "mpje_trap": "Do not confuse 'designee may make the offer' with 'designee may perform pharmacist counseling,' and do not overlook the refusal-record presumption."
       },
       "rule_ids": [
-        "MA-COUNSELING"
+        "MA-COUNSELING",
+        "MA-COUNSELING-DOCUMENTATION"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Massachusetts patient counseling",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Counseling"
+        "Identify that an offer was made and declined",
+        "Apply the statutory refusal-documentation rule",
+        "Distinguish offer delegation from authority to perform counseling"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -13082,6 +13094,13 @@
           "section": "247 CMR 9.18",
           "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
           "last_verified": "2026-08-13"
+        },
+        {
+          "rule_id": "MA-COUNSELING-DOCUMENTATION",
+          "name": "Massachusetts prospective drug review and counseling statute",
+          "section": "M.G.L. c. 94C, § 21A",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "last_verified": "2026-08-17"
         }
       ],
       "drug_checks": [],
@@ -13090,67 +13109,68 @@
     {
       "question_id": "MA-Q-0087",
       "family_id": "P2_0087_MA_INTERCHANGE",
-      "area": 3,
+      "area": 4,
       "topic": "Drug interchange",
       "subtopic": "Generic interchange",
       "difficulty": 4,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A lower-priced product is reasonably available and appears on the Massachusetts interchangeable-drug list, but the prescriber marked a valid no-substitution direction. Which facts control? Select all that apply.",
+      "stem": "A less expensive drug product is reasonably available and appears on the Massachusetts interchangeable-drug list, but the prescription contains a valid prescriber no-substitution direction. Which statements correctly describe the product-selection decision? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Determine whether the no-substitution direction is valid."
+          "text": "The valid no-substitution direction prevents the pharmacist from applying the usual required interchange on this prescription."
         },
         {
           "id": "B",
-          "text": "Confirm that the proposed product is listed as interchangeable."
+          "text": "A lower price does not override a valid prescriber no-substitution direction."
         },
         {
           "id": "C",
-          "text": "Substitute any drug in the same therapeutic class."
+          "text": "Without a valid no-substitution direction, the Massachusetts interchange framework generally requires use of the reasonably available, less expensive interchangeable product when its conditions are met."
         },
         {
           "id": "D",
-          "text": "Confirm that the proposed product is reasonably available at a lower retail price."
+          "text": "The patient may erase the prescriber's valid no-substitution direction and compel interchange without prescriber involvement."
         },
         {
           "id": "E",
-          "text": "Honor a valid prescriber direction against substitution."
+          "text": "Before interchanging, the pharmacist must still confirm that the alternative satisfies the Massachusetts interchangeable-product framework rather than relying on price alone."
         }
       ],
       "correct_choice_ids": [
         "A",
         "B",
-        "D",
+        "C",
         "E"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Determine whether the no-substitution direction is valid. Confirm that the proposed product is listed as interchangeable. Confirm that the proposed product is reasonably available at a lower retail price. Honor a valid prescriber direction against substitution.",
+        "core_reasoning": "Massachusetts product selection depends on interchange eligibility, price/availability conditions, and the prescriber's substitution direction. A valid no-substitution instruction controls despite a lower price and blocks the otherwise applicable interchange rule. When substitution is permitted, the pharmacist still must use a legally interchangeable product rather than treating lower price alone as sufficient.",
         "choice_analysis": {
-          "A": "Supported: Determine whether the no-substitution direction is valid.",
-          "B": "Supported: Confirm that the proposed product is listed as interchangeable.",
-          "C": "Not supported: Substitute any drug in the same therapeutic class.",
-          "D": "Supported: Confirm that the proposed product is reasonably available at a lower retail price.",
-          "E": "Supported: Honor a valid prescriber direction against substitution."
+          "A": "Correct. A valid prescriber no-substitution direction is a controlling exception to interchange.",
+          "B": "Correct. Lower price does not nullify a valid no-substitution instruction.",
+          "C": "Correct. In the absence of a valid no-substitution instruction, the statutory interchange conditions apply.",
+          "D": "Incorrect. The patient cannot simply erase the prescriber's valid direction and convert it into a substitution-authorized prescription.",
+          "E": "Correct. Price is not enough by itself; the selected alternative must satisfy the governing interchangeable-product requirements."
         },
         "related_facts": [
-          "A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies."
+          "Product-selection law belongs to the NABP Area-4 practice-operations competency rather than prescription-transfer/dispensing mechanics."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Substitute any drug in the same therapeutic class.'"
+        "mpje_trap": "Do not let price or inventory status override a valid prescriber no-substitution direction."
       },
       "rule_ids": [
         "MA-INTERCHANGE"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Massachusetts interchangeable-drug dispensing",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Generic interchange"
+        "Confirm that the alternative is legally interchangeable",
+        "Check price and reasonable availability",
+        "Apply the prescriber's substitution direction before selecting the product"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
@@ -13171,67 +13191,68 @@
     {
       "question_id": "MA-Q-0088",
       "family_id": "P2_0088_MA_RETURN_QUARANTINE",
-      "area": 4,
+      "area": 2,
       "topic": "Pharmacy operations",
       "subtopic": "Returned medication",
       "difficulty": 4,
       "question_type": "SATA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A patient returns an unopened bottle that the pharmacy dispensed in error. Which actions are permitted or required? Select all that apply.",
+      "stem": "A patient returns an unopened bottle that a Massachusetts pharmacy dispensed in error. The product appears intact. Which actions are required or permitted for the returned medication? Select all that apply.",
       "choices": [
         {
           "id": "A",
-          "text": "Accept the medication under the dispensing-error return pathway."
+          "text": "Accept the return because it was previously dispensed in error by the pharmacy."
         },
         {
           "id": "B",
-          "text": "Return the sealed bottle directly to saleable stock."
+          "text": "Do not place the returned medication back into dispensing inventory merely because the container is unopened."
         },
         {
           "id": "C",
-          "text": "Quarantine it pending proper disposition."
+          "text": "Segregate or quarantine the returned medication and handle its disposition under the pharmacy's required return/disposal process."
         },
         {
           "id": "D",
-          "text": "Keep it out of saleable inventory."
+          "text": "Keep the returned medication out of active dispensing inventory while it awaits proper disposition."
         },
         {
           "id": "E",
-          "text": "Arrange proper disposal after quarantine."
+          "text": "Dispense the returned bottle to another patient after a pharmacist visually inspects the seal."
         }
       ],
       "correct_choice_ids": [
         "A",
+        "B",
         "C",
-        "D",
-        "E"
+        "D"
       ],
       "explanation": {
-        "core_reasoning": "The supported conclusions on these facts are: Accept the medication under the dispensing-error return pathway. Quarantine it pending proper disposition. Keep it out of saleable inventory. Arrange proper disposal after quarantine.",
+        "core_reasoning": "Massachusetts requires a pharmacy to accept medication that it previously dispensed in error (or that is suspected defective or contaminated), but the return does not make the product reusable inventory. It must remain out of active dispensing inventory, be segregated or quarantined, and proceed through the required disposition process rather than being redispensed to another patient.",
         "choice_analysis": {
-          "A": "Supported: Accept the medication under the dispensing-error return pathway.",
-          "B": "Not supported: Return the sealed bottle directly to saleable stock.",
-          "C": "Supported: Quarantine it pending proper disposition.",
-          "D": "Supported: Keep it out of saleable inventory.",
-          "E": "Supported: Arrange proper disposal after quarantine."
+          "A": "Correct. A pharmacy-dispensing error is a recognized return trigger.",
+          "B": "Correct. An unopened appearance does not restore a patient-returned product to active dispensing inventory.",
+          "C": "Correct. Returned medication must be segregated from usable stock and managed for proper disposition.",
+          "D": "Correct. A patient-returned medication in this error pathway remains outside active dispensing inventory while quarantined for proper disposition.",
+          "E": "Incorrect. Visual inspection does not authorize redispensing the returned medication to another patient."
         },
         "related_facts": [
-          "A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it."
+          "The rule protects patients by separating correction of an erroneous dispense from reuse of medication after it has left pharmacy control."
         ],
-        "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Return the sealed bottle directly to saleable stock.'"
+        "mpje_trap": "Do not infer 'unopened' means 'returnable to stock' once the medication has been dispensed to a patient."
       },
       "rule_ids": [
         "MA-RETURN-QUARANTINE"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Match the scenario's operative facts to Returned erroneous or defective medication quarantine",
-        "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Returned medication"
+        "Identify why the medication is being returned",
+        "Separate the duty to accept the return from the question of reuse",
+        "Quarantine/segregate and follow the required disposition process"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
+      "last_legal_review": "2026-08-17",
       "audits": [],
       "duplicate_review_status": "PENDING",
       "independent_audit_status": "PENDING",
