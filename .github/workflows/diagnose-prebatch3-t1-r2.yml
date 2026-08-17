@@ -1,0 +1,66 @@
+name: Diagnose Pre-Batch3 T1 R2
+
+on:
+  push:
+    branches:
+      - diagnose/pre-batch3-t1-r2
+    paths:
+      - .github/workflows/diagnose-prebatch3-t1-r2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: diagnose/pre-batch3-t1-r2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Run repair gate diagnostically
+        shell: bash
+        run: |
+          set +e
+          LOG=/tmp/t1-r2-diagnostic.md
+          : > "$LOG"
+          echo '# T1 R2 repair-gate diagnostic' >> "$LOG"
+          echo >> "$LOG"
+          echo "HEAD: $(git rev-parse HEAD)" >> "$LOG"
+          overall=0
+          run_step() {
+            name="$1"; shift
+            echo >> "$LOG"
+            echo "## $name" >> "$LOG"
+            echo '```' >> "$LOG"
+            "$@" >> "$LOG" 2>&1
+            code=$?
+            echo '```' >> "$LOG"
+            echo "exit_code: $code" >> "$LOG"
+            if [ "$code" -ne 0 ]; then overall="$code"; return "$code"; fi
+            return 0
+          }
+          run_step repair python scripts/repair_prebatch3_t1_r2.py || true
+          if [ "$overall" -eq 0 ]; then run_step generate python scripts/generate_artifacts.py --write || true; fi
+          if [ "$overall" -eq 0 ]; then run_step validate python scripts/validate_all.py || true; fi
+          if [ "$overall" -eq 0 ]; then run_step pytest python -m pytest -q || true; fi
+          echo >> "$LOG"
+          echo "overall_exit_code: $overall" >> "$LOG"
+          git reset --hard HEAD
+          mkdir -p audits/remediation/2026-08-17
+          cp "$LOG" audits/remediation/2026-08-17/PRE-BATCH3-T1-R2-DIAGNOSTIC.md
+          cat audits/remediation/2026-08-17/PRE-BATCH3-T1-R2-DIAGNOSTIC.md
+          exit 0
+      - name: Commit diagnostic only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audits/remediation/2026-08-17/PRE-BATCH3-T1-R2-DIAGNOSTIC.md
+          git commit -m "ci: record T1 R2 repair diagnostic"
+          git push origin HEAD:diagnose/pre-batch3-t1-r2
