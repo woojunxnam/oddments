@@ -54,6 +54,87 @@ jobs:
           print('pre-generation repair boundary: PASS')
           PY
 
+      - name: Synchronize question family registry
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/exam_style/question_family_matrix.json')
+          matrix = json.loads(path.read_text(encoding='utf-8'))
+          families = matrix['families']
+          by_id = {family['family_id']: family for family in families}
+
+          for old_id in (
+              'P2_0028_FED_CIII_V_REFILL',
+              'P2_0032_FED_CIII_V_REFILL',
+              'P2_0036_FED_EPCS_TRANSFER',
+          ):
+              if old_id not in by_id:
+                  raise SystemExit(f'expected old family missing: {old_id}')
+              by_id[old_id]['current_candidate_count'] = 0
+
+          replacements = [
+              {
+                  'family_id': 'P2_0028_FED_CIII_V_PARTIAL',
+                  'area': 3,
+                  'topic': 'Controlled prescriptions',
+                  'subtopic': 'Schedule III-V partial fills',
+                  'primary_rule_ids': ['FED-CIII-V-PARTIAL'],
+                  'secondary_rule_ids': ['FED-CS-SCHEDULES'],
+                  'drug_required': True,
+                  'scenario_types': ['partial fill'],
+                  'common_traps': ['treating a partial fill as an additional refill or restarting the six-month clock'],
+                  'target_difficulties': [4],
+                  'target_item_types': ['SBA'],
+                  'max_questions_in_final_bank': 2,
+                  'current_candidate_count': 1,
+                  'current_released_count': 0,
+              },
+              {
+                  'family_id': 'P2_0032_FED_CIII_IV_ORAL_REFILL_AUTH',
+                  'area': 3,
+                  'topic': 'Controlled prescriptions',
+                  'subtopic': 'Schedule III-IV refill authorization',
+                  'primary_rule_ids': ['FED-CIII-V-REFILL'],
+                  'secondary_rule_ids': ['FED-CS-SCHEDULES'],
+                  'drug_required': True,
+                  'scenario_types': ['oral refill authorization'],
+                  'common_traps': ['requiring a new prescription for every added refill authorization or restarting the six-month clock'],
+                  'target_difficulties': [3, 4],
+                  'target_item_types': ['SBA'],
+                  'max_questions_in_final_bank': 2,
+                  'current_candidate_count': 1,
+                  'current_released_count': 0,
+              },
+              {
+                  'family_id': 'P2_0036_FED_EPCS_TRANSFER_REFILLS',
+                  'area': 3,
+                  'topic': 'Prescription transfer',
+                  'subtopic': 'Electronic prescription transfer consequences',
+                  'primary_rule_ids': ['FED-EPCS-TRANSFER'],
+                  'secondary_rule_ids': ['FED-CS-SCHEDULES'],
+                  'drug_required': True,
+                  'scenario_types': ['electronic prescription transfer'],
+                  'common_traps': ['splitting authorized refills from the transferred original prescription'],
+                  'target_difficulties': [4],
+                  'target_item_types': ['SBA'],
+                  'max_questions_in_final_bank': 2,
+                  'current_candidate_count': 1,
+                  'current_released_count': 0,
+              },
+          ]
+          for replacement in replacements:
+              if replacement['family_id'] in by_id:
+                  raise SystemExit(f'replacement family unexpectedly exists: {replacement["family_id"]}')
+              families.append(replacement)
+
+          matrix['last_reviewed'] = '2026-08-17'
+          path.write_text(json.dumps(matrix, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('question family registry synchronized')
+          PY
+
       - name: Regenerate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
 
@@ -88,6 +169,7 @@ jobs:
           lines = subprocess.check_output(['git','status','--porcelain=v1','--untracked-files=all'], text=True).splitlines()
           paths = {line[3:].split(' -> ')[-1] for line in lines}
           allowed = {
+              'data/exam_style/question_family_matrix.json',
               'duplicate_report.json',
               'answer_distribution_report.json',
               'structural_pattern_report.json',
@@ -99,17 +181,17 @@ jobs:
           print(f'generated write boundary: PASS ({len(paths)} paths)')
           PY
 
-      - name: Commit refreshed artifacts
+      - name: Commit refreshed governance/artifacts
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add duplicate_report.json answer_distribution_report.json structural_pattern_report.json site/generated/questions.json
+          git add data/exam_style/question_family_matrix.json duplicate_report.json answer_distribution_report.json structural_pattern_report.json site/generated/questions.json
           if git diff --cached --quiet; then
-            echo 'no generated artifact changes'
+            echo 'no governance/generated changes'
           else
-            git commit -m 'generated: refresh T1 r1 artifacts'
+            git commit -m 'generated: sync T1 r1 family registry and artifacts'
             git push origin HEAD:repair/pre-batch3-legacy-salvage-t1-r1
           fi
 
