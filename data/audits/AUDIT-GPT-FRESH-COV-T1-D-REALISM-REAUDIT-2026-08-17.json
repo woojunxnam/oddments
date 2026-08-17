@@ -1,0 +1,87 @@
+{
+  "audit_id": "AUDIT-GPT-FRESH-COV-T1-D-REALISM-REAUDIT-2026-08-17",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-COV-T1-D",
+  "audit_date": "2026-08-17",
+  "audit_scope": "REAUDIT",
+  "review_type": "REALISM_REVIEW",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "style_profile": {
+    "profile_id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  },
+  "question_ids": [
+    "MA-Q-0028",
+    "MA-Q-0032",
+    "MA-Q-0036"
+  ],
+  "question_hashes": {
+    "MA-Q-0028": "9479b83d2dae97ceff373869d477e9e402bd6d5970095600387fa47f290c2e23",
+    "MA-Q-0032": "f819dd7808361e9c1722049b7b3c8542d9ad85b0980fa5d140500f10733edd88",
+    "MA-Q-0036": "4a13dec96ebf24eaa258600e797267957d45f1318935daafc594c17edc72c388"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0028",
+      "Verdict": "DELETE",
+      "Severity": "High",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-17",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "FAIL solely on strict full-bank distinctness. Direct comparison against the entire canonical question bank at represented candidate SHA 6035cd92939bc094d0077b87d93ef8ac0b784415 was completed. The stem is practice-plausible, requires application of controlled-substance dispensing mechanics rather than schedule recall, uses an appropriate clonazepam context, and has plausible distractors without obvious answer-length or wording leakage. However, the core pharmacist decision path is insufficiently distinct from existing coverage; the closest comparison questions are MA-Q-0107 and MA-Q-0114. The changed item does add some scenario-specific testing value, but not enough to satisfy the frozen distinct_from_bank criterion. Under the Issue #54 all-criteria rule, Realism_Verdict is FAIL and the repository-schema disposition corresponding to DROP is DELETE. No repair is performed in this audit."
+    },
+    {
+      "Question_ID": "MA-Q-0032",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-17",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS. Direct comparison against the entire canonical question bank at represented candidate SHA 6035cd92939bc094d0077b87d93ef8ac0b784415 was completed. The telephone authorization after an already-used refill creates a plausible pharmacist workflow and tests the documentation, quantity, refill-count, and six-month mechanics of a Schedule IV prescription rather than simple schedule identification. Distractors represent authentic legal-process errors and do not make the keyed answer guessable. The closest comparison questions are MA-Q-0107 and MA-Q-0114, but Q0032 retains a materially distinct decision path centered on adding refills by oral prescriber authorization to the existing electronic prescription record. All ten frozen realism criteria pass."
+    },
+    {
+      "Question_ID": "MA-Q-0036",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-17",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS. Direct comparison against the entire canonical question bank at represented candidate SHA 6035cd92939bc094d0077b87d93ef8ac0b784415 was completed. The scenario is a plausible pharmacy-to-pharmacy electronic controlled-substance transfer question that requires applying the federal one-time EPCS transfer rule to an unfilled Schedule IV prescription with authorized refills. The distractors model realistic misconceptions about splitting, retaining, cancelling, or dividing refills, and the item is not answerable as a schedule flashcard. The closest comparison questions are MA-Q-0019, MA-Q-0030, and MA-Q-0035; none duplicates the specific whole-prescription/refills-move-together decision tested here. All ten frozen realism criteria pass."
+    }
+  ]
+}
