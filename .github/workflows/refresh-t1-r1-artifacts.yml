@@ -39,7 +39,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          BASE=c99161a7f3e50bb95491de98f895795989d22a16
           python - <<'PY'
           import subprocess
           base = 'c99161a7f3e50bb95491de98f895795989d22a16'
@@ -58,8 +57,25 @@ jobs:
       - name: Regenerate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
 
-      - name: Validate repository
-        run: python scripts/validate_all.py
+      - name: Validate repository and capture diagnostics
+        id: validate
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/validate_all.py 2>&1 | tee /tmp/t1-r1-validate.log
+
+      - name: Upload validation diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: t1-r1-validation-diagnostics
+          path: /tmp/t1-r1-validate.log
+          if-no-files-found: error
+
+      - name: Enforce validation result
+        if: steps.validate.outcome != 'success'
+        run: exit 1
 
       - name: Run full tests
         run: python -m pytest -q
