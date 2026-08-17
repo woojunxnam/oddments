@@ -1,0 +1,44 @@
+name: Repair artifact refresh
+
+on:
+  push:
+    branches:
+      - repair/mpje-expansion-batch2-realism-r2
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: repair/mpje-expansion-batch2-realism-r2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Regenerate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Commit refreshed artifacts if changed
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "Generated artifacts already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add duplicate_report.json answer_distribution_report.json structural_pattern_report.json site/generated/questions.json
+          git commit -m "chore: refresh generated artifacts for realism repair"
+          git push origin HEAD:repair/mpje-expansion-batch2-realism-r2
