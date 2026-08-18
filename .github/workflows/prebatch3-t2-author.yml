@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - remediation/pre-batch3-legacy-salvage-t1
-    types: [opened]
+    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -48,6 +48,9 @@ jobs:
 
       - name: Generate locked T2 authoring content
         run: python scripts/apply_prebatch3_t2_authoring.py
+
+      - name: Diagnostic Q0225 before validation
+        run: cat data/questions/ma-q-0225.json
 
       - name: Generate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
