@@ -1,0 +1,139 @@
+name: Post-T1 Pre-Batch3 Coverage Gate V1
+
+on:
+  push:
+    branches:
+      - analysis/pre-batch3-coverage-post-t1-v1
+    paths:
+      - scripts/analyze_prebatch3_coverage_post_t1.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact analysis branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: analysis/pre-batch3-coverage-post-t1-v1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Verify exact source boundary and analysis-only start
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=516771a93f939c843ba4c2be7ef745718606f448
+          git fetch origin remediation/pre-batch3-legacy-salvage-t1 analysis/mpje-coverage-debt-prep
+          test "$(git rev-parse origin/remediation/pre-batch3-legacy-salvage-t1)" = "$SOURCE"
+          test "$(git merge-base "$SOURCE" HEAD)" = "$SOURCE"
+          python - <<'PY'
+          import subprocess
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          changed=set(subprocess.check_output(['git','diff','--name-only',f'{source}...HEAD'], text=True).splitlines())
+          expected={
+            'scripts/analyze_prebatch3_coverage_post_t1.py',
+            '.github/workflows/analyze-prebatch3-coverage-post-t1-v1.yml',
+            'scripts/analyze_prebatch3_coverage_post_t1.trigger',
+          }
+          if changed != expected:
+            raise SystemExit(f'unexpected analysis starting diff: {sorted(changed)}')
+          print('post-T1 exact-source analysis boundary: PASS')
+          PY
+      - name: Extract frozen final post-Batch2 semantic matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e b3a2e0d8b7b9f04b13ccfe0da2642948a7adf829^{commit}
+          git show b3a2e0d8b7b9f04b13ccfe0da2642948a7adf829:audits/coverage/2026-08-17/FINAL-PRE-BATCH3-COVERAGE-MATRIX.json > /tmp/FINAL-PRE-BATCH3-COVERAGE-MATRIX.json
+          test -s /tmp/FINAL-PRE-BATCH3-COVERAGE-MATRIX.json
+      - name: Recompute full 46-atomic matrix and mock capacity
+        run: python scripts/analyze_prebatch3_coverage_post_t1.py
+      - name: Validate repository
+        run: python scripts/validate_all.py
+      - name: Run full tests
+        run: python -m pytest -q
+      - name: Prove generated-artifact freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-MATRIX.json audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-REMEDIATION-PLAN.json audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-DEBT.md
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+      - name: Assert analysis-only write boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source], text=True).splitlines())
+          expected={
+            'scripts/analyze_prebatch3_coverage_post_t1.py',
+            '.github/workflows/analyze-prebatch3-coverage-post-t1-v1.yml',
+            'scripts/analyze_prebatch3_coverage_post_t1.trigger',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-MATRIX.json',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-REMEDIATION-PLAN.json',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-DEBT.md',
+          }
+          if changed != expected:
+            raise SystemExit(f'analysis write-boundary mismatch: {sorted(changed)}')
+          print('analysis-only write boundary: PASS')
+          PY
+      - name: Add reproducibility/QA manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('audits/coverage/2026-08-18')
+          files=['POST-T1-PRE-BATCH3-COVERAGE-MATRIX.json','POST-T1-PRE-BATCH3-REMEDIATION-PLAN.json','POST-T1-PRE-BATCH3-COVERAGE-DEBT.md']
+          manifest={
+            'manifest_type':'POST_T1_PRE_BATCH3_COVERAGE_GATE_V1',
+            'date':'2026-08-18',
+            'source_branch':'remediation/pre-batch3-legacy-salvage-t1',
+            'source_sha':'516771a93f939c843ba4c2be7ef745718606f448',
+            'baseline_post_batch2_sha':'beeb96d71768b9fb275bdb0005d9cd012e0d1328',
+            'baseline_matrix_commit':'b3a2e0d8b7b9f04b13ccfe0da2642948a7adf829',
+            'repository_validation':'PASS',
+            'full_tests':'PASS',
+            'generated_artifact_freshness':'PASS',
+            'analysis_only_write_boundary':'PASS',
+            'files':{f:{'sha256':hashlib.sha256((root/f).read_bytes()).hexdigest()} for f in files},
+          }
+          (root/'POST-T1-PRE-BATCH3-COVERAGE-GATE-V1-MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Remove temporary analysis tooling
+        run: git rm scripts/analyze_prebatch3_coverage_post_t1.py scripts/analyze_prebatch3_coverage_post_t1.trigger .github/workflows/analyze-prebatch3-coverage-post-t1-v1.yml
+      - name: Final analysis-only boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          python - <<'PY'
+          import subprocess
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source], text=True).splitlines())
+          expected={
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-MATRIX.json',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-REMEDIATION-PLAN.json',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-DEBT.md',
+            'audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-GATE-V1-MANIFEST.json',
+          }
+          if changed != expected:
+            raise SystemExit(f'final analysis-only boundary mismatch: {sorted(changed)}')
+          print('final analysis-only boundary: PASS')
+          PY
+      - name: Commit and push clean analysis outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "analysis: rerun post-T1 Pre-Batch3 coverage gate"
+          git push origin HEAD:analysis/pre-batch3-coverage-post-t1-v1
