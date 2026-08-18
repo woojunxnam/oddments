@@ -1,0 +1,157 @@
+name: Pre-Batch3 T2 Authoring Gate
+
+on:
+  push:
+    branches:
+      - remediation/pre-batch3-coverage-t2-author
+    paths:
+      - .github/workflows/prebatch3-t2-author.yml
+
+permissions:
+  contents: write
+
+jobs:
+  author-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out author branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: remediation/pre-batch3-coverage-t2-author
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Verify locked source and temporary-tool boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=516771a93f939c843ba4c2be7ef745718606f448
+          test "$(git merge-base "$SOURCE" HEAD)" = "$SOURCE"
+          python - <<'PY'
+          import subprocess
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source,'HEAD'],text=True).splitlines())
+          expected={'scripts/apply_prebatch3_t2_authoring.py','.github/workflows/prebatch3-t2-author.yml'} | {f'repair_specs/prebatch3_t2/payload.part{i:02d}' for i in range(1,7)}
+          if changed != expected:
+              raise SystemExit(f'unexpected pre-authoring drift: {sorted(changed)}')
+          print('locked source and temporary-tool boundary: PASS')
+          PY
+
+      - name: Generate locked T2 authoring content
+        run: python scripts/apply_prebatch3_t2_authoring.py
+
+      - name: Generate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Full-bank duplicate and repository validation
+        run: python scripts/validate_all.py
+
+      - name: Full tests
+        run: python -m pytest -q
+
+      - name: Verify T2 pending and existing-question preservation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, pathlib
+          from scripts.qa_common import question_audit_hash
+          root=pathlib.Path('.')
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          import subprocess
+          for i in range(1,211):
+              path=f'data/questions/ma-q-{i:04d}.json'
+              current=json.loads(pathlib.Path(path).read_text(encoding='utf-8'))
+              old=json.loads(subprocess.check_output(['git','show',f'{source}:{path}'],text=True))
+              if question_audit_hash(current) != question_audit_hash(old):
+                  raise SystemExit(f'existing question semantic drift: MA-Q-{i:04d}')
+          for i in range(211,227):
+              q=json.loads((root/'data'/'questions'/f'ma-q-{i:04d}.json').read_text(encoding='utf-8'))
+              checks=(q['verification_status']=='AUDIT_PENDING',q['lifecycle_status']=='AUDIT_PENDING',q['independent_audit_status']=='PENDING',q['duplicate_review_status']=='PENDING',q['audits']==[],q['final_adjudication'] is None,q['development_fixture'] is True)
+              if not all(checks):
+                  raise SystemExit(f'T2 release-state violation: {q["question_id"]}')
+          print('existing Q0001-Q0210 semantic preservation: PASS')
+          print('T2 16/16 audit-pending/non-released state: PASS')
+          PY
+
+      - name: Prove generated-artifact freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp answer_distribution_report.json /tmp/answer.json
+          cp structural_pattern_report.json /tmp/structural.json
+          cp duplicate_report.json /tmp/duplicate.json
+          cp site/generated/questions.json /tmp/questions.json
+          python scripts/generate_artifacts.py --write
+          cmp answer_distribution_report.json /tmp/answer.json
+          cmp structural_pattern_report.json /tmp/structural.json
+          cmp duplicate_report.json /tmp/duplicate.json
+          cmp site/generated/questions.json /tmp/questions.json
+          echo 'generated artifact freshness: PASS'
+
+      - name: Finalize authoring provenance
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('audits/remediation/2026-08-18/PRE-BATCH3-COVERAGE-T2-AUTHORING-REPORT.json')
+          r=json.loads(p.read_text(encoding='utf-8'))
+          r['full_bank_duplicate_pattern_preflight']='PASS'
+          r['repository_validation']='PASS'
+          r['full_tests']='PASS'
+          r['generated_artifact_freshness']='PASS'
+          p.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+
+      - name: Remove temporary authoring tooling and enforce final diff boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm scripts/apply_prebatch3_t2_authoring.py
+          git rm .github/workflows/prebatch3-t2-author.yml
+          git rm -r repair_specs/prebatch3_t2
+          python - <<'PY'
+          import subprocess
+          source='516771a93f939c843ba4c2be7ef745718606f448'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source],text=True).splitlines())
+          allowed={f'data/questions/ma-q-{i:04d}.json' for i in range(211,227)}
+          allowed |= {
+            'data/exam_style/question_family_matrix.json',
+            'audits/remediation/2026-08-18/PRE-BATCH3-COVERAGE-T2-AUTHORING-REPORT.json',
+            'answer_distribution_report.json','structural_pattern_report.json','duplicate_report.json','site/generated/questions.json'
+          }
+          allowed |= {
+            'data/rules/ma-disciplinary-process.json','data/rules/ma-uramp.json','data/rules/ma-hazardous-drug-handling.json',
+            'data/rules/ma-drug-delivery-shipping.json','data/rules/ma-sterile-compounding-license.json','data/rules/ma-complex-nonsterile-license.json',
+            'data/rules/ma-hazardous-compounding.json','data/rules/ma-compounding-significant-difference.json','data/rules/ma-shared-pharmacy-services.json',
+            'data/rules/ma-pharmacy-license-renewal.json','data/rules/ma-pharmacy-inspection.json','data/rules/ma-mor-temp-absence.json',
+            'data/rules/ma-return-to-stock.json','data/rules/ma-biologic-substitution.json'
+          }
+          unexpected=changed-allowed
+          required={f'data/questions/ma-q-{i:04d}.json' for i in range(211,227)} | {'data/exam_style/question_family_matrix.json','audits/remediation/2026-08-18/PRE-BATCH3-COVERAGE-T2-AUTHORING-REPORT.json'}
+          missing=required-changed
+          if unexpected or missing:
+              raise SystemExit(f'final diff boundary failed; unexpected={sorted(unexpected)} missing={sorted(missing)}')
+          print('final T2 authoring diff boundary: PASS')
+          PY
+
+      - name: Commit verified T2 authoring candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/questions data/rules data/exam_style/question_family_matrix.json
+          git add audits/remediation/2026-08-18/PRE-BATCH3-COVERAGE-T2-AUTHORING-REPORT.json
+          git add answer_distribution_report.json structural_pattern_report.json duplicate_report.json site/generated/questions.json
+          git commit -m 'author: add Pre-Batch3 coverage T2 questions Q0211-Q0226'
+          git push origin HEAD:remediation/pre-batch3-coverage-t2-author
