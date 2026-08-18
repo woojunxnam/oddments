@@ -105,7 +105,7 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import hashlib, json, pathlib, subprocess
+          import hashlib, json, pathlib
           root = pathlib.Path('audits/remediation/2026-08-18')
           manifest_path = root / 'PRE-BATCH3-LEGACY-SALVAGE-T1-R2-CLEAN-FREEZE-V4-MANIFEST.json'
           manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
@@ -187,3 +187,5 @@ jobs:
 
       - name: Push final V4 freeze
         run: git push origin HEAD:freeze/pre-batch3-legacy-salvage-t1-r2-v4
+
+# retrigger 2026-08-18T13:25Z
