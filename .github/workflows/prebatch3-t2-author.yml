@@ -49,8 +49,25 @@ jobs:
       - name: Generate locked T2 authoring content
         run: python scripts/apply_prebatch3_t2_authoring.py
 
-      - name: Diagnostic Q0225 before validation
-        run: cat data/questions/ma-q-0225.json
+      - name: Balance Q0225 answer-choice lengths
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('data/questions/ma-q-0225.json')
+          q=json.loads(p.read_text(encoding='utf-8'))
+          text={
+            'A': 'The medication cannot be returned to stock once the prescription has been prepared and a patient-specific label has been applied.',
+            'B': 'The medication may be returned to stock under pharmacy policy in an appropriately identified return-to-stock container, without commingling it with manufacturer stock.',
+            'C': 'The medication may be poured into the manufacturer stock bottle because it never left the pharmacy or reached the patient.',
+            'D': 'The medication must be dispensed to another patient promptly or destroyed because prepared prescriptions cannot remain available for later reuse.',
+            'E': 'The medication may be returned to the manufacturer stock bottle after the first patient identifying information is removed from pharmacy records.'
+          }
+          for choice in q['choices']:
+              choice['text']=text[choice['id']]
+          p.write_text(json.dumps(q,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('Q0225 answer-choice length rebalance applied')
+          PY
 
       - name: Generate deterministic artifacts
         run: python scripts/generate_artifacts.py --write
