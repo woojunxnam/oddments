@@ -44259,60 +44259,61 @@
     },
     {
       "question_id": "MA-Q-0213",
-      "family_id": "T2_0213_MA_COUNSELING_DOCUMENTATION",
+      "family_id": "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER",
       "area": 2,
       "topic": "Patient care",
-      "subtopic": "Counseling refusal documentation",
+      "subtopic": "Remote-delivery counseling offer",
       "difficulty": 4,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A pharmacist offers counseling on a new prescription. The patient says, \"I have taken it before and do not want counseling today.\" The prescription is otherwise ready to dispense. What Massachusetts documentation step best addresses the refusal?",
+      "stem": "A Massachusetts pharmacy is preparing a new prescription for delivery to a patient's home. To satisfy the counseling-offer requirement for off-site delivery, the pharmacy provides access to its toll-free service that connects the patient with a pharmacist. Before the prescription is sent, which additional step is required under Massachusetts law?",
       "choices": [
         {
           "id": "A",
-          "text": "Record the patient's failure to accept the counseling offer in the patient profile, prescription signature log, or another appropriate record system."
+          "text": "Print the toll-free service number on a label affixed to each prescription drug container."
         },
         {
           "id": "B",
-          "text": "Require the patient to sign a Board-specific refusal form before the prescription can be released."
+          "text": "Place the number only on the outer shipping package, as long as it remains visible until opening."
         },
         {
           "id": "C",
-          "text": "Document a complete counseling session because a refusal cannot be recorded as a refusal."
+          "text": "Include the number only on the delivery receipt that the patient signs."
         },
         {
           "id": "D",
-          "text": "Delete the counseling offer from the record because no counseling occurred."
+          "text": "Send the number in an electronic message after the package has been delivered."
         },
         {
           "id": "E",
-          "text": "Contact the prescriber and obtain authorization to waive counseling."
+          "text": "Replace the toll-free number with the dispensing pharmacy's ordinary local number on the container label."
         }
       ],
       "correct_choice_ids": [
         "A"
       ],
       "explanation": {
-        "core_reasoning": "M.G.L. c.94C, §21A requires reasonable efforts to record and maintain specified patient information, including a failure to accept the pharmacist's offer to counsel. The statute permits the refusal information to be recorded in the patient profile, prescription signature log, or another record system.",
+        "core_reasoning": "When a patient elects delivery at a location other than a pharmacy, M.G.L. c.94C, §21A allows the section's requirements to be satisfied by access to a toll-free telephone service facilitating communication with the pharmacist. The statute also requires that toll-free service number to be printed on a label affixed to each prescription drug container. Outer-package, receipt, post-delivery message, or local-number substitutes do not meet that specified container-label step.",
         "choice_analysis": {
-          "A": "Correct: this tracks the Massachusetts refusal-documentation pathway.",
-          "B": "The statute does not condition release on a unique Board refusal form.",
-          "C": "A refusal should not be falsely documented as completed counseling.",
-          "D": "The refusal is itself information the statute expects the pharmacy to record through reasonable efforts.",
-          "E": "Prescriber authorization is not the mechanism for documenting a patient's refusal."
+          "A": "Correct. Section 21A requires the toll-free service number on a label affixed to each prescription drug container for off-site delivery.",
+          "B": "The statute specifies the prescription drug container label, not only the outer shipping package.",
+          "C": "A delivery receipt does not substitute for the required label on each prescription drug container.",
+          "D": "Sending the number after delivery does not satisfy the required container-label placement before the prescription reaches the patient.",
+          "E": "The statute calls for the toll-free service number used for this remote counseling-access pathway; an ordinary local number is not the specified substitute."
         },
         "related_facts": [],
-        "mpje_trap": "Counseling refusal and counseling performance are separate documentation concepts."
+        "mpje_trap": "Do not confuse supplying remote telephone access with placing the required toll-free number on each prescription container."
       },
       "rule_ids": [
+        "MA-COUNSELING",
         "MA-COUNSELING-DOCUMENTATION"
       ],
       "drug_ids": [],
       "reasoning_steps": [
-        "Recognize that the patient declined an offer rather than receiving a full counseling session",
-        "Apply the separate Massachusetts documentation duty to the refusal",
-        "Use an authorized record system without inventing a special prescriber waiver"
+        "Recognize home delivery as a prescription delivered to a location other than the pharmacy",
+        "Apply the toll-free pharmacist-access pathway to the counseling-offer requirement",
+        "Verify that the toll-free service number is printed on each prescription drug container label"
       ],
       "verification_status": "AUDIT_PENDING",
       "lifecycle_status": "AUDIT_PENDING",
@@ -44323,6 +44324,13 @@
       "final_adjudication": null,
       "development_fixture": true,
       "authorities": [
+        {
+          "rule_id": "MA-COUNSELING",
+          "name": "Massachusetts patient counseling",
+          "section": "247 CMR 9.18",
+          "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "last_verified": "2026-08-13"
+        },
         {
           "rule_id": "MA-COUNSELING-DOCUMENTATION",
           "name": "Massachusetts prospective drug review and counseling statute",
