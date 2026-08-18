@@ -1,0 +1,35 @@
+name: Post-T1 Coverage Diagnostic
+on:
+  push:
+    branches:
+      - analysis/pre-batch3-coverage-post-t1-v1
+    paths:
+      - scripts/post_t1_coverage_diagnostic.trigger
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: analysis/pre-batch3-coverage-post-t1-v1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Run diagnostic
+        shell: bash
+        run: |
+          set +e
+          mkdir -p audits/coverage/2026-08-18
+          git fetch origin analysis/mpje-coverage-debt-prep >> audits/coverage/2026-08-18/POST-T1-COVERAGE-RUN.log 2>&1
+          git show b3a2e0d8b7b9f04b13ccfe0da2642948a7adf829:audits/coverage/2026-08-17/FINAL-PRE-BATCH3-COVERAGE-MATRIX.json > /tmp/FINAL-PRE-BATCH3-COVERAGE-MATRIX.json 2>> audits/coverage/2026-08-18/POST-T1-COVERAGE-RUN.log
+          python scripts/analyze_prebatch3_coverage_post_t1.py >> audits/coverage/2026-08-18/POST-T1-COVERAGE-RUN.log 2>&1
+          echo "script_rc=$?" >> audits/coverage/2026-08-18/POST-T1-COVERAGE-RUN.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audits/coverage/2026-08-18/POST-T1-COVERAGE-RUN.log audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-* || true
+          git commit -m "ci: capture post-T1 coverage diagnostic" || true
+          git push origin HEAD:analysis/pre-batch3-coverage-post-t1-v1
