@@ -1,17 +1,17 @@
 name: Pre-Batch3 T2 Authoring Gate
 
 on:
-  push:
+  pull_request:
     branches:
-      - remediation/pre-batch3-coverage-t2-author
-    paths:
-      - .github/workflows/prebatch3-t2-author.yml
+      - remediation/pre-batch3-legacy-salvage-t1
+    types: [opened]
 
 permissions:
   contents: write
 
 jobs:
   author-and-verify:
+    if: github.head_ref == 'remediation/pre-batch3-coverage-t2-author'
     runs-on: ubuntu-latest
     steps:
       - name: Check out author branch
@@ -63,11 +63,11 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json, pathlib
-          from scripts.qa_common import question_audit_hash
+          import json, pathlib, subprocess, sys
+          sys.path.insert(0, str(pathlib.Path('scripts').resolve()))
+          from qa_common import question_audit_hash
           root=pathlib.Path('.')
           source='516771a93f939c843ba4c2be7ef745718606f448'
-          import subprocess
           for i in range(1,211):
               path=f'data/questions/ma-q-{i:04d}.json'
               current=json.loads(pathlib.Path(path).read_text(encoding='utf-8'))
