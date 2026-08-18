@@ -1,0 +1,125 @@
+name: Guarded Pre-Batch3 T1 Admission V2 Runner
+
+on:
+  push:
+    branches:
+      - release/pre-batch3-t1-guarded-admission-v2
+    paths:
+      - scripts/admit_prebatch3_t1_guarded_v2.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact admission branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: release/pre-batch3-t1-guarded-admission-v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Verify exact source boundary and runner-only tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE=c044680e6efbf07d7975ae033754c8e366fa91fa
+          git fetch origin repair/pre-batch3-legacy-salvage-t1-r1
+          test "$(git rev-parse origin/repair/pre-batch3-legacy-salvage-t1-r1)" = "$SOURCE"
+          test "$(git merge-base "$SOURCE" HEAD)" = "$SOURCE"
+          python - <<'PY'
+          import subprocess
+          source='c044680e6efbf07d7975ae033754c8e366fa91fa'
+          changed=set(subprocess.check_output(['git','diff','--name-only',f'{source}...HEAD'], text=True).splitlines())
+          expected={
+            'scripts/admit_prebatch3_t1_guarded_v2.py',
+            '.github/workflows/admit-prebatch3-t1-guarded-v2.yml',
+            '.github/workflows/admit-prebatch3-t1-guarded-v2-runner.yml',
+            'scripts/admit_prebatch3_t1_guarded_v2.trigger',
+          }
+          if changed != expected:
+            raise SystemExit(f'unexpected starting diff: {sorted(changed)}')
+          print('runner exact-source tooling boundary: PASS')
+          PY
+      - name: Apply guarded admission
+        run: python scripts/admit_prebatch3_t1_guarded_v2.py
+      - name: Regenerate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+      - name: Validate repository
+        run: python scripts/validate_all.py
+      - name: Run full tests
+        run: python -m pytest -q
+      - name: Prove generated-artifact freshness
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -A
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+      - name: Assert release-governance boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          source='c044680e6efbf07d7975ae033754c8e366fa91fa'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source], text=True).splitlines())
+          admit={'MA-Q-0004','MA-Q-0009','MA-Q-0013','MA-Q-0015','MA-Q-0016','MA-Q-0017','MA-Q-0020','MA-Q-0027','MA-Q-0030','MA-Q-0032','MA-Q-0034','MA-Q-0036','MA-Q-0040','MA-Q-0059','MA-Q-0060','MA-Q-0075','MA-Q-0076','MA-Q-0077','MA-Q-0078','MA-Q-0079','MA-Q-0080','MA-Q-0081','MA-Q-0082','MA-Q-0083','MA-Q-0084','MA-Q-0085','MA-Q-0086','MA-Q-0087','MA-Q-0088'}
+          expected_q={f'data/questions/ma-q-{qid[-4:]}.json' for qid in admit}
+          actual_q={p for p in changed if p.startswith('data/questions/')}
+          if actual_q != expected_q:
+            raise SystemExit(f'question boundary mismatch: {sorted(actual_q)}')
+          blocked=[p for p in changed if p.startswith('data/rules/') or p.startswith('data/drugs/') or p.startswith('data/audits/') or p in {'data/blueprint.json','data/exam_style/mpje_style_profile.json','data/questions/ma-q-0028.json','data/questions/ma-q-0190.json'}]
+          if blocked:
+            raise SystemExit(f'blocked path(s): {blocked}')
+          allowed={
+            'data/exam_style/question_family_matrix.json','site/generated/preview_allowlist.json',
+            'audits/remediation/2026-08-18/PRE-BATCH3-T1-GUARDED-ADMISSION-V2-REPORT.json',
+            'scripts/admit_prebatch3_t1_guarded_v2.py','.github/workflows/admit-prebatch3-t1-guarded-v2.yml',
+            '.github/workflows/admit-prebatch3-t1-guarded-v2-runner.yml','scripts/admit_prebatch3_t1_guarded_v2.trigger',
+            'answer_distribution_report.json','structural_pattern_report.json','duplicate_report.json'}
+          unexpected=[p for p in changed-expected_q if p not in allowed and not p.startswith('site/generated/')]
+          if unexpected:
+            raise SystemExit(f'unexpected path(s): {sorted(unexpected)}')
+          print(f'release-governance boundary: PASS ({len(changed)} paths)')
+          PY
+      - name: Record successful gates
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('audits/remediation/2026-08-18/PRE-BATCH3-T1-GUARDED-ADMISSION-V2-REPORT.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          d.update(repository_validation='PASS', full_tests='PASS', generated_artifact_freshness='PASS', release_boundary_assertions='PASS')
+          p.write_text(json.dumps(d, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
+      - name: Remove temporary tooling
+        run: git rm scripts/admit_prebatch3_t1_guarded_v2.py scripts/admit_prebatch3_t1_guarded_v2.trigger .github/workflows/admit-prebatch3-t1-guarded-v2.yml .github/workflows/admit-prebatch3-t1-guarded-v2-runner.yml
+      - name: Final freshness and final boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/generate_artifacts.py --write
+          git add -A
+          python - <<'PY'
+          import subprocess
+          source='c044680e6efbf07d7975ae033754c8e366fa91fa'
+          changed=set(subprocess.check_output(['git','diff','--name-only',source], text=True).splitlines())
+          banned=[p for p in changed if p.startswith('scripts/admit_prebatch3_t1_guarded_v2') or p.startswith('.github/workflows/admit-prebatch3-t1-guarded-v2') or p.startswith('data/rules/') or p.startswith('data/drugs/') or p.startswith('data/audits/') or p in {'data/blueprint.json','data/exam_style/mpje_style_profile.json','data/questions/ma-q-0028.json','data/questions/ma-q-0190.json'}]
+          if banned:
+            raise SystemExit(f'final banned path(s): {banned}')
+          print(f'final guarded-admission boundary: PASS ({len(changed)} paths)')
+          PY
+      - name: Commit and push final guarded admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "release: guarded Pre-Batch3 T1 admission of 29 questions"
+          git push origin HEAD:release/pre-batch3-t1-guarded-admission-v2
