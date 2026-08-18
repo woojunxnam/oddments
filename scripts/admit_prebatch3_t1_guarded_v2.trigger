@@ -1,3 +1,0 @@
-trigger=2026-08-18T15:52-04:00
-issue=65
-source=c044680e6efbf07d7975ae033754c8e366fa91fa
