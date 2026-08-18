@@ -1,0 +1,34 @@
+{
+  "manifest_type": "POST_T1_PRE_BATCH3_COVERAGE_GATE_V1",
+  "date": "2026-08-18",
+  "source_branch": "remediation/pre-batch3-legacy-salvage-t1",
+  "source_sha": "516771a93f939c843ba4c2be7ef745718606f448",
+  "baseline_post_batch2_sha": "beeb96d71768b9fb275bdb0005d9cd012e0d1328",
+  "baseline_full_matrix_commit": "b3a2e0d8b7b9f04b13ccfe0da2642948a7adf829",
+  "baseline_full_matrix_git_blob_sha": "e2490c406b14a540a0b259be8986c90119e760f1",
+  "representation": "The post-T1 matrix is a complete 46-atom status delta over the immutable frozen full post-Batch2 matrix. Unchanged baseline semantic evidence is incorporated by exact commit/blob reference; all post-T1 promotions carry current question hashes and accepted current-hash audit IDs.",
+  "files": {
+    "audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-MATRIX.json": {"git_blob_sha": "971a9364171deae98b712fac27d4daf15df5a28d"},
+    "audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-REMEDIATION-PLAN.json": {"git_blob_sha": "e1ae45c32cac38f5453d7ef314644f1e54eec483"},
+    "audits/coverage/2026-08-18/POST-T1-PRE-BATCH3-COVERAGE-DEBT.md": {"git_blob_sha": "ba23319fa3b69138eb0455273d9f1e3fee3715c2"}
+  },
+  "semantic_result": {
+    "verdict": "FAIL",
+    "batch3": "BLOCKED",
+    "atomic_pass": 33,
+    "atomic_fail": 13,
+    "release_usable_total": 149,
+    "area_counts": {"1": 23, "2": 38, "3": 59, "4": 29},
+    "capacity_deficits": {"1": 3, "2": 2, "3": 0, "4": 0},
+    "family_diversity_debts": ["2.4", "4.4"],
+    "transfer_3_2_diversity": "RESOLVED",
+    "known_taxonomy_mismatches": "RESOLVED"
+  },
+  "qa_policy": {
+    "analysis_branch_must_change_only_these_four_files": true,
+    "repository_validation_required": true,
+    "full_test_suite_required": true,
+    "generated_artifact_freshness_required": true,
+    "evidence_recording": "External PR-triggered exact-head QA run is recorded in Issue #40 / analysis PR after this manifest is frozen; QA does not mutate this analysis artifact set."
+  }
+}
