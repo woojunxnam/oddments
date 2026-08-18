@@ -139,10 +139,11 @@ jobs:
           git rm scripts/apply_prebatch3_t2_authoring.py
           git rm .github/workflows/prebatch3-t2-author.yml
           git rm -r repair_specs/prebatch3_t2
+          git add -A
           python - <<'PY'
           import subprocess
           source='516771a93f939c843ba4c2be7ef745718606f448'
-          changed=set(subprocess.check_output(['git','diff','--name-only',source],text=True).splitlines())
+          changed=set(subprocess.check_output(['git','diff','--cached','--name-only',source],text=True).splitlines())
           allowed={f'data/questions/ma-q-{i:04d}.json' for i in range(211,227)}
           allowed |= {
             'data/exam_style/question_family_matrix.json',
@@ -170,8 +171,5 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/questions data/rules data/exam_style/question_family_matrix.json
-          git add audits/remediation/2026-08-18/PRE-BATCH3-COVERAGE-T2-AUTHORING-REPORT.json
-          git add answer_distribution_report.json structural_pattern_report.json duplicate_report.json site/generated/questions.json
           git commit -m 'author: add Pre-Batch3 coverage T2 questions Q0211-Q0226'
           git push origin HEAD:remediation/pre-batch3-coverage-t2-author
