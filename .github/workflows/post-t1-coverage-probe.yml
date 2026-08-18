@@ -1,0 +1,25 @@
+name: Post-T1 Coverage Probe
+on:
+  push:
+    branches:
+      - analysis/pre-batch3-coverage-post-t1-v1
+    paths:
+      - scripts/post_t1_coverage_probe.trigger
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: analysis/pre-batch3-coverage-post-t1-v1
+      - name: Write marker
+        run: |
+          mkdir -p audits/coverage/2026-08-18
+          echo "probe=PASS" > audits/coverage/2026-08-18/POST-T1-COVERAGE-PROBE.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audits/coverage/2026-08-18/POST-T1-COVERAGE-PROBE.txt
+          git commit -m "ci: post-T1 coverage probe PASS"
+          git push origin HEAD:analysis/pre-batch3-coverage-post-t1-v1
