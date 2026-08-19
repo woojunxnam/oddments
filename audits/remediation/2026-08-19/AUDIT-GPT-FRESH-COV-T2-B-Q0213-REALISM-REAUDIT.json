@@ -1,0 +1,53 @@
+{
+  "audit_type": "REALISM_REAUDIT",
+  "audit_scope": "CHANGED_ITEM_REAUDIT_FULL_CANONICAL_BANK",
+  "auditor_identity": "GPT-FRESH-COV-T2-B",
+  "audit_date": "2026-08-19",
+  "question_id": "MA-Q-0213",
+  "frozen_question_audit_hash": "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23",
+  "frozen_question_git_blob": "4f16c9b25308e1a2936a39882b4271a570ace42d",
+  "phase1_lock_commit": "bbf553394e0e2abdcbee475ed552006feb387034",
+  "phase1_lock_sha256": "c52d063cf0f4d1d4b1dc897730af0c5ecc7395c6f732c000f550ba8a07d757ed",
+  "phase2_corrected_verifier": {
+    "overlay_head": "079809bf9cea9688325135fc6be8a35eeec2c99e",
+    "verifier_sha256": "36289982d7f677b5bae79420d403edccc071116d130ddfe02fd5cba22fa155c1",
+    "verifier_git_blob": "db875e26850f58ab9e2cda2fec7c6ada3928cd22",
+    "result": "PASS",
+    "exact_output": "pre-batch3 coverage T2 Q0213 r1 v2 freeze mechanical verification: PASS"
+  },
+  "full_bank_review": {
+    "represented_question_count": 226,
+    "method": "Direct post-lock review of the frozen generated canonical-question payload representing data/questions, with full-bank ID/family/topic/subtopic scan and full-text cross-search for counseling, delivery, shipping, toll-free, telephone, and related patient-care concepts; closest candidates were then opened and compared directly as canonical question records. A duplicate detector was not used as a substitute for this review.",
+    "closest_comparison_ids": [
+      "MA-Q-0086",
+      "MA-Q-0215",
+      "MA-Q-0092"
+    ],
+    "closest_comparisons": [
+      {
+        "question_id": "MA-Q-0086",
+        "comparison": "Shares Massachusetts counseling and M.G.L. c. 94C, § 21A context, but tests pickup counseling refusal/documentation and the statutory presumption rather than the off-site toll-free access pathway or container-label placement. It is SATA, while Q0213 is an SBA operational delivery decision."
+      },
+      {
+        "question_id": "MA-Q-0215",
+        "comparison": "Shares a prescription-delivery/shipping setting and SBA format, but tests packaging/transport conditions needed to protect temperature-sensitive medication integrity and stability, not counseling access or the toll-free number placement requirement."
+      },
+      {
+        "question_id": "MA-Q-0092",
+        "comparison": "Shares counseling as a patient-facing duty, but tests the independence of a federal Medication Guide obligation from Massachusetts verbal counseling. It does not use off-site delivery, a toll-free service, or container-label placement."
+      }
+    ]
+  },
+  "criteria": {
+    "distinct_from_bank": "PASS",
+    "plausible_mpje_task": "PASS",
+    "credible_distractors": "PASS",
+    "no_answer_length_or_wording_leakage": "PASS",
+    "applied_reasoning_not_statute_copy_trivia": "PASS",
+    "single_best_answer_clarity": "PASS"
+  },
+  "overall": "KEEP",
+  "severity": "NONE",
+  "comparison_based_rationale": "The frozen item presents a plausible Massachusetts home-delivery workflow in which one required component of the statutory off-site counseling pathway has already been supplied and the examinee must identify the remaining operational step before shipment. Full-bank comparison found no other item testing the same toll-free-service-plus-each-container-label decision path. MA-Q-0086 is closest legally because it also applies §21A counseling mechanics, but its task is refusal documentation at pickup. MA-Q-0215 is closest operationally because it involves mailing a prescription, but its task is temperature/stability protection. MA-Q-0092 is a counseling-adjacent federal/state interaction item. The keyed answer is not uniquely conspicuous by length or form; the alternatives map to credible implementation errors involving outer packaging, receipts, post-delivery communication, or substitution of a local number. Although the controlling statutory phrase is specific, the item does not merely ask the examinee to recite it in isolation: the stem requires recognizing that toll-free access alone is incomplete in the stated delivery workflow and selecting the legally sufficient placement among competing operational alternatives. The answer is therefore singular, practice-plausible, and materially distinct from the frozen bank.",
+  "realism_gate": "PASS"
+}
