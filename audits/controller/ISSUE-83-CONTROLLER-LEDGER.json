@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "BATCH3_B3B_R1_REPAIR_AND_B3C_AUTHORING",
+  "current_phase": "BATCH3_B3C_SOURCE_VERIFICATION",
   "phases": [
     {
       "phase": "BATCH3_B3B_AUDIT_VERIFIED_AND_RELEASED",
@@ -38,6 +38,36 @@
       "verifier_generalization": "verify_tranche_audit.py now accepts either Phase-1 lock shape (questions/selected_choice_ids or answers/blind_selected_choice_ids) and asserts the optional freeze_head and blind sha256 fields when a lock declares them; fails closed if no recognized answer container or choice field is present."
     },
     {
+      "phase": "BATCH3_B3B_R1_REPAIR_AND_FREEZE",
+      "date": "2026-08-19",
+      "question_ids": [
+        "MA-Q-0288"
+      ],
+      "finding": "realism MINOR_EDIT/FAIL on authentic_distractors; legal KEEP/YES retained",
+      "defects": [
+        "sole incorrect option (no outstanding account balance) had no regulatory nexus, so all discriminating power of a 5-option SATA rested on one non-credible distractor",
+        "stem asked what must 'still' be determined after telephone confirmation of authorship, supporting a reading on which determination (c) authenticity was discharged; this was the one item whose Phase-1 blind answer diverged from the key"
+      ],
+      "repair": "Construction rebuilt: telephone framing removed so nothing discharges a determination; item now discriminates the 247 CMR 9.15(2) determinations from two genuinely adjacent duties (MCSR verification, plausible because 9.15 is headed Verifying a Practitioner's Prescriptive Authority; and PMP screening, plausible because 9.15(1) imposes a monitoring-program duty of registration and maintained login rather than a determination).",
+      "not_a_paraphrase": {
+        "stem_sequence_vs_prior": 0.122,
+        "keyed": "4 -> 3",
+        "distractors": "1 -> 2",
+        "key": "A,C,D,E -> B,C,E"
+      },
+      "authority_reopened": "247 CMR 9.15(1) and (2) read verbatim from the official published 247 CMR 9.00 (12/6/24)",
+      "new_rules_created": 0,
+      "comparator_universe": 296,
+      "old_hash_preserved": "343520a4112cde0f746b9d4fb5062cc627d25438c3d94e312c5d97759a58bb68",
+      "new_hash": "2a8d9db0e5874556e8465bbda8b96e6252c989672165fd3b9d4d181339baa6cb",
+      "candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+      "freeze_branch": "freeze/batch3-b3b-r1-v1",
+      "freeze_sha": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+      "reserved_auditor_instance": "CLAUDE-FRESH-B3B-R1",
+      "audit_scope": "REAUDIT",
+      "state": "AWAITING_FOCUSED_REAUDIT_HANDOFF"
+    },
+    {
       "phase": "BATCH3_B3B_TRANCHE_KEY_SKEW_ADVISORY",
       "date": "2026-08-19",
       "raised_by": "CLAUDE-FRESH-B3B",
@@ -47,6 +77,28 @@
       "rationale": "Re-keying would change current hashes, invalidate otherwise passing current-hash audit evidence and force an unnecessary re-audit of 32 already-cleared items. Each of the 32 passed wording_not_guessable and every other realism criterion individually. The released bank, not the authoring tranche, is the production distribution.",
       "scope_of_advice": "Relevant only if a B3-B tranche is ever presented standalone as a practice set.",
       "action": "Recorded; the 32 passing hashes left intact."
+    },
+    {
+      "phase": "BATCH3_B3C_SCOPING_FINDING_AREA2_SOURCES",
+      "date": "2026-08-19",
+      "context": "Pre-authoring inventory for B3-C (MA-Q-0295..0327, Area 2 = 33).",
+      "measured_area_split_at_6d41ac4c": {
+        "1": 78,
+        "2": 54,
+        "3": 96,
+        "4": 66
+      },
+      "correction_to_earlier_read": "An earlier pass reported 247 CMR 9.02-9.05, 9.07-9.12, 9.14, 9.16 and 9.17 as unused and therefore available for B3-C. Usage was right but AREA was wrong. Bank precedent assigns most of them outside Area 2: 9.02 and 9.04 -> Area 4, 9.14 and 9.17 -> Area 3, 9.19 and 9.24 -> Area 4, 9.21 and 9.23 -> Area 1. Of the twelve sections with no question at all (9.03, 9.05, 9.07, 9.08, 9.09, 9.10, 9.11, 9.12, 9.16, 9.20, 9.22, 9.25), compliance packaging, emergency kits, automated systems, records, non-resident pharmacies, storage and plans of correction all sit in Area 4 by precedent, and generic interchange sits in Area 4 as well.",
+      "consequence": "247 CMR 9.00 is close to exhausted as an Area-2 source. Only 9.03 Advertising plus deeper unkeyed paragraphs of 9.01, 9.13 and 9.15 remain clearly Area 2.",
+      "area2_headroom_to_verify_before_authoring": [
+        "247 CMR 16.00 beyond 16.02 (16.03 onward), noting 16.04 was previously unreadable in the published PDF and must be re-extracted with the working extractor",
+        "M.G.L. c. 94C statutory practice provisions not yet keyed",
+        "M.G.L. c. 112 sections 24 through 42D pharmacist practice standards",
+        "105 CMR 700.000 Department of Public Health controlled substances, currently only lightly used",
+        "247 CMR 9.03 Advertising and unkeyed paragraphs of 247 CMR 9.01"
+      ],
+      "controller_decision": "Do not author B3-C from sections whose bank precedent places them in Area 3 or 4 merely because they are unused. Verify each candidate source's area precedent and its official text before writing, as was done for 247 CMR 11.00 in B3-B.",
+      "state": "SOURCE_VERIFICATION_IN_PROGRESS"
     },
     {
       "phase": "PHASE_0_START_BOUNDARY",
