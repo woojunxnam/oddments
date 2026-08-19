@@ -1,0 +1,89 @@
+{
+  "report_type": "B3A_R1_DISCLOSURE_AND_SOURCE_POLICY_ADJUDICATION",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "audit_pr": 98,
+  "audit_head_sha": "2d6decc831dac35e61b3a5055bc11d8cc5db0599",
+  "auditor_instance": "CLAUDE-FRESH-B3A-R1",
+  "represented_candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+  "part_1_incidental_disclosure": {
+    "recorded_text": "repair: B3-A realism R1 - move MA-Q-0241 and MA-Q-0256 onto distinct decision paths",
+    "actual_commit_subject": "repair: B3-A realism R1 — move MA-Q-0241 and MA-Q-0256 onto distinct decision paths",
+    "recorded_matches_actual": true,
+    "note_on_difference": "The auditor transcribed an em dash as a hyphen. Dash-normalised the strings are identical.",
+    "how_encountered": "Printed automatically by the mandated git worktree add step against the candidate SHA. Git echoes the checked-out commit subject and the output cannot be suppressed.",
+    "prohibition_tests": {
+      "no_answer_or_canonical_key": true,
+      "no_choice_letter_or_option_text_fragment": true,
+      "no_rule_identifier": true,
+      "no_legal_proposition_or_citation": true,
+      "no_prior_comparator_question_id": true,
+      "no_audit_verdict_or_criterion_vocabulary": true,
+      "no_explanation_fragment": true
+    },
+    "residual_signal_stated_plainly": "The subject does convey that a repair occurred and that it concerned distinctness of decision paths. It does not name the failing criterion, the verdict, the severity, the comparator questions, the rule, the authority, or any option. It therefore carries no information capable of selecting among the offered choices.",
+    "commit_body_not_disclosed": {
+      "verified": true,
+      "reason": "git worktree add prints the subject line only. The 2673-character body, which does name MA-Q-0076, MA-Q-0079, MA-Q-0247, MA-Q-0254, MA-Q-0249, MA-Q-0257, distinct_from_bank, MINOR_EDIT, 247 CMR 8.05(3) and 247 CMR 4.03(7), was not emitted."
+    },
+    "classification": "NON_SUBSTANTIVE_INCIDENTAL_GIT_METADATA",
+    "blind_lock_status": "NOT VOIDED. Preserved in provenance.",
+    "process_improvement_for_future_freezes": "Give repair candidate commits a neutral subject, for example repair: B3-A R1 candidate, and keep all rationale in the body, so the mandated worktree step cannot emit even this residual signal."
+  },
+  "part_2_source_policy_cure_scope": {
+    "contract_requirement": "current official primary or official government sources only",
+    "defect": "The LEGAL record Method notes state that the verbatim section text was read from the Cornell LII republication because the mass.gov PDF endpoint returned HTTP 403 to automated retrieval. The recorded official_url values and source_type MA_PROMULGATED_REGULATION are already official mass.gov references, and the current-version dates were taken from the official mass.gov pages. Only the verbatim operative text came from the secondary republication.",
+    "propositions_requiring_cure": {
+      "MA-Q-0241": [
+        "247 CMR 8.05(3)",
+        "247 CMR 8.05(1)",
+        "247 CMR 8.05(2)",
+        "247 CMR 8.02(1)",
+        "247 CMR 8.03",
+        "247 CMR 8.04(1)"
+      ],
+      "MA-Q-0256": [
+        "247 CMR 4.03(7)",
+        "247 CMR 4.03(4)(b)",
+        "247 CMR 4.03(5)"
+      ]
+    },
+    "controller_reference_evidence": {
+      "purpose": "Retrieved by the controller from the official Massachusetts government publication so the cure can be adjudicated against a deterministic yardstick. This is a source-retrieval record, not a substantive audit finding.",
+      "retrieval_path": "Browser session against the mass.gov regulation pages and their linked official PDFs. The HTTP 403 the auditor met is an automated or command-line retrieval artifact; the official documents are available.",
+      "documents": [
+        {
+          "authority": "247 CMR 8.00 Pharmacy interns and technicians",
+          "official_page": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+          "official_pdf": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "pdf_bytes": 122079,
+          "pdf_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714"
+        },
+        {
+          "authority": "247 CMR 4.00 Personal registration renewal; continuing education requirement",
+          "official_page": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+          "official_pdf": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "pdf_bytes": 40467,
+          "pdf_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e"
+        }
+      ],
+      "verbatim_from_official_pdf": {
+        "247 CMR 8.05(3) first sentence": "A certified pharmacy technician, pharmacy technician, or pharmacy technician trainee may not handle any hydrocodone-only extended release medication that is not in an abuse deterrent form.",
+        "247 CMR 4.03(7)": "A registrant may not earn more than eight contact hours of continuing education in a calendar day."
+      },
+      "known_limitation_in_the_official_document": {
+        "provision": "247 CMR 8.05(3), second sentence, the pharmacy-intern carve-out",
+        "observed_official_text": "Pharmacy interns under the direct supervision of a registered pharmacist may handle hydrocodone-only ex",
+        "issue": "The officially published PDF truncates this sentence mid-word at a page boundary. It is therefore NOT verbatim-verifiable from the official document.",
+        "consequence_for_the_cure": "MA-Q-0241 does not key on the intern carve-out; the controller deliberately excluded it during authoring for this reason. The KEYED proposition rests on the first sentence, which IS complete in the official PDF, so the cure is achievable. If the cure relies on the second sentence for its reasoning, that reliance cannot be satisfied from the official document and must be recorded as such rather than asserted."
+      }
+    },
+    "release_decision": "HOLD. MA-Q-0241 and MA-Q-0256 are not released until the official-source cure evidence returns and is adjudicated.",
+    "what_is_NOT_being_redone": [
+      "Phase 1 blind solve",
+      "REALISM review",
+      "a further full fresh REAUDIT"
+    ],
+    "escalation_condition": "Only if the official-source cure fails will a further fresh REAUDIT be ordered."
+  }
+}
