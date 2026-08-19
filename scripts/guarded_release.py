@@ -481,9 +481,22 @@ def assert_release_boundary(config: dict, before_questions: dict, before_registr
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tranche", required=True, choices=sorted(TRANCHES))
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--tranche", choices=sorted(TRANCHES), help="a tranche registered in TRANCHES")
+    group.add_argument("--tranche-file", help="path to a tranche config JSON, for large generated tranches")
     args = parser.parse_args()
-    config = {"tranche_id": args.tranche, **TRANCHES[args.tranche]}
+    if args.tranche:
+        config = {"tranche_id": args.tranche, **TRANCHES[args.tranche]}
+    else:
+        config = load_json(ROOT / args.tranche_file if not Path(args.tranche_file).is_absolute() else Path(args.tranche_file))
+        required = {"tranche_id", "question_ids", "expected_hashes", "evidence", "legal_review_dates",
+                    "adjudicator", "adjudication_notes", "preview_source_audits", "preview_notice",
+                    "report_path", "preflight_path", "report_type", "controller_issue",
+                    "authorizing_issue", "release_date", "source_branch", "represented_candidate_sha"}
+            
+        missing = required - set(config)
+        if missing:
+            raise SystemExit(f"tranche config is missing required keys: {sorted(missing)}")
 
     pre, preflight_payload = preflight(config)
     write_json(ROOT / config["preflight_path"], preflight_payload)
