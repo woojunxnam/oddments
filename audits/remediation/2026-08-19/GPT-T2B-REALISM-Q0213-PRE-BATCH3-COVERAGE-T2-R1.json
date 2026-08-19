@@ -1,0 +1,27 @@
+{
+  "package_type": "REALISM_AUDIT_CONTRACT",
+  "audit_scope": "CHANGED_ITEM_REAUDIT",
+  "auditor_identity": "GPT-FRESH-COV-T2-B",
+  "question_ids": [
+    "MA-Q-0213"
+  ],
+  "full_bank_comparison_required": true,
+  "canonical_bank_reference_scope": "FULL_CANONICAL_BANK_AT_REPRESENTED_CANDIDATE_SHA",
+  "canonical_bank_access": "POST_PHASE_1_LOCK_ONLY",
+  "criteria": [
+    "distinct_from_bank",
+    "plausible_mpje_task",
+    "credible_distractors",
+    "no_answer_length_or_wording_leakage",
+    "applied_reasoning_not_statute_copy_trivia",
+    "single_best_answer_clarity"
+  ],
+  "required_output": {
+    "closest_comparison_ids": "explicit canonical question IDs",
+    "criterion_results": "PASS/FAIL for every criterion",
+    "overall_verdict": "KEEP/REWRITE/DROP",
+    "severity": "NONE/MINOR/MAJOR",
+    "reasoning": "specific comparison-based rationale"
+  },
+  "failure_rule": "Any LEGAL or REALISM failure returns to governance. Do not repair inside the fresh-auditor session."
+}
