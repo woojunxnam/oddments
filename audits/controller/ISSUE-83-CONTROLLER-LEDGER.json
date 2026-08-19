@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_T3_DIVERSITY_AWAITING_FRESH_AUDIT",
+  "current_phase": "PHASE_G_BATCH3",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -162,6 +162,127 @@
         "generated_artifact_freshness": "PASS (clean tree after regeneration)"
       },
       "development_fixture_convention": "unchanged true, matching every canonical question in this repository and the T1 PR #66 precedent"
+    },
+    {
+      "phase": "PHASE_E_LINEAGE_PROPAGATION",
+      "title": "Release PR, exact-head CI, canonical lineage propagation",
+      "status": "PASS",
+      "release_pr": {
+        "number": 84,
+        "url": "https://github.com/woojunxnam/oddments/pull/84",
+        "base": "repair/pre-batch3-coverage-t2-r1",
+        "head": "release/pre-batch3-t2-guarded-admission-v1",
+        "head_sha": "f42272dab257272b41e6f85435e0bec913e0f887",
+        "exact_head_ci": "QA runs 32272140018 and 32272226137 both success",
+        "merged_sha": "f0cc09b26d485e599042682134ea8c1b3dc410ef",
+        "sha_guard_used": "f42272dab257272b41e6f85435e0bec913e0f887"
+      },
+      "lineage_merges": [
+        {
+          "pr": 73,
+          "base": "remediation/pre-batch3-coverage-t2-author",
+          "head": "repair/pre-batch3-coverage-t2-r1",
+          "expected_head_sha_guard": "f0cc09b26d485e599042682134ea8c1b3dc410ef",
+          "exact_head_ci": "QA runs 32273158611 and 32273164527 both success",
+          "local_exact_head_qa": "validate_all 0 errors, pytest 93 passed 1 skipped, freshness clean",
+          "merged_sha": "444ef028a753c38de58f978515d2cabac26aedeb"
+        },
+        {
+          "pr": 69,
+          "base": "remediation/pre-batch3-legacy-salvage-t1",
+          "head": "remediation/pre-batch3-coverage-t2-author",
+          "expected_head_sha_guard": "444ef028a753c38de58f978515d2cabac26aedeb",
+          "exact_head_ci": "QA runs 32273484478 and 32273491212 both success",
+          "local_exact_head_qa": "validate_all 0 errors, pytest 93 passed 1 skipped, freshness clean",
+          "merged_sha": "860ec67308772ac63073ed62a7ebdcc565921183"
+        }
+      ],
+      "final_post_t2_canonical_state": {
+        "branch": "remediation/pre-batch3-legacy-salvage-t1",
+        "sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+        "role": "exact SHA that Issue #40 audits"
+      },
+      "evidence_branches_not_merged": [
+        71,
+        77,
+        80
+      ],
+      "packaging_or_freeze_only_files_introduced": false,
+      "known_unrelated_ci_note": "The stale push-triggered workflow apply-legacy-salvage-t1-repairs.yml fires on remediation/pre-batch3-legacy-salvage-t1 and fails closed at its 'Verify repair starting boundary' step without mutating or pushing anything. It failed the same way on the prior PR #52 merge (516771a9) and is pre-existing, not caused by T2."
+    },
+    {
+      "phase": "PHASE_F_FINAL_GATE",
+      "title": "Mandatory final Pre-Batch3 gate (Issue #40 rerun)",
+      "status": "FAIL",
+      "verdict": "FAIL",
+      "batch3": "BLOCKED",
+      "script": "scripts/prebatch3_final_coverage_gate.py",
+      "analysis_branch": "analysis/pre-batch3-coverage-post-t2-v1",
+      "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+      "representation": "FULL_FROM_SCRATCH_RECOMPUTATION_AT_EXACT_POST_T2_SHA",
+      "atomic_pass": 46,
+      "atomic_fail": 0,
+      "release_usable_by_area": {
+        "1": 26,
+        "2": 40,
+        "3": 59,
+        "4": 40
+      },
+      "required_120_mock_allocation": {
+        "1": 26,
+        "2": 40,
+        "3": 29,
+        "4": 25
+      },
+      "slack_by_area": {
+        "1": 0,
+        "2": 0,
+        "3": 30,
+        "4": 15
+      },
+      "blueprint_faithful_120_mock_without_reuse": true,
+      "mock_max_family_repeat": 1,
+      "taxonomy_unresolved": [],
+      "gate_fail_reasons": [
+        "headline family-diversity debt: 4.3 (Delivery of drugs) has only family T2_0215_MA_DRUG_DELIVERY",
+        "headline family-diversity debt: 4.6 (Central fill) has only family T2_0220_MA_CENTRAL_FILL"
+      ],
+      "from_scratch_correction": "2.3b Documentation of counseling/offer recorded as PASS on MA-Q-0086 against a baseline FAIL_NO_DIRECT_QUESTION",
+      "family_diversity_exception_claimed": false,
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS"
+      },
+      "artifacts": [
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-FINAL-COVERAGE-MATRIX.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-FINAL-GATE-MANIFEST.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-MINIMUM-REMEDIATION-PLAN.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-COVERAGE-DEBT.md"
+      ],
+      "consequence": "Batch 3 is NOT unlocked. Phase G is not started. A narrowly scoped remediation issue is created instead."
+    },
+    {
+      "phase": "PHASE_G_BATCH3",
+      "title": "Batch 3 program",
+      "status": "NOT_STARTED_GATE_FAILED",
+      "reason": "Issue #83 Phase F requires the final Pre-Batch3 gate to PASS before Batch 3 unlocks. The gate measured FAIL at 860ec67308772ac63073ed62a7ebdcc565921183.",
+      "batch3": "BLOCKED",
+      "remediation_issue": {
+        "number": 86,
+        "url": "https://github.com/woojunxnam/oddments/issues/86",
+        "title": "Pre-Batch3 remediation T3: close headline family-diversity debt for 4.3 and 4.6",
+        "scope": "2 new Area 4 questions (MA-Q-0227, MA-Q-0228) in 2 new families; nothing else",
+        "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183"
+      },
+      "gate_evidence_pr": {
+        "number": 85,
+        "url": "https://github.com/woojunxnam/oddments/pull/85",
+        "branch": "analysis/pre-batch3-coverage-post-t2-v1",
+        "merge_intent": "none - evidence branch only"
+      },
+      "no_batch3_plan_artifact_created": true,
+      "no_batch3_questions_authored": true
     },
     {
       "phase": "PHASE_T3_DIVERSITY_AUTHORING",
