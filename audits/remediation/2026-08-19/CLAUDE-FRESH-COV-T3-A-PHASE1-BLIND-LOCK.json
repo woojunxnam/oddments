@@ -1,0 +1,40 @@
+{
+  "phase": "PHASE_1_BLIND_LOCK",
+  "audit_date": "2026-08-19",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+  "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+  "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+  "blind_package_sha256": "e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851",
+  "blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+  "freeze_branch": "freeze/pre-batch3-coverage-t3-v1",
+  "freeze_head_observed": "821da7c5838d1c2ca79610dfcb11af986c2fb626",
+  "audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+  "questions": [
+    {
+      "question_id": "MA-Q-0227",
+      "selected_choice_ids": ["E"],
+      "reasoning": "247 CMR 9.04(4) imposes two distinct obligations on a pharmacy running a bed-side delivery service for discharge prescriptions at an inpatient healthcare facility: it must obtain patient consent and not restrict freedom of choice of pharmacy, AND it 'shall deliver any medications directly to the patient or patient's agent.' The proposal routes the finished prescriptions to the unit charge nurse as a matter of standard workflow, so the medications terminate with facility staff rather than with the patient. A charge nurse acting in that staff capacity is not the patient's agent; agency here runs from the patient's own designation, not from the nurse's licensure or employment. So the delivery leg fails the second obligation and the proposal cannot be adopted as drafted, which is what E says. A is wrong because the regulation grants no exception for a licensed facility employee; the nurse's credential is irrelevant to who may receive the delivery. B is wrong because consent is a separate, additional precondition, not a substitute for the delivery requirement, so satisfying it does not cure handing the medications to a third party. C is wrong because charting receipt is a documentation step that does not change who the medications were delivered to; the regulation is not satisfied retroactively by a facility record. D overstates the law in the opposite direction: Massachusetts expressly contemplates and permits bed-side delivery of discharge prescriptions in 247 CMR 9.04(4) and merely conditions it, so a flat prohibition is a misstatement. E is therefore the single best answer, and it is the only option that identifies the actual operative defect.",
+      "authorities_consulted": [
+        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-9-04"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0228",
+      "selected_choice_ids": ["A", "B", "E"],
+      "reasoning": "Massachusetts Board of Registration in Pharmacy Policy 2021-02 (Shared Pharmacy Service Models Including Central Fill, Remote Processing, and Telepharmacy), current revision 2/6/25, Section IV governs. A is correct: IV.b.iii provides that centrally filled Schedule II-V controlled substances must be delivered to the pharmacy where the prescription originated for final dispensing to the patient, and Schedule IV falls inside that II-V band, so the finished product cannot go straight to the patient. B is correct: IV.b.iv provides that centrally filled Schedule VI controlled substances, with the exception of drugs requiring reporting to the Prescription Monitoring Program, may be delivered or shipped directly to the patient from the central fill pharmacy; a Schedule VI drug outside PMP reporting is exactly the permitted case. C is incorrect and is the trap paired with B: it asserts the direct-to-patient route for the very drugs IV.b.iv carves out. PMP-reportable Schedule VI drugs, gabapentin being the policy's named example, are excluded from direct shipment and must instead be handled in the same manner as Schedule II-V under IV.b.ii, meaning back to the originating pharmacy. The stated rationale, that the drug is not federally scheduled, is also the wrong test: the policy keys the carve-out to PMP reporting status, not to federal scheduling. D is incorrect: IV.b.i requires that any central fill pharmacy dispensing medications into, within, or from Massachusetts to participating pharmacies be licensed by Massachusetts as a resident or non-resident retail pharmacy. The originating pharmacy's license does not cover the central site. This is independently confirmed by 247 CMR 6.02(4), under which a pharmacy located outside Massachusetts may not dispense or ship any controlled substance into Massachusetts unless it holds a non-resident Drug Store Pharmacy license, and Massachusetts Schedule VI sweeps in ordinary prescription drugs. I specifically checked currency here because the superseded 4/7/22 revision carried an enforcement-forbearance paragraph for non-resident shared services pending promulgation of 247 CMR 6.00; that paragraph is gone from the current 2/6/25 text, so D is false under current policy. E is correct: IV.b.v provides that the central filling of compounded sterile preparations or complex non-sterile preparations to be dispensed into, within, or from Massachusetts is prohibited. I note that the superseded 4/7/22 revision qualified this with 'Unless otherwise approved by the Board'; the current 2/6/25 revision removed that qualifier and states the prohibition flatly, so E is unambiguously correct on current authority. Answer set: A, B, E.",
+      "authorities_consulted": [
+        "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+        "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+        "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+      ]
+    }
+  ],
+  "canonical_key_inspected_before_lock": false,
+  "canonical_explanation_inspected_before_lock": false,
+  "canonical_rules_inspected_before_lock": false,
+  "author_reasoning_inspected_before_lock": false,
+  "contamination_status": "CLEAN",
+  "attestation": "I solved both items only from the sanitized blind package and current official sources. I did not open the canonical question files, the canonical rule files, the authoring report, the post-lock dependency reveal, the generated site payload, Issue #86, Issue #83, any pull request body or comment, or any git log/diff describing these questions, before writing this lock."
+}

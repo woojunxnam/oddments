@@ -3,7 +3,7 @@
     "canonical_source": "data/",
     "development_fixture_mode": true,
     "release_status": "DEVELOPMENT_ONLY",
-    "question_count": 226,
+    "question_count": 228,
     "blueprint": {
       "id": "MPJE-MA-PRE2027-BLUEPRINT",
       "content_version": 1,
@@ -46227,6 +46227,270 @@
             "wording_not_guessable": true
           },
           "notes": "MA-Q-0087 tests generic substitution, while this item tests the separate biologic-interchangeability statute. Similar product-selection framing does not collapse the distinct legal rule. Closest canonical-bank comparison question IDs: MA-Q-0087.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0227",
+      "family_id": "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY",
+      "area": 4,
+      "topic": "Pharmacy operations",
+      "subtopic": "Bed-side delivery of discharge prescriptions",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy runs a bed-side delivery service for discharge prescriptions at an inpatient healthcare facility. To speed up discharges, it proposes that its delivery staff hand each enrolled patient's medications to the unit charge nurse, who will add them to the discharge paperwork packet. How should the pharmacy evaluate this proposal?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It works, because the charge nurse is a licensed professional employed by the facility."
+        },
+        {
+          "id": "B",
+          "text": "It works, because the patient already consented to the bed-side delivery service."
+        },
+        {
+          "id": "C",
+          "text": "It works, provided the facility records receipt of the medications in the chart."
+        },
+        {
+          "id": "D",
+          "text": "It fails, because Massachusetts does not allow bed-side delivery of discharge prescriptions."
+        },
+        {
+          "id": "E",
+          "text": "It fails, because bed-side delivery medications must reach the patient or the patient's agent."
+        }
+      ],
+      "correct_choice_ids": [
+        "E"
+      ],
+      "explanation": {
+        "core_reasoning": "247 CMR 9.04(4) governs bed-side delivery of discharge prescriptions in an inpatient healthcare facility. The pharmacy must obtain the patient's consent, must not restrict the patient's freedom of choice of pharmacy services, and shall deliver any medications directly to the patient or the patient's agent. Routing the medications through unit staff and the discharge paperwork does not meet that delivery requirement, and consent to the service does not substitute for it.",
+        "choice_analysis": {
+          "A": "The permitted recipients are the patient or the patient's agent, not any licensed facility employee.",
+          "B": "Consent authorizes the service; it does not change who may receive the medications.",
+          "C": "Charting receipt by the facility is not the delivery step the regulation requires.",
+          "D": "Bed-side delivery of discharge prescriptions is permitted in Massachusetts under stated conditions.",
+          "E": "Correct: the medications must be delivered directly to the patient or the patient's agent."
+        },
+        "related_facts": [
+          "The same provision requires patient consent before a pharmacy provides bed-side delivery service.",
+          "The same provision bars a bed-side delivery arrangement from restricting a patient's freedom of choice of pharmacy services."
+        ],
+        "mpje_trap": "Consent to a bed-side delivery program is not consent to hand the medications to facility staff."
+      },
+      "rule_ids": [
+        "MA-BEDSIDE-DELIVERY"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify the discharge medications as a bed-side delivery service rather than an ordinary mail or carrier shipment",
+        "Separate the consent condition from the condition governing who may receive the medications",
+        "Apply the direct-to-patient-or-agent requirement to the proposed nurse handoff"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #86 after the independent CLAUDE-FRESH-COV-T3-A blind-locked legal and full-bank realism audit",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T3 diversity guarded admission under Issue #86, authorized as tranche PRE-BATCH3-COVERAGE-T3-DIVERSITY. These two items close the only two deficits left by the post-T2 Pre-Batch3 gate: headline 4.3 and headline 4.6 each rested on a single scenario family. Release rests on current-hash independent evidence from CLAUDE-FRESH-COV-T3-A, whose Phase-1 blind lock was committed before any canonical key access and whose blind answers matched both canonical keys. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-BEDSIDE-DELIVERY": {
+              "content_version": 1,
+              "content_hash": "bfcff957c781eeedafb496866b3d0361a58ffd68c4fca9a01950695ce9ebef77"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-BEDSIDE-DELIVERY",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.04(4)",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-19"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 228 records in data/questions, not a sample and not the existing duplicate report. Method: structural comparison on rule_ids, family_id, topic and subtopic across all 228 records, plus a lexical nearest-neighbour sweep over stem and choice text across all 228 records, plus a targeted keyword sweep for every record mentioning delivery, shipping, mail, courier, carrier, central fill, bed-side or discharge. Closest comparisons found: MA-Q-0215 (Pharmacy operations / Medication delivery and shipping, rule MA-DRUG-DELIVERY-SHIPPING) and MA-Q-0213 (Patient care / Remote-delivery counseling offer, rules MA-COUNSELING-REMOTE-DELIVERY and MA-COUNSELING). Secondary comparisons in the same topic label: MA-Q-0088, MA-Q-0112 and MA-Q-0113. This item is materially distinct from all of them. MA-Q-0215 tests a different duty under a different provision, namely whether packing and transportation protect product integrity and stability when a common carrier is used for a mail shipment; it says nothing about who may receive the goods. MA-Q-0213 tests the counseling-offer mechanics for off-site delivery under M.G.L. c.94C section 21A, specifically the requirement to print the toll-free number on a label affixed to each container; again a different duty and a different statute. MA-Q-0227 is the only record in the bank keyed to the recipient-identity duty in 247 CMR 9.04(4) and the only one set in an inpatient discharge workflow. It shares no rule_id, no subtopic and no family_id with any of the other 227 records, and its highest lexical similarity to any record in the bank is 0.072, which is low. MA-Q-0088 (returned medication quarantine), MA-Q-0112 (prescription lock boxes) and MA-Q-0113 (point-of-sale lesser price) share only the broad topic label Pharmacy operations and test unrelated propositions. Criterion-by-criterion assessment, each judged independently rather than defaulted: jurisprudence_reasoning is true because the candidate must apply a regulation to a proposed workflow and reach a compliance conclusion rather than recall a fact. practice_plausibility is true because meds-to-beds discharge delivery programs are a real and common service line and the nurse-handoff shortcut is exactly the kind of throughput proposal an operations team raises. authentic_distractors is true because A, B and C each encode a distinct genuine misconception (professional licensure as a proxy for agency, consent as a cure-all, documentation as a substitute for the act) and D encodes the opposite over-correction, so every option is defensible to a candidate who has not learned the recipient rule. wording_not_guessable is true because the three-works/two-fails split does not isolate a single option, the correct option is not distinguished by length, hedging or specificity, and the sweeping negative phrasing sits on D rather than on the key, so a purely test-wise candidate who eliminates absolutes lands on the wrong side; selecting E requires the substantive rule. reasoning_not_trivia is true because the work is separating the consent duty from the recipient duty inside one provision, not recalling a number, a day count or a schedule. natural_rule_combination is true because the two duties combined are the two duties that actually co-occur in 247 CMR 9.04(4); this is a single-provision item, but the combination is the regulation's own structure rather than an artificial mashup of unrelated rules. appropriate_drug_context is true because the duty is drug-independent and the item correctly names no drug, matching its empty drug_ids; introducing a specific agent would have added false specificity. distinct_from_bank is true on the full-bank comparison described above. not_schedule_flashcard is true because the item contains no controlled-substance scheduling content at all. public_style_without_copying is true because the vignette structure, option count and register match publicly observable MPJE style while the wording is an original construction rather than reproduced item text. All ten criteria are true, so the Realism_Verdict is PASS.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0228",
+      "family_id": "T3_0228_MA_CENTRAL_FILL_ROUTING",
+      "area": 4,
+      "topic": "Shared pharmacy services",
+      "subtopic": "Central fill dispensing routing",
+      "difficulty": 5,
+      "question_type": "SATA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts retail pharmacy is drafting the operating procedure for a new central-fill arrangement with a second pharmacy. The draft has to state where each finished prescription goes and what work the central site may perform. Which statements are correct under current Board policy? Select all that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "A centrally filled Schedule IV prescription must go to the pharmacy where the prescription originated for final dispensing to the patient."
+        },
+        {
+          "id": "B",
+          "text": "A centrally filled Schedule VI prescription that does not require Prescription Monitoring Program reporting may be shipped directly to the patient by the central fill pharmacy."
+        },
+        {
+          "id": "C",
+          "text": "A centrally filled Schedule VI prescription for a drug that does require Prescription Monitoring Program reporting may also be shipped directly to the patient, since it is not federally scheduled."
+        },
+        {
+          "id": "D",
+          "text": "A central fill pharmacy sited outside Massachusetts does not need its own Massachusetts pharmacy license while the originating pharmacy holds one."
+        },
+        {
+          "id": "E",
+          "text": "Central filling of compounded sterile preparations for dispensing within Massachusetts is not permitted."
+        }
+      ],
+      "correct_choice_ids": [
+        "A",
+        "B",
+        "E"
+      ],
+      "explanation": {
+        "core_reasoning": "Board Policy 2021-02 sets central-fill destination, licensure and scope limits separately from the ownership or written-agreement structure that authorizes the arrangement. Centrally filled Schedule II through V controlled substances must be delivered to the pharmacy where the prescription originated for final dispensing to the patient. Centrally filled Schedule VI controlled substances may instead be delivered or shipped directly to the patient, except for drugs requiring Prescription Monitoring Program reporting. A central fill pharmacy dispensing into, within, or from Massachusetts must itself hold a Massachusetts resident or non-resident retail pharmacy license, and central filling of compounded sterile preparations for Massachusetts dispensing is prohibited.",
+        "choice_analysis": {
+          "A": "Correct: a centrally filled Schedule II through V prescription returns to the originating pharmacy for final dispensing.",
+          "B": "Correct: a Schedule VI prescription outside the monitoring-program reporting category may ship directly from the central fill site.",
+          "C": "The monitoring-program reporting category is the stated carve-out, so direct patient shipment is unavailable for it.",
+          "D": "A central fill pharmacy dispensing into, within, or from Massachusetts must itself hold a Massachusetts resident or non-resident retail pharmacy license.",
+          "E": "Correct: central filling of compounded sterile preparations for Massachusetts dispensing is prohibited."
+        },
+        "related_facts": [
+          "Participating pharmacies handling federally controlled substances must follow the DEA central-fill requirements and hold DEA registration.",
+          "Participants must maintain a policy and procedure covering medications that were never dispensed to patients."
+        ],
+        "mpje_trap": "Schedule VI is not a blanket permission to ship a centrally filled prescription straight to the patient, because monitoring-program reportable drugs are carved out."
+      },
+      "rule_ids": [
+        "MA-CENTRAL-FILL-DISPENSING-ROUTE"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Separate the central-fill destination rule from the ownership or written-agreement structure",
+        "Route a federally scheduled centrally filled prescription back to the originating pharmacy for final dispensing",
+        "Apply the Prescription Monitoring Program carve-out to the Schedule VI direct-shipment allowance"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #86 after the independent CLAUDE-FRESH-COV-T3-A blind-locked legal and full-bank realism audit",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T3 diversity guarded admission under Issue #86, authorized as tranche PRE-BATCH3-COVERAGE-T3-DIVERSITY. These two items close the only two deficits left by the post-T2 Pre-Batch3 gate: headline 4.3 and headline 4.6 each rested on a single scenario family. Release rests on current-hash independent evidence from CLAUDE-FRESH-COV-T3-A, whose Phase-1 blind lock was committed before any canonical key access and whose blind answers matched both canonical keys. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CENTRAL-FILL-DISPENSING-ROUTE": {
+              "content_version": 1,
+              "content_hash": "90f4e302223e230cbf8eb327a6f5cd711ee9f4d79564848d6be1cfc14275efb6"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-CENTRAL-FILL-DISPENSING-ROUTE",
+          "name": "Shared Pharmacy Service Models Including Central Fill, Remote Processing, and Telepharmacy",
+          "section": "Policy 2021-02, section IV",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-19"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 228 records in data/questions, not a sample and not the existing duplicate report, using the same three-part method described for MA-Q-0227. Closest comparisons found: MA-Q-0220 (Shared pharmacy services / Central fill relationships, rule MA-SHARED-PHARMACY-SERVICES) at lexical similarity 0.117, then MA-Q-0216 (Compounding / Sterile compounding licensure, rule MA-STERILE-COMPOUNDING-LICENSE) at 0.115, then MA-Q-0217 (Compounding / Complex non-sterile compounding). MA-Q-0220 is the single most important comparison because it is the only other record in the bank drawn from Board Policy 2021-02 and the only other record under the Shared pharmacy services topic. The two are materially distinct. MA-Q-0220 tests the authorizing governance structure of a shared-service arrangement, that is, whether separately owned participants may proceed and on what basis, which is section III.c of the policy, and its key is that a written agreement defining services and responsibilities is the alternative to common ownership. MA-Q-0228 tests the downstream operating limits under section IV.b, namely where the finished product may go, who must hold a Massachusetts license, and what preparations the central site may not make. There is no overlapping keyed proposition, no shared rule_id and no shared family_id; the two items are complementary rather than duplicative, and the canonical explanation for MA-Q-0228 expressly frames the routing question as separate from the ownership or written-agreement structure, which is the correct boundary. MA-Q-0216 and MA-Q-0217 are also distinct: they test whether a pharmacy needs specialty licensure to perform sterile or complex non-sterile compounding on its own premises, whereas choice E here tests whether such preparations may be produced through a central-fill arrangement at all, which is a scope prohibition in the shared-services policy rather than an in-house licensure category. This item shares no rule_id, no subtopic and no family_id with any of the other 227 records. Criterion-by-criterion assessment, each judged independently rather than defaulted: jurisprudence_reasoning is true because the candidate must apply several subsections of a Board policy to a drafting problem and evaluate five separate legal propositions. practice_plausibility is true because writing the operating procedure for a new central-fill arrangement, and having to state destination, licensure and permitted scope, is exactly the real drafting task. authentic_distractors is true because C encodes the widespread and specific belief that Schedule VI status alone frees a centrally filled prescription for direct shipment, and D encodes the equally common belief that the originating pharmacy's Massachusetts license covers its out-of-state partner; both are errors practitioners actually make. wording_not_guessable is true because B and C are deliberately near-identical in surface form and differ only on the Prescription Monitoring Program condition, so surface pattern-matching cannot separate them, and the naive reading endorses both; nothing in the phrasing of A, D or E signals its truth value independently of the rule. reasoning_not_trivia is true because the discriminating work is applying the reporting-status carve-out and distinguishing licensure of the central site from licensure of the originator, not recalling a fact. natural_rule_combination is true because destination, licensure and scope are three subsections of one policy that a real operating procedure must address together, so the combination is how the source material is actually organized. appropriate_drug_context is true because the item deliberately abstracts to a drug that does or does not require Prescription Monitoring Program reporting rather than naming gabapentin, which keeps the reasoning legal rather than making it depend on drug-specific recall, and this matches its empty drug_ids. distinct_from_bank is true on the full-bank comparison described above. not_schedule_flashcard is true because although Schedule IV and Schedule VI appear, the item never asks which schedule a drug occupies; the schedule bands function as the operative legal trigger for a routing consequence, which is how the policy itself is written, so the reasoning is about consequences rather than memorized classifications. public_style_without_copying is true because the select-all-that-apply structure, five options and register match publicly observable MPJE style while the wording is an original construction rather than reproduced item text. All ten criteria are true, so the Realism_Verdict is PASS.",
           "style_profile": {
             "profile_id": "MPJE-MA-PRE2027",
             "content_version": 1,

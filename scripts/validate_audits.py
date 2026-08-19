@@ -12,7 +12,15 @@ TARGETED_INITIAL_BATCH_AUTHORIZATIONS = {
         "authorizing_issue": 68,
         "represented_candidate_sha": "b849159ef18d37618ca6badf886e465502436e1b",
         "question_ids": frozenset(f"MA-Q-{index:04d}" for index in range(211, 227)),
-    }
+    },
+    # Issue #86 governance amendment: the two new bank-admission candidates that close the
+    # measured headline family-diversity debt for 4.3 and 4.6 take their first fresh
+    # independent canonical audit as TARGETED_INITIAL_BATCH rather than REAUDIT.
+    "PRE-BATCH3-COVERAGE-T3-DIVERSITY": {
+        "authorizing_issue": 86,
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "question_ids": frozenset({"MA-Q-0227", "MA-Q-0228"}),
+    },
 }
 GIT_SHA_PATTERN = re.compile(r"^[a-f0-9]{40}$")
 
