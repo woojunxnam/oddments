@@ -82,21 +82,17 @@ jobs:
           write_json(Path("data/rules/ma-counseling-remote-delivery.json"), rule)
           PY
           python scripts/generate_artifacts.py --write
-      - name: Commit only canonical changes and deterministic outputs
+      - name: Commit exact four-file amendment
         shell: bash
         run: |
           set -euo pipefail
           git rm .github/workflows/t2-r1-dependency-amend.yml .github/workflows/t2-r1-finalize.yml
-          allowed=$'answer_distribution_report.json\ndata/exam_style/question_family_matrix.json\ndata/questions/ma-q-0213.json\ndata/rules/ma-counseling-remote-delivery.json\nduplicate_report.json\nsite/generated/questions.json\nstructural_pattern_report.json'
-          actual="$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 | sort)"
-          echo "FINAL_DIFF_FROM_PREVIOUS_CLEAN_HEAD"
-          printf '%s\n' "$actual"
-          unexpected="$(comm -23 <(printf '%s\n' "$actual") <(printf '%s\n' "$allowed"))"
-          test -z "$unexpected"
-          for required in data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json; do
-            printf '%s\n' "$actual" | grep -Fxq "$required"
-          done
           git add answer_distribution_report.json duplicate_report.json structural_pattern_report.json data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json
+          expected=$'data/exam_style/question_family_matrix.json\ndata/questions/ma-q-0213.json\ndata/rules/ma-counseling-remote-delivery.json\nsite/generated/questions.json'
+          actual="$(git diff --cached --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 | sort)"
+          echo "FINAL_STAGED_DIFF_FROM_PREVIOUS_CLEAN_HEAD"
+          printf '%s\n' "$actual"
+          test "$actual" = "$expected"
           python scripts/generate_artifacts.py --write
           git diff --exit-code
           RULE_BLOB="$(git hash-object data/rules/ma-counseling-remote-delivery.json)"
