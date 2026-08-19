@@ -261,13 +261,29 @@ Run and report:
   python -m pytest -q
   python scripts/generate_artifacts.py --write && git diff --exit-code
 
-Commit both audit records on your audit branch, push, and open a pull request into
+Your audit branch must contain ONLY: the Phase-1 lock, the two canonical audit records, and any
+minimal provenance note. Do not edit questions, rules, the family matrix, generated content,
+release state, the preview allowlist, validators, the schema, or MA-Q-0028.
+
+Commit both audit records on your audit branch, push, and open a DRAFT pull request into
 remediation/pre-batch3-coverage-t3-diversity titled:
   "audit: CLAUDE-FRESH-COV-T3-A independent legal + full-bank realism review (Q0227/Q0228)"
 
-In the PR body state: your Phase-1 lock commit SHA, whether your blind answers matched the
-canonical keys, both verdicts per question, the authorities you actually opened, and the closest
-comparison IDs.
+  gh pr create --draft --base remediation/pre-batch3-coverage-t3-diversity     --head audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a --title "..." --body "..."
+
+Then report back, and STOP. Do not release the questions; governance does that separately.
+
+Report exactly:
+  - audit branch name and its exact HEAD SHA
+  - Draft PR URL
+  - Phase-1 lock commit SHA and the lock file's git blob id
+  - whether each blind answer matched the canonical key
+  - LEGAL Verdict and Existing_Answer_Correct per question
+  - REALISM Verdict, Realism_Verdict and all ten criteria per question
+  - closest comparison question IDs per question
+  - the official sources you actually opened
+  - validate_all / pytest / generated-freshness results
+  - contamination status
 
 ## What qualifies for release
 
