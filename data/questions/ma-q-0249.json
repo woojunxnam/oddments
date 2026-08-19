@@ -57,12 +57,39 @@
     "Measure the fourteen-month delay against the one-year window",
     "Apply the consequence that both examinations must be retaken"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-19",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMACIST-EXAM-SCORING": {
+          "content_version": 1,
+          "content_hash": "c9eb415a38c9e433a5944382c348a906d58f341b8ead644a75f16bc9bc32800e"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
