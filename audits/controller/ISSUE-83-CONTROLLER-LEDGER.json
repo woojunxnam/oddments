@@ -9,8 +9,77 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_G_BATCH3_AUTHORING",
+  "current_phase": "BATCH3_B3C_AUTHORING",
   "phases": [
+    {
+      "phase": "BATCH3_B3A_AUDIT_VERIFIED_AND_RELEASED",
+      "date": "2026-08-19",
+      "audit_pr": 93,
+      "auditor_instance": "CLAUDE-FRESH-B3A",
+      "process_checks": "16/16 PASS (scripts/verify_tranche_audit.py, new reusable generalization of the T3 one-off)",
+      "blind_result": "33/33 blind answers matched canonical keys; contamination CLEAN; lock 842s before records",
+      "boundary": "audit branch changed exactly 3 files: Phase-1 lock + 2 audit records",
+      "released": {
+        "count": 31,
+        "before": 198,
+        "after": 229
+      },
+      "withheld": {
+        "MA-Q-0241": "legal KEEP/YES; realism MINOR_EDIT/FAIL on distinct_from_bank vs MA-Q-0076",
+        "MA-Q-0256": "legal KEEP/YES; realism MINOR_EDIT/FAIL on distinct_from_bank vs MA-Q-0079"
+      },
+      "release_branch": "release/batch3-b3a-guarded-admission-v1",
+      "release_sha": "8c4d6baf373c5a22844984033cd425adde218f7f",
+      "tool_defect_fixed": "guarded_release wrote tranche_id: null for --tranche-file runs; fixed and the B3-S1 report label backfilled"
+    },
+    {
+      "phase": "BATCH3_B3A_R1_REPAIR_AND_FREEZE",
+      "date": "2026-08-19",
+      "question_ids": [
+        "MA-Q-0241",
+        "MA-Q-0256"
+      ],
+      "paths_rejected_for_collision": {
+        "247 CMR 8.06(1)": "already keyed by released sibling MA-Q-0247",
+        "247 CMR 4.02(5)": "already keyed by released sibling MA-Q-0254",
+        "247 CMR 3.01(7)": "already keyed by released sibling MA-Q-0249",
+        "247 CMR 4.03(4)(a)": "already keyed by MA-Q-0257"
+      },
+      "paths_selected": {
+        "MA-Q-0241": "247 CMR 8.05(3) first sentence — product test, not the 8.05(2) personnel ladder",
+        "MA-Q-0256": "247 CMR 4.03(7) — eight contact hours per calendar day rate cap"
+      },
+      "source_not_used": "second sentence of 247 CMR 8.05(3) (intern carve-out) is truncated mid-word in the official published PDF and is not verbatim-verified",
+      "new_rules_created": 0,
+      "distinctness_vs_294": {
+        "MA-Q-0241_worst": 0.563,
+        "MA-Q-0256_worst": 0.56,
+        "MA-Q-0241_vs_0076": 0.435,
+        "MA-Q-0256_vs_0079": 0.396
+      },
+      "old_hashes_preserved": {
+        "MA-Q-0241": "bb747c0de92d8024cf13f1b0e2b0d91f5233da711dd4ad36a3fc797785569f95",
+        "MA-Q-0256": "67003d3be850e30f0bd12bcee54104536ff40e47b97c7c8885fa26a00fe7f92a"
+      },
+      "new_hashes": {
+        "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+        "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+      },
+      "candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+      "freeze_branch": "freeze/batch3-b3a-r1-v1",
+      "freeze_sha": "a26c5430035d48b1892563b0b8bc8c24368a1988",
+      "reserved_auditor_instance": "CLAUDE-FRESH-B3A-R1",
+      "audit_scope": "REAUDIT",
+      "state": "AWAITING_FOCUSED_REAUDIT_HANDOFF"
+    },
+    {
+      "phase": "CONTROLLER_CONCURRENCY_INCIDENT",
+      "date": "2026-08-19",
+      "observation": "The B3-B fresh auditor session is operating in the same working tree and moved HEAD twice under this controller session (reflog HEAD@{3} checkout to audit/batch3-b3b-claude-fresh-b3b and HEAD@{2} the auditor's Phase-1 lock commit).",
+      "impact": "One controller branch was created from the wrong base; detected and deleted before any content was written to it.",
+      "mitigation": "All later controller branch operations assert the expected SHA before and after, and controller work moved to a dedicated git worktree so the auditor session keeps sole use of the main tree HEAD. This is concurrency hygiene using a plain git primitive, not an audit-isolation architecture.",
+      "residual_risk": "Untracked controller files left in the main tree could be swept into an auditor commit; the main tree was cleaned."
+    },
     {
       "phase": "PHASE_0_START_BOUNDARY",
       "title": "Start-boundary verification",
