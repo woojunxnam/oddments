@@ -1,0 +1,107 @@
+name: T2 R1 Finalize Validated Amendment
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: repair/pre-batch3-coverage-t2-r1
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+      - name: Reproduce the already-validated Issue 74 amendment
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected=$'.github/workflows/t2-r1-dependency-amend.yml\n.github/workflows/t2-r1-finalize.yml'
+          actual="$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 HEAD | sort)"
+          test "$actual" = "$expected"
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.qa_common import load_json, write_json, semantic_content_hash, question_audit_hash
+
+          q_path = Path("data/questions/ma-q-0213.json")
+          q = load_json(q_path)
+          assert question_audit_hash(q) == "acf153167f996d5906b8c69c04561aa2151f3fb9ad6f02ada85f0abe458f9287"
+          q["rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY", "MA-COUNSELING"]
+          assert question_audit_hash(q) == "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23"
+          write_json(q_path, q)
+
+          matrix_path = Path("data/exam_style/question_family_matrix.json")
+          matrix = load_json(matrix_path)
+          family = next(f for f in matrix["families"] if f["family_id"] == "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER")
+          assert family["primary_rule_ids"] == ["MA-COUNSELING-DOCUMENTATION"]
+          assert family["secondary_rule_ids"] == ["MA-COUNSELING"]
+          family["primary_rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY"]
+          write_json(matrix_path, matrix)
+
+          rule = {
+            "rule_id": "MA-COUNSELING-REMOTE-DELIVERY",
+            "content_version": 1,
+            "content_hash": "",
+            "title": "Massachusetts off-site prescription-delivery counseling access",
+            "jurisdiction": "MA",
+            "area": 2,
+            "topic": "Patient care",
+            "subtopic": "Remote-delivery counseling offer",
+            "rule_summary": "When a person elects delivery of a prescription drug at a location other than a pharmacy, M.G.L. c. 94C, § 21A permits the section's requirements to be satisfied by providing access to a toll-free telephone service that facilitates communication with the pharmacist at the pharmacy. The toll-free service number must be printed on a label affixed to each prescription-drug container dispensed by the pharmacy to the patient.",
+            "exam_relevance": "Tests the Massachusetts off-site prescription-delivery counseling-access pathway and the required placement of the toll-free service number on each prescription-drug container.",
+            "authority": [{
+              "type": "STATUTE",
+              "name": "Massachusetts prospective drug review and counseling statute",
+              "section": "M.G.L. c. 94C, § 21A",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A"
+            }],
+            "status": "CURRENT",
+            "effective_date": None,
+            "supersedes": [],
+            "last_verified": "2026-08-19",
+            "numeric_facts": [],
+            "exceptions": [],
+            "common_confusions": [
+              "Do not confuse the off-site delivery toll-free counseling-access pathway with the separate counseling-refusal documentation pathway.",
+              "The statute specifies the toll-free service number on a label affixed to each prescription-drug container; placement only on an outer shipping package is not the specified requirement."
+            ],
+            "related_rule_ids": ["MA-COUNSELING"],
+            "verification_status": "PRIMARY_VERIFIED",
+            "verification_notes": "Current official Massachusetts General Laws source independently checked on 2026-08-19; Section 21A expressly provides the off-site toll-free pharmacist-access pathway and requires the toll-free service number on a label affixed to each prescription-drug container."
+          }
+          rule["content_hash"] = semantic_content_hash(rule, "rule")
+          assert rule["content_hash"] == "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822"
+          write_json(Path("data/rules/ma-counseling-remote-delivery.json"), rule)
+          PY
+          python scripts/generate_artifacts.py --write
+      - name: Commit only canonical changes and deterministic outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/t2-r1-dependency-amend.yml .github/workflows/t2-r1-finalize.yml
+          allowed=$'answer_distribution_report.json\ndata/exam_style/question_family_matrix.json\ndata/questions/ma-q-0213.json\ndata/rules/ma-counseling-remote-delivery.json\nduplicate_report.json\nsite/generated/questions.json\nstructural_pattern_report.json'
+          actual="$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 | sort)"
+          echo "FINAL_DIFF_FROM_PREVIOUS_CLEAN_HEAD"
+          printf '%s\n' "$actual"
+          unexpected="$(comm -23 <(printf '%s\n' "$actual") <(printf '%s\n' "$allowed"))"
+          test -z "$unexpected"
+          for required in data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json; do
+            printf '%s\n' "$actual" | grep -Fxq "$required"
+          done
+          git add answer_distribution_report.json duplicate_report.json structural_pattern_report.json data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+          RULE_BLOB="$(git hash-object data/rules/ma-counseling-remote-delivery.json)"
+          echo "RULE_BLOB_SHA=$RULE_BLOB"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "fix: amend Q0213 canonical delivery dependency"
+          git push origin HEAD:repair/pre-batch3-coverage-t2-r1
