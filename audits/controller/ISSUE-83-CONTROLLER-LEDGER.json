@@ -9,8 +9,45 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_G_BATCH3_AUTHORING",
+  "current_phase": "BATCH3_B3B_R1_REPAIR_AND_B3C_AUTHORING",
   "phases": [
+    {
+      "phase": "BATCH3_B3B_AUDIT_VERIFIED_AND_RELEASED",
+      "date": "2026-08-19",
+      "audit_pr": 95,
+      "auditor_instance": "CLAUDE-FRESH-B3B",
+      "process_checks": "16/16 PASS (scripts/verify_tranche_audit.py)",
+      "lock": {
+        "commit": "c480e58f988da9078b8425fa0c358a1ac5a9bb71",
+        "blob": "726b2e26caab8c7238a99e177d4a325c239eb729",
+        "seconds_before_records": 1054,
+        "contamination": "CLEAN"
+      },
+      "blind_result": "32/33 blind answers matched canonical keys; the single divergence is MA-Q-0288",
+      "boundary": "audit branch changed exactly 3 files: Phase-1 lock + 2 audit records",
+      "hashes": "all 33 bind to the frozen B3-B manifest exactly",
+      "released": {
+        "count": 32,
+        "before": 229,
+        "after": 261
+      },
+      "withheld": {
+        "MA-Q-0288": "legal KEEP/YES; realism MINOR_EDIT/FAIL on authentic_distractors only"
+      },
+      "integration": "Released from a merge of the audit head 64916345 onto the post-B3-A release state 8c4d6ba, not from stale pre-B3-A main. Content equivalence proven: all 33 B3-B hashes equal the frozen manifest, all 33 B3-A audited fields identical to candidate 520303fe, every pre-B3-B record byte-identical to 8c4d6ba. Family matrix resolved as a proven union, 331 subset of 364, difference exactly the 33 B3-B families, nothing differing beyond release bookkeeping.",
+      "verifier_generalization": "verify_tranche_audit.py now accepts either Phase-1 lock shape (questions/selected_choice_ids or answers/blind_selected_choice_ids) and asserts the optional freeze_head and blind sha256 fields when a lock declares them; fails closed if no recognized answer container or choice field is present."
+    },
+    {
+      "phase": "BATCH3_B3B_TRANCHE_KEY_SKEW_ADVISORY",
+      "date": "2026-08-19",
+      "raised_by": "CLAUDE-FRESH-B3B",
+      "observation": "B3-B tranche-level SBA key distribution A 6 / B 0 / C 2 / D 1 / E 11.",
+      "why_it_arose": "The tranche was deliberately weighted toward E to correct a long-standing bank-level deficit at position E. That correction succeeded: the full-bank answer-distribution gate moved from WARNING to PASS (n=181, chi2=3.0056, p~0.5596).",
+      "controller_decision": "ADVISORY ONLY - no re-keying of the 32 passing questions.",
+      "rationale": "Re-keying would change current hashes, invalidate otherwise passing current-hash audit evidence and force an unnecessary re-audit of 32 already-cleared items. Each of the 32 passed wording_not_guessable and every other realism criterion individually. The released bank, not the authoring tranche, is the production distribution.",
+      "scope_of_advice": "Relevant only if a B3-B tranche is ever presented standalone as a practice set.",
+      "action": "Recorded; the 32 passing hashes left intact."
+    },
     {
       "phase": "PHASE_0_START_BOUNDARY",
       "title": "Start-boundary verification",

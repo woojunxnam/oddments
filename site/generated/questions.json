@@ -52515,13 +52515,40 @@
         "Match the admission to sufficient facts and the continuance without a finding to the listed items",
         "Disregard the absence of a sentence and the out-of-state forum"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-CONVICTION-DEFINITION": {
+              "content_version": 1,
+              "content_hash": "b7b08050830a276e702571c3a69149ae1b3ccdcbfb9d51ff626f238f6ee27175"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52533,7 +52560,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: MA-Q-0267 and MA-Q-0263 (B3-B siblings, same discipline chapter but different operative provisions) and MA-Q-0211 from the prior bank. Materially distinct: this is the only item in the 294-question bank that turns on the 247 CMR 10.02 definition of Conviction, and the decision path is a definitional one, matching an admission to sufficient facts and a continuance without a finding against an expressly broadened regulatory term. No sibling overlap: MA-Q-0263 uses conviction only as a reporting trigger and MA-Q-0267 concerns out-of-state conduct equivalence. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0263",
@@ -52595,13 +52646,40 @@
         "Apply the seven-business-day clock to the out-of-state final action",
         "Apply the 30-day written clock to the pending criminal charge"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-REPORTING-CLOCKS": {
+              "content_version": 1,
+              "content_hash": "063e77f1d024d9ce483cba43a99b46153ec0688f97734dfc3bb42340d4f6b76b"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52613,7 +52691,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: MA-Q-0115 (serious event deadline) and MA-Q-0056 (serious events) from the prior bank, plus B3-B sibling MA-Q-0262. Materially distinct: no prior bank item addresses the 247 CMR 10.03(1)(z) and (aa) reporting grounds, and the reasoning is a two-clock sorting task in which the unit differs (seven business days against 30 calendar days) and one trigger is a pending charge rather than a disposition. Sibling MA-Q-0262 supplies the conviction definition but not the clocks, so the two are complementary rather than overlapping.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0264",
@@ -52674,13 +52776,40 @@
         "Note that the ground covers requests to appear and to provide information",
         "Apply the ground independently of the complaint's disposition"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-COOPERATION": {
+              "content_version": 1,
+              "content_hash": "ed19ac30e593f59628045b9d3c4ce845d6fd5af757976e2a292e26e287b63099"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52692,7 +52821,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0270 (highest full-text similarity in the tranche, 0.44 cosine) and MA-Q-0211 from the prior bank. Materially distinct in decision path: this item turns on 247 CMR 10.03(1)(q) non-cooperation, whereas MA-Q-0270 turns on 247 CMR 10.03(1)(f) authorized scope. Sibling overlap present but limited to option scaffolding: MA-Q-0264 and MA-Q-0270 share the same five-option frame of two No exposure options, two Exposure only if options and one unhedged Exposure because option, and in both the unhedged option is the key. That is a construction observation for the controller; the two conditional distractors are legally plausible in each item, so the item is not answerable from the frame alone. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0265",
@@ -52756,13 +52909,40 @@
         "Separate the one non-disciplinary written action from the formal ones",
         "Note that probation preserves practice under conditions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-ACTION-TYPES": {
+              "content_version": 1,
+              "content_hash": "79a4c42417c81711a3d4efd9be28068875e9584183a486aaa01cc53471388a54"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52774,7 +52954,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparison: MA-Q-0211 from the prior bank (highest full-text similarity to this item at 0.48), which is an SBA item asking only whether an advisory letter is formal disciplinary action. One proposition overlaps: choice A here restates what MA-Q-0211 tests. Materially distinct nonetheless, because the keyed set requires four independent placements across the whole 247 CMR 10.06 ladder, including that dismissal is a listed action, that a censure is a severe reprimand and that probation preserves conditional practice; knowledge sufficient for MA-Q-0211 answers one fifth of this item. Sibling MA-Q-0271 covers procedure stages rather than action types.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0266",
@@ -52835,13 +53039,40 @@
         "Locate the required contents of a voluntary surrender agreement",
         "Apply the express acknowledgement about judicial review"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-CONSENT-SURRENDER": {
+              "content_version": 1,
+              "content_hash": "1dbb42fedb15971ebdbd14251fe9d4c38873bf9026e1c4d4d24ab6cf83af4445"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52853,7 +53084,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0294 (both involve consent agreements) and MA-Q-0255 from the prior bank (reinstatement after discipline under 247 CMR 4.02(6)). Materially distinct: this item alone turns on the required contents of a voluntary surrender agreement under 247 CMR 10.06(6)(c) and specifically the acknowledgement that the surrender is not subject to judicial review. MA-Q-0294 uses a consent agreement only as the trigger for a CDTM notification duty, and MA-Q-0255 concerns re-examination conditions on reinstatement, so neither reaches the surrender terms. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0267",
@@ -52914,13 +53169,40 @@
         "Apply the condition that the conduct must violate Massachusetts law",
         "Conclude that the condition fails on these facts"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-OUT-OF-STATE": {
+              "content_version": 1,
+              "content_hash": "6098cbb998f52f946c810707c658ca362b27b743a25b2a7659b4ee4a575741b4"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -52932,7 +53214,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0268, which is the closest pair in the tranche (composite 0.587, shared rule MA-DISCIPLINE-OUT-OF-STATE, stem cosine 0.388), and MA-Q-0253 from the prior bank. Sibling overlap is present and deliberate, and it resolves: this item tests the conduct-equivalence gate in 247 CMR 10.06(7), while MA-Q-0268 tests the protected-activity override in 247 CMR 10.03(3). The stem here expressly stipulates that the conduct is not covered by any statutory protection, which forecloses the MA-Q-0268 path and keeps the two decision paths separate. Both reach a negative outcome by different routes, which is acceptable but is the item pairing the controller should watch if further out-of-state items are authored.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0268",
@@ -52994,13 +53300,44 @@
         "Test the lawful-in-Massachusetts and good-practice qualifiers",
         "Apply the carve-out as overriding the listed out-of-state ground"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-PROTECTED-ACTIVITY": {
+              "content_version": 1,
+              "content_hash": "f82c88c0a637d15810404cf7392f421a54a403d3e270032d7c59f2cd05cddf08"
+            },
+            "MA-DISCIPLINE-OUT-OF-STATE": {
+              "content_version": 1,
+              "content_hash": "6098cbb998f52f946c810707c658ca362b27b743a25b2a7659b4ee4a575741b4"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53019,7 +53356,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: MA-Q-0253 from the prior bank, which is the highest stem similarity this item has anywhere in the 294-question bank (stem cosine 0.642, Jaccard 0.424), and B3-B sibling MA-Q-0267. Materially distinct from MA-Q-0253: that item applies the licensure limb, under which no person shall be denied initial licensure or renewal for a protected-activity sanction (247 CMR 3.05 and 8.08), to a renewal application involving gender-affirming care; this item applies the discipline limb of 247 CMR 10.03(3) to a proposed disciplinary action arising from reproductive health care, and adds a step MA-Q-0253 does not contain, namely recognising that the carve-out operates notwithstanding the grounds list and so displaces 247 CMR 10.06(7) rather than competing with it. The lexical overlap is driven by the two statutory qualifiers, which are verbatim regulatory text and necessarily recur. Distinct from sibling MA-Q-0267 for the reasons recorded there. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0269",
@@ -53081,13 +53442,40 @@
         "Attach the correct hearing clock to each mechanism",
         "Note that the notices are non-disciplinary in character"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-SUMMARY-CLOCKS": {
+              "content_version": 1,
+              "content_hash": "af55e92b768fb6d3721d228066852c0d55cc7425ce64d8523d786c547be6b6b4"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53099,7 +53487,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: MA-Q-0223 from the prior bank (emergency facility disciplinary action, which asks which summary mechanism fits an immediate and serious threat) and B3-B sibling MA-Q-0271. Materially distinct: MA-Q-0223 asks the candidate to choose the mechanism, whereas this item tests the two different hearing clocks attached to those mechanisms, seven days under 247 CMR 10.07 against 15 business days under 247 CMR 10.08(3), together with the express non-disciplinary characterisation of the notices. The trap is the inversion of the intuitive ordering, which MA-Q-0223 does not reach. Sibling MA-Q-0271 covers ordinary procedure stages rather than summary action.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0270",
@@ -53160,13 +53572,40 @@
         "Locate the ground reaching conduct beyond authorized scope and permitting it",
         "Apply the ground to the supervising pharmacist independently of outcome"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-SCOPE-AND-IMPAIRMENT": {
+              "content_version": 1,
+              "content_hash": "d41d1ce8c40bd33610ab168e445358c332b4ba3dd73e176928c982f77249b90a"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53178,7 +53617,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0264 and prior-bank MA-Q-0236 (technician refill authority) and MA-Q-0233 (lapsed technician certification). Materially distinct: this item combines the technician scope bar in 247 CMR 8.02(6)(d) with the supervising pharmacist's own disciplinary exposure under 247 CMR 10.03(1)(f), which no prior bank item does; MA-Q-0236 and MA-Q-0233 test what a technician may do rather than what the permitting pharmacist incurs. Sibling overlap with MA-Q-0264 is confined to the shared option scaffolding described in the note for that item, not to the rule tested. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0271",
@@ -53242,13 +53705,40 @@
         "Note the Board's discretion to choose the track after investigation",
         "Distinguish the Order to Show Cause as the formal-hearing trigger"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-PROCEDURE-STAGES": {
+              "content_version": 1,
+              "content_hash": "8316e04224690f4bf45ad5b750686bc31925de8deca450d97e2328227b7dd5f2"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53260,7 +53750,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: MA-Q-0211 from the prior bank and B3-B siblings MA-Q-0269 and MA-Q-0265. Materially distinct: this is the only item in the bank that works the 247 CMR 10.02 procedural definitions together with the discretionary sequencing in 247 CMR 10.04 and 10.05, and the operative insight is that an investigative conference is an option rather than a mandatory gateway. MA-Q-0265 covers the outcome ladder and MA-Q-0269 the summary track, so the three siblings partition the chapter rather than overlapping.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0272",
@@ -53321,13 +53835,40 @@
         "Note the absence of any single-target limitation",
         "Apply the reach to both the individual and the entity"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINE-REACH": {
+              "content_version": 1,
+              "content_hash": "d8182a2f20fe5afbc2199723aa48561f4925701c21dede0706c6d717574cfa45"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53339,7 +53880,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0270 and prior-bank MA-Q-0223. Materially distinct: no prior bank item tests the reach of Board disciplinary authority across individual and entity credentials under 247 CMR 10.01, and the reasoning is the rejection of an election-of-target argument rather than the identification of a ground. Sibling MA-Q-0270 concerns one pharmacist's exposure for permitting a scope violation and does not reach concurrent action against the pharmacy.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0273",
@@ -53400,13 +53965,40 @@
         "Note that the examination prohibition is additional to other sanctions",
         "Treat the consequence as discretionary rather than automatic"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-INTERN-EXAM-BAR": {
+              "content_version": 1,
+              "content_hash": "2ccfadbae5301e059dffc72af3ac6663591ec5ba95cb1ad26dbd2f27ac1123a7"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53418,7 +54010,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0077 (intern supervision), MA-Q-0229 (preceptor supervision limit), MA-Q-0242 (intern withdrawal notification) and MA-Q-0244 (foreign graduate internship entry). Materially distinct: this is the only item in the bank on 247 CMR 8.01(17), and the reasoning is that the examination bar is cumulative with other sanctions and discretionary rather than automatic or permanent, which none of the neighbouring intern items reaches. No B3-B sibling addresses intern conduct consequences. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0274",
@@ -53481,13 +54097,40 @@
         "Apply the 120-plus-120 hour split to the generic Board-approved route",
         "Treat on-the-job training as guideline-based rather than waiver-based"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-TECH-TRAINING-PROGRAM-TYPES": {
+              "content_version": 1,
+              "content_hash": "f34e82308216425ad86db66890882e5959ee54df879d0379b0557152876ca54f"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53499,7 +54142,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0239 (technician licensure eligibility under 247 CMR 8.02(3)(e)) and B3-B sibling MA-Q-0275. Materially distinct: MA-Q-0239 asks which of the three alternative eligibility routes suffices, whereas this item asks which programs qualify as Board-approved training under 247 CMR 8.02(4) and adds the on-the-job training route in 247 CMR 8.06(2) with its guidelines-on-request duty. Sibling MA-Q-0275 covers examination content rather than program type, so the adjacent subsections are cleanly partitioned across 0239, 0274 and 0275.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0275",
@@ -53563,13 +54230,40 @@
         "Match each proposed area against the enumerated list",
         "Exclude areas that belong to other credentialing pathways"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-TECH-EXAM-CONTENT": {
+              "content_version": 1,
+              "content_hash": "a2d94221e0ce546273513128f2c51da47e3f367f0c881aa12ea69234540b2316"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53581,7 +54275,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0239 and MA-Q-0236, and B3-B sibling MA-Q-0274. Materially distinct: this is the only item in the bank on the enumerated examination knowledge areas in 247 CMR 8.02(5), and the reasoning is the closed-list discrimination that a plausible pharmacy topic, sterile compounding gowning and aseptic technique, falls outside a prescribed examination scope. The item is enumeration-weighted, which is the weakest point of its reasoning_not_trivia profile, but the scope discrimination is a genuine legal step and the criterion is satisfied.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0276",
@@ -53642,13 +54360,40 @@
         "Locate the school's submission duty",
         "Reserve the creditability decision to the Board"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-INTERN-PROGRAM-CREDIT-APPROVAL": {
+              "content_version": 1,
+              "content_hash": "98ba27b6f707d4cc20056617e92f3790a10e49eaff05ef5b0519b4beba3a09d3"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53660,7 +54405,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0078 (12-hour daily internship credit cap), MA-Q-0245 (internship hour composition) and MA-Q-0244. Materially distinct: those items measure hours, whereas this item turns on the approval mechanism in 247 CMR 8.01(12), under which the school submits a written program description and the Board determines creditability. The trap, that a qualifying category is not the same as an approved program, does not arise in any hour-counting item. No B3-B sibling covers internship program approval.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0277",
@@ -53721,13 +54490,40 @@
         "Note the Board's power to refuse to consider it",
         "Apply the non-refundability provision to the fee already submitted"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-LICENSURE-APPLICATION-MECHANICS": {
+              "content_version": 1,
+              "content_hash": "243f0a65a854cb17fd54474d1442cb75adb1c644cbea4aea149bc2a2dde18e3b"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53739,7 +54535,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0250 and MA-Q-0251 (licensure by reciprocity) and B3-B sibling MA-Q-0278. Materially distinct: this is the only item in the bank on the interaction of 247 CMR 3.01(3), (8) and (9), and the operative reasoning is that refusing to consider an application is itself acting upon it, which triggers non-refundability. The reciprocity items concern eligibility routes and do not reach fee treatment. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0278",
@@ -53800,13 +54620,40 @@
         "Apply the return requirement to the duplicate",
         "Act promptly rather than waiting for renewal"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DUPLICATE-CERTIFICATE": {
+              "content_version": 1,
+              "content_hash": "2c63e14a74f715766475b8799da765f3fe940af429177f5353d61d8fc5e089bd"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53818,7 +54665,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0277 and prior-bank MA-Q-0254 (personal registration renewal). Materially distinct: this is the only item in the bank on 247 CMR 3.03, and the reasoning inverts the natural instinct by requiring return of the duplicate rather than the recovered original. No overlap with the application-mechanics sibling, which concerns fees rather than certificates.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0279",
@@ -53881,13 +54752,40 @@
         "Apply the once-annually limit to the repeated teaching",
         "Check both the sponsor and subject-matter conditions for postgraduate credit"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CE-INSTRUCTOR-AND-POSTGRADUATE": {
+              "content_version": 1,
+              "content_hash": "889a369656b006046e347931922bed443b359c6432a62df193cef85dfe7aa7f2"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53899,7 +54797,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0079, MA-Q-0256 (annual CE structure under 247 CMR 4.03), MA-Q-0257 (practice-specific overlays) and MA-Q-0260 (CE recordkeeping under 247 CMR 4.06), plus B3-B sibling MA-Q-0280. Materially distinct: the prior bank occupies 247 CMR 4.03 and 4.06 exclusively, while this item is the only one on the alternative credit routes in 247 CMR 4.07 and 4.08, and the reasoning combines an anti-volume rule for instructors with the two cumulative conditions on postgraduate credit. Sibling MA-Q-0280 covers program approval criteria under 247 CMR 4.05, so the chapter is partitioned without collision.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0280",
@@ -53963,13 +54885,40 @@
         "Keep the home-study-specific requirements out of the live-program list",
         "Apply the general evaluation requirement to both"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CE-PROGRAM-DELIVERY-CRITERIA": {
+              "content_version": 1,
+              "content_hash": "e549884407d51ac88b9879721b00163f89f3635db95d07aa95640e34c759ceb0"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -53981,7 +54930,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0260 and MA-Q-0256, and B3-B sibling MA-Q-0279. Materially distinct: this is the only item in the bank on 247 CMR 4.05, and the reasoning is a format-sorting task keeping the home-study criteria in 247 CMR 4.05(3) out of the live-program list in 247 CMR 4.05(4) while applying the general evaluation requirement in 247 CMR 4.05(7)(b) to both. The bibliography distractor is the strongest in the tranche because it is a genuine requirement misfiled to the wrong format.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0281",
@@ -54042,13 +55015,40 @@
         "Identify the two categories permitted to counsel",
         "Exclude technicians and other individuals from counseling"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-WHO-MAY-COUNSEL": {
+              "content_version": 1,
+              "content_hash": "bdafd491aedbc9fcc77201da1b49935a62f9af010ef13d583fb7c2dbfb1efb46"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54060,7 +55060,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0086 (counseling refusal documentation) and MA-Q-0213 (remote-delivery offer), and B3-B sibling MA-Q-0282. Materially distinct: no prior bank item tests 247 CMR 9.18(3) on who may deliver counseling. Sibling overlap with MA-Q-0282 is deliberate and resolves cleanly, because this item concerns delivering the counseling while MA-Q-0282 concerns making the offer, and each uses the other's subject as a distractor, which is a legitimate paired construction rather than duplication. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0282",
@@ -54121,13 +55145,40 @@
         "Locate the pharmacist's duty regarding that designee",
         "Apply the appropriate-training requirement"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-WHO-MAY-COUNSEL": {
+              "content_version": 1,
+              "content_hash": "bdafd491aedbc9fcc77201da1b49935a62f9af010ef13d583fb7c2dbfb1efb46"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54139,7 +55190,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0086 and MA-Q-0213, and B3-B sibling MA-Q-0281. Materially distinct: MA-Q-0086 concerns documenting a refusal under M.G.L. c. 94C, s. 21A and MA-Q-0213 concerns the off-site delivery offer mechanism, whereas this item tests the training duty the pharmacist owes in respect of a designee under 247 CMR 9.18(2). The pairing with MA-Q-0281 is described in the note for that item.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0283",
@@ -54200,13 +55275,40 @@
         "Apply the professional-judgment limb to an anticoagulant dose change",
         "Provide counseling on that basis"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-TRIGGER-AND-CONTENT": {
+              "content_version": 1,
+              "content_hash": "d61f9cd7c5e5b487c01a8372a03fc6a648b7dad32f0697435d8b8109877bb81b"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54218,7 +55320,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0086 and MA-Q-0092 (counseling versus Medication Guide), and B3-B sibling MA-Q-0284. Materially distinct: this is the only item in the bank on the two triggers in 247 CMR 9.18(4), and the reasoning applies the professional-judgment limb to an anticoagulant refill following a prescriber dose change, which is a realistic and clinically apt vehicle. Sibling MA-Q-0284 covers content once the duty is engaged rather than whether it is engaged. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0284",
@@ -54282,13 +55408,40 @@
         "Match each proposed item to the enumerated content",
         "Exclude commercial information that is not clinical counseling content"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-TRIGGER-AND-CONTENT": {
+              "content_version": 1,
+              "content_hash": "d61f9cd7c5e5b487c01a8372a03fc6a648b7dad32f0697435d8b8109877bb81b"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54300,7 +55453,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0092 and MA-Q-0086, and B3-B siblings MA-Q-0283 and MA-Q-0286. Materially distinct: this is the only item in the bank enumerating the 247 CMR 9.18(5) content menu, and the discrimination is the clinical-versus-commercial boundary. Advisory: the sole incorrect option, the pharmacy's wholesale acquisition cost, is the second weakest distractor in the tranche; it engages a real boundary and a patient-facing cost question is a plausible temptation under a may include framing, so authentic_distractors is satisfied, but this item and MA-Q-0288 are the two the controller should strengthen if the enumeration items are revisited.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0285",
@@ -54361,13 +55538,40 @@
         "Test the separate access-route condition",
         "Conclude that traversing the dispensing area defeats compliance"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-CONSULTATION-AREA": {
+              "content_version": 1,
+              "content_hash": "396b5c4bae46092888aa6b44f8a6df4d17632086001f41dc2b3d1f4de63291cb"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54379,7 +55583,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B siblings MA-Q-0286 and MA-Q-0281, and prior-bank MA-Q-0086. Materially distinct: this is the only item in the bank on 247 CMR 9.18(6), and the reasoning is a two-condition test in which a facility that plainly satisfies the privacy limb still fails the access limb. That construction, a compliant-looking build defeated by a route requirement, is a genuine practice-plausible failure mode rather than a recall prompt. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0286",
@@ -54441,13 +55669,40 @@
         "Apply the per-area posting requirement",
         "Check the prescribed sign dimensions and letter height"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-RIGHTS-SIGN": {
+              "content_version": 1,
+              "content_hash": "33f6e5970970279291bf9a2c81cfa09c142fe35e9f18e2edb1eac6fb04b9e01d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54459,7 +55714,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B siblings MA-Q-0284 and MA-Q-0287, and prior-bank MA-Q-0118 (required elements). Materially distinct: this is the only item in the bank on 247 CMR 9.18(7). The item is the most specification-weighted in the tranche, but it is not reduced to dimensional recall because the scenario supplies two dispensing windows and the keyed proposition C requires the candidate to apply the adjacent-to-each-area rule to that fact, so reasoning_not_trivia is satisfied on the application step rather than on the 11 by 14 measurement alone.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0287",
@@ -54522,13 +55801,40 @@
         "Apply the measuring-device duty to all liquid medications",
         "Read the inpatient exclusion as covering the whole section"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-ACCESS-AND-DEVICE": {
+              "content_version": 1,
+              "content_hash": "6d1fa800f92b252de64c7b62b214413ebc2c5fa8f57e421657fc289fe7edb34c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54540,7 +55846,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B siblings MA-Q-0286 and MA-Q-0283, and prior-bank MA-Q-0213. Materially distinct: this is the only item in the bank on 247 CMR 9.18(8), (9) and (10), and it combines three separate subsections through one plausible community-pharmacy compliance review, which is the strongest natural_rule_combination profile in the tranche. The inpatient carve-out proposition is scope-of-exclusion reasoning rather than recall.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0288",
@@ -54683,13 +56013,40 @@
         "Attach the duty to the individual pharmacist",
         "Include maintaining login information, not only initial registration"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-REGISTRATION-DUTY": {
+              "content_version": 1,
+              "content_hash": "e856fd2a68c939ee3c359eaf0bf8e7c6fb1f77847f7ec55363e94c391e0614f7"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54701,7 +56058,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0025 and MA-Q-0031 (dispensing-data submission to MassPAT under MA-PMP-REPORTING). Materially distinct: those items concern the pharmacy's duty to report dispensing transactions to the program, whereas this item concerns the individual pharmacist's duty under 247 CMR 9.15(1) to register with and maintain login information for the system. The trap, that an institutional account does not discharge a personally imposed duty, is a realistic staffing scenario and does not arise in either reporting item.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0290",
@@ -54762,13 +56143,40 @@
         "Classify the catering as anything of value",
         "Apply the generation-of-business limb rather than looking for a named patient"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CONDUCT-REFERRAL-REMUNERATION": {
+              "content_version": 1,
+              "content_hash": "29c2720f8624c3de62e60aacf07535f2740710028dad818e31a5e9b833e5bc6e"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54780,7 +56188,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0291 and prior-bank MA-Q-0227 (bed-side delivery of discharge prescriptions, which also touches freedom of choice of pharmacy). Materially distinct: this is the only item in the bank on 247 CMR 9.01(11), and the reasoning turns on two independent expansions of the prohibition, anything of value rather than money and generation of business rather than a named referral. MA-Q-0227 concerns consent and freedom of choice in delivery rather than remuneration. Tranche-level observation recorded for the controller rather than against this item: within the 20 SBA items of BATCH3-B3B the keyed position is A six times, B never, C twice, D once and E eleven times (chi-square 20.5 on 4 degrees of freedom, p of about 0.0004). The repository gate scripts/check_answer_distribution.py passes because it measures the whole 181-item SBA bank, where E was previously the least used key, so the tranche-level concentration is invisible to it. Each item's own wording remains sound, so this item passes wording_not_guessable on its own terms, but the set should be rebalanced before B3-B is used as a standalone practice block.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0291",
@@ -54841,13 +56273,40 @@
         "List the permitted recipient classes",
         "Place the adult sibling outside those classes"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CONDUCT-INSTITUTIONAL-DISPENSING": {
+              "content_version": 1,
+              "content_hash": "66e0ce995d44a03a007b94ceaeea763fce0adef63e0eba194034b57d95332efc"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54859,7 +56318,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: prior-bank MA-Q-0138 (PTT ADD eligibility) and MA-Q-0025, and B3-B sibling MA-Q-0290. Materially distinct: this is the only item in the bank on 247 CMR 9.01(13), and the reasoning is a closed-class membership test in which the family limb is narrow, spouses and children in the same household, so a plausible relative falls outside. The lexical proximity to MA-Q-0025 is institutional-setting vocabulary only and the decision paths do not touch.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0292",
@@ -54921,13 +56404,40 @@
         "Identify the three overlay conditions",
         "Reject figures that belong to the general qualification list"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CDTM-PRESCRIPTIVE-CONDITIONS": {
+              "content_version": 1,
+              "content_hash": "c72b644f0d150eb7eac489263bbe3dcccde115b6b1d244d881cf47087740ef67"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -54939,7 +56449,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparison: prior-bank MA-Q-0081, which enumerates the general statutory CDTM qualifications under M.G.L. c. 112, s. 24B1/2(b), including the $1,000,000 insurance figure and the five additional CE contact hours. This item is materially distinct because it asks which conditions attach because prescriptive practices are included, which is the separate overlay in 247 CMR 16.02(1)(f); the two incorrect numeric options are deliberate corruptions of the MA-Q-0081 figures, so the item requires holding both lists at once and is not answerable from MA-Q-0081 knowledge alone. B3-B siblings MA-Q-0293 and MA-Q-0294 cover 247 CMR 16.02(2) and (3) respectively, so the three partition 247 CMR 16.02 without overlap.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0293",
@@ -55000,13 +56534,40 @@
         "Fix the clock's start at the date of the current agreement",
         "Conclude the older documentation is still within the retention period"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CDTM-CE-EVIDENCE": {
+              "content_version": 1,
+              "content_hash": "0ba3f674e53b42f30b8050b9b26cc587aaf1f50d6db29e693a6193da2e92d2c4"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -55018,7 +56579,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B sibling MA-Q-0294 (highest sibling similarity in the CDTM cluster) and prior-bank MA-Q-0057 (record retention) and MA-Q-0081. Materially distinct: this is the only item in the bank on 247 CMR 16.02(2), and the reasoning fixes the start of the retention clock at the date of the current agreement rather than the course date, which is the inverse of the ordinary CE retention rule in 247 CMR 4.06(1) tested by MA-Q-0260. Sibling MA-Q-0294 concerns a notification duty rather than retention, and this item's option E cross-references that duty only as a distractor.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0294",
@@ -55079,13 +56664,40 @@
         "Identify every supervising physician under a current agreement",
         "Provide written notification to each of them"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+        "date": "2026-08-19",
+        "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CDTM-DISCIPLINE-NOTICE": {
+              "content_version": 1,
+              "content_hash": "b949d9fd3fb9725fe1d22770498210d5065db4e1c2cd394386a1c73a68a62e11"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -55097,7 +56709,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Strongest comparisons: B3-B siblings MA-Q-0293 and MA-Q-0266, and prior-bank MA-Q-0081 and MA-Q-0084. Materially distinct: this is the only item in the bank on 247 CMR 16.02(3), and the reasoning combines two steps, that a consent agreement counts as discipline for this purpose and that the notice runs to every supervising physician rather than the one connected to the conduct. MA-Q-0266 uses a consent agreement in the surrender-terms context and MA-Q-0084 concerns the 24-hour prescription copy duty, so neither reaches the discipline notification.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     }
   ]
 }
