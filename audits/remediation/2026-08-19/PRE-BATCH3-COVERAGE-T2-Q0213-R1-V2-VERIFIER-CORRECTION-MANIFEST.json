@@ -1,0 +1,60 @@
+{
+  "manifest_id": "PRE-BATCH3-COVERAGE-T2-Q0213-R1-V2-VERIFIER-CORRECTION",
+  "created_date": "2026-08-19",
+  "governance_role": "POST_PHASE1_MECHANICAL_CORRECTION_ONLY",
+  "represented_candidate": {
+    "branch": "repair/pre-batch3-coverage-t2-r1",
+    "sha": "e8b42047f2579f0b83822bc15dcc640c5e9ba236",
+    "draft_repair_pr": 73
+  },
+  "v1_freeze": {
+    "branch": "freeze/pre-batch3-coverage-t2-q0213-r1-v1",
+    "exact_head": "06fb65a1d2a512de99d6853ba49d9e8cd4bad30c",
+    "status": "MECHANICALLY_INVALID_VERIFIER_ONLY",
+    "canonical_tree_invalidated": false,
+    "failure": "The V1 verifier formed the Git object header with a literal backslash-plus-zero sequence instead of the required NUL byte, causing false Git blob mismatches."
+  },
+  "v2_correction_overlay": {
+    "branch": "freeze/pre-batch3-coverage-t2-q0213-r1-v2",
+    "parent_head": "06fb65a1d2a512de99d6853ba49d9e8cd4bad30c",
+    "final_head": "PINNED_EXTERNALLY_BY_ISSUE_76",
+    "canonical_question_rule_family_generated_content_changed": false,
+    "blind_package_changed": false,
+    "postlock_dependency_contract_changed": false,
+    "legal_contract_changed": false,
+    "realism_contract_changed": false,
+    "only_new_paths": [
+      "scripts/verify_prebatch3_coverage_t2_q0213_r1_v2_freeze.py",
+      "audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T2-Q0213-R1-V2-VERIFIER-CORRECTION-MANIFEST.json"
+    ]
+  },
+  "corrected_verifier": {
+    "path": "scripts/verify_prebatch3_coverage_t2_q0213_r1_v2_freeze.py",
+    "sha256": "36289982d7f677b5bae79420d403edccc071116d130ddfe02fd5cba22fa155c1",
+    "git_blob_sha": "db875e26850f58ab9e2cda2fec7c6ada3928cd22",
+    "required_success_output": "pre-batch3 coverage T2 Q0213 r1 v2 freeze mechanical verification: PASS",
+    "git_blob_header_rule": "SHA1 over b'blob ' + decimal byte length + NUL + file bytes"
+  },
+  "preserved_blind_boundary": {
+    "blind_package_path": "audits/remediation/2026-08-19/GPT-T2B-BLIND-Q0213-PRE-BATCH3-COVERAGE-T2-R1.json",
+    "blind_package_sha256": "aac83c39d210097f61cdccb9530a9ea7fe1a8110cc320fca756e639a775c3661",
+    "blind_package_git_blob": "8eab343491c4b2052306482d067a275c453a74b4",
+    "phase1_lock_path": "audits/remediation/2026-08-19/GPT-FRESH-COV-T2-B-Q0213-PHASE1-BLIND-LOCK.json",
+    "phase1_lock_sha256": "c52d063cf0f4d1d4b1dc897730af0c5ecc7395c6f732c000f550ba8a07d757ed",
+    "phase1_lock_commit": "bbf553394e0e2abdcbee475ed552006feb387034",
+    "auditor_identity": "GPT-FRESH-COV-T2-B",
+    "lock_was_committed_before_postlock_unseal": true,
+    "lock_may_be_carried_forward_without_resolving_or_editing": true
+  },
+  "carry_forward_rule": "Auditor GPT-FRESH-COV-T2-B must not repeat Phase 1. The existing immutable blind lock remains the independence evidence because the V2 overlay changes no blind or canonical substantive input. Resume at Phase 2 using the corrected V2 verifier, then proceed to Phase 3 and Phase 4 only if Phase 2 passes.",
+  "prohibited": [
+    "editing or replacing the existing Phase-1 lock",
+    "re-solving the blind item as a new Phase-1 event",
+    "canonical question or rule repair",
+    "merge",
+    "release",
+    "coverage admission or recomputation",
+    "Batch 3 work"
+  ],
+  "batch3_status": "BLOCKED"
+}
