@@ -9,8 +9,103 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_G_BATCH3_AUTHORING",
+  "current_phase": "BATCH3_B3B_AWAITING_FRESH_AUDIT",
   "phases": [
+    {
+      "phase": "BATCH3_B3B_AUTHORED_AND_FROZEN",
+      "date": "2026-08-19",
+      "tranche": "BATCH3-B3B",
+      "authorizing_issue": 91,
+      "question_ids": [
+        "MA-Q-0262",
+        "MA-Q-0263",
+        "MA-Q-0264",
+        "MA-Q-0265",
+        "MA-Q-0266",
+        "MA-Q-0267",
+        "MA-Q-0268",
+        "MA-Q-0269",
+        "MA-Q-0270",
+        "MA-Q-0271",
+        "MA-Q-0272",
+        "MA-Q-0273",
+        "MA-Q-0274",
+        "MA-Q-0275",
+        "MA-Q-0276",
+        "MA-Q-0277",
+        "MA-Q-0278",
+        "MA-Q-0279",
+        "MA-Q-0280",
+        "MA-Q-0281",
+        "MA-Q-0282",
+        "MA-Q-0283",
+        "MA-Q-0284",
+        "MA-Q-0285",
+        "MA-Q-0286",
+        "MA-Q-0287",
+        "MA-Q-0288",
+        "MA-Q-0289",
+        "MA-Q-0290",
+        "MA-Q-0291",
+        "MA-Q-0292",
+        "MA-Q-0293",
+        "MA-Q-0294"
+      ],
+      "counts": {
+        "questions": 33,
+        "area_1": 19,
+        "area_2": 14,
+        "new_rules": 31
+      },
+      "sources_used": [
+        "247 CMR 10.00 personnel discipline",
+        "247 CMR 8.00 remainder (intern conduct, technician training and examination, internship program credit)",
+        "247 CMR 3.00 remainder (application mechanics, duplicate certificate)",
+        "247 CMR 4.00 remainder (instructor and postgraduate credit, program delivery criteria)",
+        "247 CMR 9.18 patient counseling",
+        "247 CMR 9.15 validity determinations and monitoring-program registration",
+        "247 CMR 9.01 professional conduct",
+        "247 CMR 16.02 collaborative drug therapy management"
+      ],
+      "sources_deferred": {
+        "247 CMR 11.00": "facility controlled substance registration classifies as Area 4 by bank precedent (MA-Q-0221/0222/0223); deferred to a later tranche rather than mislabelled Area 1",
+        "247 CMR 16.04": "retrieved body was corrupted by an embedded font stream; refused to author from a section heading alone"
+      },
+      "candidate_branch": "batch3/b3b-author",
+      "candidate_sha": "6d41ac4c1f7b4fdf63b5f19c85627d1ff0e9b0ae",
+      "freeze_branch": "freeze/batch3-b3b-v1",
+      "freeze_sha": "65c2a4f6cdc1beaa8b730e0d324a590b38c8f1ac",
+      "draft_pr": 94,
+      "reserved_auditor_instance": "CLAUDE-FRESH-B3B",
+      "quality_gates": {
+        "validate_all": "0 errors, 1 pre-existing warning (MA-Q-0190)",
+        "structural_patterns": 0,
+        "duplicate_detector": 0,
+        "answer_distribution": "PASS n=181 chi2=3.005525 p~0.55957",
+        "pytest": "98 passed, 1 skipped",
+        "max_stem_similarity_vs_bank": {
+          "sequence": 0.7101,
+          "jaccard": 0.4815
+        }
+      },
+      "structural_correction": "First authoring pass raised four cue-word warnings (MA-Q-0264, MA-Q-0270 and MA-Q-0287 absolute-language distractors; MA-Q-0273 correct answer the only hedged option). Corrected at source and the whole tranche re-applied from a clean reverted base rather than patched in place.",
+      "bank_effect": {
+        "bank_size_before": 261,
+        "bank_size_after": 294,
+        "answer_distribution_before": "WARNING",
+        "answer_distribution_after": "PASS"
+      },
+      "freeze_verification": {
+        "published_sha256_reproduce_from_git_blobs": true,
+        "blind_package_item_count": 33,
+        "blind_package_extra_keys": [],
+        "question_audit_hashes_match_canonical": true,
+        "leakage_detected": false
+      },
+      "tooling_reuse": "scripts/freeze_tranche.py taken unchanged from freeze/batch3-b3a-v1",
+      "independence": "Authored by this controller session. This session must not audit it. A separate fresh session under auditor_instance CLAUDE-FRESH-B3B is required.",
+      "state": "AWAITING_FRESH_AUDITOR_HANDOFF"
+    },
     {
       "phase": "PHASE_0_START_BOUNDARY",
       "title": "Start-boundary verification",
