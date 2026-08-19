@@ -293,3 +293,58 @@ def test_q0028_quarantine_state_is_unchanged() -> None:
     assert question["independent_audit_status"] == "PENDING"
     assert question["final_adjudication"] is None
     assert question["development_fixture"] is True
+
+
+T3_IDS = ["MA-Q-0227", "MA-Q-0228"]
+T3_TRANCHE = "PRE-BATCH3-COVERAGE-T3-DIVERSITY"
+T3_AUTHORIZING_ISSUE = 86
+T3_REPRESENTED_CANDIDATE_SHA = "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2"
+
+
+def targeted_t3_legal_audit() -> dict:
+    audit = legal_audit(T3_IDS.copy(), "TARGETED_INITIAL_BATCH")
+    audit["audit_id"] = "AUDIT-CLAUDE-TARGETED-T3-TEST"
+    audit["auditor"] = "CLAUDE"
+    audit["auditor_instance"] = "CLAUDE-POLICY-TEST"
+    audit["governance_authorization"] = {
+        "tranche_id": T3_TRANCHE,
+        "authorizing_issue": T3_AUTHORIZING_ISSUE,
+        "represented_candidate_sha": T3_REPRESENTED_CANDIDATE_SHA,
+        "question_ids": T3_IDS.copy(),
+    }
+    return audit
+
+
+def test_authorized_two_question_t3_targeted_initial_is_accepted(tmp_path) -> None:
+    report = run_audit_validation(tmp_path, targeted_t3_legal_audit())
+    assert report.errors == []
+
+
+def test_t3_targeted_initial_rejects_wrong_authorizing_issue(tmp_path) -> None:
+    audit = targeted_t3_legal_audit()
+    audit["governance_authorization"]["authorizing_issue"] = 83
+    report = run_audit_validation(tmp_path, audit)
+    assert any("issue 86" in error for error in report.errors)
+
+
+def test_t3_targeted_initial_rejects_wrong_candidate_sha(tmp_path) -> None:
+    audit = targeted_t3_legal_audit()
+    audit["governance_authorization"]["represented_candidate_sha"] = "0" * 40
+    report = run_audit_validation(tmp_path, audit)
+    assert any("represented_candidate_sha" in error for error in report.errors)
+
+
+def test_t3_targeted_initial_rejects_extra_question(tmp_path) -> None:
+    audit = targeted_t3_legal_audit()
+    audit["question_ids"].append("MA-Q-0229")
+    audit["question_hashes"]["MA-Q-0229"] = "b" * 64
+    audit["results"].append(dict(audit["results"][0], Question_ID="MA-Q-0229"))
+    report = run_audit_validation(tmp_path, audit)
+    assert any("question_ids" in error for error in report.errors)
+
+
+def test_unregistered_tranche_is_still_rejected(tmp_path) -> None:
+    audit = targeted_t3_legal_audit()
+    audit["governance_authorization"]["tranche_id"] = "PRE-BATCH3-COVERAGE-T9-UNAUTHORIZED"
+    report = run_audit_validation(tmp_path, audit)
+    assert any("not governance-authorized" in error for error in report.errors)
