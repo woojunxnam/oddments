@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_G_BATCH3_AUTHORING",
+  "current_phase": "PHASE_G_B3A_AWAITING_FRESH_AUDIT",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -283,6 +283,94 @@
       },
       "no_batch3_plan_artifact_created": true,
       "no_batch3_questions_authored": true
+    },
+    {
+      "phase": "PHASE_G_BATCH3_S1_AND_B3A",
+      "title": "Batch 3 tracks B3-S1 (complete) and B3-A (frozen, awaiting audit)",
+      "status": "B3S1_RELEASED_B3A_AWAITING_FRESH_AUDIT",
+      "plan_issue": 91,
+      "b3_s1": {
+        "decision": "CASE A - all 31 migratable without substantive re-audit",
+        "method": "forensic provenance recovery from immutable GitHub history",
+        "sessions_proved": {
+          "GPT-PHASE2-ISSUE8-REAUDIT-V2": {
+            "issue": 8,
+            "pr": 10,
+            "frozen_sha": "67464e7a7ff2cfe88285c7c0f0f4164e92df46cd",
+            "branch": "audit/gpt-phase2-reaudit-v2"
+          },
+          "GPT-PHASE2-ISSUE12-REAUDIT-V3": {
+            "issue": 12,
+            "pr": 13,
+            "frozen_sha": "a3dd4cd9e0372dd4ff7c872a2ae3c3c851157363",
+            "branch": "audit/gpt-phase2-reaudit-v3"
+          }
+        },
+        "a_b_suffix_finding": "A/B denotes question batches, not separate auditors; verified against both issues' own text",
+        "additive_records_written": 8,
+        "originals_edited": false,
+        "criterion_10_proof": "all 31 dry-released through the real validator: 0 rejected",
+        "released": 31,
+        "released_bank_before_after": [
+          167,
+          198
+        ],
+        "pr": 92,
+        "post_s1_canonical_sha": "a79e3599a79cb1d44073e6fba20fb94eae05aa82"
+      },
+      "b3_a": {
+        "status": "AUTHORED_AND_FROZEN_AWAITING_FRESH_INDEPENDENT_AUDIT",
+        "audit_scope": "INITIAL_BATCH",
+        "governance_authorization_required": false,
+        "question_ids": "MA-Q-0229 through MA-Q-0261",
+        "question_count": 33,
+        "area_allocation": {
+          "1": 33
+        },
+        "new_rules": 27,
+        "official_sources": [
+          "247 CMR 3.00",
+          "247 CMR 4.00",
+          "247 CMR 8.00"
+        ],
+        "candidate_branch": "batch3/b3a-author",
+        "represented_candidate_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+        "freeze_branch": "freeze/batch3-b3a-v1",
+        "freeze_head": "c27c5b7fc611bb6d16d23f36cfdd6028192b18e2",
+        "blind_package_blob": "f72d246dedfd69b1c16797105545788f44ef5694",
+        "blind_package_sha256": "10554a021a9dad7af05a1d30adaa93d26c9973311bab6a21451e362da46c1d4e",
+        "reserved_auditor_instance": "CLAUDE-FRESH-B3A",
+        "preflight": {
+          "bank_size_after": 261,
+          "duplicate_detector_findings": 0,
+          "structural_pattern_findings": 0,
+          "max_stem_similarity_vs_bank": 0.644,
+          "shared_normalized_option_texts": 0,
+          "sata_three_correct_share": 0.5361,
+          "top_sata_key_share": 0.1546,
+          "sba_chi_square_before_after": [
+            12.928571,
+            11.267081
+          ],
+          "answer_length_leaks_fixed": [
+            "MA-Q-0244",
+            "MA-Q-0258"
+          ]
+        },
+        "qa": {
+          "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+          "pytest": "98 passed, 1 skipped",
+          "generated_artifact_freshness": "PASS"
+        }
+      },
+      "reusable_automation_added": [
+        "scripts/guarded_release.py --tranche-file",
+        "scripts/freeze_tranche.py --config",
+        "scripts/migrate_legacy_audit_provenance.py",
+        "scripts/batch3_inventory.py",
+        "scripts/verify_t3_audit_evidence.py"
+      ],
+      "next": "Author and freeze B3-B (MA-Q-0262..MA-Q-0294) while B3-A is independently audited."
     },
     {
       "phase": "PHASE_G_BATCH3_UNLOCKED",
