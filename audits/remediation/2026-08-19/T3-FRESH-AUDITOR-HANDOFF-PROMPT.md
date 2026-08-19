@@ -22,17 +22,27 @@ Your auditor identity for every record you produce:
 
 ## Exact boundary
 
-Repository:                 https://github.com/woojunxnam/oddments
-Freeze branch:              freeze/pre-batch3-coverage-t3-v1
-Represented candidate SHA:  f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2
-Represented candidate branch: remediation/pre-batch3-coverage-t3-diversity
-Tranche:                    PRE-BATCH3-COVERAGE-T3-DIVERSITY
-Authorizing issue:          86
-Questions under audit:      MA-Q-0227, MA-Q-0228   (exactly these two, no others)
+Repository:                   https://github.com/woojunxnam/oddments
+Freeze branch:                freeze/pre-batch3-coverage-t3-v1
+Freeze branch SHA:            c7e57194c127139a2d06356dbb5cb4f442a07d0d
+Branch your audit FROM:       36b3ea85229609afb08772a566cca2eb6fbe1be8
+                              (head of remediation/pre-batch3-coverage-t3-diversity; it carries the
+                               TARGETED_INITIAL_BATCH authorization your records need in order to validate)
+Represented candidate SHA:    f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2
+                              (the frozen authoring content the blind package represents; this exact value
+                               goes in governance_authorization.represented_candidate_sha, NOT the base SHA)
+Tranche:                      PRE-BATCH3-COVERAGE-T3-DIVERSITY
+Authorizing issue:            86
+Questions under audit:        MA-Q-0227, MA-Q-0228   (exactly these two, no others)
 
 Before any substantive work, verify:
-  git rev-parse remediation/pre-batch3-coverage-t3-diversity  # must contain f13c91c2... in history
-  git cat-file -t f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2    # must be: commit
+  git cat-file -t f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2   # must be: commit
+  git merge-base --is-ancestor f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2 36b3ea85229609afb08772a566cca2eb6fbe1be8
+  git rev-parse origin/remediation/pre-batch3-coverage-t3-diversity   # must be 36b3ea85229609afb08772a566cca2eb6fbe1be8
+
+The only difference between the candidate SHA and your base SHA is the governance registration of
+this tranche in scripts/validate_audits.py plus its tests. Neither question changed: confirm that
+yourself in Phase 2 with the hash check below.
 
 Required question content hashes at the represented candidate SHA:
   MA-Q-0227  e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e
@@ -93,7 +103,7 @@ the blind phase is compromised. Do not paper over it.
        ]
      }
 4. Commit and push it on a new branch:
-     git checkout -b audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2
+     git checkout -b audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a 36b3ea85229609afb08772a566cca2eb6fbe1be8
      git add audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json
      git commit -m "audit: Phase-1 blind lock for Pre-Batch3 T3 (CLAUDE-FRESH-COV-T3-A)"
      git push -u origin audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a
@@ -225,8 +235,10 @@ editor.
   independence, substitute a GPT instance and change `auditor` to `GPT` and `auditor_instance`
   accordingly; the contracts are otherwise model-neutral.
 - The `TARGETED_INITIAL_BATCH` authorization for tranche `PRE-BATCH3-COVERAGE-T3-DIVERSITY`
-  is registered in `scripts/validate_audits.py` and covered by tests in
-  `tests/test_targeted_initial_policy.py`. The audit schema is unchanged and ordinary
+  is registered in `scripts/validate_audits.py` and covered by five tests in
+  `tests/test_targeted_initial_policy.py`. It merged as PR #87 into
+  `remediation/pre-batch3-coverage-t3-diversity`, producing the audit base SHA
+  `36b3ea85229609afb08772a566cca2eb6fbe1be8`. The audit schema is unchanged and ordinary
   `INITIAL_BATCH` remains 30–40.
 - After the audit passes, the Issue #83 controller session resumes to register the evidence,
   guarded-release both questions, and rerun `scripts/prebatch3_final_coverage_gate.py` from the
