@@ -1,0 +1,64 @@
+{
+  "report_type": "AREA2_SOURCE_CENSUS",
+  "stage": "SOURCE_VIABILITY_ESTABLISHED_PATH_INVENTORY_IN_PROGRESS",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "date": "2026-08-19",
+  "purpose": "One combined source-first inventory covering the 66 Area-2 decision paths that B3-C and B3-D together require, so B3-C does not finish only for B3-D to discover no remaining capacity.",
+  "measured_baseline_at_6d41ac4c": {
+    "area_1": 78,
+    "area_2": 54,
+    "area_3": 96,
+    "area_4": 66,
+    "area_2_target_for_three_sets": 120,
+    "area_2_still_required": 66
+  },
+  "method": {
+    "granularity": "CMR paragraph / statutory subsection, not regulation number",
+    "area_assignment_rule": "Classify from the actual tested competency and existing bank precedent, never from the regulation number. A source is not usable merely because it is unused.",
+    "verbatim_rule": "The controlling proposition must be verbatim-verifiable from an official primary or official government source before authoring. Section headings, corrupted partial text, secondary republication alone and search snippets alone are all rejected."
+  },
+  "source_viability": [
+    {
+      "source": "M.G.L. (General Laws) via malegislature.gov",
+      "publisher": "Commonwealth of Massachusetts, official publisher of the General Laws",
+      "retrieval": "Browser, same-origin fetch, section text under the main paragraph nodes",
+      "status": "VIABLE - clean complete verbatim text",
+      "evidence": "M.G.L. c. 94C, s. 19 retrieved in full and verbatim, including subsections (a) through (d). Subsection (a) states that a prescription for a controlled substance to be valid shall be issued for a legitimate medical purpose by a practitioner acting in the usual course of his professional practice, and that a corresponding responsibility shall rest with the pharmacist who fills the prescription.",
+      "significance": "This is the principal remaining Area-2 source. M.G.L. c. 94C and c. 112 pharmacist-practice provisions are fully available at paragraph granularity.",
+      "note_on_urls": "Section URLs that carry a fraction in the section number, for example c. 112 s. 24B one-half, do not resolve under the naive tilde-two encoding and must be located from the chapter index."
+    },
+    {
+      "source": "247 CMR 8.00 and 247 CMR 4.00 via mass.gov official PDFs",
+      "status": "VIABLE - clean verbatim text",
+      "evidence": "Both retrieved and hashed this session: 247 CMR 8.00 pdf sha256 ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714; 247 CMR 4.00 pdf sha256 257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e.",
+      "known_defect": "247 CMR 8.05(3) second sentence, the pharmacy-intern carve-out, is truncated mid-word at a page boundary in the official publication and is not verbatim-verifiable.",
+      "area_relevance": "Mostly Area 1. Not a B3-C source."
+    },
+    {
+      "source": "247 CMR 9.00 via mass.gov official PDF",
+      "status": "VIABLE - clean verbatim text",
+      "evidence": "Section 9.15(1) and (2) retrieved verbatim and used to repair MA-Q-0288.",
+      "area_capacity_finding": "Largely exhausted as an Area-2 source. Bank precedent puts 9.02 and 9.04 in Area 4, 9.14 and 9.17 in Area 3, 9.19 and 9.24 in Area 4, and 9.21 and 9.23 in Area 1. Of the sections with no question at all, compliance packaging, emergency kits, automated systems, records, non-resident pharmacies, storage, plans of correction and generic interchange all sit in Area 4 by precedent. Clearly Area-2 headroom is limited to 9.03 Advertising plus unkeyed paragraphs of 9.01, 9.13 and 9.15."
+    },
+    {
+      "source": "247 CMR 16.00 Collaborative Drug Therapy Management via mass.gov official PDF",
+      "status": "PARTIALLY BLOCKED - not fully verbatim-extractable",
+      "pdf_sha256": "d98c03bcad5f440fcb52da41c5febe7f7c4cbf85db7237051bc6f75cc52506d8",
+      "pdf_bytes": 171572,
+      "detail": "18 of 34 compressed streams decompress. Sections 16.01 and 16.02 extract cleanly and match text independently confirmed earlier. Section 16.03 and parts of 16.04 recover only with severe kerning fragmentation, for example 'm us t pr ov ide tha t th e su pe rv isi ng ph y sic ia n'. Probes for the termination terms and for the agreement filed in the primary practice setting return nothing, so parts of 16.04 are absent from the extraction.",
+      "controller_decision": "Do NOT author 16.03 or 16.04 propositions from this extraction. De-kerned text is reconstruction, not verbatim verification, and the governing instruction forbids authoring from corrupted partial text. An alternative official rendering must be found before 16.03 and 16.04 can be counted toward Area-2 capacity.",
+      "impact": "247 CMR 16.04 is the single richest untapped CDTM source, covering required agreement terms, duties, biennial renewal, termination, filing in the primary practice setting and employment relationships. Losing it materially reduces the Area-2 candidate pool, so its recovery is a priority for the remainder of the census."
+    },
+    {
+      "source": "105 CMR 700.000 Implementation of M.G.L. c. 94C",
+      "status": "NOT YET RETRIEVED",
+      "next_step": "Retrieve from the Department of Public Health official publication and classify by area."
+    }
+  ],
+  "capacity_position": {
+    "paths_confirmed_viable_so_far": null,
+    "assessment": "Not yet answerable. Source viability is established for the statutes, which is the decisive enabler, but the paragraph-level path inventory across M.G.L. c. 94C, M.G.L. c. 112, 105 CMR 700.000 and the recoverable parts of 247 CMR 16.00 has not been completed. No B3-C drafting has begun and none will begin until the census demonstrates at least 66 defensible distinct Area-2 decision paths.",
+    "gate_honoured": true
+  }
+}
