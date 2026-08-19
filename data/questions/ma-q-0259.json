@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0259",
+  "family_id": "B3A_0259_MA_CE_MILITARY_RELIEF",
+  "area": 1,
+  "topic": "Licensure",
+  "subtopic": "Military continuing education relief",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist entered active armed forces service in November of an even-numbered year and was released from active duty the following spring. Which statement correctly describes the effect on her registration and continuing education?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Her registration lapsed on December 31st of that even-numbered year."
+    },
+    {
+      "id": "B",
+      "text": "Her registration remains valid until 90 days following release from active duty, and the continuing education requirement does not apply to that biennial cycle."
+    },
+    {
+      "id": "C",
+      "text": "Her registration remains valid indefinitely while she is on active duty and continuing education is merely deferred."
+    },
+    {
+      "id": "D",
+      "text": "Her registration remains valid for 90 days but the continuing education requirement still applies to that cycle."
+    },
+    {
+      "id": "E",
+      "text": "Her registration remains valid only if she requested a waiver before deploying."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 4.02(8), applying M.G.L. c. 112, § 1B(c), keeps the registration of a registrant in active armed forces service valid until 90 days following release from active duty, and provides that the continuing education requirement does not apply to the biennial cycle immediately preceding December 31st of an even-numbered year where the registrant is in active service after October 1st of that year. Entering service in November satisfies that date condition.",
+    "choice_analysis": {
+      "A": "The provision preserves validity rather than allowing the registration to lapse.",
+      "B": "Correct: validity to 90 days after release, with the continuing education requirement disapplied for that cycle.",
+      "C": "Validity is measured to 90 days after release, and the requirement is disapplied rather than deferred.",
+      "D": "The continuing education requirement does not apply to that cycle.",
+      "E": "No advance waiver request is required."
+    },
+    "related_facts": [
+      "Personal registrations otherwise expire on December 31st of each even-numbered year."
+    ],
+    "mpje_trap": "The relief turns on the October 1st date condition, not merely on having served at some point in the cycle."
+  },
+  "rule_ids": [
+    "MA-CE-EXEMPTIONS"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm active service began after October 1st of the even-numbered year",
+    "Apply the 90-day post-release validity period",
+    "Disapply the continuing education requirement for the affected biennial cycle"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CE-EXEMPTIONS": {
+          "content_version": 1,
+          "content_hash": "c7846da4ccacd7f7917d1869a4cf778b3ee5172857b7965457694cda9f2bb122"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

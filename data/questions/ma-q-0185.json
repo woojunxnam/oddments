@@ -1,0 +1,119 @@
+{
+  "question_id": "MA-Q-0185",
+  "family_id": "B2_DRUG_CII_FAX_MATRIX",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "C-II fax exception matrix",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "Each option describes a faxed Schedule II prescription. In which cases may the fax serve as the original under a specific federal exception, assuming all other requirements are satisfied? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Methylphenidate for a resident of a long-term-care facility"
+    },
+    {
+      "id": "B",
+      "text": "Oxycodone for a hospice patient when the prescription indicates hospice status"
+    },
+    {
+      "id": "C",
+      "text": "Fentanyl to be compounded for direct continuous intravenous infusion"
+    },
+    {
+      "id": "D",
+      "text": "Dexmethylphenidate for a hospice patient, relying only on hospice status"
+    },
+    {
+      "id": "E",
+      "text": "Oxycodone tablets for a routine ambulatory patient with no LTCF, hospice, or qualifying infusion facts"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "Schedule II status alone is insufficient; LTCF status, hospice+narcotic status, or a qualifying compounded narcotic route triggers the fax-as-original exceptions.",
+    "choice_analysis": {
+      "A": "The LTCF exception applies to a C-II prescription without a narcotic-only limit.",
+      "B": "A C-II narcotic hospice prescription can qualify.",
+      "C": "A qualifying C-II narcotic compounded infusion can qualify.",
+      "D": "The hospice exception is for a C-II narcotic; this stimulant is nonnarcotic.",
+      "E": "The ordinary fax is not itself the original."
+    },
+    "related_facts": [
+      "The LTCF exception is not limited to narcotics."
+    ],
+    "mpje_trap": "Using one exception's narcotic requirement for all faxed C-II prescriptions."
+  },
+  "rule_ids": [
+    "FED-CII-FAX"
+  ],
+  "drug_ids": [
+    "methylphenidate",
+    "oxycodone",
+    "fentanyl",
+    "dexmethylphenidate"
+  ],
+  "reasoning_steps": [
+    "Recognize that every option is Schedule II",
+    "Classify setting, narcotic status, and formulation",
+    "Apply the matching fax exception"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-FAX": {
+          "content_version": 1,
+          "content_hash": "1bddcf9ca6a67bd64aa81eafb758e2dd80b5bd81478fb919257428551f829808"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        },
+        "fentanyl": {
+          "content_version": 1,
+          "content_hash": "69898d337d02738835e970a28397f422308bfc9ea8892f356ccd8567d8f4f888"
+        },
+        "dexmethylphenidate": {
+          "content_version": 1,
+          "content_hash": "77bb97c1da08bbdabcd10ce7b11581e8e50d622c96ccce8bd0b7981dd749a7b8"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

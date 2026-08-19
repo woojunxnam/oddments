@@ -1,0 +1,114 @@
+{
+  "question_id": "MA-Q-0184",
+  "family_id": "B2_DRUG_ROUTINE_ADD_CONTROLS",
+  "area": 4,
+  "topic": "Automated dispensing devices",
+  "subtopic": "Routine ADD drug accountability",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A retail pharmacy wants a routine-dispensing ADD to contain methylphenidate, alprazolam, and gabapentin. Which machine-level requirements remain applicable to the routine ADD program? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Because methylphenidate is Schedule II, the ADD may operate without reconciliation if a perpetual inventory is kept elsewhere"
+    },
+    {
+      "id": "B",
+      "text": "Machine-specific DEA registration and Massachusetts controlled-substance registration as required for routine dispensing"
+    },
+    {
+      "id": "C",
+      "text": "Continuous video monitoring of the ADD"
+    },
+    {
+      "id": "D",
+      "text": "Loading by a certified pharmacy technician or pharmacy intern under pharmacist supervision"
+    },
+    {
+      "id": "E",
+      "text": "Because gabapentin is Schedule VI, any unlicensed employee may load the entire machine"
+    }
+  ],
+  "correct_choice_ids": [
+    "B",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "Mixed controlled/prescription stock does not displace the routine retail ADD's machine-specific registration, video, and supervised loading requirements.",
+    "choice_analysis": {
+      "A": "Routine ADD accountability remains required.",
+      "B": "Routine retail ADDs carry machine-specific registration requirements.",
+      "C": "Video monitoring is required.",
+      "D": "The routine loader requirement applies.",
+      "E": "One Schedule VI product does not erase routine ADD staffing rules."
+    },
+    "related_facts": [
+      "General ADD transaction and reconciliation records still apply."
+    ],
+    "mpje_trap": "Letting one drug's schedule override machine-level governance."
+  },
+  "rule_ids": [
+    "MA-ADD-CORE"
+  ],
+  "drug_ids": [
+    "methylphenidate",
+    "alprazolam",
+    "gabapentin"
+  ],
+  "reasoning_steps": [
+    "Identify routine retail ADD use",
+    "Recognize the mixed schedule inventory",
+    "Apply machine-level registration, monitoring, and loader controls"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADD-CORE": {
+          "content_version": 1,
+          "content_hash": "764d5dcb67ae53ba3885bab0ec078c3e20a331fe0593d6f5434fd892c4a7de45"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

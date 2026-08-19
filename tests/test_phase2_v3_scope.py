@@ -6,6 +6,15 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from qa_common import DATA, ROOT, load_json, load_records, question_audit_hash
 
+# These legacy questions were intentionally changed after the frozen Phase2-V3
+# repair boundary as part of the pre-Batch3 coverage-remediation tranche. Keep
+# the historical V3 exact-scope assertion intact for every other frozen item.
+POST_V3_LEGACY_REMEDIATION_HASH_DRIFT = {
+    "MA-Q-0015",
+    "MA-Q-0017",
+    "MA-Q-0040",
+}
+
 
 def _pr10_records(review_code: str) -> list[dict]:
     records: list[dict] = []
@@ -43,10 +52,17 @@ def test_v3_changes_exact_pr10_union_and_preserves_other_hashes() -> None:
     questions = {record["question_id"]: record for _, record in load_records(DATA / "questions")}
     assert len(scope) == 52
     assert len(frozen_hashes) == 80
-    assert {qid for qid in frozen_hashes if question_audit_hash(questions[qid]) != frozen_hashes[qid]} == scope
+
+    expected_current_drift = scope | POST_V3_LEGACY_REMEDIATION_HASH_DRIFT
+    actual_current_drift = {
+        qid
+        for qid in frozen_hashes
+        if question_audit_hash(questions[qid]) != frozen_hashes[qid]
+    }
+    assert actual_current_drift == expected_current_drift
     assert all(
         question_audit_hash(questions[qid]) == frozen_hashes[qid]
-        for qid in set(frozen_hashes) - scope
+        for qid in set(frozen_hashes) - expected_current_drift
     )
 
 
@@ -89,17 +105,22 @@ def test_v3_high_risk_legal_repairs_are_explicit() -> None:
     assert "one business day" in q58_text
     assert "45 calendar days" in q58_text
 
+    # Q0081 was subsequently repaired during pre-Batch3 legacy salvage to test
+    # the current statutory qualification text in M.G.L. c.112, §24B1/2(b),
+    # rather than freezing the older 247 CMR 16.02 grandfather wording into a
+    # historical test forever.
     q81_text = json.dumps(questions["MA-Q-0081"], ensure_ascii=False)
     for required in (
         "$1,000,000",
+        "PharmD",
         "five years",
-        "pre-July 2017 PharmD grandfather",
-        "Board-equivalent education/residency pathway",
+        "or the equivalent",
         "five additional related CE contact hours",
-        "controlled-substance registration",
-        "MassHealth participation attestation",
+        "limited MassHealth",
+        "implementing regulations",
     ):
         assert required in q81_text
+    assert "pre-July 2017 PharmD grandfather" not in q81_text
 
 
 def test_v3_reaudit_packages_are_schema_valid_and_changed_only() -> None:

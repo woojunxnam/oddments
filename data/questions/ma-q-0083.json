@@ -5,64 +5,99 @@
   "topic": "Collaborative practice",
   "subtopic": "Controlled substances",
   "difficulty": 3,
-  "question_type": "SATA",
+  "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A proposed retail collaborative agreement would let a pharmacist prescribe alprazolam and methylphenidate. Which statements are correct? Select all that apply.",
+  "stem": "A patient is receiving retail collaborative drug therapy management for diabetes. The supervising physician has also identified painful diabetic neuropathy as a co-morbidity and asks the collaborating pharmacist to initiate pregabalin (Schedule V), offering to countersign the pharmacist's order the same day. What is the best legal response?",
   "choices": [
     {
       "id": "A",
-      "text": "$1,000,000 liability coverage waives the schedule restriction."
+      "text": "Initiate pregabalin because the physician identified the neuropathy as a co-morbidity of diabetes."
     },
     {
       "id": "B",
-      "text": "Only Schedule II prescribing is prohibited."
+      "text": "Initiate pregabalin if the supervising physician countersigns the pharmacist's order within 24 hours."
     },
     {
       "id": "C",
-      "text": "The agreement cannot authorize prescribing Schedule II through V drugs."
+      "text": "Do not initiate pregabalin under retail collaborative prescribing because the agreement cannot authorize prescribing Schedule II through V controlled substances."
     },
     {
       "id": "D",
-      "text": "A supervising physician's signature does not remove that prohibition."
+      "text": "Initiate a 30-day pregabalin supply because retail collaborative practice permits a 30-day extension of current therapy."
     },
     {
       "id": "E",
-      "text": "Schedule VI prescribing requires separate compliance with retail CDTM limits."
+      "text": "Initiate pregabalin because the retail prohibition applies to Schedule II through IV but not Schedule V."
     }
   ],
   "correct_choice_ids": [
-    "C",
-    "D",
-    "E"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "The supported conclusions on these facts are: The agreement cannot authorize prescribing Schedule II through V drugs. A supervising physician's signature does not remove that prohibition. Schedule VI prescribing requires separate compliance with retail CDTM limits.",
+    "core_reasoning": "A retail collaborative practice agreement may not permit pharmacist prescribing of Schedule II through V controlled substances. Pregabalin is Schedule V. Physician involvement, a related co-morbidity, or same-day countersignature does not convert that prohibited retail-CDTM prescribing authority into a permitted one.",
     "choice_analysis": {
-      "A": "Not supported: $1,000,000 liability coverage waives the schedule restriction.",
-      "B": "Not supported: Only Schedule II prescribing is prohibited.",
-      "C": "Supported: The agreement cannot authorize prescribing Schedule II through V drugs.",
-      "D": "Supported: A supervising physician's signature does not remove that prohibition.",
-      "E": "Supported: Schedule VI prescribing requires separate compliance with retail CDTM limits."
+      "A": "Identifying a related co-morbidity does not override the separate statutory Schedule II-V prescribing prohibition.",
+      "B": "A countersignature does not expand the retail collaborating pharmacist's statutory prescribing authority.",
+      "C": "This applies the express retail-CDTM prohibition on prescribing Schedule II through V controlled substances.",
+      "D": "The stem describes initiation, not an extension of current therapy already prescribed by the supervising physician, and the Schedule II-V prescribing restriction still controls.",
+      "E": "The statutory retail restriction expressly extends through Schedule V."
     },
     "related_facts": [
-      "A retail collaborative practice agreement may not authorize the pharmacist to prescribe Schedule II through V controlled substances."
+      "Pregabalin is a federal and Massachusetts Schedule V controlled substance.",
+      "M.G.L. c.112, §24B1/2(c)(5) states that a retail collaborative practice agreement may not permit prescribing Schedule II through V controlled substances."
     ],
-    "mpje_trap": "Distinguish this near-miss from the controlling rule: '$1,000,000 liability coverage waives the schedule restriction.'"
+    "mpje_trap": "Do not let physician participation or a related disease state erase a separate schedule-based limit on retail collaborative prescribing."
   },
   "rule_ids": [
     "MA-CDTM-CONTROLLED-LIMIT"
   ],
-  "drug_ids": [],
-  "reasoning_steps": [
-    "Match the scenario's operative facts to Retail CDTM Schedule II through V prohibition"
+  "drug_ids": [
+    "pregabalin"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "reasoning_steps": [
+    "Classify pregabalin as Schedule V",
+    "Identify the express Schedule II-V prescribing limitation in retail CDTM",
+    "Reject physician countersignature or co-morbidity status as a substitute for statutory prescribing authority"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-H-LEGAL-REAUDIT-PRE-BATCH3-T1-R2-V4-2026-08-18",
+    "AUDIT-GPT-FRESH-COV-T1-H-REALISM-REAUDIT-PRE-BATCH3-T1-R2-V4-2026-08-18"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-CONTROLLED-LIMIT": {
+          "content_version": 1,
+          "content_hash": "fade023dec7770c3e858f38eae1511ab664a979b9e27e4915b9bd79d3848160d"
+        }
+      },
+      "drugs": {
+        "pregabalin": {
+          "content_version": 1,
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

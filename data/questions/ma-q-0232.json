@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0232",
+  "family_id": "B3A_0232_MA_RATIO_EXCLUDED_STAFF",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Support personnel ratio exclusions",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist is working with three support personnel who satisfy the applicable supervisory ratio. A cashier who rings up front-store sales and never assists with prescriptions is also on duty. The Manager of Record asks whether the cashier pushes the pharmacist over the ratio. What is the correct analysis?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The cashier is excluded from the ratio because they do not support the pharmacist in a professional capacity."
+    },
+    {
+      "id": "B",
+      "text": "The cashier counts as a fourth support person and the ratio is exceeded."
+    },
+    {
+      "id": "C",
+      "text": "The cashier counts unless the pharmacy documents a written exemption."
+    },
+    {
+      "id": "D",
+      "text": "The cashier counts only during hours when the pharmacy department is open."
+    },
+    {
+      "id": "E",
+      "text": "The cashier counts as half of a support person for ratio purposes."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.06(3)(b) excludes sales clerks, messengers, delivery personnel, secretaries and other persons who do not fall within the definitions of intern, certified pharmacy technician, pharmacy technician or pharmacy technician trainee, so long as they are not supporting the pharmacist in any professional capacity.",
+    "choice_analysis": {
+      "A": "Correct: the exclusion turns on the absence of professional support to the pharmacist.",
+      "B": "The regulation excludes such staff rather than counting them.",
+      "C": "No written exemption mechanism is required for the exclusion to apply.",
+      "D": "The exclusion does not depend on the pharmacy department's hours.",
+      "E": "The regulation does not use fractional counting."
+    },
+    "related_facts": [
+      "The exclusion is lost if such a person begins supporting the pharmacist professionally."
+    ],
+    "mpje_trap": "The exclusion depends on what the person actually does, not on their job title alone."
+  },
+  "rule_ids": [
+    "MA-SUPPORT-PERSONNEL-RATIO"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Classify the cashier against the four defined support-personnel categories",
+    "Test whether the cashier supports the pharmacist in a professional capacity",
+    "Apply the exclusion rather than counting the cashier in the ratio"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SUPPORT-PERSONNEL-RATIO": {
+          "content_version": 1,
+          "content_hash": "b4e949b9d5042da94c3cc75d5dd40f304857b2d3f778f327ef0033bcfc2d4628"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

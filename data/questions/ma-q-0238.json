@@ -1,0 +1,98 @@
+{
+  "question_id": "MA-Q-0238",
+  "family_id": "B3A_0238_MA_TRAINEE_EMPLOYMENT_LIMIT",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Trainee employment limit",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy technician trainee has now worked 1520 hours over ten months. Which statements correctly describe the trainee employment limit? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The limit is 1500 hours or one year, whichever period is shorter."
+    },
+    {
+      "id": "B",
+      "text": "The Board may grant an extension beyond the limit."
+    },
+    {
+      "id": "C",
+      "text": "The limit does not yet apply if the individual has not reached 18 years of age."
+    },
+    {
+      "id": "D",
+      "text": "The limit is suspended whenever the employing pharmacy is short staffed."
+    },
+    {
+      "id": "E",
+      "text": "An individual who exceeded the limit before turning 18 must apply for a technician licence within 30 days of the 18th birthday."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.03(5) limits trainee employment to 1500 hours or one year, whichever is shorter, subject to three exceptions: a Board-granted extension, the individual not yet having reached 18, or the individual not yet having completed 500 trainee hours. It also requires an individual who exceeded the limit before turning 18 to apply for a pharmacy technician licence within 30 days of the 18th birthday. Employer staffing pressure is not among the exceptions.",
+    "choice_analysis": {
+      "A": "Correct: the shorter of the two periods governs.",
+      "B": "Correct: a Board-granted extension is one of the three stated exceptions.",
+      "C": "Correct: not yet having reached 18 is a stated exception.",
+      "D": "Staffing pressure is not one of the stated exceptions.",
+      "E": "Correct: the 30-day application deadline runs from the 18th birthday."
+    },
+    "related_facts": [
+      "Trainee eligibility also requires good moral character and no drug-related felony conviction."
+    ],
+    "mpje_trap": "Only three exceptions exist, and employer convenience is not one of them."
+  },
+  "rule_ids": [
+    "MA-TECH-TRAINEE-LIMITS"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the limit as the shorter of 1500 hours and one year",
+    "Check each proposed exception against the three the regulation states",
+    "Apply the 30-day post-birthday application deadline where the limit was already exceeded"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-TECH-TRAINEE-LIMITS": {
+          "content_version": 1,
+          "content_hash": "409bd1b919a88db4eaeab2bdded75ce3c439ab1217a461fd65a5829d02b046af"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

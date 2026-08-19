@@ -4,65 +4,95 @@
   "area": 1,
   "topic": "Pharmacy personnel",
   "subtopic": "Intern hours",
-  "difficulty": 4,
+  "difficulty": 3,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A student works a 14-hour pharmacy shift and asks to record every hour as internship credit. Which statements are correct? Select all that apply.",
+  "stem": "A pharmacy student completes 12 hours of qualifying Massachusetts pharmacy-internship activity in one day. The student then remains at the site for a separate two-hour school seminar, and the preceptor proposes recording all 14 hours as Board internship credit. What should be recorded? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "All 14 hours count because the student remained on site."
+      "text": "The preceptor should record no more than 12 qualifying internship hours for that day."
     },
     {
       "id": "B",
-      "text": "No more than 12 hours may be credited for that day."
+      "text": "No more than 12 hours may be credited toward the pharmacy internship in one day."
     },
     {
       "id": "C",
-      "text": "The rule caps credit at eight hours per week."
+      "text": "The extra seminar may be documented separately as school activity, but it cannot increase that day's Board internship credit."
     },
     {
       "id": "D",
-      "text": "Working additional hours does not increase the daily credit cap."
+      "text": "Combining internship work with separately documented educational activity does not raise the Board's maximum internship credit above 12 hours for that day."
     },
     {
       "id": "E",
-      "text": "Only time handling controlled substances counts."
+      "text": "All 14 hours may count as internship credit whenever the preceptor signs both the internship log and the seminar attendance record."
     }
   ],
   "correct_choice_ids": [
+    "A",
     "B",
+    "C",
     "D"
   ],
   "explanation": {
-    "core_reasoning": "The supported conclusions on these facts are: No more than 12 hours may be credited for that day. Working additional hours does not increase the daily credit cap.",
+    "core_reasoning": "The question concerns credit toward the Massachusetts pharmacy internship, not whether a student may be present for separate educational activity. Board internship credit is capped at 12 hours in one day. The preceptor therefore records at most 12 internship hours; separate school activity can be documented without increasing that day's Board internship credit, and combining the two activity types does not enlarge the daily cap.",
     "choice_analysis": {
-      "A": "Not supported: All 14 hours count because the student remained on site.",
-      "B": "Supported: No more than 12 hours may be credited for that day.",
-      "C": "Not supported: The rule caps credit at eight hours per week.",
-      "D": "Supported: Working additional hours does not increase the daily credit cap.",
-      "E": "Not supported: Only time handling controlled substances counts."
+      "A": "Correct. The daily Board internship-credit record cannot exceed the 12-hour maximum.",
+      "B": "Correct. Twelve hours is the maximum pharmacy internship credit for one day.",
+      "C": "Correct. Separate educational documentation does not convert the additional seminar time into extra Board internship credit for that day.",
+      "D": "Correct. Combining separately documented activities cannot expand the Board's daily internship-credit ceiling.",
+      "E": "Incorrect. Signatures on separate records cannot waive the daily internship-credit ceiling."
     },
     "related_facts": [
-      "A pharmacy intern may receive no more than 12 hours of pharmacy internship credit in one day."
+      "Separate practice-hour/rest rules should not be confused with the distinct internship-credit calculation tested here."
     ],
-    "mpje_trap": "Distinguish this near-miss from the controlling rule: 'All 14 hours count because the student remained on site.'"
+    "mpje_trap": "Distinguish time physically spent at a site from hours legally creditable toward the pharmacy internship requirement."
   },
   "rule_ids": [
     "MA-INTERN-12H"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Match the scenario's operative facts to Daily pharmacy internship credit limit",
-    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Intern hours"
+    "Identify that the question asks about internship credit",
+    "Apply the 12-hour daily credit maximum",
+    "Reject attempts to convert additional same-day activity into extra Board credit"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-INTERN-12H": {
+          "content_version": 1,
+          "content_hash": "4fb448f23dde28e34e9239d6a7fe5fee97ec6315d4982cdd41755f170df4ea39"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

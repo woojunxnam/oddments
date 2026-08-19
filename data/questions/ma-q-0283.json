@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0283",
+  "family_id": "B3B_0283_MA_COUNSELING_TRIGGER",
+  "area": 2,
+  "topic": "Patient care",
+  "subtopic": "Counseling trigger",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts patient collects a refill of an anticoagulant after a recent dose change communicated by the prescriber. A technician tells the pharmacist that counseling is not required because the prescription is a refill rather than a new drug therapy. How should the pharmacist respond?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Agree, because the counseling duty attaches only to a prescription for new drug therapy."
+    },
+    {
+      "id": "B",
+      "text": "Agree, provided the patient was counseled when this drug was first dispensed to her."
+    },
+    {
+      "id": "C",
+      "text": "Agree, unless the patient affirmatively requests counseling from the pharmacist at pickup."
+    },
+    {
+      "id": "D",
+      "text": "Disagree, because every refill of any prescription requires counseling without exception."
+    },
+    {
+      "id": "E",
+      "text": "Disagree, because counseling is also required where the therapy is significant for the patient's health and safety."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.18(4) requires a pharmacist or pharmacy intern to provide counseling on each new drug therapy and on each drug therapy that, in the pharmacist's professional judgment, is deemed significant for the health and safety of the patient. The refill status does not end the inquiry; the professional-judgment limb applies.",
+    "choice_analysis": {
+      "A": "The duty has a second limb beyond new drug therapy.",
+      "B": "Prior counseling does not extinguish the professional-judgment limb.",
+      "C": "The duty does not depend on a patient request.",
+      "D": "The second limb turns on professional judgment rather than applying to every refill.",
+      "E": "Correct: the significance limb reaches this refill."
+    },
+    "related_facts": [
+      "The information provided is what professional judgment deems necessary for the patient to understand proper use."
+    ],
+    "mpje_trap": "The duty is not limited to new therapy; a significant refill still triggers it."
+  },
+  "rule_ids": [
+    "MA-COUNSELING-TRIGGER-AND-CONTENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Reject refill status as automatically ending the counseling duty",
+    "Apply the professional-judgment limb to an anticoagulant dose change",
+    "Provide counseling on that basis"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COUNSELING-TRIGGER-AND-CONTENT": {
+          "content_version": 1,
+          "content_hash": "d61f9cd7c5e5b487c01a8372a03fc6a648b7dad32f0697435d8b8109877bb81b"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

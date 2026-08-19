@@ -8,64 +8,100 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?",
+  "stem": "An adult patient receives a lawful 14-day outpatient prescription for buprenorphine-naloxone specifically for treatment of opioid use disorder. A staff member says Massachusetts' seven-day initial-opiate statute automatically requires the prescription to be reduced to seven days. What is the best response to that specific claim?",
   "choices": [
     {
       "id": "A",
-      "text": "Treat the prescription as exempt because methadone is always used for opioid dependence."
+      "text": "Agree, because every medication related to an opioid is subject to the seven-day statute regardless of indication."
     },
     {
       "id": "B",
-      "text": "Apply only the general 30-day Schedule II opioid quantity ceiling."
+      "text": "Disagree. The seven-day statute expressly does not apply to medications designed for treatment of substance abuse or opioid dependence; the prescription must instead satisfy the other laws governing its OUD pathway."
     },
     {
       "id": "C",
-      "text": "Allow a 90-day fill because every methadone prescription qualifies for the OUD pathway."
+      "text": "Agree unless the patient has previously filled an opioid prescription in Massachusetts."
     },
     {
       "id": "D",
-      "text": "Dispense ten days because the seven-day limit applies only to minors."
+      "text": "Disagree because buprenorphine-naloxone becomes Massachusetts Schedule VI when used for OUD."
     },
     {
       "id": "E",
-      "text": "The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception."
+      "text": "Reduce the quantity to seven days without prescriber involvement because pharmacists may unilaterally rewrite any opioid prescription to comply with supply limits."
     }
   ],
   "correct_choice_ids": [
-    "E"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "'The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception.' is the governing result. By contrast, 'Treat the prescription as exempt because methadone is always used for opioid dependence.' would require that the stated indication were opioid-dependence treatment rather than pain. The decisive cue appears in 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?'.",
+    "core_reasoning": "M.G.L. c. 94C, § 19D(c) excludes medications designed for treatment of substance abuse or opioid dependence from the seven-day supply statute. That exclusion answers the narrow seven-day question; it does not waive the separate federal and state requirements that govern buprenorphine-naloxone and OUD treatment.",
     "choice_analysis": {
-      "A": "'Treat the prescription as exempt because methadone is always used for opioid dependence.' would apply only if the stated indication were opioid-dependence treatment rather than pain; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-      "B": "'Apply only the general 30-day Schedule II opioid quantity ceiling.' would apply only if the more restrictive initial-opiate seven-day rule did not apply; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-      "C": "'Allow a 90-day fill because every methadone prescription qualifies for the OUD pathway.' would apply only if the prescription actually met the OUD-treatment exception and all other conditions; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-      "D": "'Dispense ten days because the seven-day limit applies only to minors.' would apply only if the statute did not also cover an adult's first outpatient opiate prescription; 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?' states otherwise.",
-      "E": "'The prescriber must address the Massachusetts initial-opiate seven-day limit or document an applicable exception.': supported by initial supply."
+      "A": "Incorrect. Section 19D contains an express treatment-indication exclusion.",
+      "B": "Correct. The seven-day statute itself does not apply to the described OUD-treatment medication, while other applicable prescribing/dispensing rules remain in force.",
+      "C": "Incorrect. The statutory exclusion here turns on the OUD-treatment purpose, not prior opioid-fill history.",
+      "D": "Incorrect. Buprenorphine-naloxone remains Schedule III; the result comes from the § 19D treatment exclusion.",
+      "E": "Incorrect. The statutory issue does not create a general pharmacist power to rewrite a prescription."
     },
     "related_facts": [
-      "methadone (Dolophine) is used for severe pain requiring an opioid and treatment of opioid use disorder in authorized settings; it is federal Schedule II and Massachusetts Schedule II.",
-      "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+      "The adult first-outpatient seven-day rule and the OUD-treatment exclusion must be read together."
     ],
-    "mpje_trap": "'Treat the prescription as exempt because methadone is always used for opioid dependence.' would apply if the stated indication were opioid-dependence treatment rather than pain. In 'At same-day pickup, an opioid-naive adult receives a first outpatient methadone prescription for pain for 10 days with no documented exception. What should be clarified?', that predicate is missing."
+    "mpje_trap": "Do not stop at the word 'opioid'; first determine whether the statute expressly excludes the treatment pathway."
   },
   "rule_ids": [
     "MA-OPIOID-SEVEN-DAY",
     "FED-CS-SCHEDULES"
   ],
   "drug_ids": [
-    "methadone"
+    "buprenorphine-naloxone"
   ],
   "reasoning_steps": [
-    "Classify methadone under the federal and Massachusetts schedules before selecting a legal pathway",
-    "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit"
+    "Identify the medication and its stated OUD-treatment purpose",
+    "Apply the express § 19D(c) exclusion before applying the seven-day ceiling",
+    "Keep separate OUD prescribing/dispensing requirements outside the narrow question"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-SEVEN-DAY": {
+          "content_version": 1,
+          "content_hash": "acce06fea2d6e3a8cb7b9bbb2a6ca9ede1ffa023d4a42585a3424341432264cb"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "buprenorphine-naloxone": {
+          "content_version": 1,
+          "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

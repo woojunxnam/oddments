@@ -7,43 +7,49 @@
   "difficulty": 5,
   "question_type": "SATA",
   "provenance": "GEN",
-  "stem": "Which drug-status and Massachusetts legal-consequence pairings are accurate? Select all that apply.",
+  "stem": "During a pharmacy-system configuration audit, the pharmacist reviews rules that would automatically control dispensing or monitoring. Which configurations are legally correct? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Pregabalin is Schedule V, and covered dispensing is MassPAT-reportable."
+      "text": "Treat pregabalin as Schedule V and submit covered dispensing to MassPAT."
     },
     {
       "id": "B",
-      "text": "Gabapentin is federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."
+      "text": "Treat gabapentin as federally noncontrolled but Massachusetts Schedule VI and MassPAT-reportable."
     },
     {
       "id": "C",
-      "text": "Methylphenidate is Schedule II and may not be refilled."
+      "text": "Treat methylphenidate as Schedule II and block prescription refills."
     },
     {
       "id": "D",
-      "text": "Pseudoephedrine is Schedule V because CMEA restricts retail sales."
+      "text": "Apply CMEA retail-sale controls to pseudoephedrine without classifying it as Schedule V solely because of those controls."
+    },
+    {
+      "id": "E",
+      "text": "Apply the federal Schedule III-IV five-refill/six-month rule to gabapentin solely because Massachusetts places it in Schedule VI."
     }
   ],
   "correct_choice_ids": [
     "A",
     "B",
-    "C"
+    "C",
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "Drug classification and legal consequence must be matched separately. Pregabalin is Schedule V, gabapentin has a Massachusetts-specific Schedule VI and reporting consequence, and methylphenidate is Schedule II; CMEA controls do not make pseudoephedrine Schedule V.",
+    "core_reasoning": "A pharmacy system must keep federal schedule, Massachusetts schedule, MassPAT reporting, refill limits, and CMEA retail controls separate. Pregabalin, gabapentin, and methylphenidate require the stated schedule/PMP/refill configurations, while pseudoephedrine requires its separate CMEA retail controls without being converted into Schedule V. Massachusetts Schedule VI status also does not import the federal Schedule III-IV refill rule into gabapentin.",
     "choice_analysis": {
-      "A": "Pregabalin is federally and in Massachusetts Schedule V, and covered dispensing belongs in MassPAT reporting.",
-      "B": "Gabapentin is not federally scheduled but Massachusetts treats it as Schedule VI and an additional MassPAT-reportable drug.",
-      "C": "Methylphenidate is a Schedule II stimulant, so a prescription may not be refilled.",
-      "D": "Pseudoephedrine has federal retail controls as a listed chemical product, but those controls do not create Schedule V status."
+      "A": "Correct. Pregabalin is Schedule V, and covered Massachusetts dispensing is reportable to MassPAT.",
+      "B": "Correct. Gabapentin is not federally scheduled, but Massachusetts treats it as Schedule VI and includes it in PMP reporting.",
+      "C": "Correct. Methylphenidate is Schedule II, for which refills are prohibited.",
+      "D": "Correct. CMEA imposes separate retail-sale controls on pseudoephedrine without making the product Schedule V solely because of those controls.",
+      "E": "Incorrect. Massachusetts Schedule VI classification does not by itself trigger the federal Schedule III-IV refill ceiling."
     },
     "related_facts": [
-      "Reporting status does not change federal schedule.",
-      "A therapeutic class is not a legal schedule."
+      "Monitoring status and controlled-substance schedule are separate legal concepts.",
+      "A state scheduling rule does not automatically change a drug's federal schedule."
     ],
-    "mpje_trap": "Converting every monitored or restricted product into a federally scheduled drug."
+    "mpje_trap": "Do not convert every monitored or behind-the-counter product into a federally scheduled drug or import federal refill rules from an unrelated schedule."
   },
   "rule_ids": [
     "FED-CS-SCHEDULES",
@@ -58,18 +64,73 @@
     "pseudoephedrine"
   ],
   "reasoning_steps": [
-    "Identify each federal status",
-    "Identify each Massachusetts schedule",
-    "Apply MassPAT and refill consequences",
-    "Separate CMEA controls from CSA scheduling"
+    "Classify each drug under federal law",
+    "Apply Massachusetts scheduling and PMP rules separately",
+    "Apply the legal consequence tied to the actual schedule or retail-control pathway"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        },
+        "MA-PMP-REPORTING": {
+          "content_version": 1,
+          "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+        },
+        "MA-RX-CV-REFILL": {
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+        },
+        "FED-PSE-QUANTITY": {
+          "content_version": 1,
+          "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+        }
+      },
+      "drugs": {
+        "pregabalin": {
+          "content_version": 1,
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        },
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "pseudoephedrine": {
+          "content_version": 2,
+          "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true,
   "source_signal_ids": []
 }

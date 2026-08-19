@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0273",
+  "family_id": "B3B_0273_MA_INTERN_EXAM_BAR",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Intern conduct consequences",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy intern is found to have violated state drug regulations during his internship. He assumes the worst outcome is a sanction on his intern licence and that he can still sit for licensure. How should he be advised?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "He is correct, because examination eligibility turns only on degree and internship hours."
+    },
+    {
+      "id": "B",
+      "text": "He is correct, unless the violation involved a controlled substance."
+    },
+    {
+      "id": "C",
+      "text": "He is correct, because NABP rather than the Board controls examination access."
+    },
+    {
+      "id": "D",
+      "text": "He is wrong, because any regulatory violation permanently bars licensure here."
+    },
+    {
+      "id": "E",
+      "text": "He is wrong, because the Board may prohibit him from taking the licensure examination as well."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.01(17) provides that a pharmacy intern found to have engaged in conduct in violation of federal or state laws or regulations may be prohibited from taking the examination for licensure, in addition to other sanctions imposed by the Board. The examination bar is an additional consequence, not an alternative one, and it is discretionary rather than automatic or permanent.",
+    "choice_analysis": {
+      "A": "Examination access is not governed only by degree and hours; conduct can bar it.",
+      "B": "The provision is not limited to controlled substance violations.",
+      "C": "The Board may prohibit the intern from taking the examination.",
+      "D": "The provision is discretionary and is not framed as a permanent bar.",
+      "E": "Correct: an examination prohibition may be imposed in addition to other sanctions."
+    },
+    "related_facts": [
+      "Preceptors and interns must submit information regarding the internship on a Board form in a timely manner."
+    ],
+    "mpje_trap": "Sanctions on the intern licence and a bar on sitting the examination are cumulative, not alternatives."
+  },
+  "rule_ids": [
+    "MA-INTERN-EXAM-BAR"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the intern as subject to the intern-specific conduct provision",
+    "Note that the examination prohibition is additional to other sanctions",
+    "Treat the consequence as discretionary rather than automatic"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-INTERN-EXAM-BAR": {
+          "content_version": 1,
+          "content_hash": "2ccfadbae5301e059dffc72af3ac6663591ec5ba95cb1ad26dbd2f27ac1123a7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

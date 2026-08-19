@@ -4,18 +4,21 @@
 
 ## Content status
 
-현재 Phase 2 candidate expansion에는 다음 항목이 있습니다.
+아래 수치는 현재 canonical tree에서 직접 계산한 실측값입니다.
 
-- semantic version/hash가 있는 rule 80개(verified 75개, `HOLD` 5개)와 drug 60개
-- version/hash가 고정된 pre-2027 blueprint와 style profile
-- `AUDIT_PENDING`인 development candidate 90개(foundation 10개 + Phase 2 신규 80개)
-- 실제 candidate 90개와 planned 40개를 합한 question family 130개
+- semantic version/hash가 있는 rule 128개(verified 123개, `HOLD` 5개)와 drug 66개(전부 verified)
+- version/hash가 고정된 pre-2027 blueprint와 `MPJE-MA-PRE2027` style profile
+- canonical question 226개: `RELEASED` 165개, `AUDIT_PENDING` candidate 61개
+- `RELEASED` question의 Area 분포: Area 1 = 26, Area 2 = 40, Area 3 = 59, Area 4 = 40
+- question family matrix 296개(실제 candidate가 있는 family 226개 + planned family 70개)
+- public preview allowlist 196개
 - fail-closed schema·validator·audit·release gate
-- 공개 NABP 자료만 사용한 `MPJE-MA-PRE2027` style profile
 - question-family matrix와 source-governance boundary
 - deterministic static quiz-site skeleton
 
-현재 `RELEASED` question은 0개입니다. 모든 candidate는 독립적인 legal/realism audit와 최종 adjudication 전이므로 암기 안전성이 확인된 자료가 아닙니다. `HOLD` rule은 question 근거로 사용할 수 없습니다.
+`RELEASED` question은 current-hash independent legal `KEEP`/answer `YES`와 full-bank realism `KEEP`/`PASS` evidence, 그리고 final `KEEP` adjudication을 통과한 항목입니다. 나머지 61개 candidate는 아직 audit/adjudication 전이므로 암기 안전성이 확인된 자료가 아닙니다. `HOLD` rule은 question 근거로 사용할 수 없습니다.
+
+`MA-Q-0028`은 current-hash realism distinctness failure 이후 quarantine 상태이며 release되지도 preview되지도 않습니다.
 
 ## Canonical pipeline
 

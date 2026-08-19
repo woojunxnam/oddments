@@ -1,0 +1,147 @@
+name: Batch 2 Author Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - author/mpje-expansion-batch2
+    paths:
+      - 'repair_specs/batch2/**'
+      - 'scripts/build_batch2_content.py'
+      - 'scripts/repair_batch2_quality.py'
+      - 'scripts/repair_batch2_numeric_option_sets.py'
+      - '.github/workflows/batch2-author-build.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out authoring branch
+        uses: actions/checkout@v4
+        with:
+          ref: author/mpje-expansion-batch2
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Build Batch 2 canonical source
+        run: |
+          python scripts/build_batch2_content.py
+          python scripts/repair_batch2_quality.py
+          python scripts/repair_batch2_numeric_option_sets.py
+
+      - name: Refresh canonical content hashes
+        run: python scripts/update_content_hashes.py
+
+      - name: Regenerate tracked artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Validate generated Batch 2 before commit
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+          python scripts/check_structural_patterns.py
+
+      - name: Verify exact Batch 2 ID set and preview boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          qs=[]
+          for p in Path('data/questions').glob('ma-q-*.json'):
+              q=json.loads(p.read_text())
+              if 131 <= int(q['question_id'][-4:]) <= 210:
+                  qs.append(q)
+          assert len(qs)==80, len(qs)
+          assert all(q['lifecycle_status']=='AUDIT_PENDING' for q in qs)
+          assert all(q['verification_status']=='AUDIT_PENDING' for q in qs)
+          assert all(q['development_fixture'] is True for q in qs)
+          preview=json.loads(Path('site/generated/questions.json').read_text())
+          release=json.loads(Path('data/release_requirements.json').read_text())
+          print('Batch2 pending:',len(qs),'release policy loaded:',bool(release),'generated snapshot:',len(preview))
+          PY
+
+      - name: Commit deterministic generated content
+        run: |
+          git config user.name 'batch2-author-bot'
+          git config user.email 'batch2-author-bot@users.noreply.github.com'
+          git add data/questions data/rules data/drugs data/exam_style repair_specs/batch2 site/generated answer_distribution_report.json duplicate_report.json structural_pattern_report.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit'
+          else
+            git commit -m 'Build Batch 2 Q0131-Q0210 as audit pending'
+          fi
+
+      - name: Exact-head validate_all diagnostic
+        id: exact_validate
+        shell: bash
+        run: |
+          mkdir -p /tmp/exact-head-validator-log
+          set +e
+          python scripts/validate_all.py 2>&1 | tee /tmp/exact-head-validator-log/exact-head-validate.log
+          status=${PIPESTATUS[0]}
+          echo "exit_code=${status}" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload exact-head validator log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-head-validator-log
+          path: /tmp/exact-head-validator-log/exact-head-validate.log
+          if-no-files-found: error
+
+      - name: Exact-head require validate_all success
+        run: test '${{ steps.exact_validate.outputs.exit_code }}' = '0'
+
+      - name: Exact-head pytest
+        run: python -m pytest -q
+
+      - name: Exact-head structural patterns
+        run: python scripts/check_structural_patterns.py
+
+      - name: Exact-head regenerate tracked artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Capture exact-head clean-tree diagnostics
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/exact-head-clean-tree
+          git status --short > /tmp/exact-head-clean-tree/status.txt
+          git diff --name-only > /tmp/exact-head-clean-tree/diff-names.txt
+          git diff --no-ext-diff --binary > /tmp/exact-head-clean-tree/diff.patch
+          git status --short
+          git diff --name-only
+
+      - name: Upload exact-head clean-tree diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exact-head-clean-tree-diagnostics
+          path: /tmp/exact-head-clean-tree/
+          if-no-files-found: error
+
+      - name: Exact-head require clean tree
+        run: |
+          test -z "$(git status --porcelain)"
+          git diff --exit-code
+
+      - name: Push exact validated head
+        run: git push origin HEAD:author/mpje-expansion-batch2

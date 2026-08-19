@@ -8,46 +8,45 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?",
+  "stem": "An adult patient's first outpatient tramadol prescription for acute pain requests a 10-day supply and contains no facts supporting a statutory exception. A technician argues that the Massachusetts seven-day opiate rule cannot apply because tramadol is Schedule IV rather than Schedule II. Which conclusion is most accurate?",
   "choices": [
     {
       "id": "A",
-      "text": "Apply only the five-refill and six-month Schedule IV limits."
+      "text": "The technician is correct because the seven-day statute applies only to Schedule II narcotic prescriptions."
     },
     {
       "id": "B",
-      "text": "Allow ten days because Schedule IV drugs are exempt from the opiate statute."
+      "text": "The technician is correct because Massachusetts excludes every Schedule IV drug from opiate supply limits."
     },
     {
       "id": "C",
-      "text": "Reduce the quantity without contacting the prescriber and discard the balance."
+      "text": "The prescription is exempt whenever the patient pays cash."
     },
     {
       "id": "D",
-      "text": "Use the seven-day restriction only for patients younger than 18."
+      "text": "The pharmacy may ignore the supply issue if MassPAT was checked."
     },
     {
       "id": "E",
-      "text": "Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity."
+      "text": "The technician is incorrect; Schedule IV status does not exempt tramadol from the separate seven-day opiate rule."
     }
   ],
   "correct_choice_ids": [
     "E"
   ],
   "explanation": {
-    "core_reasoning": "'Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity.' is the governing result. By contrast, 'Apply only the five-refill and six-month Schedule IV limits.' would require that the opiate-specific Massachusetts supply limit did not apply to tramadol. The decisive cue appears in 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?'.",
+    "core_reasoning": "The Massachusetts seven-day statute is triggered by an opiate prescription and its patient/use circumstances, not by a requirement that the drug be Schedule II. Tramadol's Schedule IV status therefore does not by itself remove the adult first-outpatient seven-day rule.",
     "choice_analysis": {
-      "A": "'Apply only the five-refill and six-month Schedule IV limits.' would apply only if the opiate-specific Massachusetts supply limit did not apply to tramadol; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-      "B": "'Allow ten days because Schedule IV drugs are exempt from the opiate statute.' would apply only if schedule placement eliminated tramadol's opiate status; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-      "C": "'Reduce the quantity without contacting the prescriber and discard the balance.' would apply only if the pharmacist could unilaterally rewrite the authorized days supply; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-      "D": "'Use the seven-day restriction only for patients younger than 18.' would apply only if the statute did not cover an adult's first outpatient opiate prescription; 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?' states otherwise.",
-      "E": "'Resolve the Massachusetts initial-opiate seven-day limit before dispensing the requested quantity.': supported by initial supply."
+      "A": "Incorrect. The statute is not written as a Schedule-II-only limit.",
+      "B": "Incorrect. Tramadol's Schedule IV classification does not decide whether the opiate supply-limit statute applies.",
+      "C": "Incorrect. Payment method is not the statutory trigger.",
+      "D": "Incorrect. PMP review does not replace compliance with a separate supply-limit statute.",
+      "E": "Correct. Apply schedule consequences and opiate supply limits as separate legal dimensions."
     },
     "related_facts": [
-      "tramadol (Ultram) is used for pain severe enough to require an opioid when alternatives are inadequate; it is federal Schedule IV and Massachusetts Schedule IV.",
-      "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+      "A qualifying documented exception under § 19D(b) can permit a quantity greater than seven days."
     ],
-    "mpje_trap": "'Apply only the five-refill and six-month Schedule IV limits.' would apply if the opiate-specific Massachusetts supply limit did not apply to tramadol. In 'At a Massachusetts pharmacy, an adult's first outpatient tramadol prescription for acute pain requests a 10-day supply without exception documentation. What should be resolved?', that predicate is missing."
+    "mpje_trap": "Do not assume that every opioid-related supply rule is limited to Schedule II drugs."
   },
   "rule_ids": [
     "MA-OPIOID-SEVEN-DAY",
@@ -57,16 +56,52 @@
     "tramadol"
   ],
   "reasoning_steps": [
-    "Classify tramadol under the federal and Massachusetts schedules before selecting a legal pathway",
-    "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit",
-    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Initial supply"
+    "Classify tramadol under controlled-substance law",
+    "Separately identify the opiate seven-day statute",
+    "Apply the adult first-outpatient trigger and look for a documented exception"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-SEVEN-DAY": {
+          "content_version": 1,
+          "content_hash": "acce06fea2d6e3a8cb7b9bbb2a6ca9ede1ffa023d4a42585a3424341432264cb"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "tramadol": {
+          "content_version": 1,
+          "content_hash": "9a0482bd8cc1224a272d72f58c6f9805f581418beb442fccb9afe14da2840d39"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0243",
+  "family_id": "B3A_0243_MA_PHARMD_RESIDENCY_CREDENTIAL",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Residency credential",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A PharmD graduate of an ACPE-accredited school has accepted a pharmacy residency at a Massachusetts hospital and will begin next month. She has not yet passed NAPLEX or MPJE. Which arrangement satisfies the regulation?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "She may practise on the strength of her residency appointment and PharmD degree."
+    },
+    {
+      "id": "B",
+      "text": "She may practise unsupervised because a residency is a Board-approved training program."
+    },
+    {
+      "id": "C",
+      "text": "She may practise only after obtaining a Massachusetts pharmacist licence."
+    },
+    {
+      "id": "D",
+      "text": "She must hold a Massachusetts pharmacy intern licence and be supervised by a pharmacist."
+    },
+    {
+      "id": "E",
+      "text": "She must hold an out-of-state licence recognised for reciprocity."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.01(8) requires a PharmD graduate who has accepted a Massachusetts residency to apply for and obtain a pharmacy intern licence until obtaining a Massachusetts pharmacist licence, and provides that a graduate enrolled in a Massachusetts residency shall either hold a Massachusetts pharmacist licence or hold a Massachusetts intern licence and be supervised by a pharmacist.",
+    "choice_analysis": {
+      "A": "A residency appointment and a degree are not practice credentials.",
+      "B": "The regulation does not treat a residency as authorising unsupervised practice.",
+      "C": "A pharmacist licence is one permitted route, but the intern licence route is also available and is the applicable one here.",
+      "D": "Correct: an intern licence with pharmacist supervision is the applicable arrangement.",
+      "E": "Reciprocity is not the mechanism contemplated for this graduate."
+    },
+    "related_facts": [
+      "A pharmacy intern must work under the direct supervision of a registered pharmacist preceptor."
+    ],
+    "mpje_trap": "A residency is a training position, not a licence; the graduate still needs one of two named credentials."
+  },
+  "rule_ids": [
+    "MA-PHARMD-RESIDENCY-CREDENTIAL"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Note that the graduate holds no Massachusetts pharmacist licence yet",
+    "Identify the two credentials the regulation allows during a Massachusetts residency",
+    "Apply the intern licence plus supervision route to the facts"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMD-RESIDENCY-CREDENTIAL": {
+          "content_version": 1,
+          "content_hash": "343a7a2f52d7b266a978e6ea827c41055be47cd997fbdb5112c515be310f5cb3"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

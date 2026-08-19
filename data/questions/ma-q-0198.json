@@ -1,0 +1,125 @@
+{
+  "question_id": "MA-Q-0198",
+  "family_id": "B2_DRUG_PMP_REPORT_MATRIX",
+  "area": 3,
+  "topic": "Prescription monitoring",
+  "subtopic": "MassPAT reporting matrix",
+  "difficulty": 3,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy is preparing its next PMP Clearinghouse submission. Which dispensing transactions are generally included in the Schedule II-V/gabapentin reporting requirement? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Gabapentin"
+    },
+    {
+      "id": "B",
+      "text": "Warfarin"
+    },
+    {
+      "id": "C",
+      "text": "Oxycodone"
+    },
+    {
+      "id": "D",
+      "text": "Alprazolam"
+    },
+    {
+      "id": "E",
+      "text": "Pregabalin"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C",
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Massachusetts pharmacy reporting covers Schedule II-V dispensations plus gabapentin, a designated Schedule VI drug of concern.",
+    "choice_analysis": {
+      "A": "Massachusetts specifically requires gabapentin reporting despite Schedule VI status.",
+      "B": "Ordinary Schedule VI warfarin is not within the II-V/gabapentin reporting rule.",
+      "C": "Schedule II dispensing is reportable.",
+      "D": "Schedule IV dispensing is reportable.",
+      "E": "Schedule V dispensing is reportable."
+    },
+    "related_facts": [
+      "Covered transactions are reported within 24 hours or the next business day under current guidance."
+    ],
+    "mpje_trap": "Either excluding gabapentin because it is Schedule VI or including every Schedule VI drug."
+  },
+  "rule_ids": [
+    "MA-PMP-REPORTING"
+  ],
+  "drug_ids": [
+    "oxycodone",
+    "alprazolam",
+    "pregabalin",
+    "gabapentin",
+    "warfarin"
+  ],
+  "reasoning_steps": [
+    "Classify federal schedules",
+    "Recognize gabapentin's Massachusetts drug-of-concern status",
+    "Apply the PMP submission requirement"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PMP-REPORTING": {
+          "content_version": 1,
+          "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+        }
+      },
+      "drugs": {
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        },
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        },
+        "pregabalin": {
+          "content_version": 1,
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        },
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

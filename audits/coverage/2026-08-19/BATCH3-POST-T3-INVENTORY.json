@@ -1,0 +1,302 @@
+{
+  "report_type": "BATCH3_POST_T3_INVENTORY",
+  "controller_issue": 83,
+  "source_sha": "b84436756f23f07ccf70183f3e2d591aab543408",
+  "objective": {
+    "target_total_release_usable": 360,
+    "target_sets": 3,
+    "per_set_allocation": {
+      "1": 26,
+      "2": 40,
+      "3": 29,
+      "4": 25
+    },
+    "required_by_area": {
+      "1": 78,
+      "2": 120,
+      "3": 87,
+      "4": 75
+    }
+  },
+  "bank": {
+    "total_canonical_questions": 228,
+    "released": 167,
+    "unreleased": 61,
+    "quarantined": [
+      "MA-Q-0028"
+    ],
+    "highest_used_question_id": "MA-Q-0228",
+    "id_gaps": [],
+    "next_free_question_id": "MA-Q-0229"
+  },
+  "released_by_area": {
+    "1": 26,
+    "2": 40,
+    "3": 59,
+    "4": 42
+  },
+  "unreleased_by_area": {
+    "1": 0,
+    "2": 0,
+    "3": 37,
+    "4": 24
+  },
+  "deficit_to_three_sets_by_area": {
+    "1": 52,
+    "2": 80,
+    "3": 28,
+    "4": 33
+  },
+  "deficit_total": 193,
+  "salvage": {
+    "unreleased_excluding_quarantine": 60,
+    "releasable_today": [],
+    "releasable_today_count": 0,
+    "release_ready_by_area": {},
+    "salvage_pool_by_area": {
+      "3": 36,
+      "4": 24
+    },
+    "classification_counts": {
+      "NEEDS_FRESH_AUDIT": 8,
+      "NEEDS_FRESH_INSTANCE_AUDIT": 31,
+      "NEEDS_REPAIR_AND_REAUDIT": 21,
+      "QUARANTINED": 1
+    },
+    "classification_by_area": {
+      "NEEDS_FRESH_AUDIT": {
+        "3": 8
+      },
+      "NEEDS_FRESH_INSTANCE_AUDIT": {
+        "3": 12,
+        "4": 19
+      },
+      "NEEDS_REPAIR_AND_REAUDIT": {
+        "3": 16,
+        "4": 5
+      },
+      "QUARANTINED": {
+        "3": 1
+      }
+    },
+    "by_class": {
+      "NEEDS_FRESH_AUDIT": [
+        "MA-Q-0001",
+        "MA-Q-0002",
+        "MA-Q-0003",
+        "MA-Q-0005",
+        "MA-Q-0006",
+        "MA-Q-0007",
+        "MA-Q-0008",
+        "MA-Q-0010"
+      ],
+      "NEEDS_FRESH_INSTANCE_AUDIT": [
+        "MA-Q-0011",
+        "MA-Q-0012",
+        "MA-Q-0019",
+        "MA-Q-0021",
+        "MA-Q-0022",
+        "MA-Q-0024",
+        "MA-Q-0025",
+        "MA-Q-0026",
+        "MA-Q-0031",
+        "MA-Q-0033",
+        "MA-Q-0037",
+        "MA-Q-0039",
+        "MA-Q-0051",
+        "MA-Q-0052",
+        "MA-Q-0053",
+        "MA-Q-0055",
+        "MA-Q-0056",
+        "MA-Q-0057",
+        "MA-Q-0058",
+        "MA-Q-0061",
+        "MA-Q-0062",
+        "MA-Q-0063",
+        "MA-Q-0064",
+        "MA-Q-0065",
+        "MA-Q-0067",
+        "MA-Q-0069",
+        "MA-Q-0070",
+        "MA-Q-0071",
+        "MA-Q-0072",
+        "MA-Q-0074",
+        "MA-Q-0089"
+      ],
+      "NEEDS_REPAIR_AND_REAUDIT": [
+        "MA-Q-0014",
+        "MA-Q-0018",
+        "MA-Q-0023",
+        "MA-Q-0029",
+        "MA-Q-0035",
+        "MA-Q-0038",
+        "MA-Q-0041",
+        "MA-Q-0042",
+        "MA-Q-0043",
+        "MA-Q-0044",
+        "MA-Q-0045",
+        "MA-Q-0046",
+        "MA-Q-0047",
+        "MA-Q-0048",
+        "MA-Q-0049",
+        "MA-Q-0050",
+        "MA-Q-0054",
+        "MA-Q-0066",
+        "MA-Q-0068",
+        "MA-Q-0073",
+        "MA-Q-0090"
+      ],
+      "QUARANTINED": [
+        "MA-Q-0028"
+      ]
+    },
+    "instanceless_legacy_audits": [
+      "AUDIT-GPT-PHASE2-A-LEGAL-2026-08-13",
+      "AUDIT-GPT-PHASE2-A-LEGAL-REAUDIT-2026-08-13",
+      "AUDIT-GPT-PHASE2-A-REALISM-2026-08-13",
+      "AUDIT-GPT-PHASE2-A-REALISM-REAUDIT-2026-08-13",
+      "AUDIT-GPT-PHASE2-B-LEGAL-2026-08-13",
+      "AUDIT-GPT-PHASE2-B-LEGAL-REAUDIT-2026-08-13",
+      "AUDIT-GPT-PHASE2-B-REALISM-2026-08-13",
+      "AUDIT-GPT-PHASE2-B-REALISM-REAUDIT-2026-08-13",
+      "AUDIT-GPT-PHASE2-V3-LEGAL-REAUDIT-2026-08-13-A",
+      "AUDIT-GPT-PHASE2-V3-LEGAL-REAUDIT-2026-08-13-B",
+      "AUDIT-GPT-PHASE2-V3-REALISM-REAUDIT-2026-08-13-A",
+      "AUDIT-GPT-PHASE2-V3-REALISM-REAUDIT-2026-08-13-B"
+    ],
+    "note": "Passing current-hash evidence is not release capacity on its own. data/release_requirements.json uses distinctness_basis AUDITOR_INSTANCE, and the legacy Phase-2 audit records carry no auditor_instance, so questions resting only on them fail the real release gate with 'lacks auditor_instance required by release policy'."
+  },
+  "new_authoring_needed_if_every_salvage_candidate_landed": {
+    "1": 52,
+    "2": 80,
+    "3": 0,
+    "4": 9
+  },
+  "new_authoring_needed_total_if_no_salvage": 193,
+  "new_authoring_needed_total_if_all_salvage": 141,
+  "family_state": {
+    "families_in_matrix": 298,
+    "families_with_released_questions": 167,
+    "saturated_families": {
+      "V3_0091_RECALL_LOT_ACTION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0093_STORAGE_EXCURSION_STATUS": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0094_CII_STOCK_SHORTAGE_REMAINDER": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0099_CIII_V_PARTIAL_AGGREGATE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0100_PDMA_SAMPLE_INVENTORY": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0101_CII_LESSER_QUANTITY_ELECTION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0102_CONTROLLED_STOCK_SECURITY": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0103_LICENSEE_CHANGE_REPORT": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0104_CII_MISSING_FOLLOWUP": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0105_CSOS_PERSONAL_CERTIFICATE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0106_MIFEPRISTONE_REMS_GATE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0107_PSE_ID_EXCEPTION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0108_PSE_STORE_CERTIFICATION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0109_CLOZAPINE_REMS_REMOVED": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0111_SCHEDULE_III_PAMPHLET_EXCEPTION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0112_PATIENT_LOCKBOX_STORE_DUTY": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0113_POINT_OF_SALE_LESSER_PRICE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0114_HYPODERMIC_AUTHORIZED_SELLER": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0116_ORAL_SVI_DOCUMENTATION": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0117_COMPOUND_PRODUCT_LABEL": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0121_EXCEPTED_PREPARATION_RETAIL": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0125_FORM222_DEFECT_PRIORITY": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0126_FORM222_LOST_REPLACEMENT": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0127_FORM222_POA_SIGNATURE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0128_CSOS_SUPPLIER_CERTIFICATE_GATE": {
+        "released": 1,
+        "max": 1
+      },
+      "V3_0129_FORM222_WRITTEN_CANCELLATION": {
+        "released": 1,
+        "max": 1
+      }
+    },
+    "saturated_family_count": 26,
+    "headroom_in_existing_families": 491
+  },
+  "released_distributions": {
+    "question_type": {
+      "SBA": 95,
+      "SATA": 72
+    },
+    "difficulty": {
+      "3": 33,
+      "4": 92,
+      "5": 42
+    },
+    "drug_backed": 76,
+    "non_drug": 91
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "question_id": "MA-Q-0133",
+  "family_id": "B2_ADD_PATIENT_ORDER",
+  "area": 4,
+  "topic": "Automated dispensing devices",
+  "subtopic": "Patient-specific order",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient is admitted to a Massachusetts facility with an ADD. The cabinet contains the requested medication, but no valid patient-specific prescription or medication order has yet been entered. What should occur?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Remove a dose because presence in the ADD itself authorizes administration."
+    },
+    {
+      "id": "B",
+      "text": "Use the dose if a technician verbally confirms the usual regimen."
+    },
+    {
+      "id": "C",
+      "text": "Wait for a valid patient-specific prescription or order before dispensing the medication from the ADD."
+    },
+    {
+      "id": "D",
+      "text": "Treat every ADD item as floor stock that needs no patient-specific authorization."
+    },
+    {
+      "id": "E",
+      "text": "Dispense now and obtain the order only if a controlled substance was selected."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "ADD availability does not substitute for a valid patient-specific prescription or order.",
+    "choice_analysis": {
+      "A": "Stocking is not dispensing authority.",
+      "B": "Technician confirmation is not a valid order.",
+      "C": "A valid patient-specific order is required.",
+      "D": "The policy does not create blanket floor-stock authority.",
+      "E": "The order condition is not limited to federal controls."
+    },
+    "related_facts": [
+      "The device stores medication; it does not create prescriptive authority."
+    ],
+    "mpje_trap": "Assuming stocked medication is automatically authorized for a patient."
+  },
+  "rule_ids": [
+    "MA-ADD-CORE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate cabinet inventory from dispensing authority",
+    "Require the patient-specific prescription or order"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W1-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W1-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADD-CORE": {
+          "content_version": 1,
+          "content_hash": "764d5dcb67ae53ba3885bab0ec078c3e20a331fe0593d6f5434fd892c4a7de45"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

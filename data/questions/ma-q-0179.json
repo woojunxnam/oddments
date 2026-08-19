@@ -1,0 +1,129 @@
+{
+  "question_id": "MA-Q-0179",
+  "family_id": "B2_DRUG_CPHT_SVI_MATRIX",
+  "area": 1,
+  "topic": "Technician scope",
+  "subtopic": "Certified-tech Schedule VI stocking",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At an eligible hospital ADD, a nationally certified Massachusetts-licensed pharmacy technician is using the narrow pathway that does not require prior pharmacist verification. Assume every product is non-patient-specific, sealed, and transferred with electronic validation. Which drugs can fit that pathway based on schedule/PMP status? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Pregabalin"
+    },
+    {
+      "id": "B",
+      "text": "Warfarin"
+    },
+    {
+      "id": "C",
+      "text": "Insulin glargine"
+    },
+    {
+      "id": "D",
+      "text": "Doxycycline"
+    },
+    {
+      "id": "E",
+      "text": "Gabapentin"
+    }
+  ],
+  "correct_choice_ids": [
+    "B",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "The no-prior-verification certified-technician shortcut is limited to non-PMP Schedule VI stock; gabapentin and federally controlled drugs fall outside it.",
+    "choice_analysis": {
+      "A": "Pregabalin is federally Schedule V, not Schedule VI.",
+      "B": "It is Massachusetts Schedule VI and not a PMP drug.",
+      "C": "It is Schedule VI and not PMP-reportable.",
+      "D": "It is an ordinary Schedule VI prescription drug and not a PMP drug.",
+      "E": "Gabapentin is excluded as a PMP-reportable Schedule VI drug."
+    },
+    "related_facts": [
+      "Gabapentin remains Massachusetts Schedule VI despite its PMP reporting status."
+    ],
+    "mpje_trap": "Treating every Schedule VI drug as eligible or every prescription drug as Schedule VI."
+  },
+  "rule_ids": [
+    "MA-ADD-TECH",
+    "MA-PMP-REPORTING"
+  ],
+  "drug_ids": [
+    "warfarin",
+    "insulin-glargine",
+    "doxycycline",
+    "gabapentin",
+    "pregabalin"
+  ],
+  "reasoning_steps": [
+    "Identify each drug's Massachusetts/federal status",
+    "Apply the non-PMP Schedule VI limitation",
+    "Confirm the no-manipulation/electronic-validation facts"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADD-TECH": {
+          "content_version": 1,
+          "content_hash": "a32ebb12ceb7156a458dbe419d4b98a4a9e4576442546d1dfaa48e00431dd7f7"
+        },
+        "MA-PMP-REPORTING": {
+          "content_version": 1,
+          "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+        }
+      },
+      "drugs": {
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        },
+        "insulin-glargine": {
+          "content_version": 1,
+          "content_hash": "3e931b085a0e3d834a5f798ec514299b6eba89ec9c3d2b9c6f2122fbb164d19a"
+        },
+        "doxycycline": {
+          "content_version": 1,
+          "content_hash": "8409fe8b52b1791aa2ca826637e5e9bbf2c3c816fdd395626978f39b36bc8a37"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        },
+        "pregabalin": {
+          "content_version": 1,
+          "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

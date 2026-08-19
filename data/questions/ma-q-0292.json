@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0292",
+  "family_id": "B3B_0292_MA_CDTM_PRESCRIPTIVE_CONDITIONS",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Prescriptive practice conditions",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist is negotiating an agreement that will include prescriptive practices. Which additional conditions attach because of that inclusion? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Holding at least $2,000,000 per occurrence of professional liability insurance."
+    },
+    {
+      "id": "B",
+      "text": "Maintaining a current controlled substance registration issued by the Department during the term of the agreement."
+    },
+    {
+      "id": "C",
+      "text": "Completing at least ten additional contact hours of continuing education each year of the agreement."
+    },
+    {
+      "id": "D",
+      "text": "Submitting an attestation under the pains and penalties of perjury regarding MassHealth participation."
+    },
+    {
+      "id": "E",
+      "text": "Obtaining a separate Board licence category for collaborating pharmacists."
+    }
+  ],
+  "correct_choice_ids": [
+    "B",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 16.02(1)(f) attaches three conditions where prescriptive practices are included: maintaining a current Department-issued controlled substance registration during the agreement term; completing the training required by M.G.L. c. 94C, § 18(e) before initially obtaining that registration and at least biennially thereafter as a condition precedent to renewing the pharmacist licence; and submitting a MassHealth participation attestation signed under the pains and penalties of perjury.",
+    "choice_analysis": {
+      "A": "The insurance requirement is at least $1,000,000 per occurrence and applies to all agreements.",
+      "B": "Correct: the controlled substance registration must be maintained during the term.",
+      "C": "The additional continuing education requirement is at least five contact hours each year.",
+      "D": "Correct: the sworn MassHealth attestation is one of the three conditions.",
+      "E": "No separate Board licence category is created for collaborating pharmacists."
+    },
+    "related_facts": [
+      "The section 18(e) training is a condition precedent to renewing the pharmacist licence, not only the agreement."
+    ],
+    "mpje_trap": "General CDTM qualifications and the prescriptive-practice overlay are different lists with different numbers."
+  },
+  "rule_ids": [
+    "MA-CDTM-PRESCRIPTIVE-CONDITIONS"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate the conditions that apply to all agreements from the prescriptive-practice overlay",
+    "Identify the three overlay conditions",
+    "Reject figures that belong to the general qualification list"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-PRESCRIPTIVE-CONDITIONS": {
+          "content_version": 1,
+          "content_hash": "c72b644f0d150eb7eac489263bbe3dcccde115b6b1d244d881cf47087740ef67"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

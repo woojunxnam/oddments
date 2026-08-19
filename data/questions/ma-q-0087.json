@@ -1,70 +1,98 @@
 {
   "question_id": "MA-Q-0087",
   "family_id": "P2_0087_MA_INTERCHANGE",
-  "area": 3,
+  "area": 4,
   "topic": "Drug interchange",
   "subtopic": "Generic interchange",
   "difficulty": 4,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A lower-priced product is reasonably available and appears on the Massachusetts interchangeable-drug list, but the prescriber marked a valid no-substitution direction. Which facts control? Select all that apply.",
+  "stem": "A less expensive drug product is reasonably available and appears on the Massachusetts interchangeable-drug list, but the prescription contains a valid prescriber no-substitution direction. Which statements correctly describe the product-selection decision? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Determine whether the no-substitution direction is valid."
+      "text": "The valid no-substitution direction prevents the pharmacist from applying the usual required interchange on this prescription."
     },
     {
       "id": "B",
-      "text": "Confirm that the proposed product is listed as interchangeable."
+      "text": "A lower price does not override a valid prescriber no-substitution direction."
     },
     {
       "id": "C",
-      "text": "Substitute any drug in the same therapeutic class."
+      "text": "Without a valid no-substitution direction, the Massachusetts interchange framework generally requires use of the reasonably available, less expensive interchangeable product when its conditions are met."
     },
     {
       "id": "D",
-      "text": "Confirm that the proposed product is reasonably available at a lower retail price."
+      "text": "The patient may erase the prescriber's valid no-substitution direction and compel interchange without prescriber involvement."
     },
     {
       "id": "E",
-      "text": "Honor a valid prescriber direction against substitution."
+      "text": "Before interchanging, the pharmacist must still confirm that the alternative satisfies the Massachusetts interchangeable-product framework rather than relying on price alone."
     }
   ],
   "correct_choice_ids": [
     "A",
     "B",
-    "D",
+    "C",
     "E"
   ],
   "explanation": {
-    "core_reasoning": "The supported conclusions on these facts are: Determine whether the no-substitution direction is valid. Confirm that the proposed product is listed as interchangeable. Confirm that the proposed product is reasonably available at a lower retail price. Honor a valid prescriber direction against substitution.",
+    "core_reasoning": "Massachusetts product selection depends on interchange eligibility, price/availability conditions, and the prescriber's substitution direction. A valid no-substitution instruction controls despite a lower price and blocks the otherwise applicable interchange rule. When substitution is permitted, the pharmacist still must use a legally interchangeable product rather than treating lower price alone as sufficient.",
     "choice_analysis": {
-      "A": "Supported: Determine whether the no-substitution direction is valid.",
-      "B": "Supported: Confirm that the proposed product is listed as interchangeable.",
-      "C": "Not supported: Substitute any drug in the same therapeutic class.",
-      "D": "Supported: Confirm that the proposed product is reasonably available at a lower retail price.",
-      "E": "Supported: Honor a valid prescriber direction against substitution."
+      "A": "Correct. A valid prescriber no-substitution direction is a controlling exception to interchange.",
+      "B": "Correct. Lower price does not nullify a valid no-substitution instruction.",
+      "C": "Correct. In the absence of a valid no-substitution instruction, the statutory interchange conditions apply.",
+      "D": "Incorrect. The patient cannot simply erase the prescriber's valid direction and convert it into a substitution-authorized prescription.",
+      "E": "Correct. Price is not enough by itself; the selected alternative must satisfy the governing interchangeable-product requirements."
     },
     "related_facts": [
-      "A pharmacist dispenses a less expensive reasonably available interchangeable product listed under Massachusetts standards unless the prescriber validly indicates no substitution or another exception applies."
+      "Product-selection law belongs to the NABP Area-4 practice-operations competency rather than prescription-transfer/dispensing mechanics."
     ],
-    "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Substitute any drug in the same therapeutic class.'"
+    "mpje_trap": "Do not let price or inventory status override a valid prescriber no-substitution direction."
   },
   "rule_ids": [
     "MA-INTERCHANGE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Match the scenario's operative facts to Massachusetts interchangeable-drug dispensing",
-    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Generic interchange"
+    "Confirm that the alternative is legally interchangeable",
+    "Check price and reasonable availability",
+    "Apply the prescriber's substitution direction before selecting the product"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-INTERCHANGE": {
+          "content_version": 1,
+          "content_hash": "70c9a33106d6c4935ca699651f76048d8f14833fddfca9ec41c8751e5f4beb15"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

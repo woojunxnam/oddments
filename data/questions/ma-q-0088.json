@@ -1,70 +1,98 @@
 {
   "question_id": "MA-Q-0088",
   "family_id": "P2_0088_MA_RETURN_QUARANTINE",
-  "area": 4,
+  "area": 2,
   "topic": "Pharmacy operations",
   "subtopic": "Returned medication",
   "difficulty": 4,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient returns an unopened bottle that the pharmacy dispensed in error. Which actions are permitted or required? Select all that apply.",
+  "stem": "A patient returns an unopened bottle that a Massachusetts pharmacy dispensed in error. The product appears intact. Which actions are required or permitted for the returned medication? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Accept the medication under the dispensing-error return pathway."
+      "text": "Accept the return because it was previously dispensed in error by the pharmacy."
     },
     {
       "id": "B",
-      "text": "Return the sealed bottle directly to saleable stock."
+      "text": "Do not place the returned medication back into dispensing inventory merely because the container is unopened."
     },
     {
       "id": "C",
-      "text": "Quarantine it pending proper disposition."
+      "text": "Segregate or quarantine the returned medication and handle its disposition under the pharmacy's required return/disposal process."
     },
     {
       "id": "D",
-      "text": "Keep it out of saleable inventory."
+      "text": "Keep the returned medication out of active dispensing inventory while it awaits proper disposition."
     },
     {
       "id": "E",
-      "text": "Arrange proper disposal after quarantine."
+      "text": "Dispense the returned bottle to another patient after a pharmacist visually inspects the seal."
     }
   ],
   "correct_choice_ids": [
     "A",
+    "B",
     "C",
-    "D",
-    "E"
+    "D"
   ],
   "explanation": {
-    "core_reasoning": "The supported conclusions on these facts are: Accept the medication under the dispensing-error return pathway. Quarantine it pending proper disposition. Keep it out of saleable inventory. Arrange proper disposal after quarantine.",
+    "core_reasoning": "Massachusetts requires a pharmacy to accept medication that it previously dispensed in error (or that is suspected defective or contaminated), but the return does not make the product reusable inventory. It must remain out of active dispensing inventory, be segregated or quarantined, and proceed through the required disposition process rather than being redispensed to another patient.",
     "choice_analysis": {
-      "A": "Supported: Accept the medication under the dispensing-error return pathway.",
-      "B": "Not supported: Return the sealed bottle directly to saleable stock.",
-      "C": "Supported: Quarantine it pending proper disposition.",
-      "D": "Supported: Keep it out of saleable inventory.",
-      "E": "Supported: Arrange proper disposal after quarantine."
+      "A": "Correct. A pharmacy-dispensing error is a recognized return trigger.",
+      "B": "Correct. An unopened appearance does not restore a patient-returned product to active dispensing inventory.",
+      "C": "Correct. Returned medication must be segregated from usable stock and managed for proper disposition.",
+      "D": "Correct. A patient-returned medication in this error pathway remains outside active dispensing inventory while quarantined for proper disposition.",
+      "E": "Incorrect. Visual inspection does not authorize redispensing the returned medication to another patient."
     },
     "related_facts": [
-      "A pharmacy accepts medication it dispensed in error or that is suspected defective or contaminated, but may not return it to inventory and must quarantine and properly dispose of it."
+      "The rule protects patients by separating correction of an erroneous dispense from reuse of medication after it has left pharmacy control."
     ],
-    "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Return the sealed bottle directly to saleable stock.'"
+    "mpje_trap": "Do not infer 'unopened' means 'returnable to stock' once the medication has been dispensed to a patient."
   },
   "rule_ids": [
     "MA-RETURN-QUARANTINE"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Match the scenario's operative facts to Returned erroneous or defective medication quarantine",
-    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Returned medication"
+    "Identify why the medication is being returned",
+    "Separate the duty to accept the return from the question of reuse",
+    "Quarantine/segregate and follow the required disposition process"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-RETURN-QUARANTINE": {
+          "content_version": 1,
+          "content_hash": "2bad02039e318bfdad11ef83ffc457b469c22e884447951b0c196151004fb756"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

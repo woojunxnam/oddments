@@ -1,0 +1,101 @@
+{
+  "question_id": "MA-Q-0177",
+  "family_id": "B2_DRUG_EPT_ANON_LABEL",
+  "area": 2,
+  "topic": "Expedited partner therapy",
+  "subtopic": "Anonymous doxycycline EPT",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A valid Massachusetts doxycycline prescription for a chlamydia partner uses 'EPT' in place of the partner's name and address. The pharmacist will dispense it. Which record setup is appropriate?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Create a separate profile and prescription label using the EPT designation in place of the partner name/address."
+    },
+    {
+      "id": "B",
+      "text": "Place the partner's doxycycline under the index patient's profile as an extra refill."
+    },
+    {
+      "id": "C",
+      "text": "Dispense the drug with no profile or label because the partner is unnamed."
+    },
+    {
+      "id": "D",
+      "text": "Invent a partner date of birth and legal name to make the software accept the prescription."
+    },
+    {
+      "id": "E",
+      "text": "Convert doxycycline to OTC status for this transaction."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "Anonymous doxycycline EPT still receives a pharmacy profile and label, using the EPT designation as permitted.",
+    "choice_analysis": {
+      "A": "That is the anonymous EPT workflow.",
+      "B": "The partner prescription is separate.",
+      "C": "The policy directs creation of both.",
+      "D": "The EPT designation is the permitted identifier.",
+      "E": "EPT does not change prescription status."
+    },
+    "related_facts": [
+      "The partner prescription remains separate from the index patient's prescription."
+    ],
+    "mpje_trap": "Using the index patient's record or skipping the pharmacy record entirely."
+  },
+  "rule_ids": [
+    "MA-EPT"
+  ],
+  "drug_ids": [
+    "doxycycline"
+  ],
+  "reasoning_steps": [
+    "Confirm valid anonymous chlamydia EPT",
+    "Apply the EPT profile/label convention"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-EPT": {
+          "content_version": 1,
+          "content_hash": "6a7a3abf9e199a989278f39947b6c514e9861ed824d471038fa4402c239485ca"
+        }
+      },
+      "drugs": {
+        "doxycycline": {
+          "content_version": 1,
+          "content_hash": "8409fe8b52b1791aa2ca826637e5e9bbf2c3c816fdd395626978f39b36bc8a37"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

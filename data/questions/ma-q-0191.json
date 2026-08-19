@@ -1,0 +1,104 @@
+{
+  "question_id": "MA-Q-0191",
+  "family_id": "B2_DRUG_TERMINAL_MORPHINE_PARTIAL",
+  "area": 3,
+  "topic": "Partial filling",
+  "subtopic": "Terminally ill opioid partial records",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A pharmacy repeatedly partially fills a morphine Schedule II prescription for a patient documented as terminally ill. Which statements are consistent with the federal special partial-fill pathway? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Document the patient's terminally ill status for use of the special pathway"
+    },
+    {
+      "id": "B",
+      "text": "Stop using this prescription for partial fills after the 60-day period from issue, unless it ended sooner"
+    },
+    {
+      "id": "C",
+      "text": "Treat the remaining morphine as an ordinary refill that may continue for six months"
+    },
+    {
+      "id": "D",
+      "text": "Use the 72-hour stock-shortage deadline as the only governing clock because morphine is Schedule II"
+    },
+    {
+      "id": "E",
+      "text": "Record the date and quantity supplied with each partial dispensing"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Terminally ill morphine partial filling uses the special federal C-II pathway with status documentation, per-dispensing records, and a 60-day endpoint.",
+    "choice_analysis": {
+      "A": "The special status is material to the record.",
+      "B": "The special framework has a 60-day endpoint.",
+      "C": "C-II remainders are not ordinary refills.",
+      "D": "The terminally ill pathway is a distinct rule.",
+      "E": "Each partial fill must be traceable."
+    },
+    "related_facts": [
+      "Discontinuation can end the prescription sooner."
+    ],
+    "mpje_trap": "Defaulting to the familiar 72-hour C-II remainder rule."
+  },
+  "rule_ids": [
+    "FED-CII-LTC-TERMINAL"
+  ],
+  "drug_ids": [
+    "morphine"
+  ],
+  "reasoning_steps": [
+    "Classify morphine as Schedule II",
+    "Identify terminally ill special status",
+    "Apply per-partial records and the 60-day limit"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-LTC-TERMINAL": {
+          "content_version": 1,
+          "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09"
+        }
+      },
+      "drugs": {
+        "morphine": {
+          "content_version": 1,
+          "content_hash": "f9ae33c7e6276cf2af15610bde5e364a84e025ee5fbae4387e0fecd918681c49"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

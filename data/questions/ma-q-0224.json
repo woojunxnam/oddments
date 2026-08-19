@@ -1,0 +1,94 @@
+{
+  "question_id": "MA-Q-0224",
+  "family_id": "T2_0224_MA_PIC_OPERATIONAL_DUTY",
+  "area": 1,
+  "topic": "Pharmacy management",
+  "subtopic": "Planned Manager of Record absence",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "The Manager of Record of a Massachusetts retail pharmacy plans a six-week medical leave. The dates are known in advance. Which steps are required for this planned absence under 247 CMR 9.23? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Appoint a Board-registered Interim Manager before the planned absence begins."
+    },
+    {
+      "id": "B",
+      "text": "Have the Manager of Record perform a controlled-substance inventory before leaving, signed by the Manager of Record and Interim Manager."
+    },
+    {
+      "id": "C",
+      "text": "Wait five days after the leave begins before deciding whether an Interim Manager is needed."
+    },
+    {
+      "id": "D",
+      "text": "Immediately file a permanent change-of-Manager application solely because the planned leave exceeds 30 days."
+    },
+    {
+      "id": "E",
+      "text": "Allow the pharmacy to operate without a designated interim manager as long as another pharmacist is on each shift."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "A planned six-week absence exceeds the 30-day threshold. For a planned qualifying absence, the pharmacy must appoint a Board-registered Interim Manager before the absence, and the Manager of Record must perform the required controlled-substance inventory signed with the Interim Manager. The five-day appointment rule is for qualifying unplanned absences, and the permanent change application threshold is 100 days.",
+    "choice_analysis": {
+      "A": "Correct: the interim appointment precedes a planned absence of 30 days or longer.",
+      "B": "Correct: the pre-absence controlled-substance inventory is signed by both managers.",
+      "C": "The five-day rule applies to a qualifying unplanned absence.",
+      "D": "A six-week leave does not by itself reach the 100-day change-of-Manager threshold.",
+      "E": "Shift pharmacist coverage does not replace the required Interim Manager designation."
+    },
+    "related_facts": [],
+    "mpje_trap": "The planned-versus-unplanned distinction changes the appointment timing."
+  },
+  "rule_ids": [
+    "MA-MOR-TEMP-ABSENCE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Classify the leave as planned and expected to exceed 30 days",
+    "Apply the pre-absence Interim Manager appointment rule",
+    "Apply the paired controlled-substance inventory requirement without importing unplanned-absence timing"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+    "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+    "date": "2026-08-19",
+    "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-MOR-TEMP-ABSENCE": {
+          "content_version": 1,
+          "content_hash": "999bd917cd91b8f2cf6323d09512488aa734824b1411655b88175664ed33fc55"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

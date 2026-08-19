@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0270",
+  "family_id": "B3B_0270_MA_PERMITTING_SCOPE_VIOLATION",
+  "area": 1,
+  "topic": "Licensure and discipline",
+  "subtopic": "Scope and impairment grounds",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist on duty knowingly lets a pharmacy technician perform final dispensing process validation during a staffing shortage. No patient is harmed and the prescriptions are all correct. What is the pharmacist's own exposure?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "No exposure, because no patient harm resulted from the temporary arrangement."
+    },
+    {
+      "id": "B",
+      "text": "No exposure, because the technician holds a current Board technician licence."
+    },
+    {
+      "id": "C",
+      "text": "Exposure only if the pharmacy failed to document the arrangement contemporaneously."
+    },
+    {
+      "id": "D",
+      "text": "Exposure only if the Board first takes disciplinary action against the technician."
+    },
+    {
+      "id": "E",
+      "text": "Exposure, because knowingly permitting activity beyond the authorized scope is a ground for discipline."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 10.03(1) makes it a ground for discipline to engage in conduct beyond the authorized scope of a pharmacist, intern or technician and, separately, knowingly to permit, aid or abet an unlicensed person to perform activities requiring a licence. Final dispensing process validation is closed to technicians under 247 CMR 8.02(6)(d), so the permitting pharmacist is exposed regardless of outcome.",
+    "choice_analysis": {
+      "A": "Absence of harm is not an element of the ground.",
+      "B": "A current technician licence does not extend the technician's scope.",
+      "C": "Documentation does not authorise an act outside scope.",
+      "D": "The pharmacist's ground is independent of any action against the technician.",
+      "E": "Correct: knowingly permitting conduct beyond authorized scope is itself a ground."
+    },
+    "related_facts": [
+      "Practising while impaired and continuing to practise after a lapsed registration are separate listed grounds."
+    ],
+    "mpje_trap": "A good outcome does not cure a scope violation, and the supervisor carries their own exposure."
+  },
+  "rule_ids": [
+    "MA-DISCIPLINE-SCOPE-AND-IMPAIRMENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify final dispensing process validation as outside technician scope",
+    "Locate the ground reaching conduct beyond authorized scope and permitting it",
+    "Apply the ground to the supervising pharmacist independently of outcome"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-DISCIPLINE-SCOPE-AND-IMPAIRMENT": {
+          "content_version": 1,
+          "content_hash": "d41d1ce8c40bd33610ab168e445358c332b4ba3dd73e176928c982f77249b90a"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

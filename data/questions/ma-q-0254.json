@@ -1,0 +1,100 @@
+{
+  "question_id": "MA-Q-0254",
+  "family_id": "B3A_0254_MA_REGISTRATION_LAPSE_LADDER",
+  "area": 1,
+  "topic": "Licensure",
+  "subtopic": "Personal registration renewal",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist stopped practising and let his personal registration lapse. It has now been lapsed for about 30 months. It was never suspended or revoked. He wants to return to practice. What does the regulation require?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Payment of back and late fees only."
+    },
+    {
+      "id": "B",
+      "text": "Completion of additional continuing education contact hours only."
+    },
+    {
+      "id": "C",
+      "text": "Taking and passing both NAPLEX and MPJE."
+    },
+    {
+      "id": "D",
+      "text": "Taking and passing the MPJE and meeting all other Board conditions."
+    },
+    {
+      "id": "E",
+      "text": "Application for licensure by reciprocity from another state."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 4.02(5) provides that an applicant who has failed to renew for more than two years, and whose registration has not been suspended or revoked, shall take and pass the MPJE and meet all other Board-determined conditions. The NAPLEX possibility in 247 CMR 4.02(7) belongs to the disciplinary ladder, not to a simple failure to renew.",
+    "choice_analysis": {
+      "A": "Fees alone address a short lapse, not one beyond two years.",
+      "B": "Additional contact hours are the tool for a lapse of more than 60 days, not beyond two years.",
+      "C": "NAPLEX may be added where a registration was revoked or suspended for more than two years, which is not this case.",
+      "D": "Correct: MPJE plus all other Board conditions.",
+      "E": "Reciprocity is not the route back from a lapsed Massachusetts registration."
+    },
+    "related_facts": [
+      "Personal registrations expire on December 31st of each even-numbered year."
+    ],
+    "mpje_trap": "The failure-to-renew ladder and the post-discipline ladder look alike but carry different consequences."
+  },
+  "rule_ids": [
+    "MA-PHARMACIST-REGISTRATION-RENEWAL",
+    "MA-REGISTRATION-DISCIPLINE-REINSTATEMENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Establish that the lapse was a failure to renew rather than discipline",
+    "Place the 30-month lapse beyond the two-year threshold",
+    "Apply the MPJE requirement without importing the disciplinary NAPLEX condition"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMACIST-REGISTRATION-RENEWAL": {
+          "content_version": 1,
+          "content_hash": "9fab2c794a99de66beb3f5b66160f47275c230cd726e1b07092468e19a1e29ab"
+        },
+        "MA-REGISTRATION-DISCIPLINE-REINSTATEMENT": {
+          "content_version": 1,
+          "content_hash": "b7eba6f20f3718411e840182be640c05cc92bc3e06616924eda2331cee9f3bfd"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

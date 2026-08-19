@@ -8,46 +8,45 @@
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "An adult receiving an outpatient opiate for acute pain for the first time presents an eight-day OxyContin prescription with no exception documentation. What is the key issue?",
+  "stem": "A Massachusetts practitioner issues an adult patient's first outpatient oxycodone prescription for a 10-day supply after an acute fracture. The practitioner documents in the medical record that more than seven days are required for the acute condition and that a non-opiate alternative is not appropriate. What is the most accurate conclusion about the seven-day statute?",
   "choices": [
     {
       "id": "A",
-      "text": "The initial outpatient opiate supply is limited to seven days absent a documented statutory exception."
+      "text": "The prescription must still be limited to seven days because no exception can apply to an adult's first outpatient opiate prescription."
     },
     {
       "id": "B",
-      "text": "Dispense eight days because extended-release products are exempt."
+      "text": "The documented statutory exception can permit the quantity needed for the acute condition; the seven-day ceiling is not absolute on these facts."
     },
     {
       "id": "C",
-      "text": "Use the ordinary 30-day Schedule II opioid quantity limit without further inquiry."
+      "text": "The exception applies only if the patient is a minor."
     },
     {
       "id": "D",
-      "text": "Use the 90-day non-opioid Schedule II pathway."
+      "text": "The exception applies automatically to every Schedule II prescription without documentation."
     },
     {
       "id": "E",
-      "text": "Split the prescription into seven days now and one day as a refill."
+      "text": "A pharmacist may create the missing medical-record documentation after dispensing if the prescriber did not do so."
     }
   ],
   "correct_choice_ids": [
-    "A"
+    "B"
   ],
   "explanation": {
-    "core_reasoning": "The initial outpatient opiate supply is limited to seven days absent a documented statutory exception. By contrast, 'Dispense eight days because extended-release products are exempt.' uses a legal trigger absent from the stem.",
+    "core_reasoning": "Section 19D generally limits an adult's first outpatient opiate prescription to seven days, but subsection (b) permits a greater quantity when the practitioner determines it is required for a qualifying acute condition or other listed purpose and documents both the triggering condition and that a non-opiate alternative was not appropriate.",
     "choice_analysis": {
-      "A": "The stated facts support this result: The initial outpatient opiate supply is limited to seven days absent a documented statutory exception.",
-      "B": "This near-miss uses a different trigger: Dispense eight days because extended-release products are exempt.",
-      "C": "This near-miss uses a different trigger: Use the ordinary 30-day Schedule II opioid quantity limit without further inquiry.",
-      "D": "This near-miss uses a different trigger: Use the 90-day non-opioid Schedule II pathway.",
-      "E": "This near-miss uses a different trigger: Split the prescription into seven days now and one day as a refill."
+      "A": "Incorrect. The statute contains a documented exception.",
+      "B": "Correct. The facts state the findings and documentation that activate the statutory exception.",
+      "C": "Incorrect. The exception can apply to adults or minors when its conditions are met.",
+      "D": "Incorrect. Schedule II status alone does not activate the exception; the statutory clinical findings and documentation matter.",
+      "E": "Incorrect. The statute assigns the clinical judgment and medical-record documentation to the practitioner."
     },
     "related_facts": [
-      "oxycodone (OxyContin) is used for severe and persistent pain requiring extended opioid treatment; it is federal Schedule II and Massachusetts Schedule II.",
-      "An initial outpatient opiate prescription for an adult and any opiate prescription for a minor is generally limited to seven days, subject to documented statutory exceptions; opioid-dependence treatment is excluded."
+      "The exception can also address chronic pain management, cancer-related pain, and palliative care when the statutory conditions are met."
     ],
-    "mpje_trap": "Reject 'Dispense eight days because extended-release products are exempt.' because its legal trigger is absent."
+    "mpje_trap": "The seven-day number is a general rule, not an absolute ceiling when the statute's documented exception is satisfied."
   },
   "rule_ids": [
     "MA-OPIOID-SEVEN-DAY",
@@ -57,15 +56,52 @@
     "oxycodone"
   ],
   "reasoning_steps": [
-    "Classify oxycodone under the federal and Massachusetts schedules before selecting a legal pathway",
-    "Match the scenario's operative facts to Massachusetts initial opioid seven-day limit"
+    "Identify an adult's first outpatient opiate prescription",
+    "Check whether a statutory exception applies",
+    "Verify the required practitioner documentation before treating the seven-day ceiling as displaced"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
-  "last_legal_review": "2026-08-13",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-SEVEN-DAY": {
+          "content_version": 1,
+          "content_hash": "acce06fea2d6e3a8cb7b9bbb2a6ca9ede1ffa023d4a42585a3424341432264cb"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

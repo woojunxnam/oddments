@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0229",
+  "family_id": "B3A_0229_MA_PRECEPTOR_INTERN_CAP",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Preceptor supervision limit",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist preceptor is already directly supervising two pharmacy interns on the same shift. The pharmacy manager asks the preceptor to take on a third intern for that shift, noting that the pharmacy is well under its overall support-personnel ratio. How should the preceptor respond?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Accept, because the overall support-personnel ratio is the only applicable limit."
+    },
+    {
+      "id": "B",
+      "text": "Accept, provided the third intern has already completed 1000 internship hours."
+    },
+    {
+      "id": "C",
+      "text": "Accept, provided the third intern works only on non-dispensing tasks."
+    },
+    {
+      "id": "D",
+      "text": "Decline, because a preceptor may supervise interns only in a teaching hospital."
+    },
+    {
+      "id": "E",
+      "text": "Decline, because a preceptor may not directly supervise more than two interns at one time."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.01(16) caps a registered pharmacist preceptor at directly supervising no more than two pharmacy interns at one time. That cap sits alongside, and independently of, the overall supervisory ratio in 247 CMR 8.06(3), so headroom in the overall ratio does not create headroom for a third intern.",
+    "choice_analysis": {
+      "A": "The overall ratio is a separate limit and does not displace the two-intern preceptor cap.",
+      "B": "Accrued internship hours do not change how many interns one preceptor may supervise.",
+      "C": "The cap is on direct supervision itself, not on the tasks assigned.",
+      "D": "Preceptorship is not restricted to teaching hospitals.",
+      "E": "Correct: the preceptor cap is two interns supervised directly at one time."
+    },
+    "related_facts": [
+      "A pharmacy intern must work under the direct supervision of a registered pharmacist preceptor."
+    ],
+    "mpje_trap": "Room in the overall support-personnel ratio is not room for a third intern under one preceptor."
+  },
+  "rule_ids": [
+    "MA-PRECEPTOR-INTERN-RATIO"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate the preceptor-side intern cap from the overall support-personnel ratio",
+    "Count the interns already under this preceptor's direct supervision",
+    "Apply the two-intern limit to the proposed third assignment"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PRECEPTOR-INTERN-RATIO": {
+          "content_version": 1,
+          "content_hash": "4524c1400fa6fb669637ef615214add8ee9f70ee806b74c1c813cc3f9c60b26a"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,100 @@
+{
+  "question_id": "MA-Q-0268",
+  "family_id": "B3B_0268_MA_PROTECTED_ACTIVITY_DISCIPLINE",
+  "area": 1,
+  "topic": "Licensure and discipline",
+  "subtopic": "Protected activity discipline bar",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "Another jurisdiction sanctioned a Massachusetts pharmacist solely for dispensing medication for reproductive health care services. The services would have been lawful in Massachusetts and are consistent with good professional practice here. The Board is considering discipline on the out-of-state ground. What is the correct outcome?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Discipline may proceed, because out-of-state sanctions are a listed disciplinary ground."
+    },
+    {
+      "id": "B",
+      "text": "Discipline may proceed if the Board first convenes an investigative conference."
+    },
+    {
+      "id": "C",
+      "text": "Discipline may proceed but must be limited to an advisory letter in the file."
+    },
+    {
+      "id": "D",
+      "text": "Discipline is deferred until the other jurisdiction resolves any pending appeal."
+    },
+    {
+      "id": "E",
+      "text": "Discipline may not be imposed, because the protected activity carve-out overrides the listed grounds."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 10.03(3) applies notwithstanding the grounds for discipline in 247 CMR 10.03, so it overrides the out-of-state ground rather than sitting beside it. No licensee shall be subject to discipline for dispensing medication for reproductive health care services, or for any sanction arising from such services, so long as the services would have been lawful in Massachusetts and are consistent with good professional practice here. Both qualifiers are met.",
+    "choice_analysis": {
+      "A": "The carve-out is expressed as operating notwithstanding those grounds.",
+      "B": "Procedure does not unlock a ground the carve-out removes.",
+      "C": "An advisory letter would still treat the protected activity as a basis for Board action.",
+      "D": "Deferral would keep the protected conduct alive as a basis.",
+      "E": "Correct: the carve-out overrides, and both qualifiers are satisfied."
+    },
+    "related_facts": [
+      "Parallel protections appear at 247 CMR 3.05 for licensure and 247 CMR 8.08 for support personnel."
+    ],
+    "mpje_trap": "The carve-out is written to override the grounds list, so pointing at a listed ground does not defeat it."
+  },
+  "rule_ids": [
+    "MA-DISCIPLINE-PROTECTED-ACTIVITY",
+    "MA-DISCIPLINE-OUT-OF-STATE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the sanction as arising solely from protected health care services",
+    "Test the lawful-in-Massachusetts and good-practice qualifiers",
+    "Apply the carve-out as overriding the listed out-of-state ground"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-DISCIPLINE-PROTECTED-ACTIVITY": {
+          "content_version": 1,
+          "content_hash": "f82c88c0a637d15810404cf7392f421a54a403d3e270032d7c59f2cd05cddf08"
+        },
+        "MA-DISCIPLINE-OUT-OF-STATE": {
+          "content_version": 1,
+          "content_hash": "6098cbb998f52f946c810707c658ca362b27b743a25b2a7659b4ee4a575741b4"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}
