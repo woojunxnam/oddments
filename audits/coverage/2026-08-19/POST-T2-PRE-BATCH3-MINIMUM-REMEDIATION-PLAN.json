@@ -1,0 +1,85 @@
+{
+  "plan_type": "POST_T2_PRE_BATCH3_MINIMUM_REMEDIATION_PLAN",
+  "gate": "PRE_BATCH3_FULL_COMPETENCY_COVERAGE_DEBT_POST_T2",
+  "gate_issue": 40,
+  "controller_issue": 83,
+  "verdict_being_remediated": "FAIL",
+  "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+  "frozen_source_branch": "remediation/pre-batch3-legacy-salvage-t1",
+  "already_satisfied_do_not_reopen": {
+    "atomic_competency_coverage": "46/46 direct release-usable",
+    "blueprint_faithful_120_question_mock_without_reuse": true,
+    "taxonomy_mismatches": 0,
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS"
+  },
+  "measured_deficits": [
+    {
+      "deficit_id": "DIVERSITY-4.3",
+      "headline_competency": "4.3",
+      "label": "Delivery of drugs",
+      "nabp_area": 4,
+      "rule": "headline scenario diversity default minimum is two distinct families",
+      "current_family_count": 1,
+      "current_families": [
+        "T2_0215_MA_DRUG_DELIVERY"
+      ],
+      "current_release_usable_evidence": [
+        "MA-Q-0215"
+      ],
+      "required_new_questions": 1,
+      "required_new_distinct_family": true,
+      "legacy_salvage_available": false,
+      "legacy_salvage_scan": "No unreleased canonical question has delivery of drugs as its adjudicated subject. MA-Q-0023 mentions delivery only peripherally inside an emergency Schedule II scenario and does not qualify as direct evidence.",
+      "authoring_direction": "One additional Area 4 item in a new family testing a distinct delivery decision path from MA-Q-0215's packaging/transport integrity duty, for example carrier or courier responsibility allocation, delivery to an alternate authorized recipient, or handling of a failed or refused delivery. Do not restate the temperature/stability duty already tested."
+    },
+    {
+      "deficit_id": "DIVERSITY-4.6",
+      "headline_competency": "4.6",
+      "label": "Centralized prescription processing / central fill",
+      "nabp_area": 4,
+      "rule": "headline scenario diversity default minimum is two distinct families",
+      "current_family_count": 1,
+      "current_families": [
+        "T2_0220_MA_CENTRAL_FILL"
+      ],
+      "current_release_usable_evidence": [
+        "MA-Q-0220"
+      ],
+      "required_new_questions": 1,
+      "required_new_distinct_family": true,
+      "legacy_salvage_available": false,
+      "legacy_salvage_scan": "No unreleased canonical question mentions central fill, centralized processing, shared pharmacy services or outsourcing at all.",
+      "authoring_direction": "One additional Area 4 item in a new family testing a distinct shared-pharmacy-services decision path from MA-Q-0220's written-agreement allocation requirement, for example recordkeeping or label attribution between participating pharmacies, or which pharmacy carries a specific patient-care duty in a central-fill workflow."
+    }
+  ],
+  "minimum_scope": {
+    "new_questions": 2,
+    "new_question_ids": [
+      "MA-Q-0227",
+      "MA-Q-0228"
+    ],
+    "new_families": 2,
+    "areas_touched": [
+      4
+    ],
+    "capacity_effect": "Area 4 release-usable rises from 40 to 42; Areas 1-3 are unchanged.",
+    "explicitly_out_of_scope": [
+      "any change to the 46 atomic competency definitions",
+      "any change to already-passing atomic evidence",
+      "any change to MA-Q-0028 quarantine",
+      "any re-audit of the accepted T1 or T2 evidence",
+      "Batch 3 authoring"
+    ]
+  },
+  "required_process": [
+    "Author both items on a dedicated remediation branch with full-bank duplicate and pattern preflight.",
+    "Freeze exact question hashes and dependency snapshots.",
+    "Obtain a fresh independent auditor with no author context: blind solve and immutable lock before canonical key access, then current official-source LEGAL verification and FULL canonical-bank REALISM review across all ten criteria.",
+    "Accept only current-hash KEEP/YES and KEEP/PASS for release.",
+    "Perform guarded release using the same fail-closed pattern as T1 and T2.",
+    "Rerun scripts/prebatch3_final_coverage_gate.py from the resulting exact SHA. Only PASS unlocks Batch 3."
+  ],
+  "note_on_exception_route": "Issue #40 allows a written adjudication to justify a narrow family-diversity exception. This controller does not claim one. Repository precedent has consistently closed diversity debt by authoring an additional distinct family (headline 3.2 in T1, headlines 2.4 and 4.4 in T2) rather than by granting an exception, and the controller that would benefit from the exception should not be the party writing it."
+}
