@@ -1,0 +1,70 @@
+{
+  "attestation_type": "GOVERNANCE_PRECERTIFIED_PHASE0",
+  "date": "2026-08-19",
+  "tranche": "BATCH3-B3A-R1",
+  "audit_scope": "REAUDIT",
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "candidate_branch": "repair/batch3-b3a-realism-r1",
+  "candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+  "freeze_branch": "freeze/batch3-b3a-r1-v1",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B3A-R1",
+  "question_ids": [
+    "MA-Q-0241",
+    "MA-Q-0256"
+  ],
+  "question_hashes": {
+    "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+    "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-CE-ANNUAL-STRUCTURE": {
+        "content_version": 1,
+        "content_hash": "aedbbdb378c1b42730a955ee455b9806e2a2d10b9270e94a7c155fdf2902e279"
+      },
+      "MA-CII-SUPPORT-HANDLING": {
+        "content_version": 1,
+        "content_hash": "b7ef537adc43c788ea46fa4089cd390b0ff4ccc8ff67b27899a6a49a88a6e174"
+      }
+    },
+    "drugs": {},
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "package_sha256": {
+    "audits/remediation/2026-08-19/B3A-R1-BLIND-QUESTIONS.json": "196b064e954d6e4bf9681714d4e84df435e689cb81bd986c228473e0fd850993",
+    "audits/remediation/2026-08-19/B3A-R1-LEGAL-CONTRACT.json": "2663c592e0931c1e7b902429b2d38b4cca73faa2aa6fd29b4202772f01356298",
+    "audits/remediation/2026-08-19/B3A-R1-REALISM-CONTRACT.json": "e10dfc6c5fc2660d81b258b69c797a0144d1156f47868c3b0b2167bade8f8762",
+    "audits/remediation/2026-08-19/B3A-R1-CLEAN-FREEZE-MANIFEST.json": "78a4dac9cd2aa5976168a81dea03bb7ece13441c0283c2e34805b1346d653cbe",
+    "audits/remediation/2026-08-19/B3A-R1-POSTLOCK-DEPENDENCIES.json": "259a47c0424aaf7a18145637051e54ba9cb4e188faefaef175f5d727e5d473f3"
+  },
+  "package_git_note": "sha256 values are LF-normalized and equal `git show <sha>:<path> | sha256sum`",
+  "quality_gates": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "max_keyed_option_similarity_vs_294_universe": {
+      "MA-Q-0241": 0.563,
+      "MA-Q-0256": 0.56
+    },
+    "similarity_vs_named_prior_comparator": {
+      "MA-Q-0241_vs_MA-Q-0076": 0.435,
+      "MA-Q-0256_vs_MA-Q-0079": 0.396
+    }
+  },
+  "auditor_phase0_required": false,
+  "auditor_start_phase": "PHASE_1_BLIND_SOLVE",
+  "independence_statement": "BATCH3-B3A-R1 was authored by the Claude Code controller session running Issue #83. That session must not audit it. The audit requires a separate session whose pre-lock inputs are the sanitized blind package and current official sources only, recorded under a distinct auditor_instance.",
+  "safe_content_statement": "This attestation contains hashes, blob identifiers and dependency metadata only. It contains no canonical keyed answer, explanation or author reasoning."
+}
