@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_F_FINAL_GATE",
+  "current_phase": "PHASE_F_FINAL_GATE_FAILED_BATCH3_BLOCKED",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -261,6 +261,48 @@
         "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-COVERAGE-DEBT.md"
       ],
       "consequence": "Batch 3 is NOT unlocked. Phase G is not started. A narrowly scoped remediation issue is created instead."
+    },
+    {
+      "phase": "PHASE_G_BATCH3",
+      "title": "Batch 3 program",
+      "status": "NOT_STARTED_GATE_FAILED",
+      "reason": "Issue #83 Phase F requires the final Pre-Batch3 gate to PASS before Batch 3 unlocks. The gate measured FAIL at 860ec67308772ac63073ed62a7ebdcc565921183.",
+      "batch3": "BLOCKED",
+      "remediation_issue": {
+        "number": 86,
+        "url": "https://github.com/woojunxnam/oddments/issues/86",
+        "title": "Pre-Batch3 remediation T3: close headline family-diversity debt for 4.3 and 4.6",
+        "scope": "2 new Area 4 questions (MA-Q-0227, MA-Q-0228) in 2 new families; nothing else",
+        "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183"
+      },
+      "gate_evidence_pr": {
+        "number": 85,
+        "url": "https://github.com/woojunxnam/oddments/pull/85",
+        "branch": "analysis/pre-batch3-coverage-post-t2-v1",
+        "merge_intent": "none - evidence branch only"
+      },
+      "no_batch3_plan_artifact_created": true,
+      "no_batch3_questions_authored": true
     }
-  ]
+  ],
+  "final_state": {
+    "t2_release": "COMPLETE",
+    "canonical_lineage": "PROPAGATED",
+    "final_post_t2_canonical_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+    "pre_batch3_gate": "FAIL",
+    "batch3": "BLOCKED",
+    "remediation_issue_url": "https://github.com/woojunxnam/oddments/issues/86",
+    "pull_requests": {
+      "84": "MERGED - guarded T2 release",
+      "73": "MERGED - T2 repair lineage",
+      "69": "MERGED - T2 remediation into Pre-Batch3 canonical lineage",
+      "85": "OPEN DRAFT - gate evidence only, not a merge target"
+    },
+    "quarantine_intact": {
+      "MA-Q-0028": "non-released, non-preview"
+    },
+    "validators_weakened": false,
+    "failed_audit_history_deleted": false,
+    "historical_q0213_failure_visible": true
+  }
 }
