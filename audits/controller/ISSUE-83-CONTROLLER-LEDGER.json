@@ -1,0 +1,112 @@
+{
+  "ledger_type": "CLAUDE_CODE_CONTROLLER_LEDGER",
+  "controller_issue": 83,
+  "controller": "Claude Code (mechanical/governance controller, not an auditor)",
+  "independence_wall": "This controller performs mechanical and governance work only. It does not act as, or impersonate, a fresh independent auditor for any substantive content it authored or repaired. Existing accepted T2 audits were represented, never re-judged.",
+  "start_boundary": {
+    "branch": "repair/pre-batch3-coverage-t2-r1",
+    "required_head": "bfc1be694053f84bf688126246131f16df1374d1",
+    "verified": true,
+    "verified_at_phase": "PHASE_0_START_BOUNDARY"
+  },
+  "current_phase": "PHASE_B_AUDITOR_B_REGISTRATION",
+  "phases": [
+    {
+      "phase": "PHASE_0_START_BOUNDARY",
+      "title": "Start-boundary verification",
+      "status": "PASS",
+      "verified_start_branch": "repair/pre-batch3-coverage-t2-r1",
+      "verified_start_head": "bfc1be694053f84bf688126246131f16df1374d1",
+      "ls_remote_confirmed": true,
+      "release_branch_created": "release/pre-batch3-t2-guarded-admission-v1",
+      "baseline_qa_at_start_head": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pre_existing_warnings": [
+          "MA-Q-0190: correct option is materially longer than distractors",
+          "answer-position distribution exceeded warning threshold"
+        ],
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS"
+      },
+      "immutable_evidence_verified": {
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-PHASE1-LOCK.json": {
+          "git_blob_sha": "38e0da2165d42add508b65eed995f40447aa9b8f",
+          "sha256": "16071c19e5089ad08366f45a12c87fceea273ee327880437dfafe8448e3f715c",
+          "match": true
+        },
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-LEGAL-VERIFICATION.json": {
+          "git_blob_sha": "cc152b7b34f8f0dd5d2393700c855b4e9c44219c",
+          "match": true
+        },
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-FULL-BANK-REALISM-REVIEW.json": {
+          "git_blob_sha": "625a3944a47bfb38492be8d3a5b9342868c817ad",
+          "match": true
+        },
+        "audits/remediation/2026-08-19/AUDIT-GPT-FRESH-COV-T2-B-Q0213-CANONICAL-LEGAL-NORMALIZATION.json": {
+          "git_blob_sha": "88f671ddb3b10d8d2b12d1f67aae716dc4bf0312",
+          "match": true
+        },
+        "audits/remediation/2026-08-19/AUDIT-GPT-FRESH-COV-T2-B-Q0213-CANONICAL-REALISM-NORMALIZATION.json": {
+          "git_blob_sha": "f0fb52cad741548f797a939210ef8e56075da544",
+          "match": true
+        }
+      },
+      "canonical_lineage_measured": {
+        "main": "67626815564062bd7f7bfec5b3667ba0deb03454",
+        "remediation/pre-batch3-legacy-salvage-t1": "516771a93f939c843ba4c2be7ef745718606f448",
+        "remediation/pre-batch3-coverage-t2-author": "b849159ef18d37618ca6badf886e465502436e1b",
+        "repair/pre-batch3-coverage-t2-r1": "bfc1be694053f84bf688126246131f16df1374d1",
+        "shape": "strictly linear: main < legacy-salvage-t1 < coverage-t2-author < coverage-t2-r1"
+      }
+    },
+    {
+      "phase": "PHASE_A_AUDITOR_A_NORMALIZATION",
+      "title": "Deterministic Auditor-A canonical normalization",
+      "status": "PASS",
+      "script": "scripts/normalize_t2a_canonical_audits.py",
+      "transformer_is_auditor": false,
+      "supersedes_issue_82_implementation_mechanics": true,
+      "records_written": [
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18.json",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18.json",
+        "audits/remediation/2026-08-19/T2-AUDITOR-A-CANONICAL-TRANSFORM-PROVENANCE.json"
+      ],
+      "audit_scope": "TARGETED_INITIAL_BATCH",
+      "governance_authorization": {
+        "tranche_id": "PRE-BATCH3-COVERAGE-T2",
+        "authorizing_issue": 68,
+        "represented_candidate_sha": "b849159ef18d37618ca6badf886e465502436e1b",
+        "question_count": 16
+      },
+      "legal_results": "16/16 KEEP, 16/16 Existing_Answer_Correct=YES, Severity NONE -> Low",
+      "realism_results": "15/16 KEEP/Low/PASS; MA-Q-0213 MAJOR_REWRITE/High/FAIL (distinct_from_bank=false) at original pre-repair hash 993eee2f3d84d3532d757924fa22421c93a7cf16d69b26d40d5f660ca3624548",
+      "historical_q0213_failure_preserved": true,
+      "authority_source_type_distribution": {
+        "MA_STATUTE": 7,
+        "MA_PROMULGATED_REGULATION": 2,
+        "MA_BOARD_POLICY": 1,
+        "OTHER_OFFICIAL": 4
+      },
+      "is_valid_targeted_initial_audit": true,
+      "validate_audits": "PASS (0 errors)"
+    },
+    {
+      "phase": "PHASE_B_AUDITOR_B_REGISTRATION",
+      "title": "Auditor-B current-Q0213 canonical registration",
+      "status": "PASS",
+      "script": "scripts/register_t2b_canonical_audits.py",
+      "records_written": [
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-LEGAL-REAUDIT-2026-08-19.json",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19.json",
+        "audits/remediation/2026-08-19/T2-AUDITOR-B-CANONICAL-REGISTRATION-PROVENANCE.json"
+      ],
+      "byte_identity_proof": {
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-LEGAL-REAUDIT-2026-08-19.json": "git blob 88f671ddb3b10d8d2b12d1f67aae716dc4bf0312 (identical to PR #80 accepted record)",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19.json": "git blob f0fb52cad741548f797a939210ef8e56075da544 (identical to PR #80 accepted record)"
+      },
+      "required_current_q0213_hash": "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23",
+      "semantic_fields_modified": false,
+      "validate_audits": "PASS (0 errors)"
+    }
+  ]
+}
