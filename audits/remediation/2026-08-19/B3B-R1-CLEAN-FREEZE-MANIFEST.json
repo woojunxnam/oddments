@@ -1,0 +1,72 @@
+{
+  "manifest_type": "BATCH3-B3B-R1_CLEAN_FREEZE",
+  "created_date": "2026-08-19",
+  "tranche": "BATCH3-B3B-R1",
+  "audit_scope": "REAUDIT",
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "source_branch": "release/batch3-b3b-guarded-admission-v1",
+  "source_sha": "ab85741427c4bd02883bb1fe4fc6a097bd09e6d1",
+  "represented_candidate_branch": "repair/batch3-b3b-realism-r1",
+  "represented_candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+  "freeze_branch": "freeze/batch3-b3b-r1-v1",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B3B-R1",
+  "author_is_not_auditor": true,
+  "question_count": 1,
+  "question_ids": [
+    "MA-Q-0288"
+  ],
+  "question_hashes": {
+    "MA-Q-0288": "2a8d9db0e5874556e8465bbda8b96e6252c989672165fd3b9d4d181339baa6cb"
+  },
+  "question_file_blobs": {
+    "MA-Q-0288": "ceb5e1e62f2dbf01c13b9e99e4ca3dcdd5b931f9"
+  },
+  "new_rule_file_blobs": {
+    "MA-PMP-REGISTRATION-DUTY": "10d97f685ab292b0e82ba329c4236105f4d70594",
+    "MA-PRESCRIPTION-VALIDITY-DETERMINATION": "5eae8a6c2d1a4d2b6906e7163964b7dc43842d62"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-PMP-REGISTRATION-DUTY": {
+        "content_version": 1,
+        "content_hash": "e856fd2a68c939ee3c359eaf0bf8e7c6fb1f77847f7ec55363e94c391e0614f7"
+      },
+      "MA-PRESCRIPTION-VALIDITY-DETERMINATION": {
+        "content_version": 1,
+        "content_hash": "c8286ff2e98e3126820fb7a487f4adb265d6ca841c6fbc97244b72affbfca104"
+      }
+    },
+    "drugs": {},
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "quality_gates_at_freeze": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "answer_distribution": "PASS",
+    "pipeline_universe_compared": 296,
+    "max_stem_similarity_vs_universe": {
+      "sequence": 0.213,
+      "jaccard": 0.224
+    },
+    "max_keyed_option_similarity_vs_universe": 0.841,
+    "max_keyed_option_similarity_note": "MA-Q-0158, a federal 21 CFR multiple-prescription item. The overlap is the statutory formula 'legitimate medical purpose ... usual course of professional practice'; stem similarity to that item is 0.019 and the decision paths are unrelated.",
+    "similarity_vs_own_prior_version": {
+      "stem_sequence": 0.122,
+      "keyed_count": "4 -> 3",
+      "distractor_count": "1 -> 2"
+    }
+  }
+}
