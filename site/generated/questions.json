@@ -3,7 +3,7 @@
     "canonical_source": "data/",
     "development_fixture_mode": true,
     "release_status": "DEVELOPMENT_ONLY",
-    "question_count": 210,
+    "question_count": 226,
     "blueprint": {
       "id": "MPJE-MA-PRE2027-BLUEPRINT",
       "content_version": 1,
@@ -44090,6 +44090,2147 @@
             "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c",
             "content_version": 1,
             "profile_id": "MPJE-MA-PRE2027"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0211",
+      "family_id": "T2_0211_MA_PERSONNEL_DISCIPLINE_PROCESS",
+      "area": 1,
+      "topic": "Licensure and discipline",
+      "subtopic": "Personnel disciplinary classifications",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacist receives an advisory letter from the Board after a complaint review. A credentialing form later asks whether that Board outcome was formal disciplinary action. Based on the classification of the Board action itself, which response is most accurate?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Yes. Any written Board communication resolving a complaint is formal discipline."
+        },
+        {
+          "id": "B",
+          "text": "No. An advisory letter may be retained in Board files but is not itself formal disciplinary action."
+        },
+        {
+          "id": "C",
+          "text": "Yes. An advisory letter is the same disciplinary category as probation."
+        },
+        {
+          "id": "D",
+          "text": "No. The letter has no regulatory significance and may be treated as though it never existed."
+        },
+        {
+          "id": "E",
+          "text": "Yes. The letter automatically suspends the pharmacist's registration until the next renewal."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "247 CMR 10.06 distinguishes an advisory letter from formal disciplinary sanctions. The pharmacist should characterize the Board outcome accurately: an advisory letter can remain in Board records, but the letter itself is not formal disciplinary action.",
+        "choice_analysis": {
+          "A": "Formal discipline is a defined category; an advisory letter is not automatically converted into discipline by being written.",
+          "B": "Correct: the regulation distinguishes advisory letters from formal disciplinary action.",
+          "C": "Probation is a formal disciplinary sanction; an advisory letter is not the same category.",
+          "D": "The letter can remain in Board records even though it is not formal discipline.",
+          "E": "An advisory letter does not itself impose automatic suspension."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not equate every Board communication with formal discipline."
+      },
+      "rule_ids": [
+        "MA-DISCIPLINARY-PROCESS"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify the specific Board disposition rather than assuming every complaint outcome is discipline",
+        "Distinguish an advisory letter from reprimand, probation, suspension, or revocation",
+        "Answer the credentialing question based on the legal classification of the Board action"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINARY-PROCESS": {
+              "content_version": 1,
+              "content_hash": "d01a21395bdc4328e7641ed3a6cd0e99e735bf70bdc0b2ba384c3802da42a844"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-DISCIPLINARY-PROCESS",
+          "name": "Massachusetts disciplinary proceedings",
+          "section": "247 CMR 10.00",
+          "url": "https://www.mass.gov/regulations/247-CMR-1000-disciplinary-proceedings",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Closest bank material concerns other disciplinary mechanisms, especially MA-Q-0223. This item uniquely tests classification of an advisory letter as non-disciplinary and is not a duplicate of emergency facility action. Closest canonical-bank comparison question IDs: MA-Q-0223.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0212",
+      "family_id": "T2_0212_MA_IMPAIRMENT_MONITORING",
+      "area": 1,
+      "topic": "Professional responsibility",
+      "subtopic": "Impairment recovery and monitoring",
+      "difficulty": 5,
+      "question_type": "SATA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacist recognizes that a substance-use condition may affect safe practice and asks about the current state recovery-and-monitoring pathway. Which statements accurately describe URAMP? Select all that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It is a confidential, voluntary recovery and monitoring program available to BHPL-licensed health professionals."
+        },
+        {
+          "id": "B",
+          "text": "The former pharmacy PSUD program transitioned into URAMP when URAMP launched."
+        },
+        {
+          "id": "C",
+          "text": "Admission guarantees that the Board must dismiss every pending complaint involving the participant."
+        },
+        {
+          "id": "D",
+          "text": "A licensing board may refer a licensee to URAMP, and admission can involve an individualized rehabilitation plan."
+        },
+        {
+          "id": "E",
+          "text": "URAMP is available only after the Board has imposed a formal suspension."
+        }
+      ],
+      "correct_choice_ids": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": {
+        "core_reasoning": "URAMP is the current confidential, voluntary BHPL recovery-and-monitoring program; pharmacy's former PSUD program transitioned to it. A licensee may seek support or be referred by a board, and admission involves the program's rehabilitation framework. A board may dismiss a related matter after admission, but dismissal is discretionary rather than guaranteed.",
+        "choice_analysis": {
+          "A": "Correct: URAMP is described by Massachusetts as confidential and voluntary.",
+          "B": "Correct: PSUD transitioned to URAMP in December 2024.",
+          "C": "The Board may dismiss a related pending matter; dismissal is not mandatory in every case.",
+          "D": "Correct: board referral and an individualized rehabilitation plan are part of the framework.",
+          "E": "Formal suspension is not a prerequisite to seek or be referred to URAMP."
+        },
+        "related_facts": [],
+        "mpje_trap": "Words such as 'guarantees' or 'only after suspension' overstate the program."
+      },
+      "rule_ids": [
+        "MA-URAMP"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify URAMP as the current program rather than the former pharmacy-specific PSUD program",
+        "Separate voluntary monitoring and referral from formal discipline",
+        "Distinguish a Board's discretionary authority to dismiss a related matter from a mandatory guarantee"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-URAMP": {
+              "content_version": 1,
+              "content_hash": "ee8f711caaccb65262fea4ae84b8d95065b42689bf6a73f55428f2711eb8f8f5"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-URAMP",
+          "name": "Unified Recovery and Monitoring Program",
+          "section": "Program overview",
+          "url": "https://www.mass.gov/orgs/unified-recovery-and-monitoring-program",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-URAMP",
+          "name": "URAMP Frequently Asked Questions",
+          "section": "Alternative to disciplinary action",
+          "url": "https://www.mass.gov/info-details/uramp-frequently-asked-questions",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "No prior bank item tests the URAMP transition/voluntary monitoring pathway. Nearby discipline questions concern different legal mechanisms and reasoning. Closest canonical-bank comparison question IDs: MA-Q-0211, MA-Q-0223.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0213",
+      "family_id": "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER",
+      "area": 2,
+      "topic": "Patient care",
+      "subtopic": "Remote-delivery counseling offer",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy is preparing a new prescription for delivery to a patient's home. To satisfy the counseling-offer requirement for off-site delivery, the pharmacy provides access to its toll-free service that connects the patient with a pharmacist. Before the prescription is sent, which additional step is required under Massachusetts law?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Print the toll-free service number on a label affixed to each prescription drug container."
+        },
+        {
+          "id": "B",
+          "text": "Place the number only on the outer shipping package, as long as it remains visible until opening."
+        },
+        {
+          "id": "C",
+          "text": "Include the number only on the delivery receipt that the patient signs."
+        },
+        {
+          "id": "D",
+          "text": "Send the number in an electronic message after the package has been delivered."
+        },
+        {
+          "id": "E",
+          "text": "Replace the toll-free number with the dispensing pharmacy's ordinary local number on the container label."
+        }
+      ],
+      "correct_choice_ids": [
+        "A"
+      ],
+      "explanation": {
+        "core_reasoning": "When a patient elects delivery at a location other than a pharmacy, M.G.L. c.94C, §21A allows the section's requirements to be satisfied by access to a toll-free telephone service facilitating communication with the pharmacist. The statute also requires that toll-free service number to be printed on a label affixed to each prescription drug container. Outer-package, receipt, post-delivery message, or local-number substitutes do not meet that specified container-label step.",
+        "choice_analysis": {
+          "A": "Correct. Section 21A requires the toll-free service number on a label affixed to each prescription drug container for off-site delivery.",
+          "B": "The statute specifies the prescription drug container label, not only the outer shipping package.",
+          "C": "A delivery receipt does not substitute for the required label on each prescription drug container.",
+          "D": "Sending the number after delivery does not satisfy the required container-label placement before the prescription reaches the patient.",
+          "E": "The statute calls for the toll-free service number used for this remote counseling-access pathway; an ordinary local number is not the specified substitute."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not confuse supplying remote telephone access with placing the required toll-free number on each prescription container."
+      },
+      "rule_ids": [
+        "MA-COUNSELING-REMOTE-DELIVERY",
+        "MA-COUNSELING"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Recognize home delivery as a prescription delivered to a location other than the pharmacy",
+        "Apply the toll-free pharmacist-access pathway to the counseling-offer requirement",
+        "Verify that the toll-free service number is printed on each prescription drug container label"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-B-LEGAL-REAUDIT-2026-08-19",
+        "AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COUNSELING-REMOTE-DELIVERY": {
+              "content_version": 1,
+              "content_hash": "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822"
+            },
+            "MA-COUNSELING": {
+              "content_version": 1,
+              "content_hash": "e8f6fbdb5b0bdb7ec7f1512527eeeac5dbe49e0b761ac0f498fa9da11faedd82"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-COUNSELING-REMOTE-DELIVERY",
+          "name": "Massachusetts prospective drug review and counseling statute",
+          "section": "M.G.L. c. 94C, § 21A",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "last_verified": "2026-08-19"
+        },
+        {
+          "rule_id": "MA-COUNSELING",
+          "name": "Massachusetts patient counseling",
+          "section": "247 CMR 9.18",
+          "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "last_verified": "2026-08-13"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "All ten canonical realism criteria were explicitly reassessed by the same locked Auditor-B session against the unchanged exact Q0213 item; none was defaulted merely to satisfy schema. The item requires jurisprudence reasoning within a plausible home-delivery workflow: the examinee must recognize that toll-free pharmacist access does not by itself complete the off-site counseling pathway and must select the additional container-label step. The outer-package, delivery-receipt, post-delivery-message, and local-number alternatives are authentic implementation errors; the keyed choice is not conspicuous by wording or length. The direct MA-COUNSELING-REMOTE-DELIVERY rule and general MA-COUNSELING rule combine naturally. No drug-specific fact is needed because the duty applies generally to prescription-drug delivery, consistent with the family's drug_required=false design, and the item does not test controlled-substance scheduling. Its scenario-based SBA form fits the unchanged MPJE-MA-PRE2027 public-style profile without reproducing protected or commercial question wording. The accepted full-bank review of 226 represented canonical questions remains unchanged: no other item tests the same toll-free-service-plus-each-container-label decision path. Closest comparison IDs remain MA-Q-0086 (pickup counseling refusal/documentation), MA-Q-0215 (delivery/shipping integrity and temperature stability), and MA-Q-0092 (Medication Guide versus Massachusetts counseling).",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0214",
+      "family_id": "T2_0214_MA_HAZARDOUS_DRUG_OPERATIONS",
+      "area": 4,
+      "topic": "Hazardous drugs",
+      "subtopic": "Non-compounding hazardous-drug operations",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A community pharmacy receives manufacturer-packaged tablets that are identified as hazardous drugs. The pharmacy will store and dispense the intact tablets but will not compound them. A manager says hazardous-drug standards are irrelevant because no compounding will occur. Which approach is most accurate?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Treat the shipment as ordinary inventory because hazardous-drug standards begin only when a dosage form is compounded."
+        },
+        {
+          "id": "B",
+          "text": "Apply current hazardous-drug handling standards to the applicable receipt, storage, dispensing, and disposal activities even though the pharmacy is not compounding the tablets."
+        },
+        {
+          "id": "C",
+          "text": "Apply sterile-compounding cleanroom rules to every intact hazardous tablet before it may be dispensed."
+        },
+        {
+          "id": "D",
+          "text": "Return every hazardous drug to the wholesaler because community pharmacies may not possess hazardous drugs."
+        },
+        {
+          "id": "E",
+          "text": "Follow hazardous-drug controls only if the prescription is for an employee of the pharmacy."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "Massachusetts 247 CMR 9.01 makes current applicable USP standards part of pharmacy practice unless otherwise regulated by the Board. USP <800> addresses hazardous-drug handling beyond compounding, including receipt, storage, dispensing, and disposal. The absence of compounding does not remove all hazardous-drug obligations.",
+        "choice_analysis": {
+          "A": "Hazardous-drug handling is broader than compounding.",
+          "B": "Correct: the handling framework follows the hazardous drug through applicable operational stages.",
+          "C": "Intact hazardous tablets do not automatically trigger sterile cleanroom processing.",
+          "D": "Community pharmacies are not categorically barred from possessing hazardous drugs.",
+          "E": "The legal framework does not depend on whether the patient works for the pharmacy."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not reduce USP <800> to a compounding-only rule."
+      },
+      "rule_ids": [
+        "MA-HAZARDOUS-DRUG-HANDLING"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify that the product is hazardous even though it remains intact",
+        "Distinguish hazardous-drug handling from sterile-compounding requirements",
+        "Apply the hazardous-drug framework to the operational stages actually occurring"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-HAZARDOUS-DRUG-HANDLING": {
+              "content_version": 1,
+              "content_hash": "0762d8544a8f8f09b7171f56a8a24d13026a2e506cbbf666d929695819d63f9d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.01(3)",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "name": "USP 800 in Community Pharmacies",
+          "section": "Current Board advisory",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0218 is the closest item but tests hazardous compounding layering; this question separately tests non-compounding handling of intact hazardous dosage forms. Closest canonical-bank comparison question IDs: MA-Q-0218.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0215",
+      "family_id": "T2_0215_MA_DRUG_DELIVERY",
+      "area": 4,
+      "topic": "Pharmacy operations",
+      "subtopic": "Medication delivery and shipping",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy plans to mail a temperature-sensitive prescription using a common carrier. The proposed packaging cannot reasonably maintain the product's labeled storage conditions during the expected transit. What should the pharmacy do?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Ship it because use of a common carrier transfers responsibility for product stability to the carrier."
+        },
+        {
+          "id": "B",
+          "text": "Ship it if the patient agrees to accept the risk of temperature excursion."
+        },
+        {
+          "id": "C",
+          "text": "Use a packing and transportation method that protects medication integrity and stability before sending the prescription."
+        },
+        {
+          "id": "D",
+          "text": "Remove the labeled storage directions so the carrier is not responsible for them."
+        },
+        {
+          "id": "E",
+          "text": "Convert the order to an in-store pickup without telling the patient."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "Massachusetts permits prescription delivery by mail or common carrier when lawful, but the pharmacy remains responsible for ensuring that packing, shipping, transportation, and delivery do not adversely affect medication integrity or stability. The proposed method should be corrected before shipment.",
+        "choice_analysis": {
+          "A": "Using a lawful carrier does not shift the pharmacy's regulatory responsibility for medication integrity.",
+          "B": "Patient consent does not cure an inadequate shipping process.",
+          "C": "Correct: the pharmacy must use a method that protects integrity and stability.",
+          "D": "Removing directions does not change the product's storage requirements.",
+          "E": "Changing the delivery arrangement without patient communication is not the required shipping safeguard."
+        },
+        "related_facts": [],
+        "mpje_trap": "Carrier legality does not answer whether the pharmacy's shipping method protects the medication."
+      },
+      "rule_ids": [
+        "MA-DRUG-DELIVERY-SHIPPING"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Separate permission to use a carrier from the pharmacy's continuing operational duties",
+        "Identify temperature control as an integrity and stability issue",
+        "Choose a shipping method that maintains appropriate medication conditions"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DRUG-DELIVERY-SHIPPING": {
+              "content_version": 1,
+              "content_hash": "7d389ec020fc90c5f33b47f93c3ae087a718986b6646ac580ca3c63137c7e296"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-DRUG-DELIVERY-SHIPPING",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.02",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-DRUG-DELIVERY-SHIPPING",
+          "name": "Medication Delivery and Shipping",
+          "section": "Current Board advisory",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0093 is the nearest product-integrity scenario, but it concerns in-pharmacy storage excursion handling rather than outbound shipping/transport responsibility. Closest canonical-bank comparison question IDs: MA-Q-0093.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0216",
+      "family_id": "T2_0216_MA_STERILE_COMPOUNDING",
+      "area": 4,
+      "topic": "Compounding",
+      "subtopic": "Sterile compounding licensure",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts drug store pharmacy holds its ordinary pharmacy license but has never obtained a sterile compounding pharmacy license. It wants to begin preparing patient-specific sterile ophthalmic preparations on site. Which statement best describes the licensure issue?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The ordinary drug store license is sufficient whenever each preparation is patient-specific."
+        },
+        {
+          "id": "B",
+          "text": "The pharmacy may begin immediately and seek a sterile-compounding license only if the Board later inspects it."
+        },
+        {
+          "id": "C",
+          "text": "The pharmacy needs the applicable sterile compounding pharmacy licensure before engaging in this sterile compounding activity."
+        },
+        {
+          "id": "D",
+          "text": "Sterile compounding is permitted without additional licensure when no Schedule II-V drug is used."
+        },
+        {
+          "id": "E",
+          "text": "Sterile compounding licensure applies only to out-of-state pharmacies shipping into Massachusetts."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "Massachusetts separately licenses sterile compounding pharmacy activity. Patient-specific status does not convert an ordinary drug store license into a sterile compounding license, and the current licensure framework includes satisfactory Board inspection before an original sterile compounding license is issued.",
+        "choice_analysis": {
+          "A": "Patient-specific status does not make the ordinary license sufficient.",
+          "B": "The licensure and inspection gate precedes lawful operation in the specialty category.",
+          "C": "Correct: the specialty license is required before the activity begins.",
+          "D": "Controlled-substance schedule is not the trigger for sterile-compounding licensure.",
+          "E": "Massachusetts also licenses resident sterile compounding pharmacies."
+        },
+        "related_facts": [],
+        "mpje_trap": "Patient-specific compounding does not eliminate the specialty licensure requirement for sterile compounding."
+      },
+      "rule_ids": [
+        "MA-STERILE-COMPOUNDING-LICENSE"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Classify the proposed preparation as sterile compounding",
+        "Separate ordinary drug-store licensure from the specialty sterile-compounding category",
+        "Apply the sterile-compounding licensure gate before operations begin"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-STERILE-COMPOUNDING-LICENSE": {
+              "content_version": 1,
+              "content_hash": "38761f7e40f10eb33be34865db32efcdc27e981701d821ac8de231c039ba6905"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-STERILE-COMPOUNDING-LICENSE",
+          "name": "Massachusetts pharmacy compounding statute",
+          "section": "M.G.L. c.112, §39F",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-STERILE-COMPOUNDING-LICENSE",
+          "name": "Massachusetts pharmacy licensure regulations",
+          "section": "247 CMR 6.06",
+          "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Compounding questions elsewhere test CE/labels or complex non-sterile licensure. This item uniquely gates patient-specific sterile ophthalmic work on sterile-compounding licensure. Closest canonical-bank comparison question IDs: MA-Q-0117, MA-Q-0217.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0217",
+      "family_id": "T2_0217_MA_NONSTERILE_COMPOUNDING",
+      "area": 4,
+      "topic": "Compounding",
+      "subtopic": "Complex non-sterile compounding",
+      "difficulty": 5,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy proposes a non-sterile preparation that requires specialized training, a dedicated controlled environment, and techniques presenting elevated complexity. The manager concludes that an ordinary drug store license is enough because the final preparation is not sterile. Which response best applies?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Agree; every non-sterile preparation falls outside specialty pharmacy licensure."
+        },
+        {
+          "id": "B",
+          "text": "Require a sterile compounding pharmacy license because any complex preparation is treated as sterile."
+        },
+        {
+          "id": "C",
+          "text": "Evaluate the activity under the separate complex non-sterile compounding category and obtain the applicable license before performing that regulated activity."
+        },
+        {
+          "id": "D",
+          "text": "Proceed under ordinary licensure as long as the preparation contains no hazardous ingredient."
+        },
+        {
+          "id": "E",
+          "text": "Proceed under ordinary licensure if the pharmacy limits the preparation to one patient per day."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "Massachusetts recognizes complex non-sterile compounding as a distinct licensure category. The statutory and regulatory framework focuses on the nature and complexity of the non-sterile activity, including specialized training, environment, facilities, equipment, or techniques; 'non-sterile' does not automatically mean ordinary retail licensure is sufficient.",
+        "choice_analysis": {
+          "A": "Massachusetts has a distinct complex non-sterile compounding category.",
+          "B": "Complex non-sterile and sterile compounding are separate categories.",
+          "C": "Correct: the pharmacy must evaluate and satisfy the complex non-sterile licensure requirements.",
+          "D": "Absence of a hazardous ingredient does not by itself remove complex non-sterile licensure.",
+          "E": "Patient volume does not replace the licensure analysis."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not use 'non-sterile' as a shortcut for 'no specialty license.'"
+      },
+      "rule_ids": [
+        "MA-COMPLEX-NONSTERILE-LICENSE"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify the proposed work as potentially complex non-sterile rather than simple non-sterile compounding",
+        "Distinguish complex non-sterile licensure from sterile-compounding licensure",
+        "Apply the specialty licensure and inspection gate to the proposed activity"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPLEX-NONSTERILE-LICENSE": {
+              "content_version": 1,
+              "content_hash": "cce033e2ba52348c1ec95b4ef5847d792f267ca52a0b72c4f7fc497e001cb09f"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-COMPLEX-NONSTERILE-LICENSE",
+          "name": "Massachusetts pharmacy definitions",
+          "section": "M.G.L. c.112, §39D",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-COMPLEX-NONSTERILE-LICENSE",
+          "name": "Massachusetts pharmacy compounding statute",
+          "section": "M.G.L. c.112, §39F",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-COMPLEX-NONSTERILE-LICENSE",
+          "name": "Massachusetts pharmacy licensure regulations",
+          "section": "247 CMR 6.07",
+          "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "The closest compounding items address sterile licensure or general compounding obligations. This one uniquely targets the separate complex non-sterile licensure category. Closest canonical-bank comparison question IDs: MA-Q-0080, MA-Q-0216.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0218",
+      "family_id": "T2_0218_MA_HAZARDOUS_COMPOUNDING",
+      "area": 4,
+      "topic": "Compounding",
+      "subtopic": "Hazardous-drug compounding",
+      "difficulty": 5,
+      "question_type": "SATA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy is appropriately licensed for a proposed compounding activity and plans to compound a drug that is hazardous under the applicable standards. Which principles should the pharmacist apply? Select all that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Continue to follow the sterile or non-sterile compounding requirements applicable to the preparation."
+        },
+        {
+          "id": "B",
+          "text": "Apply the current hazardous-drug handling requirements that govern the hazardous ingredient and compounding process."
+        },
+        {
+          "id": "C",
+          "text": "Treat hazardous-drug status as replacing all other compounding requirements."
+        },
+        {
+          "id": "D",
+          "text": "Ignore hazardous-drug controls if the prescription is patient-specific."
+        },
+        {
+          "id": "E",
+          "text": "Use the fact that the pharmacy has a compounding license as proof that no additional hazardous-drug operational controls apply."
+        }
+      ],
+      "correct_choice_ids": [
+        "A",
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "Hazardous-drug compounding requires concurrent analysis. The pharmacy must satisfy the compounding framework applicable to the preparation and the hazardous-drug handling standards. Neither framework displaces the other merely because the prescription is patient-specific or the pharmacy already holds a compounding license.",
+        "choice_analysis": {
+          "A": "Correct: the underlying sterile or non-sterile compounding requirements still apply.",
+          "B": "Correct: hazardous-drug handling requirements are an additional operational layer.",
+          "C": "Hazardous status does not replace the compounding framework.",
+          "D": "Patient-specific status does not erase hazardous-drug obligations.",
+          "E": "Licensure does not itself satisfy every operational hazardous-drug standard."
+        },
+        "related_facts": [],
+        "mpje_trap": "The legal frameworks stack; they do not substitute for each other."
+      },
+      "rule_ids": [
+        "MA-HAZARDOUS-COMPOUNDING",
+        "MA-HAZARDOUS-DRUG-HANDLING"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Classify both the type of compounding and the hazardous-drug status",
+        "Apply the compounding framework and hazardous-drug framework concurrently",
+        "Reject choices that treat one compliance framework as cancelling the other"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-HAZARDOUS-COMPOUNDING": {
+              "content_version": 1,
+              "content_hash": "0fd599a6e4365b4a9e0528f7dc34a70deb2d438cc94b3e673faf8c895782cc38"
+            },
+            "MA-HAZARDOUS-DRUG-HANDLING": {
+              "content_version": 1,
+              "content_hash": "0762d8544a8f8f09b7171f56a8a24d13026a2e506cbbf666d929695819d63f9d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-HAZARDOUS-COMPOUNDING",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.01(3)",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-COMPOUNDING",
+          "name": "USP 800 in Community Pharmacies",
+          "section": "Current Board advisory",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.01(3)",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "name": "USP 800 in Community Pharmacies",
+          "section": "Current Board advisory",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Related hazardous and compounding questions isolate one layer at a time; this SATA uniquely tests concurrent application of compounding and hazardous-drug controls. Closest canonical-bank comparison question IDs: MA-Q-0214, MA-Q-0216, MA-Q-0217.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0219",
+      "family_id": "T2_0219_MA_NONHAZARDOUS_COMPOUNDING",
+      "area": 4,
+      "topic": "Compounding",
+      "subtopic": "Patient-specific significant difference",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A patient asks a Massachusetts pharmacy to compound a non-hazardous version of a commercially available drug solely because the compounded version would cost less. The commercially available product otherwise meets the patient's needs, and the prescriber identifies no patient-specific clinical difference. Which statement best applies to the statutory compounding analysis?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Lower price alone establishes the patient-specific significant difference needed for compounding the commercially available product."
+        },
+        {
+          "id": "B",
+          "text": "The pharmacy may treat price as the significant difference only when the patient signs a waiver."
+        },
+        {
+          "id": "C",
+          "text": "A difference in price alone does not constitute the patient-specific significant difference contemplated by the Massachusetts compounding definition."
+        },
+        {
+          "id": "D",
+          "text": "The pharmacy must reclassify the preparation as sterile because it uses a commercially available product."
+        },
+        {
+          "id": "E",
+          "text": "The pharmacy may compound solely for price whenever the quantity is less than a 30-day supply."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "M.G.L. c.112, §39D expressly provides that a difference in price alone does not constitute the significant patient-specific difference used in the compounding definition. A prescriber-identified clinically meaningful difference cannot be replaced by a cost-only rationale.",
+        "choice_analysis": {
+          "A": "Price alone is specifically insufficient.",
+          "B": "A patient waiver does not change the statutory definition.",
+          "C": "Correct: the cost-only rationale does not satisfy the significant-difference element.",
+          "D": "Commercial availability does not turn a non-sterile product into sterile compounding.",
+          "E": "The statute does not create a 30-day cost exception."
+        },
+        "related_facts": [],
+        "mpje_trap": "Cost savings by itself is not the statutory significant difference."
+      },
+      "rule_ids": [
+        "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify that the scenario involves a commercially available product",
+        "Look for a patient-specific significant difference rather than a general preference",
+        "Apply the statutory rule that price difference alone is insufficient"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE": {
+              "content_version": 1,
+              "content_hash": "0657767e64ab3a5cce7c573a0722bd5aeff00094ce7ed4cbd5670e2a49723e69"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE",
+          "name": "Massachusetts pharmacy definitions",
+          "section": "M.G.L. c.112, §39D",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Other compounding questions do not test the statutory significant-difference limitation that price alone is insufficient. The tested legal discriminator is distinct. Closest canonical-bank comparison question IDs: MA-Q-0117, MA-Q-0217.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0220",
+      "family_id": "T2_0220_MA_CENTRAL_FILL",
+      "area": 4,
+      "topic": "Shared pharmacy services",
+      "subtopic": "Central fill relationships",
+      "difficulty": 5,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "Two separately owned Massachusetts pharmacies want one pharmacy to perform central-fill services for prescriptions originating at the other. They have compatible secure systems but no common ownership. Which governance step is central to making this shared-service structure permissible under current Board policy?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "They must become commonly owned because unrelated pharmacies may not participate in shared pharmacy services."
+        },
+        {
+          "id": "B",
+          "text": "They should use a written agreement that defines the shared services and each participating pharmacy's responsibilities, while satisfying the policy's other safeguards."
+        },
+        {
+          "id": "C",
+          "text": "They may proceed without an agreement if both Managers of Record give oral approval."
+        },
+        {
+          "id": "D",
+          "text": "They should transfer every prescription to the filling pharmacy and stop treating the arrangement as central fill."
+        },
+        {
+          "id": "E",
+          "text": "They need a patient-specific court order for each prescription processed through the arrangement."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "Board Policy 2021-02 permits shared pharmacy service models under common ownership or through an appropriate written agreement. For separately owned participants, the agreement must define the services and responsibilities; secure systems and operational safeguards remain part of the compliance structure.",
+        "choice_analysis": {
+          "A": "The policy provides a written-agreement pathway for separately owned participants.",
+          "B": "Correct: the written agreement establishes responsibilities within the shared-service model.",
+          "C": "Oral approval does not substitute for the documented shared-service framework.",
+          "D": "Central fill and prescription transfer are different operational models.",
+          "E": "A court order is not part of the central-fill governance framework."
+        },
+        "related_facts": [],
+        "mpje_trap": "Common ownership is one route, not the sole route, for shared pharmacy services."
+      },
+      "rule_ids": [
+        "MA-SHARED-PHARMACY-SERVICES"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Recognize central fill as a regulated shared pharmacy service rather than a routine prescription transfer",
+        "Distinguish common ownership from the alternative written-agreement pathway",
+        "Require documented allocation of services and responsibilities before operation"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-SHARED-PHARMACY-SERVICES": {
+              "content_version": 1,
+              "content_hash": "795e5ca2bece8930737a06bcff5f1d951b77b63ae6e11abd77ad48cb5bf7fda9"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-SHARED-PHARMACY-SERVICES",
+          "name": "Shared Pharmacy Service Models Including Central Fill, Remote Processing, and Telepharmacy",
+          "section": "Policy 2021-02",
+          "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0120 involves prescription transfer between pharmacies, not central-fill/shared-service governance. The written inter-pharmacy agreement allocation is distinct. Closest canonical-bank comparison question IDs: MA-Q-0120.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0221",
+      "family_id": "T2_0221_MA_PHARMACY_LICENSE_RENEWAL",
+      "area": 4,
+      "topic": "Facility licensure",
+      "subtopic": "Drug store pharmacy renewal",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts drug store pharmacy license was issued in March 2026. The owner is preparing the facility's renewal calendar and is comparing it with the pharmacist staff's personal registration cycle. When does this drug store pharmacy license expire under the facility-license rule?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "December 31, 2026, because every pharmacy license expires at the end of the year of issuance."
+        },
+        {
+          "id": "B",
+          "text": "March 2027, exactly one year after issuance."
+        },
+        {
+          "id": "C",
+          "text": "December 31, 2027, the next odd-numbered-year December 31 following issuance."
+        },
+        {
+          "id": "D",
+          "text": "December 31, 2028, because pharmacy facilities use the same even-year cycle as pharmacists' personal registrations."
+        },
+        {
+          "id": "E",
+          "text": "It has no fixed expiration date as long as a Manager of Record remains employed."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "Under M.G.L. c.112, §39 and 247 CMR 6.05, a Drug Store Pharmacy license expires on December 31 of each odd-numbered year following issuance. A license issued in 2026 therefore reaches its next applicable facility expiration on December 31, 2027.",
+        "choice_analysis": {
+          "A": "The facility license does not expire automatically at the end of the 2026 issuance year.",
+          "B": "The rule is not a one-year anniversary cycle.",
+          "C": "Correct: December 31, 2027 is the next odd-numbered-year expiration following issuance.",
+          "D": "Even-year personal registration timing is a different licensing cycle.",
+          "E": "Manager of Record employment does not make the facility license perpetual."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not import the personal pharmacist registration cycle into facility licensure."
+      },
+      "rule_ids": [
+        "MA-PHARMACY-LICENSE-RENEWAL"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify that the question concerns the facility license rather than a pharmacist's personal registration",
+        "Apply the odd-numbered-year December 31 rule following issuance",
+        "Map a 2026 issuance to December 31, 2027"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PHARMACY-LICENSE-RENEWAL": {
+              "content_version": 1,
+              "content_hash": "8c2e764df781811af30ad5c88357b09f48ae1950f98ae7fbf3d643217108d209"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-PHARMACY-LICENSE-RENEWAL",
+          "name": "Massachusetts retail pharmacy permit statute",
+          "section": "M.G.L. c.112, §39",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39",
+          "last_verified": "2026-08-18"
+        },
+        {
+          "rule_id": "MA-PHARMACY-LICENSE-RENEWAL",
+          "name": "Massachusetts pharmacy licensure regulations",
+          "section": "247 CMR 6.05",
+          "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Earlier facility-license items concern closure, ownership, or application operations. The odd-numbered-year expiration calculation is a distinct licensure-cycle test. Closest canonical-bank comparison question IDs: MA-Q-0072, MA-Q-0073, MA-Q-0090.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0222",
+      "family_id": "T2_0222_MA_PHARMACY_INSPECTION",
+      "area": 4,
+      "topic": "Facility oversight",
+      "subtopic": "Inspection and self-inspection duties",
+      "difficulty": 5,
+      "question_type": "SATA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacy completed its routine annual self-inspection three months ago. It now relocates to a new address, and a Board inspector arrives without prior notice shortly afterward. Which statements are accurate? Select all that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The relocation triggers another Board-tool self-inspection within the regulatory timeframe even though the annual self-inspection was recent."
+        },
+        {
+          "id": "B",
+          "text": "The Board may inspect the licensed pharmacy without prior notice."
+        },
+        {
+          "id": "C",
+          "text": "The pharmacy may decline to provide requested pharmacy records because the inspection was unannounced."
+        },
+        {
+          "id": "D",
+          "text": "The recent annual self-inspection prevents another self-inspection from being required during the same calendar year."
+        },
+        {
+          "id": "E",
+          "text": "The pharmacy should provide documents requested by the Board or its designee in connection with the inspection."
+        }
+      ],
+      "correct_choice_ids": [
+        "A",
+        "B",
+        "E"
+      ],
+      "explanation": {
+        "core_reasoning": "247 CMR 9.19 separately requires self-inspection after specified operational changes, including relocation, while 247 CMR 9.24 authorizes unannounced Board inspection and requires the pharmacy to provide requested documents. The recent annual self-inspection does not cancel the relocation-triggered duty or the Board's inspection authority.",
+        "choice_analysis": {
+          "A": "Correct: relocation creates a separate self-inspection trigger.",
+          "B": "Correct: the Board may inspect without prior notice.",
+          "C": "The regulation requires requested documents to be provided.",
+          "D": "Annual completion does not eliminate the relocation-triggered inspection duty.",
+          "E": "Correct: requested documents must be supplied in connection with the inspection."
+        },
+        "related_facts": [],
+        "mpje_trap": "A recent self-inspection is not a shield against either a triggered self-inspection or an unannounced Board inspection."
+      },
+      "rule_ids": [
+        "MA-PHARMACY-INSPECTION"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify relocation as an independent self-inspection trigger",
+        "Separate the pharmacy's self-inspection duty from the Board's inspection authority",
+        "Apply the document-production obligation during the Board inspection"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PHARMACY-INSPECTION": {
+              "content_version": 1,
+              "content_hash": "f98193bdac3d10da01b5c6ea8200d17c9f39eadc18c424e4f19e617a734186ad"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-PHARMACY-INSPECTION",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.24 and 9.19(21)",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Earlier facility-readiness/control items do not combine relocation-triggered self-inspection, unannounced Board inspection, and document production. The scenario is distinct. Closest canonical-bank comparison question IDs: MA-Q-0112, MA-Q-0170.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0223",
+      "family_id": "T2_0223_MA_PHARMACY_DISCIPLINE",
+      "area": 4,
+      "topic": "Facility oversight",
+      "subtopic": "Emergency facility disciplinary action",
+      "difficulty": 5,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "During an investigation, the Board finds conditions at a pharmacy that present an immediate and serious threat to public health and safety. Waiting for a final adjudicatory decision would leave the unsafe operation in place. Which Board response is most consistent with the Massachusetts disciplinary framework?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The Board must wait for a final disciplinary hearing before restricting the pharmacy's operation or affected products."
+        },
+        {
+          "id": "B",
+          "text": "The Board may use an appropriate summary cease-and-desist or quarantine mechanism, subject to the regulation's subsequent review procedures."
+        },
+        {
+          "id": "C",
+          "text": "The Board can act only against the individual pharmacist and has no emergency authority directed at the pharmacy or affected products."
+        },
+        {
+          "id": "D",
+          "text": "The Board must convert the matter into an advisory letter because emergency action cannot be disciplinary."
+        },
+        {
+          "id": "E",
+          "text": "The Board may permanently revoke the pharmacy license without any procedural review because the threat is serious."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "247 CMR 10.00 provides summary mechanisms when an immediate and serious threat requires action before ordinary final adjudication, including cease-and-desist or quarantine tools in the circumstances defined by the regulation. Emergency authority does not mean the procedural review protections disappear.",
+        "choice_analysis": {
+          "A": "The regulation provides summary tools precisely because waiting may be unsafe.",
+          "B": "Correct: summary cease-and-desist or quarantine can address an immediate threat with review procedures afterward.",
+          "C": "The Board's framework can address pharmacy operations and products, not only an individual registrant.",
+          "D": "An advisory letter is not the emergency control mechanism described here.",
+          "E": "Seriousness does not eliminate all subsequent procedural review."
+        },
+        "related_facts": [],
+        "mpje_trap": "Emergency authority permits action before final adjudication; it does not erase process."
+      },
+      "rule_ids": [
+        "MA-DISCIPLINARY-PROCESS"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Identify the immediate public-safety threat as the trigger for summary authority",
+        "Distinguish temporary emergency controls from a final disciplinary order",
+        "Preserve the required subsequent review process"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-DISCIPLINARY-PROCESS": {
+              "content_version": 1,
+              "content_hash": "d01a21395bdc4328e7641ed3a6cd0e99e735bf70bdc0b2ba384c3802da42a844"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-DISCIPLINARY-PROCESS",
+          "name": "Massachusetts disciplinary proceedings",
+          "section": "247 CMR 10.00",
+          "url": "https://www.mass.gov/regulations/247-CMR-1000-disciplinary-proceedings",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0211 is disciplinary-process adjacent but concerns non-disciplinary advisory classification. This question instead tests summary emergency protection and subsequent review. Closest canonical-bank comparison question IDs: MA-Q-0211.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0224",
+      "family_id": "T2_0224_MA_PIC_OPERATIONAL_DUTY",
+      "area": 1,
+      "topic": "Pharmacy management",
+      "subtopic": "Planned Manager of Record absence",
+      "difficulty": 5,
+      "question_type": "SATA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "The Manager of Record of a Massachusetts retail pharmacy plans a six-week medical leave. The dates are known in advance. Which steps are required for this planned absence under 247 CMR 9.23? Select all that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Appoint a Board-registered Interim Manager before the planned absence begins."
+        },
+        {
+          "id": "B",
+          "text": "Have the Manager of Record perform a controlled-substance inventory before leaving, signed by the Manager of Record and Interim Manager."
+        },
+        {
+          "id": "C",
+          "text": "Wait five days after the leave begins before deciding whether an Interim Manager is needed."
+        },
+        {
+          "id": "D",
+          "text": "Immediately file a permanent change-of-Manager application solely because the planned leave exceeds 30 days."
+        },
+        {
+          "id": "E",
+          "text": "Allow the pharmacy to operate without a designated interim manager as long as another pharmacist is on each shift."
+        }
+      ],
+      "correct_choice_ids": [
+        "A",
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "A planned six-week absence exceeds the 30-day threshold. For a planned qualifying absence, the pharmacy must appoint a Board-registered Interim Manager before the absence, and the Manager of Record must perform the required controlled-substance inventory signed with the Interim Manager. The five-day appointment rule is for qualifying unplanned absences, and the permanent change application threshold is 100 days.",
+        "choice_analysis": {
+          "A": "Correct: the interim appointment precedes a planned absence of 30 days or longer.",
+          "B": "Correct: the pre-absence controlled-substance inventory is signed by both managers.",
+          "C": "The five-day rule applies to a qualifying unplanned absence.",
+          "D": "A six-week leave does not by itself reach the 100-day change-of-Manager threshold.",
+          "E": "Shift pharmacist coverage does not replace the required Interim Manager designation."
+        },
+        "related_facts": [],
+        "mpje_trap": "The planned-versus-unplanned distinction changes the appointment timing."
+      },
+      "rule_ids": [
+        "MA-MOR-TEMP-ABSENCE"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Classify the leave as planned and expected to exceed 30 days",
+        "Apply the pre-absence Interim Manager appointment rule",
+        "Apply the paired controlled-substance inventory requirement without importing unplanned-absence timing"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-MOR-TEMP-ABSENCE": {
+              "content_version": 1,
+              "content_hash": "999bd917cd91b8f2cf6323d09512488aa734824b1411655b88175664ed33fc55"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-MOR-TEMP-ABSENCE",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.23",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "Facility-management items elsewhere do not test the planned extended MOR-absence trigger, pre-absence interim appointment, and controlled-substance inventory. Distinct. Closest canonical-bank comparison question IDs: MA-Q-0072, MA-Q-0222.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0225",
+      "family_id": "T2_0225_MA_DRUG_RETURN_REUSE_DISTINCT",
+      "area": 2,
+      "topic": "Medication returns",
+      "subtopic": "Never-dispensed return to stock",
+      "difficulty": 4,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A pharmacy filled a prescription, but the patient never picked it up and the medication never left the pharmacy's control. Staff want to return the tablets to inventory by pouring them back into the manufacturer's stock bottle. What is the appropriate Massachusetts approach?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The medication cannot be returned to stock once the prescription has been prepared and a patient-specific label has been applied."
+        },
+        {
+          "id": "B",
+          "text": "The medication may be returned to stock under pharmacy policy in an appropriately identified return-to-stock container, without commingling it with manufacturer stock."
+        },
+        {
+          "id": "C",
+          "text": "The medication may be poured into the manufacturer stock bottle because it never left the pharmacy or reached the patient."
+        },
+        {
+          "id": "D",
+          "text": "The medication must be dispensed to another patient promptly or destroyed because prepared prescriptions cannot remain available for later reuse."
+        },
+        {
+          "id": "E",
+          "text": "The medication may be returned to the manufacturer stock bottle after the first patient identifying information is removed from pharmacy records."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "247 CMR 9.13 distinguishes medication prepared but never dispensed from medication returned after leaving pharmacy control. Never-dispensed medication may be returned to stock under required controls, but the regulation prohibits returning it to the manufacturer's stock bottle and requires appropriate product-identifying container information and recall safeguards.",
+        "choice_analysis": {
+          "A": "The regulation permits a controlled return-to-stock pathway for medication never dispensed.",
+          "B": "Correct: return to stock is possible, but not by returning tablets to the manufacturer's stock bottle.",
+          "C": "Remaining in pharmacy control does not eliminate the stock-bottle prohibition.",
+          "D": "There is no 24-hour dispense-or-destroy rule in this return-to-stock provision.",
+          "E": "Computer-profile changes do not authorize commingling with manufacturer stock."
+        },
+        "related_facts": [],
+        "mpje_trap": "Never dispensed is the key fact, but it does not authorize commingling with the manufacturer's stock bottle."
+      },
+      "rule_ids": [
+        "MA-RETURN-TO-STOCK"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Recognize that the medication was never dispensed to the patient",
+        "Apply the return-to-stock pathway rather than the patient-return rule",
+        "Preserve the required separate container and identification controls instead of pouring tablets into manufacturer stock"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-RETURN-TO-STOCK": {
+              "content_version": 1,
+              "content_hash": "e415e542c78e172a243e8f8e977e2c1dae49d121d60c5946a683393439b2d683"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-RETURN-TO-STOCK",
+          "name": "Massachusetts professional practice standards",
+          "section": "247 CMR 9.13",
+          "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0088 tests medication returned by a patient after leaving pharmacy control; this question deliberately tests the opposite never-dispensed condition and the non-commingling return-to-stock rule. The legal distinction is material. Closest canonical-bank comparison question IDs: MA-Q-0088, MA-Q-0091.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "MA-Q-0226",
+      "family_id": "T2_0226_MA_PRODUCT_SELECTION_DISTINCT",
+      "area": 4,
+      "topic": "Product selection",
+      "subtopic": "Biologic substitution",
+      "difficulty": 5,
+      "question_type": "SBA",
+      "provenance": "GEN",
+      "source_signal_ids": [],
+      "stem": "A Massachusetts pharmacist receives a prescription for a brand-name biological product. The prescriber has not prohibited substitution. The pharmacy has a less expensive FDA-licensed biosimilar, but FDA has not determined that product to be interchangeable with the prescribed biologic. May the pharmacist substitute that biosimilar under Massachusetts' statutory biologic-substitution authority without obtaining new prescriber authorization?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Yes, because every FDA-licensed biosimilar is automatically interchangeable for pharmacy substitution."
+        },
+        {
+          "id": "B",
+          "text": "Yes, because the absence of a prescriber prohibition is the only condition Massachusetts imposes."
+        },
+        {
+          "id": "C",
+          "text": "No. The statutory substitution pathway requires an FDA determination that the substitute is interchangeable with the prescribed biological product."
+        },
+        {
+          "id": "D",
+          "text": "No, because Massachusetts prohibits pharmacist substitution of any biological product."
+        },
+        {
+          "id": "E",
+          "text": "Yes, but only if the patient waives notification to the prescriber."
+        }
+      ],
+      "correct_choice_ids": [
+        "C"
+      ],
+      "explanation": {
+        "core_reasoning": "M.G.L. c.112, §12EE authorizes pharmacist substitution when FDA has determined the biological product is interchangeable with the prescribed brand-name biological product and the prescriber has not prohibited substitution. Biosimilar licensure alone does not satisfy the interchangeable-product condition.",
+        "choice_analysis": {
+          "A": "Biosimilar status does not automatically establish interchangeability for this statutory pathway.",
+          "B": "Absence of a prescriber prohibition is necessary but not sufficient.",
+          "C": "Correct: FDA interchangeability is a statutory condition for pharmacist substitution.",
+          "D": "Massachusetts permits substitution when the statutory conditions are met.",
+          "E": "Patient waiver does not replace the required interchangeability determination."
+        },
+        "related_facts": [],
+        "mpje_trap": "Do not treat 'biosimilar' and 'interchangeable' as synonyms."
+      },
+      "rule_ids": [
+        "MA-BIOLOGIC-SUBSTITUTION"
+      ],
+      "drug_ids": [],
+      "reasoning_steps": [
+        "Separate FDA biosimilar licensure from an FDA interchangeability determination",
+        "Check for prescriber prohibition as a separate condition",
+        "Apply the Massachusetts substitution statute only when both the product and prescription conditions are satisfied"
+      ],
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-18",
+      "audits": [
+        "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+        "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+        "date": "2026-08-19",
+        "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-BIOLOGIC-SUBSTITUTION": {
+              "content_version": 1,
+              "content_hash": "d58fe576464ca7355eef3485c6a1ea3bede271ac8b8142b76dbc496a7e4fed68"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
+      "development_fixture": true,
+      "authorities": [
+        {
+          "rule_id": "MA-BIOLOGIC-SUBSTITUTION",
+          "name": "Massachusetts interchangeable biological product statute",
+          "section": "M.G.L. c.112, §12EE",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE",
+          "last_verified": "2026-08-18"
+        }
+      ],
+      "drug_checks": [],
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-18",
+          "criteria": {
+            "appropriate_drug_context": true,
+            "authentic_distractors": true,
+            "distinct_from_bank": true,
+            "jurisprudence_reasoning": true,
+            "natural_rule_combination": true,
+            "not_schedule_flashcard": true,
+            "practice_plausibility": true,
+            "public_style_without_copying": true,
+            "reasoning_not_trivia": true,
+            "wording_not_guessable": true
+          },
+          "notes": "MA-Q-0087 tests generic substitution, while this item tests the separate biologic-interchangeability statute. Similar product-selection framing does not collapse the distinct legal rule. Closest canonical-bank comparison question IDs: MA-Q-0087.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
           }
         }
       ]

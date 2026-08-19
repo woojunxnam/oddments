@@ -24,7 +24,7 @@ from qa_common import (
     validate_schema_records,
 )
 from release_context import named_dependency_snapshot, style_profile_snapshot
-from validate_audits import validate_audits
+from validate_audits import is_valid_targeted_initial_audit, validate_audits
 from validate_drugs import validate_drugs
 from validate_rules import validate_rules
 
@@ -270,7 +270,10 @@ def validate_questions(
 
             if release_requirements.get("initial_batch_history_required"):
                 initial_history = any(
-                    audit.get("audit_scope") == "INITIAL_BATCH"
+                    (
+                        audit.get("audit_scope") == "INITIAL_BATCH"
+                        or is_valid_targeted_initial_audit(audit)
+                    )
                     and audit.get("review_type") == "LEGAL_VERIFICATION"
                     and audit.get("independent")
                     and audit.get("audit_status") == "FULLY_ADJUDICATED"
@@ -279,7 +282,10 @@ def validate_questions(
                     for audit in audits.values()
                 )
                 if not initial_history:
-                    report.error(f"{path}: released question lacks valid INITIAL_BATCH audit history")
+                    report.error(
+                        f"{path}: released question lacks valid INITIAL_BATCH audit history "
+                        "(ordinary or TARGETED_INITIAL_BATCH)"
+                    )
             if question.get("independent_audit_status") != "PASSED":
                 report.error(f"{path}: released question status summary must be PASSED after stored audit gates pass")
 
