@@ -60,6 +60,14 @@ read is this sanitized blind package:
 
   audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json
 
+It lives on the freeze branch, not on your audit base, so read it without checking that branch
+out:
+  git fetch origin
+  git show origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json
+
+That single `git show` of the blind package is the one permitted exception to the no-git-show
+rule below; it reveals no key, explanation, rule or taxonomy.
+
 It contains only question ID, type, stem and choices.
 
 Verify it before reading it, with commands that give the same answer on every platform:
@@ -81,6 +89,11 @@ Before the lock is committed you must NOT open, grep, diff or otherwise read:
   - site/generated/questions.json
   - GitHub Issue #86, Issue #83 or any pull request body, comment or commit message
   - git log, git show or any diff touching the two questions or the two new rules
+  - anything else on the freeze branch: the manifest, the contracts, the attestation and the
+    handoff prompt are governance metadata you do not need in Phase 1
+
+The post-lock dependency reveal and the authoring report are not present on your audit base at
+all; the authoring report is, so simply do not open it.
 
 You may freely use current official primary sources on the open web at any time. That is the
 point: solve the items the way a candidate would, from the law.
@@ -136,23 +149,37 @@ the blind phase is compromised. Do not paper over it.
 
 ## PHASE 2 — unseal
 
-Only now may you open the canonical records and the post-lock dependency reveal:
-  audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T3-V1-POSTLOCK-DEPENDENCIES.json
+Only now may you open the canonical records and the post-lock dependency reveal.
+
+On your audit base:
   data/questions/ma-q-0227.json, data/questions/ma-q-0228.json
+  data/questions/*.json           (the whole bank, for the realism comparison)
   data/rules/*.json, data/blueprint.json, data/exam_style/mpje_style_profile.json
+
+On the freeze branch (these three are freeze-only, so read them with git show rather than
+checking the branch out):
+  git show origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T3-V1-POSTLOCK-DEPENDENCIES.json
+  git show origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/T3-LEGAL-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
+  git show origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/T3-REALISM-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
 
 Still do NOT read the authoring report, Issue #86, Issue #83, PR bodies, or commit messages and
 diffs explaining why these questions were written. Those carry author reasoning.
 
 Recompute both question hashes and confirm they match the values above.
 
-Your audit contracts, which state every required field:
-  audits/remediation/2026-08-19/T3-LEGAL-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
-    sha256 c3b4dfc01c19123aabb1fe4c91b6b7d5839ba730d31196705ab72cfb552d73b8
-  audits/remediation/2026-08-19/T3-REALISM-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
-    sha256 535dcddf0c31f83f40bc99c6a82ac5719be393008e0f6a431ba683a3e80d4eb0
-  audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T3-CLEAN-FREEZE-V1-MANIFEST.json
-    sha256 21e7cdf2a2433686304769b8c5df2a95d4d2870f2544688f18e61464b8ef51ea
+The contracts state every required field. Their LF content hashes, all on the freeze branch and
+all verifiable with `git show <ref>:<path> | sha256sum`:
+  T3-LEGAL-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
+    c3b4dfc01c19123aabb1fe4c91b6b7d5839ba730d31196705ab72cfb552d73b8
+  T3-REALISM-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
+    535dcddf0c31f83f40bc99c6a82ac5719be393008e0f6a431ba683a3e80d4eb0
+  PRE-BATCH3-COVERAGE-T3-CLEAN-FREEZE-V1-MANIFEST.json
+    21e7cdf2a2433686304769b8c5df2a95d4d2870f2544688f18e61464b8ef51ea
+  PRE-BATCH3-COVERAGE-T3-V1-POSTLOCK-DEPENDENCIES.json
+    eb96a44362bf3f493d2d236ffe82413ec33a244911e66f6932948fe314075283
+
+The contracts are informative. Where this prompt and a contract disagree, follow this prompt and
+say so in your report.
 
 ## PHASE 3 — LEGAL verification
 
