@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_B_AUDITOR_B_REGISTRATION",
+  "current_phase": "PHASE_D_GUARDED_RELEASE",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -107,6 +107,61 @@
       "required_current_q0213_hash": "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23",
       "semantic_fields_modified": false,
       "validate_audits": "PASS (0 errors)"
+    },
+    {
+      "phase": "PHASE_C_GUARDED_PREFLIGHT",
+      "title": "Guarded T2 preflight",
+      "status": "PASS",
+      "script": "scripts/preflight_prebatch3_t2_release.py",
+      "artifact": "audits/remediation/2026-08-19/PRE-BATCH3-T2-GUARDED-RELEASE-PREFLIGHT.json",
+      "checks_passed": 12,
+      "checks_failed": 0,
+      "checks": [
+        "01_recomputed_current_t2_hashes",
+        "02_fifteen_unchanged_match_auditor_a_hashes",
+        "03_q0213_matches_auditor_b_hash",
+        "04_05_current_hash_legal_and_realism_pass_evidence",
+        "06_historical_q0213_failure_visible_at_old_hash_only",
+        "07_targeted_initial_legal_history_for_all_16",
+        "08_direct_dependency_and_semantic_hash_verification",
+        "09_no_current_hash_adjudicated_failure",
+        "10_q0028_remains_quarantined_and_unpreviewed",
+        "11_preview_membership_captured_before_mutation",
+        "12_no_substantive_t2_change_since_accepted_evidence"
+      ]
+    },
+    {
+      "phase": "PHASE_D_GUARDED_RELEASE",
+      "title": "Guarded release of MA-Q-0211..MA-Q-0226",
+      "status": "PASS",
+      "script": "scripts/release_prebatch3_t2_guarded.py",
+      "artifact": "audits/remediation/2026-08-19/PRE-BATCH3-T2-GUARDED-ADMISSION-V1-REPORT.json",
+      "commit": "0e5a84a97a717e188da384b19b882a9aac791f30",
+      "released_count": 16,
+      "evidence_partition": {
+        "GPT-FRESH-COV-T2-A": "MA-Q-0211, MA-Q-0212, MA-Q-0214..MA-Q-0226 (15)",
+        "GPT-FRESH-COV-T2-B": "MA-Q-0213 (1)"
+      },
+      "preview_before_count": 180,
+      "preview_after_count": 196,
+      "released_bank_before": 149,
+      "released_bank_after": 165,
+      "release_assertions": {
+        "exactly_sixteen_t2_released": true,
+        "t2_audited_content_unchanged": true,
+        "no_unrelated_question_state_change": true,
+        "no_registry_semantic_mutation": true,
+        "q0028_not_released": true,
+        "q0028_not_previewed": true,
+        "q0190_untouched": true,
+        "historical_q0213_failure_visible": true
+      },
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings unchanged from the start boundary)",
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS (clean tree after regeneration)"
+      },
+      "development_fixture_convention": "unchanged true, matching every canonical question in this repository and the T1 PR #66 precedent"
     }
   ]
 }
