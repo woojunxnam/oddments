@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_D_GUARDED_RELEASE",
+  "current_phase": "PHASE_T3_DIVERSITY_AUTHORING",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -162,6 +162,137 @@
         "generated_artifact_freshness": "PASS (clean tree after regeneration)"
       },
       "development_fixture_convention": "unchanged true, matching every canonical question in this repository and the T1 PR #66 precedent"
+    },
+    {
+      "phase": "PHASE_T3_DIVERSITY_AUTHORING",
+      "title": "Pre-Batch3 T3 diversity remediation - authoring, freeze and auditor handoff",
+      "status": "AUTHORING_COMPLETE_AWAITING_FRESH_INDEPENDENT_AUDIT",
+      "authorizing_issue": 86,
+      "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+      "verified_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+      "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+      "audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+      "freeze_branch_sha": "f1622e70e4d92d24128fe7ad26466adc614b9d92",
+      "branches": {
+        "remediation/pre-batch3-coverage-t3-diversity": "authoring candidate + merged governance authorization",
+        "governance/pre-batch3-t3-targeted-initial-scope": "PR #87, merged",
+        "freeze/pre-batch3-coverage-t3-v1": "freeze-only, not a merge target"
+      },
+      "authored": {
+        "MA-Q-0227": {
+          "headline": "4.3",
+          "family_id": "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY",
+          "question_type": "SBA",
+          "area": 4,
+          "authority": "247 CMR 9.04(4)",
+          "question_audit_hash": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "distinct_from": "MA-Q-0215 / T2_0215_MA_DRUG_DELIVERY (247 CMR 9.02 packing and stability duty)"
+        },
+        "MA-Q-0228": {
+          "headline": "4.6",
+          "family_id": "T3_0228_MA_CENTRAL_FILL_ROUTING",
+          "question_type": "SATA",
+          "area": 4,
+          "authority": "Board Policy 2021-02, section IV",
+          "question_audit_hash": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3",
+          "distinct_from": "MA-Q-0220 / T2_0220_MA_CENTRAL_FILL (ownership or written-agreement structure)"
+        }
+      },
+      "new_rules": [
+        "MA-BEDSIDE-DELIVERY",
+        "MA-CENTRAL-FILL-DISPENSING-ROUTE"
+      ],
+      "protected_records_untouched": [
+        "MA-DRUG-DELIVERY-SHIPPING",
+        "MA-SHARED-PHARMACY-SERVICES",
+        "MA-Q-0215",
+        "MA-Q-0220"
+      ],
+      "official_research": {
+        "247 CMR 9.04(4)": "read verbatim from the current official Board publication of 247 CMR 9.00",
+        "247 CMR 9.02": "confirmed as the separate Prescriptions by Mail provision behind MA-Q-0215",
+        "Board Policy 2021-02": "adopted 2/19/21, revised 4/7/22 and 2/6/25; read from the current official Pharmacy Practice Resources publication",
+        "source_classes_used": "PUBLIC_OFFICIAL only; no public non-official signal; provenance GEN"
+      },
+      "preflight": {
+        "duplicate_detector_findings": 0,
+        "structural_pattern_findings": 0,
+        "max_stem_similarity_vs_bank": {
+          "MA-Q-0227": {
+            "sequence": 0.387,
+            "jaccard": 0.127
+          },
+          "MA-Q-0228": {
+            "sequence": 0.486,
+            "jaccard": 0.271
+          }
+        },
+        "similarity_vs_target_family": {
+          "MA-Q-0227_vs_MA-Q-0215": {
+            "sequence": 0.102,
+            "jaccard": 0.103
+          },
+          "MA-Q-0228_vs_MA-Q-0220": {
+            "sequence": 0.045,
+            "jaccard": 0.197
+          }
+        },
+        "shared_normalized_option_texts": 0,
+        "sata_three_correct_share": 0.5412,
+        "sata_key_ABE_share": 0.1059,
+        "sba_answer_distribution_chi_square": {
+          "before": 14.057554,
+          "after": 12.928571
+        }
+      },
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pytest": "98 passed, 1 skipped (5 new T3 policy tests)",
+        "generated_artifact_freshness": "PASS",
+        "exact_head_ci": "QA success on 039badfb (governance) and c7e57194 (freeze)"
+      },
+      "governance_authorization_registered": {
+        "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+        "authorizing_issue": 86,
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "question_ids": [
+          "MA-Q-0227",
+          "MA-Q-0228"
+        ],
+        "audit_scope": "TARGETED_INITIAL_BATCH",
+        "schema_changed": false,
+        "ordinary_initial_batch_minimum_unchanged": 30,
+        "merged_pr": 87
+      },
+      "blind_package": {
+        "path": "audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json",
+        "sha256": "84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9",
+        "exposes": [
+          "question_id",
+          "question_type",
+          "stem",
+          "choices"
+        ],
+        "leakage_check": "PASS"
+      },
+      "auditor_handoff": {
+        "path": "audits/remediation/2026-08-19/T3-FRESH-AUDITOR-HANDOFF-PROMPT.md",
+        "reserved_auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+        "status": "READY_TO_SEND"
+      },
+      "independence_wall": {
+        "author_is_controller": true,
+        "controller_performed_audit": false,
+        "subagent_auditor_used": false,
+        "subagent_declined_because": "A subagent would receive a fresh model context but would still share this filesystem and git repository, where the canonical keyed answers, the authoring report and the git history live. Blind discipline could not be technically enforced before the Phase-1 lock, so genuine isolation cannot be guaranteed and no subagent auditor was spawned."
+      },
+      "stopped_at": "FRESH_INDEPENDENT_AUDIT_HANDOFF",
+      "resume_plan": [
+        "Register the accepted audit evidence canonically.",
+        "Guarded-release MA-Q-0227 and MA-Q-0228 using the T1/T2 fail-closed pattern.",
+        "Rerun scripts/prebatch3_final_coverage_gate.py from the exact post-release SHA.",
+        "If PASS, continue Issue #83 Phase G into Batch 3 planning and execution."
+      ]
     }
   ]
 }
