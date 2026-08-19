@@ -1,0 +1,192 @@
+name: T2 R1 Dependency Amendment
+
+on:
+  push:
+    branches:
+      - repair/pre-batch3-coverage-t2-r1
+
+permissions:
+  contents: write
+
+jobs:
+  amend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: repair/pre-batch3-coverage-t2-r1
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Apply Issue 74 dependency amendment
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "4952a35378fb4ab898560a0b4bed3cf1e60451d4"
+          python - <<'PY'
+          from copy import deepcopy
+          from pathlib import Path
+          from scripts.qa_common import load_json, write_json, semantic_content_hash, question_audit_hash
+
+          OLD_Q_HASH = "acf153167f996d5906b8c69c04561aa2151f3fb9ad6f02ada85f0abe458f9287"
+          NEW_Q_HASH = "e3dcb3c3dc749f09f38602302017f5d42f0dc06c461734b687ec947c17846d29"
+          NEW_RULE_HASH = "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822"
+
+          q_path = Path("data/questions/ma-q-0213.json")
+          q = load_json(q_path)
+          assert question_audit_hash(q) == OLD_Q_HASH
+          assert q["rule_ids"] == ["MA-COUNSELING", "MA-COUNSELING-DOCUMENTATION"]
+          q_before = deepcopy(q)
+          q["rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY", "MA-COUNSELING"]
+          q_expected = deepcopy(q_before)
+          q_expected["rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY", "MA-COUNSELING"]
+          assert q == q_expected
+          assert question_audit_hash(q) == NEW_Q_HASH
+          write_json(q_path, q)
+
+          matrix_path = Path("data/exam_style/question_family_matrix.json")
+          matrix = load_json(matrix_path)
+          matches = [f for f in matrix["families"] if f["family_id"] == "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER"]
+          assert len(matches) == 1
+          family = matches[0]
+          assert family["primary_rule_ids"] == ["MA-COUNSELING-DOCUMENTATION"]
+          assert family["secondary_rule_ids"] == ["MA-COUNSELING"]
+          family_before = deepcopy(family)
+          family["primary_rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY"]
+          family_expected = deepcopy(family_before)
+          family_expected["primary_rule_ids"] = ["MA-COUNSELING-REMOTE-DELIVERY"]
+          assert family == family_expected
+          write_json(matrix_path, matrix)
+
+          rule_path = Path("data/rules/ma-counseling-remote-delivery.json")
+          assert not rule_path.exists()
+          rule = {
+            "rule_id": "MA-COUNSELING-REMOTE-DELIVERY",
+            "content_version": 1,
+            "content_hash": "",
+            "title": "Massachusetts off-site prescription-delivery counseling access",
+            "jurisdiction": "MA",
+            "area": 2,
+            "topic": "Patient care",
+            "subtopic": "Remote-delivery counseling offer",
+            "rule_summary": "When a person elects delivery of a prescription drug at a location other than a pharmacy, M.G.L. c. 94C, § 21A permits the section's requirements to be satisfied by providing access to a toll-free telephone service that facilitates communication with the pharmacist at the pharmacy. The toll-free service number must be printed on a label affixed to each prescription-drug container dispensed by the pharmacy to the patient.",
+            "exam_relevance": "Tests the Massachusetts off-site prescription-delivery counseling-access pathway and the required placement of the toll-free service number on each prescription-drug container.",
+            "authority": [
+              {
+                "type": "STATUTE",
+                "name": "Massachusetts prospective drug review and counseling statute",
+                "section": "M.G.L. c. 94C, § 21A",
+                "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A"
+              }
+            ],
+            "status": "CURRENT",
+            "effective_date": None,
+            "supersedes": [],
+            "last_verified": "2026-08-19",
+            "numeric_facts": [],
+            "exceptions": [],
+            "common_confusions": [
+              "Do not confuse the off-site delivery toll-free counseling-access pathway with the separate counseling-refusal documentation pathway.",
+              "The statute specifies the toll-free service number on a label affixed to each prescription-drug container; placement only on an outer shipping package is not the specified requirement."
+            ],
+            "related_rule_ids": ["MA-COUNSELING"],
+            "verification_status": "PRIMARY_VERIFIED",
+            "verification_notes": "Current official Massachusetts General Laws source independently checked on 2026-08-19; Section 21A expressly provides the off-site toll-free pharmacist-access pathway and requires the toll-free service number on a label affixed to each prescription-drug container."
+          }
+          rule["content_hash"] = semantic_content_hash(rule, "rule")
+          assert rule["content_hash"] == NEW_RULE_HASH
+          write_json(rule_path, rule)
+          print("NEW_Q0213_HASH", question_audit_hash(q))
+          print("NEW_RULE_CONTENT_HASH", rule["content_hash"])
+          PY
+
+      - name: Regenerate deterministic artifacts
+        run: python scripts/generate_artifacts.py --write
+
+      - name: Verify Issue 74 hash and diff boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from scripts.qa_common import load_json, question_audit_hash, semantic_content_hash
+
+          expected = {
+            "MA-Q-0211": "0e64b008982afd70481d5cbb98764c33333b9575abf880225d2c342b62e84b30",
+            "MA-Q-0212": "804b1f109276192cd626f3d609fc627003e619aa1eed23c39b0d1945b4a20682",
+            "MA-Q-0214": "35a7f054480e5c46f8aa3293f30e3ad3716e5f2786ecb6bc741d0068868c94c6",
+            "MA-Q-0215": "60cacb955e6fef4d02699c6b3b80f869920551d484dbb9afe8bd1114b911f685",
+            "MA-Q-0216": "a59cab0514d45b1e1d10f67e9c01c8d78fda5309abb469c156a37dbd8078f2e5",
+            "MA-Q-0217": "e4a5cdd5a5189c56ec9946cfaed177350c425fddff1d17451ea0ceb73399cd66",
+            "MA-Q-0218": "ad1ee83f096695440b0068e5989fd8997af7c92020a25fb5d4b6d40b10d036ab",
+            "MA-Q-0219": "6caa187601ecc06d17efb4dfa295df327d9fd2f08e9ef60d0027ef215e3a98f3",
+            "MA-Q-0220": "72dfe8a9eb2a34ebf251327d80bf8046eec880650ba3070160c8a37d999bc47e",
+            "MA-Q-0221": "97d16d872b91e45425ccca675c25cd35bdd9bde85168a4d44c396c95610c6921",
+            "MA-Q-0222": "ea4d8ab19e3e1e54132ca076842ce21d47779152c5e0652e6575892454baa571",
+            "MA-Q-0223": "857eca7ddc6176091b9ab209244613cb80cb47ae03f10aea48299bab527e5a11",
+            "MA-Q-0224": "b4fe81e97a7a555753af73ea9d9f65be6b8d889ddb074ee52ebfaadd66dd96d9",
+            "MA-Q-0225": "1cacd9445f05b72dfb15015db5c9d26faee59649a5db714e1e0ec1e236e91444",
+            "MA-Q-0226": "7afaf435fff0676352d13f668e5873e3376c902ba96ee0160a83c48d539b29d9"
+          }
+          for qid, want in expected.items():
+              q = load_json(Path("data/questions") / f"ma-q-{qid[-4:].lower()}.json")
+              got = question_audit_hash(q)
+              assert got == want, (qid, got, want)
+              assert q["verification_status"] == "AUDIT_PENDING"
+              assert q["lifecycle_status"] == "AUDIT_PENDING"
+              assert q["development_fixture"] is True
+
+          q213 = load_json(Path("data/questions/ma-q-0213.json"))
+          assert question_audit_hash(q213) == "e3dcb3c3dc749f09f38602302017f5d42f0dc06c461734b687ec947c17846d29"
+          assert q213["verification_status"] == "AUDIT_PENDING"
+          assert q213["lifecycle_status"] == "AUDIT_PENDING"
+          assert q213["development_fixture"] is True
+          assert q213["rule_ids"] == ["MA-COUNSELING-REMOTE-DELIVERY", "MA-COUNSELING"]
+
+          rule = load_json(Path("data/rules/ma-counseling-remote-delivery.json"))
+          assert rule["content_hash"] == "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822"
+          assert semantic_content_hash(rule, "rule") == rule["content_hash"]
+          print("OTHER_15_T2_HASHES_UNCHANGED", len(expected))
+          print("Q0213_HASH", question_audit_hash(q213))
+          print("RULE_CONTENT_HASH", rule["content_hash"])
+          PY
+          git diff --quiet 4952a35378fb4ab898560a0b4bed3cf1e60451d4 -- data/questions/ma-q-0028.json
+          test "$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 -- data/questions | tr '\n' ' ')" = "data/questions/ma-q-0213.json "
+
+      - name: Run repository validation and full tests
+        run: |
+          python scripts/validate_all.py
+          python -m pytest -q
+
+      - name: Prove freshness and commit only the allowed final diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm .github/workflows/t2-r1-dependency-amend.yml
+          allowed=$'data/exam_style/question_family_matrix.json\ndata/questions/ma-q-0213.json\ndata/rules/ma-counseling-remote-delivery.json\nsite/generated/questions.json'
+          actual="$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 | sort)"
+          test "$actual" = "$allowed"
+          git add data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json .github/workflows/t2-r1-dependency-amend.yml
+          python scripts/generate_artifacts.py --write
+          git diff --exit-code
+          RULE_BLOB="$(git hash-object data/rules/ma-counseling-remote-delivery.json)"
+          echo "RULE_BLOB_SHA=$RULE_BLOB"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "fix: amend Q0213 canonical delivery dependency"
+          git push origin HEAD:repair/pre-batch3-coverage-t2-r1
