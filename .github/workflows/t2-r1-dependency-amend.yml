@@ -37,7 +37,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD^)" = "4952a35378fb4ab898560a0b4bed3cf1e60451d4"
+          test "$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 HEAD | tr '\n' ' ')" = ".github/workflows/t2-r1-dependency-amend.yml "
           python - <<'PY'
           from copy import deepcopy
           from pathlib import Path
@@ -181,7 +181,7 @@ jobs:
           allowed=$'data/exam_style/question_family_matrix.json\ndata/questions/ma-q-0213.json\ndata/rules/ma-counseling-remote-delivery.json\nsite/generated/questions.json'
           actual="$(git diff --name-only 4952a35378fb4ab898560a0b4bed3cf1e60451d4 | sort)"
           test "$actual" = "$allowed"
-          git add data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json .github/workflows/t2-r1-dependency-amend.yml
+          git add data/exam_style/question_family_matrix.json data/questions/ma-q-0213.json data/rules/ma-counseling-remote-delivery.json site/generated/questions.json
           python scripts/generate_artifacts.py --write
           git diff --exit-code
           RULE_BLOB="$(git hash-object data/rules/ma-counseling-remote-delivery.json)"
