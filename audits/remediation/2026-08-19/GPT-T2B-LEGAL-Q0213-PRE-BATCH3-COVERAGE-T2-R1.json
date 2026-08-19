@@ -1,0 +1,45 @@
+{
+  "package_type": "LEGAL_AUDIT_CONTRACT",
+  "audit_scope": "CHANGED_ITEM_REAUDIT",
+  "auditor_identity": "GPT-FRESH-COV-T2-B",
+  "question_ids": [
+    "MA-Q-0213"
+  ],
+  "phase_order": [
+    "PHASE_1_BLIND_SOLVE_AND_LOCK",
+    "PHASE_2_MECHANICAL_UNSEAL",
+    "PHASE_3_LEGAL_VERIFICATION",
+    "PHASE_4_FULL_BANK_REALISM"
+  ],
+  "legal_requirements": {
+    "use_current_official_primary_authority": true,
+    "permitted_authority_classes": [
+      "Massachusetts General Laws",
+      "current promulgated Massachusetts regulations",
+      "official Massachusetts Board/DPH/DCP materials when legally relevant",
+      "current federal eCFR/DEA/FDA primary or official authority when legally relevant"
+    ],
+    "prohibited_as_legal_authority": [
+      "repository rule summaries",
+      "commercial MPJE preparation material",
+      "blogs",
+      "Reddit",
+      "Quizlet",
+      "prior audit/editor/adjudication/repair conclusions"
+    ],
+    "required_fields": [
+      "question_id",
+      "frozen_question_audit_hash",
+      "verdict",
+      "existing_answer_correct",
+      "authority_citations",
+      "legal_reasoning",
+      "severity_if_not_keep"
+    ],
+    "keep_gate": {
+      "verdict": "KEEP",
+      "existing_answer_correct": "YES"
+    }
+  },
+  "pre_lock_contamination_rule": "Do not inspect canonical answer/key/explanation/rule or dependency metadata, prior audit conclusions, repair rationale, PR #73, Issue #72, Issue #74, or prior Q0213 versions before the Phase-1 lock."
+}
