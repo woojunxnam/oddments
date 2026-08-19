@@ -24,7 +24,8 @@ Your auditor identity for every record you produce:
 
 Repository:                   https://github.com/woojunxnam/oddments
 Freeze branch:                freeze/pre-batch3-coverage-t3-v1
-Freeze branch SHA:            c7e57194c127139a2d06356dbb5cb4f442a07d0d
+                              (verify the package by its immutable blob id below, not by branch tip;
+                               the tip may advance with packaging-only commits)
 Branch your audit FROM:       36b3ea85229609afb08772a566cca2eb6fbe1be8
                               (head of remediation/pre-batch3-coverage-t3-diversity; it carries the
                                TARGETED_INITIAL_BATCH authorization your records need in order to validate)
@@ -58,9 +59,19 @@ Until you have committed and pushed your Phase-1 lock file, the ONLY question co
 read is this sanitized blind package:
 
   audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json
-  sha256 84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9
 
 It contains only question ID, type, stem and choices.
+
+Verify it before reading it, with commands that give the same answer on every platform:
+  git rev-parse origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json
+    must print  c83757ce2c28cfde9e376c2ba1008771a93a63ed
+  git show origin/freeze/pre-batch3-coverage-t3-v1:audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json | sha256sum
+    must print  e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851
+
+Do NOT hash the working-tree file directly. On a Windows checkout Git rewrites these files to
+CRLF, so a raw working-tree hash is platform-dependent and will look like tampering when it is
+not. Every sha256 published here is the LF content hash, which is what the two commands above
+produce on Linux, macOS and Windows alike.
 
 Before the lock is committed you must NOT open, grep, diff or otherwise read:
   - data/questions/ma-q-0227.json or data/questions/ma-q-0228.json
@@ -94,14 +105,27 @@ the blind phase is compromised. Do not paper over it.
        "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
        "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
-       "blind_package_sha256": "84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9",
+       "blind_package_sha256": "e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851",
+       "blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+       "freeze_branch": "freeze/pre-batch3-coverage-t3-v1",
+       "freeze_head_observed": "<output of: git rev-parse origin/freeze/pre-batch3-coverage-t3-v1>",
+       "audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
        "questions": [
          {"question_id": "MA-Q-0227", "selected_choice_ids": ["<...>"], "reasoning": "<your own reasoning>",
           "authorities_consulted": ["<official URL>", "..."]},
          {"question_id": "MA-Q-0228", "selected_choice_ids": ["<...>"], "reasoning": "<your own reasoning>",
           "authorities_consulted": ["<official URL>", "..."]}
-       ]
+       ],
+       "canonical_key_inspected_before_lock": false,
+       "canonical_explanation_inspected_before_lock": false,
+       "canonical_rules_inspected_before_lock": false,
+       "author_reasoning_inspected_before_lock": false,
+       "contamination_status": "CLEAN",
+       "attestation": "I solved both items only from the sanitized blind package and current official sources. I did not open the canonical question files, the canonical rule files, the authoring report, the post-lock dependency reveal, the generated site payload, Issue #86, Issue #83, any pull request body or comment, or any git log/diff describing these questions, before writing this lock."
      }
+
+   If any of those four booleans would be true, set "contamination_status": "COMPROMISED",
+   state exactly what you read, and stop. Do not continue the audit under this auditor instance.
 4. Commit and push it on a new branch:
      git checkout -b audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a 36b3ea85229609afb08772a566cca2eb6fbe1be8
      git add audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json
@@ -124,11 +148,11 @@ Recompute both question hashes and confirm they match the values above.
 
 Your audit contracts, which state every required field:
   audits/remediation/2026-08-19/T3-LEGAL-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
-    sha256 80a05d257a1d9aba7a7587fb5b82b29e99be0682e70783d2e84833886ca23f8f
+    sha256 c3b4dfc01c19123aabb1fe4c91b6b7d5839ba730d31196705ab72cfb552d73b8
   audits/remediation/2026-08-19/T3-REALISM-CONTRACT-PRE-BATCH3-COVERAGE-T3.json
-    sha256 daa3d5b49b202eccdf3e413ea54176d921e35367b68e0433eeafa02d84cabcc1
+    sha256 535dcddf0c31f83f40bc99c6a82ac5719be393008e0f6a431ba683a3e80d4eb0
   audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T3-CLEAN-FREEZE-V1-MANIFEST.json
-    sha256 c8688e7a710f67d35ca1d8f12197dea964898b6d069f5aa93f899877ddab1e79
+    sha256 21e7cdf2a2433686304769b8c5df2a95d4d2870f2544688f18e61464b8ef51ea
 
 ## PHASE 3 — LEGAL verification
 

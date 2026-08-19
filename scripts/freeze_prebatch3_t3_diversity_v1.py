@@ -76,7 +76,14 @@ def blob_sha(sha: str, path: str) -> str:
 
 
 def file_sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    """Hash the LF-normalized bytes.
+
+    A Windows checkout stores these files with CRLF while Git stores LF, so hashing the
+    raw working-tree bytes produces a platform-dependent value that an auditor on Linux
+    or macOS would read as tampering. Normalizing first makes the published value equal
+    `git show <sha>:<path> | sha256sum` on every platform.
+    """
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def load_candidate_questions() -> dict[str, dict]:
@@ -383,7 +390,12 @@ def build_attestation(manifest: dict) -> dict:
 def main() -> int:
     head = git("rev-parse", "HEAD")
     if head != CANDIDATE_SHA:
-        raise SystemExit(f"HEAD {head} is not the frozen candidate {CANDIDATE_SHA}")
+        # The freeze branch grows past the candidate as packaging commits land, so accept any
+        # descendant whose canonical content is byte-identical to the represented candidate.
+        subprocess.check_call(["git", "merge-base", "--is-ancestor", CANDIDATE_SHA, head], cwd=ROOT)
+        drift = git("diff", "--name-only", CANDIDATE_SHA, head, "--", "data", "schemas", "site")
+        if drift:
+            raise SystemExit(f"canonical content drifted from {CANDIDATE_SHA}: {drift.splitlines()}")
 
     questions = load_candidate_questions()
     snapshots = dependency_snapshots(questions)
