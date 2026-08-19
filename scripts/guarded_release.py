@@ -529,7 +529,9 @@ def main() -> int:
 
     report = {
         "report_type": config["report_type"],
-        "tranche_id": args.tranche,
+        # Must come from the resolved config, not args.tranche: a --tranche-file run leaves
+        # args.tranche None and would otherwise write a null tranche_id into the release report.
+        "tranche_id": config["tranche_id"],
         "controller_issue": config["controller_issue"],
         "authorizing_issue": config["authorizing_issue"],
         "date": config["release_date"],
