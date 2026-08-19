@@ -414,6 +414,60 @@
         "Rerun scripts/prebatch3_final_coverage_gate.py from the exact post-release SHA.",
         "If PASS, continue Issue #83 Phase G into Batch 3 planning and execution."
       ]
+    },
+    {
+      "phase": "PHASE_T3_HANDOFF_CORRECTION",
+      "title": "T3 handoff integrity correction",
+      "status": "CORRECTED",
+      "authorizing_issue": 86,
+      "resolved_freeze_head": "2eb33177ac6c424969520ec8e04df2870610f94f",
+      "superseded_freeze_shas": [
+        "c7e57194c127139a2d06356dbb5cb4f442a07d0d",
+        "f1622e70e4d92d24128fe7ad26466adc614b9d92",
+        "da71c931f08df642d63324523d16855d71f120a6"
+      ],
+      "freeze_head_resolution_method": "git ls-remote origin refs/heads/freeze/pre-batch3-coverage-t3-v1",
+      "defects_found_and_fixed": [
+        {
+          "defect": "FREEZE_SHA_DISCREPANCY",
+          "finding": "Two different SHAs were published for the freeze branch. Resolved mechanically: the stale value was a superseded parent commit, not a parallel branch.",
+          "content_impact": "none"
+        },
+        {
+          "defect": "PLATFORM_DEPENDENT_PACKAGE_SHA256",
+          "finding": "The freeze script hashed raw working-tree bytes. Windows checkout rewrites these files to CRLF, so the published sha256 only reproduced on Windows and would have read as tampering to a Linux or macOS auditor.",
+          "proof": "sha256(CRLF rendering)=84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9 and sha256(LF rendering)=e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851 map to each other exactly under CRLF<->LF; the git blob c83757ce2c28cfde9e376c2ba1008771a93a63ed is unchanged across every freeze commit.",
+          "fix": "file_sha256 now normalizes CRLF to LF, so every published value equals `git show <sha>:<path> | sha256sum` on any platform.",
+          "content_impact": "none; only the attestation's self-referential package_sha256 map changed"
+        },
+        {
+          "defect": "FREEZE_ONLY_INPUTS_UNREACHABLE_FROM_AUDIT_BASE",
+          "finding": "The blind package, both contracts, the manifest and the post-lock reveal exist only on the freeze branch and are absent from the audit base, so the prompt's plain file paths would not have resolved.",
+          "fix": "The prompt now reads them with `git show origin/freeze/...:<path>` and names that single blind-package git show as the one permitted exception to the no-git-show rule."
+        },
+        {
+          "defect": "AUDIT_BASE_TIP_DRIFT",
+          "finding": "The prompt asserted the candidate branch tip equals 36b3ea85229609afb08772a566cca2eb6fbe1be8, but four controller ledger commits had landed since.",
+          "measured_drift": "audits/controller/ISSUE-83-CONTROLLER-LEDGER.json only; data, schemas, scripts, tests and site byte-identical; both question hashes unchanged",
+          "blind_hygiene_note": "The newer ledger records the T3 authoring entry including author distinctness reasoning, so pinning to the exact base commit is also cleaner than following the tip.",
+          "fix": "The auditor is pinned to the exact commit 36b3ea85, tip equality is replaced by ancestry plus a data/schemas/site no-drift check, and the controller ledger is added to the prohibited-read list."
+        }
+      ],
+      "verified_at_final_freeze_head": {
+        "blind_package_present": true,
+        "blind_package_git_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+        "blind_package_sha256_lf": "e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851",
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "question_hashes_match_at_candidate_base_and_freeze": true,
+        "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+        "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3",
+        "no_question_or_rule_semantic_mutation": true
+      },
+      "authoring_content_altered": false,
+      "governance_authorization_altered": false,
+      "q0028_altered": false,
+      "issue_86_comment_corrected_in_place": "https://github.com/woojunxnam/oddments/issues/86#issuecomment-5345395726",
+      "stopped_at": "FRESH_INDEPENDENT_AUDIT_HANDOFF"
     }
   ],
   "final_state": {
@@ -440,6 +494,8 @@
     "validators_weakened": false,
     "failed_audit_history_deleted": false,
     "historical_q0213_failure_visible": true,
-    "controller_performed_any_audit": false
+    "controller_performed_any_audit": false,
+    "t3_freeze_head": "2eb33177ac6c424969520ec8e04df2870610f94f",
+    "t3_blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed"
   }
 }
