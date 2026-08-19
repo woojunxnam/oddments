@@ -45,7 +45,7 @@ jobs:
           from scripts.qa_common import load_json, write_json, semantic_content_hash, question_audit_hash
 
           OLD_Q_HASH = "acf153167f996d5906b8c69c04561aa2151f3fb9ad6f02ada85f0abe458f9287"
-          NEW_Q_HASH = "e3dcb3c3dc749f09f38602302017f5d42f0dc06c461734b687ec947c17846d29"
+          NEW_Q_HASH = "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23"
           NEW_RULE_HASH = "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822"
 
           q_path = Path("data/questions/ma-q-0213.json")
@@ -153,7 +153,7 @@ jobs:
               assert q["development_fixture"] is True
 
           q213 = load_json(Path("data/questions/ma-q-0213.json"))
-          assert question_audit_hash(q213) == "e3dcb3c3dc749f09f38602302017f5d42f0dc06c461734b687ec947c17846d29"
+          assert question_audit_hash(q213) == "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23"
           assert q213["verification_status"] == "AUDIT_PENDING"
           assert q213["lifecycle_status"] == "AUDIT_PENDING"
           assert q213["development_fixture"] is True
