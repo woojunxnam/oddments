@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_T3_DIVERSITY_AWAITING_FRESH_AUDIT",
+  "current_phase": "PHASE_G_BATCH3_AUTHORING",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -285,6 +285,82 @@
       "no_batch3_questions_authored": true
     },
     {
+      "phase": "PHASE_G_BATCH3_UNLOCKED",
+      "title": "Pre-Batch3 gate PASS and Batch 3 unlock",
+      "status": "BATCH3_UNLOCKED_PLAN_LOCKED",
+      "t3_audit": {
+        "auditor": "CLAUDE",
+        "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+        "audit_pr": 88,
+        "audit_head": "e08478d7956754142b4f5538e84de64cbec88997",
+        "phase1_lock_commit": "e412cfb1e78a6579a18727ab7fa549f0444836f6",
+        "phase1_lock_blob": "abdd4524b87c521265829050f3dd882851814710",
+        "blind_answers_matched_keys": true,
+        "legal": "KEEP/YES both",
+        "realism": "KEEP/PASS both, 10/10 criteria",
+        "controller_verification": "16/16 PASS",
+        "contamination_status": "CLEAN"
+      },
+      "t3_release": {
+        "pr": 89,
+        "merged_sha": "b9664b7aacc4ba7fa7b8f7472e4ff3fc336aa294",
+        "lineage_pr": 90,
+        "post_t3_canonical_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+        "released_ids": [
+          "MA-Q-0227",
+          "MA-Q-0228"
+        ],
+        "released_before_after": [
+          165,
+          167
+        ],
+        "preview_before_after": [
+          196,
+          198
+        ]
+      },
+      "final_gate": {
+        "gate": "PRE_BATCH3_FULL_COMPETENCY_COVERAGE_DEBT_POST_T3",
+        "verdict": "PASS",
+        "batch3": "UNLOCKED",
+        "source_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+        "atomic": "46/46",
+        "headline_diversity": "all 22 PASS, min 2 families",
+        "taxonomy_unresolved": 0,
+        "mock_120_without_reuse": true,
+        "mock_max_family_repeat": 1,
+        "release_usable_by_area": {
+          "1": 26,
+          "2": 40,
+          "3": 59,
+          "4": 42
+        },
+        "evidence_branch": "analysis/pre-batch3-coverage-post-t3-v1"
+      },
+      "batch3_plan": {
+        "plan_id": "BATCH3-PLAN-V1",
+        "measured_deficit_total": 193,
+        "releasable_today_from_unreleased_pool": 0,
+        "key_finding": "31 unreleased candidates hold current-hash passing evidence but only from instance-less legacy Phase-2 audits, which the AUDITOR_INSTANCE release policy rejects; verified by a dry release through the real validator",
+        "second_key_finding": "the entire unreleased pool is Areas 3 and 4, so the 132-question Area 1/2 deficit can only be closed by new authoring",
+        "new_authored": 162,
+        "authoring_tranches": [
+          "B3-A 33",
+          "B3-B 33",
+          "B3-C 33",
+          "B3-D 33",
+          "B3-E 30"
+        ],
+        "salvage_tranches": [
+          "B3-S1 31 reaudit",
+          "B3-S2 21 repair+reaudit",
+          "B3-S3 8 fresh audit"
+        ],
+        "id_range": "MA-Q-0229 through MA-Q-0390, no collisions"
+      },
+      "next": "Author and freeze B3-A while B3-S1 salvage audit runs in parallel."
+    },
+    {
       "phase": "PHASE_T3_DIVERSITY_AUTHORING",
       "title": "Pre-Batch3 T3 diversity remediation - authoring, freeze and auditor handoff",
       "status": "AUTHORING_COMPLETE_AWAITING_FRESH_INDEPENDENT_AUDIT",
@@ -474,9 +550,9 @@
     "t2_release": "COMPLETE",
     "canonical_lineage": "PROPAGATED",
     "final_post_t2_canonical_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
-    "pre_batch3_gate": "FAIL (headline family-diversity debt 4.3 and 4.6)",
+    "pre_batch3_gate": "PASS",
     "gate_evidence_branch": "analysis/pre-batch3-coverage-post-t2-v1",
-    "batch3": "BLOCKED",
+    "batch3": "UNLOCKED",
     "remediation_issue_url": "https://github.com/woojunxnam/oddments/issues/86",
     "t3_remediation": "AUTHORED_AND_FROZEN_AWAITING_FRESH_INDEPENDENT_AUDIT",
     "t3_represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
@@ -496,6 +572,8 @@
     "historical_q0213_failure_visible": true,
     "controller_performed_any_audit": false,
     "t3_freeze_head": "2eb33177ac6c424969520ec8e04df2870610f94f",
-    "t3_blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed"
+    "t3_blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+    "post_t3_canonical_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+    "batch3_plan": "BATCH3-PLAN-V1"
   }
 }
