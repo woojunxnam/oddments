@@ -27,8 +27,11 @@ Freeze branch:                freeze/pre-batch3-coverage-t3-v1
                               (verify the package by its immutable blob id below, not by branch tip;
                                the tip may advance with packaging-only commits)
 Branch your audit FROM:       36b3ea85229609afb08772a566cca2eb6fbe1be8
-                              (head of remediation/pre-batch3-coverage-t3-diversity; it carries the
-                               TARGETED_INITIAL_BATCH authorization your records need in order to validate)
+                              (this exact commit, not the branch tip. It carries the
+                               TARGETED_INITIAL_BATCH authorization your records need in order to
+                               validate. The branch tip has advanced with controller ledger commits
+                               that describe the authoring; staying pinned to this SHA keeps you clean.
+                               Do not merge or rebase onto the tip during the audit.)
 Represented candidate SHA:    f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2
                               (the frozen authoring content the blind package represents; this exact value
                                goes in governance_authorization.represented_candidate_sha, NOT the base SHA)
@@ -38,8 +41,11 @@ Questions under audit:        MA-Q-0227, MA-Q-0228   (exactly these two, no othe
 
 Before any substantive work, verify:
   git cat-file -t f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2   # must be: commit
+  git cat-file -t 36b3ea85229609afb08772a566cca2eb6fbe1be8   # must be: commit
   git merge-base --is-ancestor f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2 36b3ea85229609afb08772a566cca2eb6fbe1be8
-  git rev-parse origin/remediation/pre-batch3-coverage-t3-diversity   # must be 36b3ea85229609afb08772a566cca2eb6fbe1be8
+  git merge-base --is-ancestor 36b3ea85229609afb08772a566cca2eb6fbe1be8 origin/remediation/pre-batch3-coverage-t3-diversity
+  git diff --stat f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2 36b3ea85229609afb08772a566cca2eb6fbe1be8 -- data schemas site
+    # must print nothing: no question, rule, schema or generated artifact moved
 
 The only difference between the candidate SHA and your base SHA is the governance registration of
 this tranche in scripts/validate_audits.py plus its tests. Neither question changed: confirm that
@@ -91,6 +97,7 @@ Before the lock is committed you must NOT open, grep, diff or otherwise read:
   - git log, git show or any diff touching the two questions or the two new rules
   - anything else on the freeze branch: the manifest, the contracts, the attestation and the
     handoff prompt are governance metadata you do not need in Phase 1
+  - audits/controller/ISSUE-83-CONTROLLER-LEDGER.json, on any branch or at any newer commit
 
 The post-lock dependency reveal and the authoring report are not present on your audit base at
 all; the authoring report is, so simply do not open it.
@@ -140,6 +147,7 @@ the blind phase is compromised. Do not paper over it.
    If any of those four booleans would be true, set "contamination_status": "COMPROMISED",
    state exactly what you read, and stop. Do not continue the audit under this auditor instance.
 4. Commit and push it on a new branch:
+     git fetch origin
      git checkout -b audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a 36b3ea85229609afb08772a566cca2eb6fbe1be8
      git add audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json
      git commit -m "audit: Phase-1 blind lock for Pre-Batch3 T3 (CLAUDE-FRESH-COV-T3-A)"
