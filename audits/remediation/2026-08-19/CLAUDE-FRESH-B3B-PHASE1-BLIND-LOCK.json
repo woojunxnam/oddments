@@ -1,0 +1,514 @@
+{
+  "phase": "PHASE_1_BLIND_SOLVE",
+  "audit_date": "2026-08-19",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3B",
+  "tranche": "BATCH3-B3B",
+  "audit_scope": "INITIAL_BATCH",
+  "represented_candidate_sha": "6d41ac4c1f7b4fdf63b5f19c85627d1ff0e9b0ae",
+  "candidate_branch": "batch3/b3b-author",
+  "freeze_branch": "freeze/batch3-b3b-v1",
+  "freeze_head_expected": "65c2a4f6cdc1beaa8b730e0d324a590b38c8f1ac",
+  "freeze_head_observed": "65c2a4f6cdc1beaa8b730e0d324a590b38c8f1ac",
+  "blind_package_path": "audits/remediation/2026-08-19/B3B-BLIND-QUESTIONS.json",
+  "blind_package_blob": "ab98e111fb4e9aaaa60c714e9b76fadb387a0da1",
+  "blind_package_sha256": "dcf418d6c03491ca815e4137c3ed5e4d10dc2e13947006e6cf319cf1cf871e89",
+  "boundary_verification": {
+    "candidate_object_type": "commit",
+    "freeze_head_matches_expected": true,
+    "candidate_is_ancestor_of_freeze": true,
+    "candidate_is_ancestor_of_author_branch": true,
+    "semantic_drift_under_data_and_schemas": "NONE - git diff --name-only 6d41ac4c1f7b4fdf63b5f19c85627d1ff0e9b0ae origin/batch3/b3b-author -- data/ schemas/ produced no output",
+    "blind_package_blob_matches_expected": true,
+    "blind_package_lf_sha256_matches_expected": true,
+    "blind_package_field_set": [
+      "question_id",
+      "question_type",
+      "stem",
+      "choices"
+    ],
+    "blind_package_item_count": 33,
+    "blind_package_type_counts": {
+      "SBA": 20,
+      "SATA": 13
+    }
+  },
+  "question_count": 33,
+  "question_ids": [
+    "MA-Q-0262",
+    "MA-Q-0263",
+    "MA-Q-0264",
+    "MA-Q-0265",
+    "MA-Q-0266",
+    "MA-Q-0267",
+    "MA-Q-0268",
+    "MA-Q-0269",
+    "MA-Q-0270",
+    "MA-Q-0271",
+    "MA-Q-0272",
+    "MA-Q-0273",
+    "MA-Q-0274",
+    "MA-Q-0275",
+    "MA-Q-0276",
+    "MA-Q-0277",
+    "MA-Q-0278",
+    "MA-Q-0279",
+    "MA-Q-0280",
+    "MA-Q-0281",
+    "MA-Q-0282",
+    "MA-Q-0283",
+    "MA-Q-0284",
+    "MA-Q-0285",
+    "MA-Q-0286",
+    "MA-Q-0287",
+    "MA-Q-0288",
+    "MA-Q-0289",
+    "MA-Q-0290",
+    "MA-Q-0291",
+    "MA-Q-0292",
+    "MA-Q-0293",
+    "MA-Q-0294"
+  ],
+  "answers": [
+    {
+      "question_id": "MA-Q-0262",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.02 defines Conviction to include 'any admission to or finding of sufficient facts to warrant a finding of guilt, regardless of adjudication, a continuance without a finding, and any plea of guilty or nolo contendere... whether or not a sentence has been imposed.' An admission to sufficient facts resolved by a CWOF is therefore squarely within the definition. Choice A fails because the definition applies 'regardless of adjudication'; B fails because it applies 'whether or not a sentence has been imposed'; C fails because the definition reaches a crime 'in any jurisdiction'; D fails because 247 CMR 10.02 makes a conviction conclusive evidence of commission of the crime, so no separate Board finding is needed.",
+      "authorities_consulted": [
+        "247 CMR 10.02 (Definitions - Conviction), Mass. Register #1546, 4/25/2025 (eff. 1/9/25)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0263",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "D"
+      ],
+      "blind_reasoning": "Two distinct reporting duties with different clocks. 247 CMR 10.03(1)(z) requires report within seven business days of 'any final action... including any against any other health care related professional registration or license held by a registrant or licensee, by any other governmental authority in this state or another jurisdiction' - this captures the out-of-state nursing licence discipline, so B is correct. 247 CMR 10.03(1)(aa) requires report 'in writing, within 30 days, any pending criminal charge or conviction' - so D is correct. A is wrong because (aa) expressly reaches a pending charge, not only a final disposition. C is wrong because (z) is not limited to pharmacy practice; it reaches any other health care related licence. E is wrong because the two events do not share one deadline (7 business days vs 30 days).",
+      "authorities_consulted": [
+        "247 CMR 10.03(1)(z)",
+        "247 CMR 10.03(1)(aa)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0264",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.03(1)(q) makes it an independent ground for discipline to fail 'without cause, to cooperate with any request by the Board to appear before it or to provide requested information; failing to respond to a Board subpoena or failing to furnish the Board... with records, documents, information or testimony to which the Board is legally entitled.' The ground attaches to the non-cooperation itself, not to the merits of the underlying complaint. A and D fail because dismissal or non-substantiation of the underlying complaint does not cure the separate violation; B fails because materiality of the records is not an element; C fails because the ground reaches a 'request by the Board to appear', a subpoena being only one of the listed triggers.",
+      "authorities_consulted": [
+        "247 CMR 10.03(1)(q)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0265",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.06 enumerates Board actions. (2) Advisory Letter is 'An official written document retained in the Board's files... An advisory letter does not constitute formal disciplinary action' - A correct. (1) is 'Dismissal of the complaint', so B is false because dismissal IS among the available actions. (3) 'A reprimand constitutes formal disciplinary action. A censure is a severe reprimand' - C and D correct. (4) Probation 'consists of a period of time during which the registrant or licensee may practice under conditions imposed by the Board' - E correct.",
+      "authorities_consulted": [
+        "247 CMR 10.06(1)-(4)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0266",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.06(6)(c) requires the voluntary surrender agreement to 'state that the registrant or licensee realizes that the voluntary surrender of his or her personal registration, pharmacy permit, license or controlled substance registration, is an act which deprives him or her of all privileges of registration and is not subject to judicial review.' Choice E states both required elements. A, B, C and D each describe a review or withdrawal mechanism the regulation does not provide and which contradicts the express 'not subject to judicial review' term.",
+      "authorities_consulted": [
+        "247 CMR 10.06(6)(c)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0267",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 10.06(7) permits out-of-state discipline to be the basis for Massachusetts action only 'provided that the conduct disciplined in another state or jurisdiction constitutes a violation of Massachusetts law.' 247 CMR 10.03(1)(t) is to the same effect, reaching discipline 'for reasons substantially the same as those set forth in 247 CMR 10.03.' Because the stem stipulates the conduct is lawful and consistent with good professional practice in Massachusetts, the predicate fails - A. B is wrong because sister-state discipline is not automatically actionable; C and D add conditions the regulation does not impose and do not cure the missing predicate; E is wrong because the Board is not territorially confined - 10.03(1)(t) and 10.06(7) expressly contemplate out-of-state conduct.",
+      "authorities_consulted": [
+        "247 CMR 10.06(7)",
+        "247 CMR 10.03(1)(t)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0268",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.03(3) provides that 'Notwithstanding the grounds for discipline specified in 247 CMR 10.03, no licensee shall be subject to discipline for providing or assisting in providing, or dispensing medication for, reproductive health care services or gender-affirming health care services, as defined at M.G.L. c. 12, s. 11I-3/4, or for any conviction, judgment, discipline, or other sanction arising from such health care services, so long as the services provided would have been lawful in Massachusetts and are consistent with standards for good professional practice in Massachusetts.' The stem satisfies both conditions and the sanction arises from the protected service, so the carve-out overrides the otherwise applicable ground in 10.03(1)(t) / 10.06(7) - E. A, B, C and D all permit some form of discipline and are foreclosed by the 'Notwithstanding' clause.",
+      "authorities_consulted": [
+        "247 CMR 10.03(3)",
+        "M.G.L. c. 112, s. 61 (protected health care activity limitation)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0269",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "D"
+      ],
+      "blind_reasoning": "247 CMR 10.07 provides that where the Board suspends or refuses to renew pending final hearing, 'A hearing limited to the determination of the necessity of the summary action shall be afforded the licensee within seven days of the Board's action' - B correct. 247 CMR 10.08(1)(a) and (b) describe Cease and Desist and Quarantine Notices as requiring 'non-disciplinary cessation or restriction' and 'non-disciplinary restrictions' - D correct. A is false: the hearing clock for Notices under 247 CMR 10.06(8)-(9) and 10.08(1) is 15 business days under 247 CMR 10.08(3), not seven days. C is false: 10.07 turns on an immediate or serious threat shown by affidavits or documentary evidence, not on a criminal conviction. E is false: a Quarantine Notice is expressly a pre-hearing summary mechanism.",
+      "authorities_consulted": [
+        "247 CMR 10.07",
+        "247 CMR 10.08(1)-(3)",
+        "247 CMR 10.06(8)-(9)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0270",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 8.02(6)(d) provides that a pharmacy technician 'may not administer medications or vaccines, perform drug utilization review, conduct clinical conflict resolution, contact prescribers concerning therapy clarification or therapy modification, provide patient counseling, or perform final dispensing process validation.' 247 CMR 9.04(1) confirms 'A licensed pharmacist is responsible for the final dispensing process validation of a prescription.' 247 CMR 10.03(1)(f) makes 'Engaging in conduct beyond the authorized scope of a pharmacist, pharmacy intern or pharmacy technician' a ground for discipline, and the pharmacist who knowingly permits it is exposed on that ground and under 247 CMR 9.01(10) (aiding the unlawful practice of pharmacy). A is wrong because patient harm is not an element; B is wrong because a technician licence does not authorize final validation; C and D add conditions the regulation does not impose.",
+      "authorities_consulted": [
+        "247 CMR 8.02(6)(d)",
+        "247 CMR 9.04(1)",
+        "247 CMR 10.03(1)(f)",
+        "247 CMR 9.01(10)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0271",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 10.02 defines Investigative Conference as 'an informal discussion relating to a complaint held with the Board' - B correct. 247 CMR 10.04 permits the Board to 'schedule an investigative conference at any time prior to the commencement of a formal adjudicatory proceeding' - C correct. 247 CMR 10.02 defines Order to Show Cause as 'a document served by the Board upon a registrant ordering the registrant or licensee to appear before the Board for a formal adjudicatory hearing' - D correct. 247 CMR 10.02 defines Complaint as 'a communication filed with the Board or the Division of Health Professions Licensure which the Board determines, after investigation, merits further consideration or action' - E correct. A is false because 247 CMR 10.05 lets the Board 'schedule an investigative conference or... schedule a formal adjudicatory hearing', so a conference is not a mandatory precondition.",
+      "authorities_consulted": [
+        "247 CMR 10.02 (Investigative Conference, Order to Show Cause, Complaint)",
+        "247 CMR 10.04",
+        "247 CMR 10.05"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0272",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 10.01 states 'The Board may take disciplinary action against a registered pharmacist, pharmacy technician, pharmacy, pharmacy department, wholesale license, and/or controlled substance registration issued by the Board.' The 'and/or' construction expressly permits concurrent action against the individual and the entity arising from the same facts, and 247 CMR 10.03(1) applies to 'an individual or entity licensed or registered by the Board.' A is therefore correct. B has no regulatory basis; C invents an Attorney General referral precondition; D is wrong because the Board, not DPH, licenses pharmacies under M.G.L. c. 112, s. 39; E invents a Manager of Record limitation.",
+      "authorities_consulted": [
+        "247 CMR 10.01",
+        "247 CMR 10.03(1)",
+        "M.G.L. c. 112, s. 61"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0273",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 8.01(17) provides that 'A pharmacy intern found to have engaged in conduct in violation of federal and/or state laws and/or regulations may be prohibited from taking the examination for licensure, in addition to other sanctions imposed by the Board.' The consequence is therefore not confined to the intern licence - E. A is wrong because eligibility under 247 CMR 3.01(1) also requires good moral character and is subject to 8.01(17); B invents a controlled-substance limitation; C is wrong because the Board, not NABP, controls Massachusetts examination eligibility; D overstates the rule, which is permissive ('may be prohibited') and not a permanent bar.",
+      "authorities_consulted": [
+        "247 CMR 8.01(17)",
+        "247 CMR 3.01(1)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0274",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "C",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 8.02(4) lists what a Board-approved training program may include: (a) ASHP-accredited program; (b) 'a pharmacy technician training program provided by a branch of the United States Armed Services or Public Health Service' - C correct; (c) 'a Board-approved pharmacy technician training program which includes a minimum of 120 hours of theoretical and 120 hours of practical instruction' - B correct for the generic Board-approved pathway; (d) any other course approved by the Board. A is false: duration alone confers nothing and every pathway requires Board approval. D is false: 247 CMR 8.06(2) permits on-the-job training directly, with no waiver precondition. E is correct: 247 CMR 8.06(2) provides 'Copies of training program guidelines shall be provided to the Board on request.'",
+      "authorities_consulted": [
+        "247 CMR 8.02(4)",
+        "247 CMR 8.06(2)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0275",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 8.02(5) requires the Board-approved examination to cover: (a) practice settings; (b) duties and responsibilities of a pharmacy technician in relationship to other pharmacy personnel (B correct); (c) laws and regulations regarding the practice of pharmacy and patient confidentiality (A correct); (d) medical abbreviations and symbols (D correct); (e) common dosage calculations; and (f) identification of drugs, dosages, routes of administration, and storage requirements (E correct). C is false: sterile compounding gowning and aseptic technique are not among the enumerated knowledge-based areas in 8.02(5).",
+      "authorities_consulted": [
+        "247 CMR 8.02(5)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0276",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 8.01(12) provides that 'Massachusetts approved colleges/schools of pharmacy shall submit to the Board a written description of each demonstration project or clinical pharmacy program for which pharmacy internship credit is desired. The Board may determine whether or not student participation in such project(s) or program(s) may be credited to the internship requirement.' Both elements - the school's written description and the Board's creditability determination - appear only in A. B is wrong because clinical pharmacy under 8.01(1)(a)2.a. is an eligible area but credit still runs through 8.01(12); C is wrong because the school, not each student, submits; D adds a separate ACPE accreditation condition not present; E is wrong because preceptor certification does not make credit automatic.",
+      "authorities_consulted": [
+        "247 CMR 8.01(12)",
+        "247 CMR 8.01(1)(a)2."
+      ]
+    },
+    {
+      "question_id": "MA-Q-0277",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 3.01(3)(c) requires a completed examination application to include 'a certified birth certificate or other sufficient proof of place and date of birth.' 247 CMR 3.01(8) provides 'The Board may refuse to consider any application that has not been properly completed.' 247 CMR 3.01(9) provides 'All fees submitted to the Board in connection with an application for licensure as a pharmacist, reviewed and acted upon by the Board, are nonrefundable.' The Board reviewed and acted on the application by declining to consider it, so the fee is non-refundable - E. A, B, C and D each describe refund or credit mechanisms the regulation does not provide.",
+      "authorities_consulted": [
+        "247 CMR 3.01(3)(c)",
+        "247 CMR 3.01(8)",
+        "247 CMR 3.01(9)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0278",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "C"
+      ],
+      "blind_reasoning": "247 CMR 3.03 provides 'In the event that an original certificate of licensure is recovered after a duplicate certificate has been issued, the duplicate shall be promptly returned to the Board.' The duplicate goes back, not the original - C. B inverts the rule; A, D and E describe retention, destruction or deferred-reporting options the regulation does not authorize.",
+      "authorities_consulted": [
+        "247 CMR 3.03"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0279",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "D",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 4.07 provides 'A registered pharmacist who is a Board-approved continuing education instructor shall receive continuing education credit for the program taught on a one-time basis annually' - A correct, and B false because repeat presentations of the same program in one year do not generate separate credit. 247 CMR 4.08 awards postgraduate contact hours 'provided that the sponsor or co-sponsor of the postgraduate curriculum or program is a Board-authorized or ACPE accredited provider of continuing professional education' (D correct) 'and provided further that the course provides instruction in one or more of the following areas: pharmacy, pharmaceutical sciences, pharmacy practice, or pharmacy law' (E correct). C is false because pharmacy law is only one of four qualifying areas.",
+      "authorities_consulted": [
+        "247 CMR 4.07",
+        "247 CMR 4.08"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0280",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 4.05(3) governs home-study/mediated instruction: (c) 'involve the learner by requiring an active response to materials and provide feedback' (B correct); (d) 'contain a test to indicate progress and to verify the completion of program' (A correct); (e) 'supply a bibliography for continued study'. 247 CMR 4.05(4)(a) governs live programs: 'Involve direct interaction between the faculty and participants' (C correct). D is false because the bibliography requirement sits in 4.05(3)(e) for home study and is not among the live-program criteria in 4.05(4). E is correct under 247 CMR 4.05(7)(b): 'program participants shall be given the opportunity to evaluate faculty, learning experiences, instructional methods, facilities and educational resources used for the program.'",
+      "authorities_consulted": [
+        "247 CMR 4.05(3)",
+        "247 CMR 4.05(4)",
+        "247 CMR 4.05(7)(b)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0281",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.18(3) provides 'Counseling shall be made by a pharmacist or a pharmacy intern. A pharmacy technician or other individual may not counsel any patient.' The intern may therefore deliver the counseling - E. A and B are foreclosed by the express technician bar, which is repeated for certified technicians at 247 CMR 8.04(4)(e) and for technicians at 8.02(6)(d). C is wrong because the intern is an authorized counselor. D confuses relaying the offer to counsel (permitted to technicians under 8.02(6)(b) and 8.04(4)(b)) with delivering counseling itself.",
+      "authorities_consulted": [
+        "247 CMR 9.18(3)",
+        "247 CMR 8.02(6)(b) and (d)",
+        "247 CMR 8.04(4)(b) and (e)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0282",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 9.18(1) permits the offer to be made by 'A pharmacist or pharmacist's designee', and 247 CMR 9.18(2) imposes the controlling condition: 'A pharmacist shall ensure his or her designee is appropriately trained to make the offer to counsel.' A states that duty. C is wrong because a designee may make the offer; B is wrong because 9.18(1)-(2) impose no technician licensure precondition on a designee; D and E add documentation and Board pre-approval requirements the regulation does not contain.",
+      "authorities_consulted": [
+        "247 CMR 9.18(1)",
+        "247 CMR 9.18(2)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0283",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.18(4) provides 'A pharmacist or pharmacy intern shall provide counseling on each new drug therapy and each drug therapy that in the pharmacist's professional judgment is deemed to be significant for the health and safety of the patient.' The duty therefore has two independent triggers, and a refilled anticoagulant after a recent prescriber dose change falls within the second - E. A, B and C all rest on the false premise that only new drug therapy triggers the duty. D is wrong because the regulation does not require counseling on every refill without exception; the second trigger is calibrated to professional judgment about significance. 247 CMR 9.17(1)(i) reinforces that any significant change in drug, dose or directions must be identified on prospective DUR.",
+      "authorities_consulted": [
+        "247 CMR 9.18(4)",
+        "247 CMR 9.17(1)(i)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0284",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.18(5) lists information counseling may include: (c) 'special directions and instructions for preparation, administration, and use by the patient' (B); (e) 'techniques for self-monitoring drug therapy' (C); (f) 'proper storage and disposal' (D); (h) 'action to be taken in the event of a missed dose or adverse reaction' (E). A is false: the pharmacy's wholesale acquisition cost is not among the enumerated items and is not counseling information within 9.18(5).",
+      "authorities_consulted": [
+        "247 CMR 9.18(5)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0285",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.18(6) requires a designated patient consultation area with signage and adequate visual and auditory privacy, and adds the access condition: 'The private consultation area shall be accessible by a patient from the outside of the prescription dispensing area without having to traverse a stockroom or the prescription dispensing area.' A room reachable only by walking through the dispensing area fails that condition - E. A is wrong because privacy alone does not satisfy 9.18(6); B and C add cures the regulation does not recognise; D misstates the rule, which requires access from outside the prescription dispensing area rather than location outside the pharmacy department.",
+      "authorities_consulted": [
+        "247 CMR 9.18(6)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0286",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "C",
+        "D"
+      ],
+      "blind_reasoning": "247 CMR 9.18(7) requires 'a sign of not less than 11 inches in height by 14 inches in width in a conspicuous place, adjacent to each area where prescriptions are dispensed' (C and D correct), reading 'in letters not less than 1/2 inch in height'. A is false because the sign duty attaches to each dispensing area, not to the store entrance. B is false because the letter height is fixed at not less than 1/2 inch. E is false because 9.18(7) prescribes a single English text and imposes no bilingual requirement.",
+      "authorities_consulted": [
+        "247 CMR 9.18(7)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0287",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "C",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.18(8): 'A pharmacy and pharmacist shall ensure counseling is available at all times when a pharmacy is open for business' - A correct. 247 CMR 9.18(9): 'A pharmacy and pharmacist shall dispense or recommend a proper measuring device with all liquid medications' - C correct and B false, since the duty is not limited to paediatric liquids. 247 CMR 9.18(10): 'The provisions of 247 CMR 9.18 do not apply to pharmacists while practicing in an inpatient setting, unless otherwise required by law or regulation' - E correct and D false, because the exclusion removes the whole section rather than only the offer requirement.",
+      "authorities_consulted": [
+        "247 CMR 9.18(8)",
+        "247 CMR 9.18(9)",
+        "247 CMR 9.18(10)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0288",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "A",
+        "C",
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.15(2) bars filling unless the pharmacist determines in professional judgment that (a) the prescription was issued for a legitimate medical purpose by a practitioner acting in the usual course of professional practice; (b) there is a valid patient-practitioner relationship; (c) the prescription is authentic; and (d) the dispensing accords with M.G.L. c. 94C, s. 19(a). B has no regulatory basis and is false. I read the stem's word 'still', together with the prescriber's telephone confirmation that he wrote the prescription, as having already resolved determination (c) / choice D, leaving A, C and E as the determinations that remain. AUDITOR NOTE: this is the single item in the tranche where I regard the stem wording as genuinely ambiguous - on a purely enumerative reading of 9.15(2) all four of A, C, D and E are regulatory requirements and D would also be keyed. I record A, C, E as my independent blind answer and flag the ambiguity for Phase 3 wording review rather than treating either reading as legally wrong.",
+      "authorities_consulted": [
+        "247 CMR 9.15(2)",
+        "M.G.L. c. 94C, s. 19(a)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0289",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 9.15(1) provides 'A pharmacist who dispenses medications reported to the Massachusetts Prescription Monitoring Program (PMP) shall register with and maintain login information for the electronic system to monitor the prescribing and dispensing of controlled substances authorized by M.G.L. c. 94C, s. 24A, known as PMP or MassPAT.' The duty is personal to the dispensing pharmacist - A. B is wrong because an institutional account does not discharge the individual duty; C is wrong because the trigger is dispensing medications reported to the PMP, not Schedule II alone; D and E invent conditions absent from 9.15(1).",
+      "authorities_consulted": [
+        "247 CMR 9.15(1)",
+        "M.G.L. c. 94C, s. 24A"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0290",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "E"
+      ],
+      "blind_reasoning": "247 CMR 9.01(11) provides 'A licensee may not offer, solicit, or receive remuneration or anything of value to or from any person who owns, operates, manages, or is an employee of a hospital, nursing home, or other health care facility in return for a referral to a pharmacy... or the generation of business from sale or furnishing of any drugs, devices, or services to any such persons or institutions.' Free catering is 'anything of value', the administrator manages a nursing home, and the purpose is generation of business - E. A is wrong because the prohibition independently reaches generation of business, not only individual referrals; B is wrong because the prohibition is not limited to money; C and D invent disclosure and de minimis exceptions the regulation does not contain.",
+      "authorities_consulted": [
+        "247 CMR 9.01(11)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0291",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "A"
+      ],
+      "blind_reasoning": "247 CMR 9.01(13) provides 'a pharmacist connected with, or employed by, a hospital or clinic pharmacy that does not hold a Drug Store pharmacy license may not dispense drugs to any person other than inpatients or outpatients of the hospital or clinic, or to employees of said hospital or clinic, or to said employees' spouses and children who live in the same household with said employees.' An adult sibling living across town is none of those - A. B is wrong because the permitted class is confined to spouses and children in the same household; C is wrong because the prescriber's identity does not enlarge the recipient class; D is wrong because payment is irrelevant; E is wrong because 9.01(13) reaches drugs generally, not only controlled substances.",
+      "authorities_consulted": [
+        "247 CMR 9.01(13)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0292",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": [
+        "B",
+        "D"
+      ],
+      "blind_reasoning": "247 CMR 16.02(1)(f) sets out the conditions that attach only 'if prescriptive practices are included in the collaborative practice agreement': 1. 'maintain a current controlled substance registration issued by the Department during the term of the agreement' (B correct); 2. training required pursuant to M.G.L. c. 94C, s. 18(e); 3. 'submit an attestation, signed under the pains and penalties of perjury, that the pharmacist participates in, or had applied to participate in, MassHealth' (D correct). A is doubly false: the liability insurance requirement is $1,000,000 per occurrence under 247 CMR 16.02(1)(b) and M.G.L. c. 112, s. 24B1/2(b), and it is a general qualification not tied to prescriptive practices. C is doubly false: the figure is five additional contact hours under 16.02(1)(e), and it too is a general qualification. E is false because no separate Board licence category exists for collaborating pharmacists.",
+      "authorities_consulted": [
+        "247 CMR 16.02(1)(f)",
+        "247 CMR 16.02(1)(b) and (e)",
+        "M.G.L. c. 112, s. 24B1/2(b)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0293",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "C"
+      ],
+      "blind_reasoning": "247 CMR 16.02(2) provides 'An authorized pharmacist participating in CDTM must maintain evidence of completion of required continuing education for at least two years after the date of the current collaborative practice agreement.' The retention clock runs from the date of the current agreement, not from the date of the course, so with an agreement signed six months ago the documentation must be kept - C. A is wrong because course age is not the measure; B and D misstate the retention period; E is wrong because the duty is to retain, not to forward.",
+      "authorities_consulted": [
+        "247 CMR 16.02(2)"
+      ]
+    },
+    {
+      "question_id": "MA-Q-0294",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": [
+        "D"
+      ],
+      "blind_reasoning": "247 CMR 16.02(3) provides 'Whenever an authorized pharmacist participating in CDTM is disciplined by the Board, whether by agreement or Board order, or otherwise subject to any practice restrictions, the authorized pharmacist must provide written notification of such discipline or practice restriction to each supervising physician.' A consent agreement is expressly covered ('whether by agreement or Board order') and the notice runs to each supervising physician - D. A is wrong on the express text; B is wrong because notice is owed to each supervising physician, not only the one connected to the conduct; C is wrong because the duty is to notify the physicians; E is wrong because the regulation imposes a notification duty, not suspension of collaborative practice.",
+      "authorities_consulted": [
+        "247 CMR 16.02(3)"
+      ]
+    }
+  ],
+  "authorities_consulted": [
+    "247 CMR 3.00: Pharmacist Licensure Requirements, 4/25/25 (Effective 1/9/25), Mass. Register #1546",
+    "247 CMR 4.00: Personal Registration Renewal; Continuing Education Requirement, MA Reg. #1330 dated 1/13/2017",
+    "247 CMR 8.00: Pharmacy Interns and Technicians, 4/25/25 (Effective 1/9/25), Mass. Register #1546",
+    "247 CMR 9.00: Professional Practice Standards, 12/6/24, Mass. Register #1536",
+    "247 CMR 10.00: Disciplinary Proceedings, 4/25/25 (Effective 1/9/25), Mass. Register #1546",
+    "247 CMR 16.00: Collaborative Drug Therapy Management, MA Reg. #1354 dated 12/15/2017",
+    "M.G.L. c. 112, s. 61 (malegislature.gov)",
+    "M.G.L. c. 112, s. 24B1/2 (malegislature.gov)",
+    "M.G.L. c. 94C, s. 19(a) and s. 24A (as cross-referenced by 247 CMR 9.15)",
+    "M.G.L. c. 12, s. 11I-3/4 (as cross-referenced by 247 CMR 10.03(3))"
+  ],
+  "source_acquisition_method": "Official regulation PDFs retrieved directly from the mass.gov Trial Court Law Libraries 247 CMR pages (https://www.mass.gov/law-library/247-cmr) and statutes from malegislature.gov. No secondary, commercial, forum, flashcard or LLM-derived source was used.",
+  "canonical_key_inspected_before_lock": false,
+  "canonical_explanation_inspected_before_lock": false,
+  "canonical_rules_inspected_before_lock": false,
+  "author_reasoning_inspected_before_lock": false,
+  "contamination_status": "CLEAN",
+  "sealed_material_boundary_statement": "Before this lock was committed the only B3-B question content read was audits/remediation/2026-08-19/B3B-BLIND-QUESTIONS.json, read via git show from origin/freeze/batch3-b3b-v1 and verified against the expected blob SHA-1 and the expected LF-normalized SHA-256. No file under data/questions/, no file under data/rules/, no B3B legal or realism contract, no clean freeze manifest, no post-lock dependency file, no Phase-0 governance attestation, no authoring script under scripts/, no authoring report, no controller ledger entry, no GitHub issue or pull request, and no git log, diff or show output disclosing keys, explanations, rules, family assignments or author rationale for MA-Q-0262 through MA-Q-0294 was inspected.",
+  "attestation": "I, CLAUDE operating as auditor instance CLAUDE-FRESH-B3B, attest that I did not author any question in tranche BATCH3-B3B; that I solved all 33 items MA-Q-0262 through MA-Q-0294 independently from current official Massachusetts primary authority before creating this record; that the selected choice identifiers recorded here are my own determinations reached without access to any canonical answer key, canonical explanation, canonical rule record or author reasoning; that all four sealed-material booleans above are recorded truthfully as false; and that this lock is immutable and will not be amended, rewritten, rebased away or force-pushed over after canonical content is unsealed."
+}
