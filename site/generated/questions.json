@@ -2516,13 +2516,49 @@
         "Distinguish a completed dispensing from a documented partial-fill balance",
         "Reject refill and oral-change pathways for the completed prescription"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CII-NO-REFILL": {
+              "content_version": 1,
+              "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "amphetamine-dextroamphetamine": {
+              "content_version": 1,
+              "content_hash": "b1bd93919f680a5cb42a00c2aa230521c40e0af343ac5677536414db3526f468"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -2648,7 +2684,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0012",
@@ -2711,13 +2771,49 @@
       "reasoning_steps": [
         "Classify lisdexamfetamine under the federal and Massachusetts schedules before selecting a legal pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-VALIDITY-30D": {
+              "content_version": 1,
+              "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "lisdexamfetamine": {
+              "content_version": 1,
+              "content_hash": "3ae518cc186d2997d82ea286d89c02d77e7441e633d1a805239cdb3bb73b5d06"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -2843,7 +2939,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-CII-VALIDITY-30D, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0013",
@@ -4327,13 +4447,49 @@
         "Match the scenario's operative facts to One-time transfer of electronic controlled prescriptions",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Electronic prescriptions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-EPCS-TRANSFER": {
+              "content_version": 1,
+              "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "morphine": {
+              "content_version": 1,
+              "content_hash": "f9ae33c7e6276cf2af15610bde5e364a84e025ee5fbae4387e0fecd918681c49"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -4459,7 +4615,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0020",
@@ -4779,13 +4959,49 @@
       "reasoning_steps": [
         "Classify oxymorphone under the federal and Massachusetts schedules before selecting a legal pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CII-PARTIAL-PATIENT": {
+              "content_version": 1,
+              "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "oxymorphone": {
+              "content_version": 1,
+              "content_hash": "55dcfb81d1ae91f45d00add872b2a82ccd04a3eb5b3a6227f48973abd875453f"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -4912,7 +5128,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-CII-PARTIAL-PATIENT, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0022",
@@ -4975,13 +5215,49 @@
       "reasoning_steps": [
         "Classify meperidine under the federal and Massachusetts schedules before selecting a legal pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-VALIDITY-30D": {
+              "content_version": 1,
+              "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "meperidine": {
+              "content_version": 1,
+              "content_hash": "9fa16bb10d1c678f48cf00bc18bef2582c922d57e21afdf07e050ca8379fea91"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -5107,7 +5383,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-CII-VALIDITY-30D, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0023",
@@ -5379,13 +5679,49 @@
         "Classify it as Schedule III",
         "Apply the indication-specific Massachusetts OUD quantity pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CS-QUANTITY-II-III": {
+              "content_version": 1,
+              "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "buprenorphine": {
+              "content_version": 1,
+              "content_hash": "cbb940e85e48dde1efbd53ad0704271411892aa7a6d8009e33b537140dc90d43"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -5518,7 +5854,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0025",
@@ -5583,13 +5943,49 @@
         "Classify Sublocade as Schedule III",
         "Apply the Massachusetts dispenser reporting rule"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "buprenorphine-er": {
+              "content_version": 1,
+              "content_hash": "f3f77bfeb9c8469cb3fa097b69a40b2caa3c9431955034d7cbd12abc56d54194"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -5722,7 +6118,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0026",
@@ -5786,13 +6206,49 @@
         "Classify alprazolam under the federal and Massachusetts schedules before selecting a legal pathway",
         "Match the scenario's operative facts to Federal Schedule III and IV refill limits"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CIII-V-REFILL": {
+              "content_version": 1,
+              "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "alprazolam": {
+              "content_version": 1,
+              "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -5918,7 +6374,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0027",
@@ -6890,13 +7370,49 @@
         "Classify midazolam as Schedule IV",
         "Reject payment and therapeutic-class distractions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "midazolam": {
+              "content_version": 1,
+              "content_hash": "346aecab4325637943b5211e375cf89c8c103b9928ddbd519c1cfcb122efedd9"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -7029,7 +7545,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0032",
@@ -7349,13 +7889,49 @@
       "reasoning_steps": [
         "Classify temazepam under the federal and Massachusetts schedules before selecting a legal pathway"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CIII-V-REFILL": {
+              "content_version": 1,
+              "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "temazepam": {
+              "content_version": 1,
+              "content_hash": "77c6547a7e5691c7580d27f63270de05f3110bcf5f98305dcac84898a6ee110b"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -7481,7 +8057,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0034",
@@ -8255,13 +8855,49 @@
         "Apply the schedule-based MassPAT reporting rule",
         "Reject therapeutic-class exclusions not found in the reporting rule"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-REPORTING": {
+              "content_version": 1,
+              "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "suvorexant": {
+              "content_version": 1,
+              "content_hash": "f8ad004a41d1c4c6610dd1e6d9003224e656c4c264c81832407449e2265bd193"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -8394,7 +9030,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0038",
@@ -8655,13 +9315,49 @@
         "Match the scenario's operative facts to Federal Schedule III and IV refill limits",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Schedule III-IV refills"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CIII-V-REFILL": {
+              "content_version": 1,
+              "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+            },
+            "FED-CS-SCHEDULES": {
+              "content_version": 1,
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+            }
+          },
+          "drugs": {
+            "daridorexant": {
+              "content_version": 1,
+              "content_hash": "7a998b25a5aee52d5fc083481ee42b596cd8e1f50d90deccb11d9f30341d7999"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -8787,7 +9483,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-CIII-V-REFILL, FED-CS-SCHEDULES의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0040",
@@ -11087,13 +11807,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Pharmacy continuous quality improvement program"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CQI-PROGRAM": {
+              "content_version": 1,
+              "content_hash": "4c2ae4249c5cc321b67c87cb7385fdca772e930c5af5f7786bf9ca3a565a3446"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11105,7 +11852,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-CQI-PROGRAM의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0052",
@@ -11165,13 +11936,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Immediate response after discovery of a quality-related event"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-QRE-NOTIFY": {
+              "content_version": 1,
+              "content_hash": "dfc596358e84206d67635bb632e7cf6d544ed937b80a33cb82c266f3cd8ef5ff"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11183,7 +11981,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0053",
@@ -11243,13 +12065,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Quality-related event documentation deadline"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-QRE-DOCUMENT-24H": {
+              "content_version": 1,
+              "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11261,7 +12110,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-QRE-DOCUMENT-24H의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0054",
@@ -11401,13 +12274,40 @@
         "Match the scenario's operative facts to Annual CQI education for pharmacy personnel",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from CQI education"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-QRE-ANNUAL-ED": {
+              "content_version": 1,
+              "content_hash": "5b2b5d8c161fb500071e8f6dac42d0405dddf32ff0062c8e702f6453fd8cd30d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11419,7 +12319,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-QRE-ANNUAL-ED의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0056",
@@ -11480,13 +12404,40 @@
         "Match the scenario's operative facts to Reporting improper dispensing and serious adverse drug events",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Serious events"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-SERIOUS-EVENT-REPORT": {
+              "content_version": 1,
+              "content_hash": "17755b98641f951490115bf1f6c3fdd379a91a364925365f3d4a700e003821a0"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11498,7 +12449,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-SERIOUS-EVENT-REPORT의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0057",
@@ -11559,13 +12534,40 @@
         "Match the scenario's operative facts to Retention of serious-event reporting records",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Record retention"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-SERIOUS-EVENT-RECORDS": {
+              "content_version": 1,
+              "content_hash": "fda118e116c281ccbdad23a2fdae43165b5ee63d5d6b4ac49604d44fcd32d775"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11577,7 +12579,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-SERIOUS-EVENT-RECORDS의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0058",
@@ -11640,13 +12666,40 @@
         "Apply the one-business-day written-notice clock",
         "Apply the separate 45-calendar-day Form 106 clock"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-THEFT-LOSS-DEA": {
+              "content_version": 1,
+              "content_hash": "dfd4fc959351088147ae3e63b28f77f0cca1419d7841593744efacb85b6219eb"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -11658,7 +12711,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0059",
@@ -11987,13 +13064,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Exact and estimated controlled-substance inventory counts"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-INVENTORY-COUNT": {
+              "content_version": 1,
+              "content_hash": "95779b7e7f6f58b3f894630bba9a72c3e83e3646e6e7e163ff640d913a4a267d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12005,7 +13109,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-INVENTORY-COUNT의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0062",
@@ -12065,13 +13193,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Federal controlled-substance record retention"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-CS-RECORDS-2Y": {
+              "content_version": 1,
+              "content_hash": "1ab8c05b5de29caee69f15a1bdf5916ba1ca74d445e75c188493532ed29cd96f"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12083,7 +13238,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-CS-RECORDS-2Y의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0063",
@@ -12143,13 +13322,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Schedule I and II ordering by Form 222 or CSOS"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-ORDER": {
+              "content_version": 1,
+              "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12161,7 +13367,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-FORM222-ORDER의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0064",
@@ -12222,13 +13452,40 @@
         "Match the scenario's operative facts to DEA Form 222 validity and partial shipments",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Form validity"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-60DAY": {
+              "content_version": 1,
+              "content_hash": "bcf16225009bf0f430d6c3cb655c932a153ccdb7f39be5db2ac521dba231a444"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12240,7 +13497,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-FORM222-60DAY의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0065",
@@ -12301,13 +13582,40 @@
         "Match the scenario's operative facts to Defective DEA Form 222 may not be corrected",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Defective form"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-DEFECT": {
+              "content_version": 1,
+              "content_hash": "3e1b34c797914202f16d02be89a90a3d0b7709286b19febfc75bad76f3441709"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12319,7 +13627,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-FORM222-DEFECT의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0066",
@@ -12459,13 +13791,40 @@
         "Match the scenario's operative facts to DEA Form 222 preservation",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Form records"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM222-RECORDS": {
+              "content_version": 1,
+              "content_hash": "7c04e8285a2af4de7f8b23013bc929b516e95d3aab2be3c300cf99e557f053d9"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12477,7 +13836,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-FORM222-RECORDS의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0068",
@@ -12618,13 +14001,40 @@
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from DEA Form 41",
         "Confirm the exception, documentation, and timing conditions against the cited official authority"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-FORM41": {
+              "content_version": 1,
+              "content_hash": "4b9c25164d65a04d5672746189d384d94145be61e104c01df2161b5ab6540dfa"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12636,7 +14046,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-FORM41의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0070",
@@ -12698,13 +14132,40 @@
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Destruction standard",
         "Confirm the exception, documentation, and timing conditions against the cited official authority"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-DISPOSAL-NONRETRIEVABLE": {
+              "content_version": 1,
+              "content_hash": "cad4b48fb5f0b70dd8b6739c111f78395fe0feb5e6dab502f233bb4c2ea1927c"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12716,7 +14177,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-DISPOSAL-NONRETRIEVABLE의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0071",
@@ -12776,13 +14261,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Transfer to a registered reverse distributor"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-REVERSE-DISTRIBUTOR": {
+              "content_version": 1,
+              "content_hash": "48091a4d46a9fbfb1044f73ac28c1a46721d00e05cfac0af0a5436689e9867eb"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12794,7 +14306,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "FED-REVERSE-DISTRIBUTOR의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0072",
@@ -12854,13 +14390,40 @@
       "reasoning_steps": [
         "Match the scenario's operative facts to Advance Board notice of pharmacy closure"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PHARMACY-CLOSURE-NOTICE": {
+              "content_version": 1,
+              "content_hash": "8f649d96f6743f86b51ab4e068628c13d8aef31597fe28271b922053edefe645"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -12872,7 +14435,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "MA-PHARMACY-CLOSURE-NOTICE의 trigger를 pharmacy decision에 적용하게 하며, 공식 public MPJE sample의 selected-response 구조와 양립한다. material ambiguity나 bank-level wording leakage를 확인하지 못했다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0073",
@@ -13013,13 +14600,40 @@
         "Match the scenario's operative facts to Controlled substances and credentials after pharmacy closure",
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Closure disposition"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PHARMACY-CLOSURE-CS": {
+              "content_version": 1,
+              "content_hash": "660003a269625b2fbae7fd830adda3875db8583addacdb61294f30b2e0d6a536"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -13031,7 +14645,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0075",
@@ -15067,13 +16705,44 @@
         "Reject nearby rules whose schedule, trigger, deadline, or actor differs from QRE notification",
         "Confirm the exception, documentation, and timing conditions against the cited official authority"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
-      "last_legal_review": "2026-08-13",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
+      "last_legal_review": "2026-08-19",
+      "audits": [
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-B-2026-08-19",
+        "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-B-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+        "date": "2026-08-19",
+        "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-QRE-NOTIFY": {
+              "content_version": 1,
+              "content_hash": "dfc596358e84206d67635bb632e7cf6d544ed937b80a33cb82c266f3cd8ef5ff"
+            },
+            "MA-QRE-DOCUMENT-24H": {
+              "content_version": 1,
+              "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -15092,7 +16761,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-B-2026-08-19",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-13",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "NABP public MPJE style, practice plausibility, distractor quality, rule integration, drug context와 full-bank distinctness를 독립 대조했으며 모든 criterion을 충족한다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0090",
