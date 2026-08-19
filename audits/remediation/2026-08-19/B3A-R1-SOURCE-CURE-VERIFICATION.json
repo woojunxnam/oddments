@@ -1,0 +1,222 @@
+{
+  "report_type": "B3A_R1_OFFICIAL_SOURCE_CURE_VERIFICATION",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "audit_pr": 98,
+  "lock_commit": "5907b0ab8bc3437846c492661ea867cee3e7ba9b",
+  "lock_blob": "15a8db8630ce9e8d36971bf17fe9ed76efa4d74f",
+  "pre_cure_head": "2d6decc831dac35e61b3a5055bc11d8cc5db0599",
+  "cure_head": "cbe17d9c5fb6313f6918e8b4512d968755472204",
+  "represented_candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+  "expected_hashes": {
+    "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+    "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+  },
+  "status": "PASS",
+  "checks": {
+    "01_descends_normally_from_lock": {
+      "status": "PASS",
+      "detail": {
+        "lock_is_ancestor": true,
+        "pre_cure_is_ancestor": true,
+        "cure_parent": "2d6decc831dac35e61b3a5055bc11d8cc5db0599",
+        "expected_parent": "2d6decc831dac35e61b3a5055bc11d8cc5db0599"
+      }
+    },
+    "02_no_amend_rewrite_or_rebase": {
+      "status": "PASS",
+      "detail": {
+        "lock_commit_object": "commit",
+        "pre_cure_object": "commit",
+        "lock_commit_tree": "2629c9479b0ecc9f26c964172fa0f0c6e73bf73b",
+        "pre_cure_tree": "a2d653cb0c731009dab8cdbdae23498a51552975",
+        "lock_parent": "c7b438f253089b74231e50040603458d46d20e6c"
+      }
+    },
+    "03_lock_blob_preserved": {
+      "status": "PASS",
+      "detail": {
+        "5907b0ab8bc3437846c492661ea867cee3e7ba9b": "15a8db8630ce9e8d36971bf17fe9ed76efa4d74f",
+        "2d6decc831dac35e61b3a5055bc11d8cc5db0599": "15a8db8630ce9e8d36971bf17fe9ed76efa4d74f",
+        "cbe17d9c5fb6313f6918e8b4512d968755472204": "15a8db8630ce9e8d36971bf17fe9ed76efa4d74f"
+      }
+    },
+    "04_blind_answers_preserved": {
+      "status": "PASS",
+      "detail": {
+        "blind": {
+          "MA-Q-0241": [
+            "A",
+            "C",
+            "E"
+          ],
+          "MA-Q-0256": [
+            "E"
+          ]
+        },
+        "canonical": {
+          "MA-Q-0241": [
+            "A",
+            "C",
+            "E"
+          ],
+          "MA-Q-0256": [
+            "E"
+          ]
+        }
+      }
+    },
+    "05_question_hashes_preserved": {
+      "status": "PASS",
+      "detail": {
+        "legal_pre_cure": {
+          "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+          "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+        },
+        "legal_post_cure": {
+          "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+          "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+        },
+        "realism": {
+          "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+          "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+        },
+        "expected": {
+          "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+          "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+        }
+      }
+    },
+    "06_realism_record_byte_identical": {
+      "status": "PASS",
+      "detail": {
+        "2d6decc831dac35e61b3a5055bc11d8cc5db0599": "58af96b432e3164a5b2e759d2167c19ec3569121",
+        "cbe17d9c5fb6313f6918e8b4512d968755472204": "58af96b432e3164a5b2e759d2167c19ec3569121"
+      }
+    },
+    "07_legal_changes_confined_to_source_method": {
+      "status": "PASS",
+      "detail": {
+        "substantive_fields_changed": "none",
+        "rule": "Substantive adjudication fields must be byte-identical. An exact_section may be narrowed to a more precise subsection by the official reading, but may not be redirected to a different provision.",
+        "changed_top_level": [],
+        "changed_result_fields": {
+          "MA-Q-0241": [
+            "Problem",
+            "authorities"
+          ],
+          "MA-Q-0256": [
+            "Problem",
+            "authorities"
+          ]
+        },
+        "authority_field_changes": {
+          "MA-Q-0241": {
+            "sections_before": [
+              "247 CMR 8.05(3)",
+              "247 CMR 8.05(1) and 247 CMR 8.05(2)",
+              "247 CMR 8.02(1), 247 CMR 8.03 and 247 CMR 8.04(1)"
+            ],
+            "sections_after": [
+              "247 CMR 8.05(3)",
+              "247 CMR 8.05(1) and 247 CMR 8.05(2)",
+              "247 CMR 8.02(1), 247 CMR 8.03(1) and 247 CMR 8.04(1)"
+            ],
+            "sections_unchanged": false,
+            "changes_are_narrowing_only": true
+          },
+          "MA-Q-0256": {
+            "sections_before": [
+              "247 CMR 4.03(7)",
+              "247 CMR 4.03(4)(b)",
+              "247 CMR 4.03(5)"
+            ],
+            "sections_after": [
+              "247 CMR 4.03(7)",
+              "247 CMR 4.03(4)(b)",
+              "247 CMR 4.03(5)"
+            ],
+            "sections_unchanged": true,
+            "changes_are_narrowing_only": true
+          }
+        }
+      }
+    },
+    "08_only_minimal_cure_record_added": {
+      "status": "PASS",
+      "detail": [
+        "A\taudits/remediation/2026-08-19/CLAUDE-FRESH-B3A-R1-OFFICIAL-SOURCE-CURE.json",
+        "M\tdata/audits/AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19.json"
+      ]
+    },
+    "09_legal_keep_yes": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": {
+          "Verdict": "KEEP",
+          "Existing_Answer_Correct": "YES",
+          "authority_count": 3
+        },
+        "MA-Q-0256": {
+          "Verdict": "KEEP",
+          "Existing_Answer_Correct": "YES",
+          "authority_count": 3
+        }
+      }
+    },
+    "10_realism_keep_pass_all_criteria": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": {
+          "Verdict": "KEEP",
+          "Realism_Verdict": "PASS",
+          "criteria_set_ok": true,
+          "all_true": true
+        },
+        "MA-Q-0256": {
+          "Verdict": "KEEP",
+          "Realism_Verdict": "PASS",
+          "criteria_set_ok": true,
+          "all_true": true
+        }
+      }
+    },
+    "11_no_canonical_or_tooling_mutation": {
+      "status": "PASS",
+      "detail": {
+        "changed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-R1-OFFICIAL-SOURCE-CURE.json",
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-R1-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19.json"
+        ],
+        "allowed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-R1-OFFICIAL-SOURCE-CURE.json",
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-R1-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19.json"
+        ]
+      }
+    }
+  },
+  "failures": [],
+  "cure_record_keys": [
+    "audit_head_before_cure",
+    "audit_scope",
+    "auditor",
+    "auditor_instance",
+    "authorizing_issue",
+    "cure_date",
+    "cured_record",
+    "invariants_preserved",
+    "official_documents_read",
+    "outcome",
+    "pull_request",
+    "reason",
+    "record_type",
+    "represented_candidate_sha",
+    "retrieval_history",
+    "scope_of_cure",
+    "tranche"
+  ]
+}
