@@ -1,0 +1,78 @@
+{
+  "manifest_type": "PRE_BATCH3_COVERAGE_T3_CLEAN_FREEZE_V1",
+  "created_date": "2026-08-19",
+  "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+  "authorizing_issue": 86,
+  "controller_issue": 83,
+  "source_branch": "remediation/pre-batch3-legacy-salvage-t1",
+  "source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+  "represented_candidate_branch": "remediation/pre-batch3-coverage-t3-diversity",
+  "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+  "freeze_branch": "freeze/pre-batch3-coverage-t3-v1",
+  "freeze_seed_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+  "freeze_head_binding": {
+    "mechanism": "The exact freeze HEAD is the commit containing this manifest and is pinned by immutable SHA in the fresh-audit handoff. The represented candidate SHA is the authority for content.",
+    "required_auditor_check": "Confirm the represented candidate SHA and every question hash below before any substantive work."
+  },
+  "auditor_instance_reserved": "CLAUDE-FRESH-COV-T3-A",
+  "author_is_not_auditor": true,
+  "question_count": 2,
+  "question_ids": [
+    "MA-Q-0227",
+    "MA-Q-0228"
+  ],
+  "question_hashes": {
+    "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+    "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+  },
+  "question_file_blobs": {
+    "MA-Q-0227": "58180f1ceb5f9ae9f4a55d7e3a1b4777df096366",
+    "MA-Q-0228": "1babc761544bc0121ecac6add7e845560fdf5e9a"
+  },
+  "new_rule_file_blobs": {
+    "MA-BEDSIDE-DELIVERY": "cf8fcbaec1ade9c8488ec8758cef2b9f67d67ed8",
+    "MA-CENTRAL-FILL-DISPENSING-ROUTE": "d79c45a9eb81538bf73ba625cde2e411a17bac1d"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-BEDSIDE-DELIVERY": {
+        "content_version": 1,
+        "content_hash": "bfcff957c781eeedafb496866b3d0361a58ffd68c4fca9a01950695ce9ebef77"
+      },
+      "MA-CENTRAL-FILL-DISPENSING-ROUTE": {
+        "content_version": 1,
+        "content_hash": "90f4e302223e230cbf8eb327a6f5cd711ee9f4d79564848d6be1cfc14275efb6"
+      }
+    },
+    "drugs": {},
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "remediated_headlines": {
+    "4.3": {
+      "label": "Delivery of drugs",
+      "existing_family": "T2_0215_MA_DRUG_DELIVERY",
+      "new_question": "MA-Q-0227"
+    },
+    "4.6": {
+      "label": "Centralized prescription processing / central fill",
+      "existing_family": "T2_0220_MA_CENTRAL_FILL",
+      "new_question": "MA-Q-0228"
+    }
+  },
+  "quality_gates_at_freeze": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0
+  }
+}

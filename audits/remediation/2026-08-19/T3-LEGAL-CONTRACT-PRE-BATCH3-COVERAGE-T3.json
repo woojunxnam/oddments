@@ -1,0 +1,98 @@
+{
+  "package_type": "FROZEN_AUDIT_CONTRACT",
+  "review_type": "LEGAL_VERIFICATION",
+  "audit_date": "2026-08-19",
+  "audit_scope": "TARGETED_INITIAL_BATCH",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+  "independent": true,
+  "audit_status_required": "FULLY_ADJUDICATED",
+  "governance_authorization": {
+    "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+    "authorizing_issue": 86,
+    "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+    "question_ids": [
+      "MA-Q-0227",
+      "MA-Q-0228"
+    ]
+  },
+  "represented_candidate_branch": "remediation/pre-batch3-coverage-t3-diversity",
+  "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+  "freeze_branch": "freeze/pre-batch3-coverage-t3-v1",
+  "source_branch": "remediation/pre-batch3-legacy-salvage-t1",
+  "source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+  "question_ids": [
+    "MA-Q-0227",
+    "MA-Q-0228"
+  ],
+  "question_hashes": {
+    "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+    "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+  },
+  "question_file_blobs": {
+    "MA-Q-0227": "58180f1ceb5f9ae9f4a55d7e3a1b4777df096366",
+    "MA-Q-0228": "1babc761544bc0121ecac6add7e845560fdf5e9a"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-BEDSIDE-DELIVERY": {
+        "content_version": 1,
+        "content_hash": "bfcff957c781eeedafb496866b3d0361a58ffd68c4fca9a01950695ce9ebef77"
+      },
+      "MA-CENTRAL-FILL-DISPENSING-ROUTE": {
+        "content_version": 1,
+        "content_hash": "90f4e302223e230cbf8eb327a6f5cd711ee9f4d79564848d6be1cfc14275efb6"
+      }
+    },
+    "drugs": {},
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "phase_order": [
+    "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
+    "PHASE_2_UNSEAL_CANONICAL_KEYS_AND_DEPENDENCIES",
+    "PHASE_3_LEGAL_VERIFICATION"
+  ],
+  "output_record": {
+    "path": "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19.json",
+    "schema": "schemas/audit.schema.json",
+    "audit_scope": "TARGETED_INITIAL_BATCH",
+    "independent": true,
+    "audit_status": "FULLY_ADJUDICATED"
+  },
+  "required_result_fields": [
+    "Question_ID",
+    "Verdict",
+    "Severity",
+    "Existing_Answer_Correct",
+    "authorities",
+    "Problem",
+    "Proposed_Answer",
+    "Proposed_Rewrite",
+    "Proposed_Explanation"
+  ],
+  "authority_requirements": {
+    "minimum_per_question": 1,
+    "each_authority_requires": [
+      "authority",
+      "source_type",
+      "exact_section",
+      "official_url",
+      "law_checked_date"
+    ],
+    "official_url_scheme": "https",
+    "source_policy": "current official primary or official government sources only"
+  },
+  "release_qualifying_result": {
+    "Verdict": "KEEP",
+    "Existing_Answer_Correct": "YES"
+  }
+}
