@@ -1,0 +1,53 @@
+{
+  "manifest_id": "PRE-BATCH3-COVERAGE-T2-Q0213-R1-V1",
+  "created_date": "2026-08-19",
+  "governance_role": "PRE_AUDIT_PACKAGING_ONLY",
+  "fresh_audit_executed": false,
+  "represented_candidate": {
+    "branch": "repair/pre-batch3-coverage-t2-r1",
+    "sha": "e8b42047f2579f0b83822bc15dcc640c5e9ba236",
+    "base_branch": "remediation/pre-batch3-coverage-t2-author",
+    "base_sha": "b849159ef18d37618ca6badf886e465502436e1b",
+    "draft_repair_pr": 73
+  },
+  "freeze": {
+    "branch": "freeze/pre-batch3-coverage-t2-q0213-r1-v1",
+    "seed_sha": "e8b42047f2579f0b83822bc15dcc640c5e9ba236",
+    "final_head": "PINNED_EXTERNALLY_BY_FRESH_AUDIT_ISSUE",
+    "self_reference_note": "A manifest stored in the freeze cannot contain the final commit SHA that contains itself without changing that SHA. The fresh-audit issue pins the final freeze HEAD externally."
+  },
+  "audit_scope": {
+    "type": "CHANGED_ITEM_REAUDIT",
+    "question_ids": [
+      "MA-Q-0213"
+    ],
+    "unchanged_t2_questions_retain_prior_auditor_a_evidence_only_if_hash_preserved": true
+  },
+  "blind_boundary": {
+    "auditor_identity": "GPT-FRESH-COV-T2-B",
+    "phase1_first_substantive_input": "BLIND_QUESTION_PACKAGE",
+    "canonical_question_and_dependency_content_access": "POST_LOCK_ONLY",
+    "prohibited_pre_lock_sources": [
+      "canonical MA-Q-0213 record",
+      "correct answer/key",
+      "explanation",
+      "rule_ids or dependency metadata",
+      "PR #73",
+      "Issue #72",
+      "Issue #74",
+      "PR #71 or Auditor-A conclusions",
+      "prior Q0213 versions",
+      "repair rationale",
+      "personal memory/context/prior chats/project summaries/File Library/scratchpad"
+    ]
+  },
+  "package_paths": {
+    "blind": "audits/remediation/2026-08-19/GPT-T2B-BLIND-Q0213-PRE-BATCH3-COVERAGE-T2-R1.json",
+    "legal_contract": "audits/remediation/2026-08-19/GPT-T2B-LEGAL-Q0213-PRE-BATCH3-COVERAGE-T2-R1.json",
+    "realism_contract": "audits/remediation/2026-08-19/GPT-T2B-REALISM-Q0213-PRE-BATCH3-COVERAGE-T2-R1.json",
+    "postlock_dependencies": "audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T2-Q0213-R1-V1-POSTLOCK-DEPENDENCIES.json",
+    "verifier": "scripts/verify_prebatch3_coverage_t2_q0213_r1_v1_freeze.py",
+    "governance_attestation": "audits/remediation/2026-08-19/PRE-BATCH3-COVERAGE-T2-Q0213-R1-V1-GOVERNANCE-PHASE0-ATTESTATION.json"
+  },
+  "pre_lock_safe_rule": "Before Phase-1 lock, hash files as opaque bytes only. Do not open or parse the POSTLOCK dependency contract or verifier."
+}
