@@ -55,12 +55,39 @@
     "Distinguish temporary emergency controls from a final disciplinary order",
     "Preserve the required subsequent review process"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-18",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+    "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+    "date": "2026-08-19",
+    "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-DISCIPLINARY-PROCESS": {
+          "content_version": 1,
+          "content_hash": "d01a21395bdc4328e7641ed3a6cd0e99e735bf70bdc0b2ba384c3802da42a844"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

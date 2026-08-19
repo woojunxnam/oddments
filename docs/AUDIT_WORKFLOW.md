@@ -4,10 +4,11 @@
 
 Export와 prose report는 `audits/<auditor>/...`에 둘 수 있지만 release logic은 `data/audits/*.json`만 읽습니다. Canonical audit는 `schemas/audit.schema.json`을 통과해야 합니다.
 
-- `INITIAL_BATCH`: 30-40 unique questions. 신규 item의 bank-admission 이력을 만듭니다.
+- `INITIAL_BATCH`: 30-40 unique questions. 신규 item의 bank-admission 이력을 만듭니다. 이 30-40 범위는 그대로 유지됩니다.
+- `TARGETED_INITIAL_BATCH`: 1-29 unique questions. Governance가 명시적으로 승인한 targeted tranche 전용이며 ordinary `INITIAL_BATCH`의 최소치를 낮추지 않습니다. Record에 `governance_authorization`(`tranche_id`, `authorizing_issue`, `represented_candidate_sha`, exact `question_ids`)이 필요하고 `independent: true`와 `audit_status: FULLY_ADJUDICATED`가 요구되며, `scripts/validate_audits.py`의 authorization table에 등록된 tranche만 유효합니다. 근거는 [Issue 78 Targeted-Initial Governance Report](ISSUE_78_TARGETED_INITIAL_GOVERNANCE_REPORT.md)를 참조하십시오.
 - `REAUDIT`: 1-40 unique questions. Semantic edit로 hash가 바뀐 일부 item의 focused review에 사용합니다.
 
-Release item은 valid independent fully adjudicated legal `INITIAL_BATCH` 이력이 있어야 합니다. `REAUDIT`만으로 신규 item을 하나씩 release하는 것은 불가능합니다.
+Release item은 valid independent fully adjudicated legal initial 이력이 있어야 하며, 이는 ordinary `INITIAL_BATCH` 또는 governance가 승인한 `TARGETED_INITIAL_BATCH` 중 하나로 충족됩니다. `REAUDIT`만으로 신규 item을 하나씩 release하는 것은 불가능합니다.
 
 각 batch에서 다음 세 집합은 정확히 같아야 합니다.
 

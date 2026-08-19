@@ -23,7 +23,7 @@ Semantic dependency 변경, question content 변경, stale audit, failed legal/r
 6. `SBA`는 1 answer, `SATA`는 1개 이상, `ORDERED_RESPONSE`는 모든 choice의 complete unique order.
 7. Placeholder가 없고 모든 choice rationale가 존재하며 중복되지 않음.
 8. `duplicate_review_status == CLEAR`이고 difficulty/reasoning-step contract를 만족함.
-9. Valid independent fully adjudicated legal `INITIAL_BATCH` audit history가 있음.
+9. Valid independent fully adjudicated legal initial audit history가 있음. Ordinary `INITIAL_BATCH`(30-40 questions) 또는 governance가 승인한 `TARGETED_INITIAL_BATCH`(1-29 questions, `governance_authorization` 필수) 중 하나로 충족됩니다. Targeted tranche는 `scripts/validate_audits.py`의 authorization table에 등록된 exact tranche/issue/candidate-SHA/question-ID set만 유효합니다.
 10. 모든 current evidence audit ID가 `data/audits/` record로 resolve되고 current question hash를 대상으로 함.
 11. 현재 policy가 요구하는 independent `FULLY_ADJUDICATED` legal `KEEP`/answer `YES`가 기록되어야 함.
 12. Current style-profile version/hash를 사용한 independent realism `KEEP`/`PASS`가 있음.

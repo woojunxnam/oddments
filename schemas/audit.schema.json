@@ -21,10 +21,11 @@
     "auditor": {"enum": ["CLAUDE", "GPT", "HUMAN"]},
     "auditor_instance": {"type": "string", "minLength": 3, "maxLength": 128, "pattern": "^[A-Z0-9][A-Z0-9._:-]*$"},
     "audit_date": {"type": "string", "format": "date"},
-    "audit_scope": {"enum": ["INITIAL_BATCH", "REAUDIT"]},
+    "audit_scope": {"enum": ["INITIAL_BATCH", "TARGETED_INITIAL_BATCH", "REAUDIT"]},
     "review_type": {"enum": ["LEGAL_VERIFICATION", "REALISM_REVIEW"]},
     "independent": {"type": "boolean"},
     "audit_status": {"enum": ["FULLY_ADJUDICATED", "STRUCTURAL_TRIAGE_ONLY"]},
+    "governance_authorization": {"$ref": "#/$defs/governanceAuthorization"},
     "style_profile": {"$ref": "#/$defs/styleProfileDependency"},
     "question_ids": {
       "type": "array",
@@ -54,6 +55,20 @@
       }
     },
     {
+      "if": {"properties": {"audit_scope": {"const": "TARGETED_INITIAL_BATCH"}}},
+      "then": {
+        "required": ["governance_authorization"],
+        "properties": {
+          "independent": {"const": true},
+          "audit_status": {"const": "FULLY_ADJUDICATED"},
+          "question_ids": {"minItems": 1, "maxItems": 29},
+          "question_hashes": {"minProperties": 1, "maxProperties": 29},
+          "results": {"minItems": 1, "maxItems": 29}
+        }
+      },
+      "else": {"not": {"required": ["governance_authorization"]}}
+    },
+    {
       "if": {"properties": {"audit_scope": {"const": "REAUDIT"}}},
       "then": {
         "properties": {
@@ -76,6 +91,23 @@
     }
   ],
   "$defs": {
+    "governanceAuthorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tranche_id", "authorizing_issue", "represented_candidate_sha", "question_ids"],
+      "properties": {
+        "tranche_id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9-]*$"},
+        "authorizing_issue": {"type": "integer", "minimum": 1},
+        "represented_candidate_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "question_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 29,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"}
+        }
+      }
+    },
     "styleProfileDependency": {
       "type": "object",
       "additionalProperties": false,
