@@ -12,101 +12,6 @@
   "current_phase": "BATCH3_B3B_AWAITING_FRESH_AUDIT",
   "phases": [
     {
-      "phase": "BATCH3_B3B_AUTHORED_AND_FROZEN",
-      "date": "2026-08-19",
-      "tranche": "BATCH3-B3B",
-      "authorizing_issue": 91,
-      "question_ids": [
-        "MA-Q-0262",
-        "MA-Q-0263",
-        "MA-Q-0264",
-        "MA-Q-0265",
-        "MA-Q-0266",
-        "MA-Q-0267",
-        "MA-Q-0268",
-        "MA-Q-0269",
-        "MA-Q-0270",
-        "MA-Q-0271",
-        "MA-Q-0272",
-        "MA-Q-0273",
-        "MA-Q-0274",
-        "MA-Q-0275",
-        "MA-Q-0276",
-        "MA-Q-0277",
-        "MA-Q-0278",
-        "MA-Q-0279",
-        "MA-Q-0280",
-        "MA-Q-0281",
-        "MA-Q-0282",
-        "MA-Q-0283",
-        "MA-Q-0284",
-        "MA-Q-0285",
-        "MA-Q-0286",
-        "MA-Q-0287",
-        "MA-Q-0288",
-        "MA-Q-0289",
-        "MA-Q-0290",
-        "MA-Q-0291",
-        "MA-Q-0292",
-        "MA-Q-0293",
-        "MA-Q-0294"
-      ],
-      "counts": {
-        "questions": 33,
-        "area_1": 19,
-        "area_2": 14,
-        "new_rules": 31
-      },
-      "sources_used": [
-        "247 CMR 10.00 personnel discipline",
-        "247 CMR 8.00 remainder (intern conduct, technician training and examination, internship program credit)",
-        "247 CMR 3.00 remainder (application mechanics, duplicate certificate)",
-        "247 CMR 4.00 remainder (instructor and postgraduate credit, program delivery criteria)",
-        "247 CMR 9.18 patient counseling",
-        "247 CMR 9.15 validity determinations and monitoring-program registration",
-        "247 CMR 9.01 professional conduct",
-        "247 CMR 16.02 collaborative drug therapy management"
-      ],
-      "sources_deferred": {
-        "247 CMR 11.00": "facility controlled substance registration classifies as Area 4 by bank precedent (MA-Q-0221/0222/0223); deferred to a later tranche rather than mislabelled Area 1",
-        "247 CMR 16.04": "retrieved body was corrupted by an embedded font stream; refused to author from a section heading alone"
-      },
-      "candidate_branch": "batch3/b3b-author",
-      "candidate_sha": "6d41ac4c1f7b4fdf63b5f19c85627d1ff0e9b0ae",
-      "freeze_branch": "freeze/batch3-b3b-v1",
-      "freeze_sha": "65c2a4f6cdc1beaa8b730e0d324a590b38c8f1ac",
-      "draft_pr": 94,
-      "reserved_auditor_instance": "CLAUDE-FRESH-B3B",
-      "quality_gates": {
-        "validate_all": "0 errors, 1 pre-existing warning (MA-Q-0190)",
-        "structural_patterns": 0,
-        "duplicate_detector": 0,
-        "answer_distribution": "PASS n=181 chi2=3.005525 p~0.55957",
-        "pytest": "98 passed, 1 skipped",
-        "max_stem_similarity_vs_bank": {
-          "sequence": 0.7101,
-          "jaccard": 0.4815
-        }
-      },
-      "structural_correction": "First authoring pass raised four cue-word warnings (MA-Q-0264, MA-Q-0270 and MA-Q-0287 absolute-language distractors; MA-Q-0273 correct answer the only hedged option). Corrected at source and the whole tranche re-applied from a clean reverted base rather than patched in place.",
-      "bank_effect": {
-        "bank_size_before": 261,
-        "bank_size_after": 294,
-        "answer_distribution_before": "WARNING",
-        "answer_distribution_after": "PASS"
-      },
-      "freeze_verification": {
-        "published_sha256_reproduce_from_git_blobs": true,
-        "blind_package_item_count": 33,
-        "blind_package_extra_keys": [],
-        "question_audit_hashes_match_canonical": true,
-        "leakage_detected": false
-      },
-      "tooling_reuse": "scripts/freeze_tranche.py taken unchanged from freeze/batch3-b3a-v1",
-      "independence": "Authored by this controller session. This session must not audit it. A separate fresh session under auditor_instance CLAUDE-FRESH-B3B is required.",
-      "state": "AWAITING_FRESH_AUDITOR_HANDOFF"
-    },
-    {
       "phase": "PHASE_0_START_BOUNDARY",
       "title": "Start-boundary verification",
       "status": "PASS",
@@ -380,6 +285,94 @@
       "no_batch3_questions_authored": true
     },
     {
+      "phase": "PHASE_G_BATCH3_S1_AND_B3A",
+      "title": "Batch 3 tracks B3-S1 (complete) and B3-A (frozen, awaiting audit)",
+      "status": "B3S1_RELEASED_B3A_AWAITING_FRESH_AUDIT",
+      "plan_issue": 91,
+      "b3_s1": {
+        "decision": "CASE A - all 31 migratable without substantive re-audit",
+        "method": "forensic provenance recovery from immutable GitHub history",
+        "sessions_proved": {
+          "GPT-PHASE2-ISSUE8-REAUDIT-V2": {
+            "issue": 8,
+            "pr": 10,
+            "frozen_sha": "67464e7a7ff2cfe88285c7c0f0f4164e92df46cd",
+            "branch": "audit/gpt-phase2-reaudit-v2"
+          },
+          "GPT-PHASE2-ISSUE12-REAUDIT-V3": {
+            "issue": 12,
+            "pr": 13,
+            "frozen_sha": "a3dd4cd9e0372dd4ff7c872a2ae3c3c851157363",
+            "branch": "audit/gpt-phase2-reaudit-v3"
+          }
+        },
+        "a_b_suffix_finding": "A/B denotes question batches, not separate auditors; verified against both issues' own text",
+        "additive_records_written": 8,
+        "originals_edited": false,
+        "criterion_10_proof": "all 31 dry-released through the real validator: 0 rejected",
+        "released": 31,
+        "released_bank_before_after": [
+          167,
+          198
+        ],
+        "pr": 92,
+        "post_s1_canonical_sha": "a79e3599a79cb1d44073e6fba20fb94eae05aa82"
+      },
+      "b3_a": {
+        "status": "AUTHORED_AND_FROZEN_AWAITING_FRESH_INDEPENDENT_AUDIT",
+        "audit_scope": "INITIAL_BATCH",
+        "governance_authorization_required": false,
+        "question_ids": "MA-Q-0229 through MA-Q-0261",
+        "question_count": 33,
+        "area_allocation": {
+          "1": 33
+        },
+        "new_rules": 27,
+        "official_sources": [
+          "247 CMR 3.00",
+          "247 CMR 4.00",
+          "247 CMR 8.00"
+        ],
+        "candidate_branch": "batch3/b3a-author",
+        "represented_candidate_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+        "freeze_branch": "freeze/batch3-b3a-v1",
+        "freeze_head": "c27c5b7fc611bb6d16d23f36cfdd6028192b18e2",
+        "blind_package_blob": "f72d246dedfd69b1c16797105545788f44ef5694",
+        "blind_package_sha256": "10554a021a9dad7af05a1d30adaa93d26c9973311bab6a21451e362da46c1d4e",
+        "reserved_auditor_instance": "CLAUDE-FRESH-B3A",
+        "preflight": {
+          "bank_size_after": 261,
+          "duplicate_detector_findings": 0,
+          "structural_pattern_findings": 0,
+          "max_stem_similarity_vs_bank": 0.644,
+          "shared_normalized_option_texts": 0,
+          "sata_three_correct_share": 0.5361,
+          "top_sata_key_share": 0.1546,
+          "sba_chi_square_before_after": [
+            12.928571,
+            11.267081
+          ],
+          "answer_length_leaks_fixed": [
+            "MA-Q-0244",
+            "MA-Q-0258"
+          ]
+        },
+        "qa": {
+          "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+          "pytest": "98 passed, 1 skipped",
+          "generated_artifact_freshness": "PASS"
+        }
+      },
+      "reusable_automation_added": [
+        "scripts/guarded_release.py --tranche-file",
+        "scripts/freeze_tranche.py --config",
+        "scripts/migrate_legacy_audit_provenance.py",
+        "scripts/batch3_inventory.py",
+        "scripts/verify_t3_audit_evidence.py"
+      ],
+      "next": "Author and freeze B3-B (MA-Q-0262..MA-Q-0294) while B3-A is independently audited."
+    },
+    {
       "phase": "PHASE_G_BATCH3_UNLOCKED",
       "title": "Pre-Batch3 gate PASS and Batch 3 unlock",
       "status": "BATCH3_UNLOCKED_PLAN_LOCKED",
@@ -639,6 +632,101 @@
       "q0028_altered": false,
       "issue_86_comment_corrected_in_place": "https://github.com/woojunxnam/oddments/issues/86#issuecomment-5345395726",
       "stopped_at": "FRESH_INDEPENDENT_AUDIT_HANDOFF"
+    },
+    {
+      "phase": "BATCH3_B3B_AUTHORED_AND_FROZEN",
+      "date": "2026-08-19",
+      "tranche": "BATCH3-B3B",
+      "authorizing_issue": 91,
+      "question_ids": [
+        "MA-Q-0262",
+        "MA-Q-0263",
+        "MA-Q-0264",
+        "MA-Q-0265",
+        "MA-Q-0266",
+        "MA-Q-0267",
+        "MA-Q-0268",
+        "MA-Q-0269",
+        "MA-Q-0270",
+        "MA-Q-0271",
+        "MA-Q-0272",
+        "MA-Q-0273",
+        "MA-Q-0274",
+        "MA-Q-0275",
+        "MA-Q-0276",
+        "MA-Q-0277",
+        "MA-Q-0278",
+        "MA-Q-0279",
+        "MA-Q-0280",
+        "MA-Q-0281",
+        "MA-Q-0282",
+        "MA-Q-0283",
+        "MA-Q-0284",
+        "MA-Q-0285",
+        "MA-Q-0286",
+        "MA-Q-0287",
+        "MA-Q-0288",
+        "MA-Q-0289",
+        "MA-Q-0290",
+        "MA-Q-0291",
+        "MA-Q-0292",
+        "MA-Q-0293",
+        "MA-Q-0294"
+      ],
+      "counts": {
+        "questions": 33,
+        "area_1": 19,
+        "area_2": 14,
+        "new_rules": 31
+      },
+      "sources_used": [
+        "247 CMR 10.00 personnel discipline",
+        "247 CMR 8.00 remainder (intern conduct, technician training and examination, internship program credit)",
+        "247 CMR 3.00 remainder (application mechanics, duplicate certificate)",
+        "247 CMR 4.00 remainder (instructor and postgraduate credit, program delivery criteria)",
+        "247 CMR 9.18 patient counseling",
+        "247 CMR 9.15 validity determinations and monitoring-program registration",
+        "247 CMR 9.01 professional conduct",
+        "247 CMR 16.02 collaborative drug therapy management"
+      ],
+      "sources_deferred": {
+        "247 CMR 11.00": "facility controlled substance registration classifies as Area 4 by bank precedent (MA-Q-0221/0222/0223); deferred to a later tranche rather than mislabelled Area 1",
+        "247 CMR 16.04": "retrieved body was corrupted by an embedded font stream; refused to author from a section heading alone"
+      },
+      "candidate_branch": "batch3/b3b-author",
+      "candidate_sha": "6d41ac4c1f7b4fdf63b5f19c85627d1ff0e9b0ae",
+      "freeze_branch": "freeze/batch3-b3b-v1",
+      "freeze_sha": "65c2a4f6cdc1beaa8b730e0d324a590b38c8f1ac",
+      "draft_pr": 94,
+      "reserved_auditor_instance": "CLAUDE-FRESH-B3B",
+      "quality_gates": {
+        "validate_all": "0 errors, 1 pre-existing warning (MA-Q-0190)",
+        "structural_patterns": 0,
+        "duplicate_detector": 0,
+        "answer_distribution": "PASS n=181 chi2=3.005525 p~0.55957",
+        "pytest": "98 passed, 1 skipped",
+        "max_stem_similarity_vs_bank": {
+          "sequence": 0.7101,
+          "jaccard": 0.4815
+        }
+      },
+      "structural_correction": "First authoring pass raised four cue-word warnings (MA-Q-0264, MA-Q-0270 and MA-Q-0287 absolute-language distractors; MA-Q-0273 correct answer the only hedged option). Corrected at source and the whole tranche re-applied from a clean reverted base rather than patched in place.",
+      "bank_effect": {
+        "bank_size_before": 261,
+        "bank_size_after": 294,
+        "answer_distribution_before": "WARNING",
+        "answer_distribution_after": "PASS"
+      },
+      "freeze_verification": {
+        "published_sha256_reproduce_from_git_blobs": true,
+        "blind_package_item_count": 33,
+        "blind_package_extra_keys": [],
+        "question_audit_hashes_match_canonical": true,
+        "leakage_detected": false
+      },
+      "tooling_reuse": "scripts/freeze_tranche.py taken unchanged from freeze/batch3-b3a-v1",
+      "independence": "Authored by this controller session. This session must not audit it. A separate fresh session under auditor_instance CLAUDE-FRESH-B3B is required.",
+      "state": "AWAITING_FRESH_AUDITOR_HANDOFF"
     }
   ],
   "final_state": {
