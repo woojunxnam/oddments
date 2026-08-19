@@ -9,7 +9,7 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "PHASE_T3_DIVERSITY_AUTHORING",
+  "current_phase": "PHASE_T3_DIVERSITY_AWAITING_FRESH_AUDIT",
   "phases": [
     {
       "phase": "PHASE_0_START_BOUNDARY",
@@ -294,5 +294,31 @@
         "If PASS, continue Issue #83 Phase G into Batch 3 planning and execution."
       ]
     }
-  ]
+  ],
+  "final_state": {
+    "t2_release": "COMPLETE",
+    "canonical_lineage": "PROPAGATED",
+    "final_post_t2_canonical_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+    "pre_batch3_gate": "FAIL (headline family-diversity debt 4.3 and 4.6)",
+    "gate_evidence_branch": "analysis/pre-batch3-coverage-post-t2-v1",
+    "batch3": "BLOCKED",
+    "remediation_issue_url": "https://github.com/woojunxnam/oddments/issues/86",
+    "t3_remediation": "AUTHORED_AND_FROZEN_AWAITING_FRESH_INDEPENDENT_AUDIT",
+    "t3_represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+    "t3_audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+    "pull_requests": {
+      "84": "MERGED - guarded T2 release",
+      "73": "MERGED - T2 repair lineage",
+      "69": "MERGED - T2 remediation into Pre-Batch3 canonical lineage",
+      "85": "OPEN DRAFT - post-T2 gate evidence, not a merge target",
+      "87": "MERGED - T3 targeted-initial governance authorization"
+    },
+    "quarantine_intact": {
+      "MA-Q-0028": "non-released, non-preview"
+    },
+    "validators_weakened": false,
+    "failed_audit_history_deleted": false,
+    "historical_q0213_failure_visible": true,
+    "controller_performed_any_audit": false
+  }
 }
