@@ -69090,13 +69090,40 @@
         "Match the direction of the deviation to which product is missing from stock",
         "Apply both conditions, the pharmacy's record and the purchaser's written acceptance"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-INTERCHANGE-MEDICAL-EMERGENCY": {
+              "content_version": 1,
+              "content_hash": "efee74a3e21d2d3b4e329856052f7b41d05718d000f04c6795924e328e347c5f"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69108,7 +69135,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records in data/questions, not a sample and not the existing duplicate report. Method for every item in this record: an exhaustive structural sweep over all 406 records on rule_ids, family_id, topic and subtopic, plus a TF-IDF cosine nearest-neighbour sweep over stem-plus-choice text across all 406 records, plus a targeted keyword sweep on the subject matter. Closest comparisons: MA-Q-0226 (Product selection / Biologic substitution, 0.247), MA-Q-0087 (Drug interchange / Generic interchange, rule MA-INTERCHANGE, 0.190) and MA-Q-0165 (0.100). No record in the bank shares this item's rule_id, family_id or subtopic. Materially distinct: MA-Q-0087 tests the ordinary rule that a valid no-substitution direction defeats interchange despite a lower price, and MA-Q-0226 tests the FDA interchangeability precondition for biologic substitution; neither touches the medical-emergency limb of 247 CMR 9.05(1) or its two conditions. Criterion by criterion, each judged independently rather than defaulted. jurisprudence_reasoning true: the candidate must decide that an exception opens, then decide what the exception costs. practice_plausibility true: a 2 a.m. emergency with the branded product out of stock is an ordinary overnight pharmacy problem. authentic_distractors true: B is the answer a pharmacist who documents carefully but forgets the customer signature would give, and E is the answer of someone who assumes substitution rules only ever run downward in price. wording_not_guessable true: B and E do use totalising language, which a test-wise candidate may notice, but a one-directional reading of an emergency substitution rule is independently plausible, so the key is not recoverable from wording alone. reasoning_not_trivia true: the discriminating work is the direction of the deviation and the conjunctive nature of the conditions, not recall of a figure. natural_rule_combination true: a single rule, applied without artificial stitching. appropriate_drug_context true: the item turns on stock status rather than on any product identity, so naming a drug would add nothing. not_schedule_flashcard true: no schedule appears. public_style_without_copying true: the scenario-plus-SATA structure matches the bound MPJE-MA-PRE2027 profile's exception_testing characteristic without reproducing protected wording.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0392",
@@ -69169,13 +69220,40 @@
         "Identify which pharmacy previously dispensed each product offered for the planner",
         "Apply the provenance condition before the housekeeping conditions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-REUSABLE-DOSAGE-PLANNER": {
+              "content_version": 1,
+              "content_hash": "cce8b42b51a4449069e95b68a8df1282ecc41ab05912bf9a5b1227732325f0d1"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69187,7 +69265,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0393 (0.104), MA-Q-0088 (Pharmacy operations / Returned medication, 0.098) and MA-Q-0158 (0.098). No record shares this item's rule_id, family_id or subtopic, and the highest lexical similarity to anything in the bank is 0.104, the lowest maximum in this tranche apart from MA-Q-0406. MA-Q-0088 is the nearest conceptual relative because it also concerns a product coming back across the counter, but it turns on the quarantine and disposal duty for a medication dispensed in error rather than on planner provenance. Criterion by criterion. jurisprudence_reasoning true: the candidate must recognise that the decisive question is about the product's history rather than its condition. practice_plausibility true: patients routinely bring bottles from a second pharmacy to a planner-filling service, and the request is polite and reasonable, which is what makes it hard to refuse. authentic_distractors true: A, C, D and E are each a real cure a practising pharmacist would reach for, and C in particular is the sophisticated wrong answer, since transferring the prescription genuinely does fix the pharmacy of record. wording_not_guessable true: four options are affirmative and one is a refusal; nothing in the phrasing signals which is right. reasoning_not_trivia true: no number or name is recalled; the work is characterising the objection. natural_rule_combination true: one rule, cleanly applied. appropriate_drug_context true: lisinopril is used only as an unremarkable maintenance product and carries no legal weight, which is appropriate here. not_schedule_flashcard true. public_style_without_copying true. Wording observation carried over from the legal record: the stem says 'reusable weekly planner' where the regulation and Board Policy 2023-01 both say 'reusable daily dosage planner'. This does not create ambiguity but aligning the term would be an improvement.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0393",
@@ -69328,13 +69430,40 @@
         "Recognise comingling as a conditioned practice rather than a prohibited one",
         "Keep the standing policy requirements separate from the two permissive conditions"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PHARMACY-PROCESSING-AUTOMATION": {
+              "content_version": 1,
+              "content_hash": "bdb005facf65841b637dd50ff7de84889129aead6dca5a239ce747a80892ef18"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69346,7 +69475,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0091 (Product safety / Recall response, rule FED-RECALL, 0.157), MA-Q-0395 (0.101) and MA-Q-0059 (0.079). No shared rule_id, family_id or subtopic anywhere in the bank. MA-Q-0091 is the nearest relative because it also involves mixed lots and a recall, but it tests the federal recall-response duty on shelved stock and dispensed product, whereas this item tests the standing precondition on using processing automation at all. Criterion by criterion. jurisprudence_reasoning true: the candidate must classify the top-up plan as a conditioned practice rather than a violation, then locate the condition. practice_plausibility true: topping up cells without emptying them is exactly the throughput shortcut an automation vendor or operations lead proposes at commissioning. authentic_distractors true: A is the instinctive answer for anyone who treats lot integrity as absolute; C is the answer of a pharmacist who assumes a final visual check is always the backstop; D is the answer of a team planning to phase controlled substances in later. wording_not_guessable true: the key pair reads no more reasonable than A on its face, since a flat comingling ban is a plausible regulatory choice. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true: the item is about the machine, not the product. not_schedule_flashcard true: Schedule II is mentioned only inside distractor D as a timing red herring, not as a classification to recall. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0395",
@@ -69407,13 +69560,40 @@
         "Confirm whether the host site is a licensed health care facility",
         "Recognise that strong compensating controls do not cure a failed threshold condition"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-AUTOMATED-DISPENSING-DEVICE-CONDITIONS": {
+              "content_version": 1,
+              "content_hash": "d34c01c3ba3ea0e9cdf1a5a54b1f770a8c94363784df792399c3a9095e8183f9"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69425,7 +69605,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0131 (Automated dispensing devices / Facility approval, rule MA-ADD-CORE, 0.259), MA-Q-0343 (0.177) and MA-Q-0227 (0.170). MA-Q-0131 is the item to watch, since it is the bank's only other ADD placement question. It is materially distinct: MA-Q-0131 assumes a Massachusetts-licensed health care facility and asks what approval step is needed before use, whereas this item asks whether the threshold location condition is met at all in a site that is not a licensed health care facility. The two are sequential rather than duplicative, and they sit on different rule records. Criterion by criterion. jurisprudence_reasoning true: the candidate must order the conditions and see that compensating controls cannot cure a failed threshold. practice_plausibility true: group practices genuinely do ask their pharmacy partners for a cabinet in the staff room. authentic_distractors true: B is a strong distractor because the stem loads it with every control a candidate is trained to look for; C and D are the two plausible partial-fix theories; E is the over-correction. wording_not_guessable true: A and E are both refusals with different reasons, so a candidate cannot pick the refusal without knowing which reason is right. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true. not_schedule_flashcard true: distractor D raises schedules only to be rejected, which is the style profile's 'correct rule applied to the wrong schedule' archetype rather than a schedule recall. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0396",
@@ -69488,13 +69692,40 @@
         "Read the permitted configurations before judging the proposed appliance",
         "Note that the out-of-range protocol also calls for a product integrity assessment"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-REFRIGERATED-FROZEN-STORAGE": {
+              "content_version": 1,
+              "content_hash": "b8b1d145ab12c0ad18aa5d8e5dde2df53adc8fa7e4285316bf2a66ab8639ccd3"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69506,7 +69737,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0093 (Product safety / Storage excursion, rule FED-ADULTERATED-MISBRANDED, 0.120), MA-Q-0392 (0.064) and MA-Q-0393 (0.059). No shared rule_id, family_id or subtopic. MA-Q-0093 concerns what to do with product after a refrigerator failure; this item concerns which appliance may be installed in the first place. Distinct. Criterion by criterion. jurisprudence_reasoning true, but this is the most recall-weighted item in the tranche: options A, B and D restate 247 CMR 9.22(2) and 9.22(1) closely, and the genuine judgment sits in C (monitoring does not cure an equipment prohibition) and E (a combination unit is permitted while an internal freezer compartment is not). That judgment is real and is enough to carry the criterion, and difficulty 3 is honestly assigned. practice_plausibility true: fitting out a prescription area with a dorm-style unit plus a good logger is a common and well-intentioned mistake. authentic_distractors true: C is the answer of a pharmacy that believes documentation defeats any equipment objection, and E is the over-generalisation from the prohibition. wording_not_guessable true. reasoning_not_trivia true: the item turns on an equipment configuration rule and its relationship to the monitoring duty, not on the temperature numbers, which the item pointedly does not ask for. natural_rule_combination true. appropriate_drug_context true: 'the few frozen products it stocks' correctly keeps the answer independent of product identity. not_schedule_flashcard true. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0397",
@@ -69567,13 +69822,40 @@
         "Check who may initiate the transfer on the patient's behalf",
         "Read the timeliness duty as running against delay in patient therapy"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-RX-TRANSFER": {
+              "content_version": 2,
+              "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69592,7 +69874,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0277 (0.213), MA-Q-0120 (Prescription transfer / Transfer requirements, the bank's only other MA-RX-TRANSFER item, 0.185) and MA-Q-0036 (0.150). MA-Q-0120 is the overlap to weigh. It is a five-option SATA covering timeliness, the Schedule VI one-year and refill limits, the certified-technician role, and a fee proposition that appears only as an obviously false distractor asserting that a fee is required. This item is an SBA that pairs the fee prohibition with the agency permission in 247 CMR 9.14(2), and the agency limb is tested nowhere else in the bank. The two items therefore share one proposition out of several and differ in the judgment demanded. distinct_from_bank true, with the shared no-fee proposition recorded as the most notable within-bank overlap in this tranche after MA-Q-0398 and MA-Q-0404. Criterion by criterion. jurisprudence_reasoning true: the candidate must evaluate two distinct assertions and find that both fail, which is a compound judgment rather than a lookup. practice_plausibility true: an administrative charge plus 'you'll need to call them yourself' is a very common counter script. authentic_distractors true: B and D are each half right, which is the point, and a candidate who checks only one limb lands on one of them. wording_not_guessable true. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true: no drug is named and none is needed. not_schedule_flashcard true. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0398",
@@ -69735,13 +70041,40 @@
         "Apply the institutional inpatient carve-out to the telephone duty only",
         "Check the staffing standard attached to the telephone number"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPOUND-LABEL-CONTACT": {
+              "content_version": 1,
+              "content_hash": "b05585b9afb5ec9628fe8077d91498182cb9cd3c64a3d620dd0d95706f5fd110"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69753,7 +70086,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0117 (Compounding / Compounded product labeling, the bank's only other MA-COMPOUND-LABEL-CONTACT item, 0.395), MA-Q-0257 (0.261) and MA-Q-0385 (0.229). MA-Q-0117 shares the rule record and shares one proposition, that an outpatient sterile compounded preparation needs both the compounded-preparation designation and the pharmacist-contact number. It is nevertheless materially distinct, and I weighed this carefully against the MA-Q-0398 finding above. MA-Q-0117 is a single-container SBA about correcting an incomplete label before it leaves. This item is a two-container SATA whose entire discriminating work is a distinction MA-Q-0117 never raises, namely that the closing carve-out in the fifth paragraph of M.G.L. c. 94C, s. 21 disapplies the telephone duty, and only the telephone duty, to an institutional inpatient preparation. It additionally tests the staffing standard and the records-access requirement, neither of which appears anywhere else in the bank. The difference here is a new legal judgment, not a swapped fact, which is what separates it from MA-Q-0398. Criterion by criterion. jurisprudence_reasoning true: the candidate must hold two duties apart and apply one exception to only one of them. practice_plausibility true: a pharmacy holding both a sterile compounding licence and an institutional licence preparing for both populations on one morning is an accurate picture of a hospital-affiliated operation. authentic_distractors true: D is the natural over-extension of the carve-out and is the single best wrong answer in this tranche. wording_not_guessable true: four of five options are keyed, so a candidate cannot profit from a 'most options are wrong' heuristic, and D reads as reasonable as the rest. reasoning_not_trivia true: the 56-hour figure is present but it is not the discriminator; the carve-out is. natural_rule_combination true. appropriate_drug_context true. not_schedule_flashcard true. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0400",
@@ -69814,13 +70171,40 @@
         "Identify the correct recipient of the offer for this patient",
         "Keep the offer duty separate from any dispensing that may follow"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-OPIOID-ANTAGONIST-OFFER": {
+              "content_version": 1,
+              "content_hash": "92247ed52204f700eab90a08aac6307084aff36da98f5d43c74cb2f797cd3b35"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69832,7 +70216,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0110 (Dispensing / Schedule II opioid safety obligation, rule MA-CII-OPIOID-ANTAGONIST-OFFER, 0.432, the highest lexical match to any item in this tranche after MA-Q-0404), MA-Q-0017 (0.189) and MA-Q-0001 (0.165). I examined MA-Q-0110 closely because an adult-to-minor change is on its face the age swap the realism gate exists to catch. It is not one here, for a specific reason: M.G.L. c. 94C, s. 18D(b) itself makes the patient's minority the legal discriminator, routing the offer to the parent or guardian. MA-Q-0110 tests a different clause, that the duty is not excused by the patient already holding naloxone and that acceptance may not be required; the recipient-routing clause is not reached there and is tested nowhere else in the bank. An age change that changes which clause of the statute operates is doing legal work rather than cosmetic work, so distinct_from_bank is true. One reservation recorded rather than scored: two of the five distractors recycle MA-Q-0110's material, since option C here ('only if the prescriber has also ordered one') is close to MA-Q-0110's option D, and option D here is a further variant of the same prescriber-gating idea. A candidate who has worked MA-Q-0110 gets both for free. Replacing one of them with a distractor drawn from the minor context, for example an offer routed to the minor rather than to the parent, would sharpen the item. Criterion by criterion. jurisprudence_reasoning true. practice_plausibility true: a parent collecting a teenager's post-operative opioid is routine. authentic_distractors true, with the reservation above; A and E remain strong because minority reads naturally as a reason a duty falls away. wording_not_guessable true. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true. not_schedule_flashcard true: Schedule II identifies the trigger rather than being the thing recalled. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0401",
@@ -69893,13 +70301,40 @@
         "Match each deadline in s. 18(d3/4) to the pathway it governs",
         "Measure the surviving deadline from the prescription issue date"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+              "content_version": 1,
+              "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69911,7 +70346,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0021 (Partial filling / Patient request, rule FED-CII-PARTIAL-PATIENT, 0.314), MA-Q-0014 (Partial filling / Remainder deadline, rule MA-CII-REMAINDER-30D, 0.292) and MA-Q-0034 (0.270). The bank already contains a partial-fill cluster, so distinctness needed real scrutiny. MA-Q-0021 and MA-Q-0014 both concern the deadline for the remaining portion: 0021 asks which limit governs the remainder, 0014 asks from which date the 30 days run. This item asks a question neither reaches, whether the separate five-day cap on the initial partial dispensing applies at all, and answers it by tracing the cross-reference in s. 18(d3/4) back to the out-of-state pathways in s. 18(d) and (d1/2). No other record in the bank tests the reach of the five-day figure or names the out-of-state pathways as its condition. distinct_from_bank true. Criterion by criterion. jurisprudence_reasoning true: this is the most genuinely lawyerly item in the tranche, since the answer depends on reading a cross-reference rather than on knowing a rule. practice_plausibility true: a colleague raising a half-remembered five-day figure at the counter is exactly how this error occurs. authentic_distractors true: A is the error the item is built on and is highly tempting; B offers a narcotic-versus-stimulant distinction that sounds like the kind of line the statute might draw; D and E are the two natural over-corrections. wording_not_guessable true: three options begin 'The colleague is wrong', so the yes-or-no split gives nothing away. reasoning_not_trivia true: the five-day and 30-day numbers are both stated in the options, so the item cannot be answered by recalling either one. natural_rule_combination true. appropriate_drug_context true: oxycodone fixes the Schedule II premise and the item then does not depend on it. not_schedule_flashcard true. public_style_without_copying true: it is a clean instance of the bound profile's 'correct deadline belonging to a different pathway' distractor archetype.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0402",
@@ -69972,13 +70431,40 @@
         "Note the prescriber's direction and the authority that permits it",
         "Apply the patient-request override in the same paragraph"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-MEDGUIDE-PRESCRIBER-DIRECTION": {
+              "content_version": 1,
+              "content_hash": "2e230c05dac05160a9a814c931ddf41435711c3367896f2fb298137031000033"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -69990,7 +70476,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0403 (same subtopic, this tranche, 0.258), MA-Q-0092 (Federal drug requirements / Counseling versus Medication Guide, 0.231) and MA-Q-0393 (0.120). The bank now holds three Medication Guide items and they test three different provisions: MA-Q-0092 tests that the Guide duty survives a counseling refusal and that the two duties are separate; MA-Q-0403 tests the recipient and timing rule in 21 CFR 208.24(e); this item tests the prescriber-direction conflict rule in 21 CFR 208.26(b). No proposition is shared, and this item is the only one in the bank that involves a lawful prescriber instruction being overridden. distinct_from_bank true. Criterion by criterion. jurisprudence_reasoning true: the candidate must hold two lawful positions in tension and find the tie-breaker inside the same paragraph. practice_plausibility true: a prescriber telephoning to withhold a Guide is uncommon but real, and the regulation exists because it happens. authentic_distractors true: C is strong because the prescriber's direction is genuinely lawful; B is strong because substituting a manufacturer leaflet is what many pharmacies would actually do; D and E are procedural hedges that feel safe. wording_not_guessable true: four options are refusals or deferrals and one is compliance, but a candidate has no basis to prefer either shape without knowing the override. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true: naming a drug would risk substituting product recall for the conflict rule, and the item correctly avoids it. not_schedule_flashcard true. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0403",
@@ -70051,13 +70561,40 @@
         "Identify who is receiving the product on this occasion",
         "Provide the Guide to that person at the time of dispensing"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "FED-MEDGUIDE-RECIPIENT": {
+              "content_version": 1,
+              "content_hash": "9b08c7d02098757159656303d40b4cc721cbd598a0ff340da04e7788aef6716f"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -70069,7 +70606,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0402 (same subtopic, this tranche, 0.258), MA-Q-0092 (0.231) and MA-Q-0365 (0.119). See the MA-Q-0402 note for the three-item Medication Guide comparison; this item is the only one in the bank that tests who may receive the Guide and when. distinct_from_bank true. Criterion by criterion. jurisprudence_reasoning true: the candidate must decide whether an agent stands in the patient's shoes for this particular duty, which is a real interpretive question and not a lookup. practice_plausibility true: a neighbour collecting for a housebound patient is an everyday occurrence, and the pharmacy's stated rationale is the sort of well-meant policy that gets written down and never re-examined. authentic_distractors true: A is genuinely tempting because 'directly to each patient' does read as excluding intermediaries until the parenthetical is noticed; B is the practical workaround a careful pharmacist would propose; C invites a family-versus-stranger distinction that sounds like the kind of line a privacy rule might draw. wording_not_guessable true: two options are 'unsound' and three are 'sound', and the two unsound options differ on their reason, so the shape gives nothing away. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true. not_schedule_flashcard true. public_style_without_copying true. Difficulty 3 is honestly assigned; this is the most direct item in the tranche.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0404",
@@ -70210,13 +70771,40 @@
         "Establish whether the patient was an inpatient at the time of that dispensing",
         "Apply the exclusion only where both facts hold"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-INPATIENT-EXCLUSION": {
+              "content_version": 1,
+              "content_hash": "6360cb9797b05a9b3d859682a9332cdade9a1f0cd1301f1b298b46430242c3fa"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -70228,7 +70816,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0373 (Patient care / Setting carve-out, 0.199), MA-Q-0263 (0.162) and MA-Q-0304 (0.161); the bank's other PMP reporting items, MA-Q-0037 and MA-Q-0025, sit lower and both concern whether a particular product or shipping arrangement is reportable rather than the inpatient exclusion. No record shares this item's rule_id, family_id or subtopic. MA-Q-0373 is the nearest structural relative because it also splits a hospital pharmacy's duties by patient setting, but it concerns prospective drug review and counselling rather than PMP submission. distinct_from_bank true. Criterion by criterion. jurisprudence_reasoning true: the candidate must classify two dispensings separately and see that the exclusion needs two facts to coincide, a medication order and inpatient status. practice_plausibility true: the same-day ward dose and discharge prescription is a standard hospital pattern and the pairing is what makes the item bite. authentic_distractors true: A is the answer of someone who reads the exclusion as attaching to the dispenser; B is the answer of someone who reads the Schedule II reporting duty as absolute; D invents a plausible alternative-reporting escape; C is the clean inversion. wording_not_guessable true: two options say both, two say one each, one says neither, which is a balanced spread. reasoning_not_trivia true. natural_rule_combination true. appropriate_drug_context true: oxycodone establishes the Schedule II premise and does no further work. not_schedule_flashcard true. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0406",
@@ -70289,13 +70901,40 @@
         "Locate who holds the power to designate an additional drug",
         "Wait for the determination and the notification before treating the duty as live"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+        "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+        "date": "2026-08-20",
+        "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-PMP-ADDITIONAL-DRUG-DESIGNATION": {
+              "content_version": 1,
+              "content_hash": "3188412cd3eb7d1aae9d43805b3a786b82c9cc276cb8a8c1622ea51a7c6a0cd9"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -70307,7 +70946,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "Compared against the entire canonical bank of 406 records. Closest comparisons: MA-Q-0037 (Prescription monitoring program / Dispensing-data submission, 0.112), MA-Q-0383 (0.097) and MA-Q-0025 (0.088). The maximum similarity to anything in the bank is 0.112, the lowest in this tranche, and no record shares its rule_id, family_id or subtopic. MA-Q-0037 and MA-Q-0025 both ask whether a given dispensing is reportable; this item asks the prior question of what makes a class of drug reportable at all. distinct_from_bank true. Criterion by criterion. jurisprudence_reasoning true: the candidate must separate the factors that inform a decision from the act that creates the duty, which is a genuine institutional-competence judgment. practice_plausibility true: a pharmacist reading a diversion piece and asking whether her own reporting should change is an authentic professional moment. authentic_distractors true: A is strong because the journal evidence in the stem tracks the regulation's own factors almost word for word; B is the strongest distractor in the item because rescheduling really would produce reportability through 105 CMR 700.012(A)(1), and it fails only because the stem posits a drug that remains in Schedule VI, which is a fair single-best-answer discrimination and is correctly explained in the choice_analysis; E is the natural conflation of evidence with action. wording_not_guessable true: no option is longer or hedged relative to the rest. reasoning_not_trivia true: no number, name or schedule list is recalled. natural_rule_combination true. appropriate_drug_context true: keeping the drug unnamed is the right call, since naming gabapentin would give the answer away to anyone who knows the Massachusetts history, and the record correctly confines that fact to related_facts. not_schedule_flashcard true: Schedule VI is the premise rather than the thing recalled. public_style_without_copying true.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     }
   ]
 }
