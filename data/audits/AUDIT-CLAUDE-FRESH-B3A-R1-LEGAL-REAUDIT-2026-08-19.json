@@ -1,0 +1,86 @@
+{
+  "audit_id": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3A-R1",
+  "audit_date": "2026-08-19",
+  "audit_scope": "REAUDIT",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "question_ids": [
+    "MA-Q-0241",
+    "MA-Q-0256"
+  ],
+  "question_hashes": {
+    "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+    "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0241",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 8.00 (Pharmacy interns and technicians). Read directly from the official Mass.gov PDF copy published by the Massachusetts Trial Court Law Libraries at https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download, page-footer stamp '4/25/25 (Effective 1/9/25)'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 8.05(3)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 8.00, Schedule II support-handling approval proviso. Read directly from the official Mass.gov PDF copy at https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 8.05(1) and 247 CMR 8.05(2)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 8.00, support-personnel licensure grades. Read directly from the official Mass.gov PDF copy at https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 8.02(1), 247 CMR 8.03(1) and 247 CMR 8.04(1)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+          "law_checked_date": "2026-08-19"
+        }
+      ],
+      "Problem": "None. Verified independently at the repaired hash e831eac1 against the promulgated text, not against the canonical rule record MA-CII-SUPPORT-HANDLING. Phase-1 blind answer A,C,E MATCHED the canonical key A,C,E. 247 CMR 8.05(3) provides that a certified pharmacy technician, pharmacy technician, or pharmacy technician trainee may not handle any hydrocodone-only extended release medication that is not in an abuse deterrent form, and that pharmacy interns under the direct supervision of a registered pharmacist may handle it. Proposition by proposition: A is true because the phrase 'that is not in an abuse deterrent form' is the operative limiting condition on the class of product reached, so abuse deterrent status is exactly what the prohibition turns on. C is true because 8.05(3) names all three support-personnel grades expressly, and Massachusetts licenses each grade under 247 CMR 8.02(1), 8.03 and 8.04(1), so the higher certified credential does not escape the bar. E is true as the direct converse of the same limiting condition. B is correctly false because the bar is confined to hydrocodone-only extended release medication lacking abuse deterrence and does not reach every extended release opioid stocked; I checked 247 CMR 8.02 and 247 CMR 8.04 for any general extended-release-opioid handling restriction on technicians and found none. D is correctly false because the pharmacist-approval-evidenced-by-written-policies mechanism is located in 247 CMR 8.05(2), where it conditions a technician's assistance in transporting and a certified technician's assistance in transporting and handling Schedule II controlled substances generally; that proviso does not appear in and does not qualify 8.05(3), whose only relief runs to supervised pharmacy interns. Actor, trigger, scope, condition and exception are each correctly stated: actor is the three technician grades; trigger is handling; scope is hydrocodone-only extended release; condition is absence of an abuse deterrent form; the exception is the supervised pharmacy intern, which the stem correctly places outside the item by confining it to support personnel. No numeric fact is asserted. The explanation, choice analysis, related fact citing 8.05(1) pharmacist accountability, and mpje_trap are each accurate. SOURCE POLICY. Every operative proposition above was verified directly against the official Massachusetts government publication of 247 CMR 8.00, namely the official PDF copy served from Mass.gov by the Massachusetts Trial Court Law Libraries at https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download, reached from the official regulation page recorded in official_url. The document text was read in full. Verbatim from that official copy: 8.05(1) 'Accountability for and security of Schedule II controlled substances shall be the direct responsibility of the pharmacist.'; 8.05(2) 'Under the supervision of a pharmacist: (a) a pharmacy technician may assist in the transporting of Schedule II controlled substances; and (b) a certified pharmacy technician may assist in the transporting and handling of Schedule II controlled substances; provided, the pharmacist has approved the certified pharmacy technician or pharmacy technician to assist the pharmacist in the handling or transporting of Schedule II controlled substances, in accordance with 247 CMR 8.05(2) and as evidenced by written policies and procedures to be followed in the pharmacy. Such policies and procedures shall be made available to the Board on request.'; 8.05(3) 'A certified pharmacy technician, pharmacy technician, or pharmacy technician trainee may not handle any hydrocodone-only extended release medication that is not in an abuse deterrent form. Pharmacy interns under the direct supervision of a registered pharmacist may handle hydrocodone-only extended release medication that is not in an abuse deterrent formulation.'; 8.02(1) 'No individual may serve as a pharmacy technician without holding a valid pharmacy technician license from the Board.'; 8.03(1) 'No individual may serve as a pharmacy technician trainee without holding a valid Pharmacy Technician Trainee License from the Board.'; 8.04(1) 'No individual may work as a certified pharmacy technician without holding a valid pharmacy technician license from the Board.' The negative proposition underlying option B was verified by exhaustive scan of that same official document: the phrase 'extended release' occurs exactly once in the whole of 247 CMR 8.00, inside 8.05(3), and the word 'opioid' occurs zero times, so no class-wide extended-release-opioid handling restriction on technicians exists anywhere in the regulation. Currency: the official PDF carries the page-footer stamp '4/25/25 (Effective 1/9/25)', matching the 04/25/2025 current-version date shown on the Mass.gov regulation page. Provenance disclosure: an earlier draft of this record read the section text from the Cornell LII republication because command-line and automated retrieval of the Mass.gov PDF returned HTTP 403; that republication is NOT the final substantive authority for this record and is superseded by the official Massachusetts government text quoted above, which was obtained by opening the official PDF in the browser. The official text confirmed the earlier reading without change.",
+      "Proposed_Answer": "A, C, E",
+      "Proposed_Rewrite": "None.",
+      "Proposed_Explanation": "None. The canonical explanation is legally accurate as written."
+    },
+    {
+      "Question_ID": "MA-Q-0256",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 4.00 (Personal registration renewal; continuing education requirement). Read directly from the official Mass.gov PDF copy published by the Massachusetts Trial Court Law Libraries at https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download, official masthead 'MA REG. # 1330, Dated 1-13-17'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 4.03(7)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 4.00, home study and other mediated instruction cap. Read directly from the official Mass.gov PDF copy at https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 4.03(4)(b)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy regulations, 247 CMR 4.00, prohibition on carry-over between calendar years. Read directly from the official Mass.gov PDF copy at https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 4.03(5)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+          "law_checked_date": "2026-08-19"
+        }
+      ],
+      "Problem": "None. Verified independently at the repaired hash 8957348a against the promulgated text, not against the canonical rule record MA-CE-ANNUAL-STRUCTURE. Phase-1 blind answer E MATCHED the canonical key E. 247 CMR 4.03(7) provides that a registrant may not earn more than eight contact hours of continuing education in a calendar day. The numeric fact is therefore eight, and the keyed option E states both that figure and the correct rationale. The cap is expressed without any qualification as to delivery format, so it binds the single-day live conference exactly as it would bind home study, which disposes of A and B; the only format-sensitive limit in 247 CMR 4.03 is the separate annual cap in 4.03(4)(b) of no more than 15 contact hours per calendar year acquired through home study and other mediated instruction, which is an annual limit on a different axis and confers no exemption on live programming. C is correctly false on the number: the promulgated figure is eight, not ten. D is correctly false because no provision of 247 CMR 4.03 defers hours earned in December into a later cycle, and 4.03(5) points the other way by providing that contact hours may not be carried over from one calendar year to another, which confirms attribution to the calendar year in which the hours are earned. Actor, trigger, scope, condition and exception are each correctly stated: actor is the registrant; trigger is earning contact hours; scope is a calendar day; the condition is the eight-hour ceiling; and there is no exception in the text, so the item asserts none. The explanation, choice analysis, related fact citing 4.03(5), and mpje_trap are each accurate. SOURCE POLICY. Every operative proposition above was verified directly against the official Massachusetts government publication of 247 CMR 4.00, namely the official PDF copy served from Mass.gov by the Massachusetts Trial Court Law Libraries at https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download, reached from the official regulation page recorded in official_url. The document text was read in full. Verbatim from that official copy: 4.03(7) 'A registrant may not earn more than eight contact hours of continuing education in a calendar day.'; 4.03(4) 'Effective for the renewal period beginning January 1, 2015, a registrant seeking renewal of a personal registration must complete a minimum of 20 contact hours of continuing education each calendar year of the two-year renewal cycle.'; 4.03(4)(b) 'No more than 15 contact hours per calendar year acquired through home study and other mediated instruction may be applied toward the minimum of 20 contact hours per calendar year;'; 4.03(5) 'Contact hours of continuing education may not be carried over from one calendar year to another.' Three negative propositions were verified by exhaustive scan of that same official document: the phrase 'calendar day' occurs exactly once in the whole of 247 CMR 4.00, inside 4.03(7), so no second or format-specific daily rule exists; the phrase 'eight contact hours' occurs exactly once, confirming the figure; and the phrase 'ten contact hours' occurs zero times, confirming that option C states a figure found nowhere in the regulation. The text of 4.03(7) as officially published contains no reference to delivery format, which is the basis for rejecting options A and B. Currency: the official PDF carries the masthead 'MA REG. # 1330, Dated 1-13-17', matching the 01/13/2017 current-version date shown on the Mass.gov regulation page; no later amendment to 247 CMR 4.03 was located. Provenance disclosure: an earlier draft of this record read the section text from the Cornell LII republication because command-line and automated retrieval of the Mass.gov PDF returned HTTP 403; that republication is NOT the final substantive authority for this record and is superseded by the official Massachusetts government text quoted above, which was obtained by opening the official PDF in the browser. The official text confirmed the earlier reading without change.",
+      "Proposed_Answer": "E",
+      "Proposed_Rewrite": "None.",
+      "Proposed_Explanation": "None. The canonical explanation is legally accurate as written."
+    }
+  ]
+}

@@ -1,71 +1,97 @@
 {
   "question_id": "MA-Q-0241",
-  "family_id": "B3A_0241_MA_CII_TRANSPORT_VS_HANDLE",
+  "family_id": "B3A_0241R1_MA_HYDROCODONE_ER_HANDLING_BAR",
   "area": 1,
   "topic": "Pharmacy personnel",
-  "subtopic": "Schedule II support handling",
+  "subtopic": "Product-specific handling prohibition",
   "difficulty": 5,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist is deciding which support personnel may assist with Schedule II controlled substances during a delivery to a satellite site. Which statements are correct? Select all that apply.",
+  "stem": "A Massachusetts pharmacy stocks a hydrocodone-only extended release product that is not formulated in an abuse deterrent form. The pharmacist on duty is working out how the regulation treats that product where support personnel are concerned. Which statements are correct? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Accountability for and security of Schedule II controlled substances is the direct responsibility of the pharmacist."
+      "text": "The prohibition turns on whether the product is in an abuse deterrent form."
     },
     {
       "id": "B",
-      "text": "A pharmacy technician may assist in transporting Schedule II controlled substances under pharmacist supervision."
+      "text": "The prohibition reaches every extended release opioid product the pharmacy stocks."
     },
     {
       "id": "C",
-      "text": "A certified pharmacy technician may assist in transporting and handling Schedule II controlled substances under pharmacist supervision."
+      "text": "It reaches pharmacy technician trainees as well as licensed and certified technicians."
     },
     {
       "id": "D",
-      "text": "Written pharmacy policies and procedures must evidence the pharmacist's approval of the individual."
+      "text": "Pharmacist approval evidenced by written policies and procedures permits a certified technician to handle it."
     },
     {
       "id": "E",
-      "text": "A pharmacy technician trainee may handle non-abuse-deterrent hydrocodone-only extended release medication if supervised."
+      "text": "A hydrocodone-only extended release product in an abuse deterrent form falls outside the prohibition."
     }
   ],
   "correct_choice_ids": [
     "A",
-    "B",
     "C",
-    "D"
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "247 CMR 8.05(1) places accountability and security for Schedule II drugs directly on the pharmacist. 247 CMR 8.05(2) permits a pharmacy technician to assist in transporting and a certified pharmacy technician to assist in transporting and handling, in each case under supervision, with the pharmacist's approval evidenced by written policies and procedures. 247 CMR 8.05(3) bars every technician grade from handling non-abuse-deterrent hydrocodone-only extended release medication; only supervised interns may.",
+    "core_reasoning": "247 CMR 8.05(3) provides that a certified pharmacy technician, pharmacy technician, or pharmacy technician trainee may not handle any hydrocodone-only extended release medication that is not in an abuse deterrent form. Two features of that sentence decide the item. It is drawn by product, so the abuse deterrent formulation is what removes a hydrocodone-only extended release product from its reach, and it names all three support-personnel categories, so a higher credential grade does not escape it. The pharmacist approval and written policies mechanism in 247 CMR 8.05(2) governs assistance with Schedule II controlled substances generally and does not qualify this prohibition.",
     "choice_analysis": {
-      "A": "Correct: the pharmacist holds direct accountability and security responsibility.",
-      "B": "Correct: transporting assistance is within pharmacy technician scope under supervision.",
-      "C": "Correct: certified status adds handling to transporting.",
-      "D": "Correct: written policies and procedures must evidence the approval and be available to the Board.",
-      "E": "Trainees are barred from that medication regardless of supervision; the carve-out covers interns."
+      "A": "Correct: the prohibition is written against medication that is not in an abuse deterrent form.",
+      "B": "The prohibition is confined to hydrocodone-only extended release medication.",
+      "C": "Correct: certified pharmacy technicians, pharmacy technicians and pharmacy technician trainees are all named.",
+      "D": "That approval mechanism belongs to 247 CMR 8.05(2) and does not qualify the 247 CMR 8.05(3) prohibition.",
+      "E": "Correct: an abuse deterrent formulation is outside the sentence's reach."
     },
     "related_facts": [
-      "The written policies and procedures must be made available to the Board on request."
+      "247 CMR 8.05(1) places accountability for and security of Schedule II controlled substances directly on the pharmacist."
     ],
-    "mpje_trap": "Certification widens Schedule II assistance but does not lift the hydrocodone-only extended release bar."
+    "mpje_trap": "A product-specific prohibition does not bend to the credential ladder, so the certified technician's broader Schedule II role and the pharmacy's approved written policies both fail to reach it."
   },
   "rule_ids": [
     "MA-CII-SUPPORT-HANDLING"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Separate transporting assistance from handling assistance across technician grades",
-    "Require the pharmacist's documented approval as a precondition",
-    "Apply the hydrocodone-only extended release bar across every technician grade"
+    "Identify the product as hydrocodone-only extended release and not in an abuse deterrent form",
+    "Read the prohibition as drawn by product formulation rather than by credential grade",
+    "Confirm that all three support-personnel categories are named and that no approval mechanism qualifies it"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-19",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 blind-locked focused REAUDIT (PR #98) and its official-source cure",
+    "date": "2026-08-19",
+    "notes": "Batch 3 B3-A R1 admission of the two questions CLAUDE-FRESH-B3A initially withheld on realism distinctness. Both were repaired onto genuinely different current-law decision paths, MA-Q-0241 onto 247 CMR 8.05(3) and MA-Q-0256 onto 247 CMR 4.03(7), and re-audited by a separate instance CLAUDE-FRESH-B3A-R1 whose Phase-1 blind lock preceded the records and whose 2/2 blind answers matched the canonical keys. Controller verification passed 16/16 process checks, and the subsequent official-source cure passed a further 11/11: the lock blob is unchanged, the REALISM record is byte-identical, both hashes are preserved, and the only LEGAL changes are source provenance plus one citation narrowed from 247 CMR 8.03 to 8.03(1), independently confirmed correct against the official Mass.gov text. The earlier Cornell LII consultation is preserved in the record as superseded rather than erased. Released from a forward-port onto current main rather than a merge, so the B3-B tranche and the 261-question release state cannot roll back. MA-Q-0288 remains withheld pending its own focused REAUDIT and MA-Q-0028 remains quarantined.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-SUPPORT-HANDLING": {
+          "content_version": 1,
+          "content_hash": "b7ef537adc43c788ea46fa4089cd390b0ff4ccc8ff67b27899a6a49a88a6e174"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
