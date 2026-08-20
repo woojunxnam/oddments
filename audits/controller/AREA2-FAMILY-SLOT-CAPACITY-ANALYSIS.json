@@ -1,0 +1,1034 @@
+{
+  "report_type": "AREA2_FAMILY_SLOT_CAPACITY_ANALYSIS",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "supersedes_conclusion_of": "BATCH3-FEASIBILITY-DETERMINATION.json (retained, corrected in place)",
+  "governance_proof": {
+    "question": "Is there a universal rule that every family may contain only ONE final-bank question?",
+    "answer": "NO. Disproven from the repository.",
+    "evidence": [
+      {
+        "artifact": "schemas/question_family_matrix.schema.json",
+        "shows": "Every family record REQUIRES max_questions_in_final_bank, typed {'type': 'integer', 'minimum': 1}. A per-family integer with a floor of 1, not a constant of 1."
+      },
+      {
+        "artifact": "data/exam_style/question_family_matrix.json",
+        "shows": "Actual cap distribution over 364 families: {\"1\": 26, \"2\": 250, \"3\": 88}. Only 26 families carry a cap of 1."
+      },
+      {
+        "artifact": "scripts/validate_governance.py, validate_family_matrix",
+        "shows": "Enforcement is `if released_count > maximum: report.error(... exceeds max_questions_in_final_bank)`, with `elif candidate_count > maximum` raising a WARNING only. Governed capacity per family is therefore maximum - released_count."
+      },
+      {
+        "artifact": "tests/test_family_governance.py",
+        "shows": "test_released_family_over_max_fails builds a family with maximum=2 and three released questions and asserts the error. Its helper defaults to maximum=2. test_extra_draft_candidates_only_warn confirms drafts above the cap only warn."
+      },
+      {
+        "artifact": "scripts/batch3_inventory.py lines 117-120",
+        "shows": "The repository's own capacity measure: headroom_in_existing_families = sum(max(0, max_questions_in_final_bank - released_count) for fid in families)."
+      },
+      {
+        "artifact": "scripts/author_batch3a.py:38 and scripts/author_batch3b.py:38",
+        "shows": "The Batch-3 authoring standard for a NEW family is max_questions_in_final_bank = 2. Batch 2 used 3, Batch-1 v3 used 1."
+      }
+    ],
+    "separate_constraint": {
+      "name": "max_family_repeat_in_mock",
+      "artifact": "scripts/prebatch3_final_coverage_gate.py, build_mock",
+      "shows": "build_mock assembles ONE 120-question mock by round-robin across families (rank 0 of every family, then rank 1, and so on) and then REPORTS max_family_repeat_in_mock = max(family_counts.values()). It is a measured property of an assembled mock, not a global cap on the bank.",
+      "consequence": "A family holding k questions contributes its rank-0 question to the first mock, its rank-1 question to the second, and so on. Global family count greater than 1 is therefore fully compatible with per-mock repeat of 1."
+    },
+    "blueprint_derivation": {
+      "artifact": "scripts/batch3_inventory.py lines 23-26 and scripts/prebatch3_final_coverage_gate.py line 44",
+      "shows": "MOCK_ALLOCATION = {1: 26, 2: 40, 3: 29, 4: 25}, TARGET_SETS = 3, MOCK_SIZE = 120, and required = count * TARGET_SETS.",
+      "consequence": "The 78 / 120 / 87 / 75 minima are three times the per-mock allocation. No repository artifact requires 360 distinct families. The observed cap ceiling of 3 equals TARGET_SETS, which is what lets one family serve one question to each of the three mocks without breaching per-mock repeat."
+    }
+  },
+  "existing_area2_families": {
+    "count": 65,
+    "release_usable_questions": 53,
+    "saturated": 2,
+    "live_families": {
+      "count": 54,
+      "remaining_slots": 69,
+      "rows": [
+        {
+          "family_id": "B2_DRUG_ADMIN_AUTH_MATRIX",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_ADMIN_FOLLOWTHROUGH",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_EPT_ANON_LABEL",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_EPT_DIAGNOSIS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_EPT_RX_CONSTRUCTION",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_MHSUD_LIST",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 3,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_TESTOSTERONE_INDICATION",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_DRUG_VIVITROL_SINGLEDOSE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_EPT_CONDITION",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_EPT_PROFILE_LABEL",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_EPT_REFERRAL",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_EPT_RX_IDENTITY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_MHSUD_ADMIN_DIRECTION",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_MHSUD_ADMIN_WORKFLOW",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B2_PHARM_ADMIN_CATEGORIES",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0281_MA_WHO_MAY_COUNSEL",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0282_MA_COUNSELING_DESIGNEE_TRAINING",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0283_MA_COUNSELING_TRIGGER",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0284_MA_COUNSELING_CONTENT",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0285_MA_CONSULTATION_AREA_ACCESS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0286_MA_COUNSELING_RIGHTS_SIGN",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0287_MA_COUNSELING_AVAILABILITY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0288R1_MA_VALIDITY_VS_ADJACENT_DUTIES",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0289_MA_PMP_REGISTRATION_DUTY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0290_MA_REFERRAL_REMUNERATION",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0291_MA_INSTITUTIONAL_DISPENSING",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0292_MA_CDTM_PRESCRIPTIVE_CONDITIONS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0293_MA_CDTM_CE_EVIDENCE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "B3B_0294_MA_CDTM_DISCIPLINE_NOTICE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "DRUG_STATUS_LEGAL_CONSEQUENCE_MATRIX",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0095_HORMONAL_CONTRACEPTIVE_SCOPE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0096_HORMONAL_CONTRACEPTIVE_PROTOCOL",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0097_NALOXONE_THIRD_PARTY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0098_NALOXONE_PRODUCT_STATUS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0122_MA_SCHEDULE_VI_STATUS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "OUTSTATE_CII_NONNARCOTIC_TIME_GATE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 3,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0013_MA_CII_OUTSTATE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0015_MA_OPIOID_SEVEN_DAY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0016_MA_OPIOID_SEVEN_DAY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0017_MA_OPIOID_SEVEN_DAY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0020_MA_OUTSTATE_CII_NARCOTIC",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0027_MA_RX_OUTSTATE_III_VI",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0034_MA_RX_OUTSTATE_III_VI",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0040_MA_OPIOID_SEVEN_DAY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0081_MA_CDTM_QUALIFICATIONS",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0082_MA_CDTM_RETAIL_SCOPE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0083_MA_CDTM_CONTROLLED_LIMIT",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0084_MA_CDTM_SVI_RX",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0086_MA_COUNSELING",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_0088_MA_RETURN_QUARANTINE",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "T2_0225_MA_DRUG_RETURN_REUSE_DISTINCT",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 1,
+          "saturated": false
+        },
+        {
+          "family_id": "V3_0100_PDMA_SAMPLE_INVENTORY",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 1,
+          "remaining_final_bank_slots": 0,
+          "saturated": true
+        },
+        {
+          "family_id": "V3_0114_HYPODERMIC_AUTHORIZED_SELLER",
+          "current_release_usable_count": 1,
+          "current_candidate_count": 1,
+          "max_questions_in_final_bank": 1,
+          "remaining_final_bank_slots": 0,
+          "saturated": true
+        }
+      ]
+    },
+    "stale_planning_stubs": {
+      "count": 11,
+      "remaining_slots_on_paper": 22,
+      "counted_as_capacity": false,
+      "why_excluded": "These families have never held a candidate. Each restates a proposition already keyed by a released question in a live family, for example P2_PLANNED_034_MA_CDTM_SVI_RX against the released P2_0084_MA_CDTM_SVI_RX. Authoring into them would duplicate an existing discrimination, so they are planning residue rather than capacity.",
+      "rows": [
+        {
+          "family_id": "EXP1_0091_MA_COUNSELING_OFFER",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0099_CDTM_QUALIFICATIONS",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0100_CDTM_RETAIL_SCOPE",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0101_CDTM_SVI_RX_COPY",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0102_CDTM_CONTROLLED_LIMIT",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "EXP1_0121_OUTSTATE_III_VI",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_PLANNED_010_FED_CS_SCHEDULES",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_PLANNED_031_MA_CDTM_CONTROLLED_LIMIT",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_PLANNED_032_MA_CDTM_QUALIFICATIONS",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_PLANNED_033_MA_CDTM_RETAIL_SCOPE",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        },
+        {
+          "family_id": "P2_PLANNED_034_MA_CDTM_SVI_RX",
+          "current_release_usable_count": 0,
+          "current_candidate_count": 0,
+          "max_questions_in_final_bank": 2,
+          "remaining_final_bank_slots": 2,
+          "saturated": false
+        }
+      ]
+    }
+  },
+  "new_census_families": {
+    "count": 49,
+    "cap_applied": 2,
+    "cap_basis": "The Batch-3 authoring standard at scripts/author_batch3a.py:38 and scripts/author_batch3b.py:38. No cap was raised for this analysis.",
+    "theoretical_family_slots": 98,
+    "defensible_second_questions": 32,
+    "richness_threshold": 3,
+    "richness_definition": "conditions + exceptions recorded for the proposition in the source census. A family clears the filter only if the rule carries at least three legally operative elements, so a second question can turn on a different trigger, actor, condition combination, or the exception rather than the general rule.",
+    "rows": [
+      {
+        "proposed_family_id": "CDTM_SCOPE_VS_DIAGNOSIS_BOUNDARY",
+        "tranche": "B3C",
+        "exact_section": "24B1/2(a), definition of collaborative drug therapy management",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CPA_VALID_CONSTITUTION_AND_BIENNIAL_CURRENCY",
+        "tranche": "EITHER",
+        "exact_section": "24B1/2(a), definition of collaborative practice agreement",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_PATIENT_ELIGIBILITY_AND_DUAL_RECORDING",
+        "tranche": "B3C",
+        "exact_section": "24B1/2(a), definition of patient",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_SETTING_APPROVAL_AUTHORITY_MATRIX",
+        "tranche": "B3D",
+        "exact_section": "24B1/2(c)(1) through (4), non-retail settings and their approval authorities",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_RETAIL_AGE_AND_30_DAY_EXTENSION",
+        "tranche": "B3D",
+        "exact_section": "24B1/2(c)(5), retail age and duration limits",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_EMPLOYMENT_DIRECTION_AND_PURPOSE",
+        "tranche": "B3C",
+        "exact_section": "24B1/2(e), employment relationships",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "STANDING_ORDER_TRAINING_PRECONDITION_CONTRAST",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 19A(d) compared with s. 19E(c)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "STANDING_ORDER_REPORTING_CADENCE_AND_CONFIDENTIALITY",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 19B(d), compared with s. 19A(e) and s. 19E(d)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "OPIOID_ANTAGONIST_PURCHASER_BILLING_BEFORE_DISPENSING",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 19B(e)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "PROSPECTIVE_DRUG_REVIEW_MANDATORY_VS_MENU",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 21A, first paragraph",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "COUNSELLING_OFFER_METHOD_AND_CONTAINER_LABEL",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 21A, second and third paragraphs",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "COUNSELLING_RECORD_PRESUMPTION",
+        "tranche": "B3C",
+        "exact_section": "c. 94C s. 21A, penultimate paragraph",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "CONTRACEPTION_POST_PRESCRIBING_DUTIES",
+        "tranche": "B3D",
+        "exact_section": "c. 94C s. 19F(c)(i)(C), (D) and (E)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CONTRACEPTION_NO_APPOINTMENT_CONDITION",
+        "tranche": "B3D",
+        "exact_section": "c. 94C s. 19F(c)(ii)(A)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 0,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "ADMINISTRATION_ROUTE_SC_IM_ONLY",
+        "tranche": "B3D",
+        "exact_section": "DCP 26-03-124, condition (c) with the Administration and Dosing paragraph",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "ADMINISTRATION_CURRENT_ELIGIBLE_PRODUCT_LIST",
+        "tranche": "B3D",
+        "exact_section": "DCP 26-03-124, Medications Eligible for Pharmacist or Pharmacy Intern Administration",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "ADMINISTRATION_OTP_ORDER_ONLY",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.004(B)(9)(e) and the DCP 26-03-124 note on addiction treatment",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "ADMINISTRATION_PRESCRIPTION_NOTATION_AND_CONTACT",
+        "tranche": "B3C",
+        "exact_section": "DCP 26-03-124, Pharmacist-Prescriber Communication",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "STATUTORY_ADMINISTRATION_ROUTE_ARCHITECTURE",
+        "tranche": "B3D",
+        "exact_section": "c. 94C s. 1, Administer (c)(i) compared with (c)(ii) and (c)(iii)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "EMERGENCY_VACCINE_COMMISSIONER_ORDER_GATE",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(F) and (F)(1)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "EMERGENCY_VACCINE_WRITTEN_PROTOCOL_SUBJECTS",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(F)(2)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "CDTM_ISSUE_MODIFY_DISCONTINUE_POWERS",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(G) opening words",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "CDTM_PRESCRIBING_PURPOSE_REGISTRATION",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(G)(2)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "PHARMACIST_INDIVIDUAL_COMPETENCE_SCOPE",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(4)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "ANTI_CIRCUMVENTION_STANDARD",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(2)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 1,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "MANDATORY_VERSUS_DISCRETIONARY_RETURN_ACCEPTANCE",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(7)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "OPIOID_ANTAGONIST_COUNSELLING_AND_REFERRAL_DUTIES",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.06(3) and 9.06(4)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "CDTM_DELEGATION_MUST_BE_SPECIFIED",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 16.04(3)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_TERMINATION_CONTINUITY_AND_PATIENT_NOTICE",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 16.04(5)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "CDTM_AGREEMENT_COPY_VERSUS_ORIGINAL_CUSTODY",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 16.04(6)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 5,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_VACCINE_ADMINISTRATION_ROUTE",
+        "tranche": "B3D",
+        "exact_section": "247 CMR 16.03(5)(b)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "PRACTICE_HOUR_CEILING_AND_REST_PERIOD",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(17)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 6,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "DUTY_NOT_TO_REFUSE_CUSTOMARY_COMPOUNDING",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(15)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "BLANK_PRESCRIPTION_FORM_PROHIBITION",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(14)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "DUR_RESPONSE_MEASURES_AND_DOCUMENTATION",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.17(2)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "DUR_EVIDENTIARY_BASIS_OPEN_LIST",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.17(3)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "PATIENT_PROFILE_REASONABLE_EFFORT_STANDARD",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.16(7)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "LICENSEE_CONFIDENTIALITY_AFFIRMATIVE_DUTY",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(16)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 2,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "FRAUDULENT_OR_DECEPTIVE_ACT_STANDARD",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(9)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 1,
+        "second_question_defensible": false
+      },
+      {
+        "proposed_family_id": "SUBSTANDARD_PRODUCT_UNAUTHORISED_RECIPIENT",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(12)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "USP_CURRENCY_AND_BOARD_DISPLACEMENT",
+        "tranche": "B3C",
+        "exact_section": "247 CMR 9.01(3)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "NON_OPIATE_DIRECTIVE_PHARMACIST_STANDARD",
+        "tranche": "B3D",
+        "exact_section": "M.G.L. c. 94C, s. 18B(c), read with s. 18B(a) and s. 18B(e)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "S9_PHARMACIST_QUALIFIED_PRACTITIONER_AUTHORITY",
+        "tranche": "B3D",
+        "exact_section": "M.G.L. c. 94C, s. 9(a), first paragraph",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 5,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_IMMEDIATE_TREATMENT_PROCUREMENT_CHANNEL",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(G)(5) and (G)(6)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "PHARMACIST_PRESCRIBER_IDENTIFICATION_PARTICULARS",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(G)(7)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 5,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_FACILITY_MEDICATION_ORDER_INSTRUMENT",
+        "tranche": "B3D",
+        "exact_section": "105 CMR 700.003(G)(8)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_REFERRAL_MEANING_BY_SETTING",
+        "tranche": "B3C",
+        "exact_section": "243 CMR 2.12(1), definition of Referral",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "SUPERVISING_PHYSICIAN_INELIGIBILITY_ENDS_AUTHORITY",
+        "tranche": "B3D",
+        "exact_section": "243 CMR 2.12(3)(d), read with 243 CMR 2.12(3)(e)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 3,
+        "second_question_defensible": true
+      },
+      {
+        "proposed_family_id": "CDTM_WRITING_REQUIREMENT_PAPER_OR_ELECTRONIC",
+        "tranche": "B3C",
+        "exact_section": "243 CMR 2.12(1)(a) and (b)",
+        "proposed_max_questions_in_final_bank": 2,
+        "legally_operative_elements": 4,
+        "second_question_defensible": true
+      }
+    ]
+  },
+  "capacity": {
+    "THEORETICAL_FAMILY_SLOTS": 189,
+    "DEFENSIBLE_QUESTION_SLOTS": 81,
+    "defensible_basis": "New census families only: one question per family plus a second where the rule carries enough operative elements to support a materially different realistic application. The live existing-family headroom of 69 slots is held in reserve and is not needed.",
+    "reserve_not_counted": 69
+  },
+  "scenarios": {
+    "A_q0172_restored": {
+      "area2_release_usable_now": 53,
+      "plus_q0172": 1,
+      "new_questions_required": 66,
+      "capacity": 81,
+      "feasible": true,
+      "margin": 15
+    },
+    "B_q0172_permanently_retired": {
+      "area2_release_usable_now": 53,
+      "plus_q0172": 0,
+      "new_questions_required": 67,
+      "capacity": 81,
+      "feasible": true,
+      "margin": 14
+    }
+  },
+  "three_exam_allocation_test": {
+    "target_sets": 3,
+    "per_mock_area2_allocation": 40,
+    "area2_total_required": 120,
+    "max_questions_any_area2_family_will_hold_after_batch3": 2,
+    "why_per_mock_repeat_stays_1": "build_mock orders each area's pool by round-robin over families, so a family holding two questions contributes its first to one mock and its second to another. With a maximum of 2 questions per Area-2 family and 3 mocks, no mock can receive two questions from the same family.",
+    "families_available_for_area2_after_batch3": 114,
+    "questions_needed_per_mock": 40,
+    "headroom": "114 Area-2 families for 40 slots per mock leaves the round-robin selector far from exhausting rank 0, so the assembled mocks stay at repeat 1.",
+    "verdict": "PASS by construction; to be re-verified mechanically by scripts/prebatch3_final_coverage_gate.py once the questions exist."
+  },
+  "verdict": "AREA2_FEASIBLE_UNDER_ORIGINAL_BLUEPRINT",
+  "blueprint_preserved": {
+    "area_1": 78,
+    "area_2": 120,
+    "area_3": 87,
+    "area_4": 75,
+    "total": 360
+  },
+  "reallocation_path": "CANCELLED. P1, P2, P3 and P4 are withdrawn and must not be adopted."
+}

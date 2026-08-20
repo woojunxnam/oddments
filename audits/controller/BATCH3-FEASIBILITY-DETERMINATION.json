@@ -3,7 +3,7 @@
   "date": "2026-08-20",
   "controller_issue": 83,
   "authorizing_issue": 91,
-  "verdict": "BATCH3_BLOCKED_AREA2_SOURCE_EXHAUSTION",
+  "verdict": "WITHDRAWN_SEE_FEASIBILITY_CORRECTION_1",
   "measured_at": {
     "released_total": 263,
     "unreleased_total": 31,
@@ -100,5 +100,24 @@
     "MA-Q-0028 remains quarantined and is excluded from every pool.",
     "No question has been authored from this census; the 66-family gate was honoured throughout.",
     "The controller performed no substantive independent audit of content it authored."
+  ],
+  "corrections": [
+    {
+      "correction_id": "FEASIBILITY_CORRECTION_1",
+      "date": "2026-08-20",
+      "status": "THIS REPORT'S VERDICT IS WITHDRAWN",
+      "what_was_wrong": "The Area-2 maximum of 103 was computed as 53 released + 1 held + 49 census families, treating one viable decision family as at most one final-bank question. That one-family-one-question capacity model is not this repository's governance.",
+      "what_the_governance_actually_is": "Each family carries an explicit max_questions_in_final_bank, an integer with a minimum of 1 that is 2 for 250 of 364 families and 3 for 88. validate_family_matrix errors only when released_count exceeds that cap. max_family_repeat_in_mock = 1 is a measured property of a single assembled 120-question mock, not a global cap.",
+      "how_it_was_found": "The project owner challenged the assumption and directed a mechanical family-slot feasibility audit against the repository's own validators.",
+      "aggravating_note": "scripts/area2_census.py line 169, written by this controller, already used .get('max_questions_in_final_bank', 2). The controller had the correct model in its own code and still wrote a determination assuming 1.",
+      "corrected_by": "AREA2-FAMILY-SLOT-CAPACITY-ANALYSIS.json",
+      "corrected_verdict": "AREA2_FEASIBLE_UNDER_ORIGINAL_BLUEPRINT",
+      "retained_and_still_valid": [
+        "The source census itself: 92 propositions reviewed, 49 viable, 43 rejected on the record.",
+        "The exhaustive source-universe survey.",
+        "CONTROLLER_SELF_CORRECTION_1, which withdrew two records that relabelled Area-4 and Area-3 subject matter as Area 2.",
+        "The Area-1, Area-3 and Area-4 arithmetic, which did not depend on the faulty assumption."
+      ]
+    }
   ]
 }
