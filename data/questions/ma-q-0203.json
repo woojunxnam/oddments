@@ -1,70 +1,102 @@
 {
   "question_id": "MA-Q-0203",
-  "family_id": "B2_DRUG_MULTI_DRUG_SIII_EXCLUSION",
+  "family_id": "B2_ORAL_LIQUID_SINGLE_DOSE_SCOPE",
   "area": 4,
   "topic": "Compliance packaging",
-  "subtopic": "Schedule III multi-drug-single-dose exclusion",
+  "subtopic": "Oral-liquid-single-dose boundary",
   "difficulty": 3,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient receives stable Schedule III buprenorphine therapy. The pharmacy proposes to combine each dose in a multi-drug single-dose pouch with the patient's other morning medications. May maintenance status justify that placement?",
+  "stem": "A Massachusetts pharmacy plans to place each dose of Schedule II methylphenidate oral solution in its own oral-liquid-single-dose container. No second drug will be in any container. All requirements outside 247 CMR 9.08(3)(b) are left for separate review. What does paragraph (3)(b) decide?",
   "choices": [
     {
       "id": "A",
-      "text": "Yes, because a stable maintenance regimen overrides the controlled-substance packaging restriction."
+      "text": "It prohibits the plan because Schedule II drugs may never use any form of compliance packaging."
     },
     {
       "id": "B",
-      "text": "No; Schedule III drugs may not enter a multi-drug single-dose package under 247 CMR 9.08(3)(b)."
+      "text": "It prohibits the plan because oral-liquid packaging becomes multi-drug whenever other prescriptions are dispensed that day."
     },
     {
       "id": "C",
-      "text": "No, because every controlled substance is prohibited from every form of compliance packaging."
+      "text": "It does not prohibit this oral-liquid-single-dose plan; the paragraph targets Schedule II or III drugs in multi-drug-single-dose packages."
     },
     {
       "id": "D",
-      "text": "Yes, if the patient signs a written consent to combine the medications."
+      "text": "It permits the plan only after the prescriber signs a controlled-substance packaging authorization."
     },
     {
       "id": "E",
-      "text": "Yes, if the pharmacy limits the package to a 60-day supply."
+      "text": "It permits the plan because patient consent converts the container into manufacturer packaging."
     }
   ],
   "correct_choice_ids": [
-    "B"
+    "C"
   ],
   "explanation": {
-    "core_reasoning": "247 CMR 9.08(3)(b) prohibits Schedule II and III controlled substances in a multi-drug-single-dose package. Buprenorphine's Schedule III status decides this proposal; maintenance status, consent and a 60-day limit do not create an exception. The rule should not be generalized into a ban on all controlled substances or every compliance-packaging format.",
+    "core_reasoning": "247 CMR 9.08 distinguishes oral-liquid-single-dose, single-drug-single-dose and multi-drug-single-dose packaging. Paragraph (3)(b) bars Schedule II and III controlled substances only from the multi-drug-single-dose form. A container holding one measured dose of methylphenidate oral solution and no second drug is not that form, so paragraph (3)(b) does not itself prohibit the plan. Every other applicable packaging, labeling, compatibility and controlled-substance requirement still must be reviewed.",
     "choice_analysis": {
-      "A": "Maintenance status does not override the express Schedule III prohibition.",
-      "B": "Correct: Schedule III may not be dispensed in the proposed multi-drug-single-dose pouch.",
-      "C": "This overstates both the schedules and packaging types covered by the cited clause.",
-      "D": "Patient consent cannot waive the regulatory prohibition.",
-      "E": "A duration limit does not create an exception for Schedule III."
+      "A": "This expands a prohibition tied to one packaging form into a ban on every compliance-packaging form.",
+      "B": "Packaging type depends on what the container holds, not on unrelated prescriptions dispensed that day.",
+      "C": "Correct: paragraph (3)(b) is confined to Schedule II/III drugs in multi-drug-single-dose packages.",
+      "D": "The paragraph does not create a prescriber-authorization pathway for this packaging decision.",
+      "E": "Patient consent does not change the physical packaging category."
     },
     "related_facts": [
-      "The prohibition is specific to Schedule II/III drugs and multi-drug-single-dose packaging."
+      "Paragraph (3)(b) does not waive the separate conditions that govern oral-liquid-single-dose packaging."
     ],
-    "mpje_trap": "Importing the policy's 60-day concept into a separate categorical controlled-substance prohibition."
+    "mpje_trap": "Treating the controlled-substance schedule as dispositive while ignoring the packaging category named in the prohibition."
   },
   "rule_ids": [
     "MA-COMPLIANCE-PACKAGING"
   ],
   "drug_ids": [
-    "oxycodone"
+    "methylphenidate"
   ],
   "reasoning_steps": [
-    "Identify buprenorphine as Schedule III",
-    "Identify the proposal as multi-drug-single-dose packaging",
-    "Reject conditions that do not create an exception to paragraph (3)(b)"
+    "Identify methylphenidate as Schedule II",
+    "Classify a one-drug measured liquid dose as oral-liquid-single-dose rather than multi-drug-single-dose packaging",
+    "Apply paragraph (3)(b) only to the packaging form it names while preserving other requirements"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-20",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-Q0203-V2의 blind-locked legal 및 406-record realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "v1 hash의 legal MINOR_EDIT 및 realism FAIL은 보존한다. v2 hash ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d는 새 auditor가 Phase-1 blind lock 9c75f4d31cc03e53337c74fec9c180a3b4e3c768을 먼저 push한 뒤 legal KEEP/YES, realism KEEP/PASS, 모든 criteria=true로 판정했다. 현재 hash와 methylphenidate dependency가 일치할 때만 이 단일 문항을 release한다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COMPLIANCE-PACKAGING": {
+          "content_version": 2,
+          "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

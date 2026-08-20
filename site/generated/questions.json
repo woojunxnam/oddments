@@ -42535,72 +42535,104 @@
     },
     {
       "question_id": "MA-Q-0203",
-      "family_id": "B2_DRUG_MULTI_DRUG_SIII_EXCLUSION",
+      "family_id": "B2_ORAL_LIQUID_SINGLE_DOSE_SCOPE",
       "area": 4,
       "topic": "Compliance packaging",
-      "subtopic": "Schedule III multi-drug-single-dose exclusion",
+      "subtopic": "Oral-liquid-single-dose boundary",
       "difficulty": 3,
       "question_type": "SBA",
       "provenance": "GEN",
       "source_signal_ids": [],
-      "stem": "A patient receives stable Schedule III buprenorphine therapy. The pharmacy proposes to combine each dose in a multi-drug single-dose pouch with the patient's other morning medications. May maintenance status justify that placement?",
+      "stem": "A Massachusetts pharmacy plans to place each dose of Schedule II methylphenidate oral solution in its own oral-liquid-single-dose container. No second drug will be in any container. All requirements outside 247 CMR 9.08(3)(b) are left for separate review. What does paragraph (3)(b) decide?",
       "choices": [
         {
           "id": "A",
-          "text": "Yes, because a stable maintenance regimen overrides the controlled-substance packaging restriction."
+          "text": "It prohibits the plan because Schedule II drugs may never use any form of compliance packaging."
         },
         {
           "id": "B",
-          "text": "No; Schedule III drugs may not enter a multi-drug single-dose package under 247 CMR 9.08(3)(b)."
+          "text": "It prohibits the plan because oral-liquid packaging becomes multi-drug whenever other prescriptions are dispensed that day."
         },
         {
           "id": "C",
-          "text": "No, because every controlled substance is prohibited from every form of compliance packaging."
+          "text": "It does not prohibit this oral-liquid-single-dose plan; the paragraph targets Schedule II or III drugs in multi-drug-single-dose packages."
         },
         {
           "id": "D",
-          "text": "Yes, if the patient signs a written consent to combine the medications."
+          "text": "It permits the plan only after the prescriber signs a controlled-substance packaging authorization."
         },
         {
           "id": "E",
-          "text": "Yes, if the pharmacy limits the package to a 60-day supply."
+          "text": "It permits the plan because patient consent converts the container into manufacturer packaging."
         }
       ],
       "correct_choice_ids": [
-        "B"
+        "C"
       ],
       "explanation": {
-        "core_reasoning": "247 CMR 9.08(3)(b) prohibits Schedule II and III controlled substances in a multi-drug-single-dose package. Buprenorphine's Schedule III status decides this proposal; maintenance status, consent and a 60-day limit do not create an exception. The rule should not be generalized into a ban on all controlled substances or every compliance-packaging format.",
+        "core_reasoning": "247 CMR 9.08 distinguishes oral-liquid-single-dose, single-drug-single-dose and multi-drug-single-dose packaging. Paragraph (3)(b) bars Schedule II and III controlled substances only from the multi-drug-single-dose form. A container holding one measured dose of methylphenidate oral solution and no second drug is not that form, so paragraph (3)(b) does not itself prohibit the plan. Every other applicable packaging, labeling, compatibility and controlled-substance requirement still must be reviewed.",
         "choice_analysis": {
-          "A": "Maintenance status does not override the express Schedule III prohibition.",
-          "B": "Correct: Schedule III may not be dispensed in the proposed multi-drug-single-dose pouch.",
-          "C": "This overstates both the schedules and packaging types covered by the cited clause.",
-          "D": "Patient consent cannot waive the regulatory prohibition.",
-          "E": "A duration limit does not create an exception for Schedule III."
+          "A": "This expands a prohibition tied to one packaging form into a ban on every compliance-packaging form.",
+          "B": "Packaging type depends on what the container holds, not on unrelated prescriptions dispensed that day.",
+          "C": "Correct: paragraph (3)(b) is confined to Schedule II/III drugs in multi-drug-single-dose packages.",
+          "D": "The paragraph does not create a prescriber-authorization pathway for this packaging decision.",
+          "E": "Patient consent does not change the physical packaging category."
         },
         "related_facts": [
-          "The prohibition is specific to Schedule II/III drugs and multi-drug-single-dose packaging."
+          "Paragraph (3)(b) does not waive the separate conditions that govern oral-liquid-single-dose packaging."
         ],
-        "mpje_trap": "Importing the policy's 60-day concept into a separate categorical controlled-substance prohibition."
+        "mpje_trap": "Treating the controlled-substance schedule as dispositive while ignoring the packaging category named in the prohibition."
       },
       "rule_ids": [
         "MA-COMPLIANCE-PACKAGING"
       ],
       "drug_ids": [
-        "oxycodone"
+        "methylphenidate"
       ],
       "reasoning_steps": [
-        "Identify buprenorphine as Schedule III",
-        "Identify the proposal as multi-drug-single-dose packaging",
-        "Reject conditions that do not create an exception to paragraph (3)(b)"
+        "Identify methylphenidate as Schedule II",
+        "Classify a one-drug measured liquid dose as oral-liquid-single-dose rather than multi-drug-single-dose packaging",
+        "Apply paragraph (3)(b) only to the packaging form it names while preserving other requirements"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-Q0203-V2의 blind-locked legal 및 406-record realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "v1 hash의 legal MINOR_EDIT 및 realism FAIL은 보존한다. v2 hash ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d는 새 auditor가 Phase-1 blind lock 9c75f4d31cc03e53337c74fec9c180a3b4e3c768을 먼저 push한 뒤 legal KEEP/YES, realism KEEP/PASS, 모든 criteria=true로 판정했다. 현재 hash와 methylphenidate dependency가 일치할 때만 이 단일 문항을 release한다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {
+            "methylphenidate": {
+              "content_version": 1,
+              "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -42620,17 +42652,17 @@
       ],
       "drug_checks": [
         {
-          "drug_id": "oxycodone",
-          "content_version": 1,
-          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854",
-          "generic_name": "oxycodone",
+          "drug_id": "methylphenidate",
+          "generic_name": "methylphenidate",
           "brand_names": [
-            "OxyContin"
+            "Ritalin",
+            "Concerta"
           ],
           "main_indications": [
-            "Severe and persistent pain requiring extended opioid treatment"
+            "Attention deficit hyperactivity disorder",
+            "Narcolepsy for applicable immediate-release products"
           ],
-          "therapeutic_class": "Opioid analgesic",
+          "therapeutic_class": "Central nervous system stimulant",
           "federal_status": {
             "controlled": true,
             "schedule": "II"
@@ -42642,48 +42674,74 @@
           },
           "legal_consequences": {
             "refill": {
-              "summary": "Apply the refill framework for a II product before dispensing another fill.",
+              "summary": "This foundation verifies Schedule II classification but does not yet store the federal no-refill rule as a canonical dependency.",
               "rule_ids": [
-                "FED-CII-NO-REFILL"
+                "FED-CS-SCHEDULES"
               ]
             },
             "transfer": {
-              "summary": "Apply the current transfer rule and any product-specific REMS restriction.",
+              "summary": "A patient-requested partial-fill remainder is not a transferable refill.",
               "rule_ids": [
-                "FED-EPCS-TRANSFER"
+                "MA-CII-PARTIAL-PATIENT"
               ]
             },
             "partial_fill": {
-              "summary": "Apply the schedule-specific partial-fill framework and document each dispensing.",
+              "summary": "Massachusetts patient-requested Schedule II partial-fill timing and same-pharmacy conditions may apply.",
               "rule_ids": [
-                "FED-CII-PARTIAL-PATIENT"
+                "MA-CII-PARTIAL-PATIENT"
               ]
             },
             "masspat": {
-              "summary": "Report covered dispensing to MassPAT.",
+              "summary": "Covered Schedule II dispensing transactions are MassPAT-reportable.",
               "rule_ids": [
                 "MA-PMP-REPORTING"
               ]
             },
             "quantity_limit": {
-              "summary": "Apply the schedule- and indication-specific Massachusetts quantity rule.",
+              "summary": "As a non-opioid Schedule II drug, it may qualify for the Massachusetts 90-day single-fill pathway when all conditions are met.",
               "rule_ids": [
                 "MA-CS-QUANTITY-II-III"
               ]
             }
           },
+          "authorities": [
+            {
+              "type": "FDA_LABEL",
+              "name": "DailyMed Concerta label",
+              "section": "1 Indications and Usage; 9.1 Controlled Substance",
+              "url": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=1a88218c-5b18-4220-8f56-526de1a276cd"
+            },
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR 1308.12",
+              "section": "1308.12(d)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12"
+            },
+            {
+              "type": "STATE_REGULATION",
+              "name": "M.G.L. c.94C §18",
+              "section": "§18(d 3/4)",
+              "url": "https://www.mass.gov/info-details/mass-general-laws-c94c-ss-18"
+            },
+            {
+              "type": "BOARD_POLICY",
+              "name": "Board Policy 2024-05",
+              "section": "Schedules II and III Quantity Limits",
+              "url": "https://www.mass.gov/doc/policy-2024-05-schedules-ii-and-iii-quantity-limits-pdf/download"
+            }
+          ],
+          "last_verified": "2026-08-13",
+          "verification_status": "OFFICIAL_POLICY_VERIFIED",
+          "verification_notes": "Concerta indication and schedule, federal CII status, Massachusetts partial-fill rule, and current quantity policy checked. Narcolepsy is product-specific and must be confirmed against the label used by a future item.",
+          "content_version": 1,
           "verified_rule_dependencies": {
-            "FED-CII-NO-REFILL": {
+            "FED-CS-SCHEDULES": {
               "content_version": 1,
-              "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+              "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
             },
-            "FED-CII-PARTIAL-PATIENT": {
+            "MA-CII-PARTIAL-PATIENT": {
               "content_version": 1,
-              "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
-            },
-            "FED-EPCS-TRANSFER": {
-              "content_version": 1,
-              "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+              "content_hash": "215ab25f8d35cd6e8d4787d8f98eef739e4bb7a6898ed7c25ae7cce5efe3c3d4"
             },
             "MA-CS-QUANTITY-II-III": {
               "content_version": 1,
@@ -42694,32 +42752,34 @@
               "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
             }
           },
-          "authorities": [
-            {
-              "type": "FDA_LABEL",
-              "name": "DailyMed label search for oxycodone",
-              "section": "Indications and Usage; Drug Abuse and Dependence",
-              "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=oxycodone"
-            },
-            {
-              "type": "FEDERAL_REGULATION",
-              "name": "Federal controlled-substance schedules",
-              "section": "21 CFR 1308 (II)",
-              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
-            },
-            {
-              "type": "STATE_REGULATION",
-              "name": "Massachusetts controlled-substance schedules",
-              "section": "105 CMR 700.002",
-              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
-            }
-          ],
-          "last_verified": "2026-08-13",
-          "verification_status": "PRIMARY_VERIFIED",
-          "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "all-criteria rule에 따라 PASS. data/questions의 canonical 406 records를 전부 파싱하고 target 자신을 제외한 405 records와 독립 비교했다. normalized stem+choices word unigram/bigram TF-IDF cosine의 상위 항목은 MA-Q-0202 (0.259874), MA-Q-0169 (0.240859), MA-Q-0195 (0.179382)였고, token-trigram Jaccard 상위 substantive 항목은 MA-Q-0202 (0.036199)와 MA-Q-0169 (0.033175)였다. same-rule/topic 전수 확인과 상위 결과 수동 검토에서 MA-Q-0202는 five-drug/two-solid-package matrix이고 MA-Q-0169는 regulation/policy의 abstract boundary를 묻는다. 이 항목은 bank에서 유일하게 commercially available Schedule II oral solution의 oral-liquid-single-dose category를 multi-drug-single-dose prohibition과 구분시키므로 별도의 packaging-category 판단을 요구한다. MA-Q-0393은 같은 compliance-packaging 영역이지만 FDA-approved labeling conflict를 묻는다. stem은 schedule을 제공하므로 schedule flashcard가 아니며, pharmacy가 measured liquid doses를 개별 container로 준비하는 사실관계는 현재 DailyMed의 methylphenidate oral solution dosage form과도 부합한다. A는 universal-ban 과잉확장, B는 container 내용 대신 같은 날의 다른 dispensing을 기준으로 삼는 category 오류, D와 E는 각각 prescriber authorization과 patient consent에 존재하지 않는 법적 효과를 부여하는 실무상 그럴듯한 distractor다. 이전 v1의 oxycodone dependency mismatch와 MA-Q-0202 choice A의 buprenorphine maintenance-pouch collision은 현 hash에서 모두 제거됐다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0204",
