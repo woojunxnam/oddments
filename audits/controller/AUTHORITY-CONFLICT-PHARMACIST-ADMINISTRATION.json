@@ -1,0 +1,90 @@
+{
+  "report_type": "CURRENT_AUTHORITY_CONFLICT_ESCALATION",
+  "subject": "Pharmacist administration of medications - superseded guidance in canonical content",
+  "raised_by": "Claude Code controller during the Area-2 capacity census",
+  "date": "2026-08-19",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "canonical_base": "506c3d9a95d90d44c35d01487cc7ec4eb9d98d43",
+  "not_an_audit": "This is a source-currency finding produced mechanically from official documents. It is NOT a substantive re-adjudication of any released question. Whether MA-Q-0172 must change is an audit decision for an independent auditor, not for this controller.",
+  "authority_hierarchy_as_it_now_stands": [
+    {
+      "level": "statute",
+      "citation": "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+      "verbatim": "a registered pharmacist acting in accordance with: (i) regulations promulgated by the department, in consultation with the board of registration in pharmacy and the department of mental health, governing pharmacist administration of medications for treatment of mental health and substance use disorder and at the direction of a prescribing practitioner in the course of the practitioner's professional practice; (ii) a prescription for testosterone for gender-affirming care in the course of the practitioner's professional practice; or (iii) a prescription for the treatment and prevention of sexually transmitted infections, including those defined in regulation by the department pursuant to section 121B of chapter 111 or for the prevention of HIV",
+      "note": "Three routes with materially different architecture. Route (i) is gated on DPH regulations AND practitioner direction. Routes (ii) and (iii) are gated on a prescription for the specified purpose."
+    },
+    {
+      "level": "regulation",
+      "citation": "105 CMR 700.004(B)(9)",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "official_pdf": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "pdf_sha256": "78c4d84206d280f7aaee0d95bd9c07229366205dfd65fd177ac7847d861a2bcd",
+      "verbatim": "A pharmacist or a pharmacy intern is authorized to dispense by administration FDA approved mental health or substance use disorder treatment drugs to persons 18 years of age or older provided that: (a) The pharmacist or pharmacy intern is authorized to dispense controlled substances in accordance with M.G.L. c. 112. (b) Such administration is conducted pursuant to a valid prescription; (c) Such prescription is subject to reassessment at appropriate intervals as determined by the prescriber; and (d) Such activity is conducted in accordance with guidelines adopted by the Department, which shall include, but not be limited to, requirements for: 1. Specific drugs permitted ...; 2. Training accredited by the Centers for Disease Control and Prevention, the American Council on Pharmaceutical Education or a similar health authority ...; 3. Current CPR certification; 4. Maintaining continued competency ...; 5. Pre-administration patient counseling; 6. Dosing and administration ... only in accordance with manufacturer approved labeling; 7. Administration of medication, including administration of controlled substances as necessary for the management of medical emergencies; 8. Record keeping; and 9. Reporting of adverse events. (e) A pharmacist is authorized to administer controlled substances in an Opioid Treatment Program pursuant to an order and in accordance with guidance issued by the Department.",
+      "observations": [
+        "The 18-and-over threshold IS current regulation, so bank content resting on it is sound.",
+        "The regulation contains NO first-dose limitation.",
+        "105 CMR 700.001's own Administer definition still covers only mental health and substance use disorder administration, so the regulation lags the statute's testosterone, HIV and STI routes."
+      ]
+    },
+    {
+      "level": "current Department guidance",
+      "citation": "Circular Letter DCP 26-03-124, Pharmacist Administration of Medications, March 11, 2026",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "official_pdf": "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download",
+      "pdf_sha256": "162bd31fdab634dfb3fd7e3c3514095feae21df8018a2203256f719d2772a4d1",
+      "verbatim_summary_of_changes": "This Circular replaces DCP 23-04-118, dated April 21, 2023, by adding pharmacist authorization to administer the following: testosterone for gender-affirming care, medications for prevention of HIV, and medications for treatment and prevention of sexually transmitted infections.",
+      "current_conditions_verbatim": [
+        "(a) The pharmacist or pharmacy intern is authorized to dispense controlled substances, in accordance with M.G.L. c. 112;",
+        "(b) Administration is conducted pursuant to a valid prescription;",
+        "(c) Administration is not intravenous;",
+        "(d) the medication is available in single-dose packaging and prescribed in single doses, with or without refills;",
+        "(e) The prescription is subject to reassessment by the prescriber at appropriate intervals, as determined by the prescriber, if applicable; and",
+        "(f) The activity is conducted in accordance with Department guidelines."
+      ],
+      "other_current_requirements": [
+        "A pharmacist may administer medications for addiction treatment, including methadone, pursuant to an order, ONLY in a registered opioid treatment program.",
+        "Closed eligible-medication list: LAI antipsychotics (aripiprazole, aripiprazole lauroxil, fluphenazine decanoate, haloperidol decanoate, paliperidone palmitate, risperidone, risperidone ER); LAI for SUD (buprenorphine, naltrexone); gender-affirming (testosterone, all salts); HIV prevention (cabotegravir, lenacapavir or other medications to prevent HIV); STI (ceftriaxone IM injection, doxycycline or other medications to treat chlamydia).",
+        "Administration only by subcutaneous or intramuscular injection, per manufacturer approved labeling and any REMS requirements.",
+        "Training accredited by CDC, ACPE or a similar health authority, including learning modules on techniques for administration by injection.",
+        "Current CPR certification; continued competency; pre-administration patient counseling; competency in management of medical emergencies.",
+        "Record keeping list of ten items including patient consent, screening information, manufacturer, lot number, expiration date, route and site.",
+        "Adverse events communicated to the prescriber within 24 hours, with five outcomes requiring immediate report.",
+        "Prescriber notation on the prescription to signal intended pharmacist administration; a pharmacist receiving a prescription without the notation is ENCOURAGED to contact the prescriber.",
+        "Privacy in accordance with 247 CMR 2.00 et seq. and 42 CFR Part 2 as applicable."
+      ],
+      "observations": [
+        "No first-dose limitation appears anywhere in the current circular.",
+        "The circular expressly contemplates prescriptions 'with or without refills'.",
+        "Prescriber communication about assessment intervals is 'encouraged, but not required, prior to administration'."
+      ]
+    }
+  ],
+  "conflict": {
+    "severity": "MATERIAL - affects released content",
+    "finding_1": {
+      "what": "The canonical rule MA-MH-SUD-ADMIN cites a twice-superseded circular as its only authority.",
+      "detail": "Its authority block names Circular DCP 19-2-105. That circular was superseded by DCP 23-04-118 of April 21, 2023, which was in turn replaced by DCP 26-03-124 of March 11, 2026. The rule nevertheless carries status CURRENT and last_verified 2026-08-14, which is five months after the superseding circular was published, so the freshness check did not detect the supersession."
+    },
+    "finding_2": {
+      "what": "MA-PHARM-ADMIN cites a generic resources list rather than a specific current document.",
+      "detail": "Its authority section is recorded as 'Current guidance' pointing at https://www.mass.gov/lists/pharmacy-practice-resources, which is a landing page rather than a citable instrument with a version date."
+    },
+    "finding_3": {
+      "what": "Released MA-Q-0172 rests on a first-dose limitation that current authority does not contain.",
+      "detail": "Its core reasoning states the guidance requires 'no pharmacist-administered first dose', and its analysis of option B states 'The pharmacist or pharmacy intern may not administer the first dose the patient receives.' Neither 105 CMR 700.004(B)(9) nor DCP 26-03-124 contains such a limitation, and the current circular expressly allows prescriptions with or without refills. On the current authority option B appears to satisfy every stated condition, which would make it a second correct answer and the released key incomplete.",
+      "not_affected": "The 18-and-over threshold keyed by option D is sound: it is stated in the chapeau of 105 CMR 700.004(B)(9). MA-Q-0174's reference to a first dose is benign because it says the category is NOT limited to a single first dose."
+    },
+    "open_ambiguity": "105 CMR 700.004(B)(9) states the 18-and-over threshold only for mental health and substance use disorder drugs. Whether the same threshold governs the testosterone, HIV-prevention and STI routes added by the statute and the 2026 circular is not stated in either instrument. Any new question touching patient age on those routes must not assume it."
+  },
+  "controller_recommendation": {
+    "does_not_act_unilaterally": "No released question, rule or hash has been modified. Changing MA-Q-0172 would alter a released current hash and void its passing audit evidence, so it is a governance decision.",
+    "options_for_governance": [
+      "Commission a focused REAUDIT of MA-Q-0172 against DCP 26-03-124 under a fresh auditor instance, and repair only if that auditor finds the key defective.",
+      "Refresh MA-MH-SUD-ADMIN and MA-PHARM-ADMIN to cite DCP 26-03-124 with its version date, which changes rule content hashes and therefore needs the same guarded treatment as any registry change.",
+      "Add a freshness check that resolves each OFFICIAL_GUIDANCE citation and flags a circular that its own page declares replaced."
+    ],
+    "b3c_b3d_impact": "Until the citation currency is settled, new Area-2 families drawn from pharmacist administration are recorded against DCP 26-03-124 and 105 CMR 700.004(B)(9) directly rather than against the existing rule records."
+  }
+}

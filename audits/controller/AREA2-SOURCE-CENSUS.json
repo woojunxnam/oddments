@@ -799,6 +799,231 @@
       "viability": "NO",
       "rejection_category": "duplication - discrimination already tested",
       "rejection_reason": "MA-Q-0095 already keys that the screening and protocol process still applies even without a prior prescription, and its distractor E is the skip-the-self-screening error. Counting this would paraphrase a released question."
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026), with 105 CMR 700.004(B)(9)",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, condition (c) with the Administration and Dosing paragraph",
+      "operative_proposition": "Administration is not intravenous. A pharmacist or pharmacy intern may only administer an eligible medication by subcutaneous or intramuscular injection, in accordance with manufacturer approved labeling and any risk evaluation and mitigation requirements for the specific medication administered.",
+      "actor": "pharmacist or pharmacy intern administering under the Department pathway",
+      "trigger": "a prescription calls for a route the pathway does not permit, or labelling or REMS constrains the route",
+      "professional_decision": "decide whether the requested route is inside the pharmacist administration authority at all",
+      "conditions": [
+        "subcutaneous or intramuscular only",
+        "in accordance with manufacturer approved labelling",
+        "in accordance with any REMS for that medication"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "administration route limitation",
+      "why_area_2": "A boundary on the pharmacist's own clinical act, not a dispensing mechanic or a facility matter.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0171",
+        "MA-Q-0172",
+        "MA-Q-0173"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN",
+        "P2_0172_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_ROUTE_SC_IM_ONLY",
+      "family_novelty": "The existing eight administration questions key categories, prescriber direction, workflow, applied eligibility, CPR currency, indication and adverse events. None keys the route limitation or its interaction with labelling and REMS.",
+      "scenario_sketch": "A prescription directs an eligible medication by intravenous infusion, and a second directs a subcutaneous dose whose labelling permits only intramuscular use. The candidate must reject both for different reasons.",
+      "viability": "YES",
+      "rejection_reason": null
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026)",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Medications Eligible for Pharmacist or Pharmacy Intern Administration",
+      "operative_proposition": "The listed generic medications are the ONLY medications eligible to be administered by a pharmacist or pharmacy intern, and the current list adds gender-affirming care medications (testosterone, all salts), HIV prevention medications (cabotegravir, lenacapavir or other medications to prevent HIV) and sexually transmitted infection medications (ceftriaxone by intramuscular injection, doxycycline or other medications to treat chlamydia) to the long-acting injectable antipsychotics and substance use disorder medications.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "a request to administer a product outside the enumerated list, or one of the newly added categories",
+      "professional_decision": "decide whether this specific product is on the closed eligibility list under the current circular",
+      "conditions": [
+        "the list is exhaustive",
+        "generic names may carry multiple brand names"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "product eligibility limitation",
+      "why_area_2": "Determines what the pharmacist may personally administer. The bank already places pharmacist administration authority in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0171"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_CURRENT_ELIGIBLE_PRODUCT_LIST",
+      "family_novelty": "MA-Q-0145 and MA-Q-0171 key the statutory categories as they stood before the March 2026 circular and do not reach HIV prevention or sexually transmitted infection medications at all. The keyed axis here is the current closed product list including the three newly added categories.",
+      "scenario_sketch": "A pharmacist is asked to administer cabotegravir for HIV prevention, ceftriaxone for a sexually transmitted infection, and a long-acting injectable that is not on the list. The candidate must apply the current list rather than the older category set.",
+      "viability": "YES",
+      "rejection_reason": null
+    },
+    {
+      "source": "Circular DCP 26-03-124 with 105 CMR 700.004(B)(9)(e)",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "exact_section": "105 CMR 700.004(B)(9)(e) and the DCP 26-03-124 note on addiction treatment",
+      "operative_proposition": "A pharmacist is authorized to administer controlled substances in an Opioid Treatment Program pursuant to an order and in accordance with Department guidance. A pharmacist may administer medications for addiction treatment, including methadone, pursuant to an order, ONLY in a registered opioid treatment program.",
+      "actor": "pharmacist",
+      "trigger": "a request to administer methadone or another addiction-treatment medication outside a registered opioid treatment program",
+      "professional_decision": "decide whether the setting itself, and an order rather than a prescription, is what authorises the act",
+      "conditions": [
+        "registered opioid treatment program",
+        "pursuant to an order"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "setting-bound administration authority",
+      "why_area_2": "It governs where and on what instrument the pharmacist may personally administer, which is practice authority rather than facility registration.",
+      "closest_question_ids": [
+        "MA-Q-0166",
+        "MA-Q-0146"
+      ],
+      "closest_family_ids": [
+        "P2_0146_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_OTP_ORDER_ONLY",
+      "family_novelty": "MA-Q-0146 keys the need for patient-specific prescriber direction in the retail pathway. This keys a different instrument and a setting bound: an order inside a registered opioid treatment program, which is the only route for methadone administration.",
+      "scenario_sketch": "A community pharmacy holds a valid prescription for methadone and asks whether the pharmacist may administer the dose on site. The candidate must identify that only a registered opioid treatment program and an order will do.",
+      "viability": "YES",
+      "rejection_reason": null
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist-Prescriber Communication",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Pharmacist-Prescriber Communication",
+      "operative_proposition": "Prescribers should make clear that they intend for eligible medications to be administered by a pharmacist or pharmacy intern by including a notation on the prescription. A pharmacist or pharmacy intern receiving a prescription for eligible medications WITHOUT the notation is ENCOURAGED to contact the prescriber if, in their professional judgment, it appears the medication is intended to be administered rather than dispensed to the patient for administration outside the pharmacy.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "an eligible medication arrives on a prescription carrying no administration notation",
+      "professional_decision": "decide what the absence of the notation obliges, as against what it merely encourages",
+      "conditions": [
+        "the medication is on the eligible list",
+        "professional judgment that administration was intended"
+      ],
+      "exceptions": [
+        "contacting the prescriber is encouraged, not required"
+      ],
+      "tranche": "B3C",
+      "theme": "pharmacist-prescriber communication",
+      "why_area_2": "A communication judgment the pharmacist exercises personally, and a mandatory-versus-encouraged discrimination.",
+      "closest_question_ids": [
+        "MA-Q-0147",
+        "MA-Q-0175"
+      ],
+      "closest_family_ids": [
+        "P2_0147_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_PRESCRIPTION_NOTATION_AND_CONTACT",
+      "family_novelty": "MA-Q-0147 keys sending the administration record afterwards and MA-Q-0175 keys adverse-event reporting. Neither touches the notation convention or the encouraged-not-required contact when it is missing.",
+      "scenario_sketch": "An eligible long-acting injectable arrives with no administration notation and the patient is waiting. The candidate must separate what the pharmacist must do from what the guidance merely encourages.",
+      "viability": "YES",
+      "rejection_reason": null
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+      "exact_section": "c. 94C s. 1, Administer (c)(i) compared with (c)(ii) and (c)(iii)",
+      "operative_proposition": "Route (c)(i) authorises pharmacist administration for mental health and substance use disorder only in accordance with department regulations AND at the direction of a prescribing practitioner. Routes (c)(ii) and (c)(iii) authorise administration on a prescription for testosterone for gender-affirming care, and on a prescription for treatment and prevention of sexually transmitted infections or for prevention of HIV, without the regulation-plus-direction gate stated in (c)(i).",
+      "actor": "registered pharmacist",
+      "trigger": "administration is proposed on one of the three statutory routes",
+      "professional_decision": "identify which statutory gate this route imposes before administering",
+      "conditions": [
+        "route (i) requires department regulations and practitioner direction",
+        "routes (ii) and (iii) are prescription-based for the specified purpose"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "statutory administration route architecture",
+      "why_area_2": "The source of the pharmacist's own authority to administer.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0146",
+        "MA-Q-0171"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN",
+        "P2_0146_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "STATUTORY_ADMINISTRATION_ROUTE_ARCHITECTURE",
+      "family_novelty": "MA-Q-0145 keys which categories exist and MA-Q-0146 keys that prescriber direction is needed in the mental health pathway. Neither keys the fact that the statute gates the three routes differently, so that the regulation-and-direction condition is specific to route (i).",
+      "scenario_sketch": "A pharmacist holds prescriptions for a long-acting antipsychotic and for testosterone for gender-affirming care, with no separate practitioner direction for either. The candidate must see that the two routes are not gated the same way.",
+      "viability": "YES",
+      "rejection_reason": null
+    },
+    {
+      "source": "105 CMR 700.004(B)(9) chapeau",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "exact_section": "105 CMR 700.004(B)(9), opening words",
+      "operative_proposition": "A pharmacist or a pharmacy intern is authorized to dispense by administration FDA approved mental health or substance use disorder treatment drugs to persons 18 years of age or older.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "a minor presents for administration",
+      "professional_decision": "apply the age threshold",
+      "conditions": [
+        "18 years of age or older"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "age limitation",
+      "why_area_2": "Patient eligibility for the pharmacist's own act.",
+      "closest_question_ids": [
+        "MA-Q-0172"
+      ],
+      "closest_family_ids": [
+        "P2_0172_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "ADMINISTRATION_AGE_THRESHOLD",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "duplication - discrimination already tested",
+      "rejection_reason": "MA-Q-0172 option D already keys the 18-and-over threshold with a 17-year-old fact pattern. Counting it again would paraphrase a released question."
+    },
+    {
+      "source": "Circular DCP 26-03-124, Training, CPR Certification, Continued Competency",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Training and CPR Certification",
+      "operative_proposition": "To administer, a pharmacist or pharmacy intern must first receive training accredited by the CDC, ACPE or a similar health authority appropriate for the medications administered, including learning modules on techniques for administration by injection, must maintain current CPR certification, and must maintain continued competency.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "administration is proposed without current training or CPR certification",
+      "professional_decision": "confirm the personal preconditions before administering",
+      "conditions": [
+        "accredited training including injection technique",
+        "current CPR certification",
+        "continued competency"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "administrator qualification",
+      "why_area_2": "Preconditions attaching to the pharmacist personally.",
+      "closest_question_ids": [
+        "MA-Q-0173"
+      ],
+      "closest_family_ids": [
+        "P2_0173_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "ADMINISTRATION_TRAINING_AND_CPR",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "duplication - discrimination already tested",
+      "rejection_reason": "MA-Q-0173 already keys lapsed CPR certification as a bar to administration, and MA-Q-0172's stem assumes completed training. Counting this would retest the same precondition."
     }
   ],
   "bank_context": {
@@ -819,26 +1044,61 @@
       "per_tranche": 33,
       "total": 66
     },
-    "raw_candidates_reviewed": 19,
-    "viable_yes": 14,
-    "rejected_no": 5,
+    "raw_candidates_reviewed": 26,
+    "viable_yes": 19,
+    "rejected_no": 7,
     "unresolved": 0,
-    "b3c_only_families": 9,
-    "b3d_only_families": 4,
+    "b3c_only_families": 10,
+    "b3d_only_families": 8,
     "either_unassigned_capacity": 1,
-    "guaranteed_b3c_capacity": 10,
-    "guaranteed_b3d_capacity": 4,
-    "total_nonoverlapping_guaranteed_capacity": 14,
-    "b3c_shortfall": 23,
-    "b3d_shortfall": 29,
-    "either_families_needed_for_feasibility": 53,
+    "guaranteed_b3c_capacity": 11,
+    "guaranteed_b3d_capacity": 8,
+    "total_nonoverlapping_guaranteed_capacity": 19,
+    "b3c_shortfall": 22,
+    "b3d_shortfall": 25,
+    "either_families_needed_for_feasibility": 48,
     "either_families_available": 1,
     "allocation_feasible": false,
     "decision_gate": "CASE C - fewer than 66 defensible new families so far (census incomplete)",
     "by_source": {
+      "105 CMR 700.004(B)(9) chapeau": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124 with 105 CMR 700.004(B)(9)(e)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026), with 105 CMR 700.004(B)(9)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist-Prescriber Communication": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Training, CPR Certification, Continued Competency": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
       "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)": {
         "YES": 6,
         "NO": 2,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)": {
+        "YES": 1,
+        "NO": 0,
         "UNRESOLVED": 0
       },
       "M.G.L. c. 94C, s. 19C (continuous supply of opioid antagonists)": {
@@ -898,6 +1158,21 @@
       }
     },
     "by_theme": {
+      "administration route limitation": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "administrator qualification": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "age limitation": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
       "age limitation and extension power": {
         "YES": 1,
         "NO": 0,
@@ -958,6 +1233,16 @@
         "NO": 0,
         "UNRESOLVED": 0
       },
+      "pharmacist-prescriber communication": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "product eligibility limitation": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
       "professional conduct and ethical practice": {
         "YES": 1,
         "NO": 0,
@@ -972,16 +1257,26 @@
         "YES": 1,
         "NO": 0,
         "UNRESOLVED": 0
+      },
+      "setting-bound administration authority": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "statutory administration route architecture": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
       }
     },
     "concentration": {
       "top_source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
       "top_source_viable_families": 6,
-      "share_of_viable_pool": 0.429,
-      "warning_gate": "REVIEW REQUIRED - one source exceeds 40% of the viable pool; prove each further family from it tests a different professional decision"
+      "share_of_viable_pool": 0.316,
+      "warning_gate": "ok"
     },
     "rejection_reasons": {
-      "duplication - discrimination already tested": 2,
+      "duplication - discrimination already tested": 4,
       "taxonomy - Area 4, not Area 2": 2,
       "overconcentration - structurally identical across three sections": 1
     }
