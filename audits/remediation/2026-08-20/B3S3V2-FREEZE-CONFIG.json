@@ -1,0 +1,48 @@
+{
+  "tranche": "BATCH3-S3",
+  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
+  "package_version": 2,
+  "supersedes_package": {
+    "freeze_branch": "freeze/batch3-s3-v1",
+    "freeze_sha": "6343e472500a8d4a03f3929a125a11e55fec4027",
+    "reason": "v1 was built on top of the B3-D freeze commit, so its tree carried B3-D's sealed auditor package. Superseded prospectively; v1 is preserved and must not be rewritten or deleted.",
+    "no_auditor_started_on_v1": true
+  },
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "freeze_date": "2026-08-20",
+  "source_branch": "author/batch3-b3d-v2",
+  "source_sha": "ca629df3c6fcebed02b8b810b36f59cb9a7f85a4",
+  "source_note": "the clean B3-D v2 semantic content commit, which carries no B3-C or B3-D freeze package",
+  "candidate_branch": "salvage/batch3-s3-v2",
+  "candidate_sha": "ca629df3c6fcebed02b8b810b36f59cb9a7f85a4",
+  "freeze_branch": "freeze/batch3-s3-v2",
+  "auditor_type": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3S3-V2",
+  "legal_audit_id": "AUDIT-CLAUDE-FRESH-B3S3-V2-LEGAL-INITIAL-2026-08-20",
+  "realism_audit_id": "AUDIT-CLAUDE-FRESH-B3S3-V2-REALISM-INITIAL-2026-08-20",
+  "question_ids": [
+    "MA-Q-0001",
+    "MA-Q-0002",
+    "MA-Q-0003",
+    "MA-Q-0005",
+    "MA-Q-0006",
+    "MA-Q-0007",
+    "MA-Q-0008",
+    "MA-Q-0010"
+  ],
+  "bank_size_at_candidate": 360,
+  "output_dir": "audits/remediation/2026-08-20",
+  "file_prefix": "B3S3V2",
+  "quality_gates": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "answer_distribution": "PASS",
+    "max_stem_similarity_vs_bank": 0.561,
+    "max_stem_jaccard_vs_bank": null
+  },
+  "controller_note": "These eight Area-3 questions have never carried a current-hash independent audit and NO CONTENT WAS CHANGED to prepare either package. They are frozen exactly as they have stood since 2026-08-13. This is a FIRST audit, not a reaudit. The controller authored nothing here and has not repaired them; the instruction is explicit that they are not to be repaired before their first audit. All seven dependency rules are marked CURRENT but were last verified 2026-08-13; establishing the current law is the legal audit's task."
+}
