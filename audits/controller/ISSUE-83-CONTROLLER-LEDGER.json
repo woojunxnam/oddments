@@ -9,8 +9,33 @@
     "verified": true,
     "verified_at_phase": "PHASE_0_START_BOUNDARY"
   },
-  "current_phase": "BATCH3_B3B_R1_REPAIR_AND_B3C_AUTHORING",
+  "current_phase": "AREA2_CENSUS_PATH_INVENTORY",
   "phases": [
+    {
+      "phase": "BATCH3_B3A_R1_CURE_VERIFIED_AND_RELEASED",
+      "date": "2026-08-19",
+      "audit_pr": 98,
+      "auditor_instance": "CLAUDE-FRESH-B3A-R1",
+      "reaudit_checks": "16/16 PASS",
+      "source_cure_checks": "11/11 PASS",
+      "cure_head": "cbe17d9c5fb6313f6918e8b4512d968755472204",
+      "lock_blob_unchanged": "15a8db8630ce9e8d36971bf17fe9ed76efa4d74f",
+      "realism_record_byte_identical": true,
+      "controller_check_corrected": "Check 07 initially failed on exact_section 247 CMR 8.03 -> 8.03(1). Independently confirmed from the official Mass.gov text that 8.03(1) is the cited trainee-licensure proposition, so the check was refined to accept a narrowing while still rejecting a redirection. The evidence was not changed.",
+      "cornell_provenance": "Preserved as superseded, not erased. The cure records that an earlier draft read the text from Cornell LII after Mass.gov returned HTTP 403 to automated retrieval, and that the official text confirmed the earlier reading without change.",
+      "integration_method": "Forward-port onto current main a9a9ab8, not a merge, so the B3-B tranche and the 261-release state could not roll back. Two question records, a two-for-two family swap and four evidence files.",
+      "released": {
+        "count": 2,
+        "before": 261,
+        "after": 263
+      },
+      "merged_pr": 101,
+      "main_after": "ade4235cc98a22dc67d1efe8f35b5f516c6b1828",
+      "still_withheld": {
+        "MA-Q-0288": "awaiting CLAUDE-FRESH-B3B-R1 focused REAUDIT",
+        "MA-Q-0028": "quarantined"
+      }
+    },
     {
       "phase": "BATCH3_B3B_AUDIT_VERIFIED_AND_RELEASED",
       "date": "2026-08-19",
@@ -47,6 +72,13 @@
       "rationale": "Re-keying would change current hashes, invalidate otherwise passing current-hash audit evidence and force an unnecessary re-audit of 32 already-cleared items. Each of the 32 passed wording_not_guessable and every other realism criterion individually. The released bank, not the authoring tranche, is the production distribution.",
       "scope_of_advice": "Relevant only if a B3-B tranche is ever presented standalone as a practice set.",
       "action": "Recorded; the 32 passing hashes left intact."
+    },
+    {
+      "phase": "CENSUS_WORDING_CORRECTION_8053",
+      "date": "2026-08-19",
+      "correction": "The census had said the second sentence of 247 CMR 8.05(3) was truncated in the official publication. The auditor's cure recovered and verified both sentences from the same official Mass.gov PDF, so it is restated as an extraction-path limitation rather than absent legal text.",
+      "scope": "Provenance cleanup only. No question, hash, rule or legal conclusion mutated.",
+      "superseded_wording_retained": true
     },
     {
       "phase": "PHASE_0_START_BOUNDARY",
