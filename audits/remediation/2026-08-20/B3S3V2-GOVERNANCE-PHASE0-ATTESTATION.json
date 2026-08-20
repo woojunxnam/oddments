@@ -1,19 +1,14 @@
 {
-  "package_type": "FROZEN_AUDIT_CONTRACT",
-  "review_type": "REALISM_REVIEW",
-  "audit_date": "2026-08-20",
-  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
-  "auditor": "CLAUDE",
-  "auditor_instance": "CLAUDE-FRESH-B3S3-V2",
-  "independent": true,
-  "audit_status_required": "FULLY_ADJUDICATED",
+  "attestation_type": "GOVERNANCE_PRECERTIFIED_PHASE0",
+  "date": "2026-08-20",
   "tranche": "BATCH3-S3",
+  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
   "authorizing_issue": 91,
-  "represented_candidate_branch": "salvage/batch3-s3-v2",
-  "represented_candidate_sha": "7e74148e33f191f1be04b30001eb8b840706c611",
+  "controller_issue": 83,
+  "candidate_branch": "salvage/batch3-s3-v2",
+  "candidate_sha": "7e74148e33f191f1be04b30001eb8b840706c611",
   "freeze_branch": "freeze/batch3-s3-v2",
-  "source_branch": "author/batch3-b3d-v2",
-  "source_sha": "ca629df3c6fcebed02b8b810b36f59cb9a7f85a4",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B3S3-V2",
   "question_ids": [
     "MA-Q-0001",
     "MA-Q-0002",
@@ -33,16 +28,6 @@
     "MA-Q-0007": "a94a74d61eabfaba93b4900735290529407fedd78bf069681d57b90edaab31ac",
     "MA-Q-0008": "fd553c6a661b1887fef5d856b28ceb586aeb6af9977447999720ad68b73babc0",
     "MA-Q-0010": "324956b5e9b7bc133655564587544f3d2deb4ec0bd0bc44e4b2119460a1a8b63"
-  },
-  "question_file_blobs": {
-    "MA-Q-0001": "c2c2f280abbe0e018b172c68882552014ff40b16",
-    "MA-Q-0002": "e4877ec2037f9c8bee9e5c914562f31c0d21305a",
-    "MA-Q-0003": "fea810dbad0229a9a5ba52399fde5641eb8fa6ff",
-    "MA-Q-0005": "6709565a3c6e797138311c12745e97507b439172",
-    "MA-Q-0006": "639e125b4a6abc73ed1a5b0d44b8a50404969461",
-    "MA-Q-0007": "3ef768b2c3c82480cb30ab3d0c5893766733e80b",
-    "MA-Q-0008": "cc37349e2e031b68a4bb40bf7e51b6590fab72d3",
-    "MA-Q-0010": "ec8089fad7751668575dc140d7cf37da08e9c998"
   },
   "dependency_snapshots": {
     "rules": {
@@ -108,52 +93,26 @@
       "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
     }
   },
-  "phase_order": [
-    "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
-    "PHASE_2_UNSEAL_CANONICAL_KEYS_AND_DEPENDENCIES",
-    "PHASE_3_REALISM_REVIEW"
-  ],
-  "output_record": {
-    "path": "data/audits/AUDIT-CLAUDE-FRESH-B3S3-V2-REALISM-INITIAL-2026-08-20.json",
-    "schema": "schemas/audit.schema.json",
-    "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
-    "independent": true,
-    "audit_status": "FULLY_ADJUDICATED"
+  "package_sha256": {
+    "audits/remediation/2026-08-20/B3S3V2-BLIND-QUESTIONS.json": "372087418936ba177b4659ae9903a963b86dbe91489ec951128ebc563a141c3f",
+    "audits/remediation/2026-08-20/B3S3V2-LEGAL-CONTRACT.json": "9eab6087cc4e074f00246838b26dc89747c62bc58638d1dbdb6197e641a090d0",
+    "audits/remediation/2026-08-20/B3S3V2-REALISM-CONTRACT.json": "ef4081873d0897c1e73940835477abae10f1b922c7bfabba8b27924421f57a20",
+    "audits/remediation/2026-08-20/B3S3V2-CLEAN-FREEZE-MANIFEST.json": "4ddbf9c2734a55e58214db95099c4ec00e789ddca23e74250d3b0de3e591d545",
+    "audits/remediation/2026-08-20/B3S3V2-POSTLOCK-DEPENDENCIES.json": "779ffd673452924a489ab43fc0a7232e20ce882fc2996d71ae7654585aafd107"
   },
-  "style_profile": {
-    "profile_id": "MPJE-MA-PRE2027",
-    "content_version": 1,
-    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  "package_git_note": "sha256 values are LF-normalized and equal `git show <sha>:<path> | sha256sum`",
+  "quality_gates": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "answer_distribution": "PASS",
+    "max_stem_similarity_vs_bank": 0.561,
+    "max_stem_jaccard_vs_bank": null
   },
-  "required_result_fields": [
-    "Question_ID",
-    "Verdict",
-    "Severity",
-    "Realism_Verdict",
-    "Reviewed_Date",
-    "Criteria",
-    "Notes"
-  ],
-  "required_criteria": [
-    "jurisprudence_reasoning",
-    "practice_plausibility",
-    "authentic_distractors",
-    "wording_not_guessable",
-    "reasoning_not_trivia",
-    "natural_rule_combination",
-    "appropriate_drug_context",
-    "distinct_from_bank",
-    "not_schedule_flashcard",
-    "public_style_without_copying"
-  ],
-  "comparison_scope": {
-    "scope": "FULL_CANONICAL_BANK",
-    "question_directory": "data/questions",
-    "expected_record_count_at_candidate": 360,
-    "requirement": "Compare each reviewed item against the entire canonical bank, not a sample and not the existing duplicate report, and record the closest comparison question IDs in Notes."
-  },
-  "release_qualifying_result": {
-    "Verdict": "KEEP",
-    "Realism_Verdict": "PASS"
-  }
+  "auditor_phase0_required": false,
+  "auditor_start_phase": "PHASE_1_BLIND_SOLVE",
+  "independence_statement": "BATCH3-S3 was authored by the Claude Code controller session running Issue #83. That session must not audit it. The audit requires a separate session whose pre-lock inputs are the sanitized blind package and current official sources only, recorded under a distinct auditor_instance.",
+  "safe_content_statement": "This attestation contains hashes, blob identifiers and dependency metadata only. It contains no canonical keyed answer, explanation or author reasoning."
 }

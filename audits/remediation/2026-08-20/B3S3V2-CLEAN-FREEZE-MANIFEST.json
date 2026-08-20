@@ -1,19 +1,18 @@
 {
-  "package_type": "FROZEN_AUDIT_CONTRACT",
-  "review_type": "REALISM_REVIEW",
-  "audit_date": "2026-08-20",
-  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
-  "auditor": "CLAUDE",
-  "auditor_instance": "CLAUDE-FRESH-B3S3-V2",
-  "independent": true,
-  "audit_status_required": "FULLY_ADJUDICATED",
+  "manifest_type": "BATCH3-S3_CLEAN_FREEZE",
+  "created_date": "2026-08-20",
   "tranche": "BATCH3-S3",
+  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
   "authorizing_issue": 91,
+  "controller_issue": 83,
+  "source_branch": "author/batch3-b3d-v2",
+  "source_sha": "ca629df3c6fcebed02b8b810b36f59cb9a7f85a4",
   "represented_candidate_branch": "salvage/batch3-s3-v2",
   "represented_candidate_sha": "7e74148e33f191f1be04b30001eb8b840706c611",
   "freeze_branch": "freeze/batch3-s3-v2",
-  "source_branch": "author/batch3-b3d-v2",
-  "source_sha": "ca629df3c6fcebed02b8b810b36f59cb9a7f85a4",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B3S3-V2",
+  "author_is_not_auditor": true,
+  "question_count": 8,
   "question_ids": [
     "MA-Q-0001",
     "MA-Q-0002",
@@ -43,6 +42,15 @@
     "MA-Q-0007": "3ef768b2c3c82480cb30ab3d0c5893766733e80b",
     "MA-Q-0008": "cc37349e2e031b68a4bb40bf7e51b6590fab72d3",
     "MA-Q-0010": "ec8089fad7751668575dc140d7cf37da08e9c998"
+  },
+  "new_rule_file_blobs": {
+    "FED-CS-REFILL-III-IV": "6610c2a0153c252cefbee4e834a9fdf4f3cf6c06",
+    "FED-CS-SCHEDULES": "d110c2e544f1f7160e050b3155e1af5ab5f4e13f",
+    "FED-PSE-QUANTITY": "c480936ead4fa40ce79719e01ee9d12c98924aaa",
+    "MA-CII-PARTIAL-PATIENT": "e9ae4d4a5b124d43a180384045d5c4dd0445f8fd",
+    "MA-CS-QUANTITY-II-III": "bdfcd5a3fd03de66bf5a598717562f0fb870f625",
+    "MA-PMP-REPORTING": "cc518f969c665efd8cc90e2fcdde7d560ff4e18b",
+    "MA-RX-CV-REFILL": "a1bcd7e98fa415d8fe047260530463494b5e94d5"
   },
   "dependency_snapshots": {
     "rules": {
@@ -108,52 +116,14 @@
       "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
     }
   },
-  "phase_order": [
-    "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
-    "PHASE_2_UNSEAL_CANONICAL_KEYS_AND_DEPENDENCIES",
-    "PHASE_3_REALISM_REVIEW"
-  ],
-  "output_record": {
-    "path": "data/audits/AUDIT-CLAUDE-FRESH-B3S3-V2-REALISM-INITIAL-2026-08-20.json",
-    "schema": "schemas/audit.schema.json",
-    "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
-    "independent": true,
-    "audit_status": "FULLY_ADJUDICATED"
-  },
-  "style_profile": {
-    "profile_id": "MPJE-MA-PRE2027",
-    "content_version": 1,
-    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
-  },
-  "required_result_fields": [
-    "Question_ID",
-    "Verdict",
-    "Severity",
-    "Realism_Verdict",
-    "Reviewed_Date",
-    "Criteria",
-    "Notes"
-  ],
-  "required_criteria": [
-    "jurisprudence_reasoning",
-    "practice_plausibility",
-    "authentic_distractors",
-    "wording_not_guessable",
-    "reasoning_not_trivia",
-    "natural_rule_combination",
-    "appropriate_drug_context",
-    "distinct_from_bank",
-    "not_schedule_flashcard",
-    "public_style_without_copying"
-  ],
-  "comparison_scope": {
-    "scope": "FULL_CANONICAL_BANK",
-    "question_directory": "data/questions",
-    "expected_record_count_at_candidate": 360,
-    "requirement": "Compare each reviewed item against the entire canonical bank, not a sample and not the existing duplicate report, and record the closest comparison question IDs in Notes."
-  },
-  "release_qualifying_result": {
-    "Verdict": "KEEP",
-    "Realism_Verdict": "PASS"
+  "quality_gates_at_freeze": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "answer_distribution": "PASS",
+    "max_stem_similarity_vs_bank": 0.561,
+    "max_stem_jaccard_vs_bank": null
   }
 }
