@@ -1,0 +1,170 @@
+{
+  "report_type": "AREA4_TOPUP_CENSUS",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "why_this_census_exists": "Area 4 stands at 61 released against a minimum of 75. The only unreleased Area-4 candidates are the five S2 questions, all of which need repair and reaudit, so at least nine Area-4 questions must be newly authored whatever the salvage outcome. The Area-2 experience showed that assuming capacity without a census is exactly the error to avoid.",
+  "capacity_context": {
+    "area4_families_in_matrix": 95,
+    "live_families": 66,
+    "saturated_families": 0,
+    "remaining_final_bank_slots_in_live_families": 94,
+    "note": "Family slots are not the constraint in Area 4. Distinct propositions are."
+  },
+  "sources_examined": [
+    {
+      "source": "247 CMR 6.00 Licensure of Pharmacies",
+      "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+      "pdf_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1",
+      "sections": 18,
+      "yield": 4
+    },
+    {
+      "source": "247 CMR 7.00 Wholesale Druggists",
+      "url": "https://www.mass.gov/regulations/247-CMR-700-wholesale-druggists",
+      "pdf_sha256": "21e23855a3bafe13",
+      "sha_note": "prefix only",
+      "yield": 1,
+      "prior_bank_coverage": "no rule in the bank cites 247 CMR 7.00"
+    },
+    {
+      "source": "247 CMR 11.00 Registration under the Controlled Substances Act",
+      "url": "https://www.mass.gov/regulations/247-CMR-1100-registration-under-the-controlled-substances-act-mgl-c94c",
+      "pdf_sha256": "f2ab26d8f57d9b07",
+      "sha_note": "prefix only",
+      "yield": 1,
+      "prior_bank_coverage": "no rule in the bank cites 247 CMR 11.00"
+    },
+    {
+      "source": "247 CMR 13.00 Nuclear Pharmacies",
+      "url": "https://www.mass.gov/regulations/247-CMR-1300-registration-requirements-and-minimal-professional-standards-for-nuclear-pharmacies",
+      "pdf_sha256": "3d71d05db78bbb21",
+      "sha_note": "prefix only",
+      "yield": 1,
+      "prior_bank_coverage": "no rule in the bank cites 247 CMR 13.00"
+    },
+    {
+      "source": "247 CMR 21.00 Registration of Outsourcing Facilities",
+      "url": "https://www.mass.gov/regulations/247-CMR-2100-registration-of-outsourcing-facilities",
+      "pdf_sha256": "b392440cac10d660",
+      "sha_note": "prefix only",
+      "yield": 1,
+      "prior_bank_coverage": "no rule in the bank cites 247 CMR 21.00"
+    },
+    {
+      "source": "105 CMR 700.000, sections 700.005 and 700.008",
+      "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "pdf_sha256": "78c4d84206d280f7aaee0d95bd9c07229366205dfd65fd177ac7847d861a2bcd",
+      "yield": 1,
+      "reserve": 1
+    }
+  ],
+  "novelty_method": "For each candidate a regular-expression probe was run over a text blob built from every one of the 360 question records, comprising stem, explanation, topic, subtopic, choices, family id and reasoning steps, joined with the rule_summary, authority, title, topic, subtopic, common_confusions, exceptions and numeric_facts of every rule the question cites. Every one of the nine returned ZERO hits.",
+  "concentration_check": "The nine propositions come from six different instruments and no single instrument supplies more than four, so no source exceeds 45% of the tranche. Four whole regulation chapters used here were previously uncited anywhere in the bank.",
+  "families": [
+    {
+      "proposed_family_id": "B3E_PHARMACY_SUITABILITY_FACTORS",
+      "exact_section": "247 CMR 6.03",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+      "proposition": "The Board may find an applicant, licensee or interest holder unsuitable to establish or maintain a pharmacy on eleven listed factors, which reach conduct at any pharmacy, health care facility or FDA- or DEA-registered entity the person owned, operated or held an interest in, and which include holding prescriptive privileges.",
+      "probe": "6.03 suitability / interest holder",
+      "probe_hits": 0,
+      "why_area_4": "Pharmacy licensure and facility oversight, which this bank places in Area 4."
+    },
+    {
+      "proposed_family_id": "B3E_OWNERSHIP_TRANSFER_DUAL_DUTIES",
+      "exact_section": "247 CMR 6.11",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+      "proposition": "At least 14 days before a transfer of ownership the outgoing licensee shall notify the Board and comply with the closing and controlled substance distribution provisions, and at least 14 days before the transfer the proposed new licensee shall submit a licence application supported by a controlled substance inventory report and an official bill of sale.",
+      "probe": "6.11 transfer of ownership",
+      "probe_hits": 0,
+      "why_area_4": "Facility licensure. The bank places pharmacy licensure in Area 4."
+    },
+    {
+      "proposed_family_id": "B3E_CS_TRANSFER_ON_CLOSURE",
+      "exact_section": "247 CMR 6.14",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+      "proposition": "Transferring Schedule II through VI stock between licensed pharmacies requires written notice to the Board by certified mail at least 14 days ahead with named particulars; on the transfer date the transferor takes a complete inventory of Schedules II through V and of Schedule VI substances reportable to the monitoring program; both Managers of Record sign it; both pharmacies keep it readily retrievable for at least two years; both file an attestation within ten days; and the transferor may not possess any controlled substances after the transfer date.",
+      "probe": "6.14 CS distribution on closure",
+      "probe_hits": 0,
+      "why_area_4": "Controlled substance procurement, inventory and disposal, all Area 4 in this bank."
+    },
+    {
+      "proposed_family_id": "B3E_PROVISIONAL_PHARMACY_LICENCE",
+      "exact_section": "247 CMR 6.17",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies",
+      "proposition": "The Board may issue a provisional licence in lieu of a compounding or non-resident licence where a complete application is filed and the applicant shows substantial compliance and potential to reach full compliance within the provisional period; the provisional licence ends on conversion, on surrender, suspension or revocation, or one year after issue; and it may not be renewed or extended.",
+      "probe": "6.17 provisional licenses",
+      "probe_hits": 0,
+      "why_area_4": "Facility licensure."
+    },
+    {
+      "proposed_family_id": "B3E_WHOLESALE_CHANGE_AND_QUALIFICATION",
+      "exact_section": "247 CMR 7.02(6), (7) and (8)",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-700-wholesale-druggists",
+      "proposition": "A wholesale distributor shall submit changes to its reported information to the Board in writing within 30 days of the change; the Board considers ten minimum qualification factors in issuing, renewing or revoking a wholesale distribution licence; and the Board reserves the right to deny a licence where granting it would not be in the public interest.",
+      "probe": "247 CMR 7.00 wholesale druggists",
+      "probe_hits": 0,
+      "why_area_4": "Wholesale distribution licensure. 247 CMR 7.00 is cited by no rule in the bank."
+    },
+    {
+      "proposed_family_id": "B3E_CS_REGISTRATION_TERM_BY_TYPE",
+      "exact_section": "247 CMR 11.05 and 11.06",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-1100-registration-under-the-controlled-substances-act-mgl-c94c",
+      "proposition": "A separate controlled substance registration is required at each principal place of business where the licensee manufactures, distributes or dispenses. The term differs by registrant: a pharmacy registration and an outsourcing facility registration are each valid for two years beginning January 1st of each even-numbered year, while a wholesale druggist registration is valid for one year beginning December 1st of each year.",
+      "probe": "247 CMR 11.00 CSA registration",
+      "probe_hits": 0,
+      "why_area_4": "Controlled substance registration of facilities."
+    },
+    {
+      "proposed_family_id": "B3E_NUCLEAR_PHARMACY_SERVICE_SCOPE",
+      "exact_section": "247 CMR 13.02 and 13.03",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-1300-registration-requirements-and-minimal-professional-standards-for-nuclear-pharmacies",
+      "proposition": "Radiopharmaceutical service means counting, dispensing, labeling and delivery of radiopharmaceuticals, participating in radiopharmaceutical selection and utilization reviews, safe storage and distribution, maintaining radiopharmaceutical quality assurance, advising on therapeutic values, hazards and use, and the acts necessary to conduct such services within a nuclear pharmacy; and an initial nuclear pharmacy permit is applied for on a Board form with the required fee.",
+      "probe": "247 CMR 13.00 nuclear pharmacy",
+      "probe_hits": 0,
+      "why_area_4": "Specialty facility licensure and product handling."
+    },
+    {
+      "proposed_family_id": "B3E_PROVISIONAL_OUTSOURCING_LIMITS",
+      "exact_section": "247 CMR 21.02(6) and 21.03",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-2100-registration-of-outsourcing-facilities",
+      "proposition": "An outsourcing facility registration is non-transferrable. A non-resident outsourcing facility is not eligible for a provisional registration. Where the applicant was not inspected by the FDA in the two years before the application the Board may issue a provisional registration, and an entity holding one MAY COMPOUND sterile drug preparations but MAY NOT DISTRIBUTE OR DISPENSE any, inside or outside the Commonwealth, until it has been FDA-inspected and has received a Massachusetts outsourcing facility registration.",
+      "probe": "247 CMR 21.00 outsourcing facility",
+      "probe_hits": 0,
+      "why_area_4": "Facility registration and the scope of what a facility may do."
+    },
+    {
+      "proposed_family_id": "B3E_THEFT_LOSS_TAMPERING_REPORT",
+      "exact_section": "105 CMR 700.008",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "proposition": "A registrant shall report the theft, loss OR SUSPECTED TAMPERING of any controlled substances to the Drug Control Program within the Department WITHIN 24 HOURS of discovery, by completing and submitting the form provided or approved by the Drug Control Program.",
+      "probe": "105 CMR 700.008 theft or loss",
+      "probe_hits": 0,
+      "why_area_4": "Mandatory reporting and controlled substance security, both Area 4 in this bank."
+    }
+  ],
+  "reserve": [
+    {
+      "proposed_family_id": "B3E_RESERVE_PERSONNEL_SECURITY_SCREENING",
+      "exact_section": "105 CMR 700.005(B)",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "proposition": "Registrants shall screen new employees who may work in or around areas where controlled substances are handled, solely to determine whether the person can be trusted there, with documentation available to the Commissioner on request; and no registrant shall knowingly employ any agent or employee whose registration application was denied, or whose registration was revoked, for violation of any law or regulation at any time.",
+      "status": "HELD IN RESERVE",
+      "why": "Nine propositions are enough for the measured deficit; this one is recorded so a further top-up does not need a fresh retrieval."
+    }
+  ],
+  "verdict": "AREA4_TOPUP_FEASIBLE",
+  "planned_tranche": {
+    "tranche": "B3-E",
+    "question_ids": "MA-Q-0361 to MA-Q-0369",
+    "count": 9,
+    "family_cap": 2,
+    "cap_basis": "the existing Batch-3 standard at scripts/author_batch3a.py:38"
+  },
+  "rules_held": [
+    "No Area-1, Area-2 or Area-3 content was relabelled as Area 4.",
+    "No proposition was authored from a corrupted or partially recovered fragment; where the extraction lost a sub-paragraph, for example 247 CMR 6.11(3)(b) and 6.14(1)(g), no proposition rests on the missing text.",
+    "Every proposition was read verbatim from the current official publication on 2026-08-20."
+  ]
+}
