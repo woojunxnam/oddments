@@ -1,0 +1,1317 @@
+{
+  "report_type": "AREA2_SOURCE_CENSUS",
+  "stage": "PATH_INVENTORY_IN_PROGRESS",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "date": "2026-08-19",
+  "purpose": "One combined source-first inventory covering the 66 Area-2 decision paths that B3-C and B3-D together require, so B3-C does not finish only for B3-D to discover no remaining capacity.",
+  "measured_baseline_at_6d41ac4c": {
+    "area_1": 78,
+    "area_2": 54,
+    "area_3": 96,
+    "area_4": 66,
+    "area_2_target_for_three_sets": 120,
+    "area_2_still_required": 66
+  },
+  "method": {
+    "granularity": "CMR paragraph / statutory subsection, not regulation number",
+    "area_assignment_rule": "Classify from the actual tested competency and existing bank precedent, never from the regulation number. A source is not usable merely because it is unused.",
+    "verbatim_rule": "The controlling proposition must be verbatim-verifiable from an official primary or official government source before authoring. Section headings, corrupted partial text, secondary republication alone and search snippets alone are all rejected."
+  },
+  "source_viability": [
+    {
+      "source": "M.G.L. (General Laws) via malegislature.gov",
+      "publisher": "Commonwealth of Massachusetts, official publisher of the General Laws",
+      "retrieval": "Browser, same-origin fetch, section text under the main paragraph nodes",
+      "status": "VIABLE - clean complete verbatim text",
+      "evidence": "M.G.L. c. 94C, s. 19 retrieved in full and verbatim, including subsections (a) through (d). Subsection (a) states that a prescription for a controlled substance to be valid shall be issued for a legitimate medical purpose by a practitioner acting in the usual course of his professional practice, and that a corresponding responsibility shall rest with the pharmacist who fills the prescription.",
+      "significance": "This is the principal remaining Area-2 source. M.G.L. c. 94C and c. 112 pharmacist-practice provisions are fully available at paragraph granularity.",
+      "note_on_urls": "Section URLs that carry a fraction in the section number, for example c. 112 s. 24B one-half, do not resolve under the naive tilde-two encoding and must be located from the chapter index."
+    },
+    {
+      "source": "247 CMR 8.00 and 247 CMR 4.00 via mass.gov official PDFs",
+      "status": "VIABLE - clean verbatim text",
+      "evidence": "Both retrieved and hashed this session: 247 CMR 8.00 pdf sha256 ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714; 247 CMR 4.00 pdf sha256 257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e.",
+      "known_defect": "One controller extraction path failed to recover the complete second sentence of 247 CMR 8.05(3) across the page/content-stream boundary. A later independent auditor browser extraction of the same official Mass.gov PDF recovered and verified both sentences. This is therefore treated as an extraction-path limitation, not as evidence that the official legal text itself is absent.",
+      "area_relevance": "Mostly Area 1. Not a B3-C source.",
+      "superseded_characterisation": "247 CMR 8.05(3) second sentence, the pharmacy-intern carve-out, is truncated mid-word at a page boundary in the official publication and is not verbatim-verifiable.",
+      "correction_note": "Provenance cleanup only, made after the CLAUDE-FRESH-B3A-R1 official-source cure. No question, hash, rule or legal conclusion was mutated because of this wording change. No claim is made about which extraction implementation is superior."
+    },
+    {
+      "source": "247 CMR 9.00 via mass.gov official PDF",
+      "status": "VIABLE - clean verbatim text",
+      "evidence": "Section 9.15(1) and (2) retrieved verbatim and used to repair MA-Q-0288.",
+      "area_capacity_finding": "Largely exhausted as an Area-2 source. Bank precedent puts 9.02 and 9.04 in Area 4, 9.14 and 9.17 in Area 3, 9.19 and 9.24 in Area 4, and 9.21 and 9.23 in Area 1. Of the sections with no question at all, compliance packaging, emergency kits, automated systems, records, non-resident pharmacies, storage, plans of correction and generic interchange all sit in Area 4 by precedent. Clearly Area-2 headroom is limited to 9.03 Advertising plus unkeyed paragraphs of 9.01, 9.13 and 9.15."
+    },
+    {
+      "source": "247 CMR 16.00 Collaborative Drug Therapy Management via mass.gov official PDF",
+      "status": "PARTIALLY BLOCKED - not fully verbatim-extractable",
+      "pdf_sha256": "d98c03bcad5f440fcb52da41c5febe7f7c4cbf85db7237051bc6f75cc52506d8",
+      "pdf_bytes": 171572,
+      "detail": "18 of 34 compressed streams decompress. Sections 16.01 and 16.02 extract cleanly and match text independently confirmed earlier. Section 16.03 and parts of 16.04 recover only with severe kerning fragmentation, for example 'm us t pr ov ide tha t th e su pe rv isi ng ph y sic ia n'. Probes for the termination terms and for the agreement filed in the primary practice setting return nothing, so parts of 16.04 are absent from the extraction.",
+      "controller_decision": "Do NOT author 16.03 or 16.04 propositions from this extraction. De-kerned text is reconstruction, not verbatim verification, and the governing instruction forbids authoring from corrupted partial text. An alternative official rendering must be found before 16.03 and 16.04 can be counted toward Area-2 capacity.",
+      "impact": "247 CMR 16.04 is the single richest untapped CDTM source, covering required agreement terms, duties, biennial renewal, termination, filing in the primary practice setting and employment relationships. Losing it materially reduces the Area-2 candidate pool, so its recovery is a priority for the remainder of the census."
+    },
+    {
+      "source": "105 CMR 700.000 Implementation of M.G.L. c. 94C",
+      "status": "NOT YET RETRIEVED",
+      "next_step": "Retrieve from the Department of Public Health official publication and classify by area."
+    }
+  ],
+  "capacity_position": {
+    "paths_confirmed_viable_so_far": null,
+    "assessment": "Not yet answerable. Source viability is established for the statutes, which is the decisive enabler, but the paragraph-level path inventory across M.G.L. c. 94C, M.G.L. c. 112, 105 CMR 700.000 and the recoverable parts of 247 CMR 16.00 has not been completed. No B3-C drafting has begun and none will begin until the census demonstrates at least 66 defensible distinct Area-2 decision paths.",
+    "gate_honoured": true
+  },
+  "confirmed_viable_area2_paths": 7,
+  "rejected_paths": 1,
+  "target": 66,
+  "shortfall": 59,
+  "by_source": {
+    "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)": {
+      "viable": 7,
+      "rejected": 1
+    }
+  },
+  "gate_status": "7/66 confirmed. B3-C drafting has NOT begun and will not begin until the count reaches at least 66.",
+  "source_classification_surveys": [
+    {
+      "survey": "M.G.L. c. 94C pharmacist-facing sections and the c. 112 pharmacy index",
+      "retrieved_from": "malegislature.gov, official publisher of the General Laws, verbatim section text",
+      "date": "2026-08-19",
+      "finding": "Most of c. 94C's pharmacist-facing content classifies to Area 3 Dispensing Requirements by this bank's precedent, not to Area 2 Pharmacist Practice. Area 2 in this bank means the pharmacist's own professional practice: counselling, administration, pharmacist prescribing, validity determinations as professional judgment, professional conduct and public-health roles. It does not mean dispensing mechanics.",
+      "classified_out_of_area_2": [
+        {
+          "section": "c. 94C s. 17",
+          "subject": "electronic prescribing mandate for Schedule II",
+          "area": 3,
+          "precedent": "Prescription format / Electronic prescribing is Area 3 in this bank"
+        },
+        {
+          "section": "c. 94C s. 20",
+          "subject": "pharmacist reducing an oral prescription to writing and recording it",
+          "area": 3,
+          "precedent": "Prescription format / Oral Schedule VI prescription is Area 3"
+        },
+        {
+          "section": "c. 94C s. 21",
+          "subject": "container labelling on filling",
+          "area": 3,
+          "precedent": "labelling and dispensing mechanics sit in Area 3"
+        },
+        {
+          "section": "c. 94C s. 22",
+          "subject": "practitioner dispensing record content",
+          "area": 3,
+          "precedent": "prescription content requirements are Area 3"
+        },
+        {
+          "section": "c. 94C s. 23",
+          "subject": "Schedule II 30-day validity and no-refill",
+          "area": 3,
+          "precedent": "Controlled prescriptions / Schedule II validity is Area 3"
+        },
+        {
+          "section": "c. 112 s. 12EE",
+          "subject": "substitution of an interchangeable biological product",
+          "area": 4,
+          "precedent": "Product selection / Biologic substitution is Area 4"
+        },
+        {
+          "section": "c. 112 s. 24H",
+          "subject": "rehabilitation program for pharmacists and support personnel",
+          "area": 1,
+          "precedent": "licensure and discipline content is Area 1"
+        },
+        {
+          "section": "c. 112 ss. 39 through 39J, 42A through 42D",
+          "subject": "pharmacy licensure, specialty categories, penalties",
+          "area": 4,
+          "precedent": "Facility licensure and oversight are Area 4"
+        }
+      ],
+      "remaining_area_2_candidate_veins": [
+        {
+          "vein": "Collaborative drug therapy management",
+          "sources": [
+            "M.G.L. c. 112 s. 24B1/2",
+            "M.G.L. c. 112 s. 24B3/4",
+            "247 CMR 16.00"
+          ],
+          "status": "7 paths confirmed from s. 24B1/2; s. 24B3/4 and 247 CMR 16.03/16.04 not yet inventoried"
+        },
+        {
+          "vein": "Pharmacist administration and public health",
+          "sources": [
+            "M.G.L. c. 112 s. 12FF naloxone administration immunity",
+            "M.G.L. c. 112 s. 12DD long-term antibiotic therapy on Lyme diagnosis"
+          ],
+          "status": "not yet inventoried; naloxone questions MA-Q-0097 and MA-Q-0098 already sit in Area 2"
+        },
+        {
+          "vein": "Professional conduct",
+          "sources": [
+            "247 CMR 9.01 unkeyed paragraphs",
+            "247 CMR 9.03 advertising",
+            "M.G.L. c. 112 s. 30 clerical and ministerial supportive services exception"
+          ],
+          "status": "not yet inventoried"
+        },
+        {
+          "vein": "Prescription validity as professional judgment",
+          "sources": [
+            "247 CMR 9.15",
+            "M.G.L. c. 94C s. 19"
+          ],
+          "status": "9.15(2) and s. 19(a) already keyed; remaining subsections not yet inventoried"
+        },
+        {
+          "vein": "Monitoring programme duties",
+          "sources": [
+            "M.G.L. c. 94C s. 24A",
+            "247 CMR 9.15(1)"
+          ],
+          "status": "partly Area 3 by precedent; the pharmacist-duty limb is Area 2 and partly keyed"
+        },
+        {
+          "vein": "Department of Public Health implementation",
+          "sources": [
+            "105 CMR 700.000"
+          ],
+          "status": "not yet retrieved"
+        }
+      ],
+      "risk_flagged_early": "The Area-2 vein is real but narrower than the raw volume of unused source text suggests, because much of that text classifies to Areas 1, 3 and 4. Whether 66 additional defensible Area-2 decision paths exist is a genuinely open question at this stage. It will be answered by completing the inventory, and if the answer is no the measured shortfall will be reported rather than solved by relabelling Area-3 or Area-4 content."
+    }
+  ],
+  "families": [
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(a), definition of collaborative drug therapy management",
+      "operative_proposition": "CDTM is the initiating, monitoring, modifying and discontinuing of a patient's drug therapy by a pharmacist in accordance with a collaborative practice agreement; it may include collecting and reviewing patient histories, obtaining and checking vital signs, and, under the supervision of or in direct consultation with a physician, ordering and evaluating the results of laboratory tests directly related to drug therapy when performed in accordance with approved protocols applicable to the practice setting and when the evaluation shall not include a diagnostic component.",
+      "actor": "collaborating pharmacist",
+      "trigger": "pharmacist proposes to order or interpret a laboratory test while co-managing therapy",
+      "professional_decision": "decide whether the proposed act falls inside CDTM or crosses into diagnosis",
+      "conditions": [
+        "under physician supervision or in direct consultation",
+        "test directly related to drug therapy",
+        "performed under approved protocols applicable to the practice setting"
+      ],
+      "exceptions": [
+        "the evaluation shall not include a diagnostic component"
+      ],
+      "tranche": "B3C",
+      "theme": "pharmacist professional judgment",
+      "why_area_2": "Tests the outer boundary of the pharmacist's own professional practice, which is Area 2 competency, not facility operations or a dispensing mechanic.",
+      "closest_question_ids": [
+        "MA-Q-0081",
+        "MA-Q-0082"
+      ],
+      "closest_family_ids": [
+        "P2_0081_MA_CDTM_QUALIFICATIONS",
+        "P2_0082_MA_CDTM_RETAIL_SCOPE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_SCOPE_VS_DIAGNOSIS_BOUNDARY",
+      "family_novelty": "MA-Q-0081 keys the s. 24B1/2(b) qualification list and MA-Q-0082 keys the retail disease-scope limit. Neither touches the outer boundary of the CDTM definition itself, where the pharmacist may order and evaluate laboratory results but the evaluation may not include a diagnostic component.",
+      "scenario_sketch": "A collaborating pharmacist reviewing a co-managed patient's laboratory results is asked to say what the abnormal result means for an undiagnosed symptom. The candidate must separate the permitted evaluation of a test directly related to drug therapy from the prohibited diagnostic component.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(a), definition of collaborative practice agreement",
+      "operative_proposition": "A collaborative practice agreement is a written and signed agreement between a pharmacist with training and experience relevant to the scope of the collaborative practice and a supervising physician that defines the collaborative practice. The collaborative practice shall be within the scope of the supervising physician's practice. Each collaborative practice agreement shall be subject to review and renewal on a biennial basis. A collaborative practice agreement shall include individually developed guidelines for any prescriptive practice of the pharmacist.",
+      "actor": "collaborating pharmacist and supervising physician",
+      "trigger": "an agreement is drafted, or is reaching its second anniversary",
+      "professional_decision": "decide whether the agreement is validly constituted and still current",
+      "conditions": [
+        "written and signed",
+        "within the supervising physician's own scope of practice",
+        "biennial review and renewal",
+        "individually developed guidelines for any prescriptive practice"
+      ],
+      "exceptions": [],
+      "tranche": "EITHER",
+      "theme": "pharmacist practice authority",
+      "why_area_2": "Turns on the pharmacist's authority to act at all, which is a practice-competency question.",
+      "closest_question_ids": [
+        "MA-Q-0081",
+        "MA-Q-0292"
+      ],
+      "closest_family_ids": [
+        "P2_0081_MA_CDTM_QUALIFICATIONS"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CPA_VALID_CONSTITUTION_AND_BIENNIAL_CURRENCY",
+      "family_novelty": "MA-Q-0081 keys the pharmacist's personal qualifications. This keys the agreement's own constitution instead: written and signed, within the supervising physician's scope, biennially reviewed and renewed, and carrying individually developed guidelines for prescriptive practice.",
+      "scenario_sketch": "An agreement signed 26 months ago has never been reviewed and covers a therapy area outside the supervising physician's own practice. The pharmacist must decide whether they may still act under it.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(a), definition of patient",
+      "operative_proposition": "A patient is a person referred to a pharmacist by his supervising physician for the purpose of receiving CDTM services. The supervising physician shall assess the patient and include a diagnosis when referring the patient to the collaborating pharmacist. The patient shall be notified of, and shall consent to, the CDTM services in the retail drug business setting. Individual referral and consent shall be recorded by the pharmacist and the supervising physician in the patient's record.",
+      "actor": "collaborating pharmacist",
+      "trigger": "a person presents for CDTM services without a completed referral or recorded consent",
+      "professional_decision": "decide whether this person is a CDTM patient the pharmacist may co-manage",
+      "conditions": [
+        "physician assessment and diagnosis in the referral",
+        "notice and consent in the retail drug business setting",
+        "referral and consent recorded by BOTH pharmacist and physician in the patient record"
+      ],
+      "exceptions": [
+        "the express notice-and-consent limb is written for the retail drug business setting"
+      ],
+      "tranche": "B3C",
+      "theme": "patient consent and referral documentation",
+      "why_area_2": "The pharmacist must decide whether a patient in front of them is eligible for their own service.",
+      "closest_question_ids": [
+        "MA-Q-0082"
+      ],
+      "closest_family_ids": [
+        "P2_0082_MA_CDTM_RETAIL_SCOPE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_PATIENT_ELIGIBILITY_AND_DUAL_RECORDING",
+      "family_novelty": "MA-Q-0082 assumes a completed referral and consent and then keys the disease-scope decision. This keys the constitution of the referral itself: the physician must assess and include a diagnosis, and the referral and consent must be recorded by BOTH the pharmacist and the physician in the patient record.",
+      "scenario_sketch": "A referral arrives naming the therapy area but carrying no diagnosis, and the consent is noted only in the pharmacy's own file. The pharmacist must decide whether this person is yet a CDTM patient they may co-manage.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(c)(1) through (4), non-retail settings and their approval authorities",
+      "operative_proposition": "CDTM shall only be allowed in the following settings: hospitals licensed under c. 111 s. 51, subject to approval by the medical staff executive committee or designee; long-term care facilities licensed under c. 111 s. 71, subject to approval by the medical director or designee; inpatient or outpatient hospice settings licensed under c. 111 s. 57D, subject to approval by the hospice's medical director or designee; ambulatory care clinics licensed under c. 111 s. 51, with on-site supervision by the attending physician and a collaborating pharmacist, subject to approval by the medical staff executive committee or designee, or medical director or designee.",
+      "actor": "collaborating pharmacist",
+      "trigger": "a CDTM arrangement is proposed in a particular care setting",
+      "professional_decision": "identify whose approval the setting requires and whether on-site supervision applies",
+      "conditions": [
+        "setting must be one of the enumerated licensed settings",
+        "the approving body differs by setting",
+        "ambulatory care clinics additionally require on-site supervision by the attending physician and a collaborating pharmacist"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "setting limitation and approval authority",
+      "why_area_2": "The pharmacist decides whether they may practise CDTM here and on whose authority; this is scope of the pharmacist's own practice rather than facility licensure.",
+      "closest_question_ids": [
+        "MA-Q-0082"
+      ],
+      "closest_family_ids": [
+        "P2_0082_MA_CDTM_RETAIL_SCOPE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_SETTING_APPROVAL_AUTHORITY_MATRIX",
+      "family_novelty": "The existing CDTM questions are all retail-setting. This keys the four non-retail settings and the fact that the approving body differs by setting, with ambulatory care clinics additionally requiring on-site supervision.",
+      "scenario_sketch": "A pharmacist is asked to start CDTM in an ambulatory care clinic on the strength of the hospital medical staff executive committee's earlier approval. The candidate must identify whose approval this setting needs and that on-site supervision applies.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(c)(5), retail age and duration limits",
+      "operative_proposition": "A collaborating pharmacist in a retail drug business, with supervision by a physician according to the terms of the collaborative practice agreement, is limited to patients 18 years of age or older and to an extension by 30 days of current drug therapy prescribed by the supervising physician.",
+      "actor": "collaborating pharmacist in a retail drug business",
+      "trigger": "a referred retail patient needs continued therapy or is under 18",
+      "professional_decision": "decide whether the patient and the proposed extension are inside the retail limits",
+      "conditions": [
+        "patients 18 years of age or older",
+        "extension limited to 30 days",
+        "the therapy extended must be current therapy prescribed by the supervising physician"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "age limitation and extension power",
+      "why_area_2": "A pharmacist-side authority limit exercised at the point of care.",
+      "closest_question_ids": [
+        "MA-Q-0082",
+        "MA-Q-0083"
+      ],
+      "closest_family_ids": [
+        "P2_0082_MA_CDTM_RETAIL_SCOPE",
+        "P2_0083_MA_CDTM_CONTROLLED_LIMIT"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_RETAIL_AGE_AND_30_DAY_EXTENSION",
+      "family_novelty": "The retail paragraph is shared with MA-Q-0082, but the keyed discrimination is different. MA-Q-0082 keys disease scope. This keys the patient-age floor and the fact that the retail power is an extension of existing physician-prescribed therapy limited to 30 days. The 30-day figure appears in MA-Q-0083 only as an unkeyed distractor.",
+      "scenario_sketch": "A 16-year-old referred patient needs their current therapy continued for 60 days while the physician is away. The candidate must apply both the age floor and the 30-day extension limit.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(c)(5), retail disease-state list and specific reference requirement",
+      "operative_proposition": "In the retail setting the collaborating pharmacist is limited to administration of vaccines or the modification of dosages of medications prescribed by the supervising physician for asthma, chronic obstructive pulmonary disease, diabetes, hypertension, hyperlipidemia, congestive heart failure, HIV or AIDS, osteoporosis and co-morbidities identified by the supervising physician for the individual patient along with the primary diagnosis. The collaborative practice agreement shall specifically reference each disease state being co-managed.",
+      "actor": "collaborating pharmacist in a retail drug business",
+      "trigger": "a dosage modification is proposed for a condition",
+      "professional_decision": "decide whether the condition is inside the retail list and specifically referenced in the agreement",
+      "conditions": [
+        "condition on the enumerated list, or a co-morbidity identified by the physician for that patient",
+        "the agreement must specifically reference each disease state co-managed"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "drug-use limitation",
+      "why_area_2": "A clinical-authority boundary the pharmacist applies personally.",
+      "closest_question_ids": [
+        "MA-Q-0082"
+      ],
+      "closest_family_ids": [
+        "P2_0082_MA_CDTM_RETAIL_SCOPE"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "CDTM_RETAIL_DISEASE_STATE_SPECIFICITY",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_reason": "MA-Q-0082 already keys exactly this discrimination. Its key is to continue the referred hypertension management and return new wheezing to the physician rather than treat it as an eligible retail disease state, which is the disease-state-list and specific-reference test. Counting it again would be a paraphrase of a released question.",
+      "rejection_category": "duplication - discrimination already tested",
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(d), health facility registration carve-out",
+      "operative_proposition": "A retail drug business practicing in collaborative drug therapy management under this section shall not be required to register as a Health Facility under 105 CMR 700.004(A)(2)(d).",
+      "actor": "retail drug business engaging in CDTM",
+      "trigger": "a pharmacy is advised it must add a Health Facility registration before starting CDTM",
+      "professional_decision": "decide whether the additional registration is in fact required",
+      "conditions": [],
+      "exceptions": [
+        "the carve-out applies to a retail drug business practising CDTM under this section"
+      ],
+      "tranche": "EITHER",
+      "theme": "facility registration",
+      "why_area_2": "Borderline. The proposition is about a registration obligation rather than a pharmacist practice decision, which points at Area 4 by bank precedent for facility registration items.",
+      "closest_question_ids": [
+        "MA-Q-0221"
+      ],
+      "closest_family_ids": [],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_HEALTH_FACILITY_REGISTRATION_CARVE_OUT",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_reason": "A facility registration obligation. This bank places facility registration in Area 4, and a source shortage must not be solved by relabelling Area-4 content as Area 2.",
+      "rejection_category": "taxonomy - Area 4, not Area 2",
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+      "exact_section": "24B1/2(e), employment relationships",
+      "operative_proposition": "A physician or a physician group may hire pharmacists for the purpose of practicing collaborative drug therapy management under a collaborative practice agreement for the benefit of a patient of that physician or physician group. No retail pharmacy may employ a physician for the purpose of maintaining, establishing or entering into a collaborative practice agreement with a patient. Nothing shall prohibit a retail pharmacy from hiring a physician or licensed medical practitioner for the purpose of conducting quality assurance reviews of its pharmacists that are engaged in the practice of collaborative drug therapy.",
+      "actor": "collaborating pharmacist and the employing entity",
+      "trigger": "a retail pharmacy proposes to employ a physician in connection with CDTM",
+      "professional_decision": "decide which direction of employment the statute permits and for what purpose",
+      "conditions": [
+        "physician or physician group may hire pharmacists for CDTM"
+      ],
+      "exceptions": [
+        "a retail pharmacy may hire a physician for quality assurance review of its CDTM pharmacists, but not for maintaining, establishing or entering into a collaborative practice agreement"
+      ],
+      "tranche": "B3C",
+      "theme": "professional conduct and ethical practice",
+      "why_area_2": "The prohibition governs the integrity of the pharmacist's collaborative practice, which the pharmacist must be able to apply; the bank places professional-conduct limits in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0290",
+        "MA-Q-0291"
+      ],
+      "closest_family_ids": [
+        "B3B_0290_MA_REFERRAL_REMUNERATION",
+        "B3B_0291_MA_INSTITUTIONAL_DISPENSING"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CDTM_EMPLOYMENT_DIRECTION_AND_PURPOSE",
+      "family_novelty": "The bank's professional-conduct items concern remuneration for referrals and institutional dispensing limits. This keys the direction and purpose of employment in collaborative practice: a physician may hire pharmacists, a retail pharmacy may not employ a physician to establish an agreement, but may hire one for quality assurance review.",
+      "scenario_sketch": "A retail chain proposes to put a physician on staff so that its pharmacists can enter collaborative agreements in-house, and separately to have that physician review their CDTM casework. The candidate must separate the prohibited purpose from the permitted one.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, ss. 19A, 19B and 19E (statewide standing-order regimes)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19E",
+      "exact_section": "c. 94C s. 19A(d) compared with s. 19E(c)",
+      "operative_proposition": "Before dispensing emergency contraception under s. 19A a pharmacist MAY complete a commissioner-approved training program. Before dispensing a COVID-19 drug under s. 19E a pharmacist SHALL complete a commissioner-approved training program that includes evaluation of the patient's medical history and relevant records including recent laboratory blood work for kidney or liver problems, clinical considerations relative to contraindications with commonly prescribed medications, recommendations for clinical monitoring for side effects and appropriate recommendation that the patient follow up with a medical practitioner.",
+      "actor": "licensed pharmacist dispensing under a statewide standing order",
+      "trigger": "pharmacist proposes to dispense under one of the standing-order regimes without having completed the relevant training",
+      "professional_decision": "decide whether training is a precondition for this particular regime or merely available",
+      "conditions": [
+        "the regime determines whether training is permissive or mandatory",
+        "the s. 19E training has prescribed content"
+      ],
+      "exceptions": [],
+      "tranche": "B3C",
+      "theme": "public-health pharmacist authority",
+      "why_area_2": "A precondition on the pharmacist's own authority to act, exercised before any dispensing decision. The bank places naloxone and contraception pharmacist authority in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0097",
+        "MA-Q-0098",
+        "MA-Q-0095",
+        "MA-Q-0096"
+      ],
+      "closest_family_ids": [
+        "P2_0095_MA_HORMONAL_CONTRACEPTIVE",
+        "P2_0097_MA_NALOXONE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "STANDING_ORDER_TRAINING_PRECONDITION_CONTRAST",
+      "family_novelty": "The bank's naloxone and contraception questions key product status, third-party dispensing and protocol screening. None keys the training precondition, and none contrasts a permissive training regime with a mandatory one carrying prescribed content.",
+      "scenario_sketch": "A pharmacist who has completed no commissioner-approved training is asked to dispense emergency contraception in the morning and Paxlovid in the afternoon, both under statewide standing orders. The candidate must see that only one of the two is blocked.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, ss. 19A(e), 19B(d) and 19E(d) (standing-order reporting and confidentiality)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19B",
+      "exact_section": "c. 94C s. 19B(d), compared with s. 19A(e) and s. 19E(d)",
+      "operative_proposition": "A pharmacist who dispenses an opioid antagonist shall ANNUALLY report to the department the number of doses dispensed; reports shall not identify an individual patient, shall be confidential and shall not constitute a public record. Emergency contraception reporting under s. 19A(e) is likewise annual and confidential. COVID-19 control measure reporting under s. 19E(d) is instead made UPON REQUEST of the department.",
+      "actor": "pharmacist who has dispensed under a statewide standing order",
+      "trigger": "the department seeks dispensing data, or the reporting period closes",
+      "professional_decision": "decide when the report is owed and what may be included or withheld",
+      "conditions": [
+        "annual for opioid antagonists and emergency contraception",
+        "on request for COVID-19 control measures",
+        "no individual patient identification"
+      ],
+      "exceptions": [
+        "the reports are confidential and are not public records"
+      ],
+      "tranche": "B3C",
+      "theme": "confidentiality and disclosure obligations",
+      "why_area_2": "A disclosure obligation owed personally by the dispensing pharmacist, and a confidentiality limit on what that disclosure may contain. Confidentiality and disclosure are named Area-2 themes and no question currently keys either.",
+      "closest_question_ids": [
+        "MA-Q-0097",
+        "MA-Q-0098"
+      ],
+      "closest_family_ids": [
+        "P2_0097_MA_NALOXONE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "STANDING_ORDER_REPORTING_CADENCE_AND_CONFIDENTIALITY",
+      "family_novelty": "No question in the bank keys a confidentiality or disclosure discrimination. The keyed axis here is the reporting cadence difference across the three regimes plus the bar on identifying an individual patient and the non-public-record status.",
+      "scenario_sketch": "A pharmacy receives a public records request for its naloxone dispensing data alongside a departmental request for COVID-19 dispensing figures. The pharmacist must decide what is owed, to whom, and what may not be identified.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, ss. 19B(e) and 19E(e) (insurance handling before dispensing)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19B",
+      "exact_section": "c. 94C s. 19B(e)",
+      "operative_proposition": "A pharmacist or designee who dispenses an opioid antagonist shall, for health insurance billing and cost-sharing, treat the transaction as the dispensing of a prescription to the person purchasing it regardless of the ultimate user. Unless the purchaser requests to pay out-of-pocket, the pharmacist or designee shall make a reasonable effort to identify the purchaser's insurance coverage and to submit a claim to the carrier PRIOR TO dispensing.",
+      "actor": "pharmacist or designee dispensing under the standing order",
+      "trigger": "a third party presents to obtain naloxone for someone else",
+      "professional_decision": "decide whose transaction this is for billing, and what must be attempted before the product is handed over",
+      "conditions": [
+        "treated as a prescription to the purchaser regardless of ultimate user",
+        "reasonable effort to identify coverage and submit a claim before dispensing"
+      ],
+      "exceptions": [
+        "the purchaser requests to pay out-of-pocket"
+      ],
+      "tranche": "B3C",
+      "theme": "patient care and access",
+      "why_area_2": "A pharmacist action required before dispensing, framed around the purchaser rather than the ultimate user, and turning on a patient election. It is a practice duty rather than a dispensing mechanic.",
+      "closest_question_ids": [
+        "MA-Q-0097",
+        "MA-Q-0113"
+      ],
+      "closest_family_ids": [
+        "P2_0097_MA_NALOXONE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "OPIOID_ANTAGONIST_PURCHASER_BILLING_BEFORE_DISPENSING",
+      "family_novelty": "MA-Q-0097 keys third-party dispensing eligibility and MA-Q-0098 keys OTC versus prescription product status. Neither touches the billing-identity rule or the pre-dispensing claim attempt.",
+      "scenario_sketch": "A parent asks for naloxone for an adult child and says nothing about payment. The pharmacist must decide whose insurance is relevant and what must happen before the product leaves the counter.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 21A (prospective drug review and counselling)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+      "exact_section": "c. 94C s. 21A, first paragraph",
+      "operative_proposition": "A pharmacist SHALL conduct a prospective drug review before each new prescription is dispensed or delivered to a patient or a person acting on behalf of such patient. Such review MAY include, but is not limited to, screening for therapeutic duplication, drug disease contraindication, drug interactions including serious interactions with nonprescription or over-the-counter drugs, incorrect drug dosage, duration of drug treatment, drug allergy interactions and clinical abuse or misuse.",
+      "actor": "pharmacist",
+      "trigger": "a new prescription is about to be dispensed or delivered, including to an agent of the patient",
+      "professional_decision": "decide that the review is mandatory while its listed content is a professional-judgment menu, and that delivery to an agent does not remove the duty",
+      "conditions": [
+        "before each new prescription",
+        "applies to delivery to a person acting on behalf of the patient"
+      ],
+      "exceptions": [
+        "the section does not apply to a drug dispensed to an inpatient at a hospital or nursing home except as required by federal regulation"
+      ],
+      "tranche": "B3C",
+      "theme": "pharmacist professional judgment",
+      "why_area_2": "The pharmacist's own mandatory clinical review, distinct from dispensing mechanics. The bank already places counselling and professional judgment in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0086",
+        "MA-Q-0213",
+        "MA-Q-0283"
+      ],
+      "closest_family_ids": [
+        "P2_0086_MA_COUNSELING",
+        "T2_0213_MA_COUNSELING_REMOTE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "PROSPECTIVE_DRUG_REVIEW_MANDATORY_VS_MENU",
+      "family_novelty": "The bank's Area-2 counselling questions key the offer, the trigger, the content menu and the consultation area. None keys the separate statutory prospective drug review, its mandatory character, or its application when an agent collects the prescription.",
+      "scenario_sketch": "A neighbour collects a patient's first prescription for a new drug and declines counselling on the patient's behalf. The pharmacist must separate the review that is owed regardless from the counselling that was declined.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 21A (offer method)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+      "exact_section": "c. 94C s. 21A, second and third paragraphs",
+      "operative_proposition": "A pharmacist shall offer to counsel any person who presents a new prescription for filling. Such offer shall be made either by face to face communication between the pharmacist or the pharmacist's designee and the patient, or by telephone, except when the patient's needs or availability require an alternative method of counselling. If a person elects delivery at a location other than a pharmacy, the requirements may be satisfied by providing access to a toll-free telephone service, and the number of that toll-free service shall be PRINTED ON A LABEL AFFIXED TO EACH CONTAINER of a prescription drug dispensed by a pharmacy to a patient.",
+      "actor": "pharmacist or the pharmacist's designee",
+      "trigger": "a patient elects delivery away from the pharmacy, or the patient's needs make the ordinary methods unsuitable",
+      "professional_decision": "decide which offer method the statute permits here, and what must appear on the container",
+      "conditions": [
+        "face to face or telephone as the default methods",
+        "toll-free access for off-premises delivery",
+        "the toll-free number printed on a label affixed to each container"
+      ],
+      "exceptions": [
+        "an alternative method where the patient's needs or availability require it"
+      ],
+      "tranche": "B3C",
+      "theme": "pharmacist counselling",
+      "why_area_2": "The manner in which the pharmacist discharges a personal counselling duty, which the bank places in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0213",
+        "MA-Q-0282",
+        "MA-Q-0285"
+      ],
+      "closest_family_ids": [
+        "T2_0213_MA_COUNSELING_REMOTE",
+        "B3B_0282_MA_COUNSELING_DESIGNEE_TRAINING"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "COUNSELLING_OFFER_METHOD_AND_CONTAINER_LABEL",
+      "family_novelty": "MA-Q-0213 keys that a remote-delivery offer is still required. This keys the permitted methods themselves, the needs-or-availability exception, and the separate container-labelling requirement for the toll-free number, none of which is keyed anywhere.",
+      "scenario_sketch": "A pharmacy ships to a patient who is deaf and cannot use a telephone, and prints the toll-free number only on the bag insert. The candidate must resolve both the method question and the labelling defect.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 21A (evidentiary presumption from the record)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+      "exact_section": "c. 94C s. 21A, penultimate paragraph",
+      "operative_proposition": "The pharmacist or designee shall make reasonable efforts to obtain, record and maintain the listed patient information, which may be recorded in the patient's manual or electronic profile, in the prescription signature log or in any other system of records. THE ABSENCE OF ANY RECORD OF A FAILURE TO ACCEPT THE PHARMACIST'S OFFER TO COUNSEL SHALL CREATE A PRESUMPTION THAT SUCH COUNSELLING WAS PROVIDED.",
+      "actor": "pharmacist or designee",
+      "trigger": "a later inquiry asks whether counselling was in fact provided on a past fill",
+      "professional_decision": "understand which way the statutory presumption runs and what recording choice controls it",
+      "conditions": [
+        "reasonable efforts to obtain, record and maintain",
+        "recording location is flexible"
+      ],
+      "exceptions": [],
+      "tranche": "B3C",
+      "theme": "documentation and evidentiary effect",
+      "why_area_2": "It governs the evidential consequence of the pharmacist's own counselling practice and record-keeping choices.",
+      "closest_question_ids": [
+        "MA-Q-0086"
+      ],
+      "closest_family_ids": [
+        "P2_0086_MA_COUNSELING"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "COUNSELLING_RECORD_PRESUMPTION",
+      "family_novelty": "MA-Q-0086 keys documenting a declined offer. This keys the opposite direction: the statutory presumption that arises from the ABSENCE of a refusal record, which no question tests.",
+      "scenario_sketch": "A complaint alleges a patient was never counselled on a fill from two years ago. The profile carries no refusal note. The pharmacist must say what the record's silence establishes.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 19C (continuous supply of opioid antagonists)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19C",
+      "exact_section": "c. 94C s. 19C",
+      "operative_proposition": "The board shall promulgate regulations requiring pharmacies located in areas with high incidence of opiate overdose to maintain a continuous supply of opioid antagonists including over-the-counter products, and such pharmacies shall notify the department if the supply or stock is insufficient to enable compliance.",
+      "actor": "pharmacy",
+      "trigger": "stock of opioid antagonists runs short in a designated high-incidence area",
+      "professional_decision": "n/a - the duty runs to the pharmacy as a facility",
+      "conditions": [
+        "pharmacy located in a board-designated high-incidence area"
+      ],
+      "exceptions": [],
+      "tranche": "EITHER",
+      "theme": "facility stocking obligation",
+      "why_area_2": "It is not Area 2. The actor is the pharmacy and the duty is stocking and notification.",
+      "closest_question_ids": [
+        "MA-Q-0098"
+      ],
+      "closest_family_ids": [],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "OPIOID_ANTAGONIST_CONTINUOUS_SUPPLY",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "taxonomy - Area 4, not Area 2",
+      "rejection_reason": "A pharmacy stocking and notification obligation. This bank places inventory and facility duties in Area 4, and a capacity shortage must not be solved by relabelling Area-4 content as Area 2.",
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, ss. 19A(c), 19B(c) and 19E(c) (standing-order dispensing authority and immunity)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19A",
+      "exact_section": "c. 94C ss. 19A(c), 19B(c), 19E(c)",
+      "operative_proposition": "A licensed pharmacist may dispense the relevant product in accordance with the statewide standing order, and except for gross negligence or wilful misconduct a pharmacist acting in good faith is not subject to criminal or civil liability or professional disciplinary action.",
+      "actor": "licensed pharmacist",
+      "trigger": "dispensing under a statewide standing order",
+      "professional_decision": "identify the authority to dispense without an individual prescription and the limits of the liability shield",
+      "conditions": [
+        "dispensing in accordance with the statewide standing order",
+        "acting in good faith"
+      ],
+      "exceptions": [
+        "gross negligence",
+        "wilful misconduct"
+      ],
+      "tranche": "B3C",
+      "theme": "public-health pharmacist authority",
+      "why_area_2": "Pharmacist authority to act without an individual prescription.",
+      "closest_question_ids": [
+        "MA-Q-0097",
+        "MA-Q-0098"
+      ],
+      "closest_family_ids": [
+        "P2_0097_MA_NALOXONE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "STANDING_ORDER_DISPENSING_AUTHORITY_AND_IMMUNITY",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "overconcentration - structurally identical across three sections",
+      "rejection_reason": "Sections 19A(c), 19B(c) and 19E(c) state the same authority-plus-immunity structure for three different products. Counting this as a family on top of the training, reporting and billing families drawn from the same cluster would test the same discrimination again with only the drug name changed. Recorded and rejected rather than counted.",
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 19F (pharmacist prescribing of hormonal contraception)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19F",
+      "exact_section": "c. 94C s. 19F(c)(i)(C), (D) and (E)",
+      "operative_proposition": "The rules shall require a pharmacist to refer the patient to the patient's primary care practitioner or reproductive health care practitioner, if applicable, upon prescribing and dispensing, or advise the patient to consult with such a practitioner; to provide the patient with a written record of the product prescribed and dispensed; and to dispense the product to the patient as soon as practicable after the pharmacist issues the prescription.",
+      "actor": "pharmacist prescribing under the contraception pathway",
+      "trigger": "the pharmacist has just issued a contraceptive prescription under the pathway",
+      "professional_decision": "identify what the pharmacist still owes the patient after issuing, and how quickly the product must follow",
+      "conditions": [
+        "referral or advice to consult",
+        "a written record of what was prescribed and dispensed",
+        "dispensing as soon as practicable after issuing"
+      ],
+      "exceptions": [
+        "the referral limb applies if the patient has such a practitioner"
+      ],
+      "tranche": "B3D",
+      "theme": "pharmacist prescribing and furnishing limitations",
+      "why_area_2": "Duties attaching personally to the pharmacist's own prescribing act. The bank already places pharmacist contraceptive prescribing in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0095",
+        "MA-Q-0096"
+      ],
+      "closest_family_ids": [
+        "P2_0095_MA_HORMONAL_CONTRACEPTIVE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CONTRACEPTION_POST_PRESCRIBING_DUTIES",
+      "family_novelty": "MA-Q-0095 keys that a prior prescription is not required but screening still is. MA-Q-0096 keys the repeat clinical-visit bar. Neither touches the referral, written-record and prompt-dispensing duties that follow the prescribing act.",
+      "scenario_sketch": "A pharmacist screens and prescribes, then tells the patient to collect the product next week and to raise it at her next physician visit whenever that happens. The candidate must identify which of the post-prescribing duties that fails.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 19F (prohibitions on the prescribing pharmacist)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19F",
+      "exact_section": "c. 94C s. 19F(c)(ii)(A)",
+      "operative_proposition": "The rules shall prohibit a pharmacist from requiring a patient to schedule an appointment with the pharmacist for the prescribing or dispensing of a hormonal contraceptive patch or self-administered oral hormonal contraceptive.",
+      "actor": "pharmacist operating the contraception pathway",
+      "trigger": "a pharmacy proposes to run the pathway by appointment only",
+      "professional_decision": "recognise that access to the pathway may not be conditioned on an appointment",
+      "conditions": [],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "pharmacist prescribing and furnishing limitations",
+      "why_area_2": "A prohibition on how the pharmacist may condition their own prescribing service.",
+      "closest_question_ids": [
+        "MA-Q-0095",
+        "MA-Q-0096"
+      ],
+      "closest_family_ids": [
+        "P2_0095_MA_HORMONAL_CONTRACEPTIVE"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "CONTRACEPTION_NO_APPOINTMENT_CONDITION",
+      "family_novelty": "Neither existing question touches the appointment prohibition. The keyed axis is a prohibition on the pharmacist rather than an eligibility condition on the patient.",
+      "scenario_sketch": "A pharmacy posts that contraceptive consultations are by booked appointment only and turns away a walk-in. The candidate must identify the prohibition that defeats the policy.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 19F(c)(i)(A) and (B) (training and self-screening)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19F",
+      "exact_section": "c. 94C s. 19F(c)(i)(A) and (B)",
+      "operative_proposition": "The rules shall require a pharmacist to complete a board-approved training program related to prescribing these products, and to provide a self-screening risk assessment tool that the patient shall use prior to the pharmacist prescribing.",
+      "actor": "pharmacist",
+      "trigger": "a patient requests contraceptive prescribing",
+      "professional_decision": "confirm the training precondition and the pre-prescribing screening step",
+      "conditions": [
+        "board-approved training",
+        "patient completes the self-screening tool before prescribing"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "pharmacist prescribing and furnishing limitations",
+      "why_area_2": "Preconditions on the pharmacist's own prescribing authority.",
+      "closest_question_ids": [
+        "MA-Q-0095"
+      ],
+      "closest_family_ids": [
+        "P2_0095_MA_HORMONAL_CONTRACEPTIVE"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "CONTRACEPTION_TRAINING_AND_SCREENING",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "duplication - discrimination already tested",
+      "rejection_reason": "MA-Q-0095 already keys that the screening and protocol process still applies even without a prior prescription, and its distractor E is the skip-the-self-screening error. Counting this would paraphrase a released question.",
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026), with 105 CMR 700.004(B)(9)",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, condition (c) with the Administration and Dosing paragraph",
+      "operative_proposition": "Administration is not intravenous. A pharmacist or pharmacy intern may only administer an eligible medication by subcutaneous or intramuscular injection, in accordance with manufacturer approved labeling and any risk evaluation and mitigation requirements for the specific medication administered.",
+      "actor": "pharmacist or pharmacy intern administering under the Department pathway",
+      "trigger": "a prescription calls for a route the pathway does not permit, or labelling or REMS constrains the route",
+      "professional_decision": "decide whether the requested route is inside the pharmacist administration authority at all",
+      "conditions": [
+        "subcutaneous or intramuscular only",
+        "in accordance with manufacturer approved labelling",
+        "in accordance with any REMS for that medication"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "administration route limitation",
+      "why_area_2": "A boundary on the pharmacist's own clinical act, not a dispensing mechanic or a facility matter.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0171",
+        "MA-Q-0172",
+        "MA-Q-0173"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN",
+        "P2_0172_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_ROUTE_SC_IM_ONLY",
+      "family_novelty": "The existing eight administration questions key categories, prescriber direction, workflow, applied eligibility, CPR currency, indication and adverse events. None keys the route limitation or its interaction with labelling and REMS.",
+      "scenario_sketch": "A prescription directs an eligible medication by intravenous infusion, and a second directs a subcutaneous dose whose labelling permits only intramuscular use. The candidate must reject both for different reasons.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026)",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Medications Eligible for Pharmacist or Pharmacy Intern Administration",
+      "operative_proposition": "The listed generic medications are the ONLY medications eligible to be administered by a pharmacist or pharmacy intern, and the current list adds gender-affirming care medications (testosterone, all salts), HIV prevention medications (cabotegravir, lenacapavir or other medications to prevent HIV) and sexually transmitted infection medications (ceftriaxone by intramuscular injection, doxycycline or other medications to treat chlamydia) to the long-acting injectable antipsychotics and substance use disorder medications.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "a request to administer a product outside the enumerated list, or one of the newly added categories",
+      "professional_decision": "decide whether this specific product is on the closed eligibility list under the current circular",
+      "conditions": [
+        "the list is exhaustive",
+        "generic names may carry multiple brand names"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "product eligibility limitation",
+      "why_area_2": "Determines what the pharmacist may personally administer. The bank already places pharmacist administration authority in Area 2.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0171"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_CURRENT_ELIGIBLE_PRODUCT_LIST",
+      "family_novelty": "MA-Q-0145 and MA-Q-0171 key the statutory categories as they stood before the March 2026 circular and do not reach HIV prevention or sexually transmitted infection medications at all. The keyed axis here is the current closed product list including the three newly added categories.",
+      "scenario_sketch": "A pharmacist is asked to administer cabotegravir for HIV prevention, ceftriaxone for a sexually transmitted infection, and a long-acting injectable that is not on the list. The candidate must apply the current list rather than the older category set.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "Circular DCP 26-03-124 with 105 CMR 700.004(B)(9)(e)",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "exact_section": "105 CMR 700.004(B)(9)(e) and the DCP 26-03-124 note on addiction treatment",
+      "operative_proposition": "A pharmacist is authorized to administer controlled substances in an Opioid Treatment Program pursuant to an order and in accordance with Department guidance. A pharmacist may administer medications for addiction treatment, including methadone, pursuant to an order, ONLY in a registered opioid treatment program.",
+      "actor": "pharmacist",
+      "trigger": "a request to administer methadone or another addiction-treatment medication outside a registered opioid treatment program",
+      "professional_decision": "decide whether the setting itself, and an order rather than a prescription, is what authorises the act",
+      "conditions": [
+        "registered opioid treatment program",
+        "pursuant to an order"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "setting-bound administration authority",
+      "why_area_2": "It governs where and on what instrument the pharmacist may personally administer, which is practice authority rather than facility registration.",
+      "closest_question_ids": [
+        "MA-Q-0166",
+        "MA-Q-0146"
+      ],
+      "closest_family_ids": [
+        "P2_0146_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_OTP_ORDER_ONLY",
+      "family_novelty": "MA-Q-0146 keys the need for patient-specific prescriber direction in the retail pathway. This keys a different instrument and a setting bound: an order inside a registered opioid treatment program, which is the only route for methadone administration.",
+      "scenario_sketch": "A community pharmacy holds a valid prescription for methadone and asks whether the pharmacist may administer the dose on site. The candidate must identify that only a registered opioid treatment program and an order will do.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "Circular DCP 26-03-124, Pharmacist-Prescriber Communication",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Pharmacist-Prescriber Communication",
+      "operative_proposition": "Prescribers should make clear that they intend for eligible medications to be administered by a pharmacist or pharmacy intern by including a notation on the prescription. A pharmacist or pharmacy intern receiving a prescription for eligible medications WITHOUT the notation is ENCOURAGED to contact the prescriber if, in their professional judgment, it appears the medication is intended to be administered rather than dispensed to the patient for administration outside the pharmacy.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "an eligible medication arrives on a prescription carrying no administration notation",
+      "professional_decision": "decide what the absence of the notation obliges, as against what it merely encourages",
+      "conditions": [
+        "the medication is on the eligible list",
+        "professional judgment that administration was intended"
+      ],
+      "exceptions": [
+        "contacting the prescriber is encouraged, not required"
+      ],
+      "tranche": "B3C",
+      "theme": "pharmacist-prescriber communication",
+      "why_area_2": "A communication judgment the pharmacist exercises personally, and a mandatory-versus-encouraged discrimination.",
+      "closest_question_ids": [
+        "MA-Q-0147",
+        "MA-Q-0175"
+      ],
+      "closest_family_ids": [
+        "P2_0147_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "ADMINISTRATION_PRESCRIPTION_NOTATION_AND_CONTACT",
+      "family_novelty": "MA-Q-0147 keys sending the administration record afterwards and MA-Q-0175 keys adverse-event reporting. Neither touches the notation convention or the encouraged-not-required contact when it is missing.",
+      "scenario_sketch": "An eligible long-acting injectable arrives with no administration notation and the patient is waiting. The candidate must separate what the pharmacist must do from what the guidance merely encourages.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+      "exact_section": "c. 94C s. 1, Administer (c)(i) compared with (c)(ii) and (c)(iii)",
+      "operative_proposition": "Route (c)(i) authorises pharmacist administration for mental health and substance use disorder only in accordance with department regulations AND at the direction of a prescribing practitioner. Routes (c)(ii) and (c)(iii) authorise administration on a prescription for testosterone for gender-affirming care, and on a prescription for treatment and prevention of sexually transmitted infections or for prevention of HIV, without the regulation-plus-direction gate stated in (c)(i).",
+      "actor": "registered pharmacist",
+      "trigger": "administration is proposed on one of the three statutory routes",
+      "professional_decision": "identify which statutory gate this route imposes before administering",
+      "conditions": [
+        "route (i) requires department regulations and practitioner direction",
+        "routes (ii) and (iii) are prescription-based for the specified purpose"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "statutory administration route architecture",
+      "why_area_2": "The source of the pharmacist's own authority to administer.",
+      "closest_question_ids": [
+        "MA-Q-0145",
+        "MA-Q-0146",
+        "MA-Q-0171"
+      ],
+      "closest_family_ids": [
+        "P2_0145_MA_PHARM_ADMIN",
+        "P2_0146_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": false,
+      "same_discrimination_already_tested": false,
+      "proposed_family_id": "STATUTORY_ADMINISTRATION_ROUTE_ARCHITECTURE",
+      "family_novelty": "MA-Q-0145 keys which categories exist and MA-Q-0146 keys that prescriber direction is needed in the mental health pathway. Neither keys the fact that the statute gates the three routes differently, so that the regulation-and-direction condition is specific to route (i).",
+      "scenario_sketch": "A pharmacist holds prescriptions for a long-acting antipsychotic and for testosterone for gender-affirming care, with no separate practitioner direction for either. The candidate must see that the two routes are not gated the same way.",
+      "viability": "YES",
+      "rejection_reason": null,
+      "authority_conflict_dependency": "NONE"
+    },
+    {
+      "source": "105 CMR 700.004(B)(9) chapeau",
+      "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "exact_section": "105 CMR 700.004(B)(9), opening words",
+      "operative_proposition": "A pharmacist or a pharmacy intern is authorized to dispense by administration FDA approved mental health or substance use disorder treatment drugs to persons 18 years of age or older.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "a minor presents for administration",
+      "professional_decision": "apply the age threshold",
+      "conditions": [
+        "18 years of age or older"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "age limitation",
+      "why_area_2": "Patient eligibility for the pharmacist's own act.",
+      "closest_question_ids": [
+        "MA-Q-0172"
+      ],
+      "closest_family_ids": [
+        "P2_0172_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "ADMINISTRATION_AGE_THRESHOLD",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "duplication - discrimination already tested",
+      "rejection_reason": "MA-Q-0172 option D already keys the 18-and-over threshold with a 17-year-old fact pattern. Counting it again would paraphrase a released question.",
+      "authority_conflict_dependency": "Q0172_FIRST_DOSE_CONFLICT"
+    },
+    {
+      "source": "Circular DCP 26-03-124, Training, CPR Certification, Continued Competency",
+      "official_url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "exact_section": "DCP 26-03-124, Training and CPR Certification",
+      "operative_proposition": "To administer, a pharmacist or pharmacy intern must first receive training accredited by the CDC, ACPE or a similar health authority appropriate for the medications administered, including learning modules on techniques for administration by injection, must maintain current CPR certification, and must maintain continued competency.",
+      "actor": "pharmacist or pharmacy intern",
+      "trigger": "administration is proposed without current training or CPR certification",
+      "professional_decision": "confirm the personal preconditions before administering",
+      "conditions": [
+        "accredited training including injection technique",
+        "current CPR certification",
+        "continued competency"
+      ],
+      "exceptions": [],
+      "tranche": "B3D",
+      "theme": "administrator qualification",
+      "why_area_2": "Preconditions attaching to the pharmacist personally.",
+      "closest_question_ids": [
+        "MA-Q-0173"
+      ],
+      "closest_family_ids": [
+        "P2_0173_MA_MH_SUD_ADMIN"
+      ],
+      "same_proposition_already_keyed": true,
+      "same_discrimination_already_tested": true,
+      "proposed_family_id": "ADMINISTRATION_TRAINING_AND_CPR",
+      "family_novelty": "",
+      "scenario_sketch": "",
+      "viability": "NO",
+      "rejection_category": "duplication - discrimination already tested",
+      "rejection_reason": "MA-Q-0173 already keys lapsed CPR certification as a bar to administration, and MA-Q-0172's stem assumes completed training. Counting this would retest the same precondition.",
+      "authority_conflict_dependency": "NONE"
+    }
+  ],
+  "bank_context": {
+    "comparator_main": "506c3d9a95d90d44c35d01487cc7ec4eb9d98d43",
+    "bank_size": 294,
+    "released": 263,
+    "area_2_present": 54,
+    "area_2_target": 120,
+    "area_2_deficit": 66,
+    "area_2_distinct_families": 54,
+    "area_2_saturated_families": [
+      "V3_0100_PDMA_SAMPLE_INVENTORY",
+      "V3_0114_HYPODERMIC_AUTHORIZED_SELLER"
+    ]
+  },
+  "summary": {
+    "targets": {
+      "per_tranche": 33,
+      "total": 66
+    },
+    "raw_candidates_reviewed": 26,
+    "viable_yes": 19,
+    "viable_yes_including_conflict_held": 19,
+    "held_by_authority_conflict": 0,
+    "held_family_ids": [],
+    "rejected_no": 7,
+    "unresolved": 0,
+    "b3c_only_families": 10,
+    "b3d_only_families": 8,
+    "either_unassigned_capacity": 1,
+    "guaranteed_b3c_capacity": 11,
+    "guaranteed_b3d_capacity": 8,
+    "total_nonoverlapping_guaranteed_capacity": 19,
+    "b3c_shortfall": 22,
+    "b3d_shortfall": 25,
+    "either_families_needed_for_feasibility": 48,
+    "either_families_available": 1,
+    "allocation_feasible": false,
+    "decision_gate": "CASE C - fewer than 66 defensible new families so far (census incomplete)",
+    "by_source": {
+      "105 CMR 700.004(B)(9) chapeau": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124 with 105 CMR 700.004(B)(9)(e)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist Administration of Medications (11 March 2026), with 105 CMR 700.004(B)(9)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Pharmacist-Prescriber Communication": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "Circular DCP 26-03-124, Training, CPR Certification, Continued Competency": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)": {
+        "YES": 6,
+        "NO": 2,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 19C (continuous supply of opioid antagonists)": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 19F (pharmacist prescribing of hormonal contraception)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 19F (prohibitions on the prescribing pharmacist)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 19F(c)(i)(A) and (B) (training and self-screening)": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 21A (evidentiary presumption from the record)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 21A (offer method)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, s. 21A (prospective drug review and counselling)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, ss. 19A(c), 19B(c) and 19E(c) (standing-order dispensing authority and immunity)": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, ss. 19A(e), 19B(d) and 19E(d) (standing-order reporting and confidentiality)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, ss. 19A, 19B and 19E (statewide standing-order regimes)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "M.G.L. c. 94C, ss. 19B(e) and 19E(e) (insurance handling before dispensing)": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      }
+    },
+    "by_theme": {
+      "administration route limitation": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "administrator qualification": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "age limitation": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "age limitation and extension power": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "confidentiality and disclosure obligations": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "documentation and evidentiary effect": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "drug-use limitation": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "facility registration": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "facility stocking obligation": {
+        "YES": 0,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "patient care and access": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "patient consent and referral documentation": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "pharmacist counselling": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "pharmacist practice authority": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "pharmacist prescribing and furnishing limitations": {
+        "YES": 2,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "pharmacist professional judgment": {
+        "YES": 2,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "pharmacist-prescriber communication": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "product eligibility limitation": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "professional conduct and ethical practice": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "public-health pharmacist authority": {
+        "YES": 1,
+        "NO": 1,
+        "UNRESOLVED": 0
+      },
+      "setting limitation and approval authority": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "setting-bound administration authority": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      },
+      "statutory administration route architecture": {
+        "YES": 1,
+        "NO": 0,
+        "UNRESOLVED": 0
+      }
+    },
+    "concentration": {
+      "top_source": "M.G.L. c. 112, s. 24B1/2 (Pharmacist collaborative practice agreements; collaborative drug therapy management)",
+      "top_source_viable_families": 6,
+      "share_of_viable_pool": 0.316,
+      "warning_gate": "ok"
+    },
+    "rejection_reasons": {
+      "duplication - discrimination already tested": 4,
+      "taxonomy - Area 4, not Area 2": 2,
+      "overconcentration - structurally identical across three sections": 1
+    }
+  },
+  "record_integrity": {
+    "problems": [],
+    "clean": true
+  }
+}

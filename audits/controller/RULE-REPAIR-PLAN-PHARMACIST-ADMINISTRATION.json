@@ -1,0 +1,78 @@
+{
+  "report_type": "PREPARED_RULE_REPAIR_PLAN",
+  "status": "PREPARED_NOT_APPLIED",
+  "date": "2026-08-19",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "why_not_applied": "Editing MA-MH-SUD-ADMIN now would change a dependency that six already-audited released questions rest on, before an independent auditor has adjudicated the current authority. That would contaminate the evidence partition. The old rule and its content hash are preserved as historical dependency evidence until CLAUDE-FRESH-AUTH-0172 returns.",
+  "blocked_on": "AUDIT-CLAUDE-FRESH-AUTH-0172-LEGAL-REAUDIT-2026-08-19",
+
+  "current_authority_hierarchy_to_cite": [
+    {
+      "rank": 1,
+      "type": "STATUTE",
+      "citation": "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+      "authority_status": "CURRENT",
+      "carries": "three pharmacist administration routes, gated differently"
+    },
+    {
+      "rank": 2,
+      "type": "PROMULGATED_REGULATION",
+      "citation": "105 CMR 700.004(B)(9); 105 CMR 700.001 definition of Administer",
+      "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+      "official_pdf": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+      "pdf_sha256": "78c4d84206d280f7aaee0d95bd9c07229366205dfd65fd177ac7847d861a2bcd",
+      "authority_status": "CURRENT",
+      "carries": "18-and-over threshold and conditions (a) to (e) for mental health and substance use disorder drugs; the regulation's own Administer definition still reaches only that category"
+    },
+    {
+      "rank": 3,
+      "type": "OFFICIAL_GUIDANCE",
+      "citation": "Circular Letter DCP 26-03-124, Pharmacist Administration of Medications, 11 March 2026",
+      "url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "official_pdf": "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download",
+      "pdf_sha256": "162bd31fdab634dfb3fd7e3c3514095feae21df8018a2203256f719d2772a4d1",
+      "authority_status": "CURRENT",
+      "supersedes": ["DCP 23-04-118"],
+      "carries": "conditions (a) to (f) including not intravenous and single doses with or without refills; the closed eligible-medication list; subcutaneous or intramuscular route; training, CPR, competency, pre-administration counselling; record keeping; adverse-event reporting; prescription notation; privacy under 247 CMR 2.00 and 42 CFR Part 2; and the note that addiction-treatment administration including methadone is by order only in a registered opioid treatment program"
+    }
+  ],
+
+  "historical_only": [
+    {"citation": "Circular DCP 19-2-105", "authority_status": "SUPERSEDED", "superseded_by": "DCP 26-03-124",
+     "treatment": "Retained in provenance and labelled SUPERSEDED. Must not be cited as current authority and must not be marked CURRENT."},
+    {"citation": "Circular DCP 23-04-118", "authority_status": "SUPERSEDED", "superseded_by": "DCP 26-03-124",
+     "treatment": "Same."}
+  ],
+
+  "planned_changes": [
+    {
+      "rule_id": "MA-MH-SUD-ADMIN",
+      "change": "Replace the sole DCP 19-2-105 authority with the three-level current hierarchy above; restate the summary from current text; record the supersession chain in verification_notes.",
+      "content_hash_impact": "CHANGES. Six released questions depend on this rule, so the edit must go through the same guarded treatment as any registry change, with the dependency snapshot re-proved.",
+      "must_not_assume": [
+        "Do not carry forward the first-dose limitation. It appears in neither the current regulation nor the current circular.",
+        "Do not assume the 18-and-over threshold governs the testosterone, HIV-prevention or STI routes. 105 CMR 700.004(B)(9) states it only for mental health and substance use disorder drugs, and no current source extends it.",
+        "Do not migrate other mental-health-specific limitations to the newly added statutory routes."
+      ]
+    },
+    {
+      "rule_id": "MA-PHARM-ADMIN",
+      "change": "Replace the non-versioned landing-page citation with M.G.L. c. 94C s. 1(c) and DCP 26-03-124 with its date; broaden the summary to the three statutory routes and the current eligible-medication list including HIV prevention and sexually transmitted infection medications.",
+      "content_hash_impact": "CHANGES. Three released questions depend on this rule."
+    },
+    {
+      "artifact": "audits/controller/AUTHORITY-SUPERSESSION-REGISTRY.json",
+      "change": "Already created. Extend it as each remaining OFFICIAL_GUIDANCE citation is verified; 25 rules currently sit at authority_status UNKNOWN."
+    }
+  ],
+
+  "sequencing": [
+    "1. CLAUDE-FRESH-AUTH-0172 returns an independent current-authority adjudication of MA-Q-0172 at its unchanged hash.",
+    "2. Controller verifies that audit mechanically.",
+    "3. If the current key is sound, restore MA-Q-0172 to RELEASED and re-add it to the preview allowlist; if not, repair it under a fresh candidate hash and a focused reaudit.",
+    "4. Only then apply the rule changes above as a governed registry change, re-proving every dependent released question's snapshot.",
+    "5. Wire scripts/check_authority_supersession.py into the standard QA sequence once the 25 UNKNOWN entries have been triaged, so it can fail rather than merely warn."
+  ]
+}
