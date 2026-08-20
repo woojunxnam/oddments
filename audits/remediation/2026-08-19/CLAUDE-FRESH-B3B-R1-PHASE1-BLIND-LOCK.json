@@ -1,0 +1,174 @@
+{
+  "record_type": "PHASE1_IMMUTABLE_BLIND_LOCK",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+  "audit_scope": "REAUDIT",
+  "audit_date": "2026-08-19",
+  "tranche": "BATCH3-B3B-R1",
+  "authorizing_issue": 91,
+  "independent": true,
+  "phase": "PHASE_1_BLIND_SOLVE",
+  "lock_semantics": "IMMUTABLE. Never amended, rebased away or force-pushed. Committed and pushed before any canonical, contract, rule, prior-audit or repair-rationale content was inspected.",
+
+  "audit_input_boundary": {
+    "represented_candidate_branch": "repair/batch3-b3b-realism-r1",
+    "represented_candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+    "freeze_branch": "freeze/batch3-b3b-r1-v1",
+    "frozen_content_commit": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+    "observed_freeze_branch_tip": "56472a6d9acb64eebab977d116a3707fc59a823b",
+    "freeze_tip_status": "NON_SEMANTIC_POSTFREEZE_LEDGER_ADVANCE",
+    "sealed_reads_pinned_to": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+    "later_branch_tip_commit_excluded_from_audit_input": true,
+    "later_commit_changed_paths_only": [
+      "audits/controller/ISSUE-83-CONTROLLER-LEDGER.json"
+    ],
+    "later_commit_substantive_contents_inspected": false,
+    "auditor_worktree": "../oddments-audit-b3b-r1-claude-fresh-b3b-r1",
+    "auditor_branch": "audit/batch3-b3b-r1-claude-fresh-b3b-r1"
+  },
+
+  "boundary_verification": {
+    "frozen_commit_object_type": "commit",
+    "candidate_object_type": "commit",
+    "candidate_is_ancestor_of_frozen_commit": true,
+    "frozen_commit_is_ancestor_of_advanced_branch_tip": true,
+    "canonical_drift_candidate_vs_repair_branch_data_schemas": "NONE",
+    "canonical_drift_frozen_commit_vs_advanced_tip_data_schemas": "NONE",
+    "sealed_package_drift_frozen_commit_vs_advanced_tip": "NONE",
+    "blind_package_blob_at_frozen_commit": "198dd787a5adff8d5f29564ad2fcac7c184e90d0",
+    "blind_package_blob_expected": "198dd787a5adff8d5f29564ad2fcac7c184e90d0",
+    "blind_package_blob_match": true,
+    "blind_package_lf_sha256": "d403473a4f65ce71cdec04060cbbe3fcfb12884d489090d9bbd22da5af6132d7",
+    "blind_package_lf_sha256_expected": "d403473a4f65ce71cdec04060cbbe3fcfb12884d489090d9bbd22da5af6132d7",
+    "blind_package_lf_sha256_match": true,
+    "initial_fail_closed_stop_raised": true,
+    "initial_fail_closed_stop_reason": "Mutable freeze branch tip did not equal the originally represented freeze HEAD.",
+    "controller_adjudication": "NON_SEMANTIC_POSTFREEZE_LEDGER_ADVANCE; audit explicitly authorized to continue with all sealed reads pinned to the immutable frozen commit."
+  },
+
+  "questions": [
+    {
+      "question_id": "MA-Q-0288",
+      "question_type": "SATA",
+      "blind_inputs_used": "question_id, question_type, stem and choice text only, from the sealed blind package.",
+
+      "selected_choice_ids": ["B", "C", "E"],
+      "rejected_choice_ids": ["A", "D"],
+
+      "controlling_authority": {
+        "citation": "247 CMR 9.15(2)",
+        "section_title": "247 CMR 9.15: Verifying a Practitioner's Prescriptive Authority",
+        "chapter_title": "247 CMR 9.00: Code for Professional Conduct; Professional Standards for Registered Pharmacists, Pharmacies, and Pharmacy Departments",
+        "promulgating_body": "Massachusetts Board of Registration in Pharmacy",
+        "regulatory_authority": "M.G.L. c. 94C, ss. 6, 19B, 19C; M.G.L. c. 112, s. 30; M.G.L. c. 112, s. 42A",
+        "official_version_date_on_page": "12/06/2024",
+        "in_document_revision_stamp": "12/6/24",
+        "verbatim_operative_text": "(2) A pharmacist may not fill a prescription unless the pharmacist, in the exercise of his or her professional judgment, determines that: (a) the prescription was issued for a legitimate medical purpose by a practitioner acting in the usual course of his or her professional practice; (b) there is a valid patient-practitioner relationship; (c) the prescription is authentic; and (d) the dispensing is in accordance with M.G.L. c. 94C, s. 19(a).",
+        "verbatim_adjacent_subsection_1": "(1) A pharmacist who dispenses medications reported to the Massachusetts Prescription Monitoring Program (PMP) shall register with and maintain login information for the electronic system to monitor the prescribing and dispensing of controlled substances authorized by M.G.L. c. 94C, s. 24A, known as PMP or MassPAT."
+      },
+
+      "independent_reasoning": "The stem asks which determinations the regulation requires a pharmacist to make, in the exercise of professional judgment, before any prescription may be filled. The controlling Massachusetts provision is 247 CMR 9.15(2), which is a closed, enumerated list of four determinations gating the act of filling. It is not limited to controlled substances: the operative words are 'may not fill a prescription', which matches the stem's 'before any prescription may be filled'. Mapping the offered propositions onto the enumerated list: choice B reproduces 9.15(2)(a) essentially verbatim (legitimate medical purpose by a practitioner acting in the usual course of professional practice); choice C reproduces 9.15(2)(b) verbatim (valid patient-practitioner relationship); choice E reproduces 9.15(2)(c) verbatim (the prescription is authentic). Those three are therefore required determinations. The fourth enumerated determination, 9.15(2)(d) (dispensing in accordance with M.G.L. c. 94C, s. 19(a)), is not offered as a choice, which is permissible in a select-all-that-apply item and does not affect the correctness of B, C and E. Choice A fails because no Massachusetts Controlled Substances Registration determination appears anywhere in the enumerated list; a full-text scan of the official 247 CMR 9.00 document returned zero occurrences of 'MCSR' or 'Controlled Substances Registration'. Prescriber registration is governed elsewhere and is not one of the professional-judgment determinations 9.15(2) imposes as a precondition to filling. Choice D fails because the PMP obligation that 247 CMR 9.15 places on the pharmacist is in subsection (1) and is a registration and login-maintenance duty, not a determination inside the 9.15(2) list; 9.15(2) contains no PMP screening element. Both A and D are drawn from the immediate regulatory neighbourhood of the correct rule, which is why they are attractive, but neither is a member of the enumerated set the stem asks about.",
+
+      "per_choice_blind_analysis": [
+        {
+          "choice_id": "A",
+          "verdict": "INCORRECT",
+          "basis": "Not among the determinations enumerated in 247 CMR 9.15(2). Full-text search of the official 247 CMR 9.00 document found no occurrence of 'MCSR' or 'Controlled Substances Registration'."
+        },
+        {
+          "choice_id": "B",
+          "verdict": "CORRECT",
+          "basis": "247 CMR 9.15(2)(a), reproduced essentially verbatim."
+        },
+        {
+          "choice_id": "C",
+          "verdict": "CORRECT",
+          "basis": "247 CMR 9.15(2)(b), reproduced verbatim."
+        },
+        {
+          "choice_id": "D",
+          "verdict": "INCORRECT",
+          "basis": "247 CMR 9.15(1) imposes a PMP registration and login-maintenance duty on the pharmacist. It is not one of the professional-judgment determinations enumerated in 247 CMR 9.15(2)."
+        },
+        {
+          "choice_id": "E",
+          "verdict": "CORRECT",
+          "basis": "247 CMR 9.15(2)(c), reproduced verbatim."
+        }
+      ],
+
+      "second_reasonable_legal_reading_considered": {
+        "considered": true,
+        "candidate_alternative_readings_tested": [
+          "Whether 247 CMR 9.01 (professional conduct standards) supplies a competing or broader list of pre-fill determinations. Rejected: the other occurrences of 'professional judgment' in the official document concern generic substitution and patient counselling, not preconditions to filling.",
+          "Whether 9.15(2) is confined to controlled substances because of the section heading and the PMP subject matter of 9.15(1). Rejected: 9.15(2) says 'a prescription' without limitation, and (2)(d) separately cross-references M.G.L. c. 94C, s. 19(a) rather than restricting scope.",
+          "Whether subsection (1)'s PMP duty could be read into the (2) list. Rejected: (1) and (2) are structurally distinct, and (2) is introduced by its own closed 'determines that:' enumeration."
+        ],
+        "conclusion": "No second reasonable legal reading survives. 247 CMR 9.15(2) is a closed enumerated list and the mapping of B, C and E onto (a), (b) and (c) is exact."
+      },
+
+      "confidence": "HIGH",
+      "confidence_basis": "Choices B, C and E track the official regulatory text essentially word for word, and the two rejected propositions are provably absent from the enumerated list by full-text search of the official document."
+    }
+  ],
+
+  "official_sources_consulted": [
+    {
+      "source": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00, official regulation landing page",
+      "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+      "publisher": "Commonwealth of Massachusetts (Mass.gov), Trial Court Law Libraries",
+      "official_version_date": "12/06/2024",
+      "access_method": "Browser UI (in-app browser).",
+      "government_source": true
+    },
+    {
+      "source": "247 CMR 9: Professional practice standards, official PDF",
+      "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "publisher": "Commonwealth of Massachusetts (Mass.gov), Trial Court Law Libraries",
+      "last_updated": "2024-12-06",
+      "access_method": "Retrieved in the mass.gov browser origin after command-line retrieval returned HTTP 403; PDF served HTTP 200, 251837 bytes, header %PDF-1.7; text reconstructed from the official document's own content streams.",
+      "in_document_revision_stamp": "12/6/24",
+      "government_source": true
+    }
+  ],
+
+  "source_rule_compliance": {
+    "command_line_access_returned_403": true,
+    "fallback_used": "Official Mass.gov PDF opened and read through the browser, per protocol.",
+    "cornell_lii_used": false,
+    "justia_used": false,
+    "commercial_summary_used": false,
+    "search_snippet_used_as_authority": false,
+    "web_search_role": "Used only to locate the official Mass.gov URL. No search snippet was relied on as legal authority; the operative text was read from the official Mass.gov document itself.",
+    "official_controlling_text_actually_obtained": true
+  },
+
+  "contamination_flags": {
+    "contamination_status": "CLEAN",
+    "authored_or_repaired_this_question": false,
+    "canonical_question_file_inspected_before_lock": false,
+    "rules_files_inspected_before_lock": false,
+    "legal_contract_inspected_before_lock": false,
+    "realism_contract_inspected_before_lock": false,
+    "clean_freeze_manifest_inspected_before_lock": false,
+    "postlock_dependencies_inspected_before_lock": false,
+    "pr_95_inspected_before_lock": false,
+    "pr_99_inspected_before_lock": false,
+    "pr_100_inspected_before_lock": false,
+    "prior_claude_fresh_b3b_audit_records_inspected_before_lock": false,
+    "repair_scripts_inspected_before_lock": false,
+    "controller_ledger_contents_inspected_before_lock": false,
+    "issue_91_inspected_before_lock": false,
+    "issue_83_inspected_before_lock": false,
+    "old_versions_of_ma_q_0288_inspected_before_lock": false,
+    "git_history_diff_blame_or_commit_messages_for_ma_q_0288_inspected_before_lock": false,
+    "repair_rationale_or_prior_audit_findings_inspected_before_lock": false,
+    "metadata_only_inspections_performed": [
+      "Commit object types, ancestry relations and merge-base checks.",
+      "Changed path names between the frozen commit and the advanced freeze branch tip.",
+      "Blob ids and sha256 digests of the sealed blind package.",
+      "Existing worktree and branch listings for collision checking."
+    ],
+    "note": "No substantive repository content other than the sealed blind package was read before this lock."
+  }
+}

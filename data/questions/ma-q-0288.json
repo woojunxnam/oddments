@@ -1,22 +1,22 @@
 {
   "question_id": "MA-Q-0288",
-  "family_id": "B3B_0288_MA_VALIDITY_DETERMINATIONS",
+  "family_id": "B3B_0288R1_MA_VALIDITY_VS_ADJACENT_DUTIES",
   "area": 2,
   "topic": "Pharmacist practice",
-  "subtopic": "Prescription validity determination",
+  "subtopic": "Determinations versus adjacent duties",
   "difficulty": 5,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacist receives an unusual prescription and telephones the prescriber, who confirms he wrote it. Which determinations must the pharmacist still make in the exercise of professional judgment before filling? Select all that apply.",
+  "stem": "A newly licensed Massachusetts pharmacist is about to fill prescriptions on her own for the first time and asks her preceptor what the regulation requires of her professional judgment before any prescription may be filled. Which of the following are among the determinations the regulation requires her to make? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "That the prescription was issued for a legitimate medical purpose by a practitioner acting in the usual course of professional practice."
+      "text": "That the prescriber holds a current Massachusetts Controlled Substances Registration."
     },
     {
       "id": "B",
-      "text": "That the patient has no outstanding account balance with the pharmacy."
+      "text": "That the prescription was issued for a legitimate medical purpose by a practitioner acting in the usual course of professional practice."
     },
     {
       "id": "C",
@@ -24,48 +24,79 @@
     },
     {
       "id": "D",
-      "text": "That the prescription is authentic."
+      "text": "That the patient's history has been screened in the Prescription Monitoring Program."
     },
     {
       "id": "E",
-      "text": "That the dispensing is in accordance with M.G.L. c. 94C, § 19(a)."
+      "text": "That the prescription is authentic."
     }
   ],
   "correct_choice_ids": [
-    "A",
+    "B",
     "C",
-    "D",
     "E"
   ],
   "explanation": {
-    "core_reasoning": "247 CMR 9.15(2) provides that a pharmacist may not fill a prescription unless the pharmacist, exercising professional judgment, determines all four things: legitimate medical purpose by a practitioner acting in the usual course of practice, a valid patient-practitioner relationship, authenticity, and dispensing in accordance with M.G.L. c. 94C, § 19(a). The prescriber confirming authorship answers authenticity only.",
+    "core_reasoning": "247 CMR 9.15(2) permits a pharmacist to fill a prescription only where the pharmacist, in the exercise of professional judgment, determines that the prescription was issued for a legitimate medical purpose by a practitioner acting in the usual course of professional practice, that there is a valid patient-practitioner relationship, that the prescription is authentic, and that the dispensing is in accordance with M.G.L. c. 94C, section 19(a). Two obligations that sit immediately around that list are not on it. The section is headed Verifying a Practitioner's Prescriptive Authority, but confirming a current Massachusetts Controlled Substances Registration is not one of the enumerated determinations. 247 CMR 9.15(1) does impose a monitoring-program obligation, but it is to register with and maintain login information for the system, not to make a determination about the prescription in front of the pharmacist.",
     "choice_analysis": {
-      "A": "Correct: the legitimate-purpose determination remains the pharmacist's own.",
-      "B": "An account balance is not a regulatory determination for filling.",
-      "C": "Correct: a valid patient-practitioner relationship is a separate determination.",
-      "D": "Correct: authenticity is one of the four, and is what the call addressed.",
-      "E": "Correct: compliance with M.G.L. c. 94C, § 19(a) is the fourth determination."
+      "A": "The section heading invites this, but registration verification is not among the determinations 247 CMR 9.15(2) enumerates.",
+      "B": "Correct: this is the determination in 247 CMR 9.15(2)(a).",
+      "C": "Correct: this is the determination in 247 CMR 9.15(2)(b).",
+      "D": "247 CMR 9.15(1) requires registration with and maintained login information for the monitoring program, which is an access obligation rather than a determination.",
+      "E": "Correct: this is the determination in 247 CMR 9.15(2)(c)."
     },
     "related_facts": [
-      "A pharmacist who dispenses medications reported to the monitoring program must register with and maintain login information for it."
+      "The fourth determination in 247 CMR 9.15(2) is that the dispensing is in accordance with M.G.L. c. 94C, section 19(a)."
     ],
-    "mpje_trap": "Confirming who wrote the prescription resolves one determination out of four."
+    "mpje_trap": "The section is headed after prescriptive authority and sits directly beside the monitoring-program duty, so two genuinely adjacent obligations read like determinations without appearing on the enumerated list."
   },
   "rule_ids": [
-    "MA-PRESCRIPTION-VALIDITY-DETERMINATION"
+    "MA-PRESCRIPTION-VALIDITY-DETERMINATION",
+    "MA-PMP-REGISTRATION-DUTY"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Note that the prescriber's confirmation speaks only to authenticity",
-    "Enumerate the four determinations the regulation requires",
-    "Keep each determination within the pharmacist's own professional judgment"
+    "Separate the determinations enumerated in 247 CMR 9.15(2) from the neighbouring obligation in 247 CMR 9.15(1)",
+    "Read the section heading as descriptive rather than as adding a registration-verification determination",
+    "Select only the items the regulation states the pharmacist must determine"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-19",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B-R1 blind-locked focused REAUDIT (PR #102)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 B3-B R1 admission of the one question CLAUDE-FRESH-B3B withheld on authentic_distractors. MA-Q-0288 was rebuilt so that both incorrect options are genuinely credible adjacent Massachusetts duties, MCSR verification and PMP screening, and so that the telephone-confirmation wording that admitted a second reasonable reading was removed. A separate instance CLAUDE-FRESH-B3B-R1 re-audited it: its Phase-1 blind lock preceded the records by 659 seconds, its blind answer B,C,E exactly matched the canonical key, and it returned LEGAL KEEP/YES and REALISM KEEP/PASS with all ten criteria true. Controller verification passed 16/16 process checks plus supplementary checks on blind answer, sealed-read pinning, freeze package hashes, repaired hash and official-source policy. Every sealed read was pinned to the authoritative freeze commit 5a57d975; the later freeze-branch tip, a controller ledger commit this controller wrongly appended to a published freeze branch, was excluded from the audit input and touched only the ledger file. Released from a forward-port onto current main rather than a merge, so the B3-A R1 and B3-B release states cannot roll back. The original realism failure remains preserved as historical evidence bound to the old hash. MA-Q-0028 remains quarantined.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PRESCRIPTION-VALIDITY-DETERMINATION": {
+          "content_version": 1,
+          "content_hash": "c8286ff2e98e3126820fb7a487f4adb265d6ca841c6fbc97244b72affbfca104"
+        },
+        "MA-PMP-REGISTRATION-DUTY": {
+          "content_version": 1,
+          "content_hash": "e856fd2a68c939ee3c359eaf0bf8e7c6fb1f77847f7ec55363e94c391e0614f7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
