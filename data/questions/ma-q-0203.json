@@ -1,52 +1,52 @@
 {
   "question_id": "MA-Q-0203",
-  "family_id": "B2_DRUG_COMPLIANCE_ACUTE_OXY",
+  "family_id": "B2_DRUG_MULTI_DRUG_SIII_EXCLUSION",
   "area": 4,
   "topic": "Compliance packaging",
-  "subtopic": "Acute C-II exclusion",
+  "subtopic": "Schedule III multi-drug-single-dose exclusion",
   "difficulty": 3,
   "question_type": "SBA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A patient receives a short acute oxycodone Schedule II course after dental surgery. The pharmacy notes that Massachusetts now allows Schedule II and III maintenance medications in multi-drug single-dose compliance packages. Does that policy statement alone justify adding this acute oxycodone course to the maintenance package?",
+  "stem": "A patient receives stable Schedule III buprenorphine therapy. The pharmacy proposes to combine each dose in a multi-drug single-dose pouch with the patient's other morning medications. May maintenance status justify that placement?",
   "choices": [
     {
       "id": "A",
-      "text": "Yes, because every Schedule II medication is now automatically a compliance-packaging maintenance drug."
+      "text": "Yes, because a stable maintenance regimen overrides the controlled-substance packaging restriction."
     },
     {
       "id": "B",
-      "text": "No; the relevant expansion concerns Schedule II/III maintenance medications, so the acute nature of this course must not be ignored."
+      "text": "No; Schedule III drugs may not enter a multi-drug single-dose package under 247 CMR 9.08(3)(b)."
     },
     {
       "id": "C",
-      "text": "Yes, because dental prescriptions are always treated as maintenance therapy."
+      "text": "No, because every controlled substance is prohibited from every form of compliance packaging."
     },
     {
       "id": "D",
-      "text": "No, because Schedule II drugs are still categorically prohibited from all compliance packaging."
+      "text": "Yes, if the patient signs a written consent to combine the medications."
     },
     {
       "id": "E",
-      "text": "Yes, but only if the pharmacy changes oxycodone to Schedule III on the label."
+      "text": "Yes, if the pharmacy limits the package to a 60-day supply."
     }
   ],
   "correct_choice_ids": [
     "B"
   ],
   "explanation": {
-    "core_reasoning": "The current policy's S-II/III expansion is tied to maintenance medications; an acute oxycodone course is not justified by schedule permission alone.",
+    "core_reasoning": "247 CMR 9.08(3)(b) prohibits Schedule II and III controlled substances in a multi-drug-single-dose package. Buprenorphine's Schedule III status decides this proposal; maintenance status, consent and a 60-day limit do not create an exception. The rule should not be generalized into a ban on all controlled substances or every compliance-packaging format.",
     "choice_analysis": {
-      "A": "The policy is not a blanket S-II authorization.",
-      "B": "Maintenance status is the material fork.",
-      "C": "Prescriber specialty does not create maintenance status.",
-      "D": "That overstates the current policy.",
-      "E": "A pharmacy cannot reclassify the drug."
+      "A": "Maintenance status does not override the express Schedule III prohibition.",
+      "B": "Correct: Schedule III may not be dispensed in the proposed multi-drug-single-dose pouch.",
+      "C": "This overstates both the schedules and packaging types covered by the cited clause.",
+      "D": "Patient consent cannot waive the regulatory prohibition.",
+      "E": "A duration limit does not create an exception for Schedule III."
     },
     "related_facts": [
-      "Other patient-specific packaging requirements must also be satisfied."
+      "The prohibition is specific to Schedule II/III drugs and multi-drug-single-dose packaging."
     ],
-    "mpje_trap": "Remembering the newer permission but dropping the word 'maintenance.'"
+    "mpje_trap": "Importing the policy's 60-day concept into a separate categorical controlled-substance prohibition."
   },
   "rule_ids": [
     "MA-COMPLIANCE-PACKAGING"
@@ -55,48 +55,16 @@
     "oxycodone"
   ],
   "reasoning_steps": [
-    "Identify oxycodone as Schedule II",
-    "Classify the course as acute rather than maintenance",
-    "Apply the policy's maintenance limitation"
+    "Identify buprenorphine as Schedule III",
+    "Identify the proposal as multi-drug-single-dose packaging",
+    "Reject conditions that do not create an exception to paragraph (3)(b)"
   ],
-  "verification_status": "HOLD",
-  "lifecycle_status": "REVIEW_REQUIRED",
-  "last_legal_review": "2026-08-15",
-  "audits": [
-    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
-    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
-  ],
-  "duplicate_review_status": "CLEAR",
-  "independent_audit_status": "PASSED",
-  "final_adjudication": {
-    "decision": "KEEP",
-    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
-    "date": "2026-08-17",
-    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
-    "verified_dependencies": {
-      "rules": {
-        "MA-COMPLIANCE-PACKAGING": {
-          "content_version": 1,
-          "content_hash": "ba79ae42fa51d3af30f7a4aa109233a07c127cbd83334bcd7247db0c25ef55d1"
-        }
-      },
-      "drugs": {
-        "oxycodone": {
-          "content_version": 1,
-          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
-        }
-      },
-      "blueprint": {
-        "id": "MPJE-MA-PRE2027-BLUEPRINT",
-        "content_version": 1,
-        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
-      },
-      "style_profile": {
-        "id": "MPJE-MA-PRE2027",
-        "content_version": 1,
-        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
-      }
-    }
-  },
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-20",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
   "development_fixture": true
 }

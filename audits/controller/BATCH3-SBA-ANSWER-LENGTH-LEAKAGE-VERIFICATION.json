@@ -1,0 +1,75 @@
+{
+  "record_id": "BATCH3-SBA-ANSWER-LENGTH-LEAKAGE-VERIFICATION",
+  "recorded_by": "CONTROLLER",
+  "recorded_on": "2026-08-20",
+  "issue": 91,
+  "status": "CONFIRMED_BANK_WIDE_DEBT_NOT_A_BATCH3_COMPLETION_GATE",
+  "auditor_finding": {
+    "source_audit_id": "AUDIT-CLAUDE-FRESH-B3E-V3-REALISM-INITIAL-2026-08-20",
+    "claim": "Outside B3-E, selecting the first longest SBA option chooses the keyed option 153 times in 234 questions (65.4%); mean keyed-option length is 97.9 characters against 79.1 for distractors.",
+    "existing_detector_limit": "scripts/check_structural_patterns.py detects only a per-item outlier when the correct option is at least 1.6 times the longest distractor and at least 6 tokens longer. It does not test aggregate bank-level predictability."
+  },
+  "mechanical_reproduction": {
+    "baseline_ref": "origin/main",
+    "baseline_sha": "71e09d47395229572731c92d7230ef7f41c24023",
+    "method": "Enumerate every data/questions JSON at the baseline ref, restrict to question_type SBA, take max(choices, key=len(choice.text)) using repository order as the deterministic first-max tie break, and test whether that choice id is keyed. B3-E membership is the question_hashes key set in AUDIT-CLAUDE-FRESH-B3E-V3-REALISM-INITIAL-2026-08-20.",
+    "outside_b3e": {
+      "sba_count": 234,
+      "first_longest_is_keyed": 153,
+      "rate_percent": 65.4,
+      "any_tied_longest_is_keyed": 154,
+      "mean_keyed_characters": 97.9,
+      "mean_distractor_characters": 79.1
+    },
+    "b3e": {
+      "sba_count": 19,
+      "first_longest_is_keyed": 9,
+      "rate_percent": 47.4,
+      "any_tied_longest_is_keyed": 10,
+      "mean_keyed_characters": 78.2,
+      "mean_distractor_characters": 74.5
+    },
+    "whole_bank": {
+      "sba_count": 253,
+      "first_longest_is_keyed": 162,
+      "rate_percent": 64.0,
+      "any_tied_longest_is_keyed": 164,
+      "any_tied_rate_percent": 64.8,
+      "mean_keyed_characters": 96.4,
+      "mean_distractor_characters": 78.7
+    },
+    "verdict": "CONFIRMED"
+  },
+  "minimum_repair_candidate_check": {
+    "scope": "Uncommitted seven-question minimum-deficit repair candidate derived from baseline_sha",
+    "outside_b3e": {
+      "sba_count": 234,
+      "first_longest_is_keyed": 152,
+      "rate_percent": 65.0,
+      "any_tied_longest_is_keyed": 153,
+      "any_tied_rate_percent": 65.4,
+      "mean_keyed_characters": 97.8,
+      "mean_distractor_characters": 79.0
+    },
+    "whole_bank": {
+      "sba_count": 253,
+      "first_longest_is_keyed": 161,
+      "rate_percent": 63.6,
+      "any_tied_longest_is_keyed": 163,
+      "any_tied_rate_percent": 64.4,
+      "mean_keyed_characters": 96.3,
+      "mean_distractor_characters": 78.7
+    },
+    "interpretation": "The narrow repairs remove the per-item leakage gate failure introduced in MA-Q-0203 but do not remediate the bank-wide aggregate signal. The aggregate debt therefore remains explicit rather than being misrepresented as fixed."
+  },
+  "controller_disposition": {
+    "batch3_completion_impact": "NONE_UNDER_CURRENT_GATE_SET",
+    "basis": "The controlling Batch 3 resume contract explicitly carries this as an auditor-side bank-wide debt and states that it is not a completion blocker under the current gate set. The controller may not retroactively replace that gate with a new bank-wide rewrite requirement.",
+    "follow_up_required_after_batch3": [
+      "Design and approve an aggregate SBA answer-length predictability gate with a frozen tie policy and threshold.",
+      "Measure released-only, pending-only and full-bank cohorts separately so lifecycle composition cannot mask the signal.",
+      "Repair in independently audited tranches; do not bulk-edit keys or option text without current-hash legal and realism review."
+    ],
+    "self_audit_performed": false
+  }
+}

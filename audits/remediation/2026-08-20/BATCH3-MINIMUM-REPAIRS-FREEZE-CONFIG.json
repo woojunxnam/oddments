@@ -1,0 +1,47 @@
+{
+  "tranche": "BATCH3-MINIMUM-REPAIRS",
+  "audit_scope": "REAUDIT",
+  "package_version": 1,
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "freeze_date": "2026-08-20",
+  "source_branch": "main",
+  "candidate_branch": "codex/batch3-minimum-repairs",
+  "candidate_sha": "dc72971f710056a5bdc2732809ead132b69fff4a",
+  "source_sha": "71e09d47395229572731c92d7230ef7f41c24023",
+  "auditor_type": "GPT",
+  "output_dir": "audits/remediation/2026-08-20",
+  "freeze_branch": "freeze/batch3-minimum-repairs-v1",
+  "auditor_instance": "GPT-FRESH-B3-MINIMUM-REPAIRS-V1",
+  "legal_audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+  "realism_audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+  "question_ids": [
+    "MA-Q-0169",
+    "MA-Q-0202",
+    "MA-Q-0203",
+    "MA-Q-0340",
+    "MA-Q-0348",
+    "MA-Q-0350",
+    "MA-Q-0359"
+  ],
+  "bank_size_at_candidate": 406,
+  "file_prefix": "BATCH3-MINIMUM-REPAIRS-V1",
+  "composition": {
+    "area_2": 4,
+    "area_3": 0,
+    "area_4": 3,
+    "total": 7
+  },
+  "package_note": "Exactly four Area-2 and three Area-4 repairs required to close the measured post-withdrawal Batch 3 minima. The three Area-4 questions replace a confirmed Critical packaging-law conflict; the four Area-2 questions address their prior independent-audit findings. All seven remain AUDIT_PENDING and unreleased in the candidate.",
+  "quality_gates": {
+    "repository_validation": "PASS - validate_all.py: 0 errors, 1 pre-existing MA-Q-0190 warning",
+    "full_tests": "PASS - 98 passed, 1 skipped",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "tranche_key_pattern_gate": "PASS at bank scope; B3-D remains PASS after the four Area-2 repairs",
+    "release_state": "359 RELEASED; candidate questions remain AUDIT_PENDING and do not affect release counts",
+    "repair_generator_reproduction": "PASS - clean baseline inputs reproduced all seven hashes, the rule hash and the repair report byte-identically"
+  },
+  "source_note": "Candidate is a clean descendant of GitHub main SHA 71e09d47395229572731c92d7230ef7f41c24023 and carries no audit result for this repair set."
+}

@@ -1,83 +1,83 @@
 {
   "question_id": "MA-Q-0169",
-  "family_id": "B2_COMPLIANCE_MAINTENANCE",
+  "family_id": "B2_COMPLIANCE_MULTI_DRUG_SII_III_PROHIBITION",
   "area": 4,
   "topic": "Compliance packaging",
-  "subtopic": "Schedule II/III maintenance medications",
+  "subtopic": "Schedule II/III multi-drug-single-dose prohibition",
   "difficulty": 4,
   "question_type": "SATA",
   "provenance": "GEN",
   "source_signal_ids": [],
-  "stem": "A Massachusetts pharmacy prepares multi-drug single-dose compliance packages. Which statements reflect the current Board policy concerning Schedule II and III medications? Select all that apply.",
+  "stem": "A Massachusetts pharmacy is deciding how to package several daily medications for one patient. Which statements correctly apply the Schedule II/III rule? Select all that apply.",
   "choices": [
     {
       "id": "A",
-      "text": "Any controlled medication may be placed in the package merely because the patient requests convenience"
+      "text": "A stable maintenance classification permits a Schedule II drug to share a multi-drug single-dose pouch."
     },
     {
       "id": "B",
-      "text": "A qualifying Schedule II maintenance medication may be included under the current policy"
+      "text": "A licensee may not dispense a Schedule II or III controlled substance in a multi-drug single-dose package."
     },
     {
       "id": "C",
-      "text": "A qualifying Schedule III maintenance medication may be included under the current policy"
+      "text": "That prohibition does not by its own terms ban a single-drug single-dose package."
     },
     {
       "id": "D",
-      "text": "Maintenance status is material; permission for some Schedule II/III maintenance drugs does not mean every acute Schedule II/III course belongs in the package"
+      "text": "Every form of compliance packaging is prohibited for every Schedule II or III controlled substance."
     },
     {
       "id": "E",
-      "text": "Continue to apply ordinary packaging and labeling requirements to qualifying maintenance medications placed in the package."
+      "text": "The policy phrase 'unless otherwise prohibited' preserves the regulatory Schedule II/III restriction."
     }
   ],
   "correct_choice_ids": [
     "B",
     "C",
-    "D",
     "E"
   ],
   "explanation": {
-    "core_reasoning": "Current Massachusetts policy allows Schedule II and III maintenance medications in multi-drug single-dose compliance packages, but does not create blanket permission for every controlled course.",
+    "core_reasoning": "247 CMR 9.08(3)(b) prohibits a licensee from dispensing Schedule II or III controlled substances in a multi-drug-single-dose package. Maintenance status does not create an exception. The text is specific to multi-drug-single-dose packaging, so it must not be expanded into a ban on every form of compliance packaging. Current Policy 2023-01 begins its multi-drug section with 'Unless otherwise prohibited' and therefore preserves the regulation rather than overriding it.",
     "choice_analysis": {
-      "A": "Patient preference does not replace policy conditions.",
-      "B": "The policy expansion includes S-II maintenance medication.",
-      "C": "The expansion also includes S-III maintenance medication.",
-      "D": "The policy is framed around maintenance medication.",
-      "E": "The maintenance-medication allowance does not waive other packaging and labeling requirements."
+      "A": "Maintenance status does not override 247 CMR 9.08(3)(b).",
+      "B": "Correct: this is the express Schedule II/III multi-drug-single-dose prohibition.",
+      "C": "Correct: the cited clause is drawn by packaging type and does not itself reach single-drug-single-dose packaging.",
+      "D": "This overgeneralizes a packaging-specific prohibition.",
+      "E": "Correct: the policy does not displace an otherwise applicable regulatory prohibition."
     },
     "related_facts": [
-      "Other packaging, labeling, and dispensing requirements still apply."
+      "Other compatibility, labeling, policy and procedure requirements continue to apply."
     ],
-    "mpje_trap": "Remembering an older categorical prohibition or overgeneralizing the newer permission."
+    "mpje_trap": "Turning a precise multi-drug-single-dose prohibition into either a maintenance exception or a universal packaging ban."
   },
   "rule_ids": [
     "MA-COMPLIANCE-PACKAGING"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Identify the current Schedule II/III maintenance expansion",
-    "Separate maintenance therapy from acute use"
+    "Identify the controlled-substance schedule",
+    "Identify whether the proposed package is multi-drug-single-dose",
+    "Apply the prohibition without expanding it to a different packaging type"
   ],
-  "verification_status": "HOLD",
-  "lifecycle_status": "REVIEW_REQUIRED",
-  "last_legal_review": "2026-08-15",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
   "audits": [
-    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W1-2026-08-15",
-    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W1-2026-08-15"
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
   ],
   "duplicate_review_status": "CLEAR",
   "independent_audit_status": "PASSED",
   "final_adjudication": {
     "decision": "KEEP",
-    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
-    "date": "2026-08-17",
-    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
     "verified_dependencies": {
       "rules": {
         "MA-COMPLIANCE-PACKAGING": {
-          "content_version": 1,
-          "content_hash": "ba79ae42fa51d3af30f7a4aa109233a07c127cbd83334bcd7247db0c25ef55d1"
+          "content_version": 2,
+          "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
         }
       },
       "drugs": {},

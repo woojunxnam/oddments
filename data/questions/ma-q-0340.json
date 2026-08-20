@@ -16,7 +16,7 @@
     },
     {
       "id": "B",
-      "text": "She may initiate new therapy for a referred patient's primary diagnosis."
+      "text": "She may initiate a new Schedule II therapy whenever the referral identifies the diagnosis."
     },
     {
       "id": "C",
@@ -33,37 +33,65 @@
   ],
   "correct_choice_ids": [
     "A",
-    "C"
+    "C",
+    "E"
   ],
   "explanation": {
-    "core_reasoning": "M.G.L. c. 112, s. 24B1/2(c)(5) limits retail collaborative practice to patients 18 years of age or older, to an extension by 30 days of current drug therapy PRESCRIBED BY THE SUPERVISING PHYSICIAN, and to administration of vaccines or the modification of dosages of medications prescribed by the supervising physician for the named disease states. Option E overstates the vaccine limb by dropping the disease-state and agreement conditions that frame the whole paragraph, and option D drops the requirement that the supervising physician prescribed the medication.",
+    "core_reasoning": "M.G.L. c. 112, s. 24B1/2(c)(5) limits retail collaborative practice to patients age 18 or older, permits a 30-day extension of current therapy prescribed by the supervising physician, and includes vaccine administration under the collaborative agreement. It bars Schedule II through V prescribing in the retail agreement and limits dosage modification to medications prescribed by the supervising physician for the named disease states.",
     "choice_analysis": {
-      "A": "Correct: the age floor applies in the retail setting.",
-      "B": "The retail power extends existing therapy rather than initiating new therapy.",
-      "C": "Correct: a 30 day extension of the physician's current therapy.",
-      "D": "Only medications prescribed by the supervising physician for the named conditions.",
-      "E": "The vaccine limb is conditioned by the same paragraph and is not free-standing."
+      "A": "Correct: the retail setting carries an age floor of 18.",
+      "B": "Retail collaborative prescribing may not include Schedule II through V controlled substances.",
+      "C": "Correct: the pharmacist may extend the supervising physician's current therapy by 30 days.",
+      "D": "The dosage-modification power is limited to the supervising physician's medications for the named conditions.",
+      "E": "Correct: vaccine administration is an authorized retail collaborative power under the agreement."
     },
     "related_facts": [
-      "The agreement must specifically reference each disease state being co-managed"
+      "An agreement that specifically allows initial prescriptions may authorize Schedule VI prescriptions for referred patients."
     ],
-    "mpje_trap": "Candidates read the retail powers as a general clinical mandate rather than a narrow list."
+    "mpje_trap": "Applying the disease-state qualifier to the vaccine limb or ignoring the Schedule II-V prescribing bar."
   },
   "rule_ids": [
     "MA-CDTM-RETAIL-AGE-EXTENSION"
   ],
   "drug_ids": [],
   "reasoning_steps": [
-    "Apply the age floor",
-    "Read the extension power as attaching to the physician's own prescription",
-    "Read the modification power as limited to the named disease states"
+    "Apply the retail age floor",
+    "Separate continuation and vaccine powers from controlled-substance prescribing",
+    "Keep dosage modification within the supervising physician and named-condition limits"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-20",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-RETAIL-AGE-EXTENSION": {
+          "content_version": 1,
+          "content_hash": "52cbc474226e7d53e4770c6bff1ca557fe6bb09acf53ec340a4c83ca57262bfc"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

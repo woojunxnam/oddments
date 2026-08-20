@@ -368,28 +368,27 @@ QUESTIONS = [
       "A Massachusetts pharmacist practising collaboratively in a retail drug business is reviewing what the "
       "statute permits her to do there. Which statements are correct? Select all that apply.",
       [("A", "Patients must be 18 years of age or older in that setting."),
-       ("B", "She may initiate new therapy for a referred patient's primary diagnosis."),
+       ("B", "She may initiate a new Schedule II therapy whenever the referral identifies the diagnosis."),
        ("C", "She may extend current therapy prescribed by the supervising physician by 30 days."),
        ("D", "She may modify dosages of any medication the patient is currently taking."),
        ("E", "She may administer vaccines under the terms of her agreement.")],
-      ["A", "C"],
-      "M.G.L. c. 112, s. 24B1/2(c)(5) limits retail collaborative practice to patients 18 years of age or older, to "
-      "an extension by 30 days of current drug therapy PRESCRIBED BY THE SUPERVISING PHYSICIAN, and to "
-      "administration of vaccines or the modification of dosages of medications prescribed by the supervising "
-      "physician for the named disease states. Option E overstates the vaccine limb by dropping the disease-state "
-      "and agreement conditions that frame the whole paragraph, and option D drops the requirement that the "
-      "supervising physician prescribed the medication.",
-      {"A": "Correct: the age floor applies in the retail setting.",
-       "B": "The retail power extends existing therapy rather than initiating new therapy.",
-       "C": "Correct: a 30 day extension of the physician's current therapy.",
-       "D": "Only medications prescribed by the supervising physician for the named conditions.",
-       "E": "The vaccine limb is conditioned by the same paragraph and is not free-standing."},
+      ["A", "C", "E"],
+      "M.G.L. c. 112, s. 24B1/2(c)(5) limits retail collaborative practice to patients age 18 or older, permits a "
+      "30-day extension of current therapy prescribed by the supervising physician, and includes vaccine "
+      "administration under the collaborative agreement. It bars Schedule II through V prescribing in the retail "
+      "agreement and limits dosage modification to medications prescribed by the supervising physician for the "
+      "named disease states.",
+      {"A": "Correct: the retail setting carries an age floor of 18.",
+       "B": "Retail collaborative prescribing may not include Schedule II through V controlled substances.",
+       "C": "Correct: the pharmacist may extend the supervising physician's current therapy by 30 days.",
+       "D": "The dosage-modification power is limited to the supervising physician's medications for the named conditions.",
+       "E": "Correct: vaccine administration is an authorized retail collaborative power under the agreement."},
       ["MA-CDTM-RETAIL-AGE-EXTENSION"],
-      ["Apply the age floor",
-       "Read the extension power as attaching to the physician's own prescription",
-       "Read the modification power as limited to the named disease states"],
-      ["The agreement must specifically reference each disease state being co-managed"],
-      "Candidates read the retail powers as a general clinical mandate rather than a narrow list."),
+      ["Apply the retail age floor",
+       "Separate continuation and vaccine powers from controlled-substance prescribing",
+       "Keep dosage modification within the supervising physician and named-condition limits"],
+      ["An agreement that specifically allows initial prescriptions may authorize Schedule VI prescriptions for referred patients."],
+      "Applying the disease-state qualifier to the vaccine limb or ignoring the Schedule II-V prescribing bar."),
 
     q("MA-Q-0341", "CDTM_RETAIL_AGE_AND_30_DAY_EXTENSION", "Collaborative practice", "Extension power", 4, "SBA",
       "A referred patient at a Massachusetts retail pharmacy has run out of a medication her supervising physician "
@@ -580,23 +579,22 @@ QUESTIONS = [
        ("C", "A Commissioner order authorizing the administration removes any need for a prescription."),
        ("D", "Administration must accord with the Commissioner's order as well as a practitioner instrument."),
        ("E", "A designation of the vaccine by the Commissioner is required.")],
-      ["B", "E"],
-      "105 CMR 700.003(F) permits a duly licensed health care professional to possess and administer a vaccine "
-      "DESIGNATED BY THE COMMISSIONER, PROVIDED the Commissioner determines that there are or will be insufficient "
-      "health care professionals available for timely administration AND issues an order authorizing it. Option D "
-      "misstates the pairing by treating the practitioner instrument as sufficient alongside the order without the "
-      "prior determination and designation, which are the conditions the question asks about.",
-      {"A": "The practitioner instrument alone does not open the pathway.",
+      ["B", "D", "E"],
+      "105 CMR 700.003(F)(1) requires a vaccine designated by the Commissioner, the Commissioner's determination "
+      "that qualified professionals are or will be insufficient, an authorizing Commissioner order, and "
+      "administration in accordance with that order and an order or prescription from a duly registered "
+      "practitioner. Neither instrument displaces the other conditions.",
+      {"A": "A practitioner instrument alone does not supply the designation, insufficiency determination and Commissioner order.",
        "B": "Correct: the insufficiency determination is a stated condition.",
-       "C": "The order does not displace the practitioner order or prescription.",
-       "D": "The statement omits the determination and designation that gate the pathway.",
-       "E": "Correct: the vaccine must be one the Commissioner has designated."},
+       "C": "The Commissioner order does not displace the practitioner order or prescription.",
+       "D": "Correct: administration must accord with both the Commissioner order and the practitioner instrument.",
+       "E": "Correct: the vaccine must be designated by the Commissioner."},
       ["MA-EMERGENCY-VACCINE-GATE"],
-      ["List the conditions the regulation attaches to the pathway",
-       "Separate the designation and determination from the order",
-       "Note that a practitioner instrument is still required on top"],
-      ["A student may act only under authorisation and supervision"],
-      "Candidates treat the Commissioner order as a single switch that turns the whole pathway on."),
+      ["Identify the designation and insufficiency determination",
+       "Require the Commissioner order",
+       "Keep the practitioner order or prescription as a separate cumulative condition"],
+      ["An enrolled student may act only when authorized and supervised by a licensed qualified professional."],
+      "Treating either the practitioner instrument or the Commissioner order as a single switch that opens the pathway."),
 
     q("MA-Q-0349", "EMERGENCY_VACCINE_COMMISSIONER_ORDER_GATE", "Public health", "Who may act under the order", 4, "SBA",
       "A Commissioner order authorising administration of a designated vaccine is in force in Massachusetts. A "
@@ -625,30 +623,30 @@ QUESTIONS = [
       "Candidates assume a general authorisation covers everyone the pathway names."),
 
     q("MA-Q-0350", "EMERGENCY_VACCINE_WRITTEN_PROTOCOL_SUBJECTS", "Public health", "Written protocols", 3, "SATA",
-      "A Massachusetts pharmacy operating under a Commissioner order holds training records and a written plan for "
-      "responding to adverse events. Which further protocol subjects does the regulation require it to cover? "
-      "Select all that apply.",
-      [("A", "Proper storage of vaccine."),
-       ("B", "Marketing of the vaccination service to patients."),
-       ("C", "Return of unused vaccine."),
-       ("D", "Reimbursement arrangements for administered doses."),
-       ("E", "Recordkeeping regarding administration.")],
+      "A Massachusetts pharmacy operating under a Commissioner vaccine order is revising its written protocols. "
+      "It already covers training and adverse-event response. Which proposed decisions correctly identify "
+      "additional protocol subjects that 105 CMR 700.003(F)(2)(b) expressly requires? Select all that apply.",
+      [("A", "Retain procedures for proper storage even when vaccine arrives directly from the distributor."),
+       ("B", "Add a regulation-mandated written-consent protocol before every administered dose."),
+       ("C", "Retain procedures for return of vaccine even if unused doses are uncommon."),
+       ("D", "Add a regulation-mandated rule to report every dose to the immunization registry within 24 hours."),
+       ("E", "Retain recordkeeping procedures for vaccine administration.")],
       ["A", "C", "E"],
-      "Under 105 CMR 700.003(F)(2) a person administering vaccine must receive proper training and supervision and "
-      "must comply with written protocols to ensure proper STORAGE, HANDLING AND RETURN of vaccine, RECORDKEEPING "
-      "regarding administration, RESPONSE TO ADVERSE EVENTS, and safe and appropriate administration. Return of "
-      "vaccine is the subject most often missed.",
-      {"A": "Correct: storage is named.",
-       "B": "Marketing is not among the written-protocol subjects the paragraph names.",
-       "C": "Correct: return of vaccine is named.",
-       "D": "Reimbursement is not among the protocol subjects.",
-       "E": "Correct: recordkeeping regarding administration is named."},
+      "105 CMR 700.003(F)(2)(b) requires written protocols addressing proper storage, handling and return of "
+      "vaccine, recordkeeping regarding administration, response to adverse events, and safe and appropriate "
+      "administration. The stated paragraph does not add the specific written-consent or 24-hour registry reporting "
+      "mandates used as distractors.",
+      {"A": "Correct: proper storage remains an express protocol subject.",
+       "B": "The paragraph does not impose this specific written-consent protocol requirement.",
+       "C": "Correct: return of vaccine is expressly named and is not excused by infrequent use.",
+       "D": "The paragraph does not state this specific 24-hour registry-reporting protocol requirement.",
+       "E": "Correct: recordkeeping regarding administration is expressly named."},
       ["MA-EMERGENCY-VACCINE-PROTOCOLS"],
-      ["List the protocol subjects the paragraph names",
-       "Set aside the subjects the pharmacy has already covered",
-       "Identify what is still missing"],
-      ["Proper training and supervision are required alongside the protocols"],
-      "Candidates recall storage and handling as a pair and omit return, which travels with them in the text."),
+      ["Separate the subjects already covered from the remaining protocol duties",
+       "Test each proposed subject against the express paragraph",
+       "Do not infer that operational rarity removes a named protocol subject"],
+      ["Proper training, supervision and adverse-event response also remain part of the pathway."],
+      "Dropping an express protocol subject because the pharmacy expects the relevant event to be rare."),
 
     q("MA-Q-0351", "NON_OPIATE_DIRECTIVE_PHARMACIST_STANDARD", "Opioid safety", "Voluntary non-opiate directive", 4, "SBA",
       "An electronically transmitted oxycodone prescription reaches a Massachusetts outpatient pharmacy for a "
@@ -863,24 +861,24 @@ QUESTIONS = [
        ("B", "The antipsychotic route requires the direction of a prescribing practitioner."),
        ("C", "The antipsychotic route additionally requires departmental regulations."),
        ("D", "The testosterone route rests on a prescription for that purpose."),
-       ("E", "The sexually transmitted infection route rests on a prescription for that purpose.")],
-      ["B", "C", "D", "E"],
-      "Clause (c) of the definition of Administer sets out three pharmacist routes with different gates: (i) "
-      "medications for treatment of mental health and substance use disorder, under departmental regulations AND at "
-      "the direction of a prescribing practitioner; (ii) a prescription for testosterone for gender-affirming care; "
-      "and (iii) a prescription for treatment and prevention of sexually transmitted infections or for prevention "
-      "of HIV. Only the first route carries a regulation gate and a direction requirement.",
-      {"A": "The three routes are gated differently.",
-       "B": "Correct: practitioner direction is part of the first route.",
-       "C": "Correct: the first route runs through departmental regulations as well.",
-       "D": "Correct: a prescription is the gate for testosterone.",
-       "E": "Correct: a prescription is the gate for the infection route."},
+       ("E", "The sexually transmitted-infection route additionally requires the departmental regulations that govern the mental-health route.")],
+      ["B", "C", "D"],
+      "Clause (c) of the definition of Administer creates three differently gated pharmacist routes. Mental-health "
+      "and substance-use-disorder medication administration requires both departmental regulations and direction "
+      "from a prescribing practitioner. Gender-affirming testosterone rests on a prescription for that purpose. "
+      "The sexually transmitted-infection route rests on its own prescription clause and does not import the "
+      "regulations attached to the mental-health route.",
+      {"A": "The three routes occupy different subclauses and do not share one condition set.",
+       "B": "Correct: practitioner direction is part of the mental-health route.",
+       "C": "Correct: departmental regulations are an additional gate for that route.",
+       "D": "Correct: a prescription for gender-affirming testosterone supports that route.",
+       "E": "The STI route does not import the regulations assigned to the mental-health route."},
       ["MA-ADMINISTER-STATUTORY-ROUTES"],
-      ["Split clause (c) into its three sub-clauses",
-       "Read the gate attached to each",
-       "Resist carrying a condition from one route across to another"],
-      ["Clause (b) separately covers a nurse acting at a practitioner's direction"],
-      "Candidates find one set of administration conditions and apply it to every medication a pharmacist may give."),
+      ["Split clause (c) into its three subclauses",
+       "Assign the regulation and direction gates only to the mental-health route",
+       "Keep the two prescription-based routes separate"],
+      ["The STI clause also reaches prescriptions for prevention of HIV."],
+      "Carrying the regulation gate from the mental-health subclause into the two prescription-based subclauses."),
 
     q("MA-Q-0360", "SUPERVISING_PHYSICIAN_INELIGIBILITY_ENDS_AUTHORITY", "Collaborative practice", "Physician eligibility", 4, "SBA",
       "A Massachusetts collaborating pharmacist learns informally that her supervising physician surrendered his "
