@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0326",
+  "family_id": "SUBSTANDARD_PRODUCT_UNAUTHORISED_RECIPIENT",
+  "area": 2,
+  "topic": "Professional conduct",
+  "subtopic": "Transfer of substandard product",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy clearing expired stock offers it in three directions: to a licensed reverse distributor, to a volunteer overseas aid group that is not licensed to receive drugs, and to one of its own technicians who wants it for training purposes. Which of the transfers may lawfully proceed?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "All three, because expired stock is no longer a dispensable medicine at all."
+    },
+    {
+      "id": "B",
+      "text": "All three, provided each recipient is told that the product has expired."
+    },
+    {
+      "id": "C",
+      "text": "The transfer to the licensed reverse distributor, and neither of the other two."
+    },
+    {
+      "id": "D",
+      "text": "The transfers to the reverse distributor and the aid group, but not the third."
+    },
+    {
+      "id": "E",
+      "text": "None of them, because expired stock may never leave the pharmacy's custody."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.01(12) bars a licensee from dispensing or distributing expired, outdated, defective, contaminated, counterfeit, contraband or otherwise substandard product to any person or entity who is NOT LICENSED OR LEGALLY AUTHORIZED TO RECEIVE it. The test is the recipient's authorisation, not the purpose of the transfer, so only the licensed reverse distributor qualifies.",
+    "choice_analysis": {
+      "A": "Expiry does not remove the product from the regulation; it is what brings it in.",
+      "B": "Disclosure is not a cure for an unauthorised recipient.",
+      "C": "Correct: only the licensed reverse distributor is an authorised recipient.",
+      "D": "A volunteer aid group that is not licensed cannot receive it.",
+      "E": "Transfer to an authorised recipient is permitted."
+    },
+    "related_facts": [
+      "Employment by the pharmacy does not make a technician an authorised recipient"
+    ],
+    "mpje_trap": "Candidates sort the transfers by how worthy the purpose looks rather than by the recipient's status."
+  },
+  "rule_ids": [
+    "MA-SUBSTANDARD-RECIPIENT-LIMIT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the product as within the listed substandard categories",
+    "Assess each proposed recipient for licensure or legal authorisation",
+    "Set aside the purpose of each transfer as irrelevant to the test"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SUBSTANDARD-RECIPIENT-LIMIT": {
+          "content_version": 1,
+          "content_hash": "115bfbf032babec5d6741565d7dbe2904172bf3ea66f968369f8fe7d7b55458f"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

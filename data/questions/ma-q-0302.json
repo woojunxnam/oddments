@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0302",
+  "family_id": "CDTM_PATIENT_ELIGIBILITY_AND_DUAL_RECORDING",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Patient eligibility",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts community pharmacist is asked to begin collaboratively managing a walk-in who says her physician mentioned that the pharmacy could help with her blood pressure. Nothing is in writing and the pharmacist has had no contact with the physician. Which statements are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "She is a collaborative patient because her own physician suggested it."
+    },
+    {
+      "id": "B",
+      "text": "She is a collaborative patient because she has presented herself for the service."
+    },
+    {
+      "id": "C",
+      "text": "The supervising physician must assess her and include a diagnosis on referral."
+    },
+    {
+      "id": "D",
+      "text": "She becomes a collaborative patient once the pharmacist records the conversation."
+    },
+    {
+      "id": "E",
+      "text": "In this setting she must be notified of and must consent to the services."
+    }
+  ],
+  "correct_choice_ids": [
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Statutory eligibility is fixed at s. 24B1/2(a) of M.G.L. c. 112: a patient must be REFERRED to the pharmacist by the supervising physician for the purpose of receiving collaborative services. The supervising physician shall assess the patient and include a diagnosis when referring, and in the retail drug business setting the patient shall be notified of and shall consent to the services.",
+    "choice_analysis": {
+      "A": "A remark to the patient is not a referral to the pharmacist.",
+      "B": "Presenting for a service does not make a person a collaborative patient.",
+      "C": "Correct: assessment and a diagnosis are part of the referral.",
+      "D": "A unilateral note by the pharmacist does not create the referral.",
+      "E": "Correct: notice and consent are required in the retail setting."
+    },
+    "related_facts": [
+      "Individual referral and consent must be recorded by both professionals"
+    ],
+    "mpje_trap": "Candidates treat the patient's own account of what a physician said as the referral itself."
+  },
+  "rule_ids": [
+    "MA-CDTM-PATIENT-DEFINITION"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Ask whether a referral running from physician to pharmacist exists",
+    "Check that the referral carries an assessment and a diagnosis",
+    "Apply the retail-setting notice and consent requirement"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-PATIENT-DEFINITION": {
+          "content_version": 1,
+          "content_hash": "8b010a273cefda2e095915bb275d59f0a10efd6c16f3f98f75cfc5661e36738c"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

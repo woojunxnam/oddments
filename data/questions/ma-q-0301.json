@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0301",
+  "family_id": "CDTM_EMPLOYMENT_DIRECTION_AND_PURPOSE",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Employment relationships",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts retail pharmacy proposes to engage a physician on two footings: to conduct quality assurance reviews of the pharmacists it employs who practise collaborative drug therapy management, and to enter into collaborative practice agreements with the pharmacy's patients. Which analysis is correct?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Both engagements are permitted, since the pharmacy is not itself prescribing."
+    },
+    {
+      "id": "B",
+      "text": "Both engagements are prohibited, since a retail pharmacy may not employ a physician."
+    },
+    {
+      "id": "C",
+      "text": "The agreement engagement is permitted and the review engagement is prohibited."
+    },
+    {
+      "id": "D",
+      "text": "Both are permitted if the physician's pay is unrelated to prescription volume."
+    },
+    {
+      "id": "E",
+      "text": "The review engagement is permitted and the agreement engagement is prohibited."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "M.G.L. c. 112, s. 24B1/2(e), implemented at 247 CMR 16.04(7), bars a retail pharmacy from employing a physician FOR THE PURPOSE of maintaining, establishing or entering into a collaborative practice agreement, while expressly preserving the pharmacy's ability to hire a physician or licensed medical practitioner to conduct quality assurance reviews of its collaborating pharmacists.",
+    "choice_analysis": {
+      "A": "The statute regulates the employment relationship itself, not the act of prescribing.",
+      "B": "The quality assurance engagement is expressly preserved.",
+      "C": "This reverses the statute: the agreement purpose is the prohibited one.",
+      "D": "Compensation structure is not the statutory test; purpose is.",
+      "E": "Correct: purpose decides, and only the agreement purpose is barred."
+    },
+    "related_facts": [
+      "A physician or physician group may hire pharmacists for collaborative practice"
+    ],
+    "mpje_trap": "Candidates read the provision as a blanket bar on a pharmacy employing any physician."
+  },
+  "rule_ids": [
+    "MA-CDTM-EMPLOYMENT-RELATIONSHIPS"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the purpose of each proposed engagement",
+    "Match each purpose against the statutory prohibition and the carve-out",
+    "Note that a physician group may in the reverse direction hire pharmacists"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-EMPLOYMENT-RELATIONSHIPS": {
+          "content_version": 1,
+          "content_hash": "c3b9cd83bb9a0765b9795282dba2fa0954c2924df5f9b530cc1a9f5f1382e112"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "MA-Q-0375",
+  "family_id": "B3E2_NDC_RECORDING_FALLBACK",
+  "area": 3,
+  "topic": "Dispensing requirements",
+  "subtopic": "Product identification record",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist dispenses a product distributed solely under its generic name. The package carries no NDC number. The pharmacist can see the manufacturer's name on the carton and also has the repacker's name on the invoice. What must be recorded in the computerized pharmacy system?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Either name, since the purpose is to identify the product dispensed."
+    },
+    {
+      "id": "B",
+      "text": "The repacker's name, which is the entity that supplied this pharmacy."
+    },
+    {
+      "id": "C",
+      "text": "Both names, so that the chain of supply is recorded in full."
+    },
+    {
+      "id": "D",
+      "text": "The manufacturer's name, the repacker being a later fallback."
+    },
+    {
+      "id": "E",
+      "text": "Neither name; the pharmacist records the generic name and strength."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.04(7) sets an ordered fallback. Where a drug has been distributed solely under a generic name the pharmacist records the NDC number; if none exists, the NAME OF THE MANUFACTURER; and only IF THE MANUFACTURER'S NAME IS NOT AVAILABLE, the name of the distributor, packer or repacker. The manufacturer's name being available, it is the one to record.",
+    "choice_analysis": {
+      "A": "The regulation ranks the options rather than offering a choice.",
+      "B": "The repacker is reached only when the manufacturer's name is unavailable.",
+      "C": "The regulation calls for one identifier, taken in order.",
+      "D": "Correct: the manufacturer's name is the next step after the NDC.",
+      "E": "The generic name is what triggers the requirement, not what satisfies it."
+    },
+    "related_facts": [
+      "The record is made in the computerized pharmacy system"
+    ],
+    "mpje_trap": "Candidates treat the listed identifiers as alternatives rather than as a ranked sequence."
+  },
+  "rule_ids": [
+    "MA-RX-NDC-RECORDING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm the drug was distributed solely under a generic name",
+    "Work down the fallback chain in order",
+    "Stop at the first available identifier"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-20",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}

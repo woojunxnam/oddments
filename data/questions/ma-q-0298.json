@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0298",
+  "family_id": "CDTM_AGREEMENT_COPY_VERSUS_ORIGINAL_CUSTODY",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Retrievability and the original",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist keeps the required documents on site. An investigator from the Board of Registration in Medicine asks to see them and the pharmacist answers that they are retrievable only to the Board of Registration in Pharmacy. Separately, the supervising physician has handed the pharmacist the original agreement for safekeeping. Which statement is correct?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The pharmacist is right on retrievability and right to hold the original."
+    },
+    {
+      "id": "B",
+      "text": "The pharmacist is right on retrievability but should return the original."
+    },
+    {
+      "id": "C",
+      "text": "The pharmacist is wrong on retrievability and right to hold the original."
+    },
+    {
+      "id": "D",
+      "text": "Both boards may request the documents, and the physician may pass the original on."
+    },
+    {
+      "id": "E",
+      "text": "Both boards may request them, and the original belongs in the physician's record."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 16.04(6) requires the pharmacist's copy to be readily retrievable at the request of the Board of Registration in Pharmacy AND the Board of Registration in Medicine. The same paragraph, read with 243 CMR 2.12, requires the supervising physician to maintain the original in the patient's medical record in the physician's own custody, so the original cannot be parked with the pharmacist.",
+    "choice_analysis": {
+      "A": "Both limbs are wrong.",
+      "B": "The retrievability limb reaches both boards, not one.",
+      "C": "The original does not belong with the pharmacist.",
+      "D": "The custody of the original is fixed by regulation, not by arrangement between the parties.",
+      "E": "Correct on both limbs."
+    },
+    "related_facts": [
+      "The pharmacist's copy sits in the primary practice setting"
+    ],
+    "mpje_trap": "Candidates treat custody as a matter the two professionals may allocate between themselves."
+  },
+  "rule_ids": [
+    "MA-CDTM-AGREEMENT-CUSTODY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the retrievability limb as naming two boards",
+    "Read the custody limb as placing the original in the patient's medical record",
+    "Conclude that neither point is open to private arrangement"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-AGREEMENT-CUSTODY": {
+          "content_version": 1,
+          "content_hash": "296698ea892b6c51b4f5137de21e5c7e96775fea01614599b3f84f8641d100e0"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

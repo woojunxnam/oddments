@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0295",
+  "family_id": "ANTI_CIRCUMVENTION_STANDARD",
+  "area": 2,
+  "topic": "Professional conduct",
+  "subtopic": "Circumvention of pharmacy law",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy arranges a sequence of transfers so that a patient ends up holding a supply the pharmacy could not lawfully have dispensed to him directly. Each transfer in the sequence, taken on its own, complies with the governing rules, and every step is documented. How should the arrangement be assessed?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "No violation arises, because each step in the sequence independently complies."
+    },
+    {
+      "id": "B",
+      "text": "No violation arises, because the prohibition reaches only direct circumvention."
+    },
+    {
+      "id": "C",
+      "text": "A violation arises if the Board shows the patient was harmed by the supply."
+    },
+    {
+      "id": "D",
+      "text": "A violation arises if the pharmacy gained financially from the arrangement."
+    },
+    {
+      "id": "E",
+      "text": "A violation arises, because the manner was designed to circumvent the law."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.01(2) bars a licensee from processing a prescription, dispensing a drug, device or other substance, or administering a controlled substance or vaccine in a manner intended, either directly or INDIRECTLY, to circumvent any law or regulation governing the practice of pharmacy. The standard attaches to the manner and its design, so the lawfulness of each individual step is not the question.",
+    "choice_analysis": {
+      "A": "Step-wise compliance does not answer a prohibition aimed at the design of the whole.",
+      "B": "Indirect circumvention is expressly within the prohibition.",
+      "C": "Patient harm is not an element of the standard.",
+      "D": "Financial gain is not an element of the standard.",
+      "E": "Correct: the manner was intended to reach indirectly what could not be done directly."
+    },
+    "related_facts": [
+      "The prohibition covers processing, dispensing and administering alike"
+    ],
+    "mpje_trap": "Candidates audit each step for legality and conclude that a chain of lawful steps must itself be lawful."
+  },
+  "rule_ids": [
+    "MA-CONDUCT-ANTI-CIRCUMVENTION"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify what the pharmacy could not lawfully do directly",
+    "Ask whether the arrangement was designed to reach that result",
+    "Apply the indirect limb of 247 CMR 9.01(2) to the manner rather than to each step"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CONDUCT-ANTI-CIRCUMVENTION": {
+          "content_version": 1,
+          "content_hash": "c0d54e9b61e75f209c5f79644f706b6c43d4c41efd73b46a072424483cd9760b"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

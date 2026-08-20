@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0327",
+  "family_id": "USP_CURRENCY_AND_BOARD_DISPLACEMENT",
+  "area": 2,
+  "topic": "Professional practice standards",
+  "subtopic": "Governing standard",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy follows the edition of a United States Pharmacopeia chapter that has sat in its binder for years, on a practice point the Board has never regulated. On a second point it follows the current USP chapter although a Board regulation addresses that point differently. Which statements are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The first practice is compliant, because a genuine USP chapter was followed."
+    },
+    {
+      "id": "B",
+      "text": "The second practice is compliant, because USP is the recognised professional standard."
+    },
+    {
+      "id": "C",
+      "text": "Neither point is governed by USP, since the Board has not adopted those chapters."
+    },
+    {
+      "id": "D",
+      "text": "The first practice fails, because the most current USP chapter is the one that governs."
+    },
+    {
+      "id": "E",
+      "text": "The second practice fails, because the Board regulation displaces USP on that point."
+    }
+  ],
+  "correct_choice_ids": [
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.01(3) provides that UNLESS OTHERWISE REGULATED BY THE BOARD, a licensee shall adhere to the MOST CURRENT standards established by each chapter of the United States Pharmacopeia. The currency limb defeats the first practice and the opening qualification defeats the second.",
+    "choice_analysis": {
+      "A": "A superseded edition is not the most current standard.",
+      "B": "The Board regulation displaces USP where the Board has regulated the point.",
+      "C": "The regulation makes USP binding where the Board is silent.",
+      "D": "Correct: currency is required.",
+      "E": "Correct: a Board regulation on the point takes precedence."
+    },
+    "related_facts": [
+      "Adherence is mandatory rather than advisory where the Board is silent"
+    ],
+    "mpje_trap": "Candidates treat USP as either always binding or always advisory, instead of conditional on Board silence."
+  },
+  "rule_ids": [
+    "MA-USP-CURRENCY-DISPLACEMENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Ask, for each point, whether the Board has regulated it",
+    "Where the Board is silent, require the most current USP chapter",
+    "Where the Board has regulated, apply the Board regulation"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-USP-CURRENCY-DISPLACEMENT": {
+          "content_version": 1,
+          "content_hash": "a0c2156ea8b56e0f1d7eb5590cef688d186685379daa1d415a22cb542f222a36"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}
