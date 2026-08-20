@@ -1,0 +1,175 @@
+{
+  "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-B3-MINIMUM-REPAIRS-V1",
+  "audit_date": "2026-08-20",
+  "audit_scope": "REAUDIT",
+  "review_type": "REALISM_REVIEW",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "style_profile": {
+    "profile_id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  },
+  "question_ids": [
+    "MA-Q-0169",
+    "MA-Q-0202",
+    "MA-Q-0203",
+    "MA-Q-0340",
+    "MA-Q-0348",
+    "MA-Q-0350",
+    "MA-Q-0359"
+  ],
+  "question_hashes": {
+    "MA-Q-0169": "51aff0d420fbd6c6ce19fc3caeaa50ac4b0a5b4f85a996e11aa7e48f40363a72",
+    "MA-Q-0202": "4da17f404c67b1551065b818d8829d91cb81773e6d9ff056c44483613b027bdd",
+    "MA-Q-0203": "107a7f63b2d39141ecd1a17da6cbe8ecf704f059aa7b2aad2b956e08d9f79488",
+    "MA-Q-0340": "5e7f32103eb904bd6a33c0594ed5d389a1d5c107a0f3a4928563fe207f63fb4b",
+    "MA-Q-0348": "049b79cf22e587663c0c4feed378295785b5df77e5c8fb87c98964eecfef8b03",
+    "MA-Q-0350": "d0a069e8e1fc13c6867afb9128f2276d50aa45fd904374aa608cef45829ed0e9",
+    "MA-Q-0359": "9c5b2ca17af3b73ff7ce3816c232d9a7be6fc64320aa655e34c3f85c0ef3e286"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0169",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 canonical records. Automated normalized stem+choice word unigram/bigram TF-IDF cosine found MA-Q-0202 (0.438458), MA-Q-0203 (0.360200), and MA-Q-0135 (0.172380) as the closest records; token-trigram Jaccard for the first two was 0.059140 and 0.055249. Manual review confirms distinct emphasis: this item tests the exact regulatory prohibition, its packaging-type boundary, and the Board policy's preserving qualification, whereas MA-Q-0202 is a named-drug placement matrix and MA-Q-0203 is a single-drug application. The maintenance-exception distractor is especially authentic because superseded policy history makes it plausible without making it current law."
+    },
+    {
+      "Question_ID": "MA-Q-0202",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 canonical records. The closest automated matches were MA-Q-0203 (TF-IDF cosine 0.444334; token-trigram Jaccard 0.086022), MA-Q-0169 (0.438458; 0.059140), and MA-Q-0135 (0.179777; 0.016393). Manual comparison finds the matrix materially distinct: candidates must jointly classify five drug schedules and two packaging types while respecting the stem's reservation of other requirements. The choices model a plausible compliance-packaging redesign and the Schedule IV and separate-package options prevent the item from collapsing into schedule flashcard recall. MA-Q-0203 is narrower and is separately failed below for redundancy and a dependency defect; that does not erase this matrix's broader decision structure."
+    },
+    {
+      "Question_ID": "MA-Q-0203",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Medium",
+      "Realism_Verdict": "FAIL",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": false,
+        "distinct_from_bank": false,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "FAIL under the all-criteria rule. Full-bank comparison covered all 406 records. The closest matches were MA-Q-0202 (TF-IDF cosine 0.444334; token-trigram Jaccard 0.086022), MA-Q-0169 (0.360200; 0.055249), and MA-Q-0393 (0.140115; 0.013889). Manual review is more dispositive than the moderate lexical score: MA-Q-0202 option A already presents the same stable Schedule III buprenorphine, same multi-drug morning pouch, and same false maintenance-exception proposition, so this SBA merely expands one choice from an existing SATA rather than testing a distinct decision. It also FAILS appropriate_drug_context at the canonical dependency level because drug_ids is oxycodone while every visible substantive field concerns buprenorphine. A major rewrite must introduce a materially different legal application, and the drug dependency must match the rewritten item; a key-only change cannot cure these defects."
+    },
+    {
+      "Question_ID": "MA-Q-0340",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0337 (TF-IDF cosine 0.186265), MA-Q-0321 (0.179332), and same-family MA-Q-0341 (0.164661); manual family review also examined MA-Q-0082, MA-Q-0083, and MA-Q-0084. Those items isolate discontinuation authority, a 30-day continuation, referral scope, the controlled-substance bar, or Schedule VI follow-through. This item remains distinct because it requires a set-level separation of the retail age floor, continuation, dosage-modification limits, controlled-substance prescribing, and vaccine power. The repaired Schedule II initiation distractor and the 'any medication' overbreadth are both authentic."
+    },
+    {
+      "Question_ID": "MA-Q-0348",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0344 (TF-IDF cosine 0.181325; token-trigram Jaccard 0.005376), same-family MA-Q-0349 (0.161410; 0.005495), and MA-Q-0350 (0.099121; 0.016575). Manual review confirms separate legal decisions: MA-Q-0344 tests an independent collaborative-practice route, MA-Q-0349 isolates student supervision, and MA-Q-0350 tests protocol subjects. This item distinctly requires cumulative-gate reasoning and now keys the practitioner-instrument condition correctly; the 'alone' and 'removes any need' distractors are plausible single-switch errors."
+    },
+    {
+      "Question_ID": "MA-Q-0350",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0344 (TF-IDF cosine 0.134473), MA-Q-0348 (0.099121; token-trigram Jaccard 0.016575), and MA-Q-0393 (0.070457). Manual review also checked same-cluster MA-Q-0349 and list-style MA-Q-0284. The repaired written-consent and 24-hour registry distractors are realistic clinical-governance duties rather than self-eliminating commercial topics, so a candidate must distinguish the paragraph's express protocol list from plausible adjacent obligations. The scenario remains distinct from the Commissioner gate and student-supervision items."
+    },
+    {
+      "Question_ID": "MA-Q-0359",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Realism_Verdict": "PASS",
+      "Reviewed_Date": "2026-08-20",
+      "Criteria": {
+        "jurisprudence_reasoning": true,
+        "practice_plausibility": true,
+        "authentic_distractors": true,
+        "wording_not_guessable": true,
+        "reasoning_not_trivia": true,
+        "natural_rule_combination": true,
+        "appropriate_drug_context": true,
+        "distinct_from_bank": true,
+        "not_schedule_flashcard": true,
+        "public_style_without_copying": true
+      },
+      "Notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0328 (TF-IDF cosine 0.159249; token-trigram Jaccard 0.073171), MA-Q-0331 (0.146543; 0.054878), and MA-Q-0145 (0.146500; 0.051429); manual review also examined MA-Q-0174 and MA-Q-0171. Those questions test eligible products, injection route, category membership, or the testosterone indication. This item distinctly tests the statutory architecture and allocation of different gates across three clauses. The repaired STI option is a plausible but false importation of the mental-health regulation gate, preventing the key from being inferred merely by rejecting one blanket statement."
+    }
+  ]
+}
