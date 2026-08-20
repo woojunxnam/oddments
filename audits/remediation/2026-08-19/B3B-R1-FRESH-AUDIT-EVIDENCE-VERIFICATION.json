@@ -1,0 +1,199 @@
+{
+  "report_type": "TRANCHE_FRESH_AUDIT_EVIDENCE_VERIFICATION",
+  "tranche": "BATCH3-B3B-R1",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "audit_pr": 102,
+  "audit_branch": "audit/batch3-b3b-r1-claude-fresh-b3b-r1",
+  "audit_base_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+  "audit_head_sha": "30ccc69b070445f53632868325d9965e80b4b0d7",
+  "phase1_lock_commit": "b78ba8ae3b78852a90c92983c5f9b48084db407e",
+  "phase1_lock_blob": "f9729acd4348ce337251ab73e50f1680fc131315",
+  "represented_candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+  "author_instance": "CLAUDE-CODE-CONTROLLER-ISSUE-83",
+  "author_is_not_auditor": true,
+  "process_status": "PASS",
+  "release_eligible": [
+    "MA-Q-0288"
+  ],
+  "release_blocked": {},
+  "checks": {
+    "01_auditor_identity": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "REAUDIT",
+          "review_type": "LEGAL_VERIFICATION"
+        },
+        "AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "REAUDIT",
+          "review_type": "REALISM_REVIEW"
+        }
+      }
+    },
+    "02_lock_precedes_and_is_immutable": {
+      "status": "PASS",
+      "detail": {
+        "lock_commit": "b78ba8ae3b78852a90c92983c5f9b48084db407e",
+        "lock_commit_files": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3B-R1-PHASE1-BLIND-LOCK.json"
+        ],
+        "records_commit": "30ccc69b070445f53632868325d9965e80b4b0d7",
+        "records_commit_files": [
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19.json"
+        ],
+        "lock_is_ancestor_of_records": true,
+        "lock_epoch": 1787185121,
+        "records_epoch": 1787185780,
+        "seconds_between": 659,
+        "lock_blob_at_lock_commit": "f9729acd4348ce337251ab73e50f1680fc131315",
+        "lock_blob_at_head": "f9729acd4348ce337251ab73e50f1680fc131315"
+      }
+    },
+    "03_no_canonical_or_tooling_edits": {
+      "status": "PASS",
+      "detail": {
+        "changed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3B-R1-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19.json"
+        ],
+        "allowed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3B-R1-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19.json"
+        ]
+      }
+    },
+    "04_audit_base_is_the_candidate": {
+      "status": "PASS",
+      "detail": {
+        "merge_base": "78a107f402e33a40dc210635822d8a8314359a9b",
+        "candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+        "audit_base_sha": "78a107f402e33a40dc210635822d8a8314359a9b"
+      }
+    },
+    "05_records_bound_to_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "missing_questions": [],
+        "matches": {
+          "AUDIT-CLAUDE-FRESH-B3B-R1-LEGAL-REAUDIT-2026-08-19": true,
+          "AUDIT-CLAUDE-FRESH-B3B-R1-REALISM-REAUDIT-2026-08-19": true
+        }
+      }
+    },
+    "06_no_substantive_drift_since_candidate": {
+      "status": "PASS",
+      "detail": "identical to 78a107f402e3"
+    },
+    "07_full_coverage_no_extras": {
+      "status": "PASS",
+      "detail": {
+        "legal_count": 1,
+        "realism_count": 1,
+        "legal_missing": [],
+        "realism_missing": [],
+        "legal_extra": [],
+        "realism_extra": []
+      }
+    },
+    "08_legal_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "09_realism_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "10_realism_style_profile_current": {
+      "status": "PASS",
+      "detail": {
+        "record": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        },
+        "current": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        }
+      }
+    },
+    "11_full_bank_comparison_evidence": {
+      "status": "PASS",
+      "detail": {
+        "bank_size_actual": 294,
+        "bank_size_expected": 294,
+        "defects": "none"
+      }
+    },
+    "12_blind_lock_integrity": {
+      "status": "PASS",
+      "detail": {
+        "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+        "contamination_status": "CLEAN",
+        "blind_package_blob": "198dd787a5adff8d5f29564ad2fcac7c184e90d0",
+        "represented_candidate_sha": "78a107f402e33a40dc210635822d8a8314359a9b",
+        "locked_question_count": 1,
+        "blind_matches_key_count": 1,
+        "blind_mismatches": [],
+        "not_inspected_flags": {
+          "canonical_key_inspected_before_lock": false,
+          "canonical_explanation_inspected_before_lock": false,
+          "canonical_rules_inspected_before_lock": false,
+          "author_reasoning_inspected_before_lock": false
+        },
+        "flag_source_paths": {
+          "canonical_key_inspected_before_lock": "contamination_flags.canonical_question_file_inspected_before_lock",
+          "canonical_explanation_inspected_before_lock": "contamination_flags.canonical_question_file_inspected_before_lock",
+          "canonical_rules_inspected_before_lock": "contamination_flags.rules_files_inspected_before_lock",
+          "author_reasoning_inspected_before_lock": "contamination_flags.authored_or_repaired_this_question"
+        },
+        "flags_not_found": [],
+        "declared_question_count": null,
+        "freeze_head_expected": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+        "freeze_head_observed": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+        "blind_package_sha256": "d403473a4f65ce71cdec04060cbbe3fcfb12884d489090d9bbd22da5af6132d7"
+      }
+    },
+    "13_blind_package_matches_published": {
+      "status": "PASS",
+      "detail": {
+        "resolved_against": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+        "published": "198dd787a5adff8d5f29564ad2fcac7c184e90d0",
+        "locked": "198dd787a5adff8d5f29564ad2fcac7c184e90d0",
+        "same_blob_at_current_branch_tip": true
+      }
+    },
+    "14_no_uncommitted_audit_edits": {
+      "status": "PASS",
+      "detail": "clean"
+    },
+    "15_release_partition_computed": {
+      "status": "PASS",
+      "detail": {
+        "eligible_count": 1,
+        "blocked_count": 0,
+        "blocked": {}
+      }
+    },
+    "16_no_hidden_current_hash_failure_on_eligible": {
+      "status": "PASS",
+      "detail": "none"
+    }
+  },
+  "failures": []
+}

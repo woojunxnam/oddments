@@ -77,3 +77,30 @@ Legal accuracy와 분리해 다음을 평가합니다.
 Current-hash audit가 ambiguity, `MINOR_EDIT`, `MAJOR_REWRITE`, `DELETE`, wrong answer 또는 realism `FAIL`을 기록하면 unchanged question을 다른 opinion으로 override하여 release하지 않습니다. Editor는 추가 research나 optional second opinion을 요청할 수 있지만, release하려면 defect를 해결한 current content에 대한 유효한 fresh audit evidence가 필요합니다.
 
 Rigorous `DELETE`는 audit 성공이며 억지로 positive result를 만들지 않습니다.
+
+## Freeze immutability
+
+A published freeze branch is immutable. Once the freeze commit is published:
+
+- do not append controller-ledger commits to it;
+- do not append planning, progress or provenance commits to it;
+- do not advance it for any unrelated bookkeeping.
+
+Controller ledger updates belong on controller or integration branches, never on a freeze
+branch.
+
+The authority for every sealed read is the exact published freeze **commit SHA**, not the
+branch ref. An auditor handoff must name that SHA and every sealed read must use:
+
+    git show <exact-freeze-sha>:<path>
+
+Do not rely on `origin/freeze/<branch>` still pointing at the same tip later.
+
+`scripts/verify_tranche_audit.py` enforces this: when a verification config supplies
+`freeze_head_sha`, the blind package is resolved against that commit rather than the branch,
+and the report records whether the current branch tip still carries the same blob.
+
+This rule is prospective. Existing freeze history is preserved as it happened and is not
+rewritten or force-moved backward. Where a freeze branch has already advanced for
+non-semantic bookkeeping, the advance is classified in the audit evidence and the sealed
+reads are pinned to the original freeze commit.

@@ -73,6 +73,52 @@ def commit_epoch(sha: str) -> int:
     return int(git("show", "-s", "--format=%ct", sha))
 
 
+# Different fresh-auditor sessions have written the Phase-1 lock with different but equally
+# valid field names for the same content. Accept the known shapes and fail closed on anything
+# else, rather than letting a shape mismatch look like a missing lock.
+LOCK_ANSWER_CONTAINERS = ("questions", "answers", "blind_answers")
+LOCK_CHOICE_FIELDS = ("selected_choice_ids", "blind_selected_choice_ids", "selected_choices")
+
+
+def lock_field(lock, *names):
+    """Find a lock field by name at any nesting depth.
+
+    Fresh auditor sessions have grouped the same attestations differently: flat at the top
+    level, or nested under contamination_flags / audit_input_boundary / boundary_verification.
+    Search the whole object so a richer lock is not mistaken for a missing attestation.
+    Returns (value, path) or (None, None) when genuinely absent.
+    """
+    stack = [(lock, "")]
+    while stack:
+        node, prefix = stack.pop(0)
+        if not isinstance(node, dict):
+            continue
+        for key, value in node.items():
+            here = f"{prefix}.{key}" if prefix else key
+            if key in names and not isinstance(value, (dict, list)):
+                return value, here
+            if isinstance(value, dict):
+                stack.append((value, here))
+    return None, None
+
+
+def extract_blind_answers(lock: dict) -> dict:
+    container = next((key for key in LOCK_ANSWER_CONTAINERS if isinstance(lock.get(key), list)), None)
+    if container is None:
+        raise SystemExit(
+            f"Phase-1 lock has no recognized answer container; expected one of {LOCK_ANSWER_CONTAINERS}, "
+            f"found keys {sorted(lock)}"
+        )
+    items = lock[container]
+    field = next((f for f in LOCK_CHOICE_FIELDS if items and f in items[0]), None)
+    if field is None:
+        raise SystemExit(
+            f"Phase-1 lock '{container}' entries carry no recognized choice field; expected one of "
+            f"{LOCK_CHOICE_FIELDS}, found keys {sorted(items[0]) if items else '<empty>'}"
+        )
+    return {item["question_id"]: item[field] for item in items}
+
+
 def run(cfg: dict) -> tuple[Check, dict]:
     check = Check()
     qids = cfg["question_ids"]
@@ -257,25 +303,56 @@ def run(cfg: dict) -> tuple[Check, dict]:
 
     # --- 12. blind lock integrity, and blind answers vs canonical keys -------
     lock = show(cfg["audit_head_sha"], lock_path)
-    blind = {item["question_id"]: item["selected_choice_ids"] for item in lock["questions"]}
+    blind = extract_blind_answers(lock)
     canonical = {qid: questions[qid]["correct_choice_ids"] for qid in qids if qid in questions}
     matches = {qid: sorted(blind.get(qid, [])) == sorted(canonical.get(qid, [])) for qid in qids}
-    flags = {key: lock.get(key) for key in (
-        "canonical_key_inspected_before_lock",
-        "canonical_explanation_inspected_before_lock",
-        "canonical_rules_inspected_before_lock",
-        "author_reasoning_inspected_before_lock",
-    )}
+    FLAG_ALIASES = [
+        ("canonical_key_inspected_before_lock", "canonical_question_file_inspected_before_lock",
+         "canonical_question_files_inspected_before_lock"),
+        # An explanation lives inside the canonical question file, so a lock attesting that the
+        # canonical file was not inspected necessarily attests the explanation was not either.
+        ("canonical_explanation_inspected_before_lock",
+         "canonical_question_file_inspected_before_lock",
+         "canonical_question_files_inspected_before_lock"),
+        ("canonical_rules_inspected_before_lock", "rules_files_inspected_before_lock"),
+        ("author_reasoning_inspected_before_lock", "author_or_repair_reasoning_inspected_before_lock",
+         "repair_scripts_inspected_before_lock", "authored_or_repaired_this_question"),
+    ]
+    flags, flag_paths, missing_flags = {}, {}, []
+    for group in FLAG_ALIASES:
+        value, path = lock_field(lock, *group)
+        if value is None:
+            missing_flags.append(group[0])
+        flags[group[0]] = value
+        flag_paths[group[0]] = path
     lock_state = {
         "auditor_instance": lock.get("auditor_instance"),
-        "contamination_status": lock.get("contamination_status"),
-        "blind_package_blob": lock.get("blind_package_blob"),
-        "represented_candidate_sha": lock.get("represented_candidate_sha"),
+        "contamination_status": lock_field(lock, "contamination_status")[0],
+        "blind_package_blob": lock_field(lock, "blind_package_blob", "blind_package_blob_at_frozen_commit")[0],
+        "represented_candidate_sha": lock_field(lock, "represented_candidate_sha")[0],
         "locked_question_count": len(blind),
         "blind_matches_key_count": sum(matches.values()),
         "blind_mismatches": sorted(q for q, ok in matches.items() if not ok),
         "not_inspected_flags": flags,
+        "flag_source_paths": flag_paths,
+        "flags_not_found": missing_flags,
+        "declared_question_count": lock_field(lock, "question_count")[0],
+        "freeze_head_expected": lock_field(lock, "freeze_head_expected", "frozen_content_commit", "sealed_reads_pinned_to")[0],
+        "freeze_head_observed": lock_field(lock, "freeze_head_observed", "sealed_reads_pinned_to", "frozen_content_commit")[0],
+        "blind_package_sha256": lock_field(lock, "blind_package_sha256", "blind_package_lf_sha256")[0],
     }
+    # Optional lock fields are not required, but where a lock declares one it must be correct.
+    optional_ok = (
+        (lock_state["declared_question_count"] in (None, len(qids)))
+        and (
+            lock_state["freeze_head_expected"] is None
+            or lock_state["freeze_head_expected"] == lock_state["freeze_head_observed"] == cfg.get("freeze_head_sha", lock_state["freeze_head_expected"])
+        )
+        and (
+            lock_state["blind_package_sha256"] is None
+            or lock_state["blind_package_sha256"] == cfg.get("blind_sha256", lock_state["blind_package_sha256"])
+        )
+    )
     check(
         "12_blind_lock_integrity",
         lock_state["auditor_instance"] == cfg["auditor_instance"]
@@ -283,14 +360,22 @@ def run(cfg: dict) -> tuple[Check, dict]:
         and lock_state["blind_package_blob"] == cfg["blind_blob"]
         and lock_state["represented_candidate_sha"] == cfg["candidate_sha"]
         and lock_state["locked_question_count"] == len(qids)
-        and not any(flags.values()),
+        and not any(flags.values())
+        and not missing_flags
+        and optional_ok,
         lock_state,
     )
 
     # --- 13. the blind package locked against is the one published ----------
-    published = git("rev-parse", f"origin/{cfg['freeze_branch']}:{cfg['blind_path']}")
+    # Resolve against the exact published freeze COMMIT when the config names one. A freeze
+    # branch tip can advance for non-semantic bookkeeping, so the commit is the authority and
+    # the branch ref is not. Falls back to the branch only when no commit is pinned.
+    freeze_ref = cfg.get("freeze_head_sha") or f"origin/{cfg['freeze_branch']}"
+    published = git("rev-parse", f"{freeze_ref}:{cfg['blind_path']}")
+    tip = git("rev-parse", f"origin/{cfg['freeze_branch']}:{cfg['blind_path']}")
     check("13_blind_package_matches_published", published == cfg["blind_blob"],
-          {"published": published, "locked": cfg["blind_blob"]})
+          {"resolved_against": freeze_ref, "published": published, "locked": cfg["blind_blob"],
+           "same_blob_at_current_branch_tip": tip == published})
 
     # --- 14. no worktree divergence from the committed audit records --------
     divergence = git("diff", "--name-only", cfg["audit_head_sha"], "--", "data/audits").splitlines()
