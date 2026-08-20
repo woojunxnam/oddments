@@ -9,7 +9,7 @@
   },
   "read_this_first": [
     "GitHub is authoritative. If this file and live git state disagree, git state wins.",
-    "Verify canonical.main_sha against live origin/main before trusting any number below.",
+    "Verify canonical.main_sha against live origin/main. If they differ, do NOT assume the numbers are stale: run canonical.staleness_test first. Only a change under data/ invalidates them.",
     "No release was performed after main_sha. B3-D v3 and B3-F carry qualifying evidence that is NOT yet released."
   ],
   "canonical": {
@@ -35,7 +35,8 @@
       "REVIEW_REQUIRED": 1
     },
     "highest_question_id": "MA-Q-0406",
-    "next_free_question_id": "MA-Q-0407"
+    "next_free_question_id": "MA-Q-0407",
+    "staleness_test": "main_sha is the commit these counts were measured from. This handoff branch is merged to main immediately after, which advances main without touching data/. To decide whether the counts still hold, run:  git diff --name-only 79e14172d339fa1211e0eca849a72c38cc79f064 origin/main -- data/  . Empty output means no canonical question, rule or matrix record changed and every count in this file is still exact. Non-empty output means recompute from live main before acting."
   },
   "blueprint": {
     "total_minimum": 360,

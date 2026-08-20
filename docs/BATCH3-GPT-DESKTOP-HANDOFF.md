@@ -5,7 +5,10 @@
 > **GitHub is authoritative.** The machine-readable handoff at
 > [`audits/controller/BATCH3-GPT-DESKTOP-HANDOFF.json`](../audits/controller/BATCH3-GPT-DESKTOP-HANDOFF.json)
 > is the canonical record. This page is a summary of it. If this page and git state disagree, **git state wins**.
-> Verify `main_sha` against live `origin/main` before trusting any number here.
+> Verify `main_sha` against live `origin/main`. If it has advanced, that alone does not make these
+> numbers stale — this handoff branch is merged to main right after it is written. Run
+> `git diff --name-only 79e14172d339fa1211e0eca849a72c38cc79f064 origin/main -- data/`; empty output
+> means no canonical record changed and every count below is still exact.
 
 ---
 
