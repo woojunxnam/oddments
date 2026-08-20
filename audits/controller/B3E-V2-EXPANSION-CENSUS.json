@@ -1,0 +1,103 @@
+{
+  "report_type": "B3E_V2_EXPANSION_CENSUS",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "status": "ESTABLISHED_BEFORE_AUTHORING",
+
+  "purpose": "B3-E becomes the final resilience tranche and uses all thirty identifiers Issue #91 reserved for it, MA-Q-0361 through MA-Q-0390. Nine already exist. This census establishes the twenty-one further propositions BEFORE any of them is authored, so that no question is manufactured merely to fill a count.",
+
+  "allocation": {
+    "existing": {"MA-Q-0361_to_0369": 9, "area_4": 9},
+    "new_21": {"area_2": 4, "area_3": 10, "area_4": 7},
+    "b3e_v2_total": {"area_2": 4, "area_3": 10, "area_4": 16, "total": 30}
+  },
+
+  "method": "Identical to the Area-2 census discipline. Every proposition read verbatim from the current official publication on 2026-08-20. Novelty tested mechanically by regular-expression probe over a text blob built from all 360 question records joined with the fields of every rule each cites. Area placement decided by the bank's settled taxonomy, never by argument.",
+
+  "area_2": {
+    "approach": "No new Area-2 family is created. Four families already approved in AREA2-SOURCE-CENSUS.json carry a free final-bank slot under the existing cap of 2, and each supports a second question on a materially different application. Fifteen such slots exist; four are used.",
+    "families": [
+      {"family_id": "PATIENT_PROFILE_REASONABLE_EFFORT_STANDARD", "authority": "247 CMR 9.16(7) and 9.16(8)",
+       "slot_1_tests": "the reasonable-effort standard governing the profile CONTENT duty",
+       "slot_2_tests": "the system duty that is NOT effort-based, namely immediate retrieval of previously dispensed drugs at the time the prescription is presented, together with the institutional sterile compounding carve-out",
+       "separation": "different actor (the computerized system rather than the pharmacist) and exception versus general rule"},
+      {"family_id": "CPA_VALID_CONSTITUTION_AND_BIENNIAL_CURRENCY", "authority": "M.G.L. c. 112, s. 24B1/2(a)",
+       "slot_1_tests": "what makes the agreement validly CONSTITUTED",
+       "slot_2_tests": "the CURRENCY limb: an agreement subject to review and renewal on a biennial basis, and what follows when that review has not happened",
+       "separation": "initial eligibility versus continuing validity"},
+      {"family_id": "COUNSELLING_OFFER_METHOD_AND_CONTAINER_LABEL", "authority": "M.G.L. c. 94C, s. 21A, second paragraph",
+       "slot_1_tests": "the remote-delivery container-label consequence",
+       "slot_2_tests": "the permitted METHODS of the offer itself, face to face by the pharmacist or a designee or by telephone, and the exception where the patient's needs or availability require an alternative method",
+       "separation": "different trigger and a different legally meaningful condition"},
+      {"family_id": "PROSPECTIVE_DRUG_REVIEW_MANDATORY_VS_MENU", "authority": "M.G.L. c. 94C, s. 21A, final paragraph",
+       "slot_1_tests": "the mandatory review against the permissive screening menu",
+       "slot_2_tests": "the setting carve-out: the section does not apply to a drug dispensed to an inpatient at a hospital or nursing home, except to the extent required by federal regulations under 42 USC 1396r-8",
+       "separation": "exception versus general rule, and a different setting where the law changes the decision"}
+    ]
+  },
+
+  "area_3": {
+    "constraint_honoured": "The instruction forbids resurrecting the repetitive Schedule-IV refill-number matrix that caused the S2 realism failures. NONE of these ten is a refill-count or quantity-arithmetic item. They are dispensing DECISION paths.",
+    "novelty": "All ten returned ZERO hits on the whole-bank probe, except where noted.",
+    "propositions": [
+      {"family": "B3E2_LABEL_PRINTING_AND_EMERGENCY", "authority": "247 CMR 9.04(3)", "probe_hits": 0,
+       "proposition": "The label affixed to a prescription drug container must be clearly printed by a computerized pharmacy system; a legibly handwritten or typed label is permitted only during an emergency period of printing or equipment failure."},
+      {"family": "B3E2_NDC_RECORDING_FALLBACK", "authority": "247 CMR 9.04(7)", "probe_hits": 0,
+       "proposition": "Where a prescription drug has been distributed solely under a generic name the dispensing pharmacist records the NDC number; if none exists the manufacturer's name, and if that is unavailable the distributor, packer or repacker."},
+      {"family": "B3E2_TELEPHONE_NEW_RX_RECEIPT", "authority": "247 CMR 9.04(8)", "probe_hits": 0,
+       "proposition": "A pharmacy intern, or a CERTIFIED pharmacy technician who has the approval of the pharmacist on duty, may receive NEW prescriptions over the telephone from a prescriber or authorized agent."},
+      {"family": "B3E2_WITHIN_DATE_DAY_ONE", "authority": "247 CMR 9.04(10)", "probe_hits": 0,
+       "proposition": "To determine whether a prescription is within date, a pharmacist shall count the day AFTER the prescription was written as day one."},
+      {"family": "B3E2_OFFSITE_PROCESSING_VERIFICATION", "authority": "247 CMR 9.04(11)", "probe_hits": 0,
+       "proposition": "A pharmacy may not dispense any medication processed outside its licensed premises unless that process was verified by a Massachusetts licensed pharmacist or performed in a pharmacy licensed by the Board."},
+      {"family": "B3E2_CUSTOMER_IDENTIFIER_HARDSHIP", "authority": "247 CMR 9.04(14)", "probe_hits": 0,
+       "proposition": "A Customer Identifier must be presented by the ultimate user or agent for a Schedule II through V dispensing or an additional drug, unless the licensee has reason to believe refusal would cause serious hardship AND documents the reason AND the recipient prints name and address and signs on the reverse of the prescription or in a log."},
+      {"family": "B3E2_PHARMACIST_CONTAINER_LABEL", "authority": "M.G.L. c. 94C, s. 21, first paragraph", "probe_hits": 0,
+       "proposition": "The pharmacist filling a controlled-substance prescription affixes a label showing, among other items, the FILLING PHARMACIST'S INITIALS, the SERIAL NUMBER of the prescription, and, where dispensed as tablets or capsules, the NUMBER of them in the container.",
+       "rule_reuse": "MA-CS-LABEL already carries this authority; no new rule is created."},
+      {"family": "B3E2_LARGE_PRINT_DIRECTIONS", "authority": "M.G.L. c. 94C, s. 21, second paragraph", "probe_hits": 0,
+       "proposition": "Upon the REQUEST of an elderly person as defined in M.G.L. c. 19A, s. 14, or a person who is visually impaired, the directions on the label shall be typed in a print size allowing NO MORE THAN TEN CHARACTERS PER INCH."},
+      {"family": "B3E2_ORAL_RX_VERIFY_AND_FOLLOWUP", "authority": "M.G.L. c. 94C, s. 20(b) and (c)", "probe_hits": 0,
+       "proposition": "If the prescribing practitioner is not known to the pharmacist, the pharmacist shall make a reasonable effort to determine the oral authorization came from a registered practitioner; and the practitioner must cause an electronic prescription to reach the dispensing pharmacy within 2 days, or where the commissioner has granted an exception a written one within not more than 7 days and postmarked within 7 days, which the pharmacy attaches to the oral prescription it reduced to writing.",
+       "rule_reuse": "MA-ORAL-CONTROLLED-DOCUMENTATION carries s. 20(a)-(c); MA-Q-0116 keys only the (a) limb."},
+      {"family": "B3E2_CII_PHARMACIST_ENDORSEMENT", "authority": "M.G.L. c. 94C, s. 23(b) and (c)", "probe_hits": 0,
+       "proposition": "The pharmacist filling a written or electronic Schedule II prescription shall ENDORSE HIS OWN SIGNATURE on the face of it, and written Schedule II prescriptions shall be kept in a SEPARATE FILE."}
+    ]
+  },
+
+  "area_4": {
+    "novelty": "All seven returned ZERO hits on the whole-bank probe.",
+    "propositions": [
+      {"family": "B3E2_CS_PERSONNEL_SCREENING", "authority": "105 CMR 700.005(B)", "probe_hits": 0,
+       "proposition": "Registrants shall screen new employees who may work in or around areas where controlled substances are handled, solely to determine whether the person can be trusted there, with documentation available to the Commissioner on request; and NO registrant shall KNOWINGLY EMPLOY any agent or employee whose registration application was denied, or whose registration was revoked, for violation of any law or regulation AT ANY TIME."},
+      {"family": "B3E2_CLOSURE_DUTIES_BY_TYPE", "authority": "247 CMR 6.13(2), (3) and (7)", "probe_hits": 0,
+       "proposition": "A non-resident pharmacy gives a shorter set of particulars on closure; a sterile or complex non-sterile compounding pharmacy must additionally identify a Board-licensed pharmacy suitable and available to provide CONTINUITY OF CARE; the post-closure submission at 6.13(6) does not apply to non-resident pharmacies; and 6.13(3) and 6.13(4) are not required for institutional sterile compounding pharmacies."},
+      {"family": "B3E2_PHARMACY_RELOCATION", "authority": "247 CMR 6.16", "probe_hits": 0,
+       "proposition": "A pharmacy shall apply for Board approval to relocate BEFORE relocating and may not relocate until approval is received; the application is submitted AT LEAST 90 DAYS before the desired relocation date unless the Board approves otherwise, with the fee and blueprints or equivalent architectural drawings."},
+      {"family": "B3E2_REMODEL_PRIOR_APPROVAL", "authority": "247 CMR 6.15(1) and (3)", "probe_hits": 0,
+       "proposition": "A pharmacy shall apply for approval to remodel or to change configuration or square footage and MAY NOT COMMENCE ANY CONSTRUCTION WORK until approval is received; the supporting submission includes blueprints depicting the pharmacy layout, prescription area and counseling area, and a written plan to maintain security of controlled substances during any transportation."},
+      {"family": "B3E2_ENGINEERING_CONTROL_APPROVAL", "authority": "247 CMR 6.15(2) and (4)", "probe_hits": 0,
+       "proposition": "A sterile compounding, non-resident sterile compounding or institutional sterile compounding pharmacy must obtain Board approval BEFORE moving, adding, modifying, removing or replacing ANY SECONDARY ENGINEERING CONTROL, and its submission adds certified blueprints with ISO classification of each primary and secondary engineering control, a containment strategy, an environmental monitoring plan, a re-certification plan and a continuity of care plan, each as applicable."},
+      {"family": "B3E2_MOR_CHANGE_INVENTORY", "authority": "247 CMR 6.10(2)", "probe_hits": 0,
+       "proposition": "A change of Manager of Record application must include an attestation, signed by BOTH the outgoing and the proposed incoming Manager of Record, that the pharmacy performed an inventory of Schedules II through V and of Schedule VI substances reportable to the monitoring program and filed it with the controlled substance records; a staff pharmacist may sign where the outgoing Manager is unavailable through death, serious illness or termination provided the Board is told why at the time of application; and the ORIGINAL Drug Store Pharmacy licence accompanies it."},
+      {"family": "B3E2_PHARMACY_NAME_CHANGE", "authority": "247 CMR 6.12", "probe_hits": 0,
+       "proposition": "A licensee shall notify the Board WITHIN 14 DAYS, IN WRITING, of any change in the name under which the pharmacy operates, accompanied by appropriate authorizing documentation."}
+    ]
+  },
+
+  "sources": [
+    {"source": "247 CMR 9.00", "pdf_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"},
+    {"source": "247 CMR 6.00", "pdf_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1"},
+    {"source": "105 CMR 700.000", "pdf_sha256": "78c4d84206d280f7aaee0d95bd9c07229366205dfd65fd177ac7847d861a2bcd"},
+    {"source": "M.G.L. c. 94C ss. 20, 21, 21A, 23 and M.G.L. c. 112 s. 24B1/2", "read_on": "malegislature.gov"}
+  ],
+
+  "rules_held": [
+    "No Area-1 or Area-2 content was relabelled to fill Area 3 or Area 4.",
+    "No proposition rests on a corrupted or partially recovered extraction fragment.",
+    "Family caps are unchanged at 2; the four Area-2 questions occupy existing free slots rather than raising any cap.",
+    "Seventeen new families are created, one per new Area-3 and Area-4 question."
+  ],
+  "verdict": "B3E_V2_EXPANSION_FEASIBLE"
+}

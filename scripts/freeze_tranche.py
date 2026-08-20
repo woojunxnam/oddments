@@ -60,6 +60,18 @@ def blob_sha(sha: str, path: str) -> str:
     return line.split()[2]
 
 
+def rule_paths() -> dict[str, str]:
+    """Map rule_id to its actual repo-relative path.
+
+    Seven legacy rules do not follow the rule_id.lower() filename convention, so the path must be
+    resolved from the records rather than derived from the id.
+    """
+    return {
+        record["rule_id"]: str(path.relative_to(ROOT)).replace("\\", "/")
+        for path, record in load_records(DATA / "rules")
+    }
+
+
 def dependency_snapshots(questions: dict) -> dict:
     rules = {r["rule_id"]: r for _, r in load_records(DATA / "rules")}
     drugs = {d["drug_id"]: d for _, d in load_records(DATA / "drugs")}
@@ -168,6 +180,7 @@ def main() -> int:
     snapshots = dependency_snapshots(questions)
     hashes = {qid: question_audit_hash(questions[qid]) for qid in cfg["question_ids"]}
     blobs = {qid: blob_sha(cfg["candidate_sha"], f"data/questions/{qid.lower()}.json") for qid in cfg["question_ids"]}
+    paths_by_rule = rule_paths()
 
     out = ROOT / cfg["output_dir"]
     prefix = cfg["file_prefix"]
@@ -228,7 +241,7 @@ def main() -> int:
         "question_ids": cfg["question_ids"],
         "question_hashes": hashes,
         "question_file_blobs": blobs,
-        "new_rule_file_blobs": {r: blob_sha(cfg["candidate_sha"], f"data/rules/{r.lower()}.json")
+        "new_rule_file_blobs": {r: blob_sha(cfg["candidate_sha"], paths_by_rule[r])
                                 for r in sorted(snapshots["rules"])},
         "dependency_snapshots": snapshots,
         "quality_gates_at_freeze": cfg["quality_gates"],

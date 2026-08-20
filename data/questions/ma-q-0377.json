@@ -1,0 +1,68 @@
+{
+  "question_id": "MA-Q-0377",
+  "family_id": "B3E2_WITHIN_DATE_DAY_ONE",
+  "area": 3,
+  "topic": "Dispensing requirements",
+  "subtopic": "Counting the validity period",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts prescription was written on 1 March. A patient presents it and the pharmacist must decide whether it is still within a thirty-day window. Which date is the last day on which it remains within date?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "30 March, counting 1 March as day one of the period."
+    },
+    {
+      "id": "B",
+      "text": "31 March, counting 2 March as day one of the period."
+    },
+    {
+      "id": "C",
+      "text": "1 April, because a partial first day is disregarded entirely."
+    },
+    {
+      "id": "D",
+      "text": "29 March, because both the first and the last day are excluded."
+    },
+    {
+      "id": "E",
+      "text": "It cannot be determined without knowing the schedule of the drug."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.04(10) provides that in order to determine whether a prescription is within date a pharmacist shall count THE DAY AFTER THE PRESCRIPTION WAS WRITTEN AS DAY ONE. With 1 March as the date written, 2 March is day one, so day thirty is 31 March.",
+    "choice_analysis": {
+      "A": "That counts the date of issue as day one, which the regulation excludes.",
+      "B": "Correct: day one is 2 March, so the thirtieth day is 31 March.",
+      "C": "The regulation fixes the start precisely rather than disregarding a day.",
+      "D": "Only the date written is excluded, not the final day.",
+      "E": "The counting convention is general and does not vary by schedule."
+    },
+    "related_facts": [
+      "The length of the window is set by the provision governing that drug"
+    ],
+    "mpje_trap": "Candidates start counting on the date the prescription was written, which shifts every boundary by a day."
+  },
+  "rule_ids": [
+    "MA-RX-DATE-COUNTING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Apply the counting convention to fix day one",
+    "Count forward the length of the period",
+    "Note that the convention does not vary by schedule"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-08-20",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}
