@@ -29952,13 +29952,40 @@
         "Identify whether the proposed package is multi-drug-single-dose",
         "Apply the prohibition without expanding it to a different packaging type"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -29977,7 +30004,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 canonical records. Automated normalized stem+choice word unigram/bigram TF-IDF cosine found MA-Q-0202 (0.438458), MA-Q-0203 (0.360200), and MA-Q-0135 (0.172380) as the closest records; token-trigram Jaccard for the first two was 0.059140 and 0.055249. Manual review confirms distinct emphasis: this item tests the exact regulatory prohibition, its packaging-type boundary, and the Board policy's preserving qualification, whereas MA-Q-0202 is a named-drug placement matrix and MA-Q-0203 is a single-drug application. The maintenance-exception distractor is especially authentic because superseded policy history makes it plausible without making it current law.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0170",
@@ -41883,13 +41934,61 @@
         "Distinguish multi-drug-single-dose from single-drug-single-dose packaging",
         "Apply the Schedule II/III prohibition and preserve all other requirements"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {
+            "methylphenidate": {
+              "content_version": 1,
+              "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+            },
+            "testosterone-cypionate": {
+              "content_version": 1,
+              "content_hash": "f83602d6f873792927cf036bf50db4e05bdc30dfac1a477bf0fb825658415fbc"
+            },
+            "buprenorphine": {
+              "content_version": 1,
+              "content_hash": "cbb940e85e48dde1efbd53ad0704271411892aa7a6d8009e33b537140dc90d43"
+            },
+            "oxycodone": {
+              "content_version": 1,
+              "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+            },
+            "alprazolam": {
+              "content_version": 1,
+              "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -42408,7 +42507,31 @@
           "verification_notes": "Identity, labeled indication, and schedule/status checked against official DailyMed, eCFR, and Massachusetts sources on 2026-08-13."
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 canonical records. The closest automated matches were MA-Q-0203 (TF-IDF cosine 0.444334; token-trigram Jaccard 0.086022), MA-Q-0169 (0.438458; 0.059140), and MA-Q-0135 (0.179777; 0.016393). Manual comparison finds the matrix materially distinct: candidates must jointly classify five drug schedules and two packaging types while respecting the stem's reservation of other requirements. The choices model a plausible compliance-packaging redesign and the Schedule IV and separate-package options prevent the item from collapsing into schedule flashcard recall. MA-Q-0203 is narrower and is separately failed below for redundancy and a dependency defect; that does not erase this matrix's broader decision structure.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0203",
@@ -62598,13 +62721,40 @@
         "Separate continuation and vaccine powers from controlled-substance prescribing",
         "Keep dosage modification within the supervising physician and named-condition limits"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CDTM-RETAIL-AGE-EXTENSION": {
+              "content_version": 1,
+              "content_hash": "52cbc474226e7d53e4770c6bff1ca557fe6bb09acf53ec340a4c83ca57262bfc"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -62616,7 +62766,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0337 (TF-IDF cosine 0.186265), MA-Q-0321 (0.179332), and same-family MA-Q-0341 (0.164661); manual family review also examined MA-Q-0082, MA-Q-0083, and MA-Q-0084. Those items isolate discontinuation authority, a 30-day continuation, referral scope, the controlled-substance bar, or Schedule VI follow-through. This item remains distinct because it requires a set-level separation of the retail age floor, continuation, dosage-modification limits, controlled-substance prescribing, and vaccine power. The repaired Schedule II initiation distractor and the 'any medication' overbreadth are both authentic.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0341",
@@ -63594,13 +63768,40 @@
         "Require the Commissioner order",
         "Keep the practitioner order or prescription as a separate cumulative condition"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-EMERGENCY-VACCINE-GATE": {
+              "content_version": 1,
+              "content_hash": "84c8bdfa78bd765d83de47bdbefad62406a3f80a860034f1680e967c30ec36d4"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -63612,7 +63813,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0344 (TF-IDF cosine 0.181325; token-trigram Jaccard 0.005376), same-family MA-Q-0349 (0.161410; 0.005495), and MA-Q-0350 (0.099121; 0.016575). Manual review confirms separate legal decisions: MA-Q-0344 tests an independent collaborative-practice route, MA-Q-0349 isolates student supervision, and MA-Q-0350 tests protocol subjects. This item distinctly requires cumulative-gate reasoning and now keys the practitioner-instrument condition correctly; the 'alone' and 'removes any need' distractors are plausible single-switch errors.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0349",
@@ -63805,13 +64030,40 @@
         "Test each proposed subject against the express paragraph",
         "Do not infer that operational rarity removes a named protocol subject"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-EMERGENCY-VACCINE-PROTOCOLS": {
+              "content_version": 1,
+              "content_hash": "1f3516cc64bb5c09207d2d8dbe7004223285c827ffd2a96a2bf69470a8cffaae"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -63823,7 +64075,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0344 (TF-IDF cosine 0.134473), MA-Q-0348 (0.099121; token-trigram Jaccard 0.016575), and MA-Q-0393 (0.070457). Manual review also checked same-cluster MA-Q-0349 and list-style MA-Q-0284. The repaired written-consent and 24-hour registry distractors are realistic clinical-governance duties rather than self-eliminating commercial topics, so a candidate must distinguish the paragraph's express protocol list from plausible adjacent obligations. The scenario remains distinct from the Commissioner gate and student-supervision items.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0351",
@@ -64958,13 +65234,40 @@
         "Assign the regulation and direction gates only to the mental-health route",
         "Keep the two prescription-based routes separate"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-ADMINISTER-STATUTORY-ROUTES": {
+              "content_version": 1,
+              "content_hash": "432dee19e2a3691d69193f07a84c78ae54dbe441e610d981699b04bb2f6d2f04"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -64976,7 +65279,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "PASS on all criteria. Full-bank comparison covered all 406 records. The closest automated matches were MA-Q-0328 (TF-IDF cosine 0.159249; token-trigram Jaccard 0.073171), MA-Q-0331 (0.146543; 0.054878), and MA-Q-0145 (0.146500; 0.051429); manual review also examined MA-Q-0174 and MA-Q-0171. Those questions test eligible products, injection route, category membership, or the testosterone indication. This item distinctly tests the statutory architecture and allocation of different gates across three clauses. The repaired STI option is a plausible but false importation of the mental-health regulation gate, preventing the key from being inferred merely by rejecting one blanket statement.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0360",

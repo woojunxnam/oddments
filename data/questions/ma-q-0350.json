@@ -59,12 +59,39 @@
     "Test each proposed subject against the express paragraph",
     "Do not infer that operational rarity removes a named protocol subject"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-20",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-EMERGENCY-VACCINE-PROTOCOLS": {
+          "content_version": 1,
+          "content_hash": "1f3516cc64bb5c09207d2d8dbe7004223285c827ffd2a96a2bf69470a8cffaae"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
