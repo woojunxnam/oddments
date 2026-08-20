@@ -21,6 +21,13 @@ TARGETED_INITIAL_BATCH_AUTHORIZATIONS = {
         "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
         "question_ids": frozenset({"MA-Q-0227", "MA-Q-0228"}),
     },
+    # Issue #91 governance amendment: the 16-question B3-F top-up consists of new
+    # bank-admission candidates but is below the ordinary 30-question INITIAL_BATCH minimum.
+    "BATCH3-B3F": {
+        "authorizing_issue": 91,
+        "represented_candidate_sha": "1cc76f458f6584edc3dfad8387240ea968201b64",
+        "question_ids": frozenset(f"MA-Q-{index:04d}" for index in range(391, 407)),
+    },
 }
 GIT_SHA_PATTERN = re.compile(r"^[a-f0-9]{40}$")
 
