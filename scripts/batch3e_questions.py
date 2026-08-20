@@ -13,7 +13,11 @@ Structural targets, against the Phase-2 pool after B3-D (216 SBA, 134 SATA, chi-
   * 6 SBA / 3 SATA.
   * SBA keys A x2 / E x2 / C x1 / D x1, favouring the two positions the released pool will be
     lightest in once B3-C and B3-D are admitted.
-  * SATA correct-counts 2-correct x2 / 4-correct x1, no three-correct item.
+  * SATA correct-counts 2-correct x2 / 3-correct x1.
+    A later correction rebalanced this: steering the three-correct share down tranche by
+    tranche drove it to zero inside each one, which shuffling cannot hide because
+    shuffleQuestionChoices preserves how many options are correct. See
+    scripts/check_tranche_key_patterns.py; the counts below are the corrected, measured ones.
 """
 
 from __future__ import annotations
@@ -53,17 +57,17 @@ QUESTIONS = [
       "professional licence was once suspended. The applicant company itself has a clean record. Which "
       "statements about the Board's suitability review are correct? Select all that apply.",
       [("A", "The factors reach an interest holder as well as the applicant itself."),
-       ("B", "A consent agreement resolving a complaint is among the listed factors."),
+       ("B", "A consent agreement resolving a complaint is excluded from the listed factors."),
        ("C", "Only conduct at a Massachusetts pharmacy may be weighed by the Board."),
        ("D", "Prior discipline on a separate professional licence is a listed factor."),
        ("E", "The Board may conclude that licensing would not serve public health and safety.")],
-      ["A", "B", "D", "E"],
+      ["A", "D", "E"],
       "247 CMR 6.03 lets the Board find an applicant unsuitable and lists eleven factors, each framed "
       "as reaching an APPLICANT, LICENSEE OR INTEREST HOLDER. The listed factors include a consent "
       "agreement resolving a complaint against a pharmacy or other FDA- or DEA-registered entity, and "
       "prior discipline, suspension, denial or revocation of a professional licence or registration.",
       {"A": "Correct: interest holders are named in every factor.",
-       "B": "Correct: consent agreements are expressly listed.",
+       "B": "Consent agreements are expressly listed among the suitability factors, not excluded.",
        "C": "The factors reach any pharmacy, health care facility or FDA- or DEA-registered entity.",
        "D": "Correct: professional licence discipline is expressly listed.",
        "E": "Correct: that is the standard the section states."},

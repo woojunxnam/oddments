@@ -19,9 +19,12 @@ Structural targets built into the tranche, measured against the released bank at
   * 21 SBA / 12 SATA, holding the bank's SBA share near 63%.
   * SBA keys weighted E x7 / C x4 / D x4 / A x3 / B x3, which pulls the bank answer-position
     chi-square down toward 0.77.
-  * SATA correct-counts weighted 2-correct x7 / 4-correct x5 and no 3-correct item, dropping the
-    bank's three-correct share from 52.0% to about 46%.
-  * SATA correct positions spread A 4 / B 6 / C 7 / D 6 / E 11 with varied correct-sets, keeping
+  * SATA correct-counts 2-correct x7 / 3-correct x2 / 4-correct x3.
+    A later correction rebalanced this: steering the three-correct share down tranche by
+    tranche drove it to zero inside each one, which shuffling cannot hide because
+    shuffleQuestionChoices preserves how many options are correct. See
+    scripts/check_tranche_key_patterns.py; the counts below are the corrected, measured ones.
+  * SATA correct positions spread A 4 / B 5 / C 7 / D 6 / E 10 with varied correct-sets, keeping
     every slot below the 25% concentration threshold.
 """
 
@@ -479,18 +482,18 @@ QUESTIONS = [
       "features does the statutory definition require for the agreement to be validly constituted? Select all that "
       "apply.",
       [("A", "It must be written and signed by the pharmacist and the supervising physician."),
-       ("B", "The collaborative practice must sit within the supervising physician's practice."),
+       ("B", "The collaborative practice may extend beyond the supervising physician's own scope."),
        ("C", "It is subject to review and renewal on a biennial basis."),
        ("D", "It must be filed with the Board before the pharmacist may act under it."),
        ("E", "It must include individually developed guidelines for any prescriptive practice.")],
-      ["A", "B", "C", "E"],
+      ["A", "C", "E"],
       "A collaborative practice agreement is defined by statute as a written and signed agreement between "
       "a pharmacist with relevant training and experience and a supervising physician. The collaborative "
       "practice must sit within the scope of the supervising physician's practice, each agreement is "
       "subject to review and renewal on a biennial basis, and individually developed guidelines are "
       "required for any prescriptive practice.",
       {"A": "Correct: written and signed.",
-       "B": "Correct: the practice must sit inside the physician's own scope.",
+       "B": "The statute requires the collaborative practice to sit within the supervising physician's scope.",
        "C": "Correct: biennial review and renewal.",
        "D": "Filing with the Board is not part of the statutory definition.",
        "E": "Correct: individually developed prescriptive guidelines are required."},
@@ -768,8 +771,8 @@ QUESTIONS = [
        ("B", "The time she works beyond twelve hours must be minimized."),
        ("C", "She must document the extenuating circumstance that justified continuing."),
        ("D", "The manager's instruction is itself sufficient authority for her to continue."),
-       ("E", "The twelve hour ceiling is measured across a twenty-four hour period.")],
-      ["A", "B", "C", "E"],
+       ("E", "The twelve hour ceiling binds pharmacists but not certified pharmacy technicians.")],
+      ["A", "B", "C"],
       "247 CMR 9.01(17) sets a ceiling of 12 hours in a 24 hour period, and permits the licensee to exceed it only "
       "in the event of an extenuating circumstance, in order to act in the best interest of the patient, provided "
       "the excess time is minimized and the licensee documents the extenuating circumstance.",
@@ -777,7 +780,7 @@ QUESTIONS = [
        "B": "Correct: minimisation is an express condition.",
        "C": "Correct: documentation is an express condition and falls on the licensee.",
        "D": "An employer instruction is not one of the regulatory conditions.",
-       "E": "Correct: the ceiling runs across a 24 hour period."},
+       "E": "The paragraph binds a pharmacist, a pharmacy intern and a pharmacy technician alike."},
       ["MA-PRACTICE-HOUR-CEILING"],
       ["Identify the ceiling and the period over which it runs",
        "Identify the exception and its two conditions",

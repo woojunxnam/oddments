@@ -18,7 +18,11 @@ these are dispensing DECISION paths.
 Structural targets, against the Phase-2 pool after B3-D v2 plus the existing nine:
   * 13 SBA / 8 SATA.
   * SBA keys A x3 / B x3 / D x3 / C x2 / E x2.
-  * SATA correct-counts 2-correct x5 / 4-correct x3, no three-correct item.
+  * SATA correct-counts 2-correct x5 / 3-correct x1 / 4-correct x2.
+    A later correction rebalanced this: steering the three-correct share down tranche by
+    tranche drove it to zero inside each one, which shuffling cannot hide because
+    shuffleQuestionChoices preserves how many options are correct. See
+    scripts/check_tranche_key_patterns.py; the counts below are the corrected, measured ones.
 """
 
 from __future__ import annotations
@@ -562,9 +566,9 @@ QUESTIONS = [
       [("A", "The inventory attestation is signed by both the outgoing and the incoming Manager."),
        ("B", "The inventory covers Schedules II through V and reportable Schedule VI substances."),
        ("C", "A staff pharmacist may sign in place of the outgoing Manager for convenience."),
-       ("D", "The original Drug Store Pharmacy licence accompanies the application."),
+       ("D", "A certified copy of the Drug Store Pharmacy licence accompanies the application."),
        ("E", "The Board may require the proposed Manager of Record to appear before it.")],
-      ["A", "B", "D", "E"],
+      ["A", "B", "E"],
       "247 CMR 6.10(2) requires an attestation confirming an inventory of all Schedule II through V substances and "
       "Schedule VI substances required to be reported to the prescription monitoring program, SIGNED BY THE OUTGOING "
       "AND THE PROPOSED INCOMING Manager of Record, together with the ORIGINAL Drug Store Pharmacy licence and the "
@@ -574,7 +578,7 @@ QUESTIONS = [
       {"A": "Correct: both signatures.",
        "B": "Correct: reportable Schedule VI is inside the inventory.",
        "C": "The substitution is confined to death, serious illness or termination.",
-       "D": "Correct: the original licence accompanies it.",
+       "D": "The regulation calls for the original licence, not a copy however certified.",
        "E": "Correct: the Board may require an appearance."},
       ["MA-MOR-CHANGE-INVENTORY"],
       ["Identify who must sign the attestation",

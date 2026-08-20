@@ -9,8 +9,11 @@ chi-square 0.8718, SATA three-correct share 46.7%):
   * 21 SBA / 12 SATA.
   * SBA keys weighted D x6 / E x5 / A x4 / B x3 / C x3, chosen to level the released pool once
     B3-C and B3-D are both admitted.
-  * SATA correct-counts 2-correct x6 / 4-correct x6, no three-correct item, taking the released
-    three-correct share down toward 42%.
+  * SATA correct-counts 2-correct x6 / 3-correct x3 / 4-correct x3.
+    A later correction rebalanced this: steering the three-correct share down tranche by
+    tranche drove it to zero inside each one, which shuffling cannot hide because
+    shuffleQuestionChoices preserves how many options are correct. See
+    scripts/check_tranche_key_patterns.py; the counts below are the corrected, measured ones.
   * SATA correct positions spread across all five slots in varied correct-sets, every slot well
     under the 25% concentration threshold.
 
@@ -417,18 +420,18 @@ QUESTIONS = [
     q("MA-Q-0342", "CDTM_SETTING_APPROVAL_AUTHORITY_MATRIX", "Collaborative practice", "Approval authorities", 4, "SATA",
       "A Massachusetts health system is setting up collaborative drug therapy management across several of its "
       "sites. Which statements about who must approve it are correct? Select all that apply.",
-      [("A", "In a licensed hospital, the medical staff executive committee or designee approves."),
+      [("A", "In a licensed hospital, the Department of Public Health approves the arrangement."),
        ("B", "A single system-wide approval suffices for every one of the listed settings."),
        ("C", "In a long-term care facility, the facility's medical director or designee approves."),
        ("D", "In a hospice setting, the hospice's medical director or designee approves."),
        ("E", "An ambulatory care clinic additionally requires on-site physician supervision.")],
-      ["A", "C", "D", "E"],
+      ["C", "D", "E"],
       "The settings limb of the statute names a different approving body for each setting: the medical staff "
       "executive committee or designee in a licensed hospital, the medical director or designee in a long-term care "
       "facility, the hospice's medical director or designee in inpatient or outpatient hospice, and the clinic's "
       "medical staff executive committee or medical director or designee for an ambulatory care clinic, which "
       "uniquely also requires on-site supervision by the attending physician and a collaborating pharmacist.",
-      {"A": "Correct: hospital approval runs through the medical staff executive committee.",
+      {"A": "The statute names the medical staff executive committee or designee, not the Department.",
        "B": "Each setting carries its own approval route.",
        "C": "Correct: the long-term care facility medical director.",
        "D": "Correct: the hospice medical director.",
@@ -626,17 +629,17 @@ QUESTIONS = [
       "responding to adverse events. Which further protocol subjects does the regulation require it to cover? "
       "Select all that apply.",
       [("A", "Proper storage of vaccine."),
-       ("B", "Handling of vaccine."),
+       ("B", "Marketing of the vaccination service to patients."),
        ("C", "Return of unused vaccine."),
        ("D", "Reimbursement arrangements for administered doses."),
        ("E", "Recordkeeping regarding administration.")],
-      ["A", "B", "C", "E"],
+      ["A", "C", "E"],
       "Under 105 CMR 700.003(F)(2) a person administering vaccine must receive proper training and supervision and "
       "must comply with written protocols to ensure proper STORAGE, HANDLING AND RETURN of vaccine, RECORDKEEPING "
       "regarding administration, RESPONSE TO ADVERSE EVENTS, and safe and appropriate administration. Return of "
       "vaccine is the subject most often missed.",
       {"A": "Correct: storage is named.",
-       "B": "Correct: handling is named.",
+       "B": "Marketing is not among the written-protocol subjects the paragraph names.",
        "C": "Correct: return of vaccine is named.",
        "D": "Reimbursement is not among the protocol subjects.",
        "E": "Correct: recordkeeping regarding administration is named."},
@@ -757,8 +760,8 @@ QUESTIONS = [
        ("B", "It authorises administration, or causing administration under direction by a nurse."),
        ("C", "The pharmacist appears in the section on the same footing as the physician."),
        ("D", "The pharmacist appears only as limited by other named provisions."),
-       ("E", "Registration under section 7 is required before the section applies at all.")],
-      ["A", "B", "D", "E"],
+       ("E", "Registration under section 7 is unnecessary where the practitioner acts in good faith.")],
+      ["A", "B", "D"],
       "Section 9(a) allows the listed practitioners, and a pharmacist AS LIMITED BY s. 7(g) and M.G.L. c. 112, s. "
       "24B1/2, when registered under s. 7 and acting in good faith in the course of a professional practice, to "
       "possess controlled substances as may reasonably be required for patient treatment and to administer them or "
@@ -767,7 +770,7 @@ QUESTIONS = [
        "B": "Correct: both administering and causing administration are covered.",
        "C": "The pharmacist alone on the list carries an as-limited qualifier.",
        "D": "Correct: s. 7(g) and c. 112, s. 24B1/2 limit the pharmacist's place on the list.",
-       "E": "Correct: the section applies to those registered under s. 7."},
+       "E": "Good faith is a further condition, not a substitute for registration under s. 7."},
       ["MA-S9-PHARMACIST-AUTHORITY"],
       ["Read the list of practitioners and note the qualifier attached to the pharmacist",
        "Separate the possession limb from the administration limb",
