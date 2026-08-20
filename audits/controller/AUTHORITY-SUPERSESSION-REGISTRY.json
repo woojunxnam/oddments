@@ -1,0 +1,56 @@
+{
+  "registry_type": "OFFICIAL_GUIDANCE_SUPERSESSION_REGISTRY",
+  "purpose": "Curated currency status for official guidance documents cited by canonical rules. Lives outside data/ so it needs no schema change. scripts/check_authority_supersession.py reads it and fails closed when a CURRENT rule rests solely on a superseded or rescinded document.",
+  "maintained_by": "Claude Code controller under Issue #83",
+  "last_updated": "2026-08-19",
+  "authority_status_values": ["CURRENT", "SUPERSEDED", "RESCINDED", "HISTORICAL", "UNKNOWN"],
+  "documents": {
+    "DCP 26-03-124": {
+      "title": "Circular Letter DCP 26-03-124, Pharmacist Administration of Medications",
+      "issuer": "Massachusetts Department of Public Health, Bureau of Health Professions Licensure, Drug Control Program; Board of Registration in Pharmacy",
+      "date": "2026-03-11",
+      "url": "https://www.mass.gov/news/pharmacist-administration-of-medications",
+      "official_pdf": "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download",
+      "pdf_sha256": "162bd31fdab634dfb3fd7e3c3514095feae21df8018a2203256f719d2772a4d1",
+      "authority_status": "CURRENT",
+      "superseded_by": null,
+      "supersedes": ["DCP 23-04-118"],
+      "evidence": "The circular states: This Circular replaces DCP 23-04-118, dated April 21, 2023, by adding pharmacist authorization to administer the following: testosterone for gender-affirming care, medications for prevention of HIV, and medications for treatment and prevention of sexually transmitted infections."
+    },
+    "DCP 23-04-118": {
+      "title": "Circular Letter DCP 23-04-118, Pharmacist Administration of Medications",
+      "date": "2023-04-21",
+      "authority_status": "SUPERSEDED",
+      "superseded_by": "DCP 26-03-124",
+      "evidence": "Named as replaced in the Summary of Changes of DCP 26-03-124."
+    },
+    "DCP 19-2-105": {
+      "title": "Circular DCP 19-2-105, Pharmacist Administration of Medications for the treatment of Mental Illness and Substance Use Disorder",
+      "url": "https://www.mass.gov/news/circular-dcp-19-2-105-pharmacist-administration-of-medications-for-the-treatment-of-mental-illness-and-substance-use-disorder",
+      "authority_status": "SUPERSEDED",
+      "superseded_by": "DCP 26-03-124",
+      "supersession_chain": ["DCP 19-2-105", "DCP 23-04-118", "DCP 26-03-124"],
+      "evidence": "Displaced by the pharmacist-administration circular line that DCP 26-03-124 now heads. Cited by canonical rule MA-MH-SUD-ADMIN, which is why the incident occurred.",
+      "note": "Retained here as HISTORICAL provenance for audits bound to older hashes. It must not be cited as current authority."
+    },
+    "DCP 19-06-107": {
+      "title": "Circular DCP 19-06-107",
+      "authority_status": "UNKNOWN",
+      "superseded_by": null,
+      "note": "Listed in the impact-scan marker set. No canonical rule currently cites it; currency not independently established."
+    },
+    "Policy 2020-08": {
+      "title": "Massachusetts Board of Registration in Pharmacy Policy 2020-08, Expedited Partner Therapy",
+      "authority_status": "UNKNOWN",
+      "superseded_by": null,
+      "note": "Cited by MA-EPT. Currency not yet independently re-established this session; flagged for a later check rather than assumed current."
+    },
+    "Policy 2021-02": {
+      "title": "Massachusetts Board of Registration in Pharmacy Policy 2021-02",
+      "authority_status": "CURRENT",
+      "superseded_by": null,
+      "current_revision": "2025-02-06",
+      "note": "The 2022-04-07 revision was superseded by the 2025-02-06 revision, as recorded during the Pre-Batch3 T3 audit."
+    }
+  }
+}
