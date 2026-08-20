@@ -1,0 +1,40 @@
+{
+  "tranche": "BATCH3-S3",
+  "audit_scope": "LEGACY_SALVAGE_FIRST_AUDIT",
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "freeze_date": "2026-08-20",
+  "source_branch": "author/batch3-b3d",
+  "source_sha": "e3fd5a365d30244c16b329bfe4189fddde72b53e",
+  "candidate_branch": "salvage/batch3-s3",
+  "candidate_sha": "e3fd5a365d30244c16b329bfe4189fddde72b53e",
+  "freeze_branch": "freeze/batch3-s3-v1",
+  "auditor_type": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3S3",
+  "legal_audit_id": "AUDIT-CLAUDE-FRESH-B3S3-LEGAL-INITIAL-2026-08-20",
+  "realism_audit_id": "AUDIT-CLAUDE-FRESH-B3S3-REALISM-INITIAL-2026-08-20",
+  "question_ids": [
+    "MA-Q-0001",
+    "MA-Q-0002",
+    "MA-Q-0003",
+    "MA-Q-0005",
+    "MA-Q-0006",
+    "MA-Q-0007",
+    "MA-Q-0008",
+    "MA-Q-0010"
+  ],
+  "bank_size_at_candidate": 360,
+  "output_dir": "audits/remediation/2026-08-20",
+  "file_prefix": "B3S3",
+  "quality_gates": {
+    "repository_validation": "PASS",
+    "full_tests": "PASS",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "answer_distribution": "PASS",
+    "max_stem_similarity_vs_bank": 0.561,
+    "max_stem_jaccard_vs_bank": null
+  },
+  "controller_note": "These eight Area-3 questions have never carried a current-hash independent audit. No content was changed to prepare this package: the questions are frozen exactly as they have stood since 2026-08-13. This is a FIRST audit, not a reaudit. All seven dependency rules are marked CURRENT and verified, but their last_verified date is 2026-08-13 and the controller has not independently re-confirmed currency; establishing the current law is the legal audit's task."
+}
