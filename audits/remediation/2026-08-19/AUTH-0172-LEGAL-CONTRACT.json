@@ -1,0 +1,97 @@
+{
+  "package_type": "FROZEN_AUDIT_CONTRACT",
+  "review_type": "LEGAL_VERIFICATION",
+  "audit_date": "2026-08-19",
+  "audit_scope": "REAUDIT",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-AUTH-0172",
+  "independent": true,
+  "audit_status_required": "FULLY_ADJUDICATED",
+  "tranche": "AUTH-REVIEW-0172",
+  "authorizing_issue": 91,
+  "represented_candidate_branch": "contain/ma-q-0172-authority-review",
+  "represented_candidate_sha": "885224fa47ad6f5f0f2e431372f96f8f27c5ad69",
+  "freeze_branch": "freeze/auth-review-0172-v1",
+  "source_branch": "main",
+  "source_sha": "506c3d9a95d90d44c35d01487cc7ec4eb9d98d43",
+  "question_ids": [
+    "MA-Q-0172"
+  ],
+  "question_hashes": {
+    "MA-Q-0172": "054ac64b41dfeb251406a5933031d12038891f2f07b0a32d2c4366b51a87085d"
+  },
+  "question_file_blobs": {
+    "MA-Q-0172": "fe3d1bab57780efe87ea1c480a06a0ab3d89d363"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-MH-SUD-ADMIN": {
+        "content_version": 2,
+        "content_hash": "ed0bd545489ad45c3e421c971e314cfa93c76c2b37a0c40ad9b9d178738a3ee2"
+      }
+    },
+    "drugs": {
+      "aripiprazole-er": {
+        "content_version": 1,
+        "content_hash": "2a88add8d9f62ccd983bef6c98ef1d5ddfc10dcf9d494a1858c8da69a632133b"
+      },
+      "naltrexone-er": {
+        "content_version": 1,
+        "content_hash": "74b8e2c41fd9460051bcbe4d322793625b582b8a776e8b56e5172bcc1de55d5c"
+      },
+      "paliperidone-palmitate": {
+        "content_version": 1,
+        "content_hash": "67e13f8ce0bf3acf0c991d707693652bf06d82ee5a4ab9ff9eb74d1fec31b67f"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "phase_order": [
+    "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
+    "PHASE_2_UNSEAL_CANONICAL_KEYS_AND_DEPENDENCIES",
+    "PHASE_3_LEGAL_VERIFICATION"
+  ],
+  "output_record": {
+    "path": "data/audits/AUDIT-CLAUDE-FRESH-AUTH-0172-LEGAL-REAUDIT-2026-08-19.json",
+    "schema": "schemas/audit.schema.json",
+    "audit_scope": "REAUDIT",
+    "independent": true,
+    "audit_status": "FULLY_ADJUDICATED"
+  },
+  "required_result_fields": [
+    "Question_ID",
+    "Verdict",
+    "Severity",
+    "Existing_Answer_Correct",
+    "authorities",
+    "Problem",
+    "Proposed_Answer",
+    "Proposed_Rewrite",
+    "Proposed_Explanation"
+  ],
+  "authority_requirements": {
+    "minimum_per_question": 1,
+    "each_authority_requires": [
+      "authority",
+      "source_type",
+      "exact_section",
+      "official_url",
+      "law_checked_date"
+    ],
+    "official_url_scheme": "https",
+    "source_policy": "current official primary or official government sources only"
+  },
+  "release_qualifying_result": {
+    "Verdict": "KEEP",
+    "Existing_Answer_Correct": "YES"
+  }
+}
