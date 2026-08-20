@@ -1,0 +1,620 @@
+{
+  "package_type": "PHASE1_BLIND_ANSWER_LOCK",
+  "tranche": "BATCH3-B3C",
+  "audit_date": "2026-08-20",
+  "law_checked_date": "2026-08-20",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3C",
+  "independent": true,
+  "authorizing_issue": 91,
+  "freeze_commit": "136d2fea779728aa7cfac9b31d84164ade03bcfe",
+  "represented_candidate_branch": "author/batch3-b3c",
+  "represented_candidate_sha": "e181e038625b32f79ba6910c35a4f20d3a7335e2",
+  "lock_branch": "audit/batch3-b3c-claude-fresh-b3c",
+  "asserted_starting_head_sha": "506c3d9a95d90d44c35d01487cc7ec4eb9d98d43",
+  "asserted_lock_base_sha": "136d2fea779728aa7cfac9b31d84164ade03bcfe",
+  "phase": "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
+  "attestation": {
+    "read_only_sanitized_blind_package_before_lock": true,
+    "did_not_open_canonical_question_records_before_lock": true,
+    "did_not_open_data_rules_before_lock": true,
+    "did_not_open_postlock_dependencies_before_lock": true,
+    "did_not_open_generated_site_payload_before_lock": true,
+    "did_not_open_batch3c_authoring_scripts_before_lock": true,
+    "did_not_open_prior_audit_records_prs_or_issue_comments_for_this_tranche_before_lock": true,
+    "did_not_consult_or_infer_author_reasoning": true,
+    "research_sources_official_primary_only": true,
+    "official_sources_used": [
+      "malegislature.gov (Massachusetts General Laws)",
+      "mass.gov Trial Court Law Libraries official CMR regulation pages and PDF texts"
+    ],
+    "excluded_source_types": [
+      "Cornell LII",
+      "Justia",
+      "casetext and other commercial republishers",
+      "blogs and commercial exam-prep summaries",
+      "search engine result snippets used as authority"
+    ],
+    "contamination_detected": false,
+    "notes": "The blind package instruction also barred data/rules/ before the lock; that bar was observed even though the sealed contracts disclose the 28 rule identifiers. Rule record CONTENT was not read before this lock. Regulation currency was verified on the official mass.gov regulation landing pages: 247 CMR 9.00 rev. 12/06/2024 (Mass. Register #1536); 247 CMR 16.00 rev. 12/15/2017."
+  },
+  "answer_key_conventions": {
+    "SBA": "exactly one choice id",
+    "SATA": "all choice ids that are correct statements"
+  },
+  "blind_answers": [
+    {
+      "Question_ID": "MA-Q-0295",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "The prohibition is on the MANNER of the transaction, not on the compliance of each individual step. 247 CMR 9.01(2) forbids processing a prescription or dispensing a drug 'in a manner which is intended, either directly or indirectly, to circumvent any law or regulation governing the practice of pharmacy.' The words 'either directly or indirectly' defeat choice B, and step-by-step compliance defeats choice A because the regulation attaches to the design of the sequence as a whole. The rule contains no patient-harm element (defeating C) and no financial-benefit element (defeating D); intent to circumvent is itself the violation.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(2)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(2)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0296",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["D"],
+      "reasoning": "247 CMR 9.01(14) is an unconditional prohibition: 'A licensee may not provide any practitioner with blank prescription forms which refer to any pharmacist or pharmacy.' The rule has no consideration element, no agreement element, no actual-steering element and no controlled-substance limitation, so choices A, B, C and E each import a qualification the regulation does not contain. Note that the separate anti-kickback rule at 247 CMR 9.01(11) is what choice A is really describing; it is a different prohibition and its absence does not excuse the 9.01(14) breach.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(14)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(14)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0297",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["B", "C", "D", "E"],
+      "reasoning": "247 CMR 16.04(6) requires the authorized pharmacist to 'maintain a copy of the current CDTM agreement, including copies of current patient referral and patient consent, in the primary practice setting, readily retrievable at the request of the Board of Registration in Pharmacy and Board of Registration in Medicine.' That sentence supports B (copy of the agreement), C (copies of referral and consent), D (primary practice setting) and E (readily retrievable on request). A is wrong because the same subsection assigns the ORIGINAL to the supervising physician, who must keep it in the patient's medical record in his own custody.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.04(6)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(6)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0298",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "Two limbs of 247 CMR 16.04(6) are tested. First, the documents must be readily retrievable at the request of BOTH the Board of Registration in Pharmacy AND the Board of Registration in Medicine, so the pharmacist's refusal to the BORIM investigator is wrong; 247 CMR 16.05 reinforces that nothing in 247 CMR 16.00 limits BORIM's review and investigation of its licensees. Second, the supervising physician 'must maintain the original of the current CDTM agreement, including the original current patient referral and patient consent, in the patient's medical record in the custody of the supervising physician' — so the physician cannot hand the original to the pharmacist for safekeeping. E states both limbs correctly; D is right on the boards but wrong on the original.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.04(6)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(6)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.05",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.05",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0299",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["D", "E"],
+      "reasoning": "247 CMR 16.04(3) first sentence: 'A collaborative practice agreement shall specify those duties of the authorized pharmacist that may be delegated to other appropriately trained and authorized staff and those duties under the agreement that shall not be delegated.' The requirement is affirmative and two-sided, which is exactly D and E. Silence therefore cannot operate as permission (A fails), and neither the delegate's training (B) nor the non-dispensing character of the task (C) supplies the missing agreement term — the agreement itself is the source of delegation authority.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.04(3)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(3)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0300",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["C"],
+      "reasoning": "The agreement has satisfied only the first sentence of 247 CMR 16.04(3). The second sentence adds a distinct requirement: 'A collaborative practice agreement shall specify when and how an authorized pharmacist may delegate duties under the agreement, and the duration and scope of the delegation.' C tracks that sentence exactly. The regulation imposes no per-delegation Board approval (B), no separate patient consent to delegation (D) and no physician countersignature on the individual delegation (E); A is wrong because naming the duties satisfies only half of 16.04(3).",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.04(3)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(3)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0301",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(e) draws the line precisely: 'No retail pharmacy may employ a physician for the purpose of maintaining, establishing or entering into a collaborative practice agreement with a patient. Nothing shall prohibit a retail pharmacy from hiring a physician or licensed medical practitioner for the purpose of conducting quality assurance reviews of its pharmacists that are engaged in the practice of collaborative drug therapy.' 247 CMR 16.04(7)(b) and (c) restate both limbs. The quality assurance engagement is therefore permitted and the agreement engagement is prohibited. D is a distractor because the statute draws no compensation-based exception.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(e)",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(e)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.04(7)(b)-(c)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(7)(b) and 16.04(7)(c)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0302",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["C", "E"],
+      "reasoning": "The statutory definition of 'Patient' in M.G.L. c. 112, s. 24B1/2(a) requires a referral by the supervising physician and adds: 'The supervising physician shall assess the patient and include a diagnosis when referring the patient to the collaborating pharmacist. The patient shall be notified of, and shall consent to, the collaborative drug therapy management services in the retail drug business setting.' That yields C and E. In the community pharmacy setting 247 CMR 16.03(5)(c) additionally requires a WRITTEN referral specifying the primary diagnosis and the patient's written informed consent. A casual remark by the physician (A), the patient's self-presentation (B) and the pharmacist's own file note (D) cannot manufacture patient status, because the referral must come from the supervising physician.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(a), definition of 'Patient'",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(a)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.03(5)(c)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.03(5)(c)1. through 4.",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0303",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["D"],
+      "reasoning": "The final sentence of the 'Patient' definition in M.G.L. c. 112, s. 24B1/2(a) is explicit: 'Individual referral and consent shall be recorded by the pharmacist and the supervising physician in the patient's record.' The duty is joint and the location is the patient's record, which is D. 247 CMR 16.03(5)(d) restates it. The physician's assurance that his own chart entry suffices is therefore wrong (A); the obligation is not the pharmacist's alone (B), is not allocable by agreement between the professionals (C), and there is no Board register (E).",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(a), definition of 'Patient'",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(a)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.03(5)(d)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.03(5)(d)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0304",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["B"],
+      "reasoning": "The written individual referral requirement is setting-specific. It appears only in the community pharmacy branch: 247 CMR 16.03(5)(c)1. ('provide a written referral of the patient to the authorized pharmacist') and 247 CMR 16.04(1)(a) ('In the community pharmacy setting, the CDTM agreement shall include: (a) a written referral of a specific patient'). The hospital branch, 247 CMR 16.03(1), imposes no individual written referral and instead conditions practice on medical staff executive committee approval. A physician-to-pharmacist discussion about the specific inpatient therefore suffices in the hospital but not in the community pharmacy. D overstates by making writing universal, and E invents a signature requirement that neither the statute nor 247 CMR 16.00 imposes.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.03(1) and 16.03(5)(c)1.",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.03(1); 247 CMR 16.03(5)(c)1.",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.04(1)(a)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(1)(a)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0305",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["A", "B", "C", "E"],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(a) defines CDTM as 'the initiating, monitoring, modifying and discontinuing of a patient's drug therapy by a pharmacist in accordance with a collaborative practice agreement' (choice A) and provides that it 'may include: collecting and reviewing patient histories' (B); 'obtaining and checking vital signs, including pulse, temperature, blood pressure and respiration' (C); and, under physician supervision or direct consultation, 'ordering and evaluating the results of laboratory tests directly related to drug therapy when performed in accordance with approved protocols applicable to the practice setting' (E). The same sentence closes with 'and when the evaluation shall not include a diagnostic component', which excludes D.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(a), definition of 'Collaborative drug therapy management'",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(a)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0306",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["A"],
+      "reasoning": "The facts satisfy every condition the statute places on the ordering limb — a test directly related to the drug therapy managed, an approved protocol applicable to the setting, and direct consultation with the supervising physician — so B and D are wrong. But the same clause of M.G.L. c. 112, s. 24B1/2(a) ends 'and when the evaluation shall not include a diagnostic component.' A conclusion that the patient has a new condition is precisely a diagnostic component, so the evaluation exceeds the statutory limit. C is wrong because relatedness cures only the ordering, not the diagnostic conclusion. E is the strongest distractor but fails because reporting to the supervising physician afterwards does not convert a prohibited diagnostic evaluation into a permitted one; the limit is on the content of the evaluation, not on its downstream communication.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(a), definition of 'Collaborative drug therapy management'",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(a)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0307",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "247 CMR 16.04(5) imposes two duties with different timing. The first is expressly antecedent: 'PRIOR TO termination or non-renewal of a CDTM agreement, an authorized pharmacist and supervising physician shall arrange for an uninterrupted continuation of the patient's drug therapy.' The second — informing the patient in writing of the termination and of the continuation procedures — is triggered when the agreement is not renewed. The pharmacist's plan addresses only the second duty, so what has already been missed is the pre-lapse arrangement for uninterrupted continuation, which is E. A is wrong precisely because written notice discharges only one of the two duties. The regulation requires no Board notice (B), no notice to other prescribers (C), and certainly not a variation extending an agreement the parties have chosen not to renew (D).",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 16.04(5)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(5)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0308",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["D", "E"],
+      "reasoning": "247 CMR 16.03(5)(c)1. requires a 'written referral'. Massachusetts supplies the general meaning of that term in M.G.L. c. 4, s. 7, cl. Thirty-eighth: \"'Written' and 'in writing' shall include printing, engraving, lithographing and any other mode of representing words and letters.\" Indelible pencil is such a mode, so the pencil referral satisfies the writing requirement (D) and A fails. Nothing in the statute or 247 CMR 16.00 requires a handwritten signature on the referral, so C fails. The emailed flattened image fails not because of the transmission medium — electronic transmission is unobjectionable, which is why B is a trap — but because 247 CMR 16.04(6) requires the pharmacist to maintain the copy of the current patient referral 'readily retrievable at the request of the Board of Registration in Pharmacy and Board of Registration in Medicine', and a document the system can neither store nor retrieve in readable form cannot satisfy that (E).",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 4, s. 7, cl. Thirty-eighth",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 4, s. 7, clause Thirty-eighth",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleI/Chapter4/Section7",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.04(6)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(6); 247 CMR 16.03(5)(c)1.",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0309",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["C"],
+      "reasoning": "M.G.L. c. 94C, s. 21A expressly permits the toll-free route for off-site delivery — 'If a person elects delivery of a prescription drug at a location other than a pharmacy, the requirements of this section may be satisfied by providing such person with access to a toll-free telephone service' — which defeats D and E. But the very next sentence fixes the medium: 'The number of such toll-free telephone service shall be printed on a label affixed to each container of a prescription drug dispensed by a pharmacy to a patient.' Because nothing about the number appears on the containers, the statutory condition is unmet, so A and B fail and C is correct.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 21A",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 21A (third paragraph)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0310",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["B"],
+      "reasoning": "M.G.L. c. 94C, s. 21A provides: 'The absence of any record of a failure to accept the pharmacist's offer to counsel shall create a presumption that such counseling was provided.' The presumption runs in the pharmacy's favour and is triggered by the very silence described, so B is correct and C states the presumption backwards. A is wrong because the statute attaches a legal consequence to the silence; D and E invent obligations (recollection evidence, affirmative recording of counselling) that s. 21A does not impose — the statute requires recording of the FAILURE to accept, not of the counselling itself.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 21A",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 21A (paragraph beginning 'Such information may be recorded')",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0311",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["A", "B", "C", "E"],
+      "reasoning": "The statutory definition of 'Collaborative practice agreement' in M.G.L. c. 112, s. 24B1/2(a) supplies four constitutive features: 'a written and signed agreement between a pharmacist ... and a supervising physician' (A); 'The collaborative practice shall be within the scope of the supervising physician's practice.' (B); 'Each collaborative practice agreement shall be subject to review and renewal on a biennial basis.' (C); and 'A collaborative practice agreement shall include individually developed guidelines for any prescriptive practice of the pharmacist.' (E). D is wrong: there is no filing-with-the-Board precondition. 247 CMR 16.04(6) instead requires the pharmacist to maintain a copy in the primary practice setting, readily retrievable on request — maintenance and retrievability, not filing and pre-approval.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 112, s. 24B1/2(a), definition of 'Collaborative practice agreement'",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 112, s. 24B1/2(a)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 16.04(6)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 16.04(6)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0312",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["B", "E"],
+      "reasoning": "247 CMR 9.17(3) provides that 'The DUR shall be based upon current standards which may include the following: (a) the American Hospital Formulary Service Drug Information; (b) the United States Pharmacopoeia Drug Information; (c) the American Medical Association Drug Evaluations; (d) Plumb's Veterinary Drug Handbook; and (e) other peer-reviewed medical literature.' Two features decide the item. The list is introduced by 'may include' and closes with the open category 'other peer-reviewed medical literature', so an unnamed current peer-reviewed journal article is acceptable (B) and A and C fail. The governing constraint is instead the opening words 'current standards', which a superseded edition does not meet regardless of the compendium's appearance in the list — so E is correct and D fails.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.17(3)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.17(3)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0313",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "247 CMR 9.17(2) contains two obligations: 'Upon identifying any of the above, a pharmacist shall take appropriate measures to ensure the proper care of the patient which may include consultation with the prescribing practitioner ... A pharmacist shall document any measures taken in response to a drug utilization review.' The pharmacist discharged the first but not the second; the documentation duty is free-standing and is not extinguished by clinical resolution, so A fails and E is correct. The regulation requires no report to the Board (B), no repeat prospective review of the revised therapy (C) and no written prescriber confirmation (D).",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.17(2)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.17(2)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0314",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["D"],
+      "reasoning": "247 CMR 9.01(15): 'A licensee may not refuse to compound simple or moderate non-sterile compounded preparations customary to the community needs except upon extenuating circumstances or by a waiver of Board regulation.' The first request is a simple non-sterile preparation customary to the community which the pharmacy is equipped and stocked to make; bare preference is neither an extenuating circumstance nor a waiver, so that refusal is prohibited. The second request is for a STERILE preparation, which falls outside the class the duty covers, so the pharmacy is free to decline and the duty is not engaged at all. That combination is D. A and B each treat the two refusals alike; C inverts the analysis; E imports an availability-elsewhere test the regulation does not contain.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(15)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(15)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0315",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["C"],
+      "reasoning": "247 CMR 9.01(9) states flatly: 'A licensee may not engage in any fraudulent or deceptive act.' Deception is assessed by the arrangement's tendency to mislead, not by the literal truth of its components, so A fails; and the prohibition is independent of any other dispensing rule, so B fails. The regulation contains no reliance element (defeating D) and no gain or loss element (defeating E). Arranging a record so that a reviewer will draw a conclusion known to be untrue is itself the deceptive act, which is C.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(9)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(9)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0316",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "247 CMR 9.01(16) imposes a two-limb duty: 'A licensee shall maintain patient confidentiality AND protect a patient's confidential information.' The second limb is protective and is breached by leaving completed prescriptions face up on an open counter and a named waiting list visible to the queue, even though the pharmacist made no disclosure (defeating A) and even though no one is shown to have read them (defeating B) — the duty is to protect, not merely to refrain from disclosing, and it is not contingent on proof of actual exposure. C confuses this with the separate patient consultation area requirement of 247 CMR 9.18(6), which does not cure a display breach, and D wrongly makes the duty complaint-driven.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(16)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(16)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0317",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["A"],
+      "reasoning": "247 CMR 9.01(7) makes acceptance mandatory only for two categories: 'A pharmacy shall accept a medication that it previously dispensed to a patient if the medication: (a) was dispensed to the patient in error; or (b) is suspected to be defective or contaminated.' It then adds: 'A pharmacy is not required to accept a medication from a patient that was properly dispensed and not defective at the time it was dispensed.' The wrong strength is a dispensing error, so the first return must be accepted; the therapy change involves a correctly dispensed, non-defective product, so the second need not be. That is A. E fails on a second ground as well: a medication accepted under 9.01(7) 'may not be returned to the pharmacy's inventory and must be quarantined and properly disposed', and 247 CMR 9.01(5) bars re-dispensing previously dispensed medication.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(7)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(7); 247 CMR 9.01(5)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0318",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["A", "B", "C", "E"],
+      "reasoning": "247 CMR 9.06(3): 'A pharmacy that dispenses a naloxone rescue kit or other approved opioid antagonist shall provide counseling and the \"opioid antagonist information pamphlet\" at the time of dispensing' — giving A and B for the first requestor. 247 CMR 9.06(4): 'A pharmacy that does not have a naloxone rescue kit or other approved opioid antagonist readily available for dispensing at the time requested shall refer the requestor to the nearest location that has [one] readily available' — giving C, and E because unavailability is the trigger for the referral duty rather than an excuse from it. D fails because an invitation to return another day is not the referral the regulation mandates.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.06(3) and 9.06(4)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.06(3); 247 CMR 9.06(4)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0319",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["D"],
+      "reasoning": "M.G.L. c. 94C, s. 19B(e) resolves both halves. On whose coverage: the pharmacist 'shall, for the purposes of health insurance billing and cost-sharing, treat the transaction as the dispensing of a prescription to the person purchasing the opioid antagonist REGARDLESS OF THE ULTIMATE USER' — so the mother, not the absent son, which defeats A and B. On timing: 'Unless the person purchasing the opioid antagonist requests to pay for the prescription out-of-pocket, the pharmacist or designee shall make a reasonable effort to identify the purchaser's insurance coverage and to submit a claim for the opioid antagonist to the insurance carrier PRIOR TO DISPENSING the opioid antagonist.' She did not ask to pay out of pocket, so the claim must precede supply, defeating C. E is wrong because the statute contemplates precisely this third-party purchase.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 19B(e)",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 19B(e)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19B",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0320",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["D", "E"],
+      "reasoning": "Both the statute and the regulation set an effort standard, not a completeness standard. M.G.L. c. 94C, s. 21A: 'The pharmacist or his designee shall make reasonable efforts to obtain, record and maintain the following patient information ... individual history where significant, including known allergies and drug reactions'. 247 CMR 9.16(7) likewise requires a 'reasonable effort to obtain, record, and maintain ... patient history, including known drug allergies and drug reactions'. Asking on three separate visits and meeting refusal is a reasonable effort, so the first pharmacy is compliant (D); never asking because the queue was long is no effort at all, so the second is not (E). A fails because it treats the two alike despite the second making no effort; B applies a completeness standard the law does not impose; C invents a clinical-significance trigger for compliance.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 21A",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 21A (paragraph beginning 'The pharmacist or his designee shall make reasonable efforts')",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 9.16(7)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.16(7)(b)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0321",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["E"],
+      "reasoning": "247 CMR 9.01(4) is conjunctive: 'A pharmacist shall practice pharmacy within the scope of his or her education, training, and experience AND within the recognized pharmacist scope of practice.' Satisfying the profession-wide limb does not satisfy the individual limb, so A fails. Employer direction is not a source of professional authority (B). The regulation provides no observation-based cure (C) and no individual Board authorisation mechanism (D). Because the technique lies outside her own training and experience, she may not proceed, which is E.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(4)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(4)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0322",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["A", "B", "C", "E"],
+      "reasoning": "247 CMR 9.01(17): 'A pharmacist, pharmacy intern, or pharmacy technician may not practice in a pharmacy for more than 12 hours in a 24 hour period without completing an eight consecutive hour rest period prior to resuming work in a pharmacy. In the event of an extenuating circumstance, a pharmacist ... may exceed 12 hours in order to act in the best interest of the patient, provided the time in excess of 12 hours is minimized and the licensee documents the extenuating circumstance.' The exception is the only route past the ceiling and is patient-interest framed (A); the excess time must be minimized (B); the extenuating circumstance must be documented (C); and the ceiling is expressly measured across a 24 hour period (E). D fails because a manager's instruction is not the regulatory trigger — the extenuating circumstance and the patient's best interest are.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(17)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(17)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0323",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["B"],
+      "reasoning": "Having exceeded 12 hours in a 24 hour period, 247 CMR 9.01(17) conditions her return on 'completing an eight CONSECUTIVE hour rest period prior to resuming work in a pharmacy.' Four hours of rest, an intervening work shift, and a further five hours do not constitute eight consecutive hours, so aggregation does not satisfy the rule and A fails. The regulation prescribes no 24 hour break (C) and no Board notification (D). E confuses the two limbs: documenting the extenuating circumstance legitimated the long shift itself but does not dispense with the consecutive rest period that follows it.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(17)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(17)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0324",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["C", "D"],
+      "reasoning": "M.G.L. c. 94C, s. 21A opens: 'A pharmacist shall conduct a prospective drug review before each new prescription is dispensed or delivered to a patient or a person acting on behalf of such patient.' That gives C and refutes B, since delivery and receipt by an agent are expressly covered. The next sentence reads: 'Such review MAY include, BUT NOT BE LIMITED TO, screening for potential drug therapy problems due to therapeutic duplication, drug disease contraindication, drug interactions, INCLUDING SERIOUS INTERACTIONS WITH NONPRESCRIPTION OR OVER-THE-COUNTER DRUGS, incorrect drug dosage, duration of drug treatment, drug allergy interactions and clinical abuse or misuse.' The 'may include, but not be limited to' formula makes the list permissive and non-exhaustive, giving D and refuting A; and the express reference to over-the-counter interactions refutes E.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 21A",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 21A (first paragraph)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "247 CMR 9.17(1)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.17(1)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0325",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["A"],
+      "reasoning": "The two standing order regimes differ on exactly one word. For emergency contraception, M.G.L. c. 94C, s. 19A(d) provides: 'Before dispensing emergency contraception authorized under this section, a pharmacist MAY complete a training program approved by the commissioner' — permissive, so the absence of training is no bar. For COVID-19, M.G.L. c. 94C, s. 19E(c) provides: 'before dispensing a COVID-19 drug authorized under this section, a pharmacist SHALL complete a training program approved by the commissioner on COVID-19 drugs' — mandatory and a condition precedent. An untrained pharmacist may therefore proceed with the emergency contraception but not the COVID-19 drug, which is A. B inverts the pair, C and D each treat the regimes alike, and E invents a notification substitute neither section provides.",
+      "authority_cited": [
+        {
+          "authority": "M.G.L. c. 94C, s. 19A(d)",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 19A(d)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19A",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 19E(c)",
+          "source_type": "state statute",
+          "exact_section": "M.G.L. c. 94C, s. 19E(c)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19E",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0326",
+      "question_type": "SBA",
+      "blind_selected_choice_ids": ["C"],
+      "reasoning": "247 CMR 9.01(12): 'A licensee may not dispense or distribute any expired, outdated, defective, contaminated, counterfeit, contraband, or otherwise substandard drug or device to any person or entity who is not licensed or legally authorized to receive such drug or device.' The test is the recipient's authorisation to RECEIVE such a drug. A licensed reverse distributor is so authorised, so that transfer may proceed. The unlicensed overseas aid group is not. Nor is the pharmacy's own technician: a technician licence authorises assigned pharmacy duties, not personal receipt of expired stock for training. That yields C. A is wrong because expiry does not remove the product from the regulation's reach — it is the very trigger; B is wrong because disclosure is not the statutory test; E overstates, since the reverse distributor route is lawful.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(12)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(12)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "Question_ID": "MA-Q-0327",
+      "question_type": "SATA",
+      "blind_selected_choice_ids": ["D", "E"],
+      "reasoning": "247 CMR 9.01(3): 'UNLESS OTHERWISE REGULATED BY THE BOARD, a licensee shall adhere to the MOST CURRENT standards established by each chapter of the United States Pharmacopeia (\"USP\").' On the first point, which the Board has never regulated, the USP duty applies at full strength and is a currency duty, so following a years-old edition fails (D) and A is wrong — authenticity of the chapter is not the test, currency is. On the second point the opening proviso operates: a Board regulation addressing the point displaces USP, so following the current USP chapter against the Board regulation fails (E) and B is wrong. C is wrong because 247 CMR 9.01(3) adopts USP by general reference rather than chapter-by-chapter adoption.",
+      "authority_cited": [
+        {
+          "authority": "247 CMR 9.01(3)",
+          "source_type": "state regulation",
+          "exact_section": "247 CMR 9.01(3)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ]
+    }
+  ],
+  "pre_unseal_observations": {
+    "note": "Recorded BEFORE any canonical key was opened, so that these observations cannot be shaped by the author's key.",
+    "sata_option_e_concentration": "On my independent solve, option E is a correct selection in 11 of the 12 SATA items (all except MA-Q-0324). If the canonical keys agree, a candidate who simply always selects E on SATA items in this tranche would be right 92% of the time, which is a genuine answer-distribution weakness at the tranche level.",
+    "sata_four_correct_shape": "Five SATA items resolve on my solve to four correct statements and a single false one (MA-Q-0297, 0305, 0311, 0318, 0322). In four of those five the single false option is D (all but MA-Q-0297, where it is A). A test-wise candidate could learn 'in the long SATA items, D is the odd one out'.",
+    "sba_distribution": "Across the 21 SBA items my solve yields A=3, B=3, C=4, D=4, E=7. The E share (33%) is above uniform but not disqualifying on its own.",
+    "pairs_to_test_on_the_merits": "Rule filenames present at the freeze commit indicate 28 rules for 33 questions, so five rules carry two questions each. My working identification of the pairs, from subject matter alone, is: agreement custody (0297/0298), delegation terms (0299/0300), patient definition (0302/0303), scope definition (0305/0306), practice hour ceiling (0322/0323). The scope-definition pair is the one I expect to be most vulnerable to the charge of testing the same 'no diagnostic component' discrimination twice.",
+    "trivia_risk_items": "MA-Q-0305 and MA-Q-0311 are thin scenario wrappers over statutory-list recall ('which activities may fall within CDTM', 'which features does the statutory definition require'). They will need close scrutiny against the realism criteria reasoning_not_trivia and not_schedule_flashcard."
+  }
+}
