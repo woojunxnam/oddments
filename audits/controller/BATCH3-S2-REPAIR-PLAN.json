@@ -1,0 +1,118 @@
+{
+  "report_type": "BATCH3_S2_REPAIR_PLAN",
+  "status": "PLANNED_NOT_APPLIED",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+
+  "scope": {
+    "questions": 21,
+    "area_3": 16,
+    "area_4": 5,
+    "why_mandatory": "All 14 pending Area-4 questions must survive audit for Area 4 to reach 75, and five of those 14 are these S2 candidates. Area 3 needs 16 of its 24 pending, so it can absorb eight failures across S3 and S2.",
+    "controller_role": "These questions were authored by earlier project phases, not by this controller. Repairing them is author-side work. The controller will not audit any of them."
+  },
+
+  "diagnosis": {
+    "failed_realism_criteria_across_the_21": {
+      "reasoning_not_trivia": 30,
+      "distinct_from_bank": 26,
+      "authentic_distractors": 18,
+      "not_schedule_flashcard": 18,
+      "wording_not_guessable": 8,
+      "practice_plausibility": 2,
+      "appropriate_drug_context": 2
+    },
+    "character": "Structural rather than cosmetic. The auditor notes describe many of the Area-3 items as Schedule-and-refill number-recall variants that duplicate one another, and the two Area-4 closure items as recombinations of each other and of MA-Q-0074.",
+    "consequence": "A light edit pass will not clear these. Each repair must supply a genuinely different professional decision, which means the repair is closer to re-authoring inside an existing family."
+  },
+
+  "area_4_repairs": [
+    {
+      "question_id": "MA-Q-0054",
+      "family_id": "P2_0054_MA_QRE_ANALYSIS",
+      "rule_ids": ["MA-QRE-ANALYSIS"],
+      "authority": "247 CMR 15.03(3)",
+      "failed": ["authentic_distractors", "wording_not_guessable"],
+      "auditor_note": "Only option D used systems-oriented CQI language while the rest were obviously incomplete, so the key was visible from the wording alone.",
+      "repair_approach": "Keep the proposition. Rewrite every option in the same systems register so register no longer identifies the key, and move the discrimination to WHICH systems response the regulation requires: cause and contributing-factor analysis feeding process improvement, as against a corrective action aimed at the individual, a documentation-only response, or an education-only response. Each distractor must be something a real pharmacy plausibly does.",
+      "risk": "LOW. The keyed proposition is unchanged and legal verification already passed KEEP / YES."
+    },
+    {
+      "question_id": "MA-Q-0066",
+      "family_id": "P2_0066_FED_FORM222_LOSS",
+      "rule_ids": ["FED-FORM222-LOSS"],
+      "authority": "21 CFR 1305.16",
+      "failed": ["authentic_distractors", "wording_not_guessable", "reasoning_not_trivia"],
+      "auditor_note": "Asked one fact about immediately reporting a lost Form 222, and the alternatives did not compete.",
+      "repair_approach": "Add a real discrimination the bank does not yet test: missing BLANK ORDER FORMS are not missing CONTROLLED SUBSTANCES. Losing unused forms triggers an immediate report to the DEA Diversion Field Office with the serial numbers, but does not by itself trigger the Massachusetts 24-hour Drug Control Program report at 105 CMR 700.008, which is keyed to theft, loss or suspected tampering of controlled substances, nor the DEA significant-loss route. The candidate must separate three reporting regimes on facts where only one is engaged.",
+      "adjacent_questions_to_stay_clear_of": {
+        "MA-Q-0058": "DEA theft or significant loss of controlled substances, one business day",
+        "MA-Q-0126": "a Form 222 lost in transit and the replacement procedure",
+        "MA-Q-0129": "written cancellation of an executed Form 222"
+      },
+      "sources_already_verified": [
+        "FED-FORM222-LOSS rule record, PRIMARY_VERIFIED",
+        "105 CMR 700.008, read verbatim from the official PDF on 2026-08-20"
+      ],
+      "risk": "LOW to MEDIUM. Needs care to stay clear of MA-Q-0058 and MA-Q-0126."
+    },
+    {
+      "question_id": "MA-Q-0068",
+      "family_id": "P2_0068_FED_CSOS",
+      "rule_ids": ["FED-CSOS"],
+      "authority": "21 CFR 1305 Subpart C; 21 CFR 1311",
+      "failed": ["authentic_distractors", "wording_not_guessable", "reasoning_not_trivia"],
+      "auditor_note": "Certificate fact recall, with distractors such as a scanned form and an unsigned spreadsheet that eliminate themselves.",
+      "repair_approach": "Move from what CSOS is to a workflow decision about who may sign and what a valid electronic order requires. Candidate angles: the credential is held by an authorised individual rather than by the pharmacy; an electronic order without a valid digital signature is not an order however it is transmitted; paper and electronic ordering coexist rather than one replacing the other.",
+      "blocked_on": "PRIMARY SOURCE RETRIEVAL. The existing rule summary supports the general proposition but not the individual-credential and revocation details the added depth needs. 21 CFR 1305 Subpart C and 21 CFR 1311 must be read verbatim from eCFR before this repair is written.",
+      "risk": "MEDIUM. Do not author the added depth from the rule summary alone."
+    },
+    {
+      "question_id": "MA-Q-0073",
+      "family_id": "P2_0073_MA_PHARMACY_CLOSURE_PATIENTS",
+      "rule_ids": ["MA-PHARMACY-CLOSURE-PATIENTS"],
+      "authority": "247 CMR 6.13(4) and (5)",
+      "failed": ["distinct_from_bank"],
+      "auditor_note": "Its patient-notice and transfer elements reappear almost verbatim in MA-Q-0090.",
+      "repair_approach": "Keep the patient-facing scope and sharpen it to a single discrimination the neighbours do not test: the population that must be reached is every patient who had a prescription filled within the preceding 90 days, the duty is to ATTEMPT notice by first class mail or another Board-approved method at least 14 days before closure, the conspicuous posting must state the PROCEDURE FOR REQUESTING A TRANSFER, and transfers under 6.13(5) run on patient request or as required by law or contract rather than automatically. Distinctness is restored partly by this sharpening and partly by moving MA-Q-0090 off the patient limb entirely.",
+      "risk": "LOW. Legal verification already passed KEEP / YES and the source is verified verbatim."
+    },
+    {
+      "question_id": "MA-Q-0090",
+      "family_id": "P2_0090_MA_PHARMACY_CLOSURE_NOTICE",
+      "rule_ids": ["MA-PHARMACY-CLOSURE-NOTICE", "MA-PHARMACY-CLOSURE-PATIENTS", "MA-PHARMACY-CLOSURE-CS"],
+      "authority": "247 CMR 6.13(2), (3), (6) and (7)",
+      "failed": ["distinct_from_bank"],
+      "auditor_note": "Combines the patient closure duties of MA-Q-0073 with the post-closure duties of MA-Q-0074.",
+      "repair_approach": "Move it off the ground its neighbours already hold. MA-Q-0072 keys the ordinary certified 14-day Board notice, MA-Q-0073 keys the patient limb and MA-Q-0074 keys the post-closure submission. What no question keys is that the closure duties VARY BY PHARMACY TYPE: a non-resident pharmacy gives a shorter set of particulars under 6.13(2) and is expressly outside the 6.13(6) post-closure submission; a sterile or complex non-sterile compounding pharmacy must additionally identify a Board-licensed pharmacy suitable and available to provide CONTINUITY OF CARE under 6.13(3); and an institutional sterile compounding pharmacy is excused from 6.13(3) and 6.13(4) altogether under 6.13(7).",
+      "risk": "LOW. Source verified verbatim on 2026-08-20 and the new ground is unoccupied.",
+      "note_on_family": "The family_id is retained. The subject is still closure notice; only the discrimination sharpens. Changing family_id would churn the matrix for no governance gain, and question_audit_hash changes on the content edit regardless."
+    }
+  ],
+
+  "area_3_repairs": {
+    "count": 16,
+    "status": "NOT YET DESIGNED",
+    "blocked_on": "An Area-3 proposition census on the same discipline as the Area-2 one. Twelve of the sixteen are MAJOR_REWRITE cases clustered on Schedule III to VI refill and quantity arithmetic, and the auditor found them duplicating each other. Repairing them into distinct questions needs distinct propositions established first, not edits to the existing stems.",
+    "cheapest_cases": {
+      "MA-Q-0014": "realism passes every criterion; only legal MINOR_EDIT with answer PARTIALLY correct",
+      "MA-Q-0018": "same"
+    },
+    "slack": "Area 3 needs 16 of 24 pending, so eight failures are absorbable. This is the one area where a partial repair yield is survivable."
+  },
+
+  "sequencing": [
+    "1. Retrieve 21 CFR 1305 Subpart C and 21 CFR 1311 verbatim from eCFR for MA-Q-0068.",
+    "2. Apply the four Area-4 repairs that rest on already-verified sources, plus MA-Q-0068 once its source is in hand.",
+    "3. Full QA, then freeze the Area-4 repairs as tranche B3-S2A for a fresh auditor.",
+    "4. Run the Area-3 proposition census, then design and apply the Area-3 repairs as B3-S2B.",
+    "5. Editor repair must never self-promote release maturity: every repaired record returns to AUDIT_PENDING with audits cleared, following scripts/apply_legacy_salvage_t1_repairs.py."
+  ],
+
+  "rules_held": [
+    "No repaired question will be released without a fresh independent audit at its new hash.",
+    "Failed historical audits stay bound to the old hashes as evidence and will not be deleted.",
+    "MA-Q-0028 remains quarantined and is not part of this plan."
+  ]
+}
