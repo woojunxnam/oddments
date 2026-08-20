@@ -17,7 +17,11 @@
       },
       "substantive_effect": "None. The rule's stated limits are correct; only the authority list was incomplete.",
       "action": "21 U.S.C. 844(a) added to FED-PSE-QUANTITY authority for the 9 g / 30-day element, which is a prohibition on the purchaser rather than a restriction on the seller.",
-      "released_questions_affected": ["MA-Q-0009", "MA-Q-0107", "MA-Q-0108"],
+      "released_questions_affected": [
+        "MA-Q-0009",
+        "MA-Q-0107",
+        "MA-Q-0108"
+      ],
       "release_impact": "None. QUESTION_AUDIT_FIELDS carries rule_ids, not rule content, so a rule-record edit does not change any question_audit_hash."
     },
     {
@@ -31,7 +35,18 @@
         "also_verified": "700.012(A)(1) carries the reporting requirement, as the record states, and is correct."
       },
       "action": "MA-PMP-REPORTING authority corrected from 700.012(A)(1), 700.012(C)(7) to 700.012(A)(1), 700.012(C)(8).",
-      "released_questions_affected": ["MA-Q-0009", "MA-Q-0025", "MA-Q-0031", "MA-Q-0037", "MA-Q-0179", "MA-Q-0182", "MA-Q-0198", "MA-Q-0199", "MA-Q-0201", "MA-Q-0210"],
+      "released_questions_affected": [
+        "MA-Q-0009",
+        "MA-Q-0025",
+        "MA-Q-0031",
+        "MA-Q-0037",
+        "MA-Q-0179",
+        "MA-Q-0182",
+        "MA-Q-0198",
+        "MA-Q-0199",
+        "MA-Q-0201",
+        "MA-Q-0210"
+      ],
       "release_impact": "None, for the reason given in finding 1."
     },
     {
@@ -47,5 +62,23 @@
       "action": "None to the question. MA-Q-0014 remains AUDIT_PENDING and unreleased on its own separate footing.",
       "note": "Recorded because a plausible, confidently stated audit finding turned on a subsection whose scope the auditor did not read. The verification also surfaced an unused and well-discriminating proposition for future authoring: the 5-day initial-partial limit applies only on the out-of-state pathway."
     }
-  ]
+  ],
+  "disposition": {
+    "status": "FINDINGS_CONFIRMED_AND_RECORDED; DATA_CORRECTION_DEFERRED",
+    "what_was_attempted": "Both confirmed citation corrections were applied to data/rules and the repository's own scripts/update_content_hashes.py was run, as validate_all directs.",
+    "what_that_revealed": {
+      "mechanism": "A released question's final_adjudication.verified_dependencies pins the content_version and content_hash of every rule AND drug it was adjudicated against. Drug records in turn pin the rules they depend on through verified_rule_dependencies.",
+      "propagation": "MA-PMP-REPORTING and FED-PSE-QUANTITY are depended on by 62 drug records, so re-hashing the two rules re-hashed 62 drugs, which broke the adjudication pins of released questions that cite those drugs but not those rules. MA-Q-0207 is an example: it cites lorazepam, alprazolam and pregabalin, and no edited rule.",
+      "measured": "validate_all went from 0 errors to 82 errors; tests/test_release_build_semantics.py failed."
+    },
+    "why_the_correction_was_reverted": "Re-pinning those adjudication snapshots would mean this controller silently re-adjudicating released questions that independent adjudicators signed off on, against dependency content the controller itself had just changed. That is self-certification of released material and is not available to the controller. Reverting is not the same as hiding: the two defects and their verified correct pinpoints are recorded above and stand on the record.",
+    "scope_of_the_deferred_defect": "Citation accuracy only. Neither correction changes a rule's operative content, so no question's key or explanation is affected and no released answer is wrong.",
+    "follow_up_required_after_BATCH3_COMPLETE": [
+      "Apply the FED-PSE-QUANTITY authority addition (21 U.S.C. 844(a) for the 9 g / 30-day purchaser limit) and the MA-PMP-REPORTING pinpoint correction ((C)(7) -> (C)(8)).",
+      "Run scripts/update_content_hashes.py and accept the propagation into the 62 dependent drug records.",
+      "Route the ~13 released questions whose adjudication pins break to an independent re-adjudication rather than a controller re-pin.",
+      "Only then re-run validate_all and the release build test."
+    ],
+    "reverted_at": "commit following e2f24f7 on author/batch3-b3e-v2"
+  }
 }

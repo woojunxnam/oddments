@@ -40,11 +40,11 @@ from qa_common import DATA, load_records
 SLOT_PRESENCE_MAX = 0.80        # warn: no letter should carry a correct answer in >80% of a tranche's SATA
 SBA_KEY_SHARE_MAX = 0.50        # warn: no letter should be the SBA key in >50% of a tranche
 MATERIAL_COUNT_SHARE = 0.25     # a correct-count holding this share of the bank must not be wholly absent
-MIN_SATA_TO_JUDGE = 6           # below this the shares carry no signal
+MIN_SATA_TO_JUDGE = 6           # below this the shares carry no signal; such a tranche reports PART, never PASS
 
 TRANCHES = [
     ("B3-A", 229, 261), ("B3-B", 262, 294), ("B3-C", 295, 327),
-    ("B3-D", 328, 360), ("B3-E", 361, 390),
+    ("B3-D", 328, 360), ("B3-E", 361, 390), ("B3-F", 391, 406),
 ]
 
 
@@ -99,6 +99,7 @@ def analyse(label: str, questions: list[dict], material: dict[int, float]) -> di
 
     return {
         "tranche": label, "questions": len(questions), "sata": len(sata), "sba": len(sba),
+        "sata_judged": len(sata) >= MIN_SATA_TO_JUDGE,
         "sata_slot_presence": {k: round(v, 3) for k, v in slot.items()},
         "sata_correct_counts": dict(sorted(counts.items())),
         "sba_key_share": {k: round(v, 3) for k, v in keys.items()},
@@ -128,10 +129,18 @@ def main() -> int:
         report = analyse(label, selected, material)
         reports.append(report)
         errors += len(report["errors"])
-        status = "FAIL" if report["errors"] else ("WARN" if report["warnings"] else "PASS")
+        if report["errors"]:
+            status = "FAIL"
+        elif report["warnings"]:
+            status = "WARN"
+        elif not report["sata_judged"]:
+            status = "PART"   # too few SATA to judge; the SBA checks still ran
+        else:
+            status = "PASS"
         slots = "  ".join(f"{k}:{v:.0%}" for k, v in report["sata_slot_presence"].items())
+        note = "" if report["sata_judged"] else f"  (SATA n<{MIN_SATA_TO_JUDGE}, not judged)"
         print(f"{label:<7} {status}  n={report['questions']:>3} SATA={report['sata']:>3}  "
-              f"[{slots}]  counts={report['sata_correct_counts']}")
+              f"[{slots}]  counts={report['sata_correct_counts']}{note}")
         for item in report["errors"]:
             print(f"        ERROR {item['code']}: {item['detail']}")
         for item in report["warnings"]:
