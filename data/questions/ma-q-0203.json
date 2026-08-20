@@ -59,12 +59,44 @@
     "Classify a one-drug measured liquid dose as oral-liquid-single-dose rather than multi-drug-single-dose packaging",
     "Apply paragraph (3)(b) only to the packaging form it names while preserving other requirements"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-20",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-Q0203-V2의 blind-locked legal 및 406-record realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "v1 hash의 legal MINOR_EDIT 및 realism FAIL은 보존한다. v2 hash ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d는 새 auditor가 Phase-1 blind lock 9c75f4d31cc03e53337c74fec9c180a3b4e3c768을 먼저 push한 뒤 legal KEEP/YES, realism KEEP/PASS, 모든 criteria=true로 판정했다. 현재 hash와 methylphenidate dependency가 일치할 때만 이 단일 문항을 release한다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COMPLIANCE-PACKAGING": {
+          "content_version": 2,
+          "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }

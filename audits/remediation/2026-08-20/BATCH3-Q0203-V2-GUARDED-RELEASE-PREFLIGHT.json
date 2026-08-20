@@ -1,0 +1,116 @@
+{
+  "report_type": "BATCH3_Q0203_V2_GUARDED_ADMISSION_V1_PREFLIGHT",
+  "tranche_id": "BATCH3-Q0203-V2",
+  "authorizing_issue": 91,
+  "question_ids": [
+    "MA-Q-0203"
+  ],
+  "status": "PASS",
+  "current_question_hashes": {
+    "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+  },
+  "evidence": {
+    "MA-Q-0203": {
+      "legal": "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+      "realism": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+    }
+  },
+  "dependency_snapshots": {
+    "MA-Q-0203": {
+      "rules": {
+        "MA-COMPLIANCE-PACKAGING": {
+          "content_version": 2,
+          "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        }
+      }
+    }
+  },
+  "release_context": {
+    "blueprint": {
+      "id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "preview_before_count": 365,
+  "released_before_count": 365,
+  "checks": {
+    "01_recomputed_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+      }
+    },
+    "02_not_already_released": {
+      "status": "PASS",
+      "detail": "all candidates are unreleased"
+    },
+    "03_current_hash_legal_and_realism_evidence": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": {
+          "legal": "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+          "realism": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+        }
+      }
+    },
+    "04_valid_initial_audit_history": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": [
+          "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15"
+        ]
+      }
+    },
+    "05_dependency_verification": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {
+            "methylphenidate": {
+              "content_version": 1,
+              "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+            }
+          }
+        }
+      }
+    },
+    "06_no_current_hash_failure": {
+      "status": "PASS",
+      "detail": "none"
+    },
+    "07_quarantine_intact": {
+      "status": "PASS",
+      "detail": {
+        "verification_status": "AUDIT_PENDING",
+        "in_preview": false
+      }
+    },
+    "08_preview_captured_before_mutation": {
+      "status": "PASS",
+      "detail": {
+        "preview_before_count": 365,
+        "released_before_count": 365,
+        "tranche_in_preview_before": []
+      }
+    }
+  },
+  "failures": []
+}

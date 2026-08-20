@@ -42594,13 +42594,45 @@
         "Classify a one-drug measured liquid dose as oral-liquid-single-dose rather than multi-drug-single-dose packaging",
         "Apply paragraph (3)(b) only to the packaging form it names while preserving other requirements"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-20",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+        "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-Q0203-V2의 blind-locked legal 및 406-record realism REAUDIT 이후",
+        "date": "2026-08-20",
+        "notes": "v1 hash의 legal MINOR_EDIT 및 realism FAIL은 보존한다. v2 hash ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d는 새 auditor가 Phase-1 blind lock 9c75f4d31cc03e53337c74fec9c180a3b4e3c768을 먼저 push한 뒤 legal KEEP/YES, realism KEEP/PASS, 모든 criteria=true로 판정했다. 현재 hash와 methylphenidate dependency가 일치할 때만 이 단일 문항을 release한다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {
+            "methylphenidate": {
+              "content_version": 1,
+              "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+            }
+          },
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -42723,7 +42755,31 @@
           "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
         }
       ],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20",
+          "auditor": "GPT",
+          "reviewed_date": "2026-08-20",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "all-criteria rule에 따라 PASS. data/questions의 canonical 406 records를 전부 파싱하고 target 자신을 제외한 405 records와 독립 비교했다. normalized stem+choices word unigram/bigram TF-IDF cosine의 상위 항목은 MA-Q-0202 (0.259874), MA-Q-0169 (0.240859), MA-Q-0195 (0.179382)였고, token-trigram Jaccard 상위 substantive 항목은 MA-Q-0202 (0.036199)와 MA-Q-0169 (0.033175)였다. same-rule/topic 전수 확인과 상위 결과 수동 검토에서 MA-Q-0202는 five-drug/two-solid-package matrix이고 MA-Q-0169는 regulation/policy의 abstract boundary를 묻는다. 이 항목은 bank에서 유일하게 commercially available Schedule II oral solution의 oral-liquid-single-dose category를 multi-drug-single-dose prohibition과 구분시키므로 별도의 packaging-category 판단을 요구한다. MA-Q-0393은 같은 compliance-packaging 영역이지만 FDA-approved labeling conflict를 묻는다. stem은 schedule을 제공하므로 schedule flashcard가 아니며, pharmacy가 measured liquid doses를 개별 container로 준비하는 사실관계는 현재 DailyMed의 methylphenidate oral solution dosage form과도 부합한다. A는 universal-ban 과잉확장, B는 container 내용 대신 같은 날의 다른 dispensing을 기준으로 삼는 category 오류, D와 E는 각각 prescriber authorization과 patient consent에 존재하지 않는 법적 효과를 부여하는 실무상 그럴듯한 distractor다. 이전 v1의 oxycodone dependency mismatch와 MA-Q-0202 choice A의 buprenorphine maintenance-pouch collision은 현 hash에서 모두 제거됐다.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0204",
