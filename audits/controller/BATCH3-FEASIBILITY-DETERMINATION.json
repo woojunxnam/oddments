@@ -1,0 +1,104 @@
+{
+  "report_type": "BATCH3_FEASIBILITY_DETERMINATION",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "verdict": "BATCH3_BLOCKED_AREA2_SOURCE_EXHAUSTION",
+  "measured_at": {
+    "released_total": 263,
+    "unreleased_total": 31,
+    "target_total": 360,
+    "ma_q_0028": {
+      "status": "AUDIT_PENDING",
+      "area": 3,
+      "treatment": "remains quarantined and is excluded from every salvage pool"
+    },
+    "ma_q_0172": {
+      "status": "HOLD",
+      "area": 2,
+      "treatment": "counted as reachable because its evidence already qualifies at its current hash; restoration still depends on the pending independent current-authority reaudit"
+    }
+  },
+  "areas": {
+    "area_1": {
+      "released_now": 78,
+      "minimum_required": 78,
+      "gap": 0,
+      "salvage_pool_usable": 0,
+      "new_authorable_ceiling": null,
+      "maximum_reachable": null,
+      "new_questions_required": 0,
+      "feasible": null
+    },
+    "area_2": {
+      "released_now": 53,
+      "minimum_required": 120,
+      "gap": 67,
+      "salvage_pool_usable": 1,
+      "new_authorable_ceiling": 49,
+      "maximum_reachable": 103,
+      "new_questions_required": 66,
+      "feasible": false
+    },
+    "area_3": {
+      "released_now": 71,
+      "minimum_required": 87,
+      "gap": 16,
+      "salvage_pool_usable": 24,
+      "new_authorable_ceiling": null,
+      "maximum_reachable": null,
+      "new_questions_required": 0,
+      "feasible": null
+    },
+    "area_4": {
+      "released_now": 61,
+      "minimum_required": 75,
+      "gap": 14,
+      "salvage_pool_usable": 5,
+      "new_authorable_ceiling": null,
+      "maximum_reachable": null,
+      "new_questions_required": 9,
+      "feasible": null
+    }
+  },
+  "binding_constraint": {
+    "area": 2,
+    "maximum_reachable": 103,
+    "minimum_required": 120,
+    "shortfall": 17,
+    "why_unrecoverable": "The maximum is released Area-2 questions, plus MA-Q-0172, plus one question for each distinct Area-2 decision family the exhaustive source census could defend. The census enumerated the source universe from official indexes and examined it to exhaustion: M.G.L. c. 13 ss. 22 to 25, M.G.L. c. 112 ss. 24 to 42D including s. 24B1/2 and s. 24B3/4, the whole of M.G.L. c. 94C, all 15 promulgated 247 CMR chapters, all 22 sections of 105 CMR 700.000, 243 CMR 2.12, and the Department of Public Health pharmacist-administration circular chain. Federal law is closed as an Area-2 vein by the bank's own taxonomy. Raising the ceiling would require authoring more than one question per distinct decision family, which breaches the saturated-family rule, or relabelling Area 1, Area 3 or Area 4 content as Area 2, which the controlling instruction forbids and which this census rejected on the record 43 times."
+  },
+  "not_blocked": {
+    "area_1": "Met at the minimum with zero slack. Any future withdrawal of a released Area-1 question would put it below the minimum.",
+    "area_3": "Reachable from salvage alone. Requires 16 of the 24 usable unreleased Area-3 questions to be repaired and to pass a fresh independent audit.",
+    "area_4": "Requires 9 newly authored questions beyond the 5 usable unreleased Area-4 questions. No Area-4 census has been run, but Area 4 draws on the product, facility and federal corpus, where 17 federal rules and 34 Massachusetts rules already sit, so the vein is not obviously exhausted.",
+    "area_2_partial": "49 Area-2 questions remain authorable now and are needed under any resolution of the shortfall."
+  },
+  "options_for_the_project_owner": [
+    {
+      "option": "A",
+      "name": "Rebalance the locked per-area minima",
+      "effect": "Set the Area-2 minimum at or below the proven ceiling and move the difference to Area 3 or Area 4, whose source universes are not exhausted. Preserves every quality rule and the 360 total.",
+      "controller_recommendation": "Preferred. It is the only option that changes no quality rule."
+    },
+    {
+      "option": "B",
+      "name": "Permit more than one question per distinct Area-2 decision family",
+      "effect": "Raises the ceiling arithmetically but relaxes the saturated-family rule and increases near-duplicate risk in the exam-feasibility gate.",
+      "controller_recommendation": "Not recommended without an explicit written change to the rule, because it weakens a quality rule to make the plan pass."
+    },
+    {
+      "option": "C",
+      "name": "Accept a total below 360",
+      "effect": "Batch 3 closes at the reachable figure with the shortfall recorded.",
+      "controller_recommendation": "Available, and honest, but loses the release target."
+    }
+  ],
+  "rules_not_weakened": [
+    "No Area 1, Area 3 or Area 4 content was relabelled as Area 2.",
+    "No validator was weakened and no failed audit was hidden or deleted.",
+    "MA-Q-0028 remains quarantined and is excluded from every pool.",
+    "No question has been authored from this census; the 66-family gate was honoured throughout.",
+    "The controller performed no substantive independent audit of content it authored."
+  ]
+}
