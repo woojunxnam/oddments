@@ -49821,13 +49821,40 @@
         "Read the prohibition as drawn by product formulation rather than by credential grade",
         "Confirm that all three support-personnel categories are named and that no approval mechanism qualifies it"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 blind-locked focused REAUDIT (PR #98) and its official-source cure",
+        "date": "2026-08-19",
+        "notes": "Batch 3 B3-A R1 admission of the two questions CLAUDE-FRESH-B3A initially withheld on realism distinctness. Both were repaired onto genuinely different current-law decision paths, MA-Q-0241 onto 247 CMR 8.05(3) and MA-Q-0256 onto 247 CMR 4.03(7), and re-audited by a separate instance CLAUDE-FRESH-B3A-R1 whose Phase-1 blind lock preceded the records and whose 2/2 blind answers matched the canonical keys. Controller verification passed 16/16 process checks, and the subsequent official-source cure passed a further 11/11: the lock blob is unchanged, the REALISM record is byte-identical, both hashes are preserved, and the only LEGAL changes are source provenance plus one citation narrowed from 247 CMR 8.03 to 8.03(1), independently confirmed correct against the official Mass.gov text. The earlier Cornell LII consultation is preserved in the record as superseded rather than erased. Released from a forward-port onto current main rather than a merge, so the B3-B tranche and the 261-question release state cannot roll back. MA-Q-0288 remains withheld pending its own focused REAUDIT and MA-Q-0028 remains quarantined.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CII-SUPPORT-HANDLING": {
+              "content_version": 1,
+              "content_hash": "b7ef537adc43c788ea46fa4089cd390b0ff4ccc8ff67b27899a6a49a88a6e174"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -49839,7 +49866,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "COMPARISON UNIVERSE. Compared against all 261 canonical records at the represented candidate c7b438f (MA-Q-0001 through MA-Q-0261, no sampling) and, as a supplemental production-distinctness check, against the 33 sibling-candidate records MA-Q-0262 through MA-Q-0294 at the B3-B candidate 6d41ac4, for a 294-question pipeline universe. Lexical screening was used only to build a shortlist; every shortlisted item was then read in full and compared on decision path, operative provision, keyed propositions and distractor logic. CLOSEST COMPARATORS IN THE 261-RECORD CANDIDATE BANK, strongest first: MA-Q-0076 (Pharmacy personnel / Schedule II handling, rule MA-TECH-CII) is the substantively closest item because it also sits in 247 CMR 8.05 and also uses pharmacist-approved written policies and procedures, but its keyed set A,B,C,E rests on 8.05(1) and 8.05(2), grading supervised transport against transport-and-handling across technician credentials while accountability stays with the pharmacist; this item's keyed set A,C,E rests entirely on 8.05(3), where the operative axis is the product formulation rather than the credential grade. There is zero keyed-proposition overlap between the two, and the 8.05(2) approval mechanism that MA-Q-0076 keys as TRUE appears here as the keyed-FALSE option D, so the pair is complementary rather than redundant and is internally consistent (8.05(3) is a carve-out from the 8.05(2) permission, so both keys stand together). MA-Q-0231 and MA-Q-0232 (support-personnel supervisory ratios and ratio exclusions, 247 CMR 8.06) turn on staffing composition, not on product handling. MA-Q-0234 and MA-Q-0235 (certified technician communication and Schedule VI transfers, 247 CMR 8.04(4)(c) and (d)) test where pharmacist approval unlocks a narrow authority; this item tests where pharmacist approval does not reach at all. MA-Q-0230 (247 CMR 8.01(15) intern supervisory authority), MA-Q-0237 and MA-Q-0238 (247 CMR 8.03 trainee telephone bar and employment limit), MA-Q-0246 (247 CMR 8.04(3)(b) and 8.02(6)(a) title accuracy), MA-Q-0075 (247 CMR trainee duties and DUR referral), and MA-Q-0138, MA-Q-0179 and MA-Q-0182 (MA-ADD-TECH automated dispensing device stocking pathways) each operate on a different provision and a different reasoning target. SUPPLEMENTAL B3-B UNIVERSE: no B3-B record is a stronger comparator than MA-Q-0076. The nearest is MA-Q-0281 (247 CMR 9.18(3) who may counsel), which shares only the general shape of ranking support-personnel authority and shares no provision, product or keyed proposition; MA-Q-0282 is likewise unrelated. No material duplication against any B3-B item. UNIQUENESS EVIDENCE: across the full 294-question universe, this is the only record whose stem or choices contain 'hydrocodone', 'abuse deterrent' or 'extended release', and the only record anywhere referencing 247 CMR 8.05(3). CRITERIA REASONING. jurisprudence_reasoning: the item requires reading one sentence of regulatory text and resolving its scope, then holding that a general permission in an adjacent subsection does not survive a specific prohibition in the next; that is regulatory construction, not recall. practice_plausibility: a Massachusetts pharmacy stocking a non-abuse-deterrent hydrocodone-only extended release product and a pharmacist on duty working out which support staff may touch it is exactly the situation 8.05(3) was written for. authentic_distractors: B is the genuine over-generalization error of reading a product-specific bar as a class-wide opioid bar; D is the genuine cross-subsection error of importing the 8.05(2) approval proviso, and it is made attractive by the fact that the proviso really does exist and really does empower certified technicians elsewhere; both match the frozen style profile archetypes 'wrong professional scope' and 'general rule that ignores an exception'. wording_not_guessable: the sweeping quantifier in B would normally be a tell that it is false, but C is also broad in reach and is TRUE and E states a categorical exclusion and is TRUE, so the categorical-phrasing heuristic fails inside this item and cannot be used to reach the key; no length, hedging or specificity cue separates keyed from unkeyed options. reasoning_not_trivia: the candidate must locate the operative condition, decide which personnel categories are named, and reject a real adjacent authority. natural_rule_combination: 8.05(3) with 8.05(2) as the distractor axis and 8.05(1) as the related fact is a single coherent regulatory section, not an artificial splice. appropriate_drug_context: the item names the regulatory product class exactly as the regulation names it and asserts no pharmacology; drug_ids is correctly empty because the only hydrocodone record in the bank is the combination product hydrocodone-acetaminophen, which is expressly outside the 'hydrocodone-only' scope, so linking it would have been wrong. distinct_from_bank: established above across all 294. not_schedule_flashcard: nothing turns on reciting a schedule; the reasoning is about a handling prohibition. public_style_without_copying: scenario framing, difficulty 5 with three reasoning steps, exception testing and scope-of-practice framing all match the frozen MPJE-MA-PRE2027 profile, and no NABP sample wording is reproduced. OBSERVATIONS RECORDED WITHOUT FAILING A CRITERION. First, keyed options A and E are close relatives, A stating the operative condition and E applying it to the abuse-deterrent case, so a candidate who secures A will usually secure E; they remain separately defensible because a candidate can accept A while still wrongly selecting B, and E specifically tests whether the limiting clause is read as limiting rather than as surplusage. Second, the phrase 'licensed and certified technicians' in option C uses 'licensed' as the informal name of the middle credential grade, which is the convention used elsewhere in the bank (compare MA-Q-0182, 'a licensed non-trainee pharmacy technician'); read strictly a trainee is also licensed, but the option's proposition, that the bar reaches all three grades, is unambiguously true and the phrasing does not mislead. Neither observation affects the key or warrants an edit. PHASE 4C HISTORY COMPLETENESS. The historical old-hash record at bb747c0d (AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19) failed this Question ID on distinct_from_bank alone, finding that the then-keyed set restated MA-Q-0076 almost one to one and recommending that the keyed discrimination be re-pitched onto the 8.05(3) bar and the intern carve-out. My own independent comparison, formed before I opened that record, confirms the redundancy is cured: the keyed set now rests wholly on 8.05(3) and shares no keyed proposition with MA-Q-0076. I record honestly that only part of the historical recommendation was taken, since the intern carve-out is not tested in any keyed option; the stem deliberately confines itself to support personnel, which is a coherent scope choice, and distinctness is achieved without the carve-out, so this is a note rather than a defect.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0242",
@@ -51756,13 +51807,40 @@
         "Note that 247 CMR 4.03(7) does not distinguish delivery format",
         "Apply the eight-hour figure to the single day of attendance"
       ],
-      "verification_status": "AUDIT_PENDING",
-      "lifecycle_status": "AUDIT_PENDING",
+      "verification_status": "RELEASED",
+      "lifecycle_status": "RELEASED",
       "last_legal_review": "2026-08-19",
-      "audits": [],
-      "duplicate_review_status": "PENDING",
-      "independent_audit_status": "PENDING",
-      "final_adjudication": null,
+      "audits": [
+        "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+        "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+      ],
+      "duplicate_review_status": "CLEAR",
+      "independent_audit_status": "PASSED",
+      "final_adjudication": {
+        "decision": "KEEP",
+        "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 blind-locked focused REAUDIT (PR #98) and its official-source cure",
+        "date": "2026-08-19",
+        "notes": "Batch 3 B3-A R1 admission of the two questions CLAUDE-FRESH-B3A initially withheld on realism distinctness. Both were repaired onto genuinely different current-law decision paths, MA-Q-0241 onto 247 CMR 8.05(3) and MA-Q-0256 onto 247 CMR 4.03(7), and re-audited by a separate instance CLAUDE-FRESH-B3A-R1 whose Phase-1 blind lock preceded the records and whose 2/2 blind answers matched the canonical keys. Controller verification passed 16/16 process checks, and the subsequent official-source cure passed a further 11/11: the lock blob is unchanged, the REALISM record is byte-identical, both hashes are preserved, and the only LEGAL changes are source provenance plus one citation narrowed from 247 CMR 8.03 to 8.03(1), independently confirmed correct against the official Mass.gov text. The earlier Cornell LII consultation is preserved in the record as superseded rather than erased. Released from a forward-port onto current main rather than a merge, so the B3-B tranche and the 261-question release state cannot roll back. MA-Q-0288 remains withheld pending its own focused REAUDIT and MA-Q-0028 remains quarantined.",
+        "verified_dependencies": {
+          "rules": {
+            "MA-CE-ANNUAL-STRUCTURE": {
+              "content_version": 1,
+              "content_hash": "aedbbdb378c1b42730a955ee455b9806e2a2d10b9270e94a7c155fdf2902e279"
+            }
+          },
+          "drugs": {},
+          "blueprint": {
+            "id": "MPJE-MA-PRE2027-BLUEPRINT",
+            "content_version": 1,
+            "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+          },
+          "style_profile": {
+            "id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      },
       "development_fixture": true,
       "authorities": [
         {
@@ -51774,7 +51852,31 @@
         }
       ],
       "drug_checks": [],
-      "realism_reviews": []
+      "realism_reviews": [
+        {
+          "audit_id": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19",
+          "auditor": "CLAUDE",
+          "reviewed_date": "2026-08-19",
+          "criteria": {
+            "jurisprudence_reasoning": true,
+            "practice_plausibility": true,
+            "authentic_distractors": true,
+            "wording_not_guessable": true,
+            "reasoning_not_trivia": true,
+            "natural_rule_combination": true,
+            "appropriate_drug_context": true,
+            "distinct_from_bank": true,
+            "not_schedule_flashcard": true,
+            "public_style_without_copying": true
+          },
+          "notes": "COMPARISON UNIVERSE. Compared against all 261 canonical records at the represented candidate c7b438f (no sampling) and against the 33 sibling-candidate records MA-Q-0262 through MA-Q-0294 at the B3-B candidate 6d41ac4, for a 294-question pipeline universe. Lexical screening built the shortlist; every shortlisted item was read in full and compared on decision path and operative subsection. CLOSEST COMPARATORS IN THE 261-RECORD CANDIDATE BANK, strongest first: MA-Q-0260 (Licensure / Continuing education records, 247 CMR 4.06(1)) is the highest lexical neighbour purely because it shares the vocabulary 'authorized provider', 'statement of credit' and 'contact hours earned'; substantively it asks what a CE record must contain and shares no reasoning with a per-day ceiling. MA-Q-0257 and MA-Q-0258 are the only two records in the bank that share this item's rule dependency MA-CE-ANNUAL-STRUCTURE, and both were read in full: MA-Q-0257 keys the practice-specific overlays of 4.03(4)(a), (c) and (e), and MA-Q-0258 keys the sworn extenuating-circumstances mechanism of 4.03(6); neither touches 4.03(7) and neither shares a keyed proposition with this item. MA-Q-0079 (Licensure / Continuing education, rule MA-PHARMACIST-CE) keys the proposition that the 20-contact-hour minimum in 4.03(4) attaches to each calendar year and cannot be satisfied by a two-year aggregate; that is an annual-structure discrimination, whereas this item's is a per-calendar-day ceiling, a different subsection, a different numeric fact and a different misconception. MA-Q-0259 (4.02(8) military relief), MA-Q-0261 (4.04 provider approval and appeal clocks) and MA-Q-0254 (4.02(5) failure-to-renew ladder) are each on separate provisions. MA-Q-0056 and MA-Q-0058 are the only other records using the phrase 'calendar day' in stem or choices, and both are Area 4 reporting-deadline items with no CE content. SUPPLEMENTAL B3-B UNIVERSE: no B3-B record is a stronger comparator than the bank items above. MA-Q-0279 (247 CMR 4.07 and 4.08 instructor and postgraduate alternative credit) is the nearest CE-adjacent sibling and is materially distinct, keying on how alternative credit is earned rather than on any ceiling; MA-Q-0292 and MA-Q-0293 sit in 247 CMR 16.02 collaborative practice, and although MA-Q-0292 carries an unkeyed distractor mentioning ten additional contact hours per year, that is a CDTM overlay figure in a different regulation and creates no collision with the daily cap. No material duplication against any B3-B item. UNIQUENESS EVIDENCE: across the full 294-question universe this is the only record whose keyed reasoning rests on 247 CMR 4.03(7), and the only record whose stem or choices raise a home-study-versus-live distinction. CRITERIA REASONING. jurisprudence_reasoning: the candidate must identify which of several competing CE constraints governs, then read 4.03(7) as format-neutral and day-bounded. practice_plausibility: a pharmacist behind on CE attending an intensive single-day conference late in the calendar year is an ordinary situation, and a provider issuing a statement of credit above the state daily ceiling is precisely why the ceiling exists; a 12-contact-hour single day is at the long end of realistic conference programming, which I weighed and accepted because the figure must exceed the cap for the cap to bite and 'intensive' signals the length. authentic_distractors: A and B are the two genuine format-based escape theories, and A is made attractive by the fact that a real format-specific limit does exist in 4.03(4)(b), just on an annual rather than a daily axis; C is the plausible wrong figure; D is the misattribution of December hours to the following cycle, which 4.03(5) refutes; these map onto the frozen profile archetypes 'general rule that ignores an exception', 'correct deadline belonging to a different pathway' and numeric deadline traps. wording_not_guessable: every option carries a because-clause, so the keyed option is not singled out by being the only reasoned one, and no length or hedging cue separates it; I considered whether pairing A and B on the same figure of 12 lets a test-wise candidate discard both and conclude that it does not reach the key, because the remaining discrimination among ten, none and eight still requires knowing the promulgated figure. reasoning_not_trivia: this is the weakest of the ten criteria for this item because a candidate who simply recalls the number eight answers it, but the item still requires rejecting two structural theories before the number is reached, and the distractor set makes the frame, not the digit, the first decision; it passes. natural_rule_combination: 4.03(7) as the keyed rule, 4.03(4)(b) as the distractor axis and 4.03(5) as the related fact are three subsections of one regulation working together. appropriate_drug_context: no drug is involved and none is needed, and drug_ids is correctly empty. distinct_from_bank: established above across all 294. not_schedule_flashcard: no controlled-substance schedule content at all. public_style_without_copying: scenario framing, difficulty 5 with three reasoning steps and a numeric trap match the frozen MPJE-MA-PRE2027 profile, and no NABP sample wording is reproduced. PHASE 4C HISTORY COMPLETENESS. The historical old-hash record at 67003d3b (AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19) failed this Question ID on distinct_from_bank alone, finding it a symmetric restatement of MA-Q-0079's per-calendar-year discrimination and recommending either re-pitching onto the home-study cap or retiring one of the two items. My own independent comparison, formed before I opened that record, confirms the redundancy is cured, though by a third route rather than either recommended one: the keyed discrimination now rests on the per-calendar-day ceiling in 4.03(7), which no other record in the 294-question universe tests, while the home-study cap has been demoted to the rationale of unkeyed option A. I record that departure from the historical recommendation explicitly; on my own assessment the chosen remedy achieves distinctness at least as well as the recommended one, because it separates this item from MA-Q-0079 on subsection, numeric fact and misconception simultaneously, and it leaves the home-study cap available for a future item.",
+          "style_profile": {
+            "profile_id": "MPJE-MA-PRE2027",
+            "content_version": 1,
+            "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+          }
+        }
+      ]
     },
     {
       "question_id": "MA-Q-0257",

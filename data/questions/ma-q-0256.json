@@ -57,12 +57,39 @@
     "Note that 247 CMR 4.03(7) does not distinguish delivery format",
     "Apply the eight-hour figure to the single day of attendance"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-19",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 blind-locked focused REAUDIT (PR #98) and its official-source cure",
+    "date": "2026-08-19",
+    "notes": "Batch 3 B3-A R1 admission of the two questions CLAUDE-FRESH-B3A initially withheld on realism distinctness. Both were repaired onto genuinely different current-law decision paths, MA-Q-0241 onto 247 CMR 8.05(3) and MA-Q-0256 onto 247 CMR 4.03(7), and re-audited by a separate instance CLAUDE-FRESH-B3A-R1 whose Phase-1 blind lock preceded the records and whose 2/2 blind answers matched the canonical keys. Controller verification passed 16/16 process checks, and the subsequent official-source cure passed a further 11/11: the lock blob is unchanged, the REALISM record is byte-identical, both hashes are preserved, and the only LEGAL changes are source provenance plus one citation narrowed from 247 CMR 8.03 to 8.03(1), independently confirmed correct against the official Mass.gov text. The earlier Cornell LII consultation is preserved in the record as superseded rather than erased. Released from a forward-port onto current main rather than a merge, so the B3-B tranche and the 261-question release state cannot roll back. MA-Q-0288 remains withheld pending its own focused REAUDIT and MA-Q-0028 remains quarantined.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CE-ANNUAL-STRUCTURE": {
+          "content_version": 1,
+          "content_hash": "aedbbdb378c1b42730a955ee455b9806e2a2d10b9270e94a7c155fdf2902e279"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
