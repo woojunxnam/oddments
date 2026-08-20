@@ -63,6 +63,46 @@
       "verifier_generalization": "verify_tranche_audit.py now accepts either Phase-1 lock shape (questions/selected_choice_ids or answers/blind_selected_choice_ids) and asserts the optional freeze_head and blind sha256 fields when a lock declares them; fails closed if no recognized answer container or choice field is present."
     },
     {
+      "phase": "BATCH3_B3B_R1_VERIFIED_AND_RELEASED",
+      "date": "2026-08-19",
+      "audit_pr": 102,
+      "auditor_instance": "CLAUDE-FRESH-B3B-R1",
+      "process_checks": "16/16 PASS plus supplementary checks on blind answer, sealed-read pinning, freeze package hashes, repaired hash and official-source policy",
+      "blind": "B,C,E rejecting A,D — exact match to the canonical key",
+      "legal": "KEEP + YES",
+      "realism": "KEEP + PASS, all ten criteria true",
+      "sealed_reads_pinned_to": "5a57d975b809ebf00b44d6c72b36ddb01e9cf776",
+      "official_source_policy": "satisfied on its own terms; Cornell LII, Justia, commercial summaries and search snippets all recorded unused",
+      "integration_method": "forward-port onto current main ade4235c, not a merge",
+      "released": {
+        "count": 1,
+        "before": 263,
+        "after": 264
+      },
+      "merged_pr": 103,
+      "main_after": "506c3d9a95d90d44c35d01487cc7ec4eb9d98d43",
+      "batch3_completion": {
+        "B3_A": "33/33 released",
+        "B3_B": "33/33 released",
+        "total_released": 264
+      },
+      "provenance_layers_preserved": {
+        "old_failed_hash": "343520a4112cde0f746b9d4fb5062cc627d25438c3d94e312c5d97759a58bb68",
+        "repaired_hash": "2a8d9db0e5874556e8465bbda8b96e6252c989672165fd3b9d4d181339baa6cb",
+        "old_realism_failure_retained": true
+      },
+      "superseded_prs_closed": [
+        93,
+        94,
+        95,
+        97,
+        98,
+        100,
+        102
+      ],
+      "why_closed": "Each predates the current main lineage and would roll back released content if merged; substance already on main."
+    },
+    {
       "phase": "BATCH3_B3B_TRANCHE_KEY_SKEW_ADVISORY",
       "date": "2026-08-19",
       "raised_by": "CLAUDE-FRESH-B3B",
@@ -79,6 +119,21 @@
       "correction": "The census had said the second sentence of 247 CMR 8.05(3) was truncated in the official publication. The auditor's cure recovered and verified both sentences from the same official Mass.gov PDF, so it is restated as an extraction-path limitation rather than absent legal text.",
       "scope": "Provenance cleanup only. No question, hash, rule or legal conclusion mutated.",
       "superseded_wording_retained": true
+    },
+    {
+      "phase": "FREEZE_IMMUTABILITY_PROCESS_CORRECTION",
+      "date": "2026-08-19",
+      "controller_error_owned": "This controller appended a ledger commit (56472a6d) to the published freeze branch freeze/batch3-b3b-r1-v1 after the freeze commit 5a57d975 was published.",
+      "actual_impact": "None on the audit. The commit changed only audits/controller/ISSUE-83-CONTROLLER-LEDGER.json; CLAUDE-FRESH-B3B-R1 classified it NON_SEMANTIC_POSTFREEZE_LEDGER_ADVANCE, excluded it from the audit input and pinned every sealed read to the original freeze commit.",
+      "rule_now_enforced": [
+        "A published freeze branch is immutable; never append ledger, planning or provenance commits.",
+        "Controller ledger updates belong on controller or integration branches.",
+        "The authority for every sealed read is the exact published freeze COMMIT SHA, not the branch ref.",
+        "Auditor handoffs must name that SHA and read with git show <sha>:<path>."
+      ],
+      "documented_in": "docs/AUDIT_WORKFLOW.md, section 'Freeze immutability'",
+      "enforced_by": "scripts/verify_tranche_audit.py resolves the blind package against freeze_head_sha when the config supplies it, and reports whether the branch tip still carries the same blob.",
+      "retroactive_action": "None. Existing freeze history is preserved as it happened; the rule is prospective."
     },
     {
       "phase": "PHASE_0_START_BOUNDARY",
