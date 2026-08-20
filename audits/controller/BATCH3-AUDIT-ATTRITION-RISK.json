@@ -1,0 +1,107 @@
+{
+  "report_type": "BATCH3_AUDIT_ATTRITION_RISK",
+  "date": "2026-08-20",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "finding": "Authoring is complete against the blueprint on a nominal count, but Areas 1, 2 and 4 carry ZERO slack. Every pending question in Areas 2 and 4 must survive its first independent audit for Batch 3 to reach 360 in one pass.",
+  "observed_first_audit_pass_rate": {
+    "tranches": [
+      {
+        "tranche": "B3-A",
+        "questions": 33,
+        "passed_first_audit": 31,
+        "failed": 2,
+        "failed_ids": [
+          "MA-Q-0241",
+          "MA-Q-0256"
+        ],
+        "all_recovered_on_R1": true
+      },
+      {
+        "tranche": "B3-B",
+        "questions": 33,
+        "passed_first_audit": 32,
+        "failed": 1,
+        "failed_ids": [
+          "MA-Q-0288"
+        ],
+        "all_recovered_on_R1": true
+      }
+    ],
+    "questions_tried": 66,
+    "passed_first_audit": 63,
+    "rate": 0.9545,
+    "note": "Every failure so far was recovered by a narrow repair and a focused reaudit under a new auditor instance, so failures cost audit CYCLES rather than capacity. With zero slack, though, a single failure blocks the area until its repair round completes."
+  },
+  "areas": {
+    "area_1": {
+      "usable_canonical": 78,
+      "minimum": 78,
+      "slack": 0,
+      "already_released": 78,
+      "pending_first_audit": 0,
+      "must_pass": 0,
+      "failures_absorbable_without_a_repair_cycle": 0,
+      "expected_failures_at_observed_rate": 0.0,
+      "at_risk": false
+    },
+    "area_2": {
+      "usable_canonical": 120,
+      "minimum": 120,
+      "slack": 0,
+      "already_released": 53,
+      "pending_first_audit": 67,
+      "must_pass": 67,
+      "failures_absorbable_without_a_repair_cycle": 0,
+      "expected_failures_at_observed_rate": 3.0,
+      "at_risk": true
+    },
+    "area_3": {
+      "usable_canonical": 95,
+      "minimum": 87,
+      "slack": 8,
+      "already_released": 71,
+      "pending_first_audit": 24,
+      "must_pass": 16,
+      "failures_absorbable_without_a_repair_cycle": 8,
+      "expected_failures_at_observed_rate": 1.1,
+      "at_risk": false
+    },
+    "area_4": {
+      "usable_canonical": 75,
+      "minimum": 75,
+      "slack": 0,
+      "already_released": 61,
+      "pending_first_audit": 14,
+      "must_pass": 14,
+      "failures_absorbable_without_a_repair_cycle": 0,
+      "expected_failures_at_observed_rate": 0.6,
+      "at_risk": true
+    }
+  },
+  "consequence": "At the observed rate the Area-2 pool of 67 pending questions expects about three first-audit failures and the Area-4 pool of 14 expects about one, and neither area can absorb any. Batch 3 would therefore need at least one repair-and-reaudit round in each of Areas 2 and 4 before reaching 360. That is survivable but serialised, and every round depends on an auditor being dispatched.",
+  "controller_recommendation": {
+    "action": "AUTHOR A MEASURED BUFFER",
+    "area_2": {
+      "suggested": 4,
+      "available_without_new_research": 15,
+      "source": "unused defensible slots already established in AREA2-FAMILY-SLOT-CAPACITY-ANALYSIS.json"
+    },
+    "area_4": {
+      "suggested": 3,
+      "available_without_new_research": 1,
+      "source": "the reserve proposition in AREA4-TOPUP-CENSUS.json, plus two further propositions from chapters the census already surveyed"
+    },
+    "why_this_is_not_padding": "The instruction was to author only the minimum necessary and not to create questions merely because identifiers were reserved. A buffer sized to the project's own measured attrition rate is part of the minimum: authoring exactly 360 when about 5% of first audits fail makes a one-pass 360 arithmetically unlikely rather than merely uncertain.",
+    "status": "RECOMMENDED, NOT YET AUTHORED"
+  },
+  "not_at_risk": {
+    "area_3": "24 pending against 16 that must pass, so eight failures are absorbable without any repair round.",
+    "area_1": "Complete at 78 released. No pending question, but also no slack, so any future withdrawal of a released Area-1 question would put it below minimum."
+  },
+  "rules_held": [
+    "MA-Q-0028 remains quarantined and is excluded from every count here.",
+    "No question was released, and no verification status was advanced, to improve these numbers.",
+    "The controller has audited nothing it authored."
+  ]
+}
