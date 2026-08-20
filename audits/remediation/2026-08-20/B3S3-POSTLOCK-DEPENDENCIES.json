@@ -1,0 +1,197 @@
+{
+  "package_type": "POSTLOCK_DEPENDENCY_REVEAL",
+  "seal_condition": "Do not open this file until the Phase-1 blind lock has been committed and pushed.",
+  "tranche": "BATCH3-S3",
+  "represented_candidate_sha": "b6081baf385610dc8e83828cc62471f010af2ce9",
+  "question_rule_map": {
+    "MA-Q-0001": [
+      "MA-RX-CV-REFILL",
+      "MA-PMP-REPORTING",
+      "FED-CS-SCHEDULES"
+    ],
+    "MA-Q-0002": [
+      "MA-PMP-REPORTING",
+      "FED-CS-SCHEDULES"
+    ],
+    "MA-Q-0003": [
+      "MA-CII-PARTIAL-PATIENT",
+      "FED-CS-SCHEDULES"
+    ],
+    "MA-Q-0005": [
+      "FED-PSE-QUANTITY"
+    ],
+    "MA-Q-0006": [
+      "MA-CS-QUANTITY-II-III",
+      "FED-CS-REFILL-III-IV",
+      "FED-CS-SCHEDULES",
+      "MA-PMP-REPORTING"
+    ],
+    "MA-Q-0007": [
+      "MA-CII-PARTIAL-PATIENT"
+    ],
+    "MA-Q-0008": [
+      "FED-CS-REFILL-III-IV",
+      "FED-CS-SCHEDULES"
+    ],
+    "MA-Q-0010": [
+      "FED-CS-REFILL-III-IV",
+      "MA-RX-CV-REFILL"
+    ]
+  },
+  "question_drug_map": {
+    "MA-Q-0001": [
+      "pregabalin"
+    ],
+    "MA-Q-0002": [
+      "gabapentin",
+      "pregabalin",
+      "pseudoephedrine"
+    ],
+    "MA-Q-0003": [
+      "methylphenidate"
+    ],
+    "MA-Q-0005": [
+      "pseudoephedrine"
+    ],
+    "MA-Q-0006": [
+      "buprenorphine-naloxone"
+    ],
+    "MA-Q-0007": [],
+    "MA-Q-0008": [
+      "buprenorphine-naloxone"
+    ],
+    "MA-Q-0010": []
+  },
+  "question_taxonomy": {
+    "MA-Q-0001": {
+      "area": 3,
+      "topic": "Controlled prescription dispensing",
+      "subtopic": "Schedule V refills",
+      "difficulty": 4,
+      "family_id": "MA_CV_REFILL_INDEPENDENT_LIMITS"
+    },
+    "MA-Q-0002": {
+      "area": 3,
+      "topic": "Prescription monitoring program",
+      "subtopic": "Reportable dispensing",
+      "difficulty": 4,
+      "family_id": "MASSPAT_DRUG_CLASSIFICATION"
+    },
+    "MA-Q-0003": {
+      "area": 3,
+      "topic": "Partial filling",
+      "subtopic": "Schedule II remainder",
+      "difficulty": 4,
+      "family_id": "CII_PARTIAL_FILL_PATIENT_REQUEST"
+    },
+    "MA-Q-0005": {
+      "area": 3,
+      "topic": "Restricted nonprescription products",
+      "subtopic": "Pseudoephedrine quantity",
+      "difficulty": 3,
+      "family_id": "PSE_DAILY_VS_THIRTY_DAY_LIMIT"
+    },
+    "MA-Q-0006": {
+      "area": 3,
+      "topic": "Controlled prescription quantity",
+      "subtopic": "OUD drug single-fill quantity",
+      "difficulty": 4,
+      "family_id": "OUD_CIII_QUANTITY_PATHWAY"
+    },
+    "MA-Q-0007": {
+      "area": 3,
+      "topic": "Partial filling",
+      "subtopic": "Patient-requested Schedule II chronology",
+      "difficulty": 5,
+      "family_id": "CII_PATIENT_PARTIAL_FILL_CHRONOLOGY"
+    },
+    "MA-Q-0008": {
+      "area": 3,
+      "topic": "Controlled prescription dispensing",
+      "subtopic": "Schedule III refill timing",
+      "difficulty": 3,
+      "family_id": "CIII_REFILL_ISSUE_DATE_CLOCK"
+    },
+    "MA-Q-0010": {
+      "area": 3,
+      "topic": "Controlled prescription dispensing",
+      "subtopic": "Federal and Massachusetts interaction",
+      "difficulty": 4,
+      "family_id": "FEDERAL_STATE_REFILL_INTERACTION"
+    }
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "FED-CS-REFILL-III-IV": {
+        "content_version": 1,
+        "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+      },
+      "FED-CS-SCHEDULES": {
+        "content_version": 1,
+        "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+      },
+      "FED-PSE-QUANTITY": {
+        "content_version": 1,
+        "content_hash": "8bfc60055ec38d5001e33a2cdd05a585023a89478f123f69c397be94ba10619b"
+      },
+      "MA-CII-PARTIAL-PATIENT": {
+        "content_version": 1,
+        "content_hash": "215ab25f8d35cd6e8d4787d8f98eef739e4bb7a6898ed7c25ae7cce5efe3c3d4"
+      },
+      "MA-CS-QUANTITY-II-III": {
+        "content_version": 1,
+        "content_hash": "4d80bad25e740c5867106a3b753d604f0c63c0a9435f0b7a81ec288e0da7b888"
+      },
+      "MA-PMP-REPORTING": {
+        "content_version": 1,
+        "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+      },
+      "MA-RX-CV-REFILL": {
+        "content_version": 1,
+        "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+      }
+    },
+    "drugs": {
+      "buprenorphine-naloxone": {
+        "content_version": 1,
+        "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
+      },
+      "gabapentin": {
+        "content_version": 1,
+        "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+      },
+      "methylphenidate": {
+        "content_version": 1,
+        "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+      },
+      "pregabalin": {
+        "content_version": 1,
+        "content_hash": "08bc5dd5f520488b4fe05a74114800dd3ff5585a235a6865953600c4b4510f2a"
+      },
+      "pseudoephedrine": {
+        "content_version": 2,
+        "content_hash": "5b5233f28f0939a64559e735b365ecaca5a0b4be35628b25e059faafd4502583"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "canonical_paths": {
+    "MA-Q-0001": "data/questions/ma-q-0001.json",
+    "MA-Q-0002": "data/questions/ma-q-0002.json",
+    "MA-Q-0003": "data/questions/ma-q-0003.json",
+    "MA-Q-0005": "data/questions/ma-q-0005.json",
+    "MA-Q-0006": "data/questions/ma-q-0006.json",
+    "MA-Q-0007": "data/questions/ma-q-0007.json",
+    "MA-Q-0008": "data/questions/ma-q-0008.json",
+    "MA-Q-0010": "data/questions/ma-q-0010.json"
+  }
+}
