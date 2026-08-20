@@ -7,7 +7,7 @@
   "batch3": "UNLOCKED",
   "frozen_source": {
     "branch": "remediation/pre-batch3-legacy-salvage-t1",
-    "sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+    "sha": "c935b7714e7fc3e214246bb7b892e99c62cb66e2",
     "role": "final post-T3 canonical release state audited by this gate"
   },
   "frozen_baseline_matrix": {
@@ -17,8 +17,8 @@
     "role": "immutable 46-atomic competency definitions and prior semantic evidence"
   },
   "artifact_sha256": {
-    "audits/coverage/2026-08-19/POST-T3-PRE-BATCH3-FINAL-COVERAGE-MATRIX.json": "25143e480efba2d432b34250b487706585433642f7d9e557f5920f748b18e055",
-    "scripts/prebatch3_final_coverage_gate.py": "a3ec26a41388b184bea06f68f6ddab402b51aaa2644822d9af1fba67bbfcf5a3"
+    "audits/coverage/2026-08-19/POST-T3-PRE-BATCH3-FINAL-COVERAGE-MATRIX.json": "d2c093bdb4b3bc56bd22fa32e973d4dc253770cd493a5d11610c652d2c8a30be",
+    "scripts/prebatch3_final_coverage_gate.py": "1206d5c2925c12e0284edd7a52d6ff0ab3901e46a217b0cadc06bb92cfb9f87d"
   },
   "release_context_hashes": {
     "blueprint": {
@@ -79,8 +79,8 @@
     "MA-Q-0167": "fec2dd685c4f804ff57cf67438e6bff2a1ba867d8cac41faa5d0d5e78b2489e8",
     "MA-Q-0168": "e60589ce229a01bf74944fdeccf4137a4b32792b6c054bce479d928de47b2bfd",
     "MA-Q-0169": "505770da1a192bc506905b2fe88ac8e6ac5425c8d04565c7d2d144cc25120539",
-    "MA-Q-0172": "054ac64b41dfeb251406a5933031d12038891f2f07b0a32d2c4366b51a87085d",
     "MA-Q-0173": "f566e733bc4f7b7a48bb22ad214623938e259f3ef1e8d83163b7cc9b99f5fa0e",
+    "MA-Q-0174": "eac84d086fd1527263594e837b1885c42425cc37d0180b83721c5ed21d28c1c8",
     "MA-Q-0178": "eabbe687c750ac59861e8ba9640b4ad122f59ac1b6f6b1b45169b0cef031f1a2",
     "MA-Q-0192": "78459f736925094fede8c75aa304f8b2b38b756cbb5bf22620f43a34a7d3205b",
     "MA-Q-0194": "4e84e01beeab308ec89754da7539f384054439b50a45a84dc85281bd97314488",
@@ -287,13 +287,13 @@
       "legal": "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W1-2026-08-15",
       "realism": "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W1-2026-08-15"
     },
-    "MA-Q-0172": {
-      "legal": "AUDIT-GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9",
-      "realism": "AUDIT-GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9"
-    },
     "MA-Q-0173": {
       "legal": "AUDIT-GPT-FRESH-EXP2-C-LEGAL-REAUDIT-R2-IMPACT9",
       "realism": "AUDIT-GPT-FRESH-EXP2-C-REALISM-REAUDIT-R2-IMPACT9"
+    },
+    "MA-Q-0174": {
+      "legal": "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+      "realism": "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
     },
     "MA-Q-0178": {
       "legal": "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
@@ -646,10 +646,10 @@
       "content_hash": "ee8f711caaccb65262fea4ae84b8d95065b42689bf6a73f55428f2711eb8f8f5"
     }
   },
-  "mock_selection_hash": "868f8e36132cc3f2f0e4ebf549cc607ca02a1959202190ed2bdce90e439bdb45",
+  "mock_selection_hash": "1cda69c25900923d582346b663a132aca0659d9b3760ed05f7ebc51d5e45c76f",
   "gate_fail_reasons": [],
   "reproduce": [
-    "git checkout c0373b32a99806600fe7873f4ba088bcc0a9a210",
+    "git checkout c935b7714e7fc3e214246bb7b892e99c62cb66e2",
     "python scripts/validate_all.py",
     "python -m pytest -q",
     "python scripts/generate_artifacts.py --write && git diff --exit-code",

@@ -83,6 +83,20 @@ T3_PROMOTIONS = {
     "4.6": ["MA-Q-0228"],
 }
 
+# Batch 3 diversity promotion (Issue #91). Headline 2.2 lost its second scenario family when
+# MA-Q-0172 was contained pending an authority reaudit, leaving the headline resting on
+# MA-Q-0145 alone. MA-Q-0174 is a released, independently audited SATA in a different family,
+# B2_DRUG_TESTOSTERONE_INDICATION, and it adjudicates the same competency from a different
+# angle: whether a pharmacist may administer a product turns on the INDICATION, so prescribed
+# testosterone for gender-affirming care is within the statutory administration category while
+# the same product for routine hypogonadism is not. That is a distinct scenario shape rather
+# than a second pass over the category list, which is what the diversity rule is asking for.
+# MA-Q-0171 was considered first and set aside: it is a near-twin of MA-Q-0145 in form and
+# would satisfy the count without satisfying the point.
+BATCH3_PROMOTIONS = {
+    "2.2": ["MA-Q-0174"],
+}
+
 # From-scratch semantic corrections to the frozen baseline. Issue #40 requires the final
 # gate to re-derive direct support rather than inherit a delta, so a baseline row that
 # genuinely has direct current evidence is corrected here with an explicit justification.
@@ -222,6 +236,8 @@ def build_rows(bank: Bank, baseline: dict) -> list[dict]:
             consider(question_id, "T2_PROMOTION")
         for question_id in T3_PROMOTIONS.get(atomic_id, []):
             consider(question_id, "T3_PROMOTION")
+        for question_id in BATCH3_PROMOTIONS.get(atomic_id, []):
+            consider(question_id, "BATCH3_DIVERSITY_PROMOTION")
         correction = FROM_SCRATCH_CORRECTIONS.get(atomic_id)
         if correction:
             for question_id in correction["question_ids"]:
