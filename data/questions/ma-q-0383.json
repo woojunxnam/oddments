@@ -57,12 +57,39 @@
     "Distinguish the label initials from the endorsement on the face",
     "Apply the separate-file requirement"
   ],
-  "verification_status": "AUDIT_PENDING",
-  "lifecycle_status": "AUDIT_PENDING",
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
   "last_legal_review": "2026-08-20",
-  "audits": [],
-  "duplicate_review_status": "PENDING",
-  "independent_audit_status": "PENDING",
-  "final_adjudication": null,
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3E-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3E-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3E-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-E v3 guarded admission of 27 of 30 questions. CLAUDE-FRESH-B3E-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 27 current hashes. MA-Q-0365 is held back on the independent legal MINOR_EDIT finding. MA-Q-0377 and MA-Q-0389 are held back on independent realism failures. Their negative audit history remains preserved at the audited hashes. The Phase-1 blind lock was committed before canonical-key access; the one blind divergence, MA-Q-0377, was disclosed and resolved in favor of the canonical key but the item still failed realism. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-PHARMACIST-ENDORSEMENT": {
+          "content_version": 1,
+          "content_hash": "633cc717708f62db245cafa4d5e4f84eda03a1bfe176fa380e939b5226211097"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
   "development_fixture": true
 }
