@@ -2,7 +2,8 @@
 
 const DATA_URL = "generated/questions.json";
 const STORAGE_KEY = "ma-mpje-progress-v1";
-const sessionSeed = new URLSearchParams(window.location.search).get("seed") || new Date().toISOString().slice(0, 10);
+const requestedSeed = new URLSearchParams(window.location.search).get("seed");
+let sessionCounter = 0;
 
 const elements = {
   fixtureWarning: document.querySelector("#fixture-warning"),
@@ -25,6 +26,7 @@ const elements = {
   checkAnswer: document.querySelector("#check-answer"),
   revealAnswer: document.querySelector("#reveal-answer"),
   resetOrder: document.querySelector("#reset-order"),
+  previousQuestion: document.querySelector("#previous-question"),
   nextQuestion: document.querySelector("#next-question"),
   result: document.querySelector("#result"),
   explanation: document.querySelector("#explanation"),
@@ -42,14 +44,25 @@ const elements = {
 const state = {
   payload: null,
   mode: null,
+  sessionSeed: null,
   queue: [],
+  responses: [],
   index: 0,
   question: null,
   selected: new Set(),
   order: [],
   answered: false,
+  revealed: false,
+  correct: null,
   progress: loadProgress(),
 };
+
+function createSessionSeed(mode) {
+  sessionCounter += 1;
+  if (requestedSeed) return `${requestedSeed}:${mode}:${sessionCounter}`;
+  const randomPart = globalThis.crypto?.randomUUID?.() || `${Date.now()}:${Math.random()}`;
+  return `${mode}:${randomPart}:${sessionCounter}`;
+}
 
 function loadProgress() {
   try {
@@ -105,11 +118,13 @@ function filteredQuestions() {
 
 function startMode(mode) {
   state.mode = mode;
+  state.sessionSeed = createSessionSeed(mode);
+  state.responses = [];
   document.querySelectorAll("[data-mode]").forEach((button) => button.classList.toggle("active", button.dataset.mode === mode));
   let questions = filteredQuestions();
   if (mode === "drug") questions = questions.filter((question) => question.drug_ids.length > 0);
   if (["random", "mock", "drug"].includes(mode)) {
-    questions = MpjeShuffle.seededShuffle(questions, `${sessionSeed}:${mode}`);
+    questions = MpjeShuffle.seededShuffle(questions, state.sessionSeed);
   }
   if (mode === "mock") questions = questions.slice(0, state.payload.blueprint.target_question_count_per_mock);
   if (!questions.length) {
@@ -123,12 +138,26 @@ function startMode(mode) {
   renderCurrentQuestion();
 }
 
+function saveCurrentResponse() {
+  if (!state.question || !state.queue.length) return;
+  state.responses[state.index] = {
+    selected: [...state.selected],
+    order: [...state.order],
+    answered: state.answered,
+    revealed: state.revealed,
+    correct: state.correct,
+  };
+}
+
 function renderCurrentQuestion() {
   const canonical = state.queue[state.index];
-  state.question = MpjeShuffle.shuffleQuestionChoices(canonical, `${sessionSeed}:${state.mode}`);
-  state.selected = new Set();
-  state.order = [];
-  state.answered = false;
+  const response = state.responses[state.index];
+  state.question = MpjeShuffle.shuffleQuestionChoices(canonical, state.sessionSeed);
+  state.selected = new Set(response?.selected || []);
+  state.order = [...(response?.order || [])];
+  state.answered = Boolean(response?.answered);
+  state.revealed = Boolean(response?.revealed);
+  state.correct = response?.correct ?? null;
   elements.emptyState.hidden = true;
   elements.questionPanel.hidden = false;
   elements.questionPosition.textContent = `${state.index + 1} / ${state.queue.length}`;
@@ -146,8 +175,9 @@ function renderCurrentQuestion() {
   elements.result.className = "result";
   elements.explanation.hidden = true;
   elements.explanation.open = false;
-  elements.nextQuestion.disabled = true;
-  elements.checkAnswer.disabled = false;
+  elements.previousQuestion.disabled = state.index === 0;
+  elements.nextQuestion.disabled = !state.answered;
+  elements.checkAnswer.disabled = state.answered;
   elements.bookmarkButton.disabled = false;
   updateBookmarkButton();
 
@@ -160,6 +190,7 @@ function renderCurrentQuestion() {
       button.type = "button";
       button.className = "ghost-button";
       button.innerHTML = `<span class="choice-id">${choice.id}</span><span>${choice.text}</span>`;
+      button.disabled = state.answered;
       button.addEventListener("click", () => selectOrdered(choice.id, label));
       label.append(button);
     } else {
@@ -167,6 +198,8 @@ function renderCurrentQuestion() {
       input.type = state.question.question_type === "SBA" ? "radio" : "checkbox";
       input.name = "answer";
       input.value = choice.id;
+      input.checked = state.selected.has(choice.id);
+      input.disabled = state.answered;
       input.addEventListener("change", () => selectChoice(choice.id, input.checked));
       const text = document.createElement("span");
       text.innerHTML = `<span class="choice-id">${choice.id}</span>${escapeHtml(choice.text)}`;
@@ -175,6 +208,18 @@ function renderCurrentQuestion() {
     elements.choiceForm.append(label);
   });
   updateSelectedOrder();
+  document.querySelectorAll(".choice").forEach((label) => label.classList.toggle("selected", state.selected.has(label.dataset.choiceId)));
+
+  if (state.answered) {
+    const selected = selectedAnswer();
+    elements.result.hidden = false;
+    elements.result.className = `result ${state.correct ? "correct" : "incorrect"}`;
+    elements.result.textContent = state.revealed ? "Answer revealed for study." : state.correct ? "Correct." : "Not correct. Review the reasoning below.";
+    elements.explanation.hidden = false;
+    elements.explanation.open = true;
+    markChoices(selected, ordered);
+    renderExplanation();
+  }
   elements.questionPanel.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -231,6 +276,8 @@ function checkAnswer(revealed = false) {
   const ordered = state.question.question_type === "ORDERED_RESPONSE";
   const correct = answersMatch(selected, state.question.correct_choice_ids, ordered);
   state.answered = true;
+  state.revealed = revealed;
+  state.correct = correct;
   elements.result.hidden = false;
   elements.result.className = `result ${correct ? "correct" : "incorrect"}`;
   elements.result.textContent = revealed ? "Answer revealed for study." : correct ? "Correct." : "Not correct. Review the reasoning below.";
@@ -241,6 +288,7 @@ function checkAnswer(revealed = false) {
   document.querySelectorAll(".choice input, .choice button").forEach((control) => { control.disabled = true; });
   markChoices(selected, ordered);
   renderExplanation();
+  saveCurrentResponse();
   if (!revealed) updateProgress(correct);
 }
 
@@ -333,8 +381,20 @@ function escapeHtml(value) {
 document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => startMode(button.dataset.mode)));
 elements.checkAnswer.addEventListener("click", () => checkAnswer(false));
 elements.revealAnswer.addEventListener("click", () => checkAnswer(true));
-elements.resetOrder.addEventListener("click", () => { if (!state.answered) { state.order = []; updateSelectedOrder(); } });
+elements.resetOrder.addEventListener("click", () => {
+  if (!state.answered) {
+    state.order = [];
+    updateSelectedOrder();
+  }
+});
+elements.previousQuestion.addEventListener("click", () => {
+  if (state.index === 0) return;
+  saveCurrentResponse();
+  state.index -= 1;
+  renderCurrentQuestion();
+});
 elements.nextQuestion.addEventListener("click", () => {
+  saveCurrentResponse();
   state.index = (state.index + 1) % state.queue.length;
   renderCurrentQuestion();
 });
