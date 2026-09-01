@@ -6,6 +6,7 @@ from check_answer_distribution import analyze_answer_distribution
 from check_placeholders import check_placeholders
 from detect_duplicates import detect_duplicates
 from check_private_paths import check_private_paths
+from check_sba_answer_length import analyze_sba_answer_length
 from check_structural_patterns import analyze_structural_patterns
 from generate_artifacts import check_generated_artifacts
 from qa_common import DATA, QAReport, print_report
@@ -64,6 +65,16 @@ def main() -> int:
     if structural_failed:
         codes = ", ".join(finding["code"] for finding in structural_report["findings"])
         combined.error(f"structural pattern detector found {structural_report['finding_count']} finding(s): {codes}")
+    sba_length_report, sba_length_failed = analyze_sba_answer_length()
+    if sba_length_failed:
+        codes = ", ".join(item["code"] for item in sba_length_report["gates"] if item["status"] == "FAIL")
+        combined.error(f"SBA answer-length gate failed: {codes}")
+    elif sba_length_report["inherited_baseline"]["first_longest_keyed"]:
+        combined.warn(
+            "inherited SBA answer-length debt remains "
+            f"{sba_length_report['inherited_baseline']['first_longest_keyed']}/"
+            f"{sba_length_report['inherited_baseline']['sba_count']}; prospective gates passed"
+        )
     combined.extend(check_generated_artifacts())
 
     return print_report("all", combined)

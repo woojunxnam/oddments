@@ -18,7 +18,7 @@
     </header>
 
     <div id="fixture-warning" class="warning-banner" hidden>
-      <strong>GPT-audited preview:</strong> only current-content questions with GPT legal <strong>KEEP</strong> and realism <strong>PASS</strong> are shown. They remain <strong>AUDIT_PENDING</strong> under the repository release policy and are not final RELEASED questions.
+      <strong>Development build:</strong> this warning appears only when a locally generated fixture payload is loaded. The tracked public payload contains RELEASED questions only.
     </div>
 
     <main>
@@ -49,8 +49,8 @@
       </section>
 
       <section id="empty-state" class="empty-state">
-        <h2>GPT-audited preview bank</h2>
-        <p>Select a mode to use the quarantined preview subset. Questions that failed the latest legal or realism gate are not loaded into this site.</p>
+        <h2>Released question bank</h2>
+        <p>Select a mode to begin. Questions that have not passed the repository release gates are not included in the public site data.</p>
       </section>
 
       <section id="question-panel" class="question-panel" hidden aria-live="polite">
@@ -118,7 +118,6 @@
     </footer>
 
     <script src="shuffle.js"></script>
-    <script src="preview-filter.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
