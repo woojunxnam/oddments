@@ -67,6 +67,7 @@ def build_site_payload(include_fixtures: bool = False) -> dict:
         questions.append(
             {
                 **question,
+                "question_content_hash": question_audit_hash(question),
                 "authorities": authorities,
                 "drug_checks": drug_checks,
                 "realism_reviews": realism_reviews,

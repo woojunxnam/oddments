@@ -26,6 +26,7 @@ def test_release_site_data_contains_only_canonical_released_questions() -> None:
     assert "safe_to_memorize" not in payload["meta"]
     assert payload["meta"]["blueprint"]["content_hash"]
     assert payload["meta"]["style_profile"]["content_hash"]
+    assert all(question["question_content_hash"] for question in payload["questions"])
 
 
 def test_development_site_data_is_explicitly_unsafe() -> None:
@@ -42,6 +43,7 @@ def test_development_site_data_is_explicitly_unsafe() -> None:
         for question in payload["questions"]
     )
     assert all("realism_reviews" in question for question in payload["questions"])
+    assert all("question_content_hash" in question for question in payload["questions"])
 
 
 def test_realism_output_is_derived_from_canonical_audit(canonical_question) -> None:
