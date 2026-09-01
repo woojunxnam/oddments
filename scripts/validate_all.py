@@ -16,6 +16,7 @@ from validate_governance import validate_governance
 from validate_questions import validate_questions
 from validate_rules import validate_rules
 from validate_study_guide import validate_study_guide
+from validate_study_guide_audits import validate_study_guide_audits
 
 
 def validate_blueprint() -> QAReport:
@@ -51,6 +52,8 @@ def main() -> int:
     combined.extend(validate_governance(rules, questions))
     study_guide_report, _ = validate_study_guide(rules, questions)
     combined.extend(study_guide_report)
+    study_guide_audit_report, _ = validate_study_guide_audits()
+    combined.extend(study_guide_audit_report)
     combined.extend(check_placeholders())
     combined.extend(check_private_paths())
     combined.extend(validate_blueprint())
