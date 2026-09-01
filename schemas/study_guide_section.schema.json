@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/study_guide_section.schema.json",
+  "title": "MPJE Study Guide Section",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "section_id",
+    "content_version",
+    "content_hash",
+    "title",
+    "areas",
+    "topic",
+    "subtopic",
+    "learning_objectives",
+    "rule_ids",
+    "verified_rule_dependencies",
+    "quick_review",
+    "decision_logic",
+    "ma_vs_federal",
+    "exceptions",
+    "timing_deadlines",
+    "forms_records",
+    "role_duties",
+    "common_traps",
+    "drug_examples",
+    "practice_question_ids",
+    "last_verified",
+    "verification_status",
+    "independent_audit_id"
+  ],
+  "properties": {
+    "section_id": {"type": "string", "pattern": "^SG-[A-Z0-9]+(?:-[A-Z0-9]+)*$"},
+    "content_version": {"type": "integer", "minimum": 1},
+    "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "title": {"type": "string", "minLength": 4},
+    "areas": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1, "maximum": 4}
+    },
+    "topic": {"type": "string", "minLength": 2},
+    "subtopic": {"type": "string", "minLength": 2},
+    "learning_objectives": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 10}
+    },
+    "rule_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"}
+    },
+    "verified_rule_dependencies": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$": {"$ref": "#/$defs/dependencySnapshot"}
+      },
+      "additionalProperties": false
+    },
+    "quick_review": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/legalPoint"}},
+    "decision_logic": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/decisionStep"}},
+    "ma_vs_federal": {"type": "array", "items": {"$ref": "#/$defs/legalPoint"}},
+    "exceptions": {"type": "array", "items": {"$ref": "#/$defs/legalPoint"}},
+    "timing_deadlines": {"type": "array", "items": {"$ref": "#/$defs/deadline"}},
+    "forms_records": {"type": "array", "items": {"$ref": "#/$defs/legalPoint"}},
+    "role_duties": {"type": "array", "items": {"$ref": "#/$defs/roleDuty"}},
+    "common_traps": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/legalPoint"}},
+    "drug_examples": {"type": "array", "items": {"$ref": "#/$defs/drugExample"}},
+    "practice_question_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^MA-Q-[0-9]{4}$"}
+    },
+    "last_verified": {"type": ["string", "null"], "format": "date"},
+    "verification_status": {"enum": ["AUDIT_PENDING", "VERIFIED", "HOLD", "REVIEW_REQUIRED"]},
+    "independent_audit_id": {"type": ["string", "null"], "pattern": "^AUDIT-SG-[A-Z0-9-]+$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"verification_status": {"const": "VERIFIED"}}},
+      "then": {
+        "properties": {
+          "last_verified": {"type": "string", "format": "date"},
+          "independent_audit_id": {"type": "string", "pattern": "^AUDIT-SG-[A-Z0-9-]+$"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "dependencySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_version", "content_hash"],
+      "properties": {
+        "content_version": {"type": "integer", "minimum": 1},
+        "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "ruleIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"}
+    },
+    "legalPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "rule_ids"],
+      "properties": {
+        "text": {"type": "string", "minLength": 10},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "decisionStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "action", "rule_ids"],
+      "properties": {
+        "condition": {"type": "string", "minLength": 5},
+        "action": {"type": "string", "minLength": 5},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "deadline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event", "timeframe", "consequence", "rule_ids"],
+      "properties": {
+        "event": {"type": "string", "minLength": 4},
+        "timeframe": {"type": "string", "minLength": 2},
+        "consequence": {"type": "string", "minLength": 5},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "roleDuty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "duty", "rule_ids"],
+      "properties": {
+        "role": {"type": "string", "minLength": 3},
+        "duty": {"type": "string", "minLength": 8},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "drugExample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["drug_id", "teaching_point", "rule_ids"],
+      "properties": {
+        "drug_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "teaching_point": {"type": "string", "minLength": 8},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    }
+  }
+}

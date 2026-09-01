@@ -4,6 +4,7 @@ import argparse
 import json
 
 from build_site_data import build_site_payload
+from build_study_guide_data import build_study_guide_coverage, build_study_guide_payload
 from check_answer_distribution import analyze_answer_distribution
 from check_sba_answer_length import analyze_sba_answer_length
 from check_structural_patterns import analyze_structural_patterns
@@ -20,10 +21,12 @@ def artifact_payloads() -> dict:
         ROOT / "answer_distribution_report.json": distribution,
         ROOT / "structural_pattern_report.json": structural_patterns,
         ROOT / "sba_answer_length_report.json": sba_answer_length,
+        ROOT / "audits" / "coverage" / "2026-09-01" / "BATCH4-STUDY-GUIDE-COVERAGE.json": build_study_guide_coverage(),
         # The tracked GitHub Pages payload is a production artifact. Development
         # fixtures remain available only through an explicit build-site-data
         # invocation and must never be present in the public asset.
         ROOT / "site" / "generated" / "questions.json": build_site_payload(include_fixtures=False),
+        ROOT / "site" / "generated" / "study_guide.json": build_study_guide_payload(include_pending=False),
     }
 
 

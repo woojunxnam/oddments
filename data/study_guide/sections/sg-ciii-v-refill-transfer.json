@@ -1,0 +1,196 @@
+{
+  "section_id": "SG-CIII-V-REFILL-TRANSFER",
+  "content_version": 1,
+  "content_hash": "54432524e5e4b2da1459dc3ed4f0c95e4fb8e25132dc456b53dfee13eaf7d3df",
+  "title": "Schedule III-V Refills and Massachusetts Transfers",
+  "areas": [
+    2,
+    3
+  ],
+  "topic": "Controlled prescription dispensing",
+  "subtopic": "Refill and transfer limits",
+  "learning_objectives": [
+    "Apply both the issue-date clock and refill-count limit to Schedule III and IV prescriptions.",
+    "Separate transfer eligibility from the prescription's remaining lawful refill capacity.",
+    "Recognize the special Massachusetts treatment of Schedule VI transfers."
+  ],
+  "rule_ids": [
+    "FED-CS-REFILL-III-IV",
+    "MA-RX-CV-REFILL",
+    "MA-RX-TRANSFER",
+    "MA-ORAL-III-V-FOLLOWUP"
+  ],
+  "verified_rule_dependencies": {
+    "FED-CS-REFILL-III-IV": {
+      "content_version": 1,
+      "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+    },
+    "MA-RX-CV-REFILL": {
+      "content_version": 1,
+      "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+    },
+    "MA-RX-TRANSFER": {
+      "content_version": 2,
+      "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+    },
+    "MA-ORAL-III-V-FOLLOWUP": {
+      "content_version": 1,
+      "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0"
+    }
+  },
+  "quick_review": [
+    {
+      "text": "Federal law limits Schedule III and IV prescriptions to five refills and six months after the issue date unless renewed by the practitioner.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "text": "Massachusetts Schedule V prescriptions likewise may not be refilled more than five times or later than six months after issue.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Massachusetts requires a timely patient-requested transfer, prohibits a transfer fee, and permits a pharmacy to act as the patient's agent to obtain the transfer.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "decision_logic": [
+    {
+      "condition": "A Schedule III or IV refill is requested.",
+      "action": "Check both elapsed time from issue and the number of prior refills; either exhausted limit blocks the refill.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "condition": "A Massachusetts Schedule V refill is requested.",
+      "action": "Apply the five-refill and six-month limits independently.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "condition": "A patient or authorized agent requests a Massachusetts prescription transfer.",
+      "action": "Transfer remaining authorized refills timely without charging a transfer fee, subject to the prescription-specific limits.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "condition": "An out-of-state practitioner issues an oral Schedule III-V prescription through the Massachusetts pathway.",
+      "action": "Record the request for written follow-up within seven days or any shorter federal period.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "ma_vs_federal": [
+    {
+      "text": "For Schedule III and IV refills, the federal five-refill and six-month limits remain operative when Massachusetts transfer rules are applied.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions, but a Schedule VI prescription may not be transferred more than one year after issue.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "text": "A transfer does not create new refill authority or restart an issue-date clock.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "timing_deadlines": [
+    {
+      "event": "Schedule III-IV refill window",
+      "timeframe": "Within 6 months after issue",
+      "consequence": "No further fill or refill after the federal time limit without practitioner renewal.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "event": "Massachusetts Schedule V refill window",
+      "timeframe": "Within 6 months after issue",
+      "consequence": "No refill after the state time limit or after five refills.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "event": "Massachusetts Schedule VI transfer",
+      "timeframe": "Not more than 1 year after issue",
+      "consequence": "The prescription may not be transferred after that point.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "event": "Out-of-state oral Schedule III-V follow-up request",
+      "timeframe": "Within 7 days or shorter federal period",
+      "consequence": "The pharmacist records requesting written follow-up.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "forms_records": [
+    {
+      "text": "The out-of-state oral Schedule III-V pathway requires the pharmacist to record the follow-up request.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "role_duties": [
+    {
+      "role": "Receiving pharmacy",
+      "duty": "Obtain the patient-requested transfer and preserve the remaining lawful refill limits.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "common_traps": [
+    {
+      "text": "Starting a six-month clock at the first dispensing rather than the issue date gives the prescription excess life.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Assuming a transfer renews or expands refill authority confuses movement of a prescription with creation of a new prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-REFILL-III-IV"
+      ]
+    }
+  ],
+  "drug_examples": [],
+  "practice_question_ids": [
+    "MA-Q-0009",
+    "MA-Q-0099",
+    "MA-Q-0120",
+    "MA-Q-0124",
+    "MA-Q-0397"
+  ],
+  "last_verified": null,
+  "verification_status": "AUDIT_PENDING",
+  "independent_audit_id": null
+}
