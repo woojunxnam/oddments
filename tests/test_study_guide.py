@@ -14,17 +14,18 @@ def test_canonical_study_guide_pilot_validates(registry_indexes) -> None:
 
     assert report.ok
     assert len(sections) == 5
-    assert all(section["verification_status"] == "AUDIT_PENDING" for section in sections.values())
+    assert sum(section["verification_status"] == "VERIFIED" for section in sections.values()) == 1
+    assert sum(section["verification_status"] == "AUDIT_PENDING" for section in sections.values()) == 4
 
 
 def test_public_payload_fails_closed_until_independent_verification() -> None:
     public = build_study_guide_payload(include_pending=False)
     development = build_study_guide_payload(include_pending=True)
 
-    assert public["meta"]["section_count"] == 0
-    assert public["meta"]["pending_section_count"] == 5
-    assert public["sections"] == []
-    assert public["question_to_sections"] == {}
+    assert public["meta"]["section_count"] == 1
+    assert public["meta"]["pending_section_count"] == 4
+    assert [section["section_id"] for section in public["sections"]] == ["SG-CONTROLLED-SCHEDULES"]
+    assert public["question_to_sections"]
     assert development["meta"]["section_count"] == 5
 
 

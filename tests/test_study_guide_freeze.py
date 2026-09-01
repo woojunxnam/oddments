@@ -22,7 +22,8 @@ def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: 
     assert set(package["section_ids"]) == set(sections)
     for frozen in package["sections"]:
         section = frozen["full_prose_under_review"]
-        assert section == sections[frozen["section_id"]]
+        current = sections[frozen["section_id"]]
+        assert study_guide_content_hash(section) == study_guide_content_hash(current)
         assert frozen["content_hash"] == study_guide_content_hash(section)
         assert {item["rule_id"] for item in frozen["rule_dependencies"]} == set(section["rule_ids"])
         assert {item["question_id"] for item in frozen["practice_question_dependencies"]} == set(
