@@ -9,8 +9,11 @@
 - `data/source_manifests/`: research source provenance와 permission decision
 - `data/source_signals/`: 허용된 Class B source에서 추상화한 signal만 저장
 - `data/exam_style/`: public-source-derived style profile과 family matrix
+- `data/study_guide/`: rule dependency를 exact version/hash로 pin하는 structured guide section과 navigation index
 - `audits/claude/`, `audits/gpt/`: human-readable reports; 단독으로 release를 승인하지 않음
 - `site/generated/`: deterministic derived output; canonical content가 아님
+
+Study Guide의 모든 substantive legal point는 하나 이상의 canonical `rule_id`에 연결됩니다. Section은 직접 참조한 rule 집합과 exact dependency snapshot을 모두 보유하며, rule hash가 바뀌면 validator가 해당 section을 stale로 처리합니다. Controller-authored `AUDIT_PENDING` prose는 canonical registry와 development build에서는 검증할 수 있지만 public `study_guide.json`에는 포함되지 않습니다. Public guide prose는 별도 독립 검증을 거쳐 `VERIFIED`가 된 section만 생성됩니다.
 
 ## Dependency integrity
 

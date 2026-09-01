@@ -1,0 +1,180 @@
+{
+  "section_id": "SG-FED-MA-INTERACTION",
+  "content_version": 1,
+  "content_hash": "842a9a03713a79a3b32c49f2510fd29887fff011f2a10d776a4cdb739807bdad",
+  "title": "Federal and Massachusetts Rule Interaction",
+  "areas": [
+    2,
+    3
+  ],
+  "topic": "Federal and state interaction",
+  "subtopic": "Layered controlled-prescription analysis",
+  "learning_objectives": [
+    "Solve a federal-state interaction by identifying the same actor, event, and prescription pathway under both sources.",
+    "Avoid selecting a familiar federal limit before checking Massachusetts conditions that also govern the transaction."
+  ],
+  "rule_ids": [
+    "FED-CII-PARTIAL-PATIENT",
+    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+    "FED-CS-REFILL-III-IV",
+    "MA-RX-CV-REFILL"
+  ],
+  "verified_rule_dependencies": {
+    "FED-CII-PARTIAL-PATIENT": {
+      "content_version": 1,
+      "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+    },
+    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+      "content_version": 1,
+      "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+    },
+    "FED-CS-REFILL-III-IV": {
+      "content_version": 1,
+      "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+    },
+    "MA-RX-CV-REFILL": {
+      "content_version": 1,
+      "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+    }
+  },
+  "quick_review": [
+    {
+      "text": "Federal patient-requested Schedule II partial filling is conditioned on state law permitting the partial fill.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "Massachusetts supplies same-pharmacy, record, and issue-date requirements for its patient-requested Schedule II pathway.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "Federal Schedule III-IV and Massachusetts Schedule V refill rules each use both a five-refill limit and a six-month issue-date limit for their respective schedules.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "decision_logic": [
+    {
+      "condition": "A transaction is governed by both federal and Massachusetts controlled-substance law.",
+      "action": "Define the drug schedule, actor, trigger, and pathway first; then apply every rule whose scope actually reaches those facts.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "condition": "Federal law permits a patient-requested Schedule II partial fill where state law allows it.",
+      "action": "Continue to the Massachusetts conditions instead of stopping at federal permission.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "condition": "A refill question names Schedule III, IV, or Massachusetts Schedule V.",
+      "action": "Choose the rule with the correct schedule scope and check both count and issue-date limits.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "ma_vs_federal": [
+    {
+      "text": "Federal permission for a patient-requested Schedule II partial fill does not displace Massachusetts' same-pharmacy and recordkeeping conditions.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "The similar five-refill and six-month formulations for Schedule III-IV and Massachusetts Schedule V must still be matched to the correct schedule scope.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "text": "A nearby rule with a familiar number is not controlling unless its actor, schedule, and triggering facts match the transaction.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "timing_deadlines": [
+    {
+      "event": "Patient-requested Schedule II remainder",
+      "timeframe": "No later than 30 days after issue",
+      "consequence": "Both federal and Massachusetts pathway limits must be satisfied.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "event": "Schedule III-IV or Massachusetts Schedule V refill",
+      "timeframe": "Within 6 months after issue",
+      "consequence": "The applicable five-refill limit must also remain unexhausted.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "forms_records": [
+    {
+      "text": "The Massachusetts patient-requested Schedule II pathway requires a pharmacy patient-record notation for each partial dispensing and quantity.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "role_duties": [
+    {
+      "role": "Pharmacist",
+      "duty": "Apply federal permission and Massachusetts conditions to the same defined transaction before reaching a conclusion.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "common_traps": [
+    {
+      "text": "Stopping after finding a permissive federal rule can omit a Massachusetts condition that still governs the dispensing.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "Transplanting a correct number from the wrong schedule produces a wrong result even when the number looks familiar.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    }
+  ],
+  "drug_examples": [],
+  "practice_question_ids": [
+    "MA-Q-0009",
+    "MA-Q-0021",
+    "MA-Q-0099",
+    "MA-Q-0401"
+  ],
+  "last_verified": null,
+  "verification_status": "AUDIT_PENDING",
+  "independent_audit_id": null
+}
