@@ -1,0 +1,1479 @@
+{
+  "report_type": "BATCH4_REAL_EXAM_SIGNAL_REPORT",
+  "report_version": 1,
+  "research_date": "2026-09-01",
+  "jurisdiction": "Massachusetts",
+  "repository_snapshot": {
+    "commit_sha": "b24bdc5ccb062dae7fe9b2cd30684322d1f8c038",
+    "released_question_count": 366,
+    "released_by_area": {
+      "1": 78,
+      "2": 120,
+      "3": 93,
+      "4": 75
+    },
+    "public_study_guide_section_count": 0,
+    "canonical_study_guide_section_count": 5,
+    "canonical_study_guide_status": "AUDIT_PENDING",
+    "canonical_rule_count": 267,
+    "rules_covered_by_any_guide_draft": 16,
+    "rules_covered_by_verified_public_guide": 0
+  },
+  "research_scope": {
+    "lookback_priority": "최근 24개월을 우선하고, 표본 보강을 위해 최근 36개월 범위의 공개 보고를 포함했다.",
+    "candidate_report_unit": "한 명의 공개 후보가 남긴 독립적인 응시 경험 진술을 1 report로 계산했다. 같은 URL에 여러 후보가 있으면 report는 분리하되 unique URL 수도 별도 공개했다.",
+    "identity_limit": "가명 계정 간 동일인 여부는 검증할 수 없으므로 report_count를 unique_candidate_count로 표현하지 않는다.",
+    "law_boundary": "후보 경험은 realism, prioritization, pedagogy에만 사용하며 법적 정답이나 공식 blueprint weight를 정하지 않는다.",
+    "exam_integrity_boundary": "회상 문항의 실제 wording, scenario facts, answer choices, candidate answer는 저장하지 않았다. 그런 내용이 노출된 경우 abstract category만 남기고 세부사항은 폐기했다."
+  },
+  "sources_reviewed": {
+    "official_source_count": 8,
+    "Massachusetts_report_count": 20,
+    "Massachusetts_unique_url_count": 12,
+    "cross_state_report_count": 26,
+    "cross_state_unique_url_count": 22,
+    "cross_state_jurisdiction_count": 11,
+    "candidate_report_total": 46,
+    "all_evidence_record_count": 54,
+    "source_class_counts": {
+      "CLASS_A_OFFICIAL_EXAM_DESIGN": 8,
+      "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE": 20,
+      "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE": 26
+    }
+  },
+  "blueprint_era_separation": {
+    "pre_2027_current": {
+      "applicability": "MPJE exams administered before 2027-03-01",
+      "authority": "NABP MPJE Competency Statements",
+      "weights_percent": {
+        "Area_1_Licensure_Personnel": 22,
+        "Area_2_Pharmacist_Practice": 33,
+        "Area_3_Dispensing_Requirements": 24,
+        "Area_4_Pharmacy_Operations": 21
+      },
+      "controller_rule": "현재 Massachusetts bank, B4-A proposition map, Quick20 및 Mock120 배분에는 이 시대만 적용한다."
+    },
+    "post_2027_future": {
+      "applicability": "MPJE exams administered on or after 2027-03-01",
+      "authority": "NABP MPJE Content Outline published in 2026",
+      "weights_percent": {
+        "Domain_1_Pharmacy_and_Pharmacist_Practice": 30,
+        "Domain_2_Medication_Use_Process": 30,
+        "Domain_3_Regulatory_Authority_and_Legal_Obligations": 20,
+        "Domain_4_Pharmacy_Operations": 20
+      },
+      "controller_rule": "향후 migration planning에만 사용하고, pre-2027 Area coverage나 B4-A quota와 합산하지 않는다."
+    },
+    "mixing_verdict": "ERA_SEPARATED"
+  },
+  "official_sources": [
+    {
+      "source_id": "OFF-NABP-COMPETENCY-CURRENT",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "MPJE Competency Statements",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": null,
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "pre-2027 공식 blueprint와 Area weights",
+        "state와 federal을 분리된 문항군으로 취급하지 않고 해당 jurisdiction의 prevailing law를 적용",
+        "지식 자체보다 실제 상황에 대한 법 적용과 판단을 평가"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-PREPARE",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "Prepare for the Exam",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": null,
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/programs/examinations/mpje/prepare-for-the-exam/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "2027-03-01 전후 blueprint 전환일 명시",
+        "공식 sample items는 format 학습용",
+        "Pre-MPJE는 공식 practice exam"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-CONTENT-OUTLINE-2027",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "MPJE Content Outline",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": "2026-06-10",
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/wp-content/uploads/MPJE-Content-Outline.pdf",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "post-2027 네 domain 및 30/30/20/20 weights",
+        "entry-level pharmacist task와 법 적용을 바탕으로 한 practice analysis",
+        "각 item에 reference, committee review, staff style review, psychometric monitoring이 필요"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-CONTENT-OUTLINE-BLOG",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "MPJE Content Outline",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": "2026-06-10",
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/news/blog/mpje-content-outline/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "새 outline은 2027-03-01부터 적용",
+        "그 이전 시험은 기존 Competency Statements를 계속 사용",
+        "두 시대를 조용히 혼합해서는 안 됨"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-TAKE-EXAM",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "Take the MPJE Exam",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": null,
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/programs/examinations/mpje/take-the-mpje-exam/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "120 computer-based selected-response questions",
+        "150-minute adaptive exam",
+        "item-type 비율은 이 페이지에서 공개하지 않음"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-SAMPLE-ITEMS",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "MPJE Sample Questions",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": "2020-07-01",
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "single-response, multiple-response, ordered-response format 지원",
+        "sample은 content weighting이 아니라 format familiarization 목적",
+        "공개 sample wording은 신규 문항에 복제하거나 근접 의역하지 않음"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-PRE-MPJE",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "Pre-MPJE and Pre-UMPJE",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": "2026-01-15",
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/programs/practice-exams/pre-mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "Pre-MPJE는 40 questions와 50-minute limit를 가진 공식 연습시험",
+        "실제 MPJE와 동일한 길이나 score predictor라고 공식 보장하지 않음",
+        "Pre-MPJE content는 비공개이며 AI 처리 금지이므로 본 연구에서 접근하지 않음"
+      ]
+    },
+    {
+      "source_id": "OFF-NABP-DEVELOPMENT-AND-PASSRATE",
+      "source_class": "CLASS_A_OFFICIAL_EXAM_DESIGN",
+      "title": "The MPJE: Pass Rate Improvements",
+      "publisher": "National Association of Boards of Pharmacy",
+      "publication_date": "2025-04-09",
+      "access_date": "2026-09-01",
+      "source_url": "https://nabp.pharmacy/news/blog/the-mpje-pass-rate-improvements/",
+      "publicly_accessible": true,
+      "signal_confidence": "HIGH",
+      "abstract_signals": [
+        "practicing pharmacists와 board members가 item development에 참여",
+        "jurisdiction law changes와 item analysis에 따라 기존 pool을 주기적으로 검토",
+        "state-specific need analysis가 신규 item authoring 우선순위를 지원"
+      ]
+    }
+  ],
+  "Massachusetts_candidate_reports": [
+    {
+      "source_id": "MA-EXP-001",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-07",
+      "publication_date": "2026-07-29",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vabjv6/ma_mpje_wtffrustrated/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["compounding"],
+      "reported_reasoning_patterns": ["unexpected depth"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["study-priority mismatch"],
+      "reported_study_gaps": ["compounding depth"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["compounding plus operations"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-002",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2024",
+      "publication_date": "2026-08-06",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vabjv6/ma_mpje_wtffrustrated/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["compounding", "hazardous drugs"],
+      "reported_reasoning_patterns": ["operational application"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["unexpected topic prominence"],
+      "reported_study_gaps": ["hazardous handling"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["compounding plus hazardous handling"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-003",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-07",
+      "publication_date": "2026-07-30",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vb05g4/massachusetts_mpje_prep/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["sterile compounding", "hazardous compounding"],
+      "reported_reasoning_patterns": ["technical standard applied in pharmacy setting"],
+      "reported_question_format_signals": ["SATA perceived as frequent"],
+      "reported_difficulty_sources": ["greater detail than commercial prep"],
+      "reported_study_gaps": ["current compounding standards"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["compounding plus personnel and environment"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-004",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-07",
+      "publication_date": "2026-07-26",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1v72b1t/ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": [],
+      "reported_reasoning_patterns": ["perceived mismatch between study guide and exam"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["material felt outside prepared scope"],
+      "reported_study_gaps": ["official-source detail and cross-rule coverage"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-005",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025",
+      "publication_date": "2026-07-26",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1v72b1t/ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["collaborative practice", "compounding"],
+      "reported_reasoning_patterns": ["role and agreement boundary"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["Massachusetts-specific detail"],
+      "reported_study_gaps": ["collaborative practice scope and lifecycle"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["collaborative practice plus documentation"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-006",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-07-30",
+      "publication_date": "2026-07-30",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1v72b1t/ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["collaborative practice"],
+      "reported_reasoning_patterns": ["agreement currency and renewal"],
+      "reported_question_format_signals": ["same concept revisited"],
+      "reported_difficulty_sources": ["recent update and source currency"],
+      "reported_study_gaps": ["renewal and documentation"],
+      "reported_wording_signals": ["same concept framed in multiple ways"],
+      "reported_topic_interactions": ["collaborative practice plus timing"],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "MA-EXP-007",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-09-20",
+      "publication_date": "2025-09-21",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1nms1fi/definitely_failed_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": [],
+      "reported_reasoning_patterns": ["knowledge did not eliminate uncertainty"],
+      "reported_question_format_signals": ["SATA perceived as frequent"],
+      "reported_difficulty_sources": ["question construction rather than content recall"],
+      "reported_study_gaps": ["practice with precise selected-response decisions"],
+      "reported_wording_signals": ["frustratingly precise or unfamiliar wording"],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "MA-EXP-008",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025",
+      "publication_date": "2025-09-21",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1nms1fi/definitely_failed_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["controlled substances"],
+      "reported_reasoning_patterns": ["rule set applied across linked items"],
+      "reported_question_format_signals": ["clustered concept perception"],
+      "reported_difficulty_sources": ["one weak concept affected several decisions"],
+      "reported_study_gaps": ["controlled-substance lifecycle integration"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["schedule plus dispensing operation"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-009",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-09",
+      "publication_date": "2025-09-21",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1nmm22o/helpful_tips_to_pass_the_massachusetts_ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["personnel roles", "counseling", "controlled substances", "federal and state interaction"],
+      "reported_reasoning_patterns": ["actor distinction", "jurisdiction comparison"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["neighboring rules easily confused"],
+      "reported_study_gaps": ["role matrix", "federal versus Massachusetts table"],
+      "reported_wording_signals": ["actor and scope language matter"],
+      "reported_topic_interactions": ["role plus counseling", "schedule plus jurisdiction"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-010",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-02",
+      "publication_date": "2026-02-20",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1nmm22o/helpful_tips_to_pass_the_massachusetts_ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["compounding"],
+      "reported_reasoning_patterns": [],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["form-to-form topic variability"],
+      "reported_study_gaps": [],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-011",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-11-20",
+      "publication_date": "2025-11-21",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1p2xhc4/took_ma_mpje_yesterday/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["hazardous compounding", "personnel roles", "container labeling", "delivery", "prescription validity", "collaborative practice", "drug schedules"],
+      "reported_reasoning_patterns": ["actor plus operation", "validity plus required content"],
+      "reported_question_format_signals": ["SATA present"],
+      "reported_difficulty_sources": ["detail absent from concise review guide"],
+      "reported_study_gaps": ["Board-source operational detail"],
+      "reported_wording_signals": ["required-content distinctions"],
+      "reported_topic_interactions": ["compounding plus training", "delivery plus documentation", "validity plus label"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-012",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-12-08",
+      "publication_date": "2025-12-09",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1p2xhc4/took_ma_mpje_yesterday/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["hazardous compounding", "personnel roles", "labeling", "delivery", "prescription validity", "collaborative practice", "drug schedules"],
+      "reported_reasoning_patterns": ["multi-topic operational decisions"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["broad operational coverage"],
+      "reported_study_gaps": ["integrated operational practice"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["role plus compounding", "validity plus dispensing"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-013",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-11-11",
+      "publication_date": "2025-11-11",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1otyhpk/just_took_the_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["personnel duties", "controlled substances", "collaborative practice"],
+      "reported_reasoning_patterns": ["actor limits", "agreement lifecycle"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["repeated testing of a weak distinction"],
+      "reported_study_gaps": ["actor matrix and agreement currency"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["role plus controlled substance"],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "MA-EXP-014",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-11",
+      "publication_date": "2025-11-11",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1otyhpk/just_took_the_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["compounding", "hazardous drugs", "personnel duties", "controlled substances", "counseling documentation", "labeling", "Board duties"],
+      "reported_reasoning_patterns": ["actor distinction", "document requirement", "drug identity plus schedule"],
+      "reported_question_format_signals": ["SATA and K-type perceived as frequent"],
+      "reported_difficulty_sources": ["several plausible selections"],
+      "reported_study_gaps": ["role, documentation, and compounding integration"],
+      "reported_wording_signals": ["selecting every true condition"],
+      "reported_topic_interactions": ["role plus controlled substance", "counseling plus documentation", "drug identity plus schedule"],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "MA-EXP-015",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-01-28",
+      "publication_date": "2025-02-05",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1ihovw7",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": ["compounding", "hazardous drugs", "personnel roles"],
+      "reported_reasoning_patterns": ["classification plus handling"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["recent standards and source currency"],
+      "reported_study_gaps": ["current hazardous handling standards"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": ["hazard classification plus handling"],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-016",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-08",
+      "publication_date": "2025-09-05",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1n983jj",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["personnel roles", "compounding standards"],
+      "reported_reasoning_patterns": ["task may be allowed only under a stated supervisor"],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["correct action depends on supervision facts"],
+      "reported_study_gaps": ["who may act and under whose supervision"],
+      "reported_wording_signals": ["actor and supervision qualifier changes result"],
+      "reported_topic_interactions": ["technician duty plus pharmacist supervision"],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "MA-EXP-017",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2024-07-18",
+      "publication_date": "2024-07-19",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1e70xu6",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": [],
+      "reported_reasoning_patterns": ["easy-looking and difficult items interleaved"],
+      "reported_question_format_signals": ["SATA and single-answer, no K-type in this form"],
+      "reported_difficulty_sources": ["confidence collapse after unfamiliar items"],
+      "reported_study_gaps": ["mixed-format timed practice"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-018",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2024-07",
+      "publication_date": "2024-07-19",
+      "source_url": "https://www.reddit.com/r/NAPLEX_Prep/comments/1e70xu6",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": [],
+      "reported_reasoning_patterns": ["same concept can be revisited with altered framing"],
+      "reported_question_format_signals": ["repeated-concept perception"],
+      "reported_difficulty_sources": ["second-guessing under reframing"],
+      "reported_study_gaps": ["stable rule application across wording variants"],
+      "reported_wording_signals": ["different framing of the same legal distinction"],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-019",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2025-12",
+      "publication_date": "2026-02-03",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1qufr7a/ma_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "reported_topic_categories": ["compounding"],
+      "reported_reasoning_patterns": [],
+      "reported_question_format_signals": [],
+      "reported_difficulty_sources": ["real exam felt harder than official practice exam"],
+      "reported_study_gaps": ["harder original practice questions"],
+      "reported_wording_signals": [],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true
+    },
+    {
+      "source_id": "MA-EXP-020",
+      "source_class": "CLASS_B_MASSACHUSETTS_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Massachusetts",
+      "reported_test_date": "2026-08-19",
+      "publication_date": "2026-08-20",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vtuw9s/ma_mpje_second_time_is_harder/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "reported_topic_categories": [],
+      "reported_reasoning_patterns": ["different forms can feel materially different"],
+      "reported_question_format_signals": ["SATA perceived as prominent on one form"],
+      "reported_difficulty_sources": ["twisted qualifiers and form variability"],
+      "reported_study_gaps": ["qualifier parsing under time pressure"],
+      "reported_wording_signals": ["small wording changes alter perceived answer"],
+      "reported_topic_interactions": [],
+      "abstract_signal_only": true,
+      "prohibited_recall_content_encountered": true
+    }
+  ],
+  "cross_state_candidate_reports": [
+    {
+      "source_id": "XSTATE-EXP-001",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Texas",
+      "reported_test_date": "2026-07",
+      "publication_date": "2026-07-17",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1uzc20i/is_there_any_chance_to_pass_texas_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["SATA uncertainty", "same topic revisited", "late-exam fatigue"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-002",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Arizona",
+      "reported_test_date": "2025-07-16",
+      "publication_date": "2025-07-16",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1m1pepq",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["official practice perceived easier", "many uncertain selections", "SATA prominence varies"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-003",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Illinois",
+      "reported_test_date": "2025-07-30",
+      "publication_date": "2025-07-30",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1mdjxbe",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["SATA creates post-exam uncertainty", "perceived difficulty is a poor pass indicator"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-004",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Illinois",
+      "reported_test_date": "2025-01",
+      "publication_date": "2025-05-12",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1k8pgar",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["compounding and hazardous handling can appear together", "topic depth varies by form"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-005",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Maryland",
+      "reported_test_date": "2025",
+      "publication_date": "2025-07-18",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1m2tpdd/anyone_recently_pass_the_pre_mpje_and_passed_the/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["Pre-MPJE score alone was not a stable outcome indicator", "real exam perceived harder"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-006",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "New Jersey",
+      "reported_test_date": "2025-07",
+      "publication_date": "2025-07-18",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1m2tpdd/anyone_recently_pass_the_pre_mpje_and_passed_the/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["wording required repeated rereading", "role and controlled-substance distinctions drove application"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-007",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Washington",
+      "reported_test_date": "2025-09-10",
+      "publication_date": "2025-09-10",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1na4b2s",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["SATA-heavy perception", "item-type proportions vary"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-008",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New Jersey",
+      "reported_test_date": "2025-08-20",
+      "publication_date": "2025-08-20",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1mvoyeo",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["compounding plus collaborative-practice interaction", "niche scope conditions can dominate perceived difficulty"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-009",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2025-07-10",
+      "publication_date": "2025-07-10",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1lwk1ks",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["same concept revisited", "SATA with one or two uncertain choices", "difficulty increased after initial portion"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-010",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Louisiana",
+      "reported_test_date": "2026-06",
+      "publication_date": "2026-06-16",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1u7oue7/passed_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["one qualifying word can change the legal task", "official Board and DEA sources were useful"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-011",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Pennsylvania",
+      "reported_test_date": "2025-10-14",
+      "publication_date": "2025-10-14",
+      "source_url": "https://www.reddit.com/r/MPJE_Advice/comments/1o3pkvp/pennsylvania_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["same candidate saw materially different topic distribution across attempts", "exceptions and current compounding standards matter"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-012",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-07",
+      "publication_date": "2026-07-29",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1va6pzq/update_i_passed_the_ny_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["apparently simple stem changed by one word", "controlled-substance operation plus actor/status"],
+      "Massachusetts_weighting_allowed": false,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "XSTATE-EXP-013",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-05",
+      "publication_date": "2026-05-22",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1tkmcq9/update_i_passed_new_york_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["controlled-substance and compounding standards integration", "reading legal source language improved preparation"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-014",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-05",
+      "publication_date": "2026-05-31",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1tszb4t/passed_the_new_york_ny_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["personnel qualification plus administration scope", "wording was the main source of error despite topic familiarity"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-015",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New Jersey",
+      "reported_test_date": "2026-08-10",
+      "publication_date": "2026-08-20",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vtntai/update_i_passed_nj_mpje_things_you_should_know/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["one-word qualifiers", "actor and reporting-recipient distinctions", "multiple operational rules in one decision"],
+      "Massachusetts_weighting_allowed": false,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "XSTATE-EXP-016",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-06-29",
+      "publication_date": "2026-07-05",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1uo8g8w/ny_mpje_horrible_help_please/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["commercial guide coverage felt incomplete", "high uncertainty despite strong practice score"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-017",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-06-30",
+      "publication_date": "2026-07-05",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1uo8g8w/ny_mpje_horrible_help_please/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["same concept repeated without confidence", "SATA count alone has no official diagnostic meaning", "legal verbiage practice helped"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-018",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Hawaii",
+      "reported_test_date": "2026",
+      "publication_date": "2026-07-07",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1uo8g8w/ny_mpje_horrible_help_please/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["post-exam distress did not predict failure", "confidence is not a sound performance metric"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-019",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-08-25",
+      "publication_date": "2026-08-25",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vy9s1a/ny_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["near-identical concepts reframed by qualifiers", "SATA may have a single correct selection", "niche detail perception"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-020",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public comment",
+      "jurisdiction": "Undisclosed MPJE state",
+      "reported_test_date": "2026-08",
+      "publication_date": "2026-08-26",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1vy9s1a/ny_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["exam identity felt unfamiliar because prepared categories did not map cleanly", "unexpected content perception can coexist with a pass"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-021",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New York",
+      "reported_test_date": "2026-03",
+      "publication_date": "2026-03-18",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1rxd0aw/passed_ny_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["scenario-based application", "two highly similar plausible selections", "role and federal-state distinctions"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-022",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New Jersey",
+      "reported_test_date": "2026-03-31",
+      "publication_date": "2026-04-10",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1sh8qho/passed_nj_mpje_331_on_first_attempt/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["many original practice questions improved readiness", "post-exam uncertainty persisted despite pass"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-023",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "New Jersey",
+      "reported_test_date": "2026-02-11",
+      "publication_date": "2026-02-28",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1rhgjsm/passed_nj_mpje_211/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["legal wording, not pure recall, was a dominant difficulty source", "large perceived gap between review summary and exam detail"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-024",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Maryland",
+      "reported_test_date": "2025-10-14",
+      "publication_date": "2025-10-25",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1ofros2/maryland_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["actor distinctions across pharmacist, technician, intern, prescriber and facility", "controlled-substance operation plus role", "reporting recipient and trigger", "compounding plus operational constraints"],
+      "Massachusetts_weighting_allowed": false,
+      "prohibited_recall_content_encountered": true
+    },
+    {
+      "source_id": "XSTATE-EXP-025",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Florida",
+      "reported_test_date": "2025-06-25",
+      "publication_date": "2025-06-25",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1lkaufi",
+      "publicly_accessible": true,
+      "signal_confidence": "MEDIUM",
+      "abstract_signals": ["same legal concept reframed", "SATA options remained close", "adaptive interpretation generated second-guessing"],
+      "Massachusetts_weighting_allowed": false
+    },
+    {
+      "source_id": "XSTATE-EXP-026",
+      "source_class": "CLASS_C_OTHER_STATE_PUBLIC_CANDIDATE_EXPERIENCE",
+      "source_type": "Reddit public post",
+      "jurisdiction": "Florida",
+      "reported_test_date": "2025-10",
+      "publication_date": "2025-10-09",
+      "source_url": "https://www.reddit.com/r/MPJE/comments/1o2g3js/fl_mpje/",
+      "publicly_accessible": true,
+      "signal_confidence": "LOW",
+      "abstract_signals": ["mixed selected-response formats", "compounding plus state-specific operation", "some items straightforward and some qualifier-sensitive"],
+      "Massachusetts_weighting_allowed": false
+    }
+  ],
+  "prohibited_recall_content_encountered_and_discarded_count": {
+    "report_level_encounter_count": 9,
+    "discarded_content_unit_count": 17,
+    "counting_rule": "report_level은 item-specific scenario, answer choice 또는 recalled answer가 하나라도 노출된 report를 한 번 계산했다. content_unit은 서로 구분되는 recalled item fragment를 계산했다.",
+    "retained_recalled_question_count": 0,
+    "retained_answer_choice_count": 0,
+    "retained_candidate_answer_correctness_inference_count": 0,
+    "verdict": "ALL_RECALL_DETAILS_DISCARDED"
+  },
+  "high_confidence_style_signals": [
+    {
+      "signal_id": "STYLE-APPLICATION-OVER-BARE-RECALL",
+      "evidence_basis": "OFFICIAL_NABP",
+      "confidence": "HIGH",
+      "finding": "시험은 단순 법조문 암기보다 entry-level pharmacy 상황에서 법을 적용하고 판단하는 능력을 평가한다.",
+      "authoring_implication": "원문 법률 proposition을 고정한 뒤 actor, setting, trigger, exception, consequence 중 필요한 사실을 실제 workflow에 배치한다."
+    },
+    {
+      "signal_id": "STYLE-FEDERAL-STATE-INTEGRATED",
+      "evidence_basis": "OFFICIAL_NABP",
+      "confidence": "HIGH",
+      "finding": "federal과 state jurisprudence를 별도 문항군으로 나누지 않고 Massachusetts prevailing law로 통합 적용한다.",
+      "authoring_implication": "federal floor와 Massachusetts 추가 조건 또는 더 엄격한 규칙이 자연스럽게 충돌하는 original scenario를 사용한다."
+    },
+    {
+      "signal_id": "STYLE-ACTOR-CENTRIC",
+      "evidence_basis": "OFFICIAL_BLUEPRINT_PLUS_MULTI_STATE_CONSENSUS_PLUS_MA_REPORTS",
+      "confidence": "HIGH",
+      "finding": "동일한 행위도 pharmacist, manager, intern, technician, trainee, prescriber, facility 또는 agency 중 누가 행위자인지에 따라 결론이 달라지는 패턴이 반복된다.",
+      "authoring_implication": "stem에서 actor와 supervision 관계를 명시하고, distractor는 correct rule/wrong actor 또는 correct actor/wrong condition으로 설계한다."
+    },
+    {
+      "signal_id": "STYLE-PRECISE-QUALIFIER",
+      "evidence_basis": "BROAD_CANDIDATE_CONSENSUS",
+      "confidence": "HIGH",
+      "finding": "응시자들은 may, must, only, unless, except, scope와 actor 같은 한정어가 결론을 바꾸며 여러 선택지가 얼핏 맞아 보인다고 반복 보고한다.",
+      "authoring_implication": "트릭을 위한 모호성이 아니라 법적으로 의미 있는 qualifier 하나가 각 option의 참·거짓을 가르도록 한다."
+    },
+    {
+      "signal_id": "STYLE-REFERENCE-AND-REVIEW-DISCIPLINE",
+      "evidence_basis": "OFFICIAL_NABP",
+      "confidence": "HIGH",
+      "finding": "공식 item development는 정답 reference, 전문 위원회 검토, style review, psychometric monitoring을 요구한다.",
+      "authoring_implication": "현재 repository의 source-first dependency, immutable hash freeze, independent legal/realism audit 정책을 유지한다."
+    }
+  ],
+  "medium_confidence_style_signals": [
+    {
+      "signal_id": "STYLE-MULTI-RULE-SCENARIO",
+      "confidence": "MEDIUM",
+      "finding": "실제 어려움은 두 개 이상의 법적 차원을 한 상황에서 분리해 적용할 때 커지는 것으로 보인다.",
+      "common_abstract_sequence": ["identify_actor", "identify_jurisdiction_or_schedule_or_setting", "identify_trigger", "apply_exception", "determine_consequence"]
+    },
+    {
+      "signal_id": "STYLE-PLAUSIBLE-NEIGHBOR-DISTRACTORS",
+      "confidence": "MEDIUM",
+      "finding": "몇몇 선택지는 다른 actor, schedule, event 또는 reporting pathway라면 맞을 수 있어 candidate가 해당 경계를 알아야 제거할 수 있다.",
+      "preferred_distractors": ["correct_rule_wrong_actor", "correct_rule_wrong_schedule", "correct_federal_rule_missing_MA_condition", "correct_neighboring_deadline", "correct_process_wrong_trigger", "correct_authority_wrong_recipient"]
+    },
+    {
+      "signal_id": "STYLE-EXCEPTION-AND-DOCUMENTATION",
+      "confidence": "MEDIUM",
+      "finding": "base rule만 아는 것보다 exception, renewal, documentation, reporting recipient, special setting을 구분하는 능력이 중요하다는 보고가 반복된다.",
+      "authoring_implication": "예외가 실제 결론을 바꾸는 경우에만 stem에 포함하고, 단순 장식 사실은 제거한다."
+    },
+    {
+      "signal_id": "STYLE-SATA-UNCERTAINTY",
+      "confidence": "MEDIUM",
+      "finding": "다수 주와 Massachusetts 보고에서 SATA가 어렵고 한두 선택지가 끝까지 애매하게 느껴졌다는 경험이 반복된다.",
+      "caution": "공식 NABP는 item-type distribution을 공개하지 않았으므로 특정 SATA 비율이나 adaptive 의미를 추론하지 않는다."
+    },
+    {
+      "signal_id": "STYLE-FORM-VARIABILITY",
+      "confidence": "MEDIUM",
+      "finding": "같은 주의 재응시자도 서로 다른 topic mix와 체감 난도를 보고했다.",
+      "authoring_implication": "한 anecdote가 말한 topic 비중에 overfit하지 말고 공식 blueprint와 canonical headroom을 우선한다."
+    }
+  ],
+  "low_confidence_topic_signals": [
+    {
+      "signal_id": "TOPIC-SATA-COUNT-AS-ADAPTIVE-MEANING",
+      "confidence": "LOW",
+      "finding": "SATA가 많으면 합격 신호라는 공개 추측이 있으나 공식 근거가 없어 폐기한다.",
+      "action": "NO_PRODUCT_CHANGE"
+    },
+    {
+      "signal_id": "TOPIC-REPEATED-ITEM-AS-PERFORMANCE-SIGNAL",
+      "confidence": "LOW",
+      "finding": "유사 concept 반복이 performance indicator라는 추측이 있으나 공식 근거가 없다.",
+      "action": "USE_ONLY_AS_WORDING_VARIATION_SIGNAL"
+    },
+    {
+      "signal_id": "TOPIC-ANECDOTAL-PERCENTAGES",
+      "confidence": "LOW",
+      "finding": "후보가 추정한 특정 topic percentage는 salience와 memory bias가 커서 blueprint weight로 사용할 수 없다.",
+      "action": "DISCARD_PERCENTAGE_CLAIMS"
+    },
+    {
+      "signal_id": "TOPIC-PRE_MPJE-SCORE-PREDICTION",
+      "confidence": "LOW",
+      "finding": "Pre-MPJE 점수와 실제 합격 체감의 관계는 공개 표본에서 일관되지 않다.",
+      "action": "DO_NOT_CREATE_PASS_PREDICTOR"
+    }
+  ],
+  "Massachusetts_repeated_topic_signals": [
+    {
+      "topic_signal": "compounding_and_hazardous_operations",
+      "supporting_report_count": 11,
+      "evidence_label": "FREQUENTLY_REPORTED",
+      "confidence": "MEDIUM",
+      "interpretation": "비중 추정이 아니라 current standards, personnel qualification, handling, environment, documentation이 함께 어려움을 만든다는 우선순위 신호다."
+    },
+    {
+      "topic_signal": "pharmacist_technician_intern_and_supervision_roles",
+      "supporting_report_count": 7,
+      "evidence_label": "FREQUENTLY_REPORTED",
+      "confidence": "MEDIUM",
+      "interpretation": "누가 수행·위임·감독할 수 있는지와 조건을 묻는 original role scenarios를 유지할 근거다."
+    },
+    {
+      "topic_signal": "controlled_substance_schedules_and_operations",
+      "supporting_report_count": 6,
+      "evidence_label": "FREQUENTLY_REPORTED",
+      "confidence": "MEDIUM",
+      "interpretation": "schedule flashcard보다 validity, quantity, transfer, actor, jurisdiction interaction을 묶는 방향이 적절하다."
+    },
+    {
+      "topic_signal": "collaborative_practice_and_agreement_lifecycle",
+      "supporting_report_count": 5,
+      "evidence_label": "MODERATELY_REPORTED",
+      "confidence": "MEDIUM",
+      "interpretation": "이미 bank coverage가 강하므로 단순 증량보다 genuinely novel actor, renewal, documentation, setting distinction만 추가 후보로 본다."
+    },
+    {
+      "topic_signal": "prescription_validity_label_and_delivery_requirements",
+      "supporting_report_count": 3,
+      "evidence_label": "MODERATELY_REPORTED",
+      "confidence": "LOW",
+      "interpretation": "required content, authorized transmission, label, delivery documentation을 혼동하지 않는 교차표와 scenario가 필요하다."
+    },
+    {
+      "topic_signal": "counseling_and_documentation",
+      "supporting_report_count": 2,
+      "evidence_label": "OCCASIONALLY_REPORTED",
+      "confidence": "LOW",
+      "interpretation": "offer, actual counseling, authorized actor, refusal, record requirement를 분리하는 기존 canonical coverage를 guide에 연결한다."
+    },
+    {
+      "topic_signal": "Board_duties_reporting_and_discipline",
+      "supporting_report_count": 2,
+      "evidence_label": "OCCASIONALLY_REPORTED",
+      "confidence": "LOW",
+      "interpretation": "authority, trigger, recipient, deadline을 한 행으로 비교하는 pedagogy 후보이며 isolated report만으로 B4-A를 재배분하지 않는다."
+    }
+  ],
+  "reasoning_pattern_signals": [
+    "identify actor before selecting the rule",
+    "separate authorization from supervision, documentation, and reporting duties",
+    "apply the more restrictive or additional Massachusetts condition after identifying the federal floor",
+    "distinguish base rule from exception, special setting, or renewal condition",
+    "track prescription lifecycle from issuance through dispensing, transfer, partial fill, recordkeeping, and closure",
+    "distinguish a correct procedure from the event that actually triggers it",
+    "identify the correct regulator or reporting recipient",
+    "keep the legal conclusion stable when surface wording changes but controlling facts do not",
+    "change the conclusion only when a legally meaningful fact changes"
+  ],
+  "multi_topic_interaction_signals": [
+    {
+      "interaction": "ROLE_PLUS_CONTROLLED_SUBSTANCE",
+      "evidence_strength": "HIGH",
+      "original_authoring_use": "누가 controlled-substance workflow의 각 단계를 수행·확인·기록할 수 있는지 묻되, 각 사실을 current rule dependency에 연결한다."
+    },
+    {
+      "interaction": "PRESCRIPTION_VALIDITY_PLUS_PRESCRIBER_STATUS_OR_TRANSMISSION",
+      "evidence_strength": "MEDIUM",
+      "original_authoring_use": "prescriber authority, format, schedule, jurisdiction이 결론을 순차적으로 바꾸는 original scenario."
+    },
+    {
+      "interaction": "COMPOUNDING_PLUS_PERSONNEL_QUALIFICATION_OR_TRAINING",
+      "evidence_strength": "HIGH",
+      "original_authoring_use": "hazard category 자체를 묻는 대신 actor qualification, supervision, handling, documentation 중 결론을 바꾸는 요소를 적용."
+    },
+    {
+      "interaction": "COLLABORATIVE_PRACTICE_PLUS_SCOPE_DOCUMENTATION_OR_RENEWAL",
+      "evidence_strength": "MEDIUM",
+      "original_authoring_use": "이미 강한 bank coverage를 중복하지 않고 actor/setting/currency가 다른 proposition만 사용."
+    },
+    {
+      "interaction": "COUNSELING_PLUS_PATIENT_SETTING_OR_DOCUMENTATION",
+      "evidence_strength": "MEDIUM",
+      "original_authoring_use": "offer와 actual counseling, delivery setting, refusal, authorized person을 구분."
+    },
+    {
+      "interaction": "REPORTING_PLUS_TRIGGER_ACTOR_AND_RECIPIENT",
+      "evidence_strength": "MEDIUM",
+      "original_authoring_use": "correct deadline from a neighboring process를 distractor로 사용하되 정확한 trigger와 recipient를 규칙에 고정."
+    },
+    {
+      "interaction": "DRUG_IDENTITY_PLUS_STATE_FEDERAL_CLASSIFICATION_AND_CONSEQUENCE",
+      "evidence_strength": "MEDIUM",
+      "original_authoring_use": "drug name이 실제 schedule 또는 operational consequence를 바꿀 때만 사용."
+    },
+    {
+      "interaction": "DELIVERY_PLUS_LABEL_RECORD_OR_PATIENT_COUNSELING",
+      "evidence_strength": "LOW",
+      "original_authoring_use": "Massachusetts report가 반복되지만 표본이 작으므로 canonical headroom이 있을 때 RESEARCH_CANDIDATE로 우선 검토."
+    }
+  ],
+  "wording_trap_signals": [
+    {
+      "pattern": "qualifier_changes_scope",
+      "examples_allowed": ["may versus must", "only versus at least", "unless or except", "actor designation", "setting limitation"],
+      "guidance": "법적 차이를 정확히 반영할 때만 사용하며 의도적 모호성은 금지한다."
+    },
+    {
+      "pattern": "same_rule_different_trigger",
+      "guidance": "겉모양이 유사하더라도 trigger fact 하나가 다르면 다른 pathway가 작동하도록 설계한다."
+    },
+    {
+      "pattern": "correct_statement_wrong_question",
+      "guidance": "일반적으로 참인 문장을 선택지에 두되 현재 actor, schedule, setting 또는 event에는 적용되지 않게 한다."
+    },
+    {
+      "pattern": "neighboring_deadline_or_recipient",
+      "guidance": "다른 process의 실제 deadline 또는 agency를 사용해 plausible distractor를 만들고 임의 숫자를 만들지 않는다."
+    },
+    {
+      "pattern": "SATA_one_or_more_correct",
+      "guidance": "공식 multiple-response format은 one or more correct를 허용한다. keyed-count variety를 유지하고 응시자가 정답 수를 추측할 수 없게 한다."
+    },
+    {
+      "pattern": "reframing_without_rule_change",
+      "guidance": "같은 proposition의 단순 paraphrase를 신규 family로 세지 않는다. 다만 동일 규칙을 다른 actor 또는 exception으로 적용하는 genuinely distinct task는 가능하다."
+    }
+  ],
+  "current_question_bank_analysis": {
+    "released_question_count": 366,
+    "question_type_counts": {
+      "SBA": 230,
+      "SATA": 136
+    },
+    "difficulty_counts": {
+      "3": 67,
+      "4": 211,
+      "5": 88
+    },
+    "multi_rule_question_count": 66,
+    "multi_rule_share_percent": 18.03,
+    "drug_integrated_question_count": 87,
+    "drug_integrated_share_percent": 23.77,
+    "selected_topic_counts": {
+      "Collaborative_practice": 36,
+      "Pharmacy_personnel": 23,
+      "Technician_scope": 11,
+      "Controlled_prescriptions": 23,
+      "Compounding_all_areas": 6,
+      "Hazardous_drugs_topic": 1,
+      "Prescription_validity_all_areas": 7,
+      "Mandatory_reporting": 4,
+      "Quality_assurance": 5
+    },
+    "text_proxy_counts": {
+      "actor_terms": {
+        "technician": 33,
+        "intern": 10,
+        "manager": 18,
+        "Board": 38
+      },
+      "legal_interaction_terms": {
+        "controlled": 72,
+        "schedule": 74,
+        "federal": 37,
+        "transfer": 13,
+        "validity": 40
+      },
+      "operational_terms": {
+        "compounding": 17,
+        "hazardous": 3,
+        "delivery": 3,
+        "label": 14,
+        "counseling": 15,
+        "reporting": 18,
+        "documentation": 22
+      }
+    },
+    "interpretation_limit": "text_proxy_counts는 stem/topic/subtopic의 단순 검색으로 강도 비교에만 사용하며 독립 proposition count가 아니다."
+  },
+  "realism_matrix": [
+    {
+      "real_exam_signal": "actor_role_distinctions",
+      "evidence": "FREQUENTLY_REPORTED_AND_OFFICIAL_BLUEPRINT",
+      "question_bank_coverage": "STRONG",
+      "study_guide_coverage": "WEAK",
+      "action": "EXPAND_GUIDE",
+      "notes": "bank에는 personnel/technician/intern coverage가 풍부하지만 public guide는 0 sections이며 role matrix가 없다."
+    },
+    {
+      "real_exam_signal": "precise_qualifier_and_scope_wording",
+      "evidence": "BROAD_CROSS_STATE_AND_MA_CONSENSUS",
+      "question_bank_coverage": "MODERATE",
+      "study_guide_coverage": "WEAK",
+      "action": "BOTH",
+      "notes": "기존 distractor archetype은 적절하나 audit rubric에 qualifier legality와 second-reasonable-reading 검사를 명시할 필요가 있다."
+    },
+    {
+      "real_exam_signal": "federal_state_integrated_application",
+      "evidence": "OFFICIAL_HIGH_CONFIDENCE",
+      "question_bank_coverage": "STRONG",
+      "study_guide_coverage": "MODERATE_PENDING",
+      "action": "PUBLISH_AFTER_INDEPENDENT_KEEP_AND_EXPAND",
+      "notes": "37개 federal text proxy와 dedicated pending guide section이 있으나 public verified guide는 없다."
+    },
+    {
+      "real_exam_signal": "natural_multi_rule_scenarios",
+      "evidence": "OFFICIAL_APPLICATION_MANDATE_PLUS_CANDIDATE_CONSENSUS",
+      "question_bank_coverage": "MODERATE",
+      "study_guide_coverage": "WEAK",
+      "action": "BOTH",
+      "notes": "복수 rule dependency는 66/366에 불과하다. 모든 item을 복잡하게 만들지 말고 B4-A에서 자연스러운 교차 proposition을 우선한다."
+    },
+    {
+      "real_exam_signal": "exception_condition_documentation",
+      "evidence": "MODERATELY_REPORTED_AND_BLUEPRINT_CONSISTENT",
+      "question_bank_coverage": "MODERATE",
+      "study_guide_coverage": "WEAK",
+      "action": "BOTH",
+      "notes": "guide에 exceptions, actor, trigger, numbers/deadlines/forms 구조를 전 모듈로 확장할 필요가 있다."
+    },
+    {
+      "real_exam_signal": "plausible_neighbor_distractors",
+      "evidence": "BROAD_CANDIDATE_CONSENSUS",
+      "question_bank_coverage": "MODERATE_TO_STRONG",
+      "study_guide_coverage": "NOT_APPLICABLE",
+      "action": "STRENGTHEN_REALISM_AUDIT",
+      "notes": "각 distractor가 wrong actor/schedule/trigger/recipient인 이유를 independent audit에서 명시하도록 한다."
+    },
+    {
+      "real_exam_signal": "compounding_hazardous_personnel_training",
+      "evidence": "FREQUENTLY_REPORTED_IN_MA_WITH_OFFICIAL_BLUEPRINT_SUPPORT",
+      "question_bank_coverage": "WEAK_TO_MODERATE",
+      "study_guide_coverage": "ABSENT",
+      "action": "BOTH",
+      "notes": "topic-coded compounding 6, hazardous 1로 relative weakness가 있다. current authority가 명확한 distinct propositions만 B4-A와 guide에 배치한다."
+    },
+    {
+      "real_exam_signal": "collaborative_practice_scope_and_lifecycle",
+      "evidence": "MODERATELY_REPORTED_IN_MA",
+      "question_bank_coverage": "STRONG",
+      "study_guide_coverage": "ABSENT",
+      "action": "EXPAND_GUIDE_AND_LIMIT_NEW_QUESTIONS_TO_NOVELTY",
+      "notes": "bank 36개로 포화 위험이 있으므로 단순 추가보다 guide 모듈과 genuinely distinct B4-A slot 0~1개가 적절하다."
+    },
+    {
+      "real_exam_signal": "controlled_substance_lifecycle_and_actor",
+      "evidence": "FREQUENTLY_REPORTED_AND_OFFICIAL_BLUEPRINT",
+      "question_bank_coverage": "STRONG",
+      "study_guide_coverage": "MODERATE_PENDING",
+      "action": "PUBLISH_PILOT_AFTER_KEEP_AND_ADD_ONLY_GAPS",
+      "notes": "controls/schedule proxy가 강하고 5개 pilot 모두 이 영역에 집중되어 있다. 신규 item은 untested exception이나 interaction만 허용한다."
+    },
+    {
+      "real_exam_signal": "prescription_validity_label_delivery",
+      "evidence": "MODERATELY_REPORTED_IN_MA",
+      "question_bank_coverage": "MODERATE_FOR_VALIDITY_AND_LABEL_WEAK_FOR_DELIVERY",
+      "study_guide_coverage": "ABSENT",
+      "action": "BOTH",
+      "notes": "delivery text proxy 3은 약하다. required content, transmission, label, delivery를 분리·연결하는 guide 표가 필요하다."
+    },
+    {
+      "real_exam_signal": "reporting_trigger_actor_recipient_deadline",
+      "evidence": "MODERATELY_REPORTED_CROSS_STATE_AND_BLUEPRINT_CONSISTENT",
+      "question_bank_coverage": "MODERATE",
+      "study_guide_coverage": "ABSENT",
+      "action": "BOTH",
+      "notes": "QRE, serious event, theft/loss, discipline을 한 표에 섞지 말고 trigger별로 비교한다."
+    },
+    {
+      "real_exam_signal": "SATA_close_choices_and_correct_count_uncertainty",
+      "evidence": "BROAD_ANECDOTAL_SIGNAL_ONLY",
+      "question_bank_coverage": "STRONG_FORMAT_COVERAGE",
+      "study_guide_coverage": "NOT_APPLICABLE",
+      "action": "MAINTAIN_VARIETY_NO_WEIGHT_INFERENCE",
+      "notes": "136 SATA가 이미 존재한다. anecdote로 SATA 비율을 바꾸지 말고 correct-count variety와 option independence를 유지한다."
+    }
+  ],
+  "question_bank_gap_candidates": [
+    {
+      "gap_id": "QB-GAP-COMPOUNDING-ROLE",
+      "priority": "HIGH",
+      "rationale": "MA 반복 보고와 official Area 4 compounding 범위가 일치하며 현재 topic-coded coverage가 낮다.",
+      "candidate_action": "현재 authority로 확인된 personnel qualification, training, handling, documentation proposition을 original multi-topic items로 작성."
+    },
+    {
+      "gap_id": "QB-GAP-DELIVERY-DOCUMENTATION",
+      "priority": "MEDIUM",
+      "rationale": "MA 복수 보고가 있으나 bank text proxy는 3이다.",
+      "candidate_action": "delivery가 label, counseling, chain-of-custody 또는 records와 법적으로 연결될 때만 author."
+    },
+    {
+      "gap_id": "QB-GAP-REPORTING-RECIPIENT",
+      "priority": "MEDIUM",
+      "rationale": "cross-state style consensus와 official operational/legal obligations가 일치한다.",
+      "candidate_action": "trigger, responsible actor, recipient, deadline의 네 축 중 최소 두 축을 적용하는 original scenario."
+    },
+    {
+      "gap_id": "QB-GAP-NATURAL-MULTI-RULE",
+      "priority": "HIGH",
+      "rationale": "현재 복수 rule item은 18.03%이며 candidate difficulty signal은 multi-rule application에 집중된다.",
+      "candidate_action": "B4-A에서 10~14개 정도를 natural 2+ rule dependency 후보로 계획하되 각 결합은 독립 novelty와 current authority를 증명."
+    },
+    {
+      "gap_id": "QB-GAP-CDTM-SATURATION",
+      "priority": "CONTROL",
+      "rationale": "candidate signal은 있지만 bank에 이미 36개가 있어 paraphrase saturation 위험이 높다.",
+      "candidate_action": "새 CDTM item은 untested actor, setting, exception, renewal 또는 documentation proposition이 있을 때만 허용."
+    }
+  ],
+  "study_guide_gap_candidates": [
+    {
+      "gap_id": "SG-GAP-PERSONNEL-SCOPE-MATRIX",
+      "priority": "HIGH",
+      "recommended_components": ["WHO_IS_THE_ACTOR", "supervision", "delegation", "prohibited tasks", "COMMONLY_CONFUSED_WITH", "PRACTICE_THIS_TOPIC"]
+    },
+    {
+      "gap_id": "SG-GAP-COMPOUNDING-AND-HAZARDOUS",
+      "priority": "HIGH",
+      "recommended_components": ["current authority boundary", "personnel qualification", "training", "handling and environment", "records", "WHY_THIS_GETS_TRICKY"]
+    },
+    {
+      "gap_id": "SG-GAP-COLLABORATIVE-PRACTICE",
+      "priority": "HIGH",
+      "recommended_components": ["actor and setting", "agreement lifecycle", "scope limitations", "documentation", "renewal and termination", "decision flow"]
+    },
+    {
+      "gap_id": "SG-GAP-PRESCRIPTION-VALIDITY-LABEL-DELIVERY",
+      "priority": "HIGH",
+      "recommended_components": ["issuance versus receipt versus dispensing", "required content table", "authorized transmission", "container label", "delivery and counseling interaction"]
+    },
+    {
+      "gap_id": "SG-GAP-REPORTING-MASTER-TABLE",
+      "priority": "HIGH",
+      "recommended_components": ["trigger", "responsible actor", "recipient", "deadline", "form", "record retention", "DO_NOT_CONFUSE_THESE_DEADLINES"]
+    },
+    {
+      "gap_id": "SG-GAP-FEDERAL-MA-MASTER-TABLE",
+      "priority": "HIGH",
+      "recommended_components": ["federal floor", "Massachusetts additional or stricter condition", "controlling outcome", "exception", "linked practice questions"]
+    },
+    {
+      "gap_id": "SG-GAP-COVERAGE-SCALE",
+      "priority": "CRITICAL",
+      "recommended_components": ["expand beyond five controlled-substance pilot sections", "bind every legal statement to canonical rules", "independent exact-hash audit", "publish passing sections continuously"]
+    }
+  ],
+  "B4_A_proposals": [
+    {
+      "proposal_id": "B4A-REALISM-01",
+      "change": "33-slot map에서 각 slot에 actor, trigger, exception_or_jurisdiction, reasoning_task를 강제하고 legally meaningful facts만 남긴다.",
+      "priority": "REQUIRED"
+    },
+    {
+      "proposal_id": "B4A-REALISM-02",
+      "change": "33개 중 10~14개를 natural multi-rule 후보로 계획한다. 강제 quota가 아니라 authority와 novelty를 통과한 경우에만 유지한다.",
+      "priority": "HIGH"
+    },
+    {
+      "proposal_id": "B4A-REALISM-03",
+      "change": "A4의 제한된 5 slots 중 compounding/hazardous personnel-training 또는 documentation proposition 1~2개를 우선 검토한다.",
+      "priority": "HIGH"
+    },
+    {
+      "proposal_id": "B4A-REALISM-04",
+      "change": "A1에서 role+supervision, A3에서 validity+format/schedule, A4에서 reporting+recipient 또는 compounding+personnel처럼 Area quota를 지키는 교차 proposition을 검토한다.",
+      "priority": "HIGH"
+    },
+    {
+      "proposal_id": "B4A-REALISM-05",
+      "change": "Collaborative practice는 bank coverage가 이미 강하므로 독립적인 미검증 proposition이 증명되지 않으면 추가하지 않는다.",
+      "priority": "CONTROL"
+    },
+    {
+      "proposal_id": "B4A-REALISM-06",
+      "change": "SATA anecdote로 item-type 배분을 바꾸지 않는다. 기존 SBA leakage gate와 SATA correct-count variety를 유지한다.",
+      "priority": "REQUIRED"
+    },
+    {
+      "proposal_id": "B4A-REALISM-07",
+      "change": "모든 distractor를 wrong actor, wrong schedule, missing MA condition, neighboring deadline, wrong trigger, wrong recipient 중 하나로 설명 가능하게 하고 arbitrary filler를 금지한다.",
+      "priority": "REQUIRED"
+    },
+    {
+      "proposal_id": "B4A-REALISM-08",
+      "change": "public candidate report의 item wording이나 scenario를 authoring input으로 사용하지 않고, 이 report의 abstract signal만 사용한다.",
+      "priority": "REQUIRED"
+    }
+  ],
+  "study_guide_proposals": [
+    {
+      "proposal_id": "SG-REALISM-01",
+      "change": "각 major section에 WHY_THIS_GETS_TRICKY, WHO_IS_THE_ACTOR, WHAT_TRIGGERS_THE_RULE, EXCEPTION, FEDERAL_VS_MA, DO_NOT_CONFUSE_THESE_DEADLINES, PRACTICE_THIS_TOPIC를 rule-backed component로 추가한다."
+    },
+    {
+      "proposal_id": "SG-REALISM-02",
+      "change": "Personnel Scope Matrix, Reporting Master Table, Federal vs Massachusetts Master Table, Controlled Substance Master Table을 high-yield cross-area modules로 우선한다."
+    },
+    {
+      "proposal_id": "SG-REALISM-03",
+      "change": "compounding/hazardous guide는 최신 authority version과 section hash를 고정하고 personnel, training, environment, documentation을 분리한다."
+    },
+    {
+      "proposal_id": "SG-REALISM-04",
+      "change": "후보가 'guide 밖'이라고 느낀 신호는 공식 blueprint 밖이라고 해석하지 말고 less-obvious policy, exception, actor, documentation, renewal, recent change coverage debt로 조사한다."
+    },
+    {
+      "proposal_id": "SG-REALISM-05",
+      "change": "'will be on the exam' 표현을 금지하고 evidence가 있을 때만 'frequently reported by recent candidates'라고 제한적으로 표현한다."
+    }
+  ],
+  "realism_audit_rubric_proposals": [
+    "pharmacist-facing plausibility",
+    "actor and supervision unambiguously specified",
+    "every stem fact legally meaningful or operationally necessary",
+    "each distractor tied to a real neighboring rule or boundary",
+    "exception and special-setting awareness",
+    "federal and Massachusetts integration where naturally applicable",
+    "no trivia-only difficulty unless the legal decision truly is a number or classification",
+    "no second reasonable legal reading",
+    "no answer-length, qualifier, position, or template leakage",
+    "no repeated family template or mere drug/name substitution",
+    "no recalled-question resemblance",
+    "source and rule dependency current at exact question hash"
+  ],
+  "limitations": [
+    "공개 후보 보고는 self-selected이며 pass/fail, exact form, test date와 account identity가 종종 불완전하다.",
+    "기억 편향, salience bias, form variability, law-change timing, 실패 후보의 어려운 항목 과대표집 가능성이 있다.",
+    "Reddit search indexing은 완전하지 않으며 삭제·비공개 게시물과 private groups는 의도적으로 포함하지 않았다.",
+    "여러 보고가 같은 URL의 comment thread에 있어 독립 계정 진술은 분리했지만 동일인이 여러 계정을 썼는지는 검증할 수 없다.",
+    "candidate topic counts는 formal exam weights가 아니며 B4-A Area quota를 변경하지 않는다.",
+    "상업적 study material의 proprietary wording이나 비공개 Pre-MPJE content는 열람·저장·분석하지 않았다.",
+    "post-2027 outline은 future planning용이며 current pre-2027 bank의 Area coverage와 직접 비교하지 않았다."
+  ],
+  "final_verdicts": {
+    "research_sample": "TARGET_MET",
+    "exam_integrity": "PASS_NO_RECALLED_CONTENT_RETAINED",
+    "blueprint_era_handling": "PASS_SEPARATED",
+    "question_bank_realism": "MODERATE_WITH_TARGETED_GAPS",
+    "study_guide_realism": "CRITICAL_COVERAGE_GAP",
+    "recommended_controller_action": "APPLY_ABSTRACT_SIGNALS_TO_B4A_PROPOSITION_MAP_AND_GUIDE_EXPANSION_WITHOUT_CHANGING_CANONICAL_LAW_OR_BLUEPRINT_WEIGHTS"
+  }
+}
