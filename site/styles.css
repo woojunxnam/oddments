@@ -48,6 +48,7 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
 .ghost-button { color: var(--green); background: transparent; }
 
 .site-header, main, footer { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+.header-actions, .panel-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; }
 
 .site-header {
   display: flex;
@@ -72,7 +73,7 @@ h3 { margin-bottom: 0.5rem; }
 }
 
 main { display: grid; gap: 1.2rem; }
-.mode-panel, .question-panel, .empty-state {
+.mode-panel, .question-panel, .empty-state, .dashboard-panel, .results-panel, .history-panel, .study-guide-panel {
   border: 1px solid var(--line);
   border-radius: 1.35rem;
   background: color-mix(in srgb, var(--surface) 92%, transparent);
@@ -80,10 +81,12 @@ main { display: grid; gap: 1.2rem; }
 }
 
 .mode-panel { padding: clamp(1.2rem, 4vw, 2.2rem); }
+.dashboard-panel, .results-panel, .history-panel, .study-guide-panel { padding: clamp(1.2rem, 4vw, 2.2rem); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
 .status-copy { color: var(--muted); text-align: right; }
-.mode-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.7rem; margin: 1.2rem 0; }
+.mode-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.7rem; margin: 1.2rem 0; }
 .mode-grid button.active { background: var(--green-dark); box-shadow: 0 0 0 3px rgba(25, 92, 69, 0.18); }
+.mode-grid .primary-mode { grid-column: span 2; background: var(--green-dark); font-size: 1.08rem; }
 
 .filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 0.75rem; align-items: end; }
 .filters label { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.8rem; font-weight: 700; }
@@ -136,18 +139,38 @@ dd { margin: 0; color: var(--muted); }
 .authority-details { border-radius: 0.8rem; padding: 0.9rem; background: var(--paper); }
 .authority-details a { color: var(--green); }
 
+.metric-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.metric-card { border: 1px solid var(--line); border-radius: 0.9rem; padding: 1rem; background: white; }
+.metric-card strong { display: block; margin-bottom: 0.25rem; font-family: Georgia, serif; font-size: 1.65rem; }
+.metric-card span { color: var(--muted); font-size: 0.82rem; font-weight: 700; }
+.score-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1rem; margin-bottom: 1.2rem; }
+.score-summary strong { font-family: Georgia, serif; font-size: clamp(2.4rem, 7vw, 5rem); color: var(--green-dark); }
+.breakdown-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.breakdown-table, .history-table { width: 100%; border-collapse: collapse; }
+.breakdown-table th, .breakdown-table td, .history-table th, .history-table td { padding: 0.6rem; border-bottom: 1px solid var(--line); text-align: left; }
+.history-table button { padding: 0.4rem 0.65rem; }
+#missed-questions { display: grid; gap: 0.4rem; padding-left: 1.25rem; }
+#history-detail, #guide-sections { margin-top: 1rem; }
+.guide-section { margin-top: 0.8rem; border: 1px solid var(--line); border-radius: 0.9rem; padding: 1rem; background: white; }
+.guide-section summary { color: var(--green-dark); cursor: pointer; font-weight: 800; }
+.guide-section h4 { margin-bottom: 0.35rem; }
+.guide-source-list a { color: var(--green); }
+.muted { color: var(--muted); }
+
 footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.86rem; }
 
 @media (max-width: 850px) {
   .mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header, .section-heading { align-items: start; flex-direction: column; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .status-copy { text-align: left; }
 }
 
 @media (max-width: 560px) {
-  .filters, .explanation-grid { grid-template-columns: 1fr; }
+  .filters, .explanation-grid, .breakdown-grid, .metric-grid { grid-template-columns: 1fr; }
   .mode-grid { grid-template-columns: 1fr; }
+  .mode-grid .primary-mode { grid-column: auto; }
   .full-width { grid-column: auto; }
   .site-header { padding-top: 2rem; }
   h1 { font-size: 2.65rem; }

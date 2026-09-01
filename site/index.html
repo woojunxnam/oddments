@@ -14,7 +14,11 @@
         <h1>Massachusetts MPJE Study System</h1>
         <p class="lede">Canonical rules, auditable questions, and no recalled exam content.</p>
       </div>
-      <button id="bookmark-button" class="ghost-button" type="button" disabled>Bookmark</button>
+      <div class="header-actions">
+        <button id="study-guide-button" class="ghost-button" type="button">Study Guide</button>
+        <button id="history-button" class="ghost-button" type="button">Exam History</button>
+        <button id="bookmark-button" class="ghost-button" type="button" disabled>Bookmark</button>
+      </div>
     </header>
 
     <div id="fixture-warning" class="warning-banner" hidden>
@@ -32,11 +36,14 @@
         </div>
 
         <div class="mode-grid">
+          <button type="button" data-mode="quick20" class="primary-mode">Quick Exam — 20 Questions</button>
           <button type="button" data-mode="study">Study Mode</button>
           <button type="button" data-mode="random">Random Quiz</button>
           <button type="button" data-mode="mock">Mock Exam</button>
           <button type="button" data-mode="drug">Drug Drill</button>
           <button type="button" data-mode="browse">Browse by Subject</button>
+          <button type="button" data-mode="wrong">Retry Wrong Questions</button>
+          <button type="button" data-mode="bookmarked">Bookmarked Quiz</button>
         </div>
 
         <div class="filters" aria-label="Question filters">
@@ -46,6 +53,26 @@
           <label>Question type<select id="type-filter"><option value="">All types</option></select></label>
           <label class="checkbox-filter"><input id="drug-filter" type="checkbox" /> Drug questions only</label>
         </div>
+      </section>
+
+      <section id="dashboard-panel" class="dashboard-panel" aria-labelledby="dashboard-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Local study dashboard</p>
+            <h2 id="dashboard-heading">Progress on this device</h2>
+          </div>
+          <p class="status-copy">No account or backend required.</p>
+        </div>
+        <div id="dashboard-metrics" class="metric-grid"></div>
+        <div class="panel-actions">
+          <button type="button" data-dashboard-action="quick20">Quick Exam 20</button>
+          <button type="button" data-dashboard-action="weakest">Practice Weakest Area</button>
+          <button type="button" data-dashboard-action="mistakes">Retry Recent Mistakes</button>
+          <button id="export-study-data" type="button" class="secondary-button">Export Study Data</button>
+          <button id="import-study-data" type="button" class="secondary-button">Import Study Data</button>
+          <input id="import-study-file" type="file" accept="application/json,.json" hidden />
+        </div>
+        <p id="storage-status" class="status-copy" aria-live="polite"></p>
       </section>
 
       <section id="empty-state" class="empty-state">
@@ -111,6 +138,48 @@
           </div>
         </details>
       </section>
+
+      <section id="exam-results" class="results-panel" hidden aria-labelledby="results-heading">
+        <p class="eyebrow">Completed session</p>
+        <h2 id="results-heading">Exam results</h2>
+        <div id="result-summary" class="score-summary"></div>
+        <div class="breakdown-grid">
+          <section><h3>Area breakdown</h3><div id="area-breakdown"></div></section>
+          <section><h3>Topic breakdown</h3><div id="topic-breakdown"></div></section>
+        </div>
+        <section>
+          <h3>Missed questions</h3>
+          <ul id="missed-questions"></ul>
+        </section>
+        <div class="panel-actions">
+          <button id="review-answers" type="button">Review Answers</button>
+          <button id="retry-wrong" type="button">Retry Wrong Questions</button>
+          <button id="practice-topic" type="button">Practice This Topic</button>
+          <button id="open-related-guide" type="button">Open Relevant Study Guide</button>
+          <button id="new-quick20" type="button">Start New Random 20</button>
+        </div>
+      </section>
+
+      <section id="history-panel" class="history-panel" hidden aria-labelledby="history-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">Stored locally</p><h2 id="history-heading">Exam History</h2></div>
+          <button id="close-history" class="ghost-button" type="button">Close</button>
+        </div>
+        <div id="history-list"></div>
+        <div id="history-detail"></div>
+      </section>
+
+      <section id="study-guide-panel" class="study-guide-panel" hidden aria-labelledby="guide-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">Source-backed guide</p><h2 id="guide-heading">Study Guide 1.0</h2></div>
+          <button id="close-study-guide" class="ghost-button" type="button">Close</button>
+        </div>
+        <div class="filters">
+          <label>Search<input id="guide-search" type="search" placeholder="Search verified sections" /></label>
+          <label>Area<select id="guide-area-filter"><option value="">All areas</option><option value="1">Area 1</option><option value="2">Area 2</option><option value="3">Area 3</option><option value="4">Area 4</option></select></label>
+        </div>
+        <div id="guide-sections"></div>
+      </section>
     </main>
 
     <footer>
@@ -118,6 +187,8 @@
     </footer>
 
     <script src="shuffle.js"></script>
+    <script src="session.js"></script>
+    <script src="storage.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
