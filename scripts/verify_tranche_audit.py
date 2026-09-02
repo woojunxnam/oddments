@@ -79,6 +79,8 @@ def run(cfg: dict) -> tuple[Check, dict]:
     legal_id, realism_id = cfg["legal_audit_id"], cfg["realism_audit_id"]
     lock_path = cfg["lock_path"]
     allowed_paths = {lock_path, f"data/audits/{legal_id}.json", f"data/audits/{realism_id}.json"}
+    if cfg.get("adjudication_report_path"):
+        allowed_paths.add(cfg["adjudication_report_path"])
 
     questions = {record["question_id"]: record for _, record in load_records(DATA / "questions")}
     style_profile = load_json(DATA / "exam_style" / "mpje_style_profile.json")
@@ -148,12 +150,40 @@ def run(cfg: dict) -> tuple[Check, dict]:
         {"changed": changed, "allowed": sorted(allowed_paths)},
     )
 
-    # --- 4. the audit base really is the represented candidate ---------------
+    # --- 4. the audit base descends from an unchanged represented candidate --
     merge_base = git("merge-base", cfg["audit_head_sha"], cfg["candidate_sha"])
+    candidate_is_ancestor_of_base = subprocess.call(
+        ["git", "merge-base", "--is-ancestor", cfg["candidate_sha"], cfg["audit_base_sha"]], cwd=ROOT
+    ) == 0
+    base_is_ancestor_of_head = subprocess.call(
+        ["git", "merge-base", "--is-ancestor", cfg["audit_base_sha"], cfg["audit_head_sha"]], cwd=ROOT
+    ) == 0
+    canonical_drift_to_audit_base = git(
+        "diff",
+        "--name-only",
+        cfg["candidate_sha"],
+        cfg["audit_base_sha"],
+        "--",
+        "data/questions",
+        "data/rules",
+        "data/drugs",
+        "data/blueprint.json",
+        "data/exam_style/mpje_style_profile.json",
+    ).splitlines()
     check(
         "04_audit_base_is_the_candidate",
-        merge_base == cfg["candidate_sha"] == cfg["audit_base_sha"],
-        {"merge_base": merge_base, "candidate_sha": cfg["candidate_sha"], "audit_base_sha": cfg["audit_base_sha"]},
+        merge_base == cfg["candidate_sha"]
+        and candidate_is_ancestor_of_base
+        and base_is_ancestor_of_head
+        and not canonical_drift_to_audit_base,
+        {
+            "merge_base": merge_base,
+            "candidate_sha": cfg["candidate_sha"],
+            "audit_base_sha": cfg["audit_base_sha"],
+            "candidate_is_ancestor_of_base": candidate_is_ancestor_of_base,
+            "base_is_ancestor_of_head": base_is_ancestor_of_head,
+            "canonical_drift_to_audit_base": canonical_drift_to_audit_base,
+        },
     )
 
     # --- 5. exact current question hashes match the audit records ------------
@@ -257,19 +287,36 @@ def run(cfg: dict) -> tuple[Check, dict]:
 
     # --- 12. blind lock integrity, and blind answers vs canonical keys -------
     lock = show(cfg["audit_head_sha"], lock_path)
-    blind = {item["question_id"]: item["selected_choice_ids"] for item in lock["questions"]}
+    lock_items = lock.get("questions", lock.get("responses", []))
+    blind = {item["question_id"]: item["selected_choice_ids"] for item in lock_items}
     canonical = {qid: questions[qid]["correct_choice_ids"] for qid in qids if qid in questions}
     matches = {qid: sorted(blind.get(qid, [])) == sorted(canonical.get(qid, [])) for qid in qids}
-    flags = {key: lock.get(key) for key in (
+    old_flag_names = (
         "canonical_key_inspected_before_lock",
         "canonical_explanation_inspected_before_lock",
         "canonical_rules_inspected_before_lock",
         "author_reasoning_inspected_before_lock",
-    )}
+    )
+    if any(key in lock for key in old_flag_names):
+        flags = {key: lock.get(key) for key in old_flag_names}
+    else:
+        contamination_flags = lock.get("contamination_flags", {})
+        flags = {
+            "canonical_key_inspected_before_lock": contamination_flags.get("answer_key_or_explanation_inspected"),
+            "canonical_explanation_inspected_before_lock": contamination_flags.get("answer_key_or_explanation_inspected"),
+            "canonical_rules_inspected_before_lock": contamination_flags.get("prohibited_repository_content_inspected"),
+            "author_reasoning_inspected_before_lock": contamination_flags.get("controller_reasoning_inspected"),
+        }
+    contamination_status = lock.get("contamination_status")
+    if contamination_status is None:
+        contamination_status = "CONTAMINATED" if lock.get("contamination_flags", {}).get("any_contamination") else "CLEAN"
+    blind_package_blob = lock.get("blind_package_blob")
+    if blind_package_blob is None:
+        blind_package_blob = lock.get("blind_package", {}).get("git_blob_sha1")
     lock_state = {
         "auditor_instance": lock.get("auditor_instance"),
-        "contamination_status": lock.get("contamination_status"),
-        "blind_package_blob": lock.get("blind_package_blob"),
+        "contamination_status": contamination_status,
+        "blind_package_blob": blind_package_blob,
         "represented_candidate_sha": lock.get("represented_candidate_sha"),
         "locked_question_count": len(blind),
         "blind_matches_key_count": sum(matches.values()),

@@ -1,0 +1,235 @@
+{
+  "report_type": "TRANCHE_FRESH_AUDIT_EVIDENCE_VERIFICATION",
+  "tranche": "BATCH4-B4A",
+  "controller_issue": 121,
+  "authorizing_issue": 121,
+  "audit_pr": 134,
+  "audit_branch": "codex/gpt-fresh-b4a-phase1",
+  "audit_base_sha": "acee99d0d6596f368586fb8f5f5466e48d86f42c",
+  "audit_head_sha": "7342d2fee5128775f7395febfd99f8df6d1826d6",
+  "phase1_lock_commit": "361c30f222960077848b47eb1a31907d80a6ba6f",
+  "phase1_lock_blob": "709714551d104b853f0b622f48d28194d26d8622",
+  "represented_candidate_sha": "dd06d1da063126212cffcf8d443e3b25ad403c0f",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-B4A",
+  "author_instance": "GPT-DESKTOP-B4-CONTROLLER",
+  "author_is_not_auditor": true,
+  "process_status": "PASS",
+  "release_eligible": [
+    "MA-Q-0407",
+    "MA-Q-0408",
+    "MA-Q-0409",
+    "MA-Q-0410",
+    "MA-Q-0411",
+    "MA-Q-0412",
+    "MA-Q-0413",
+    "MA-Q-0414",
+    "MA-Q-0415",
+    "MA-Q-0416",
+    "MA-Q-0417",
+    "MA-Q-0418",
+    "MA-Q-0419",
+    "MA-Q-0420",
+    "MA-Q-0421",
+    "MA-Q-0422",
+    "MA-Q-0423",
+    "MA-Q-0424",
+    "MA-Q-0425",
+    "MA-Q-0427",
+    "MA-Q-0428",
+    "MA-Q-0429",
+    "MA-Q-0430",
+    "MA-Q-0431",
+    "MA-Q-0432",
+    "MA-Q-0433",
+    "MA-Q-0434",
+    "MA-Q-0435",
+    "MA-Q-0436",
+    "MA-Q-0437",
+    "MA-Q-0438",
+    "MA-Q-0439"
+  ],
+  "release_blocked": {
+    "MA-Q-0426": [
+      "realism_verdict=MINOR_EDIT",
+      "realism_result=FAIL",
+      "criteria_false=['authentic_distractors', 'wording_not_guessable']"
+    ]
+  },
+  "checks": {
+    "01_auditor_identity": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01": {
+          "auditor": "GPT",
+          "auditor_instance": "GPT-FRESH-B4A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "INITIAL_BATCH",
+          "review_type": "LEGAL_VERIFICATION"
+        },
+        "AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01": {
+          "auditor": "GPT",
+          "auditor_instance": "GPT-FRESH-B4A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "INITIAL_BATCH",
+          "review_type": "REALISM_REVIEW"
+        }
+      }
+    },
+    "02_lock_precedes_and_is_immutable": {
+      "status": "PASS",
+      "detail": {
+        "lock_commit": "361c30f222960077848b47eb1a31907d80a6ba6f",
+        "lock_commit_files": [
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE1-BLIND-LOCK.json"
+        ],
+        "records_commit": "7342d2fee5128775f7395febfd99f8df6d1826d6",
+        "records_commit_files": [
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE2-3-FINAL-ADJUDICATION.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01.json"
+        ],
+        "lock_is_ancestor_of_records": true,
+        "lock_epoch": 1788349966,
+        "records_epoch": 1788369363,
+        "seconds_between": 19397,
+        "lock_blob_at_lock_commit": "709714551d104b853f0b622f48d28194d26d8622",
+        "lock_blob_at_head": "709714551d104b853f0b622f48d28194d26d8622"
+      }
+    },
+    "03_no_canonical_or_tooling_edits": {
+      "status": "PASS",
+      "detail": {
+        "changed": [
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE1-BLIND-LOCK.json",
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE2-3-FINAL-ADJUDICATION.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01.json"
+        ],
+        "allowed": [
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE1-BLIND-LOCK.json",
+          "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE2-3-FINAL-ADJUDICATION.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01.json",
+          "data/audits/AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01.json"
+        ]
+      }
+    },
+    "04_audit_base_is_the_candidate": {
+      "status": "PASS",
+      "detail": {
+        "merge_base": "dd06d1da063126212cffcf8d443e3b25ad403c0f",
+        "candidate_sha": "dd06d1da063126212cffcf8d443e3b25ad403c0f",
+        "audit_base_sha": "acee99d0d6596f368586fb8f5f5466e48d86f42c",
+        "candidate_is_ancestor_of_base": true,
+        "base_is_ancestor_of_head": true,
+        "canonical_drift_to_audit_base": []
+      }
+    },
+    "05_records_bound_to_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "missing_questions": [],
+        "matches": {
+          "AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01": true,
+          "AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01": true
+        }
+      }
+    },
+    "06_no_substantive_drift_since_candidate": {
+      "status": "PASS",
+      "detail": "identical to dd06d1da0631"
+    },
+    "07_full_coverage_no_extras": {
+      "status": "PASS",
+      "detail": {
+        "legal_count": 33,
+        "realism_count": 33,
+        "legal_missing": [],
+        "realism_missing": [],
+        "legal_extra": [],
+        "realism_extra": []
+      }
+    },
+    "08_legal_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "09_realism_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "10_realism_style_profile_current": {
+      "status": "PASS",
+      "detail": {
+        "record": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        },
+        "current": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        }
+      }
+    },
+    "11_full_bank_comparison_evidence": {
+      "status": "PASS",
+      "detail": {
+        "bank_size_actual": 439,
+        "bank_size_expected": 439,
+        "defects": "none"
+      }
+    },
+    "12_blind_lock_integrity": {
+      "status": "PASS",
+      "detail": {
+        "auditor_instance": "GPT-FRESH-B4A",
+        "contamination_status": "CLEAN",
+        "blind_package_blob": "c86ae970a44634881989930e99901af9aa09d970",
+        "represented_candidate_sha": "dd06d1da063126212cffcf8d443e3b25ad403c0f",
+        "locked_question_count": 33,
+        "blind_matches_key_count": 33,
+        "blind_mismatches": [],
+        "not_inspected_flags": {
+          "canonical_key_inspected_before_lock": false,
+          "canonical_explanation_inspected_before_lock": false,
+          "canonical_rules_inspected_before_lock": false,
+          "author_reasoning_inspected_before_lock": false
+        }
+      }
+    },
+    "13_blind_package_matches_published": {
+      "status": "PASS",
+      "detail": {
+        "published": "c86ae970a44634881989930e99901af9aa09d970",
+        "locked": "c86ae970a44634881989930e99901af9aa09d970"
+      }
+    },
+    "14_no_uncommitted_audit_edits": {
+      "status": "PASS",
+      "detail": "clean"
+    },
+    "15_release_partition_computed": {
+      "status": "PASS",
+      "detail": {
+        "eligible_count": 32,
+        "blocked_count": 1,
+        "blocked": {
+          "MA-Q-0426": [
+            "realism_verdict=MINOR_EDIT",
+            "realism_result=FAIL",
+            "criteria_false=['authentic_distractors', 'wording_not_guessable']"
+          ]
+        }
+      }
+    },
+    "16_no_hidden_current_hash_failure_on_eligible": {
+      "status": "PASS",
+      "detail": "none"
+    }
+  },
+  "failures": []
+}

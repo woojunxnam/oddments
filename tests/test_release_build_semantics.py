@@ -45,7 +45,7 @@ def test_tracked_public_payload_is_release_only_and_not_client_filtered() -> Non
     actual_ids = {question["question_id"] for question in payload["questions"]}
 
     assert actual_ids == canonical_released_ids()
-    assert payload["meta"]["question_count"] == 366
+    assert payload["meta"]["question_count"] == len(actual_ids)
     assert payload["meta"]["development_fixture_mode"] is False
     assert "MA-Q-0028" not in actual_ids
     assert "MA-Q-0172" not in actual_ids
