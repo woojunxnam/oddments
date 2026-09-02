@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CIII-V-REFILL-TRANSFER",
-  "content_version": 1,
-  "content_hash": "54432524e5e4b2da1459dc3ed4f0c95e4fb8e25132dc456b53dfee13eaf7d3df",
+  "content_version": 2,
+  "content_hash": "c988b33e24c6e7f92cf83dc28be23ae8a0159dcb3d66259a171c7ef7cddbbc20",
   "title": "Schedule III-V Refills and Massachusetts Transfers",
   "areas": [
     2,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "text": "Massachusetts Schedule V prescriptions likewise may not be refilled more than five times or later than six months after issue.",
+      "text": "For pharmacies subject to 247 CMR 9.04(13), Massachusetts Schedule V prescriptions may not be refilled more than five times or later than six months after issue; that subsection does not apply to institutional sterile compounding pharmacies.",
       "rule_ids": [
         "MA-RX-CV-REFILL"
       ]
@@ -67,8 +67,15 @@
       ]
     },
     {
-      "condition": "A Massachusetts Schedule V refill is requested.",
+      "condition": "A Massachusetts Schedule V refill is requested at a pharmacy subject to 247 CMR 9.04(13).",
       "action": "Apply the five-refill and six-month limits independently.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "condition": "The facility is an institutional sterile compounding pharmacy.",
+      "action": "Do not apply the Schedule V refill limits in 247 CMR 9.04(13) through this provision; 247 CMR 9.04(15) excludes that facility type.",
       "rule_ids": [
         "MA-RX-CV-REFILL"
       ]
@@ -82,7 +89,7 @@
     },
     {
       "condition": "An out-of-state practitioner issues an oral Schedule III-V prescription through the Massachusetts pathway.",
-      "action": "Record the request for written follow-up within seven days or any shorter federal period.",
+      "action": "Record that the pharmacist requested the practitioner's written prescription; the practitioner must deliver or mail that writing within seven days or any shorter controlling federal period.",
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
@@ -97,7 +104,7 @@
       ]
     },
     {
-      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions, but a Schedule VI prescription may not be transferred more than one year after issue.",
+      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions; for a Schedule VI prescription authorizing refills, the remaining-refill transfer may not occur more than one year after issue.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
@@ -111,6 +118,12 @@
         "MA-RX-CV-REFILL",
         "MA-RX-TRANSFER"
       ]
+    },
+    {
+      "text": "The Schedule V refill limits in 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies under 247 CMR 9.04(15).",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
     }
   ],
   "timing_deadlines": [
@@ -123,7 +136,7 @@
       ]
     },
     {
-      "event": "Massachusetts Schedule V refill window",
+      "event": "Massachusetts Schedule V refill window at a pharmacy subject to 247 CMR 9.04(13)",
       "timeframe": "Within 6 months after issue",
       "consequence": "No refill after the state time limit or after five refills.",
       "rule_ids": [
@@ -131,17 +144,17 @@
       ]
     },
     {
-      "event": "Massachusetts Schedule VI transfer",
+      "event": "Remaining-refill transfer of a Massachusetts Schedule VI prescription authorizing refills",
       "timeframe": "Not more than 1 year after issue",
-      "consequence": "The prescription may not be transferred after that point.",
+      "consequence": "247 CMR 9.14(4)(c) does not permit that remaining-refill transfer after the one-year point.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
     },
     {
-      "event": "Out-of-state oral Schedule III-V follow-up request",
+      "event": "Practitioner delivery of an out-of-state oral Schedule III-V written follow-up",
       "timeframe": "Within 7 days or shorter federal period",
-      "consequence": "The pharmacist records requesting written follow-up.",
+      "consequence": "The time period governs practitioner delivery or mailing; the pharmacist records having requested the written prescription.",
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
@@ -149,7 +162,7 @@
   ],
   "forms_records": [
     {
-      "text": "The out-of-state oral Schedule III-V pathway requires the pharmacist to record the follow-up request.",
+      "text": "The out-of-state oral Schedule III-V pathway requires the pharmacist to record having requested the written prescription; the seven-day period applies to practitioner delivery or mailing, not to delayed pharmacist record creation.",
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
@@ -180,14 +193,18 @@
         "MA-RX-TRANSFER",
         "FED-CS-REFILL-III-IV"
       ]
+    },
+    {
+      "text": "Treating seven days as a deadline for the pharmacist to request or record follow-up reverses the timed event; the practitioner must deliver or mail the writing within that period.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
     }
   ],
   "drug_examples": [],
   "practice_question_ids": [
     "MA-Q-0009",
-    "MA-Q-0099",
     "MA-Q-0120",
-    "MA-Q-0124",
     "MA-Q-0397"
   ],
   "last_verified": null,

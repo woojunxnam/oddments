@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
-from qa_common import load_json
+from qa_common import load_json, load_records
 from validate_study_guide_audits import validate_study_guide_audits
 
 
@@ -34,3 +34,11 @@ def test_independent_study_guide_audit_binds_exact_freeze_and_keep(root: Path) -
         "SG-MA-SCHEDULE-VI": "MINOR_EDIT",
         "SG-FED-MA-INTERACTION": "MINOR_EDIT",
     }
+    sections = {
+        section["section_id"]: section
+        for _, section in load_records(root / "data" / "study_guide" / "sections")
+    }
+    for section_id in dispositions.keys() - {"SG-CONTROLLED-SCHEDULES"}:
+        assert sections[section_id]["verification_status"] == "AUDIT_PENDING"
+        assert sections[section_id]["independent_audit_id"] is None
+        assert sections[section_id]["content_hash"] != audit["section_hashes"][section_id]

@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SCHEDULE-VI",
-  "content_version": 1,
-  "content_hash": "37d132362f737053cae6a9f9fefdbcbfde8a9cac7d915ce9c607d63791090c38",
+  "content_version": 2,
+  "content_hash": "acd8cf4012eaf122517c6c36785e077b5a63a9e13d5eb72e823e9047a8ed61b4",
   "title": "Massachusetts Schedule VI",
   "areas": [
     2,
@@ -81,7 +81,7 @@
     },
     {
       "condition": "A patient requests transfer of a Schedule VI prescription with authorized refills remaining.",
-      "action": "Use the Massachusetts transfer pathway and the one-year transfer boundary.",
+      "action": "Use the remaining-refill transfer pathway under 247 CMR 9.14(4); for a Schedule VI prescription authorizing refills, that regulation bars transfer more than one year after issue.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
@@ -107,9 +107,9 @@
   ],
   "timing_deadlines": [
     {
-      "event": "Massachusetts Schedule VI transfer",
+      "event": "Remaining-refill transfer of a Massachusetts Schedule VI prescription authorizing refills",
       "timeframe": "Not more than 1 year after issue",
-      "consequence": "The prescription may not be transferred after the statutory transfer window.",
+      "consequence": "247 CMR 9.14(4)(c) does not permit that remaining-refill transfer after the regulatory one-year limit.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
@@ -147,11 +147,16 @@
       "rule_ids": [
         "MA-SCHEDULE-VI"
       ]
+    },
+    {
+      "text": "The one-year rule in 247 CMR 9.14(4)(c) addresses transfer of a Schedule VI prescription authorizing refills; do not restate it as a universal statutory transfer window for every Schedule VI prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
     }
   ],
   "drug_examples": [],
   "practice_question_ids": [
-    "MA-Q-0097",
     "MA-Q-0116",
     "MA-Q-0118",
     "MA-Q-0120"
