@@ -1,0 +1,69 @@
+{
+  "question_id": "MA-Q-0430",
+  "family_id": "B3E2_NDC_RECORDING_FALLBACK",
+  "area": 3,
+  "topic": "Dispensing requirements",
+  "subtopic": "Generic product identifier fallback",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist dispenses a prescription drug distributed solely under its generic name. The product has no NDC number, and the manufacturer's name cannot be identified from the product or available records. The name of the repacker is available. What should the pharmacist record in the computerized pharmacy system?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Only the generic drug name, because no NDC number exists."
+    },
+    {
+      "id": "B",
+      "text": "The prescriber's name as the substitute product identifier."
+    },
+    {
+      "id": "C",
+      "text": "The wholesaler's invoice number, regardless of who packaged the product."
+    },
+    {
+      "id": "D",
+      "text": "The repacker's name, because the NDC and manufacturer-name steps are unavailable."
+    },
+    {
+      "id": "E",
+      "text": "No product-identity entry, provided the pharmacist documents why the NDC is missing."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "For a prescription drug distributed solely under a generic name, 247 CMR 9.04(7) establishes an ordered recording sequence in the computerized pharmacy system. The pharmacist records the NDC number when one exists; if no NDC exists, the manufacturer's name; and if the manufacturer's name is unavailable, the distributor, packer, or repacker. Because the first two identifiers are unavailable here, the repacker's name is the required fallback.",
+    "choice_analysis": {
+      "A": "The generic name does not replace the ordered product-identity record required by the regulation.",
+      "B": "The prescriber's identity is not a fallback for the product's NDC or source identity.",
+      "C": "An invoice number is not one of the specified fallback identifiers.",
+      "D": "Correct: a repacker is within the final fallback tier after the NDC and manufacturer-name steps fail.",
+      "E": "The absence of an NDC does not eliminate the recording duty; it activates the fallback sequence."
+    },
+    "related_facts": [
+      "A distributor or packer name occupies the same final fallback tier as a repacker name",
+      "The requirement is directed to the computerized pharmacy system"
+    ],
+    "mpje_trap": "The rule does not permit the pharmacist to choose any convenient identifier; each fallback becomes available only after the preceding identifier is unavailable."
+  },
+  "rule_ids": [
+    "MA-RX-NDC-RECORDING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm that the product was distributed solely under a generic name",
+    "Test the NDC and manufacturer-name steps in order",
+    "Use the available repacker name from the final fallback tier"
+  ],
+  "verification_status": "AUDIT_PENDING",
+  "lifecycle_status": "AUDIT_PENDING",
+  "last_legal_review": "2026-09-01",
+  "audits": [],
+  "duplicate_review_status": "PENDING",
+  "independent_audit_status": "PENDING",
+  "final_adjudication": null,
+  "development_fixture": true
+}
