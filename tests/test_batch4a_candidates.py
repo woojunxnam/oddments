@@ -27,10 +27,15 @@ def test_batch4a_candidates_match_final_map_when_present(root) -> None:
         assert question["rule_ids"] == slot["rule_ids"]
         assert question["provenance"] == "GEN"
         assert question["source_signal_ids"] == []
-        assert question["verification_status"] == "AUDIT_PENDING"
-        assert question["lifecycle_status"] == "AUDIT_PENDING"
-        assert question["audits"] == []
-        assert question["final_adjudication"] is None
+        assert question["verification_status"] == question["lifecycle_status"]
+        if question["verification_status"] == "RELEASED":
+            assert question["independent_audit_status"] == "PASSED"
+            assert len(question["audits"]) >= 2
+            assert question["final_adjudication"]["decision"] == "KEEP"
+        else:
+            assert question["verification_status"] == "AUDIT_PENDING"
+            assert question["independent_audit_status"] == "PENDING"
+            assert question["final_adjudication"] is None
 
     assert Counter(question["area"] for question in selected) == {1: 9, 2: 12, 3: 7, 4: 5}
     assert Counter(question["question_type"] for question in selected) == {"SBA": 19, "SATA": 14}
