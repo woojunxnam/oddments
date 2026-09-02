@@ -77,8 +77,11 @@ def main() -> int:
     rules, rule_paths = record_index(DATA / "rules", "rule_id")
     questions, question_paths = record_index(DATA / "questions", "question_id")
     section_ids = config["section_ids"]
-    if set(section_ids) != set(sections):
-        raise SystemExit("freeze config must name the complete current Study Guide pilot")
+    if not section_ids or len(section_ids) != len(set(section_ids)):
+        raise SystemExit("freeze config must name a non-empty unique Study Guide section set")
+    missing_section_ids = sorted(set(section_ids) - set(sections))
+    if missing_section_ids:
+        raise SystemExit(f"freeze config names unknown Study Guide sections: {missing_section_ids}")
 
     frozen_sections = []
     all_rule_ids: set[str] = set()
@@ -171,7 +174,7 @@ def main() -> int:
     write_json(
         manifest_path,
         {
-            "manifest_type": "STUDY_GUIDE_PILOT_CLEAN_FREEZE",
+            "manifest_type": config.get("manifest_type", "STUDY_GUIDE_PILOT_CLEAN_FREEZE"),
             "freeze_date": config["freeze_date"],
             "authorizing_issue": config["authorizing_issue"],
             "represented_candidate_branch": config["represented_candidate_branch"],
