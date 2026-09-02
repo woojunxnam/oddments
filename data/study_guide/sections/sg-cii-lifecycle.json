@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CII-LIFECYCLE",
-  "content_version": 1,
-  "content_hash": "6f21ee9a78f16468b5cff9466a76305f751b9d6b47f4fd43ac367a2dbeee792a",
+  "content_version": 2,
+  "content_hash": "76f9c5d5455b60985473779403140fb620f970c4aefb30a427d6e245369a603b",
   "title": "Schedule II Prescriptions, Emergency Oral Orders, and Partial Fills",
   "areas": [
     2,
@@ -18,8 +18,10 @@
     "FED-CII-NO-REFILL",
     "FED-CII-EMERGENCY-ORAL",
     "FED-CII-EMERGENCY-FOLLOWUP",
+    "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
     "FED-CII-PARTIAL-72H",
     "FED-CII-PARTIAL-PATIENT",
+    "FED-CII-LTC-TERMINAL",
     "MA-CII-VALIDITY-30D",
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
   ],
@@ -36,6 +38,10 @@
       "content_version": 1,
       "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe"
     },
+    "FED-CII-EMERGENCY-MISSING-FOLLOWUP": {
+      "content_version": 1,
+      "content_hash": "1a6473a17645dca1f4c0e49562e7d21decbb578d2e2f3ff79c63dc65af8e617e"
+    },
     "FED-CII-PARTIAL-72H": {
       "content_version": 1,
       "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad"
@@ -43,6 +49,10 @@
     "FED-CII-PARTIAL-PATIENT": {
       "content_version": 1,
       "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+    },
+    "FED-CII-LTC-TERMINAL": {
+      "content_version": 1,
+      "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09"
     },
     "MA-CII-VALIDITY-30D": {
       "content_version": 1,
@@ -73,6 +83,18 @@
       ]
     },
     {
+      "text": "If that emergency oral follow-up does not arrive within seven days, the pharmacist must notify the DEA.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "A Schedule II prescription for an LTCF resident or terminally ill patient has a separate partial-fill pathway lasting up to 60 days from issue unless discontinued sooner.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
       "text": "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after issue.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D"
@@ -95,11 +117,34 @@
       ]
     },
     {
-      "condition": "The patient or prescriber requested a Schedule II partial fill and state law permits it.",
-      "action": "Use the patient-request pathway and complete any remainder within the applicable 30-day boundary.",
+      "condition": "The patient or prescriber requested a partial fill of a non-emergency written or electronic Schedule II prescription and state law permits it.",
+      "action": "Use the request-based pathway and complete any remainder no later than 30 days after the prescription was written, while also satisfying Massachusetts conditions.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "condition": "The patient or prescriber requests a partial fill of an emergency oral Schedule II prescription.",
+      "action": "Use the request-based emergency exception and complete any remainder no later than 72 hours after the prescription was issued.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL",
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "condition": "The Schedule II prescription is for an LTCF resident or a terminally ill patient.",
+      "action": "Use the special federal documentation pathway; partial fillings may continue for no more than 60 days from issue and must stop sooner if the prescription is discontinued.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
+      "condition": "The emergency oral Schedule II follow-up has not reached the pharmacy within seven days after oral authorization.",
+      "action": "The pharmacist must notify the DEA of the practitioner's failure to deliver the required follow-up prescription.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-FOLLOWUP",
+        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
       ]
     },
     {
@@ -128,6 +173,20 @@
       ]
     },
     {
+      "text": "The request-based 30-day remainder rule has a separate emergency-oral exception: an emergency oral Schedule II remainder must be completed within 72 hours after issue.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL",
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "Do not apply the ordinary 30-day request-based deadline to the special LTCF or terminal-illness pathway, which may continue for up to 60 days from issue unless discontinued sooner.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
       "text": "Massachusetts' five-day initial partial-dispensing limit in this statute applies to prescriptions filled under the specified out-of-state Schedule II subsections, not every patient-requested partial fill.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
@@ -144,6 +203,15 @@
       ]
     },
     {
+      "event": "Missing emergency oral Schedule II follow-up",
+      "timeframe": "After the 7-day delivery period expires",
+      "consequence": "The pharmacist must notify the DEA of the practitioner's failure to deliver the follow-up prescription.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-FOLLOWUP",
+        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+      ]
+    },
+    {
       "event": "Stock-shortage Schedule II remainder",
       "timeframe": "Within 72 hours",
       "consequence": "Otherwise notify the prescriber and obtain a new prescription for further quantity.",
@@ -154,10 +222,27 @@
     {
       "event": "Patient-requested Schedule II remainder",
       "timeframe": "No later than 30 days after issue",
-      "consequence": "The remaining portion cannot be dispensed after the deadline.",
+      "consequence": "For a non-emergency written or electronic prescription, the remaining portion cannot be dispensed after the deadline.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "event": "Request-based emergency oral Schedule II remainder",
+      "timeframe": "No later than 72 hours after issue",
+      "consequence": "The emergency oral remainder cannot use the ordinary 30-day request-based period.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL",
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "event": "LTCF or terminal-illness Schedule II partial fills",
+      "timeframe": "Up to 60 days from issue unless discontinued sooner",
+      "consequence": "Further partial dispensing must stop at the 60-day limit or upon earlier discontinuation.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
       ]
     },
     {
@@ -174,6 +259,12 @@
       "text": "Massachusetts requires a notation of each partial dispensing and quantity in the pharmacy patient record, accessible to the prescriber on request.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "LTCF and terminal-illness Schedule II partial fills must use the special federal documentation framework for that pathway.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
       ]
     }
   ],
@@ -193,6 +284,13 @@
       "rule_ids": [
         "FED-CII-EMERGENCY-FOLLOWUP"
       ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Notify the DEA if the practitioner fails to deliver the emergency oral Schedule II follow-up within seven days.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+      ]
     }
   ],
   "common_traps": [
@@ -208,6 +306,14 @@
       "rule_ids": [
         "FED-CII-PARTIAL-72H",
         "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "Applying 30 days to every request-based remainder misses the 72-hour emergency-oral exception and the separate 60-day LTCF or terminal-illness path.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL",
+        "FED-CII-PARTIAL-PATIENT",
+        "FED-CII-LTC-TERMINAL"
       ]
     }
   ],

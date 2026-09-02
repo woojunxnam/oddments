@@ -1,7 +1,7 @@
 {
   "section_id": "SG-FED-MA-INTERACTION",
-  "content_version": 1,
-  "content_hash": "842a9a03713a79a3b32c49f2510fd29887fff011f2a10d776a4cdb739807bdad",
+  "content_version": 2,
+  "content_hash": "36fea844335a78a330d0954b2ea3356a23136a37e39c98a1e7532b5f507c146e",
   "title": "Federal and Massachusetts Rule Interaction",
   "areas": [
     2,
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "text": "Federal Schedule III-IV and Massachusetts Schedule V refill rules each use both a five-refill limit and a six-month issue-date limit for their respective schedules.",
+      "text": "Federal Schedule III-IV and Massachusetts Schedule V refill rules each use a five-refill limit and a six-month issue-date limit within their respective scope; Massachusetts excludes institutional sterile compounding pharmacies from 247 CMR 9.04(13).",
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
@@ -79,7 +79,7 @@
     },
     {
       "condition": "A refill question names Schedule III, IV, or Massachusetts Schedule V.",
-      "action": "Choose the rule with the correct schedule scope and check both count and issue-date limits.",
+      "action": "Choose the rule with the correct schedule scope, check both count and issue-date limits, and for the Massachusetts Schedule V rule confirm that the facility is not an institutional sterile compounding pharmacy.",
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "text": "The similar five-refill and six-month formulations for Schedule III-IV and Massachusetts Schedule V must still be matched to the correct schedule scope.",
+      "text": "The similar five-refill and six-month formulations for Schedule III-IV and Massachusetts Schedule V must be matched to the correct schedule and facility scope; 247 CMR 9.04(13) does not apply to institutional sterile compounding pharmacies.",
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
@@ -111,6 +111,12 @@
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
       ]
+    },
+    {
+      "text": "Massachusetts excludes institutional sterile compounding pharmacies from the Schedule V refill provision in 247 CMR 9.04(13), so the matching federal and state numbers do not eliminate the facility-scope inquiry.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
     }
   ],
   "timing_deadlines": [
@@ -124,7 +130,7 @@
       ]
     },
     {
-      "event": "Schedule III-IV or Massachusetts Schedule V refill",
+      "event": "Schedule III-IV refill, or Massachusetts Schedule V refill at a pharmacy subject to 247 CMR 9.04(13)",
       "timeframe": "Within 6 months after issue",
       "consequence": "The applicable five-refill limit must also remain unexhausted.",
       "rule_ids": [
@@ -171,7 +177,6 @@
   "practice_question_ids": [
     "MA-Q-0009",
     "MA-Q-0021",
-    "MA-Q-0099",
     "MA-Q-0401"
   ],
   "last_verified": null,

@@ -60,12 +60,18 @@ def validate_study_guide_audits() -> tuple[QAReport, dict[str, dict[str, Any]]]:
 
         for section_id in expected_ids:
             frozen = frozen_by_id[section_id]
+            frozen_section = frozen.get("full_prose_under_review", {})
+            if study_guide_content_hash(frozen_section) != frozen["content_hash"]:
+                report.error(f"{path}: frozen semantic hash mismatch for {section_id}")
             current = sections.get(section_id)
-            if not current or current.get("content_hash") != frozen["content_hash"]:
-                report.error(f"{path}: current section drift for {section_id}")
-                continue
-            if study_guide_content_hash(current) != frozen["content_hash"]:
-                report.error(f"{path}: semantic hash mismatch for {section_id}")
+            if current and current.get("content_hash") == frozen["content_hash"]:
+                if study_guide_content_hash(current) != frozen["content_hash"]:
+                    report.error(f"{path}: current semantic hash mismatch for {section_id}")
+            elif current and (
+                current.get("verification_status") == "VERIFIED"
+                or current.get("independent_audit_id") == audit_id
+            ):
+                report.error(f"{path}: current verified section drift for {section_id}")
             result = results.get(section_id, {})
             if result.get("section_hash") != frozen["content_hash"]:
                 report.error(f"{path}: result hash mismatch for {section_id}")

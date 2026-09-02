@@ -20,11 +20,25 @@ def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: 
     assert package["auditor_instance_reserved"] == "GPT-FRESH-B4-SG-PILOT-V1"
     assert len(package["sections"]) == 5
     assert set(package["section_ids"]) == set(sections)
+    revised_section_ids = {
+        "SG-CII-LIFECYCLE",
+        "SG-CIII-V-REFILL-TRANSFER",
+        "SG-MA-SCHEDULE-VI",
+        "SG-FED-MA-INTERACTION",
+    }
     for frozen in package["sections"]:
         section = frozen["full_prose_under_review"]
         current = sections[frozen["section_id"]]
-        assert study_guide_content_hash(section) == study_guide_content_hash(current)
         assert frozen["content_hash"] == study_guide_content_hash(section)
+        if frozen["section_id"] == "SG-CONTROLLED-SCHEDULES":
+            assert frozen["content_hash"] == study_guide_content_hash(current)
+            assert current["verification_status"] == "VERIFIED"
+            assert current["independent_audit_id"] == "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1"
+        else:
+            assert frozen["section_id"] in revised_section_ids
+            assert frozen["content_hash"] != study_guide_content_hash(current)
+            assert current["verification_status"] == "AUDIT_PENDING"
+            assert current["independent_audit_id"] is None
         assert {item["rule_id"] for item in frozen["rule_dependencies"]} == set(section["rule_ids"])
         assert {item["question_id"] for item in frozen["practice_question_dependencies"]} == set(
             section["practice_question_ids"]
