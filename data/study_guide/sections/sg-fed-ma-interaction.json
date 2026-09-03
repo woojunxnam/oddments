@@ -1,7 +1,7 @@
 {
   "section_id": "SG-FED-MA-INTERACTION",
-  "content_version": 2,
-  "content_hash": "36fea844335a78a330d0954b2ea3356a23136a37e39c98a1e7532b5f507c146e",
+  "content_version": 3,
+  "content_hash": "9340dae9996f4a6430653d5768645193ceb65db4e1ff60522afe45ffe6ddf267",
   "title": "Federal and Massachusetts Rule Interaction",
   "areas": [
     2,
@@ -17,7 +17,8 @@
     "FED-CII-PARTIAL-PATIENT",
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
     "FED-CS-REFILL-III-IV",
-    "MA-RX-CV-REFILL"
+    "MA-RX-CV-REFILL",
+    "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
   ],
   "verified_rule_dependencies": {
     "FED-CII-PARTIAL-PATIENT": {
@@ -35,11 +36,15 @@
     "MA-RX-CV-REFILL": {
       "content_version": 1,
       "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+    },
+    "MA-CII-OPIOID-PARTIAL-FILL-NOTATION": {
+      "content_version": 1,
+      "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5"
     }
   },
   "quick_review": [
     {
-      "text": "Federal patient-requested Schedule II partial filling is conditioned on state law permitting the partial fill.",
+      "text": "Federal patient-requested Schedule II partial filling requires only that the partial fill not be prohibited by State law, alongside the other federal conditions in 21 CFR 1306.13(b)(1).",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT"
       ]
@@ -70,7 +75,7 @@
       ]
     },
     {
-      "condition": "Federal law permits a patient-requested Schedule II partial fill where state law allows it.",
+      "condition": "Federal law allows a patient-requested Schedule II partial fill that State law does not prohibit.",
       "action": "Continue to the Massachusetts conditions instead of stopping at federal permission.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
@@ -88,7 +93,7 @@
   ],
   "ma_vs_federal": [
     {
-      "text": "Federal permission for a patient-requested Schedule II partial fill does not displace Massachusetts' same-pharmacy and recordkeeping conditions.",
+      "text": "Federal permission for a patient-requested Schedule II partial fill does not displace Massachusetts' same-pharmacy and recordkeeping conditions, and Massachusetts additionally makes the lesser-quantity dispensing mandatory on patient request.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
@@ -117,6 +122,13 @@
       "rule_ids": [
         "MA-RX-CV-REFILL"
       ]
+    },
+    {
+      "text": "The 30-day request-based remainder period is displaced by the federal 72-hour period for an emergency oral Schedule II prescription and is preceded by the Massachusetts five-day initial-dispensing limit for the s. 18(d) and s. 18(d1/2) pathways.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
     }
   ],
   "timing_deadlines": [
@@ -137,6 +149,22 @@
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
       ]
+    },
+    {
+      "event": "Remainder of a partially filled emergency oral Schedule II prescription",
+      "timeframe": "No later than 72 hours after the prescription is issued",
+      "consequence": "The ordinary 30-day request-based period does not apply to an emergency oral prescription.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "event": "Initial partial dispensing of a Schedule II prescription filled under M.G.L. c. 94C, s. 18(d) or s. 18(d1/2)",
+      "timeframe": "Not more than 5 days after the prescription issue date",
+      "consequence": "This shorter Massachusetts limit governs the initial partial dispensing under those out-of-state pathways.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
     }
   ],
   "forms_records": [
@@ -144,6 +172,12 @@
       "text": "The Massachusetts patient-requested Schedule II pathway requires a pharmacy patient-record notation for each partial dispensing and quantity.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "A Massachusetts Schedule II opioid prescription must carry a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "rule_ids": [
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
       ]
     }
   ],
@@ -170,6 +204,12 @@
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Restating the federal not-prohibited-by-State-law condition as a requirement that State law affirmatively permit the partial fill changes the default for a silent jurisdiction.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
       ]
     }
   ],

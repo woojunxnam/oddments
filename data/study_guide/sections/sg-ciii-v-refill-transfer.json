@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CIII-V-REFILL-TRANSFER",
-  "content_version": 2,
-  "content_hash": "c988b33e24c6e7f92cf83dc28be23ae8a0159dcb3d66259a171c7ef7cddbbc20",
+  "content_version": 3,
+  "content_hash": "dd4911c0164d5fae1ffba55aa730909b6a17426a92bad95e3afff6915c4d37c6",
   "title": "Schedule III-V Refills and Massachusetts Transfers",
   "areas": [
     2,
@@ -12,18 +12,25 @@
   "learning_objectives": [
     "Apply both the issue-date clock and refill-count limit to Schedule III and IV prescriptions.",
     "Separate transfer eligibility from the prescription's remaining lawful refill capacity.",
-    "Recognize the special Massachusetts treatment of Schedule VI transfers."
+    "Recognize the special Massachusetts treatment of Schedule VI transfers.",
+    "Separate the federal one-time limit on a Schedule III-V refill transfer from the Massachusetts duty to transfer at the patient's request."
   ],
   "rule_ids": [
     "FED-CS-REFILL-III-IV",
+    "FED-CS-TRANSFER-REFILL",
     "MA-RX-CV-REFILL",
     "MA-RX-TRANSFER",
-    "MA-ORAL-III-V-FOLLOWUP"
+    "MA-ORAL-III-V-FOLLOWUP",
+    "MA-ORAL-CS-FOLLOWUP-TIMING"
   ],
   "verified_rule_dependencies": {
     "FED-CS-REFILL-III-IV": {
       "content_version": 1,
       "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+    },
+    "FED-CS-TRANSFER-REFILL": {
+      "content_version": 1,
+      "content_hash": "040cd647fd90b066b9417c9baced11ebeda0801da56a8193ff6968aa74a34de5"
     },
     "MA-RX-CV-REFILL": {
       "content_version": 1,
@@ -36,6 +43,10 @@
     "MA-ORAL-III-V-FOLLOWUP": {
       "content_version": 1,
       "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0"
+    },
+    "MA-ORAL-CS-FOLLOWUP-TIMING": {
+      "content_version": 1,
+      "content_hash": "2c63e7829be4923f584b688b8b3365b61409577ab4d0b1bde8c66ad451f684a3"
     }
   },
   "quick_review": [
@@ -55,6 +66,18 @@
       "text": "Massachusetts requires a timely patient-requested transfer, prohibits a transfer fee, and permits a pharmacy to act as the patient's agent to obtain the transfer.",
       "rule_ids": [
         "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Transfer of Schedule III-V prescription information for refill purposes is permitted between pharmacies on a one-time basis only, unless the pharmacies electronically share a real-time, online database.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "A Massachusetts oral controlled-substance prescription is reduced to writing immediately, and the prescriber's follow-up is electronic within 2 days, or written within not more than 7 days where the prescriber holds an electronic-prescribing exception.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
       ]
     }
   ],
@@ -93,14 +116,23 @@
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
+    },
+    {
+      "condition": "A patient asks to move a Schedule III, IV or V prescription with authorized refills remaining to another pharmacy.",
+      "action": "Confirm the prescription has not already been transferred once, unless the two pharmacies electronically share a real-time online database, before applying the Massachusetts transfer duty.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
     }
   ],
   "ma_vs_federal": [
     {
-      "text": "For Schedule III and IV refills, the federal five-refill and six-month limits remain operative when Massachusetts transfer rules are applied.",
+      "text": "For Schedule III and IV refills the federal five-refill and six-month limits remain operative when the Massachusetts transfer rules are applied, and so does the separate federal limit permitting a Schedule III-V refill-purpose transfer only once.",
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
-        "MA-RX-TRANSFER"
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
       ]
     },
     {
@@ -123,6 +155,18 @@
       "text": "The Schedule V refill limits in 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies under 247 CMR 9.04(15).",
       "rule_ids": [
         "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Pharmacies electronically sharing a real-time, online database may transfer up to the maximum refills permitted by law and the prescriber's authorization instead of the one-time limit.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "105 CMR 721.070(B) states the follow-up period for an oral Schedule II-V prescription issued under an electronic-prescribing exception as not more than seven business days, which is not the same measure as the statutory seven days.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
       ]
     }
   ],
@@ -158,6 +202,14 @@
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
+    },
+    {
+      "event": "Practitioner follow-up documentation after a Massachusetts oral controlled-substance prescription",
+      "timeframe": "Electronic within 2 days, or written within not more than 7 days where the prescriber holds a section 23(h) exception; not more than 7 business days under 105 CMR 721.070(B)",
+      "consequence": "A shorter period required by federal law controls where one applies, and the Schedule VI carve-out removes the later documentation duty.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
+      ]
     }
   ],
   "forms_records": [
@@ -176,6 +228,14 @@
         "MA-RX-TRANSFER",
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "role": "Transferring pharmacy",
+      "duty": "Transfer the prescription at the request of the patient or the patient's agent in a timely manner so as not to delay therapy, and complete the federal voiding and transfer records for a Schedule III-V refill transfer.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
       ]
     }
   ],
@@ -197,6 +257,20 @@
     {
       "text": "Treating seven days as a deadline for the pharmacist to request or record follow-up reverses the timed event; the practitioner must deliver or mail the writing within that period.",
       "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "Treating the Massachusetts duty to transfer on patient request as removing the federal one-time limit on a Schedule III-V refill transfer.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "Quoting a single seven-day figure for every Massachusetts oral controlled-substance follow-up misses the two-day electronic default and the seven-business-day regulatory period.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
         "MA-ORAL-III-V-FOLLOWUP"
       ]
     }
