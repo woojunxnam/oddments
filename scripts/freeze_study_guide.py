@@ -171,6 +171,16 @@ def main() -> int:
         "sections": frozen_sections,
     }
     write_json(package_path, package)
+    prior_audit_reference = config.get("prior_audit_reference")
+    if prior_audit_reference is not None:
+        prior_path = ROOT / prior_audit_reference["path"]
+        if not prior_path.is_file():
+            raise SystemExit(f"prior_audit_reference names a missing audit: {prior_path}")
+        prior_audit_reference = {
+            **prior_audit_reference,
+            "sha256": file_sha256(prior_path),
+            "reuse_for_repaired_hashes": False,
+        }
     write_json(
         manifest_path,
         {
@@ -203,6 +213,7 @@ def main() -> int:
             "audit_package_path": package_path.relative_to(ROOT).as_posix(),
             "audit_package_sha256": file_sha256(package_path),
             "expected_audit_output_path": config["expected_audit_output_path"],
+            **({"prior_audit_reference": prior_audit_reference} if prior_audit_reference else {}),
             "safe_content_statement": (
                 "이 freeze에는 full Study Guide prose와 공식 dependency metadata가 포함되지만 "
                 "controller expected verdict 또는 repair hint는 포함되지 않는다."
