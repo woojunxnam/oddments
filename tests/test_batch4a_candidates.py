@@ -33,8 +33,10 @@ def test_batch4a_candidates_match_final_map_when_present(root) -> None:
             assert len(question["audits"]) >= 2
             assert question["final_adjudication"]["decision"] == "KEEP"
         else:
+            # An unreleased item may be un-audited, or audited and failed. Either way it
+            # must carry no release evidence: never PASSED, never a final adjudication.
             assert question["verification_status"] == "AUDIT_PENDING"
-            assert question["independent_audit_status"] == "PENDING"
+            assert question["independent_audit_status"] in {"PENDING", "FAILED"}
             assert question["final_adjudication"] is None
 
     assert Counter(question["area"] for question in selected) == {1: 9, 2: 12, 3: 7, 4: 5}
