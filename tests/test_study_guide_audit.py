@@ -38,7 +38,56 @@ def test_independent_study_guide_audit_binds_exact_freeze_and_keep(root: Path) -
         section["section_id"]: section
         for _, section in load_records(root / "data" / "study_guide" / "sections")
     }
+    # The pilot audit did not KEEP these four, so it certifies none of them and each has
+    # since been repaired past its pilot hash. A later audit may have published one of
+    # them at a newer hash; that is not the pilot audit's verdict.
     for section_id in dispositions.keys() - {"SG-CONTROLLED-SCHEDULES"}:
-        assert sections[section_id]["verification_status"] == "AUDIT_PENDING"
-        assert sections[section_id]["independent_audit_id"] is None
+        assert sections[section_id]["independent_audit_id"] != audit["audit_id"]
         assert sections[section_id]["content_hash"] != audit["section_hashes"][section_id]
+
+
+def test_every_public_section_holds_a_current_hash_keep(root: Path) -> None:
+    """A section is public only on an independent KEEP bound to its exact current hash.
+
+    validate_study_guide_audits no longer treats an older audit of a since-repaired
+    section as drift, so this pins the guarantee that replaced it: publication still
+    requires a KEEP, from the section's own audit, at the hash now on disk, with every
+    criterion passing.
+    """
+    report, audits = validate_study_guide_audits()
+    assert report.ok
+
+    sections = {
+        section["section_id"]: section
+        for _, section in load_records(root / "data" / "study_guide" / "sections")
+    }
+    verified = {
+        section_id: section
+        for section_id, section in sections.items()
+        if section["verification_status"] == "VERIFIED"
+    }
+    assert verified
+
+    for section_id, section in verified.items():
+        audit = audits[section["independent_audit_id"]]
+        assert audit["independent"] is True
+        assert audit["audit_status"] == "FULLY_ADJUDICATED"
+        result = next(item for item in audit["results"] if item["section_id"] == section_id)
+        assert result["disposition"] == "KEEP"
+        assert result["section_hash"] == section["content_hash"]
+        assert result["practice_mapping_verdict"] == "PASS"
+        assert all(verdict == "PASS" for verdict in result["criteria"].values())
+
+    for section_id, section in sections.items():
+        if section_id in verified:
+            continue
+        # Anything without such a KEEP stays private, whatever earlier audits said.
+        assert section["verification_status"] == "AUDIT_PENDING"
+        assert section["independent_audit_id"] is None
+        for audit in audits.values():
+            result = next(
+                (item for item in audit["results"] if item["section_id"] == section_id),
+                None,
+            )
+            if result is not None and result["disposition"] == "KEEP":
+                assert result["section_hash"] != section["content_hash"]
