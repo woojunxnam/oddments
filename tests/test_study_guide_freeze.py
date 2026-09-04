@@ -88,3 +88,61 @@ def test_study_guide_repair_freeze_binds_only_revised_pending_sections(root: Pat
     package_text = json.dumps(package, ensure_ascii=False).lower()
     assert "expected_verdict" not in package_text
     assert "repair_hint" not in package_text
+
+
+def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path) -> None:
+    directory = root / "audits" / "study_guide" / "2026-09-04"
+    package_path = directory / "BATCH4-SG-REPAIR-V3-AUDIT-PACKAGE.json"
+    package = load_json(package_path)
+    manifest = load_json(directory / "BATCH4-SG-REPAIR-V3-FREEZE-MANIFEST.json")
+    config = load_json(directory / "BATCH4-SG-REPAIR-V3-FREEZE-CONFIG.json")
+    sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
+    questions = {record["question_id"]: record for _, record in load_records(root / "data" / "questions")}
+    rules = {record["rule_id"]: record for _, record in load_records(root / "data" / "rules")}
+    revised_section_ids = [
+        "SG-CII-LIFECYCLE",
+        "SG-CIII-V-REFILL-TRANSFER",
+        "SG-MA-SCHEDULE-VI",
+        "SG-FED-MA-INTERACTION",
+    ]
+
+    assert package["auditor_instance_reserved"] == "GPT-FRESH-B4-SG-REPAIR-V3"
+    assert package["independent"] is True
+    assert package["author_is_not_auditor"] is True
+    assert package["section_ids"] == revised_section_ids
+    assert manifest["manifest_type"] == "STUDY_GUIDE_REPAIR_CLEAN_FREEZE"
+    assert config["represented_candidate_sha"] == package["represented_candidate_sha"]
+
+    for frozen in package["sections"]:
+        section_id = frozen["section_id"]
+        current = sections[section_id]
+        assert frozen["content_version"] == 3
+        assert frozen["content_hash"] == current["content_hash"]
+        assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
+        assert study_guide_content_hash(current) == frozen["content_hash"]
+        assert manifest["section_hashes"][section_id] == frozen["content_hash"]
+        assert current["verification_status"] == "AUDIT_PENDING"
+        assert current["independent_audit_id"] is None
+        for dependency in frozen["rule_dependencies"]:
+            rule = rules[dependency["rule_id"]]
+            assert dependency["content_version"] == rule["content_version"]
+            assert dependency["content_hash"] == rule["content_hash"]
+        for dependency in frozen["practice_question_dependencies"]:
+            assert dependency["lifecycle_status"] == "RELEASED"
+            assert dependency["question_hash"] == question_audit_hash(questions[dependency["question_id"]])
+
+    package_bytes = package_path.read_bytes().replace(b"\r\n", b"\n")
+    assert manifest["audit_package_sha256"] == hashlib.sha256(package_bytes).hexdigest()
+
+    # The V2 audit is bound as historical provenance in the manifest only. It must not
+    # reach the auditor package, or the V3 auditor inherits the prior findings.
+    prior = manifest["prior_audit_reference"]
+    assert prior["auditor_instance"] == "GPT-FRESH-B4-SG-REPAIR-V2"
+    assert prior["reuse_for_repaired_hashes"] is False
+    prior_bytes = (root / prior["path"]).read_bytes().replace(b"\r\n", b"\n")
+    assert prior["sha256"] == hashlib.sha256(prior_bytes).hexdigest()
+    package_text = json.dumps(package, ensure_ascii=False).lower()
+    assert "expected_verdict" not in package_text
+    assert "repair_hint" not in package_text
+    assert "gpt-fresh-b4-sg-repair-v2" not in package_text
+    assert "verification_notes" not in package_text
