@@ -67,10 +67,12 @@ def validate_study_guide_audits() -> tuple[QAReport, dict[str, dict[str, Any]]]:
             if current and current.get("content_hash") == frozen["content_hash"]:
                 if study_guide_content_hash(current) != frozen["content_hash"]:
                     report.error(f"{path}: current semantic hash mismatch for {section_id}")
-            elif current and (
-                current.get("verification_status") == "VERIFIED"
-                or current.get("independent_audit_id") == audit_id
-            ):
+            elif current and current.get("independent_audit_id") == audit_id:
+                # This audit certifies the section, but the prose has moved since. A section
+                # verified by a LATER audit is not drift for this one: an earlier audit of a
+                # since-repaired section is ordinary history. The section-level loop below
+                # still requires every VERIFIED section to hold a KEEP from its own audit at
+                # its exact current hash.
                 report.error(f"{path}: current verified section drift for {section_id}")
             result = results.get(section_id, {})
             if result.get("section_hash") != frozen["content_hash"]:

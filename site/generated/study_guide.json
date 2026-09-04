@@ -4,9 +4,9 @@
     "schema_version": 1,
     "canonical_source": "data/study_guide/",
     "include_pending": false,
-    "public_verified_section_count": 1,
-    "pending_section_count": 4,
-    "section_count": 1
+    "public_verified_section_count": 2,
+    "pending_section_count": 3,
+    "section_count": 2
   },
   "sections": [
     {
@@ -155,11 +155,285 @@
           "last_verified": "2026-08-13"
         }
       ]
+    },
+    {
+      "section_id": "SG-FED-MA-INTERACTION",
+      "content_version": 3,
+      "content_hash": "9340dae9996f4a6430653d5768645193ceb65db4e1ff60522afe45ffe6ddf267",
+      "title": "Federal and Massachusetts Rule Interaction",
+      "areas": [
+        2,
+        3
+      ],
+      "topic": "Federal and state interaction",
+      "subtopic": "Layered controlled-prescription analysis",
+      "learning_objectives": [
+        "Solve a federal-state interaction by identifying the same actor, event, and prescription pathway under both sources.",
+        "Avoid selecting a familiar federal limit before checking Massachusetts conditions that also govern the transaction."
+      ],
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL",
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ],
+      "verified_rule_dependencies": {
+        "FED-CII-PARTIAL-PATIENT": {
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+        },
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+        },
+        "FED-CS-REFILL-III-IV": {
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+        },
+        "MA-RX-CV-REFILL": {
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+        },
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION": {
+          "content_version": 1,
+          "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5"
+        }
+      },
+      "quick_review": [
+        {
+          "text": "Federal patient-requested Schedule II partial filling requires only that the partial fill not be prohibited by State law, alongside the other federal conditions in 21 CFR 1306.13(b)(1).",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT"
+          ]
+        },
+        {
+          "text": "Massachusetts supplies same-pharmacy, record, and issue-date requirements for its patient-requested Schedule II pathway.",
+          "rule_ids": [
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "text": "Federal Schedule III-IV and Massachusetts Schedule V refill rules each use a five-refill limit and a six-month issue-date limit within their respective scope; Massachusetts excludes institutional sterile compounding pharmacies from 247 CMR 9.04(13).",
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        }
+      ],
+      "decision_logic": [
+        {
+          "condition": "A transaction is governed by both federal and Massachusetts controlled-substance law.",
+          "action": "Define the drug schedule, actor, trigger, and pathway first; then apply every rule whose scope actually reaches those facts.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        },
+        {
+          "condition": "Federal law allows a patient-requested Schedule II partial fill that State law does not prohibit.",
+          "action": "Continue to the Massachusetts conditions instead of stopping at federal permission.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "condition": "A refill question names Schedule III, IV, or Massachusetts Schedule V.",
+          "action": "Choose the rule with the correct schedule scope, check both count and issue-date limits, and for the Massachusetts Schedule V rule confirm that the facility is not an institutional sterile compounding pharmacy.",
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        }
+      ],
+      "ma_vs_federal": [
+        {
+          "text": "Federal permission for a patient-requested Schedule II partial fill does not displace Massachusetts' same-pharmacy and recordkeeping conditions, and Massachusetts additionally makes the lesser-quantity dispensing mandatory on patient request.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "text": "The similar five-refill and six-month formulations for Schedule III-IV and Massachusetts Schedule V must be matched to the correct schedule and facility scope; 247 CMR 9.04(13) does not apply to institutional sterile compounding pharmacies.",
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        }
+      ],
+      "exceptions": [
+        {
+          "text": "A nearby rule with a familiar number is not controlling unless its actor, schedule, and triggering facts match the transaction.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        },
+        {
+          "text": "Massachusetts excludes institutional sterile compounding pharmacies from the Schedule V refill provision in 247 CMR 9.04(13), so the matching federal and state numbers do not eliminate the facility-scope inquiry.",
+          "rule_ids": [
+            "MA-RX-CV-REFILL"
+          ]
+        },
+        {
+          "text": "The 30-day request-based remainder period is displaced by the federal 72-hour period for an emergency oral Schedule II prescription and is preceded by the Massachusetts five-day initial-dispensing limit for the s. 18(d) and s. 18(d1/2) pathways.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        }
+      ],
+      "timing_deadlines": [
+        {
+          "event": "Patient-requested Schedule II remainder",
+          "timeframe": "No later than 30 days after issue",
+          "consequence": "Both federal and Massachusetts pathway limits must be satisfied.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "event": "Schedule III-IV refill, or Massachusetts Schedule V refill at a pharmacy subject to 247 CMR 9.04(13)",
+          "timeframe": "Within 6 months after issue",
+          "consequence": "The applicable five-refill limit must also remain unexhausted.",
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        },
+        {
+          "event": "Remainder of a partially filled emergency oral Schedule II prescription",
+          "timeframe": "No later than 72 hours after the prescription is issued",
+          "consequence": "The ordinary 30-day request-based period does not apply to an emergency oral prescription.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT"
+          ]
+        },
+        {
+          "event": "Initial partial dispensing of a Schedule II prescription filled under M.G.L. c. 94C, s. 18(d) or s. 18(d1/2)",
+          "timeframe": "Not more than 5 days after the prescription issue date",
+          "consequence": "This shorter Massachusetts limit governs the initial partial dispensing under those out-of-state pathways.",
+          "rule_ids": [
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        }
+      ],
+      "forms_records": [
+        {
+          "text": "The Massachusetts patient-requested Schedule II pathway requires a pharmacy patient-record notation for each partial dispensing and quantity.",
+          "rule_ids": [
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "text": "A Massachusetts Schedule II opioid prescription must carry a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+          "rule_ids": [
+            "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+          ]
+        }
+      ],
+      "role_duties": [
+        {
+          "role": "Pharmacist",
+          "duty": "Apply federal permission and Massachusetts conditions to the same defined transaction before reaching a conclusion.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        }
+      ],
+      "common_traps": [
+        {
+          "text": "Stopping after finding a permissive federal rule can omit a Massachusetts condition that still governs the dispensing.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT",
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+          ]
+        },
+        {
+          "text": "Transplanting a correct number from the wrong schedule produces a wrong result even when the number looks familiar.",
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV",
+            "MA-RX-CV-REFILL"
+          ]
+        },
+        {
+          "text": "Restating the federal not-prohibited-by-State-law condition as a requirement that State law affirmatively permit the partial fill changes the default for a silent jurisdiction.",
+          "rule_ids": [
+            "FED-CII-PARTIAL-PATIENT"
+          ]
+        }
+      ],
+      "drug_examples": [],
+      "practice_question_ids": [
+        "MA-Q-0009",
+        "MA-Q-0021",
+        "MA-Q-0401"
+      ],
+      "last_verified": "2026-09-04",
+      "verification_status": "VERIFIED",
+      "independent_audit_id": "AUDIT-SG-B4-SG-REPAIR-V3-2026-09-04",
+      "navigation": {
+        "section_id": "SG-FED-MA-INTERACTION",
+        "order": 5,
+        "module_type": "COMPARISON"
+      },
+      "authorities": [
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "name": "Patient-requested Schedule II partial fill",
+          "section": "21 CFR 1306.13(b)",
+          "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "last_verified": "2026-08-13"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "name": "Massachusetts General Laws",
+          "section": "M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d) and s. 18(d1/2)",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "last_verified": "2026-08-20"
+        },
+        {
+          "rule_id": "FED-CS-REFILL-III-IV",
+          "name": "21 CFR 1306.22",
+          "section": "1306.22(a)",
+          "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22",
+          "last_verified": "2026-08-13"
+        },
+        {
+          "rule_id": "MA-RX-CV-REFILL",
+          "name": "247 CMR 9: Professional Practice Standards",
+          "section": "9.04(13)",
+          "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "last_verified": "2026-08-13"
+        },
+        {
+          "rule_id": "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
+          "name": "Contents of prescription written by practitioner",
+          "section": "M.G.L. c. 94C, s. 22(c)",
+          "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+          "last_verified": "2026-09-04"
+        }
+      ]
     }
   ],
   "question_to_sections": {
     "MA-Q-0009": [
-      "SG-CONTROLLED-SCHEDULES"
+      "SG-CONTROLLED-SCHEDULES",
+      "SG-FED-MA-INTERACTION"
+    ],
+    "MA-Q-0021": [
+      "SG-FED-MA-INTERACTION"
+    ],
+    "MA-Q-0401": [
+      "SG-FED-MA-INTERACTION"
     ]
   }
 }

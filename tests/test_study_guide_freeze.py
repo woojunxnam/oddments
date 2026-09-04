@@ -35,10 +35,12 @@ def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: 
             assert current["verification_status"] == "VERIFIED"
             assert current["independent_audit_id"] == "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1"
         else:
+            # Each of these was repaired past its pilot hash, so the pilot audit
+            # certifies none of them, whether or not a later audit has since
+            # published one of them at a newer hash.
             assert frozen["section_id"] in revised_section_ids
             assert frozen["content_hash"] != study_guide_content_hash(current)
-            assert current["verification_status"] == "AUDIT_PENDING"
-            assert current["independent_audit_id"] is None
+            assert current["independent_audit_id"] != "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1"
         assert {item["rule_id"] for item in frozen["rule_dependencies"]} == set(section["rule_ids"])
         assert {item["question_id"] for item in frozen["practice_question_dependencies"]} == set(
             section["practice_question_ids"]
@@ -80,8 +82,7 @@ def test_study_guide_repair_freeze_binds_only_revised_pending_sections(root: Pat
         # The V2 freeze is historical provenance: REPAIR-V3 moved every section past
         # the audited hash, so its MINOR_EDIT dispositions bind none of the current prose.
         assert study_guide_content_hash(current) != expected_hashes[section_id]
-        assert current["verification_status"] == "AUDIT_PENDING"
-        assert current["independent_audit_id"] is None
+        assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V2-2026-09-02"
 
     package_bytes = package_path.read_bytes().replace(b"\r\n", b"\n")
     assert manifest["audit_package_sha256"] == hashlib.sha256(package_bytes).hexdigest()
@@ -113,6 +114,14 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
     assert manifest["manifest_type"] == "STUDY_GUIDE_REPAIR_CLEAN_FREEZE"
     assert config["represented_candidate_sha"] == package["represented_candidate_sha"]
 
+    audit_path = directory / "GPT-FRESH-B4-SG-REPAIR-V3-AUDIT.json"
+    v3_results: dict[str, dict] = {}
+    if audit_path.is_file():
+        audit = load_json(audit_path)
+        assert audit["auditor_instance"] == package["auditor_instance_reserved"]
+        assert audit["section_ids"] == revised_section_ids
+        v3_results = {result["section_id"]: result for result in audit["results"]}
+
     for frozen in package["sections"]:
         section_id = frozen["section_id"]
         current = sections[section_id]
@@ -121,8 +130,18 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
         assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
         assert study_guide_content_hash(current) == frozen["content_hash"]
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
-        assert current["verification_status"] == "AUDIT_PENDING"
-        assert current["independent_audit_id"] is None
+        # A frozen section is public only where the V3 audit gave it KEEP at this
+        # exact hash with every criterion passing; otherwise it stays private.
+        result = v3_results.get(section_id)
+        if result is not None and result["disposition"] == "KEEP":
+            assert result["section_hash"] == frozen["content_hash"]
+            assert all(verdict == "PASS" for verdict in result["criteria"].values())
+            assert result["practice_mapping_verdict"] == "PASS"
+            assert current["verification_status"] == "VERIFIED"
+            assert current["independent_audit_id"] == "AUDIT-SG-B4-SG-REPAIR-V3-2026-09-04"
+        else:
+            assert current["verification_status"] == "AUDIT_PENDING"
+            assert current["independent_audit_id"] is None
         for dependency in frozen["rule_dependencies"]:
             rule = rules[dependency["rule_id"]]
             assert dependency["content_version"] == rule["content_version"]

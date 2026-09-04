@@ -14,19 +14,36 @@ def test_canonical_study_guide_pilot_validates(registry_indexes) -> None:
 
     assert report.ok
     assert len(sections) == 5
-    assert sum(section["verification_status"] == "VERIFIED" for section in sections.values()) == 1
-    assert sum(section["verification_status"] == "AUDIT_PENDING" for section in sections.values()) == 4
+    verified = [s for s in sections.values() if s["verification_status"] == "VERIFIED"]
+    pending = [s for s in sections.values() if s["verification_status"] == "AUDIT_PENDING"]
+    # Every section is either independently verified or still fails closed, and the
+    # audit reference tracks that state exactly. Counts move as tranches publish.
+    assert len(verified) + len(pending) == len(sections)
+    assert verified
+    assert all(section["independent_audit_id"] for section in verified)
+    assert all(section["last_verified"] for section in verified)
+    assert all(section["independent_audit_id"] is None for section in pending)
+    assert all(section["last_verified"] is None for section in pending)
 
 
 def test_public_payload_fails_closed_until_independent_verification() -> None:
+    from qa_common import load_records
+
+    canonical = {section["section_id"]: section for _, section in load_records(DATA / "study_guide" / "sections")}
+    verified_ids = {sid for sid, section in canonical.items() if section["verification_status"] == "VERIFIED"}
+    assert verified_ids
+    assert verified_ids != set(canonical)
+
     public = build_study_guide_payload(include_pending=False)
     development = build_study_guide_payload(include_pending=True)
 
-    assert public["meta"]["section_count"] == 1
-    assert public["meta"]["pending_section_count"] == 4
-    assert [section["section_id"] for section in public["sections"]] == ["SG-CONTROLLED-SCHEDULES"]
+    # The public payload carries exactly the independently verified sections; anything
+    # still pending is absent at the static-file layer, not merely hidden in the UI.
+    assert {section["section_id"] for section in public["sections"]} == verified_ids
+    assert public["meta"]["section_count"] == len(verified_ids)
+    assert public["meta"]["pending_section_count"] == len(canonical) - len(verified_ids)
     assert public["question_to_sections"]
-    assert development["meta"]["section_count"] == 5
+    assert development["meta"]["section_count"] == len(canonical)
 
 
 def test_rule_hash_change_makes_dependent_sections_stale(tmp_path, registry_indexes) -> None:
