@@ -77,7 +77,9 @@ def test_study_guide_repair_freeze_binds_only_revised_pending_sections(root: Pat
         current = sections[section_id]
         assert frozen["content_hash"] == expected_hashes[section_id]
         assert study_guide_content_hash(frozen["full_prose_under_review"]) == expected_hashes[section_id]
-        assert study_guide_content_hash(current) == expected_hashes[section_id]
+        # The V2 freeze is historical provenance: REPAIR-V3 moved every section past
+        # the audited hash, so its MINOR_EDIT dispositions bind none of the current prose.
+        assert study_guide_content_hash(current) != expected_hashes[section_id]
         assert current["verification_status"] == "AUDIT_PENDING"
         assert current["independent_audit_id"] is None
 

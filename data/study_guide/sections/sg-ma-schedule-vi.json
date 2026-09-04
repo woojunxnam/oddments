@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SCHEDULE-VI",
-  "content_version": 2,
-  "content_hash": "acd8cf4012eaf122517c6c36785e077b5a63a9e13d5eb72e823e9047a8ed61b4",
+  "content_version": 3,
+  "content_hash": "2e8b2d6040218d677416c7eebe61ecaeae6061b764e804612de826794ff2d5b6",
   "title": "Massachusetts Schedule VI",
   "areas": [
     2,
@@ -11,19 +11,27 @@
   "subtopic": "Schedule VI prescription lifecycle",
   "learning_objectives": [
     "Recognize Schedule VI as a Massachusetts prescription-drug classification rather than a federal controlled schedule.",
-    "Apply Massachusetts prescription elements, oral documentation, electronic-prescribing exceptions, and transfer rules without inventing federal consequences."
+    "Apply Massachusetts prescription elements, oral documentation, electronic-prescribing exceptions, and transfer rules without inventing federal consequences.",
+    "Apply the Schedule VI validity clock and the additional-drug consequences instead of treating Schedule VI as a consequence-free label."
   ],
   "rule_ids": [
     "MA-SCHEDULE-VI",
+    "MA-SCHEDULE-VI-VALIDITY",
     "MA-CONTROLLED-EPRESCRIBE",
     "MA-ORAL-CONTROLLED-DOCUMENTATION",
     "MA-RX-REQUIRED-ELEMENTS",
-    "MA-RX-TRANSFER"
+    "MA-RX-TRANSFER",
+    "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+    "MA-RX-CUSTOMER-IDENTIFIER"
   ],
   "verified_rule_dependencies": {
     "MA-SCHEDULE-VI": {
       "content_version": 1,
       "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+    },
+    "MA-SCHEDULE-VI-VALIDITY": {
+      "content_version": 1,
+      "content_hash": "efc932e4118e6457a82f447f29b2bedfe8c869759917648864d2baf4944132ec"
     },
     "MA-CONTROLLED-EPRESCRIBE": {
       "content_version": 2,
@@ -40,6 +48,14 @@
     "MA-RX-TRANSFER": {
       "content_version": 2,
       "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+    },
+    "MA-PMP-ADDITIONAL-DRUG-DESIGNATION": {
+      "content_version": 1,
+      "content_hash": "3188412cd3eb7d1aae9d43805b3a786b82c9cc276cb8a8c1622ea51a7c6a0cd9"
+    },
+    "MA-RX-CUSTOMER-IDENTIFIER": {
+      "content_version": 1,
+      "content_hash": "754468f985347b81c80b83897a019a5340fa7524713dc59e73da3e2633039aa6"
     }
   },
   "quick_review": [
@@ -59,6 +75,19 @@
       "text": "An oral controlled-substance prescription must be reduced to writing immediately with the required information; the later documentation provision identified in this rule does not apply to Schedule VI.",
       "rule_ids": [
         "MA-ORAL-CONTROLLED-DOCUMENTATION"
+      ]
+    },
+    {
+      "text": "A Massachusetts Schedule VI prescription is valid for one year from the date of issue, and a licensee may not refill it after one year.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "text": "A Schedule VI drug the Department designates as an additional drug becomes reportable to the prescription monitoring program and requires a customer identifier at dispensing.",
+      "rule_ids": [
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+        "MA-RX-CUSTOMER-IDENTIFIER"
       ]
     }
   ],
@@ -85,6 +114,21 @@
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
+    },
+    {
+      "condition": "A Schedule VI prescription is presented more than one year after its issue date, or with no refills remaining and the prescriber cannot be reached in time.",
+      "action": "Do not refill it; consider only the professional-judgment continuation of a quantity not exceeding 14 days or the smallest available unit-of-use packaging.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "condition": "The Schedule VI medication being dispensed has been designated an additional drug by the Department.",
+      "action": "Obtain a customer identifier and treat the dispensing as reportable, using the documented hardship route only on its own terms.",
+      "rule_ids": [
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+        "MA-RX-CUSTOMER-IDENTIFIER"
+      ]
     }
   ],
   "ma_vs_federal": [
@@ -92,6 +136,13 @@
       "text": "Schedule VI is a Massachusetts classification and does not itself make a drug federally controlled.",
       "rule_ids": [
         "MA-SCHEDULE-VI"
+      ]
+    },
+    {
+      "text": "A Schedule VI drug the Department designates as an additional drug carries Massachusetts prescription-monitoring and customer-identifier duties that the Schedule VI label alone does not imply.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
       ]
     }
   ],
@@ -103,6 +154,18 @@
         "MA-RX-REQUIRED-ELEMENTS",
         "MA-ORAL-CONTROLLED-DOCUMENTATION"
       ]
+    },
+    {
+      "text": "Where a Schedule VI prescription has expired or has no remaining refills and prescriber authorization cannot be obtained in a timely manner, the pharmacist may in professional judgment dispense a quantity not exceeding 14 days or the smallest available unit-of-use packaging.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "text": "247 CMR 9.04(15) excludes institutional sterile compounding pharmacies from the Schedule VI validity requirements in 247 CMR 9.04(12).",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
     }
   ],
   "timing_deadlines": [
@@ -113,6 +176,14 @@
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
+    },
+    {
+      "event": "Massachusetts Schedule VI prescription validity",
+      "timeframe": "1 year from the date of issue",
+      "consequence": "A licensee may not refill a Schedule VI prescription after one year.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
     }
   ],
   "forms_records": [
@@ -121,6 +192,12 @@
       "rule_ids": [
         "MA-ORAL-CONTROLLED-DOCUMENTATION",
         "MA-RX-REQUIRED-ELEMENTS"
+      ]
+    },
+    {
+      "text": "A customer identifier must be obtained when dispensing a Schedule VI additional drug; the hardship route requires a documented reason and the recipient's printed and signed name and address.",
+      "rule_ids": [
+        "MA-RX-CUSTOMER-IDENTIFIER"
       ]
     }
   ],
@@ -131,6 +208,14 @@
       "rule_ids": [
         "MA-CONTROLLED-EPRESCRIBE",
         "MA-RX-REQUIRED-ELEMENTS"
+      ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Check the Schedule VI validity clock and any additional-drug designation before dispensing rather than treating Schedule VI as consequence-free.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
       ]
     }
   ],
@@ -149,9 +234,17 @@
       ]
     },
     {
-      "text": "The one-year rule in 247 CMR 9.14(4)(c) addresses transfer of a Schedule VI prescription authorizing refills; do not restate it as a universal statutory transfer window for every Schedule VI prescription.",
+      "text": "The one-year rule in 247 CMR 9.14(4)(c) governs transfer of a Schedule VI prescription authorizing refills and is separate from the one-year prescription validity limit in 247 CMR 9.04(12); neither should be restated as the other.",
       "rule_ids": [
-        "MA-RX-TRANSFER"
+        "MA-RX-TRANSFER",
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "text": "Concluding that Schedule VI never triggers identification or monitoring-program duties overlooks Schedule VI drugs designated as additional drugs.",
+      "rule_ids": [
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+        "MA-RX-CUSTOMER-IDENTIFIER"
       ]
     }
   ],

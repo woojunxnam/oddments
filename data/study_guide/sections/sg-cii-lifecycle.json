@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CII-LIFECYCLE",
-  "content_version": 2,
-  "content_hash": "76f9c5d5455b60985473779403140fb620f970c4aefb30a427d6e245369a603b",
+  "content_version": 3,
+  "content_hash": "3f12347a397b70bc04a4f571223b27b4dec5a81e538bdb3eb89bdeb0fe90dba6",
   "title": "Schedule II Prescriptions, Emergency Oral Orders, and Partial Fills",
   "areas": [
     2,
@@ -23,7 +23,8 @@
     "FED-CII-PARTIAL-PATIENT",
     "FED-CII-LTC-TERMINAL",
     "MA-CII-VALIDITY-30D",
-    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+    "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
   ],
   "verified_rule_dependencies": {
     "FED-CII-NO-REFILL": {
@@ -61,6 +62,10 @@
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
       "content_version": 1,
       "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+    },
+    "MA-CII-OPIOID-PARTIAL-FILL-NOTATION": {
+      "content_version": 1,
+      "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5"
     }
   },
   "quick_review": [
@@ -71,7 +76,7 @@
       ]
     },
     {
-      "text": "Emergency oral Schedule II dispensing is limited to the quantity necessary for the emergency period after immediate communication and reasonable prescriber identification.",
+      "text": "Emergency oral Schedule II dispensing is limited to the amount adequate to treat the patient during the emergency period, and the pharmacist must make a reasonable effort to confirm the oral authorization came from a registered practitioner if that practitioner is not known to the pharmacist.",
       "rule_ids": [
         "FED-CII-EMERGENCY-ORAL"
       ]
@@ -117,7 +122,7 @@
       ]
     },
     {
-      "condition": "The patient or prescriber requested a partial fill of a non-emergency written or electronic Schedule II prescription and state law permits it.",
+      "condition": "The patient or prescriber requested a partial fill of a non-emergency written or electronic Schedule II prescription and State law does not prohibit it.",
       "action": "Use the request-based pathway and complete any remainder no later than 30 days after the prescription was written, while also satisfying Massachusetts conditions.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
@@ -157,7 +162,7 @@
   ],
   "ma_vs_federal": [
     {
-      "text": "Federal patient-requested partial filling operates only where state law permits; Massachusetts adds same-pharmacy, patient-record, and issue-date conditions.",
+      "text": "Federal patient-requested partial filling is permissive and requires only that the partial fill not be prohibited by State law; Massachusetts goes further and makes the lesser-quantity dispensing mandatory on patient request while adding same-pharmacy, patient-record, and issue-date conditions.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
@@ -213,7 +218,7 @@
     },
     {
       "event": "Stock-shortage Schedule II remainder",
-      "timeframe": "Within 72 hours",
+      "timeframe": "Within 72 hours of the first partial filling",
       "consequence": "Otherwise notify the prescriber and obtain a new prescription for further quantity.",
       "rule_ids": [
         "FED-CII-PARTIAL-72H"
@@ -266,6 +271,12 @@
       "rule_ids": [
         "FED-CII-LTC-TERMINAL"
       ]
+    },
+    {
+      "text": "A Massachusetts prescription for a Schedule II opioid must itself carry a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "rule_ids": [
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ]
     }
   ],
   "role_duties": [
@@ -291,6 +302,13 @@
       "rule_ids": [
         "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
       ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Dispense the lesser quantity when a Massachusetts patient requests a partial fill of a Schedule II prescription; that dispensing is mandatory rather than discretionary.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
     }
   ],
   "common_traps": [
@@ -314,6 +332,13 @@
         "FED-CII-EMERGENCY-ORAL",
         "FED-CII-PARTIAL-PATIENT",
         "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
+      "text": "Reading the Massachusetts patient-requested partial fill as an option the pharmacist may decline turns a mandatory duty into a permission.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CII-PARTIAL-PATIENT"
       ]
     }
   ],
