@@ -1,0 +1,44 @@
+{
+  "tranche": "BATCH4-B4A-Q0426-V2",
+  "audit_scope": "REAUDIT",
+  "package_version": 1,
+  "authorizing_issue": 121,
+  "controller_issue": 121,
+  "freeze_date": "2026-09-04",
+  "source_branch": "main",
+  "candidate_branch": "claude/b4a-q0426-repair",
+  "candidate_sha": "1f4a3dcf1c5c91a7e54b647a570057728c095f2c",
+  "source_sha": "47c97678406c7ea783fdd87932a6c47b644fa28c",
+  "auditor_type": "CLAUDE",
+  "output_dir": "audits/remediation/2026-09-04",
+  "freeze_branch": "claude/b4a-q0426-repair",
+  "auditor_instance": "GPT-FRESH-B4A-Q0426-V2",
+  "legal_audit_id": "AUDIT-GPT-FRESH-B4A-Q0426-V2-LEGAL-2026-09-04",
+  "realism_audit_id": "AUDIT-GPT-FRESH-B4A-Q0426-V2-REALISM-2026-09-04",
+  "question_ids": [
+    "MA-Q-0426"
+  ],
+  "bank_size_at_candidate": 439,
+  "file_prefix": "B4A-Q0426-V2",
+  "composition": {
+    "area_1": 0,
+    "area_2": 1,
+    "area_3": 0,
+    "area_4": 0,
+    "total": 1
+  },
+  "package_note": "Single-question re-audit freeze for the only unreleased B4-A item. The prior GPT-FRESH-B4A audit adjudicated audit hash a15e9a4f6b63d19f68d4c9af966d10b36f9f06663426e569ef652dedf357f519 with LEGAL=KEEP and REALISM=MINOR_EDIT/FAIL on authentic_distractors and wording_not_guessable. The stem and all five choices have since been rewritten, so that audit binds nothing here and no part of it is exposed to this package.",
+  "quality_gates": {
+    "repository_validation": "PASS (0 errors, 2 inherited warnings)",
+    "full_tests": "PASS (120 passed, 2 skipped)",
+    "generated_artifact_freshness": "PASS (0 errors, 0 warnings)",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "placeholder_findings": 0,
+    "answer_distribution": "PASS (chi-square 1.602941; p approximately 0.810305)",
+    "sba_answer_length": "PASS (prospective tranche 8/19, 42.1%, improved from 9/19; 0 individual extremes; inherited 149/230 unchanged)",
+    "dependency_integrity": "PASS",
+    "release_only_payload_guard": "PASS (398 online; MA-Q-0426 absent)"
+  },
+  "source_note": "Clean candidate commit containing only the realism repair and the refreshed SBA report. It carries no audit output, no Phase-1 lock, and no repair rationale beyond the commit message, which the auditor is instructed not to read. Auditor identity GPT-FRESH-B4A-Q0426-V2 was mechanically confirmed absent from every audit artifact in the repository before reservation; GPT-FRESH-B4A is not reused."
+}
