@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-OUTSTATE-PRESCRIPTIONS",
-  "content_version": 1,
-  "content_hash": "80a9d22bcdc24f191e555a7c0a19f72a08a1be3f3b711da29b3c46a315377071",
+  "content_version": 2,
+  "content_hash": "86e58d1554a214146813ee7b53177e99c5340662a1666d75d9d76ef82f58f224",
   "title": "Prescriptions from Out-of-State Practitioners",
   "areas": [
     2,
@@ -11,13 +11,17 @@
   "subtopic": "Presentation windows and the verification gate",
   "learning_objectives": [
     "Choose the presentation window by the schedule of the substance, not by the federal refill clock.",
-    "Apply the mandatory verification gate before filling an out-of-state Schedule III through V prescription."
+    "Apply the mandatory verification gate before filling an out-of-state Schedule III through V prescription.",
+    "Separate the five-day window on the prescription from the five-day limit on an initial partial dispensing.",
+    "Carry out the post-fill reporting duty the Schedule II pathways impose."
   ],
   "rule_ids": [
     "MA-RX-OUTSTATE-III-VI",
     "MA-CII-OUTSTATE",
     "MA-ORAL-III-V-FOLLOWUP",
-    "MA-OUTSTATE-CII-NARCOTIC"
+    "MA-OUTSTATE-CII-NARCOTIC",
+    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+    "MA-OUTSTATE-CII-DEPARTMENT-COPY"
   ],
   "verified_rule_dependencies": {
     "MA-RX-OUTSTATE-III-VI": {
@@ -35,6 +39,14 @@
     "MA-OUTSTATE-CII-NARCOTIC": {
       "content_version": 1,
       "content_hash": "f45553bc92cd5d1a116d6dbff6d306161b04591b700f32a639f00b1261153b9a"
+    },
+    "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+      "content_version": 1,
+      "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+    },
+    "MA-OUTSTATE-CII-DEPARTMENT-COPY": {
+      "content_version": 1,
+      "content_hash": "651bb8fd0a2baf046d15a036cdc5cf83a1f22852ef30a6aca90544a81498fb06"
     }
   },
   "quick_review": [
@@ -67,6 +79,18 @@
       "rule_ids": [
         "MA-OUTSTATE-CII-NARCOTIC"
       ]
+    },
+    {
+      "text": "A prescription filled under M.G.L. c. 94C, s. 18(d) or s. 18(d1/2) has its own five-day limit on the INITIAL PARTIAL DISPENSING, which is a separate rule from the five-day window on when the prescription itself may be presented.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "After filling an out-of-state Schedule II prescription the pharmacist must deliver a copy to the Department within 30 days, with the patient's name and address removed.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
+      ]
     }
   ],
   "decision_logic": [
@@ -91,6 +115,20 @@
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
+    },
+    {
+      "condition": "An out-of-state Schedule II prescription under s. 18(d) or s. 18(d1/2) is partially dispensed.",
+      "action": "Complete the initial partial dispensing not more than five days after the prescription issue date; the remaining portion still runs to 30 days after that issue date.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "condition": "You have filled an out-of-state Schedule II prescription.",
+      "action": "Deliver a copy to the Department within 30 days of the filling, excluding the patient's name and address.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
+      ]
     }
   ],
   "ma_vs_federal": [
@@ -112,6 +150,12 @@
       "text": "Separate delivery provisions govern certain out-of-state residents, so the narcotic route is not simply the nonnarcotic route with a different list of states.",
       "rule_ids": [
         "MA-OUTSTATE-CII-NARCOTIC"
+      ]
+    },
+    {
+      "text": "The out-of-state Schedule II subsections authorize the filling only. They do not authorize the practitioner to possess, administer or dispense controlled substances in the commonwealth or to practise here, and they do not authorize mail order pharmacies.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
       ]
     }
   ],
@@ -139,6 +183,30 @@
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
       ]
+    },
+    {
+      "event": "Initial partial dispensing of an out-of-state Schedule II prescription",
+      "timeframe": "Not more than 5 days after the prescription issue date",
+      "consequence": "This limit governs the dispensing, while the separate five-day window governs when the prescription may be presented at all.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "event": "Remaining portion of that partially dispensed prescription",
+      "timeframe": "Not later than 30 days after the prescription issue date",
+      "consequence": "The remainder closes on the issue-date clock, not on the dispensing date.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "event": "Department copy after filling an out-of-state Schedule II prescription",
+      "timeframe": "Within 30 days after the filling",
+      "consequence": "This clock runs from the filling, unlike every other period in this section.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
+      ]
     }
   ],
   "forms_records": [
@@ -146,6 +214,18 @@
       "text": "On the out-of-state oral Schedule III-V pathway the pharmacist records having requested the practitioner's written prescription.",
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "The Department copy excludes the patient's name and address, and neither the copy nor its contents is a public record.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
+      ]
+    },
+    {
+      "text": "An initial partial dispensing and any remainder on this pathway carry the s. 18(d3/4) patient-record notation of the partial fill and the quantity dispensed, accessible to the prescriber on request.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
       ]
     }
   ],
@@ -155,6 +235,13 @@
       "duty": "Verify an out-of-state Schedule III through V prescription before filling it, and refuse the fill where verification cannot be obtained.",
       "rule_ids": [
         "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Deliver the anonymised Department copy within 30 days of filling an out-of-state Schedule II prescription.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
       ]
     }
   ],
@@ -176,6 +263,19 @@
       "text": "Treating the seven-day follow-up period as the pharmacist's deadline reverses the timed event.",
       "rule_ids": [
         "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "Reading the five-day figure as one rule merges the window on presenting the prescription with the separate limit on completing an initial partial dispensing.",
+      "rule_ids": [
+        "MA-CII-OUTSTATE",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "Measuring the Department copy's 30 days from the issue date rather than from the filling misses that this is the one duty here keyed to the dispensing event.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-DEPARTMENT-COPY"
       ]
     }
   ],

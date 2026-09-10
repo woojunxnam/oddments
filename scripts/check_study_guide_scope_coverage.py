@@ -56,6 +56,17 @@ def _content_tokens(text: str) -> set[str]:
     tokens = re.findall(r"[a-z0-9]+(?:['-][a-z0-9]+)*", (text or "").lower())
     return {token for token in tokens if token not in STOPWORDS and len(token) > 3}
 
+
+def _subject_is_taught(subject: set[str], prose_tokens: set[str]) -> bool:
+    """Does the prose visibly cover this subject matter?"""
+    if not subject:
+        return False
+    # A one- or two-word subject is already specific ("Definition of Failover"), so demanding
+    # two matched tokens turns it into an exact match and the signal fires on prose that
+    # plainly teaches the provision. Scale the requirement to the subject's own length.
+    needed = 1 if len(subject) <= 2 else max(2, len(subject) * SUBJECT_MATCH_SHARE)
+    return len(subject & prose_tokens) >= needed
+
 PROSE_FIELDS = (
     "title",
     "topic",
@@ -247,22 +258,27 @@ def analyze_scope_coverage(
                 # is a section leaning on a rule while using only part of what it stands
                 # for, so also accept the authority's own subject matter appearing in the
                 # prose.
-                subject = _content_tokens(authority.get("name", ""))
-                if subject and len(subject & prose_tokens) >= max(2, len(subject) * SUBJECT_MATCH_SHARE):
+                if _subject_is_taught(_content_tokens(authority.get("name", "")), prose_tokens):
                     continue
-                if True:
-                    findings.append(
-                        {
-                            "code": "UNUSED_AUTHORITY",
-                            "strength": "HIGH",
-                            "rule_id": rule_id,
-                            "detail": (
-                                f"dependency authority {authority.get('section')!r} is never "
-                                "referenced in the section prose"
-                            ),
-                            "authority": [authority.get("section")],
-                        }
-                    )
+                # Some authority names describe the source ("Massachusetts Department of
+                # Public Health regulations") rather than the provision, in which case the
+                # name carries no subject to look for. Fall back to the rule's own subject.
+                rule = usable[rule_id]
+                own_subject = _content_tokens(f"{rule.get('title', '')} {rule.get('subtopic', '')}")
+                if _subject_is_taught(own_subject, prose_tokens):
+                    continue
+                findings.append(
+                    {
+                        "code": "UNUSED_AUTHORITY",
+                        "strength": "HIGH",
+                        "rule_id": rule_id,
+                        "detail": (
+                            f"dependency authority {authority.get('section')!r} is never "
+                            "referenced in the section prose"
+                        ),
+                        "authority": [authority.get("section")],
+                    }
+                )
 
         order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
         findings.sort(key=lambda f: (order[f["strength"]], f["code"], f["rule_id"]))

@@ -103,6 +103,45 @@ def test_a_statute_section_is_keyed_by_subsection_family() -> None:
     assert parent_citations("M.G.L. c. 94C, § 18(c)") != parent_citations("M.G.L. c. 94C, § 18(d)")
 
 
+def _unused_authority_rule_ids(rules: dict[str, Any], section: dict[str, Any]) -> set[str]:
+    report = analyze_scope_coverage(sections={section["section_id"]: section}, rules=rules)
+    return {
+        finding["rule_id"]
+        for row in report["sections"]
+        for finding in row["findings"]
+        if finding["code"] == "UNUSED_AUTHORITY"
+    }
+
+
+def test_unused_authority_reads_prose_not_just_citation_numbers() -> None:
+    # The guide renders pinpoint citations separately, so the signal has to recognise a
+    # provision the prose plainly teaches without quoting its number. Two authority-name
+    # shapes have to work: a short specific name, and a name that describes the source
+    # rather than the provision, where only the rule's own title says what it is about.
+    rules = {
+        "SHORT-NAME": _rule("SHORT-NAME", 3, "Prescription transfer", "105 CMR 721.010"),
+        "SOURCE-NAME": _rule("SOURCE-NAME", 3, "Prescription transfer", "105 CMR 700.012(C)(8)"),
+        "ABSENT": _rule("ABSENT", 3, "Prescription transfer", "247 CMR 9.99"),
+    }
+    rules["SHORT-NAME"]["authority"][0]["name"] = "Definition of Failover"
+    rules["SOURCE-NAME"]["authority"][0]["name"] = "Massachusetts Department of Public Health regulations"
+    rules["SOURCE-NAME"]["title"] = "Additional drug designation"
+    rules["ABSENT"]["authority"][0]["name"] = "Central fill authorisation"
+    rules["ABSENT"]["title"] = "Central fill authorisation"
+
+    taught = _section(
+        "SG-TAUGHT",
+        ["SHORT-NAME", "SOURCE-NAME", "ABSENT"],
+        "A Failover is a Schedule VI document converted to a computer generated facsimile. "
+        "A drug the Department designates as an additional drug becomes reportable.",
+    )
+    # Both provisions the prose teaches stay quiet; the one it never mentions still fires.
+    assert _unused_authority_rule_ids(rules, taught) == {"ABSENT"}
+
+    silent = _section("SG-SILENT", ["SHORT-NAME"], "Refills are permitted for six months.")
+    assert _unused_authority_rule_ids(rules, silent) == {"SHORT-NAME"}
+
+
 def test_a_repeated_section_reference_does_not_widen_the_key() -> None:
     # Records name the section twice, once bare in the authority name and once with the
     # subsection: "M.G.L. c.94C §18" + "§18(d), §18(d 1/2)". The bare half must not drag the
