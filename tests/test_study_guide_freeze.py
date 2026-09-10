@@ -134,9 +134,10 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
 
         if study_guide_content_hash(current) != frozen["content_hash"]:
             # A later repair moved this section past the audited hash. Whatever V3 said
-            # about it is historical: it must not still be published on that verdict.
+            # about it is historical: it must not still be published on that verdict. It
+            # may well be published on a later audit's verdict, which is the point of the
+            # repair-and-re-audit cycle, so only the V3 certification is ruled out here.
             assert current["content_version"] > frozen["content_version"]
-            assert current["verification_status"] == "AUDIT_PENDING"
             assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V3-2026-09-04"
             continue
 
@@ -213,8 +214,9 @@ def test_study_guide_repair_v4_freeze_binds_the_two_repaired_sections(root: Path
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
 
         if study_guide_content_hash(current) != frozen["content_hash"]:
+            # Moved past the audited hash. A later audit may have published it since; only
+            # certification by this audit is ruled out.
             assert current["content_version"] > frozen["content_version"]
-            assert current["verification_status"] == "AUDIT_PENDING"
             assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V4-2026-09-10"
             continue
 
