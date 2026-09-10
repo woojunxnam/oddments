@@ -75,8 +75,39 @@ def _sba(question_id: str, choices: list[tuple[str, str]], key: str, rule_ids: l
 def test_parent_citations_strips_pinpoints() -> None:
     assert parent_citations("247 CMR 9.04(13)") == parent_citations("247 CMR 9.04(12)")
     assert parent_citations("21 CFR 1306.13(b)(1)-(b)(2)") == parent_citations("21 CFR 1306.13(a)")
-    assert parent_citations("M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d)") == {"mgl c 94c s 18"}
+    assert parent_citations("M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d)") == {"mgl c 94c 18 d"}
     assert parent_citations("no citation here") == set()
+
+
+def test_one_provision_written_four_ways_reaches_one_key() -> None:
+    # The corpus spells the chapter as "M.G.L." or in full and the marker as "s." or "§",
+    # and some records keep the chapter in the authority name and the subsection in the
+    # section field. Every spelling has to collapse to one key or two rules citing the same
+    # provision never register as neighbours -- the miss that cost this batch two audit
+    # cycles on SG-CIII-V-REFILL-TRANSFER.
+    expected = {"mgl c 94c 20 c"}
+    assert parent_citations("M.G.L. c. 94C, s. 20(c)") == expected
+    assert parent_citations("M.G.L. c. 94C, § 20(c)") == expected
+    assert parent_citations("Massachusetts General Laws c. 94C § 20(c)") == expected
+    # A range cites every subsection it spans.
+    assert expected <= parent_citations("Massachusetts General Laws c. 94C § 20(a)-(c)")
+
+
+def test_a_statute_section_is_keyed_by_subsection_family() -> None:
+    # A CMR or CFR section addresses one subject, but M.G.L. c. 94C, s. 23 runs from
+    # validity through refills, quantity limits and e-prescribing exceptions. Keying the
+    # statute at section level would make almost every Massachusetts rule a neighbour of
+    # every other, so unrelated subsections must stay apart while a subsection family joins.
+    assert parent_citations("M.G.L. c. 94C, s. 23(a)") != parent_citations("M.G.L. c. 94C, §23(d)")
+    assert parent_citations("M.G.L. c. 94C, s. 18(d3/4)") == parent_citations("M.G.L. c. 94C, § 18(d1/2)")
+    assert parent_citations("M.G.L. c. 94C, § 18(c)") != parent_citations("M.G.L. c. 94C, § 18(d)")
+
+
+def test_a_repeated_section_reference_does_not_widen_the_key() -> None:
+    # Records name the section twice, once bare in the authority name and once with the
+    # subsection: "M.G.L. c.94C §18" + "§18(d), §18(d 1/2)". The bare half must not drag the
+    # key back out to "every rule that mentions s. 18".
+    assert parent_citations("M.G.L. c.94C §18 §18(d), §18(d 1/2)") == {"mgl c 94c 18 d"}
 
 
 def test_scope_gate_finds_the_shapes_auditors_raised() -> None:

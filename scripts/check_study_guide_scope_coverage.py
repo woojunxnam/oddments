@@ -77,12 +77,57 @@ PROSE_FIELDS = (
 CITATION_PATTERNS = (
     re.compile(r"\b(\d{2,3}\s*CMR\s*\d+\.\d+)", re.IGNORECASE),
     re.compile(r"\b(\d{1,2}\s*CFR\s*\d+\.\d+)", re.IGNORECASE),
-    re.compile(r"(M\.?G\.?L\.?\s*c\.?\s*\d+[A-Z]?\s*,?\s*(?:s\.|§)\s*\d+[A-Z]?)", re.IGNORECASE),
+)
+
+# A M.G.L. section is not the same size of thing as a CMR or CFR section. "247 CMR 9.04" and
+# "21 CFR 1306.13" each address one subject, but M.G.L. c. 94C, s. 23 runs from validity
+# through refills, pharmacist endorsement, quantity limits and electronic-prescribing
+# exceptions. Keying a statute at section level therefore makes almost every Massachusetts
+# rule a neighbour of every other. The comparable granularity is the subsection family, so
+# 18(d), 18(d1/2) and 18(d3/4) cluster while 23(a) and 23(d) stay apart. The chapter appears
+# either as "M.G.L. c. 94C" or spelled out, and the marker as "s." or "§"; all spellings have
+# to reach one key or two rules citing the same provision never register as neighbours.
+MGL_CHAPTER_PATTERN = re.compile(
+    r"(?:M\.?G\.?L\.?|Massachusetts\s+General\s+Laws)\s*,?\s*c\.?\s*(\d+[A-Z]?)",
+    re.IGNORECASE,
+)
+# A section reference, with the subsection letter and an optional "(a)-(c)" range. Records
+# spell the marker as "s." or "§" and repeat the section in both the authority name and its
+# section field, so every occurrence in the text is collected and paired with the chapter.
+MGL_SECTION_PATTERN = re.compile(
+    r"(?:s\.|§)\s*(\d+[A-Z]?)"
+    r"(?:\s*\(\s*([A-Za-z])[^)]*\)(?:\s*[-–]\s*\(\s*([A-Za-z])[^)]*\))?)?",
+    re.IGNORECASE,
 )
 
 
 def _normalize_citation(text: str) -> str:
-    return re.sub(r"[\s.,§]+", " ", text).strip().lower().replace("m g l ", "mgl ")
+    return " ".join(re.sub(r"[\s.,§]+", " ", text).strip().lower().split())
+
+
+def _mgl_citations(text: str) -> set[str]:
+    chapters = MGL_CHAPTER_PATTERN.findall(text or "")
+    if not chapters:
+        return set()
+    chapter = chapters[0].lower()
+    bare: set[str] = set()
+    detailed: set[str] = set()
+    for section, first, last in MGL_SECTION_PATTERN.findall(text or ""):
+        base = f"mgl c {chapter} {section.lower()}"
+        if not first:
+            bare.add(base)
+            continue
+        start, end = first.lower(), (last or first).lower()
+        if end < start:
+            start, end = end, start
+        # "§ 20(a)-(c)" cites (a), (b) and (c), so a rule citing any one of them is a
+        # neighbour of a rule citing the range.
+        detailed.update(f"{base} {chr(code)}" for code in range(ord(start), ord(end) + 1))
+    # Records name the section twice, once bare and once with the subsection. Keep only the
+    # subsection keys where both appear, so a precise citation is not widened back out to
+    # "every rule that mentions s. 18".
+    covered = {key.rsplit(" ", 1)[0] for key in detailed}
+    return detailed | {key for key in bare if key not in covered}
 
 
 def parent_citations(text: str) -> set[str]:
@@ -91,7 +136,7 @@ def parent_citations(text: str) -> set[str]:
     for pattern in CITATION_PATTERNS:
         for match in pattern.finditer(text or ""):
             found.add(_normalize_citation(match.group(1)))
-    return found
+    return found | _mgl_citations(text)
 
 
 def section_prose(section: dict[str, Any]) -> str:
@@ -112,7 +157,9 @@ def section_prose(section: dict[str, Any]) -> str:
 def rule_citations(rule: dict[str, Any]) -> set[str]:
     citations: set[str] = set()
     for authority in rule.get("authority", []):
-        citations |= parent_citations(authority.get("section", ""))
+        # Some records carry the chapter in `name` ("Massachusetts General Laws c. 94C") and
+        # only the subsection in `section` ("§ 20(a)-(c)"), so match against both together.
+        citations |= parent_citations(f"{authority.get('name', '')} {authority.get('section', '')}")
     return citations
 
 
