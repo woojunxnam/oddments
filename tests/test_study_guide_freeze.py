@@ -126,13 +126,21 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
         section_id = frozen["section_id"]
         current = sections[section_id]
         assert frozen["content_version"] == 3
-        assert frozen["content_hash"] == current["content_hash"]
         assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
-        assert study_guide_content_hash(current) == frozen["content_hash"]
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
-        # A frozen section is public only where the V3 audit gave it KEEP at this
-        # exact hash with every criterion passing; otherwise it stays private.
         result = v3_results.get(section_id)
+
+        if study_guide_content_hash(current) != frozen["content_hash"]:
+            # A later repair moved this section past the audited hash. Whatever V3 said
+            # about it is historical: it must not still be published on that verdict.
+            assert current["content_version"] > frozen["content_version"]
+            assert current["verification_status"] == "AUDIT_PENDING"
+            assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V3-2026-09-04"
+            continue
+
+        # A frozen section still at its audited hash is public only where the V3 audit
+        # gave it KEEP with every criterion passing; otherwise it stays private.
+        assert frozen["content_hash"] == current["content_hash"]
         if result is not None and result["disposition"] == "KEEP":
             assert result["section_hash"] == frozen["content_hash"]
             assert all(verdict == "PASS" for verdict in result["criteria"].values())

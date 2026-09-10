@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SCHEDULE-VI",
-  "content_version": 3,
-  "content_hash": "2e8b2d6040218d677416c7eebe61ecaeae6061b764e804612de826794ff2d5b6",
+  "content_version": 4,
+  "content_hash": "82f1ecdbb241493ab9db22d4f3c6cbb369e8624c0d8eed84d124d97c137a0ad4",
   "title": "Massachusetts Schedule VI",
   "areas": [
     2,
@@ -12,7 +12,8 @@
   "learning_objectives": [
     "Recognize Schedule VI as a Massachusetts prescription-drug classification rather than a federal controlled schedule.",
     "Apply Massachusetts prescription elements, oral documentation, electronic-prescribing exceptions, and transfer rules without inventing federal consequences.",
-    "Apply the Schedule VI validity clock and the additional-drug consequences instead of treating Schedule VI as a consequence-free label."
+    "Apply the Schedule VI validity clock and the additional-drug consequences instead of treating Schedule VI as a consequence-free label.",
+    "Recognise that the Schedule VI classification carries its own scope-of-practice consequence for who may transfer a prescription."
   ],
   "rule_ids": [
     "MA-SCHEDULE-VI",
@@ -22,7 +23,9 @@
     "MA-RX-REQUIRED-ELEMENTS",
     "MA-RX-TRANSFER",
     "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
-    "MA-RX-CUSTOMER-IDENTIFIER"
+    "MA-RX-CUSTOMER-IDENTIFIER",
+    "MA-RX-DATE-COUNTING",
+    "MA-ORAL-CS-FOLLOWUP-TIMING"
   ],
   "verified_rule_dependencies": {
     "MA-SCHEDULE-VI": {
@@ -56,6 +59,14 @@
     "MA-RX-CUSTOMER-IDENTIFIER": {
       "content_version": 1,
       "content_hash": "754468f985347b81c80b83897a019a5340fa7524713dc59e73da3e2633039aa6"
+    },
+    "MA-RX-DATE-COUNTING": {
+      "content_version": 1,
+      "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841"
+    },
+    "MA-ORAL-CS-FOLLOWUP-TIMING": {
+      "content_version": 1,
+      "content_hash": "2c63e7829be4923f584b688b8b3365b61409577ab4d0b1bde8c66ad451f684a3"
     }
   },
   "quick_review": [
@@ -72,7 +83,7 @@
       ]
     },
     {
-      "text": "An oral controlled-substance prescription must be reduced to writing immediately with the required information; the later documentation provision identified in this rule does not apply to Schedule VI.",
+      "text": "An oral controlled-substance prescription must be reduced to writing immediately with the required information; the separate duty to deliver a later follow-up prescription does not reach Schedule VI.",
       "rule_ids": [
         "MA-ORAL-CONTROLLED-DOCUMENTATION"
       ]
@@ -88,6 +99,12 @@
       "rule_ids": [
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
         "MA-RX-CUSTOMER-IDENTIFIER"
+      ]
+    },
+    {
+      "text": "Schedule VI is the only schedule for which a certified pharmacy technician may perform a prescription transfer, and then only with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
       ]
     }
   ],
@@ -110,7 +127,7 @@
     },
     {
       "condition": "A patient requests transfer of a Schedule VI prescription with authorized refills remaining.",
-      "action": "Use the remaining-refill transfer pathway under 247 CMR 9.14(4); for a Schedule VI prescription authorizing refills, that regulation bars transfer more than one year after issue.",
+      "action": "Use the remaining-refill transfer pathway under 247 CMR 9.14(4); for a Schedule VI prescription authorizing refills that regulation bars transfer more than one year after issue, and a certified pharmacy technician may carry out the transfer with the approval of the pharmacist on duty.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
@@ -166,6 +183,19 @@
       "rule_ids": [
         "MA-SCHEDULE-VI-VALIDITY"
       ]
+    },
+    {
+      "text": "In deciding whether a prescription is within date the pharmacist counts the day after it was written as day one, so the Schedule VI one-year period does not include the issue date itself.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "The follow-up duty Schedule VI escapes is the practitioner's obligation to deliver an electronic prescription within 2 days, or a written one within not more than 7 days where the prescriber holds an electronic-prescribing exception.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "MA-ORAL-CONTROLLED-DOCUMENTATION"
+      ]
     }
   ],
   "timing_deadlines": [
@@ -217,6 +247,13 @@
         "MA-SCHEDULE-VI-VALIDITY",
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
       ]
+    },
+    {
+      "role": "Certified pharmacy technician",
+      "duty": "Perform a prescription transfer only for Schedule VI, and only with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
     }
   ],
   "common_traps": [
@@ -245,6 +282,12 @@
       "rule_ids": [
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
         "MA-RX-CUSTOMER-IDENTIFIER"
+      ]
+    },
+    {
+      "text": "Generalising the certified-technician transfer authority beyond Schedule VI ignores the word only in the regulation.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
       ]
     }
   ],
