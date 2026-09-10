@@ -13,7 +13,10 @@ def test_canonical_study_guide_pilot_validates(registry_indexes) -> None:
     report, sections = validate_study_guide(rules)
 
     assert report.ok
-    assert len(sections) == 5
+    # The guide grows toward full coverage of the canonical rules, so pin the pilot set as
+    # a floor rather than the total.
+    assert {"SG-CONTROLLED-SCHEDULES", "SG-CII-LIFECYCLE", "SG-CIII-V-REFILL-TRANSFER",
+            "SG-MA-SCHEDULE-VI", "SG-FED-MA-INTERACTION"} <= set(sections)
     verified = [s for s in sections.values() if s["verification_status"] == "VERIFIED"]
     pending = [s for s in sections.values() if s["verification_status"] == "AUDIT_PENDING"]
     # Every section is either independently verified or still fails closed, and the

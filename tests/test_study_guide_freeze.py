@@ -19,7 +19,9 @@ def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: 
     assert package["author_is_not_auditor"] is True
     assert package["auditor_instance_reserved"] == "GPT-FRESH-B4-SG-PILOT-V1"
     assert len(package["sections"]) == 5
-    assert set(package["section_ids"]) == set(sections)
+    # The pilot froze every section that existed then. The guide has grown since, so the
+    # freeze covers a subset of the current sections rather than all of them.
+    assert set(package["section_ids"]) <= set(sections)
     revised_section_ids = {
         "SG-CII-LIFECYCLE",
         "SG-CIII-V-REFILL-TRANSFER",
