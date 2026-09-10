@@ -1,0 +1,192 @@
+{
+  "section_id": "SG-MA-OUTSTATE-PRESCRIPTIONS",
+  "content_version": 1,
+  "content_hash": "80a9d22bcdc24f191e555a7c0a19f72a08a1be3f3b711da29b3c46a315377071",
+  "title": "Prescriptions from Out-of-State Practitioners",
+  "areas": [
+    2,
+    3
+  ],
+  "topic": "Prescription validity / Out-of-state practitioners",
+  "subtopic": "Presentation windows and the verification gate",
+  "learning_objectives": [
+    "Choose the presentation window by the schedule of the substance, not by the federal refill clock.",
+    "Apply the mandatory verification gate before filling an out-of-state Schedule III through V prescription."
+  ],
+  "rule_ids": [
+    "MA-RX-OUTSTATE-III-VI",
+    "MA-CII-OUTSTATE",
+    "MA-ORAL-III-V-FOLLOWUP",
+    "MA-OUTSTATE-CII-NARCOTIC"
+  ],
+  "verified_rule_dependencies": {
+    "MA-RX-OUTSTATE-III-VI": {
+      "content_version": 1,
+      "content_hash": "c93d14f9318f7f2e5a38b4147f54906b751c6a60e93e482ef17a9aba7498f9cd"
+    },
+    "MA-CII-OUTSTATE": {
+      "content_version": 1,
+      "content_hash": "356c4dd39d308dbc6c22ab6f047b42cbe47b5e3634f6876dd8ca227f22749888"
+    },
+    "MA-ORAL-III-V-FOLLOWUP": {
+      "content_version": 1,
+      "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0"
+    },
+    "MA-OUTSTATE-CII-NARCOTIC": {
+      "content_version": 1,
+      "content_hash": "f45553bc92cd5d1a116d6dbff6d306161b04591b700f32a639f00b1261153b9a"
+    }
+  },
+  "quick_review": [
+    {
+      "text": "An authorized out-of-state practitioner's Schedule III through VI prescription may be filled in Massachusetts only if it was issued within the preceding 30 days.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "text": "Massachusetts applies a five-day presentation window to out-of-state Schedule II prescriptions instead, under separate subsections with their own issuing-state conditions.",
+      "rule_ids": [
+        "MA-CII-OUTSTATE"
+      ]
+    },
+    {
+      "text": "A Schedule III through V prescription on this pathway must be verified by the pharmacist, and may not be filled if verification cannot be obtained.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "text": "Where the out-of-state prescription is oral and in Schedules III through V, the pharmacist records having requested the practitioner's written prescription.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "The Schedule II narcotic route reaches only a practitioner registered in Maine or a state contiguous with the commonwealth, and requires authentication and verification before the fill.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-NARCOTIC"
+      ]
+    }
+  ],
+  "decision_logic": [
+    {
+      "condition": "An out-of-state practitioner's prescription is presented.",
+      "action": "Identify the schedule first: Schedule III through VI runs on the 30-day window, Schedule II on the five-day window.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-CII-OUTSTATE"
+      ]
+    },
+    {
+      "condition": "The out-of-state prescription is in Schedules III through V.",
+      "action": "Verify it by telephone or other means before filling, and do not fill it if verification cannot be obtained.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "condition": "The out-of-state Schedule III-V prescription was communicated orally.",
+      "action": "Record that you requested the practitioner deliver or mail the written prescription within seven days or the shorter federal period.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "ma_vs_federal": [
+    {
+      "text": "The federal six-month Schedule III-IV clock does not license an out-of-state prescription that Massachusetts no longer treats as fillable; the presentation window is the earlier gate.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "text": "The five-day Schedule II window sits in separate subsections that also carry their own conditions on which issuing states qualify, so it is not simply a shorter version of the same rule.",
+      "rule_ids": [
+        "MA-CII-OUTSTATE"
+      ]
+    },
+    {
+      "text": "Separate delivery provisions govern certain out-of-state residents, so the narcotic route is not simply the nonnarcotic route with a different list of states.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-NARCOTIC"
+      ]
+    }
+  ],
+  "timing_deadlines": [
+    {
+      "event": "Out-of-state Schedule III through VI prescription",
+      "timeframe": "Issued within the preceding 30 days",
+      "consequence": "Outside the window this pathway does not authorize the fill at all.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "event": "Out-of-state Schedule II prescription",
+      "timeframe": "Presented within five days of issue",
+      "consequence": "The 30-day figure does not carry across to Schedule II.",
+      "rule_ids": [
+        "MA-CII-OUTSTATE"
+      ]
+    },
+    {
+      "event": "Practitioner delivery of an out-of-state oral Schedule III-V written follow-up",
+      "timeframe": "Within 7 days or the shorter federal period",
+      "consequence": "The period governs the practitioner's delivery or mailing, not the pharmacist's recording.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "forms_records": [
+    {
+      "text": "On the out-of-state oral Schedule III-V pathway the pharmacist records having requested the practitioner's written prescription.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "role_duties": [
+    {
+      "role": "Pharmacist",
+      "duty": "Verify an out-of-state Schedule III through V prescription before filling it, and refuse the fill where verification cannot be obtained.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    }
+  ],
+  "common_traps": [
+    {
+      "text": "Carrying the 30-day out-of-state window to a Schedule II prescription accepts one that Massachusetts allows only within five days of issue.",
+      "rule_ids": [
+        "MA-CII-OUTSTATE",
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "text": "Filling an out-of-state Schedule III-V prescription on the federal six-month clock skips both the presentation window and the verification gate.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "text": "Treating the seven-day follow-up period as the pharmacist's deadline reverses the timed event.",
+      "rule_ids": [
+        "MA-ORAL-III-V-FOLLOWUP"
+      ]
+    }
+  ],
+  "drug_examples": [],
+  "practice_question_ids": [
+    "MA-Q-0027",
+    "MA-Q-0034",
+    "MA-Q-0124",
+    "MA-Q-0424"
+  ],
+  "last_verified": null,
+  "verification_status": "AUDIT_PENDING",
+  "independent_audit_id": null
+}

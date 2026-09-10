@@ -210,3 +210,42 @@ def test_gates_run_clean_against_the_live_bank() -> None:
         assert finding["code"] in {"POLARITY_SINGLETON", "KEY_RULE_ECHO"}
     # A drafting gate that fires on a large share of an audited bank is measuring noise.
     assert cues["flagged_question_count"] <= cues["sba_count"] * 0.10
+
+
+def test_a_published_section_cannot_outlive_a_corrected_rule() -> None:
+    """Publication stays pinned to current law even though historical audits do not.
+
+    validate_study_guide_audits no longer treats a moved rule as staling every audit that
+    once froze it, because an audit is a record of what was reviewed. The guarantee that
+    replaced it runs through the section: a published section's own dependency snapshot
+    must match the current rules, and refreshing it moves the section's content hash away
+    from the KEEP that published it.
+    """
+    from qa_common import DATA, dependency_snapshot, load_records
+    from study_guide_common import study_guide_content_hash
+    from validate_study_guide_audits import validate_study_guide_audits
+
+    report, audits = validate_study_guide_audits()
+    assert report.ok
+
+    rules = {record["rule_id"]: record for _, record in load_records(DATA / "rules")}
+    sections = {
+        record["section_id"]: record
+        for _, record in load_records(DATA / "study_guide" / "sections")
+    }
+    published = {
+        section_id: section
+        for section_id, section in sections.items()
+        if section["verification_status"] == "VERIFIED"
+    }
+    assert published
+
+    for section_id, section in published.items():
+        # Every dependency snapshot a published section carries is the current rule.
+        for rule_id, snapshot in section["verified_rule_dependencies"].items():
+            assert snapshot == dependency_snapshot(rules[rule_id]), section_id
+        # And the hash those snapshots feed is the hash its audit gave a KEEP.
+        audit = audits[section["independent_audit_id"]]
+        result = next(item for item in audit["results"] if item["section_id"] == section_id)
+        assert result["disposition"] == "KEEP"
+        assert result["section_hash"] == study_guide_content_hash(section)

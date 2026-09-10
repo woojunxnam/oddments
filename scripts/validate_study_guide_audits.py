@@ -81,13 +81,24 @@ def validate_study_guide_audits() -> tuple[QAReport, dict[str, dict[str, Any]]]:
             if result.get("disposition") == "KEEP" and (failed or result.get("practice_mapping_verdict") != "PASS"):
                 report.error(f"{path}: KEEP section {section_id} has failed criteria")
 
-            for dependency in frozen.get("rule_dependencies", []):
-                current_rule = rules.get(dependency["rule_id"])
-                if not current_rule or (
-                    current_rule.get("content_version") != dependency["content_version"]
-                    or current_rule.get("content_hash") != dependency["content_hash"]
-                ):
-                    report.error(f"{path}: stale rule dependency {dependency['rule_id']} for {section_id}")
+            # Frozen dependencies only have to still be current where this audit is the one
+            # holding a section open to the public. For any other audit a moved rule is
+            # ordinary history: the rule was corrected after the audit read it, and the
+            # audit stays an accurate record of what was reviewed.
+            #
+            # Publication is protected without this check. A published section's own
+            # verified_rule_dependencies must match the current rules, which
+            # validate_study_guide enforces, and updating them moves the section's content
+            # hash, which the VERIFIED-section loop below then catches against the audit
+            # that certified it.
+            if current and current.get("independent_audit_id") == audit_id:
+                for dependency in frozen.get("rule_dependencies", []):
+                    current_rule = rules.get(dependency["rule_id"])
+                    if not current_rule or (
+                        current_rule.get("content_version") != dependency["content_version"]
+                        or current_rule.get("content_hash") != dependency["content_hash"]
+                    ):
+                        report.error(f"{path}: stale rule dependency {dependency['rule_id']} for {section_id}")
             for dependency in frozen.get("practice_question_dependencies", []):
                 current_question = questions.get(dependency["question_id"])
                 if not current_question or question_audit_hash(current_question) != dependency["question_hash"]:
