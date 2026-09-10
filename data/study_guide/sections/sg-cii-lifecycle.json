@@ -1,27 +1,27 @@
 {
   "section_id": "SG-CII-LIFECYCLE",
-  "content_version": 3,
-  "content_hash": "3f12347a397b70bc04a4f571223b27b4dec5a81e538bdb3eb89bdeb0fe90dba6",
-  "title": "Schedule II Prescriptions, Emergency Oral Orders, and Partial Fills",
+  "content_version": 4,
+  "content_hash": "4093a74b31ce6aaac6d19e71b0d2f019d4151e08bd65339c2dc1cfc39febcb00",
+  "title": "Schedule II Partial Fills and the Massachusetts 30-Day Ceiling",
   "areas": [
     2,
     3
   ],
-  "topic": "Controlled prescriptions",
-  "subtopic": "Schedule II lifecycle",
+  "topic": "Partial filling / Schedule II",
+  "subtopic": "Choosing the pathway, the clock and the record",
   "learning_objectives": [
     "Distinguish a prohibited refill from a lawful remainder of a partial fill.",
-    "Choose the correct deadline by identifying why and under which pathway a Schedule II prescription was partially filled.",
-    "Apply the emergency oral quantity and follow-up requirements as separate conditions."
+    "Choose the federal remainder clock by identifying which partial-fill pathway the facts trigger.",
+    "Apply the Massachusetts 30-day issue-date ceiling on top of whichever federal clock the pathway supplies.",
+    "State what the partial-fill record must contain in each pathway."
   ],
   "rule_ids": [
     "FED-CII-NO-REFILL",
-    "FED-CII-EMERGENCY-ORAL",
-    "FED-CII-EMERGENCY-FOLLOWUP",
-    "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
     "FED-CII-PARTIAL-72H",
     "FED-CII-PARTIAL-PATIENT",
     "FED-CII-LTC-TERMINAL",
+    "FED-CII-PARTIAL-FILL-NOTATION",
+    "FED-CII-LTCF-TERMINAL-RECORDS",
     "MA-CII-VALIDITY-30D",
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
     "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
@@ -30,18 +30,6 @@
     "FED-CII-NO-REFILL": {
       "content_version": 1,
       "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
-    },
-    "FED-CII-EMERGENCY-ORAL": {
-      "content_version": 1,
-      "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103"
-    },
-    "FED-CII-EMERGENCY-FOLLOWUP": {
-      "content_version": 1,
-      "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe"
-    },
-    "FED-CII-EMERGENCY-MISSING-FOLLOWUP": {
-      "content_version": 1,
-      "content_hash": "1a6473a17645dca1f4c0e49562e7d21decbb578d2e2f3ff79c63dc65af8e617e"
     },
     "FED-CII-PARTIAL-72H": {
       "content_version": 1,
@@ -54,6 +42,14 @@
     "FED-CII-LTC-TERMINAL": {
       "content_version": 1,
       "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09"
+    },
+    "FED-CII-PARTIAL-FILL-NOTATION": {
+      "content_version": 1,
+      "content_hash": "02dfc01e050088e48d266e1ee05ae59227ac722fc498c409e488995100da5d4c"
+    },
+    "FED-CII-LTCF-TERMINAL-RECORDS": {
+      "content_version": 1,
+      "content_hash": "59b81d0dde3dba94c89e94756bd768d55097ee9c1152d8aacb093c8d47c48e4c"
     },
     "MA-CII-VALIDITY-30D": {
       "content_version": 1,
@@ -70,206 +66,36 @@
   },
   "quick_review": [
     {
-      "text": "A Schedule II prescription may not be refilled; a lawful unfilled remainder is not a refill.",
+      "text": "A Schedule II prescription may not be refilled; dispensing a lawful unfilled remainder of a partial fill is not a refill.",
       "rule_ids": [
         "FED-CII-NO-REFILL"
       ]
     },
     {
-      "text": "Emergency oral Schedule II dispensing is limited to the amount adequate to treat the patient during the emergency period, and the pharmacist must make a reasonable effort to confirm the oral authorization came from a registered practitioner if that practitioner is not known to the pharmacist.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-ORAL"
-      ]
-    },
-    {
-      "text": "The prescriber must deliver the required written or electronic follow-up prescription within seven days after authorizing the emergency oral dispensing.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-FOLLOWUP"
-      ]
-    },
-    {
-      "text": "If that emergency oral follow-up does not arrive within seven days, the pharmacist must notify the DEA.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
-      ]
-    },
-    {
-      "text": "A Schedule II prescription for an LTCF resident or terminally ill patient has a separate partial-fill pathway lasting up to 60 days from issue unless discontinued sooner.",
-      "rule_ids": [
-        "FED-CII-LTC-TERMINAL"
-      ]
-    },
-    {
-      "text": "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after issue.",
-      "rule_ids": [
-        "MA-CII-VALIDITY-30D"
-      ]
-    }
-  ],
-  "decision_logic": [
-    {
-      "condition": "The original Schedule II quantity was fully dispensed.",
-      "action": "Do not process an additional dispensing as a refill; require a new lawful prescription unless another distinct pathway applies.",
-      "rule_ids": [
-        "FED-CII-NO-REFILL"
-      ]
-    },
-    {
-      "condition": "The pharmacy could not supply the full Schedule II quantity.",
-      "action": "Use the federal stock-shortage partial-fill pathway and its 72-hour remainder rule.",
-      "rule_ids": [
-        "FED-CII-PARTIAL-72H"
-      ]
-    },
-    {
-      "condition": "The patient or prescriber requested a partial fill of a non-emergency written or electronic Schedule II prescription and State law does not prohibit it.",
-      "action": "Use the request-based pathway and complete any remainder no later than 30 days after the prescription was written, while also satisfying Massachusetts conditions.",
-      "rule_ids": [
-        "FED-CII-PARTIAL-PATIENT",
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
-      ]
-    },
-    {
-      "condition": "The patient or prescriber requests a partial fill of an emergency oral Schedule II prescription.",
-      "action": "Use the request-based emergency exception and complete any remainder no later than 72 hours after the prescription was issued.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-ORAL",
-        "FED-CII-PARTIAL-PATIENT"
-      ]
-    },
-    {
-      "condition": "The Schedule II prescription is for an LTCF resident or a terminally ill patient.",
-      "action": "Use the special federal documentation pathway; partial fillings may continue for no more than 60 days from issue and must stop sooner if the prescription is discontinued.",
-      "rule_ids": [
-        "FED-CII-LTC-TERMINAL"
-      ]
-    },
-    {
-      "condition": "The emergency oral Schedule II follow-up has not reached the pharmacy within seven days after oral authorization.",
-      "action": "The pharmacist must notify the DEA of the practitioner's failure to deliver the required follow-up prescription.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-FOLLOWUP",
-        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
-      ]
-    },
-    {
-      "condition": "A Massachusetts patient requests a lesser quantity.",
-      "action": "Record the partial fill, keep later remainder dispensing at the same pharmacy, and apply the Massachusetts issue-date deadlines.",
-      "rule_ids": [
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
-      ]
-    }
-  ],
-  "ma_vs_federal": [
-    {
-      "text": "Federal patient-requested partial filling is permissive and requires only that the partial fill not be prohibited by State law; Massachusetts goes further and makes the lesser-quantity dispensing mandatory on patient request while adding same-pharmacy, patient-record, and issue-date conditions.",
-      "rule_ids": [
-        "FED-CII-PARTIAL-PATIENT",
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
-      ]
-    }
-  ],
-  "exceptions": [
-    {
-      "text": "The 72-hour remainder rule is tied to the pharmacy's inability to supply the full quantity and should not be substituted for a patient-requested partial-fill pathway.",
+      "text": "Federal law supplies three partial-fill pathways with three different remainder clocks: 72 hours when the pharmacy could not supply the full quantity, 30 days from the writing date when the patient or prescriber requested the partial fill, and up to 60 days from issue for an LTCF resident or a terminally ill patient.",
       "rule_ids": [
         "FED-CII-PARTIAL-72H",
-        "FED-CII-PARTIAL-PATIENT"
-      ]
-    },
-    {
-      "text": "The request-based 30-day remainder rule has a separate emergency-oral exception: an emergency oral Schedule II remainder must be completed within 72 hours after issue.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-ORAL",
-        "FED-CII-PARTIAL-PATIENT"
-      ]
-    },
-    {
-      "text": "Do not apply the ordinary 30-day request-based deadline to the special LTCF or terminal-illness pathway, which may continue for up to 60 days from issue unless discontinued sooner.",
-      "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "FED-CII-LTC-TERMINAL"
       ]
     },
     {
-      "text": "Massachusetts' five-day initial partial-dispensing limit in this statute applies to prescriptions filled under the specified out-of-state Schedule II subsections, not every patient-requested partial fill.",
-      "rule_ids": [
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
-      ]
-    }
-  ],
-  "timing_deadlines": [
-    {
-      "event": "Emergency oral Schedule II follow-up",
-      "timeframe": "Within 7 days after oral authorization",
-      "consequence": "The required written or electronic follow-up must reach the pharmacy.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-FOLLOWUP"
-      ]
-    },
-    {
-      "event": "Missing emergency oral Schedule II follow-up",
-      "timeframe": "After the 7-day delivery period expires",
-      "consequence": "The pharmacist must notify the DEA of the practitioner's failure to deliver the follow-up prescription.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-FOLLOWUP",
-        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
-      ]
-    },
-    {
-      "event": "Stock-shortage Schedule II remainder",
-      "timeframe": "Within 72 hours of the first partial filling",
-      "consequence": "Otherwise notify the prescriber and obtain a new prescription for further quantity.",
-      "rule_ids": [
-        "FED-CII-PARTIAL-72H"
-      ]
-    },
-    {
-      "event": "Patient-requested Schedule II remainder",
-      "timeframe": "No later than 30 days after issue",
-      "consequence": "For a non-emergency written or electronic prescription, the remaining portion cannot be dispensed after the deadline.",
-      "rule_ids": [
-        "FED-CII-PARTIAL-PATIENT",
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
-      ]
-    },
-    {
-      "event": "Request-based emergency oral Schedule II remainder",
-      "timeframe": "No later than 72 hours after issue",
-      "consequence": "The emergency oral remainder cannot use the ordinary 30-day request-based period.",
-      "rule_ids": [
-        "FED-CII-EMERGENCY-ORAL",
-        "FED-CII-PARTIAL-PATIENT"
-      ]
-    },
-    {
-      "event": "LTCF or terminal-illness Schedule II partial fills",
-      "timeframe": "Up to 60 days from issue unless discontinued sooner",
-      "consequence": "Further partial dispensing must stop at the 60-day limit or upon earlier discontinuation.",
-      "rule_ids": [
-        "FED-CII-LTC-TERMINAL"
-      ]
-    },
-    {
-      "event": "Massachusetts written or electronic Schedule II validity",
-      "timeframe": "30 days after issue",
-      "consequence": "The prescription becomes invalid.",
+      "text": "In Massachusetts a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance under M.G.L. c. 94C, s. 23(a), so no federal pathway can be worked past day 30 on that prescription.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D"
       ]
-    }
-  ],
-  "forms_records": [
+    },
     {
-      "text": "Massachusetts requires a notation of each partial dispensing and quantity in the pharmacy patient record, accessible to the prescriber on request.",
+      "text": "M.G.L. c. 94C, s. 18(d3/4) makes the lesser-quantity dispensing mandatory on patient request, keeps the remaining portion at the same pharmacy that dispensed the lesser quantity, requires a patient-record notation of the partial fill and quantity, and requires the remaining portion to be filled not later than 30 days after the prescription issue date.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
       ]
     },
     {
-      "text": "LTCF and terminal-illness Schedule II partial fills must use the special federal documentation framework for that pathway.",
+      "text": "Every federal partial fill carries a notation duty of its own, and on the LTCF or terminal-illness pathway a partially filled prescription lacking the 'terminally ill' or 'LTCF patient' notation is deemed filled in violation of the Act.",
       "rule_ids": [
-        "FED-CII-LTC-TERMINAL"
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "FED-CII-LTCF-TERMINAL-RECORDS"
       ]
     },
     {
@@ -279,28 +105,217 @@
       ]
     }
   ],
-  "role_duties": [
+  "decision_logic": [
     {
-      "role": "Pharmacist",
-      "duty": "Identify the factual trigger for a partial fill before selecting a deadline.",
+      "condition": "The original Schedule II quantity was fully dispensed.",
+      "action": "Do not process an additional dispensing as a refill; require a new lawful prescription unless a distinct pathway applies.",
+      "rule_ids": [
+        "FED-CII-NO-REFILL"
+      ]
+    },
+    {
+      "condition": "The pharmacy could not supply the full Schedule II quantity.",
+      "action": "Note the quantity supplied on the prescription record, then use the 72-hour remainder rule; past 72 hours notify the prescriber and obtain a new prescription for any further quantity.",
       "rule_ids": [
         "FED-CII-PARTIAL-72H",
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "condition": "The patient or the prescriber requested a partial fill of a written or electronic Schedule II prescription and state law does not prohibit it.",
+      "action": "Record the requester and the date of the request with the quantity dispensed, and complete any remainder no later than 30 days after the prescription was written.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "condition": "The patient or prescriber requested a partial fill of an emergency oral Schedule II prescription.",
+      "action": "Complete any remainder no later than 72 hours after the prescription was issued; the ordinary 30-day request-based period does not reach an emergency oral prescription.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "condition": "The Schedule II prescription is for an LTCF resident or a patient with a documented terminal illness.",
+      "action": "Record 'LTCF patient' or 'terminally ill' on the prescription before partially filling it, contact the practitioner first if terminal status is uncertain, and log the date, quantity dispensed, remaining quantity authorized and dispensing pharmacist for each partial filling.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL",
+        "FED-CII-LTCF-TERMINAL-RECORDS"
+      ]
+    },
+    {
+      "condition": "The federal pathway you selected would allow a further partial dispensing more than 30 days after the Massachusetts written or electronic Schedule II prescription was issued.",
+      "action": "Stop. The prescription is already invalid in Massachusetts under M.G.L. c. 94C, s. 23(a); the federal outer limit is a ceiling on federal authority and does not extend Massachusetts validity.",
+      "rule_ids": [
+        "MA-CII-VALIDITY-30D",
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
+      "condition": "A Massachusetts patient requests a lesser quantity of a Schedule II prescription.",
+      "action": "Dispense the lesser quantity, note the partial fill and quantity in the patient record accessible to the prescriber on request, keep any remainder at the same pharmacy, and fill it not later than 30 days after the issue date.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "ma_vs_federal": [
+    {
+      "text": "21 CFR 1306.13(c) allows LTCF and terminal-illness Schedule II partial fills for up to 60 days from issue, but M.G.L. c. 94C, s. 23(a) invalidates the written or electronic prescription 30 days after issuance. Both apply, so in Massachusetts the working outer limit on that prescription is 30 days and the federal 60-day figure is the answer only to a question that asks what federal law alone permits.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL",
+        "MA-CII-VALIDITY-30D"
+      ]
+    },
+    {
+      "text": "Federal patient-requested partial filling is permissive and asks only that the partial fill not be prohibited by state law; M.G.L. c. 94C, s. 18(d3/4) goes further and makes the lesser-quantity dispensing mandatory on patient request while adding same-pharmacy, patient-record and issue-date conditions.",
+      "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
       ]
     },
     {
-      "role": "Prescriber",
-      "duty": "Deliver the required emergency oral Schedule II follow-up prescription within seven days.",
+      "text": "Partial-fill notation is not a Massachusetts-only duty: 21 CFR 1306.13(a) and (b)(5) impose federal notation and dispensing-record duties that run alongside the Massachusetts patient-record notation.",
       "rule_ids": [
-        "FED-CII-EMERGENCY-FOLLOWUP"
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "text": "The 72-hour remainder rule is tied to the pharmacy's inability to supply the full quantity and is not a substitute for the request-based pathway.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-72H",
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "The request-based 30-day remainder period carries its own emergency-oral exception: the remainder of a partially filled emergency oral Schedule II prescription must be filled no later than 72 hours after the prescription is issued.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "The 60-day LTCF and terminal-illness period is an outer limit on that federal pathway, not an extension of any state validity period, and it ends earlier if the medication is discontinued.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL",
+        "MA-CII-VALIDITY-30D"
+      ]
+    },
+    {
+      "text": "The five-day initial partial-dispensing limit in M.G.L. c. 94C, s. 18(d3/4) reaches only a prescription filled under subsection (d) or (d1/2) -- respectively a nonnarcotic Schedule II prescription from an out-of-state practitioner and a narcotic Schedule II prescription from a practitioner registered in Maine or a state contiguous with the commonwealth -- and not every patient-requested partial fill. The conditions those two subsections place on the underlying prescription are the subject of the out-of-state pathway, not of this section.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "timing_deadlines": [
+    {
+      "event": "Stock-shortage Schedule II remainder",
+      "timeframe": "Within 72 hours of the first partial filling",
+      "consequence": "Otherwise notify the prescriber; no further quantity may be supplied beyond 72 hours without a new prescription.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-72H"
+      ]
+    },
+    {
+      "event": "Request-based Schedule II remainder, written or electronic prescription",
+      "timeframe": "No later than 30 days after the prescription was written",
+      "consequence": "The remaining portion cannot be dispensed after the deadline.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "event": "Request-based Schedule II remainder, emergency oral prescription",
+      "timeframe": "No later than 72 hours after the prescription is issued",
+      "consequence": "The emergency oral remainder cannot use the ordinary 30-day request-based period.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "event": "LTCF or terminal-illness Schedule II partial fills, federal ceiling",
+      "timeframe": "Up to 60 days from the issue date unless discontinued sooner",
+      "consequence": "This is the federal outer limit on the pathway; it is the correct answer only where the question asks what federal law alone permits.",
+      "rule_ids": [
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
+      "event": "Massachusetts written or electronic Schedule II prescription, including one being partially filled on the LTCF or terminal-illness pathway",
+      "timeframe": "30 days after the date of issuance",
+      "consequence": "The prescription becomes invalid, so further partial dispensing must stop at day 30 even though federal law would have allowed 60.",
+      "rule_ids": [
+        "MA-CII-VALIDITY-30D",
+        "FED-CII-LTC-TERMINAL"
+      ]
+    },
+    {
+      "event": "Massachusetts remaining portion after a patient-requested partial fill",
+      "timeframe": "Not later than 30 days after the prescription issue date",
+      "consequence": "M.G.L. c. 94C, s. 18(d3/4) closes the remainder at the same point the general validity rule closes the prescription.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    }
+  ],
+  "forms_records": [
+    {
+      "text": "On the stock-shortage pathway the pharmacist notes the quantity supplied on the face of the written prescription, in the written record of the emergency oral prescription, or in the electronic prescription record.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "text": "On the request-based pathway the notation identifies who requested the partial fill and when: a practitioner request made in consultation is noted as 'Authorized by Practitioner to Partial Fill' with the practitioner's name, the date and time of the discussion and the pharmacist's initials, and a patient, guardian or named caregiver request is noted as that person having requested the partial fill on a stated date, with the quantity dispensed.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "text": "Each request-based partial filling also generates a dispensing record carrying the date, the name or initials of the person who dispensed, and the elements 21 CFR 1306.22(c) requires for Schedule III and IV refills; for an electronic prescription that information must be linked to the electronic prescription record.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "text": "On the LTCF or terminal-illness pathway the pharmacist records 'terminally ill' or 'LTCF patient' on the prescription itself, and for each partial filling records the date, the quantity dispensed, the remaining quantity authorized and the dispensing pharmacist's identification.",
+      "rule_ids": [
+        "FED-CII-LTCF-TERMINAL-RECORDS"
+      ]
+    },
+    {
+      "text": "Massachusetts adds a notation of each partial dispensing and its quantity in the pharmacy patient record, accessible to the prescribing practitioner on request.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "A Massachusetts prescription for a Schedule II opioid must itself carry the notation under M.G.L. c. 94C, s. 22(c) that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "rule_ids": [
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ]
+    }
+  ],
+  "role_duties": [
+    {
+      "role": "Pharmacist",
+      "duty": "Identify the factual trigger for the partial fill before selecting any deadline, because the three federal pathways carry three different clocks.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-72H",
+        "FED-CII-PARTIAL-PATIENT",
+        "FED-CII-LTC-TERMINAL"
       ]
     },
     {
       "role": "Pharmacist",
-      "duty": "Notify the DEA if the practitioner fails to deliver the emergency oral Schedule II follow-up within seven days.",
+      "duty": "Check the Massachusetts issue-date ceiling before dispensing any remainder, since a federal pathway that is still open may sit on a prescription Massachusetts has already invalidated.",
       "rule_ids": [
-        "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+        "MA-CII-VALIDITY-30D"
       ]
     },
     {
@@ -308,6 +323,13 @@
       "duty": "Dispense the lesser quantity when a Massachusetts patient requests a partial fill of a Schedule II prescription; that dispensing is mandatory rather than discretionary.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Contact the practitioner before partially filling where it is unclear whether the patient may be classified as terminally ill; the responsibility to assure the substance is for a terminally ill patient is shared with the prescriber.",
+      "rule_ids": [
+        "FED-CII-LTCF-TERMINAL-RECORDS"
       ]
     }
   ],
@@ -327,11 +349,10 @@
       ]
     },
     {
-      "text": "Applying 30 days to every request-based remainder misses the 72-hour emergency-oral exception and the separate 60-day LTCF or terminal-illness path.",
+      "text": "Carrying the federal 60-day figure into a Massachusetts scenario dispenses a Schedule II drug on a prescription that M.G.L. c. 94C, s. 23(a) invalidated on day 31.",
       "rule_ids": [
-        "FED-CII-EMERGENCY-ORAL",
-        "FED-CII-PARTIAL-PATIENT",
-        "FED-CII-LTC-TERMINAL"
+        "FED-CII-LTC-TERMINAL",
+        "MA-CII-VALIDITY-30D"
       ]
     },
     {
@@ -339,6 +360,18 @@
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
         "FED-CII-PARTIAL-PATIENT"
+      ]
+    },
+    {
+      "text": "Treating the LTCF or terminal-illness notation as clerical overlooks that a partially filled prescription without it is deemed filled in violation of the Act.",
+      "rule_ids": [
+        "FED-CII-LTCF-TERMINAL-RECORDS"
+      ]
+    },
+    {
+      "text": "Assuming the Schedule II opioid partial-fill notation lives in the pharmacy record misses that M.G.L. c. 94C, s. 22(c) places it on the prescription itself.",
+      "rule_ids": [
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
       ]
     }
   ],
@@ -348,8 +381,10 @@
     "MA-Q-0012",
     "MA-Q-0021",
     "MA-Q-0094",
-    "MA-Q-0104",
-    "MA-Q-0401"
+    "MA-Q-0160",
+    "MA-Q-0161",
+    "MA-Q-0401",
+    "MA-Q-0432"
   ],
   "last_verified": null,
   "verification_status": "AUDIT_PENDING",
