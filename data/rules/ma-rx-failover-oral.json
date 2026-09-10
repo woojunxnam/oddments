@@ -1,15 +1,21 @@
 {
   "rule_id": "MA-RX-FAILOVER-ORAL",
-  "content_version": 1,
-  "content_hash": "c58b0a69b6ae6fd7069bc1b2503a343d628b91b9c16a762a5f8fc477f92a8211",
-  "title": "A Failover counts as an oral prescription and needs no follow-up",
+  "content_version": 2,
+  "content_hash": "6892d88c2c3ce28ecc3c8f99ba9a543b64210e8e497776bc7114d60c7a75246b",
+  "title": "A Failover is a Schedule VI device that counts as an oral prescription",
   "jurisdiction": "MA",
   "area": 2,
   "topic": "Prescription format",
   "subtopic": "Failover",
-  "rule_summary": "Under 105 CMR 721.020(G) a Failover SHALL BE CONSIDERED AN ORAL PRESCRIPTION and SHALL NOT REQUIRE a written or electronic follow-up prescription, provided all three conditions hold: the prescription contains everything M.G.L. c. 94C, s. 20(a) requires except the practitioner's signature and is immediately entered into a compliant electronic pharmacy system or otherwise reduced to writing by the dispensing pharmacist; if the prescribing practitioner is not known to the dispensing pharmacist, that pharmacist makes a reasonable good faith effort to determine the Failover was issued by a prescribing practitioner; and the prescription is NOT FOR AN ADDITIONAL DRUG as defined in 105 CMR 700.001. Under 105 CMR 721.040(C) an electronic prescription transmitted by other means is invalid except in the event of a Failover verified under 721.020(G).",
-  "exam_relevance": "Tests the one route by which a Massachusetts oral controlled-substance prescription escapes the follow-up duty, and the additional-drug condition candidates miss.",
+  "rule_summary": "105 CMR 721.010 defines a FAILOVER as a document that ORIGINATES AS A SCHEDULE VI ELECTRONIC PRESCRIPTION, experiences an unforeseen defect during electronic transmission as outlined in Department guidance, and IS CONVERTED TO A COMPUTER GENERATED FACSIMILE. Only such a document qualifies. Under 105 CMR 721.020(G) a Failover SHALL BE CONSIDERED AN ORAL PRESCRIPTION and SHALL NOT REQUIRE a written or electronic follow-up prescription, provided all three conditions hold: it contains everything M.G.L. c. 94C, s. 20(a) requires except the practitioner's signature and is immediately entered into a compliant electronic pharmacy system or otherwise reduced to writing by the dispensing pharmacist; if the prescribing practitioner is not known to the dispensing pharmacist, that pharmacist makes a reasonable good faith effort to determine the Failover was issued by a prescribing practitioner; and the prescription is NOT FOR AN ADDITIONAL DRUG as defined in 105 CMR 700.001. Under 105 CMR 721.040(C) an electronic prescription transmitted by other means is invalid except in the event of a Failover verified under 721.020(G). A Schedule II through V oral prescription taken during a transmission outage is NOT a Failover; it falls under the separate 105 CMR 721.070(A)(2) exception and still owes the 721.070(B) follow-up.",
+  "exam_relevance": "Tests whether the candidate applies the Schedule VI limit in the Failover definition before reaching the three conditions, rather than treating any transmission outage as a follow-up waiver.",
   "authority": [
+    {
+      "type": "PROMULGATED_REGULATION",
+      "name": "Definition of Failover",
+      "section": "105 CMR 721.010",
+      "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+    },
     {
       "type": "PROMULGATED_REGULATION",
       "name": "Failover treated as an oral prescription",
@@ -29,11 +35,13 @@
   "last_verified": "2026-09-10",
   "numeric_facts": [],
   "exceptions": [
-    "The three conditions in 105 CMR 721.020(G)(1)-(3) are conjunctive; failing any one leaves the ordinary follow-up duty in place.",
+    "A Failover is Schedule VI by definition; no Schedule II through V prescription can be one.",
+    "The three conditions in 105 CMR 721.020(G)(1)-(3) are conjunctive, and they apply only after the definitional test is met.",
     "A Failover for an Additional Drug does not qualify, so the follow-up duty continues to apply to it."
   ],
   "common_confusions": [
-    "Treating every technological failure as a Failover without the three conditions.",
+    "Treating any technological or electrical failure as a Failover, when that is the separate 105 CMR 721.070(A)(2) exception and leaves the follow-up duty in place.",
+    "Reading the three 721.020(G) conditions as the whole qualification and missing the Schedule VI limit upstream in the definition.",
     "Assuming the additional-drug carve-out is a formality rather than a condition that defeats the exception."
   ],
   "related_rule_ids": [
@@ -42,5 +50,5 @@
     "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
   ],
   "verification_status": "PRIMARY_VERIFIED",
-  "verification_notes": "105 CMR 721.020(G) and 721.040(C) read verbatim in the current official publication dated 9/27/24 on 2026-09-10, while building the Massachusetts oral-prescription section. Independent audit still required."
+  "verification_notes": "105 CMR 721.010, 721.020(G) and 721.040(C) read verbatim in the current official publication dated 9/27/24 on 2026-09-10. v2 adds the definitional Schedule VI limit that v1 omitted, which the GPT-FRESH-B4-SG-REPAIR-V5 audit found had let a dependent section teach the Failover without any schedule restriction. Independent audit still required."
 }
