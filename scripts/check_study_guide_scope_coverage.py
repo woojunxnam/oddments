@@ -39,6 +39,22 @@ from qa_common import DATA, QAReport, VERIFIED_RULE_STATUSES, load_records, prin
 from study_guide_common import STUDY_GUIDE_HASH_FIELDS
 
 NARROW_TOPIC_MAX = 6
+# Share of an authority's own subject-matter words that must appear in the prose before
+# the section counts as having used that authority.
+SUBJECT_MATCH_SHARE = 0.5
+
+STOPWORDS = frozenset(
+    """a an the and or of to in for on by with as is are be been being that this those these it its
+    not no any all each may must shall can when where which who whom whose if then than from at into
+    under over per such other same only also more most less least both either neither massachusetts
+    standards requirements general law laws"""
+    .split()
+)
+
+
+def _content_tokens(text: str) -> set[str]:
+    tokens = re.findall(r"[a-z0-9]+(?:['-][a-z0-9]+)*", (text or "").lower())
+    return {token for token in tokens if token not in STOPWORDS and len(token) > 3}
 
 PROSE_FIELDS = (
     "title",
@@ -173,10 +189,21 @@ def analyze_scope_coverage(
                     }
                 )
 
+        prose_tokens = _content_tokens(prose)
         for rule_id in cited:
             for authority in usable[rule_id].get("authority", []):
                 pinpoints = parent_citations(authority.get("section", ""))
-                if pinpoints and not (pinpoints & prose_citations):
+                if not pinpoints or (pinpoints & prose_citations):
+                    continue
+                # The guide renders pinpoint citations separately from the prose, so a
+                # missing citation string is a weak proxy. What the signal is really for
+                # is a section leaning on a rule while using only part of what it stands
+                # for, so also accept the authority's own subject matter appearing in the
+                # prose.
+                subject = _content_tokens(authority.get("name", ""))
+                if subject and len(subject & prose_tokens) >= max(2, len(subject) * SUBJECT_MATCH_SHARE):
+                    continue
+                if True:
                     findings.append(
                         {
                             "code": "UNUSED_AUTHORITY",
