@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SCHEDULE-VI",
-  "content_version": 6,
-  "content_hash": "e34ce5416f9beacd5ef8f9ce75f835a50409ec7f7bc44d475796fbcaaea054a7",
+  "content_version": 8,
+  "content_hash": "14922fce61f6ceedf0d65827344fec6557290393cc641d2768d7df7673c3b072",
   "title": "Massachusetts Schedule VI",
   "areas": [
     2,
@@ -13,7 +13,8 @@
     "Recognize Schedule VI as a Massachusetts prescription-drug classification rather than a federal controlled schedule.",
     "Apply Massachusetts prescription elements, oral documentation, electronic-prescribing exceptions, and transfer rules without inventing federal consequences.",
     "Apply the Schedule VI validity clock and the additional-drug consequences instead of treating Schedule VI as a consequence-free label.",
-    "Recognise that the Schedule VI classification carries its own scope-of-practice consequence for who may transfer a prescription."
+    "Recognise that the Schedule VI classification carries its own scope-of-practice consequence for who may transfer a prescription.",
+    "Identify every date gate that can bar a Schedule VI prescription, including the out-of-state 30-day window that sits alongside the one-year validity clock."
   ],
   "rule_ids": [
     "MA-SCHEDULE-VI",
@@ -28,7 +29,9 @@
     "MA-ORAL-CS-FOLLOWUP-TIMING",
     "MA-RX-WRITTEN-FORMAT",
     "MA-RX-FAILOVER-ORAL",
-    "MA-PMP-TRANSMISSION-TIMING"
+    "MA-PMP-TRANSMISSION-TIMING",
+    "MA-RX-OUTSTATE-III-VI",
+    "MA-RX-FORMAT-CONTENT"
   ],
   "verified_rule_dependencies": {
     "MA-SCHEDULE-VI": {
@@ -82,8 +85,385 @@
     "MA-PMP-TRANSMISSION-TIMING": {
       "content_version": 1,
       "content_hash": "449cbc228153f79b8c4fa61a6649d8114a9181330de4c30b7fdd89a64780b356"
+    },
+    "MA-RX-OUTSTATE-III-VI": {
+      "content_version": 1,
+      "content_hash": "c93d14f9318f7f2e5a38b4147f54906b751c6a60e93e482ef17a9aba7498f9cd"
+    },
+    "MA-RX-FORMAT-CONTENT": {
+      "content_version": 1,
+      "content_hash": "3a8a543f1cbb43ec0afbf1dddffdb85378882d467862d5167f982bb5cd948c70"
     }
   },
+  "orientation": [
+    {
+      "text": "Massachusetts Schedule VI is the residual schedule: it holds prescription drugs that Massachusetts has not otherwise placed in Schedules I through V. Schedule VI has no federal counterpart, so the ordinary prescription drug that carries no federal schedule is, in Massachusetts, a Schedule VI controlled substance. Two consequences follow, and they pull in opposite directions. Because Schedule VI is not a federal schedule, Schedule VI status does not by itself make a drug federally controlled, and federal controlled-substance mechanics do not automatically travel with the label. Because Schedule VI is nonetheless a Massachusetts controlled-substance schedule, a Massachusetts rule that speaks to controlled substances reaches Schedule VI unless that rule carves Schedule VI out. Reading the label as a synonym for unregulated is the single most productive source of wrong answers in this area.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI"
+      ]
+    },
+    {
+      "text": "Everything that governs a Schedule VI prescription is Massachusetts law, but it does not come from one regulator. M.G.L. c. 94C is the statute above both. The Department of Public Health writes 105 CMR 700.000 and 105 CMR 721.000, and from there come the classification itself, the prescription-format scheme, the electronic-prescribing exceptions and the prescription monitoring program. The Board of Registration in Pharmacy writes 247 CMR, and from there come the dispensing and refilling rules, the within-date counting convention, the customer identifier and the transfer framework. That division is why a Schedule VI question can present two different one-year rules that sit in two different chapters and answer two different questions: 247 CMR 9.04(12) says how long the prescription stays valid, and 247 CMR 9.14(4)(c) says how long it stays transferable. Neither restates the other, and a candidate who has collapsed them into one rule will misread whichever question is actually being asked.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-TRANSFER",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "text": "On format, Massachusetts starts from a default that every prescription generated in the Commonwealth must be electronic, and then lists the prescriptions excepted from it. Schedule VI is one of the enumerated exceptions, at 105 CMR 721.070(A)(9), which is why a Schedule VI prescription may lawfully arrive written or oral. The exception is narrow in exactly the way candidates tend to forget: it lifts the electronic-format mandate and nothing else. A written Schedule VI prescription must still carry the practitioner's signature and be either transmitted by facsimile or similar technology or written on a tamper-resistant form, and a prescription in a non-conforming format is invalid and shall not be filled. An oral Schedule VI prescription must still be reduced to writing immediately with the information the statute requires. The one duty Schedule VI genuinely escapes is the practitioner's later follow-up prescription, because M.G.L. c. 94C, s. 20(c) says by its own terms that it does not apply to Schedule VI. The Failover device points the same way: it is defined as a document that originates as a Schedule VI electronic prescription, so no other schedule can produce one.",
+      "rule_ids": [
+        "MA-CONTROLLED-EPRESCRIBE",
+        "MA-RX-WRITTEN-FORMAT",
+        "MA-RX-REQUIRED-ELEMENTS",
+        "MA-ORAL-CONTROLLED-DOCUMENTATION",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "MA-RX-FAILOVER-ORAL"
+      ]
+    },
+    {
+      "text": "A Schedule VI prescription can be stopped by more than one clock, and the exam rewards knowing which clock the facts have started. The general one is the validity limit: a prescription for a Schedule VI medication is valid for one year from the date of issue, and a licensee may not refill it after one year. A second one attaches to the prescriber rather than the drug. An authorized out-of-state practitioner may issue a Schedule III through VI prescription for filling in Massachusetts, but M.G.L. c. 94C, s. 18(c) authorizes filling only prescriptions issued within the preceding thirty days, and it is that paragraph, not the one-year rule, that makes the out-of-state prescription fillable here in the first place. Both clocks are counted the same way, because in determining whether a prescription is within date the pharmacist counts the day after the prescription was written as day one. When the applicable clock has run, the only thing left is the narrow professional-judgment continuation, and that is conditioned on the pharmacist being unable to obtain prescriber authorization in a timely manner rather than being available for the asking.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "Transfer is the other place where the Schedule VI label changes the analysis, and it does so in the pharmacy's direction as well as the patient's. Under 247 CMR 9.14 a pharmacy shall transfer a prescription to another pharmacy at the request of the patient or the patient's agent in a timely manner so as not to delay patient therapy, and it may act as the patient's agent to facilitate that transfer. A pharmacy may not charge a fee for transferring a prescription, so neither a standing refusal to transfer nor a transfer charge is a matter the pharmacy gets to decide for itself. Schedule VI prescriptions transfer in the same manner as Schedule III through V prescriptions, carrying up to the maximum number of remaining refills the prescriber authorized, subject to the separate one-year transfer bar. Schedule VI is also the only schedule for which a certified pharmacy technician may perform the transfer, and then only with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "MA-SCHEDULE-VI"
+      ]
+    },
+    {
+      "text": "Finally, the Schedule VI label is not a promise that no monitoring or identification duty will ever attach. The Commissioner may determine that a drug is an additional drug for the purposes of 105 CMR 700.012 because it carries a bona fide potential for abuse, weighing factors such as a risk of addiction, known recreational use, known regular diversion, or a known contribution to overdose. On making that determination the Commissioner notifies all dispensers that they must begin reporting the dispensing of that drug. Once a Schedule VI drug is an additional drug, dispensing it requires a customer identifier from the ultimate user or their agent, the data go to the Department by the end of the next business day covering everything dispensed since the previous transmission, and the Failover route closes, because a Failover does not qualify where the prescription is for an additional drug. The label describes the starting point, not the whole of the drug's regulatory position.",
+      "rule_ids": [
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+        "MA-RX-CUSTOMER-IDENTIFIER",
+        "MA-PMP-TRANSMISSION-TIMING",
+        "MA-RX-FAILOVER-ORAL",
+        "MA-SCHEDULE-VI"
+      ]
+    }
+  ],
+  "comparison_tables": [
+    {
+      "title": "Three date gates on a Schedule VI prescription, and how the days are counted",
+      "columns": [
+        "Gate",
+        "Source",
+        "What it measures",
+        "What happens once it is passed"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Prescription validity",
+            "247 CMR 9.04(12)",
+            "One year from the date of issue",
+            "A licensee may not refill the prescription; only the professional-judgment continuation remains available, and only on its own conditions."
+          ],
+          "rule_ids": [
+            "MA-SCHEDULE-VI-VALIDITY"
+          ]
+        },
+        {
+          "cells": [
+            "Transfer of a prescription authorizing refills",
+            "247 CMR 9.14(4)(c)",
+            "One year from the date the prescription was issued",
+            "The pharmacy may not transfer it. This says nothing about whether the prescription is still fillable where it sits."
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Out-of-state prescriber, Schedules III through VI",
+            "M.G.L. c. 94C, s. 18(c)",
+            "Issued within the preceding thirty days",
+            "The paragraph that authorizes filling an out-of-state practitioner's prescription in Massachusetts no longer reaches it."
+          ],
+          "rule_ids": [
+            "MA-RX-OUTSTATE-III-VI"
+          ]
+        },
+        {
+          "cells": [
+            "How every count starts",
+            "247 CMR 9.04(10)",
+            "The day after the prescription was written is day one",
+            "The issue date itself is not counted, so a period measured in days runs from the following day."
+          ],
+          "rule_ids": [
+            "MA-RX-DATE-COUNTING"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What the Schedule VI electronic-prescribing exception removes, and what survives it",
+      "columns": [
+        "Requirement",
+        "Reaches a Schedule VI prescription?",
+        "Source"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Duty to issue the prescription electronically",
+            "No. Schedule VI is an enumerated ePrescribing exception, so the prescription may be issued written or oral.",
+            "105 CMR 721.070(A)(9)"
+          ],
+          "rule_ids": [
+            "MA-CONTROLLED-EPRESCRIBE"
+          ]
+        },
+        {
+          "cells": [
+            "Statutory prescription elements",
+            "Yes. The exception addresses format, not content.",
+            "M.G.L. c. 94C, s. 22(a)"
+          ],
+          "rule_ids": [
+            "MA-RX-REQUIRED-ELEMENTS"
+          ]
+        },
+        {
+          "cells": [
+            "Written-format requirements: signature, plus facsimile transmission or a tamper-resistant form",
+            "Yes, and a prescription in a non-conforming format is invalid and shall not be filled.",
+            "105 CMR 721.020(F) and 721.040(A)"
+          ],
+          "rule_ids": [
+            "MA-RX-WRITTEN-FORMAT"
+          ]
+        },
+        {
+          "cells": [
+            "Immediate reduction of an oral prescription to writing with the required information",
+            "Yes. The pharmacist's documentation duty is untouched by the exception.",
+            "M.G.L. c. 94C, s. 20(a) and (b)"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CONTROLLED-DOCUMENTATION"
+          ]
+        },
+        {
+          "cells": [
+            "Practitioner's later follow-up prescription after an oral order",
+            "No. The subsection states that its requirements do not apply to Schedule VI.",
+            "M.G.L. c. 94C, s. 20(c)"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CS-FOLLOWUP-TIMING"
+          ]
+        },
+        {
+          "cells": [
+            "Pharmacist duty to verify that the prescription properly falls within an exception",
+            "No such duty is imposed on the receiving pharmacist.",
+            "105 CMR 721.070(C)"
+          ],
+          "rule_ids": [
+            "MA-CONTROLLED-EPRESCRIBE"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Transfer of a Schedule VI prescription: what 247 CMR 9.14 settles for the pharmacy",
+      "columns": [
+        "Question the counter asks",
+        "What the regulation answers",
+        "Source"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "May the pharmacy decline the request as a matter of store policy?",
+            "No. A pharmacy shall transfer a prescription to another pharmacy at the request of a patient or the patient's agent, in a timely manner so as not to delay patient therapy.",
+            "247 CMR 9.14(1)"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "May the pharmacy arrange the transfer on the patient's behalf?",
+            "Yes. The pharmacy may act as the patient's agent in order to facilitate a transfer.",
+            "247 CMR 9.14(2)"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "May the pharmacy charge for the transfer?",
+            "No. A pharmacy may not charge a fee for transferring a prescription.",
+            "247 CMR 9.14(3)"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "How many refills move with it?",
+            "Up to the maximum number of remaining refills authorized by the prescriber, Schedule VI transferring in the same manner as Schedules III through V.",
+            "247 CMR 9.14(4)(a) and (b)"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Is the prescription too old to transfer?",
+            "It is once it is more than one year from the date the prescription was issued.",
+            "247 CMR 9.14(4)(c)"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Who may actually carry it out?",
+            "A certified pharmacy technician may, for Schedule VI only, with the approval of the pharmacist on duty.",
+            "247 CMR 8.04"
+          ],
+          "rule_ids": [
+            "MA-RX-TRANSFER"
+          ]
+        }
+      ]
+    }
+  ],
+  "worked_examples": [
+    {
+      "scenario": "A patient asks Pharmacy B to obtain a Massachusetts Schedule VI prescription from Pharmacy A. The prescription was issued ten months ago and has three authorized refills remaining. Pharmacy A says it does not transfer prescriptions as a matter of store policy, and that if it did it would charge the patient a transfer fee first. Pharmacy B has a certified pharmacy technician available and the pharmacist on duty approves the technician's participation.",
+      "steps": [
+        "Classify the drug before anything else. It is not in Massachusetts Schedules I through V, so it is Schedule VI, and the federal transfer mechanics do not reach it because Schedule VI is not a federal schedule.",
+        "Check the age of the prescription against the transfer bar rather than the validity clock. 247 CMR 9.14(4)(c) bars transfer of a Schedule VI prescription authorizing refills more than one year from the date it was issued; ten months is inside that limit.",
+        "Test Pharmacy A's policy against 247 CMR 9.14(1). A pharmacy shall transfer a prescription at the request of the patient or the patient's agent in a timely manner so as not to delay patient therapy, so a standing refusal to transfer cannot stand against the request.",
+        "Test the fee against 247 CMR 9.14(3), which provides that a pharmacy may not charge a fee for transferring a prescription. There is no discretion to price the transfer.",
+        "Settle what moves. Schedule VI prescriptions transfer in the same manner as Schedules III through V, and may be transferred up to the maximum number of remaining refills the prescriber authorized, so all three remaining refills may travel.",
+        "Settle who may act. A certified pharmacy technician may perform a Schedule VI transfer with the approval of the pharmacist on duty, and that authority is confined to Schedule VI; do not generalise it to any other schedule."
+      ],
+      "resolution": "The transfer proceeds promptly, without a fee, carrying the three remaining refills, and the certified technician may carry it out with the pharmacist's approval. The error the scenario invites is treating a no-transfer policy and a transfer charge as pharmacy discretion, when 247 CMR 9.14(1) and 9.14(3) remove both; a second error is reaching for a six-month cutoff in place of the one-year transfer limit.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "scenario": "A patient presents a Schedule VI prescription written forty-five days ago by a practitioner licensed and registered in New Hampshire, whose address on the prescription is a New Hampshire office. The patient points out that Massachusetts Schedule VI prescriptions are good for a year, so the prescription must still be fillable.",
+      "steps": [
+        "Confirm the patient is right about the clock they have named. Under 247 CMR 9.04(12) the prescription is valid for one year from the date of issue, and forty-five days is well inside that.",
+        "Then ask the question the patient has not asked: what makes an out-of-state practitioner's prescription fillable in Massachusetts at all. That authorization is M.G.L. c. 94C, s. 18(c), which reaches prescriptions in Schedules III to VI inclusive.",
+        "Read the limit that paragraph attaches to its own grant. It is valid only for the purpose of authorizing the filling of prescriptions issued within the preceding thirty days, so it is a second date gate rather than a restatement of the first.",
+        "Count the days the way the Board directs, taking the day after the prescription was written as day one. Forty-five days still falls outside the thirty-day window however the count is started.",
+        "Do not look for a verification step that will rescue it. The express duty to verify the prescription by telephone or other means runs to Schedules III through V; for a Schedule VI prescription the pharmacist's duty is the general one to determine that the prescription is authentic and valid, and neither duty extends the thirty-day window."
+      ],
+      "resolution": "The prescription may not be filled on the out-of-state authorization, because the paragraph that authorizes filling it here reaches only prescriptions issued within the preceding thirty days. The error the scenario invites is answering from the one-year Schedule VI validity clock alone and never asking where the prescriber wrote from.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "scenario": "A patient arrives on a Saturday evening out of a maintenance medication. The Schedule VI prescription on file was issued fourteen months ago and shows refills that were never used. A colleague says the prescription has plainly expired, so the fourteen-day continuation is simply what you dispense in that situation.",
+      "steps": [
+        "Establish that the prescription itself is spent. It was valid for one year from the date of issue, and a licensee may not refill a Schedule VI prescription after one year, so unused refills on a fourteen-month-old prescription do not survive the expiry.",
+        "Read the continuation as the conditional allowance it is. It opens where a Schedule VI prescription expires or has no remaining refills AND the pharmacist is unable to obtain prescriber authorization in a timely manner; the inability condition governs the expiry branch exactly as it governs the no-refills-remaining branch.",
+        "Attempt the authorization first. Try the prescriber, or whoever is covering, and record the attempt. Only once authorization cannot be obtained in a timely manner does the professional-judgment allowance become available at all.",
+        "If it does open, respect the ceiling. The pharmacist in his or her professional judgment may dispense a quantity not to exceed fourteen days or the smallest available unit-of-use packaging. It is a bridge, not a refill, and it does not renew the expired prescription.",
+        "Check the setting before applying any of this. 247 CMR 9.04(15) excludes institutional sterile compounding pharmacies from 247 CMR 9.04(12), so the validity clock and the continuation attached to it do not reach that facility type."
+      ],
+      "resolution": "Attempt the prescriber before dispensing anything; the fourteen-day continuation becomes available only after that attempt fails to produce timely authorization. The error the colleague makes is reading the expiry branch as self-executing, which drops the inability-to-obtain-authorization condition the regulation attaches to both branches.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    }
+  ],
+  "retrieval_prompts": [
+    {
+      "prompt": "Massachusetts Schedule VI carries two separate one-year rules. State each one and what it measures.",
+      "answer": "247 CMR 9.04(12): a Schedule VI prescription is valid for one year from the date of issue and may not be refilled after one year. 247 CMR 9.14(4)(c): a pharmacy may not transfer a Schedule VI prescription authorizing refills more than one year from the date the prescription was issued. One measures fillability, the other transferability.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "A pharmacy tells a patient it does not transfer prescriptions, and that in any event it charges for a transfer. Which two provisions dispose of that?",
+      "answer": "247 CMR 9.14(1) requires the pharmacy to transfer at the request of the patient or the patient's agent in a timely manner so as not to delay patient therapy, and 247 CMR 9.14(3) provides that a pharmacy may not charge a fee for transferring a prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "Besides the one-year validity clock, what second date gate can stop a Schedule VI prescription, and where does it come from?",
+      "answer": "M.G.L. c. 94C, s. 18(c): an authorized out-of-state practitioner's prescription in Schedules III to VI inclusive may be filled in Massachusetts only if it was issued within the preceding thirty days.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
+      "prompt": "Which oral-prescription duty does Schedule VI escape, and which does it keep?",
+      "answer": "It escapes the M.G.L. c. 94C, s. 20(c) follow-up prescription, which states that its requirements do not apply to Schedule VI. It keeps the duty to reduce the oral prescription to writing immediately with the information the statute requires.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "MA-ORAL-CONTROLLED-DOCUMENTATION"
+      ]
+    },
+    {
+      "prompt": "The Schedule VI electronic-prescribing exception sits at 105 CMR 721.070(A)(9). What does it not excuse?",
+      "answer": "It lifts the electronic-format mandate only. The statutory prescription elements still apply, a written prescription must still carry the practitioner's signature and be transmitted by facsimile or written on a tamper-resistant form, and a prescription in a non-conforming format is invalid and shall not be filled.",
+      "rule_ids": [
+        "MA-CONTROLLED-EPRESCRIBE",
+        "MA-RX-REQUIRED-ELEMENTS",
+        "MA-RX-WRITTEN-FORMAT"
+      ]
+    },
+    {
+      "prompt": "What turns an ordinary Schedule VI drug into one carrying monitoring and identification duties?",
+      "answer": "The Commissioner's determination that it is an additional drug carrying a bona fide potential for abuse. On that determination dispensers are notified that they must begin reporting it, a customer identifier is required at dispensing, and the data go to the Department by the end of the next business day covering everything dispensed since the previous transmission.",
+      "rule_ids": [
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+        "MA-RX-CUSTOMER-IDENTIFIER",
+        "MA-PMP-TRANSMISSION-TIMING"
+      ]
+    },
+    {
+      "prompt": "A document that began as a Schedule VI electronic prescription failed in transmission and arrived as a computer-generated facsimile. What is it, and what does it not owe?",
+      "answer": "A Failover. It is considered an oral prescription and requires no written or electronic follow-up prescription, provided the three conditions in 105 CMR 721.020(G) hold and the prescription is not for an additional drug.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-ORAL"
+      ]
+    },
+    {
+      "prompt": "In deciding whether a prescription is within date, which day is day one?",
+      "answer": "The day after the prescription was written; the issue date itself is not counted.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "prompt": "Beyond the statutory element list, name three things 105 CMR 721.020(D) requires on the prescription itself.",
+      "answer": "The quantity of dosage units; a statement indicating the number of times to be refilled; and, for a schedule II opioid, the notation that the patient may request less than the full quantity. 721.020(E) adds the supervising professional's name for certain nurse prescribers.",
+      "rule_ids": [
+        "MA-RX-FORMAT-CONTENT"
+      ]
+    }
+  ],
   "quick_review": [
     {
       "text": "Massachusetts Schedule VI includes prescription drugs not otherwise placed in Massachusetts Schedules I through V.",
@@ -117,6 +497,18 @@
       ]
     },
     {
+      "text": "A pharmacy shall transfer a prescription to another pharmacy at the request of the patient or the patient's agent in a timely manner so as not to delay patient therapy, and may act as the patient's agent to facilitate the transfer; a standing policy of refusing transfers cannot displace that duty.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "A pharmacy may not charge a fee for transferring a prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
       "text": "Schedule VI is the only schedule for which a certified pharmacy technician may perform a prescription transfer, and then only with the approval of the pharmacist on duty.",
       "rule_ids": [
         "MA-RX-TRANSFER"
@@ -127,6 +519,12 @@
       "rule_ids": [
         "MA-RX-TRANSFER",
         "MA-SCHEDULE-VI"
+      ]
+    },
+    {
+      "text": "A prescription written by an authorized out-of-state practitioner is fillable in Massachusetts under M.G.L. c. 94C, s. 18(c), which reaches Schedules III to VI inclusive and authorizes filling only prescriptions issued within the preceding thirty days; that is a second date gate on a Schedule VI prescription, distinct from the one-year validity clock.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
       ]
     }
   ],
@@ -150,14 +548,14 @@
     },
     {
       "condition": "A patient requests transfer of a Schedule VI prescription with authorized refills remaining.",
-      "action": "Use the remaining-refill transfer pathway under 247 CMR 9.14(4): the prescription may move up to the maximum number of remaining refills the prescriber authorized, that regulation bars transfer more than one year after issue, and a certified pharmacy technician may carry out the transfer with the approval of the pharmacist on duty.",
+      "action": "Act on the request rather than declining it: 247 CMR 9.14(1) requires the pharmacy to transfer at the request of the patient or the patient's agent in a timely manner so as not to delay patient therapy, 9.14(2) lets the pharmacy act as the patient's agent to facilitate it, and 9.14(3) forbids charging a fee for the transfer. Then apply the Schedule VI mechanics under 247 CMR 9.14(4): the prescription transfers in the same manner as a Schedule III through V prescription and may carry up to the maximum number of remaining refills the prescriber authorized, that regulation bars the transfer more than one year after issue, and a certified pharmacy technician may carry it out with the approval of the pharmacist on duty.",
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
     },
     {
-      "condition": "A Schedule VI prescription is presented more than one year after its issue date, or with no refills remaining and the prescriber cannot be reached in time.",
-      "action": "Do not refill it; consider only the professional-judgment continuation of a quantity not exceeding 14 days or the smallest available unit-of-use packaging.",
+      "condition": "A Schedule VI prescription has expired, being presented more than one year after its issue date, or has no refills remaining, and in either case the pharmacist is unable to obtain prescriber authorization in a timely manner.",
+      "action": "Do not refill it. The inability to obtain timely prescriber authorization conditions both branches equally, so attempt the prescriber first in the expired case exactly as in the no-refills-remaining case. Only once that attempt has failed may the pharmacist, in professional judgment, dispense a quantity not to exceed 14 days or the smallest available unit-of-use packaging.",
       "rule_ids": [
         "MA-SCHEDULE-VI-VALIDITY"
       ]
@@ -168,6 +566,14 @@
       "rule_ids": [
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
         "MA-RX-CUSTOMER-IDENTIFIER"
+      ]
+    },
+    {
+      "condition": "The Schedule VI prescription was written by a practitioner licensed and registered outside Massachusetts.",
+      "action": "Apply the out-of-state date gate before the validity clock: M.G.L. c. 94C, s. 18(c) authorizes filling such a prescription only if it was issued within the preceding thirty days, counting the day after it was written as day one. Determine that the prescription is authentic and valid; note that the express telephone-or-other-means verification requirement runs to Schedules III through V rather than to Schedule VI.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-RX-DATE-COUNTING"
       ]
     }
   ],
@@ -183,6 +589,13 @@
       "rule_ids": [
         "MA-SCHEDULE-VI",
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
+      ]
+    },
+    {
+      "text": "The Massachusetts route for an out-of-state practitioner's prescription is M.G.L. c. 94C, s. 18(c), which reaches Schedules III to VI inclusive; because Schedule VI has no federal counterpart, that thirty-day window is a purely Massachusetts limit and has no federal analogue to be read against it.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-SCHEDULE-VI"
       ]
     }
   ],
@@ -247,6 +660,14 @@
       ]
     },
     {
+      "event": "Filling in Massachusetts a Schedule III through VI prescription issued by an authorized out-of-state practitioner",
+      "timeframe": "Issued within the preceding 30 days",
+      "consequence": "M.G.L. c. 94C, s. 18(c) authorizes filling only prescriptions issued within that window, so an older out-of-state Schedule VI prescription is barred even though the one-year validity period has not run.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI"
+      ]
+    },
+    {
       "event": "Transmission of prescription monitoring data for a reportable dispensing",
       "timeframe": "By the end of the next business day",
       "consequence": "Each transmission carries every controlled substance dispensed since the previous one.",
@@ -276,9 +697,22 @@
       ]
     },
     {
-      "text": "The elements a Massachusetts controlled-substance prescription must state are the practitioner's name, address and registration number, the date, the name, dosage and strength per dosage unit of the substance, the patient's name and address except on a veterinary prescription, the directions for use with any required cautionary statements, and the number of times it may be refilled.",
+      "text": "M.G.L. c. 94C, s. 22(a) requires a practitioner who dispenses a controlled substance by issuing a written or electronic prescription to state on it the practitioner's name, address and registration number, the date of delivery of the prescription, the name, dosage and strength per dosage unit of the controlled substance, the name and address of the patient unless it is a veterinary prescription, the directions for use and any cautionary statements required, and a statement indicating the number of times to be refilled. Read that as the list the statute itself imposes, not as a closed inventory of everything a Massachusetts prescription must carry: the Massachusetts prescription-format regulations reach the same prescription and impose their own requirements alongside the statute.",
       "rule_ids": [
-        "MA-RX-REQUIRED-ELEMENTS"
+        "MA-RX-REQUIRED-ELEMENTS",
+        "MA-RX-WRITTEN-FORMAT"
+      ]
+    },
+    {
+      "text": "The format regulation states the prescription's required content beyond the statutory element list: 105 CMR 721.020(D)(3) requires the QUANTITY OF DOSAGE UNITS alongside the name, dosage and strength per dosage unit; (D)(6) requires a statement indicating the number of times to be refilled; and (D)(4) leaves the patient name and address blank not only on a veterinary prescription but also on one for naloxone or another Department-approved opioid antagonist and on one issued under 105 CMR 721.070(A)(7) or (A)(12).",
+      "rule_ids": [
+        "MA-RX-FORMAT-CONTENT"
+      ]
+    },
+    {
+      "text": "A prescription issued by a certified nurse practitioner, psychiatric nurse mental health clinical specialist or certified registered nurse anesthetist must also carry the name of the supervising qualified healthcare professional, unless that nurse is authorized for independent practice.",
+      "rule_ids": [
+        "MA-RX-FORMAT-CONTENT"
       ]
     }
   ],
@@ -297,6 +731,13 @@
       "rule_ids": [
         "MA-SCHEDULE-VI-VALIDITY",
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
+      ]
+    },
+    {
+      "role": "Pharmacy",
+      "duty": "Act on a patient's or agent's transfer request in a timely manner so as not to delay patient therapy, and transfer without charging a fee.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
       ]
     },
     {
@@ -346,6 +787,32 @@
       "rule_ids": [
         "MA-RX-WRITTEN-FORMAT",
         "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "text": "Treating a refusal to transfer, or a charge for transferring, as a matter of pharmacy discretion overlooks the affirmative timely-transfer duty in 247 CMR 9.14(1) and the fee prohibition in 247 CMR 9.14(3).",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Treating the one-year validity clock as the only date gate on a Schedule VI prescription misses the separate thirty-day limit M.G.L. c. 94C, s. 18(c) places on an out-of-state practitioner's Schedule III through VI prescription.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI",
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "text": "Reciting the M.G.L. c. 94C, s. 22(a) elements as the complete set of content and exception rules for a Massachusetts prescription treats a statutory list as exhaustive, when the prescription-format regulations govern the same prescription in their own right.",
+      "rule_ids": [
+        "MA-RX-REQUIRED-ELEMENTS",
+        "MA-RX-WRITTEN-FORMAT"
+      ]
+    },
+    {
+      "text": "Naming the veterinary prescription as the only case where the patient's name and address may be left blank misses the naloxone and opioid-antagonist limb and the two ePrescribing-exception limbs in 105 CMR 721.020(D)(4).",
+      "rule_ids": [
+        "MA-RX-FORMAT-CONTENT"
       ]
     }
   ],

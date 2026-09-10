@@ -72,6 +72,10 @@ PROSE_FIELDS = (
     "topic",
     "subtopic",
     "learning_objectives",
+    "orientation",
+    "comparison_tables",
+    "worked_examples",
+    "retrieval_prompts",
     "quick_review",
     "decision_logic",
     "ma_vs_federal",
@@ -150,18 +154,28 @@ def parent_citations(text: str) -> set[str]:
     return found | _mgl_citations(text)
 
 
+def _prose_chunks(value: Any, chunks: list[str]) -> None:
+    """Collect human-readable text, skipping rule_ids at any depth.
+
+    Comparison tables nest their grounding one level down, on each row, and a rule id
+    tokenises into ordinary words ("MA-CII-VALIDITY-30D" -> validity), so letting one
+    through would make a section look like it teaches a provision it only cites.
+    """
+    if isinstance(value, str):
+        chunks.append(value)
+    elif isinstance(value, list):
+        for item in value:
+            _prose_chunks(item, chunks)
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            if key != "rule_ids":
+                _prose_chunks(item, chunks)
+
+
 def section_prose(section: dict[str, Any]) -> str:
     chunks: list[str] = []
     for field in PROSE_FIELDS:
-        value = section.get(field)
-        if isinstance(value, str):
-            chunks.append(value)
-        elif isinstance(value, list):
-            for item in value:
-                if isinstance(item, str):
-                    chunks.append(item)
-                elif isinstance(item, dict):
-                    chunks.extend(str(v) for k, v in item.items() if k != "rule_ids")
+        _prose_chunks(section.get(field), chunks)
     return "\n".join(chunks)
 
 

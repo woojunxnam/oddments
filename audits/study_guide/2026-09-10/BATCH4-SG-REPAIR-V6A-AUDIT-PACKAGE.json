@@ -1,0 +1,1320 @@
+{
+  "package_type": "STUDY_GUIDE_FULL_PROSE_INDEPENDENT_AUDIT",
+  "freeze_date": "2026-09-10",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "8612a41ceeeb2e34e9f42cb713bbeb27caad554b",
+  "auditor_instance_reserved": "GPT-FRESH-B4-SG-REPAIR-V6A",
+  "independent": true,
+  "author_is_not_auditor": true,
+  "section_ids": [
+    "SG-CII-LIFECYCLE",
+    "SG-CII-EMERGENCY-ORAL"
+  ],
+  "permitted_dispositions": [
+    "KEEP",
+    "MINOR_EDIT",
+    "MAJOR_REWRITE",
+    "HOLD"
+  ],
+  "review_criteria": [
+    "paraphrase_fidelity",
+    "material_exceptions",
+    "ma_vs_federal_distinctions",
+    "actor_and_scope",
+    "deadlines",
+    "forms",
+    "decision_logic",
+    "overgeneralization",
+    "unsupported_propositions",
+    "practice_question_mapping",
+    "study_usefulness_without_legal_distortion"
+  ],
+  "release_rule": "정확히 동결된 current section hash에 대해 독립 auditor가 KEEP을 부여하고 모든 dependency hash가 current일 때만 공개할 수 있다. 다른 disposition은 비공개로 유지한다.",
+  "auditor_instruction": "각 section을 현재 공식 authority와 독립적으로 대조하고, controller의 예상 결론 없이 평가한다. 각 disposition과 finding을 section content_hash 및 모든 dependency hash에 결속한다.",
+  "sections": [
+    {
+      "section_id": "SG-CII-LIFECYCLE",
+      "content_version": 4,
+      "content_hash": "4093a74b31ce6aaac6d19e71b0d2f019d4151e08bd65339c2dc1cfc39febcb00",
+      "canonical_path": "data/study_guide/sections/sg-cii-lifecycle.json",
+      "canonical_blob": "8af5695811f47cdf1d55ec9a3fae8ed0970ae7f2",
+      "full_prose_under_review": {
+        "section_id": "SG-CII-LIFECYCLE",
+        "content_version": 4,
+        "content_hash": "4093a74b31ce6aaac6d19e71b0d2f019d4151e08bd65339c2dc1cfc39febcb00",
+        "title": "Schedule II Partial Fills and the Massachusetts 30-Day Ceiling",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Partial filling / Schedule II",
+        "subtopic": "Choosing the pathway, the clock and the record",
+        "learning_objectives": [
+          "Distinguish a prohibited refill from a lawful remainder of a partial fill.",
+          "Choose the federal remainder clock by identifying which partial-fill pathway the facts trigger.",
+          "Apply the Massachusetts 30-day issue-date ceiling on top of whichever federal clock the pathway supplies.",
+          "State what the partial-fill record must contain in each pathway."
+        ],
+        "rule_ids": [
+          "FED-CII-NO-REFILL",
+          "FED-CII-PARTIAL-72H",
+          "FED-CII-PARTIAL-PATIENT",
+          "FED-CII-LTC-TERMINAL",
+          "FED-CII-PARTIAL-FILL-NOTATION",
+          "FED-CII-LTCF-TERMINAL-RECORDS",
+          "MA-CII-VALIDITY-30D",
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CII-NO-REFILL": {
+            "content_version": 1,
+            "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+          },
+          "FED-CII-PARTIAL-72H": {
+            "content_version": 1,
+            "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad"
+          },
+          "FED-CII-PARTIAL-PATIENT": {
+            "content_version": 1,
+            "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+          },
+          "FED-CII-LTC-TERMINAL": {
+            "content_version": 1,
+            "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09"
+          },
+          "FED-CII-PARTIAL-FILL-NOTATION": {
+            "content_version": 1,
+            "content_hash": "02dfc01e050088e48d266e1ee05ae59227ac722fc498c409e488995100da5d4c"
+          },
+          "FED-CII-LTCF-TERMINAL-RECORDS": {
+            "content_version": 1,
+            "content_hash": "59b81d0dde3dba94c89e94756bd768d55097ee9c1152d8aacb093c8d47c48e4c"
+          },
+          "MA-CII-VALIDITY-30D": {
+            "content_version": 1,
+            "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+          },
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+            "content_version": 1,
+            "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+          },
+          "MA-CII-OPIOID-PARTIAL-FILL-NOTATION": {
+            "content_version": 1,
+            "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "A Schedule II prescription may not be refilled; dispensing a lawful unfilled remainder of a partial fill is not a refill.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL"
+            ]
+          },
+          {
+            "text": "Federal law supplies three partial-fill pathways with three different remainder clocks: 72 hours when the pharmacy could not supply the full quantity, 30 days from the writing date when the patient or prescriber requested the partial fill, and up to 60 days from issue for an LTCF resident or a terminally ill patient.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT",
+              "FED-CII-LTC-TERMINAL"
+            ]
+          },
+          {
+            "text": "In Massachusetts a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance under M.G.L. c. 94C, s. 23(a), so no federal pathway can be worked past day 30 on that prescription.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D"
+            ]
+          },
+          {
+            "text": "M.G.L. c. 94C, s. 18(d3/4) makes the lesser-quantity dispensing mandatory on patient request, keeps the remaining portion at the same pharmacy that dispensed the lesser quantity, requires a patient-record notation of the partial fill and quantity, and requires the remaining portion to be filled not later than 30 days after the prescription issue date.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "Every federal partial fill carries a notation duty of its own, and on the LTCF or terminal-illness pathway a partially filled prescription lacking the 'terminally ill' or 'LTCF patient' notation is deemed filled in violation of the Act.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-FILL-NOTATION",
+              "FED-CII-LTCF-TERMINAL-RECORDS"
+            ]
+          },
+          {
+            "text": "A Massachusetts prescription for a Schedule II opioid must itself carry a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+            "rule_ids": [
+              "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "The original Schedule II quantity was fully dispensed.",
+            "action": "Do not process an additional dispensing as a refill; require a new lawful prescription unless a distinct pathway applies.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL"
+            ]
+          },
+          {
+            "condition": "The pharmacy could not supply the full Schedule II quantity.",
+            "action": "Note the quantity supplied on the prescription record, then use the 72-hour remainder rule; past 72 hours notify the prescriber and obtain a new prescription for any further quantity.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-FILL-NOTATION"
+            ]
+          },
+          {
+            "condition": "The patient or the prescriber requested a partial fill of a written or electronic Schedule II prescription and state law does not prohibit it.",
+            "action": "Record the requester and the date of the request with the quantity dispensed, and complete any remainder no later than 30 days after the prescription was written.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "FED-CII-PARTIAL-FILL-NOTATION"
+            ]
+          },
+          {
+            "condition": "The patient or prescriber requested a partial fill of an emergency oral Schedule II prescription.",
+            "action": "Complete any remainder no later than 72 hours after the prescription was issued; the ordinary 30-day request-based period does not reach an emergency oral prescription.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "condition": "The Schedule II prescription is for an LTCF resident or a patient with a documented terminal illness.",
+            "action": "Record 'LTCF patient' or 'terminally ill' on the prescription before partially filling it, contact the practitioner first if terminal status is uncertain, and log the date, quantity dispensed, remaining quantity authorized and dispensing pharmacist for each partial filling.",
+            "rule_ids": [
+              "FED-CII-LTC-TERMINAL",
+              "FED-CII-LTCF-TERMINAL-RECORDS"
+            ]
+          },
+          {
+            "condition": "The federal pathway you selected would allow a further partial dispensing more than 30 days after the Massachusetts written or electronic Schedule II prescription was issued.",
+            "action": "Stop. The prescription is already invalid in Massachusetts under M.G.L. c. 94C, s. 23(a); the federal outer limit is a ceiling on federal authority and does not extend Massachusetts validity.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D",
+              "FED-CII-LTC-TERMINAL"
+            ]
+          },
+          {
+            "condition": "A Massachusetts patient requests a lesser quantity of a Schedule II prescription.",
+            "action": "Dispense the lesser quantity, note the partial fill and quantity in the patient record accessible to the prescriber on request, keep any remainder at the same pharmacy, and fill it not later than 30 days after the issue date.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "21 CFR 1306.13(c) allows LTCF and terminal-illness Schedule II partial fills for up to 60 days from issue, but M.G.L. c. 94C, s. 23(a) invalidates the written or electronic prescription 30 days after issuance. Both apply, so in Massachusetts the working outer limit on that prescription is 30 days and the federal 60-day figure is the answer only to a question that asks what federal law alone permits.",
+            "rule_ids": [
+              "FED-CII-LTC-TERMINAL",
+              "MA-CII-VALIDITY-30D"
+            ]
+          },
+          {
+            "text": "Federal patient-requested partial filling is permissive and asks only that the partial fill not be prohibited by state law; M.G.L. c. 94C, s. 18(d3/4) goes further and makes the lesser-quantity dispensing mandatory on patient request while adding same-pharmacy, patient-record and issue-date conditions.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "Partial-fill notation is not a Massachusetts-only duty: 21 CFR 1306.13(a) and (b)(5) impose federal notation and dispensing-record duties that run alongside the Massachusetts patient-record notation.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-FILL-NOTATION",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "The 72-hour remainder rule is tied to the pharmacy's inability to supply the full quantity and is not a substitute for the request-based pathway.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "The request-based 30-day remainder period carries its own emergency-oral exception: the remainder of a partially filled emergency oral Schedule II prescription must be filled no later than 72 hours after the prescription is issued.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "The 60-day LTCF and terminal-illness period is an outer limit on that federal pathway, not an extension of any state validity period, and it ends earlier if the medication is discontinued.",
+            "rule_ids": [
+              "FED-CII-LTC-TERMINAL",
+              "MA-CII-VALIDITY-30D"
+            ]
+          },
+          {
+            "text": "The five-day initial partial-dispensing limit in M.G.L. c. 94C, s. 18(d3/4) reaches only a prescription filled under subsection (d) or (d1/2) -- respectively a nonnarcotic Schedule II prescription from an out-of-state practitioner and a narcotic Schedule II prescription from a practitioner registered in Maine or a state contiguous with the commonwealth -- and not every patient-requested partial fill. The conditions those two subsections place on the underlying prescription are the subject of the out-of-state pathway, not of this section.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Stock-shortage Schedule II remainder",
+            "timeframe": "Within 72 hours of the first partial filling",
+            "consequence": "Otherwise notify the prescriber; no further quantity may be supplied beyond 72 hours without a new prescription.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H"
+            ]
+          },
+          {
+            "event": "Request-based Schedule II remainder, written or electronic prescription",
+            "timeframe": "No later than 30 days after the prescription was written",
+            "consequence": "The remaining portion cannot be dispensed after the deadline.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "event": "Request-based Schedule II remainder, emergency oral prescription",
+            "timeframe": "No later than 72 hours after the prescription is issued",
+            "consequence": "The emergency oral remainder cannot use the ordinary 30-day request-based period.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "event": "LTCF or terminal-illness Schedule II partial fills, federal ceiling",
+            "timeframe": "Up to 60 days from the issue date unless discontinued sooner",
+            "consequence": "This is the federal outer limit on the pathway; it is the correct answer only where the question asks what federal law alone permits.",
+            "rule_ids": [
+              "FED-CII-LTC-TERMINAL"
+            ]
+          },
+          {
+            "event": "Massachusetts written or electronic Schedule II prescription, including one being partially filled on the LTCF or terminal-illness pathway",
+            "timeframe": "30 days after the date of issuance",
+            "consequence": "The prescription becomes invalid, so further partial dispensing must stop at day 30 even though federal law would have allowed 60.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D",
+              "FED-CII-LTC-TERMINAL"
+            ]
+          },
+          {
+            "event": "Massachusetts remaining portion after a patient-requested partial fill",
+            "timeframe": "Not later than 30 days after the prescription issue date",
+            "consequence": "M.G.L. c. 94C, s. 18(d3/4) closes the remainder at the same point the general validity rule closes the prescription.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "On the stock-shortage pathway the pharmacist notes the quantity supplied on the face of the written prescription, in the written record of the emergency oral prescription, or in the electronic prescription record.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-FILL-NOTATION"
+            ]
+          },
+          {
+            "text": "On the request-based pathway the notation identifies who requested the partial fill and when: a practitioner request made in consultation is noted as 'Authorized by Practitioner to Partial Fill' with the practitioner's name, the date and time of the discussion and the pharmacist's initials, and a patient, guardian or named caregiver request is noted as that person having requested the partial fill on a stated date, with the quantity dispensed.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-FILL-NOTATION"
+            ]
+          },
+          {
+            "text": "Each request-based partial filling also generates a dispensing record carrying the date, the name or initials of the person who dispensed, and the elements 21 CFR 1306.22(c) requires for Schedule III and IV refills; for an electronic prescription that information must be linked to the electronic prescription record.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-FILL-NOTATION"
+            ]
+          },
+          {
+            "text": "On the LTCF or terminal-illness pathway the pharmacist records 'terminally ill' or 'LTCF patient' on the prescription itself, and for each partial filling records the date, the quantity dispensed, the remaining quantity authorized and the dispensing pharmacist's identification.",
+            "rule_ids": [
+              "FED-CII-LTCF-TERMINAL-RECORDS"
+            ]
+          },
+          {
+            "text": "Massachusetts adds a notation of each partial dispensing and its quantity in the pharmacy patient record, accessible to the prescribing practitioner on request.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "A Massachusetts prescription for a Schedule II opioid must itself carry the notation under M.G.L. c. 94C, s. 22(c) that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+            "rule_ids": [
+              "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Identify the factual trigger for the partial fill before selecting any deadline, because the three federal pathways carry three different clocks.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT",
+              "FED-CII-LTC-TERMINAL"
+            ]
+          },
+          {
+            "role": "Pharmacist",
+            "duty": "Check the Massachusetts issue-date ceiling before dispensing any remainder, since a federal pathway that is still open may sit on a prescription Massachusetts has already invalidated.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D"
+            ]
+          },
+          {
+            "role": "Pharmacist",
+            "duty": "Dispense the lesser quantity when a Massachusetts patient requests a partial fill of a Schedule II prescription; that dispensing is mandatory rather than discretionary.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "role": "Pharmacist",
+            "duty": "Contact the practitioner before partially filling where it is unclear whether the patient may be classified as terminally ill; the responsibility to assure the substance is for a terminally ill patient is shared with the prescriber.",
+            "rule_ids": [
+              "FED-CII-LTCF-TERMINAL-RECORDS"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Calling every later Schedule II dispensing a refill erases the lawful partial-fill remainder distinction.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Choosing 72 hours whenever a Schedule II prescription is partial ignores who requested the partial fill and why.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Carrying the federal 60-day figure into a Massachusetts scenario dispenses a Schedule II drug on a prescription that M.G.L. c. 94C, s. 23(a) invalidated on day 31.",
+            "rule_ids": [
+              "FED-CII-LTC-TERMINAL",
+              "MA-CII-VALIDITY-30D"
+            ]
+          },
+          {
+            "text": "Reading the Massachusetts patient-requested partial fill as an option the pharmacist may decline turns a mandatory duty into a permission.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Treating the LTCF or terminal-illness notation as clerical overlooks that a partially filled prescription without it is deemed filled in violation of the Act.",
+            "rule_ids": [
+              "FED-CII-LTCF-TERMINAL-RECORDS"
+            ]
+          },
+          {
+            "text": "Assuming the Schedule II opioid partial-fill notation lives in the pharmacy record misses that M.G.L. c. 94C, s. 22(c) places it on the prescription itself.",
+            "rule_ids": [
+              "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0011",
+          "MA-Q-0012",
+          "MA-Q-0021",
+          "MA-Q-0094",
+          "MA-Q-0160",
+          "MA-Q-0161",
+          "MA-Q-0401",
+          "MA-Q-0432"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-NO-REFILL",
+          "content_version": 1,
+          "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Schedule II prescriptions may not be refilled",
+              "section": "21 CFR 1306.12(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+            }
+          ],
+          "rule_summary": "Federal law prohibits refilling a Schedule II prescription; additional dispensing requires a new lawful prescription or a permitted remainder of a partial fill.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-no-refill.json",
+          "canonical_blob": "6aaa8b2178dfb52e15440aabb7fc73086980e69f"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-72H",
+          "content_version": 1,
+          "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Schedule II partial fill caused by pharmacy inability",
+              "section": "21 CFR 1306.13(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "When a Schedule II prescription is partially filled because the pharmacy cannot supply the full quantity, the remaining portion must generally be supplied within 72 hours or the pharmacist must notify the prescriber and obtain a new prescription for further quantity.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-72h.json",
+          "canonical_blob": "735d7c0568b4e31b225f1c22638407fa23250b0e"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Patient-requested Schedule II partial fill",
+              "section": "21 CFR 1306.13(b)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "A Schedule II prescription may be partially filled at the patient or prescriber request when state law permits, with the remaining portion dispensed no later than 30 days after the prescription was written unless a shorter applicable limit controls.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-patient.json",
+          "canonical_blob": "72bb9b5836a8dd48ac2999e382e07f3ae33ce959"
+        },
+        {
+          "rule_id": "FED-CII-LTC-TERMINAL",
+          "content_version": 1,
+          "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Electronic Code of Federal Regulations",
+              "section": "21 CFR 1306.13(c)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "Federal law permits Schedule II prescriptions for LTCF residents or terminally ill patients to be partially filled under a special documentation framework for up to 60 days from issue unless the prescription is discontinued sooner.",
+          "exceptions": [],
+          "canonical_path": "data/rules/fed-cii-ltc-terminal.json",
+          "canonical_blob": "10fe46bb583a35f7ab51b2ffdda0b2c7e4e03dd1"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-FILL-NOTATION",
+          "content_version": 1,
+          "content_hash": "02dfc01e050088e48d266e1ee05ae59227ac722fc498c409e488995100da5d4c",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-10",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Partial filling of prescriptions, notation and records",
+              "section": "21 CFR 1306.13(a), (b)(5)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "Under 21 CFR 1306.13(a) the stock-shortage partial fill is permissible only if the pharmacist MAKES A NOTATION OF THE QUANTITY SUPPLIED on the face of the written prescription, in the written record of the emergency oral prescription, or in the electronic prescription record. Under 1306.13(b)(5) a REQUEST-BASED partial fill carries its own notation: where the PRESCRIBER requested it the pharmacist notes the quantity dispensed, and where the request came in a consultation the pharmacist also notes 'Authorized by Practitioner to Partial Fill', the practitioner's name, the date and time of the discussion, and the pharmacist's initials; where the PATIENT, a minor's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney requested it, the pharmacist notes that the named requester 'requested partial fill on [date such request was made]' together with the quantity dispensed. For every request-based partial filling the pharmacy must also maintain a dispensing record carrying the date of each dispensing, the name or initials of the individual who dispensed, and the other information 21 CFR 1306.22(c) requires for Schedule III and IV refills; for electronic prescriptions that information must be LINKED to the electronic controlled substance prescription record.",
+          "exceptions": [
+            "The stock-shortage notation under 1306.13(a) is only the quantity supplied; the fuller request-based notations belong to 1306.13(b)(5).",
+            "A consultation-authorized partial fill adds the 'Authorized by Practitioner to Partial Fill' notation that a partial fill requested on the face of the prescription does not require."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-fill-notation.json",
+          "canonical_blob": "61832819b15a14aafc7fc932ae39ed4d69b708cf"
+        },
+        {
+          "rule_id": "FED-CII-LTCF-TERMINAL-RECORDS",
+          "content_version": 1,
+          "content_hash": "59b81d0dde3dba94c89e94756bd768d55097ee9c1152d8aacb093c8d47c48e4c",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-10",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Partial filling for LTCF residents and terminally ill patients",
+              "section": "21 CFR 1306.13(c)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "Under 21 CFR 1306.13(c) the pharmacist MUST RECORD ON THE PRESCRIPTION whether the patient is 'terminally ill' or an 'LTCF patient', and A PARTIALLY FILLED PRESCRIPTION THAT DOES NOT CARRY THAT NOTATION SHALL BE DEEMED TO HAVE BEEN FILLED IN VIOLATION OF THE ACT. If there is any question whether a patient may be classified as terminally ill the pharmacist must CONTACT THE PRACTITIONER BEFORE partially filling, and pharmacist and prescribing practitioner carry a CORRESPONDING RESPONSIBILITY to assure the substance is for a terminally ill patient. For EACH partial filling the dispensing pharmacist shall record, on the back of the prescription or on another appropriate uniformly maintained and readily retrievable record, the DATE of the partial filling, the QUANTITY DISPENSED, the REMAINING QUANTITY AUTHORIZED to be dispensed, and the IDENTIFICATION OF THE DISPENSING PHARMACIST. The total dispensed in all partial fillings must not exceed the total quantity prescribed.",
+          "exceptions": [
+            "The notation duty is not a formality: 21 CFR 1306.13(c) deems a partially filled prescription without it filled in violation of the Act.",
+            "Where terminal-illness status is uncertain the practitioner must be contacted before the partial fill, not after it."
+          ],
+          "canonical_path": "data/rules/fed-cii-ltcf-terminal-records.json",
+          "canonical_blob": "b71cba3acf1f7c17b15c0f60714418659c5b63ff"
+        },
+        {
+          "rule_id": "MA-CII-VALIDITY-30D",
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts Schedule II prescription validity",
+              "section": "M.G.L. c. 94C, § 23(a)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
+            }
+          ],
+          "rule_summary": "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after its issue date.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-cii-validity-30d.json",
+          "canonical_blob": "c572b5cc971d78a53013bb7c24f181c30e389afc"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-20",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d) and s. 18(d1/2)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ],
+          "rule_summary": "Under M.G.L. c. 94C, s. 18(d3/4) a pharmacist filling a Schedule II prescription SHALL, if requested by the patient, dispense a lesser quantity; ONLY THE SAME PHARMACY that dispensed the lesser quantity may dispense the remaining portion; a notation of the partial fill and quantity goes in the patient record, accessible to the prescriber on request; and the remaining portion MUST BE FILLED NOT LATER THAN 30 DAYS AFTER THE PRESCRIPTION ISSUE DATE. The separate FIVE-DAY limit on the INITIAL partial dispensing applies only to a prescription FILLED PURSUANT TO SUBSECTION (d) OR (d1/2) -- respectively a nonnarcotic Schedule II prescription issued by an out-of-state practitioner, and a narcotic Schedule II prescription issued by a practitioner registered in Maine or a state contiguous with the commonwealth.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-cii-partial-fill-pathway-limits.json",
+          "canonical_blob": "638eb9642d75e2cf4a866034f60c75ec1fc6f5b6"
+        },
+        {
+          "rule_id": "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
+          "content_version": 1,
+          "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-04",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Contents of prescription written by practitioner",
+              "section": "M.G.L. c. 94C, s. 22(c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22"
+            }
+          ],
+          "rule_summary": "Under M.G.L. c. 94C, s. 22(c) any prescription issued by a practitioner for an OPIOID substance contained in Schedule II SHALL INCLUDE A NOTATION on the prescription that the patient may fill it, upon request, in compliance with M.G.L. c. 94C, s. 18(d3/4) in an amount NOT TO EXCEED THE FULL PRESCRIBED QUANTITY. The notation is a prescription-content duty on the prescriber that accompanies the patient's statutory right to receive a lesser quantity on request.",
+          "exceptions": [
+            "The notation duty reaches prescriptions for opioid substances in Schedule II; it is not a general notation requirement for every controlled-substance prescription."
+          ],
+          "canonical_path": "data/rules/ma-cii-opioid-partial-fill-notation.json",
+          "canonical_blob": "687b806896eae18da3d5cca9516dbf8b476b6a3b"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0011",
+          "question_hash": "ebe1d835c312f6005f85c60c457f5e6ffe57f0dc0af24ddb78418ceb67a15afe",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0011.json",
+          "canonical_blob": "a4a0b5116724bb9d03dfa6063138a14d9d10cd89"
+        },
+        {
+          "question_id": "MA-Q-0012",
+          "question_hash": "218f8940f7ffbc3671f6a49499105caa44ed9a2fe4ec4b84c3289b2253b3f81d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0012.json",
+          "canonical_blob": "b64fee88c2963adb994fb9a0703df0ccfbd0b079"
+        },
+        {
+          "question_id": "MA-Q-0021",
+          "question_hash": "6b63f495f16e1ecee7b1dea3900ada1d8fa4d1206677d40a1321fefde6cc775a",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0021.json",
+          "canonical_blob": "ed5e7c0b5c5962aae853ab6f40f7d48ad2e6cd89"
+        },
+        {
+          "question_id": "MA-Q-0094",
+          "question_hash": "c4aa86b07636293511ec5747c9d7c612f4e87ac506355cba1320b51b47a0efc2",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0094.json",
+          "canonical_blob": "9f58a9c067e22f79311312d961a495ecfedf4852"
+        },
+        {
+          "question_id": "MA-Q-0160",
+          "question_hash": "d9a5f69a37bb65e78636ad04aeadaf334fd9706b285cad3879d703f8e6550f40",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0160.json",
+          "canonical_blob": "c6450be74c75ff2f21ee8fe09475ee3095f38a4c"
+        },
+        {
+          "question_id": "MA-Q-0161",
+          "question_hash": "5d1fa858cf66947e5e9c8a726512ba9fb9243dc2f28b3f83d740968b152465ae",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0161.json",
+          "canonical_blob": "94b51dab666401218b48f4b9bcff82320bcb1004"
+        },
+        {
+          "question_id": "MA-Q-0401",
+          "question_hash": "bff4c9ae13a2b123c3214de18d5bf275b533662670771ea910baa72e5bf1811d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0401.json",
+          "canonical_blob": "934b3607aca3e10eafd5a6c047e3858d2363b550"
+        },
+        {
+          "question_id": "MA-Q-0432",
+          "question_hash": "d15fb631ed0ef85081fd7ece56b05a634db9ee9d25c5add85d9fe8b93ae5e0e5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0432.json",
+          "canonical_blob": "4383d3a738e5f2b083f7baac5dcb71e70f182d85"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-CII-EMERGENCY-ORAL",
+      "content_version": 1,
+      "content_hash": "a771644189f581f542a800e735fd191769b3d9aeaf7a8fe5f27ba3cad1ed3a2e",
+      "canonical_path": "data/study_guide/sections/sg-cii-emergency-oral.json",
+      "canonical_blob": "dfd0af6638c565d7266c30572ed98eb31b318013",
+      "full_prose_under_review": {
+        "section_id": "SG-CII-EMERGENCY-ORAL",
+        "content_version": 1,
+        "content_hash": "a771644189f581f542a800e735fd191769b3d9aeaf7a8fe5f27ba3cad1ed3a2e",
+        "title": "Emergency Oral Schedule II Dispensing",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Controlled prescriptions / Emergency oral Schedule II",
+        "subtopic": "Quantity, records, follow-up and the consequence of not notifying",
+        "learning_objectives": [
+          "State the conditions that let a pharmacist dispense a Schedule II substance on an oral authorization.",
+          "Identify every follow-up period that reaches the same emergency oral prescription and work out which one runs out first on the facts.",
+          "Identify what the pharmacist must write down, attach or annotate at each stage.",
+          "Name the consequence the regulation attaches to the pharmacist's own failure to notify the DEA."
+        ],
+        "rule_ids": [
+          "FED-CII-EMERGENCY-ORAL",
+          "FED-CII-EMERGENCY-FOLLOWUP",
+          "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
+          "FED-CII-EMERGENCY-ORAL-RECORDS",
+          "MA-RX-EMERGENCY-ORAL-CII",
+          "MA-ORAL-CS-FOLLOWUP-TIMING",
+          "MA-CONTROLLED-EPRESCRIBE",
+          "MA-RX-WRITTEN-FORMAT"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CII-EMERGENCY-ORAL": {
+            "content_version": 1,
+            "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103"
+          },
+          "FED-CII-EMERGENCY-FOLLOWUP": {
+            "content_version": 1,
+            "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe"
+          },
+          "FED-CII-EMERGENCY-MISSING-FOLLOWUP": {
+            "content_version": 1,
+            "content_hash": "1a6473a17645dca1f4c0e49562e7d21decbb578d2e2f3ff79c63dc65af8e617e"
+          },
+          "FED-CII-EMERGENCY-ORAL-RECORDS": {
+            "content_version": 1,
+            "content_hash": "2915d83840a1eaa3919ce809aa5c2df4b32c834a89f6bc7ff05b78a548985e57"
+          },
+          "MA-RX-EMERGENCY-ORAL-CII": {
+            "content_version": 1,
+            "content_hash": "47ed573d4538bcc9f1540f67d7ddf7c13afbedfc7b0ba1e6ea9d1a110db75fd1"
+          },
+          "MA-ORAL-CS-FOLLOWUP-TIMING": {
+            "content_version": 1,
+            "content_hash": "2c63e7829be4923f584b688b8b3365b61409577ab4d0b1bde8c66ad451f684a3"
+          },
+          "MA-CONTROLLED-EPRESCRIBE": {
+            "content_version": 2,
+            "content_hash": "3f041439027702fc2a8f1e55c8d6e208aafdd028934e2453afac42e4d1a7a224"
+          },
+          "MA-RX-WRITTEN-FORMAT": {
+            "content_version": 1,
+            "content_hash": "96f0cbba37c6d51c2f94131e03a6d51aaff0b32dee24038d830d43891d2267c4"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "In a defined emergency a pharmacist may dispense a Schedule II substance on a practitioner's oral authorization, limited to the quantity adequate to treat the patient during the emergency period, and must make a reasonable effort to confirm the authorization came from a registered practitioner where that practitioner is not known.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "text": "The pharmacist must immediately reduce the oral prescription to writing with everything 21 CFR 1306.05 requires except the practitioner's signature.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "text": "Federally, the prescribing practitioner must cause the follow-up prescription to be delivered within seven days after authorizing the emergency oral dispensing.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "More than one Massachusetts follow-up period reaches the same prescription. M.G.L. c. 94C, s. 20(c) applies whenever a practitioner prescribes a controlled substance by oral prescription and requires an ELECTRONIC follow-up within 2 DAYS, unless the practitioner holds a s. 23(h) electronic-prescribing exception, in which case a written prescription follows within not more than 7 days or the shorter period federal law requires, postmarked within that period.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING"
+            ]
+          },
+          {
+            "text": "The emergency-situation regulation states its own count of seven BUSINESS days and requires the prescription to bear 'Authorization for Emergency Dispensing' on its face, with a mailed written prescription postmarked within the period.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "text": "If the follow-up does not arrive, the pharmacist must notify the nearest DEA office.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "A pharmacist receiving an otherwise valid written or oral prescription is not required to verify that it properly falls within an electronic-prescribing exception or waiver, though every other prescription and controlled-substance requirement still applies.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE"
+            ]
+          },
+          {
+            "text": "An exception that allows a written prescription removes only the electronic-format mandate: the written form requirements in 105 CMR 721.020(F) continue to govern, and a non-conforming format makes the prescription invalid and unfillable under 105 CMR 721.040(A).",
+            "rule_ids": [
+              "MA-RX-WRITTEN-FORMAT"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A practitioner orally authorizes a Schedule II substance in an emergency situation.",
+            "action": "Dispense no more than the amount adequate to treat the patient during the emergency period, and where the practitioner is not known to you make a reasonable good faith effort to confirm the authorization came from a registered practitioner.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL",
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "condition": "The emergency oral authorization has been accepted.",
+            "action": "Immediately reduce it to writing, or enter it into a compliant electronic pharmacy system, carrying every required prescription element except the practitioner's signature.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS",
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "condition": "The follow-up prescription arrives.",
+            "action": "Check that its face carries 'Authorization for Emergency Dispensing' and the date of the oral order, then attach a paper follow-up to the oral prescription you reduced to writing, or annotate the electronic prescription record with the original authorization and the date of the oral order.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "condition": "You are asked how long the practitioner has to deliver the follow-up.",
+            "action": "The answer turns on whether the practitioner holds an electronic-prescribing exception: without one the Massachusetts duty is an electronic follow-up within 2 days, which is shorter than every other period in play; with one the outer bound is 7 days because the statute and the regulations both defer to the shorter period federal law requires.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING",
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "condition": "You are the pharmacist and cannot tell whether the practitioner properly holds an electronic-prescribing exception or waiver.",
+            "action": "Under 105 CMR 721.070(C) you are not required to verify that an otherwise valid written or oral prescription properly falls within an exception or waiver. That question governs the practitioner's follow-up duty, not your authority to dispense; every other prescription and controlled-substance requirement still applies to you.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE"
+            ]
+          },
+          {
+            "condition": "A WRITTEN follow-up prescription is used rather than an electronic one.",
+            "action": "Apply the written-format requirements as well: 105 CMR 721.020(F) requires the practitioner's signature and either facsimile transmission or a tamper-resistant form, and under 105 CMR 721.040(A) a prescription in a non-conforming format is invalid and shall not be filled.",
+            "rule_ids": [
+              "MA-RX-WRITTEN-FORMAT"
+            ]
+          },
+          {
+            "condition": "The federal seven-day period has run since the oral authorization and no follow-up has been delivered.",
+            "action": "Notify the nearest DEA office of the practitioner's failure to deliver the follow-up prescription.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP",
+              "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+            ]
+          },
+          {
+            "condition": "The follow-up never arrived and the pharmacist did not notify the DEA.",
+            "action": "Treat the emergency dispensing as no longer authorized: the failure to notify voids the authority this exception conferred to dispense without a written prescription.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "The seven-business-day counts in 105 CMR 721.060(B)(4) and 105 CMR 721.070(B) are not longer allowances than the federal period: 105 CMR 721.070(B) states its period as seven business days OR THE SHORTER PERIOD REQUIRED BY FEDERAL LAW, and M.G.L. c. 94C, s. 20(c) carries the same qualifier, so the federal seven days under 21 CFR 1306.11(d)(4) caps them.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "MA-ORAL-CS-FOLLOWUP-TIMING",
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "The shortest period is a Massachusetts one, and it is the one candidates overlook: where the practitioner holds no s. 23(h) exception, M.G.L. c. 94C, s. 20(c) requires an ELECTRONIC follow-up within 2 days of any oral controlled-substance prescription. Federal law states no such general two-day duty.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING",
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "Massachusetts frames the emergency as a waiver of the requirement to use an electronic prescribing system, so written and oral prescriptions become available while every other prescription requirement continues to apply; federal law frames the same situation as a narrow exception to the written-prescription requirement for Schedule II.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "text": "Both sources place the same words on the face of the follow-up prescription, and both require the pharmacist to join the follow-up to the record of the oral prescription on receipt.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Dispensing beyond the emergency period is not covered by the oral authorization and requires a paper or electronic prescription signed by the practitioner.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "text": "A central fill pharmacy is not authorized to prepare a Schedule II prescription on an oral authorization from a retail pharmacist or a practitioner.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "text": "A mailed follow-up meets the period by its postmark rather than by the date the pharmacy receives it.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS",
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "text": "The facsimile route and the tamper-resistant form route are alternatives, so a written follow-up satisfying either one meets 105 CMR 721.020(F).",
+            "rule_ids": [
+              "MA-RX-WRITTEN-FORMAT"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Federal emergency oral Schedule II follow-up",
+            "timeframe": "Within 7 days after authorizing the emergency oral prescription",
+            "consequence": "The written or electronic follow-up must be caused to be delivered to the dispensing pharmacist.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "event": "Massachusetts follow-up after any oral controlled-substance prescription, practitioner holding no s. 23(h) exception",
+            "timeframe": "An electronic prescription within 2 days",
+            "consequence": "This is the shortest period reaching an emergency oral Schedule II prescription in Massachusetts.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING"
+            ]
+          },
+          {
+            "event": "Massachusetts follow-up where the practitioner holds a s. 23(h) exception",
+            "timeframe": "A written prescription within not more than 7 days, or the shorter period federal law requires, postmarked within that period",
+            "consequence": "The statute defers to the shorter federal period rather than extending it.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING"
+            ]
+          },
+          {
+            "event": "Massachusetts emergency-situation and ePrescribing-exception regulatory follow-up",
+            "timeframe": "Within 7 business days",
+            "consequence": "105 CMR 721.060(B)(4) states this count and 105 CMR 721.070(B) states it subject to the shorter federal period, so it is an outer bound rather than extra time.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "MA-ORAL-CS-FOLLOWUP-TIMING"
+            ]
+          },
+          {
+            "event": "Missing emergency oral Schedule II follow-up",
+            "timeframe": "Once the delivery period has run",
+            "consequence": "The pharmacist must notify the nearest DEA office of the practitioner's failure to deliver.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-MISSING-FOLLOWUP"
+            ]
+          },
+          {
+            "event": "Pharmacist's own failure to notify the DEA",
+            "timeframe": "No separate period; the consequence attaches to the omission",
+            "consequence": "The authority conferred to dispense without a written prescription is voided.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "The oral prescription is immediately reduced to writing by the pharmacist and carries every element 21 CFR 1306.05 requires except the practitioner's signature.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "text": "The follow-up prescription bears 'Authorization for Emergency Dispensing' and the date of the oral order on its face.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS",
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "text": "On receipt the pharmacist attaches a paper follow-up to the oral prescription earlier reduced to writing, and annotates an electronic prescription record with the original authorization and the date of the oral order.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "text": "Massachusetts requires the same emergency oral prescription to be immediately entered into a compliant electronic pharmacy system or otherwise reduced to writing by the dispensing pharmacist.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "text": "The M.G.L. c. 94C, s. 20(c) follow-up must itself indicate that it is issued to document an oral prescription, and on receipt the dispensing pharmacy attaches it to the oral prescription the pharmacy reduced to writing.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Limit the emergency oral quantity to what is adequate for the emergency period and confirm the identity of an unknown prescriber before dispensing.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "role": "Prescribing practitioner",
+            "duty": "Cause the follow-up prescription for the emergency quantity to be delivered within the period, bearing the required face notation.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP",
+              "MA-RX-EMERGENCY-ORAL-CII"
+            ]
+          },
+          {
+            "role": "Pharmacist",
+            "duty": "Notify the nearest DEA office when the practitioner fails to deliver the follow-up, and understand that omitting the notification voids the authority relied on to dispense.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Reaching for a seven-day figure on a Massachusetts emergency oral question skips the 2-day electronic follow-up M.G.L. c. 94C, s. 20(c) imposes whenever the practitioner holds no s. 23(h) exception.",
+            "rule_ids": [
+              "MA-ORAL-CS-FOLLOWUP-TIMING",
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "Reading seven business days as more time than seven days inverts the relationship: the Massachusetts regulation states its period subject to the shorter federal one.",
+            "rule_ids": [
+              "MA-RX-EMERGENCY-ORAL-CII",
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "Knowing the DEA notification duty but not its consequence leaves the candidate unable to say what actually turns on the pharmacist's omission.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
+              "FED-CII-EMERGENCY-ORAL-RECORDS"
+            ]
+          },
+          {
+            "text": "Treating an emergency oral authorization as covering continued therapy overlooks that dispensing beyond the emergency period needs a signed prescription.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "text": "Refusing an otherwise valid oral prescription because the practitioner's exception status cannot be confirmed invents a verification duty 105 CMR 721.070(C) expressly does not impose on the pharmacist.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE"
+            ]
+          },
+          {
+            "text": "Accepting a written follow-up on an ordinary form because an exception permitted a written prescription confuses permission to use writing with compliance with the written-format rules.",
+            "rule_ids": [
+              "MA-RX-WRITTEN-FORMAT",
+              "MA-CONTROLLED-EPRESCRIBE"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0104"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-EMERGENCY-ORAL",
+          "content_version": 1,
+          "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Emergency oral Schedule II prescription requirements",
+              "section": "21 CFR 1306.11(d)(1)-(4)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "In a defined emergency, a pharmacist may dispense an oral Schedule II prescription only in the quantity necessary for the emergency period after immediate communication with and reasonable identification of the prescriber.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-oral.json",
+          "canonical_blob": "cfafa97095ce8b98fcf605e0e1c4c1282c78c887"
+        },
+        {
+          "rule_id": "FED-CII-EMERGENCY-FOLLOWUP",
+          "content_version": 1,
+          "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Follow-up after emergency oral Schedule II dispensing",
+              "section": "21 CFR 1306.11(d)(4)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "The prescriber must deliver the required written or electronic follow-up Schedule II prescription to the pharmacy within seven days after authorizing emergency oral dispensing.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-followup.json",
+          "canonical_blob": "ed1a3d1fb7eaacf6086f1c31862fd43b4b1db728"
+        },
+        {
+          "rule_id": "FED-CII-EMERGENCY-MISSING-FOLLOWUP",
+          "content_version": 1,
+          "content_hash": "1a6473a17645dca1f4c0e49562e7d21decbb578d2e2f3ff79c63dc65af8e617e",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR 1306.11",
+              "section": "1306.11(d)(4)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "After an emergency oral Schedule II dispensing, if the prescribing practitioner fails to deliver the required follow-up prescription within seven days, the pharmacist must notify the DEA as required by 21 CFR 1306.11(d).",
+          "exceptions": [
+            "This rule applies after a lawful emergency oral Schedule II dispensing; it is not a general rule for routine Schedule II prescriptions."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-missing-followup.json",
+          "canonical_blob": "ace8a98076b24d7382b4e6a2f270b77da3095d00"
+        },
+        {
+          "rule_id": "FED-CII-EMERGENCY-ORAL-RECORDS",
+          "content_version": 1,
+          "content_hash": "2915d83840a1eaa3919ce809aa5c2df4b32c834a89f6bc7ff05b78a548985e57",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-10",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Emergency oral Schedule II records and follow-up handling",
+              "section": "21 CFR 1306.11(d)(2), (d)(4), (d)(5)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "Under 21 CFR 1306.11(d)(2) the emergency oral Schedule II prescription SHALL BE IMMEDIATELY REDUCED TO WRITING BY THE PHARMACIST and shall contain all information 21 CFR 1306.05 requires EXCEPT the prescribing individual practitioner's signature. Under 1306.11(d)(4) the follow-up prescription must bear on its face 'AUTHORIZATION FOR EMERGENCY DISPENSING' AND THE DATE OF THE ORAL ORDER; it may be delivered in person or by mail, but a mailed paper prescription MUST BE POSTMARKED WITHIN THE 7-DAY PERIOD; UPON RECEIPT the dispensing pharmacist MUST ATTACH the paper prescription to the oral emergency prescription earlier reduced to writing, and for an ELECTRONIC follow-up must ANNOTATE the electronic prescription record with the original authorization and the date of the oral order. FAILURE OF THE PHARMACIST to notify the nearest DEA office when the practitioner does not deliver the follow-up SHALL VOID THE AUTHORITY conferred by 1306.11(d) to dispense without a written prescription. Under 1306.11(d)(5) a central fill pharmacy is not authorized to prepare a Schedule II prescription on an oral authorization from a retail pharmacist or practitioner.",
+          "exceptions": [
+            "A mailed follow-up satisfies the period by its postmark, not by the date the pharmacy receives it.",
+            "An electronic follow-up is annotated rather than physically attached.",
+            "The central fill prohibition in 1306.11(d)(5) removes the emergency oral route entirely for that setting."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-oral-records.json",
+          "canonical_blob": "9c1d2a34cff4b3891d3e00e39d3182f4287beb76"
+        },
+        {
+          "rule_id": "MA-RX-EMERGENCY-ORAL-CII",
+          "content_version": 1,
+          "content_hash": "47ed573d4538bcc9f1540f67d7ddf7c13afbedfc7b0ba1e6ea9d1a110db75fd1",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-10",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Prescribing in emergency situations",
+              "section": "105 CMR 721.060(A), (B)(1)-(B)(5)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            }
+          ],
+          "rule_summary": "Under 105 CMR 721.060(A) an Emergency Situation waives the requirement to use an electronic prescribing system, so written and oral prescriptions may be issued, but they must comply with every other prescription requirement including 105 CMR 721.070(B). Under 721.060(B) a pharmacist may dispense a SCHEDULE II controlled substance on the written or orally transmitted authorization of a prescribing practitioner provided: the quantity is limited to the amount adequate to treat the patient during the emergency period; the prescription carries everything M.G.L. c. 94C, s. 20(a) requires except the practitioner's actual signature and is immediately entered into a compliant electronic pharmacy system or reduced to writing; if the practitioner is not known to the pharmacist, the pharmacist makes a reasonable good faith effort to determine the authorization came from a prescribing practitioner; WITHIN SEVEN BUSINESS DAYS the practitioner causes an electronic OR written prescription for the emergency quantity to be delivered, bearing 'Authorization for Emergency Dispensing' on its face, with a mailed written prescription postmarked within the period; and on receipt the pharmacist ATTACHES it to the orally transmitted prescription earlier reduced to writing. The pharmacist SHALL NOTIFY the nearest DEA office if the practitioner fails to deliver it.",
+          "exceptions": [
+            "The emergency waiver removes the electronic-prescribing requirement only; every other prescription requirement, including 105 CMR 721.070(B), continues to apply."
+          ],
+          "canonical_path": "data/rules/ma-rx-emergency-oral-cii.json",
+          "canonical_blob": "fdcce825aeb0b6f1283746755cfca2a266349a0d"
+        },
+        {
+          "rule_id": "MA-ORAL-CS-FOLLOWUP-TIMING",
+          "content_version": 1,
+          "content_hash": "2c63e7829be4923f584b688b8b3365b61409577ab4d0b1bde8c66ad451f684a3",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-04",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Oral prescriptions",
+              "section": "M.G.L. c. 94C, s. 20(c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section20"
+            },
+            {
+              "type": "STATUTE",
+              "name": "Commissioner exceptions permitting written and oral prescriptions",
+              "section": "M.G.L. c. 94C, s. 23(h)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Follow-up documentation for an oral prescription issued under an ePrescribing exception",
+              "section": "105 CMR 721.070(B)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            }
+          ],
+          "rule_summary": "Under M.G.L. c. 94C, s. 20(c) a practitioner who prescribes a controlled substance by oral prescription shall cause an ELECTRONIC prescription to be delivered to the dispensing pharmacy WITHIN 2 DAYS; if the practitioner has received an electronic-prescribing exception from the commissioner under s. 23(h), the practitioner shall instead cause a WRITTEN prescription to be delivered within not more than 7 DAYS, or the shorter period required by federal law, postmarked within that period. The follow-up prescription must indicate that it documents an oral prescription, and the pharmacy attaches it to the oral prescription it reduced to writing. Under 105 CMR 721.070(B) a practitioner issuing an oral prescription for a controlled substance in SCHEDULES II THROUGH V under a 105 CMR 721.070(A) ePrescribing exception shall cause a written or electronic prescription to be delivered within not more than SEVEN BUSINESS DAYS, or the shorter period required by federal law. The s. 20(c) requirements do not apply to controlled substances in Schedule VI.",
+          "exceptions": [
+            "M.G.L. c. 94C, s. 20(c) does not apply to controlled substances in Schedule VI, although the immediate reduction to writing and the remaining validity duties still apply.",
+            "A shorter federal period controls where federal law requires one, such as the 7-day emergency oral Schedule II follow-up under 21 CFR 1306.11(d)(4)."
+          ],
+          "canonical_path": "data/rules/ma-oral-cs-followup-timing.json",
+          "canonical_blob": "ff9b79de1bd87b7eee4316e691e027b16258cd65"
+        },
+        {
+          "rule_id": "MA-CONTROLLED-EPRESCRIBE",
+          "content_version": 2,
+          "content_hash": "3f041439027702fc2a8f1e55c8d6e208aafdd028934e2453afac42e4d1a7a224",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Standards for prescription format and security in Massachusetts",
+              "section": "105 CMR 721.070(A), (C)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "DCP Electronic Prescribing and Dispensing Manual",
+              "section": "DCP 19-12-108; pharmacist exception verification",
+              "url": "https://www.mass.gov/circular-letter/circular-dcp-19-12-108-electronic-prescribing-and-dispensing-manual"
+            }
+          ],
+          "rule_summary": "Massachusetts generally requires covered prescriptions to be issued electronically subject to 105 CMR 721.070 exceptions and waivers. Schedule VI prescriptions are excepted from the state electronic-prescribing requirement under 105 CMR 721.070(A)(9). Under 105 CMR 721.070(C), a pharmacist who receives an otherwise valid written or oral prescription is not required to verify that the prescription properly falls within an electronic-prescribing exception or waiver; all other prescription and controlled-substance requirements still apply.",
+          "exceptions": [
+            "Schedule VI prescriptions are excepted from the Massachusetts electronic-prescribing requirement under 105 CMR 721.070(A)(9).",
+            "Other enumerated exceptions and waivers may permit a covered prescription to be issued in written or oral form."
+          ],
+          "canonical_path": "data/rules/ma-controlled-eprescribe.json",
+          "canonical_blob": "456631997966d327d66005578a770e1f0a85e8bd"
+        },
+        {
+          "rule_id": "MA-RX-WRITTEN-FORMAT",
+          "content_version": 1,
+          "content_hash": "96f0cbba37c6d51c2f94131e03a6d51aaff0b32dee24038d830d43891d2267c4",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-09-10",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Prescription formats for written prescriptions",
+              "section": "105 CMR 721.020(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Invalid prescriptions",
+              "section": "105 CMR 721.040(A)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            },
+            {
+              "type": "STATUTE",
+              "name": "Written prescription form requirement",
+              "section": "M.G.L. c. 94C, s. 23(i)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
+            }
+          ],
+          "rule_summary": "Where state and federal law permit a WRITTEN prescription, 105 CMR 721.020(F) requires it to be issued on a form carrying the practitioner's signature and to be EITHER transmitted via facsimile or similar technology OR written on a TAMPER-RESISTANT FORM consistent with federal requirements for Medicaid. M.G.L. c. 94C, s. 23(i) states the same at statute level. Under 105 CMR 721.040(A) a prescription in a format that does not conform is INVALID AND SHALL NOT BE FILLED. An exception that permits a written prescription therefore removes the electronic-format mandate only; the written form requirements continue to govern the prescription the exception allows.",
+          "exceptions": [
+            "The facsimile route and the tamper-resistant form route are alternatives; either satisfies 105 CMR 721.020(F)(1)-(2)."
+          ],
+          "canonical_path": "data/rules/ma-rx-written-format.json",
+          "canonical_blob": "280bb8237bca27134c5eb0e5984d2c551253606f"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0104",
+          "question_hash": "48b7db5158e12cd458f7a1c7efc3d628eeffac0f02b1f11185a4d70f43b0e1f3",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0104.json",
+          "canonical_blob": "be5a5dac9dbeb8f8bd2a78a1276dcf88195a771a"
+        }
+      ]
+    }
+  ]
+}

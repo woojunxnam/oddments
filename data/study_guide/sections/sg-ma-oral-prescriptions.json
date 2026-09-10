@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-ORAL-PRESCRIPTIONS",
-  "content_version": 2,
-  "content_hash": "059cd257a875070237302c94607397ae00072a30412f686d08bb058f905f476a",
+  "content_version": 3,
+  "content_hash": "f6efcd691ffe00e6cdb77df6bc0b5c7d8f12e9bc0259d795a540c9e851b1a3c1",
   "title": "Massachusetts Oral Prescriptions: Receipt, Follow-Up and Emergency Dispensing",
   "areas": [
     2,
@@ -12,7 +12,9 @@
   "learning_objectives": [
     "Carry out the pharmacist's duties at the moment an oral controlled-substance prescription is received.",
     "Choose the follow-up period from the route the prescription travelled, and identify who owes it.",
-    "Separate the Schedule VI Failover from an ordinary electronic-prescribing outage."
+    "Separate the Schedule VI Failover from an ordinary electronic-prescribing outage.",
+    "State which sovereign's follow-up period actually binds an emergency oral Schedule II prescription dispensed in Massachusetts.",
+    "Describe what the emergency follow-up must carry on its face and what the pharmacist does with a paper follow-up as against an electronic one."
   ],
   "rule_ids": [
     "MA-ORAL-CONTROLLED-DOCUMENTATION",
@@ -21,7 +23,10 @@
     "MA-RX-FAILOVER-ORAL",
     "MA-RX-EMERGENCY-ORAL-CII",
     "FED-CII-EMERGENCY-FOLLOWUP",
-    "MA-RX-WRITTEN-FORMAT"
+    "MA-RX-WRITTEN-FORMAT",
+    "FED-CII-EMERGENCY-ORAL-RECORDS",
+    "FED-CII-EMERGENCY-ORAL",
+    "MA-EMERGENCY-SITUATION-EXCEPTION"
   ],
   "verified_rule_dependencies": {
     "MA-ORAL-CONTROLLED-DOCUMENTATION": {
@@ -51,8 +56,408 @@
     "MA-RX-WRITTEN-FORMAT": {
       "content_version": 1,
       "content_hash": "96f0cbba37c6d51c2f94131e03a6d51aaff0b32dee24038d830d43891d2267c4"
+    },
+    "FED-CII-EMERGENCY-ORAL-RECORDS": {
+      "content_version": 1,
+      "content_hash": "2915d83840a1eaa3919ce809aa5c2df4b32c834a89f6bc7ff05b78a548985e57"
+    },
+    "FED-CII-EMERGENCY-ORAL": {
+      "content_version": 1,
+      "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103"
+    },
+    "MA-EMERGENCY-SITUATION-EXCEPTION": {
+      "content_version": 1,
+      "content_hash": "1ecda796a7f707bdd58639306acf5e48436476ac37bd5aec8ada717c27614541"
     }
   },
+  "orientation": [
+    {
+      "text": "Massachusetts starts from the position that an oral prescription is not an ordinary format choice. Under 105 CMR 721.020(A) every prescription generated in the Commonwealth must be an electronic prescription unless it is issued under one of the exceptions listed in 105 CMR 721.070, so a lawful oral prescription is always the downstream product of some exception. That framing matters for the pharmacist because the exception that opened the route also decides the follow-up period, the acceptable form of the follow-up, and in one narrow case whether any follow-up is owed at all. The pharmacist's own duties at the moment of the call do not vary with the route: M.G.L. c. 94C, s. 20(a) requires the oral prescription to be reduced to writing immediately on a prescription form carrying the prescriber, the patient, the drug and strength, the directions and cautionary statements, the pharmacy's serial number and the refill information, and s. 20(b) requires a reasonable effort to determine that the authorization came from a registered practitioner where that practitioner is not known to the pharmacist.",
+      "rule_ids": [
+        "MA-ORAL-CONTROLLED-DOCUMENTATION",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "text": "The follow-up architecture comes from two sources and produces three different periods, and the exam turns on keeping them apart. M.G.L. c. 94C, s. 20(c) states the default: a practitioner who prescribes a controlled substance by oral prescription must cause an ELECTRONIC prescription to be delivered to the dispensing pharmacy within 2 days. The same subsection then diverts a practitioner who has received an electronic-prescribing exception from the commissioner under s. 23(h) to a WRITTEN prescription within not more than 7 days, or the shorter period federal law requires, postmarked within that period. Separately, 105 CMR 721.070(B) governs a practitioner who issues an oral prescription for a controlled substance in Schedules II through V under a 105 CMR 721.070(A) exception: a written or electronic prescription within not more than seven BUSINESS days, or the shorter period federal law requires. In every version the deadline belongs to the practitioner rather than to the pharmacist, the follow-up must say on its face that it documents an oral prescription, and the pharmacy attaches it to the writing it already made. Schedule VI sits outside s. 20(c) entirely.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "text": "Two routes look alike from the counter and are not the same. A Failover is defined in the definitions section of 105 CMR 721.000 as a document that ORIGINATES AS A SCHEDULE VI ELECTRONIC PRESCRIPTION, suffers an unforeseen defect during electronic transmission, and is converted to a computer generated facsimile. Under 105 CMR 721.020(G) such a document is considered an oral prescription and requires no written or electronic follow-up, provided it carries everything M.G.L. c. 94C, s. 20(a) requires except the signature and is immediately entered or reduced to writing, the pharmacist makes a reasonable good faith effort where the prescriber is unknown, and the prescription is not for an Additional Drug. The ordinary outage is the different thing: 105 CMR 721.070(A)(2) excepts prescriptions issued where electronic prescribing is unavailable because of temporary technological or electrical failure, and a Schedule II through V prescription taken on that basis still owes the 721.070(B) follow-up. The schedule is the discriminator, and it sits in the definition rather than in the three conditions beneath it.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-ORAL",
+        "MA-CONTROLLED-EPRESCRIBE",
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
+      ]
+    },
+    {
+      "text": "The emergency Schedule II pathway is where both sovereigns reach the same prescription and their texts do not match. Under 105 CMR 721.060(A) an Emergency Situation waives the requirement to use an electronic prescribing system, and written and oral prescriptions may then be issued but must comply with every other prescription requirement including 105 CMR 721.070(B). Under 721.060(B) a pharmacist may dispense a Schedule II controlled substance on the practitioner's written or orally transmitted authorization, limited to the quantity adequate to treat the patient during the emergency period. Federal law reaches the same dispensing more narrowly: 21 CFR 1306.11(a) permits a Schedule II drug to be dispensed only on a written prescription signed by the practitioner except as paragraph (d) provides, and paragraph (d) opens on the pharmacist RECEIVING ORAL AUTHORIZATION. The federal exception has no written limb at all, so a Massachusetts fact pattern that turns on a written emergency authorization is resting on state law alone.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL",
+        "MA-EMERGENCY-SITUATION-EXCEPTION"
+      ]
+    },
+    {
+      "text": "Choosing the emergency follow-up period is a two-step trip through the Massachusetts text rather than a contest between two sovereigns. 105 CMR 721.070(A)(4) enumerates prescriptions issued or dispensed in Emergency Situations as an ePrescribing exception, which is why the emergency prescription never sits in the s. 20(c) two-day default: it is in the proviso by definition. 105 CMR 721.060(A) then routes it to 721.070(B), and 721.060(B)(4) states the same period directly, both as seven business days. But 721.070(B) states its period subject to any SHORTER period required by federal law, and 21 CFR 1306.11(d)(4) requires the follow-up within 7 days after the practitioner authorized the emergency oral prescription. Seven calendar days expires before seven business days, so the federal period is the one that actually binds, reached through the Massachusetts regulation rather than around it. 105 CMR 721.060(B)(4) says the same thing from the other side when it requires the follow-up to comply with federal and state law.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "FED-CII-EMERGENCY-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "The record layer is the part candidates skip. On the emergency call the pharmacist immediately reduces the oral prescription to writing carrying everything otherwise required except the practitioner's signature. When the follow-up arrives, 21 CFR 1306.11(d)(4) requires its face to carry BOTH the words Authorization for Emergency Dispensing AND the date of the oral order, and it splits the pharmacist's handling by medium: a paper follow-up is ATTACHED to the oral prescription earlier reduced to writing, while for an electronic follow-up the pharmacist must ANNOTATE the record of the electronic prescription with the original authorization and the date of the oral order. If the practitioner never delivers, the pharmacist must notify the nearest DEA office, and the pharmacist's own failure to notify voids the authority that permitted the dispensing in the first place. Any written follow-up must additionally satisfy 105 CMR 721.020(F): the practitioner's signature, and either transmission by facsimile or similar technology or a tamper-resistant form, because a non-conforming format is invalid and may not be filled.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
+        "MA-RX-WRITTEN-FORMAT",
+        "MA-ORAL-CONTROLLED-DOCUMENTATION"
+      ]
+    }
+  ],
+  "comparison_tables": [
+    {
+      "title": "Which follow-up clock a Massachusetts oral controlled-substance prescription runs on",
+      "columns": [
+        "Route that made the oral prescription lawful",
+        "Period",
+        "What discharges it",
+        "Source"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "General case: the practitioner has received no electronic-prescribing exception",
+            "Within 2 days",
+            "An electronic prescription delivered to the dispensing pharmacy",
+            "M.G.L. c. 94C, s. 20(c) first clause"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CS-FOLLOWUP-TIMING"
+          ]
+        },
+        {
+          "cells": [
+            "The practitioner has received a commissioner's exception under s. 23(h)",
+            "Not more than 7 days, or the shorter period federal law requires",
+            "A written prescription, postmarked within the period if mailed",
+            "M.G.L. c. 94C, s. 20(c) proviso"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CS-FOLLOWUP-TIMING"
+          ]
+        },
+        {
+          "cells": [
+            "An oral Schedule II through V prescription issued under a 105 CMR 721.070(A) exception",
+            "Not more than seven business days, or the shorter period federal law requires",
+            "A written OR an electronic prescription",
+            "105 CMR 721.070(B)"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CS-FOLLOWUP-TIMING",
+            "MA-CONTROLLED-EPRESCRIBE"
+          ]
+        },
+        {
+          "cells": [
+            "An emergency oral Schedule II prescription dispensed in Massachusetts",
+            "Seven business days on the Massachusetts count, but the federal 7 days is shorter and binds",
+            "A written or electronic prescription bearing the required face notations",
+            "105 CMR 721.060(B)(4) and 721.070(B), subject to 21 CFR 1306.11(d)(4)"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-FOLLOWUP",
+            "MA-EMERGENCY-SITUATION-EXCEPTION"
+          ]
+        },
+        {
+          "cells": [
+            "A Failover verified under 105 CMR 721.020(G)",
+            "No follow-up period; none is owed",
+            "Nothing further, provided all three conditions hold and the drug is not an Additional Drug",
+            "105 CMR 721.020(G)"
+          ],
+          "rule_ids": [
+            "MA-RX-FAILOVER-ORAL"
+          ]
+        },
+        {
+          "cells": [
+            "Any oral prescription for a controlled substance in Schedule VI",
+            "No statutory follow-up period",
+            "Nothing; the s. 20(c) requirements do not reach Schedule VI",
+            "M.G.L. c. 94C, s. 20(c) closing sentence"
+          ],
+          "rule_ids": [
+            "MA-ORAL-CS-FOLLOWUP-TIMING",
+            "MA-ORAL-CONTROLLED-DOCUMENTATION"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Emergency Schedule II dispensing: the Massachusetts text against the federal text",
+      "columns": [
+        "Element",
+        "Massachusetts, 105 CMR 721.060",
+        "Federal, 21 CFR 1306.11(d)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Form of authorization that opens the route",
+            "The practitioner's WRITTEN OR ORALLY TRANSMITTED authorization",
+            "Oral authorization only; the paragraph has no written limb"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL"
+          ]
+        },
+        {
+          "cells": [
+            "Quantity",
+            "Limited to the amount adequate to treat the patient during the emergency period",
+            "Limited to the amount adequate to treat the patient during the emergency period"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL"
+          ]
+        },
+        {
+          "cells": [
+            "Unknown prescriber",
+            "Reasonable good faith effort to determine the authorization was issued by a prescribing practitioner",
+            "Reasonable effort to determine the oral authorization came from a registered individual practitioner"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL"
+          ]
+        },
+        {
+          "cells": [
+            "Follow-up period",
+            "Within seven business days after authorizing the emergency orally transmitted prescription",
+            "Within 7 days after authorizing the emergency oral prescription"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-FOLLOWUP"
+          ]
+        },
+        {
+          "cells": [
+            "Face of the follow-up",
+            "Authorization for Emergency Dispensing, and it shall comply with federal and state law",
+            "Authorization for Emergency Dispensing AND the date of the oral order"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL-RECORDS"
+          ]
+        },
+        {
+          "cells": [
+            "Handling on receipt",
+            "Attach the follow-up to the orally transmitted prescription earlier reduced to writing",
+            "Attach a paper follow-up; ANNOTATE an electronic one with the original authorization and the date of the oral order"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL-RECORDS"
+          ]
+        },
+        {
+          "cells": [
+            "Follow-up never arrives",
+            "The pharmacist shall notify the nearest DEA office",
+            "The pharmacist must notify, and failing to do so voids the authority to have dispensed without a written prescription"
+          ],
+          "rule_ids": [
+            "MA-RX-EMERGENCY-ORAL-CII",
+            "FED-CII-EMERGENCY-ORAL-RECORDS"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "A Failover against an ordinary electronic-prescribing outage",
+      "columns": [
+        "Question",
+        "Failover, 105 CMR 721.020(G)",
+        "Temporary technological or electrical failure, 105 CMR 721.070(A)(2)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Which schedule can it be",
+            "Schedule VI only; the definition says the document originates as a Schedule VI electronic prescription",
+            "Any covered schedule, including Schedules II through V"
+          ],
+          "rule_ids": [
+            "MA-RX-FAILOVER-ORAL",
+            "MA-CONTROLLED-EPRESCRIBE"
+          ]
+        },
+        {
+          "cells": [
+            "What the document is",
+            "An electronic prescription that failed in transmission and was converted to a computer generated facsimile",
+            "A prescription the practitioner issues in written or oral form because the electronic route is unavailable"
+          ],
+          "rule_ids": [
+            "MA-RX-FAILOVER-ORAL",
+            "MA-CONTROLLED-EPRESCRIBE"
+          ]
+        },
+        {
+          "cells": [
+            "Is a follow-up owed",
+            "No, provided the three 721.020(G) conditions hold and the drug is not an Additional Drug",
+            "Yes; an oral Schedule II through V prescription still owes the 105 CMR 721.070(B) follow-up"
+          ],
+          "rule_ids": [
+            "MA-RX-FAILOVER-ORAL",
+            "MA-ORAL-CS-FOLLOWUP-TIMING"
+          ]
+        },
+        {
+          "cells": [
+            "If a condition fails",
+            "The document is not a verified Failover, and an electronic prescription transmitted by other means is invalid under 721.040(C)",
+            "The ordinary follow-up duty was never displaced, so it simply continues to run"
+          ],
+          "rule_ids": [
+            "MA-RX-FAILOVER-ORAL",
+            "MA-ORAL-CS-FOLLOWUP-TIMING"
+          ]
+        }
+      ]
+    }
+  ],
+  "worked_examples": [
+    {
+      "scenario": "A Massachusetts prescriber telephones on a Thursday afternoon. A patient discharged that morning needs an immediate dose of a Schedule II analgesic, and the prescriber says an electronic prescription cannot be transmitted before the patient needs it. You dispense a three-day supply. Your intern asks when the follow-up prescription is due, and offers two candidate answers: two days, or seven business days.",
+      "steps": [
+        "Identify the route. This is an Emergency Situation, and 105 CMR 721.060(A) waives only the requirement to use an electronic prescribing system while leaving every other prescription requirement in force.",
+        "Reject the two-day answer. M.G.L. c. 94C, s. 20(c) sets its two-day electronic default for a practitioner who has received no electronic-prescribing exception, and 105 CMR 721.070(A)(4) enumerates emergency-situation prescriptions as exactly such an exception.",
+        "Follow the Massachusetts routing. 105 CMR 721.060(A) sends the prescription to 105 CMR 721.070(B), and 105 CMR 721.060(B)(4) states the same period directly: seven business days.",
+        "Read the whole of 721.070(B). Its period is not more than seven business days OR SUCH SHORTER PERIOD THAT IS REQUIRED BY FEDERAL LAW, so the Massachusetts count is a ceiling rather than an entitlement.",
+        "Supply the federal period. 21 CFR 1306.11(d)(4) requires the follow-up within 7 days after the practitioner authorized the emergency oral prescription, and seven calendar days expires before seven business days.",
+        "Count from the right event. The federal clock runs from the practitioner's authorization of the oral prescription, not from the date you dispensed or the date the patient collected the drug."
+      ],
+      "resolution": "Neither of the intern's answers is the operative deadline. Massachusetts counts seven business days, but its own regulation defers to any shorter federal period, and the shorter federal period is the 7 days in 21 CFR 1306.11(d)(4) running from the oral authorization. The error the scenario invites is quoting the Massachusetts seven business days as though it were extra time.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "FED-CII-EMERGENCY-FOLLOWUP"
+      ]
+    },
+    {
+      "scenario": "On day six a follow-up for an emergency oral Schedule II dispensing arrives as an electronic prescription rather than on paper. It bears the words Authorization for Emergency Dispensing but nothing else unusual. A technician prints it, staples it to the writing you made on the telephone, and files the pair.",
+      "steps": [
+        "Confirm the timing is satisfied. The follow-up arrived inside the operative federal 7-day period, and 105 CMR 721.070(B) accepts a written OR an electronic prescription, so nothing turns on the medium for the deadline itself.",
+        "Check the face against the whole federal requirement. 21 CFR 1306.11(d)(4) requires the face to carry the words Authorization for Emergency Dispensing AND the date of the oral order; the phrase alone leaves the requirement half met.",
+        "Correct the handling. The attach-and-file step is the federal instruction for a PAPER follow-up. For an electronic prescription the pharmacist must annotate the record of the electronic prescription with the original authorization and the date of the oral order.",
+        "Note that printing the electronic prescription does not convert it into the paper document the attachment rule addresses, so the annotation on the electronic record is still owed."
+      ],
+      "resolution": "The filing is not compliant. The face notation is incomplete without the date of the oral order, and an electronic follow-up is annotated on its own record rather than discharged by stapling a printout. The error the scenario invites is treating Authorization for Emergency Dispensing as the whole face requirement and treating attachment as the only handling rule.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
+      ]
+    },
+    {
+      "scenario": "Your electronic prescribing connection is down for the afternoon. A prescriber telephones an oral prescription for a Schedule IV benzodiazepine, and separately a Schedule VI prescription arrives as a computer generated facsimile after its electronic transmission failed. A colleague says both are Failovers, so neither needs a follow-up prescription.",
+      "steps": [
+        "Apply the Failover definition before its conditions. A Failover is a document that originates as a SCHEDULE VI electronic prescription, suffers an unforeseen transmission defect, and is converted to a computer generated facsimile.",
+        "Classify the Schedule IV order. It was never a Schedule VI electronic prescription, so it cannot be a Failover regardless of the outage; it falls under the separate 105 CMR 721.070(A)(2) exception for temporary technological or electrical failure.",
+        "Give the Schedule IV order its follow-up. As an oral Schedule II through V prescription issued under a 721.070(A) exception it owes a written or electronic prescription within not more than seven business days under 105 CMR 721.070(B).",
+        "Test the Schedule VI facsimile against the three conditions in 105 CMR 721.020(G), including that it is not for an Additional Drug, and verify it before relying on it, since an electronic prescription transmitted by other means is otherwise invalid.",
+        "Keep the pharmacist's own duties in place for both: immediate reduction to writing and a reasonable effort to authenticate a prescriber who is not known to you."
+      ],
+      "resolution": "The colleague is half right. Only the Schedule VI facsimile can be a Failover, and only if all three conditions hold; the Schedule IV oral prescription still owes a seven-business-day follow-up. The error the scenario invites is reading the three Failover conditions as the whole test and skipping the Schedule VI limit in the definition above them.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-ORAL",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "MA-CONTROLLED-EPRESCRIBE",
+        "MA-ORAL-CONTROLLED-DOCUMENTATION"
+      ]
+    }
+  ],
+  "retrieval_prompts": [
+    {
+      "prompt": "Two things must be written on the face of the federal emergency follow-up prescription. Name both.",
+      "answer": "The words Authorization for Emergency Dispensing, and the date of the oral order (21 CFR 1306.11(d)(4)).",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
+        "MA-RX-EMERGENCY-ORAL-CII"
+      ]
+    },
+    {
+      "prompt": "A paper emergency follow-up is attached. What must the pharmacist do instead when the follow-up is electronic?",
+      "answer": "Annotate the record of the electronic prescription with the original authorization and the date of the oral order.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "prompt": "Massachusetts measures the emergency Schedule II follow-up in seven business days. What period actually binds, and why?",
+      "answer": "The federal 7 days in 21 CFR 1306.11(d)(4), running from the oral authorization, because 105 CMR 721.070(B) states its own period subject to such shorter period as federal law requires and seven calendar days expires first.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "FED-CII-EMERGENCY-FOLLOWUP"
+      ]
+    },
+    {
+      "prompt": "105 CMR 721.060(B) lets a pharmacist dispense a Schedule II substance on the practitioner's written or orally transmitted authorization. Does the federal emergency exception have the same two limbs?",
+      "answer": "No. 21 CFR 1306.11(d) opens only on the pharmacist receiving ORAL authorization, so the written limb is a Massachusetts feature with no federal counterpart.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL"
+      ]
+    },
+    {
+      "prompt": "Give the three Massachusetts oral-prescription follow-up periods and the route each belongs to.",
+      "answer": "Two days electronic under M.G.L. c. 94C, s. 20(c) where the practitioner has received no exception; not more than 7 days written where the practitioner has received a s. 23(h) exception; not more than seven business days written or electronic for an oral Schedule II through V prescription issued under a 105 CMR 721.070(A) exception.",
+      "rule_ids": [
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
+      ]
+    },
+    {
+      "prompt": "Why is a Massachusetts emergency oral prescription never governed by the two-day electronic default?",
+      "answer": "Because 105 CMR 721.070(A)(4) enumerates prescriptions issued or dispensed in Emergency Situations as an ePrescribing exception, and the two-day default applies only where the practitioner has received no such exception.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "prompt": "Which schedule must a document have started in to be a Failover, and what does a verified Failover excuse?",
+      "answer": "Schedule VI, and it excuses the written or electronic follow-up prescription that an oral prescription would otherwise owe.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-ORAL"
+      ]
+    },
+    {
+      "prompt": "A written follow-up arrives on a plain prescription pad, signed. What is the format problem?",
+      "answer": "105 CMR 721.020(F) requires a written prescription either transmitted by facsimile or similar technology or written on a tamper-resistant form, and 105 CMR 721.040(A) makes a non-conforming format invalid and not fillable.",
+      "rule_ids": [
+        "MA-RX-WRITTEN-FORMAT"
+      ]
+    }
+  ],
   "quick_review": [
     {
       "text": "On receiving an oral controlled-substance prescription the pharmacist must immediately reduce it to writing with the information Massachusetts requires, and must make a reasonable effort to authenticate a prescriber who is not known to the pharmacist.",
@@ -85,9 +490,22 @@
       ]
     },
     {
-      "text": "In an emergency a pharmacist may dispense a Schedule II controlled substance on the practitioner's written or orally transmitted authorization, limited to the quantity adequate for the emergency period, with the practitioner owing a follow-up within seven business days.",
+      "text": "In a Massachusetts Emergency Situation a pharmacist may dispense a Schedule II controlled substance on the practitioner's written or orally transmitted authorization, limited to the quantity adequate for the emergency period, with the practitioner owing a follow-up within seven business days. The federal exception in 21 CFR 1306.11(d) opens on oral authorization alone.",
       "rule_ids": [
-        "MA-RX-EMERGENCY-ORAL-CII"
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL"
+      ]
+    },
+    {
+      "text": "The emergency follow-up must carry Authorization for Emergency Dispensing AND the date of the oral order on its face; the pharmacist attaches a paper follow-up and annotates an electronic one with the original authorization and the date of the oral order.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "text": "A Massachusetts emergency oral prescription is issued under an enumerated ePrescribing exception, which is why 105 CMR 721.060(A) routes its follow-up to 105 CMR 721.070(B) rather than to the two-day electronic default.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION"
       ]
     }
   ],
@@ -131,9 +549,28 @@
     },
     {
       "condition": "A pharmacist dispenses a Schedule II controlled substance on oral authorization in an emergency.",
-      "action": "Limit the quantity to the emergency period, reduce the prescription to writing at once, authenticate an unknown prescriber, expect the follow-up within seven business days marked Authorization for Emergency Dispensing, attach it on receipt, and notify the DEA if it never comes.",
+      "action": "Limit the quantity to the emergency period, reduce the prescription to writing at once, and authenticate an unknown prescriber. For the follow-up, count seven business days under 105 CMR 721.060(B)(4) and 721.070(B) but treat the shorter federal period as the operative one: 21 CFR 1306.11(d)(4) requires delivery within 7 days after the practitioner authorized the emergency oral prescription, and 721.070(B) states its own period subject to that shorter federal period. Check the follow-up's face for Authorization for Emergency Dispensing and the date of the oral order, attach a paper follow-up or annotate an electronic one, and notify the nearest DEA office if it never comes.",
       "rule_ids": [
-        "MA-RX-EMERGENCY-ORAL-CII"
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
+        "FED-CII-EMERGENCY-FOLLOWUP",
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "condition": "You are asked whether an emergency Schedule II authorization may arrive in writing rather than by telephone.",
+      "action": "Separate the sovereigns. 105 CMR 721.060(B) accepts the practitioner's written or orally transmitted authorization, but 21 CFR 1306.11(d) opens only on oral authorization, so a written emergency authorization has no federal counterpart and the federal Schedule II written-prescription requirement in 1306.11(a) is what such a document must otherwise satisfy.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL"
+      ]
+    },
+    {
+      "condition": "You must decide whether the two-day electronic default or the seven-business-day route governs an emergency oral prescription.",
+      "action": "Recognise that the Emergency Situation is itself the ePrescribing exception under 105 CMR 721.070(A)(4), so the prescription sits in the proviso rather than the default and 105 CMR 721.060(A) routes it to 105 CMR 721.070(B).",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-CONTROLLED-EPRESCRIBE"
       ]
     }
   ],
@@ -150,6 +587,20 @@
       "rule_ids": [
         "MA-ORAL-CS-FOLLOWUP-TIMING",
         "FED-CII-EMERGENCY-FOLLOWUP"
+      ]
+    },
+    {
+      "text": "Massachusetts opens its emergency Schedule II route on the practitioner's WRITTEN OR ORALLY TRANSMITTED authorization under 105 CMR 721.060(B), but federal law has no written route at all: 21 CFR 1306.11(d) is an ORAL authorization exception to the signed-written-prescription rule in 1306.11(a). The written limb is therefore a Massachusetts formulation with no federal counterpart, and repeating it without that qualifier overstates what an emergency permits on federally reachable facts.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL"
+      ]
+    },
+    {
+      "text": "Federal law splits the pharmacist's handling of the follow-up by medium and Massachusetts does not: 21 CFR 1306.11(d)(4) requires a paper follow-up to be attached and an electronic one to be annotated with the original authorization and the date of the oral order, while 105 CMR 721.060(B)(5) states only the attachment step.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
+        "MA-RX-EMERGENCY-ORAL-CII"
       ]
     }
   ],
@@ -177,6 +628,25 @@
       "text": "An emergency waives only the electronic-prescribing requirement; every other prescription requirement continues to apply to the written or oral prescription the emergency permits.",
       "rule_ids": [
         "MA-RX-EMERGENCY-ORAL-CII"
+      ]
+    },
+    {
+      "text": "Dispensing beyond the emergency period is not covered by the oral authorization; the federal exception limits the quantity to the amount adequate to treat the patient during the emergency period and requires a signed paper or electronic prescription for anything further.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL"
+      ]
+    },
+    {
+      "text": "A central fill pharmacy is not authorized under 21 CFR 1306.11(d)(5) to prepare a Schedule II prescription on an oral authorization received from a retail pharmacist or a practitioner.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "text": "Unlike the time-limited waiver route, the Emergency Situation exception is not applied for and held by the practitioner; it attaches to the situation itself.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-CONTROLLED-EPRESCRIBE"
       ]
     }
   ],
@@ -207,11 +677,20 @@
     },
     {
       "event": "Practitioner follow-up after emergency oral Schedule II dispensing",
-      "timeframe": "Seven business days under Massachusetts law, seven days under federal law",
-      "consequence": "The federal seven days is shorter and controls; the document must bear Authorization for Emergency Dispensing.",
+      "timeframe": "Seven business days under 105 CMR 721.060(B)(4); 7 days under 21 CFR 1306.11(d)(4)",
+      "consequence": "The federal 7 days runs from the practitioner's authorization of the emergency oral prescription and is the shorter period, so it is the operative deadline; 105 CMR 721.070(B) states its own period subject to it.",
       "rule_ids": [
         "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
         "FED-CII-EMERGENCY-FOLLOWUP"
+      ]
+    },
+    {
+      "event": "Pharmacist's failure to notify the DEA when no emergency follow-up arrives",
+      "timeframe": "No separate period; the consequence attaches to the omission",
+      "consequence": "The authority conferred by 21 CFR 1306.11(d) to dispense without a written prescription is voided.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
       ]
     }
   ],
@@ -235,9 +714,24 @@
       ]
     },
     {
-      "text": "An emergency follow-up prescription bears Authorization for Emergency Dispensing on its face and is attached on receipt to the emergency prescription earlier reduced to writing.",
+      "text": "An emergency follow-up prescription must bear on its face BOTH the words Authorization for Emergency Dispensing AND the date of the oral order, as 21 CFR 1306.11(d)(4) requires and as 105 CMR 721.060(B)(4) imports when it directs that the follow-up comply with federal and state law. A mailed paper follow-up must be postmarked within the period.",
       "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "text": "How the pharmacist files the emergency follow-up depends on its medium: a paper follow-up is ATTACHED on receipt to the oral emergency prescription earlier reduced to writing, while for an electronic follow-up the pharmacist must ANNOTATE the record of the electronic prescription with the original authorization and the date of the oral order.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
         "MA-RX-EMERGENCY-ORAL-CII"
+      ]
+    },
+    {
+      "text": "The emergency oral prescription is reduced to writing carrying everything otherwise required except the practitioner's actual signature, and it may be entered into a compliant electronic pharmacy system instead of being written out.",
+      "rule_ids": [
+        "MA-RX-EMERGENCY-ORAL-CII",
+        "FED-CII-EMERGENCY-ORAL"
       ]
     }
   ],
@@ -255,6 +749,23 @@
       "duty": "Deliver the follow-up prescription within the period that applies to the route the prescription travelled, in the form that route accepts.",
       "rule_ids": [
         "MA-ORAL-CS-FOLLOWUP-TIMING"
+      ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Notify the nearest DEA office when an emergency follow-up is not delivered, understanding that omitting the notification voids the authority relied on to dispense without a written prescription.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS",
+        "MA-RX-EMERGENCY-ORAL-CII"
+      ]
+    },
+    {
+      "role": "Prescribing practitioner",
+      "duty": "Determine that the Emergency Situation elements are met before authorizing an oral Schedule II prescription, and deliver the follow-up bearing the required face notations within the shorter of the applicable periods.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "FED-CII-EMERGENCY-FOLLOWUP",
+        "MA-RX-EMERGENCY-ORAL-CII"
       ]
     }
   ],
@@ -292,9 +803,10 @@
       ]
     },
     {
-      "text": "Applying the Massachusetts seven business days to an emergency oral Schedule II follow-up ignores the shorter federal seven days that controls it.",
+      "text": "Applying the Massachusetts seven business days to an emergency oral Schedule II follow-up ignores the shorter federal 7 days in 21 CFR 1306.11(d)(4), which 105 CMR 721.070(B) itself defers to; the Massachusetts count is a ceiling rather than extra time.",
       "rule_ids": [
         "MA-RX-EMERGENCY-ORAL-CII",
+        "MA-ORAL-CS-FOLLOWUP-TIMING",
         "FED-CII-EMERGENCY-FOLLOWUP"
       ]
     },
@@ -302,6 +814,26 @@
       "text": "Accepting a follow-up on a form no permitted format supports leaves the file resting on an invalid prescription, which may not be filled at all.",
       "rule_ids": [
         "MA-RX-WRITTEN-FORMAT"
+      ]
+    },
+    {
+      "text": "Reading Authorization for Emergency Dispensing as the whole face requirement drops the date of the oral order, which 21 CFR 1306.11(d)(4) requires alongside it.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL-RECORDS"
+      ]
+    },
+    {
+      "text": "Carrying the Massachusetts written-or-orally-transmitted emergency authorization into a federal answer invents a written route that 21 CFR 1306.11(d) does not contain.",
+      "rule_ids": [
+        "FED-CII-EMERGENCY-ORAL",
+        "MA-RX-EMERGENCY-ORAL-CII"
+      ]
+    },
+    {
+      "text": "Answering two days for an emergency oral prescription applies the default to a prescription that is always issued under an enumerated ePrescribing exception.",
+      "rule_ids": [
+        "MA-EMERGENCY-SITUATION-EXCEPTION",
+        "MA-ORAL-CS-FOLLOWUP-TIMING"
       ]
     }
   ],

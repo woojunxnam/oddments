@@ -15,6 +15,10 @@
     "learning_objectives",
     "rule_ids",
     "verified_rule_dependencies",
+    "orientation",
+    "comparison_tables",
+    "worked_examples",
+    "retrieval_prompts",
     "quick_review",
     "decision_logic",
     "ma_vs_federal",
@@ -61,6 +65,26 @@
         "^(MA|FED)-[A-Z0-9]+(?:-[A-Z0-9]+)*$": {"$ref": "#/$defs/dependencySnapshot"}
       },
       "additionalProperties": false
+    },
+    "orientation": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"$ref": "#/$defs/orientationParagraph"}
+    },
+    "comparison_tables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/comparisonTable"}
+    },
+    "worked_examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/workedExample"}
+    },
+    "retrieval_prompts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/retrievalPrompt"}
     },
     "quick_review": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/legalPoint"}},
     "decision_logic": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/decisionStep"}},
@@ -144,6 +168,70 @@
       "properties": {
         "role": {"type": "string", "minLength": 3},
         "duty": {"type": "string", "minLength": 8},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "orientationParagraph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "rule_ids"],
+      "properties": {
+        "text": {"type": "string", "minLength": 200},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "comparisonTable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "columns", "rows"],
+      "properties": {
+        "title": {"type": "string", "minLength": 6},
+        "columns": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["cells", "rule_ids"],
+            "properties": {
+              "cells": {
+                "type": "array",
+                "minItems": 2,
+                "items": {"type": "string", "minLength": 1}
+              },
+              "rule_ids": {"$ref": "#/$defs/ruleIds"}
+            }
+          }
+        }
+      }
+    },
+    "workedExample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario", "steps", "resolution", "rule_ids"],
+      "properties": {
+        "scenario": {"type": "string", "minLength": 60},
+        "steps": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 20}
+        },
+        "resolution": {"type": "string", "minLength": 30},
+        "rule_ids": {"$ref": "#/$defs/ruleIds"}
+      }
+    },
+    "retrievalPrompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompt", "answer", "rule_ids"],
+      "properties": {
+        "prompt": {"type": "string", "minLength": 15},
+        "answer": {"type": "string", "minLength": 5},
         "rule_ids": {"$ref": "#/$defs/ruleIds"}
       }
     },

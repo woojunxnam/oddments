@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from qa_common import DATA, ROOT, load_json, load_records, question_audit_hash, write_json
-from study_guide_common import study_guide_content_hash
+from study_guide_common import CURRENT_CONTENT_MODEL_VERSION, study_guide_content_hash
 
 
 def git(*args: str) -> str:
@@ -138,6 +138,9 @@ def main() -> int:
     manifest_path = output_dir / f"{prefix}-FREEZE-MANIFEST.json"
     package = {
         "package_type": "STUDY_GUIDE_FULL_PROSE_INDEPENDENT_AUDIT",
+        # The content model the frozen hashes were taken under, so this package stays
+        # verifiable after the model grows.
+        "content_model_version": CURRENT_CONTENT_MODEL_VERSION,
         "freeze_date": config["freeze_date"],
         "authorizing_issue": config["authorizing_issue"],
         "represented_candidate_branch": config["represented_candidate_branch"],
