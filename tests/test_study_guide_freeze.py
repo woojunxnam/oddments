@@ -11,6 +11,7 @@ from study_guide_common import study_guide_content_hash
 def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: Path) -> None:
     directory = root / "audits" / "study_guide" / "2026-09-01"
     package = load_json(directory / "BATCH4-SG-PILOT-V1-AUDIT-PACKAGE.json")
+    model = package.get("content_model_version", 1)
     manifest = load_json(directory / "BATCH4-SG-PILOT-V1-FREEZE-MANIFEST.json")
     sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
     questions = {record["question_id"]: record for _, record in load_records(root / "data" / "questions")}
@@ -31,18 +32,18 @@ def test_study_guide_pilot_freeze_is_exact_and_has_no_controller_verdicts(root: 
     for frozen in package["sections"]:
         section = frozen["full_prose_under_review"]
         current = sections[frozen["section_id"]]
-        assert frozen["content_hash"] == study_guide_content_hash(section)
-        if frozen["section_id"] == "SG-CONTROLLED-SCHEDULES":
-            assert frozen["content_hash"] == study_guide_content_hash(current)
+        assert frozen["content_hash"] == study_guide_content_hash(section, model_version=model)
+        # The pilot certifies a section only while that section still stands at the exact
+        # hash the pilot froze. Every section has since moved -- four were repaired, and
+        # SG-CONTROLLED-SCHEDULES was re-authored into the current content model -- so the
+        # pilot audit now certifies none of them. What must never happen is a section
+        # claiming the pilot as its certifying audit at a hash the pilot never saw.
+        assert frozen["section_id"] in revised_section_ids | {"SG-CONTROLLED-SCHEDULES"}
+        if current["independent_audit_id"] == "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1":
+            assert current["content_hash"] == frozen["content_hash"]
             assert current["verification_status"] == "VERIFIED"
-            assert current["independent_audit_id"] == "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1"
         else:
-            # Each of these was repaired past its pilot hash, so the pilot audit
-            # certifies none of them, whether or not a later audit has since
-            # published one of them at a newer hash.
-            assert frozen["section_id"] in revised_section_ids
-            assert frozen["content_hash"] != study_guide_content_hash(current)
-            assert current["independent_audit_id"] != "AUDIT-SG-GPT-FRESH-B4-SG-PILOT-V1"
+            assert current["verification_status"] != "VERIFIED" or current["independent_audit_id"]
         assert {item["rule_id"] for item in frozen["rule_dependencies"]} == set(section["rule_ids"])
         assert {item["question_id"] for item in frozen["practice_question_dependencies"]} == set(
             section["practice_question_ids"]
@@ -61,6 +62,7 @@ def test_study_guide_repair_freeze_binds_only_revised_pending_sections(root: Pat
     directory = root / "audits" / "study_guide" / "2026-09-02"
     package_path = directory / "BATCH4-SG-REPAIR-V2-AUDIT-PACKAGE.json"
     package = load_json(package_path)
+    model = package.get("content_model_version", 1)
     manifest = load_json(directory / "BATCH4-SG-REPAIR-V2-FREEZE-MANIFEST.json")
     config = load_json(directory / "BATCH4-SG-REPAIR-V2-FREEZE-CONFIG.json")
     sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
@@ -80,7 +82,7 @@ def test_study_guide_repair_freeze_binds_only_revised_pending_sections(root: Pat
         section_id = frozen["section_id"]
         current = sections[section_id]
         assert frozen["content_hash"] == expected_hashes[section_id]
-        assert study_guide_content_hash(frozen["full_prose_under_review"]) == expected_hashes[section_id]
+        assert study_guide_content_hash(frozen["full_prose_under_review"], model_version=model) == expected_hashes[section_id]
         # The V2 freeze is historical provenance: REPAIR-V3 moved every section past
         # the audited hash, so its MINOR_EDIT dispositions bind none of the current prose.
         assert study_guide_content_hash(current) != expected_hashes[section_id]
@@ -97,6 +99,7 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
     directory = root / "audits" / "study_guide" / "2026-09-04"
     package_path = directory / "BATCH4-SG-REPAIR-V3-AUDIT-PACKAGE.json"
     package = load_json(package_path)
+    model = package.get("content_model_version", 1)
     manifest = load_json(directory / "BATCH4-SG-REPAIR-V3-FREEZE-MANIFEST.json")
     config = load_json(directory / "BATCH4-SG-REPAIR-V3-FREEZE-CONFIG.json")
     sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
@@ -128,7 +131,7 @@ def test_study_guide_repair_v3_freeze_binds_current_pending_sections(root: Path)
         section_id = frozen["section_id"]
         current = sections[section_id]
         assert frozen["content_version"] == 3
-        assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
+        assert study_guide_content_hash(frozen["full_prose_under_review"], model_version=model) == frozen["content_hash"]
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
         result = v3_results.get(section_id)
 
@@ -182,6 +185,7 @@ def test_study_guide_repair_v4_freeze_binds_the_two_repaired_sections(root: Path
     directory = root / "audits" / "study_guide" / "2026-09-10"
     package_path = directory / "BATCH4-SG-REPAIR-V4-AUDIT-PACKAGE.json"
     package = load_json(package_path)
+    model = package.get("content_model_version", 1)
     manifest = load_json(directory / "BATCH4-SG-REPAIR-V4-FREEZE-MANIFEST.json")
     config = load_json(directory / "BATCH4-SG-REPAIR-V4-FREEZE-CONFIG.json")
     sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
@@ -210,7 +214,7 @@ def test_study_guide_repair_v4_freeze_binds_the_two_repaired_sections(root: Path
         section_id = frozen["section_id"]
         current = sections[section_id]
         assert frozen["content_version"] == 4
-        assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
+        assert study_guide_content_hash(frozen["full_prose_under_review"], model_version=model) == frozen["content_hash"]
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
 
         if study_guide_content_hash(current) != frozen["content_hash"]:
@@ -258,6 +262,7 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
     directory = root / "audits" / "study_guide" / "2026-09-10"
     package_path = directory / "BATCH4-SG-REPAIR-V5-AUDIT-PACKAGE.json"
     package = load_json(package_path)
+    model = package.get("content_model_version", 1)
     manifest = load_json(directory / "BATCH4-SG-REPAIR-V5-FREEZE-MANIFEST.json")
     config = load_json(directory / "BATCH4-SG-REPAIR-V5-FREEZE-CONFIG.json")
     sections = {record["section_id"]: record for _, record in load_records(root / "data" / "study_guide" / "sections")}
@@ -284,7 +289,7 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
     for frozen in package["sections"]:
         section_id = frozen["section_id"]
         current = sections[section_id]
-        assert study_guide_content_hash(frozen["full_prose_under_review"]) == frozen["content_hash"]
+        assert study_guide_content_hash(frozen["full_prose_under_review"], model_version=model) == frozen["content_hash"]
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
 
         if study_guide_content_hash(current) != frozen["content_hash"]:
@@ -321,3 +326,53 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
     package_text = json.dumps(package, ensure_ascii=False).lower()
     assert "gpt-fresh-b4-sg-repair-v4" not in package_text
     assert "verification_notes" not in package_text
+
+
+def test_an_older_package_stays_verifiable_after_the_content_model_grows() -> None:
+    """A freeze is a record of what an auditor reviewed, so a later schema change must not
+    invalidate it.
+
+    The section hash is taken over a fixed field list. When the teaching fields were added
+    that list grew, and re-deriving an old package's hash under the new list made every
+    historical package fail. Packages therefore record the model they were frozen under.
+    """
+    legacy_section = {
+        "section_id": "SG-LEGACY",
+        "title": "Legacy section",
+        "areas": [3],
+        "topic": "t",
+        "subtopic": "s",
+        "learning_objectives": ["objective one"],
+        "rule_ids": ["FED-X"],
+        "verified_rule_dependencies": {"FED-X": {"content_version": 1, "content_hash": "a" * 64}},
+        "quick_review": [{"text": "a point", "rule_ids": ["FED-X"]}],
+        "decision_logic": [],
+        "ma_vs_federal": [],
+        "exceptions": [],
+        "timing_deadlines": [],
+        "forms_records": [],
+        "role_duties": [],
+        "common_traps": [],
+        "drug_examples": [],
+        "practice_question_ids": [],
+    }
+    frozen_hash = study_guide_content_hash(legacy_section, model_version=1)
+
+    # The same snapshot under the current model is a different hash, which is exactly why the
+    # version has to be recorded rather than assumed.
+    assert study_guide_content_hash(legacy_section) != frozen_hash
+    assert study_guide_content_hash(legacy_section, model_version=1) == frozen_hash
+
+
+def test_every_freeze_package_records_the_model_its_hashes_were_taken_under(root: Path) -> None:
+    # Packages predating the versioning carry no field and are read as model 1; anything
+    # written since must say so, or a future model change silently breaks its verification.
+    for path in sorted((root / "audits" / "study_guide").glob("**/*-AUDIT-PACKAGE.json")):
+        package = load_json(path)
+        version = package.get("content_model_version", 1)
+        assert version in {1, 2}, f"{path}: unknown content model {version}"
+        for section in package["sections"]:
+            derived = study_guide_content_hash(
+                section["full_prose_under_review"], model_version=version
+            )
+            assert derived == section["content_hash"], f"{path}: {section['section_id']} does not re-derive"

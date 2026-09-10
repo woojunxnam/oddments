@@ -58,10 +58,15 @@ def validate_study_guide_audits() -> tuple[QAReport, dict[str, dict[str, Any]]]:
         if len(results) != len(audit.get("results", [])) or set(results) != set(expected_ids):
             report.error(f"{path}: results must adjudicate each frozen section exactly once")
 
+        # A package records the prose an auditor reviewed and the hash it was bound to. That
+        # hash was taken over the field list in force at the freeze, so re-derive it under the
+        # package's own content model rather than today's; a package frozen before the model
+        # grew must stay verifiable.
+        package_model = package.get("content_model_version", 1)
         for section_id in expected_ids:
             frozen = frozen_by_id[section_id]
             frozen_section = frozen.get("full_prose_under_review", {})
-            if study_guide_content_hash(frozen_section) != frozen["content_hash"]:
+            if study_guide_content_hash(frozen_section, model_version=package_model) != frozen["content_hash"]:
                 report.error(f"{path}: frozen semantic hash mismatch for {section_id}")
             current = sections.get(section_id)
             if current and current.get("content_hash") == frozen["content_hash"]:
