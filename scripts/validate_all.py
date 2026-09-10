@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import json
 
+from check_answer_cue_patterns import answer_cue_report
 from check_answer_distribution import analyze_answer_distribution
 from check_placeholders import check_placeholders
 from detect_duplicates import detect_duplicates
 from check_private_paths import check_private_paths
 from check_sba_answer_length import analyze_sba_answer_length
 from check_structural_patterns import analyze_structural_patterns
+from check_study_guide_scope_coverage import scope_coverage_report
 from generate_artifacts import check_generated_artifacts
 from qa_common import DATA, QAReport, print_report
 from validate_audits import validate_audits
@@ -54,6 +56,10 @@ def main() -> int:
     combined.extend(study_guide_report)
     study_guide_audit_report, _ = validate_study_guide_audits()
     combined.extend(study_guide_audit_report)
+    # Pre-freeze drafting gates. Both warn only about content that has not yet passed an
+    # independent audit, so they point at what to fix before a freeze is spent.
+    combined.extend(scope_coverage_report())
+    combined.extend(answer_cue_report(questions=questions))
     combined.extend(check_placeholders())
     combined.extend(check_private_paths())
     combined.extend(validate_blueprint())
