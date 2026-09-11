@@ -280,12 +280,49 @@ function renderHistoryDetail(session) {
   elements.historyDetail.innerHTML = `<article class="guide-section"><h3>${escapeHtml(examTypeLabel(session.exam_type))} — ${session.score.correct}/${session.score.total} (${session.score.percentage}%)</h3><p>${escapeHtml(session.completed_at)} · ${formatElapsed(session.elapsed_seconds)}</p><h4>Area breakdown</h4>${renderBreakdownTable(session.area_breakdown)}<h4>Topic breakdown</h4>${renderBreakdownTable(session.topic_breakdown)}<h4>Missed question IDs</h4><p>${session.missed_question_ids.map(escapeHtml).join(", ") || "None"}</p><details><summary>Stored content hashes</summary><pre>${escapeHtml(JSON.stringify(session.question_content_hashes, null, 2))}</pre></details></article>`;
 }
 
+// A guide section is taught in the order a learner needs it: what the rule is for, how the
+// pieces compare, how to decide, a worked case, then the details, traps and a self-test.
+// Every block is optional except the ones the schema requires, so empty fields render nothing.
+function guideBlock(title, body, className = "") { return body ? `<section class="guide-block ${className}"><h4>${escapeHtml(title)}</h4>${body}</section>` : ""; }
+function guideList(items, render) { return items.length ? `<ul>${items.map((item) => `<li>${render(item)}</li>`).join("")}</ul>` : ""; }
+function guideTable(columns, rows, caption = "") { return `<div class="table-scroll"><table class="guide-table">${caption ? `<caption>${escapeHtml(caption)}</caption>` : ""}<thead><tr>${columns.map((column) => `<th scope="col">${escapeHtml(column)}</th>`).join("")}</tr></thead><tbody>${rows.map((cells) => `<tr>${cells.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`; }
+function guideAreaLabel(area) { const name = state.payload?.blueprint?.areas?.find((entry) => entry.area === area)?.name; return name ? `Area ${area} · ${name}` : `Area ${area}`; }
+function guideDrugName(drugId) { const name = drugId.split("-").join("/"); return name.charAt(0).toUpperCase() + name.slice(1); }
+
+function renderGuideSection(section) {
+  const text = (item) => escapeHtml(item.text);
+  const verified = section.verification_status === "VERIFIED";
+  const status = verified ? `<span class="guide-summary-meta">Independently verified ${escapeHtml(section.last_verified || "")}</span>` : `<span class="status-badge pending">Audit pending — not independently verified</span>`;
+  const roles = new Map(); section.role_duties.forEach((item) => roles.set(item.role, [...(roles.get(item.role) || []), item.duty]));
+  const sources = [...new Map(section.authorities.map((authority) => [`${authority.name}|${authority.section}|${authority.url}`, authority])).values()];
+  const practice = section.practice_question_ids.filter((id) => state.payload?.questions.some((question) => question.question_id === id));
+  const body = [
+    guideBlock("What you should be able to do", guideList(section.learning_objectives, escapeHtml)),
+    guideBlock("The big picture", section.orientation.map((paragraph) => `<p>${text(paragraph)}</p>`).join(""), "guide-orientation"),
+    guideBlock("Side by side", section.comparison_tables.map((table) => guideTable(table.columns, table.rows.map((row) => row.cells), table.title)).join("")),
+    guideBlock("How to reason through it", section.decision_logic.length ? `<ol class="decision-list">${section.decision_logic.map((step) => `<li><p class="decision-when">${escapeHtml(step.condition)}</p><p class="decision-then">${escapeHtml(step.action)}</p></li>`).join("")}</ol>` : ""),
+    guideBlock("Worked examples", section.worked_examples.map((example, index) => `<article class="worked-example"><p><strong>Example ${index + 1}.</strong> ${escapeHtml(example.scenario)}</p><details><summary>Try it first, then open the worked solution</summary><ol>${example.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol><p class="resolution"><strong>Answer:</strong> ${escapeHtml(example.resolution)}</p></details></article>`).join("")),
+    guideBlock("Deadlines", section.timing_deadlines.length ? guideTable(["Event", "Timeframe", "Consequence"], section.timing_deadlines.map((item) => [item.event, item.timeframe, item.consequence])) : ""),
+    guideBlock("Who does what", [...roles].map(([role, duties]) => `<div class="role-group"><p class="role-name">${escapeHtml(role)}</p><ul>${duties.map((duty) => `<li>${escapeHtml(duty)}</li>`).join("")}</ul></div>`).join("")),
+    guideBlock("Massachusetts vs. federal", guideList(section.ma_vs_federal, text)),
+    guideBlock("Exceptions", guideList(section.exceptions, text)),
+    guideBlock("Forms and records", guideList(section.forms_records, text)),
+    guideBlock("Drug examples", guideList(section.drug_examples, (item) => `<strong>${escapeHtml(guideDrugName(item.drug_id))}:</strong> ${escapeHtml(item.teaching_point)}`)),
+    guideBlock("Common traps", guideList(section.common_traps, text), "trap-block"),
+    guideBlock("Quick review", guideList(section.quick_review, text)),
+    guideBlock("Test yourself", `<p class="muted">Answer each one before you open it.</p>${section.retrieval_prompts.map((item) => `<details><summary>${escapeHtml(item.prompt)}</summary><p>${escapeHtml(item.answer)}</p></details>`).join("")}`, "self-test"),
+    guideBlock("Official sources", `<ul class="guide-source-list">${sources.map((authority) => `<li><a href="${escapeHtml(authority.url)}" target="_blank" rel="noreferrer">${escapeHtml(authority.name)}, ${escapeHtml(authority.section)}</a></li>`).join("")}</ul>`),
+  ].join("");
+  const quiz = practice.length ? `<button type="button" data-guide-quiz="${escapeHtml(section.section_id)}">Quick Quiz — ${Math.min(10, practice.length)} linked question(s)</button>` : "";
+  return `<details class="guide-section"><summary><span class="guide-title">${escapeHtml(section.title)}</span><span class="guide-summary-meta">${escapeHtml(section.topic)} · ${section.areas.map(guideAreaLabel).map(escapeHtml).join(" / ")}</span>${status}</summary><div class="guide-body">${body}${quiz}</div></details>`;
+}
+
 function renderGuide(sectionIds = null) {
   const search = elements.guideSearch.value.trim().toLowerCase(); const area = elements.guideAreaFilter.value; let sections = state.guide?.sections || [];
   if (sectionIds) sections = sections.filter((section) => sectionIds.includes(section.section_id));
-  sections = sections.filter((section) => (!area || section.areas.includes(Number(area))) && (!search || `${section.title} ${section.topic} ${section.subtopic}`.toLowerCase().includes(search)));
+  sections = sections.filter((section) => (!area || section.areas.includes(Number(area))) && (!search || `${section.title} ${section.topic} ${section.subtopic} ${section.learning_objectives.join(" ")}`.toLowerCase().includes(search)));
   if (!sections.length) { const pending = state.guide?.meta?.pending_section_count || 0; elements.guideSections.innerHTML = `<p class="muted">No independently verified guide section is public for this selection.${pending ? ` ${pending} pilot section(s) remain audit-pending and are intentionally hidden.` : ""}</p>`; return; }
-  elements.guideSections.innerHTML = sections.map((section) => `<details class="guide-section"><summary>${escapeHtml(section.title)}</summary><p>${escapeHtml(section.topic)} · Areas ${section.areas.join(", ")}</p><h4>Quick Review</h4><ul>${section.quick_review.map((item) => `<li>${escapeHtml(item.text)}</li>`).join("")}</ul><h4>Common Traps</h4><ul>${section.common_traps.map((item) => `<li>${escapeHtml(item.text)}</li>`).join("")}</ul><h4>Official sources</h4><ul class="guide-source-list">${section.authorities.map((authority) => `<li><a href="${escapeHtml(authority.url)}" target="_blank" rel="noreferrer">${escapeHtml(authority.name)}, ${escapeHtml(authority.section)}</a></li>`).join("")}</ul><button type="button" data-guide-quiz="${escapeHtml(section.section_id)}">Quick Quiz 10</button></details>`).join("");
+  elements.guideSections.innerHTML = sections.map(renderGuideSection).join("");
   elements.guideSections.querySelectorAll("[data-guide-quiz]").forEach((button) => button.addEventListener("click", () => { const section = sections.find((candidate) => candidate.section_id === button.dataset.guideQuiz); const questions = section.practice_question_ids.map((id) => state.payload.questions.find((question) => question.question_id === id)).filter(Boolean).slice(0, 10); startMode("browse", questions); }));
 }
 
