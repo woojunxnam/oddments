@@ -1,0 +1,22 @@
+{
+  "freeze_date": "2026-09-11",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "807d5eb08500851c7ce53c267a465f167fc2b637",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B4-SG-V7M",
+  "section_ids": [
+    "SG-FED-MA-INTERACTION",
+    "SG-CIII-V-REFILL-TRANSFER"
+  ],
+  "output_dir": "audits/study_guide/2026-09-11",
+  "file_prefix": "BATCH4-SG-V7M",
+  "manifest_type": "STUDY_GUIDE_COVERAGE_CLEAN_FREEZE",
+  "expected_audit_output_path": "audits/study_guide/2026-09-11/CLAUDE-FRESH-B4-SG-V7M-AUDIT.json",
+  "scope_note": "Replaces the V7A reservation (CLAUDE-FRESH-B4-SG-V7A). That auditor run terminated on an API content-filter error before writing any record, so no disposition exists for V7A. The V7A identity is retired unused rather than handed to a second context, and its package stays as history. SG-CONTROLLED-SCHEDULES is now frozen alone so a repeat failure on schedule material cannot hold the other two sections back. Both re-authored under content model 2 in PR #153; no earlier audit binds any hash frozen here. Scope-gate signals answered before freezing, unchanged from the V7A freeze. Declined: FED-CIII-V-REFILL restates 21 CFR 1306.22(a) alongside FED-CS-REFILL-III-IV, which SG-CIII-V-REFILL-TRANSFER already cites; it is frozen by four RELEASED adjudications and cannot be consolidated. FED-CS-SCHEDULES is taught in SG-CONTROLLED-SCHEDULES. The M.G.L. c. 94C, s. 18(d) family against SG-FED-MA-INTERACTION is the declared subject of SG-MA-OUTSTATE-PRESCRIPTIONS. MA-RX-FAILOVER-ORAL and MA-RX-WRITTEN-FORMAT are 'Prescription format' topic adjacency taught in SG-MA-ORAL-PRESCRIPTIONS and SG-MA-SCHEDULE-VI.",
+  "replaces_reservation": {
+    "auditor_instance": "CLAUDE-FRESH-B4-SG-V7A",
+    "package_path": "audits/study_guide/2026-09-11/BATCH4-SG-V7A-AUDIT-PACKAGE.json",
+    "outcome": "TERMINATED_WITHOUT_RECORD",
+    "reason": "API content-filter error terminated the auditor run before any audit record was written"
+  }
+}
