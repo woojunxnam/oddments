@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CII-LIFECYCLE",
-  "content_version": 5,
-  "content_hash": "fd8f0cec45bf81bf422e4dde93830dec943f25a90a4ac0cfd4659f24094593a9",
+  "content_version": 6,
+  "content_hash": "0a89087ba5869e6692864fd5496f11f80801e7c927584cdcca093e90a83b5a4a",
   "title": "Schedule II Partial Fills and the Massachusetts 30-Day Ceiling",
   "areas": [
     2,
@@ -26,7 +26,12 @@
     "MA-CII-VALIDITY-30D",
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
     "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
-    "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER"
+    "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER",
+    "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+    "MA-OUTSTATE-CII-FILL-WINDOW",
+    "MA-RX-DATE-COUNTING",
+    "MA-ISCP-DISPENSING-EXCLUSIONS"
   ],
   "verified_rule_dependencies": {
     "FED-CII-NO-REFILL": {
@@ -68,6 +73,26 @@
     "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER": {
       "content_version": 1,
       "content_hash": "e27c95fcc2ee6c10bcdfce2af11412ed0e35092994649e5231aef3279d262e26"
+    },
+    "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD": {
+      "content_version": 1,
+      "content_hash": "134f333bdf382fa73dcf2f0775919ebd8b491315682d11efca2894e66f271133"
+    },
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER": {
+      "content_version": 1,
+      "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4"
+    },
+    "MA-OUTSTATE-CII-FILL-WINDOW": {
+      "content_version": 1,
+      "content_hash": "d7e94e4062dad0c035d4d63f27e7bd11c46c1540005da6e80f3258eb0006748f"
+    },
+    "MA-RX-DATE-COUNTING": {
+      "content_version": 1,
+      "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841"
+    },
+    "MA-ISCP-DISPENSING-EXCLUSIONS": {
+      "content_version": 1,
+      "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280"
     }
   },
   "orientation": [
@@ -87,10 +112,11 @@
       ]
     },
     {
-      "text": "Massachusetts then puts a ceiling over all of it. M.G.L. c. 94C, s. 23(a) provides without qualification that a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance. There is no long-term care or terminal-illness carve-out from that sentence. So the federal 60-day figure, which is a real and correctly stated federal outer limit, cannot be worked in Massachusetts past day 30: on day 31 there is no longer a valid prescription for the pathway to operate on. A federal outer limit is a ceiling on federal authority. It is never a grant of state validity, and the 60-day answer belongs only to a question that asks what federal law alone permits.",
+      "text": "Massachusetts then puts a ceiling over all of it. M.G.L. c. 94C, s. 23(a) provides without qualification that a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance. There is no long-term care or terminal-illness carve-out from that sentence. So the federal 60-day figure, which is a real and correctly stated federal outer limit, cannot be worked in Massachusetts past day 30: counting the day after issue as day one, as 247 CMR 9.04(10) directs, on day 31 there is no longer a valid prescription for the pathway to operate on. A federal outer limit is a ceiling on federal authority. It is never a grant of state validity, and the 60-day answer belongs only to a question that asks what federal law alone permits.",
       "rule_ids": [
         "FED-CII-LTC-TERMINAL",
-        "MA-CII-VALIDITY-30D"
+        "MA-CII-VALIDITY-30D",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -101,11 +127,13 @@
       ]
     },
     {
-      "text": "Finally the records, which are where the actors separate. On the stock-shortage pathway the pharmacist notes the quantity supplied. On the request-based pathway the practitioner has work to do first -- specifying the quantity for each partial filling, and capping what a patient may later ask for -- before the pharmacist's notation identifies who requested the fill and when. On the long-term care and terminal-illness pathway the notation is not clerical at all: a partially filled prescription that does not carry 'terminally ill' or 'LTCF patient' is deemed by the regulation to have been filled in violation of the Act. Massachusetts adds its own patient-record notation, and requires a Schedule II opioid prescription to carry on its face the notation that the patient may request less than the full quantity.",
+      "text": "Finally the records, which are where the actors separate. On the stock-shortage pathway the pharmacist notes the quantity supplied. On the request-based pathway the practitioner's part is conditional: a practitioner who wants the prescription partially filled specifies the quantity for each partial filling, and that specification then caps what the patient side may later ask for; where the request comes instead from the patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney, nothing is required of the prescriber first. The pharmacist's notation follows whoever asked: the quantity dispensed where the prescriber asked on the prescription; 'Authorized by Practitioner to Partial Fill', with the practitioner's name, the date and time of the discussion and the pharmacist's initials, where the prescriber authorized the partial fill in a later consultation; and who requested it and on what date, with the quantity dispensed, where the patient side asked. On the long-term care and terminal-illness pathway the notation is not clerical at all: a partially filled prescription that does not carry 'terminally ill' or 'LTCF patient' is deemed by the regulation to have been filled in violation of the Act. Massachusetts adds a patient-record notation, made by the pharmacist or the pharmacist's designee, and it puts a separate duty on the prescribing practitioner: a Schedule II opioid prescription must carry on its face the notation that the patient may request less than the full quantity.",
       "rule_ids": [
         "FED-CII-PARTIAL-FILL-NOTATION",
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
         "FED-CII-LTCF-TERMINAL-RECORDS",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER",
         "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
       ]
     }
@@ -134,12 +162,13 @@
         {
           "cells": [
             "Requested partial fill",
-            "The patient, a person acting for the patient, or the prescriber asks",
+            "The patient, a minor patient's parent or legal guardian, an adult patient's caregiver named in a medical power of attorney, or the prescriber asks",
             "No later than 30 days after the prescription was written",
             "72 hours from issue instead, where the prescription was an emergency oral one"
           ],
           "rule_ids": [
-            "FED-CII-PARTIAL-PATIENT"
+            "FED-CII-PARTIAL-PATIENT",
+            "FED-CII-PARTIAL-FILL-NOTATION"
           ]
         },
         {
@@ -179,24 +208,25 @@
         {
           "cells": [
             "Must the pharmacist dispense a lesser quantity on patient request?",
-            "Permitted, provided state law does not prohibit it",
+            "Permitted, provided state law does not prohibit it and the other conditions of 21 CFR 1306.13(b)(1) are met",
             "Mandatory on patient request",
             "Massachusetts; the federal rule defers to state law on its face"
           ],
           "rule_ids": [
             "FED-CII-PARTIAL-PATIENT",
+            "FED-CII-PARTIAL-FILL-NOTATION",
             "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
           ]
         },
         {
           "cells": [
             "May the remainder go to a different pharmacy?",
-            "No restriction stated",
+            "No federal pathway allows it: 21 CFR 1306.08(e) transfers an electronic prescription only for its initial dispensing, 21 CFR 1306.25 moves only Schedule III-V prescription information for refills, and DEA has stated that no DEA regulation permits a partially filled prescription to be transferred for the remaining portion",
             "Only the same pharmacy that dispensed the lesser quantity",
-            "Massachusetts, as the only source imposing a restriction"
+            "Both reach the same answer; Massachusetts states it expressly"
           ],
           "rule_ids": [
-            "FED-CII-PARTIAL-PATIENT",
+            "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
             "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
           ]
         },
@@ -248,7 +278,7 @@
       ]
     },
     {
-      "title": "Who owes what on the request-based pathway",
+      "title": "Who owes what on the request-based pathway, federal and Massachusetts",
       "columns": [
         "Actor",
         "Duty"
@@ -257,16 +287,17 @@
         {
           "cells": [
             "Prescribing practitioner",
-            "Specify the quantity to be dispensed in each partial filling on the face of the prescription, in the record of the emergency oral prescription, or in the electronic record"
+            "Only where the practitioner wants the prescription partially filled: specify the quantity to be dispensed in each partial filling on the face of the prescription, in the record of the emergency oral prescription, or in the electronic record, as part of the prescription when it is signed; a later partial fill may instead be authorized after consultation with a pharmacist. Nothing is owed before a patient-side request."
           ],
           "rule_ids": [
+            "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
             "FED-CII-PARTIAL-FILL-NOTATION"
           ]
         },
         {
           "cells": [
-            "Patient, guardian or named caregiver",
-            "May request in person, in writing if signed, or by telephone, but not in an amount greater than the practitioner specified"
+            "Patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney",
+            "May request a partial fill in person, in writing if signed, or by telephone to the pharmacist; where the practitioner has specified per-fill quantities, not in an amount greater than the practitioner specified"
           ],
           "rule_ids": [
             "FED-CII-PARTIAL-FILL-NOTATION"
@@ -275,9 +306,10 @@
         {
           "cells": [
             "Pharmacist",
-            "Note who requested the partial fill and when, with the quantity dispensed, and keep the dispensing record the rule requires"
+            "Note the quantity dispensed where the prescriber asked on the prescription; note 'Authorized by Practitioner to Partial Fill', the practitioner's name, the date and time of the discussion and the pharmacist's initials where the prescriber authorized the partial fill in a later consultation; note who on the patient side requested it and on what date, with the quantity dispensed, where the request came from that side; and in every case keep the dispensing record the rule requires"
           ],
           "rule_ids": [
+            "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
             "FED-CII-PARTIAL-FILL-NOTATION"
           ]
         },
@@ -289,6 +321,25 @@
           "rule_ids": [
             "FED-CII-PARTIAL-FILL-NOTATION"
           ]
+        },
+        {
+          "cells": [
+            "Prescribing practitioner, Massachusetts Schedule II opioid prescription",
+            "Include on the prescription the notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity; M.G.L. c. 94C, s. 22(c) makes it part of what the prescription must contain"
+          ],
+          "rule_ids": [
+            "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+          ]
+        },
+        {
+          "cells": [
+            "Pharmacist, Massachusetts",
+            "Dispense the lesser quantity when the patient asks for it, keep the remaining portion at this pharmacy, and have the pharmacist or the pharmacist's designee note each partial dispensing and its quantity in the patient record accessible to the prescriber on request"
+          ],
+          "rule_ids": [
+            "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+            "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER"
+          ]
         }
       ]
     }
@@ -299,13 +350,14 @@
       "steps": [
         "Confirm the federal pathway is genuinely open. 12 April is day 42 from issue, inside the 60-day outer limit, and the medication has not been discontinued, so federal law does not stop you.",
         "Now apply the Massachusetts ceiling. M.G.L. c. 94C, s. 23(a) invalidates a written or electronic Schedule II prescription 30 days after the date of issuance, without qualification.",
-        "Day 30 from 1 March is 31 March. The prescription became invalid on 31 March, eleven days before the request.",
+        "Count the days as 247 CMR 9.04(10) directs, with the day after issue as day one: 31 March is day 30, the last day inside the 30 days, and from 1 April the prescription is invalid. That was eleven days before the request, which fell on day 42.",
         "Ask what the federal 60-day figure actually is. It is an outer limit on that federal pathway, not a grant of Massachusetts validity, so it cannot revive a prescription the state has already invalidated."
       ],
       "resolution": "No. The prescription is dead in Massachusetts and a further partial dispensing would be made on an invalid prescription. The error this invites is answering 60 days because the question mentions an LTCF resident; 60 days is the right answer only where the question asks what federal law alone permits.",
       "rule_ids": [
         "FED-CII-LTC-TERMINAL",
-        "MA-CII-VALIDITY-30D"
+        "MA-CII-VALIDITY-30D",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -314,12 +366,15 @@
         "Read the regulation rather than the statute. 105 CMR 721.055(A) attaches the five-day limit where the prescription was issued by a prescriber from a location other than the Commonwealth, as indicated by the address of the prescriber on the prescription.",
         "That test is satisfied on its face here: the address printed on the prescription is out of state. No subsection adjudication is required.",
         "Count in calendar days from the prescription issue date, which is what the regulation specifies. Six days is outside the limit.",
-        "Note what the limit governs. It is the deadline for presenting the prescription for INITIAL partial fill, not the general validity of the prescription."
+        "Do not treat the limit as touching only the partial fill. Unless the Rhode Island prescriber also holds a registration under chapter 94C, the prescription was not issued under M.G.L. c. 94C, s. 18(a), and it can be filled in Massachusetts only under s. 18(d), for a nonnarcotic Schedule II drug, or s. 18(d1/2), for a narcotic one from a practitioner registered in Maine or a contiguous state such as Rhode Island. Each of those subsections authorizes filling only of prescriptions issued within the preceding five days.",
+        "So the 30-day Massachusetts validity period is not there to fall back on. On day six a prescription that depends on s. 18(d) or s. 18(d1/2) cannot be filled at all, in full or in part."
       ],
-      "resolution": "The initial partial fill can no longer be made on this prescription. The colleague's test is the statute's; the regulation supplies an address-based trigger that the pharmacist can apply from the face of the prescription, and it is the operative one at the counter.",
+      "resolution": "No fill of any kind can be made on these facts unless the prescriber also holds a Massachusetts registration. Even then, 105 CMR 721.055(A) bars the partial fill the patient asked for, because it keys off the out-of-state address on the prescription and six calendar days have passed; only a full fill within the 30-day validity period would remain. The colleague's test is the statute's; the regulation supplies an address-based trigger that the pharmacist can apply from the face of the prescription, and it is the operative one at the counter.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER",
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-CII-VALIDITY-30D"
       ]
     },
     {
@@ -331,7 +386,7 @@
         "Keep the running total in view: across all partial fillings the total dispensed may not exceed the total quantity prescribed.",
         "Record the request properly: the patient requested a partial fill on a stated date, with the quantity dispensed."
       ],
-      "resolution": "You may dispense up to 20, not 30. Going to 30 would need the prescriber to change the specification. The technician's rule is right for a prescription the practitioner left unspecified and wrong for this one.",
+      "resolution": "You may dispense up to 20, not 30. Going to 30 would need the prescriber to change the specification. The technician's rule is right, within the total prescribed, for a prescription the practitioner left unspecified, and wrong for this one.",
       "rule_ids": [
         "FED-CII-PARTIAL-FILL-NOTATION",
         "FED-CII-PARTIAL-PATIENT"
@@ -386,6 +441,23 @@
       ]
     },
     {
+      "prompt": "True or false: a patient may ask for a partial fill of a Schedule II prescription only if the practitioner specified per-fill quantities on it.",
+      "answer": "False. The per-fill specification is owed only where the practitioner wants the prescription partially filled. The patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney may ask without it, and in Massachusetts the pharmacist must then dispense the lesser quantity.",
+      "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "prompt": "A prescriber specified on a Schedule II prescription, when issuing it, that it be dispensed in two partial fillings. What does the pharmacist note at the first one?",
+      "answer": "The quantity dispensed, on the face of the written prescription or in the electronic record, and the pharmacy keeps the dispensing record. 'Authorized by Practitioner to Partial Fill' is for a partial fill the prescriber authorized later in a consultation, and the requester-and-date entry is for a patient-side request.",
+      "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
       "prompt": "In Massachusetts, is dispensing a lesser quantity on patient request permitted or required?",
       "answer": "Required. The pharmacist shall dispense the lesser quantity if the patient requests it.",
       "rule_ids": [
@@ -394,10 +466,25 @@
       ]
     },
     {
-      "prompt": "Where must the Schedule II opioid partial-fill notation appear?",
-      "answer": "On the prescription itself, under M.G.L. c. 94C, s. 22(c) — not merely in the pharmacy record.",
+      "prompt": "Where must the Schedule II opioid partial-fill notation appear, and who puts it there?",
+      "answer": "On the prescription itself: M.G.L. c. 94C, s. 22(c) makes it part of what the prescribing practitioner must include when issuing a Schedule II opioid prescription. It is a different thing from the patient-record notation the pharmacist or designee makes at each partial dispensing.",
       "rule_ids": [
         "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "prompt": "On federal law alone, may a second pharmacy dispense the remaining portion of a partially filled Schedule II prescription?",
+      "answer": "No. 21 CFR 1306.08(e) transfers an electronic prescription only for its initial dispensing and 21 CFR 1306.25 moves only Schedule III-V prescription information for refills; DEA has stated that no DEA regulation permits a partially filled prescription to be transferred for the remaining portion. Massachusetts reaches the same result expressly in s. 18(d3/4).",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "prompt": "A Schedule II prescription from a Rhode Island prescriber who holds no Massachusetts registration is presented six days after issue. May it be filled in full instead of in part?",
+      "answer": "No. Such a prescription is fillable in Massachusetts only under M.G.L. c. 94C, s. 18(d) or s. 18(d1/2), and each authorizes filling only of prescriptions issued within the preceding five days.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-FILL-WINDOW"
       ]
     }
   ],
@@ -423,9 +510,10 @@
       ]
     },
     {
-      "text": "M.G.L. c. 94C, s. 18(d3/4) makes the lesser-quantity dispensing mandatory on patient request, keeps the remaining portion at the same pharmacy, requires a patient-record notation of the partial fill and quantity, and requires the remaining portion to be filled not later than 30 days after the prescription issue date.",
+      "text": "M.G.L. c. 94C, s. 18(d3/4) makes the lesser-quantity dispensing mandatory on patient request, keeps the remaining portion at the same pharmacy, requires a patient-record notation of the partial fill and quantity, and requires the remaining portion to be filled not later than 30 days after the prescription issue date. Federal law gives no route to move the remaining portion to another pharmacy either.",
       "rule_ids": [
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER"
       ]
     },
     {
@@ -435,14 +523,21 @@
       ]
     },
     {
-      "text": "Every federal partial fill carries a notation duty of its own, the request-based pathway requires the practitioner to specify per-fill quantities in advance, and on the LTCF or terminal-illness pathway a partially filled prescription lacking the 'terminally ill' or 'LTCF patient' notation is deemed filled in violation of the Act.",
+      "text": "A Schedule II prescription from an out-of-state practitioner who is not registered under M.G.L. c. 94C can be filled in Massachusetts only under s. 18(d) or s. 18(d1/2), and only if it was issued within the preceding five days, whether the fill is full or partial.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-FILL-WINDOW"
+      ]
+    },
+    {
+      "text": "Every federal partial fill carries a notation duty of its own. A practitioner who wants a request-based partial fill specifies the per-fill quantities, and a patient-side request then cannot exceed them; a request by the patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney needs no prior specification. On the LTCF or terminal-illness pathway a partially filled prescription lacking the 'terminally ill' or 'LTCF patient' notation is deemed filled in violation of the Act.",
       "rule_ids": [
         "FED-CII-PARTIAL-FILL-NOTATION",
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
         "FED-CII-LTCF-TERMINAL-RECORDS"
       ]
     },
     {
-      "text": "A Massachusetts prescription for a Schedule II opioid must itself carry a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "text": "The prescribing practitioner must include on a Massachusetts prescription for a Schedule II opioid a notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
       "rule_ids": [
         "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
       ]
@@ -465,11 +560,12 @@
       ]
     },
     {
-      "condition": "The patient or the prescriber requested a partial fill of a written or electronic Schedule II prescription and state law does not prohibit it.",
-      "action": "Check whether the practitioner specified per-fill quantities, record the requester and the date of the request with the quantity dispensed, and complete any remainder no later than 30 days after the prescription was written.",
+      "condition": "The patient, a minor patient's parent or legal guardian, an adult patient's caregiver named in a medical power of attorney, or the prescriber requested a partial fill of a written or electronic Schedule II prescription, and state law does not prohibit it.",
+      "action": "If the practitioner specified per-fill quantities, keep any patient-side request within them; make the notation that fits the requester (the quantity dispensed for a request made on the prescription, 'Authorized by Practitioner to Partial Fill' with the practitioner's name, the date and time of the discussion and the pharmacist's initials for one made in consultation, or the requester and the date of the request with the quantity dispensed for a patient-side request); keep the dispensing record; and complete any remainder no later than 30 days after the prescription was written.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
-        "FED-CII-PARTIAL-FILL-NOTATION"
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD"
       ]
     },
     {
@@ -495,6 +591,13 @@
       ]
     },
     {
+      "condition": "A Schedule II prescription from an out-of-state practitioner who is not registered under M.G.L. c. 94C is presented more than five days after issue.",
+      "action": "Do not fill it at all, in full or in part: s. 18(d) and s. 18(d1/2) authorize filling only of prescriptions issued within the preceding five days.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-FILL-WINDOW"
+      ]
+    },
+    {
       "condition": "The federal pathway you selected would allow a further partial dispensing more than 30 days after the Massachusetts written or electronic Schedule II prescription was issued.",
       "action": "Stop. The prescription is already invalid in Massachusetts under M.G.L. c. 94C, s. 23(a); the federal outer limit is a ceiling on federal authority and does not extend Massachusetts validity.",
       "rule_ids": [
@@ -508,6 +611,14 @@
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
       ]
+    },
+    {
+      "condition": "The patient asks a different pharmacy to dispense the remaining portion of a partially filled Schedule II prescription.",
+      "action": "Decline: under M.G.L. c. 94C, s. 18(d3/4) only the pharmacy that dispensed the lesser quantity may dispense the remaining portion, and no federal transfer pathway moves a partially filled prescription to a second pharmacy.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER"
+      ]
     }
   ],
   "ma_vs_federal": [
@@ -519,10 +630,18 @@
       ]
     },
     {
-      "text": "Federal patient-requested partial filling is permissive and asks only that the partial fill not be prohibited by state law; M.G.L. c. 94C, s. 18(d3/4) goes further and makes the lesser-quantity dispensing mandatory on patient request while adding same-pharmacy, patient-record and issue-date conditions.",
+      "text": "Federal request-based partial filling is permissive, and among its conditions are that the partial fill is not prohibited by State law and that the prescription is written and filled in accordance with State law; M.G.L. c. 94C, s. 18(d3/4) goes further and makes the lesser-quantity dispensing mandatory on patient request, and adds a patient-record notation and a 30-day issue-date deadline of its own for the remaining portion.",
       "rule_ids": [
         "FED-CII-PARTIAL-PATIENT",
+        "FED-CII-PARTIAL-FILL-NOTATION",
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "Both sovereigns keep the remaining portion at the pharmacy that made the partial fill. Massachusetts says so expressly in s. 18(d3/4); federally no transfer pathway reaches a partially filled prescription, because 21 CFR 1306.08(e) is for initial dispensing and 21 CFR 1306.25 for Schedule III-V refills, and DEA has stated that no DEA regulation permits the remaining portion to be transferred.",
+      "rule_ids": [
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER"
       ]
     },
     {
@@ -555,15 +674,23 @@
       ]
     },
     {
-      "text": "The five-day initial partial-dispensing limit in M.G.L. c. 94C, s. 18(d3/4) reaches only a prescription filled under subsection (d) or (d1/2) -- respectively a nonnarcotic Schedule II prescription from an out-of-state practitioner and a narcotic Schedule II prescription from a practitioner registered in Maine or a state contiguous with the commonwealth -- and not every patient-requested partial fill. The conditions those two subsections place on the underlying prescription are the subject of the out-of-state pathway, not of this section.",
+      "text": "The five-day initial partial-dispensing limit in M.G.L. c. 94C, s. 18(d3/4) reaches only a prescription filled under subsection (d) or (d1/2) -- respectively a nonnarcotic Schedule II prescription from an out-of-state practitioner and a narcotic Schedule II prescription from a practitioner registered in Maine or a state contiguous with the commonwealth -- and not every patient-requested partial fill. Those two subsections also authorize filling only of prescriptions issued within the preceding five days, so a prescription that depends on them cannot be filled at all after that point, in full or in part; their other conditions belong to the out-of-state pathway.",
       "rule_ids": [
-        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+        "MA-OUTSTATE-CII-FILL-WINDOW"
       ]
     },
     {
       "text": "Where the practitioner has specified per-fill quantities in advance, a patient-side request may not exceed them, and no pathway permits the total across all partial fillings to exceed the total quantity prescribed.",
       "rule_ids": [
         "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "text": "The day-counting rule in 247 CMR 9.04(10) is one of the requirements 247 CMR 9.04(15) disapplies at institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
       ]
     }
   ],
@@ -604,10 +731,11 @@
     {
       "event": "Massachusetts written or electronic Schedule II prescription, including one being partially filled on the LTCF or terminal-illness pathway",
       "timeframe": "30 days after the date of issuance",
-      "consequence": "The prescription becomes invalid, so further partial dispensing must stop at day 30 even though federal law would have allowed 60.",
+      "consequence": "The prescription becomes invalid, so no partial dispensing may be made after day 30, counting the day after issue as day one, even though federal law would have allowed 60.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
-        "FED-CII-LTC-TERMINAL"
+        "FED-CII-LTC-TERMINAL",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -616,6 +744,14 @@
       "consequence": "The prescription can no longer be presented for an initial partial fill.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER"
+      ]
+    },
+    {
+      "event": "Any fill of an out-of-state practitioner's Schedule II prescription that depends on M.G.L. c. 94C, s. 18(d) or s. 18(d1/2)",
+      "timeframe": "Only if the prescription was issued within the preceding 5 days",
+      "consequence": "After that point neither subsection authorizes filling the prescription, in full or in part.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-FILL-WINDOW"
       ]
     },
     {
@@ -635,15 +771,17 @@
       ]
     },
     {
-      "text": "On the request-based pathway the practitioner specifies the quantity for each partial filling in advance, and the pharmacist's notation then identifies who requested the partial fill and when: a practitioner request made in consultation is noted as 'Authorized by Practitioner to Partial Fill' with the practitioner's name, the date and time of the discussion and the pharmacist's initials, and a patient, guardian or named caregiver request is noted as that person having requested the partial fill on a stated date, with the quantity dispensed.",
+      "text": "On the request-based pathway the notation follows whoever asked. Where the prescriber asked for partial filling on the prescription when issuing it, having specified the quantity for each partial filling, the pharmacist notes the quantity dispensed on the face of the written prescription or in the pharmacy's electronic records, in the record of the emergency oral prescription, or in the electronic prescription record. Where the prescriber authorized a later partial fill in a consultation, the pharmacist notes 'Authorized by Practitioner to Partial Fill', the practitioner's name, the date and time of the discussion and the pharmacist's initials. Where the patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney asked, no prior specification is needed, and the pharmacist notes that that person requested the partial fill on a stated date, with the quantity dispensed.",
       "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
         "FED-CII-PARTIAL-FILL-NOTATION"
       ]
     },
     {
       "text": "Each request-based partial filling also generates a dispensing record carrying the date, the name or initials of the person who dispensed, and the elements 21 CFR 1306.22(c) requires for Schedule III and IV refills; for an electronic prescription that information must be linked to the electronic prescription record.",
       "rule_ids": [
-        "FED-CII-PARTIAL-FILL-NOTATION"
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD"
       ]
     },
     {
@@ -653,14 +791,14 @@
       ]
     },
     {
-      "text": "Massachusetts adds a notation of each partial dispensing and its quantity in the pharmacy patient record, accessible to the prescribing practitioner on request, whether the dispensing is the initial partial fill or the remaining portion.",
+      "text": "Massachusetts adds a notation of each partial dispensing and its quantity in the pharmacy patient record, made by the pharmacist or the pharmacist's designee and accessible to the prescribing practitioner on request, whether the dispensing is the initial partial fill or the remaining portion.",
       "rule_ids": [
         "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
         "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER"
       ]
     },
     {
-      "text": "A Massachusetts prescription for a Schedule II opioid must itself carry the notation under M.G.L. c. 94C, s. 22(c) that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "text": "The prescribing practitioner must include on a Massachusetts prescription for a Schedule II opioid the notation under M.G.L. c. 94C, s. 22(c) that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity. It is part of the prescription's content, separate from the pharmacist's patient-record notation.",
       "rule_ids": [
         "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
       ]
@@ -678,8 +816,24 @@
     },
     {
       "role": "Prescribing practitioner",
-      "duty": "Specify the quantity to be dispensed in each partial filling where a request-based partial fill is intended, and keep the total within the quantity prescribed.",
+      "duty": "Where the practitioner wants a Schedule II prescription partially filled, specify the quantity to be dispensed in each partial filling on the prescription when it is signed, or authorize a later partial fill after consultation with a pharmacist, and keep the total within the quantity prescribed. A partial fill requested by the patient, a minor patient's parent or legal guardian, or an adult patient's caregiver named in a medical power of attorney requires nothing of the prescriber first.",
       "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+        "FED-CII-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "role": "Prescribing practitioner",
+      "duty": "Include on every Massachusetts Schedule II opioid prescription the notation that the patient may fill it, upon request, in an amount not exceeding the full prescribed quantity.",
+      "rule_ids": [
+        "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "role": "Pharmacist",
+      "duty": "Make the partial-fill notation that fits the requester and keep the dispensing record for each request-based partial filling: the quantity dispensed where the prescriber asked on the prescription, the 'Authorized by Practitioner to Partial Fill' entry after a consultation, and the requester and date, with the quantity, for a patient-side request.",
+      "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
         "FED-CII-PARTIAL-FILL-NOTATION"
       ]
     },
@@ -754,9 +908,30 @@
       ]
     },
     {
-      "text": "Assuming the Schedule II opioid partial-fill notation lives in the pharmacy record misses that M.G.L. c. 94C, s. 22(c) places it on the prescription itself.",
+      "text": "Turning away a patient's partial-fill request because the prescriber specified no per-fill quantities treats a condition of the prescriber's own request as a condition of the patient's.",
+      "rule_ids": [
+        "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+        "FED-CII-PARTIAL-FILL-NOTATION",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ]
+    },
+    {
+      "text": "Assuming the pharmacist adds the Schedule II opioid partial-fill notation, or that it lives only in the pharmacy record, misses that M.G.L. c. 94C, s. 22(c) makes it part of the prescription the practitioner issues.",
       "rule_ids": [
         "MA-CII-OPIOID-PARTIAL-FILL-NOTATION"
+      ]
+    },
+    {
+      "text": "Reading the out-of-state five-day figure as a partial-fill deadline only, and filling in full later, overlooks that s. 18(d) and s. 18(d1/2) authorize filling only prescriptions issued within the preceding five days.",
+      "rule_ids": [
+        "MA-OUTSTATE-CII-FILL-WINDOW"
+      ]
+    },
+    {
+      "text": "Calling the same-pharmacy remainder rule a Massachusetts-only restriction misses that no federal transfer pathway reaches a partially filled prescription either.",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
       ]
     }
   ],
