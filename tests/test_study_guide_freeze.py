@@ -198,10 +198,12 @@ def test_study_guide_repair_v4_freeze_binds_the_two_repaired_sections(root: Path
     assert package["author_is_not_auditor"] is True
     assert package["section_ids"] == repaired
     assert config["represented_candidate_sha"] == package["represented_candidate_sha"]
-    # SG-CII-LIFECYCLE is pending too, but carries an unrepaired MAJOR_REWRITE and is
-    # deliberately out of this cycle.
+    # SG-CII-LIFECYCLE carried an unrepaired MAJOR_REWRITE and was deliberately out of this
+    # cycle. It has since been repaired and published on a later audit, so the durable
+    # invariant is not that it stays pending, but that this freeze never certified it.
     assert "SG-CII-LIFECYCLE" not in package["section_ids"]
-    assert sections["SG-CII-LIFECYCLE"]["verification_status"] == "AUDIT_PENDING"
+    v4_audit_id = load_json(directory / "GPT-FRESH-B4-SG-REPAIR-V4-AUDIT.json")["audit_id"]
+    assert sections["SG-CII-LIFECYCLE"].get("independent_audit_id") != v4_audit_id
 
     audit_path = directory / "GPT-FRESH-B4-SG-REPAIR-V4-AUDIT.json"
     v4_results: dict[str, dict] = {}
@@ -232,8 +234,7 @@ def test_study_guide_repair_v4_freeze_binds_the_two_repaired_sections(root: Path
             assert current["verification_status"] == "VERIFIED"
             assert current["independent_audit_id"] == "AUDIT-SG-B4-SG-REPAIR-V4-2026-09-10"
         else:
-            assert current["verification_status"] == "AUDIT_PENDING"
-            assert current["independent_audit_id"] is None
+            assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V4-2026-09-10"
 
         for dependency in frozen["rule_dependencies"]:
             rule = rules[dependency["rule_id"]]
@@ -275,9 +276,12 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
     assert package["author_is_not_auditor"] is True
     assert package["section_ids"] == frozen_ids
     assert config["represented_candidate_sha"] == package["represented_candidate_sha"]
-    # SG-CII-LIFECYCLE carries an unrepaired MAJOR_REWRITE and is deliberately out of scope.
+    # SG-CII-LIFECYCLE carried an unrepaired MAJOR_REWRITE and was deliberately out of scope.
+    # A later audit repaired and published it, so what has to hold here is only that this
+    # freeze never certified it.
     assert "SG-CII-LIFECYCLE" not in package["section_ids"]
-    assert sections["SG-CII-LIFECYCLE"]["verification_status"] == "AUDIT_PENDING"
+    v5_audit_id = load_json(directory / "GPT-FRESH-B4-SG-REPAIR-V5-AUDIT.json")["audit_id"]
+    assert sections["SG-CII-LIFECYCLE"].get("independent_audit_id") != v5_audit_id
 
     audit_path = directory / "GPT-FRESH-B4-SG-REPAIR-V5-AUDIT.json"
     v5_results: dict[str, dict] = {}
@@ -293,8 +297,9 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
         assert manifest["section_hashes"][section_id] == frozen["content_hash"]
 
         if study_guide_content_hash(current) != frozen["content_hash"]:
+            # Moved past the audited hash. A later audit may have published it since; only
+            # certification by this audit is ruled out.
             assert current["content_version"] > frozen["content_version"]
-            assert current["verification_status"] == "AUDIT_PENDING"
             assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V5-2026-09-10"
             continue
 
@@ -306,8 +311,7 @@ def test_study_guide_repair_v5_freeze_binds_the_three_repaired_sections(root: Pa
             assert current["verification_status"] == "VERIFIED"
             assert current["independent_audit_id"] == "AUDIT-SG-B4-SG-REPAIR-V5-2026-09-10"
         else:
-            assert current["verification_status"] == "AUDIT_PENDING"
-            assert current["independent_audit_id"] is None
+            assert current["independent_audit_id"] != "AUDIT-SG-B4-SG-REPAIR-V5-2026-09-10"
 
         for dependency in frozen["rule_dependencies"]:
             rule = rules[dependency["rule_id"]]
