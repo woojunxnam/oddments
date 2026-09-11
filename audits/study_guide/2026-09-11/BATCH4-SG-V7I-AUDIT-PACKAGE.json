@@ -1,0 +1,2473 @@
+{
+  "package_type": "STUDY_GUIDE_FULL_PROSE_INDEPENDENT_AUDIT",
+  "content_model_version": 2,
+  "freeze_date": "2026-09-11",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "807d5eb08500851c7ce53c267a465f167fc2b637",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B4-SG-V7I",
+  "independent": true,
+  "author_is_not_auditor": true,
+  "section_ids": [
+    "SG-MA-COMPOUNDING-OPERATIONS",
+    "SG-MA-QUALITY-AND-REPORTING"
+  ],
+  "permitted_dispositions": [
+    "KEEP",
+    "MINOR_EDIT",
+    "MAJOR_REWRITE",
+    "HOLD"
+  ],
+  "review_criteria": [
+    "paraphrase_fidelity",
+    "material_exceptions",
+    "ma_vs_federal_distinctions",
+    "actor_and_scope",
+    "deadlines",
+    "forms",
+    "decision_logic",
+    "overgeneralization",
+    "unsupported_propositions",
+    "practice_question_mapping",
+    "study_usefulness_without_legal_distortion"
+  ],
+  "release_rule": "정확히 동결된 current section hash에 대해 독립 auditor가 KEEP을 부여하고 모든 dependency hash가 current일 때만 공개할 수 있다. 다른 disposition은 비공개로 유지한다.",
+  "auditor_instruction": "각 section을 현재 공식 authority와 독립적으로 대조하고, controller의 예상 결론 없이 평가한다. 각 disposition과 finding을 section content_hash 및 모든 dependency hash에 결속한다.",
+  "sections": [
+    {
+      "section_id": "SG-MA-COMPOUNDING-OPERATIONS",
+      "content_version": 1,
+      "content_hash": "05681ef82620af0904d7bd24e7fd8eaba0161f435fd42103fb02f25a401811c0",
+      "canonical_path": "data/study_guide/sections/sg-ma-compounding-operations.json",
+      "canonical_blob": "b2349573b0d24ba49cc54fbf450f126aa0d34018",
+      "full_prose_under_review": {
+        "section_id": "SG-MA-COMPOUNDING-OPERATIONS",
+        "content_version": 1,
+        "content_hash": "05681ef82620af0904d7bd24e7fd8eaba0161f435fd42103fb02f25a401811c0",
+        "title": "Massachusetts Compounding Operations: Licence Categories, Engineering Controls and Hazardous Drugs",
+        "areas": [
+          4
+        ],
+        "topic": "Compounding / Licence categories, engineering controls and hazardous-drug handling",
+        "subtopic": "The sterile and complex non-sterile compounding licence gates in M.G.L. c. 112, s. 39F and 247 CMR 6.02, the application, inspection and renewal requirements in 247 CMR 6.06 and 6.07, the statutory significant-difference test in s. 39D, secondary engineering control approval and the compounding submission in 247 CMR 6.15(2) and (4), and hazardous-drug handling reached through 247 CMR 9.01(3)",
+        "learning_objectives": [
+          "Sort a proposed preparation into the sterile, complex non-sterile or ordinary category using the definitions in M.G.L. c. 112, s. 39D before asking which licence is needed.",
+          "State the licence or combination of licences 247 CMR 6.02 requires before a pharmacy may engage in sterile compounding or in complex non-sterile compounding, and say why a Drug Store Pharmacy licence alone does not suffice.",
+          "List what 247 CMR 6.06(1) and 6.07(1) each require in support of an application, and name the one item that differs between them.",
+          "Place the satisfactory Board inspection in 247 CMR 6.06(2) and 6.07(2) correctly against issuance and against renewal.",
+          "Apply the significant-difference test in M.G.L. c. 112, s. 39D and explain why a price difference cannot satisfy it.",
+          "Identify the acts on a secondary engineering control that 247 CMR 6.15(2) puts behind Board approval, and name the three pharmacy types the paragraph reaches.",
+          "Assemble the 247 CMR 6.15(4) submission and distinguish its addressees from those of 247 CMR 6.15(2).",
+          "Explain how 247 CMR 9.01(3) makes hazardous-drug handling standards binding on a Massachusetts licensee, and why those obligations do not stop at the compounding step."
+        ],
+        "rule_ids": [
+          "MA-STERILE-COMPOUNDING-LICENSE",
+          "MA-COMPLEX-NONSTERILE-LICENSE",
+          "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE",
+          "MA-ENGINEERING-CONTROL-APPROVAL",
+          "MA-HAZARDOUS-COMPOUNDING",
+          "MA-HAZARDOUS-DRUG-HANDLING"
+        ],
+        "verified_rule_dependencies": {
+          "MA-STERILE-COMPOUNDING-LICENSE": {
+            "content_version": 1,
+            "content_hash": "38761f7e40f10eb33be34865db32efcdc27e981701d821ac8de231c039ba6905"
+          },
+          "MA-COMPLEX-NONSTERILE-LICENSE": {
+            "content_version": 1,
+            "content_hash": "cce033e2ba52348c1ec95b4ef5847d792f267ca52a0b72c4f7fc497e001cb09f"
+          },
+          "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE": {
+            "content_version": 1,
+            "content_hash": "0657767e64ab3a5cce7c573a0722bd5aeff00094ce7ed4cbd5670e2a49723e69"
+          },
+          "MA-ENGINEERING-CONTROL-APPROVAL": {
+            "content_version": 1,
+            "content_hash": "2d2383194e15806a3374f9f7c5bed52ebd616857fae5db17eb5701ddae2dc92b"
+          },
+          "MA-HAZARDOUS-COMPOUNDING": {
+            "content_version": 1,
+            "content_hash": "0fd599a6e4365b4a9e0528f7dc34a70deb2d438cc94b3e673faf8c895782cc38"
+          },
+          "MA-HAZARDOUS-DRUG-HANDLING": {
+            "content_version": 1,
+            "content_hash": "0762d8544a8f8f09b7171f56a8a24d13026a2e506cbbf666d929695819d63f9d"
+          }
+        },
+        "orientation": [
+          {
+            "text": "Every question in this area begins with a classification rather than with a licence. M.G.L. c. 112, s. 39D defines sterile compounding as engaging in the compounding of a sterile drug preparation, and defines a sterile drug preparation as a compounded biologic, diagnostic, drug, nutrient or radiopharmaceutical which under chapter 797 of the USP or under cGMP shall be compounded using aseptic techniques, a description the statute illustrates with implants, injectables, parenteral nutrition solutions, irrigation solutions, inhalation solution, intravenous solutions and ophthalmic preparations. Complex non-sterile compounding is defined in parallel as engaging in the compounding of a complex non-sterile drug preparation, which the same section defines as a compounded drug preparation requiring special training, a special environment or special facilities or equipment, or the use of compounding techniques and procedures that may present an elevated risk to the compounder or the patient, as defined by the Board through regulation. Both categories are properties of the preparation. Neither is chosen by the pharmacy, and the licence a pharmacy already holds has no power to move a preparation out of one category and into another.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Once the category is fixed the licence gate follows, and it is stated twice, once in statute and once in regulation. M.G.L. c. 112, s. 39F(a) provides that a pharmacy shall not engage in sterile compounding, nor prescribe, ship, mail, sell, transfer or dispense sterile drug preparations in the commonwealth, unless it has obtained a licence from the Board under the sections the statute names; s. 39F(b) states the same prohibition for complex non-sterile compounding and complex non-sterile drug preparations. Read those verbs, because the prohibition is not confined to the act of compounding. The regulation is more precise about what must actually be held. Under 247 CMR 6.02(2) a pharmacy may not engage in any sterile compounding unless it holds a Drug Store Pharmacy license and a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license. Under 247 CMR 6.02(3) a pharmacy may not engage in any complex non-sterile compounding unless it holds a Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license. The compounding licence is therefore additional rather than alternative, which is why an ordinary drug-store licence does not substitute for it.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "The two application sections are near-twins, and the difference that decides questions is a single item. Under 247 CMR 6.06(1) a sterile compounding pharmacy applicant submits all documentation identified in 247 CMR 6.04(2), certified blueprints of the compounding area or areas depicting the location and identifying the ISO classification for each primary and secondary engineering control, a detailed HVAC design plan with a written description, and an attestation of intent to engage in compounding signed by the Manager of Record, the pharmacist in charge of sterile compounding as applicable, and the applicants. Under 247 CMR 6.07(1) the complex non-sterile applicant submits the same four categories of document, but its blueprints are certified blueprints of the dedicated compounding room including placement of containment hoods, with no ISO classification of engineering controls. The two sections then converge again. 247 CMR 6.06(2) and 6.07(2) each require the applicant to achieve a satisfactory Board inspection of the proposed pharmacy prior to the issuance of the original licence, so the inspection sits ahead of issuance and cannot be treated as something a pharmacy grows into. And 247 CMR 6.06(3)(a) and 6.07(3)(a) each expire the licence on December 31st of each year following the date of its issuance, which makes these annual licences rather than biennial ones.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "The significant-difference test is easy to miss because it sits inside the statutory definition of compounding rather than in a provision of its own. M.G.L. c. 112, s. 39D defines compounding as the preparation, mixing, assembling, packaging or labeling of one or more active ingredients with one or more other substances, by or under the supervision of a licensed pharmacist within a licensed pharmacy, to create a final drug preparation formulated in one of three ways. The first way is the patient-specific one: for use on or for a patient as a result of a practitioner's prescription order, based on the relationship between practitioner, patient and pharmacist in the course of routine professional practice, to meet the unique medical need of an individual patient by producing a significant difference between the compounded drug preparation and a comparable commercially available drug that is justified by a documented medical need as determined by the prescribing practitioner. The statute offers examples, including the removal of a dye for medical reasons, a change in strength, and a change in dosage, form or delivery mechanism, and then forecloses the tempting one by providing that a price difference shall not be a significant difference to justify compounding. Why the test carries weight is structural. Except as provided in that patient-specific limb, compounding shall not include the preparation of commercially available, federally approved drugs or drug preparations, so the documented medical need is the thing that lifts a general exclusion, and cost cannot do that work.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "247 CMR 6.15 is one section doing two different jobs, and the boundary between them is where marks are lost. 247 CMR 6.15(1) is the general remodelling half: it reaches a Drug Store pharmacy alongside the compounding pharmacy types and governs an application for approval to remodel or to change the configuration or square footage of the pharmacy. That half, and the drawings that 247 CMR 6.15(3) calls for from an applicant, belong to the pharmacy change-filings material and are not taught here. 247 CMR 6.15(2) is the engineering-control half, and it is narrower in every dimension. It names three pharmacy types only, a sterile compounding pharmacy, a non-resident sterile compounding pharmacy and an institutional sterile compounding pharmacy. It requires each of them to apply to the Board for approval to remodel or to change the configuration or square footage of the pharmacy prior to moving, adding, modifying, removing or replacing any secondary engineering control, and it bars each of them from moving, adding, modifying, removing or replacing any secondary engineering control until it receives approval from the Board. Two consequences follow. There is no separate engineering-control application: the vehicle is the same remodelling application, and what 6.15(2) supplies is a second occasion for filing it and a second prohibition. And because replacing appears on the list of acts, a like-for-like swap that alters no configuration and no square footage is still inside the provision.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "247 CMR 6.15(4) is the submission half, and its list of addressees is not the same list as 6.15(2)'s. It reaches a sterile compounding pharmacy, a complex non-sterile compounding pharmacy, an institutional sterile compounding pharmacy and a non-resident sterile compounding pharmacy, so a complex non-sterile compounding pharmacy that stands outside the secondary engineering control prohibition in 6.15(2) is nonetheless inside the submission requirement in 6.15(4), while a Drug Store pharmacy is outside both. Each of those four shall submit, in support of an application to remodel or to change the configuration or square footage of a pharmacy: certified blueprints depicting the compounding area or areas and the location and ISO classification of each primary and secondary engineering control, and the placement of containment hoods, as applicable; a containment strategy; an environmental monitoring plan, if applicable; a plan to re-certify primary and secondary engineering controls and containment hoods, if applicable; a continuity of care plan, if applicable; and any other information as required by the Board. Read the qualifiers instead of skipping them, because four of the six items are expressly conditioned as applicable or if applicable, so the list is a maximum shaped by the facility rather than six documents in every case. Note also that the certified blueprints called for by 6.15(4)(a) are the same instrument 247 CMR 6.06(1)(b) required in support of the original sterile compounding pharmacy licence.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL",
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "text": "Hazardous-drug handling reaches Massachusetts pharmacy law by incorporation rather than through a regulation of its own. 247 CMR 9.01(3) provides that, unless otherwise regulated by the Board, a licensee shall adhere to the most current standards established by each chapter of the United States Pharmacopeia. That single sentence is the whole mechanism: the hazardous-drug standards bind a Massachusetts licensee because 247 CMR 9.01(3) makes the current USP chapters binding, and the Board's own advisory on USP 800 in community pharmacies identifies the chapter that addresses hazardous drugs. Two consequences deserve fixing early. The first is that the hazardous framework is an overlay: a pharmacy compounding a hazardous drug must satisfy the sterile or non-sterile compounding framework applicable to the preparation and the current hazardous-drug handling standards at the same time, so hazard classification does not displace the compounding requirements and holding a compounding licence does not erase the hazardous-drug controls. The second is that the hazardous obligations are not confined to the act of compounding: they reach receipt, storage, compounding, dispensing, administration and disposal, which is why a pharmacy that only stores and dispenses intact manufacturer-packaged hazardous tablets is still inside the framework. What 247 CMR 9.01(3) does not supply is the technical detail. That detail lives in the current USP text rather than in the Massachusetts regulation, so a question turning on a specific containment level or a specific engineering-control specification is not answered out of 247 CMR 9.00 at all.",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING",
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "comparison_tables": [
+          {
+            "title": "The two compounding licence categories side by side",
+            "columns": [
+              "Element",
+              "Sterile compounding",
+              "Complex non-sterile compounding"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Statutory definition (M.G.L. c. 112, s. 39D)",
+                  "Engaging in the compounding of a sterile drug preparation: a compounded biologic, diagnostic, drug, nutrient or radiopharmaceutical which under chapter 797 of the USP or under cGMP shall be compounded using aseptic techniques",
+                  "Engaging in the compounding of a complex non-sterile drug preparation: one requiring special training, a special environment or special facilities or equipment, or techniques and procedures that may present an elevated risk to the compounder or the patient, as defined by the Board through regulation"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Statutory prohibition (M.G.L. c. 112, s. 39F)",
+                  "s. 39F(a): no sterile compounding, and no prescribing, shipping, mailing, selling, transferring or dispensing of sterile drug preparations in the commonwealth, without the Board licence the statute names",
+                  "s. 39F(b): the same prohibition, for complex non-sterile compounding and complex non-sterile drug preparations"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Licence that must be held (247 CMR 6.02)",
+                  "6.02(2): a Drug Store Pharmacy license and a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license",
+                  "6.02(3): a Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license, with no institutional alternative stated"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Blueprints filed with the application",
+                  "247 CMR 6.06(1)(b): certified blueprints of the compounding area or areas depicting the location and identifying the ISO classification for each primary and secondary engineering control",
+                  "247 CMR 6.07(1)(b): certified blueprints of the dedicated compounding room, including placement of containment hoods"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Rest of the application package",
+                  "247 CMR 6.06(1): all documentation identified in 247 CMR 6.04(2); a detailed HVAC design plan and written description; an attestation of intent to engage in compounding signed by the Manager of Record, the pharmacist in charge of sterile compounding as applicable, and the applicants",
+                  "247 CMR 6.07(1): the same three items, with the pharmacist in charge of complex non-sterile compounding named in the attestation"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Inspection gate",
+                  "247 CMR 6.06(2): a satisfactory Board inspection of the proposed pharmacy prior to issuance of the original sterile compounding pharmacy license",
+                  "247 CMR 6.07(2): a satisfactory Board inspection of the proposed pharmacy prior to issuance of the original complex non-sterile compounding pharmacy license"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Expiry and what renewal carries",
+                  "247 CMR 6.06(3): expiry on December 31st of each year following issuance; renewal carries copies of all reports or correspondence pertaining to inspections by any state or federal agency, or any entity inspecting on behalf of one, occurring within the pending licensing period",
+                  "247 CMR 6.07(3): the same annual expiry and the same inspection-report submission"
+                ],
+                "rule_ids": [
+                  "MA-STERILE-COMPOUNDING-LICENSE",
+                  "MA-COMPLEX-NONSTERILE-LICENSE"
+                ]
+              },
+              {
+                "cells": [
+                  "Named in the secondary engineering control prohibition, 247 CMR 6.15(2)",
+                  "Yes, as a sterile compounding pharmacy; the provision also names a non-resident sterile compounding pharmacy and an institutional sterile compounding pharmacy",
+                  "No; a complex non-sterile compounding pharmacy is not among the three types 6.15(2) names"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              },
+              {
+                "cells": [
+                  "Named in the compounding submission, 247 CMR 6.15(4)",
+                  "Yes",
+                  "Yes; a complex non-sterile compounding pharmacy is named in 6.15(4) even though it is absent from 6.15(2)"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "247 CMR 6.15 divided: which paragraph reaches which pharmacy and which act",
+            "columns": [
+              "Paragraph",
+              "Pharmacy types it names",
+              "What it governs",
+              "Where it is taught"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "6.15(1), general remodelling",
+                  "A Drug Store pharmacy alongside the compounding pharmacy types",
+                  "An application for approval to remodel or to change the configuration or square footage of the pharmacy",
+                  "Outside this section: taught with the pharmacy change filings"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              },
+              {
+                "cells": [
+                  "6.15(2), secondary engineering controls",
+                  "Sterile compounding pharmacy; non-resident sterile compounding pharmacy; institutional sterile compounding pharmacy",
+                  "Approval prior to moving, adding, modifying, removing or replacing any secondary engineering control, with a bar on performing any of those acts until approval is received",
+                  "Here"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              },
+              {
+                "cells": [
+                  "6.15(3), the general drawings",
+                  "Stated as an obligation of the applicant, without a list of pharmacy types of its own",
+                  "The drawings and the controlled-substance transport plan filed in support of the application",
+                  "Outside this section: taught with the pharmacy change filings"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              },
+              {
+                "cells": [
+                  "6.15(4), the compounding submission",
+                  "Sterile compounding pharmacy; complex non-sterile compounding pharmacy; institutional sterile compounding pharmacy; non-resident sterile compounding pharmacy",
+                  "Six further items filed in support of an application to remodel or to change the configuration or square footage of a pharmacy",
+                  "Here"
+                ],
+                "rule_ids": [
+                  "MA-ENGINEERING-CONTROL-APPROVAL"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Hazardous and non-hazardous: what changes and what stays the same",
+            "columns": [
+              "Question",
+              "Non-hazardous preparation",
+              "Hazardous drug"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Which compounding framework applies?",
+                  "The sterile or non-sterile framework that fits the preparation",
+                  "The same sterile or non-sterile framework; hazard classification does not replace it"
+                ],
+                "rule_ids": [
+                  "MA-HAZARDOUS-COMPOUNDING"
+                ]
+              },
+              {
+                "cells": [
+                  "Is a further body of standards engaged?",
+                  "247 CMR 9.01(3) binds the licensee to the most current USP standards generally, unless otherwise regulated by the Board",
+                  "The same provision engages the current hazardous-drug handling standards, which apply in addition to the compounding framework"
+                ],
+                "rule_ids": [
+                  "MA-HAZARDOUS-COMPOUNDING",
+                  "MA-HAZARDOUS-DRUG-HANDLING"
+                ]
+              },
+              {
+                "cells": [
+                  "Do obligations attach where nothing is compounded?",
+                  "The compounding framework is not engaged when no compounding occurs",
+                  "Hazardous-drug handling reaches receipt, storage, dispensing, administration and disposal, so obligations attach with no compounding at all"
+                ],
+                "rule_ids": [
+                  "MA-HAZARDOUS-DRUG-HANDLING"
+                ]
+              },
+              {
+                "cells": [
+                  "Does holding the right compounding licence settle the matter?",
+                  "The licence answers the licensure question and nothing further arises from hazard status",
+                  "Holding a compounding licence does not erase the hazardous-drug controls; both frameworks run together"
+                ],
+                "rule_ids": [
+                  "MA-HAZARDOUS-COMPOUNDING"
+                ]
+              }
+            ]
+          }
+        ],
+        "worked_examples": [
+          {
+            "scenario": "A Massachusetts sterile compounding pharmacy plans to swap an ageing cleanroom unit that everyone involved accepts is a secondary engineering control for an identical new one, in the same position and on the same footprint, over a single weekend. The director reasons that because neither the configuration nor the square footage of the pharmacy changes there is nothing to file, and that in any event the pharmacy will suspend all compounding while the work is done. What does 247 CMR 6.15 require?",
+            "steps": [
+              "Do not start from whether the configuration changed. 247 CMR 6.15(2) is written as a list of acts performed on a secondary engineering control: moving, adding, modifying, removing or replacing.",
+              "Match the facts to that list. Swapping one unit for an identical one is replacing, which is expressly named, so an unchanged footprint does not carry the work outside the provision.",
+              "Check that the pharmacy is one of the three types 247 CMR 6.15(2) reaches: a sterile compounding pharmacy, a non-resident sterile compounding pharmacy or an institutional sterile compounding pharmacy. It is the first of the three.",
+              "Read the prohibition rather than hunting for a deadline. The pharmacy shall apply to the Board for approval prior to the act, and may not move, add, modify, remove or replace any secondary engineering control until it receives approval from the Board. No number of days appears anywhere in 6.15.",
+              "Assemble the submission from 247 CMR 6.15(4), which begins with certified blueprints depicting the compounding areas and the location and ISO classification of each primary and secondary engineering control and the placement of containment hoods, as applicable, and then adds a containment strategy, an environmental monitoring plan, a re-certification plan and a continuity of care plan, each as applicable.",
+              "Notice what suspending compounding does not achieve. Nothing in 247 CMR 6.15(2) conditions the approval requirement on whether compounding continues while the work is carried out."
+            ],
+            "resolution": "The pharmacy must apply and wait for the Board's approval before the swap, and must support the application with the 247 CMR 6.15(4) items rather than with ordinary layout drawings. The error the scenario invites is reasoning from whether the configuration changed instead of from whether one of the five listed acts was performed on a secondary engineering control, with the offer to suspend compounding held out as a second false exit.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "scenario": "A Massachusetts pharmacy holds a Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license. It proposes to begin preparing patient-specific ophthalmic preparations that will be compounded using aseptic technique. Its Manager of Record reasons that the pharmacy already holds a compounding licence, that every preparation will be patient-specific, and that any further application is a formality that can be completed once the service is running.",
+            "steps": [
+              "Classify the preparation before looking at any licence. An ophthalmic preparation compounded using aseptic technique answers the M.G.L. c. 112, s. 39D description of a sterile drug preparation, so the proposed activity is sterile compounding.",
+              "Apply the statutory prohibition. M.G.L. c. 112, s. 39F(a) bars a pharmacy from engaging in sterile compounding, and from dispensing sterile drug preparations in the commonwealth, without the licence the Board issues for it.",
+              "Read 247 CMR 6.02(2) for what must actually be held: a Drug Store Pharmacy license together with a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license. A complex non-sterile compounding pharmacy license is neither of those things.",
+              "Note that the licence category follows the preparation rather than the pharmacy. 247 CMR 6.02(3) licenses complex non-sterile compounding, and holding that licence says nothing about the sterile category.",
+              "Fix the sequence. 247 CMR 6.06(2) requires a satisfactory Board inspection of the proposed sterile compounding pharmacy prior to the issuance of an original sterile compounding pharmacy license, so the licence cannot trail the activity.",
+              "Set the patient-specific point aside. Patient-specific preparation is part of how M.G.L. c. 112, s. 39D defines compounding; it is not a route around the licensure gate."
+            ],
+            "resolution": "The pharmacy may not begin until it holds the sterile compounding pharmacy licence, and it cannot hold that licence until it has passed the satisfactory Board inspection that 247 CMR 6.06(2) places ahead of issuance. The error the scenario invites is treating a specialty licence as generic and patient-specific status as a waiver, when the category follows the preparation and the inspection gate sits before issuance rather than after it.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "scenario": "A prescriber telephones a Massachusetts pharmacy and asks it to compound an oral suspension of a drug that is already marketed as an approved oral suspension. Asked for the clinical reason, the prescriber explains that the patient's insurance will not cover the marketed product and the compounded version will be substantially cheaper, and offers to write that reason on the prescription so that the file shows a documented rationale.",
+            "steps": [
+              "Start from the general exclusion rather than from the request. Under M.G.L. c. 112, s. 39D, and except as provided in the patient-specific limb, compounding shall not include the preparation of commercially available, federally approved drugs or drug preparations.",
+              "Read what the patient-specific limb actually asks for: a significant difference between the compounded drug preparation and a comparable commercially available drug, justified by a documented medical need, as determined by the prescribing practitioner.",
+              "Test the offered reason against the statutory illustrations, which include the removal of a dye for medical reasons, a change in strength, and a change in dosage, form or delivery mechanism. Insurance coverage and cost are not among them.",
+              "Apply the express exclusion. M.G.L. c. 112, s. 39D provides that a price difference shall not be a significant difference to justify compounding.",
+              "Notice that writing the reason down does not repair it. What the statute requires to be documented is a medical need, so recording a financial one documents the wrong thing."
+            ],
+            "resolution": "The request as stated does not support compounding, because the only difference offered is price and s. 39D excludes a price difference from the significant difference by name. The error the scenario invites is treating the prescriber's determination plus a written note as sufficient in themselves, when the statute requires the difference to be justified by a documented medical need.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "scenario": "A Massachusetts drug store pharmacy that holds no compounding licence of any kind begins stocking a manufacturer-packaged oral tablet identified as a hazardous drug. It will receive the tablets, store them, dispense them intact and dispose of the stock that expires, and it will not manipulate them in any way. The Manager of Record concludes that because the pharmacy does no compounding, and because the pharmacy licensure regulations say nothing about hazardous drugs, nothing further is required.",
+            "steps": [
+              "Confirm the half of the reasoning that is sound. With no compounding, neither the sterile framework nor the complex non-sterile framework is engaged, and neither licence gate arises.",
+              "Find where the hazardous obligation actually originates. 247 CMR 9.01(3) provides that, unless otherwise regulated by the Board, a licensee shall adhere to the most current standards established by each chapter of the United States Pharmacopeia, and that incorporation is what makes the hazardous-drug standards binding on this pharmacy.",
+              "Take the breadth of what is incorporated seriously. Hazardous-drug handling reaches receipt, storage, compounding, dispensing, administration and disposal, so the compounding step is one stage among several rather than the trigger.",
+              "Reject the inference drawn from the wrong regulation. The obligation does not travel through the pharmacy licensure sections, so their silence about hazardous drugs creates no exemption.",
+              "Map the framework onto the operations this pharmacy actually performs: receiving, storing, dispensing and disposing of the intact product."
+            ],
+            "resolution": "The pharmacy sits inside the hazardous-drug handling framework for the receipt, storage, dispensing and disposal it performs, even though it compounds nothing and holds no compounding licence. The error the scenario invites is reading hazardous-drug controls as a compounding topic and treating the licensure regulation's silence as permission.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING",
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          }
+        ],
+        "retrieval_prompts": [
+          {
+            "prompt": "Under 247 CMR 6.02(2) a pharmacy may engage in sterile compounding only if it holds ______ together with ______, or alternatively ______.",
+            "answer": "A Drug Store Pharmacy license; a sterile compounding pharmacy license; an institutional sterile compounding pharmacy license.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "prompt": "Which licence combination does 247 CMR 6.02(3) require before a pharmacy may engage in any complex non-sterile compounding?",
+            "answer": "A Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license. No institutional alternative is stated for this category.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "prompt": "Which acts, besides compounding itself, does M.G.L. c. 112, s. 39F(a) forbid a pharmacy to perform on sterile drug preparations in the commonwealth without the required licence?",
+            "answer": "Prescribing, shipping, mailing, selling, transferring and dispensing them.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "prompt": "What single item separates the blueprints required by 247 CMR 6.06(1)(b) from those required by 247 CMR 6.07(1)(b)?",
+            "answer": "The sterile application's certified blueprints depict the compounding areas and identify the ISO classification for each primary and secondary engineering control; the complex non-sterile application's certified blueprints are of the dedicated compounding room and show placement of containment hoods.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "prompt": "True or false: the satisfactory Board inspection in 247 CMR 6.06(2) is a condition of renewing a sterile compounding pharmacy licence.",
+            "answer": "False. It is required prior to the issuance of an original sterile compounding pharmacy license. Renewal under 247 CMR 6.06(3)(b) instead carries copies of all reports or correspondence pertaining to inspections by any state or federal agency, or any entity inspecting on behalf of one, occurring within the pending licensing period.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "prompt": "On what date does a sterile compounding pharmacy licence or a complex non-sterile compounding pharmacy licence expire?",
+            "answer": "December 31st of each year following the date of its issuance, under 247 CMR 6.06(3)(a) and 6.07(3)(a). Both are annual licences.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "prompt": "Name the five acts on a secondary engineering control that 247 CMR 6.15(2) places behind Board approval.",
+            "answer": "Moving, adding, modifying, removing and replacing.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "prompt": "Which three pharmacy types does 247 CMR 6.15(2) name, and which type appears in 247 CMR 6.15(4) but not in 6.15(2)?",
+            "answer": "A sterile compounding pharmacy, a non-resident sterile compounding pharmacy and an institutional sterile compounding pharmacy. A complex non-sterile compounding pharmacy appears in 6.15(4) but not in 6.15(2).",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "prompt": "List the items 247 CMR 6.15(4) requires in support of an application to remodel or to change the configuration or square footage of a pharmacy.",
+            "answer": "Certified blueprints depicting the compounding areas and the location and ISO classification of each primary and secondary engineering control and the placement of containment hoods, as applicable; a containment strategy; an environmental monitoring plan, if applicable; a plan to re-certify primary and secondary engineering controls and containment hoods, if applicable; a continuity of care plan, if applicable; and any other information as required by the Board.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "prompt": "Complete the statutory phrase: under M.G.L. c. 112, s. 39D a ______ difference shall not be a significant difference to justify compounding.",
+            "answer": "Price.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "prompt": "In the patient-specific limb of the M.G.L. c. 112, s. 39D compounding definition, what must justify the significant difference, and who determines it?",
+            "answer": "A documented medical need, as determined by the prescribing practitioner.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "prompt": "Which provision makes current USP standards binding on a Massachusetts pharmacy licensee, and on what condition?",
+            "answer": "247 CMR 9.01(3): unless otherwise regulated by the Board, a licensee shall adhere to the most current standards established by each chapter of the United States Pharmacopeia.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          },
+          {
+            "prompt": "True or false: a pharmacy holding the correct compounding licence has by that fact satisfied its hazardous-drug obligations for a hazardous preparation.",
+            "answer": "False. The two frameworks stack. The pharmacy must satisfy the applicable sterile or non-sterile compounding framework and the current hazardous-drug handling standards together, and neither displaces the other.",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          },
+          {
+            "prompt": "Name activities other than compounding that current hazardous-drug handling standards reach.",
+            "answer": "Receipt, storage, dispensing, administration and disposal.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "quick_review": [
+          {
+            "text": "Classification precedes licensure: M.G.L. c. 112, s. 39D fixes the sterile and complex non-sterile categories by the nature of the preparation, not by what the pharmacy already holds.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "247 CMR 6.02(2): sterile compounding requires a Drug Store Pharmacy license and a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "text": "247 CMR 6.02(3): complex non-sterile compounding requires a Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "M.G.L. c. 112, s. 39F(a) and (b) forbid more than compounding without the licence; they also forbid prescribing, shipping, mailing, selling, transferring and dispensing the corresponding preparations in the commonwealth.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "The sterile application's certified blueprints carry ISO classification for each primary and secondary engineering control under 247 CMR 6.06(1)(b); the complex non-sterile application's show the dedicated compounding room and containment hood placement under 247 CMR 6.07(1)(b).",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "A satisfactory Board inspection precedes issuance of the original licence in both categories, under 247 CMR 6.06(2) and 6.07(2).",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Both compounding licences expire on December 31st of each year following issuance, and renewal carries copies of all reports and correspondence about state or federal inspections occurring within the pending licensing period.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "A price difference shall not be a significant difference to justify compounding; the difference must be justified by a documented medical need as determined by the prescribing practitioner, under M.G.L. c. 112, s. 39D.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "247 CMR 6.15(2) puts moving, adding, modifying, removing and replacing any secondary engineering control behind Board approval for a sterile compounding, non-resident sterile compounding or institutional sterile compounding pharmacy, and states no day count.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "247 CMR 6.15(4) adds certified blueprints with ISO classification and containment hood placement, a containment strategy, an environmental monitoring plan, a re-certification plan, a continuity of care plan and any other information the Board requires, for four pharmacy types including a complex non-sterile compounding pharmacy.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "247 CMR 9.01(3) is the doorway for hazardous drugs: unless otherwise regulated by the Board, a licensee shall adhere to the most current standards established by each chapter of the United States Pharmacopeia.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          },
+          {
+            "text": "Hazardous status is an overlay. The applicable compounding framework and the hazardous-drug standards apply together, and neither substitutes for the other.",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          },
+          {
+            "text": "Hazardous-drug obligations reach receipt, storage, compounding, dispensing, administration and disposal, so they can attach where no compounding occurs at all.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A pharmacy proposes a new preparation and asks which licence it needs.",
+            "action": "Classify the preparation first under M.G.L. c. 112, s. 39D as a sterile drug preparation, a complex non-sterile drug preparation, or neither, and only then read 247 CMR 6.02 for the licence that category requires.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "condition": "The preparation answers the statutory description of a sterile drug preparation.",
+            "action": "Require a Drug Store Pharmacy license together with a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license, before any sterile compounding begins, and expect the satisfactory Board inspection in 247 CMR 6.06(2) ahead of issuance of the original licence.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "condition": "The preparation answers the statutory description of a complex non-sterile drug preparation.",
+            "action": "Require a Drug Store Pharmacy license together with a complex non-sterile compounding pharmacy license under 247 CMR 6.02(3), and expect the satisfactory Board inspection in 247 CMR 6.07(2) ahead of issuance of the original licence.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "condition": "A commercially available approved product would serve the patient and compounding is nonetheless requested.",
+            "action": "Ask what significant difference the compounded preparation produces for that patient, whether it is justified by a documented medical need, and whether the prescribing practitioner determined it. If the only difference offered is price, M.G.L. c. 112, s. 39D forecloses it.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "condition": "A facility change is proposed at a compounding pharmacy.",
+            "action": "Ask two separate questions. Will any secondary engineering control be moved, added, modified, removed or replaced, which engages 247 CMR 6.15(2); and is the pharmacy one of the four types named in 247 CMR 6.15(4), which fixes what the submission must contain.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "condition": "A secondary engineering control will be touched at a sterile compounding, non-resident sterile compounding or institutional sterile compounding pharmacy.",
+            "action": "Apply to the Board for approval before the act and do not perform it until approval is received. Do not look for a day count, because 247 CMR 6.15(2) states none.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "condition": "The drug being compounded is hazardous.",
+            "action": "Run both frameworks in parallel: the sterile or non-sterile compounding framework that fits the preparation, and the current hazardous-drug handling standards engaged by 247 CMR 9.01(3).",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          },
+          {
+            "condition": "A hazardous drug is present but nothing will be compounded.",
+            "action": "Apply the current hazardous-drug handling standards to the operations actually performed, including receipt, storage, dispensing and disposal, and do not look to the compounding licensure sections for the answer.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "M.G.L. c. 112, s. 39F(d) makes a federal determination operate directly as a Massachusetts prohibition: a pharmacy shall not compound any drug preparations banned by the federal Food and Drug Administration because of safety concerns.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "M.G.L. c. 112, s. 39F(c) routes an entity out of the pharmacy framework and into the federal one where it intends to compound and distribute a sterile drug preparation or a complex non-sterile drug in volumes inconsistent with routinely observed volume patterns associated with patient-specific prescriptions, or in the absence of accountability documentation. Such an entity shall adhere to the most current cGMP standards and shall register either as a producer of drugs with the federal Food and Drug Administration or as an outsourcing facility with that agency and with the Board, before engaging in any sterile or complex non-sterile compounding.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Federal approval status frames the Massachusetts definition of compounding: except in the patient-specific limb, M.G.L. c. 112, s. 39D provides that compounding shall not include the preparation of commercially available, federally approved drugs or drug preparations.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "The compounding-licence renewal submission is not limited to Board inspections. Under 247 CMR 6.06(3)(b) and 6.07(3)(b) it reaches all reports or correspondence pertaining to inspections by any state or federal agency, or any entity inspecting on behalf of a state or federal agency, occurring within the pending licensing period.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "The general exclusion of commercially available, federally approved drugs from the M.G.L. c. 112, s. 39D definition of compounding is lifted only by the patient-specific limb, and only where the significant difference is justified by a documented medical need as determined by the prescribing practitioner.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "247 CMR 6.02(2) offers an alternative rather than a single route: an institutional sterile compounding pharmacy license stands in place of the Drug Store Pharmacy licence and sterile compounding pharmacy licence pair. 247 CMR 6.02(3) states no comparable alternative for complex non-sterile compounding.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Four of the six items in the 247 CMR 6.15(4) submission are conditional on their own terms: the certified blueprints show containment hood placement as applicable, and the environmental monitoring plan, the re-certification plan and the continuity of care plan are each required if applicable.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "247 CMR 6.15(2) names a sterile compounding pharmacy, a non-resident sterile compounding pharmacy and an institutional sterile compounding pharmacy only. A complex non-sterile compounding pharmacy and a Drug Store pharmacy fall outside its secondary engineering control prohibition, although a complex non-sterile compounding pharmacy is inside the 247 CMR 6.15(4) submission.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "247 CMR 9.01(3) binds the licensee to the most current USP standards only unless otherwise regulated by the Board, so a Board regulation addressing the same subject displaces the compendial standard.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Expiry of a sterile compounding pharmacy license",
+            "timeframe": "December 31st of each year following the date of its issuance",
+            "consequence": "247 CMR 6.06(3)(a) makes this an annual licence; it does not run on the biennial personal-registration cycle.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "event": "Expiry of a complex non-sterile compounding pharmacy license",
+            "timeframe": "December 31st of each year following the date of its issuance",
+            "consequence": "247 CMR 6.07(3)(a) sets the same annual expiry as the sterile compounding licence.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "event": "Satisfactory Board inspection of a proposed compounding pharmacy",
+            "timeframe": "Prior to the issuance of the original licence",
+            "consequence": "247 CMR 6.06(2) and 6.07(2) place the inspection ahead of issuance, so an activity cannot be begun and regularised afterwards.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "event": "Moving, adding, modifying, removing or replacing a secondary engineering control",
+            "timeframe": "Prior to the act; 247 CMR 6.15(2) states no number of days",
+            "consequence": "The pharmacy may not perform the act until it receives approval from the Board, so the controlling constraint is the prohibition rather than a deadline.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "event": "Inspection reports filed with a compounding licence renewal",
+            "timeframe": "Inspections occurring within the pending licensing period",
+            "consequence": "247 CMR 6.06(3)(b) and 6.07(3)(b) require copies of all reports or correspondence pertaining to inspections by any state or federal agency, or any entity inspecting on behalf of one, in that period.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "The sterile compounding pharmacy application under 247 CMR 6.06(1) carries all documentation identified in 247 CMR 6.04(2), certified blueprints of the compounding areas depicting the location and ISO classification of each primary and secondary engineering control, a detailed HVAC design plan and written description, and an attestation of intent to engage in compounding signed by the Manager of Record, the pharmacist in charge of sterile compounding as applicable, and the applicants.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "text": "The complex non-sterile compounding pharmacy application under 247 CMR 6.07(1) carries all documentation identified in 247 CMR 6.04(2), certified blueprints of the dedicated compounding room including placement of containment hoods, a detailed HVAC design plan and written description, and an attestation of intent to engage in compounding signed by the Manager of Record, the pharmacist in charge of complex non-sterile compounding as applicable, and the applicants.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "The 247 CMR 6.15(4) submission consists of certified blueprints depicting the compounding areas and the location and ISO classification of each primary and secondary engineering control and the placement of containment hoods as applicable, a containment strategy, an environmental monitoring plan if applicable, a plan to re-certify primary and secondary engineering controls and containment hoods if applicable, a continuity of care plan if applicable, and any other information as required by the Board.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "A compounding licence renewal under 247 CMR 6.06(3)(b) or 6.07(3)(b) carries copies of all reports or correspondence pertaining to all inspections by any state or federal agency, or any entity inspecting on behalf of a state or federal agency, occurring within the pending licensing period.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "The medical need justifying a significant difference under M.G.L. c. 112, s. 39D must be documented, and the prescribing practitioner is the one who determines it; a note recording a financial reason does not satisfy the requirement.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "247 CMR 9.01(3) creates no Massachusetts hazardous-drug form or record of its own. What it requires is adherence to the most current USP standards, so the documentation expectations sit in that compendial text rather than in 247 CMR 9.00.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacy proposing to begin sterile compounding",
+            "duty": "Hold a Drug Store Pharmacy license and a sterile compounding pharmacy license, or an institutional sterile compounding pharmacy license, before engaging in any sterile compounding, and pass the satisfactory Board inspection that 247 CMR 6.06(2) places ahead of issuance of the original licence.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "role": "Pharmacy proposing to begin complex non-sterile compounding",
+            "duty": "Hold a Drug Store Pharmacy license and a complex non-sterile compounding pharmacy license before engaging in any complex non-sterile compounding, and pass the satisfactory Board inspection that 247 CMR 6.07(2) places ahead of issuance of the original licence.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "role": "Manager of Record",
+            "duty": "Sign the attestation of intent to engage in compounding required by 247 CMR 6.06(1)(d) and 6.07(1)(d), alongside the pharmacist in charge of the relevant compounding category as applicable and the applicants.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "role": "Pharmacist in charge of sterile compounding",
+            "duty": "Sign, as applicable under 247 CMR 6.06(1)(d), the attestation of intent to engage in compounding submitted in support of the sterile compounding pharmacy application.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE"
+            ]
+          },
+          {
+            "role": "Sterile, non-resident sterile or institutional sterile compounding pharmacy",
+            "duty": "Apply to the Board for approval before moving, adding, modifying, removing or replacing any secondary engineering control, and refrain from the act until approval is received.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "role": "Prescribing practitioner",
+            "duty": "Determine the significant difference between the compounded preparation and a comparable commercially available drug, and rest that determination on a documented medical need rather than on price.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "role": "Pharmacy compounding a hazardous drug",
+            "duty": "Satisfy the sterile or non-sterile compounding framework applicable to the preparation and the current hazardous-drug handling standards at the same time, treating neither as a substitute for the other.",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          },
+          {
+            "role": "Any Massachusetts pharmacy licensee handling a hazardous drug",
+            "duty": "Adhere to the current hazardous-drug handling standards across receipt, storage, dispensing, administration and disposal, whether or not the pharmacy compounds anything.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Reasoning from whether the configuration or square footage changed rather than from whether one of the five acts in 247 CMR 6.15(2) was performed on a secondary engineering control. Replacing is on the list, so a like-for-like swap sits inside the provision.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "Assuming the addressee lists in 247 CMR 6.15(2) and 6.15(4) are the same. A complex non-sterile compounding pharmacy is named in (4) and not in (2), and a Drug Store pharmacy is named in neither.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "Filing ordinary layout drawings for an engineering-control change. 247 CMR 6.15(4)(a) calls for certified blueprints depicting the compounding areas and the location and ISO classification of each primary and secondary engineering control.",
+            "rule_ids": [
+              "MA-ENGINEERING-CONTROL-APPROVAL"
+            ]
+          },
+          {
+            "text": "Treating a compounding licence as generic. The licence category follows the preparation, so a complex non-sterile compounding pharmacy license does not reach sterile compounding, and a sterile compounding pharmacy license does not reach complex non-sterile compounding.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Reading non-sterile as a synonym for simple. The complex non-sterile category turns on special training, a special environment or special facilities or equipment, or techniques and procedures presenting an elevated risk to the compounder or the patient.",
+            "rule_ids": [
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Treating patient-specific preparation as a waiver of the licensure gate. Patient-specific formulation is part of how M.G.L. c. 112, s. 39D defines compounding; it says nothing about which licence the activity requires.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "Accepting a documented reason as a documented medical need. M.G.L. c. 112, s. 39D requires the significant difference to be justified by a documented medical need, and it excludes a price difference by name.",
+            "rule_ids": [
+              "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+            ]
+          },
+          {
+            "text": "Expecting the satisfactory inspection to be a renewal condition. 247 CMR 6.06(2) and 6.07(2) place it before issuance of the original licence, and what renewal carries instead is the inspection-report submission.",
+            "rule_ids": [
+              "MA-STERILE-COMPOUNDING-LICENSE",
+              "MA-COMPLEX-NONSTERILE-LICENSE"
+            ]
+          },
+          {
+            "text": "Reading hazardous-drug controls as a compounding topic. They reach receipt, storage, dispensing, administration and disposal, so a pharmacy that compounds nothing can still be inside the framework.",
+            "rule_ids": [
+              "MA-HAZARDOUS-DRUG-HANDLING"
+            ]
+          },
+          {
+            "text": "Treating the compounding framework and the hazardous-drug standards as alternatives. Hazard classification does not displace the sterile or non-sterile requirements, and satisfying those requirements does not erase the hazardous-drug controls.",
+            "rule_ids": [
+              "MA-HAZARDOUS-COMPOUNDING"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0214",
+          "MA-Q-0216",
+          "MA-Q-0217",
+          "MA-Q-0218",
+          "MA-Q-0219",
+          "MA-Q-0388",
+          "MA-Q-0435",
+          "MA-Q-0436"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "MA-STERILE-COMPOUNDING-LICENSE",
+          "content_version": 1,
+          "content_hash": "38761f7e40f10eb33be34865db32efcdc27e981701d821ac8de231c039ba6905",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-18",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy compounding statute",
+              "section": "M.G.L. c.112, §39F",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacy licensure regulations",
+              "section": "247 CMR 6.06",
+              "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies"
+            }
+          ],
+          "rule_summary": "Massachusetts requires an appropriate sterile compounding pharmacy license before a pharmacy engages in sterile compounding within the statutory scope. The current licensure regulation requires an applicant to achieve a satisfactory Board inspection before an original sterile compounding pharmacy license is issued.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-sterile-compounding-license.json",
+          "canonical_blob": "3578e977e735a7d5e4a33409c12b1e8eed21581f"
+        },
+        {
+          "rule_id": "MA-COMPLEX-NONSTERILE-LICENSE",
+          "content_version": 1,
+          "content_hash": "cce033e2ba52348c1ec95b4ef5847d792f267ca52a0b72c4f7fc497e001cb09f",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-18",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy definitions",
+              "section": "M.G.L. c.112, §39D",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
+            },
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy compounding statute",
+              "section": "M.G.L. c.112, §39F",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacy licensure regulations",
+              "section": "247 CMR 6.07",
+              "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies"
+            }
+          ],
+          "rule_summary": "Massachusetts separately licenses complex non-sterile compounding pharmacies. Complex non-sterile compounding involves preparation that, consistent with the statutory definition and current standards, requires specialized training, environment, facilities, equipment, or techniques presenting elevated complexity or risk. A satisfactory Board inspection is required before issuance of an original complex non-sterile compounding pharmacy license.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-complex-nonsterile-license.json",
+          "canonical_blob": "2b239b704fecef4968f20cab0d3c91f26bcdcf0d"
+        },
+        {
+          "rule_id": "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE",
+          "content_version": 1,
+          "content_hash": "0657767e64ab3a5cce7c573a0722bd5aeff00094ce7ed4cbd5670e2a49723e69",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-18",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy definitions",
+              "section": "M.G.L. c.112, §39D",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
+            }
+          ],
+          "rule_summary": "Massachusetts defines compounding to include patient-specific preparation and permits use of a commercially available product as a component when the compounded preparation produces, for that patient, a significant difference determined by the prescriber. A difference in price alone does not constitute the required significant difference.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-compounding-significant-difference.json",
+          "canonical_blob": "818cfc9bf119d90e8e9d11314eb9de5151712984"
+        },
+        {
+          "rule_id": "MA-ENGINEERING-CONTROL-APPROVAL",
+          "content_version": 1,
+          "content_hash": "2d2383194e15806a3374f9f7c5bed52ebd616857fae5db17eb5701ddae2dc92b",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-20",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 6.15(2) and (4)",
+              "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies"
+            }
+          ],
+          "rule_summary": "A sterile compounding pharmacy, non-resident sterile compounding pharmacy and institutional sterile compounding pharmacy shall apply for Board approval PRIOR TO MOVING, ADDING, MODIFYING, REMOVING OR REPLACING ANY SECONDARY ENGINEERING CONTROL, and may not do so until approval is received. Its submission adds CERTIFIED blueprints depicting compounding areas and the location and ISO CLASSIFICATION of each primary and secondary engineering control and the placement of containment hoods, a CONTAINMENT STRATEGY, an ENVIRONMENTAL MONITORING PLAN, a plan to RE-CERTIFY primary and secondary engineering controls and containment hoods, and a CONTINUITY OF CARE PLAN, each as applicable.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-engineering-control-approval.json",
+          "canonical_blob": "c16aee9c41b58c30a228346d485b97d2a5ccf21b"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-COMPOUNDING",
+          "content_version": 1,
+          "content_hash": "0fd599a6e4365b4a9e0528f7dc34a70deb2d438cc94b3e673faf8c895782cc38",
+          "status": "CURRENT",
+          "verification_status": "OFFICIAL_POLICY_VERIFIED",
+          "last_verified": "2026-08-18",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts professional practice standards",
+              "section": "247 CMR 9.01(3)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "USP 800 in Community Pharmacies",
+              "section": "Current Board advisory",
+              "url": "https://www.mass.gov/lists/pharmacy-practice-resources"
+            }
+          ],
+          "rule_summary": "When a Massachusetts pharmacy compounds a hazardous drug, it must satisfy the applicable sterile or non-sterile compounding framework and also the current hazardous-drug handling standards made applicable through 247 CMR 9.01 and current USP <800>. Hazard classification does not replace the underlying sterile/non-sterile compounding requirements, and sterile/non-sterile compliance does not erase hazardous-drug controls.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-hazardous-compounding.json",
+          "canonical_blob": "7fac190a91baaeb28c857e6ecdc91db696fc4804"
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "content_version": 1,
+          "content_hash": "0762d8544a8f8f09b7171f56a8a24d13026a2e506cbbf666d929695819d63f9d",
+          "status": "CURRENT",
+          "verification_status": "OFFICIAL_POLICY_VERIFIED",
+          "last_verified": "2026-08-18",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts professional practice standards",
+              "section": "247 CMR 9.01(3)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "USP 800 in Community Pharmacies",
+              "section": "Current Board advisory",
+              "url": "https://www.mass.gov/lists/pharmacy-practice-resources"
+            }
+          ],
+          "rule_summary": "247 CMR 9.01 requires a Massachusetts pharmacy licensee, unless otherwise regulated by the Board, to adhere to the most current standards established by each applicable USP chapter. Current USP <800> standards address hazardous-drug handling broadly, including receipt, storage, compounding, dispensing, administration, and disposal; hazardous-drug obligations therefore are not limited to the act of compounding.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-hazardous-drug-handling.json",
+          "canonical_blob": "d32a8ca7767f2b9adea4c56492aa23698302a9f5"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0214",
+          "question_hash": "35a7f054480e5c46f8aa3293f30e3ad3716e5f2786ecb6bc741d0068868c94c6",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0214.json",
+          "canonical_blob": "4f1b8884819e65b97b6bdd4841c332455c926ed7"
+        },
+        {
+          "question_id": "MA-Q-0216",
+          "question_hash": "a59cab0514d45b1e1d10f67e9c01c8d78fda5309abb469c156a37dbd8078f2e5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0216.json",
+          "canonical_blob": "9b4be9a7883b01917f5f41042afb318fa155fbad"
+        },
+        {
+          "question_id": "MA-Q-0217",
+          "question_hash": "e4a5cdd5a5189c56ec9946cfaed177350c425fddff1d17451ea0ceb73399cd66",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0217.json",
+          "canonical_blob": "293d6c3f09fa5cd0408b63f54ec57881e25031a4"
+        },
+        {
+          "question_id": "MA-Q-0218",
+          "question_hash": "ad1ee83f096695440b0068e5989fd8997af7c92020a25fb5d4b6d40b10d036ab",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0218.json",
+          "canonical_blob": "5191c5c9a3b6d496b55bdd8c8a9be4f21f57f6eb"
+        },
+        {
+          "question_id": "MA-Q-0219",
+          "question_hash": "6caa187601ecc06d17efb4dfa295df327d9fd2f08e9ef60d0027ef215e3a98f3",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0219.json",
+          "canonical_blob": "c9b6bb52077f58ea47a85263851989c152df1db7"
+        },
+        {
+          "question_id": "MA-Q-0388",
+          "question_hash": "0c92e5e65f50e1762797f198ea95355660b62816522f4ea158a22d712e3fa145",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0388.json",
+          "canonical_blob": "0b2b2ec514f2f8bb00fb59570bd57453b9bc0148"
+        },
+        {
+          "question_id": "MA-Q-0435",
+          "question_hash": "28000f21d8bf27b0d2eea8ce51e8085c4e5b69a1d4609d4c85f166090b0e0e62",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0435.json",
+          "canonical_blob": "1cd1d0438310642830ecdf3781a46597268d372b"
+        },
+        {
+          "question_id": "MA-Q-0436",
+          "question_hash": "86d1d5c465ddc5494bc78edf7c2366449a7f0003055dd8f90faf58b80987e11c",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0436.json",
+          "canonical_blob": "268e4a3b4f52a7f98b13e3b9d96da6984c8887ed"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-MA-QUALITY-AND-REPORTING",
+      "content_version": 1,
+      "content_hash": "8240403864ae1d7e00c8297785a9b1d5073527e8f5d03b0a8995d54661d6fadc",
+      "canonical_path": "data/study_guide/sections/sg-ma-quality-and-reporting.json",
+      "canonical_blob": "741a0e4a69ac7469a062cbfa265e65b0aeb3f8a1",
+      "full_prose_under_review": {
+        "section_id": "SG-MA-QUALITY-AND-REPORTING",
+        "content_version": 1,
+        "content_hash": "8240403864ae1d7e00c8297785a9b1d5073527e8f5d03b0a8995d54661d6fadc",
+        "title": "Quality-related Events and the Reports They Trigger",
+        "areas": [
+          4
+        ],
+        "topic": "Quality assurance and mandatory reporting / Sorting a quality-related event into the right track",
+        "subtopic": "The CQI Program and its six minimum provisions in 247 CMR 15.02(1), the discovery, notification, 24-hour documentation and analysis sequence in 247 CMR 15.03, the seven-business-day serious-event reports and five-year records in 247 CMR 20.02, and the 24-hour theft, loss or suspected tampering report to the Drug Control Program under 105 CMR 700.008",
+        "learning_objectives": [
+          "List the six minimum provisions a CQI Program shall include under 247 CMR 15.02(1) and identify which of them a bare incident log leaves undone.",
+          "Separate the escalation duty that 247 CMR 15.03(1) places on all pharmacy personnel from the three-part immediate response it places on the pharmacist.",
+          "State the 24-hour QRE documentation deadline, name what starts it, and reproduce the four content elements required by 247 CMR 15.03(2)(b).",
+          "Distinguish the analysis half of 247 CMR 15.03(3) from its response half, and say what each one requires.",
+          "Apply the seven-business-day period in 247 CMR 20.02(1) and explain why it runs from discovery of the serious injury or death rather than from the dispensing.",
+          "Contrast 247 CMR 20.02(1) with 247 CMR 20.02(2) on the event, the recipients and the trigger that starts the clock.",
+          "Explain why a complete QRE record never discharges a Board report, using the words of 247 CMR 20.02(3).",
+          "Measure the five-year serious-event retention from the correct date and state the readily retrievable standard that accompanies it.",
+          "Route a theft, loss or suspected tampering of controlled substances to the correct recipient, on the correct instrument, within the correct period, measured from discovery.",
+          "Sort a single set of facts into the CQI track, the Board reporting track, the Drug Control Program track, or more than one of them at once."
+        ],
+        "rule_ids": [
+          "MA-CQI-PROGRAM",
+          "MA-QRE-NOTIFY",
+          "MA-QRE-DOCUMENT-24H",
+          "MA-QRE-ANALYSIS",
+          "MA-QRE-ANNUAL-ED",
+          "MA-SERIOUS-EVENT-REPORT",
+          "MA-SERIOUS-EVENT-RECORDS",
+          "MA-THEFT-LOSS-TAMPERING-REPORT"
+        ],
+        "verified_rule_dependencies": {
+          "MA-CQI-PROGRAM": {
+            "content_version": 1,
+            "content_hash": "4c2ae4249c5cc321b67c87cb7385fdca772e930c5af5f7786bf9ca3a565a3446"
+          },
+          "MA-QRE-NOTIFY": {
+            "content_version": 1,
+            "content_hash": "dfc596358e84206d67635bb632e7cf6d544ed937b80a33cb82c266f3cd8ef5ff"
+          },
+          "MA-QRE-DOCUMENT-24H": {
+            "content_version": 1,
+            "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+          },
+          "MA-QRE-ANALYSIS": {
+            "content_version": 1,
+            "content_hash": "6da2330948faba4ea83c78b8eb732fb11cda7a2e1f2ed9d1d25cd0cc2dddf511"
+          },
+          "MA-QRE-ANNUAL-ED": {
+            "content_version": 1,
+            "content_hash": "5b2b5d8c161fb500071e8f6dac42d0405dddf32ff0062c8e702f6453fd8cd30d"
+          },
+          "MA-SERIOUS-EVENT-REPORT": {
+            "content_version": 1,
+            "content_hash": "17755b98641f951490115bf1f6c3fdd379a91a364925365f3d4a700e003821a0"
+          },
+          "MA-SERIOUS-EVENT-RECORDS": {
+            "content_version": 1,
+            "content_hash": "fda118e116c281ccbdad23a2fdae43165b5ee63d5d6b4ac49604d44fcd32d775"
+          },
+          "MA-THEFT-LOSS-TAMPERING-REPORT": {
+            "content_version": 1,
+            "content_hash": "e613e1af55d1e14fc3612e36dd28f6e24ba2088bd84e8be6cb55e047efd6e01f"
+          }
+        },
+        "orientation": [
+          {
+            "text": "247 CMR 15.02(1) requires each pharmacy to establish a Continuous Quality Improvement Program, and it states the purpose of that programme in four verbs: detecting, documenting, assessing and preventing Quality Related Events. The regulation then fixes a floor beneath the programme. At a minimum a CQI Program shall include provisions to designate an individual or individuals responsible for monitoring CQI Program compliance with the requirements of 247 CMR 15.00, to identify and document QREs, to minimise the impact of QREs on patients, to analyse data collected in response to QREs to assess causes and any contributing factors, to use the findings of that analysis to formulate an appropriate response and develop pharmacy systems and workflow processes designed to prevent QREs, and to provide ongoing education at least annually in the area of CQI to pharmacy personnel. Six provisions, not one. A pharmacy that keeps an incident log and does nothing else has satisfied the second of them and left the other five undone.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM",
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "text": "The programme is a standing structure. 247 CMR 15.03 is what happens when an event actually occurs, and its first subsection carries two duties that are easy to read as one. All pharmacy personnel shall be trained to bring any QRE to the attention of the pharmacist on duty or the pharmacist Manager of Record immediately upon discovery, so the escalation duty reaches the whole staff rather than pharmacists alone. The pharmacist who has discovered or been informed of a QRE shall then immediately provide notification to the patient or the patient's representative, the prescriber if indicated in the professional judgment of the pharmacist, and other members of the healthcare team; directions for correcting the error; and instructions for minimising the negative impact on the patient. Three things are owed rather than one, and the regulation prescribes no sequence among them. The professional-judgment qualifier is the single discretionary element in the subsection, and it attaches to the prescriber notification alone. Notification of the patient or the patient's representative is not conditioned on it.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "247 CMR 15.03(2) puts a clock on the paperwork and then says what the paperwork must contain. A QRE shall be initially documented by the pharmacist who has discovered or been informed of it within 24 hours after the QRE is discovered by or described to the pharmacist. Two features of that deadline decide questions. The period is 24 hours and not one business day, so it runs across nights, weekends and holidays. And it starts at discovery or description, so it does not wait for the patient to confirm harm and it is not measured from the dispensing that went wrong. The documentation itself must describe the event sufficiently to permit categorisation and analysis of it, and must include the date when the pharmacist discovered or received notification of the QRE together with the name of the person who notified the pharmacy, the names and titles of the persons recording the QRE information and performing the QRE analysis, a description of the QRE reviewed, and documentation of the contact with the patient or the patient's representative, the prescribing practitioner if indicated in the professional judgment of the pharmacist, and other members of the healthcare team.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "247 CMR 15.03(3) closes the loop, and its two halves are separately examinable. Under the analysis half, the investigative and other pertinent data collected in response to QREs shall be analysed, individually and collectively, to assess the cause and any contributing factors such as system or process failures. The analysis and assessment shall include a consideration of the effects on quality assurance related to workflow processes, technological support, personnel training and staffing levels; any recommended remedial changes to pharmacy policies, procedures, systems or processes; and the development of indicators that identify means against which a pharmacy's program intends to measure its standards over a designated period of time. Under the response half, each pharmacy shall inform pharmacy personnel of changes to pharmacy policies, procedures, systems or processes resulting from recommendations generated by the CQI Program. An analysis whose conclusions never reach the staff who do the work leaves the second half undone, however thorough the first half was.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "text": "Everything to this point stays inside the pharmacy. 247 CMR 20.02 is where an event leaves the building, and it describes two reports rather than one. Under 247 CMR 20.02(1) a Manager of Record of a pharmacy shall report to the Board any improper dispensing of a prescription drug that results in serious injury or death, within seven business days of discovery of serious injury or death related to improper dispensing. Under 247 CMR 20.02(2) a Manager of Record shall report any serious adverse drug event that occurs as a result of a patient's interaction with any drug or pharmaceutical manufactured, produced or compounded at the pharmacy, and that report goes to three recipients: the Board, the Federal Food and Drug Administration MedWatch Program, and the Betsy Lehman Center for Patient Safety and Medical Error Reduction. Its period is also seven business days, but it runs from the knowledge of the serious adverse drug event by any pharmacy employee rather than from the Manager of Record's own discovery. 247 CMR 20.02(3) then closes the obvious shortcut: the duty to report to the Board improper dispensing of a prescription drug that results in serious injury or death, or a serious adverse drug event, shall be in addition to the Continuous Quality Improvement Program requirements of 247 CMR 15.00.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "A reportable event leaves a longer paper trail than the report itself. 247 CMR 20.02(4) requires a pharmacy to retain all records relating to the improper dispensing of a prescription drug that results in serious injury or death, and all records relating to serious adverse drug events, for a minimum period of five years from the date the report is filed with the Board, and it adds that the records shall be readily retrievable. Two details in that sentence do the work. The period runs from the filing of the report and not from the dispensing, the injury or the discovery, so delay in filing lengthens the retention rather than shortening it. And readily retrievable is a standard about the manner of keeping and not merely about duration: material that exists somewhere in an unindexed archive has been retained but is not readily retrievable. The five-year period attaches to all records relating to the event, not only to the copy of the report that was filed.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "text": "The third track has nothing to do with the CQI Program and does not go to the Board at all. Under 105 CMR 700.008, a Department of Public Health regulation, a registrant shall report the theft, loss or suspected tampering of any controlled substances to the Drug Control Program within the Department within 24 hours of discovery of such theft, loss or suspected tampering, by completing and submitting the form provided or approved by the Drug Control Program for such purpose. Three features separate it from everything else in this section. Suspicion of tampering is itself a trigger, so nothing has to be confirmed missing before the duty attaches. The 24 hours run from discovery rather than from the theft, the loss, or the delivery that later turns out to have been interfered with. And the recipient is the Drug Control Program on its own form, so a report made to the Board of Registration in Pharmacy instead does not answer this regulation.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "text": "Two boundaries are worth fixing before the tracks are worked through, because both are places where a plausible proposition would have to come from outside the rules this section rests on. The first is retention of the ordinary CQI file: these rules state a five-year period for serious-event records in 247 CMR 20.02(4) and state no period at all for a QRE record that never becomes reportable, so no such period is taught here and none should be inferred from the five-year figure. The second is protection: nothing in these rules makes a QRE record confidential, privileged or shielded from discovery, so this section teaches no such protection, and the internal character of the record is not itself a legal shield. The federal theft-or-loss reporting route is separate law with its own recipient, form and trigger, and it belongs to its own section rather than to this one.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS",
+              "MA-QRE-DOCUMENT-24H",
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "comparison_tables": [
+          {
+            "title": "Sorting the event: who owes the duty, who is told, on what clock, and what record the rules require",
+            "columns": [
+              "Event",
+              "Who owes the duty",
+              "Who is told",
+              "Clock, and when it starts",
+              "What the rules require of the record"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "A QRE comes to light anywhere in the pharmacy",
+                  "Any member of pharmacy personnel who discovers it",
+                  "The pharmacist on duty or the pharmacist Manager of Record",
+                  "Immediately upon discovery",
+                  "247 CMR 15.03(1) states a training and escalation duty here, not a record"
+                ],
+                "rule_ids": [
+                  "MA-QRE-NOTIFY"
+                ]
+              },
+              {
+                "cells": [
+                  "A pharmacist has discovered or been informed of a QRE",
+                  "That pharmacist",
+                  "The patient or the patient's representative; the prescriber if indicated in the professional judgment of the pharmacist; other members of the healthcare team",
+                  "Immediately",
+                  "Directions for correcting the error and instructions for minimising the negative impact on the patient are owed alongside the notification"
+                ],
+                "rule_ids": [
+                  "MA-QRE-NOTIFY"
+                ]
+              },
+              {
+                "cells": [
+                  "The same QRE, once the immediate response is under way",
+                  "The pharmacist who discovered or was informed of the QRE",
+                  "The pharmacy's own CQI documentation",
+                  "Within 24 hours after the QRE is discovered by or described to the pharmacist",
+                  "A description sufficient to permit categorisation and analysis, plus the four elements listed in 247 CMR 15.03(2)(b)"
+                ],
+                "rule_ids": [
+                  "MA-QRE-DOCUMENT-24H"
+                ]
+              },
+              {
+                "cells": [
+                  "Investigative and other pertinent data collected in response to QREs",
+                  "The pharmacy",
+                  "Pharmacy personnel, who shall be informed of the resulting changes to policies, procedures, systems or processes",
+                  "Analysis is individually and collectively; indicators measure the programme's standards over a designated period of time",
+                  "The analysis and assessment must cover workflow, technological support, personnel training and staffing effects, any recommended remedial changes, and the indicators"
+                ],
+                "rule_ids": [
+                  "MA-QRE-ANALYSIS"
+                ]
+              },
+              {
+                "cells": [
+                  "Improper dispensing of a prescription drug that results in serious injury or death",
+                  "A Manager of Record of a pharmacy",
+                  "The Board",
+                  "Seven business days from discovery of the serious injury or death related to the improper dispensing",
+                  "All records relating to the improper dispensing, a minimum of five years from the date the report is filed with the Board, readily retrievable"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT",
+                  "MA-SERIOUS-EVENT-RECORDS"
+                ]
+              },
+              {
+                "cells": [
+                  "A serious adverse drug event from a drug or pharmaceutical manufactured, produced or compounded at the pharmacy",
+                  "A Manager of Record",
+                  "The Board, the Federal Food and Drug Administration MedWatch Program, and the Betsy Lehman Center for Patient Safety and Medical Error Reduction",
+                  "Seven business days from the knowledge of the serious adverse drug event by any pharmacy employee",
+                  "All records relating to serious adverse drug events, on the same five-year readily retrievable standard measured from filing"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT",
+                  "MA-SERIOUS-EVENT-RECORDS"
+                ]
+              },
+              {
+                "cells": [
+                  "Theft, loss or suspected tampering of any controlled substances",
+                  "The registrant",
+                  "The Drug Control Program within the Department",
+                  "24 hours from discovery of the theft, loss or suspected tampering",
+                  "The report is made by completing and submitting the form provided or approved by the Drug Control Program for such purpose"
+                ],
+                "rule_ids": [
+                  "MA-THEFT-LOSS-TAMPERING-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "Ongoing education in the area of CQI",
+                  "The pharmacy, through a provision of its CQI Program",
+                  "Pharmacy personnel",
+                  "At least annually",
+                  "247 CMR 15.02(1)(f) states the interval and the audience and states no separate record of its own"
+                ],
+                "rule_ids": [
+                  "MA-QRE-ANNUAL-ED",
+                  "MA-CQI-PROGRAM"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "The six minimum provisions of a CQI Program under 247 CMR 15.02(1)",
+            "columns": [
+              "Provision",
+              "What the programme must provide for",
+              "Where the duty is worked out in practice"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(a)",
+                  "Designating an individual or individuals responsible for monitoring CQI Program compliance with the requirements of 247 CMR 15.00",
+                  "A structural requirement of the programme itself; it is satisfied by the designation, and it is not triggered by any particular event"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM"
+                ]
+              },
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(b)",
+                  "Identifying and documenting QREs",
+                  "247 CMR 15.03(1) supplies the discovery and escalation mechanics and 247 CMR 15.03(2) supplies the 24-hour documentation deadline and its content list"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM",
+                  "MA-QRE-NOTIFY",
+                  "MA-QRE-DOCUMENT-24H"
+                ]
+              },
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(c)",
+                  "Minimising the impact of QREs on patients",
+                  "247 CMR 15.03(1) requires instructions for minimising the negative impact on the patient at the moment of discovery, alongside directions for correcting the error"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM",
+                  "MA-QRE-NOTIFY"
+                ]
+              },
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(d)",
+                  "Analysing data collected in response to QREs to assess causes and any contributing factors",
+                  "247 CMR 15.03(3)(a) states what the QRE analysis and assessment must include, and requires the data to be analysed individually and collectively"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM",
+                  "MA-QRE-ANALYSIS"
+                ]
+              },
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(e)",
+                  "Using the findings of the analysis to formulate an appropriate response and develop pharmacy systems and workflow processes designed to prevent QREs",
+                  "247 CMR 15.03(3)(b) requires the pharmacy to inform pharmacy personnel of the resulting changes to policies, procedures, systems or processes"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM",
+                  "MA-QRE-ANALYSIS"
+                ]
+              },
+              {
+                "cells": [
+                  "247 CMR 15.02(1)(f)",
+                  "Providing ongoing education at least annually in the area of CQI to pharmacy personnel",
+                  "The interval is annual and the audience is pharmacy personnel, so an induction session for new hires and a pharmacists-only briefing each fall short"
+                ],
+                "rule_ids": [
+                  "MA-CQI-PROGRAM",
+                  "MA-QRE-ANNUAL-ED"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "247 CMR 20.02(1) and 247 CMR 20.02(2) side by side",
+            "columns": [
+              "Element",
+              "Improper dispensing with serious injury or death, 247 CMR 20.02(1)",
+              "Serious adverse drug event, 247 CMR 20.02(2)"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Who reports",
+                  "A Manager of Record of a pharmacy",
+                  "A Manager of Record"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "What the event is",
+                  "Improper dispensing of a prescription drug that results in serious injury or death",
+                  "A serious adverse drug event occurring as a result of a patient's interaction with any drug or pharmaceutical manufactured, produced or compounded at the pharmacy"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "Who is told",
+                  "The Board",
+                  "The Board, the Federal Food and Drug Administration MedWatch Program, and the Betsy Lehman Center for Patient Safety and Medical Error Reduction"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "Length of the period",
+                  "Seven business days",
+                  "Seven business days"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "What starts the clock",
+                  "Discovery of the serious injury or death related to the improper dispensing",
+                  "The knowledge of the serious adverse drug event by any pharmacy employee"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT"
+                ]
+              },
+              {
+                "cells": [
+                  "Relationship to the CQI Program",
+                  "The duty is in addition to the requirements of 247 CMR 15.00, so the 24-hour QRE documentation runs on its own clock in parallel",
+                  "The duty is in addition to the requirements of 247 CMR 15.00 in the same terms"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-REPORT",
+                  "MA-QRE-DOCUMENT-24H"
+                ]
+              },
+              {
+                "cells": [
+                  "Records",
+                  "All records relating to the improper dispensing, a minimum of five years from the date the report is filed with the Board, readily retrievable",
+                  "All records relating to serious adverse drug events, on the same five-year readily retrievable standard"
+                ],
+                "rule_ids": [
+                  "MA-SERIOUS-EVENT-RECORDS"
+                ]
+              }
+            ]
+          }
+        ],
+        "worked_examples": [
+          {
+            "scenario": "A technician notices at 9 a.m. on a Tuesday that a prescription dispensed the previous Friday carried the wrong strength, and she tells the pharmacist on duty at once. By midday the pharmacy learns that the patient suffered a serious injury related to the error and was admitted to hospital overnight. The Manager of Record concludes that a complete CQI file answers the whole matter, because the incident is thoroughly documented inside the pharmacy.",
+            "steps": [
+              "Take the escalation first. 247 CMR 15.03(1) requires all pharmacy personnel to be trained to bring any QRE to the attention of the pharmacist on duty or the pharmacist Manager of Record immediately upon discovery, and that is what the technician did.",
+              "Run the pharmacist's immediate duties under 247 CMR 15.03(1): notification to the patient or the patient's representative, to the prescriber if indicated in the professional judgment of the pharmacist and to other members of the healthcare team, directions for correcting the error, and instructions for minimising the negative impact on the patient.",
+              "Start the documentation clock at 9 a.m. Tuesday. 247 CMR 15.03(2)(a) requires initial documentation within 24 hours after the QRE is discovered by or described to the pharmacist, and the content elements in 247 CMR 15.03(2)(b) belong to that record rather than to a later write-up.",
+              "Start the second clock separately. Under 247 CMR 20.02(1) the Manager of Record reports the improper dispensing to the Board within seven business days of discovery of the serious injury related to it, so that period begins at midday on Tuesday and not at Friday's dispensing.",
+              "Reject the shortcut on the regulation's own words. 247 CMR 20.02(3) provides that the duty to report to the Board is in addition to the Continuous Quality Improvement Program requirements of 247 CMR 15.00.",
+              "Fix the retention. 247 CMR 20.02(4) requires all records relating to the improper dispensing to be retained a minimum of five years from the date the report is filed with the Board, and to be readily retrievable."
+            ],
+            "resolution": "Both tracks run: an immediate response and 24-hour QRE documentation inside the pharmacy, and a separate seven-business-day Board report by the Manager of Record whose records are then kept five years from filing. The error the scenario invites is treating a complete internal CQI file as a substitute for the Board report, with a second error close behind it, which is dating the seven business days from Friday's dispensing rather than from discovery of the serious injury.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY",
+              "MA-QRE-DOCUMENT-24H",
+              "MA-SERIOUS-EVENT-REPORT",
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "scenario": "A pharmacy compounds an oral suspension on its own premises. On a Monday a pharmacy technician takes a telephone call from a parent describing a severe reaction in a child who received it, and she writes the call up in the pharmacy's log. The Manager of Record is on leave and first reads the log entry on the following Thursday. He intends to notify the Board within seven business days of Thursday and to treat that notification as the whole of the reporting obligation.",
+            "steps": [
+              "Classify the event on the regulation's own terms. 247 CMR 20.02(2) reaches a serious adverse drug event occurring as a result of a patient's interaction with any drug or pharmaceutical manufactured, produced or compounded at the pharmacy, and the suspension was compounded there.",
+              "Date the clock correctly. 247 CMR 20.02(2) runs seven business days from the knowledge of the serious adverse drug event by any pharmacy employee, so the period started on the Monday the technician took the call and not on the Thursday the Manager of Record read the log.",
+              "Count the recipients. 247 CMR 20.02(2) directs the report to the Board, to the Federal Food and Drug Administration MedWatch Program and to the Betsy Lehman Center for Patient Safety and Medical Error Reduction, so a notification to the Board alone leaves two recipients unserved.",
+              "Keep the internal track running alongside it, because 247 CMR 20.02(3) makes the reporting duty additional to the Continuous Quality Improvement Program requirements of 247 CMR 15.00 rather than a replacement for them.",
+              "Apply the retention standard. 247 CMR 20.02(4) requires all records relating to serious adverse drug events to be kept a minimum period of five years from the date the report is filed with the Board, and to be readily retrievable."
+            ],
+            "resolution": "The period had been running since Monday and was not restarted when the Manager of Record read the log on Thursday, and the report is owed to three recipients rather than one. The error the scenario invites is running an employee-knowledge clock from the responsible individual's own knowledge, and behind it the assumption that a serious-event report under 247 CMR 20.02 has a single recipient.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT",
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "scenario": "A Massachusetts registrant takes delivery of a controlled substances shipment on a Wednesday. The following Monday morning a pharmacist opening the safe notices that one carton inside that shipment appears to have been opened and resealed. The perpetual inventory shows no shortfall. The Manager of Record proposes to spend the week reconciling counts and then to notify the Board of Registration in Pharmacy if a loss is confirmed.",
+            "steps": [
+              "Identify the trigger in 105 CMR 700.008. It reaches the theft, loss or suspected tampering of any controlled substances, so suspected tampering stands on its own footing and does not wait for a confirmed shortfall.",
+              "Date the clock from discovery. The regulation gives 24 hours of discovery of such theft, loss or suspected tampering, so the period runs from Monday morning rather than from the Wednesday delivery.",
+              "Send the report to the right recipient. 105 CMR 700.008 directs it to the Drug Control Program within the Department, so a notification to the Board of Registration in Pharmacy does not answer this regulation.",
+              "Use the right instrument. The report is made by completing and submitting the form provided or approved by the Drug Control Program for such purpose, so an internal memorandum or a note in the CQI file is not the report.",
+              "Keep the boundary in view. Whether these facts also constitute a quality-related event turns on a definition the rules underlying this section do not carry, and the federal theft-or-loss reporting route is separate law taught in its own section."
+            ],
+            "resolution": "A report goes to the Drug Control Program on its own form within 24 hours of Monday's discovery, whatever the reconciliation later shows. The error the scenario invites is treating confirmation of a loss as the trigger, compounded by running the clock from the delivery and by sending the report to the Board instead of the Drug Control Program.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "scenario": "A community pharmacy opened 18 months ago. It keeps a bound incident log, it has named its Manager of Record as the individual responsible for monitoring CQI Program compliance, and it reviews the log at a monthly meeting at which the pharmacist owner decides what to change. Staff learn of the changes when a new prompt appears on the dispensing screen. Every pharmacist on staff has completed continuing education in pharmacy law this year, and the owner treats that as the pharmacy's CQI education.",
+            "steps": [
+              "Test the programme against the floor in 247 CMR 15.02(1). The designation required by 15.02(1)(a) and the identification and documentation of QREs required by 15.02(1)(b) are in place, so the question is which of the remaining minimum provisions are not.",
+              "Apply 247 CMR 15.03(3)(a). The analysis and assessment must include a consideration of the effects on quality assurance related to workflow processes, technological support, personnel training and staffing levels, any recommended remedial changes to policies, procedures, systems or processes, and the development of indicators that identify means against which the programme intends to measure its standards over a designated period of time.",
+              "Apply 247 CMR 15.03(3)(b). Each pharmacy shall inform pharmacy personnel of changes to pharmacy policies, procedures, systems or processes resulting from recommendations generated by the CQI Program, so leaving staff to discover a new screen prompt does not discharge the response half.",
+              "Apply 247 CMR 15.02(1)(f). The programme must provide ongoing education at least annually in the area of CQI to pharmacy personnel, and the audience named is pharmacy personnel rather than pharmacists alone.",
+              "Separate the two education duties. An individual pharmacist's continuing education is governed elsewhere and is not what 247 CMR 15.02(1)(f) requires; the annual CQI education is a provision of the pharmacy's own programme and stands or falls on its own."
+            ],
+            "resolution": "The programme is incomplete on at least three counts: the analysis lacks the indicators that 247 CMR 15.03(3)(a) requires, the response is never communicated to pharmacy personnel as 247 CMR 15.03(3)(b) requires, and no annual CQI education has been provided. The error the scenario invites is treating an incident log plus a named compliance monitor as a complete CQI Program, and treating pharmacists' individual continuing education as the pharmacy's annual CQI education.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM",
+              "MA-QRE-ANALYSIS",
+              "MA-QRE-ANNUAL-ED"
+            ]
+          }
+        ],
+        "retrieval_prompts": [
+          {
+            "prompt": "A QRE must be initially documented within ______, measured from ______.",
+            "answer": "24 hours; the moment the QRE is discovered by or described to the pharmacist who documents it, under 247 CMR 15.03(2)(a).",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "prompt": "Name the three things the pharmacist who has discovered or been informed of a QRE must immediately provide.",
+            "answer": "Notification to the patient or the patient's representative, the prescriber if indicated in the professional judgment of the pharmacist, and other members of the healthcare team; directions for correcting the error; and instructions for minimising the negative impact on the patient, under 247 CMR 15.03(1).",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "prompt": "Under 247 CMR 20.02(1) the Manager of Record reports to ______ within ______, measured from ______.",
+            "answer": "the Board; seven business days; discovery of the serious injury or death related to the improper dispensing.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "prompt": "A serious adverse drug event under 247 CMR 20.02(2) is reported to how many recipients, and which ones?",
+            "answer": "Three: the Board, the Federal Food and Drug Administration MedWatch Program, and the Betsy Lehman Center for Patient Safety and Medical Error Reduction.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "prompt": "The seven-business-day period in 247 CMR 20.02(2) runs from ______, and not from the Manager of Record's own discovery.",
+            "answer": "the knowledge of the serious adverse drug event by any pharmacy employee.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "prompt": "Serious-event records are retained for ______, measured from ______, and must be ______.",
+            "answer": "a minimum period of five years; the date the report is filed with the Board; readily retrievable, under 247 CMR 20.02(4).",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "prompt": "True or false: a report of suspected tampering may wait until a reconciliation confirms that controlled substances are actually missing.",
+            "answer": "False. 105 CMR 700.008 makes suspected tampering a trigger in its own right and allows 24 hours of discovery.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "prompt": "The theft, loss or suspected tampering report goes to ______, within ______, by ______.",
+            "answer": "the Drug Control Program within the Department; 24 hours of discovery; completing and submitting the form provided or approved by the Drug Control Program for such purpose.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "prompt": "How often must a CQI Program provide education in the area of CQI, and to whom?",
+            "answer": "At least annually, to pharmacy personnel, under 247 CMR 15.02(1)(f).",
+            "rule_ids": [
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "prompt": "List the four elements that 247 CMR 15.03(2)(b) requires QRE documentation to include.",
+            "answer": "The date the pharmacist discovered or received notification of the QRE together with the name of the person who notified the pharmacy; the names and titles of the persons recording the QRE information and performing the QRE analysis; a description of the QRE reviewed; and documentation of the contact with the patient or the patient's representative, the prescribing practitioner if indicated in the professional judgment of the pharmacist, and other members of the healthcare team.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "prompt": "Beyond assessing the cause and any contributing factors, what three things must the QRE analysis and assessment include?",
+            "answer": "A consideration of the effects on quality assurance related to workflow processes, technological support, personnel training and staffing levels; any recommended remedial changes to pharmacy policies, procedures, systems or processes; and the development of indicators that identify means against which the programme intends to measure its standards over a designated period of time, under 247 CMR 15.03(3)(a).",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "prompt": "True or false: completing the QRE documentation discharges the Manager of Record's obligation where an improper dispensing has caused serious injury.",
+            "answer": "False. 247 CMR 20.02(3) makes the duty to report to the Board additional to the Continuous Quality Improvement Program requirements of 247 CMR 15.00, so both duties run.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT",
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "prompt": "What must a CQI Program designate under 247 CMR 15.02(1)(a)?",
+            "answer": "An individual or individuals responsible for monitoring CQI Program compliance with the requirements of 247 CMR 15.00.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "prompt": "Who must be trained to bring a QRE to the pharmacist on duty or the pharmacist Manager of Record, and how quickly?",
+            "answer": "All pharmacy personnel, immediately upon discovery, under 247 CMR 15.03(1).",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "prompt": "Once the CQI Program generates recommendations that change a pharmacy's procedures, what does 247 CMR 15.03(3)(b) require?",
+            "answer": "Each pharmacy shall inform pharmacy personnel of the changes to pharmacy policies, procedures, systems or processes resulting from those recommendations.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          }
+        ],
+        "quick_review": [
+          {
+            "text": "247 CMR 15.02(1) requires each pharmacy to establish a CQI Program for detecting, documenting, assessing and preventing Quality Related Events, and lists six minimum provisions it shall include.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "text": "The first of those six provisions designates an individual or individuals responsible for monitoring CQI Program compliance with the requirements of 247 CMR 15.00.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "text": "A CQI Program must provide ongoing education at least annually in the area of CQI, and the audience stated in 247 CMR 15.02(1)(f) is pharmacy personnel rather than pharmacists alone.",
+            "rule_ids": [
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "text": "All pharmacy personnel shall be trained to bring any QRE to the attention of the pharmacist on duty or the pharmacist Manager of Record immediately upon discovery.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "The pharmacist who discovered or was informed of a QRE shall immediately provide notification, directions for correcting the error and instructions for minimising the negative impact on the patient; the professional-judgment qualifier applies to the prescriber notification alone.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "Initial QRE documentation is due within 24 hours after the QRE is discovered by or described to the pharmacist, so the deadline is elapsed hours from discovery rather than a business-day deadline from the dispensing.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "QRE documentation must describe the event sufficiently to permit categorisation and analysis and must carry the four elements listed in 247 CMR 15.03(2)(b), including the name of the person who notified the pharmacy.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "QRE data shall be analysed individually and collectively to assess cause and contributing factors such as system or process failures, and the assessment must reach workflow processes, technological support, personnel training and staffing levels.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "text": "247 CMR 15.03(3)(b) requires each pharmacy to inform pharmacy personnel of changes to policies, procedures, systems or processes resulting from recommendations generated by the CQI Program.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "text": "A Manager of Record reports improper dispensing of a prescription drug resulting in serious injury or death to the Board within seven business days of discovery of that serious injury or death.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "A serious adverse drug event from a drug manufactured, produced or compounded at the pharmacy goes to the Board, the Federal Food and Drug Administration MedWatch Program and the Betsy Lehman Center for Patient Safety and Medical Error Reduction within seven business days of the knowledge of the event by any pharmacy employee.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "247 CMR 20.02(3) states that the duty to report to the Board is in addition to the Continuous Quality Improvement Program requirements of 247 CMR 15.00, so the two tracks run in parallel on their own clocks.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "All records relating to a reportable improper dispensing or a serious adverse drug event are kept a minimum period of five years from the date the report is filed with the Board, and shall be readily retrievable.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "text": "105 CMR 700.008 requires a registrant to report theft, loss or suspected tampering of any controlled substances to the Drug Control Program within the Department within 24 hours of discovery, on the form the Drug Control Program provides or approves.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "Any member of pharmacy personnel becomes aware of a quality-related event.",
+            "action": "Escalate immediately to the pharmacist on duty or the pharmacist Manager of Record, because 247 CMR 15.03(1) places the escalation duty on all pharmacy personnel and attaches it to discovery.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "condition": "A pharmacist has discovered or been informed of a QRE.",
+            "action": "Provide all three immediate items at once: notification to the patient or the patient's representative and to other members of the healthcare team, with the prescriber added where the pharmacist's professional judgment indicates it; directions for correcting the error; and instructions for minimising the negative impact on the patient.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "condition": "The immediate response to a QRE is under way and the pharmacist asks when the paperwork is due.",
+            "action": "Count 24 hours from the moment the QRE was discovered by or described to that pharmacist, and build the record around the four content elements in 247 CMR 15.03(2)(b) rather than around a bare note of what happened.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "condition": "A pharmacy has collected data on a set of QREs and asks what to do with it.",
+            "action": "Analyse it individually and collectively for cause and contributing factors, cover workflow processes, technological support, personnel training and staffing levels, record any recommended remedial changes and the indicators, and then inform pharmacy personnel of the changes that result.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "condition": "An improper dispensing of a prescription drug has resulted in serious injury or death.",
+            "action": "Identify the Manager of Record as the reporter, date the seven business days from discovery of the serious injury or death related to the improper dispensing, and do not treat the internal CQI record as a substitute for the report.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "condition": "A serious adverse drug event follows a patient's interaction with a drug manufactured, produced or compounded at the pharmacy.",
+            "action": "Find the earliest point at which any pharmacy employee had knowledge of the event, count seven business days from there, and address the report to the Board, the Federal Food and Drug Administration MedWatch Program and the Betsy Lehman Center for Patient Safety and Medical Error Reduction.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "condition": "A serious-event report has been filed and the pharmacy asks how long the file must be kept.",
+            "action": "Count a minimum of five years from the date the report was filed with the Board, keep every record relating to the event and not only the report, and store them so that they remain readily retrievable.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "condition": "Controlled substances are missing, or a container or shipment shows signs of interference.",
+            "action": "Treat suspicion of tampering as sufficient, start 24 hours at the moment of discovery, and report to the Drug Control Program within the Department on the form it provides or approves rather than to the Board.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "condition": "A pharmacy asks whether its quality assurance arrangements satisfy 247 CMR 15.00.",
+            "action": "Walk the six minimum provisions of 247 CMR 15.02(1) one at a time, and check separately that ongoing CQI education has been provided to pharmacy personnel within the past year.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM",
+              "MA-QRE-ANNUAL-ED"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "247 CMR 20.02(2) is a Massachusetts duty with a federal recipient inside it: the serious adverse drug event report goes to the Federal Food and Drug Administration MedWatch Program as well as to the Board and to the Betsy Lehman Center for Patient Safety and Medical Error Reduction. Reporting to a federal programme therefore does not indicate that the duty itself is federal.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "105 CMR 700.008 is a Massachusetts Department of Public Health obligation owed to the Drug Control Program within the Department on a form that programme provides or approves. The federal theft-or-loss reporting route has its own recipient, instrument and trigger and is taught in a separate section, so satisfying one does not answer for the other.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "Prescriber notification is the only discretionary element in the immediate response: 247 CMR 15.03(1)(a) conditions it on the professional judgment of the pharmacist, while notification to the patient or the patient's representative and to other members of the healthcare team carries no such condition.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "The same professional-judgment qualifier reappears inside the documentation content list, where 247 CMR 15.03(2)(b)4. requires documentation of the contact with the prescribing practitioner if indicated in the professional judgment of the pharmacist.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "247 CMR 20.02(2) is narrower than a general adverse-event duty. It reaches a serious adverse drug event occurring as a result of a patient's interaction with any drug or pharmaceutical manufactured, produced or compounded at the pharmacy, which is a condition on the product's origin rather than on its severity.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "105 CMR 700.008 carries no confirmation exception. Suspected tampering is itself a trigger, and the canonical rule record for this provision lists no exception at all.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "text": "The five-year retention in 247 CMR 20.02(4) is expressed as a minimum period, so it is a floor rather than a scheduled destruction date, and it does not authorise disposal of anything a different obligation requires to be kept longer.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Pharmacy personnel bring a QRE to the pharmacist on duty or the pharmacist Manager of Record",
+            "timeframe": "Immediately upon discovery",
+            "consequence": "The escalation duty under 247 CMR 15.03(1) sits on all pharmacy personnel, so a technician or clerk who holds an observation until a later shift has already missed it.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "event": "The pharmacist's response after discovering or being informed of a QRE",
+            "timeframe": "Immediately",
+            "consequence": "Notification, directions for correcting the error and instructions for minimising the negative impact on the patient are all owed at once, and none of them may be held back pending the analysis.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "event": "Initial documentation of a QRE",
+            "timeframe": "Within 24 hours after the QRE is discovered by or described to the pharmacist",
+            "consequence": "The deadline is elapsed hours from discovery or description, so it does not extend to the next business day and does not wait for confirmation of patient harm.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "event": "Ongoing education in the area of CQI for pharmacy personnel",
+            "timeframe": "At least annually",
+            "consequence": "A programme that trains only at induction fails 247 CMR 15.02(1)(f) however thorough the induction is.",
+            "rule_ids": [
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "event": "The period over which the CQI Program measures its own standards",
+            "timeframe": "A designated period of time chosen by the pharmacy",
+            "consequence": "247 CMR 15.03(3)(a)3. requires the analysis to develop indicators that identify means against which the programme intends to measure its standards over that period, so the period has to be designated rather than left open.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "event": "Report by a Manager of Record of improper dispensing of a prescription drug resulting in serious injury or death",
+            "timeframe": "Within seven business days of discovery of the serious injury or death related to the improper dispensing",
+            "consequence": "The clock starts at discovery of the serious injury or death, not at the dispensing and not at a patient complaint, and the report goes to the Board.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "event": "Report by a Manager of Record of a serious adverse drug event from a drug manufactured, produced or compounded at the pharmacy",
+            "timeframe": "Within seven business days of the knowledge of the serious adverse drug event by any pharmacy employee",
+            "consequence": "The period can be well advanced before the Manager of Record learns anything, and the report is owed to the Board, the Federal Food and Drug Administration MedWatch Program and the Betsy Lehman Center for Patient Safety and Medical Error Reduction.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "event": "Retention of records relating to a reportable improper dispensing or serious adverse drug event",
+            "timeframe": "A minimum period of five years from the date the report is filed with the Board",
+            "consequence": "Retention is measured from filing rather than from the event, and the records shall be readily retrievable throughout.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "event": "Report of theft, loss or suspected tampering of any controlled substances",
+            "timeframe": "Within 24 hours of discovery of the theft, loss or suspected tampering",
+            "consequence": "The report is owed to the Drug Control Program within the Department on the form it provides or approves, and suspicion of tampering starts the period without any confirmed shortfall.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "QRE documentation must describe the event sufficiently to permit categorisation and analysis of it, and must include the date when the pharmacist discovered or received notification of the QRE and the name of the person who notified the pharmacy; the names and titles of the persons recording the QRE information and performing the QRE analysis; a description of the QRE reviewed; and documentation of the contact with the patient or the patient's representative, the prescribing practitioner where the pharmacist's professional judgment indicates it, and other members of the healthcare team.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "The QRE analysis and assessment record must include a consideration of the effects on quality assurance related to workflow processes, technological support, personnel training and staffing levels; any recommended remedial changes to pharmacy policies, procedures, systems or processes; and the development of indicators that identify means against which the pharmacy's program intends to measure its standards over a designated period of time.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "text": "The CQI Program itself must contain a provision designating an individual or individuals responsible for monitoring CQI Program compliance with the requirements of 247 CMR 15.00, so the designation is part of the programme rather than an informal understanding about who follows up on incidents.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "text": "The serious-event file is defined by subject matter rather than by document type: all records relating to the improper dispensing of a prescription drug that results in serious injury or death, and all records relating to serious adverse drug events, are retained a minimum period of five years from the date the report is filed with the Board and shall be readily retrievable.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "text": "The theft, loss or suspected tampering report has a prescribed instrument: it is made by completing and submitting the form provided or approved by the Drug Control Program for such purpose, so an entry in an internal log or a telephone call is not the report the regulation requires.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Any member of pharmacy personnel",
+            "duty": "Be trained to bring any QRE to the attention of the pharmacist on duty or the pharmacist Manager of Record immediately upon discovery.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "role": "The pharmacist who has discovered or been informed of a QRE",
+            "duty": "Immediately provide notification to the patient or the patient's representative, to the prescriber where professional judgment indicates it and to other members of the healthcare team, together with directions for correcting the error and instructions for minimising the negative impact on the patient.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "role": "The pharmacist who has discovered or been informed of a QRE",
+            "duty": "Initially document the QRE within 24 hours after it is discovered by or described to that pharmacist, in a record that carries the four content elements of 247 CMR 15.03(2)(b).",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "role": "The pharmacy",
+            "duty": "Establish a Continuous Quality Improvement Program for detecting, documenting, assessing and preventing Quality Related Events, containing at a minimum the six provisions listed in 247 CMR 15.02(1).",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "role": "The individual or individuals designated under 247 CMR 15.02(1)(a)",
+            "duty": "Monitor CQI Program compliance with the requirements of 247 CMR 15.00.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "role": "The pharmacy, through its CQI Program",
+            "duty": "Provide ongoing education at least annually in the area of CQI to pharmacy personnel.",
+            "rule_ids": [
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "role": "The pharmacy",
+            "duty": "Analyse the investigative and other pertinent data collected in response to QREs, individually and collectively, to assess the cause and any contributing factors such as system or process failures.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "role": "The pharmacy",
+            "duty": "Inform pharmacy personnel of changes to pharmacy policies, procedures, systems or processes resulting from recommendations generated by the CQI Program.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "role": "Manager of Record",
+            "duty": "Report to the Board any improper dispensing of a prescription drug that results in serious injury or death within seven business days of discovery of that serious injury or death.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "role": "Manager of Record",
+            "duty": "Report a serious adverse drug event arising from a drug or pharmaceutical manufactured, produced or compounded at the pharmacy to the Board, the Federal Food and Drug Administration MedWatch Program and the Betsy Lehman Center for Patient Safety and Medical Error Reduction, within seven business days of the knowledge of the event by any pharmacy employee.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "role": "The pharmacy",
+            "duty": "Retain all records relating to reportable improper dispensing and to serious adverse drug events for a minimum period of five years from the date the report is filed with the Board, and keep them readily retrievable.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "role": "The registrant",
+            "duty": "Report the theft, loss or suspected tampering of any controlled substances to the Drug Control Program within the Department within 24 hours of discovery, on the form that programme provides or approves.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Treating an incident log as a CQI Program. 247 CMR 15.02(1) lists six minimum provisions, and identifying and documenting QREs is only the second of them.",
+            "rule_ids": [
+              "MA-CQI-PROGRAM"
+            ]
+          },
+          {
+            "text": "Reading the professional-judgment qualifier as covering the whole of the immediate response. It attaches to the prescriber notification alone; notification of the patient or the patient's representative is unconditional.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "Inventing a sequence for the immediate response. 247 CMR 15.03(1) requires notification, correction directions and harm-minimisation instructions to be provided immediately, and states no order among them.",
+            "rule_ids": [
+              "MA-QRE-NOTIFY"
+            ]
+          },
+          {
+            "text": "Converting the 24-hour documentation deadline into the end of the next business day, or starting it at the dispensing rather than at the discovery of or notification about the QRE.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "Treating the QRE record as a free-text note. 247 CMR 15.03(2)(b) prescribes a sufficiency standard and four content elements, including the name of the person who notified the pharmacy.",
+            "rule_ids": [
+              "MA-QRE-DOCUMENT-24H"
+            ]
+          },
+          {
+            "text": "Stopping the analysis at cause. 247 CMR 15.03(3)(b) requires the pharmacy to inform pharmacy personnel of the changes that result, so an analysis whose conclusions never reach the staff leaves the response half of the subsection undone.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS"
+            ]
+          },
+          {
+            "text": "Substituting an individual pharmacist's continuing education for the pharmacy's annual CQI education, or providing that education to pharmacists only when 247 CMR 15.02(1)(f) names pharmacy personnel.",
+            "rule_ids": [
+              "MA-QRE-ANNUAL-ED"
+            ]
+          },
+          {
+            "text": "Treating a complete CQI file as discharging the Board report. 247 CMR 20.02(3) makes the reporting duty additional to the requirements of 247 CMR 15.00, so the two tracks run in parallel.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "Sending a serious adverse drug event report to the Board alone. 247 CMR 20.02(2) names three recipients, and running its clock from the Manager of Record's own knowledge instead of from any pharmacy employee's knowledge compounds the error.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-REPORT"
+            ]
+          },
+          {
+            "text": "Measuring the five-year retention from the dispensing, the injury or the discovery. 247 CMR 20.02(4) measures it from the date the report is filed with the Board, and it reaches all records relating to the event rather than the filed report alone.",
+            "rule_ids": [
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          },
+          {
+            "text": "Waiting for confirmation before reporting suspected tampering, running the 24 hours from the underlying event rather than from discovery, or sending the report to the Board of Registration in Pharmacy instead of the Drug Control Program.",
+            "rule_ids": [
+              "MA-THEFT-LOSS-TAMPERING-REPORT"
+            ]
+          },
+          {
+            "text": "Assuming that an internal quality record is confidential or beyond discovery because it belongs to the CQI Program. The rules taught in this section confer no such protection, and none should be read into the five-year serious-event retention either.",
+            "rule_ids": [
+              "MA-QRE-ANALYSIS",
+              "MA-SERIOUS-EVENT-RECORDS"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0051",
+          "MA-Q-0052",
+          "MA-Q-0053",
+          "MA-Q-0055",
+          "MA-Q-0056",
+          "MA-Q-0057",
+          "MA-Q-0089",
+          "MA-Q-0115",
+          "MA-Q-0369"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "MA-CQI-PROGRAM",
+          "content_version": 1,
+          "content_hash": "4c2ae4249c5cc321b67c87cb7385fdca772e930c5af5f7786bf9ca3a565a3446",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Pharmacy continuous quality improvement program",
+              "section": "247 CMR 15.02(1)",
+              "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download"
+            }
+          ],
+          "rule_summary": "Each pharmacy must maintain a continuous quality improvement program that detects, documents, assesses, and prevents quality-related events.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-cqi-program.json",
+          "canonical_blob": "0c454735c3969f54244c38794da4631afaf7586c"
+        },
+        {
+          "rule_id": "MA-QRE-NOTIFY",
+          "content_version": 1,
+          "content_hash": "dfc596358e84206d67635bb632e7cf6d544ed937b80a33cb82c266f3cd8ef5ff",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Immediate response after discovery of a quality-related event",
+              "section": "247 CMR 15.03(1)",
+              "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download"
+            }
+          ],
+          "rule_summary": "On discovery of a quality-related event, the pharmacist must immediately notify the patient or representative, notify the prescriber when professionally indicated, and give corrective and harm-minimization directions.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-qre-notify.json",
+          "canonical_blob": "e08ff872f842f4990ba0e8969693f5bd9ca85766"
+        },
+        {
+          "rule_id": "MA-QRE-DOCUMENT-24H",
+          "content_version": 1,
+          "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Quality-related event documentation deadline",
+              "section": "247 CMR 15.03(2)",
+              "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download"
+            }
+          ],
+          "rule_summary": "The pharmacist who discovers or receives notice of a quality-related event must initially document it within 24 hours after discovery or notification.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-qre-document-24h.json",
+          "canonical_blob": "b1164505fa5818b8ce9d3bc6266510d35f4d3583"
+        },
+        {
+          "rule_id": "MA-QRE-ANALYSIS",
+          "content_version": 1,
+          "content_hash": "6da2330948faba4ea83c78b8eb732fb11cda7a2e1f2ed9d1d25cd0cc2dddf511",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Quality-related event analysis and systems response",
+              "section": "247 CMR 15.03(3)",
+              "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download"
+            }
+          ],
+          "rule_summary": "A pharmacy must analyze quality-related events for causes and contributing workflow, technology, training, and staffing factors and use the findings to improve systems and processes.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-qre-analysis.json",
+          "canonical_blob": "39dcb360d60bb885ca98b9a3b9ae5f1bbe1130b4"
+        },
+        {
+          "rule_id": "MA-QRE-ANNUAL-ED",
+          "content_version": 1,
+          "content_hash": "5b2b5d8c161fb500071e8f6dac42d0405dddf32ff0062c8e702f6453fd8cd30d",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Annual CQI education for pharmacy personnel",
+              "section": "247 CMR 15.02(1)(f)",
+              "url": "https://www.mass.gov/doc/247-cmr-15-continuous-quality-improvement-program/download"
+            }
+          ],
+          "rule_summary": "A pharmacy's CQI program must provide ongoing education in continuous quality improvement to pharmacy personnel at least annually.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-qre-annual-ed.json",
+          "canonical_blob": "4864b474aed1ebd0adfac4de308d87270d13b1fe"
+        },
+        {
+          "rule_id": "MA-SERIOUS-EVENT-REPORT",
+          "content_version": 1,
+          "content_hash": "17755b98641f951490115bf1f6c3fdd379a91a364925365f3d4a700e003821a0",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Reporting improper dispensing and serious adverse drug events",
+              "section": "247 CMR 20.02(1)-(3)",
+              "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download"
+            }
+          ],
+          "rule_summary": "A manager of record must report qualifying improper dispensing with serious injury or death and qualifying serious adverse drug events within seven business days of discovery or employee knowledge.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-serious-event-report.json",
+          "canonical_blob": "44e831f8b8549227112ce5b1fedc77d34d987032"
+        },
+        {
+          "rule_id": "MA-SERIOUS-EVENT-RECORDS",
+          "content_version": 1,
+          "content_hash": "fda118e116c281ccbdad23a2fdae43165b5ee63d5d6b4ac49604d44fcd32d775",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Retention of serious-event reporting records",
+              "section": "247 CMR 20.02(4)",
+              "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download"
+            }
+          ],
+          "rule_summary": "A pharmacy must retain readily retrievable records relating to reportable improper dispensing and serious adverse drug events for at least five years from filing the report.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-serious-event-records.json",
+          "canonical_blob": "62ba4a07a595e81666be17e4fa8b9fc3ea8542fe"
+        },
+        {
+          "rule_id": "MA-THEFT-LOSS-TAMPERING-REPORT",
+          "content_version": 1,
+          "content_hash": "e613e1af55d1e14fc3612e36dd28f6e24ba2088bd84e8be6cb55e047efd6e01f",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-20",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Department of Public Health regulations",
+              "section": "105 CMR 700.008",
+              "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c"
+            }
+          ],
+          "rule_summary": "A registrant shall report the THEFT, LOSS OR SUSPECTED TAMPERING of any controlled substances to the DRUG CONTROL PROGRAM within the Department WITHIN 24 HOURS OF DISCOVERY of such theft, loss or suspected tampering, by completing and submitting the form provided or approved by the Drug Control Program for that purpose.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-theft-loss-tampering-report.json",
+          "canonical_blob": "6687ae64af96f0a9e1850741ba1100aba97192c2"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0051",
+          "question_hash": "bda8b80a0f41674ce51f748a5371410e942666696d309e5d3ff26f3a51a27e7b",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0051.json",
+          "canonical_blob": "6c004a3f2dd9a1610e4bb2c82a18e4baaf8171a4"
+        },
+        {
+          "question_id": "MA-Q-0052",
+          "question_hash": "6cad7b064f77c9c526477be70c140c631dc04bb4533a7eb59c5f5c7567eb3311",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0052.json",
+          "canonical_blob": "951700a7474cfd4cea03b4d89e48606c65509796"
+        },
+        {
+          "question_id": "MA-Q-0053",
+          "question_hash": "633c6a04c65561853a4326a8b34b47d34cf071ad4003189e201165d3ba7e340f",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0053.json",
+          "canonical_blob": "fa326ea5254bc8fad4208aadce511fde9437c6e7"
+        },
+        {
+          "question_id": "MA-Q-0055",
+          "question_hash": "689f23dfa0deb82576de87eac124cad916aca171e64be32a05a55bf0642036c6",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0055.json",
+          "canonical_blob": "fa6dbfae41e1cb79cf9723795e93389f814ddf61"
+        },
+        {
+          "question_id": "MA-Q-0056",
+          "question_hash": "32d86864addbfad2411d46f57c8a2903e1f85681601af6acf0b1dab673bf24e6",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0056.json",
+          "canonical_blob": "3c415fe9df864f8a5d97b1094381e417205670ef"
+        },
+        {
+          "question_id": "MA-Q-0057",
+          "question_hash": "f14e31cc1743506e0a71b947b8f3a292b65dc97972390c441d60554cd1b3779b",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0057.json",
+          "canonical_blob": "31cbf38ce3ca37b513d0c59bfa71478f8a756866"
+        },
+        {
+          "question_id": "MA-Q-0089",
+          "question_hash": "e2481498c26dd0a27efa83f8f8ba3391ce8700a73927eb33971eabf72a6ec7c0",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0089.json",
+          "canonical_blob": "dbec0a392b700b6e75e6df5e7e1964fa3f52e6b0"
+        },
+        {
+          "question_id": "MA-Q-0115",
+          "question_hash": "ef73219fe970373b0c8af0048f43ebf7f89281e780df66bbddf36c5c9c42640b",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0115.json",
+          "canonical_blob": "596e7681a42f5da17036b63094a614145c139cd5"
+        },
+        {
+          "question_id": "MA-Q-0369",
+          "question_hash": "449facf83358351b94ba6c0a74b1f414b1bf5633ab77c7376e43d2a592a1f628",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0369.json",
+          "canonical_blob": "95b02184ff36fe3db4d3d731772f42eeb42a9408"
+        }
+      ]
+    }
+  ]
+}
