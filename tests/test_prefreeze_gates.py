@@ -321,3 +321,38 @@ def test_a_published_section_cannot_outlive_a_corrected_rule() -> None:
         result = next(item for item in audit["results"] if item["section_id"] == section_id)
         assert result["disposition"] == "KEEP"
         assert result["section_hash"] == study_guide_content_hash(section)
+
+
+def test_rules_citing_one_provision_must_point_at_one_page() -> None:
+    """A dead authority URL looks exactly like a live one to a presence check.
+
+    MA-CDTM-QUALIFICATIONS pointed at .../Section24B1~2, which 404s, while sibling rules
+    on the same statute pointed at .../Section24B%201~2, which loads. Nothing caught it,
+    because the validator only asked whether a url field existed. Divergence between rules
+    citing the same provision is the signal available without network access.
+    """
+    from validate_rules import _provision_key, _report_url_divergence, _url_identity
+    from qa_common import QAReport
+
+    # The two mass.gov forms of one chapter are equivalent and must not be flagged.
+    assert _url_identity("https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download") == \
+        _url_identity("https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards")
+    assert _url_identity("https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download") == \
+        _url_identity("https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c")
+
+    # Subsections of one section share a page, so they are compared together.
+    assert _provision_key("M.G.L. c. 112, § 24B1/2(b)") == _provision_key("M.G.L. c. 112, § 24B1/2(c)(5)")
+    # "s." and "§" name the same marker.
+    assert _provision_key("M.G.L. c. 94C, s. 21A") == _provision_key("M.G.L. c. 94C, § 21A")
+    # Different sections stay apart.
+    assert _provision_key("M.G.L. c. 94C, s. 18") != _provision_key("M.G.L. c. 94C, s. 21")
+
+    records = [
+        (None, {"rule_id": "MAJORITY-A", "authority": [{"section": "M.G.L. c. 112, § 24B1/2(a)", "url": "https://x/Section24B%201~2"}]}),
+        (None, {"rule_id": "MAJORITY-B", "authority": [{"section": "M.G.L. c. 112, § 24B1/2(b)", "url": "https://x/Section24B%201~2"}]}),
+        (None, {"rule_id": "ODD-ONE", "authority": [{"section": "M.G.L. c. 112, § 24B1/2(c)", "url": "https://x/Section24B1~2"}]}),
+    ]
+    report = QAReport()
+    _report_url_divergence(records, report)
+    assert any("ODD-ONE" in warning for warning in report.warnings), report.warnings
+    assert not any("MAJORITY" in warning.split("use")[0] for warning in report.warnings)

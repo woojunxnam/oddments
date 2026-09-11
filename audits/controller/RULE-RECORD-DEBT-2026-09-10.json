@@ -10,7 +10,12 @@
     "official_text_oddity": "An inconsistency inside the official source itself; nothing to fix, worth knowing.",
     "contradicts_authority": "The rule asserts something its own cited authority does not support. The most serious class.",
     "wrong_pinpoint": "The rule's cited provision is not the one that governs the actor the guide teaches, even where the substance matches.",
-    "boilerplate_rule_record": "The rule carries template filler in exceptions/common_confusions and an empty numeric_facts where its authority is full of numbers and carve-outs. A v1 skeleton never finished."
+    "boilerplate_rule_record": "The rule carries template filler in exceptions/common_confusions and an empty numeric_facts where its authority is full of numbers and carve-outs. A v1 skeleton never finished.",
+    "misleading_guidance_field": "The rule's own exceptions or common_confusions field teaches something the authority does not support. Worse than a thin summary, because the field exists to correct misreadings and instead creates one.",
+    "over_reads_authority": "The rule states a threshold, qualifier or limit the authority does not contain, narrowing or widening the duty.",
+    "wrong_actor": "The rule names the wrong duty-holder. Distinct because actor_and_scope is its own audit criterion and a wrong actor changes who is answerable.",
+    "cross_board_conflict": "The Pharmacy Board and Medicine Board regulations state the same rule differently. Neither record is wrong; the sources diverge.",
+    "broken_authority_url": "The rule's authority URL does not resolve. The validator checks that a url field is present, not that it points anywhere."
   },
   "findings": [
     {
@@ -453,6 +458,205 @@
       "authority": "247 CMR 6.15(3)",
       "detail": "Speaks only of 'an application to change the configuration or square footage of a pharmacy', omitting 'to remodel' which (1), (2) and (4) all carry.",
       "severity": "Info"
+    },
+    {
+      "class": "misleading_guidance_field",
+      "rule_id": "MA-COUNSELING-OFFER-METHOD",
+      "authority": "247 CMR 9.18(1); M.G.L. c. 94C, s. 21A",
+      "detail": "Its common_confusions says 'Extending the offer duty to refills, when the statutory trigger is a new prescription.' True of the statute, but 247 CMR 9.18(1)'s offer trigger is wider -- each person who RECEIVES A PRESCRIPTION MEDICATION, not limited to new prescriptions. Read alone the note teaches that no offer is owed on a refill. The two triggers coexist.",
+      "severity": "High"
+    },
+    {
+      "class": "over_reads_authority",
+      "rule_id": "MA-COUNSELING",
+      "authority": "247 CMR 9.18(1)",
+      "detail": "Requires 'a meaningful offer or provision'. The phrase MEANINGFUL OFFER appears nowhere in 247 CMR 9.18 or M.G.L. c. 94C, s. 21A. It is a formula the rule record introduced.",
+      "severity": "Medium"
+    },
+    {
+      "class": "over_reads_authority",
+      "rule_id": "MA-PRODUR",
+      "authority": "247 CMR 9.17(1), (2)",
+      "detail": "Says the pharmacist must 'resolve clinically significant issues'. CLINICALLY SIGNIFICANT appears nowhere in 9.17; 9.17(2) is triggered 'upon identifying ANY OF THE ABOVE', with no significance threshold, so the rule invites a candidate to filter where the regulation does not. Its trigger also drops 'or medication order' and 'or delivered to a patient or a patient's agent'. And it carries none of the ten identification items in 9.17(1)(a)-(j) although it is the ONLY record carrying 9.17(1) at all.",
+      "severity": "High"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-PROSPECTIVE-REVIEW-MANDATE",
+      "authority": "M.G.L. c. 94C, s. 21A",
+      "detail": "Drops 'potential drug therapy problems due to' from the screening clause, making the listed items the direct objects of screening rather than the causes of the problems screened for.",
+      "severity": "Medium"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-PATIENT-PROFILE-DUTY",
+      "authority": "247 CMR 9.16(7)(a)",
+      "detail": "Compresses the profile identifiers to 'the patient's identifying details'. The text is name, address, CONTACT INFORMATION, date of birth or age, and gender. Note the regulation says contact information where s. 21A says telephone number.",
+      "severity": "Low"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-COUNSELING-DOCUMENTATION",
+      "authority": "M.G.L. c. 94C, s. 21A",
+      "detail": "Generalises the exception to 'applicable federal regulations'. The statute names regulations of the Federal Health Care Financing Administration under 42 USC 1396r-8.",
+      "severity": "Low"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "M.G.L. c. 94C, s. 21A para 6",
+      "detail": "'Nothing in this section shall be construed to require a pharmacist to provide counseling if the person presenting the prescription declines to accept such offer for counseling.' Arguably the most testable sentence in the statute and no rule carries it. A section can teach that a refusal is recordable and that its absence raises a presumption, but not the discharge itself.",
+      "severity": "High"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "M.G.L. c. 94C, s. 21A para 5",
+      "detail": "The statutory counselling content list (1)-(8), which is NOT identical to 247 CMR 9.18(5): the statute's (6) is proper storage with no disposal, its (8) is missed dose with no adverse reaction, and its (4) adds 'including their avoidance and the action required if they occur'. Only the CMR list is carried, so a question keyed to the statutory list is unanswerable from the bank.",
+      "severity": "High"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "247 CMR 9.16(1)-(6)",
+      "detail": "Two-year readily-retrievable prescription records, Schedule II / III-V / VI segregation, printable electronic prescriptions and stored images. No canonical rule carries any of it -- MA-PATIENT-PROFILE-DUTY is the only record citing 9.16 and pinpoints only (7) and (8). Also means no rule says where the 9.17(2) drug-review record lives or how long it is kept.",
+      "severity": "High"
+    },
+    {
+      "class": "wrong_actor",
+      "rule_id": "MA-CS-II-III-PAMPHLET",
+      "authority": "M.G.L. c. 94C, s. 21",
+      "detail": "Says the pamphlet is required when A PHARMACY dispenses. The statute reads 'A PHARMACIST shall distribute the pamphlet when dispensing a narcotic or controlled substance contained in schedule II or III.' The rule also omits, inside its own cited authority, that the department distributes the pamphlet to pharmacies NOT INCLUDING INSTITUTIONAL PHARMACIES, and that s. 21 enumerates nine required pamphlet topics.",
+      "severity": "High"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CS-LABEL",
+      "authority": "M.G.L. c. 94C, s. 21",
+      "detail": "Framed as a controlled-substance label rule. Section 21's fourth paragraph applies the labeling provisions to 'the compounding and dispensing of drugs on the oral, electronic or written prescription of a licensed and registered prescriber under section 9', so the element list is not confined to controlled substances. Its exceptions entry is also looser than the statute: the only carve-out inside the element list is that the PATIENT'S NAME is required unless it is a veterinary prescription, not a whole-label exemption, and 'any specific statutory labeling exception' names nothing.",
+      "severity": "High"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "247 CMR 9.04(2)",
+      "detail": "A pharmacy shall utilise a computerized pharmacy system for processing prescriptions and maintaining patient profiles. NO canonical rule cites it. It is the premise that makes 9.04(3)'s computer-printed label and 9.04(7)'s product-identity recording coherent, so this is a hole in the rule bank rather than merely outside one section's scope.",
+      "severity": "High"
+    },
+    {
+      "class": "official_text_oddity",
+      "authority": "247 CMR 9.04(14)",
+      "detail": "'A pharmacy intern, or certified pharmacy technician who has the approval of the pharmacist on duty may receive new prescriptions over the telephone.' The relative clause is grammatically capable of attaching to both limbs or to the technician limb alone. The natural reading, and the only one giving the clause independent work, attaches it to the technician; MA-RX-TELEPHONE-RECEIPT and MA-Q-0376's key both take that reading.",
+      "severity": "Info"
+    },
+    {
+      "class": "official_text_oddity",
+      "authority": "247 CMR 9.04(15)",
+      "detail": "The institutional sterile compounding carve-out lists 9.04(4), (5), (6), (9), (10), (12), (13) and (14) -- conspicuously NOT (3), (7) or (8), so the label-printing, product-identity and related duties are not carved out. An examinable asymmetry.",
+      "severity": "Info"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "247 CMR 16.04(2)(a)-(j), mirrored at 243 CMR 2.12(5)(a)1.-10.",
+      "detail": "'Required Agreement Terms for All Practice Settings' -- the enumerated mandatory contents of EVERY collaborative practice agreement: disease states as primary or co-morbid, specific prescribing authority, detailed practice protocols, risk-management description, documentation of initiation/modification/discontinuation, outcome measurements, informed-consent procedures, forwarding procedures and periods with urgent-communication and unavailability procedures, and two attestations. NO rule in data/rules cites 16.04(2). This is the substance of what a CDTM agreement must contain and the guide cannot teach any of it. 247 CMR 16.04(1) is likewise uncarried.",
+      "severity": "High"
+    },
+    {
+      "class": "cross_board_conflict",
+      "authority": "247 CMR 16.04(3) vs 243 CMR 2.12(5)(b)",
+      "detail": "The Pharmacy Board says the agreement must specify when and how AN AUTHORIZED PHARMACIST may delegate; the Medicine Board says A SUPERVISING PHYSICIAN. MA-CDTM-DELEGATION-TERMS follows its own cited authority correctly; the divergence is in the sources.",
+      "severity": "Info"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-WRITING-FORM",
+      "authority": "243 CMR 2.12(1)(b)",
+      "detail": "Conditions electronic transmission on four instruments -- M.G.L. c. 94C s. 23(g), 105 CMR 721.00, AND 247 CMR 9.01(19) and 9.07(1)(a). The summary lists only the first two, and omits that the definition is expressly bounded to 243 CMR 2.12.",
+      "severity": "Medium"
+    },
+    {
+      "class": "over_reads_authority",
+      "rule_id": "MA-CPA-CONSTITUTION-CURRENCY",
+      "authority": "M.G.L. c. 112, s. 24B1/2",
+      "detail": "Its numeric_facts conditions read 'at least; on a biennial basis', but the cited statutory definition says only 'subject to review and renewal on a biennial basis'. The 'at least every two years' formulation, and the identification of who must review, come from 247 CMR 16.04(4), which the record does not cite.",
+      "severity": "Medium"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-TERMINATION-DUTIES",
+      "authority": "247 CMR 16.04(5)",
+      "detail": "The qualifier 'in accordance with the terms of the CDTM agreement' attaches to BOTH sentences in the official text; the summary attaches it only to the continuity duty.",
+      "severity": "Low"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-AGREEMENT-CUSTODY",
+      "authority": "243 CMR 2.12(5)(e)",
+      "detail": "Cites 243 CMR 2.12 at section level rather than the operative paragraph, and drops its third sentence: the supervising physician must maintain the patient's medical record in his or her custody and make it available on request during a Board of Registration in Medicine investigation.",
+      "severity": "Medium"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-CE-EVIDENCE",
+      "authority": "247 CMR 16.02(1)(e)",
+      "detail": "The pharmacy-board provision omits the CEU alternative that both M.G.L. c. 112 s. 24B1/2(b)(5) and 243 CMR 2.12(2)(e) carry: 'five additional contact hours OR 0.5 continuing education units'.",
+      "severity": "Low"
+    },
+    {
+      "class": "broken_authority_url",
+      "rule_id": "MA-CDTM-QUALIFICATIONS, MA-CDTM-RETAIL-SCOPE",
+      "authority": "M.G.L. c. 112, s. 24B1/2",
+      "detail": "Both point at .../Chapter112/Section24B1~2, which returns 404. The five other statute rules in the cluster use .../Section24B%201~2 -- the difference is a dropped space before '1~2'. MA-CDTM-QUALIFICATIONS also puts the rule title in authority[0].name where the other records put 'Massachusetts General Laws'.",
+      "severity": "High"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-QUALIFICATIONS",
+      "authority": "M.G.L. c. 112, s. 24B1/2(b)",
+      "detail": "Compresses six statutory requirements into five noun phrases and DROPS the sixth entirely (application to participate in the MassHealth programme should chapter 118E regulations be promulgated). All three numbers vanish -- $1,000,000 liability coverage, five years of experience, five contact hours or 0.5 CEU -- and numeric_facts is empty.",
+      "severity": "High"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-SUPERVISING-PHYSICIAN-ELIGIBILITY",
+      "authority": "243 CMR 2.12(3)(d), (e)",
+      "detail": "Drops the third sentence of (3)(d): the Board may revoke a physician's right to participate for any of the grounds in 243 CMR 1.03(5). Its notice clause also flattens (3)(e)'s three specific triggers -- a Voluntary Agreement Not to Practice, a summary suspension, or an approved final decision and order or consent agreement -- into a general 'where the Board acts'. That hides an exam-decisive fact: a controlled-substances registration action is NOT one of the triggers, so no notification duty arises from that event alone.",
+      "severity": "High"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-EMPLOYMENT-RELATIONSHIPS",
+      "authority": "M.G.L. c. 112, s. 24B1/2(e); 247 CMR 16.04(7)",
+      "detail": "Drops 'with a patient' from the statute's clause and writes 'collaborative drug therapy management' where the text says 'collaborative drug therapy'. It also cites two authorities that use different labels for the same norm -- the statute says RETAIL pharmacy, 247 CMR 16.04(7)(b)-(c) says COMMUNITY pharmacy -- without noting the equivalence.",
+      "severity": "Medium"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-CDTM-PRESCRIBING-POWERS",
+      "authority": "105 CMR 700.003(G)",
+      "detail": "Drops the proviso 'provided the following requirements are met', which is what turns (G)(1)-(G)(10) into conditions on the power rather than neighbouring facts.",
+      "severity": "Medium"
+    },
+    {
+      "class": "under_specified_rule_summary",
+      "rule_id": "MA-PHARMACIST-PRESCRIBER-ID",
+      "authority": "105 CMR 700.003(G)(7); M.G.L. c. 94C, s. 20",
+      "detail": "Cites s. 20 without disclosing that it is titled 'Oral prescriptions' and governs oral transmission, which is what makes (G)(7)'s particulars a list of things told to the dispensing pharmacist rather than printed on a form.",
+      "severity": "Medium"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "105 CMR 700.003(G)(1), (G)(3), (G)(4), (G)(9), (G)(10)",
+      "detail": "(G)(10) is the consequential one: a copy of an initial prescription, modification or discontinuation goes to the supervising physician WITHIN 24 HOURS of issuance unless more urgent notification is required. It is general to all CDTM prescribing, yet the only 24-hour rule in the bank rests on M.G.L. c. 112 s. 24B1/2(c)(5) and is retail-limited. (G)(9), the record of controlled substances held for immediate treatment, is likewise uncovered.",
+      "severity": "High"
+    },
+    {
+      "class": "uncovered_provision",
+      "authority": "247 CMR 16.02(1)(a)-(d); 243 CMR 2.12(3)(a)-(b); 243 CMR 2.12(1) definitions",
+      "detail": "The regulation's own pharmacist qualifications, which NARROW the statute (the PharmD route requires an agreement entered on or before 30 June 2017, and 16.02(1)(a) adds 'unrestricted and in good standing'); the supervising physician's POSITIVE qualifications, where the bank carries only the disqualifying half; and the 243 CMR definitions of Authorized Pharmacist, Community Pharmacy and a heavier Patient definition requiring written consent in a community pharmacy.",
+      "severity": "High"
+    },
+    {
+      "class": "official_text_oddity",
+      "authority": "105 CMR 700.003(G)(4)",
+      "detail": "Limits a retail-setting pharmacist to Schedule VI 'in accordance with 105 CMR 700.003(G)(3)', but (G)(3) is the general-compliance limb, not a schedule provision.",
+      "severity": "Info"
     }
   ],
   "how_to_use": "An under-specified summary is corrected by enriching the rule, which is only safe where no RELEASED question's final adjudication snapshots it. Check that first; where it is snapshotted the correction waits for a question-lane cycle. An uncovered provision needs a new additive rule, which has no blast radius.",
@@ -469,6 +673,12 @@
       "status": "RELEASED",
       "issue": "A distractor is refuted by 247 CMR 8.01(5), which no canonical rule carries. The question remains answerable from the section's own material, but the elimination the explanation relies on is not reachable.",
       "action": "Either add a rule for 8.01(5) or revise the explanation."
+    },
+    {
+      "question_id": "MA-Q-0085",
+      "status": "RELEASED",
+      "issue": "Tagged area 3 while its sole rule MA-PRODUR is area 2. A blueprint-area tagging inconsistency, not a legal error.",
+      "action": "Reconcile in the question lane."
     }
   ]
 }
