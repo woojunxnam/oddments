@@ -90,7 +90,7 @@ main { display: grid; gap: 1.2rem; }
 
 .filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: 0.75rem; align-items: end; }
 .filters label { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.8rem; font-weight: 700; }
-.filters select { min-width: 0; border: 1px solid var(--line); border-radius: 0.65rem; padding: 0.65rem; background: white; color: var(--ink); }
+.filters select, .filters input[type="search"] { min-width: 0; border: 1px solid var(--line); border-radius: 0.65rem; padding: 0.65rem; background: white; color: var(--ink); }
 .checkbox-filter { display: flex !important; align-items: center; min-height: 2.7rem; padding: 0.5rem 0.2rem; }
 
 .empty-state { padding: 3rem; text-align: center; color: var(--muted); }
@@ -152,8 +152,39 @@ dd { margin: 0; color: var(--muted); }
 #missed-questions { display: grid; gap: 0.4rem; padding-left: 1.25rem; }
 #history-detail, #guide-sections { margin-top: 1rem; }
 .guide-section { margin-top: 0.8rem; border: 1px solid var(--line); border-radius: 0.9rem; padding: 1rem; background: white; }
-.guide-section summary { color: var(--green-dark); cursor: pointer; font-weight: 800; }
-.guide-section h4 { margin-bottom: 0.35rem; }
+.guide-section > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.8rem; color: var(--green-dark); cursor: pointer; font-weight: 800; }
+.guide-title { font-size: 1.05rem; }
+.guide-summary-meta { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+.status-badge { border-radius: 999px; padding: 0.18rem 0.6rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.status-badge.pending { border: 1px solid #e4bd70; color: #603d00; background: var(--amber-soft); }
+.guide-body { padding-top: 0.4rem; }
+.guide-block { margin-top: 1.5rem; }
+.guide-block h4 { margin: 0 0 0.65rem; color: var(--green-dark); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.guide-block > p, .guide-block > ul, .guide-block > ol, .role-group, .worked-example { max-width: 78ch; }
+.guide-block p, .guide-block li { line-height: 1.6; }
+.guide-block li + li { margin-top: 0.35rem; }
+.table-scroll { overflow-x: auto; margin-bottom: 1rem; border: 1px solid var(--line); border-radius: 0.7rem; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.guide-table caption { padding: 0.7rem 0.85rem; background: var(--paper); font-weight: 800; text-align: left; }
+.guide-table th, .guide-table td { min-width: 9rem; padding: 0.6rem 0.85rem; border-top: 1px solid var(--line); line-height: 1.5; text-align: left; vertical-align: top; }
+.guide-table th { background: var(--mint); color: var(--green-dark); font-size: 0.78rem; }
+.guide-table td:first-child { font-weight: 700; }
+.decision-list { display: grid; gap: 0.75rem; padding-left: 1.5rem; }
+.decision-list p { margin: 0; }
+.decision-when { font-weight: 700; }
+.decision-then { margin-top: 0.3rem !important; padding-left: 0.8rem; border-left: 3px solid var(--mint); }
+.worked-example { margin-bottom: 1rem; border-left: 4px solid var(--green); border-radius: 0.6rem; padding: 0.9rem 1.1rem; background: var(--paper); }
+.worked-example > p { margin-bottom: 0.6rem; }
+.worked-example summary { color: var(--green); cursor: pointer; font-weight: 800; }
+.worked-example ol { padding-left: 1.3rem; }
+.worked-example .resolution { margin: 0; }
+.role-group + .role-group { margin-top: 0.8rem; }
+.role-name { margin: 0 0 0.25rem; font-weight: 800; }
+.role-group ul { margin: 0; }
+.trap-block li::marker { color: var(--red); }
+.self-test details { max-width: 78ch; margin-bottom: 0.5rem; border: 1px solid var(--line); border-radius: 0.7rem; padding: 0.7rem 0.9rem; background: var(--surface); }
+.self-test summary { color: var(--ink); cursor: pointer; font-weight: 700; line-height: 1.5; }
+.self-test details p { margin: 0.6rem 0 0; border-top: 1px dashed var(--line); padding-top: 0.6rem; }
 .guide-source-list a { color: var(--green); }
 .muted { color: var(--muted); }
 
