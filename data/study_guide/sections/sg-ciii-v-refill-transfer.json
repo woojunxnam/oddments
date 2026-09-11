@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CIII-V-REFILL-TRANSFER",
-  "content_version": 6,
-  "content_hash": "e3c7963836e7f8d8c9a9bf4303773719490211053c05d08b346a8bf3da65eeff",
+  "content_version": 7,
+  "content_hash": "f35cfc9b515844226b602ca3b28a901afa61980df6dcbcd4bc91f175f5251269",
   "title": "Schedule III-V Refills and Massachusetts Transfers",
   "areas": [
     2,
@@ -22,7 +22,14 @@
     "MA-RX-CV-REFILL",
     "MA-RX-TRANSFER",
     "FED-EPCS-TRANSFER",
-    "MA-SCHEDULE-VI"
+    "MA-SCHEDULE-VI",
+    "MA-SCHEDULE-VI-VALIDITY",
+    "MA-CS-REFILL-AUTHORIZATION",
+    "MA-SCHEDULES-FEDERAL-INCORPORATION",
+    "MA-RX-DATE-COUNTING",
+    "FED-CS-TRANSFER-RECORDS",
+    "MA-ISCP-DISPENSING-EXCLUSIONS",
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER"
   ],
   "verified_rule_dependencies": {
     "FED-CS-REFILL-III-IV": {
@@ -48,20 +55,50 @@
     "MA-SCHEDULE-VI": {
       "content_version": 1,
       "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+    },
+    "MA-SCHEDULE-VI-VALIDITY": {
+      "content_version": 1,
+      "content_hash": "efc932e4118e6457a82f447f29b2bedfe8c869759917648864d2baf4944132ec"
+    },
+    "MA-CS-REFILL-AUTHORIZATION": {
+      "content_version": 1,
+      "content_hash": "4b89a24b17a6a642a9ec9e4a4fe7d0e9a219b2a2e6bcae287add935fb44a5067"
+    },
+    "MA-SCHEDULES-FEDERAL-INCORPORATION": {
+      "content_version": 1,
+      "content_hash": "c511c47d1faddf7b96106d6287d628fc8e090e133402134fe4c9055cbd48b323"
+    },
+    "MA-RX-DATE-COUNTING": {
+      "content_version": 1,
+      "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841"
+    },
+    "FED-CS-TRANSFER-RECORDS": {
+      "content_version": 1,
+      "content_hash": "812eac9b5c9b8b7ec9a33927a7a23a18b1e66bbbff687343c588ed21b1ad97bd"
+    },
+    "MA-ISCP-DISPENSING-EXCLUSIONS": {
+      "content_version": 1,
+      "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280"
+    },
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER": {
+      "content_version": 1,
+      "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4"
     }
   },
   "orientation": [
     {
-      "text": "A refillable controlled prescription carries two separate ceilings, and both must be checked before every dispensing. One is a count of refills; the other is a clock that runs from the date the practitioner issued the prescription, not from the day the pharmacy first dispensed it. Federal law sets both for Schedules III and IV in a single sentence: no such prescription may be filled or refilled more than six months after the issue date, and no such prescription authorized to be refilled may be refilled more than five times. The word 'filled' matters. The six-month bar is not a limit on refills alone; a prescription that has never been dispensed at all is equally out of time once six months have passed. The two ceilings are also independent rather than cumulative, so a prescription with four unused refills and a seven-month-old issue date is exhausted, and a prescription two months old that has already been refilled five times is exhausted too. Neither ceiling is lifted by anything the pharmacy does; the practitioner must renew the therapy on a new prescription.",
+      "text": "A refillable controlled prescription carries two separate ceilings, and both must be checked before every dispensing. One is a count of refills; the other is a clock that runs from the date the practitioner issued the prescription, not from the day the pharmacy first dispensed it. In Massachusetts the count itself follows 247 CMR 9.04(10): to decide whether a prescription is within date, the pharmacist counts the day after the prescription was written as day one. Federal law sets both for Schedules III and IV in a single sentence: no such prescription may be filled or refilled more than six months after the issue date, and no such prescription authorized to be refilled may be refilled more than five times. The word 'filled' matters. The six-month bar is not a limit on refills alone; a prescription that has never been dispensed at all is equally out of time once six months have passed. The two ceilings are also independent rather than cumulative, so a prescription with four unused refills and a seven-month-old issue date is exhausted, and a prescription two months old that has already been refilled five times is exhausted too. Neither ceiling is lifted by anything the pharmacy does; the practitioner must renew the therapy on a new prescription.",
       "rule_ids": [
-        "FED-CS-REFILL-III-IV"
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
-      "text": "Massachusetts contributes the schedule the federal refill provision leaves out. 21 CFR 1306.22 is written for Schedules III and IV, and it does not supply refill limits for Schedule V. 247 CMR 9.04(13) fills that space with the same pair of numbers and the same structure: a licensee may not fill or refill a Schedule V prescription more than six months after the date it was issued, and a Schedule V prescription may not be refilled more than five times. Because the state provision borrows the federal shape, candidates often recall the figures correctly but attribute them to the wrong sovereign; on a Massachusetts Schedule V question the authority is the state regulation. That subsection also carries a facility-scope limit the federal rule has no counterpart to: 247 CMR 9.04(15) provides that the requirements of 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies. The exclusion removes that state subsection from that facility type; it does not disapply any other body of law that may reach the same dispensing.",
+      "text": "Massachusetts contributes the schedule the federal refill provision leaves out. 21 CFR 1306.22 is written for Schedules III and IV, and it does not supply refill limits for Schedule V. 247 CMR 9.04(13) fills that space with the same pair of numbers and the same structure: a licensee may not fill or refill a Schedule V prescription more than six months after the date it was issued, and a Schedule V prescription may not be refilled more than five times. Because the state provision borrows the federal shape, candidates often recall the figures correctly but attribute them to the wrong sovereign; on a Massachusetts Schedule V question the authority is the state regulation. That subsection also carries a facility-scope limit the federal rule has no counterpart to: 247 CMR 9.04(15) provides that the requirements of 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies, and the same provision also reaches the counting rule in 9.04(10) and the Schedule VI rule in 9.04(12). The exclusion removes those state subsections from that facility type; it does not disapply any other body of law that may reach the same dispensing.",
       "rule_ids": [
         "MA-RX-CV-REFILL",
-        "FED-CS-REFILL-III-IV"
+        "FED-CS-REFILL-III-IV",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
       ]
     },
     {
@@ -79,11 +116,14 @@
       ]
     },
     {
-      "text": "Massachusetts Schedule VI sits outside that federal cap entirely, and the reason is definitional. 105 CMR 700.002(F) provides that Schedule VI consists of all prescription drugs which are not included in any other schedule established by the Commissioner, so a Schedule VI drug is by construction not a federally scheduled III, IV or V substance and 21 CFR 1306.25 never reaches it. The state regulation governs alone, and it is more generous than the federal rule it borrows its procedure from: 247 CMR 9.14(4)(a) directs that Schedule VI prescriptions transfer in the same manner as Schedules III through V prescriptions, 9.14(4)(b) permits transfer up to the maximum number of remaining refills authorized by the prescriber, and 9.14(4)(c) supplies the only ceiling, barring transfer of a Schedule VI prescription authorizing refills more than one year from the date it was issued. Read those together and the Schedule VI limit is a count of refills bounded by an age, not a count of transfers. Note that the one-year figure in 9.14(4)(c) is a transfer bar, and this section's cited rules do not supply a Schedule VI refill ceiling of their own; do not import the five-refill and six-month figures from Schedules III through V into a Schedule VI prescription.",
+      "text": "Massachusetts Schedule VI sits outside that federal cap entirely, and the reason lies in how Massachusetts builds its schedules. M.G.L. c. 94C, s. 2(a) directs that the first five Massachusetts schedules incorporate the federal ones, and 105 CMR 700.002(A) through (E) define them as the substances listed in 21 CFR 1308.11 through 1308.15; 105 CMR 700.002(F) then places in Schedule VI all prescription drugs not included in any other schedule. 21 CFR 1306.25 reaches substances listed in federal Schedules III through V, which are the substances Massachusetts places in its own Schedules III through V, so it does not reach a Schedule VI drug. (Section 2(a1/2) also requires a substance newly controlled under federal law to be placed in a corresponding Massachusetts schedule within 30 days of the federal notice.) The state regulation governs alone, and it is more generous than the federal rule it borrows its procedure from: 247 CMR 9.14(4)(a) directs that Schedule VI prescriptions transfer in the same manner as Schedules III through V prescriptions, 9.14(4)(b) permits transfer up to the maximum number of remaining refills authorized by the prescriber, and 9.14(4)(c) bars transfer of a Schedule VI prescription authorizing refills more than one year from the date it was issued. Read together, the Schedule VI transfer limit is a count of refills bounded by an age, not a count of transfers. The same one-year clock governs refilling. Under 247 CMR 9.04(12) a Schedule VI prescription is valid for one year from the date of issue and may not be refilled after one year, and M.G.L. c. 94C, s. 23(f) allows a refill only where the original prescription provides for refilling and specifies the number of refills; that section reaches Schedule VI because s. 1 defines a controlled substance as one in any schedule the chapter refers to. Where a Schedule VI prescription has expired or has no refills left and prescriber authorization cannot be obtained in a timely manner, 9.04(12) lets the pharmacist, in professional judgment, dispense up to a 14-day supply or the smallest available unit-of-use package. Do not import the five-refill and six-month figures from Schedules III through V into a Schedule VI prescription.",
       "rule_ids": [
         "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
         "MA-RX-TRANSFER",
-        "FED-CS-TRANSFER-REFILL"
+        "FED-CS-TRANSFER-REFILL",
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
       ]
     },
     {
@@ -147,19 +187,22 @@
             "247 CMR 9.04(15) provides that 9.04(13) does not apply to that facility type"
           ],
           "rule_ids": [
-            "MA-RX-CV-REFILL"
+            "MA-RX-CV-REFILL",
+            "MA-ISCP-DISPENSING-EXCLUSIONS"
           ]
         },
         {
           "cells": [
             "Schedule VI",
-            "Not supplied by any rule this section cites",
-            "Not supplied here; the one-year figure taught in this section is a transfer bar, not a refill clock",
-            "105 CMR 700.002(F) defines the schedule; 247 CMR 9.14(4)(c) supplies only the transfer ceiling"
+            "Those the original prescription provides for and numbers: M.G.L. c. 94C, s. 23(f) bars any other refill",
+            "Valid for one year from the date of issue, and no refill after one year; if the prescription has expired or has no refills left and the prescriber cannot be reached in time, a professional-judgment supply of up to 14 days or the smallest unit-of-use package",
+            "247 CMR 9.04(12) and M.G.L. c. 94C, s. 23(f), Massachusetts; 247 CMR 9.04(15) excludes institutional sterile compounding pharmacies from 9.04(12)"
           ],
           "rule_ids": [
+            "MA-SCHEDULE-VI-VALIDITY",
+            "MA-CS-REFILL-AUTHORIZATION",
             "MA-SCHEDULE-VI",
-            "MA-RX-TRANSFER"
+            "MA-ISCP-DISPENSING-EXCLUSIONS"
           ]
         }
       ]
@@ -271,6 +314,16 @@
             "FED-CS-TRANSFER-REFILL",
             "FED-EPCS-TRANSFER"
           ]
+        },
+        {
+          "cells": [
+            "Records and how long they are kept",
+            "VOID and transfer entries at the sending end, transfer history at the receiving end; original and transferred prescriptions kept two years from the date of last refill",
+            "Transfer entries added to the electronic record at both ends; kept two years from the date of the transfer by both pharmacies"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-RECORDS"
+          ]
         }
       ]
     },
@@ -329,13 +382,14 @@
         {
           "cells": [
             "Schedule VI",
-            "Outside the rule: 1306.25 reaches federally scheduled III, IV and V substances, and Schedule VI is by definition in no other schedule",
+            "Outside the rule: 1306.25 reaches substances listed in federal Schedules III-V, which Massachusetts places in its own Schedules III-V; Schedule VI holds prescription drugs included in none of the other schedules",
             "Transfers in the same manner as Schedules III-V, up to the maximum remaining refills the prescriber authorized, and not more than one year after issue"
           ],
           "rule_ids": [
             "FED-CS-TRANSFER-REFILL",
             "MA-RX-TRANSFER",
-            "MA-SCHEDULE-VI"
+            "MA-SCHEDULE-VI",
+            "MA-SCHEDULES-FEDERAL-INCORPORATION"
           ]
         },
         {
@@ -356,7 +410,7 @@
     {
       "scenario": "A Schedule IV prescription was issued on 1 March authorizing five refills. The patient first had it dispensed on 5 March and used three refills at Pharmacy A. On 20 August she asks Pharmacy B to obtain it, and the transfer is completed on 22 August. On 10 September she asks Pharmacy B for the next refill. May Pharmacy B dispense it?",
       "steps": [
-        "Start with the two ceilings. 21 CFR 1306.22(a) bars filling or refilling a Schedule III or IV prescription more than six months after the date on which it was issued, so the window closes six months after 1 March.",
+        "Start with the two ceilings. 21 CFR 1306.22(a) bars filling or refilling a Schedule III or IV prescription more than six months after the date on which it was issued, so the window closes six months after 1 March. Counted the Massachusetts way, the day after issue is day one (247 CMR 9.04(10)), so 1 March itself is not counted.",
         "Count the refills separately. Three of the five authorized refills have been used, so two remain and the five-refill ceiling is not the obstacle in this fact pattern.",
         "Ask what the 22 August transfer changed. It moved the prescription without creating new refill authority and without restarting the issue-date clock, so the prescription reached Pharmacy B carrying the same 1 March issue date and the same two remaining refills.",
         "Apply the clock on 10 September. The six-month period measured from 1 March has run, and unused authorized refills do not survive the time limit."
@@ -365,7 +419,8 @@
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
         "FED-CS-TRANSFER-REFILL",
-        "MA-RX-TRANSFER"
+        "MA-RX-TRANSFER",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -387,17 +442,19 @@
     {
       "scenario": "A Massachusetts patient asks Pharmacy C to obtain a Schedule VI prescription issued eight months ago with four refills remaining. It has already been transferred once, from Pharmacy A to Pharmacy B. Pharmacy C has a certified pharmacy technician on shift and the pharmacist on duty approves her doing the work. A colleague objects that the federal one-time limit forbids a second transfer and that only a pharmacist may execute one.",
       "steps": [
-        "Classify the drug first. 105 CMR 700.002(F) makes Schedule VI all prescription drugs not included in any other schedule established by the Commissioner, so this drug is not a federally scheduled III, IV or V substance.",
+        "Classify the drug first. Massachusetts Schedules I through V are the substances the federal schedules list (M.G.L. c. 94C, s. 2(a); 105 CMR 700.002(A)-(E)), and 105 CMR 700.002(F) puts in Schedule VI only prescription drugs included in no other schedule. A Schedule VI drug is therefore not one of the substances the federal Schedules III, IV and V list.",
         "That settles the first objection. 21 CFR 1306.25 governs the transfer of Schedule III, IV and V prescription information, so it never reaches this prescription and its one-time cap has nothing here to limit.",
         "Apply the state rule that does govern. 247 CMR 9.14(4)(a) puts a Schedule VI transfer on the same footing as a Schedule III-V transfer, and 9.14(4)(b) permits transfer up to the maximum number of remaining refills authorized by the prescriber, which is a count of refills rather than a count of transfers.",
-        "Check the state ceiling that does exist. 247 CMR 9.14(4)(c) bars transferring a Schedule VI prescription authorizing refills more than one year from the date it was issued, and eight months is inside that period.",
+        "Check the state ceilings that do exist. 247 CMR 9.14(4)(c) bars transferring a Schedule VI prescription authorizing refills more than one year from the date it was issued, and eight months is inside that period. The refills themselves are also still usable, because 247 CMR 9.04(12) keeps a Schedule VI prescription valid, and refillable, for one year from issue.",
         "Now the second objection. The federal requirement that a transfer be communicated directly between two licensed pharmacists belongs to the federal pathways, which do not reach this prescription, and 247 CMR 8.04(4)(d) permits a certified pharmacy technician to perform prescription transfers between pharmacies for Schedule VI only, with the approval of the pharmacist on duty."
       ],
       "resolution": "Both halves of the colleague's objection fail: the second transfer is permitted and the technician may execute it with the pharmacist's approval. The error the scenario invites is carrying a federal Schedule III-V mechanic across to a Massachusetts Schedule VI prescription that no federal schedule reaches.",
       "rule_ids": [
         "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
         "MA-RX-TRANSFER",
-        "FED-CS-TRANSFER-REFILL"
+        "FED-CS-TRANSFER-REFILL",
+        "MA-SCHEDULE-VI-VALIDITY"
       ]
     },
     {
@@ -435,10 +492,11 @@
     },
     {
       "prompt": "True or false: the six-month clock starts running at the first dispensing, and it limits refills only.",
-      "answer": "False on both counts. 21 CFR 1306.22(a) and 247 CMR 9.04(13) each measure from the date the prescription was issued, and each bars filling as well as refilling once six months have passed, so a prescription that has never been dispensed is equally out of time.",
+      "answer": "False on both counts. 21 CFR 1306.22(a) and 247 CMR 9.04(13) each measure from the date the prescription was issued, and each bars filling as well as refilling once six months have passed, so a prescription that has never been dispensed is equally out of time. In Massachusetts the day after the prescription was written counts as day one (247 CMR 9.04(10)).",
       "rule_ids": [
         "FED-CS-REFILL-III-IV",
-        "MA-RX-CV-REFILL"
+        "MA-RX-CV-REFILL",
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -466,11 +524,19 @@
     },
     {
       "prompt": "Why does the federal one-time refill-transfer limit not cap a Massachusetts Schedule VI transfer, and what state ceiling applies instead?",
-      "answer": "Because 105 CMR 700.002(F) makes Schedule VI all prescription drugs not included in any other schedule, so the drug is not a federally scheduled III, IV or V substance and 21 CFR 1306.25 never reaches it. 247 CMR 9.14(4)(b) permits transfer up to the maximum remaining refills the prescriber authorized, and 9.14(4)(c) bars transfer of a refill-authorizing Schedule VI prescription more than one year after issue.",
+      "answer": "Because Massachusetts Schedules I-V are the substances the federal schedules list (M.G.L. c. 94C, s. 2(a); 105 CMR 700.002(A)-(E)) and Schedule VI holds only prescription drugs in none of them (700.002(F)), so a Schedule VI drug is not a federal Schedule III-V substance and 21 CFR 1306.25 does not reach it. 247 CMR 9.14(4)(b) permits transfer up to the maximum remaining refills the prescriber authorized, and 9.14(4)(c) bars transfer of a refill-authorizing Schedule VI prescription more than one year after issue.",
       "rule_ids": [
         "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
         "FED-CS-TRANSFER-REFILL",
         "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "A Massachusetts Schedule VI prescription issued 13 months ago still shows two refills, and the prescriber cannot be reached today. May it be refilled, and what may the pharmacist do?",
+      "answer": "It may not be refilled: under 247 CMR 9.04(12) a Schedule VI prescription is valid for one year from the date of issue and may not be refilled after one year. Because prescriber authorization cannot be obtained in a timely manner, the pharmacist may, in professional judgment, dispense a quantity not exceeding 14 days or the smallest available unit-of-use package.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
       ]
     },
     {
@@ -480,6 +546,21 @@
         "FED-CS-TRANSFER-REFILL",
         "FED-EPCS-TRANSFER",
         "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "What must the transferring and receiving pharmacists record on a refill-purpose transfer of a Schedule III-V prescription, and how long are the records kept?",
+      "answer": "The transferring pharmacist writes 'VOID' on the prescription (or marks the electronic record as transferred) and records the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name. The receiving pharmacist records the prescription's history (issue date, refills authorized and remaining, dates and locations of earlier fills, and the transferring and originally filling pharmacies), writing 'transfer' on the face of a paper or oral prescription or creating an electronic record for an electronic one. The original and transferred prescriptions are kept for two years from the date of last refill.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "prompt": "How does a Massachusetts pharmacist count days when deciding whether a prescription is within date?",
+      "answer": "The day after the prescription was written is day one (247 CMR 9.04(10)); the issue date itself is not counted. 247 CMR 9.04(15) disapplies this counting rule at institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
       ]
     }
   ],
@@ -493,7 +574,21 @@
     {
       "text": "For pharmacies subject to 247 CMR 9.04(13), a Massachusetts Schedule V prescription may not be filled or refilled more than six months after issue, and may not be refilled more than five times; that subsection does not apply to institutional sterile compounding pharmacies.",
       "rule_ids": [
-        "MA-RX-CV-REFILL"
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "text": "For pharmacies subject to 247 CMR 9.04(12), a Massachusetts Schedule VI prescription is valid for one year from issue and may not be refilled after one year, and any refill needs the original prescription to provide for refilling and state the number of refills (M.G.L. c. 94C, s. 23(f)).",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "text": "At a pharmacy subject to 247 CMR 9.04(10), the day after the prescription was written is day one when deciding whether it is within date.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING"
       ]
     },
     {
@@ -531,10 +626,19 @@
       ]
     },
     {
-      "condition": "The facility is an institutional sterile compounding pharmacy.",
-      "action": "Do not apply the Schedule V refill limits in 247 CMR 9.04(13) through this provision; 247 CMR 9.04(15) excludes that facility type.",
+      "condition": "A Massachusetts Schedule VI refill is requested at a pharmacy subject to 247 CMR 9.04(12).",
+      "action": "Confirm the original prescription provides for refills and states their number, and that it is within one year of issue. Past one year, or with no refills left, dispense only a professional-judgment supply of up to 14 days or the smallest unit-of-use package, and only if prescriber authorization cannot be obtained in time.",
       "rule_ids": [
-        "MA-RX-CV-REFILL"
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "condition": "The facility is an institutional sterile compounding pharmacy.",
+      "action": "Do not apply the Schedule V refill limits in 247 CMR 9.04(13), the Schedule VI rule in 9.04(12) or the counting rule in 9.04(10) through those provisions; 247 CMR 9.04(15) excludes that facility type.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
       ]
     },
     {
@@ -558,6 +662,14 @@
       "rule_ids": [
         "FED-EPCS-TRANSFER"
       ]
+    },
+    {
+      "condition": "A Schedule III-V prescription is transferred for refill purposes.",
+      "action": "The transferring pharmacist voids the prescription and records where it went; the receiving pharmacist records the prescription's transfer history, writing 'transfer' on the face of a paper or oral prescription or creating an electronic record for an electronic one; the original and transferred prescriptions are kept for two years from the date of last refill.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS",
+        "FED-CS-TRANSFER-REFILL"
+      ]
     }
   ],
   "ma_vs_federal": [
@@ -570,11 +682,21 @@
       ]
     },
     {
-      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions and may move up to the maximum number of remaining refills the prescriber authorized, with the only ceiling being that a refill-authorising Schedule VI prescription may not be transferred more than one year after issue. The federal one-time limit does not cap them, because it reaches only federally scheduled III, IV and V substances and a Massachusetts Schedule VI drug is by definition in no other schedule.",
+      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions and may move up to the maximum number of remaining refills the prescriber authorized, with the only ceiling being that a refill-authorising Schedule VI prescription may not be transferred more than one year after issue. The federal one-time limit does not cap them, because it reaches only substances in federal Schedules III-V, which Massachusetts places in its own Schedules III-V, while Schedule VI holds prescription drugs included in none of the other schedules.",
       "rule_ids": [
         "MA-RX-TRANSFER",
         "FED-CS-TRANSFER-REFILL",
-        "MA-SCHEDULE-VI"
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION"
+      ]
+    },
+    {
+      "text": "For Schedule VI the refill limits come from Massachusetts: 247 CMR 9.04(12) makes the prescription valid for one year and bars refills after that, and M.G.L. c. 94C, s. 23(f) requires the original prescription to provide for and number any refill. The Schedule III-V figures of five refills and six months do not carry across.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
       ]
     },
     {
@@ -597,7 +719,22 @@
     {
       "text": "The Schedule V refill limits in 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies under 247 CMR 9.04(15).",
       "rule_ids": [
-        "MA-RX-CV-REFILL"
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "text": "247 CMR 9.04(15) also removes the Schedule VI rule in 9.04(12) and the day-counting rule in 9.04(10) from institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-ISCP-DISPENSING-EXCLUSIONS",
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "Where a Schedule VI prescription has expired or has no remaining refills and prescriber authorization cannot be obtained in a timely manner, the pharmacist may, in professional judgment, dispense a quantity not exceeding 14 days or the smallest available unit-of-use package; that is not an ordinary refill.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
       ]
     },
     {
@@ -611,6 +748,13 @@
       "rule_ids": [
         "FED-EPCS-TRANSFER",
         "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "The initial-dispensing transfer in 21 CFR 1306.08(e) is for a prescription's first dispensing. Once a Schedule II prescription has been partially filled, no federal transfer pathway moves its remaining portion to another pharmacy.",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "FED-EPCS-TRANSFER"
       ]
     }
   ],
@@ -628,7 +772,16 @@
       "timeframe": "Within 6 months after issue",
       "consequence": "No first fill and no refill after the state time limit, and no refill once five are used.",
       "rule_ids": [
-        "MA-RX-CV-REFILL"
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "event": "Refill of a Massachusetts Schedule VI prescription at a pharmacy subject to 247 CMR 9.04(12)",
+      "timeframe": "Not more than 1 year after issue",
+      "consequence": "No refill after one year; if the prescriber cannot be reached in time, only a professional-judgment supply of up to 14 days or the smallest unit-of-use package.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
       ]
     },
     {
@@ -638,25 +791,75 @@
       "rule_ids": [
         "MA-RX-TRANSFER"
       ]
+    },
+    {
+      "event": "Records of a refill-purpose transfer of Schedule III-V prescription information",
+      "timeframe": "2 years from the date of last refill",
+      "consequence": "The original and transferred prescriptions must be kept for that period.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "event": "Records of an initial-dispensing electronic transfer",
+      "timeframe": "2 years from the date of the transfer",
+      "consequence": "Both the transferring and the receiving pharmacy keep the electronic records documenting the transfer for that period.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
     }
   ],
-  "forms_records": [],
+  "forms_records": [
+    {
+      "text": "On a refill-purpose transfer the transferring pharmacist writes 'VOID' on the face of the invalidated prescription (for an electronic prescription, adds to its record that it has been transferred), records the name, address and DEA registration number of the pharmacy it went to and the name of the receiving pharmacist, and records the date of the transfer and his or her own name.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "For a paper prescription, or an oral one reduced to writing, the receiving pharmacist writes 'transfer' on its face, reduces to writing all the information a prescription must contain, and adds the original issue date, the original number of refills authorized, the date of original dispensing, the valid refills remaining with the dates and locations of previous refills, the transferring pharmacy's name, address, DEA registration number and prescription number, the transferring pharmacist's name, and the name, address, DEA registration number and prescription number of the pharmacy that originally filled it. For an electronic prescription transferred electronically, the transferring pharmacist sends that history with the prescription, and the receiving pharmacist creates an electronic record containing it and his or her own name.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "The original and transferred prescriptions are kept for two years from the date of last refill, and pharmacies that share one electronic prescription record must still meet every information requirement of a manual transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "On an initial-dispensing electronic transfer the transferring pharmacist adds to the electronic record that it has been transferred, the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name; the receiving pharmacist adds 'transfer', the transferring pharmacy's name, address and DEA registration number, the transferring pharmacist's name, the date and his or her own name. Software may fill in these fields, but the pharmacist must ensure they are complete and accurate, and both pharmacies keep the records for two years from the date of the transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS",
+        "FED-EPCS-TRANSFER"
+      ]
+    }
+  ],
   "role_duties": [
     {
-      "role": "Receiving pharmacy",
-      "duty": "Obtain the patient-requested transfer and preserve the remaining lawful refill limits.",
+      "role": "Receiving pharmacist",
+      "duty": "Record the federal transfer data: on a paper or oral prescription, 'transfer' on its face with the full prescription information and transfer history; on an electronic refill transfer, an electronic record with the receiving pharmacist's name and everything transferred; on an initial-dispensing transfer, the entries the electronic-transfer rule lists. The prescription keeps the refills and the issue date it already had.",
       "rule_ids": [
-        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-RECORDS",
         "FED-CS-REFILL-III-IV",
         "MA-RX-CV-REFILL"
       ]
     },
     {
       "role": "Transferring pharmacy",
-      "duty": "Transfer the prescription at the request of the patient or the patient's agent in a timely manner so as not to delay therapy, and complete the federal voiding and transfer records for a Schedule III-V refill transfer.",
+      "duty": "Transfer the prescription at the request of the patient or the patient's agent in a timely manner so as not to delay therapy, without charging a fee; on a Schedule III-V refill transfer, the transferring pharmacist writes 'VOID' on the prescription (or marks the electronic record as transferred) and records the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name.",
       "rule_ids": [
         "MA-RX-TRANSFER",
-        "FED-CS-TRANSFER-REFILL"
+        "FED-CS-TRANSFER-REFILL",
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "role": "Receiving pharmacy (Massachusetts)",
+      "duty": "May act as the patient's agent to obtain the transfer. This is a permission; the duty to transfer rests on the pharmacy asked to send the prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
       ]
     },
     {
@@ -672,6 +875,13 @@
       "duty": "Perform a prescription transfer only for Schedule VI, and only with the approval of the pharmacist on duty.",
       "rule_ids": [
         "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "role": "Transferring and receiving pharmacies",
+      "duty": "Keep the transfer records for two years: from the date of last refill on a refill-purpose transfer, and from the date of transfer, at both pharmacies, on an initial-dispensing electronic transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
       ]
     }
   ],
@@ -723,6 +933,20 @@
         "MA-RX-TRANSFER",
         "MA-SCHEDULE-VI"
       ]
+    },
+    {
+      "text": "Treating the Schedule VI one-year figure as a transfer bar only lets a prescription be refilled after 247 CMR 9.04(12) has ended its validity.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Sending a partially filled Schedule II prescription through the initial-dispensing transfer overlooks that the pathway is for a prescription's first dispensing, and that no federal pathway moves the remaining portion.",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "FED-EPCS-TRANSFER"
+      ]
     }
   ],
   "drug_examples": [],
@@ -730,7 +954,7 @@
     "MA-Q-0120",
     "MA-Q-0397"
   ],
-  "last_verified": null,
-  "verification_status": "AUDIT_PENDING",
-  "independent_audit_id": null
+  "last_verified": "2026-09-11",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V8B-2026-09-11"
 }

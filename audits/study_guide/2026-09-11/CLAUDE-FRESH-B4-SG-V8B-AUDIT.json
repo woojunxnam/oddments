@@ -1,0 +1,757 @@
+{
+  "audit_id": "AUDIT-SG-B4-SG-V8B-2026-09-11",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B4-SG-V8B",
+  "audit_date": "2026-09-11",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "represented_freeze_sha": "7f01e86513580c98507e099ec13437c0b6f2d01a",
+  "audit_package_path": "audits/study_guide/2026-09-11/BATCH4-SG-V8B-AUDIT-PACKAGE.json",
+  "audit_package_sha256": "54e5b45db5a3c1805edb8d9b9957c13e27980b4793c97ff744fb15720d3753c6",
+  "section_ids": [
+    "SG-CII-LIFECYCLE",
+    "SG-FED-MA-INTERACTION",
+    "SG-CIII-V-REFILL-TRANSFER"
+  ],
+  "section_hashes": {
+    "SG-CII-LIFECYCLE": "0a89087ba5869e6692864fd5496f11f80801e7c927584cdcca093e90a83b5a4a",
+    "SG-FED-MA-INTERACTION": "5dfc9fb4383b4bc1e6718bf4ca4dbcf2683d7efbcf710283a6af76adff2b11d3",
+    "SG-CIII-V-REFILL-TRANSFER": "f35cfc9b515844226b602ca3b28a901afa61980df6dcbcd4bc91f175f5251269"
+  },
+  "dependency_snapshots": {
+    "SG-CII-LIFECYCLE": {
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-NO-REFILL",
+          "content_version": 1,
+          "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-no-refill.json",
+          "canonical_blob": "6aaa8b2178dfb52e15440aabb7fc73086980e69f"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-72H",
+          "content_version": 1,
+          "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-partial-72h.json",
+          "canonical_blob": "735d7c0568b4e31b225f1c22638407fa23250b0e"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-partial-patient.json",
+          "canonical_blob": "72bb9b5836a8dd48ac2999e382e07f3ae33ce959"
+        },
+        {
+          "rule_id": "FED-CII-LTC-TERMINAL",
+          "content_version": 1,
+          "content_hash": "98d7987b068e781ad2140f432a739f62c7fefe55bf7c2eb8bbf3a52765195c09",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-ltc-terminal.json",
+          "canonical_blob": "10fe46bb583a35f7ab51b2ffdda0b2c7e4e03dd1"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-FILL-NOTATION",
+          "content_version": 2,
+          "content_hash": "e98d6152f0f8c1b0f72b8921f00d630202a8559c11415c71a6b75baf9b30f250",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-partial-fill-notation.json",
+          "canonical_blob": "f2a59b5e8f738b969ce49d6d19cd7c8cd019b1b7"
+        },
+        {
+          "rule_id": "FED-CII-LTCF-TERMINAL-RECORDS",
+          "content_version": 1,
+          "content_hash": "59b81d0dde3dba94c89e94756bd768d55097ee9c1152d8aacb093c8d47c48e4c",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-ltcf-terminal-records.json",
+          "canonical_blob": "b71cba3acf1f7c17b15c0f60714418659c5b63ff"
+        },
+        {
+          "rule_id": "MA-CII-VALIDITY-30D",
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-validity-30d.json",
+          "canonical_blob": "c572b5cc971d78a53013bb7c24f181c30e389afc"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-partial-fill-pathway-limits.json",
+          "canonical_blob": "638eb9642d75e2cf4a866034f60c75ec1fc6f5b6"
+        },
+        {
+          "rule_id": "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
+          "content_version": 1,
+          "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-opioid-partial-fill-notation.json",
+          "canonical_blob": "687b806896eae18da3d5cca9516dbf8b476b6a3b"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER",
+          "content_version": 1,
+          "content_hash": "e27c95fcc2ee6c10bcdfce2af11412ed0e35092994649e5231aef3279d262e26",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-partial-fill-address-trigger.json",
+          "canonical_blob": "7708f1f02b8fe2bd738285acb6c6ebfa62a53681"
+        },
+        {
+          "rule_id": "FED-CII-PRESCRIBER-PARTIAL-FILL-RECORD",
+          "content_version": 1,
+          "content_hash": "134f333bdf382fa73dcf2f0775919ebd8b491315682d11efca2894e66f271133",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-prescriber-partial-fill-record.json",
+          "canonical_blob": "6776f9b21f6a11829c3a29c461988263cbc253f2"
+        },
+        {
+          "rule_id": "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+          "content_version": 1,
+          "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cs-partial-remainder-no-transfer.json",
+          "canonical_blob": "f8fca116700cc5973106cf205233ee3924f1a63b"
+        },
+        {
+          "rule_id": "MA-OUTSTATE-CII-FILL-WINDOW",
+          "content_version": 1,
+          "content_hash": "d7e94e4062dad0c035d4d63f27e7bd11c46c1540005da6e80f3258eb0006748f",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-outstate-cii-fill-window.json",
+          "canonical_blob": "828b3149b441e85a1131ab1ed6737ea2df3aab6a"
+        },
+        {
+          "rule_id": "MA-RX-DATE-COUNTING",
+          "content_version": 1,
+          "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-rx-date-counting.json",
+          "canonical_blob": "f9f9a0ee37ad97aac693b689e24dd17da8ebc9ea"
+        },
+        {
+          "rule_id": "MA-ISCP-DISPENSING-EXCLUSIONS",
+          "content_version": 1,
+          "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-iscp-dispensing-exclusions.json",
+          "canonical_blob": "9a8e8a605bd157c572197576c8bcde05a0581fed"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0011",
+          "question_hash": "ebe1d835c312f6005f85c60c457f5e6ffe57f0dc0af24ddb78418ceb67a15afe",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0011.json",
+          "canonical_blob": "a4a0b5116724bb9d03dfa6063138a14d9d10cd89"
+        },
+        {
+          "question_id": "MA-Q-0012",
+          "question_hash": "218f8940f7ffbc3671f6a49499105caa44ed9a2fe4ec4b84c3289b2253b3f81d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0012.json",
+          "canonical_blob": "b64fee88c2963adb994fb9a0703df0ccfbd0b079"
+        },
+        {
+          "question_id": "MA-Q-0021",
+          "question_hash": "6b63f495f16e1ecee7b1dea3900ada1d8fa4d1206677d40a1321fefde6cc775a",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0021.json",
+          "canonical_blob": "ed5e7c0b5c5962aae853ab6f40f7d48ad2e6cd89"
+        },
+        {
+          "question_id": "MA-Q-0094",
+          "question_hash": "c4aa86b07636293511ec5747c9d7c612f4e87ac506355cba1320b51b47a0efc2",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0094.json",
+          "canonical_blob": "9f58a9c067e22f79311312d961a495ecfedf4852"
+        },
+        {
+          "question_id": "MA-Q-0160",
+          "question_hash": "d9a5f69a37bb65e78636ad04aeadaf334fd9706b285cad3879d703f8e6550f40",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0160.json",
+          "canonical_blob": "c6450be74c75ff2f21ee8fe09475ee3095f38a4c"
+        },
+        {
+          "question_id": "MA-Q-0161",
+          "question_hash": "5d1fa858cf66947e5e9c8a726512ba9fb9243dc2f28b3f83d740968b152465ae",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0161.json",
+          "canonical_blob": "94b51dab666401218b48f4b9bcff82320bcb1004"
+        },
+        {
+          "question_id": "MA-Q-0401",
+          "question_hash": "bff4c9ae13a2b123c3214de18d5bf275b533662670771ea910baa72e5bf1811d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0401.json",
+          "canonical_blob": "934b3607aca3e10eafd5a6c047e3858d2363b550"
+        },
+        {
+          "question_id": "MA-Q-0432",
+          "question_hash": "d15fb631ed0ef85081fd7ece56b05a634db9ee9d25c5add85d9fe8b93ae5e0e5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0432.json",
+          "canonical_blob": "4383d3a738e5f2b083f7baac5dcb71e70f182d85"
+        }
+      ]
+    },
+    "SG-FED-MA-INTERACTION": {
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-partial-patient.json",
+          "canonical_blob": "72bb9b5836a8dd48ac2999e382e07f3ae33ce959"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-FILL-NOTATION",
+          "content_version": 2,
+          "content_hash": "e98d6152f0f8c1b0f72b8921f00d630202a8559c11415c71a6b75baf9b30f250",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cii-partial-fill-notation.json",
+          "canonical_blob": "f2a59b5e8f738b969ce49d6d19cd7c8cd019b1b7"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-partial-fill-pathway-limits.json",
+          "canonical_blob": "638eb9642d75e2cf4a866034f60c75ec1fc6f5b6"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-ADDRESS-TRIGGER",
+          "content_version": 1,
+          "content_hash": "e27c95fcc2ee6c10bcdfce2af11412ed0e35092994649e5231aef3279d262e26",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-partial-fill-address-trigger.json",
+          "canonical_blob": "7708f1f02b8fe2bd738285acb6c6ebfa62a53681"
+        },
+        {
+          "rule_id": "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+          "content_version": 1,
+          "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cs-partial-remainder-no-transfer.json",
+          "canonical_blob": "f8fca116700cc5973106cf205233ee3924f1a63b"
+        },
+        {
+          "rule_id": "MA-CII-VALIDITY-30D",
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-validity-30d.json",
+          "canonical_blob": "c572b5cc971d78a53013bb7c24f181c30e389afc"
+        },
+        {
+          "rule_id": "MA-RX-DATE-COUNTING",
+          "content_version": 1,
+          "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-rx-date-counting.json",
+          "canonical_blob": "f9f9a0ee37ad97aac693b689e24dd17da8ebc9ea"
+        },
+        {
+          "rule_id": "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
+          "content_version": 1,
+          "content_hash": "a793b54b9bb6f01f7f982133e74f0609faa521fe3a407fdd489d645c692841b5",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cii-opioid-partial-fill-notation.json",
+          "canonical_blob": "687b806896eae18da3d5cca9516dbf8b476b6a3b"
+        },
+        {
+          "rule_id": "FED-CS-REFILL-III-IV",
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-ciii-civ-refill.json",
+          "canonical_blob": "6610c2a0153c252cefbee4e834a9fdf4f3cf6c06"
+        },
+        {
+          "rule_id": "MA-RX-CV-REFILL",
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cv-refill.json",
+          "canonical_blob": "a1bcd7e98fa415d8fe047260530463494b5e94d5"
+        },
+        {
+          "rule_id": "MA-ISCP-DISPENSING-EXCLUSIONS",
+          "content_version": 1,
+          "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-iscp-dispensing-exclusions.json",
+          "canonical_blob": "9a8e8a605bd157c572197576c8bcde05a0581fed"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0021",
+          "question_hash": "6b63f495f16e1ecee7b1dea3900ada1d8fa4d1206677d40a1321fefde6cc775a",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0021.json",
+          "canonical_blob": "ed5e7c0b5c5962aae853ab6f40f7d48ad2e6cd89"
+        },
+        {
+          "question_id": "MA-Q-0401",
+          "question_hash": "bff4c9ae13a2b123c3214de18d5bf275b533662670771ea910baa72e5bf1811d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0401.json",
+          "canonical_blob": "934b3607aca3e10eafd5a6c047e3858d2363b550"
+        }
+      ]
+    },
+    "SG-CIII-V-REFILL-TRANSFER": {
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CS-REFILL-III-IV",
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-ciii-civ-refill.json",
+          "canonical_blob": "6610c2a0153c252cefbee4e834a9fdf4f3cf6c06"
+        },
+        {
+          "rule_id": "FED-CS-TRANSFER-REFILL",
+          "content_version": 1,
+          "content_hash": "040cd647fd90b066b9417c9baced11ebeda0801da56a8193ff6968aa74a34de5",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cs-transfer-refill.json",
+          "canonical_blob": "3a349de74a176e8c525dafa62d652697d3f3d2e1"
+        },
+        {
+          "rule_id": "MA-RX-CV-REFILL",
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cv-refill.json",
+          "canonical_blob": "a1bcd7e98fa415d8fe047260530463494b5e94d5"
+        },
+        {
+          "rule_id": "MA-RX-TRANSFER",
+          "content_version": 2,
+          "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-rx-transfer.json",
+          "canonical_blob": "98b999866526745ef8b06a6ca29b34e82fa19a9d"
+        },
+        {
+          "rule_id": "FED-EPCS-TRANSFER",
+          "content_version": 1,
+          "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-epcs-transfer.json",
+          "canonical_blob": "be6a00a859a958aa265b71c80bae66c19d331403"
+        },
+        {
+          "rule_id": "MA-SCHEDULE-VI",
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-schedule-vi.json",
+          "canonical_blob": "f15f027b8ff88e2cec90d588ab5611fe6c4aa07b"
+        },
+        {
+          "rule_id": "MA-SCHEDULE-VI-VALIDITY",
+          "content_version": 1,
+          "content_hash": "efc932e4118e6457a82f447f29b2bedfe8c869759917648864d2baf4944132ec",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-schedule-vi-validity.json",
+          "canonical_blob": "7aa3cf6fdd803eff7e209d3ce6637278703240b9"
+        },
+        {
+          "rule_id": "MA-CS-REFILL-AUTHORIZATION",
+          "content_version": 1,
+          "content_hash": "4b89a24b17a6a642a9ec9e4a4fe7d0e9a219b2a2e6bcae287add935fb44a5067",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-cs-refill-authorization.json",
+          "canonical_blob": "74e60bb1481f4de777fa44e36162b644cd09b8e3"
+        },
+        {
+          "rule_id": "MA-SCHEDULES-FEDERAL-INCORPORATION",
+          "content_version": 1,
+          "content_hash": "c511c47d1faddf7b96106d6287d628fc8e090e133402134fe4c9055cbd48b323",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-schedules-federal-incorporation.json",
+          "canonical_blob": "b0f0a9184c2f8e2af15719c33fcb6354606cf0a6"
+        },
+        {
+          "rule_id": "MA-RX-DATE-COUNTING",
+          "content_version": 1,
+          "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-rx-date-counting.json",
+          "canonical_blob": "f9f9a0ee37ad97aac693b689e24dd17da8ebc9ea"
+        },
+        {
+          "rule_id": "FED-CS-TRANSFER-RECORDS",
+          "content_version": 1,
+          "content_hash": "812eac9b5c9b8b7ec9a33927a7a23a18b1e66bbbff687343c588ed21b1ad97bd",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cs-transfer-records.json",
+          "canonical_blob": "c9011ac0673496de222a70a97ba800173b67757d"
+        },
+        {
+          "rule_id": "MA-ISCP-DISPENSING-EXCLUSIONS",
+          "content_version": 1,
+          "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/ma-iscp-dispensing-exclusions.json",
+          "canonical_blob": "9a8e8a605bd157c572197576c8bcde05a0581fed"
+        },
+        {
+          "rule_id": "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+          "content_version": 1,
+          "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "canonical_path": "data/rules/fed-cs-partial-remainder-no-transfer.json",
+          "canonical_blob": "f8fca116700cc5973106cf205233ee3924f1a63b"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0120",
+          "question_hash": "67565e6e874baf3c5981573f0856de87347b50ff66d9e910c0e6ec8c9c32b7d5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0120.json",
+          "canonical_blob": "316ec2c6f1a6601b3ed4a4492cc4feb02b296472"
+        },
+        {
+          "question_id": "MA-Q-0397",
+          "question_hash": "bc197ca3617e7bb10e510dcf7d6403d88d997429aff55895fd26c7b137d6ea28",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0397.json",
+          "canonical_blob": "67185bab7717c02519d6424f6161677adc39832d"
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "section_id": "SG-CII-LIFECYCLE",
+      "section_hash": "0a89087ba5869e6692864fd5496f11f80801e7c927584cdcca093e90a83b5a4a",
+      "disposition": "KEEP",
+      "severity": "Low",
+      "criteria": {
+        "paraphrase_fidelity": "PASS",
+        "material_exceptions": "PASS",
+        "ma_vs_federal_distinctions": "PASS",
+        "actor_and_scope": "PASS",
+        "deadlines": "PASS",
+        "forms": "PASS",
+        "decision_logic": "PASS",
+        "overgeneralization": "PASS",
+        "unsupported_propositions": "PASS",
+        "practice_question_mapping": "PASS",
+        "study_usefulness_without_legal_distortion": "PASS"
+      },
+      "findings": [
+        {
+          "severity": "Low",
+          "criterion": "material_exceptions",
+          "location": "quick_review[5].text (repeated at exceptions[3].text, decision_logic[6].action, timing_deadlines[6].consequence, retrieval_prompts[11].answer and worked_examples[1].steps[3])",
+          "problem": "The section states without qualification that a Schedule II prescription from an out-of-state practitioner who holds no M.G.L. c. 94C registration can be filled in Massachusetts only under s. 18(d) or s. 18(d1/2), and only if it was issued within the preceding five days. Section 18(d1/2) contains two later provisos under which a Massachusetts retail pharmacy may fill a narcotic Schedule II prescription without that five-day sentence applying: one for prescriptions received by mail or commercial carrier and delivered to a verified address in the out-of-state residence of the patient, and one for patients admitted to a long-term care facility in Maine or a contiguous state, delivered by a courier employed or contracted by the pharmacy. Neither proviso carries a five-day issue-date condition.",
+          "rationale": "The five-day sentence in s. 18(d1/2) reads that the subsection shall only apply to authorizations for the filling of prescriptions within the commonwealth, issued within the preceding 5 days; the provisos permit a different activity (interstate delivery to an out-of-state patient or an out-of-state long-term care facility) rather than a counter dispensing to a patient in Massachusetts. Every fact pattern in the section is a counter presentation in Massachusetts, and on those facts the section's statement is correct and its answer is right. The interstate-delivery provisos fall outside the section's declared scope (Schedule II partial fills and the Massachusetts 30-day ceiling), so a candidate applying the section to Massachusetts facts is not misled. Recorded as a Low-severity incompleteness rather than a defect; the criterion stands as PASS.",
+          "authorities": [
+            {
+              "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+              "exact_section": "M.G.L. c. 94C, s. 18(d1/2), closing provisos",
+              "checked_date": "2026-09-11"
+            }
+          ]
+        }
+      ],
+      "authorities_checked": [
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12",
+          "exact_section": "21 CFR 1306.12(a)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "exact_section": "21 CFR 1306.13(a), (b)(1)-(b)(5), (c)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+          "exact_section": "21 CFR 1306.08(e)-(h)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.25",
+          "exact_section": "21 CFR 1306.25(a), (b)(1), (e)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22",
+          "exact_section": "21 CFR 1306.22(a), (c)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "exact_section": "M.G.L. c. 94C, s. 18(a), (d), (d1/2), (d3/4)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+          "exact_section": "M.G.L. c. 94C, s. 22(c)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "exact_section": "M.G.L. c. 94C, s. 23(a)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "exact_section": "105 CMR 721.055(A), (B), (C)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "exact_section": "247 CMR 9.04(10), 9.04(15)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.federalregister.gov/documents/2023/07/27/2023-15847/transfer-of-electronic-prescriptions-for-schedules-ii-v-controlled-substances-between-pharmacies-for",
+          "exact_section": "88 FR 48365 (July 27, 2023), Partial Fills comment response",
+          "checked_date": "2026-09-11"
+        }
+      ],
+      "practice_mapping_verdict": "PASS",
+      "summary": "Verified every proposition against primary sources. 21 CFR 1306.13(a) supplies the 72-hour stock-shortage remainder and the quantity-supplied notation; 1306.13(b)(1) the four conditions, (b)(2) the 30-day-from-writing remainder with the 72-hour emergency-oral exception, (b)(3) the practitioner's conditional per-fill specification, (b)(4) the requester categories and the cap on a patient-side request, and (b)(5)(i)/(ii) the two notation regimes; 1306.13(c) the 60-day LTCF and terminal-illness outer limit, the terminally-ill / LTCF-patient notation whose absence deems the fill a violation of the Act, the four per-fill record elements, and the shared pharmacist and prescriber responsibility. M.G.L. c. 94C, s. 23(a) reads exactly as quoted: a written or electronic prescription for a controlled substance in Schedule II shall become invalid 30 days after the date of issuance, with no LTCF or terminal-illness carve-out. Section 18(d3/4) is reproduced faithfully on all five of its operative points, and 105 CMR 721.055(A) does trigger the five-day initial partial-fill limit off the prescriber's address on the prescription, counted in calendar days, so the section's careful separation of the statutory and regulatory triggers is correct, including worked_examples[1], which correctly holds that the regulation still bars the partial fill even where the prescriber also holds a Massachusetts registration. Section 22(c) does place the opioid partial-fill notation on the prescriber as prescription content. Day counting under 247 CMR 9.04(10) is applied correctly (1 March issue, 31 March is day 30, 12 April is day 42). The same-pharmacy result is correctly attributed to both sovereigns, DEA's statement in 88 FR 48365 being verbatim on the point. All eight mapped practice questions (MA-Q-0011, 0012, 0021, 0094, 0160, 0161, 0401, 0432) are answerable from the section and none is contradicted by it; MA-Q-0160's 60-day key is expressly reconciled by the section's rule that 60 days answers only a federal-law-alone question. One Low-severity incompleteness recorded about the s. 18(d1/2) interstate-delivery provisos, which fall outside the declared scope. Publishable as it stands."
+    },
+    {
+      "section_id": "SG-FED-MA-INTERACTION",
+      "section_hash": "5dfc9fb4383b4bc1e6718bf4ca4dbcf2683d7efbcf710283a6af76adff2b11d3",
+      "disposition": "KEEP",
+      "severity": "Low",
+      "criteria": {
+        "paraphrase_fidelity": "PASS",
+        "material_exceptions": "PASS",
+        "ma_vs_federal_distinctions": "PASS",
+        "actor_and_scope": "PASS",
+        "deadlines": "PASS",
+        "forms": "PASS",
+        "decision_logic": "PASS",
+        "overgeneralization": "PASS",
+        "unsupported_propositions": "PASS",
+        "practice_question_mapping": "PASS",
+        "study_usefulness_without_legal_distortion": "PASS"
+      },
+      "findings": [
+        {
+          "severity": "Low",
+          "criterion": "unsupported_propositions",
+          "location": "orientation[0].text (repeated at worked_examples[2].steps[2], retrieval_prompts[1].answer, decision_logic[4].action and comparison_tables[0].rows[0].cells[3])",
+          "problem": "The section states as a settled conclusion that a Massachusetts Schedule II opioid prescription issued without the M.G.L. c. 94C, s. 22(c) notation was not written in accordance with State law, so the federal partial-fill permission in 21 CFR 1306.13(b)(1) is not available on the prescription as it stands until the prescriber cures the omission. No agency has said so; it is the section's own construction of 1306.13(b)(1)(ii).",
+          "rationale": "The construction is textually grounded: 1306.13(b)(1)(ii) requires that the prescription be written and filled in accordance with the Act, this chapter, and State law; s. 22(c) is a State-law requirement about what the prescription must contain; and s. 18(d) and s. 18(d1/2) elsewhere require an out-of-state prescription to be issued in the manner prescribed in section 22. The section also states the counter-proposition correctly, that the patient's s. 18(d3/4) right is not conditional on the notation, and its operational instruction (contact the prescriber, then dispense the lesser quantity; do not refuse and do not fill in full over the request) is the safe answer under both sovereigns. The inference is therefore supported and non-distorting, and is recorded as a Low-severity interpretive extension presented without hedging rather than as an unsupported proposition; the criterion stands as PASS.",
+          "authorities": [
+            {
+              "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+              "exact_section": "21 CFR 1306.13(b)(1)(ii)",
+              "checked_date": "2026-09-11"
+            },
+            {
+              "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+              "exact_section": "M.G.L. c. 94C, s. 22(c)",
+              "checked_date": "2026-09-11"
+            },
+            {
+              "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+              "exact_section": "M.G.L. c. 94C, s. 18(d3/4)",
+              "checked_date": "2026-09-11"
+            }
+          ]
+        }
+      ],
+      "authorities_checked": [
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "exact_section": "21 CFR 1306.13(b)(1), (b)(2), (b)(4), (b)(5)(ii)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22",
+          "exact_section": "21 CFR 1306.22(a), (c)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+          "exact_section": "21 CFR 1306.08(e), (f)(3), (g)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.25",
+          "exact_section": "21 CFR 1306.25(a), (e)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "exact_section": "M.G.L. c. 94C, s. 18(a), (d), (d1/2), (d3/4)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+          "exact_section": "M.G.L. c. 94C, s. 22(c)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "exact_section": "M.G.L. c. 94C, s. 23(a)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "exact_section": "247 CMR 9.04(10), 9.04(13), 9.04(15)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "exact_section": "105 CMR 721.055(A)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.federalregister.gov/documents/2023/07/27/2023-15847/transfer-of-electronic-prescriptions-for-schedules-ii-v-controlled-substances-between-pharmacies-for",
+          "exact_section": "88 FR 48365 (July 27, 2023), Partial Fills comment response",
+          "checked_date": "2026-09-11"
+        }
+      ],
+      "practice_mapping_verdict": "PASS",
+      "summary": "The four conditions of 21 CFR 1306.13(b)(1) are reproduced exactly, including the section's central point that (b)(1)(i) asks only for an absence of State prohibition rather than affirmative State permission. The reading that (b)(2) times only the remaining portions and not the first dispensing is correct on the regulation's face, and the Massachusetts limits the section puts in that gap are correct: s. 23(a)'s 30-day invalidity, 247 CMR 9.04(10)'s counting rule, s. 18(d3/4)'s five-day limit on the initial partial dispensing of a prescription filled under s. 18(d) or s. 18(d1/2), and 105 CMR 721.055(A)'s address-based trigger. The refill comparison is exact: 21 CFR 1306.22(a) states six months and five refills for Schedules III and IV only, 247 CMR 9.04(13) states the identical pair for Schedule V only, and 247 CMR 9.04(15) removes 9.04(13), along with 9.04(4), (5), (6), (9), (10), (12) and (14), from institutional sterile compounding pharmacies. Attribution to sovereigns is right throughout, including the same-pharmacy remainder result, which both sovereigns reach: DEA stated in 88 FR 48365 that no DEA regulation permits a partially-filled controlled substance prescription to be transferred from one DEA-registered pharmacy to another for dispensing of the remaining portion. Both mapped practice questions (MA-Q-0021, MA-Q-0401) are answerable from the section and neither is contradicted; MA-Q-0401's key, that the five-day limit reaches only the out-of-state pathways, is directly supported on its Massachusetts-prescriber facts. One Low-severity finding records the section's own interpretive extension of 1306.13(b)(1)(ii) to a missing s. 22(c) notation, which is textually supported and operationally safe. Publishable as it stands."
+    },
+    {
+      "section_id": "SG-CIII-V-REFILL-TRANSFER",
+      "section_hash": "f35cfc9b515844226b602ca3b28a901afa61980df6dcbcd4bc91f175f5251269",
+      "disposition": "KEEP",
+      "severity": "None",
+      "criteria": {
+        "paraphrase_fidelity": "PASS",
+        "material_exceptions": "PASS",
+        "ma_vs_federal_distinctions": "PASS",
+        "actor_and_scope": "PASS",
+        "deadlines": "PASS",
+        "forms": "PASS",
+        "decision_logic": "PASS",
+        "overgeneralization": "PASS",
+        "unsupported_propositions": "PASS",
+        "practice_question_mapping": "PASS",
+        "study_usefulness_without_legal_distortion": "PASS"
+      },
+      "findings": [],
+      "authorities_checked": [
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22",
+          "exact_section": "21 CFR 1306.22(a)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.25",
+          "exact_section": "21 CFR 1306.25(a), (b)(1)-(b)(5), (c), (d), (e)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+          "exact_section": "21 CFR 1306.08(e), (f), (g), (h), (i)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "exact_section": "247 CMR 9.04(10), 9.04(12), 9.04(13), 9.04(15), 9.14(1)-(4)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "exact_section": "247 CMR 8.04(4)(d)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download",
+          "exact_section": "105 CMR 700.002(A)-(F)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section2",
+          "exact_section": "M.G.L. c. 94C, s. 2(a), (a1/2)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "exact_section": "M.G.L. c. 94C, s. 23(f)",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+          "exact_section": "M.G.L. c. 94C, s. 1, definition of Controlled substance",
+          "checked_date": "2026-09-11"
+        },
+        {
+          "official_url": "https://www.federalregister.gov/documents/2023/07/27/2023-15847/transfer-of-electronic-prescriptions-for-schedules-ii-v-controlled-substances-between-pharmacies-for",
+          "exact_section": "88 FR 48365 (July 27, 2023), background and Partial Fills comment response",
+          "checked_date": "2026-09-11"
+        }
+      ],
+      "practice_mapping_verdict": "PASS",
+      "summary": "Every figure, actor and record requirement checks out against the text. 21 CFR 1306.22(a) bars filling as well as refilling more than six months after issue for Schedules III and IV, so the section's insistence that the six-month bar is not a refill-only limit is correct; 247 CMR 9.04(13) supplies the identical pair for Schedule V, which the federal provision does not reach, and 247 CMR 9.04(15) removes 9.04(10), (12) and (13) from institutional sterile compounding pharmacies. The two federal transfer pathways are distinguished correctly: 1306.25(a) is one-time only for refill dispensing of Schedule III-V prescription information with the shared real-time online database alternative, (b)(1) requires direct pharmacist-to-pharmacist communication, (b)(2)-(b)(5) match the VOID, transfer and history entries the section lists, (c) sets two years from the date of last refill, (d) holds shared-record pharmacies to the manual information requirements, and (e) conditions the whole procedure on State law; 1306.08(e) reaches Schedules II-V for initial dispensing between retail pharmacies at the patient's request on a one-time basis with authorized refills travelling along, (f)(1)-(f)(6) require the electronic, unaltered, pharmacist-to-pharmacist form and the transfer entries, (g) supplies the State-law condition and (h) two years from the date of transfer at both pharmacies. The claim that a never-dispensed paper prescription has no federal transfer pathway matches DEA's own account in 88 FR 48365. The Schedule VI analysis is sound: M.G.L. c. 94C, s. 2(a) and 105 CMR 700.002(A)-(F) put Massachusetts Schedules I-V on the federal lists and Schedule VI on all other prescription drugs, so 1306.25 cannot reach a Schedule VI drug; 247 CMR 9.14(4)(a)-(c) and 9.04(12) say exactly what the section says, including the 14-day or smallest-unit-of-use professional-judgment supply; s. 23(f) reaches Schedule VI through the s. 1 definition of controlled substance; and 247 CMR 8.04(4)(d) permits a certified pharmacy technician to perform prescription transfers between pharmacies for prescriptions issued for controlled substances in Schedule VI only, with the approval of the pharmacist on duty. The four worked examples reach the right result on their own arithmetic. Both mapped practice questions (MA-Q-0120, MA-Q-0397) are answerable from the section and neither is contradicted. Nothing wrong found; publishable as it stands."
+    }
+  ]
+}

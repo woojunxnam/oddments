@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SUPPORT-PERSONNEL",
-  "content_version": 1,
-  "content_hash": "c5efa0cfc70691d7e47780ef8ee864dbe31485c1fe0236337425876c272ad471",
+  "content_version": 2,
+  "content_hash": "b6ffb7ee6a7fb05e4009cbfd53c12f7b62b7396c38d86d5e16cd147a10033f82",
   "title": "Massachusetts Pharmacy Support Personnel: Supervisory Ratios, Identification and Schedule II Handling",
   "areas": [
     1
@@ -24,7 +24,9 @@
     "MA-SUPPORT-DOCUMENTATION-DUTY",
     "MA-TECH-CII",
     "MA-CII-SUPPORT-HANDLING",
-    "MA-MOR-TEMP-ABSENCE"
+    "MA-MOR-TEMP-ABSENCE",
+    "MA-TECHNICIAN-DEFINITIONS",
+    "MA-CERT-TECH-LAPSE"
   ],
   "verified_rule_dependencies": {
     "MA-SUPPORT-PERSONNEL-RATIO": {
@@ -50,13 +52,22 @@
     "MA-MOR-TEMP-ABSENCE": {
       "content_version": 1,
       "content_hash": "999bd917cd91b8f2cf6323d09512488aa734824b1411655b88175664ed33fc55"
+    },
+    "MA-TECHNICIAN-DEFINITIONS": {
+      "content_version": 1,
+      "content_hash": "04e641581e7391d9c4b0765ea53dba7d28afc291c2737839ef561e7b6e18dccf"
+    },
+    "MA-CERT-TECH-LAPSE": {
+      "content_version": 1,
+      "content_hash": "ecea84ee5125a4c074ff4604f0f3d85993dd0157a54d2844016433722e89a0f8"
     }
   },
   "orientation": [
     {
-      "text": "Massachusetts sizes a pharmacy's support staff by composition rather than by headcount, so the first move in any ratio question is to decide who is in the count at all. 247 CMR 8.06(3)(a) addresses a pharmacist utilizing pharmacy interns, certified pharmacy technicians, pharmacy technicians, and pharmacy technician trainees to assist in filling prescriptions, and those four categories are the whole of the counted population. 247 CMR 8.06(3)(b) then removes sales clerks, messengers, delivery personnel, secretaries and any other persons who do not fall within those four definitions, but it removes them on a condition: the exclusion holds as long as such persons are not supporting the pharmacist in any professional capacity. The exclusion therefore has two limbs, one about the credential the person holds and one about what the person is actually doing, and a front-store employee drawn into prescription work during a rush fails the second limb at the moment the work changes. Nothing in the provision keys the exclusion to the job title printed on a schedule.",
+      "text": "Massachusetts sizes a pharmacy's support staff by composition rather than by headcount, so the first move in any ratio question is to decide who is in the count at all. 247 CMR 8.06(3)(a) addresses a pharmacist utilizing pharmacy interns, certified pharmacy technicians, pharmacy technicians, and pharmacy technician trainees to assist in filling prescriptions, so the count starts with the members of those four categories whom the pharmacist is actually using for that work. 247 CMR 8.06(3)(b) then provides that sales clerks, messengers, delivery personnel, secretaries and any other persons who do not fall within those four definitions shall not be included, but only as long as such persons are not supporting the pharmacist in any professional capacity. The exclusion therefore has two limbs. The first asks whether the person falls within one of the four definitions, and those definitions are not bare titles: 247 CMR 2.00 describes the pharmacy technician and the pharmacy technician trainee as individuals who perform pharmacy duties under the direct supervision of a pharmacist. The second asks what the person is actually doing, and a front-store employee drawn into prescription work during a rush fails it at the moment the work changes and is counted from then on. The same logic reaches a licensed technician assigned only to the register: the ratio counts support personnel the pharmacist is utilizing to assist in filling prescriptions, so the licence alone does not put that employee in the count, and prescription work does. Nothing in the provision keys the count to the job title printed on a schedule.",
       "rule_ids": [
-        "MA-SUPPORT-PERSONNEL-RATIO"
+        "MA-SUPPORT-PERSONNEL-RATIO",
+        "MA-TECHNICIAN-DEFINITIONS"
       ]
     },
     {
@@ -66,9 +77,11 @@
       ]
     },
     {
-      "text": "Identification is what makes that composition visible from the other side of the counter, and 247 CMR 8.00 states it four times, once for each tier. Under 247 CMR 8.01(14) a pharmacy intern shall wear a name tag which indicates the intern's name and the words pharmacy intern. Under 247 CMR 8.02(6)(a) a pharmacy technician shall wear a name tag which indicates the individual's first name and the title Pharmacy Technician. Under 247 CMR 8.03(4)(a) a pharmacy technician trainee shall wear a name tag with the individual's first name and the title Pharmacy Technician Trainee, and under 247 CMR 8.04(4)(a) a certified pharmacy technician shall wear a name tag with the individual's first name and the title Certified Pharmacy Technician. The three technician provisions are drafted in matching terms and confine the tag to the individual's first name; the intern provision is the one that asks instead for the intern's name. In every case the title stated is the title of a credential rather than a description of the work being done that shift, so the tag follows what the Board has issued to the individual and not what the pharmacy has assigned to them.",
+      "text": "Identification is what makes that composition visible from the other side of the counter, and 247 CMR 8.00 states it four times, once for each tier. Under 247 CMR 8.01(14) a pharmacy intern shall wear a name tag which indicates the intern's name and the words pharmacy intern. Under 247 CMR 8.02(6)(a) a pharmacy technician shall wear a name tag which indicates the individual's first name and the title Pharmacy Technician. Under 247 CMR 8.03(4)(a) a pharmacy technician trainee shall wear a name tag with the individual's first name and the title Pharmacy Technician Trainee, and under 247 CMR 8.04(4)(a) a certified pharmacy technician shall wear a name tag with the individual's first name and the title Certified Pharmacy Technician. The three technician provisions are drafted in matching terms and confine the tag to the individual's first name; the intern provision is the one that asks instead for the intern's name. In every case the title stated is the title of a credential rather than a description of the work being done that shift, so the tag follows the credential the individual actually holds and not what the pharmacy has assigned. For the certified tier that credential is not a separate Board licence: under 247 CMR 8.04(1) and (2) and the 247 CMR 2.00 definition, a certified pharmacy technician is a pharmacy technician holding the Board's pharmacy technician licence who is currently certified by a Board-approved certifying body. A current certified pharmacy technician therefore wears the 247 CMR 8.04(4)(a) tag, and under 247 CMR 8.04(3) one whose certification has lapsed must use the title pharmacy technician.",
       "rule_ids": [
-        "MA-SUPPORT-NAME-TAGS"
+        "MA-SUPPORT-NAME-TAGS",
+        "MA-TECHNICIAN-DEFINITIONS",
+        "MA-CERT-TECH-LAPSE"
       ]
     },
     {
@@ -536,10 +549,10 @@
         "Take the surname decision first. 247 CMR 8.02(6)(a), 247 CMR 8.03(4)(a) and 247 CMR 8.04(4)(a) each require the individual's first name on the tag, so a surname-only badge does not satisfy any of the three technician provisions.",
         "Check the intern tier separately, because it is drafted differently: 247 CMR 8.01(14) calls for the intern's name and the words pharmacy intern rather than a first name and a title.",
         "Take the title decision next. 247 CMR 8.03(4)(a) requires a pharmacy technician trainee to wear the title Pharmacy Technician Trainee, and each of the four provisions pairs one title with one credential.",
-        "Separate the credential from the assignment. That a trainee performs the duties of a pharmacy technician under direct supervision is a fact about the work; the tag states the credential the Board has issued, which is the trainee licence.",
+        "Separate the credential from the assignment. That a trainee performs the duties of a pharmacy technician under direct supervision is a fact about the work; the tag states the credential the individual holds, which is the trainee licence.",
         "Note what the tags are doing for the shift as a whole, since 247 CMR 8.06(3)(a) sorts the same four categories by credential, and a badge announcing the wrong tier misdescribes the very composition the ratio is calculated on."
       ],
-      "resolution": "Both decisions are wrong: the badges need the individual's first name, and the trainee's badge must read Pharmacy Technician Trainee. The error the scenario invites is treating the name tag as a description of the job being performed, when each provision ties one displayed title to one credential held.",
+      "resolution": "Both decisions are wrong for the technician tiers: every pharmacy technician, trainee and certified pharmacy technician badge needs the individual's first name, and the trainee's badge must read Pharmacy Technician Trainee. An intern's badge is measured by 247 CMR 8.01(14) instead, which asks for the intern's name and the words pharmacy intern rather than a first name. The error the scenario invites is treating the name tag as a description of the job being performed, when each provision ties one displayed title to one credential held.",
       "rule_ids": [
         "MA-SUPPORT-NAME-TAGS",
         "MA-SUPPORT-PERSONNEL-RATIO"
@@ -658,7 +671,7 @@
   ],
   "quick_review": [
     {
-      "text": "247 CMR 8.06(3)(a) counts pharmacy interns, certified pharmacy technicians, pharmacy technicians and pharmacy technician trainees whom a pharmacist is utilizing to assist in filling prescriptions.",
+      "text": "247 CMR 8.06(3)(a) counts pharmacy interns, certified pharmacy technicians, pharmacy technicians and pharmacy technician trainees whom a pharmacist is utilizing to assist in filling prescriptions, and 247 CMR 8.06(3)(b) keeps anyone else out of the count only while that person gives the pharmacist no professional support.",
       "rule_ids": [
         "MA-SUPPORT-PERSONNEL-RATIO"
       ]
@@ -747,7 +760,7 @@
   "decision_logic": [
     {
       "condition": "A ratio question gives a roster and asks whether the pharmacist is over the limit.",
-      "action": "Count only pharmacy interns, certified pharmacy technicians, pharmacy technicians and pharmacy technician trainees assisting in filling prescriptions under 247 CMR 8.06(3)(a), then test the composition conditions rather than the headcount.",
+      "action": "Count the pharmacy interns, certified pharmacy technicians, pharmacy technicians and pharmacy technician trainees the pharmacist is utilizing to assist in filling prescriptions under 247 CMR 8.06(3)(a), and add anyone else who is supporting the pharmacist in any professional capacity, because 247 CMR 8.06(3)(b) excludes persons outside the four definitions only while they give no such support. Then test the composition conditions rather than the headcount.",
       "rule_ids": [
         "MA-SUPPORT-PERSONNEL-RATIO"
       ]
@@ -768,9 +781,11 @@
     },
     {
       "condition": "A question turns on what a badge should say.",
-      "action": "Identify the credential the Board has issued to that individual and read the matching provision: 247 CMR 8.01(14), 8.02(6)(a), 8.03(4)(a) or 8.04(4)(a). Do not reason from the duties being performed.",
+      "action": "Identify the tier the individual actually holds, remembering that the certified tier is the Board pharmacy technician licence plus current certification by a Board-approved certifying body, and read the matching provision: 247 CMR 8.01(14), 8.02(6)(a), 8.03(4)(a) or 8.04(4)(a). Do not reason from the duties being performed, and treat a lapsed certification as returning the individual to the pharmacy technician title.",
       "rule_ids": [
-        "MA-SUPPORT-NAME-TAGS"
+        "MA-SUPPORT-NAME-TAGS",
+        "MA-TECHNICIAN-DEFINITIONS",
+        "MA-CERT-TECH-LAPSE"
       ]
     },
     {
@@ -855,12 +870,6 @@
       "text": "Where the Manager of Record is unexpectedly not available, 247 CMR 9.23(5)(c) substitutes another registered pharmacist as the person who performs the controlled substances inventory.",
       "rule_ids": [
         "MA-MOR-TEMP-ABSENCE"
-      ]
-    },
-    {
-      "text": "Apply any narrower setting-specific Board policy where a question expressly concerns an automated dispensing device or another specially regulated workflow, rather than the general 247 CMR 8.05 allocation.",
-      "rule_ids": [
-        "MA-TECH-CII"
       ]
     }
   ],
@@ -1090,8 +1099,17 @@
       ]
     },
     {
-      "text": "Letting a name tag describe the work rather than the credential. Each of 247 CMR 8.01(14), 8.02(6)(a), 8.03(4)(a) and 8.04(4)(a) ties one displayed title to one credential the Board has issued.",
+      "text": "Letting a name tag describe the work rather than the credential. Each of 247 CMR 8.01(14), 8.02(6)(a), 8.03(4)(a) and 8.04(4)(a) ties one displayed title to one credential the individual holds; for the certified tier that credential is the Board pharmacy technician licence plus current certification by a Board-approved certifying body, not a separate Board licence.",
       "rule_ids": [
+        "MA-SUPPORT-NAME-TAGS",
+        "MA-TECHNICIAN-DEFINITIONS"
+      ]
+    },
+    {
+      "text": "Keeping the Certified Pharmacy Technician tag on after a certification lapses. Under 247 CMR 8.04(3) the individual must use the title pharmacy technician until the certification is current again.",
+      "rule_ids": [
+        "MA-CERT-TECH-LAPSE",
+        "MA-TECHNICIAN-DEFINITIONS",
         "MA-SUPPORT-NAME-TAGS"
       ]
     },
@@ -1180,7 +1198,7 @@
     "MA-Q-0247",
     "MA-Q-0413"
   ],
-  "last_verified": null,
-  "verification_status": "AUDIT_PENDING",
-  "independent_audit_id": null
+  "last_verified": "2026-09-11",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V8C-2026-09-11"
 }
