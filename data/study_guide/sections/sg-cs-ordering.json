@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CS-ORDERING",
-  "content_version": 1,
-  "content_hash": "10fde4eab6dfc36c65f4cc4c6e67a2575ec2dac8d88ec7b2ab63a9451fff8bfb",
+  "content_version": 2,
+  "content_hash": "15e9bfb32f416d575f5ff7efdb02bc6c68394fd9624c02174241ad7fea90bbf8",
   "title": "Ordering Schedule I and II Stock: DEA Form 222 and CSOS",
   "areas": [
     4
@@ -12,7 +12,8 @@
     "State when a DEA Form 222 or a digitally signed electronic order is required for a Schedule I or II distribution, and name the movements 21 CFR 1305.03 excepts.",
     "Read the 60-day window correctly: what it runs from, what it permits, and why it is not sixty business days.",
     "Separate a defective order from a lost one, because the two failures have different cures and leave different records.",
-    "State how long each ordering record is kept, where it is kept, and what makes an electronic copy count as separately maintained.",
+    "State how long each ordering record is kept, where it is kept, and what actually makes an electronic copy count as separately maintained.",
+    "Name the entries each side writes when a paper shipment moves: what the supplier records on the original, what the purchaser records on its copy when the containers arrive, and what a supplier outside ARCOS sends DEA.",
     "Describe CSOS as the electronic equivalent of the paper form rather than a scan of one, and identify the duties that travel with the electronic route.",
     "Name the report a purchaser owes when order forms are lost or stolen, and the one carve-out the regulation writes into it."
   ],
@@ -21,7 +22,11 @@
     "FED-FORM222-60DAY",
     "FED-FORM222-DEFECT",
     "FED-FORM222-RECORDS",
+    "FED-FORM222-RECEIPT-RECORD",
+    "FED-FORM222-SUPPLIER-COPY",
+    "FED-FORM222-WHO-MAY-FILL",
     "FED-FORM222-LOSS",
+    "FED-READILY-RETRIEVABLE",
     "FED-CSOS"
   ],
   "verified_rule_dependencies": {
@@ -41,9 +46,25 @@
       "content_version": 1,
       "content_hash": "7c04e8285a2af4de7f8b23013bc929b516e95d3aab2be3c300cf99e557f053d9"
     },
+    "FED-FORM222-RECEIPT-RECORD": {
+      "content_version": 1,
+      "content_hash": "6ebd9059024a8257c82f2111e0742fc075809aced58ee9ef48878413f7e86c5f"
+    },
+    "FED-FORM222-SUPPLIER-COPY": {
+      "content_version": 1,
+      "content_hash": "c83aff04d91eb7b46883cf4dae463ed44617a071a1aa6296199ddb444b4e878f"
+    },
+    "FED-FORM222-WHO-MAY-FILL": {
+      "content_version": 1,
+      "content_hash": "5ac27260492d0e1200925350baa699776fa634888c49ce85e6cb8f5c72a7a7cf"
+    },
     "FED-FORM222-LOSS": {
       "content_version": 2,
       "content_hash": "3cb6845491863b6691ff28e505a979343a7175f50647da556ed55037ccb169e6"
+    },
+    "FED-READILY-RETRIEVABLE": {
+      "content_version": 1,
+      "content_hash": "2ee9bbd373c71fe91147098374ac76e0b3b9ed53605a1a91da3b4c0f9c82b1f8"
     },
     "FED-CSOS": {
       "content_version": 1,
@@ -58,7 +79,7 @@
       ]
     },
     {
-      "text": "There are two routes to that order and they are alternatives, not a document and a copy of it. On the paper route the purchaser executes a DEA Form 222, the original travels to the supplier, and the purchaser keeps a copy of every executed form under 21 CFR 1305.17, together with copies of any unaccepted or defective forms and the statements attached to them. That the supplier holds the original is visible in the failure provisions themselves, since both 21 CFR 1305.15 and 21 CFR 1305.16 describe the supplier sending an original back to the purchaser. On the electronic route the purchaser signs an order with a digital signature DEA issued to the purchaser or the purchaser's agent under part 1311, and subpart C fixes the data the order must carry, including a nine-character tracking number the purchaser assigns in the format of the last two digits of the year, the letter X, and six characters of the purchaser's choosing. Scanning a completed paper form does not produce an electronic order, because an electronic order is valid only when it carries that DEA-issued digital signature.",
+      "text": "There are two routes to that order and they are alternatives, not a document and a copy of it. On the paper route the purchaser makes a copy of the original for its records and submits the original to the supplier, and 21 CFR 1305.13(a) lets that retained copy be in paper or electronic form. The purchaser keeps a copy of every executed form under 21 CFR 1305.17(a), together with copies of any unaccepted or defective forms and the statements attached to them, while 21 CFR 1305.17(b) puts the original on the other side of the transaction: the supplier retains the original of each DEA Form 222 that it has filled. That allocation is visible in the failure provisions too, since both 21 CFR 1305.15 and 21 CFR 1305.16 describe the supplier sending an original back to the purchaser. On the electronic route the purchaser signs an order with a digital signature DEA issued to the purchaser or the purchaser's agent under part 1311, and subpart C fixes the data the order must carry, including a nine-character tracking number the purchaser assigns in the format of the last two digits of the year, the letter X, and six characters of the purchaser's choosing. Scanning a completed paper form does not produce an electronic order, because an electronic order is valid only when it carries that DEA-issued digital signature.",
       "rule_ids": [
         "FED-FORM222-ORDER",
         "FED-FORM222-RECORDS",
@@ -68,9 +89,18 @@
       ]
     },
     {
-      "text": "Both routes run on the same sixty-day window, and it is sixty calendar days. 21 CFR 1305.13(b) lets a supplier fill a paper order in part and supply the balance by additional shipments within 60 days following the date of the form, and states flatly that no DEA Form 222 is valid more than 60 days after its execution by the purchaser. Subpart C sets the same window for an electronic order: it may be filled in part with the balance supplied within 60 days following the date of the order, and no order is valid more than 60 days after execution. The window is permission to finish an order already accepted, not permission to keep ordering, and once it closes the unshipped balance needs a new order rather than an extension. The same paragraph is also where the candidate learns that filling is discretionary: a supplier may fill the order if possible and if it desires to do so, and it records on the original its registration number where the purchaser has not entered it, the number of commercial or bulk containers furnished on each item, and the date the containers are shipped.",
+      "text": "Both routes run on the same sixty-day window, and it is sixty days rather than sixty business days. 21 CFR 1305.13(b) lets a supplier fill a paper order in part and supply the balance by additional shipments within 60 days following the date of the form, and states that no DEA Form 222 is valid more than 60 days after its execution by the purchaser, except as paragraph (f) of that section specifies for the Defense Supply Center. Subpart C sets the same window for an electronic order: it may be filled in part with the balance supplied within 60 days following the date of the order, and no order is valid more than 60 days after execution. The window is permission to finish an order already accepted, not permission to keep ordering, and once it closes the unshipped balance needs a new order rather than an extension. The same paragraph is also where the candidate learns that filling is discretionary: a supplier may fill the order if possible and if it desires to do so, and it records on the original its registration number where the purchaser has not entered it, the number of commercial or bulk containers furnished on each item, and the date the containers are shipped.",
       "rule_ids": [
         "FED-FORM222-60DAY",
+        "FED-CSOS"
+      ]
+    },
+    {
+      "text": "A paper order leaves entries on both sides once the goods move, and the paper route is not silent where the electronic route speaks. When the shipment arrives, 21 CFR 1305.13(e) requires the purchaser to record on its copy of the DEA Form 222 the number of commercial or bulk containers furnished on each item and the dates on which the containers are received, which is the paper counterpart of the record 21 CFR 1305.22(g) has a purchaser create and link electronically to a CSOS order. On the supplier's side 21 CFR 1305.13(d) requires the original to be retained for the supplier's files in accordance with 21 CFR 1305.17(c), and it adds a duty that catches a registrant who does not report acquisition and disposition transactions to ARCOS, such as a practitioner: that supplier must make and submit a copy of the original DEA Form 222 to DEA, forwarded at the close of the month during which the order is filled, or, where the order is filled by partial shipments, at the close of the month during which the final shipment is made or the 60-day validity period expires. A pharmacy can reach those supplier duties, because 21 CFR 1305.06 lets a purchaser who obtained a Schedule I or II substance on an order return it to the supplier of the substance with a DEA Form 222 or electronic order from that supplier, and lets a person registered to dispense Schedule II substances distribute them to another dispenser on an order in the circumstances 21 CFR 1307.11 describes. In either movement the pharmacy is the party filling the order.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD",
+        "FED-FORM222-SUPPLIER-COPY",
+        "FED-FORM222-WHO-MAY-FILL",
         "FED-CSOS"
       ]
     },
@@ -83,9 +113,10 @@
       ]
     },
     {
-      "text": "Retention is where the two routes look most alike and behave least alike, so read which rule a question is standing on. 21 CFR 1305.17 requires DEA Forms 222 to be maintained separately from all other records of the registrant and kept available for inspection for two years, and a purchaser with several registered locations keeps the executed copy and its attachments at the registered location printed on the form. Electronic copies of Forms 222 are deemed separately maintained if they are readily retrievable separately from all other records, and they may sit on a system at a location different from the registered location so long as they are readily retrievable at the registered location. Electronic orders are preserved under subpart C's own provision rather than by cross-reference to the Form 222 rule: for each order filled the purchaser retains the original signed order and all linked records for two years, along with copies of every unaccepted or defective order and each linked statement, the supplier retains its original and linked records for two years, and records held on a central server must be readily retrievable at the registered location.",
+      "text": "Retention is where the two routes look most alike and behave least alike, so read which rule a question is standing on. 21 CFR 1305.17(c) requires DEA Forms 222 to be maintained separately from all other records of the registrant and kept available for inspection for two years, and a purchaser with several registered locations keeps the executed copy and its attachments at the registered location printed on the form, though unexecuted forms are outside that sentence and may be kept elsewhere under 21 CFR 1305.12(e). The electronic half of the rule is the half candidates misread. 21 CFR 1305.17(e) does not demand a separate filing cabinet: it deems electronic copies of Forms 222 to be maintained separately if they are readily retrievable separately from all other records, and readily retrievable is a defined term. Under 21 CFR 1300.01(b) it means records kept by automatic data processing systems or other electronic or mechanized recordkeeping systems in such a manner that they can be separated out from all other records in a reasonable time, or records on which certain items are asterisked, redlined or otherwise visually identifiable apart from other items. The test is therefore what the system can produce, not where the file physically sits, and the same paragraph lets the copies live on a system at a location different from the registered location so long as they are readily retrievable at the registered location. Electronic orders are preserved under subpart C's own provision rather than by cross-reference to the Form 222 rule: for each order filled the purchaser retains the original signed order and all linked records for two years, along with copies of every unaccepted or defective order and each linked statement, the supplier retains its original and linked records for two years, and records held on a central server must be readily retrievable at the registered location.",
       "rule_ids": [
         "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE",
         "FED-CSOS"
       ]
     }
@@ -145,23 +176,47 @@
         },
         {
           "cells": [
+            "What is recorded when the goods arrive",
+            "The purchaser records on its copy the number of commercial or bulk containers furnished on each item and the dates the containers are received (21 CFR 1305.13(e))",
+            "The purchaser creates a record of the quantity of each item received and the date received, electronically linked to the original order and archived (21 CFR 1305.22(g))"
+          ],
+          "rule_ids": [
+            "FED-FORM222-RECEIPT-RECORD",
+            "FED-CSOS"
+          ]
+        },
+        {
+          "cells": [
             "Who keeps what",
-            "The purchaser retains a copy of each executed form and all copies of unaccepted or defective forms with each statement attached",
+            "The purchaser retains a copy of each executed form and all copies of unaccepted or defective forms with each statement attached (21 CFR 1305.17(a)); the supplier retains the original of each form it has filled (21 CFR 1305.17(b))",
             "The purchaser retains the original signed order and all linked records; the supplier retains each original order filled and its linked records"
           ],
           "rule_ids": [
             "FED-FORM222-RECORDS",
+            "FED-FORM222-SUPPLIER-COPY",
+            "FED-CSOS"
+          ]
+        },
+        {
+          "cells": [
+            "What the supplier owes DEA",
+            "A supplier that does not report to ARCOS, such as a practitioner, submits a copy of the original form at the close of the month in which the order is filled, or of the month of the final shipment or of the 60-day expiry (21 CFR 1305.13(d))",
+            "A copy of each filled electronic order, or a DEA-specified electronic report of it, within two business days (21 CFR 1305.29)"
+          ],
+          "rule_ids": [
+            "FED-FORM222-SUPPLIER-COPY",
             "FED-CSOS"
           ]
         },
         {
           "cells": [
             "Retention and where records sit",
-            "Maintained separately from all other records and kept available for inspection two years; electronic copies count as separate only if readily retrievable separately, and may sit elsewhere if readily retrievable at the registered location",
+            "Maintained separately from all other records and kept available for inspection two years; an electronic copy is deemed separate if it is readily retrievable separately from all other records, which 21 CFR 1300.01(b) makes a question of separating it out in a reasonable time rather than of where it is filed, and it may sit elsewhere if readily retrievable at the registered location",
             "Two years on both sides under subpart C's own preservation provision, with central-server records readily retrievable at the registered location"
           ],
           "rule_ids": [
             "FED-FORM222-RECORDS",
+            "FED-READILY-RETRIEVABLE",
             "FED-CSOS"
           ]
         }
@@ -219,10 +274,20 @@
           "cells": [
             "Two business days",
             "How long the supplier has to forward a copy of each filled electronic order, or a DEA-specified electronic report of it, to DEA",
-            "21 CFR 1305 subpart C"
+            "21 CFR 1305.29"
           ],
           "rule_ids": [
             "FED-CSOS"
+          ]
+        },
+        {
+          "cells": [
+            "Close of the month",
+            "When a supplier that does not report to ARCOS, such as a practitioner, forwards DEA its copy of a filled paper form: the month the order is filled, or, for partial shipments, the month of the final shipment or of the 60-day expiry",
+            "21 CFR 1305.13(d)"
+          ],
+          "rule_ids": [
+            "FED-FORM222-SUPPLIER-COPY"
           ]
         },
         {
@@ -321,7 +386,7 @@
       "steps": [
         "Identify which clock the facts are asking about. This is the 60-day window in 21 CFR 1305.13(b), which governs both the validity of the form and the period for shipping the balance of a partly filled order.",
         "Read the unit. The paragraph says 60 days following the date of the form, and no more than 60 days after execution by the purchaser. It says days, not business days, so the technician's count of working days is not the count the regulation uses.",
-        "Fix the start point. The window runs from the purchaser's execution of the form, and nothing in the paragraph lets a supplier, a purchaser or a back order move that date.",
+        "Fix the start point. The window runs from the purchaser's execution of the form, and neither a supplier, a purchaser nor a back order moves that date; the single exception the paragraph carries, in 21 CFR 1305.13(f), is for Defense Supply Center procurement officers and does not reach a retail pharmacy.",
         "Decide what happens to the unshipped balance. The window has closed, so the balance does not ship on the expired form; a fresh order is what puts those line items back in play."
       ],
       "resolution": "The balance may not be shipped on the original form. The error the scenario invites is reading the 60 days as 60 business days, which would still be running on day 64; the second error is treating a supplier back order as something that extends a form the regulation makes invalid by its own terms.",
@@ -362,16 +427,33 @@
       ]
     },
     {
-      "scenario": "A pharmacy scans its executed DEA Forms 222 into the same document store it uses for invoices and delivery notes, and relies on a keyword search to pull a form when an inspector asks. The same pharmacy keeps those scans on a server at the chain's head office in another state. The manager asks whether either arrangement is a problem, and whether CSOS orders can simply be filed the same way.",
+      "scenario": "A pharmacy keeps electronic copies of its executed DEA Forms 222 in the same document system it uses for invoices and delivery notes; the system indexes each document by type and can list and export every Form 222 on demand. The pharmacy also keeps that system on a server at the chain's head office in another state. Beside it, a second pharmacy files its paper Forms 222 loose in the general invoice binder. The manager asks whether any of this is a problem, and whether CSOS orders can be filed the same way.",
       "steps": [
-        "Start with the separateness requirement. 21 CFR 1305.17 requires DEA Forms 222 to be maintained separately from all other records of the registrant and kept available for inspection for two years.",
-        "Apply the electronic deeming rule to the commingled store. Electronic copies count as separately maintained only if they are readily retrievable separately from all other records, so mixing them into a general store and sweeping it by keyword does not meet the test.",
+        "Start with what the paper rule requires. 21 CFR 1305.17(c) requires DEA Forms 222 to be maintained separately from all other records of the registrant and kept available for inspection for two years, which is why the second pharmacy's loose filing in the invoice binder fails.",
+        "Read the deeming rule for electronic copies rather than importing the paper one. 21 CFR 1305.17(e) deems electronic copies to be maintained separately if they are readily retrievable separately from all other records, so sharing a system with other records is not itself the defect.",
+        "Apply the defined term. Under 21 CFR 1300.01(b) readily retrievable means the records are kept by an electronic or mechanized recordkeeping system in such a manner that they can be separated out from all other records in a reasonable time, so a system that can pull every Form 222 out on demand satisfies the test even though invoices sit beside them.",
         "Apply the off-site rule to the head-office server. Electronic copies may be stored on a system at a location different from the registered location, provided they are readily retrievable at the registered location.",
         "Answer the CSOS half on its own provision. Electronic orders are preserved under subpart C, which requires the purchaser to retain each original signed order and all linked records for two years and requires central-server records to be readily retrievable at the registered location."
       ],
-      "resolution": "The head-office server is permissible so long as retrieval at the registered location works; the commingled store is not, because readily retrievable separately is the test. The error the scenario invites is hearing readily retrievable and dropping the word separately that qualifies it, and then assuming the Form 222 preservation rule is also the rule for CSOS orders.",
+      "resolution": "The first pharmacy is compliant on both counts: a shared electronic system is acceptable because the Forms 222 can be separated out in a reasonable time, and the head-office server is acceptable because retrieval at the registered location works. The second pharmacy's loose paper filing is not, because paper forms must be maintained separately from all other records. The error the scenario invites is reading 21 CFR 1305.17(e) as a rule about where an electronic copy is stored, when the defined term makes it a rule about what the system can produce; the second error is assuming the Form 222 preservation rule is also the rule for CSOS orders.",
       "rule_ids": [
         "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE",
+        "FED-CSOS"
+      ]
+    },
+    {
+      "scenario": "A supplier's van delivers against a paper DEA Form 222 the pharmacy executed three weeks ago, bringing four of the six line items. The technician checks the cartons against the packing slip, files the delivery note with the invoices and puts the pharmacy's copy of the form back in the Form 222 file untouched, on the view that the supplier has already written the shipping entries on the original it kept.",
+      "steps": [
+        "Separate the two sets of entries. 21 CFR 1305.13(b) is about what the supplier records on the original: its registration number where the purchaser has not entered it, the number of commercial or bulk containers furnished on each item, and the date the containers are shipped.",
+        "Read the purchaser's own paragraph. 21 CFR 1305.13(e) requires the purchaser to record on its copy of the DEA Form 222 the number of commercial or bulk containers furnished on each item and the dates on which the containers are received by the purchaser, so the pharmacy's copy does not stay untouched.",
+        "Notice that the two shipments are two receipt dates. Because the order was filled in part, the balance may still arrive within 60 days following the date of the form, and the paragraph asks for the dates on which containers are received rather than a single date.",
+        "Check the electronic counterpart so the duty is not mistaken for a CSOS feature. On the electronic route 21 CFR 1305.22(g) has the purchaser create a record of the quantity of each item received and the date received, electronically linked to the original order and archived."
+      ],
+      "resolution": "The pharmacy writes the containers received and the date of receipt on its own copy of the form, and does so again when the balance arrives. The error the scenario invites is treating the supplier's entries on the original as the whole of the paperwork, which leaves the purchaser's copy with no record that the goods ever arrived.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD",
+        "FED-FORM222-60DAY",
         "FED-CSOS"
       ]
     }
@@ -421,10 +503,32 @@
       ]
     },
     {
-      "prompt": "An electronic copy of a Form 222 sits in the pharmacy's general document store. Which word in the test does that arrangement fail?",
-      "answer": "Separately. Electronic copies are deemed separately maintained only if they are readily retrievable separately from all other records.",
+      "prompt": "An electronic copy of a Form 222 sits on a system that also holds invoices. What decides whether 21 CFR 1305.17(e) is satisfied?",
+      "answer": "Whether the copies are readily retrievable separately from all other records. Sharing a system is not the test; under 21 CFR 1300.01(b) the question is whether the recordkeeping system can separate the Forms 222 out from all other records in a reasonable time.",
       "rule_ids": [
-        "FED-FORM222-RECORDS"
+        "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE"
+      ]
+    },
+    {
+      "prompt": "State the definition of readily retrievable that 21 CFR 1300.01(b) supplies.",
+      "answer": "Records kept by automatic data processing systems or other electronic or mechanized recordkeeping systems in such a manner that they can be separated out from all other records in a reasonable time, and/or records on which certain items are asterisked, redlined, or in some other manner visually identifiable apart from other items appearing on the records.",
+      "rule_ids": [
+        "FED-READILY-RETRIEVABLE"
+      ]
+    },
+    {
+      "prompt": "What does the purchaser write on its own copy of a paper DEA Form 222, and when?",
+      "answer": "The number of commercial or bulk containers furnished on each item and the dates on which the containers are received by the purchaser, under 21 CFR 1305.13(e).",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD"
+      ]
+    },
+    {
+      "prompt": "Who keeps the original of a filled paper DEA Form 222, and which suppliers must also send DEA a copy of it?",
+      "answer": "The supplier retains the original of each form it has filled under 21 CFR 1305.17(b). A supplier that is not required to report to ARCOS, such as a practitioner, must also submit a copy to DEA at the close of the month during which the order is filled, or, for partial shipments, at the close of the month of the final shipment or of the 60-day expiry.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
       ]
     },
     {
@@ -499,7 +603,7 @@
       ]
     },
     {
-      "text": "DEA Forms 222 are maintained separately from all other records of the registrant and kept available for inspection for two years, and a purchaser with several registered locations keeps the executed copy and its attachments at the registered location printed on the form.",
+      "text": "DEA Forms 222 are maintained separately from all other records of the registrant and kept available for inspection for two years, and a purchaser with several registered locations keeps the executed copy and its attachments at the registered location printed on the form; unexecuted forms are excluded from that sentence and may be kept elsewhere under 21 CFR 1305.12(e).",
       "rule_ids": [
         "FED-FORM222-RECORDS"
       ]
@@ -508,6 +612,31 @@
       "text": "Electronic copies of Forms 222 are deemed separately maintained if readily retrievable separately from all other records, and may be stored at another location provided they are readily retrievable at the registered location.",
       "rule_ids": [
         "FED-FORM222-RECORDS"
+      ]
+    },
+    {
+      "text": "Readily retrievable is defined in 21 CFR 1300.01(b) as records kept by automatic data processing or other electronic or mechanized recordkeeping systems in such a manner that they can be separated out from all other records in a reasonable time, or records on which items are asterisked, redlined or otherwise visually identifiable apart from other items, so an electronic copy that shares a system with other records can still satisfy 21 CFR 1305.17(e).",
+      "rule_ids": [
+        "FED-READILY-RETRIEVABLE",
+        "FED-FORM222-RECORDS"
+      ]
+    },
+    {
+      "text": "The purchaser records on its copy of the DEA Form 222 the number of commercial or bulk containers furnished on each item and the dates on which the containers are received by the purchaser.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD"
+      ]
+    },
+    {
+      "text": "The supplier retains the original of each DEA Form 222 it has filled, and a supplier that is not required to report acquisition and disposition transactions to ARCOS, such as a practitioner, also submits a copy of the original to DEA at the close of the month during which the order is filled, or of the month of the final partial shipment or of the 60-day expiry.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
+      ]
+    },
+    {
+      "text": "A pharmacy can find itself on the supplier's side of an order form: 21 CFR 1305.06 lets a purchaser return a Schedule I or II substance to the supplier of that substance on an order from the supplier, and lets a dispenser distribute Schedule II substances to another dispenser on an order in the circumstances 21 CFR 1307.11 describes.",
+      "rule_ids": [
+        "FED-FORM222-WHO-MAY-FILL"
       ]
     },
     {
@@ -577,10 +706,27 @@
     },
     {
       "condition": "Ordering records are being filed, scanned or migrated to a new system.",
-      "action": "Keep Forms 222 separate from all other records and available for inspection for two years and apply the readily-retrievable-separately test to electronic copies; preserve electronic orders and their linked records for two years under subpart C rather than under the Form 222 rule.",
+      "action": "Keep paper Forms 222 separate from all other records and available for inspection for two years; for an electronic copy ask whether the system can separate the Forms 222 out from all other records in a reasonable time, since that is what readily retrievable separately means, and not whether they share a store with other documents; preserve electronic orders and their linked records for two years under subpart C rather than under the Form 222 rule.",
       "rule_ids": [
         "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE",
         "FED-CSOS"
+      ]
+    },
+    {
+      "condition": "A shipment arrives against a paper DEA Form 222, in whole or in part.",
+      "action": "Write on the pharmacy's own copy the number of commercial or bulk containers furnished on each item and the date the containers were received, and repeat the entry for each later shipment inside the 60-day window.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD",
+        "FED-FORM222-60DAY"
+      ]
+    },
+    {
+      "condition": "The pharmacy is the party filling a paper order rather than the party placing it.",
+      "action": "Take the supplier's duties: retain the original of the form filled, and, because a pharmacy does not report to ARCOS, submit a copy of that original to DEA at the close of the month in which the order is filled or of the month of the final shipment or 60-day expiry.",
+      "rule_ids": [
+        "FED-FORM222-WHO-MAY-FILL",
+        "FED-FORM222-SUPPLIER-COPY"
       ]
     }
   ],
@@ -667,6 +813,22 @@
       ]
     },
     {
+      "event": "Copy of a filled paper DEA Form 222 sent to DEA by a supplier that does not report to ARCOS",
+      "timeframe": "At the close of the month during which the order is filled, or, for partial shipments, at the close of the month during which the final shipment is made or the 60-day validity period expires",
+      "consequence": "The duty falls on the party filling the order, so a pharmacy meets it when it is the supplier on a form rather than the purchaser.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
+      ]
+    },
+    {
+      "event": "Purchaser's receipt entries on its copy of a paper DEA Form 222",
+      "timeframe": "On receipt of the containers, recording the dates they are received",
+      "consequence": "Each shipment against the form adds its own entry, so a partly filled order produces more than one receipt date on the copy.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD"
+      ]
+    },
+    {
       "event": "Theft or loss of used or unused DEA Forms 222",
       "timeframe": "Immediately upon discovery",
       "consequence": "Reported with the serial number of each form to the Special Agent in Charge of the DEA divisional office responsible for the registrant's area.",
@@ -697,15 +859,27 @@
       ]
     },
     {
-      "text": "A purchaser with several registered locations keeps the executed copy and any attached statements or related documents at the registered location printed on the form.",
+      "text": "A purchaser with several registered locations keeps the executed copy and any attached statements or related documents at the registered location printed on the form; the same sentence excludes unexecuted DEA Forms 222, which may be kept elsewhere under 21 CFR 1305.12(e).",
       "rule_ids": [
         "FED-FORM222-RECORDS"
+      ]
+    },
+    {
+      "text": "The supplier retains the original of each DEA Form 222 that it has filled, under 21 CFR 1305.17(b).",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
       ]
     },
     {
       "text": "Electronic copies of Forms 222 are deemed separately maintained if readily retrievable separately from all other records, and may be stored on a system at a location different from the registered location provided they are readily retrievable at the registered location.",
       "rule_ids": [
         "FED-FORM222-RECORDS"
+      ]
+    },
+    {
+      "text": "The test in that deeming rule is the defined term in 21 CFR 1300.01(b): whether the recordkeeping system can separate the Forms 222 out from all other records in a reasonable time, or the items are visually identifiable apart from other items on the record.",
+      "rule_ids": [
+        "FED-READILY-RETRIEVABLE"
       ]
     },
     {
@@ -724,6 +898,18 @@
       "text": "On the paper route the supplier records on the original its DEA registration number where the purchaser has not entered it, the number of commercial or bulk containers furnished on each item, and the date the containers are shipped.",
       "rule_ids": [
         "FED-FORM222-60DAY"
+      ]
+    },
+    {
+      "text": "The purchaser records on its own copy of the paper form the number of commercial or bulk containers furnished on each item and the dates on which the containers are received, so the paper route has a receipt record of its own rather than only an electronic one.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD"
+      ]
+    },
+    {
+      "text": "A supplier that is not required to report acquisition and disposition transactions to ARCOS, such as a practitioner, submits a copy of the original paper form to DEA at the close of the month during which the order is filled, or, for partial shipments, at the close of the month during which the final shipment is made or the 60-day validity period expires.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
       ]
     },
     {
@@ -765,9 +951,18 @@
     },
     {
       "role": "Purchasing pharmacy",
-      "duty": "Keep Forms 222 separately from all other records and available for inspection for two years, and keep electronic orders and their linked records for two years under subpart C.",
+      "duty": "Record on its copy of the paper form the number of commercial or bulk containers furnished on each item and the dates the containers are received, and create the linked electronic receipt record where the order was placed through CSOS.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD",
+        "FED-CSOS"
+      ]
+    },
+    {
+      "role": "Purchasing pharmacy",
+      "duty": "Keep Forms 222 separately from all other records and available for inspection for two years, judging an electronic copy by whether it is readily retrievable separately, and keep electronic orders and their linked records for two years under subpart C.",
       "rule_ids": [
         "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE",
         "FED-CSOS"
       ]
     },
@@ -777,6 +972,20 @@
       "rule_ids": [
         "FED-FORM222-DEFECT",
         "FED-FORM222-60DAY"
+      ]
+    },
+    {
+      "role": "Supplier on a paper order",
+      "duty": "Retain the original of each DEA Form 222 it has filled and, where it does not report acquisition and disposition transactions to ARCOS, submit a copy of that original to DEA at the close of the month in which the order is filled or, for partial shipments, of the month of the final shipment or of the 60-day expiry.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
+      ]
+    },
+    {
+      "role": "Pharmacy filling an order rather than placing one",
+      "duty": "Recognise that it is the supplier, and takes on the supplier's duties, when it returns a Schedule I or II substance to the supplier it obtained it from or distributes Schedule II stock to another dispenser in the circumstances 21 CFR 1307.11 describes.",
+      "rule_ids": [
+        "FED-FORM222-WHO-MAY-FILL"
       ]
     },
     {
@@ -821,9 +1030,29 @@
       ]
     },
     {
-      "text": "Hearing readily retrievable and dropping the word separately, so an electronic copy filed among invoices appears to satisfy 21 CFR 1305.17.",
+      "text": "Turning the deeming rule in 21 CFR 1305.17(e) into a storage-segregation rule, and so answering that an electronic copy sharing a system with other records fails, when 21 CFR 1300.01(b) makes the test whether the system can separate the Forms 222 out in a reasonable time.",
+      "rule_ids": [
+        "FED-FORM222-RECORDS",
+        "FED-READILY-RETRIEVABLE"
+      ]
+    },
+    {
+      "text": "Running the deeming rule the other way and letting it excuse loose paper filing, when 21 CFR 1305.17(e) reaches electronic copies and paper forms are still maintained separately from all other records.",
       "rule_ids": [
         "FED-FORM222-RECORDS"
+      ]
+    },
+    {
+      "text": "Treating the receipt record as a CSOS feature, when 21 CFR 1305.13(e) puts containers received and dates of receipt on the purchaser's copy of a paper form as well.",
+      "rule_ids": [
+        "FED-FORM222-RECEIPT-RECORD",
+        "FED-CSOS"
+      ]
+    },
+    {
+      "text": "Assuming the paper route gives the supplier no duty to DEA and no retention duty, when the supplier keeps the original and a supplier outside ARCOS forwards DEA a copy at the close of the month.",
+      "rule_ids": [
+        "FED-FORM222-SUPPLIER-COPY"
       ]
     },
     {
