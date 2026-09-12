@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CS-INVENTORY-AND-RECORDS",
-  "content_version": 1,
-  "content_hash": "eee7bc9f76483d8967df42a989a93489473c7fa3e219517d06a83fbf5449fec5",
+  "content_version": 2,
+  "content_hash": "5760c5c50559c1590c626903489df07e2c5ee99b77780fdb99eaaf58ef082d88",
   "title": "Controlled Substance Inventory, Record Retention, and the Massachusetts Registration Term",
   "areas": [
     4
@@ -9,21 +9,32 @@
   "topic": "Controlled substance inventory and record retention, with Massachusetts controlled substance registration",
   "subtopic": "Initial and biennial inventories, exact and estimated counts in opened containers, the two-year federal retention floor, and registration terms that differ by registrant type",
   "learning_objectives": [
+    "State the general requirements 21 CFR 1304.11(a) puts on every inventory: the form it is kept in, where it is kept, that it is separate for each registered location, and the opening or close of business notation.",
     "State the event that triggers the federal initial inventory, and what 21 CFR 1304.11(b) requires of a registrant that commences business with no controlled substances on hand.",
     "Fix the biennial deadline from the previous biennial inventory date, and explain why the general-physical-inventory clause in 21 U.S.C. 827(a)(1) does not extend it.",
     "Apply 21 CFR 1304.11(e)(6) by asking first whether the commercial container has been opened and then which schedule the substance sits in.",
     "State the more-than-1,000 threshold in the regulation's own units, and say which schedules it governs and which it leaves untouched.",
     "Read 21 CFR 1304.04(a) clause by clause: which records, how long, from when, in what condition, and what its opening exception actually changes.",
-    "Separate the registrations and terms set by 247 CMR 11.05 and 247 CMR 11.06 from the federal inventory interval, so that the two two-year periods are not merged."
+    "Separate the registrations and terms set by 247 CMR 11.05 and 247 CMR 11.06 from the federal inventory interval, so that the two two-year periods are not merged.",
+    "Say what Massachusetts contributes to record and inventory duty through M.G.L. c. 94C, s. 15, and why calling these duties purely federal is wrong."
   ],
   "rule_ids": [
+    "FED-INVENTORY-GENERAL",
     "FED-INVENTORY-INITIAL",
     "FED-INVENTORY-BIENNIAL",
     "FED-INVENTORY-COUNT",
     "FED-CS-RECORDS-2Y",
-    "MA-CS-REGISTRATION-TERM"
+    "FED-SEPARATE-REGISTRATION-LOCATION",
+    "MA-CS-RECORDS-STATE-DUTY",
+    "MA-CS-SECURITY",
+    "MA-CS-REGISTRATION-TERM",
+    "MA-DPH-REGISTRANT-SCOPE"
   ],
   "verified_rule_dependencies": {
+    "FED-INVENTORY-GENERAL": {
+      "content_version": 1,
+      "content_hash": "9498571f1d7522223143d8952d7f7c6139caddb2ce6afdc34d7078e6b8b39f51"
+    },
     "FED-INVENTORY-INITIAL": {
       "content_version": 2,
       "content_hash": "6e110d1e7fb2e9cb3b9951fe24818e1847fb7371804c01714fab3a36be8f2ece"
@@ -40,9 +51,25 @@
       "content_version": 1,
       "content_hash": "1ab8c05b5de29caee69f15a1bdf5916ba1ca74d445e75c188493532ed29cd96f"
     },
+    "FED-SEPARATE-REGISTRATION-LOCATION": {
+      "content_version": 1,
+      "content_hash": "5a4b3f1d05841fae65989fc3878e73e1a576eb285ef676388093f42a95c678a3"
+    },
+    "MA-CS-RECORDS-STATE-DUTY": {
+      "content_version": 1,
+      "content_hash": "82fa4cf4c942c51a6451d40757315f24e255451970a600cdbd9847b9a90ba00d"
+    },
+    "MA-CS-SECURITY": {
+      "content_version": 1,
+      "content_hash": "8c922e3bbe0c4d3bce99cc33387154205ba1fceaf85935831da1ec0137e220d5"
+    },
     "MA-CS-REGISTRATION-TERM": {
       "content_version": 1,
       "content_hash": "443bba19d0dbe2484b78aec8f403dd1608a6cebe9cb547650227cc50f6ed6470"
+    },
+    "MA-DPH-REGISTRANT-SCOPE": {
+      "content_version": 1,
+      "content_hash": "0416fe54db2719447bbecc14bc7af55ac8886895555250ff8efd164685a64248"
     }
   },
   "orientation": [
@@ -52,6 +79,12 @@
         "FED-INVENTORY-INITIAL",
         "FED-INVENTORY-BIENNIAL",
         "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "Before asking when an inventory is due, know what one has to look like, because 21 CFR 1304.11(a) states requirements that govern the initial inventory and every biennial inventory after it. Each inventory shall contain a complete and accurate record of all controlled substances on hand on the date it is taken, and shall be maintained in written, typewritten, or printed form at the registered location; an inventory taken by use of an oral recording device must be promptly transcribed. Substances are deemed on hand if they are in the possession of or under the control of the registrant, which reaches substances returned by a customer, substances ordered by a customer but not yet invoiced, substances stored in a warehouse on behalf of the registrant, and substances in the possession of employees intended for distribution as complimentary samples. A separate inventory is made for each registered location and each independent activity registered, subject to the exception in 21 CFR 1304.11(e)(4). And the paragraph ends with the detail questions are built on: the inventory may be taken either as of opening of business or as of the close of business on the inventory date, and it shall be indicated on the inventory. The choice is free; recording which choice was made is not.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
       ]
     },
     {
@@ -74,15 +107,25 @@
       ]
     },
     {
-      "text": "21 CFR 1304.04(a) is a short paragraph in which each clause does work. Every inventory and other record required to be kept under part 1304 must be kept by the registrant, must be available for inspection and copying by authorized employees of the Administration, and must remain so for at least 2 years from the date of such inventory or record. Three consequences follow. The clock runs from the record's own date rather than from any later event, so a fresh inventory starts a new period without ending the one still running on an older record. Two years is a floor rather than a term, which is what the words at least are doing. And availability is a live obligation rather than mere storage, so a record that exists but cannot be produced and copied on inspection has not been kept the way the paragraph asks. The exception the paragraph opens with is about location and not about duration: paragraphs (a)(1) and (a)(2) permit financial and shipping records such as invoices and packing slips, but expressly not executed order forms subject to 21 CFR 1305.17 and 1305.27, to be kept at a central location once the registrant has notified the Administration, and permit a registered retail pharmacy that holds additional registrations for automated dispensing systems at long term care facilities to keep those sites' records at the pharmacy. Neither paragraph shortens the two years.",
+      "text": "21 CFR 1304.04(a) is a short paragraph in which each clause does work. Every inventory and other record required to be kept under part 1304 must be kept by the registrant, must be available for inspection and copying by authorized employees of the Administration, and must remain so for at least 2 years from the date of such inventory or record. Three consequences follow. The clock runs from the record's own date rather than from any later event, so a fresh inventory starts a new period without ending the one still running on an older record. Two years is a floor rather than a term, which is what the words at least are doing. And availability is a live obligation rather than mere storage, so a record that exists but cannot be produced and copied on inspection has not been kept the way the paragraph asks. The exception the paragraph opens with is about location and not about duration: paragraphs (a)(1) and (a)(2) permit financial and shipping records such as invoices and packing slips, but expressly not executed order forms subject to 21 CFR 1305.17 and 1305.27, to be kept at a central location, and permit a registered retail pharmacy that holds additional registrations for automated dispensing systems at long term care facilities to keep those sites' records at the pharmacy. The central-records permission is not self-executing. Written notification must be submitted by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge of the Administration in the registrant's area, and the registrant may maintain central records only commencing 14 days after the Special Agent in Charge receives that notification, and only unless the registrant is informed that permission is denied. Neither paragraph shortens the two years, and inventories themselves stay at the registered location under 21 CFR 1304.11(a).",
       "rule_ids": [
-        "FED-CS-RECORDS-2Y"
+        "FED-CS-RECORDS-2Y",
+        "FED-INVENTORY-GENERAL"
       ]
     },
     {
-      "text": "The Massachusetts contribution to this section is registration rather than inventory, and it is where the arithmetic stops being uniform. 247 CMR 11.05 requires a separate controlled substance registration at each principal place of business where the licensee or registrant manufactures, distributes or dispenses controlled substances, so a second premises is a second registration rather than an extension of the first. 247 CMR 11.06 then fixes how long a registration issued by the Board is valid, and the answer depends on who holds it. A controlled substance registration issued to a pharmacy is valid for two years beginning January 1st of each even-numbered year. A registration issued to an outsourcing facility is valid for two years beginning January 1st of each even-numbered year. A registration issued to a wholesale druggist is valid for one year beginning on December 1st of each year. The wholesale term is the one that departs, and it departs twice over, in length and in start date, which is exactly the seam a question is built on.",
+      "text": "The Massachusetts contribution here is not confined to registration, and the first place to look is the statute. M.G.L. c. 94C, s. 15 requires persons registered to manufacture, distribute, dispense or possess controlled substances to keep records and maintain inventories in conformance with the record-keeping and inventory requirements of the federal Comprehensive Drug Prevention and Control Act of 1970 and the Federal Food, Drug and Cosmetic Act, and with any additional rules or regulations promulgated by the Board of Registration in Pharmacy in the case of a retail drug business or wholesale druggist, or by the Commissioner in all other cases. Two things follow. The federal requirements this section teaches are also Massachusetts duties, so a failure to inventory is not only a federal problem. And the Board may add to them, which it has done: 247 CMR 9.21(8) puts each Schedule II controlled substance on a perpetual inventory that is reconciled at least once every ten days against an accurate physical count, a duty with no federal counterpart and one that lives with the security rules rather than with 21 CFR part 1304.",
       "rule_ids": [
-        "MA-CS-REGISTRATION-TERM"
+        "MA-CS-RECORDS-STATE-DUTY",
+        "MA-CS-SECURITY"
+      ]
+    },
+    {
+      "text": "Registration is where the Massachusetts arithmetic stops being uniform, and it is worth noticing first that being premises-based is not a Massachusetts peculiarity. Federal law already requires a separate DEA registration for each principal place of business or professional practice at one general physical location where controlled substances are manufactured, distributed, imported, exported or dispensed, under 21 CFR 1301.12(a), and 21 CFR 1304.11(a) requires a separate inventory for each registered location. 247 CMR 11.05 then requires a separate controlled substance registration at each principal place of business where the licensee or registrant manufactures, distributes or dispenses controlled substances, so a second premises is a second registration on both sides of the line rather than an extension of the first. 247 CMR 11.06 fixes how long a registration issued by the Board is valid, and the answer depends on who holds it. A controlled substance registration issued to a pharmacy is valid for two years beginning January 1st of each even-numbered year. A registration issued to an outsourcing facility is valid for two years beginning January 1st of each even-numbered year. A registration issued to a wholesale druggist is valid for one year beginning on December 1st of each year. The wholesale term is the one that departs, and it departs twice over, in length and in start date, which is exactly the seam a question is built on.",
+      "rule_ids": [
+        "MA-CS-REGISTRATION-TERM",
+        "FED-SEPARATE-REGISTRATION-LOCATION",
+        "FED-INVENTORY-GENERAL"
       ]
     },
     {
@@ -144,6 +187,16 @@
           "rule_ids": [
             "FED-INVENTORY-INITIAL",
             "FED-INVENTORY-BIENNIAL"
+          ]
+        },
+        {
+          "cells": [
+            "What the record must look like either way",
+            "Written, typewritten or printed form at the registered location, separate for each registered location, stating whether it was taken as of opening or close of business (21 CFR 1304.11(a))",
+            "The same general requirements apply, because 21 CFR 1304.11(a) governs each inventory rather than a particular occasion for one"
+          ],
+          "rule_ids": [
+            "FED-INVENTORY-GENERAL"
           ]
         },
         {
@@ -284,10 +337,12 @@
         {
           "cells": [
             "What a second premises does to it",
-            "21 CFR 1304.11(c) states the interval for the registrant and says nothing about premises",
-            "247 CMR 11.05 requires a separate controlled substance registration at each principal place of business where the licensee or registrant manufactures, distributes or dispenses controlled substances"
+            "Federal law is premises-based too: a separate DEA registration is required for each principal place of business under 21 CFR 1301.12(a), and a separate inventory is made for each registered location under 21 CFR 1304.11(a). What 21 CFR 1304.11(c) adds is only the interval",
+            "247 CMR 11.05 requires a separate controlled substance registration at each principal place of business where the licensee or registrant manufactures, distributes or dispenses controlled substances, so the Massachusetts rule runs parallel to the federal one rather than against it"
           ],
           "rule_ids": [
+            "FED-SEPARATE-REGISTRATION-LOCATION",
+            "FED-INVENTORY-GENERAL",
             "FED-INVENTORY-BIENNIAL",
             "MA-CS-REGISTRATION-TERM"
           ]
@@ -345,8 +400,18 @@
         {
           "cells": [
             "What the opening exception reaches",
-            "Paragraphs (a)(1) and (a)(2), which let financial and shipping records such as invoices and packing slips, but expressly not executed order forms subject to 21 CFR 1305.17 and 1305.27, be kept at a central location once the Administration has been notified, and let a registered retail pharmacy holding additional registrations for automated dispensing systems at long term care facilities keep those sites' records at the pharmacy",
+            "Paragraphs (a)(1) and (a)(2), which let financial and shipping records such as invoices and packing slips, but expressly not executed order forms subject to 21 CFR 1305.17 and 1305.27, be kept at a central location, and let a registered retail pharmacy holding additional registrations for automated dispensing systems at long term care facilities keep those sites' records at the pharmacy",
             "A shorter retention period for records that are held electronically or centrally"
+          ],
+          "rule_ids": [
+            "FED-CS-RECORDS-2Y"
+          ]
+        },
+        {
+          "cells": [
+            "What the central-records permission costs",
+            "Written notification by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge, with central records permitted only from 14 days after the Special Agent in Charge receives it and only unless permission is denied",
+            "Permission that takes effect the moment a notice is sent, or an arrangement that needs no notice at all"
           ],
           "rule_ids": [
             "FED-CS-RECORDS-2Y"
@@ -362,12 +427,14 @@
         "Read what 21 CFR 1304.11(b) attaches the initial inventory to. It is the date the person first engages in the manufacture, distribution, or dispensing of controlled substances, which here is the Monday the pharmacy began dispensing and not the Friday the stock arrived.",
         "Give the zero-stock sentence its effect. The same paragraph says that a person who commences business with no controlled substances on hand shall record this fact as the initial inventory, so the Monday record is the initial inventory rather than a substitute for one.",
         "Start the recurring cycle where 21 CFR 1304.11(c) starts it. The biennial duty runs after the initial inventory is taken, so the clock began on the Monday and the next inventory may be taken on any date which is within two years of that date.",
-        "Convert that into a date on the calendar. Two years from the Monday, not two years from the Friday delivery, and not two years from whatever later date someone now prefers to describe as the first inventory."
+        "Convert that into a date on the calendar. Two years from the Monday, not two years from the Friday delivery, and not two years from whatever later date someone now prefers to describe as the first inventory.",
+        "Check the Monday record against the general requirements in 21 CFR 1304.11(a) before relying on it. It must be in written, typewritten or printed form, kept at the registered location, and it must indicate whether it was taken as of opening of business or as of the close of business on that date."
       ],
-      "resolution": "The Monday zero-stock record is the initial inventory and the two-year cycle runs from it, so the proposed date falls outside the window. The error the scenario invites is treating an inventory that records nothing on hand as no inventory at all, which quietly moves the start of the biennial cycle forward to the first delivery.",
+      "resolution": "The Monday zero-stock record is the initial inventory and the two-year cycle runs from it, so the proposed date falls outside the window. The error the scenario invites is treating an inventory that records nothing on hand as no inventory at all, which quietly moves the start of the biennial cycle forward to the first delivery; the detail worth checking either way is whether the record carries the opening or close of business notation 21 CFR 1304.11(a) requires.",
       "rule_ids": [
         "FED-INVENTORY-INITIAL",
-        "FED-INVENTORY-BIENNIAL"
+        "FED-INVENTORY-BIENNIAL",
+        "FED-INVENTORY-GENERAL"
       ]
     },
     {
@@ -473,9 +540,38 @@
     },
     {
       "prompt": "What does the exception at the front of 21 CFR 1304.04(a) actually change?",
-      "answer": "Where certain records sit, not how long they are kept. Paragraphs (a)(1) and (a)(2) let financial and shipping records be held centrally once the Administration has been notified, expressly excluding executed order forms, and let a registered retail pharmacy hold the records of its long term care automated dispensing system registrations.",
+      "answer": "Where certain records sit, not how long they are kept. Paragraphs (a)(1) and (a)(2) let financial and shipping records be held centrally, expressly excluding executed order forms, and let a registered retail pharmacy hold the records of its long term care automated dispensing system registrations.",
       "rule_ids": [
         "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "prompt": "What must a registrant do before keeping financial and shipping records centrally, and when may it start?",
+      "answer": "Submit written notification by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge in its area; it may maintain central records commencing 14 days after the Special Agent in Charge receives the notification, unless it is informed that permission is denied.",
+      "rule_ids": [
+        "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "prompt": "Name four things 21 CFR 1304.11(a) requires of every inventory.",
+      "answer": "Any four of: a complete and accurate record of all controlled substances on hand on the date it is taken; maintenance in written, typewritten or printed form; keeping at the registered location; prompt transcription where an oral recording device was used; a separate inventory for each registered location and each independent activity registered; and an indication of whether it was taken as of opening or as of close of business.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "prompt": "Is the requirement of a separate registration for each premises a Massachusetts feature?",
+      "answer": "No. 21 CFR 1301.12(a) requires a separate DEA registration for each principal place of business, and 247 CMR 11.05 requires a separate Board controlled substance registration at each principal place of business.",
+      "rule_ids": [
+        "FED-SEPARATE-REGISTRATION-LOCATION",
+        "MA-CS-REGISTRATION-TERM"
+      ]
+    },
+    {
+      "prompt": "What does M.G.L. c. 94C, s. 15 do with the federal record and inventory requirements?",
+      "answer": "It requires registered persons to keep records and maintain inventories in conformance with them, and adds any further rules the Board of Registration in Pharmacy promulgates for a retail drug business or wholesale druggist, or the Commissioner in all other cases.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY"
       ]
     },
     {
@@ -502,6 +598,49 @@
     }
   ],
   "quick_review": [
+    {
+      "text": "Each inventory contains a complete and accurate record of all controlled substances on hand on the date it is taken, and is maintained in written, typewritten or printed form at the registered location.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "text": "A separate inventory is made for each registered location and each independent activity registered, except as 21 CFR 1304.11(e)(4) provides.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "text": "The inventory may be taken either as of opening of business or as of the close of business on the inventory date, and which one was used shall be indicated on the inventory.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "text": "Substances are deemed on hand when they are in the possession of or under the control of the registrant, which reaches substances returned by a customer, ordered but not yet invoiced, stored in a warehouse on the registrant's behalf, or held by employees for distribution as complimentary samples.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "text": "A separate DEA registration is required for each principal place of business or professional practice at one general physical location where controlled substances are manufactured, distributed, imported, exported or dispensed.",
+      "rule_ids": [
+        "FED-SEPARATE-REGISTRATION-LOCATION"
+      ]
+    },
+    {
+      "text": "M.G.L. c. 94C, s. 15 requires registered persons to keep records and maintain inventories in conformance with the federal record-keeping and inventory requirements, and with any additional rules the Board promulgates for a retail drug business or wholesale druggist or the Commissioner promulgates in all other cases.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY"
+      ]
+    },
+    {
+      "text": "One such Board addition is the Schedule II perpetual inventory in 247 CMR 9.21(8), reconciled at least once every ten days against an accurate physical count, which 21 CFR part 1304 does not require.",
+      "rule_ids": [
+        "MA-CS-SECURITY",
+        "MA-CS-RECORDS-STATE-DUTY"
+      ]
+    },
     {
       "text": "The initial inventory is taken on the date the person first engages in the manufacture, distribution, or dispensing of controlled substances, and covers all stocks of controlled substances on hand.",
       "rule_ids": [
@@ -595,6 +734,13 @@
   ],
   "decision_logic": [
     {
+      "condition": "Any controlled-substance inventory is being taken, initial or biennial.",
+      "action": "Record all substances on hand on that date in written, typewritten or printed form, keep it at the registered location, make it separate for each registered location, and state on its face whether it was taken as of opening or as of close of business.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
       "condition": "A registrant is about to begin controlled-substance activity, whether or not stock has arrived.",
       "action": "Take the initial inventory on the date activity begins; if no controlled substances are on hand, record that fact as the initial inventory rather than waiting for the first delivery.",
       "rule_ids": [
@@ -644,10 +790,26 @@
       ]
     },
     {
-      "condition": "A Massachusetts registrant is adding a principal place of business.",
-      "action": "Apply for a separate controlled substance registration for that place of business rather than treating the existing registration as covering it.",
+      "condition": "A registrant is moving financial and shipping records to a central location.",
+      "action": "Send the written notification by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge, wait the 14 days after receipt before moving anything, and leave executed order forms and the inventories where the regulations require them.",
       "rule_ids": [
-        "MA-CS-REGISTRATION-TERM"
+        "FED-CS-RECORDS-2Y",
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "condition": "A Massachusetts registrant is adding a principal place of business.",
+      "action": "Apply for a separate controlled substance registration for that place of business rather than treating the existing registration as covering it, and expect the federal position to be the same, since 21 CFR 1301.12(a) requires a separate DEA registration for each principal place of business.",
+      "rule_ids": [
+        "MA-CS-REGISTRATION-TERM",
+        "FED-SEPARATE-REGISTRATION-LOCATION"
+      ]
+    },
+    {
+      "condition": "A Massachusetts inspector asks about an inventory or record failure and the pharmacy answers that the rule is federal.",
+      "action": "Read M.G.L. c. 94C, s. 15: the federal record-keeping and inventory requirements are Massachusetts duties of a registered person, and the Board may add rules of its own for a retail drug business.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY"
       ]
     },
     {
@@ -660,13 +822,36 @@
   ],
   "ma_vs_federal": [
     {
-      "text": "The inventory and retention duties in this section are entirely federal. Among these rules the Massachusetts contribution is registration: 247 CMR 11.05 fixes where a controlled substance registration is required and 247 CMR 11.06 fixes how long it lasts.",
+      "text": "The detailed inventory and retention mechanics in this section are written in federal regulations, but they are not for that reason only federal duties. M.G.L. c. 94C, s. 15 requires registered persons to keep records and maintain inventories in conformance with the federal record-keeping and inventory requirements, so the same failure can be answered for in Massachusetts.",
       "rule_ids": [
-        "MA-CS-REGISTRATION-TERM",
+        "MA-CS-RECORDS-STATE-DUTY",
+        "FED-INVENTORY-GENERAL",
         "FED-INVENTORY-INITIAL",
         "FED-INVENTORY-BIENNIAL",
         "FED-INVENTORY-COUNT",
         "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "The same statute lets Massachusetts go further, since it adds any additional rules promulgated by the Board of Registration in Pharmacy in the case of a retail drug business. The Schedule II perpetual inventory reconciled at least once every ten days under 247 CMR 9.21(8) is such an addition, and 21 CFR part 1304 states no counterpart to it, so a candidate who reads only the federal inventory rules will miss it.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY",
+        "MA-CS-SECURITY"
+      ]
+    },
+    {
+      "text": "Being premises-based is common ground rather than a Massachusetts distinction: 21 CFR 1301.12(a) requires a separate DEA registration for each principal place of business and 21 CFR 1304.11(a) a separate inventory for each registered location, while 247 CMR 11.05 requires a separate Board controlled substance registration at each principal place of business.",
+      "rule_ids": [
+        "FED-SEPARATE-REGISTRATION-LOCATION",
+        "FED-INVENTORY-GENERAL",
+        "MA-CS-REGISTRATION-TERM"
+      ]
+    },
+    {
+      "text": "Massachusetts has two controlled substance registers, and 247 CMR 11.00 is only one of them. A pharmacy's controlled substance registration comes from the Board, because M.G.L. c. 94C, s. 7(a) excepts a pharmacy, wholesale druggist and outsourcing facility from registering with the commissioner of public health and sends every pharmacy to the Board instead, and 105 CMR 700.004(A)(1) reaches every person other than a registered retail drug business or wholesale druggist. Registrant in 105 CMR 700.000 means a person registered by the Department, so a duty that regulation places on a registrant is not, without more, a duty of a Board-registered pharmacy.",
+      "rule_ids": [
+        "MA-DPH-REGISTRANT-SCOPE",
+        "MA-CS-REGISTRATION-TERM"
       ]
     },
     {
@@ -711,8 +896,21 @@
       ]
     },
     {
-      "text": "The exception clause opening 21 CFR 1304.04(a) points to paragraphs (a)(1) and (a)(2), which govern where records may be held rather than how long. Financial and shipping records such as invoices and packing slips may sit at a central location once the Administration has been notified, and executed order forms subject to 21 CFR 1305.17 and 1305.27 are expressly excluded from that permission.",
+      "text": "The exception clause opening 21 CFR 1304.04(a) points to paragraphs (a)(1) and (a)(2), which govern where records may be held rather than how long. Financial and shipping records such as invoices and packing slips may sit at a central location, and executed order forms subject to 21 CFR 1305.17 and 1305.27 are expressly excluded from that permission.",
       "rule_ids": [
+        "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "That permission is conditional and delayed. 21 CFR 1304.04(a)(1) requires written notification by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge in the registrant's area, and permits central records only commencing 14 days after the Special Agent in Charge receives the notification, and only unless the registrant is informed that permission is denied.",
+      "rule_ids": [
+        "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "21 CFR 1304.11(a) makes a separate inventory for each registered location the rule and points to the exception in 21 CFR 1304.11(e)(4), and the same paragraph keeps the inventory at the registered location whatever the central-records arrangement for other records.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL",
         "FED-CS-RECORDS-2Y"
       ]
     },
@@ -763,6 +961,14 @@
       ]
     },
     {
+      "event": "Start of central recordkeeping for financial and shipping records",
+      "timeframe": "14 days after the Special Agent in Charge receives the written notification",
+      "consequence": "The notification goes by registered or certified mail, return receipt requested, in triplicate, and central records may be kept only from the end of that period and only unless permission is denied.",
+      "rule_ids": [
+        "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
       "event": "Massachusetts controlled substance registration issued to a pharmacy",
       "timeframe": "Two years beginning January 1st of each even-numbered year",
       "consequence": "The term is fixed by the calendar, so it runs to the end of the following odd-numbered year regardless of when the registration was issued or when an inventory was taken.",
@@ -781,13 +987,19 @@
     {
       "event": "Massachusetts controlled substance registration issued to a wholesale druggist",
       "timeframe": "One year beginning on December 1st of each year",
-      "consequence": "The term is half as long as the pharmacy term and starts eleven months earlier in the calendar, so a diary built on the pharmacy cycle will be wrong.",
+      "consequence": "The term is half as long as the pharmacy term and starts on December 1st rather than January 1st, one month before the pharmacy cycle turns over, so a diary built on the pharmacy cycle will be wrong.",
       "rule_ids": [
         "MA-CS-REGISTRATION-TERM"
       ]
     }
   ],
   "forms_records": [
+    {
+      "text": "Every inventory is kept in written, typewritten or printed form at the registered location, is separate for each registered location and each independent activity registered, and states whether it was taken as of opening or as of close of business on the inventory date.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
     {
       "text": "The initial inventory is a record in its own right, and where no controlled substances are on hand the record of that fact is what satisfies 21 CFR 1304.11(b).",
       "rule_ids": [
@@ -813,7 +1025,7 @@
       ]
     },
     {
-      "text": "A registrant that wishes to keep financial and shipping records centrally under 21 CFR 1304.04(a)(1) notifies the Administration in writing, and the notification states the nature of the records, the exact location where they will be kept, the name, address, DEA registration number and type of registration of the registrant, and whether the records will be in manual or computer readable form.",
+      "text": "A registrant that wishes to keep financial and shipping records centrally under 21 CFR 1304.04(a)(1) notifies the Administration in writing, by registered or certified mail, return receipt requested, in triplicate, to the Special Agent in Charge in its area, and the notification states the nature of the records, the exact location where they will be kept, the name, address, DEA registration number and type of registration of the registrant, and whether the records will be in manual or computer readable form; central records may begin 14 days after that notification is received and only unless permission is denied.",
       "rule_ids": [
         "FED-CS-RECORDS-2Y"
       ]
@@ -845,6 +1057,29 @@
       "duty": "Record the container-level information the regulation requires, then make an exact count or measure for opened Schedule I and II containers and an estimate for opened Schedule III to V containers except where more than 1,000 tablets or capsules are held.",
       "rule_ids": [
         "FED-INVENTORY-COUNT"
+      ]
+    },
+    {
+      "role": "Registrant preparing the inventory document",
+      "duty": "Keep it in written, typewritten or printed form at the registered location, transcribe any oral recording promptly, make it separate for each registered location and independent activity, and indicate on it whether it was taken as of opening or close of business.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "role": "Registrant with more than one premises",
+      "duty": "Hold a separate DEA registration for each principal place of business under 21 CFR 1301.12(a) as well as a separate Massachusetts controlled substance registration under 247 CMR 11.05.",
+      "rule_ids": [
+        "FED-SEPARATE-REGISTRATION-LOCATION",
+        "MA-CS-REGISTRATION-TERM"
+      ]
+    },
+    {
+      "role": "Massachusetts registered person",
+      "duty": "Keep records and maintain inventories in conformance with the federal requirements as a matter of Massachusetts law, and comply with any additional Board rules applicable to a retail drug business, such as the Schedule II perpetual inventory.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY",
+        "MA-CS-SECURITY"
       ]
     },
     {
@@ -902,7 +1137,7 @@
       ]
     },
     {
-      "text": "Applying the more-than-1,000 threshold to an opened Schedule II container, when the threshold sits inside the Schedule III to V branch and Schedules I and II are always counted exactly.",
+      "text": "Applying the more-than-1,000 threshold to an opened Schedule II container, when the threshold sits inside the Schedule III to V branch and an opened Schedule I or II container is counted exactly whatever its size.",
       "rule_ids": [
         "FED-INVENTORY-COUNT"
       ]
@@ -929,6 +1164,33 @@
       "text": "Hearing the exception at the front of 21 CFR 1304.04(a) as a shorter retention period, when paragraphs (a)(1) and (a)(2) address where records may sit and not how long they are kept.",
       "rule_ids": [
         "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "Reading the central-records permission as taking effect on notice, when 21 CFR 1304.04(a)(1) requires notice in a prescribed form and lets central records begin only 14 days after the Special Agent in Charge receives it and only unless permission is denied.",
+      "rule_ids": [
+        "FED-CS-RECORDS-2Y"
+      ]
+    },
+    {
+      "text": "Leaving the opening or close of business notation off an otherwise complete inventory, when 21 CFR 1304.11(a) requires the choice to be indicated on the inventory itself.",
+      "rule_ids": [
+        "FED-INVENTORY-GENERAL"
+      ]
+    },
+    {
+      "text": "Reading federal law as indifferent to premises because 21 CFR 1304.11(c) does not mention them, when 21 CFR 1301.12(a) requires a registration for each principal place of business and 21 CFR 1304.11(a) a separate inventory for each registered location.",
+      "rule_ids": [
+        "FED-SEPARATE-REGISTRATION-LOCATION",
+        "FED-INVENTORY-GENERAL",
+        "FED-INVENTORY-BIENNIAL"
+      ]
+    },
+    {
+      "text": "Treating these inventory and retention duties as purely federal, when M.G.L. c. 94C, s. 15 makes them Massachusetts duties of a registered person and lets the Board add to them for a retail drug business.",
+      "rule_ids": [
+        "MA-CS-RECORDS-STATE-DUTY",
+        "MA-CS-SECURITY"
       ]
     },
     {
@@ -961,7 +1223,7 @@
     "MA-Q-0437",
     "MA-Q-0439"
   ],
-  "last_verified": null,
-  "verification_status": "AUDIT_PENDING",
-  "independent_audit_id": null
+  "last_verified": "2026-09-12",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V9F-2026-09-12"
 }

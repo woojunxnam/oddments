@@ -1,7 +1,7 @@
 {
   "section_id": "SG-MA-SCHEDULE-VI",
-  "content_version": 9,
-  "content_hash": "4c0cc93fed9b920234f42dbfc85ab8c2e528638b609697b55d446081d0570971",
+  "content_version": 10,
+  "content_hash": "12134557870fdfbbfef14fbd0bbc867e5f9388f03c0c1e25eb6d76d6289a6ced",
   "title": "Massachusetts Schedule VI",
   "areas": [
     2,
@@ -37,7 +37,9 @@
     "MA-CS-REFILL-AUTHORIZATION",
     "MA-SCHEDULES-FEDERAL-INCORPORATION",
     "FED-CS-TRANSFER-REFILL",
-    "MA-PMP-INPATIENT-EXCLUSION"
+    "MA-PMP-INPATIENT-EXCLUSION",
+    "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS",
+    "MA-RX-FAILOVER-DISQUALIFIED"
   ],
   "verified_rule_dependencies": {
     "MA-SCHEDULE-VI": {
@@ -123,6 +125,14 @@
     "MA-PMP-INPATIENT-EXCLUSION": {
       "content_version": 1,
       "content_hash": "6360cb9797b05a9b3d859682a9332cdade9a1f0cd1301f1b298b46430242c3fa"
+    },
+    "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS": {
+      "content_version": 1,
+      "content_hash": "82039578574643dd77ba4791481bfc943e58be1eb1dea51b3b89b1e153bda8dd"
+    },
+    "MA-RX-FAILOVER-DISQUALIFIED": {
+      "content_version": 1,
+      "content_hash": "c9980086e7ce37b587bf9b149d00389b7bd3f7c51e9c60687a66edaf0c3a2589"
     }
   },
   "orientation": [
@@ -148,8 +158,9 @@
       ]
     },
     {
-      "text": "On format, Massachusetts starts from a default that every prescription generated in the Commonwealth must be electronic, and then lists the prescriptions excepted from it. Schedule VI is one of the enumerated exceptions, at 105 CMR 721.070(A)(9), which is why a Schedule VI prescription may lawfully arrive written or oral. The exception is narrow in exactly the way candidates tend to forget: it lifts the electronic-format mandate and nothing else. A written Schedule VI prescription must still carry the practitioner's signature and be either transmitted by facsimile or similar technology or written on a tamper-resistant form, and a prescription in a non-conforming format is invalid and shall not be filled. An oral Schedule VI prescription must still be reduced to writing immediately with the information the statute requires. Among the oral-prescription duties, the one Schedule VI escapes is the practitioner's later follow-up prescription: M.G.L. c. 94C, s. 20(c) says in its own terms that its requirements do not apply to controlled substances in Schedule VI, and the follow-up in 105 CMR 721.070(B) is written for oral prescriptions in Schedules II through V. The Failover device points the same way: it is defined as a document that originates as a Schedule VI electronic prescription, so no other schedule can produce one.",
+      "text": "On format, Massachusetts starts from a default that every prescription generated in the Commonwealth must be electronic, and then lists the prescriptions excepted from it. The default is statutory and it names Schedule VI: M.G.L. c. 94C, s. 17(c) provides that a controlled substance included in Schedule III, IV, V or VI shall not be dispensed without an electronic prescription from a practitioner, and s. 23(g) directs prescribers to issue an electronic prescription for all controlled substances and medical devices. The exception is therefore not a gap the statute left. Section 23(h) directs the commissioner, through regulation, to establish exceptions to s. 17 and s. 23(g) authorizing the limited use of a written and oral prescription where appropriate, and limits them to an enumerated list; Schedule VI is one of the enumerated exceptions the commissioner made, at 105 CMR 721.070(A)(9), which is why a Schedule VI prescription may lawfully arrive written or oral. Knowing where the exception comes from matters because it tells you what could move it: the mandate is in the statute, the exception is in a regulation made under s. 23(h), and the six subjects clauses (i) through (vi) name -- veterinarians, temporary technological or electrical failure, a time-limited hardship waiver, emergency situations, prescriptions that cannot be issued electronically under federal or state law, and prescriptions issued outside the jurisdiction of the commonwealth -- do not include Schedule VI, leaving it to the residual clause (vii), under which the commissioner must file a written justification with the house and senate committees on ways and means, the joint committee on public health and the joint committee on mental health, substance use and recovery 90 days before promulgating or amending such a regulation. The exception is narrow in exactly the way candidates tend to forget: it lifts the electronic-format mandate and nothing else. A written Schedule VI prescription must still carry the practitioner's signature and be either transmitted by facsimile or similar technology or written on a tamper-resistant form, and a prescription in a non-conforming format is invalid and shall not be filled. An oral Schedule VI prescription must still be reduced to writing immediately with the information the statute requires. Among the oral-prescription duties, the one Schedule VI escapes is the practitioner's later follow-up prescription: M.G.L. c. 94C, s. 20(c) says in its own terms that its requirements do not apply to controlled substances in Schedule VI, and the follow-up in 105 CMR 721.070(B) is written for oral prescriptions in Schedules II through V. The Failover device points the same way: it is defined as a document that originates as a Schedule VI electronic prescription, so no other schedule can produce one.",
       "rule_ids": [
+        "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS",
         "MA-CONTROLLED-EPRESCRIBE",
         "MA-RX-WRITTEN-FORMAT",
         "MA-RX-REQUIRED-ELEMENTS",
@@ -174,13 +185,14 @@
       ]
     },
     {
-      "text": "Finally, the Schedule VI label is not a promise that no monitoring or identification duty will ever attach. M.G.L. c. 94C, s. 24A(a)(1) has the Department monitor all schedule II to V controlled substances and certain additional drugs, meaning substances the Department determines to carry a bona fide potential for abuse, and 105 CMR 700.001 defines an Additional Drug as a controlled substance in Schedule VI so determined. The Commissioner may make that determination for the purposes of 105 CMR 700.012, weighing factors such as a risk of addiction, known recreational use, known regular diversion for misuse, or a known contribution to overdose, and on making it notifies all dispensers that they must begin reporting the dispensing of that drug. Once a Schedule VI drug is an additional drug, dispensing it requires a customer identifier from the ultimate user or their agent, subject to the documented-hardship route, under both 247 CMR 9.04(14) and 105 CMR 700.012(A)(3); the Failover route closes, because a Failover does not qualify where the prescription is for an additional drug; and the dispensing has to be reported on two clocks that apply together. M.G.L. c. 94C, s. 24A(c) requires the information to be submitted at least once every 24 hours, and 105 CMR 700.012(A)(5) requires transmission by the end of the next business day, each transmission carrying everything dispensed since the previous one. The operative deadline is whichever of the two arrives first, and across a weekend or a holiday that is always the statute: a Friday dispensing cannot wait for the end of Monday, which the regulation read alone would allow. The label describes the starting point, not the whole of the drug's regulatory position.",
+      "text": "Finally, the Schedule VI label is not a promise that no monitoring or identification duty will ever attach. M.G.L. c. 94C, s. 24A(a)(1) has the Department monitor all schedule II to V controlled substances and certain additional drugs, meaning substances the Department determines to carry a bona fide potential for abuse, and 105 CMR 700.001 defines an Additional Drug as a controlled substance in Schedule VI so determined. The Commissioner may make that determination for the purposes of 105 CMR 700.012, weighing factors such as a risk of addiction, known recreational use, known regular diversion for misuse, or a known contribution to overdose, and on making it notifies all dispensers that they must begin reporting the dispensing of that drug. Once a Schedule VI drug is an additional drug, dispensing it requires a customer identifier from the ultimate user or their agent, subject to the documented-hardship route, under both 247 CMR 9.04(14) and 105 CMR 700.012(A)(3); the Failover route closes, because a Failover does not qualify where the prescription is for an additional drug, and the Department's manual states what the pharmacist does instead: on receiving a Failover for gabapentin, or any other medication designated as an Additional Drug, the pharmacist may not dispense the medication and must contact the prescriber for a new written or oral prescription; and the dispensing has to be reported on two clocks that apply together. M.G.L. c. 94C, s. 24A(c) requires the information to be submitted at least once every 24 hours, and 105 CMR 700.012(A)(5) requires transmission by the end of the next business day, each transmission carrying everything dispensed since the previous one. The operative deadline is whichever of the two arrives first, and across a weekend or a holiday that is always the statute: a Friday dispensing cannot wait for the end of Monday, which the regulation read alone would allow. The label describes the starting point, not the whole of the drug's regulatory position.",
       "rule_ids": [
         "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
         "MA-RX-CUSTOMER-IDENTIFIER",
         "MA-PMP-CUSTOMER-IDENTIFIER",
         "MA-PMP-TRANSMISSION-TIMING",
         "MA-PMP-STATUTORY-FRAMEWORK",
+        "MA-RX-FAILOVER-DISQUALIFIED",
         "MA-RX-FAILOVER-ORAL",
         "MA-SCHEDULE-VI"
       ]
@@ -250,6 +262,16 @@
         "Source"
       ],
       "rows": [
+        {
+          "cells": [
+            "Where the electronic mandate on a Schedule VI prescription comes from",
+            "From the statute, which reaches Schedule VI by name: a controlled substance included in Schedule III, IV, V or VI shall not be dispensed without an electronic prescription from a practitioner, and prescribers shall issue an electronic prescription for all controlled substances and medical devices. The exception below is a regulation the commissioner was directed to make, not an absence of any statutory duty.",
+            "M.G.L. c. 94C, s. 17(c) and s. 23(g), with the exception power in s. 23(h)"
+          ],
+          "rule_ids": [
+            "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS"
+          ]
+        },
         {
           "cells": [
             "Duty to issue the prescription electronically",
@@ -473,6 +495,14 @@
       ]
     },
     {
+      "prompt": "Massachusetts excepts Schedule VI from electronic prescribing at 105 CMR 721.070(A)(9). What does the statute itself say about Schedule VI and electronic prescriptions, and how do the two fit together?",
+      "answer": "The statute imposes the mandate and names Schedule VI. M.G.L. c. 94C, s. 17(c) provides that a controlled substance included in Schedule III, IV, V or VI shall not be dispensed without an electronic prescription from a practitioner, and s. 23(g) directs prescribers to issue an electronic prescription for all controlled substances and medical devices. Section 23(h) then directs the commissioner, through regulation, to establish exceptions to s. 17 and s. 23(g) authorizing the limited use of a written and oral prescription where appropriate, and limits them to an enumerated list. Schedule VI is not among the six subjects clauses (i) through (vi) name, so it rests on clause (vii), other exceptions as the commissioner determines necessary, which the commissioner may promulgate or amend only after filing a written justification with the house and senate committees on ways and means, the joint committee on public health and the joint committee on mental health, substance use and recovery 90 days beforehand. The Schedule VI exception is a regulatory choice made under a statutory grant, which is why it is found in 105 CMR 721.070(A) and not in the statute.",
+      "rule_ids": [
+        "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
       "prompt": "What turns an ordinary Schedule VI drug into one carrying monitoring and identification duties?",
       "answer": "The Commissioner's determination under 105 CMR 700.012(C)(8) that it is an additional drug carrying a bona fide potential for abuse. On that determination dispensers are notified that they must begin reporting it, and a customer identifier is required at dispensing under 247 CMR 9.04(14) and 105 CMR 700.012(A)(3), subject to the documented-hardship route. The reporting then runs on two clocks: M.G.L. c. 94C, s. 24A(c) requires submission at least once every 24 hours, and 105 CMR 700.012(A)(5) requires transmission by the end of the next business day, covering everything dispensed since the previous transmission.",
       "rule_ids": [
@@ -643,6 +673,15 @@
       "rule_ids": [
         "MA-RX-OUTSTATE-III-VI",
         "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "condition": "A document that began as a Schedule VI electronic prescription arrives as a computer-generated facsimile, and the drug on it has been designated an additional drug.",
+      "action": "Do not dispense on the facsimile, and do not treat the failed condition as something a later prescription can cure. The Department's Electronic Prescribing and Dispensing Manual states that on receiving a Failover for gabapentin, or any other medication designated as an Additional Drug, the pharmacist may not dispense the medication and must instead contact the prescriber for a new written or oral prescription. The additional-drug condition is the fourth of the conditions a Failover must satisfy, and failing it takes the document outside the Failover route altogether rather than converting it into an oral prescription that owes a follow-up; a Failover that does qualify is dispensed as an oral prescription and needs no additional written follow-up.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-DISQUALIFIED",
+        "MA-RX-FAILOVER-ORAL",
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
       ]
     }
   ],
@@ -924,6 +963,20 @@
         "MA-PMP-CUSTOMER-IDENTIFIER",
         "MA-RX-CUSTOMER-IDENTIFIER"
       ]
+    },
+    {
+      "text": "Reading 105 CMR 721.070(A)(9) as proof that the electronic-prescribing mandate never reached Schedule VI inverts the scheme: M.G.L. c. 94C, s. 17(c) names Schedule VI in the mandate itself, and the exception exists because s. 23(h) directs the commissioner to establish exceptions by regulation.",
+      "rule_ids": [
+        "MA-EPRESCRIBE-STATUTORY-EXCEPTIONS",
+        "MA-CONTROLLED-EPRESCRIBE"
+      ]
+    },
+    {
+      "text": "Dispensing a Failover for an additional drug and waiting for a follow-up prescription gets the consequence backwards twice over: the pharmacist may not dispense that Failover at all and must contact the prescriber for a new written or oral prescription, while a Failover that does qualify is dispensed and owes no follow-up.",
+      "rule_ids": [
+        "MA-RX-FAILOVER-DISQUALIFIED",
+        "MA-RX-FAILOVER-ORAL"
+      ]
     }
   ],
   "drug_examples": [],
@@ -932,7 +985,7 @@
     "MA-Q-0118",
     "MA-Q-0120"
   ],
-  "last_verified": null,
-  "verification_status": "AUDIT_PENDING",
-  "independent_audit_id": null
+  "last_verified": "2026-09-12",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V9B-2026-09-12"
 }

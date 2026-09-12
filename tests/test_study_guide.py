@@ -36,10 +36,10 @@ def test_public_payload_fails_closed_until_independent_verification() -> None:
 
     canonical = {section["section_id"]: section for _, section in load_records(DATA / "study_guide" / "sections")}
     verified_ids = {sid for sid, section in canonical.items() if section["verification_status"] == "VERIFIED"}
-    # No section may be public without independent verification, and the payload must fail
-    # closed rather than fall back to showing everything. Both hold when nothing is verified,
-    # which is the state while the guide moves between content models.
-    assert verified_ids != set(canonical) or not canonical
+    # No section may be public without independent verification. That the filter is a real
+    # filter and not a no-op is proved by the test below, which holds a section back whatever
+    # the corpus happens to look like; asserting here that some section is unverified would
+    # only pin today's state, and the whole guide is verified once a round completes.
 
     public = build_study_guide_payload(include_pending=False)
     development = build_study_guide_payload(include_pending=True)
@@ -58,6 +58,40 @@ def test_public_payload_fails_closed_until_independent_verification() -> None:
         canonical[sid]["practice_question_ids"] for sid in verified_ids
     )
     assert development["meta"]["section_count"] == len(canonical)
+
+
+def test_public_payload_holds_back_a_section_that_is_not_verified(monkeypatch) -> None:
+    """The public filter must exclude an unverified section even when every real one passes.
+
+    Comparing the public payload against the verified set says nothing when the two coincide,
+    which is exactly the state after a full audit round. So put one section back into
+    AUDIT_PENDING and watch it leave the public payload while staying in the development one.
+    """
+    import build_study_guide_data
+    from qa_common import load_records
+
+    canonical = {section["section_id"]: section for _, section in load_records(DATA / "study_guide" / "sections")}
+    held_back = sorted(canonical)[0]
+    real_validate = build_study_guide_data.validate_study_guide
+
+    def one_section_pending(*args, **kwargs):
+        report, sections = real_validate(*args, **kwargs)
+        sections = deepcopy(sections)
+        sections[held_back]["verification_status"] = "AUDIT_PENDING"
+        sections[held_back]["independent_audit_id"] = None
+        sections[held_back]["last_verified"] = None
+        return report, sections
+
+    monkeypatch.setattr(build_study_guide_data, "validate_study_guide", one_section_pending)
+    public = build_study_guide_data.build_study_guide_payload(include_pending=False)
+    development = build_study_guide_data.build_study_guide_payload(include_pending=True)
+
+    assert held_back not in {section["section_id"] for section in public["sections"]}
+    assert held_back in {section["section_id"] for section in development["sections"]}
+    assert public["meta"]["section_count"] == len(canonical) - 1
+    assert public["meta"]["pending_section_count"] == 1
+    # The practice-question map must not leak the held-back section through a shared question.
+    assert held_back not in {sid for sids in public["question_to_sections"].values() for sid in sids}
 
 
 def test_rule_hash_change_makes_dependent_sections_stale(tmp_path, registry_indexes) -> None:
