@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CONTROLLED-SCHEDULES",
-  "content_version": 3,
-  "content_hash": "09a7657e1cf99570dc7331b5913ff6f37c846373e83585720e076cc3dbee167c",
+  "content_version": 4,
+  "content_hash": "cbdb7a0258affd9f26431bcc8bbd150bfc576c7926baea40e615bcff6de4030b",
   "title": "Controlled Substance Schedule Overview",
   "areas": [
     2,
@@ -22,7 +22,8 @@
     "MA-CS-REFILL-AUTHORIZATION",
     "MA-PMP-STATUTORY-FRAMEWORK",
     "MA-PMP-INPATIENT-EXCLUSION",
-    "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
+    "MA-PMP-ADDITIONAL-DRUG-DESIGNATION",
+    "FED-TEMPORARY-SCHEDULE-LISTING"
   ],
   "verified_rule_dependencies": {
     "FED-CS-SCHEDULES": {
@@ -60,6 +61,10 @@
     "MA-PMP-ADDITIONAL-DRUG-DESIGNATION": {
       "content_version": 1,
       "content_hash": "3188412cd3eb7d1aae9d43805b3a786b82c9cc276cb8a8c1622ea51a7c6a0cd9"
+    },
+    "FED-TEMPORARY-SCHEDULE-LISTING": {
+      "content_version": 1,
+      "content_hash": "420d9d92b7217447496a40cfe88a1b78161b3c65160248a7bd90f39a9bbef56c"
     }
   },
   "orientation": [
@@ -183,11 +188,12 @@
         {
           "cells": [
             "Temporary Massachusetts placement",
-            "No counterpart in Part 1308; under M.G.L. c. 94C, s. 2A(f) the Commissioner forwards the order to the Attorney General of the United States to request temporary placement under 21 U.S.C. 811(h)",
+            "21 CFR 1308.11(h), 'Temporary listing of substances subject to emergency scheduling', is where a substance placed under the 21 U.S.C. 811(h) emergency authority is listed -- inside Schedule I rather than in a schedule of its own; under M.G.L. c. 94C, s. 2A(f) the Commissioner forwards the order to the Attorney General of the United States to request that federal placement",
             "M.G.L. c. 94C, s. 2A: the Commissioner may place a substance in Schedule I by order, on the findings the section requires, effective after a 14-day notice period and for up to one year"
           ],
           "rule_ids": [
-            "MA-SCHEDULE-I-TEMPORARY-ORDER"
+            "MA-SCHEDULE-I-TEMPORARY-ORDER",
+            "FED-TEMPORARY-SCHEDULE-LISTING"
           ]
         }
       ]
@@ -461,6 +467,13 @@
       "rule_ids": [
         "MA-SCHEDULE-VI",
         "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "prompt": "Where in 21 CFR part 1308 does a substance that has been temporarily controlled under 21 U.S.C. 811(h) appear?",
+      "answer": "In 21 CFR 1308.11(h), the temporary listing paragraph inside the Schedule I section; part 1308 has no separate temporary schedule.",
+      "rule_ids": [
+        "FED-TEMPORARY-SCHEDULE-LISTING"
       ]
     }
   ],
