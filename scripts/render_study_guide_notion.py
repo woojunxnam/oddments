@@ -9,6 +9,9 @@ English block. The notes are an unaudited study aid bound to the exact ``content
 written from, so a note file whose hash no longer matches its section is refused and the page renders
 in English only until the notes are rewritten.
 
+``render_blocks`` returns the same page as ordered English and Korean blocks, so the Korean notes can
+also be placed into a Notion page that holds the English together with the reader's own notes.
+
     py -X utf8 scripts/render_study_guide_notion.py --out <dir>
     py -X utf8 scripts/render_study_guide_notion.py --out <dir> --section SG-MA-COUNSELING
     py -X utf8 scripts/render_study_guide_notion.py --check-korean
@@ -84,12 +87,27 @@ def drug_label(drug_id: str) -> str:
     return name[0].upper() + name[1:]
 
 
-def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: dict[str, Any] | None = None) -> str:
+def render_blocks(
+    section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: dict[str, Any] | None = None
+) -> list[tuple[bool, list[str]]]:
+    """The page as ordered blocks of lines, each flagged True when it is a Korean note."""
     ko = korean or {}
     verified = section["verification_status"] == "VERIFIED"
-    lines: list[str] = []
-    add = lines.append
+    blocks: list[tuple[bool, list[str]]] = []
     number = 0
+
+    def add(line: str) -> None:
+        if blocks and not blocks[-1][0]:
+            blocks[-1][1].append(line)
+        else:
+            blocks.append((False, [line]))
+
+    def extend(lines: list[str]) -> None:
+        for line in lines:
+            add(line)
+
+    def korean_block(lines: list[str]) -> None:
+        blocks.append((True, list(lines)))
 
     def heading(title: str) -> None:
         nonlocal number
@@ -108,18 +126,20 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
         add(f"\tAudit pending · content version {section['content_version']}")
     add("</callout>")
     if korean:
-        add('<callout icon="🇰🇷" color="gray_bg">')
-        add(
-            f"\t영어 노트 아래의 **{KO_SUMMARY}** 토글을 펼치면 번역·요약한 한국어 설명을 볼 수 있습니다. "
-            "한국어 노트는 이해를 돕는 학습 자료이고 감사 대상이 아니므로, 법적 판단의 기준은 영어 본문입니다."
+        korean_block(
+            [
+                '<callout icon="🇰🇷" color="gray_bg">',
+                f"\t영어 노트 아래의 **{KO_SUMMARY}** 토글을 펼치면 번역·요약한 한국어 설명을 볼 수 있습니다. "
+                "한국어 노트는 이해를 돕는 학습 자료이고 감사 대상이 아니므로, 법적 판단의 기준은 영어 본문입니다.",
+                "</callout>",
+            ]
         )
-        add("</callout>")
 
     heading("이 장에서 할 수 있어야 하는 것")
     for objective in section["learning_objectives"]:
         add(f"- {esc(objective)}")
     if korean:
-        lines += ko_note([f"- {esc(text)}" for text in ko["learning_objectives"]])
+        korean_block(ko_note([f"- {esc(text)}" for text in ko["learning_objectives"]]))
 
     authorities = authorities_for(section, rules)
     heading("근거 법령 (Governing authorities)")
@@ -130,16 +150,16 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
     for index, paragraph in enumerate(section["orientation"]):
         add(esc(paragraph["text"]))
         if korean:
-            lines += ko_note([esc(ko["orientation"][index])])
+            korean_block(ko_note([esc(ko["orientation"][index])]))
 
     if section["comparison_tables"]:
         heading("비교표 (Side by side)")
         for index, comparison in enumerate(section["comparison_tables"]):
             add(f"### {esc(comparison['title'])}")
-            lines += table_lines(comparison["columns"], [row["cells"] for row in comparison["rows"]])
+            extend(table_lines(comparison["columns"], [row["cells"] for row in comparison["rows"]]))
             if korean:
                 note = ko["comparison_tables"][index]
-                lines += ko_note([f"**{esc(note['title'])}**", *[f"- {esc(text)}" for text in note["row_notes"]]])
+                korean_block(ko_note([f"**{esc(note['title'])}**", *[f"- {esc(text)}" for text in note["row_notes"]]]))
 
     if section["decision_logic"]:
         heading("판단 흐름 (Decision logic)")
@@ -150,7 +170,7 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
             children = []
             for step in ko["decision_logic"]:
                 children += [f"1. **{esc(step['condition'])}**", f"\t{esc(step['action'])}"]
-            lines += ko_note(children)
+            korean_block(ko_note(children))
 
     if section["worked_examples"]:
         heading("워크드 예제 (Worked examples)")
@@ -166,22 +186,24 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
             if korean:
                 note = ko["worked_examples"][index - 1]
                 solution = [*[f"1. {esc(step)}" for step in note["steps"]], f"**답:** {esc(note['resolution'])}"]
-                lines += ko_note([f"**상황:** {esc(note['scenario'])}", *toggle("풀이와 답 보기", solution)])
+                korean_block(ko_note([f"**상황:** {esc(note['scenario'])}", *toggle("풀이와 답 보기", solution)]))
 
     if section["timing_deadlines"]:
         heading("기한 (Deadlines)")
-        lines += table_lines(
-            ["사건", "기한", "결과"],
-            [[item["event"], item["timeframe"], item["consequence"]] for item in section["timing_deadlines"]],
+        extend(
+            table_lines(
+                ["사건", "기한", "결과"],
+                [[item["event"], item["timeframe"], item["consequence"]] for item in section["timing_deadlines"]],
+            )
         )
         if korean:
-            lines += ko_note([f"- {esc(text)}" for text in ko["timing_deadlines"]])
+            korean_block(ko_note([f"- {esc(text)}" for text in ko["timing_deadlines"]]))
 
     if section["role_duties"]:
         heading("누가 무엇을 하는가 (Who does what)")
-        lines += table_lines(["역할", "의무"], [[item["role"], item["duty"]] for item in section["role_duties"]])
+        extend(table_lines(["역할", "의무"], [[item["role"], item["duty"]] for item in section["role_duties"]]))
         if korean:
-            lines += ko_note([f"- {esc(text)}" for text in ko["role_duties"]])
+            korean_block(ko_note([f"- {esc(text)}" for text in ko["role_duties"]]))
 
     list_headings = {
         "ma_vs_federal": "매사추세츠 vs 연방",
@@ -194,18 +216,20 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
             for item in section[field]:
                 add(f"- {esc(item['text'])}")
             if korean:
-                lines += ko_note([f"- {esc(text)}" for text in ko[field]])
+                korean_block(ko_note([f"- {esc(text)}" for text in ko[field]]))
 
     if section["drug_examples"]:
         heading("약물 예시")
         for item in section["drug_examples"]:
             add(f"- **{esc(drug_label(item['drug_id']))}:** {esc(item['teaching_point'])}")
         if korean:
-            lines += ko_note(
-                [
-                    f"- **{esc(drug_label(item['drug_id']))}:** {esc(text)}"
-                    for item, text in zip(section["drug_examples"], ko["drug_examples"])
-                ]
+            korean_block(
+                ko_note(
+                    [
+                        f"- **{esc(drug_label(item['drug_id']))}:** {esc(text)}"
+                        for item, text in zip(section["drug_examples"], ko["drug_examples"])
+                    ]
+                )
             )
 
     for field, title in (("common_traps", "함정 (High-yield traps)"), ("quick_review", "Quick review")):
@@ -213,7 +237,7 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
         for item in section[field]:
             add(f"- {esc(item['text'])}")
         if korean:
-            lines += ko_note([f"- {esc(text)}" for text in ko[field]])
+            korean_block(ko_note([f"- {esc(text)}" for text in ko[field]]))
 
     heading("Self-test — 먼저 답하고 펼치기")
     for index, prompt in enumerate(section["retrieval_prompts"], start=1):
@@ -223,9 +247,11 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
         add("</details>")
         if korean:
             note = ko["retrieval_prompts"][index - 1]
-            lines += toggle(
-                f"🇰🇷 {index}번 한국어로 풀기",
-                [f"**문제:** {esc(note['prompt'])}", *toggle("답 보기", [esc(note["answer"])])],
+            korean_block(
+                toggle(
+                    f"🇰🇷 {index}번 한국어로 풀기",
+                    [f"**문제:** {esc(note['prompt'])}", *toggle("답 보기", [esc(note["answer"])])],
+                )
             )
 
     heading("공식 출처 (Official sources)")
@@ -246,7 +272,11 @@ def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: di
     add(f"\t연습문제 연결: {', '.join(esc(q) for q in section['practice_question_ids']) or '없음'}")
     add("</callout>")
 
-    return "\n".join(lines) + "\n"
+    return blocks
+
+
+def render(section: dict[str, Any], rules: dict[str, dict[str, Any]], korean: dict[str, Any] | None = None) -> str:
+    return "\n".join(line for _, lines in render_blocks(section, rules, korean) for line in lines) + "\n"
 
 
 def korean_problems(section: dict[str, Any], notes: dict[str, Any]) -> list[str]:

@@ -6,7 +6,16 @@ from typing import Any
 
 import pytest
 
-from render_study_guide_notion import KO_SUMMARY, esc, korean_problems, load_guide, render, selected
+from render_study_guide_notion import (
+    HANGUL,
+    KO_SUMMARY,
+    esc,
+    korean_problems,
+    load_guide,
+    render,
+    render_blocks,
+    selected,
+)
 
 
 @pytest.fixture(scope="module")
@@ -109,6 +118,20 @@ def test_korean_notes_render_as_toggles_without_disturbing_the_english(guide) ->
     # Every English line survives, in order, with the Korean toggles only added between them.
     remaining = iter(bilingual.splitlines())
     assert all(line in remaining for line in english.splitlines())
+
+
+def test_blocks_rebuild_the_page_and_flag_only_the_korean_notes(guide) -> None:
+    rules, section = first_verified(guide)
+    notes = mirrored_notes(section)
+
+    blocks = render_blocks(section, rules, notes)
+    assert "\n".join(line for _, lines in blocks for line in lines) + "\n" == render(section, rules, notes)
+    english = [line for is_korean, lines in blocks if not is_korean for line in lines]
+    assert "\n".join(english) + "\n" == render(section, rules)
+    for is_korean, lines in blocks:
+        if is_korean:
+            assert HANGUL.search("\n".join(lines))
+    assert all(not is_korean for is_korean, _ in render_blocks(section, rules))
 
 
 def test_korean_notes_are_refused_when_stale_untranslated_or_missing_a_number(guide) -> None:
