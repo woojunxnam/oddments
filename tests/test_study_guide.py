@@ -71,7 +71,11 @@ def test_public_payload_holds_back_a_section_that_is_not_verified(monkeypatch) -
     from qa_common import load_records
 
     canonical = {section["section_id"]: section for _, section in load_records(DATA / "study_guide" / "sections")}
-    held_back = sorted(canonical)[0]
+    # Hold back a published section, so the filter is shown removing something that would otherwise be
+    # public, whatever else in the corpus happens to be awaiting audit at the time.
+    published = [sid for sid in sorted(canonical) if canonical[sid]["verification_status"] == "VERIFIED"]
+    assert published, "the corpus holds at least one published section to hold back"
+    held_back = published[0]
     real_validate = build_study_guide_data.validate_study_guide
 
     def one_section_pending(*args, **kwargs):
@@ -88,8 +92,9 @@ def test_public_payload_holds_back_a_section_that_is_not_verified(monkeypatch) -
 
     assert held_back not in {section["section_id"] for section in public["sections"]}
     assert held_back in {section["section_id"] for section in development["sections"]}
-    assert public["meta"]["section_count"] == len(canonical) - 1
-    assert public["meta"]["pending_section_count"] == 1
+    already_pending = sum(section["verification_status"] == "AUDIT_PENDING" for section in canonical.values())
+    assert public["meta"]["section_count"] == len(published) - 1
+    assert public["meta"]["pending_section_count"] == already_pending + 1
     # The practice-question map must not leak the held-back section through a shared question.
     assert held_back not in {sid for sids in public["question_to_sections"].values() for sid in sids}
 
