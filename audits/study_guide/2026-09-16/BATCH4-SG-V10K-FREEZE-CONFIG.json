@@ -1,0 +1,22 @@
+{
+  "freeze_date": "2026-09-16",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "claude/sg-v11-coverage-completion",
+  "represented_candidate_sha": "1aa552c674d770db96ca0880b491cdfd848e6721",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B4-SG-V10K",
+  "section_ids": [
+    "SG-CS-PRESCRIPTION-SPECIAL-RULES"
+  ],
+  "output_dir": "audits/study_guide/2026-09-16",
+  "file_prefix": "BATCH4-SG-V10K",
+  "manifest_type": "STUDY_GUIDE_REPAIR_CLEAN_FREEZE",
+  "expected_audit_output_path": "audits/study_guide/2026-09-16/CLAUDE-FRESH-B4-SG-V10K-AUDIT.json",
+  "scope_note": "SG-CS-PRESCRIPTION-SPECIAL-RULES after corrections following the V10D audit. The Massachusetts layer over 21 CFR 1306.07(b) is now taught: M.G.L. c. 94C, s. 9(b) limits a practitioner's dispensing to what immediate treatment needs until a pharmacy can fill a prescription, and 105 CMR 700.010(A) bars a practitioner from dispensing to a patient except as samples (immediate administration is not barred; under 105 CMR 700.001 a sample is in the manufacturer's package and not repackaged), so worked example 5 resolves a counted-out take-home supply as unavailable in Massachusetts. decision_logic[6] separates splitting a prescription from a patient-requested partial fill (21 CFR 1306.13(b); M.G.L. c. 94C, s. 18(d3/4) on request); decision_logic[16] applies the 90-day ceiling to Schedule III only; the 30-day validity references note the five-day window for out-of-state prescriptions; the acetaminophen-codeine example is tablets. New rules: MA-PRACTITIONER-DISPENSING-IMMEDIATE-TREATMENT and MA-PRACTITIONER-DISPENSING-SAMPLES-ONLY; MA-OUTSTATE-CII-FILL-WINDOW, FED-CII-PARTIAL-PATIENT and MA-CII-PARTIAL-FILL-PATHWAY-LIMITS are now cited. Scope gate: all four actionable signals declined; FED-OUD-OTP and MA-CS-QUANTITY-II-III are the records this section already replaced, and MA-DPH-REGISTRANT-SCOPE and MA-PMP-STATUTORY-FRAMEWORK are neighbours of the 105 CMR 700.001 citation outside the declared scope.",
+  "prior_audit_reference": {
+    "path": "audits/study_guide/2026-09-14/CLAUDE-FRESH-B4-SG-V10D-AUDIT.json",
+    "audit_id": "AUDIT-SG-B4-SG-V10D-2026-09-14",
+    "auditor_instance": "CLAUDE-FRESH-B4-SG-V10D",
+    "role": "HISTORICAL_REPAIR_PROVENANCE",
+    "note": "V10D rated the superseded hash MINOR_EDIT and drove this correction. It does not bind the hash frozen here and is excluded from the auditor package."
+  }
+}
