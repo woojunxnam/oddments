@@ -1,7 +1,7 @@
 {
   "section_id": "SG-CS-PRESCRIPTION-SPECIAL-RULES",
-  "content_version": 2,
-  "content_hash": "786aaa5c7a9b8583285edcf2a8fa8397cfd250fa373646abbc858ecd71cacecf",
+  "content_version": 3,
+  "content_hash": "2741bf7797421afee9568fb6e062e23ba37d0a18bb62586871a5d5e703872ea1",
   "title": "Schedule II Faxes and Multiple Prescriptions, Schedule III-V Partial Fills, Massachusetts Supply Ceilings, Endorsement, Retention and Narcotic Treatment Limits",
   "areas": [
     3,
@@ -39,6 +39,7 @@
     "MA-PRACTITIONER-DISPENSING-IMMEDIATE-TREATMENT",
     "MA-PRACTITIONER-DISPENSING-SAMPLES-ONLY",
     "MA-OUTSTATE-CII-FILL-WINDOW",
+    "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW",
     "FED-CII-PARTIAL-PATIENT",
     "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
   ],
@@ -107,6 +108,10 @@
       "content_version": 1,
       "content_hash": "d7e94e4062dad0c035d4d63f27e7bd11c46c1540005da6e80f3258eb0006748f"
     },
+    "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW": {
+      "content_version": 1,
+      "content_hash": "5d419fb774b4735d1c40f19470551c3b3abda046f6430701932cb4a8c197d3b7"
+    },
     "FED-CII-PARTIAL-PATIENT": {
       "content_version": 1,
       "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
@@ -152,10 +157,12 @@
       ]
     },
     {
-      "text": "Massachusetts adds a clock of its own. Under M.G.L. c. 94C, s. 23(a) a written or electronic prescription for a controlled substance in Schedule II becomes invalid 30 days after the date of issuance. The subsection does not itself say what the date of issuance is for a prescription that carries a do-not-fill-before date, and a candidate who counts from the date written would conclude that the later prescriptions in a 90-day set expire before they can be filled. Massachusetts guidance answers the question the other way. A Board of Registration in Medicine guideline, concurring with the joint policy of the Drug Control Program and the Board of Registration in Pharmacy, records their determination that issuing multiple Schedule II prescriptions in accordance with the federal regulation is permissible under chapter 94C, and states that the date of issuance referred to in section 23 shall be the do-not-fill-before date indicated by the prescriber, while the date written is the date the prescription was written and signed; accordingly each written prescription becomes invalid 30 days after its date of issuance. The Board of Registration in Pharmacy's December 2025 newsletter says the same of a Massachusetts prescriber's Schedule II prescriptions, which it describes as valid for 30 days from the date of issuance or the do-not-fill-before date, as applicable, adding that because prescriptions may not be post-dated the clock starts from the later do-not-fill-before date where there is one. A later prescription in a set can therefore be filled in Massachusetts on or after its do-not-fill-before date and before it becomes invalid 30 days after that date, while a prescription with no such date becomes invalid 30 days after the date it was issued. The same guideline reports DEA's interpretation that no verbal modifications can be made to the earliest date on which the Schedule II prescription may be filled. Prescriptions from practitioners outside Massachusetts run on different periods, taught with out-of-state prescriptions.",
+      "text": "Massachusetts adds a clock of its own. Under M.G.L. c. 94C, s. 23(a) a written or electronic prescription for a controlled substance in Schedule II becomes invalid 30 days after the date of issuance. The subsection does not itself say what the date of issuance is for a prescription that carries a do-not-fill-before date, and a candidate who counts from the date written would conclude that the later prescriptions in a 90-day set expire before they can be filled. Massachusetts guidance answers the question the other way. A Board of Registration in Medicine guideline, concurring with the joint policy of the Drug Control Program and the Board of Registration in Pharmacy, records their determination that issuing multiple Schedule II prescriptions in accordance with the federal regulation is permissible under chapter 94C, and states that the date of issuance referred to in section 23 shall be the do-not-fill-before date indicated by the prescriber, while the date written is the date the prescription was written and signed; accordingly each written prescription becomes invalid 30 days after its date of issuance. The Board of Registration in Pharmacy's December 2025 newsletter says the same of a Massachusetts prescriber's Schedule II prescriptions, which it describes as valid for 30 days from the date of issuance or the do-not-fill-before date, as applicable, adding that because prescriptions may not be post-dated the clock starts from the later do-not-fill-before date where there is one. A later prescription in a set can therefore be filled in Massachusetts on or after its do-not-fill-before date and before it becomes invalid 30 days after that date, while a prescription with no such date becomes invalid 30 days after the date it was issued. The same guideline reports DEA's interpretation that no verbal modifications can be made to the earliest date on which the Schedule II prescription may be filled. Prescriptions from practitioners outside Massachusetts run on different periods, taught with out-of-state prescriptions, and the same question arises there. A Schedule II prescription from an out-of-state practitioner filled under M.G.L. c. 94C, s. 18(d) or (d1/2) may be filled only if it was issued within the preceding five days, and those subsections do not say how a do-not-fill-before date bears on that period. The Board of Registration in Pharmacy's December 2025 newsletter answers it the same way, describing a nonresident prescriber's Schedule II prescriptions as only valid for five days from the date of issuance or the do-not-fill-before date, as applicable. On that guidance a later prescription in such a set does not lapse before its do-not-fill-before date arrives: its five days run from that date, and the other out-of-state conditions still apply.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
-        "MA-CII-MULTIPLE-RX-ISSUANCE-DATE"
+        "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -328,13 +335,14 @@
         {
           "cells": [
             "From what date does the Massachusetts 30-day validity run?",
-            "The date of issuance, which Massachusetts guidance identifies as the do-not-fill-before date for a prescription carrying one; the date written stays the date the prescription was written and signed; a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) runs instead on a five-day filling window",
-            "M.G.L. c. 94C, s. 23(a), read with the guideline and the Board of Registration in Pharmacy's December 2025 newsletter; M.G.L. c. 94C, s. 18(d) and (d1/2)"
+            "The date of issuance, which Massachusetts guidance identifies as the do-not-fill-before date for a prescription carrying one; the date written stays the date the prescription was written and signed; a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) runs instead on a five-day filling window, which Board of Registration in Pharmacy guidance also measures from the do-not-fill-before date where there is one",
+            "M.G.L. c. 94C, s. 23(a), read with the guideline and the Board of Registration in Pharmacy's December 2025 newsletter; M.G.L. c. 94C, s. 18(d) and (d1/2), read with the same newsletter"
           ],
           "rule_ids": [
             "MA-CII-VALIDITY-30D",
             "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-            "MA-OUTSTATE-CII-FILL-WINDOW"
+            "MA-OUTSTATE-CII-FILL-WINDOW",
+            "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
           ]
         },
         {
@@ -716,13 +724,14 @@
             "30 days (validity)",
             "M.G.L. c. 94C, s. 23(a)",
             "The time after which a written or electronic Schedule II prescription is invalid",
-            "The date of issuance; for a prescription carrying a do-not-fill-before date, Massachusetts guidance treats that date as the date of issuance; a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if issued within the preceding five days",
+            "The date of issuance; for a prescription carrying a do-not-fill-before date, Massachusetts guidance treats that date as the date of issuance; a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if issued within the preceding five days, and Board of Registration in Pharmacy guidance measures those five days from the do-not-fill-before date where there is one",
             "Anyone filling the prescription in Massachusetts"
           ],
           "rule_ids": [
             "MA-CII-VALIDITY-30D",
             "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-            "MA-OUTSTATE-CII-FILL-WINDOW"
+            "MA-OUTSTATE-CII-FILL-WINDOW",
+            "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
           ]
         },
         {
@@ -986,11 +995,12 @@
     },
     {
       "prompt": "In Massachusetts, from what date does the 30-day validity of a later prescription in a multiple Schedule II set run?",
-      "answer": "From its do-not-fill-before date. M.G.L. c. 94C, s. 23(a) makes a Schedule II prescription invalid 30 days after the date of issuance, and Massachusetts guidance treats the do-not-fill-before date as the date of issuance for a prescription that carries one; the date written remains the date it was written and signed. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) runs instead on the five-day filling window taught with out-of-state prescriptions.",
+      "answer": "From its do-not-fill-before date. M.G.L. c. 94C, s. 23(a) makes a Schedule II prescription invalid 30 days after the date of issuance, and Massachusetts guidance treats the do-not-fill-before date as the date of issuance for a prescription that carries one; the date written remains the date it was written and signed. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) runs instead on the five-day filling window taught with out-of-state prescriptions, and Board of Registration in Pharmacy guidance measures those five days from the do-not-fill-before date as well.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -1175,11 +1185,12 @@
       ]
     },
     {
-      "text": "In Massachusetts a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance, and for a prescription carrying a do-not-fill-before date Massachusetts guidance treats that date as the date of issuance. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if issued within the preceding five days.",
+      "text": "In Massachusetts a written or electronic Schedule II prescription becomes invalid 30 days after the date of issuance, and for a prescription carrying a do-not-fill-before date Massachusetts guidance treats that date as the date of issuance. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if issued within the preceding five days, and Board of Registration in Pharmacy guidance measures those five days from the do-not-fill-before date where there is one.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -1317,12 +1328,13 @@
     },
     {
       "condition": "A prescription from a multiple Schedule II set is presented to a Massachusetts pharmacy on or after its indicated date.",
-      "action": "Treat it as invalid 30 days after its date of issuance under M.G.L. c. 94C, s. 23(a), taking its do-not-fill-before date as the date of issuance, as Massachusetts guidance does for a Massachusetts prescriber's prescriptions, and hold the filling to the single-filling ceiling in s. 23(d). If the prescriber is an out-of-state practitioner whose prescription is filled under s. 18(d) or (d1/2), the prescription may be filled only if issued within the preceding five days, as taught with out-of-state prescriptions.",
+      "action": "Treat it as invalid 30 days after its date of issuance under M.G.L. c. 94C, s. 23(a), taking its do-not-fill-before date as the date of issuance, as Massachusetts guidance does for a Massachusetts prescriber's prescriptions, and hold the filling to the single-filling ceiling in s. 23(d). If the prescriber is an out-of-state practitioner whose prescription is filled under s. 18(d) or (d1/2), each of which authorizes the filling only of prescriptions issued within the preceding five days, fill it only within those five days, counting them from the prescription's do-not-fill-before date where it has one, as Board of Registration in Pharmacy guidance does for a nonresident prescriber's Schedule II prescriptions, and only if the other out-of-state conditions taught with out-of-state prescriptions are met.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
         "MA-CS-SINGLE-FILLING-SUPPLY-CEILING",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -1573,11 +1585,12 @@
     {
       "event": "Validity of a written or electronic Schedule II prescription in Massachusetts",
       "timeframe": "Invalid 30 days after the date of issuance",
-      "consequence": "For a prescription carrying a do-not-fill-before date, Massachusetts guidance treats that date as the date of issuance, so the 30 days run from it; otherwise they run from the date the prescription was issued. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if it was issued within the preceding five days, as taught with out-of-state prescriptions.",
+      "consequence": "For a prescription carrying a do-not-fill-before date, Massachusetts guidance treats that date as the date of issuance, so the 30 days run from it; otherwise they run from the date the prescription was issued. A Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2) may be filled only if it was issued within the preceding five days, as taught with out-of-state prescriptions, and Board of Registration in Pharmacy guidance measures those five days in the same way, from the do-not-fill-before date where there is one and otherwise from the date of issuance.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -1742,11 +1755,12 @@
     },
     {
       "role": "Massachusetts pharmacist filling a prescription from a multiple Schedule II set",
-      "duty": "Treat the prescription as invalid 30 days after its date of issuance under M.G.L. c. 94C, s. 23(a), taking its do-not-fill-before date as that date, as Massachusetts guidance does for a Massachusetts prescriber's prescriptions; for a prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2), fill only if it was issued within the preceding five days.",
+      "duty": "Treat the prescription as invalid 30 days after its date of issuance under M.G.L. c. 94C, s. 23(a), taking its do-not-fill-before date as that date, as Massachusetts guidance does for a Massachusetts prescriber's prescriptions; for a prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2), each of which authorizes the filling only of prescriptions issued within the preceding five days, fill it only within those five days, counting them from its do-not-fill-before date where it has one, as Board of Registration in Pharmacy guidance does for a nonresident prescriber's Schedule II prescriptions.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -1892,11 +1906,12 @@
       ]
     },
     {
-      "text": "Counting the Massachusetts 30-day validity of a later prescription in a set from the date written; Massachusetts guidance treats its do-not-fill-before date as the date of issuance under M.G.L. c. 94C, s. 23. The 30-day period is not the window for a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2), which may be filled only if issued within the preceding five days.",
+      "text": "Counting the Massachusetts 30-day validity of a later prescription in a set from the date written; Massachusetts guidance treats its do-not-fill-before date as the date of issuance under M.G.L. c. 94C, s. 23. The 30-day period is not the window for a Schedule II prescription from an out-of-state practitioner filled under s. 18(d) or (d1/2), which may be filled only if issued within the preceding five days, and counting those five days from the date written is the same mistake: Board of Registration in Pharmacy guidance measures them from the do-not-fill-before date where there is one.",
       "rule_ids": [
         "MA-CII-VALIDITY-30D",
         "MA-CII-MULTIPLE-RX-ISSUANCE-DATE",
-        "MA-OUTSTATE-CII-FILL-WINDOW"
+        "MA-OUTSTATE-CII-FILL-WINDOW",
+        "MA-OUTSTATE-CII-MULTIPLE-RX-WINDOW"
       ]
     },
     {
@@ -2112,7 +2127,7 @@
     "MA-Q-0197",
     "MA-Q-0383"
   ],
-  "last_verified": null,
-  "verification_status": "AUDIT_PENDING",
-  "independent_audit_id": null
+  "last_verified": "2026-09-16",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V10N-2026-09-16"
 }
