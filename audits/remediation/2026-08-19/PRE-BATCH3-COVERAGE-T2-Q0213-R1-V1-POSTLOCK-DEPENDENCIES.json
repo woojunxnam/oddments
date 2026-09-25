@@ -1,0 +1,53 @@
+{
+  "package_type": "POSTLOCK_CANONICAL_DEPENDENCY_CONTRACT",
+  "read_gate": "PHASE_1_BLIND_LOCK_MUST_EXIST_BEFORE_OPENING",
+  "audit_scope": "CHANGED_ITEM_REAUDIT",
+  "represented_candidate": {
+    "branch": "repair/pre-batch3-coverage-t2-r1",
+    "sha": "e8b42047f2579f0b83822bc15dcc640c5e9ba236"
+  },
+  "question": {
+    "question_id": "MA-Q-0213",
+    "question_path": "data/questions/ma-q-0213.json",
+    "question_audit_hash": "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23",
+    "git_blob_sha": "4f16c9b25308e1a2936a39882b4271a570ace42d",
+    "required_rule_ids_in_order": [
+      "MA-COUNSELING-REMOTE-DELIVERY",
+      "MA-COUNSELING"
+    ],
+    "required_status": {
+      "verification_status": "AUDIT_PENDING",
+      "lifecycle_status": "AUDIT_PENDING",
+      "duplicate_review_status": "PENDING",
+      "independent_audit_status": "PENDING",
+      "audits": [],
+      "final_adjudication": null,
+      "development_fixture": true
+    }
+  },
+  "dependencies": [
+    {
+      "rule_id": "MA-COUNSELING-REMOTE-DELIVERY",
+      "path": "data/rules/ma-counseling-remote-delivery.json",
+      "content_version": 1,
+      "content_hash": "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822",
+      "git_blob_sha": "4298e962255da6e47ad133672454c16a4f53d7bd"
+    },
+    {
+      "rule_id": "MA-COUNSELING",
+      "path": "data/rules/ma-counseling.json",
+      "content_version": 1,
+      "content_hash": "e8f6fbdb5b0bdb7ec7f1512527eeeac5dbe49e0b761ac0f498fa9da11faedd82",
+      "git_blob_sha": "0825a6eb514ab1a0ee433d7061ecdcef47b44c1c"
+    }
+  ],
+  "family_matrix": {
+    "family_id": "T2_0213_MA_COUNSELING_REMOTE_DELIVERY_OFFER",
+    "required_primary_rule_ids": [
+      "MA-COUNSELING-REMOTE-DELIVERY"
+    ],
+    "required_secondary_rule_ids": [
+      "MA-COUNSELING"
+    ]
+  }
+}
