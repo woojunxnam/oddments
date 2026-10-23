@@ -10,4 +10,8 @@ The first import run failed its 320-pixel overflow assertion. The reader CSS was
 
 All pre-existing tracked files except `README.md` and `site/index.html` were byte-compared before/after import. Data, audits, notes, release policy and quiz scripts were unchanged. The final diff removes the temporary import workflow and retains read-only continuous QA.
 
-Local execution of the entire repository test suite exceeded the local command timeout; it is not recorded as a passed full-suite run. Repository-wide QA status is reported separately by the existing GitHub workflow. Physical iOS/Android devices, Safari and independent legal completeness remain untested. Production Pages deployment is a separate step from the successful feature-branch import.
+## Existing notes-reader regression
+
+The PR's existing notes-reader browser check initially failed because `.notes-entry-primary` now selected two styled entry buttons. The test now identifies the notes button by its exact `href="notes/"`, explicitly asserts exactly one match, clicks it and retains the destination assertion. No test case was skipped and no notes or quiz application code was modified. `scripts/verify_notes_browser.py` is therefore one additional existing file changed after the import, solely to make its navigation selector destination-specific. The new practice navigation has its own separate browser test.
+
+Local execution of the entire repository test suite exceeded the local command timeout; it is not recorded as a passed full-suite run. Repository-wide QA and notes-reader rerun status are reported separately by their existing GitHub workflows. Physical iOS/Android devices, Safari and independent legal completeness remain untested. Production Pages deployment is a separate step from the successful feature-branch import.
