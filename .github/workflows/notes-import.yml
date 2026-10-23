@@ -1,0 +1,61 @@
+name: Import ultimate notes implementation
+on:
+  push:
+    branches: ["feat/mpje-ultimate-notes-20261023"]
+    paths: [".github/workflows/notes-import.yml"]
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/mpje-ultimate-notes-20261023
+      - name: Import only the reviewed notes files
+        shell: python
+        run: |
+          import urllib.request, io, zipfile, json, hashlib, pathlib
+          url='https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d2e8-81f7-ac03-07801712c246/raw?se=2026-10-23T17%3A37%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=d34b5b6d-183f-5799-9e03-45ef5535c0e3&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T04%3A16%3A01Z&ske=2026-10-24T04%3A16%3A01Z&sks=b&skv=2026-02-06&sig=DmI7pFVLBkppqm5GJ6Xww/cfEl1pGx8k%2BZpG6AEG9A4%3D'
+          with urllib.request.urlopen(url,timeout=30) as r: raw=r.read(2_000_000)
+          assert hashlib.sha256(raw).hexdigest()=='807cd2675b65339f6f45d35c1037a7593324637e38a084c6a5b45678ba2be952'
+          z=zipfile.ZipFile(io.BytesIO(raw)); m=json.loads(z.read('UPLOAD_MANIFEST.json'))
+          allowed={'.github/workflows/notes-qa.yml','.gitignore','README.md','notes/README.md','notes/editorial-map.json','notes/guide.json','requirements-dev.txt','requirements-notes.txt','scripts/build_ultimate_notes.py','scripts/verify_notes_browser.py','site/index.html','site/notes-entry.css','site/notes/book.html','site/notes/build.json','site/notes/complete-notes.md','site/notes/content.js','site/notes/index.html','site/notes/notes.css','site/notes/notes.js','tests/test_ultimate_notes.py'}
+          assert set(m['files'])==allowed
+          assert set(z.namelist())==allowed|{'UPLOAD_MANIFEST.json'}
+          for name,sha in m['files'].items():
+              b=z.read(name); assert hashlib.sha256(b).hexdigest()==sha,name
+              if name.startswith('.github/'): continue
+              p=pathlib.Path(name); assert not p.is_absolute() and '..' not in p.parts
+              p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+          print('Imported 19 content/code files; canonical quiz data and workflows untouched.')
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check content and browser behavior before commit
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          python scripts/build_ultimate_notes.py --check
+          python -m pytest -q
+          node --check site/notes/notes.js
+          python scripts/verify_notes_browser.py
+      - name: Commit implementation to feature branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .gitignore README.md notes requirements-dev.txt requirements-notes.txt scripts/build_ultimate_notes.py scripts/verify_notes_browser.py site/index.html site/notes-entry.css site/notes tests/test_ultimate_notes.py
+          git diff --cached --stat
+          git diff --cached --quiet || git commit -m 'feat(notes): publish curated Week 1–6 reference with responsive reader and source map'
+          git push origin HEAD:feat/mpje-ultimate-notes-20261023
+      - name: Retain browser test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ultimate-notes-import-browser-review
+          path: test-results/ultimate-notes
+          retention-days: 7
