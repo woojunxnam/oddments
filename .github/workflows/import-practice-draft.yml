@@ -1,0 +1,93 @@
+name: Import segregated MPJE practice draft
+on:
+  push:
+    branches: ["feat/mpje-1024-draft-addition-20261023"]
+    paths: [".github/workflows/import-practice-draft.yml"]
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/mpje-1024-draft-addition-20261023
+          fetch-depth: 2
+      - name: Verify and import only the intended source and navigation files
+        shell: python
+        run: |
+          import hashlib, io, json, pathlib, subprocess, urllib.request, zipfile
+          url='https://sdmntpreastus2.oaiusercontent.com/files/00000000-a1f4-81f6-b94a-97bdc3bffdf5/raw?se=2026-10-23T21%3A08%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=df0f2e8a-5d84-5f62-856b-a7595e01b19c&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T04%3A12%3A34Z&ske=2026-10-24T04%3A12%3A34Z&sks=b&skv=2026-02-06&sig=0Go1v88aSwP9qMinGrEqhMtOEMuybKWlyBVUnTWJ%2BwQ%3D'
+          with urllib.request.urlopen(url,timeout=45) as r: raw=r.read(3_000_000)
+          assert hashlib.sha256(raw).hexdigest()=='b7a52993aabf11c2ea1434834af8c6dcfd88030038583078ce7b9c1d4a6c5f2f'
+          assert hashlib.sha256(pathlib.Path('notes/guide.json').read_bytes()).hexdigest()=='004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
+          assert subprocess.check_output(['git','hash-object','site/index.html'],text=True).strip()=='99347a66451b890c1989779a4a08dee311b9b465'
+          z=zipfile.ZipFile(io.BytesIO(raw)); m=json.loads(z.read('UPLOAD_MANIFEST.json'))
+          subprocess.run(['git','merge-base','--is-ancestor',m['base_commit'],'HEAD'],check=True)
+          assert set(z.namelist())==set(m['files'])|{'UPLOAD_MANIFEST.json'}
+          exact={'site/index.html','README.md','tests/test_practice_expansion_integration.py','docs/PRACTICE_EXPANSION_ADDITION.md'}
+          before={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in subprocess.check_output(['git','ls-files'],text=True).splitlines() if n not in {'site/index.html','README.md'}}
+          for n,h in m['files'].items():
+              p=pathlib.PurePosixPath(n)
+              assert not p.is_absolute() and '..' not in p.parts
+              assert n in exact or n.startswith('practice_expansion/') or n.startswith('site/practice-expansion/')
+              assert hashlib.sha256(z.read(n)).hexdigest()==h,n
+              assert not pathlib.Path(n).exists() or n in {'site/index.html','README.md'},n
+          for n in m['files']:
+              p=pathlib.Path(n);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(n))
+          assert all(hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h for n,h in before.items())
+          print('Imported',len(m['files']),'files; all existing protected tracked files unchanged.')
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Structural and integration tests
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python -m pytest practice_expansion/2026-10-23/tests/test_expansion.py tests/test_practice_expansion_integration.py -q
+          git diff --exit-code -- data audits notes site/generated docs/RELEASE_POLICY.md docs/SOURCE_USE_POLICY.md site/app.js site/storage.js site/session.js site/shuffle.js
+          git diff --check
+      - name: Real HTTP and file-origin reader regression on a disposable copy
+        run: |
+          python -m playwright install --with-deps chromium
+          cp -R practice_expansion/2026-10-23 /tmp/practice-reader-check
+          python /tmp/practice-reader-check/scripts/verify_reader.py
+      - name: Verify new main navigation and metadata-only status page
+        shell: python
+        run: |
+          import functools,http.server,threading
+          from playwright.sync_api import sync_playwright
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory='site'))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          with sync_playwright() as p:
+              b=p.chromium.launch();page=b.new_page(viewport={'width':1440,'height':1000})
+              page.goto(f'http://127.0.0.1:{server.server_port}/')
+              assert page.locator('a[href="practice-expansion/"]').count()==2
+              page.locator('a[href="practice-expansion/"]').first.click()
+              assert page.locator('h1').inner_text().startswith('새로운 연습문항')
+              assert 'DRAFT' in page.locator('#draft-title').inner_text()
+              assert page.locator('script').count()==0
+              for width in [320,390,768,1440]:
+                  page.set_viewport_size({'width':width,'height':1000})
+                  assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
+              page.screenshot(path='/tmp/practice-reader-check/reports/browser/status-page.png',full_page=True)
+              page.locator('header a').first.click()
+              assert page.locator('a[href="notes/"]').count()>=1
+              b.close()
+          server.shutdown()
+          print('Status page and main navigation PASS; candidate payload not served by Pages.')
+      - name: Commit source-only draft addition to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add practice_expansion site/practice-expansion site/index.html README.md tests/test_practice_expansion_integration.py docs/PRACTICE_EXPANSION_ADDITION.md
+          git diff --cached --stat
+          git commit -m 'feat(practice): add 1024 segregated drafts with review queues and status navigation'
+          git push origin HEAD:feat/mpje-1024-draft-addition-20261023
+      - name: Preserve actual browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mpje-1024-integration-browser-evidence
+          path: /tmp/practice-reader-check/reports/browser
+          retention-days: 7
