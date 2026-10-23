@@ -1,0 +1,67 @@
+name: Practice draft integration QA
+on:
+  push:
+    paths:
+      - 'practice_expansion/**'
+      - 'site/practice-expansion/**'
+      - 'site/index.html'
+      - 'notes/guide.json'
+      - 'tests/test_practice_expansion_integration.py'
+      - '.github/workflows/practice-expansion-qa.yml'
+  pull_request:
+    paths:
+      - 'practice_expansion/**'
+      - 'site/practice-expansion/**'
+      - 'site/index.html'
+      - 'notes/guide.json'
+      - 'tests/test_practice_expansion_integration.py'
+      - '.github/workflows/practice-expansion-qa.yml'
+permissions:
+  contents: read
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check original package and release isolation
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python -m pytest practice_expansion/2026-10-23/tests/test_expansion.py tests/test_practice_expansion_integration.py -q
+      - name: Test reader using real HTTP and file URLs without modifying archived evidence
+        run: |
+          python -m playwright install --with-deps chromium
+          cp -R practice_expansion/2026-10-23 /tmp/practice-reader-check
+          python /tmp/practice-reader-check/scripts/verify_reader.py
+      - name: Verify main-to-status navigation and narrow-screen status layout
+        shell: python
+        run: |
+          import functools,http.server,threading
+          from playwright.sync_api import sync_playwright
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(http.server.SimpleHTTPRequestHandler,directory='site'))
+          threading.Thread(target=server.serve_forever,daemon=True).start()
+          with sync_playwright() as p:
+              b=p.chromium.launch();page=b.new_page(viewport={'width':1440,'height':1000})
+              page.goto(f'http://127.0.0.1:{server.server_port}/')
+              assert page.locator('a[href="practice-expansion/"]').count()==2
+              page.locator('a[href="practice-expansion/"]').first.click()
+              assert 'DRAFT' in page.locator('#draft-title').inner_text()
+              assert page.locator('script').count()==0
+              for width in [320,390,768,1440]:
+                  page.set_viewport_size({'width':width,'height':1000})
+                  assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
+              page.screenshot(path='/tmp/practice-reader-check/reports/browser/status-page.png',full_page=True)
+              page.locator('header a').first.click()
+              assert page.locator('a[href="notes/"]').count()>=1
+              b.close()
+          server.shutdown()
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mpje-practice-draft-browser-evidence
+          path: /tmp/practice-reader-check/reports/browser
+          retention-days: 7
