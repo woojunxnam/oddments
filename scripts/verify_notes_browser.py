@@ -57,7 +57,10 @@ def main() -> None:
         else:
             page.goto(base,wait_until='networkidle')
             expect(page.locator('#study-guide-button')).to_be_visible()
-            page.locator('.notes-entry-primary').click()
+            # Styling classes may be reused by other independent entry cards.
+            notes_entry=page.locator('a.notes-entry-primary[href="notes/"]')
+            expect(notes_entry).to_have_count(1)
+            notes_entry.click()
             expect(page).to_have_url(re.compile('/notes/$'))
             checked('main page entry opens independent notes page')
         expect(page.locator('.chapter-card')).to_have_count(33)

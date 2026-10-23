@@ -71,3 +71,7 @@ Release build는 기본적으로 실행일을 target exam date로 사용합니�
 메인 페이지의 **Ultimate Notes · 통합 노트** 버튼에서 한국어 주제별 상세 학습판을 읽을 수 있습니다. 33개 주제·306개 상세 절·127개 약물/제형 항목, 검색·북마크·읽음 표시·이어 읽기·모바일·인쇄를 지원합니다. 출처의 확인일, 편집적 통합, 미해결 경계는 구별합니다. 독립 감사된 RELEASED question과 동일한 검증 상태로 표시하지 않습니다.
 
 노트 원본과 편집 기록은 [`notes/`](notes/README.md), 생성 스크립트는 `scripts/build_ultimate_notes.py`입니다. 기존 question/rule/drug registry와 release gates는 변경하지 않습니다.
+
+## 신규 연습문항 검토 패키지
+
+[1,024개 DRAFT](practice_expansion/README.md)를 기존 canonical 문제은행과 분리해 추가했습니다. 256개 family의 관련 변형이며 독립 법규·현실성 감사 전입니다. 메인의 **1,024문항 · 검토 원고**는 별도 상태 안내로 연결되며, 공개 시험 payload나 RELEASED 수를 늘리지 않습니다. 기존 데이터·감사·노트·release gates는 유지합니다.
