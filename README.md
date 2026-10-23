@@ -65,3 +65,9 @@ python -m http.server 8000 --directory site
 Release build는 기본적으로 실행일을 target exam date로 사용합니다. Historical pre-2027 output을 의도적으로 검증할 때만 `--target-exam-date YYYY-MM-DD`를 지정할 수 있습니다. 2027-03-01 이후 target에 pre-2027 blueprint/profile을 사용하면 `BLUEPRINT_REVIEW_REQUIRED`로 실패합니다.
 
 관련 문서: [Architecture](docs/ARCHITECTURE.md), [Question Authoring Standard](docs/QUESTION_AUTHORING_STANDARD.md), [Audit Workflow](docs/AUDIT_WORKFLOW.md), [Release Policy](docs/RELEASE_POLICY.md).
+
+## Week 1–6 통합 노트
+
+메인 페이지의 **Ultimate Notes · 통합 노트** 버튼에서 한국어 주제별 상세 학습판을 읽을 수 있습니다. 33개 주제·306개 상세 절·127개 약물/제형 항목, 검색·북마크·읽음 표시·이어 읽기·모바일·인쇄를 지원합니다. 출처의 확인일, 편집적 통합, 미해결 경계는 구별합니다. 독립 감사된 RELEASED question과 동일한 검증 상태로 표시하지 않습니다.
+
+노트 원본과 편집 기록은 [`notes/`](notes/README.md), 생성 스크립트는 `scripts/build_ultimate_notes.py`입니다. 기존 question/rule/drug registry와 release gates는 변경하지 않습니다.
