@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: feat/mpje-1024-draft-addition-20261023
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Verify and import only the intended source and navigation files
         shell: python
         run: |
           import hashlib, io, json, pathlib, subprocess, urllib.request, zipfile
-          url='https://sdmntpreastus2.oaiusercontent.com/files/00000000-a1f4-81f6-b94a-97bdc3bffdf5/raw?se=2026-10-23T21%3A08%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=df0f2e8a-5d84-5f62-856b-a7595e01b19c&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T04%3A12%3A34Z&ske=2026-10-24T04%3A12%3A34Z&sks=b&skv=2026-02-06&sig=0Go1v88aSwP9qMinGrEqhMtOEMuybKWlyBVUnTWJ%2BwQ%3D'
+          url='https://sdmntprcentralus.oaiusercontent.com/files/00000000-ecd0-81f5-bf3c-8c803cac9ed4/raw?se=2026-10-23T21%3A13%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=7f5048ec-dd10-5df0-8374-2786e634ee5f&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T10%3A59%3A02Z&ske=2026-10-24T10%3A59%3A02Z&sks=b&skv=2026-02-06&sig=9mfLbnWQ7o9b14I2iKXpljX4PlJ2Uu1f9f5e%2BeHEkH4%3D'
           with urllib.request.urlopen(url,timeout=45) as r: raw=r.read(3_000_000)
-          assert hashlib.sha256(raw).hexdigest()=='b7a52993aabf11c2ea1434834af8c6dcfd88030038583078ce7b9c1d4a6c5f2f'
+          assert hashlib.sha256(raw).hexdigest()=='c506c59d9182d7c0822051da80554029ce52b9082574fc35cdc6c373a5a17c7b'
           assert hashlib.sha256(pathlib.Path('notes/guide.json').read_bytes()).hexdigest()=='004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
           assert subprocess.check_output(['git','hash-object','site/index.html'],text=True).strip()=='99347a66451b890c1989779a4a08dee311b9b465'
           z=zipfile.ZipFile(io.BytesIO(raw)); m=json.loads(z.read('UPLOAD_MANIFEST.json'))
