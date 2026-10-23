@@ -17,9 +17,9 @@ jobs:
         shell: python
         run: |
           import urllib.request, io, zipfile, json, hashlib, pathlib
-          url='https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d2e8-81f7-ac03-07801712c246/raw?se=2026-10-23T17%3A37%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=d34b5b6d-183f-5799-9e03-45ef5535c0e3&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T04%3A16%3A01Z&ske=2026-10-24T04%3A16%3A01Z&sks=b&skv=2026-02-06&sig=DmI7pFVLBkppqm5GJ6Xww/cfEl1pGx8k%2BZpG6AEG9A4%3D'
+          url='https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-2b8c-81f7-a16f-a083f54c2401/raw?se=2026-10-23T17%3A43%3A37Z&sp=r&sv=2026-02-06&sr=b&scid=86fca573-da17-5999-bb87-77b1943f222c&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-23T11%3A33%3A16Z&ske=2026-10-24T11%3A33%3A16Z&sks=b&skv=2026-02-06&sig=9wARw2/Jd2raRkn3ISiieZmDm2vgtDJZIUcVPk7dz8s%3D'
           with urllib.request.urlopen(url,timeout=30) as r: raw=r.read(2_000_000)
-          assert hashlib.sha256(raw).hexdigest()=='807cd2675b65339f6f45d35c1037a7593324637e38a084c6a5b45678ba2be952'
+          assert hashlib.sha256(raw).hexdigest()=='9f928553ca85bb732a124f6b6adc456f7c90a5bd9809f4a2cfd31ecccf965869'
           z=zipfile.ZipFile(io.BytesIO(raw)); m=json.loads(z.read('UPLOAD_MANIFEST.json'))
           allowed={'.github/workflows/notes-qa.yml','.gitignore','README.md','notes/README.md','notes/editorial-map.json','notes/guide.json','requirements-dev.txt','requirements-notes.txt','scripts/build_ultimate_notes.py','scripts/verify_notes_browser.py','site/index.html','site/notes-entry.css','site/notes/book.html','site/notes/build.json','site/notes/complete-notes.md','site/notes/content.js','site/notes/index.html','site/notes/notes.css','site/notes/notes.js','tests/test_ultimate_notes.py'}
           assert set(m['files'])==allowed
