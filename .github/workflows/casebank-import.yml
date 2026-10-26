@@ -1,0 +1,71 @@
+name: Import additional online casebank
+on:
+  push:
+    branches: ['feat/mpje-casebank-plus-20261026']
+    paths: ['.github/workflows/casebank-import.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/mpje-casebank-plus-20261026
+          fetch-depth: 3
+      - name: Verify and import scoped practice files
+        shell: python
+        run: |
+          import hashlib,io,json,pathlib,subprocess,urllib.request,zipfile
+          url='https://sdmntprwestus3.oaiusercontent.com/files/00000000-d5f4-81fd-8132-3689e3951b06/raw?se=2026-10-26T17%3A22%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=8a3d5698-a051-55a5-bc9a-c4a74ad108c4&skoid=fadb8e47-d3c7-4c79-a9c3-970d9af3b213&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T01%3A22%3A35Z&ske=2026-10-27T01%3A22%3A35Z&sks=b&skv=2026-02-06&sig=h3XwfmS1wJ/g9r8MVhncieODyDN9lnMC3TNI1YCg%2BB0%3D'
+          with urllib.request.urlopen(url,timeout=45) as r:raw=r.read(2_000_000)
+          assert hashlib.sha256(raw).hexdigest()=='4fc8738daec1fc3dd9f243113e36086d61bc21db89d24b84ee97f7e6b8dd5cbc'
+          z=zipfile.ZipFile(io.BytesIO(raw));m=json.loads(z.read('UPLOAD_MANIFEST.json'))
+          subprocess.run(['git','merge-base','--is-ancestor',m['base_commit'],'HEAD'],check=True)
+          allowed={'README.md','docs/PRACTICE_PUBLICATION_POLICY.md','docs/CASEBANK_PLUS_REVIEW.md','scripts/publish_practice.py','scripts/verify_public_practice.py','site/practice-expansion/publication.json','site/practice-expansion/research.html','tests/test_casebank_plus.py','tests/test_practice_expansion_integration.py','.github/workflows/pages.yml','.github/workflows/public-practice-qa.yml'}
+          assert set(z.namelist())==set(m['files'])|{'UPLOAD_MANIFEST.json'}
+          for n,h in m['before'].items():assert hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h,n
+          before={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in subprocess.check_output(['git','ls-files'],text=True).splitlines() if n not in m['files']}
+          for n,h in m['files'].items():
+              p=pathlib.PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+              assert n in allowed or n.startswith('practice_expansion/2026-10-26-plus/'),n
+              b=z.read(n);assert hashlib.sha256(b).hexdigest()==h,n
+              if n.startswith('.github/'):continue
+              p=pathlib.Path(n);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+          assert all(hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h for n,h in before.items())
+          print('Scoped import complete; original archive, canonical content, audits and notes unchanged.')
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Deterministic content and integration checks
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python practice_expansion/2026-10-26-plus/scripts/build_casebank.py --check
+          python -m pytest tests/test_casebank_plus.py tests/test_practice_expansion_integration.py practice_expansion/2026-10-23/tests/test_expansion.py tests/test_ultimate_notes.py -q
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
+          git diff --exit-code -- data audits notes site/generated practice_expansion/2026-10-23 docs/RELEASE_POLICY.md
+          git diff --check
+      - name: Run actual HTTP browser checks
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_public_practice.py --site /tmp/mpje-public-site
+          python scripts/verify_notes_browser.py
+      - name: Commit checked implementation to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md docs/PRACTICE_PUBLICATION_POLICY.md docs/CASEBANK_PLUS_REVIEW.md scripts/publish_practice.py scripts/verify_public_practice.py site/practice-expansion/publication.json site/practice-expansion/research.html tests/test_casebank_plus.py tests/test_practice_expansion_integration.py practice_expansion/2026-10-26-plus
+          git diff --cached --stat
+          git commit -m 'feat(practice): add 1152 source-linked case exercises and collection filtering'
+          git push origin HEAD:feat/mpje-casebank-plus-20261026
+      - name: Save actual browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: casebank-plus-browser-evidence
+          path: test-results
+          retention-days: 7
