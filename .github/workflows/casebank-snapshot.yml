@@ -1,0 +1,19 @@
+name: Casebank working snapshot
+on:
+  push:
+    branches: ['feat/mpje-casebank-plus-20261026']
+    paths: ['.github/workflows/casebank-snapshot.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package tracked source without credentials
+        run: git archive --format=zip --output=/tmp/casebank-repository.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: casebank-working-snapshot
+          path: /tmp/casebank-repository.zip
+          retention-days: 3
