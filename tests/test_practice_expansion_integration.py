@@ -43,9 +43,9 @@ def test_ids_do_not_collide_with_canonical_registry():
     ids={json.loads(p.read_text()).get('question_id') for p in (ROOT/'data/questions').glob('*.json')}
     assert ids.isdisjoint(q['question_id'] for q in DATA['questions'])
 
-def test_all_1024_are_online_published(public):
+def test_all_original_and_new_items_are_online_published(public):
     assert public['status']=='PUBLISHED_PRACTICE'
-    assert public['published_question_count']==1024
+    assert public['published_question_count']==2176
     assert all(q['online_practice_enabled'] and q['publication_status']=='PUBLISHED_PRACTICE' for q in public['questions'])
 
 def test_publication_does_not_claim_independent_review(public):
@@ -54,7 +54,7 @@ def test_publication_does_not_claim_independent_review(public):
     assert all(q['verification_status']=='NOT_INDEPENDENTLY_REVIEWED' and q['independent_legal_audit'] is None and q['independent_realism_audit'] is None for q in public['questions'])
 
 def test_questions_answers_explanations_and_source_links_preserved(public):
-    for old,new in zip(DATA['questions'],public['questions'],strict=True):
+    for old,new in zip(DATA['questions'],public['questions'][:1024],strict=True):
         for field in ('question_id','family_id','stem','choices','correct_choice_ids','explanation','note_evidence','source_ids','source_boundary','content_sha256'):
             assert old[field]==new[field],(old['question_id'],field)
 
@@ -62,12 +62,12 @@ def test_no_draft_gate_in_public_ui(rendered):
     visible=re.sub(r'<script.*?</script>','',rendered,flags=re.S)
     assert 'DRAFT' not in visible and 'id="ack"' not in rendered and "$('#ack')" not in rendered
     assert '온라인 연습' in visible and '독립 법규 검토' in visible
-    assert 'openQuestion(byId.get(location.hash.slice(1))||Q[0])' in rendered
+    assert 'openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0])' in rendered
 
 def test_payload_escapes_script_close(rendered):
     payload=re.search(r'<script id="payload" type="application/json">(.*?)</script>',rendered,re.S).group(1)
     assert '<' not in payload
-    assert len(json.loads(payload)['questions'])==1024
+    assert len(json.loads(payload)['questions'])==2176
 
 def test_independent_browser_storage_namespace(rendered):
     assert "KEY='oddments.mpje.practice.v1'" in rendered
@@ -87,8 +87,8 @@ def test_build_updates_main_navigation_without_changing_tracked_site(tmp_path):
     result=publisher.prepare(out)
     main=(out/'index.html').read_text()
     assert main.count('href="practice-expansion/"')==2
-    assert '1,024문항 연습 시작' in main and '원고·검토 상태 보기' not in main
-    assert result['published_question_count']==1024
+    assert '2,176문항 연습 시작' in main and '원고·검토 상태 보기' not in main
+    assert result['published_question_count']==2176
     assert json.loads((out/'practice-expansion/build.json').read_text())['status']=='PUBLISHED_PRACTICE'
     assert prior=={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'site').rglob('*') if p.is_file()}
     assert (out/'generated/questions.json').read_bytes()==(ROOT/'site/generated/questions.json').read_bytes()
