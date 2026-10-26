@@ -1,22 +1,20 @@
 name: Deploy MPJE preview to Pages
-
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
     paths:
-      - "site/**"
-      - ".github/workflows/pages.yml"
+      - 'site/**'
+      - 'practice_expansion/**'
+      - 'scripts/publish_practice.py'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
-
 jobs:
   deploy:
     environment:
@@ -26,15 +24,41 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build all 1024 enabled online practice questions
+        run: python scripts/publish_practice.py --output /tmp/mpje-public-site
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
-      - name: Upload site artifact
+      - name: Upload built site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./site
-
+          path: /tmp/mpje-public-site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify actual public practice payload and main-page entry
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import json, os, time, urllib.request
+          base=os.environ['PAGE_URL'].rstrip('/')+'/'
+          suffix='?release='+os.environ['GITHUB_SHA']
+          def read(path):
+              req=urllib.request.Request(base+path+suffix,headers={'Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:return r.read().decode()
+          for attempt in range(12):
+              try:
+                  manifest=json.loads(read('practice-expansion/build.json'))
+                  assert manifest['status']=='PUBLISHED_PRACTICE' and manifest['published_question_count']==1024
+                  html=read('practice-expansion/')
+                  assert 'id="ack"' not in html and 'MA-EXP-1024' in html
+                  assert 'openQuestion(byId.get(location.hash.slice(1))||Q[0])' in html
+                  assert '1,024문항 연습 시작' in read('')
+                  print('Production page verified: 1024 online questions; no draft gate.')
+                  break
+              except Exception:
+                  if attempt==11:raise
+                  time.sleep(5)
