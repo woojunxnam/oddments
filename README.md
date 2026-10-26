@@ -72,6 +72,10 @@ Release build는 기본적으로 실행일을 target exam date로 사용합니�
 
 노트 원본과 편집 기록은 [`notes/`](notes/README.md), 생성 스크립트는 `scripts/build_ultimate_notes.py`입니다. 기존 question/rule/drug registry와 release gates는 변경하지 않습니다.
 
-## 신규 연습문항 검토 패키지
+## 온라인 연습문항 — 기존 1,024 + 신규 사례형 1,152
 
-[1,024개 DRAFT](practice_expansion/README.md)를 기존 canonical 문제은행과 분리해 추가했습니다. 256개 family의 관련 변형이며 독립 법규·현실성 감사 전입니다. 메인의 **1,024문항 · 검토 원고**는 별도 상태 안내로 연결되며, 공개 시험 payload나 RELEASED 수를 늘리지 않습니다. 기존 데이터·감사·노트·release gates는 유지합니다.
+[웹 연습판](https://woojunxnam.github.io/oddments/practice-expansion/)에서 **2,176문항**을 바로 풀 수 있습니다. [신규 1,152문항만](https://woojunxnam.github.io/oddments/practice-expansion/?bank=plus) 또는 기존 묶음을 선택할 수 있습니다. 영어 문제와 한국어 해설, 통합노트 연결, 20문항 연습·120문항 시간 연습·오답·북마크·기록 백업을 지원합니다.
+
+새 묶음은 128개 판단 모델을 각각 9개 조건으로 확장한 연습입니다. 1,152개의 독립 법규 또는 실제 기출을 의미하지 않습니다. 공개 NABP 형식 예시와 합법적인 공개 샘플을 비교했으며, 비공개 기출·응시자 복원·Pre-MPJE 문항은 사용하지 않았습니다. [조사·설계 기록](practice_expansion/2026-10-26-plus/research/RESEARCH_KO.md), [신규 원본](practice_expansion/2026-10-26-plus/README_KO.md)을 확인하세요.
+
+`PUBLISHED_PRACTICE`는 온라인 이용 가능 상태입니다. 문항별 독립 법규·현실성 검토 완료를 뜻하지 않으며, canonical `RELEASED`의 감사·판정 기록은 바꾸지 않습니다. 기존 1,024개 원본·정답과 439개 canonical records 및 통합노트는 유지했습니다. [공개 정책](docs/PRACTICE_PUBLICATION_POLICY.md).

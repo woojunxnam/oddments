@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build all 1024 enabled online practice questions
+      - name: Build both enabled practice collections
         run: python scripts/publish_practice.py --output /tmp/mpje-public-site
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -44,6 +44,8 @@ jobs:
         shell: python
         run: |
           import json, os, time, urllib.request
+          from pathlib import Path
+          config=json.loads(Path('site/practice-expansion/publication.json').read_text())
           base=os.environ['PAGE_URL'].rstrip('/')+'/'
           suffix='?release='+os.environ['GITHUB_SHA']
           def read(path):
@@ -52,12 +54,14 @@ jobs:
           for attempt in range(12):
               try:
                   manifest=json.loads(read('practice-expansion/build.json'))
-                  assert manifest['status']=='PUBLISHED_PRACTICE' and manifest['published_question_count']==1024
+                  assert manifest['status']=='PUBLISHED_PRACTICE' and manifest['published_question_count']==config['published_total']
                   html=read('practice-expansion/')
-                  assert 'id="ack"' not in html and 'MA-EXP-1024' in html
-                  assert 'openQuestion(byId.get(location.hash.slice(1))||Q[0])' in html
-                  assert '1,024문항 연습 시작' in read('')
-                  print('Production page verified: 1024 online questions; no draft gate.')
+                  assert 'id="ack"' not in html and 'MA-EXP-1024' in html and 'MA-CASE-1152' in html
+                  assert 'openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0])' in html
+                  assert '2,176문항 연습 시작' in read('')
+                  assert [x['count'] for x in manifest['collections']]==[1024,1152]
+                  assert 'practice-expansion/?bank=plus' in read('')
+                  print('Production page verified: 2176 online questions, both collections; no draft gate.')
                   break
               except Exception:
                   if attempt==11:raise

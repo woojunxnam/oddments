@@ -5,6 +5,7 @@ import argparse
 import functools
 import http.server
 import json
+import importlib.util
 import os
 from pathlib import Path
 import threading
@@ -19,7 +20,9 @@ def main():
     ap.add_argument('--base-url',help='Check an already-deployed site instead of loopback.')
     ap.add_argument('--output',type=Path,default=ROOT/'test-results/public-practice')
     args=ap.parse_args();args.output.mkdir(parents=True,exist_ok=True)
-    data=json.loads((ROOT/'practice_expansion/2026-10-23/candidates/questions.json').read_text())
+    spec=importlib.util.spec_from_file_location('practice_publisher',ROOT/'scripts/publish_practice.py')
+    publisher=importlib.util.module_from_spec(spec);spec.loader.exec_module(publisher)
+    data=publisher.build_payload()
     by={q['question_id']:q for q in data['questions']}
     server=None
     if args.base_url: base=args.base_url.rstrip('/')+'/'
@@ -71,12 +74,13 @@ def main():
         page.locator('#query').fill('<img src=x onerror="window.injected=true">')
         assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==0 and not page.evaluate('Boolean(window.injected)')
         ok('search content cannot inject HTML')
-        page.locator('#query').fill('');page.locator('#area').select_option('4');page.locator('#qtype').select_option('SATA')
+        page.locator('#query').fill('');page.locator('#collection').select_option('original-20261023');page.locator('#area').select_option('4');page.locator('#qtype').select_option('SATA')
         assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==59
         page.locator('#area').select_option('');page.locator('#qtype').select_option('')
         page.locator('#saved').select_option('bookmarks');assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==1
         page.locator('#saved').select_option('')
-        ok('area/type/bookmark filters')
+        page.locator('#collection').select_option('')
+        ok('area/type/bookmark filters and unchanged original collection count')
         page.locator('#practice').click();diag=page.evaluate('MPJE_DIAGNOSTICS()')
         assert len(diag['sessionIds'])==20 and len(set(diag['sessionFamilies']))==20
         q=by[diag['active']]
@@ -115,12 +119,60 @@ def main():
                 page.locator('#reader').scroll_into_view_if_needed();page.screenshot(path=str(args.output/'mobile.png'))
         ok('responsive layouts at 320/390/768/1440 pixels')
         ids=list(by)
-        rendered=page.evaluate("""ids=>{for(const id of ids){const q=document.querySelector('#query');q.value=id;q.dispatchEvent(new Event('input'));document.querySelector('#catalog button').click();if(MPJE_DIAGNOSTICS().active!==id||document.querySelectorAll('.choice').length!==4)throw Error(id);}return ids.length;}""",ids)
-        assert rendered==1024
+        rendered=page.evaluate("""ids=>{const expected=new Map(JSON.parse(document.querySelector('#payload').textContent).questions.map(q=>[q.question_id,q.choices.length]));for(const id of ids){const q=document.querySelector('#query');q.value=id;q.dispatchEvent(new Event('input'));document.querySelector('#catalog button').click();if(MPJE_DIAGNOSTICS().active!==id||document.querySelectorAll('.choice').length!==expected.get(id))throw Error(id);}return ids.length;}""",ids)
+        assert rendered==len(by)
         page.set_viewport_size({'width':320,'height':1000})
         maximum=page.evaluate("""ids=>{let max=0;for(const id of ids){const q=document.querySelector('#query');q.value=id;q.dispatchEvent(new Event('input'));document.querySelector('#catalog button').click();max=Math.max(max,document.documentElement.scrollWidth-innerWidth);}return max;}""",ids)
         assert maximum<=1,maximum
-        ok('all 1024 questions render and fit the narrowest mobile viewport')
+        ok(f'all {len(by)} original and new questions render and fit the narrowest mobile viewport')
+        page.goto(base+'practice-expansion/?bank=plus',wait_until='load')
+        expect(page.locator('#question')).to_be_visible()
+        expect(page.locator('#collection')).to_have_value('plus-20261026')
+        diag=page.evaluate('MPJE_DIAGNOSTICS()')
+        assert diag['filtered']==1152 and diag['total']==2176 and diag['active']=='MA-CASE-0001'
+        expect(page.locator('#cases .case')).to_have_count(1)
+        expect(page.locator('#lead')).to_contain_text('Select ONE')
+        assert 'CASE B' not in page.locator('#question').inner_text()
+        ok('new-only entry automatically opens one current case without a paired-case artifact')
+        plus_sata=next(q for q in data['questions'] if q.get('collection_id')=='plus-20261026' and q['question_type']=='SATA' and 'E' in q['correct_choice_ids'])
+        page.locator('#query').fill(plus_sata['question_id']);page.locator('#catalog button').click()
+        expect(page.locator('input[type=checkbox][name=answer]')).to_have_count(5)
+        for letter in plus_sata['correct_choice_ids']:page.locator('#choice-'+letter).check()
+        page.locator('#check').click();expect(page.locator('#answer-heading')).to_contain_text('정답과 일치')
+        expect(page.locator('.rationale')).to_have_count(5)
+        page.reload(wait_until='load')
+        saved_state=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k))',KEY)
+        assert 'E' in saved_state['attempts'][plus_sata['question_id']]['selected']
+        assert 'MA-EXP-0001' in saved_state['attempts']
+        ok('five-choice SATA including E scores correctly and coexists with preserved original progress')
+        with page.expect_download() as dl:page.locator('#export').click()
+        plus_backup=Path(dl.value.path()).read_bytes()
+        page.locator('#import-file').set_input_files({'name':'combined.json','mimeType':'application/json','buffer':plus_backup})
+        expect(page.locator('#storage-msg')).to_contain_text('가져왔')
+        bad=json.loads(plus_backup);bad['attempts']['MA-EXP-0001']['selected']=['E']
+        page.locator('#import-file').set_input_files({'name':'invalid-choice.json','mimeType':'application/json','buffer':json.dumps(bad).encode()})
+        expect(page.locator('#storage-msg')).to_contain_text('실패')
+        ok('backup accepts new E answers but rejects impossible E for an old four-choice item')
+        page.locator('#query').fill('');page.locator('#practice').click()
+        diag=page.evaluate('MPJE_DIAGNOSTICS()')
+        assert len(diag['sessionIds'])==20 and all(x.startswith('MA-CASE-') for x in diag['sessionIds'])
+        assert len(set(diag['sessionFamilies']))==20
+        expect(page.locator('#collection')).to_be_disabled()
+        page.locator('#end-session').click();page.locator('#timed').click()
+        diag=page.evaluate('MPJE_DIAGNOSTICS()')
+        assert len(diag['sessionIds'])==120 and len(set(diag['sessionFamilies']))==120
+        assert all(x.startswith('MA-CASE-') for x in diag['sessionIds'])
+        page.locator('#end-session').click()
+        ok('new-only 20 and 120 question sets honor the selected collection and family cap')
+        page.goto(base+'practice-expansion/?bank=plus#MA-CASE-1152',wait_until='load')
+        expect(page.locator('#q-meta')).to_contain_text('MA-CASE-1152')
+        expect(page.locator('#lead')).to_contain_text('Select ALL')
+        page.set_viewport_size({'width':390,'height':844})
+        page.screenshot(path=str(args.output/'plus-mobile.png'))
+        page.locator('a[href="research.html"]').click()
+        expect(page.locator('h1')).to_contain_text('공개 샘플')
+        assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
+        ok('new deep links and transparent sample-research page are usable on mobile')
         page.goto(base+'practice-expansion/#MA-EXP-0512');expect(page.locator('#q-meta')).to_contain_text('MA-EXP-0512')
         page.locator('#controls-link').click();expect(page.locator('#query')).to_be_focused()
         ok('deep links and mobile settings navigation')
