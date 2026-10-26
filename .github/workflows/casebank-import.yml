@@ -13,14 +13,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: feat/mpje-casebank-plus-20261026
-          fetch-depth: 3
+          fetch-depth: 5
       - name: Verify and import scoped practice files
         shell: python
         run: |
           import hashlib,io,json,pathlib,subprocess,urllib.request,zipfile
-          url='https://sdmntprwestus3.oaiusercontent.com/files/00000000-d5f4-81fd-8132-3689e3951b06/raw?se=2026-10-26T17%3A22%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=8a3d5698-a051-55a5-bc9a-c4a74ad108c4&skoid=fadb8e47-d3c7-4c79-a9c3-970d9af3b213&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T01%3A22%3A35Z&ske=2026-10-27T01%3A22%3A35Z&sks=b&skv=2026-02-06&sig=h3XwfmS1wJ/g9r8MVhncieODyDN9lnMC3TNI1YCg%2BB0%3D'
+          url='https://sdmntpreastus2.oaiusercontent.com/files/00000000-4c78-81f6-b16d-d925ac3d64ed/raw?se=2026-10-26T17%3A25%3A28Z&sp=r&sv=2026-02-06&sr=b&scid=11b8796f-4a7b-5f9c-ae19-34a61b9d28af&skoid=fadb8e47-d3c7-4c79-a9c3-970d9af3b213&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-26T17%3A09%3A27Z&ske=2026-10-27T17%3A09%3A27Z&sks=b&skv=2026-02-06&sig=tE8QhA5pKbkJICoLz1y5CPq1mF9Hy7QiVLi2rIgU%2B20%3D'
           with urllib.request.urlopen(url,timeout=45) as r:raw=r.read(2_000_000)
-          assert hashlib.sha256(raw).hexdigest()=='4fc8738daec1fc3dd9f243113e36086d61bc21db89d24b84ee97f7e6b8dd5cbc'
+          assert hashlib.sha256(raw).hexdigest()=='d80b5c04e3dcb98215163638e9abb4436ccdf885272159125f1f784ea059bf6b'
           z=zipfile.ZipFile(io.BytesIO(raw));m=json.loads(z.read('UPLOAD_MANIFEST.json'))
           subprocess.run(['git','merge-base','--is-ancestor',m['base_commit'],'HEAD'],check=True)
           allowed={'README.md','docs/PRACTICE_PUBLICATION_POLICY.md','docs/CASEBANK_PLUS_REVIEW.md','scripts/publish_practice.py','scripts/verify_public_practice.py','site/practice-expansion/publication.json','site/practice-expansion/research.html','tests/test_casebank_plus.py','tests/test_practice_expansion_integration.py','.github/workflows/pages.yml','.github/workflows/public-practice-qa.yml'}
