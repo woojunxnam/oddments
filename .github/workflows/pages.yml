@@ -6,6 +6,7 @@ on:
       - 'site/**'
       - 'practice_expansion/**'
       - 'scripts/publish_practice.py'
+      - 'scripts/practice_quality.py'
       - 'scripts/build_refresh.py'
       - 'notes/refresh/**'
       - '.github/workflows/pages.yml'
@@ -29,7 +30,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build both enabled practice collections
+      - name: Build enabled practice collections
         run: |
           python scripts/build_refresh.py --check
           python scripts/publish_practice.py --output /tmp/mpje-public-site
@@ -60,12 +61,18 @@ jobs:
                   manifest=json.loads(read('practice-expansion/build.json'))
                   assert manifest['status']=='PUBLISHED_PRACTICE' and manifest['published_question_count']==config['published_total']
                   html=read('practice-expansion/')
+                  assert html==Path('/tmp/mpje-public-site/practice-expansion/index.html').read_text(), 'Published practice bytes differ from this build'
                   assert 'id="ack"' not in html and 'MA-EXP-1024' in html and 'MA-CASE-1152' in html
                   assert 'openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0])' in html
-                  assert '2,176문항 연습 시작' in read('')
-                  assert [x['count'] for x in manifest['collections']]==[1024,1152]
-                  assert 'practice-expansion/?bank=plus' in read('')
-                  print('Production page verified: 2176 online questions, both collections; no draft gate.')
+                  main=read('')
+                  assert f"{config['published_total']:,}문항 연습 시작" in main
+                  assert [x['count'] for x in manifest['collections']]==[config['question_count']]+[x['question_count'] for x in config['additional_banks']]
+                  assert 'id="chaos"' in html and 'MA-REV-0096' in html
+                  assert manifest['quality_selection']['recommended']==451
+                  assert 'practice-expansion/?bank=plus' in main and 'practice-expansion/?bank=quality' in main
+                  assert read('practice-expansion/quality-core.js')==Path('site/practice-expansion/quality-core.js').read_text()
+                  assert read('practice-expansion/quality-review.html')==Path('site/practice-expansion/quality-review.html').read_text()
+                  print('Production page verified byte-for-byte: 2272 questions, 451 representatives, all 96 new cases and unrestricted Chaos10; no draft gate.')
                   break
               except Exception:
                   if attempt==11:raise
@@ -90,12 +97,12 @@ jobs:
               try:
                   for path in files:
                       assert hashlib.sha256(get(path)).digest()==hashlib.sha256((Path('site')/path).read_bytes()).digest(),path
-                  for path in ['', 'notes/', 'notes/book.html', 'practice-expansion/', 'practice-expansion/research.html']:
+                  for path in ['', 'notes/', 'notes/book.html', 'practice-expansion/', 'practice-expansion/research.html', 'practice-expansion/quality-review.html']:
                       text=get(path).decode()
                       assert text.count('src="'+('' if not path else '../')+'assets/learning-tools.js"')==1,path
                   assert 'notes/#refresh' in get('').decode()
                   assert 'refresh-data.js' in get('notes/').decode()
-                  print('Production refresh assets verified byte-for-byte; all five pages have shared navigation.')
+                  print('Production refresh assets verified byte-for-byte; all six checked pages have shared navigation.')
                   print(json.dumps(expected,ensure_ascii=False))
                   break
               except Exception:
