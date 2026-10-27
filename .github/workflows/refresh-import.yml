@@ -1,0 +1,80 @@
+name: Import and verify refresh learning layer
+on:
+  push:
+    branches: ['feat/notes-refresh-20261027']
+    paths: ['.github/workflows/refresh-import.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/notes-refresh-20261027
+          fetch-depth: 3
+      - name: Verify scoped package and preserve all unrelated source bytes
+        shell: python
+        run: |
+          import hashlib,io,json,pathlib,subprocess,urllib.request,zipfile
+          url='https://sdmntprcentralus.oaiusercontent.com/files/00000000-57d4-81f5-8a18-195ad69bcfc9/raw?se=2026-10-27T14%3A45%3A44Z&sp=r&sv=2026-02-06&sr=b&scid=56f65647-9004-5ee5-bd14-5a2e03e3ac35&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T11%3A34%3A09Z&ske=2026-10-28T11%3A34%3A09Z&sks=b&skv=2026-02-06&sig=h9JIMp5KHlfJvZKivys6rUyTLdeZKakyA6LWOwcuO7c%3D'
+          with urllib.request.urlopen(url,timeout=45) as r:raw=r.read(2_000_000)
+          assert hashlib.sha256(raw).hexdigest()=='d4672d07aa4f2e716a3a34d4b04626738d73253d61c1f8515f114c14b0e08943'
+          z=zipfile.ZipFile(io.BytesIO(raw));m=json.loads(z.read('UPLOAD_MANIFEST.json'))
+          subprocess.run(['git','merge-base','--is-ancestor',m['base_commit'],'HEAD'],check=True)
+          allowed={'.github/workflows/pages.yml','.github/workflows/refresh-qa.yml','README.md','docs/REFRESH_CARDS_REVIEW.md','notes/README.md','notes/refresh/guide.json','scripts/build_refresh.py','scripts/build_ultimate_notes.py','scripts/publish_practice.py','scripts/verify_refresh_browser.py','site/assets/learning-tools.css','site/assets/learning-tools.js','site/index.html','site/notes/book.html','site/notes/index.html','site/notes/notes.js','site/notes/refresh-build.json','site/notes/refresh-core.js','site/notes/refresh-data.js','site/notes/refresh.css','site/notes/refresh.js','site/practice-expansion/index.html','site/practice-expansion/research.html','tests/browser/refresh-core.test.cjs','tests/test_refresh.py'}
+          assert set(m['files'])==allowed
+          assert set(z.namelist())==allowed|{'UPLOAD_MANIFEST.json'}
+          for n,h in m['before'].items():assert hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h,n
+          for n in m['added']:assert not pathlib.Path(n).exists(),n
+          before={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in subprocess.check_output(['git','ls-files'],text=True).splitlines() if n not in allowed}
+          for n,h in m['files'].items():
+              p=pathlib.PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+              b=z.read(n);assert hashlib.sha256(b).hexdigest()==h,n
+              if n.startswith('.github/'):continue
+              p=pathlib.Path(n);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+          assert all(hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h for n,h in before.items())
+          pathlib.Path('/tmp/refresh-paths.json').write_text(json.dumps([n for n in allowed if not n.startswith('.github/')]))
+          print('Imported additive learning layer; original notes, questions, audits and release gates unchanged.')
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source fidelity and deterministic content
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python scripts/build_refresh.py --check
+          python scripts/build_ultimate_notes.py --check
+          python -m pytest tests/test_refresh.py tests/test_ultimate_notes.py tests/test_casebank_plus.py tests/test_practice_expansion_integration.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
+          node --check site/notes/refresh.js
+          node --check site/assets/learning-tools.js
+          git diff --exit-code -- notes/guide.json data audits site/generated practice_expansion docs/RELEASE_POLICY.md
+          git diff --check
+      - name: Actual HTTP navigation and existing-reader regressions
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_refresh_browser.py --site /tmp/mpje-public-site
+          python scripts/verify_notes_browser.py
+          python scripts/verify_public_practice.py --site /tmp/mpje-public-site
+      - name: Commit only checked implementation paths to feature branch
+        shell: python
+        run: |
+          import json,subprocess
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          paths=json.load(open('/tmp/refresh-paths.json'))
+          subprocess.run(['git','add','--',*paths],check=True)
+          subprocess.run(['git','diff','--cached','--stat'],check=True)
+          subprocess.run(['git','commit','-m','feat(notes): add source-linked refresh cards, return pathway and all-page navigation'],check=True)
+          subprocess.run(['git','push','origin','HEAD:feat/notes-refresh-20261027'],check=True)
+      - name: Save real HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-http-evidence
+          path: test-results
+          retention-days: 7
