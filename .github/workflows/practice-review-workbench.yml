@@ -1,0 +1,27 @@
+name: Practice repetition review workbench
+on:
+  push:
+    branches: ['feat/practice-quality-chaos-20261027']
+    paths: ['.github/workflows/practice-review-workbench.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Package exact public worktree
+        shell: python
+        run: |
+          import pathlib, zipfile, json
+          out=pathlib.Path('/tmp/practice-review');out.mkdir()
+          with zipfile.ZipFile(out/'repository.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in pathlib.Path('.').rglob('*'):
+                  if p.is_file() and '.git' not in p.parts:z.write(p,str(p))
+          (out/'snapshot.json').write_text(json.dumps({'base_sha':'403f370d964e4861e7fb033a737aa98d27194174','purpose':'user-requested repetition and distractor review; canonical records not edited'},indent=2))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: practice-repetition-workbench
+          path: /tmp/practice-review
+          retention-days: 3
