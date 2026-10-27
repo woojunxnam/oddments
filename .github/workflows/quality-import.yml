@@ -18,9 +18,9 @@ jobs:
         shell: python
         run: |
           import urllib.request, pathlib, zipfile, io, hashlib, json, subprocess
-          url='https://sdmntprjapaneast.oaiusercontent.com/files/00000000-d334-8209-be01-80a7823e5f6b/raw?se=2026-10-27T21%3A13%3A36Z&sp=r&sv=2026-02-06&sr=b&scid=571c6a08-c2f0-5ef7-9c07-c5c258dfb3d4&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T20%3A31%3A59Z&ske=2026-10-28T20%3A31%3A59Z&sks=b&skv=2026-02-06&sig=9FiSMf%2BlTQLPVFnujh9gi0LXGCz6qXMDU8dddJbVIJ0%3D'
+          url='https://sdmntprsoutheastus3.oaiusercontent.com/files/00000000-6cd0-820c-b062-5d7a9776488b/raw?se=2026-10-27T21%3A16%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=ecfebd2b-c2f5-51fa-8c8f-d55701192dd8&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T20%3A30%3A57Z&ske=2026-10-28T20%3A30%3A57Z&sks=b&skv=2026-02-06&sig=rhrZEqZ0WzUwruKoS%2B2K%2BSjub5KbyccCuw3WOkqoPCo%3D'
           with urllib.request.urlopen(url,timeout=40) as r: raw=r.read(3_000_000)
-          assert hashlib.sha256(raw).hexdigest()=='67f1ff9c0a2a4d94c1307065ff544728e26cc0057ea014ef0b76edd25281c0f4'
+          assert hashlib.sha256(raw).hexdigest()=='7efe4361540d0b085f4da990c2929d2aa5749b786dc7901870ede6ba36f1239d'
           package=pathlib.Path('/tmp/mpje-quality-package');package.mkdir()
           z=zipfile.ZipFile(io.BytesIO(raw));assert sum(x.file_size for x in z.infolist())<40_000_000
           for x in z.infolist():
