@@ -1,0 +1,80 @@
+name: Import MPJE exam-first study
+on:
+  push:
+    branches: ['feat/mpje-exam-study-20261027']
+    paths: ['.github/workflows/exam-study-import.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: feat/mpje-exam-study-20261027
+          fetch-depth: 3
+      - name: Import exact scoped source package
+        shell: python
+        run: |
+          import hashlib, io, json, pathlib, subprocess, urllib.request, zipfile
+          url='https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-acf8-81f7-aae4-c6d6c7bc9859/raw?se=2026-10-27T15%3A30%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=48a7ab47-8720-5bf2-b9a5-839292f2aba2&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-27T10%3A46%3A47Z&ske=2026-10-28T10%3A46%3A47Z&sks=b&skv=2026-02-06&sig=UZdO2kwiq7dyN1W97sS3WPmyZjcZhwlnvP2do/tENEo%3D'
+          with urllib.request.urlopen(url,timeout=45) as r: raw=r.read(2_000_000)
+          assert hashlib.sha256(raw).hexdigest()=='74831216e78f3431b0c01b0f0e252c213b72154c55574d8078d1f412bcea9c7a'
+          z=zipfile.ZipFile(io.BytesIO(raw));m=json.loads(z.read('UPLOAD_MANIFEST.json'))
+          allowed={'.github/workflows/exam-study-qa.yml','scripts/verify_exam_study.py','site/assets/learning-tools.js','site/notes/notes.js','scripts/build_exam_study.py','site/notes/study.js','tests/test_exam_study.py','site/notes/study.html','docs/EXAM_STUDY_REVIEW.md','notes/study/guide.json','scripts/verify_exam_study_production.py','site/notes/index.html','site/notes/study-data.js','site/notes/study.css','site/notes/refresh.js','site/index.html','site/notes/study-build.json'}
+          assert set(m['files'])==allowed and set(z.namelist())==allowed|{'UPLOAD_MANIFEST.json'}
+          subprocess.run(['git','merge-base','--is-ancestor',m['base_commit'],'HEAD'],check=True)
+          for n,h in m['before'].items():assert hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h,n
+          for n in m['added']:assert not pathlib.Path(n).exists(),n
+          protected={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in subprocess.check_output(['git','ls-files'],text=True).splitlines() if n not in allowed}
+          for n,h in m['files'].items():
+              p=pathlib.PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+              data=z.read(n);assert hashlib.sha256(data).hexdigest()==h,n
+              if n.startswith('.github/'):continue
+              p=pathlib.Path(n);p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(data)
+          assert all(hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h for n,h in protected.items())
+          pathlib.Path('/tmp/exam-study-paths.json').write_text(json.dumps(sorted(n for n in allowed if not n.startswith('.github/'))))
+          print('Scoped import only; original notes, questions, audits and release gates untouched.')
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source and regression tests
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python scripts/build_exam_study.py --check
+          python scripts/build_refresh.py --check
+          python scripts/build_ultimate_notes.py --check
+          python -m pytest tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py tests/test_casebank_plus.py tests/test_practice_expansion_integration.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          node --check site/notes/study.js
+          node --check site/assets/learning-tools.js
+          python scripts/publish_practice.py --output /tmp/mpje-exam-site
+          git diff --exit-code -- notes/guide.json data audits site/generated practice_expansion docs/RELEASE_POLICY.md
+          git diff --check
+      - name: Actual HTTP and real-origin storage verification
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_exam_study.py --site /tmp/mpje-exam-site
+          python scripts/verify_refresh_browser.py --site /tmp/mpje-exam-site
+          python scripts/verify_notes_browser.py
+          python scripts/verify_public_practice.py --site /tmp/mpje-exam-site
+      - name: Commit checked files on feature branch
+        shell: python
+        run: |
+          import json,subprocess
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          paths=json.load(open('/tmp/exam-study-paths.json'))
+          subprocess.run(['git','add','--',*paths],check=True)
+          subprocess.run(['git','diff','--cached','--stat'],check=True)
+          subprocess.run(['git','commit','-m','feat(study): prioritize MPJE law with 16 modules, recall and linked practice'],check=True)
+          subprocess.run(['git','push','origin','HEAD:feat/mpje-exam-study-20261027'],check=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exam-study-http-evidence
+          path: test-results
+          retention-days: 7
