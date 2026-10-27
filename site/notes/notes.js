@@ -70,7 +70,7 @@
       html += `<a class="chapter-nav-link" href="#chapter/${c.id}" data-chapter="${c.id}"><span class="nav-num">${String(i+1).padStart(2,'0')}</span><span>${esc(c.title)}</span></a>`;
     });
     $('#chapter-nav').innerHTML = html;
-    $('#mobile-nav').innerHTML = '<a class="nav-home" href="#home">학습 시작</a><a class="nav-item" href="#search">본문 검색</a><a class="nav-item" href="#drugs">Generic · Brand 사전</a><a class="nav-item" href="#saved">북마크 · 다시 읽기</a><a class="nav-item" href="../">메인 · 문제은행 ↗</a>'+html+'<a class="nav-item" href="#sources">출처 · 편집 기록</a><a class="nav-item" href="book.html">전체 읽기 · 인쇄</a>';
+    $('#mobile-nav').innerHTML = '<a class="nav-home" href="#home">학습 시작</a><a class="nav-item" href="#refresh">Daily Refresh · 복습 카드</a><a class="nav-item" href="#return">RA→약국 복귀 7단계</a><a class="nav-item" href="#glossary">기초 용어</a><a class="nav-item" href="#search">본문 검색</a><a class="nav-item" href="#drugs">Generic · Brand 사전</a><a class="nav-item" href="#saved">북마크 · 다시 읽기</a><a class="nav-item" href="../">메인 · 문제은행 ↗</a>'+html+'<a class="nav-item" href="#sources">출처 · 편집 기록</a><a class="nav-item" href="book.html">전체 읽기 · 인쇄</a>';
   }
   const dialog = $('#nav-dialog');
   $('#mobile-menu').addEventListener('click', () => dialog.showModal());
@@ -90,10 +90,12 @@
     setToc(null);
     const last = state.last && units.get(state.last);
     reader.innerHTML = `<section class="hero"><p class="eyebrow">THE CONNECTED PHARMACY LAW NOTEBOOK</p><h1>Massachusetts MPJE<br>흩어진 규칙을, 한 흐름으로.</h1><p>Week 1–6의 상세 노트를 주제별로 다시 엮었습니다. 핵심 개념부터 적용 조건·예외·약물·공식 근거까지, 같은 주제는 한 곳에서 이어 읽으세요.</p><div class="actions"><a class="primary-button" href="${last ? href(last) : '#chapter/foundations'}">${last ? '마지막 읽은 곳 이어보기':'통합 노트 시작하기'} <span aria-hidden="true">&nbsp;→</span></a><a class="secondary-button" href="#drugs">Generic · Brand 사전</a></div><div class="stats-grid"><div class="stat"><strong>${D.stats.chapters}</strong><span>주제별 장</span></div><div class="stat"><strong>${D.stats.units}</strong><span>상세 읽기 절</span></div><div class="stat"><strong>${D.stats.drugs}</strong><span>약물·제형 항목</span></div><div class="stat"><strong>${D.stats.sources}</strong><span>연결 출처</span></div></div></section>
+    <div id="refresh-home"></div>
     <p class="notice"><strong>상세 학습판 · 일부 경계 확인 필요</strong><br>편집일 2026.10.23. 기존 노트의 확인일과 새로 검토한 범위를 구분합니다. 독립 전수 법률감사나 합격 보장이 아닙니다. <a href="#chapter/open-register">남은 OPEN 확인</a></p>
     ${last ? `<a class="resume-card" href="${href(last)}"><span><small>이어서 읽기 · ${esc(last.chapter.title)}</small><strong>${esc(last.title)}</strong></span><span aria-hidden="true">→</span></a>`:''}
     <form id="home-search" class="home-search">${searchBox('home-query')}<p class="search-hint">한국어·English·법규 번호·약 이름으로 전체 본문을 검색합니다. Enter로 검색합니다.</p></form>
     <div class="section-heading"><h2>주제별로 읽기</h2><span>핵심 요약 + 상세 규칙 + 근거</span></div><div id="all-chapter-cards"></div>`;
+    window.MPJE_REFRESH_VIEW?.mountHome($('#refresh-home'));
     let current = ''; let html = ''; let opened = false;
     D.chapters.forEach((c,i) => {
       if(c.part!==current){if(opened)html+='</div>';current=c.part;html+=`<h3 class="part-heading">${esc(current)}</h3><div class="chapter-cards">`;opened=true;}
@@ -116,6 +118,7 @@
     setToc(ch);
     const index=D.chapters.indexOf(ch);
     reader.innerHTML=`<header class="chapter-head"><p class="breadcrumb"><a href="#home">통합 노트</a> / ${esc(ch.part)}</p><p class="eyebrow">CHAPTER ${String(index+1).padStart(2,'0')} · ${ch.units.length} SECTIONS</p><h1>${esc(ch.title)}</h1><p class="chapter-lede">${esc(ch.summary)}</p>${ch.highlights.length?`<div class="keypoints"><strong>읽기 전에 구별할 것</strong>${ch.highlights.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`:''}</header>
+    <div class="rf-chapter-bridge"><a href="#refresh/topic/${ch.id}">이 장을 카드로 복습 →</a><a href="#glossary">낯선 용어 쉽게 보기 →</a></div>
     <div class="reader-toolbar"><div class="left"><span>글자</span><button class="small-button" type="button" data-font="-1" aria-label="본문 글자 작게">A−</button><span id="font-size-label">${state.font}px</span><button class="small-button" type="button" data-font="1" aria-label="본문 글자 크게">A+</button><button class="small-button" id="focus-button" type="button" aria-pressed="${state.focus}">${state.focus?'목차 보이기':'집중 읽기'}</button></div><div class="right"><button class="small-button" id="print-chapter" type="button">이 장 인쇄</button><a class="small-button" href="book.html#chapter-${ch.id}">전체 본문</a></div></div><div class="chapter-body">${ch.units.map(renderUnit).join('')}</div><nav class="chapter-pagination" aria-label="앞뒤 장">${index>0?`<a href="#chapter/${D.chapters[index-1].id}"><small>← 이전 장</small>${esc(D.chapters[index-1].title)}</a>`:'<a href="#home"><small>← 시작 화면</small>전체 목차</a>'}${index<D.chapters.length-1?`<a href="#chapter/${D.chapters[index+1].id}"><small>다음 장 →</small>${esc(D.chapters[index+1].title)}</a>`:'<a href="#saved"><small>다시 읽기 →</small>저장한 절과 학습 기록</a>'}</nav>`;
     reader.querySelectorAll('[data-font]').forEach(b=>b.addEventListener('click',()=>{
       state.font=Math.max(16,Math.min(24,state.font+Number(b.dataset.font)));applyPrefs();save();$('#font-size-label').textContent=state.font+'px';
@@ -184,10 +187,12 @@
   });
   let lastRoute='';
   function render(){const raw=location.hash.slice(1);const seg=raw.split('/');const route=seg[0]||'home';const id=seg[1];const target=seg[2];
+    window.MPJE_REFRESH_VIEW?.cleanup();
     if(observer){observer.disconnect();observer=null;}
     document.querySelectorAll('[data-chapter]').forEach(a=>{if(route==='chapter'&&a.dataset.chapter===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
     document.title=(route==='chapter'&&chapters.has(id)?chapters.get(id).title+' · ':'')+'MA MPJE 통합 노트';
     if(route==='chapter'&&chapters.has(id))renderChapter(chapters.get(id),target);
+    else if(['refresh','return','glossary'].includes(route)&&window.MPJE_REFRESH_VIEW){setToc(null);window.MPJE_REFRESH_VIEW.render(reader,route,seg.slice(1));document.title=({refresh:'복습 카드',return:'RA→약국 복귀',glossary:'기초 용어'}[route])+' · MA MPJE 통합 노트';}
     else if(route==='search')renderSearch(decode(id||''));
     else if(route==='drugs')renderDrugs(decode(id||''));
     else if(route==='saved')renderSaved();
