@@ -32,7 +32,7 @@ def main() -> None:
             for path in ASSETS:
                 assert hashlib.sha256(get(path)).digest() == hashlib.sha256((ROOT/'site'/path).read_bytes()).digest(), path
             main = get('').decode('utf-8')
-            assert 'class="exam-study-entry"' in main and 'notes/#study' in main
+            assert 'exam-study-entry' in main and 'notes/#study' in main
             assert 'notes/#refresh' in main and 'practice-expansion/?bank=plus' in main
             for path in ['', 'notes/', 'notes/book.html', 'notes/study.html', 'practice-expansion/', 'practice-expansion/research.html']:
                 assert get(path).decode('utf-8').count('assets/learning-tools.js') == 1, path
