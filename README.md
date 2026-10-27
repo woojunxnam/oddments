@@ -79,3 +79,9 @@ Release build는 기본적으로 실행일을 target exam date로 사용합니�
 새 묶음은 128개 판단 모델을 각각 9개 조건으로 확장한 연습입니다. 1,152개의 독립 법규 또는 실제 기출을 의미하지 않습니다. 공개 NABP 형식 예시와 합법적인 공개 샘플을 비교했으며, 비공개 기출·응시자 복원·Pre-MPJE 문항은 사용하지 않았습니다. [조사·설계 기록](practice_expansion/2026-10-26-plus/research/RESEARCH_KO.md), [신규 원본](practice_expansion/2026-10-26-plus/README_KO.md)을 확인하세요.
 
 `PUBLISHED_PRACTICE`는 온라인 이용 가능 상태입니다. 문항별 독립 법규·현실성 검토 완료를 뜻하지 않으며, canonical `RELEASED`의 감사·판정 기록은 바꾸지 않습니다. 기존 1,024개 원본·정답과 439개 canonical records 및 통합노트는 유지했습니다. [공개 정책](docs/PRACTICE_PUBLICATION_POLICY.md).
+
+## Daily Refresh · RA→약국 복귀
+
+[복습 카드](https://woojunxnam.github.io/oddments/notes/#refresh), [오늘 10장](https://woojunxnam.github.io/oddments/notes/#refresh/today), [복귀 학습 7단계](https://woojunxnam.github.io/oddments/notes/#return), [기초 용어](https://woojunxnam.github.io/oddments/notes/#glossary)를 통합노트에 추가했습니다. 기초·실무 72장, 기존 약물 부록 127장, 장별 개요 33장과 용어 45개를 연결합니다. 랜덤·주제별·저장한 카드·자기평가 복습, 기록 백업과 전 페이지 맨 위/홈/복습 카드 이동을 지원합니다.
+
+기존 본문·질문·학습 기록은 보존합니다. 카드 자기평가는 합격 예측이나 임상 역량 인증이 아니며 원문의 미해결·시행일 주의 표시를 유지합니다. [내용·구현·검증 경계](docs/REFRESH_CARDS_REVIEW.md)를 확인하세요.

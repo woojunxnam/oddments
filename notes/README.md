@@ -49,3 +49,19 @@ python scripts/verify_notes_browser.py
 `--inline-preview --executable-path /usr/bin/chromium`은 네트워크 탐색이 차단된 환경의 로컬 렌더링 검사입니다. 실제 HTTP 탐색·origin 기반 저장·reload·main 이동의 검증으로 표시하지 않습니다. 정규 CI는 기본 HTTP 모드로 검사합니다. 소프트웨어 검사는 법적 정확성에 대한 independent audit가 아닙니다.
 
 원본의 개인 Drive 링크와 개인 파일 경로는 게시하지 않습니다. 주차·절 번호와 입력 hash는 내용 계보를 추적하기 위해 유지합니다. 상업 교재 원문·기출 복원 문항은 포함하지 않습니다.
+
+## 빠른 복습과 약국 복귀 학습 — 2026-10-27
+
+`#refresh`에서 짧은 핵심 → 쉬운 설명 → 약국 예시 → 놓치기 쉬운 조건 → 원문을 읽습니다. `#refresh/today`는 뉴욕 날짜별 10장, `#return`은 RA 경험을 연결한 7단계, `#glossary`는 45개 용어입니다. 기초·실무 72장과 기존 약물 부록 127장·장 개요 33장을 합친 232장입니다. 카드·단계 기록은 별도 `oddments.mpje.refresh.v1` 키에 저장되며 기존 읽음 표시와 문항 기록을 대체하지 않습니다.
+
+`refresh/guide.json`이 추가 카드·용어·경로의 편집 원본입니다. 원래 `guide.json`은 이번 UI 추가에서 변경하지 않았습니다. 다음 파일은 별도로 생성합니다.
+
+```bash
+python scripts/build_refresh.py
+python scripts/build_refresh.py --check
+python -m pytest tests/test_refresh.py -q
+python scripts/publish_practice.py --output /tmp/mpje-public-site
+python scripts/verify_refresh_browser.py --site /tmp/mpje-public-site
+```
+
+랜덤·자기평가 복습은 단순 학습 보조입니다. 기존 노트의 확인일·OPEN을 승계하며, 2026-10-27 카드 편집일을 전수 법규 재검증일로 표시하지 않습니다. AHRQ/FDA의 좁은 추가 안전교육은 원문 요약과 별도로 출처·확인 범위를 붙였습니다. 질환별 치료·용량·상호작용·기기 실습·현장 전산 교육의 완결 교재가 아닙니다.

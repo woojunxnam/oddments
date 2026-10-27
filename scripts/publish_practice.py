@@ -180,6 +180,7 @@ def render(data: dict) -> str:
         "filtered:filtered.length,collection:$('#collection').value,total:Q.length,sessionIds:")
     text = replace_exact(text, '통합노트 ↗</a><a href="#controls"',
         '통합노트 ↗</a><a href="research.html">공개 샘플·작성 기준</a><a href="#controls"')
+    text = replace_exact(text, '</head>', '<link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script></head>')
     payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return replace_exact(text, '__PAYLOAD__', payload)
 
