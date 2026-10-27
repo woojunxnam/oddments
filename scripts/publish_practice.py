@@ -11,6 +11,8 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / 'practice_expansion/2026-10-23'
@@ -91,7 +93,8 @@ def build_payload() -> dict:
         areas={str(area):sum(q['area']==area for q in data['questions']) for area in (1,2,3,4)})
     data['generation_method'] = 'Original 256 paired-case families plus 128 new conditional models. Nine deliberate condition variants per new model; not 1,152 unrelated legal principles.'
     data['additional_bank_sha256'] = {a['collection_id']: a['sha256'] for a in config_additions}
-    return data
+    from practice_quality import attach
+    return attach(data)
 
 
 def render(data: dict) -> str:
@@ -181,6 +184,8 @@ def render(data: dict) -> str:
     text = replace_exact(text, '통합노트 ↗</a><a href="#controls"',
         '통합노트 ↗</a><a href="research.html">공개 샘플·작성 기준</a><a href="#controls"')
     text = replace_exact(text, '</head>', '<link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script></head>')
+    from practice_quality import transform
+    text = transform(text,data)
     payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     return replace_exact(text, '__PAYLOAD__', payload)
 
@@ -196,6 +201,7 @@ def prepare(output: Path) -> dict:
     folder.mkdir(parents=True, exist_ok=True)
     (folder / 'index.html').write_text(render(data), encoding='utf-8')
     manifest = {k: data[k] for k in ('edition','status','published_question_count','publication_date','independent_review_status','canonical_released_question_count','source_sha256','collections','additional_bank_sha256')}
+    manifest['quality_selection'] = data['quality_selection']['stats']
     manifest['question_ids'] = [q['question_id'] for q in data['questions']]
     (folder / 'build.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     main = (output / 'index.html').read_text(encoding='utf-8')
@@ -209,6 +215,9 @@ def prepare(output: Path) -> dict:
     for old, new in substitutions.items():
         main = replace_exact(main, old, new)
     main = replace_exact(main, '2,176문항 연습 시작 →</a>', '2,176문항 연습 시작 →</a><a class="notes-entry-link" href="practice-expansion/?bank=plus">NEW · 1,152문항만 풀기 →</a>')
+    main = main.replace('2,176문항', f"{data['published_question_count']:,}문항")
+    main = main.replace('NEW · 1,152문항만 풀기 →', '조건 변형 1,152문항 보기 →')
+    main = main.replace('</a><a class="notes-entry-link" href="practice-expansion/?bank=plus">', '</a><a class="notes-entry-link" href="practice-expansion/?bank=quality">개별 작성·개정 96문항 →</a><a class="notes-entry-link" href="practice-expansion/?bank=plus">')
     (output / 'index.html').write_text(main, encoding='utf-8')
     return manifest
 

@@ -37,11 +37,11 @@ def main() -> None:
             for path in ['', 'notes/', 'notes/book.html', 'notes/study.html', 'practice-expansion/', 'practice-expansion/research.html']:
                 assert get(path).decode('utf-8').count('assets/learning-tools.js') == 1, path
             practice = json.loads(get('practice-expansion/build.json'))
-            assert practice['published_question_count'] == 2176
+            assert practice['published_question_count'] == json.loads((ROOT/'site/practice-expansion/publication.json').read_text())['published_total']
             manifest = json.loads(get('notes/study-build.json'))
             assert manifest['stats']['concepts'] == 64 and manifest['stats']['modules'] == 16
             print('Production exam-study assets match the merged source byte-for-byte.')
-            print('Six published pages retain shared navigation; practice remains 2,176 questions.')
+            print('Six published pages retain shared navigation; practice count matches publication config.')
             print(json.dumps(manifest, ensure_ascii=False, indent=2))
             return
         except Exception as exc:

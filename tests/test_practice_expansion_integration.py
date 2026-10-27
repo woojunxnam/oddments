@@ -8,6 +8,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 PKG = ROOT / 'practice_expansion/2026-10-23'
+CONFIG = json.loads((ROOT/'site/practice-expansion/publication.json').read_text())
 DATA = json.loads((PKG / 'candidates/questions.json').read_text())
 spec = importlib.util.spec_from_file_location('publish_practice', ROOT/'scripts/publish_practice.py')
 publisher = importlib.util.module_from_spec(spec)
@@ -45,7 +46,7 @@ def test_ids_do_not_collide_with_canonical_registry():
 
 def test_all_original_and_new_items_are_online_published(public):
     assert public['status']=='PUBLISHED_PRACTICE'
-    assert public['published_question_count']==2176
+    assert public['published_question_count']==CONFIG['published_total']
     assert all(q['online_practice_enabled'] and q['publication_status']=='PUBLISHED_PRACTICE' for q in public['questions'])
 
 def test_publication_does_not_claim_independent_review(public):
@@ -67,7 +68,7 @@ def test_no_draft_gate_in_public_ui(rendered):
 def test_payload_escapes_script_close(rendered):
     payload=re.search(r'<script id="payload" type="application/json">(.*?)</script>',rendered,re.S).group(1)
     assert '<' not in payload
-    assert len(json.loads(payload)['questions'])==2176
+    assert len(json.loads(payload)['questions'])==CONFIG['published_total']
 
 def test_independent_browser_storage_namespace(rendered):
     assert "KEY='oddments.mpje.practice.v1'" in rendered
@@ -87,8 +88,8 @@ def test_build_updates_main_navigation_without_changing_tracked_site(tmp_path):
     result=publisher.prepare(out)
     main=(out/'index.html').read_text()
     assert main.count('href="practice-expansion/"')==2
-    assert '2,176문항 연습 시작' in main and '원고·검토 상태 보기' not in main
-    assert result['published_question_count']==2176
+    assert f"{CONFIG['published_total']:,}문항 연습 시작" in main and '원고·검토 상태 보기' not in main
+    assert result['published_question_count']==CONFIG['published_total']
     assert json.loads((out/'practice-expansion/build.json').read_text())['status']=='PUBLISHED_PRACTICE'
     assert prior=={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'site').rglob('*') if p.is_file()}
     assert (out/'generated/questions.json').read_bytes()==(ROOT/'site/generated/questions.json').read_bytes()

@@ -74,10 +74,10 @@ def main():
         page.locator('#query').fill('<img src=x onerror="window.injected=true">')
         assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==0 and not page.evaluate('Boolean(window.injected)')
         ok('search content cannot inject HTML')
-        page.locator('#query').fill('');page.locator('#collection').select_option('original-20261023');page.locator('#area').select_option('4');page.locator('#qtype').select_option('SATA')
+        page.locator('#query').fill('');page.locator('#scope').select_option('all');page.locator('#collection').select_option('original-20261023');page.locator('#area').select_option('4');page.locator('#qtype').select_option('SATA')
         assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==59
         page.locator('#area').select_option('');page.locator('#qtype').select_option('')
-        page.locator('#saved').select_option('bookmarks');assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==1
+        page.locator('#collection').select_option('');page.locator('#saved').select_option('bookmarks');assert page.evaluate('MPJE_DIAGNOSTICS().filtered')==1
         page.locator('#saved').select_option('')
         page.locator('#collection').select_option('')
         ok('area/type/bookmark filters and unchanged original collection count')
@@ -129,7 +129,7 @@ def main():
         expect(page.locator('#question')).to_be_visible()
         expect(page.locator('#collection')).to_have_value('plus-20261026')
         diag=page.evaluate('MPJE_DIAGNOSTICS()')
-        assert diag['filtered']==1152 and diag['total']==2176 and diag['active']=='MA-CASE-0001'
+        assert diag['filtered']==1152 and diag['total']==data['published_question_count'] and diag['active']=='MA-CASE-0001'
         expect(page.locator('#cases .case')).to_have_count(1)
         expect(page.locator('#lead')).to_contain_text('Select ONE')
         assert 'CASE B' not in page.locator('#question').inner_text()
@@ -143,13 +143,13 @@ def main():
         page.reload(wait_until='load')
         saved_state=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k))',KEY)
         assert 'E' in saved_state['attempts'][plus_sata['question_id']]['selected']
-        assert 'MA-EXP-0001' in saved_state['attempts']
+        assert 'MA-EXP-0003' in saved_state['attempts'] and 'MA-REV-0001' in saved_state['attempts']
         ok('five-choice SATA including E scores correctly and coexists with preserved original progress')
         with page.expect_download() as dl:page.locator('#export').click()
         plus_backup=Path(dl.value.path()).read_bytes()
         page.locator('#import-file').set_input_files({'name':'combined.json','mimeType':'application/json','buffer':plus_backup})
         expect(page.locator('#storage-msg')).to_contain_text('가져왔')
-        bad=json.loads(plus_backup);bad['attempts']['MA-EXP-0001']['selected']=['E']
+        bad=json.loads(plus_backup);bad['attempts']['MA-EXP-0003']['selected']=['E']
         page.locator('#import-file').set_input_files({'name':'invalid-choice.json','mimeType':'application/json','buffer':json.dumps(bad).encode()})
         expect(page.locator('#storage-msg')).to_contain_text('실패')
         ok('backup accepts new E answers but rejects impossible E for an old four-choice item')
@@ -160,10 +160,14 @@ def main():
         expect(page.locator('#collection')).to_be_disabled()
         page.locator('#end-session').click();page.locator('#timed').click()
         diag=page.evaluate('MPJE_DIAGNOSTICS()')
-        assert len(diag['sessionIds'])==120 and len(set(diag['sessionFamilies']))==120
+        # Plus contains repeated stems across different declared models. Do not refill
+        # a shorter set with those clones just to reach an advertised 120.
+        assert 0<len(diag['sessionIds'])<=120
+        assert len(set(diag['sessionFamilies']))==len(diag['sessionIds'])
         assert all(x.startswith('MA-CASE-') for x in diag['sessionIds'])
+        assert page.evaluate('''() => {const C=MPJEQuality,Q=JSON.parse(document.querySelector('#payload').textContent).questions,ids=MPJE_DIAGNOSTICS().sessionIds,chosen=Q.filter(q=>ids.includes(q.question_id)),f=new Set(chosen.map(q=>q.family_id)),s=new Set(chosen.map(q=>C.norm(q.stem))),p=new Set(chosen.map(C.pack));return s.size===ids.length && p.size===ids.length && (ids.length===120 || !Q.some(q=>q.collection_id==='plus-20261026'&&!f.has(q.family_id)&&!s.has(C.norm(q.stem))&&!p.has(C.pack(q))));}''')
         page.locator('#end-session').click()
-        ok('new-only 20 and 120 question sets honor the selected collection and family cap')
+        ok('plus-only sets honor collection/family/stem/option caps and do not backfill clones to reach120')
         page.goto(base+'practice-expansion/?bank=plus#MA-CASE-1152',wait_until='load')
         expect(page.locator('#q-meta')).to_contain_text('MA-CASE-1152')
         expect(page.locator('#lead')).to_contain_text('Select ALL')
