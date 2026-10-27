@@ -6,6 +6,8 @@ on:
       - 'site/**'
       - 'practice_expansion/**'
       - 'scripts/publish_practice.py'
+      - 'scripts/build_refresh.py'
+      - 'notes/refresh/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
@@ -28,7 +30,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Build both enabled practice collections
-        run: python scripts/publish_practice.py --output /tmp/mpje-public-site
+        run: |
+          python scripts/build_refresh.py --check
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload built site
@@ -62,6 +66,37 @@ jobs:
                   assert [x['count'] for x in manifest['collections']]==[1024,1152]
                   assert 'practice-expansion/?bank=plus' in read('')
                   print('Production page verified: 2176 online questions, both collections; no draft gate.')
+                  break
+              except Exception:
+                  if attempt==11:raise
+                  time.sleep(5)
+      - name: Verify actual public refresh assets and shared navigation
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import hashlib, json, os, time, urllib.request
+          from pathlib import Path
+          base=os.environ['PAGE_URL'].rstrip('/')+'/'
+          suffix='?refresh='+os.environ['GITHUB_SHA']
+          expected=json.loads(Path('site/notes/refresh-build.json').read_text())
+          def get(path):
+              req=urllib.request.Request(base+path+suffix,headers={'Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:return r.read()
+          files=['notes/refresh-build.json','notes/refresh-data.js','notes/refresh-core.js',
+                 'notes/refresh.js','notes/refresh.css','notes/notes.js',
+                 'assets/learning-tools.js','assets/learning-tools.css']
+          for attempt in range(12):
+              try:
+                  for path in files:
+                      assert hashlib.sha256(get(path)).digest()==hashlib.sha256((Path('site')/path).read_bytes()).digest(),path
+                  for path in ['', 'notes/', 'notes/book.html', 'practice-expansion/', 'practice-expansion/research.html']:
+                      text=get(path).decode()
+                      assert text.count('src="'+('' if not path else '../')+'assets/learning-tools.js"')==1,path
+                  assert 'notes/#refresh' in get('').decode()
+                  assert 'refresh-data.js' in get('notes/').decode()
+                  print('Production refresh assets verified byte-for-byte; all five pages have shared navigation.')
+                  print(json.dumps(expected,ensure_ascii=False))
                   break
               except Exception:
                   if attempt==11:raise
