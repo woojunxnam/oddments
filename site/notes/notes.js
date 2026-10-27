@@ -70,7 +70,7 @@
       html += `<a class="chapter-nav-link" href="#chapter/${c.id}" data-chapter="${c.id}"><span class="nav-num">${String(i+1).padStart(2,'0')}</span><span>${esc(c.title)}</span></a>`;
     });
     $('#chapter-nav').innerHTML = html;
-    $('#mobile-nav').innerHTML = '<a class="nav-home" href="#home">학습 시작</a><a class="nav-item" href="#refresh">Daily Refresh · 복습 카드</a><a class="nav-item" href="#return">RA→약국 복귀 7단계</a><a class="nav-item" href="#glossary">기초 용어</a><a class="nav-item" href="#search">본문 검색</a><a class="nav-item" href="#drugs">Generic · Brand 사전</a><a class="nav-item" href="#saved">북마크 · 다시 읽기</a><a class="nav-item" href="../">메인 · 문제은행 ↗</a>'+html+'<a class="nav-item" href="#sources">출처 · 편집 기록</a><a class="nav-item" href="book.html">전체 읽기 · 인쇄</a>';
+    $('#mobile-nav').innerHTML = '<a class="nav-home" href="#study">MPJE 법규 학습 · 시험 우선</a><a class="nav-item" href="#study/today">오늘 법규 10개</a><a class="nav-item" href="#study/plan">30회 시험 학습 순서</a><a class="nav-item" href="#home">전체 통합노트</a><a class="nav-item" href="#refresh">Daily Refresh · 복습 카드</a><details class="study-side"><summary>합격 후 · 실무 복귀 (선택)</summary><a class="nav-item" href="#return">RA→약국 복귀 7단계</a></details><a class="nav-item" href="#glossary">기초 용어</a><a class="nav-item" href="#search">본문 검색</a><a class="nav-item" href="#drugs">Generic · Brand 사전</a><a class="nav-item" href="#saved">북마크 · 다시 읽기</a><a class="nav-item" href="../">메인 · 문제은행 ↗</a>'+html+'<a class="nav-item" href="#sources">출처 · 편집 기록</a><a class="nav-item" href="book.html">전체 읽기 · 인쇄</a>';
   }
   const dialog = $('#nav-dialog');
   $('#mobile-menu').addEventListener('click', () => dialog.showModal());
@@ -89,7 +89,7 @@
   function renderHome() {
     setToc(null);
     const last = state.last && units.get(state.last);
-    reader.innerHTML = `<section class="hero"><p class="eyebrow">THE CONNECTED PHARMACY LAW NOTEBOOK</p><h1>Massachusetts MPJE<br>흩어진 규칙을, 한 흐름으로.</h1><p>Week 1–6의 상세 노트를 주제별로 다시 엮었습니다. 핵심 개념부터 적용 조건·예외·약물·공식 근거까지, 같은 주제는 한 곳에서 이어 읽으세요.</p><div class="actions"><a class="primary-button" href="${last ? href(last) : '#chapter/foundations'}">${last ? '마지막 읽은 곳 이어보기':'통합 노트 시작하기'} <span aria-hidden="true">&nbsp;→</span></a><a class="secondary-button" href="#drugs">Generic · Brand 사전</a></div><div class="stats-grid"><div class="stat"><strong>${D.stats.chapters}</strong><span>주제별 장</span></div><div class="stat"><strong>${D.stats.units}</strong><span>상세 읽기 절</span></div><div class="stat"><strong>${D.stats.drugs}</strong><span>약물·제형 항목</span></div><div class="stat"><strong>${D.stats.sources}</strong><span>연결 출처</span></div></div></section>
+    reader.innerHTML = `<section class="hero"><p class="eyebrow">MPJE FIRST · LAW STUDY & CONNECTED NOTES</p><h1>Massachusetts MPJE<br>지금은 법규 학습과 시험 준비부터.</h1><p>16개 시험 학습 단원에서 핵심 법규를 이해하고, 조건·예외·기한을 비교한 뒤 관련 문제로 적용하세요. 전체 상세노트와 기존 복습 기능도 그대로 사용할 수 있습니다.</p><div class="actions"><a class="primary-button" href="#study">MPJE 법규 학습 시작 →</a><a class="secondary-button" href="${last ? href(last) : '#chapter/foundations'}">${last ? '상세노트 이어보기':'상세노트 처음부터'}</a><a class="secondary-button" href="#drugs">Generic · Brand 사전</a></div><div class="stats-grid"><div class="stat"><strong>${D.stats.chapters}</strong><span>주제별 장</span></div><div class="stat"><strong>${D.stats.units}</strong><span>상세 읽기 절</span></div><div class="stat"><strong>${D.stats.drugs}</strong><span>약물·제형 항목</span></div><div class="stat"><strong>${D.stats.sources}</strong><span>연결 출처</span></div></div></section>
     <div id="refresh-home"></div>
     <p class="notice"><strong>상세 학습판 · 일부 경계 확인 필요</strong><br>편집일 2026.10.23. 기존 노트의 확인일과 새로 검토한 범위를 구분합니다. 독립 전수 법률감사나 합격 보장이 아닙니다. <a href="#chapter/open-register">남은 OPEN 확인</a></p>
     ${last ? `<a class="resume-card" href="${href(last)}"><span><small>이어서 읽기 · ${esc(last.chapter.title)}</small><strong>${esc(last.title)}</strong></span><span aria-hidden="true">→</span></a>`:''}
@@ -192,6 +192,7 @@
     document.querySelectorAll('[data-chapter]').forEach(a=>{if(route==='chapter'&&a.dataset.chapter===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
     document.title=(route==='chapter'&&chapters.has(id)?chapters.get(id).title+' · ':'')+'MA MPJE 통합 노트';
     if(route==='chapter'&&chapters.has(id))renderChapter(chapters.get(id),target);
+    else if(route==='study'&&window.MPJE_STUDY_VIEW){setToc(null);window.MPJE_STUDY_VIEW.render(reader,seg.slice(1));document.title='MPJE 법규 학습 · Massachusetts';}
     else if(['refresh','return','glossary'].includes(route)&&window.MPJE_REFRESH_VIEW){setToc(null);window.MPJE_REFRESH_VIEW.render(reader,route,seg.slice(1));document.title=({refresh:'복습 카드',return:'RA→약국 복귀',glossary:'기초 용어'}[route])+' · MA MPJE 통합 노트';}
     else if(route==='search')renderSearch(decode(id||''));
     else if(route==='drugs')renderDrugs(decode(id||''));

@@ -14,8 +14,8 @@
     if(target){const old=target.getAttribute('tabindex');target.setAttribute('tabindex','-1');target.focus({preventScroll:true});if(old===null)target.addEventListener('blur',()=>target.removeAttribute('tabindex'),{once:true});}
   });
   function link(path,text,id){const a=document.createElement('a');a.href=new URL(path,root).href;a.textContent=text;a.id=id;return a;}
-  menu.append(top,link('./','⌂ 홈','om-home'),link('notes/#refresh','복습 카드','om-cards'));
-  const toggle=document.createElement('button');toggle.type='button';toggle.id='om-tools-toggle';toggle.textContent='이동';toggle.setAttribute('aria-controls',menu.id);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','맨 위·홈·복습 카드 이동 메뉴');
+  menu.append(top,link('./','⌂ 홈','om-home'),link('notes/#study','MPJE 학습','om-study'),link('notes/#refresh','복습 카드','om-cards'));
+  const toggle=document.createElement('button');toggle.type='button';toggle.id='om-tools-toggle';toggle.textContent='이동';toggle.setAttribute('aria-controls',menu.id);toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','맨 위·홈·MPJE 학습·복습 카드 이동 메뉴');
   const media=matchMedia('(max-width: 760px)');let expanded=false;
   function update(){menu.hidden=media.matches&&!expanded;toggle.hidden=!media.matches;toggle.setAttribute('aria-expanded',String(expanded));}
   toggle.addEventListener('click',()=>{expanded=!expanded;update();});
