@@ -84,6 +84,8 @@ main의 2,041개 파일을 GitHub의 Git blob 해시와 대조하여 snapshot을
 
 실행 환경의 Python 의존성·Chromium 미설치로 로컬에서 실행하지 못한 검사는 CI 결과로 판정한다. 테스트 목록이 존재하는 것과 실제 통과는 다르다. [해당 workflow 실행 내역](https://github.com/woojunxnam/oddments/actions/workflows/representative-quality-qa.yml)과 [기존 품질 QA](https://github.com/woojunxnam/oddments/actions/workflows/practice-quality-qa.yml)의 commit 및 artifacts를 함께 확인한다. 실제 모바일 기기·Safari, 전 corpus의 독립 법규 감사, MPJE 난도·합격 예측은 검증 대상에 포함하지 않았다.
 
+첫 CI head `63417c79`에서는 새 계약을 포함한 123개 Python 테스트, 공개 문제풀이 22개 브라우저 검사, 새 판본·기록 검사 11개(46개 각각 정답·오답 채점)가 통과했다. 기존 원고 status 페이지 검사만 이미 있던 공통 이동 메뉴 script와 오래된 script-count 0 조건의 불일치로 실패했다. 이 조건은 정확히 `learning-tools.js` 한 개만 허용하면서 inline/question JSON과 문제풀이 runtime이 없는지 검사하도록 수정했다. 원고의 DRAFT·RELEASED 0 경계와 기존 26개 archive reader 검사는 유지했다. 이 최초 실행의 성공 수치를 이후 commit의 전체 CI 성공으로 대신 사용하지 않는다.
+
 ## 이어갈 작업
 
 남은 대표 301개는 개별 triage의 우선순위에 따라 30–50개 단위로 처리한다. 재작성 전에 연관된 기존 고품질 사례와 통합할지, 조건이 실제로 결론을 바꾸는 새로운 사례인지 결정한다. 보류 7개는 단순 표현 수정으로 풀 수 있는 항목과 공식 적용 관계를 확인해야 하는 항목을 구별한다. 부족 영역의 추가 사례는 이 작업과 별도로 gap를 입증한 뒤 작성하며, 목표 개수를 채우기 위해 이름·약물·숫자만 바꾼 변형을 만들지 않는다.
