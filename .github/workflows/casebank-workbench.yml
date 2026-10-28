@@ -1,0 +1,29 @@
+name: Individual casebank workbench
+on:
+  push:
+    branches: ['feat/individual-casebank-20261028']
+    paths: ['.github/workflows/casebank-workbench.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36
+      - name: Package exact current public source
+        shell: python
+        run: |
+          import pathlib,zipfile,json
+          out=pathlib.Path('/tmp/casebank-review');out.mkdir()
+          with zipfile.ZipFile(out/'repository.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for p in pathlib.Path('.').rglob('*'):
+                  if p.is_file() and '.git' not in p.parts:z.write(p,str(p))
+          (out/'snapshot.json').write_text(json.dumps({'base_sha':'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36','scope':'full-bank structural review and new individually authored learning cases'}))
+      - uses: actions/upload-artifact@v4
+        with:
+          name: individual-casebank-source
+          path: /tmp/casebank-review
+          retention-days: 3
