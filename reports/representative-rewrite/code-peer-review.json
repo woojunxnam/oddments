@@ -1,0 +1,302 @@
+{
+  "schema_version": "representative-code-peer-review/1",
+  "reviewer": "author_clinical_authority",
+  "reviewed_at": "2026-10-28T21:51:37.188657+00:00",
+  "review_kind": "WITHIN_TEAM_CODE_PEER_REVIEW_NOT_INDEPENDENT_LEGAL_AUDIT",
+  "status": "COMPLETED_ALL_IDENTIFIED_FINDINGS_RESOLVED",
+  "reviewed_files": [
+    {
+      "path": "scripts/build_representative_rewrites.py",
+      "sha256": "8274405fa5eee76a094db3362041b3ff99b2d629f4bcf4b80e4755c190a59f0d",
+      "bytes": 19849,
+      "scope": "Full source reviewed",
+      "initial_review_sha256": "4d559925297fc67de44047992261c0ccd790f3262320e17327d890b261f2a896"
+    },
+    {
+      "path": "scripts/representative_quality.py",
+      "sha256": "a8e1223429f4544ae6f003c044a9092899892f1488939627e78c33ccbe1182fd",
+      "bytes": 5597,
+      "scope": "Full source reviewed",
+      "initial_review_sha256": "8473abb299e4b8fe9d3ba87f5782e009a94e1577e51da3aef4f1f0176a6855aa"
+    },
+    {
+      "path": "scripts/practice_quality.py",
+      "sha256": "3a3fd3626a55ed8ec978089304083ec6ee98a25b8f65c84e429f86d57400d4df",
+      "bytes": 12087,
+      "scope": "Full source reviewed"
+    },
+    {
+      "path": "scripts/publish_practice.py",
+      "sha256": "4df51d495d9ba2a2e47b7db54b51cd85b04e6a3e5eaa184993baf9e9b5c94646",
+      "bytes": 19769,
+      "scope": "Full source reviewed"
+    },
+    {
+      "path": "scripts/verify_representative_rewrites.py",
+      "sha256": "929fba7daa13556684618ce4e78c2c317e7b977867ad861d09b464fc2f8f7518",
+      "bytes": 11723,
+      "scope": "Full source reviewed",
+      "initial_review_sha256": "a0caec500f589593013398fb1bb7725055127f757d41714782aded05b838c9f4"
+    },
+    {
+      "path": "tests/test_representative_rewrites.py",
+      "sha256": "17386ccbadf4b8e71a08603e145cac9be11b6bd0e19472af9035ba66b242ce95",
+      "bytes": 8709,
+      "scope": "Full source reviewed"
+    },
+    {
+      "path": "tests/test_practice_quality.py",
+      "sha256": "0783f8513408ca577b4667886ee99f18538b23527fbd1c4021b966d4dc1b6189",
+      "bytes": 6185,
+      "scope": "Full source reviewed"
+    },
+    {
+      "path": "site/practice-expansion/quality-core.js",
+      "sha256": "7cff8076f9d0b25038e4dd269078dc6481f50c3f5e957fe4f7087f8d63a50697",
+      "bytes": 2545,
+      "scope": "Relevant integration and preservation context reviewed"
+    },
+    {
+      "path": "practice_expansion/2026-10-23/review/reader.template.html",
+      "sha256": "33ad4826975cd168e545b8755ff31723b15149722c39b6d5ee99b688ca92c5a0",
+      "bytes": 25483,
+      "scope": "Relevant integration and preservation context reviewed"
+    },
+    {
+      "path": ".github/workflows/representative-quality-qa.yml",
+      "sha256": "2f607e3809aa53665f11e326843a441d11ab31cedabacbdce82c91acbf6650f7",
+      "bytes": 3775,
+      "scope": "Relevant integration and preservation context reviewed"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "sha256": "801a8caf6eab73781c054647391415eb437481ca9a5b6d3ba754d0b38130b70d",
+      "bytes": 6093,
+      "scope": "Relevant integration and preservation context reviewed"
+    },
+    {
+      "path": "site/practice-expansion/publication.json",
+      "sha256": "0f44088e5349e4a15cc0836e7492cad2b59d5edf09822789668eee63e81d8835",
+      "bytes": 1629,
+      "scope": "Relevant integration and preservation context reviewed",
+      "initial_review_sha256": "a41c5cb269e6e87c22723f472441d8413340c4e65c25900eb1fe37d02bbc7f20"
+    }
+  ],
+  "excluded_from_review": [
+    "Author question legal correctness: assigned to a different peer reviewer.",
+    "Final generated-file hash synchronization while the parent is still editing.",
+    "Final GitHub commit, CI execution and live deployment approval."
+  ],
+  "observed_snapshot": {
+    "published_total": 2318,
+    "default_questions": 443,
+    "new_replacements": 46,
+    "previous_quality": 96,
+    "legacy_default_remaining": 301,
+    "reused_existing_quality": 1,
+    "held_from_default": 7,
+    "counts_are_working_snapshot_not_final_release": true,
+    "archive_ids_with_review_notice": 21
+  },
+  "findings": [
+    {
+      "id": "CODE-PEER-001",
+      "severity": "MEDIUM",
+      "status": "RESOLVED",
+      "path": "scripts/verify_representative_rewrites.py",
+      "location": "finally block; new_cases_exercised=len(new), approximately line 168",
+      "title": "Failed browser runs can overstate how many new cases were exercised",
+      "evidence": "The finally block writes new_cases_exercised=len(new) regardless of how far the browser checks progressed. An assertion failure before the per-question loop still produces the full planned count. The JSON report has no run status or captured Python exception, although the process exits nonzero.",
+      "impact": "An uploaded partial report can be mistaken for evidence that all new questions were tested. The user explicitly requires reporting tests actually completed; this affects evidence accuracy, not the reader answer/storage code.",
+      "recommendation": "Track IDs only after each question completes the requested checks. Record planned_cases separately from completed_case_ids/count, and record passed/failed status plus exception details while preserving a nonzero exit on failure.",
+      "validation_needed": "Exercise a deliberately failing run before the question loop and after one question; ensure neither report claims all cases and both indicate failure. Confirm the normal successful run reports all completed IDs.",
+      "resolved_at": "2026-10-28T21:59:56.397641+00:00",
+      "resolution": "Verifier appends a question ID only after that question completes all its checks, records planned and completed counts separately, and captures failed/passed state plus exception type/message while re-raising the failure.",
+      "resolution_verification": "Read the final control flow and injected RuntimeError before browser startup through a mock Playwright context. main re-raised it and emitted failed status, planned=46, exercised=0, IDs=[], and the actual exception. No browser or HTTP execution is claimed by this failure-path test."
+    },
+    {
+      "id": "CODE-PEER-002",
+      "severity": "MEDIUM",
+      "status": "RESOLVED",
+      "resolved_at": "2026-10-28T21:59:56.397641+00:00",
+      "path": "scripts/build_representative_rewrites.py; reports/representative-rewrite/default-holds.json",
+      "title": "A related archive item carrying a hold warning remained in the default pool",
+      "evidence": "The MA-CASE-0795 hold included MA-CASE-0349 among affected_archive_ids, but MA-CASE-0349 was initially still recommended. The ledger validation of archive warning IDs against the default pool caught this actual intersection.",
+      "impact": "A question displaying the review-hold warning could still be included by the unfiltered default practice selection.",
+      "resolution": "Parent inspected the original item, added MA-CASE-0349 as an explicit default hold, added a builder rejection of archive-warning/default intersection, and the triage reviewer updated its own finding. Original question bytes and answer keys were retained.",
+      "resolution_verification": "Final selection: 7 held representatives, 21 original IDs with notices, zero intersection with 443 recommended IDs. MA-CASE-0349 is explicitly held and absent from the default. The rebuilt 355-row ledger records 46 rewritten, 1 reuse, 7 hold, 301 not yet implemented."
+    }
+  ],
+  "verified_properties": [
+    {
+      "property": "Original IDs, stems, options, answer keys, explanations and note evidence",
+      "result": "PASS",
+      "evidence": "test_all_three_archives_are_byte_identical and test_legacy_stems_keys_rationales_and_ids_survive_publication passed for all three original banks; publication code changes delivery metadata only."
+    },
+    {
+      "property": "Original source metadata",
+      "result": "PASS",
+      "evidence": "Compared every original source object against the combined payload: zero differences in the 1024, 1152 and previous96 banks."
+    },
+    {
+      "property": "New meaning receives separate IDs",
+      "result": "PASS",
+      "evidence": "Builder requires new MA-RW IDs absent from original banks, assigns revision_of and original family, and uses NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION. No attempt/bookmark remapping is added."
+    },
+    {
+      "property": "Stable learner storage",
+      "result": "PASS_BY_SOURCE_AND_STRUCTURAL_TEST",
+      "evidence": "Rendered KEY remains oddments.mpje.practice.v1. No storage clear or remove operation is added. Original IDs remain available to safeState. Actual persistent-origin browser behavior is not executed in this peer environment."
+    },
+    {
+      "property": "Default selection and family uniqueness",
+      "result": "PASS",
+      "evidence": "Replacements and holds remove only default IDs; original records remain in combined corpus. The builder requires unique default families and the tests require all previous96 IDs to remain."
+    },
+    {
+      "property": "Held records and explicit notices",
+      "result": "PASS_BY_SOURCE_AND_STRUCTURAL_TEST",
+      "evidence": "The final heldVersions map includes representative hold IDs and related archive IDs. All 21 warning IDs are outside the unfiltered default, while originals remain available through archive access and Chaos. MA-CASE-0349 was explicitly added to close CODE-PEER-002."
+    },
+    {
+      "property": "Old/new navigation",
+      "result": "PASS_BY_SOURCE_AND_STRUCTURAL_TEST",
+      "evidence": "Separate-ID revisions link to revision_of and original items link through replacement mappings. New collection and ?bank=rewrite initialization are inserted; hash navigation preserves existing IDs."
+    },
+    {
+      "property": "Chaos10 replacement sampling and occurrence scoring",
+      "result": "PASS",
+      "evidence": "QC.chaos(Q,count) receives the full corpus. Existing deterministic Node contracts verify repeated exact IDs and same-family sampling, and QC.record keys session answers by occurrence slot."
+    },
+    {
+      "property": "Standard/timed default sessions",
+      "result": "PASS_BY_SOURCE_AND_CORE_CONTRACT",
+      "evidence": "Unfiltered default matches is the revised recommendation set and QC.diverse rejects duplicate families, stems and option packs. Explicit user all/saved/ID filters can intentionally include archived cases."
+    },
+    {
+      "property": "Honest source and review status",
+      "result": "PASS_BY_SOURCE_AND_STRUCTURAL_TEST",
+      "evidence": "Publication remains PUBLISHED_PRACTICE, NOT_INDEPENDENTLY_REVIEWED, null independent audits and canonical_released_question_count=0. Builder carries retrieval method, exact sections, old note review dates/OPEN flags and source boundary caveats."
+    },
+    {
+      "property": "Current pre2027 outline",
+      "result": "PASS",
+      "evidence": "Builder and tests require MPJE-MA-PRE2027 and valid_for_exams_before=2027-03-01. No new future-outline mapping is introduced."
+    },
+    {
+      "property": "Rendered UI counts and new collection",
+      "result": "PASS",
+      "evidence": "Final reviewed source snapshot renders 2318 total, 443 default and 46 revisions; previous96 remains 96. The reported 7 default holds and 21 archive-notice IDs are separate measures."
+    },
+    {
+      "property": "Production content identity gate",
+      "result": "PRESENT_NOT_EXECUTED",
+      "evidence": "Pages workflow compares deployed practice HTML byte-for-byte with this build and checks manifest counts, replacement mapping and new collection navigation before declaring production integrity."
+    }
+  ],
+  "executed_checks": [
+    {
+      "command": "python -m unittest discover -s tests -p test_representative_rewrites.py -v",
+      "result": "11 PASS; 1 FAIL; 1 ERROR during active generation",
+      "details": "The deterministic-artifact assertion and absent final audit-ledger artifact were not passing in the working snapshot. Parent had already identified active generation/hash synchronization; these are not categorized as stable code defects. This review does not claim the full suite passed."
+    },
+    {
+      "command": "node --check site/practice-expansion/quality-core.js",
+      "result": "PASS"
+    },
+    {
+      "command": "Render current payload, extract both plain inline scripts, run node --check on each via stdin",
+      "result": "PASS",
+      "count": 2
+    },
+    {
+      "command": "Execute existing test_core_random_sampling_and_occurrence_scoring from tests/test_practice_quality.py",
+      "result": "PASS"
+    },
+    {
+      "command": "Compare source metadata objects from all original banks with combined payload",
+      "result": "PASS",
+      "changed_source_objects": 0
+    },
+    {
+      "command": "Inspect rendered title, default/collection selectors, quality notice and Chaos help against payload counts",
+      "result": "PASS"
+    },
+    {
+      "command": "Final python -m unittest discover -s tests -p test_representative_rewrites.py -v",
+      "result": "PASS",
+      "tests": 13,
+      "details": "All previously pending generated-file and ledger checks pass after final source/selection rebuild."
+    },
+    {
+      "command": "Injected failure before browser startup in the actual verifier main control flow using a mock Playwright context",
+      "result": "PASS",
+      "details": "Failure re-raised; JSON status failed, planned 46, exercised 0, IDs empty, RuntimeError recorded. This is a fault-reporting unit probe, not a browser or HTTP execution."
+    },
+    {
+      "command": "Final selection/hold-notice/default consistency and rendered UI/inline JS checks",
+      "result": "PASS",
+      "details": "Default443, new46, total2318, holds7, noticeIDs21, no notice/default intersection; both rendered inline scripts pass node --check."
+    },
+    {
+      "command": "python scripts/build_representative_audit_ledger.py --check",
+      "result": "PASS",
+      "details": "Deterministic JSON and Markdown preserve all 355 editorial triage records and original legal NOT_REVERIFIED status."
+    },
+    {
+      "command": "python scripts/verify_representative_protected.py",
+      "result": "PASS",
+      "details": "1781 files / 60969461 bytes match enrolled actual-main Git blobs and SHA-256."
+    },
+    {
+      "command": "Protection negative checks with in-memory corrupted SHA/inventory and a temporary wrong-main-blob snapshot",
+      "result": "PASS",
+      "details": "Corrupt expected SHA-256, removed inventory entry and incorrect upstream Git blob were rejected without changing protected source files."
+    }
+  ],
+  "limitations": [
+    "No Playwright package or Chromium configuration is available in this peer shell. No local HTTP, production HTTP, mobile screenshot, actual localStorage browser or download/import interaction is claimed as executed by this reviewer.",
+    "Reviewed hashes identify the source-freeze snapshot after both findings were resolved. GitHub CI, final commit identity and production browser verification remain separate gates.",
+    "This is code and data-flow review. It does not independently certify pharmacy law, every explanation, psychometric difficulty or absence of semantic duplicates.",
+    "Existing safeState/import behavior was not redesigned. Manual import replaces the current state; malformed/unknown-ID recovery and stale multi-tab state are pre-existing limitations outside the new revision mapping.",
+    "content_version is descriptive metadata; the reader keys history by question_id. Future meaning/key changes to a published MA-RW question must continue using a new ID and retain the prior item, rather than relying on a version-number change alone."
+  ],
+  "source_code_modified_by_reviewer": false,
+  "followup_reviewed_at": "2026-10-28T21:59:56.397641+00:00",
+  "additional_implementation_by_this_reviewer": {
+    "scope": "Two separately assigned scripts and their generated reports; these are author implementation/verification, not an independent peer review of the reviewer's own code.",
+    "files": [
+      {
+        "path": "scripts/build_representative_audit_ledger.py",
+        "sha256": "11bee0aba46bac1868aecc11dd66e9171769ad6b156e8535bd8a99b5ac7b33f1",
+        "bytes": 17881
+      },
+      {
+        "path": "scripts/verify_representative_protected.py",
+        "sha256": "e91bc4098e1e583e7cd976e9963b42f03f5a881786cfa334d0a16127309a27f9",
+        "bytes": 12790
+      },
+      {
+        "path": "reports/representative-rewrite/audit-ledger.json",
+        "sha256": "9c8c2f317ec5e6afd46e12317dab65600e2efbe69d0465984dde02c6fe5abd3c",
+        "bytes": 2781743
+      },
+      {
+        "path": "reports/representative-rewrite/audit-ledger.md",
+        "sha256": "84c74a156ad254d129a511bc8c2976f6fb45bd78e589ea5b1a3198a113c8d2ca",
+        "bytes": 97409
+      },
+      {
+        "path": "reports/representative-rewrite/protected-baseline.json",
+        "sha256": "a4f25cd55d3377b088bcb27c63a75a9c4f52b88c4197900cf43bf8456d5c0f57",
+        "bytes": 801792
+      },
+      {
+        "path": "reports/representative-rewrite/protected-baseline.md",
+        "sha256": "5a79450e38c877b9cee210bc141ac0f023c50a76c4a0dd7e545457e6a7aa0bc2",
+        "bytes": 2443
+      }
+    ]
+  },
+  "source_code_modification_scope": "The parent-owned sources under code peer review were not edited by this reviewer. The separately assigned ledger/protection implementation is listed in additional_implementation_by_this_reviewer."
+}

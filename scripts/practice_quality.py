@@ -1,13 +1,29 @@
 """Quality reader overlay: immutable archive + explicit representative pool and new cases."""
 from pathlib import Path
-import json
+import hashlib,json
 ROOT=Path(__file__).resolve().parents[1]
-def attach(data):
+def attach(data, revision_selection=None):
  selection=json.loads((ROOT/'practice_expansion/2026-10-27-quality/selection.json').read_text())
  available={q['question_id'] for q in data['questions']}
  if not set(selection['recommended_ids'])<=available:raise ValueError('Unknown recommended ID')
  data['quality_selection']={k:selection[k] for k in ['edition','recommended_ids','new_ids','stats']}
- data['generation_method']='Original 256 paired families and128 conditional models are retained.96 individually written cases added.451 default representatives reduce exact lexical repeats; all2272 remain available. This is not independent legal or psychometric validation.'
+ if revision_selection:
+  path=(ROOT/revision_selection['path']).resolve()
+  if ROOT not in path.parents:raise ValueError('Revision selection path escapes repository')
+  raw=path.read_bytes()
+  if hashlib.sha256(raw).hexdigest()!=revision_selection['sha256']:raise ValueError('Revision selection hash changed')
+  revised=json.loads(raw)
+  baseline=(ROOT/'practice_expansion/2026-10-27-quality/selection.json').read_bytes()
+  if hashlib.sha256(baseline).hexdigest()!=revised['baseline_selection_sha256']:raise ValueError('Revision baseline selection changed')
+  if not set(revised['recommended_ids'])<=available:raise ValueError('Unknown revision recommendation')
+  if len(set(revised['recommended_ids']))!=len(revised['recommended_ids']):raise ValueError('Duplicate revision recommendation')
+  if revised['stats']['available_total']!=len(available):raise ValueError('Revision corpus count mismatch')
+  for r in revised['replacements']:
+   if r['legacy_question_id'] not in available or r['replacement_question_id'] not in available:raise ValueError('Invalid revision link')
+  if not set(selection['new_ids'])<=set(revised['recommended_ids']):raise ValueError('Previous96 must remain in the default pool')
+  data['representative_revision']={k:revised[k] for k in ['edition','replacements','holds','stats','new_ids','history_policy']}
+  data['quality_selection'].update(edition=revised['edition'],recommended_ids=revised['recommended_ids'],stats=revised['stats'])
+ data['generation_method']=f"Original 256 paired families and128 conditional models and previous96 individual cases are retained. {len(data['quality_selection']['recommended_ids'])} default cases after explicit revision/hold mappings; all{len(available)} archived and new IDs remain available. This is not independent legal or psychometric validation."
  return data
 
 def once(text,old,new):
@@ -58,4 +74,8 @@ def transform(text,data):
  text=once(text,'sessionIds:session?.ids||[]', "sessionMode:session?.mode||null,sessionAnswers:session?QC.responses(session):[],displayOrder:[...displayOrder],displayLabels:{...displayLabels},reviewPosition,reviewSelected:reviewQueue?.[reviewPosition]?.selected||null,sessionIds:session?.ids||[]")
  core=(ROOT/'site/practice-expansion/quality-core.js').read_text()
  text=once(text,'</head>', '<script>'+core+'</script></head>')
+ text=text.replace('451문항',f'{recommended}문항').replace('2,272문항',f'{total:,}문항')
+ if data.get('representative_revision'):
+  from representative_quality import transform as transform_revisions
+  text=transform_revisions(text,data)
  return text

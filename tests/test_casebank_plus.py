@@ -124,4 +124,4 @@ def test_collection_options_are_real_html_options():
   def handle_endtag(self,tag):
    if tag=='select':self.active=False
  p=Options();p.feed(m.render(m.build_payload()))
- assert p.values==['','quality-20261027','plus-20261026','original-20261023']
+ assert p.values==['','representative-20261028','quality-20261027','plus-20261026','original-20261023']

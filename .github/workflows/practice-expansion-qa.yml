@@ -49,7 +49,13 @@ jobs:
               assert page.locator('a[href="practice-expansion/"]').count()==2
               page.locator('a[href="practice-expansion/"]').first.click()
               assert 'DRAFT' in page.locator('#draft-title').inner_text()
-              assert page.locator('script').count()==0
+              # The archived status page includes the site's navigation dock.
+              # Permit exactly that asset while still rejecting question/runtime payloads.
+              assert page.locator('script').count()==1
+              dock=page.locator('script[src="../assets/learning-tools.js"][data-oddments-tools][defer]')
+              assert dock.count()==1 and not dock.text_content().strip()
+              assert page.locator('script[type="application/json"]').count()==0
+              assert page.evaluate('typeof window.MPJE_DIAGNOSTICS')=='undefined'
               for width in [320,390,768,1440]:
                   page.set_viewport_size({'width':width,'height':1000})
                   assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')

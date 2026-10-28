@@ -7,6 +7,7 @@ on:
       - 'practice_expansion/**'
       - 'scripts/publish_practice.py'
       - 'scripts/practice_quality.py'
+      - 'scripts/representative_quality.py'
       - 'scripts/build_refresh.py'
       - 'notes/refresh/**'
       - '.github/workflows/pages.yml'
@@ -68,11 +69,15 @@ jobs:
                   assert f"{config['published_total']:,}문항 연습 시작" in main
                   assert [x['count'] for x in manifest['collections']]==[config['question_count']]+[x['question_count'] for x in config['additional_banks']]
                   assert 'id="chaos"' in html and 'MA-REV-0096' in html
-                  assert manifest['quality_selection']['recommended']==451
+                  selection=json.loads(Path(config['representative_selection']['path']).read_text())
+                  assert manifest['quality_selection']['recommended']==selection['stats']['recommended']
+                  assert manifest['representative_revision']['new_ids']==selection['new_ids']
+                  assert manifest['representative_revision']['replacements']==selection['replacements']
+                  assert 'practice-expansion/?bank=rewrite' in main
                   assert 'practice-expansion/?bank=plus' in main and 'practice-expansion/?bank=quality' in main
                   assert read('practice-expansion/quality-core.js')==Path('site/practice-expansion/quality-core.js').read_text()
                   assert read('practice-expansion/quality-review.html')==Path('site/practice-expansion/quality-review.html').read_text()
-                  print('Production page verified byte-for-byte: 2272 questions, 451 representatives, all 96 new cases and unrestricted Chaos10; no draft gate.')
+                  print(f"Production practice verified byte-for-byte: {config['published_total']} questions; {selection['stats']['recommended']} default; {len(selection['new_ids'])} separate-ID revisions; previous2272 and unrestricted Chaos10 preserved.")
                   break
               except Exception:
                   if attempt==11:raise

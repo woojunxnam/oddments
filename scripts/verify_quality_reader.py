@@ -26,10 +26,14 @@ def main():
   else:page.goto(args.base_url.rstrip('/')+'/practice-expansion/',wait_until='networkidle')
   page.wait_for_function('typeof window.MPJE_DIAGNOSTICS==="function"')
   diag=lambda:page.evaluate('window.MPJE_DIAGNOSTICS()')
-  ok('2272 available; 451 default',diag()['total']==2272 and diag()['filtered']==451)
-  ok('new individually written case first',diag()['active']=='MA-REV-0001')
+  from publish_practice import build_payload
+  payload=build_payload()
+  total=payload['published_question_count'];recommended=len(payload['quality_selection']['recommended_ids'])
+  first=payload.get('representative_revision',{}).get('new_ids',['MA-REV-0001'])[0]
+  ok(f'{total} available; {recommended} default',diag()['total']==total and diag()['filtered']==recommended)
+  ok('new individually written case first',diag()['active']==first)
   ok('no topic answer hint before submission',page.locator('#q-title').inner_text()=='법규 적용 사례')
-  page.locator('#scope').select_option('all');ok('all variants remain available',diag()['filtered']==2272)
+  page.locator('#scope').select_option('all');ok('all variants remain available',diag()['filtered']==total)
   page.locator('#collection').select_option('quality-20261027');ok('96 new cases',diag()['filtered']==96)
   page.locator('#collection').select_option('plus-20261026');ok('1152 old plus unchanged',diag()['filtered']==1152)
   page.locator('#collection').select_option('original-20261023');ok('1024 original unchanged',diag()['filtered']==1024)
@@ -42,8 +46,6 @@ def main():
   page.locator('#query').fill('zzzz-no-match');ok('empty filters do not disable chaos',diag()['filtered']==0 and not page.locator('#chaos').is_disabled())
   page.evaluate('()=>{window.MPJEQuality.chaos=(pool,n)=>Array(n).fill(pool[0]);}')
   page.locator('#chaos').click();d=diag();ok('all ten may repeat same exact ID',len(d['sessionIds'])==10 and len(set(d['sessionIds']))==1)
-  from publish_practice import build_payload
-  payload=build_payload()
   byid={q['question_id']:q for q in payload['questions']};q=byid[d['sessionIds'][0]]
   keys=q['correct_choice_ids'];wrong=next(c['id'] for c in q['choices'] if c['id'] not in keys)
   for slot in range(10):
@@ -76,7 +78,9 @@ def main():
   page.set_viewport_size({'width':1280,'height':900});page.screenshot(path=str(args.evidence/'quality-desktop.png'),full_page=True)
   # Every new case is rendered/answered through UI; no body-level innerHTML shortcuts.
   page.set_viewport_size({'width':320,'height':900})
-  for q in payload['questions'][-96:]:
+  previous96=[q for q in payload['questions'] if q['collection_id']=='quality-20261027']
+  assert len(previous96)==96
+  for q in previous96:
    page.locator('#query').fill(q['question_id']);page.locator('#catalog button').first.click()
    for k in q['correct_choice_ids']:page.locator(f'#choices input[value="{k}"]').check()
    page.locator('#check').click();assert '불일치' not in page.locator('#answer-heading').inner_text()

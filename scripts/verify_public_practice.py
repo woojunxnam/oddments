@@ -51,6 +51,7 @@ def main():
         expect(page.locator('.choice')).to_have_count(4)
         page.locator('#check').click();expect(page.locator('#answer-msg')).to_contain_text('먼저')
         q=by[page.evaluate('MPJE_DIAGNOSTICS().active')]
+        first_answered_id=q['question_id']
         for a in q['correct_choice_ids']:page.locator('#choice-'+a).check()
         page.locator('#check').click()
         expect(page.locator('#feedback')).to_be_visible()
@@ -143,7 +144,7 @@ def main():
         page.reload(wait_until='load')
         saved_state=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k))',KEY)
         assert 'E' in saved_state['attempts'][plus_sata['question_id']]['selected']
-        assert 'MA-EXP-0003' in saved_state['attempts'] and 'MA-REV-0001' in saved_state['attempts']
+        assert 'MA-EXP-0003' in saved_state['attempts'] and first_answered_id in saved_state['attempts']
         ok('five-choice SATA including E scores correctly and coexists with preserved original progress')
         with page.expect_download() as dl:page.locator('#export').click()
         plus_backup=Path(dl.value.path()).read_bytes()
