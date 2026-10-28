@@ -94,7 +94,7 @@ def build_payload() -> dict:
     data['generation_method'] = 'Original 256 paired-case families plus 128 new conditional models. Nine deliberate condition variants per new model; not 1,152 unrelated legal principles.'
     data['additional_bank_sha256'] = {a['collection_id']: a['sha256'] for a in config_additions}
     from practice_quality import attach
-    return attach(data)
+    return attach(data, config.get('representative_selection'))
 
 
 def render(data: dict) -> str:
@@ -202,6 +202,8 @@ def prepare(output: Path) -> dict:
     (folder / 'index.html').write_text(render(data), encoding='utf-8')
     manifest = {k: data[k] for k in ('edition','status','published_question_count','publication_date','independent_review_status','canonical_released_question_count','source_sha256','collections','additional_bank_sha256')}
     manifest['quality_selection'] = data['quality_selection']['stats']
+    if data.get('representative_revision'):
+        manifest['representative_revision'] = data['representative_revision']
     manifest['question_ids'] = [q['question_id'] for q in data['questions']]
     (folder / 'build.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     main = (output / 'index.html').read_text(encoding='utf-8')
@@ -218,6 +220,9 @@ def prepare(output: Path) -> dict:
     main = main.replace('2,176문항', f"{data['published_question_count']:,}문항")
     main = main.replace('NEW · 1,152문항만 풀기 →', '조건 변형 1,152문항 보기 →')
     main = main.replace('</a><a class="notes-entry-link" href="practice-expansion/?bank=plus">', '</a><a class="notes-entry-link" href="practice-expansion/?bank=quality">개별 작성·개정 96문항 →</a><a class="notes-entry-link" href="practice-expansion/?bank=plus">')
+    if data.get('representative_revision'):
+        number = len(data['representative_revision']['new_ids'])
+        main = main.replace('<a class="notes-entry-link" href="practice-expansion/?bank=quality">', f'<a class="notes-entry-link" href="practice-expansion/?bank=rewrite">대표 재작성 {number}문항 →</a><a class="notes-entry-link" href="practice-expansion/?bank=quality">')
     (output / 'index.html').write_text(main, encoding='utf-8')
     return manifest
 

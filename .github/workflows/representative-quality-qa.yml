@@ -1,0 +1,87 @@
+name: Representative revision and history regression
+on:
+  push:
+    paths:
+      - 'practice_expansion/2026-10-28-representative/**'
+      - 'reports/representative-rewrite/**'
+      - 'scripts/*representative*'
+      - 'scripts/practice_quality.py'
+      - 'scripts/publish_practice.py'
+      - 'scripts/build_exam_study.py'
+      - 'site/practice-expansion/**'
+      - 'tests/test_representative_rewrites.py'
+      - '.github/workflows/representative-quality-qa.yml'
+  pull_request:
+    paths:
+      - 'practice_expansion/**'
+      - 'reports/representative-rewrite/**'
+      - 'scripts/**'
+      - 'site/**'
+      - 'tests/test_representative_rewrites.py'
+      - '.github/workflows/representative-quality-qa.yml'
+  workflow_run:
+    workflows: ['Deploy MPJE preview to Pages']
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  revision:
+    if: github.event_name != 'workflow_run'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Immutable inputs, deterministic revisions, and existing learning contracts
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0 scikit-learn==1.8.0
+          python scripts/build_representative_rewrites.py --check
+          python scripts/build_representative_audit_ledger.py --check
+          python scripts/audit_representative_similarity.py --check
+          python scripts/verify_representative_protected.py
+          python -m pytest tests/test_representative_rewrites.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          python scripts/build_exam_study.py --check
+          python scripts/build_refresh.py --check
+          python scripts/build_ultimate_notes.py --check
+          node --check site/practice-expansion/quality-core.js
+          python scripts/publish_practice.py --output /tmp/mpje-revision-site
+          git diff --exit-code
+      - name: Existing public practice and all revision cases over real HTTP
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_public_practice.py --site /tmp/mpje-revision-site
+          python scripts/verify_representative_rewrites.py --site /tmp/mpje-revision-site
+      - name: Retain execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: representative-revision-browser-evidence
+          path: test-results/
+          retention-days: 14
+  production:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exercise the deployed Pages version and persistent origin
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          python scripts/verify_representative_rewrites.py --base-url https://woojunxnam.github.io/oddments/ --evidence test-results/representative-production
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: representative-production-browser-evidence
+          path: test-results/
+          retention-days: 14

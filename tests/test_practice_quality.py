@@ -12,7 +12,8 @@ def test_archives_unchanged():
 
 def test_every_archived_item_still_present():
  d=build_payload();qs={q['question_id']:q for q in d['questions']}
- assert len(qs)==2272
+ config=json.loads((ROOT/'site/practice-expansion/publication.json').read_text())
+ assert len(qs)==config['published_total']
  for path in ['practice_expansion/2026-10-23/candidates/questions.json','practice_expansion/2026-10-26-plus/questions.json']:
   for old in json.loads((ROOT/path).read_text())['questions']:
    for k in ['stem','choices','correct_choice_ids','explanation','note_evidence','family_id']:assert qs[old['question_id']][k]==old[k]
@@ -44,10 +45,11 @@ def test_new_stems_and_full_option_packs_unique():
 
 def test_representatives_reduce_exact_repetition():
  d=build_payload();ids=d['quality_selection']['recommended_ids'];q=[q for q in d['questions'] if q['question_id'] in ids]
- assert len(q)==len(set(ids))==451
- assert len({x['family_id'] for x in q})==451
- assert len({normalize(x['stem']) for x in q})==451
- assert len({signature(x) for x in q})==451
+ count=d['quality_selection']['stats']['recommended']
+ assert len(q)==len(set(ids))==count
+ assert len({x['family_id'] for x in q})==count
+ assert len({normalize(x['stem']) for x in q})==count
+ assert len({signature(x) for x in q})==count
  assert len([x for x in q if x['question_id'].startswith('MA-REV-')])==96
 
 def test_existing_ids_and_new_ids_disjoint():

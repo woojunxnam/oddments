@@ -22,6 +22,13 @@ def build_payload() -> dict:
     for path in paths:
         bank=json.loads((ROOT/path).read_text());questions.extend(bank['questions'])
         if bank['input_guide_sha256']!=digest(note_path): raise ValueError('Question-note snapshot mismatch')
+    recommended=set(); revised=set(); held=set()
+    if config.get('representative_selection'):
+        selection_path=ROOT/config['representative_selection']['path']
+        if digest(selection_path)!=config['representative_selection']['sha256']:raise ValueError('Stale representative selection')
+        selection=json.loads(selection_path.read_text())
+        recommended=set(selection['recommended_ids']);revised=set(selection['new_ids'])
+        held={qid for h in selection['holds'] for qid in [h['legacy_question_id'],*h.get('affected_archive_ids',[])]}
     def enrich(x:dict)->None:
         refs=x['note_units']
         if not refs or any(uid not in units for uid in refs): raise ValueError('Unknown source unit '+x['id'])
@@ -32,8 +39,8 @@ def build_payload() -> dict:
         x['kind']='source-derived-study-overlay'
     for item in data['lessons']:
         enrich(item); families=set();links=[]
-        candidates=[q for q in questions if set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
-        candidates.sort(key=lambda q:hashlib.sha256((item['id']+q['question_id']).encode()).hexdigest())
+        candidates=[q for q in questions if q['question_id'] not in held and set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
+        candidates.sort(key=lambda q:(q['question_id'] not in revised,q['question_id'] not in recommended,hashlib.sha256((item['id']+q['question_id']).encode()).hexdigest()))
         for q in candidates:
             if q['family_id'] in families or set(q.get('inherited_flags',[]))&{'open','source-gap'}:continue
             shared=sorted(set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']})
@@ -57,12 +64,13 @@ def build_payload() -> dict:
     if {c for m in data['modules'] for c in m['chapters']}!=set(chapters):raise ValueError('Chapter map incomplete')
     data.update(notes_sha256=digest(note_path),authoring_sha256=digest(author_path),
         question_sources={p:digest(ROOT/p) for p in paths},
+        representative_selection=copy.deepcopy(config.get('representative_selection')),
         stats=dict(modules=len(modules),concepts=len(lessons),comparisons=len(data['comparisons']),clocks=len(data['clocks']),sessions=len(data['plan']),competencies=len(mapped),chapters=len(chapters),linked_questions=len({q['id'] for l in data['lessons'] for q in l['practice_links']})))
     return data
 
 def outputs()->dict[Path,str]:
     d=build_payload(); esc=html.escape
-    manifest={k:d[k] for k in ['schema_version','edition','edited_at','notes_sha256','authoring_sha256','question_sources','stats','source_policy','blueprint']}
+    manifest={k:d[k] for k in ['schema_version','edition','edited_at','notes_sha256','authoring_sha256','question_sources','representative_selection','stats','source_policy','blueprint']}
     payload=json.dumps(d,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
     body=''.join(f'<section><h2>{esc(m["title"])}</h2><p>{esc(m["exam_task"])}</p>'+''.join(f'<article><h3>{esc(l["title"])}</h3><p><strong>핵심:</strong> {esc(l["core"])}</p><p>{esc(l["why"])}</p><p><strong>혼동 방지:</strong> {esc(l["trap"])}</p><p><strong>설명해 보기:</strong> {esc(l["recall"])}</p><p>원문 기준: {esc(", ".join(l["source_review_dates"]))} · 주의: {esc(", ".join(l["flags"]) or "아래 본문 조건 확인")}</p><p>'+''.join(f'<a href="./#chapter/{next(c["id"] for c in json.loads((ROOT/"notes/guide.json").read_text())["chapters"] if any(u["id"]==uid for u in c["units"]))}/{uid}">{esc(uid)} 원문</a> ' for uid in l['note_units'])+'</p></article>' for l in d['lessons'] if l['module_id']==m['id'])+'</section>' for m in d['modules'])
     static='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MPJE 법규 학습 · 전체 읽기</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:850px;margin:32px auto;padding:0 22px;overflow-wrap:anywhere}article{border-bottom:1px solid #ccc;padding:16px 0}a{display:inline-block;margin:4px}@media print{article{break-inside:avoid}}</style><link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script><header><a href="./#study">시험 학습 화면</a><a href="book.html">전체 상세노트</a><h1>MPJE 법규 학습</h1><p>'+esc(d['source_policy'])+'</p></header><main>'+body+'</main></html>\n'
