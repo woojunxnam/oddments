@@ -1,0 +1,28 @@
+name: Individual case source workbench
+on:
+  push:
+    branches: ['feat/mpje-individual-cases-v2-20261028']
+    paths: ['.github/workflows/individual-workbench.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Snapshot tracked public source
+        shell: python
+        run: |
+          import pathlib,subprocess,zipfile,json
+          out=pathlib.Path('/tmp/individual-workbench');out.mkdir()
+          names=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          with zipfile.ZipFile(out/'repository.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for name in names:
+                  if name and pathlib.Path(name).is_file():z.write(name,name)
+          (out/'commit.txt').write_text(subprocess.check_output(['git','rev-parse','HEAD']).decode())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: individual-case-source
+          path: /tmp/individual-workbench
+          retention-days: 7
