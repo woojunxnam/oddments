@@ -28,3 +28,14 @@
 2. 2-intern 규정과 조건부4-intern policy의 적용 관계, 직접 감독·전담교육·computer training을 좁은 setting에서 검토한다. MOR/Discipline으로 건너뛰지 않는다.
 3. source-conflicts.json의 CE email/Form(`w1-a-7`; 0051/0795/0349), 1:6 적용 관계, PLUS 후보를 개별 검토한다. 보류를 해결 수로 세지 않는다.
 4. `python scripts/build_full_corpus_review.py --check`; 위 세 builder와 보호 검사; full pytest/validate_all 및 workflows의 실제 HTTP 회귀검사. 새 판본의 파일 hash와 정확한 PR head를 고정한 뒤에만 다음 상태로 진행한다.
+
+
+## 배포 확인 후속 — 2026-10-29
+
+PR #171은 `5bfdeaa8d87d8c18d73c773bcfdd11d5824ca3db`로 main에 병합했고 Pages 배포 run `40920435063`이 성공했다. 위의 draft/미배포 서술 및 question-ledger의 deployment_status는 병합 전 snapshot이다. 현재 배포 이벤트는 `reports/full-corpus-review/unit3a-deployment.json`을 따른다.
+
+최종 candidate `c8196776f69d116a17807ec7f76b23546146215d`의 PR CI 8개 모두 성공. Production 대표 회귀 run `40920503279`, study production `40920503256` 성공. 59개 개정판의 오답/정답 채점, shuffle mapping,320px, 이전 attempt/bookmark, deep links, backup/import,20/120 모드 및 전체 복원추출 Chaos10을 실제 배포 origin에서 통과했다. 브라우저 artifact12918555711의 링크/hash는 배포 기록에 있다.
+
+직접 HTTPS로 공개 practice manifest2331과 노트 build/content.js/book.html/study-data.js/refresh-data.js bytes도 대조했다. 모든 확인한 노트 파일이 로컬 배포본과 일치했다. 독립 법규 감사 및 실제 Safari/device 검증은 미완료다. 수치는59/3/8/285 및2331로 유지한다.
+
+Unit3B를 시작해 PER19 원문4개와0065 복구 원고를 읽고 공식 Policy/247 CMR8 전문 추출문을 재열람했다. 정식 인수 계약이 필요한 것처럼 읽힐 수 있는 조건을 실제 awareness/observation/direction의 부재로 좁힌 미공개 초안을 `reports/full-corpus-review/unit3b-working/MA-RW-0065-draft.json`에 저장했다. 노트 판본,의미중복 대조,예외 검증 및 통합 테스트가 남아 완료/배포 수에 더하지 않는다. 다음 대상은 계속PER19–PER22와 w1-b-9/w1-b-10이며 MOR로 건너뛰지 않는다.
