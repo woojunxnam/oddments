@@ -6,7 +6,8 @@ permissions:
   contents: write
 jobs:
   materialize:
-    if: startsWith(github.event.head_commit.message, 'build(mpje): materialize Unit 3B')
+    if: >-
+      startsWith(github.event.head_commit.message, 'build(mpje): materialize Unit 3B')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
