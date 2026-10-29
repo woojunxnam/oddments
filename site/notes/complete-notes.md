@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-편집일: 2026-10-23. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. personnel w1-b-8 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -657,31 +657,41 @@ Nationally certified technician의 technology-assisted inventory 기능 중 Sche
 
 ## Supervisory ratios — Policy 2026-02
 
-### 기본 1:4
+### 먼저 실제 조제지원 집단을 정한다
 
-한 pharmacist가 최대 네 support personnel를 사용하는 경로에서는 다음 중 하나의 조합이 필요하다: 최소 한 명의 certified technician와 한 명의 intern, 또는 최소 두 명의 certified technician, 또는 두 명의 intern. 
+면허·certification → 실제 담당 업무 → 계산 대상 인원 → 그 집단의 자격 구성 → 게시 일정표 순서로 확인합니다. 같은 건물에 CPhT가 있어도 조제지원 밖에서 제외된 사람의 자격을 filling team의 qualifying slot에 다시 더하지 않습니다.
 
-네 사람의 자리를 아무 technician/trainee로만 채워도 된다는 뜻이 아니다. 실제로 count하는 사람의 유효한 license와 certification을 확인한다.
+| 일반 경로 | 실제 조제지원 집단의 요건 | 근거 |
+|---|---|---|
+| 1 pharmacist : 최대 4명 | 최소 CPhT 1명+intern 1명, 또는 CPhT 최소 2명, 또는 intern 2명 | 247 CMR 8.06(3)(a)1.a–c; Policy 2026-02 I.A.1 |
+| 1 pharmacist : 최대 3명 | 최소 intern 1명 또는 CPhT 1명 | 8.06(3)(a)2; Policy I.A.2 |
 
-### 기본 1:3
+이 표는 3명·4명 배치의 자격 조합을 설명합니다. Intern의 직접 감독·preceptor 조건과 개인별 scope는 별도로 충족해야 합니다. Ratio가 맞아도 technician에게 final dispensing validation 권한이 생기지 않습니다(8.02(6)(d)).
 
-한 pharmacist와 최대 세 support personnel의 경로는 세 명 중 최소 한 명이 licensed intern 또는 certified technician여야 한다. 
+**Certification lapse:** MA technician license가 유효해도 national certification이 만료되면 ordinary technician의 duties/title로 제한되고 ratio에서도 ordinary technician으로 계산합니다(8.04(3)(a)–(c)). 재인증 신청 중이라는 사실이 현재 CPhT 자리를 대신하지 않습니다. 면허 자체의 만료와는 다른 사건입니다.
 
-Headcount만 맞추는 것으로 끝내지 않는다. Qualified category 조건과 각자의 실제 scope가 별도로 충족되어야 한다.
+### 실제 역할에 따른 제외와 게시 기록
 
-### Vaccination service의 최대 1:6
+Policy I.C는 prescription/order를 준비·조제하면서 pharmacist를 전문적으로 지원하지 않는 licensed personnel의 제외를 설명합니다. 예시는 inventory duties, 이미 pharmacist가 검수한 compliance packages를 totes에 넣는 일입니다. 게시 일정표에는 해당 licensee의 **이름과 실제 역할**을 함께 적습니다. 인사파일에만 역할을 적거나 이름 옆에 단순히 'excluded'라고 쓰는 것으로 역할 표시를 대신하지 않습니다.
 
-Vaccination services를 제공하는 pharmacies에 대한 현재 policy는 최대 1 pharmacist : 6 support personnel를 허용하되, 최소 세 명의 qualifying support personnel 구성에 licensed certified technicians와 최대 두 명의 licensed interns를 포함하도록 규정한다. 
+Unlicensed cashier는 ratio에 넣지 않으며 전문적 준비·조제를 지원할 수 없습니다(I.D). 제외는 새로운 업무권한이 아닙니다. Inventory라는 직함을 붙이고 실제로 prescription filling을 하면 실제 업무를 다시 계산해야 합니다.
 
-최소 세 명의 qualified group을 구성하는 방식은 세 CPhT, 두 CPhT+한 intern, 한 CPhT+두 intern처럼 읽는다. Intern만 세 명을 세어 이 세 명 요건을 충족했다고 보지 않는다. 실제 intern supervision의 별도 제한도 확인한다.
+**사례:** CPhT 1명+ordinary technician 3명의 filling team 밖에서 CPhT 1명이 검수 완료된 packs의 tote 작업만 합니다. 밖의 직원을 그대로 제외하면서 자격만 더할 수 없습니다. 두 직원의 실제 역할을 교환하면 filling team을 CPhT 2명+ordinary 2명으로 구성할 수 있습니다. 반대로 다섯 명을 모두 filling에 투입하면 일반 최대 4명 경로를 넘습니다.
 
-1:6은 모든 약국·모든 상황에서 사용하는 무조건적인 새 일반비율이 아니다. Pharmacy의 vaccination-service 조건, 자격 구성, 인력의 실제 역할이 유지되어야 한다.
+**반례:** 별도 filling team이 이미 적합하고 면허 직원이 Schedule VI 재고의 expiration date만 기록한다면, 고칠 부분은 인원을 늘리는 것이 아니라 게시 일정표에서 빠진 inventory 역할일 수 있습니다.
 
-### Ratio에 포함하지 않는 역할
+### Vaccination-service 1:6 — 정책 문구와 적용 관계를 분리한다
 
-Pharmacist의 professional prescription preparation/filling를 지원하지 않는 licensed personnel는 policy가 정한 범위에서 ratio에서 제외될 수 있다. 예로 inventory duties 또는 이미 pharmacist-verified된 compliance packs를 totes에 넣는 역할을 든다. 다만 게시된 schedule에 이름과 역할을 표시한다. 
+Policy 2026-02 I.B는 vaccination services를 제공하는 pharmacies에 최대 1:6과 최소 세 qualifying support personnel의 조건을 명시합니다. 그 세 명의 구성에는 licensed CPhT와 최대 두 licensed interns가 포함됩니다. 세 CPhT, 두 CPhT+한 intern, 한 CPhT+두 intern이라는 구성을 읽을 수 있으며, intern만 세 명인 조합은 이 조건에 맞지 않습니다.
 
-Unlicensed cashier 등도 ratio에 포함하지 않지만, professional preparation/filling 지원을 할 수 없다. ‘Ratio에 포함되지 않는다’는 말은 ‘자유롭게 pharmacy work를 해도 된다’는 허용이 아니다.
+**OPEN:** 247 CMR 8.06(3)(a)의 3명·4명 규정과 이 정책 경로의 적용 관계를 확정하는 추가 공식 설명은 이번에 확보하지 못했습니다. 정책이 무효라거나 모든 약국에 개별 waiver가 필요하다고 판정한 것은 아닙니다. 이 관계를 확정한 시험 정답으로 단순 암기하지 않습니다. PER17 원문 4개는 관련 검토 안내를 붙이고 대표는 보류합니다. 최대 네 intern 경로의 별도 충돌은 w1-b-9 후속 검토 대상입니다.
+
+### 확인 범위와 연결 문제
+
+2026-10-29 작성자가 공식 URL의 Policy 2026-02 전문과 247 CMR 8 전문 추출문을 열람했습니다. Mass.gov 직접 요청은 403으로 실패했으며 PDF binary와 추출 캐시의 최신성은 인증하지 않았습니다. Policy의 adopted 표시는 2026-09-03이며 2024-03을 대체한다고 명시합니다. 독립 법규 감사는 수행하지 않았습니다.
+
+연결 사례: [MA-RW-0061](../practice-expansion/#MA-RW-0061) · [MA-RW-0062](../practice-expansion/#MA-RW-0062) · [MA-RW-0064](../practice-expansion/#MA-RW-0064).
+
 
 
 근거:

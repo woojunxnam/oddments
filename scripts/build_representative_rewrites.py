@@ -22,7 +22,7 @@ REPORTS = ROOT / 'reports/representative-rewrite'
 ORIGINAL_SELECTION = ROOT / 'practice_expansion/2026-10-27-quality/selection.json'
 COLLECTION = 'representative-20261028'
 INITIAL_EDITION = '2026-10-28.representative1'
-EDITION = '2026-10-29.representative2'
+EDITION = '2026-10-29.representative3'
 REVIEW_DATE = '2026-10-29'
 PUBLISHED_UNIT1_COMMIT = 'f112d3578664aa51785ba4596547e8d722fad36c'
 BASE_COMMIT = 'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36'
@@ -239,6 +239,10 @@ def build():
             duplicate_review_status='EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION',
             difficulty_status='NOT_CALIBRATED', _statement_truth={c['id']: c['correct'] for c in a['choices']},
         )
+        if a.get('notes_revision'):
+            from notes_revision import load_notes
+            item['notes_revision'] = load_notes(ROOT)['revision_provenance']
+            require(item['notes_revision']['id'] == a['notes_revision'], qid + ': stale notes revision')
         item['content_sha256'] = content_hash(item)
         if qid in {'MA-RW-0045', 'MA-RW-0046', 'MA-RW-0047'}:
             item['authority_caveats'] = ['일반 247 CMR 8의 예방접종 제한 문구와, technician을 명시한 105 CMR 700.004(B)(6) 및 DPH/Board/DCP Policy 2023-02의 특정 경로를 함께 확인했습니다. 일반 문구가 폐지됐다고 판단한 것은 아닙니다. 이 문항은 해당 경로의 특정 교육·자격 요건만 평가하며 모든 투여 권한을 포괄 승인하지 않습니다.']

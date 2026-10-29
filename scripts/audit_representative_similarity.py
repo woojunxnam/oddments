@@ -52,6 +52,11 @@ def compute():
         'baseline_default_451': old_selection['recommended_ids'],
         'current_default': new_selection['recommended_ids'],
     }
+    corpus_baseline = ROOT / 'reports/full-corpus-review/baseline-inventory.json'
+    if corpus_baseline.exists():
+        frozen = json.loads(corpus_baseline.read_text())
+        scopes['main_before_2328'] = list(frozen['question_record_hashes'])
+        scopes['main_default_before_441'] = frozen['recommended_ids']
     full_pairs = pairs([q['question_id'] for q in questions])
     neighbors = []
     for q in new:

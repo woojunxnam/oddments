@@ -1,6 +1,6 @@
 {
   "schema_version": "notes-practice-representative/1",
-  "edition": "2026-10-29.representative2",
+  "edition": "2026-10-29.representative3",
   "authored_at": "2026-10-28",
   "updated_at": "2026-10-29",
   "base_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
@@ -12,14 +12,15 @@
   "intended_outline_window": "Examinations before 2027-03-01",
   "construction": "Individually written replacement scenarios, distinct IDs, explicit legacy mapping. Same-law boundary extensions are identified. No variant multiplication or independent audit claim.",
   "stats": {
-    "questions": 56,
-    "families": 56
+    "questions": 59,
+    "families": 59
   },
   "source_authoring_hashes": {
     "practice_expansion/2026-10-28-representative/authoring/01_personnel.json": "c5f9f7cc47990e38dbbce51b4d059261079d6829dfb8c4ea4c92346ee21bd1b4",
     "practice_expansion/2026-10-28-representative/authoring/02_clinical_authority.json": "e18d90261a982b801cb73fd2da9a546d01398ee3f4d77903ccacd86ccda576e9",
     "practice_expansion/2026-10-28-representative/authoring/03_personnel_scope.json": "fd33cae2e34221786e24975362f33c16671b3bd3e540c6c8c9e130ccd715d7a4",
     "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78",
+    "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json": "0dafbe57987b928f04791729305ba9e9b5b3e0485d0f446cff08dd6ef40953ec",
     "reports/representative-rewrite/default-holds.json": "299aa39a3b26ea3a0efebdc3e5f72b24470cae43a55e99830f6ee9baf9f92c9d"
   },
   "authoring_scope_notes": [
@@ -151,6 +152,33 @@
           "finding": "The application is signed by the licensee or authorized representative and the proposed new MOR. Where the outgoing MOR is unavailable because of a listed event, an authorized staff pharmacist may sign the inventory report, with the reason notified to the Board at application submission. The question preserves the regulation's distinction between application, attestation, and inventory report.",
           "unresolved": false,
           "effect_on_items": "MA-RW-0059 does not label a nonpharmacist owner's application signature as an inventory-signature authorization, and does not claim that the inventory alone completes the application."
+        }
+      ]
+    },
+    {
+      "authoring_file": "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json",
+      "source_limitations": [
+        "Author source review is not independent canonical legal audit or release approval. Source retrieval used official URLs through extracted text; same-day origin-PDF binary freshness and every unpublished Board communication are not established.",
+        "The current Board policy and regulation agree on the ordinary 1:4 and 1:3 mixtures used in the three authored questions. Actual prescription-filling work is the 8.06(3)(a) predicate; Policy I.C supplies the explicit non-filling licensee examples and posted name/role condition. No positive 1:6 or four-intern exception is keyed in this file.",
+        "This session re-read the three recovered replacement scenarios, their listed comparisons and 16 PER15-PER18 original variants. No full-corpus semantic overlap certification is claimed.",
+        "NABP mapping uses the competency statements for examinations before 2027-03-01. No later outline or private examination material is used."
+      ],
+      "legal_reconciliation_notes": [
+        {
+          "topic": "Ordinary ratio and actual licensed non-filling role",
+          "resolution_scope": "247 CMR 8.06(3)(a) applies to specified support personnel assisting in filling prescriptions. Policy 2026-02 I.C expressly describes licensees doing no professional preparation/filling support and requires their names and roles on the posted schedule. 0061 and 0064 apply that actual-duty predicate and documentation instruction, without treating a licensed individual's mere presence as filling support or a job title as proof of the actual duty.",
+          "source_ids": [
+            "rw3-ratio-cmr8",
+            "rw3-ratio-policy2026-02"
+          ]
+        },
+        {
+          "topic": "Vaccination-service 1:6 pathway",
+          "resolution_scope": "Current Policy I.B is acknowledged and read; its application alongside CMR ordinary ratios is unresolved in this session. No judgment invalidating the policy or requiring a universal individual waiver is made. PER17 held with archive notices.",
+          "source_ids": [
+            "rw3-ratio-cmr8",
+            "rw3-ratio-policy2026-02"
+          ]
         }
       ]
     }
@@ -838,6 +866,65 @@
       "verification_scope": "Mapped pharmacist responsibilities to 1.1, security/inventory/recordkeeping to 4.2, and practice-setting licensure and inspections to 4.7. The future outline is not used. No public sample or protected exam question wording is copied.",
       "evidence_reference": "Web open turn42view2, current competency and transition text.",
       "id": "rw2-ops-nabp-pre2027",
+      "url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+      "source_class": "PUBLIC_OFFICIAL"
+    },
+    "rw3-ratio-policy2026-02": {
+      "source_id": "rw3-ratio-policy2026-02",
+      "title": "Board Policy 2026-02 — Ratios, Supervision, and Dedicated Training Personnel",
+      "official_url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+      "exact_sections": [
+        "I.A.1(a)–(c), I.A.2",
+        "I.B.1–2",
+        "I.C–D",
+        "II introductory direct-supervision requirements",
+        "III.A–B (comparison boundary only)"
+      ],
+      "checked_at": "2026-10-29",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+      "source_currency": "Document footer: Adopted 9/3/26; supersedes Policy 2024-03. Current official Pharmacy Practice Resources listing includes Policy 2026-02 on 2026-10-29.",
+      "verification_scope": "Reviewed ordinary four- and three-support-personnel mixtures, actual-duty exclusion and posted names/roles, the vaccination-services six-person wording, and dedicated-training distinctions for semantic comparison. No conclusion that Policy I.B independently supersedes 247 CMR 8.06(3) is made; that relationship remains the reason for the PER17 hold.",
+      "evidence_reference": "reports/full-corpus-review/evidence/20261029-official-extraction.txt; NABP/current Board listing separately re-read via Exa.",
+      "id": "rw3-ratio-policy2026-02",
+      "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+      "source_class": "PUBLIC_OFFICIAL"
+    },
+    "rw3-ratio-cmr8": {
+      "source_id": "rw3-ratio-cmr8",
+      "title": "247 CMR 8.00 — Pharmacy Interns and Technicians",
+      "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+      "exact_sections": [
+        "8.01(3), (16)",
+        "8.04(1)–(3)",
+        "8.06(3)(a)1–2, (b)"
+      ],
+      "checked_at": "2026-10-29",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+      "source_currency": "Official regulation landing page dated 2025-04-25; extracted compilation header: Mass. Register #1546, 4/25/2025, effective 1/9/2025. The 8.06 subsection also bears its older 4/6/18 page footer.",
+      "verification_scope": "Confirmed the active license/current-certification distinction, the explicit lapsed-certification ratio category, the ordinary three-/four-person qualifying mixtures, and the prescription-filling activity predicate. Intern substitution in 0062 specifies a registered pharmacist preceptor and one intern only.",
+      "evidence_reference": "reports/full-corpus-review/evidence/20261029-official-extraction.txt (full official-URL extraction re-read this session)",
+      "id": "rw3-ratio-cmr8",
+      "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+      "source_class": "PUBLIC_OFFICIAL"
+    },
+    "rw3-ratio-nabp-pre2027": {
+      "source_id": "rw3-ratio-nabp-pre2027",
+      "title": "NABP MPJE Competency Statements — applicable before March 1, 2027",
+      "official_url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+      "exact_sections": [
+        "Opening effective-date notice",
+        "Area 1, 1.1 and 1.2",
+        "Area 4, 4.2"
+      ],
+      "checked_at": "2026-10-29",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+      "source_currency": "The current page states that the replacement MPJE Content Outline applies to examinations starting 2027-03-01.",
+      "verification_scope": "Used for personnel scope/conditions, credential consequences, and operational recordkeeping mapping only. No private examination content or future outline is used.",
+      "evidence_reference": "reports/full-corpus-review/evidence/20261029-official-extraction.txt; NABP/current Board listing separately re-read via Exa.",
+      "id": "rw3-ratio-nabp-pre2027",
       "url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
       "source_class": "PUBLIC_OFFICIAL"
     },
@@ -10934,6 +11021,608 @@
         "D": false
       },
       "content_sha256": "b55aedbc9c5d6db063e91f23d4462664d3452fdc36b5ba6795f6493683c32002"
+    },
+    {
+      "question_id": "MA-RW-0061",
+      "family_id": "PER15",
+      "revision_of": "MA-EXP-0123",
+      "content_version": 1,
+      "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+      "topic": "A certified employee outside the filling team does not supply its qualifying slot",
+      "area": 1,
+      "question_type": "SBA",
+      "practice_angle": "individually-authored-application",
+      "collection_id": "representative-20261028",
+      "scenario": "A pharmacy is not providing vaccination services. One pharmacist supervises a filling team of one currently certified technician and three noncertified technicians, all with active Massachusetts technician licenses. A second currently certified technician is assigned only to placing pharmacist-verified compliance packages into delivery totes, with that role identified on the posted schedule.",
+      "lead_in": "Which reassignment meets the ordinary ratio without adding another pharmacist? Select ONE answer.",
+      "stem": "A pharmacy is not providing vaccination services. One pharmacist supervises a filling team of one currently certified technician and three noncertified technicians, all with active Massachusetts technician licenses. A second currently certified technician is assigned only to placing pharmacist-verified compliance packages into delivery totes, with that role identified on the posted schedule.\n\nWhich reassignment meets the ordinary ratio without adding another pharmacist? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Exchange the tote worker's assignment with one ordinary filling technician and post both revised roles."
+        },
+        {
+          "id": "B",
+          "text": "Keep the filling assignments and use both certified employees to satisfy the four-person team's qualifying mix."
+        },
+        {
+          "id": "C",
+          "text": "Add the tote worker to the filling team while keeping the four current workers on prescription preparation."
+        },
+        {
+          "id": "D",
+          "text": "Reduce the filling team to three ordinary technicians by moving its certified technician to the tote station."
+        }
+      ],
+      "correct_choice_ids": [
+        "A"
+      ],
+      "explanation": {
+        "core_reasoning": "먼저 실제 처방 조제지원에 참여하는 사람을 정한 뒤, 바로 그 집단의 인원수와 자격 구성을 검사한다. 제외된 직원의 자격을 조제지원팀의 qualifying slot에 중복 반영하지 않는다. 여기서는 두 직원의 실제 역할을 교환해야 네 명이라는 인원수와 필요한 자격 구성을 함께 맞출 수 있다.",
+        "choice_analysis": {
+          "A": "업무를 맞바꾸면 실제 조제지원팀은 certified technician 2명과 ordinary technician 2명이 된다. 따라서 8.06(3)(a)1.b와 Policy I.A.1.b의 1:4 자격 구성을 충족한다. 대신 tote-only 업무를 맡는 면허 직원은 전문적 조제지원을 하지 않는 동안 제외할 수 있으며, 바뀐 실제 역할을 게시 일정표에 적어야 한다.",
+          "B": "자격을 갖춘 직원이 같은 장소에 있다는 사실만으로 해당 filling team의 qualifying member가 되지는 않는다. Tote-only 직원은 조제지원 밖의 실제 업무 때문에 제외되는 사람이며, 현재 네 명의 조제지원팀에는 certified technician이 한 명뿐이다. 제외된 직원을 qualifying slot에는 넣고 인원수에서는 빼는 계산은 I.A와 I.C를 함께 적용한 결과가 아니다.",
+          "C": "Tote 담당자가 조제지원을 시작하면 그 직원도 계산 대상이다. 기존 네 명을 그대로 두고 더하면 실제 filling support가 다섯 명이 되어 이 사례에 적용되는 일반 1:4 상한을 넘는다. 자격 있는 직원 두 명이라는 조건만 충족해도 최대 인원 제한이 없어지는 것은 아니다.",
+          "D": "네 명을 세 명으로 줄여도 세 명이 모두 ordinary technician이면 일반 1:3의 자격 조건을 충족하지 못한다. 세 명의 조제지원팀에는 적어도 한 명의 licensed intern 또는 certified technician이 필요하다. 해당 자격자를 실제 filling team 밖으로 옮기는 조치로는 이 문제를 고칠 수 없다."
+        },
+        "choice_authorities": {
+          "A": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a)1.b"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.1.b; I.C"
+            }
+          ],
+          "B": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a), 1.a–c"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.1; I.C"
+            }
+          ],
+          "C": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a)1"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.1; I.C"
+            }
+          ],
+          "D": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a)2"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.2; I.C"
+            }
+          ]
+        },
+        "learning_boundary": "기존 대표 문항을 별도 사례로 다시 작성했습니다. 원본과 새 문항의 풀이 기록은 각각 보존됩니다. 작성자 출처 대조와 편집 검토이며 독립 법규 감사 또는 실제 시험 난도 보정은 아닙니다."
+      },
+      "note_evidence": [
+        {
+          "unit_id": "w1-b-8",
+          "title": "Supervisory ratios — Policy 2026-02",
+          "body_sha256": "76a586ed1b241681b061432dae7223185d95c96087b993c79752e40f4d2dddb5",
+          "inherited_note_review_date": "2026-10-20",
+          "inherited_flags": [],
+          "url": "https://woojunxnam.github.io/oddments/notes/#chapter/personnel/w1-b-8"
+        }
+      ],
+      "source_ids": [
+        "src-0dcfd81d59da",
+        "src-0655ff9a59ed",
+        "rw3-ratio-cmr8",
+        "rw3-ratio-policy2026-02"
+      ],
+      "authority": "247 CMR 8.06(3)(a)1.b; Policy 2026-02, I.A.1.b; I.C; 247 CMR 8.06(3)(a), 1.a–c; Policy 2026-02, I.A.1; I.C; 247 CMR 8.06(3)(a)1; 247 CMR 8.06(3)(a)2; Policy 2026-02, I.A.2; I.C",
+      "primary_source_read_records": [
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "247 CMR 8.06(3)(a)1.b",
+            "247 CMR 8.06(3)(a), 1.a–c",
+            "247 CMR 8.06(3)(a)1",
+            "247 CMR 8.06(3)(a)2"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Official regulation landing page dated 2025-04-25; extracted compilation header: Mass. Register #1546, 4/25/2025, effective 1/9/2025. The 8.06 subsection also bears its older 4/6/18 page footer.",
+          "scope": "Confirmed the active license/current-certification distinction, the explicit lapsed-certification ratio category, the ordinary three-/four-person qualifying mixtures, and the prescription-filling activity predicate. Intern substitution in 0062 specifies a registered pharmacist preceptor and one intern only."
+        },
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "Policy 2026-02, I.A.1.b; I.C",
+            "Policy 2026-02, I.A.1; I.C",
+            "Policy 2026-02, I.A.2; I.C"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Document footer: Adopted 9/3/26; supersedes Policy 2024-03. Current official Pharmacy Practice Resources listing includes Policy 2026-02 on 2026-10-29.",
+          "scope": "Reviewed ordinary four- and three-support-personnel mixtures, actual-duty exclusion and posted names/roles, the vaccination-services six-person wording, and dedicated-training distinctions for semantic comparison. No conclusion that Policy I.B independently supersedes 247 CMR 8.06(3) is made; that relationship remains the reason for the PER17 hold."
+        }
+      ],
+      "additional_primary_evidence": [
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "title": "247 CMR 8.00 — Pharmacy Interns and Technicians",
+          "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "accessed_at": "2026-10-29",
+          "scope": "247 CMR 8.06(3)(a)1.b; 247 CMR 8.06(3)(a), 1.a–c; 247 CMR 8.06(3)(a)1; 247 CMR 8.06(3)(a)2"
+        },
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "title": "Board Policy 2026-02 — Ratios, Supervision, and Dedicated Training Personnel",
+          "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+          "accessed_at": "2026-10-29",
+          "scope": "Policy 2026-02, I.A.1.b; I.C; Policy 2026-02, I.A.1; I.C; Policy 2026-02, I.A.2; I.C"
+        }
+      ],
+      "authority_level": "OFFICIAL_PRIMARY_TEXT_AUTHOR_REVIEW",
+      "primary_source_verification": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+      "source_boundary": "이 사례의 선택지별 조항은 2026-10-29 공식 본문과 대조했습니다. 공식 URL의 추출문 열람 방식·확인 범위·문서 개정일은 출처 기록을 참조하세요. 연결 노트의 기존 확인일과 OPEN은 별도이며 전체 노트 재검증이나 독립 감사 완료를 뜻하지 않습니다.",
+      "inherited_flags": [],
+      "decision_path": [
+        "Identify the employees actually assisting prescription preparation rather than everyone on the premises.",
+        "Evaluate the credentials of that counted four-person group.",
+        "Exchange one filling role with the excluded certified worker and document the actual revised roles."
+      ],
+      "decision_signature": "ordinary-four-person-filling-team:excluded-tote-only-CPhT-is-not-a-qualifier -> exchange-actual-roles-to-produce-two-counted-CPhTs",
+      "difference_from_legacy": "PER15의 두 숫자 조합을 나란히 판정하던 구조를, 같은 장소의 excluded CPhT 자격을 잘못 합산한 실제 근무 배치를 수정하는 한 사례로 바꿨다. 단순히 숫자 4를 외우는 것 외에 누가 계산 집단의 구성원인지 판단하고 업무를 교환해야 한다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-REV-0024",
+          "relationship": "CREDENTIAL_PRESENT_BUT_ACTUAL_RATIO_ROLE_DIFFERS",
+          "material_difference": "기존 문항은 national certification·state license·facility registration이 서로 대체되지 않는지를 묻는다. 여기서는 직원 자격이 모두 현재 유효해도 actual filling assignment 밖의 자격자를 그 팀의 qualifying member로 셀 수 있는지와 필요한 역할 교환을 판단한다."
+        },
+        {
+          "question_id": "MA-RW-0053",
+          "relationship": "VERIFIED_PACKAGE_ACTIVITY_WITH_DIFFERENT_REQUIRED_ACTION",
+          "material_difference": "기존 사례의 결론은 noncertified technician에게 CII raw-stock counting을 맡기지 않고 transport에 남기는 것이다. 이 사례는 stock handling 권한을 바꾸지 않고 실제 filling team의 구성과 역할 교환을 결정한다."
+        }
+      ],
+      "competency_codes": [
+        "1.1"
+      ],
+      "competency_rationale": "2027-03-01 이전 1.1의 non-pharmacist personnel 업무 조건과 감독 제한을 실제 업무 집단 및 qualifying credentials에 적용한다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authored_at": "2026-10-29",
+      "edition": "2026-10-29.representative3",
+      "publication_status": "PUBLISHED_PRACTICE",
+      "online_practice_enabled": true,
+      "verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+      "independent_legal_audit": null,
+      "independent_realism_audit": null,
+      "duplicate_review_status": "EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION",
+      "difficulty_status": "NOT_CALIBRATED",
+      "_statement_truth": {
+        "A": true,
+        "B": false,
+        "C": false,
+        "D": false
+      },
+      "notes_revision": {
+        "id": "2026-10-29.personnel-ratios.1",
+        "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+        "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979",
+        "base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+        "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "history_policy": "Keep unit anchors, bookmarks and old read records. A pre-revision read flag records previous reading, not review or mastery of this revision. Show editor note; do not silently upgrade old learning status."
+      },
+      "content_sha256": "88c4738958f1e3702ff1fc1f562d78476047722e2a45fe8c522ea67c3b1a8d8e"
+    },
+    {
+      "question_id": "MA-RW-0062",
+      "family_id": "PER16",
+      "revision_of": "MA-EXP-0127",
+      "content_version": 1,
+      "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+      "topic": "Certification lapse changes which three-person filling assignment is permissible",
+      "area": 1,
+      "question_type": "SBA",
+      "practice_angle": "individually-authored-application",
+      "collection_id": "representative-20261028",
+      "scenario": "The sole pharmacist at a pharmacy that does not provide vaccination services is a registered pharmacist preceptor. Three technicians are scheduled to prepare prescriptions. One has just learned that national certification expired the previous day; all three Massachusetts technician licenses remain active. The other two technicians have no national certification.",
+      "lead_in": "Which staffing change permits a three-person filling team to work under the ordinary ratio? Select ONE answer.",
+      "stem": "The sole pharmacist at a pharmacy that does not provide vaccination services is a registered pharmacist preceptor. Three technicians are scheduled to prepare prescriptions. One has just learned that national certification expired the previous day; all three Massachusetts technician licenses remain active. The other two technicians have no national certification.\n\nWhich staffing change permits a three-person filling team to work under the ordinary ratio? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Retain the team after changing the lapsed employee's badge from certified technician to pharmacy technician."
+        },
+        {
+          "id": "B",
+          "text": "Substitute a Massachusetts-licensed intern, under the pharmacist's direct supervision, for one of the technicians."
+        },
+        {
+          "id": "C",
+          "text": "Retain the team while the lapsed employee's recertification application is pending with the certifying organization."
+        },
+        {
+          "id": "D",
+          "text": "Substitute a state-licensed technician trainee for the lapsed employee and have the trainee work under direct supervision."
+        }
+      ],
+      "correct_choice_ids": [
+        "B"
+      ],
+      "explanation": {
+        "core_reasoning": "National certification 만료는 active Massachusetts technician license를 자동 소멸시키지 않지만, 감독 비율에서 certified slot으로 계산할 자격은 잃게 한다. 세 명의 실제 filling team을 유지하려면 qualifying intern 또는 현재 certified technician이 포함되도록 배치를 바꿔야 한다.",
+        "choice_analysis": {
+          "A": "만료 후 pharmacy technician이라는 직함을 쓰는 조치는 필요하지만, 세 명의 조제지원팀을 허용하는 자격 구성까지 회복시키지는 않는다. 이 경우 세 명 모두 ordinary technician으로 계산되므로, 적어도 한 명의 intern 또는 certified technician을 요구하는 1:3 조건이 충족되지 않는다.",
+          "B": "한 명을 MA 면허가 있는 intern으로 교체하면 실제 조제지원팀은 intern 한 명과 ordinary technician 두 명이 되어 1:3 자격 조건을 충족한다. 지문의 약사는 등록된 preceptor이고, 선택지는 intern의 direct supervision도 명시한다. 만료된 national certification을 소급해서 유효하다고 취급할 필요가 없다.",
+          "C": "재인증 신청이 진행 중이라는 사실은 현재 만료된 certification을 대체하지 않는다. 8.04(3)(c)는 만료된 사람을 감독 비율에서 pharmacy technician으로 계산하도록 한다. 따라서 그 사람을 qualifying certified slot으로 유지하여 세 명 모두 ordinary technician인 현재 배치를 계속하는 근거가 없다.",
+          "D": "면허가 있는 trainee를 감독 아래 배치하는 것과 1:3의 qualifying 자격을 충족하는 것은 다른 문제이다. Trainee는 해당 조건의 licensed intern이나 certified technician에 포함되지 않으므로, ordinary technician 두 명과 trainee 한 명의 조합은 이 세 명 배치 조건을 충족하지 못한다."
+        },
+        "choice_authorities": {
+          "A": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.04(3)(b)–(c); 8.06(3)(a)2"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.2"
+            }
+          ],
+          "B": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.01(3), (16); 8.04(3)(c); 8.06(3)(a)2"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.2; II introductory direct-supervision requirements"
+            }
+          ],
+          "C": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.04(2)–(3)(c); 8.06(3)(a)2"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.2"
+            }
+          ],
+          "D": [
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a)2"
+            },
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.A.2"
+            }
+          ]
+        },
+        "learning_boundary": "기존 대표 문항을 별도 사례로 다시 작성했습니다. 원본과 새 문항의 풀이 기록은 각각 보존됩니다. 작성자 출처 대조와 편집 검토이며 독립 법규 감사 또는 실제 시험 난도 보정은 아닙니다."
+      },
+      "note_evidence": [
+        {
+          "unit_id": "w1-b-5",
+          "title": "Certification 유지와 technician renewal",
+          "body_sha256": "8e1ac8b579683648108135914b3680e7ba6e197ec1294b8f5bcff9d2261d582e",
+          "inherited_note_review_date": "2026-10-20",
+          "inherited_flags": [],
+          "url": "https://woojunxnam.github.io/oddments/notes/#chapter/personnel/w1-b-5"
+        },
+        {
+          "unit_id": "w1-b-8",
+          "title": "Supervisory ratios — Policy 2026-02",
+          "body_sha256": "76a586ed1b241681b061432dae7223185d95c96087b993c79752e40f4d2dddb5",
+          "inherited_note_review_date": "2026-10-20",
+          "inherited_flags": [],
+          "url": "https://woojunxnam.github.io/oddments/notes/#chapter/personnel/w1-b-8"
+        }
+      ],
+      "source_ids": [
+        "src-0655ff9a59ed",
+        "src-aea01b105528",
+        "src-0dcfd81d59da",
+        "rw3-ratio-cmr8",
+        "rw3-ratio-policy2026-02"
+      ],
+      "authority": "247 CMR 8.04(3)(b)–(c); 8.06(3)(a)2; Policy 2026-02, I.A.2; 247 CMR 8.01(3), (16); 8.04(3)(c); 8.06(3)(a)2; Policy 2026-02, I.A.2; II introductory direct-supervision requirements; 247 CMR 8.04(2)–(3)(c); 8.06(3)(a)2; 247 CMR 8.06(3)(a)2",
+      "primary_source_read_records": [
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "247 CMR 8.04(3)(b)–(c); 8.06(3)(a)2",
+            "247 CMR 8.01(3), (16); 8.04(3)(c); 8.06(3)(a)2",
+            "247 CMR 8.04(2)–(3)(c); 8.06(3)(a)2",
+            "247 CMR 8.06(3)(a)2"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Official regulation landing page dated 2025-04-25; extracted compilation header: Mass. Register #1546, 4/25/2025, effective 1/9/2025. The 8.06 subsection also bears its older 4/6/18 page footer.",
+          "scope": "Confirmed the active license/current-certification distinction, the explicit lapsed-certification ratio category, the ordinary three-/four-person qualifying mixtures, and the prescription-filling activity predicate. Intern substitution in 0062 specifies a registered pharmacist preceptor and one intern only."
+        },
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "Policy 2026-02, I.A.2",
+            "Policy 2026-02, I.A.2; II introductory direct-supervision requirements"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Document footer: Adopted 9/3/26; supersedes Policy 2024-03. Current official Pharmacy Practice Resources listing includes Policy 2026-02 on 2026-10-29.",
+          "scope": "Reviewed ordinary four- and three-support-personnel mixtures, actual-duty exclusion and posted names/roles, the vaccination-services six-person wording, and dedicated-training distinctions for semantic comparison. No conclusion that Policy I.B independently supersedes 247 CMR 8.06(3) is made; that relationship remains the reason for the PER17 hold."
+        }
+      ],
+      "additional_primary_evidence": [
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "title": "247 CMR 8.00 — Pharmacy Interns and Technicians",
+          "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "accessed_at": "2026-10-29",
+          "scope": "247 CMR 8.04(3)(b)–(c); 8.06(3)(a)2; 247 CMR 8.01(3), (16); 8.04(3)(c); 8.06(3)(a)2; 247 CMR 8.04(2)–(3)(c); 8.06(3)(a)2; 247 CMR 8.06(3)(a)2"
+        },
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "title": "Board Policy 2026-02 — Ratios, Supervision, and Dedicated Training Personnel",
+          "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+          "accessed_at": "2026-10-29",
+          "scope": "Policy 2026-02, I.A.2; Policy 2026-02, I.A.2; II introductory direct-supervision requirements"
+        }
+      ],
+      "authority_level": "OFFICIAL_PRIMARY_TEXT_AUTHOR_REVIEW",
+      "primary_source_verification": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+      "source_boundary": "이 사례의 선택지별 조항은 2026-10-29 공식 본문과 대조했습니다. 공식 URL의 추출문 열람 방식·확인 범위·문서 개정일은 출처 기록을 참조하세요. 연결 노트의 기존 확인일과 OPEN은 별도이며 전체 노트 재검증이나 독립 감사 완료를 뜻하지 않습니다.",
+      "inherited_flags": [],
+      "decision_path": [
+        "Separate the continuing Massachusetts technician license from the lapsed national certification.",
+        "Reclassify the lapsed employee as an ordinary technician for ratio purposes.",
+        "Replace one team member with a qualifying, directly supervised licensed intern to satisfy the ordinary three-person condition."
+      ],
+      "decision_signature": "sole-qualifying-CPhT-certification-lapsed:three-person-filling-team -> replace-one-position-with-directly-supervised-licensed-intern",
+      "difference_from_legacy": "PER16의 all-true paired-case를 certification 상태가 실제 근무 배치를 바꾸는 단일 사례로 바꿨다. 답은 다른 숫자의 비율을 고르는 것이 아니라, active state license와 expired certification을 구별한 뒤 필요한 대체 인력을 결정하는 것이다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-REV-0005",
+          "relationship": "SAME_TRIGGER_DIFFERENT_REQUIRED_STAFFING_ACTION",
+          "material_difference": "기존 문항은 certification 만료 뒤 새 Schedule IV 전화처방을 누구에게 넘길지 결정한다. 이 사례에서는 전화처방 수신을 묻지 않고, 만료로 세 명 조제지원팀의 유일한 qualifying slot이 사라져 현재 근무 배치를 바꿔야 한다."
+        },
+        {
+          "question_id": "MA-RW-0023",
+          "relationship": "CATEGORY_CONSEQUENCE_APPLIED_TO_A_CONCRETE_TEAM",
+          "material_difference": "기존 개정 문항은 certification loss의 14일 보고와 직함·범주 변경을 선택한다. 이 사례는 보고 clock을 반복하지 않고 그 범주 변경 후 세 명을 동시에 조제에 배치할 수 있게 만드는 대체 인력 결정을 요구한다. 같은 하위 규칙을 공유하며 전 corpus에서 새로운 법적 원리라고 세지 않는다."
+        }
+      ],
+      "competency_codes": [
+        "1.1",
+        "1.2"
+      ],
+      "competency_rationale": "2027-03-01 이전 1.1의 personnel 감독 조건과 1.2의 certification 유지 결과를 연결하여 실제 근무 배치를 결정한다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authored_at": "2026-10-29",
+      "edition": "2026-10-29.representative3",
+      "publication_status": "PUBLISHED_PRACTICE",
+      "online_practice_enabled": true,
+      "verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+      "independent_legal_audit": null,
+      "independent_realism_audit": null,
+      "duplicate_review_status": "EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION",
+      "difficulty_status": "NOT_CALIBRATED",
+      "_statement_truth": {
+        "A": false,
+        "B": true,
+        "C": false,
+        "D": false
+      },
+      "notes_revision": {
+        "id": "2026-10-29.personnel-ratios.1",
+        "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+        "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979",
+        "base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+        "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "history_policy": "Keep unit anchors, bookmarks and old read records. A pre-revision read flag records previous reading, not review or mastery of this revision. Show editor note; do not silently upgrade old learning status."
+      },
+      "content_sha256": "9b4816dd3c94898ace10b888c317dc7ebebc8cac619796e04d312859d0b3b931"
+    },
+    {
+      "question_id": "MA-RW-0064",
+      "family_id": "PER18",
+      "revision_of": "MA-EXP-0135",
+      "content_version": 1,
+      "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+      "topic": "The posted schedule must identify the role supporting a licensed worker's ratio exclusion",
+      "area": 1,
+      "question_type": "SBA",
+      "practice_angle": "individually-authored-application",
+      "collection_id": "representative-20261028",
+      "scenario": "A pharmacy assigns a Massachusetts-licensed technician solely to an inventory project: recording expiration dates on unopened Schedule VI stock. The technician performs no prescription preparation or filling, and the filling team separately meets its supervisory ratio. The posted schedule lists the technician's name and shift but no assigned role; the MOR has put the inventory assignment only in a private personnel file.",
+      "lead_in": "Which schedule change supports excluding this technician from the filling-support ratio under Board policy? Select ONE answer.",
+      "stem": "A pharmacy assigns a Massachusetts-licensed technician solely to an inventory project: recording expiration dates on unopened Schedule VI stock. The technician performs no prescription preparation or filling, and the filling team separately meets its supervisory ratio. The posted schedule lists the technician's name and shift but no assigned role; the MOR has put the inventory assignment only in a private personnel file.\n\nWhich schedule change supports excluding this technician from the filling-support ratio under Board policy? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Remove the technician's name from the posted schedule because the worker is outside the ratio."
+        },
+        {
+          "id": "B",
+          "text": "Keep the role only in the personnel file because the posted schedule already identifies the technician."
+        },
+        {
+          "id": "C",
+          "text": "Add 'excluded from ratio' beside the name without identifying the assigned duties."
+        },
+        {
+          "id": "D",
+          "text": "Add the stock-inventory assignment beside the technician's name on the posted schedule."
+        }
+      ],
+      "correct_choice_ids": [
+        "D"
+      ],
+      "explanation": {
+        "core_reasoning": "Ratio에서 제외할 수 있는 실제 업무인지와, 그 제외를 뒷받침하는 게시 일정표가 무엇을 표시해야 하는지를 따로 확인한다. 이 사례에서 고칠 것은 인원수가 아니라 posted schedule에 빠진 실제 역할이다. 업무가 그대로인데 이름을 지우거나 내부 기록에만 역할을 남기면 정책의 게시 조건을 충족하지 못한다.",
+        "choice_analysis": {
+          "A": "해당 직원이 실제로 전문적 조제지원을 하지 않아 ratio에서 제외될 수 있어도, Policy I.C는 제외되는 licensee의 이름과 역할을 게시 일정표에 표시하도록 한다. 이름을 지우는 조치는 제외된 인력의 실제 역할을 확인할 수 있게 하라는 문서 조건을 충족하지 않는다.",
+          "B": "이름만 게시하고 실제 역할은 사적인 personnel file에만 적는 것으로는 I.C의 posted schedule 조건을 충족하지 않는다. 이 정책은 게시 일정표에서 이름과 역할을 함께 확인할 수 있도록 요구한다. 별도 내부 기록이 그 게시 내용을 대신한다는 예외는 제시되어 있지 않다.",
+          "C": "'제외됨'은 계산 결과를 나타낼 뿐 어떤 실제 업무 때문에 제외되는지 설명하는 role 표기가 아니다. I.C는 licensee의 이름과 역할을 요구하므로, 실제 inventory-only 업무를 표시하지 않은 이 변경만으로는 필요한 정보를 채우지 못한다.",
+          "D": "I.C는 inventory duties처럼 전문적 처방 준비·조제를 지원하지 않는 면허 직원의 제외를 인정하면서, 게시 일정표에 그 직원의 이름과 역할을 요구한다. 지문의 직원은 Schedule VI 재고의 유효기간을 기록하는 업무만 하며 실제 처방 조제에는 참여하지 않는다. 별도 filling team의 비율도 충족되어 있으므로, 빠진 inventory 역할을 게시하는 조치가 필요하다."
+        },
+        "choice_authorities": {
+          "A": [
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.C"
+            }
+          ],
+          "B": [
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.C"
+            }
+          ],
+          "C": [
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.C"
+            }
+          ],
+          "D": [
+            {
+              "source_id": "rw3-ratio-policy2026-02",
+              "exact_section": "Policy 2026-02, I.C"
+            },
+            {
+              "source_id": "rw3-ratio-cmr8",
+              "exact_section": "247 CMR 8.06(3)(a), introductory prescription-filling activity predicate"
+            }
+          ]
+        },
+        "learning_boundary": "기존 대표 문항을 별도 사례로 다시 작성했습니다. 원본과 새 문항의 풀이 기록은 각각 보존됩니다. 작성자 출처 대조와 편집 검토이며 독립 법규 감사 또는 실제 시험 난도 보정은 아닙니다."
+      },
+      "note_evidence": [
+        {
+          "unit_id": "w1-b-8",
+          "title": "Supervisory ratios — Policy 2026-02",
+          "body_sha256": "76a586ed1b241681b061432dae7223185d95c96087b993c79752e40f4d2dddb5",
+          "inherited_note_review_date": "2026-10-20",
+          "inherited_flags": [],
+          "url": "https://woojunxnam.github.io/oddments/notes/#chapter/personnel/w1-b-8"
+        }
+      ],
+      "source_ids": [
+        "src-0dcfd81d59da",
+        "src-0655ff9a59ed",
+        "rw3-ratio-policy2026-02",
+        "rw3-ratio-cmr8"
+      ],
+      "authority": "Policy 2026-02, I.C; 247 CMR 8.06(3)(a), introductory prescription-filling activity predicate",
+      "primary_source_read_records": [
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "Policy 2026-02, I.C"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Document footer: Adopted 9/3/26; supersedes Policy 2024-03. Current official Pharmacy Practice Resources listing includes Policy 2026-02 on 2026-10-29.",
+          "scope": "Reviewed ordinary four- and three-support-personnel mixtures, actual-duty exclusion and posted names/roles, the vaccination-services six-person wording, and dedicated-training distinctions for semantic comparison. No conclusion that Policy I.B independently supersedes 247 CMR 8.06(3) is made; that relationship remains the reason for the PER17 hold."
+        },
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "accessed_at": "2026-10-29",
+          "exact_sections": [
+            "247 CMR 8.06(3)(a), introductory prescription-filling activity predicate"
+          ],
+          "access_status": "READ_OFFICIAL",
+          "retrieval_method": "This session re-read the full official-URL extraction through Exa web_fetch_exa on 2026-10-29; direct Mass.gov browser fetch returned 403. Origin PDF bytes and cache freshness are not certified.",
+          "source_currency": "Official regulation landing page dated 2025-04-25; extracted compilation header: Mass. Register #1546, 4/25/2025, effective 1/9/2025. The 8.06 subsection also bears its older 4/6/18 page footer.",
+          "scope": "Confirmed the active license/current-certification distinction, the explicit lapsed-certification ratio category, the ordinary three-/four-person qualifying mixtures, and the prescription-filling activity predicate. Intern substitution in 0062 specifies a registered pharmacist preceptor and one intern only."
+        }
+      ],
+      "additional_primary_evidence": [
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "title": "Board Policy 2026-02 — Ratios, Supervision, and Dedicated Training Personnel",
+          "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+          "accessed_at": "2026-10-29",
+          "scope": "Policy 2026-02, I.C"
+        },
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "title": "247 CMR 8.00 — Pharmacy Interns and Technicians",
+          "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "accessed_at": "2026-10-29",
+          "scope": "247 CMR 8.06(3)(a), introductory prescription-filling activity predicate"
+        }
+      ],
+      "authority_level": "OFFICIAL_PRIMARY_TEXT_AUTHOR_REVIEW",
+      "primary_source_verification": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+      "source_boundary": "이 사례의 선택지별 조항은 2026-10-29 공식 본문과 대조했습니다. 공식 URL의 추출문 열람 방식·확인 범위·문서 개정일은 출처 기록을 참조하세요. 연결 노트의 기존 확인일과 OPEN은 별도이며 전체 노트 재검증이나 독립 감사 완료를 뜻하지 않습니다.",
+      "inherited_flags": [],
+      "decision_path": [
+        "Confirm the employee is assigned solely to inventory duties with no professional prescription-preparation support.",
+        "Check that the posted schedule identifies both the licensee and the actual role.",
+        "Add the missing inventory-only role rather than deleting the employee or relying only on a private file."
+      ],
+      "decision_signature": "eligible-licensed-inventory-only-exclusion:name-posted-but-role-private -> post-actual-role-beside-name",
+      "difference_from_legacy": "PER18의 excluded role와 unlicensed cashier의 stock selection을 함께 묻던 구조에서, Schedule VI inventory-only 업무를 맡은 면허 직원의 게시 일정표에 역할이 빠진 실제 문서 결함을 수정하는 독립 사례로 좁혔다. 새 0061은 실제 근무 집단을 바꿔야 하는 반면, 이 사례는 실제 배치는 적절하고 게시 기록을 보완해야 한다. Tote 사례와 같은 배경을 반복하지 않도록 Policy I.C의 별도 inventory 예시를 사용하며, CII stock handling 권한은 묻지 않는다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-RW-0053",
+          "relationship": "INVENTORY_RECORDING_VERSUS_CII_RAW_STOCK_ASSIGNMENT",
+          "material_difference": "0053은 completed CII prescription 운반과 raw-stock handling의 권한을 구별하여 업무를 재배정한다. 이 사례는 Schedule VI inventory 기록만 하는 직원과 별도 filling team의 구성이 이미 정해져 있으며, ratio exclusion에 필요한 게시 이름·역할 기록을 고친다."
+        },
+        {
+          "question_id": "MA-RW-0061",
+          "relationship": "DOCUMENTATION_DEFECT_VERSUS_ACTUAL_TEAM_DEFECT",
+          "material_difference": "0061에서는 조제지원팀에 qualifying personnel이 부족하여 두 사람의 실제 역할을 교환해야 한다. 이 사례의 배치와 별도 filling ratio는 적절하며, 같은 교환이나 인력 추가 없이 게시 일정표에 누락된 역할을 추가하면 된다."
+        }
+      ],
+      "competency_codes": [
+        "1.1",
+        "4.2"
+      ],
+      "competency_rationale": "2027-03-01 이전 1.1의 personnel 감독 조건 및 4.2의 비조제 운영 기록 내용을, 실제 역할에 따른 인력 제외의 posted schedule 요건에 적용한다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authored_at": "2026-10-29",
+      "edition": "2026-10-29.representative3",
+      "publication_status": "PUBLISHED_PRACTICE",
+      "online_practice_enabled": true,
+      "verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+      "independent_legal_audit": null,
+      "independent_realism_audit": null,
+      "duplicate_review_status": "EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION",
+      "difficulty_status": "NOT_CALIBRATED",
+      "_statement_truth": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": true
+      },
+      "notes_revision": {
+        "id": "2026-10-29.personnel-ratios.1",
+        "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+        "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979",
+        "base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+        "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "history_policy": "Keep unit anchors, bookmarks and old read records. A pre-revision read flag records previous reading, not review or mastery of this revision. Show editor note; do not silently upgrade old learning status."
+      },
+      "content_sha256": "f2b5fa4540bdfae8cb59d3bb6f85f5986d643f43b1987294b398ddee2b4ea2b6"
     }
   ]
 }
