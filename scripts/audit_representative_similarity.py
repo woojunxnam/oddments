@@ -60,7 +60,8 @@ def compute():
         neighbors.append(dict(question_id=q['question_id'], neighbors=[dict(question_id=questions[j]['question_id'],
             cosine=round(float(scores[i, j]), 6), same_declared_family=q['family_id'] == questions[j]['family_id']) for j in nearest],
             author_decision_comparisons=q['comparison_with_existing_quality']))
-    return dict(date='2026-10-28', method='Word+bigram TF-IDF cosine; min_df2; sublinear_tf; numeric tokens retained; >=0.90 review threshold; one combined vocabulary for before/after comparisons.',
+    revision_bank = json.loads(paths[-1].read_text())
+    return dict(date=revision_bank.get('updated_at', revision_bank['authored_at']), method='Word+bigram TF-IDF cosine; min_df2; sublinear_tf; numeric tokens retained; >=0.90 review threshold; one combined vocabulary for before/after comparisons.',
         records=len(questions), canonical_records_including_nonpublic=len(canonical), new_records=len(new),
         input_sha256={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
         scope_counts={name: dict(records=len(ids), near_text_pairs_at_0_90=len(pairs(ids))) for name, ids in scopes.items()},

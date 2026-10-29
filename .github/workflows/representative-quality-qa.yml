@@ -10,6 +10,7 @@ on:
       - 'scripts/build_exam_study.py'
       - 'site/practice-expansion/**'
       - 'tests/test_representative_rewrites.py'
+      - 'tests/test_representative_filters.py'
       - '.github/workflows/representative-quality-qa.yml'
   pull_request:
     paths:
@@ -18,6 +19,7 @@ on:
       - 'scripts/**'
       - 'site/**'
       - 'tests/test_representative_rewrites.py'
+      - 'tests/test_representative_filters.py'
       - '.github/workflows/representative-quality-qa.yml'
   workflow_run:
     workflows: ['Deploy MPJE preview to Pages']
@@ -44,7 +46,7 @@ jobs:
           python scripts/build_representative_audit_ledger.py --check
           python scripts/audit_representative_similarity.py --check
           python scripts/verify_representative_protected.py
-          python -m pytest tests/test_representative_rewrites.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          python -m pytest tests/test_representative_rewrites.py tests/test_representative_filters.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
           python scripts/build_exam_study.py --check
           python scripts/build_refresh.py --check
           python scripts/build_ultimate_notes.py --check

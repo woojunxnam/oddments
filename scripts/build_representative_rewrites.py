@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import collections
 import copy
+from datetime import date
 import hashlib
 import json
 from pathlib import Path
@@ -20,7 +21,10 @@ BASE = ROOT / 'practice_expansion/2026-10-28-representative'
 REPORTS = ROOT / 'reports/representative-rewrite'
 ORIGINAL_SELECTION = ROOT / 'practice_expansion/2026-10-27-quality/selection.json'
 COLLECTION = 'representative-20261028'
-EDITION = '2026-10-28.representative1'
+INITIAL_EDITION = '2026-10-28.representative1'
+EDITION = '2026-10-29.representative2'
+REVIEW_DATE = '2026-10-29'
+PUBLISHED_UNIT1_COMMIT = 'f112d3578664aa51785ba4596547e8d722fad36c'
 BASE_COMMIT = 'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36'
 ARCHIVES = [
     'practice_expansion/2026-10-23/candidates/questions.json',
@@ -54,6 +58,23 @@ def require(condition, message):
 
 def norm(text):
     return re.sub(r'[^\w]+', ' ', text.casefold()).strip()
+
+
+def verify_published_baseline(bank):
+    """Read-only protection of already-published revisions, including metadata."""
+    baseline = read(REPORTS / 'published-unit1-baseline.json')
+    require(baseline['baseline_commit'] == PUBLISHED_UNIT1_COMMIT,
+            'The published-unit1 baseline must remain anchored to its merged commit.')
+    require(len(baseline['question_hashes']) == 46, 'Published unit1 protection lost questions.')
+    questions = {q['question_id']: q for q in bank['questions']}
+    for key, records in [('question_hashes', questions), ('source_hashes', bank['sources'])]:
+        for record_id, expected in baseline[key].items():
+            require(record_id in records, 'Missing published record: ' + record_id)
+            actual = digest(json.dumps(records[record_id], ensure_ascii=False, sort_keys=True).encode())
+            require(actual == expected, 'Published content changed under an existing ID: ' + record_id)
+    for relative, expected in baseline['authoring_files'].items():
+        require(digest((ROOT / relative).read_bytes()) == expected,
+                'Published unit1 authoring source changed: ' + relative)
 
 
 def pattern_metrics(questions):
@@ -96,28 +117,45 @@ def build():
     source_files = sorted((BASE / 'authoring').glob('*.json'))
     require(bool(source_files), 'No individually authored source files.')
     sources, authored, holds, reused, input_hashes, scope_notes = {}, [], [], [], {}, []
+    author_metadata = {}
     for path in source_files:
         d = read(path)
         require(d['review_status'] == REVIEW_STATUS, f'{path}: unsupported review claim')
+        original_file = path.name in {'01_personnel.json', '02_clinical_authority.json'}
+        authored_at = d.get('authored_at', '2026-10-28' if original_file else None)
+        require(bool(authored_at), f'{path}: missing authoring date')
+        require(date.fromisoformat(authored_at) <= date.fromisoformat(REVIEW_DATE),
+                f'{path}: future authoring date')
+        item_edition = d.get('edition', INITIAL_EDITION if original_file else None)
+        require(isinstance(item_edition, str)
+                and re.fullmatch(r'\d{4}-\d{2}-\d{2}\.representative\d+', item_edition)
+                and item_edition.split('.')[0] == authored_at,
+                f'{path}: authoring edition/date mismatch')
         input_hashes[str(path.relative_to(ROOT))] = digest(path.read_bytes())
         scope_notes.append(dict(authoring_file=str(path.relative_to(ROOT)),
             source_limitations=d.get('source_limitations', []),
             legal_reconciliation_notes=d.get('legal_reconciliation_notes', [])))
         for sid, s in d['sources'].items():
+            host = (urlparse(s['official_url']).hostname or '').lower()
+            require(host in {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov', 'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov', 'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov', 'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}, f'Non-official source: {sid}')
+            require(s['official_url'].startswith('https://'), sid)
+            require(date.fromisoformat(s['checked_at']) <= date.fromisoformat(authored_at)
+                    and s['access_status'] == 'READ_OFFICIAL', f'{sid}: invalid official text read/date')
+            require(s.get('verification_scope') and s.get('retrieval_method'), f'{sid}: missing read scope/provenance')
             if sid in sources:
                 require(sources[sid]['url'] == s['official_url'], f'Source collision: {sid}')
+                for field in ['checked_at', 'access_status', 'retrieval_method', 'source_currency']:
+                    require(sources[sid].get(field) == s.get(field),
+                            f'{sid}: conflicting {field}; record a distinct source ID')
                 # Two authors may have read different, nonconflicting sections of one source.
                 sources[sid]['exact_sections'] = sorted(set(sources[sid].get('exact_sections', [])) | set(s.get('exact_sections', [])))
                 if s['verification_scope'] not in sources[sid]['verification_scope']:
                     sources[sid]['verification_scope'] += '\nAdditional author read: ' + s['verification_scope']
                 continue
-            host = (urlparse(s['official_url']).hostname or '').lower()
-            require(host in {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov', 'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov', 'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov', 'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}, f'Non-official source: {sid}')
-            require(s['official_url'].startswith('https://'), sid)
-            require(s['checked_at'] == '2026-10-28' and s['access_status'] == 'READ_OFFICIAL', f'{sid}: no full official text read')
-            require(s.get('verification_scope') and s.get('retrieval_method'), f'{sid}: missing read scope/provenance')
             sources[sid] = {**copy.deepcopy(s), 'id': sid, 'url': s['official_url'], 'source_class': 'PUBLIC_OFFICIAL'}
         authored.extend(d['questions'])
+        for question in d['questions']:
+            author_metadata[question['question_id']] = (authored_at, item_edition)
         holds.extend(d.get('holds', []))
         reused.extend(d.get('reuse_existing', []))
     # Optional separately documented editorial holds do not alter archive bytes or keys.
@@ -132,6 +170,7 @@ def build():
     items = []
     for a in sorted(authored, key=lambda q: q['question_id']):
         qid, legacy_id = a['question_id'], a['legacy_question_id']
+        authored_at, item_edition = author_metadata[qid]
         require(re.fullmatch(r'MA-RW-\d{4}', qid) and qid not in old_by_id, f'ID not new: {qid}')
         require(a['exam_outline'] == 'MPJE-MA-PRE2027' and a['valid_for_exams_before'] == '2027-03-01', qid + ': outline')
         require(a['question_type'] in {'SBA', 'SATA'}, qid + ': type')
@@ -188,13 +227,13 @@ def build():
             additional_primary_evidence=[dict(source_id=sid, title=sources[sid]['title'], url=sources[sid]['url'],
                 accessed_at=sources[sid]['checked_at'], scope='; '.join(dict.fromkeys(r['exact_section'] for r in primary_refs if r['source_id'] == sid))) for sid in primary_ids],
             authority_level='OFFICIAL_PRIMARY_TEXT_AUTHOR_REVIEW', primary_source_verification=REVIEW_STATUS,
-            source_boundary='이 사례의 선택지별 조항은 2026-10-28 공식 본문과 대조했습니다. 공식 URL의 추출문 열람 방식·확인 범위·문서 개정일은 출처 기록을 참조하세요. 연결 노트의 기존 확인일과 OPEN은 별도이며 전체 노트 재검증이나 독립 감사 완료를 뜻하지 않습니다.',
+            source_boundary=f'이 사례의 선택지별 조항은 {authored_at} 공식 본문과 대조했습니다. 공식 URL의 추출문 열람 방식·확인 범위·문서 개정일은 출처 기록을 참조하세요. 연결 노트의 기존 확인일과 OPEN은 별도이며 전체 노트 재검증이나 독립 감사 완료를 뜻하지 않습니다.',
             inherited_flags=list(dict.fromkeys(flag for e in evidence for flag in e['inherited_flags'])),
             decision_path=a['decision_path'], decision_signature=a['decision_signature'],
             difference_from_legacy=a['difference_from_legacy'], comparison_with_existing_quality=a['comparison_with_existing_quality'],
             competency_codes=a['competency_codes'], competency_rationale=a['competency_rationale'],
             exam_outline=a['exam_outline'], valid_for_exams_before=a['valid_for_exams_before'],
-            authored_at='2026-10-28', edition=EDITION, publication_status='PUBLISHED_PRACTICE',
+            authored_at=authored_at, edition=item_edition, publication_status='PUBLISHED_PRACTICE',
             online_practice_enabled=True, verification_status='NOT_INDEPENDENTLY_REVIEWED',
             independent_legal_audit=None, independent_realism_audit=None,
             duplicate_review_status='EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION',
@@ -240,17 +279,18 @@ def build():
             baseline_legacy_representatives=355, newly_authored_replacements=len(items), previous_quality=96,
             replaced_by_existing_quality=len(reused), held_from_default=len(holds), available_total=len(all_questions)),
         input_hashes=input_hashes,
-        scope='One implementation unit. Remaining legacy representatives have editorial triage only unless separately recorded. All archived variants remain accessible and Chaos10 still samples the complete published corpus with replacement.',
+        scope='Cumulative individually reviewed implementation units. Remaining legacy representatives have editorial triage only unless separately recorded. All archived variants remain accessible and Chaos10 still samples the complete published corpus with replacement.',
     )
     selection['stats']['archive_ids_with_review_notice'] = len(archive_notice_ids)
-    bank = dict(schema_version='notes-practice-representative/1', edition=EDITION, authored_at='2026-10-28',
+    bank = dict(schema_version='notes-practice-representative/1', edition=EDITION, authored_at='2026-10-28', updated_at=REVIEW_DATE,
         base_commit=BASE_COMMIT, publication_status='PUBLISHED_PRACTICE', independent_review_status='NOT_INDEPENDENTLY_REVIEWED',
         input_guide_sha256=digest(guide_raw), input_guide_edition=guide['edition'],
         default_jurisdiction='Massachusetts', intended_outline_window='Examinations before 2027-03-01',
         construction='Individually written replacement scenarios, distinct IDs, explicit legacy mapping. Same-law boundary extensions are identified. No variant multiplication or independent audit claim.',
         stats=dict(questions=len(items), families=len({q['family_id'] for q in items})),
         source_authoring_hashes=input_hashes, authoring_scope_notes=scope_notes, sources=sources, questions=items)
-    metrics = dict(date='2026-10-28', base_commit=BASE_COMMIT,
+    verify_published_baseline(bank)
+    metrics = dict(date=REVIEW_DATE, base_commit=BASE_COMMIT,
         method='Exact text normalization retains numbers. Length and key-pattern statistics are review signals, not validity findings. Semantic findings are recorded separately by editors.',
         baseline_legacy_355=pattern_metrics([old_by_id[i] for i in sorted(legacy_ids)]),
         baseline_default_451=pattern_metrics([old_by_id[i] for i in original_selection['recommended_ids']]),

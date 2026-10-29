@@ -65,6 +65,88 @@ def main():
             assert first['question_id'] not in state()['attempts']
             expect(page.locator('#bookmark')).to_have_attribute('aria-pressed', 'false')
             ok('old attempt and bookmarks load unchanged; revised default has no inherited attempt/bookmark')
+
+            # A collection's stored total and the usable scope intersection are different counts.
+            expect(page.get_by_label('문항 포함 범위', exact=True)).to_have_attribute('id', 'scope')
+            expect(page.get_by_label('문항 모음 (선택)', exact=True)).to_have_attribute('id', 'collection')
+            expect(page.locator('#scope')).to_have_attribute('aria-describedby', 'scope-help')
+            expect(page.locator('#collection')).to_have_attribute('aria-describedby', 'collection-help')
+            expect(page.locator('#filter-summary')).to_have_attribute('role', 'status')
+            expect(page.locator('#filter-summary')).to_have_attribute('aria-live', 'polite')
+            recommended_ids = set(data['quality_selection']['recommended_ids'])
+            for scope in ['recommended', 'all']:
+                page.locator('#scope').select_option(scope)
+                for collection in ['', *[group['id'] for group in data['collections']]]:
+                    page.locator('#collection').select_option(collection)
+                    stored = [q for q in data['questions'] if not collection or q['collection_id'] == collection]
+                    expected = {q['question_id'] for q in stored if scope == 'all' or q['question_id'] in recommended_ids}
+                    observed = diag()
+                    assert set(observed['filteredIds']) == expected, (scope, collection)
+                    assert observed['filterSummary']['collectionTotal'] == len(stored)
+                    assert observed['filterSummary']['scopeCount'] == len(expected)
+                    assert observed['filterSummary']['matchedCount'] == len(expected)
+                    expect(page.locator('#filter-summary')).to_have_text(f'현재 조건에 맞는 {len(expected):,}문항')
+                    expect(page.locator('#collection option:checked')).to_contain_text(f'총 {len(stored):,}개')
+                    expect(page.locator('#filter-breakdown')).to_contain_text(f'전체 {len(stored):,}개')
+            ok('both inclusion scopes intersect every collection; stored totals and actual result counts are separately labelled')
+
+            page.locator('#scope').select_option('recommended')
+            legacy_collection = by_id[legacy_id]['collection_id']
+            page.locator('#collection').select_option(legacy_collection)
+            page.locator('#saved').select_option('bookmarks')
+            assert set(diag()['filteredIds']) == {qid for qid in seed['bookmarks'] if by_id[qid]['collection_id'] == legacy_collection}
+            expect(page.locator('#filter-exception')).to_be_visible()
+            expect(page.locator('#filter-exception')).to_contain_text('북마크 복습')
+            page.locator('#saved').select_option('wrong')
+            assert diag()['filteredIds'] == [legacy_id]
+            expect(page.locator('#filter-exception')).to_contain_text('오답 복습')
+            page.locator('#saved').select_option('')
+            page.locator('#query').fill(legacy_id)
+            assert diag()['filteredIds'] == [legacy_id]
+            expect(page.locator('#filter-exception')).to_contain_text('ID 검색')
+            page.locator('#collection').select_option('representative-20261028')
+            assert diag()['filteredIds'] == []  # ID lookup bypasses scope, never the selected collection.
+            expect(page.locator('#filter-summary')).to_have_text('현재 조건에 맞는 0문항')
+            expect(page.locator('#practice')).to_be_disabled()
+            expect(page.locator('#timed')).to_be_disabled()
+            expect(page.locator('#chaos')).to_be_enabled()
+            expect(page.locator('#filter-session-help')).to_contain_text('조건에 맞는 문항이 없습니다')
+            ok('bookmark, wrong-answer and ID lookup preserve archived access while retaining collection filters and explaining the exception')
+
+            page.locator('#query').fill('')
+            page.locator('#collection').select_option('')
+            page.locator('#area').select_option(str(first['area']))
+            page.locator('#qtype').select_option(first['question_type'])
+            expected = {q['question_id'] for q in data['questions'] if q['question_id'] in recommended_ids
+                and q['area'] == first['area'] and q['question_type'] == first['question_type']}
+            assert set(diag()['filteredIds']) == expected
+            assert diag()['filterSummary']['scopeCount'] == len(recommended_ids)
+            assert diag()['filterSummary']['matchedCount'] == len(expected)
+            expect(page.locator('#filter-exception')).to_be_hidden()
+            page.set_viewport_size({'width': 320, 'height': 900})
+            page.locator('#filter-examples summary').click()
+            expect(page.locator('#filter-example-text')).to_contain_text('다른 필터를 사용하지 않을 때')
+            assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+            page.screenshot(path=str(args.evidence / 'filter-help-mobile.png'), full_page=True)
+            page.set_viewport_size({'width': 1440, 'height': 1000})
+            ok('area/type filters update the actual count; accessible help and expanded examples fit a 320px viewport')
+
+            page.goto(base + 'practice-expansion/?bank=rewrite', wait_until='networkidle')
+            for button, maximum in [('practice', 20), ('timed', 120)]:
+                ceiling = min(maximum, len({q['family_id'] for q in new}))
+                assert diag()['filterSummary']['standardCeiling' if button == 'practice' else 'timedCeiling'] == ceiling
+                page.locator('#' + button).click()
+                observed = diag()
+                assert 0 < len(observed['sessionIds']) <= ceiling
+                assert set(observed['sessionIds']) <= set(revision['new_ids'])
+                assert len(observed['sessionFamilies']) == len(set(observed['sessionFamilies']))
+                expect(page.locator('#scope')).to_be_disabled()
+                expect(page.locator('#collection')).to_be_disabled()
+                page.locator('#end-session').click()
+                expect(page.locator('#scope')).to_be_enabled()
+                expect(page.locator('#collection')).to_be_enabled()
+            ok('20/120 modes use the chosen collection intersection and retain diversity and filter locking')
+
             page.goto(base + 'practice-expansion/#' + legacy_id, wait_until='networkidle')
             assert diag()['active'] == legacy_id
             expect(page.locator('#bookmark')).to_have_attribute('aria-pressed', 'true')

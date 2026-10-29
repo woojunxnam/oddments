@@ -1,0 +1,148 @@
+{
+  "schema_version": "implementation-code-peer-review/1",
+  "reviewed_at": "2026-10-29",
+  "reviewer": "editorial-recovery-and-ui-agent",
+  "review_type": "CODE_PEER_REVIEW_NOT_CANONICAL_AUDIT",
+  "result": "CHECKED_OBSERVATION_RESOLVED",
+  "canonical_independent_legal_audit": false,
+  "new_official_legal_source_check": false,
+  "scope": "Read the cumulative builder, preservation baseline, revised tests, and ledger/similarity date changes; execute read-only builds and targeted in-memory preservation probes. New question legal/editorial quality and real HTTP behavior are outside this code review.",
+  "reviewed_file_sha256": {
+    "scripts/build_representative_rewrites.py": "2a72c7a532ff9b0f8390f9586adf5a1ed2c289704bfc1e366543c26cf6df5664",
+    "scripts/build_representative_audit_ledger.py": "40fe180f1496683d2f99ce5d0356f29a4a5a2eff484fe53791722e0143bb86e0",
+    "scripts/audit_representative_similarity.py": "9c6f5293a30e909edf7a74b4e014706b59d2c6ed47a26a15c1307e9baee7be5c",
+    "tests/test_representative_rewrites.py": "e5c8592eea25d9d9cf57c35b8d9365fbf26d690a1a2c3487228f7ce3ee44b650",
+    "reports/representative-rewrite/published-unit1-baseline.json": "ccb628ea3161f74afb724554a4fe2a04bb77591fbe001116b0dfaf78b817a550"
+  },
+  "baseline_git_commit": "f112d3578664aa51785ba4596547e8d722fad36c",
+  "baseline_verification": {
+    "method": "Read actual Git object with git show, hash original bank bytes and canonical JSON of every question/source, compare authoring-file bytes to both Git and working files.",
+    "complete_question_objects_matched": 46,
+    "complete_source_objects_matched": 45,
+    "original_authoring_files_matched": 2,
+    "baseline_bank_sha256": "8b0a079870a5e2157f009a3ce890ad66083bc47917766fd7e8dc0da166022c7f"
+  },
+  "executed_checks": [
+    {
+      "check": "Current builder output preserves every existing question object, including old authored_at, edition, source_boundary, read records and content hash.",
+      "result": "PASS",
+      "count": 46
+    },
+    {
+      "check": "Current builder output preserves every existing source object, including original checked_at and provenance.",
+      "result": "PASS",
+      "count": 45
+    },
+    {
+      "check": "In-memory modification of authored_at, edition, or source_boundary is rejected even when content_sha256 is recomputed.",
+      "result": "PASS",
+      "probes": 3,
+      "writes_to_question_sources": false
+    },
+    {
+      "check": "New authoring files carry explicit 2026-10-29 date and edition; their sources use distinct IDs and 2026-10-29 read dates.",
+      "result": "PASS",
+      "new_questions_present_when_checked": 11,
+      "duplicate_author_source_ids": 0
+    }
+  ],
+  "code_findings": [
+    {
+      "id": "UNIT2-CODE-OBS-001",
+      "severity": "LOW",
+      "blocking_current_batch": false,
+      "status": "RESOLVED",
+      "location": "scripts/build_representative_rewrites.py: build source-ID collision branch",
+      "finding_ko": "이미 등록된 source ID의 병합 분기는 URL 확인 후 exact_sections/verification_scope를 합치고 continue하므로, 뒤에 있는 checked_at·access_status·retrieval_method 검증이 두 번째 입력에 실행되지 않는다. 서로 다른 확인일을 가진 재조회 자료가 향후 같은 ID를 재사용하면 두 번째 날짜/출처 정보가 무시될 수 있다.",
+      "current_impact_ko": "이번 authoring 파일 4개에는 source ID 충돌이 없고 기존 45개 source 객체의 완전 해시 보호가 작동하므로, 현재 11개 추가안이나 기존 46개를 바꾸는 문제는 관찰하지 못했다.",
+      "suggestion_ko": "후속 입력에서도 각 source record를 먼저 검증한 뒤 병합하거나, 다른 확인일·조회방법은 별도 source ID로 기록하도록 명시적으로 거부한다. 기존 객체를 바꾸는 병합은 현재 baseline guard가 계속 막아야 한다.",
+      "resolution_ko": "모든 source record의 공식 호스트·HTTPS·확인일·READ_OFFICIAL·범위/조회방법 검증이 충돌 분기보다 먼저 실행된다. 동일 ID의 checked_at, access_status, retrieval_method, source_currency가 다르면 별도 ID를 요구한다. 일치하는 동일 출처의 조항 범위 병합은 남기되, 기존 공개 source 객체 변경은 baseline guard가 계속 거부한다."
+    }
+  ],
+  "reviewed_design_decisions": [
+    "Original files alone receive the old metadata fallback; later authoring files must explicitly provide date and date-matching edition.",
+    "Each question retains its author-file date and edition; cumulative bank updated_at and edition may advance without changing published objects.",
+    "The ledger keeps original triage reviewed_at and NOT_REVERIFIED findings while separately adding implementation_updated_at.",
+    "The lexical candidate report date follows bank.updated_at and makes no new semantic or legal-verification claim.",
+    "The new disposition test fixes the set of 12 targeted original IDs while allowing replacement, hold, or reuse; it does not require 12 newly authored cases.",
+    "Existing archive byte checks, immutable previous96 checks, history/Chaos contracts, and independent-audit-null checks remain present."
+  ],
+  "limitations": [
+    "The full pytest and real-HTTP Playwright suites were not run in this code review. Parent integration/CI will provide their results.",
+    "Question legal keys, distractors and authority sufficiency are not certified by these mechanical preservation checks.",
+    "The reported hashes identify the exact reviewed code snapshot; later edits require review or an addendum."
+  ],
+  "initial_reviewed_file_sha256": {
+    "scripts/build_representative_rewrites.py": "e2c1b9d984ce75824386256310ed8454ad3cb0e1fe6c566c76c91aee0081f640",
+    "scripts/build_representative_audit_ledger.py": "40fe180f1496683d2f99ce5d0356f29a4a5a2eff484fe53791722e0143bb86e0",
+    "scripts/audit_representative_similarity.py": "9c6f5293a30e909edf7a74b4e014706b59d2c6ed47a26a15c1307e9baee7be5c",
+    "tests/test_representative_rewrites.py": "f344087296d35028b4f571f22784543b1c8a0d8657c141e10908b1bcda6e11a8",
+    "reports/representative-rewrite/published-unit1-baseline.json": "ccb628ea3161f74afb724554a4fe2a04bb77591fbe001116b0dfaf78b817a550"
+  },
+  "recheck": {
+    "reviewed_at": "2026-10-29",
+    "targeted_unittest_methods_passed": 3,
+    "duplicate_source_negative_subcases_passed": 4,
+    "extra_in_memory_negative_probes": [
+      {
+        "field": "source_currency",
+        "result": "REJECTED",
+        "message": "rw-cmr3: conflicting source_currency; record a distinct source ID"
+      },
+      {
+        "field": "official_url",
+        "result": "REJECTED",
+        "message": "Non-official source: rw-cmr3"
+      }
+    ],
+    "read_only_build": "PASS",
+    "cumulative_question_count": 57,
+    "selection_stats": {
+      "recommended": 442,
+      "legacy_representatives_remaining": 289,
+      "baseline_legacy_representatives": 355,
+      "newly_authored_replacements": 57,
+      "previous_quality": 96,
+      "replaced_by_existing_quality": 2,
+      "held_from_default": 7,
+      "available_total": 2329,
+      "archive_ids_with_review_notice": 21
+    },
+    "official_legal_review_performed": false,
+    "repository_question_files_written_by_review": false
+  },
+  "edition_test_addendum": {
+    "reason": "The publisher intentionally copies author edition to source_edition and assigns the delivery/publication edition to the public record. The updated test checks both edition layers and the unchanged source-bank edition separately.",
+    "publisher_path_reviewed": "scripts/publish_practice.py",
+    "publisher_sha256": "4df51d495d9ba2a2e47b7db54b51cd85b04e6a3e5eaa184993baf9e9b5c94646",
+    "previous_test_sha256": "eda49b2923ccdf7ceeffe8b3a10b3ab09bb2c19e4ad5b7a70530ac50f57741d2",
+    "final_test_sha256": "e5c8592eea25d9d9cf57c35b8d9365fbf26d690a1a2c3487228f7ce3ee44b650",
+    "targeted_test": "test_second_unit_has_explicit_nonoverlapping_legacy_dispositions",
+    "result": "PASS",
+    "original_question_content_changed": false,
+    "previous_preservation_assertions_removed": false
+  },
+  "final_authoring_freeze_recheck": {
+    "authoring_file_sha256": {
+      "practice_expansion/2026-10-28-representative/authoring/03_personnel_scope.json": "fd33cae2e34221786e24975362f33c16671b3bd3e540c6c8c9e130ccd715d7a4",
+      "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78"
+    },
+    "read_only_build": "PASS",
+    "published_46_complete_objects_and_45_sources_preserved": true,
+    "current_new_unit2_cases": 10,
+    "current_unit2_reuse": 2,
+    "cumulative_question_count": 56,
+    "selection_stats": {
+      "recommended": 441,
+      "legacy_representatives_remaining": 289,
+      "baseline_legacy_representatives": 355,
+      "newly_authored_replacements": 56,
+      "previous_quality": 96,
+      "replaced_by_existing_quality": 3,
+      "held_from_default": 7,
+      "available_total": 2328,
+      "archive_ids_with_review_notice": 21
+    },
+    "note": "This final authoring disposition supersedes the earlier 11-case provisional count; the historical code-validation probes remain recorded above."
+  }
+}

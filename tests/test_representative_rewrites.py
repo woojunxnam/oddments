@@ -2,15 +2,18 @@
 from __future__ import annotations
 
 import hashlib
+import copy
+from datetime import date
 import json
 from pathlib import Path
 import re
 import sys
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_representative_rewrites import BASE, REPORTS, build, content_hash, encoded, pattern_metrics
+from build_representative_rewrites import BASE, REPORTS, build, content_hash, encoded, pattern_metrics, verify_published_baseline
 from publish_practice import build_payload, render
 
 
@@ -54,6 +57,7 @@ class RepresentativeRevisionTests(unittest.TestCase):
         sources = self.bank['sources']
         for q in self.bank['questions']:
             ids = {c['id'] for c in q['choices']}
+            read_dates = {r['source_id']: r['accessed_at'] for r in q['primary_source_read_records']}
             self.assertEqual(ids, set(q['explanation']['choice_authorities']))
             self.assertEqual(ids, set(q['explanation']['choice_analysis']))
             for option_id, refs in q['explanation']['choice_authorities'].items():
@@ -62,7 +66,8 @@ class RepresentativeRevisionTests(unittest.TestCase):
                     self.assertTrue(ref['exact_section'].strip())
                     source = sources[ref['source_id']]
                     self.assertEqual(source['access_status'], 'READ_OFFICIAL')
-                    self.assertEqual(source['checked_at'], '2026-10-28')
+                    self.assertEqual(source['checked_at'], read_dates[ref['source_id']])
+                    self.assertLessEqual(date.fromisoformat(source['checked_at']), date.fromisoformat(q['authored_at']))
                     self.assertTrue(source['url'].startswith('https://'))
                     self.assertTrue(source['retrieval_method'])
 
@@ -97,13 +102,68 @@ class RepresentativeRevisionTests(unittest.TestCase):
         self.assertTrue(set(self.original_selection['new_ids']) <= recommended)
 
     def test_first_authoring_unit_addresses_exactly_48_originals(self):
-        authored = [json.loads(p.read_text()) for p in sorted((BASE / 'authoring').glob('*.json'))]
+        authored = [json.loads((BASE / 'authoring' / name).read_text())
+                    for name in ['01_personnel.json', '02_clinical_authority.json']]
         ids = [q['legacy_question_id'] for a in authored for q in a['questions']]
         ids += [q['legacy_question_id'] for a in authored for q in a.get('holds', [])]
         ids += [q['legacy_question_id'] for a in authored for q in a.get('reuse_existing', [])]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertEqual(len(ids), 48)
 
+    def test_second_unit_has_explicit_nonoverlapping_legacy_dispositions(self):
+        authored = [json.loads((BASE / 'authoring' / name).read_text())
+                    for name in ['03_personnel_scope.json', '04_pharmacy_operations.json']]
+        ids = [q['legacy_question_id'] for unit in authored
+               for field in ['questions', 'holds', 'reuse_existing'] for q in unit.get(field, [])]
+        expected = {f'MA-EXP-{n:04d}' for n in [99, 103, 107, 111, 115, 119, 155, 159, 163, 167, 171, 175]}
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertEqual(set(ids), expected)
+        for unit in authored:
+            self.assertEqual(unit['authored_at'], '2026-10-29')
+            self.assertEqual(unit['edition'], '2026-10-29.representative2')
+            for q in unit['questions']:
+                actual = self.by_id[q['question_id']]
+                self.assertEqual(actual['authored_at'], unit['authored_at'])
+                self.assertEqual(actual['source_edition'], unit['edition'])
+                self.assertEqual(actual['edition'], self.payload['edition'])
+                source = next(item for item in self.bank['questions'] if item['question_id'] == q['question_id'])
+                self.assertEqual(source['edition'], unit['edition'])
+
+    def test_published_first_unit_objects_and_sources_remain_unchanged(self):
+        verify_published_baseline(self.bank)
+
+    def test_published_first_unit_guard_rejects_silent_content_changes(self):
+        altered = copy.deepcopy(self.bank)
+        question = next(q for q in altered['questions'] if q['question_id'] == 'MA-RW-0001')
+        question['stem'] += ' Changed condition.'
+        question['content_sha256'] = content_hash(question)
+        with self.assertRaisesRegex(ValueError, 'Published content changed'):
+            verify_published_baseline(altered)
+        altered = copy.deepcopy(self.bank)
+        altered['sources']['rw-cmr3']['checked_at'] = '2026-10-29'
+        with self.assertRaisesRegex(ValueError, 'Published content changed'):
+            verify_published_baseline(altered)
+
+    def test_reused_source_ids_cannot_bypass_read_and_provenance_checks(self):
+        original = json.loads((BASE / 'authoring/01_personnel.json').read_text())['sources']['rw-cmr3']
+        cases = [
+            ('access_status', 'NOT_READ', 'invalid official text read/date'),
+            ('checked_at', '2026-10-29', 'conflicting checked_at'),
+            ('retrieval_method', 'a different unrecorded access path', 'conflicting retrieval_method'),
+            ('verification_scope', '', 'missing read scope/provenance'),
+        ]
+        for field, value, message in cases:
+            with self.subTest(field=field):
+                source = copy.deepcopy(original)
+                source[field] = value
+                def changed_read(path):
+                    data = json.loads(path.read_text())
+                    if path.name == '03_personnel_scope.json':
+                        data['sources']['rw-cmr3'] = source
+                    return data
+                with patch('build_representative_rewrites.read', side_effect=changed_read):
+                    with self.assertRaisesRegex(ValueError, message):
+                        build()
     def test_new_design_has_no_all_correct_sata_or_duplicate_packs(self):
         metrics = pattern_metrics(self.bank['questions'])
         self.assertEqual(metrics['all_correct_sata'], 0)
