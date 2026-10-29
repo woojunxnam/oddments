@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('examstudy',ROOT/'scripts/build_exam_study.py')
 builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
-D=builder.build_payload();N=json.loads((ROOT/'notes/guide.json').read_text())
+D=builder.build_payload();N=__import__('notes_revision').load_notes(ROOT)
 U={u['id']:u for c in N['chapters'] for u in c['units']}
 
 def test_counts_and_distinct_lesson_ids():

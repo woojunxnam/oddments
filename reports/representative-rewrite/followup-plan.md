@@ -41,3 +41,7 @@
 먼저 우선 후보 12–18개를 법규 검토까지 마친 작은 단위로 만든다. 각 후보에 `nearest_existing_ids`, `changed_condition`, `changed_required_action`, `exact_authority`, `source_checked_at`, `notes_link`를 기록한다. 기존 사례와 다른 이름·약물·수량만으로는 독립 사례로 채택하지 않는다. [semantic-review.json](semantic-review.json)의 `MA-CASE-0316 ↔ MA-REV-0053`처럼 같은 clozapine 결정을 반복하거나, daily credit cap에 덧셈만 추가한 경우는 새 gap 사례 수에서 제외한다.
 
 정답·모든 오답·한국어 해설을 공식 1차 자료에 연결한 뒤, 별도 reviewer가 동결된 문항 hash를 검토한다. 이 편집·peer 검토와 canonical 독립 감사의 조건은 계속 분리한다. `MPJE-MA-PRE2027`을 적용하고, 2027-03-01 이후 outline은 별도 시험일 버전으로 둔다. 각 배치의 count와 실제 도입된 독립 판단 수를 함께 보고하며 120을 채우기 위한 기계적 변형은 만들지 않는다.
+
+## Unit 3A 후속 (2026-10-29)
+
+PER15–PER18: 3개 새 ID 재작성, PER17 대표 1개 보류, 원문 변형 16개 개별 작성자 검토. 다음은 PER19–PER22 (`MA-EXP-0139`, `0143`, `0147`, `0151`)와 `w1-b-9`, `w1-b-10`. MOR로 건너뛰지 않는다. 최신 전체 범위·검증 제한은 `docs/MPJE_QUALITY_CHECKPOINT.md`와 full-corpus-review 기록을 따른다.

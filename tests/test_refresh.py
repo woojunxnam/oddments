@@ -18,7 +18,7 @@ ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('refresh_builder',ROOT/'scripts/build_refresh.py')
 m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 D=m.build_payload()
-N=json.loads((ROOT/'notes/guide.json').read_text())
+N=__import__('notes_revision').load_notes(ROOT)
 U={u['id']:u for c in N['chapters'] for u in c['units']}
 
 

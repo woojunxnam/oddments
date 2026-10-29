@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse, copy, hashlib, html, json
 from pathlib import Path
+from notes_revision import load_notes, apply_study_revision
 ROOT=Path(__file__).resolve().parents[1]
 
 def digest(path: Path) -> str:
@@ -10,7 +11,7 @@ def digest(path: Path) -> str:
 
 def build_payload() -> dict:
     note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
-    notes=json.loads(note_path.read_text()); data=json.loads(author_path.read_text())
+    notes=load_notes(ROOT); data=apply_study_revision(json.loads(author_path.read_text()), "study", ROOT)
     chapters={c['id']:c for c in notes['chapters']}
     units={u['id']:(c,u) for c in notes['chapters'] for u in c['units']}
     modules={m['id']:m for m in data['modules']}
@@ -70,7 +71,7 @@ def build_payload() -> dict:
 
 def outputs()->dict[Path,str]:
     d=build_payload(); esc=html.escape
-    manifest={k:d[k] for k in ['schema_version','edition','edited_at','notes_sha256','authoring_sha256','question_sources','representative_selection','stats','source_policy','blueprint']}
+    manifest={k:d[k] for k in ['schema_version','edition','edited_at','notes_sha256','authoring_sha256','question_sources','representative_selection','notes_revision','stats','source_policy','blueprint']}
     payload=json.dumps(d,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
     body=''.join(f'<section><h2>{esc(m["title"])}</h2><p>{esc(m["exam_task"])}</p>'+''.join(f'<article><h3>{esc(l["title"])}</h3><p><strong>핵심:</strong> {esc(l["core"])}</p><p>{esc(l["why"])}</p><p><strong>혼동 방지:</strong> {esc(l["trap"])}</p><p><strong>설명해 보기:</strong> {esc(l["recall"])}</p><p>원문 기준: {esc(", ".join(l["source_review_dates"]))} · 주의: {esc(", ".join(l["flags"]) or "아래 본문 조건 확인")}</p><p>'+''.join(f'<a href="./#chapter/{next(c["id"] for c in json.loads((ROOT/"notes/guide.json").read_text())["chapters"] if any(u["id"]==uid for u in c["units"]))}/{uid}">{esc(uid)} 원문</a> ' for uid in l['note_units'])+'</p></article>' for l in d['lessons'] if l['module_id']==m['id'])+'</section>' for m in d['modules'])
     static='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MPJE 법규 학습 · 전체 읽기</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:850px;margin:32px auto;padding:0 22px;overflow-wrap:anywhere}article{border-bottom:1px solid #ccc;padding:16px 0}a{display:inline-block;margin:4px}@media print{article{break-inside:avoid}}</style><link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script><header><a href="./#study">시험 학습 화면</a><a href="book.html">전체 상세노트</a><h1>MPJE 법규 학습</h1><p>'+esc(d['source_policy'])+'</p></header><main>'+body+'</main></html>\n'

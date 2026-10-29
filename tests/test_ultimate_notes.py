@@ -103,7 +103,11 @@ def test_generated_notes_match_canonical_inputs():
     for path, generated in module.make_outputs().items():
         assert path.read_text(encoding='utf-8') == generated, str(path)
     build = json.loads((ROOT/'site/notes/build.json').read_text())
-    assert build['content_sha256'] == hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest()
+    assert build['baseline_content_sha256'] == hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest()
+    from notes_revision import load_notes
+    effective=load_notes(ROOT)
+    assert build['content_sha256'] == hashlib.sha256(json.dumps(effective,ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+    assert build['revision_provenance'] == effective['revision_provenance']
     assert build['stats']['drugs'] == 127
 
 

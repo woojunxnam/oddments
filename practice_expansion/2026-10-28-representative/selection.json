@@ -1,5 +1,5 @@
 {
-  "edition": "2026-10-29.representative2",
+  "edition": "2026-10-29.representative3",
   "base_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
   "baseline_selection_path": "practice_expansion/2026-10-27-quality/selection.json",
   "baseline_selection_sha256": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64",
@@ -158,10 +158,9 @@
     "MA-REV-0008",
     "MA-RW-0053",
     "MA-RW-0054",
-    "MA-EXP-0123",
-    "MA-EXP-0127",
-    "MA-EXP-0131",
-    "MA-EXP-0135",
+    "MA-RW-0061",
+    "MA-RW-0062",
+    "MA-RW-0064",
     "MA-EXP-0139",
     "MA-EXP-0143",
     "MA-EXP-0147",
@@ -502,7 +501,10 @@
     "MA-RW-0057",
     "MA-RW-0058",
     "MA-RW-0059",
-    "MA-RW-0060"
+    "MA-RW-0060",
+    "MA-RW-0061",
+    "MA-RW-0062",
+    "MA-RW-0064"
   ],
   "previous_quality_ids": [
     "MA-REV-0001",
@@ -940,6 +942,24 @@
       "content_sha256": "b55aedbc9c5d6db063e91f23d4462664d3452fdc36b5ba6795f6493683c32002"
     },
     {
+      "legacy_question_id": "MA-EXP-0123",
+      "replacement_question_id": "MA-RW-0061",
+      "kind": "NEW_CASE",
+      "content_sha256": "88c4738958f1e3702ff1fc1f562d78476047722e2a45fe8c522ea67c3b1a8d8e"
+    },
+    {
+      "legacy_question_id": "MA-EXP-0127",
+      "replacement_question_id": "MA-RW-0062",
+      "kind": "NEW_CASE",
+      "content_sha256": "9b4816dd3c94898ace10b888c317dc7ebebc8cac619796e04d312859d0b3b931"
+    },
+    {
+      "legacy_question_id": "MA-EXP-0135",
+      "replacement_question_id": "MA-RW-0064",
+      "kind": "NEW_CASE",
+      "content_sha256": "f2b5fa4540bdfae8cb59d3bb6f85f5986d643f43b1987294b398ddee2b4ea2b6"
+    },
+    {
       "legacy_question_id": "MA-EXP-0075",
       "replacement_question_id": "MA-REV-0009",
       "kind": "EXISTING_QUALITY_CASE",
@@ -991,6 +1011,36 @@
         }
       ],
       "next_action": "Obtain the current PDF binary or an authoritative Board clarification, adjudicate the discrepancy with the inherited note correction, then write and independently review the item. No new keyed question or fake completed legal verification is supplied for this ID."
+    },
+    {
+      "legacy_question_id": "MA-EXP-0131",
+      "proposed_question_id": "MA-RW-0063",
+      "reserved_question_id": "MA-RW-0063",
+      "status": "HOLD_FOR_LEGAL_REVIEW",
+      "reason": "현행 Board Policy 2026-02 I.B는 vaccination services를 제공하는 약국에 자격 구성 조건을 갖춘 최대 1 pharmacist : 6 support personnel 경로를 명시한다. 한편 열람한 247 CMR 8.06(3)(a)는 일반적인 최대4명·3명 경로를 규정한다. 이번 작성자 검토에서는 일반적인 6명 허용에 관해 두 자료의 적용 관계를 확립하는 공식 rulemaking, waiver 또는 이에 준하는 설명을 확보하지 못했다. 따라서 제한 없는 허용을 확정 정답으로 삼는 새 문항 작성은 보류한다. 이는 출처 간 적용 관계가 미해결되었다는 뜻이며, Board 정책이 무효라거나 기존 모든 정답이 잘못되었다는 판정이 아니다.",
+      "unresolved_authorities": [
+        {
+          "source_id": "rw3-ratio-policy2026-02",
+          "exact_section": "Policy 2026-02, I.B.1–2; authority footer referring to 247 CMR 8.00"
+        },
+        {
+          "source_id": "rw3-ratio-cmr8",
+          "exact_section": "247 CMR 8.06(3)(a)1–2"
+        }
+      ],
+      "next_action": "일반적인 Policy I.B 경로와 규정의 적용 관계를 설명하는 공식 Board 자료, 해당 rulemaking/waiver 기록 또는 동등한 근거를 확보한 후 정확한 적용 범위를 확인한다. 개별 시설의 waiver나 waiver 신청 권한이 존재한다는 사실만으로 모든 대상 약국에 별도 waiver가 필요하다거나 일반 정책이 무효라고 추론하지 않는다.",
+      "note_unit_ids": [
+        "w1-b-8"
+      ],
+      "affected_archive_ids": [
+        "MA-EXP-0129",
+        "MA-EXP-0130",
+        "MA-EXP-0131",
+        "MA-EXP-0132"
+      ],
+      "affected_archive_notice_scope": "This session individually read the four PER17 variants. PLUS candidates from the recovered draft are queued for individual review, not inherited as complete.",
+      "source_review_record": "reports/full-corpus-review/unit3a-author-review.json",
+      "independent_review_claim": false
     },
     {
       "hold_id": "HOLD-QA-0082",
@@ -1058,21 +1108,22 @@
   ],
   "history_policy": "All legacy and previous96 IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only.",
   "stats": {
-    "recommended": 441,
-    "legacy_representatives_remaining": 289,
+    "recommended": 440,
+    "legacy_representatives_remaining": 285,
     "baseline_legacy_representatives": 355,
-    "newly_authored_replacements": 56,
+    "newly_authored_replacements": 59,
     "previous_quality": 96,
     "replaced_by_existing_quality": 3,
-    "held_from_default": 7,
-    "available_total": 2328,
-    "archive_ids_with_review_notice": 21
+    "held_from_default": 8,
+    "available_total": 2331,
+    "archive_ids_with_review_notice": 25
   },
   "input_hashes": {
     "practice_expansion/2026-10-28-representative/authoring/01_personnel.json": "c5f9f7cc47990e38dbbce51b4d059261079d6829dfb8c4ea4c92346ee21bd1b4",
     "practice_expansion/2026-10-28-representative/authoring/02_clinical_authority.json": "e18d90261a982b801cb73fd2da9a546d01398ee3f4d77903ccacd86ccda576e9",
     "practice_expansion/2026-10-28-representative/authoring/03_personnel_scope.json": "fd33cae2e34221786e24975362f33c16671b3bd3e540c6c8c9e130ccd715d7a4",
     "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78",
+    "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json": "0dafbe57987b928f04791729305ba9e9b5b3e0485d0f446cff08dd6ef40953ec",
     "reports/representative-rewrite/default-holds.json": "299aa39a3b26ea3a0efebdc3e5f72b24470cae43a55e99830f6ee9baf9f92c9d"
   },
   "scope": "Cumulative individually reviewed implementation units. Remaining legacy representatives have editorial triage only unless separately recorded. All archived variants remain accessible and Chaos10 still samples the complete published corpus with replacement."

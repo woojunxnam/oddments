@@ -165,6 +165,26 @@ def make_baseline(main_tree, root=ROOT):
     )
 
 
+def migrated_baseline_bytes(root, relative, current):
+    # Only this exact generated export can migrate; immutable inputs remain strict.
+    migration_path = root / 'revisions/notes/protected-migration.json'
+    if not migration_path.exists() or relative != 'site/notes/complete-notes.md':
+        return current
+    migration = json.loads(migration_path.read_bytes())
+    require(migration['schema_version'] == 'notes-protected-migration/1', 'Unknown migration schema')
+    require(migration['baseline_commit'] == '9f3fed116792b33c65cad35da77a8d68aab58c06', 'Unexpected migration base')
+    require([x['path'] for x in migration['files']] == ['site/notes/complete-notes.md'], 'Migration expands protected scope')
+    require(migration['revision_path'] == 'revisions/notes/2026-10-29-personnel-ratios.json', 'Unexpected revision source')
+    revision = safe_file(root, migration['revision_path']).read_bytes()
+    require(sha256(revision) == migration['revision_sha256'], 'Stale migration revision hash')
+    row = migration['files'][0]
+    require(row['baseline_copy'] == 'revisions/baselines/complete-notes-2026-10-23.1.md', 'Unexpected baseline copy')
+    baseline = safe_file(root, row['baseline_copy']).read_bytes()
+    require(sha256(baseline) == row['old_sha256'], 'Archived notes baseline changed')
+    require(sha256(current) == row['new_sha256'], 'Generated notes migration hash changed')
+    return baseline
+
+
 def verify(manifest, root=ROOT):
     require(manifest['schema_version'] == 'representative-protected-baseline/1', 'Unexpected protection schema.')
     require(manifest['repository'] == REPOSITORY and manifest['baseline_commit'] == BASE_COMMIT,
@@ -184,6 +204,7 @@ def verify(manifest, root=ROOT):
     total_bytes = 0
     for row in records:
         raw = safe_file(root, row['path']).read_bytes()
+        raw = migrated_baseline_bytes(root, row['path'], raw)
         require(len(raw) == row['bytes'], 'Protected source size changed: ' + row['path'])
         require(sha256(raw) == row['sha256'], 'Protected source SHA-256 changed: ' + row['path'])
         require(git_blob_sha1(raw) == row['git_blob_sha1'], 'Protected source differs from main Git blob: ' + row['path'])
@@ -215,7 +236,7 @@ def main():
         manifest = json.loads(MANIFEST.read_text(encoding='utf-8'))
     result = verify(manifest)
     require(SUMMARY.is_file() and SUMMARY.read_bytes() == render_summary(manifest), 'Protection summary drift.')
-    print(f"Verified {result['files']:,} protected files ({result['bytes']:,} bytes) against main {BASE_COMMIT}; no source bytes or audit status changed.")
+    print(f"Verified {result['files']:,} protected files ({result['bytes']:,} bytes) against main {BASE_COMMIT}; immutable baseline retained; only the exact manifest-bound generated notes export may migrate. Audit status unchanged.")
 
 
 if __name__ == '__main__':
