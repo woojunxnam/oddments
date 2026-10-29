@@ -54,3 +54,15 @@ w1-b-9/w1-b-10의 별도 versioned revision을 작성했고, 기존 w1-b-8 revis
 다음: Unit3B의 생성 artifacts와 테스트·CI·공개 origin 검증을 먼저 마친다. PER20 source relationship,PLUS 후보 및CE email/Form 충돌을 유지하고 그다음 MOR07–10/DISC01–08로 넘어간다. 전체 2334 ID와306절의 미검토가0개가 될 때까지 전체 완료라고 하지 않는다. 추가 사례·보류는 분모에서 삭제하지 않는다.
 
 Unit3B worker의 첫 생성물은 294 tests를 통과했으나, 그 뒤 확보한 PLUS0109/0812/0814 원문 전체를 읽고 기록을 추가했다. 0814는 기본 대표 추가 보류,0812는 archive 주의 대상으로 연결한다. key 오류를 확정하지 않는다. 이 추가 변경 후의 최종 head CI는 별도 확인한다. 전체 PLUS를 읽었다는 뜻이 아니다.
+
+## Unit 3B materialized checkpoint — 2026-10-29
+
+Branch `feat/unit3b-personnel-20261029`, PR #173. Actual tested generated commit `e98437b6190c4dedc3feee772b7f48e3bda6c93e` (worker source `87d3a9721c32889a5cd54fc7cef943dae268573a`). Worker run40929819513/job123644961317 passed 294 Python tests, deterministic builder checks, JS syntax and publish build2334. Final ordinary PR CI, merge and production checks remain pending at this checkpoint. Temporary branch-only materializer workflow is removed in this checkpoint commit; existing gates remain.
+
+Actual Unit3B review: MA-EXP-0137–0152 plus MA-CASE-0109/0812/0814 (19 original IDs), and MA-RW-0065/0067/0068 (3 new IDs). Raw dispositions: REPLACE3, MINOR_EDIT10, HOLD6. Default holds include PER20 representative0143 and PLUS0814;0812 receives an archive warning. Answer keys of these PLUS records were not adjudicated wrong. New3 are author reviewed practice editions, not independently audited RELEASED questions. PLUS extraction/provenance is stored separately.
+
+Current2334 = original2176 + MA-REV96 + MA-RW62. Representative355: rewritten62/reused3/held10/pending280; default438. Cumulative41 IDs tracked,2293 remain NOT_REVERIFIED in this full-corpus review. Inventory does not imply legal completion. Claims16:14 author-source-checked/2OPEN; w1-b-8/9/10 have partial claim work, no complete atomic census. Same-team peer and independent canonical audit NOT_RUN. Canonical439 are inventory only.
+
+Notes w1-b-9/10, chapter highlights, LAW-012 and RF-049 use the versioned revision. Original guide, Unit3A revision/migration and previous59 complete question objects are preserved. Exact generated-export migration remains narrowly validated. All old IDs/storage/anchors remain; prior reading history is retained with revision notices.
+
+Next work after final Unit3B CI/deployment: MOR07 MA-EXP-0179/w1-c-4; MOR08 0183/w1-c-5; MOR09 0187/w1-c-5; MOR10 0191/w1-c-7; DISC01 0195/w6-b-8; DISC02 0199/w6-b-8; DISC03 0203/w1-c-13; DISC04 0207/w1-c-13; DISC05 0211/w1-c-14; DISC06 0215/w1-c-14; DISC07 0219/w1-c-15; DISC08 0223/w4-d-17. These are queued, not reviewed. Keep intern2/4 relationship, PLUS source qualifications, CE email/Form w1-a-7 conflict OPEN. Commands: build_full_corpus_review.py --check; build_quality_status.py --check; representative builders/checks/protection; notes/study/refresh builders --check; validate_all.py; pytest; existing HTTP/browser CI. No full-corpus completion date is asserted.
