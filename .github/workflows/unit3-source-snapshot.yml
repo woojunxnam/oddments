@@ -1,0 +1,26 @@
+name: Unit 3 tracked-source recovery snapshot
+on:
+  push:
+    branches: [work/unit3-source-recovery-20261029]
+    paths: [.github/workflows/unit3-source-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Archive tracked source only
+        run: |
+          mkdir -p /tmp/unit3-source
+          git archive --format=zip --output=/tmp/unit3-source/source.zip HEAD
+          git rev-parse HEAD > /tmp/unit3-source/commit.txt
+          sha256sum /tmp/unit3-source/source.zip > /tmp/unit3-source/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unit3-tracked-source
+          path: /tmp/unit3-source/
+          retention-days: 7
+          if-no-files-found: error
