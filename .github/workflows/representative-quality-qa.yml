@@ -57,6 +57,7 @@ jobs:
           python scripts/audit_representative_similarity.py --check
           python scripts/verify_representative_protected.py
           python scripts/build_full_corpus_review.py --check
+          python scripts/build_quality_status.py --check
           python -m pytest tests/test_full_corpus_review.py -q
           python -m pytest tests/test_representative_rewrites.py tests/test_representative_filters.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
           python scripts/build_exam_study.py --check

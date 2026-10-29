@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. personnel w1-b-8 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. personnel w1-b-8–10 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -703,21 +703,35 @@ Policy 2026-02 I.B는 vaccination services를 제공하는 pharmacies에 최대 
 
 ## Intern supervision의 일반규칙과 예외
 
-### Direct supervision
+### 일반 약국 안의 직접 감독
 
-2026-02 policy의 일반 direct supervision은 pharmacist가 premises에 있으면서 contemporaneous observation/direction을 하고, 수행 업무를 알고, 바로 도움과 지시를 제공할 수 있는 상태이다. Preceptor가 없을 때는 다른 pharmacist가 직접 감독해야 한다. 
+247 CMR 8.01(3)은 intern이 registered pharmacist preceptor의 직접 감독 아래 일하도록 합니다. Policy 2026-02 II는 usual preceptor가 없으면 다른 pharmacist가 직접 감독해야 한다고 설명합니다. 단순히 다른 약사가 건물 안에 있다는 사실과 실제 감독은 구별합니다.
 
-기본 247 CMR 8.01(16)는 한 preceptor가 동시에 직접 감독하는 intern을 두 명까지로 정한다. 
+| 확인 항목 | ordinary on-site 업무에서 필요한 상태 |
+|---|---|
+| 장소 | 감독 pharmacist가 premises에 있음 |
+| 관찰·지시 | 업무와 동시에 관찰하고 지시함 |
+| 업무 인식 | intern이 수행하는 실제 업무를 알고 있음 |
+| 도움 | 바로 도움과 지시를 제공할 수 있음 |
 
-### 최대 네 intern의 한정된 경로
+**If/then:** 원래 preceptor가 떠난다 → 적격 대체 감독자가 실제 업무를 알고 관찰·지시할 수 있는가? → 그렇다면 실제 감독이 이어지도록 배치한 뒤 계속합니다. 전화로 연락만 가능한 사람이나 CPhT의 현장 지도만 남는다면 일반 현장 조제지원의 pharmacist 직접 감독을 대체하지 못합니다. 정식 인수 계약이나 별도 서명을 법정 필수 요건으로 새로 추가한 것은 아닙니다.
 
-현재 policy는 pharmacy 밖에서 Rx filling/dispensing나 오류가 환자 안전에 해를 줄 수 있는 업무를 하지 않는 등 명시된 조건을 만족하는 경우 최대 네 intern을 직접 감독하는 경로를 설명한다. 
+**사례:** 대체자도 registered pharmacist preceptor이고 현장에 있지만 intern의 현재 업무를 모르고 관찰·지시하지 않고 있습니다. 대체자가 실제 업무를 파악하고 직접 감독을 맡도록 한 뒤 일을 계속합니다. 같은 건물에 있다는 이유만으로 자동 인수된 것으로 취급하지 않습니다.
 
-Exclusively immunization clinics를 수행하는 경우에도 최대 네 intern의 별도 경로가 있다. 이 문구를 일반 retail dispensing의 intern 제한이 네 명으로 일괄 변경됐다고 요약하지 않는다. 
+**반례:** preceptor가 전화로 대기하고 technician이 intern의 조제 업무를 지시합니다. 별도로 허가된 remote-processing 사례가 아닌 ordinary on-site preparation을 이러한 배치로 계속할 수 있다고 보지 않습니다.
 
-Patient/practitioner consultations, recommendations 또는 안전에 영향을 줄 수 있는 활동에 intern이 참여할 때 preceptor는 policy가 정한 방식으로 actively present해야 한다. 해당 문구에는 virtual/in-person이 있지만, 이를 모든 pharmacy on-site supervision의 일반적인 virtual 대체로 확대하지 않는다. 
+### 두 명 규정과 네 명 정책은 구분한다
 
-Intern의 remote processing는 Policy 2021-02에 따른 별도 경로이다. 원격 처방처리 허용과 technician-only on-site dispensing 허용은 다른 문제이다.
+8.01(16)은 한 registered preceptor가 동시에 직접 감독하는 intern을 두 명까지로 정합니다. Policy 2026-02 II.A는 명시된 non-pharmacy/non-filling·환자안전 조건의 경로, II.B는 exclusively immunization clinics의 최대 네 intern 경로를 기술합니다. 정책이 이 규정 문구를 직접 인용하고 있다는 점도 남겨 둡니다.
+
+**OPEN — 적용 관계:** 이 세션에서 공식 두 본문의 추출문을 읽었으나, 2명 규정과 한정 4명 정책의 적용 관계를 확정하는 별도 공식 설명은 확보하지 못했습니다. 정책 무효, 규정 폐지 또는 모든 clinic의 개별 waiver 의무로 단정하지 않습니다. 네 명 경로를 확정 정답으로 새로 가르치는 PER20 대표는 보류하고 원문·정답 이력은 보존합니다. 일반 retail filling의 최대 인원이 모든 setting에서 네 명으로 바뀌었다고 외우지 않습니다.
+
+### Virtual presence와 remote processing
+
+Policy II.C는 상담·추천 또는 오류가 환자안전에 영향을 줄 업무에서 actively present(either virtually or in person)라고 기술합니다. 이 문구를 II의 일반 on-premises direct-supervision 정의 전체를 없애는 것으로 읽지 않습니다. II.D의 remote processing은 Policy 2021-02에 따른 별도 경로입니다. 이번 unit은 그 원격 모델의 모든 요건을 재검증하지 않았습니다.
+
+**연결:** [MA-RW-0065](../practice-expansion/#MA-RW-0065). 2026-10-29 작성자 검토이며 독립 감사가 아닙니다. 공식 URL 전문 추출문을 사용했으며 origin PDF binary·캐시 최신성은 인증하지 않았습니다.
+
 
 
 근거:
@@ -731,30 +745,43 @@ Intern의 remote processing는 Policy 2021-02에 따른 별도 경로이다. 원
 
 ## Dedicated training personnel
 
-### Trainer의 제외 조건
+### 먼저 두 사람의 역할과 면허를 확인한다
 
-Licensed support staff를 훈련시키는 dedicated trainer는 trainee를 직접 감독하고, dedicated pharmacy trainer badge를 착용하며, trainer/trainee 관계 밖에서 pharmacist를 독립적으로 professional support하지 않는 조건에서 ratio count에서 제외될 수 있다. 
+Policy 2026-02 III는 licensed support staff를 가르치는 dedicated training 관계를 다룹니다. PTT도 약국에서 training/work 전에 Board-issued PTT license가 필요합니다. 여기서 'Trainee'라는 교육 배치 명칭과 법정 PTT 면허 종류는 같은 뜻이 아닙니다. 이미 certified technician 또는 intern인 직원도 교육 배치에서는 trainee일 수 있습니다.
 
-Trainer가 동시에 일반 dispensing support 업무를 한다면 그 활동을 한 상태에서 무조건 ratio 제외라고 처리하지 않는다.
+| 구분 | 실제 행동·표시 | ratio 처리 |
+|---|---|---|
+| Dedicated trainer | trainee를 항상 직접 감독, dedicated pharmacy trainer badge, 관계 밖 독립적인 professional support 없음 | 나머지 지정 요건까지 충족하면 제외 가능 |
+| Dedicated trainee | trainer와 독립적으로 행동하지 않음, trainee badge | 실제 자격이 CPhT/intern이어도 이 교육 배치에서는 ordinary pharmacy technician으로 계산 |
+| Exclusive computer modules | 특정 시간에 모듈만 수행하고 pharmacist를 전문적으로 지원하지 않음 | 그 조건 동안 supervision 불필요·ratio 제외 |
 
-### Trainee의 계산 방식
+Trainer의 제외가 trainee의 감독 해제를 뜻하지 않습니다. 반대로 certification 자체가 소멸되는 것도 아닙니다. 교육 배치에 적용되는 계산 category와 개인의 다른 법적 자격을 구분합니다(III.A.1–3).
 
-Dedicated training을 받는 사람은 trainer와 독립적으로 행동할 수 없고 trainee badge가 필요하다. Ratio에서는 그 사람이 certified technician 또는 intern license를 갖고 있더라도 ordinary pharmacy technician로 계산하도록 policy가 명시한다. 
+### 사전 일정표: '교육 시작 전'과 '교육 당일 전'은 다르다
 
-이는 개인의 모든 법적 자격이 없어졌다는 뜻이 아니라, 이 dedicated-training staffing 계산에서의 category이다. Qualified intern/CPhT 자리로 중복 계산하지 않는다.
+III.B.1–5는 written policies/procedures, 특정 날짜·시간, Trainer/Trainee designation, Board 요청 시 schedule 제공을 요구합니다. Trainer/Trainee designation은 **교육일 당일 이전**에 해야 합니다. Computer modules에는 Trainee와 Computer Training 및 해당 시간을 schedule에 표시합니다.
 
-### Computer-only training
+**사례:** 화요일 오전 10시에 처음 Trainer/Trainee를 지정하고 정오부터 실제 처방 준비 교육을 합니다. 시작 두 시간 전에 적었더라도 '교육일 이전' 지정을 충족하지 못합니다. 필요한 면허·badge가 있어도 그 자체가 누락된 사전 지정을 대체하지 않습니다. 당일 trainer를 이 전담교육 경로로 제외하지 않고, 다음 날 적용할 배치는 그 날 이전에 역할·시간을 정합니다.
 
-정해진 시간 동안 exclusively computer-based training modules만 하고 pharmacist를 professional support하는 업무에 참여하지 않는 trainee는 supervision이 필요하지 않고 ratio에도 포함하지 않는 경로가 있다. 단순히 컴퓨터를 사용해 prescription data를 입력하는 일은 computer-only training과 다르다. 
+**반례:** 실제 trainer가 따로 처방을 입력·준비하며 pharmacist를 독립적으로 지원하고 있습니다. Badge와 schedule만으로 그 실제 활동까지 ratio 밖으로 둘 수 없습니다. 반대로 실제 업무가 prescription filling과 완전히 무관한 직원의 Policy I.C 제외는 별도로 판단해야 하므로, '사전 designation 누락이면 모든 종류의 제외가 금지'라는 규칙으로 확대하지 않습니다.
 
-### Written schedule와 정책
+### Computer-only 교육과 약국 영업·접근을 분리한다
 
-약국은 dedicated training personnel 사용에 관한 written policies/procedures를 갖추고, 특정 날짜·시간과 trainer/trainee designation을 training 당일 전에 schedule에 표시해야 한다. Board 요청 시 그 schedule을 제공한다. Computer training도 역할과 지정 시간을 schedule에 명시한다.
+Simulation module만 하는 지정 시간과 실제 환자의 prescription data entry는 다릅니다. 실제 professional support가 섞이면 III.A.3의 exclusive 조건을 다시 평가합니다. 약국이 영업 중이거나 non-pharmacist가 약국에 unrestricted access를 갖는 경우의 pharmacist presence는 247 CMR 9.19(16)(a)로 별도 확인합니다. Computer 교육 예외가 약국을 무약사 상태로 운영할 허가는 아닙니다.
+
+**좁힌 사례:** 영업 전, 전날 지정된 computer-training 시간에 유효한 PTT license 소지자가 약국 밖 직원실에서 simulation modules만 합니다. 처방부는 잠겨 있고 별도로 alarm이 켜져 있으며 trainee는 약·환자정보·실제 처방·처방부에 접근할 수 없습니다. 이 조건에서는 supervisor가 없다는 이유만으로 해당 교육을 중단할 필요는 없습니다. 약국을 열거나 실제 약품 업무를 시작하면 이 결론을 그대로 옮기지 않습니다(Policy III.A.3, III.B.5; 9.19(14),(16)(a); 9.21(3),(5)).
+
+**판단 순서:** 면허 → 실제 교육/업무 → 전담 관계와 badge → 전날까지 역할 지정·구체적 시간 → 해당 ratio category → 약국 영업·약품 접근 조건을 확인합니다.
+
+**연결:** [MA-RW-0067](../practice-expansion/#MA-RW-0067) · [MA-RW-0068](../practice-expansion/#MA-RW-0068). 2026-10-29 작성자 검토이며 독립 감사가 아닙니다. 공식 URL 전문 추출문 대조로 한정하며 binary·캐시 최신성은 인증하지 않았습니다.
+
 
 
 근거:
 
 - [Board Policy 2026-02, Ratios, Supervision, and Dedicated Training Personnel, §§I–III. Adopted 9/3/2026; supersedes Policy 2024-03.](https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download)
+
+- [247 CMR 9, Professional Practice Standards, 12/6/2024 게시본. 특히 9.01,9.02,9.04,9.10–9.25.](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
 
 
 ## Unlicensed personnel와 prescription area

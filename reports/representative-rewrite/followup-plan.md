@@ -45,3 +45,7 @@
 ## Unit 3A 후속 (2026-10-29)
 
 PER15–PER18: 3개 새 ID 재작성, PER17 대표 1개 보류, 원문 변형 16개 개별 작성자 검토. 다음은 PER19–PER22 (`MA-EXP-0139`, `0143`, `0147`, `0151`)와 `w1-b-9`, `w1-b-10`. MOR로 건너뛰지 않는다. 최신 전체 범위·검증 제한은 `docs/MPJE_QUALITY_CHECKPOINT.md`와 full-corpus-review 기록을 따른다.
+
+## Unit 3B source 준비 (2026-10-29)
+
+PER19–PER22 원문16개 및 w1-b-9/w1-b-10 source 수정은 현재 feature branch 검증 대상이다. 실제 생성·CI가 통과하기 전 누적 수를 완료로 승격하지 않는다. Unit3B 검증 후 MOR07–MOR10과 DISC01–DISC08을 작은 단위로 진행하되,PER20/CE/PLUS source conflict는 별도 미해결로 남긴다. 전체 corpus와 통합노트의 끝까지 검토하는 목표는 유지한다.

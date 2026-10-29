@@ -39,12 +39,15 @@ def build():
     paths = ['practice_expansion/2026-10-23/candidates/questions.json'] + [a['path'] for a in config['additional_banks']]
     baseline = read('reports/full-corpus-review/baseline-inventory.json')
     assert baseline['question_count'] == len(baseline['question_record_hashes']) == 2328
-    reviews = {r['question_id']: r for r in read('reports/full-corpus-review/unit3a-author-review.json')['records']}
+    review_records = [r for name in ['unit3a-author-review.json','unit3b-author-review.json'] for r in read('reports/full-corpus-review/'+name)['records']]
+    assert len({r['question_id'] for r in review_records}) == len(review_records)
+    reviews = {r['question_id']:r for r in review_records}
     selection = read('practice_expansion/2026-10-28-representative/selection.json')
     replacements = {x['legacy_question_id']: x['replacement_question_id'] for x in selection['replacements']}
     holds = {x['legacy_question_id'] for x in selection['holds']}
-    author = read('practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json')
-    new_author = {q['question_id']: q for q in author['questions']}
+    authoring = [read('practice_expansion/2026-10-28-representative/authoring/'+name) for name in ['05_personnel_ratios.json','06_personnel_training.json']]
+    new_author = {q['question_id']:q for source in authoring for q in source['questions']}
+    unit3b_ids = {q['question_id'] for q in authoring[-1]['questions']}
     result = []
     all_questions = []
     for collection in paths:
@@ -81,12 +84,12 @@ def build():
                 a = new_author[qid]
                 row.update(disposition='KEEP', legal_review_status='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT',
                            decision_signature=a['decision_signature'], checked_at='2026-10-29',
-                           reviewer_provenance=dict(author_session='20261029-unit3a-root', peer='NOT_RUN_THIS_SESSION', independent='NOT_RUN'),
+                           reviewer_provenance=dict(author_session='20261029-unit3b-root' if qid in unit3b_ids else '20261029-unit3a-root', peer='NOT_RUN_THIS_SESSION', independent='NOT_RUN'),
                            implementation_status='NEW_DISTINCT_ID', blocker='Independent audit not performed.',
                            next_action='Review frozen current hash independently before canonical release.')
                 row['choice_by_choice_findings'] = {c['id']: dict(finding_ko=c['rationale_ko'], authorities=c['authority_refs']) for c in a['choices']}
                 row['authority_clauses'] = [r for c in a['choices'] for r in c['authority_refs']]
-            row['deployment_status'] = 'BRANCH_CANDIDATE_NOT_DEPLOYED' if qid in new_author else 'BASELINE_PUBLICATION_NOT_RECHECKED_THIS_SESSION'
+            row['deployment_status'] = 'BRANCH_CANDIDATE_NOT_DEPLOYED' if qid in unit3b_ids else 'UNIT3A_BASELINE_DEPLOYED_SEE_DEPLOYMENT_EVENT'
             row['publication_status'] = ('PRACTICE_CONFIG_DEFAULT' if qid in selection['recommended_ids'] else 'PRACTICE_CONFIG_ARCHIVE')
             result.append(row)
     ids = [r['question_id'] for r in result]
@@ -94,7 +97,7 @@ def build():
     assert set(baseline['question_record_hashes']) <= set(ids)
     assert set(reviews) <= set(ids)
     notes = read('notes/guide.json')
-    claims = read('reports/full-corpus-review/unit3a-claims.json')['claims']
+    claims = [c for name in ['unit3a-claims.json','unit3b-claims.json'] for c in read('reports/full-corpus-review/'+name)['claims']]
     from notes_revision import load_notes
     effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
     for claim in claims:
@@ -102,7 +105,7 @@ def build():
     units = [dict(unit_id=u['id'], chapter_id=c['id'], baseline_body_sha256=u['body_sha256'],
                   inventory_status='INVENTORIED_NOT_CLAIM_CENSUS',
                   reviewed_claim_ids=[x['claim_id'] for x in claims if x['unit_id'] == u['id']],
-                  legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id']=='w1-b-8' else 'UNREVIEWED',
+                  legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id'] in {'w1-b-8','w1-b-9'} else ('PARTIAL_AUTHOR_REVIEW_NOT_CENSUS' if u['id']=='w1-b-10' else 'UNREVIEWED'),
                   atomic_claim_census_complete=False) for c in notes['chapters'] for u in c['units']]
     canonical = []
     for path in sorted((ROOT/'data/questions').glob('*.json')):
@@ -110,13 +113,13 @@ def build():
         canonical.append(dict(question_id=q['question_id'], path=str(path.relative_to(ROOT)), content_sha256=record_hash(q),
                               inventory_status='INVENTORIED_NOT_REAUDITED', existing_lifecycle_status=q.get('lifecycle_status'),
                               existing_audit_evidence_preserved=True))
-    coverage = dict(outline='MPJE-MA-PRE2027', mapping_status='INVENTORY_PLUS_ONE_PARTIAL_UNIT_NOT_FULL_DECISION_PATH_COVERAGE',
+    coverage = dict(outline='MPJE-MA-PRE2027', mapping_status='INVENTORY_PLUS_THREE_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE',
                     units=units, reviewed_claims=claims, inferred_family_passes=0)
     progress = dict(baseline_commit=baseline['base_commit'], baseline_questions=2328, new_questions=len(new_author),
                     current_questions=len(result), original_2176_inventory=sum(r['question_id'].startswith(('MA-EXP-', 'MA-CASE-')) for r in result),
                     prior_MA_REV_inventory=96, current_MA_RW_inventory=len(read(paths[-1])['questions']),
                     representative_355_implementation=selection['stats'],
-                    question_ids_read_this_session=len(reviews)+len(new_author),
+                    question_ids_read_this_session=len(reviews)+len(new_author), review_count_scope='CUMULATIVE_UNIT3A_AND_UNIT3B_NOT_ONE_SESSION', unit3b_question_ids_reviewed=22,
                     legal_review_counts=dict(Counter(r['legal_review_status'] for r in result)),
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
@@ -134,7 +137,7 @@ def build():
                       semantic_duplicate_verdict='NOT_INFERRED_FROM_PATTERNS')
     def pretty(x): return json.dumps(x, ensure_ascii=False, indent=2)+'\n'
     def jsonl(xs): return ''.join(json.dumps(x, ensure_ascii=False, separators=(',', ':'))+'\n' for x in xs)
-    return {OUT/'unit3a-pattern-comparison.json': pretty(comparison), OUT/'question-ledger.jsonl': jsonl(result), OUT/'notes-unit-ledger.jsonl': jsonl(units),
+    return {OUT/'pattern-comparison.json': pretty(comparison), OUT/'question-ledger.jsonl': jsonl(result), OUT/'notes-unit-ledger.jsonl': jsonl(units),
             OUT/'notes-claim-ledger.jsonl': jsonl(claims), OUT/'canonical-inventory.json': pretty(canonical),
             OUT/'coverage-matrix.json': pretty(coverage), OUT/'progress.json': pretty(progress)}
 

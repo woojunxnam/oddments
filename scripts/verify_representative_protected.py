@@ -181,7 +181,23 @@ def migrated_baseline_bytes(root, relative, current):
     require(row['baseline_copy'] == 'revisions/baselines/complete-notes-2026-10-23.1.md', 'Unexpected baseline copy')
     baseline = safe_file(root, row['baseline_copy']).read_bytes()
     require(sha256(baseline) == row['old_sha256'], 'Archived notes baseline changed')
-    require(sha256(current) == row['new_sha256'], 'Generated notes migration hash changed')
+    followup_path=root/'revisions/notes/protected-migration-unit3b.json'
+    if followup_path.exists():
+        followup=json.loads(followup_path.read_bytes())
+        require(followup['schema_version']=='notes-protected-migration/1', 'Unknown followup migration schema')
+        require(followup['baseline_commit']=='580368073eba947d1484694fef078b413f24c85f', 'Unexpected followup baseline')
+        require(followup['previous_migration_path']=='revisions/notes/protected-migration.json', 'Unexpected previous migration path')
+        require(followup['previous_migration_sha256']==sha256(migration_path.read_bytes()), 'Prior migration changed')
+        require(followup['revision_path']=='revisions/notes/2026-10-29-personnel-supervision-training.json', 'Unexpected followup source')
+        require(sha256(safe_file(root,followup['revision_path']).read_bytes())==followup['revision_sha256'], 'Stale followup revision hash')
+        require([x['path'] for x in followup['files']]==['site/notes/complete-notes.md'], 'Followup migration expands protected scope')
+        new_row=followup['files'][0]
+        require(new_row['baseline_copy']=='revisions/baselines/complete-notes-unit3a.md', 'Unexpected followup baseline copy')
+        previous=safe_file(root,new_row['baseline_copy']).read_bytes()
+        require(sha256(previous)==row['new_sha256']==new_row['old_sha256'], 'Prior rendered notes baseline changed')
+        require(sha256(current)==new_row['new_sha256'], 'Generated notes migration hash changed')
+    else:
+        require(sha256(current) == row['new_sha256'], 'Generated notes migration hash changed')
     return baseline
 
 
