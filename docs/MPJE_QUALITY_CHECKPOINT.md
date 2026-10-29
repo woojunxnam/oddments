@@ -49,6 +49,8 @@ PER19–PER22 원문16개를 각각 읽고 선택지별 작성자 기록을 남�
 
 w1-b-9/w1-b-10의 별도 versioned revision을 작성했고, 기존 w1-b-8 revision source와 이전59개 질문 객체는 보존한다. 실제 직접 감독,2명/4명 관계 OPEN,trainer/trainee category,교육일 전 designation,computer-only와 영업·보안의 구분을 설명한다. LAW-012/RF-049와 장 highlights도 같은 revision에서 합성한다. 첫 migration manifest와 원본 export는 유지하며,정확히 같은 generated export 한 경로의 두 번째 migration만 허용한다.
 
-생성된 결과가 검증되기 전 예상 누적62 재작성/3통합/9보류/281미반영 및2334 archive를 완료 실적으로 보고하지 않는다. Canonical 독립 감사와 같은 팀 peer는 이번에도 NOT_RUN. 확인할 새 note claims10개(그중1개 적용 관계 OPEN)는 전체 claim census가 아니다.
+생성된 결과가 검증되기 전 예상 누적62 재작성/3통합/10보류/280미반영 및2334 archive를 완료 실적으로 보고하지 않는다. Canonical 독립 감사와 같은 팀 peer는 이번에도 NOT_RUN. 확인할 새 note claims10개(그중1개 적용 관계 OPEN)는 전체 claim census가 아니다.
 
 다음: Unit3B의 생성 artifacts와 테스트·CI·공개 origin 검증을 먼저 마친다. PER20 source relationship,PLUS 후보 및CE email/Form 충돌을 유지하고 그다음 MOR07–10/DISC01–08로 넘어간다. 전체 2334 ID와306절의 미검토가0개가 될 때까지 전체 완료라고 하지 않는다. 추가 사례·보류는 분모에서 삭제하지 않는다.
+
+Unit3B worker의 첫 생성물은 294 tests를 통과했으나, 그 뒤 확보한 PLUS0109/0812/0814 원문 전체를 읽고 기록을 추가했다. 0814는 기본 대표 추가 보류,0812는 archive 주의 대상으로 연결한다. key 오류를 확정하지 않는다. 이 추가 변경 후의 최종 head CI는 별도 확인한다. 전체 PLUS를 읽었다는 뜻이 아니다.

@@ -1,5 +1,5 @@
 {
-  "scope": "Unit 3B: re-read PER19-PER22 (16 IDs); three distinct replacements and one representative hold. No recovered peer/test claims inherited. PLUS source transport failed; PLUS candidate review is deferred.",
+  "scope": "Unit3B PER19-PER22 (16 original IDs), three individually read PLUS followups and three replacements. One assigned representative hold plus separate default-hold record for PLUS0814; no prior peer/test claim inherited.",
   "edition": "2026-10-29.representative4",
   "authored_at": "2026-10-29",
   "base_commit": "580368073eba947d1484694fef078b413f24c85f",
@@ -271,6 +271,16 @@
           "question_id": "MA-Q-0413",
           "relationship": "ADVANCE_TRAINING_DESIGNATION_NOT_CASHIER_ROLE_RECLASSIFICATION",
           "material_difference": "Canonical0413은 cashier가 실제 prescription data entry를 시작할 때 count가 달라지는 사례다. 여기서는 actual dedicated role은 유지되지만 특정 사전 designation 요건이 없어 제외하지 못한다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "MISSING_ADVANCE_DESIGNATION_CHANGES_EXCLUSION_ELIGIBILITY",
+          "material_difference": "PLUS-SC13은 모든 designation이 compliant하다는 전제로 counted personnel 숫자를 묻는다. 새 사례는 그 전제 자체가 충족되지 않아 dedicated trainer 제외를 당일 적용할 수 없다는 판단이다. 같은 family의 count 숫자만 바꾼 변형이 아니다."
+        },
+        {
+          "question_id": "MA-CASE-0812",
+          "relationship": "SAME_ADVANCE_DESIGNATION_RULE_WITH_A_SAME_DAY_BOUNDARY",
+          "material_difference": "PLUS 0812/0817은 다른 인력 규칙과 섞인 work-queue에서 교육일 이전의 적법한 지정 문장을 고르게 한다. 0413은 shift 뒤의 retrospective label을 오답으로 쓴다. 새 사례는 소급 입력이 아닌 실제 세션 두 시간 전의 당일 지정이 여전히 부족한지를 판단하고, 당일 count와 다음 날 요건을 구분한다. 같은 하위 규칙의 재등장은 명시하며 독립된 새 법규로 세지 않는다."
         }
       ],
       "competency_codes": [
@@ -379,6 +389,11 @@
           "question_id": "MA-Q-0413",
           "relationship": "PERMITTED_UNSUPERVISED_EDUCATION_NOT_LOSS_OF_A_CASHIER_COUNT_EXCLUSION",
           "material_difference": "Canonical0413은 실제 prescription data entry를 시작한 cashier를 staffing ratio에 다시 포함하는 문제다. 이 사례는 실제 조제 지원을 하지 않고 있기 때문에 감독자가 부재해도 교육은 진행할 수 있다는 허용 분기다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "SUPERVISION_AVAILABILITY_IS_THE_DECISIVE_NEW_CONDITION",
+          "material_difference": "PLUS-SC13 변형은 근무팀에서 computer trainee를 몇 명으로 셀지 묻는다. 이 사례는 count 숫자를 묻지 않으며, pharmacist와 trainer가 실제로 없는 지정 시간에도 교육을 진행할 수 있는지가 핵심이다. Closed and secured prescription department 조건이 pharmacist-presence 규정의 별도 경계도 만족시킨다."
         }
       ],
       "competency_codes": [
@@ -416,9 +431,13 @@
         "MA-EXP-0141",
         "MA-EXP-0142",
         "MA-EXP-0143",
-        "MA-EXP-0144"
+        "MA-EXP-0144",
+        "MA-EXP-0137",
+        "MA-EXP-0138",
+        "MA-EXP-0139",
+        "MA-EXP-0140"
       ],
-      "affected_archive_notice_scope": "Only these four PER20 IDs individually read in this continuation. PLUS candidates and indirect PER19 mentions are tracked separately without an inherited full review claim.",
+      "affected_archive_notice_scope": "Four PER20 records directly teach the four-intern path. Four PER19 records mention it indirectly in core/rationale; their ordinary direct-supervision keys are not adjudicated wrong and 0139 has a separate new-ID replacement, not an additional hold disposition.",
       "source_review_record": "reports/full-corpus-review/unit3b-author-review.json",
       "next_action": "Resolve authoritative application relationship or maintain hold; individually review queued PLUS/canonical impacts.",
       "independent_review_claim": false
@@ -439,7 +458,7 @@
   "source_limitations": [
     "This is author review, not canonical independent audit. Retrieved official URL texts may be cached; origin-PDF binary identity and cache freshness are not certified.",
     "Policy 2026-02 expressly describes limited four-intern pathways alongside the two-intern regulation. Their application relationship remains unresolved; no policy invalidity or universal individual-waiver requirement is asserted.",
-    "Transport errors prevented complete PLUS bank retrieval through the connector. Recovered PLUS comparisons/review claims are not inherited; those candidates remain individually pending.",
+    "Large PLUS blob transport failed. The exact three records 0109/0812/0814 were subsequently retrieved by the pinned worker and individually read. Other PLUS recovered comparisons/review claims are not inherited.",
     "Current Scope 2020-15 extraction footer is revised 2025-11-06, while baseline notes reference later changes elsewhere. Only section I vendor/access language was read for original PER22 findings; no whole-current-scope certification is claimed.",
     "Replacement comparisons are targeted editorial reads of the listed MA-REV/MA-RW/canonical cases. Low lexical similarity is not a global semantic distinctness guarantee."
   ],

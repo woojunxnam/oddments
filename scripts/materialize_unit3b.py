@@ -48,11 +48,13 @@ def write(path,data):
 def main():
     target='practice_expansion/2026-10-28-representative/questions.json'
     before=json.loads((ROOT/target).read_text())
-    old={q['question_id']:record_hash(q) for q in before['questions']}
+    preservation=ROOT/'reports/full-corpus-review/unit3b-preservation.json'
+    old=(json.loads(preservation.read_text())['previous_question_record_hashes'] if preservation.exists() else {q['question_id']:record_hash(q) for q in before['questions']})
     if len(old)!=59:raise ValueError('Materialization requires exactly deployed prior59')
     prior_migration='revisions/notes/protected-migration.json'
     first=json.loads((ROOT/prior_migration).read_text())
-    prior_export=(ROOT/'site/notes/complete-notes.md').read_bytes()
+    saved=ROOT/'revisions/baselines/complete-notes-unit3a.md'
+    prior_export=(saved.read_bytes() if saved.exists() else (ROOT/'site/notes/complete-notes.md').read_bytes())
     if hashlib.sha256(prior_export).hexdigest()!=first['files'][0]['new_sha256']:
         raise ValueError('Prior published export differs from Unit3A migration')
     # Check immutable original bytes before making the one allowed generated migration.

@@ -22,9 +22,9 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
     assert len(rows) == len({r['question_id'] for r in rows}) == 2334
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 38
+    assert sum(r['checked_at'] is not None for r in rows) == 41
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) == 6
-    assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 8
+    assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 10
     assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
     assert not any(r['legal_review_status']=='RELEASED' for r in rows)
 
@@ -126,7 +126,7 @@ def test_visible_quality_status_and_previous59_snapshot_are_current():
     from build_quality_status import output
     path, rendered=output()
     assert path.read_text()==rendered
-    assert '2,334' in rendered and '439' in rendered
+    assert '2,334' in rendered and '438' in rendered
     snapshot=json.loads((ROOT/'reports/full-corpus-review/unit3b-preservation.json').read_text())
     from build_full_corpus_review import record_hash
     bank=json.loads((ROOT/'practice_expansion/2026-10-28-representative/questions.json').read_text())

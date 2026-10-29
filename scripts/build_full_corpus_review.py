@@ -119,7 +119,7 @@ def build():
                     current_questions=len(result), original_2176_inventory=sum(r['question_id'].startswith(('MA-EXP-', 'MA-CASE-')) for r in result),
                     prior_MA_REV_inventory=96, current_MA_RW_inventory=len(read(paths[-1])['questions']),
                     representative_355_implementation=selection['stats'],
-                    question_ids_read_this_session=len(reviews)+len(new_author), review_count_scope='CUMULATIVE_UNIT3A_AND_UNIT3B_NOT_ONE_SESSION', unit3b_question_ids_reviewed=19,
+                    question_ids_read_this_session=len(reviews)+len(new_author), review_count_scope='CUMULATIVE_UNIT3A_AND_UNIT3B_NOT_ONE_SESSION', unit3b_question_ids_reviewed=22,
                     legal_review_counts=dict(Counter(r['legal_review_status'] for r in result)),
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
