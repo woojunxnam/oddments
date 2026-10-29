@@ -49,11 +49,11 @@ def make_outputs() -> dict[Path,str]:
     book=['<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">',
       '<title>MA MPJE 통합 노트 · 전체 읽기</title><link rel="stylesheet" href="notes.css"><link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script></head><body class="book-mode">',
       '<header class="book-head"><a href="./">← 학습 화면</a><h1>Massachusetts MPJE 통합 노트</h1><p>한국어 해설 · English legal terms · 주제별 상세판</p>',
-      '<p class="notice">기본 편집일 2026-10-23 · w1-b-8 개정 2026-10-29 (작성자 확인, OPEN 포함). 원문 대조의 기준일은 절별로 다릅니다. 독립 전수 법률감사·Board 승인·합격 보장이 아닙니다.</p>',
+      '<p class="notice">기본 편집일 2026-10-23 · w1-b-8–10 개정 2026-10-29 (작성자 확인, OPEN 포함). 원문 대조의 기준일은 절별로 다릅니다. 독립 전수 법률감사·Board 승인·합격 보장이 아닙니다.</p>',
       '<p>이 페이지는 JavaScript 없이 전체 본문을 읽고 브라우저의 인쇄 기능으로 저장할 수 있습니다. 출처는 각 절 끝에서 확인할 수 있습니다.</p><nav aria-label="전체 목차"><ol>']
     for ch in payload['chapters']:book.append(f'<li><a href="#chapter-{ch["id"]}">{html.escape(ch["title"])}</a></li>')
     book.append('</ol></nav></header><main class="book-main">')
-    markdown=['# Massachusetts MPJE 통합 노트\n','기본 편집일: 2026-10-23. personnel w1-b-8 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.\n']
+    markdown=['# Massachusetts MPJE 통합 노트\n','기본 편집일: 2026-10-23. personnel w1-b-8–10 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.\n']
     for ch,original_ch in zip(payload['chapters'],data['chapters']):
         book.append(f'<article class="book-chapter" id="chapter-{ch["id"]}"><p class="eyebrow">{html.escape(ch["part"])}</p><h1>{html.escape(ch["title"])}</h1><p class="chapter-lede">{html.escape(ch["summary"])}</p>')
         markdown.append(f'\n# {ch["title"]}\n\n{ch["summary"]}\n')

@@ -39,3 +39,16 @@ PR #171은 `5bfdeaa8d87d8c18d73c773bcfdd11d5824ca3db`로 main에 병합했고 Pa
 직접 HTTPS로 공개 practice manifest2331과 노트 build/content.js/book.html/study-data.js/refresh-data.js bytes도 대조했다. 모든 확인한 노트 파일이 로컬 배포본과 일치했다. 독립 법규 감사 및 실제 Safari/device 검증은 미완료다. 수치는59/3/8/285 및2331로 유지한다.
 
 Unit3B를 시작해 PER19 원문4개와0065 복구 원고를 읽고 공식 Policy/247 CMR8 전문 추출문을 재열람했다. 정식 인수 계약이 필요한 것처럼 읽힐 수 있는 조건을 실제 awareness/observation/direction의 부재로 좁힌 미공개 초안을 `reports/full-corpus-review/unit3b-working/MA-RW-0065-draft.json`에 저장했다. 노트 판본,의미중복 대조,예외 검증 및 통합 테스트가 남아 완료/배포 수에 더하지 않는다. 다음 대상은 계속PER19–PER22와 w1-b-9/w1-b-10이며 MOR로 건너뛰지 않는다.
+
+
+## Unit 3B source checkpoint — 2026-10-29
+
+시작 main `580368073eba947d1484694fef078b413f24c85f` (PR #172 기록 병합). 로컬 exec-server 실패로 이번 변경의 생성·테스트는 feature branch GitHub Actions에서 수행한다. 아직 실행하지 않은 검사와 배포는 PASS로 승계하지 않는다.
+
+PER19–PER22 원문16개를 각각 읽고 선택지별 작성자 기록을 남겼다. 복구 원고0065/0067/0068은 이번 공식 추출문 재열람과 사실조건 보완을 거친 source 후보이며,0066은 생성하지 않고 PER20 대표0143을 보류한다. PLUS 대용량 blob을 읽으려는 연결이 두 번 실패했으므로 PLUS 비교·review 주장은 승계하지 않는다. PLUS0814 등의 추가 default HOLD 여부는 원문을 읽은 뒤 별도 판단해야 한다.
+
+w1-b-9/w1-b-10의 별도 versioned revision을 작성했고, 기존 w1-b-8 revision source와 이전59개 질문 객체는 보존한다. 실제 직접 감독,2명/4명 관계 OPEN,trainer/trainee category,교육일 전 designation,computer-only와 영업·보안의 구분을 설명한다. LAW-012/RF-049와 장 highlights도 같은 revision에서 합성한다. 첫 migration manifest와 원본 export는 유지하며,정확히 같은 generated export 한 경로의 두 번째 migration만 허용한다.
+
+생성된 결과가 검증되기 전 예상 누적62 재작성/3통합/9보류/281미반영 및2334 archive를 완료 실적으로 보고하지 않는다. Canonical 독립 감사와 같은 팀 peer는 이번에도 NOT_RUN. 확인할 새 note claims10개(그중1개 적용 관계 OPEN)는 전체 claim census가 아니다.
+
+다음: Unit3B의 생성 artifacts와 테스트·CI·공개 origin 검증을 먼저 마친다. PER20 source relationship,PLUS 후보 및CE email/Form 충돌을 유지하고 그다음 MOR07–10/DISC01–08로 넘어간다. 전체 2334 ID와306절의 미검토가0개가 될 때까지 전체 완료라고 하지 않는다. 추가 사례·보류는 분모에서 삭제하지 않는다.

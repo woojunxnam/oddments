@@ -22,7 +22,7 @@ REPORTS = ROOT / 'reports/representative-rewrite'
 ORIGINAL_SELECTION = ROOT / 'practice_expansion/2026-10-27-quality/selection.json'
 COLLECTION = 'representative-20261028'
 INITIAL_EDITION = '2026-10-28.representative1'
-EDITION = '2026-10-29.representative3'
+EDITION = '2026-10-29.representative4'
 REVIEW_DATE = '2026-10-29'
 PUBLISHED_UNIT1_COMMIT = 'f112d3578664aa51785ba4596547e8d722fad36c'
 BASE_COMMIT = 'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36'
@@ -241,7 +241,7 @@ def build():
         )
         if a.get('notes_revision'):
             from notes_revision import load_notes
-            item['notes_revision'] = load_notes(ROOT)['revision_provenance']
+            item['notes_revision'] = load_notes(ROOT, revision_id=a['notes_revision'])['revision_provenance']
             require(item['notes_revision']['id'] == a['notes_revision'], qid + ': stale notes revision')
         item['content_sha256'] = content_hash(item)
         if qid in {'MA-RW-0045', 'MA-RW-0046', 'MA-RW-0047'}:
