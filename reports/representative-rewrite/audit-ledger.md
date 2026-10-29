@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 62 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 9 |
-| NOT_YET_IMPLEMENTED | 281 |
+| HOLD_FROM_DEFAULT | 10 |
+| NOT_YET_IMPLEMENTED | 280 |
 
-기본 목록 439개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 62개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 62개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류 항목과 관련 변형을 합쳐 원본 29개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류 항목과 관련 변형을 합쳐 원본 35개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -370,7 +370,7 @@
 | MA-CASE-0785 | PLUS-WQ50 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | CQI 기록과 외부 보고가 병행된다는 일반론이 정답이며 defective preparation 회수와 ED harm 정의를 다른 사건으로 섞는다. |
 | MA-CASE-0795 | PLUS-MR01 | HOLD_FOR_LEGAL_REVIEW / P0_LEGAL_SOURCE_CONFLICT | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 정답 D가 Board email을 현재 CE 미충족 통지 방식으로 직접 확정한다. ce-deficiency-source-conflict.json의 Form/email 출처 충돌이 이 문항에도 그대로 적용된다. 다른 네 CE 보기의 타당성과 별개로 SATA 정답 집합을 확정할 수 없다. 현재 보류 이유: CE 미이수 시 Board에 email로 상세 사유를 보내는 것이 현행 정책의 제출 경로라는 선택지와 해설이 있습니다. 기존 노트의 email 안내와 이번 공식 Policy 2021-04의 Mandatory Disclosure Form 문구가 일치하지 않아, MA-EXP-0051과 같은 출처 충돌로 보류합니다. 다른 보기의 정확성까지 부정한 판정은 아닙니다. |
 | MA-CASE-0802 | PLUS-MR02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Certified inventory entry·intern 상담·pharmacist final check·cashier 업무·vendor 출입이 서로 다른 경계를 나열하며 기존 PER 사례와 겹친다. |
-| MA-CASE-0814 | PLUS-MR03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Trainer·trainee 자격 재분류, 1:3 mix, 4 intern clinic, nonfilling 제외를 한 번에 나열한다. 한 팀의 실제 산정 결과가 없다. |
+| MA-CASE-0814 | PLUS-MR03 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Trainer·trainee 자격 재분류, 1:3 mix, 4 intern clinic, nonfilling 제외를 한 번에 나열한다. 한 팀의 실제 산정 결과가 없다. 현재 보류 이유: C 오답 해설이 Policy 2026-02의 exclusively immunization clinic 4-intern 경로를 확정적인 교정 행동으로 가르친다. 247 CMR 8.01(16)과의 적용 관계가 미해결이므로 기본 목록에서 보류한다. B/D/E 정답 자체의 오류를 확정하거나 원문을 수정하는 조치가 아니다. 함께 안내하는 MA-CASE-0812는 B 교정 해설의 접종서비스1:6 경로와 8.06(3)(a)의 관계가 별도로 미해결이다. 두 명제의 적용 관계를 각각 해결해야 한다. |
 | MA-CASE-0826 | PLUS-MR04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 면허 발급·reciprocity·1년 개업·specialty 허가를 같은 employer queue에 모아 독립적인 다섯 참거짓 판단만 요구한다. |
 | MA-CASE-0829 | PLUS-MR05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | MOR의 30시간·handover inventory와 ownership·relocation 규칙이 혼합되며 MA-CASE-0385와 상당한 행동 문구가 반복된다. |
 | MA-CASE-0847 | PLUS-MR07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 다섯 상담 관련 요소 중 certified technician의 임상 상담만 부정하여 네 개를 고르는 구조이다. 액제 장치와 상담 변경은 MA-CASE-0421과 반복된다. |
@@ -405,7 +405,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `3b803cdb240ff9fd2834f12be4e49ed191b3294d5e1bfb936780fb4b72bfcfee` |
-| practice_expansion/2026-10-28-representative/questions.json | `b59a4685897c8d45035de082d40a36f3e29133df5f0a53fb6b66542b68f58ff4` |
+| practice_expansion/2026-10-28-representative/selection.json | `94a3140116d3a797e293eb31f63536fc5e2ddd661149cd6db1f548e7850fdf5a` |
+| practice_expansion/2026-10-28-representative/questions.json | `29e9de873f72e8ea20a5a315bd41f08b0f12ec5597259412c7d6bcbb0ed9c2f3` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

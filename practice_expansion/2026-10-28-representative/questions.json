@@ -21,8 +21,8 @@
     "practice_expansion/2026-10-28-representative/authoring/03_personnel_scope.json": "fd33cae2e34221786e24975362f33c16671b3bd3e540c6c8c9e130ccd715d7a4",
     "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78",
     "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json": "0dafbe57987b928f04791729305ba9e9b5b3e0485d0f446cff08dd6ef40953ec",
-    "practice_expansion/2026-10-28-representative/authoring/06_personnel_training.json": "8d86dbe8cba312e2142eef8d2f9dd3a61c65bfdb287003086d392067b34f87c3",
-    "reports/representative-rewrite/default-holds.json": "299aa39a3b26ea3a0efebdc3e5f72b24470cae43a55e99830f6ee9baf9f92c9d"
+    "practice_expansion/2026-10-28-representative/authoring/06_personnel_training.json": "0333953ac4aee6c019b9c7e6ced136079a09862e0508099f8bda53a0d3da7a89",
+    "reports/representative-rewrite/default-holds.json": "d4b06674c7e573e311a1c2b0cc09caffe24344314c369cc087b6340c2abb867b"
   },
   "authoring_scope_notes": [
     {
@@ -188,7 +188,7 @@
       "source_limitations": [
         "This is author review, not canonical independent audit. Retrieved official URL texts may be cached; origin-PDF binary identity and cache freshness are not certified.",
         "Policy 2026-02 expressly describes limited four-intern pathways alongside the two-intern regulation. Their application relationship remains unresolved; no policy invalidity or universal individual-waiver requirement is asserted.",
-        "Transport errors prevented complete PLUS bank retrieval through the connector. Recovered PLUS comparisons/review claims are not inherited; those candidates remain individually pending.",
+        "Large PLUS blob transport failed. The exact three records 0109/0812/0814 were subsequently retrieved by the pinned worker and individually read. Other PLUS recovered comparisons/review claims are not inherited.",
         "Current Scope 2020-15 extraction footer is revised 2025-11-06, while baseline notes reference later changes elsewhere. Only section I vendor/access language was read for original PER22 findings; no whole-current-scope certification is claimed.",
         "Replacement comparisons are targeted editorial reads of the listed MA-REV/MA-RW/canonical cases. Low lexical similarity is not a global semantic distinctness guarantee."
       ],
@@ -12109,6 +12109,16 @@
           "question_id": "MA-Q-0413",
           "relationship": "ADVANCE_TRAINING_DESIGNATION_NOT_CASHIER_ROLE_RECLASSIFICATION",
           "material_difference": "Canonical0413은 cashier가 실제 prescription data entry를 시작할 때 count가 달라지는 사례다. 여기서는 actual dedicated role은 유지되지만 특정 사전 designation 요건이 없어 제외하지 못한다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "MISSING_ADVANCE_DESIGNATION_CHANGES_EXCLUSION_ELIGIBILITY",
+          "material_difference": "PLUS-SC13은 모든 designation이 compliant하다는 전제로 counted personnel 숫자를 묻는다. 새 사례는 그 전제 자체가 충족되지 않아 dedicated trainer 제외를 당일 적용할 수 없다는 판단이다. 같은 family의 count 숫자만 바꾼 변형이 아니다."
+        },
+        {
+          "question_id": "MA-CASE-0812",
+          "relationship": "SAME_ADVANCE_DESIGNATION_RULE_WITH_A_SAME_DAY_BOUNDARY",
+          "material_difference": "PLUS 0812/0817은 다른 인력 규칙과 섞인 work-queue에서 교육일 이전의 적법한 지정 문장을 고르게 한다. 0413은 shift 뒤의 retrospective label을 오답으로 쓴다. 새 사례는 소급 입력이 아닌 실제 세션 두 시간 전의 당일 지정이 여전히 부족한지를 판단하고, 당일 count와 다음 날 요건을 구분한다. 같은 하위 규칙의 재등장은 명시하며 독립된 새 법규로 세지 않는다."
         }
       ],
       "competency_codes": [
@@ -12141,7 +12151,7 @@
         "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
         "history_policy": "Keep anchors, bookmarks and prior reading/review history. Past completion does not certify the revised content; show the edition and need to re-read."
       },
-      "content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c"
+      "content_sha256": "6767f196eb5450358efe73dc7d1d2271ddd65f20850bc56a63d5f813457e4f93"
     },
     {
       "question_id": "MA-RW-0068",
@@ -12339,6 +12349,11 @@
           "question_id": "MA-Q-0413",
           "relationship": "PERMITTED_UNSUPERVISED_EDUCATION_NOT_LOSS_OF_A_CASHIER_COUNT_EXCLUSION",
           "material_difference": "Canonical0413은 실제 prescription data entry를 시작한 cashier를 staffing ratio에 다시 포함하는 문제다. 이 사례는 실제 조제 지원을 하지 않고 있기 때문에 감독자가 부재해도 교육은 진행할 수 있다는 허용 분기다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "SUPERVISION_AVAILABILITY_IS_THE_DECISIVE_NEW_CONDITION",
+          "material_difference": "PLUS-SC13 변형은 근무팀에서 computer trainee를 몇 명으로 셀지 묻는다. 이 사례는 count 숫자를 묻지 않으며, pharmacist와 trainer가 실제로 없는 지정 시간에도 교육을 진행할 수 있는지가 핵심이다. Closed and secured prescription department 조건이 pharmacist-presence 규정의 별도 경계도 만족시킨다."
         }
       ],
       "competency_codes": [
@@ -12371,7 +12386,7 @@
         "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
         "history_policy": "Keep anchors, bookmarks and prior reading/review history. Past completion does not certify the revised content; show the edition and need to re-read."
       },
-      "content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd"
+      "content_sha256": "4d63ad6930384c35276541429e4b33e4794f1d82dae691fed5595c0182dc89e0"
     }
   ]
 }

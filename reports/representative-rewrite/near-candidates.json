@@ -8,7 +8,7 @@
     "practice_expansion/2026-10-23/candidates/questions.json": "f2b27d3105f2efab40d3ab943f0f5813bdadd793e5ffa60d262fe5ab4e40a74f",
     "practice_expansion/2026-10-26-plus/questions.json": "f9a600504be007913c996163db29a482cc30ae3781055e50dc3ef9d83f2655b6",
     "practice_expansion/2026-10-27-quality/questions.json": "27f39f5607b58d56796aadd6c68236d576972150ffd65fcece790aba5ea5e344",
-    "practice_expansion/2026-10-28-representative/questions.json": "b59a4685897c8d45035de082d40a36f3e29133df5f0a53fb6b66542b68f58ff4"
+    "practice_expansion/2026-10-28-representative/questions.json": "29e9de873f72e8ea20a5a315bd41f08b0f12ec5597259412c7d6bcbb0ed9c2f3"
   },
   "scope_counts": {
     "baseline_full_2272": {
@@ -24,7 +24,7 @@
       "near_text_pairs_at_0_90": 0
     },
     "current_default": {
-      "records": 439,
+      "records": 438,
       "near_text_pairs_at_0_90": 0
     },
     "main_before_2328": {
@@ -6848,6 +6848,16 @@
           "question_id": "MA-Q-0413",
           "relationship": "ADVANCE_TRAINING_DESIGNATION_NOT_CASHIER_ROLE_RECLASSIFICATION",
           "material_difference": "Canonical0413은 cashier가 실제 prescription data entry를 시작할 때 count가 달라지는 사례다. 여기서는 actual dedicated role은 유지되지만 특정 사전 designation 요건이 없어 제외하지 못한다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "MISSING_ADVANCE_DESIGNATION_CHANGES_EXCLUSION_ELIGIBILITY",
+          "material_difference": "PLUS-SC13은 모든 designation이 compliant하다는 전제로 counted personnel 숫자를 묻는다. 새 사례는 그 전제 자체가 충족되지 않아 dedicated trainer 제외를 당일 적용할 수 없다는 판단이다. 같은 family의 count 숫자만 바꾼 변형이 아니다."
+        },
+        {
+          "question_id": "MA-CASE-0812",
+          "relationship": "SAME_ADVANCE_DESIGNATION_RULE_WITH_A_SAME_DAY_BOUNDARY",
+          "material_difference": "PLUS 0812/0817은 다른 인력 규칙과 섞인 work-queue에서 교육일 이전의 적법한 지정 문장을 고르게 한다. 0413은 shift 뒤의 retrospective label을 오답으로 쓴다. 새 사례는 소급 입력이 아닌 실제 세션 두 시간 전의 당일 지정이 여전히 부족한지를 판단하고, 당일 count와 다음 날 요건을 구분한다. 같은 하위 규칙의 재등장은 명시하며 독립된 새 법규로 세지 않는다."
         }
       ]
     },
@@ -6890,6 +6900,11 @@
           "question_id": "MA-Q-0413",
           "relationship": "PERMITTED_UNSUPERVISED_EDUCATION_NOT_LOSS_OF_A_CASHIER_COUNT_EXCLUSION",
           "material_difference": "Canonical0413은 실제 prescription data entry를 시작한 cashier를 staffing ratio에 다시 포함하는 문제다. 이 사례는 실제 조제 지원을 하지 않고 있기 때문에 감독자가 부재해도 교육은 진행할 수 있다는 허용 분기다."
+        },
+        {
+          "question_id": "MA-CASE-0109",
+          "relationship": "SUPERVISION_AVAILABILITY_IS_THE_DECISIVE_NEW_CONDITION",
+          "material_difference": "PLUS-SC13 변형은 근무팀에서 computer trainee를 몇 명으로 셀지 묻는다. 이 사례는 count 숫자를 묻지 않으며, pharmacist와 trainer가 실제로 없는 지정 시간에도 교육을 진행할 수 있는지가 핵심이다. Closed and secured prescription department 조건이 pharmacist-presence 규정의 별도 경계도 만족시킨다."
         }
       ]
     }

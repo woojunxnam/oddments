@@ -11,8 +11,8 @@
   "input_hashes": {
     "reports/representative-rewrite/legacy-editorial-triage.json": "01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865",
     "practice_expansion/2026-10-27-quality/selection.json": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64",
-    "practice_expansion/2026-10-28-representative/selection.json": "3b803cdb240ff9fd2834f12be4e49ed191b3294d5e1bfb936780fb4b72bfcfee",
-    "practice_expansion/2026-10-28-representative/questions.json": "b59a4685897c8d45035de082d40a36f3e29133df5f0a53fb6b66542b68f58ff4"
+    "practice_expansion/2026-10-28-representative/selection.json": "94a3140116d3a797e293eb31f63536fc5e2ddd661149cd6db1f548e7850fdf5a",
+    "practice_expansion/2026-10-28-representative/questions.json": "29e9de873f72e8ea20a5a315bd41f08b0f12ec5597259412c7d6bcbb0ed9c2f3"
   },
   "verified_original_triage_inputs": [
     {
@@ -204,11 +204,11 @@
     "implementation_statuses": {
       "REWRITTEN_NEW_ID": 62,
       "REUSED_EXISTING_QUALITY": 3,
-      "HOLD_FROM_DEFAULT": 9,
-      "NOT_YET_IMPLEMENTED": 281
+      "HOLD_FROM_DEFAULT": 10,
+      "NOT_YET_IMPLEMENTED": 280
     },
-    "current_default": 439,
-    "archive_ids_with_review_notice": 29,
+    "current_default": 438,
+    "archive_ids_with_review_notice": 35,
     "previous_quality_retained": 96,
     "newly_authored_replacement_questions": 62,
     "originals_rewritten_in_place": 0,
@@ -5857,9 +5857,13 @@
             "MA-EXP-0141",
             "MA-EXP-0142",
             "MA-EXP-0143",
-            "MA-EXP-0144"
+            "MA-EXP-0144",
+            "MA-EXP-0137",
+            "MA-EXP-0138",
+            "MA-EXP-0139",
+            "MA-EXP-0140"
           ],
-          "affected_archive_notice_scope": "Only these four PER20 IDs individually read in this continuation. PLUS candidates and indirect PER19 mentions are tracked separately without an inherited full review claim.",
+          "affected_archive_notice_scope": "Four PER20 records directly teach the four-intern path. Four PER19 records mention it indirectly in core/rationale; their ordinary direct-supervision keys are not adjudicated wrong and 0139 has a separate new-ID replacement, not an additional hold disposition.",
           "source_review_record": "reports/full-corpus-review/unit3b-author-review.json",
           "next_action": "Resolve authoritative application relationship or maintain hold; individually review queued PLUS/canonical impacts.",
           "independent_review_claim": false
@@ -6001,9 +6005,9 @@
           "legacy_question_id": "MA-EXP-0147",
           "replacement_question_id": "MA-RW-0067",
           "kind": "NEW_CASE",
-          "content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c"
+          "content_sha256": "6767f196eb5450358efe73dc7d1d2271ddd65f20850bc56a63d5f813457e4f93"
         },
-        "replacement_content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c",
+        "replacement_content_sha256": "6767f196eb5450358efe73dc7d1d2271ddd65f20850bc56a63d5f813457e4f93",
         "replacement_source_review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
         "replacement_verification_status": "NOT_INDEPENDENTLY_REVIEWED",
         "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
@@ -6156,9 +6160,9 @@
           "legacy_question_id": "MA-EXP-0151",
           "replacement_question_id": "MA-RW-0068",
           "kind": "NEW_CASE",
-          "content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd"
+          "content_sha256": "4d63ad6930384c35276541429e4b33e4794f1d82dae691fed5595c0182dc89e0"
         },
-        "replacement_content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd",
+        "replacement_content_sha256": "4d63ad6930384c35276541429e4b33e4794f1d82dae691fed5595c0182dc89e0",
         "replacement_source_review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
         "replacement_verification_status": "NOT_INDEPENDENTLY_REVIEWED",
         "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
@@ -51546,13 +51550,25 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-UNIT3B-0814",
+          "legacy_question_id": "MA-CASE-0814",
+          "reason": "C 오답 해설이 Policy 2026-02의 exclusively immunization clinic 4-intern 경로를 확정적인 교정 행동으로 가르친다. 247 CMR 8.01(16)과의 적용 관계가 미해결이므로 기본 목록에서 보류한다. B/D/E 정답 자체의 오류를 확정하거나 원문을 수정하는 조치가 아니다. 함께 안내하는 MA-CASE-0812는 B 교정 해설의 접종서비스1:6 경로와 8.06(3)(a)의 관계가 별도로 미해결이다. 두 명제의 적용 관계를 각각 해결해야 한다.",
+          "finding_type": "UNRESOLVED_EXPANDED_PERSONNEL_POLICY_PATHWAYS",
+          "affected_archive_ids": [
+            "MA-CASE-0814",
+            "MA-CASE-0812"
+          ],
+          "evidence_report": "reports/full-corpus-review/unit3b-author-review.json",
+          "next_action": "Resolve each specific official-policy/regulation relationship; preserve keys/history and individually review remaining PLUS candidates."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
