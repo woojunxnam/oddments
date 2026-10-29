@@ -1,6 +1,8 @@
 # 기존 대표 355문항: 편집 판정과 실제 반영 원장
 
-기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-28.representative1`
+기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-29.representative2`
+
+원문 편집 검토일: 2026-10-28 · 구현 상태 갱신일: 2026-10-29
 
 이 문서는 개별 편집 triage와 현재 반영 기록을 결합한 결과입니다. 자동 생성 과정에서 법규를 재검증하거나 독립 감사 기록을 만들지 않습니다.
 
@@ -8,12 +10,12 @@
 
 | 상태 | 문항 수 |
 |---|---:|
-| REWRITTEN_NEW_ID | 46 |
-| REUSED_EXISTING_QUALITY | 1 |
+| REWRITTEN_NEW_ID | 56 |
+| REUSED_EXISTING_QUALITY | 3 |
 | HOLD_FROM_DEFAULT | 7 |
-| NOT_YET_IMPLEMENTED | 301 |
+| NOT_YET_IMPLEMENTED | 289 |
 
-기본 목록 443개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 46개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 441개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 56개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
 대표 보류 항목과 관련 변형을 합쳐 원본 21개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
@@ -65,12 +67,12 @@
 | MA-EXP-0087 | PER06 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0022 | NOT_REVERIFIED | 전화 refill과 dose clarification은 동일 직원 배치로 연결할 수 있다. D의 상담 제공은 사례 밖 제3업무이며 C의 임상판단 위임은 너무 노골적이다. |
 | MA-EXP-0091 | PER07 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0023 | NOT_REVERIFIED | 유효 state license와 national lapse의 차이는 실질적이다. A의 자동 revoked는 쉬운 오답이고 B는 정확한 보고대상·기한 없이 specified duty로 회피한다. |
 | MA-EXP-0095 | PER08 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0024 | NOT_REVERIFIED | birthday cycle과 만료후 대기는 유용하지만 전부정답이고 D의 2년초과는 제시된 경과와 연결되지 않는다. |
-| MA-EXP-0099 | PER09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | unchanged ScheduleIV와 dose change라는 실제 경계는 보존한다. A의 trainee checklist가 지문 밖이고 유일 정답은 행위 판단보다 schedule 범위 암기다. |
-| MA-EXP-0103 | PER10 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | new CIII 수신과 emergency CII의 pharmacist 경계를 다루지만 모든 해당 주법 예외를 item에서 재검증하지 않았다. C의 임상수정 일반문장은 사례 밖이고 A는 이중자격만 반복한다. |
-| MA-EXP-0107 | PER11 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | VI와 IV transfer 비교는 실제 행동이 바뀌는 유용한 차이다. B의 새 유효기간과 D의 urgency는 지문에 없는 부가명제다. |
-| MA-EXP-0111 | PER12 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | barcode 최종검수와 intern상담·interaction 처리의 다양한 역할을 모두 정답 명제로 나열했다. 실제 pharmacist의 업무 재배치 결정이 없다. |
-| MA-EXP-0115 | PER13 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 완료된 bag 운반과 unprepared stock handling이라는 구별이 좋다. A/B/D가 all/unrestricted 같은 과장으로 틀려 유일 정답 C를 문구만으로 고르기 쉽다. |
-| MA-EXP-0119 | PER14 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두 CPhT count 이후 discrepancy adjustment는 실제 흐름이다. B의 unlicensed vendor만 entry 가능이라는 오답은 해당 규칙을 몰라도 쉽게 배제된다. |
+| MA-EXP-0099 | PER09 | MAJOR_REWRITE / P2 | REUSED_EXISTING_QUALITY | MA-REV-0006 | NOT_REVERIFIED | unchanged ScheduleIV와 dose change라는 실제 경계는 보존한다. A의 trainee checklist가 지문 밖이고 유일 정답은 행위 판단보다 schedule 범위 암기다. |
+| MA-EXP-0103 | PER10 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0050 | NOT_REVERIFIED | new CIII 수신과 emergency CII의 pharmacist 경계를 다루지만 모든 해당 주법 예외를 item에서 재검증하지 않았다. C의 임상수정 일반문장은 사례 밖이고 A는 이중자격만 반복한다. |
+| MA-EXP-0107 | PER11 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0051 | NOT_REVERIFIED | VI와 IV transfer 비교는 실제 행동이 바뀌는 유용한 차이다. B의 새 유효기간과 D의 urgency는 지문에 없는 부가명제다. |
+| MA-EXP-0111 | PER12 | MAJOR_REWRITE / P2 | REUSED_EXISTING_QUALITY | MA-REV-0008 | NOT_REVERIFIED | barcode 최종검수와 intern상담·interaction 처리의 다양한 역할을 모두 정답 명제로 나열했다. 실제 pharmacist의 업무 재배치 결정이 없다. |
+| MA-EXP-0115 | PER13 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0053 | NOT_REVERIFIED | 완료된 bag 운반과 unprepared stock handling이라는 구별이 좋다. A/B/D가 all/unrestricted 같은 과장으로 틀려 유일 정답 C를 문구만으로 고르기 쉽다. |
+| MA-EXP-0119 | PER14 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0054 | NOT_REVERIFIED | 두 CPhT count 이후 discrepancy adjustment는 실제 흐름이다. B의 unlicensed vendor만 entry 가능이라는 오답은 해당 규칙을 몰라도 쉽게 배제된다. |
 | MA-EXP-0123 | PER15 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | intern을 ordinary로 교체하면 적격조합이 바뀌어 유용한 판단이다. B의 scope 일반론은 이 staffing 결정과 무관한 정답을 추가한다. |
 | MA-EXP-0127 | PER16 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 3 ordinary에서 intern으로 교체하는 핵심은 좋지만 C의 만료 certification은 사례에 없고 네 보기가 전부정답이다. 1:4와 숫자만 바꾸지 말고 실제 배치결정이 달라져야 한다. |
 | MA-EXP-0131 | PER17 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 6명 배치에서 세 번째 intern이 qualifying group에 들 수 있는지 실질 경계가 있다. 정답 B는 실제 staffing 승인 대신 별도제한 확인이라는 추상문장이고 D의 미래 certification은 쉽다. |
@@ -79,12 +81,12 @@
 | MA-EXP-0143 | PER20 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | exclusive clinic에서 retail filling으로 활동이 바뀌는 유용한 조건변화다. 모든 보기가 맞고 non-pharmacy consultation 예외까지 추가돼 판단범위가 넓어진다. |
 | MA-EXP-0147 | PER21 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 기존 CPhT를 dedicated trainee로 배치하면 category가 달라지는 의미 있는 예외다. B의독립작업과 D의사후지정은 쉽게 틀리고 사례와 별개다. |
 | MA-EXP-0151 | PER22 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | computer module 전용 제외와 외부 vendor 보안접근은 독립된 업무다. 둘을 묶어 감독규칙을 목록처럼 읽게 한다. |
-| MA-EXP-0155 | MOR01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 새 storefront의 VI dispensing은 적절한 시설허가 결정이나 A의 institutional license 정의는 지문 밖이다. 약물 schedule과 compounding 활동도 실제 신청서로 묶어야 한다. |
-| MA-EXP-0159 | MOR02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 늦은 개업과 사업매매는 별개 사건인데 전부 옳은 명제를 묶었다. B는 오해방지 설명 자체가 정답으로 노출된다. |
-| MA-EXP-0163 | MOR03 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 8개월 good standing과3년 inspection은 판단자료지만 유일 정답 A는 지문에 제시되지 않은 PIC 동일인 여부다. |
-| MA-EXP-0167 | MOR04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두 약국30시간 분할과 근무약사 security 책임은 실제 운영갈등이다. B의관리업무목록은 중심결정을 흐린다. inherited OPEN은30/100일 및사임통지 경계이며 이 문항의30시간/동시MOR 명제를 직접 문제삼지는 않는다. |
-| MA-EXP-0171 | MOR05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 중병으로 outgoing 서명이 불가능하다는 조건은 대체서명 경로를 바꾼다. C의즉시폐기는 약한 오답이고 D의application 서명은 별도 행정문장이다. inherited OPEN의통지기한은 이 key가 시험하지 않는다. |
-| MA-EXP-0175 | MOR06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 소유권매매의 사전14일과 명칭변경의사후14일이 실제 다른 trigger이나 모두 정답이다. B의재고/환자파일 일반론은 날짜결정과 분리된다. |
+| MA-EXP-0155 | MOR01 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0055 | NOT_REVERIFIED | 새 storefront의 VI dispensing은 적절한 시설허가 결정이나 A의 institutional license 정의는 지문 밖이다. 약물 schedule과 compounding 활동도 실제 신청서로 묶어야 한다. |
+| MA-EXP-0159 | MOR02 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0056 | NOT_REVERIFIED | 늦은 개업과 사업매매는 별개 사건인데 전부 옳은 명제를 묶었다. B는 오해방지 설명 자체가 정답으로 노출된다. |
+| MA-EXP-0163 | MOR03 | MAJOR_REWRITE / P1 | REWRITTEN_NEW_ID | MA-RW-0057 | NOT_REVERIFIED | 8개월 good standing과3년 inspection은 판단자료지만 유일 정답 A는 지문에 제시되지 않은 PIC 동일인 여부다. |
+| MA-EXP-0167 | MOR04 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0058 | NOT_REVERIFIED | 두 약국30시간 분할과 근무약사 security 책임은 실제 운영갈등이다. B의관리업무목록은 중심결정을 흐린다. inherited OPEN은30/100일 및사임통지 경계이며 이 문항의30시간/동시MOR 명제를 직접 문제삼지는 않는다. |
+| MA-EXP-0171 | MOR05 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0059 | NOT_REVERIFIED | 중병으로 outgoing 서명이 불가능하다는 조건은 대체서명 경로를 바꾼다. C의즉시폐기는 약한 오답이고 D의application 서명은 별도 행정문장이다. inherited OPEN의통지기한은 이 key가 시험하지 않는다. |
+| MA-EXP-0175 | MOR06 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0060 | NOT_REVERIFIED | 소유권매매의 사전14일과 명칭변경의사후14일이 실제 다른 trigger이나 모두 정답이다. B의재고/환자파일 일반론은 날짜결정과 분리된다. |
 | MA-EXP-0179 | MOR07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 신청과 approval을 구별하는 목표는 좋지만 두 공사를 한꺼번에 묻고 A의sterile control은 사례에 없다. |
 | MA-EXP-0183 | MOR08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 90일 fills로 환자대상을 정하는 실제 운영맥락은 적절하다. D의모든시설 동일 적용은 극단적이며 A의transfer 시점은 별도 일반론이다. |
 | MA-EXP-0187 | MOR09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 도착 몇주후 추정재고와 잔여재고 유지라는 잘못된 계획을 고치게 하는 것은 의미 있다. 한 계획표로 합치고 날짜별재고·10일제출·2년보존을 비교해야 한다. |
@@ -403,7 +405,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `ab18b9a6c65ec2f5f9094823733424031d3d33efe252ed3cbb005640b6283c75` |
-| practice_expansion/2026-10-28-representative/questions.json | `8b0a079870a5e2157f009a3ce890ad66083bc47917766fd7e8dc0da166022c7f` |
+| practice_expansion/2026-10-28-representative/selection.json | `ef29e1fd66bef93cc0412cb0a43c285ed7a6ce01f91a683d4ec100ed2705e4dd` |
+| practice_expansion/2026-10-28-representative/questions.json | `dfc74beceb8f662cece29cf63c033734a5b7499573f9258c382cdf087ba1b103` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

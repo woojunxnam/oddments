@@ -1,6 +1,77 @@
 """Reader integration for immutable old/new question versions and explicit holds."""
 from html import escape
-from practice_quality import once
+from practice_quality import line, once
+
+
+def clarify_filters(text, data):
+    """Describe the intersection, including the existing archive-lookup exceptions."""
+    total = len(data['questions'])
+    recommended = len(data['quality_selection']['recommended_ids'])
+    scope_start = text.index('<label for="scope">')
+    scope_end = text.index('</select>', scope_start) + len('</select>')
+    text = once(text, text[scope_start:scope_end],
+        '<label for="scope">문항 포함 범위</label>'
+        '<select id="scope" aria-describedby="scope-help">'
+        f'<option value="recommended">대표·개정 우선 ({recommended:,}개)</option>'
+        f'<option value="all">모든 변형 포함 ({total:,}개)</option></select>')
+    text = once(text,
+        '<p class="tiny">개별 재작성 사례와 기존 대표를 우선합니다. 검토 보류·이전 판본은 전체 목록, 북마크, ID 검색으로 확인할 수 있습니다. 전체 법규 감사 완료 표시는 아닙니다.</p>',
+        '<p class="tiny" id="scope-help">대표·개정 우선은 반복 변형과 이전 판본을 줄인 기본 목록입니다. '
+        '모든 변형에는 이전 판본·검토 보류 문항도 포함됩니다. 북마크·오답·ID 검색에서는 기록 보존을 위해 제외된 문항도 찾습니다.</p>')
+
+    # Collection counts describe storage, not the result after the scope filter.
+    names = {
+        'representative-20261028': '대표 재작성',
+        'quality-20261027': '개별 작성·개정 사례',
+        'plus-20261026': '사례형 조건 연습',
+        'original-20261023': '기존 변형 연습',
+    }
+    options = [f'<option value="" data-name="모든 모음">모든 모음 (총 {total:,}개)</option>']
+    for collection in reversed(data['collections']):
+        identifier = collection['id']
+        name = names.get(identifier, collection['title'])
+        count = sum(q['collection_id'] == identifier for q in data['questions'])
+        options.append(f'<option value="{escape(identifier, quote=True)}" '
+            f'data-name="{escape(name, quote=True)}">{escape(name)} (모음 총 {count:,}개)</option>')
+    collection_start = text.index('<label for="collection">')
+    collection_end = text.index('</select>', collection_start) + len('</select>')
+    text = once(text, text[collection_start:collection_end],
+        '<label for="collection">문항 모음 (선택)</label>'
+        '<select id="collection" aria-describedby="collection-help">' + ''.join(options) + '</select>'
+        '<p class="tiny" id="collection-help">모음의 숫자는 보관된 전체 문항 수입니다. '
+        '선택한 모음에도 위 포함 범위를 함께 적용합니다.</p>')
+
+    feedback = '''<section id="filter-feedback" class="filter-feedback" aria-labelledby="filter-summary-title">
+<h3 id="filter-summary-title">현재 연습 대상</h3>
+<p id="filter-summary" role="status" aria-live="polite" aria-atomic="true"></p>
+<p id="filter-breakdown" class="tiny"></p><p id="filter-exception" class="tiny" hidden></p>
+<p id="filter-session-help" class="tiny"></p>
+<details id="filter-examples" class="tiny"><summary>두 선택의 조합 예시</summary><p id="filter-example-text"></p></details>
+</section>'''
+    text = once(text, '<div class="stack"><button id="practice"', feedback + '<div class="stack"><button id="practice"')
+    text = once(text, '<button id="practice" class="primary"', '<button id="practice" aria-describedby="filter-session-help" class="primary"')
+    text = once(text, '<button id="timed"', '<button id="timed" aria-describedby="filter-session-help"')
+    text = once(text, '<button id="chaos" class="primary"', '<button id="chaos" aria-describedby="chaos-help" class="primary"')
+    # Only the count next to the controls is announced; pagination remains visible.
+    text = once(text, '<p id="result-count" class="status" aria-live="polite">', '<p id="result-count" class="status">')
+    text = once(text, '</style>', '''
+.filter-feedback{margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--pale)}
+#filter-summary-title{font-size:.85rem;margin:0}#filter-summary{font-size:.95rem;font-weight:700;margin:5px 0}
+.filter-feedback p{margin:6px 0}.filter-feedback summary{cursor:pointer}#filter-examples{margin-top:8px}
+</style>''')
+
+    functions = r'''function filterContext(){const query=$('#query').value.trim().toLocaleLowerCase(),saved=$('#saved').value,scope=$('#scope').value,collection=$('#collection').value;const archiveReason=saved?(saved==='wrong'?'오답 복습':'북마크 복습'):(query.startsWith('ma-')?'ID 검색':'');return{query,saved,scope,collection,archiveReason,includeArchive:scope==='all'||!!archiveReason};}
+function inSelectedPool(q,c){return(!c.collection||q.collection_id===c.collection)&&(c.includeArchive||recommendedIds.has(q.question_id));}
+function filterSummaryData(){const c=filterContext(),collectionQuestions=Q.filter(q=>!c.collection||q.collection_id===c.collection),scopeCount=collectionQuestions.filter(q=>inSelectedPool(q,c)).length,familyCount=new Set(filtered.map(q=>q.family_id)).size;return{collectionTotal:collectionQuestions.length,scopeCount,matchedCount:filtered.length,familyCount,standardCeiling:Math.min(20,familyCount),timedCeiling:Math.min(120,familyCount),archiveReason:c.scope==='recommended'?c.archiveReason:'',collection:c.collection,scope:c.scope};}
+function updateFilterSummary(){const c=filterContext(),info=filterSummaryData(),number=n=>n.toLocaleString(),name=$('#collection').selectedOptions[0].dataset.name;$('#filter-summary').textContent=`현재 조건에 맞는 ${number(info.matchedCount)}문항`;$('#filter-breakdown').textContent=`${name}의 전체 ${number(info.collectionTotal)}개 중 ${c.includeArchive?'모든 변형':'대표·개정 대상'} ${number(info.scopeCount)}개를 포함하고, 검색·영역·유형·복습 조건을 모두 적용했습니다.`;$('#filter-exception').hidden=!info.archiveReason;$('#filter-exception').textContent=info.archiveReason?`${info.archiveReason}에서는 이전 판본·검토 보류·변형도 찾습니다. 선택한 모음과 나머지 필터는 계속 적용됩니다.`:'';$('#filter-session-help').textContent=info.matchedCount?`일반 연습 최대 ${info.standardCeiling}문항 · 시간 연습 최대 ${info.timedCeiling}문항. 같은 사례·지문·보기의 반복을 제외하므로 실제 세트는 더 짧을 수 있습니다.`:'조건에 맞는 문항이 없습니다. 검색어나 필터를 조정해 주세요. 완전 랜덤 10문항은 전체 모음에서 시작할 수 있습니다.';const exampleId=c.collection||D.collections.find(group=>Q.some(q=>q.collection_id===group.id&&!recommendedIds.has(q.question_id)))?.id||D.collections[0]?.id;const option=Array.from($('#collection').options).find(o=>o.value===exampleId),example=Q.filter(q=>q.collection_id===exampleId),exampleRecommended=example.filter(q=>recommendedIds.has(q.question_id)).length;$('#filter-example-text').textContent=option?`다른 필터를 사용하지 않을 때, ‘대표·개정 우선 + ${option.dataset.name}’은 ${number(exampleRecommended)}문항, ‘모든 변형 + ${option.dataset.name}’은 ${number(example.length)}문항입니다.`:'';}
+'''
+    text = once(text, 'function matches(){', functions + 'function matches(){')
+    text = line(text, 'function matches()', r'''function matches(){const c=filterContext(),area=$('#area').value,t=$('#qtype').value;return Q.filter(q=>inSelectedPool(q,c)&&(!c.query||searchIndex.get(q.question_id).includes(c.query))&&(!area||String(q.area)===area)&&(!t||q.question_type===t)&&(!c.saved||(c.saved==='wrong'?state.attempts[q.question_id]?.correct===false:state.bookmarks.includes(q.question_id))));}''')
+    text = once(text, 'filtered.sort((a,b)=>revisionRank(b)-revisionRank(a));',
+        'filtered.sort((a,b)=>revisionRank(b)-revisionRank(a));updateFilterSummary();')
+    text = once(text, 'filtered:filtered.length,collection:',
+        "filtered:filtered.length,filteredIds:filtered.map(q=>q.question_id),filterSummary:filterSummaryData(),scope:$('#scope').value,collection:")
+    return text
 
 
 def transform(text, data):
@@ -37,4 +108,4 @@ def transform(text, data):
     text = once(text, '아래는 관련 노트 절의 참고문헌입니다. 각 선택지의 정확한 조항을 독립적으로 확인한 문항별 검증 기록은 아닙니다.',
         '아래는 연결 노트와 공식 근거입니다. 개정 사례는 각 선택지 아래에 작성자가 대조한 정확한 조항·확인일을 표시합니다. 독립 법규 감사 완료 표시는 아닙니다.')
     text = once(text, 'sessionMode:session?.mode||null,', 'revisionOf:active?.revision_of||null,heldForReview:heldVersions.has(active?.question_id),sessionMode:session?.mode||null,')
-    return text
+    return clarify_filters(text, data)

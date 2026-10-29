@@ -213,7 +213,8 @@ def build_ledger():
 
     return dict(
         schema_version='representative-editorial-implementation-ledger/1',
-        base_commit=BASE_COMMIT, reviewed_at=triage['reviewed_at'], selection_edition=selection['edition'],
+        base_commit=BASE_COMMIT, reviewed_at=triage['reviewed_at'],
+        implementation_updated_at=bank.get('updated_at', bank['authored_at']), selection_edition=selection['edition'],
         scope='355 individual editorial triage records joined with explicit implementation records. This generated join performs no new legal review.',
         canonical_independent_audit_created=False,
         official_source_reverification_performed_by_ledger=False,
@@ -253,6 +254,7 @@ def render_markdown(ledger):
     lines = [
         '# 기존 대표 355문항: 편집 판정과 실제 반영 원장', '',
         f"기준 main: `{ledger['base_commit']}` · 현재 selection: `{ledger['selection_edition']}`", '',
+        f"원문 편집 검토일: {ledger['reviewed_at']} · 구현 상태 갱신일: {ledger['implementation_updated_at']}", '',
         '이 문서는 개별 편집 triage와 현재 반영 기록을 결합한 결과입니다. 자동 생성 과정에서 법규를 재검증하거나 독립 감사 기록을 만들지 않습니다.', '',
         '## 실제 반영 상태', '',
         '| 상태 | 문항 수 |', '|---|---:|',

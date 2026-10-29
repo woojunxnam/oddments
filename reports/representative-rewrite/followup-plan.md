@@ -4,6 +4,14 @@
 
 이번 신규 **46개는 기존 대표의 replacement**이다. 기존 고품질 문항 재사용 1개와 CE 출처 충돌 보류 1개를 포함해 첫 48개 대상의 처리 경로를 정한 것이다. 이를 별도 목표인 **부족 영역 신규 독립 사례 약 120개를 채운 것으로 집계하지 않는다.** 기존 355개는 개별 편집 triage를 마쳤지만 355개 전체 재작성이나 법규 전수 재검증이 끝난 상태가 아니다.
 
+## 2026-10-29 후속 반영
+
+두 번째 단위에서 **PER09–PER14, MOR01–MOR06의 12개**를 처리했다. 신규 사례 10개, 기존 고품질 사례 재사용 2개이며 추가 보류는 없다. 누적 **56 재작성 / 3 통합 / 7 보류 / 289 개선 미반영**이다. MA-EXP-0099는 MA-REV-0006, MA-EXP-0111은 MA-REV-0008로 통합했다. 이 10개도 부족 영역 약 120개 추가 목표로 중복 계산하지 않는다.
+
+다음 작은 단위는 **PER15–PER22의 8개**를 우선해 실제 업무에 따른 ratio·직접 감독·전담 교육 인력·computer training의 경계를 확인한다. 그다음 MOR07–MOR10과 DISC01–DISC08을 처리한다. 수를 채우기보다 기존 사례 통합과 공식 적용 관계의 보류를 먼저 판단한다. 아래 32개 목록은 최초 계획이며 이 단락에 기록한 12개는 완료 범위다.
+
+상세 변경과 필터 안내: [두 번째 단위 보고서](../../docs/REPRESENTATIVE_REWRITE_UNIT2.md).
+
 ## 먼저 처리할 기존 문제
 
 [legacy-editorial-triage.json](legacy-editorial-triage.json)의 판정은 MINOR EDIT 30, MAJOR REWRITE 317, REPLACE 5, HOLD FOR LEGAL REVIEW 3이다. 모든 기존 문항의 법규 상태는 `NOT_REVERIFIED`이다. [answer-ambiguities.json](answer-ambiguities.json)의 세 SBA와 `MA-CASE-0708`의 수량 누락은 확정 답을 연습시키기 전에 해결한다. CE notification의 Form/email 출처 차이는 `MA-EXP-0051`, `MA-CASE-0795`의 정답 D, `MA-CASE-0349`의 core reasoning·A 해설에도 적용한다. `MA-CASE-0349`의 보류는 해설의 현행 제출경로 충돌 때문이며 정답 B의 law-credit 판단 오류를 뜻하지 않는다.
