@@ -27,6 +27,13 @@ def validate_review(q, review):
         raise ValueError('Unattributed review: ' + q['question_id'])
 
 
+def validate_claim(claim, effective_units, root=ROOT):
+    if claim['unit_content_sha256'] != effective_units[claim['unit_id']]['body_sha256']:
+        raise ValueError('Stale claim unit hash: ' + claim['claim_id'])
+    if hashlib.sha256((root/claim['source_evidence']).read_bytes()).hexdigest() != claim['source_evidence_sha256']:
+        raise ValueError('Stale claim evidence hash: ' + claim['claim_id'])
+
+
 def build():
     config = read('site/practice-expansion/publication.json')
     paths = ['practice_expansion/2026-10-23/candidates/questions.json'] + [a['path'] for a in config['additional_banks']]
@@ -79,7 +86,8 @@ def build():
                            next_action='Review frozen current hash independently before canonical release.')
                 row['choice_by_choice_findings'] = {c['id']: dict(finding_ko=c['rationale_ko'], authorities=c['authority_refs']) for c in a['choices']}
                 row['authority_clauses'] = [r for c in a['choices'] for r in c['authority_refs']]
-            row['publication_status'] = ('PUBLISHED_PRACTICE_DEFAULT' if qid in selection['recommended_ids'] else 'PUBLISHED_PRACTICE_ARCHIVE')
+            row['deployment_status'] = 'BRANCH_CANDIDATE_NOT_DEPLOYED' if qid in new_author else 'BASELINE_PUBLICATION_NOT_RECHECKED_THIS_SESSION'
+            row['publication_status'] = ('PRACTICE_CONFIG_DEFAULT' if qid in selection['recommended_ids'] else 'PRACTICE_CONFIG_ARCHIVE')
             result.append(row)
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
@@ -87,6 +95,10 @@ def build():
     assert set(reviews) <= set(ids)
     notes = read('notes/guide.json')
     claims = read('reports/full-corpus-review/unit3a-claims.json')['claims']
+    from notes_revision import load_notes
+    effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
+    for claim in claims:
+        validate_claim(claim, effective, ROOT)
     units = [dict(unit_id=u['id'], chapter_id=c['id'], baseline_body_sha256=u['body_sha256'],
                   inventory_status='INVENTORIED_NOT_CLAIM_CENSUS',
                   reviewed_claim_ids=[x['claim_id'] for x in claims if x['unit_id'] == u['id']],

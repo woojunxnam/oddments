@@ -3,13 +3,13 @@
   "python_tests": {
     "command": "python -m pytest -q",
     "status": "PASS",
-    "passed": 288,
-    "log_sha256": "d0e857170bcd96d87200959f23edbfe3a234256c2aa864e7e176ab9b7af2692a"
+    "passed": 290,
+    "log_sha256": "4b9b6bb9469795c3bef18aaff3a6e762736d616b7760970560791958c4fd284b"
   },
   "corpus_and_migration_tests": {
-    "command": "python -m pytest tests/test_full_corpus_review.py -q",
-    "status": "PASS",
-    "passed": 9
+    "command": "Included in python -m pytest -q (11 corpus/migration/hash tests)",
+    "status": "PASS_AS_PART_OF_FULL_PYTEST",
+    "passed": 11
   },
   "deterministic_builds_and_js_syntax": "PASS_LOCAL",
   "protected_baseline": {
@@ -17,12 +17,30 @@
     "files": 1781,
     "migration": "One exact generated export; immutable baseline copy retained."
   },
-  "validate_all": "RUNNING_NOT_YET_CLAIMED_PASS",
+  "validate_all": {
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 7,
+    "scope": "Canonical source inputs unchanged; existing 7 warnings remain."
+  },
   "local_http_browser_tests": "NOT_RUN_CHROMIUM_DOWNLOAD_FAILED",
   "chromium_install_failure": "playwright 1.57.0 browser download: truncated ZIP and GatewayExceptionResponse; no browser executable available.",
   "same_team_peer_review": "NOT_RUN_THIS_SESSION",
   "canonical_independent_audit": "NOT_RUN",
-  "github_ci": "PENDING_PR",
+  "github_ci": {
+    "first_code_sha": "88985ebcbd57163dc6879e56a1f504c28ad48b1c",
+    "evidence": "reports/full-corpus-review/first-code-ci.json",
+    "final_head": "PENDING_AFTER_THIS_FOLLOWUP"
+  },
   "merge": "NOT_PERFORMED",
-  "production": "NOT_VERIFIED_THIS_SESSION"
+  "production": "NOT_VERIFIED_THIS_SESSION",
+  "pr_url": "https://github.com/woojunxnam/oddments/pull/171",
+  "tested_source_sha256": {
+    "scripts/build_full_corpus_review.py": "7376d6fe7dc3d6305a5d9e0ab97636e0743ffdb8e5d48621e1f0175df15ef35e",
+    "scripts/notes_revision.py": "2e752b49dcc512c996198dc6f466b251d19ff305b2de2b7270c9c3dbe3b8409b",
+    "scripts/verify_representative_protected.py": "92519534866f4141c5fd6356cd2b65eb483eb0bbe5e2a9400fb3146f81cbb3cf",
+    "tests/test_full_corpus_review.py": "8736e8c7ba430709594dff0d50570f6be223d3bf34ab6c8bd84af2e3e9ae21c7",
+    "revisions/notes/2026-10-29-personnel-ratios.json": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979",
+    "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json": "0dafbe57987b928f04791729305ba9e9b5b3e0485d0f446cff08dd6ef40953ec"
+  }
 }

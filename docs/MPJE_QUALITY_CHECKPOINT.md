@@ -1,6 +1,6 @@
 # MPJE 품질 개선 checkpoint — Unit 3A
 
-시작 main: `9f3fed116792b33c65cad35da77a8d68aab58c06` (PR #170). Branch: `feat/unit3-corpus-personnel-review-20261029`. 현재 head는 이 파일을 포함한 PR의 head SHA로 확인한다. 아직 merge/production 완료로 간주하지 않는다.
+시작 main: `9f3fed116792b33c65cad35da77a8d68aab58c06` (PR #170). Branch: `feat/unit3-corpus-personnel-review-20261029`. GitHub PR: https://github.com/woojunxnam/oddments/pull/171. 첫 code snapshot: `88985ebcbd57163dc6879e56a1f504c28ad48b1c` (local tree-equivalent commit `101a6621f6d71bb9599e3f97d5170b1fefffa044`, tree `eefc2f9aea843d0d3fdf17184a58e99fda9e48eb`). 후속 checkpoint/evidence 강화 커밋의 최종 head는 PR head 또는 `git rev-parse HEAD`로 확인한다. 아직 merge/production 완료로 간주하지 않는다.
 
 ## 실제 반영 후보
 
@@ -20,7 +20,7 @@
 
 ## 검증과 제한
 
-실행 결과는 reports/full-corpus-review/validation.json과 PR의 정확한 head CI를 확인한다. 작성자 검토와 자동검사만 수행했으며 이번 세션의 새 동일 팀 peer 및 독립 canonical 감사는 NOT_RUN이다. Chromium 다운로드 오류로 로컬 실제 HTTP 브라우저 검사는 미실행이다. CI 성공 전 merge/배포 완료로 보고하지 않는다. 실제 기기·Safari·psychometric 검증은 미실행.
+로컬 full pytest 290 PASS, validate_all 오류0/기존 warning7, 보호1,781개 및 deterministic builders PASS. 실행 상세는 reports/full-corpus-review/validation.json과 PR의 정확한 head CI를 확인한다. 첫 code SHA의 실제 HTTP CI 성공은 first-code-ci.json에 기록하며 최종 head CI와 혼동하지 않는다. 작성자 검토와 자동검사만 수행했으며 이번 세션의 새 동일 팀 peer 및 독립 canonical 감사는 NOT_RUN이다. Chromium 다운로드 오류로 로컬 실제 HTTP 브라우저 검사는 미실행이다. CI 성공 전 merge/배포 완료로 보고하지 않는다. 실제 기기·Safari·psychometric 검증은 미실행.
 
 ## 다음 작업 — Unit 3B부터
 

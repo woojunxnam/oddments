@@ -87,3 +87,13 @@ def test_migration_cannot_expand_allowlist(protected_copy):
     migration['files'].append(dict(path='notes/guide.json'))
     path.write_text(json.dumps(migration))
     with pytest.raises(ValueError,match='expands protected scope'): verify(manifest,root)
+
+
+@pytest.mark.parametrize('field', ['unit_content_sha256', 'source_evidence_sha256'])
+def test_stale_claim_evidence_is_rejected(field):
+    from build_full_corpus_review import validate_claim
+    claim=json.loads((ROOT/'reports/full-corpus-review/unit3a-claims.json').read_text())['claims'][0]
+    units={u['id']:u for c in load_notes(ROOT)['chapters'] for u in c['units']}
+    validate_claim(claim,units,ROOT)
+    claim=copy.deepcopy(claim); claim[field]='0'*64
+    with pytest.raises(ValueError,match='Stale claim'): validate_claim(claim,units,ROOT)
