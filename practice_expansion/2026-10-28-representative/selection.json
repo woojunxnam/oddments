@@ -1,5 +1,5 @@
 {
-  "edition": "2026-10-29.representative3",
+  "edition": "2026-10-29.representative4",
   "base_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
   "baseline_selection_path": "practice_expansion/2026-10-27-quality/selection.json",
   "baseline_selection_sha256": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64",
@@ -161,10 +161,9 @@
     "MA-RW-0061",
     "MA-RW-0062",
     "MA-RW-0064",
-    "MA-EXP-0139",
-    "MA-EXP-0143",
-    "MA-EXP-0147",
-    "MA-EXP-0151",
+    "MA-RW-0065",
+    "MA-RW-0067",
+    "MA-RW-0068",
     "MA-CASE-0802",
     "MA-CASE-0814",
     "MA-CASE-0826",
@@ -504,7 +503,10 @@
     "MA-RW-0060",
     "MA-RW-0061",
     "MA-RW-0062",
-    "MA-RW-0064"
+    "MA-RW-0064",
+    "MA-RW-0065",
+    "MA-RW-0067",
+    "MA-RW-0068"
   ],
   "previous_quality_ids": [
     "MA-REV-0001",
@@ -960,6 +962,24 @@
       "content_sha256": "f2b5fa4540bdfae8cb59d3bb6f85f5986d643f43b1987294b398ddee2b4ea2b6"
     },
     {
+      "legacy_question_id": "MA-EXP-0139",
+      "replacement_question_id": "MA-RW-0065",
+      "kind": "NEW_CASE",
+      "content_sha256": "59f05980a45fba5aa0851fb48e2a5d5b9ae8af01989564c725a5cb31acd2eb68"
+    },
+    {
+      "legacy_question_id": "MA-EXP-0147",
+      "replacement_question_id": "MA-RW-0067",
+      "kind": "NEW_CASE",
+      "content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c"
+    },
+    {
+      "legacy_question_id": "MA-EXP-0151",
+      "replacement_question_id": "MA-RW-0068",
+      "kind": "NEW_CASE",
+      "content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd"
+    },
+    {
       "legacy_question_id": "MA-EXP-0075",
       "replacement_question_id": "MA-REV-0009",
       "kind": "EXISTING_QUALITY_CASE",
@@ -1043,6 +1063,36 @@
       "independent_review_claim": false
     },
     {
+      "legacy_question_id": "MA-EXP-0143",
+      "proposed_question_id": "MA-RW-0066",
+      "reserved_question_id": "MA-RW-0066",
+      "status": "HOLD_FOR_LEGAL_REVIEW",
+      "reason": "Policy 2026-02 II.A/B describes limited four-intern paths while 247 CMR 8.01(16) states a two-intern cap. Official texts were re-read but their application relationship remains unresolved. This is not a policy-invalidity or universal-waiver finding; no unchanged key is adjudicated wrong merely from the source relationship.",
+      "unresolved_authorities": [
+        {
+          "source_id": "rw3-training-cmr8",
+          "exact_section": "247 CMR 8.01(16)"
+        },
+        {
+          "source_id": "rw3-training-policy2026-02",
+          "exact_section": "Policy 2026-02 II.A-B"
+        }
+      ],
+      "note_unit_ids": [
+        "w1-b-9"
+      ],
+      "affected_archive_ids": [
+        "MA-EXP-0141",
+        "MA-EXP-0142",
+        "MA-EXP-0143",
+        "MA-EXP-0144"
+      ],
+      "affected_archive_notice_scope": "Only these four PER20 IDs individually read in this continuation. PLUS candidates and indirect PER19 mentions are tracked separately without an inherited full review claim.",
+      "source_review_record": "reports/full-corpus-review/unit3b-author-review.json",
+      "next_action": "Resolve authoritative application relationship or maintain hold; individually review queued PLUS/canonical impacts.",
+      "independent_review_claim": false
+    },
+    {
       "hold_id": "HOLD-QA-0082",
       "legacy_question_id": "MA-CASE-0082",
       "reason": "기존 정답 C는 1개월 ordinary lapse에 60일 초과 추가조건 기준이 아직 적용되지 않았다고 설명합니다. 그러나 오답 A의 'Stop practice and satisfy applicable Board reinstatement conditions; MPJE is not automatic from this duration alone'도 일반적인 표현으로는 같은 상황에서 타당하게 읽힙니다. 오답 해설에만 60일 초과 조건을 넣어 A를 배제할 수 없습니다. 정답의 구체성 차이만으로 SBA를 채점하지 않도록 보류합니다.",
@@ -1108,15 +1158,15 @@
   ],
   "history_policy": "All legacy and previous96 IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only.",
   "stats": {
-    "recommended": 440,
-    "legacy_representatives_remaining": 285,
+    "recommended": 439,
+    "legacy_representatives_remaining": 281,
     "baseline_legacy_representatives": 355,
-    "newly_authored_replacements": 59,
+    "newly_authored_replacements": 62,
     "previous_quality": 96,
     "replaced_by_existing_quality": 3,
-    "held_from_default": 8,
-    "available_total": 2331,
-    "archive_ids_with_review_notice": 25
+    "held_from_default": 9,
+    "available_total": 2334,
+    "archive_ids_with_review_notice": 29
   },
   "input_hashes": {
     "practice_expansion/2026-10-28-representative/authoring/01_personnel.json": "c5f9f7cc47990e38dbbce51b4d059261079d6829dfb8c4ea4c92346ee21bd1b4",
@@ -1124,6 +1174,7 @@
     "practice_expansion/2026-10-28-representative/authoring/03_personnel_scope.json": "fd33cae2e34221786e24975362f33c16671b3bd3e540c6c8c9e130ccd715d7a4",
     "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78",
     "practice_expansion/2026-10-28-representative/authoring/05_personnel_ratios.json": "0dafbe57987b928f04791729305ba9e9b5b3e0485d0f446cff08dd6ef40953ec",
+    "practice_expansion/2026-10-28-representative/authoring/06_personnel_training.json": "8d86dbe8cba312e2142eef8d2f9dd3a61c65bfdb287003086d392067b34f87c3",
     "reports/representative-rewrite/default-holds.json": "299aa39a3b26ea3a0efebdc3e5f72b24470cae43a55e99830f6ee9baf9f92c9d"
   },
   "scope": "Cumulative individually reviewed implementation units. Remaining legacy representatives have editorial triage only unless separately recorded. All archived variants remain accessible and Chaos10 still samples the complete published corpus with replacement."

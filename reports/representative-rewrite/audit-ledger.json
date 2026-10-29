@@ -3,7 +3,7 @@
   "base_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
   "reviewed_at": "2026-10-28",
   "implementation_updated_at": "2026-10-29",
-  "selection_edition": "2026-10-29.representative3",
+  "selection_edition": "2026-10-29.representative4",
   "scope": "355 individual editorial triage records joined with explicit implementation records. This generated join performs no new legal review.",
   "canonical_independent_audit_created": false,
   "official_source_reverification_performed_by_ledger": false,
@@ -11,8 +11,8 @@
   "input_hashes": {
     "reports/representative-rewrite/legacy-editorial-triage.json": "01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865",
     "practice_expansion/2026-10-27-quality/selection.json": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64",
-    "practice_expansion/2026-10-28-representative/selection.json": "791fd04e6ad9b62561557b7160105710fcfe60322de30b3d8f751bfbe2c03700",
-    "practice_expansion/2026-10-28-representative/questions.json": "ccdc32b331e6f252cc59c7f9d1233c1afc847798a6e95fb29b4cff689853f01b"
+    "practice_expansion/2026-10-28-representative/selection.json": "3b803cdb240ff9fd2834f12be4e49ed191b3294d5e1bfb936780fb4b72bfcfee",
+    "practice_expansion/2026-10-28-representative/questions.json": "b59a4685897c8d45035de082d40a36f3e29133df5f0a53fb6b66542b68f58ff4"
   },
   "verified_original_triage_inputs": [
     {
@@ -202,15 +202,15 @@
       "NOT_REVERIFIED": 355
     },
     "implementation_statuses": {
-      "REWRITTEN_NEW_ID": 59,
+      "REWRITTEN_NEW_ID": 62,
       "REUSED_EXISTING_QUALITY": 3,
-      "HOLD_FROM_DEFAULT": 8,
-      "NOT_YET_IMPLEMENTED": 285
+      "HOLD_FROM_DEFAULT": 9,
+      "NOT_YET_IMPLEMENTED": 281
     },
-    "current_default": 440,
-    "archive_ids_with_review_notice": 25,
+    "current_default": 439,
+    "archive_ids_with_review_notice": 29,
     "previous_quality_retained": 96,
-    "newly_authored_replacement_questions": 59,
+    "newly_authored_replacement_questions": 62,
     "originals_rewritten_in_place": 0,
     "originals_deleted": 0,
     "canonical_independent_audits_created": 0
@@ -5672,13 +5672,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "REWRITTEN_NEW_ID",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
-        "replacement_question_id": null,
+        "legacy_is_in_current_default": false,
+        "replacement_question_id": "MA-RW-0065",
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "selection_record": {
+          "legacy_question_id": "MA-EXP-0139",
+          "replacement_question_id": "MA-RW-0065",
+          "kind": "NEW_CASE",
+          "content_sha256": "59f05980a45fba5aa0851fb48e2a5d5b9ae8af01989564c725a5cb31acd2eb68"
+        },
+        "replacement_content_sha256": "59f05980a45fba5aa0851fb48e2a5d5b9ae8af01989564c725a5cb31acd2eb68",
+        "replacement_source_review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "replacement_verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+        "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+        "implementation_basis": "Separate new case recorded in the generated bank and current selection; original content is unchanged."
       }
     },
     {
@@ -5818,13 +5828,43 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "legacy_question_id": "MA-EXP-0143",
+          "proposed_question_id": "MA-RW-0066",
+          "reserved_question_id": "MA-RW-0066",
+          "status": "HOLD_FOR_LEGAL_REVIEW",
+          "reason": "Policy 2026-02 II.A/B describes limited four-intern paths while 247 CMR 8.01(16) states a two-intern cap. Official texts were re-read but their application relationship remains unresolved. This is not a policy-invalidity or universal-waiver finding; no unchanged key is adjudicated wrong merely from the source relationship.",
+          "unresolved_authorities": [
+            {
+              "source_id": "rw3-training-cmr8",
+              "exact_section": "247 CMR 8.01(16)"
+            },
+            {
+              "source_id": "rw3-training-policy2026-02",
+              "exact_section": "Policy 2026-02 II.A-B"
+            }
+          ],
+          "note_unit_ids": [
+            "w1-b-9"
+          ],
+          "affected_archive_ids": [
+            "MA-EXP-0141",
+            "MA-EXP-0142",
+            "MA-EXP-0143",
+            "MA-EXP-0144"
+          ],
+          "affected_archive_notice_scope": "Only these four PER20 IDs individually read in this continuation. PLUS candidates and indirect PER19 mentions are tracked separately without an inherited full review claim.",
+          "source_review_record": "reports/full-corpus-review/unit3b-author-review.json",
+          "next_action": "Resolve authoritative application relationship or maintain hold; individually review queued PLUS/canonical impacts.",
+          "independent_review_claim": false
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -5951,13 +5991,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "REWRITTEN_NEW_ID",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
-        "replacement_question_id": null,
+        "legacy_is_in_current_default": false,
+        "replacement_question_id": "MA-RW-0067",
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "selection_record": {
+          "legacy_question_id": "MA-EXP-0147",
+          "replacement_question_id": "MA-RW-0067",
+          "kind": "NEW_CASE",
+          "content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c"
+        },
+        "replacement_content_sha256": "0f268e174e793c4b7b5af9bcc4a43eceddcc1ed916243728d683267bf0f7359c",
+        "replacement_source_review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "replacement_verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+        "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+        "implementation_basis": "Separate new case recorded in the generated bank and current selection; original content is unchanged."
       }
     },
     {
@@ -6096,13 +6146,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "REWRITTEN_NEW_ID",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
-        "replacement_question_id": null,
+        "legacy_is_in_current_default": false,
+        "replacement_question_id": "MA-RW-0068",
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "selection_record": {
+          "legacy_question_id": "MA-EXP-0151",
+          "replacement_question_id": "MA-RW-0068",
+          "kind": "NEW_CASE",
+          "content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd"
+        },
+        "replacement_content_sha256": "72afa7c3b551334fcd423f7bf010439b7a7efa305a8d55d32c28e10d40a8c0dd",
+        "replacement_source_review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+        "replacement_verification_status": "NOT_INDEPENDENTLY_REVIEWED",
+        "history_policy": "NEW_ID_NO_ATTEMPT_OR_BOOKMARK_MIGRATION",
+        "implementation_basis": "Separate new case recorded in the generated bank and current selection; original content is unchanged."
       }
     },
     {
