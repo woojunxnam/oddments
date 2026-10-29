@@ -66,3 +66,11 @@ Current2334 = original2176 + MA-REV96 + MA-RW62. Representative355: rewritten62/
 Notes w1-b-9/10, chapter highlights, LAW-012 and RF-049 use the versioned revision. Original guide, Unit3A revision/migration and previous59 complete question objects are preserved. Exact generated-export migration remains narrowly validated. All old IDs/storage/anchors remain; prior reading history is retained with revision notices.
 
 Next work after final Unit3B CI/deployment: MOR07 MA-EXP-0179/w1-c-4; MOR08 0183/w1-c-5; MOR09 0187/w1-c-5; MOR10 0191/w1-c-7; DISC01 0195/w6-b-8; DISC02 0199/w6-b-8; DISC03 0203/w1-c-13; DISC04 0207/w1-c-13; DISC05 0211/w1-c-14; DISC06 0215/w1-c-14; DISC07 0219/w1-c-15; DISC08 0223/w4-d-17. These are queued, not reviewed. Keep intern2/4 relationship, PLUS source qualifications, CE email/Form w1-a-7 conflict OPEN. Commands: build_full_corpus_review.py --check; build_quality_status.py --check; representative builders/checks/protection; notes/study/refresh builders --check; validate_all.py; pytest; existing HTTP/browser CI. No full-corpus completion date is asserted.
+
+## Unit 3B 병합·배포 확인 — 2026-10-29
+
+PR #173 최종 head `9a298859b59038220078654a75b9dbd2d48c7d9e`의 CI 10개가 모두 성공했다. 실제294 Python tests PASS, canonical 오류0/기존경고7, 재생성 후 diff 없음. main `a9e18a4e3281e1184cb28c29e166ec56ba661426`로 병합했고 Pages run40933085554가 성공했다. 위의 PENDING/미배포 문장은 해당 시점의 snapshot이며 현재 배포 이벤트는 unit3b-deployment.json을 따른다.
+
+공개 origin 대표 회귀 run40933160065/job123656638665 성공:62개 개정판 오답/정답 채점·shuffle·citation·320px,10개 보류문항 접근/주의표시,기존 attempt/bookmark·backup/import,20/120 및 전체 복원추출 Chaos10을 확인했다. Artifact12924325381 SHA256 `fc18e2845a2b95186ef259c642ff72b9c7ad6be9de037815a32bd8d40ae8b23b`. Production study run40933160045/job123656638529에서 merged source bytes 및2334 publication count 대조도 성공했다. 이번에는 notes/content.js·refresh-data.js의 별도 production byte 대조를 실행하지 않았으며,PR HTTP·deterministic 검사는 통과했다. 실제 기기/Safari는 NOT_RUN.
+
+확정 누적62재작성/3재사용/10보류/280미반영,archive2334/default438. Unit3B22 ID 검토기록과노트2절 개정은 전체 법규 검토 완료가 아니다. 누적41ID 외2293미재검증,노트306절 atomic claim census 미완료,독립 감사0/peer NOT_RUN. 위 다음12 ID·노트 unit과CE/감독인원 관계 OPEN을 그대로 이어간다. 종료시점 배포 main은 위 a9e18a4이고 배포 증거 문서는 별도 docs branch/PR로 보존한다.
