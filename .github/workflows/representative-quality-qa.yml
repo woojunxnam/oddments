@@ -11,11 +11,13 @@ on:
       - 'tests/test_full_corpus_review.py'
       - 'scripts/*representative*'
       - 'scripts/practice_quality.py'
+      - 'scripts/practice_note_links.py'
       - 'scripts/publish_practice.py'
       - 'scripts/build_exam_study.py'
       - 'site/practice-expansion/**'
       - 'tests/test_representative_rewrites.py'
       - 'tests/test_representative_filters.py'
+      - 'tests/test_practice_note_links.py'
       - '.github/workflows/representative-quality-qa.yml'
   pull_request:
     paths:
@@ -30,6 +32,7 @@ on:
       - 'site/**'
       - 'tests/test_representative_rewrites.py'
       - 'tests/test_representative_filters.py'
+      - 'tests/test_practice_note_links.py'
       - '.github/workflows/representative-quality-qa.yml'
   workflow_run:
     workflows: ['Deploy MPJE preview to Pages']
@@ -59,7 +62,7 @@ jobs:
           python scripts/build_full_corpus_review.py --check
           python scripts/build_quality_status.py --check
           python -m pytest tests/test_full_corpus_review.py -q
-          python -m pytest tests/test_representative_rewrites.py tests/test_representative_filters.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          python -m pytest tests/test_representative_rewrites.py tests/test_representative_filters.py tests/test_practice_note_links.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
           python scripts/build_exam_study.py --check
           python scripts/build_refresh.py --check
           python scripts/build_ultimate_notes.py --check

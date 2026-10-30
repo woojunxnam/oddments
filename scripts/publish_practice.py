@@ -94,7 +94,12 @@ def build_payload() -> dict:
     data['generation_method'] = 'Original 256 paired-case families plus 128 new conditional models. Nine deliberate condition variants per new model; not 1,152 unrelated legal principles.'
     data['additional_bank_sha256'] = {a['collection_id']: a['sha256'] for a in config_additions}
     from practice_quality import attach
-    return attach(data, config.get('representative_selection'))
+    data = attach(data, config.get('representative_selection'))
+    from notes_revision import load_notes
+    from practice_note_links import build_note_practice_index
+    data['note_practice_index'] = build_note_practice_index(
+        data['questions'], data['quality_selection']['recommended_ids'], load_notes(ROOT))
+    return data
 
 
 def render(data: dict) -> str:

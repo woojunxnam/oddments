@@ -129,6 +129,9 @@ def build_ledger():
     archive_notice_ids = set(holds) | {
         qid for record in holds.values() for qid in record.get('affected_archive_ids', [])
     }
+    archive_notice_ids |= {
+        qid for notice in selection.get('archive_review_notices', []) for qid in notice['question_ids']
+    }
     require(archive_notice_ids <= original.keys(), 'A related archive warning refers to an unknown original ID.')
     require(not archive_notice_ids & recommended, 'An archive item carrying a hold warning remains in the default pool.')
 
@@ -219,6 +222,7 @@ def build_ledger():
         canonical_independent_audit_created=False,
         official_source_reverification_performed_by_ledger=False,
         original_editorial_triage_preserved=True,
+        subsequent_source_bound_archive_notices=copy.deepcopy(selection.get('archive_review_notices', [])),
         input_hashes={relative(path): digest(path.read_bytes()) for path in (TRIAGE, BASELINE_SELECTION, SELECTION, REVISION_BANK)},
         verified_original_triage_inputs=verified_triage_inputs,
         editorial_triage_metadata={key: copy.deepcopy(value) for key, value in triage.items() if key != 'items'},
@@ -237,6 +241,7 @@ def build_ledger():
         interpretation_ko=[
             'editorial_status는 원본을 읽은 편집자의 최초 판정이다. implementation_status는 현재 파일·selection으로 확인되는 반영 상태이며 서로 덮어쓰지 않는다.',
             '원본 355개 모두의 legal_correctness는 기존 triage대로 NOT_REVERIFIED이다. 새 ID에 대한 작성자 출처 검토가 원본의 법규 재검증이나 독립 감사로 소급되지 않는다.',
+            '후속 원본 ID별 법규 대조는 reports/full-corpus-review/question-ledger.jsonl에 별도로 기록한다. 현재 오류·조건부 안내는 source-bound archive notices이며 과거 triage나 canonical 상태를 덮어쓰지 않는다.',
             'REWRITTEN_NEW_ID는 별도 새 사례의 작성·반영을 뜻한다. REUSED_EXISTING_QUALITY는 이미 있는 96개 중 한 사례를 재사용한 것이며 신규 작성 수에 넣지 않는다.',
             'HOLD_FROM_DEFAULT는 기본 목록에서의 보류이다. 원본 파일·정답·기존 학습 기록을 삭제하거나 바꾸지 않는다.',
             'NOT_YET_IMPLEMENTED는 편집 검토만 완료된 범위이다. 355개 전부가 수정·교체 또는 법규 감사 완료되었다고 해석하면 안 된다.',
@@ -261,7 +266,7 @@ def render_markdown(ledger):
     ]
     lines.extend(f'| {status} | {number} |' for status, number in counts['implementation_statuses'].items())
     lines += ['', f"기본 목록 {counts['current_default']}개에는 기존 고품질 {counts['previous_quality_retained']}개가 유지됩니다. 별도 작성한 재작성 사례는 {counts['newly_authored_replacement_questions']}개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.", '',
-              f"대표 보류 항목과 관련 변형을 합쳐 원본 {counts['archive_ids_with_review_notice']}개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.", '',
+              f"대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 {counts['archive_ids_with_review_notice']}개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.", '',
               '## 최초 편집 판정 보존', '', '| 최초 판정 | 문항 수 |', '|---|---:|']
     lines.extend(f'| {status} | {number} |' for status, number in counts['original_editorial_statuses'].items())
     lines += ['', '원본 법규 상태는 355개 모두 **NOT_REVERIFIED**로 유지됩니다. 새 ID의 작성자 출처 확인과 원본·전체 corpus의 독립 법률 감사를 구별합니다.', '']

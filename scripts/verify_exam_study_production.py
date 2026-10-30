@@ -16,6 +16,7 @@ ASSETS = [
     'notes/refresh.js', 'assets/learning-tools.js',
     # publish_practice.prepare copies these unchanged from the checked-out site.
     'notes/content.js', 'notes/build.json', 'notes/book.html', 'notes/complete-notes.md',
+    'notes/notes.css',
 ]
 
 def main() -> None:

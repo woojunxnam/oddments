@@ -1,6 +1,6 @@
 # 기존 대표 355문항: 편집 판정과 실제 반영 원장
 
-기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-30.representative5`
+기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-30.representative6`
 
 원문 편집 검토일: 2026-10-28 · 구현 상태 갱신일: 2026-10-30
 
@@ -10,14 +10,14 @@
 
 | 상태 | 문항 수 |
 |---|---:|
-| REWRITTEN_NEW_ID | 70 |
+| REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
 | HOLD_FROM_DEFAULT | 10 |
-| NOT_YET_IMPLEMENTED | 272 |
+| NOT_YET_IMPLEMENTED | 268 |
 
-기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 70개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류 항목과 관련 변형을 합쳐 원본 35개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 44개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -33,6 +33,7 @@
 
 - editorial_status는 원본을 읽은 편집자의 최초 판정이다. implementation_status는 현재 파일·selection으로 확인되는 반영 상태이며 서로 덮어쓰지 않는다.
 - 원본 355개 모두의 legal_correctness는 기존 triage대로 NOT_REVERIFIED이다. 새 ID에 대한 작성자 출처 검토가 원본의 법규 재검증이나 독립 감사로 소급되지 않는다.
+- 후속 원본 ID별 법규 대조는 reports/full-corpus-review/question-ledger.jsonl에 별도로 기록한다. 현재 오류·조건부 안내는 source-bound archive notices이며 과거 triage나 canonical 상태를 덮어쓰지 않는다.
 - REWRITTEN_NEW_ID는 별도 새 사례의 작성·반영을 뜻한다. REUSED_EXISTING_QUALITY는 이미 있는 96개 중 한 사례를 재사용한 것이며 신규 작성 수에 넣지 않는다.
 - HOLD_FROM_DEFAULT는 기본 목록에서의 보류이다. 원본 파일·정답·기존 학습 기록을 삭제하거나 바꾸지 않는다.
 - NOT_YET_IMPLEMENTED는 편집 검토만 완료된 범위이다. 355개 전부가 수정·교체 또는 법규 감사 완료되었다고 해석하면 안 된다.
@@ -95,10 +96,10 @@
 | MA-EXP-0199 | DISC02 | REPLACE / P2 | REWRITTEN_NEW_ID | MA-RW-0074 | NOT_REVERIFIED | 연속임기와회원경력요건을 두 사람의지식문제로 묶고 D holdover는 지문사실과 무관하다. 다른 대표에서 부족한 실무판단에 기본목록 자리를 배정하는 편이 낫다. |
 | MA-EXP-0203 | DISC03 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0075 | NOT_REVERIFIED | 최근 자체점검이 Board접근을 대체한다는 갈등은 실제적이나 D immunity는 노골적이다. MOR변경7일과기록2년은 별도사례에 나열된다. |
 | MA-EXP-0207 | DISC04 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0076 | NOT_REVERIFIED | initial21일과반환후7일을 비교할 수 있는데 전부정답이며 날짜계산은 없다. 책임자없는 vague promise는 너무 쉽게 결함으로 보인다. |
-| MA-EXP-0211 | DISC05 | REPLACE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두 사례는 unsafe practice와치료사실인데 유일 정답 D는 conviction 정의다. key를 찾기 위해 지문을 읽을 필요가 없는 명백한 내용불일치다. |
-| MA-EXP-0215 | DISC06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | credentialing form 작성이라는 실제결정이 있으나 consent agreement 제한내용을 제시하지 않아 일반진위로 남는다. probation 영구취소는 과장오답이다. |
-| MA-EXP-0219 | DISC07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | summary7일과cease/quarantine15businessdays의경로 차이는 유용하다. threat문구의요건은 exact조문 재대조가 필요하고 A의optional 준수는 약하다. |
-| MA-EXP-0223 | DISC08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | cost-only pending과federal waiver의독립성은 연결할 수 있으나 모두정답이고5주년만료는 지문에사실이 없다. |
+| MA-EXP-0211 | DISC05 | REPLACE / P1 | REWRITTEN_NEW_ID | MA-RW-0077 | NOT_REVERIFIED | 두 사례는 unsafe practice와치료사실인데 유일 정답 D는 conviction 정의다. key를 찾기 위해 지문을 읽을 필요가 없는 명백한 내용불일치다. |
+| MA-EXP-0215 | DISC06 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0078 | NOT_REVERIFIED | credentialing form 작성이라는 실제결정이 있으나 consent agreement 제한내용을 제시하지 않아 일반진위로 남는다. probation 영구취소는 과장오답이다. |
+| MA-EXP-0219 | DISC07 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0079 | NOT_REVERIFIED | summary7일과cease/quarantine15businessdays의경로 차이는 유용하다. threat문구의요건은 exact조문 재대조가 필요하고 A의optional 준수는 약하다. |
+| MA-EXP-0223 | DISC08 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0080 | NOT_REVERIFIED | cost-only pending과federal waiver의독립성은 연결할 수 있으나 모두정답이고5주년만료는 지문에사실이 없다. |
 | MA-EXP-0227 | CDTM01 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0025 | NOT_REVERIFIED | naloxone standing order와OTC피임약이모두무제한처방권으로 확장된다는 과장 사례다. 유일정답 C는적격CDTM일반요건이며 실제환자행동을 정하지 않는다. |
 | MA-EXP-0231 | CDTM02 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0026 | NOT_REVERIFIED | 무MA면허와비적격보험이라는서로다른자격결함은실제채용검토로통합가능하다. 미래직장 B는지문밖이며occurrence당보장액이보기보다해설에만있다. |
 | MA-EXP-0235 | CDTM03 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0027 | NOT_REVERIFIED | 2026신규CPA에2017grandfather를적용하려는오해는구체적이다. B의모든회사경력과C의Boardequivalency일반론은심화판단을약화한다. |
@@ -405,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `9fa873e74bcb92f4f1ad6a0faf6108798bff6b172425bf7d1382c40963f9e3c7` |
-| practice_expansion/2026-10-28-representative/questions.json | `ea753733f37e2c9f276710f6bb67eb2b30e2422f7b1d33d164ecd241eec5d7d3` |
+| practice_expansion/2026-10-28-representative/selection.json | `5d7e078df897b6fa1cdd6b68fba9a8867111aac5f7a05ef9845407b4f10061e2` |
+| practice_expansion/2026-10-28-representative/questions.json | `01a29813f3fdd6a950c01b4e490e6e9e1b97ef527f7ee50a1955a4d75ac20d6e` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

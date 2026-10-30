@@ -63,7 +63,9 @@ def test_no_draft_gate_in_public_ui(rendered):
     visible=re.sub(r'<script.*?</script>','',rendered,flags=re.S)
     assert 'DRAFT' not in visible and 'id="ack"' not in rendered and "$('#ack')" not in rendered
     assert '온라인 연습' in visible and '독립 법규 검토' in visible
-    assert 'openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0])' in rendered
+    # An explicit hash still opens its ID; an empty note filter must not open Q[0].
+    assert 'const initialQuestion=byId.get(location.hash.slice(1))||filtered[0]||(!selectedNoteId?Q[0]:null);' in rendered
+    assert 'if(initialQuestion)openQuestion(initialQuestion);else openFilteredQuestion();' in rendered
 
 def test_payload_escapes_script_close(rendered):
     payload=re.search(r'<script id="payload" type="application/json">(.*?)</script>',rendered,re.S).group(1)

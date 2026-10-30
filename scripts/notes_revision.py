@@ -9,8 +9,9 @@ REVISION = 'revisions/notes/2026-10-29-personnel-ratios.json'
 REVISION_B = 'revisions/notes/2026-10-29-personnel-supervision-training.json'
 REVISION_C = 'revisions/notes/2026-10-30-mor-presence.json'
 REVISION_D = 'revisions/notes/2026-10-30-mor-discipline.json'
-PATHS = [REVISION, REVISION_B, REVISION_C, REVISION_D]
-IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1', '2026-10-30.mor-presence.1', '2026-10-30.mor-discipline.1']
+REVISION_E = 'revisions/notes/2026-10-30-discipline-cdtm.json'
+PATHS = [REVISION, REVISION_B, REVISION_C, REVISION_D, REVISION_E]
+IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1', '2026-10-30.mor-presence.1', '2026-10-30.mor-discipline.1', '2026-10-30.discipline-cdtm.1']
 
 
 def digest(raw):
@@ -37,8 +38,19 @@ def load_notes(root=ROOT, revision_id=None):
     for i,(path,revision_raw,revision) in enumerate(revisions(root)):
         if digest(raw) != revision['base_guide_sha256']:
             raise ValueError('Stale notes revision base')
+        new_sources = revision.get('sources', {})
+        expected_sources = [set(), set(), set(), set(), {
+            'src-cdtm-c112s24bhalf-20261030', 'src-cdtm-naloxone-order-20261030',
+        }][i]
+        if set(new_sources) != expected_sources or set(new_sources).intersection(data['sources']):
+            raise ValueError('Unexpected revision source scope or overwritten source')
+        for sid, source in new_sources.items():
+            if source['id'] != sid or not source['url'].startswith(('https://www.mass.gov/', 'https://malegislature.gov/')):
+                raise ValueError('Unknown revised official source')
+            data['sources'][sid] = copy.deepcopy(source)
         units={u['id']:u for c in data['chapters'] for u in c['units']}
-        expected=[['w1-b-8'],['w1-b-9','w1-b-10'],['w1-c-7'],['w1-c-4','w1-c-5','w1-c-7','w1-c-13','w6-b-8']][i]
+        expected=[['w1-b-8'],['w1-b-9','w1-b-10'],['w1-c-7'],['w1-c-4','w1-c-5','w1-c-7','w1-c-13','w6-b-8'],
+                  ['w1-c-14','w1-c-15','w4-d-17','w3-d-2','w3-d-3','authority-paths','w6-b-17']][i]
         if [u['id'] for u in revision['units']] != expected:
             raise ValueError('Unexpected notes revision unit scope')
         for change in revision['units']:
@@ -53,7 +65,7 @@ def load_notes(root=ROOT, revision_id=None):
                 unit['source_ids']=copy.deepcopy(change['source_ids'])
             unit['body_sha256']=digest(unit['body'].encode())
             unit['content_version']=revision['id']
-        expected_chapters=[{'personnel'},{'personnel'},set(),{'pharmacy-mor','discipline-inspection'}][i]
+        expected_chapters=[{'personnel'},{'personnel'},set(),{'pharmacy-mor','discipline-inspection'}, {'discipline-inspection','cdtm'}][i]
         if set(revision['chapter_highlights']) != expected_chapters:
             raise ValueError('Unexpected revision chapter scope')
         for chapter in data['chapters']:
@@ -76,7 +88,8 @@ def apply_study_revision(data, kind, root=ROOT):
     lookup={x['id']:x for x in data[field]}
     for _,_,revision in revisions(root):
         patches=revision[{'study':'study_lessons','refresh':'refresh_cards'}[kind]]
-        expected_scopes={'study':[{'LAW-012'},{'LAW-012'},set(),{'LAW-015'}], 'refresh':[{'RF-049'},{'RF-049'},set(),set()]}
+        expected_scopes={'study':[{'LAW-012'},{'LAW-012'},set(),{'LAW-015'}, {'LAW-016','LAW-045','LAW-048'}],
+                         'refresh':[{'RF-049'},{'RF-049'},set(),set(), {'RF-011'}]}
         if set(patches) != expected_scopes[kind][IDS.index(revision['id'])]:
             raise ValueError('Unexpected derived revision scope')
         for identifier,patch in patches.items():

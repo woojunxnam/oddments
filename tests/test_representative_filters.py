@@ -73,8 +73,9 @@ const controls={};
 for(const id of ['query','area','qtype','saved','scope','collection','filter-summary','filter-breakdown','filter-exception','filter-session-help','filter-example-text'])controls['#'+id]={value:'',textContent:'',hidden:false};
 controls['#collection'].options=[{value:'',dataset:{name:'모든 모음'}},...D.collections.map(group=>({value:group.id,dataset:{name:group.title}}))];
 const $=id=>{if(!controls[id])throw Error('Missing control '+id);return controls[id];};
-let filtered=[];
+let filtered=[],selectedNoteId='';
 function view(changes={}){
+ selectedNoteId=changes.note??'';
  const defaults={query:'',area:'',qtype:'',saved:'',scope:'recommended',collection:''};
  for(const [id,value] of Object.entries(defaults))controls['#'+id].value=changes[id]??value;
  controls['#collection'].selectedOptions=[controls['#collection'].options.find(option=>option.value===controls['#collection'].value)];
@@ -158,6 +159,22 @@ class FilterContracts(unittest.TestCase):
     result=view({query:'ma-',area:'3'});assert.deepEqual(result.ids,['MA-EXP-0003']);
     result=view({scope:'all',saved:'bookmarks'});
     assert.deepEqual(result.ids,['MA-EXP-0001','MA-REV-0001']);assert.equal(result.exceptionHidden,true);
+    ''')
+
+    def test_note_filter_uses_exact_evidence_and_survives_archive_exceptions(self):
+        execute_reader_functions(self.reader[1], r'''
+    for(const q of Q)q.note_evidence=[{unit_id:q.family_id==='shared'?'note-a':'note-b'}];
+    let result=view({note:'note-a'});
+    assert.deepEqual(result.ids,['MA-RW-0001']);assert.equal(result.summary.scopeCount,1);
+    result=view({note:'note-a',scope:'all'});
+    assert.deepEqual(result.ids,['MA-EXP-0001','MA-RW-0001','MA-EXP-0002']);
+    assert.equal(result.summary.familyCount,1);
+    result=view({note:'note-a',saved:'wrong'});
+    assert.deepEqual(result.ids,['MA-EXP-0001']);
+    result=view({note:'note-b',query:'MA-EXP-0001'});
+    assert.deepEqual(result.ids,[]);
+    result=view({note:'unknown'});assert.deepEqual(result.ids,[]);
+    result=view({note:'note-a',collection:'quality'});assert.deepEqual(result.ids,[]);
     ''')
 
 

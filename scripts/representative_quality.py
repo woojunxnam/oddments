@@ -3,6 +3,58 @@ from html import escape
 from practice_quality import line, once
 
 
+def connect_notes(text, data):
+    """Link exact note evidence to a reversible filter, using existing study records."""
+    panel = '''<section id="note-context" class="note-context" hidden aria-labelledby="note-context-title">
+<p class="tiny">통합노트에서 이어서 연습</p><h2 id="note-context-title"></h2>
+<p id="note-context-counts" class="tiny"></p>
+<div class="note-context-actions"><a id="note-return" href="../notes/">이 절 다시 읽기 →</a>
+<button type="button" id="note-wrong">이 절 오답만 보기</button><button type="button" id="note-clear">노트 연결 해제</button></div>
+<p id="note-context-help" class="tiny">아래 검색·포함 범위·모음과 함께 적용합니다. 완전 랜덤은 전체 문항에서 출제합니다.</p>
+</section>'''
+    text = once(text, '<aside id="controls" class="panel">', '<aside id="controls" class="panel">' + panel)
+    text = once(text, '</style>', '''
+.note-context{margin-bottom:18px;padding:14px;border:1px solid var(--line);border-radius:9px;background:var(--pale)}
+.note-context h2{margin:5px 0;font-size:1rem;overflow-wrap:anywhere}.note-context p{margin:6px 0}
+.note-context-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.note-context-actions button,.note-context-actions a{font-size:.85rem;white-space:normal}
+</style>''')
+    anchor = 'const revisionRank=q=>q.collection_id'
+    # Place the filter state after the immutable question payload, before startup.
+    text = once(text, anchor,
+        "const noteParams=new URLSearchParams(location.search);let selectedNoteId=noteParams.get('note')||'';"
+        "if(selectedNoteId&&noteParams.get('scope')==='all')$('#scope').value='all';"
+        "if(selectedNoteId&&noteParams.get('review')==='wrong')$('#saved').value='wrong';" + anchor)
+    text = once(text, 'return{query,saved,scope,collection,archiveReason,includeArchive:',
+        'return{query,saved,scope,collection,note:selectedNoteId,archiveReason,includeArchive:')
+    text = once(text,
+        "function inSelectedPool(q,c){return(!c.collection||q.collection_id===c.collection)&&",
+        "function inSelectedPool(q,c){return(!c.note||(q.note_evidence||[]).some(e=>e.unit_id===c.note))&&(!c.collection||q.collection_id===c.collection)&&")
+    functions = r'''function updateNoteContext(){const box=$('#note-context'),note=D.note_practice_index?.[selectedNoteId];box.hidden=!selectedNoteId;if(!selectedNoteId)return;$('#note-context-title').textContent=note?note.title:'연결된 노트 절을 찾을 수 없습니다';$('#note-context-counts').textContent=note?`이 절의 대표·개정 ${note.recommended.toLocaleString()}문항 · 모든 변형 ${note.total.toLocaleString()}문항. 연결 수는 독립 법규 검증 수가 아닙니다.`:'연결된 목록은 비어 있습니다. 주소의 노트 ID를 확인하거나 노트 연결을 해제해 주세요.';const outside=active&&!(active.note_evidence||[]).some(e=>e.unit_id===selectedNoteId);$('#note-context-help').textContent=(outside?'현재 열린 문항은 이 절의 연결 문항이 아닙니다. 목록·연습 세트에는 이 절 필터가 계속 적용됩니다. ':'아래 검색·포함 범위·모음과 함께 적용합니다. ')+(session?'세트 중 노트는 새 탭에서 열리며 시간 연습의 시계는 계속 갑니다. ':'')+'완전 랜덤은 전체 문항에서 출제합니다.';$('#note-return').hidden=!note;if(note)$('#note-return').href=note.note_url;$('#note-return').target=session?'_blank':'_self';$('#note-return').rel='noopener noreferrer';$('#note-wrong').disabled=!!session||!note;$('#note-clear').disabled=!!session;}
+function openFilteredQuestion(){const q=filtered[0];reviewQueue=null;if(q)openQuestion(q);else{$('#question').hidden=true;$('#locked').hidden=false;$('#locked').textContent='현재 조건에 맞는 문항이 없습니다. 이 절에 남은 오답이 없거나 다른 필터가 적용되어 있을 수 있습니다. 검색·복습 조건을 조정해 주세요.';}}
+'''
+    text = once(text, 'function filterContext(){', functions + 'function filterContext(){')
+    text = once(text, 'revisionRank(a));updateFilterSummary();',
+        'revisionRank(a));updateFilterSummary();updateNoteContext();')
+    # A filter remains stable while a practice/exam set is in progress.
+    text = text.replace("'#collection','#scope'].forEach", "'#collection','#scope','#note-wrong','#note-clear'].forEach")
+    text = once(text, 'const pool=filtered.length?filtered:Q;',
+        'const pool=filtered.length?filtered:(selectedNoteId?[]:Q);if(!pool.length){openFilteredQuestion();return;}')
+    # The event-registration list has two action buttons with dedicated handlers.
+    text = text.replace("for(const s of ['#query','#area','#qtype','#saved','#collection','#scope','#note-wrong','#note-clear'])",
+        "for(const s of ['#query','#area','#qtype','#saved','#collection','#scope'])")
+    handlers = r'''$('#note-wrong').onclick=()=>{if(session)return;$('#saved').value='wrong';page=0;catalog();openFilteredQuestion();};
+$('#note-clear').onclick=()=>{if(session)return;selectedNoteId='';const url=new URL(location.href);url.searchParams.delete('note');url.searchParams.delete('review');try{history.replaceState(null,'',url);}catch{}page=0;catalog();openFilteredQuestion();};
+'''
+    text = once(text, "$('#controls-link').onclick=", handlers + "$('#controls-link').onclick=")
+    text = once(text, "openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0]);",
+        "const initialQuestion=byId.get(location.hash.slice(1))||filtered[0]||(!selectedNoteId?Q[0]:null);if(initialQuestion)openQuestion(initialQuestion);else openFilteredQuestion();")
+    text = once(text, 'filterSummary:filterSummaryData(),scope:',
+        'filterSummary:filterSummaryData(),noteUnit:selectedNoteId||null,scope:')
+    text = once(text, "${c.includeArchive?'모든 변형':'대표·개정 대상'} ${number(info.scopeCount)}개를 포함하고,",
+        "${c.note?'이 절에 연결된 ':''}${c.includeArchive?'모든 변형':'대표·개정 대상'} ${number(info.scopeCount)}개를 포함하고,")
+    return text
+
+
 def clarify_filters(text, data):
     """Describe the intersection, including the existing archive-lookup exceptions."""
     total = len(data['questions'])
@@ -86,7 +138,7 @@ def transform(text, data):
         "filtered.sort((a,b)=>Number(b.collection_id==='quality-20261027')-Number(a.collection_id==='quality-20261027'));",
         "filtered.sort((a,b)=>revisionRank(b)-revisionRank(a));")
     anchor = 'const QC=window.MPJEQuality,recommendedIds=new Set(D.quality_selection.recommended_ids);'
-    replacement = anchor + "const revisionLinks=new Map(D.representative_revision.replacements.map(r=>[r.legacy_question_id,r])),heldVersions=new Map(D.representative_revision.holds.flatMap(h=>[h.legacy_question_id,...(h.affected_archive_ids||[])].map(id=>[id,h])));const revisionRank=q=>q.collection_id==='representative-20261028'?2:q.collection_id==='quality-20261027'?1:0;"
+    replacement = anchor + "const revisionLinks=new Map(D.representative_revision.replacements.map(r=>[r.legacy_question_id,r])),heldVersions=new Map(D.representative_revision.holds.flatMap(h=>[h.legacy_question_id,...(h.affected_archive_ids||[])].map(id=>[id,h]))),archiveReviewNotices=new Map((D.representative_revision.archive_review_notices||[]).flatMap(n=>n.question_ids.map(id=>[id,n])));const revisionRank=q=>q.collection_id==='representative-20261028'?2:q.collection_id==='quality-20261027'?1:0;"
     text = once(text, anchor, replacement)
     old_description = f'기본 목록은 {default}문항입니다. 기존 2,176문항을 삭제하지 않고 대표 355개와 개별 작성 96개를 우선합니다. 보기 순서는 매번 바뀌지만 원래 답안 ID로 채점합니다.'
     description = (f'기본 목록은 {default}문항입니다. 기존 대표 355개 중 {count}개를 새 사례로 다시 작성하고, '
@@ -102,10 +154,12 @@ def transform(text, data):
     functions = r'''function revisionNotice(q){const box=$('#revision-notice');box.replaceChildren();const next=revisionLinks.get(q.question_id),held=heldVersions.get(q.question_id);if(q.revision_of){box.append(el('span','대표 사례 개정판 · 이전 판본과 풀이 기록은 별도로 보존됩니다. '));const a=el('a','이전 문항 보기');a.href='#'+q.revision_of;if(!session)box.append(a);else box.append(el('span','이전 문항은 세트를 마친 뒤 열람할 수 있습니다.'));}else if(next){box.append(el('span','기록이 보존된 이전 문항입니다. '));const a=el('a','개정 사례 보기');a.href='#'+next.replacement_question_id;if(!session)box.append(a);else box.append(el('span','개정 사례는 세트를 마친 뒤 열람할 수 있습니다.'));}else if(held){box.append(el('strong','검토 보류 · 기본 연습에서 제외'));box.append(el('p','이전 문항과 답안은 기록 보존을 위해 열람할 수 있습니다. 아래 기존 채점 결과를 확정된 법규 판단으로 사용하지 마세요.'));const d=el('details'),s=el('summary','보류 이유');d.append(s,el('p',held.reason));box.append(d);}box.hidden=!box.childNodes.length;}
 '''
     text = once(text, 'function openQuestion(q){', functions + 'function openQuestion(q){')
+    text = once(text, "box.hidden=!box.childNodes.length;}",
+        "const warning=archiveReviewNotices.get(q.question_id);if(warning){const section=el('div',undefined,'archive-review-warning');section.append(el('strong','이전 판본 · 법규 검토 주의'),el('p',warning.reason));box.append(section);}box.hidden=!box.childNodes.length;}")
     text = once(text, 'active=q;checked=false;', 'active=q;checked=false;revisionNotice(q);')
     text = once(text, "row.append(el('span',q.explanation.choice_analysis[c.id]));",
         "row.append(el('span',q.explanation.choice_analysis[c.id]));for(const ref of q.explanation.choice_authorities?.[c.id]||[]){const authority=D.sources[ref.source_id];row.append(link(authority.url,ref.exact_section+' · 확인 '+authority.checked_at));}")
     text = once(text, '아래는 관련 노트 절의 참고문헌입니다. 각 선택지의 정확한 조항을 독립적으로 확인한 문항별 검증 기록은 아닙니다.',
         '아래는 연결 노트와 공식 근거입니다. 개정 사례는 각 선택지 아래에 작성자가 대조한 정확한 조항·확인일을 표시합니다. 독립 법규 감사 완료 표시는 아닙니다.')
-    text = once(text, 'sessionMode:session?.mode||null,', 'revisionOf:active?.revision_of||null,heldForReview:heldVersions.has(active?.question_id),sessionMode:session?.mode||null,')
-    return clarify_filters(text, data)
+    text = once(text, 'sessionMode:session?.mode||null,', 'revisionOf:active?.revision_of||null,heldForReview:heldVersions.has(active?.question_id),archiveReviewWarning:archiveReviewNotices.has(active?.question_id),sessionMode:session?.mode||null,')
+    return connect_notes(clarify_filters(text, data), data)

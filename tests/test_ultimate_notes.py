@@ -123,3 +123,14 @@ def test_main_entry_and_existing_application_contracts_preserved():
     assert 'localStorage.removeItem' not in js
     assert not re.search(r'\bfetch\s*\(', js)
     assert 'application' in js and 'oddments-ultimate-notes' in js
+
+
+def test_static_book_unit_links_and_revision_header_match_actual_export():
+    book=(ROOT/'site/notes/book.html').read_text()
+    identifiers=set(re.findall(r'id="([^"]+)"',book))
+    for fragment in re.findall(r'href="#([^"]+)"',book):
+        assert fragment in identifiers, fragment
+    assert '#chapter/cdtm/w3-d-2' not in book
+    assert 'href="#w3-d-2"' in book
+    from notes_revision import load_notes
+    assert load_notes(ROOT)['edition'] in book
