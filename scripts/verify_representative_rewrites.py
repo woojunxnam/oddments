@@ -131,6 +131,75 @@ def main():
             page.set_viewport_size({'width': 1440, 'height': 1000})
             ok('area/type filters update the actual count; accessible help and expanded examples fit a 320px viewport')
 
+            # Detailed note -> exact evidence filter -> wrong-answer review -> same note.
+            shared_units = {e['unit_id'] for e in first['note_evidence']} & {e['unit_id'] for e in by_id[legacy_id]['note_evidence']}
+            assert shared_units
+            unit_id = sorted(shared_units)[0]
+            note = data['note_practice_index'][unit_id]
+            notes_path = 'notes/#chapter/' + note['chapter_id'] + '/' + unit_id
+            quiz_before = state()
+            page.goto(base + notes_path, wait_until='networkidle')
+            expect(page.locator('[data-unit-practice="' + unit_id + '"]')).to_be_visible()
+            note_unit = page.locator('#' + unit_id)
+            note_unit.locator('[data-save]').click()
+            note_unit.locator('[data-read]').click()
+            page.locator('[data-unit-practice="' + unit_id + '"]').click()
+            expect(page.locator('#note-context')).to_be_visible()
+            assert diag()['noteUnit'] == unit_id
+            linked = {q['question_id'] for q in data['questions'] if unit_id in {e['unit_id'] for e in q['note_evidence']}}
+            assert set(diag()['filteredIds']) == linked & recommended_ids
+            expect(page.locator('#note-context-counts')).to_contain_text(f'대표·개정 {note["recommended"]:,}문항')
+            for button in ['practice', 'timed']:
+                page.locator('#' + button).click()
+                assert set(diag()['sessionIds']) <= linked & recommended_ids
+                expect(page.locator('#note-clear')).to_be_disabled()
+                expect(page.locator('#note-wrong')).to_be_disabled()
+                expect(page.locator('#note-return')).to_have_attribute('target', '_blank')
+                page.locator('#end-session').click()
+            page.locator('#note-wrong').click()
+            assert diag()['filteredIds'] == [legacy_id]
+            expect(page.locator('#filter-exception')).to_contain_text('오답 복습')
+            assert state() == quiz_before
+            page.set_viewport_size({'width': 320, 'height': 900})
+            assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
+            page.screenshot(path=str(args.evidence / 'note-practice-mobile.png'), full_page=True)
+            page.locator('#note-return').click()
+            note_unit = page.locator('#' + unit_id)
+            expect(note_unit.locator('[data-save]')).to_have_attribute('aria-pressed', 'true')
+            expect(note_unit.locator('[data-read]')).to_have_attribute('aria-pressed', 'true')
+            assert state() == quiz_before
+            page.locator('[data-unit-wrong="' + unit_id + '"]').click()
+            expect(page.locator('#note-context')).to_be_visible()
+            page.wait_for_function('typeof window.MPJE_DIAGNOSTICS === "function"')
+            assert diag()['filteredIds'] == [legacy_id]
+            page.locator('#note-clear').click()
+            assert diag()['noteUnit'] is None
+            expect(page.locator('#note-context')).to_be_hidden()
+            assert 'note=' not in page.url
+            page.goto(base + 'practice-expansion/?note=unknown-note', wait_until='networkidle')
+            assert diag()['filteredIds'] == []
+            expect(page.locator('#question')).to_be_hidden()
+            expect(page.locator('#note-context-title')).to_contain_text('찾을 수 없습니다')
+            outside = next(q for q in new if q['question_id'] not in linked)
+            page.goto(base + 'practice-expansion/?bank=rewrite&note=' + unit_id + '#' + outside['question_id'], wait_until='networkidle')
+            assert diag()['active'] == outside['question_id']
+            assert set(diag()['filteredIds']) == linked & set(revision['new_ids'])
+            expect(page.locator('#note-context-help')).to_contain_text('현재 열린 문항은 이 절의 연결 문항이 아닙니다')
+            page.locator('#query').fill('no-matching-filter-for-note')
+            page.locator('#next').click()
+            expect(page.locator('#question')).to_be_hidden()
+            expect(page.locator('#locked')).to_contain_text('현재 조건에 맞는 문항이 없습니다')
+            page.goto(base + notes_path, wait_until='networkidle')
+            page.locator('[data-unit-practice="' + unit_id + '"]').click()
+            expect(page.locator('#note-context')).to_be_visible()
+            page.go_back(wait_until='networkidle')
+            expect(page.locator('#' + unit_id)).to_be_visible()
+            page.go_forward(wait_until='networkidle')
+            assert diag()['noteUnit'] == unit_id
+            assert set(diag()['filteredIds']) == linked & recommended_ids
+            page.set_viewport_size({'width': 1440, 'height': 1000})
+            ok('notes/practice exact-unit navigation, focused study/exam/wrong-answer filters, 320px layout and both separate progress stores survive round trips; unknown units fail closed')
+
             page.goto(base + 'practice-expansion/?bank=rewrite', wait_until='networkidle')
             for button, maximum in [('practice', 20), ('timed', 120)]:
                 ceiling = min(maximum, len({q['family_id'] for q in new}))
@@ -174,6 +243,14 @@ def main():
                 expect(page.locator('#revision-notice')).to_contain_text('검토 보류')
                 assert hold['legacy_question_id'] not in data['quality_selection']['recommended_ids']
             ok(f'all {len(revision["holds"])} held originals remain reachable with a visible review notice')
+            for notice in revision.get('archive_review_notices', []):
+                for qid in notice['question_ids']:
+                    page.goto(base + 'practice-expansion/#' + qid, wait_until='load')
+                    assert diag()['archiveReviewWarning'] is True
+                    expect(page.locator('.archive-review-warning')).to_contain_text(notice['reason'])
+                    assert qid not in data['quality_selection']['recommended_ids']
+            if revision.get('archive_review_notices'):
+                ok('identified archive defects show explicit warnings alongside any replacement links without rewriting old answer keys or attempts')
             page.goto(base + 'practice-expansion/?bank=rewrite', wait_until='networkidle')
             expect(page.locator('#collection')).to_have_value('representative-20261028')
             assert diag()['filtered'] == len(new)
@@ -242,6 +319,23 @@ def main():
             page.goto(base + 'practice-expansion/?bank=plus', wait_until='load')
             assert diag()['filtered'] == 1152
             ok('all three prior collection entry points retain their original counts')
+            denied = browser.new_context(viewport={'width': 390, 'height': 844})
+            denied.add_init_script("Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError')}})")
+            denied_page = denied.new_page()
+            denied_page.on('pageerror', lambda e: errors.append(str(e)))
+            denied_page.goto(base + notes_path, wait_until='networkidle')
+            expect(denied_page.locator('#storage-notice')).to_be_visible()
+            denied_page.locator('[data-unit-practice="' + unit_id + '"]').click()
+            expect(denied_page.locator('#note-context')).to_be_visible()
+            denied_page.wait_for_function('typeof window.MPJE_DIAGNOSTICS === "function"')
+            assert denied_page.evaluate('MPJE_DIAGNOSTICS().noteUnit') == unit_id
+            assert set(denied_page.evaluate('MPJE_DIAGNOSTICS().filteredIds')) == linked & recommended_ids
+            expect(denied_page.locator('#storage-msg')).to_contain_text('임시 상태')
+            denied_page.locator('#note-wrong').click()
+            expect(denied_page.locator('#question')).to_be_hidden()
+            expect(denied_page.locator('#locked')).to_contain_text('현재 조건에 맞는 문항이 없습니다')
+            denied.close()
+            ok('notes/practice cross-navigation stays usable with denied storage and an empty wrong-answer list')
             assert not errors, errors
             ok('no uncaught JavaScript errors')
             browser.close()

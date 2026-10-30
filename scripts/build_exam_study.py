@@ -4,10 +4,26 @@ from __future__ import annotations
 import argparse, copy, hashlib, html, json
 from pathlib import Path
 from notes_revision import load_notes, apply_study_revision
+from practice_note_links import build_note_practice_index
 ROOT=Path(__file__).resolve().parents[1]
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def eligible_study_practice(question, recommended, revised, excluded):
+    """Keep explicit question warnings authoritative; a note OPEN is not an item audit."""
+    qid=question['question_id']
+    if qid in excluded:return False
+    flags=set(question.get('inherited_flags',[]))
+    if 'source-gap' in flags:return False
+    if 'open' not in flags:return True
+    # A separately authored, selected item can establish its narrower answer from
+    # primary text while its wider linked note retains an unrelated OPEN claim.
+    # Do not remove the flag or infer this exception for an unreviewed archive.
+    records=question.get('primary_source_read_records',[])
+    return (qid in recommended and qid in revised
+        and question.get('primary_source_verification')=='AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT'
+        and bool(records) and all(r.get('access_status')=='READ_OFFICIAL' for r in records))
 
 def build_payload() -> dict:
     note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
@@ -30,6 +46,8 @@ def build_payload() -> dict:
         selection=json.loads(selection_path.read_text())
         recommended=set(selection['recommended_ids']);revised=set(selection['new_ids'])
         held={qid for h in selection['holds'] for qid in [h['legacy_question_id'],*h.get('affected_archive_ids',[])]}
+        held.update(qid for notice in selection.get('archive_review_notices',[]) for qid in notice['question_ids'])
+    data['note_practice_index']=build_note_practice_index(questions,recommended,notes)
     def enrich(x:dict)->None:
         refs=x['note_units']
         if not refs or any(uid not in units for uid in refs): raise ValueError('Unknown source unit '+x['id'])
@@ -40,10 +58,10 @@ def build_payload() -> dict:
         x['kind']='source-derived-study-overlay'
     for item in data['lessons']:
         enrich(item); families=set();links=[]
-        candidates=[q for q in questions if q['question_id'] not in held and set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
+        candidates=[q for q in questions if eligible_study_practice(q,recommended,revised,held) and set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
         candidates.sort(key=lambda q:(q['question_id'] not in revised,q['question_id'] not in recommended,hashlib.sha256((item['id']+q['question_id']).encode()).hexdigest()))
         for q in candidates:
-            if q['family_id'] in families or set(q.get('inherited_flags',[]))&{'open','source-gap'}:continue
+            if q['family_id'] in families:continue
             shared=sorted(set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']})
             links.append(dict(id=q['question_id'],family=q['family_id'],topic=q['topic'],kind=q['question_type'],shared_units=shared,url='../practice-expansion/#'+q['question_id']))
             families.add(q['family_id'])

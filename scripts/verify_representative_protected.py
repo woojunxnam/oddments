@@ -167,6 +167,18 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    fifth_path=root/'revisions/notes/protected-migration-discipline-cdtm.json'
+    if fifth_path.exists() and relative=='site/notes/complete-notes.md':
+        fifth=json.loads(fifth_path.read_bytes())
+        require(fifth['baseline_commit']=='c4a05c8bf48ecc333e331b3c267607af6590ac40', 'Unexpected discipline CDTM migration base')
+        require(fifth['path']==relative and fifth['baseline_copy']=='revisions/baselines/complete-notes-mor-discipline.md', 'Discipline CDTM migration expands scope')
+        require(fifth['revision_path']=='revisions/notes/2026-10-30-discipline-cdtm.json', 'Unexpected discipline CDTM revision')
+        require(fifth['previous_migration_path']=='revisions/notes/protected-migration-mor-discipline.json', 'Unexpected discipline CDTM parent migration')
+        require(sha256(safe_file(root,fifth['previous_migration_path']).read_bytes())==fifth['previous_migration_sha256'], 'Prior MOR discipline migration changed')
+        require(sha256(safe_file(root,fifth['revision_path']).read_bytes())==fifth['revision_sha256'], 'Stale discipline CDTM revision')
+        require(sha256(current)==fifth['new_sha256'], 'Stale discipline CDTM export')
+        current=safe_file(root,fifth['baseline_copy']).read_bytes()
+        require(sha256(current)==fifth['old_sha256'], 'Prior MOR discipline baseline changed')
     fourth_path=root/'revisions/notes/protected-migration-mor-discipline.json'
     if fourth_path.exists() and relative=='site/notes/complete-notes.md':
         fourth=json.loads(fourth_path.read_bytes())

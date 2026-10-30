@@ -22,7 +22,7 @@ REPORTS = ROOT / 'reports/representative-rewrite'
 ORIGINAL_SELECTION = ROOT / 'practice_expansion/2026-10-27-quality/selection.json'
 COLLECTION = 'representative-20261028'
 INITIAL_EDITION = '2026-10-28.representative1'
-EDITION = '2026-10-30.representative5'
+EDITION = '2026-10-30.representative6'
 REVIEW_DATE = '2026-10-30'
 PUBLISHED_UNIT1_COMMIT = 'f112d3578664aa51785ba4596547e8d722fad36c'
 BASE_COMMIT = 'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36'
@@ -58,6 +58,43 @@ def require(condition, message):
 
 def norm(text):
     return re.sub(r'[^\w]+', ' ', text.casefold()).strip()
+
+
+def archive_review_notices(old_by_id, input_hashes):
+    """Surface known defects without mutating a preserved answer or audit status."""
+    path = REPORTS / 'archive-review-notices.json'
+    if not path.exists():
+        return []
+    payload = read(path)
+    require(payload['schema_version'] == 'practice-archive-review-notices/1', 'Unknown archive notice schema')
+    input_hashes[str(path.relative_to(ROOT))] = digest(path.read_bytes())
+    notices = payload['notices']
+    seen = set()
+    for notice in notices:
+        ids = notice['question_ids']
+        require(ids and len(ids) == len(set(ids)) and not seen.intersection(ids), 'Repeated archive notice ID')
+        require(set(ids) <= set(old_by_id), 'Unknown archive notice ID')
+        require(set(notice['question_record_hashes']) == set(ids), 'Archive notice hash scope mismatch')
+        require(notice['reason'].strip() and notice['issue_type'] in {
+            'INCORRECT_KEY', 'AMBIGUOUS_KEY', 'RATIONALE_DEFECT', 'SOURCE_RELATIONSHIP_OPEN',
+        }, 'Unclassified archive notice')
+        review_relative = Path(notice['review_source'])
+        require(not review_relative.is_absolute() and '..' not in review_relative.parts
+                and str(review_relative).startswith('reports/full-corpus-review/'), 'Unsafe archive review source')
+        review_raw = (ROOT/review_relative).read_bytes()
+        require(digest(review_raw) == notice['review_source_sha256'], 'Stale archive review source')
+        reviews = {r['question_id']: r for r in json.loads(review_raw)['records']}
+        for qid in ids:
+            actual = digest(json.dumps(old_by_id[qid], ensure_ascii=False, sort_keys=True,
+                                       separators=(',', ':')).encode())
+            require(actual == notice['question_record_hashes'][qid], 'Stale archive notice: ' + qid)
+            require(qid in reviews and reviews[qid]['record_sha256'] == actual,
+                    'Archive notice lacks a matching reviewed ID: ' + qid)
+            if notice['issue_type'] in {'INCORRECT_KEY', 'AMBIGUOUS_KEY'}:
+                require(reviews[qid].get('original_answer_status') == notice['issue_type'],
+                        'Archive notice does not match answer assessment: ' + qid)
+        seen.update(ids)
+    return notices
 
 
 def verify_published_baseline(bank):
@@ -194,9 +231,16 @@ def build():
                     primary_refs.append(ref)
             choice_refs[c['id']] = copy.deepcopy(c['authority_refs'])
         evidence, inherited_source_ids = [], []
+        question_units = units
+        if a.get('note_evidence_basis'):
+            require(a['note_evidence_basis'] == 'EFFECTIVE_REVISION' and a.get('notes_revision'),
+                    qid + ': unknown note evidence basis')
+            from notes_revision import load_notes
+            revised_guide = load_notes(ROOT, revision_id=a['notes_revision'])
+            question_units = {u['id']: (c['id'], u) for c in revised_guide['chapters'] for u in c['units']}
         for uid in a['note_unit_ids']:
-            require(uid in units, qid + ': unknown note ' + uid)
-            chapter, unit = units[uid]
+            require(uid in question_units, qid + ': unknown note ' + uid)
+            chapter, unit = question_units[uid]
             inherited_source_ids.extend(unit['source_ids'])
             evidence.append(dict(unit_id=uid, title=unit['title'], body_sha256=unit['body_sha256'],
                 inherited_note_review_date=unit['source_review_date'], inherited_flags=unit['flags'],
@@ -259,6 +303,8 @@ def build():
     replacement_map = {r['legacy_question_id']: r['replacement_question_id'] for r in replacements}
     held_ids = {h['legacy_question_id'] for h in holds}
     archive_notice_ids = held_ids | {qid for h in holds for qid in h.get('affected_archive_ids', [])}
+    notices = archive_review_notices(old_by_id, input_hashes)
+    archive_notice_ids |= {qid for notice in notices for qid in notice['question_ids']}
     require(archive_notice_ids <= set(old_by_id), 'Unknown related archive hold ID')
     recommended = []
     for old_id in original_selection['recommended_ids']:
@@ -278,7 +324,8 @@ def build():
         edition=EDITION, base_commit=BASE_COMMIT, baseline_selection_path=str(ORIGINAL_SELECTION.relative_to(ROOT)),
         baseline_selection_sha256=digest(ORIGINAL_SELECTION.read_bytes()), recommended_ids=recommended,
         new_ids=[q['question_id'] for q in items], previous_quality_ids=original_selection['new_ids'],
-        replacements=replacements, holds=holds, history_policy='All legacy and previous96 IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only.',
+        replacements=replacements, holds=holds, archive_review_notices=notices,
+        history_policy='All legacy and previous96 IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only; known key/rationale defects have separate source-bound warnings.',
         stats=dict(recommended=len(recommended), legacy_representatives_remaining=sum(i in legacy_ids for i in recommended),
             baseline_legacy_representatives=355, newly_authored_replacements=len(items), previous_quality=96,
             replaced_by_existing_quality=len(reused), held_from_default=len(holds), available_total=len(all_questions)),

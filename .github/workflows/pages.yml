@@ -64,7 +64,8 @@ jobs:
                   html=read('practice-expansion/')
                   assert html==Path('/tmp/mpje-public-site/practice-expansion/index.html').read_text(), 'Published practice bytes differ from this build'
                   assert 'id="ack"' not in html and 'MA-EXP-1024' in html and 'MA-CASE-1152' in html
-                  assert 'openQuestion(byId.get(location.hash.slice(1))||filtered[0]||Q[0])' in html
+                  assert 'const initialQuestion=byId.get(location.hash.slice(1))||filtered[0]||(!selectedNoteId?Q[0]:null);' in html
+                  assert 'if(initialQuestion)openQuestion(initialQuestion);else openFilteredQuestion();' in html
                   main=read('')
                   assert f"{config['published_total']:,}문항 연습 시작" in main
                   assert [x['count'] for x in manifest['collections']]==[config['question_count']]+[x['question_count'] for x in config['additional_banks']]

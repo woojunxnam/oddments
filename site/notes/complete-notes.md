@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. personnel w1-b-8–10 개정: 2026-10-29 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 기존 원문 대조 2026-10-20–22; 좁은 재확인만 10-23. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-10-30.discipline-cdtm.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -3520,49 +3520,75 @@ CPA의 자격·setting·환자 referral·동의·범위·기록·종료를 순�
 
 ## CDTM pharmacist의 기본 자격
 
-### License와 현재 practice
+### 자격은 면허·현재 practice·보험을 각각 확인한다
 
-Massachusetts의 current unrestricted pharmacist license가 good standing이어야 하고, 현재 Massachusetts pharmacy practice에 종사해야 한다. 다른 주 면허만 보유하거나 아직 MA 면허를 신청 중인 상태와 구별한다. 
+247 CMR 16.02(1)(a)는 **current unrestricted Massachusetts pharmacist license in good standing**과 **현재 Massachusetts pharmacy practice**를 함께 요구한다. 다른 주 면허만 가진 경우, MA 면허 신청 중인 경우, 미래의 job offer만 가진 경우를 구별한다.
 
-### Liability insurance
+### 보험은 금액·보장 범위·기간의 세 조건 — 16.02(1)(b)
 
-CPA 기간 동안 drug-therapy management를 구체적으로 보장하는 professional liability insurance를 occurrence당 최소 \$1,000,000 유지한다. 모든 종류의 일반 employer insurance가 자동으로 이 보장 범위를 충족한다고 가정하지 않는다. 
+| 확인 항목 | 요구사항 | 흔한 혼동 |
+|---|---|---|
+| 각 사고 한도 | 최소 $1,000,000 per occurrence | 연간 aggregate $1,000,000만으로 충분하다는 추정 |
+| 보장 범위 | Drug therapy management를 구체적으로 보장 | Dispensing-only 보험이나 CDTM exclusion을 놓침 |
+| 보장 기간 | CPA term 동안 유지 | 계약서 서명일 또는 고용 시작일만 확인 |
 
-### Experience와 education
+Employer policy라도 위 조건을 충족할 수 있다. 보험의 이름보다 실제 certificate의 limits, scope, term을 읽는다. 1년 agreement에 첫 달만 CDTM coverage가 있는 사례는 기간 요건이 부족하다.
 
-기본 경로는 licensed pharmacist로 5년의 experience이다. 별도 경로로 PharmD를 취득하고 2017-06-30 또는 그 이전에 CPA에 들어간 경우, 또는 Board가 5년 경력과 동등하다고 인정한 education/residency가 있다. 현재 PharmD를 보유했다는 사실만으로 과거 날짜가 붙은 grandfather 경로를 새로 사용할 수는 없다. 
+### 경력·교육 경로와 날짜가 붙은 조건 — 16.02(1)(c)
 
-본인의 practice 일부를 실제 co-managed drug-therapy area에 투입해야 한다. 회사에서 약과 관련된 일을 했다는 일반 경력 설명만으로 개별 Board credentialing 적격성을 확정하지 않는다.
+규정 본문은 licensed pharmacist로 5년 experience, PharmD와 **2017-06-30 또는 그 이전 CPA 참여**, 또는 Board-recognized equivalent education/residency의 경로를 열거한다. 현재 PharmD를 보유했다는 사실과 과거 날짜의 CPA 참여는 서로 다른 사실이다.
+
+**OPEN — statute와 regulation의 적용 관계:** 현재 게시된 [M.G.L. c.112 §24B½(b)(3)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2)은 PharmD 또는 5년 licensed-pharmacist experience/equivalent라고 적고 날짜를 두지 않는다. 반면 [247 CMR 16.02(1)(c)1](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)의 PharmD 경로에는 위 날짜가 있다. **2026-10-30에 두 공식 본문의 문구 차이를 확인했지만 그 법적 적용 관계를 해소한 공식 해석은 확보하지 못했다.** 따라서 “2026 PharmD 신규 지원자는 언제나 자격이 없다” 또는 “statute만 보면 regulation의 날짜가 자동 폐지된다”라고 확정하지 않는다. 날짜를 묻는 문항은 어떤 조문 경로를 지정했는지 확인한다.
+
+이 OPEN은 [Board의 BPS·residency equivalency 경로](#chapter/cdtm/w3-d-3)를 무효화했다는 결론도 아니다. 현재 BPS와 site credentialing 등 해당 경로를 충족한 사례는 별도의 근거로 판단한다.
+
+### 실제 공동 관리 영역과 나머지 요건
+
+16.02(1)(d)는 practice 일부를 공동 관리할 defined drug-therapy area에 투입하도록 한다. 일반적인 약 관련 회사 경력의 명칭만으로 개별 지원자의 licensed-pharmacist experience를 자동 인정하거나 일괄 배제하지 않는다. 적합한 경력 경로를 충족해도 setting, signed CPA, 환자 authorization, 해당 registration·CE 등 나머지 요건은 별도다.
+
+**적용 연습:** [보험의 세 조건 MA-RW-0026](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0026) · [BPS 대안 MA-RW-0027](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0027).
+
+**확인 범위:** 247 CMR 16.02(1)(a)–(d), current M.G.L. c.112 §24B½(a)–(b)의 위 주장만 작성자가 대조했다. Regulation 게시본 날짜는2017-12-15, 확인일은2026-10-30이다. Statute의 개별 개정 시행일 및 위 OPEN의 최종 adjudication은 확인 완료로 표시하지 않는다.
 
 
 근거:
 
 - [247 CMR 16.00, Collaborative Drug Therapy Management, §§16.02–16.05. 게시본 12/15/2017.](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)
 
+- [M.G.L.c112§24B½ — current consolidated CDTM definitions and qualifications](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2)
+
 
 ## CDTM의 Board educational equivalency
 
-2019-02-07 Board advisory는 5년 experience를 대체할 수 있는 구체적인 경로와 site credentialing를 설명한다. 이는 CDTM의 나머지 license·insurance·agreement·등록 요건을 면제하는 문서가 아니다. 
+### 먼저 II.A의 한 경로, 그다음 II.B의 site 요건
 
-### Current BPS certification
+[Board educational-equivalency advisory](https://www.mass.gov/doc/educational-equivalency-for-collaborative-drug-therapy-management-cdtm-agreements-pdf/download)는 2019-02-07 채택 문서다. 247 CMR 16.02(1)(c)2의 5년 경력 대체 경로를 구체화한다. **II.A의 대안 중 하나를 충족하는 것과 II.B의 credentialing/training을 마치는 것은 별도 단계**이다.
 
-현재 유효한 Board of Pharmacy Specialties certification를 보유한 경로가 있다. 과거에 합격했으나 현재 certification이 만료된 경우를 동일하게 보지 않는다.
+| II.A 경로 | 추가로 확인할 내용 |
+|---|---|
+| Current BPS certification | 현재 유효한 Board of Pharmacy Specialties 인증; 과거 합격·만료 인증과 구별 |
+| ASHP-accredited PGY-1 | 추가 2년 practicing-pharmacist experience **또는** practicing CDTM pharmacist direction 아래12개월 CDTM practice |
+| ASHP-accredited PGY-2 | 추가 1년 practicing-pharmacist experience **또는** practicing CDTM pharmacist direction 아래6개월 CDTM practice |
 
-### ASHP-accredited PGY-1
+BPS와 PGY-1과 PGY-2를 모두 누적해야 하는 구조가 아니다. 반대로 PGY-1 또는 PGY-2 수료증만 보고 해당 행의 추가 조건까지 충족했다고 판단하지 않는다.
 
-PGY-1 completion에 추가로 practicing pharmacist experience 2년, 또는 practicing CDTM pharmacist의 direction 아래 12개월 CDTM practice를 완료하는 경로가 있다. 단순히 PGY-1만 마쳤다는 사실과 완성된 equivalency를 구별한다.
+### 12개월·6개월 directed-CDTM 대안의 기록
 
-### ASHP-accredited PGY-2
+II.A.2.ii와 II.A.3.ii 경로에는 facility가 monitoring 방식을 설명하는 policy/procedure를 갖추고, monitoring documentation을 보존하여 Board 요청 시 제시할 수 있어야 한다. 구두로 “누군가 감독했다”는 확인만으로 기록 요건을 대신하지 않는다. PGY-1의12개월과 PGY-2의6개월, 일반 추가 practice 경력의2년과1년을 서로 바꾸지 않는다.
 
-PGY-2 completion에 추가로 practicing pharmacist experience 1년, 또는 practicing CDTM pharmacist의 direction 아래 6개월 CDTM practice를 완료하는 경로가 있다. 해당 supervised CDTM 경로는 facility가 monitoring 방법을 written policy/procedure로 정하고 records를 유지하여 Board 요청 시 제시할 수 있어야 한다.
+### II.B: clinical-site credentialing와 current BLS
 
-### 추가 site credentialing
+Clinical site가 개발·운영하는 comprehensive CDTM credentialing/training을 완료해야 한다. 최소 내용은 national 및 site-specific guidelines의 이해도 평가, 해당 practice area의 clinical skills 평가와 필요한 specialty training, **current BLS certification**이다. Vital signs·height/weight·respiration·peak flow·glucose testing은 문서가 든 관련 기술의 예시이며 모든 setting에 무조건 동일한 검사 목록을 수행하라는 뜻은 아니다.
 
-위 경로 외에도 clinical site가 개발·시행한 comprehensive credentialing/training program를 완료해야 한다. National/site-specific clinical guidelines 이해도, 관련 clinical skills, 필요한 specialty assessment 및 current BLS certification을 포함한다. Example skills에는 vital signs, height/weight, respiration, peak flow, glucose testing 등이 있다. 
+**사례:** ASHP PGY-2 후6개월 directed CDTM를 기록까지 갖춰 완료했고 guideline·clinical-skills 평가도 마쳤지만 BLS가 만료됐다면, 부족한 것은 current BLS다. PGY-1의12개월을 잘못 적용하여6개월을 더 요구하거나 일반 CE certificate로 대체하지 않는다.
 
-### 다른 경로
+### 다른 교육을 인정받고 싶은 경우 — III
 
-기존 regulation/advisory에 맞지 않는 education/residency를 인정받으려면 Board에 petition할 수 있다. Petition 가능성이 자동 승인을 의미하지 않는다. 하나의 institution이 고용했다는 사실만으로 Board equivalency를 임의로 만들어내지 않는다.
+규정 또는 advisory의 자격을 충족하지 않는 pharmacist는 다른 education/residency criteria를 Board가 고려하도록 petition할 수 있다. 신청 가능성과 승인 사실은 다르다. Employer의 채용 또는 자체 training 인정이 Board의 결정을 대신하지 않는다. 면허·현재 practice·보험 및 agreement의 다른 요건도 남는다.
+
+**적용 연습:** [Current BPS MA-RW-0027](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0027) · [PGY-2와 BLS MA-RW-0028](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0028).
+
+**확인 범위:** II.A.1–3, II.B.1–3, III의 공식 두 페이지 추출문을2026-10-30에 대조했다. 채택일2019-02-07은 확인일과 다르며, 별도 미래 시행 규칙 또는 독립 감사 완료를 뜻하지 않는다. [PharmD 날짜의 statute/regulation 관계](#chapter/cdtm/w3-d-2)는 별도 OPEN이다.
 
 
 근거:
@@ -3688,15 +3714,35 @@ Physician/group은 CDTM를 수행할 qualified pharmacist를 고용할 수 있�
 
 ## CDTM·Statutory prescribing·Standing order·OTC
 
-| 경로 | 권한의 출처 | 먼저 확인할 조건 |
-|---|---|---|
-| CDTM | Physician–pharmacist written CPA | 자격·경력/equivalency·보험·등록·setting·환자 referral/consent |
-| 특정 약사 prescribing | 개별 statute와 DCP guidance | 허용 제품·교육·NPI·assessment·current statewide protocol |
-| Standing order dispensing/administration | 적격 prescriber의 실제 지시 | 대상·제형·order 효력·교육·기록·보고 |
-| OTC sale | 해당 제품의 nonprescription 상태 | 실제 제형·판매 제한; 보험용 order는 별도 |
-| 기존 처방에 따른 administration | 해당 투약권한 + 유효 order | 인력·교육·supervision·route·환자 적격성 |
+### 같은 제품이어도 행위와 권한의 출처부터 고른다
 
-같은 약을 제공하더라도 선택한 경로가 다르면 의무가 달라집니다. Retail CDTM의 연령·질환·Schedule VI 제한을 모든 statutory prescribing에 복사하지 않고, statutory 처방권이 모든 injection을 허용한다고 보지도 않습니다. 약사 면허, 시설 허가, 등록, 제품 승인과 보험 지급 조건을 별도로 충족합니다.
+약을 제공한다는 결과만 보고 CDTM, 특정 statutory prescribing, standing-order dispensing와 OTC sale을 같은 권한으로 묶지 않는다. **누가 무엇을 하는가 → 어떤 경로인가 → 그 경로의 조건을 충족했는가** 순서로 판단한다.
+
+| 경로 | 직접 확인할 근거·조건 | 그 사실만으로 생기지 않는 권한 |
+|---|---|---|
+| CDTM | 247 CMR16의 개인 자격·setting·physician–pharmacist signed CPA; retail의 특정 환자 referral/consent | 시설 면허만으로 모든 약의 독립 처방 |
+| 특정 pharmacist prescribing | M.G.L.c94C§19F와 DCP26-08-125의 대상 제품·교육·평가·NPI·guidance 등 | 모든 contraceptive 제형 또는 모든 route 투여 |
+| Naloxone standing-order dispensing | 실제 statewide order가 정한 대상·제품·절차 | 별도 CDTM 계약의 자동 성립 |
+| OTC sale | 그 제품·제형의 nonprescription 상태와 적용 판매 조건 | 약사의 prescribing scope 전체 결정 |
+| 약사·intern의 약물 투여 | 해당 투여 권한과 유효 order, 대상·training·route 등 | 처방할 수 있다는 이유만으로 무제한 injection |
+
+### 규칙을 실제 사례에 적용하기
+
+Naloxone을 statewide standing order로 조제했더라도 physician–pharmacist가 CDTM에 서명한 것으로 간주하지 않는다. 해당 order의 dispensing authorization와 247 CMR16.04(1)의 written signed agreement는 다른 근거다.
+
+OTC contraceptive 한 제품을 판매한 사실은 모든 contraceptive formulation의 처방권을 주지 않는다. DCP26-08-125는 hormonal patch와 oral hormonal contraceptive를 포함한 지정 범위와 교육·assessment 등의 조건을 별도로 제시한다. OTC 제품도 해당 prescribing 경로에 따라 처방할 수 있다는 문구를 OTC 판매 자체가 무제한 처방권이라는 뜻으로 바꾸지 않는다.
+
+### Prescribe와 administer는 따로 점검한다
+
+DCP26-08-125는 administration circular를 별도로 확인하도록 한다. DCP26-03-124의 약물 투여 경로는 non-IV 및 SC/IM 문구와 제품·환자·교육 조건을 갖춘다. 따라서 “처방이 가능하므로 어떤 route로든 투여 가능”은 틀리다. 다만 법정 dispense 정의에는 administration이 포함될 수 있으므로 두 단어가 모든 법에서 서로 배타적인 정의라고 외우지 않는다. 제품 목록과 route 문구의 세부 적용관계 등 기존 투약 장의 OPEN은 이 표만으로 해결되지 않는다.
+
+### CDTM 검사 평가와 새 진단도 구분한다
+
+M.G.L.c112§24B½(a)는 physician supervision 또는 direct consultation 아래 승인된 setting protocol에 따라 **drug therapy에 직접 관련된 laboratory test의 주문·평가**를 CDTM에 포함할 수 있도록 하되 evaluation의 diagnostic component를 배제한다. 이미 진단된 환자의 약물 모니터링 검사를 평가하는 것과 새 질환을 진단하는 것은 다르다.
+
+**적용 연습:** [검사·진단 경계 MA-RW-0025](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0025). Retail CDTM의 연령·질환·Schedule VI 제한을 모든 별도 statutory path에 복사하지 않는다.
+
+**공식 출처·확인일:** [247 CMR16](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download), [c112§24B½](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2), [naloxone order](https://www.mass.gov/doc/statewide-standing-order/download), [prescribing circular2026-08-25](https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download), [administration circular2026-03-11](https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download)의 위 구분을2026-10-30에 작성자 대조했다. 각 경로의 전 조건·제품별 알고리즘 전수검증은 아니다.
 
 
 근거:
@@ -3712,6 +3758,10 @@ Physician/group은 CDTM를 수행할 qualified pharmacist를 고용할 수 있�
 - [DPH — Emergency Contraception Information for Pharmacies](https://www.mass.gov/info-details/emergency-contraception-information-for-pharmacies)
 
 - [DCP 26-03-124, Pharmacist Administration of Medications, 3/11/2026. Replaces DCP 23-04-118.](https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download)
+
+- [M.G.L.c112§24B½ — current consolidated CDTM definitions and qualifications](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2)
+
+- [Statewide Standing Order for Dispensing Naloxone Rescue Kits; signed2024-01-22 in retrieved text](https://www.mass.gov/doc/statewide-standing-order/download)
 
 
 # 피임·EC·HIV/STI·Naloxone·EPT
@@ -6183,27 +6233,47 @@ Plans of correction의 현재 본문은 247 CMR §9.25에서 직접 확인한다
 
 ## Discipline의 사유와 절차
 
-### 주요 grounds
+### 핵심: 징계 사유와 실제 처분을 구분한다
 
-Board는 관련 법·규정·written policy 위반, scope 초과, unsafe/impaired practice, drug misuse, lapsed/suspended/revoked 상태에서 practice, Board order/consent agreement 위반, fraud, unlicensed practice 지원, 허위 신청, 조사 비협조, examination integrity 침해, 해당되는 타 관할 discipline 등을 사유로 조치할 수 있다. 
+247 CMR 10.03(1)은 법·규정·Board written policy 위반, scope 초과, impaired practice, drug misuse, lapsed/suspended/revoked 상태에서의 practice, Board order/consent agreement 위반, public-risk conduct, 무면허자 지원, 허위 신청, 조사 비협조 등을 징계 사유로 둔다. 이 목록은 대표 항목이며 전체 사유는 원문을 확인한다. 사유가 있다는 판단과 특정 처분이 자동으로 결정된다는 주장은 다르다.
 
-질환이나 치료를 받는 사실 자체와, reasonable skill/safety를 갖추지 못한 impaired 상태로 실제 practice하는 것을 혼동하지 않는다. 보고와 근무 제한의 구체적인 trigger를 확인한다.
+**10.03(1)(g)는 practice 능력이 impaired된 상태에서 실제 업무를 하는 경우**이다. 질환의 이름, 약 복용 또는 치료 이력만으로 impairment를 자동 판단하지 않는다. 반대로 실제 안전한 verification 능력이 손상됐는데 고용주가 근무를 승인했다는 이유로 사유가 없어지지도 않는다. (k)는 public health·safety·welfare를 위험에 놓을 capacity 또는 potential을 포함하므로 이미 환자에게 오류가 전달되거나 injury가 발생해야만 적용되는 사유는 아니다.
 
-### Conviction라는 용어
+### 반드시 함께 읽을 보호 조항 — 10.03(3)
 
-이 regulation의 conviction 정의는 단순한 ‘형이 확정되어 수감된 경우’보다 넓다. Guilty finding/plea, nolo contendere, admission/finding of sufficient facts, continuance without a finding 등 조문이 열거한 범위를 확인한다. Pending charge나 arrest 보고의무는 별도로 있을 수 있다. 
+**2025-01-09 시행으로 표시된 10.03(3)**은 M.G.L. c.12 §11I½에서 정의하는 reproductive health care services 또는 gender-affirming health care services의 제공·보조·관련 약물 조제, 또는 그 서비스에서 비롯된 conviction·judgment·discipline·other sanction 때문에 licensee를 징계하지 못하도록 한다. 조건은 **그 서비스가 Massachusetts에서 적법했을 것이고, Massachusetts의 good professional practice standards에 부합하는 것**이다.
 
-### Investigative conference와 hearing
+다른 주에서 sanction이 있었다는 사실만으로 이 보호 조건을 생략하지 않는다. 반대로 해당 서비스를 제공했다는 이유로 무관한 모든 unsafe practice나 다른 위반까지 면책된다는 뜻도 아니다. 공식 PDF의 개정 페이지는 2025-04-25 게시/등록 표시와 2025-01-09 시행 표시를 구분한다.
 
-Investigative conference는 complaint에 관한 informal discussion이다. Adjudicatory hearing는 정식 administrative hearing이다. Order to Show Cause는 formal hearing에 출석하도록 하는 문서이다. Complaint가 접수되었다는 사실만으로 자동으로 license가 revoked되는 절차가 아니다. 
+### Conviction와 보고의무는 별도 판단
 
-### Board action의 구별
+10.02의 conviction 정의는 guilty verdict/finding, accepted guilty 또는 nolo contendere plea, 열거된 admission/finding of sufficient facts, continuance without a finding 등을 포함한다. Sentence가 부과되거나 수감되어야만 이 정의에 들어가는 것은 아니다. 정의의 범위, 10.03의 징계 사유·보호 조항, arrest/pending charge 등의 보고의무를 각각 판단한다.
 
-Dismissal은 complaint의 종결 경로이다. Advisory letter는 Board의 우려를 기록하지만 formal disciplinary action은 아니다. Reprimand는 formal discipline이며 censure는 더 강한 reprimand이다. 
+**OPEN — 보고 조항의 관계:** 현재 게시된 247 CMR 10.03(1)(y)–(bb)의 보고 문구·옛 교차참조와 247 CMR 20.03(3)–(4)의 14 calendar days 문구 사이의 적용 관계는 이번 배치에서 확정하지 않았다. 10의 일부 PDF 추출문은 줄 순서도 뒤섞여 있다. 어느 숫자 하나가 모든 사건에 적용된다거나 새 게시일만으로 다른 조항이 전부 폐지됐다고 암기하지 않는다. 해당 보고 사건의 정확한 조항과 후속 공식 해석을 별도로 확인해야 한다. 이 OPEN은 아래의 명확한 impairment·probation 정의를 불확실하다고 바꾸는 뜻이 아니다.
 
-Probation은 Board가 정한 조건 아래 practice하는 disciplinary status이다. Suspension/revocation은 권한 정지·취소이며 hearing/order 또는 consent agreement 등의 경로로 이루어질 수 있다.
+### 절차와 Board action 비교 — 10.02, 10.04–10.06
 
-Consent agreement는 Board와 licensee가 합의하는 해결 경로이며, professional conditions나 voluntary suspension/surrender가 포함될 수 있다. ‘합의했으니 모두 nondisciplinary’라고 가정하지 않는다. Voluntary surrender의 서면·서명·권리 상실·reinstatement 조건을 해당 agreement에서 확인한다.
+| 구분 | 의미와 효과 | 혼동하기 쉬운 점 |
+|---|---|---|
+| Investigative conference | Complaint에 관한 informal discussion; formal proceeding 시작 전에 정할 수 있음 | 최종 merits hearing과 동일하지 않음 |
+| Adjudicatory hearing | M.G.L. c.30A·801 CMR1.01에 따른 formal administrative hearing | Complaint 접수만으로 자동 면허취소가 되는 절차가 아님 |
+| Advisory letter | Board file에 우려를 남기는 문서; formal disciplinary action은 아님 | 모든 credentialing form에서 미공개해도 된다는 일반적 허가가 아님 |
+| Reprimand / censure | Reprimand는 formal discipline; censure는 severe reprimand | Advisory와 같은 분류가 아님 |
+| Probation | Board가 정한 조건 아래 practice하는 disciplinary 기간 | License를 영구 취소한다는 뜻이 아님 |
+| Suspension / revocation | 등록·면허·permit 등의 정지 또는 취소 | 조건부 practice인 probation과 구별 |
+| Consent agreement | Board와 registrant/licensee가 합의한 해결; 조건·suspension·surrender 등을 포함 가능 | 합의했다는 이유만으로 nondisciplinary가 되지 않음 |
+
+Probation은 formal hearing뿐 아니라 consent agreement로도 부과할 수 있다[10.06(4)]. Voluntary surrender에는 10.06(6)(a)–(d)의 서면·서명·사실·reinstatement 조건·registration privileges 상실·judicial review 관련 확인·permanent Board record 요건이 있다. 그 surrender 설명을 모든 종류의 consent agreement에 관한 무제한 권리 포기로 확대하지 않는다.
+
+### 실제 사례와 오개념
+
+약사가 과거 advisory letter를 받았고, 나중에 다른 complaint를 해결하면서 12개월 probation과 supervision에 합의했다면, 현재 조치는 **disciplinary probation**이다. 과거 letter의 분류나 formal hearing이 없었다는 사실로 현재 probation을 advisory라고 바꿀 수 없다. 반면 ongoing treatment 중이지만 안전한 업무 능력이 유지된 약사를 치료 이력만으로 impaired practice라고 단정하지 않는다.
+
+복습 질문: ‘치료 중이다’, ‘업무 능력이 손상됐다’, ‘징계 사유가 있다’, ‘최종 처분이 내려졌다’는 각각 어떤 사실인가?
+
+관련 연습: [MA-RW-0077 · 실제 impairment 판단](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0077), [MA-RW-0078 · 합의에 의한 probation](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0078).
+
+공식 근거: [247 CMR 10](https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download) §§10.02–10.06, [247 CMR 20](https://www.mass.gov/doc/247-cmr-20-reporting/download) §20.03(3)–(4). 확인일 2026-10-30. 위에 열거한 주장·OPEN의 작성자 대조이며 306절 전수 또는 독립 법규 감사 완료가 아니다.
 
 
 근거:
@@ -6217,15 +6287,41 @@ Consent agreement는 Board와 licensee가 합의하는 해결 경로이며, prof
 
 ## 긴급 조치의 hearing 기한
 
-### Summary suspension
+### 먼저 어떤 긴급 조치인지 확인한다
 
-Documentary evidence 등으로 immediate/serious public threat가 있다고 판단하면 Board는 최종 hearing 전 license를 suspend하거나 renewal를 거절할 수 있다. Summary action의 필요성에 한정된 hearing는 Board action 후 7일 이내 제공되어야 한다. 최종 merits hearing와 동일한 절차가 아니다. 
+247 CMR 10.07과 10.08은 최종 merits decision 전에 공중을 보호하는 서로 다른 경로다. 두 조항의 위험 문구는 **immediate OR serious threat**, 즉 즉각적 **또는** 중대한 위험이다. 둘 다 동시에 증명되어야만 조치할 수 있다고 AND로 바꾸지 않는다.
 
-### Cease-and-desist와 quarantine
+### License의 summary suspension — 10.07
 
-Board 또는 Board President는 심각하고 즉각적인 위험을 막기 위해 operations를 중지·제한하거나 medication 사용을 금지하는 notice를 발할 수 있다. 해당 조문의 interim cessation/restriction는 nondisciplinary 조치로 규정된 경로가 있으며 최종 discipline와 구별한다. 
+Board가 affidavits 또는 다른 documentary evidence를 바탕으로 licensee가 public health·safety·welfare에 immediate or serious threat라고 판단하면, allegations의 최종 merits hearing을 기다리는 동안 license를 suspend하거나 renewal을 거절할 수 있다.
 
-이 notices의 필요성에 관한 한정 hearing는 action 후 15 business days 이내 제공된다. Summary suspension의 7일과 quarantine/cease-and-desist의 15 business days를 같은 시간표로 만들지 않는다. Notice는 Board/President가 rescind/amend하거나 관련 최종 action이 있을 때까지 해당 조건이 유지된다.
+**Summary action의 필요성에 한정된 hearing을 Board action 후 7일 이내 제공**해야 한다. 조문은 seven days라고 쓰며 seven business days로 바꾸지 않는다. 이 기간을 모든 allegations에 대한 최종 merits hearing·final decision의 완료기한으로 읽지 않는다.
+
+### Cease-and-desist와 quarantine — 10.06(8)–(9), 10.08
+
+Board **또는 Board President**는 affidavits 또는 other evidence를 근거로 registrant/licensee나 그 products의 immediate or serious threat를 판단할 수 있다. 해당 경로에서는 operations의 cessation/restriction 또는 pharmacy가 준비하거나 보유한 medication의 사용 금지, registrant/licensee에 대한 필요한 제한을 명할 수 있다. Quarantine은 미리 준비한 sterile product만의 문제로 한정되지 않는다.
+
+10.08(1)의 해당 cessation/restriction는 **nondisciplinary** 경로이지만 준수 여부를 pharmacy가 선택한다는 뜻이 아니다. Notice requirements는 Board/President가 rescind 또는 amend하거나, 관련 pending complaint에 최종 action을 취하고 Board가 final decision을 내리는 조문의 조건까지 유지된다[10.08(2)].
+
+해당 notice의 필요성에 한정된 hearing은 **Board 또는 Board President action 후 15 business days 이내 제공**한다[10.08(3)]. 최종 merits hearing의 기간이나 notice의 자동 만료일이 아니다.
+
+| 비교 | Summary suspension / refusal to renew | 해당 cease-and-desist / quarantine notice |
+|---|---|---|
+| 직접 근거 | 10.07 | 10.06(8)–(9), 10.08 |
+| 발령권자 | Board | Board 또는 Board President |
+| 위험 문구 | Immediate **or** serious | Immediate **or** serious |
+| Limited hearing | Board action 후 **7 days** | Action 후 **15 business days** |
+| Hearing 범위 | Summary action의 necessity | 해당 notice의 necessity |
+
+### 사례: 같은 날 발생한 서로 다른 두 사건
+
+같은 날 Board가 약사 license를 10.07에 따라 summary suspend하고 Board President가 다른 pharmacy에 quarantine notice를 발령했다면, 두 사건의 hearing 시계를 각각 계산한다. 7일과 15 business days가 하나의 사건에서 더 긴 기간을 고르는 선택지가 아니다. Quarantine notice를 받은 pharmacy는 ‘nondisciplinary라서 선택적이다’ 또는 ‘hearing 기한이 지나면 notice가 자동 소멸한다’고 판단해서는 안 된다.
+
+복습 질문: 어떤 문서가 발령됐는가 → 누가 발령했는가 → 제한된 hearing의 기한과 범위는 무엇인가 → notice가 종료되는 조문상 사건은 무엇인가?
+
+관련 연습: [MA-RW-0079 · 서로 다른 hearing 시계](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0079).
+
+공식 근거: [247 CMR 10](https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download) §§10.06(8)–(9), 10.07, 10.08(1)–(3). 확인일 2026-10-30. 이번 범위는 열거된 긴급 조치의 조건·시계·효력이며 실제 절차 분쟁의 모든 사법적 구제수단까지 검토한 것은 아니다.
 
 
 근거:
@@ -6279,11 +6375,46 @@ Massachusetts에서 적법하고 professional standards에 맞는 reproductive/g
 
 ## Waiver: 법규를 임의로 면제할 수 없다
 
-247CMR14의 waiver는 법이 달리 금지하지 않는 범위에서 Board가 regulation requirement를 면제하는 절차이다. **Compelling public interest, impractical/unduly burdensome compliance, 충분한 public-health safeguards**라는 세 요소를 제시해야 한다. 단순 비용 절약만으로 자동 허용되는 것은 아니다. 
+### 핵심: 신청과 grant는 서로 다른 사건이다 — 247 CMR 14.01
 
-Proposed/current MOR가 적격 petition을 서명하고, 면제받으려는 조항과 각 사유, 운영 SOP·safeguards·추가자료를 제출한다. 필요하면 Board에 출석한다. Application 제출 또는 검토 중이라는 상태는 granted waiver가 아니다. 
+법이 달리 금지하지 않는 범위에서 Board는 **247 CMR 안의 regulatory requirement**를 waiver할 수 있다. Board의 권한은 federal law나 statute 자체를 pharmacy가 독자적으로 면제할 수 있게 하는 권한이 아니다. Petition을 제출했다는 사실과 Board가 실제 waiver를 granted했다는 사실을 구분한다.
 
-2013-06-30 이후 부여된 waiver는 원칙적으로 **grant date의5주년**에 만료되는 구조이다. 만료 후에는 새 waiver가 부여되지 않았다면 원 규정을 준수한다. State Board waiver로 federal law나 statute 자체를 임의로 없앨 수는 없다.
+### Board가 확인할 누적 요건 — 14.01(1), (3)
+
+1. Waiver를 부여할 **compelling public interest**가 있다.
+2. 해당 regulation을 준수하는 것이 **impractical AND unduly burdensome**이다. 둘 중 하나만 있으면 된다는 OR가 아니다.
+3. 면제된 requirement를 따르지 않아도 public health·welfare·safety를 보호할 **sufficient safeguards**가 있다.
+
+비용 자료가 부담을 설명하는 일부 근거가 될 수는 있지만, 비용 절감만으로 public interest와 safeguards까지 자동 충족하거나 grant가 보장되는 것은 아니다.
+
+### 신청할 때 필요한 사람과 자료 — 14.01(2)–(4)
+
+Board form을 사용하며 pharmacy license 신청자의 **proposed MOR** 또는 이미 licensed된 pharmacy의 **current MOR**가 해당 petition을 작성하고 서명한다. Waiver를 원하는 정확한 regulatory requirement와 각각의 사유, compelling public interest, impractical하면서 unduly burdensome인 이유, 운영 policies/procedures와 safeguards, Board가 정한 추가 정보를 제출한다. Board는 결정 전에 applicant의 출석과 질의응답을 요구할 수 있다.
+
+MOR의 서명은 신청요건이다. 서명일이나 접수일 자체가 exemption의 시작일이 되는 것은 아니다.
+
+### 만료와 후속 petition — 14.01(5)
+
+| 최초 grant 시점 | 규정상 만료 |
+|---|---|
+| **2013-06-30 당일 또는 그 이전** | 2018-06-30 |
+| **2013-06-30 이후** | 그 grant date의 **5주년** |
+
+Pharmacy는 만료를 예상하여 또는 만료 후에 subsequent petition을 제출할 수 있다. 이 후속 신청도 14.01(1)–(4)의 요건을 충족해야 한다. **만료 후 Board가 subsequent waiver를 granted하지 않았다면 모든 247 CMR regulatory requirements를 준수**해야 한다[14.01(5)(d)]. 제때 신청했다는 이유로 이전 waiver가 자동 연장되지 않는다.
+
+### 날짜를 적용하는 사례
+
+2021-10-01에 grant된 waiver의 5주년은 2026-10-01이다. Pharmacy가 2026-09-25에 subsequent petition을 제출했어도 2026-10-02까지 Board가 새 waiver를 부여하지 않았다면, 이전 waiver를 계속 적용할 수 있다는 결론은 나오지 않는다. 원 regulation 준수와 후속 grant 여부를 확인해야 한다. 같은 MOR나 같은 운영방식을 유지하는 사실은 이 만료 구조를 없애지 않는다.
+
+### 시험에서 자주 섞는 판단
+
+Impractical **AND** unduly burdensome / petition **versus** granted waiver / grant date **versus** filing date / initial grant **versus** subsequent petition / 247 CMR regulation **versus** federal law·statute를 구분한다. 이 원문은 grant를 얻은 모든 pharmacy의 모든 법적 의무를 영구 면제하는 경로가 아니다.
+
+복습 질문: 5주년 전에 접수한 후속 petition이 미결이면 무엇을 따라야 하는가? 비용상 부담만 설명하면 세 요건을 충족한 것인가?
+
+관련 연습: [MA-RW-0080 · 만료와 재신청 요건](https://woojunxnam.github.io/oddments/practice-expansion/?bank=rewrite#MA-RW-0080). 원본 MA-EXP-0223 A 및 0224 C의 ‘burden or impracticality’는 위 AND 요건과 맞지 않으므로 원본 정답을 그대로 암기하지 않는다.
+
+공식 근거: [247 CMR 14](https://www.mass.gov/doc/247-cmr-14-petition-for-waiver/download) §14.01(1)–(5). 확인일 2026-10-30. PDF footer의 2017-09-22는 register 게시 표시이며 별도로 확인되지 않은 시행일로 바꾸어 기록하지 않는다.
 
 
 근거:
@@ -7291,12 +7422,28 @@ OPEN-USP — USP 정본 전체, 모든 <825>·allergen·engineering·waste 특�
 
 이 목록은 모든 법규가 불확실하다는 뜻이 아니다. 확정된 기본 규칙과 추가 증거가 필요한 경계를 분리하여 공부하기 위한 목록이다.
 
+### 2026-10-30 추가 확인 — 기존 목록의 전수 재검증은 아님
+
+**OPEN-CDTM-QUALIFICATION:** [PharmD 자격 설명](#chapter/cdtm/w3-d-2)에 현재 M.G.L. c.112 §24B½(b)(3)의 날짜 없는 PharmD 문구와 247 CMR16.02(1)(c)1의 2017-06-30 CPA 참여 조건을 나란히 기록했다. 두 공식 원문의 적용 관계를 해소할 공식 설명은 확보하지 못했다. 모든 신규 PharmD 지원자의 자격을 일괄 확정하거나 규정 날짜가 폐지됐다고 추정하지 않는다. BPS·residency equivalency 경로는 별도 조건으로 공부한다.
+
+**OPEN-REPORT의 좁은 재확인:** [징계·보고의 구분](#chapter/discipline-inspection/w1-c-14)에서 247 CMR10.03과20.03의 보고 문구 관계를 계속 OPEN으로 표시했다. 이번에 확인한 summary suspension 7 days와 quarantine 15 business days는 [별도 hearing 절차](#chapter/discipline-inspection/w1-c-15)의 숫자이며 보고의무 충돌을 해결하는 숫자가 아니다.
+
+위 두 항목의 상세 공식 링크와 확인 범위는 연결된 절에서 확인한다. 이 등록부의 이전 항목에 새 법규 검증일을 부여한 것은 아니다.
+
 
 근거:
 
 - [Massachusetts Board / DCP Policy 2023-04 — Continuity of Care, adopted 4/6/2023; supersedes 2020-06](https://www.mass.gov/doc/2023-04-continuity-of-care-pdf/download)
 
 - [247 CMR 9, Professional Practice Standards, 12/6/2024 게시본. 특히 9.01,9.02,9.04,9.10–9.25.](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
+
+- [247 CMR 16.00, Collaborative Drug Therapy Management, §§16.02–16.05. 게시본 12/15/2017.](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)
+
+- [M.G.L.c112§24B½ — current consolidated CDTM definitions and qualifications](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24B%201~2)
+
+- [247CMR10, DisciplinaryProceedings, 2025개정 포함 게시본.](https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download)
+
+- [247 CMR 20.00, §§20.02, 20.07의 reporting와 247 CMR 15 CQI를 구별. Week 1·4와 연결.](https://www.mass.gov/doc/247-cmr-20-reporting/download)
 
 
 ## 시험일에 다시 확인할 항목

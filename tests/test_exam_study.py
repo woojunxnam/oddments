@@ -56,6 +56,34 @@ def test_practice_links_use_exact_existing_evidence_not_guessed_topics():
             assert link['shared_units']==sorted(set(l['note_units'])&{e['unit_id'] for e in original['note_evidence']})
             assert link['shared_units']
 
+def test_study_recommendations_exclude_archive_notices_and_keep_narrow_reviewed_items():
+    config=json.loads((ROOT/'site/practice-expansion/publication.json').read_text())
+    selection=json.loads((ROOT/config['representative_selection']['path']).read_text())
+    notices={qid for n in selection.get('archive_review_notices',[]) for qid in n['question_ids']}
+    linked={link['id'] for lesson in D['lessons'] for link in lesson['practice_links']}
+    assert {'MA-EXP-0223','MA-EXP-0224'}<=notices
+    assert not notices&linked
+    lesson=next(x for x in D['lessons'] if x['id']=='LAW-016')
+    assert 'open' in lesson['flags']
+    assert {link['id'] for link in lesson['practice_links']}&{'MA-RW-0077','MA-RW-0078'}
+
+def test_note_open_exception_does_not_promote_unreviewed_or_warned_questions():
+    import copy
+    question=dict(question_id='q',inherited_flags=['open'],
+        primary_source_verification='AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT',
+        primary_source_read_records=[{'access_status':'READ_OFFICIAL'}])
+    before=copy.deepcopy(question)
+    assert builder.eligible_study_practice(question,{'q'},{'q'},set())
+    assert question==before  # OPEN remains visible in the question and its note.
+    assert not builder.eligible_study_practice(question,{'q'},{'q'},{'q'})
+    assert not builder.eligible_study_practice(question,{'q'},set(),set())
+    assert not builder.eligible_study_practice(question,set(),{'q'},set())
+    question['primary_source_read_records']=[]
+    assert not builder.eligible_study_practice(question,{'q'},{'q'},set())
+    question['primary_source_read_records']=[{'access_status':'READ_OFFICIAL'}]
+    question['inherited_flags']=['open','source-gap']
+    assert not builder.eligible_study_practice(question,{'q'},{'q'},set())
+
 def test_original_notes_and_banks_preserved():
     assert D['notes_sha256']=='004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
     assert D['question_sources']['practice_expansion/2026-10-23/candidates/questions.json']=='f2b27d3105f2efab40d3ab943f0f5813bdadd793e5ffa60d262fe5ab4e40a74f'

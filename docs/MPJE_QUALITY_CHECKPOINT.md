@@ -1,4 +1,73 @@
-# MPJE 품질 개선 checkpoint — Unit 3A
+# MPJE 품질 개선 checkpoint
+
+## 최신 구현 snapshot — Discipline/CDTM, 2026-10-30
+
+시작 main: `c4a05c8bf48ecc333e331b3c267607af6590ac40`. Branch: `feat/disc-cdtm-learning-20261030`. 이 절은 현재 source의 구현 상태이며, 아래 과거 checkpoint의 수치·미배포 문장은 당시 snapshot으로 보존한다. PR [#177](https://github.com/woojunxnam/oddments/pull/177), 최초 candidate `09c86f94d37b3fdb9c59748011cd1515a4da5e0b` (로컬 테스트와 동일한 tree `bbc2aedb4761402a59bb985b67fcbf4469bd4440`). 최종 head·merge·production은 이 절의 후속 기록과 해당 PR 실행 결과를 확인한다.
+
+### 실제 검토·수정 범위
+
+- 원본 `MA-EXP-0209`–`0240` 32개·128개 선택지, 이미 공개된 `MA-RW-0025`–`0028` 4개·16개 선택지, 새 `MA-RW-0077`–`0080` 4개·19개 선택지: 합계 **40개 ID·163개 선택지**. 기존 CDTM 4개는 재검토 후 유지했으며 새 문항은 4개뿐이다.
+- 원본 32개 판정: `MINOR_EDIT` 23 / `REPLACE` 8 / `MAJOR_REWRITE` 1. 대표 교체 8개 중 CDTM 4개는 이미 구현된 교체이며 이번에 새로 만든 것은 Discipline 4개다. 경미한 개선 원본 23개는 immutable archive에 남아 있으며 편집 완료로 계산하지 않는다.
+- `MA-EXP-0223`의 원본 SATA key `A,B,C,D`에는 waiver의 **impractical AND unduly burdensome**을 OR로 잘못 쓴 A가 포함돼 있다. 근거에 맞는 선택은 `B,C,D`다. `0224`는 잘못된 선택지가 C와 D 둘이라 SBA 정답이 모호하다. 원본 key/history를 보존하고 명시적 주의와 새 `MA-RW-0080` 연결로 학습 경로를 교정했다. `0221`–`0222` 해설, `0228`의 범위, `0233`–`0236` 자격 근거 관계까지 이번 주의 표시는 9개 ID다.
+- 새 `0077`은 실제 impaired practice와 치료 사실을, `0078`은 Board가 징계로 지정한 probation과 다른 처분을, `0079`는 summary suspension과 quarantine의 절차·기한을, `0080`은 waiver 만료·연장과 두 요건의 결합을 구별한다. 영어 지문·선택지와 한국어 선택지별 해설 및 정확한 공식 조항을 기록했다.
+- 40개 ID 각각에 10개 기준·0–5점 편집 평가를 기록했다. 평가 없는 문항은 `null`이며 0점 또는 검증 완료로 바꾸지 않는다. 작성자 및 같은 팀 교차 검토는 독립 canonical 감사가 아니며 새 `RELEASED`는 0개다.
+
+현재 공개 연습판 source는 **2,346 = 원본 2,176 + MA-REV 96 + MA-RW 74**, 기본 목록 438개다. 원래 대표 355개는 재작성 74 / 기존 사례 통합 3 / 보류 10 / 개선 미반영 268이다. 기존 70개 MA-RW 완전한 question record와 75개 source record의 보존 hash를 이번 baseline에 고정했다. 원본·과거 감사·canonical 상태·storage/북마크 ID는 보존한다.
+
+누적 개별 검토 기록 **121개 ID**, 미재검증 **2,225개**. 법규 상태는 작성자 근거 확인 65 / 조건부 확인 46 / 근거 관계 보류 10이다. 이 121개는 모두 정답이 맞거나 독립 감사됐다는 수가 아니다. 원본 1,024개 구조검사와 구분한다. Canonical은 별도 **439개 = RELEASED 398 + AUDIT_PENDING 40 + REVIEW_REQUIRED 1**이며 이번에 재감사하거나 상태를 변경하지 않았다.
+
+### 통합노트와 학습 연결
+
+판본 `2026-10-30.discipline-cdtm.1`은 `w1-c-14`, `w1-c-15`, `w4-d-17`, `w3-d-2`, `w3-d-3`, `authority-paths`의 6개 절을 개정하고, 기존 미해결 사항 색인 `w6-b-17`에 새 OPEN 관계를 연결한다. 장 highlights 2개, 학습 요약 `LAW-016`·`LAW-045`·`LAW-048`, 복습 카드 `RF-011`을 함께 갱신한다. 7번째 절은 색인 갱신이며 내용 전수 법규 검토로 더하지 않는다.
+
+누적 노트 33주제·306절 중 **14개 절의 제한된 claim 검토**, **15개 절의 versioned edit**가 있다. Claim/claim cluster는 **52개 = 작성자 근거 확인 48 + OPEN 4**이며 전체 atomic claim census가 끝난 절은 0개다. 이전 원본·판본·migration을 보존하고 다섯 번째 generated export migration은 `site/notes/complete-notes.md` 한 경로에만 적용한다.
+
+각 상세 절의 관련 문제와 오답 복습은 실제 `note_evidence.unit_id`로 연결한다. `?note=<unit_id>`는 bank·주제·문제형식·검색·오답 필터와 교차 적용한다. 없는 절 ID에는 무관한 문항을 대신 보여주지 않는다. 기존 문제 deep link와 학습 기록은 유지하며 시간 연습 중 노트는 새 탭으로 연다. 저장 차단 환경에서는 모바일·집중 읽기에서도 보이는 임시 저장 안내와 직접 기록 내보내기 버튼을 제공한다. 현재 명시적 문항 연결이 있는 247개 절은 연결 수이며 법규 검토 완료 수가 아니다.
+
+### 계속 OPEN인 법규 관계와 자료 경계
+
+1. `MA-EXP-0233`–`0236`: M.G.L. c.112 §24B½의 PharmD 경로와 247 CMR 16.02(1)(c)1의 2017-06-30 날짜 조건 관계. 공식 조정 근거가 확보되지 않아 자격 결론을 일괄 확정하지 않는다. 기존 `MA-RW-0027`은 BPS 경로다.
+2. 247 CMR 10.03과 20.03의 reporting 조건·기한 관계는 공식 근거를 더 확인해야 한다. 7 business days / 30 days / 14 calendar days를 하나의 기한으로 합치지 않는다.
+3. 이전 CE email/Form, 1:6 인원 관계, 2/4 intern 관계, PLUS source 자격 문제는 OPEN을 유지한다. 이번 날짜로 전체를 재검증했다고 기록하지 않는다.
+4. Castleport·OpenExamPrep·PreMPJE.com은 약관 확인만 수행했고 질문 본문 비교·AI 사용·재배포 permission이 확인되지 않아 Class B/HOLD로 남겼다. 외부 질문을 복제하거나 비율·coverage를 측정하지 않았다. Google Drive 보조 자료는 이번 배치에서 읽거나 canonical에 반영하지 않았다.
+
+수치 정의는 `reports/full-corpus-review/inventory-definitions.json`을 따른다. 2,176은 초기 두 묶음, 2,328은 과거 56개 MA-RW를 포함한 baseline, 226은 과거 canonical 수다. 현재 고유 family ID 480개, 확장 판단 모델 128개, 노트 33주제는 서로 다른 차원이다. 독립 사례·독립 법규 판단 수의 전수 판정은 미완료다.
+
+### 현재 배치 QA·배포 상태
+
+| 항목 | 상태 | 근거 / 후속 |
+|---|---|---|
+| 최종 로컬 full pytest / validate_all | PASS | 332 tests 통과; validator 오류 0·기존 경고 7. `discipline-cdtm-validation.json` |
+| 전체 builder 재현성 / 보호 manifest 검증 | PASS | 대표·ledger·similarity·notes/study/refresh 재현성, 원본 1,781개 보호, canonical 생성물 변경 없음 |
+| 실제 HTTP·모바일·storage 브라우저 회귀 | 로컬 NOT RUN | Chromium 실행 파일 없음. 최종 head CI 및 production workflow에서 실행 결과 확인 필요 |
+| PR / head CI | PR #177, follow-up CI PENDING | source 수·navigation 검증을 보완했고, 후속 CI에서 모바일 저장 불가 안내가 sidebar에 숨는 실제 문제를 발견해 UI·내보내기를 수정했다. 최종 head의 모든 gate 성공을 확인해야 함 |
+| merge / Pages / 공개 origin 검증 | NOT RUN | 배포된 byte와 실제 화면·동작 확인 전 완료로 보고하지 않음 |
+| 새 독립 canonical 감사 | NOT RUN | 작성자·같은 팀 검토와 구분, RELEASED 추가 0 |
+
+초기 CI 실패와 보완은 `reports/full-corpus-review/discipline-cdtm-validation.json`의 `first_github_ci_followup`에 남겼다. 노트 출처의 전체 레코드·표시 링크·개수를 effective revision과 대조하고, 실제 페이지 로딩 후 오답/Back 경로를 검사한다. 두 번째 CI의 실제 모바일 경고 문제와 보완은 `second_github_ci_followup`에 기록했다. 실패한 실행을 PASS로 바꾸어 기록하지 않는다.
+
+실행 명령 및 후속 CI: `python scripts/build_full_corpus_review.py --check`, `python scripts/build_quality_status.py --check`, 대표문항 builder·audit ledger·similarity·보호 검사, notes/study/refresh builders `--check`, `python scripts/validate_all.py`, `python -m pytest -q`, `python scripts/publish_practice.py --output public-site`, 기존 HTTP/production workflow. 실행하지 않은 명령은 PASS로 승계하지 않는다.
+
+### 다음 배치 — CDTM05–12, 중복 신설 없이 재검토
+
+먼저 현재 배치의 QA·CI·배포와 공개 origin 확인을 완료한다. 이후 원본 **`MA-EXP-0241`–`0272` 32개**와 이미 존재하는 개정판 **`MA-RW-0029`–`0036` 8개**를 함께 검토한다. 아래 표는 현재 데이터·replacement mapping으로 확인한 대기 목록이며 이번 법규 검토 완료 목록이 아니다.
+
+| Family | 원본 ID 범위 | 기존 대표 → 기존 개정판 | 우선 주제 | 연결 노트 |
+|---|---|---|---|---|
+| CDTM05 | MA-EXP-0241–0244 | MA-EXP-0243 → MA-RW-0029 | CDTM CE·역량 유지 | w3-d-4, w1-a-8 |
+| CDTM06 | MA-EXP-0245–0248 | MA-EXP-0247 → MA-RW-0030 | Prescribing 등록·참여 요건 | w3-d-4 |
+| CDTM07 | MA-EXP-0249–0252 | MA-EXP-0251 → MA-RW-0031 | Practice setting 승인 | w3-d-5 |
+| CDTM08 | MA-EXP-0253–0256 | MA-EXP-0255 → MA-RW-0032 | Retail 성인 환자·referral | w3-d-6 |
+| CDTM09 | MA-EXP-0257–0260 | MA-EXP-0259 → MA-RW-0033 | Consent 사본·communication 기한 | w3-d-6, w3-d-8 |
+| CDTM10 | MA-EXP-0261–0264 | MA-EXP-0263 → MA-RW-0034 | Retail 기존 치료 연장 | w3-d-7 |
+| CDTM11 | MA-EXP-0265–0268 | MA-EXP-0267 → MA-RW-0035 | Referral 진단에 따른 범위 | w3-d-7 |
+| CDTM12 | MA-EXP-0269–0272 | MA-EXP-0271 → MA-RW-0036 | Retail schedule 제한 | w3-d-7, w2-a-2, authority-paths |
+
+기존 개정판이 있다는 이유로 40개를 검토 완료로 계산하지 않으며, 같은 판단을 새 ID로 중복 생성하지 않는다. 0233–0236의 미해결 자격 관계와 이번 23개 minor-edit 원본은 별도의 미완료 항목으로 유지한다. 다음 실행에서는 먼저 실제 main SHA와 이 checkpoint 이후의 변경을 대조한다.
+
+---
+
+## 과거 checkpoint — Unit 3A
 
 시작 main: `9f3fed116792b33c65cad35da77a8d68aab58c06` (PR #170). Branch: `feat/unit3-corpus-personnel-review-20261029`. GitHub PR: https://github.com/woojunxnam/oddments/pull/171. 첫 code snapshot: `88985ebcbd57163dc6879e56a1f504c28ad48b1c` (local tree-equivalent commit `101a6621f6d71bb9599e3f97d5170b1fefffa044`, tree `eefc2f9aea843d0d3fdf17184a58e99fda9e48eb`). 후속 checkpoint/evidence 강화 커밋의 최종 head는 PR head 또는 `git rev-parse HEAD`로 확인한다. 아직 merge/production 완료로 간주하지 않는다.
 

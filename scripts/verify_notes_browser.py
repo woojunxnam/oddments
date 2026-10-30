@@ -16,6 +16,7 @@ import re
 import threading
 from urllib.parse import quote
 from playwright.sync_api import sync_playwright, expect
+from notes_revision import load_notes
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT/'site'
@@ -29,6 +30,7 @@ def main() -> None:
     ap.add_argument('--output',default='test-results/ultimate-notes')
     args=ap.parse_args()
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
+    expected_sources=load_notes(ROOT)['sources']
     checks=[];errors=[];external=[]
     def checked(name):checks.append(name);print('PASS:',name,flush=True)
     server=None
@@ -64,6 +66,7 @@ def main() -> None:
             expect(page).to_have_url(re.compile('/notes/$'))
             checked('main page entry opens independent notes page')
         expect(page.locator('.chapter-card')).to_have_count(33)
+        expect(page.locator('#storage-notice')).to_be_hidden()
         page.screenshot(path=str(out/'home-desktop.png'))
         checked('33 chapter cards render without JavaScript errors')
         page.locator('.skip-link').focus();page.keyboard.press('Enter')
@@ -116,7 +119,16 @@ def main() -> None:
         page.locator('#drug-schedule').select_option('II')
         assert page.locator('.drug-card').count()>0
         checked('127-drug directory, names, schedule filter and pagination')
-        route('sources');expect(page.locator('.reference-entry')).to_have_count(248)
+        route('sources')
+        # Use the effective versioned registry, not the immutable baseline count.
+        # Exact IDs/records plus rendered links catch omissions or substitutions
+        # even when an incorrect registry happens to have the right total.
+        assert page.evaluate('MPJE_NOTES.sources')==expected_sources, 'Rendered source registry differs from the effective notes revision'
+        expect(page.locator('.reference-entry')).to_have_count(len(expected_sources))
+        rendered_sources=page.locator('.reference-entry a').evaluate_all(
+            'links=>links.map(a=>({title:a.textContent,url:a.getAttribute("href")}))')
+        assert rendered_sources==[{'title':source['title'],'url':source['url']}
+                                  for source in expected_sources.values()], 'Source registry links are incomplete or mismatched'
         page.locator('#source-query').fill('FDA');assert page.locator('.reference-entry').count()>0
         checked('source registry and filtering')
         # All units must be rendered by one chapter, with valid source disclosure links.
@@ -177,12 +189,38 @@ def main() -> None:
             checked('complete static book works without JavaScript')
             nojs.close()
             # Storage-denied environment: fail soft, still browse and mark locally.
-            denied=browser.new_context()
+            denied=browser.new_context(viewport={'width':390,'height':844},accept_downloads=True)
             denied.add_init_script("Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError')}})")
-            dp=denied.new_page();dp.goto(base+'notes/',wait_until='load')
+            dp=denied.new_page();dp.on('pageerror',lambda e:errors.append(str(e)))
+            dp.goto(base+'notes/',wait_until='load')
             expect(dp.locator('.chapter-card')).to_have_count(33)
-            expect(dp.locator('#storage-notice')).to_contain_text('저장소')
-            checked('storage-disabled fallback remains readable')
+            expect(dp.locator('#storage-notice')).to_be_visible()
+            expect(dp.locator('#storage-notice')).to_contain_text('임시로만')
+            dp.evaluate("location.hash='chapter/refills-transfer/schedule-vi-continuity'")
+            denied_unit=dp.locator('#schedule-vi-continuity')
+            expect(denied_unit).to_be_visible()
+            denied_unit.locator('[data-save]').click()
+            denied_unit.locator('[data-read]').click()
+            dp.locator('#focus-button').click()
+            expect(dp.locator('body')).to_have_class(re.compile('focus-reading'))
+            for width in [320,390,1440]:
+                dp.set_viewport_size({'width':width,'height':900})
+                expect(dp.locator('#storage-notice')).to_be_visible()
+                expect(dp.locator('#export-temporary-progress')).to_be_visible()
+                assert not dp.evaluate('document.documentElement.scrollWidth>innerWidth+1'),f'Storage warning overflow {width}'
+            dp.set_viewport_size({'width':320,'height':900})
+            with dp.expect_download() as temporary_download:
+                dp.locator('#export-temporary-progress').click()
+            temporary=json.loads(Path(temporary_download.value.path()).read_text())
+            assert temporary['application']=='oddments-ultimate-notes'
+            assert temporary['edition']==dp.evaluate('MPJE_NOTES.edition')
+            assert 'schedule-vi-continuity' in temporary['saved'] and 'schedule-vi-continuity' in temporary['read']
+            dp.locator('#storage-notice').scroll_into_view_if_needed()
+            dp.screenshot(path=str(out/'storage-denied-mobile.png'))
+            dp.evaluate("location.hash='home'")
+            expect(dp.locator('.chapter-card')).to_have_count(33)
+            expect(dp.locator('#storage-notice')).to_be_visible()
+            checked('storage-disabled warning stays visible at 320/390/1440px and in focus reading; mobile export preserves temporary bookmarks and read state')
             denied.close()
             broken=browser.new_context()
             broken.route('**/notes/content.js',lambda r:r.abort())

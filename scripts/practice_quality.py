@@ -22,6 +22,14 @@ def attach(data, revision_selection=None):
    if r['legacy_question_id'] not in available or r['replacement_question_id'] not in available:raise ValueError('Invalid revision link')
   if not set(selection['new_ids'])<=set(revised['recommended_ids']):raise ValueError('Previous96 must remain in the default pool')
   data['representative_revision']={k:revised[k] for k in ['edition','replacements','holds','stats','new_ids','history_policy']}
+  notices=revised.get('archive_review_notices',[])
+  noticed=[]
+  for notice in notices:
+   ids=notice.get('question_ids',[])
+   if not ids or not set(ids)<=available or not isinstance(notice.get('reason'),str) or not notice['reason'].strip():raise ValueError('Invalid archive review notice')
+   noticed.extend(ids)
+  if len(noticed)!=len(set(noticed)):raise ValueError('Duplicate archive review notice ID')
+  data['representative_revision']['archive_review_notices']=notices
   data['quality_selection'].update(edition=revised['edition'],recommended_ids=revised['recommended_ids'],stats=revised['stats'])
  data['generation_method']=f"Original 256 paired families and128 conditional models and previous96 individual cases are retained. {len(data['quality_selection']['recommended_ids'])} default cases after explicit revision/hold mappings; all{len(available)} archived and new IDs remain available. This is not independent legal or psychometric validation."
  return data

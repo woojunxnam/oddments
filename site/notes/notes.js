@@ -32,12 +32,9 @@
   try { const raw = localStorage.getItem(KEY); if (raw) state = validState(JSON.parse(raw)); }
   catch { storageOK = false; }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    try { localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }
     catch { storageOK = false; }
-    if (!storageOK) {
-      const n = $('#storage-notice'); n.hidden = false;
-      n.textContent = '브라우저 저장소를 사용할 수 없습니다. 이번 화면의 기록을 내보내기로 저장하세요.';
-    }
+    $('#storage-notice').hidden = storageOK;
   }
   function toast(text) {
     const t = $('#toast'); t.textContent = text; t.classList.add('show');
@@ -111,8 +108,16 @@
       return `<li><a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${esc(s.title || new URL(s.url).hostname)}</a>${s.checked_at ? `<span class="muted"> · 재확인 ${esc(s.checked_at)}</span>`:''}</li>`;
     }).join('');
   }
+  function unitPractice(u) {
+    const entry=window.MPJE_EXAM_STUDY?.note_practice_index?.[u.id];
+    if(!entry||!entry.total)return '';
+    const practice=entry.practice_url;
+    const action=entry.recommended?`<a class="secondary-button" data-unit-practice="${esc(u.id)}" href="${esc(practice)}">대표·개정 ${entry.recommended}문항 풀기 →</a>`:
+      `<a class="secondary-button" data-unit-practice="${esc(u.id)}" href="${esc(practice+'&scope=all')}">연결된 변형 ${entry.total}문항 보기 →</a>`;
+    return `<aside class="unit-practice" aria-label="${esc(u.title)} 관련 연습"><h3>읽은 규칙을 문제에 적용하기</h3><p>이 절에 직접 연결된 대표·개정 <strong>${entry.recommended}문항</strong> · 전체 변형 ${entry.total}문항</p><div class="actions">${action}<a data-unit-wrong="${esc(u.id)}" href="${esc(practice+'&review=wrong')}">이 절 오답 복습 →</a></div><small>같은 판단을 공유하는 변형과 이전 판본이 포함될 수 있습니다. 연결 수는 독립 법규 검증 수가 아닙니다.${entry.recommended?'':' 기본 목록의 연결 문항은 아직 없으며, 전체 변형에는 이전 판본·검토 보류 문항도 포함됩니다.'}</small></aside>`;
+  }
   function renderUnit(u) {
-    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}<div class="unit-body">${u.html}</div><details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
+    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}<div class="unit-body">${u.html}</div>${unitPractice(u)}<details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
   }
   function renderChapter(ch, target) {
     setToc(ch);
@@ -178,7 +183,8 @@
     toast(type==='saved'?(!active?'북마크에 저장했습니다.':'북마크를 해제했습니다.'):(!active?'읽은 절로 표시했습니다.':'읽음 표시를 해제했습니다.'));
   });
   function download(name,object){const blob=new Blob([JSON.stringify(object,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-  $('#export-progress').addEventListener('click',()=>download('mpje-notes-progress.json',{application:'oddments-ultimate-notes',edition:D.edition,exported_at:new Date().toISOString(),...state}));
+  function exportProgress(){download('mpje-notes-progress.json',{application:'oddments-ultimate-notes',edition:D.edition,exported_at:new Date().toISOString(),...state});}
+  for(const selector of ['#export-progress','#export-temporary-progress'])$(selector).addEventListener('click',exportProgress);
   $('#import-progress').addEventListener('click',()=>$('#progress-file').click());
   $('#progress-file').addEventListener('change',async e=>{
     const f=e.target.files[0];if(!f)return;

@@ -71,15 +71,28 @@ class RepresentativeRevisionTests(unittest.TestCase):
                     self.assertTrue(source['url'].startswith('https://'))
                     self.assertTrue(source['retrieval_method'])
 
-    def test_new_notes_retain_original_unit_hashes_and_dates(self):
+    def test_note_evidence_pins_original_or_explicit_versioned_unit_hashes_and_dates(self):
+        from notes_revision import load_notes
         guide = json.loads((ROOT / 'notes/guide.json').read_text())
         units = {u['id']: u for c in guide['chapters'] for u in c['units']}
+        authored = {q['question_id']: q
+                    for path in (BASE / 'authoring').glob('*.json')
+                    for q in json.loads(path.read_text()).get('questions', [])}
+        versioned_ids = set()
         for q in self.bank['questions']:
+            source = authored[q['question_id']]
+            expected_units = units
+            if source.get('note_evidence_basis') == 'EFFECTIVE_REVISION':
+                versioned_ids.add(q['question_id'])
+                revised = load_notes(ROOT, revision_id=source['notes_revision'])
+                self.assertEqual(q['notes_revision'], revised['revision_provenance'])
+                expected_units = {u['id']: u for c in revised['chapters'] for u in c['units']}
             for ref in q['note_evidence']:
-                u = units[ref['unit_id']]
+                u = expected_units[ref['unit_id']]
                 self.assertEqual(ref['body_sha256'], u['body_sha256'])
                 self.assertEqual(ref['inherited_note_review_date'], u['source_review_date'])
                 self.assertEqual(ref['inherited_flags'], u['flags'])
+        self.assertEqual(versioned_ids, {f'MA-RW-{index:04d}' for index in range(77, 81)})
 
     def test_independent_audit_status_is_not_fabricated(self):
         self.assertEqual(self.payload['canonical_released_question_count'], 0)
