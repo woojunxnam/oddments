@@ -1,6 +1,27 @@
 # MPJE 품질 개선 checkpoint
 
-## 최신 구현 snapshot — Discipline/CDTM, 2026-10-30
+## 최신 배포 확인 — Discipline/CDTM, 2026-10-30
+
+2026-10-30 20:25:57 UTC까지 관측한 실제 배포 결과다. PR [#177](https://github.com/woojunxnam/oddments/pull/177)을 **`d355c8b96ba475d8880569c636cc54aeb461a461`**로 main에 병합했다. 검토한 최종 head는 `604405e627de0e29010cb07fbef4cd9402f8b707`이며, 병합 tree `70f5586d3e071584a76c23e8f3d6e720960f11f4`가 최종 candidate와 정확히 일치한다. 아래 구현 당시 snapshot과 ledger의 pending/NOT RUN 배포 필드는 과거 기록이며 현재 배포 상태는 이 절과 `reports/full-corpus-review/discipline-cdtm-deployment.json`을 따른다.
+
+| 실제 확인 항목 | 결과 | 근거 |
+|---|---|---|
+| 최종 candidate PR CI | PASS, 8/8 workflow | QA run [41118984471](https://github.com/woojunxnam/oddments/actions/runs/41118984471): 332 tests, validator 오류 0·기존 경고 7, canonical 재생성 후 git diff 없음 |
+| 병합 SHA의 main push 검사 | PASS, 9/9 workflow | 8개 QA + Pages. 각 run은 배포 JSON에 기록 |
+| Pages 배포 및 공개 문항·복습 파일 대조 | PASS | [41121472230](https://github.com/woojunxnam/oddments/actions/runs/41121472230), 공개 2,346개·기본 438개·별도 ID 개정판 74개 |
+| 실제 공개 origin 브라우저 회귀 | PASS | [41122589121](https://github.com/woojunxnam/oddments/actions/runs/41122589121), 18개 검사·개정판 74개 채점·JavaScript 오류 0 |
+| 공개 학습·통합노트 파일 대조 | PASS | [41122589173](https://github.com/woojunxnam/oddments/actions/runs/41122589173), 14개 파일과 탐색·문항 수 확인. 동일 검사를 직접 HTTPS로도 실행해 일치 확인 |
+| 새 독립 canonical 감사 / 실제 Safari·물리 기기·psychometric 검증 | NOT RUN | 작성자·같은 팀 검토, 자동 기능 검사와 구분 |
+
+실제 공개 브라우저에서 노트별 연습·오답 필터, 노트↔문제 왕복, 320px 화면, 기존 attempt/bookmark, deep link, 20/120 시간 연습, backup/import, 저장 거부·빈 오답 목록을 확인했다. 원본의 알려진 결함은 이전 key/history를 바꾸지 않고 명시적 주의와 별도 개정판 연결을 표시한다. Production artifact `13008738108`을 내려받아 SHA-256 `0b1cc863582d71e62ae2d2c073f46f679aa4325cc3917b6671cec4466296b436`을 확인하고 실제 데스크톱·모바일 화면을 검토했다. 로컬 Chromium 미설치에 따른 로컬 browser NOT RUN을 소급해 PASS로 바꾸지 않는다.
+
+이번 배치는 **40개 ID·163개 선택지**(원본 `MA-EXP-0209`–`0240` 32개 + 기존 `MA-RW-0025`–`0028` 4개 + 신규 `MA-RW-0077`–`0080` 4개)다. **원본 minor-edit 23개는 아직 편집 대기**다. 누적 개별 기록 121개는 작성자 근거 확인 65 / 조건부 46 / 보류 10이며 미재검증은 2,225개다. 독립 법규 검증 완료 수로 바꾸지 않는다. Canonical **439개 = RELEASED 398 + AUDIT_PENDING 40 + REVIEW_REQUIRED 1**은 상태 변경 없이 보존했다.
+
+공개 연습판은 **2,346 = 원본 2,176 + MA-REV 96 + MA-RW 74**, 기본 목록 438개다. 통합노트는 이번에 6개 본문 절 + OPEN 색인 1개, 요약 3개와 복습 카드 1개를 개정했다. 누적 33주제·306절 중 제한된 claim 검토 14절 / versioned edit 15절, claim cluster 52개(근거 확인 48 / OPEN 4)이며 전체 atomic claim census 완료는 0절이다.
+
+**이 배치의 병합·배포·공개 origin 검증은 완료됐다.** 다음 실행은 실제 main과 이 기록 이후 변경을 확인한 뒤 **`MA-EXP-0241`–`0272`(CDTM05–12) 32개 + 기존 `MA-RW-0029`–`0036` 8개**를 재검토한다. 아래 family별 대응 표를 활용하고 이미 존재하는 개정판을 새 ID로 중복 생성하지 않는다. CDTM PharmD 날짜 관계, reporting 관계, 이전 CE·인원 관계 OPEN 및 이번 minor-edit 23개는 계속 미완료로 추적한다. 이 배포 증거를 추가하는 문서·보고서 commit은 제품 파일을 바꾸지 않으며 위 Pages source SHA와 구분한다.
+
+## 구현 당시 snapshot — Discipline/CDTM, 2026-10-30
 
 시작 main: `c4a05c8bf48ecc333e331b3c267607af6590ac40`. Branch: `feat/disc-cdtm-learning-20261030`. 이 절은 현재 source의 구현 상태이며, 아래 과거 checkpoint의 수치·미배포 문장은 당시 snapshot으로 보존한다. PR [#177](https://github.com/woojunxnam/oddments/pull/177), 최초 candidate `09c86f94d37b3fdb9c59748011cd1515a4da5e0b` (로컬 테스트와 동일한 tree `bbc2aedb4761402a59bb985b67fcbf4469bd4440`). 최종 head·merge·production은 이 절의 후속 기록과 해당 PR 실행 결과를 확인한다.
 
