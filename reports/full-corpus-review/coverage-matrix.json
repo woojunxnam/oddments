@@ -1,6 +1,6 @@
 {
   "outline": "MPJE-MA-PRE2027",
-  "mapping_status": "INVENTORY_PLUS_THREE_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE",
+  "mapping_status": "INVENTORY_PLUS_FOUR_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE",
   "units": [
     {
       "unit_id": "legal-reasoning",
@@ -287,8 +287,10 @@
       "chapter_id": "pharmacy-mor",
       "baseline_body_sha256": "a3c1a07f3820189052074990588827cbe4191b779a4349e25e0078ba6c1f6a74",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "MOR-PRESENCE-001"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -3016,6 +3018,21 @@
       "source_evidence_sha256": "94cf66b705241a8e41061c823ecd92ae0a59d63f974b5afcd17cd80a9cd7f4e8",
       "unit_content_sha256": "45844c18756a88649207820abf95432929e5c6f5551a40b17c9cc286ba26860d",
       "scope": "Specific statements only; not a complete atomic-claim census of this unit or all 306 units."
+    },
+    {
+      "claim_id": "MOR-PRESENCE-001",
+      "unit_id": "w1-c-7",
+      "statement_ko": "Resident pharmacy의 영업 중과 non-pharmacist의 unrestricted access는 각각 pharmacist presence trigger이며 nonresident에9.19(23) 예외가 있다.",
+      "authority_clauses": [
+        "247 CMR9.19(16)(a),(23)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-29",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261029_MOR",
+      "source_evidence": "reports/full-corpus-review/mor-working/official-247cmr9.txt",
+      "source_evidence_sha256": "cb87dbc62b8a3d777a9ff4fbd9c402cb730b218fd53fd6b77db691d2deab89ce",
+      "unit_content_sha256": "1c4b7edf3905147e0bfe72828a7e9d68a98f54dc6732b240f168f1619e25aae8",
+      "scope": "해당 presence 주장만; break/working-hours/전306절의 claim census가 아님."
     }
   ],
   "inferred_family_passes": 0

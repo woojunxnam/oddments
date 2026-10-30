@@ -167,6 +167,15 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    third_path=root/'revisions/notes/protected-migration-mor.json'
+    if third_path.exists() and relative=='site/notes/complete-notes.md':
+        third=json.loads(third_path.read_bytes())
+        require(third['path']==relative and third['baseline_copy']=='revisions/baselines/complete-notes-unit3b.md', 'MOR migration expands scope')
+        require(third['revision_path']=='revisions/notes/2026-10-30-mor-presence.json', 'Unexpected MOR revision')
+        require(sha256(safe_file(root,third['revision_path']).read_bytes())==third['revision_sha256'], 'Stale MOR revision')
+        require(sha256(current)==third['new_sha256'], 'Stale MOR export')
+        current=safe_file(root,third['baseline_copy']).read_bytes()
+        require(sha256(current)==third['old_sha256'], 'Prior MOR baseline changed')
     migration_path = root / 'revisions/notes/protected-migration.json'
     if not migration_path.exists() or relative != 'site/notes/complete-notes.md':
         return current
