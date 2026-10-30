@@ -1,8 +1,8 @@
 # 기존 대표 355문항: 편집 판정과 실제 반영 원장
 
-기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-29.representative4`
+기준 main: `b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36` · 현재 selection: `2026-10-30.representative5`
 
-원문 편집 검토일: 2026-10-28 · 구현 상태 갱신일: 2026-10-29
+원문 편집 검토일: 2026-10-28 · 구현 상태 갱신일: 2026-10-30
 
 이 문서는 개별 편집 triage와 현재 반영 기록을 결합한 결과입니다. 자동 생성 과정에서 법규를 재검증하거나 독립 감사 기록을 만들지 않습니다.
 
@@ -10,12 +10,12 @@
 
 | 상태 | 문항 수 |
 |---|---:|
-| REWRITTEN_NEW_ID | 62 |
+| REWRITTEN_NEW_ID | 70 |
 | REUSED_EXISTING_QUALITY | 3 |
 | HOLD_FROM_DEFAULT | 10 |
-| NOT_YET_IMPLEMENTED | 280 |
+| NOT_YET_IMPLEMENTED | 272 |
 
-기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 62개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 70개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
 대표 보류 항목과 관련 변형을 합쳐 원본 35개에 검토 경고가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
@@ -87,14 +87,14 @@
 | MA-EXP-0167 | MOR04 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0058 | NOT_REVERIFIED | 두 약국30시간 분할과 근무약사 security 책임은 실제 운영갈등이다. B의관리업무목록은 중심결정을 흐린다. inherited OPEN은30/100일 및사임통지 경계이며 이 문항의30시간/동시MOR 명제를 직접 문제삼지는 않는다. |
 | MA-EXP-0171 | MOR05 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0059 | NOT_REVERIFIED | 중병으로 outgoing 서명이 불가능하다는 조건은 대체서명 경로를 바꾼다. C의즉시폐기는 약한 오답이고 D의application 서명은 별도 행정문장이다. inherited OPEN의통지기한은 이 key가 시험하지 않는다. |
 | MA-EXP-0175 | MOR06 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0060 | NOT_REVERIFIED | 소유권매매의 사전14일과 명칭변경의사후14일이 실제 다른 trigger이나 모두 정답이다. B의재고/환자파일 일반론은 날짜결정과 분리된다. |
-| MA-EXP-0179 | MOR07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 신청과 approval을 구별하는 목표는 좋지만 두 공사를 한꺼번에 묻고 A의sterile control은 사례에 없다. |
-| MA-EXP-0183 | MOR08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 90일 fills로 환자대상을 정하는 실제 운영맥락은 적절하다. D의모든시설 동일 적용은 극단적이며 A의transfer 시점은 별도 일반론이다. |
-| MA-EXP-0187 | MOR09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 도착 몇주후 추정재고와 잔여재고 유지라는 잘못된 계획을 고치게 하는 것은 의미 있다. 한 계획표로 합치고 날짜별재고·10일제출·2년보존을 비교해야 한다. |
-| MA-EXP-0191 | MOR10 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 30분/6시간 meal break와12시간근무후8시간휴식은 다른 시계인데 D를 일반명제로 추가했고 모두 정답이다. unreviewed final verification은 쉬운 금지행위다. |
-| MA-EXP-0195 | DISC01 | REPLACE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 약국법규 review group의명단퀴즈이며 pharmacist가 수행할 환자·운영 결정이 없다. all13 pharmacist와선거라는 극단오답이 정답을 드러낸다. |
-| MA-EXP-0199 | DISC02 | REPLACE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 연속임기와회원경력요건을 두 사람의지식문제로 묶고 D holdover는 지문사실과 무관하다. 다른 대표에서 부족한 실무판단에 기본목록 자리를 배정하는 편이 낫다. |
-| MA-EXP-0203 | DISC03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 최근 자체점검이 Board접근을 대체한다는 갈등은 실제적이나 D immunity는 노골적이다. MOR변경7일과기록2년은 별도사례에 나열된다. |
-| MA-EXP-0207 | DISC04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | initial21일과반환후7일을 비교할 수 있는데 전부정답이며 날짜계산은 없다. 책임자없는 vague promise는 너무 쉽게 결함으로 보인다. |
+| MA-EXP-0179 | MOR07 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0069 | NOT_REVERIFIED | 신청과 approval을 구별하는 목표는 좋지만 두 공사를 한꺼번에 묻고 A의sterile control은 사례에 없다. |
+| MA-EXP-0183 | MOR08 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0070 | NOT_REVERIFIED | 90일 fills로 환자대상을 정하는 실제 운영맥락은 적절하다. D의모든시설 동일 적용은 극단적이며 A의transfer 시점은 별도 일반론이다. |
+| MA-EXP-0187 | MOR09 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0071 | NOT_REVERIFIED | 도착 몇주후 추정재고와 잔여재고 유지라는 잘못된 계획을 고치게 하는 것은 의미 있다. 한 계획표로 합치고 날짜별재고·10일제출·2년보존을 비교해야 한다. |
+| MA-EXP-0191 | MOR10 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0072 | NOT_REVERIFIED | 30분/6시간 meal break와12시간근무후8시간휴식은 다른 시계인데 D를 일반명제로 추가했고 모두 정답이다. unreviewed final verification은 쉬운 금지행위다. |
+| MA-EXP-0195 | DISC01 | REPLACE / P2 | REWRITTEN_NEW_ID | MA-RW-0073 | NOT_REVERIFIED | 약국법규 review group의명단퀴즈이며 pharmacist가 수행할 환자·운영 결정이 없다. all13 pharmacist와선거라는 극단오답이 정답을 드러낸다. |
+| MA-EXP-0199 | DISC02 | REPLACE / P2 | REWRITTEN_NEW_ID | MA-RW-0074 | NOT_REVERIFIED | 연속임기와회원경력요건을 두 사람의지식문제로 묶고 D holdover는 지문사실과 무관하다. 다른 대표에서 부족한 실무판단에 기본목록 자리를 배정하는 편이 낫다. |
+| MA-EXP-0203 | DISC03 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0075 | NOT_REVERIFIED | 최근 자체점검이 Board접근을 대체한다는 갈등은 실제적이나 D immunity는 노골적이다. MOR변경7일과기록2년은 별도사례에 나열된다. |
+| MA-EXP-0207 | DISC04 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0076 | NOT_REVERIFIED | initial21일과반환후7일을 비교할 수 있는데 전부정답이며 날짜계산은 없다. 책임자없는 vague promise는 너무 쉽게 결함으로 보인다. |
 | MA-EXP-0211 | DISC05 | REPLACE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두 사례는 unsafe practice와치료사실인데 유일 정답 D는 conviction 정의다. key를 찾기 위해 지문을 읽을 필요가 없는 명백한 내용불일치다. |
 | MA-EXP-0215 | DISC06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | credentialing form 작성이라는 실제결정이 있으나 consent agreement 제한내용을 제시하지 않아 일반진위로 남는다. probation 영구취소는 과장오답이다. |
 | MA-EXP-0219 | DISC07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | summary7일과cease/quarantine15businessdays의경로 차이는 유용하다. threat문구의요건은 exact조문 재대조가 필요하고 A의optional 준수는 약하다. |
@@ -405,7 +405,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `94a3140116d3a797e293eb31f63536fc5e2ddd661149cd6db1f548e7850fdf5a` |
-| practice_expansion/2026-10-28-representative/questions.json | `29e9de873f72e8ea20a5a315bd41f08b0f12ec5597259412c7d6bcbb0ed9c2f3` |
+| practice_expansion/2026-10-28-representative/selection.json | `9fa873e74bcb92f4f1ad6a0faf6108798bff6b172425bf7d1382c40963f9e3c7` |
+| practice_expansion/2026-10-28-representative/questions.json | `ea753733f37e2c9f276710f6bb67eb2b30e2422f7b1d33d164ecd241eec5d7d3` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

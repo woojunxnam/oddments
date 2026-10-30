@@ -1,5 +1,7 @@
 # Representative revisions — cumulative authoring units
 
+2026-10-30 현재: 누적 새 ID70개 / 기존사례통합3 / 보류10 / 개선미반영272, 기본438·전체2342. 이번 MOR/Discipline의8개 사례와5개 노트절 개정 범위는 [구현 기록](../../docs/MOR_DISCIPLINE_20261030.md), ID별 집계는 [progress](../../reports/full-corpus-review/progress.json)를 참조한다. 아래 수치는 각 이전 단위의 작성 이력이다.
+
 2026-10-29 후속 단위: 기존 대표 12개 중 신규 10개 + 기존 사례 재사용 2개. 누적 신규 56개, 재사용 3개, 보류 7개, 후속 개선 289개다. 기본 441개, 전체 2,328개이며 [두 번째 단위 보고서](../../docs/REPRESENTATIVE_REWRITE_UNIT2.md)에 필터 안내 개선과 실제 검토 범위를 기록했다.
 
 ## 첫 단위의 작성 이력

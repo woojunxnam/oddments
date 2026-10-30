@@ -1,0 +1,149 @@
+{
+  "review_unit": "MOR07–10 and DISC01–04 implementation",
+  "review_date": "2026-10-30",
+  "baseline_main": "a9e18a4e3281e1184cb28c29e166ec56ba661426",
+  "pr_url": "https://github.com/woojunxnam/oddments/pull/175",
+  "record_scope": "Pre-upload local validation snapshot. Consult the exact final PR head, merge commit, Pages deployment and production workflow runs for subsequent publication evidence.",
+  "python_tests": {
+    "command": "python -m pytest -q",
+    "status": "PASS",
+    "passed": 309,
+    "duration_seconds": 65.2,
+    "evidence_type": "Observed completed local tool execution, exit code 0; no persisted log hash asserted.",
+    "scope": "Full suite passed before the final production-verifier asset-list extension; that extension received separate syntax, asset and workflow-binding checks and will be included in the final-head GitHub CI."
+  },
+  "corpus_and_migration_tests": {
+    "command": "python -m pytest -q tests/test_full_corpus_review.py",
+    "status": "PASS",
+    "passed": 30,
+    "duration_seconds": 19.95,
+    "scope": "Includes stale/rehashed changes, choice coverage, metadata and prior-item preservation, and strict fourth-migration source/path protections."
+  },
+  "validate_all": {
+    "command": "python scripts/validate_all.py",
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 7,
+    "scope": "Canonical source inputs and the seven existing warning categories remain unchanged."
+  },
+  "deterministic_builds": {
+    "status": "PASS",
+    "checked": [
+      "representative question bank",
+      "representative audit ledger",
+      "representative similarity reports",
+      "full-corpus review inventory and ledgers",
+      "public quality status",
+      "notes",
+      "study guide",
+      "refresh cards"
+    ],
+    "independent_read_only_rerun": "Same-team QA agent repeated all eight generation checks plus the protected-baseline check after final source/whitespace changes."
+  },
+  "protected_baseline": {
+    "command": "python scripts/verify_representative_protected.py",
+    "status": "PASS",
+    "files": 1781,
+    "bytes": 60969461,
+    "migration": "Only the exact generated notes export follows four versioned migrations. Original notes, old overlays and archived baselines remain protected."
+  },
+  "previous_public_items": {
+    "status": "PASS",
+    "questions_preserved": 62,
+    "source_objects_preserved": 68,
+    "evidence": "reports/full-corpus-review/mor-discipline-preservation.json",
+    "comparison": "Complete canonical-JSON object hashes from the actual starting main commit, not a newly reconstructed substitute baseline."
+  },
+  "javascript_syntax": {
+    "status": "PASS",
+    "files": [
+      "site/notes/content.js",
+      "site/notes/study-data.js",
+      "site/notes/refresh-data.js",
+      "site/practice-expansion/quality-core.js"
+    ]
+  },
+  "whitespace": {
+    "command": "git diff --check 3a81d7340699c8d0a88559f70182e0ef3fa1039f HEAD -- . :(exclude)reports/full-corpus-review/evidence/** :(exclude)revisions/baselines/**",
+    "status": "PASS_AUTHORED_SCOPE",
+    "full_diff_status": "EXPECTED_WHITESPACE_IN_PRESERVED_RAW_EVIDENCE_AND_IMMUTABLE_BASELINES",
+    "preserved_files_with_whitespace_findings": {
+      "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md": 1,
+      "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md": 425,
+      "reports/full-corpus-review/evidence/mor-peer-20261030/official-247cmr9-live.md": 425,
+      "revisions/baselines/complete-notes-mor-presence.md": 725,
+      "revisions/baselines/complete-notes-unit3b.md": 725
+    },
+    "reason": "Raw retrieval and prior generated-export snapshots retain their exact bytes and bound hashes. They were not reformatted to satisfy a whitespace style check."
+  },
+  "practice_build": {
+    "command": "python scripts/publish_practice.py --output /tmp/mpje-mor-discipline-20261030-final-site",
+    "status": "PASS",
+    "archive_questions": 2342,
+    "default_questions": 438,
+    "representative_rewrites": 70,
+    "publication_setting": "PUBLISHED_PRACTICE",
+    "independent_audit_unchanged": true
+  },
+  "same_team_peer_review": {
+    "status": "PASS_WITH_EXPLICIT_SCOPE",
+    "reports": [
+      "reports/full-corpus-review/mor-original16-peer-review.json",
+      "reports/full-corpus-review/mor-new4-notes-peer-review.json",
+      "reports/full-corpus-review/discipline-peer-review.json"
+    ],
+    "final_hash_bindings": "Authoring, generated complete records, note bodies, exact authorities and preserved evidence paths rechecked after the final whitespace normalization.",
+    "external_independent_audit": false
+  },
+  "review_boundaries": {
+    "original_questions_reviewed_this_batch": 32,
+    "original_choices_reviewed_this_batch": 128,
+    "new_questions_authored": 8,
+    "new_choices_authored": 33,
+    "cumulative_explicit_question_review_records_including_hold": 81,
+    "questions_without_individual_reverification_record": 2261,
+    "structurally_checked_original_questions": 1024,
+    "structural_checks_count_as_legal_review": false,
+    "notes_units_revised_this_overlay": 5,
+    "bounded_note_claims_or_clusters": 35,
+    "open_note_claims_or_clusters": 2,
+    "whole_corpus_legal_audit_complete": false
+  },
+  "local_http_browser_tests": "NOT_RUN_NO_LOCAL_CHROMIUM_EXECUTABLE",
+  "canonical_independent_audit": "NOT_RUN",
+  "github_ci_for_new_changes": "PENDING_UPLOAD_AND_EXACT_HEAD_RUNS",
+  "merge": "NOT_PERFORMED_AT_THIS_SNAPSHOT",
+  "production": "NOT_VERIFIED_AT_THIS_SNAPSHOT",
+  "tested_source_sha256": {
+    "scripts/build_full_corpus_review.py": "48b294f94b77257d6c7c5fc4c0e866f0deaca89b3cfed6c3198bec3f35798999",
+    "scripts/notes_revision.py": "0de8b220ee3e8122e097ad958153d034c3f211d2e45797fd1f1c99b3dd8e8b31",
+    "scripts/verify_representative_protected.py": "681784b7d9a9a213244088b46e9d1fc2d8974595146fc51afa47954dec289432",
+    "scripts/build_representative_rewrites.py": "c0244ea0ede5ac78a36196ab527485785730e721bcb762ee5285bc5eba1d88cb",
+    "scripts/build_quality_status.py": "dcf3e10add26597eb1c5a572434909c211942176771d08c9f8c8114a199d574f",
+    "tests/test_full_corpus_review.py": "67083b914c407d6e6d4c1242720c860d2c4e2858b94be685d92616a2ec2dbe49",
+    "revisions/notes/2026-10-30-mor-discipline.json": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558",
+    "revisions/notes/protected-migration-mor-discipline.json": "469d55caa286e2edc2ca21ea1c40b93e2d21d09de7fd228b76a37ff757ad1bd5",
+    "practice_expansion/2026-10-28-representative/authoring/07_mor_operations.json": "fd1c6d75d1c0668e12a8bf3d5af17e8824bdd12401cbe43b2c45900f0c939aa5",
+    "practice_expansion/2026-10-28-representative/authoring/08_discipline_reporting.json": "778ab7ea3237b279d4128a4a903723cfa2fd91c2ac097e3ca6873fa56cf0ac60",
+    "practice_expansion/2026-10-28-representative/questions.json": "ea753733f37e2c9f276710f6bb67eb2b30e2422f7b1d33d164ecd241eec5d7d3",
+    "scripts/verify_exam_study_production.py": "331fd23a7b48105874ea49bceb36dba0d691d59a062a95a3860c22a082f89762"
+  },
+  "production_verifier_extension": {
+    "status": "STATIC_CHECKS_PASS_LIVE_EXECUTION_PENDING_DEPLOYMENT",
+    "assets_added": [
+      "notes/content.js",
+      "notes/build.json",
+      "notes/book.html",
+      "notes/complete-notes.md"
+    ],
+    "total_assets": 13,
+    "checks": [
+      "Python syntax and import",
+      "13 unique asset paths exist",
+      "publish copies added note assets byte-for-byte",
+      "workflow checks out Pages head_sha and binds EXPECTED_SHA",
+      "git diff --check"
+    ],
+    "full_pytest_repeated_for_asset_list_only": false
+  }
+}
