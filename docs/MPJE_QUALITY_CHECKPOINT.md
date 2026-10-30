@@ -2,7 +2,7 @@
 
 ## 최신 구현 snapshot — Discipline/CDTM, 2026-10-30
 
-시작 main: `c4a05c8bf48ecc333e331b3c267607af6590ac40`. Branch: `feat/disc-cdtm-learning-20261030`. 이 절은 현재 source의 구현 상태이며, 아래 과거 checkpoint의 수치·미배포 문장은 당시 snapshot으로 보존한다. 현재 배치의 최종 commit, PR, CI, merge 및 Pages 확인은 실제 실행 결과를 확보한 뒤 같은 절의 검증 표에 기록한다.
+시작 main: `c4a05c8bf48ecc333e331b3c267607af6590ac40`. Branch: `feat/disc-cdtm-learning-20261030`. 이 절은 현재 source의 구현 상태이며, 아래 과거 checkpoint의 수치·미배포 문장은 당시 snapshot으로 보존한다. PR [#177](https://github.com/woojunxnam/oddments/pull/177), 최초 candidate `09c86f94d37b3fdb9c59748011cd1515a4da5e0b` (로컬 테스트와 동일한 tree `bbc2aedb4761402a59bb985b67fcbf4469bd4440`). 최종 head·merge·production은 이 절의 후속 기록과 해당 PR 실행 결과를 확인한다.
 
 ### 실제 검토·수정 범위
 
@@ -40,9 +40,11 @@
 | 최종 로컬 full pytest / validate_all | PASS | 332 tests 통과; validator 오류 0·기존 경고 7. `discipline-cdtm-validation.json` |
 | 전체 builder 재현성 / 보호 manifest 검증 | PASS | 대표·ledger·similarity·notes/study/refresh 재현성, 원본 1,781개 보호, canonical 생성물 변경 없음 |
 | 실제 HTTP·모바일·storage 브라우저 회귀 | 로컬 NOT RUN | Chromium 실행 파일 없음. 최종 head CI 및 production workflow에서 실행 결과 확인 필요 |
-| 최종 commit / PR / head CI | PENDING | 정확한 SHA와 PR URL, 성공·실패 workflow 기록 필요 |
+| PR / head CI | PR #177, follow-up CI PENDING | 최초 head의 browser 검사에서 source 수 고정값과 navigation 대기 누락 발견·보완. 최종 head의 모든 gate 성공을 확인해야 함 |
 | merge / Pages / 공개 origin 검증 | NOT RUN | 배포된 byte와 실제 화면·동작 확인 전 완료로 보고하지 않음 |
 | 새 독립 canonical 감사 | NOT RUN | 작성자·같은 팀 검토와 구분, RELEASED 추가 0 |
+
+초기 CI 실패와 보완은 `reports/full-corpus-review/discipline-cdtm-validation.json`의 `first_github_ci_followup`에 남겼다. 노트 출처의 전체 레코드·표시 링크·개수를 effective revision과 대조하고, 실제 페이지 로딩 후 오답/Back 경로를 검사한다. 실패한 실행을 PASS로 바꾸어 기록하지 않는다.
 
 실행 명령 및 후속 CI: `python scripts/build_full_corpus_review.py --check`, `python scripts/build_quality_status.py --check`, 대표문항 builder·audit ledger·similarity·보호 검사, notes/study/refresh builders `--check`, `python scripts/validate_all.py`, `python -m pytest -q`, `python scripts/publish_practice.py --output public-site`, 기존 HTTP/production workflow. 실행하지 않은 명령은 PASS로 승계하지 않는다.
 

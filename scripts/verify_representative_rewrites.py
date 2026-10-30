@@ -169,6 +169,8 @@ def main():
             expect(note_unit.locator('[data-read]')).to_have_attribute('aria-pressed', 'true')
             assert state() == quiz_before
             page.locator('[data-unit-wrong="' + unit_id + '"]').click()
+            expect(page.locator('#note-context')).to_be_visible()
+            page.wait_for_function('typeof window.MPJE_DIAGNOSTICS === "function"')
             assert diag()['filteredIds'] == [legacy_id]
             page.locator('#note-clear').click()
             assert diag()['noteUnit'] is None
@@ -189,6 +191,7 @@ def main():
             expect(page.locator('#locked')).to_contain_text('현재 조건에 맞는 문항이 없습니다')
             page.goto(base + notes_path, wait_until='networkidle')
             page.locator('[data-unit-practice="' + unit_id + '"]').click()
+            expect(page.locator('#note-context')).to_be_visible()
             page.go_back(wait_until='networkidle')
             expect(page.locator('#' + unit_id)).to_be_visible()
             page.go_forward(wait_until='networkidle')

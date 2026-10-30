@@ -16,6 +16,7 @@ import re
 import threading
 from urllib.parse import quote
 from playwright.sync_api import sync_playwright, expect
+from notes_revision import load_notes
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT/'site'
@@ -29,6 +30,7 @@ def main() -> None:
     ap.add_argument('--output',default='test-results/ultimate-notes')
     args=ap.parse_args()
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
+    expected_sources=load_notes(ROOT)['sources']
     checks=[];errors=[];external=[]
     def checked(name):checks.append(name);print('PASS:',name,flush=True)
     server=None
@@ -116,7 +118,16 @@ def main() -> None:
         page.locator('#drug-schedule').select_option('II')
         assert page.locator('.drug-card').count()>0
         checked('127-drug directory, names, schedule filter and pagination')
-        route('sources');expect(page.locator('.reference-entry')).to_have_count(248)
+        route('sources')
+        # Use the effective versioned registry, not the immutable baseline count.
+        # Exact IDs/records plus rendered links catch omissions or substitutions
+        # even when an incorrect registry happens to have the right total.
+        assert page.evaluate('MPJE_NOTES.sources')==expected_sources, 'Rendered source registry differs from the effective notes revision'
+        expect(page.locator('.reference-entry')).to_have_count(len(expected_sources))
+        rendered_sources=page.locator('.reference-entry a').evaluate_all(
+            'links=>links.map(a=>({title:a.textContent,url:a.getAttribute("href")}))')
+        assert rendered_sources==[{'title':source['title'],'url':source['url']}
+                                  for source in expected_sources.values()], 'Source registry links are incomplete or mismatched'
         page.locator('#source-query').fill('FDA');assert page.locator('.reference-entry').count()>0
         checked('source registry and filtering')
         # All units must be rendered by one chapter, with valid source disclosure links.

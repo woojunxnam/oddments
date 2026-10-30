@@ -256,5 +256,43 @@
     ".github/workflows/pages.yml": "790cde60d67dea636ff3a0c86519493f0a3c1dca1213f67fcedb0eb96a0e272f",
     ".github/workflows/representative-quality-qa.yml": "1dba017a3739380680f5ce1870c4545b092271aa7a0b4bfda71c01255585eb09"
   },
-  "post_full_suite_change": "Only CI path/test-list coverage was expanded to include practice_note_links; its test already ran in the full 332-test suite. Exact final GitHub CI will run the final tree."
+  "post_full_suite_change": "Only CI path/test-list coverage was expanded to include practice_note_links; its test already ran in the full 332-test suite. Exact final GitHub CI will run the final tree.",
+  "first_github_ci_followup": {
+    "initial_head": "09c86f94d37b3fdb9c59748011cd1515a4da5e0b",
+    "pr_url": "https://github.com/woojunxnam/oddments/pull/177",
+    "status": "INITIAL_BROWSER_GATES_FAILED_TEST_HARNESS_FIXED_FINAL_CI_PENDING",
+    "failures": [
+      {
+        "workflow_run": 41117553129,
+        "job_id": 124275595383,
+        "cause": "Notes browser test required the old248 source-entry count; current effective sources correctly contain250.",
+        "fix": "Compare complete effective source records and exact displayed titles/URLs/count rather than a fixed prior count.",
+        "script": "scripts/verify_notes_browser.py"
+      },
+      {
+        "workflow_run": 41117553344,
+        "job_id": 124275595581,
+        "cause": "New note-to-wrong-review navigation was queried before the next document initialized MPJE_DIAGNOSTICS.",
+        "fix": "Wait for the destination note context and diagnostics function before inspecting results; wait for practice navigation before Back.",
+        "script": "scripts/verify_representative_rewrites.py"
+      }
+    ],
+    "same_failure_in_shared_notes_callers": [
+      "Refresh cards and site navigation QA",
+      "MPJE exam-study QA and publication check"
+    ],
+    "local_followup_checks": {
+      "python_syntax": "PASS",
+      "notes_tests": "9 passed",
+      "notes_artifact_check": "4 artifacts PASS",
+      "whitespace": "PASS"
+    },
+    "followup_script_sha256": {
+      "scripts/verify_notes_browser.py": "183268ee71f4ab29b9607defcb822cbfed8fc8f9ee3a13fd02377e288c62457d",
+      "scripts/verify_representative_rewrites.py": "976d288b2fbfa60362f03ad4ffb495c616a3edbf35cd098cccf296048baef21d"
+    },
+    "product_content_changed_by_followup": false,
+    "live_browser_reexecution": "PENDING_FINAL_HEAD_CI",
+    "initial_full_pytest_not_repeated_for_verifier_only_changes": true
+  }
 }
