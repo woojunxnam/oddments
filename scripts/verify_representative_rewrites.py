@@ -326,6 +326,8 @@ def main():
             denied_page.goto(base + notes_path, wait_until='networkidle')
             expect(denied_page.locator('#storage-notice')).to_be_visible()
             denied_page.locator('[data-unit-practice="' + unit_id + '"]').click()
+            expect(denied_page.locator('#note-context')).to_be_visible()
+            denied_page.wait_for_function('typeof window.MPJE_DIAGNOSTICS === "function"')
             assert denied_page.evaluate('MPJE_DIAGNOSTICS().noteUnit') == unit_id
             assert set(denied_page.evaluate('MPJE_DIAGNOSTICS().filteredIds')) == linked & recommended_ids
             expect(denied_page.locator('#storage-msg')).to_contain_text('임시 상태')

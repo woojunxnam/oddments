@@ -294,5 +294,43 @@
     "product_content_changed_by_followup": false,
     "live_browser_reexecution": "PENDING_FINAL_HEAD_CI",
     "initial_full_pytest_not_repeated_for_verifier_only_changes": true
+  },
+  "second_github_ci_followup": {
+    "head": "319bc4581ac003a2b1ef944a95624e3a20285834",
+    "workflow_run": 41118056508,
+    "job_id": 124277321846,
+    "status": "OBSERVED_MOBILE_STORAGE_NOTICE_DEFECT_FIXED_FINAL_CI_PENDING",
+    "cause": "The existing storage-unavailable notice was inside the sidebar, which is hidden at mobile widths and in focus-reading mode. The new real-browser test correctly rejected the hidden warning.",
+    "fix": "Move the existing notice outside the sidebar, add a direct temporary-progress export button that shares the existing export function, preserve storage keys/schema, and hide the notice after a successful save.",
+    "passed_before_failure": [
+      "Exact note-to-practice and wrong-answer round trips",
+      "No-match and out-of-filter ID behavior",
+      "Prior history/bookmarks and JSON backup/import",
+      "All74 revised cases: correct/wrong grading, shuffle labels, exact citations,320px layout",
+      "20/120 modes and Chaos10"
+    ],
+    "added_browser_checks": [
+      "320/390/1440px and focus-reading storage warning visibility",
+      "Actual JSON download preserves temporary saved/read IDs",
+      "Warning remains after routing and is hidden with working storage"
+    ],
+    "focused_checks": {
+      "notes_and_note_links_tests": "14 passed",
+      "javascript_syntax": "PASS",
+      "python_syntax": "PASS",
+      "whitespace": "PASS",
+      "extracted_storage_and_export_function_contract": "PASS"
+    },
+    "local_browser_install": "NOT_AVAILABLE_AFTER_CDN_EMPTY_ZIP_AND_GATEWAY_DOWNLOAD_FAILURE",
+    "live_browser_reexecution": "PENDING_FINAL_HEAD_CI",
+    "current_followup_sha256": {
+      "site/notes/index.html": "04165fa2a73b6216e23d797f7e274f0789a1117fcb58484f3dccd29e0e2d003b",
+      "site/notes/notes.js": "0e1125f9f6a90faa964d4eb252db324546ed955ab9f29937f731413d49c94db5",
+      "site/notes/notes.css": "449aa08cb66fbf1ad143da1b97dc2dfa6a3171e088efa9b7278c0ea5347b9af6",
+      "scripts/verify_notes_browser.py": "4745cd52be822d43d9d46ca0f706060e588ab5c2e133d26292daa53f8a562f8e",
+      "scripts/verify_representative_rewrites.py": "7d93a96c6fd098452f458f51498ce6d6c5b1b115eb0b66de0e0b77ad67b2dae7"
+    },
+    "legal_content_changed": false,
+    "storage_keys_or_schema_changed": false
   }
 }

@@ -22,7 +22,7 @@
 
 누적 노트 33주제·306절 중 **14개 절의 제한된 claim 검토**, **15개 절의 versioned edit**가 있다. Claim/claim cluster는 **52개 = 작성자 근거 확인 48 + OPEN 4**이며 전체 atomic claim census가 끝난 절은 0개다. 이전 원본·판본·migration을 보존하고 다섯 번째 generated export migration은 `site/notes/complete-notes.md` 한 경로에만 적용한다.
 
-각 상세 절의 관련 문제와 오답 복습은 실제 `note_evidence.unit_id`로 연결한다. `?note=<unit_id>`는 bank·주제·문제형식·검색·오답 필터와 교차 적용한다. 없는 절 ID에는 무관한 문항을 대신 보여주지 않는다. 기존 문제 deep link와 학습 기록은 유지하며 시간 연습 중 노트는 새 탭으로 연다. 현재 명시적 문항 연결이 있는 247개 절은 연결 수이며 법규 검토 완료 수가 아니다.
+각 상세 절의 관련 문제와 오답 복습은 실제 `note_evidence.unit_id`로 연결한다. `?note=<unit_id>`는 bank·주제·문제형식·검색·오답 필터와 교차 적용한다. 없는 절 ID에는 무관한 문항을 대신 보여주지 않는다. 기존 문제 deep link와 학습 기록은 유지하며 시간 연습 중 노트는 새 탭으로 연다. 저장 차단 환경에서는 모바일·집중 읽기에서도 보이는 임시 저장 안내와 직접 기록 내보내기 버튼을 제공한다. 현재 명시적 문항 연결이 있는 247개 절은 연결 수이며 법규 검토 완료 수가 아니다.
 
 ### 계속 OPEN인 법규 관계와 자료 경계
 
@@ -40,11 +40,11 @@
 | 최종 로컬 full pytest / validate_all | PASS | 332 tests 통과; validator 오류 0·기존 경고 7. `discipline-cdtm-validation.json` |
 | 전체 builder 재현성 / 보호 manifest 검증 | PASS | 대표·ledger·similarity·notes/study/refresh 재현성, 원본 1,781개 보호, canonical 생성물 변경 없음 |
 | 실제 HTTP·모바일·storage 브라우저 회귀 | 로컬 NOT RUN | Chromium 실행 파일 없음. 최종 head CI 및 production workflow에서 실행 결과 확인 필요 |
-| PR / head CI | PR #177, follow-up CI PENDING | 최초 head의 browser 검사에서 source 수 고정값과 navigation 대기 누락 발견·보완. 최종 head의 모든 gate 성공을 확인해야 함 |
+| PR / head CI | PR #177, follow-up CI PENDING | source 수·navigation 검증을 보완했고, 후속 CI에서 모바일 저장 불가 안내가 sidebar에 숨는 실제 문제를 발견해 UI·내보내기를 수정했다. 최종 head의 모든 gate 성공을 확인해야 함 |
 | merge / Pages / 공개 origin 검증 | NOT RUN | 배포된 byte와 실제 화면·동작 확인 전 완료로 보고하지 않음 |
 | 새 독립 canonical 감사 | NOT RUN | 작성자·같은 팀 검토와 구분, RELEASED 추가 0 |
 
-초기 CI 실패와 보완은 `reports/full-corpus-review/discipline-cdtm-validation.json`의 `first_github_ci_followup`에 남겼다. 노트 출처의 전체 레코드·표시 링크·개수를 effective revision과 대조하고, 실제 페이지 로딩 후 오답/Back 경로를 검사한다. 실패한 실행을 PASS로 바꾸어 기록하지 않는다.
+초기 CI 실패와 보완은 `reports/full-corpus-review/discipline-cdtm-validation.json`의 `first_github_ci_followup`에 남겼다. 노트 출처의 전체 레코드·표시 링크·개수를 effective revision과 대조하고, 실제 페이지 로딩 후 오답/Back 경로를 검사한다. 두 번째 CI의 실제 모바일 경고 문제와 보완은 `second_github_ci_followup`에 기록했다. 실패한 실행을 PASS로 바꾸어 기록하지 않는다.
 
 실행 명령 및 후속 CI: `python scripts/build_full_corpus_review.py --check`, `python scripts/build_quality_status.py --check`, 대표문항 builder·audit ledger·similarity·보호 검사, notes/study/refresh builders `--check`, `python scripts/validate_all.py`, `python -m pytest -q`, `python scripts/publish_practice.py --output public-site`, 기존 HTTP/production workflow. 실행하지 않은 명령은 PASS로 승계하지 않는다.
 

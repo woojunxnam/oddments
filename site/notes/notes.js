@@ -32,12 +32,9 @@
   try { const raw = localStorage.getItem(KEY); if (raw) state = validState(JSON.parse(raw)); }
   catch { storageOK = false; }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    try { localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }
     catch { storageOK = false; }
-    if (!storageOK) {
-      const n = $('#storage-notice'); n.hidden = false;
-      n.textContent = '브라우저 저장소를 사용할 수 없습니다. 이번 화면의 기록을 내보내기로 저장하세요.';
-    }
+    $('#storage-notice').hidden = storageOK;
   }
   function toast(text) {
     const t = $('#toast'); t.textContent = text; t.classList.add('show');
@@ -186,7 +183,8 @@
     toast(type==='saved'?(!active?'북마크에 저장했습니다.':'북마크를 해제했습니다.'):(!active?'읽은 절로 표시했습니다.':'읽음 표시를 해제했습니다.'));
   });
   function download(name,object){const blob=new Blob([JSON.stringify(object,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-  $('#export-progress').addEventListener('click',()=>download('mpje-notes-progress.json',{application:'oddments-ultimate-notes',edition:D.edition,exported_at:new Date().toISOString(),...state}));
+  function exportProgress(){download('mpje-notes-progress.json',{application:'oddments-ultimate-notes',edition:D.edition,exported_at:new Date().toISOString(),...state});}
+  for(const selector of ['#export-progress','#export-temporary-progress'])$(selector).addEventListener('click',exportProgress);
   $('#import-progress').addEventListener('click',()=>$('#progress-file').click());
   $('#progress-file').addEventListener('change',async e=>{
     const f=e.target.files[0];if(!f)return;
