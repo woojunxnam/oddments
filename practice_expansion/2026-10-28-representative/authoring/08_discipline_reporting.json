@@ -1,0 +1,440 @@
+{
+  "scope": "DISC01–DISC04: sixteen original IDs MA-EXP-0193–0208 with sixty-four choices individually read; four separately identified replacements. Two linked note units receive versioned editorial revisions. No family-level extrapolation to DISC05 onward.",
+  "edition": "2026-10-30.representative5",
+  "authored_at": "2026-10-30",
+  "base_commit": "a9e18a4e3281e1184cb28c29e166ec56ba661426",
+  "review_status": "AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT",
+  "source_limitations": [
+    "Official-URL full-text retrieval and legal comparison, not origin-binary certification or an exhaustive supersession search.",
+    "Sources are primary official law/regulation; no commercial or recalled exam text used.",
+    "Same-team author work is not an independent canonical legal or realism audit."
+  ],
+  "sources": {
+    "rw4-disc-c13s22": {
+      "source_id": "rw4-disc-c13s22",
+      "title": "Massachusetts General Laws c.13 §22 — Board membership, qualifications and terms",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleII/Chapter13/Section22",
+      "exact_sections": [
+        "§22(a)-(n)"
+      ],
+      "checked_at": "2026-10-30",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "Firecrawl scrape with maxAge:0 of the official Legislature current General Laws page; complete §22(a)-(p) text retrieved and read on 2026-10-30. HTTP 200 metadata preserved. Origin byte version and all possible superseding enactments are not independently certified.",
+      "source_currency": "Current official consolidated General Laws page retrieved 2026-10-30; the page does not provide a distinct effective-date/version field for §22.",
+      "verification_scope": "DISC01–02 original choices and the new independent-seat and term/holdover cases; linked note claims limited to §22(a)-(n). Same-team author source review, not canonical independent audit.",
+      "evidence_reference": "reports/full-corpus-review/evidence/discipline-20261030/official-c13s22.json"
+    },
+    "rw4-disc-cmr9": {
+      "source_id": "rw4-disc-cmr9",
+      "title": "247 CMR 9.00 — Professional Practice Standards",
+      "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "exact_sections": [
+        "9.19(16)(b)6",
+        "9.19(21)",
+        "9.19(23)-(24)",
+        "9.24(1)-(3)",
+        "9.25(1)-(5)"
+      ],
+      "checked_at": "2026-10-30",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "Firecrawl scrape with maxAge:0 and PDF parser of the official regulation PDF, 17/17 pages, HTTP 200; read relevant complete numbered paragraphs on 2026-10-30. The official regulation landing page was separately fetched and confirms the same download. Origin binary hash is not available from the extraction.",
+      "source_currency": "Official Mass.gov regulation landing page gives 12/06/2024 and links this PDF. Landing page and PDF retrieved 2026-10-30; no exhaustive supersession certification.",
+      "verification_scope": "DISC03–04 original choices, on-duty document-production case and returned correction-plan case, and specified linked-note claims only. Not a full 247 CMR 9 audit.",
+      "evidence_reference": "reports/full-corpus-review/evidence/discipline-20261030/official-247cmr9.json"
+    },
+    "rw4-disc-nabp": {
+      "source_id": "rw4-disc-nabp",
+      "title": "NABP MPJE Competency Statements — examinations before March 1, 2027",
+      "official_url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+      "exact_sections": [
+        "Transition notice",
+        "1.1",
+        "1.2",
+        "2.5",
+        "4.2",
+        "4.7"
+      ],
+      "checked_at": "2026-10-30",
+      "access_status": "READ_OFFICIAL",
+      "retrieval_method": "Firecrawl maxAge:0 retrieval of the complete official competency-statements page on 2026-10-30. HTTP 200 metadata preserved with the text.",
+      "source_currency": "Official page modified-time metadata 2026-06-01 and transition notice for examinations beginning 2027-03-01, retrieved 2026-10-30.",
+      "verification_scope": "Editorial classification of these four new cases; original provisional classifications are preserved but are not endorsed. The broad agency category is not a prediction that a specific statutory seat fact will be tested.",
+      "evidence_reference": "reports/full-corpus-review/evidence/discipline-20261030/official-nabp-competencies.json"
+    }
+  },
+  "questions": [
+    {
+      "question_id": "MA-RW-0073",
+      "legacy_question_id": "MA-EXP-0195",
+      "topic": "An independent-pharmacist Board seat requires both employer-size conditions",
+      "area": 2,
+      "question_type": "SBA",
+      "scenario": "A Massachusetts pharmacist is being considered for one of the Board's independent-pharmacist seats. The pharmacist actively practices retail pharmacy for an organization registered under M.G.L. c.112, §39. The organization operates nine registered retail drugstores in Massachusetts and employs 22 full-time pharmacists. The candidate meets the other personal and practice-experience qualifications.",
+      "lead_in": "How does the employer information affect eligibility for the specified seat? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "It satisfies the independent-pharmacist definition because the organization operates fewer than ten Massachusetts stores.",
+          "correct": false,
+          "rationale_ko": "§22(c)의 independent 정의에는 Massachusetts 내 registered retail drugstores가 9개 이하라는 조건과 full-time pharmacists가 20명 이하라는 조건이 함께 있다. 점포 수 조건만 충족한 조직을 independent로 분류할 수 없다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(c)"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "text": "It qualifies the candidate for a chain-pharmacist seat because the organization employs more than twenty pharmacists.",
+          "correct": false,
+          "rationale_ko": "§22(d)의 chain 정의는 Commonwealth 내 retail drugstores 10개 이상을 사용한다. 약사 고용 인원이 20명을 넘는다는 사실로 chain 요건이 대신 충족되지 않는다. 이 조직의 Massachusetts 점포는 9개다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(c)-(d)"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "text": "It fails the independent-pharmacist definition because the organization employs more than twenty full-time pharmacists.",
+          "correct": true,
+          "rationale_ko": "9개 점포는 §22(c)의 점포 수 요건 안에 있지만 full-time pharmacists 22명은 같은 정의의 20명 이하 제한을 넘는다. 따라서 지문에서 지정한 independent-pharmacist seat의 setting 요건을 충족하지 않는다. 다른 모든 Board 자격 또는 다른 seat까지 부적격이라는 결론은 내리지 않는다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(c)"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "text": "It does not affect the seat classification once the candidate meets the pharmacist practice-experience requirement.",
+          "correct": false,
+          "rationale_ko": "§22(b)의 pharmacist-member 경력·현재 practice 조건과 §22(c)의 independent setting 조건은 별도의 요건이다. 개인의 충분한 경력이 고용 조직의 정의상 제한을 없애지 않는다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(b)-(c)"
+            }
+          ]
+        }
+      ],
+      "core_reasoning_ko": "Board 구성에서 pharmacist 8석만 암기하지 않고 해당 seat의 법정 setting 정의를 적용한다. Independent는 점포 수와 full-time pharmacist 수를 모두 충족해야 하며, 한 조건의 실패가 곧 chain 정의 충족을 뜻하지 않는다.",
+      "note_unit_ids": [
+        "w6-b-8"
+      ],
+      "decision_path": [
+        "Identify the requested seat as one of the independent-pharmacist seats.",
+        "Apply both the Massachusetts store-count limit and the full-time-pharmacist limit in §22(c).",
+        "Reject that seat classification without substituting the distinct chain-store definition or changing the statutory Board composition."
+      ],
+      "decision_signature": "board-independent-seat/employer-nine-MA-stores-twenty-two-full-time-pharmacists -> fails-independent-employer-size-definition",
+      "difference_from_legacy": "13명 구성과 technician seat의 존재를 반복하는 원문 대신, independent seat의 두 조건 중 하나만 충족한 실제 후보 심사로 바꿨다. 정원과 현재 roster를 구분하는 기존 설명은 연결 노트에 유지한다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-RW-0057",
+          "relationship": "DISTINCT_ELIGIBILITY_UNIT_AND_CONTROLLING_AUTHORITY",
+          "material_difference": "0057은 nonresident pharmacy 신청서의 inspection/good-standing 문서 시점을 판단한다. 0073은 individual Board candidate의 statutory seat classification과 고용 조직의 두 규모 요건을 판단하므로 행위자·허가 대상·결론이 다르다."
+        }
+      ],
+      "competency_codes": [
+        "2.5"
+      ],
+      "competency_rationale": "2027-03-01 이전 2.5의 regulations and agencies regarding pharmacy practice에 대한 편집적 연결이다. NABP가 이 특정 Board seat 숫자를 반드시 시험한다고 주장하지 않으며, 개인 면허의 1.2를 자동 승계하지 않는다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authorship_note": "Official-source-first original employer-size scenario. The conclusion is limited to the specified independent seat, not all Board membership or professional licensure.",
+      "notes_revision": "2026-10-30.mor-discipline.1"
+    },
+    {
+      "question_id": "MA-RW-0074",
+      "legacy_question_id": "MA-EXP-0199",
+      "topic": "Continuing until a successor is appointed does not authorize a third consecutive Board term",
+      "area": 2,
+      "question_type": "SBA",
+      "scenario": "A Massachusetts Board of Registration in Pharmacy member has completed two consecutive three-year terms. No successor has been appointed. An administrator proposes issuing another appointment for a third consecutive three-year term so that the member can continue while the replacement search proceeds.",
+      "lead_in": "Which response correctly separates continued service from reappointment? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "The member may continue until a successor is appointed, but a third consecutive appointment is not permitted.",
+          "correct": true,
+          "rationale_ko": "§22(n)은 임기가 끝난 member가 successor가 임명될 때까지 재직한다고 규정하는 동시에 연속 임기를 2회로 제한한다. successor를 기다리는 holdover와 새로운 3년 임기를 부여하는 reappointment를 구분해야 한다. 최대 연속 임기를 마친 뒤 재임명 자격을 얻으려면 적어도 한 임기 동안 재직하지 않아야 한다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(n)"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "text": "The member must stop serving now and becomes eligible for another appointment after a one-year interval.",
+          "correct": false,
+          "rationale_ko": "임기만료 즉시 퇴임해야 한다는 부분은 successor 임명까지 재직하는 문구와 맞지 않는다. 재임명 전 휴지 기간도 1년이 아니라 적어도 한 임기이며, §22(n)의 임기는 3년이다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(n)"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "text": "The member may accept the third appointment if the appointment ends when a successor becomes available.",
+          "correct": false,
+          "rationale_ko": "교체 예정자가 나타날 때 종료하는 조건을 붙여도 제안된 것은 세 번째 연속 appointment다. §22(n)의 holdover 문구는 새 연속 임기를 허가하는 예외가 아니다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(n)"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "text": "The member may continue and immediately accept another term because unfilled seats suspend the consecutive-term limit.",
+          "correct": false,
+          "rationale_ko": "§22(n)은 successor 부재 때 계속 재직하도록 하지만 결원 때문에 연속 2회 제한이 정지된다는 예외는 두지 않는다. 계속 근무할 수 있다는 첫 판단을 즉시 재임명 가능하다는 둘째 판단으로 확대하지 않는다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-c13s22",
+              "exact_section": "M.G.L. c.13 §22(n)"
+            }
+          ]
+        }
+      ],
+      "core_reasoning_ko": "임기 종료, successor 임명까지의 계속 재직, 새 임기 재임명은 서로 다른 사건이다. 두 번의 연속 3년 임기 후에도 successor가 없으면 조문상 계속 재직하지만, 이를 세 번째 연속 임기의 허가로 바꾸지 않는다.",
+      "note_unit_ids": [
+        "w6-b-8"
+      ],
+      "decision_path": [
+        "Count two completed consecutive statutory terms.",
+        "Apply the express continuation-until-successor provision to current service.",
+        "Reject a new third consecutive appointment and preserve the separate one-term interval before later reappointment."
+      ],
+      "decision_signature": "board-member/two-consecutive-terms-completed/no-successor -> holdover-permitted-third-consecutive-reappointment-prohibited",
+      "difference_from_legacy": "서로 무관한 경력·setting·임기 문장을 병렬로 평가하던 문제를, 두 개의 §22(n) 문구를 함께 적용해야 하는 한 명의 위원에 대한 인사 결정으로 바꿨다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-RW-0073",
+          "relationship": "SAME_STATUTE_DIFFERENT_DECISION",
+          "material_difference": "0073은 최초 seat setting 정의의 조직 규모 요건을 판단한다. 0074는 이미 재직한 위원의 임기 만료 후 계속 재직과 새 appointment의 법적 효과를 구분한다. 같은 statute를 사용하지만 필요한 사실과 행동 결론이 다르다."
+        }
+      ],
+      "competency_codes": [
+        "2.5"
+      ],
+      "competency_rationale": "약무를 규제하는 agency의 statutory term과 appointment를 2.5에 편집적으로 연결한다. 이는 Board member 재임명이며 pharmacist professional-license renewal을 뜻하는1.2와 구별한다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authorship_note": "Official-source-first original statutory holdover/reappointment problem. It does not determine the present membership roster or a specific member's status.",
+      "notes_revision": "2026-10-30.mor-discipline.1"
+    },
+    {
+      "question_id": "MA-RW-0075",
+      "legacy_question_id": "MA-EXP-0203",
+      "topic": "The on-duty pharmacist must provide inspection records even while the MOR is away",
+      "area": 4,
+      "question_type": "SBA",
+      "scenario": "An identified Board investigator visits a Massachusetts resident pharmacy without advance notice and requests completed self-inspection records relevant to an inspection. The Manager of Record is on vacation. The pharmacist on duty can access the requested records but is told by an employee that only the Manager of Record may release them. The pharmacy completed its annual self-inspection last week.",
+      "lead_in": "What should the pharmacist on duty do? Select ONE answer.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Arrange a return visit after the Manager of Record comes back to approve access to the records.",
+          "correct": false,
+          "rationale_ko": "On-duty pharmacist에게는 Board investigators의 요청 기록에 접근하고 제공할 수 있어야 하는 책임이 있다. §9.24(3)도 pharmacy가 요청된 documents를 제공하도록 한다. MOR의 휴가를 이유로 자료 제공을 복귀 후로 미룰 수 없다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.19(16)(b)6"
+            },
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.24(3)"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Provide a statement that the annual self-inspection was completed in place of the requested records.",
+          "correct": false,
+          "rationale_ko": "Annual self-inspection 완료 사실을 알려 주는 것은 요청된 실제 records를 제공하는 의무를 대체하지 않는다. 완료한 Board tool은 적어도 2년 보존 대상이며 조사관이 관련 자료를 요청한 이 사례에서는 그 자료를 제공해야 한다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.19(21)"
+            },
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.24(3)"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Hold the records until the investigator supplies advance written notice of a new inspection date.",
+          "correct": false,
+          "rationale_ko": "§9.24(1)은 Board 또는 designee의 사전 통지 없는 방문·조사를 허용한다. 지문은 신원을 확인한 Board investigator의 관련 기록 요청이므로 advance notice를 새로운 선행 조건으로 요구할 근거가 없다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.24(1), (3)"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Give the investigator access to the requested records as part of the pharmacy's inspection response.",
+          "correct": true,
+          "rationale_ko": "이 resident pharmacy의 on-duty pharmacist는 기록에 접근하고 요청 자료를 Board investigators에게 제공할 수 있어야 한다. §9.24(3)의 pharmacy 문서제공 의무도 적용된다. MOR의 부재나 최근 annual self-inspection 완료는 어느 의무의 면제 사유도 아니다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.19(16)(b)6"
+            },
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.24(1), (3)"
+            }
+          ]
+        }
+      ],
+      "core_reasoning_ko": "MOR의 관리 책임이 다른 근무 약사의 조사 대응 의무를 없애지는 않는다. 이 사례는 확인된 Board investigator의 요청이며 현장 약사가 자료에 접근할 수 있으므로, 사전 통지나 MOR 복귀를 기다리지 않고 요청 기록을 제공한다.",
+      "note_unit_ids": [
+        "w1-c-13"
+      ],
+      "decision_path": [
+        "Recognize a verified Board investigator's request during an authorized unannounced inspection.",
+        "Apply the on-duty pharmacist's access-and-production duty and the pharmacy's document-production duty.",
+        "Reject substitution of an annual-completion statement or deferral until the MOR returns."
+      ],
+      "decision_signature": "resident-pharmacy/verified-board-investigator/accessible-records/MOR-vacation -> on-duty-pharmacist-produces-requested-records",
+      "difference_from_legacy": "정기 self-inspection와 MOR change의 일반 규칙을 나열하던 원문을, 실제 요청 기록에 접근할 수 있는 근무 약사가 MOR 부재를 이유로 제공을 미룰 수 있는지 결정하는 사례로 바꿨다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-Q-0222",
+          "relationship": "SAME_INSPECTION_AUTHORITY_DIFFERENT_ACTOR_OBLIGATION",
+          "material_difference": "Canonical0222의 핵심은 relocation 후 self-inspection가 annual 완료에도 다시 필요하다는 trigger다. 0075는 relocation/MOR-change event가 없고 현재 기록 요청에 대한 on-duty pharmacist의 §9.19(16)(b)6 책임과 MOR의 부재를 판단한다. Board document-production 법규는 공유하므로 새로운 독립 법규로 세지 않는다."
+        }
+      ],
+      "competency_codes": [
+        "4.7",
+        "4.2",
+        "1.1"
+      ],
+      "competency_rationale": "Practice setting inspection의4.7과 records access/production의4.2를 주된 범위로 하고 on-duty pharmacist의 책임을1.1로 연결한다. 원문 provisional1.2는 그대로 승계하지 않는다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authorship_note": "Official-source-first original on-duty record-production case. The investigator's identity and relevance are established; no waiver of confidentiality to an unidentified requester is implied.",
+      "notes_revision": "2026-10-30.mor-discipline.1"
+    },
+    {
+      "question_id": "MA-RW-0076",
+      "legacy_question_id": "MA-EXP-0207",
+      "topic": "A returned correction plan requires a timely, specific, signed revision",
+      "area": 4,
+      "question_type": "SATA",
+      "scenario": "The Board directed a pharmacy to submit an initial plan of correction within ten days. The pharmacy submitted it on time, but the Board returned it as unacceptable because a promise to retrain staff did not identify corrective actions for each violation, responsible individuals, or implementation dates. The pharmacy's Manager of Record reports to a pharmacist licensee who supervises the MOR's practice. The Board has now requested a revised plan without specifying a different revised-plan deadline.",
+      "lead_in": "Which steps are consistent with the plan-of-correction requirements? Select ALL that apply.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Identify corrective actions, expected completion or implementation dates, and responsible individuals for each violation.",
+          "correct": true,
+          "rationale_ko": "§9.25(2)는 각 위반에 대응하는 corrective action, 예상 완료 또는 시행일, 각 조치의 책임자를 요구한다. 기존의 일반적인 재교육 약속에 이 요소들을 구체적으로 추가해야 한다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.25(2)"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Use a new twenty-one-day submission period because the first plan was returned rather than approved.",
+          "correct": false,
+          "rationale_ko": "§9.25(1)의 기본 21일 또는 Board가 지정한 initial-plan 기간과 §9.25(5)의 returned unacceptable plan 이후 revised-plan 기간은 별도다. 반환되었다고 초기 21일이 재시작하지 않는다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.25(1), (5)"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Have both the Manager of Record and the pharmacist licensee supervising the MOR's practice sign the plan.",
+          "correct": true,
+          "rationale_ko": "§9.25(3)은 MOR와, 해당하는 경우 그 MOR의 practice를 감독하는 licensee가 서명하도록 한다. 지문에는 해당 supervising pharmacist licensee가 있으므로 두 사람의 서명이 필요하다. 모든 약국에 반드시 별도의 상급 licensee가 있다는 뜻은 아니다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.25(3)"
+            }
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Submit the revised plan within seven days after the unacceptable plan is returned to the pharmacy.",
+          "correct": true,
+          "rationale_ko": "§9.25(5)는 unacceptable plan을 pharmacy에 돌려보내고 revised plan을 7일 이내 제출하도록 한다. 원래 Board가 initial plan에 정한 10일이나 기본 21일을 수정계획의 새 기간으로 사용하지 않는다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.25(1), (5)"
+            }
+          ]
+        },
+        {
+          "id": "E",
+          "text": "Postpone corrective work until the Board approves the revised plan and schedules a follow-up inspection.",
+          "correct": false,
+          "rationale_ko": "§9.25(4)는 법규 준수를 가능한 한 신속하게 달성하도록 한다. 수정계획의 제출·승인 과정과 실제 시정조치는 구별하며, 모든 조치를 후속 inspection까지 미루라는 허가가 아니다.",
+          "authority_refs": [
+            {
+              "source_id": "rw4-disc-cmr9",
+              "exact_section": "247 CMR 9.25(4)"
+            }
+          ]
+        }
+      ],
+      "core_reasoning_ko": "초기 계획의 Board 지정 10일과 반려 후 revised plan의 7일을 구분한다. 계획에는 위반별 조치·예상일·책임자를 담고 MOR 및 해당 supervising licensee가 서명한다. 제출 일정만 맞추고 실제 compliance 달성을 뒤로 미루지는 않는다.",
+      "note_unit_ids": [
+        "w1-c-13"
+      ],
+      "decision_path": [
+        "Identify that the timely initial plan has already been returned as unacceptable.",
+        "Use the revised-plan seven-day period instead of restarting the initial default or Board-directed deadline.",
+        "Repair violation-specific content and required signatures while pursuing compliance expeditiously."
+      ],
+      "decision_signature": "returned-unacceptable-POC/initial-board-ten-day-period/supervising-licensee-present -> seven-day-specific-revision-with-two-applicable-signatures",
+      "difference_from_legacy": "모든 선택지가 정답이었던 일반 요약 SATA를, Board 지정 초기기한이 지난 뒤 반려된 계획의 수정 절차로 바꿨다. 5개 선택지 중 3개 정답으로 초기·수정·실제 시정의 다른 의무를 구별한다.",
+      "comparison_with_existing_quality": [
+        {
+          "question_id": "MA-Q-0222",
+          "relationship": "POST_INSPECTION_REMEDIATION_NOT_INSPECTION_ACCESS",
+          "material_difference": "Canonical0222는 inspection 방문과 self-inspection trigger를 판단한다. 0076은 위반이 확인되어 initial POC가 이미 반려된 다음 단계이며 제출 시계·필수 내용·서명·이행을 적용한다."
+        },
+        {
+          "question_id": "MA-RW-0075",
+          "relationship": "DISTINCT_PHASE_AND_TRIGGER",
+          "material_difference": "0075는 조사 중 문서 제공의 현장 책임이고 0076은 반려된 corrective plan의 법정 후속 절차다. MOR라는 actor 일부가 같아도 trigger와 평가하는 규칙이 다르다."
+        }
+      ],
+      "competency_codes": [
+        "4.7"
+      ],
+      "competency_rationale": "Practice setting inspection 및 해당 setting의 compliance/enforcement 절차를 다루는4.7에 연결한다. 개인의 licensure discipline에 관한1.2를 facility correction-plan 절차에 자동 적용하지 않는다.",
+      "exam_outline": "MPJE-MA-PRE2027",
+      "valid_for_exams_before": "2027-03-01",
+      "authorship_note": "Official-source-first original returned-POC case. No deadline date is computed across weekends/holidays and no formal enforcement order is inferred beyond the stated Board direction.",
+      "notes_revision": "2026-10-30.mor-discipline.1"
+    }
+  ],
+  "holds": [],
+  "reuse_existing": []
+}

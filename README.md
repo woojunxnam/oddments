@@ -6,17 +6,17 @@
 
 아래 수치는 현재 canonical tree에서 직접 계산한 실측값입니다.
 
-- semantic version/hash가 있는 rule 128개(verified 123개, `HOLD` 5개)와 drug 66개(전부 verified)
+- semantic version/hash가 있는 rule 528개(공식 근거 verified 523개, `HOLD` 5개)와 drug 66개
 - version/hash가 고정된 pre-2027 blueprint와 `MPJE-MA-PRE2027` style profile
-- canonical question 226개: `RELEASED` 165개, `AUDIT_PENDING` candidate 61개
-- `RELEASED` question의 Area 분포: Area 1 = 26, Area 2 = 40, Area 3 = 59, Area 4 = 40
-- question family matrix 296개(실제 candidate가 있는 family 226개 + planned family 70개)
-- public preview allowlist 196개
+- canonical question 439개: `RELEASED` 398개, `AUDIT_PENDING` 40개, `REVIEW_REQUIRED` 1개
+- `RELEASED` question의 Area 분포: Area 1 = 87, Area 2 = 131, Area 3 = 100, Area 4 = 80
+- question family matrix와 별도로 관리하는 candidate·planned family
+- public preview allowlist와 release gate
 - fail-closed schema·validator·audit·release gate
 - question-family matrix와 source-governance boundary
 - deterministic static quiz-site skeleton
 
-`RELEASED` question은 current-hash independent legal `KEEP`/answer `YES`와 full-bank realism `KEEP`/`PASS` evidence, 그리고 final `KEEP` adjudication을 통과한 항목입니다. 나머지 61개 candidate는 아직 audit/adjudication 전이므로 암기 안전성이 확인된 자료가 아닙니다. `HOLD` rule은 question 근거로 사용할 수 없습니다.
+`RELEASED` question은 current-hash independent legal `KEEP`/answer `YES`와 full-bank realism `KEEP`/`PASS` evidence, 그리고 final `KEEP` adjudication을 통과한 항목입니다. 나머지 41개는 release되지 않은 상태입니다. 이번 MOR/Discipline 연습판 개정은 canonical 439개와 기존 감사·release 상태를 변경하지 않습니다. `HOLD` rule은 question 근거로 사용할 수 없습니다.
 
 `MA-Q-0028`은 current-hash realism distinctness failure 이후 quarantine 상태이며 release되지도 preview되지도 않습니다.
 
@@ -72,13 +72,15 @@ Release build는 기본적으로 실행일을 target exam date로 사용합니�
 
 노트 원본과 편집 기록은 [`notes/`](notes/README.md), 생성 스크립트는 `scripts/build_ultimate_notes.py`입니다. 기존 question/rule/drug registry와 release gates는 변경하지 않습니다.
 
-## 온라인 연습문항 — 기존 1,024 + 신규 사례형 1,152
+## 온라인 연습문항 — 전체 2,342개, 기본 목록 438개
 
-[웹 연습판](https://woojunxnam.github.io/oddments/practice-expansion/)에서 **2,176문항**을 바로 풀 수 있습니다. [신규 1,152문항만](https://woojunxnam.github.io/oddments/practice-expansion/?bank=plus) 또는 기존 묶음을 선택할 수 있습니다. 영어 문제와 한국어 해설, 통합노트 연결, 20문항 연습·120문항 시간 연습·오답·북마크·기록 백업을 지원합니다.
+[웹 연습판](https://woojunxnam.github.io/oddments/practice-expansion/)의 현재 구성은 **원본 2,176 + MA-REV 96 + MA-RW 70 = 2,342문항**입니다. 기본 목록은 438개이며 개정 사례를 우선 연결합니다. [사례형 1,152문항만](https://woojunxnam.github.io/oddments/practice-expansion/?bank=plus) 또는 다른 묶음을 선택할 수 있습니다. 영어 문제와 선택지, 한국어 선택지별 해설, 통합노트 연결, 20문항 연습·120문항 시간 연습·완전 랜덤10·오답·북마크·기록 백업을 지원합니다.
+
+2026-10-30 MOR/Discipline 단위는 원본 32개·128개 선택지의 기록과 별도 ID 사례 8개를 반영합니다. 전체검토 추적표의 누적 기록은 81개 ID(보류 포함), 개별 재검증 미기록은 2,261개입니다. 원본 1,024개 구조검사는 법규 검토 수와 별도입니다. 원래 대표 355개는 새 ID 재작성 70 / 기존 사례 통합 3 / 보류 10 / 개선 미반영 272입니다. [현재 범위](site/practice-expansion/quality-review.html), [검토 진행](reports/full-corpus-review/progress.json), [이번 구현·검증 기록](docs/MOR_DISCIPLINE_20261030.md)을 참조하세요.
 
 새 묶음은 128개 판단 모델을 각각 9개 조건으로 확장한 연습입니다. 1,152개의 독립 법규 또는 실제 기출을 의미하지 않습니다. 공개 NABP 형식 예시와 합법적인 공개 샘플을 비교했으며, 비공개 기출·응시자 복원·Pre-MPJE 문항은 사용하지 않았습니다. [조사·설계 기록](practice_expansion/2026-10-26-plus/research/RESEARCH_KO.md), [신규 원본](practice_expansion/2026-10-26-plus/README_KO.md)을 확인하세요.
 
-`PUBLISHED_PRACTICE`는 온라인 이용 가능 상태입니다. 문항별 독립 법규·현실성 검토 완료를 뜻하지 않으며, canonical `RELEASED`의 감사·판정 기록은 바꾸지 않습니다. 기존 1,024개 원본·정답과 439개 canonical records 및 통합노트는 유지했습니다. [공개 정책](docs/PRACTICE_PUBLICATION_POLICY.md).
+`PUBLISHED_PRACTICE`는 온라인 이용 가능 상태입니다. 문항별 독립 법규·현실성 검토 완료를 뜻하지 않으며, canonical `RELEASED`의 감사·판정 기록은 바꾸지 않습니다. 원본 2,176개·MA-REV96개·기존 공개 MA-RW62개의 내용과 학습 기록을 보존했습니다. 통합노트는 보호 원본과 과거 판본을 보존한 versioned overlay로 개정합니다. [공개 정책](docs/PRACTICE_PUBLICATION_POLICY.md).
 
 ## Daily Refresh · RA→약국 복귀
 

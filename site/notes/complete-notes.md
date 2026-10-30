@@ -957,25 +957,33 @@ Non-resident designated PIC의 formal change application은 §6.09(4)에 termina
 
 ### Transfer of ownership
 
-Outgoing licensee는 ownership transfer 최소 14일 전에 Board에 알리고, incoming licensee는 최소 14일 전에 새 pharmacy license application을 제출한다. Closing/distribution 규칙, bill of sale, inventory 등 요구자료가 연결된다. 
+Outgoing licensee는 ownership transfer 최소 14일 전에 Board에 알리고, incoming licensee는 최소 14일 전에 새 pharmacy license application을 제출한다. Closing/distribution 규칙, bill of sale, inventory 등 요구자료가 연결된다.
 
 사업체 소유권 이전, controlled-substance stock 이전, 환자 prescription transfer는 각각 다른 개념이다. 한 절차의 서류나 허용을 다른 절차에 자동으로 사용하지 않는다.
 
 ### Name change
 
-Pharmacy가 운영하는 이름이 바뀌면 변경 후 14일 이내 서면으로 적절한 증빙과 함께 Board에 통지한다. 개인 pharmacist의 이름 변경은 §20.03(2)의 별도 sworn statement/ID 경로이다. 
+Pharmacy가 운영하는 이름이 바뀌면 변경 후 14일 이내 서면으로 적절한 증빙과 함께 Board에 통지한다. 개인 pharmacist의 이름 변경은 §20.03(2)의 별도 sworn statement/ID 경로이다.
 
-### Remodeling와 configuration
+### Remodeling와 configuration — 247 CMR 6.15
 
-적용되는 pharmacy는 remodeling, configuration, square footage 변경을 시작하기 전에 Board approval을 받아야 한다. Sterile compounding의 secondary engineering control 변경에도 별도 승인과 제출자료가 적용된다. 
+6.15(1)에 열거된 Drug Store pharmacy, sterile compounding pharmacy, complex non-sterile compounding pharmacy, institutional sterile compounding pharmacy, non-resident sterile compounding pharmacy는 remodeling·configuration·square footage 변경을 신청하고 **Board approval을 받은 뒤** 공사를 시작해야 한다. 모든 nonresident license category에 이 목록을 임의로 확대하지 않는다.
 
-Blueprint, engineering/environmental plan, contamination control, continuity of care 등의 자료는 실제 변경의 종류와 해당 pharmacy license에 따라 달라진다. 모든 공사를 먼저 시작하고 나중에 알리는 방식으로 요약하지 않는다.
+6.15(2)는 sterile compounding, non-resident sterile compounding, institutional sterile compounding pharmacy의 secondary engineering control을 이동·추가·변형·제거·교체하는 경우에도 사전 신청과 승인을 요구한다. 같은 주소·같은 면적에서 cleanroom suite를 교체해도 이 trigger는 남는다. Primary hood와 secondary room/control을 혼동하지 않는다.
 
-### Relocation
+Blueprint, controlled-substance security plan 및 해당 compounding facility의 containment strategy·environmental monitoring·재인증·continuity-of-care 자료는 6.15(3)–(4)의 적용 조건에 따라 제출한다. 신청서 접수나 사후 환경 재인증 자체가 공사 착수 승인이 되는 것은 아니다.
 
-새 주소로 relocation하려면 원칙적으로 희망 이전일 최소 90일 전에 application을 제출하고, 이전 전 Board approval을 받아야 한다. Board가 달리 승인한 경우의 예외 문구가 있다. 
+### Relocation — 247 CMR 6.16
 
-Application을 90일 전에 제출했다는 것과 Board approval이 났다는 것은 다른 사실이다.
+새 주소로 relocation하려면 이전 전에 Board approval을 받아야 한다. 신청은 원칙적으로 희망 이전일 최소 90일 전에 제출하며, Board가 달리 승인한 신청시점은 예외다. **신청시점 예외 또는 90일 전 접수와 실제 relocation 승인은 별도 사실**이다.
+
+| 상황 | 확인할 요건 |
+|---|---|
+| 같은 주소에서 해당 시설을 remodel | 6.15에 해당하는 면허인지 확인하고 착수 전 approval |
+| 해당 sterile pharmacy의 secondary control 교체 | 6.15(2)의 사전 approval; 면적 불변만으로 면제되지 않음 |
+| 새 주소로 이전 | 6.16 신청시점과 이전 전 approval을 각각 확인 |
+
+이 표는 위 변경 trigger의 요약이며 ownership·name-change 또는 모든 license category의 전체 요건을 대체하지 않는다.
 
 
 근거:
@@ -987,31 +995,40 @@ Application을 90일 전에 제출했다는 것과 Board approval이 났다는 �
 
 ## Closing와 controlled-substance distribution
 
-### Board와 환자 통지
+### 폐업 통지는 대상·시점·방식을 나누어 확인 — 247 CMR 6.13
 
-Resident pharmacy와 MOR는 예정 closure 최소 14일 전에 certified mail로 Board에 공식 서면 통지를 하며, Board의 별도 허가 예외를 구분한다. Pharmacy 정보, license/registration, MOR, closure date, 환자 통지, 약물의 처리 계획 등이 포함된다. 
+Massachusetts resident pharmacy와 MOR는 예정 폐업일 최소 14일 전에 certified mail로 Board에 서면 통지한다. Board가 달리 허가한 경우는 별도로 확인한다. Pharmacy 정보, license/registration, MOR, closure date, 환자 통지와 약물 처분·이전 계획 등이 포함된다. Nonresident pharmacy도 6.13(2)의 별도 정보와 Massachusetts 환자 통지를 갖춘 사전 Board 통지 경로가 있다.
 
-원칙적으로 closure 예정일 이전 90일 동안 처방을 조제한 환자를 식별하고, 최소 14일 전에 first-class mail 또는 Board-approved method로 각 환자에게 통지를 시도한다. 약국에는 눈에 띄는 closure/records-transfer 안내도 게시한다. 
+환자군은 **예정 폐업일 이전 90일 동안 처방을 조제받은 각 환자**이다. 최소 14일 전에 first-class mail 또는 Board-approved method로 개별 통지를 시도하고, pharmacy의 눈에 띄는 곳에 폐업·기록이전 안내도 게시한다. Refill 잔량이나 미수령 처방이 없는 환자라도 90일 조제기준에 해당하면 제외하지 않는다. 게시만으로 개별 통지 시도를 대신하지 않는다.
 
-환자 요청 또는 법/계약상 요구에 따른 patient files transfer는 환자 치료를 지연시키지 않도록 처리한다. 특정 compounding pharmacy의 continuity-of-care pharmacy 지정 등 추가 요건도 있다. 
+환자 요청 또는 법·계약의 요구에 따라 patient files를 환자 필요에 맞게 timely transfer한다. Stock 처분이 끝날 때까지 환자 기록 이전을 일괄 지연하지 않는다. 6.13(3)에 열거된 compounding pharmacy는 적합하고 이용 가능한 Board-licensed continuity-of-care pharmacy도 사전 통지한다.
 
-### Closure 후의 resident 요건
+**Institutional sterile compounding pharmacy에는 6.13(3)과 (4)의 예외**가 있다. 이를 모든 closure·기록이전 의무의 면제로 확대하지 않는다. Nonresident pharmacy의 Massachusetts 환자 통지 범위도 resident Drug Store 사례와 구별한다.
 
-Resident pharmacy는 closure 후 14일 이내 original licenses/controlled-substance registration와 적법한 disposal/transfer attestation을 Board에 제출하는 요건이 있다. Non-resident pharmacy에 동일한 반환 조항을 무조건 적용하지 않는다. 
+### 폐업 이후와 재고이전의 서로 다른 시계
 
-Institutional sterile compounding pharmacy에는 특정 patient-notification/continuity 조항의 예외가 있으므로 ‘모든 pharmacy가 똑같다’로 암기하지 않는다. 
+| 사건 | 대상·시점 |
+|---|---|
+| 폐업 예정 Board 통지 | 원칙적으로 폐업 최소 14일 전, certified mail |
+| 환자 개별 통지 시도 | 예정 폐업일 전 90일 조제환자, 최소 14일 전 |
+| Resident 폐업 후 제출 | 폐업 후 14일 이내 original license(s)/controlled-substance registration 및 적법한 disposal/transfer attestation |
+| Closure/ownership stock transfer의 inventory attestation | 양쪽 pharmacy가 transfer 후 10일 이내 Board에 제출 |
 
-### Closure/ownership에 따른 stock transfer
+폐업 후 14일 내 제출하는 6.13(6)은 nonresident pharmacies에 적용되지 않는다. 표의 마지막 10일은 6.14의 재고이전 사건이며 환자 통지 기한이나 MOR 개인 사임 통지와 다른 시계다.
 
-247 CMR 6.14의 해당 stock-transfer 절차에서는 원칙적으로 최소 14일 전 certified-mail notice와 관련 정보를 제공한다. Transfer date에 Schedule II–V와 PMP-reportable Schedule VI의 complete inventory를 실시한다. 
+### Closure/ownership에 따른 stock transfer — 247 CMR 6.14
 
-Transferor와 transferee MOR가 inventory에 서명하며, 대체 서명이 필요한 경우의 규정상 조건과 Board 통지를 확인한다. 양쪽 pharmacy는 inventory report를 적어도 2년 보존하고, transfer 후 10일 이내 Board에 inventory attestation을 제출한다. 
+이 절차는 closure 또는 ownership transfer에 따른 pharmacy stock 이전이다. 일반적인 일상 pharmacy-to-pharmacy distribution 전체의 규칙으로 사용하지 않는다. 원칙적으로 최소 14일 전 certified-mail notice와 양쪽 pharmacy/registration/MOR 정보·transfer date·security procedures를 Board에 제공하고 해당 통지 후 14일이 지나기 전에 진행하지 않는다. Board가 별도로 허가한 일정은 구분한다.
 
-Transferee는 transfer date에 필요한 controlled substances와 inventory records를 받고 보존한다. Transferor는 transfer date 이후 controlled substances를 보유할 수 없다는 해당 절차의 규칙이 있다. 이 내용을 일반적인 일상 stock distribution 전체의 규칙으로 확대하지 않는다.
+**Transfer date의 complete inventory 대상은 Schedule II–V와 PMP-reportable Schedule VI**이다. 원칙적으로 transferor와 transferee의 MOR가 서명한다. Transferor MOR가 death, serious illness 또는 termination으로 unavailable하면 authorized staff pharmacist가 대체 서명할 수 있으나, 그 이유를 Board에 통지해야 한다. 이 예외를 receiving MOR의 단순 휴무·편의에 따른 대체로 넓히지 않는다.
 
-### Provisional licenses
+양쪽 pharmacy는 inventory report를 최소 2년 또는 다른 법이 요구하는 기간 보존하고 readily retrievable하게 유지한다. 양쪽 모두 transfer 후 10일 이내 inventory attestation을 제출한다. Transferee는 transfer date에 필요한 controlled substances와 inventory records를 받고 해당 records를 최소 2년 보존한다.
 
-일부 specified license category에 대한 provisional license는 정식 전환, surrender/suspension/revocation, 발급 후 1년 중 먼저 도래하는 사건까지 유효하다. Provisional license는 갱신하거나 연장할 수 없다. 모든 일반 Drug Store application에 자동으로 적용되는 provisional 경로가 아니다.
+**Transferor는 transfer date 이후 any controlled substances를 보유할 수 없다.** Inventory report의 범위가 II–V와 PMP VI라는 사실은 non-PMP VI를 transferor에 남겨둘 수 있다는 뜻이 아니다. 문서 제출의 10일 기한이나 기록 보존의 2년을 stock 보유의 유예기간으로 바꾸지 않는다.
+
+### Provisional licenses — 247 CMR 6.17
+
+Specified license category의 provisional license는 정식 전환, surrender/suspension/revocation, 발급 후 1년 중 먼저 도래하는 사건까지 유효하다. 갱신하거나 연장할 수 없다. 모든 일반 resident Drug Store application에 자동으로 적용되는 경로가 아니다.
 
 
 근거:
@@ -1061,36 +1078,48 @@ Computer downtime policy에는 임시 prescription filling, 복구 후 patient p
 
 ## Pharmacist presence, 휴식, 근무시간
 
-### On-premises 원칙
+### On-premises 원칙 — 247 CMR 9.19(16), (23)
 
-특별히 허용된 경우를 제외하면 pharmacy가 열려 있고 non-pharmacist personnel가 unrestricted access를 갖는 동안 pharmacist가 pharmacy premises에 있어야 한다. On-duty pharmacist는 ratios, security, records access와 inspection 대응 등의 책임이 있다. 
+특별히 허용된 경우를 제외하면 pharmacy가 영업 중인 동안에는 pharmacist가 premises에 있어야 한다. 또한 non-pharmacist personnel가 pharmacy에 unrestricted access를 갖는 동안에도 pharmacist가 현장에 있어야 한다. 두 조건을 모두 만족할 때만 적용되는 AND 요건이 아니다. 247 CMR 9.19(23)은 non-resident pharmacy에 (16)·(17)을 적용하지 않으므로 setting을 먼저 확인한다. On-duty pharmacist는 ratios, security, records access와 inspection 대응 등의 책임이 있다.
 
 ‘Pharmacist가 전화로 연락 가능하다’는 조건만으로 일반 pharmacy의 현장 requirement를 대신하지 않는다.
 
-### 한 명의 pharmacist의 temporary absence
+### 한 명의 pharmacist의 temporary absence — 9.19(17)(a), (e)
 
-한 pharmacist가 근무하는 pharmacy에서는 필요한 break/meal을 위해 prescription area를 일시적으로 떠날 수 있지만 pharmacy premises에는 남아 있어야 한다. 보안이 유지된다고 합리적으로 판단해야 하며, 허용된 temporary absence는 6시간당 30분을 초과하지 않는다. 
+한 pharmacist가 근무하는 pharmacy에서는 필요한 break/meal을 위해 prescription area를 일시적으로 떠날 수 있지만 pharmacy premises에는 남아 있어야 한다. 보안이 유지된다고 합리적으로 판단해야 하며, 허용된 temporary absence는 6시간당 총 30분을 초과하지 않는다. 각각의 break가 30분 미만이라는 사실만으로 같은 6시간 동안 여러 번 합계 30분을 넘겨도 되는 것은 아니다.
 
 Prescription area를 떠나는 것과 pharmacy premises를 떠나는 것은 다르다. 이 조항을 외출 중 technician-only dispensing의 일반적 허가로 바꾸지 않는다.
 
-### Break 중 처방 교부
+### Break 중 처방 교부 — 9.19(17)(b)–(d)
 
-Pharmacist가 이미 확인했고 상담이 필요하지 않다고 판단한 refill은 해당 조건 아래 release할 수 있다. 
+Pharmacist가 이미 확인했고 상담이 필요하지 않다고 판단한 refill은 해당 조건 아래 release할 수 있다.
 
-New prescription도 미리 준비되고 pharmacist의 visible check와 DUR이 끝났다면, 환자 전화번호를 포함한 거래 log를 남기는 조건의 pickup 경로가 조문에 있다. Pharmacist는 복귀 후 합리적인 시간 안에 환자에게 연락하여 적절한 counseling을 제공한다. ‘Break 중에는 모든 new Rx pickup이 절대 불가’라고 단순화하지 않는다. 
+New prescription도 미리 준비되고 pharmacist의 visible check와 DUR이 끝났다면, 환자 전화번호를 포함한 거래 log를 남기는 조건의 pickup 경로가 조문에 있다. Pharmacist는 복귀 후 합리적인 시간 안에 환자에게 연락하여 적절한 counseling을 제공한다. ‘Break 중에는 모든 new Rx pickup이 절대 불가’라고 단순화하지 않는다.
 
-Support staff는 nondiscretionary 업무를 계속할 수 있으나 pharmacist 복귀 후 검토가 필요하다. 둘 이상의 pharmacist가 근무하면 breaks를 stagger하여 pharmacist가 없는 상태를 만들지 않는다. Written break policies/procedures도 필요하다. 
+Support staff는 nondiscretionary 업무를 계속할 수 있으나 pharmacist 복귀 후 검토가 필요하다. 둘 이상의 pharmacist가 근무하면 breaks를 stagger하여 pharmacist가 없는 상태를 만들지 않는다. Written break policies/procedures도 필요하다.
 
-### 12시간과 8시간
+### 12시간과 8시간 — 9.01(17)
 
-Pharmacist, intern, technician는 24시간 안에 12시간을 초과하여 pharmacy practice를 하려면 업무 재개 전에 8시간 연속 휴식이 필요하다는 규정이 있다. 환자 이익을 위한 extenuating circumstance의 예외에는 초과 시간 최소화와 documentation이 필요하다. 
+Pharmacist, intern, technician는 24시간 안에 12시간을 초과하여 pharmacy practice를 하려면 업무 재개 전에 8시간 연속 휴식이 필요하다는 규정이 있다. 환자 이익을 위한 extenuating circumstance의 예외에는 초과 시간 최소화와 documentation이 필요하다.
 
-이는 intern의 하루 credit maximum 12시간과 다른 목적의 규칙이다. Break의 30분/6시간 규칙과도 섞지 않는다.
+이는 247 CMR 8.01(4)의 intern 하루 credit maximum 12시간과 다른 목적의 규칙이다. Break의 30분/6시간 규칙과도 섞지 않는다.
+
+| Break 중 상황 | 판단 |
+|---|---|
+| Refill이지만 아직 약사 확인 전 | 이전 조제이력이 있어도 이 pickup 예외를 충족하지 못함 |
+| 확인됐고 상담 불필요라고 약사가 판단한 refill | 해당 조건에서 교부 가능 |
+| 사전 준비·visible check·DUR을 마친 new Rx | 환자 전화번호를 포함한 거래 log + 복귀 후 reasonable time 안의 약사 전화·적절한 counseling |
+| Staff의 허용된 nondiscretionary 업무 | 계속 가능하지만 약사 복귀 후 검토 필요 |
+| 약사가 premises 밖으로 나감 | 전화 대기만으로 이 single-pharmacist break 경로를 충족하지 못함 |
+
+이 표는 resident pharmacy의 9.19(17) 경로이다. Break가 pharmacist의 final dispensing process validation 책임(9.04(1))을 staff에게 넘기지 않는다.
 
 
 근거:
 
 - [247 CMR 9, Professional Practice Standards, 12/6/2024 게시본. 특히 9.01,9.02,9.04,9.10–9.25.](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
+
+- [247 CMR 8.00, Pharmacy Interns and Technicians, §§8.01–8.08.](https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download)
 
 
 ## Professional duties와 dispensing의 경계
@@ -6072,11 +6101,27 @@ Board 구성·권한, 조사·시정계획과 개인·시설의 보고를 연결
 
 ## Massachusetts Board 구성 — c.13 §22
 
-Board는 governor가 임명하는 Massachusetts 거주자 13명으로 구성된다. Registered pharmacist 8명, pharmacy technician 1명, 해당 경험을 갖춘 public representative 1명, physician 1명, nurse 1명, patient safety·quality improvement expert 1명이다. 
+### 법정 정원과 직역 — M.G.L. c.13 §22(a)
 
-Pharmacist 8명의 setting 구성은 independent 2, chain 2, hospital 1, LTC pharmacy 1, sterile compounding 1, academic 1이다. Pharmacist members는 원칙적으로 연속 7년의 practice experience와 임명·재임명 당시 Commonwealth 내 현재 practice 등 조문 조건을 충족해야 한다. Technician member의 practical experience도 최소 7년이다. 세부 setting·징계 이력 요건은 §22의 각 항을 따른다. 
+Board는 governor가 임명하는 Massachusetts 거주자 13명으로 구성된다. Registered pharmacist 8명, pharmacy technician 1명, 해당 경험을 갖춘 public representative 1명, physician 1명, nurse 1명, patient safety·quality improvement expert 1명이다. 실제 재직자 명단이나 결원 수가 이 법정 정원·직역 배분을 바꾸지는 않는다.
 
-임기는 3년이고 연속 2회를 넘지 않는다. 최대 연속 임기 후에는 적어도 한 임기를 쉬어야 재임명 자격을 갖는다. 임기가 끝나도 successor가 임명될 때까지 재직한다는 문구가 있다. 실제 현직 위원 이름이나 결원 수를 시험의 일반 법규 숫자로 대신하지 않는다.
+### Pharmacist seat의 setting과 자격 — §22(b)–(i)
+
+Pharmacist 8석은 independent 2, chain 2, hospital 1, LTC pharmacy 1, sterile compounding 1, academic 1로 배분된다. 각 pharmacist member는 최소 7년 연속 pharmacy practice 경험이 있어야 하며 임명·재임명 당시 Commonwealth에서 현재 pharmacy practice에 고용되어 있어야 한다. 각 setting의 추가 요건도 함께 적용한다.
+
+Independent pharmacist의 고용 조직은 Massachusetts 내 registered retail drugstores가 9개 이하이고 full-time pharmacists가 20명 이하이어야 한다. 두 규모 조건을 모두 충족해야 한다. Chain pharmacist는 Massachusetts 내 retail drugstores를 10개 이상 운영하는 등록 조직에 고용된 경로다. 직원 수가 20명을 넘었다는 이유만으로 chain 정의에 자동 편입되는 것은 아니다.
+
+Hospital seat는 Commonwealth 내 hospital setting 7년 경력, LTC seat는 LTC setting 7년 경력을 요구한다. Sterile-compounding seat는 그 practice 7년 경력과 고용 업무의 routine function으로 sterile compounding을 수행하는 조건을 갖추며, academic seat는 Commonwealth가 허가한 고등교육기관의 pharmacy 관련 academic/scholarly position 조건을 따른다. Sterile-compounding member를 §22(i)의 다른 setting 정원에 다시 포함하지 않는다.
+
+### Technician와 징계 이력 — §22(a), (j)–(m)
+
+Technician member는 최소 7년 practical experience가 있고 pharmacy practice를 routine employment function으로 수행해야 한다. §22(k)는 pharmacist와 technician에 대해 임명 전 10년 동안 Board, FDA 또는 DEA의 disciplinary/enforcement action이 없어야 한다고 정한다. §22(m)는 명시된 기관의 면허를 가진 Board member에 대해 해당 licensing board, FDA, DEA action의 10년 조건을 따로 규정한다. Public representative는 §22(l)과 그 조항이 연결한 §9B 요건도 확인한다. §22(a)의 felony 또는 embezzlement·theft·fraud·perjury 관련 범죄로 유죄판결을 받은 사람의 제한도 별도다.
+
+### 임기와 successor를 기다리는 계속 재직 — §22(n)
+
+임기는 3년이며 임명 다음 달의 첫날부터 시작한다. 연속 임기는 2회를 넘을 수 없고, 최대 연속 임기 후 재임명 자격을 얻으려면 적어도 한 임기 동안 재직하지 않아야 한다.
+
+임기가 만료되어도 successor가 임명될 때까지 재직한다. 이 holdover는 세 번째 연속 새 appointment를 허용하는 예외가 아니다. 문제에서 임기 만료, 현재 계속 재직, 새 임기 재임명을 서로 구분한다.
 
 
 근거:
@@ -6104,21 +6149,31 @@ c.13 §23은 annual organization과 president·secretary 선출, regular·additi
 
 ## Inspection, self-inspection, plan of correction
 
-### Board inspection
+### Board inspection와 기록 제공 — 247 CMR 9.24
 
-Board 또는 designee는 prior notice 없이 언제든 licensed pharmacy를 방문하여 staff, activities, records를 조사할 수 있다. Requested documents를 제공해야 하고, non-resident inspection costs는 해당 pharmacy/applicant가 부담한다. 
+Board 또는 designee는 Board가 면허를 발급한 pharmacy를 사전 통지 없이 언제든 방문하여 staff, activities, records의 법규 준수 여부를 조사할 수 있다. Pharmacy는 inspection 또는 investigation과 관련해 요청된 documents를 제공해야 한다. Non-resident pharmacy inspection 비용은 해당 pharmacy 또는 applicant가 부담한다.
 
-### Self-inspection
+Resident pharmacy에서 on-duty pharmacist는 모든 pharmacy records에 접근할 수 있고 Board investigators가 요청한 기록을 제공할 수 있어야 한다[9.19(16)(b)6]. MOR가 휴가 중이라는 이유나 최근 자체검사 완료 사실은 요청 기록 제공을 미루는 근거가 아니다. 신원이 확인되지 않은 외부인에게 일반적으로 환자정보를 공개하라는 뜻은 아니다.
 
-Renovation, expansion, relocation, MOR change 후 7일 이내와, 적어도 매년 한 번 applicable Board-approved tool로 self-inspection을 한다. 완료한 도구를 적어도 2년 보존한다. Self-inspection와 Board 현장 inspection을 같은 것으로 취급하지 않는다. 
+### Self-inspection의 별도 시계 — 9.19(21)
 
-### Plan of correction
+Renovation, expansion, relocation, MOR change가 있으면 7일 이내에 applicable Board-approved tool로 self-inspection을 한다. 이 사건별 의무에 더해 적어도 연 1회 검사를 실시한다. 직전에 annual self-inspection을 마쳤어도 그 뒤 발생한 변경의 의무가 사라지지 않는다. Routine compliance, sterile/non-sterile compounding 중 해당하는 inspection tool을 사용하고 완료한 tool은 적어도 2년 보존한다.
 
-Statement of deficiency/inspection report의 각 violation에 대한 written plan of correction를 21일 이내 또는 Board가 지정한 timeframe에 제출한다. Corrective action, 예상 완료/시행일, 책임자가 포함되어야 한다. MOR와 해당되는 supervisory licensee가 서명한다. 
+Self-inspection은 pharmacy 자체 의무이고 Board의 현장 inspection 또는 investigation을 대신하지 않는다. 위 self-inspection 요건의 직접 조문은 9.24가 아니라 9.19(21)이다.
 
-Board가 unacceptable plan을 돌려보내면 revised plan은 7일 이내 제출한다. Plan 제출과 실제 compliance 달성은 별도의 단계이며, 가능한 한 신속히 시정해야 한다.
+### 초기 plan of correction — 9.25(1)–(3)
 
-옛 조문의 내부 cross-reference에 6.13 Plans of Correction 같은 번호가 남아 있어도, current practice regulation에서 이 주제의 본문은 §9.25임을 확인한다.
+Statement of deficiency 또는 inspection report에 기재된 각 violation에 대해 written plan of correction를 21일 이내 또는 Board가 지정한 timeframe에, Board가 정한 manner/format으로 제출한다. 21일이 항상 변경 불가능한 기간인 것은 아니다.
+
+계획에는 각 위반의 corrective action, 예상 완료 또는 시행일, 각 조치의 책임자가 필요하다. MOR와, 해당하는 경우 MOR의 pharmacy practice를 감독하는 licensee가 서명한다. 모든 pharmacy에 별도의 supervising licensee가 반드시 존재한다는 뜻은 아니지만, 지문에 그런 licensee가 있으면 서명 요건에 포함한다.
+
+### 반려된 계획과 실제 시정 — 9.25(4)–(5)
+
+Board가 unacceptable plan을 pharmacy에 돌려보내면 revised plan을 7일 이내 제출한다. 초기 plan의 기본 21일 또는 원래 지정받은 기간이 새로 시작하는 것으로 계산하지 않는다.
+
+Plan 제출·수정과 실제 compliance 달성은 별도 의무다. Pharmacy는 가능한 한 신속하게 법규 준수를 달성해야 하므로, 모든 시정을 다음 inspection까지 미룰 수 없다. 조문이 요구하는 일수의 표현을 그대로 읽고 별도 근거 없이 business-day 계산 규칙을 추가하지 않는다.
+
+Plans of correction의 현재 본문은 247 CMR §9.25에서 직접 확인한다. 제목만 비슷한 다른 절이나 과거 자료의 조문 번호를 기준으로 기한을 옮겨 적용하지 않는다.
 
 
 근거:

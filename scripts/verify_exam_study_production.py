@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the deployed exam-study bytes, links and preserved published practice count."""
+"""Verify deployed study/full-note bytes, links and published practice count."""
 from __future__ import annotations
 import argparse
 import hashlib
@@ -14,6 +14,8 @@ ASSETS = [
     'notes/study-build.json', 'notes/study-data.js', 'notes/study.js',
     'notes/study.css', 'notes/study.html', 'notes/index.html', 'notes/notes.js',
     'notes/refresh.js', 'assets/learning-tools.js',
+    # publish_practice.prepare copies these unchanged from the checked-out site.
+    'notes/content.js', 'notes/build.json', 'notes/book.html', 'notes/complete-notes.md',
 ]
 
 def main() -> None:
@@ -41,6 +43,7 @@ def main() -> None:
             manifest = json.loads(get('notes/study-build.json'))
             assert manifest['stats']['concepts'] == 64 and manifest['stats']['modules'] == 16
             print('Production exam-study assets match the merged source byte-for-byte.')
+            print('Production full-note content, manifest, HTML and Markdown exports match the merged source byte-for-byte.')
             print('Six published pages retain shared navigation; practice count matches publication config.')
             print(json.dumps(manifest, ensure_ascii=False, indent=2))
             return

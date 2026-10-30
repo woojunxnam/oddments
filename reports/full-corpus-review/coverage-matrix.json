@@ -1,6 +1,6 @@
 {
   "outline": "MPJE-MA-PRE2027",
-  "mapping_status": "INVENTORY_PLUS_THREE_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE",
+  "mapping_status": "INVENTORY_PLUS_PARTIAL_CLAIM_REVIEWS_NOT_FULL_DECISION_PATH_COVERAGE",
   "units": [
     {
       "unit_id": "legal-reasoning",
@@ -260,8 +260,11 @@
       "chapter_id": "pharmacy-mor",
       "baseline_body_sha256": "78451e3900b1ab502f78d4037ca97bb60839396c0f44d44b7a55b450cf9a120a",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "MOR-REMODEL-001",
+        "MOR-RELOCATE-001"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -269,8 +272,14 @@
       "chapter_id": "pharmacy-mor",
       "baseline_body_sha256": "baa7a0e97cf1e71f92a148ed9a288350e623dab5a4ea150b162008fc530f1265",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "MOR-CLOSURE-001",
+        "MOR-CLOSURE-002",
+        "MOR-TRANSFER-001",
+        "MOR-TRANSFER-002",
+        "MOR-TRANSFER-003"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -287,8 +296,14 @@
       "chapter_id": "pharmacy-mor",
       "baseline_body_sha256": "a3c1a07f3820189052074990588827cbe4191b779a4349e25e0078ba6c1f6a74",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "MOR-PRESENCE-001",
+        "MOR-BREAK-001",
+        "MOR-BREAK-002",
+        "MOR-BREAK-003",
+        "MOR-REST-001"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -2411,8 +2426,12 @@
       "chapter_id": "discipline-inspection",
       "baseline_body_sha256": "9bd5b2b996d1f0d8d69e4c796d60d5f77e8b878c986c6a44a6733d5b04a2c1a6",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "DISC-BOARD-001",
+        "DISC-BOARD-002",
+        "DISC-BOARD-003"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -2429,8 +2448,13 @@
       "chapter_id": "discipline-inspection",
       "baseline_body_sha256": "c481f8ee804257e214fd990c166cbe58771bf6cc6000d0715a09fa1beb051e68",
       "inventory_status": "INVENTORIED_NOT_CLAIM_CENSUS",
-      "reviewed_claim_ids": [],
-      "legal_review_status": "UNREVIEWED",
+      "reviewed_claim_ids": [
+        "DISC-INSPECT-001",
+        "DISC-INSPECT-002",
+        "DISC-POC-001",
+        "DISC-POC-002"
+      ],
+      "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": false
     },
     {
@@ -3016,6 +3040,292 @@
       "source_evidence_sha256": "94cf66b705241a8e41061c823ecd92ae0a59d63f974b5afcd17cd80a9cd7f4e8",
       "unit_content_sha256": "45844c18756a88649207820abf95432929e5c6f5551a40b17c9cc286ba26860d",
       "scope": "Specific statements only; not a complete atomic-claim census of this unit or all 306 units."
+    },
+    {
+      "claim_id": "MOR-PRESENCE-001",
+      "unit_id": "w1-c-7",
+      "statement_ko": "Resident pharmacy의 영업 중과 staff unrestricted access는 각각 presence trigger이며 nonresident에는(16)/(17) 예외가 있다.",
+      "authority_clauses": [
+        "247 CMR 9.19(16)(a),(23)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md",
+      "source_evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634",
+      "unit_content_sha256": "d037a9f2ff9565503055d70e6f5c931384dec121a7274baf543e4b5beac749a0",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-REMODEL-001",
+      "unit_id": "w1-c-4",
+      "statement_ko": "6.15의 열거된 면허와 secondary control 변경은 사전 approval이 필요하며 같은 주소·면적만으로 면제되지 않는다.",
+      "authority_clauses": [
+        "247 CMR 6.15(1)-(4)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "fccaaa90fbe0252eff5152b556c972a7ca96a40df3979ebde44f2e66e2908406",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-RELOCATE-001",
+      "unit_id": "w1-c-4",
+      "statement_ko": "Relocation 신청은 통상90일 전이고 Board-approved timing exception과 실제 이전 approval은 별개다.",
+      "authority_clauses": [
+        "247 CMR 6.16"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "fccaaa90fbe0252eff5152b556c972a7ca96a40df3979ebde44f2e66e2908406",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-CLOSURE-001",
+      "unit_id": "w1-c-5",
+      "statement_ko": "예정 폐업일 전90일 조제환자에게 최소14일 전 통지 시도와 별도 게시를 하며 institutional sterile에는(3)/(4) 예외가 있다.",
+      "authority_clauses": [
+        "247 CMR 6.13(4),(7)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "60d3205863d41a9cf09e9abca9bd0621bb580465f96af8cbd632b344ad83ebee",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-CLOSURE-002",
+      "unit_id": "w1-c-5",
+      "statement_ko": "Resident 폐업 후14일 내 면허·registration 및 disposal/transfer attestation 제출은 nonresident에 적용되지 않는다.",
+      "authority_clauses": [
+        "247 CMR 6.13(6)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "60d3205863d41a9cf09e9abca9bd0621bb580465f96af8cbd632b344ad83ebee",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-TRANSFER-001",
+      "unit_id": "w1-c-5",
+      "statement_ko": "Closure/ownership transfer inventory의 II–V/PMP VI 범위와 transfer date 후 any controlled substances 보유금지는 다르다.",
+      "authority_clauses": [
+        "247 CMR 6.14 heading,(1),(2)(a),(f)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "60d3205863d41a9cf09e9abca9bd0621bb580465f96af8cbd632b344ad83ebee",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-TRANSFER-002",
+      "unit_id": "w1-c-5",
+      "statement_ko": "양쪽MOR 서명이 원칙이며 transferor MOR가 death/serious illness/termination으로 unavailable한 경우 staff대체와 Board사유통지가 가능하다.",
+      "authority_clauses": [
+        "247 CMR 6.14(2)(b)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "60d3205863d41a9cf09e9abca9bd0621bb580465f96af8cbd632b344ad83ebee",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-TRANSFER-003",
+      "unit_id": "w1-c-5",
+      "statement_ko": "양쪽 inventory record 최소2년, 양쪽attestation transfer후10일, transferee의 transferdate수령·기록보존은 별도의 의무다.",
+      "authority_clauses": [
+        "247 CMR 6.14(2)(c)-(e)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr6.md",
+      "source_evidence_sha256": "8acf28ead819bf929cbbec48947b5ac6b0e0aa7102daf9281d612ce0b5fbc4fd",
+      "unit_content_sha256": "60d3205863d41a9cf09e9abca9bd0621bb580465f96af8cbd632b344ad83ebee",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-BREAK-001",
+      "unit_id": "w1-c-7",
+      "statement_ko": "Single-pharmacist break는 premises내·보안·written policy·6시간당30분 조건을 유지하며 둘이상이면 stagger한다.",
+      "authority_clauses": [
+        "247 CMR 9.19(17)(a),(d)-(e)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md",
+      "source_evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634",
+      "unit_content_sha256": "d037a9f2ff9565503055d70e6f5c931384dec121a7274baf543e4b5beac749a0",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-BREAK-002",
+      "unit_id": "w1-c-7",
+      "statement_ko": "Refill은 확인·상담불필요판단; 사전준비·visible check·DUR완료 newRx는 phone포함log와 복귀후 reasonable time 내전화 경로다.",
+      "authority_clauses": [
+        "247 CMR 9.19(17)(b)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md",
+      "source_evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634",
+      "unit_content_sha256": "d037a9f2ff9565503055d70e6f5c931384dec121a7274baf543e4b5beac749a0",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-BREAK-003",
+      "unit_id": "w1-c-7",
+      "statement_ko": "허용된 nondiscretionary work는 계속 가능하지만 복귀후약사검토 및 pharmacist finalvalidation 책임이 유지된다.",
+      "authority_clauses": [
+        "247 CMR 9.19(17)(c); 9.04(1)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md",
+      "source_evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634",
+      "unit_content_sha256": "d037a9f2ff9565503055d70e6f5c931384dec121a7274baf543e4b5beac749a0",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "MOR-REST-001",
+      "unit_id": "w1-c-7",
+      "statement_ko": "12시간/24시간 업무와8시간 연속휴식 요건, 환자이익상extenuating circumstance의 최소초과·문서화 예외는 meal break와 별개다.",
+      "authority_clauses": [
+        "247 CMR 9.01(17)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "20261030-mor-root; same-team peer recorded separately; not canonical independent",
+      "source_evidence": "reports/full-corpus-review/evidence/2026-10-30-mor-247cmr9.md",
+      "source_evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634",
+      "unit_content_sha256": "d037a9f2ff9565503055d70e6f5c931384dec121a7274baf543e4b5beac749a0",
+      "scope": "Only the stated claim and its applicable setting; not a complete unit or306-section claim census."
+    },
+    {
+      "claim_id": "DISC-BOARD-001",
+      "unit_id": "w6-b-8",
+      "statement_ko": "Governor 임명 MA residents 13명과 8 pharmacist 및 다른 5석의 법정 배분을 실제 roster와 구별한다.",
+      "authority_clauses": [
+        "M.G.L. c.13 §22(a), (c)-(i)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-c13s22.json",
+      "source_evidence_sha256": "df2bbf8def97cc12197fbccffa3a433e126ab24f62178b338ce6440d0cc2fadb",
+      "unit_content_sha256": "dc5a417961251140b04c162a98f073da4b749d6cc276c7e992777fc2a2f6df55",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-BOARD-002",
+      "unit_id": "w6-b-8",
+      "statement_ko": "Pharmacist-member의 7년 연속 practice와 현재 MA employment, seat별 경력·조직 규모, technician와 적용 면허자의 10년 disciplinary 조건을 조항별로 구분한다.",
+      "authority_clauses": [
+        "M.G.L. c.13 §22(b)-(m)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-c13s22.json",
+      "source_evidence_sha256": "df2bbf8def97cc12197fbccffa3a433e126ab24f62178b338ce6440d0cc2fadb",
+      "unit_content_sha256": "dc5a417961251140b04c162a98f073da4b749d6cc276c7e992777fc2a2f6df55",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-BOARD-003",
+      "unit_id": "w6-b-8",
+      "statement_ko": "3년 임기·연속2회 제한·적어도1임기 비재직 후 재임명 자격과 successor 임명 전 holdover는 별도다.",
+      "authority_clauses": [
+        "M.G.L. c.13 §22(n)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-c13s22.json",
+      "source_evidence_sha256": "df2bbf8def97cc12197fbccffa3a433e126ab24f62178b338ce6440d0cc2fadb",
+      "unit_content_sha256": "dc5a417961251140b04c162a98f073da4b749d6cc276c7e992777fc2a2f6df55",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-INSPECT-001",
+      "unit_id": "w1-c-13",
+      "statement_ko": "Board는 사전 통지 없이 조사할 수 있고 pharmacy는 관련 요청 documents를 제공한다. Resident on-duty pharmacist의 접근·제공 책임은 MOR 부재에도 남는다.",
+      "authority_clauses": [
+        "247 CMR 9.24(1)-(3)",
+        "247 CMR 9.19(16)(b)6, (23)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-247cmr9.json",
+      "source_evidence_sha256": "fb1b9b5ce2ad5cbd80dbeb21580b297cd7928345d26d9ebdfe180fdefeb168a6",
+      "unit_content_sha256": "8efc8624e8d4dd7bb772633e65c1b70811db7c98070f8f3d93d0e1dab5d6a5bd",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-INSPECT-002",
+      "unit_id": "w1-c-13",
+      "statement_ko": "지정 변경 후7일과 연1회 self-inspection는 별도이며 applicable Board tool을 사용하고 완료 tool을2년 이상 보존한다.",
+      "authority_clauses": [
+        "247 CMR 9.19(21), (23)-(24)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-247cmr9.json",
+      "source_evidence_sha256": "fb1b9b5ce2ad5cbd80dbeb21580b297cd7928345d26d9ebdfe180fdefeb168a6",
+      "unit_content_sha256": "8efc8624e8d4dd7bb772633e65c1b70811db7c98070f8f3d93d0e1dab5d6a5bd",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-POC-001",
+      "unit_id": "w1-c-13",
+      "statement_ko": "Initial POC는21일 또는 Board 지정기간이며 각 위반의 조치·예상일·책임자와 MOR 및 해당 supervising licensee의 서명이 필요하다.",
+      "authority_clauses": [
+        "247 CMR 9.25(1)-(3)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-247cmr9.json",
+      "source_evidence_sha256": "fb1b9b5ce2ad5cbd80dbeb21580b297cd7928345d26d9ebdfe180fdefeb168a6",
+      "unit_content_sha256": "8efc8624e8d4dd7bb772633e65c1b70811db7c98070f8f3d93d0e1dab5d6a5bd",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
+    },
+    {
+      "claim_id": "DISC-POC-002",
+      "unit_id": "w1-c-13",
+      "statement_ko": "반려된 unacceptable plan의 revised plan은7일 이내이며 실제 compliance 달성은 가능한 한 신속히 별도 이행한다.",
+      "authority_clauses": [
+        "247 CMR 9.25(4)-(5)"
+      ],
+      "review_status": "AUTHOR_SOURCE_CHECKED",
+      "checked_at": "2026-10-30",
+      "reviewer_provenance": "AUTHOR_NOT_INDEPENDENT_20261030_DISCIPLINE_BATCH",
+      "source_evidence": "reports/full-corpus-review/evidence/discipline-20261030/official-247cmr9.json",
+      "source_evidence_sha256": "fb1b9b5ce2ad5cbd80dbeb21580b297cd7928345d26d9ebdfe180fdefeb168a6",
+      "unit_content_sha256": "8efc8624e8d4dd7bb772633e65c1b70811db7c98070f8f3d93d0e1dab5d6a5bd",
+      "scope": "Listed topic claim cluster only; not a complete atomic claim census, independent audit, or review of all 306 units."
     }
   ],
   "inferred_family_passes": 0

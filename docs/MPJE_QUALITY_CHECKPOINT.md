@@ -66,3 +66,20 @@ Current2334 = original2176 + MA-REV96 + MA-RW62. Representative355: rewritten62/
 Notes w1-b-9/10, chapter highlights, LAW-012 and RF-049 use the versioned revision. Original guide, Unit3A revision/migration and previous59 complete question objects are preserved. Exact generated-export migration remains narrowly validated. All old IDs/storage/anchors remain; prior reading history is retained with revision notices.
 
 Next work after final Unit3B CI/deployment: MOR07 MA-EXP-0179/w1-c-4; MOR08 0183/w1-c-5; MOR09 0187/w1-c-5; MOR10 0191/w1-c-7; DISC01 0195/w6-b-8; DISC02 0199/w6-b-8; DISC03 0203/w1-c-13; DISC04 0207/w1-c-13; DISC05 0211/w1-c-14; DISC06 0215/w1-c-14; DISC07 0219/w1-c-15; DISC08 0223/w4-d-17. These are queued, not reviewed. Keep intern2/4 relationship, PLUS source qualifications, CE email/Form w1-a-7 conflict OPEN. Commands: build_full_corpus_review.py --check; build_quality_status.py --check; representative builders/checks/protection; notes/study/refresh builders --check; validate_all.py; pytest; existing HTTP/browser CI. No full-corpus completion date is asserted.
+
+## MOR 추적표·presence 노트 구현 — 2026-10-30
+
+시작 main a9e18a4e3281e1184cb28c29e166ec56ba661426. PR175의 MA-EXP-0177–0192 작성자 선택지64개 기록을 complete-record hash로 재결합했다. 누적57 ID,미재검증2277. 원본1024개 구조검사는 법규완료수가 아니다. 대표355의62/3/10/280,archive2334/default438은 그대로다. 새문항 draft는 아직 활성화하지 않았다.
+
+w1-c-7 presence trigger(영업 중/무제한접근 각각)와nonresident 예외를 versioned overlay로 구현했다. 원본guide 및 이전2개 revision·export를 보존하고 정확한generated export 한 경로에만 세번째 migration을 추가했다. Anchor/bookmark/읽음기록은 유지하고판본재독 안내를 표시한다. Presence claim1개 추가:전체claims17/author checked15/OPEN2; unit전체 census가 아니다. LAW/RF에서w1-c-7 수동연결은없으며공통source provenance를재생성했다.
+
+새 보호테스트17 PASS,초기 full294 PASS. 최종변경후 full suite와canonical검증은별도 validation기록을 따른다. 로컬Chromium다운로드실패로HTTPbrowser NOT_RUN; CI에서검증해야한다. 독립감사/peer NOT_RUN,RELEASED추가0. Merge/production미확인이다. 다음:노트배포와CI를마친뒤MOR07–09·MOR10 신규사례개정/선택연결을구현하고DISC01–08을개별검토한다. CE통지/인원비율OPEN은유지한다.
+
+
+## MOR·DISC01–04 구현 checkpoint — 2026-10-30
+
+PR175의 검토자료를 실제 학습판 개정으로 전환했다. 원본0177–0208 32개·128선택지 기록, 새0069–0076 8개·33선택지, 노트w1-c-4/5/7/13와w6-b-8 개정. MOR10 all-correct SATA는 새0072의B,D사례로 연결되며 원본0191과 풀이·북마크를 보존한다. 공식NABP근거로 시설운영 문항의1.2분류를 새판본에서4.x등으로 교정했다. 자세한 범위는docs/MOR_DISCIPLINE_20261030.md.
+
+현재archive2342/default438, 대표355=70재작성+3기존통합+10보류+272미반영. 누적ID검토기록81(보류10포함), 미재검증2261. 제한된노트claims/claimclusters35(33sourcechecked/2OPEN), atomic census미완료. 원본1024구조검사는별도이며canonical439의감사/release상태는변경없다. 같은팀peer와canonical독립감사는구별한다.
+
+이문단은병합전구현snapshot이다. 실제검사결과는reports/full-corpus-review/mor-discipline-validation.json, 병합/Pages/production상태는PR175의최종기록과해당mergeSHAworkflow를확인한다. 배포확인없이완료로보고하지않는다. 다음범위는DISC05–08 원본0209–0224/대표0211,0215,0219,0223 및w1-c-14/15,w4-d-17이다. 이전CE·인원관계OPEN과PLUS source자격을유지한다.
