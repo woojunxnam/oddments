@@ -1,0 +1,27 @@
+name: MOR source review snapshot
+on:
+  push:
+    branches: [work/mor-full-corpus-review-20261029]
+    paths:
+      - .github/workflows/mor-review-snapshot.yml
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Capture reproducible source snapshot
+        run: |
+          mkdir -p /tmp/mor-source
+          git archive --format=zip --output=/tmp/mor-source/source.zip HEAD
+          git rev-parse HEAD > /tmp/mor-source/commit.txt
+          sha256sum /tmp/mor-source/source.zip > /tmp/mor-source/SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mor-source-snapshot
+          path: /tmp/mor-source/
+          retention-days: 3
+          if-no-files-found: error
