@@ -7,7 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REVISION = 'revisions/notes/2026-10-29-personnel-ratios.json'
 REVISION_B = 'revisions/notes/2026-10-29-personnel-supervision-training.json'
-IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1']
+REVISION_C = 'revisions/notes/2026-10-30-mor-presence.json'
+IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1', '2026-10-30.mor-presence.1']
 
 
 def digest(raw):
@@ -16,13 +17,13 @@ def digest(raw):
 
 def revisions(root=ROOT):
     result=[]
-    for i, path in enumerate([REVISION, REVISION_B]):
+    for i, path in enumerate([REVISION, REVISION_B, REVISION_C]):
         raw=(root/path).read_bytes()
         value=json.loads(raw)
         if value['id'] != IDS[i]:
             raise ValueError('Unexpected revision ID')
-        if i and (value['previous_revision']['path'] != REVISION or
-                  value['previous_revision']['sha256'] != digest((root/REVISION).read_bytes())):
+        if i and (value['previous_revision']['path'] != [REVISION, REVISION_B][i-1] or
+                  value['previous_revision']['sha256'] != digest((root/[REVISION, REVISION_B][i-1]).read_bytes())):
             raise ValueError('Stale parent revision hash')
         result.append((path,raw,value))
     return result
@@ -35,7 +36,7 @@ def load_notes(root=ROOT, revision_id=None):
         if digest(raw) != revision['base_guide_sha256']:
             raise ValueError('Stale notes revision base')
         units={u['id']:u for c in data['chapters'] for u in c['units']}
-        expected=[['w1-b-8'],['w1-b-9','w1-b-10']][i]
+        expected=[['w1-b-8'],['w1-b-9','w1-b-10'],['w1-c-7']][i]
         if [u['id'] for u in revision['units']] != expected:
             raise ValueError('Unexpected personnel revision unit scope')
         for change in revision['units']:
@@ -50,7 +51,7 @@ def load_notes(root=ROOT, revision_id=None):
                 unit['source_ids']=copy.deepcopy(change['source_ids'])
             unit['body_sha256']=digest(unit['body'].encode())
             unit['content_version']=revision['id']
-        if set(revision['chapter_highlights']) != {'personnel'}:
+        if set(revision['chapter_highlights']) != (set() if i==2 else {'personnel'}):
             raise ValueError('Unexpected revision chapter scope')
         for chapter in data['chapters']:
             if chapter['id'] in revision['chapter_highlights']:
@@ -72,7 +73,7 @@ def apply_study_revision(data, kind, root=ROOT):
     lookup={x['id']:x for x in data[field]}
     for _,_,revision in revisions(root):
         patches=revision[{'study':'study_lessons','refresh':'refresh_cards'}[kind]]
-        if set(patches) != ({'LAW-012'} if kind=='study' else {'RF-049'}):
+        if set(patches) != (set() if revision['id']==IDS[2] else ({'LAW-012'} if kind=='study' else {'RF-049'})):
             raise ValueError('Unexpected derived revision scope')
         for identifier,patch in patches.items():
             if identifier not in lookup or not set(patch)<=set(lookup[identifier]):

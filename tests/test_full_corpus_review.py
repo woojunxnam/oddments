@@ -22,7 +22,7 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
     assert len(rows) == len({r['question_id'] for r in rows}) == 2334
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 41
+    assert sum(r['checked_at'] is not None for r in rows) == 57
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) == 6
     assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 10
     assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
@@ -46,7 +46,7 @@ def test_one_unit_revised_and_cross_surface_warning_is_not_a_review_certificate(
     old={u['id']:u for c in baseline['chapters'] for u in c['units']}
     new={u['id']:u for c in effective['chapters'] for u in c['units']}
     assert old.keys()==new.keys()
-    assert [uid for uid in old if old[uid]!=new[uid]] == ['w1-b-8','w1-b-9','w1-b-10']
+    assert [uid for uid in old if old[uid]!=new[uid]] == ['w1-b-8','w1-b-9','w1-b-10','w1-c-7']
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']
     assert hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest() == '004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
@@ -115,6 +115,8 @@ def test_published_unit3a_revision_snapshot_remains_reproducible():
 @pytest.mark.parametrize('relative',[
     'revisions/notes/2026-10-29-personnel-supervision-training.json',
     'revisions/baselines/complete-notes-unit3a.md',
+    'revisions/baselines/complete-notes-unit3b.md',
+    'revisions/notes/2026-10-30-mor-presence.json',
 ])
 def test_followup_protection_rejects_source_or_previous_export_changes(protected_copy,relative):
     root,manifest=protected_copy

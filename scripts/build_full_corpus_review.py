@@ -39,7 +39,7 @@ def build():
     paths = ['practice_expansion/2026-10-23/candidates/questions.json'] + [a['path'] for a in config['additional_banks']]
     baseline = read('reports/full-corpus-review/baseline-inventory.json')
     assert baseline['question_count'] == len(baseline['question_record_hashes']) == 2328
-    review_records = [r for name in ['unit3a-author-review.json','unit3b-author-review.json'] for r in read('reports/full-corpus-review/'+name)['records']]
+    review_records = [r for name in ['unit3a-author-review.json','unit3b-author-review.json','mor-author-review.json'] for r in read('reports/full-corpus-review/'+name)['records']]
     assert len({r['question_id'] for r in review_records}) == len(review_records)
     reviews = {r['question_id']:r for r in review_records}
     selection = read('practice_expansion/2026-10-28-representative/selection.json')
@@ -97,7 +97,7 @@ def build():
     assert set(baseline['question_record_hashes']) <= set(ids)
     assert set(reviews) <= set(ids)
     notes = read('notes/guide.json')
-    claims = [c for name in ['unit3a-claims.json','unit3b-claims.json'] for c in read('reports/full-corpus-review/'+name)['claims']]
+    claims = [c for name in ['unit3a-claims.json','unit3b-claims.json','mor-claims.json'] for c in read('reports/full-corpus-review/'+name)['claims']]
     from notes_revision import load_notes
     effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
     for claim in claims:
@@ -105,7 +105,7 @@ def build():
     units = [dict(unit_id=u['id'], chapter_id=c['id'], baseline_body_sha256=u['body_sha256'],
                   inventory_status='INVENTORIED_NOT_CLAIM_CENSUS',
                   reviewed_claim_ids=[x['claim_id'] for x in claims if x['unit_id'] == u['id']],
-                  legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id'] in {'w1-b-8','w1-b-9'} else ('PARTIAL_AUTHOR_REVIEW_NOT_CENSUS' if u['id']=='w1-b-10' else 'UNREVIEWED'),
+                  legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id'] in {'w1-b-8','w1-b-9'} else ('PARTIAL_AUTHOR_REVIEW_NOT_CENSUS' if u['id'] in {'w1-b-10','w1-c-7'} else 'UNREVIEWED'),
                   atomic_claim_census_complete=False) for c in notes['chapters'] for u in c['units']]
     canonical = []
     for path in sorted((ROOT/'data/questions').glob('*.json')):
@@ -113,13 +113,13 @@ def build():
         canonical.append(dict(question_id=q['question_id'], path=str(path.relative_to(ROOT)), content_sha256=record_hash(q),
                               inventory_status='INVENTORIED_NOT_REAUDITED', existing_lifecycle_status=q.get('lifecycle_status'),
                               existing_audit_evidence_preserved=True))
-    coverage = dict(outline='MPJE-MA-PRE2027', mapping_status='INVENTORY_PLUS_THREE_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE',
+    coverage = dict(outline='MPJE-MA-PRE2027', mapping_status='INVENTORY_PLUS_FOUR_PARTIAL_UNITS_NOT_FULL_DECISION_PATH_COVERAGE',
                     units=units, reviewed_claims=claims, inferred_family_passes=0)
     progress = dict(baseline_commit=baseline['base_commit'], baseline_questions=2328, new_questions=len(new_author),
                     current_questions=len(result), original_2176_inventory=sum(r['question_id'].startswith(('MA-EXP-', 'MA-CASE-')) for r in result),
                     prior_MA_REV_inventory=96, current_MA_RW_inventory=len(read(paths[-1])['questions']),
                     representative_355_implementation=selection['stats'],
-                    question_ids_read_this_session=len(reviews)+len(new_author), review_count_scope='CUMULATIVE_UNIT3A_AND_UNIT3B_NOT_ONE_SESSION', unit3b_question_ids_reviewed=22,
+                    question_ids_read_this_session=len(reviews)+len(new_author), review_count_scope='CUMULATIVE_UNIT3A_UNIT3B_AND_MOR_NOT_ONE_SESSION', unit3b_question_ids_reviewed=22,
                     legal_review_counts=dict(Counter(r['legal_review_status'] for r in result)),
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),

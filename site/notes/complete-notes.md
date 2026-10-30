@@ -1063,7 +1063,7 @@ Computer downtime policy에는 임시 prescription filling, 복구 후 patient p
 
 ### On-premises 원칙
 
-특별히 허용된 경우를 제외하면 pharmacy가 열려 있고 non-pharmacist personnel가 unrestricted access를 갖는 동안 pharmacist가 pharmacy premises에 있어야 한다. On-duty pharmacist는 ratios, security, records access와 inspection 대응 등의 책임이 있다. 
+특별히 허용된 경우를 제외하면 pharmacy가 영업 중인 동안에는 pharmacist가 premises에 있어야 한다. 또한 non-pharmacist personnel가 pharmacy에 unrestricted access를 갖는 동안에도 pharmacist가 현장에 있어야 한다. 두 조건을 모두 만족할 때만 적용되는 AND 요건이 아니다. 247 CMR 9.19(23)은 non-resident pharmacy에 (16)·(17)을 적용하지 않으므로 setting을 먼저 확인한다. On-duty pharmacist는 ratios, security, records access와 inspection 대응 등의 책임이 있다. 
 
 ‘Pharmacist가 전화로 연락 가능하다’는 조건만으로 일반 pharmacy의 현장 requirement를 대신하지 않는다.
 
