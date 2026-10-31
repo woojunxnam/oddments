@@ -167,6 +167,26 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    seventh_path=root/'revisions/notes/protected-migration-cdtm13-vax04.json'
+    if seventh_path.exists() and relative=='site/notes/complete-notes.md':
+        seventh=json.loads(seventh_path.read_bytes())
+        require(seventh['baseline_commit']=='8e3c4dd1e7ec7315e6831dc1e95f8daf0cbd78f6',
+                'Unexpected CDTM13/VAX04 migration base')
+        require(seventh['path']==relative and seventh['baseline_copy']=='revisions/baselines/complete-notes-cdtm0512.md',
+                'CDTM13/VAX04 migration expands protected scope')
+        require(seventh['revision_path']=='revisions/notes/2026-10-30-cdtm13-vax04.json',
+                'Unexpected CDTM13/VAX04 revision')
+        require(seventh['previous_migration_path']=='revisions/notes/protected-migration-cdtm0512.json',
+                'Unexpected CDTM13/VAX04 parent')
+        require(sha256(safe_file(root,seventh['revision_path']).read_bytes())==seventh['revision_sha256'],
+                'Stale CDTM13/VAX04 overlay source')
+        require(sha256(safe_file(root,seventh['previous_migration_path']).read_bytes())==seventh['previous_migration_sha256'],
+                'Previous CDTM05/VAX migration changed')
+        require(sha256(current)==seventh['new_sha256'],
+                'Stale CDTM13/VAX04 export')
+        current=safe_file(root,seventh['baseline_copy']).read_bytes()
+        require(sha256(current)==seventh['old_sha256'],
+                'Previous published CDTM05-12 notes export changed')
     sixth_path=root/'revisions/notes/protected-migration-cdtm0512.json'
     if sixth_path.exists() and relative=='site/notes/complete-notes.md':
         sixth=json.loads(sixth_path.read_bytes())
