@@ -36,7 +36,8 @@ def make() -> str:
     evidence = json.loads(evidence_raw)
     assert evidence['schema_version'] == 'cdtm0512-official-crosscheck/1'
     assert evidence['provenance'] == 'AUTHOR_OFFICIAL_SOURCE_TEXT_AND_SCREENSHOT_CHECK_NOT_INDEPENDENT_AUDIT'
-    eff = load_notes(ROOT)
+    # Source-bound historical claim records must remain stable as later revisions append.
+    eff = load_notes(ROOT, revision_id='2026-10-30.cdtm05-12.1')
     assert eff['edition'] == '2026-10-30.cdtm05-12.1'
     units = {unit['id']: unit for chapter in eff['chapters'] for unit in chapter['units']}
     records=[]
