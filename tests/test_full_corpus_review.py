@@ -22,11 +22,11 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
     assert len(rows) == len({r['question_id'] for r in rows}) == 2346
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 121
-    assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) == 65
+    assert sum(r['checked_at'] is not None for r in rows) == 161
+    assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) == 105
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
     assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 10
-    assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) == 2225
+    assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) == 2185
     assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
     assert not any(r['legal_review_status']=='RELEASED' for r in rows)
     assert all(r['deployment_status']=='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED' for r in rows)
@@ -136,6 +136,7 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
     assert {uid for uid in old if old[uid]!=new[uid]} == {
         'w1-b-8','w1-b-9','w1-b-10','w1-c-4','w1-c-5','w1-c-7','w6-b-8','w1-c-13',
         'w1-c-14','w1-c-15','w4-d-17','w3-d-2','w3-d-3','authority-paths','w6-b-17',
+        'w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']
@@ -191,7 +192,7 @@ def test_mor_discipline_migration_cannot_redirect_to_an_immutable_source(protect
     later=json.loads(later_path.read_text())
     later['previous_migration_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
     later_path.write_text(json.dumps(later))
-    with pytest.raises(ValueError,match='MOR discipline migration expands scope'):
+    with pytest.raises(ValueError,match='MOR discipline migration expands scope|Previous CDTM migration manifest mutated'):
         verify(manifest,root)
 
 
@@ -227,6 +228,8 @@ def test_published_unit3a_revision_snapshot_remains_reproducible():
     'revisions/notes/2026-10-30-mor-discipline.json',
     'revisions/baselines/complete-notes-mor-discipline.md',
     'revisions/notes/2026-10-30-discipline-cdtm.json',
+    'revisions/notes/2026-10-30-cdtm0512.json',
+    'revisions/baselines/complete-notes-discipline-cdtm.md',
 ])
 def test_followup_protection_rejects_source_or_previous_export_changes(protected_copy,relative):
     root,manifest=protected_copy
@@ -314,7 +317,7 @@ def test_editorial_rubric_is_explicit_bounded_and_not_an_automatic_release_score
     assert set(rubric['criteria'])==QUALITY_CRITERIA
     assert rubric['unassessed_value'] is None and rubric['composite_score']=='NOT_COMPUTED'
     rows=[json.loads(x) for x in build()[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
-    assert sum(r['editorial_quality_assessment'] is not None for r in rows)==40
+    assert sum(r['editorial_quality_assessment'] is not None for r in rows)==80
     assert all(r['editorial_quality_assessment'] is None for r in rows if r['checked_at'] is None)
     assessed=copy.deepcopy(next(r['editorial_quality_assessment'] for r in rows if r['editorial_quality_assessment']))
     assessed['scores']['legal_accuracy']=6
@@ -343,7 +346,7 @@ def test_new_claim_open_status_is_counted_and_unknown_status_fails_closed():
     validate_claim(open_claim,units)
     assert open_claim['review_status']=='HOLD_FOR_LEGAL_REVIEW'
     progress=json.loads(build()[ROOT/'reports/full-corpus-review/progress.json'])
-    assert progress['open_claims']==4 and progress['source_checked_claims']==48
+    assert progress['open_claims']==4 and progress['source_checked_claims']==58
     open_claim['review_status']='OPEN_BUT_NOT_COUNTED'
     with pytest.raises(ValueError,match='Unclassified claim'):
         validate_claim(open_claim,units)
@@ -355,10 +358,10 @@ def test_latest_migration_cannot_expand_scope_or_change_parent(protected_copy):
     original=json.loads(path.read_text())
     changed=copy.deepcopy(original);changed['path']='notes/guide.json'
     path.write_text(json.dumps(changed))
-    with pytest.raises(ValueError,match='Discipline CDTM migration expands scope'):verify(manifest,root)
+    with pytest.raises(ValueError,match='Discipline CDTM migration expands scope|Previous CDTM migration manifest mutated'):verify(manifest,root)
     changed=copy.deepcopy(original);changed['previous_migration_sha256']='0'*64
     path.write_text(json.dumps(changed))
-    with pytest.raises(ValueError,match='Prior MOR discipline migration changed'):verify(manifest,root)
+    with pytest.raises(ValueError,match='Prior MOR discipline migration changed|Previous CDTM migration manifest mutated'):verify(manifest,root)
 
 
 def test_permission_research_does_not_admit_unapproved_publisher_question_material():
