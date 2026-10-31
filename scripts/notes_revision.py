@@ -58,7 +58,7 @@ def load_notes(root=ROOT, revision_id=None):
         for change in revision['units']:
             unit=units[change['id']]
             if digest(unit['body'].encode()) != change['expected_body_sha256']:
-                raise ValueError('Stale notes revision body')
+                raise ValueError('Stale notes revision body: '+path+' / '+change['id']+' expected='+change['expected_body_sha256']+' actual='+digest(unit['body'].encode()))
             for field in ['body','source_review_date','flags','editor_note']:
                 unit[field]=copy.deepcopy(change[field])
             if 'source_ids' in change:
