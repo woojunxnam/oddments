@@ -24,6 +24,18 @@ jobs:
           python-version: '3.12'
       - name: Install test and notes dependencies
         run: python -m pip install -r requirements-dev.txt
+      - name: Diagnose actual immutable note body hashes
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          notes=json.loads(Path('notes/guide.json').read_text())
+          units={u['id']:u for c in notes['chapters'] for u in c['units']}
+          for key in ['w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8']:
+              u=units[key]
+              actual=hashlib.sha256(u['body'].encode()).hexdigest()
+              print(key,'expected_stored=',u['body_sha256'],'actual=',actual,flush=True)
+          PY
       - name: Build actual five-section versioned notes and preserve previous export
         run: |
           python scripts/build_ultimate_notes.py
