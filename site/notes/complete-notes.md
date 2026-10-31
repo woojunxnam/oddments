@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. 현재 개정판: 2026-10-30.cdtm05-12.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-10-30.cdtm13-vax04.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -3213,11 +3213,24 @@ Guidance의 physician/dentist에 관한 중대한 생명·사지 위험 통지 �
 
 ## 누구의 어떤 행위를 허용하는지 먼저 판단한다
 
-Vaccine order는 개별 환자의 prescription이나 적격 standing order로부터 나올 수 있다. Vaccine selection와 patient counseling, 실제 preparation·injection, 기록·보고, emergency medication administration은 각각 별도의 역할이다. 면허·교육·CPR·감독·환자 연령·제품 요건을 함께 확인한다. 
+### Vaccine policy의 pharmacy personnel은 누구인가?
 
-Massachusetts의 vaccine policy상 pharmacy personnel은 licensed pharmacist, pharmacy intern, pharmacy technician이다. Pharmacy technician trainee는 포함하지 않는다. Technician가 national certification를 보유했다는 사실만으로 모든 조건을 충족하는 것도 아니다.
+[DPH/Board Policy 2023-02 (revised 2025-09-04)](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download)의 pharmacy personnel 정의는 **licensed pharmacists, pharmacy interns, pharmacy technicians**입니다. **Pharmacy technician trainees(PTTs)는 이 경로에서 vaccine를 administer할 수 없습니다.** Trainee가 예방접종 강의를 수료하거나 고용주의 승인을 받았더라도 해당 직종 자격 제한을 대체하지 못합니다.
 
-Intern 또는 technician의 vaccination은 근무 중인 pharmacist의 approval과, 해당 immunizer 자격을 갖춘 pharmacist의 direct supervision 아래 이루어져야 한다. 등록이나 교육을 마쳤다는 사실은 독립적인 pharmacist practice 권한이 아니다.
+| 사람 | 자격 판단 | 실제 vaccine 업무 |
+|---|---|---|
+| Pharmacist | 현행 license, 필수 초기 교육, current CPR 및 유지 교육 | 적법한 Rx/standing order, screening, vaccine selection, counseling, administration |
+| Pharmacy intern | 해당 ACPE 교육 및 current CPR | **On-duty licensed pharmacist approval + 모든 immunizer 요건을 충족한 pharmacist의 direct supervision** |
+| Licensed pharmacy technician | Policy III.D의 national certification 또는 licensed PT 후 500시간, 6+2시간 training 및 current CPR | **On-duty approval + direct supervision** 아래 physical preparation / administration. Vaccine selection·patient counseling은 pharmacist 담당 |
+| Pharmacy technician trainee | Policy가 명시적으로 제외 | 교육만으로 주 policy상 vaccine injection 권한 발생하지 않음 |
+
+**Direct supervision**은 off-site pharmacist가 전화로 허락했다는 사실이나 MOR가 다른 장소에 있다는 사실로 충족되지 않습니다. Intern이 충분히 training되어도 직접 감독하는 pharmacist가 vaccination 요건을 충족하지 않으면 그 intern의 투여를 시작할 수 없습니다. Direct supervision, presence, staffing ratios는 각각 해당 정책·법규 조건에 따라 검토합니다.
+
+**행위 분리:** Vaccine selection + counseling은 pharmacist의 임상 업무이고, 적격 technician에게 허용된 physical preparation/injection과 구별합니다. Adverse reaction의 emergency medication은 별도 적법한 standing order 조건이 있어야 합니다.
+
+**연습:** [MA-RW-0041 — supervisor CPR 만료](../practice-expansion/?bank=rewrite#MA-RW-0041), [VAX01 원본·개정판](cdtm13-16-vax01-04.html#vax01).
+
+근거: [Policy 2023-02 intro, III.A–D, IV](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download); [M.G.L. c112 §24G](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section24G). 2026-10-30 작성자 검토.
 
 
 근거:
@@ -3227,19 +3240,27 @@ Intern 또는 technician의 vaccination은 근무 중인 pharmacist의 approval�
 
 ## Massachusetts 주 경로의 제품과 연령
 
-### Routine vaccines
+### Routine vaccine, DPH Commissioner recommendation, 제품 조건
 
-적격 pharmacy personnel은 FDA-approved 또는 FDA-authorized routine vaccines, 또는 DPH Commissioner가 routine use를 권고한 vaccine를 policy의 조건 아래 administer할 수 있다. 제품이 승인되었다는 사실만으로 모든 age·dose·route를 마음대로 선택할 수 있는 것은 아니다. 
+[Policy 2023-02 §§I–II](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download)에서 적격 pharmacy personnel은 FDA-approved/authorized **routine vaccines**, 또는 DPH Commissioner가 routine use를 권고한 백신을 해당 조건 아래 administer할 수 있습니다. Commissioner가 특정 **population 또는 dosing schedule**에 대해 FDA labeling과 다른 권고를 발행했다면 **해당 최신 DPH recommendation과 그 범위**에 따라 투여하는 경로가 있습니다. Pharmacist 개인이 선택한 off-label schedule를 DPH 권고라고 이름 붙이는 것은 다른 문제입니다.
 
-DPH Commissioner가 product labeling과 다른 population 또는 usage schedule을 권고하는 경우에는 그 현재 권고를 따를 수 있다는 별도 문구가 있다. 단순한 약사의 개인적 off-label 판단과 Commissioner가 명시한 권고를 구별한다.
+### State age threshold =/= 특정 제품의 적격성
 
-### 주 policy의 기본 연령
+Policy §II/105 CMR700.004(B)(6)의 이 경로는 일반적으로 **5세 이상**입니다. 이는 5세부터 **모든 백신**이 승인된다는 뜻이 아닙니다. 개별 standing order / patient-specific prescription, FDA labeling 또는 관련 DPH recommendation, 대상 patient population, route와 dose, contraindications를 **별도로** 확인해야 합니다.
 
-Policy 2023-02와 105 CMR 700.004(B)(6)의 주 경로는 5세 이상을 대상으로 한다. 모든 vaccine가 5세부터 승인되어 있다는 뜻이 아니며, 해당 vaccine의 제품·권고 연령을 함께 충족해야 한다. 연방 PREP Act의 특정 3세 이상 경로는 아래 §9에서 별도로 다룬다. 
+**예: GARDASIL 9** — [FDA의 승인 대상은 9–45세](https://www.fda.gov/vaccines-blood-biologics/vaccines/gardasil-9)입니다. 기존 community-pharmacy standing order가 9–45세만 허용하고, 8세 환자에게 다른 적합한 DPH recommendation 또는 patient-specific order가 없다면 **5세 이상**이라는 주 경로의 하한만으로 그 standing order를 확대할 수 없습니다.
 
-### Travel·non-routine vaccines
+### 실무 반례: 2026–27 Fluzone High-Dose
 
-특정 CDTM agreement 아래 CDC Yellow Book의 travel vaccine와 다른 indicated non-routine vaccine를 투여하는 경로가 있다. CPA에 포함되고 추가 federal/state requirements 및 training를 충족해야 한다. 그러나 이 policy의 해당 CDTM 조항은 Board-licensed community/retail setting에는 적용되지 않는다고 명시한다. 'CDTM 계약 하나면 retail pharmacy에서 모든 travel vaccine 가능'이라고 확대하지 않는다.
+[DPH Standing Order 2026-06 (2026-09-30)](https://www.mass.gov/doc/standing-order-for-pharmacies-administration-of-influenza-vaccine-2026-27/download)의 Procedure 1(b)와 5에는 **면역억제제를 사용하는 18–64세 고형장기 이식 수혜자**에게 Fluzone High-Dose 등의 옵션이 포함됩니다. 따라서 54세 kidney transplant recipient가 immunosuppressive regimen을 복용하는 사례에서, 실제 현재 standing order와 다른 요건이 충족되면 별도 CDTM 계약이 반드시 필요한 것은 아닙니다. 이 결론을 **모든 54세 성인에게 HD-IIV 권장**으로 확대해서는 안 됩니다. Product label age와 DPH specific indication의 관계를 설명하는 사례이지, 개별환자 임상 자문이 아닙니다.
+
+### Travel / non-routine vaccines의 CDTM 예외
+
+Policy §I.C는 **특정 CDTM에 포함된 travel·non-routine vaccine** 경로를 별도로 규정하지만 이 절은 **Board-licensed community/retail setting에는 적용되지 않는다**고 명시합니다. Retail CPA를 임의의 travel vaccine 허가증으로 일반화하지 않습니다.
+
+**연습:** [MA-RW-0042 — GARDASIL 9 age gap](../practice-expansion/?bank=rewrite#MA-RW-0042), [MA-RW-0043 — 2026 flu order와 54세 transplant recipient](../practice-expansion/?bank=rewrite#MA-RW-0043). [VAX02–03 복습](cdtm13-16-vax01-04.html#vax02).
+
+근거: [Policy 2023-02 §§I–II, IV](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download); [DPH 2026–27 influenza standing order](https://www.mass.gov/doc/standing-order-for-pharmacies-administration-of-influenza-vaccine-2026-27/download); FDA GARDASIL 9. 2026-10-30 작성자 조항·제품 조건 검토, 독립감사 아님.
 
 
 근거:
@@ -3251,19 +3272,30 @@ Policy 2023-02와 105 CMR 700.004(B)(6)의 주 경로는 5세 이상을 대상�
 
 ## Pharmacist·intern 교육과 유지 요건
 
-### 초기 training
+### Pharmacist / intern의 ACPE initial immunization training
 
-Pharmacist와 intern은 예방접종 전에 ACPE-accredited training course를 완료해야 한다. 최소 12 contact hours의 self-study 및 assessment, 8 contact hours의 live seminar와 final examination, 환자 연령에 적합한 intramuscular·subcutaneous injection의 hands-on assessment를 포함한다. 합계 20시간이라는 숫자만 아니라 구성과 실기 평가를 기억한다. 
+[DPH Policy 2023-02 §III.C](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download)는 실제 vaccination 전에 다음 구성의 **ACPE-accredited training course**를 요구합니다.
 
-교육은 vaccine indication/contraindication, at-risk populations, patient screening·education, storage·handling, administration, adverse reaction 인지와 대응, recordkeeping 및 reporting을 포함한다. 단순히 예방접종 관련 강의를 20시간 들었다고 지정 과정 요건이 자동 충족되는 것은 아니다.
+| 필수 구성 | 최소 조건 |
+|---|---|
+| Self-study modules | **12 contact hours**, case studies 및 assessment exam 포함 |
+| Live seminar | **8 contact hours**, final exam 포함 |
+| Hands-on assessment | 해당 환자 연령에 맞는 **intramuscular(IM)와 subcutaneous(SC) injection** 평가 |
 
-### CPR와 증빙
+**총 20시간만 맞춘다고 끝나지 않습니다.** 예를 들어 self-study 16시간과 live 4시간이면 20시간이더라도 live 8시간 요건이 부족합니다. CPR 재교육 4시간을 live immunization seminar 4시간으로 임의 산입하는 것은 이 조항의 대안이 아닙니다.
 
-실제로 vaccine를 administer하는 pharmacy personnel 모두 current CPR certification이 필요하고 training·CPR 증빙을 pharmacy에 유지한다. 예전에 자격을 취득했다는 사실과 현재 유효하다는 사실을 구별한다. 
+### Current CPR, pharmacy에서의 증빙, 연간 교육
 
-### Pharmacist continuing education
+- **Vaccine를 administer하는 모든 pharmacy personnel은 current CPR certification**이 필요합니다[§III.A].
+- 해당 직원의 **training 및 CPR evidence를 pharmacy에 보관**합니다[§III.B].
+- Pharmacist는 vaccination 수행을 위한 초기 교육 외에 **매 calendar year ACPE-approved immunization-related CE 최소 1시간**을 이수합니다[§III.C.3]. 직접 supervising immunizer에게도 Board CE policy에서 관련 조건을 확인합니다.
+- Pharmacy technician은 초기 course의 시간 구성과 유지 교육 주기가 다른 독립 기준입니다(다음 절).
 
-예방접종을 수행하는 pharmacist에게 매 calendar year 최소 1시간의 ACPE-approved immunization-related CE가 요구된다. 이는 initial 20시간 과정과 다른 요건이다. 일반 CE 안에서의 산입 및 직접 감독자에 대한 CE는 [면허·CE 장](#chapter/licensure-ce)의 current CE policy와 연결한다.
+**사례:** CPR credential이 만료된 supervising pharmacist가 단지 현재 pharmacist license만 갖고 있다는 이유로 qualified intern vaccination을 감독할 수 있다고 판단하지 않습니다.
+
+**연습:** [MA-RW-0044 — 16+4와 12+8 차이](../practice-expansion/?bank=rewrite#MA-RW-0044), [MA-EXP-0301–0304 원본](../practice-expansion/#MA-EXP-0301). [VAX04 집중 복습](cdtm13-16-vax01-04.html#vax04).
+
+근거: [Policy 2023-02 §§III.A–C](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download); [Board CE Policy 2021-04](https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download), 2025-09-04 개정. 2026-10-30 작성자 검토.
 
 
 근거:
@@ -3273,23 +3305,24 @@ Pharmacist와 intern은 예방접종 전에 ACPE-accredited training course를 �
 
 ## Technician의 예방접종 자격
 
-### License와 경험의 두 경로
+### Technician vaccination scope — 2025-09-04 개정 Policy 2023-02
 
-Technician는 Massachusetts의 full Pharmacy Technician license가 있고, PTCB 또는 ExCPT national certification이 있거나, full PT로 licensed된 후 최소 500시간을 근무한 조건을 충족해야 한다. Trainee로 근무한 500시간과 full PT licensure 이후 500시간을 같은 것으로 계산하지 않는다. PTT는 vaccine를 투여할 수 없다. 
+[Policy §III.D](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download)를 기준으로 **MA Pharmacy Technician license**가 있어야 하며, 다음 두 가지 중 한 가지 경로를 충족해야 합니다.
 
-### Initial vaccine training
+1. **PTCB 또는 ExCPT national certification**, 또는
+2. **Licensed pharmacy technician으로 등록된 이후** 최소 500시간 근무.
 
-ACPE-accredited 6시간 과정과 assessment를 완료하며, 그중 최소 2시간은 live instruction 및 연령에 적합한 IM·SC technique hands-on assessment를 포함한다. Vaccine reaction의 인지와 관리도 포함된다. 
+Pharmacy technician trainee(PTT)는 위 경로를 자기 방식으로 조합해도 주 policy의 eligible pharmacy personnel에 포함되지 않습니다.
 
-추가로 experienced certified immunizer와 최소 2시간의 documented on-the-job training 및 skills checklist를 완료한다. 6시간 교육 안에 이 추가 2시간을 근거 없이 합쳐 전체를 6시간으로 줄이지 않는다. 
+교육은 **ACPE-accredited 6시간**과 exam, 그 안의 최소 **live 2시간** IM/SC hands-on assessment 및 reactions management를 포함합니다. 추가적으로 경험 많은 certified immunizer와 **문서화된 on-the-job training 2시간 + skills checklist**를 완료해야 합니다. 총 6시간 course와 **추가 2시간 OJT**를 중복 합산해 6시간만 요구된다고 하지 않습니다.
 
-### 역할의 경계
+Technician는 pharmacist의 vaccine selection과 patient counseling 후에 physical vaccine preparation·administration 및 별도 standing order에 따른 emergency medication delivery만 수행합니다. Physician-level independent diagnosis나 pharmacist의 selection/counseling을 자체적으로 가져올 수 없습니다. 모든 vaccination에서 **on-duty pharmacist approval + qualified immunizing pharmacist direct supervision**, current CPR 및 보관증빙도 충족해야 합니다.
 
-Pharmacist가 환자를 counseling하고 vaccine를 선택한 뒤, technician는 physical preparation·administration 및 standing order에 따른 vaccine reaction emergency medication를 제공할 수 있다. 이 허용은 독립적인 vaccine selection, clinical counseling 또는 약사 prescribing 권한이 아니다. 
+유지교육은 **2년마다 최소 2시간** immunization-related CE/updated training을 이수하며, pharmacist의 **매년 1시간**과 구분합니다.
 
-### 유지 교육
+**연습:** [MA-EXP-0289–0292 중 technician/intern의 역할 차이](../practice-expansion/#MA-EXP-0289), [MA-RW-0041 — qualified supervising immunizer](../practice-expansion/?bank=rewrite#MA-RW-0041).
 
-Technician는 2년마다 최소 2시간의 immunization-related continuing education 또는 updated training를 완료한다. Pharmacist의 매년 1시간과 technician의 2년마다 2시간을 같은 calendar rule로 외우지 않는다. Current CPR와 supervision도 계속 필요하다.
+근거: [Policy 2023-02 introduction, III.A–D, IV](https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download). 2026-10-30 작성자 검토, 독립 법규감사 아님.
 
 
 근거:
@@ -3769,11 +3802,36 @@ Authorized pharmacist가 retail CDTM 아래 **initial prescription 발행 또는
 
 ## CPA의 필수 내용·delegation·갱신
 
-CPA는 qualified pharmacist와 supervising physician가 서명한 written agreement이며, physician practice scope 안의 공동 관리 범위를 정의한다. Primary/co-morbid disease states, specific prescribing authority, detailed protocols, risk-management activities, medication changes documentation, outcome measures, informed-consent procedure, information transmission·urgent communication, supervision와 absence plan, 양측 qualification attestation이 필요하다. 
+### Written CPA는 signatures만으로 완성되지 않습니다 — 247 CMR 16.04(1)–(2)
 
-다른 staff에게 맡길 수 있는 일과 맡길 수 없는 일을 구체적으로 정하고 delegation의 manner·duration·scope를 명시한다. Intern/technician은 자신의 247 CMR 8 scope 안에서 보조한다. CPA에 '위임 가능'이라고 적었다고 technician의 clinical judgment·prescribing 권한이 새로 생기지 않는다.
+CDTM은 pharmacist와 supervising physician 사이의 **서명된 written agreement**이며 의사가 실제로 practice할 수 있는 영역에 한정됩니다. 질환 목록이나 서명만 있고 구체적인 protocol이 없다면 충분한 계약이 아닙니다.
 
-Pharmacist와 supervising physician(s)는 CPA를 적어도 2년마다 review하고 renew한다. 2년 동안 아무 검토도 필요 없다는 뜻은 아니며, scope·personnel·safety가 바뀌면 적절히 반영한다.
+[247 CMR 16.04(2)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)에 따른 필수 요소를 실제 문서에서 다음과 같이 점검합니다.
+
+| 항목 | 문서에 포함할 내용 | 흔한 오답 |
+|---|---|---|
+| Disease states | Primary 또는 co-morbid 구분 | 진단명을 쓰지 않은 백지 협약 |
+| Pharmacist prescribing | 개별적으로 부여한 구체적 권한 | 모든 prescription 독자 발행 |
+| Practice protocols | Initiate·modify·discontinue 절차 | 'Appropriate as needed' 한 문장 |
+| Risk management | 위험요인 및 구체적 대응 | 결과만 나중에 보고 |
+| Permanent medical record | Medication의 변경·중단을 기록 | 조제 label로 대체 |
+| Outcome measures | 측정할 치료 결과 | 측정·모니터링 계획 없음 |
+| Informed consent | Practice setting에 적합한 절차 | 환자별 동의가 필요할 때 생략 |
+| Information transfer | 검사·처방·consent·urgent communication·부재 시 대체 절차 | 'Contact PRN'만 기재 |
+| Pharmacist attestation | §16.02(1) 자격 충족 | 약국 시설 면허만 확인 |
+| Physician attestation | 243 CMR 2.12 자격 충족 | Physician의 서명만으로 모든 조건 생략 |
+
+### Delegation — 16.04(3)
+
+CPA는 **위임 가능한 pharmacist duties와 위임 불가능한 duties**를 모두 명시하며, **언제·어떻게·기간·범위**를 규정해야 합니다. Intern/technician이 지원하더라도 실제 업무는 [247 CMR 8]의 독립적인 법적 scope 범위 안입니다. 'Support staff may assist'라고만 적거나 technician에게 독자적 therapeutic judgment·prescribing을 부여하는 문구는 범위를 채우지 못합니다.
+
+### Renewal — 16.04(4)
+
+**Authorized pharmacist와 supervising physician(s)가 최소 2년마다 CPA를 review하고 renew**해야 합니다. '2년이 지나면 무조건 해지'와 '최초 서명 후 영원히 유효' 모두 틀립니다. 의사·약사·환자·protocol에 변경이 있다면 변경으로 인해 별도로 적용되는 조건도 점검합니다.
+
+**실전 문제:** [MA-RW-0038 (SATA: 허용 가능한 delegation 문구)](../practice-expansion/?bank=rewrite#MA-RW-0038), [MA-EXP-0277–0280 원본군](../practice-expansion/#MA-EXP-0277). [다음 배치 정리](cdtm13-16-vax01-04.html#cdtm14).
+
+근거: [247 CMR16.04(1)–(4)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download), 247 CMR8. 2026-10-30 작성자 조항별 검토, 독립 법규감사 아님.
 
 
 근거:
@@ -3783,11 +3841,31 @@ Pharmacist와 supervising physician(s)는 CPA를 적어도 2년마다 review하�
 
 ## 종료·기록 위치·고용 관계
 
-Termination 또는 non-renewal 전에 uninterrupted drug-therapy continuation를 마련한다. 종료되면 patient에게 서면으로 알리고 이후 치료 지속 절차를 안내한다. 계약 종료 사실을 직원끼리만 알고 환자가 refill·monitoring를 받을 곳을 잃게 하지 않는다. 
+### Termination / non-renewal — 247 CMR 16.04(5)
 
-Pharmacist는 primary practice setting에 current CPA와 referral/consent copies를 readily retrievable하게 유지한다. Physician은 자신의 custody에 있는 patient record에 originals를 보존한다. 전자 저장이라도 접근과 version consistency가 중요하다.
+CPA를 종료하거나 갱신하지 않기 **전**, authorized pharmacist와 supervising physician은 환자의 drug therapy를 **중단 없이 이어갈 구체적인 방법**을 협약에 따라 마련해야 합니다. 종료 또는 미갱신이 확정되면 **환자에게 서면으로 종료 사실과 이후 치료를 지속하는 절차**를 알려야 합니다. 직원 간 구두통보만으로 환자 서면 안내를 대체하지 않습니다.
 
-Physician/group은 CDTM를 수행할 qualified pharmacist를 고용할 수 있다. Community pharmacy는 CDTM pharmacist의 quality-assurance review를 위해 physician/medical practitioner를 고용할 수 있지만, CPA를 유지·설립·체결하기 위한 목적으로 physician을 고용하는 것은 금지된다. QA contract와 CPA를 만들기 위한 physician employment를 구별한다.
+### Current agreement의 원본·사본 — 16.04(6)
+
+| 보관자 | 보관 내용 | 위치·조건 |
+|---|---|---|
+| Pharmacist | Current **CPA, patient referrals, patient consents의 사본** | Primary practice setting에 Board of Pharmacy / Board of Medicine 요청 시 **readily retrievable** |
+| Supervising physician | Current **CPA, referrals, consents의 원본** | Physician custody의 patient medical record |
+
+과거 판본만 약국에 남기고 현재 CPA를 physician office에서만 찾을 수 있다면 pharmacist의 local record 접근 요구가 충족되지 않습니다. 전자 파일이라도 current signed version인지와 즉시 접근·기밀 유지가 가능해야 합니다[16.01 및 16.04(6) 관련 문맥].
+
+### Physician employment vs QA service — 16.04(7)
+
+- Physician 또는 physician group은 특정 환자의 CDTM를 위하여 **qualified pharmacist를 고용**할 수 있습니다.
+- Community pharmacy는 CDTM pharmacist의 **quality-assurance review**를 수행할 physician 또는 licensed medical practitioner를 고용할 수 있습니다.
+- **Community pharmacy가 CPA를 maintain, establish, or enter into 할 목적으로 physician을 고용하는 행위는 금지**됩니다.
+- 직함을 'QA Director'로 바꾸거나 정액 급여로 지급해도 실제 업무에 CPA 설립·유지 책임이 포함됐다면 금지 목적이 없어지지 않습니다.
+
+**사례:** QA director로 고용한 의사의 업무기술서에 chart review와 CPA establish/maintain 두 역할이 같이 있다면, 허용된 QA 업무는 유지하되 CPA 생성·유지 업무를 제외해야 합니다.
+
+**연습:** [MA-RW-0039 — current 문서 보관](../practice-expansion/?bank=rewrite#MA-RW-0039), [MA-RW-0040 — 금지되는 의사 고용 목적](../practice-expansion/?bank=rewrite#MA-RW-0040). [8개 주제 복습](cdtm13-16-vax01-04.html).
+
+근거: [247 CMR16.04(5)–(7)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download); M.G.L. c112 §24B½(e). 2026-10-30 작성자 검토, 독립 법규감사 아님.
 
 
 근거:
