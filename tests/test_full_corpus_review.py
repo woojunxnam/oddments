@@ -120,8 +120,14 @@ def test_author_provenance_uses_each_source_and_never_inherits_family_review():
             assert row['reviewer_provenance']['authoring_source']==relative
             assert row['reviewer_provenance']['authoring_source_sha256']==hashlib.sha256(raw).hexdigest()
             assert row['reviewer_provenance']['independent']=='NOT_RUN'
-    # The next CDTM family remains untouched even though nearby IDs were read.
+    # The explicitly audited CDTM05 family is now source-scoped author-reviewed.
     for index in range(241,245):
+        row=rows[f'MA-EXP-{index:04d}']
+        assert row['checked_at']=='2026-10-30'
+        assert row['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
+        assert row['reviewer_provenance']['independent'] is False
+    # Next unreviewed CDTM family must still NOT inherit a review by proximity.
+    for index in range(305,309):
         row=rows[f'MA-EXP-{index:04d}']
         assert row['checked_at'] is None
         assert row['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
