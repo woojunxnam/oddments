@@ -1,3 +1,14 @@
+# CDTM05–12 품질검토 새 배치 — 병합 전 실행 기록 (2026-10-30)
+
+- PR: https://github.com/woojunxnam/oddments/pull/179 (Draft). 기본 main은 PR #178의 제품 배포 이후 커밋을 사용한다.
+- 작성자 확인: 원본 MA-EXP-0241–0272 **32개**, 기존 MA-RW-0029–0036 **8개**, 총 **40 ID·160개 선택지**에 대해 각 ID의 source hash, 선택지별 한국어 판단, 247 CMR 16·Board Policy 2021-04 등 실제 적용 조항을 구분했다. 추가 질문 ID는 만들지 않았다.
+- 통합노트: w3-d-4, w3-d-5, w3-d-6, w3-d-7, w3-d-8 다섯 절을 새 판본 2026-10-30.cdtm05-12.1로 개정했다. 원본 notes/guide.json 및 기존 overlays, bookmark/attempt ID는 보존했다.
+- 제한된 노트 claim 10개를 기존 evidence hash와 연결했다. 새 누적 **161 ID별 작성자 검토**, 미재검증 **2,185 ID**, 노트 **19개 절 제한된 claim 검토**, 전체 **62개 claim/cluster(근거 확인 58 / OPEN 4)**. 노트의 atomic claim 전체 전수 감사 **0절**, 새 독립 canonical 법규 감사 **0개**, RELEASED 승격 **0개**다.
+- GitHub Actions branch materialization https://github.com/woojunxnam/oddments/actions/runs/41159192055 : **PASS**, focused source/notes tests **59 passed**, versioned generated notes·claim ledger·corpus ledger·보호된 Markdown export migration 생성 커밋 f05a58b5ffe4bba8e116be5a5b15c2b4467308e3.
+- 이번 변경을 모든 QA/production 배포 완료라고 표현하지 않는다. 해당 PR의 user-authored 최종 후보 CI, full pytest, production Pages 및 실제 origin 검증을 확인하기 전에는 병합 금지. 기존 어휘의 CE email/Form, CDTM statute/regulation PharmD 날짜 관계, personnel 및 reporting OPEN을 유지한다.
+
+---
+
 # MPJE 품질 개선 checkpoint
 
 ## 최신 배포 확인 — Discipline/CDTM, 2026-10-30
