@@ -12,6 +12,7 @@ REVIEW_FILES = (
     'unit3a-author-review.json', 'unit3b-author-review.json',
     'mor-author-review.json', 'discipline-author-review.json',
     'discipline-procedures-author-review.json', 'cdtm-author-review.json',
+    'cdtm05-12-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -22,6 +23,7 @@ CLAIM_FILES = (
     'unit3a-claims.json', 'unit3b-claims.json',
     'mor-claims.json', 'discipline-claims.json',
     'discipline-procedures-note-claims.json', 'cdtm-claims.json',
+    'cdtm05-12-note-claims.json',
 )
 QUALITY_CRITERIA = {
     'legal_accuracy', 'state_federal_interaction', 'answer_uniqueness',
