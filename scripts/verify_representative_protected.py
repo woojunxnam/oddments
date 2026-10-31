@@ -167,6 +167,24 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    sixth_path=root/'revisions/notes/protected-migration-cdtm0512.json'
+    if sixth_path.exists() and relative=='site/notes/complete-notes.md':
+        sixth=json.loads(sixth_path.read_bytes())
+        require(sixth['baseline_commit']=='6e47fc7efbf4bef1c2f337ace55ca7d111631d21',
+                'Unexpected CDTM05-12 migration base')
+        require(sixth['path']==relative and sixth['baseline_copy']=='revisions/baselines/complete-notes-discipline-cdtm.md',
+                'CDTM05-12 migration expands scope')
+        require(sixth['revision_path']=='revisions/notes/2026-10-30-cdtm0512.json',
+                'Unexpected CDTM05-12 revision')
+        require(sixth['previous_migration_path']=='revisions/notes/protected-migration-discipline-cdtm.json',
+                'Unexpected CDTM05-12 parent')
+        require(sha256(safe_file(root,sixth['revision_path']).read_bytes())==sixth['revision_sha256'],
+                'Stale CDTM05-12 notes overlay')
+        require(sha256(safe_file(root,sixth['previous_migration_path']).read_bytes())==sixth['previous_migration_sha256'],
+                'Previous CDTM migration manifest mutated')
+        require(sha256(current)==sixth['new_sha256'],'Stale CDTM05-12 generated export')
+        current=safe_file(root,sixth['baseline_copy']).read_bytes()
+        require(sha256(current)==sixth['old_sha256'],'Prior CDTM export baseline changed')
     fifth_path=root/'revisions/notes/protected-migration-discipline-cdtm.json'
     if fifth_path.exists() and relative=='site/notes/complete-notes.md':
         fifth=json.loads(fifth_path.read_bytes())
