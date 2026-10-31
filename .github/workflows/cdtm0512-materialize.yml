@@ -1,0 +1,77 @@
+name: Materialize CDTM05-12 reviewed notes and ledgers (branch-only)
+on:
+  push:
+    branches: [feat/cdtm0512-ledger-notes-20261030]
+    paths:
+      - '.github/workflows/cdtm0512-materialize.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact materialization branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/cdtm0512-ledger-notes-20261030
+          persist-credentials: true
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test and notes dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Build actual five-section versioned notes and preserve previous export
+        run: |
+          python scripts/build_ultimate_notes.py
+          python scripts/build_cdtm0512_claims.py
+          python scripts/build_cdtm0512_migration.py
+          python scripts/build_exam_study.py
+          python scripts/build_refresh.py
+      - name: Build 161-ID review ledger and public quality disclosure
+        run: |
+          python scripts/build_full_corpus_review.py
+          python scripts/build_quality_status.py
+      - name: Verify deterministic outputs and protected baseline
+        run: |
+          python scripts/build_ultimate_notes.py --check
+          python scripts/build_cdtm0512_claims.py --check
+          python scripts/build_cdtm0512_migration.py --check
+          python scripts/build_exam_study.py --check
+          python scripts/build_refresh.py --check
+          python scripts/build_full_corpus_review.py --check
+          python scripts/build_quality_status.py --check
+          python scripts/verify_representative_protected.py
+          python scripts/validate_all.py
+      - name: Run focused and full regression tests before commit
+        run: |
+          python -m pytest tests/test_cdtm0512_review.py tests/test_full_corpus_review.py tests/test_ultimate_notes.py -q
+          python -m pytest -q
+      - name: Validate public read-only build
+        run: python scripts/publish_practice.py --output /tmp/mpje-cdtm0512-site
+      - name: Commit only approved generated artifacts to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            site/notes/content.js site/notes/book.html site/notes/complete-notes.md site/notes/build.json \
+            site/notes/study-data.js site/notes/study-build.json site/notes/study.html \
+            site/notes/refresh-data.js site/notes/refresh-build.json \
+            reports/full-corpus-review/cdtm05-12-note-claims.json \
+            revisions/notes/protected-migration-cdtm0512.json \
+            reports/full-corpus-review/question-ledger.jsonl \
+            reports/full-corpus-review/notes-unit-ledger.jsonl \
+            reports/full-corpus-review/notes-claim-ledger.jsonl \
+            reports/full-corpus-review/coverage-matrix.json \
+            reports/full-corpus-review/progress.json \
+            reports/full-corpus-review/pattern-comparison.json \
+            reports/full-corpus-review/inventory-definitions.json \
+            reports/full-corpus-review/canonical-inventory.json \
+            site/practice-expansion/quality-review.html
+          if ! git diff --cached --quiet; then
+            git commit -m "materialize: CDTM05-12 five note sections and 161-ID source ledger"
+            git push origin HEAD:feat/cdtm0512-ledger-notes-20261030
+          fi
