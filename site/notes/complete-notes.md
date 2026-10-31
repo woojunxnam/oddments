@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. 현재 개정판: 2026-10-30.discipline-cdtm.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-10-30.cdtm05-12.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -3598,15 +3598,30 @@ Clinical site가 개발·운영하는 comprehensive CDTM credentialing/training�
 
 ## CDTM CE와 prescribing registration
 
-CPA가 유지되는 각 calendar year에 해당 practice area와 일반적으로 관련된 Board-approved CE를 최소 5 contact hours 추가로 완료한다. 일반 20시간 안에 넣는 specialized CE와 달리 추가 시간이며, current CE policy에 따른 연간 총 25시간 구조는 [면허·CE 장](#chapter/licensure-ce)와 연결한다. 
+### 규정의 층: CDTM CE와 일반 pharmacist CE
 
-CDTM CE evidence는 current CPA date 후 최소 2년간 보존하는 조문을 확인한다. 일반 CE certificate의 보존 규칙과도 함께 충족한다. 
+[247 CMR 16.02(1)(e)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)는 **CDTM agreement term의 각 calendar year마다** 해당 practice area와 관련된 Board-approved CE **추가 5 contact hours**를 요구합니다. 일반 약사 CE 20시간을 대체하는 5시간이 아닙니다. [Board Policy 2021-04 §IV — 2025-09-04 개정](https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download)는 이를 **연간 총 최소 25시간**으로 명시합니다. 여러 환자·협약·진료 영역이 있어도 **일괄 5시간 × 협약 수**로 더하지 않으며, 여러 영역의 추가 학습은 권장사항입니다.
 
-CPA에 prescribing가 포함되면 current MCSR, 적용되는 federal DEA registration, c.94C §18(e)의 최초 등록 전 및 적어도 biennial training 요건을 확인한다. Retail에서 II–V prescribing가 금지된다는 별도 setting limitation도 남는다. 
+| 실제 조건 | 요구되는 판단 |
+|---|---|
+| 일반 CE 20시간 + CDTM 관련 CE 4시간 | **24시간**이므로 관련 CE 최소 **1시간 추가** |
+| Diabetes·hypertension 협약 두 건 | 자동 30시간이 아닌 **최소 25시간**; 분야별 추가 교육은 권장 |
+| CDTM prescribing + 인정되는 pain-management CE 1시간 | 규정의 별도 biennial training 의무를 충족하며, 수용되는 CE라면 **추가 5시간에 포함 가능** |
+| 일반 20시간에 같은 5시간을 이중 계산 | **불가**. 전문 주제 요건 중첩 인정과 총 이수시간 중복 합산은 구별 |
 
-CDTM prescribing pharmacist는 MassHealth의 provider 또는 ordering/referring 역할에 참여하거나 신청했다는 attestation을 제출하는 요건이 있다. 뒤에서 설명하는 2026 special-prescribing circular의 MassHealth enrollment 'encouraged'와 동일한 동사로 바꾸지 않는다. 
+기본 CE의 **연간 최소 live 5시간, pharmacy law 2시간, 하루 최대 인정 8시간, calendar-year 단위 이수**도 별개로 확인합니다[Policy 2021-04 §I]. 같은 정책에 명시된 허용 CE 유형·증빙 요건도 적용합니다. 새 면허 또는 transfer 시기별 grace period는 별도 조건이므로 임의로 모든 CDTM 약사에게 적용하지 않습니다.
 
-Board discipline 또는 practice restriction가 생기면 각 supervising physician에게 written notice를 제공해야 한다. MA Board에 reporting하는 의무와 CPA 상대방에게 알리는 의무는 별개이다.
+### Prescribing을 포함할 때 추가되는 필수조건
+
+[247 CMR 16.02(1)(f)1–3](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download): 처방 관련 CPA에는 약사의 **현재 유효한 개인 DPH controlled-substance registration(MCSR)**, M.G.L. c.94C §18(e) 관련 최초 등록 전 교육 및 **최소 격년** 교육, **MassHealth provider 또는 ordering/referring 참여 또는 신청**에 관한 위증시 처벌 진술(attestation)이 각각 필요합니다. **CPA 서명, 시설 등록 또는 MCSR 신청 중인 상태**는 개인의 실제 현재 등록을 대체하지 않습니다. 이 등록 요건은 Schedule VI를 처방하는 경우에도 확인해야 하며, retail Schedule II–V 처방 금지는 그대로 남습니다. 연방 DEA 번호가 필요한지 여부는 활동·Schedule별로 따로 판단하며, Schedule VI만 취급한다는 사실에 모든 연방 Schedule 등록을 요구한다고 바꾸지 않습니다.
+
+### 기록 보존과 discipline 통지
+
+[247 CMR 16.02(2)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)는 CDTM 필수 CE 증빙을 **현재 CPA date 후 최소 2년** 보존하도록 규정합니다. 일반 CE 증빙의 **최근 2개 full-calendar years** 보존 정책과 같은 문장이 아니므로 두 기준을 각각 충족합니다. 약사가 Board discipline을 받거나 practice restriction 대상이 되면 [16.02(3)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)에 따라 **각 supervising physician에게 written notice**를 제공해야 합니다. Board에 별도로 하는 reporting obligation을 대신하지 않습니다.
+
+**연습:** [MA-RW-0029 — 협약 두 건과 실제 CE 계산](../practice-expansion/?bank=rewrite#MA-RW-0029), [MA-RW-0030 — 개인 등록 미발급](../practice-expansion/?bank=rewrite#MA-RW-0030). [CDTM05–12 전체 연결표](cdtm05-12.html).
+
+**근거:** 247 CMR 16.02(1)(e)–(f),(2)–(3); Board Policy 2021-04 §§I, IV (2025-09-04 revision). 2026-10-30 특정 조항에 대한 작성자 검토이며 독립 전수감사가 아닙니다. 기존 CE 부족 시 Board 통지의 이메일/Form 자료 차이는 별도 OPEN으로 유지합니다.
 
 
 근거:
@@ -3618,11 +3633,29 @@ Board discipline 또는 practice restriction가 생기면 각 supervising physic
 
 ## CDTM가 가능한 practice settings
 
-Hospitals는 hospital medical staff executive committee 또는 designee, LTCF는 medical director 또는 designee, inpatient/outpatient hospice는 medical director 또는 designee의 승인 구조가 있다. Ambulatory-care clinic은 해당 medical staff/director 승인과, 조문이 요구하는 affiliated attending physician 및 authorized pharmacist의 on-site supervision을 구분한다. 
+### 장소를 먼저 결정한다 — 247 CMR 16.03
 
-Community/retail pharmacy는 별도의 제한이 더해진다. 모든 setting에 retail의 disease list·age·Schedule VI 제한을 자동으로 복제하지 않으며, 반대로 institution에서 허용되는 활동을 retail로 그대로 가져오지 않는다.
+CDTM을 허용하는 setting의 종류와 **해당 승인권자**가 정해져 있습니다. 약사 개인의 자격·서명된 CPA·시설의 승인·해당 환자에게 부여된 권한은 서로 다른 조건입니다.
 
-Setting approval, qualified individual, current signed CPA, 해당 환자의 authorization가 모두 필요하다. Pharmacy license 하나에 CDTM authority가 일반적으로 내장되어 있다고 보지 않는다.
+| Practice setting | 해당 CDTM setting의 승인 또는 감독 |
+|---|---|
+| **Hospital** | Hospital **medical staff executive committee 또는 designee** 승인 — 16.03(1) |
+| **Long-term care facility(LTCF)** | LTCF **medical director 또는 designee** 승인 — 16.03(2) |
+| **Inpatient / outpatient hospice** | Hospice **medical director 또는 designee** 승인 — 16.03(3) |
+| **Ambulatory care clinic** | Clinic medical staff executive committee/designee **또는 medical director/designee** 승인, **해당 clinic의 attending physician과 authorized pharmacist의 on-site supervision** — 16.03(4) |
+| **Community/retail pharmacy** | 별도 **현재 CPA** 및 16.03(5)의 성인·환자별 referral/consent·limited prescribing restrictions |
+
+병원 협업팀이 **별도 licensed LTCF**에서 같은 약물군을 관리한다고 가정합니다. 기존 hospital medical staff 승인만으로는 LTCF에서 요구하는 **그 시설의 medical director/designee** 승인을 대체할 수 없습니다. 해당 시설을 독립적으로 확인합니다.
+
+### Retail 규정과 기관 규정은 서로 교환할 수 없다
+
+Retail CDTM에서는 **환자 18세 이상**, physician written referral, 진단 지정, consent 및 prescribing limitation이 추가됩니다[16.03(5)(a)–(e)]. 병원에서 수행할 수 있는 활동이 retail pharmacy에 그대로 허용되는 것이 아닙니다. 반대로 retail의 환자 연령·Schedule restriction 전체를 기관 내 CDTM의 보편적 규칙으로 단정하지 않습니다. 기관별 다른 법률·정책 조건도 추가로 적용될 수 있습니다.
+
+**판단 순서:** 어느 licensed setting인가 → 승인한 authority는 누구인가 → 해당 pharmacist의 16.02 qualification은 갖췄는가 → 서명된 current CPA가 있는가 → individual patient authorization 및 setting restriction을 충족하는가.
+
+**연습:** [MA-RW-0031 — Hospital에서 별도 LTCF로 이동](../practice-expansion/?bank=rewrite#MA-RW-0031), [CDTM07 원본·개정판 연결](cdtm05-12.html#cdtm07).
+
+**근거:** [247 CMR 16.03(1)–(5)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download); 16.02(1); 16.04(1). 2026-10-30 특정 setting 조항에 대한 작성자 검토, 독립감사 아님.
 
 
 근거:
@@ -3632,13 +3665,31 @@ Setting approval, qualified individual, current signed CPA, 해당 환자의 aut
 
 ## Retail CDTM의 patient referral와 consent
 
-Retail patient는 18세 이상이어야 한다. Supervising physician이 특정 환자를 written referral하고 primary diagnosis 및 secondary diagnoses를 지정하며, 환자에게 referral copy를 제공한다. 약사가 스스로 새로운 진단을 붙여 referral를 대체하는 경로가 아니다. 
+### Retail CDTM에서 환자별로 요구되는 문서
 
-Physician은 CDTM collaboration에 대한 patient written informed consent를 얻고 환자에게 copy를 제공한다. Pharmacist와 physician 모두 referral와 consent records를 유지한다. Original consent는 physician record에 두고, copy를 pharmacist에게 24시간 이내 전달한다. 
+Retail/community pharmacy의 일반 CDTM 경로는 [247 CMR 16.03(5)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)를 기준으로 확인합니다. **만 18세 이상** 환자에게 적용하며, supervising physician은 해당 환자를 **written referral**하고 primary diagnosis 및 관련 secondary diagnosis를 written referral 또는 subsequent referral에 특정해야 합니다. Pharmacist가 임의로 새로운 진단을 만들어 의사의 referral을 대체하지 않습니다.
 
-Consent copy를 보내는 24시간과 pharmacist가 새 prescription/change를 physician에게 보내는 24시간은 서로 다른 사건에서 시작한다. 같은 숫자라고 동일한 보고 의무로 합치지 않는다.
+1. **Physician → pharmacist:** 환자별 written referral, co-managed diagnoses 및 적절한 current CPA를 확인합니다[16.03(5)(c)1–3].
+2. **Physician → patient:** 협업에 대한 **written informed consent**를 받고 그 사본을 환자에게 제공합니다[16.03(5)(c)4].
+3. **Physician custody:** **원본 patient consent**는 supervising physician의 의료기록에 보관합니다[16.03(5)(d)1].
+4. **Physician → pharmacist, 24시간:** 환자 consent 사본을 **24시간 이내** 약사에게 전달합니다[16.03(5)(d)2].
+5. **Both professionals:** 환자 referral 및 consent에 관한 서면 기록을 각각 유지하며 환자에게 referral/consent 사본을 timely 제공하도록 합니다[16.03(5)(d) 및 16.04(6)].
 
-Minor contraception의 별도 pharmacist-prescribing 경로를 retail CDTM의 18세 제한과 혼동하지 않는다. 허용 연령은 직함이 아니라 실제로 이용하는 법적 경로에 따라 판단한다.
+| 구분 | 시작 사건 / 보낼 내용 | 송신 → 수신 | 기한 |
+|---|---|---|---|
+| **Consent-copy clock** | Physician가 확보한 patient consent **사본** | Physician → pharmacist | **24시간 이내** |
+| **Rx/action-copy clock** | Pharmacist가 발행한 initial prescription 또는 modification/discontinuation **사본** | Pharmacist → supervising physician | **Issuance 후 24시간 이내**, 긴급 시 더 빨리 |
+
+두 의무가 모두 24시간이더라도 **전송 방향·시작 사건·보관 목적이 다릅니다**. 전자기록도 적용 가능한 confidentiality, retrievability 조건을 확인합니다.
+
+### 사례로 비교
+
+- **17세 11개월 환자:** 보호자와 환자 모두 서명하더라도 retail CDTM의 18세 조건은 충족하지 못합니다. 필요한 치료 결정은 의사에게 연결합니다. 다른 법적으로 유효한 약사 처방·일반 조제 경로까지 금지하는 결론은 아닙니다.
+- **Physician이 원본 consent를 약국에 보내고 chart에 단순 메모만 보존:** 의사가 원본을 유지하고 약사는 사본을 보관하도록 절차를 정정합니다. 환자에게 사본이 있다고 해서 의사·약사의 독립 보존 의무가 사라지지 않습니다.
+
+**연습:** [MA-RW-0032 — 미성년자 referral](../practice-expansion/?bank=rewrite#MA-RW-0032), [MA-RW-0033 — 원본·사본 custody](../practice-expansion/?bank=rewrite#MA-RW-0033), [CDTM08–09 전체 문제](cdtm05-12.html#cdtm08).
+
+**근거:** [247 CMR 16.03(5)(a),(c)–(d); 16.04(1),(6)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download) 및 [243 CMR 2.12](https://www.mass.gov/doc/243-cmr-2-licensing-and-the-practice-of-medicine-0/download). 해당 조건의 작성자 검토(2026-10-30); 독립 법규감사 아님.
 
 
 근거:
@@ -3648,21 +3699,31 @@ Minor contraception의 별도 pharmacist-prescribing 경로를 retail CDTM의 18
 
 ## Retail CDTM의 prescribing 범위
 
-### Therapy extension
+### Retail에서 허용된 therapy extension — 16.03(5)(e)1.a
 
-Supervising physician의 authorization와 individually developed guidelines를 포함한 CPA 아래 current therapy를 30일 연장할 수 있으며, 기본적으로 두 번의 30일 기간을 넘기지 않는다. 단, physician이 referral와 CPA에 구체적으로 다른 범위를 허용한 경우의 조문상 예외를 확인한다. 이는 모든 약에 대한 일반 emergency-refill 권한이 아니다. 
+현재 MCSR 등 필요한 개인 자격을 갖춘 authorized pharmacist가 **supervising physician의 권한 부여와 individually developed CPA prescribing guidelines** 아래에서 기존 치료를 연장할 수 있습니다. 기본은 **30일씩 최대 두 차례**입니다. 그 이상은 **해당 환자의 physician referral에서 구체적으로 승인**되고 **CDTM agreement에도 명시**된 예외가 필요합니다. 예약이 밀렸거나 7일만 추가한다는 사실, 단순 CPA 갱신만으로 제3회 연장 권한이 생기지 않습니다.
 
-### 지정 질환의 therapy management
+### Retail 질환 목록, 환자별 진단 및 실제 agreement 범위 — 16.03(5)(e)1.b
 
-Retail의 해당 prescribing 경로는 asthma, COPD, diabetes, hypertension, hyperlipidemia, congestive heart failure, HIV/AIDS, osteoporosis 및 physician referral에 지정한 해당 comorbidities를 다룬다. CPA와 physician-prescribed therapy의 범위에서 initiation, dosage modification 또는 discontinuation를 수행한다. 
+Retail 조항에 열거된 질환: asthma, COPD, diabetes, hypertension, hyperlipidemia, CHF, HIV/AIDS, osteoporosis, 그리고 supervising physician이 환자별 referral의 primary diagnosis와 함께 특정한 해당 co-morbidities. 이 목록은 **어떤 환자에게나 모든 약을 독립적으로 시작해도 된다는 허가**가 아닙니다.
 
-이 list의 'HIV/AIDS'가 일반 약사에게 모든 HIV 치료약을 독립적으로 처방하게 하는 것은 아니다. Retail CDTM patient-specific referral 경로와 2026 HIV-prevention statutory path는 별개이다.
+| 사례 | 적용 판단 |
+|---|---|
+| CPA의 질환 목록에는 hypertension과 diabetes가 있지만 환자 referral은 diabetes만 지정 | 환자의 hypertension 치료를 독립 시작하지 않고 physician의 진단·적절한 referral을 확인 |
+| 환자 스스로 높은 혈압을 보고 | 임상 정보로 평가·연결하되 physician의 referral에 있는 진단으로 임의 대체하지 않음 |
+| HIV/AIDS가 CDTM 질환 목록에 있음 | 모든 pharmacist에게 독립 HIV 약물 처방권이 주어진 것은 아님. 다른 statutory HIV-prevention authority와 구분 |
 
-### Drug schedules
+### Schedule II–V의 **prescribing** 금지와 Schedule VI
 
-Retail/community pharmacist는 CPA가 있어도 Schedule II–V controlled substances를 prescribe할 수 없다. Physician이 계약서에 허용한다고 적어서 이 제한을 없애지 않는다. 적격한 Schedule VI therapy를 해당 referral diagnosis와 CPA의 범위에서 관리한다. 
+[16.03(5)(e)3](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)는 community/retail pharmacy의 authorized pharmacist가 CPA로 **Schedule II–V controlled substances를 prescribe하거나 처방권한을 부여받는 것**을 금지합니다. Physician이 CPA에 서명했다고 Schedule III testosterone을 새로 처방할 수 있는 것이 아닙니다. [16.03(5)(e)4](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)는 **해당 physician referral의 diagnoses에 한하여** Schedule VI 처방을 허용할 수 있도록 합니다.
 
-Gabapentin은 Massachusetts VI이면서 PMP-reportable이라는 점을 함께 기억한다. Schedule VI라는 이유로 모든 추가 reporting·ID·관련 clinical precautions가 사라지는 것은 아니다.
+그러나 금지의 동사는 **prescribe**입니다. 이미 의사가 적법하게 발행한 **Schedule III prescription을 약사가 일반 요건에 따라 dispense**하는 행위까지 금지한다고 해석하지 않습니다. 그 별도 조제 요건은 [M.G.L. c.94C §17](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section17) 및 관련 규정을 따릅니다.
+
+Massachusetts의 **gabapentin은 Schedule VI이지만 PMP reporting 대상**입니다. [MA PMP 공식 안내](https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission)는 Schedule II–V와 gabapentin dispensing data를 요구합니다. 'Schedule VI = PMP 등 모든 추가 규정 면제'는 틀립니다.
+
+**연습:** [MA-RW-0034 — 세 번째 치료 연장](../practice-expansion/?bank=rewrite#MA-RW-0034), [MA-RW-0035 — 환자별 미의뢰 질환](../practice-expansion/?bank=rewrite#MA-RW-0035), [MA-RW-0036 — Schedule III 처방 vs 조제](../practice-expansion/?bank=rewrite#MA-RW-0036), [CDTM10–12 연결](cdtm05-12.html#cdtm10).
+
+**근거:** [247 CMR 16.03(5)(c),(e)1–4](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download); M.G.L. c.94C §17; MA PMP 자료. 2026-10-30 특정 주장에 대한 작성자 검토; 독립 전수감사 아님.
 
 
 근거:
@@ -3672,11 +3733,33 @@ Gabapentin은 Massachusetts VI이면서 PMP-reportable이라는 점을 함께 �
 
 ## CDTM documentation와 physician communication
 
-Pharmacist는 initial prescription 또는 modification/discontinuation copy를 issuance 후 24시간 이내 supervising physician에게 제공하며, urgent circumstance이면 더 빨리 알린다. 해당 action을 patient medical record에 기록하고 physician record에도 prescription copies가 포함되도록 한다. 
+### 환자 관리의 action 후 통지 — 247 CMR 16.03(5)(e)2
 
-CPA에는 test results와 other patient information를 언제 어떤 방식으로 전달할지, urgent communication를 어떻게 구분할지, pharmacist나 physician이 부재하면 어떻게 continuity를 유지할지가 상세히 들어가야 한다. '의사에게 필요하면 연락'이라는 모호한 문장만으로 모든 required agreement terms를 대신하지 않는다.
+Authorized pharmacist가 retail CDTM 아래 **initial prescription 발행 또는 prescription modification/discontinuation**을 수행했다면 **발행(issuance) 후 24시간 이내** supervising physician에게 해당 처방·변경·중단의 사본을 전달합니다. **더 긴급한 통지가 필요한 상황**에서는 24시간을 기다리지 않고 더 빨리 통지해야 합니다. 약사의 조치는 **patient medical record**에 기록하고 physician custody의 환자 의료기록에 관련 처방 사본이 포함되도록 합니다.
 
-Monitoring·lab/test-related 활동은 CPA·해당 profession law가 허용한 범위에서 수행한다. Drug therapy를 관리할 수 있다는 사실이 모든 독립적인 diagnosis 또는 임의의 laboratory business를 허용한다는 의미가 아니다. Test 결과를 근거로 action를 취할 때 physician와의 communication·record 규칙을 연결한다.
+이 시계는 **consent 사본을 physician이 pharmacist에게 보내는 별도의 24시간**[16.03(5)(d)2]과 혼동하면 안 됩니다.
+
+### CPA에 써야 하는 전달·감독 절차 — 16.04(2)
+
+모든 practice setting에 적용되는 written signed CPA는 관련 disease state(s)와 primary/co-morbid 구분, pharmacist prescribing authority, 세부 practice protocols, risk management, 환자 기록 내 치료 변경 문서화, outcome measurements, 적합한 informed consent 절차와 함께 다음을 다루어야 합니다.
+
+- Test results와 initial Rx/변경/중단, consent, CPA 및 기타 patient information의 **전달 방식과 기한**
+- **Urgent communication을 식별하고 즉시 전달하는 구체적 절차**
+- Supervising physician에 의한 감독 형태
+- Pharmacist 또는 physician이 **부재**할 때의 연속 진료 절차
+- 계약에 참여하는 양측 자격에 대한 해당 attestation
+
+약사는 CPA에 해당 환자의 범위와 구체적 delegation 규칙을 명시해야 하며, pharmacist-only professional judgment를 technician에게 임의로 부여할 수는 없습니다[16.04(3), 247 CMR 8].
+
+### CPA 갱신, 종료와 기록
+
+[16.04(4)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download)에 따라 authorized pharmacist와 supervising physician은 **적어도 2년마다 CPA를 review·renew**합니다. 종료 또는 갱신 거절 전에는 환자의 drug therapy가 중단 없이 이어지도록 조치하고, 종료 시 **환자에게 서면으로 종료·후속치료 절차를 알립니다**[16.04(5)]. 약사의 primary practice setting에는 **현재 CPA 및 현재 patient referral·consent 사본**이 Board 요청 시 조회 가능해야 합니다. 원본은 physician custody에 둡니다[16.04(6)].
+
+**사례:** 월말에만 Rx 변경 목록을 묶어 보내겠다는 절차는 issuance 후 24시간 전달 조건을 대체하지 못합니다. 긴급한 안전성 문제가 있으면 평상시 최대 시한보다 빠르게 연락해야 합니다.
+
+**연습:** [MA-EXP-0258 — 별도 시계](../practice-expansion/#MA-EXP-0258), [MA-RW-0033 — 서류 보관](../practice-expansion/?bank=rewrite#MA-RW-0033), [CDTM09 연결 복습](cdtm05-12.html#cdtm09).
+
+**근거:** [247 CMR 16.03(5)(d)2,(e)2; 16.04(2)–(6)](https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download). 2026-10-30 특정 조항에 대한 작성자 검토, 독립 전수감사 아님.
 
 
 근거:
