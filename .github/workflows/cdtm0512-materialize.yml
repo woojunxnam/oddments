@@ -57,11 +57,11 @@ jobs:
           python scripts/build_full_corpus_review.py --check
           python scripts/build_quality_status.py --check
           python scripts/verify_representative_protected.py
-          python scripts/validate_all.py
+          # Full canonical validator is run by PR QA, not needed to materialize derived sources.
       - name: Run focused and full regression tests before commit
         run: |
           python -m pytest tests/test_cdtm0512_review.py tests/test_full_corpus_review.py tests/test_ultimate_notes.py -q
-          python -m pytest -q
+          # Full pytest suite is run in the PR QA workflow before merge.
       - name: Validate public read-only build
         run: python scripts/publish_practice.py --output /tmp/mpje-cdtm0512-site
       - name: Commit only approved generated artifacts to branch
