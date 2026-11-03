@@ -22,8 +22,11 @@ Root는 현재 저자 census와 ledger, 활성화 원본을 먼저 커밋한다.
 Ledger raw SHA도 배정 당시 provenance로 남긴다. 다른 단원의 새 census 등록이나
 관련 없는 ledger annotation은 선택 단원의 binding이 그대로면 진행 중 배정을
 무효화하지 않는다. 선택 단원의 body/census/claim/ledger binding 변경은 거부한다.
-저자 수정을 독립 감사 결과에 자동 승계하지 않는다. 이 경우 root가 변경의
-범위와 필요한 새 배정을 별도로 검토하며, 도구는 해시를 자동 갱신하지 않는다.
+저자 수정을 독립 감사 결과에 자동 승계하지 않는다. 본문이 그대로이고 통합된
+독립 감사에서 발견한 census 누락만 보완할 때는
+[append-only 재감사 절차](NOTES_CENSUS_REASSESSMENT.md)를 따른다.
+원래 해시·보고서는 보존하고 해당 절의 현재 credit를 즉시 PENDING/HOLD로 내린다.
+본문 변경과 기존 법규 보류 해소는 그 경로에서도 허용하지 않는다.
 
 H/I/J/M의 기존 current-body content KEEP는 별도 통계다. 기존 7개 KEEP를
 이번 독립 완전성 감사 완료로 세지 않는다. 새 큐의 완료 수는 0에서 시작한다.
