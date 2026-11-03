@@ -93,7 +93,7 @@ def test_corpus_counts_do_not_inflate_canonical_or_learner_progress():
     assert progress['reviewed_claims']>=62
     assert progress['source_checked_claims']>=58
     assert progress['open_claims']==4
-    assert progress['notes_units_with_complete_atomic_claim_census']==0
+    assert progress['notes_units_with_complete_atomic_claim_census']>=12
     assert progress['canonical_inventory']==439
     assert progress['canonical_reaudits_this_session']==0
     assert progress['canonical_independent_audit_this_session']=='NOT_RUN'

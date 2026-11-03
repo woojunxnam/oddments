@@ -15,6 +15,9 @@ REVIEW_FILES = (
     'cdtm05-12-author-review.json', 'cdtm-vax-author-review.json',
     'vax05-14-author-review.json',
     'vax15-pub04-author-review.json',
+    'pub05-09-author-review.json', 'pub10-14-author-review.json',
+    'wave2-1-author-review.json', 'wave2-2-author-review.json',
+    'wave2-3-author-review.json', 'wave2-4-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -134,6 +137,44 @@ def validate_authored_record(question, authored, source, root=ROOT):
         raise ValueError('Unexpected authored notes revision: ' + qid)
 
 
+def validate_note_census(census, effective, by_id, root=ROOT):
+    """Enumeration is author evidence, not independent legal certification."""
+    claims = census['claims']
+    if len({c['claim_id'] for c in claims}) != len(claims):
+        raise ValueError('Duplicate census claim')
+    for source in census['sources'].values():
+        if not source['official_url'].startswith('https://'):
+            raise ValueError('Non-HTTPS census source')
+        if hashlib.sha256((root/source['source_evidence']).read_bytes()).hexdigest() != source['source_evidence_sha256']:
+            raise ValueError('Stale census evidence')
+    units = {}
+    for unit in census['units']:
+        uid = unit['unit_id']
+        if uid in units or uid not in effective:
+            raise ValueError('Duplicate or unknown census unit')
+        if unit['unit_content_sha256'] != hashlib.sha256(effective[uid]['body'].encode()).hexdigest():
+            raise ValueError('Stale census unit: ' + uid)
+        entries = [c for c in claims if c['unit_id'] == uid]
+        if len(entries) != unit['claim_count'] or not entries or not unit['body_read_completely']:
+            raise ValueError('Incomplete census enumeration: ' + uid)
+        for claim in entries:
+            if claim['unit_content_sha256'] != unit['unit_content_sha256']:
+                raise ValueError('Stale atomic claim')
+            if claim['review_status'] not in {'AUTHOR_SOURCE_CHECKED', 'SOURCE_BLOCKED'}:
+                raise ValueError('Unsupported census status')
+            if (not claim['statement_ko'] or (claim['review_status'] == 'AUTHOR_SOURCE_CHECKED' and
+                    (not claim['authority_clauses'] or claim['source_id'] not in census['sources']))):
+                raise ValueError('Unattributed atomic claim')
+            if not set(claim['related_question_ids']) <= set(by_id):
+                raise ValueError('Unknown related question')
+            if claim['review_status'] == 'SOURCE_BLOCKED' and not claim['blocker']:
+                raise ValueError('Missing claim blocker')
+        units[uid] = unit
+    if not {c['unit_id'] for c in claims} <= set(units):
+        raise ValueError('Orphan census claim')
+    return units
+
+
 def build():
     config = read('site/practice-expansion/publication.json')
     paths = ['practice_expansion/2026-10-23/candidates/questions.json'] + [a['path'] for a in config['additional_banks']]
@@ -236,6 +277,17 @@ def build():
             )
             row['publication_status'] = ('PRACTICE_CONFIG_DEFAULT' if qid in selection['recommended_ids'] else 'PRACTICE_CONFIG_ARCHIVE')
             result.append(row)
+    independent = read('reports/full-corpus-review/pub05-14-independent-review.json')
+    independent_records = independent['records']
+    if not independent['independent_of_authors'] or len({r['question_id'] for r in independent_records}) != len(independent_records):
+        raise ValueError('Invalid independent legacy provenance')
+    public_by_id = {q['question_id']: q for q in all_questions}
+    for audit_row in independent_records:
+        if audit_row['record_sha256'] != record_hash(public_by_id[audit_row['question_id']]):
+            raise ValueError('Stale independent legacy review')
+    for source in independent['sources']:
+        if hashlib.sha256((ROOT/source['evidence_path']).read_bytes()).hexdigest() != source['evidence_sha256']:
+            raise ValueError('Stale independent source evidence')
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
     assert set(baseline['question_record_hashes']) <= set(ids)
@@ -253,6 +305,8 @@ def build():
     effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
     for claim in claims:
         validate_claim(claim, effective, ROOT)
+    census = read('reports/full-corpus-review/pub05-14-note-census.json')
+    census_units = validate_note_census(census, effective, by_id)
     reviewed_units = {c['unit_id'] for c in claims}
     open_units = {c['unit_id'] for c in claims if c['review_status'] == 'HOLD_FOR_LEGAL_REVIEW'}
     units = [dict(unit_id=u['id'], chapter_id=c['id'], baseline_body_sha256=u['body_sha256'],
@@ -261,7 +315,9 @@ def build():
                   inventory_status='INVENTORIED_NOT_CLAIM_CENSUS',
                   reviewed_claim_ids=[x['claim_id'] for x in claims if x['unit_id'] == u['id']],
                   legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id'] in open_units else ('PARTIAL_AUTHOR_REVIEW_NOT_CENSUS' if u['id'] in reviewed_units else 'UNREVIEWED'),
-                  atomic_claim_census_complete=False) for c in notes['chapters'] for u in c['units']]
+                  atomic_claim_census_complete=u['id'] in census_units,
+                  atomic_claim_census_status=census_units.get(u['id'], {}).get('census_status', 'NOT_ENUMERATED'),
+                  atomic_claim_ids=[x['claim_id'] for x in census['claims'] if x['unit_id'] == u['id']]) for c in notes['chapters'] for u in c['units']]
     canonical = []
     for path in sorted((ROOT/'data/questions').glob('*.json')):
         q = json.loads(path.read_text())
@@ -285,10 +341,17 @@ def build():
                     editorial_rubric_assessed_ids=sum(r['editorial_quality_assessment'] is not None for r in result),
                     editorial_rubric_is_release_certificate=False,
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
+                    independent_legacy_legal_assessed=len(independent_records),
+                    independent_legacy_realism_pass=sum(r['release_eligible'] for r in independent_records),
+                    independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
                     notes_units_with_partial_claim_review=len(reviewed_units),
                     notes_units_with_versioned_edits=sum(u['editorial_update_status']=='VERSIONED_REVISION_APPLIED' for u in units),
-                    notes_units_with_complete_atomic_claim_census=0,
+                    notes_units_with_complete_atomic_claim_census=len(census_units),
+                    atomic_claim_census_basis='AUTHOR_ENUMERATION_NOT_INDEPENDENT_COMPLETENESS_OR_LEGAL_PASS',
+                    atomic_claims_enumerated=len(census['claims']),
+                    atomic_claims_source_checked=sum(c['review_status']=='AUTHOR_SOURCE_CHECKED' for c in census['claims']),
+                    atomic_claims_source_blocked=sum(c['review_status']=='SOURCE_BLOCKED' for c in census['claims']),
                     reviewed_claims=len(claims), source_checked_claims=sum(x['review_status']=='AUTHOR_SOURCE_CHECKED' for x in claims),
                     open_claims=sum(x['review_status']=='HOLD_FOR_LEGAL_REVIEW' for x in claims), atomic_claim_census_complete=False,
                     inventory_is_legal_review=False,

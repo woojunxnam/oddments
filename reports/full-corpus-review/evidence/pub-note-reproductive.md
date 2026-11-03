@@ -1,0 +1,28 @@
+Retrieved 2026-11-03 from https://www.mass.gov/doc/2023-05-access-to-reproductive-health-medications/download
+
+# The Commonwealth of Massachusetts
+
+Executive Office of Health and Human Services Department of Public Health 250 Washington Street, Boston, MA 02108-4619
+
+**MAURA T. HEALEY KATHLEEN E. WALSH** **GovernorThe Board of Registration in PharmacySecretary** **KIMBERLEY DRISCOLL** **Lieutenant Governor MARGRET R. COOKE** **Policy 2023-05: Access to Reproductive Commissioner** **Health MedicationsTel: 617-624-6000 www.mass.gov/dph**
+
+The Department of Public Health (“DPH”), Bureau of Health Professions Licensure (“BHPL”), and Board of Registration in Pharmacy (“BORP”) are concerned about the stance being taken by some pharmacies across the country regarding access to reproductive health medications, specifically family planning medications including mifepristone (Mifeprex<sup>®</sup>), misoprostol (Cytotec<sup>®</sup>), emergency contraception, and contraceptive prescriptions.
+
+247 CMR9.19(1)(f) requires all Massachusetts licensed pharmacies or pharmacy departments to maintain “the equipment, supplies, and medications necessary to conduct the practice of pharmacy in accordance with the usual needs of the community and scope of practice of the pharmacy.”
+
+DPH, BHPL, and BORP want to be clear that ***all family planning medications***, including mifepristone (Mifeprex<sup>®</sup>), misoprostol (Cytotec<sup>®</sup>), emergency contraception, and contraceptive prescriptions are considered necessary to meet the usual needs of each and every community across the Commonwealth.
+
+## Therefore, all pharmacies located in Massachusetts and licensed by the Board
+
+**must maintain a continuous, sufficient supply of all family planning medications, including mifepristone (Mifeprex<sup>®</sup>), misoprostol (Cytotec<sup>®</sup>), emergency**
+
+## contraception, and contraceptive prescriptions to meet the needs of the community.
+
+In the event that any family planning medication is not immediately available for dispensing pursuant to a valid prescription and/or order, it is the responsibility of the licensed pharmacy and/or licensed pharmacist to ensure access to such family planning medication by the patient in a timely manner either by: refilling the pharmacy’s stock supply; contacting the prescriber for a reasonable alternative medication; transferring the prescription to another pharmacy where such medication is readily available for dispensing; or some other manner (i.e.; mail order, central fill, etc.).
+
+Any licensed pharmacy and/or pharmacist that refuses to stock, dispense, and/or fill any valid prescription and/or order for family planning medications, or impedes access in any way to any such medications, will be in violation of 247 CMR 9.19(1)(f) and practice standards. Any such violations will be investigated fully by BORP.
+
+## Please direct any questions to: <u>Pharmacy.Admin@mass.gov</u>
+
+Effective date: 3/22/23
+

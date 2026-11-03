@@ -1,0 +1,428 @@
+{
+  "schema_version": "independent-note-final-text-review/1",
+  "review_date": "2026-11-03",
+  "reviewer_provenance": {
+    "auditor": "GPT",
+    "auditor_instance": "/root/review_a",
+    "role": "INDEPENDENT_REVIEWER_OF_NOTES_CANDIDATE_ONLY",
+    "independent_for_this_artifact": true,
+    "prior_work_disclosure": "이 agent는 PUB05–09와 MA-CASE0001–0040 question author-review reports를 작성했으나 대상 note candidate, 두 unit body, cards 또는 census를 작성·수정하지 않았다. 같은 session을 새 instance 이름으로 나누지 않았다.",
+    "independence_boundary": "이번 검토는 별도 agent가 작성한 candidate의 최종 bytes를 평가한다. canonical question audit 또는 외부 human certification을 주장하지 않는다.",
+    "source_method": "공식5 URL을 fresh HTTPS로 다시 조회하고 직접 원문 대조. author evidence를 독립조회로 재명명하지 않았다."
+  },
+  "candidate_revision": "revisions/notes/candidates/2026-11-03-pub-counsel-shield.json",
+  "candidate_revision_sha256": "69a69eb6906fed2288861e2bee8ce3e1ef213fadc88d4d44b9f97073581fde6a",
+  "candidate_census": "reports/full-corpus-review/pub-counsel-shield-candidate-census.json",
+  "candidate_census_sha256": "b99d21d1624fd1a346b69e8832aea267bf1e127358220b6fe3fdcdf32403ed8b",
+  "represented_repository_head": "9b6aaf9ce8961200f0b8bf29334ddcb43c6dd9b0",
+  "overall_verdict": "HOLD",
+  "targeted_corrections_verdict": "KEEP_WITH_SCOPE_AS_RECORDED_PER_FINDING",
+  "units": [
+    {
+      "unit_id": "w3-b-1",
+      "candidate_body_sha256": "af8bc7eecaec159ca52a7c777b3f151e3c98d672f2ca5e348802d21a7eed4be0",
+      "candidate_section_sha256": "dc77bf99e5c0bb360ae90c44ad350bfaf0b491dda054b8fa4ff5bdccd7c9e1cd",
+      "verdict": "HOLD",
+      "blocking_finding_ids": [
+        "NCS-01",
+        "NCS-04"
+      ]
+    },
+    {
+      "unit_id": "w3-d-23",
+      "candidate_body_sha256": "f54989f73e0dcf2b74466f5083a9dec7d5336c4c00deb72458af3350499c1f6d",
+      "candidate_section_sha256": "0f9af38fa1eee511ab5d6b4368584bdf3b435682ac8cd54c29845e267c271916",
+      "verdict": "HOLD",
+      "blocking_finding_ids": [
+        "NCS-09",
+        "NCS-10"
+      ]
+    }
+  ],
+  "card_results": [
+    {
+      "target": "study_lessons.LAW-041.why",
+      "text_sha256": "9ec00349406c4f8f1c77e5671ae04bc36af709d31853af605940997b037cb8b0",
+      "text": "Leaflet·서명만으로 실제 상담을 대체하지 않습니다. 247 CMR9.18은 refusal 기록의 별도 의무·보존기간을 명시하지 않으므로 사실 기록의 실무 권고와 법정 의무를 구별합니다.",
+      "verdict": "KEEP",
+      "finding_ko": "refusal 기록과 보존기간이 9.18에 명시되지 않았다는 제한된 교정은 새로 조회한 전체 규정과 일치한다. 제안하지 않은 거부 허위입력을 금지하는 내용은9.01(9)에 부합한다. 이 좁은 card 교정의 KEEP은 전체 note unit HOLD를 해제하지 않는다.",
+      "finding_refs": [
+        "NCS-02",
+        "NCS-03"
+      ],
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.18(1)–(10);9.01(9)",
+          "reviewed_excerpt": "Full counseling text and fraudulent/deceptive act prohibition independently read"
+        }
+      ]
+    },
+    {
+      "target": "refresh_cards.RF-034.watch",
+      "text_sha256": "58662424825a83f914f69ffd0b1a728feb3858a995aca62eecf1c894592c1565",
+      "text": "247 CMR9.18은 refusal 기록의 별도 의무·보존기간을 명시하지 않습니다. 사실 기록은 좋은 실무이며, 제안하지 않은 상담을 거부로 허위 입력하지 않습니다.",
+      "verdict": "KEEP",
+      "finding_ko": "refusal 기록과 보존기간이 9.18에 명시되지 않았다는 제한된 교정은 새로 조회한 전체 규정과 일치한다. 제안하지 않은 거부 허위입력을 금지하는 내용은9.01(9)에 부합한다. 이 좁은 card 교정의 KEEP은 전체 note unit HOLD를 해제하지 않는다.",
+      "finding_refs": [
+        "NCS-02",
+        "NCS-03"
+      ],
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.18(1)–(10);9.01(9)",
+          "reviewed_excerpt": "Full counseling text and fraudulent/deceptive act prohibition independently read"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "label-law": {
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+      "retrieved_at": "2026-11-03",
+      "http_status": 200,
+      "raw_sha256": "5bb9b8ca5c7c1dc85306516bd6a09f51d53b1d2bf6300c432a5b7dc20abe4e2a",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/label-law.json",
+      "evidence_sha256": "9c667655f230d54db4afc9267ab3fa457ae34f3cfe681ac282ce3ecff51d7922",
+      "reviewer_retrieved_independently": true,
+      "document_date_or_effective_date": "Current consolidated webpage retrieved2026-11-03; does not show enacted§7 label amendment"
+    },
+    "access-policy": {
+      "official_url": "https://www.mass.gov/doc/2023-05-access-to-reproductive-health-medications/download",
+      "retrieved_at": "2026-11-03",
+      "http_status": 200,
+      "raw_sha256": "cb2bd305242b1d0a89a7878dc7922a864377c61914d65043077fd17c1547763a",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/access-policy.json",
+      "evidence_sha256": "33cf1339e64f0372b25e20848c97a957d7114bd9b35bcdbfec1cff7b3a507ff1",
+      "reviewer_retrieved_independently": true,
+      "document_date_or_effective_date": "Explicit effective date2023-03-22"
+    },
+    "practice": {
+      "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "retrieved_at": "2026-11-03",
+      "http_status": 200,
+      "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+      "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+      "reviewer_retrieved_independently": true,
+      "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted"
+    },
+    "shield-guidance": {
+      "official_url": "https://www.mass.gov/news/enhanced-protections-for-health-care-providers-of-gender-affirming-and-reproductive-health-care",
+      "retrieved_at": "2026-11-03",
+      "http_status": 200,
+      "raw_sha256": "a276d3ad647e15a1f224fd6958439ef388cca3c030ae46257de9d5d7096b2424",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-guidance.json",
+      "evidence_sha256": "b75e857a9b42d5162f36fe0e8775358fb84a72078a4785d1f124750b5f61f0af",
+      "reviewer_retrieved_independently": true,
+      "document_date_or_effective_date": "Official BHPL web guidance dated2025-11-25"
+    },
+    "shield-act": {
+      "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+      "retrieved_at": "2026-11-03",
+      "http_status": 200,
+      "raw_sha256": "13a0816a3cb92e69de26c029047d96660167a6e5a843148956beb2ffeeafe03b",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-act.json",
+      "evidence_sha256": "b7dd8f54ad283387acf616a8152b8ea23ea7c1f3681e7194a6fc90bce22c5823",
+      "reviewer_retrieved_independently": true,
+      "document_date_or_effective_date": "Approved2025-08-07; §7 effective2026-01-01 expressly by§27"
+    }
+  },
+  "findings": [
+    {
+      "finding_id": "NCS-01",
+      "scope": "w3-b-1 paragraphs1–2",
+      "verdict": "HOLD",
+      "finding_ko": "9.18(1)–(5)에 따른 offer·designee training·counselor 범위·new/significant therapy 정보제공은 맞다. 그러나 본문은 모든 처방수령인에 적용되는 일반명제로 서술하며 같은 조항(10)의 inpatient exclusion을 빠뜨렸다. 단독 unit에서 지역약국/외래 적용범위를 밝혀야 한다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.18(1)–(5),(10)",
+          "reviewed_excerpt": "The provisions of 247 CMR 9.18 do not apply to pharmacists while practicing in an inpatient setting, unless otherwise required by law or regulation."
+        }
+      ],
+      "blocker": "Final body must explicitly limit its 9.18 counseling claims to applicable non-inpatient practice or state §9.18(10) exception."
+    },
+    {
+      "finding_id": "NCS-02",
+      "scope": "w3-b-1 refusal paragraph",
+      "verdict": "KEEP",
+      "finding_ko": "9.18(1)–(10) 전부를 새로 읽었다. refusal 기록의 별도 의무나 보존기간 문구는 없다. 후보는 좁게 이 조항에 한정하고 다른 기록법/SOP를 별도 확인하도록 하므로 적절하다. 이를 모든 법에 기록의무가 없다는 인증으로 해석하지 않는다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.18(1)–(10)",
+          "reviewed_excerpt": "Offer, designee training, counselor scope, new/significant therapy, information, consultation area/sign, availability, measuring device, and inpatient exception; no refusal-record or retention clause."
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-03",
+      "scope": "w3-b-1 false refusal record",
+      "verdict": "KEEP",
+      "finding_ko": "환자가 바빠 보인다는 사유로 실제 하지 않은 offer를 refused로 입력하지 말라는 내용은 9.01(9)의 허위·기만 금지에 맞는다. 사실 기록을 좋은 실무로 구분한 표현도 별도의 법정 보존기간을 발명하지 않는다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.01(9)",
+          "reviewed_excerpt": "A licensee may not engage in any fraudulent or deceptive act."
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-04",
+      "scope": "w3-b-1 intern supervision caveat / census claim004",
+      "verdict": "HOLD",
+      "finding_ko": "9.18(3)은 intern의 상담 수행을 허용한다. 후보는 별도 supervision 규정 확인을 요구하나 census claim004는 SOURCE_BLOCKED이고 구체 supervision 조항을 이번 소스에서 독립 대조하지 않았다. 상담허용 사실과 supervision 전체가 검증되었다는 주장을 분리해야 한다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.18(3)",
+          "reviewed_excerpt": "Counseling shall be made by a pharmacist or a pharmacy intern. A pharmacy technician or other individual may not counsel any patient."
+        }
+      ],
+      "blocker": "Census claim PUB-CANDIDATE-W3-B-1-004 remains blocked; exact personnel supervision authority not independently assessed."
+    },
+    {
+      "finding_id": "NCS-05",
+      "scope": "w3-d-23 practice-name label amendment",
+      "verdict": "KEEP",
+      "finding_ko": "시행된 session law §7은 §21 첫 단락을 교체하고 provider request 시 보호진료 처방약 label의 practitioner 이름 대신 prescribing practice 이름을 넣도록 한다. 단순 임의선택이 아니라 요청과 federal-law exception이 있는 경로라는 후보 표현이 적절하다.",
+      "authorities": [
+        {
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "13a0816a3cb92e69de26c029047d96660167a6e5a843148956beb2ffeeafe03b",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-act.json",
+          "evidence_sha256": "b7dd8f54ad283387acf616a8152b8ea23ea7c1f3681e7194a6fc90bce22c5823",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Approved2025-08-07; §7 effective2026-01-01 expressly by§27",
+          "exact_section": "Acts2025Ch16§7",
+          "reviewed_excerpt": "Except as required by federal law ... shall, at the request of the provider, include the name of the prescribing health care practice instead of the name of the prescribing practitioner."
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-06",
+      "scope": "w3-d-23 label effective date",
+      "verdict": "KEEP",
+      "finding_ko": "§27은 Section7 shall take effect on January1,2026이라고 명시한다. 2025-08-07 승인일이나 BHPL 게시일을 label 발효일로 대체하지 않은 후보는 맞다.",
+      "authorities": [
+        {
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "13a0816a3cb92e69de26c029047d96660167a6e5a843148956beb2ffeeafe03b",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-act.json",
+          "evidence_sha256": "b7dd8f54ad283387acf616a8152b8ea23ea7c1f3681e7194a6fc90bce22c5823",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Approved2025-08-07; §7 effective2026-01-01 expressly by§27",
+          "exact_section": "Acts2025Ch16§27",
+          "reviewed_excerpt": "Section 7 shall take effect on January 1, 2026."
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-07",
+      "scope": "w3-d-23 ScheduleVI/testosterone carveout",
+      "verdict": "KEEP",
+      "finding_ko": "BHPL Practical Updates는 ScheduleVI practice-name label 경로와 federally controlled testosterone 배제를 명시한다. 후보는 federal exception을 보존한다. BHPL 문구를 근거로 연방법상 ScheduleV 등 다른 제품의 모든 label 규칙을 인증하지는 않는다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/news/enhanced-protections-for-health-care-providers-of-gender-affirming-and-reproductive-health-care",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "a276d3ad647e15a1f224fd6958439ef388cca3c030ae46257de9d5d7096b2424",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-guidance.json",
+          "evidence_sha256": "b75e857a9b42d5162f36fe0e8775358fb84a72078a4785d1f124750b5f61f0af",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Official BHPL web guidance dated2025-11-25",
+          "exact_section": "Practical Updates to Enhance Protection — Prescription Labels",
+          "reviewed_excerpt": "The law allows Schedule VI medications ... This exception does not apply to federally controlled substances, such as testosterone."
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-08",
+      "scope": "w3-d-23 consolidated-law discrepancy",
+      "verdict": "KEEP",
+      "finding_ko": "이번 독립 조회에서도 GeneralLaws§21 첫 단락은 이름 예외 없는 이전 문구다. 따라서 개정 session law§7과 effective-date§27을 함께 읽도록 한 후보는 실제 차이를 정확히 드러낸다.",
+      "authorities": [
+        {
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "5bb9b8ca5c7c1dc85306516bd6a09f51d53b1d2bf6300c432a5b7dc20abe4e2a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/label-law.json",
+          "evidence_sha256": "9c667655f230d54db4afc9267ab3fa457ae34f3cfe681ac282ce3ecff51d7922",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Current consolidated webpage retrieved2026-11-03; does not show enacted§7 label amendment",
+          "exact_section": "MGLc94C§21 first paragraph",
+          "reviewed_excerpt": "the name of the prescribing practitioner"
+        },
+        {
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "13a0816a3cb92e69de26c029047d96660167a6e5a843148956beb2ffeeafe03b",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-act.json",
+          "evidence_sha256": "b7dd8f54ad283387acf616a8152b8ea23ea7c1f3681e7194a6fc90bce22c5823",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Approved2025-08-07; §7 effective2026-01-01 expressly by§27",
+          "exact_section": "Acts2025Ch16§7,§27",
+          "reviewed_excerpt": "the name of the prescribing practitioner except as otherwise provided in this section"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-09",
+      "scope": "w3-d-23 original prescription identity caveat",
+      "verdict": "HOLD",
+      "finding_ko": "label 예외를 원기록 삭제 허가로 확대하지 말라는 좁은 해석은 합리적이다. 9.16(1)은 원처방기록 보존을 요구하지만 실제 prescriber 식별필드의 상세 source를 별도 대조하지 않았고 후보·census도 이를 미완료로 명시한다. 이 세부 명제를 independently verified로 바꿀 근거는 아직 없다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.16(1),(5)–(7)",
+          "reviewed_excerpt": "maintain prescription records ... readily retrievable ... at least two years; print readable copies of electronic prescriptions"
+        }
+      ],
+      "blocker": "PUB-CANDIDATE-W3-D-23-014: exact original-prescription prescriber-identity rule and Shield amendment interaction remain unresolved."
+    },
+    {
+      "finding_id": "NCS-10",
+      "scope": "w3-d-23 protected-care generalization",
+      "verdict": "HOLD",
+      "finding_ko": "BHPL 안내는 lawful care 보호와 외부조사·licensing sanction 관계를 설명한다. 하지만 모든 prescribing/compounding/privacy requirement가 사라지지 않는다는 포괄 명제를 각 분야 법과 대조한 상태는 아니다. 후보가 검토 미완료를 명시한 점은 정직하지만 fully audited unit 승인은 할 수 없다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/news/enhanced-protections-for-health-care-providers-of-gender-affirming-and-reproductive-health-care",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "a276d3ad647e15a1f224fd6958439ef388cca3c030ae46257de9d5d7096b2424",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/shield-guidance.json",
+          "evidence_sha256": "b75e857a9b42d5162f36fe0e8775358fb84a72078a4785d1f124750b5f61f0af",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Official BHPL web guidance dated2025-11-25",
+          "exact_section": "Professional and Licensing Protections; protection from out-of-state legal actions",
+          "reviewed_excerpt": "care that is legal in Massachusetts, even if it is illegal elsewhere"
+        }
+      ],
+      "blocker": "PUB-CANDIDATE-W3-D-23-003: controlling prescribing/compounding/privacy exceptions and Shield-law interaction not independently reconciled."
+    },
+    {
+      "finding_id": "NCS-11",
+      "scope": "w3-d-23 family-planning stock and access",
+      "verdict": "KEEP",
+      "finding_ko": "2023-05는2023-03-22 시행을 명시하며 continuous sufficient supply와 유효처방/order의 약이 없을 때 timely access를 확보할 네 경로를 적시한다. 후보의 재고보충·prescriber 대체약 협의·다른 약국 이관·mail/central-fill은 그 범위와 일치한다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/2023-05-access-to-reproductive-health-medications/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "cb2bd305242b1d0a89a7878dc7922a864377c61914d65043077fd17c1547763a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/access-policy.json",
+          "evidence_sha256": "33cf1339e64f0372b25e20848c97a957d7114bd9b35bcdbfec1cff7b3a507ff1",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Explicit effective date2023-03-22",
+          "exact_section": "Policy2023-05 pp1–2; effective-date footer",
+          "reviewed_excerpt": "Effective date:3/22/23; continuous, sufficient supply ... timely manner either by refilling stock; contacting prescriber ... transferring ... mail order, central fill"
+        }
+      ],
+      "blocker": null
+    },
+    {
+      "finding_id": "NCS-12",
+      "scope": "w3-d-23 FDA REMS",
+      "verdict": "KEEP",
+      "finding_ko": "247CMR9.01(21)은 FDA-required REMS의 distribution/dispensing restriction을 포함한 모든 요소 준수를 요구한다. 후보가 state access와 함께 REMS를 언급한 것은 해당 조항에 부합한다.",
+      "authorities": [
+        {
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "retrieved_at": "2026-11-03",
+          "http_status": 200,
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-note-counsel-shield/practice.json",
+          "evidence_sha256": "5adf07a1383891ca7b7af12b1d4c80fdb17fc22018449711d0108d1e7f0c50e6",
+          "reviewer_retrieved_independently": true,
+          "document_date_or_effective_date": "Mass.Register1536 dated2024-12-06 visible in freshly extracted PDF; separate commencement date not asserted",
+          "exact_section": "247CMR9.01(21)",
+          "reviewed_excerpt": "A pharmacist shall comply with all elements of a drug's FDA required risk evaluation and mitigation strategy ... including any distribution or dispensing restriction"
+        }
+      ],
+      "blocker": null
+    }
+  ],
+  "unresolved_blockers": [
+    "w3-b-1 final body omits applicable 9.18(10) inpatient exception.",
+    "w3-b-1 intern supervision claim remains SOURCE_BLOCKED until exact personnel authority is reviewed.",
+    "w3-d-23 broad Shield/prescribing/compounding/privacy relationship and original-prescription identity field rules remain SOURCE_BLOCKED."
+  ],
+  "census_completeness_verdict": "NOT_CERTIFIED",
+  "completion_scope_ko": "최종 note body2개와 제안 card2개를 읽고 중요 법적 교정을 독립 대조했다. 최종 census를 atomic completeness PASS로 인증하지 않으며 306unit 완료 진행률을 증가시키는 증거가 아니다.",
+  "release_effect": "NO_CANONICAL_QUESTION_RELEASE_OR_NOTE_PROMOTION_AUTHORIZED_BY_THIS_REPORT",
+  "candidate_mutated_by_reviewer": false,
+  "validation": {
+    "candidate_and_body_hashes": "PASS",
+    "fresh_official_sources": 5,
+    "pdf_visual_inspection": "NOT_RUN",
+    "full_pytest": "NOT_RUN",
+    "deployment": "NOT_RUN"
+  }
+}

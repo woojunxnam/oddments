@@ -1,0 +1,57 @@
+# The Commonwealth of Massachusetts
+
+Executive Office of Health and Human Services Department of Public Health Bureau of Health Professions Licensure 250 Washington Street, Boston, MA 02108-4619
+
+Tel: 617-973-0960 <u>www.mass.gov/dph/boards</u>
+
+## The Board of Registration in Pharmacy
+
+## Policy 2024-01: Naloxone Dispensing
+
+Although several naloxone products are now available over-the-counter, <u>M.G.L. c. 94C,</u> <u>§ 19B</u> provides for a statewide standing order that continues to allow any person to purchase it using their prescription insurance. Massachusetts state law specifically allows an individual to obtain naloxone with the intention of administering it to another person.
+
+Pharmacists and other pharmacy licensees may administer naloxone to someone appearing to be experiencing an opioid-related overdose and will not be subject to criminal or civil liability or any professional disciplinary action in accordance with <u>state</u> <u>law</u>.
+
+Since all areas of Massachusetts experience high incidences of opioid-related overdoses or deaths, Massachusetts pharmacies are required to stock naloxone in accordance with <u>M.G.L. c. 94C, § 19C</u>. Pharmacies must maintain a continuous, sufficient supply of naloxone to meet the needs of the community.
+
+Additionally, as required by <u>M.G.L. c. 94C, § 19B</u>, each Massachusetts pharmacy must report the number of naloxone doses dispensed. See section II for details.
+
+A copy of the standing order can be found here: <u>[https://www.mass.gov/service-details/getting-naloxone-from-a-pharmacy](https://www.mass.gov/service-details/getting-naloxone-from-a-pharmacy)</u>
+
+## I. General Naloxone Dispensing
+
+A. Naloxone rescue kits must be labeled with the expiration date of the included naloxone unit(s).
+B. A pharmacy may dispense naloxone either pursuant to a patient-specific prescription or via the <u>statewide standing order</u>.
+C. The pharmacy <u>must offer</u>to dispense naloxone whenever a Schedule II opioid is dispensed.
+Adopted: 1/11/24 Revised: 2/6/25
+
+D. The pharmacy must make a reasonable effort to determine if the purchaser’s prescription insurance covers naloxone.
+E. For insurance billing and cost-sharing purposes, the pharmacy must treat the transaction as the dispensing of a prescription to the person purchasing naloxone. However, “Naloxone Rescue Kit” should be used in place of the name and address in order to create a patient profile and prescription label.
+F. Although there may be limits to the amount of naloxone covered by insurance, there is no regulatory limit to the amount of naloxone that may be dispensed to an individual.
+G. The pharmacy must counsel the individual and distribute an Opioid Antagonist Information Pamphlet. Any of the following may be used for the Opioid Antagonist Information Pamphlet:
+1. <u>Stop an Overdose Wallet Card</u> in English, Portuguese, and Spanish
+2. <u>How to administer Naloxone</u>
+3. <u>Opioid Overdose Basics</u>
+4. <u>Massachusetts overdose education and naloxone rescue information</u>
+H. The pharmacy should consider advertisements or signage to inform the public that naloxone kits are available.
+## II. Reporting
+
+A. The preferred method for a pharmacy to report naloxone dispensing information is with their daily Prescription Monitoring Program (PMP) submissions. Instructions can be found in the <u>Data Submission Dispenser</u> <u>Guide</u>. The submission of naloxone to the PMP is for data collection purposes only and will not appear on a patient’s PMP profile. For any questions, please email <u>mapmp.dph@mass.gov</u>
+B. If the pharmacy chooses not to report naloxone dispensing through the PMP, **annually, by January 15<sup>th</sup>**, the pharmacy must submit the report by email to <u>naloxonestandingorders@mass.gov</u>, including the following information for the previous calendar year:
+1. the name and zip code of the pharmacy;
+2. the total number of naloxone <u>doses</u> (not number of prescriptions or manufacturer-supplied units) dispensed; and
+3. the total number of those doses paid for with insurance.
+4. while not required for the annual report, pharmacies are encouraged to also submit information for **each dispensing event** that includes the following:
+i. the number of doses dispensed; ii. the date dispensed;
+
+iii. the zip code of residence for the individual to whom the naloxone is dispensed; and iv. whether the naloxone was paid for with insurance.
+
+III. **Dispensing naloxone pursuant to the standing order outside the licensed** **pharmacy space (“remote location”)**
+
+A. A Massachusetts licensed pharmacist must be associated with a Massachusetts-licensed pharmacy and must be present at the remote location at all times when naloxone is stored or dispensed at the remote location.
+B. HIPAA privacy must be maintained at all times.
+C. Any technology used at the remote location must provide a secure, encrypted, and private connection that allows patients’ confidential information to be securely accessed and stored.
+D. Naloxone must be stored in a secure area at the remote location and must be under constant pharmacist observation.
+E. Access to, and handling of, naloxone must be limited to licensed pharmacy personnel.
+## Please direct any questions to: <u>Pharmacy.Admin@mass.gov</u>
+
