@@ -2572,7 +2572,7 @@
         "w2-b-3",
         "w2-b-4"
       ],
-      "status": "LEASED",
+      "status": "INTEGRATED",
       "attempt": 1,
       "base_commit": "7ea8496483f154a1db7799cea616a26fae5d02d2",
       "inventory_ledger_sha256": "9f767585a2b5197f6f69133a10167c95f2448f2d85c751990008ccfec2afb0a6",
@@ -2591,7 +2591,64 @@
       ],
       "lease_until": "2026-11-04T01:49:22.607534+00:00",
       "worker_branch": "mission/review-independent-notes-d67785abd6a15c8d-attempt-1",
-      "lease_token": "77dbccff98e825643bfe9a9bf18bd9726402ecc75462d19868956be41881ceab"
+      "lease_token": "77dbccff98e825643bfe9a9bf18bd9726402ecc75462d19868956be41881ceab",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "worker_commit": "e8f58027e3cbce0924ea23dcdcaea05fdd98fa47",
+        "unit_hashes": {
+          "oral-followup": "d8f64c75ce1ac5077d332fca46465011146a388409f46ce71b03354132978093",
+          "w2-b-1": "e9dd80a2a37683bae2e5c97abfd40e29940f5b13897c1a27273c9ee5893b0f7b",
+          "w2-b-2": "18d1ce8827aed30a81f88b28edae45ddcd4c31fee842c105fbdddd95377e1682",
+          "w2-b-3": "d6abb5259255e5f72966b6a2783f44c8ab6d51e997a6c5320a3675966a850374",
+          "w2-b-4": "20d80e1d468db3f3a6b142ef296827e1dd57dc7c9799ec277f56ea70e6cb4540"
+        },
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/third-b-review.json",
+          "raw_sha256": "b46fa9e1fb644f6671162039a4dd51482917bfa4b9d318e3dd48e893086294c2"
+        },
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d67785abd6a15c8d-result.json",
+        "results": [
+          {
+            "unit_id": "oral-followup",
+            "completeness": "COMPLETE",
+            "legal_status": "SOURCE_BLOCKED"
+          },
+          {
+            "unit_id": "w2-b-1",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-2",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-3",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-4",
+            "completeness": "COMPLETE",
+            "legal_status": "SOURCE_BLOCKED"
+          }
+        ]
+      },
+      "result_sha256": "3c441f57e3e43deca85dde9f8bf18a0853cd7e48052f13d7471156e6921be649",
+      "submitted_at": "2026-11-03T23:18:38.586606+00:00",
+      "integrated_commit": "2fe1993dbeadfa1fb08bac8899cdc135e4fec4a1",
+      "integrated_at": "2026-11-03T23:18:40.538690+00:00"
     },
     {
       "job_id": "review-independent-notes-b35c8cf339a004cd",
@@ -3500,6 +3557,20 @@
         "session_id": "/root/independent_case_f"
       },
       "attempt": 1
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-03T23:18:38.586606+00:00",
+      "job_id": "review-independent-notes-d67785abd6a15c8d",
+      "result_sha256": "3c441f57e3e43deca85dde9f8bf18a0853cd7e48052f13d7471156e6921be649",
+      "worker_commit": "e8f58027e3cbce0924ea23dcdcaea05fdd98fa47"
+    },
+    {
+      "kind": "INTEGRATE",
+      "at": "2026-11-03T23:18:40.538690+00:00",
+      "job_id": "review-independent-notes-d67785abd6a15c8d",
+      "commit": "2fe1993dbeadfa1fb08bac8899cdc135e4fec4a1",
+      "result_sha256": "3c441f57e3e43deca85dde9f8bf18a0853cd7e48052f13d7471156e6921be649"
     }
   ]
 }
