@@ -37,7 +37,9 @@ def build_payload() -> dict:
         item['chapters'] = list(dict.fromkeys(units[uid][0]['id'] for uid in refs))
         item['flags'] = sorted({flag for uid in refs for flag in units[uid][1]['flags']})
         item['source_review_dates'] = list(dict.fromkeys(units[uid][1]['source_review_date'] for uid in refs))
-        item['source_hashes'] = {uid: units[uid][1]['body_sha256'] for uid in refs}
+        item['stored_source_hashes'] = {uid: units[uid][1]['body_sha256'] for uid in refs}
+        item['source_hashes'] = {uid: hashlib.sha256(units[uid][1]['body'].encode()).hexdigest() for uid in refs}
+        item['source_hash_basis'] = 'ACTUAL_EFFECTIVE_BODY_UTF8'
         item['edited_at'] = author['edited_at']
         item['review_status'] = 'SOURCE_DERIVED_NOT_INDEPENDENTLY_AUDITED'
         cards.append(item)

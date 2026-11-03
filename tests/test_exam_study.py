@@ -27,7 +27,9 @@ def test_nonempty_explanations_conditions_and_recall():
 def test_each_source_hash_date_and_flag_is_inherited():
     for l in D['lessons']+D['comparisons']+D['clocks']:
         assert l['note_units'] and all(uid in U for uid in l['note_units'])
-        assert l['source_hashes']=={uid:U[uid]['body_sha256'] for uid in l['note_units']}
+        assert l['source_hashes']=={uid:hashlib.sha256(U[uid]['body'].encode()).hexdigest() for uid in l['note_units']}
+        assert l['stored_source_hashes']=={uid:U[uid]['body_sha256'] for uid in l['note_units']}
+        assert l['source_hash_basis']=='ACTUAL_EFFECTIVE_BODY_UTF8'
         assert l['source_review_dates']==list(dict.fromkeys(U[uid]['source_review_date'] for uid in l['note_units']))
         assert l['flags']==sorted({f for uid in l['note_units'] for f in U[uid]['flags']})
 

@@ -51,7 +51,9 @@ def build_payload() -> dict:
     def enrich(x:dict)->None:
         refs=x['note_units']
         if not refs or any(uid not in units for uid in refs): raise ValueError('Unknown source unit '+x['id'])
-        x['source_hashes']={uid:units[uid][1]['body_sha256'] for uid in refs}
+        x['stored_source_hashes']={uid:units[uid][1]['body_sha256'] for uid in refs}
+        x['source_hashes']={uid:hashlib.sha256(units[uid][1]['body'].encode()).hexdigest() for uid in refs}
+        x['source_hash_basis']='ACTUAL_EFFECTIVE_BODY_UTF8'
         x['source_review_dates']=list(dict.fromkeys(units[uid][1]['source_review_date'] for uid in refs))
         x['flags']=sorted({f for uid in refs for f in units[uid][1]['flags']})
         x['source_ids']=list(dict.fromkeys(sid for uid in refs for sid in units[uid][1]['source_ids']))

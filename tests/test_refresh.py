@@ -37,7 +37,9 @@ def test_summary_content_has_terms_examples_and_boundaries():
 
 def test_all_reference_dates_hashes_and_flags_are_inherited():
     for c in D['cards']:
-        assert c['source_hashes']=={uid:U[uid]['body_sha256'] for uid in c['note_units']}
+        assert c['source_hashes']=={uid:hashlib.sha256(U[uid]['body'].encode()).hexdigest() for uid in c['note_units']}
+        assert c['stored_source_hashes']=={uid:U[uid]['body_sha256'] for uid in c['note_units']}
+        assert c['source_hash_basis']=='ACTUAL_EFFECTIVE_BODY_UTF8'
         assert c['source_review_dates']==list(dict.fromkeys(U[uid]['source_review_date'] for uid in c['note_units']))
         assert c['flags']==sorted({f for uid in c['note_units'] for f in U[uid]['flags']})
     assert D['notes_sha256']==hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest()
