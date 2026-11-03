@@ -37,6 +37,9 @@ def emergency_copy(tmp_path):
     paths = {'site/notes/build.json', 'site/notes/complete-notes.md',
              'reports/full-corpus-review/note-wave8-census.json',
              'reports/full-corpus-review/note-wave9-census.json'}
+    annotation = ROOT/'revisions/notes/protected-migration-independent-notes-wave2.json'
+    if annotation.exists():
+        paths.update(json.loads(annotation.read_bytes())['independent_reviews'])
     for activation_path in (ROOT/'revisions/notes').glob('*-activation.json'):
         activation = json.loads(activation_path.read_bytes())
         report = json.loads((ROOT/activation['review_path']).read_bytes())
@@ -48,7 +51,92 @@ def emergency_copy(tmp_path):
         destination = tmp_path/path
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT/path, destination)
+    if annotation.exists():
+        # These original activation tests exercise the published twelve-guard
+        # context. Annotation-specific tests below install their own 13th layer.
+        (tmp_path/annotation.relative_to(ROOT)).unlink()
+        for source,target in [('complete-notes-pr188.md','complete-notes.md'),
+                              ('notes-build-pr188.json','build.json')]:
+            shutil.copyfile(tmp_path/'revisions/baselines'/source,tmp_path/'site/notes'/target)
     return tmp_path
+
+
+@pytest.fixture
+def annotation_copy(emergency_copy):
+    root=emergency_copy
+    # Synthetic annotation bytes exercise protection only; these fixtures do not
+    # constitute legal audits or pass the independent publication consumer.
+    scope={
+        'b':['w1-b-10','w1-b-11','w1-b-12','w1-c-1','w1-c-2'],
+        'c':['w1-c-3','w1-c-4','w1-c-5','w1-c-6','w1-c-7'],
+        'e':['w1-c-8','w4-a-21','w2-a-2','w2-a-3','w2-a-4'],
+        'f':['w2-a-5','w2-a-6','w2-a-7','w2-a-8','w2-a-10'],
+    }
+    bindings={}
+    for name,units in scope.items():
+        relative=f'reports/full-corpus-review/independent-notes/second-{name}-review.json'
+        path=root/relative; path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_bytes(encoded(dict(stage='independent-notes',canonical_audit=False,
+            canonical_release_credit=0,records=[dict(unit_id=uid) for uid in units])))
+        bindings[relative]=sha(path.read_bytes())
+    raw=(root/'revisions/baselines/complete-notes-pr188.md').read_bytes()+b'\n> synthetic audit annotation\n'
+    (root/'site/notes/complete-notes.md').write_bytes(raw)
+    metadata=dict(schema_version='notes-protected-annotation-migration/1',
+        baseline_commit='b5d1b3e98ca3a7d97252b331a33cf7a4c0ba956b',
+        path='site/notes/complete-notes.md',baseline_copy='revisions/baselines/complete-notes-pr188.md',
+        baseline_build_copy='revisions/baselines/notes-build-pr188.json',
+        baseline_build_sha256='373b22191f5c2f9565b2dc3206d93801a488cfc65eab1e97f7ffa31b8985416f',
+        semantic_notes_sha256='e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824',
+        previous_migration_path=MIGRATION,
+        previous_migration_sha256='b74a101c0319ae9ca7cba366c55125243a2f8f9186e43bf45a7148fe8ea9fa35',
+        old_sha256='8d23fa9c5e63deffd33218630a630a61d946cfd25d56bc578b553cbc37a84aaf',
+        new_sha256=sha(raw),independent_reviews=bindings)
+    path=root/'revisions/notes/protected-migration-independent-notes-wave2.json'
+    path.write_bytes(encoded(metadata))
+    return root,path,metadata
+
+
+def test_annotation_decodes_pr188_export_through_all_twelve_original_guards(annotation_copy):
+    root,_,_=annotation_copy
+    raw=(root/'site/notes/complete-notes.md').read_bytes()
+    original=(root/'revisions/baselines/complete-notes-2026-10-23.1.md').read_bytes()
+    assert migrated_baseline_bytes(root,'site/notes/complete-notes.md',raw)==original
+
+
+@pytest.mark.parametrize('change,expected',[
+    ('scope','expands protected scope'),('parent','Published emergency-kit migration changed'),
+    ('snapshot','Published PR188 export changed'),('build','Published PR188 build changed'),
+    ('semantics','cannot authorize semantic note changes'),
+    ('evidence','annotation review changed'),('units','annotation review unit scope changed'),
+    ('extra_report','annotation evidence scope changed'),('output','Stale independent-note annotation export'),
+])
+def test_annotation_cannot_rebind_published_history_or_expand_scope(annotation_copy,change,expected):
+    root,path,metadata=annotation_copy
+    if change=='scope': metadata['path']='notes/guide.json'
+    elif change=='parent':
+        parent=root/MIGRATION; parent.write_bytes(parent.read_bytes()+b' ')
+        metadata['previous_migration_sha256']=sha(parent.read_bytes())
+    elif change=='snapshot':
+        snapshot=root/metadata['baseline_copy']; snapshot.write_bytes(snapshot.read_bytes()+b' ')
+        metadata['old_sha256']=sha(snapshot.read_bytes())
+    elif change=='build':
+        build=root/metadata['baseline_build_copy']; build.write_bytes(build.read_bytes()+b' ')
+        metadata['baseline_build_sha256']=sha(build.read_bytes())
+    elif change=='semantics':
+        build=root/'site/notes/build.json'; data=json.loads(build.read_bytes())
+        data['content_sha256']='0'*64; build.write_bytes(encoded(data))
+        metadata['semantic_notes_sha256']='0'*64
+    elif change in {'evidence','units'}:
+        relative=next(iter(metadata['independent_reviews'])); report=root/relative
+        data=json.loads(report.read_bytes());data['records'][0]['unit_id']='w6-b-16'
+        report.write_bytes(encoded(data))
+        if change=='units': metadata['independent_reviews'][relative]=sha(report.read_bytes())
+    elif change=='extra_report': metadata['independent_reviews']['notes/guide.json']='0'*64
+    elif change=='output':
+        output=root/'site/notes/complete-notes.md'; output.write_bytes(output.read_bytes()+b' changed')
+    path.write_bytes(encoded(metadata))
+    with pytest.raises(ValueError,match=expected):
+        migrated_baseline_bytes(root,'site/notes/complete-notes.md',(root/'site/notes/complete-notes.md').read_bytes())
 
 
 def contents(root):

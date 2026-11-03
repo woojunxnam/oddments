@@ -214,6 +214,37 @@ def validate_nonlegacy_selection(selection, baseline, by_id, root=None):
     return expected
 
 
+def validate_editorial_wording_holds(holds, old_by_id, input_hashes):
+    """A precautionary wording hold is not a legal or independent audit."""
+    for hold in holds:
+        if hold.get('finding_type')!='ROOT_EDITORIAL_WORDING_HOLD':
+            continue
+        qid=hold['legacy_question_id'];relative=hold['evidence_report']
+        require(relative=='reports/full-corpus-review/phase5-default-editorial-holds.json',
+                'Unexpected editorial hold evidence path')
+        raw=(ROOT/relative).read_bytes();source=json.loads(raw)
+        require(digest(raw)==hold['evidence_report_sha256'], 'Stale editorial hold evidence')
+        input_hashes[relative]=digest(raw)
+        require(source.get('stage')=='root-editorial-wording-hold' and
+                source.get('independent_of_authors') is False and source.get('canonical_audit') is False and
+                source.get('canonical_release_credit')==source.get('independent_legal_credit')==
+                source.get('author_review_increment')==0 and
+                source.get('reviewer_provenance',{}).get('actor_id')=='/root',
+                'Editorial hold cannot create review credit')
+        rows=[r for r in source['records'] if r['question_id']==qid]
+        require(len(rows)==1 and qid in old_by_id, 'Editorial hold lacks an individual record')
+        row=rows[0];q=old_by_id[qid]
+        require(row['record_sha256']==hold['question_record_sha256']==raw_record_hash(q),
+                'Stale editorial hold question')
+        require(row.get('editorial_status')=='HOLD' and row.get('legal_answer_assessment')=='NOT_ASSESSED' and
+                row.get('read_scope',{}).get('stem') is True and row['read_scope'].get('every_choice') is True and
+                row.get('finding_ko') and row.get('choice_evidence'), 'Incomplete editorial wording finding')
+        choices={c['id']:c['text'] for c in q['choices']}
+        require(all(e.get('choice_id') in choices and len(e.get('exact_quote',''))>=12 and
+                    e['exact_quote'] in choices[e['choice_id']] for e in row['choice_evidence']),
+                'Editorial hold quote differs from current choice')
+
+
 def archive_review_notices(old_by_id, input_hashes):
     """Surface known defects without mutating a preserved answer or audit status."""
     path = REPORTS / 'archive-review-notices.json'
@@ -234,6 +265,7 @@ def archive_review_notices(old_by_id, input_hashes):
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
             'EDITORIAL_CONTEXT_REVIEW',
             'INDEPENDENT_REVIEW_FINDING',
+            'AUTHOR_REVIEW_FINDING',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
         require(not review_relative.is_absolute() and '..' not in review_relative.parts
@@ -261,6 +293,15 @@ def archive_review_notices(old_by_id, input_hashes):
                             'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
                         review.get('realism_review', {}).get('verdict') == 'FAIL',
                         'Independent archive notice lacks a negative or blocked review: ' + qid)
+            if notice['issue_type'] == 'AUTHOR_REVIEW_FINDING':
+                review=reviews[qid]
+                require(review.get('disposition') in NONKEEP_DISPOSITIONS and
+                        review.get('blocker') and review.get('checked_at') and
+                        review.get('reviewer_provenance',{}).get('author_session') and
+                        notice.get('original_author_blocker')==review['blocker'] and
+                        set(review.get('choice_by_choice_findings',{}))==
+                        {c['id'] for c in old_by_id[qid]['choices']},
+                        'Author archive notice lacks a matching individual nonKEEP finding: ' + qid)
             if notice['issue_type'] in {'INCORRECT_KEY', 'AMBIGUOUS_KEY'}:
                 require(reviews[qid].get('original_answer_status') == notice['issue_type'],
                         'Archive notice does not match answer assessment: ' + qid)
@@ -382,6 +423,7 @@ def build():
     if extra_holds.exists():
         holds.extend(read(extra_holds)['holds'])
         input_hashes[str(extra_holds.relative_to(ROOT))] = digest(extra_holds.read_bytes())
+    validate_editorial_wording_holds(holds,old_by_id,input_hashes)
     require(len({q['question_id'] for q in authored}) == len(authored), 'Duplicate new IDs')
     addressed = [q['legacy_question_id'] for q in authored] + [h['legacy_question_id'] for h in holds] + [q['legacy_question_id'] for q in reused]
     require(len(set(addressed)) == len(addressed), 'A legacy question has more than one disposition')

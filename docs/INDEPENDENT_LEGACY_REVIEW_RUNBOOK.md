@@ -52,3 +52,15 @@ Schema/style profile 파일의 version·semantic hash·file SHA를 고정한다.
 ```
 
 법규 불명확은 HOLD/SOURCE_BLOCKED, 실제 법규/현실성 결함은 NEEDS_REMEDIATION, 확인된 감사 결과는 INDEPENDENT_ASSESSED로 분리한다. 결과를 곧바로 release 승격하지 않는다. Root만 현재 lease/token으로 submit하고 Git 증거를 순차 integrate한 뒤 원장에 독립 assessment를 등록한다. 원장 반영 전 다음 plan은 차단된다. 실제 미실행 검사·network 조회·독립 단계는 NOT_RUN으로 기록한다.
+
+## 후속 배치의 자동 원장 반영
+
+`legacy_independent_metadata.integrated_sources(root)`는 커밋된 독립 큐에서
+순차 통합된 보고서만 발견한다. 새 파일명을 builder에 매번 등록하지 않는다.
+LEASED/SUBMITTED/QUEUED 및 큐 밖의 보고서는 독립 처리 수에 포함하지 않는다.
+Checkpoint와 보고서는 실제 HEAD 바이트여야 하며, 원래 제출 raw SHA,
+actor/session, 배정 ID·hash, canonical credit 0과 통합 event를 다시 확인한다.
+얕은 CI checkout은 옛 worker branch/object 없이 읽을 수 있다. Controller의
+실제 worker commit 및 순차 통합 검사는 그대로 유지한다. 기존 큐 도입 전
+세 보고서와 새 큐 보고서의 ID 중복·본문 stale·공식 evidence SHA 검사는
+전체 corpus builder가 계속 수행한다.
