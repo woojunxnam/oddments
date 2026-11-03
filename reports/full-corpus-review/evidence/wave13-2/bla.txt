@@ -1,0 +1,1067 @@
+ 
+ 
+ 
+ 
+ eCFR :: 21 CFR 601.2 -- Applications for biologics licenses; procedures for filing.
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ {
+ "imports": {
+ "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+ "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+ "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+ "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+ "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+ "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+ "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+ "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+ "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+ "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+ "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+ "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+ "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+ "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+ "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+ "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+ "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+ "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+ "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+ "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+ "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+ "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+ "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+ "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+ "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+ "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+ "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+ "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+ "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+ "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+ "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+ "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+ "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+ "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+ "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+ "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+ "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+ }
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import "application" 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+
+ 
+ 
+
+ 
+ Site Feedback 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser
+ 
+ × 
+ 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser. This web site is designed for the current versions of
+ Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ × 
+ 
+ Site Feedback 
+ 
+ 
+ 
+ The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+ 
+ 
+ 
+ 
+ 
+ If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+ 
+ 
+ 
+ 
+ Website Feedback
+ 
+ 
+ 
+ 
+ If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+ 
+ 
+ 
+ 
+ Content Feedback
+ 
+ 
+ 
+ If you have questions for the Agency that issued the current document please contact the agency directly. 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ × 
+ 
+ Website Feedback 
+ 
+
+ 
+ 
+ * Your Name 
+ * Email 
+ Attachment 
+ * How can we help you? 
+ 
+ * I am requesting technical help or providing website feedback 
+ 
+ This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+ contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+ information or personal data.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ☰
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Home
+ 
+
+ 
+ 
+ 
+ Browse
+ 
+ 
+
+ 
+ 
+ 
+ Titles
+ 
+ 
+ 
+ Agencies
+ 
+ 
+ 
+
+ 
+ 
+ 
+ CFR Updates
+ 
+ 
+
+ 
+ 
+ 
+ Recent Changes
+ 
+
+ 
+ 
+ Issue Summaries
+ 
+
+ 
+ 
+ Corrections
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Finding Aids
+ 
+ 
+
+ 
+ 
+ 
+ Parallel Table of Authorities
+ 
+
+ 
+ 
+ Subject Index
+ 
+
+ 
+ 
+ Agency-prepared Indexes
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ Reader Aids
+ 
+ 
+
+ 
+ 
+ Reader Aids Home 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ My eCFR
+ 
+ 
+
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign Out 
+ 
+ 
+
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ eCFR 
+ The Electronic Code of Federal Regulations 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Enhanced Content :: FR Reference Enhanced content is provided to the user to provide additional context. 
+ 
+ Enhanced Content :: FR Reference 
+ 
+ 
+
+ 
+ 
+ 
+ Title 21
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ 
+ This content is from the eCFR and is authoritative but unofficial. 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ Displaying title 21, up to date as of 10/30/2026. Title 21 was last amended 10/30/2026. 
+ 
+
+ 
+ view historical versions 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ A drafting site is available for use when drafting amendatory language
+ 
+
+ 
+ switch to drafting site 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+ modal#escClose"
+ data-suggestions-target="modal">
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Navigate by entering citations or phrases 
+ (eg:
+ suggestions#fillExample"
+ class="example badge badge-info">1 CFR 1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">49 CFR 172.101 
+ suggestions#fillExample"
+ class="example badge badge-info">Organization and Purpose 
+ suggestions#fillExample"
+ class="example badge badge-info">1/1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">Regulation Y 
+ suggestions#fillExample"
+ class="example badge badge-info">FAR ).
+ 
+ 
+ Choosing an item from
+ citations and headings 
+ will bring you directly to the content. Choosing an item from
+ full text search results 
+ will bring you to those results. Pressing enter in the search box
+ will also bring you to search results.
+ 
+ 
+ Background and more details are available in the
+ 
+ Search & Navigation 
+ 
+ guide.
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ suggestions#goDefault">
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ suggestions#modal"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion_reference">
+ suggestions#go">
+
+ suggestions#go">
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ placeholder#suggestions"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion">
+ placeholder#suggestions">
+
+ placeholder#suggestions"
+ aria-label="Search">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Title 21 —Food and Drugs 
+ 
+ 
+ Chapter I —Food and Drug Administration, Department of Health and Human Services 
+ 
+ 
+ Subchapter F —Biologics 
+ 
+ 
+ Part 601 —Licensing 
+ 
+ 
+ Subpart A —General Provisions 
+ 
+ 
+ § 601.2
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Previous 
+ 
+
+ 
+ Next 
+ 
+
+ 
+ Top 
+ 
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ Table of Contents Enhanced Content - Table of Contents 
+ The in-page Table of Contents is available only when multiple sections are being viewed.
+ 
+ 
+ Use the navigation links in the gray bar above to view the table of contents that this content belongs to.
+ 
+ Enhanced Content - Table of Contents 
+
+ 
+ Details Enhanced Content - Details 
+ URL 
+ 
+ https://www.ecfr.gov/current/title-21/part-601/section-601.2
+ 
+ 
+
+ Citation 
+ 
+ 21 CFR 601.2
+ 
+ 
+
+
+
+ 
+ Agency
+ 
+ 
+ Food and Drug Administration, Department of Health and Human Services 
+ 
+
+ 
+
+ 
+ 
+ 
+ Part 601 
+ 
+ 
+ Authority: 
+ 
+ 15 U.S.C. 1451-1561 ; 21 U.S.C. 321 , 351 , 352 , 353 , 355 , 356b , 360 , 360c-360f , 360h-360j , 371 , 374 , 379e , 381 ; 42 U.S.C. 216 , 241 , 262 , 263 , 264 ; sec 122, Pub. L. 105-115, 111 Stat. 2322 ( 21 U.S.C. 355 note), sec 7002(e), Pub. L. 111-148 , 124 Stat. 817, as amended by sec. 607, Division N, Pub. L. 116-94 , 133 Stat. 3127.
+
+
+ 
+ 
+ 
+ Source: 
+ 
+ 38 FR 32052 , Nov. 20, 1973, unless otherwise noted.
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Enhanced Content - Details 
+
+ 
+ Print/PDF Enhanced Content - Print 
+ Generate PDF 
+
+ 
+ 
+ 
+ 
+ 
+ This content is from the eCFR and may include recent changes applied to the CFR.
+ The official, published CFR, is updated annually and available below under
+ "Published Edition". You can learn more about the process
+ here .
+ 
+ Enhanced Content - Print 
+
+ 
+ Display Options Enhanced Content - Display Options 
+ 
+ 
+ 
+ 
+ Enhanced Content - Display Options 
+
+ 
+ Subscribe Enhanced Content - Subscribe Subscribe to: 21 CFR 601.2 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Via Email: 
+ 
+ 
+
+ -->
+ Via RSS: -->
+
+ -->
+ 
+ Enhanced Content - Subscribe 
+
+ 
+
+ 
+ Timeline Enhanced Content - Timeline 
+ 
+ 
+ timeline#toggleFilter">
+ Show only dates with regulatory amendments ( ) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3/13/2024
+ 
+
+ 
+ view on this date 
+ 
+
+ 
+ view change introduced 
+ 
+
+   
+ 
+ 
+ 
+ 2/12/2024
+ 
+
+ 
+ view on this date 
+ 
+
+ 
+ view change introduced 
+ 
+
+ compare to most recent 
+ 
+ 
+ 
+ Enhanced Content - Timeline 
+
+ 
+ Go to Date Enhanced Content - Go to Date 
+
+ Date 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Enhanced Content - Go to Date 
+
+ 
+
+ Compare Dates Enhanced Content - Compare Dates 
+
+ Compare 
+ 
+ 
+ 
+ 
+ 
+
+ to 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ Show changes as: red/green purple/orange 
+
+ Show strike-through for removed content yes no 
+ 
+ Enhanced Content - Compare Dates 
+
+ 
+
+ 
+ Published Edition Enhanced Content - Published Edition 
+ View the most recent official publication:
+ 
+
+ 
+ 
+ View Title 21 on govinfo.gov 
+ 
+ 
+ View the PDF for 21 CFR 601.2 
+ 
+ 
+
+ 
+ These links go to the official, published CFR, which is updated annually. As a
+ result, it may not include the most recent changes applied to the CFR.
+ Learn more .
+ 
+ Enhanced Content - Published Edition 
+
+ 
+
+ 
+ Developer Tools Enhanced Content - Developer Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Information and documentation can be found in our
+ developer resources .
+ 
+ Enhanced Content - Developer Tools 
+ 
+
+ 
+
+ 
+ eCFR Content The Code of Federal Regulations (CFR) is the official legal print publication containing the codification of the general and permanent rules published in the Federal Register by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR. Learn more about the eCFR, its status, and the editorial process. 
+
+ 
+ § 601.2 Applications for biologics licenses; procedures for filing. 
+ 
+ ( a ) General. To obtain a biologics license under section 351 of the Public Health Service Act for any biological product, the manufacturer shall submit an application to the Director, Center for Biologics Evaluation and Research or the Director, Center for Drug Evaluation and Research (see mailing addresses in § 600.2(a) or (b) of this chapter ), on forms prescribed for such purposes, and shall submit data derived from nonclinical laboratory and clinical studies which demonstrate that the manufactured product meets prescribed requirements of safety, purity, and potency; with respect to each nonclinical laboratory study, either a statement that the study was conducted in compliance with the requirements set forth in part 58 of this chapter , or, if the study was not conducted in compliance with such regulations, a brief statement of the reason for the noncompliance; statements regarding each clinical investigation involving human subjects contained in the application, that it either was conducted in compliance with the requirements for institutional review set forth in part 56 of this chapter ; or was not subject to such requirements in accordance with § 56.104 or § 56.105 , and was conducted in compliance with requirements for informed consent set forth in part 50 of this chapter . A full description of manufacturing methods; data establishing stability of the product through the dating period; sample(s) representative of the product for introduction or delivery for introduction into interstate commerce; summaries of results of tests performed on the lot(s) represented by the submitted sample(s); specimens of the labels, enclosures, and containers, and if applicable, any Medication Guide required under part 208 of this chapter proposed to be used for the product; and the address of each location involved in the manufacture of the biological product shall be listed in the biologics license application. The applicant shall also include a financial certification or disclosure statement(s) or both for clinical investigators as required by part 54 of this chapter . An application for a biologics license shall not be considered as filed until all pertinent information and data have been received by the Food and Drug Administration. The applicant shall also include either a claim for categorical exclusion under § 25.30 or § 25.31 of this chapter or an environmental assessment under § 25.40 of this chapter . The applicant, or the applicant's attorney, agent, or other authorized official shall sign the application. An application for any of the following specified categories of biological products subject to licensure shall be handled as set forth in paragraph (c) of this section: 
+ 
+ ( 1 ) Therapeutic DNA plasmid products; 
+ 
+ 
+ ( 2 ) Therapeutic synthetic peptide products of 40 or fewer amino acids; 
+ 
+ 
+ ( 3 ) Monoclonal antibody products for in vivo use; and 
+ 
+ 
+ ( 4 ) Therapeutic recombinant DNA-derived products. 
+ 
+ 
+ 
+ ( b ) [Reserved] 
+ 
+ 
+ ( c ) 
+ 
+ ( 1 ) To obtain marketing approval for a biological product subject to licensure which is a therapeutic DNA plasmid product, therapeutic synthetic peptide product of 40 or fewer amino acids, monoclonal antibody product for in vivo use, or therapeutic recombinant DNA-derived product, an applicant shall submit a biologics license application in accordance with paragraph (a) of this section except that the following sections in parts 600 through 680 of this chapter shall not be applicable to such products: §§ 600.10(b) and (c) , 600.11 , 600.12 , 600.13 , 610.53 , and 610.62 of this chapter . 
+ 
+ 
+ ( 2 ) To the extent that the requirements in this paragraph (c) conflict with other requirements in this subchapter, this paragraph (c) shall supersede other requirements. 
+ 
+ 
+ 
+ ( d ) Approval of a biologics license application or issuance of a biologics license shall constitute a determination that the establishment(s) and the product meet applicable requirements to ensure the continued safety, purity, and potency of such products. Applicable requirements for the maintenance of establishments for the manufacture of a product subject to this section shall include but not be limited to the good manufacturing practice requirements set forth in parts 210 , 211 , 600 , 606 , and 820 of this chapter . 
+ 
+ 
+ ( e ) Any establishment and product license for a biological product issued under section 351 of the Public Health Service Act ( 42 U.S.C. 201 et seq. ) that has not been revoked or suspended as of December 20, 1999, shall constitute an approved biologics license application in effect under the same terms and conditions set forth in such product license and such portions of the establishment license relating to such product. 
+ 
+ 
+ ( f ) Withdrawal from sale of approved biological products. A holder of a biologics license application (BLA) must report to FDA, in accordance with the requirements of §§ 207.61 and 207.65 , the withdrawal from sale of an approved biological product. The information must be submitted to FDA within 30 working days of the biological product's withdrawal from sale. The following information must be submitted: The holder's name; product name; BLA number; the National Drug Code; and the date on which the product is expected to be no longer in commercial distribution. The reason for the withdrawal of the biological product is requested but not required to be submitted. 
+ 
+ 
+ ( g ) Master files — 
+ 
+ ( 1 ) Biologics license applications under section 351 of the Public Health Service Act not permitted to incorporate by reference drug substance, drug substance intermediate, or drug product information contained in a master file . Except as provided in paragraphs (g)(2) and (3) of this section, a biologics license application under section 351 of the Public Health Service Act may not incorporate by reference drug substance, drug substance intermediate, or drug product information contained in a master file, including a drug master file submitted under § 314.420 of this chapter , for the product, including for a biological product constituent part of a combination product. 
+ 
+ 
+ ( 2 ) Former approved applications deemed to be licenses for biological products pursuant to section 7002(e)(4) of the Biologics Price Competition and Innovation Act of 2009 . An application for a biological product that: 
+ 
+ ( i ) Is a former approved application under section 505 of the Federal Food, Drug, and Cosmetic Act that, pursuant to section 7002(e)(4) of the Biologics Price Competition and Innovation Act of 2009, has been deemed to be a license for the biological product under section 351 of the Public Health Service Act; and 
+ 
+ 
+ ( ii ) At the time it was so deemed, incorporated by reference drug substance, drug substance intermediate, and/or drug product information contained in a drug master file submitted under § 314.420 of this chapter , may continue to incorporate by reference the information contained in that drug master file. Amendments and supplements to such applications may also continue to incorporate by reference the information contained in that drug master file. 
+ 
+ 
+ 
+ ( 3 ) Non-biological product constituent parts of combination products regulated under biologics license applications under section 351 of the Public Health Service Act . A biologics license application under section 351 of the Public Health Service Act may incorporate by reference drug substance, drug substance intermediate, and/or drug product information contained in a master file, including a drug master file submitted under § 314.420 of this chapter , for any non-biological product constituent part of a combination product. 
+ 
+ 
+ ( 4 ) Biologics license applications under section 351 of the Public Health Service Act permitted to incorporate by reference information contained in a master file that is not drug substance, drug substance intermediate, or drug product information . Nothing in paragraph (g)(1) of this section limits or restricts a biologics license application under section 351 of the Public Health Service Act from incorporating by reference information contained in any master file, including a drug master file submitted under § 314.420 of this chapter , that is not drug substance, drug substance intermediate, or drug product information. 
+ 
+ ( 5 ) Investigational new drug applications. Nothing in paragraph (g)(1) of this section limits or restricts an investigational new drug application for a product that would be subject to licensure under section 351 of the Public Health Service Act from incorporating by reference any information, including drug substance, drug substance intermediate, and drug product information, contained in a master file, including a drug master file submitted under § 314.420 of this chapter . 
+ 
+ [ 64 FR 56450 , Oct. 20, 1999, as amended at 70 FR 14983 , Mar. 24, 2005; 80 FR 18092 , Apr. 3, 2015; 80 FR 37974 , July 2, 2015; 81 FR 60221 , Aug. 31, 2016; 89 FR 9756 , Feb. 12, 2024]
+ 
+ 
+ {"origins":[{"level":"part","identifier":"601","label_level":"Part 601","hierarchy":{"title":"21","chapter":"I","subchapter":"F","part":"601"},"current":false,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/15/1451\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e15 U.S.C. 1451-1561\u003c/a\u003e; \u003ca href=\"https://www.govinfo.gov/link/uscode/21/321\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e21 U.S.C. 321\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/351\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e351\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/352\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e352\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/353\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e353\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/355\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e355\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/356b\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e356b\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/360\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e360\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/360c\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e360c-360f\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/360h\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e360h-360j\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/371\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e371\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/374\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e374\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/379e\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e379e\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/381\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e381\u003c/a\u003e; \u003ca href=\"https://www.govinfo.gov/link/uscode/42/216\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 216\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/241\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e241\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/262\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e262\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/263\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e263\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/264\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e264\u003c/a\u003e; sec 122, Pub. L. 105-115, 111 Stat. 2322 (\u003ca href=\"https://www.govinfo.gov/link/uscode/21/355\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e21 U.S.C. 355\u003c/a\u003e note), sec 7002(e), \u003ca href=\"https://www.govinfo.gov/link/plaw/111/public/148\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 111-148\u003c/a\u003e, 124 Stat. 817, as amended by sec. 607, Division N, \u003ca href=\"https://www.govinfo.gov/link/plaw/116/public/94\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 116-94\u003c/a\u003e, 133 Stat. 3127.\n"],"source":["\u003ca href=\"https://www.federalregister.gov/citation/38-FR-32052\" class=\"fr-reference\" data-reference=\"38 FR 32052\"\u003e38 FR 32052\u003c/a\u003e, Nov. 20, 1973, unless otherwise noted.\n"],"link":"/current/title-21/part-601","title":"Part 601"}]} 
+
+ eCFR Content 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Pages 
+ 
+ Home 
+ Titles 
+ Search 
+ Recent Changes 
+ Corrections 
+ 
+ 
+
+ 
+ Reader Aids 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+ 
+ Information 
+ 
+ About This Site 
+ Legal Status 
+ Privacy 
+ Accessibility 
+ FOIA 
+ No Fear Act 
+ Continuity Information 
+ 
+ 
+
+ 
+ My eCFR 
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 
