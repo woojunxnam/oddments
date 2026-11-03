@@ -40,7 +40,7 @@ def test_first_cohort_has_exact_fresh_option_reviews_and_independent_failures_ar
 
 def test_atomic_census_requires_fresh_units_and_actual_evidence():
     census = read('reports/full-corpus-review/pub05-14-note-census.json')
-    effective = {u['id']: u for c in load_notes()['chapters'] for u in c['units']}
+    effective = {u['id']: u for c in load_notes(revision_id='2026-10-30.cdtm13-vax04.1')['chapters'] for u in c['units']}
     assert len(validate_note_census(census, effective, bank())) == 12
     stale = copy.deepcopy(effective)
     stale[census['units'][0]['unit_id']]['body'] += ' unreviewed edit'
@@ -58,7 +58,7 @@ def test_atomic_census_requires_fresh_units_and_actual_evidence():
 
 def test_partial_product_clause_report_cannot_claim_complete_units():
     census = read('reports/full-corpus-review/note-wave2-census.json')
-    effective = {u['id']: u for c in load_notes()['chapters'] for u in c['units']}
+    effective = {u['id']: u for c in load_notes(revision_id='2026-10-30.cdtm13-vax04.1')['chapters'] for u in c['units']}
     public_ids = {json.loads(line)['question_id']: None for line in
                   (ROOT/'reports/full-corpus-review/question-ledger.jsonl').read_text().splitlines()}
     units = validate_note_census(census, effective, public_ids)

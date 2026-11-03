@@ -14,6 +14,9 @@ def output():
     st=selection['stats']
     new=metrics['revised_unit']
     original=st['legacy_representatives_remaining']
+    partial=progress.get('partial_census_claim_or_clause_records',0)
+    partial_notice=(f'미완료 부분 주장·절 기록 {partial}개는 완료 주장 수에서 제외했습니다.' if partial
+                    else '현재 등록된 부록16절은 전체 본문의 주장 열거를 마쳤으며, 출처 보류는 별도로 유지합니다.')
     body=f'''<main><h1>문제은행 검토 범위와 현재 상태</h1>
 <p>현재 연습판 설정: 기본 <strong>{st['recommended']:,}문항</strong> · 전체 보관 <strong>{st['available_total']:,}문항</strong>. 보관 수는 법규 검증 완료 수가 아닙니다.</p>
 <table><thead><tr><th>원래 대표355개 처리</th><th>수</th></tr></thead><tbody>
@@ -26,7 +29,8 @@ def output():
 <p>MA-EXP-0385–0424와 원장이 자동 선정한 MA-CASE 160개를 문항별로 읽었습니다. 첫 200문항은 실질 개정 또는 근거 관계 해소가 필요하며, 결함이 기록된 기본 추천은 보류합니다. 기존 원문·정답·학습 기록은 보존합니다.</p>
 <p>작성자 검토 {progress['question_ids_with_review_records']}/{progress['current_questions']} ({100*progress['question_ids_with_review_records']/progress['current_questions']:.2f}%). 별도 세션의 legacy 법규 검토 {progress.get('independent_legacy_legal_assessed',0)}/{progress['current_questions']} ({100*progress.get('independent_legacy_legal_assessed',0)/progress['current_questions']:.2f}%); canonical release 증거로는 인정하지 않습니다. 첫40의 현실성 PASS는0입니다. 첫 200문항의 재작성 완료율은0/200(0%)이며 안전한 보류와 구분합니다.</p>
 <p>후속 wave3·wave4에서는 원장이 선정한 MA-CASE-0162–0481 320문항을 추가 검토했습니다. 단순 반복만으로 실패 처리하지 않고 실제 해설 결함·정답 모호성·미확인 출처 관계를 구분했습니다. 별도 세션은 MA-CASE 160개를 읽고156개의 키를 평가했으며4개는 직접 적용 근거 부족으로 미평가입니다. Canonical release 인정은0개입니다.</p>
-<p>노트 작성자 원자적 주장 열거 {progress['notes_units_with_complete_atomic_claim_census']}/306 ({100*progress['notes_units_with_complete_atomic_claim_census']/306:.2f}%). {progress.get('atomic_claims_enumerated',0)}개 주장 중 공식근거 대조 {progress.get('atomic_claims_source_checked',0)}, SOURCE_BLOCKED {progress.get('atomic_claims_source_blocked',0)}. 독립적 열거 완전성·법규 검증 완료를 의미하지 않습니다. 약물 부록16절의 {progress.get('partial_census_claim_or_clause_records',0)}개 부분 주장·절 기록은 완료 주장 수에서 제외했습니다. 상담·Shield label 개정 후보는 미적용이며 별도 최종 검토가 필요합니다. 배포 검증은 이 페이지의 수치로 인증하지 않습니다.</p>
+<p>Wave5–9의 추가800개 ID는 각 결과 manifest의 정확한 원문 hash와 대조했습니다. 모든 보기가 정답인 SATA는 법적 키 오류와 별도 편집 문제로 안내합니다. 후속 독립 검토 CASE0482–0521은37개 키를 평가하고 HIPAA3개는 유일성을 미평가로 남겼습니다. 이40개의 현실성 FAIL은 문항별 기준과 함께 기록하고, 기본 대표 CASE0493도 보류했습니다. CASE0217의 추가 MA 전송 허용 근거 확인은 한 원문의 작성자 판단만 갱신하며 실질 개정·독립 검토 보류는 유지합니다.</p>
+<p>노트 작성자 원자적 주장 열거 {progress['notes_units_with_complete_atomic_claim_census']}/306 ({100*progress['notes_units_with_complete_atomic_claim_census']/306:.2f}%). {progress.get('atomic_claims_enumerated',0)}개 주장 중 공식근거 대조 {progress.get('atomic_claims_source_checked',0)}, SOURCE_BLOCKED {progress.get('atomic_claims_source_blocked',0)}. 독립적 열거 완전성·법규 검증 완료를 의미하지 않습니다. {partial_notice} 이전 상담·Shield 후보는 HOLD 기록으로 보존합니다. 상담·Shield 최종2절과 CE 제출 절, LAW-041·LAW-008·RF-034는 현재 본문·주장·카드 해시에 대한 별도 검토 KEEP 후 versioned overlay로 적용했습니다. 최종3절의 검토를 전체306절 인증으로 확대하지 않습니다. 확인된 SOURCE_BLOCKED 주장은 해당 노트에도 보류 안내를 표시합니다. 배포 검증은 이 페이지의 수치로 인증하지 않습니다.</p>
 <h2>학습 범위와 문항 수는 어떻게 다른가요?</h2>
 <table><thead><tr><th>집계 대상</th><th>현재 수</th><th>의미</th></tr></thead><tbody>
 <tr><td>통합노트 목차</td><td>{inventory['notes_topics']}주제 · {inventory['notes_sections']}절</td><td>교재의 주제와 상세 절</td></tr>

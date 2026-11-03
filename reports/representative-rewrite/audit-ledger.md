@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 54 |
-| NOT_YET_IMPLEMENTED | 224 |
+| HOLD_FROM_DEFAULT | 55 |
+| NOT_YET_IMPLEMENTED | 223 |
 
-기본 목록 394개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 393개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 375개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 467개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -324,7 +324,7 @@
 | MA-CASE-0190 | PLUS-SC22 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 한번도transfer안했는데anotherrefilltransfer라는표현이모순적이다. 정답경로는명확하지만A/D해설은이사례에서왜틀린지실제2refill/유효기간을언급하지않는다. 현재 보류 이유: 문항별 검토 결과: 현재 사실관계에서 왜 각 선택지가 적용/불적용되는지 설명을 교정하고 반복 family와의 중복을 줄여야 한다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
 | MA-CASE-0199 | PLUS-SC23 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | testosterone의nonopioidCIII라는약물조건이적절하나해설은OUD/nonopioid/pump중어느것인지불명확하게or를나열한다. 현재 보류 이유: 문항별 검토 결과: 수치변형·단순범주회상과 수학결과만 반복하는 오답해설을 실제 법적 혼동이 드러나는 독립 scenario로 개선할 필요가 있다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
 | MA-CASE-0208 | PLUS-SC24 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | validID가이미있는데C는obtainacceptableidentifier라는이미완료된행동을제시해일부참이며불필요한hardship기록누락을지문에강조한다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
-| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. 현재 보류 이유: 문항별 검토 결과: MA first-fill CII transfer 허용관계 SOURCE_BLOCKED. 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. 현재 보류 이유: MA-CASE-0217에 한하여 MA Policy2023-10 §I의 미조제 원본 EPCS 1회 전송 허용은 추가 공식 원문 대조로 작성자 단계에서 확인했습니다. 원문의 반복 사례·해설에 대한 실질 개정과 독립 legal/realism 검토는 남아 있어 기본 추천 보류를 유지합니다. 같은 묶음의 다른 ID에 이 한 문항의 추가 검토를 소급 적용하지 않습니다. |
 | MA-CASE-0226 | PLUS-SC26 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | CII25정에exactcount를적용하는명확한기초판단이다. B해설이마치이사례가III-V라고말해오답을설명하지않는다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
 | MA-CASE-0238 | PLUS-SC27 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 85+60−40−5=100은단순산술이고실측도100이라법규상다음행동이바뀌지않는다. 101정오답과0정차이를조사시작점이라설명하는문구가인위적이다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
 | MA-CASE-0244 | PLUS-SC28 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | orderday0·shipmentday3·today10으로시작점을구별할수있다. 제목near expiration과달리10일째이고50day(s)는템플릿잔재다. 현재 보류 이유: 문항별 검토 결과: 독립 legal/realism audit 및 versioned public-content 개선 미실행. |
@@ -350,7 +350,7 @@
 | MA-CASE-0466 | PLUS-WQ14 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 새 PharmD의 경험 요건이라는 정답은 retail consent 문서·성인 요건·CPA 갱신 오답과 다른 결정이다. |
 | MA-CASE-0473 | PLUS-WQ15 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Contraception 보험 범위와 권한 구별은 추상적이며 naloxone OTC 구매·standing order·구조키트 상담은 서로 다른 경로이다. |
 | MA-CASE-0478 | PLUS-WQ16 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Clozapine REMS 제거를 MA-CASE-0316과 다시 묻고 Brixadi·TIRF 제품 식별을 관계없는 오답으로 사용한다. |
-| MA-CASE-0493 | PLUS-WQ17 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 정답은 depot product의 여러 항목을 확인한다는 일반론이며 약물·경로·환자 사실이 없어 실제 허용 여부를 판단하지 않는다. |
+| MA-CASE-0493 | PLUS-WQ17 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 정답은 depot product의 여러 항목을 확인한다는 일반론이며 약물·경로·환자 사실이 없어 실제 허용 여부를 판단하지 않는다. 현재 보류 이유: CASE0482–0521의 별도 현실성 검토에서 문항별 정답 단서·동일 보기 재사용·한 사례 내 법규 상호작용 부족을 기록했습니다. 기본 대표0493도 구체적 depot 제품·전달 상황 대신 포괄적인 separate checks가 정답 단서가 되어 보류합니다. 이40개 중37개 키는 지지되지만 현실성 FAIL과 구별하며, HIPAA0506/0507/0508은 키 유일성도 미평가입니다. 원문·원래 정답·풀이 기록은 보존합니다. |
 | MA-CASE-0595 | PLUS-WQ29 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 스캔 처방과 EPCS 구별은 핵심이나 보험 수량 변경·다른 성분 교체는 명백한 별도 오류이며 전자예외 기록과 함께 혼합된다. |
 | MA-CASE-0607 | PLUS-WQ30 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Unfilled paper alprazolam을 전산 입력해도 EPCS가 되지 않는다는 정답은 구체적이나 나머지 보기의 기산일·보존·담당자는 다른 transfer 결정이다. |
 | MA-CASE-0617 | PLUS-WQ31 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Schedule II라는 지문 아래 CIII testosterone이 오답에 들어가고 hospice fax·central-fill oral·90일 OUD 범주가 따로 논다. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `828c4af7e5477dbc3129daa1d9d477834d1f042ffb15219004e487690787caf5` |
-| practice_expansion/2026-10-28-representative/questions.json | `7a56550c63b5a18c8f208c500099d8b72582b0e2eb233cf36ebffe08b546fd4d` |
+| practice_expansion/2026-10-28-representative/selection.json | `8edea76b3319f5f77271065b17854e09f8ec473a2360cd1edd5bccb566be6003` |
+| practice_expansion/2026-10-28-representative/questions.json | `22dce145e50732a2b42cb83e85dd269d0e0217e897d4446f8ff54d2eb2471dbe` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

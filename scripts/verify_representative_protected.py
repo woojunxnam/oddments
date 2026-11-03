@@ -167,6 +167,42 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    ninth_path=root/'revisions/notes/protected-migration-ce-disclosure.json'
+    if ninth_path.exists() and relative=='site/notes/complete-notes.md':
+        ninth=json.loads(ninth_path.read_bytes())
+        require(ninth['baseline_commit']=='3f93165e18af53d8a9dfcfe654805ba61164e303',
+                'Unexpected CE disclosure migration base')
+        require(ninth['path']==relative and ninth['baseline_copy']=='revisions/baselines/complete-notes-counsel-shield.md',
+                'CE disclosure migration expands protected scope')
+        require(ninth['revision_path']=='revisions/notes/2026-11-03-ce-disclosure-final.json',
+                'Unexpected CE disclosure revision')
+        require(ninth['previous_migration_path']=='revisions/notes/protected-migration-counsel-shield.json',
+                'Unexpected CE disclosure migration parent')
+        require(sha256(safe_file(root,ninth['revision_path']).read_bytes())==ninth['revision_sha256'],
+                'Stale CE disclosure overlay source')
+        require(sha256(safe_file(root,ninth['previous_migration_path']).read_bytes())==ninth['previous_migration_sha256'],
+                'Previous counsel/Shield migration changed')
+        require(sha256(current)==ninth['new_sha256'], 'Stale CE disclosure export')
+        current=safe_file(root,ninth['baseline_copy']).read_bytes()
+        require(sha256(current)==ninth['old_sha256'], 'Previous counsel/Shield export changed')
+    eighth_path=root/'revisions/notes/protected-migration-counsel-shield.json'
+    if eighth_path.exists() and relative=='site/notes/complete-notes.md':
+        eighth=json.loads(eighth_path.read_bytes())
+        require(eighth['baseline_commit']=='3f93165e18af53d8a9dfcfe654805ba61164e303',
+                'Unexpected counsel/Shield migration base')
+        require(eighth['path']==relative and eighth['baseline_copy']=='revisions/baselines/complete-notes-cdtm13-vax04.md',
+                'Counsel/Shield migration expands protected scope')
+        require(eighth['revision_path']=='revisions/notes/2026-11-03-counsel-shield-final.json',
+                'Unexpected counsel/Shield revision')
+        require(eighth['previous_migration_path']=='revisions/notes/protected-migration-cdtm13-vax04.json',
+                'Unexpected counsel/Shield migration parent')
+        require(sha256(safe_file(root,eighth['revision_path']).read_bytes())==eighth['revision_sha256'],
+                'Stale counsel/Shield overlay source')
+        require(sha256(safe_file(root,eighth['previous_migration_path']).read_bytes())==eighth['previous_migration_sha256'],
+                'Previous CDTM13/VAX04 migration changed')
+        require(sha256(current)==eighth['new_sha256'], 'Stale counsel/Shield export')
+        current=safe_file(root,eighth['baseline_copy']).read_bytes()
+        require(sha256(current)==eighth['old_sha256'], 'Previous published CDTM13/VAX04 export changed')
     seventh_path=root/'revisions/notes/protected-migration-cdtm13-vax04.json'
     if seventh_path.exists() and relative=='site/notes/complete-notes.md':
         seventh=json.loads(seventh_path.read_bytes())

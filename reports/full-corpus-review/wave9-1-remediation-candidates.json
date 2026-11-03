@@ -1,0 +1,203 @@
+{
+  "schema_version": "unapplied-source-bound-remediation-candidates/1",
+  "review_date": "2026-11-03",
+  "independent_review_status": "NOT_RUN",
+  "applied": false,
+  "patches": [
+    {
+      "question_id": "MA-EXP-0009",
+      "before_record_sha256": "f3d3172f0be090abeb77d8ff86e8a5c3b81521eb0789017a91c568155411f409",
+      "draft_after_record_sha256": "4473b764d5e497620326bfea5240b53676a725d46115d5ab3e7dd9df65feb1b6",
+      "status": "UNAPPLIED_DRAFT_REQUIRES_FINAL_CONTENT_INDEPENDENT_AUDIT",
+      "original_answer_key_preserved": true,
+      "application_requirement": "Root must create a versioned final candidate and recompute its own stored semantic/content hash before independent audit; this full-record draft hash is not release evidence.",
+      "patch": {
+        "choices": [
+          {
+            "id": "A",
+            "text": "A personal appearance is replaced by an employer reference in every reciprocity case."
+          },
+          {
+            "id": "B",
+            "text": "An active out-of-state license automatically waives the Massachusetts MPJE."
+          },
+          {
+            "id": "C",
+            "text": "NABP's preliminary approval does not replace the Massachusetts Board's final decision."
+          },
+          {
+            "id": "D",
+            "text": "Only the standing of the pharmacist's most recently used license matters."
+          }
+        ],
+        "explanation": {
+          "core_reasoning": "NABP의 사전 평가와 MA Board의 최종 면허 결정을 구분한다. 다른 주 면허만으로 해당 MA MPJE가 자동 면제되지 않으며 Board가 요구하면 본인 출석이 필요하다. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. 개인 면담 요구 여부는 Board의 적용 요건이며 고용주 추천이 자동 대체하지 않는다.\n교정된 설명: The Board may require a personal appearance as part of reciprocity review.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 다른 주 면허만으로 MA MPJE가 자동 면제되지 않는다.\n교정된 설명: Massachusetts MPJE requirements remain part of the applicable reciprocity pathway.",
+            "C": "선택해야 하는 옳은 설명. NABP 사전 평가와 Massachusetts Board의 최종 면허 결정은 구분한다.",
+            "D": "선택하지 않아야 하는 잘못된 설명. 가장 최근 사용한 면허 한 주만 검토하면 안 된다. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다.\n교정된 설명: The application must document good standing in every state where the applicant currently holds a license and disclose all pharmacist license information and board actions required by NABP, including expired, inactive, or lapsed licenses."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      },
+      "authorities": [
+        {
+          "source_id": "WAVE9-1-cmr3",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current posted 247CMR3, MARegister1546 dated2025-04-25 (PDF effective2025-01-09); individual historic commencement not separately retraced",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/cmr3.json",
+          "evidence_sha256": "389fdd96f79c6de69eb95b15cc318232d0767b4c27c5cc96f542903ae5b7f64b",
+          "raw_sha256": "96351fec400aa9eaad3e4ae6df13b8b8dbee3533b97f0017c342e8e3418225de",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "247CMR3.02 introductory good-standing clause,3.05"
+        },
+        {
+          "source_id": "WAVE9-1-nabptransfer",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://nabp.pharmacy/programs/licensure/licensure-transfer/",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current official NABP eLTP application instructions retrieved2026-11-03; page effective date not supplied; administrative application disclosure, not MA substantive good-standing rule",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/nabptransfer.json",
+          "evidence_sha256": "7654faa6fe4123788debd41044c410dd042735d42db1c462102d105692b03a69",
+          "raw_sha256": "7dfd4264b11918c34aeddf26302329331e81f0ddf16c5c2499b3b10c8b5f27d7",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "Application preparation:all pharmacist license information including active,expired,inactive,lapsed;all board-action disclosure"
+        }
+      ],
+      "reason_ko": "현재 보유 면허의 실체적 good-standing 요건과 모든 상태 면허·조치의 정보공개 요건을 분리한다. 보호 원문·키·시도·북마크는 수정하지 않는다."
+    },
+    {
+      "question_id": "MA-EXP-0010",
+      "before_record_sha256": "67d9e8346a1fcc2967202b9d8bc7543d57559a4fe8475c3d1471c5cfea82c55f",
+      "draft_after_record_sha256": "6536237cb47eedd783af8d056505b50ebbe8747a870716110e95659a0c75f99c",
+      "status": "UNAPPLIED_DRAFT_REQUIRES_FINAL_CONTENT_INDEPENDENT_AUDIT",
+      "original_answer_key_preserved": true,
+      "application_requirement": "Root must create a versioned final candidate and recompute its own stored semantic/content hash before independent audit; this full-record draft hash is not release evidence.",
+      "patch": {
+        "choices": [
+          {
+            "id": "A",
+            "text": "An active out-of-state license automatically waives the Massachusetts MPJE."
+          },
+          {
+            "id": "B",
+            "text": "A personal appearance is replaced by an employer reference in every reciprocity case."
+          },
+          {
+            "id": "C",
+            "text": "NABP's preliminary approval automatically activates a Massachusetts pharmacist license."
+          },
+          {
+            "id": "D",
+            "text": "The application must document good standing in every state where the applicant currently holds a license and disclose all pharmacist license information and board actions required by NABP, including expired, inactive, or lapsed licenses."
+          }
+        ],
+        "explanation": {
+          "core_reasoning": "NABP의 사전 평가와 MA Board의 최종 면허 결정을 구분한다. 다른 주 면허만으로 해당 MA MPJE가 자동 면제되지 않으며 Board가 요구하면 본인 출석이 필요하다. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. 다른 주 면허만으로 MA MPJE가 자동 면제되지 않는다.\n교정된 설명: Massachusetts MPJE requirements remain part of the applicable reciprocity pathway.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 개인 면담 요구 여부는 Board의 적용 요건이며 고용주 추천이 자동 대체하지 않는다.\n교정된 설명: The Board may require a personal appearance as part of reciprocity review.",
+            "C": "선택하지 않아야 하는 잘못된 설명. NABP 사전 평가와 Massachusetts Board의 최종 면허 결정은 구분한다.\n교정된 설명: NABP's preliminary approval does not replace the Massachusetts Board's final decision.",
+            "D": "선택해야 하는 설명. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      },
+      "authorities": [
+        {
+          "source_id": "WAVE9-1-cmr3",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current posted 247CMR3, MARegister1546 dated2025-04-25 (PDF effective2025-01-09); individual historic commencement not separately retraced",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/cmr3.json",
+          "evidence_sha256": "389fdd96f79c6de69eb95b15cc318232d0767b4c27c5cc96f542903ae5b7f64b",
+          "raw_sha256": "96351fec400aa9eaad3e4ae6df13b8b8dbee3533b97f0017c342e8e3418225de",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "247CMR3.02 introductory good-standing clause,3.05"
+        },
+        {
+          "source_id": "WAVE9-1-nabptransfer",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://nabp.pharmacy/programs/licensure/licensure-transfer/",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current official NABP eLTP application instructions retrieved2026-11-03; page effective date not supplied; administrative application disclosure, not MA substantive good-standing rule",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/nabptransfer.json",
+          "evidence_sha256": "7654faa6fe4123788debd41044c410dd042735d42db1c462102d105692b03a69",
+          "raw_sha256": "7dfd4264b11918c34aeddf26302329331e81f0ddf16c5c2499b3b10c8b5f27d7",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "Application preparation:all pharmacist license information including active,expired,inactive,lapsed;all board-action disclosure"
+        }
+      ],
+      "reason_ko": "현재 보유 면허의 실체적 good-standing 요건과 모든 상태 면허·조치의 정보공개 요건을 분리한다. 보호 원문·키·시도·북마크는 수정하지 않는다."
+    },
+    {
+      "question_id": "MA-EXP-0011",
+      "before_record_sha256": "83f1260079384ef3579aaddf0ae9d349815b0176821c8f1b424ebaa88e84b5ce",
+      "draft_after_record_sha256": "ee7a34c072d9bd10967253b4a44cab2910dd092b3abb54cc81fae67433d29b3c",
+      "status": "UNAPPLIED_DRAFT_REQUIRES_FINAL_CONTENT_INDEPENDENT_AUDIT",
+      "original_answer_key_preserved": true,
+      "application_requirement": "Root must create a versioned final candidate and recompute its own stored semantic/content hash before independent audit; this full-record draft hash is not release evidence.",
+      "patch": {
+        "choices": [
+          {
+            "id": "A",
+            "text": "Massachusetts MPJE requirements remain part of the applicable reciprocity pathway."
+          },
+          {
+            "id": "B",
+            "text": "The Board may require a personal appearance as part of reciprocity review."
+          },
+          {
+            "id": "C",
+            "text": "NABP's preliminary approval automatically activates a Massachusetts pharmacist license."
+          },
+          {
+            "id": "D",
+            "text": "The application must document good standing in every state where the applicant currently holds a license and disclose all pharmacist license information and board actions required by NABP, including expired, inactive, or lapsed licenses."
+          }
+        ],
+        "explanation": {
+          "core_reasoning": "NABP의 사전 평가와 MA Board의 최종 면허 결정을 구분한다. 다른 주 면허만으로 해당 MA MPJE가 자동 면제되지 않으며 Board가 요구하면 본인 출석이 필요하다. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다.",
+          "choice_analysis": {
+            "A": "선택해야 하는 옳은 설명. 다른 주 면허만으로 MA MPJE가 자동 면제되지 않는다.",
+            "B": "선택해야 하는 옳은 설명. 개인 면담 요구 여부는 Board의 적용 요건이며 고용주 추천이 자동 대체하지 않는다.",
+            "C": "선택하지 않아야 하는 잘못된 설명. NABP 사전 평가와 Massachusetts Board의 최종 면허 결정은 구분한다.\n교정된 설명: NABP's preliminary approval does not replace the Massachusetts Board's final decision.",
+            "D": "선택해야 하는 설명. 현재 면허를 보유한 모든 주의 good-standing은247CMR3.02의 실체요건이다. NABP에는 active/expired/inactive/lapsed 모든 면허 정보와 징계·비징계 board actions를 공개한다. 과거 모든 면허가 현재 good-standing이어야 한다는 뜻은 아니며, 징계 이력의 공개와 자동 면허 거절은 별개다.247CMR3.05의 보호된 의료활동 예외도 별도로 적용한다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      },
+      "authorities": [
+        {
+          "source_id": "WAVE9-1-cmr3",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current posted 247CMR3, MARegister1546 dated2025-04-25 (PDF effective2025-01-09); individual historic commencement not separately retraced",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/cmr3.json",
+          "evidence_sha256": "389fdd96f79c6de69eb95b15cc318232d0767b4c27c5cc96f542903ae5b7f64b",
+          "raw_sha256": "96351fec400aa9eaad3e4ae6df13b8b8dbee3533b97f0017c342e8e3418225de",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "247CMR3.02 introductory good-standing clause,3.05"
+        },
+        {
+          "source_id": "WAVE9-1-nabptransfer",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://nabp.pharmacy/programs/licensure/licensure-transfer/",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current official NABP eLTP application instructions retrieved2026-11-03; page effective date not supplied; administrative application disclosure, not MA substantive good-standing rule",
+          "evidence_path": "reports/full-corpus-review/evidence/wave9-1/nabptransfer.json",
+          "evidence_sha256": "7654faa6fe4123788debd41044c410dd042735d42db1c462102d105692b03a69",
+          "raw_sha256": "7dfd4264b11918c34aeddf26302329331e81f0ddf16c5c2499b3b10c8b5f27d7",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "Application preparation:all pharmacist license information including active,expired,inactive,lapsed;all board-action disclosure"
+        }
+      ],
+      "reason_ko": "현재 보유 면허의 실체적 good-standing 요건과 모든 상태 면허·조치의 정보공개 요건을 분리한다. 보호 원문·키·시도·북마크는 수정하지 않는다."
+    }
+  ]
+}

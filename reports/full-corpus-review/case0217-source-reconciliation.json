@@ -1,0 +1,148 @@
+{
+  "schema_version": "question-source-reconciliation/1",
+  "event_type": "AUTHOR_PRIMARY_SOURCE_RECONCILIATION_NOT_RELEASE_CERTIFICATION",
+  "question_id": "MA-CASE-0217",
+  "reviewed_at": "2026-11-03",
+  "record_sha256": "f7f7e98222f15a189f414c8afe60a094fd35d8bf418b1cde13350e6a972cd595",
+  "original_question_content_sha256_field": "1ceaaa0950c9abc276ef5eec2a970e7ef1f2fd32ed84c56328d311bed8cb15a3",
+  "original_question_collection": "practice_expansion/2026-10-26-plus/questions.json",
+  "original_stem": "A CII prescription is proposed for transfer between retail pharmacies in Massachusetts. It was originally an EPCS, has never been dispensed or transferred, and both pharmacies are appropriately DEA-registered. Except for any defect expressly stated, the other first-fill transfer conditions are met.\n\nWhich response best fits these facts? Select ONE answer.",
+  "question_type": "SBA",
+  "original_correct_choice_ids": [
+    "C"
+  ],
+  "prior_review_binding": {
+    "report_path": "reports/full-corpus-review/wave3-2-author-review.json",
+    "report_sha256": "3416f6557f0e1714933ea7baad971af68098de49210652ebaf6afb4b5583c514",
+    "prior_record_sha256": "20f2ffb89712ac93f768bd0d686df1069e536b1d824619591ee304f7e5ec5a05",
+    "prior_question_hash": "f7f7e98222f15a189f414c8afe60a094fd35d8bf418b1cde13350e6a972cd595",
+    "prior_disposition": "SOURCE_BLOCKED",
+    "prior_legal_review_status": "AUTHOR_CONDITIONAL_SOURCE_CHECK_NOT_INDEPENDENT",
+    "prior_answer_status": "NOT_ASSESSED_SOURCE_RELATIONSHIP",
+    "prior_missing_relationship": "Massachusetts permission under21CFR1306.08(g)",
+    "prior_federal_source_evidence": "reports/full-corpus-review/evidence/wave3-2/cfrtransfer.txt",
+    "prior_federal_source_evidence_sha256": "319a5f4ffc0c400ccd0ae494f14c40d9a029f7a31b934d51c7ef1e8d89cf78de",
+    "historical_record_modified": false
+  },
+  "source_register": [
+    {
+      "source_id": "unfilled",
+      "official_url": "https://www.mass.gov/doc/2023-10-unfilled-prescriptions-pdf/download",
+      "review_date": "2026-11-03",
+      "raw_sha256": "940c3d1ad56d2db3910ced877a8170934c08fa7e9cef42bf626ad93677339eb2",
+      "text_sha256": "1014639660e1777ee564dca30a1ff0357e7d8b67a13dba10e7ec5f6235f005de",
+      "source_evidence": "reports/full-corpus-review/evidence/wave8-2/unfilled.txt",
+      "effective_date": null,
+      "effective_date_status": "Policy PDF states Adopted9/7/23; no separate effective date stated; current official policy received2026-11-03; supersedes2022-03",
+      "source_class": "PUBLIC_OFFICIAL",
+      "version": "Policy2023-10 current official PDF;supersedes2022-03",
+      "exact_section": "I–III",
+      "adopted_date": "2023-09-07"
+    },
+    {
+      "source_id": "transfer2",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+      "retrieved_at": "2026-11-03",
+      "review_date": "2026-11-03",
+      "source_class": "PUBLIC_OFFICIAL",
+      "effective_date": null,
+      "effective_date_status": "별도 시행일 미확인; 조회일을 시행일로 취급하지 않음",
+      "api_retrieval_error": "HTTP Error 406: Not Acceptable",
+      "raw_sha256": "4546e8d6e7c9590ef6935ee607caf806caafc7d935b61113c519402b5c625358",
+      "text_sha256": "319a5f4ffc0c400ccd0ae494f14c40d9a029f7a31b934d51c7ef1e8d89cf78de",
+      "retrieval_status": "SUCCESS_CURRENT_HTML_FALLBACK_AFTER_API406",
+      "exact_section": "1306.08(d)-(i)",
+      "version": "current eCFR HTML as fetched; 88 FR48379,2023-07-27; timeline change 2023-08-28",
+      "source_evidence": "reports/full-corpus-review/evidence/wave3-2/cfrtransfer.txt",
+      "reuse_provenance": "Same-day original official-source capture2026-11-03; exact path/text SHA verified; authorreport not authority"
+    }
+  ],
+  "choice_by_choice_findings": {
+    "A": {
+      "original_option_text": "Apply the real-time-database refill exception to remove every initial-transfer condition.",
+      "statement_supported": false,
+      "finding_ko": "틀린 처리 — real-time database예외는III–V refill목적의특정전송규칙이다. CII initialEPCS의patientrequest/once/electronic/unaltered내용등필수조건을모두제거하지않는다.",
+      "exact_authority": "21 CFR1306.08(e),(i);1306.25(a)",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+      "law_checked_date": "2026-11-03",
+      "source_evidence": "reports/full-corpus-review/evidence/wave3-2/cfrtransfer.txt",
+      "source_evidence_sha256": "319a5f4ffc0c400ccd0ae494f14c40d9a029f7a31b934d51c7ef1e8d89cf78de"
+    },
+    "B": {
+      "original_option_text": "Ask a certified technician to substitute for the required licensed-pharmacist communication.",
+      "statement_supported": false,
+      "finding_ko": "틀린 처리 — 이initialcontrolledEPCS전송은두licensedpharmacists사이directcommunication이어야한다. certifiedtechnician의다른MA ScheduleVI업무권한으로대체하지못한다.",
+      "exact_authority": "21 CFR1306.08(f)(3)",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+      "law_checked_date": "2026-11-03",
+      "source_evidence": "reports/full-corpus-review/evidence/wave3-2/cfrtransfer.txt",
+      "source_evidence_sha256": "319a5f4ffc0c400ccd0ae494f14c40d9a029f7a31b934d51c7ef1e8d89cf78de"
+    },
+    "C": {
+      "original_option_text": "Proceed with the initial electronic transfer, preserving all required content and records.",
+      "statement_supported": true,
+      "finding_ko": "옳은 처리 — 현재MA정책I는unfilledoriginalEPCS ScheduleII–V를one-timebasis로전자전송하고내용을바꾸지않으며1306.08에따르도록허용한다. 원문은원래EPCS이고neverdispensed/nevertransferred,적격DEAretailpharmacies이며나머지first-fill조건이충족된다고명시한다. 따라서patientrequest등을충족한상태에서requiredcontent/records를보존하며진행하는C가맞다.",
+      "exact_authority": "MA Policy2023-10I;21 CFR1306.08(e)-(h)",
+      "official_url": "https://www.mass.gov/doc/2023-10-unfilled-prescriptions-pdf/download",
+      "law_checked_date": "2026-11-03",
+      "source_evidence": "reports/full-corpus-review/evidence/wave8-2/unfilled.txt",
+      "source_evidence_sha256": "1014639660e1777ee564dca30a1ff0357e7d8b67a13dba10e7ec5f6235f005de"
+    },
+    "D": {
+      "original_option_text": "Convert the prescription to a fax between the pharmacies to satisfy the electronic-transfer rule.",
+      "statement_supported": false,
+      "finding_ko": "틀린 처리 — EPCS를print/fax등다른형식으로바꾸어initialelectronictransfer를완성할수없다. form보존과requiredcontentsunaltered조건을유지해야한다.",
+      "exact_authority": "21 CFR1306.08(f)(1)-(2)",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.08",
+      "law_checked_date": "2026-11-03",
+      "source_evidence": "reports/full-corpus-review/evidence/wave3-2/cfrtransfer.txt",
+      "source_evidence_sha256": "319a5f4ffc0c400ccd0ae494f14c40d9a029f7a31b934d51c7ef1e8d89cf78de"
+    }
+  },
+  "answer_key_crosscheck": {
+    "expected_from_official_statements": [
+      "C"
+    ],
+    "stored": [
+      "C"
+    ],
+    "matches": true,
+    "sba_unique": true,
+    "scope": "THIS_EXACT_ORIGINAL_QUESTION_AUTHOR_SOURCE_RECONCILIATION_ONLY"
+  },
+  "original_explanation_assessment_ko": "원한국어core와각distractor해설을다시읽었다. never-filled/originalEPCS/일회/환자요청/적격retail/전자형태/unalteredcontents및pharmacistcommunication구분은공식조항과일치한다. 설명에MA Policy2023-10I를직접연결하면statepermission관계가더명확해진다.",
+  "source_blocker_resolution": {
+    "status": "RESOLVED_FOR_THIS_EXACT_ORIGINAL_HASH_AT_AUTHOR_STAGE",
+    "resolved_relationship": "Policy2023-10I explicitly permits unfilledoriginalEPCS ScheduleII–V one-time electronictransmission in accordancewith1306.08",
+    "finding_ko": "이전review가확보하지못한MA허용관계는현재공식PDF의I절을직접확인하여해결했다. 원questionmetadata에는이정책이이미언급되어있었으나이전review에서는현공식자료를재확보하지못했다. 이번발견은새법제정이나규칙변경이아니라누락된primary-source검증의보완이다.",
+    "unresolved_law_claims_in_this_relationship": []
+  },
+  "recommended_current_author_overlay": {
+    "legal_review_status": "AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT",
+    "answer_key_assessment": "CORRECT",
+    "source_blocker_active": false,
+    "editorial_disposition": "REMEDIATION_OR_REALISM_ADJUDICATION_PENDING",
+    "not_an_instruction_to_release": true
+  },
+  "remaining_blockers": [
+    "기존review의template변형·반복해설·realism우려는이번법적source관계해결로자동해결되지않는다. 본문편집또는별도editorial/realismadjudication이필요하다.",
+    "필요한independentlegal/realismcanonicalevidence,currenthashadjudication및기존releasegates는이번authorreconciliation으로대체되지않는다.",
+    "이번event는defaultpractice보류를해제하지않으며다른관련문항의키나source관계까지자동검증하지않는다."
+  ],
+  "governance_effects": {
+    "original_question_modified": false,
+    "original_answer_modified": false,
+    "old_report_modified": false,
+    "queue_modified": false,
+    "default_hold_removed": false,
+    "new_independent_audits_created": 0,
+    "released": false,
+    "additional_review_completion_credit": 0
+  },
+  "reviewer_provenance": {
+    "author_session": "20261103-wave8-2-case0217-reconciliation",
+    "worker": "/root/review_b",
+    "independent": false,
+    "scope": "Fresh rereading of exactoriginalstem/all4options/Koreanrationales plus currentofficialPolicy2023-10I andsame-day1306.08 primarytext; notindependentcertification"
+  }
+}

@@ -144,6 +144,7 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
         'w1-c-14','w1-c-15','w4-d-17','w3-d-2','w3-d-3','authority-paths','w6-b-17',
         'w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8',
         'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
+        'w3-b-1','w3-d-23','w1-a-7',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']

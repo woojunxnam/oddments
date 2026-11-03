@@ -60,6 +60,12 @@
   const kindLabels = {'source-derived':'기존 노트 재편집','editorial-synthesis':'중복 통합·재서술','new-primary-source-check':'공식 원문 추가 확인'};
   const flagLabels = {open:'적용 경계 확인 필요','date-sensitive':'시행일·현재 상태 확인','interpretation':'편집상 적용 판단','source-gap':'출처 연결 보완 필요'};
   function badges(u) { return (u.flags || []).map(f => `<span class="badge warning">${esc(flagLabels[f] || f)}</span>`).join(''); }
+  function sourceHold(u) {
+    const review = u.atomic_source_review;
+    if (!review) return '';
+    const url = 'https://github.com/woojunxnam/oddments/blob/main/' + review.source;
+    return `<p class="notice source-hold">${esc(review.notice)} <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">주장별 검토 기록</a></p>`;
+  }
   function chapterNavigation() {
     let part = ''; let html = '';
     D.chapters.forEach((c, i) => {
@@ -117,7 +123,7 @@
     return `<aside class="unit-practice" aria-label="${esc(u.title)} 관련 연습"><h3>읽은 규칙을 문제에 적용하기</h3><p>이 절에 직접 연결된 대표·개정 <strong>${entry.recommended}문항</strong> · 전체 변형 ${entry.total}문항</p><div class="actions">${action}<a data-unit-wrong="${esc(u.id)}" href="${esc(practice+'&review=wrong')}">이 절 오답 복습 →</a></div><small>같은 판단을 공유하는 변형과 이전 판본이 포함될 수 있습니다. 연결 수는 독립 법규 검증 수가 아닙니다.${entry.recommended?'':' 기본 목록의 연결 문항은 아직 없으며, 전체 변형에는 이전 판본·검토 보류 문항도 포함됩니다.'}</small></aside>`;
   }
   function renderUnit(u) {
-    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}<div class="unit-body">${u.html}</div>${unitPractice(u)}<details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
+    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}${sourceHold(u)}<div class="unit-body">${u.html}</div>${unitPractice(u)}<details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
   }
   function renderChapter(ch, target) {
     setToc(ch);
@@ -142,12 +148,13 @@
   const searchable=[...units.values()].map(u=>({u,text:normalize(u.title+' '+u.text+' '+u.chapter.title+' '+u.origins.join(' ')),title:normalize(u.title)}));
   function snippet(text,query){const ts=terms(query).flat();const lower=text.toLocaleLowerCase();let pos=-1;for(const t of ts){const p=lower.indexOf(t);if(p>=0&&(pos<0||p<pos))pos=p;}const start=Math.max(0,pos-55);return (start?'…':'')+text.slice(start,start+190)+(text.length>start+190?'…':'');}
   function highlight(text,query){const ts=terms(query).flat().filter(x=>x.length>1).sort((a,b)=>b.length-a.length);if(!ts.length)return esc(text);const r=new RegExp('('+ts.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')','giu');return text.split(r).map((x,i)=>i%2?'<mark>'+esc(x)+'</mark>':esc(x)).join('');}
-  function resultCard(u,q=''){return `<a class="result-card" href="${href(u)}"><small>${esc(u.chapter.title)}${u.flags.includes('open')?' · 적용 경계 확인 필요':''}</small><h2>${highlight(u.title,q)}</h2><p>${highlight(snippet(u.text,q),q)}</p></a>`;}
+  function requiresReview(u) { return u.flags.includes('open') || (u.atomic_source_review?.count > 0); }
+  function resultCard(u,q=''){return `<a class="result-card" href="${href(u)}"><small>${esc(u.chapter.title)}${requiresReview(u)?' · 적용 경계 확인 필요':''}</small><h2>${highlight(u.title,q)}</h2><p>${highlight(snippet(u.text,q),q)}</p></a>`;}
   function renderSearch(initial=''){
     setToc(null);
     reader.innerHTML=`<header class="chapter-head"><p class="eyebrow">FIND A RULE</p><h1>전체 본문 검색</h1><p class="chapter-lede">법규 번호, 약 이름, 한국어·English 용어로 상세 설명을 찾습니다.</p></header>${searchBox('search-query',initial)}<div class="search-controls"><select id="search-chapter" aria-label="검색할 장"><option value="">모든 장</option>${D.chapters.map(c=>`<option value="${c.id}">${esc(c.title)}</option>`).join('')}</select><select id="search-flag" aria-label="검토 상태 필터"><option value="">모든 상태</option><option value="open">적용 경계 확인 필요</option><option value="date-sensitive">시행일 확인</option><option value="saved">북마크한 절</option></select></div><p id="result-count" class="results-label" role="status"></p><div id="search-results"></div>`;
     function run(){const q=$('#search-query').value;const cid=$('#search-chapter').value;const flag=$('#search-flag').value;
-      const rows=searchable.filter(x=>(!cid||x.u.chapter.id===cid)&&(!flag||(flag==='saved'?state.saved.includes(x.u.id):x.u.flags.includes(flag)))).map(x=>({...x,s:q.trim()?score(x.text,x.title,q):0})).filter(x=>x.s>=0).sort((a,b)=>b.s-a.s);
+      const rows=searchable.filter(x=>(!cid||x.u.chapter.id===cid)&&(!flag||(flag==='saved'?state.saved.includes(x.u.id):flag==='open'?requiresReview(x.u):x.u.flags.includes(flag)))).map(x=>({...x,s:q.trim()?score(x.text,x.title,q):0})).filter(x=>x.s>=0).sort((a,b)=>b.s-a.s);
       $('#result-count').textContent=`${rows.length}개 절${rows.length>150?' · 처음 150개 표시, 검색어나 장을 좁혀 주세요.':''}`;
       $('#search-results').innerHTML=rows.length?rows.slice(0,150).map(x=>resultCard(x.u,q)).join(''):'<p class="empty-state">일치하는 절이 없습니다. 짧은 용어, generic name 또는 다른 법규 번호로 검색해 보세요.</p>';
       history.replaceState(null,'','#search/'+encodeURIComponent(q));

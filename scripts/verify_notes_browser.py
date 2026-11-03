@@ -82,6 +82,8 @@ def main() -> None:
         expect(continuity).to_contain_text('30일')
         expect(continuity).to_contain_text('gabapentin')
         expect(continuity.locator('.badge.warning')).to_be_visible()
+        expect(continuity.locator('.source-hold')).to_contain_text('근거 확인 보류 주장')
+        expect(continuity.locator('.source-hold a')).to_have_attribute('href',re.compile(r'^https://github\.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/'))
         continuity.locator('[data-save]').click()
         continuity.locator('[data-read]').click()
         expect(continuity.locator('[data-save]')).to_have_attribute('aria-pressed','true')
@@ -110,6 +112,14 @@ def main() -> None:
         page.locator('#search-flag').select_option('open')
         expect(page.locator('.result-card').first).to_be_visible()
         checked('OPEN filter works with search')
+        source_only=page.evaluate("""() => window.MPJE_NOTES.chapters.flatMap(c=>c.units.filter(u=>u.atomic_source_review?.count>0&&!u.flags.includes('open')).map(u=>'#chapter/'+c.id+'/'+u.id))""")
+        assert source_only, 'Need current source-hold coverage independent of historical OPEN flags'
+        route('search/')
+        page.locator('#search-flag').select_option('open')
+        for href in source_only:
+            expect(page.locator(f'a.result-card[href="{href}"] small')).to_be_visible()
+            expect(page.locator(f'a.result-card[href="{href}"] small')).to_contain_text('적용 경계 확인 필요')
+        checked('source-blocked units without historical OPEN flags appear in review filter and search warnings')
         for q in ['Sublocade','Adderall','naloxone']:
             route('drugs/'+q)
             expect(page.locator('.drug-card').first).to_be_visible()

@@ -22,6 +22,16 @@ REVIEW_FILES = (
     'wave3-3-author-review.json', 'wave3-4-author-review.json',
     'wave4-1-author-review.json', 'wave4-2-author-review.json',
     'wave4-3-author-review.json', 'wave4-4-author-review.json',
+    'wave5-1-author-review.json', 'wave5-2-author-review.json',
+    'wave5-3-author-review.json', 'wave5-4-author-review.json',
+    'wave6-1-author-review.json', 'wave6-2-author-review.json',
+    'wave6-3-author-review.json', 'wave6-4-author-review.json',
+    'wave7-1-author-review.json', 'wave7-2-author-review.json',
+    'wave7-3-author-review.json', 'wave7-4-author-review.json',
+    'wave8-1-author-review.json', 'wave8-2-author-review.json',
+    'wave8-3-author-review.json', 'wave8-4-author-review.json',
+    'wave9-1-author-review.json', 'wave9-2-author-review.json',
+    'wave9-3-author-review.json', 'wave9-4-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -183,6 +193,109 @@ def validate_note_census(census, effective, by_id, root=ROOT):
     return units
 
 
+def compose_note_censuses(specs, effective, by_id, root=ROOT):
+    """Validate historical snapshots, then require explicit per-unit supersedence.
+
+    A changed note must have a current-body census; old review credit never follows
+    an edited body. Old reports and revision snapshots remain verifiable history.
+    """
+    from notes_revision import load_notes
+    selected = {}
+    for spec in specs:
+        path = root / spec['path']
+        census = json.loads(path.read_text())
+        snapshot = {u['id']: u for c in load_notes(root, revision_id=spec['notes_revision'])['chapters']
+                    for u in c['units']}
+        source_units = validate_note_census(census, snapshot, by_id, root)
+        overlap = set(source_units) & set(selected)
+        if set(spec.get('supersedes', {})) != overlap:
+            raise ValueError('Undeclared census supersedence')
+        for uid, unit in source_units.items():
+            if uid in overlap and spec['supersedes'][uid] != selected[uid]['source']:
+                raise ValueError('Wrong census supersedence parent: ' + uid)
+            selected[uid] = dict(unit=unit, source=spec['path'],
+                                 notes_revision=spec['notes_revision'],
+                                 claims=[c for c in census['claims'] if c['unit_id'] == uid])
+    for uid, entry in selected.items():
+        if entry['unit']['unit_content_sha256'] != hashlib.sha256(effective[uid]['body'].encode()).hexdigest():
+            raise ValueError('Current note requires a new census: ' + uid)
+    units = {uid: dict(entry['unit'], census_source=entry['source'],
+                        notes_revision=entry['notes_revision']) for uid, entry in selected.items()}
+    claims = [claim for entry in selected.values() for claim in entry['claims']]
+    return units, claims
+
+
+def apply_citation_errata(rows, root=ROOT):
+    """Correct reviewed locators without rewriting report/answer history."""
+    import copy
+    path = root/'reports/full-corpus-review/wave6-1-citation-errata.json'
+    raw = path.read_bytes()
+    correction = json.loads(raw)
+    if correction['legal_truth_changed'] or correction['answer_keys_changed']:
+        raise ValueError('Citation errata cannot change legal truth or answer keys')
+    original = root/correction['original_report_path']
+    authority = correction['official_authority']
+    if (hashlib.sha256(original.read_bytes()).hexdigest() != correction['original_report_sha256'] or
+            hashlib.sha256((root/authority['source_evidence_path']).read_bytes()).hexdigest() != authority['source_evidence_sha256']):
+        raise ValueError('Stale citation errata evidence')
+    by_id = {r['question_id']: r for r in rows}
+    for patch in correction['errata']:
+        row = by_id[patch['question_id']]
+        if (patch['field'] != 'exact_authority' or row['content_sha256'] != patch['question_record_sha256'] or
+                row['review_evidence']['source_path'] != correction['original_report_path']):
+            raise ValueError('Citation errata scope or question binding changed')
+        row['choice_by_choice_findings'] = copy.deepcopy(row['choice_by_choice_findings'])
+        finding = row['choice_by_choice_findings'][patch['choice_id']]
+        if finding['exact_authority'] != patch['original_field_value']:
+            raise ValueError('Citation errata precondition changed')
+        finding['exact_authority'] = patch['corrected_field_value']
+        row['authority_clauses'] = sorted({v['exact_authority'] for v in row['choice_by_choice_findings'].values()})
+        row['review_evidence'].setdefault('citation_errata', []).append(dict(
+            path=str(path.relative_to(root)), sha256=hashlib.sha256(raw).hexdigest(),
+            field_path=patch['field_path'], previous=patch['original_field_value'], current=patch['corrected_field_value']))
+
+
+def apply_case0217_reconciliation(rows, questions, root=ROOT):
+    """Additional primary research updates one author assessment, not release."""
+    import copy
+    path = root/'reports/full-corpus-review/case0217-source-reconciliation.json'
+    raw = path.read_bytes()
+    update = json.loads(raw)
+    qid = update['question_id']
+    question = questions[qid]
+    row = next(r for r in rows if r['question_id'] == qid)
+    binding = update['prior_review_binding']
+    original_raw = (root/binding['report_path']).read_bytes()
+    original = next(r for r in json.loads(original_raw)['records'] if r['question_id'] == qid)
+    if (qid != 'MA-CASE-0217' or update['record_sha256'] != record_hash(question) or
+            record_hash(original) != binding['prior_record_sha256'] or
+            hashlib.sha256(original_raw).hexdigest() != binding['report_sha256']):
+        raise ValueError('Source reconciliation binding changed')
+    findings = update['choice_by_choice_findings']
+    if set(findings) != {c['id'] for c in question['choices']}:
+        raise ValueError('Reconciliation choice coverage changed')
+    for choice in question['choices']:
+        finding = findings[choice['id']]
+        if (finding['original_option_text'] != choice['text'] or
+                hashlib.sha256((root/finding['source_evidence']).read_bytes()).hexdigest() != finding['source_evidence_sha256']):
+            raise ValueError('Reconciliation choice or primary evidence changed')
+    expected = [c['id'] for c in question['choices'] if findings[c['id']]['statement_supported']]
+    if expected != question['correct_choice_ids'] or update['reviewer_provenance']['independent']:
+        raise ValueError('Reconciliation is not matching author evidence')
+    row['historical_author_assessment'] = dict(answer_key_assessment=row['answer_key_assessment'],
+        legal_review_status=row['legal_review_status'], blocker=row['blocker'],
+        reviewer_provenance=copy.deepcopy(row['reviewer_provenance']), review_evidence=copy.deepcopy(row['review_evidence']))
+    row.update(legal_review_status='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT',
+        reviewer_provenance=update['reviewer_provenance'],
+        answer_key_assessment='CORRECT', answer_key_crosscheck=update['answer_key_crosscheck'],
+        choice_by_choice_findings=copy.deepcopy(findings),
+        authority_clauses=sorted({f['exact_authority'] for f in findings.values()}),
+        disposition='MAJOR_REWRITE', blocker=' '.join(update['remaining_blockers']))
+    row['review_evidence']['source_reconciliation'] = dict(path=str(path.relative_to(root)),
+        sha256=hashlib.sha256(raw).hexdigest(), status=update['source_blocker_resolution']['status'],
+        scope='ONE_EXACT_ORIGINAL_HASH_AUTHOR_RESEARCH_ONLY_NOT_RELEASE')
+
+
 def build():
     config = read('site/practice-expansion/publication.json')
     paths = ['practice_expansion/2026-10-23/candidates/questions.json'] + [a['path'] for a in config['additional_banks']]
@@ -285,8 +398,11 @@ def build():
             )
             row['publication_status'] = ('PRACTICE_CONFIG_DEFAULT' if qid in selection['recommended_ids'] else 'PRACTICE_CONFIG_ARCHIVE')
             result.append(row)
+    apply_citation_errata(result)
+    apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
-        'pub05-14-independent-review.json', 'wave2-independent-review.json')]
+        'pub05-14-independent-review.json', 'wave2-independent-review.json',
+        'wave5-independent-review.json')]
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):
@@ -303,7 +419,9 @@ def build():
     for row in result:
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
+            row['author_disposition'] = row['disposition']
             row['independent_legacy_legal_assessment'] = audit_row['legal_review']
+            row['independent_legacy_realism_assessment'] = audit_row['realism_review']
             row['independent_legacy_is_canonical_release_evidence'] = False
             if audit_row['legal_review']['existing_answer_correct'] in {'AMBIGUOUS', 'NOT_ASSESSED', 'NO'}:
                 row['author_answer_key_assessment'] = row['answer_key_assessment']
@@ -311,6 +429,10 @@ def build():
                 row['answer_key_assessment'] = 'INDEPENDENT_LEGACY_' + audit_row['legal_review']['existing_answer_correct']
                 row['disposition'] = 'HOLD_FOR_LEGAL_REVIEW'
                 row['blocker'] = audit_row['legal_review'].get('blocker') or audit_row['legal_review'].get('finding_ko')
+            elif audit_row['realism_review'].get('verdict') == 'FAIL':
+                row['author_review_blocker'] = row['blocker']
+                row['disposition'] = 'MAJOR_REWRITE'
+                row['blocker'] = audit_row['required_next_action_ko']
     independent_assessed = [r for r in independent_records if
                             r['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED']
     ids = [r['question_id'] for r in result]
@@ -330,17 +452,29 @@ def build():
     effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
     for claim in claims:
         validate_claim(claim, effective, ROOT)
-    census_sources = [read('reports/full-corpus-review/' + name) for name in (
-        'pub05-14-note-census.json', 'note-wave2-census.json', 'note-wave3-census.json')]
-    census_units = {}
-    for source in census_sources:
-        source_units = validate_note_census(source, effective, by_id)
-        if set(source_units) & set(census_units):
-            raise ValueError('Overlapping current note censuses')
-        census_units.update(source_units)
+    census_specs = [dict(path='reports/full-corpus-review/' + name,
+                         notes_revision='2026-10-30.cdtm13-vax04.1') for name in (
+        'pub05-14-note-census.json', 'note-wave2-census.json', 'note-wave3-census.json', 'note-wave4-census.json', 'note-wave5-census.json')]
+    census_specs.append(dict(path='reports/full-corpus-review/counsel-shield-final-census.json',
+        notes_revision='2026-11-03.counsel-shield-final.1', supersedes={
+            'w3-b-1': 'reports/full-corpus-review/pub05-14-note-census.json',
+            'w3-d-23': 'reports/full-corpus-review/pub05-14-note-census.json'}))
+    appendix_a_ids = ['appendix-a-1','appendix-a-10','appendix-a-2','appendix-a-3',
+                      'appendix-a-4','appendix-a-5','appendix-a-6','appendix-a-7']
+    census_specs.append(dict(path='reports/full-corpus-review/appendix-atoms-a-census.json',
+        notes_revision='2026-10-30.cdtm13-vax04.1', supersedes={
+            uid: 'reports/full-corpus-review/note-wave2-census.json' for uid in appendix_a_ids}))
+    census_specs.append(dict(path='reports/full-corpus-review/ce-disclosure-final-census.json',
+        notes_revision='2026-11-03.ce-disclosure.1', supersedes={
+            'w1-a-7': 'reports/full-corpus-review/note-wave4-census.json'}))
+    appendix_b_ids = ['appendix-a-8','appendix-a-9'] + ['appendix-b-'+str(i) for i in range(1,7)]
+    census_specs.append(dict(path='reports/full-corpus-review/appendix-atoms-b-census.json',
+        notes_revision='2026-10-30.cdtm13-vax04.1', supersedes={
+            uid: 'reports/full-corpus-review/note-wave2-census.json' for uid in appendix_b_ids}))
+    census_units, census_claims = compose_note_censuses(census_specs, effective, by_id, ROOT)
     complete_census_units = {uid for uid, unit in census_units.items() if
         unit['census_status'] == 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'}
-    census = {'claims': [c for source in census_sources for c in source['claims']]}
+    census = {'claims': census_claims}
     if len({c['claim_id'] for c in census['claims']}) != len(census['claims']):
         raise ValueError('Duplicate cross-census claim')
     complete_census_claims = [c for c in census['claims'] if c['unit_id'] in complete_census_units]
@@ -356,6 +490,9 @@ def build():
                   legal_review_status='PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM' if u['id'] in open_units else ('PARTIAL_AUTHOR_REVIEW_NOT_CENSUS' if u['id'] in reviewed_units else 'UNREVIEWED'),
                   atomic_claim_census_complete=u['id'] in complete_census_units,
                   atomic_claim_census_status=census_units.get(u['id'], {}).get('census_status', 'NOT_ENUMERATED'),
+                  atomic_census_source=census_units.get(u['id'], {}).get('census_source'),
+                  atomic_census_notes_revision=census_units.get(u['id'], {}).get('notes_revision'),
+                  atomic_source_blocked_count=sum(x['review_status']=='SOURCE_BLOCKED' for x in census['claims'] if x['unit_id']==u['id']),
                   atomic_claim_ids=[x['claim_id'] for x in census['claims'] if x['unit_id'] == u['id']]) for c in notes['chapters'] for u in c['units']]
     canonical = []
     for path in sorted((ROOT/'data/questions').glob('*.json')):
@@ -388,6 +525,7 @@ def build():
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
                     notes_units_with_partial_claim_review=len(reviewed_units),
                     notes_units_with_versioned_edits=sum(u['editorial_update_status']=='VERSIONED_REVISION_APPLIED' for u in units),
+                    notes_units_with_independent_final_content_review=sum('independent_content_review' in u for u in effective.values()),
                     notes_units_with_complete_atomic_claim_census=len(complete_census_units),
                     notes_units_with_atomic_claim_records=len(census_units),
                     partial_census_claim_or_clause_records=len(census['claims'])-len(complete_census_claims),
