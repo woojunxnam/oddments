@@ -50,7 +50,9 @@ def test_representatives_reduce_exact_repetition():
  assert len({x['family_id'] for x in q})==count
  assert len({normalize(x['stem']) for x in q})==count
  assert len({signature(x) for x in q})==count
- assert len([x for x in q if x['question_id'].startswith('MA-REV-')])==96
+ held={h['question_id'] for h in d.get('representative_revision',{}).get('safety_holds',[])}
+ assert len([x for x in q if x['question_id'].startswith('MA-REV-')])==96-len([qid for qid in held if qid.startswith('MA-REV-')])
+ assert len([x for x in d['questions'] if x['question_id'].startswith('MA-REV-')])==96
 
 def test_existing_ids_and_new_ids_disjoint():
  d=build_payload();new=set(d['quality_selection']['new_ids']);assert len(new)==96

@@ -112,7 +112,9 @@ def build_ledger():
     fresh = {q['question_id']: q for q in bank['questions']}
     require(len(fresh) == len(bank['questions']), 'Duplicate new-bank ID.')
     require(set(selection['new_ids']) == set(fresh), 'Selection/new-bank ID mismatch.')
-    require(set(baseline['new_ids']) <= recommended, 'The previous96 must remain recommended.')
+    from build_representative_rewrites import validate_nonlegacy_selection
+    safety_holds = validate_nonlegacy_selection(selection, baseline, {**original, **fresh}, ROOT)
+    safety_held_ids = {h['question_id'] for h in safety_holds}
 
     replacements = {}
     for record in selection['replacements']:
@@ -151,7 +153,11 @@ def build_ledger():
         if qid in replacements:
             record = replacements[qid]
             target = record['replacement_question_id']
-            require(qid not in recommended and target in recommended, 'Invalid default replacement: ' + qid)
+            require(qid not in recommended and target in recommended | safety_held_ids,
+                    'Invalid default replacement: ' + qid)
+            implementation['replacement_is_in_current_default'] = target in recommended
+            implementation['replacement_default_safety_hold'] = next(
+                (copy.deepcopy(h) for h in safety_holds if h['question_id'] == target), None)
             implementation['replacement_question_id'] = target
             implementation['selection_record'] = copy.deepcopy(record)
             if record['kind'] == 'NEW_CASE':
@@ -223,6 +229,7 @@ def build_ledger():
         official_source_reverification_performed_by_ledger=False,
         original_editorial_triage_preserved=True,
         subsequent_source_bound_archive_notices=copy.deepcopy(selection.get('archive_review_notices', [])),
+        nonlegacy_default_safety_holds=copy.deepcopy(safety_holds),
         input_hashes={relative(path): digest(path.read_bytes()) for path in (TRIAGE, BASELINE_SELECTION, SELECTION, REVISION_BANK)},
         verified_original_triage_inputs=verified_triage_inputs,
         editorial_triage_metadata={key: copy.deepcopy(value) for key, value in triage.items() if key != 'items'},
@@ -234,6 +241,11 @@ def build_ledger():
             implementation_statuses=counts, current_default=len(recommended),
             archive_ids_with_review_notice=len(archive_notice_ids),
             previous_quality_retained=len(baseline['new_ids']),
+            previous_quality_default=len(set(baseline['new_ids']) & recommended),
+            previous_quality_safety_held=len(set(baseline['new_ids']) & safety_held_ids),
+            rewrite_default=len(set(fresh) & recommended),
+            rewrite_safety_held=len(set(fresh) & safety_held_ids),
+            nonlegacy_safety_held_from_default=len(safety_holds),
             newly_authored_replacement_questions=len(fresh),
             originals_rewritten_in_place=0, originals_deleted=0,
             canonical_independent_audits_created=0,
@@ -243,6 +255,7 @@ def build_ledger():
             '원본 355개 모두의 legal_correctness는 기존 triage대로 NOT_REVERIFIED이다. 새 ID에 대한 작성자 출처 검토가 원본의 법규 재검증이나 독립 감사로 소급되지 않는다.',
             '후속 원본 ID별 법규 대조는 reports/full-corpus-review/question-ledger.jsonl에 별도로 기록한다. 현재 오류·조건부 안내는 source-bound archive notices이며 과거 triage나 canonical 상태를 덮어쓰지 않는다.',
             'REWRITTEN_NEW_ID는 별도 새 사례의 작성·반영을 뜻한다. REUSED_EXISTING_QUALITY는 이미 있는 96개 중 한 사례를 재사용한 것이며 신규 작성 수에 넣지 않는다.',
+            '비원본 MA-REV·MA-RW 안전 보류는 nonlegacy_default_safety_holds에 별도 기록하며 원본355개 implementation_status 수에 합산하지 않는다. 현재 원문·검토 hash와 실제 비유지 판정을 확인한 포함 범위 조치이며 법규 인증이 아니다.',
             'HOLD_FROM_DEFAULT는 기본 목록에서의 보류이다. 원본 파일·정답·기존 학습 기록을 삭제하거나 바꾸지 않는다.',
             'NOT_YET_IMPLEMENTED는 편집 검토만 완료된 범위이다. 355개 전부가 수정·교체 또는 법규 감사 완료되었다고 해석하면 안 된다.',
         ],
@@ -265,7 +278,7 @@ def render_markdown(ledger):
         '| 상태 | 문항 수 |', '|---|---:|',
     ]
     lines.extend(f'| {status} | {number} |' for status, number in counts['implementation_statuses'].items())
-    lines += ['', f"기본 목록 {counts['current_default']}개에는 기존 고품질 {counts['previous_quality_retained']}개가 유지됩니다. 별도 작성한 재작성 사례는 {counts['newly_authored_replacement_questions']}개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.", '',
+    lines += ['', f"이전 MA-REV {counts['previous_quality_retained']}개는 모두 보관하며, 기본 목록에는 {counts['previous_quality_default']}개를 포함하고 {counts['previous_quality_safety_held']}개는 별도 안전 보류합니다. MA-RW {counts['newly_authored_replacement_questions']}개 중 기본 포함 {counts['rewrite_default']}개·안전 보류 {counts['rewrite_safety_held']}개입니다. 전체 기본 목록은 {counts['current_default']}개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.", '',
               f"대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 {counts['archive_ids_with_review_notice']}개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.", '',
               '## 최초 편집 판정 보존', '', '| 최초 판정 | 문항 수 |', '|---|---:|']
     lines.extend(f'| {status} | {number} |' for status, number in counts['original_editorial_statuses'].items())
@@ -277,6 +290,8 @@ def render_markdown(ledger):
               '|---|---|---|---|---|---|---|']
     for row in ledger['questions']:
         target = row['implementation']['replacement_question_id'] or '—'
+        if row['implementation'].get('replacement_default_safety_hold'):
+            target += ' (별도 안전 보류)'
         finding = row['editorial_triage']['editorial_judgment']['finding_ko']
         if row['implementation_status'] == 'HOLD_FROM_DEFAULT':
             finding += ' 현재 보류 이유: ' + row['implementation']['hold']['reason']

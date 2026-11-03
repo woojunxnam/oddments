@@ -14,6 +14,10 @@ def output():
     st=selection['stats']
     new=metrics['revised_unit']
     original=st['legacy_representatives_remaining']
+    previous_default=st.get('previous_quality_default',st['previous_quality'])
+    previous_held=st.get('previous_quality_safety_held',0)
+    rewrite_default=st.get('rewrite_default',st['newly_authored_replacements'])
+    rewrite_held=st.get('rewrite_safety_held',0)
     partial=progress.get('partial_census_claim_or_clause_records',0)
     partial_notice=(f'미완료 부분 주장·절 기록 {partial}개는 완료 주장 수에서 제외했습니다.' if partial
                     else '현재 등록된 부록16절은 전체 본문의 주장 열거를 마쳤으며, 출처 보류는 별도로 유지합니다.')
@@ -24,7 +28,7 @@ def output():
 <tr><td>기존 사례 통합</td><td>{st['replaced_by_existing_quality']}</td></tr>
 <tr><td>보류</td><td>{st['held_from_default']}</td></tr>
 <tr><td>개선 미반영</td><td>{original}</td></tr></tbody></table>
-<p>기본 목록은 미반영 대표 {original}개 + 이전 MA-REV 96개 + 개정 MA-RW {st['newly_authored_replacements']}개입니다. 원본2,176개·MA-REV96개와 이전 판본은 삭제하지 않습니다. 신규 gap 사례 목표와 replacement를 중복 집계하지 않습니다.</p>
+<p>기본 목록은 미반영 대표 {original}개 + 이전 MA-REV {previous_default}개 + 개정 MA-RW {rewrite_default}개입니다. MA-REV {st['previous_quality']}개 중 {previous_held}개와 MA-RW {st['newly_authored_replacements']}개 중 {rewrite_held}개는 원본355개 처리와 별도의 증거 기반 안전 보류입니다. 원본2,176개·MA-REV96개와 MA-RW의 모든 ID·원문·정답·학습 기록은 보관합니다. 신규 gap 사례 목표와 replacement를 중복 집계하지 않습니다.</p>
 <h2>2026-11-03 통제 배치 검토</h2>
 <p>MA-EXP-0385–0424와 원장이 자동 선정한 MA-CASE 160개를 문항별로 읽었습니다. 첫 200문항은 실질 개정 또는 근거 관계 해소가 필요하며, 결함이 기록된 기본 추천은 보류합니다. 기존 원문·정답·학습 기록은 보존합니다.</p>
 <p>작성자 검토 {progress['question_ids_with_review_records']}/{progress['current_questions']} ({100*progress['question_ids_with_review_records']/progress['current_questions']:.2f}%). 별도 세션의 legacy 법규 검토 {progress.get('independent_legacy_legal_assessed',0)}/{progress['current_questions']} ({100*progress.get('independent_legacy_legal_assessed',0)/progress['current_questions']:.2f}%); canonical release 증거로는 인정하지 않습니다. 첫40의 현실성 PASS는0입니다. 첫 200문항의 재작성 완료율은0/200(0%)이며 안전한 보류와 구분합니다.</p>

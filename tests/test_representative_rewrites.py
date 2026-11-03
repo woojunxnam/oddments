@@ -105,14 +105,21 @@ class RepresentativeRevisionTests(unittest.TestCase):
     def test_default_replaces_or_holds_legacy_without_deleting_it(self):
         recommended = set(self.selection['recommended_ids'])
         self.assertEqual(recommended, set(self.payload['quality_selection']['recommended_ids']))
+        safety_held = {h['question_id'] for h in self.selection.get('safety_holds', [])}
         for replacement in self.selection['replacements']:
             self.assertNotIn(replacement['legacy_question_id'], recommended)
             self.assertIn(replacement['legacy_question_id'], self.by_id)
-            self.assertIn(replacement['replacement_question_id'], recommended)
+            self.assertEqual(replacement['replacement_question_id'] in recommended,
+                             replacement['replacement_question_id'] not in safety_held)
         for hold in self.selection['holds']:
             self.assertNotIn(hold['legacy_question_id'], recommended)
             self.assertIn(hold['legacy_question_id'], self.by_id)
-        self.assertTrue(set(self.original_selection['new_ids']) <= recommended)
+        self.assertEqual(set(self.original_selection['new_ids']) - recommended,
+                         set(self.original_selection['new_ids']) & safety_held)
+        self.assertEqual(set(self.selection['previous_quality_ids']),set(self.original_selection['new_ids']))
+        for qid in safety_held:
+            self.assertNotIn(qid,recommended)
+            self.assertIn(qid,self.by_id)
 
     def test_first_authoring_unit_addresses_exactly_48_originals(self):
         authored = [json.loads((BASE / 'authoring' / name).read_text())

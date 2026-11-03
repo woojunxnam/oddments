@@ -20,8 +20,13 @@ def attach(data, revision_selection=None):
   if revised['stats']['available_total']!=len(available):raise ValueError('Revision corpus count mismatch')
   for r in revised['replacements']:
    if r['legacy_question_id'] not in available or r['replacement_question_id'] not in available:raise ValueError('Invalid revision link')
-  if not set(selection['new_ids'])<=set(revised['recommended_ids']):raise ValueError('Previous96 must remain in the default pool')
+  from build_representative_rewrites import ARCHIVES, validate_nonlegacy_selection
+  raw_banks=[json.loads((ROOT/relative).read_text()) for relative in [*ARCHIVES,'practice_expansion/2026-10-28-representative/questions.json']]
+  raw_by_id={q['question_id']:q for bank in raw_banks for q in bank['questions']}
+  safety_holds=validate_nonlegacy_selection(revised,selection,raw_by_id,ROOT)
   data['representative_revision']={k:revised[k] for k in ['edition','replacements','holds','stats','new_ids','history_policy']}
+  data['representative_revision']['safety_holds']=safety_holds
+  data['representative_revision']['previous_quality_ids']=revised['previous_quality_ids']
   notices=revised.get('archive_review_notices',[])
   noticed=[]
   for notice in notices:
@@ -31,7 +36,7 @@ def attach(data, revision_selection=None):
   if len(noticed)!=len(set(noticed)):raise ValueError('Duplicate archive review notice ID')
   data['representative_revision']['archive_review_notices']=notices
   data['quality_selection'].update(edition=revised['edition'],recommended_ids=revised['recommended_ids'],stats=revised['stats'])
- data['generation_method']=f"Original 256 paired families and128 conditional models and previous96 individual cases are retained. {len(data['quality_selection']['recommended_ids'])} default cases after explicit revision/hold mappings; all{len(available)} archived and new IDs remain available. This is not independent legal or psychometric validation."
+ data['generation_method']=f"Original 256 paired families and 128 conditional models and all previous96 individual cases are retained in the archive. {len(data['quality_selection']['recommended_ids'])} default cases after explicit revision/hold mappings; all {len(available)} archived and new IDs remain available. This is not independent legal or psychometric validation."
  return data
 
 def once(text,old,new):
