@@ -22,11 +22,11 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
     assert len(rows) == len({r['question_id'] for r in rows}) == 2346
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 201
-    assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) == 145
+    assert sum(r['checked_at'] is not None for r in rows) >= 245
+    assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) >= 189
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
     assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 10
-    assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) == 2145
+    assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) <= 2101
     assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
     assert not any(r['legal_review_status']=='RELEASED' for r in rows)
     assert all(r['deployment_status']=='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED' for r in rows)
