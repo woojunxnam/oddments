@@ -3584,11 +3584,14 @@
         "MA-CASE-0639": "24ece4e219c19893838f90ee1209f8d0560221c606b3c1522a9668992efe07bb",
         "MA-CASE-0640": "570fcf719f6c146053d5b8ce5d62b74224ebf7a2fe42e0b963ff52627f75b934"
       },
-      "status": "QUEUED",
-      "attempt": 0,
-      "worker_branch": "mission/review-independent-legacy-e5fbb8d80a0894a3",
+      "status": "LEASED",
+      "attempt": 1,
+      "worker_branch": "mission/review-independent-legacy-e5fbb8d80a0894a3-attempt-1",
       "created_at": "2026-11-03T19:29:36.489018+00:00",
-      "stage": "independent-legacy"
+      "stage": "independent-legacy",
+      "worker": "/root/independent_case_g",
+      "lease_until": "2026-11-04T01:22:30.175881+00:00",
+      "lease_token": "f6eb50e02c50ab20642b0fa7a7c25c2fa1aff4cd639fe55a6a61e58c54e50aad"
     },
     {
       "job_id": "review-independent-legacy-910e887587e73dd1",
@@ -3635,11 +3638,14 @@
         "MA-CASE-0679": "288c956248e5f857527df17d7dccb987864f123fe2f3a28269428a900cd59129",
         "MA-CASE-0680": "a73acc4f21dee746b5216694cc910d0968fa3f5163b85d9429b27352bc4000ed"
       },
-      "status": "QUEUED",
-      "attempt": 0,
-      "worker_branch": "mission/review-independent-legacy-910e887587e73dd1",
+      "status": "LEASED",
+      "attempt": 1,
+      "worker_branch": "mission/review-independent-legacy-910e887587e73dd1-attempt-1",
       "created_at": "2026-11-03T19:29:36.489018+00:00",
-      "stage": "independent-legacy"
+      "stage": "independent-legacy",
+      "worker": "/root/independent_case_h",
+      "lease_until": "2026-11-04T01:22:34.227380+00:00",
+      "lease_token": "0da198416189e54c3fd3c7b9eff4888de5c209f7779d61c8687ab1be37c86b1b"
     }
   ],
   "events": [
@@ -3862,6 +3868,20 @@
       "at": "2026-11-03T21:08:02.841545+00:00",
       "job_id": "review-independent-legacy-a1278cf5fd726190",
       "commit": "e1d086cf591109a5cfc4ad8a52c5ffffac51606e"
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-03T22:22:30.175881+00:00",
+      "job_id": "review-independent-legacy-e5fbb8d80a0894a3",
+      "worker": "/root/independent_case_g",
+      "attempt": 1
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-03T22:22:34.227380+00:00",
+      "job_id": "review-independent-legacy-910e887587e73dd1",
+      "worker": "/root/independent_case_h",
+      "attempt": 1
     }
   ]
 }
