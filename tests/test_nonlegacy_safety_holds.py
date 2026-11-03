@@ -142,8 +142,9 @@ def test_builder_separates_counts_and_preserves_every_raw_question(evidence):
     before,result,s=derived_selection(e)
     old=before[builder.BASE/'selection.json']
     held={h['question_id'] for h in e['holds']}
-    assert set(s['recommended_ids'])==set(old['recommended_ids'])-held
-    assert s['stats']['recommended']==old['stats']['recommended']-2
+    candidates = set(old['recommended_ids']) | {h['question_id'] for h in old['safety_holds']}
+    assert set(s['recommended_ids']) == candidates - held
+    assert s['stats']['recommended'] == len(candidates) - len(held)
     assert s['stats']['previous_quality']==96
     assert s['stats']['previous_quality_default']==95
     assert s['stats']['previous_quality_safety_held']==1
@@ -230,7 +231,11 @@ def test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses(eviden
     assert updated['counts']['previous_quality_default']==95
     assert updated['counts']['previous_quality_safety_held']==1
     assert updated['counts']['rewrite_safety_held']==1
-    assert updated['counts']['current_default']==old['counts']['current_default']-2
+    # Replace the live safety-hold set with this fixture's two holds. The
+    # repository may already contain real, evidence-bound safety holds.
+    assert updated['counts']['current_default'] == len(selection['recommended_ids'])
+    assert updated['counts']['current_default'] == (
+        old['counts']['current_default'] + old['counts']['nonlegacy_safety_held_from_default'] - 2)
     assert [r['editorial_triage'] for r in updated['questions']]==[r['editorial_triage'] for r in old['questions']]
     rwrow=next(r for r in updated['questions'] if r['implementation']['replacement_question_id']=='MA-RW-0001')
     assert rwrow['implementation_status']=='REWRITTEN_NEW_ID'

@@ -1359,11 +1359,37 @@
       "review_source_sha256": "a7b4166d5eb826388b4bac0d5730e9d2e5312005e1e3929f9b345c4f74e485ff"
     }
   ],
+  "nonlegacy_default_safety_holds": [
+    {
+      "question_id": "MA-REV-0058",
+      "question_record_sha256": "83b41301389fd68bfe86f720ab32ef8d48bb6dcba4a3debe9614a43b83a94a6d",
+      "review_source": "reports/full-corpus-review/wave14-1-author-review.json",
+      "review_source_sha256": "3d3d555519ed8233f856fd0927f9818d1e8d5f48c363718101fbace135367d87",
+      "reason": "B의 공유 deadline 수식 범위가 미확정이다.24시간은 form return에 명시되며 GUI변경의 독립 수치기한은 확보한 현행 본문에서 확인하지 못했다. 문구 정정 후 새 독립 검토가 필요하다.",
+      "next_action": "원문과 기존 정답·기록을 보존하고 별도 버전의 수정안을 작성한 뒤 독립 법규·현실성 검토를 받아 기본 추천 복귀 여부를 결정한다."
+    },
+    {
+      "question_id": "MA-REV-0075",
+      "question_record_sha256": "3cff5f0ce6a4b4d472530c06f4c1c1f890c7eb9bb768b0eaebb0d47e71a3cf88",
+      "review_source": "reports/full-corpus-review/wave14-2-author-review.json",
+      "review_source_sha256": "7af503888c560388be40989d65cb305261665199f677fa879fd5cfea3c3eee17",
+      "reason": "법적키는맞지만core의inheritednote/새원문열람여부문장은학습자에게필요한설명대신내부검토provenance를노출한다. 새authorreview와기존원문history를구별하면서교육용core를정리하는MINOR_EDIT를제안한다. 독립legal/realism감사미실시. 이authorreview는기존currenthash감사/보류history를override하거나새release승인을만들지않는다.",
+      "next_action": "원문과 기존 정답·기록을 보존하고 별도 버전의 수정안을 작성한 뒤 독립 법규·현실성 검토를 받아 기본 추천 복귀 여부를 결정한다."
+    },
+    {
+      "question_id": "MA-REV-0083",
+      "question_record_sha256": "affd84f3d6ef4400c476f9595a03c013cbec6586b8ffa4b02e309e2ef52b4338",
+      "review_source": "reports/full-corpus-review/wave14-2-author-review.json",
+      "review_source_sha256": "7af503888c560388be40989d65cb305261665199f677fa879fd5cfea3c3eee17",
+      "reason": "법적키는맞다. 다만core의새원문확인범위/연결노트승계설명은내부provenance라학습자용핵심설명에서정리하는MINOR_EDIT를제안한다. 이번authorreview는봉인취급원문도fresh로직접확인했으나과거history는보존한다. 독립legal/realism감사미실시. 이authorreview는기존currenthash감사/보류history를override하거나새release승인을만들지않는다.",
+      "next_action": "원문과 기존 정답·기록을 보존하고 별도 버전의 수정안을 작성한 뒤 독립 법규·현실성 검토를 받아 기본 추천 복귀 여부를 결정한다."
+    }
+  ],
   "input_hashes": {
     "reports/representative-rewrite/legacy-editorial-triage.json": "01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865",
     "practice_expansion/2026-10-27-quality/selection.json": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64",
-    "practice_expansion/2026-10-28-representative/selection.json": "c9234df54614ba550e0994eac1588c85ccf7ddf05c409d733582c996024ed88b",
-    "practice_expansion/2026-10-28-representative/questions.json": "be717dabc1b3a71d46de58fd2bdb2117570126941b0b2a86dc7c4bdae347772e"
+    "practice_expansion/2026-10-28-representative/selection.json": "b419b12f78597235b0e5b36463bc687a25411c6895a192e360f5b2fbc155ba1b",
+    "practice_expansion/2026-10-28-representative/questions.json": "f36b0b249cba45d4a77fc593e1e50abcf9684d2d50aa21f63f230a8821add49c"
   },
   "verified_original_triage_inputs": [
     {
@@ -1555,12 +1581,17 @@
     "implementation_statuses": {
       "REWRITTEN_NEW_ID": 74,
       "REUSED_EXISTING_QUALITY": 3,
-      "HOLD_FROM_DEFAULT": 78,
-      "NOT_YET_IMPLEMENTED": 200
+      "HOLD_FROM_DEFAULT": 84,
+      "NOT_YET_IMPLEMENTED": 194
     },
-    "current_default": 370,
-    "archive_ids_with_review_notice": 496,
+    "current_default": 361,
+    "archive_ids_with_review_notice": 502,
     "previous_quality_retained": 96,
+    "previous_quality_default": 93,
+    "previous_quality_safety_held": 3,
+    "rewrite_default": 74,
+    "rewrite_safety_held": 0,
+    "nonlegacy_safety_held_from_default": 3,
     "newly_authored_replacement_questions": 74,
     "originals_rewritten_in_place": 0,
     "originals_deleted": 0,
@@ -1571,6 +1602,7 @@
     "원본 355개 모두의 legal_correctness는 기존 triage대로 NOT_REVERIFIED이다. 새 ID에 대한 작성자 출처 검토가 원본의 법규 재검증이나 독립 감사로 소급되지 않는다.",
     "후속 원본 ID별 법규 대조는 reports/full-corpus-review/question-ledger.jsonl에 별도로 기록한다. 현재 오류·조건부 안내는 source-bound archive notices이며 과거 triage나 canonical 상태를 덮어쓰지 않는다.",
     "REWRITTEN_NEW_ID는 별도 새 사례의 작성·반영을 뜻한다. REUSED_EXISTING_QUALITY는 이미 있는 96개 중 한 사례를 재사용한 것이며 신규 작성 수에 넣지 않는다.",
+    "비원본 MA-REV·MA-RW 안전 보류는 nonlegacy_default_safety_holds에 별도 기록하며 원본355개 implementation_status 수에 합산하지 않는다. 현재 원문·검토 hash와 실제 비유지 판정을 확인한 포함 범위 조치이며 법규 인증이 아니다.",
     "HOLD_FROM_DEFAULT는 기본 목록에서의 보류이다. 원본 파일·정답·기존 학습 기록을 삭제하거나 바꾸지 않는다.",
     "NOT_YET_IMPLEMENTED는 편집 검토만 완료된 범위이다. 355개 전부가 수정·교체 또는 법규 감사 완료되었다고 해석하면 안 된다."
   ],
@@ -1729,6 +1761,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0001",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0003",
           "replacement_question_id": "MA-RW-0001",
@@ -1897,6 +1931,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0002",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0007",
           "replacement_question_id": "MA-RW-0002",
@@ -2045,6 +2081,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0003",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0011",
           "replacement_question_id": "MA-RW-0003",
@@ -2187,6 +2225,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0004",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0015",
           "replacement_question_id": "MA-RW-0004",
@@ -2357,6 +2397,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0005",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0019",
           "replacement_question_id": "MA-RW-0005",
@@ -2505,6 +2547,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0006",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0023",
           "replacement_question_id": "MA-RW-0006",
@@ -2650,6 +2694,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0007",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0027",
           "replacement_question_id": "MA-RW-0007",
@@ -2796,6 +2842,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0008",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0031",
           "replacement_question_id": "MA-RW-0008",
@@ -2946,6 +2994,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0009",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0035",
           "replacement_question_id": "MA-RW-0009",
@@ -3097,6 +3147,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0010",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0039",
           "replacement_question_id": "MA-RW-0010",
@@ -3245,6 +3297,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0011",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0043",
           "replacement_question_id": "MA-RW-0011",
@@ -3394,6 +3448,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0012",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0047",
           "replacement_question_id": "MA-RW-0012",
@@ -3721,6 +3777,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0014",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0055",
           "replacement_question_id": "MA-RW-0014",
@@ -3876,6 +3934,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0015",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0059",
           "replacement_question_id": "MA-RW-0015",
@@ -4033,6 +4093,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0016",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0063",
           "replacement_question_id": "MA-RW-0016",
@@ -4193,6 +4255,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0017",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0067",
           "replacement_question_id": "MA-RW-0017",
@@ -4344,6 +4408,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0018",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0071",
           "replacement_question_id": "MA-RW-0018",
@@ -4492,6 +4558,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-REV-0009",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0075",
           "replacement_question_id": "MA-REV-0009",
@@ -4640,6 +4708,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0020",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0079",
           "replacement_question_id": "MA-RW-0020",
@@ -4793,6 +4863,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0021",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0083",
           "replacement_question_id": "MA-RW-0021",
@@ -4962,6 +5034,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0022",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0087",
           "replacement_question_id": "MA-RW-0022",
@@ -5114,6 +5188,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0023",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0091",
           "replacement_question_id": "MA-RW-0023",
@@ -5263,6 +5339,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0024",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0095",
           "replacement_question_id": "MA-RW-0024",
@@ -5420,6 +5498,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-REV-0006",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0099",
           "replacement_question_id": "MA-REV-0006",
@@ -5573,6 +5653,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0050",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0103",
           "replacement_question_id": "MA-RW-0050",
@@ -5736,6 +5818,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0051",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0107",
           "replacement_question_id": "MA-RW-0051",
@@ -5900,6 +5984,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-REV-0008",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0111",
           "replacement_question_id": "MA-REV-0008",
@@ -6062,6 +6148,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0053",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0115",
           "replacement_question_id": "MA-RW-0053",
@@ -6242,6 +6330,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0054",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0119",
           "replacement_question_id": "MA-RW-0054",
@@ -6392,6 +6482,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0061",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0123",
           "replacement_question_id": "MA-RW-0061",
@@ -6543,6 +6635,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0062",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0127",
           "replacement_question_id": "MA-RW-0062",
@@ -6875,6 +6969,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0064",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0135",
           "replacement_question_id": "MA-RW-0064",
@@ -7030,6 +7126,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0065",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0139",
           "replacement_question_id": "MA-RW-0065",
@@ -7353,6 +7451,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0067",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0147",
           "replacement_question_id": "MA-RW-0067",
@@ -7508,6 +7608,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0068",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0151",
           "replacement_question_id": "MA-RW-0068",
@@ -7653,6 +7755,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0055",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0155",
           "replacement_question_id": "MA-RW-0055",
@@ -7795,6 +7899,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0056",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0159",
           "replacement_question_id": "MA-RW-0056",
@@ -7952,6 +8058,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0057",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0163",
           "replacement_question_id": "MA-RW-0057",
@@ -8117,6 +8225,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0058",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0167",
           "replacement_question_id": "MA-RW-0058",
@@ -8283,6 +8393,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0059",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0171",
           "replacement_question_id": "MA-RW-0059",
@@ -8432,6 +8544,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0060",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0175",
           "replacement_question_id": "MA-RW-0060",
@@ -8578,6 +8692,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0069",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0179",
           "replacement_question_id": "MA-RW-0069",
@@ -8723,6 +8839,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0070",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0183",
           "replacement_question_id": "MA-RW-0070",
@@ -8864,6 +8982,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0071",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0187",
           "replacement_question_id": "MA-RW-0071",
@@ -9006,6 +9126,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0072",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0191",
           "replacement_question_id": "MA-RW-0072",
@@ -9152,6 +9274,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0073",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0195",
           "replacement_question_id": "MA-RW-0073",
@@ -9300,6 +9424,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0074",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0199",
           "replacement_question_id": "MA-RW-0074",
@@ -9441,6 +9567,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0075",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0203",
           "replacement_question_id": "MA-RW-0075",
@@ -9583,6 +9711,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0076",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0207",
           "replacement_question_id": "MA-RW-0076",
@@ -9743,6 +9873,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0077",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0211",
           "replacement_question_id": "MA-RW-0077",
@@ -9904,6 +10036,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0078",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0215",
           "replacement_question_id": "MA-RW-0078",
@@ -10052,6 +10186,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0079",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0219",
           "replacement_question_id": "MA-RW-0079",
@@ -10194,6 +10330,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0080",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0223",
           "replacement_question_id": "MA-RW-0080",
@@ -10386,6 +10524,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0025",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0227",
           "replacement_question_id": "MA-RW-0025",
@@ -10533,6 +10673,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0026",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0231",
           "replacement_question_id": "MA-RW-0026",
@@ -10678,6 +10820,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0027",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0235",
           "replacement_question_id": "MA-RW-0027",
@@ -10820,6 +10964,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0028",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0239",
           "replacement_question_id": "MA-RW-0028",
@@ -10995,6 +11141,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0029",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0243",
           "replacement_question_id": "MA-RW-0029",
@@ -11146,6 +11294,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0030",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0247",
           "replacement_question_id": "MA-RW-0030",
@@ -11291,6 +11441,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0031",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0251",
           "replacement_question_id": "MA-RW-0031",
@@ -11433,6 +11585,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0032",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0255",
           "replacement_question_id": "MA-RW-0032",
@@ -11587,6 +11741,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0033",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0259",
           "replacement_question_id": "MA-RW-0033",
@@ -11732,6 +11888,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0034",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0263",
           "replacement_question_id": "MA-RW-0034",
@@ -11873,6 +12031,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0035",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0267",
           "replacement_question_id": "MA-RW-0035",
@@ -12111,6 +12271,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0036",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0271",
           "replacement_question_id": "MA-RW-0036",
@@ -12250,6 +12412,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0037",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0275",
           "replacement_question_id": "MA-RW-0037",
@@ -12397,6 +12561,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0038",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0279",
           "replacement_question_id": "MA-RW-0038",
@@ -12538,6 +12704,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0039",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0283",
           "replacement_question_id": "MA-RW-0039",
@@ -12680,6 +12848,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0040",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0287",
           "replacement_question_id": "MA-RW-0040",
@@ -12827,6 +12997,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0041",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0291",
           "replacement_question_id": "MA-RW-0041",
@@ -12978,6 +13150,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0042",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0295",
           "replacement_question_id": "MA-RW-0042",
@@ -13126,6 +13300,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0043",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0299",
           "replacement_question_id": "MA-RW-0043",
@@ -13268,6 +13444,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0044",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0303",
           "replacement_question_id": "MA-RW-0044",
@@ -13441,6 +13619,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0045",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0307",
           "replacement_question_id": "MA-RW-0045",
@@ -13581,6 +13761,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0046",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0311",
           "replacement_question_id": "MA-RW-0046",
@@ -13722,6 +13904,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0047",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0315",
           "replacement_question_id": "MA-RW-0047",
@@ -13864,6 +14048,8 @@
         "legacy_is_in_current_default": false,
         "replacement_question_id": "MA-RW-0048",
         "new_independent_legal_audit_created": false,
+        "replacement_is_in_current_default": true,
+        "replacement_default_safety_hold": null,
         "selection_record": {
           "legacy_question_id": "MA-EXP-0319",
           "replacement_question_id": "MA-RW-0048",
@@ -37493,13 +37679,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-0943",
+          "legacy_question_id": "MA-EXP-0943",
+          "reason": "문항별 편집 보류: 원해설은residentprovisionalcompounding와distribution/dispensing을분리하고nonresidentMAregistration/home-state-iflicensed/inspection,주갱신과federalannual,이전사전승인을맞게설명한다. provisional을fullapproval나nonresident권한으로확대하지않는다. 단,모든보기가정답인SATA여서선택/배제분별력이약하다. 법적키오류와별도인편집보완대상이며새오답보기와키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-2-author-review.json",
+          "evidence_report_sha256": "024e0b2dacd5c9aa977cea7354c3d4840739985890b460faf70c168452b2f33d",
+          "question_record_sha256": "c5acb00c529a7870a9a4f10fbced2b4022b1aa11f645acc17e7c1ee6cb2be792",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -38146,13 +38342,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-0959",
+          "legacy_question_id": "MA-EXP-0959",
+          "reason": "문항별 편집 보류: 원해설은productidentifier와ATP자격,coveredDSCSA거래6년과일반2년기록,추적정보와patientorder,특정patientneed와stockreplenishment를맞게구별한다. 이미종료된transactionhistory교환의무를현행의새요건으로추가하지않았다. 단,모든보기가정답인SATA여서선택/배제분별력이약하다. 법적키오류와별도인편집보완대상이며새오답보기와키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-2-author-review.json",
+          "evidence_report_sha256": "024e0b2dacd5c9aa977cea7354c3d4840739985890b460faf70c168452b2f33d",
+          "question_record_sha256": "0c2e1524e9978609bf505c2f53bb07e638fad0d79704c55d2cc21fd0b1e0f63c",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -38724,13 +38930,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-0975",
+          "legacy_question_id": "MA-EXP-0975",
+          "reason": "문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-3-author-review.json",
+          "evidence_report_sha256": "470f4d9f15340f3300db3cc871d369d680332ab8e67a6fcff745b3a950a9ba47",
+          "question_record_sha256": "8a810a82ffb576e814db66db164639049eb964e07996382565475578f3c4c017",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -39261,13 +39477,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-0991",
+          "legacy_question_id": "MA-EXP-0991",
+          "reason": "문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-3-author-review.json",
+          "evidence_report_sha256": "470f4d9f15340f3300db3cc871d369d680332ab8e67a6fcff745b3a950a9ba47",
+          "question_record_sha256": "9ea4fce394ec2e1162e1c28a76c3475bf4b8cb3a34a663080d2b58473aaae804",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -39830,13 +40056,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-1007",
+          "legacy_question_id": "MA-EXP-1007",
+          "reason": "문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-3-author-review.json",
+          "evidence_report_sha256": "470f4d9f15340f3300db3cc871d369d680332ab8e67a6fcff745b3a950a9ba47",
+          "question_record_sha256": "bddc43fb28c0877a480519b024d46175666abdf858de9456e2500fa2db6e0ce4",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {
@@ -40389,13 +40625,23 @@
           }
         }
       },
-      "implementation_status": "NOT_YET_IMPLEMENTED",
+      "implementation_status": "HOLD_FROM_DEFAULT",
       "implementation": {
         "legacy_id_retained_in_archive": true,
-        "legacy_is_in_current_default": true,
+        "legacy_is_in_current_default": false,
         "replacement_question_id": null,
         "new_independent_legal_audit_created": false,
-        "implementation_basis": "Individual editorial triage exists; no rewrite, reuse or hold implementation is recorded in this selection."
+        "hold": {
+          "hold_id": "HOLD-WAVE13-MA-EXP-1023",
+          "legacy_question_id": "MA-EXP-1023",
+          "reason": "문항별 편집 보류: EXP1023은4개가전부정답이어서nonviable중단/viable한정재개/상한관계를구별하는오답연습이없다. 법적키오류로세지않고아래미적용freshscenario로개선제안한다. 원문·기존 정답·풀이·북마크는 보존한다.",
+          "finding_type": "AUTHOR_ITEM_SPECIFIC_EDITORIAL_OR_KEY_HOLD",
+          "evidence_report": "reports/full-corpus-review/wave13-4-author-review.json",
+          "evidence_report_sha256": "257edba1c0e7a45fdcc90b4acce1ccc49bf7ad09af7203ccefed8ded300d8671",
+          "question_record_sha256": "b1a86c03da748e294533de1bc7e4c5b188f5a59006f64a74b62d49c73d34bc41",
+          "next_action": "문항별 제안의 새 오답과 시나리오를 검토하고 별도 최종 콘텐츠 해시에 독립 법규·현실성 감사를 수행한다."
+        },
+        "implementation_basis": "Excluded only from the default pool; archived question, answer and existing records remain accessible with the review warning."
       }
     },
     {

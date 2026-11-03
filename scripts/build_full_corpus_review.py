@@ -38,6 +38,10 @@ REVIEW_FILES = (
     'wave11-3-author-review.json', 'wave11-4-author-review.json',
     'wave12-1-author-review.json', 'wave12-2-author-review.json',
     'wave12-3-author-review.json', 'wave12-4-author-review.json',
+    'wave13-1-author-review.json', 'wave13-2-author-review.json',
+    'wave13-3-author-review.json', 'wave13-4-author-review.json',
+    'wave14-1-author-review.json', 'wave14-2-author-review.json',
+    'wave14-3-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -434,7 +438,7 @@ def build():
     apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
         'pub05-14-independent-review.json', 'wave2-independent-review.json',
-        'wave5-independent-review.json')]
+        'wave5-independent-review.json', 'independent-phase1-a-review.json')]
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):
@@ -504,7 +508,9 @@ def build():
         notes_revision='2026-10-30.cdtm13-vax04.1', supersedes={
             uid: 'reports/full-corpus-review/note-wave2-census.json' for uid in appendix_b_ids}))
     for name in ('note-wave6-census.json', 'note-wave7-census.json',
-                 'note-wave8-census.json', 'note-wave9-census.json'):
+                 'note-wave8-census.json', 'note-wave9-census.json',
+                 'note-wave10-census.json', 'note-wave11-census.json',
+                 'note-wave12-census.json'):
         census_specs.append(dict(path='reports/full-corpus-review/'+name,
             notes_revision='2026-10-30.cdtm13-vax04.1'))
     census_specs.append(dict(path='reports/full-corpus-review/refill-cancer-final-census.json',
@@ -551,7 +557,9 @@ def build():
                     unit3b_question_ids_reviewed=len(review_sources['unit3b-author-review.json']['records'])+len(unit3b_ids),
                     author_review_records_by_file={name:len(source['records']) for name,source in review_sources.items()},
                     new_author_review_records_by_file={name:len(source['questions']) for name,source in authoring.items()},
-                    legal_review_counts=dict(Counter(r['legal_review_status'] for r in result)),
+                    legal_review_counts={
+                        'NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW': 0,
+                        **dict(Counter(r['legal_review_status'] for r in result))},
                     answer_key_assessment_counts=dict(Counter(r['answer_key_assessment'] for r in result)),
                     editorial_rubric_assessed_ids=sum(r['editorial_quality_assessment'] is not None for r in result),
                     editorial_rubric_is_release_certificate=False,

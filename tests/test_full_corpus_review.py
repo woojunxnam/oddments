@@ -22,12 +22,22 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
     assert len(rows) == len({r['question_id'] for r in rows}) == 2346
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) >= 245
+    assert sum(r['checked_at'] is not None for r in rows) == 2346
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) >= 189
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
     assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) >= 10
     assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) <= 2101
-    assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
+    # REV coverage is credited only from the individual, current-content reviews.
+    from build_full_corpus_review import REVIEW_FILES, record_hash
+    reviews = {r['question_id']: (r, name) for name in REVIEW_FILES
+               for r in json.loads((ROOT/'reports/full-corpus-review'/name).read_text())['records']}
+    revisions = json.loads((ROOT/'practice_expansion/2026-10-27-quality/questions.json').read_text())['questions']
+    by_id = {r['question_id']: r for r in rows}
+    for q in revisions:
+        review, source = reviews[q['question_id']]
+        assert review['record_sha256'] == record_hash(q)
+        assert by_id[q['question_id']]['checked_at'] == review['checked_at']
+        assert by_id[q['question_id']]['review_evidence']['source_path'] == 'reports/full-corpus-review/' + source
     assert not any(r['legal_review_status']=='RELEASED' for r in rows)
     assert all(r['deployment_status']=='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED' for r in rows)
     assert {r['question_id'] for r in rows if r['historical_deployment_evidence']} == {

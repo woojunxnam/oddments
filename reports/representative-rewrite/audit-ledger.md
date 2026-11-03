@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 78 |
-| NOT_YET_IMPLEMENTED | 200 |
+| HOLD_FROM_DEFAULT | 84 |
+| NOT_YET_IMPLEMENTED | 194 |
 
-기본 목록 370개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 361개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 496개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 502개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -35,6 +35,7 @@
 - 원본 355개 모두의 legal_correctness는 기존 triage대로 NOT_REVERIFIED이다. 새 ID에 대한 작성자 출처 검토가 원본의 법규 재검증이나 독립 감사로 소급되지 않는다.
 - 후속 원본 ID별 법규 대조는 reports/full-corpus-review/question-ledger.jsonl에 별도로 기록한다. 현재 오류·조건부 안내는 source-bound archive notices이며 과거 triage나 canonical 상태를 덮어쓰지 않는다.
 - REWRITTEN_NEW_ID는 별도 새 사례의 작성·반영을 뜻한다. REUSED_EXISTING_QUALITY는 이미 있는 96개 중 한 사례를 재사용한 것이며 신규 작성 수에 넣지 않는다.
+- 비원본 MA-REV·MA-RW 안전 보류는 nonlegacy_default_safety_holds에 별도 기록하며 원본355개 implementation_status 수에 합산하지 않는다. 현재 원문·검토 hash와 실제 비유지 판정을 확인한 포함 범위 조치이며 법규 인증이 아니다.
 - HOLD_FROM_DEFAULT는 기본 목록에서의 보류이다. 원본 파일·정답·기존 학습 기록을 삭제하거나 바꾸지 않는다.
 - NOT_YET_IMPLEMENTED는 편집 검토만 완료된 범위이다. 355개 전부가 수정·교체 또는 법규 감사 완료되었다고 해석하면 안 된다.
 
@@ -279,27 +280,27 @@
 | MA-EXP-0931 | OUT01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 503B의cGMP잔존은핵심이지만A의MA허가와D의환자처방까지넓게묻는다. productapproval주장도별도의정의문제다. |
 | MA-EXP-0935 | OUT02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | bulkCOA와thirdpartyresale는독립된503B조건이다. shortage를근거로쓸실제제품·기간은제시되지않는다. |
 | MA-EXP-0939 | OUT03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | registration과June/Decemberproductreport는실제다른제출물이다. CaseBlabel과B의lot면제까지섞어두의무를목록화한다. |
-| MA-EXP-0943 | OUT04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | provisional에서preparation과distribution을구별하는좋은경계다. C의갱신과D의relocation은사례밖이고alltrue다. |
+| MA-EXP-0943 | OUT04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | provisional에서preparation과distribution을구별하는좋은경계다. C의갱신과D의relocation은사례밖이고alltrue다. 현재 보류 이유: 문항별 편집 보류: 원해설은residentprovisionalcompounding와distribution/dispensing을분리하고nonresidentMAregistration/home-state-iflicensed/inspection,주갱신과federalannual,이전사전승인을맞게설명한다. provisional을fullapproval나nonresident권한으로확대하지않는다. 단,모든보기가정답인SATA여서선택/배제분별력이약하다. 법적키오류와별도인편집보완대상이며새오답보기와키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-EXP-0947 | FDA01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | IND와routine판매의구별은중요하나A의BLA가약사면허는우스운오답이다. ANDAform대체는LAB05와실질중복이다. |
 | MA-EXP-0951 | FDA02 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | NDC+label검색은approval증거가아니라는구체적오해다. 유일하지않은정답A/B는OTCpathway와offlabelscope로두사례의직접해결이아니다. |
 | MA-EXP-0955 | FDA03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 한정exemption의범위를읽는문제는유용하다. 실제exemption요건을본문에주지않고documented라고결론내려특정범위적용은못한다. |
-| MA-EXP-0959 | FDA04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 제품identifier와ATP는별도증거라는구별이좋다.6년기록은다른case로묶였고B/C는추상범위주의이며alltrue다. |
+| MA-EXP-0959 | FDA04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 제품identifier와ATP는별도증거라는구별이좋다.6년기록은다른case로묶였고B/C는추상범위주의이며alltrue다. 현재 보류 이유: 문항별 편집 보류: 원해설은productidentifier와ATP자격,coveredDSCSA거래6년과일반2년기록,추적정보와patientorder,특정patientneed와stockreplenishment를맞게구별한다. 이미종료된transactionhistory교환의무를현행의새요건으로추가하지않았다. 단,모든보기가정답인SATA여서선택/배제분별력이약하다. 법적키오류와별도인편집보완대상이며새오답보기와키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-EXP-0963 | FDA05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | suspect조사와illegitimate판정후24시간은상태변화가행동을바꾼다. B의FDA3911=DEA106은단순기관혼동이며A의공간확보격리해제는비현실적이다. |
 | MA-EXP-0967 | FDA06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | marketed위반제품과미release직접통제lot는정의에따라분류가달라진다. A의남는다른의무는추상적이며D의모든physicaltransport는넓은오답이다. |
 | MA-EXP-0971 | FDA07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | classification전recall은실제workstream이다. B의ClassIII선택준수는쉬우며C의ClassI정의는다른사건이다. |
-| MA-EXP-0975 | NUC01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 추가nuclear권한과patientname72시간은각기실제법규이나3년기록·calibration까지네독립명제로alltrue가됐다. |
+| MA-EXP-0975 | NUC01 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 추가nuclear권한과patientname72시간은각기실제법규이나3년기록·calibration까지네독립명제로alltrue가됐다. 현재 보류 이유: 문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-EXP-0979 | CQI01 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | strength오류가환자도달전에잡힌상태는구체적이지만다른commercialAE와defect를추가했다. 유일정답C는정확조제여도AE가능이라는임상일반론이다. |
 | MA-EXP-0983 | CQI02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 이름목록만있는CQI와평가안한workflow변경은실제품질관리결함이다. B의개업때만교육,D의추가평가불필요는쉽다. |
 | MA-EXP-0987 | CQI03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Monday10시발견후Friday까지기록을미루는것은명확한clock사례다. B의2년retention을추가해초기행동결정을흐린다. |
-| MA-EXP-0991 | CQI04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | ED추가treatment/monitoring은입원없어도serious정의에들수있는핵심조건이다. CaseB가같은오해를반복하고D의503B는별도기준이며alltrue다. |
+| MA-EXP-0991 | CQI04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | ED추가treatment/monitoring은입원없어도serious정의에들수있는핵심조건이다. CaseB가같은오해를반복하고D의503B는별도기준이며alltrue다. 현재 보류 이유: 문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-EXP-0995 | CQI05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두사실동시인지로OPENtrigger를피한범위는명시적이다. 유일정답C는5년보존이며당장보고행동을직접고르지않는다. B해설의calendar/business차이는유용하다. |
 | MA-EXP-0999 | CQI06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | employee가먼저안사실과MOR3일뒤열람은실제trigger차이다. suspecteddefect의즉시정책중첩은보존하되SADE라고결론을미리주지않아야한다. |
 | MA-EXP-1003 | CQI07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | initial과followup15일은실제두시계이나annualregistration까지기다림은약한오답이다. D의retention전면없음도쉽다. |
-| MA-EXP-1007 | CQI08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | defectidentified와recall시점의차이는유효하며injury전대응도중요하다. 모든정답이고실제두날짜를주지않아시계적용이없다. |
+| MA-EXP-1007 | CQI08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | defectidentified와recall시점의차이는유효하며injury전대응도중요하다. 모든정답이고실제두날짜를주지않아시계적용이없다. 현재 보류 이유: 문항별 편집 보류: 네 보기가 모두 정답인 SATA이므로 잘못된 판단을 구별하는 보기가 없다. 법적 키 오류는 아니지만 해당 시나리오에서 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-EXP-1011 | EM01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | air2와surface정확히3은unit와부등호에따라결과가달라지는실질판단이다. C의clearappearance로무시와D의분모동일시는명백하다. |
 | MA-EXP-1015 | EM02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | m³를L와같게취급하는것은단위상명백하며pass-throughcleanerclass는별도의조건이다. D의종류별threshold일반론이정답이다. |
 | MA-EXP-1019 | EM03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 미생물report수령과최종동정의차이는중요하며중간정상결과가repeat를지우는지실제경계다. A/C는보고주체와investigation일반론이다. |
-| MA-EXP-1023 | EM04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | nonviable와viableremediation은다른운영결정이다. alltrue이고specificconditions라고미리충족을가정해실제riskassessment를판정하지않는다. |
+| MA-EXP-1023 | EM04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | nonviable와viableremediation은다른운영결정이다. alltrue이고specificconditions라고미리충족을가정해실제riskassessment를판정하지않는다. 현재 보류 이유: 문항별 편집 보류: EXP1023은4개가전부정답이어서nonviable중단/viable한정재개/상한관계를구별하는오답연습이없다. 법적키오류로세지않고아래미적용freshscenario로개선제안한다. 원문·기존 정답·풀이·북마크는 보존한다. |
 | MA-CASE-0009 | PLUS-SC01 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 6+8=14 후6시간추가라는단일계산은명확하고보기4시간은10시간전부인정오류를겨냥한다. 그러나모든오답해설이정답계산을그대로복사해각오류를설명하지않는다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
 | MA-CASE-0018 | PLUS-SC02 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 16total/1live에서추가4시간은명확하지만1 are live문법과오답전체가필요량보다많아부족한plan의법적결함을비교하지못한다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
 | MA-CASE-0022 | PLUS-SC03 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 전년22시간과현재18/1law는carryover와category를함께판단하게해유용하다. 1approvedlawhours문법과복제해설이남는다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
@@ -406,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `c9234df54614ba550e0994eac1588c85ccf7ddf05c409d733582c996024ed88b` |
-| practice_expansion/2026-10-28-representative/questions.json | `be717dabc1b3a71d46de58fd2bdb2117570126941b0b2a86dc7c4bdae347772e` |
+| practice_expansion/2026-10-28-representative/selection.json | `b419b12f78597235b0e5b36463bc687a25411c6895a192e360f5b2fbc155ba1b` |
+| practice_expansion/2026-10-28-representative/questions.json | `f36b0b249cba45d4a77fc593e1e50abcf9684d2d50aa21f63f230a8821add49c` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.
