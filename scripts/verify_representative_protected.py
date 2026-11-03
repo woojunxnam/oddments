@@ -168,6 +168,62 @@ def make_baseline(main_tree, root=ROOT):
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
     effective_build = None
+    fourteenth_path=root/'revisions/notes/protected-migration-independent-notes-wave3.json'
+    if fourteenth_path.exists() and relative=='site/notes/complete-notes.md':
+        metadata=json.loads(fourteenth_path.read_bytes())
+        require(metadata['schema_version']=='notes-protected-annotation-migration/1' and
+                metadata['baseline_commit']=='f4ecea13a31b4c8dbdb7ef460b8caee54b571b27',
+                'Unexpected wave3 independent-note annotation migration base')
+        require(metadata['path']==relative and
+                metadata['baseline_copy']=='revisions/baselines/complete-notes-pr189.md' and
+                metadata['baseline_build_copy']=='revisions/baselines/notes-build-pr189.json',
+                'Wave3 independent-note annotation migration expands protected scope')
+        require(metadata.get('canonical_release_credit')==0,
+                'Wave3 annotation cannot create canonical release credit')
+        require(metadata['previous_migration_path']=='revisions/notes/protected-migration-independent-notes-wave2.json' and
+                metadata['previous_migration_sha256']=='8573eced55fdd94dd9fa23ede6da19fa7049b93026200a27096cd73d503e3e8b' and
+                sha256(safe_file(root,metadata['previous_migration_path']).read_bytes())==metadata['previous_migration_sha256'],
+                'Published wave2 independent-note annotation migration changed')
+        historical_build=safe_file(root,metadata['baseline_build_copy']).read_bytes()
+        require(metadata['baseline_build_sha256']=='d4f24c8c32745d3b4c4d8d411fd3e07dbc94bbcbdad55fe028bccf9479a3ad2e' and
+                sha256(historical_build)==metadata['baseline_build_sha256'],
+                'Published PR189 build changed')
+        previous_build=json.loads(historical_build)
+        current_build=json.loads(safe_file(root,'site/notes/build.json').read_bytes())
+        from notes_revision import load_notes
+        semantic_sha256=sha256(json.dumps(load_notes(root),ensure_ascii=False,sort_keys=True).encode())
+        require(metadata['semantic_notes_sha256']==semantic_sha256==
+                previous_build['content_sha256']==current_build['content_sha256']==
+                'e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824' and
+                previous_build['revision_provenance']==current_build['revision_provenance'] and
+                previous_build['edition']==current_build['edition']=='2026-11-03.emergency-kit.1',
+                'Wave3 independent-note annotation cannot authorize semantic note changes')
+        scope={
+            'third-b-review.json':{'oral-followup','w2-b-1','w2-b-2','w2-b-3','w2-b-4'},
+            'third-e-review.json':{'w2-b-5','w2-b-6','w2-b-7','w2-b-8','w2-b-9'},
+            'third-g-review.json':{'w2-b-10','w2-b-11','w2-b-12','w2-b-13','w2-c-1'},
+            'third-f-review.json':{'w2-c-2','schedule-vi-continuity','w2-c-4','w2-c-5','w2-c-6'},
+        }
+        review_scope={'reports/full-corpus-review/independent-notes/'+name:ids for name,ids in scope.items()}
+        require(set(metadata['independent_reviews'])==set(review_scope),
+                'Wave3 independent-note annotation evidence scope changed')
+        for path,expected_units in review_scope.items():
+            report_raw=safe_file(root,path).read_bytes()
+            require(sha256(report_raw)==metadata['independent_reviews'][path],
+                    'Wave3 independent-note annotation review changed')
+            report=json.loads(report_raw)
+            require(report.get('stage')=='independent-notes' and
+                    report.get('canonical_audit') is False and report.get('canonical_release_credit')==0 and
+                    report.get('question_audit_credit')==0 and
+                    len(report['records'])==len(expected_units) and
+                    {r['unit_id'] for r in report['records']}==expected_units,
+                    'Wave3 independent-note annotation review unit scope or credit changed')
+        require(sha256(current)==metadata['new_sha256'], 'Stale wave3 independent-note annotation export')
+        current=safe_file(root,metadata['baseline_copy']).read_bytes()
+        require(metadata['old_sha256']=='f4ebbad48aaea4575c123533878d59a90fc12a19391e2a3b49e13666f8a93440' and
+                sha256(current)==metadata['old_sha256'], 'Published PR189 export changed')
+        # Decode only this new annotation layer. All thirteen published guards
+        # below still evaluate their original manifest and historical bytes.
     thirteenth_path=root/'revisions/notes/protected-migration-independent-notes-wave2.json'
     if thirteenth_path.exists() and relative=='site/notes/complete-notes.md':
         metadata=json.loads(thirteenth_path.read_bytes())

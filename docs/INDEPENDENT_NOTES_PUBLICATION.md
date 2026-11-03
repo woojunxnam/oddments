@@ -70,3 +70,70 @@ node --check site/notes/notes.js
 Fixture는 실제 C/F 보고서 바이트로 미통합 0 credit, 누락·ratio/intern HOLD
 보존, envelope/원문 SHA·actor 변조 거부, stale binding 거부, shallow checkout,
 계산된 ledger의 재생성 멱등성과 HTML/Markdown/동적 경고를 검증한다.
+
+## Wave3 annotation wrapper 준비
+
+14번째 wrapper는 `revisions/notes/protected-migration-independent-notes-wave3.json`이
+있을 때만 동작한다. 준비 변경에는 이 실제 manifest를 만들지 않는다. Controller가
+네 job을 모두 순차 통합하고 최종 산출물을 재생성한 뒤에만 root가 manifest를
+작성한다. 이 wrapper 자체는 독립 법규 감사나 question/canonical credit를 만들지
+않으며, 기존 publication consumer의 integration·본문·claim 검증을 대신하지 않는다.
+
+고정 기준은 PR189의 `f4ecea13a31b4c8dbdb7ef460b8caee54b571b27`이다.
+`git show COMMIT:PATH`의 원바이트를 다음 snapshot으로 보존한다.
+
+| Snapshot | SHA-256 |
+|---|---|
+| `revisions/baselines/complete-notes-pr189.md` | `f4ebbad48aaea4575c123533878d59a90fc12a19391e2a3b49e13666f8a93440` |
+| `revisions/baselines/notes-build-pr189.json` | `d4f24c8c32745d3b4c4d8d411fd3e07dbc94bbcbdad55fe028bccf9479a3ad2e` |
+
+Markdown snapshot에는 원래 발행본의 후행 공백도 보존한다. Snapshot을 포함한
+`git diff --check`의 기존 공백 경고를 없애려고 원바이트를 정리하지 않는다.
+새 코드·테스트·문서의 공백 검사는 이 raw snapshot과 구분한다.
+
+Manifest는 기존 annotation schema인 `notes-protected-annotation-migration/1`을
+사용하며 `baseline_commit`은 위 PR189 commit, `path`는
+`site/notes/complete-notes.md`, `baseline_copy`와 `baseline_build_copy`는 위 두
+snapshot이다. `old_sha256`·`baseline_build_sha256`는 위 raw SHA로 고정된다.
+`previous_migration_path`는 `revisions/notes/protected-migration-independent-notes-wave2.json`,
+그 `previous_migration_sha256`은
+`8573eced55fdd94dd9fa23ede6da19fa7049b93026200a27096cd73d503e3e8b`다.
+`canonical_release_credit`는 0이어야 한다.
+
+`semantic_notes_sha256`은 계속
+`e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824`다.
+실제 `load_notes(root)` 결과와 PR189/current build의 의미 해시, edition
+`2026-11-03.emergency-kit.1`, 전체 `revision_provenance`가 일치해야 한다.
+Current build의 추가 표시 metadata는 허용하지만 의미 변경은 허용하지 않는다.
+
+`independent_reviews`는 아래 네 repository-relative 경로를 key로, 각 최종 보고서의
+원바이트 SHA-256을 value로 가진다. 각 보고서는 `stage: independent-notes`,
+`canonical_audit: false`, `canonical_release_credit: 0`, `question_audit_credit: 0`과
+정확한 중복 없는 unit 집합을 가져야 한다.
+
+| `reports/full-corpus-review/independent-notes/` 아래 보고서 | 정확한 unit 집합 |
+|---|---|
+| `third-b-review.json` | `oral-followup`, `w2-b-1`–`w2-b-4` |
+| `third-e-review.json` | `w2-b-5`–`w2-b-9` |
+| `third-g-review.json` | `w2-b-10`–`w2-b-13`, `w2-c-1` |
+| `third-f-review.json` | `w2-c-2`, `schedule-vi-continuity`, `w2-c-4`–`w2-c-6` |
+
+`new_sha256`은 통합·재생성이 끝난 실제 Markdown 원바이트 SHA다. Wrapper는 이를
+확인한 다음 PR189 Markdown snapshot으로 decode하여 기존 13개 guard를 그대로
+평가한다. 이전 manifest의 기대 hash를 갱신하거나 과거 guard를 제거하지 않는다.
+
+집중 검증은 다음과 같다. Wave3 fixture의 보고서는 합성 engineering 데이터이며
+실제 법규 감사·배정·통합 증거가 아니다. 실제 manifest가 없는 동안 기존 13단계
+경로가 유지되는 것, 원본·부모 hash·snapshot·build·실제 의미·허용 경로·보고서 범위와
+credit·출력 변조 거부를 검사한다. Historical emergency fixture는 13·14번째 layer를
+제거하고 PR188 Markdown/build를 복원하여 원래 12단계 context를 유지한다.
+
+```sh
+python scripts/verify_representative_protected.py
+python -m pytest -q tests/test_emergency_note_activation.py
+python -m pytest -q tests/test_full_corpus_review.py -k 'protection or migration'
+```
+
+새 보고서가 먼저 통합되고 생성물이 아직 이전 상태인 작업 시점에는 전체 corpus
+snapshot 비교를 이 준비 변경의 검증으로 사용하지 않는다. Root가 최종 보고서들을
+통합하고 전체 재생성·drift 검사·QA를 수행한다.
