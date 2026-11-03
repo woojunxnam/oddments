@@ -82,12 +82,15 @@ def provenance_ids(value):
     return result
 
 
-def inventory(root, notes=None):
+def inventory(root, notes=None, ledger_raw=None):
     if notes is None:
         from notes_revision import load_notes
         notes = load_notes(root)
     actual = {u['id']:u for c in notes['chapters'] for u in c['units']}
-    raw = safe_path(root,LEDGER).read_bytes()
+    # A generator may validate its freshly computed ledger without reading the
+    # previous generated file. Annotation-only fields are outside the binding.
+    raw = safe_path(root,LEDGER).read_bytes() if ledger_raw is None else ledger_raw
+    require(isinstance(raw,bytes), 'Note ledger input must be raw bytes')
     rows = [json.loads(line) for line in raw.decode().splitlines()]
     require(len(actual) == sum(len(c['units']) for c in notes['chapters']) and
             len(rows) == len({r['unit_id'] for r in rows}) and

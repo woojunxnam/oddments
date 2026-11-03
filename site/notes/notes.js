@@ -66,6 +66,14 @@
     const url = 'https://github.com/woojunxnam/oddments/blob/main/' + review.source;
     return `<p class="notice source-hold">${esc(review.notice)} <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">주장별 검토 기록</a></p>`;
   }
+  function independentReview(u) {
+    const review = u.independent_atomic_census_review;
+    if (!review?.requires_review) return '';
+    const url = 'https://github.com/woojunxnam/oddments/blob/main/' + review.report_path;
+    const findings = [...review.omissions, ...review.findings.map(f => f.finding + (f.blocker && f.blocker !== f.finding ? ' — ' + f.blocker : ''))];
+    const details = findings.length ? `<details class="independent-note-findings"><summary>독립 검토의 누락·보류 사유</summary><ul>${findings.map(f => `<li>${esc(f)}</li>`).join('')}</ul></details>` : '';
+    return `<div class="independent-note-review"><p class="notice">${esc(review.notice)} <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">독립 검토 기록</a></p>${details}</div>`;
+  }
   function chapterNavigation() {
     let part = ''; let html = '';
     D.chapters.forEach((c, i) => {
@@ -95,6 +103,7 @@
     reader.innerHTML = `<section class="hero"><p class="eyebrow">MPJE FIRST · LAW STUDY & CONNECTED NOTES</p><h1>Massachusetts MPJE<br>지금은 법규 학습과 시험 준비부터.</h1><p>16개 시험 학습 단원에서 핵심 법규를 이해하고, 조건·예외·기한을 비교한 뒤 관련 문제로 적용하세요. 전체 상세노트와 기존 복습 기능도 그대로 사용할 수 있습니다.</p><div class="actions"><a class="primary-button" href="#study">MPJE 법규 학습 시작 →</a><a class="secondary-button" href="${last ? href(last) : '#chapter/foundations'}">${last ? '상세노트 이어보기':'상세노트 처음부터'}</a><a class="secondary-button" href="#drugs">Generic · Brand 사전</a></div><div class="stats-grid"><div class="stat"><strong>${D.stats.chapters}</strong><span>주제별 장</span></div><div class="stat"><strong>${D.stats.units}</strong><span>상세 읽기 절</span></div><div class="stat"><strong>${D.stats.drugs}</strong><span>약물·제형 항목</span></div><div class="stat"><strong>${D.stats.sources}</strong><span>연결 출처</span></div></div></section>
     <div id="refresh-home"></div>
     <p class="notice"><strong>상세 학습판 · 일부 경계 확인 필요</strong><br>편집일 2026.10.23. 기존 노트의 확인일과 새로 검토한 범위를 구분합니다. 독립 전수 법률감사나 합격 보장이 아닙니다. <a href="#chapter/open-register">남은 OPEN 확인</a></p>
+    ${D.independent_note_review_notice ? `<p class="notice independent-note-progress">${esc(D.independent_note_review_notice)}</p>` : ''}
     ${last ? `<a class="resume-card" href="${href(last)}"><span><small>이어서 읽기 · ${esc(last.chapter.title)}</small><strong>${esc(last.title)}</strong></span><span aria-hidden="true">→</span></a>`:''}
     <form id="home-search" class="home-search">${searchBox('home-query')}<p class="search-hint">한국어·English·법규 번호·약 이름으로 전체 본문을 검색합니다. Enter로 검색합니다.</p></form>
     <div class="section-heading"><h2>주제별로 읽기</h2><span>핵심 요약 + 상세 규칙 + 근거</span></div><div id="all-chapter-cards"></div>`;
@@ -123,7 +132,7 @@
     return `<aside class="unit-practice" aria-label="${esc(u.title)} 관련 연습"><h3>읽은 규칙을 문제에 적용하기</h3><p>이 절에 직접 연결된 대표·개정 <strong>${entry.recommended}문항</strong> · 전체 변형 ${entry.total}문항</p><div class="actions">${action}<a data-unit-wrong="${esc(u.id)}" href="${esc(practice+'&review=wrong')}">이 절 오답 복습 →</a></div><small>같은 판단을 공유하는 변형과 이전 판본이 포함될 수 있습니다. 연결 수는 독립 법규 검증 수가 아닙니다.${entry.recommended?'':' 기본 목록의 연결 문항은 아직 없으며, 전체 변형에는 이전 판본·검토 보류 문항도 포함됩니다.'}</small></aside>`;
   }
   function renderUnit(u) {
-    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}${sourceHold(u)}<div class="unit-body">${u.html}</div>${unitPractice(u)}<details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
+    return `<section class="reading-unit" id="${u.id}" data-unit="${u.id}"><div class="unit-top"><h2>${esc(u.title)}</h2><div class="unit-controls"><button type="button" data-save="${u.id}" aria-pressed="${state.saved.includes(u.id)}" aria-label="${esc(u.title)} 북마크">${state.saved.includes(u.id)?'저장됨':'북마크'}</button><button type="button" data-read="${u.id}" aria-pressed="${state.read.includes(u.id)}" aria-label="${esc(u.title)} 읽음 표시">${state.read.includes(u.id)?'읽음 ✓':'읽음 표시'}</button></div></div><p class="unit-meta">${esc(kindLabels[u.kind] || '출처 기반 편집')} · 원문 기준 ${esc(u.source_review_date)}</p>${badges(u)}${u.editor_note?`<p class="editor-note">${esc(u.editor_note)}</p>`:''}${sourceHold(u)}${independentReview(u)}<div class="unit-body">${u.html}</div>${unitPractice(u)}<details class="unit-sources"><summary>공식 근거·편집 출처 ${u.source_ids.length ? '· '+u.source_ids.length+'개':''}</summary><p class="origin">통합 위치: ${esc(u.origins.join(' · ') || '새 공식 원문 보완')}. 원문 확인을 승계한 절은 편집일에 모든 법규를 재검증한 것이 아닙니다.</p>${u.source_ids.length?`<ul>${sourceLinks(u.source_ids)}</ul>`:'<p>이 절은 편집 방법·학습 예시입니다. 관련 법적 규칙의 상세 절과 출처를 함께 확인하세요.</p>'}<a href="book.html#${u.id}" target="_blank" rel="noopener">인쇄 가능한 본문에서 보기 ↗</a></details></section>`;
   }
   function renderChapter(ch, target) {
     setToc(ch);
@@ -148,7 +157,7 @@
   const searchable=[...units.values()].map(u=>({u,text:normalize(u.title+' '+u.text+' '+u.chapter.title+' '+u.origins.join(' ')),title:normalize(u.title)}));
   function snippet(text,query){const ts=terms(query).flat();const lower=text.toLocaleLowerCase();let pos=-1;for(const t of ts){const p=lower.indexOf(t);if(p>=0&&(pos<0||p<pos))pos=p;}const start=Math.max(0,pos-55);return (start?'…':'')+text.slice(start,start+190)+(text.length>start+190?'…':'');}
   function highlight(text,query){const ts=terms(query).flat().filter(x=>x.length>1).sort((a,b)=>b.length-a.length);if(!ts.length)return esc(text);const r=new RegExp('('+ts.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')','giu');return text.split(r).map((x,i)=>i%2?'<mark>'+esc(x)+'</mark>':esc(x)).join('');}
-  function requiresReview(u) { return u.flags.includes('open') || (u.atomic_source_review?.count > 0); }
+  function requiresReview(u) { return u.flags.includes('open') || (u.atomic_source_review?.count > 0) || !!u.independent_atomic_census_review?.requires_review; }
   function resultCard(u,q=''){return `<a class="result-card" href="${href(u)}"><small>${esc(u.chapter.title)}${requiresReview(u)?' · 적용 경계 확인 필요':''}</small><h2>${highlight(u.title,q)}</h2><p>${highlight(snippet(u.text,q),q)}</p></a>`;}
   function renderSearch(initial=''){
     setToc(null);

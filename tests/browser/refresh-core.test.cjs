@@ -18,6 +18,9 @@ assert.notDeepEqual(daily,C.dailyCards(cards,{},'2026-10-28'));
 assert.equal(new Set(daily.map(id=>cards.find(c=>c.id===id).stage)).size,7);
 const flagged=cards.map(c=>({...c,flags:daily.includes(c.id)?['open']:[]}));
 assert(C.dailyCards(flagged,{},'2026-10-27').every(id=>!daily.includes(id)));
+const held=cards.map(c=>({...c,independent_atomic_census_reviews:daily.includes(c.id)?[{legal_status:'LEGAL_HOLD'}]:[]}));
+assert(C.dailyCards(held,{},'2026-10-27').every(id=>!daily.includes(id)));
+assert(cards.every(c=>c.flags.length===0&&!('independent_atomic_census_reviews' in c)));
 const review=C.gradeReview(null,'hard','2026-10-27');
 assert.deepEqual(review,{grade:'hard',due:'2026-10-30',last:'2026-10-27',count:1});
 assert.equal(C.gradeReview(review,'good','2026-10-27').due,'2026-11-03');
@@ -30,4 +33,4 @@ const before=C.cleanState({saved:['RF-002'],reviews:{'RF-001':review}},ids,field
 const imported=C.cleanState({saved:['RF-001'],reviews:{'RF-001':{...review,last:'2026-10-20'}}},ids,fields);
 const merged=C.mergeState(before,imported);assert.deepEqual(merged.saved,['RF-002','RF-001']);assert.equal(merged.reviews['RF-001'].last,'2026-10-27');
 const shuffled=C.shuffled(ids,'seed');assert.equal(new Set(shuffled).size,ids.length);assert.deepEqual(shuffled,C.shuffled(ids,'seed'));assert.notDeepEqual(shuffled,ids);
-console.log('PASS: 25 pure scheduling, date, filtering, import and deterministic-shuffle assertions.');
+console.log('PASS: 27 pure scheduling, date, filtering, import and deterministic-shuffle assertions.');

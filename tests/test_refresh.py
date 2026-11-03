@@ -48,6 +48,12 @@ def test_all_reference_dates_hashes_and_flags_are_inherited():
 def test_open_and_future_boundaries_not_silently_closed():
     cs=[c for c in D['cards'] if 'schedule-vi-continuity' in c['note_units']]
     assert cs and all('open' in c['flags'] for c in cs)
+
+def test_independent_hold_reaches_refresh_cards_without_erasing_original_source_flags():
+    c=next(c for c in D['cards'] if c['id']=='RF-C-licensure-ce')
+    assert any(r['unit_id']=='w1-a-2' and r['legal_status']=='LEGAL_HOLD'
+               for r in c['independent_atomic_census_reviews'])
+    assert c['flags']==sorted({f for uid in c['note_units'] for f in U[uid]['flags']})
     assert all('date-sensitive' in c['flags'] for c in D['cards'] if 'ipledge-transition' in c['note_units'])
     assert '전수 재검증일이 아닙니다' in D['source_policy']
 

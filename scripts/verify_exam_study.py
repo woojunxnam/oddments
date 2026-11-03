@@ -51,6 +51,19 @@ def main():
             page.reload(wait_until='networkidle');expect(page.locator('#study-mistake')).to_have_value('issue date와 first partial을 혼동');expect(page.locator('#study-rating-status')).to_contain_text('복습 필요');ok('real-origin reload preserves confidence and error notes')
         route('study/weak');expect(page.locator('.study-grid')).to_contain_text('Patient request');ok('self-identified weak concepts are retrievable')
         route('study/today');daily=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).daily',KEY);assert len(set(daily['ids']))==10 and all(x.startswith('LAW-') for x in daily['ids']);route('study');route('study/today');assert page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).daily.ids',KEY)==daily['ids'];ok('daily law-only set is unique and stable within the Eastern calendar day')
+        held_ids=page.evaluate('window.MPJE_EXAM_STUDY.lessons.filter(l=>(l.independent_atomic_census_reviews||[]).length).map(l=>l.id)')
+        assert set(daily['ids']).isdisjoint(held_ids)
+        if held_ids:
+            held_id=held_ids[0]
+            route('study/lesson/'+held_id);expect(page.locator('#reader')).to_contain_text('독립 검토 보류')
+            ratings_before=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).ratings',KEY)
+            page.evaluate('([k,id])=>{const s=JSON.parse(localStorage.getItem(k));s.daily.ids[0]=id;s.daily.done=[id];localStorage.setItem(k,JSON.stringify(s));}',[KEY,held_id])
+            if not a.inline_preview:page.reload(wait_until='networkidle')
+            else:load_inline(page)
+            route('study/today');daily=page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).daily',KEY)
+            assert set(daily['ids']).isdisjoint(held_ids)
+            assert page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).ratings',KEY)==ratings_before
+            ok('independent note holds stay reachable with warnings and leave cached daily review without erasing ratings')
         assert page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).daily.done.length',KEY)==0
         route('study/today-card/'+daily['ids'][0]);page.locator('[data-rating=explain]').click();page.locator('[data-rating=explain]').click();assert page.evaluate('(k)=>JSON.parse(localStorage.getItem(k)).daily.done.length',KEY)==1;ok('daily progress counts self-reviewed concepts once, not skips or repeated clicks')
         route('study/drill');seen=[page.locator('[data-law-id]').get_attribute('data-law-id')]

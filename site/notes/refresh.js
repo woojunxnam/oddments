@@ -17,10 +17,10 @@
   const kinds={'notes-summary':'통합노트 요약','learning-synthesis':'노트 기반 학습 설계','learning-example':'가상 계산·학습 예시','external-safety':'공식 안전교육 추가','drug-appendix':'기존 약물 부록 재구성','chapter-overview':'통합노트 장 개요'};
   function save(){try{localStorage.setItem(C.KEY,JSON.stringify(state));}catch{storageOK=false;}storageMessage();}
   function storageMessage(){const el=$('#rf-storage');if(el){el.hidden=storageOK;el.textContent='브라우저에 기록을 저장할 수 없습니다. 이번 화면의 기록은 내보내기로 보관하세요.';}}
-  function ensureDaily(){const today=C.dayKey();if(!state.daily||state.daily.date!==today){state.daily={date:today,ids:C.dailyCards(D.cards,state.reviews,today),completed:[]};save();}return state.daily;}
+  function ensureDaily(){const today=C.dayKey();if(!state.daily||state.daily.date!==today||state.daily.ids.some(id=>(cards.get(id)?.independent_atomic_census_reviews||[]).length)){const previous=new Set(state.daily?.date===today?state.daily.completed:[]),selected=C.dailyCards(D.cards,state.reviews,today);state.daily={date:today,ids:selected,completed:selected.filter(id=>previous.has(id))};save();}return state.daily;}
   function notice(text){const el=$('#rf-status');if(el)el.textContent=text;}
   function linkUnit(id){const u=units.get(id);return u?`#chapter/${u.chapter}/${id}`:'#home';}
-  function warnings(card){return card.flags.map(f=>`<span class="rf-warning">${esc(warningLabels[f]||f)}</span>`).join('');}
+  function warnings(card){return card.flags.map(f=>`<span class="rf-warning">${esc(warningLabels[f]||f)}</span>`).join('')+(card.independent_atomic_census_reviews||[]).map(r=>`<span class="rf-warning">독립 검토 보류 · ${esc(r.notice)}</span>`).join('');}
   function provenance(card){
     const external=card.external_sources.map(id=>D.external_sources[id]);
     return `<p class="rf-provenance">${esc(kinds[card.kind])} · 노트 원문 기준 ${esc(card.source_review_dates.join(' / '))}${external.length?' · 추가 안전교육 확인 '+esc(external.map(s=>s.checked_at).join(', ')):''}<br>카드 편집 ${esc(card.edited_at)} · 법규 전수 재검증 표시가 아닙니다.</p>`;

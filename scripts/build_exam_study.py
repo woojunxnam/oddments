@@ -5,6 +5,7 @@ import argparse, copy, hashlib, html, json
 from pathlib import Path
 from notes_revision import load_notes, apply_study_revision
 from practice_note_links import build_note_practice_index
+from notes_independent_metadata import load_metadata, notices_for_units
 ROOT=Path(__file__).resolve().parents[1]
 
 def digest(path: Path) -> str:
@@ -28,6 +29,7 @@ def eligible_study_practice(question, recommended, revised, excluded):
 def build_payload() -> dict:
     note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
     notes=load_notes(ROOT); data=apply_study_revision(json.loads(author_path.read_text()), "study", ROOT)
+    independent_reviews=load_metadata(ROOT,notes)['units']
     chapters={c['id']:c for c in notes['chapters']}
     units={u['id']:(c,u) for c in notes['chapters'] for u in c['units']}
     modules={m['id']:m for m in data['modules']}
@@ -54,6 +56,7 @@ def build_payload() -> dict:
         x['stored_source_hashes']={uid:units[uid][1]['body_sha256'] for uid in refs}
         x['source_hashes']={uid:hashlib.sha256(units[uid][1]['body'].encode()).hexdigest() for uid in refs}
         x['source_hash_basis']='ACTUAL_EFFECTIVE_BODY_UTF8'
+        x['independent_atomic_census_reviews']=notices_for_units(refs,independent_reviews)
         x['source_review_dates']=list(dict.fromkeys(units[uid][1]['source_review_date'] for uid in refs))
         x['flags']=sorted({f for uid in refs for f in units[uid][1]['flags']})
         x['source_ids']=list(dict.fromkeys(sid for uid in refs for sid in units[uid][1]['source_ids']))

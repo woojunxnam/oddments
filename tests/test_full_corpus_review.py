@@ -47,7 +47,8 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     assert progress['new_questions'] == 18
     assert progress['inventory_is_legal_review'] is False
     assert progress['canonical_independent_audit_this_session'] == 'NOT_RUN'
-    assert progress['notes_units_with_complete_atomic_claim_census'] == 306
+    assert progress['notes_units_with_author_atomic_claim_enumeration_records'] == 306
+    assert progress['notes_units_with_complete_atomic_claim_census'] == 34
     assert progress['author_atomic_claim_enumeration_complete'] is True
     assert progress['atomic_claim_census_complete'] is False
 
@@ -216,6 +217,11 @@ def protected_copy(tmp_path):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(ROOT/path,dest)
+    annotation=ROOT/'revisions/notes/protected-migration-independent-notes-wave2.json'
+    if annotation.exists():
+        for path in json.loads(annotation.read_bytes())['independent_reviews']:
+            dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(ROOT/path,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
     shutil.copytree(ROOT/evidence, tmp_path/evidence)
     paths = set()
@@ -258,7 +264,7 @@ def test_census_annotation_migration_cannot_authorize_changed_note_semantics(pro
     path=root/'site/notes/build.json'
     build=json.loads(path.read_bytes());build['content_sha256']='0'*64
     path.write_text(json.dumps(build))
-    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed'):
+    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed|Independent-note annotation cannot authorize semantic note changes'):
         verify(manifest,root)
 
 

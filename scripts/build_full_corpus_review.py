@@ -516,13 +516,10 @@ def build():
             result.append(row)
     apply_citation_errata(result)
     apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
+    from legacy_independent_metadata import integrated_sources
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
         'pub05-14-independent-review.json', 'wave2-independent-review.json',
-        'wave5-independent-review.json', 'independent-phase1-a-review.json',
-        'independent-phase1-b-review.json', 'independent-phase1-c-review.json',
-        'independent-phase1-d-review.json', 'independent-phase2-b-review.json',
-        'independent-phase2-c-review.json', 'independent-phase2-e-review.json',
-        'independent-phase2-f-review.json')]
+        'wave5-independent-review.json')]+integrated_sources(ROOT)
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):
@@ -570,7 +567,8 @@ def build():
     claims = [c for name in CLAIM_FILES for c in read('reports/full-corpus-review/'+name)['claims']]
     assert len({c['claim_id'] for c in claims}) == len(claims)
     from notes_revision import load_notes
-    effective = {u['id']: u for c in load_notes(ROOT)['chapters'] for u in c['units']}
+    effective_notes = load_notes(ROOT)
+    effective = {u['id']: u for c in effective_notes['chapters'] for u in c['units']}
     for claim in claims:
         validate_claim(claim, effective, ROOT)
     census_specs = [dict(path='reports/full-corpus-review/' + name,
@@ -630,6 +628,11 @@ def build():
                   atomic_census_notes_revision=census_units.get(u['id'], {}).get('notes_revision'),
                   atomic_source_blocked_count=sum(x['review_status']=='SOURCE_BLOCKED' for x in census['claims'] if x['unit_id']==u['id']),
                   atomic_claim_ids=[x['claim_id'] for x in census['claims'] if x['unit_id'] == u['id']]) for c in notes['chapters'] for u in c['units']]
+    from notes_independent_metadata import load_metadata
+    computed_ledger = ''.join(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n' for row in units).encode()
+    independent_notes = load_metadata(ROOT,effective_notes,ledger_raw=computed_ledger)
+    for row in units:
+        row['independent_atomic_census_review'] = independent_notes['units'].get(row['unit_id'])
     canonical = []
     for path in sorted((ROOT/'data/questions').glob('*.json')):
         q = json.loads(path.read_text())
@@ -664,7 +667,10 @@ def build():
                     notes_units_with_partial_claim_review=len(reviewed_units),
                     notes_units_with_versioned_edits=sum(u['editorial_update_status']=='VERSIONED_REVISION_APPLIED' for u in units),
                     notes_units_with_independent_final_content_review=sum('independent_content_review' in u for u in effective.values()),
-                    notes_units_with_complete_atomic_claim_census=len(complete_census_units),
+                    independent_note_completeness_legal_review=independent_notes['progress'],
+                    notes_units_with_author_atomic_claim_enumeration_records=len(complete_census_units),
+                    notes_units_with_complete_atomic_claim_census=independent_notes['progress']['complete_units'],
+                    complete_atomic_census_units_basis='CURRENT_INTEGRATED_INDEPENDENT_COMPLETENESS_NOT_LEGAL_PASS',
                     notes_units_with_atomic_claim_records=len(census_units),
                     partial_census_claim_or_clause_records=len(census['claims'])-len(complete_census_claims),
                     atomic_claim_census_basis='AUTHOR_ENUMERATION_NOT_INDEPENDENT_COMPLETENESS_OR_LEGAL_PASS',
@@ -674,7 +680,7 @@ def build():
                     reviewed_claims=len(claims), source_checked_claims=sum(x['review_status']=='AUTHOR_SOURCE_CHECKED' for x in claims),
                     open_claims=sum(x['review_status']=='HOLD_FOR_LEGAL_REVIEW' for x in claims),
                     author_atomic_claim_enumeration_complete=len(complete_census_units)==len(units),
-                    atomic_claim_census_complete=False,
+                    atomic_claim_census_complete=independent_notes['progress']['complete_units']==len(units),
                     inventory_is_legal_review=False,
                     same_team_peer_this_session='NOT_CERTIFIED_BY_THIS_INVENTORY',
                     canonical_independent_audit_this_session='NOT_RUN',
