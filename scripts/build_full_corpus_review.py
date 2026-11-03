@@ -516,14 +516,10 @@ def build():
             result.append(row)
     apply_citation_errata(result)
     apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
+    from legacy_independent_metadata import integrated_sources
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
         'pub05-14-independent-review.json', 'wave2-independent-review.json',
-        'wave5-independent-review.json', 'independent-phase1-a-review.json',
-        'independent-phase1-b-review.json', 'independent-phase1-c-review.json',
-        'independent-phase1-d-review.json', 'independent-phase2-b-review.json',
-        'independent-phase2-c-review.json', 'independent-phase2-e-review.json',
-        'independent-phase2-f-review.json', 'independent-phase3-g-review.json',
-        'independent-phase3-h-review.json')]
+        'wave5-independent-review.json')]+integrated_sources(ROOT)
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):

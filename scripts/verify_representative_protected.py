@@ -168,6 +168,59 @@ def make_baseline(main_tree, root=ROOT):
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
     effective_build = None
+    thirteenth_path=root/'revisions/notes/protected-migration-independent-notes-wave2.json'
+    if thirteenth_path.exists() and relative=='site/notes/complete-notes.md':
+        metadata=json.loads(thirteenth_path.read_bytes())
+        require(metadata['schema_version']=='notes-protected-annotation-migration/1' and
+                metadata['baseline_commit']=='b5d1b3e98ca3a7d97252b331a33cf7a4c0ba956b',
+                'Unexpected independent-note annotation migration base')
+        require(metadata['path']==relative and
+                metadata['baseline_copy']=='revisions/baselines/complete-notes-pr188.md' and
+                metadata['baseline_build_copy']=='revisions/baselines/notes-build-pr188.json',
+                'Independent-note annotation migration expands protected scope')
+        require(metadata['previous_migration_path']=='revisions/notes/protected-migration-emergency-kit.json' and
+                metadata['previous_migration_sha256']=='b74a101c0319ae9ca7cba366c55125243a2f8f9186e43bf45a7148fe8ea9fa35' and
+                sha256(safe_file(root,metadata['previous_migration_path']).read_bytes())==metadata['previous_migration_sha256'],
+                'Published emergency-kit migration changed')
+        historical_build=safe_file(root,metadata['baseline_build_copy']).read_bytes()
+        require(metadata['baseline_build_sha256']=='373b22191f5c2f9565b2dc3206d93801a488cfc65eab1e97f7ffa31b8985416f' and
+                sha256(historical_build)==metadata['baseline_build_sha256'],
+                'Published PR188 build changed')
+        previous_build=json.loads(historical_build)
+        current_build=json.loads(safe_file(root,'site/notes/build.json').read_bytes())
+        from notes_revision import load_notes
+        semantic_sha256=sha256(json.dumps(load_notes(root),ensure_ascii=False,sort_keys=True).encode())
+        require(metadata['semantic_notes_sha256']==semantic_sha256==
+                previous_build['content_sha256']==current_build['content_sha256']==
+                'e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824' and
+                previous_build['revision_provenance']==current_build['revision_provenance'] and
+                previous_build['edition']==current_build['edition']=='2026-11-03.emergency-kit.1',
+                'Independent-note annotation cannot authorize semantic note changes')
+        scope={
+            'second-b-review.json':{'w1-b-10','w1-b-11','w1-b-12','w1-c-1','w1-c-2'},
+            'second-c-review.json':{'w1-c-3','w1-c-4','w1-c-5','w1-c-6','w1-c-7'},
+            'second-e-review.json':{'w1-c-8','w4-a-21','w2-a-2','w2-a-3','w2-a-4'},
+            'second-f-review.json':{'w2-a-5','w2-a-6','w2-a-7','w2-a-8','w2-a-10'},
+        }
+        review_scope={'reports/full-corpus-review/independent-notes/'+name:ids for name,ids in scope.items()}
+        require(set(metadata['independent_reviews'])==set(review_scope),
+                'Independent-note annotation evidence scope changed')
+        for path,expected_units in review_scope.items():
+            report_raw=safe_file(root,path).read_bytes()
+            require(sha256(report_raw)==metadata['independent_reviews'][path],
+                    'Independent-note annotation review changed')
+            report=json.loads(report_raw)
+            require(report.get('stage')=='independent-notes' and
+                    report.get('canonical_audit') is False and report.get('canonical_release_credit')==0 and
+                    len(report['records'])==len(expected_units) and
+                    {r['unit_id'] for r in report['records']}==expected_units,
+                    'Independent-note annotation review unit scope changed')
+        require(sha256(current)==metadata['new_sha256'], 'Stale independent-note annotation export')
+        current=safe_file(root,metadata['baseline_copy']).read_bytes()
+        require(metadata['old_sha256']=='8d23fa9c5e63deffd33218630a630a61d946cfd25d56bc578b553cbc37a84aaf' and
+                sha256(current)==metadata['old_sha256'], 'Published PR188 export changed')
+        # Feed the original PR188 export into the unchanged twelve older guards.
+        # The current semantic build remains M in both contexts.
     twelfth_path=root/'revisions/notes/protected-migration-emergency-kit.json'
     if twelfth_path.exists() and relative=='site/notes/complete-notes.md':
         from notes_emergency_activation import (REVISION_M, ACTIVATION, REVIEW, CENSUS,

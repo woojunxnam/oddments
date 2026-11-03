@@ -217,6 +217,11 @@ def protected_copy(tmp_path):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(ROOT/path,dest)
+    annotation=ROOT/'revisions/notes/protected-migration-independent-notes-wave2.json'
+    if annotation.exists():
+        for path in json.loads(annotation.read_bytes())['independent_reviews']:
+            dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(ROOT/path,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
     shutil.copytree(ROOT/evidence, tmp_path/evidence)
     paths = set()
