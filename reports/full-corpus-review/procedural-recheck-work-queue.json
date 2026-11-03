@@ -9,11 +9,14 @@
         "MA-CASE-0401": "28bf9b9552dc20ff3380603922ba1b1979572ce29eb1d4d6f89fb31acb23e692",
         "MA-CASE-0441": "ba73132e16f46975855f121d8905e4ff7e806df4f3d56b6604ad4dd9fcb819c9"
       },
-      "status": "QUEUED",
-      "attempt": 0,
-      "worker_branch": "mission/review-independent-legacy-procedural-bb21ae8b81dcccc6",
+      "status": "LEASED",
+      "attempt": 1,
+      "worker_branch": "mission/review-independent-legacy-procedural-bb21ae8b81dcccc6-attempt-1",
       "created_at": "2026-11-03T23:15:54.692767+00:00",
-      "stage": "independent-legacy"
+      "stage": "independent-legacy",
+      "worker": "/root/independent_procedural_retry",
+      "lease_until": "2026-11-04T02:15:54.754725+00:00",
+      "lease_token": "d501b38fdc204de89374cdf838bfed003037986dbab5ceca6921c199959793e8"
     }
   ],
   "events": [
@@ -23,6 +26,13 @@
       "job_ids": [
         "review-independent-legacy-procedural-bb21ae8b81dcccc6"
       ]
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-03T23:15:54.754725+00:00",
+      "job_id": "review-independent-legacy-procedural-bb21ae8b81dcccc6",
+      "worker": "/root/independent_procedural_retry",
+      "attempt": 1
     }
   ],
   "procedural_recheck_scope": {
