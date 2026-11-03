@@ -112,11 +112,19 @@ def main() -> None:
         page.locator('#search-flag').select_option('open')
         expect(page.locator('.result-card').first).to_be_visible()
         checked('OPEN filter works with search')
-        source_only=page.evaluate("""() => window.MPJE_NOTES.chapters.flatMap(c=>c.units.filter(u=>u.atomic_source_review?.count>0&&!u.flags.includes('open')).map(u=>'#chapter/'+c.id+'/'+u.id))""")
+        source_only=page.evaluate("""() => window.MPJE_NOTES.chapters.flatMap(c=>c.units.filter(u=>u.atomic_source_review?.count>0&&!u.flags.includes('open')).map(u=>({chapter:c.id,href:'#chapter/'+c.id+'/'+u.id})))""")
         assert source_only, 'Need current source-hold coverage independent of historical OPEN flags'
         route('search/')
         page.locator('#search-flag').select_option('open')
-        for href in source_only:
+        # The UI intentionally limits a broad search to150 results. Narrow by
+        # chapter so a growing census cannot turn that documented cap into a
+        # false failure or conceal a source hold from this regression.
+        chapter=None
+        for item in source_only:
+            if item['chapter'] != chapter:
+                page.locator('#search-chapter').select_option(item['chapter'])
+                chapter=item['chapter']
+            href=item['href']
             expect(page.locator(f'a.result-card[href="{href}"] small')).to_be_visible()
             expect(page.locator(f'a.result-card[href="{href}"] small')).to_contain_text('적용 경계 확인 필요')
         checked('source-blocked units without historical OPEN flags appear in review filter and search warnings')

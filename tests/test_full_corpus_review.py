@@ -134,14 +134,14 @@ def test_author_provenance_uses_each_source_and_never_inherits_family_review(mon
         value = original_read(path)
         if path == 'reports/full-corpus-review/wave10-1-author-review.json':
             value = copy.deepcopy(value)
-            value['records'] = [r for r in value['records'] if r['question_id'] != 'MA-EXP-0425']
+            value['records'] = [r for r in value['records'] if r['question_id'] != 'MA-EXP-0426']
         return value
     monkeypatch.setattr(module,'read',missing_one)
     outputs = module.build()
     changed = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
-    assert changed['MA-EXP-0425']['checked_at'] is None
-    assert changed['MA-EXP-0425']['legal_review_status'] == 'NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
-    assert changed['MA-EXP-0426']['checked_at'] is not None
+    assert changed['MA-EXP-0426']['checked_at'] is None
+    assert changed['MA-EXP-0426']['legal_review_status'] == 'NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
+    assert changed['MA-EXP-0425']['checked_at'] is not None
 
 
 def test_revised_units_preserve_cross_surface_warning_without_review_certificate():
@@ -176,6 +176,12 @@ def protected_copy(tmp_path):
         dest=tmp_path/row['path']; dest.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(ROOT/row['path'],dest)
     shutil.copytree(ROOT/'revisions',tmp_path/'revisions')
+    dest=tmp_path/'site/notes/build.json';dest.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copyfile(ROOT/'site/notes/build.json',dest)
+    for metadata in (ROOT/'revisions/notes').glob('protected-migration-census-*.json'):
+        for path in json.loads(metadata.read_bytes())['census_sources']:
+            dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(ROOT/path,dest)
     verify(manifest,tmp_path)
     return tmp_path,manifest
 
@@ -198,6 +204,24 @@ def test_migration_cannot_expand_allowlist(protected_copy):
     migration['files'].append(dict(path='notes/guide.json'))
     path.write_text(json.dumps(migration))
     with pytest.raises(ValueError,match='expands protected scope'): verify(manifest,root)
+
+
+def test_census_annotation_migration_cannot_authorize_changed_note_semantics(protected_copy):
+    root,manifest=protected_copy
+    path=root/'site/notes/build.json'
+    build=json.loads(path.read_bytes());build['content_sha256']='0'*64
+    path.write_text(json.dumps(build))
+    with pytest.raises(ValueError,match='cannot authorize a semantic note edit'):
+        verify(manifest,root)
+
+
+def test_census_annotation_migration_cannot_expand_its_export_path(protected_copy):
+    root,manifest=protected_copy
+    path=root/'revisions/notes/protected-migration-census-wave8-9.json'
+    migration=json.loads(path.read_bytes());migration['path']='notes/guide.json'
+    path.write_text(json.dumps(migration))
+    with pytest.raises(ValueError,match='Census annotation migration expands protected scope'):
+        verify(manifest,root)
 
 
 def test_mor_discipline_migration_cannot_redirect_to_an_immutable_source(protected_copy):

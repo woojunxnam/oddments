@@ -2570,6 +2570,9 @@ Pharmacist가 final dispensing validation을 수행한다. Technician의 label �
 ## Massachusetts patient label의 기본 항목
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+
+
 c.94C §21과 247 CMR 9, 관련 federal requirements를 함께 읽는다. 일반적인 patient container label에는 pharmacy name/address, prescription serial number, filling date, dispensing pharmacist initials, patient name, prescriber name, drug name 및 적절한 strength/concentration, directions, 필요한 cautions, quantity가 연결된다. Veterinary와 아래의 보호 의료활동에는 특정 예외가 있다. 
 
 Drug name만으로 제품이 정확히 식별되지 않으면 strength/form을 확인해야 한다. 같은 성분의 5 mg과 10 mg, immediate-release와 extended-release를 하나의 label 표현으로 처리하지 않는다. Generic interchange에는 실제 교부한 제품의 표시가 필요하다.
@@ -2587,6 +2590,9 @@ Label은 환자가 실제로 사용할 수 있는 정보여야 한다. 보험 cl
 
 
 ## 추가 label 요건과 특별 상황
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
 
 ### Compounded preparation
@@ -2622,6 +2628,9 @@ c.94C §21의 해당 Schedule II·III narcotic/opioid prescription에는 Departm
 ## Reproductive·gender-affirming care의 prescriber label
 
 
+> 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+
+
 2026년 3월 Board newsletter는 Shield Law 2.0에 따라, prescriber가 요청한 경우 reproductive 또는 gender-affirming care용 Schedule VI 약의 label에 개인 prescriber 이름 대신 health-care practice 이름을 사용해야 한다고 안내한다. 단순히 pharmacy가 원해서 모든 prescriber 이름을 지우는 경로가 아니다. 
 
 이 보호적 label 경로는 federally scheduled controlled substances에는 적용하지 않는다. 예를 들어 testosterone은 gender-affirming care에 사용될 수 있어도 Schedule III이므로 이를 Schedule VI label 예외로 처리하지 않는다. 약의 치료 목적과 schedule을 모두 확인한다. 
@@ -2639,6 +2648,9 @@ Massachusetts의 protected-care law와 federal HIPAA reproductive-health rule의
 
 
 ## Generic substitution의 법적 구조
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
 
 ### 같은 성분이라는 사실만으로 충분하지 않다
@@ -2846,6 +2858,9 @@ OTC의 규제 대상 여부는 별도로 확인한다. 예를 들어 acetaminoph
 ## 용기의 재사용과 안정성
 
 
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+
+
 Special packaging은 반복 개봉과 마모로 성능이 저하될 수 있다. 16 CFR 1700.15(c)의 reuse 제한과 예외를 적용하고, 환자가 가져온 오래된 closure를 상태 확인 없이 계속 재사용하지 않는다. 단순히 닫힌다는 사실은 child-resistant 시험 성능이 유지된다는 증거가 아니다. 
 
 Light-resistant, tight/well-closed, moisture protection, original-container 요구 등은 제품·USP·manufacturer 조건에 맞춘다. CR waiver가 있어도 약물의 화학적 안정성을 보호하는 포장 요건이 사라지는 것은 아니다.
@@ -2863,6 +2878,9 @@ Light-resistant, tight/well-closed, moisture protection, original-container 요�
 ## Reusable dose planners
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+
+
 환자 요청에 따른 reusable dose planner는 지정된 clean area와 적절한 written procedures, 손위생·contamination control, medication identification·stability를 고려한다. 다른 pharmacy가 이미 조제한 약을 가져와 혼합 포장하는 것과 해당 pharmacy의 적법한 조제 경로를 구별한다. 
 
 Dose planner에 넣을 약이 해당 container에서 안정한지 확인하고 적절한 label 및 drug-accountability 기록을 유지한다. 현재 Policy 2023-01의 경로는 최대 60-day supply를 설명한다. Manufacturer expiry 또는 shorter product stability가 있으면 60일로 늘려서는 안 된다. 
@@ -2878,6 +2896,9 @@ Dose planner에 넣을 약이 해당 container에서 안정한지 확인하고 �
 
 
 ## Single-drug·multi-drug compliance packaging
+
+
+> 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
 
 ### 공통 조건
@@ -2905,6 +2926,9 @@ Policy 경로에서도 CII prescription validity·no-refill·partial-fill 조건
 
 
 ## Compliance pack의 BUD와 label
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
 
 BUD는 applicable manufacturer expiry, 제품의 shorter stability limit, 해당 packaging 60-day maximum 중 먼저 도래하는 조건을 지킨다. 남은 약을 새 pack에 옮겼다고 expiry가 연장되지 않는다. 
@@ -3153,6 +3177,9 @@ REMS 제거 후에도 pharmacy는 적법한 prescription, dose·interaction revi
 ## Mifepristone REMS와 Massachusetts access
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+
+
 해당 Mifepristone REMS는 certified prescriber, patient agreement와 patient information, certified pharmacy 또는 적격 prescriber-supervised dispensing 경로를 정한다. Pharmacy certification에는 authorized representative, 필요한 agreement 수령·보존, timely dispensing와 tracking 가능한 shipping capability 등의 조건이 있다. 
 
 REMS가 in-person dispensing만을 요구한다고 옛 방식으로 암기하지 않는다. Certified pharmacy의 적법한 mail dispensing 경로가 있다. 반대로 prescription 없이 일반 OTC로 살 수 있는 약이라는 뜻도 아니다.
@@ -3332,6 +3359,9 @@ Marketing, sale of PHI 등은 일반 TPO와 달리 authorization가 필요한 �
 
 
 ## 가족·대리인·미성년자
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave9-census.json)
 
 
 가족이나 약을 대신 찾으러 온 사람이 환자 치료·payment에 관여하는 경우, 환자의 동의·기회·반대 여부 또는 허용된 professional judgment에 따라 관련된 범위의 정보를 제공할 수 있다. '가족이면 전체 기록에 항상 접근 가능' 또는 '서면 authorization 없으면 pickup 관련 설명도 절대 불가'라는 두 극단을 피한다. 
@@ -7071,6 +7101,9 @@ Impractical **AND** unduly burdensome / petition **versus** granted waiver / gra
 ## Pseudoephedrine·ephedrine·PPA: CMEA
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave9-census.json)
+
+
 Scheduled listed chemical products와 controlled substances의 schedules를 구별한다. Pseudoephedrine OTC 제품이 behind-the-counter라는 이유로 federal Schedule II drug가 되는 것은 아니다. CMEA의 구매 제한·ID·logbook이 별도로 적용된다. 
 
 Retail daily sales limit는 base chemical 기준 3.6 g, individual retail purchase의 30-day limit는 9 g이며 mail/mobile-vendor 등의 7.5 g 제한을 별도로 확인한다. 전체 tablet 무게, 단순 package 수, calendar month를 기준으로 임의 환산하지 않는다. Salt mass와 base equivalent를 혼동하지 않는다.
@@ -7107,6 +7140,9 @@ Massachusetts S.1617, An Act prohibiting the sale of dextromethorphan to minors�
 
 
 ## Syringes·needles와 약물 자체의 판매
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave9-census.json)
 
 
 Massachusetts Board의 현행 advisory는 c.94C §27에 따라 pharmacy가 hypodermic syringes·needles를 모든 연령의 사람에게 prescription이나 ID 없이 판매할 수 있고, 별도 quantity·size·type 제한이나 추가 recordkeeping 요건이 없다고 설명한다. 과거의 '반드시 18세'라는 요약을 사용하지 않는다. 

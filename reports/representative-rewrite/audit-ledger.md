@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 63 |
-| NOT_YET_IMPLEMENTED | 215 |
+| HOLD_FROM_DEFAULT | 78 |
+| NOT_YET_IMPLEMENTED | 200 |
 
-기본 목록 385개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 370개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 478개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 496개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -199,31 +199,31 @@
 | MA-EXP-0611 | CII05 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 60일뒤earliestfill과MAvalidity의충돌은실질적이다. 유일정답C는federal일반조건이라주사례를해결하는행동을직접묻지않는다. |
 | MA-EXP-0615 | CII06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | outage와즉시치료필요는별도이며적절한대체가있는조건은유용하다. C의고정7일분과D의refill전환은쉬운오답이다. |
 | MA-EXP-0619 | CII07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | receptionist→CPhT와centralfill수신은서로다른제한이다. C의unknowncaller주장만으로인증불필요는명백오답이다. |
-| MA-EXP-0623 | CII08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Mondayauthorization와Tuesdaydispense의시계차이는유효하다. alltrue이므로실제후속통지행동의선택지가없고주법통합을명시적으로유보한범위를유지해야한다. |
+| MA-EXP-0623 | CII08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Mondayauthorization와Tuesdaydispense의시계차이는유효하다. alltrue이므로실제후속통지행동의선택지가없고주법통합을명시적으로유보한범위를유지해야한다. 현재 보류 이유: 문항별 검토 보류: 원stem은federalfollow-up시계라고명시한다. 원해설의oral수권후7일,DEA통지,중복공급금지의방향이맞다. 추가근거로MA§20(c)의전자follow-up2일/해당예외written7일과105CMR721.060(B)(4),721.070(B)의businessdays표현을확인했지만서로다른주내문언의통합적용을해결했다고인증하지않는다. 연방답을주최종실무기한으로암기해서는안된다. 다만원SATA의모든보기가정답이어서선택/배제분별력을확인하지못한다. 법적키오류와별도인편집결함이며새오답보기와키를draft로제안한다. 원문수정및독립감사완료로계산하지않는다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0627 | CII09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | LTCF는CII전반,hospice특례는narcotic이라는조건차이가가치있다. A의모든요건제거와C의막연comfortcare는쉽다. |
 | MA-EXP-0631 | CII10 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | qualifyinginfusion조건을지문에서이미충족한다고말해실제route를분류하지않는다. A의oraltablet,D의refill은너무먼오답이다. |
 | MA-EXP-0635 | PART01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Monday14시→Thursday12시의70시간과80시간은의미있는경계다. A/D는같은trigger를반복해두사례와네명제의부피가과하다. |
-| MA-EXP-0639 | PART02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 사후request날조라는극단행동을모두정답명제로반박한다. 실제request가있었는지모호한현실적기록검토가더좋다. |
+| MA-EXP-0639 | PART02 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 사후request날조라는극단행동을모두정답명제로반박한다. 실제request가있었는지모호한현실적기록검토가더좋다. 현재 보류 이유: 문항별 검토 보류: 원stem은실제qualifyingrequest가없다는사실을명시한다. 원해설의사후허위relabel금지·request기록·총량한도는맞다. 1306.13(b)(3)의나중에실제로prescriber와consult하여partial을요청하는가능성까지금지한해석은하지않는다. 다만원SATA의모든보기가정답이어서선택/배제분별력을확인하지못한다. 법적키오류와별도인편집결함이며새오답보기와키를draft로제안한다. 원문수정및독립감사완료로계산하지않는다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0643 | PART03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | day20request와casualagent의확대요청은각각유용하나자격있는requester및prescriber량을실제로명시하지않는다. |
 | MA-EXP-0647 | PART04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | emergency72시간과samechain다른약국은서로다른장벽이다. C/D는경로구별일반론이며실제remainder제공여부를묻지않는다. |
 | MA-EXP-0651 | PART05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | day8미시작과적법초기partial후잔량은다른상태여서보존할가치가있다. inheritedOPEN은redactedcopy제출채널이며이문항의initial/remainder시계와직접겹치지않는다. |
-| MA-EXP-0655 | PART06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | narcotic여부와MAcounterpickup은행동을바꾸는실질적차이다. 모두정답이고Maine포함을단순목록암기로추가한다. redactedcopyOPEN은별도보존한다. |
+| MA-EXP-0655 | PART06 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | narcotic여부와MAcounterpickup은행동을바꾸는실질적차이다. 모두정답이고Maine포함을단순목록암기로추가한다. redactedcopyOPEN은별도보존한다. 현재 보류 이유: 문항별 검토 보류: 네 보기 모두 정답인 SATA로 이 family의 두 사례에서 오답 구별을 연습할 선택지가 없다. 법적 키 오류는 아니지만 실제 혼동을 반영한 오답을 포함하는 후속 개정과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0659 | REF01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 2authorizedrefill을5로늘리려는사례는좋다. D는C의반대를단순반복하고ScheduleV주법차이는다른case로끼어든다. |
 | MA-EXP-0663 | REF02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 늦은firstfill과transfer가원issueclock를재시작하지않는다는같은결정을반복한다. A의PRN은지문밖이다. |
 | MA-EXP-0667 | REF03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | addedauthorization기록과partial거래수는서로다르다. D의CII72시간은제3경로를끼워넣어명제집합이된다. |
-| MA-EXP-0671 | REF04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | independent약국의두번째transfer와logo만같은chain은좋은database예외검토다. B/C는다른transfer대표와동일일반론이고alltrue다. |
+| MA-EXP-0671 | REF04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | independent약국의두번째transfer와logo만같은chain은좋은database예외검토다. B/C는다른transfer대표와동일일반론이고alltrue다. 현재 보류 이유: 문항별 검토 보류: 네 보기 모두 정답인 SATA로 이 family의 두 사례에서 오답 구별을 연습할 선택지가 없다. 법적 키 오류는 아니지만 실제 혼동을 반영한 오답을 포함하는 후속 개정과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0675 | REF05 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 양약국에서동일잔량활성화하는실제위험을제시했으나유일정답B는양쪽보존책임일반론이다. 보존trigger도실제날짜가없다. |
 | MA-EXP-0679 | REF06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 처음미조제EPCS를print/fax하면서내용변경하는결함이명확하다. A의III-Vrefill과D의미래lastrefill은CII사례에직접대응하지않는다. |
 | MA-EXP-0683 | REF07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | paperIII와paperVI가서로다른transfer권한에들어가는좋은대조다. B의인력scope와C의validity일반론이중심형식결정을흐린다. |
-| MA-EXP-0687 | REF08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | fee조건과1년초과는각기transfer장벽이다. 모두정답이고patientagent는추가명제다. inheritedOPEN은VIcontinuation14/30일로이transferkey와직접관련없다. |
+| MA-EXP-0687 | REF08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | fee조건과1년초과는각기transfer장벽이다. 모두정답이고patientagent는추가명제다. inheritedOPEN은VIcontinuation14/30일로이transferkey와직접관련없다. 현재 보류 이유: 문항별 검토 보류: 네 보기 모두 정답인 SATA로 이 family의 두 사례에서 오답 구별을 연습할 선택지가 없다. 법적 키 오류는 아니지만 실제 혼동을 반영한 오답을 포함하는 후속 개정과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0691 | PMP01 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | query·pharmacyupload·개인access는서로다르지만유일정답B는조회목적일반론으로주어진account결함을해결하지않는다. |
 | MA-EXP-0695 | PMP02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | opioidquery와gabapentinreporting은약물목록의목적이달라유용하다. A/D는원칙만말하며정확한prescribing행동시점이없다. |
 | MA-EXP-0699 | PMP03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | gabapentinVI가reportable이라는차이는실제적이나B의outstate약국은지문밖이다. 준비일과교부일을구체적시각으로묻지않는다. |
-| MA-EXP-0703 | PMP04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 무거래파일과업로드성공/record거절은현실적오류다. 모두정답이며C의waiver는명시적으로없는상황에새예외를추가한다. |
+| MA-EXP-0703 | PMP04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 무거래파일과업로드성공/record거절은현실적오류다. 모두정답이며C의waiver는명시적으로없는상황에새예외를추가한다. 현재 보류 이유: 문항별 검토 보류: 이SATA는두사례를요약한네문장이모두참이라서accepted/rejectedreport또는dispense/prescribe같은실제잘못된경로를구분할선택지가없다. all-correct자체를법적키오류로보지않지만학습판별력을높이는미적용후보를아래에구체적으로작성했다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0707 | PMP05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 실제pickupagent의ID를기록하는판단은구체적이다. A의untrackeddelivery와B의gabapentin은별도주제이고SSN선호는너무명백하다. |
 | MA-EXP-0711 | PMP06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | reasonablehardship과대체name/address/signature는실질적예외다. A의양극단아님은시험답같지않고C의naloxone비교는별개다. |
 | MA-EXP-0715 | PMP07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 성인첫처방7일과knownnonopiatedirective는다른trigger다. A의minor한도는제3주제이고actualquantity·exception근거가없다. |
-| MA-EXP-0719 | PMP08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | X번호폐지와3일directdispensing은서로다른연방법경로다. 모두정답이라현재자격을실제적용하는대안이없다. |
+| MA-EXP-0719 | PMP08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | X번호폐지와3일directdispensing은서로다른연방법경로다. 모두정답이라현재자격을실제적용하는대안이없다. 현재 보류 이유: 문항별 검토 보류: 이SATA는두사례를요약한네문장이모두참이라서accepted/rejectedreport또는dispense/prescribe같은실제잘못된경로를구분할선택지가없다. all-correct자체를법적키오류로보지않지만학습판별력을높이는미적용후보를아래에구체적으로작성했다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0723 | LAB01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | internalrecord에있는directions가label에서빠진상황은실무적이다. technician최종검수와drugclassname은별도약한오답이다. |
 | MA-EXP-0727 | LAB02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | characters/inch와pointsize는특이하지만실제요청에의미있다. compoundedidentity·inpatient예외·BUD가한문항에추가돼결정이분산된다. |
 | MA-EXP-0731 | LAB03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 실물전달금지문구와Rx정보transfer는다른행위인데opioidleaflet두개정답이추가돼중심이흐린다. |
@@ -239,31 +239,31 @@
 | MA-EXP-0771 | PACK03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 21×5mg와 22×5mg은정확한exception경계다. 그러나유일정답B는기타성분조건이고C는21정이라는단위만으로틀린산술오답이다. |
 | MA-EXP-0775 | PACK04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | nitrate·potassium·mnemoniccontraceptive를한문항에섞어세제품예외목록을만들었다. 실제threshold값을적용할양은없다. |
 | MA-EXP-0779 | PACK05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 타약국조제약의planner와마모closure는서로다른제한이다. B의supplycap과C의nonCR면제도넓은일반론이다. |
-| MA-EXP-0783 | PACK06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | PRN·짧은안정성·liquidmixing의세결함을겹치고모든보기를맞게했다. 한사례로필수행동을분명히하기어렵다. |
-| MA-EXP-0787 | SALE01 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 2.4+1.5g초과라는판단자료가있는데유일정답A는별도30daywindow다. B의channel혼동도daily거래와무관하다. |
+| MA-EXP-0783 | PACK06 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | PRN·짧은안정성·liquidmixing의세결함을겹치고모든보기를맞게했다. 한사례로필수행동을분명히하기어렵다. 현재 보류 이유: 문항별 검토 보류: 원해설의PRN배제,container적합성/용량/식별/개봉흔적,짧은BUD및unauthorizedliquidmixing제한은맞다. 60일은포장상한이지처방공급수권의확장이아니다. published9.08(3)(b)의CII/CIII금지가정책에서생략됐다는이유로이배치가그약들의포장허용을인증하지않는다. 다만모든보기가정답인SATA라선택/배제분별력이약하다. 법적키오류와분리한편집보완대상이며새오답보기/키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
+| MA-EXP-0787 | SALE01 | MAJOR_REWRITE / P1 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 2.4+1.5g초과라는판단자료가있는데유일정답A는별도30daywindow다. B의channel혼동도daily거래와무관하다. 현재 보류 이유: 문항별 검토 보류: 원해설은산술과base단위·rolling30일·channel차이를옳게설명하지만daily3.6g적용주체를명확히하지않는다. 1314.20(a)는regulatedseller의same-day sales규칙이고844(a)는개인의30일purchase규칙이다. 원stem은앞선2.4g을현재와동일seller에게샀는지명시하지않아판매한도적용을단정할수없다. same-seller사실을추가하고주체를분리한해설로바꿀때까지HOLD다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0791 | SALE02 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | openaccess와60mglogbook예외는독립판단이고A/B의교육·2년보존은지문밖정답이다. |
 | MA-EXP-0795 | SALE03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | device와약처방권한은분리할필요가있다. B의CVOTC는별도OPEN영역이며A의inventedcap은실무대안이아니다. |
-| MA-EXP-0799 | SALE04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 사람약을동물에사용하는것과vet가사람치료하는것은다르지만후자는너무명백하다. A의remoteVCPR은구체적주관할없이추가되고alltrue다. |
+| MA-EXP-0799 | SALE04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 사람약을동물에사용하는것과vet가사람치료하는것은다르지만후자는너무명백하다. A의remoteVCPR은구체적주관할없이추가되고alltrue다. 현재 보류 이유: 문항별 검토 보류: 원해설은approvedhumandrug의조건부animalextralabel사용,owner의humanillness와수의scope구별,불명확한종/용량확인및연방VCPR직접지식요건을맞게구별한다. 이미성립한VCPR의telemedicine유지를최초형성과동일시하지않는다. 다만모든보기가정답인SATA라선택/배제분별력이약하다. 법적키오류와분리한편집보완대상이며새오답보기/키draft만보고서에남긴다. 독립legal/realism감사미실시. authorKEEP는release승인이아니다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0803 | SALE05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | withdrawal지시누락과VFDextralabel금지는다른제품경로다. A의bulkcompounding,D의animalidentifier까지넓게나열된다. |
 | MA-EXP-0807 | SALE06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 검사specimen/timing변경과notforresalesample은연관없는사건이다. B의무제한진단권한은쉬운오답이다. |
 | MA-EXP-0811 | ORD01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 두supplier한form과60일shipmentclock는실무적이지만현재single-sheet·blankform권한까지기초목록을넓힌다. |
-| MA-EXP-0815 | ORD02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | MORtitle과POA는실질적차이다. CSOScredential공유와EPCS정의도추가해alltrue가됐다. |
+| MA-EXP-0815 | ORD02 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | MORtitle과POA는실질적차이다. CSOScredential공유와EPCS정의도추가해alltrue가됐다. 현재 보류 이유: 문항별 검토 보류: 네 보기가 모두 정답인 SATA라 이 family의 두 사례에서 오답을 판별하는 연습이 없다. 법적 키 오류는 아니지만 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0819 | ORD03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 10000/200000과추가1000은분모가함께변한다는유효산술판단이다. B의모든주법면제는멀고두case를하나의예정거래로합칠수있다. |
 | MA-EXP-0823 | ORD04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 106을ordinaryorder로쓴다는오답은단순form암기다. expiration과patientreturn은또다른대조로현재stockreturn결정을희석한다. |
 | MA-EXP-0827 | ORD05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 초기통지를조사종료까지기다리는것은현실적오류다. A는retrievedcurrent라는작성자메타문구이며45일기한은새공식재확인없이승계하지않아야한다. |
-| MA-EXP-0831 | ORD06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Boardresident와DCPfacility라는등록차이는중요하다. 모든보기가맞으며해당하는confirmedreportableevent라고지문이분류를미리준다. inheritedOPEN을모든시계완료로표현하지않는다. |
+| MA-EXP-0831 | ORD06 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Boardresident와DCPfacility라는등록차이는중요하다. 모든보기가맞으며해당하는confirmedreportableevent라고지문이분류를미리준다. inheritedOPEN을모든시계완료로표현하지않는다. 현재 보류 이유: 문항별 검토 보류: 네 보기가 모두 정답인 SATA라 이 family의 두 사례에서 오답을 판별하는 연습이 없다. 법적 키 오류는 아니지만 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0835 | ORD07 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 전산삭제로물리파괴완료라는사례는너무명백하다. 유일정답C는별도reversedistributor30일시계이며B/D는다른기록경로다. |
 | MA-EXP-0839 | INV01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | zerostock도initialrecord와newcontrol effective-dayinventory는별도trigger가있다. B의별도location은지문밖이다. |
 | MA-EXP-0843 | INV02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 1000/1001과CIIalwaysactualcount는법적조건에따라방법이바뀌어보존가치가있다. A의opening/closing은주제밖정답이다. |
-| MA-EXP-0847 | INV03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 110기대와109실측은조사필요성을판정할수있다. 세주무reconciliation과함께alltrue로묶이며작은차이의significance는자료부족이다. |
+| MA-EXP-0847 | INV03 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 110기대와109실측은조사필요성을판정할수있다. 세주무reconciliation과함께alltrue로묶이며작은차이의significance는자료부족이다. 현재 보류 이유: 문항별 검토 보류: 네 보기가 모두 정답인 SATA라 이 family의 두 사례에서 오답을 판별하는 연습이 없다. 법적 키 오류는 아니지만 실제 혼동되는 경계를 반영한 오답을 넣는 후속 편집과 새 해시 검토가 필요하다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0851 | STO01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 제품label이범위외라고만하고실제조건은주지않는다. dormunit에음식까지넣어여러명백결함을추가한다. |
 | MA-EXP-0855 | STO02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 정상복귀후release는실제품질오류다. B의closedday요건과C의기록폐기는다른운영조항이다. |
 | MA-EXP-0859 | STO03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | damagedseal수령과coldpack동결shipping은다른custody단계다. B의USPS권한은실제shipping방법없이추가됐다. |
-| MA-EXP-0863 | SHR01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 다른소유pharmacy간contract가가능한지좋은법적경계다. 모든보기가맞고confidentiality·notice·training은추상checklist다. |
+| MA-EXP-0863 | SHR01 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 다른소유pharmacy간contract가가능한지좋은법적경계다. 모든보기가맞고confidentiality·notice·training은추상checklist다. 현재 보류 이유: 문항별 검토 보류: 이SATA는네법규요약을전부선택하여contract후책임/PHI범위또는503Aapproval/insanitary경계를구별할오답연습이없다. all-correct자체를법적키오류로보지않지만구체적인위법제안이섞인미적용freshscenario후보를아래에작성했다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0867 | SHR02 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | remote technician의독립검수와타주telepharmacy모델을묻는데유일정답D는centralfillcompounding제한이다. stem과key의결정경로가다르다. |
 | MA-EXP-0871 | SHR03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | locker라는명칭으로CII·냉장제제를보관한다는두조건은실제APS분류에필요하다. B의accesscode만으로모든요건대체는약한오답이다. |
 | MA-EXP-0875 | SHR04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 같은cell여러lotrecall은구체적이나ADD환자order없음과묶고C가세장치정의암기가됐다. |
-| MA-EXP-0879 | CMP01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | FDAapproved광고와unlimitedofficeproduction은둘다과장된503A오해다. A의insanitary와C의reconstitution은제3·4주제이며alltrue다. |
+| MA-EXP-0879 | CMP01 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | FDAapproved광고와unlimitedofficeproduction은둘다과장된503A오해다. A의insanitary와C의reconstitution은제3·4주제이며alltrue다. 현재 보류 이유: 문항별 검토 보류: 이SATA는네법규요약을전부선택하여contract후책임/PHI범위또는503Aapproval/insanitary경계를구별할오답연습이없다. all-correct자체를법적키오류로보지않지만구체적인위법제안이섞인미적용freshscenario후보를아래에작성했다. 원문·기존 정답·풀이·북마크를 보존하며, 법적 키 오류와 편집상 개정 필요를 구분합니다. |
 | MA-EXP-0883 | CMP02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | COA만으로bulk적격하지않다는좋은경계가있지만유일정답D는RUOpowder외관이라는노골적부적격사례다. |
 | MA-EXP-0887 | CMP03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | dyeintolerance의prescriberdocument와localoutofstock가격복제는실질조건차이다. D의shortagetime은변동근거를구체화해야한다. |
 | MA-EXP-0891 | CMP04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | intacttabletAOR를crushing에적용하는조건변화는좋다. complex라고결론을미리주고D의USP명칭변경을넓게추가한다. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `40b190071b09c78e9daf570a8131746aaccb98f1c8bf304df21da78252de2499` |
-| practice_expansion/2026-10-28-representative/questions.json | `9153bbfb9c5881691466ec1f78ffd796450c211e7acf04307333f254679a2b09` |
+| practice_expansion/2026-10-28-representative/selection.json | `c9234df54614ba550e0994eac1588c85ccf7ddf05c409d733582c996024ed88b` |
+| practice_expansion/2026-10-28-representative/questions.json | `be717dabc1b3a71d46de58fd2bdb2117570126941b0b2a86dc7c4bdae347772e` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

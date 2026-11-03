@@ -167,6 +167,33 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    metadata_path=root/'revisions/notes/protected-migration-census-wave8-9.json'
+    if metadata_path.exists() and relative=='site/notes/complete-notes.md':
+        metadata=json.loads(metadata_path.read_bytes())
+        require(metadata['baseline_commit']=='2a7873ea9a0061d70f970969996106ad9f76a60f',
+                'Unexpected census annotation migration base')
+        require(metadata['path']==relative and metadata['baseline_copy']=='revisions/baselines/complete-notes-refill-cancer.md',
+                'Census annotation migration expands protected scope')
+        require(metadata['revision_path']=='revisions/notes/2026-11-03-refill-cancer-final.json' and
+                metadata['previous_migration_path']=='revisions/notes/protected-migration-refill-cancer.json',
+                'Census annotation revision or parent changed')
+        require(sha256(safe_file(root,metadata['revision_path']).read_bytes())==metadata['revision_sha256'] and
+                sha256(safe_file(root,metadata['previous_migration_path']).read_bytes())==metadata['previous_migration_sha256'],
+                'Census annotation source or previous migration changed')
+        require(metadata['baseline_build_copy']=='revisions/baselines/notes-build-refill-cancer.json' and
+                sha256(safe_file(root,metadata['baseline_build_copy']).read_bytes())==metadata['baseline_build_sha256'],
+                'Census annotation baseline build changed')
+        require(json.loads(safe_file(root,metadata['baseline_build_copy']).read_bytes())['content_sha256']==metadata['semantic_notes_sha256'] and
+                json.loads(safe_file(root,'site/notes/build.json').read_bytes())['content_sha256']==metadata['semantic_notes_sha256'],
+                'Census metadata cannot authorize a semantic note edit')
+        require(set(metadata['census_sources'])=={'reports/full-corpus-review/note-wave8-census.json',
+                                                 'reports/full-corpus-review/note-wave9-census.json'},
+                'Census annotation evidence scope changed')
+        for path,digest in metadata['census_sources'].items():
+            require(sha256(safe_file(root,path).read_bytes())==digest, 'Census annotation evidence changed')
+        require(sha256(current)==metadata['new_sha256'], 'Stale census annotation export')
+        current=safe_file(root,metadata['baseline_copy']).read_bytes()
+        require(sha256(current)==metadata['old_sha256'], 'Previous refill/cancer export changed')
     tenth_path=root/'revisions/notes/protected-migration-refill-cancer.json'
     if tenth_path.exists() and relative=='site/notes/complete-notes.md':
         tenth=json.loads(tenth_path.read_bytes())

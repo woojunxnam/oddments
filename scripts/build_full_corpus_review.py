@@ -34,6 +34,10 @@ REVIEW_FILES = (
     'wave9-3-author-review.json', 'wave9-4-author-review.json',
     'wave10-1-author-review.json', 'wave10-2-author-review.json',
     'wave10-3-author-review.json', 'wave10-4-author-review.json',
+    'wave11-1-author-review.json', 'wave11-2-author-review.json',
+    'wave11-3-author-review.json', 'wave11-4-author-review.json',
+    'wave12-1-author-review.json', 'wave12-2-author-review.json',
+    'wave12-3-author-review.json', 'wave12-4-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -227,34 +231,60 @@ def compose_note_censuses(specs, effective, by_id, root=ROOT):
     return units, claims
 
 
+CITATION_ERRATA_FILES = ('wave6-1-citation-errata.json', 'wave10-1-citation-errata.json')
+
+
 def apply_citation_errata(rows, root=ROOT):
-    """Correct reviewed locators without rewriting report/answer history."""
+    """Correct only bound citation leaves; never rewrite reports or answer history."""
     import copy
-    path = root/'reports/full-corpus-review/wave6-1-citation-errata.json'
-    raw = path.read_bytes()
-    correction = json.loads(raw)
-    if correction['legal_truth_changed'] or correction['answer_keys_changed']:
-        raise ValueError('Citation errata cannot change legal truth or answer keys')
-    original = root/correction['original_report_path']
-    authority = correction['official_authority']
-    if (hashlib.sha256(original.read_bytes()).hexdigest() != correction['original_report_sha256'] or
-            hashlib.sha256((root/authority['source_evidence_path']).read_bytes()).hexdigest() != authority['source_evidence_sha256']):
-        raise ValueError('Stale citation errata evidence')
     by_id = {r['question_id']: r for r in rows}
-    for patch in correction['errata']:
-        row = by_id[patch['question_id']]
-        if (patch['field'] != 'exact_authority' or row['content_sha256'] != patch['question_record_sha256'] or
-                row['review_evidence']['source_path'] != correction['original_report_path']):
-            raise ValueError('Citation errata scope or question binding changed')
-        row['choice_by_choice_findings'] = copy.deepcopy(row['choice_by_choice_findings'])
-        finding = row['choice_by_choice_findings'][patch['choice_id']]
-        if finding['exact_authority'] != patch['original_field_value']:
-            raise ValueError('Citation errata precondition changed')
-        finding['exact_authority'] = patch['corrected_field_value']
-        row['authority_clauses'] = sorted({v['exact_authority'] for v in row['choice_by_choice_findings'].values()})
-        row['review_evidence'].setdefault('citation_errata', []).append(dict(
-            path=str(path.relative_to(root)), sha256=hashlib.sha256(raw).hexdigest(),
-            field_path=patch['field_path'], previous=patch['original_field_value'], current=patch['corrected_field_value']))
+    for name in CITATION_ERRATA_FILES:
+        path = root/'reports/full-corpus-review'/name
+        raw = path.read_bytes()
+        correction = json.loads(raw)
+        if correction['legal_truth_changed'] or correction['answer_keys_changed']:
+            raise ValueError('Citation errata cannot change legal truth or answer keys')
+        original_raw = (root/correction['original_report_path']).read_bytes()
+        if hashlib.sha256(original_raw).hexdigest() != correction['original_report_sha256']:
+            raise ValueError('Stale citation errata evidence')
+        for authority in [correction['official_authority']] + correction.get('supplemental_official_authorities', []):
+            if hashlib.sha256((root/authority['source_evidence_path']).read_bytes()).hexdigest() != authority['source_evidence_sha256']:
+                raise ValueError('Stale citation errata evidence')
+            if authority.get('retrieval_metadata_path') and hashlib.sha256((root/authority['retrieval_metadata_path']).read_bytes()).hexdigest() != authority['retrieval_metadata_sha256']:
+                raise ValueError('Stale citation retrieval metadata')
+        original_records = json.loads(original_raw)['records']
+        for patch in correction['errata']:
+            row = by_id[patch['question_id']]
+            choice = patch['choice_id']
+            segments = patch.get('field_path_segments', ['choice_by_choice_findings', choice, patch['field']])
+            top = segments == ['choice_by_choice_findings', choice, 'exact_authority']
+            nested = (len(segments) == 5 and segments[:3] == ['choice_by_choice_findings', choice, 'authorities']
+                      and type(segments[3]) is int and segments[3] >= 0 and segments[4] == 'exact_section')
+            if (not (top or nested) or patch['field'] != segments[-1] or
+                    patch['field_path'] != '.'.join(map(str,segments)) or
+                    row['content_sha256'] != patch['question_record_sha256'] or
+                    row.get('review_evidence',{}).get('source_path') != correction['original_report_path']):
+                raise ValueError('Citation errata scope or question binding changed')
+            positions = [i for i,r in enumerate(original_records) if r['question_id'] == patch['question_id']]
+            if len(positions) != 1 or original_records[positions[0]]['record_sha256'] != patch['question_record_sha256']:
+                raise ValueError('Citation original record binding changed')
+            pointer = '/records/'+str(positions[0])+'/'+('/'.join(map(str,segments)))
+            if patch.get('report_json_pointer',pointer) != pointer:
+                raise ValueError('Citation original field pointer changed')
+            row['choice_by_choice_findings'] = copy.deepcopy(row['choice_by_choice_findings'])
+            target = row['choice_by_choice_findings'][choice]
+            original_target = original_records[positions[0]]['choice_by_choice_findings'][choice]
+            if nested:
+                target = target['authorities'][segments[3]]
+                original_target = original_target['authorities'][segments[3]]
+            field = segments[-1]
+            if target[field] != patch['original_field_value'] or original_target[field] != patch['original_field_value']:
+                raise ValueError('Citation errata precondition changed')
+            target[field] = patch['corrected_field_value']
+            row['authority_clauses'] = sorted({v['exact_authority'] for v in row['choice_by_choice_findings'].values()})
+            row['review_evidence'].setdefault('citation_errata', []).append(dict(
+                path=str(path.relative_to(root)), sha256=hashlib.sha256(raw).hexdigest(),
+                field_path=patch['field_path'], previous=patch['original_field_value'], current=patch['corrected_field_value']))
 
 
 def apply_case0217_reconciliation(rows, questions, root=ROOT):
@@ -473,7 +503,8 @@ def build():
     census_specs.append(dict(path='reports/full-corpus-review/appendix-atoms-b-census.json',
         notes_revision='2026-10-30.cdtm13-vax04.1', supersedes={
             uid: 'reports/full-corpus-review/note-wave2-census.json' for uid in appendix_b_ids}))
-    for name in ('note-wave6-census.json', 'note-wave7-census.json'):
+    for name in ('note-wave6-census.json', 'note-wave7-census.json',
+                 'note-wave8-census.json', 'note-wave9-census.json'):
         census_specs.append(dict(path='reports/full-corpus-review/'+name,
             notes_revision='2026-10-30.cdtm13-vax04.1'))
     census_specs.append(dict(path='reports/full-corpus-review/refill-cancer-final-census.json',
