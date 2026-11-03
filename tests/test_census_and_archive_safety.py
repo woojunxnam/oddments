@@ -78,3 +78,29 @@ def test_independent_archive_warning_requires_an_actual_negative_or_hold(tmp_pat
     notice('MA-CASE-0426')
     with pytest.raises(ValueError, match='independent review provenance'):
         builder.archive_review_notices(questions, {})
+
+
+def test_author_archive_warning_binds_actual_individual_finding_and_cannot_invent_a_defect(tmp_path,monkeypatch):
+    source='reports/full-corpus-review/unit3a-author-review.json'
+    report=json.loads((ROOT/source).read_bytes())
+    qid='MA-EXP-0121'
+    row=next(r for r in report['records'] if r['question_id']==qid)
+    questions={q['question_id']:q for q in json.loads((ROOT/builder.ARCHIVES[0]).read_bytes())['questions']}
+    target=tmp_path/source;target.parent.mkdir(parents=True,exist_ok=True)
+    monkeypatch.setattr(builder,'ROOT',tmp_path)
+    monkeypatch.setattr(builder,'REPORTS',tmp_path/'reports/representative-rewrite')
+    builder.REPORTS.mkdir(parents=True)
+    notice=dict(question_ids=[qid],issue_type='AUTHOR_REVIEW_FINDING',reason='실제 미해결 저자 지적',
+        original_author_blocker=row['blocker'],question_record_hashes={qid:row['record_sha256']},review_source=source)
+    def save():
+        target.write_text(json.dumps(report))
+        notice['review_source_sha256']=hashlib.sha256(target.read_bytes()).hexdigest()
+        (builder.REPORTS/'archive-review-notices.json').write_text(json.dumps(dict(
+            schema_version='practice-archive-review-notices/1',notices=[notice])))
+    save(); assert len(builder.archive_review_notices(questions,{}))==1
+    original=row['disposition'];row['disposition']='KEEP';save()
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+    row['disposition']=original;notice['original_author_blocker']='invented blocker';save()
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+    notice['original_author_blocker']=row['blocker'];row['choice_by_choice_findings'].pop('D');save()
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})

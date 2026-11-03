@@ -51,6 +51,13 @@ def emergency_copy(tmp_path):
         destination = tmp_path/path
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT/path, destination)
+    if annotation.exists():
+        # These original activation tests exercise the published twelve-guard
+        # context. Annotation-specific tests below install their own 13th layer.
+        (tmp_path/annotation.relative_to(ROOT)).unlink()
+        for source,target in [('complete-notes-pr188.md','complete-notes.md'),
+                              ('notes-build-pr188.json','build.json')]:
+            shutil.copyfile(tmp_path/'revisions/baselines'/source,tmp_path/'site/notes'/target)
     return tmp_path
 
 

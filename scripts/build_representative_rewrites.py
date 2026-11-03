@@ -234,6 +234,7 @@ def archive_review_notices(old_by_id, input_hashes):
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
             'EDITORIAL_CONTEXT_REVIEW',
             'INDEPENDENT_REVIEW_FINDING',
+            'AUTHOR_REVIEW_FINDING',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
         require(not review_relative.is_absolute() and '..' not in review_relative.parts
@@ -261,6 +262,15 @@ def archive_review_notices(old_by_id, input_hashes):
                             'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
                         review.get('realism_review', {}).get('verdict') == 'FAIL',
                         'Independent archive notice lacks a negative or blocked review: ' + qid)
+            if notice['issue_type'] == 'AUTHOR_REVIEW_FINDING':
+                review=reviews[qid]
+                require(review.get('disposition') in NONKEEP_DISPOSITIONS and
+                        review.get('blocker') and review.get('checked_at') and
+                        review.get('reviewer_provenance',{}).get('author_session') and
+                        notice.get('original_author_blocker')==review['blocker'] and
+                        set(review.get('choice_by_choice_findings',{}))==
+                        {c['id'] for c in old_by_id[qid]['choices']},
+                        'Author archive notice lacks a matching individual nonKEEP finding: ' + qid)
             if notice['issue_type'] in {'INCORRECT_KEY', 'AMBIGUOUS_KEY'}:
                 require(reviews[qid].get('original_answer_status') == notice['issue_type'],
                         'Archive notice does not match answer assessment: ' + qid)
