@@ -14,9 +14,17 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT = ROOT / 'reports/full-corpus-review/work-queue.json'
+STAGES = {
+    'author': {'purpose': 'AUTHOR_WORK_SCHEDULER_NOT_RELEASE_CERTIFICATION',
+               'state': DEFAULT.relative_to(ROOT)},
+    'independent-legacy': {
+        'purpose': 'INDEPENDENT_LEGACY_WORK_SCHEDULER_NOT_RELEASE_CERTIFICATION',
+        'state': Path('reports/full-corpus-review/independent-legacy-work-queue.json')},
+}
 UNREVIEWED = 'NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
 FIRST = [f'MA-EXP-{i:04d}' for i in range(385, 425)]
 DISPOSITIONS = {'AUTHOR_REVIEWED', 'HOLD', 'SOURCE_BLOCKED', 'NEEDS_REMEDIATION'}
+INDEPENDENT_DISPOSITIONS = {'INDEPENDENT_ASSESSED', 'HOLD', 'SOURCE_BLOCKED', 'NEEDS_REMEDIATION'}
 
 
 def digest(value):
@@ -45,13 +53,30 @@ def current_hash(root, row):
     return row['content_sha256']
 
 
-def empty():
-    return {'schema_version': 1, 'purpose': 'AUTHOR_WORK_SCHEDULER_NOT_RELEASE_CERTIFICATION',
+def empty(stage='author'):
+    return {'schema_version': 1, 'purpose': STAGES[stage]['purpose'],
             'jobs': [], 'events': []}
 
 
+def state_stage(state, expected=None):
+    stage = next((name for name, spec in STAGES.items() if state.get('purpose') == spec['purpose']), None)
+    if stage is None or (expected is not None and stage != expected):
+        raise ValueError('Stage/state purpose mismatch')
+    if any(job.get('stage', 'author') != stage for job in state['jobs']):
+        raise ValueError('Job stage differs from checkpoint purpose')
+    return stage
+
+
+def state_path(root, stage, explicit=None):
+    path = (explicit or root / STAGES[stage]['state']).resolve()
+    if any(name != stage and path == (root / spec['state']).resolve()
+           for name, spec in STAGES.items()):
+        raise ValueError('Stage/state path mismatch')
+    return path
+
+
 @contextmanager
-def checkpoint(path):
+def checkpoint(path, stage='author'):
     """Controller processes serialize writes; workers never mutate this file directly."""
     path.parent.mkdir(parents=True, exist_ok=True)
     # Lock lives in /tmp, not tracked or regenerated output. Same realpath => same lock.
@@ -59,9 +84,11 @@ def checkpoint(path):
         hashlib.sha256(str(path.resolve()).encode()).hexdigest() + '.lock')
     with lock_path.open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        state = json.loads(path.read_text()) if path.exists() else empty()
+        state = json.loads(path.read_text()) if path.exists() else empty(stage)
+        state_stage(state, stage)
         original = json.dumps(state, sort_keys=True)
         yield state
+        state_stage(state, stage)
         if json.dumps(state, sort_keys=True) != original:
             fd, temporary = tempfile.mkstemp(dir=path.parent, prefix='.queue-')
             try:
@@ -84,7 +111,8 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
     if not 1 <= batches <= 4 or not 1 <= size <= 40:
         raise ValueError('Use 1–4 batches of 1–40 IDs')
     at = at or timestamp()
-    if not state['jobs']:
+    stage = state_stage(state)
+    if not state['jobs'] and stage == 'author':
         groups = [FIRST]
         if any(qid not in ledger or ledger[qid]['legal_review_status'] != UNREVIEWED for qid in FIRST):
             raise ValueError('First cohort changed; reconcile ledger rather than assuming missing IDs')
@@ -93,21 +121,31 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
             return []  # retrying plan never duplicates outstanding assignments
         assigned = {qid for j in state['jobs'] for qid in j['question_hashes']}
         uncredited = sorted(qid for qid in assigned if qid not in ledger or
-                            ledger[qid]['legal_review_status'] == UNREVIEWED or
-                            ledger[qid].get('checked_at') is None)
+                            (stage == 'author' and
+                             (ledger[qid]['legal_review_status'] == UNREVIEWED or
+                              ledger[qid].get('checked_at') is None)) or
+                            (stage == 'independent-legacy' and
+                             ledger[qid].get('independent_legacy_legal_assessment') is None))
         if uncredited:
-            raise ValueError('Integrated jobs lack authoritative review credit; register and regenerate ledger: ' +
+            kind = 'review credit' if stage == 'author' else 'independent legacy assessment'
+            raise ValueError('Integrated jobs lack authoritative ' + kind + '; register and regenerate ledger: ' +
                              ', '.join(uncredited))
         candidates = sorted(qid for qid, row in ledger.items()
-                            if row['legal_review_status'] == UNREVIEWED and qid not in assigned)
+                            if qid not in assigned and
+                            ((stage == 'author' and row['legal_review_status'] == UNREVIEWED) or
+                             (stage == 'independent-legacy' and row.get('checked_at') and
+                              row.get('independent_legacy_legal_assessment') is None)))
         groups = [candidates[i:i+size] for i in range(0, min(len(candidates), batches*size), size)]
     created = []
     for group in groups:
         hashes = {qid: current_hash(root, ledger[qid]) for qid in group}
-        job_id = 'review-' + digest(hashes)[:16]
+        prefix = 'review-' if stage == 'author' else 'review-independent-legacy-'
+        job_id = prefix + digest(hashes)[:16]
         job = {'job_id': job_id, 'sequence': len(state['jobs']) + 1,
                'question_hashes': hashes, 'status': 'QUEUED', 'attempt': 0,
                'worker_branch': 'mission/' + job_id, 'created_at': at}
+        if stage != 'author':
+            job['stage'] = stage
         state['jobs'].append(job)
         created.append(job_id)
     if created:
@@ -116,6 +154,7 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
 
 
 def recover(state, at=None):
+    state_stage(state)
     at = at or timestamp()
     recovered = []
     for job in state['jobs']:
@@ -147,6 +186,7 @@ def claim(state, worker, minutes=60, at=None):
 
 
 def get_job(state, job_id):
+    state_stage(state)
     return next(j for j in state['jobs'] if j['job_id'] == job_id)
 
 
@@ -179,19 +219,50 @@ def prepare_worktree(state, job_id, token, root, destination, at=None):
 
 
 def validate_result(job, result):
+    stage = job.get('stage', 'author')
+    if result.get('stage', 'author') != stage:
+        raise ValueError('Result stage differs from assignment')
     if result.get('question_hashes') != job['question_hashes']:
         raise ValueError('Result IDs/hashes differ from assignment')
     rows = result.get('results', [])
     if len(rows) != len(job['question_hashes']) or {r['question_id'] for r in rows} != set(job['question_hashes']):
         raise ValueError('Every assigned ID requires exactly one disposition')
     for row in rows:
-        if row.get('disposition') not in DISPOSITIONS or not row.get('evidence_path') or not row.get('evidence_sha256'):
+        dispositions = DISPOSITIONS if stage == 'author' else INDEPENDENT_DISPOSITIONS
+        if row.get('disposition') not in dispositions or not row.get('evidence_path') or not row.get('evidence_sha256'):
             raise ValueError('Missing disposition or evidence reference')
         path = Path(row['evidence_path'])
         if path.is_absolute() or '..' in path.parts:
             raise ValueError('Evidence must be repository-relative')
     if not result.get('worker_commit') or len(result['worker_commit']) != 40:
         raise ValueError('Exact worker commit required')
+    if stage == 'independent-legacy':
+        validate_independent_provenance(job, result)
+
+
+def validate_independent_provenance(job, evidence):
+    """Require accountable declarations; identity strings cannot prove actual independence."""
+    if evidence.get('independent_of_authors') is not True:
+        raise ValueError('Independent evidence requires independent_of_authors: true')
+    actor = evidence.get('actor_provenance')
+    if (not isinstance(actor, dict) or actor.get('actor_id') != job.get('worker') or
+            not isinstance(actor.get('session_id'), str) or not actor['session_id'].strip() or
+            any(not isinstance(evidence.get(k), str) or not evidence[k].strip()
+                for k in ('auditor', 'auditor_instance'))):
+        raise ValueError('Actual actor provenance and auditor session required; actor_id must match claim worker')
+
+
+def validate_independent_evidence(job, row, evidence):
+    validate_independent_provenance(job, evidence)
+    for key in ('auditor', 'auditor_instance', 'actor_provenance'):
+        if evidence[key] != job['result'][key]:
+            raise ValueError('Evidence actor provenance differs from submission')
+    if evidence.get('canonical_audit') is not False or evidence.get('canonical_release_credit') != 0:
+        raise ValueError('Independent legacy evidence must explicitly disclaim canonical release credit')
+    records = evidence.get('records', [])
+    matches = [r for r in records if r.get('question_id') == row['question_id']]
+    if len(matches) != 1 or matches[0].get('record_sha256') != job['question_hashes'][row['question_id']]:
+        raise ValueError('Independent evidence must bind each ID to its assigned current record hash')
 
 
 def submit(state, job_id, token, result, at=None):
@@ -236,12 +307,15 @@ def integrate(state, job_id, root, at=None):
         committed = subprocess.check_output(['git', '-C', str(root), 'show', 'HEAD:' + path])
         if committed != current:
             raise ValueError('Evidence must be committed before checkpoint')
+        if job.get('stage') == 'independent-legacy':
+            validate_independent_evidence(job, row, json.loads(current))
     at = at or timestamp()
     job.update(status='INTEGRATED', integrated_commit=git(root, 'rev-parse', 'HEAD'), integrated_at=at)
     event(state, 'INTEGRATE', at, job_id=job_id, commit=job['integrated_commit'])
 
 
 def progress(state, ledger, corpus):
+    state_stage(state)
     total = len(ledger)
     reviewed = sum(r['checked_at'] is not None for r in ledger.values())
     notes = corpus['notes_units_with_complete_atomic_claim_census']
@@ -262,6 +336,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--state', type=Path)
+    parser.add_argument('--stage', choices=STAGES, default='author')
     commands = parser.add_subparsers(dest='command', required=True)
     p = commands.add_parser('plan'); p.add_argument('--batches', type=int, default=1); p.add_argument('--size', type=int, default=40)
     p = commands.add_parser('claim'); p.add_argument('--worker', required=True); p.add_argument('--minutes', type=int, default=60)
@@ -275,8 +350,8 @@ def main():
     commands.add_parser('progress')
     args = parser.parse_args()
     root = args.root.resolve()
-    path = args.state or root / DEFAULT.relative_to(ROOT)
-    with checkpoint(path) as state:
+    path = state_path(root, args.stage, args.state)
+    with checkpoint(path, args.stage) as state:
         if args.command == 'plan': output = plan(state, read_ledger(root), root, args.batches, args.size)
         elif args.command == 'claim': output = claim(state, args.worker, args.minutes)
         elif args.command == 'recover': output = recover(state)
