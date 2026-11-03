@@ -17,7 +17,7 @@
 
 기본 목록 394개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 375개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 418개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -324,7 +324,7 @@
 | MA-CASE-0190 | PLUS-SC22 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 한번도transfer안했는데anotherrefilltransfer라는표현이모순적이다. 정답경로는명확하지만A/D해설은이사례에서왜틀린지실제2refill/유효기간을언급하지않는다. 현재 보류 이유: 문항별 검토 결과: 현재 사실관계에서 왜 각 선택지가 적용/불적용되는지 설명을 교정하고 반복 family와의 중복을 줄여야 한다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
 | MA-CASE-0199 | PLUS-SC23 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | testosterone의nonopioidCIII라는약물조건이적절하나해설은OUD/nonopioid/pump중어느것인지불명확하게or를나열한다. 현재 보류 이유: 문항별 검토 결과: 수치변형·단순범주회상과 수학결과만 반복하는 오답해설을 실제 법적 혼동이 드러나는 독립 scenario로 개선할 필요가 있다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
 | MA-CASE-0208 | PLUS-SC24 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | validID가이미있는데C는obtainacceptableidentifier라는이미완료된행동을제시해일부참이며불필요한hardship기록누락을지문에강조한다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
-| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. 현재 보류 이유: 문항별 검토 결과: MA first-fill CII transfer 허용관계 SOURCE_BLOCKED. 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. 현재 보류 이유: MA-CASE-0217에 한하여 MA Policy2023-10 §I의 미조제 원본 EPCS 1회 전송 허용은 추가 공식 원문 대조로 작성자 단계에서 확인했습니다. 원문의 반복 사례·해설에 대한 실질 개정과 독립 legal/realism 검토는 남아 있어 기본 추천 보류를 유지합니다. 같은 묶음의 다른 ID에 이 한 문항의 추가 검토를 소급 적용하지 않습니다. |
 | MA-CASE-0226 | PLUS-SC26 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | CII25정에exactcount를적용하는명확한기초판단이다. B해설이마치이사례가III-V라고말해오답을설명하지않는다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
 | MA-CASE-0238 | PLUS-SC27 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 85+60−40−5=100은단순산술이고실측도100이라법규상다음행동이바뀌지않는다. 101정오답과0정차이를조사시작점이라설명하는문구가인위적이다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
 | MA-CASE-0244 | PLUS-SC28 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | orderday0·shipmentday3·today10으로시작점을구별할수있다. 제목near expiration과달리10일째이고50day(s)는템플릿잔재다. 현재 보류 이유: 문항별 검토 결과: 독립 legal/realism audit 및 versioned public-content 개선 미실행. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `828c4af7e5477dbc3129daa1d9d477834d1f042ffb15219004e487690787caf5` |
-| practice_expansion/2026-10-28-representative/questions.json | `7a56550c63b5a18c8f208c500099d8b72582b0e2eb233cf36ebffe08b546fd4d` |
+| practice_expansion/2026-10-28-representative/selection.json | `a6babd869c04e1691b6256db650a0c2de33cca56ea08c06207013c9b788bff54` |
+| practice_expansion/2026-10-28-representative/questions.json | `b8be66bd32c7ac496a5fe0a39d9225896fb0de55eb10db1a0a9b2cfe5706db75` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.
