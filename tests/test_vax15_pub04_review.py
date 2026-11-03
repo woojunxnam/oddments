@@ -95,7 +95,8 @@ def test_three_all_correct_sata_are_identified_without_changing_public_history()
         assert set(q["correct_choice_ids"]) == {c["id"] for c in q["choices"]}
         assert reviewed[qid]["disposition"] == "MAJOR_REWRITE"
         assert reviewed[qid]["answer_key_crosscheck"]["all_correct_sata"] is True
-        assert qid in selection["recommended_ids"]
+        assert qid not in selection["recommended_ids"]
+        assert qid in {h["legacy_question_id"] for h in selection["holds"]}
         assert "Four-of-four SATA" in reviewed[qid]["blocker"]
     assert {r["question_id"] for r in review()["records"]
             if r["disposition"] == "MAJOR_REWRITE"} == set(low_discrimination)
@@ -140,11 +141,11 @@ def test_stale_question_or_missing_option_fails_review_integrity():
         validate_review(question, incomplete)
 
 
-def test_following_four_pub05_questions_not_inherited_as_reviewed():
+def test_following_four_coun03_questions_not_inherited_as_reviewed():
     rows = {json.loads(s)["question_id"]: json.loads(s)
             for s in (ROOT / "reports/full-corpus-review/question-ledger.jsonl")
             .read_text(encoding="utf-8").splitlines()}
-    for n in range(385, 389):
+    for n in range(425, 429):
         row = rows[f"MA-EXP-{n:04d}"]
         assert row["checked_at"] is None
         assert row["legal_review_status"] == "NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW"

@@ -15,6 +15,7 @@ REVIEW_FILES = (
     'cdtm05-12-author-review.json', 'cdtm-vax-author-review.json',
     'vax05-14-author-review.json',
     'vax15-pub04-author-review.json',
+    'pub05-09-author-review.json', 'pub10-14-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',

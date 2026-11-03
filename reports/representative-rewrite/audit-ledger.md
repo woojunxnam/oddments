@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 10 |
-| NOT_YET_IMPLEMENTED | 268 |
+| HOLD_FROM_DEFAULT | 15 |
+| NOT_YET_IMPLEMENTED | 263 |
 
-기본 목록 438개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 433개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 44개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 49개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -131,23 +131,23 @@
 | MA-EXP-0339 | VAX13 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 무료stock미사용시 비용정보와wellchildcare counseling이 실무적이지만 D의PCP통지가MIIS대체라는별개오답이끼어든다. |
 | MA-EXP-0343 | VAX14 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | reportableevent에인과관계확정이필요한지 묻는핵심은좋다. 표의실제event·interval을주지않고 해당한다고결론을미리제공한다. |
 | MA-EXP-0347 | VAX15 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | predraw2시간과temperatureexcursion은별개법적결정이다. D의정상외관만으로사용은너무쉽고A는시설권한일반론이다. |
-| MA-EXP-0351 | VAX16 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | technician의LAI와17세IV는세가지부적격사유를한꺼번에던진다. 모두정답이며 단일조건 변화로행동이바뀌는비교가없다. |
+| MA-EXP-0351 | VAX16 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | technician의LAI와17세IV는세가지부적격사유를한꺼번에던진다. 모두정답이며 단일조건 변화로행동이바뀌는비교가없다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
 | MA-EXP-0355 | VAX17 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 제품별훈련이목적인데유일정답C는CPR이고지문에는CPR상태가없다. internallychosenCE를법으로부른다는CaseB는편집자설명에가깝다. |
 | MA-EXP-0359 | VAX18 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 권고notation과quarterly예시의강제성차이는가치있다. A의consent상담대체는별도사건이며 두사례를하나의처방유효성결정으로정리할수있다. |
 | MA-EXP-0363 | VAX19 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 투여자·일시·site누락은실제기록결함이다. 대기실diagnosis공개는관련없는쉬운privacy위반이며 A만잘못되고나머지가일반명제다. |
-| MA-EXP-0367 | VAX20 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | ED monitoring을serious분류에적용하는조건은유용하다. 모두정답이고C의응급치료지연금지는상식으로맞힐수있다. |
+| MA-EXP-0367 | VAX20 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | ED monitoring을serious분류에적용하는조건은유용하다. 모두정답이고C의응급치료지연금지는상식으로맞힐수있다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
 | MA-EXP-0371 | PUB01 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 다른약국으로보내면singlelocation전제가바뀌는좋은경계다. A의receipt로상담대체,D의NPI교육면제는어색한오답이다. |
 | MA-EXP-0375 | PUB02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | encouraged와CDTMattestation의차이는보존가능하나B는referral일반론,C는genericnote라는약한오답이다. |
 | MA-EXP-0379 | PUB03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Opill과EC,ulipristal과levonorgestrel은제품구분에의미가있다. mifepristone을EC대체라하는유일오답은너무멀며B의보험도별도내용이다. |
-| MA-EXP-0383 | PUB04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 대리인의standingorder요청은본인assessment조건을바꾸는실제상황이다. 교육필수착각을별도case로넣고모두정답으로만들었다. |
+| MA-EXP-0383 | PUB04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 대리인의standingorder요청은본인assessment조건을바꾸는실제상황이다. 교육필수착각을별도case로넣고모두정답으로만들었다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
 | MA-EXP-0387 | PUB05 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | minor EC와 naloxone의보고기한복사는독립된사건이다. 유일정답C는다른모든minor의료행위로확장하지말라는지문밖일반론이다. |
 | MA-EXP-0391 | PUB06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 보험benefit와처방권한의차이는중요하지만보험plan조건을주지않아A는추상정답이다. OTC보험청구와처방scope를하나의구매사건에연결할수있다. |
 | MA-EXP-0395 | PUB07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | naloxone제3자구매와naltrexone대체제안은서로다른결정이고A의buprenorphine혼합제는또다른약물이다. |
-| MA-EXP-0399 | PUB08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 이전거절이이번offer를없애는지의미있는사례다. 보험수량제한을별도case로넣고모든보기가옳아행동대안이없다. |
+| MA-EXP-0399 | PUB08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 이전거절이이번offer를없애는지의미있는사례다. 보험수량제한을별도case로넣고모든보기가옳아행동대안이없다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
 | MA-EXP-0403 | PUB09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | daily제출을안한약국의annualroute와dose단위는실무적이다. A의patientvisibleprofile은다른명제이고실제dose수를계산할자료가없다. |
 | MA-EXP-0407 | PUB10 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 전화만가능한pharmacist라는조건은현장존재판단을바꾼다. unsecurednetwork·volunteer접근·confidentiality면제까지과장된여러결함을겹친다. |
 | MA-EXP-0411 | PUB11 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | originalpatient처방으로여러partner를공급하려는것은실제구별이다. C의EPT와독립STI처방동일시는쉽고A/D는경로정의를반복한다. |
-| MA-EXP-0415 | PUB12 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | unnamedEPT예외와unavailablepharmacyreferral은실질적이지만모두정답이다. A의신원정보날조금지는정답문구단서가된다. |
+| MA-EXP-0415 | PUB12 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | unnamedEPT예외와unavailablepharmacyreferral은실질적이지만모두정답이다. A의신원정보날조금지는정답문구단서가된다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
 | MA-EXP-0419 | COUN01 | REPLACE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | cashieroffer·supervisedintern상담·technician임상판단은PER12와같은역할구별을다시묻는다. 유일정답C는offer/response기록구분으로사례의업무배치를해결하지않는다. |
 | MA-EXP-0423 | COUN02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 서두르는환자를거절로간주하는실수는현실적이다. A의서명screen은사례밖이며B의refusal을completed로기록하라는오답은너무명백하다. |
 | MA-EXP-0427 | COUN03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 작은글자와inhaler기술·언어청각장벽은좋은환자조건이나서로다른두환자를묶었다. C의identicalcontent는극단적오답이다. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `5d7e078df897b6fa1cdd6b68fba9a8867111aac5f7a05ef9845407b4f10061e2` |
-| practice_expansion/2026-10-28-representative/questions.json | `01a29813f3fdd6a950c01b4e490e6e9e1b97ef527f7ee50a1955a4d75ac20d6e` |
+| practice_expansion/2026-10-28-representative/selection.json | `f73aa84ee59c0181ab049ba0789313833d5555620a0752448f3cdec5e036199c` |
+| practice_expansion/2026-10-28-representative/questions.json | `9c7a232064f298d5f07908014c70cb022c0ad6cb699c1d52826e919d69251b86` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.
