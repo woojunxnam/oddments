@@ -30,6 +30,8 @@ REVIEW_FILES = (
     'wave7-3-author-review.json', 'wave7-4-author-review.json',
     'wave8-1-author-review.json', 'wave8-2-author-review.json',
     'wave8-3-author-review.json', 'wave8-4-author-review.json',
+    'wave9-1-author-review.json', 'wave9-2-author-review.json',
+    'wave9-3-author-review.json', 'wave9-4-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -399,7 +401,8 @@ def build():
     apply_citation_errata(result)
     apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
-        'pub05-14-independent-review.json', 'wave2-independent-review.json')]
+        'pub05-14-independent-review.json', 'wave2-independent-review.json',
+        'wave5-independent-review.json')]
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):
@@ -416,7 +419,9 @@ def build():
     for row in result:
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
+            row['author_disposition'] = row['disposition']
             row['independent_legacy_legal_assessment'] = audit_row['legal_review']
+            row['independent_legacy_realism_assessment'] = audit_row['realism_review']
             row['independent_legacy_is_canonical_release_evidence'] = False
             if audit_row['legal_review']['existing_answer_correct'] in {'AMBIGUOUS', 'NOT_ASSESSED', 'NO'}:
                 row['author_answer_key_assessment'] = row['answer_key_assessment']
@@ -424,6 +429,10 @@ def build():
                 row['answer_key_assessment'] = 'INDEPENDENT_LEGACY_' + audit_row['legal_review']['existing_answer_correct']
                 row['disposition'] = 'HOLD_FOR_LEGAL_REVIEW'
                 row['blocker'] = audit_row['legal_review'].get('blocker') or audit_row['legal_review'].get('finding_ko')
+            elif audit_row['realism_review'].get('verdict') == 'FAIL':
+                row['author_review_blocker'] = row['blocker']
+                row['disposition'] = 'MAJOR_REWRITE'
+                row['blocker'] = audit_row['required_next_action_ko']
     independent_assessed = [r for r in independent_records if
                             r['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED']
     ids = [r['question_id'] for r in result]
