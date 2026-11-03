@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.refill-cancer.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -3311,6 +3311,9 @@ Xywav/Xyrem의 central certified pharmacy 구조와 Lumryz의 별도 REMS를 섞
 ## Opioid disposal와 REMS의 책임 주체
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 Opioid Analgesic REMS의 prepaid mail-back envelope 경로는 manufacturer가 outpatient pharmacy의 요청에 따라 제공할 수 있게 하는 요구와 pharmacy의 제공 선택을 구별한다. 이를 모든 opioid prescription마다 특정 envelope를 반드시 함께 주어야 한다는 새로운 universal dispensing rule로 바꾸지 않는다. 
 
 환자용 mail-back, authorized collector의 receptacle, pharmacy inventory를 reverse distributor에 보내는 절차는 계속 다른 경로다. REMS의 disposal education을 DEA registrant inventory destruction 의무의 대체로 사용하지 않는다.
@@ -3475,6 +3478,9 @@ Security의 목표는 confidentiality, integrity, availability이다. 접근할 
 
 
 ## 미성년자 HIV prevention — 2026 clarification
+
+
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 **새 보완:** DPH의 2026-03-10 guidance는 개정 c.112 §12F에 따라 sexually active minor가 HIV prevention 관련 진료에 동의하는 경로를 설명한다. PrEP·PEP와 관련 consultation·testing·예방 서비스가 연결된다. 특정한 최소 나이가 법률에 명시되어 있지 않다는 사실과 FDA product의 age/weight 요건은 별개다. 
@@ -3676,6 +3682,9 @@ COVID vaccine는 이전 formulation와 dates를 확인하도록 policy가 권고
 ## Pediatric access와 communication
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
+
+
 Massachusetts Immunization Program은 해당 참여 요건 아래 19세 미만에게 routine childhood vaccines를 무료 공급하는 체계를 제공한다. Free vaccine stock와 pharmacy administration/service fee 또는 보험 보장은 같은 개념이 아니다. 
 
 Pharmacy가 free pediatric vaccines를 이용하지 않는다면 19세 미만 환자의 parent/guardian에게 잠재적인 비용과 primary-care provider의 무료 vaccine 이용 가능성을 알리는 의무를 확인한다. 비용을 모르고 서비스를 받은 뒤에만 고지하는 방식으로 이해하지 않는다. 
@@ -3691,6 +3700,9 @@ Immunization record를 PCP에게 전달하는 것은 policy의 'should' 권고�
 
 
 ## MIIS reporting·datasharing·records
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
 
 
 ### 일반 보고기한
@@ -3756,6 +3768,9 @@ MIIS는 투여 기록을 보고하고, VAERS는 adverse events를 보고하며, 
 ## Storage·handling와 predrawing
 
 
+> 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
+
+
 Vaccine는 applicable manufacturer condition과 Board의 refrigerated/frozen medication policy에 맞게 보관한다. 적절한 monitoring, excursion assessment, quarantine·disposition 기록을 유지하고, temperature excursion 후 외관이 정상이라는 이유만으로 자동 사용하지 않는다. Cold-chain 상세는 Week 4와 연결한다. 
 
 Massachusetts policy는 future use를 위해 vaccine를 미리 뽑아 두는 시간이 1시간을 초과하면 sterile compounding로 취급하며 USP <797>에 맞는 sterile conditions에서 수행하도록 한다. 다른 자료의 generic immediate-use time만을 가져와 이 state policy를 삭제하지 않는다. 
@@ -3769,6 +3784,9 @@ Manufacturer-prefilled syringe와 pharmacy가 multidose vial에서 미리 뽑아
 
 
 ## 일반 medication administration의 2026년 확장
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
 
 
 DCP 26-03-124는 2026-03-11자로 이전 DCP 23-04-118을 대체하여 정신질환·SUD용 특정 약 외에 testosterone gender-affirming care, HIV prevention, STI prevention/treatment 관련 투약을 설명한다. 이 서비스를 반드시 제공해야 한다는 일반 의무가 아니라, 선택하여 수행하는 pharmacist/intern의 조건을 정한 guidance이다. 
@@ -3788,6 +3806,9 @@ DCP 26-03-124는 2026-03-11자로 이전 DCP 23-04-118을 대체하여 정신질
 ## Eligible medications의 범위
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
+
+
 Long-acting injectable antipsychotics에는 aripiprazole, aripiprazole lauroxil, fluphenazine decanoate, haloperidol decanoate, paliperidone palmitate, risperidone, risperidone ER가 열거되어 있다. 같은 정신과 치료제라는 이유로 목록에 없는 모든 약을 이 경로에 넣지 않는다. 
 
 SUD의 long-acting injectable에는 buprenorphine와 naltrexone이 포함된다. Gender-affirming care에는 testosterone의 모든 salts가 열거되어 있다. Medication 이름 외에 실제 formulation, FDA labeling, single-dose와 route 조건을 함께 충족해야 한다.
@@ -3803,6 +3824,9 @@ Methadone 등 addiction-treatment medication를 order에 따라 투여하는 reg
 
 
 ## Vaccine training와 medication-specific training
+
+
+> 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
 
 
 일반 medication administration 전에 CDC, ACPE 또는 적절한 health authority/professional body가 accredited한 training를 완료하고, 해당 medication·환자군에 적합한 injection-technique modules를 포함해야 한다. Current CPR와 continued competency도 필요하다. 
@@ -3872,6 +3896,9 @@ CPA의 자격·setting·환자 referral·동의·범위·기록·종료를 순�
 
 
 ## CDTM pharmacist의 기본 자격
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave11-census.json)
 
 
 ### 자격은 면허·현재 practice·보험을 각각 확인한다
@@ -3952,6 +3979,9 @@ Clinical site가 개발·운영하는 comprehensive CDTM credentialing/training�
 
 
 ## CDTM CE와 prescribing registration
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave11-census.json)
 
 
 ### 규정의 층: CDTM CE와 일반 pharmacist CE
@@ -4093,6 +4123,9 @@ Massachusetts의 **gabapentin은 Schedule VI이지만 PMP reporting 대상**입�
 ## CDTM documentation와 physician communication
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave11-census.json)
+
+
 ### 환자 관리의 action 후 통지 — 247 CMR 16.03(5)(e)2
 
 Authorized pharmacist가 retail CDTM 아래 **initial prescription 발행 또는 prescription modification/discontinuation**을 수행했다면 **발행(issuance) 후 24시간 이내** supervising physician에게 해당 처방·변경·중단의 사본을 전달합니다. **더 긴급한 통지가 필요한 상황**에서는 24시간을 기다리지 않고 더 빨리 통지해야 합니다. 약사의 조치는 **patient medical record**에 기록하고 physician custody의 환자 의료기록에 관련 처방 사본이 포함되도록 합니다.
@@ -4168,6 +4201,9 @@ CPA는 **위임 가능한 pharmacist duties와 위임 불가능한 duties**를 �
 
 
 ## 종료·기록 위치·고용 관계
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
 
 
 ### Termination / non-renewal — 247 CMR 16.04(5)
@@ -4288,6 +4324,9 @@ MassHealth ordering/referring enrollment는 이 circular에서 권고한다. CDT
 ## Hormonal contraception: 환자·제품·평가
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
+
+
 Pharmacist는 모든 연령의 환자에게 적격한 hormonal contraceptive patches와 oral hormonal contraceptives를 prescribe할 수 있다. 해당 약이 OTC인지 prescription-only인지는 이 경로에서 prescription 발행이 가능한지와 별개로 판단한다. 
 
 Patient는 처방 전에 pharmacy가 제공한 current U.S. Medical Eligibility Criteria에 기반한 self-screening risk-assessment tool을 작성해야 한다. 환자가 체크박스를 채웠다는 사실만으로 clinical contraindications나 불명확한 답변의 평가가 끝나지 않는다.
@@ -4320,6 +4359,9 @@ Patient assessment, 선택한 product와 supply, counseling, written record, ref
 
 
 ## Emergency contraception — statewide standing order
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 **보완 상태: 핵심 권한·workflow 확인.** Massachusetts 공식 pharmacy 안내는 statewide standing order로 ulipristal acetate와 levonorgestrel emergency contraception을 제공하는 경로를 설명한다. 약사는 이 경로를 사용하기 위해 별도의 추가 교육을 반드시 이수할 필요가 없다고 안내한다. 교육은 도움이 되지만 ‘선택적으로 권고되는 교육’과 ‘법적 필수 조건’을 구별한다. 
@@ -4414,6 +4456,9 @@ ACCESS 관련 안내의 ‘12개월 공급’은 보험 보장·dispensing 접�
 ## OTC daily contraception와 emergency contraception
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
+
+
 Norgestrel Opill은 FDA가 nonprescription daily oral contraception으로 승인한 제품이다. Opill의 OTC status를 다른 모든 oral hormonal contraceptive의 OTC 전환으로 해석하지 않는다. 또한 routine daily contraception와 emergency contraception는 목적과 사용법이 다르다. 
 
 Plan B One-Step, levonorgestrel 1.5 mg emergency contraception은 FDA가 연령 제한 없이 OTC 사용을 허용했다. 과거 17세·18세 구분을 현재 판매 요건으로 외우지 않는다. Emergency contraception는 이미 성립한 임신을 종료하는 medication abortion와 다른 범주다. 
@@ -4433,6 +4478,9 @@ OTC로 살 수 있는 약을 보험으로 처리하려고 prescription을 사용
 
 
 ## HIV prevention와 STI prescribing: 확인된 권한
+
+
+> 근거 확인 보류 주장 7개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave10-census.json)
 
 
 ### PrEP와 PEP
@@ -4482,6 +4530,9 @@ Medication가 목록에 있다는 사실만으로 임신·미성년자·allergy�
 
 
 ## 같은 HIV 성분·유사 브랜드라도 치료와 예방을 바꾸지 않는다
+
+
+> 근거 확인 보류 주장 12개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 Truvada와 Descovy는 모두 emtricitabine를 포함하지만 각각 tenofovir disoproxil fumarate와 tenofovir alafenamide를 포함한다. 함량·대상군·labeling이 다르므로 같은 ‘PrEP 약’이라는 이유만으로 대체하지 않는다. 
@@ -5206,6 +5257,9 @@ For cause는 controlled-substance 취급 조사에서 비롯된 연방·주 admi
 ## NIOSH hazardous drug와 RCRA hazardous waste
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 **추가 연결 학습.** NIOSH/USP <800>의 hazardous-drug 취급 분류, EPA/RCRA의 hazardous-waste 분류, DEA controlled-substance schedule은 서로 다른 목적과 요건을 갖는다. 한 목록에 있다는 사실만으로 다른 목록의 모든 분류·폐기 코드를 확정하지 않는다. 
 
 40 CFR 266.505의 sewering 금지는 healthcare facilities와 reverse distributors에 적용하며 very small quantity generator도 포함한다. 약국의 해당 hazardous waste pharmaceuticals를 싱크·화장실을 통해 공공 하수처리계통으로 버리는 방식은 허용되지 않는다. 주별 다른 Subpart P 채택 상태를 이유로 이 연방 sewer ban을 무시하지 않는다. 
@@ -5273,6 +5327,9 @@ Computer downtime에는 prescriptions를 처리하는 방법, 적절한 DUR, con
 ## 냉장·냉동 보관의 기준
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 일반 refrigerated range는 **2–8°C**, 일반 freezer range는 **−25~−10°C**이다. 그러나 제품의 FDA-approved labeling 및 안정성 조건이 우선적으로 검토되어야 한다. 특정 백신의 ultra-cold 조건이나 재구성 후 더 짧은 in-use 조건을 이 일반 숫자로 대체하지 않는다. 
 
 Standalone refrigerator/freezer 또는 적격 combination unit을 사용할 수 있다. 냉장 구획 안에 작은 freezer compartment가 붙은 dorm-style 장비는 금지된다. Freezer의 자동 defrost 원칙과 특정 온도 민감 제품에 대한 policy상 예외를 구별한다. 약품 보관 장비에는 음식·음료를 보관하지 않는다. 
@@ -5288,6 +5345,9 @@ Standalone refrigerator/freezer 또는 적격 combination unit을 사용할 수 
 
 
 ## 온도 기록과 excursion 대응
+
+
+> 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 Board Policy 2020-05는 온도를 **하루 두 번 검토하고 기록**하는 구조를 정한다. 약국이 닫힌 날에도 out-of-range 여부를 확인할 수 있는 장치를 마련한다. Continuous monitoring/alarm의 권고와 모든 약국에 동일 장비를 강제하는 법정 의무를 혼동하지 않는다. Temperature logs 및 excursion 대응 기록은 247 CMR 9.22에 따라 **최소 1년** 보존한다. 
@@ -5475,16 +5535,24 @@ Facility의 licensed healthcare professional이 장치에서 약을 꺼내거나
 ## LTCF emergency kits
 
 
-LTCF emergency kit는 pharmacy delivery 전에 필요한 투약을 안전하게 연결하기 위한 제한된 stock이다. Facility는 하나의 선택된 pharmacy provider와 함께 formulary와 controlled-substance accountability/security procedures를 마련한다. Locked kit 또는 조건을 충족한 ADD, tamper-evident single-dose packaging 및 적법한 prescription/order가 필요하다. 
+LTCF emergency kit는 pharmacy delivery 전에 필요한 투약을 안전하게 연결하기 위한 제한된 stock이다. Circular는 facility가 하나의 선택된 pharmacy provider와 함께 formulary와 controlled-substance accountability/security procedures를 마련하도록 안내한다. Locked kit 또는 조건을 충족한 ADD, tamper-evident single-dose packaging 및 적법한 prescription/order가 필요하다. 
 
-Schedule II–V의 analgesic와 sedative/anticonvulsant quantities는 licensed-bed capacity에 따른 Department maximum을 따른다. Maximum은 모두 채워 놓아야 하는 minimum이 아니다. Schedule VI stock도 procurement·storage·administration·record·disposal 및 facility QA 조건을 따라야 한다. 
+Schedule II–V의 analgesic와 sedative/anticonvulsant quantities는 licensed-bed capacity에 따른 Department maximum을 따른다. Maximum은 모두 채워 놓아야 하는 minimum이 아니다. Schedule VI stock도 procurement·storage·administration·record·disposal 및 facility QA 조건을 따라야 한다.
 
-**원문 표의 경계 주의:** 2018 circular의 추출된 표는 “<50”, “51–100”, “101–150”, “>150”로 표시되어 정확히 50병상 경계가 비어 있다. 이를 임의로 “≤50”으로 수정한 확정 암기표를 제공하지 않았다. 일반 구간 수량과 경계가 필요한 실제 사안은 Board/DCP 원표 또는 별도 확인이 필요하다. 이 항목은 W4 OPEN-03이다.
+**원본 PDF 표의 병상 경계:** [DHCQ 18-6-679](https://www.mass.gov/doc/long-term-care-facility-emergency-kits-pdf/download) 3쪽 표의 첫 열은 **≤50 beds**이다. 따라서 licensed-bed capacity가 **정확히 50병상인 LTCF는 첫 구간**에 속한다. 나머지 구간은 **51–100, 101–150, >150 beds**이다. 텍스트 추출본의 `<50`은 등호 획이 빠진 추출 오류이며, 원본 표에 50병상 구간이 없다는 뜻이 아니다. 이 표는 위 LTCF emergency-kit의 Schedule II–V analgesic 및 sedative/anticonvulsant maximum에 한정한다. 일반 ADD stock이나 다른 종류의 시설에 이 병상별 표를 자동 적용하지 않는다.
+
+근거: 위 circular의 Contents of the Emergency Kit·Schedule VI Medications·Automated Dispensing Machines 및 3쪽 표, [105 CMR 150.008(E)](https://www.mass.gov/doc/105-cmr-150-standards-for-long-term-care-facilities/download), [247 CMR 9.09](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download). 확인일 2026-11-03. Circular 발행일은 2018-06-15이며, 현재 [Board 공식 자료 목록](https://www.mass.gov/lists/pharmacy-practice-resources)의 링크와 해당 PDF 원본 화면을 대조했다. 이 게시 상태 확인이 모든 후속 개정의 전수 조사나 다른 setting에 대한 적용 인증을 뜻하지는 않는다.
 
 
 근거:
 
-- [DHCQ 18-6-679, LTCF Emergency Kits, 6/15/2018. Bed-table exact boundary미확정.](https://www.mass.gov/doc/long-term-care-facility-emergency-kits-pdf/download)
+- [DHCQ18-6-679 (2018-06-15), LTCF emergency kits; original PDFp3 ≤50bed boundary visually checked](https://www.mass.gov/doc/long-term-care-facility-emergency-kits-pdf/download)
+
+- [105CMR150.008(E), Department-approved LTCF emergency kits and primary-care-provider orders](https://www.mass.gov/doc/105-cmr-150-standards-for-long-term-care-facilities/download)
+
+- [247 CMR9.09, Emergency Medication Kits; Register1536/2024-12-06](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
+
+- [Board pharmacy practice resources index;exact LTCF emergency-kit PDF link checked2026-11-03](https://www.mass.gov/lists/pharmacy-practice-resources)
 
 
 ## Hospice inpatient acute-use medications
@@ -5492,14 +5560,22 @@ Schedule II–V의 analgesic와 sedative/anticonvulsant quantities는 licensed-b
 
 Inpatient hospice의 acute supply는 life-threatening emergency에만 제한되는 개념이 아니다. Full prescription이 준비·배송될 때까지 palliative symptoms를 신속히 완화하는 bridge supply를 다룬다. Policy는 **ADD 사용**, machine-specific CSR, 필요한 DEA registration 판단 및 continuous video를 요구한다. 
 
-Analgesics, sedative/anticonvulsants 및 Schedule VI ancillary medication의 bed-based maximum 안에서 formulary를 정한다. Pharmacy 소유권, patient prescription/order와의 reconciliation, 개별 tamper-evident unit-dose packaging가 남는다. 
+Analgesics, sedative/anticonvulsants 및 Schedule VI ancillary medication의 bed-based maximum 안에서 formulary를 정한다. ADD contents는 적법한 patient prescription/order에 따라 administration을 위해 dispense될 때까지 pharmacy 소유로 남는다. Pharmacy는 ADD에서 dispense된 약을 처방과 reconcile하며, 개별 tamper-evident unit-dose packaging 조건도 유지한다.
 
-해당 circular의 표도 “<10”, “11–20”, “>21”이라는 경계 표현을 보여 정확히 10·21병상에 관해 그대로 확정할 수 없다. 수집 텍스트의 빈칸을 보정해 법적 기준으로 만들지 않았다. 이 제한은 hospice의 ADD·registration·accountability 원칙이 미확인이라는 뜻은 아니다.
+**원본 PDF 표의 병상 경계와 단위:** [DHCQ 20-3-700](https://www.mass.gov/doc/hospice-inpatient-facility-acute-use-medications-pdf/download) 3쪽 표의 구간은 **≤10 beds, 11–20 beds, ≥21 beds**이다. 정확히 **10병상은 첫 구간**, 정확히 **21병상은 마지막 구간**에 속한다. 추출본의 `<10`·`>21`은 등호 획이 빠진 것으로, 원본의 병상 구간 공백이 아니다.
+
+표의 수량 단위는 각 medication category에 대한 **“Max number of units per facility”**이다. 이를 서로 다른 drug 종류의 개수로 바꾸지 않는다. 위 single-dose packaging 조건과 함께 읽으며, 이 표는 **inpatient hospice facility의 ADD acute-use stock** 범위다. 일반 병원 ADD나 LTCF emergency-kit의 수량표로 자동 확대하지 않는다.
+
+근거: 위 circular의 Requirements for ADD Storage and Security·Contents and Usage of the ADD for Patient Palliative Care 및 3쪽 표, [Policy 2019-02 Requirements 3·6·11](https://www.mass.gov/doc/2019-02-automated-dispensing-device-use-pdf/download). 확인일 2026-11-03. Circular 발행일은 2020-03-06이며, 현재 [Board 공식 자료 목록](https://www.mass.gov/lists/pharmacy-practice-resources)의 링크와 해당 PDF 원본 화면을 대조했다. 게시 상태 확인을 모든 후속 개정의 전수 조사나 다른 setting에 대한 적용 인증으로 확대하지 않는다.
 
 
 근거:
 
-- [DHCQ 20-3-700, Hospice Inpatient Facility Acute Use Medications, 3/6/2020. Bed-table exact boundary미확정.](https://www.mass.gov/doc/hospice-inpatient-facility-acute-use-medications-pdf/download)
+- [DHCQ20-3-700 dated2020-03-06;inpatient hospice ADD acute-use;originalPDFp3 ≤10/11–20/≥21 and units-per-facility visually checked](https://www.mass.gov/doc/hospice-inpatient-facility-acute-use-medications-pdf/download)
+
+- [Policy2019-02 Automated Dispensing Device Use;latest listed revision2025-01-09;Requirements3/6/11](https://www.mass.gov/doc/2019-02-automated-dispensing-device-use-pdf/download)
+
+- [Board pharmacy-practice-resources index;exact Hospice Inpatient Facility Acute Use Medications PDF link checked2026-11-03](https://www.mass.gov/lists/pharmacy-practice-resources)
 
 
 ## Central fill의 기본 기록과 운송 책임
@@ -5573,6 +5649,9 @@ Identified patient의 valid prescription과 제한적인 anticipatory compoundin
 ## Bulk API, COA, 공급자
 
 
+> 근거 확인 보류 주장 15개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 503A에서 bulk drug substance를 쓸 때에는 적용 가능한 USP/NF monograph, FDA-approved drug의 component 또는 적격 503A bulks-list 경로를 확인한다. FDA-registered establishment에서 제조된 원료와 valid certificate of analysis가 필요하다. “의약품으로 쓸 수 있는 흰 분말”이라는 외관이나 supplier의 광고만으로 충족되지 않는다. 
 
 COA는 원료의 identity·strength·purity와 test specifications를 검토하는 자료이다. COA가 있다는 사실이 허용되지 않은 원료를 합법화하지 않는다. Research-use-only, not-for-human-use, not-for-injection이라는 표시가 있는 원료를 해당 인체·주사 조제에 사용하지 않는다. 입고 상태와 사용 전 상태를 다시 확인한다. 
@@ -5637,6 +5716,9 @@ Policy 2023-07은 특수 교육·시설·장비·계산이 필요한 제형과 �
 ## Flavoring, 제조사 kit, tablet splitting
 
 
+> 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 Schedule VI 약물의 flavoring은 환자 또는 agent의 요청에 따라 policy가 허용하는 경로에서 prescriber에게 매번 연락하지 않고 수행할 수 있다. 그러나 변경을 기록하고, therapeutic intent·dose·stability·compatibility에 미치는 영향을 검토해야 한다. 이 허용을 CII–V 또는 모든 formulation 변경으로 확대하지 않는다. 
 
 Manufacturer의 지시와 다른 준비를 요구하는 kit나 flavoring에는 compounding 기준이 적용될 수 있다. 약이 맛있어졌다는 사실이 보존제 농도·BUD·균일성에 영향을 주지 않았다는 증거는 아니다. 
@@ -5650,6 +5732,9 @@ Nonhazardous tablet의 단순 splitting이 모두 compounding인 것은 아니�
 
 
 ## Nonsterile 환경·책임자·교육
+
+
+> 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
 
 
 Nonsterile compounding의 designated person는 policy에 따라 MOR 또는 onsite pharmacist로 지정한다. 이 사람의 자격을 USP <800>의 별도 HD designated person와 혼동하지 않는다. 적절한 training, personnel competency, 시설·equipment, SOP와 QA를 연결한다. 
@@ -5667,6 +5752,9 @@ Balance는 적절한 정확성과 annual sealing을 유지하고, 시설 renovat
 
 
 ## MFR와 Compounding Record
+
+
+> 근거 확인 보류 주장 24개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
 
 
 **Master Formulation Record, MFR**는 반복 가능한 제조법이다. 준비물·원료의 identity와 amount, strength/form, 계산, 혼합·제조 순서, container, 보관 조건, BUD의 근거, 기대되는 외관 및 QC를 설명한다. **Compounding Record, CR**는 이번에 실제로 무엇을 만들었는지 기록한다. 
@@ -5688,6 +5776,9 @@ Nonsterile compounds는 policy가 요구하는 MFR/CR를 유지한다. Flavoring
 ## BUD를 정하는 순서
 
 
+> 근거 확인 보류 주장 10개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 먼저 actual formulation와 dosage form, water activity, preservatives, microbial risk, container-closure, route, storage 및 chemical/physical stability를 평가한다. 이후 해당 USP monograph 또는 타당한 preparation-specific data와 default maximum을 확인한다. 사용할 수 있는 가장 긴 표 숫자를 먼저 선택하는 방식이 아니다. 
 
 BUD는 preparation을 만든 시점에 연결된다. Manufacturer expiration, prescription validity, days supply, vial first-puncture/in-use time와 다르다. 조제한 약을 냉장고에서 꺼내거나 다른 용기로 옮겼다고 clock가 초기화되지 않는다. Chemical instability가 더 짧으면 microbial maximum보다 짧게 지정한다.
@@ -5703,6 +5794,9 @@ BUD는 preparation을 만든 시점에 연결된다. Manufacturer expiration, pr
 
 
 ## USP <795> 기본 BUD 표
+
+
+> 근거 확인 보류 주장 19개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 아래는 **해당 preparation-specific USP/NF monograph 또는 유효한 안정성 자료가 없는 경우의 일반 maximum**이다. 제품·원료·포장의 더 짧은 제한을 무시하는 보증 기간이 아니다. Water activity는 수분 함량 자체와 다르다. 
@@ -5759,6 +5853,9 @@ Radiopharmaceuticals는 USP <825> 및 별도 nuclear/radiation 체계를 검토�
 ## Immediate-use CSP: 네 시간의 의미
 
 
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 적격 immediate-use 경로는 모든 Category 1–3 조건을 적용하지 않는 대신 엄격한 제한을 갖는다. Aseptic techniques·SOP, 적절한 personnel training, evidence-based compatibility, **서로 다른 sterile products 3개 이하**, single-dose leftover의 적절한 폐기 등의 조건을 충족해야 한다. “3개”는 모든 상황에서 단순히 vial 개수가 세 개라는 의미가 아니다. 
 
 Administration은 **준비를 시작한 시점부터 4시간 이내 시작**해야 한다. 조제 완료 후 4시간이나 infusion 종료 시점의 4시간과 다르다. 이 안에 시작하지 못하면 폐기한다. 준비자가 직접 투여하거나 투여를 직접 확인하는 예외 외에는 ingredients/amounts, preparer identification, administration을 시작해야 할 정확한 시간 등의 label이 필요하다. 
@@ -5787,6 +5884,9 @@ Proprietary bag/vial system을 immediate administration을 위해 dock하고 act
 ## PEC, SEC, SCA, cleanroom suite
 
 
+> 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 **PEC**는 critical sites를 보호하는 ISO Class 5의 primary engineering control이다. **SEC**는 이를 둘러싼 controlled environment이다. SCA는 분명한 경계와 조건을 갖춘 unclassified segregated compounding area이며 **Category 1에 한정**된다. 일반 조제대 위에 laminar hood를 놓았다는 사실만으로 적격 SCA가 되는 것은 아니다. 
 
 Category 2·3에는 적절한 cleanroom suite가 필요하다. 일반 구성은 ISO5 PEC, ISO7 buffer room, positive-pressure buffer로 연결되는 ISO8 anteroom이다. Negative-pressure HD buffer로 연결되는 anteroom에는 ISO7 기준이 적용된다. Pharmaceutical isolator의 한정된 설계 예외를 CAI/CACI라는 유사 명칭 전체에 확대하지 않는다. 
@@ -5800,6 +5900,9 @@ SCA의 sink와 PEC는 최소 1m의 간격을 유지하고, PEC 주변은 다른 
 
 
 ## 공기 흐름·차압·시설 certification
+
+
+> 근거 확인 보류 주장 19개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 First air는 HEPA-filtered air가 critical site에 방해 없이 도달하는 상태를 의미한다. 손·syringe·container 배치가 이를 막으면 ISO5 표시가 있어도 제품을 적절히 보호하지 못한다. Dynamic airflow smoke study는 실제 작업·equipment 배치에서 airflow가 유지되는지를 확인한다. 
@@ -5820,6 +5923,9 @@ First air는 HEPA-filtered air가 critical site에 방해 없이 도달하는 �
 
 
 ## Personnel qualification와 주기
+
+
+> 근거 확인 보류 주장 9개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 Core knowledge/skills는 최초 및 적어도 매 12개월 평가하고, 실제 compounding자의 hand-hygiene/garbing·aseptic manipulation competency는 category에 따른 더 짧은 주기로 평가한다. 감독만 하는 사람과 실제 조제하는 사람을 구별한다. 
@@ -5859,6 +5965,9 @@ Media-fill은 실제 작업자가 수행하는 가장 어려운 manipulation, �
 ## Aseptic technique, garbing, cleaning
 
 
+> 근거 확인 보류 주장 17개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 손과 팔꿈치까지 forearms를 soap와 물로 적어도 **30초** 씻고 low-lint disposable material로 말린다. Cosmetic, 불필요한 exposed jewelry, artificial nails 등 contamination sources를 관리한다. Garbing 순서는 sink와 공간 구조에 맞게 오염을 줄이는 SOP를 따른다. 
 
 Category 1·2는 적절한 low-lint garb와 sterile gloves를 사용하고, gown의 제한된 동일 작업자·동일 shift 재사용 조건을 구별한다. Category 3에는 더 엄격한 sterile outer garb와 skin-coverage 조건이 적용되고 gown reuse를 같은 방식으로 허용하지 않는다. 
@@ -5874,6 +5983,9 @@ PEC 내부·work surfaces·floors 등은 compounding하는 날의 cleaning/disin
 
 
 ## Environmental monitoring의 기본 주기
+
+
+> 근거 확인 보류 주장 12개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 | 항목 | Cat1·2 기본 | Cat3 추가 조건 |
@@ -5897,6 +6009,9 @@ Sampling은 실제 작업 조건을 대표하고, air·surface 위치와 방법�
 ## Sterilization, sterility test, endotoxin test
 
 
+> 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
+
+
 Sterilization은 오염 가능성이 있는 preparation을 sterile하게 만드는 공정이다. Sterility testing은 정해진 sampling과 방법으로 최종품의 microbial growth를 평가한다. **Endotoxin testing은 별도의 pyrogen 위험을 평가**한다. 세 가지를 같은 시험으로 보지 않는다. 
 
 Nonsterile component 또는 device와 접촉한 injectable preparation은 해당 기준에 따라 준비 완료 후 **6시간 이내 sterilization**해야 한다. 이는 immediate-use administration의 4시간과 다른 시계이다. 
@@ -5912,6 +6027,9 @@ Category 2 injectable CSP를 nonsterile components로 만들고 sterility test�
 
 
 ## USP <797> BUD matrix
+
+
+> 근거 확인 보류 주장 28개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave12-census.json)
 
 
 아래 값은 각 category의 모든 조건을 충족했을 때의 **maximum**이다. Chemical/physical stability, ingredient expiration, container integrity, 다른 applicable restrictions가 더 짧으면 줄여야 한다. Sterility test를 했다는 사실만으로 preparation이 그 기간 내내 안정하다는 뜻은 아니다. 
@@ -5948,6 +6066,9 @@ Category 2 injectable CSP를 nonsterile components로 만들고 sterility test�
 ## 원료 용기 개봉 후 시간과 최종 CSP BUD
 
 
+> 근거 확인 보류 주장 21개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 Single-dose container를 ISO Class 5 또는 더 깨끗한 환경에서 처음 puncture/enter한 경우에는 해당 **12시간** 제한 및 더 짧은 applicable limit를 따른다. 그 시간 동안 제조사 storage requirements도 유지한다. 열린 ampoule처럼 closure가 제거된 용기는 잔량을 보관하는 경로로 쓰지 않는다. 
 
 Conventionally manufactured **multidose parenteral container**는 일반적으로 first puncture 후 28일이지만, manufacturer가 다른 기간을 정한 경우 그 product instructions를 확인한다. 모든 commercial eye drops와 모든 개봉 약을 무조건 28일로 처리하지 않는다. 
@@ -5971,6 +6092,9 @@ Compounded multidose CSP는 Cat2/3와 필요한 preservative effectiveness·cont
 ## Release checks와 Massachusetts rapid sterility policy
 
 
+> 근거 확인 보류 주장 8개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 모든 CSP는 release 전에 label/order 일치, appearance, visible particles, cloudiness/discoloration, container integrity 등 필요한 검사를 한다. 조제한 날 교부하지 않고 보관한 제품은 release 때 다시 확인한다. Defective preparation은 격리하고 investigation·recall·reporting으로 연결한다. 
 
 **Policy 2025-01:** sterility testing이 필요한 CSP는 **negative sterility result를 받기 전 dispense하지 않는 Board 입장**을 따른다. 구형 inspection form의 “결과 전 release했으면 recall 절차를 마련”이라는 조건을 현재 MA의 일반 사전 출고 허용으로 읽지 않는다. 
@@ -5986,6 +6110,9 @@ Rapid microbial method는 USP <71>와 동등하거나 더 적절하다는 valida
 
 
 ## Label, accountability, QA
+
+
+> 근거 확인 보류 주장 13개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
 
 
 CSP label에는 적절한 internal ID, ingredients/amounts 또는 concentration, dosage form, BUD, storage, route, quantity/volume, 필요한 handling warnings와 pharmacy contact가 포함된다. Massachusetts는 compounded preparation임을 표시하도록 요구한다. “Sterile compounded” 표시는 그 약이 FDA-approved라는 주장이 아니다. 
@@ -6009,6 +6136,9 @@ Sterile·complex nonsterile accountability와 일반 Rx records, CQI, defective 
 ## Implantable infusion pump — BUD만 맞으면 끝나는 것이 아니다
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 **새 보완.** Board Policy 2024-02는 pump에 들어간 compounded drug가 전체 예정 infusion 기간 동안 적절한 potency·stability·compatibility를 유지하는지 평가하도록 한다. Medication뿐 아니라 첨가제, pump materials, 혼합된 성분과 실제 체온 환경이 관련된다. 
 
 Manufacturer의 승인된 사용·안정성 정보, 신뢰할 수 있는 과학적 근거 또는 적절한 직접 시험을 연결해야 한다. 실온 용기의 시험 결과가 body-temperature implanted device의 모든 기간을 자동 뒷받침하지 않는다. 발열 등 실제 환경 변동도 고려 대상이다.
@@ -6022,6 +6152,9 @@ Compounding BUD, administration 시작, 실제 infusion duration은 같은 개�
 
 
 ## USP·draft·inspection template — 서로 다른 근거
+
+
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 **상태: 분류 확인, USP 정본 전 항목 검수는 미완료.** Draft 247 CMR 17/18의 존재와 Board review는 promulgation과 같지 않다. 공식 inspection template에도 draft를 참고하라는 문구가 있을 수 있으므로 각 요구가 현행 statute, USP, policy 또는 draft 중 어디서 나오는지 식별한다. 
@@ -6044,6 +6177,9 @@ Compounding BUD, administration 시작, 실제 infusion duration은 같은 개�
 
 
 ## Hazardous drug와 controlled substance
+
+
+> 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
 
 
 Hazardous drug, HD는 취급자의 occupational exposure와 위해 가능성을 다루는 범주이다. Controlled substance의 abuse/diversion schedules와 다른 분류이다. 어떤 약은 두 체계에 모두 속할 수 있고, federally controlled가 아니어도 HD일 수 있다. 
@@ -6080,6 +6216,9 @@ NIOSH의 **2024 list, publication2025-103**은 2016 list를 대체한다. 현재
 ## Assessment of risk가 허용하는 것과 못 하는 것
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
+
+
 적격한 finished dosage form, non-antineoplastic 또는 reproductive-risk 등의 일부 상황에서는 drug와 dosage form별 **documented assessment of risk, AOR**를 통해 alternative containment/work practices를 정할 수 있다. AOR에는 type of HD, dosage form, exposure risk, packaging, manipulation을 포함하고 정기적으로 검토한다. 
 
 그러나 MA advisory는 **HD API를 사용하는 compounding**, antineoplastic의 추가 manipulation 등 full containment가 필요한 활동을 AOR로 면제하는 일반 경로를 허용하지 않는다. Crushed tablet/opened capsule를 이용한 HD compounding도 위험이 사라진 finished-dose dispensing으로 보지 않는다. 
@@ -6097,6 +6236,9 @@ NIOSH의 **2024 list, publication2025-103**은 2016 list를 대체한다. 현재
 ## Containment와 designated person
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
+
+
 MA에서 HD compounding은 적절한 complex nonsterile 또는 sterile-compounding authority, negative-pressure containment area와 적합한 C-PEC를 요구하는 구조이다. 일반 nonhazardous sterile workbench는 제품 보호를 위한 양압·first-air 기능이 있어도 HD의 작업자 보호를 자동 충족하지 않는다. 
 
 C-PEC는 약물이 밖으로 노출되는 것을 줄이는 primary control이고, C-SEC는 그 주변 containment room이다. Nonsterile HD와 sterile HD, externally vented equipment, room classification과 ventilation 요구를 작업 유형별로 정해야 한다. **정확한 모든 HVAC 설계 수치와 예외는 이 통합판의 현장 시공용 검증 범위가 아니다.** MA 공개 template의 확인한 항목과 현재 USP 정본을 연결하여 최종 설계 검증을 해야 한다. 
@@ -6112,6 +6254,9 @@ HD designated person는 적절한 훈련을 받고 SOP·compliance·competency·
 
 
 ## PPE, 교육, 노출 방지
+
+
+> 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 필요한 chemotherapy gloves는 ASTM D6978 또는 그 successor standard에 적합해야 하고 powder-free이며 사용 전 손상을 확인한다. Sterile HD compounding에는 두 겹의 chemotherapy gloves, 적절한 gown·head/hair/shoe coverage와 sterile outer glove 등 해당 작업의 요구를 충족한다. “nitrile”이라는 소재 이름만으로 chemo-tested 성능이 입증되는 것은 아니다. 
@@ -6133,6 +6278,9 @@ Antineoplastic tablets/capsules를 자동 counting machines에 넣는 것을 금
 ## Deactivation, decontamination, cleaning, disinfection
 
 
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
+
+
 **Deactivation**은 HD를 덜 유해한 물질로 바꾸는 처리, **decontamination**은 표면의 HD residue를 제거하는 처리, **cleaning**은 organic/inorganic material의 제거, **disinfection**은 미생물 감소를 위한 처리이다. 하나의 alcohol wipe가 이 네 가지 목적을 모두 충족한다고 보지 않는다. 
 
 적절한 agents·농도·contact time·순서·PPE·장비 compatibility를 SOP로 정하고 수행을 기록한다. Sterile work 재개 전에는 chemical residue뿐 아니라 sterile environment의 microbiological requirements도 충족해야 한다. 
@@ -6146,6 +6294,9 @@ Damaged shipping container는 일반 unpacking counter에서 열지 않도록 �
 
 
 ## Spill, waste, transport
+
+
+> 근거 확인 보류 주장 7개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 Spill SOP에는 사건 범위, 접근 제한, 책임자, spill kit 위치와 처리 용량, PPE·respirator, exposed clothing, cleanup·보고·follow-up을 포함한다. 직원이 감당할 수 없는 spill을 업무 속도를 이유로 맨손으로 처리해서는 안 된다. 
@@ -6163,6 +6314,9 @@ HD waste, controlled-substance disposal, biological waste, radioactive waste는 
 
 
 ## 503A와 503B 비교
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 | 항목 | 전통적 503A 경로 | 503B outsourcing 경로 |
@@ -6239,6 +6393,9 @@ MA pharmacy의 SADE는 Policy2025-02의 정의와 state reporting trigger를 사
 ## Massachusetts outsourcing facility: 247 CMR21
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 Resident outsourcing facility는 MA license와 applicable MCSR, FDA503B registration 및 **최근 2년 이내 FDA inspection** 등 요구를 충족한다. Nonresident 시설도 home-state good standing, 필요한 최근 inspection/registration 및 MA approval를 확인한다. FDA 공개 목록에 이름이 있다는 것만으로 MA에서 공급 가능한 시설임을 확정하지 않는다. 
 
 **Provisional resident registration**은 FDA inspection이 아직 충족되지 않은 특정 상황의 제한된 경로이다. 이 상태에서 compounding는 가능할 수 있지만, **필요한 FDA inspection와 full approval 전에는 distribute/dispense할 수 없다.** 승인 신청 중이라는 사실을 full license와 동일하게 취급하지 않는다. 
@@ -6254,6 +6411,9 @@ Full registration의 odd-numbered year 12월31일 만료 구조와 연방 annual
 ## Nuclear pharmacist와 시설
 
 
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
+
+
 Nuclear pharmacy는 MA pharmacist license와 별도의 qualified nuclear pharmacist 자격·Board approval, pharmacy permit, radiation controls를 함께 요구한다. 일반 compounding 교육만으로 radiopharmaceutical acquisition·preparation·dispensing 권한을 추정하지 않는다. 
 
 247 CMR13의 training 경로는 nuclear pharmacy에 관한 **formal didactic training200contact hours, 그중 laboratory는 최대60시간**, 그리고 **full-time3개월 또는 practical experience500시간** 등의 구성으로 설명된다. 정확한 자격은 Board의 검토·서면 인정과 연결된다. 
@@ -6267,6 +6427,9 @@ Nuclear pharmacy는 적격 nuclear pharmacist의 현장 감독, 제한된 접근
 
 
 ## Nuclear prescription, label, records
+
+
+> 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave13-census.json)
 
 
 Radiopharmaceutical outer shield에는 radiation symbol과 warning, radionuclide, activity 및 calibration date/time, 해당 preparation identification와 사용기한 등 radiation-specific 정보가 필요하다. Inner container와 outer shield의 labeling 기능을 구별하고 patient-use instructions와 필요한 record를 유지한다. 
@@ -6365,6 +6528,9 @@ FDA reporting은 해당 CDER NextGen platform 또는 Form FDA3911 경로를 따�
 
 
 ## Recall, returns와 환자별 예외
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 Recall은 제품의 품질·위험 때문에 유통·사용을 중단하는 경로이고, DSCSA illegitimate determination은 별도의 trigger이다. 한 사건에서 둘 다 필요할 수 있지만, 모든 recall이 counterfeit 판정인 것도 아니고 모든 suspect product가 이미 recall된 것도 아니다. 
@@ -6546,6 +6712,9 @@ Class는 위험 분류입니다. Affected lot·회수 깊이·진행 상태·환
 ## Adulteration·misbranding·unapproved status의 구별
 
 
+> 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 **연방 기본 개념 보강.** Adulteration은 오염·비위생적 제조/보관·부적절한 품질·함량 등 제품과 공정의 문제를 포함한다. Misbranding은 허위·오해를 일으키는 labeling, 필요한 표시의 누락·가독성 등의 문제를 포함한다. 두 범주는 함께 발생할 수 있으며, 환자에게 실제 harm가 발생해야만 성립하는 하나의 개념도 아니다. 
 
 정확한 함량의 정제를 잘못된 label로 교부하는 일과, label은 맞지만 제품이 오염되거나 함량이 부정확한 일은 서로 다른 문제를 드러낸다. 이런 구분은 professional error, CQI, recall, federal product-quality 판단을 연결하는 학습용 구조이며 개별 사건의 법적 결론을 대신하지 않는다.
@@ -6653,6 +6822,9 @@ Nonresident pharmacy의 MA로 이루어진 improper dispensing은 §20.07(3)의 
 ## 약국이 manufactured/produced/compounded한 약의 SADE
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 해당 약과 환자의 interaction으로 SADE가 발생하면 MOR는 **Board, FDA MedWatch, Betsy Lehman Center**에 보고하는 state 경로를 확인한다. 247CMR20.02(2)의 clock는 **어떤 pharmacy employee든 SADE를 알게 된 시점부터7business days**이다. MOR가 며칠 뒤에 이메일을 열었다고 시작점이 늦춰지지 않는다. 
 
 일반 commercial drug의 모든 통상적 side effect에 이 particular compounded/produced-drug reporting trigger를 그대로 적용하지 않는다. 반대로 accurate dispensing이었다는 이유만으로 pharmacy가 만든 defective product와 관련된 SADE를 제외하지 않는다.
@@ -6691,6 +6863,9 @@ Dispense되기 전에 포착한 defect는 이 “dispensed product의7일 보고
 
 
 ## Sterility, endotoxin, potency failure의 대응
+
+
+> 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 실패한 제품만 치우는 것으로 끝내지 않는다. 같은 ingredient lot, filter, equipment, operator, 환경, container 또는 formulation를 공유한 다른 batches가 영향을 받았는지 확인한다. 공급받은 raw material 문제라면 같은 supplier/lot를 사용한 다른 제품도 검토한다. 
@@ -6779,6 +6954,9 @@ Action level 통보를 받으면 즉시 assess/investigate하고 해당 remediat
 
 
 ## Viable-remediation 중 제한적 compounding
+
+
+> 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 제한적 재개는 자동 허용이 아니다. Immediate assessment, remediation plan 실행, repeat sampling 일정, compounding type·EM history·personnel monitoring·product defects를 고려한 risk assessment와 product-risk mitigation이 먼저 필요하다. 그 후에도 아래 추가 ceiling과 기본 USP category/BUD·chemical stability 제한을 모두 지킨다. 
@@ -7196,6 +7374,9 @@ Veterinary Feed Directive, VFD는 일반 patient prescription과 다른 medicate
 ## CLIA-waived testing — 검사 종류와 약사의 처방권한은 별개
 
 
+> 근거 확인 보류 주장 7개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
+
+
 **추가 연결 학습.** CLIA-waived는 검사법의 복잡도와 위험에 관한 범주다. 약국에서 신속하게 실시하는 point-of-care test가 모두 waived인 것은 아니다. FDA가 test system을 분류하는 것과 검사 장소가 필요한 CLIA certificate를 갖추는 것은 다른 단계다. Waived test만 수행하는 장소도 적격 certificate와 제조사 지침 준수가 필요하다. 
 
 Manufacturer instructions를 바꾸어 수행한 검사는 기존 waived status를 그대로 유지한다고 가정하지 않는다. CDC는 승인된 지침에서 변경된 검사가 high-complexity로 분류되는 구조를 설명한다. Specimen 종류, collection, timing, reagent·device, readout 방법을 임의로 바꾸지 않는다. 
@@ -7226,6 +7407,9 @@ Coupon이나 manufacturer assistance program을 이용해 정상 처방을 조�
 
 
 ## ‘재고를 반드시 보유’와 ‘처방 없이 판매’를 혼동하지 않는다
+
+
+> 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 **기존 위치:** [관련 장](#chapter/counseling-dur) 제한 OTC. **상태: memo의 의미는 확인; 모든 MA codeine 제품의 OTC 적격성은 OPEN.** 2025 guaifenesin/codeine memo와 2022 promethazine/codeine memo는 특정 stocking 규정에 관한 enforcement 안내다. 약국이 해당 제품을 stock하지 않더라도 유효한 처방에 대한 적절한 대안 협의·다른 합법적 공급 경로로 환자 접근을 확보하는 조건을 설명한다. 
@@ -7273,6 +7457,9 @@ Massachusetts 247 CMR 9.01(11)의 pharmacy referral 관련 remuneration 금지�
 
 
 ## 핵심 보고 시계 비교
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave14-census.json)
 
 
 | 사건 | 의무자/수신자 | 시작점과 기한 | 주의 |
@@ -8165,6 +8352,9 @@ Generic → exact product/form/combination → federal/MA status → 적법한 �
 ## 현재 남은 항목과 닫는 데 필요한 증거
 
 
+> 근거 확인 보류 주장 20개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave16-census.json)
+
+
 OPEN-CC — VI 14/30일과 gabapentin/expired 경계. 기본 두 문서와 정책 누락은 이번에 보완했다. 겹치는 사실관계의 통합 적용에는 Board의 명시적 current clarification이 추가로 필요하다. 
 
 OPEN-REPORT — MOR 부재·사임, discipline/criminal, 일부 serious-event의 기한·trigger 차이. [미확정 범위 장](#chapter/open-register)에 양쪽 문구를 유지한다. 하나가 폐지·대체됐다는 공식 근거 또는 동일 사건에 대한 공식 설명 없이는 단일 숫자로 합치지 않는다.
@@ -8214,6 +8404,9 @@ OPEN-USP — USP 정본 전체, 모든 <825>·allergen·engineering·waste 특�
 
 
 ## 시험일에 다시 확인할 항목
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave15-census.json)
 
 
 | 시점 또는 사건 | 확인할 내용 | 지금 확정하지 않을 것 |

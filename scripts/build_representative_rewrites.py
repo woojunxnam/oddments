@@ -233,6 +233,7 @@ def archive_review_notices(old_by_id, input_hashes):
             'INCORRECT_KEY', 'AMBIGUOUS_KEY', 'RATIONALE_DEFECT', 'SOURCE_RELATIONSHIP_OPEN',
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
             'EDITORIAL_CONTEXT_REVIEW',
+            'INDEPENDENT_REVIEW_FINDING',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
         require(not review_relative.is_absolute() and '..' not in review_relative.parts
@@ -240,12 +241,26 @@ def archive_review_notices(old_by_id, input_hashes):
         review_raw = (ROOT/review_relative).read_bytes()
         require(digest(review_raw) == notice['review_source_sha256'], 'Stale archive review source')
         reviews = {r['question_id']: r for r in json.loads(review_raw)['records']}
+        if notice['issue_type'] == 'INDEPENDENT_REVIEW_FINDING':
+            source = json.loads(review_raw)
+            require(source.get('stage') == 'independent-legacy' and
+                    source.get('independent_of_authors') is True and source.get('auditor_instance') and
+                    source.get('canonical_audit') is False and source.get('canonical_release_credit') == 0,
+                    'Archive notice lacks independent review provenance')
         for qid in ids:
             actual = digest(json.dumps(old_by_id[qid], ensure_ascii=False, sort_keys=True,
                                        separators=(',', ':')).encode())
             require(actual == notice['question_record_hashes'][qid], 'Stale archive notice: ' + qid)
             require(qid in reviews and reviews[qid]['record_sha256'] == actual,
                     'Archive notice lacks a matching reviewed ID: ' + qid)
+            if notice['issue_type'] == 'INDEPENDENT_REVIEW_FINDING':
+                review = reviews[qid]
+                require(review.get('legal_review', {}).get('verdict') in {
+                            'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'DELETE', 'REPLACE'} or
+                        review.get('legal_review', {}).get('existing_answer_correct') in {
+                            'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
+                        review.get('realism_review', {}).get('verdict') == 'FAIL',
+                        'Independent archive notice lacks a negative or blocked review: ' + qid)
             if notice['issue_type'] in {'INCORRECT_KEY', 'AMBIGUOUS_KEY'}:
                 require(reviews[qid].get('original_answer_status') == notice['issue_type'],
                         'Archive notice does not match answer assessment: ' + qid)

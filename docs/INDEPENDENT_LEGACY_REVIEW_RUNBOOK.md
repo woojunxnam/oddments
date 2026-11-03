@@ -4,6 +4,8 @@
 
 ## 독립성과 입력
 
+`scripts/export_legacy_review_input.py --assignment <assignment> --output <packet>`으로 현재 원문 전용 packet을 먼저 만든다. Packet은 stem·모든 보기·키·보이는 해설 전체를 보존하며 숨은 truth와 원장의 기존 판정 metadata를 제외한다. 원본 전체 객체는 hash 계산 코드의 입력으로만 사용하고 모델에 전체 출력하지 않는다. Packet은 법적 근거 또는 독립성 인증서가 아니다. 금지된 기존 결론이 우발적으로 노출되면 해당 ID의 노출 한계·NOT_ASSESSED/HOLD를 기록하고 별도 실제 fresh 세션으로 재배정한다. 입력을 나중에 정리했다고 이미 발생한 노출을 지우지 않는다.
+
 - 새 실제 감사 세션의 canonical task 이름을 actor_id/session_id에 정직하게 기록한다. Auditor=GPT, auditor_instance는 그 실제 세션을 구분하는 안정된 label이다. 같은 session을 새 파일마다 여러 독립 instance로 부풀리지 않는다. Author/editor가 자기 current content를 independent로 인증하지 않는다.
 - 지정 assignment JSON의 정확한 ID 집합과 record hashes를 사용한다. 모든 원 stem, 모든 보기, 기존 key, core/각 보기 한국어 해설을 직접 읽는다. 보고서나 metadata의 기존 저자 판정을 법적 사실로 사용하지 않는다. 이전 author/independent 보고서 및 후보를 읽어 답을 상속하지 않는다. 필요하면 원 질문 자체의 공식 source URL/authority만 discovery에 사용한다. 원 질문의 `_statement_truth`는 독립 검증 근거가 아니다.
 - 기본4정책 RELEASE_POLICY/AUDIT_WORKFLOW/SOURCE_USE_POLICY/QUESTION_AUTHORING_STANDARD 및 current style profile을 읽는다. AGENTS가 있으면 따른다. 공개 Pre-MPJE/회상/상업 bank 질문은 입력하지 않는다. NABP public formats는 style용이며 법률권위 아님.

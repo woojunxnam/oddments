@@ -47,6 +47,29 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     assert progress['new_questions'] == 18
     assert progress['inventory_is_legal_review'] is False
     assert progress['canonical_independent_audit_this_session'] == 'NOT_RUN'
+    assert progress['notes_units_with_complete_atomic_claim_census'] == 306
+    assert progress['author_atomic_claim_enumeration_complete'] is True
+    assert progress['atomic_claim_census_complete'] is False
+
+
+def test_known_current_failures_cannot_remain_in_default_practice():
+    from build_full_corpus_review import validate_default_review_safety
+    qid = 'MA-EXP-0335'
+    # The final sweep found an actual earlier MAJOR_REWRITE left in defaults.
+    source = json.loads((ROOT/'reports/full-corpus-review/vax05-14-author-review.json').read_bytes())
+    review = next(r for r in source['records'] if r['question_id'] == qid)
+    with pytest.raises(ValueError, match='Uncontained author finding'):
+        validate_default_review_safety([qid], {qid:review}, [])
+    validate_default_review_safety([], {qid:review}, [])
+    for legal, realism in [
+        ({'verdict':'MINOR_EDIT', 'existing_answer_correct':'YES'}, {'verdict':'PASS'}),
+        ({'verdict':'KEEP', 'existing_answer_correct':'AMBIGUOUS'}, {'verdict':'PASS'}),
+        ({'verdict':'KEEP', 'existing_answer_correct':'YES'}, {'verdict':'FAIL'}),
+    ]:
+        audit = dict(question_id=qid, legal_review=legal, realism_review=realism)
+        with pytest.raises(ValueError, match='Uncontained independent finding'):
+            validate_default_review_safety([qid], {}, [audit])
+        validate_default_review_safety([], {}, [audit])
 
 
 @pytest.mark.parametrize('review_file,qid', [
@@ -167,6 +190,7 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
         'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
         'w3-b-1','w3-d-23','w1-a-7',
         'w2-c-1','w2-c-12',
+        'w4-a-19','w4-a-20',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']
@@ -192,6 +216,19 @@ def protected_copy(tmp_path):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(ROOT/path,dest)
+    evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
+    shutil.copytree(ROOT/evidence, tmp_path/evidence)
+    paths = set()
+    for activation_path in (ROOT/'revisions/notes').glob('*-activation.json'):
+        activation = json.loads(activation_path.read_bytes())
+        report = json.loads((ROOT/activation['review_path']).read_bytes())
+        paths.update([activation['review_path'], activation['census_path']])
+        paths.update(s['evidence_path'] for s in report['sources'])
+        if report.get('prior_review'):
+            paths.add(report['prior_review']['path'])
+    for path in paths:
+        dest = tmp_path/path; dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT/path, dest)
     verify(manifest,tmp_path)
     return tmp_path,manifest
 
@@ -221,7 +258,7 @@ def test_census_annotation_migration_cannot_authorize_changed_note_semantics(pro
     path=root/'site/notes/build.json'
     build=json.loads(path.read_bytes());build['content_sha256']='0'*64
     path.write_text(json.dumps(build))
-    with pytest.raises(ValueError,match='cannot authorize a semantic note edit'):
+    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed'):
         verify(manifest,root)
 
 
@@ -230,7 +267,7 @@ def test_census_annotation_migration_cannot_expand_its_export_path(protected_cop
     path=root/'revisions/notes/protected-migration-census-wave8-9.json'
     migration=json.loads(path.read_bytes());migration['path']='notes/guide.json'
     path.write_text(json.dumps(migration))
-    with pytest.raises(ValueError,match='Census annotation migration expands protected scope'):
+    with pytest.raises(ValueError,match='Census annotation migration expands protected scope|Previous census annotation migration changed'):
         verify(manifest,root)
 
 

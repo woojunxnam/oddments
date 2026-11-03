@@ -243,6 +243,14 @@ def main():
                 expect(page.locator('#revision-notice')).to_contain_text('검토 보류')
                 assert hold['legacy_question_id'] not in data['quality_selection']['recommended_ids']
             ok(f'all {len(revision["holds"])} held originals remain reachable with a visible review notice')
+            for hold in revision.get('safety_holds', []):
+                qid = hold['question_id']
+                page.goto(base + 'practice-expansion/#' + qid, wait_until='load')
+                assert diag()['heldForReview'] is True
+                expect(page.locator('#revision-notice')).to_contain_text('검토 보류')
+                assert qid not in data['quality_selection']['recommended_ids']
+            if revision.get('safety_holds'):
+                ok(f'all {len(revision["safety_holds"])} nonlegacy safety holds remain reachable with visible warnings and original keys')
             for notice in revision.get('archive_review_notices', []):
                 for qid in notice['question_ids']:
                     page.goto(base + 'practice-expansion/#' + qid, wait_until='load')
