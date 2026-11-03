@@ -22,7 +22,7 @@
   "new_independent_legal_passes": 0,
   "new_released_questions": 0,
   "report_path": "reports/full-corpus-review/note-wave16-census.json",
-  "report_sha256": "8292160f6108dfaefe6c28db56c19c590bd35d25d5b340b592bf7cc227103c40",
+  "report_sha256": "4746d3764f54927444cb8994a0b59f277f1c83f6c02d62d68fb34661d2f4ba9b",
   "counters": {
     "assigned_units": 14,
     "fully_read_units": 14,
@@ -44,5 +44,54 @@
     "source_body_or_question_edits": 0
   },
   "full_site_generated_drift_check": "NOT_RUN_ROOT_ONLY_GENERATION;starting worktree was stated loaderM/generatedJ",
-  "checks_result": "PASS"
+  "checks_result": "PASS_AUTHOR_ARTIFACT_INTEGRITY_ONLY",
+  "validation_scope": "AUTHOR_ARTIFACT_INTEGRITY_AND_PRESERVATION_ONLY_NOT_INDEPENDENT_COMPLETENESS_OR_LEGAL_PASS",
+  "atomic_claim_census_complete_scope": "AUTHOR_ENUMERATION_ONLY",
+  "independent_completeness_status": "PENDING",
+  "strict_census_validator_checks": {
+    "result": "PASS_EXISTING_STRICT_VALIDATOR_FOR_13_LEGAL_UNITS_ONLY",
+    "validator_path": "scripts/build_full_corpus_review.py",
+    "validator_file_sha256": "28d42f3a1079b1ed910e9619c2011af653e9cd8cd503647fe58c5149dfe6bec9",
+    "validator_function": "validate_note_census",
+    "validator_function_sha256": "394b77daae866d457fa983f0de8630a83366ff5259874f3d6f1133092f41657e",
+    "validator_baseline_commit": "1f45d5abbdf2b2134fbc977f67ccb5c74857bc89",
+    "legal_units_checked": 13,
+    "legal_unit_ids_checked": [
+      "w6-a-10",
+      "w6-a-11",
+      "w6-a-12",
+      "w6-a-13",
+      "w6-a-14",
+      "w6-a-2",
+      "w6-a-4",
+      "w6-a-5",
+      "w6-a-6",
+      "w6-b-8",
+      "w6-b-9",
+      "w6-a-15",
+      "w6-b-17"
+    ],
+    "legal_claims_checked": 260,
+    "canonical_pending_independent_label_units": 14,
+    "full_14_unit_result": "BLOCKED_NONLEGAL_ZERO_CLAIM_EXCEPTION_UNSUPPORTED_IN_BASELINE_STRICT_VALIDATOR",
+    "full_14_unit_exception_type": "ValueError",
+    "full_14_unit_error": "Incomplete census enumeration: w6-b-16",
+    "zero_claim_editorial_unit": "w6-b-16",
+    "zero_claim_editorial_unit_author_inventory_integrity": "PASS_ARTIFACT_BINDING_ONLY_NOT_CANONICAL_VALIDATOR_ACCEPTANCE_OR_INDEPENDENT_CHECK",
+    "zero_claim_editorial_fixed_body_sha256": "7e0131b82b6ac6ee0936fdf4a368fc6e494a2ab6712be43882fd851b47651e29",
+    "zero_claim_editorial_snapshot_bytes_match_body": true,
+    "zero_claim_editorial_inventory_items_checked": 4,
+    "root_validator_exception_implemented_or_verified_by_author": false,
+    "independent_completeness_check": "NOT_PERFORMED_PENDING_FRESH_INDEPENDENT_SESSION",
+    "limitations_ko": "기존 strict validate_note_census는 substantive claim이 하나 이상 있어야 한다고 요구하여 w6-b-16의 비법률4분류/0-claim을 허용하지 않는다. 이 author 기록은13개 법률unit에 기존 validator를 실제 적용한 결과와14개 전체의 실제 거부를 분리한다. 0-claim 본문SHA·snapshot 실제bytes·full-read·분류·4개근거 일치는 artifact binding 범위로 확인했으며 root의 향후 exact-unit 예외 구현/통합 완료 또는 독립 완전성·법률 PASS로 세지 않는다."
+  },
+  "previous_validation_record": {
+    "commit": "7c91f37f456fe8367f2536bd709c176832f116e9",
+    "path": "reports/full-corpus-review/note-wave16-validation.json",
+    "raw_sha256": "764488ba65abbe6252a8c6ebcac77c5c9185e82478cc602d4defb9d351c772fd",
+    "original_checks_result": "PASS",
+    "clarification_ko": "원 PASS는 bespoke author artifact integrity/preservation 검사 결과였다. 기존 strict validate_note_census의 전체14개 통과를 검사하거나 입증하지 않았다. 비법률0-claim 미지원 한계와 표준 pending-independent 라벨 불일치를 원 검증 기록에서 구분하지 않은 부분을 이 후속 기록으로 정정한다."
+  },
+  "original_260_claims_authorities_findings_unchanged": true,
+  "canonical_full_14_unit_acceptance": "BLOCKED_PENDING_ROOT_ZERO_CLAIM_EXCEPTION_SUPPORT_AND_REVALIDATION"
 }
