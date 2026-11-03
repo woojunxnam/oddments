@@ -167,6 +167,24 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    tenth_path=root/'revisions/notes/protected-migration-refill-cancer.json'
+    if tenth_path.exists() and relative=='site/notes/complete-notes.md':
+        tenth=json.loads(tenth_path.read_bytes())
+        require(tenth['baseline_commit']=='c46e0f85fcedd0de468215f90b1112104da9997e',
+                'Unexpected refill/cancer migration base')
+        require(tenth['path']==relative and tenth['baseline_copy']=='revisions/baselines/complete-notes-ce-disclosure.md',
+                'Refill/cancer migration expands protected scope')
+        require(tenth['revision_path']=='revisions/notes/2026-11-03-refill-cancer-final.json',
+                'Unexpected refill/cancer revision')
+        require(tenth['previous_migration_path']=='revisions/notes/protected-migration-ce-disclosure.json',
+                'Unexpected refill/cancer migration parent')
+        require(sha256(safe_file(root,tenth['revision_path']).read_bytes())==tenth['revision_sha256'],
+                'Stale refill/cancer overlay source')
+        require(sha256(safe_file(root,tenth['previous_migration_path']).read_bytes())==tenth['previous_migration_sha256'],
+                'Previous CE disclosure migration changed')
+        require(sha256(current)==tenth['new_sha256'], 'Stale refill/cancer export')
+        current=safe_file(root,tenth['baseline_copy']).read_bytes()
+        require(sha256(current)==tenth['old_sha256'], 'Previous CE disclosure export changed')
     ninth_path=root/'revisions/notes/protected-migration-ce-disclosure.json'
     if ninth_path.exists() and relative=='site/notes/complete-notes.md':
         ninth=json.loads(ninth_path.read_bytes())

@@ -43,10 +43,17 @@ def test_revision_preserves_all_other_units_and_verifies_two_current_bodies():
 
 def test_ce_revision_changes_only_current_disclosure_unit_and_retains_prior_reviews():
     old = {u['id']:u for c in load_notes(revision_id='2026-11-03.counsel-shield-final.1')['chapters'] for u in c['units']}
-    new = {u['id']:u for c in load_notes()['chapters'] for u in c['units']}
+    new = {u['id']:u for c in load_notes(revision_id='2026-11-03.ce-disclosure.1')['chapters'] for u in c['units']}
     assert {uid for uid in old if old[uid] != new[uid]} == {'w1-a-7'}
     assert 'Mandatory Disclosure Form' in new['w1-a-7']['body']
     assert {uid for uid,u in new.items() if 'independent_content_review' in u} == {'w1-a-7','w3-b-1','w3-d-23'}
+
+
+def test_refill_cancer_changes_only_two_current_bodies_and_preserves_prior_reviews():
+    old = {u['id']:u for c in load_notes(revision_id='2026-11-03.ce-disclosure.1')['chapters'] for u in c['units']}
+    new = {u['id']:u for c in load_notes()['chapters'] for u in c['units']}
+    assert {uid for uid in old if old[uid] != new[uid]} == {'w2-c-1','w2-c-12'}
+    assert {uid for uid,u in new.items() if 'independent_content_review' in u} == {'w1-a-7','w3-b-1','w3-d-23','w2-c-1','w2-c-12'}
 
 
 def test_source_hold_annotation_follows_exact_body_and_never_certifies_unreviewed_units():
@@ -101,3 +108,16 @@ def test_rebinding_summary_cannot_cover_unreviewed_card_edit(tmp_path):
     (tmp_path/A).write_bytes(encoded(activation))
     with pytest.raises(ValueError, match='card evidence stale'):
         validate_final_note_review(tmp_path, raw, revision)
+
+
+def test_unreviewed_additional_card_cannot_hide_behind_a_valid_patch_set(tmp_path):
+    activation, report, raw, revision = fixture_review(tmp_path)
+    revision['study_lessons']['LAW-008'] = {'recall':'Unreviewed requirement.'}
+    raw = encoded(revision)
+    activation['revision_sha256'] = report['candidate_sha256'] = hashlib.sha256(raw).hexdigest()
+    report_raw = encoded(report)
+    activation['review_sha256'] = hashlib.sha256(report_raw).hexdigest()
+    (tmp_path/activation['review_path']).write_bytes(report_raw)
+    (tmp_path/A).write_bytes(encoded(activation))
+    with pytest.raises(ValueError,match='requested card scope changed'):
+        validate_final_note_review(tmp_path,raw,revision)
