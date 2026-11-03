@@ -65,8 +65,13 @@
     "schema_path": "schemas/exam_style_profile.schema.json",
     "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
     "schema_file_sha256": "2621267cc27494b44d3ab47d788b305043962286351c193e30d3f2b57b95844e",
-    "style_evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-memo.json",
-    "style_evidence_sha256": "11658aca4229470ed5091be6888719b3ff173c20d6aae28d3b7fbfe3ac2d5046"
+    "style_evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+    "style_evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5",
+    "public_sample_recheck_evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+    "public_sample_recheck_evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5",
+    "public_sample_recheck_raw_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+    "initial_style_evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-memo.json",
+    "initial_style_evidence_sha256": "11658aca4229470ed5091be6888719b3ff173c20d6aae28d3b7fbfe3ac2d5046"
   },
   "governance": [
     {
@@ -288,12 +293,31 @@
       "evidence_sha256": "eda1b3fa5c646b50bb139b276b85f4d82d1f2f8354d616049a0b005b28f08068",
       "raw_payload_sha256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
       "retrieval_provenance": "live HTTPS urllib through inherited proxy with TLS verification"
+    },
+    {
+      "source_id": "nabp-public-samples-same-day-cache",
+      "authority": "NABP public sample format only; not legal authority",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+      "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+      "law_checked_date": null,
+      "style_checked_date": "2026-11-03",
+      "style_checked_at": "2026-11-03T18:55:13.058169+00:00",
+      "effective_date": null,
+      "version": "Official public sample PDF at supplied same-day successful retrieval; no separate printed effective date",
+      "http_status": 200,
+      "status": "READ_SAME_DAY_GENUINE_OFFICIAL_RAW_CACHE",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+      "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5",
+      "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+      "retrieved_at": "2026-11-03T15:59:08.914556+00:00",
+      "retrieval_provenance": "Prior same-day official200 rawcache directly reread now; no claim this actor performed a new live200 retrieval"
     }
   ],
   "source_retrieval_limitations": [
     "Firecrawl returned insufficient credits; request was not run.",
     "Four USP URLs returned403; 9 BUD records are legal NOT_ASSESSED/HOLD even though conditional arithmetic key matches.",
-    "NABP public sample PDF returned403; format and competency pages returned200 and were read; public_style_without_copying remains null rather than PASS.",
+    "Initial live NABP public sample request returned403 and remains recorded. This followup directly reread a verified same-day official200 rawPDF cache and resolved only public_style_without_copying; see separate recheck memo.",
     "No HTTP404 or HTTP200 PageNotFound occurred for the successfully read official legal URLs.",
     "Exact CFR historical commencement dates were not independently reconstructed; current eCFR version through2026-10-30 is recorded distinctly from retrieval.",
     "Policy2026-03 adoption2026-09-03 is recorded as adoption; separate effective date is not printed."
@@ -443,7 +467,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "시작 160, 입고 80, 조제 55, 적법 역유통 15, 실물 168에서 장부 예상잔고 170정이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Expected balance=160+80−55−15=170. 예상수량에서 실물을 뺀 차이는 2 정이다. 이 차이는 조사 시작점이며 그 자체로 theft/significant loss 를 자동 확정하지 않는다.",
@@ -500,13 +524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "시작 160, 입고 80, 조제 55, 적법 역유통 15, 실물 168에서 장부 예상잔고 170정이다. 약국 장부 잔고를 조사 전에 계산하는 업무는 가능하다.",
           "appropriate_drug_context": "CII는 MA perpetual 기록이라는 배경과 직접 관련된다. 특정 성분이 계산 결과를 바꾸지 않아 브랜드는 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 시작 160, 입고 80, 조제 55, 적법 역유통 15, 실물 168에서 장부 예상잔고 170정이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A CII perpetual record begins with 160 tablets. Documented receipts are 80, dispensing is 55, and lawful reverse distribution is 15. There are no other transactions or adjustments. The physical count is 168. 원문은 CII 장부의 시작·입고·조제·역유통·실물값을 놓고 예상 잔고를 네 숫자 보기에서 하나 고르게 한다. 공개 예시의 단일선택 응답 구조와 부합하고, 장부 시나리오·숫자 집합·보기가 공개 예시의 특정 stem이나 보기 배열을 재현하지 않는다. 수량형이라는 공통 형식은 복제로 보지 않는다. 법규 추론 부족 판정은 다른 criterion에서 그대로 유지한다.",
           "jurisprudence_reasoning": "기록의 적법성·조사·신고·조정 권한은 모두 묻지 않고 주어진 입출고를 더하고 뺀 결과 170정만 고른다. CII 장부라는 법적 배경만으로 실질 법규 판단이 생기지 않는다.",
           "authentic_distractors": "실물 168을 장부잔고로 혼동하는 선택지는 실무상 가능하지만 다른 수치는 누락·중복 계상 규칙과 연결된 해설 없이 단지 계산값이 다르다고 설명한다. 보기 전체가 진짜 법적 혼동을 반영한다고 확인할 수 없다.",
           "wording_not_guessable": "정답은 수량 계산을 해야 고를 수 있고 지문이 특정 choice id를 노출하지 않는다.",
@@ -534,6 +558,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -684,7 +717,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "시작 90, 입고 40, 조제 40, 적법 역유통 0, 실물 87에서 장부 예상잔고 90정이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Expected balance=90+40−40−0=90. 예상수량에서 실물을 뺀 차이는 3 정이다. 이 차이는 조사 시작점이며 그 자체로 theft/significant loss 를 자동 확정하지 않는다.",
@@ -741,13 +774,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "시작 90, 입고 40, 조제 40, 적법 역유통 0, 실물 87에서 장부 예상잔고 90정이다. 약국 장부 잔고를 조사 전에 계산하는 업무는 가능하다.",
           "appropriate_drug_context": "CII는 MA perpetual 기록이라는 배경과 직접 관련된다. 특정 성분이 계산 결과를 바꾸지 않아 브랜드는 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 시작 90, 입고 40, 조제 40, 적법 역유통 0, 실물 87에서 장부 예상잔고 90정이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A CII perpetual record begins with 90 tablets. Documented receipts are 40, dispensing is 40, and lawful reverse distribution is 0. There are no other transactions or adjustments. The physical count is 87. 원문은 CII 장부의 시작·입고·조제·역유통·실물값을 놓고 예상 잔고를 네 숫자 보기에서 하나 고르게 한다. 공개 예시의 단일선택 응답 구조와 부합하고, 장부 시나리오·숫자 집합·보기가 공개 예시의 특정 stem이나 보기 배열을 재현하지 않는다. 수량형이라는 공통 형식은 복제로 보지 않는다. 법규 추론 부족 판정은 다른 criterion에서 그대로 유지한다.",
           "jurisprudence_reasoning": "기록의 적법성·조사·신고·조정 권한은 모두 묻지 않고 주어진 입출고를 더하고 뺀 결과 90정만 고른다. CII 장부라는 법적 배경만으로 실질 법규 판단이 생기지 않는다.",
           "authentic_distractors": "실물 87을 장부잔고로 혼동하는 선택지는 실무상 가능하지만 다른 수치는 누락·중복 계상 규칙과 연결된 해설 없이 단지 계산값이 다르다고 설명한다. 보기 전체가 진짜 법적 혼동을 반영한다고 확인할 수 없다.",
           "wording_not_guessable": "정답은 수량 계산을 해야 고를 수 있고 지문이 특정 choice id를 노출하지 않는다.",
@@ -775,6 +808,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -925,7 +967,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "시작 250, 입고 100, 조제 140, 적법 역유통 20, 실물 190에서 장부 예상잔고 190정이다. 예상잔고와 실물이 모두190정이므로 불일치는0이다. core와 모든 보기에서 0 차이를 조사 시작점이라고 반복하는 문구는 불일치가 없는 이 사례에 맞게 고쳐야 한다. key C=190은 유일하다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Expected balance=250+100−140−20=190. 예상수량에서 실물을 뺀 차이는 0 정이다. 이 차이는 조사 시작점이며 그 자체로 theft/significant loss 를 자동 확정하지 않는다.",
@@ -982,13 +1024,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "시작 250, 입고 100, 조제 140, 적법 역유통 20, 실물 190에서 장부 예상잔고 190정이다. 약국 장부 잔고를 조사 전에 계산하는 업무는 가능하다.",
           "appropriate_drug_context": "CII는 MA perpetual 기록이라는 배경과 직접 관련된다. 특정 성분이 계산 결과를 바꾸지 않아 브랜드는 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 시작 250, 입고 100, 조제 140, 적법 역유통 20, 실물 190에서 장부 예상잔고 190정이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A CII perpetual record begins with 250 tablets. Documented receipts are 100, dispensing is 140, and lawful reverse distribution is 20. There are no other transactions or adjustments. The physical count is 190. 원문은 CII 장부의 시작·입고·조제·역유통·실물값을 놓고 예상 잔고를 네 숫자 보기에서 하나 고르게 한다. 공개 예시의 단일선택 응답 구조와 부합하고, 장부 시나리오·숫자 집합·보기가 공개 예시의 특정 stem이나 보기 배열을 재현하지 않는다. 수량형이라는 공통 형식은 복제로 보지 않는다. 법규 추론 부족 판정은 다른 criterion에서 그대로 유지한다.",
           "jurisprudence_reasoning": "기록의 적법성·조사·신고·조정 권한은 모두 묻지 않고 주어진 입출고를 더하고 뺀 결과 190정만 고른다. CII 장부라는 법적 배경만으로 실질 법규 판단이 생기지 않는다.",
           "authentic_distractors": "실물 190을 장부잔고로 혼동하는 선택지는 실무상 가능하지만 다른 수치는 누락·중복 계상 규칙과 연결된 해설 없이 단지 계산값이 다르다고 설명한다. 보기 전체가 진짜 법적 혼동을 반영한다고 확인할 수 없다.",
           "wording_not_guessable": "정답은 수량 계산을 해야 고를 수 있고 지문이 특정 choice id를 노출하지 않는다.",
@@ -1016,6 +1058,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -1166,7 +1217,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day3, 현재 day10; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 50일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 10 이므로 기간 안이면 오늘 이후 50 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -1211,8 +1262,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1223,13 +1274,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day3, 현재 day10; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 50일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day3, 현재 day10; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 50일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 3. Today is day 10 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day3, 현재 day10; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 50일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day10와 첫 배송 day3가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -1257,13 +1308,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0245",
@@ -1407,7 +1467,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day8, 현재 day45; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 15일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 45 이므로 기간 안이면 오늘 이후 15 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -1452,8 +1512,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1464,13 +1524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day8, 현재 day45; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 15일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day8, 현재 day45; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 15일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 8. Today is day 45 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day8, 현재 day45; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 15일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day45와 첫 배송 day8가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -1498,13 +1558,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0246",
@@ -1648,7 +1717,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day20, 현재 day59; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 1일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 59 이므로 기간 안이면 오늘 이후 1 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -1693,8 +1762,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1705,13 +1774,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day20, 현재 day59; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 1일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day20, 현재 day59; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 1일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 20. Today is day 59 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day20, 현재 day59; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 1일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day59와 첫 배송 day20가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -1739,13 +1808,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0247",
@@ -1889,7 +1967,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day40, 현재 day60; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 0일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 60 이므로 기간 안이면 오늘 이후 0 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -1934,8 +2012,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1946,13 +2024,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day40, 현재 day60; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 0일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day40, 현재 day60; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 0일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 40. Today is day 60 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day40, 현재 day60; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 0일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day60와 첫 배송 day40가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -1980,13 +2058,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0248",
@@ -2130,7 +2217,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day5, 현재 day61; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 후 60 일을 넘긴 잔량은 이 ordinary order 의 허용기간을 벗어난다.",
@@ -2175,8 +2262,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2187,13 +2274,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day5, 현재 day61; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day5, 현재 day61; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 5. Today is day 61 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day5, 현재 day61; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day61와 첫 배송 day5가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -2221,13 +2308,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0249",
@@ -2371,7 +2467,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day30, 현재 day70; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 후 60 일을 넘긴 잔량은 이 ordinary order 의 허용기간을 벗어난다.",
@@ -2416,8 +2512,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2428,13 +2524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day30, 현재 day70; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day30, 현재 day70; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 30. Today is day 70 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day30, 현재 day70; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day70와 첫 배송 day30가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -2462,13 +2558,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0250",
@@ -2612,7 +2717,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day15, 현재 day30; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 30일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 30 이므로 기간 안이면 오늘 이후 30 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -2657,8 +2762,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2669,13 +2774,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day15, 현재 day30; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 30일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day15, 현재 day30; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 30일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 15. Today is day 30 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day15, 현재 day30; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 30일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day30와 첫 배송 day15가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -2703,13 +2808,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0251",
@@ -2853,7 +2967,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day10, 현재 day58; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 2일이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 기준 60 일이다. 현재 day 58 이므로 기간 안이면 오늘 이후 2 일이 남는다. First shipment 에서 새로 시작하지 않는다.",
@@ -2898,8 +3012,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2910,13 +3024,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day10, 현재 day58; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 2일이다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day10, 현재 day58; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 2일이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 10. Today is day 58 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day10, 현재 day58; 60일 기준은 주문서 날짜에서 기산하므로 아직 유효하고 남은 날은 2일이다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day58와 첫 배송 day10가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -2944,13 +3058,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0252",
@@ -3094,7 +3217,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "주문서 day0, 첫 배송 day59, 현재 day65; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "Order date 후 60 일을 넘긴 잔량은 이 ordinary order 의 허용기간을 벗어난다.",
@@ -3139,8 +3262,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3151,13 +3274,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "주문서 day0, 첫 배송 day59, 현재 day65; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. 미배송 잔량의 supplier 출고 판단은 실제 등록자 업무이다.",
           "appropriate_drug_context": "Form222 자체가 적용 주문서 경로를 정한다. drug 이름보다 등록자 주문과 환자 처방의 구분이 결정적이다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 주문서 day0, 첫 배송 day59, 현재 day65; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A valid Form 222 is dated day 0. The supplier made its first partial shipment on day 59. Today is day 65 after the order date, and the supplier wants to send the remainder. No special exception applies. 원문은 Form222 주문서 날짜·첫 출고일·현재 경과일로 잔량 배송의 유효기간을 네 문장 보기 중 하나로 판단한다. 공개 예시에서 확인한 단일선택의 명시적 응답지시와 부합한다. 공개 예시의 순서형 기한 비교와 일반적인 기간 주제만 공유하며, 그 약물·처방 경로·나열 순서나 문구를 재현하지 않는다.",
           "jurisprudence_reasoning": "주문서 day0, 첫 배송 day59, 현재 day65; 60일 기준은 주문서 날짜에서 기산하므로 이 주문서의 잔량 배송기간을 넘었다. Form222 stock order와 환자 처방을 구별하고 기산점을 선택해야 한다.",
           "authentic_distractors": "30일 환자처방 기한 오적용, first shipment 재시작, 원주문 만료 판단은 다른 실제 절차·기산점의 혼동에서 나온다.",
           "wording_not_guessable": "현재 day65와 첫 배송 day59가 함께 주어지므로 어떤 날짜가60일 clock를 통제하는지 판단해야 한다. 정답의 길이만으로 두 만료·유효 선택지를 구분할 수 없다.",
@@ -3185,13 +3308,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0253",
@@ -3335,7 +3467,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 450, 분모 9950, 비율 4.523%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 C의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 4.523% 결과와 반대인 5% 초과 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(400+50)/(9500+400+50)×100=4.523%. 지정분자와 분모로 계산한 비율이 5%이하이다. 별도 state/registration/record 요건까지 자동충족된다는 뜻은 아니다.",
@@ -3380,8 +3512,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3392,13 +3524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 450, 분모 9950, 비율 4.523%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 450, 분모 9950, 비율 4.523%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 9,500 controlled-substance dosage units and distributed 400 units counted under the limited distribution exception. A proposed stock transaction would distribute 50 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 450와 분모 9950를 조항에 맞게 정하고 제안 후 4.523%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -3426,6 +3558,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -3576,7 +3717,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 980, 분모 19980, 비율 4.905%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 D의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 4.905% 결과와 반대인 5% 초과 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(900+80)/(19000+900+80)×100=4.905%. 지정분자와 분모로 계산한 비율이 5%이하이다. 별도 state/registration/record 요건까지 자동충족된다는 뜻은 아니다.",
@@ -3621,8 +3762,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3633,13 +3774,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 980, 분모 19980, 비율 4.905%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 980, 분모 19980, 비율 4.905%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 19,000 controlled-substance dosage units and distributed 900 units counted under the limited distribution exception. A proposed stock transaction would distribute 80 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 980와 분모 19980를 조항에 맞게 정하고 제안 후 4.905%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -3667,6 +3808,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -3817,7 +3967,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 251, 분모 5001, 비율 5.019%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 A의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 5.019% 결과와 반대인 5% 이하 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(250+1)/(4750+250+1)×100=5.019%. 연간 distributed/(distributed+dispensed) 비율이 5%를 초과한다.",
@@ -3862,8 +4012,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3874,13 +4024,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 251, 분모 5001, 비율 5.019%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 251, 분모 5001, 비율 5.019%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 4,750 controlled-substance dosage units and distributed 250 units counted under the limited distribution exception. A proposed stock transaction would distribute 1 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 251와 분모 5001를 조항에 맞게 정하고 제안 후 5.019%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -3908,6 +4058,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -4058,7 +4217,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 700, 분모 20700, 비율 3.382%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 B의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 3.382% 결과와 반대인 5% 초과 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(500+200)/(20000+500+200)×100=3.382%. 지정분자와 분모로 계산한 비율이 5%이하이다. 별도 state/registration/record 요건까지 자동충족된다는 뜻은 아니다.",
@@ -4103,8 +4262,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4115,13 +4274,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 700, 분모 20700, 비율 3.382%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 700, 분모 20700, 비율 3.382%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 20,000 controlled-substance dosage units and distributed 500 units counted under the limited distribution exception. A proposed stock transaction would distribute 200 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 700와 분모 20700를 조항에 맞게 정하고 제안 후 3.382%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -4149,6 +4308,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -4299,7 +4467,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 500, 분모 9500, 비율 5.263%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 B의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 5.263% 결과와 반대인 5% 이하 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(400+100)/(9000+400+100)×100=5.263%. 연간 distributed/(distributed+dispensed) 비율이 5%를 초과한다.",
@@ -4344,8 +4512,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4356,13 +4524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 500, 분모 9500, 비율 5.263%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 500, 분모 9500, 비율 5.263%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 9,000 controlled-substance dosage units and distributed 400 units counted under the limited distribution exception. A proposed stock transaction would distribute 100 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 500와 분모 9500를 조항에 맞게 정하고 제안 후 5.263%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -4390,6 +4558,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -4540,7 +4717,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 1400, 분모 31400, 비율 4.459%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 A의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 4.459% 결과와 반대인 5% 초과 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(1200+200)/(30000+1200+200)×100=4.459%. 지정분자와 분모로 계산한 비율이 5%이하이다. 별도 state/registration/record 요건까지 자동충족된다는 뜻은 아니다.",
@@ -4585,8 +4762,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4597,13 +4774,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 1400, 분모 31400, 비율 4.459%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 1400, 분모 31400, 비율 4.459%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 30,000 controlled-substance dosage units and distributed 1,200 units counted under the limited distribution exception. A proposed stock transaction would distribute 200 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 1400와 분모 31400를 조항에 맞게 정하고 제안 후 4.459%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -4631,6 +4808,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -4781,7 +4967,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 450, 분모 8050, 비율 5.590%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 A의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 5.590% 결과와 반대인 5% 이하 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(350+100)/(7600+350+100)×100=5.590%. 연간 distributed/(distributed+dispensed) 비율이 5%를 초과한다.",
@@ -4826,8 +5012,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4838,13 +5024,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 450, 분모 8050, 비율 5.590%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 450, 분모 8050, 비율 5.590%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 7,600 controlled-substance dosage units and distributed 350 units counted under the limited distribution exception. A proposed stock transaction would distribute 100 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 450와 분모 8050를 조항에 맞게 정하고 제안 후 5.590%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -4872,6 +5058,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -5022,7 +5217,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 650, 분모 14650, 비율 4.437%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 C의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 4.437% 결과와 반대인 5% 초과 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(600+50)/(14000+600+50)×100=4.437%. 지정분자와 분모로 계산한 비율이 5%이하이다. 별도 state/registration/record 요건까지 자동충족된다는 뜻은 아니다.",
@@ -5067,8 +5262,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -5079,13 +5274,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 650, 분모 14650, 비율 4.437%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 650, 분모 14650, 비율 4.437%로 5%를 넘지 않는다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 14,000 controlled-substance dosage units and distributed 600 units counted under the limited distribution exception. A proposed stock transaction would distribute 50 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 650와 분모 14650를 조항에 맞게 정하고 제안 후 4.437%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -5113,6 +5308,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -5263,7 +5467,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "제안 후 분자 450, 분모 6450, 비율 6.977%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 보기 D의 해설은 선택하지 않을 항목이라고 표시한 다음 실제 6.977% 결과와 반대인 5% 이하 진술을 그대로 단정한다. 문항 key는 맞지만 이 사례에서 왜 거짓인지 다시 서술해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "(250+200)/(6000+250+200)×100=6.977%. 연간 distributed/(distributed+dispensed) 비율이 5%를 초과한다.",
@@ -5308,8 +5512,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -5320,13 +5524,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "제안 후 분자 450, 분모 6450, 비율 6.977%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다. 연간 집계에 stock 거래를 더해 제한을 확인하는 업무는 가능하다.",
           "appropriate_drug_context": "all controlled-substance dosage units라는 집계단위가 연방5% 결과를 결정한다. 특정 상품명은 필요하지 않다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 제안 후 분자 450, 분모 6450, 비율 6.977%로 5%를 초과한다. 별도 state/등록/기록 충족을 자동 인정하지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For the relevant calendar year, a dispensing practitioner has dispensed 6,000 controlled-substance dosage units and distributed 250 units counted under the limited distribution exception. A proposed stock transaction would distribute 200 additional units. All units use the same proper counting basis; assume no other transactions or exceptions. 원문은 연간 조제·배분량과 새 stock 거래를 놓고5% 예외의 계산결론을 네 문장 보기 중 하나로 선택한다. 공개 예시의 단일선택 구조와 부합하며, 해당 예시의 stem·수치 집합·보기 내용을 복제하지 않는다. dosage-unit 분모와 제한된 예외의 조건은 이 문항의 독립된 법적 판단이다.",
           "jurisprudence_reasoning": "분자 450와 분모 6450를 조항에 맞게 정하고 제안 후 6.977%를5%와 비교하여 제한된 예외의 적용범위를 결정한다.",
           "authentic_distractors": "distributed를 분모에서 빼는 오류와 dollars를 dosage units 대신 쓰는 오류, 반대5% 결론은 실제 예외 계산·다른 거래 기준과의 혼동이다.",
           "wording_not_guessable": "상반된5% 결론이 비슷한 형식으로 제시되어 계산 없이 정답의 표현만으로 고를 수 없다.",
@@ -5354,6 +5558,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -5544,7 +5757,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 14일과 chemical 8일을 동시에 만족하는 최대치는 8일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(14,8)=8 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -5601,13 +5814,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 14일과 chemical 8일을 동시에 만족하는 최대치는 8일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 14일과 chemical 8일을 동시에 만족하는 최대치는 8일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a nonpreserved aqueous, the pharmacist has confirmed an applicable default microbial maximum of 14 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 8 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(14,8)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 8days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 8일을 결정할 수 있다.",
@@ -5635,6 +5848,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -5825,7 +6047,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 14일과 chemical 21일을 동시에 만족하는 최대치는 14일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(14,21)=14 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -5882,13 +6104,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 14일과 chemical 21일을 동시에 만족하는 최대치는 14일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 14일과 chemical 21일을 동시에 만족하는 최대치는 14일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a nonpreserved aqueous, the pharmacist has confirmed an applicable default microbial maximum of 14 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 21 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(14,21)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 21days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 14일을 결정할 수 있다.",
@@ -5916,6 +6138,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -6106,7 +6337,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 20일을 동시에 만족하는 최대치는 20일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(35,20)=20 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -6163,13 +6394,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 20일을 동시에 만족하는 최대치는 20일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 35일과 chemical 20일을 동시에 만족하는 최대치는 20일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a preserved aqueous, the pharmacist has confirmed an applicable default microbial maximum of 35 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 20 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(35,20)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 20days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 20일을 결정할 수 있다.",
@@ -6197,6 +6428,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -6387,7 +6627,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 50일을 동시에 만족하는 최대치는 35일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(35,50)=35 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -6444,13 +6684,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 50일을 동시에 만족하는 최대치는 35일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 35일과 chemical 50일을 동시에 만족하는 최대치는 35일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a preserved aqueous, the pharmacist has confirmed an applicable default microbial maximum of 35 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 50 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(35,50)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 50days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 35일을 결정할 수 있다.",
@@ -6478,6 +6718,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -6668,7 +6917,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 90일과 chemical 60일을 동시에 만족하는 최대치는 60일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(90,60)=60 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -6725,13 +6974,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 90일과 chemical 60일을 동시에 만족하는 최대치는 60일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 90일과 chemical 60일을 동시에 만족하는 최대치는 60일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a nonaqueous oral liquid, the pharmacist has confirmed an applicable default microbial maximum of 90 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 60 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(90,60)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 60days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 60일을 결정할 수 있다.",
@@ -6759,6 +7008,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -6949,7 +7207,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 90일과 chemical 120일을 동시에 만족하는 최대치는 90일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(90,120)=90 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -7006,13 +7264,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 90일과 chemical 120일을 동시에 만족하는 최대치는 90일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 90일과 chemical 120일을 동시에 만족하는 최대치는 90일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a nonaqueous oral liquid, the pharmacist has confirmed an applicable default microbial maximum of 90 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 120 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(90,120)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 120days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 90일을 결정할 수 있다.",
@@ -7040,6 +7298,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -7230,7 +7497,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 180일과 chemical 100일을 동시에 만족하는 최대치는 100일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(180,100)=100 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -7287,13 +7554,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 180일과 chemical 100일을 동시에 만족하는 최대치는 100일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 180일과 chemical 100일을 동시에 만족하는 최대치는 100일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a other nonaqueous dosage form, the pharmacist has confirmed an applicable default microbial maximum of 180 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 100 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(180,100)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 100days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 100일을 결정할 수 있다.",
@@ -7321,6 +7588,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -7511,7 +7787,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 180일과 chemical 200일을 동시에 만족하는 최대치는 180일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(180,200)=180 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -7568,13 +7844,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 180일과 chemical 200일을 동시에 만족하는 최대치는 180일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 180일과 chemical 200일을 동시에 만족하는 최대치는 180일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a other nonaqueous dosage form, the pharmacist has confirmed an applicable default microbial maximum of 180 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 200 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(180,200)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 200days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 180일을 결정할 수 있다.",
@@ -7602,6 +7878,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -7792,7 +8077,7 @@
         ],
         "verdict": "HOLD",
         "finding_ko": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 10일을 동시에 만족하는 최대치는 10일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 조건부 min 계산과 저장 key는 일치하지만 USP 현행 표·storage 분류·정확한 BUD 조항과 효력 버전을 직접 확인하지 못하여 법적 기존답 정확성은 NOT_ASSESSED로 보류한다.",
-        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified; NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": "USP CURRENT PRIMARY TEXT HTTP403; current table/storage/effective version not verified",
         "original_explanation_review": {
           "core": {
             "original_text": "더 짧은 제한을 적용한다: min(35,10)=10 일. Microbial maximum 은 더 짧은 chemical stability 를 넘기는 허가가 아니다. 실제 제품에서는 추가로 더 짧은 제한이 있는지도 확인한다.",
@@ -7849,13 +8134,13 @@
           "appropriate_drug_context": null,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "지문에서 확인되었다고 가정한 microbial 35일과 chemical 10일을 동시에 만족하는 최대치는 10일이다. 현행 USP 원문은 403 때문에 인증하지 못했다. 정확한 제형·용기 stability 자료와 미생물 상한을 함께 검토하는 업무는 가능하다.",
           "appropriate_drug_context": "제형의 수성/비수성과 storage 범주가 현행 USP에 적합한지는403으로 확인하지 못했다. 조건부 arithmetic만 확인했다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. 지문에서 확인되었다고 가정한 microbial 35일과 chemical 10일을 동시에 만족하는 최대치는 10일이다. 현행 USP 원문은 403 때문에 인증하지 못했다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "For a preserved aqueous, the pharmacist has confirmed an applicable default microbial maximum of 35 days under the stated storage conditions. Reliable data for this exact formulation and container support chemical stability for only 10 days. Ingredients expire later; there is no applicable preparation-specific longer-BUD route. 원문은 제시된 microbial maximum과 formulation/container chemical stability를 함께 만족하는 BUD를 네 일수 보기 중 하나로 고른다. 숫자형 단일선택은 공개 예시에서 관찰한 허용 형식과 부합한다. 공개 예시의 특정 내용·수치 집합·문구를 재현하지 않는다. 단순min 판단과 임의 distractor의 기존 현실성 결함 및 USP미확인은 이 스타일 판정으로 해소되지 않는다.",
           "jurisprudence_reasoning": "두 상한이 모두 pharmacist confirmed라고 제공되고 독립 적용범주도 배제되어, 독자는 현행 법규·예외·storage를 고를 필요 없이 min(35,10)만 수행한다.",
           "authentic_distractors": "기본 상한을 무조건 적용하는 혼동은 가능하지만365와 임의의 +7일 수치는 구체적 법적 경로나 검증자료 없이 제시되어 실제 법적 혼동으로 설명되지 않는다.",
           "wording_not_guessable": "longest supported by both stated limits라는 문구와 only 10days에서 두 숫자 중 작은 것을 고르면 된다. 법적 지식 없이도 정답 10일을 결정할 수 있다.",
@@ -7883,6 +8168,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "HOLD",
@@ -8033,7 +8327,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "practitioner 수령 후 20일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "제시된세조건이모두충족된다. 다른 scope/REMS 요건충족은문제에서명시한전제이지이규칙의면제가아니다.",
@@ -8090,13 +8384,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 20일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 20일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 20 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 20일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 20일 및 named patient/registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -8124,6 +8418,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -8274,7 +8577,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "practitioner 수령 후 44일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "제시된세조건이모두충족된다. 다른 scope/REMS 요건충족은문제에서명시한전제이지이규칙의면제가아니다.",
@@ -8331,13 +8634,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 44일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 44일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 44 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 44일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 44일 및 named patient/registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -8365,6 +8668,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -8515,7 +8827,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "practitioner 수령 후 45일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "제시된세조건이모두충족된다. 다른 scope/REMS 요건충족은문제에서명시한전제이지이규칙의면제가아니다.",
@@ -8572,13 +8884,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 45일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 45일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 45 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 45일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 제시된 세 조건 충족이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 45일 및 named patient/registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -8606,6 +8918,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -8756,7 +9077,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 46일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 45일 초과 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "§1306.07(f)(5)는 practitioner receipt 후 45 일이내 named patient 투약을요구한다. 약국조제일이나예약일로시계를바꾸지않는다.",
@@ -8813,13 +9134,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 46일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 46일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 46 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 46일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 46일 및 named patient/registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -8847,6 +9168,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -8997,7 +9327,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 60일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 45일 초과 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "§1306.07(f)(5)는 practitioner receipt 후 45 일이내 named patient 투약을요구한다. 약국조제일이나예약일로시계를바꾸지않는다.",
@@ -9054,13 +9384,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 60일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 60일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 60 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 60일, 처방상 환자 예정, 등록 위치 배송이다. 지배적 판정은 45일 초과이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 60일 및 named patient/registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -9088,6 +9418,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -9238,7 +9577,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 10일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 다른 환자 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "환자별직접배송경로이지 general office stock 또는다른환자의투약재고가아니다.",
@@ -9295,13 +9634,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 10일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 10일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 10 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is a different patient with an otherwise similar treatment plan. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 10일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 10일 및 different patient와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -9329,6 +9668,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -9479,7 +9827,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 30일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 등록 외 배송주소 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "§1306.07(f)(1)의 practitioner DEA 등록주소조건을별도로충족해야한다.",
@@ -9536,13 +9884,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 30일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 30일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 30 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is not the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 30일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 30일 및 not registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -9570,6 +9918,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -9720,7 +10077,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 40일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 다른 환자 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "환자별직접배송경로이지 general office stock 또는다른환자의투약재고가아니다.",
@@ -9777,13 +10134,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 40일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 40일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 40 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is a different patient with an otherwise similar treatment plan. The delivery location is the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 40일, 다른 환자 예정, 등록 위치 배송이다. 지배적 판정은 named-patient 제한이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 40일 및 different patient와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -9811,6 +10168,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -9961,7 +10327,7 @@
         ],
         "verdict": "MINOR_EDIT",
         "finding_ko": "practitioner 수령 후 5일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다. 금지 사례의 permit 선택지 해설이 선택하지 않을 항목 뒤에 제시된 세 조건이 모두 충족된다고 단정하여 실제 지문의 등록 외 배송주소 사실과 충돌한다. 잘못된 적용 문장을 교정해야 한다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "§1306.07(f)(1)의 practitioner DEA 등록주소조건을별도로충족해야한다.",
@@ -10018,13 +10384,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "practitioner 수령 후 5일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다. 환자별 OUD 주사 배송·수령 후 투약 계획은 실제 업무경로다.",
           "appropriate_drug_context": "ScheduleIII narcotic injection/OUD maintenance는 f(2) 경로를 결정하는 실제 약물 맥락이고 브랜드 이름은 별도 법적 판단에 불필요하다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. practitioner 수령 후 5일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "The administering practitioner received a patient-specific Schedule III narcotic injection for OUD maintenance 5 days ago. It was supplied under 21 CFR 1306.07(f), not as general office stock. The planned recipient is the patient named on the prescription. The delivery location is not the location on the practitioner’s DEA registration. All requirements not expressly put at issue, including state authority and applicable REMS, are met. 원문은 환자별 OUD주사의 수령 후 경과일·named patient·DEA등록 배송위치에 따라 네 완전한 문장 보기 중 하나를 고른다. 공개 단일선택 응답 형식과 부합하며, 이 배송·투약 시나리오나 보기 내용은 공개 예시와 재현 관계가 없다. 선택지에서45일 기준을 직접 노출하는 기존 cue/distractor 실패는 별도로 유지한다.",
           "jurisprudence_reasoning": "patient-specific 배송에서 named patient·등록주소·receipt clock의 서로 다른 조건을 구분한다. practitioner 수령 후 5일, 처방상 환자 예정, 등록 외 위치 배송이다. 지배적 판정은 등록 배송주소 조건 위반이다.",
           "authentic_distractors": "오답들은 다른 법적 기한·예외·권한을 주장하기보다 지문이 명시한 unaffected named-patient/location/time 사실을 실패했다고 말한다. 실제 혼동 가능한14일 또는 다른 배송경로와의 선택이 없다.",
           "wording_not_guessable": "모든 시간 선택지가 동일45일을 스스로 제공하며, 지문의 5일 및 not registered location와 일치하는 결론만 남는다. 사실 대조만으로 정답을 추측할 수 있는 강한 cue다.",
@@ -10052,6 +10418,15 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
       "disposition": "NEEDS_REMEDIATION",
@@ -10202,7 +10577,7 @@
         ],
         "verdict": "KEEP",
         "finding_ko": "ISO5 surface 검체 2 CFU/media device는 >3 action level을 넘지 않는다. viable-air >1 표와 혼용하지 않고 다른 site 평균도 쓰지 않는다. 직접 읽은 공식 현행 버전과 지문 사실을 적용하면 저장 key가 유일하다. 의무·허용·금지 또는 기산점의 법적 오류를 발견하지 않았다.",
-        "blocker": "NABP public sample PDF HTTP403; public-style format verified, sample-wording comparison not assessed",
+        "blocker": null,
         "original_explanation_review": {
           "core": {
             "original_text": "ISO5 surface action level 은 >3. 결과 2 는 초과하지않는다. 동일값을>로읽지않는다.",
@@ -10247,8 +10622,8 @@
         "logic_scope_ko": "모두 SBA, affirmative polarity, 정확히 한 선택지가 독립 계산/현재 공식규칙에 부합한다. INCORRECT/SATA는 본 배정에 없음. 조건부 BUD는 법적 endorsement와 분리한다. 명시하지 않은 사실·향후조제량·면제를 보태지 않았다."
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -10259,13 +10634,13 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "practice_plausibility": "ISO5 surface 검체 2 CFU/media device는 >3 action level을 넘지 않는다. viable-air >1 표와 혼용하지 않고 다른 site 평균도 쓰지 않는다. 유효하게 채취한 surface 검체 수치를 Board 표와 해석하는 업무는 가능하다.",
           "appropriate_drug_context": "sterile pharmacy, ISO5, surface, CFU/device는 서로 다른 규제 표를 고르는 데 필요하며 성분명은 결과를 바꾸지 않는다.",
           "not_schedule_flashcard": "단순 약물의 schedule 명칭 맞추기를 묻지 않는다. ISO5 surface 검체 2 CFU/media device는 >3 action level을 넘지 않는다. viable-air >1 표와 혼용하지 않고 다른 site 평균도 쓰지 않는다.",
-          "public_style_without_copying": "공개 NABP format/competency 실문서와 selected response·약국 상황 구조는 직접 대조하여 형식준수를 확인했다. 그러나 공개 sample PDF 요청이403이므로 sample 원문 비복제 비교는 미실시이며 이 복합 criterion은 미평가로 남긴다. Pre-MPJE·회상·상업문항은 접근하거나 입력하지 않았다.",
+          "public_style_without_copying": "A Massachusetts sterile pharmacy receives an ISO Class 5 surface sample result of 2 CFU per media device. This is one validly collected sample, not a pooled result. Consider only whether this result exceeds the current Board policy’s action level for this sample type. 원문은 ISO5 surface 2CFU/media device라는 단일검체를 Board action-level 표로 해석하고 네 문장 보기 중 하나를 고른다. 공개 예시의 단일선택 구조와 부합하고, 환경검체·단위·ISO등급·해석 보기의 특정 문구는 공개 예시의 stem/보기를 재현하지 않는다.",
           "jurisprudence_reasoning": "ISO5의 surface 표를 viable-air 표와 구별해2 CFU가 >3인지 판단하고 미초과를 전체 무균적합으로 확대하지 않아야 한다.",
           "authentic_distractors": "덜 깨끗한 ISO class 표 대입과 site 평균으로 excursion을 가리는 방식은 monitoring 해석 오류이다. 반대 초과결론은 viable-air >1과의 혼동에 해당할 수 있다.",
           "wording_not_guessable": "지문은 숫자2만 주고 surface >3 기준을 직접 제공하지 않는다. sampletype/ISO 표 지식이 없으면A와B 중 어느 것이 맞는지 결정할 수 없다.",
@@ -10293,13 +10668,22 @@
           "canonical_tfidf_evidence_sha256": "4538d2cdd5ceecff7cf54dfaae321fe3f549c8dcd5760c76924d3e726b9d768e",
           "top3_candidates_read_scope": "Only nearest top1 was directly read, not all top3; Jaccard top1 originals were also read.",
           "semantic_verdict": "No automatic failure from archive siblings; no declaration that numeric similarity alone proves semantic duplication."
+        },
+        "public_style_evidence_binding": {
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "MPJE Sample Questions, page1: introductory limitation and Multiple-Choice, Multiple-Response, Ordered-Response format panels; full page privately read, no sample stem/options retained here",
+          "reviewed_at": "2026-11-03",
+          "retrieval": "SAME_DAY_OFFICIAL_RAW_CACHE_DIRECT_REREAD",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+          "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5"
         }
       },
-      "disposition": "HOLD",
-      "safe_hold_recommended": true,
+      "disposition": "INDEPENDENT_ASSESSED",
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "required_next_action_ko": "공개 형식비교와 별도로 sample 원문비교를 허용된 공개 경로에서 확인한 뒤 public_style_without_copying criterion을 새로 평가한다. 현재 판정을 canonical admission/release 증거로 사용하지 않는다."
+      "required_next_action_ko": "이번 legal+realism 결과를 independent-legacy assessment로만 원장에 등록한다. canonical admission/release 증거로 사용하지 않는다."
     }
   ],
   "summary": {
@@ -10315,11 +10699,12 @@
     },
     "realism_verdicts": {
       "FAIL": 21,
-      "NOT_ASSESSED": 19
+      "PASS": 19
     },
     "dispositions": {
       "NEEDS_REMEDIATION": 21,
-      "HOLD": 19
+      "INDEPENDENT_ASSESSED": 10,
+      "HOLD": 9
     },
     "conditional_key_matches": 9,
     "verified_official_rule_key_matches": 31,
@@ -10330,12 +10715,25 @@
     "full_required_original_scope_directly_read": "PASS",
     "independent_expected_keys_recomputed_without_statement_truth": "PASS:31 primary-supported;9 conditional only",
     "every_choice_authority_binding": "PASS, including explicit blocked USP binding",
-    "ten_realism_criteria_per_record": "PASS; null retained for unverified USP category context and403-blocked public sample wording comparison",
+    "ten_realism_criteria_per_record": "PASS: all40 public-style criteria resolved by actual same-dayPDF reread; USP category context null retained in9 records",
     "nearest_canonical_and_current_public_originals": "RUN: measured nearest and actual top1 original read",
     "repository_full_qa": "NOT_RUN: audit report/evidence only; no content or shared generated mutations",
     "canonical_audit_validation": "NOT_RUN: intentionally not a canonical audit",
     "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/validation.json",
-    "evidence_sha256": "eae15af3bab3019f1bee97a1b6d3c6a61c361a9028a3bb8aceac739932900618"
+    "evidence_sha256": "96543cefff5e2b7c44ee6cf6c565421b62cd1005dce5f13183deb729db507805"
   },
-  "completed_at": "2026-11-03T18:31:42.593155+00:00"
+  "completed_at": "2026-11-03T18:55:50.134265+00:00",
+  "followup_review": {
+    "scope": "public_style_without_copying criterion only; all40 original stems and every choice directly reread against official public sample PDF",
+    "reviewed_at": "2026-11-03",
+    "reviewed_at_utc": "2026-11-03T18:55:13.058169+00:00",
+    "actual_auditor_instance_unchanged": true,
+    "new_independent_instance_credit": 0,
+    "previous_report_commit": "624aae2fef5b6882dd0f7141e340e0613312c0f1",
+    "previous_report_sha256": "a592f4cfbadd7629ce33c8d33febec523f3bd2e3da9440ae1ba7f8ac716ea5e6",
+    "same_day_pdf_raw_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+    "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-c/public-style-same-day-cache-recheck.json",
+    "evidence_sha256": "0b64dcd2467b29f81042294996a7b82cf981c8e566ca32470199679fa3e3f7d5",
+    "existing_legal_verdicts_and_other_realism_criteria_preserved": true
+  }
 }
