@@ -264,7 +264,7 @@ def test_census_annotation_migration_cannot_authorize_changed_note_semantics(pro
     path=root/'site/notes/build.json'
     build=json.loads(path.read_bytes());build['content_sha256']='0'*64
     path.write_text(json.dumps(build))
-    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed'):
+    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed|Independent-note annotation cannot authorize semantic note changes'):
         verify(manifest,root)
 
 
