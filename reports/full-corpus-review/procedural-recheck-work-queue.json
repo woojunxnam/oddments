@@ -9,14 +9,47 @@
         "MA-CASE-0401": "28bf9b9552dc20ff3380603922ba1b1979572ce29eb1d4d6f89fb31acb23e692",
         "MA-CASE-0441": "ba73132e16f46975855f121d8905e4ff7e806df4f3d56b6604ad4dd9fcb819c9"
       },
-      "status": "LEASED",
+      "status": "INTEGRATED",
       "attempt": 1,
       "worker_branch": "mission/review-independent-legacy-procedural-bb21ae8b81dcccc6-attempt-1",
       "created_at": "2026-11-03T23:15:54.692767+00:00",
       "stage": "independent-legacy",
       "worker": "/root/independent_procedural_retry",
       "lease_until": "2026-11-04T02:15:54.754725+00:00",
-      "lease_token": "d501b38fdc204de89374cdf838bfed003037986dbab5ceca6921c199959793e8"
+      "lease_token": "d501b38fdc204de89374cdf838bfed003037986dbab5ceca6921c199959793e8",
+      "result": {
+        "stage": "independent-legacy",
+        "independent_of_authors": true,
+        "auditor": "GPT",
+        "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+        "actor_provenance": {
+          "actor_id": "/root/independent_procedural_retry",
+          "session_id": "/root/independent_procedural_retry",
+          "identity_basis": "Actual fresh delegated session canonical task name and exact assignment worker; not a renamed previous author/auditor session. Same identity used for both records."
+        },
+        "question_hashes": {
+          "MA-CASE-0401": "28bf9b9552dc20ff3380603922ba1b1979572ce29eb1d4d6f89fb31acb23e692",
+          "MA-CASE-0441": "ba73132e16f46975855f121d8905e4ff7e806df4f3d56b6604ad4dd9fcb819c9"
+        },
+        "worker_commit": "1476f4664e81e125e42ac3db98e5fc6e879e4bf7",
+        "results": [
+          {
+            "question_id": "MA-CASE-0401",
+            "disposition": "NEEDS_REMEDIATION",
+            "evidence_path": "reports/full-corpus-review/independent-procedural-retry-review.json",
+            "evidence_sha256": "4d38207f9bfb48aff65cb8871dd6225c34ae90616686db8921b400cfe2d7e2c4"
+          },
+          {
+            "question_id": "MA-CASE-0441",
+            "disposition": "NEEDS_REMEDIATION",
+            "evidence_path": "reports/full-corpus-review/independent-procedural-retry-review.json",
+            "evidence_sha256": "4d38207f9bfb48aff65cb8871dd6225c34ae90616686db8921b400cfe2d7e2c4"
+          }
+        ]
+      },
+      "submitted_at": "2026-11-03T23:28:19.673297+00:00",
+      "integrated_commit": "f7d42be56cad715ce70504918986f72ad111fc95",
+      "integrated_at": "2026-11-03T23:28:20.335967+00:00"
     }
   ],
   "events": [
@@ -33,6 +66,18 @@
       "job_id": "review-independent-legacy-procedural-bb21ae8b81dcccc6",
       "worker": "/root/independent_procedural_retry",
       "attempt": 1
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-03T23:28:19.673297+00:00",
+      "job_id": "review-independent-legacy-procedural-bb21ae8b81dcccc6",
+      "result_sha256": "9b9a140757c209059a999330b1e19672c7909688e2a82703cbe4503054767d65"
+    },
+    {
+      "kind": "INTEGRATE",
+      "at": "2026-11-03T23:28:20.335967+00:00",
+      "job_id": "review-independent-legacy-procedural-bb21ae8b81dcccc6",
+      "commit": "f7d42be56cad715ce70504918986f72ad111fc95"
     }
   ],
   "procedural_recheck_scope": {
@@ -75,6 +120,10 @@
         "20261103-wave4-2",
         "20261103-wave4-worker-3"
       ]
+    },
+    "result_envelope": {
+      "path": "reports/full-corpus-review/independent-procedural-retry-result.json",
+      "raw_sha256": "b3c4836ce97770bc1c4df3b9e631f9a84ea3fb2253ded5c2c4ea091597902b31"
     }
   }
 }
