@@ -16,6 +16,24 @@ from notes_independent_metadata import load_metadata, notices_for_units
 from build_ultimate_notes import independent_notice_html, independent_notice_markdown
 
 
+def test_second_integrated_cohort_preserves_new_omissions_and_official_source_blockers():
+    reviews=load_metadata(ROOT)
+    p=reviews['progress']
+    assert (p['processed_units'],p['complete_units'],p['omissions_found_units'])==(40,34,6)
+    assert (p['legal_keep_units'],p['legal_hold_units'],p['source_blocked_units'])==(27,11,2)
+    assert p['assessed_claims']==1014
+    assert p['canonical_release_credit']==p['question_audit_credit']==0
+    for uid in ['w1-c-1','w1-c-3','w2-a-2']:
+        unit=reviews['units'][uid]
+        assert unit['completeness']=='OMISSIONS_FOUND' and unit['requires_review']
+        assert unit['omissions'] and '누락' in unit['notice']
+    for uid in ['w1-b-12','w2-a-8']:
+        unit=reviews['units'][uid]
+        assert unit['legal_status']=='SOURCE_BLOCKED' and unit['requires_review']
+        assert '근거를 확인하지 못한' in unit['notice']
+    assert reviews['units']['w2-a-10']['legal_status']=='LEGAL_HOLD'
+
+
 @pytest.fixture
 def actual_reports(tmp_path):
     """Capture real C/F report bytes in a portable, synthetic integration checkpoint.

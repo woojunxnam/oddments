@@ -48,7 +48,7 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     assert progress['inventory_is_legal_review'] is False
     assert progress['canonical_independent_audit_this_session'] == 'NOT_RUN'
     assert progress['notes_units_with_author_atomic_claim_enumeration_records'] == 306
-    assert progress['notes_units_with_complete_atomic_claim_census'] == 17
+    assert progress['notes_units_with_complete_atomic_claim_census'] == 34
     assert progress['author_atomic_claim_enumeration_complete'] is True
     assert progress['atomic_claim_census_complete'] is False
 

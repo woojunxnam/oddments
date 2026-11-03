@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 20/306절. 누락 지적 3절 · 법규 보류 7절 · 독립 검토의 근거 미확인 3명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 40/306절. 누락 지적 6절 · 법규 보류 11절 · 독립 검토의 근거 미확인 5명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -941,6 +941,10 @@ Policy는 ‘handling’을 아직 filled, verified, bagged 또는 completed-pre
 ## 특수 업무권한을 일반 면허와 분리한다
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-b-review.json)
+
+> - CurrentCMR8금지,Scope/VaccinePolicy허용,105CMR700.004(B)(6)의명시적technician조건부허용을 모두 직접읽었다. 좁은현행DPH경로는확인하지만 Board§8의금지문구가형식적으로폐지/적용제외된정확한공식해석까지독립확정하지못했다. 두문서중하나를읽지않거나폐지됐다고단정하지않고이적용관계는SOURCE_BLOCKED로남긴다. — 현재247CMR8의blanketadministration금지와105CMR700/Board-DCP의narrowvaccine허용의정확한공식적용관계·8조항의폐지/면제선언을독립확정하지못함. Narrow700B6/currentpolicy의존재는확인했으나그존재만으로CMR8공식폐지를가정하지않음.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave4-census.json)
 
@@ -978,6 +982,10 @@ Non-resident pharmacist의 Massachusetts 환자 대상 cognitive services는 원
 
 ## Pharmacy license와 controlled-substance registration
 
+
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-b-review.json)
+
+> - CENSUS_OMITTED_EXISTING_BODY_PROPOSITION: actualbody는 “개업 approval후1 calendar year”를 “Drug Store license의유효기간1년”으로바꾸지말라고명시한다. 기존claim022/023은개업기한/서면허가대안만열거하며면허유효기간과의별도구별명제는없다. 실제§6.04(7)의개업clock과§6.05(2)의odd-year12/31expiry를독립대조하여이차이를확인했다. 법령에만있는새조건을요구하거나claim개수차이로만들어진누락이아니며authorcensus는수정하지않았다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave4-census.json)
@@ -1049,6 +1057,16 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 
 ## Manager of Record와 designated PIC
 
+
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-c-review.json)
+
+> - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고, 이 inventory 자체를 Board로 제출하지 않는다고 policy가 설명한다.”는복귀inventory에도서명이필요하고policy가이를설명한다고진술한다.배정032는복귀때두MOR가inventory를수행한다는내용이고,029/031은인계inventory의서명·보관/비제출이다.‘복귀inventory의필수서명’이라는추가행위는명시적으로열거되지않았다.단순문장분절수차이가아니라수행과서명의법적의무차이다.
+
+> - residentMOR의MA등록요건을없애는note는아니다.다만MA면허전nonresidentinterimPIC의통합적합법운영범위는policy특수note와MAlicensedPIC규정사이에서확정하지못했다. — Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다.
+
+> - 현재두공식원문이30/100의포함경계에서서로다름을실제로확인했다.어느문구가정확한30일/100일사례의통합정답인지Board해석은확보하지못했다. — 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다.
+
+> - 90일formalapplication과14일notification,5일interim/promptformal은서로다른행동이다.무조치90일은지지되지않으나promptly와최대90일의통합단일기한은이자료만으로확정하지않았다. — 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
@@ -1346,6 +1364,14 @@ MA에 약을 보내는 nonresident pharmacy는 해당 예외 외에는 MA practi
 ## Schedule별 핵심 약물 지도
 
 
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-e-review.json)
+
+> - 본문 “Buprenorphine은 OUD 치료와 일부 pain 제품의 용도가 다르며, 제품 형태와 투약 경로가 달라도 처방 목적·허가사항·특수 공급 규칙을 별도로 확인”하는 법적 제품/공급경로 경계가 census에서 빠졌다.021은CIII분류뿐이고020은methadone경로여서 이를 포함하지 않는다.본문에없는구체용량을추가하는누락판정이아니다.
+
+> - 본문 “schedule이 낮다는 이유로 일반적인 처방 적법성·환자안전 의무가 약해지는 것도 아니다”라는 실체적 공통의무가 census에서 빠졌다.004는CIresearch와ordinaryII–Vretail경로구별,016은CIIrefill금지,040/041은분류/PMP대상구별이므로lower-schedule에서도남는legitimacy/안전의무를직접포함하지않는다.다른unit의유사명제가이unit의미열거를대신하지않는다.
+
+> - (ii)는 active nonnarcotic ingredient의 recognized therapeutic amount를 요구하지만(i)는 equal-or-greater isoquinoline alkaloid of opium의 별도 경로다. 현재 statement의 “그 Schedule III codeine mixture”는(ii)에 한정되지 않고,나중에검사대상인authorcitationcontext만추가확인하니026·027모두(i)를인용했다.(i)의대체조성과맞지않는non-narcotic필수단정및잘못된인용이다. 본문의 “등 법정 조성 조건”보다 좁고 단정적인 census 범위를 확정할 수 없다. — (e)(1)(ii) 경로로 명시적으로 한정하거나(i)의 대체 조성을 보존해야 한다. 본문에없는 상세대체성분의 미열거를 본문→census 누락으로 새로 세지는 않는다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
 
@@ -1605,6 +1631,10 @@ Pharmacy가 받은 처방을 수정·보완할 수 있는 범위와, original si
 ## Massachusetts ePrescribing exceptions
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-f-review.json)
+
+> - 721.070(A)(11)의2025기한과Department extension 가능성은 확인했다. Exa 공식출처발견검색 및DPH ePrescribing index를 직접 읽었지만2026연장결정 원문을 확보하지 못했다. 본문의 일괄인증 거부는 신중한 한계표시이며 내용오류가 아니다; 현행 blanket 적용관계는 미검증으로 보존한다. — 2026년현재LTCF일괄예외를입증할Department extension결정의공식원문·scope·시행기간미확보.721.070(A)(11)의과거기한및연장가능성만확인했다.본문의신중한비인증은오류가아니며보류는미확인적용관계에한정한다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
 
@@ -1635,6 +1665,10 @@ Otherwise valid paper/oral prescription을 받은 pharmacist는 그것이 어떤
 
 ## Prescription changes and additions
 
+
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-f-review.json)
+
+> - 2024revPolicy2018-01의 may-add/office-should-notify와2018circular의 must-contact-confirmation 문구를 각각 직접 읽었다. 본문의 단독기재 단정을 피하는 제한 자체는 잘못이 아니지만 두지침의 현행 적용관계·우선순위를 확정할 별도공식설명은 확보하지 못해 보류한다. — Policy2018-01(2024rev)III.A.ii.b와DCP18-10-104(2018)p2finalbullet의현행적용관계/대체여부를확정할공식설명미확보.두문구를직접확인했지만추가가정으로우선순위해결하지않는다.본문의무확인단독기재거부자체를잘못된명제로분류하지않는다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
