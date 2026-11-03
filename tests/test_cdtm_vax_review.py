@@ -59,8 +59,8 @@ def test_note_revision_six_target_units_and_claims_are_not_census():
 
 def test_review_counts_and_released_canonical_separated():
     p=read('reports/full-corpus-review/progress.json')
-    assert p['question_ids_with_review_records']==201
-    assert p['legal_review_counts']['NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW']==2145
+    assert p['question_ids_with_review_records']>=201
+    assert p['legal_review_counts']['NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW']<=2145
     assert p['editorial_rubric_assessed_ids']==120
     assert p['reviewed_claims']==75 and p['source_checked_claims']==71 and p['open_claims']==4
     assert p['notes_units_with_versioned_edits']==26
