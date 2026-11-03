@@ -39,6 +39,8 @@ def test_fixed_first_then_ledger_based_nonsequential_batches(tmp_path):
     assert list(state['jobs'][0]['question_hashes']) == queue.FIRST
     assert queue.plan(state, ledger, tmp_path, batches=4, at=NOW) == []
     state['jobs'][0]['status'] = 'INTEGRATED'
+    for qid in queue.FIRST:
+        ledger[qid].update(legal_review_status='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT', checked_at=NOW)
     ledger['MA-EXP-0001']['legal_review_status'] = 'AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
     created = queue.plan(state, ledger, tmp_path, batches=4, at=NOW)
     assert len(created) == 1
@@ -48,6 +50,8 @@ def test_fixed_first_then_ledger_based_nonsequential_batches(tmp_path):
 def test_distinct_workers_receive_disjoint_assignments(tmp_path):
     state, ledger = initial(tmp_path)
     state['jobs'][0]['status'] = 'INTEGRATED'
+    for qid in queue.FIRST:
+        ledger[qid].update(legal_review_status='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT', checked_at=NOW)
     queue.plan(state, ledger, tmp_path, batches=4, size=1, at=NOW)
     first = queue.claim(state, 'one', at=NOW)
     second = queue.claim(state, 'two', at=NOW)
@@ -210,3 +214,11 @@ def test_real_worktree_matches_assigned_branch_and_is_idempotent(tmp_path):
     queue.prepare_worktree(state, job['job_id'], job['lease_token'], root, destination, NOW)
     with pytest.raises(ValueError, match='another worker'):
         queue.prepare_worktree(state, job['job_id'], job['lease_token'], root, root, NOW)
+
+
+def test_integrated_manifest_without_authoritative_review_cannot_hide_unreviewed_ids(tmp_path):
+    state, ledger = initial(tmp_path)
+    state['jobs'][0]['status'] = 'INTEGRATED'
+    with pytest.raises(ValueError, match='lack authoritative review credit'):
+        queue.plan(state, ledger, tmp_path, batches=4, at=NOW)
+    assert len(state['jobs']) == 1
