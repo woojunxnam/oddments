@@ -126,8 +126,8 @@ def test_author_provenance_uses_each_source_and_never_inherits_family_review():
         assert row['checked_at']=='2026-10-30'
         assert row['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
         assert row['reviewer_provenance']['independent'] is False
-    # Next unreviewed vaccination family must still NOT inherit a review by proximity.
-    for index in range(345,349):
+    # Next unreviewed PUB05 family must still NOT inherit a review by proximity.
+    for index in range(385,389):
         row=rows[f'MA-EXP-{index:04d}']
         assert row['checked_at'] is None
         assert row['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
