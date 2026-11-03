@@ -17,7 +17,10 @@
     "original_stored_key_read_as_required_not_proof": true,
     "original_statement_truth_used_as_proof": false,
     "incidental_exposure_ko": "원 질문 0201 전체 JSON 출력에 _statement_truth 및 author source metadata가 함께 표시되었으나 정답 증거로 사용하지 않았다. 이후 직접 읽기는 stem/options/key/explanation/authority discovery로 제한했다. 파일 검색에서 무관한 문서의 리뷰 요약 snippet이 노출됐으나 할당 문항에 대한 이전 audit report·수정 후보를 열거나 결론을 상속하지 않았다. 공개 bank의 기존 published original은 duplicate 비교용으로만 읽었다.",
-    "number_of_independent_instances": 1
+    "number_of_independent_instances": 1,
+    "prior_report_exposure_scope_ko": "이전 author/independent 보고서를 열지 않았다는 최초 선언은 이 세션의 최초 fresh 평가를 시작하기 전과 다른 저자/감사자의 자료에 관한 것이다. 이번 명시적 후속 요청에서는 같은 instance가 자신의 앞선 보고서를 다시 열어 미확인 public-style criterion만 보완했다. 이를 새로운 독립 instance로 세지 않으며 다른 저자/감사자의 결론은 읽지 않았다.",
+    "self_prior_assessment_reopened_for_authorized_style_supplement": true,
+    "other_author_or_auditor_reports_opened_for_supplement": false
   },
   "canonical_audit": false,
   "canonical_release_credit": 0,
@@ -308,6 +311,34 @@
       },
       "extracted_text_path": "reports/full-corpus-review/evidence/independent-phase1-b/fr-transfer-2023.txt",
       "extracted_text_sha256": "0599ad264f57b3078a803d3eba0c8f36be102951b0c29d201146dd499b4e4361"
+    },
+    {
+      "source_id": "nabp-public-samples-same-day-cache-read",
+      "authority": "NABP public sample formats; informational only",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+      "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+      "coverage": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+      "law_checked_date": null,
+      "style_checked_date": "2026-11-03",
+      "effective_date": null,
+      "version": "PDF creation/modification metadata 2020-06-30; official URL path 2020/07; no separate edition/effective statement confirmed",
+      "effective_date_limitation_ko": "시험 법규가 아닌 공개 형식 예제다. PDF metadata 날짜·경로·조회일을 법률 시행일로 쓰지 않는다.",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+      "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+      "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+      "retrieval_provenance": {
+        "method": "same-day official raw cache supplied by root; auditor freshly read raw PDF text and rendered page",
+        "original_retrieved_at": "2026-11-03T15:59:08.914556+00:00",
+        "original_http_status": 200,
+        "original_resolved_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+        "original_metadata_path": "/workspace/oddments/reports/full-corpus-review/evidence/independent-wave5/nabp-sample.json",
+        "original_metadata_sha256": "d8633f4a23ad6fa6b5e69e9c6cb0bf3925a76a0c531f3114588f2eb6ed2b4964",
+        "fresh_live_retrieval_by_this_auditor": false
+      },
+      "legal_authority_allowed": false,
+      "sample_question_text_redistributed": false,
+      "authority_level": "OFFICIAL_INFORMATIONAL"
     }
   ],
   "blocked_sources": [
@@ -355,7 +386,7 @@
       "content_verified": false
     }
   ],
-  "source_limitations_ko": "공식 controlling law 8개 source는 실제 본문을 읽었다. eCFR는 조회 당일 페이지가 표시하는 2026-10-30 editorial currency로 고정했다. Massachusetts PDF 인쇄일·정책 채택일·게시일은 commencement와 구별했다. NABP 403/credits 실패는 law나 style 확인에 쓰지 않았다. 본 보고서에서 vendor/USP 전문은 조회·재배포하지 않았고 protected exam/commercial bank는 입력하지 않았다.",
+  "source_limitations_ko": "공식 controlling law 8개 source의 실제 본문을 앞선 동일 세션에서 읽었다. eCFR는 당시 2026-10-30 editorial currency로 고정했으며 Massachusetts 문서 판본일·채택일·게시일은 commencement와 구별했다. 최초 NABP 403 세 건과 Firecrawl credits 미실행 기록을 보존했다. 후속으로 HTTP200으로 같은 날 수집된 official public sample raw PDF의 SHA를 확인하고 이 세션에서 본문과 1페이지 렌더링을 새로 읽어 40개 현재 stem/보기와 대조했다. 새 live retrieval로 표기하지 않으며 다른 미조회 URL을 확인했다고 주장하지 않는다. 샘플은 법률권위나 내용 전체의 대표성이 아니며, raw PDF·sample 질문 전문은 commit하지 않고 URL/raw SHA/구획/직접 작성한 관찰만 보존한다. Protected Pre-MPJE·회상·상업 bank는 입력하지 않았다.",
   "read_originals_evidence": {
     "path": "reports/full-corpus-review/evidence/independent-phase1-b/read-originals-snapshot.json",
     "sha256": "a4e56d236758d2c64720ab83c6c19c2cdd111c9765b0b43a061d322176af01d9"
@@ -375,7 +406,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "d05c4a9017389a1435c9366ac978bcec17e143fb98980f8de63004b27c90ee8b"
+        "read_snapshot_sha256": "d05c4a9017389a1435c9366ac978bcec17e143fb98980f8de63004b27c90ee8b",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "amphetamine; non-opioid CII; single-fill ceiling 90일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -582,8 +614,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -594,7 +626,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "amphetamine를 non-opioid CII 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -606,12 +638,10 @@
           "appropriate_drug_context": "amphetamine의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0160, MA-Q-0090, MA-CASE-0200, MA-CASE-0199의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. amphetamine의 단일조제 ceiling을 하나의 수치 보기로 고르는 사례다. 원 공개 예제의 응답 방식과 일반적인 숫자 보기 형태는 공유하지만 적용 상황·질문 목적·보기 집합은 다르다. 약명 일부가 공개 자료에 등장한다는 사실을 문구 복제로 보지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -651,14 +681,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0202",
@@ -674,7 +714,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "4c20dee43de44b6e1c58e62f7be2e25080a825d5fb1f38d2a1ea409487f065cb"
+        "read_snapshot_sha256": "4c20dee43de44b6e1c58e62f7be2e25080a825d5fb1f38d2a1ea409487f065cb",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "buprenorphine for OUD; OUD treatment; single-fill ceiling 90일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -893,7 +934,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": false,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "buprenorphine for OUD를 OUD treatment 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -905,12 +946,10 @@
           "appropriate_drug_context": "buprenorphine for OUD의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "MA-Q-0024의 실제 stem와 모든 보기를 읽었다. buprenorphine OUD 처방의 90일 단일조제 허용이라는 약물·적응증·수량·결정이 동일하다. 숫자 보기가 있다는 이유가 아니라 실제 같은 법적 결정과 핵심 사실을 반복한다. 현재 assigned item이 recommended 기본 목록에 없다는 점은 완화 맥락으로 기록하나 canonical item과 사실·결정·distractor 구조가 같은 독립적인 중복은 남는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. OUD 치료 buprenorphine의 수량 상한을 단일선택으로 묻는다. 공개 샘플의 자격 갱신·약물 분류·순서 배열 사례 어느 것의 stem/보기 구성도 재현하지 않는다. canonical bank와의 별도 의미 중복 FAIL은 그대로 남는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -950,14 +989,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0203",
@@ -973,7 +1022,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "f6fa555fe94cfb739a93d39f6092445525bb9824c8269c57385804ba1d57f48f"
+        "read_snapshot_sha256": "f6fa555fe94cfb739a93d39f6092445525bb9824c8269c57385804ba1d57f48f",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "buprenorphine solely for pain; opioid, OUD 아님, pump 아님; single-fill ceiling 30일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -1180,8 +1230,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1192,7 +1242,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "buprenorphine solely for pain를 opioid, OUD 아님, pump 아님 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -1204,12 +1254,10 @@
           "appropriate_drug_context": "buprenorphine solely for pain의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0024, MA-Q-0160, MA-CASE-0202, MA-CASE-0200의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 동일 성분을 통증 적응증으로 한정해 수량 category를 선택하게 한다. 단일응답 지시와 수치 보기라는 일반 형식만 닮았고 공개 예제의 사실관계나 고유 문장을 옮기지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -1249,14 +1297,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0204",
@@ -1272,7 +1330,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "1a175405fb4c790f213d8e6b2f67f7ffaa974dfa2ddae7d46c2aa7f5db2a557f"
+        "read_snapshot_sha256": "1a175405fb4c790f213d8e6b2f67f7ffaa974dfa2ddae7d46c2aa7f5db2a557f",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "oral hydromorphone for pain; opioid, implantable pump 밖; single-fill ceiling 30일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -1479,8 +1538,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1491,7 +1550,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "oral hydromorphone for pain를 opioid, implantable pump 밖 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -1503,12 +1562,10 @@
           "appropriate_drug_context": "oral hydromorphone for pain의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0160, MA-Q-0090, MA-CASE-0205, MA-CASE-0203의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. oral hydromorphone과 pump 외 투여 조건에 대한 하나의 ceiling 선택이다. 공개 예제의 법적 사실이나 옵션 문구를 재현하지 않으며 선택형 표시가 명료하다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -1548,14 +1605,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0205",
@@ -1571,7 +1638,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "e4ec1c2a29561a561c621f7a583c0dcdd7978818f2fa747c1e36fef7889b45d0"
+        "read_snapshot_sha256": "e4ec1c2a29561a561c621f7a583c0dcdd7978818f2fa747c1e36fef7889b45d0",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "CII drug for implantable infusion pump; implantable infusion pump; single-fill ceiling 90일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -1778,8 +1846,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -1790,7 +1858,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "CII drug for implantable infusion pump를 implantable infusion pump 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -1802,12 +1870,10 @@
           "appropriate_drug_context": "CII drug for implantable infusion pump의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0160, MA-Q-0090, MA-CASE-0204, MA-CASE-0200의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. implantable infusion pump를 위한 CII 공급이라는 조건을 수량 category에 적용하는 단일응답 문항이다. 공개 예제의 약물 목록이나 만료 순서를 차용하지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -1847,14 +1913,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0206",
@@ -1870,7 +1946,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "1a8608892fe39626ca5a5eb60df56a0ea7f9aa5fa33e92e6627007153b727f1f"
+        "read_snapshot_sha256": "1a8608892fe39626ca5a5eb60df56a0ea7f9aa5fa33e92e6627007153b727f1f",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "oxycodone continuing pain therapy; opioid, first-opioid/minor 별도 제한 배제; single-fill ceiling 30일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -2077,8 +2154,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2089,7 +2166,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "oxycodone continuing pain therapy를 opioid, first-opioid/minor 별도 제한 배제 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -2101,12 +2178,10 @@
           "appropriate_drug_context": "oxycodone continuing pain therapy의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0160, MA-Q-0024, MA-CASE-0203, MA-CASE-0199의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. continuing oxycodone pain therapy라는 수량 제한 상황의 SBA다. 공개 자료에 같은 성분명이 있어도 여기서는 응급처방·순서 배열과 다른 수량 결정이며 문장·보기의 근접 재현이 없다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -2146,14 +2221,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0207",
@@ -2169,7 +2254,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "d1cd36ac4e742e1cf972fc247e246ed6d3f7c0b873dd8984761d239fd7a07bb2"
+        "read_snapshot_sha256": "d1cd36ac4e742e1cf972fc247e246ed6d3f7c0b873dd8984761d239fd7a07bb2",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "ketamine; non-opioid CIII; single-fill ceiling 90일; authorized >=90일·유효기간 내·별도 제한 없음이 명시됨.",
       "legal_review": {
@@ -2376,8 +2462,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2388,7 +2474,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ketamine를 non-opioid CIII 범주에 대입하여 일반 30일과 예외 90일 중 적용 상한을 결정한다.",
@@ -2400,12 +2486,10 @@
           "appropriate_drug_context": "ketamine의 opioid/non-opioid 또는 OUD/pump 맥락이 실제 30/90일 결과를 결정한다.",
           "not_schedule_flashcard": "Schedule 암기만으로 끝나지 않고 같은 schedule 안의 적응증/성분/경로별 수량 차이를 적용한다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0160, MA-Q-0024, MA-CASE-0199, MA-CASE-0200의 stem와 모든 보기를 직접 비교했다. canonical 후보에는 다른 처방 경로나 다른 적응증의 결정을 묻는 문항이 포함된다. 이 문항의 성분·OUD 여부·pump 여부가 실제 30/90일 결과를 정한다. public nearest의 같은 모형 문구는 의도된 archive drill이며 현재 추천 기본 목록에는 이 할당 문항이 없어 이 사실만으로 과도한 중복 실패를 선언하지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. ketamine의 non-opioid 범주에 따른 ceiling 선택이다. 숫자 보기의 일반 선택형 응답은 공개 형식과 양립하고 공개 예제의 stem나 보기 묶음을 재현하지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -2445,14 +2529,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0208",
@@ -2468,7 +2562,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "ea9bbff673d8508ac3818e32a20bf0eb7def42e0d2afe6dc2dd25f3b5218b84b"
+        "read_snapshot_sha256": "ea9bbff673d8508ac3818e32a20bf0eb7def42e0d2afe6dc2dd25f3b5218b84b",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 patient; acceptable ID True; documented hardship False; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -2615,8 +2710,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2627,7 +2722,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -2639,12 +2734,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0209, MA-CASE-0216의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 환자의 유효 ID가 제시된 pickup 행동을 네 행동 보기에서 하나 고르는 SBA다. 공개 형식에 맞는 응답 표시가 있고, 공개 예제와 사실관계·문구가 다르다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -2684,14 +2777,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0209",
@@ -2707,7 +2810,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "d7eaaab0efd449f1a7b46ecd569de78686f0f81fe2cb4f68b871ba52b1d60c3a"
+        "read_snapshot_sha256": "d7eaaab0efd449f1a7b46ecd569de78686f0f81fe2cb4f68b871ba52b1d60c3a",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 agent; acceptable ID True; documented hardship False; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -2854,8 +2958,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -2866,7 +2970,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -2878,12 +2982,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0208, MA-CASE-0216의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. agent의 유효 ID를 처리하는 단일선택 pickup 사례다. 공개 예제에는 이 ID·agent·hardship 조건 조합이 없고, 일반적인 단일응답 지시 외의 내용 차용이 보이지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -2923,14 +3025,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0210",
@@ -2946,7 +3058,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "7bed7f284c373f84b461d50e4a0773c736ec29f4e6ded1f9770f211c9c73b852"
+        "read_snapshot_sha256": "7bed7f284c373f84b461d50e4a0773c736ec29f4e6ded1f9770f211c9c73b852",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 patient; acceptable ID False; documented hardship True; printed name/address/signature True; delivery/refill waiver 없음.",
       "legal_review": {
@@ -3093,8 +3206,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3105,7 +3218,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -3117,12 +3230,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0212, MA-CASE-0211의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. ID는 없지만 hardship 사유와 수령인 기록이 완성된 환자 pickup 경로를 하나 고른다. 공개 응답 형식과 양립하고 공개 예제의 문장이나 보기 집합을 재현하지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -3162,14 +3273,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0211",
@@ -3185,7 +3306,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "00d4c7adfa75dc1e5548214f21df8d8d6ee1ee4f52a1f71625ffde7ff0cbaf29"
+        "read_snapshot_sha256": "00d4c7adfa75dc1e5548214f21df8d8d6ee1ee4f52a1f71625ffde7ff0cbaf29",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 agent; acceptable ID False; documented hardship True; printed name/address/signature True; delivery/refill waiver 없음.",
       "legal_review": {
@@ -3332,8 +3454,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3344,7 +3466,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -3356,12 +3478,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0213, MA-CASE-0210의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. agent에 대해 문서화된 hardship와 수령인 기록을 적용하는 하나의 행동 선택이다. 공개 자료와는 독립된 사실관계이며 보호되거나 회상된 시험 내용을 비교 자료로 사용하지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -3401,14 +3521,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0212",
@@ -3424,7 +3554,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "36273c934d81dcd21ca02ce9e6e1df934b32542ed4073f5deb5de15884b41d97"
+        "read_snapshot_sha256": "36273c934d81dcd21ca02ce9e6e1df934b32542ed4073f5deb5de15884b41d97",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 patient; acceptable ID False; documented hardship True; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -3571,8 +3702,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3583,7 +3714,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -3595,12 +3726,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0210, MA-CASE-0213의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 환자의 hardship 사유는 있지만 수령인 기록이 빠진 상태에 대응하는 행동 SBA다. 공개 단일선택 형식과 양립하며 공개 예제의 고유 서술을 가져오지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -3640,14 +3769,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0213",
@@ -3663,7 +3802,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "65e95a8b5b53d09e7da565a200b60af7b3f2ae15b5cfb37bfa810c583783bc94"
+        "read_snapshot_sha256": "65e95a8b5b53d09e7da565a200b60af7b3f2ae15b5cfb37bfa810c583783bc94",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 agent; acceptable ID False; documented hardship True; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -3810,8 +3950,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -3822,7 +3962,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -3834,12 +3974,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0211, MA-CASE-0212의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. agent의 미완성 수령인 기록을 처리하는 경로를 한 번 선택한다. 공개 예제의 주제별 선택지나 문장을 복제하지 않았고 일반적인 응답 형식만 공유한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -3879,14 +4017,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0214",
@@ -3902,7 +4050,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "8c881df74e419ae2b1d327a2dacf9cdd79ad80cc0072aa8a1c26d4d951591683"
+        "read_snapshot_sha256": "8c881df74e419ae2b1d327a2dacf9cdd79ad80cc0072aa8a1c26d4d951591683",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 patient; acceptable ID False; documented hardship False; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -4049,8 +4198,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4061,7 +4210,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -4073,12 +4222,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0215, MA-CASE-0212의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. ID와 hardship 근거가 모두 확립되지 않은 환자 pickup에서 다음 행동을 고른다. 공개 예제와 다른 조건·보기를 사용한 통상적인 단일선택 형식이다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -4118,14 +4265,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0215",
@@ -4141,7 +4298,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "fb59ba6977b5cfb08a67c45d8770481b73ab824d93aa583bf73890293b18b7a8"
+        "read_snapshot_sha256": "fb59ba6977b5cfb08a67c45d8770481b73ab824d93aa583bf73890293b18b7a8",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 agent; acceptable ID False; documented hardship False; printed name/address/signature False; delivery/refill waiver 없음.",
       "legal_review": {
@@ -4288,8 +4446,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -4300,7 +4458,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -4312,12 +4470,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0214, MA-CASE-0213의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. agent가 적격 ID를 제시하지 않고 hardship도 확립되지 않은 사례의 행동 선택이다. 공개 원본과 근접한 stem/보기 차용은 확인되지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -4357,14 +4513,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0216",
@@ -4380,7 +4546,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "cbb7d6c47dafb2f4b3d034fe1ce33944e4f1c6a8728cb0d58dc60cbb80125ccf"
+        "read_snapshot_sha256": "cbb7d6c47dafb2f4b3d034fe1ce33944e4f1c6a8728cb0d58dc60cbb80125ccf",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "실제 수령자는 agent; acceptable ID True; documented hardship True; printed name/address/signature True; delivery/refill waiver 없음.",
       "legal_review": {
@@ -4540,7 +4707,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "ID 제시 여부, 실제 수령인의 지위, 문서화된 hardship 및 수령인 기록의 결합을 적용하여 현시점의 경로를 결정한다.",
@@ -4552,12 +4719,10 @@
           "appropriate_drug_context": "대상 처방이 identifier rule의 적용범위라고 명시되어 있어 약명은 불필요하다. 단순히 모든 Schedule VI에 적용된다고 확대하지 않는다.",
           "not_schedule_flashcard": "약물 schedule을 맞히는 문항이 아니라 주어진 대상 처방에서 식별·예외를 처리하는 문항이다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0379, MA-Q-0429, MA-CASE-0209, MA-CASE-0208의 stem와 모든 보기를 직접 비교했다. canonical 후보는 scope 자체 또는 미완성 hardship에서 복수 statement를 고르는 문제이며, 이 문항은 현재 수령인의 ID/사유/수령기록 충족 조합을 결정한다. patient-agent만 바뀐 public 변형은 추가 독립 legal concept가 아니라 archive drill로 본다. 현재 추천 기본 목록에 이 할당 문항은 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 유효 ID와 완성된 hardship 기록이 함께 주어진 사례도 외형상 단일선택 표시 자체는 공개 형식과 맞는다. 다만 두 경로의 허용이 겹치는 기존 법규 HOLD/현실성 FAIL을 이 형식 확인으로 해결했다고 보지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -4597,14 +4762,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "HOLD",
       "blocker": "SBA_NONUNIQUE_PERMITTED_PATHWAYS",
-      "required_next_action_ko": "SBA가 하나의 허용 경로만 남도록 사실 또는 lead-in을 다시 설계한 뒤 새로운 content hash로 독립 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "SBA가 하나의 허용 경로만 남도록 사실 또는 lead-in을 다시 설계한 뒤 새로운 content hash로 독립 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0217",
@@ -4620,7 +4795,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "9e98b0c1273205eef3f1851bc5f8b562af4763a782817d5e2b59b1f27f81669c"
+        "read_snapshot_sha256": "9e98b0c1273205eef3f1851bc5f8b562af4763a782817d5e2b59b1f27f81669c",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "유효 original EPCS; never dispensed; never transferred; 나머지 조건 충족; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -4839,7 +5015,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": false,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "유효 original EPCS; never dispensed; never transferred; 나머지 조건 충족를 initial EPCS transfer의 요건과 대조하여 허용되는 initial electronic transfer를 판정한다.",
@@ -4851,12 +5027,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "MA-Q-0019의 실제 stem와 모든 보기를 읽었다. 환자 요청으로 적격 retail pharmacies 사이 never-filled CII EPCS를 한 번 electronic pharmacist-to-pharmacist transfer한다는 결정과 fax/technician/refill 오인 구조가 같다. 동일 family archive의 존재만으로 내린 판정이 아니다. 현재 assigned item이 recommended 기본 목록에 없다는 점은 완화 맥락으로 기록하나 canonical item과 사실·결정·distractor 구조가 같은 독립적인 중복은 남는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 미조제 original EPCS의 initial transfer 행동을 선택한다. 공개 예제에는 이 transfer 사실·보기 구조가 없으며 응답 형식은 통상적 SBA다. canonical 의미 중복 FAIL은 별도 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -4896,14 +5070,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0218",
@@ -4919,7 +5103,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "c88cf2ad3cb31dbfe3dfeb4a6ee7e1c6624a71495c13463ceaa39cbe388098a6"
+        "read_snapshot_sha256": "c88cf2ad3cb31dbfe3dfeb4a6ee7e1c6624a71495c13463ceaa39cbe388098a6",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "original paper를 scan하여 전산 저장; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -5138,7 +5323,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "original paper를 scan하여 전산 저장를 initial EPCS transfer의 요건과 대조하여 원 paper의 EPCS 전환 불가를 판정한다.",
@@ -5150,12 +5335,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0030, MA-CASE-0220, MA-CASE-0219의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. original paper를 scan한 처방의 전송 행동을 고르는 SBA다. 공개 예제의 문구를 차용하지 않았으나, 정답이 stem 결함을 따라 말하는 기존 guessability FAIL은 남는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -5195,14 +5378,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0219",
@@ -5218,7 +5411,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "ead3dc8e563b104e68bbaf75134eac2b7ccef81755f4d41268ce2c729bcb747f"
+        "read_snapshot_sha256": "ead3dc8e563b104e68bbaf75134eac2b7ccef81755f4d41268ce2c729bcb747f",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "original fax를 전산 저장; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -5437,7 +5631,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "original fax를 전산 저장를 initial EPCS transfer의 요건과 대조하여 원 fax의 EPCS 전환 불가를 판정한다.",
@@ -5449,12 +5643,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0030, MA-CASE-0220, MA-CASE-0218의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 원 fax로 받은 처방의 전송 경로를 하나 고르는 사례다. 공개 샘플과 상황·문구는 다르며, 기존에 확인한 단어 맞추기식 정답 단서는 별도의 현실성 결함으로 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -5494,14 +5686,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0220",
@@ -5517,7 +5719,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "7792806234c7453d541e9c656cbe909f1d60a30409dfc955ee670e7b13e28be6"
+        "read_snapshot_sha256": "7792806234c7453d541e9c656cbe909f1d60a30409dfc955ee670e7b13e28be6",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "original oral을 전산 저장; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -5736,7 +5939,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "original oral을 전산 저장를 initial EPCS transfer의 요건과 대조하여 원 oral의 EPCS 전환 불가를 판정한다.",
@@ -5748,12 +5951,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0030, MA-CASE-0219, MA-CASE-0218의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 원 oral 처방을 컴퓨터에 넣은 상태에서 initial transfer 경로를 선택한다. 공개 선택형 형식과 양립하고 고유 예제 wording을 재현하지 않는다. 기존 distractor/guessability 판정은 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -5793,14 +5994,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0221",
@@ -5816,7 +6027,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "1c34b3bc835d0464e7a41106345054008504d2f1190447614ef4312d36eefaca"
+        "read_snapshot_sha256": "1c34b3bc835d0464e7a41106345054008504d2f1190447614ef4312d36eefaca",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "이미 CII 수량 일부 조제; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -6035,7 +6247,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "이미 CII 수량 일부 조제를 initial EPCS transfer의 요건과 대조하여 initial dispensing 이전 상태 아님를 판정한다.",
@@ -6047,12 +6259,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0030, MA-CASE-0222, MA-CASE-0220의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 이미 CII 일부가 조제된 상태의 전송 행동 선택이다. 공개 예제에 partial-fill 관련 소재가 있다고 해서 같은 문항으로 보지 않았다. 여기의 판단은 만료 순서가 아니라 initial transfer 가능성이고 문구도 다르다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -6092,14 +6302,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0222",
@@ -6115,7 +6335,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "b5dc32a87ffddf6d3069f6f963707ebb93c86f677f73f8404a5fa2cc794f5de2"
+        "read_snapshot_sha256": "b5dc32a87ffddf6d3069f6f963707ebb93c86f677f73f8404a5fa2cc794f5de2",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "이미 initial electronic transfer 1회 완료; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -6334,7 +6555,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": false,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "이미 initial electronic transfer 1회 완료를 initial EPCS transfer의 요건과 대조하여 one-time 한도 소진를 판정한다.",
@@ -6346,12 +6567,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "MA-Q-0030의 실제 stem와 모든 보기를 읽었다. 이미 한 번 initial EPCS transfer한 미조제 처방의 두 번째 transfer 거절이라는 사실과 결론이 같다. CII와 Librium의 schedule 차이는 II–V 공통 one-time 규칙의 결과를 바꾸지 않는다. 현재 assigned item이 recommended 기본 목록에 없다는 점은 완화 맥락으로 기록하나 canonical item과 사실·결정·distractor 구조가 같은 독립적인 중복은 남는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 한 번 initial EPCS transfer가 이루어진 처방의 추가 이동을 단일선택으로 묻는다. 공개 예제의 사실·보기 차용은 없지만 기존 canonical 중복 및 guessability FAIL은 보존한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -6391,14 +6610,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0223",
@@ -6414,7 +6643,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "b094f5905a3336f03a2cfb08b89d2ce46cc42f91173de49f751121da0ce8aaf2"
+        "read_snapshot_sha256": "b094f5905a3336f03a2cfb08b89d2ce46cc42f91173de49f751121da0ce8aaf2",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "전송 중 처방 내용 변경 예정; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -6633,7 +6863,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "전송 중 처방 내용 변경 예정를 initial EPCS transfer의 요건과 대조하여 내용 변경 금지를 판정한다.",
@@ -6645,12 +6875,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0120, MA-CASE-0224, MA-CASE-0225의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 전송 중 처방 내용 변경이 예정된 상태의 행동 선택이다. 공개 예제의 고유 상황이나 문장을 재현하지 않는 SBA 형식이며, 기존 정답 단서 결함은 남긴다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -6690,14 +6918,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0224",
@@ -6713,7 +6951,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "0989d3fe11911ee1b55e877696cc19089193b2ef31852d5f596254e3251a48f6"
+        "read_snapshot_sha256": "0989d3fe11911ee1b55e877696cc19089193b2ef31852d5f596254e3251a48f6",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "환자 요청 없음; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -6932,7 +7171,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "환자 요청 없음를 initial EPCS transfer의 요건과 대조하여 patient request 필요를 판정한다.",
@@ -6944,12 +7183,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0120, MA-CASE-0225, MA-CASE-0223의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 환자 요청이 없는 전송의 처리 행동을 선택한다. 공개 예제와 다른 법적 사실·문구이며 일반 응답 형식만 공유한다. 법규를 몰라도 결함 단어로 답을 맞출 수 있다는 기존 FAIL은 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -6989,14 +7226,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0225",
@@ -7012,7 +7259,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "cba8c046a1c80970dcdd8e8ff87cd6b3abfb876ed3af2dc32bac4814d91a5ee0"
+        "read_snapshot_sha256": "cba8c046a1c80970dcdd8e8ff87cd6b3abfb876ed3af2dc32bac4814d91a5ee0",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "수신 retail pharmacy의 필수 DEA registration 없음; 명시된 결함 외 first-fill 조건은 모두 충족한다고 제한됨.",
       "legal_review": {
@@ -7231,7 +7479,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "수신 retail pharmacy의 필수 DEA registration 없음를 initial EPCS transfer의 요건과 대조하여 등록된 조제 약국 요건 미충족를 판정한다.",
@@ -7243,12 +7491,10 @@
           "appropriate_drug_context": "CII라는 법적 범주가 초기 전송과 refill 구별에 직접 필요하며 특정 약명을 장식처럼 추가하지 않았다.",
           "not_schedule_flashcard": "주어진 CII에 대한 업무 경로 판단으로 schedule 분류를 맞히는 flashcard가 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0019, MA-Q-0120, MA-CASE-0224, MA-CASE-0223의 stem와 모든 보기를 직접 비교했다. canonical 후보의 허용 initial transfer/second transfer/VI transfer와 비교할 때 이 문항은 명시된 원본 형식·이미 조제·내용변경·환자요청·registration 중 해당 결함을 적용한다. 같은 family archive 변형만으로 semantic FAIL 처리하지 않는다. 현재 추천 기본 목록에 없다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 수신 약국의 DEA registration 결함을 처리하는 행동 SBA다. 공개 예제의 문장이나 옵션 묶음을 재현하지 않았고 형식은 양립한다. 기존 guessability FAIL은 별도 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -7288,14 +7534,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0226",
@@ -7311,7 +7567,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "e4912c991e365ae40a25e6441f7af601f10fc0209ac44ca20a837dd03690cd0e"
+        "read_snapshot_sha256": "e4912c991e365ae40a25e6441f7af601f10fc0209ac44ca20a837dd03690cd0e",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule II tablets container 25; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -7458,8 +7715,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -7470,7 +7727,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule II와 25정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -7482,12 +7739,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0228, MA-CASE-0227의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. Schedule II opened container의 계수법을 단일 행동 보기로 고른다. 공개 자료의 schedule 관련 예제와 소재 범주는 겹쳐도 약물 분류 목록을 고르는 형식을 복제하지 않고 실제 업무 행동을 묻는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -7527,14 +7782,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "blocker": null,
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토"
     },
     {
       "question_id": "MA-CASE-0227",
@@ -7550,7 +7815,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "42d81f07c8475720ddc08399d2c141f50376cd20d6d1023b7a45e0651b684c84"
+        "read_snapshot_sha256": "42d81f07c8475720ddc08399d2c141f50376cd20d6d1023b7a45e0651b684c84",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule II tablets container 650; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -7697,8 +7963,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -7709,7 +7975,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule II와 650정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -7721,12 +7987,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0226, MA-CASE-0228의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 650정이 든 Schedule II opened container의 exact/estimate 판단이다. 공개 예제의 약물 목록·문장·보기와는 다르며 일반 단일선택 응답 형태만 공유한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -7766,14 +8030,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "blocker": null,
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토"
     },
     {
       "question_id": "MA-CASE-0228",
@@ -7789,7 +8063,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "6e38fac7c74bf46fb38b8a2422f9c9c481da831bf9629ffc6a6e316210398bb6"
+        "read_snapshot_sha256": "6e38fac7c74bf46fb38b8a2422f9c9c481da831bf9629ffc6a6e316210398bb6",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule II tablets container 1000; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -7936,8 +8211,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -7948,7 +8223,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule II와 1000정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -7960,12 +8235,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0230, MA-CASE-0226의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 1,000정 Schedule II container의 계수법을 선택한다. 공개 원본의 schedule 분류나 expiry 순서 문항과는 질문 목적과 보기가 다르고 근접 문구 재현이 없다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -8005,14 +8278,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "blocker": null,
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토"
     },
     {
       "question_id": "MA-CASE-0229",
@@ -8028,7 +8311,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "2259519b8a9c62c83aa1adef1159bbfcfe5d758c32d027151189310b4281402a"
+        "read_snapshot_sha256": "2259519b8a9c62c83aa1adef1159bbfcfe5d758c32d027151189310b4281402a",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule III tablets container 800; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -8175,8 +8459,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -8187,7 +8471,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule III와 800정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -8199,12 +8483,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0230, MA-CASE-0226의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 800정 Schedule III container의 estimate 허용 여부를 행동 보기에서 고른다. 공개 예제의 소재를 단순 변환한 문항은 아니며 단일선택 형식이 명료하다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -8244,14 +8526,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0230",
@@ -8267,7 +8559,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "d239ebc1dd1710f92321ae05aef73e8eb33e193e4e8c10c00640b944bf87ab6d"
+        "read_snapshot_sha256": "d239ebc1dd1710f92321ae05aef73e8eb33e193e4e8c10c00640b944bf87ab6d",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule III tablets container 1000; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -8414,8 +8707,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -8426,7 +8719,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule III와 1000정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -8438,12 +8731,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0228, MA-CASE-0229의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 1,000정 Schedule III container의 계수 평가를 단일선택한다. 공개 예제의 고유 서술·보기 집합은 재현하지 않는다. 숫자 보기를 쓴다는 이유만으로 형식 적합성을 부인하지 않았다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -8483,14 +8774,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0231",
@@ -8506,7 +8807,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "c642f57bb1374d8250dd3111bfd0e4638722371ed12e83086952660942f31470"
+        "read_snapshot_sha256": "c642f57bb1374d8250dd3111bfd0e4638722371ed12e83086952660942f31470",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule III tablets container 1001; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -8653,8 +8955,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -8665,7 +8967,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule III와 1001정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -8677,12 +8979,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0230, MA-CASE-0229의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 1,001정 Schedule III container의 계수 의무를 고른다. 공개 schedule 예제와는 분류명 회상이 아니라 업무 방법 결정이라는 차이가 있고 문구 차용이 없다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -8722,14 +9022,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "blocker": null,
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토"
     },
     {
       "question_id": "MA-CASE-0232",
@@ -8745,7 +9055,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "41e0aadfef283832748923d5affeeb5829490b91257a88bfe2775380e50aa7c5"
+        "read_snapshot_sha256": "41e0aadfef283832748923d5affeeb5829490b91257a88bfe2775380e50aa7c5",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule IV tablets container 1200; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -8904,7 +9215,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": false,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule IV와 1200정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -8916,12 +9227,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "MA-Q-0061의 실제 stem와 모든 보기를 읽었다. opened Schedule IV 1,200 tablets의 exact count 필요라는 구체 사실과 법적 결정이 모두 같다. 추상적인 숫자문항 비판이 아니라 동일 schedule·threshold side·수량·행동을 비교했다. 현재 assigned item이 recommended 기본 목록에 없다는 점은 완화 맥락으로 기록하나 canonical item과 사실·결정·distractor 구조가 같은 독립적인 중복은 남는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 1,200정 Schedule IV container의 계수 의무를 단일선택한다. 공개 원본과의 고유 문구 중복은 없고 응답 방식은 양립한다. canonical MA-Q-0061과의 별도 의미 중복 FAIL은 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -8961,14 +9270,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0233",
@@ -8984,7 +9303,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "3a1961f8d7a5c71a543cdc555829d04f882ea63ca2cad582b6741d86b10d23e9"
+        "read_snapshot_sha256": "3a1961f8d7a5c71a543cdc555829d04f882ea63ca2cad582b6741d86b10d23e9",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule V tablets container 900; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -9131,8 +9451,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -9143,7 +9463,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule V와 900정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -9155,12 +9475,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0234, MA-CASE-0226의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 900정 Schedule V container의 계수법을 고르는 행동 SBA다. 공개 샘플의 약명 선택지나 만료 순서 예제를 재현하지 않았으며, 일반 형식만 공유한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -9200,14 +9518,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
-      "safe_hold_recommended": true,
+      "safe_hold_recommended": false,
       "release_eligible": false,
       "canonical_release_credit": 0,
-      "disposition": "SOURCE_BLOCKED",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "disposition": "INDEPENDENT_ASSESSED",
+      "blocker": null,
+      "required_next_action_ko": "독립 legacy 법규·현실성 평가 완료. 이 기록을 canonical admission/adjudication 또는 RELEASED 인증으로 사용하지 않는다."
     },
     {
       "question_id": "MA-CASE-0234",
@@ -9223,7 +9551,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "5cd7255e61350a7c34a66b3453ad7dd6181aafb543aabb4c4a8080917101e66a"
+        "read_snapshot_sha256": "5cd7255e61350a7c34a66b3453ad7dd6181aafb543aabb4c4a8080917101e66a",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "opened Schedule V tablets container 1500; federal count method만 물음; stricter local procedure 미가정.",
       "legal_review": {
@@ -9370,8 +9699,8 @@
         }
       },
       "realism_review": {
-        "verdict": "NOT_ASSESSED",
-        "decision": "HOLD",
+        "verdict": "PASS",
+        "decision": "KEEP",
         "criteria": {
           "jurisprudence_reasoning": true,
           "practice_plausibility": true,
@@ -9382,7 +9711,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "Schedule V와 1500정이라는 사실에 계수 방식의 법적 기준을 적용하여 exact가 의무인지 estimate가 허용되는지 결정한다.",
@@ -9394,12 +9723,10 @@
           "appropriate_drug_context": "schedule가 계수법을 직접 정하므로 특정 약명 없이 tablets와 schedule만 제시한 것이 적절하다.",
           "not_schedule_flashcard": "이미 주어진 schedule를 실물 inventory 방법에 적용하며 약물의 schedule 이름을 맞히는 문항이 아니다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0437, MA-Q-0061, MA-CASE-0233, MA-CASE-0226의 stem와 모든 보기를 직접 비교했다. canonical 후보의 여러 container 조합 또는 Schedule IV 1200 사례와 비교해 이 문항의 schedule/threshold-side에 따른 의무·허용을 확인했다. 같은 계수 원리를 반복하는 archive 연습이라는 점은 인정하지만 독립된 9개 법규로 세지 않고 현재 추천 기본 목록에 없는 맥락을 반영해 archive 변형 수나 score만으로 실패시키지 않는다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 1,500정 Schedule V container에서 exact/estimate를 하나 고른다. 공개 원본과는 facts·보기 서술이 다르고 근접 재현이 없다. 기존 오답 해설 모순의 MINOR_EDIT은 유지한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -9439,14 +9766,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
-      "blocker": "PUBLIC_OFFICIAL_STYLE_REFERENCE_403_AND_FIRECRAWL_NOT_RUN",
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "blocker": null,
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토"
     },
     {
       "question_id": "MA-CASE-0235",
@@ -9462,7 +9799,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "2c957561d337267b3ab794216da1eafb9f77db1fd947487d14e93f534804ac57"
+        "read_snapshot_sha256": "2c957561d337267b3ab794216da1eafb9f77db1fd947487d14e93f534804ac57",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 120+receipts 80-dispensing 75-lawful reverse distribution 10=115; physical 113; difference 2.",
       "legal_review": {
@@ -9621,7 +9959,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 120+80−75−10만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -9633,12 +9971,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0011, MA-CASE-0240, MA-CASE-0238의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. CII 장부 expected balance를 한 개의 수량 보기로 고르는 형식은 공개된 숫자 SBA 응답 방식과 양립한다. 공개 예제의 실제 문항 내용은 복제하지 않았다. 산술만으로 풀려 법적 선택이 없다는 기존 FAIL은 형식과 별개다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -9678,14 +10014,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0236",
@@ -9701,7 +10047,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "7c5c9e076f967e0c44ba9dcf336493b984250411d9d7967f58af077302273600"
+        "read_snapshot_sha256": "7c5c9e076f967e0c44ba9dcf336493b984250411d9d7967f58af077302273600",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 150+receipts 100-dispensing 90-lawful reverse distribution 20=140; physical 140; difference 0.",
       "legal_review": {
@@ -9860,7 +10207,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 150+100−90−20만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -9872,12 +10219,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0028, MA-CASE-0243, MA-CASE-0238의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 잔액 140정을 수량 보기에서 고르는 하나의 응답 형식이다. 공개 예제의 상황·수량 묶음·고유 문구를 재현하지 않는다. zero-discrepancy 해설과 arithmetic-only FAIL은 보존한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -9917,14 +10262,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0237",
@@ -9940,7 +10295,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "c04d2808c70265ee96c2149b7984ed8e97c352ad43421a4931766ec01e7659b8"
+        "read_snapshot_sha256": "c04d2808c70265ee96c2149b7984ed8e97c352ad43421a4931766ec01e7659b8",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 200+receipts 0-dispensing 45-lawful reverse distribution 15=140; physical 138; difference 2.",
       "legal_review": {
@@ -10099,7 +10455,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 200+0−45−15만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -10111,12 +10467,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0028, MA-CASE-0236, MA-CASE-0243의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 주어진 ledger 거래의 expected balance를 단일선택하는 형식이며 공개 예제의 stem나 보기 구성을 옮기지 않았다. 공개 자료가 형식을 예시한다는 이유로 산술 자체를 법규 reasoning으로 승인하지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -10156,14 +10510,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0238",
@@ -10179,7 +10543,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "c8df22625e58eb78c30a6fdcdd6267769bceb492ed36da96d95ce20ec8a5c5ca"
+        "read_snapshot_sha256": "c8df22625e58eb78c30a6fdcdd6267769bceb492ed36da96d95ce20ec8a5c5ca",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 85+receipts 60-dispensing 40-lawful reverse distribution 5=100; physical 100; difference 0.",
       "legal_review": {
@@ -10338,7 +10703,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 85+60−40−5만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -10350,12 +10715,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0028, MA-CASE-0236, MA-CASE-0243의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 수량 보기에서 하나의 장부 잔액을 선택하도록 분명히 표시한다. 공개 숫자 예제와 일반 형식만 닮았고 고유 내용의 재현이 없다. 차이 0인 해설 문제와 기존 realism FAIL은 그대로다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -10395,14 +10758,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "지정 core/distractor 해설의 사실 모순 또는 zero-discrepancy boilerplate를 수정한 새 hash 재검토; false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0239",
@@ -10418,7 +10791,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "ff2ad82a6c7644bd46692c863e9e40939068d8e0ed0c2aab415a40a151726844"
+        "read_snapshot_sha256": "ff2ad82a6c7644bd46692c863e9e40939068d8e0ed0c2aab415a40a151726844",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 300+receipts 50-dispensing 160-lawful reverse distribution 40=150; physical 149; difference 1.",
       "legal_review": {
@@ -10577,7 +10951,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 300+50−160−40만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -10589,12 +10963,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0028, MA-CASE-0236, MA-CASE-0243의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. 거래식으로 장부 잔액을 산출하고 하나의 값을 고르는 SBA 형식이다. 공개 예제와는 사실관계·질문 목적·보기 집합이 다르다. 계산만 요구한다는 기존 FAIL을 변경하지 않는다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -10634,14 +11006,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     },
     {
       "question_id": "MA-CASE-0240",
@@ -10657,7 +11039,8 @@
         "all_korean_choice_analysis_full": true,
         "learning_boundary_full": true,
         "_statement_truth_used_as_evidence": false,
-        "read_snapshot_sha256": "939b6489ea97910a45cc7e2979f8807444b48119ecca364ea0473e958b4ba848"
+        "read_snapshot_sha256": "939b6489ea97910a45cc7e2979f8807444b48119ecca364ea0473e958b4ba848",
+        "public_style_supplement_stem_and_options_reread_at": "2026-11-03T18:56:06.299617+00:00"
       },
       "facts_reviewed_ko": "beginning 75+receipts 120-dispensing 70-lawful reverse distribution 10=115; physical 110; difference 5.",
       "legal_review": {
@@ -10816,7 +11199,7 @@
           "appropriate_drug_context": true,
           "distinct_from_bank": true,
           "not_schedule_flashcard": true,
-          "public_style_without_copying": null
+          "public_style_without_copying": true
         },
         "criterion_findings_ko": {
           "jurisprudence_reasoning": "모든 거래가 이미 lawful/documented라고 확정되고 다른 거래도 없다고 명시되어 75+120−70−10만 하면 답이 나온다. 법적 주체·권한·예외·discrepancy 조치 중 무엇도 선택하지 않으므로 법 없이 임의 재고장부 계산으로 그대로 풀린다. 숫자 형식 자체를 실패 이유로 삼지 않았다.",
@@ -10828,12 +11211,10 @@
           "appropriate_drug_context": "perpetual record라는 업무 맥락에서 CII 범주는 적절하며 특정 약명을 넣을 필요는 없다. 하지만 CII 글자를 지워도 산술 정답은 같다는 한계가 있다.",
           "not_schedule_flashcard": "schedule를 묻지는 않는다. arithmetic-only 결함은 이 criterion와 별도로 jurisprudence/reasoning에서 기록했다.",
           "distinct_from_bank": "가까운 canonical/public 원문 MA-Q-0101, MA-Q-0011, MA-CASE-0235, MA-CASE-0238의 stem와 모든 보기를 직접 비교했다. canonical 후보는 환자 partial-fill/허위 refill/기간 내 조제 경로를 묻고 이 문항은 ledger arithmetic이다. public nearest는 같은 산술모형의 archive drill이다. 현재 추천 기본 목록에서 이 할당 문항은 선택되지 않으므로 family variant 존재 자체를 duplicate failure로 사용하지 않고 실제 arithmetic-only 결함은 별도 criteria에서 판단한다.",
-          "public_style_without_copying": "현재 profile의 공개 official sample URL, format URL, competency URL을 각각 live HTTPS 조회했으나 모두 403이며 Firecrawl도 credits 부족으로 미실행이었다. 해당 원문과의 직접 style/copying 대조는 NOT_RUN이므로 이 criterion은 확인되지 않았다. 허용된 자체 public bank 원문과 profile은 읽었지만 그것으로 NABP 원문 확인을 대체하지 않는다."
+          "public_style_without_copying": "2026-11-03에 성공 수집된 동일 날짜 official raw PDF를 이 세션에서 새로 pdftotext로 읽고 1페이지 렌더링도 직접 보았다. 새 live retrieval 성공을 주장하지 않는다. 샘플은 형식 안내이며 법률권위나 전체 content blueprint가 아니다. 공개 예제의 stem/보기 전문은 이 memo나 보고서에 보존하지 않는다. CII receipt/dispensing/reverse-distribution 잔액을 하나의 수량으로 고르는 형식은 공개 selected-response 방식과 양립한다. 공개 예제의 내용·문장 차용은 보이지 않으며 arithmetic-only 현실성 결함은 그대로 보존한다."
         },
-        "assessed_criteria_count": 9,
-        "unassessed_criteria": [
-          "public_style_without_copying"
-        ],
+        "assessed_criteria_count": 10,
+        "unassessed_criteria": [],
         "duplicate_evidence": {
           "status": "MEASURED_AND_ACTUAL_NEAREST_ORIGINALS_READ",
           "canonical_corpus_count": 439,
@@ -10873,14 +11254,24 @@
           },
           "no_automatic_similarity_score_verdict": true
         },
-        "public_official_style_comparison": "NOT_RUN_SOURCE_BLOCKED"
+        "public_official_style_comparison": "COMPLETED_FROM_SAME_DAY_SUCCESSFUL_OFFICIAL_RAW_CACHE_FRESHLY_READ",
+        "public_style_evidence": {
+          "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+          "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+          "official_url": "https://nabp.pharmacy/wp-content/uploads/2020/07/MPJE-Sample-Questions.pdf",
+          "exact_section": "Single-page public sample PDF: introductory scope note and single-answer/multiple-answer/complete-order example layouts",
+          "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+          "style_checked_date": "2026-11-03",
+          "fresh_live_retrieval": false,
+          "same_day_cached_raw_freshly_read": true
+        }
       },
       "safe_hold_recommended": true,
       "release_eligible": false,
       "canonical_release_credit": 0,
       "disposition": "NEEDS_REMEDIATION",
       "blocker": null,
-      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정; 허용된 NABP public style 근거의 정상 원문을 확보해 미확인 criterion만 후속 확인; protected Pre-MPJE/회상/상업 bank는 사용하지 않음"
+      "required_next_action_ko": "false로 평가한 현실성 기준을 해결하되 archive 반복만을 삭제 이유로 삼지 말고 실제 법적 선택·보기 구조 또는 canonical 의미 중복을 개정"
     }
   ],
   "summary": {
@@ -10895,18 +11286,19 @@
       "MINOR_EDIT": 8
     },
     "realism_verdict_counts": {
-      "NOT_ASSESSED": 22,
+      "PASS": 22,
       "FAIL": 18
     },
     "disposition_counts": {
-      "SOURCE_BLOCKED": 17,
+      "INDEPENDENT_ASSESSED": 17,
       "NEEDS_REMEDIATION": 22,
       "HOLD": 1
     },
     "release_eligible_count": 0,
     "canonical_release_credit": 0,
-    "fully_verified_realism_records": 0,
-    "not_run": "NABP source comparison blocked; canonical audit/submission/integration/ledger writes not performed by worker"
+    "fully_verified_realism_records": 22,
+    "not_run": "canonical audit/admission/submission/integration/ledger writes not performed by worker; initial direct NABP format/competency URL attempts remain 403 history and Firecrawl attempt remains NOT_RUN. Public sample criterion is now assessed from fresh reading of successful same-day official raw cache.",
+    "fully_assessed_realism_records": 40
   },
   "verification": {
     "original_assignment_hashes_checked": true,
@@ -10914,6 +11306,19 @@
     "all_assigned_stems_options_keys_korean_core_and_distractors_read": true,
     "duplicate_nearest_actual_texts_read": true,
     "automatic_tests_for_legal_truth": "NOT_RUN: human-model item adjudication against official text; structural report validation separately recorded",
-    "canonical_release_checks": "NOT_RUN_NOT_APPLICABLE_TO_LEGACY_ASSESSMENT"
+    "canonical_release_checks": "NOT_RUN_NOT_APPLICABLE_TO_LEGACY_ASSESSMENT",
+    "all_40_public_style_stems_and_options_reread_against_actual_same_day_official_pdf": true,
+    "public_sample_cache_raw_sha_verified": true
+  },
+  "source_retrieval_history_preserved": true,
+  "public_style_supplement": {
+    "evidence_path": "reports/full-corpus-review/evidence/independent-phase1-b/public-style-supplement.json",
+    "evidence_sha256": "e43b952cac686f0c557bec27b912adcf1bf515622dd5eacfcae3148701e3f097",
+    "reviewed_at": "2026-11-03",
+    "read_at": "2026-11-03T18:56:06.299617+00:00",
+    "raw_payload_sha256": "b8544f403990191075747b231c81cde4449c6eb83333cfb1d9f05b5e1273d30d",
+    "prior_report_sha256": "2551e42fe6f43c844c487b5d647bfad85a1635e5424dacdcd51fb1f4ae835259",
+    "prior_worker_commit": "5e725fd468e9f0fe796199850d536fec7ea2a67d",
+    "scope": "Only previously unassessed public_style_without_copying criterion supplemented; all legal findings, other criteria, and known FAILs preserved; same auditor instance."
   }
 }
