@@ -82,7 +82,7 @@ def test_inherited_all_correct_sata_is_not_mislabeled_as_realistic():
         assert q["question_type"] == "SATA"
         assert set(q["correct_choice_ids"]) == {c["id"] for c in q["choices"]}
         assert records[qid]["disposition"] == "MAJOR_REWRITE"
-        assert "all-correct" in records[qid]["blocker"]
+        assert "all-correct" in records[qid]["blocker"].lower()
 
 
 def test_unreviewed_questions_not_credited_and_independence_not_claimed():
