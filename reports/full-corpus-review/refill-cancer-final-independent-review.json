@@ -1,0 +1,2168 @@
+{
+  "schema_version": "independent-final-note-review/1",
+  "reviewed_at": "2026-11-03",
+  "reviewed_at_utc": "2026-11-03T16:27:14.922621+00:00",
+  "auditor": "GPT",
+  "auditor_instance": "codex-controller-session-20261103",
+  "reviewer_provenance": {
+    "actual_worker": "/root/controller",
+    "current_task": "audit/refill-cancer-final",
+    "candidate_author": "separate notes author worker,not this reviewer",
+    "session_reuse_disclosure": "기존 /root/controller 세션을 사용했다. 이 작업을 여러 새 auditor instance로 쪼개지 않았다. 후보/NOTE6 저자와는 다른 reviewer지만 새로운 blind model session이라고 주장하지 않는다.",
+    "prior_roles": "resumable controller 구현,question-wave author,NOTE-WAVE7 census author;해당 w2-c-1/w2-c-12 후보/NOTE6 census 작성에는 관여하지 않음"
+  },
+  "independent_of_authors": true,
+  "candidate_edited_by_auditor": false,
+  "inherited_context_exposure_ko": "같은 parent mission의 요약/수정대상 지시와 이전 인접 법률·질문/NOTE7 검토 경험이 있는 non-blinded reviewer이다. 해당 final candidate와 NOTE6 census의 저자는 아니다. 기존 reviewer provenance를 빌리거나 이름만 새로 만들어 독립 수를 늘리지 않았다. 이번 판단은 새 official retrieval과 exact final bytes에 대한 별도 reviewer 판단이고 이전 author question reviews의 독립 감사로 전환되지 않는다.",
+  "source_freshness_ko": "이번 audit task에서8개 official URLs에 새 HTTPS 요청을 보내 primary text를 직접 읽었다. author source cache/report verdict로 법적 결론을 대체하지 않았다.",
+  "candidate_path": "revisions/notes/2026-11-03-refill-cancer-final.json",
+  "candidate_sha256": "b20405bd4176bc29cbf5ab802f44a4b2c27bb49640b707726b916c29a4eaef02",
+  "represented_author_commit": "45ee3dd",
+  "census_path": "reports/full-corpus-review/refill-cancer-final-census.json",
+  "census_sha256": "dfc12895bcafef7134507378547ec4cd41d45b34d3eaa51498a4285f9d099072",
+  "prior_review": null,
+  "decision": "KEEP",
+  "decision_scope": "EXACT_FINAL_NOTE_BODIES_50_LEGAL_CLAIMS_NARROW_CENSUS_COMPLETENESS_AND_5_UNCHANGED_CARDS;NOT_SEMANTIC_CERTIFICATION_OF_ALL_INHERITED_QUESTION_LINKS",
+  "canonical_question_audit": false,
+  "canonical_question_release_credit": 0,
+  "sources": [
+    {
+      "source_id": "refills",
+      "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:20.754780+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFRe4ae2bfb4eae102/section-1306.22",
+      "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.html",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+      "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills-retrieval.json",
+      "retrieval_metadata_sha256": "e43e0215266b1d0123e26f7dc848d0c398d78e44398d5b8d8ba19c5096540396"
+    },
+    {
+      "source_id": "transfers",
+      "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.25",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:20.630668+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFRe4ae2bfb4eae102/section-1306.25",
+      "raw_sha256": "9e8b75e76e427bdd3920155045c1f29bc9ab1fee9b2b5662f36f14daaa41de59",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers.html",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers.txt",
+      "evidence_sha256": "fd719505d6ab52041ce823c3f4d6d692713a602afef3ba0503457247b04c1396",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.25(b)(3)–(4) read",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers-retrieval.json",
+      "retrieval_metadata_sha256": "3773694a45adb6d3728fcd83760b695fc873778ca2cec3b60cf83998161c2aff"
+    },
+    {
+      "source_id": "purpose",
+      "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.04",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:24:11.407216+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFR1eb5bb3a23fddd0/section-1306.04",
+      "raw_sha256": "b343c07f2504871734fdd8fe9074347312a4677b3ff7d7e8f9cab82d1946aed5",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/purpose.html",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/purpose.txt",
+      "evidence_sha256": "fd9775208c70ff28301566825cbb980515544df84fe5b359b965b49a5cfa445f",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.04(a) read",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/purpose-retrieval.json",
+      "retrieval_metadata_sha256": "e4f85b2f03f5219e9dede6329eac41f8a9ecc9211a21a09de76179969219f573"
+    },
+    {
+      "source_id": "law19d",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:21.602943+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+      "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.html",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+      "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d-retrieval.json",
+      "retrieval_metadata_sha256": "f7d08b900273dd7fa445049a5c5bf256e98687681d4baa050a5c16137a0bfcfa"
+    },
+    {
+      "source_id": "law23",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:21.772304+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+      "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.html",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+      "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23-retrieval.json",
+      "retrieval_metadata_sha256": "012086b8797a210eb3ed7bf6a12c7dce9a6ee00d35ca6c38296f19710306f696"
+    },
+    {
+      "source_id": "practice",
+      "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:20.388017+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.pdf",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+      "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice-retrieval.json",
+      "retrieval_metadata_sha256": "beb8a13f2e6dcee7c7a1f45b1b70be8cbabe01b433b5a59f9a2f185b7fdfbd73"
+    },
+    {
+      "source_id": "personnel",
+      "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:20.305444+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+      "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/personnel.pdf",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/personnel.txt",
+      "evidence_sha256": "b730566043d1cfe5251dac9de2aec615e9bb9e910fef468bc3b2f49a4b721318",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "247CMR8 Register1546 dated2025-04-25;8.02–8.04 pages corrected effective2018-04-06",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/personnel-retrieval.json",
+      "retrieval_metadata_sha256": "3cdc9e6c5ba2b54fed163b58a6a1249a64fbc48c2033ca6e8292bf2ad6eb43a7"
+    },
+    {
+      "source_id": "changes",
+      "official_url": "https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download",
+      "source_type": "PUBLIC_OFFICIAL",
+      "retrieved_at": "2026-11-03T16:22:20.393472+00:00",
+      "retrieval_timestamp_basis": "metadata file timestamp written immediately after fresh successful HTTP retrieval",
+      "law_checked_date": "2026-11-03",
+      "http_status": 200,
+      "resolved_url": "https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download",
+      "raw_sha256": "650432beeccdebe9de709c66a289b471d07510e3c1fc5eee8d335c8845ac2684",
+      "original_snapshot_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/changes.pdf",
+      "extraction": "Fresh official HTTPS in this reviewer task;pdftotext-layout/HTMLParser;extracted trailing whitespace normalized;visual PDF inspection NOT RUN",
+      "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/changes.txt",
+      "evidence_sha256": "e282f51b248106504689792ffc09668be6e796e3cda38d9ad7e1565d58a92039",
+      "status": "READ_OFFICIAL_TEXT",
+      "required_for_final_legal_conclusions": true,
+      "version_or_publication_date": "Policy2018-01 adopted2018-03-01,revised2024-01-11;§§II–IV read",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "게시본 version/Register/조회일을 개별 조항의 최초 시행일로 만들지 않았다. 명시된 narrow scope를2026-11-03 현재 읽은 판단이다.",
+      "retrieval_metadata_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/changes-retrieval.json",
+      "retrieval_metadata_sha256": "0de0681abfab7f3d49ec731668ad58ca76920ba83d1b24b7ddc4882642ee7eaf"
+    }
+  ],
+  "failed_optional_retrievals": [],
+  "units": [
+    {
+      "unit_id": "w2-c-1",
+      "body_sha256": "fac9d2296c51af6db3e5dd50487b1fa80d7765df12162b5ff890229bc4e8af87",
+      "claim_ids": [
+        "REFILL-CANCER-FINAL-W2-C-1-001",
+        "REFILL-CANCER-FINAL-W2-C-1-002",
+        "REFILL-CANCER-FINAL-W2-C-1-003",
+        "REFILL-CANCER-FINAL-W2-C-1-004",
+        "REFILL-CANCER-FINAL-W2-C-1-005",
+        "REFILL-CANCER-FINAL-W2-C-1-006",
+        "REFILL-CANCER-FINAL-W2-C-1-007",
+        "REFILL-CANCER-FINAL-W2-C-1-008",
+        "REFILL-CANCER-FINAL-W2-C-1-009",
+        "REFILL-CANCER-FINAL-W2-C-1-010",
+        "REFILL-CANCER-FINAL-W2-C-1-011",
+        "REFILL-CANCER-FINAL-W2-C-1-012",
+        "REFILL-CANCER-FINAL-W2-C-1-013",
+        "REFILL-CANCER-FINAL-W2-C-1-014",
+        "REFILL-CANCER-FINAL-W2-C-1-015",
+        "REFILL-CANCER-FINAL-W2-C-1-016",
+        "REFILL-CANCER-FINAL-W2-C-1-017",
+        "REFILL-CANCER-FINAL-W2-C-1-018",
+        "REFILL-CANCER-FINAL-W2-C-1-019",
+        "REFILL-CANCER-FINAL-W2-C-1-020",
+        "REFILL-CANCER-FINAL-W2-C-1-021",
+        "REFILL-CANCER-FINAL-W2-C-1-022",
+        "REFILL-CANCER-FINAL-W2-C-1-023",
+        "REFILL-CANCER-FINAL-W2-C-1-024",
+        "REFILL-CANCER-FINAL-W2-C-1-025",
+        "REFILL-CANCER-FINAL-W2-C-1-026",
+        "REFILL-CANCER-FINAL-W2-C-1-027",
+        "REFILL-CANCER-FINAL-W2-C-1-028",
+        "REFILL-CANCER-FINAL-W2-C-1-029"
+      ],
+      "claim_count": 29,
+      "body_read_completely": true,
+      "atomic_census_completeness": "PASS_FOR_THIS_NARROW_FINAL_BODY",
+      "verdict": "KEEP",
+      "fully_supported_in_current_scope": true,
+      "previous_effective_body_sha256": "c8098a09d475951aa251c24654f3d589368a3cbd021709f2c9fc18444f24f561",
+      "original_base_guide_path": "notes/guide.json",
+      "original_base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+      "unchanged_parent_revision": {
+        "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+        "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+      },
+      "finding_ko": "최종 본문을 old effective body와 함께 전문 대조했다. III–IV additional oral 경로와 initial-filling comparator를 직접 확인했다. MA V의 불확실한 별도 authorization 세부를 인증하지 않는 축소가 명시돼 있다. 50개 census 전체에서 별도 미열거된 수치·기한·scope claim은 찾지 못했다."
+    },
+    {
+      "unit_id": "w2-c-12",
+      "body_sha256": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146",
+      "claim_ids": [
+        "REFILL-CANCER-FINAL-W2-C-12-001",
+        "REFILL-CANCER-FINAL-W2-C-12-002",
+        "REFILL-CANCER-FINAL-W2-C-12-003",
+        "REFILL-CANCER-FINAL-W2-C-12-004",
+        "REFILL-CANCER-FINAL-W2-C-12-005",
+        "REFILL-CANCER-FINAL-W2-C-12-006",
+        "REFILL-CANCER-FINAL-W2-C-12-007",
+        "REFILL-CANCER-FINAL-W2-C-12-008",
+        "REFILL-CANCER-FINAL-W2-C-12-009",
+        "REFILL-CANCER-FINAL-W2-C-12-010",
+        "REFILL-CANCER-FINAL-W2-C-12-011",
+        "REFILL-CANCER-FINAL-W2-C-12-012",
+        "REFILL-CANCER-FINAL-W2-C-12-013",
+        "REFILL-CANCER-FINAL-W2-C-12-014",
+        "REFILL-CANCER-FINAL-W2-C-12-015",
+        "REFILL-CANCER-FINAL-W2-C-12-016",
+        "REFILL-CANCER-FINAL-W2-C-12-017",
+        "REFILL-CANCER-FINAL-W2-C-12-018",
+        "REFILL-CANCER-FINAL-W2-C-12-019",
+        "REFILL-CANCER-FINAL-W2-C-12-020",
+        "REFILL-CANCER-FINAL-W2-C-12-021"
+      ],
+      "claim_count": 21,
+      "body_read_completely": true,
+      "atomic_census_completeness": "PASS_FOR_THIS_NARROW_FINAL_BODY",
+      "verdict": "KEEP",
+      "fully_supported_in_current_scope": true,
+      "previous_effective_body_sha256": "73a814cd4020d6912e149677086384685b2bb317b7b8b935aa4feed8a7053bbf",
+      "original_base_guide_path": "notes/guide.json",
+      "original_base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+      "unchanged_parent_revision": {
+        "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+        "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+      },
+      "finding_ko": "최종 본문을 old effective body와 함께 전문 대조했다. first-adult/minor7일,정확한 cancer-pain category,professional judgment,medical-record condition,non-opiate alternative 및 OUD 구분을 모두 대조했다. 삭제한 active-cancer 단축 표현은 검증된 주장으로 남기지 않는다. 50개 census 전체에서 별도 미열거된 수치·기한·scope claim은 찾지 못했다."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-001",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "dd0b9a6831f4fa83f11d815e7c69fa5015880f89aad4f4c1c88d7e2c07e9199d",
+      "statement_ko": "Federal III–IV prescription은 원issue date후6개월을 넘어 fill/refill할 수 없다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh(a)는 III 또는IV의 fill/refill을 원 issue date6개월 뒤 금지한다. MA V의 근거와 분리한 최종 본문은 정확하다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-002",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "46ede4fab1346afadeee0e0008c23b28c2e9744ba17f1951da742292412e19c9",
+      "statement_ko": "Federal III–IV prescription의 authorized refill은 최대5회이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh(a)는 authorized III–IV refills를5회로 제한한다. original fill을 포함한 총5번 조제라고 바꾸지 않았다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-003",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "78312b4de701c129123b382d905969875feb12121b5578bb9ba296722b2222c7",
+      "statement_ko": "MA ScheduleV prescription도 issue후6개월을 넘어 fill/refill할 수 없다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh9.04(13)는 MA V의 fill/refill issue6개월 제한을 직접 명시한다. 연방III–IV 조문을V의 직접 근거로 잘못 확장하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(13)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-004",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "a4c8a5c165efcddff1b5eee89f996d9604856efce2b25b2be889d157402c59e3",
+      "statement_ko": "MA ScheduleV prescription의 refill은 최대5회이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh9.04(13)의 MA V 최대5-refill 문구와 일치한다.",
+      "authorities": [
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(13)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-005",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "d300cdb6aedb78473c54a917f310262d6c68c548537175c46b0756568a476ce0",
+      "statement_ko": "Refill은 원처방이 refill을 허용한 경우에 가능하다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh§23(f)는 original prescription의 refill authorization을 요구한다. 법정 최대가 자동 허가라는 오해를 차단한다.",
+      "authorities": [
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§23(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-006",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "0c3b4a9c3e016eb915db6af2cc5e9dd10927f1a82656505c775cccbdb0b2a715",
+      "statement_ko": "원처방에 specified된 refill 횟수 안에서 refill한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh§23(f)의 number of refills specified 요건을 유지한다.",
+      "authorities": [
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§23(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-007",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "3b057b3b4956a517b23b806b91ac5b4975633dc7e567a160e200535819abd53c",
+      "statement_ko": "Original filling과 그이후의 refill은 구별되며 original을5refill 중하나로 자동계산하지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "initial filling과 refilling은(a),(c),(e)(3)에서 구분된다. 첫 조제를 refill1회로 소비시키지 않는 설명은 이 범위에서 지지된다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a),(c)(5),(e)(3)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-008",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "ed72c25a863f90392b477d40e1fa49cdc3e7f1304a75ab45bbf3a7317e5db36e",
+      "statement_ko": "Prescriber가0회 또는더적은횟수를 허용하면 법정최대5회가 자동추가되지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "§23(f)의 실제 authorization 범위가 maximum보다 좁을 수 있다.0회 처방에5회를 추가하는 권한은 아니다.",
+      "authorities": [
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§23(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-009",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "4b84c1e7c918e1dea76a2e351f612b0aa55066e25c0fbb7bb7d0cd224404b126",
+      "statement_ko": "늦은first filling은 issue date기준6개월을 재시작하지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(a)의 기준점은 issue date이므로 late initial filling으로 새 clock을 만드는 설명이 아니다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-010",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "7ef08277edbed9e64740182c9fbb246c79f36bb82c91c2844c933ae626d8aa24",
+      "statement_ko": "Refill transfer는 original issue date를 보존한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "paper/oral transferred Rx의(b)(3)(i)에 original issue date가 요구된다. 최종 본문이 이를 보존한다.",
+      "authorities": [
+        {
+          "source_id": "transfers",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.25",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.25(b)(3)(i)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.25(b)(3)–(4) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers.txt",
+          "evidence_sha256": "fd719505d6ab52041ce823c3f4d6d692713a602afef3ba0503457247b04c1396",
+          "raw_sha256": "9e8b75e76e427bdd3920155045c1f29bc9ab1fee9b2b5662f36f14daaa41de59"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-011",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "608809e80a238dc1725880f1ec48415127521026cf8ad93d68381c23a60d8092",
+      "statement_ko": "Refill transfer는 valid refills remaining과 이전refill history를 보존한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)(3)(iv),(b)(4)(ii)는 remaining refills와 이전 refill dates/locations를 유지한다. transfer가 소진분을 복구하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "transfers",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.25",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.25(b)(3)(iv),(b)(4)(ii)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.25(b)(3)–(4) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers.txt",
+          "evidence_sha256": "fd719505d6ab52041ce823c3f4d6d692713a602afef3ba0503457247b04c1396",
+          "raw_sha256": "9e8b75e76e427bdd3920155045c1f29bc9ab1fee9b2b5662f36f14daaa41de59"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-012",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "3fcb9196145330a31530fd2a7a226cb37a5e22e4c7d0f266f14097588f7ff301",
+      "statement_ko": "Last fill이나 transfer day부터 새6개월을 세지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "issue-date clock이므로 last fill/transfer date에서 새6개월을 계산하지 않는다는 적용은 정확하다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-013",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "cf2aea179ebc6c4efd787b2ac262ed18b92d263c22be4f2865d22ce2e68fd5b8",
+      "statement_ko": "PRN/장기refill지시도 해당III–IV 법정6개월·5회 제한을 초과하는 허가가 아니다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "PRN이라는 지시가(a)의 III–IV maximum을 초과하는 별도 면제를 만들지 않는다. 다른 schedule의 모든 규칙까지 이 문장으로 새로 인증하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-014",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "392cc62eae46225c089bc48a8a0e90a98bebbe1fe5cd644f47187ceeca1f7ab5",
+      "statement_ko": "MA ScheduleVI prescription은 issue date부터1년의validity/refill framework이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "9.04(12)는 MA VI의 issue-date1년 validity/refill framework를 명시한다. 남은 refills/continuity exception 전부를 면제한다고 쓰지 않는다.",
+      "authorities": [
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(12)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-015",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "6b6fa4cff39e10ffa381c9c74fe0f8d576d6a00c4b39fbd484759c1e6f78f3be",
+      "statement_ko": "추가oral refill authorization의 이federal 경로는 ScheduleIII–IV에 한정된다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e) 도입부가 III 또는IV를 명시한다. final heading과 본문은 그 범위를 정확히 한정했다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)intro",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-016",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "47e26818f6da3c7461e8d02040522331003831930d3f4c0357a2e335dd87000f",
+      "statement_ko": "그prescriber는 original prescription에 추가refill을 oral로 pharmacist에게 authorize할 수 있다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e) 도입부의 prescribing practitioner가 pharmacist에게 original prescription 추가 refills를 oral authorize하는 경로와 일치한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)intro",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-017",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "0f7fe8e144577a2c1f46d34799608213982744d22fb40d8e5f1d1ac7b8ab1127",
+      "statement_ko": "추가oral authorization도 총최대5refill 한도 안이어야 한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(1)의 overall five-refill maximum을 유지한다. later authorization으로5회를 새로 부여하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(1)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-018",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "210c7b480d9f2c9d1916ecf9458219c4c010c685be3b58d3084370d72b6ea6cb",
+      "statement_ko": "추가oral authorization도 original issue date후6개월을 넘을 수 없다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(1)은 original issue date에서6개월이고 oral authorization date에서 새 clock이 아니다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(1)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-019",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "6a5a42c2a6162b8c8fa89ee24ad6c1977fb9eeb29c65e0245f933df1adefb294",
+      "statement_ko": "각추가refill quantity는 original prescription의 initial filling에 허용된quantity 이하여야 한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(3)은 quantity authorized for the initial filling을 comparator로 쓴다. final body는 정확히 그 initial-filling amount 이하로 고쳤다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(3)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-020",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "b1d5efa6ab23a412d138ec1e816d4b7b866dd2be2373b41940d5c991356cab17",
+      "statement_ko": "그quantity 비교기준은 임의의기존per-refill quantity가 아니라 initial-filling authorized quantity이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "임의의 기존 per-refill quantity와 initial-filling authorization은 동일 개념이 아니다. final correction이 잘못된 comparator를 제거한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(3)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-021",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "baeca052b0b36472fd64ce1beb2d875362b4f4fdfd929747c7847f6855e8d81f",
+      "statement_ko": "Pharmacist는 추가authorization의 날짜를 기록한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(2)는 authorization date 기록을 요구한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-022",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "21688ed0f15ef88735c20468fb36030b29907bc76391ebc3f115add2abc53363",
+      "statement_ko": "Pharmacist는 refill quantity를 기록한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(2)는 refill quantity 기록을 요구한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-023",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "9361d3a20541fa63f3725725566f2c5ed363abf6fafe68eebd5b1f3261baf3ba",
+      "statement_ko": "Pharmacist는 추가로허용된 refill 횟수를 기록한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(2)는 number of additional refills authorized 기록을 요구한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-024",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "bee48e73a8f91258a881e156873408065936604d49086a82b6f3694de9b29229",
+      "statement_ko": "Pharmacist는 initial 또는electronic annotation으로 누가authorization을 받았는지 기록한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(2)는 paper initials 또는 electronic annotation으로 authorization을 받은 사람을 식별한다. final body의 식별 기록과 일치한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-025",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "1fc099b1960ce6361ca373f2220d754c666f91c88bd7217c4a5321f022c876ca",
+      "statement_ko": "그기록은 original paper처방뒷면 또는electronic prescription record에 남긴다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(2)의 reverse of original paper prescription 또는 electronic prescription record라는 위치를 유지한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-026",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "fdbd0abb02b9c4715e1fb873d38da6ae8e603524569ed243ade04bfbee441f5a",
+      "statement_ko": "5refill/6개월한도 밖의 추가quantity에는 prescriber가 new separate prescription을 발행해야 한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)(4)는 five-refill/six-month 한도를 넘는 additional quantities에 new and separate prescription을 요구한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)(4)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-027",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "868c2ec3c6bf68ccf11db703d33969dd65f4e16b3530992af92333289f9c137e",
+      "statement_ko": "이III–IV 조문만으로 MA V에 동일additional-oral 절차/initial-filling quantity기준을 적용했다고 확정하지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(e)가 III–IV인 사실만 확인하고 MA V의 identical oral procedure/initial-quantity cap 적용을 미확정으로 남긴다. MA V relationship 전체가 해결됐다고 인증하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(e)intro,(e)(3)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-028",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "9d1aab5084f021982f0fa2e3138c5fe3c4671c52de64ea23b533cb942ee98685",
+      "statement_ko": "Drug/dose/directions 변경은 unchanged refill authorization과 다른 prescription-change 요건을 검토해야 한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "Policy II(B)는 다른 controlled substance에 new prescription을 요구하고 III/IV는 directions/strength 등 changes의 consultation/기록을 별도로 다룬다. unchanged refill과 clinical modification의 구분은 적절하다.",
+      "authorities": [
+        {
+          "source_id": "changes",
+          "official_url": "https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "Policy2018-01 II(B),III(A)(i)(e),(g),III(B)(v),(vii)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Policy2018-01 adopted2018-03-01,revised2024-01-11;§§II–IV read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/changes.txt",
+          "evidence_sha256": "e282f51b248106504689792ffc09668be6e796e3cda38d9ad7e1565d58a92039",
+          "raw_sha256": "650432beeccdebe9de709c66a289b471d07510e3c1fc5eee8d335c8845ac2684"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-1-029",
+      "unit_id": "w2-c-1",
+      "claim_record_sha256": "74558dd0e3e3b556c34ee743b41d2d3177de9ee05b51ff8c54f4d9c73c9a0d6d",
+      "statement_ko": "Technician의 unchanged refill 전달수신 권한은 clinical therapy-clarification/modification 업무권한과 구별된다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "8.02(6)(c)의 unchanged refill permission과(d)의 therapy clarification/modification 금지를 구분한다. final body는 technician을 독립 prescriber로 만들지 않는다.",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR8.02(6)(c),(d)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR8 Register1546 dated2025-04-25;8.02–8.04 pages corrected effective2018-04-06",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/personnel.txt",
+          "evidence_sha256": "b730566043d1cfe5251dac9de2aec615e9bb9e910fef468bc3b2f49a4b721318",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-001",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "fe215515599dbf2965cd920d33e70196b5c596c08806ff067f1d4903250a1747",
+      "statement_ko": "Adult의 첫outpatient opiate prescription은 기본7-day supply를 넘을 수 없다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh§19D(a) 첫 문장은 adult의 first outpatient opiate prescription을7-day로 제한한다. 모든 adult 후속 처방이라고 확대하지 않았다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)firstsentence",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-002",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "256121783fc80e09764fc4200ce802b6fb442dab6d7aa8b6706961ae0e0d77d2",
+      "statement_ko": "이adult first-outpatient 제한을 모든subsequent adult prescription의 일률적7일한도로 확대하지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "adult first-time 조건 때문에 subsequent adult prescriptions의 일률적7-day cap으로 읽지 않는 설명이 맞다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)firstsentence",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-003",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "7fd2928654d9df557d76e4be0c74df4ec4f09074924a2474332156141e4e4f95",
+      "statement_ko": "Minor의 opiate prescription은 언제든 기본7-day supply를 넘을 수 없다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(a) 둘째 문장은 minor에게 at any time의7-day basic limit를 둔다. final body는(b)/(c)의 예외를 이어 설명한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)secondsentence",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-004",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "dc68e2bfe56e8c56344c87cf8e07da40731ec68566cfec7af02a6ecb0e2cd670",
+      "statement_ko": "Prescriber는 minor parent/guardian과 opiate risks를 논의한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(a)는 minor의 parent/guardian과 opiate-use risks를 discuss하도록 한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)secondsentence",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-005",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "ddfcacf18db59283985383332ebfba036c3cb1305e9596af75d979e1a5ce6f8e",
+      "statement_ko": "Prescriber는 minor parent/guardian과 처방이 필요한 이유를 논의한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(a)는 parent/guardian과 prescription necessity reasons도 discuss하도록 한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)secondsentence",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-006",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "2cd62bc223a8b98dbdda96124104b4fd5117b1dd6304de81fec7cc735bc2041b",
+      "statement_ko": "7일초과예외는 prescriber의 professional medical judgment로 더긴공급이 필요하다는 판단을 요구한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는 practitioner의 professional medical judgment에 따라7일 초과가 필요해야 한다. 단어 하나로 자동 면제하지 않았다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-007",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "0b4d8bae264fbcb415cf1e9b87aed70afd37ddfc89bf34bab57f119616c40433",
+      "statement_ko": "이예외경로는 adult 또는minor patient에 적용될 수 있다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는 adult or minor patient를 명시하므로 양쪽에 해당될 수 있다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-008",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "c4f42fda082e0bc970dfd50fca05dc30746616d03af5b657206b95021220ea2c",
+      "statement_ko": "Acute medical condition 치료에7일초과가필요하면 해당예외category이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)의 acute medical condition 범주가 직접 지지한다. final body는 acute를 포괄적 별도 무조건 면제로 만들지 않는다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-009",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "6ff52e7712c1e671e0f81138085d506faadd5f4b099ac8d7d20dc5c6dd96677b",
+      "statement_ko": "Chronic pain management에7일초과가필요하면 해당예외category이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)의 chronic pain management 범주와 more-than7-days necessity를 함께 유지한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-010",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "cf4695d3a8735b5169e092b719ed8fa4f1bee729a86e5345f5b85540464b60ff",
+      "statement_ko": "Cancer diagnosis와 관련된pain에7일초과가필요하면 해당예외category이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는 pain associated with a cancer diagnosis라고 쓴다. cancer activity 상태만을 trigger로 삼지 않는다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-011",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "500f4e48993d5ccfcbe78a4f437104f9cf34d75533ffe2aa1298daa609c2513c",
+      "statement_ko": "Palliative care에7일초과가필요하면 해당예외category이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)의 palliative-care 범주 및 실제 치료에 필요한 opiate quantity라는 맥락을 유지한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-012",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "dcd9e0af25a8b3b6520f75c29db6c5828eeb3e194536992dfc91cfb584b05996",
+      "statement_ko": "Prescriber는 그해당condition을 치료하는데 필요한 quantity를 처방할 수 있다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는 해당 condition을 치료하는데 quantity needed를 허용한다. 모든 다른 quantity/schedule 제한까지 없어진다는 주장은 아니다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-013",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "52e6187cfc9154a5683847fb30d9e7606c4b97de56f3c5b11788e1d88bd8a02f",
+      "statement_ko": "암관련 statutory category는 단순active-cancer label이 아니라 cancer diagnosis관련pain이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "법문은 active cancer라는 진단상태가 아니라 cancer-diagnosis 관련 pain이다. final body의 명시적 교정이 그 범위를 회복했다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-014",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "76d725f6f45da6513bb9d5bd3af60d593dec1f373ce5f808fe60b0151cecb3e2",
+      "statement_ko": "Prescriber는7일초과처방을 필요로한 triggering condition을 patient medical record에 document한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는7일 초과 처방을 trigger한 condition을 medical record에 document하도록 한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-015",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "73f95f0b1a903d15bced9a1dc100c6e9688b8372ce2a0370d704b959c3fec14d",
+      "statement_ko": "Prescriber는 non-opiate alternative가 해당medical condition에 적절하지않았음을 indicate한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(b)는 non-opiate alternative가 해당 condition에 appropriate하지 않았음을 indicate하도록 한다. final body의 표현이 실제 요구와 일치한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-016",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "bd3ef5ebd298a4c544f643f6e26f199b1c6d2fc920dfb1de3812b01abd6b823e",
+      "statement_ko": "Chronic pain/cancer label만으로 judgment/documentation 등 예외조건이 모두충족되지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "clinical label만으로 professional judgment와 documentation이 자동 완성되지 않는다. 이 범위 제한은(b)의 conjunctive requirements를 유지한다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-017",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "1895b5ae826e9f3a5d65a148cf9c51dd3ee50774ec6aa2a8cdbadd2dacc662d5",
+      "statement_ko": "Substance-abuse/opioid-dependence 치료용 medication에는 이section이 적용되지 않는다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "(c)는 substance abuse 또는 opioid dependence treatment용 medications에 section이 적용되지 않는다고 한다. 좁은 OUD 설명은 지지되며 모든 opioid 제품 면제라고 확대하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(c)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-018",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "063bf88ecf523119ba57bdae6089861a04304753789575bd2b4319aa7ab2e1c4",
+      "statement_ko": "Pain치료상황과 opioid-dependence 치료의 statutory supply취급은 구별된다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "pain-use exception과 dependence-treatment nonapplication은 각각(b),(c)의 다른 법적 경로다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(b),(c)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-019",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "3c233e0f276d3b744627527c045e50703de42f00011ff5985efa810c24ae181e",
+      "statement_ko": "CII/CIII의30/90-day single-fill 상한은 §19D7일 제한과 별도의법정단계이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "fresh§23(d)의 CII/CIII single-fill30/90-day 범위는§19D의 first/minor prescribing7일과 별도 단계다. 모든CII/CIII가90일이라는 확장 없이 구분한다.",
+      "authorities": [
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§23(d)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-020",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "21cf6d3394ff13e88f5082172625573dd70cf16c6abc2e29b8f08e686e37fdc1",
+      "statement_ko": "이first/minor prescription발행 제한의 주체는 practitioner이다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "§19D(a)의 직접 발행 제한은 practitioner가 주체다. final body의 universal pharmacist lifetime-first-use 조사 의무를 이 조문 하나에서 창작하지 말라는 문장은 그 범위 제한이다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGL c94C§19D(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        }
+      ]
+    },
+    {
+      "claim_id": "REFILL-CANCER-FINAL-W2-C-12-021",
+      "unit_id": "w2-c-12",
+      "claim_record_sha256": "9fec1732823356a93322cfdb42b7f7fe731b5e1082038a477be3c48d576da385",
+      "statement_ko": "Pharmacist는 별도로 legitimate purpose·valid relationship·authenticity·적법dispensing을 professional judgment로 판단한다.",
+      "verdict": "KEEP",
+      "legal_support": "SUPPORTED_WITH_EXPLICIT_SCOPE",
+      "finding_ko": "9.15(2)는 pharmacist의 legitimate purpose/relationship/authenticity/적법 조제 판단을 별도로 요구한다.1306.04(a)의 corresponding responsibility도 유지되므로 prescriber 의무만으로 약사 책임을 없애지 않는다.",
+      "authorities": [
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.15(2)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        },
+        {
+          "source_id": "purpose",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.04",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.04(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.04(a) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/purpose.txt",
+          "evidence_sha256": "fd9775208c70ff28301566825cbb980515544df84fe5b359b965b49a5cfa445f",
+          "raw_sha256": "b343c07f2504871734fdd8fe9074347312a4677b3ff7d7e8f9cab82d1946aed5"
+        }
+      ]
+    }
+  ],
+  "derived_patches": [],
+  "reviewed_unchanged_derived_records": [
+    {
+      "collection": "study",
+      "id": "LAW-029",
+      "base_path": "notes/study/guide.json",
+      "base_file_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "base_card_sha256": "d5c3033b5f2b0a21e151b82e4b69b31bcb8b784d9442feee6a50eefa74e1c4b3",
+      "effective_card_sha256": "d5c3033b5f2b0a21e151b82e4b69b31bcb8b784d9442feee6a50eefa74e1c4b3",
+      "full_base_card_read": true,
+      "full_effective_card_read": true,
+      "base_snapshot": {
+        "id": "LAW-029",
+        "module_id": "m08",
+        "title": "6개월·최대 5 refills",
+        "core": "Federal III–IV와 MA V의 출처를 구분하고 issue date를 기준으로 봅니다.",
+        "why": "법정 최대 refill 횟수는 prescriber의 실제 허가 횟수를 늘리지 않습니다.",
+        "trap": "Original fill을 refill 1회로 세거나 transfer로 6개월을 새로 시작하지 않습니다.",
+        "recall": "0 refills 처방에 법정 최대 5회가 자동 생기지 않는 이유를 설명하세요.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-2"
+        ]
+      },
+      "effective_snapshot": {
+        "id": "LAW-029",
+        "module_id": "m08",
+        "title": "6개월·최대 5 refills",
+        "core": "Federal III–IV와 MA V의 출처를 구분하고 issue date를 기준으로 봅니다.",
+        "why": "법정 최대 refill 횟수는 prescriber의 실제 허가 횟수를 늘리지 않습니다.",
+        "trap": "Original fill을 refill 1회로 세거나 transfer로 6개월을 새로 시작하지 않습니다.",
+        "recall": "0 refills 처방에 법정 최대 5회가 자동 생기지 않는 이유를 설명하세요.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-2"
+        ]
+      },
+      "parent_chain_checked": [
+        {
+          "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+          "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+        },
+        {
+          "path": "revisions/notes/2026-11-03-counsel-shield-final.json",
+          "sha256": "406ee4c78efce4d167281e04d7e92b12706fd293a581c28789d1b155a4675ae0"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm13-vax04.json",
+          "sha256": "f377ac8a6bd80884bed9e523be1ea388d49fd7830d3e6460f5748a9926929e4c"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm0512.json",
+          "sha256": "71675aef5a59e3d285457f1cad3d3a4a5d42ea4b691ae8d4380ce331a07d3498"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-discipline-cdtm.json",
+          "sha256": "e6b4335716a7b4d608bb49949c9504484c898df390064df5909aa8d3925bc266"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-discipline.json",
+          "sha256": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-presence.json",
+          "sha256": "cca0d608f33b8ee8e96f1f5eaa45e96dded6f3420fd9e7f2e28d38e6f319d8e8"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-supervision-training.json",
+          "sha256": "932c20a7d8119b29cb62f5121d882827722691e2a38d58d8a9c98161199f8e02"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+          "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979"
+        }
+      ],
+      "patch_present": false,
+      "disposition": "NO_PATCH_PRESENT_KEEP_UNCHANGED_RECORD",
+      "verdict": "KEEP",
+      "finding_ko": "Original/refill와 issue-date clock 및 실제 authorization을 모두 구분한다. III–IV oral extension을 V에 동일 적용하거나 per-refill comparator를 잘못 적는 문장이 없다. 카드 전체의 각 문구는 확인한 caps와 authorization 범위에서 맞으므로 수정하지 않는 판단을 지지한다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a),(e)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        },
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(12)–(13)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        },
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGLc94C§23(d),(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "collection": "study",
+      "id": "LAW-035",
+      "base_path": "notes/study/guide.json",
+      "base_file_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "base_card_sha256": "47cc923555e6c4f4ace98213e7adba79d9f31af70395dd0354ff693a41f6258d",
+      "effective_card_sha256": "47cc923555e6c4f4ace98213e7adba79d9f31af70395dd0354ff693a41f6258d",
+      "full_base_card_read": true,
+      "full_effective_card_read": true,
+      "base_snapshot": {
+        "id": "LAW-035",
+        "module_id": "m09",
+        "title": "Opioid 7일의 대상",
+        "core": "Adult first outpatient opioid와 minor opioid의 기본 제한을 구분합니다.",
+        "why": "예외의 clinical judgment·문서화와 OUD 치료의 별도 취급을 함께 읽습니다.",
+        "trap": "모든 성인의 모든 subsequent opioid를 무조건 7일로 제한하지 않습니다.",
+        "recall": "7-day prescribing 제한과 CII/CIII single-fill 상한을 분리하세요.",
+        "note_units": [
+          "w2-c-12"
+        ]
+      },
+      "effective_snapshot": {
+        "id": "LAW-035",
+        "module_id": "m09",
+        "title": "Opioid 7일의 대상",
+        "core": "Adult first outpatient opioid와 minor opioid의 기본 제한을 구분합니다.",
+        "why": "예외의 clinical judgment·문서화와 OUD 치료의 별도 취급을 함께 읽습니다.",
+        "trap": "모든 성인의 모든 subsequent opioid를 무조건 7일로 제한하지 않습니다.",
+        "recall": "7-day prescribing 제한과 CII/CIII single-fill 상한을 분리하세요.",
+        "note_units": [
+          "w2-c-12"
+        ]
+      },
+      "parent_chain_checked": [
+        {
+          "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+          "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+        },
+        {
+          "path": "revisions/notes/2026-11-03-counsel-shield-final.json",
+          "sha256": "406ee4c78efce4d167281e04d7e92b12706fd293a581c28789d1b155a4675ae0"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm13-vax04.json",
+          "sha256": "f377ac8a6bd80884bed9e523be1ea388d49fd7830d3e6460f5748a9926929e4c"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm0512.json",
+          "sha256": "71675aef5a59e3d285457f1cad3d3a4a5d42ea4b691ae8d4380ce331a07d3498"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-discipline-cdtm.json",
+          "sha256": "e6b4335716a7b4d608bb49949c9504484c898df390064df5909aa8d3925bc266"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-discipline.json",
+          "sha256": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-presence.json",
+          "sha256": "cca0d608f33b8ee8e96f1f5eaa45e96dded6f3420fd9e7f2e28d38e6f319d8e8"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-supervision-training.json",
+          "sha256": "932c20a7d8119b29cb62f5121d882827722691e2a38d58d8a9c98161199f8e02"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+          "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979"
+        }
+      ],
+      "patch_present": false,
+      "disposition": "NO_PATCH_PRESENT_KEEP_UNCHANGED_RECORD",
+      "verdict": "KEEP",
+      "finding_ko": "Adult first outpatient/minor와 subsequent adult를 구분하고 exceptions의 clinical judgment/문서화 및 OUD 경로를 함께 읽도록 한다. active cancer만으로 자동 면제라는 문구가 없고7일과30/90일 층위 구분도 맞다. 카드 전체를 읽은 NO_PATCH 판단이다.",
+      "authorities": [
+        {
+          "source_id": "law19d",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGLc94C§19D(a)–(c)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§19D(a)–(c) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law19d.txt",
+          "evidence_sha256": "372127a8f683017c401342e69a05a0a3373eab2a7f8f546d3eb66cdf38e9f663",
+          "raw_sha256": "8c50076ec862381273b3a3013732a908db2a9835395a5dd9bf31f39782aef812"
+        },
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGLc94C§23(d),(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "collection": "refresh",
+      "id": "RF-037",
+      "base_path": "notes/refresh/guide.json",
+      "base_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "base_card_sha256": "5266034a9c318b5496e5661c402bb209a781a604e9a8c967365775120a683ef4",
+      "effective_card_sha256": "5266034a9c318b5496e5661c402bb209a781a604e9a8c967365775120a683ef4",
+      "full_base_card_read": true,
+      "full_effective_card_read": true,
+      "base_snapshot": {
+        "id": "RF-037",
+        "title": "Refill의 시계는 원 발행일에서",
+        "takeaway": "첫 fill이나 transfer가 늦어도 원 처방의 시계가 새로 시작되지 않습니다.",
+        "plain": "허용 refill 수와 유효기간, 이미 사용한 수량을 함께 확인합니다.",
+        "example": "다른 약국으로 옮긴 날을 새 issue date로 입력하지 않습니다.",
+        "watch": "법정 최대 횟수는 처방자의 refill authorization을 자동 추가하지 않습니다.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-5"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "effective_snapshot": {
+        "id": "RF-037",
+        "title": "Refill의 시계는 원 발행일에서",
+        "takeaway": "첫 fill이나 transfer가 늦어도 원 처방의 시계가 새로 시작되지 않습니다.",
+        "plain": "허용 refill 수와 유효기간, 이미 사용한 수량을 함께 확인합니다.",
+        "example": "다른 약국으로 옮긴 날을 새 issue date로 입력하지 않습니다.",
+        "watch": "법정 최대 횟수는 처방자의 refill authorization을 자동 추가하지 않습니다.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-5"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "parent_chain_checked": [
+        {
+          "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+          "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+        },
+        {
+          "path": "revisions/notes/2026-11-03-counsel-shield-final.json",
+          "sha256": "406ee4c78efce4d167281e04d7e92b12706fd293a581c28789d1b155a4675ae0"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm13-vax04.json",
+          "sha256": "f377ac8a6bd80884bed9e523be1ea388d49fd7830d3e6460f5748a9926929e4c"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm0512.json",
+          "sha256": "71675aef5a59e3d285457f1cad3d3a4a5d42ea4b691ae8d4380ce331a07d3498"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-discipline-cdtm.json",
+          "sha256": "e6b4335716a7b4d608bb49949c9504484c898df390064df5909aa8d3925bc266"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-discipline.json",
+          "sha256": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-presence.json",
+          "sha256": "cca0d608f33b8ee8e96f1f5eaa45e96dded6f3420fd9e7f2e28d38e6f319d8e8"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-supervision-training.json",
+          "sha256": "932c20a7d8119b29cb62f5121d882827722691e2a38d58d8a9c98161199f8e02"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+          "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979"
+        }
+      ],
+      "patch_present": false,
+      "disposition": "NO_PATCH_PRESENT_KEEP_UNCHANGED_RECORD",
+      "verdict": "KEEP",
+      "finding_ko": "late first fill/transfer는 issue date를 재시작하지 않고 actual authorization/remaining amounts를 확인하도록 한다. 자동5refill 또는 transfer-date reset을 만들지 않으므로 전체 card를 유지할 수 있다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a),(e)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        },
+        {
+          "source_id": "transfers",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.25",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.25(b)(3)–(4)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.25(b)(3)–(4) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/transfers.txt",
+          "evidence_sha256": "fd719505d6ab52041ce823c3f4d6d692713a602afef3ba0503457247b04c1396",
+          "raw_sha256": "9e8b75e76e427bdd3920155045c1f29bc9ab1fee9b2b5662f36f14daaa41de59"
+        },
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGLc94C§23(d),(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "collection": "refresh",
+      "id": "RF-043",
+      "base_path": "notes/refresh/guide.json",
+      "base_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "base_card_sha256": "4763616c4b95dc50f64a9c3bf2a1751ecd00f9919c59bc96e0d80146f85532f6",
+      "effective_card_sha256": "4763616c4b95dc50f64a9c3bf2a1751ecd00f9919c59bc96e0d80146f85532f6",
+      "full_base_card_read": true,
+      "full_effective_card_read": true,
+      "base_snapshot": {
+        "id": "RF-043",
+        "title": "III–IV와 MA V: 6개월·5 refills",
+        "takeaway": "기간·횟수·처방자 authorization을 모두 확인합니다.",
+        "plain": "Federal III–IV의 상한과 Massachusetts V의 상한은 결과가 같아도 근거가 다릅니다. Original fill은 refill과 구별합니다.",
+        "example": "Refills 0인 처방에 법정 최대 5회를 자동으로 부여하지 않습니다.",
+        "watch": "Schedule VI의 1년 체계를 그대로 가져오지 않습니다.",
+        "note_units": [
+          "w2-c-1"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "effective_snapshot": {
+        "id": "RF-043",
+        "title": "III–IV와 MA V: 6개월·5 refills",
+        "takeaway": "기간·횟수·처방자 authorization을 모두 확인합니다.",
+        "plain": "Federal III–IV의 상한과 Massachusetts V의 상한은 결과가 같아도 근거가 다릅니다. Original fill은 refill과 구별합니다.",
+        "example": "Refills 0인 처방에 법정 최대 5회를 자동으로 부여하지 않습니다.",
+        "watch": "Schedule VI의 1년 체계를 그대로 가져오지 않습니다.",
+        "note_units": [
+          "w2-c-1"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "parent_chain_checked": [
+        {
+          "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+          "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+        },
+        {
+          "path": "revisions/notes/2026-11-03-counsel-shield-final.json",
+          "sha256": "406ee4c78efce4d167281e04d7e92b12706fd293a581c28789d1b155a4675ae0"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm13-vax04.json",
+          "sha256": "f377ac8a6bd80884bed9e523be1ea388d49fd7830d3e6460f5748a9926929e4c"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm0512.json",
+          "sha256": "71675aef5a59e3d285457f1cad3d3a4a5d42ea4b691ae8d4380ce331a07d3498"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-discipline-cdtm.json",
+          "sha256": "e6b4335716a7b4d608bb49949c9504484c898df390064df5909aa8d3925bc266"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-discipline.json",
+          "sha256": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-presence.json",
+          "sha256": "cca0d608f33b8ee8e96f1f5eaa45e96dded6f3420fd9e7f2e28d38e6f319d8e8"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-supervision-training.json",
+          "sha256": "932c20a7d8119b29cb62f5121d882827722691e2a38d58d8a9c98161199f8e02"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+          "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979"
+        }
+      ],
+      "patch_present": false,
+      "disposition": "NO_PATCH_PRESENT_KEEP_UNCHANGED_RECORD",
+      "verdict": "KEEP",
+      "finding_ko": "federalIII–IV와MAV의 출처를 구분하고 original fill/refill 및0-refill authorization을 올바르게 설명한다. initial-filling oral comparator에 대한 잘못된 주장이 원 카드에 없다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a),(e)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        },
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(12)–(13)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        },
+        {
+          "source_id": "law23",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "MGLc94C§23(d),(f)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current MA General Laws c94C§23(d),(f) retrieved2026-11-03; individual amendment effective history not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/law23.txt",
+          "evidence_sha256": "49186d6907f830f5ed492da5238baab693db7fb94156764910de43db5dea1efb",
+          "raw_sha256": "710f4ff9b80855cee712896e83985d1a4bef4753b2bb83f218044ecf1d13c217"
+        }
+      ]
+    },
+    {
+      "collection": "refresh",
+      "id": "RF-050",
+      "base_path": "notes/refresh/guide.json",
+      "base_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "base_card_sha256": "ede86145e63f11276889710a78dbaefff5c5afbd5376368809af13991cb874e7",
+      "effective_card_sha256": "ede86145e63f11276889710a78dbaefff5c5afbd5376368809af13991cb874e7",
+      "full_base_card_read": true,
+      "full_effective_card_read": true,
+      "base_snapshot": {
+        "id": "RF-050",
+        "title": "Refill 연락과 clinical clarification",
+        "takeaway": "변경 없는 정보 전달과 drug-therapy 변경 판단은 다릅니다.",
+        "plain": "전화업무라는 공통점보다 대화에서 실제로 무엇을 하려는지 봅니다.",
+        "example": "같은 directions의 refill authorization 요청과 새로운 dose를 정하는 연락을 구별합니다.",
+        "watch": "Trainee·ordinary technician·certified technician의 권한을 하나로 묶지 않습니다.",
+        "note_units": [
+          "w1-b-6",
+          "w2-c-1"
+        ],
+        "stage": "operations",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "effective_snapshot": {
+        "id": "RF-050",
+        "title": "Refill 연락과 clinical clarification",
+        "takeaway": "변경 없는 정보 전달과 drug-therapy 변경 판단은 다릅니다.",
+        "plain": "전화업무라는 공통점보다 대화에서 실제로 무엇을 하려는지 봅니다.",
+        "example": "같은 directions의 refill authorization 요청과 새로운 dose를 정하는 연락을 구별합니다.",
+        "watch": "Trainee·ordinary technician·certified technician의 권한을 하나로 묶지 않습니다.",
+        "note_units": [
+          "w1-b-6",
+          "w2-c-1"
+        ],
+        "stage": "operations",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "parent_chain_checked": [
+        {
+          "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+          "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+        },
+        {
+          "path": "revisions/notes/2026-11-03-counsel-shield-final.json",
+          "sha256": "406ee4c78efce4d167281e04d7e92b12706fd293a581c28789d1b155a4675ae0"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm13-vax04.json",
+          "sha256": "f377ac8a6bd80884bed9e523be1ea388d49fd7830d3e6460f5748a9926929e4c"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-cdtm0512.json",
+          "sha256": "71675aef5a59e3d285457f1cad3d3a4a5d42ea4b691ae8d4380ce331a07d3498"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-discipline-cdtm.json",
+          "sha256": "e6b4335716a7b4d608bb49949c9504484c898df390064df5909aa8d3925bc266"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-discipline.json",
+          "sha256": "7e9386dcf36a87d008b7bfdfa4674706d1efceea50ea12ec3444d3ab06f88558"
+        },
+        {
+          "path": "revisions/notes/2026-10-30-mor-presence.json",
+          "sha256": "cca0d608f33b8ee8e96f1f5eaa45e96dded6f3420fd9e7f2e28d38e6f319d8e8"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-supervision-training.json",
+          "sha256": "932c20a7d8119b29cb62f5121d882827722691e2a38d58d8a9c98161199f8e02"
+        },
+        {
+          "path": "revisions/notes/2026-10-29-personnel-ratios.json",
+          "sha256": "deae30e0bb41bf9983d52d41ab39d510e82a14b887c15fe11e43af2d5ba08979"
+        }
+      ],
+      "patch_present": false,
+      "disposition": "NO_PATCH_PRESENT_KEEP_UNCHANGED_RECORD",
+      "verdict": "KEEP",
+      "finding_ko": "unchanged refill communication과 새 dose 결정의 clinical clarification을 구분하고 trainee/ordinary/CPhT를 묶지 않도록 한다.8.02–8.04와 changes policy의 역할 차이에 맞으며 원 카드에 잘못된 oral-quantity/V 확장이 없다.",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR8.02(6),8.03(4),8.04(4)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR8 Register1546 dated2025-04-25;8.02–8.04 pages corrected effective2018-04-06",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/personnel.txt",
+          "evidence_sha256": "b730566043d1cfe5251dac9de2aec615e9bb9e910fef468bc3b2f49a4b721318",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714"
+        },
+        {
+          "source_id": "changes",
+          "official_url": "https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "Policy2018-01 §§II–IV",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Policy2018-01 adopted2018-03-01,revised2024-01-11;§§II–IV read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/changes.txt",
+          "evidence_sha256": "e282f51b248106504689792ffc09668be6e796e3cda38d9ad7e1565d58a92039",
+          "raw_sha256": "650432beeccdebe9de709c66a289b471d07510e3c1fc5eee8d335c8845ac2684"
+        }
+      ]
+    }
+  ],
+  "other_derived_records": [
+    {
+      "path": "notes/study/guide.json",
+      "identifier": "clock-09",
+      "record": {
+        "id": "clock-09",
+        "title": "MA III–V refill",
+        "limit": "6개월 / 최대 5 refills",
+        "trigger": "issue date",
+        "boundary": "Federal III–IV와 MA V의 출처 구분; actual authorization 필요",
+        "note_units": [
+          "w2-c-1"
+        ]
+      },
+      "record_sha256": "d564a816c14839a56663d9cfae51d49ba25b8d70fb48184cbc4b262d98525d24",
+      "file_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "entire_record_read": true,
+      "patch_present": false,
+      "verdict": "KEEP",
+      "finding_ko": "MAIII–V clock은 issue-date6개월/5refill이며 federalIII–IV와MAV의 출처·actual authorization을 구분한다. 잘못된 oral절차 비교나 cancer 진단 확장을 담지 않는다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        },
+        {
+          "source_id": "practice",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "247 CMR9.04(13)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "247CMR9 official PDF footer2024-12-06;9.04(12)–(13),9.15(2) read",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/practice.txt",
+          "evidence_sha256": "a4781e196a7f92fe9c8423583062b4a7b4ce53be23d83da7d523f8026160a3e8",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a"
+        }
+      ]
+    },
+    {
+      "path": "notes/refresh/guide.json",
+      "identifier": "Refill / Partial fill",
+      "record": {
+        "term": "Refill / Partial fill",
+        "meaning": "추가 허가된 조제 / 기존 허가 수량의 일부 교부.",
+        "note_units": [
+          "w2-b-6",
+          "w2-c-1"
+        ]
+      },
+      "record_sha256": "46c8e62a12ffead9b73d666a91debe3a119c5b3ef36e5ea6b835d57af8403a27",
+      "file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "entire_record_read": true,
+      "patch_present": false,
+      "verdict": "KEEP",
+      "finding_ko": "추가 허가된 조제와 existing authorized quantity의 일부 교부를 구분하는 용어 설명이다. 별도 scope/quantity authority를 새로 주지 않으므로 이 수정대상과 충돌하지 않는다.",
+      "authorities": [
+        {
+          "source_id": "refills",
+          "official_url": "https://www.ecfr.gov/current/title-21/part-1306/section-1306.22",
+          "source_type": "PUBLIC_OFFICIAL",
+          "exact_section": "21 CFR1306.22(a),(c),(e)",
+          "law_checked_date": "2026-11-03",
+          "version_or_publication_date": "Current eCFR21 up to date2026-10-30; §1306.22(a),(c),(e) read; individual paragraph commencement not separately established",
+          "applicable_effective_date": null,
+          "evidence_path": "reports/full-corpus-review/evidence/refill-cancer-final-independent/refills.txt",
+          "evidence_sha256": "5e1a7cfde0b247914cd81ad8132a3f8db2d08f426ae69532977ef8f0d7263692",
+          "raw_sha256": "5480f4b1223d41cd12bb78d1de78aa7a046b736ffe54c57989256723c66fc15f"
+        }
+      ]
+    }
+  ],
+  "prior_hold_dispositions": [
+    {
+      "finding_id": "W6-ORAL-REFILL-SCOPE",
+      "disposition": "INCORRECT_EXPANSION_REMOVED_FROM_FINAL_BODY;MA_V_IDENTICAL_PROCEDURE_RELATIONSHIP_REMAINS_UNRESOLVED",
+      "finding_ko": "final은 federalIII–IV 경로/initial-filling 기준을 명시하고 MA V의 동일 추가oral 절차를 확정하지 않는다. source relationship 전체의 해결로 세지 않는다."
+    },
+    {
+      "finding_id": "W6-CANCER-TRIGGER",
+      "disposition": "CORRECTED_IN_EXACT_FINAL_BODY",
+      "finding_ko": "단순 active cancer를 cancer-diagnosis 관련 pain 및 professional judgment/documentation 조건으로 바꾼 final body는§19D(b)에 맞는다."
+    }
+  ],
+  "metadata_followups": [
+    {
+      "finding_id": "REFILL-CANCER-INHERITED-QUESTION-LINKS",
+      "status": "OPEN_METADATA_RELEVANCE_NOT_CERTIFIED",
+      "blocks_narrow_legal_body_keep": false,
+      "example_question_ids": [
+        "MA-CASE-0658",
+        "MA-CASE-0694",
+        "MA-CASE-1063"
+      ],
+      "unit_id": "w2-c-12",
+      "finding_ko": "이 예시 original stems는 PMP account/query/transmission/ID를 묻고7-day/cancer exception을 직접 다루지 않는다. census related_question_ids는 bank의 inherited note_evidence tag를 따라 포함되어 있으므로 이 목록을 모든50claim과 semantic relevance까지 검증된 연결이라고 읽으면 안 된다.",
+      "next_action_ko": "root가 별도 link triage에서 실제 question-topic/claim relevance를 정리하고 그 전까지 inherited navigation tag로만 표시한다. 이 audit는 모든 연결문항의 키·해설·realism 또는semantic link를 인증하지 않는다."
+    }
+  ],
+  "summary": {
+    "units_read": 2,
+    "claims_assessed": 50,
+    "claims_keep": 50,
+    "claims_minor_edit": 0,
+    "claims_source_blocked_in_final_narrow_assertions": 0,
+    "units_keep": 2,
+    "units_hold": 0,
+    "derived_patches_keep": 0,
+    "derived_patches_hold": 0,
+    "unchanged_cards_read_and_keep": 5,
+    "other_unchanged_records_read_and_keep": 2,
+    "independent_completeness_scope": "specified exact two final bodies/50 claims; all five complete base/effective cards plus clock09/glossary read",
+    "unique_auditor_instances_this_review": 1,
+    "all306_complete": false,
+    "inherited_question_link_relevance": "NOT_CERTIFIED;OPEN_METADATA_FOLLOWUP"
+  },
+  "activation_scope_ko": "KEEP는 exact b20405bd…revision bytes,dfc12895…census record set,두 final body SHA와50개 canonical-record hashes 및5개 unchanged complete card hashes에 한정한다. candidate는 아직 AUDIT_PENDING_NOT_APPLIED/activation false이며 이 감사는 활성화하지 않는다. root가 history/census supersedence,loader,derived regeneration,tests,CI/deployment를 별도로 이행해야 한다.",
+  "limitations_ko": [
+    "공식8개 자료를 fresh 취득하여 텍스트로 직접 읽었다. visual PDF inspection NOT RUN.",
+    "same parent와 prior topic exposure가 있는 nonblind reviewer이다. 후보/NOTE6 author와 다른 worker라는 independence만 주장하며 별도 새model invocation이나 blindsession이라고 하지 않는다.",
+    "MA V의 identical additional-oral/initial-filling quantity cap 관계,다른 기존 OPEN4 및 agency-source 관계 전체를 해결했다고 하지 않는다.",
+    "related_question_ids는 inherited navigation bindings이므로 모든 claim별 semantic relevance 또는 final-content question audit를 이 KEEP가 인증하지 않는다. 명시한 PMP-only examples는 후속metadata triage 대상이다.",
+    "카드5개는 base와 effective 전문을 실제 읽고 unchanged라고 확인했다. candidate에 실제 patch가0개이므로5개 카드를 수정했다고 보고하지 않는다.",
+    "다른 note306개 전체,모든 linked questions,full amendment effective-date history 및 activation/release/deployment를 인증하지 않는다.",
+    "candidate/census/원노트/카드/loader/shared generated 파일 수정 없음. fullpytest·CI·deploy NOT RUN."
+  ]
+}
