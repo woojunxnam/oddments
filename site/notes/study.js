@@ -33,17 +33,18 @@
   function message(s){const el=$('#study-message',host);if(el)el.textContent=s;}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{storageOK=false;}const n=$('#study-storage',host);if(n)n.hidden=storageOK;}
   function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
-  function ensureDaily(){const day=dayKey();if(state.daily?.day===day)return state.daily;
+  function ensureDaily(){const day=dayKey();if(state.daily?.day===day&&state.daily.ids.every(id=>!(L.get(id)?.independent_atomic_census_reviews||[]).length))return state.daily;
+    const previousDone=new Set(state.daily?.day===day?state.daily.done:[]);
     const priority=id=>{const r=state.ratings[id];return r?.rating==='review'&&r.due<=day?0:!r?.rating?1:r.due<=day?2:3;};
-    const sorted=[...L.values()].sort((a,b)=>priority(a.id)-priority(b.id)||hash(day+a.id)-hash(day+b.id));
+    const sorted=[...L.values()].filter(l=>!(l.independent_atomic_census_reviews||[]).length).sort((a,b)=>priority(a.id)-priority(b.id)||hash(day+a.id)-hash(day+b.id));
     const chosen=[],modules=new Set();for(const l of sorted){if(!modules.has(l.module_id)){chosen.push(l.id);modules.add(l.module_id);}if(chosen.length===10)break;}
     for(const l of sorted){if(chosen.length===10)break;if(!chosen.includes(l.id))chosen.push(l.id);}
-    state.daily={day,ids:chosen,done:[]};save();return state.daily;
+    state.daily={day,ids:chosen,done:chosen.filter(id=>previousDone.has(id))};save();return state.daily;
   }
   function nextRandom(current=''){if(!randomBag.length){randomBag=[...L.keys()];for(let i=randomBag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[randomBag[i],randomBag[j]]=[randomBag[j],randomBag[i]];}if(randomBag.at(-1)===current)[randomBag[0],randomBag[randomBag.length-1]]=[randomBag.at(-1),randomBag[0]];}return randomBag.pop();}
   function status(id){return {review:'복습 필요',explain:'설명 가능'}[state.ratings[id]?.rating]||'아직 점검 전';}
   const routeLesson=(id,mode='lesson')=>'#study/'+mode+'/'+id;
-  function badges(item){return `<div class="study-flags">${(item.flags||[]).map(f=>`<span class="badge warning">${esc(flags[f]||f)}</span>`).join('')}</div>`;}
+  function badges(item){return `<div class="study-flags">${(item.flags||[]).map(f=>`<span class="badge warning">${esc(flags[f]||f)}</span>`).join('')}${(item.independent_atomic_census_reviews||[]).length?'<span class="badge warning">독립 검토 보류 · 상세 노트 확인</span>':''}</div>${(item.independent_atomic_census_reviews||[]).map(r=>`<p class="notice">${esc(r.notice)}</p>`).join('')}`;}
   function unitLink(id){const u=U.get(id);return `<a class="study-source-link" href="#chapter/${u.chapter}/${id}">${esc(u.title)} →</a>`;}
   function sourceBlock(item){return `<details class="study-summary" data-study-sources="${esc(item.id)}"><summary>근거 노트·조건·예외 전체 보기 (${item.note_units.length}절)</summary><p class="study-muted">기존 노트의 본문을 그대로 연결합니다. 새 학습 편집일은 법규 재검증일이 아닙니다.</p><div data-source-body></div></details>`;}
   function attachSources(){host.querySelectorAll('[data-study-sources]').forEach(d=>d.addEventListener('toggle',()=>{

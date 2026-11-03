@@ -243,6 +243,14 @@ def main():
                 expect(page.locator('#revision-notice')).to_contain_text('검토 보류')
                 assert hold['legacy_question_id'] not in data['quality_selection']['recommended_ids']
             ok(f'all {len(revision["holds"])} held originals remain reachable with a visible review notice')
+            for hold in revision.get('safety_holds', []):
+                qid = hold['question_id']
+                page.goto(base + 'practice-expansion/#' + qid, wait_until='load')
+                assert diag()['heldForReview'] is True
+                expect(page.locator('#revision-notice')).to_contain_text('검토 보류')
+                assert qid not in data['quality_selection']['recommended_ids']
+            if revision.get('safety_holds'):
+                ok(f'all {len(revision["safety_holds"])} nonlegacy safety holds remain reachable with visible warnings and original keys')
             for notice in revision.get('archive_review_notices', []):
                 for qid in notice['question_ids']:
                     page.goto(base + 'practice-expansion/#' + qid, wait_until='load')
@@ -313,12 +321,14 @@ def main():
             page.locator('#end-session').click()
             ok('unrestricted Chaos10 still accepts old/new versions of one family and repeated exact IDs despite empty filters')
             page.goto(base + 'practice-expansion/?bank=quality', wait_until='load')
-            assert diag()['filtered'] == 96
+            assert diag()['filtered'] == revision['stats']['previous_quality_default']
+            page.locator('#scope').select_option('all')
+            assert diag()['filtered'] == revision['stats']['previous_quality'] == 96
             page.goto(base + 'practice-expansion/?bank=original', wait_until='load')
             assert diag()['filtered'] == 1024
             page.goto(base + 'practice-expansion/?bank=plus', wait_until='load')
             assert diag()['filtered'] == 1152
-            ok('all three prior collection entry points retain their original counts')
+            ok('quality entry excludes explicit safety holds by default and retains all96 in archive; other prior collection totals remain')
             denied = browser.new_context(viewport={'width': 390, 'height': 844})
             denied.add_init_script("Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Unavailable','SecurityError')}})")
             denied_page = denied.new_page()

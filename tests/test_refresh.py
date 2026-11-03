@@ -37,7 +37,9 @@ def test_summary_content_has_terms_examples_and_boundaries():
 
 def test_all_reference_dates_hashes_and_flags_are_inherited():
     for c in D['cards']:
-        assert c['source_hashes']=={uid:U[uid]['body_sha256'] for uid in c['note_units']}
+        assert c['source_hashes']=={uid:hashlib.sha256(U[uid]['body'].encode()).hexdigest() for uid in c['note_units']}
+        assert c['stored_source_hashes']=={uid:U[uid]['body_sha256'] for uid in c['note_units']}
+        assert c['source_hash_basis']=='ACTUAL_EFFECTIVE_BODY_UTF8'
         assert c['source_review_dates']==list(dict.fromkeys(U[uid]['source_review_date'] for uid in c['note_units']))
         assert c['flags']==sorted({f for uid in c['note_units'] for f in U[uid]['flags']})
     assert D['notes_sha256']==hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest()
@@ -46,6 +48,12 @@ def test_all_reference_dates_hashes_and_flags_are_inherited():
 def test_open_and_future_boundaries_not_silently_closed():
     cs=[c for c in D['cards'] if 'schedule-vi-continuity' in c['note_units']]
     assert cs and all('open' in c['flags'] for c in cs)
+
+def test_independent_hold_reaches_refresh_cards_without_erasing_original_source_flags():
+    c=next(c for c in D['cards'] if c['id']=='RF-C-licensure-ce')
+    assert any(r['unit_id']=='w1-a-2' and r['legal_status']=='LEGAL_HOLD'
+               for r in c['independent_atomic_census_reviews'])
+    assert c['flags']==sorted({f for uid in c['note_units'] for f in U[uid]['flags']})
     assert all('date-sensitive' in c['flags'] for c in D['cards'] if 'ipledge-transition' in c['note_units'])
     assert '전수 재검증일이 아닙니다' in D['source_policy']
 

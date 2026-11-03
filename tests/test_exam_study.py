@@ -27,7 +27,9 @@ def test_nonempty_explanations_conditions_and_recall():
 def test_each_source_hash_date_and_flag_is_inherited():
     for l in D['lessons']+D['comparisons']+D['clocks']:
         assert l['note_units'] and all(uid in U for uid in l['note_units'])
-        assert l['source_hashes']=={uid:U[uid]['body_sha256'] for uid in l['note_units']}
+        assert l['source_hashes']=={uid:hashlib.sha256(U[uid]['body'].encode()).hexdigest() for uid in l['note_units']}
+        assert l['stored_source_hashes']=={uid:U[uid]['body_sha256'] for uid in l['note_units']}
+        assert l['source_hash_basis']=='ACTUAL_EFFECTIVE_BODY_UTF8'
         assert l['source_review_dates']==list(dict.fromkeys(U[uid]['source_review_date'] for uid in l['note_units']))
         assert l['flags']==sorted({f for uid in l['note_units'] for f in U[uid]['flags']})
 
@@ -36,6 +38,14 @@ def test_open_and_implementation_boundaries_remain_visible():
     assert 'date-sensitive' in next(l for l in D['lessons'] if l['id']=='LAW-044')['flags']
     assert 'open' in next(c for c in D['comparisons'] if c['id']=='compare-05')['flags']
     assert '재검증으로 표시하지' in D['source_policy']
+
+def test_independent_note_hold_is_visible_in_the_actual_derived_lesson():
+    held=next(l for l in D['lessons'] if l['id']=='LAW-005')
+    assert any(r['unit_id']=='w1-a-2' and r['completeness']=='OMISSIONS_FOUND'
+               and r['legal_status']=='LEGAL_HOLD' and r['notice']
+               for r in held['independent_atomic_census_reviews'])
+    cleared=next(l for l in D['lessons'] if l['id']=='LAW-008')
+    assert not cleared['independent_atomic_census_reviews']
 
 def test_clocks_keep_trigger_and_boundary():
     for c in D['clocks']:

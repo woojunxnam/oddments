@@ -60,6 +60,160 @@ def norm(text):
     return re.sub(r'[^\w]+', ' ', text.casefold()).strip()
 
 
+NONLEGACY_HOLDS = 'reports/representative-rewrite/nonlegacy-default-holds.json'
+NONKEEP_DISPOSITIONS = {'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'HOLD_FOR_LEGAL_REVIEW', 'DELETE', 'REPLACE'}
+OFFICIAL_HOSTS = {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov',
+                  'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov',
+                  'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov',
+                  'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}
+
+
+def raw_record_hash(question):
+    """Complete stored object, before publication changes delivery metadata."""
+    return digest(json.dumps(question, ensure_ascii=False, sort_keys=True,
+                             separators=(',', ':')).encode())
+
+
+def validate_safety_holds(holds, by_id, previous_ids, rewrite_ids, legacy_ids,
+                          default_ids, input_hashes=None, root=None):
+    """Allow only current, source-bound nonKEEP evidence to contain nonlegacy defaults.
+
+    This is a selection safety check. It creates no legal finding or release credit.
+    Caller supplies raw bank objects rather than publication-decorated records.
+    """
+    root = (root or ROOT).resolve()
+    previous_ids, rewrite_ids, legacy_ids = map(set, (previous_ids, rewrite_ids, legacy_ids))
+    require(not legacy_ids & (previous_ids | rewrite_ids), 'Nonlegacy scope overlaps original355')
+    seen = set()
+    for hold in holds:
+        qid = hold.get('question_id')
+        require(isinstance(qid, str), 'Invalid nonlegacy safety hold ID')
+        require(qid not in legacy_ids, 'Original355 must use existing holds: ' + str(qid))
+        require(qid in previous_ids | rewrite_ids and qid in by_id,
+                'Unknown nonlegacy safety hold ID: ' + str(qid))
+        require(qid not in seen, 'Duplicate nonlegacy safety hold ID: ' + qid)
+        require(qid in default_ids, 'Nonlegacy safety hold is not a default candidate: ' + qid)
+        seen.add(qid)
+        require(all(isinstance(hold.get(k), str) and hold[k].strip()
+                    for k in ('reason', 'next_action')), 'Safety hold lacks reason/next_action: ' + qid)
+        actual = raw_record_hash(by_id[qid])
+        require(hold.get('question_record_sha256') == actual, 'Stale safety hold record: ' + qid)
+        value = hold.get('review_source', '')
+        relative = Path(value)
+        path = (root / relative).resolve()
+        require(not relative.is_absolute() and '..' not in relative.parts and
+                len(relative.parts) >= 3 and relative.parts[:2] == ('reports', 'full-corpus-review') and
+                relative.suffix == '.json' and root in path.parents,
+                'Unsafe nonlegacy review source: ' + qid)
+        raw = path.read_bytes()
+        require(digest(raw) == hold.get('review_source_sha256'), 'Stale safety review source: ' + qid)
+        report = json.loads(raw)
+        records = report.get('records', [])
+        record_ids = [r.get('question_id') for r in records]
+        require(len(record_ids) == len(set(record_ids)), 'Duplicate safety review record ID: ' + qid)
+        matching = [r for r in records if r.get('question_id') == qid]
+        require(len(matching) == 1 and matching[0].get('record_sha256') == actual,
+                'Safety review lacks matching current record: ' + qid)
+        review = matching[0]
+        provenance = review.get('reviewer_provenance', {})
+        author = (provenance.get('independent') is False and
+                  bool(provenance.get('author_session')) and bool(review.get('checked_at')))
+        independent = (report.get('independent_of_authors') is True and
+                       bool(report.get('auditor_instance')) and report.get('canonical_audit') is False and
+                       type(report.get('canonical_release_credit')) is int and
+                       report['canonical_release_credit'] == 0)
+        legal, realism = review.get('legal_review', {}), review.get('realism_review', {})
+        author_failure = author and review.get('disposition') in NONKEEP_DISPOSITIONS
+        independent_failure = independent and (
+            legal.get('verdict') in NONKEEP_DISPOSITIONS | {'FAIL'} or
+            legal.get('existing_answer_correct') == 'NO' or
+            realism.get('verdict') in NONKEEP_DISPOSITIONS | {'FAIL'})
+        require(author_failure or independent_failure, 'Safety hold lacks a reviewed nonKEEP/failure: ' + qid)
+        # Require official authorities from the actual matching review, not the hold prose.
+        if author_failure:
+            findings = review.get('choice_by_choice_findings', {})
+            require(set(findings) == {c['id'] for c in by_id[qid]['choices']} and
+                    all(f.get('finding_ko') and f.get('authorities') for f in findings.values()),
+                    'Safety hold lacks individual option review: ' + qid)
+            authorities = [a for f in findings.values() for a in f.get('authorities', [])]
+            sources = report.get('source_register', {})
+            if isinstance(sources, list):
+                sources = {source['source_id']: source for source in sources}
+        else:
+            authorities = legal.get('authorities', [])
+            sources = report.get('sources', [])
+            if isinstance(sources, list):
+                sources = {source['source_id']: source for source in sources}
+        require(bool(authorities), 'Safety review lacks official authorities: ' + qid)
+        for authority in authorities:
+            url = authority.get('official_url', '')
+            source = sources.get(authority.get('source_id'), {})
+            require(url.startswith('https://') and (urlparse(url).hostname or '').lower() in OFFICIAL_HOSTS and
+                    authority.get('exact_section') and authority.get('law_checked_date') and
+                    source.get('official_url') == url,
+                    'Safety review has invalid official authority: ' + qid)
+        if input_hashes is not None:
+            input_hashes[value] = digest(raw)
+    return holds
+
+
+def load_safety_holds(by_id, previous_ids, rewrite_ids, legacy_ids, default_ids, input_hashes, root=None):
+    root = root or ROOT
+    path = root / NONLEGACY_HOLDS
+    if not path.exists():
+        return []
+    raw = path.read_bytes()
+    payload = json.loads(raw)
+    require(payload.get('schema_version') == 'nonlegacy-default-safety-holds/1',
+            'Unknown nonlegacy safety hold schema')
+    require(isinstance(payload.get('holds'), list), 'Invalid nonlegacy safety holds')
+    input_hashes[NONLEGACY_HOLDS] = digest(raw)
+    return validate_safety_holds(payload['holds'], by_id, previous_ids, rewrite_ids, legacy_ids,
+                                 default_ids, input_hashes, root)
+
+
+def validate_nonlegacy_selection(selection, baseline, by_id, root=None):
+    """Revalidate published selection against the same evidence; no arbitrary removals."""
+    previous = set(baseline['new_ids'])
+    legacy = set(baseline['recommended_ids']) - previous
+    rewrites = set(selection['new_ids'])
+    require(len(rewrites) == len(selection['new_ids']) and
+            rewrites == {qid for qid in by_id if qid.startswith('MA-RW-')},
+            'Rewrite archive preservation changed')
+    replaced_ids = [r['legacy_question_id'] for r in selection['replacements']]
+    original_held_ids = [h['legacy_question_id'] for h in selection['holds']]
+    require(len(replaced_ids) == len(set(replaced_ids)) and
+            len(original_held_ids) == len(set(original_held_ids)) and
+            set(replaced_ids + original_held_ids) <= legacy and
+            not set(replaced_ids) & set(original_held_ids),
+            'Original355 replacement/hold scope changed')
+    require(all(r['replacement_question_id'] in previous | rewrites for r in selection['replacements']),
+            'Invalid representative replacement target')
+    require(set(selection.get('previous_quality_ids', [])) == previous and
+            len(selection.get('previous_quality_ids', [])) == len(previous),
+            'Previous96 archive preservation changed')
+    candidates = set(baseline['recommended_ids']) - {h['legacy_question_id'] for h in selection['holds']}
+    for replacement in selection['replacements']:
+        candidates.discard(replacement['legacy_question_id'])
+        candidates.add(replacement['replacement_question_id'])
+    expected = load_safety_holds(by_id, previous, rewrites, legacy, candidates, {}, root)
+    require(selection.get('safety_holds', []) == expected, 'Selection safety holds differ from source evidence')
+    held = {h['question_id'] for h in expected}
+    require(set(selection['recommended_ids']) == candidates - held,
+            'Default IDs differ from explicit replacement/hold mappings')
+    stats = selection['stats']
+    counts = dict(previous_quality=len(previous), previous_quality_default=len(previous - held),
+                  previous_quality_safety_held=len(previous & held),
+                  rewrite_default=len(rewrites - held), rewrite_safety_held=len(rewrites & held),
+                  nonlegacy_safety_held_from_default=len(held),
+                  original355_default=len(legacy & set(selection['recommended_ids'])),
+                  original355_held_from_default=len(selection['holds']))
+    for key, value in counts.items():
+        require(stats.get(key, value if not expected else None) == value,
+                'Nonlegacy selection count mismatch: ' + key)
+    return expected
+
+
 def archive_review_notices(old_by_id, input_hashes):
     """Surface known defects without mutating a preserved answer or audit status."""
     path = REPORTS / 'archive-review-notices.json'
@@ -79,6 +233,7 @@ def archive_review_notices(old_by_id, input_hashes):
             'INCORRECT_KEY', 'AMBIGUOUS_KEY', 'RATIONALE_DEFECT', 'SOURCE_RELATIONSHIP_OPEN',
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
             'EDITORIAL_CONTEXT_REVIEW',
+            'INDEPENDENT_REVIEW_FINDING',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
         require(not review_relative.is_absolute() and '..' not in review_relative.parts
@@ -86,12 +241,26 @@ def archive_review_notices(old_by_id, input_hashes):
         review_raw = (ROOT/review_relative).read_bytes()
         require(digest(review_raw) == notice['review_source_sha256'], 'Stale archive review source')
         reviews = {r['question_id']: r for r in json.loads(review_raw)['records']}
+        if notice['issue_type'] == 'INDEPENDENT_REVIEW_FINDING':
+            source = json.loads(review_raw)
+            require(source.get('stage') == 'independent-legacy' and
+                    source.get('independent_of_authors') is True and source.get('auditor_instance') and
+                    source.get('canonical_audit') is False and source.get('canonical_release_credit') == 0,
+                    'Archive notice lacks independent review provenance')
         for qid in ids:
             actual = digest(json.dumps(old_by_id[qid], ensure_ascii=False, sort_keys=True,
                                        separators=(',', ':')).encode())
             require(actual == notice['question_record_hashes'][qid], 'Stale archive notice: ' + qid)
             require(qid in reviews and reviews[qid]['record_sha256'] == actual,
                     'Archive notice lacks a matching reviewed ID: ' + qid)
+            if notice['issue_type'] == 'INDEPENDENT_REVIEW_FINDING':
+                review = reviews[qid]
+                require(review.get('legal_review', {}).get('verdict') in {
+                            'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'DELETE', 'REPLACE'} or
+                        review.get('legal_review', {}).get('existing_answer_correct') in {
+                            'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
+                        review.get('realism_review', {}).get('verdict') == 'FAIL',
+                        'Independent archive notice lacks a negative or blocked review: ' + qid)
             if notice['issue_type'] in {'INCORRECT_KEY', 'AMBIGUOUS_KEY'}:
                 require(reviews[qid].get('original_answer_status') == notice['issue_type'],
                         'Archive notice does not match answer assessment: ' + qid)
@@ -328,6 +497,10 @@ def build():
             recommended.append(chosen)
     all_questions = original_questions + items
     by_id = {q['question_id']: q for q in all_questions}
+    safety_holds = load_safety_holds(by_id, original_selection['new_ids'],
+        [q['question_id'] for q in items], legacy_ids, set(recommended), input_hashes)
+    safety_held_ids = {h['question_id'] for h in safety_holds}
+    recommended = [qid for qid in recommended if qid not in safety_held_ids]
     require(set(recommended) <= set(by_id), 'Unknown recommended ID')
     require(not archive_notice_ids & set(recommended), 'An affected archive representative needs an explicit default hold')
     require(len({by_id[i]['family_id'] for i in recommended}) == len(recommended), 'Repeated family in default')
@@ -337,10 +510,18 @@ def build():
         edition=EDITION, base_commit=BASE_COMMIT, baseline_selection_path=str(ORIGINAL_SELECTION.relative_to(ROOT)),
         baseline_selection_sha256=digest(ORIGINAL_SELECTION.read_bytes()), recommended_ids=recommended,
         new_ids=[q['question_id'] for q in items], previous_quality_ids=original_selection['new_ids'],
-        replacements=replacements, holds=holds, archive_review_notices=notices,
-        history_policy='All legacy and previous96 IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only; known key/rationale defects have separate source-bound warnings.',
+        replacements=replacements, holds=holds, safety_holds=safety_holds, archive_review_notices=notices,
+        history_policy='All legacy, previous96 and MA-RW IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only; known key/rationale defects have separate source-bound warnings.',
         stats=dict(recommended=len(recommended), legacy_representatives_remaining=sum(i in legacy_ids for i in recommended),
-            baseline_legacy_representatives=355, newly_authored_replacements=len(items), previous_quality=96,
+            baseline_legacy_representatives=355, newly_authored_replacements=len(items),
+            previous_quality=len(original_selection['new_ids']),
+            previous_quality_default=sum(qid in recommended for qid in original_selection['new_ids']),
+            previous_quality_safety_held=sum(qid in safety_held_ids for qid in original_selection['new_ids']),
+            rewrite_default=sum(q['question_id'] in recommended for q in items),
+            rewrite_safety_held=sum(q['question_id'] in safety_held_ids for q in items),
+            nonlegacy_safety_held_from_default=len(safety_holds),
+            original355_default=sum(qid in legacy_ids for qid in recommended),
+            original355_held_from_default=len(holds),
             replaced_by_existing_quality=len(reused), held_from_default=len(holds), available_total=len(all_questions)),
         input_hashes=input_hashes,
         scope='Cumulative individually reviewed implementation units. Remaining legacy representatives have editorial triage only unless separately recorded. All archived variants remain accessible and Chaos10 still samples the complete published corpus with replacement.',

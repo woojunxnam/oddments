@@ -1,6 +1,8 @@
 # 최신 임무 재개 기록
 
-현재 작업은 [2026-11-03 waves11–12 체크포인트](MPJE_MISSION_CHECKPOINT_2026-11-03_WAVES11-12.md)와 영속 work-queue를 따른다. 아래 배치 기록은 각 당시 상태이며 현재 완료율 또는 배포 증거로 승계하지 않는다.
+최신 실행 체크포인트: [전체 저자 검토 완료 및 독립 감사 재개](MPJE_MISSION_CHECKPOINT_2026-11-03_AUTHOR_COMPLETE.md). 저자 2346/2346은 전체 품질 완료를 의미하지 않는다. 최신 실제 수치는 versioned progress/validation 및 PR 게시 증거를 확인한다.
+
+이전 [2026-11-03 waves11–12 체크포인트](MPJE_MISSION_CHECKPOINT_2026-11-03_WAVES11-12.md)와 아래 배치 기록은 당시 상태다. 현재 완료율 또는 배포 증거로 승계하지 않는다.
 
 # CDTM05–12 품질검토 새 배치 — 병합 전 실행 기록 (2026-10-30)
 
