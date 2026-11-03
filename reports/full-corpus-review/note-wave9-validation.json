@@ -1,0 +1,23 @@
+{
+  "schema_version": "note-census-validation/1",
+  "wave_id": "NOTE-WAVE9",
+  "checked_at": "2026-11-03",
+  "census_path": "reports/full-corpus-review/note-wave9-census.json",
+  "census_sha256": "e6b03a6520a31629e212dabc7c64b0411b810b9fcb0f8834edb44b0018d3adc7",
+  "result": "PASS",
+  "checks": [
+    "repository validate_note_census:20actual UTF8-body hashes,297unique claims,39source-text hashes,questionIDs/status/blocker invariants",
+    "all20assignment IDs/actualbody SHA match worktree and currently loaded ROOT notes using ROOT loader",
+    "all original primary bytes and per-claim/additional-authority text digests verified",
+    "32 manually selected question-link records match actual original full-record,stem,and every choice SHA;link relevance is author-reviewed decision-family scope,not full legal/key audit",
+    "4SOURCE_BLOCKED claims explicit;independent credit0;original bodies/questions/loader/shared artifacts unchanged",
+    "all39successful fresh sources versioned;4optional failures recorded;historical2024USCode not sole currentauthority"
+  ],
+  "author_source_checked_claim_count": 293,
+  "source_blocked_claim_count": 4,
+  "reviewed_question_link_records": 32,
+  "full_pytest": "NOT RUN — report/evidence-only author worker;root owns integration checks",
+  "deterministic_artifact_regeneration": "NOT RUN — worker must not write shared generated files",
+  "github_ci": "NOT RUN — root integration required",
+  "deployment": "NOT RUN — root release gates required"
+}
