@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 38 |
-| NOT_YET_IMPLEMENTED | 240 |
+| HOLD_FROM_DEFAULT | 54 |
+| NOT_YET_IMPLEMENTED | 224 |
 
-기본 목록 410개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 394개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 214개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 375개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -318,25 +318,25 @@
 | MA-CASE-0136 | PLUS-SC16 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | currentcertification과10postlicensehours의대조는either/or조건에실질적이다. 질문은무엇을보완하냐인데정답은이미충족이라는문법이맞지않는다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
 | MA-CASE-0145 | PLUS-SC17 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 35세VI서면referral/consent보험까지조건이명확하나모두충족이라고나열해독립시나리오보다eligibilitychecklist다. distractor는각다른미충족변형의잔재다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
 | MA-CASE-0154 | PLUS-SC18 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Sep1issue/earliest와Sep30조제는30일validity만판정하며earliest가같아독립constraint가작동하지않는다. 해설은명확하고보기는비교가능하다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
-| MA-CASE-0163 | PLUS-SC19 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 24시간경과·60중12기조제라서48잔량이라는명확한행동이다. timeline조건은평이하지만공급량과clock를함께적용하며오답별이유도분리되어있다. |
-| MA-CASE-0173 | PLUS-SC20 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | day29·남은60·요청30으로authorizedbalance와patientrequest를구별한다. 31정오답은근거없는off-by-one이고모든해설이복제계산이다. |
-| MA-CASE-0187 | PLUS-SC21 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 6개월초과이면남은4refill도행사불가라는단일결정이명확하다. refill(s)와have문법및모든오답동일해설이남는다. |
-| MA-CASE-0190 | PLUS-SC22 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 한번도transfer안했는데anotherrefilltransfer라는표현이모순적이다. 정답경로는명확하지만A/D해설은이사례에서왜틀린지실제2refill/유효기간을언급하지않는다. |
-| MA-CASE-0199 | PLUS-SC23 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | testosterone의nonopioidCIII라는약물조건이적절하나해설은OUD/nonopioid/pump중어느것인지불명확하게or를나열한다. |
-| MA-CASE-0208 | PLUS-SC24 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | validID가이미있는데C는obtainacceptableidentifier라는이미완료된행동을제시해일부참이며불필요한hardship기록누락을지문에강조한다. |
-| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. |
-| MA-CASE-0226 | PLUS-SC26 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | CII25정에exactcount를적용하는명확한기초판단이다. B해설이마치이사례가III-V라고말해오답을설명하지않는다. |
-| MA-CASE-0238 | PLUS-SC27 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 85+60−40−5=100은단순산술이고실측도100이라법규상다음행동이바뀌지않는다. 101정오답과0정차이를조사시작점이라설명하는문구가인위적이다. |
-| MA-CASE-0244 | PLUS-SC28 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | orderday0·shipmentday3·today10으로시작점을구별할수있다. 제목near expiration과달리10일째이고50day(s)는템플릿잔재다. |
-| MA-CASE-0255 | PLUS-SC29 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 250/5000에서한unit추가로5%초과하는경계가실질적이다. 1additionalunits문법과A해설이이경우에도5%이하라고단정하는템플릿오류가있다. |
-| MA-CASE-0262 | PLUS-SC30 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 14일microbialcap과8일안정성중짧은8일이라는판단은명확하다. 365/15일오답은불필요하게약하고foranonpreservedaqueous가부자연스럽다. |
-| MA-CASE-0271 | PLUS-SC31 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 20일·namedpatient·registeredlocation은해당배송경로조건을명시한다. D의donotredirect는대상이이미samepatient라별도사례템플릿느낌이다. |
+| MA-CASE-0163 | PLUS-SC19 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 24시간경과·60중12기조제라서48잔량이라는명확한행동이다. timeline조건은평이하지만공급량과clock를함께적용하며오답별이유도분리되어있다. 현재 보류 이유: 문항별 검토 결과: 현재 사실관계에서 왜 각 선택지가 적용/불적용되는지 설명을 교정하고 반복 family와의 중복을 줄여야 한다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
+| MA-CASE-0173 | PLUS-SC20 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | day29·남은60·요청30으로authorizedbalance와patientrequest를구별한다. 31정오답은근거없는off-by-one이고모든해설이복제계산이다. 현재 보류 이유: 문항별 검토 결과: 수치변형·단순범주회상과 수학결과만 반복하는 오답해설을 실제 법적 혼동이 드러나는 독립 scenario로 개선할 필요가 있다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
+| MA-CASE-0187 | PLUS-SC21 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 6개월초과이면남은4refill도행사불가라는단일결정이명확하다. refill(s)와have문법및모든오답동일해설이남는다. 현재 보류 이유: 문항별 검토 결과: 수치변형·단순범주회상과 수학결과만 반복하는 오답해설을 실제 법적 혼동이 드러나는 독립 scenario로 개선할 필요가 있다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
+| MA-CASE-0190 | PLUS-SC22 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 한번도transfer안했는데anotherrefilltransfer라는표현이모순적이다. 정답경로는명확하지만A/D해설은이사례에서왜틀린지실제2refill/유효기간을언급하지않는다. 현재 보류 이유: 문항별 검토 결과: 현재 사실관계에서 왜 각 선택지가 적용/불적용되는지 설명을 교정하고 반복 family와의 중복을 줄여야 한다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
+| MA-CASE-0199 | PLUS-SC23 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | testosterone의nonopioidCIII라는약물조건이적절하나해설은OUD/nonopioid/pump중어느것인지불명확하게or를나열한다. 현재 보류 이유: 문항별 검토 결과: 수치변형·단순범주회상과 수학결과만 반복하는 오답해설을 실제 법적 혼동이 드러나는 독립 scenario로 개선할 필요가 있다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다. |
+| MA-CASE-0208 | PLUS-SC24 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | validID가이미있는데C는obtainacceptableidentifier라는이미완료된행동을제시해일부참이며불필요한hardship기록누락을지문에강조한다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0217 | PLUS-SC25 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | neverfilled/nevertransferred원EPCS와두DEA약국이구체적이나환자요청등을allotherconditions에숨긴다. 오답들은주로다른transfer유형의명백한혼동이다. 현재 보류 이유: 문항별 검토 결과: MA first-fill CII transfer 허용관계 SOURCE_BLOCKED. 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0226 | PLUS-SC26 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | CII25정에exactcount를적용하는명확한기초판단이다. B해설이마치이사례가III-V라고말해오답을설명하지않는다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0238 | PLUS-SC27 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 85+60−40−5=100은단순산술이고실측도100이라법규상다음행동이바뀌지않는다. 101정오답과0정차이를조사시작점이라설명하는문구가인위적이다. 현재 보류 이유: 문항별 검토 결과: 원본을 변경하지 않은 author source review이다. 숫자·역할·단일 조건만 바꾼 동일 family 변형과 반복 해설을 실질적인 새 사례로 재작성해야 한다. Independent legal/realism NOT_RUN. |
+| MA-CASE-0244 | PLUS-SC28 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | orderday0·shipmentday3·today10으로시작점을구별할수있다. 제목near expiration과달리10일째이고50day(s)는템플릿잔재다. 현재 보류 이유: 문항별 검토 결과: 독립 legal/realism audit 및 versioned public-content 개선 미실행. |
+| MA-CASE-0255 | PLUS-SC29 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 250/5000에서한unit추가로5%초과하는경계가실질적이다. 1additionalunits문법과A해설이이경우에도5%이하라고단정하는템플릿오류가있다. 현재 보류 이유: 문항별 검토 결과: 독립 legal/realism audit 및 versioned public-content 개선 미실행. |
+| MA-CASE-0262 | PLUS-SC30 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 14일microbialcap과8일안정성중짧은8일이라는판단은명확하다. 365/15일오답은불필요하게약하고foranonpreservedaqueous가부자연스럽다. 현재 보류 이유: 문항별 검토 결과: SOURCE_BLOCKED: USP795 현행 full text/정확 표준 적용 대조 미완료(공식 landing HTTP403). 2022 개정 USP fact sheet의 공개 정부host 표는 확인했지만 최신 full standard 확인으로 인증하지 않는다. 계산 자체는 조건부로 일치. 독립 감사 미실행. |
+| MA-CASE-0271 | PLUS-SC31 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 20일·namedpatient·registeredlocation은해당배송경로조건을명시한다. D의donotredirect는대상이이미samepatient라별도사례템플릿느낌이다. 현재 보류 이유: 문항별 검토 결과: 독립 legal/realism audit 및 versioned public-content 개선 미실행. |
 | MA-CASE-0282 | PLUS-SC32 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | ISO5surface4CFU와>3은명확한단일threshold판단이다. A해설이현재값을threshold이하라단정해사례와모순된다. |
 | MA-CASE-0298 | PLUS-SC34 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | confirmedemployee theft1정VI라는조건은losssignificance와schedule혼동을실제로바꾼다. Board한정범위를명확히한점은좋고inheritedOPEN을자동해결하지않았다. |
-| MA-CASE-0307 | PLUS-SC35 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 10월19일09:30에72시간을더하는것은명확하나보고별다른clock를실제로비교하지않는다. 모든해설이같아24/48/96시간오해를가르치지못한다. |
+| MA-CASE-0307 | PLUS-SC35 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 10월19일09:30에72시간을더하는것은명확하나보고별다른clock를실제로비교하지않는다. 모든해설이같아24/48/96시간오해를가르치지못한다. 현재 보류 이유: 문항별 검토 결과: 기존 네 선택지 해설이 모두 같은 정답기한 문장을 반복한다. 이른 제출과 기한초과를 구별하는 선택지별 한국어 해설로 보완해야 한다. 보고서에 각 시차를 계산했지만 원문 수정은 아직 하지 않았다. 독립 감사 대기. |
 | MA-CASE-0316 | PLUS-SC36 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 구REMSsoftwaregate는현실적이지만D의isotretinoinwindow복사는어색하고정답B가가장길며균형잡힌문구로눈에띈다. |
-| MA-CASE-0325 | PLUS-SC37 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | ED추가testing이즉시통지trigger라는구체적사실이있다. A/D는권고notation·reassessment에관한다른사례의정답같은문장이다. |
-| MA-CASE-0334 | PLUS-SC38 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 105mg와다른coveredsubstance없음이구체적이다. A해설이초과했다고단정하여본사례와모순되고B/D는약한과장오답이다. |
+| MA-CASE-0325 | PLUS-SC37 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | ED추가testing이즉시통지trigger라는구체적사실이있다. A/D는권고notation·reassessment에관한다른사례의정답같은문장이다. 현재 보류 이유: 문항별 검토 결과: 정답의핵심조항은맞으나비정답의관련성부족을법적거짓과구별하고 lead-in 을현재 event 의무/권고로좁혀야한다. 독립감사전승격하지않는다. |
+| MA-CASE-0334 | PLUS-SC38 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 105mg와다른coveredsubstance없음이구체적이다. A해설이초과했다고단정하여본사례와모순되고B/D는약한과장오답이다. 현재 보류 이유: 문항별 검토 결과: 키는근거와일치하나오답해설의 context 교정이필요하다. 독립감사미수행. |
 | MA-CASE-0349 | PLUS-WQ01 | HOLD_FOR_LEGAL_REVIEW / P0_LEGAL_SOURCE_CONFLICT | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 정답 B의 승인된 타 관할 home-study law 2시간 인정 결론은 이번 보류 사유로 변경하지 않는다. 그러나 core_reasoning과 A의 오답 해설·교정문이 현재 CE 미충족 통지 경로를 Board email로 단정한다. ce-deficiency-source-conflict.json의 Mandatory Disclosure Form/email 출처 충돌이 이 해설에도 적용되므로 현재 제출방법을 확정해서 학습시키지 않도록 HOLD한다. 현재 보류 이유: 정답 B의 law CE 판단과 별개로, core reasoning 및 오답 A 해설이 현행 CE 미이수 통지 경로를 Board email이라고 단정합니다. 현재 공식 Policy 2021-04의 Mandatory Disclosure Form 문구와 충돌하는 해설을 기본 학습에서 제시하지 않도록 보류합니다. 정답 B가 틀렸다고 판정하거나 원본 정답을 바꾸는 조치는 아닙니다. |
 | MA-CASE-0352 | PLUS-WQ02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 허용CIIentry와verbalVI·internfinalcheck·CPhTcounseling은독립업무목록이다. 위임금지세개를배제하면되어단일새시나리오가없다. |
 | MA-CASE-0363 | PLUS-WQ03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | dedicatedtrainer제외가정답이지만hospitalintern면허·직함만바꾸기·사후traininglabel은기존대표를그대로동시평가한다. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `d6f884dbc1e96869f3644a0aa21d29ec96be2949126925073fa238e5cdc6bd51` |
-| practice_expansion/2026-10-28-representative/questions.json | `6e0568010f7cb5f518512704d20b8a0271b74e64fa72d90d245bb55a75db4b96` |
+| practice_expansion/2026-10-28-representative/selection.json | `828c4af7e5477dbc3129daa1d9d477834d1f042ffb15219004e487690787caf5` |
+| practice_expansion/2026-10-28-representative/questions.json | `7a56550c63b5a18c8f208c500099d8b72582b0e2eb233cf36ebffe08b546fd4d` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

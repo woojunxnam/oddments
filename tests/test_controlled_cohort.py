@@ -54,3 +54,17 @@ def test_atomic_census_requires_fresh_units_and_actual_evidence():
     next(iter(altered['sources'].values()))['source_evidence_sha256'] = '0'*64
     with pytest.raises(ValueError, match='Stale census evidence'):
         validate_note_census(altered, effective, bank())
+
+
+def test_partial_product_clause_report_cannot_claim_complete_units():
+    census = read('reports/full-corpus-review/note-wave2-census.json')
+    effective = {u['id']: u for c in load_notes()['chapters'] for u in c['units']}
+    public_ids = {json.loads(line)['question_id']: None for line in
+                  (ROOT/'reports/full-corpus-review/question-ledger.jsonl').read_text().splitlines()}
+    units = validate_note_census(census, effective, public_ids)
+    complete = [u for u in units.values() if u['census_status'].startswith('COMPLETE_AUTHOR_')]
+    assert len(units) == 20 and len(complete) == 4
+    altered = copy.deepcopy(census)
+    altered['units'][0]['census_status'] = 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'
+    with pytest.raises(ValueError, match='Partial clauses'):
+        validate_note_census(altered, effective, public_ids)

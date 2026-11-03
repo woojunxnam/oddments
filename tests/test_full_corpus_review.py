@@ -313,7 +313,8 @@ def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
         assert rows[qid]['legal_review_status']=='AUTHOR_CONDITIONAL_SOURCE_CHECK_NOT_INDEPENDENT'
     selection=json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_text())
     notices={qid for n in selection['archive_review_notices'] for qid in n['question_ids']}
-    assert notices=={f'MA-EXP-{i:04d}' for i in [221,222,223,224,228,233,234,235,236]}
+    assert {f'MA-EXP-{i:04d}' for i in [221,222,223,224,228,233,234,235,236]} <= notices
+    assert {'MA-CASE-0405', 'MA-CASE-0428'} <= notices
     assert not notices.intersection(selection['recommended_ids'])
     # Review metadata must not rewrite the preserved incorrect key or old history.
     archive=json.loads((ROOT/'practice_expansion/2026-10-23/candidates/questions.json').read_text())
