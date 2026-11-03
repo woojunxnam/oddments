@@ -60,10 +60,8 @@ def test_incorrect_lead_keys_select_false_statements_not_true_statements():
         findings = record["choice_by_choice_findings"]
         negative = record["answer_key_crosscheck"]["lead_polarity"] == "SELECT_INCORRECT_STATEMENT"
         expected = [
-            choice["id"]
-            for choice in question["choices"]
-            if (not findings[choice["id"]]["statement_supported"]) if negative
-            else findings[choice["id"]]["statement_supported"]
+            choice["id"] for choice in question["choices"]
+            if findings[choice["id"]]["statement_supported"] == (not negative)
         ]
         assert expected == question["correct_choice_ids"], record["question_id"]
         assert record["answer_key_crosscheck"]["matches"]
