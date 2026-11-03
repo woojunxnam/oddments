@@ -24,6 +24,19 @@
       ],
       "flags": [],
       "editor_note": "원본의 ≤50을 명시하여 추출 오류에 따른 50병상 공백 설명을 교정한다. LTCF emergency-kit 한정을 보존하고 circular의 formulary 안내를 새 법정 form으로 승격하지 않는다. 작성자 후보이며 독립 감사와 활성화는 미완료다."
+    },
+    {
+      "id": "w4-a-20",
+      "expected_body_sha256": "49227ae3d5c3ef3f43b57d5594623f9f50d0a6611aad0e434a53a629ab9167c4",
+      "body": "Inpatient hospice의 acute supply는 life-threatening emergency에만 제한되는 개념이 아니다. Full prescription이 준비·배송될 때까지 palliative symptoms를 신속히 완화하는 bridge supply를 다룬다. Policy는 **ADD 사용**, machine-specific CSR, 필요한 DEA registration 판단 및 continuous video를 요구한다. \n\nAnalgesics, sedative/anticonvulsants 및 Schedule VI ancillary medication의 bed-based maximum 안에서 formulary를 정한다. ADD contents는 적법한 patient prescription/order에 따라 administration을 위해 dispense될 때까지 pharmacy 소유로 남는다. Pharmacy는 ADD에서 dispense된 약을 처방과 reconcile하며, 개별 tamper-evident unit-dose packaging 조건도 유지한다.\n\n**원본 PDF 표의 병상 경계와 단위:** [DHCQ 20-3-700](https://www.mass.gov/doc/hospice-inpatient-facility-acute-use-medications-pdf/download) 3쪽 표의 구간은 **≤10 beds, 11–20 beds, ≥21 beds**이다. 정확히 **10병상은 첫 구간**, 정확히 **21병상은 마지막 구간**에 속한다. 추출본의 `<10`·`>21`은 등호 획이 빠진 것으로, 원본의 병상 구간 공백이 아니다.\n\n표의 수량 단위는 각 medication category에 대한 **“Max number of units per facility”**이다. 이를 서로 다른 drug 종류의 개수로 바꾸지 않는다. 위 single-dose packaging 조건과 함께 읽으며, 이 표는 **inpatient hospice facility의 ADD acute-use stock** 범위다. 일반 병원 ADD나 LTCF emergency-kit의 수량표로 자동 확대하지 않는다.\n\n근거: 위 circular의 Requirements for ADD Storage and Security·Contents and Usage of the ADD for Patient Palliative Care 및 3쪽 표, [Policy 2019-02 Requirements 3·6·11](https://www.mass.gov/doc/2019-02-automated-dispensing-device-use-pdf/download). 확인일 2026-11-03. Circular 발행일은 2020-03-06이며, 현재 [Board 공식 자료 목록](https://www.mass.gov/lists/pharmacy-practice-resources)의 링크와 해당 PDF 원본 화면을 대조했다. 게시 상태 확인을 모든 후속 개정의 전수 조사나 다른 setting에 대한 적용 인증으로 확대하지 않는다.",
+      "source_review_date": "2026-11-03 (fresh official circular/policy,index and actual PDFp3 visual;separate amendment effective history not established)",
+      "source_ids": [
+        "src-hospice-acute-visual-20261103",
+        "src-hospice-acute-add-20261103",
+        "src-hospice-acute-index-20261103"
+      ],
+      "flags": [],
+      "editor_note": "원본 ≤10/≥21 경계와 정확히10·21병상 포함을 교정한다. 시설별 medication category의 units를 약종수로 바꾸지 않고 inpatient hospice ADD acute-use 범위를 보존한다. 별도 독립 검토 전 미적용."
     }
   ],
   "sources": {
@@ -56,12 +69,35 @@
       "checked_at": "2026-11-03",
       "access": "fresh official index and exact linked PDF separately read",
       "scope_note": "Link presence confirms current posted resource,not exhaustive future amendment/repeal history or all institutional applications"
+    },
+    "src-hospice-acute-visual-20261103": {
+      "id": "src-hospice-acute-visual-20261103",
+      "title": "DHCQ20-3-700 dated2020-03-06;inpatient hospice ADD acute-use;originalPDFp3 ≤10/11–20/≥21 and units-per-facility visually checked",
+      "url": "https://www.mass.gov/doc/hospice-inpatient-facility-acute-use-medications-pdf/download",
+      "checked_at": "2026-11-03",
+      "access": "fresh official PDF text and actual2400px page3 render viewed by author",
+      "scope_note": "Inpatient hospice facility acute-use ADD stock only;units per facility,not number of different drug types"
+    },
+    "src-hospice-acute-add-20261103": {
+      "id": "src-hospice-acute-add-20261103",
+      "title": "Policy2019-02 Automated Dispensing Device Use;latest listed revision2025-01-09;Requirements3/6/11",
+      "url": "https://www.mass.gov/doc/2019-02-automated-dispensing-device-use-pdf/download",
+      "checked_at": "2026-11-03",
+      "access": "fresh official PDF text"
+    },
+    "src-hospice-acute-index-20261103": {
+      "id": "src-hospice-acute-index-20261103",
+      "title": "Board pharmacy-practice-resources index;exact Hospice Inpatient Facility Acute Use Medications PDF link checked2026-11-03",
+      "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+      "checked_at": "2026-11-03",
+      "access": "fresh official index and exact linked primary PDF separately read",
+      "scope_note": "Current link presence only;not exhaustive amendment/repeal history"
     }
   },
   "chapter_highlights": {},
   "study_lessons": {},
   "refresh_cards": {},
-  "derived_review_ko": "LAW-053/LAW-054, RF-054/RF-056의 실제 base/effective 전문과 module m14, day23, chapter summary/highlights를 읽었다. 같은 50병상 gap 문구가 없어 card/summary patch는 0개다. 모든 카드의 전체 법적 주장에 대한 독립 인증을 뜻하지 않는다.",
+  "derived_review_ko": "두 target unit 범위로 LAW-053/LAW-054와 RF-054/RF-056의 실제 base/effective 전문, module m14/day23/chapter summary-highlights를 다시 읽었다. 50·10·21병상 gap 문구가 없어 patch0개다. 전체 카드의 모든 법적 주장에 대한 독립 인증은 아니다.",
   "finding_dispositions": [
     {
       "finding_id": "W11-KIT-50-BED-PRIMARY-VISUAL-CONTRADICTION",
@@ -70,10 +106,33 @@
       "source_report": "reports/full-corpus-review/note-wave11-census.json",
       "source_claim_id": "NOTE-WAVE11-W4-A-19-013",
       "scope_ko": "정확히 50병상은 원본 ≤50의 첫 구간에 포함된다. 역사적 본문과 claim을 보존하고 새 본문만 제안한다. 기존 다른 네 개 canonical HOLD의 해결로 세지 않는다."
+    },
+    {
+      "finding_id": "HOSPICE-10-21-PRIMARY-VISUAL-CONTRADICTION",
+      "historical_label": "w4-a-20 narrative boundary hold;no preexisting OPEN code invented",
+      "action": "AUTHOR_CORRECTION_PROPOSED_PENDING_ANOTHER_REVIEWER",
+      "scope_ko": "정확히10은≤10 첫 구간, 정확히21은≥21 마지막 구간이다. 원본문·source metadata와 가능한 NOTE12 원자 claim을 보존하고 새 본문만 제안한다. 기존 canonical HOLD4개 해결로 세지 않는다.",
+      "source_report": "reports/full-corpus-review/note-wave12-census.json",
+      "source_report_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+      "source_claim_record_sha256": {
+        "NOTE-WAVE12-W4-A-20-016": "d9afd56cf6265f828cf615df3d9dc945a3ba1dc8000f483fc435d4a674298215",
+        "NOTE-WAVE12-W4-A-20-017": "f1d41c7b4708ccfd73ddece826e7c2e75e3b74d785a1d779a8b87a2c55428fb3"
+      },
+      "historical_claim_snapshot_path": "reports/full-corpus-review/evidence/emergency-kit-final-r2-20261103/note12-prior-claim-snapshot.json",
+      "historical_claim_snapshot_sha256": "f6d8734a5a43c0f8ff149db7229ef4e4016f94d4817c5da0343965e94386c48f"
     }
   ],
-  "census_application_rule_ko": "새 census는 이 후보의 정확한 새 본문 hash에만 적용한다. 독립 KEEP와 root activation 후에만 NOTE11의 w4-a-19 binding 하나를 supersede한다. 옛 census와 다른 19개 unit binding은 보존한다.",
-  "current_resolution_proposal": "CORRECT_EXTRACTION_BASED_OPEN03_ONLY_AFTER_EXACT_CONTENT_INDEPENDENT_KEEP_AND_ROOT_ACTIVATION",
+  "census_application_rule_ko": "이 R2 census는 두 최종 본문의 정확한 hash에만 적용한다. 독립 KEEP 및 root activation 뒤 NOTE11의 w4-a-19, NOTE12의 w4-a-20 current-body binding을 명시적으로 supersede해야 한다. 옛 census/후보 및 다른 unit binding을 보존한다.",
+  "current_resolution_proposal": "CORRECT_ONLY_TWO_EXTRACTION_BASED_BOUNDARY_ASSERTIONS_AFTER_EXACT_CONTENT_INDEPENDENT_KEEP_AND_ROOT_ACTIVATION",
   "existing_open_claim_registry_unchanged": true,
-  "integration_blocker_ko": "다른 reviewer가 최종 본문·원본 표·원자 census·카드 no-change를 검토하기 전에는 미적용이다. 작성자는 자가 독립 인증하지 않으며 loader/export/migration/activation을 작성하지 않는다."
+  "integration_blocker_ko": "다른 reviewer가 최종 본문·원본 표·원자 census·카드 no-change를 검토하기 전에는 미적용이다. 작성자는 자가 독립 인증하지 않으며 loader/export/migration/activation을 작성하지 않는다.",
+  "prior_unapplied_candidate": {
+    "commit": "908a52ef16125bf321f256ffe412008ec012f02f",
+    "revision_snapshot_path": "reports/full-corpus-review/evidence/emergency-kit-final-r2-20261103/r1-candidate.json",
+    "revision_sha256": "273c9ac9fd5ac2e592dc4e1143f286c2b10f03da527a517c4d1854a7c5e6b691",
+    "census_snapshot_path": "reports/full-corpus-review/evidence/emergency-kit-final-r2-20261103/r1-census.json",
+    "census_sha256": "576e9a6f203c16a9a87db2acccc40fe30b5679e50ebffb2a104fc9f61b54d5e8",
+    "status": "SUPERSEDED_UNAPPLIED_CANDIDATE_SCOPE_EXPANDED_BEFORE_INDEPENDENT_REVIEW",
+    "prior_independent_audit": null
+  }
 }
