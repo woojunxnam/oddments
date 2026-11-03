@@ -726,11 +726,9 @@
         "path": "reports/full-corpus-review/independent-notes/evidence/first-b/current-input-snapshot.json",
         "raw_sha256": "bfdd745870ad940b4aa39021c69cd9b4f340c7251cef50956dc40e11edc0e8e6"
       },
-      "completeness": "OMISSIONS_FOUND",
-      "completeness_method": "본문 표7축과 정의·schedule·source hierarchy·modal/quantity어휘·두1년예시를 먼저 전문 읽고, 법률명제와 학습용 읽기방법을 구분했다. 이후11개census를문장별대조했다. 새법률조항의모든가지가본문에없다는이유로누락을만들지않고, 실제본문animal의가족범위가법정household제한을빠뜨린지점을특정했다.",
-      "omissions": [
-        "BODY_SCOPE_QUALIFIER: 실제 본문 “본인·가족 소유 동물”에는 MGLc94C§1 Ultimate user의 “owned by him or by a member of his household” 중 household 제한이 없다. Census006은 household라고 좁혀 적었으므로 census문구만 검증하면 더 넓은 actualbody를 놓친다. 비동거 가족 전체로 확대되지 않게 본문 범위를 명시해야 한다. 이는 단순 개수 차이가 아니라 실제 scope 조건 누락이다."
-      ],
+      "completeness": "COMPLETE",
+      "completeness_method": "실제 본문의 법적 정의, MA/federal 분류, 두 1년 기산점 및 모든 표·문장을 먼저 읽고 11개 census의 내용과 대응시켰다. 해당 법적 주제와 시계는 모두 기존 census에 표현된다. animal의 가족 범위를 household로 좁혀 정규화한 claim006은 본문 대응의 법적 결함이며 새로운 미열거 본문 명제는 아니다. 따라서 census completeness는 COMPLETE, 본문 scope는 claim006 LEGAL_HOLD로 별도 기록한다. 7축·근거층·modal/quantity 읽기는 학습 방법과 구분했다.",
+      "omissions": [],
       "legal_status": "LEGAL_HOLD",
       "claims": [
         {
@@ -1075,7 +1073,15 @@
       "census_modified": false,
       "body_modified": false,
       "question_audit_credit": 0,
-      "canonical_release_credit": 0
+      "canonical_release_credit": 0,
+      "body_legal_scope_findings": [
+        {
+          "classification": "BODY_SCOPE_OVERGENERALIZATION_OR_UNDERSPECIFIED_CONDITION",
+          "finding": "BODY_SCOPE_QUALIFIER: 실제 본문 “본인·가족 소유 동물”에는 MGLc94C§1 Ultimate user의 “owned by him or by a member of his household” 중 household 제한이 없다. Census006은 household라고 좁혀 적었으므로 census문구만 검증하면 더 넓은 actualbody를 놓친다. 비동거 가족 전체로 확대되지 않게 본문 범위를 명시해야 한다. 이는 단순 개수 차이가 아니라 실제 scope 조건 누락이다.",
+          "is_census_missing_existing_body_proposition": false
+        }
+      ],
+      "completeness_scope": "Whether existing actual-body legal/program propositions are represented in the author census; body legal accuracy/required qualifications are assessed separately."
     },
     {
       "unit_id": "clocks-and-quantities",
@@ -1123,13 +1129,9 @@
         "path": "reports/full-corpus-review/independent-notes/evidence/first-b/current-input-snapshot.json",
         "raw_sha256": "bfdd745870ad940b4aa39021c69cd9b4f340c7251cef50956dc40e11edc0e8e6"
       },
-      "completeness": "OMISSIONS_FOUND",
-      "completeness_method": "본문의4개날짜정의,재포장/냉장조건,patientlabel최솟값,72h/7d/1businessday와initial/followup/retention구분을먼저읽고12개claim과대조했다. 각숫자의actor/recipient/event/start/unit/action을복원하고§1306.13(a)/(b)/(c),.11(d),MA721.060/.070을직접읽어빠진경로제한을찾았다.12개라는개수자체로완전성을판단하지않았다.",
-      "omissions": [
-        "BODY_CLOCK_SCOPE: “First partial fill 후72시간”에 §1306.13(a)의 CII insufficient-supply 경로라는 조건이 없다. §1306.13(b)의 patient/practitioner-request remainder30days/fromissue 및 emergencyoral72h/fromissue, (c)의LTCF/terminal분기와 기산점을 구별할 단서를 넣어야 한다.",
-        "BODY_CLOCK_ACTOR_UNIT: “oral authorization 후7일”에 emergencyoralCII, prescribingindividualpractitioner→dispensingpharmacist의follow-up, federalcalendar7day 및 MA7businessday/shorterfederal조건이 없다. 모든oralRx 또는initialnotification시계로 적용하지 않게 해당 경로·행동을 특정해야 한다.",
-        "BODY_CLOCK_UNIDENTIFIED_EVENT: “result receipt 후1businessday”는 result종류·수신한의무자·보고수신기관·해야할행동을 특정하지 않는다. 저자census의미확인CDTM추정으로이를채울수없으므로 실제 의도한 primary조항을 찾아 scope를 보완해야 한다."
-      ],
+      "completeness": "COMPLETE",
+      "completeness_method": "실제 본문의 4개 날짜 표, patient-label 기한, 72h/7d/1businessday 예시와 모든 문장을 먼저 전문 읽고 12개 census의 각 명제와 대응시켰다. 세 시계는 기존 claim010–012에 포착되어 있으며 독립된 미열거 본문 명제는 확인하지 않았다. 72h의 stock 분기, oral7d의 emergencyCII/주체, result 특정 부족은 본문에 조건이 없는 일반화·불명확성이며 census 누락과 구분한다. COMPLETE는 열거 coverage이며 claim010/011 LEGAL_HOLD와007/012 SOURCE_BLOCKED를 대체하지 않는다.",
+      "omissions": [],
       "legal_status": "LEGAL_HOLD",
       "claims": [
         {
@@ -1560,9 +1562,9 @@
           "claim_record_sha256": "bb43cd1f4d748a8b9673bf7d7c3833053e956fe92c6cc9eeffab688efe5ec505",
           "claim_read_completely": true,
           "statement_ko": "First partial fill 후72시간은 해당 partial-fill 경로의 시계이다.",
-          "legal_status": "KEEP",
-          "finding": "§1306.13(a)의 CII insufficient-supply 경로에서 remainder는 firstpartialfill부터72시간이고 불충족 시 prescriber통지/newRx가 필요하다. 좁혀 쓴 census “해당 경로”는 이 범위에서KEEP이나 본문은 insufficient-stock/CII를 쓰지 않았다. patient-request30day/fromissue 및 emergency-oral72h/fromissue와 혼동할 수 있어 unit omission에 별도 기록했다.",
-          "blocker": null,
+          "legal_status": "LEGAL_HOLD",
+          "finding": "공식 §1306.13(a)는 CII insufficient-supply 분기에 한해 first partial fill부터72시간을 확인한다. 본문에는 그 분기가 없고, census010의 “해당 경로”가 본문에 없는 조건을 보충한다. §1306.13(b)(2)의 patient/practitioner-request30일/fromissue 및 emergencyoral72h/fromissue와 혼동될 수 있다. 기존 시계 명제는 census에 포착되어 completeness 누락은 아니지만 실제 본문을 무조건적인72h 규칙으로 인증할 수 없어 LEGAL_HOLD다.",
+          "blocker": "본문의 first-partial72h 예시에 ScheduleII/insufficient-stock 조건이 없다. 좁혀 적은 census “해당 경로”를 본문 사실처럼 보태면 안 되므로 본문 scope 명료화가 필요하다.",
           "authorities": [
             {
               "source_type": "PUBLIC_OFFICIAL",
@@ -1600,16 +1602,22 @@
               },
               "authority_role": "CURRENT_PRIMARY_LEGAL_TEXT"
             }
-          ]
+          ],
+          "previous_qualified_census_assessment": {
+            "legal_status": "KEEP",
+            "finding": "§1306.13(a)의 CII insufficient-supply 경로에서 remainder는 firstpartialfill부터72시간이고 불충족 시 prescriber통지/newRx가 필요하다. 좁혀 쓴 census “해당 경로”는 이 범위에서KEEP이나 본문은 insufficient-stock/CII를 쓰지 않았다. patient-request30day/fromissue 및 emergency-oral72h/fromissue와 혼동할 수 있어 unit omission에 별도 기록했다.",
+            "scope": "Previous KEEP applied the narrowed census wording; actual body scope is reassessed below, original official evidence preserved"
+          },
+          "continued_review_source_use": "Same actual session reread the preserved successful same-day official raw/text for §1306.13 or§1306.11; no new live primary retrieval in this clarification round."
         },
         {
           "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0011",
           "claim_record_sha256": "85976841a8354aed80cd11bcf68f7385bfd880774fc27ada77fd990aeda29269",
           "claim_read_completely": true,
           "statement_ko": "Emergency oral authorization 후7일은 별도 follow-up 시계이다.",
-          "legal_status": "KEEP",
-          "finding": "Emergency oral CII에 federal§1306.11(d)(4)의7일 follow-up이 있다. Prescribing individual practitioner가 dispensing pharmacist에게 emergencyquantity의written/electronic record를 보내며 mailpostmark와 pharmacistfailure-report 의무가 구별된다. MA§721.060(B)(4)·.070(B)의7businessdays는 더 짧은 federal period를 남긴다. 본문 generic oral7일의 범위·주체 누락은 별도로 남긴다.",
-          "blocker": null,
+          "legal_status": "LEGAL_HOLD",
+          "finding": "§1306.11(d)(4)의 연방7일은 emergencyoralCII에서 prescribingindividualpractitioner가 dispensingpharmacist에게 follow-up을 보내는 시계이다. MA§721.060(B)(4)/.070(B)의7businessdays와 shorterfederal 조건도 구분된다. 본문에는 emergency/CII/주체/후속행동이 없어 census011의Emergency가 본문을 보충한다. 이미 포착된 시계의 과도 일반화이며 미열거 명제가 아니고 실제 본문 scope는 LEGAL_HOLD다.",
+          "blocker": "본문 generic oralauthorization7일의 법적 경로·주체·행동과 federalday/MA businessday를 명료화해야 한다. census가 추가한 emergency조건을 unstated body fact로 추정하지 않는다.",
           "authorities": [
             {
               "source_type": "PUBLIC_OFFICIAL",
@@ -1647,7 +1655,13 @@
               },
               "authority_role": "CURRENT_PRIMARY_LEGAL_TEXT"
             }
-          ]
+          ],
+          "previous_qualified_census_assessment": {
+            "legal_status": "KEEP",
+            "finding": "Emergency oral CII에 federal§1306.11(d)(4)의7일 follow-up이 있다. Prescribing individual practitioner가 dispensing pharmacist에게 emergencyquantity의written/electronic record를 보내며 mailpostmark와 pharmacistfailure-report 의무가 구별된다. MA§721.060(B)(4)·.070(B)의7businessdays는 더 짧은 federal period를 남긴다. 본문 generic oral7일의 범위·주체 누락은 별도로 남긴다.",
+            "scope": "Previous KEEP applied the narrowed census wording; actual body scope is reassessed below, original official evidence preserved"
+          },
+          "continued_review_source_use": "Same actual session reread the preserved successful same-day official raw/text for §1306.13 or§1306.11; no new live primary retrieval in this clarification round."
         },
         {
           "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0012",
@@ -1683,7 +1697,25 @@
       "census_modified": false,
       "body_modified": false,
       "question_audit_credit": 0,
-      "canonical_release_credit": 0
+      "canonical_release_credit": 0,
+      "body_legal_scope_findings": [
+        {
+          "classification": "BODY_SCOPE_OVERGENERALIZATION_OR_UNDERSPECIFIED_CONDITION",
+          "finding": "BODY_CLOCK_SCOPE: “First partial fill 후72시간”에 §1306.13(a)의 CII insufficient-supply 경로라는 조건이 없다. §1306.13(b)의 patient/practitioner-request remainder30days/fromissue 및 emergencyoral72h/fromissue, (c)의LTCF/terminal분기와 기산점을 구별할 단서를 넣어야 한다.",
+          "is_census_missing_existing_body_proposition": false
+        },
+        {
+          "classification": "BODY_SCOPE_OVERGENERALIZATION_OR_UNDERSPECIFIED_CONDITION",
+          "finding": "BODY_CLOCK_ACTOR_UNIT: “oral authorization 후7일”에 emergencyoralCII, prescribingindividualpractitioner→dispensingpharmacist의follow-up, federalcalendar7day 및 MA7businessday/shorterfederal조건이 없다. 모든oralRx 또는initialnotification시계로 적용하지 않게 해당 경로·행동을 특정해야 한다.",
+          "is_census_missing_existing_body_proposition": false
+        },
+        {
+          "classification": "BODY_SCOPE_OVERGENERALIZATION_OR_UNDERSPECIFIED_CONDITION",
+          "finding": "BODY_CLOCK_UNIDENTIFIED_EVENT: “result receipt 후1businessday”는 result종류·수신한의무자·보고수신기관·해야할행동을 특정하지 않는다. 저자census의미확인CDTM추정으로이를채울수없으므로 실제 의도한 primary조항을 찾아 scope를 보완해야 한다.",
+          "is_census_missing_existing_body_proposition": false
+        }
+      ],
+      "completeness_scope": "Whether existing actual-body legal/program propositions are represented in the author census; body legal accuracy/required qualifications are assessed separately."
     },
     {
       "unit_id": "exam-and-reading",
@@ -1874,7 +1906,9 @@
       "census_modified": false,
       "body_modified": false,
       "question_audit_credit": 0,
-      "canonical_release_credit": 0
+      "canonical_release_credit": 0,
+      "body_legal_scope_findings": [],
+      "completeness_scope": "Whether existing actual-body legal/program propositions are represented in the author census; body legal accuracy/required qualifications are assessed separately."
     },
     {
       "unit_id": "w1-a-2",
@@ -1935,10 +1969,10 @@
         "raw_sha256": "bfdd745870ad940b4aa39021c69cd9b4f340c7251cef50956dc40e11edc0e8e6"
       },
       "completeness": "OMISSIONS_FOUND",
-      "completeness_method": "기본자격·internship·application·NAPLEX/MPJE75·failedexam1년의모든소제목과본문을먼저읽고33개claim을대조했다.18세기준일/1,500시간대안/fees예외/Board서류receipt/두1년동작을직접조문별확인했다. 별도personnel장으로명시위임한1,000/500세부를이절누락으로세지않았으며, 실제본문의시험합격≠면허발급명제가census에없는것과학교opening조건차이를별도기록했다.",
+      "completeness_method": "기본자격·internship·application·두 시험/75문구·실패시험1년의 모든 본문을 먼저 읽고33개 census statement를 대조했다. 시험 합격만으로 면허가 발급되지 않는다는 문장과 개인별 최종 적격성을 Board가 결정한다는 주체 문장은 어느 기존 claim에도 독립적으로 포착되지 않아 OMISSIONS_FOUND다. 학교 opening AND/degree OR는 이미claim033에서 다뤄 본문 eligibility scope 결함이며 추가 census 누락으로 세지 않는다. 명시적으로 personnel장에 위임한1,000/500세부도 이 절의 미열거 본문명제로 세지 않았다.",
       "omissions": [
         "CENSUS_OMITTED_BODY_PROPOSITION: actualbody “시험 합격 사실만으로 면허가 발급된 것은 아니다”는 시험결과와법적면허발급을구별하는독립명제다.33개기존claim은시험2개·application요소·reciprocity경계는열거하지만이명제자체는기록하지않았다.현재NABPMPJE/NAPLEXResults가passingresultdoesnotconstitutealicense/onlyboardsissue라고명시하여materiality를확인했다.새claim은보고서omission에만기록하며authorcensus는수정하지않았다.",
-        "BODY_ELIGIBILITY_QUALIFIER: 첫문장 “ACPE-accredited 또는 Board-approved”는 §3.01(1)opening의AND와(1)(b)degree의OR를합쳐무조건적학교대안처럼표시한다.기존claim033이이문제를언급하므로새미열거claim수로부풀리지않고현재본문의scope구분누락/LEGAL_HOLD로분리했다."
+        "CENSUS_OMITTED_BODY_ACTOR_PROPOSITION: 실제 본문 “개인별 최종 적격성은 Board가 결정한다”는 판단 주체를 정한 별도 명제다. 기존33개 census의 Board 서류수신/불완전신청 거절/학교요건 조항은 각각 다른 행위이며 이 최종 적격성 주체를 명시적으로 열거하지 않는다. w1-a-3의 별도unit claim006에 같은 역할 구별이 있다는 사실로 w1-a-2 census를 완전하다고 대신 판단하지 않았다. 이 omission은 현재 본문에 실제로 있는 문장과 배정 census의 내용 대응에서 찾았으며 cardinality 차이를 근거로 만들지 않았다."
       ],
       "legal_status": "LEGAL_HOLD",
       "claims": [
@@ -2994,7 +3028,15 @@
       "census_modified": false,
       "body_modified": false,
       "question_audit_credit": 0,
-      "canonical_release_credit": 0
+      "canonical_release_credit": 0,
+      "body_legal_scope_findings": [
+        {
+          "classification": "BODY_ELIGIBILITY_SCOPE_AMBIGUITY",
+          "finding": "BODY_ELIGIBILITY_QUALIFIER: 첫문장 “ACPE-accredited 또는 Board-approved”는 §3.01(1)opening의AND와(1)(b)degree의OR를합쳐무조건적학교대안처럼표시한다.기존claim033이이문제를언급하므로새미열거claim수로부풀리지않고현재본문의scope구분누락/LEGAL_HOLD로분리했다.",
+          "is_census_missing_existing_body_proposition": false
+        }
+      ],
+      "completeness_scope": "Whether existing actual-body legal/program propositions are represented in the author census; body legal accuracy/required qualifications are assessed separately."
     },
     {
       "unit_id": "w1-a-3",
@@ -3525,7 +3567,9 @@
       "census_modified": false,
       "body_modified": false,
       "question_audit_credit": 0,
-      "canonical_release_credit": 0
+      "canonical_release_credit": 0,
+      "body_legal_scope_findings": [],
+      "completeness_scope": "Whether existing actual-body legal/program propositions are represented in the author census; body legal accuracy/required qualifications are assessed separately."
     }
   ],
   "derived_surface_findings": {
@@ -3607,7 +3651,10 @@
             "observed_source_hash": "74bcaf60bb364de2c2aab04302f4732a6c523a3827d58f35dc2b50255bb54cb8",
             "actual_current_body_sha256": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5",
             "content_contradiction_inferred_from_hash_only": false,
-            "finding": "원guide의historicalstoredbody_sha256와현재UTF8bodydigest가달라현재본문binding으로사용할수없다.실제카드문장은별도로직접읽었으며hash차이만으로법규오류를단정하지않았다."
+            "finding": "원guide의historicalstoredbody_sha256와현재UTF8bodydigest가달라현재본문binding으로사용할수없다.실제카드문장은별도로직접읽었으며hash차이만으로법규오류를단정하지않았다.",
+            "observation_scope": "INITIAL_WORKER_BASE_BEFORE_ROOT_CORRECTION",
+            "current_status": "RESOLVED_IN_ROOT_CURRENT_PUBLIC_OUTPUT",
+            "current_source_hash": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5"
           }
         ]
       },
@@ -3862,7 +3909,10 @@
             "observed_source_hash": "74bcaf60bb364de2c2aab04302f4732a6c523a3827d58f35dc2b50255bb54cb8",
             "actual_current_body_sha256": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5",
             "content_contradiction_inferred_from_hash_only": false,
-            "finding": "원guide의historicalstoredbody_sha256와현재UTF8bodydigest가달라현재본문binding으로사용할수없다.실제카드문장은별도로직접읽었으며hash차이만으로법규오류를단정하지않았다."
+            "finding": "원guide의historicalstoredbody_sha256와현재UTF8bodydigest가달라현재본문binding으로사용할수없다.실제카드문장은별도로직접읽었으며hash차이만으로법규오류를단정하지않았다.",
+            "observation_scope": "INITIAL_WORKER_BASE_BEFORE_ROOT_CORRECTION",
+            "current_status": "RESOLVED_IN_ROOT_CURRENT_PUBLIC_OUTPUT",
+            "current_source_hash": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5"
           }
         ]
       },
@@ -4003,19 +4053,33 @@
     ],
     "metadata_mismatch_count": 2,
     "actual_content_contradiction_count": 0,
-    "scope_limit": "All directly linked actual public lesson/card/glossary text and linked module/chapter summaries read. Unrelated units/lessons are outside this assignment; no global derived-site correctness claim. No body/card/generated files edited."
+    "scope_limit": "All directly linked actual public lesson/card/glossary text and linked module/chapter summaries read. Unrelated units/lessons are outside this assignment; no global derived-site correctness claim. No body/card/generated files edited.",
+    "metadata_mismatch_count_scope": "INITIAL_WORKER_BASE_OBSERVATION_ONLY",
+    "historical_metadata_mismatch_count": 2,
+    "current_metadata_mismatch_count": 0,
+    "root_current_correction_verification": {
+      "snapshot_path": "reports/full-corpus-review/independent-notes/evidence/first-b/derived-surfaces-current-root-correction.json",
+      "snapshot_raw_sha256": "cdeb46c8017b22a85a9a44a65c06a8924a3adbf8a8efe402c3e58829c1999126",
+      "observed_at": "2026-11-03T21:08:48.815091+00:00",
+      "observed_root_HEAD": "e1d086cf591109a5cfc4ad8a52c5ffffac51606e",
+      "actual_current_public_selected_objects_checked": 30,
+      "visible_content_changes_from_initial_snapshot": 0,
+      "active_assigned_source_hash_mismatches": 0,
+      "historical_stored_source_hashes_preserved": true,
+      "finding": "Root current public JS uses source_hash_basis ACTUAL_EFFECTIVE_BODY_UTF8 and active w1-a-2 source_hash c8e8d1cc…; original74bcaf60… remains in stored_source_hashes. Initial2 metadata defects are resolved in current root output; legal body findings are unaffected. Root-reported30 tests are not counted as tests rerun by this worker."
+    }
   },
   "summary": {
     "assigned_units": 5,
     "assigned_claims": 76,
     "claim_legal_counts": {
-      "KEEP": 71,
-      "LEGAL_HOLD": 2,
+      "KEEP": 69,
+      "LEGAL_HOLD": 4,
       "SOURCE_BLOCKED": 3
     },
     "unit_completeness_counts": {
-      "OMISSIONS_FOUND": 3,
-      "COMPLETE": 2
+      "COMPLETE": 4,
+      "OMISSIONS_FOUND": 1
     },
     "unit_legal_counts": {
       "LEGAL_HOLD": 3,
@@ -4023,7 +4087,21 @@
     },
     "existing_seven_content_KEEP_counted_as_this_audit": 0,
     "question_audit_credit": 0,
-    "canonical_release_credit": 0
+    "canonical_release_credit": 0,
+    "confirmed_unenumerated_existing_body_propositions": 2,
+    "body_scope_findings_separate_from_census_omissions": 5
   },
-  "verification_scope": "Completeness assessed from actual bodies before census, then every original claim independently reviewed against actual retrieved official text or retained as a specific blocker. No original/census/source author conclusion promoted automatically; no body/census/question/shared-generated/controller queue changes. Root alone submits/integrates."
+  "verification_scope": "Completeness assessed from actual bodies before census, then every original claim independently reviewed against actual retrieved official text or retained as a specific blocker. No original/census/source author conclusion promoted automatically; no body/census/question/shared-generated/controller queue changes. Root alone submits/integrates.",
+  "completeness_definition": "Only existing actual-body propositions missing from the census are counted as omissions. Missing legal qualifications in an already-enumerated body proposition are body legal/scope defects, not extra census omissions. Cardinality differences alone establish neither.",
+  "review_continuation": {
+    "continued_at": "2026-11-03T21:08:48.815091+00:00",
+    "same_actual_actor_session_instance": true,
+    "prior_evidence_commit": "df960ebc27773a5526fe71bf9db230332973c2de",
+    "prior_report_raw_sha256": "1bca839c207279615fc21f17bb219a6fe11e1b9a03b52da5fb1852cc9de9e997",
+    "new_live_primary_retrieval_in_this_round": false,
+    "primary_evidence_use": "Preserved successful same-day raw official sources reread for affected scope/clock findings; original retrieval metadata and raw SHA unchanged",
+    "classification_correction": "legal-reasoning/clocks census coverage reclassified COMPLETE while negative body findings persist; w1-a-2 retains actual census omissions for exam-pass-versus-license issuance and Board final eligibility actor, distinct from its already-enumerated school-scope ambiguity.",
+    "source_permissions_and_failed_access_credit_unchanged": true,
+    "omission_scope_limitation": "These are census coverage findings for actual body statements, not new legal claims added to the assignment and not invented missing law beyond the scope of the body."
+  }
 }
