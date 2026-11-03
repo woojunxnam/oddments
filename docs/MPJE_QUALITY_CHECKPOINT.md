@@ -1,6 +1,6 @@
 # 최신 임무 재개 기록
 
-최신 실행 체크포인트: [전체 저자 검토 완료 및 독립 감사 재개](MPJE_MISSION_CHECKPOINT_2026-11-03_AUTHOR_COMPLETE.md). 저자 2346/2346은 전체 품질 완료를 의미하지 않는다. 최신 실제 수치는 versioned progress/validation 및 PR 게시 증거를 확인한다.
+최신 실행 체크포인트: [두 번째 독립 문항·노트 감사 및 다음 wave](MPJE_MISSION_CHECKPOINT_2026-11-03_INDEPENDENT2.md). 저자 검토와 독립 감사·실제 수정·공개 배포 증거는 구분한다. PR189 최종 검사·게시 결과는 해당 PR과 versioned 검증 기록을 확인한다.
 
 이전 [2026-11-03 waves11–12 체크포인트](MPJE_MISSION_CHECKPOINT_2026-11-03_WAVES11-12.md)와 아래 배치 기록은 당시 상태다. 현재 완료율 또는 배포 증거로 승계하지 않는다.
 
