@@ -29,3 +29,9 @@ PR187은 merge `a19e0bfe3d1b1d27545944efa210c8b15b09ffba`, Pages run `4169560326
 최종 저자 census는306/306절,6,960명제(출처대조6,077/차단883)다. w6-b-16은4단락의증거관리방법론으로법적명제0개이며, 별도실제세션의고정본문분류증거에한해빈명제를허용한다. 다른본문의빈열거·변경된본문은거부한다. 이분류를법적KEEP나독립완전성전수검증으로세지않는다. 저자보고서최초라벨오류/13법률절검사와14전체거부를후속커밋에명확히보존했다. 독립질문누적560원문/542키평가/18미평가,현실성PASS181이며canonical승격0이다.
 
 새노트독립감사는 `INDEPENDENT_NOTES_REVIEW_RUNBOOK.md`와 별도 `note_review_queue.py`를 따른다. 기존7개본문KEEP와새큐의열거완전성처리를혼동하지않는다. 원문전용질문입력packet은숨은truth/기존원장판정을제외하며CASE0401/0441의우발노출은각각미평가/HOLD로보존한다.
+
+## 원래 worker Git 이력 재개
+
+Cherry-pick으로 통합한 파일과 원래 worker commit SHA를 함께 보존한다. `worker-history-checkpoint.json`의 결과·실제 branch-head 표와 별도 `checkpoints/mpje-audit-workers-20261103` 참조가 원래 commit들을 GitHub에서 도달 가능하게 유지한다. 이 별도 참조는 제품 소스 tree를 바꾸거나 출시하지 않으며, 출시 branch의 전체 CI를 대체하지 않는다.
+
+새 clone에서 controller가 과거 원본 commit을 조회할 수 없으면 먼저 해당 checkpoint branch를 fetch한다. 표의 worker branch가 로컬에 없을 때에만 기록된 `worker_branch_head`로 복원한다. 기존 branch를 덮어쓰지 않는다. `worker_commit`와 당시 실제 branch-head는 별도 필드이며, 이미 완료된 추가 분류 같은 후속 commit도 그대로 보존한다. 새 세션을 예전 독립 세션이라고 주장하지 않으며, 문맥을 잃은 미완료 lease는 token recovery 후 실제 새 actor/session으로 배정한다.
