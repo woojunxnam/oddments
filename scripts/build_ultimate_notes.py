@@ -53,7 +53,6 @@ def make_outputs() -> dict[Path,str]:
             all_ids.add(u['id'])
             if u['id'] in annotations:
                 u['atomic_source_review']=annotations[u['id']]
-                u['flags'].append(annotations[u['id']]['notice'])
             u['html']=render_markdown(u['body'])
             u['text']=re.sub(r'<[^>]*>',' ',u['html'])
             u['text']=html.unescape(re.sub(r'\s+',' ',u['text'])).strip()
@@ -86,6 +85,8 @@ def make_outputs() -> dict[Path,str]:
             book.append('<p class="unit-meta">'+html.escape(u['source_review_date'])+' · '+html.escape(' / '.join(u['origins']) or '공식 원문 추가 보완')+'</p>')
             if u['flags']:book.append('<p class="notice">'+html.escape(' · '.join(u['flags']))+'</p>')
             if u.get('editor_note'):book.append('<p class="editor-note">'+html.escape(u['editor_note'])+'</p>')
+            if u['id'] in annotations:
+                book.append('<p class="notice">'+html.escape(annotations[u['id']]['notice'])+'</p>')
             book.append(body)
             markdown.append('\n## '+u['title']+'\n')
             if u['id'] in annotations:

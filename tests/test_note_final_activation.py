@@ -1,5 +1,6 @@
 """Only current independently supported note/card content may activate."""
 import hashlib
+import copy
 import json
 import shutil
 import sys
@@ -72,6 +73,20 @@ def test_keep_summary_cannot_override_failed_atomic_claim(tmp_path):
     activation['review_sha256'] = hashlib.sha256(changed).hexdigest()
     (tmp_path/A).write_bytes(encoded(activation))
     with pytest.raises(ValueError, match='claim lacks current independent evidence'):
+        validate_final_note_review(tmp_path, raw, revision)
+
+
+def test_duplicate_unit_keep_cannot_hide_a_failed_result(tmp_path):
+    activation, report, raw, revision = fixture_review(tmp_path)
+    failed = copy.deepcopy(report['units'][0])
+    failed['verdict'] = 'HOLD'
+    failed['fully_supported_in_current_scope'] = False
+    report['units'].insert(0,failed)
+    changed = encoded(report)
+    (tmp_path/activation['review_path']).write_bytes(changed)
+    activation['review_sha256'] = hashlib.sha256(changed).hexdigest()
+    (tmp_path/A).write_bytes(encoded(activation))
+    with pytest.raises(ValueError,match='review unit scope changed'):
         validate_final_note_review(tmp_path, raw, revision)
 
 

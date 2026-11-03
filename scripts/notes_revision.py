@@ -71,7 +71,8 @@ def validate_final_note_review(root, revision_raw, revision, revision_path=REVIS
             raise ValueError('Prior note HOLD history changed or was overridden unchanged')
     bodies = {u['id']: digest(u['body'].encode()) for u in revision['units']}
     reviewed = {u['unit_id']: u for u in review['units']}
-    if set(bodies) != expected_units or set(reviewed) != set(bodies):
+    if (len(bodies) != len(revision['units']) or len(reviewed) != len(review['units']) or
+            set(bodies) != expected_units or set(reviewed) != set(bodies)):
         raise ValueError('Final note review unit scope changed')
     for uid, body_hash in bodies.items():
         unit = reviewed[uid]

@@ -1,0 +1,42 @@
+{
+  "scope": "SOFTWARE_QA_NOT_LEGAL_AUDIT_OR_RELEASE_EVIDENCE",
+  "reviewed_commit": "77ca07730632b9f1733b0f6de34eaa384bb522c8",
+  "reviewer": "/root/review_b",
+  "reviewer_did_not_edit_code": true,
+  "findings": [
+    {
+      "id": "DUPLICATE_UNIT_HIDES_HOLD",
+      "reproduced": true,
+      "fix": "Reject duplicate author/reviewer unit IDs before constructing acceptance sets.",
+      "regression": "test_duplicate_unit_keep_cannot_hide_a_failed_result"
+    },
+    {
+      "id": "SOURCE_HOLDS_MISSING_FROM_REVIEW_FILTER",
+      "reproduced": true,
+      "affected_units_at_review": 53,
+      "fix": "Use body-bound atomic_source_review counts for search warnings and review filter as well as historical OPEN flags.",
+      "regression": "verify_notes_browser.py source-blocked units without historical OPEN flags"
+    }
+  ],
+  "first_ci": {
+    "head": "77ca07730632b9f1733b0f6de34eaa384bb522c8",
+    "failed_workflows": [
+      41670071866,
+      41670071870,
+      41670071859
+    ],
+    "reason": "Long source-hold warning was appended as a second .badge.warning, violating existing strict OPEN-badge checks. Render the substantive notice as a distinct .source-hold paragraph and retain original flags.",
+    "final_ci": "PENDING"
+  },
+  "first_local_focused_run": {
+    "passed": 60,
+    "errors": 3,
+    "reason": "Protected-export metadata was regenerated concurrently with early focused tests; rerun complete suite only after the tree is stable."
+  },
+  "prior_full_pytest": {
+    "passed": 383,
+    "scope": "before duplicate-guard regression and final UI fixes"
+  },
+  "final_full_pytest": "PENDING",
+  "current_legal_audit_credit": 0
+}
