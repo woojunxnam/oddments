@@ -167,6 +167,56 @@ def make_baseline(main_tree, root=ROOT):
 
 def migrated_baseline_bytes(root, relative, current):
     # Only this exact generated export can migrate; immutable inputs remain strict.
+    effective_build = None
+    twelfth_path=root/'revisions/notes/protected-migration-emergency-kit.json'
+    if twelfth_path.exists() and relative=='site/notes/complete-notes.md':
+        from notes_emergency_activation import (REVISION_M, ACTIVATION, REVIEW, CENSUS,
+            REVISION_SHA256, REVIEW_SHA256, CENSUS_SHA256, validate_emergency_note_review)
+        from notes_revision import load_notes
+        twelfth=json.loads(twelfth_path.read_bytes())
+        require(twelfth['schema_version']=='notes-protected-semantic-migration/1' and
+                twelfth['baseline_commit']=='0e1c03302b38401ed53085af4ee402abfd0b46ec',
+                'Unexpected emergency-kit migration base')
+        require(twelfth['path']==relative and
+                twelfth['baseline_copy']=='revisions/baselines/complete-notes-census-wave8-9.md' and
+                twelfth['baseline_build_copy']=='revisions/baselines/notes-build-census-wave8-9.json',
+                'Emergency-kit migration expands protected scope')
+        require(twelfth['revision_path']==REVISION_M and twelfth['revision_sha256']==REVISION_SHA256 and
+                twelfth['activation_path']==ACTIVATION and twelfth['review_path']==REVIEW and
+                twelfth['review_sha256']==REVIEW_SHA256 and twelfth['census_path']==CENSUS and
+                twelfth['census_sha256']==CENSUS_SHA256,
+                'Emergency-kit migration review scope changed')
+        revision_raw=safe_file(root,REVISION_M).read_bytes()
+        require(sha256(revision_raw)==REVISION_SHA256 and
+                sha256(safe_file(root,ACTIVATION).read_bytes())==twelfth['activation_sha256'] and
+                sha256(safe_file(root,REVIEW).read_bytes())==REVIEW_SHA256 and
+                sha256(safe_file(root,CENSUS).read_bytes())==CENSUS_SHA256,
+                'Emergency-kit activation or independent evidence changed')
+        validate_emergency_note_review(root,revision_raw,json.loads(revision_raw))
+        require(twelfth['previous_migration_path']=='revisions/notes/protected-migration-census-wave8-9.json' and
+                twelfth['previous_migration_sha256']=='9ccb67705c0a371e683fe5d1a5f129a6b59a7581e93e06c8eddfaa4cae72a933' and
+                sha256(safe_file(root,twelfth['previous_migration_path']).read_bytes())==twelfth['previous_migration_sha256'],
+                'Previous census annotation migration changed')
+        current_build=json.loads(safe_file(root,'site/notes/build.json').read_bytes())
+        semantic_sha256=sha256(json.dumps(load_notes(root),ensure_ascii=False,sort_keys=True).encode())
+        require(current_build['edition']=='2026-11-03.emergency-kit.1' and
+                current_build['content_sha256']==twelfth['semantic_notes_sha256']==semantic_sha256 and
+                current_build['revision_provenance']['path']==REVISION_M and
+                current_build['revision_provenance']['sha256']==REVISION_SHA256,
+                'Emergency-kit current semantic build changed')
+        require(sha256(current)==twelfth['new_sha256'], 'Stale emergency-kit export')
+        current=safe_file(root,twelfth['baseline_copy']).read_bytes()
+        require(twelfth['old_sha256']=='23b17eb365f0f58b3a59f7755151ca11335c569e3260b0b2ac628dc8e9435c41' and
+                sha256(current)==twelfth['old_sha256'], 'Historical J census export changed')
+        historical_build=safe_file(root,twelfth['baseline_build_copy']).read_bytes()
+        require(twelfth['baseline_build_sha256']=='39bfac671f059d494fca5b01caae69796318ca6a7b19957ae1be447946907d8d' and
+                sha256(historical_build)==twelfth['baseline_build_sha256'],
+                'Historical J census build changed')
+        effective_build=json.loads(historical_build)
+        require(effective_build['edition']=='2026-11-03.refill-cancer.1' and
+                effective_build['content_sha256']==twelfth['previous_semantic_notes_sha256']==
+                '8138f0556bcaba8f157eed04bc8a6754bc9e3a0f0f53b9dd35a6e06f38e1bb1b',
+                'Emergency-kit migration historical semantic context changed')
     metadata_path=root/'revisions/notes/protected-migration-census-wave8-9.json'
     if metadata_path.exists() and relative=='site/notes/complete-notes.md':
         metadata=json.loads(metadata_path.read_bytes())
@@ -184,7 +234,8 @@ def migrated_baseline_bytes(root, relative, current):
                 sha256(safe_file(root,metadata['baseline_build_copy']).read_bytes())==metadata['baseline_build_sha256'],
                 'Census annotation baseline build changed')
         require(json.loads(safe_file(root,metadata['baseline_build_copy']).read_bytes())['content_sha256']==metadata['semantic_notes_sha256'] and
-                json.loads(safe_file(root,'site/notes/build.json').read_bytes())['content_sha256']==metadata['semantic_notes_sha256'],
+                (effective_build if effective_build is not None else
+                 json.loads(safe_file(root,'site/notes/build.json').read_bytes()))['content_sha256']==metadata['semantic_notes_sha256'],
                 'Census metadata cannot authorize a semantic note edit')
         require(set(metadata['census_sources'])=={'reports/full-corpus-review/note-wave8-census.json',
                                                  'reports/full-corpus-review/note-wave9-census.json'},
