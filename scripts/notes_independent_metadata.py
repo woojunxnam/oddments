@@ -40,7 +40,7 @@ def evidence_bindings(value):
 
 
 def load_metadata(root, notes=None, ledger_raw=None):
-    """Return only current INTEGRATED results; never mutate state or note data."""
+    """Return current integrated reviews and pending safety markers without mutation."""
     inv = queue.inventory(root,notes,ledger_raw=ledger_raw)
     result = {'units':{},'progress':{
         'total_units':inv['total_units'],'author_enumerated_units':len(inv['units']),
@@ -68,6 +68,11 @@ def load_metadata(root, notes=None, ledger_raw=None):
     state = json.loads(committed(queue.STATE))
     # Publication copies retain the controller's original absolute root string.
     queue.validate_state(state)
+    from notes_census_reassessment import validate_registered, latest_jobs
+    if state.get('reassessments'):
+        validate_registered(state,root,inv['notes'],committed)
+    latest = latest_jobs(state)
+    revised_units = {e['record']['unit_id'] for e in state.get('reassessments',[])}
     for job in state['jobs']:
         if job['status'] != 'INTEGRATED': continue
         queue.require(all(j['status'] == 'INTEGRATED' for j in state['jobs'] if j['sequence'] < job['sequence']),
@@ -76,7 +81,7 @@ def load_metadata(root, notes=None, ledger_raw=None):
                       any(e.get('kind') == 'INTEGRATE' and e.get('job_id') == job['job_id'] and
                           e.get('commit') == job['integrated_commit'] and e.get('result_sha256') == job.get('result_sha256')
                           for e in state['events']), 'Missing captured note integration provenance')
-        queue.current(job,inv)
+        queue.current(job,inv,state,allow_pending=True)
         authors = set(job.get('known_author_ids',())) | {
             a for b in job['unit_bindings'].values() for a in b['known_author_ids']}
         actor = job.get('actor_provenance',{})
@@ -99,6 +104,10 @@ def load_metadata(root, notes=None, ledger_raw=None):
                              finding=c['finding'],blocker=c.get('blocker'))
                         for c in record['claims'] if c['legal_status'] != 'KEEP']
             notice = notice_for(record['completeness'],record['legal_status'],len(record['omissions']))
+            history = []
+            if uid in result['units']:
+                previous = result['units'][uid]
+                history = previous.pop('review_history',[]) + [{**previous,'current_review_valid':False}]
             result['units'][uid] = dict(
                 completeness=record['completeness'],legal_status=record['legal_status'],
                 omission_count=len(record['omissions']),omissions=record['omissions'],findings=findings,
@@ -111,7 +120,23 @@ def load_metadata(root, notes=None, ledger_raw=None):
                 actor_provenance=actor,auditor_instance=job['auditor_instance'],
                 basis='INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION',
                 question_audit_credit=0,canonical_release_credit=0)
-    rows = list(result['units'].values()); p = result['progress']
+            if uid in revised_units:
+                result['units'][uid].update(current_review_valid=True,job_id=job['job_id'],review_history=history)
+    for uid,job in latest.items():
+        queue.current(job,inv,state,allow_pending=True)
+        if not job.get('reassessment_id') or job['status'] == 'INTEGRATED': continue
+        previous = result['units'][uid]
+        history = previous.pop('review_history',[]) + [{**previous,'current_review_valid':False}]
+        result['units'][uid] = dict(previous,current_review_valid=False,review_history=history,
+            job_id=job['job_id'],completeness='PENDING_REASSESSMENT',legal_status='LEGAL_HOLD',
+            claim_counts={s:0 for s in sorted(queue.LEGAL)},requires_review=True,
+            census_sha256=job['unit_bindings'][uid]['census_sha256'],
+            basis='CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW',
+            notice='census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.')
+    rows = [r for r in result['units'].values() if r.get('current_review_valid',True)]; p = result['progress']
+    if revised_units:
+        p['pending_census_reassessment_units'] = sum(not r.get('current_review_valid',True) for r in result['units'].values())
+        p['historical_review_records'] = sum(len(j['unit_ids']) for j in state['jobs'] if j['status'] == 'INTEGRATED')
     p.update(processed_units=len(rows),complete_units=sum(r['completeness'] == 'COMPLETE' for r in rows),
              omissions_found_units=sum(r['completeness'] == 'OMISSIONS_FOUND' for r in rows),
              legal_keep_units=sum(r['legal_status'] == 'KEEP' for r in rows),

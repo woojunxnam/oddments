@@ -145,9 +145,10 @@ def inventory(root, notes=None, ledger_raw=None):
             'author_nonlegal_classification':nonlegal,
             'known_author_ids':sorted(provenance_ids(census.get('reviewer_provenance')) |
                 provenance_ids({'reviewer_provenance':census.get('reviewer_provenance')}) |
+                provenance_ids(census.get('author_provenance',{})) |
                 provenance_ids(counted) | provenance_ids(claims) | provenance_ids(unit.get('author_provenance',{})))}
     return {'ledger_sha256':raw_sha(raw), 'total_units':len(rows), 'units':eligible,
-            'existing_content_keep_units':sum(u.get('independent_content_review',{}).get('decision') == 'KEEP'
+            'notes':notes, 'existing_content_keep_units':sum(u.get('independent_content_review',{}).get('decision') == 'KEEP'
                                               for u in actual.values())}
 
 
@@ -162,11 +163,13 @@ def validate_state(state, root=None):
             'Wrong note queue/controller purpose')
     if root is not None:
         require(state['controller_root'] == str(root.resolve()), 'Controller worktree differs from note checkpoint')
-    jobs = state['jobs']; assigned = [uid for j in jobs for uid in j['unit_bindings']]
-    require(len({j['job_id'] for j in jobs}) == len(jobs) and len(assigned) == len(set(assigned)) and
+    jobs = state['jobs']
+    require(len({j['job_id'] for j in jobs}) == len(jobs) and
             [j['sequence'] for j in jobs] == list(range(1,len(jobs)+1)) and
             all(j['stage'] == STAGE and j['status'] in {'QUEUED','LEASED','SUBMITTED','INTEGRATED'} for j in jobs),
             'Invalid note assignment sequence/scope')
+    from notes_census_reassessment import validate_chain
+    validate_chain(state)
 
 
 @contextmanager
@@ -201,15 +204,34 @@ def job_for(state, identifier):
     return found[0]
 
 
-def current(job, inv):
+def current(job, inv, state=None, allow_pending=False):
+    from notes_census_reassessment import latest_jobs
+    latest = latest_jobs(state) if state is not None else {}
     for uid,binding in job['unit_bindings'].items():
-        require(inv['units'].get(uid) == binding, 'Assigned ledger/census/body changed: '+uid)
+        selected = inv['units'].get(uid)
+        owner = latest.get(uid,job)
+        if owner['job_id'] != job['job_id']:
+            require(selected is not None and selected['body_sha256'] == binding['body_sha256'],
+                    'Historical reassessment body changed: '+uid)
+            continue
+        if allow_pending and owner.get('reassessment_id') and owner['status'] == 'QUEUED' and owner['attempt'] == 0:
+            entry = next(e['record'] for e in state['reassessments']
+                         if e['record']['reassessment_id'] == owner['reassessment_id'])
+            if selected == entry['previous_binding']: continue
+        require(selected == binding, 'Assigned ledger/census/body changed: '+uid)
+
+
+def validate_reassessments(state, inv, root):
+    if state.get('reassessments'):
+        from notes_census_reassessment import validate_registered
+        validate_registered(state,root,inv['notes'])
 
 
 def plan(state, inv, root, batches=1, size=5, at=None):
     validate_state(state,root)
     require(1 <= batches <= 20 and 1 <= size <= 20, 'Use 1–20 batches of 1–20 note units')
-    for job in state['jobs']: current(job,inv)
+    validate_reassessments(state,inv,root)
+    for job in state['jobs']: current(job,inv,state,allow_pending=True)
     if any(j['status'] != 'INTEGRATED' for j in state['jobs']): return []
     assigned = {uid for j in state['jobs'] for uid in j['unit_bindings']}
     pending = [uid for uid in inv['units'] if uid not in assigned]
@@ -253,10 +275,10 @@ def claim(state, inv, worker, session, independence_basis, auditor='GPT', audito
     if active:
         require(active['actor_provenance'] == provenance and active['auditor'] == auditor and
                 active['auditor_instance'] == auditor_instance, 'Active actor session differs')
-        current(active,inv); return active
+        current(active,inv,state); return active
     job = next((j for j in state['jobs'] if j['status'] == 'QUEUED'),None)
     if job is None: return None
-    current(job,inv)
+    current(job,inv,state)
     authors = set(job.get('known_author_ids',())) | set(known_authors) | {
         a for b in job['unit_bindings'].values() for a in b['known_author_ids']}
     require(not {worker,session,auditor_instance} & authors, 'Known body/source author cannot self-audit')
@@ -275,14 +297,15 @@ def require_lease(job, token, at):
 
 
 def heartbeat(state, identifier, token, inv, minutes=60, at=None):
-    at = at or timestamp(); job = job_for(state,identifier); require_lease(job,token,at); current(job,inv)
+    at = at or timestamp(); job = job_for(state,identifier); require_lease(job,token,at); current(job,inv,state)
     require(1 <= minutes <= 1440, 'Use 1–1440 lease minutes')
     job['lease_until'] = (instant(at)+timedelta(minutes=minutes)).isoformat()
     event(state,'HEARTBEAT',at,job_id=identifier,attempt=job['attempt'])
 
 
 def prepare_worktree(state, identifier, token, inv, root, destination, at=None):
-    job = job_for(state,identifier); require_lease(job,token,at or timestamp()); current(job,inv)
+    job = job_for(state,identifier); require_lease(job,token,at or timestamp()); current(job,inv,state)
+    validate_reassessments(state,inv,root)
     destination = destination.resolve()
     if destination.exists():
         require(git(destination,'branch','--show-current') == job['worker_branch'] and
@@ -323,7 +346,18 @@ def validate_evidence(job, result, report):
         claims = row.get('claims',[]); expected = binding['claim_record_sha256s']
         require(len(claims) == len(expected) and {c.get('claim_id') for c in claims} == set(expected),
                 'Missing, duplicate, or extra claim assessment: '+uid)
+        if job.get('reassessment_id'):
+            require(row.get('reassessment_review') == {**job['reassessment_review'],
+                    'final_census_read_completely':True,'all_original_omissions_reassessed':True,
+                    'all_original_propositions_preserved':True},
+                    'Fresh final-census assessment of every original omission required')
         for c in claims:
+            inherited = job.get('carried_legal_blockers',{}).get(uid,{}).get(c.get('claim_id'),[])
+            if inherited:
+                require(c.get('inherited_legal_blockers') == inherited and
+                        c.get('legal_status') in ({'LEGAL_HOLD'} if any(x['legal_status'] == 'LEGAL_HOLD' for x in inherited)
+                                                  else {'SOURCE_BLOCKED','LEGAL_HOLD'}),
+                        'Census-only reassessment cannot close inherited legal blockers')
             require(c.get('claim_record_sha256') == expected[c['claim_id']] and c.get('legal_status') in LEGAL and
                     c.get('claim_read_completely') is True and
                     isinstance(c.get('finding'),str) and bool(c['finding'].strip()), 'Stale/unknown claim verdict')
@@ -392,7 +426,7 @@ def committed_evidence(job, result, root, integrated=False):
 
 def submit(state, identifier, token, result_raw, root, inv, at=None):
     at = at or timestamp(); job = job_for(state,identifier); result = json.loads(result_raw)
-    validate_result(job,result); current(job,inv); sha = raw_sha(result_raw)
+    validate_result(job,result); current(job,inv,state); validate_reassessments(state,inv,root); sha = raw_sha(result_raw)
     if job['status'] in {'SUBMITTED','INTEGRATED'}:
         require(job.get('lease_token') == token and job['result'] == result and job['result_sha256'] == sha,
                 'Conflicting note completion')
@@ -404,7 +438,8 @@ def submit(state, identifier, token, result_raw, root, inv, at=None):
 
 
 def integrate(state, identifier, root, inv, at=None):
-    job = job_for(state,identifier); current(job,inv)
+    job = job_for(state,identifier); current(job,inv,state,allow_pending=True)
+    validate_reassessments(state,inv,root)
     require(job['status'] in {'SUBMITTED','INTEGRATED'}, 'Submit valid evidence before integration')
     require(not any(j['sequence'] < job['sequence'] and j['status'] != 'INTEGRATED' for j in state['jobs']),
             'Integrate note jobs in assignment order')
@@ -419,15 +454,21 @@ def integrate(state, identifier, root, inv, at=None):
 
 def progress(state, inv, root=None):
     validate_state(state)
+    if root is not None: validate_reassessments(state,inv,root)
     for job in state['jobs']:
-        current(job,inv)
+        current(job,inv,state,allow_pending=True)
         if root is not None and job['status'] == 'INTEGRATED':
             integrate(state,job['job_id'],root,inv)
-    rows = [r for j in state['jobs'] if j['status'] == 'INTEGRATED' for r in j['result']['results']]
+    from notes_census_reassessment import latest_jobs
+    latest = latest_jobs(state)
+    rows = [r for uid,j in latest.items() if j['status'] == 'INTEGRATED'
+            for r in j['result']['results'] if r['unit_id'] == uid]
     return {'total_note_units':inv['total_units'],'author_enumerated_units':len(inv['units']),
         'not_enumerated_units':inv['total_units']-len(inv['units']),
         'existing_current_body_content_keep_units':inv['existing_content_keep_units'],
         'independent_completeness_legal_processed_units':len(rows),
+        'pending_census_reassessment_units':sum(bool(j.get('reassessment_id')) and j['status'] != 'INTEGRATED'
+                                               for j in latest.values()),
         'completeness':{s:sum(r['completeness'] == s for r in rows) for s in sorted(COMPLETE)},
         'legal':{s:sum(r['legal_status'] == s for r in rows) for s in sorted(UNIT_LEGAL)},
         'queue_jobs':{s:sum(j['status'] == s for j in state['jobs']) for s in ('QUEUED','LEASED','SUBMITTED','INTEGRATED')},
@@ -447,6 +488,7 @@ def main():
     p.add_argument('--auditor',default='GPT'); p.add_argument('--auditor-instance')
     p.add_argument('--known-author',action='append',default=[]); p.add_argument('--minutes',type=int,default=60)
     commands.add_parser('recover'); commands.add_parser('progress')
+    p = commands.add_parser('reassess'); p.add_argument('--record',required=True)
     for name in ('heartbeat','worktree','submit','integrate'):
         p = commands.add_parser(name); p.add_argument('--job',required=True)
         if name != 'integrate': p.add_argument('--token',required=True)
@@ -459,7 +501,11 @@ def main():
         validate_state(state,root); output = progress(state,inv,root)
     else:
         with checkpoint(root,args.actor) as state:
-            if args.command == 'plan': output = plan(state,inv,root,args.batches,args.size)
+            validate_reassessments(state,inv,root)
+            if args.command == 'reassess':
+                from notes_census_reassessment import register
+                output = register(state,inv,root,args.record)
+            elif args.command == 'plan': output = plan(state,inv,root,args.batches,args.size)
             elif args.command == 'claim': output = claim(state,inv,args.worker,args.session,args.independence_basis,
                 args.auditor,args.auditor_instance,args.known_author,args.minutes)
             elif args.command == 'recover': output = recover(state)
