@@ -1,0 +1,298 @@
+Retrieved 2026-11-03 using official HTTP from https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19B
+
+
+General Law - Part I, Title XV, Chapter 94C, Section 19B
+Skip to Content
+November 03, 2026
+ | 
+55°F
+The 194th General Court of the 
+Commonwealth of 
+Massachusetts
+MyLegislature 
+MyLegislature
+Sign in with MyLegislature Account
+* Indicates required fields
+Email*
+Password*
+Forgot Password?
+ Sign in with Facebook
+ Sign in with Google
+Not Registered?
+Learn More Here! »
+Menu
+Toggle navigation
+Home
+Search
+                            MyLegislature
+Bills & Laws
+Bills
+        All Bills
+        Recent & Popular Bills
+        Senate Deadlines
+        House Deadlines
+        Browse Bills by City/Town
+Search Bills
+Search
+Session Laws
+        Browse Session Laws
+Search Session Laws
+Search
+Go to a Session Law:
+Type:
+Act
+Resolve
+Chapter:
+Year:
+2026
+2025
+2024
+2023
+2022
+2021
+2020
+2019
+2018
+2017
+2016
+2015
+2014
+2013
+2012
+2011
+2010
+2009
+2008
+2007
+2006
+2005
+2004
+2003
+2002
+2001
+2000
+1999
+1998
+1997
+Go 
+to Session Law
+General Laws
+        Browse General Laws
+Search General Laws
+Search
+Go to a General Law:
+Chapter:
+Section Number:
+Keyword:
+Go 
+ to that General Law
+            Massachusetts Constitution
+            Senate Journals
+            House Journals
+            Rules
+            Reports and Communications
+            Drafting Manual
+            Glossary
+Close Menu
+Budget
+FY 2027 Budget
+                            Governor's Budget
+                            House Ways & Means Budget
+                            House Debate
+                            House Budget
+                            Senate Ways & Means Budget
+                            Senate Debate
+                            Senate Budget
+                            Conference Committee
+                            Final Budget
+Close Menu
+Legislators
+Legislators
+        Redistricting
+        Find Your Legislators
+Search Legislators
+Search
+Legislative Leadership
+        All Leadership
+        Senate Leadership
+        House Leadership
+Senate
+        All Senators
+        Senate Clerk
+        Senate Open Records
+House
+        All Representatives
+        House Clerk
+Close Menu
+Clerks
+Dockets
+Search Dockets
+Search
+Senate Clerk
+        Agenda
+        Calendar
+        Dockets
+        Rules
+House Clerk
+        Calendar
+        Dockets
+        Rules
+            Senate Audits
+            Senate Journals
+            House Audits
+            House Journals
+Close Menu
+Hearings & Events
+All Hearings & Events
+Search Events
+Search
+Sessions
+        Joint Sessions
+        Senate Sessions
+        House Sessions
+Hearings
+        Senate Committee Hearings
+        House Committee Hearings
+        Joint Committee Hearings
+            Special Events
+Close Menu
+Committees & Commissions
+All Committees
+Search Committees
+Search
+Committees
+        Joint Committees
+        Senate Committees
+        House Committees
+Committee Hearings
+        Joint Committee Hearings
+        Senate Committee Hearings
+        House Committee Hearings
+            Commissions
+            Committee Book
+            Hearing Attendance
+Close Menu
+State House
+Visit the State House
+        On-site Tour
+        Virtual Tour
+Accessibility
+        Request Accessibility
+        Web Accessibility Policy
+        Accessibility Initiatives
+Educational Opportunities
+        Internships
+        Student Government Day
+        Citizens' Legislative Seminar
+            Create Your Own Bill
+            Media Gallery
+            FAQ
+            Contact Us
+Close Menu
+General Laws
+Part I
+Title XV
+Chapter 94C
+Section 19B
+Section 19B
+Search the Legislature
+Search the Legislature
+Search
+General Laws
+Go Directly to a General Law
+Chapter
+Section
+Go 
+to General Law
+Skip to Content
+ Print Page
+ Prev
+ious
+Next 
+Section 19B: 
+Dispensing, possessing and administrating opioid antagonist
+Section 19B. (a) As used in this section and unless the context clearly requires otherwise, ''opioid antagonist'' shall mean naloxone or any other drug approved by the federal Food and Drug Administration as a competitive narcotic antagonist used in the reversal of overdoses caused by opioids.  
+(b) The department shall ensure that a statewide standing order is issued to authorize the dispensing of an opioid antagonist in the commonwealth by any licensed pharmacist. The statewide standing order shall include, but not be limited to, written, standardized procedures or protocols for the dispensing of an opioid antagonist by a licensed pharmacist. Notwithstanding any general or special law to the contrary, the commissioner, or a physician who is designated by the commissioner and is registered to distribute or dispense a controlled substance in the course of professional practice under section 7, may issue a statewide standing order that may be used for a licensed pharmacist to dispense an opioid antagonist under this section.  
+(c) Notwithstanding any general or special law to the contrary, a licensed pharmacist may dispense an opioid antagonist in accordance with the statewide standing order issued under subsection (b). Except for an act of gross negligence or willful misconduct, a pharmacist who, acting in good faith, dispenses an opioid antagonist shall not be subject to any criminal or civil liability or any professional disciplinary action by the board of registration in pharmacy related to the use or administration of an opioid antagonist.  
+(d) A pharmacist who dispenses an opioid antagonist shall annually report to the department the number of opioid antagonist doses dispensed. Reports shall not identify an individual patient, shall be confidential and shall not constitute a public record as defined in clause Twenty-sixth of section 7 of chapter 4. The department shall publish an annual report that includes aggregate information about the dispensing of opioid antagonists in the commonwealth.  
+(e) A pharmacist or designee who dispenses an opioid antagonist pursuant to this section shall, for the purposes of health insurance billing and cost-sharing, treat the transaction as the dispensing of a prescription to the person purchasing the opioid antagonist regardless of the ultimate user of the opioid antagonist. Unless the person purchasing the opioid antagonist requests to pay for the prescription out-of-pocket, the pharmacist or designee shall make a reasonable effort to identify the purchaser's insurance coverage and to submit a claim for the opioid antagonist to the insurance carrier prior to dispensing the opioid antagonist.  
+(f) Except for an act of gross negligence or willful misconduct, the commissioner or a physician who issues the statewide standing order under subsection (b) and any practitioner who, acting in good faith, directly or through the standing order, prescribes or dispenses an opioid antagonist shall not be subject to any criminal or civil liability or any professional disciplinary action.  
+(g) A person acting in good faith may receive a prescription for an opioid antagonist, possess an opioid antagonist and administer an opioid antagonist to an individual appearing to experience an opioid-related overdose. A person who, acting in good faith, administers an opioid antagonist to an individual appearing to experience an opioid-related overdose shall not, as a result of the person's acts or omissions, be subject to any criminal or civil liability or any professional disciplinary action. The immunity established under section 34A shall also apply to a person administering an opioid antagonist pursuant to this section.  
+(h) The department, the board of registration in medicine and the board of registration in pharmacy shall adopt regulations to implement this section.  
+Site Information & Links
+Helpful Massachusetts Links
+Mass.gov 
+(external site opens in a new tab)
+Commonwealth Employment Opportunities 
+(external site opens in a new tab)
+Secretary of the Commonwealth 
+(external site opens in a new tab)
+Mass DOT 
+(external site opens in a new tab)
+Boards & Commissions 
+(external site opens in a new tab)
+Non-Profits & Charities 
+(external site opens in a new tab)
+Libraries 
+(external site opens in a new tab)
+Google Translate 
+(external site opens in a new tab)
+Quick Links
+Accessibility
+MyLegislature
+Massachusetts General Laws
+Find My Legislator
+Visit the State House
+Contact Us
+Privacy Policy
+Terms And Conditions
+                Copyright © 2026 The General Court of the Commonwealth of Massachusetts
+×
+Register for MyLegislature
+Register With An Existing Account
+ Sign in
+ with Facebook
+ Sign in
+ with Google
+Register With Your Email Address
+Email Address
+Password
+Confirm Password
+Register
+Registering...
+Already have an account? Sign in here.
+Forgot Password?
+×
+Sign in to MyLegislature
+Sign In With Your Facebook or Google+ Account
+ Sign in
+ with Facebook
+ Sign in
+ with Google
+Sign In With Your MyLegislature Account
+Email*
+Password*
+Forgot Password?
+Sign In
+Signing In...
+Not Registered? Click here.
+Learn More Here! »
+×
+Forgot Password
+Please enter your email address.
+ If there is an account associated with that address, a password reset link will be mailed to you.
+Email Address
+Reset Password
+Processing...
+Cancel
+×
+Sign In Required
+This feature is exclusive to users of
+MyLegislature
+Sign In
+Register
+×
+Search The Legislature
+Search the Legislature
+Search the Legislature
+Search
