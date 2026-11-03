@@ -104,3 +104,24 @@ def test_author_archive_warning_binds_actual_individual_finding_and_cannot_inven
     with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
     notice['original_author_blocker']=row['blocker'];row['choice_by_choice_findings'].pop('D');save()
     with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+
+
+@pytest.mark.parametrize('defect',[None,'question_hash','quote','credit'])
+def test_editorial_cue_holds_require_actual_current_text_and_never_legal_credit(tmp_path,monkeypatch,defect):
+    relative='reports/full-corpus-review/phase5-default-editorial-holds.json'
+    source=json.loads((ROOT/relative).read_bytes())
+    holds=json.loads((ROOT/'reports/representative-rewrite/default-holds.json').read_bytes())['holds']
+    hold=copy.deepcopy(next(h for h in holds if h.get('finding_type')=='ROOT_EDITORIAL_WORDING_HOLD'))
+    row=next(r for r in source['records'] if r['question_id']==hold['legacy_question_id'])
+    questions={q['question_id']:q for q in json.loads((ROOT/builder.ARCHIVES[1]).read_bytes())['questions']}
+    if defect=='question_hash':row['record_sha256']='0'*64
+    elif defect=='quote':row['choice_evidence'][0]['exact_quote']='invented quoted requirement'
+    elif defect=='credit':source['independent_legal_credit']=1
+    path=tmp_path/relative;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(source))
+    hold['evidence_report_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+    monkeypatch.setattr(builder,'ROOT',tmp_path)
+    if defect:
+        with pytest.raises(ValueError):builder.validate_editorial_wording_holds([hold],questions,{})
+    else:
+        hashes={};builder.validate_editorial_wording_holds([hold],questions,hashes)
+        assert relative in hashes
