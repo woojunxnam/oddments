@@ -2833,7 +2833,7 @@
         "w2-b-8",
         "w2-b-9"
       ],
-      "status": "LEASED",
+      "status": "INTEGRATED",
       "attempt": 1,
       "base_commit": "7ea8496483f154a1db7799cea616a26fae5d02d2",
       "inventory_ledger_sha256": "9f767585a2b5197f6f69133a10167c95f2448f2d85c751990008ccfec2afb0a6",
@@ -2850,7 +2850,64 @@
       ],
       "lease_until": "2026-11-04T01:54:57.714946+00:00",
       "worker_branch": "mission/review-independent-notes-b35c8cf339a004cd-attempt-1",
-      "lease_token": "2de5785f4beab60e2e966c83c916de6e405b6ed4783b5f49bec9aa7b0202f622"
+      "lease_token": "2de5785f4beab60e2e966c83c916de6e405b6ed4783b5f49bec9aa7b0202f622",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "worker_commit": "5adbeead460eac420c1de4bcc62be11374e29f5a",
+        "unit_hashes": {
+          "w2-b-5": "4909f08713cb48019807f8146f0d9c7d489bc61ba77ec81c0f535eb61f4eebb4",
+          "w2-b-6": "3daf4a7e8fa7bc7765e9de43892772007d5a15fa68c24182c44e79caad062f6e",
+          "w2-b-7": "45855e7ad489860a06d53ddbb9d63abf2e10cb6c493220e4ba207c29554de566",
+          "w2-b-8": "6a945fbec2e953d468ede902deaa75d0160435d0f61040add54319d22e721816",
+          "w2-b-9": "a8a38f77a570bb930df6b9c0609a475e0cee57c88aa9cd54dbe2c9a97aebdffb"
+        },
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/third-e-review.json",
+          "raw_sha256": "4c5c4741cc7cfafba6757d4f8b03f1e723a2da2138d351e358f803314487f388"
+        },
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-b35c8cf339a004cd-result.json",
+        "results": [
+          {
+            "unit_id": "w2-b-5",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-6",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-7",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-b-8",
+            "completeness": "COMPLETE",
+            "legal_status": "LEGAL_HOLD"
+          },
+          {
+            "unit_id": "w2-b-9",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          }
+        ]
+      },
+      "result_sha256": "1601bf796a8a707d658d1dd7c8e8ee82205f9de5f1afb04789045bec36176c73",
+      "submitted_at": "2026-11-03T23:18:41.251953+00:00",
+      "integrated_commit": "0eb81d7d816f244d59559d6bbcb64d2689ae2674",
+      "integrated_at": "2026-11-03T23:18:42.937823+00:00"
     },
     {
       "job_id": "review-independent-notes-d3c2ad217204af36",
@@ -3571,6 +3628,20 @@
       "job_id": "review-independent-notes-d67785abd6a15c8d",
       "commit": "2fe1993dbeadfa1fb08bac8899cdc135e4fec4a1",
       "result_sha256": "3c441f57e3e43deca85dde9f8bf18a0853cd7e48052f13d7471156e6921be649"
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-03T23:18:41.251953+00:00",
+      "job_id": "review-independent-notes-b35c8cf339a004cd",
+      "result_sha256": "1601bf796a8a707d658d1dd7c8e8ee82205f9de5f1afb04789045bec36176c73",
+      "worker_commit": "5adbeead460eac420c1de4bcc62be11374e29f5a"
+    },
+    {
+      "kind": "INTEGRATE",
+      "at": "2026-11-03T23:18:42.937823+00:00",
+      "job_id": "review-independent-notes-b35c8cf339a004cd",
+      "commit": "0eb81d7d816f244d59559d6bbcb64d2689ae2674",
+      "result_sha256": "1601bf796a8a707d658d1dd7c8e8ee82205f9de5f1afb04789045bec36176c73"
     }
   ]
 }
