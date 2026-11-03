@@ -15,9 +15,20 @@
     },
     {
       "attempt": 2,
-      "result": "REQUESTED",
+      "result": "FAIL",
       "observed_at": "2026-11-03T23:35:52.569488+00:00",
-      "scope": "Re-run failed job for the identical merged commit; no gate/workflow changes"
+      "scope": "Re-run failed job for the identical merged commit; no gate/workflow changes",
+      "failure_step": "Deploy to GitHub Pages",
+      "http_status": 500,
+      "public_verification": "FAIL_OLD_RELEASE_STILL336_DEFAULT"
+    },
+    {
+      "attempt": 3,
+      "kind": "FRESH_WORKFLOW_DISPATCH",
+      "result": "REQUESTED",
+      "expected_head": "172d712e3e45781f4360cc75c43f46bfd0c358cf",
+      "observed_at": "2026-11-03T23:42:08.508580+00:00",
+      "reason": "Same tested main; source build unchanged. GitHub status reports operational, but prior create-deployment calls failed."
     }
   ]
 }
