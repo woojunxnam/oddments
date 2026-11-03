@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 108 |
-| NOT_YET_IMPLEMENTED | 170 |
+| HOLD_FROM_DEFAULT | 109 |
+| NOT_YET_IMPLEMENTED | 169 |
 
-이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 337개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 336개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 599개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 673개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -352,7 +352,7 @@
 | MA-CASE-0473 | PLUS-WQ15 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Contraception 보험 범위와 권한 구별은 추상적이며 naloxone OTC 구매·standing order·구조키트 상담은 서로 다른 경로이다. 현재 보류 이유: 별도 세션의 현재 원문 검토: 키 YES, 법규 KEEP, 현실성 FAIL. A는 두 제도를 분리해 본다는 신중한 원칙만 제시한다. B의 blank template를 signed order로 취급, C의 OTC 현금구매에 보험 Rx 요구, D의 자료 의무 대체는 명백한 확대 문구로 정답을 노출한다. 원문·키·기존 기록은 보존하며 이 검토는 canonical RELEASED 승인이 아니다. |
 | MA-CASE-0478 | PLUS-WQ16 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Clozapine REMS 제거를 MA-CASE-0316과 다시 묻고 Brixadi·TIRF 제품 식별을 관계없는 오답으로 사용한다. |
 | MA-CASE-0493 | PLUS-WQ17 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 정답은 depot product의 여러 항목을 확인한다는 일반론이며 약물·경로·환자 사실이 없어 실제 허용 여부를 판단하지 않는다. 현재 보류 이유: CASE0482–0521의 별도 현실성 검토에서 문항별 정답 단서·동일 보기 재사용·한 사례 내 법규 상호작용 부족을 기록했습니다. 기본 대표0493도 구체적 depot 제품·전달 상황 대신 포괄적인 separate checks가 정답 단서가 되어 보류합니다. 이40개 중37개 키는 지지되지만 현실성 FAIL과 구별하며, HIPAA0506/0507/0508은 키 유일성도 미평가입니다. 원문·원래 정답·풀이 기록은 보존합니다. |
-| MA-CASE-0595 | PLUS-WQ29 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 스캔 처방과 EPCS 구별은 핵심이나 보험 수량 변경·다른 성분 교체는 명백한 별도 오류이며 전자예외 기록과 함께 혼합된다. |
+| MA-CASE-0595 | PLUS-WQ29 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 스캔 처방과 EPCS 구별은 핵심이나 보험 수량 변경·다른 성분 교체는 명백한 별도 오류이며 전자예외 기록과 함께 혼합된다. 현재 보류 이유: 독립 법규 키 YES와 별도로 실제 보기의 추측 단서·부자연스러운 규칙 조합을 확인해 현실성 FAIL로 보류한다. 별도기록4개를 안전한 원칙/명시적 위반으로 대비하는 문장 cue와 부자연스러운 rule combination이 있다. A의 scanned paper/original EPCS 구별을 무상의 수량증액·다른요건 생략·성분변경을 clerical correction으로 기록하는 행위와 대비한다. |
 | MA-CASE-0607 | PLUS-WQ30 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Unfilled paper alprazolam을 전산 입력해도 EPCS가 되지 않는다는 정답은 구체적이나 나머지 보기의 기산일·보존·담당자는 다른 transfer 결정이다. |
 | MA-CASE-0617 | PLUS-WQ31 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Schedule II라는 지문 아래 CIII testosterone이 오답에 들어가고 hospice fax·central-fill oral·90일 OUD 범주가 따로 논다. |
 | MA-CASE-0626 | PLUS-WQ32 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 총 partial 수량이 처방량을 넘지 않는다는 정답은 상식적이며 same-pharmacy·요청자·30일 기산점은 별개의 더 구체적 판단이다. |
@@ -407,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `80d12e66653ff11386db71839d08e60aba67d51c5c3059d76c97e4278d6c3a19` |
-| practice_expansion/2026-10-28-representative/questions.json | `afe544c098c7a18fd3a8caff9fc0e56c5534e09a1606851c3dee235024b7b2de` |
+| practice_expansion/2026-10-28-representative/selection.json | `3808a298129dcd3b56a3306d0d03fb10fad57e97aa7f00837e9b4a692121eddf` |
+| practice_expansion/2026-10-28-representative/questions.json | `78fc7a01aa044bfaede04038295590d79d73bef2bca16776b2d5d98f1911dd32` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

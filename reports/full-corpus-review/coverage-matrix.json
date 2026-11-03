@@ -30,7 +30,42 @@
         "NOTE-WAVE3-LEGAL-REASONING-009",
         "NOTE-WAVE3-LEGAL-REASONING-010",
         "NOTE-WAVE3-LEGAL-REASONING-011"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE3-LEGAL-REASONING-006",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "Census 명제의 household-member animal 범위 자체는 정의와 맞지만, 실제 본문은 “본인·가족 소유 동물”이라고 하여 그 가족이 같은 household 구성원이어야 한다는 제한을 생략했다. 비동거 친족까지 자동 포함하는 문구로 인증할 수 없어 본문 대응을 LEGAL_HOLD로 둔다.",
+            "blocker": "Census household 표현과 actualbody 가족 표현의 법적 범위 대응이 불명확하며 source household 제한을 본문이 생략함."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 10,
+          "LEGAL_HOLD": 1,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-b-review.json",
+        "report_sha256": "6c55d1a35df537c5c24825760e2f0dee99c4850bcf305ee51a9953d6e94d1ddf",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-64ee7b355d97131c-result.json",
+        "result_sha256": "df610cb99d1a2abfab51e06553398cdbd3442c1baf654c45d5c229010daaca19",
+        "body_sha256": "a53017cc4a3f5a3466db890be0ff5d7e0c44f88db97bb5d7a5d67bab2685424a",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "clocks-and-quantities",
@@ -61,7 +96,60 @@
         "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0010",
         "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0011",
         "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0012"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0007",
+            "legal_status": "SOURCE_BLOCKED",
+            "finding": "BUD/shorter in-use/manufacturer expiry를 구별하는 부분은 공식 자료가 지지한다. 그러나 확보한 current MGL§21/247CMR9 본문과 FDA guidance만으로 모든 patient label에 dispensing부터1년을 더해 최솟값을 택하는 일반 규칙의 controlling authority를 확정하지 못했다. USP795 public 접근도403이므로 full USP를 검증으로 세지 않는다.",
+            "blocker": "일반patient-label dispensing+1year 최솟값의 current controlling source 미확보; USPpublic access403은확인0. FDArepackaging guidance를모든dispensing의일반규칙으로대체하지않음."
+          },
+          {
+            "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0010",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "공식 §1306.13(a)는 CII insufficient-supply 분기에 한해 first partial fill부터72시간을 확인한다. 본문에는 그 분기가 없고, census010의 “해당 경로”가 본문에 없는 조건을 보충한다. §1306.13(b)(2)의 patient/practitioner-request30일/fromissue 및 emergencyoral72h/fromissue와 혼동될 수 있다. 기존 시계 명제는 census에 포착되어 completeness 누락은 아니지만 실제 본문을 무조건적인72h 규칙으로 인증할 수 없어 LEGAL_HOLD다.",
+            "blocker": "본문의 first-partial72h 예시에 ScheduleII/insufficient-stock 조건이 없다. 좁혀 적은 census “해당 경로”를 본문 사실처럼 보태면 안 되므로 본문 scope 명료화가 필요하다."
+          },
+          {
+            "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0011",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "§1306.11(d)(4)의 연방7일은 emergencyoralCII에서 prescribingindividualpractitioner가 dispensingpharmacist에게 follow-up을 보내는 시계이다. MA§721.060(B)(4)/.070(B)의7businessdays와 shorterfederal 조건도 구분된다. 본문에는 emergency/CII/주체/후속행동이 없어 census011의Emergency가 본문을 보충한다. 이미 포착된 시계의 과도 일반화이며 미열거 명제가 아니고 실제 본문 scope는 LEGAL_HOLD다.",
+            "blocker": "본문 generic oralauthorization7일의 법적 경로·주체·행동과 federalday/MA businessday를 명료화해야 한다. census가 추가한 emergency조건을 unstated body fact로 추정하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE2-CLOCKS-AND-QUANTITIES-0012",
+            "legal_status": "SOURCE_BLOCKED",
+            "finding": "현재 본문과 claim은 어떤result인지, 수신한 주체와 보고수신기관이 누구인지 지정하지 않는다. 이번에 직접 읽은247CMR16.04(2)(h)는 test-result 전달절차/기한을CPA에 정하도록 하지만 generic one-business-day를 독립 확인하지 않는다. 저자의 CDTM 추측을 법적 근거로 상속하지 않았고, 접근 실패243CMR 후보도확인0으로남긴다.",
+            "blocker": "명제에 result/의무자/수신기관/행동이없어어떤primary보고경로인지확정불가;시도한243CMRURL들은404이며검증0."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 8,
+          "LEGAL_HOLD": 2,
+          "SOURCE_BLOCKED": 2
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-b-review.json",
+        "report_sha256": "6c55d1a35df537c5c24825760e2f0dee99c4850bcf305ee51a9953d6e94d1ddf",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-64ee7b355d97131c-result.json",
+        "result_sha256": "df610cb99d1a2abfab51e06553398cdbd3442c1baf654c45d5c229010daaca19",
+        "body_sha256": "f3f4d966eb4f72c073de9b98e1b6270c707de064dabe56026c3737459114c893",
+        "census_sha256": "75defceb9ad5ba019852a057fd92ad792a7215c65aefd13e571460f4978ec692",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "exam-and-reading",
@@ -84,7 +172,35 @@
         "NOTE-WAVE2-EXAM-AND-READING-0002",
         "NOTE-WAVE2-EXAM-AND-READING-0003",
         "NOTE-WAVE2-EXAM-AND-READING-0004"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 4,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-b-review.json",
+        "report_sha256": "6c55d1a35df537c5c24825760e2f0dee99c4850bcf305ee51a9953d6e94d1ddf",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-64ee7b355d97131c-result.json",
+        "result_sha256": "df610cb99d1a2abfab51e06553398cdbd3442c1baf654c45d5c229010daaca19",
+        "body_sha256": "90235c6e17dfa70a80356a08797efaa95f368804054a5f55f34794f59b8f1d0f",
+        "census_sha256": "75defceb9ad5ba019852a057fd92ad792a7215c65aefd13e571460f4978ec692",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-2",
@@ -136,7 +252,51 @@
         "NOTE-WAVE3-W1-A-2-031",
         "NOTE-WAVE3-W1-A-2-032",
         "NOTE-WAVE3-W1-A-2-033"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "OMISSIONS_FOUND",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 2,
+        "omissions": [
+          "CENSUS_OMITTED_BODY_PROPOSITION: actualbody “시험 합격 사실만으로 면허가 발급된 것은 아니다”는 시험결과와법적면허발급을구별하는독립명제다.33개기존claim은시험2개·application요소·reciprocity경계는열거하지만이명제자체는기록하지않았다.현재NABPMPJE/NAPLEXResults가passingresultdoesnotconstitutealicense/onlyboardsissue라고명시하여materiality를확인했다.새claim은보고서omission에만기록하며authorcensus는수정하지않았다.",
+          "CENSUS_OMITTED_BODY_ACTOR_PROPOSITION: 실제 본문 “개인별 최종 적격성은 Board가 결정한다”는 판단 주체를 정한 별도 명제다. 기존33개 census의 Board 서류수신/불완전신청 거절/학교요건 조항은 각각 다른 행위이며 이 최종 적격성 주체를 명시적으로 열거하지 않는다. w1-a-3의 별도unit claim006에 같은 역할 구별이 있다는 사실로 w1-a-2 census를 완전하다고 대신 판단하지 않았다. 이 omission은 현재 본문에 실제로 있는 문장과 배정 census의 내용 대응에서 찾았으며 cardinality 차이를 근거로 만들지 않았다."
+        ],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE3-W1-A-2-029",
+            "legal_status": "SOURCE_BLOCKED",
+            "finding": "NABP공식페이지에서adaptive전달과Pass/Fail보고는확인했지만,이는rawcorrectpercentage와passingstandard의수학적관계를완전히증명하는문서가아니다. 추정FAQURL은404이고이번감사에서현재공식scoring-method/equating설명을직접확보하지못했다. 따라서교육적주의문구를틀렸다고하지않되이명제의상세점수해석은SOURCE_BLOCKED로남긴다.",
+            "blocker": "현재공식rawpercentage/scaling/equating설명미확보. adaptive/passfail만으로scoringformula를추론하지않음;추정FAQ404는검증0."
+          },
+          {
+            "claim_id": "NOTE-WAVE3-W1-A-2-033",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "현재PDF§3.01(1)서두는ACPE-accreditedAND Board-approved라고쓰지만(1)(b)의degree조항은ACPE-accreditedOR Board-approved라고쓴다. 실제본문첫문장은학교서두자체를OR로요약한다. 하나의하위degreeOR만골라전체eligibility를무조건인증할수없고,Board확인또는정확한구분이필요하므로LEGAL_HOLD다.",
+            "blocker": "공식§3.01(1)openingAND와(1)(b)degreeOR의관계를actualbody가명료화하지않아unconditionalORschooleligibility인증불가."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 31,
+          "LEGAL_HOLD": 1,
+          "SOURCE_BLOCKED": 1
+        },
+        "requires_review": true,
+        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-b-review.json",
+        "report_sha256": "6c55d1a35df537c5c24825760e2f0dee99c4850bcf305ee51a9953d6e94d1ddf",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-64ee7b355d97131c-result.json",
+        "result_sha256": "df610cb99d1a2abfab51e06553398cdbd3442c1baf654c45d5c229010daaca19",
+        "body_sha256": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-3",
@@ -171,7 +331,35 @@
         "NOTE-WAVE3-W1-A-3-014",
         "NOTE-WAVE3-W1-A-3-015",
         "NOTE-WAVE3-W1-A-3-016"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 16,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-b-review.json",
+        "report_sha256": "6c55d1a35df537c5c24825760e2f0dee99c4850bcf305ee51a9953d6e94d1ddf",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-64ee7b355d97131c-result.json",
+        "result_sha256": "df610cb99d1a2abfab51e06553398cdbd3442c1baf654c45d5c229010daaca19",
+        "body_sha256": "52807028a5c35c3927b9e7983695b74b8bc8f5bb94fecbdae13e0c1ae1a137b3",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-4",
@@ -206,7 +394,37 @@
         "NOTE-WAVE3-W1-A-4-014",
         "NOTE-WAVE3-W1-A-4-015",
         "NOTE-WAVE3-W1-A-4-016"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "OMISSIONS_FOUND",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 1,
+        "omissions": [
+          "CENSUS_COVERAGE_OMISSION: 본문 “Suspended/revoked 상태가 2년을 초과한 경로는 별도이다. 이 경우 MPJE와 기타 조건이 필요하고, Board가 NAPLEX 합격을 요구할 수도 있다.”의 ‘기타 조건이 필요’라는별도선행의무가배정census에없다.012는MPJE,013은선택적NAPLEX만명시한다.010/011의일반미갱신(otherconditions)은suspended/revoked를배제한경로이므로이disciplinary의무를대신하지않는다.247CMR4.02(7)는MPJE뿐아니라all other conditions as determined by Board의충족을renewal선행요건으로정한다.본문자체의오류나문장분절개수차이라는판정이아니다."
+        ],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 16,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-c-review.json",
+        "report_sha256": "908f8141664931c6731b71c046f314b2bba405288ebb69c92176b495e2cb14b9",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c2c9ee19ab465198-result.json",
+        "result_sha256": "3624ba3527f742227b16c118fdcb97b31af3d5c4605c47e22633992fa4a044a7",
+        "body_sha256": "59e16a3dc82b12d5736c91bbc49f4cfca8ce04559cebadce25fa9c0b6519ad7d",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-5",
@@ -235,7 +453,35 @@
         "NOTE-WAVE3-W1-A-5-008",
         "NOTE-WAVE3-W1-A-5-009",
         "NOTE-WAVE3-W1-A-5-010"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 10,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-c-review.json",
+        "report_sha256": "908f8141664931c6731b71c046f314b2bba405288ebb69c92176b495e2cb14b9",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c2c9ee19ab465198-result.json",
+        "result_sha256": "3624ba3527f742227b16c118fdcb97b31af3d5c4605c47e22633992fa4a044a7",
+        "body_sha256": "d3f2cbb8a227c363d820cc4e1f335cf382d2d57b37d8f191c198c27b0853db05",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-6",
@@ -281,7 +527,35 @@
         "NOTE-WAVE3-W1-A-6-025",
         "NOTE-WAVE3-W1-A-6-026",
         "NOTE-WAVE3-W1-A-6-027"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 27,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-c-review.json",
+        "report_sha256": "908f8141664931c6731b71c046f314b2bba405288ebb69c92176b495e2cb14b9",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c2c9ee19ab465198-result.json",
+        "result_sha256": "3624ba3527f742227b16c118fdcb97b31af3d5c4605c47e22633992fa4a044a7",
+        "body_sha256": "4db02f13a1c1a1c0108863efbc5d746e23ffc558b522d58c13f7ab3d79eff0fd",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-7",
@@ -317,7 +591,35 @@
         "CE-DISCLOSURE-FINAL-W1-A-7-015",
         "CE-DISCLOSURE-FINAL-W1-A-7-016",
         "CE-DISCLOSURE-FINAL-W1-A-7-017"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 17,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-c-review.json",
+        "report_sha256": "908f8141664931c6731b71c046f314b2bba405288ebb69c92176b495e2cb14b9",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c2c9ee19ab465198-result.json",
+        "result_sha256": "3624ba3527f742227b16c118fdcb97b31af3d5c4605c47e22633992fa4a044a7",
+        "body_sha256": "db04e1aad00ec010da55c24dccb7eb4138f61ee88755b485b6999597a0776c5a",
+        "census_sha256": "2f1dbfea7f4f78b5c13b2ad168d3ef9a391234c2bc6bb43267f520662fc8dff5",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-8",
@@ -366,7 +668,35 @@
         "NOTE-WAVE4-W1-A-8-028",
         "NOTE-WAVE4-W1-A-8-029",
         "NOTE-WAVE4-W1-A-8-030"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 30,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-c-review.json",
+        "report_sha256": "908f8141664931c6731b71c046f314b2bba405288ebb69c92176b495e2cb14b9",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c2c9ee19ab465198-result.json",
+        "result_sha256": "3624ba3527f742227b16c118fdcb97b31af3d5c4605c47e22633992fa4a044a7",
+        "body_sha256": "aaac91d6d8d4d2afe48d9dc0175fd5e56d9261a728ec23d7fe032cba63cf650f",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-a-9",
@@ -402,7 +732,35 @@
         "NOTE-WAVE4-W1-A-9-015",
         "NOTE-WAVE4-W1-A-9-016",
         "NOTE-WAVE4-W1-A-9-017"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 17,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-e-review.json",
+        "report_sha256": "db29527f6d07b97b9027c2a53a33693395bb60830f594123fbe94b5d6609d0e7",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3e90585223b70e32-result.json",
+        "result_sha256": "7a266b8e35bd97af167869c1e81b378ab8e29d44e83cb65eecb6cef13e07ae1b",
+        "body_sha256": "068dd9002accde48beabd5ac4eda1d1b9649f9e292c2a248c78f6c108cb6989c",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-1",
@@ -431,7 +789,38 @@
         "NOTE-WAVE4-W1-B-1-008",
         "NOTE-WAVE4-W1-B-1-009",
         "NOTE-WAVE4-W1-B-1-010"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "OMISSIONS_FOUND",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 2,
+        "omissions": [
+          "본문의 “National certification이 없는 technician와 certified technician의 허용 업무가 다르다”라는 실체적 scope 차이가 열거에서 빠졌다. 기존005는 Board license,006은 certified technician의 Board license,007은 인증기관 정의일 뿐 실제 permitted-duty 차이를 주장하지 않는다.8.02(6)(c)와8.04(4)(c)-(d),현행scope-policyIII.B/C를 별도로 대조할 명제가 필요하다.",
+          "본문의 PTT 설명 중 “나이·고용기간·감독·전화처방 관련 제한이 별도로 있다”가 열거에서 빠졌다. 기존008은 PTT license 필요성만 진술하며8.03(2)(a),(4)(b)-(c),(5)의 별도 제한 존재를 포함하지 않는다. 본문에없는 세부수치를 새본문명제로 발명하는 것이 아니라 해당 네 제한 범주의 실제 언급이 census에 없는 것을 지적한다."
+        ],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 10,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-e-review.json",
+        "report_sha256": "db29527f6d07b97b9027c2a53a33693395bb60830f594123fbe94b5d6609d0e7",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3e90585223b70e32-result.json",
+        "result_sha256": "7a266b8e35bd97af167869c1e81b378ab8e29d44e83cb65eecb6cef13e07ae1b",
+        "body_sha256": "d7972893697c7b5a025ff80c0fec6ddcb3590657fbc9052ca47b793eca935b28",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-2",
@@ -479,7 +868,35 @@
         "NOTE-WAVE4-W1-B-2-027",
         "NOTE-WAVE4-W1-B-2-028",
         "NOTE-WAVE4-W1-B-2-029"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 29,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-e-review.json",
+        "report_sha256": "db29527f6d07b97b9027c2a53a33693395bb60830f594123fbe94b5d6609d0e7",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3e90585223b70e32-result.json",
+        "result_sha256": "7a266b8e35bd97af167869c1e81b378ab8e29d44e83cb65eecb6cef13e07ae1b",
+        "body_sha256": "6e5531cf473c15703922dfc2307d8fbe12de0019c374cc0aa25de613331e57de",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-3",
@@ -535,7 +952,35 @@
         "NOTE-WAVE4-W1-B-3-035",
         "NOTE-WAVE4-W1-B-3-036",
         "NOTE-WAVE4-W1-B-3-037"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 37,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-e-review.json",
+        "report_sha256": "db29527f6d07b97b9027c2a53a33693395bb60830f594123fbe94b5d6609d0e7",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3e90585223b70e32-result.json",
+        "result_sha256": "7a266b8e35bd97af167869c1e81b378ab8e29d44e83cb65eecb6cef13e07ae1b",
+        "body_sha256": "f25449b9af6a2dff66d99726061863198c1923b9485eb262dc9adda281127e3f",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-4",
@@ -569,7 +1014,35 @@
         "NOTE-WAVE4-W1-B-4-013",
         "NOTE-WAVE4-W1-B-4-014",
         "NOTE-WAVE4-W1-B-4-015"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 15,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-e-review.json",
+        "report_sha256": "db29527f6d07b97b9027c2a53a33693395bb60830f594123fbe94b5d6609d0e7",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3e90585223b70e32-result.json",
+        "result_sha256": "7a266b8e35bd97af167869c1e81b378ab8e29d44e83cb65eecb6cef13e07ae1b",
+        "body_sha256": "234a4e27d4bc4b050f3e3320709e0c4c2e6bad270f3c10df9e5adeaacc74bbdf",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
+        },
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-5",
@@ -597,7 +1070,35 @@
         "NOTE-WAVE4-W1-B-5-007",
         "NOTE-WAVE4-W1-B-5-008",
         "NOTE-WAVE4-W1-B-5-009"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 9,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-f-review.json",
+        "report_sha256": "ebf234a2a9ac764a0fa40b5e497f0f12452c267468ca64810ca7df490668fa48",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-dbf45c4597e9a1d4-result.json",
+        "result_sha256": "61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be",
+        "body_sha256": "8e1ac8b579683648108135914b3680e7ba6e197ec1294b8f5bcff9d2261d582e",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-6",
@@ -653,7 +1154,35 @@
         "NOTE-WAVE4-W1-B-6-035",
         "NOTE-WAVE4-W1-B-6-036",
         "NOTE-WAVE4-W1-B-6-037"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 37,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-f-review.json",
+        "report_sha256": "ebf234a2a9ac764a0fa40b5e497f0f12452c267468ca64810ca7df490668fa48",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-dbf45c4597e9a1d4-result.json",
+        "result_sha256": "61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be",
+        "body_sha256": "540f7fd4dee6529b010884340720eaf9a082a50ddc9303195c715a64cc792768",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-7",
@@ -695,7 +1224,35 @@
         "NOTE-WAVE4-W1-B-7-021",
         "NOTE-WAVE4-W1-B-7-022",
         "NOTE-WAVE4-W1-B-7-023"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 23,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/first-f-review.json",
+        "report_sha256": "ebf234a2a9ac764a0fa40b5e497f0f12452c267468ca64810ca7df490668fa48",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-dbf45c4597e9a1d4-result.json",
+        "result_sha256": "61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be",
+        "body_sha256": "0a850970b0f87878bc687e00aa9f3eb3739914d3f03095777cc69491afbb4581",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-8",
@@ -751,7 +1308,60 @@
         "NOTE-WAVE4-W1-B-8-028",
         "NOTE-WAVE4-W1-B-8-029",
         "NOTE-WAVE4-W1-B-8-030"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE4-W1-B-8-023",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "새로 받은 policy에는1:6 경로가 있고 현행 게시 CMR에는3/4 경로가 남아 있다. 두 문서의 적용관계를 확정할 별도 공식 설명을 이번에도 확인하지 못했다. 정책 무효·규정 폐지·모든 pharmacy 개별 waiver 필요를 추정하지 않으며 LEGAL_HOLD다.",
+            "blocker": "247CMR8.06(3)(a)의3/4 일반 비율과Policy2026-02 I.B의1:6 경로에 관한 별도 공식 적용관계 설명을 확보하지 못했다. 정책 유효/무효, 규정 폐지, 개별waiver 필요를 추정하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE4-W1-B-8-025",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "up to two interns에0명을 포함하면 qualifying3명을 모두 CPhT로 구성한다는 문언 해석은 가능하다. 그러나 그 조합을 현재 적용 가능한1:6 허가로 확정하는 것은 CMR 적용관계가 미해결이므로 LEGAL_HOLD다.",
+            "blocker": "247CMR8.06(3)(a)의3/4 일반 비율과Policy2026-02 I.B의1:6 경로에 관한 별도 공식 적용관계 설명을 확보하지 못했다. 정책 유효/무효, 규정 폐지, 개별waiver 필요를 추정하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE4-W1-B-8-026",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "CPhT2명+intern1명은 policy의 세 qualifying 인원·최대두 intern 문구와 맞는 산술 조합이다. 다만1:6 경로의 규정 적용관계가 미해결이므로 운영 허용의 최종 법적 결론은 보류한다.",
+            "blocker": "247CMR8.06(3)(a)의3/4 일반 비율과Policy2026-02 I.B의1:6 경로에 관한 별도 공식 적용관계 설명을 확보하지 못했다. 정책 유효/무효, 규정 폐지, 개별waiver 필요를 추정하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE4-W1-B-8-027",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "CPhT1명+intern2명도 원문 인원 구성으로 읽을 수 있다. 그러한 문언 일치가1:6 운영의 법적 적용관계까지 해소하지 않으므로 LEGAL_HOLD로 구분한다.",
+            "blocker": "247CMR8.06(3)(a)의3/4 일반 비율과Policy2026-02 I.B의1:6 경로에 관한 별도 공식 적용관계 설명을 확보하지 못했다. 정책 유효/무효, 규정 폐지, 개별waiver 필요를 추정하지 않는다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 26,
+          "LEGAL_HOLD": 4,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-f-review.json",
+        "report_sha256": "ebf234a2a9ac764a0fa40b5e497f0f12452c267468ca64810ca7df490668fa48",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-dbf45c4597e9a1d4-result.json",
+        "result_sha256": "61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be",
+        "body_sha256": "9efdda78d2b8fb9aba2e5db5bd1cb36047a6f54e9f5bae87d89abbc2115ce501",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-9",
@@ -790,7 +1400,42 @@
         "NOTE-WAVE4-W1-B-9-014",
         "NOTE-WAVE4-W1-B-9-015",
         "NOTE-WAVE4-W1-B-9-016"
-      ]
+      ],
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE4-W1-B-9-012",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "두 현행 공식 문서의2intern 규정과 한정4intern policy 경로를 모두 직접 읽었다. 별도 적용관계 설명을 확보하지 못해 규정 폐지·정책 무효·개별 waiver 필요 중 하나를 추정하지 않는다. 현장 적용의 법적 결론을 LEGAL_HOLD로 남긴다.",
+            "blocker": "247CMR8.01(16)의동시2intern과Policy2026-02 II.A–B의한정4intern 사이의 공식 적용관계가 미확정이다. policy문구 존재를 현장 운영 허가 확정과 구분한다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 15,
+          "LEGAL_HOLD": 1,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/first-f-review.json",
+        "report_sha256": "ebf234a2a9ac764a0fa40b5e497f0f12452c267468ca64810ca7df490668fa48",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-dbf45c4597e9a1d4-result.json",
+        "result_sha256": "61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be",
+        "body_sha256": "488ee0cc76b905fc5701cf97fa52e63cd93e1644b52eeb3264e98c502c732a6f",
+        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w1-b-10",
@@ -843,7 +1488,8 @@
         "NOTE-WAVE4-W1-B-10-024",
         "NOTE-WAVE4-W1-B-10-025",
         "NOTE-WAVE4-W1-B-10-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-b-11",
@@ -870,7 +1516,8 @@
         "NOTE-WAVE4-W1-B-11-006",
         "NOTE-WAVE4-W1-B-11-007",
         "NOTE-WAVE4-W1-B-11-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-b-12",
@@ -903,7 +1550,8 @@
         "NOTE-WAVE4-W1-B-12-012",
         "NOTE-WAVE4-W1-B-12-013",
         "NOTE-WAVE4-W1-B-12-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-1",
@@ -953,7 +1601,8 @@
         "NOTE-WAVE4-W1-C-1-029",
         "NOTE-WAVE4-W1-C-1-030",
         "NOTE-WAVE4-W1-C-1-031"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-2",
@@ -992,7 +1641,8 @@
         "NOTE-WAVE5-W1-C-2-018",
         "NOTE-WAVE5-W1-C-2-019",
         "NOTE-WAVE5-W1-C-2-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-3",
@@ -1059,7 +1709,8 @@
         "NOTE-WAVE5-W1-C-3-046",
         "NOTE-WAVE5-W1-C-3-047",
         "NOTE-WAVE5-W1-C-3-048"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-4",
@@ -1114,7 +1765,8 @@
         "NOTE-WAVE5-W1-C-4-031",
         "NOTE-WAVE5-W1-C-4-032",
         "NOTE-WAVE5-W1-C-4-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-5",
@@ -1193,7 +1845,8 @@
         "NOTE-WAVE5-W1-C-5-052",
         "NOTE-WAVE5-W1-C-5-053",
         "NOTE-WAVE5-W1-C-5-054"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-6",
@@ -1251,7 +1904,8 @@
         "NOTE-WAVE5-W1-C-6-037",
         "NOTE-WAVE5-W1-C-6-038",
         "NOTE-WAVE5-W1-C-6-039"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-7",
@@ -1309,7 +1963,8 @@
         "NOTE-WAVE5-W1-C-7-031",
         "NOTE-WAVE5-W1-C-7-032",
         "NOTE-WAVE5-W1-C-7-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-8",
@@ -1354,7 +2009,8 @@
         "NOTE-WAVE5-W1-C-8-024",
         "NOTE-WAVE5-W1-C-8-025",
         "NOTE-WAVE5-W1-C-8-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-21",
@@ -1385,7 +2041,8 @@
         "NOTE-WAVE12-W4-A-21-010",
         "NOTE-WAVE12-W4-A-21-011",
         "NOTE-WAVE12-W4-A-21-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-2",
@@ -1469,7 +2126,8 @@
         "NOTE-WAVE5-W2-A-2-063",
         "NOTE-WAVE5-W2-A-2-064",
         "NOTE-WAVE5-W2-A-2-065"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-3",
@@ -1517,7 +2175,8 @@
         "NOTE-WAVE5-W2-A-3-027",
         "NOTE-WAVE5-W2-A-3-028",
         "NOTE-WAVE5-W2-A-3-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-4",
@@ -1576,7 +2235,8 @@
         "NOTE-WAVE5-W2-A-4-038",
         "NOTE-WAVE5-W2-A-4-039",
         "NOTE-WAVE5-W2-A-4-040"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-5",
@@ -1612,7 +2272,8 @@
         "NOTE-WAVE5-W2-A-5-015",
         "NOTE-WAVE5-W2-A-5-016",
         "NOTE-WAVE5-W2-A-5-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-6",
@@ -1670,7 +2331,8 @@
         "NOTE-WAVE5-W2-A-6-037",
         "NOTE-WAVE5-W2-A-6-038",
         "NOTE-WAVE5-W2-A-6-039"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-7",
@@ -1705,7 +2367,8 @@
         "NOTE-WAVE5-W2-A-7-014",
         "NOTE-WAVE5-W2-A-7-015",
         "NOTE-WAVE5-W2-A-7-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-8",
@@ -1747,7 +2410,8 @@
         "NOTE-WAVE5-W2-A-8-021",
         "NOTE-WAVE5-W2-A-8-022",
         "NOTE-WAVE5-W2-A-8-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-a-10",
@@ -1808,7 +2472,8 @@
         "NOTE-WAVE5-W2-A-10-040",
         "NOTE-WAVE5-W2-A-10-041",
         "NOTE-WAVE5-W2-A-10-042"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "oral-followup",
@@ -1853,7 +2518,8 @@
         "NOTE-WAVE3-ORAL-FOLLOWUP-024",
         "NOTE-WAVE3-ORAL-FOLLOWUP-025",
         "NOTE-WAVE3-ORAL-FOLLOWUP-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-1",
@@ -1891,7 +2557,8 @@
         "NOTE-WAVE5-W2-B-1-017",
         "NOTE-WAVE5-W2-B-1-018",
         "NOTE-WAVE5-W2-B-1-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-2",
@@ -1930,7 +2597,8 @@
         "NOTE-WAVE6-W2-B-2-018",
         "NOTE-WAVE6-W2-B-2-019",
         "NOTE-WAVE6-W2-B-2-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-3",
@@ -1963,7 +2631,8 @@
         "NOTE-WAVE6-W2-B-3-012",
         "NOTE-WAVE6-W2-B-3-013",
         "NOTE-WAVE6-W2-B-3-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-4",
@@ -2014,7 +2683,8 @@
         "NOTE-WAVE6-W2-B-4-030",
         "NOTE-WAVE6-W2-B-4-031",
         "NOTE-WAVE6-W2-B-4-032"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-5",
@@ -2054,7 +2724,8 @@
         "NOTE-WAVE6-W2-B-5-019",
         "NOTE-WAVE6-W2-B-5-020",
         "NOTE-WAVE6-W2-B-5-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-6",
@@ -2087,7 +2758,8 @@
         "NOTE-WAVE6-W2-B-6-012",
         "NOTE-WAVE6-W2-B-6-013",
         "NOTE-WAVE6-W2-B-6-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-7",
@@ -2115,7 +2787,8 @@
         "NOTE-WAVE6-W2-B-7-007",
         "NOTE-WAVE6-W2-B-7-008",
         "NOTE-WAVE6-W2-B-7-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-8",
@@ -2176,7 +2849,8 @@
         "NOTE-WAVE6-W2-B-8-040",
         "NOTE-WAVE6-W2-B-8-041",
         "NOTE-WAVE6-W2-B-8-042"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-9",
@@ -2205,7 +2879,8 @@
         "NOTE-WAVE6-W2-B-9-008",
         "NOTE-WAVE6-W2-B-9-009",
         "NOTE-WAVE6-W2-B-9-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-10",
@@ -2239,7 +2914,8 @@
         "NOTE-WAVE5-W2-B-10-013",
         "NOTE-WAVE5-W2-B-10-014",
         "NOTE-WAVE5-W2-B-10-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-11",
@@ -2291,7 +2967,8 @@
         "NOTE-WAVE5-W2-B-11-031",
         "NOTE-WAVE5-W2-B-11-032",
         "NOTE-WAVE5-W2-B-11-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-12",
@@ -2329,7 +3006,8 @@
         "NOTE-WAVE5-W2-B-12-017",
         "NOTE-WAVE5-W2-B-12-018",
         "NOTE-WAVE5-W2-B-12-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-13",
@@ -2363,7 +3041,8 @@
         "NOTE-WAVE6-W2-B-13-013",
         "NOTE-WAVE6-W2-B-13-014",
         "NOTE-WAVE6-W2-B-13-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-1",
@@ -2411,7 +3090,8 @@
         "REFILL-CANCER-FINAL-W2-C-1-027",
         "REFILL-CANCER-FINAL-W2-C-1-028",
         "REFILL-CANCER-FINAL-W2-C-1-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-2",
@@ -2453,7 +3133,8 @@
         "NOTE-WAVE6-W2-C-2-021",
         "NOTE-WAVE6-W2-C-2-022",
         "NOTE-WAVE6-W2-C-2-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "schedule-vi-continuity",
@@ -2499,7 +3180,8 @@
         "NOTE-WAVE3-SCHEDULE-VI-CONTINUITY-025",
         "NOTE-WAVE3-SCHEDULE-VI-CONTINUITY-026",
         "NOTE-WAVE3-SCHEDULE-VI-CONTINUITY-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-4",
@@ -2532,7 +3214,8 @@
         "NOTE-WAVE6-W2-C-4-012",
         "NOTE-WAVE6-W2-C-4-013",
         "NOTE-WAVE6-W2-C-4-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-5",
@@ -2571,7 +3254,8 @@
         "NOTE-WAVE7-W2-C-5-018",
         "NOTE-WAVE7-W2-C-5-019",
         "NOTE-WAVE7-W2-C-5-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-6",
@@ -2615,7 +3299,8 @@
         "NOTE-WAVE7-W2-C-6-023",
         "NOTE-WAVE7-W2-C-6-024",
         "NOTE-WAVE7-W2-C-6-025"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-7",
@@ -2643,7 +3328,8 @@
         "NOTE-WAVE7-W2-C-7-007",
         "NOTE-WAVE7-W2-C-7-008",
         "NOTE-WAVE7-W2-C-7-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-8",
@@ -2675,7 +3361,8 @@
         "NOTE-WAVE7-W2-C-8-011",
         "NOTE-WAVE7-W2-C-8-012",
         "NOTE-WAVE7-W2-C-8-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-9",
@@ -2716,7 +3403,8 @@
         "NOTE-WAVE7-W2-C-9-020",
         "NOTE-WAVE7-W2-C-9-021",
         "NOTE-WAVE7-W2-C-9-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-10",
@@ -2772,7 +3460,8 @@
         "NOTE-WAVE6-W2-C-10-035",
         "NOTE-WAVE6-W2-C-10-036",
         "NOTE-WAVE6-W2-C-10-037"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-11",
@@ -2823,7 +3512,8 @@
         "NOTE-WAVE6-W2-C-11-030",
         "NOTE-WAVE6-W2-C-11-031",
         "NOTE-WAVE6-W2-C-11-032"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-12",
@@ -2863,7 +3553,8 @@
         "REFILL-CANCER-FINAL-W2-C-12-019",
         "REFILL-CANCER-FINAL-W2-C-12-020",
         "REFILL-CANCER-FINAL-W2-C-12-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-13",
@@ -2896,7 +3587,8 @@
         "NOTE-WAVE6-W2-C-13-012",
         "NOTE-WAVE6-W2-C-13-013",
         "NOTE-WAVE6-W2-C-13-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-14",
@@ -2935,7 +3627,8 @@
         "NOTE-WAVE6-W2-C-14-018",
         "NOTE-WAVE6-W2-C-14-019",
         "NOTE-WAVE6-W2-C-14-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-15",
@@ -2964,7 +3657,8 @@
         "NOTE-WAVE6-W2-C-15-008",
         "NOTE-WAVE6-W2-C-15-009",
         "NOTE-WAVE6-W2-C-15-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-c-17",
@@ -3002,7 +3696,8 @@
         "NOTE-WAVE6-W2-C-17-017",
         "NOTE-WAVE6-W2-C-17-018",
         "NOTE-WAVE6-W2-C-17-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-1",
@@ -3030,7 +3725,8 @@
         "NOTE-WAVE8-W3-A-1-007",
         "NOTE-WAVE8-W3-A-1-008",
         "NOTE-WAVE8-W3-A-1-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-2",
@@ -3070,7 +3766,8 @@
         "NOTE-WAVE8-W3-A-2-019",
         "NOTE-WAVE8-W3-A-2-020",
         "NOTE-WAVE8-W3-A-2-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-3",
@@ -3112,7 +3809,8 @@
         "NOTE-WAVE8-W3-A-3-021",
         "NOTE-WAVE8-W3-A-3-022",
         "NOTE-WAVE8-W3-A-3-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-4",
@@ -3142,7 +3840,8 @@
         "NOTE-WAVE8-W3-A-4-009",
         "NOTE-WAVE8-W3-A-4-010",
         "NOTE-WAVE8-W3-A-4-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-6",
@@ -3182,7 +3881,8 @@
         "NOTE-WAVE8-W3-A-6-019",
         "NOTE-WAVE8-W3-A-6-020",
         "NOTE-WAVE8-W3-A-6-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-7",
@@ -3210,7 +3910,8 @@
         "NOTE-WAVE8-W3-A-7-007",
         "NOTE-WAVE8-W3-A-7-008",
         "NOTE-WAVE8-W3-A-7-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-8",
@@ -3239,7 +3940,8 @@
         "NOTE-WAVE8-W3-A-8-008",
         "NOTE-WAVE8-W3-A-8-009",
         "NOTE-WAVE8-W3-A-8-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-9",
@@ -3267,7 +3969,8 @@
         "NOTE-WAVE8-W3-A-9-007",
         "NOTE-WAVE8-W3-A-9-008",
         "NOTE-WAVE8-W3-A-9-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-10",
@@ -3307,7 +4010,8 @@
         "NOTE-WAVE8-W3-A-10-019",
         "NOTE-WAVE8-W3-A-10-020",
         "NOTE-WAVE8-W3-A-10-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "point-of-sale-price",
@@ -3333,7 +4037,8 @@
         "NOTE-WAVE3-POINT-OF-SALE-PRICE-005",
         "NOTE-WAVE3-POINT-OF-SALE-PRICE-006",
         "NOTE-WAVE3-POINT-OF-SALE-PRICE-007"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-11",
@@ -3364,7 +4069,8 @@
         "NOTE-WAVE8-W3-A-11-010",
         "NOTE-WAVE8-W3-A-11-011",
         "NOTE-WAVE8-W3-A-11-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-12",
@@ -3392,7 +4098,8 @@
         "NOTE-WAVE8-W3-A-12-007",
         "NOTE-WAVE8-W3-A-12-008",
         "NOTE-WAVE8-W3-A-12-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-13",
@@ -3460,7 +4167,8 @@
         "NOTE-WAVE8-W3-A-13-047",
         "NOTE-WAVE8-W3-A-13-048",
         "NOTE-WAVE8-W3-A-13-049"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-14",
@@ -3489,7 +4197,8 @@
         "NOTE-WAVE8-W3-A-14-008",
         "NOTE-WAVE8-W3-A-14-009",
         "NOTE-WAVE8-W3-A-14-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-15",
@@ -3521,7 +4230,8 @@
         "NOTE-WAVE8-W3-A-15-011",
         "NOTE-WAVE8-W3-A-15-012",
         "NOTE-WAVE8-W3-A-15-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-16",
@@ -3566,7 +4276,8 @@
         "NOTE-WAVE8-W3-A-16-024",
         "NOTE-WAVE8-W3-A-16-025",
         "NOTE-WAVE8-W3-A-16-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-a-17",
@@ -3601,7 +4312,8 @@
         "NOTE-WAVE8-W3-A-17-014",
         "NOTE-WAVE8-W3-A-17-015",
         "NOTE-WAVE8-W3-A-17-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "packaging-interpretation",
@@ -3624,7 +4336,8 @@
         "NOTE-WAVE3-PACKAGING-INTERPRETATION-002",
         "NOTE-WAVE3-PACKAGING-INTERPRETATION-003",
         "NOTE-WAVE3-PACKAGING-INTERPRETATION-004"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "return-pathways",
@@ -3670,7 +4383,8 @@
         "NOTE-WAVE3-RETURN-PATHWAYS-025",
         "NOTE-WAVE3-RETURN-PATHWAYS-026",
         "NOTE-WAVE3-RETURN-PATHWAYS-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-1",
@@ -3718,7 +4432,8 @@
         "COUNSEL-SHIELD-FINAL-W3-B-1-027",
         "COUNSEL-SHIELD-FINAL-W3-B-1-028",
         "COUNSEL-SHIELD-FINAL-W3-B-1-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-2",
@@ -3752,7 +4467,8 @@
         "NOTE-WAVE9-W3-B-2-013",
         "NOTE-WAVE9-W3-B-2-014",
         "NOTE-WAVE9-W3-B-2-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-3",
@@ -3782,7 +4498,8 @@
         "NOTE-WAVE9-W3-B-3-009",
         "NOTE-WAVE9-W3-B-3-010",
         "NOTE-WAVE9-W3-B-3-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-4",
@@ -3817,7 +4534,8 @@
         "NOTE-WAVE9-W3-B-4-014",
         "NOTE-WAVE9-W3-B-4-015",
         "NOTE-WAVE9-W3-B-4-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-5",
@@ -3847,7 +4565,8 @@
         "NOTE-WAVE9-W3-B-5-009",
         "NOTE-WAVE9-W3-B-5-010",
         "NOTE-WAVE9-W3-B-5-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-6",
@@ -3879,7 +4598,8 @@
         "NOTE-WAVE9-W3-B-6-011",
         "NOTE-WAVE9-W3-B-6-012",
         "NOTE-WAVE9-W3-B-6-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-7",
@@ -3909,7 +4629,8 @@
         "NOTE-WAVE9-W3-B-7-009",
         "NOTE-WAVE9-W3-B-7-010",
         "NOTE-WAVE9-W3-B-7-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-10",
@@ -3947,7 +4668,8 @@
         "NOTE16-w6-a-10-017",
         "NOTE16-w6-a-10-018",
         "NOTE16-w6-a-10-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-8",
@@ -3976,7 +4698,8 @@
         "NOTE-WAVE9-W3-B-8-008",
         "NOTE-WAVE9-W3-B-8-009",
         "NOTE-WAVE9-W3-B-8-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-9",
@@ -4005,7 +4728,8 @@
         "NOTE-WAVE9-W3-B-9-008",
         "NOTE-WAVE9-W3-B-9-009",
         "NOTE-WAVE9-W3-B-9-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-11",
@@ -4046,7 +4770,8 @@
         "NOTE-WAVE8-W3-B-11-020",
         "NOTE-WAVE8-W3-B-11-021",
         "NOTE-WAVE8-W3-B-11-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "ipledge-transition",
@@ -4081,7 +4806,8 @@
         "NOTE-WAVE3-IPLEDGE-TRANSITION-014",
         "NOTE-WAVE3-IPLEDGE-TRANSITION-015",
         "NOTE-WAVE3-IPLEDGE-TRANSITION-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-9",
@@ -4121,7 +4847,8 @@
         "NOTE15-w5-b-9-019",
         "NOTE15-w5-b-9-020",
         "NOTE15-w5-b-9-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-11",
@@ -4156,7 +4883,8 @@
         "NOTE15-w5-b-11-014",
         "NOTE15-w5-b-11-015",
         "NOTE15-w5-b-11-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-12",
@@ -4193,7 +4921,8 @@
         "NOTE15-w5-b-12-016",
         "NOTE15-w5-b-12-017",
         "NOTE15-w5-b-12-018"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-13",
@@ -4234,7 +4963,8 @@
         "NOTE15-w5-b-13-020",
         "NOTE15-w5-b-13-021",
         "NOTE15-w5-b-13-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-16",
@@ -4259,7 +4989,8 @@
         "NOTE15-w5-b-16-004",
         "NOTE15-w5-b-16-005",
         "NOTE15-w5-b-16-006"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-12",
@@ -4295,7 +5026,8 @@
         "NOTE-WAVE8-W3-B-12-015",
         "NOTE-WAVE8-W3-B-12-016",
         "NOTE-WAVE8-W3-B-12-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-13",
@@ -4328,7 +5060,8 @@
         "NOTE-WAVE8-W3-B-13-012",
         "NOTE-WAVE8-W3-B-13-013",
         "NOTE-WAVE8-W3-B-13-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-14",
@@ -4370,7 +5103,8 @@
         "NOTE-WAVE9-W3-B-14-021",
         "NOTE-WAVE9-W3-B-14-022",
         "NOTE-WAVE9-W3-B-14-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-15",
@@ -4408,7 +5142,8 @@
         "NOTE-WAVE9-W3-B-15-017",
         "NOTE-WAVE9-W3-B-15-018",
         "NOTE-WAVE9-W3-B-15-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-16",
@@ -4446,7 +5181,8 @@
         "NOTE-WAVE9-W3-B-16-017",
         "NOTE-WAVE9-W3-B-16-018",
         "NOTE-WAVE9-W3-B-16-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-17",
@@ -4476,7 +5212,8 @@
         "NOTE-WAVE9-W3-B-17-009",
         "NOTE-WAVE9-W3-B-17-010",
         "NOTE-WAVE9-W3-B-17-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-18",
@@ -4505,7 +5242,8 @@
         "NOTE-WAVE9-W3-B-18-008",
         "NOTE-WAVE9-W3-B-18-009",
         "NOTE-WAVE9-W3-B-18-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-11",
@@ -4547,7 +5285,8 @@
         "NOTE16-w6-a-11-021",
         "NOTE16-w6-a-11-022",
         "NOTE16-w6-a-11-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-12",
@@ -4578,7 +5317,8 @@
         "NOTE16-w6-a-12-010",
         "NOTE16-w6-a-12-011",
         "NOTE16-w6-a-12-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-6",
@@ -4619,7 +5359,8 @@
         "NOTE15-w5-b-6-020",
         "NOTE15-w5-b-6-021",
         "NOTE15-w5-b-6-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-a-10",
@@ -4645,7 +5386,8 @@
         "NOTE-WAVE3-W1-A-10-005",
         "NOTE-WAVE3-W1-A-10-006",
         "NOTE-WAVE3-W1-A-10-007"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-1",
@@ -4690,7 +5432,8 @@
         "NOTE-WAVE9-W3-C-1-021",
         "NOTE-WAVE9-W3-C-1-022",
         "NOTE-WAVE9-W3-C-1-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-2",
@@ -4735,7 +5478,8 @@
         "NOTE-WAVE10-W3-C-2-021",
         "NOTE-WAVE10-W3-C-2-022",
         "NOTE-WAVE10-W3-C-2-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-3",
@@ -4776,7 +5520,8 @@
         "NOTE-WAVE10-W3-C-3-017",
         "NOTE-WAVE10-W3-C-3-018",
         "NOTE-WAVE10-W3-C-3-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-4",
@@ -4826,7 +5571,8 @@
         "NOTE-WAVE10-W3-C-4-026",
         "NOTE-WAVE10-W3-C-4-027",
         "NOTE-WAVE10-W3-C-4-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-5",
@@ -4868,7 +5614,8 @@
         "NOTE-WAVE10-W3-C-5-021",
         "NOTE-WAVE10-W3-C-5-022",
         "NOTE-WAVE10-W3-C-5-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-6",
@@ -4915,7 +5662,8 @@
         "NOTE-WAVE10-W3-C-6-026",
         "NOTE-WAVE10-W3-C-6-027",
         "NOTE-WAVE10-W3-C-6-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-7",
@@ -4946,7 +5694,8 @@
         "NOTE-WAVE10-W3-C-7-010",
         "NOTE-WAVE10-W3-C-7-011",
         "NOTE-WAVE10-W3-C-7-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-8",
@@ -5001,7 +5750,8 @@
         "NOTE-WAVE10-W3-C-8-034",
         "NOTE-WAVE10-W3-C-8-035",
         "NOTE-WAVE10-W3-C-8-036"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-9",
@@ -5043,7 +5793,8 @@
         "NOTE-WAVE10-W3-C-9-021",
         "NOTE-WAVE10-W3-C-9-022",
         "NOTE-WAVE10-W3-C-9-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-10",
@@ -5073,7 +5824,8 @@
         "NOTE-WAVE9-W3-C-10-009",
         "NOTE-WAVE9-W3-C-10-010",
         "NOTE-WAVE9-W3-C-10-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-11",
@@ -5107,7 +5859,8 @@
         "NOTE-WAVE10-W3-C-11-013",
         "NOTE-WAVE10-W3-C-11-014",
         "NOTE-WAVE10-W3-C-11-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-12",
@@ -5148,7 +5901,8 @@
         "NOTE-WAVE10-W3-C-12-020",
         "NOTE-WAVE10-W3-C-12-021",
         "NOTE-WAVE10-W3-C-12-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-13",
@@ -5191,7 +5945,8 @@
         "NOTE-WAVE10-W3-C-13-022",
         "NOTE-WAVE10-W3-C-13-023",
         "NOTE-WAVE10-W3-C-13-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-14",
@@ -5226,7 +5981,8 @@
         "NOTE-WAVE10-W3-C-14-014",
         "NOTE-WAVE10-W3-C-14-015",
         "NOTE-WAVE10-W3-C-14-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-15",
@@ -5262,7 +6018,8 @@
         "NOTE-WAVE10-W3-C-15-015",
         "NOTE-WAVE10-W3-C-15-016",
         "NOTE-WAVE10-W3-C-15-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-16",
@@ -5304,7 +6061,8 @@
         "NOTE-WAVE10-W3-C-16-021",
         "NOTE-WAVE10-W3-C-16-022",
         "NOTE-WAVE10-W3-C-16-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-c-17",
@@ -5340,7 +6098,8 @@
         "NOTE-WAVE10-W3-C-17-015",
         "NOTE-WAVE10-W3-C-17-016",
         "NOTE-WAVE10-W3-C-17-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-2",
@@ -5386,7 +6145,8 @@
         "NOTE-WAVE11-W3-D-2-021",
         "NOTE-WAVE11-W3-D-2-022",
         "NOTE-WAVE11-W3-D-2-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-3",
@@ -5437,7 +6197,8 @@
         "NOTE-WAVE11-W3-D-3-027",
         "NOTE-WAVE11-W3-D-3-028",
         "NOTE-WAVE11-W3-D-3-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-4",
@@ -5492,7 +6253,8 @@
         "NOTE-WAVE11-W3-D-4-031",
         "NOTE-WAVE11-W3-D-4-032",
         "NOTE-WAVE11-W3-D-4-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-5",
@@ -5526,7 +6288,8 @@
         "NOTE-WAVE11-W3-D-5-010",
         "NOTE-WAVE11-W3-D-5-011",
         "NOTE-WAVE11-W3-D-5-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-6",
@@ -5570,7 +6333,8 @@
         "NOTE-WAVE11-W3-D-6-020",
         "NOTE-WAVE11-W3-D-6-021",
         "NOTE-WAVE11-W3-D-6-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-7",
@@ -5620,7 +6384,8 @@
         "NOTE-WAVE11-W3-D-7-026",
         "NOTE-WAVE11-W3-D-7-027",
         "NOTE-WAVE11-W3-D-7-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-8",
@@ -5676,7 +6441,8 @@
         "NOTE-WAVE11-W3-D-8-032",
         "NOTE-WAVE11-W3-D-8-033",
         "NOTE-WAVE11-W3-D-8-034"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-9",
@@ -5726,7 +6492,8 @@
         "NOTE-WAVE11-W3-D-9-026",
         "NOTE-WAVE11-W3-D-9-027",
         "NOTE-WAVE11-W3-D-9-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-10",
@@ -5775,7 +6542,8 @@
         "NOTE-WAVE10-W3-D-10-024",
         "NOTE-WAVE10-W3-D-10-025",
         "NOTE-WAVE10-W3-D-10-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "authority-paths",
@@ -5824,7 +6592,8 @@
         "NOTE-WAVE2-AUTHORITY-PATHS-0023",
         "NOTE-WAVE2-AUTHORITY-PATHS-0024",
         "NOTE-WAVE2-AUTHORITY-PATHS-0025"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-12",
@@ -5868,7 +6637,8 @@
         "PUB-NOTE-W3-D-12-023",
         "PUB-NOTE-W3-D-12-024",
         "PUB-NOTE-W3-D-12-025"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-13",
@@ -5906,7 +6676,8 @@
         "NOTE-WAVE10-W3-D-13-017",
         "NOTE-WAVE10-W3-D-13-018",
         "NOTE-WAVE10-W3-D-13-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-14",
@@ -5945,7 +6716,8 @@
         "NOTE-WAVE10-W3-D-14-018",
         "NOTE-WAVE10-W3-D-14-019",
         "NOTE-WAVE10-W3-D-14-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-2",
@@ -5978,7 +6750,8 @@
         "NOTE15-w5-b-2-012",
         "NOTE15-w5-b-2-013",
         "NOTE15-w5-b-2-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-3",
@@ -6010,7 +6783,8 @@
         "PUB-NOTE-W5-B-3-011",
         "PUB-NOTE-W5-B-3-012",
         "PUB-NOTE-W5-B-3-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-4",
@@ -6046,7 +6820,8 @@
         "PUB-NOTE-W5-B-4-015",
         "PUB-NOTE-W5-B-4-016",
         "PUB-NOTE-W5-B-4-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-5",
@@ -6074,7 +6849,8 @@
         "PUB-NOTE-W5-B-5-007",
         "PUB-NOTE-W5-B-5-008",
         "PUB-NOTE-W5-B-5-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-15",
@@ -6108,7 +6884,8 @@
         "NOTE-WAVE10-W3-D-15-013",
         "NOTE-WAVE10-W3-D-15-014",
         "NOTE-WAVE10-W3-D-15-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-16",
@@ -6155,7 +6932,8 @@
         "NOTE-WAVE10-W3-D-16-026",
         "NOTE-WAVE10-W3-D-16-027",
         "NOTE-WAVE10-W3-D-16-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "hiv-protocol-open",
@@ -6187,7 +6965,8 @@
         "NOTE-WAVE3-HIV-PROTOCOL-OPEN-011",
         "NOTE-WAVE3-HIV-PROTOCOL-OPEN-012",
         "NOTE-WAVE3-HIV-PROTOCOL-OPEN-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-8",
@@ -6225,7 +7004,8 @@
         "NOTE15-w5-b-8-017",
         "NOTE15-w5-b-8-018",
         "NOTE15-w5-b-8-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-18",
@@ -6251,7 +7031,8 @@
         "PUB-NOTE-W3-D-18-005",
         "PUB-NOTE-W3-D-18-006",
         "PUB-NOTE-W3-D-18-007"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-19",
@@ -6283,7 +7064,8 @@
         "PUB-NOTE-W3-D-19-011",
         "PUB-NOTE-W3-D-19-012",
         "PUB-NOTE-W3-D-19-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-20",
@@ -6319,7 +7101,8 @@
         "PUB-NOTE-W3-D-20-015",
         "PUB-NOTE-W3-D-20-016",
         "PUB-NOTE-W3-D-20-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-21",
@@ -6352,7 +7135,8 @@
         "PUB-NOTE-W3-D-21-012",
         "PUB-NOTE-W3-D-21-013",
         "PUB-NOTE-W3-D-21-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-22",
@@ -6387,7 +7171,8 @@
         "PUB-NOTE-W3-D-22-014",
         "PUB-NOTE-W3-D-22-015",
         "PUB-NOTE-W3-D-22-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-23",
@@ -6432,7 +7217,8 @@
         "COUNSEL-SHIELD-FINAL-W3-D-23-024",
         "COUNSEL-SHIELD-FINAL-W3-D-23-025",
         "COUNSEL-SHIELD-FINAL-W3-D-23-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-d-24",
@@ -6459,7 +7245,8 @@
         "NOTE-WAVE11-W3-D-24-006",
         "NOTE-WAVE11-W3-D-24-007",
         "NOTE-WAVE11-W3-D-24-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-14",
@@ -6489,7 +7276,8 @@
         "PUB-NOTE-W5-B-14-009",
         "PUB-NOTE-W5-B-14-010",
         "PUB-NOTE-W5-B-14-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-1",
@@ -6518,7 +7306,8 @@
         "NOTE-WAVE7-W2-D-1-008",
         "NOTE-WAVE7-W2-D-1-009",
         "NOTE-WAVE7-W2-D-1-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-2",
@@ -6569,7 +7358,8 @@
         "NOTE-WAVE7-W2-D-2-030",
         "NOTE-WAVE7-W2-D-2-031",
         "NOTE-WAVE7-W2-D-2-032"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-3",
@@ -6611,7 +7401,8 @@
         "NOTE-WAVE7-W2-D-3-021",
         "NOTE-WAVE7-W2-D-3-022",
         "NOTE-WAVE7-W2-D-3-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-4",
@@ -6643,7 +7434,8 @@
         "NOTE-WAVE7-W2-D-4-011",
         "NOTE-WAVE7-W2-D-4-012",
         "NOTE-WAVE7-W2-D-4-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-5",
@@ -6677,7 +7469,8 @@
         "NOTE-WAVE7-W2-D-5-013",
         "NOTE-WAVE7-W2-D-5-014",
         "NOTE-WAVE7-W2-D-5-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-6",
@@ -6706,7 +7499,8 @@
         "NOTE-WAVE7-W2-D-6-008",
         "NOTE-WAVE7-W2-D-6-009",
         "NOTE-WAVE7-W2-D-6-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-7",
@@ -6745,7 +7539,8 @@
         "NOTE-WAVE7-W2-D-7-018",
         "NOTE-WAVE7-W2-D-7-019",
         "NOTE-WAVE7-W2-D-7-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-8",
@@ -6790,7 +7585,8 @@
         "NOTE-WAVE7-W2-D-8-024",
         "NOTE-WAVE7-W2-D-8-025",
         "NOTE-WAVE7-W2-D-8-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "inventory-working-example",
@@ -6814,7 +7610,8 @@
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-003",
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-004",
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-005"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "five-percent-example",
@@ -6849,7 +7646,8 @@
         "NOTE-WAVE3-FIVE-PERCENT-EXAMPLE-014",
         "NOTE-WAVE3-FIVE-PERCENT-EXAMPLE-015",
         "NOTE-WAVE3-FIVE-PERCENT-EXAMPLE-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-9",
@@ -6886,7 +7684,8 @@
         "NOTE-WAVE8-W2-D-9-016",
         "NOTE-WAVE8-W2-D-9-017",
         "NOTE-WAVE8-W2-D-9-018"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-10",
@@ -6922,7 +7721,8 @@
         "NOTE-WAVE7-W2-D-10-015",
         "NOTE-WAVE7-W2-D-10-016",
         "NOTE-WAVE7-W2-D-10-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-11",
@@ -6957,7 +7757,8 @@
         "NOTE-WAVE7-W2-D-11-014",
         "NOTE-WAVE7-W2-D-11-015",
         "NOTE-WAVE7-W2-D-11-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-13",
@@ -6990,7 +7791,8 @@
         "NOTE-WAVE7-W2-D-13-012",
         "NOTE-WAVE7-W2-D-13-013",
         "NOTE-WAVE7-W2-D-13-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-14",
@@ -7023,7 +7825,8 @@
         "NOTE-WAVE7-W2-D-14-012",
         "NOTE-WAVE7-W2-D-14-013",
         "NOTE-WAVE7-W2-D-14-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-15",
@@ -7063,7 +7866,8 @@
         "NOTE-WAVE7-W2-D-15-019",
         "NOTE-WAVE7-W2-D-15-020",
         "NOTE-WAVE7-W2-D-15-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-16",
@@ -7093,7 +7897,8 @@
         "NOTE-WAVE7-W2-D-16-009",
         "NOTE-WAVE7-W2-D-16-010",
         "NOTE-WAVE7-W2-D-16-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-5",
@@ -7127,7 +7932,8 @@
         "NOTE-WAVE12-W4-A-5-013",
         "NOTE-WAVE12-W4-A-5-014",
         "NOTE-WAVE12-W4-A-5-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-13",
@@ -7159,7 +7965,8 @@
         "NOTE16-w6-a-13-011",
         "NOTE16-w6-a-13-012",
         "NOTE16-w6-a-13-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-19",
@@ -7190,7 +7997,8 @@
         "NOTE15-w5-a-19-010",
         "NOTE15-w5-a-19-011",
         "NOTE15-w5-a-19-012"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-1",
@@ -7226,7 +8034,8 @@
         "NOTE-WAVE11-W4-A-1-015",
         "NOTE-WAVE11-W4-A-1-016",
         "NOTE-WAVE11-W4-A-1-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-2",
@@ -7260,7 +8069,8 @@
         "NOTE-WAVE11-W4-A-2-013",
         "NOTE-WAVE11-W4-A-2-014",
         "NOTE-WAVE11-W4-A-2-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-7",
@@ -7300,7 +8110,8 @@
         "NOTE-WAVE12-W4-A-7-019",
         "NOTE-WAVE12-W4-A-7-020",
         "NOTE-WAVE12-W4-A-7-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-8",
@@ -7339,7 +8150,8 @@
         "NOTE-WAVE12-W4-A-8-018",
         "NOTE-WAVE12-W4-A-8-019",
         "NOTE-WAVE12-W4-A-8-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-9",
@@ -7382,7 +8194,8 @@
         "NOTE-WAVE12-W4-A-9-022",
         "NOTE-WAVE12-W4-A-9-023",
         "NOTE-WAVE12-W4-A-9-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-10",
@@ -7422,7 +8235,8 @@
         "NOTE-WAVE11-W4-A-10-019",
         "NOTE-WAVE11-W4-A-10-020",
         "NOTE-WAVE11-W4-A-10-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-11",
@@ -7456,7 +8270,8 @@
         "NOTE-WAVE11-W4-A-11-013",
         "NOTE-WAVE11-W4-A-11-014",
         "NOTE-WAVE11-W4-A-11-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-14",
@@ -7489,7 +8304,8 @@
         "NOTE16-w6-a-14-012",
         "NOTE16-w6-a-14-013",
         "NOTE16-w6-a-14-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-13",
@@ -7528,7 +8344,8 @@
         "NOTE-WAVE11-W4-A-13-018",
         "NOTE-WAVE11-W4-A-13-019",
         "NOTE-WAVE11-W4-A-13-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-14",
@@ -7568,7 +8385,8 @@
         "NOTE-WAVE11-W4-A-14-019",
         "NOTE-WAVE11-W4-A-14-020",
         "NOTE-WAVE11-W4-A-14-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-15",
@@ -7609,7 +8427,8 @@
         "NOTE-WAVE11-W4-A-15-020",
         "NOTE-WAVE11-W4-A-15-021",
         "NOTE-WAVE11-W4-A-15-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-16",
@@ -7637,7 +8456,8 @@
         "NOTE-WAVE11-W4-A-16-007",
         "NOTE-WAVE11-W4-A-16-008",
         "NOTE-WAVE11-W4-A-16-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-17",
@@ -7678,7 +8498,8 @@
         "NOTE-WAVE11-W4-A-17-020",
         "NOTE-WAVE11-W4-A-17-021",
         "NOTE-WAVE11-W4-A-17-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-18",
@@ -7725,7 +8546,8 @@
         "NOTE-WAVE11-W4-A-18-026",
         "NOTE-WAVE11-W4-A-18-027",
         "NOTE-WAVE11-W4-A-18-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-19",
@@ -7771,7 +8593,8 @@
         "EMERGENCY-KIT-FINAL-W4-A-19-025",
         "EMERGENCY-KIT-FINAL-W4-A-19-026",
         "EMERGENCY-KIT-FINAL-W4-A-19-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-a-20",
@@ -7817,7 +8640,8 @@
         "EMERGENCY-KIT-FINAL-W4-A-20-025",
         "EMERGENCY-KIT-FINAL-W4-A-20-026",
         "EMERGENCY-KIT-FINAL-W4-A-20-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-d-12",
@@ -7853,7 +8677,8 @@
         "NOTE-WAVE7-W2-D-12-015",
         "NOTE-WAVE7-W2-D-12-016",
         "NOTE-WAVE7-W2-D-12-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-1",
@@ -7892,7 +8717,8 @@
         "NOTE-WAVE12-W4-B-1-018",
         "NOTE-WAVE12-W4-B-1-019",
         "NOTE-WAVE12-W4-B-1-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-2",
@@ -7928,7 +8754,8 @@
         "NOTE-WAVE12-W4-B-2-015",
         "NOTE-WAVE12-W4-B-2-016",
         "NOTE-WAVE12-W4-B-2-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-3",
@@ -7970,7 +8797,8 @@
         "NOTE-WAVE13-W4-B-3-021",
         "NOTE-WAVE13-W4-B-3-022",
         "NOTE-WAVE13-W4-B-3-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-4",
@@ -8002,7 +8830,8 @@
         "NOTE-WAVE13-W4-B-4-011",
         "NOTE-WAVE13-W4-B-4-012",
         "NOTE-WAVE13-W4-B-4-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-5",
@@ -8034,7 +8863,8 @@
         "NOTE-WAVE13-W4-B-5-011",
         "NOTE-WAVE13-W4-B-5-012",
         "NOTE-WAVE13-W4-B-5-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-6",
@@ -8073,7 +8903,8 @@
         "NOTE-WAVE13-W4-B-6-018",
         "NOTE-WAVE13-W4-B-6-019",
         "NOTE-WAVE13-W4-B-6-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-7",
@@ -8109,7 +8940,8 @@
         "NOTE-WAVE13-W4-B-7-015",
         "NOTE-WAVE13-W4-B-7-016",
         "NOTE-WAVE13-W4-B-7-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-8",
@@ -8152,7 +8984,8 @@
         "NOTE-WAVE13-W4-B-8-022",
         "NOTE-WAVE13-W4-B-8-023",
         "NOTE-WAVE13-W4-B-8-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-9",
@@ -8202,7 +9035,8 @@
         "NOTE-WAVE13-W4-B-9-029",
         "NOTE-WAVE13-W4-B-9-030",
         "NOTE-WAVE13-W4-B-9-031"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-10",
@@ -8241,7 +9075,8 @@
         "NOTE-WAVE12-W4-B-10-018",
         "NOTE-WAVE12-W4-B-10-019",
         "NOTE-WAVE12-W4-B-10-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-11",
@@ -8287,7 +9122,8 @@
         "NOTE-WAVE12-W4-B-11-025",
         "NOTE-WAVE12-W4-B-11-026",
         "NOTE-WAVE12-W4-B-11-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-12",
@@ -8322,7 +9158,8 @@
         "NOTE-WAVE12-W4-B-12-014",
         "NOTE-WAVE12-W4-B-12-015",
         "NOTE-WAVE12-W4-B-12-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-13",
@@ -8363,7 +9200,8 @@
         "NOTE-WAVE12-W4-B-13-020",
         "NOTE-WAVE12-W4-B-13-021",
         "NOTE-WAVE12-W4-B-13-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-14",
@@ -8392,7 +9230,8 @@
         "NOTE-WAVE12-W4-B-14-008",
         "NOTE-WAVE12-W4-B-14-009",
         "NOTE-WAVE12-W4-B-14-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-15",
@@ -8430,7 +9269,8 @@
         "NOTE-WAVE12-W4-B-15-017",
         "NOTE-WAVE12-W4-B-15-018",
         "NOTE-WAVE12-W4-B-15-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-16",
@@ -8471,7 +9311,8 @@
         "NOTE-WAVE12-W4-B-16-020",
         "NOTE-WAVE12-W4-B-16-021",
         "NOTE-WAVE12-W4-B-16-022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-17",
@@ -8530,7 +9371,8 @@
         "NOTE-WAVE12-W4-B-17-038",
         "NOTE-WAVE12-W4-B-17-039",
         "NOTE-WAVE12-W4-B-17-040"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-18",
@@ -8578,7 +9420,8 @@
         "NOTE-WAVE12-W4-B-18-027",
         "NOTE-WAVE12-W4-B-18-028",
         "NOTE-WAVE12-W4-B-18-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-19",
@@ -8623,7 +9466,8 @@
         "NOTE-WAVE12-W4-B-19-024",
         "NOTE-WAVE12-W4-B-19-025",
         "NOTE-WAVE12-W4-B-19-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-20",
@@ -8661,7 +9505,8 @@
         "NOTE-WAVE12-W4-B-20-017",
         "NOTE-WAVE12-W4-B-20-018",
         "NOTE-WAVE12-W4-B-20-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-21",
@@ -8725,7 +9570,8 @@
         "NOTE-WAVE12-W4-B-21-043",
         "NOTE-WAVE12-W4-B-21-044",
         "NOTE-WAVE12-W4-B-21-045"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-22",
@@ -8765,7 +9611,8 @@
         "NOTE-WAVE13-W4-B-22-019",
         "NOTE-WAVE13-W4-B-22-020",
         "NOTE-WAVE13-W4-B-22-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-23",
@@ -8807,7 +9654,8 @@
         "NOTE-WAVE13-W4-B-23-021",
         "NOTE-WAVE13-W4-B-23-022",
         "NOTE-WAVE13-W4-B-23-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-b-24",
@@ -8850,7 +9698,8 @@
         "NOTE-WAVE13-W4-B-24-022",
         "NOTE-WAVE13-W4-B-24-023",
         "NOTE-WAVE13-W4-B-24-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-12",
@@ -8885,7 +9734,8 @@
         "NOTE15-w5-a-12-014",
         "NOTE15-w5-a-12-015",
         "NOTE15-w5-a-12-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-11",
@@ -8914,7 +9764,8 @@
         "NOTE15-w5-a-11-008",
         "NOTE15-w5-a-11-009",
         "NOTE15-w5-a-11-010"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-1",
@@ -8941,7 +9792,8 @@
         "NOTE-WAVE13-W4-C-1-006",
         "NOTE-WAVE13-W4-C-1-007",
         "NOTE-WAVE13-W4-C-1-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-2",
@@ -8981,7 +9833,8 @@
         "NOTE-WAVE14-W4-C-2-019",
         "NOTE-WAVE14-W4-C-2-020",
         "NOTE-WAVE14-W4-C-2-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-3",
@@ -9017,7 +9870,8 @@
         "NOTE-WAVE14-W4-C-3-015",
         "NOTE-WAVE14-W4-C-3-016",
         "NOTE-WAVE14-W4-C-3-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-4",
@@ -9056,7 +9910,8 @@
         "NOTE-WAVE14-W4-C-4-018",
         "NOTE-WAVE14-W4-C-4-019",
         "NOTE-WAVE14-W4-C-4-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-5",
@@ -9103,7 +9958,8 @@
         "NOTE-WAVE14-W4-C-5-026",
         "NOTE-WAVE14-W4-C-5-027",
         "NOTE-WAVE14-W4-C-5-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-6",
@@ -9141,7 +9997,8 @@
         "NOTE-WAVE14-W4-C-6-017",
         "NOTE-WAVE14-W4-C-6-018",
         "NOTE-WAVE14-W4-C-6-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-7",
@@ -9185,7 +10042,8 @@
         "NOTE-WAVE14-W4-C-7-023",
         "NOTE-WAVE14-W4-C-7-024",
         "NOTE-WAVE14-W4-C-7-025"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-8",
@@ -9228,7 +10086,8 @@
         "NOTE-WAVE14-W4-C-8-022",
         "NOTE-WAVE14-W4-C-8-023",
         "NOTE-WAVE14-W4-C-8-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-9",
@@ -9263,7 +10122,8 @@
         "NOTE-WAVE14-W4-C-9-014",
         "NOTE-WAVE14-W4-C-9-015",
         "NOTE-WAVE14-W4-C-9-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-10",
@@ -9310,7 +10170,8 @@
         "NOTE-WAVE13-W4-C-10-026",
         "NOTE-WAVE13-W4-C-10-027",
         "NOTE-WAVE13-W4-C-10-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-11",
@@ -9352,7 +10213,8 @@
         "NOTE-WAVE13-W4-C-11-021",
         "NOTE-WAVE13-W4-C-11-022",
         "NOTE-WAVE13-W4-C-11-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-12",
@@ -9398,7 +10260,8 @@
         "NOTE-WAVE13-W4-C-12-025",
         "NOTE-WAVE13-W4-C-12-026",
         "NOTE-WAVE13-W4-C-12-027"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-13",
@@ -9436,7 +10299,8 @@
         "NOTE-WAVE13-W4-C-13-017",
         "NOTE-WAVE13-W4-C-13-018",
         "NOTE-WAVE13-W4-C-13-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-14",
@@ -9473,7 +10337,8 @@
         "NOTE-WAVE13-W4-C-14-016",
         "NOTE-WAVE13-W4-C-14-017",
         "NOTE-WAVE13-W4-C-14-018"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-16",
@@ -9520,7 +10385,8 @@
         "NOTE-WAVE13-W4-C-16-026",
         "NOTE-WAVE13-W4-C-16-027",
         "NOTE-WAVE13-W4-C-16-028"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-17",
@@ -9554,7 +10420,8 @@
         "NOTE-WAVE13-W4-C-17-013",
         "NOTE-WAVE13-W4-C-17-014",
         "NOTE-WAVE13-W4-C-17-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-18",
@@ -9589,7 +10456,8 @@
         "NOTE-WAVE13-W4-C-18-014",
         "NOTE-WAVE13-W4-C-18-015",
         "NOTE-WAVE13-W4-C-18-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-19",
@@ -9631,7 +10499,8 @@
         "NOTE-WAVE14-W4-C-19-021",
         "NOTE-WAVE14-W4-C-19-022",
         "NOTE-WAVE14-W4-C-19-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-20",
@@ -9666,7 +10535,8 @@
         "NOTE-WAVE14-W4-C-20-014",
         "NOTE-WAVE14-W4-C-20-015",
         "NOTE-WAVE14-W4-C-20-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-c-15",
@@ -9718,7 +10588,8 @@
         "NOTE-WAVE13-W4-C-15-031",
         "NOTE-WAVE13-W4-C-15-032",
         "NOTE-WAVE13-W4-C-15-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-2",
@@ -9753,7 +10624,8 @@
         "NOTE16-w6-a-2-014",
         "NOTE16-w6-a-2-015",
         "NOTE16-w6-a-2-016"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-4",
@@ -9787,7 +10659,8 @@
         "NOTE16-w6-a-4-013",
         "NOTE16-w6-a-4-014",
         "NOTE16-w6-a-4-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-5",
@@ -9827,7 +10700,8 @@
         "NOTE16-w6-a-5-019",
         "NOTE16-w6-a-5-020",
         "NOTE16-w6-a-5-021"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-6",
@@ -9869,7 +10743,8 @@
         "NOTE16-w6-a-6-021",
         "NOTE16-w6-a-6-022",
         "NOTE16-w6-a-6-023"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "ndc-approval",
@@ -9903,7 +10778,8 @@
         "NOTE-WAVE3-NDC-APPROVAL-013",
         "NOTE-WAVE3-NDC-APPROVAL-014",
         "NOTE-WAVE3-NDC-APPROVAL-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "recall-classification",
@@ -9941,7 +10817,8 @@
         "NOTE-WAVE3-RECALL-CLASSIFICATION-017",
         "NOTE-WAVE3-RECALL-CLASSIFICATION-018",
         "NOTE-WAVE3-RECALL-CLASSIFICATION-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-20",
@@ -9980,7 +10857,8 @@
         "NOTE15-w5-a-20-018",
         "NOTE15-w5-a-20-019",
         "NOTE15-w5-a-20-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-1",
@@ -10023,7 +10901,8 @@
         "NOTE-WAVE14-W4-D-1-022",
         "NOTE-WAVE14-W4-D-1-023",
         "NOTE-WAVE14-W4-D-1-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-2",
@@ -10057,7 +10936,8 @@
         "NOTE-WAVE14-W4-D-2-013",
         "NOTE-WAVE14-W4-D-2-014",
         "NOTE-WAVE14-W4-D-2-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-3",
@@ -10101,7 +10981,8 @@
         "NOTE-WAVE14-W4-D-3-023",
         "NOTE-WAVE14-W4-D-3-024",
         "NOTE-WAVE14-W4-D-3-025"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-4",
@@ -10139,7 +11020,8 @@
         "NOTE-WAVE14-W4-D-4-017",
         "NOTE-WAVE14-W4-D-4-018",
         "NOTE-WAVE14-W4-D-4-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-5",
@@ -10172,7 +11054,8 @@
         "NOTE-WAVE14-W4-D-5-012",
         "NOTE-WAVE14-W4-D-5-013",
         "NOTE-WAVE14-W4-D-5-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-6",
@@ -10205,7 +11088,8 @@
         "NOTE15-w4-d-6-012",
         "NOTE15-w4-d-6-013",
         "NOTE15-w4-d-6-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-7",
@@ -10258,7 +11142,8 @@
         "NOTE15-w4-d-7-032",
         "NOTE15-w4-d-7-033",
         "NOTE15-w4-d-7-034"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-8",
@@ -10296,7 +11181,8 @@
         "NOTE15-w4-d-8-017",
         "NOTE15-w4-d-8-018",
         "NOTE15-w4-d-8-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "parallel-duties",
@@ -10324,7 +11210,8 @@
         "NOTE-WAVE3-PARALLEL-DUTIES-007",
         "NOTE-WAVE3-PARALLEL-DUTIES-008",
         "NOTE-WAVE3-PARALLEL-DUTIES-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-9",
@@ -10373,7 +11260,8 @@
         "NOTE15-w4-d-9-028",
         "NOTE15-w4-d-9-029",
         "NOTE15-w4-d-9-030"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-10",
@@ -10416,7 +11304,8 @@
         "NOTE-WAVE14-W4-D-10-022",
         "NOTE-WAVE14-W4-D-10-023",
         "NOTE-WAVE14-W4-D-10-024"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-11",
@@ -10468,7 +11357,8 @@
         "NOTE-WAVE14-W4-D-11-031",
         "NOTE-WAVE14-W4-D-11-032",
         "NOTE-WAVE14-W4-D-11-033"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-b-8",
@@ -10533,7 +11423,8 @@
         "NOTE16-w6-b-8-040",
         "NOTE16-w6-b-8-041",
         "NOTE16-w6-b-8-042"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-b-9",
@@ -10567,7 +11458,8 @@
         "NOTE16-w6-b-9-013",
         "NOTE16-w6-b-9-014",
         "NOTE16-w6-b-9-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-13",
@@ -10617,7 +11509,8 @@
         "NOTE-WAVE4-W1-C-13-024",
         "NOTE-WAVE4-W1-C-13-025",
         "NOTE-WAVE4-W1-C-13-026"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-14",
@@ -10693,7 +11586,8 @@
         "NOTE-WAVE4-W1-C-14-050",
         "NOTE-WAVE4-W1-C-14-051",
         "NOTE-WAVE4-W1-C-14-052"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-15",
@@ -10733,7 +11627,8 @@
         "NOTE-WAVE4-W1-C-15-016",
         "NOTE-WAVE4-W1-C-15-017",
         "NOTE-WAVE4-W1-C-15-018"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-16",
@@ -10772,7 +11667,8 @@
         "NOTE-WAVE4-W1-C-16-018",
         "NOTE-WAVE4-W1-C-16-019",
         "NOTE-WAVE4-W1-C-16-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-17",
@@ -10826,7 +11722,8 @@
         "NOTE-WAVE14-W4-D-17-030",
         "NOTE-WAVE14-W4-D-17-031",
         "NOTE-WAVE14-W4-D-17-032"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-19",
@@ -10876,7 +11773,8 @@
         "NOTE-WAVE9-W3-B-19-029",
         "NOTE-WAVE9-W3-B-19-030",
         "NOTE-WAVE9-W3-B-19-031"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-20",
@@ -10900,7 +11798,8 @@
         "NOTE-WAVE9-W3-B-20-003",
         "NOTE-WAVE9-W3-B-20-004",
         "NOTE-WAVE9-W3-B-20-005"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-21",
@@ -10932,7 +11831,8 @@
         "NOTE-WAVE9-W3-B-21-011",
         "NOTE-WAVE9-W3-B-21-012",
         "NOTE-WAVE9-W3-B-21-013"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-22",
@@ -10966,7 +11866,8 @@
         "NOTE-WAVE9-W3-B-22-013",
         "NOTE-WAVE9-W3-B-22-014",
         "NOTE-WAVE9-W3-B-22-015"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w3-b-23",
@@ -11005,7 +11906,8 @@
         "NOTE-WAVE9-W3-B-23-018",
         "NOTE-WAVE9-W3-B-23-019",
         "NOTE-WAVE9-W3-B-23-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-17",
@@ -11044,7 +11946,8 @@
         "NOTE15-w5-a-17-018",
         "NOTE15-w5-a-17-019",
         "NOTE15-w5-a-17-020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-18",
@@ -11080,7 +11983,8 @@
         "NOTE15-w5-a-18-015",
         "NOTE15-w5-a-18-016",
         "NOTE15-w5-a-18-017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-a-13",
@@ -11113,7 +12017,8 @@
         "NOTE15-w5-a-13-012",
         "NOTE15-w5-a-13-013",
         "NOTE15-w5-a-13-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-a-15",
@@ -11150,7 +12055,8 @@
         "NOTE16-w6-a-15-016",
         "NOTE16-w6-a-15-017",
         "NOTE16-w6-a-15-018"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-13",
@@ -11206,7 +12112,8 @@
         "NOTE-WAVE14-W4-D-13-035",
         "NOTE-WAVE14-W4-D-13-036",
         "NOTE-WAVE14-W4-D-13-037"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w4-d-15",
@@ -11257,7 +12164,8 @@
         "NOTE-WAVE14-W4-D-15-030",
         "NOTE-WAVE14-W4-D-15-031",
         "NOTE-WAVE14-W4-D-15-032"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w2-b-14",
@@ -11290,7 +12198,8 @@
         "NOTE-WAVE6-W2-B-14-012",
         "NOTE-WAVE6-W2-B-14-013",
         "NOTE-WAVE6-W2-B-14-014"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-a-12",
@@ -11328,7 +12237,8 @@
         "NOTE-WAVE3-W1-A-12-017",
         "NOTE-WAVE3-W1-A-12-018",
         "NOTE-WAVE3-W1-A-12-019"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w1-c-18",
@@ -11394,7 +12304,8 @@
         "NOTE-WAVE5-W1-C-18-045",
         "NOTE-WAVE5-W1-C-18-046",
         "NOTE-WAVE5-W1-C-18-047"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-1",
@@ -11459,7 +12370,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-1-0044",
         "APPENDIX-ATOMS-A-APPENDIX-A-1-0045",
         "APPENDIX-ATOMS-A-APPENDIX-A-1-0046"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-2",
@@ -11561,7 +12473,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0081",
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0082",
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0083"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-3",
@@ -11597,7 +12510,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0015",
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0016",
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0017"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-4",
@@ -11675,7 +12589,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-4-0057",
         "APPENDIX-ATOMS-A-APPENDIX-A-4-0058",
         "APPENDIX-ATOMS-A-APPENDIX-A-4-0059"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-5",
@@ -11750,7 +12665,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0054",
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0055",
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0056"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-6",
@@ -11789,7 +12705,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-6-0018",
         "APPENDIX-ATOMS-A-APPENDIX-A-6-0019",
         "APPENDIX-ATOMS-A-APPENDIX-A-6-0020"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-7",
@@ -11887,7 +12804,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0077",
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0078",
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0079"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-8",
@@ -12046,7 +12964,8 @@
         "APPENDIX-ATOMS-B-A066-008",
         "APPENDIX-ATOMS-B-A056-009",
         "APPENDIX-ATOMS-B-A066-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-9",
@@ -12142,7 +13061,8 @@
         "APPENDIX-ATOMS-B-A068-007",
         "APPENDIX-ATOMS-B-A068-008",
         "APPENDIX-ATOMS-B-A072-007"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-a-10",
@@ -12183,7 +13103,8 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-10-0020",
         "APPENDIX-ATOMS-A-APPENDIX-A-10-0021",
         "APPENDIX-ATOMS-A-APPENDIX-A-10-0022"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-1",
@@ -12268,7 +13189,8 @@
         "APPENDIX-ATOMS-B-B006-009",
         "APPENDIX-ATOMS-B-B007-011",
         "APPENDIX-ATOMS-B-B005-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-2",
@@ -12372,7 +13294,8 @@
         "APPENDIX-ATOMS-B-B015-009",
         "APPENDIX-ATOMS-B-B016-007",
         "APPENDIX-ATOMS-B-B016-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-3",
@@ -12476,7 +13399,8 @@
         "APPENDIX-ATOMS-B-B025-008",
         "APPENDIX-ATOMS-B-B017-011",
         "APPENDIX-ATOMS-B-B018-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-4",
@@ -12577,7 +13501,8 @@
         "APPENDIX-ATOMS-B-B033-008",
         "APPENDIX-ATOMS-B-B034-007",
         "APPENDIX-ATOMS-B-B034-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-5",
@@ -12647,7 +13572,8 @@
         "APPENDIX-ATOMS-B-B037-011",
         "APPENDIX-ATOMS-B-B038-010",
         "APPENDIX-ATOMS-B-B039-008"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "appendix-b-6",
@@ -12755,7 +13681,8 @@
         "APPENDIX-ATOMS-B-B043-006",
         "APPENDIX-ATOMS-B-B041-011",
         "APPENDIX-ATOMS-B-B042-009"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "drug-reference-boundary",
@@ -12777,7 +13704,8 @@
         "NOTE-WAVE2-DRUG-REFERENCE-BOUNDARY-0001",
         "NOTE-WAVE2-DRUG-REFERENCE-BOUNDARY-0002",
         "NOTE-WAVE2-DRUG-REFERENCE-BOUNDARY-0003"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-b-16",
@@ -12795,7 +13723,8 @@
       "atomic_census_source": "reports/full-corpus-review/note-wave16-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 0,
-      "atomic_claim_ids": []
+      "atomic_claim_ids": [],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w6-b-17",
@@ -12843,7 +13772,8 @@
         "NOTE16-w6-b-17-027",
         "NOTE16-w6-b-17-028",
         "NOTE16-w6-b-17-029"
-      ]
+      ],
+      "independent_atomic_census_review": null
     },
     {
       "unit_id": "w5-b-17",
@@ -12873,7 +13803,8 @@
         "NOTE15-w5-b-17-009",
         "NOTE15-w5-b-17-010",
         "NOTE15-w5-b-17-011"
-      ]
+      ],
+      "independent_atomic_census_review": null
     }
   ],
   "reviewed_claims": [

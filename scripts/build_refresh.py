@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from notes_revision import load_notes, apply_study_revision
+from notes_independent_metadata import load_metadata, notices_for_units
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -18,6 +19,7 @@ def build_payload() -> dict:
     note_path = ROOT / 'notes/guide.json'
     author_path = ROOT / 'notes/refresh/guide.json'
     notes = load_notes(ROOT)
+    independent_reviews = load_metadata(ROOT, notes)['units']
     author = apply_study_revision(json.loads(author_path.read_text(encoding='utf-8')), 'refresh', ROOT)
     units = {u['id']: (ch, u) for ch in notes['chapters'] for u in ch['units']}
     cards = []
@@ -40,6 +42,7 @@ def build_payload() -> dict:
         item['stored_source_hashes'] = {uid: units[uid][1]['body_sha256'] for uid in refs}
         item['source_hashes'] = {uid: hashlib.sha256(units[uid][1]['body'].encode()).hexdigest() for uid in refs}
         item['source_hash_basis'] = 'ACTUAL_EFFECTIVE_BODY_UTF8'
+        item['independent_atomic_census_reviews'] = notices_for_units(refs, independent_reviews)
         item['edited_at'] = author['edited_at']
         item['review_status'] = 'SOURCE_DERIVED_NOT_INDEPENDENTLY_AUDITED'
         cards.append(item)

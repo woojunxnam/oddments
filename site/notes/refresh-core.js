@@ -52,7 +52,7 @@
     return {grade,due:addDays(day,{again:1,hard:3,good:7}[grade]),last:day,count:Math.min(100000,(previous?.count||0)+1)};
   }
   function dailyCards(cards, reviews, day) {
-    const eligible=cards.filter(c=>c.deck==='core'&&!c.flags.some(f=>['open','date-sensitive','source-gap'].includes(f)));
+    const eligible=cards.filter(c=>c.deck==='core'&&!(c.independent_atomic_census_reviews||[]).length&&!c.flags.some(f=>['open','date-sensitive','source-gap'].includes(f)));
     const tie=c=>hash(day+':'+c.id);
     const due=eligible.filter(c=>reviews[c.id]&&reviews[c.id].due<=day).sort((a,b)=>reviews[a.id].due.localeCompare(reviews[b.id].due)||tie(a)-tie(b));
     const out=due.slice(0,3);const picked=new Set(out.map(c=>c.id));

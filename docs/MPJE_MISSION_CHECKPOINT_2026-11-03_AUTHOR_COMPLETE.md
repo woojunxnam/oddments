@@ -35,3 +35,5 @@ PR187은 merge `a19e0bfe3d1b1d27545944efa210c8b15b09ffba`, Pages run `4169560326
 Cherry-pick으로 통합한 파일과 원래 worker commit SHA를 함께 보존한다. `worker-history-checkpoint.json`의 결과·실제 branch-head 표와 별도 `checkpoints/mpje-audit-workers-20261103` 참조가 원래 commit들을 GitHub에서 도달 가능하게 유지한다. 이 별도 참조는 제품 소스 tree를 바꾸거나 출시하지 않으며, 출시 branch의 전체 CI를 대체하지 않는다.
 
 새 clone에서 controller가 과거 원본 commit을 조회할 수 없으면 먼저 해당 checkpoint branch를 fetch한다. 표의 worker branch가 로컬에 없을 때에만 기록된 `worker_branch_head`로 복원한다. 기존 branch를 덮어쓰지 않는다. `worker_commit`와 당시 실제 branch-head는 별도 필드이며, 이미 완료된 추가 분류 같은 후속 commit도 그대로 보존한다. 새 세션을 예전 독립 세션이라고 주장하지 않으며, 문맥을 잃은 미완료 lease는 token recovery 후 실제 새 actor/session으로 배정한다.
+
+지표 구분을 강화했다. `notes_units_with_author_atomic_claim_enumeration_records`는306개 저자기록이며, `notes_units_with_complete_atomic_claim_census`는실제통합독립감사에서누락없음을확인한17개다. 최초20절중3절에서실제미열거가발견됐으므로306기록을완전한census100%라고부르지않는다. 기존counter를독립완료로소급해석하지않으며,법적KEEP13/HOLD7도별도다.
