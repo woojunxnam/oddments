@@ -92,6 +92,12 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
         if any(j['status'] != 'INTEGRATED' for j in state['jobs']):
             return []  # retrying plan never duplicates outstanding assignments
         assigned = {qid for j in state['jobs'] for qid in j['question_hashes']}
+        uncredited = sorted(qid for qid in assigned if qid not in ledger or
+                            ledger[qid]['legal_review_status'] == UNREVIEWED or
+                            ledger[qid].get('checked_at') is None)
+        if uncredited:
+            raise ValueError('Integrated jobs lack authoritative review credit; register and regenerate ledger: ' +
+                             ', '.join(uncredited))
         candidates = sorted(qid for qid, row in ledger.items()
                             if row['legal_review_status'] == UNREVIEWED and qid not in assigned)
         groups = [candidates[i:i+size] for i in range(0, min(len(candidates), batches*size), size)]
