@@ -1,0 +1,61 @@
+{
+  "schema_version": "unapplied-source-bound-remediation-candidates/1",
+  "review_date": "2026-11-03",
+  "applied": false,
+  "independent_review_status": "NOT_RUN",
+  "patches": [
+    {
+      "question_id": "MA-EXP-0442",
+      "before_record_sha256": "43f2e206e1b5e631c5a3cca133b6805305eb9566cbb56e692bd128bc555a84a9",
+      "draft_after_record_sha256": "232c57e91b2b98cc430a29dfbc59fe7e18a678f29a2d0cba5bd5b5223fa52e43",
+      "status": "UNAPPLIED_DRAFT_REQUIRES_FINAL_CONTENT_INDEPENDENT_AUDIT",
+      "original_answer_key_preserved": true,
+      "application_requirement": "Create a versioned final candidate and recompute its stored semantic/content hash before independent audit; draft record hash is not release evidence.",
+      "patch": {
+        "choices": [
+          {
+            "id": "A",
+            "text": "A review performed only after delivery satisfies the prospective timing requirement."
+          },
+          {
+            "id": "B",
+            "text": "The absence of a computer alert conclusively establishes that the documented allergy needs no review."
+          },
+          {
+            "id": "C",
+            "text": "Resolving a concern orally eliminates the need to document the response."
+          },
+          {
+            "id": "D",
+            "text": "The second alert requires patient-specific evaluation rather than automatic acceptance or rejection."
+          }
+        ],
+        "explanation": {
+          "core_reasoning": "전산 alert 유무와 pharmacist의 실제 DUR 책임을 구분한다. Alert의 clinical significance를 평가하고 적절한 조치·기록으로 연결한다. DUR 문제 해결 내용의 문서화가 필요하다. Prospective라는 시점을 사후 점검으로 바꾸지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. Prospective라는 시점을 사후 점검으로 바꾸지 않는다.\n교정된 설명: Prospective review occurs before the applicable new prescription is dispensed or delivered.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 전산 경고가 없다는 사실만으로 기록된 알레르기 검토가 불필요하다고 확정하지 않는다. 약사는9.17(1)(g)에 따라 관련 알레르기 문제를 합리적으로 식별하고 필요한 조치와 기록을 한다.\n교정된 설명: Absence of a computer alert does not replace the pharmacist's prospective review of the allergy.",
+            "C": "선택하지 않아야 하는 잘못된 설명. DUR 문제 해결 내용의 문서화가 필요하다.\n교정된 설명: Appropriate measures taken in response to a DUR concern must be documented.",
+            "D": "선택해야 하는 옳은 설명. Alert의 clinical significance를 평가하고 적절한 조치·기록으로 연결한다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      },
+      "reason_ko": "No computer alert의 부정 수량문과 absence of alert의 의미를 구분해 B가 명확한 오답이 되도록 한다. 정답 D와 보호 원문·사용 이력은 그대로 보존한다.",
+      "authorities": [
+        {
+          "source_id": "WAVE10-1-cmr9",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-11-03",
+          "effective_date_or_version": "Current posted247CMR9,MARegister1536 dated2024-12-06; individual historical clause commencement not separately retraced",
+          "evidence_path": "reports/full-corpus-review/evidence/wave10-1/cmr9.json",
+          "evidence_sha256": "45067c1036a1cdfb1770fd54de096cfc3f85f31194c10f6bb378f29e86180cff",
+          "raw_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+          "retrieval_provenance": "FRESH_OFFICIAL_HTTPS_BY_THIS_WORKER",
+          "exact_section": "247CMR9.17(1)(g),(2),9.16(7)(b)"
+        }
+      ]
+    }
+  ]
+}

@@ -141,11 +141,16 @@ def test_stale_question_or_missing_option_fails_review_integrity():
         validate_review(question, incomplete)
 
 
-def test_following_four_coun03_questions_not_inherited_as_reviewed():
+def test_following_four_coun03_questions_use_their_own_later_review():
     rows = {json.loads(s)["question_id"]: json.loads(s)
             for s in (ROOT / "reports/full-corpus-review/question-ledger.jsonl")
             .read_text(encoding="utf-8").splitlines()}
+    path = 'reports/full-corpus-review/wave10-1-author-review.json'
+    later = {r['question_id']:r for r in json.loads((ROOT/path).read_text())['records']}
     for n in range(425, 429):
         row = rows[f"MA-EXP-{n:04d}"]
-        assert row["checked_at"] is None
-        assert row["legal_review_status"] == "NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW"
+        evidence = later[row['question_id']]
+        assert row['checked_at'] == evidence['checked_at']
+        assert row['content_sha256'] == evidence['record_sha256']
+        assert row['review_evidence']['source_path'] == path
+        assert row['reviewer_provenance'] == evidence['reviewer_provenance']

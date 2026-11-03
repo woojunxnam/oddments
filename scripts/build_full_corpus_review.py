@@ -32,6 +32,8 @@ REVIEW_FILES = (
     'wave8-3-author-review.json', 'wave8-4-author-review.json',
     'wave9-1-author-review.json', 'wave9-2-author-review.json',
     'wave9-3-author-review.json', 'wave9-4-author-review.json',
+    'wave10-1-author-review.json', 'wave10-2-author-review.json',
+    'wave10-3-author-review.json', 'wave10-4-author-review.json',
 )
 AUTHORING_FILES = (
     '05_personnel_ratios.json', '06_personnel_training.json',
@@ -471,6 +473,12 @@ def build():
     census_specs.append(dict(path='reports/full-corpus-review/appendix-atoms-b-census.json',
         notes_revision='2026-10-30.cdtm13-vax04.1', supersedes={
             uid: 'reports/full-corpus-review/note-wave2-census.json' for uid in appendix_b_ids}))
+    for name in ('note-wave6-census.json', 'note-wave7-census.json'):
+        census_specs.append(dict(path='reports/full-corpus-review/'+name,
+            notes_revision='2026-10-30.cdtm13-vax04.1'))
+    census_specs.append(dict(path='reports/full-corpus-review/refill-cancer-final-census.json',
+        notes_revision='2026-11-03.refill-cancer.1', supersedes={
+            uid:'reports/full-corpus-review/note-wave6-census.json' for uid in ('w2-c-1','w2-c-12')}))
     census_units, census_claims = compose_note_censuses(census_specs, effective, by_id, ROOT)
     complete_census_units = {uid for uid, unit in census_units.items() if
         unit['census_status'] == 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'}

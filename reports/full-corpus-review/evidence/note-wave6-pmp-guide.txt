@@ -1,0 +1,28 @@
+PMP guide v5.2 공식 원문 검토 메모 — 전문 재게시 아님
+
+공식 URL: https://www.mass.gov/doc/pmp-data-submission-dispenser-guide-version-52-pdf/download
+검토일: 2026-11-03
+확보한 원본 HTTP payload SHA256: f3046fbd12822ed8f6d1bf73f61d907a74883db4ef6e67c663decdc6a9edc13b
+문서판: v5.2, May 2023. 개별 제도의 법적 시행일과 문서판 날짜는 같다고 추정하지 않았다.
+원문은 DCP의 공식 pharmacy-reporting 페이지에서 연결된다. 문서에 민간 vendor의 복제·배포 제한 문구가 있어 전문을 저장소에 재게시하지 않는다. 아래는 원문을 직접 읽고 작성한 한국어 연구기록이며 법적 권위 자체가 아니다. 독립 검토자는 공식 URL의 해당 section/page를 다시 확인해야 한다. 인용의 권위는 저자 메모가 아니라 DCP가 게시한 원문과 적용 statute/regulation이다. 원문을 자동 요약하거나 질문을 재생성한 자료가 아니다.
+
+검토한 근거 범위와 직접 확인한 내용
+
+§1, pp1–2: II–V 및 gabapentin 처방 dispensing 보고대상과 24시간 또는 다음 영업일 안내. MA 약국뿐 아니라 MA 사람에게 해당 처방을 보내는 타주 약국도 포함한다. 모든 VI가 보고대상이라는 일반화는 하지 않는다.
+§2.1, p3: 직전 보고기간에 II–V/gabapentin dispensing이 없으면 zero report를 요구한다. 승인된 waiver가 별도로 가능하다. 오류로 거부된 prescription record는 수정·재전송한다.
+§4.4, p15: zero report는 무전송과 구분되는 보고방법이다. 현검토는 vendor UI 단계별 설명을 법적 의무로 재구성하지 않았다.
+§5.1, p21: 파일 parsing 실패와 individual dispensation error는 구분된다. Parsing에 실패해 system에 들어가지 않은 파일은 새 파일로 고쳐 제출하며 void가 먼저 필요한 것은 아니다.
+§5.3, pp24–26: errors/warnings를 검토·정정하는 보고절차가 있다. 업로드가 이루어졌다는 사실은 모든 individual record가 accepted되었다는 뜻이 아니다.
+AppendixA, p58 DSP05: prescription 준비 날짜를 나타내는 필드이다. AppendixA, p61 DSP17: sale-event 날짜로, management system의 sale capture ability에 관한 조건도 원문에 있다. 두 필드는 동일한 의미가 아니다.
+AppendixB, p67 AIR03/AIR04/AIR05: actual recipient의 현재 유효한 government-issued ID를 확인한다. Recipient와 patient는 다를 수 있고, parent/relative/animal owner가 받는 경우가 예이다. Refill도 적용대상이다. 과거 저장 ID를 자동 입력하지 않는다. SSN은 customer identifier 대신 제출하는 적격 ID가 아니다. Military/state ID, permanent-resident card, passport, driver license, tribal ID 및 합의된 기타 ID 범주가 있으며 MA Commission for the Blind ID 예시가 있다.
+AppendixB, p68 hardship exception: case별로 미조제 시 serious hardship가 생길 사유가 있으면 그 사유를 기록한다. Recipient가 name/address를 적고 서명하거나 electronic prescription에서 electronic signature를 제공하는 대체기록 조건이 있다. 해당예외 사용은 지정된 AIR05 entry로 표시하며 required data를 무작정 비우는 경로가 아니다.
+AppendixB, pp68–69 delivery: pharmacy 또는 common carrier가 patient의 private residence/facility에 배송하는 경우 PMP customer-ID 수집·보고 예외를 설명한다. Internal delivery tracking을 사용하며 DSP17에는 실제 환자 delivery 날짜를 입력한다. 예외용 reporting fields를 적합하게 사용한다. 이 안내는 다른 배송법규·security·medication integrity의 면제가 아니다.
+AppendixB, pp69–70 DSP06/DSP13: original/refill number와 partial indicator는 다른 필드이다. Original quantity의 첫 partial과 둘째 partial이 새 refill 두 개가 되는 것은 아니다. 각각의 부분 교부와 원래 authorization의 관계를 보존한다.
+AppendixB, p70 PRE02/PRE09: primary DEA와 과거 XDEA 필드 안내가 별도로 남아 있다. 이것이 현행 federal X-waiver 필요성을 입증하지 않는다. 2022-12-29 법개정 및 최신 DEA guidance를 별도로 확인했다.
+AppendixB, pp72–73 naloxone: 2022-10-05 update는 naloxone daily PMP submission을 §19B annual reporting을 대신하는 preferred mechanism으로 설명한다. 목적은 aggregate collection이며 patient PMP profile에는 나오지 않는다. Naloxone 고객 ID 수집은 요구하지 않는다고 안내한다. DCP의 현재 공식 HTML 페이지에서도 별도로 교차확인했다.
+AppendixE, p80: reportable drugs를 dispensing하지 않는 약국의 annual waiver, 주7일 미만 운영약국의 days-of-operation waiver, 예상치 못한 extended submission 장애의 temporary waiver를 구별한다. Annual waiver 뒤 실제 reportable transaction이 생기면 그 transaction에는 waiver가 적용되지 않아 보고한다. 승인 여부와 범위를 임의로 추정하지 않는다.
+AppendixF, pp81–82: new/revise/void는 서로다른 기록행동이다. Fatal status로 PDMP에 들어가지 않은 record는 오류수정후 new record로 재제출한다. 이미 제출한 record의 revise에는 지정 matching keys가 유지되어야 한다. Matching-key field 자체를 수정하려면 원기록을 void하고 corrected new record를 제출하는 경로를 설명한다. Void는 원기록을 삭제시키는 행동이다.
+
+제한
+
+PMP guide의 software-operation 설명은 법률개정이나 개인 clinical authority의 대체자료가 아니다. 자료 확보·필드 확인과 statute/regulation의 holiday-clock 통합해석은 다르다. MGL §24A(c)의24시간과105CMR700.012(A)(5)의 next-business-day 표현을 하나의 무조건 기한으로 합쳐 확정하지 않았다. 이 메모는 SOURCE_CHECKED 저자 연구의 재현용 provenance이며 독립 법률감사 또는 법적 관계 해결을 스스로 증명하지 않는다.

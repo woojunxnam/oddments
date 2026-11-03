@@ -107,7 +107,7 @@ def test_new_review_credit_requires_current_authored_choices_and_date(source_fil
         validate_authored_record(stale_revision,authored,source)
 
 
-def test_author_provenance_uses_each_source_and_never_inherits_family_review():
+def test_author_provenance_uses_each_source_and_never_inherits_family_review(monkeypatch):
     outputs=build()
     rows={r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
     for source_file in ['05_personnel_ratios.json','06_personnel_training.json',
@@ -126,11 +126,22 @@ def test_author_provenance_uses_each_source_and_never_inherits_family_review():
         assert row['checked_at']=='2026-10-30'
         assert row['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
         assert row['reviewer_provenance']['independent'] is False
-    # Next unreviewed COUN03 family must still NOT inherit a review by proximity.
-    for index in range(425,429):
-        row=rows[f'MA-EXP-{index:04d}']
-        assert row['checked_at'] is None
-        assert row['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
+    # A missing individual review must remain missing even after its neighbors
+    # have real review records. Keep this regression meaningful as coverage grows.
+    import build_full_corpus_review as module
+    original_read = module.read
+    def missing_one(path):
+        value = original_read(path)
+        if path == 'reports/full-corpus-review/wave10-1-author-review.json':
+            value = copy.deepcopy(value)
+            value['records'] = [r for r in value['records'] if r['question_id'] != 'MA-EXP-0425']
+        return value
+    monkeypatch.setattr(module,'read',missing_one)
+    outputs = module.build()
+    changed = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
+    assert changed['MA-EXP-0425']['checked_at'] is None
+    assert changed['MA-EXP-0425']['legal_review_status'] == 'NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
+    assert changed['MA-EXP-0426']['checked_at'] is not None
 
 
 def test_revised_units_preserve_cross_surface_warning_without_review_certificate():
@@ -145,6 +156,7 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
         'w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8',
         'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
         'w3-b-1','w3-d-23','w1-a-7',
+        'w2-c-1','w2-c-12',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']

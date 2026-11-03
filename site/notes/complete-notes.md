@@ -1,6 +1,6 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.ce-disclosure.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.refill-cancer.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -1721,6 +1721,9 @@ Federal §1306.12(b)는 여러 개의 별도 CII prescriptions로 합계 최대 
 ## Emergency oral Schedule II
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
+
+
 ### Emergency라는 말의 범위
 
 Emergency oral CII는 정상 처방 형식을 갖추기 불편하다는 이유만으로 선택하는 경로가 아니다. Federal rule에서 정한 emergency 상황과 Massachusetts emergency/format 요건을 함께 적용한다. Massachusetts는 즉각적인 치료 필요와 전자처방이 불가능하거나 지연이 환자 상태에 해를 줄 수 있는 상황을 설명한다. 
@@ -1842,6 +1845,9 @@ Pharmacy가 prescribed quantity를 모두 공급할 수 없어 일부만 주는 
 ## Patient- 또는 prescriber-requested CII partial fill
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
+
+
 ### 요청 주체와 허용 조건
 
 Federal §1306.13(b)는 state law가 허용하고, prescription이 적법하며, 전체 partial quantities가 authorized total을 넘지 않는 조건에서 환자 또는 처방자 요청의 partial fill을 허용한다. Minor의 parent/legal guardian, 성인 환자의 medical power of attorney에 이름이 기재된 caregiver 등 조문이 정한 request 경로를 구별한다. 단순히 약을 찾으러 온 모든 사람이 모든 환자의 용량 변경 권한을 갖는 것은 아니다. 
@@ -1887,6 +1893,9 @@ DCP의 환자 요청 partial-fill guidance는 보험 적용 CII prescription의 
 
 
 ## 타 주 CII와 최초 5일 제한
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
 
 ### 모든 Massachusetts CII의 첫 partial이 5일은 아니다
@@ -1999,6 +2008,9 @@ Methylphenidate나 amphetamine 처방을 narcotic CII의 인접 주 제한과 �
 ## 부분조제·이관·재발행의 경계
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
+
+
 ### Unfilled EPCS transfer와 partial remainder
 
 처음 한 번도 조제하지 않은 CII EPCS의 일회성 electronic transfer는 federal §1306.08와 MA Policy 2023-10의 별도 경로이다. 이미 일부를 조제한 CII의 remainder를 다른 pharmacy에 옮기는 행위와 같지 않다. 
@@ -2041,20 +2053,34 @@ Original fill은 첫 조제이고 refill은 그 이후 허가된 추가 조제�
 
 Federal controlled prescription에 ‘PRN’ 또는 긴 기간의 refill 지시가 적혀 있어도 해당 schedule의 법정 제한을 넘어갈 수 없다. Massachusetts의 VI 처방에서 사용하는 1-year framework와 III–V의 6개월 제한을 섞지 않는다. 
 
-### 추가 oral refill authorization
+### 추가 oral refill authorization — Federal Schedule III–IV
 
-허용 범위 내에서 prescriber가 나중에 oral refill authorization을 주는 경로가 있다. Pharmacy는 그 내용을 기록하고, 기존 처방의 총 refill 상한·6개월 기한·원래 정한 per-refill quantity를 넘기지 않아야 한다. 그 한도를 넘어 계속 치료하려면 새로운 적법한 prescription이 필요하다. 
+[21 CFR 1306.22(e)](https://www.ecfr.gov/current/title-21/part-1306/section-1306.22)는 **Schedule III–IV**의 원처방에 prescriber가 나중에 oral refill authorization을 pharmacist에게 전달하는 경로를 정합니다. 이 경로에서도 총 refill은 최대 5회이고 원 issue date부터 6개월을 넘을 수 없습니다[(e)(1)]. **추가로 허용하는 각 refill의 수량은 원처방의 initial filling에 허용한 수량 이하**여야 합니다[(e)(3)]. 단순히 기존의 어떤 per-refill quantity와 같다고 표현하지 않고, 조문이 정한 비교 기준을 유지합니다.
+
+Pharmacist는 원 paper prescription의 뒷면 또는 electronic prescription record에 **authorization 날짜, refill quantity, 추가로 허용된 refill 횟수, authorization을 받은 pharmacist의 식별 기록**을 남깁니다[(e)(2)]. 5-refill·6개월 한도를 넘는 추가 수량에는 prescriber가 **new and separate prescription**을 발행해야 합니다[(e)(4)].
+
+### Massachusetts Schedule V — 주 규정의 상한을 따로 확인합니다
+
+MA Schedule V의 fill/refill 6개월·최대 5-refill 상한은 **247 CMR 9.04(13)**에 따릅니다. **M.G.L. c.94C §23(f)**도 원처방의 refill 허용과 specified refill 횟수를 요구합니다. 위 **연방 §1306.22(e)의 추가 oral authorization 절차와 initial-filling 수량 기준은 III–IV 조문의 내용**입니다. 같은 6개월·5회라는 결과만으로 이를 MA V에도 같은 법적 근거의 절차·수량 기준으로 적용하지 않습니다. MA V에서 추가 authorization의 허용 방식·조건을 판단할 때는 해당 주 근거를 별도로 확인합니다.
 
 Dose·drug·directions가 바뀌는 것은 ‘그대로인 refill authorization’과 다르다. 이를 수신하는 technician의 권한도 달라질 수 있다. [인력·업무범위 장](#chapter/personnel)의 unchanged-refill 권한과 [처방 적법성 장](#chapter/prescription-validity)의 prescription-change 규칙을 연결한다.
+
+근거: [21 CFR 1306.22(a),(e)(1)–(4)](https://www.ecfr.gov/current/title-21/part-1306/section-1306.22); [21 CFR 1306.25(b)(3)–(4)](https://www.ecfr.gov/current/title-21/part-1306/section-1306.25); [247 CMR 9.04(12)–(13)](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download); [M.G.L. c.94C §23(f)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23); [247 CMR 8.02(6)(c)](https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download); [Policy2018-01 §§II–IV](https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download). 확인일2026-11-03. CMR9 게시본은2024-12-06 Register, CMR8의8.02 해당 게시쪽은2025-04-25·시행2018-04-06(정정) 표기, Policy2018-01은2024-01-11 개정 표기입니다. 확인한 범위 밖의 기존 OPEN 적용관계를 해소한 것으로 표시하지 않습니다.
 
 
 근거:
 
 - [21 CFR 1306.14 및 1306.24, controlled-prescription labeling. W2 federal prescription framework와 연결.](https://www.ecfr.gov/current/title-21/chapter-II/part-1306)
 
+- [21 CFR 1306.25, III–V refill-transfer requirements와 last-refill 기준 보존.](https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFRe4ae2bfb4eae102/section-1306.25)
+
 - [247 CMR 9, Professional Practice Standards, 12/6/2024 게시본. 특히 9.01,9.02,9.04,9.10–9.25.](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
 
 - [M.G.L. c.94C §23, authorized refills와 supply restrictions.](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23)
+
+- [247 CMR 8.00, Pharmacy Interns and Technicians, §§8.01–8.08.](https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download)
+
+- [Board/DCP Policy 2018-01, Permitted Prescription Changes and Additions, §§II–IV.](https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download)
 
 
 ## III–V partial fills와 refill 기록
@@ -2295,6 +2321,9 @@ PMP 기록은 일반적인 공개 데이터가 아니다. 환자 본인의 기�
 ## PMP reporting 대상과 시점
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
+
+
 ### 무엇을 보고하는가
 
 현재 Massachusetts DCP의 pharmacy-reporting 안내는 federally controlled Schedule II–V와 gabapentin를 핵심 보고 대상으로 설명한다. Massachusetts 환자에게 해당 처방을 배송하는 out-of-state pharmacy도 포함된다. Inpatient hospital medication order의 적용과 outpatient prescription dispensing를 구별한다. 
@@ -2338,6 +2367,9 @@ Annual reporting waiver를 받은 pharmacy라도 실제로 reportable drug를 di
 
 
 ## Customer identifier와 ID exceptions
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
 
 ### 대상과 사람
@@ -2389,19 +2421,30 @@ Minor의 opioid prescription은 언제든 7-day supply 기본 제한과, prescri
 
 ### 예외와 문서화
 
-Acute/chronic pain, active cancer, palliative care 등 조문의 해당 상황에서 prescriber가 적절한 clinical judgment로 더 긴 공급이 필요하다고 판단하면, medical record에 이유와 non-opioid alternative가 부적절한 사유 등을 남기는 예외가 있다. 단순히 ‘chronic pain’이라는 단어가 보이면 나머지 요건이 모두 면제된다고 보지 않는다. 
+[M.G.L. c.94C §19D(b)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D)는 prescriber의 **professional medical judgment**로 성인 또는 minor에게 7일을 넘는 공급이 필요한 경우를 정합니다. 해당 상황은 **acute medical condition의 치료, chronic pain management, 암 진단과 관련된 통증(pain associated with a cancer diagnosis), palliative care**입니다. 그 치료에 필요한 수량을 처방할 수 있다는 예외이며, 암 관련 범주를 단순히 ‘active cancer’라는 진단명으로 축약하지 않습니다.
+
+Prescriber는 **7일 초과 처방을 필요로 한 condition을 환자 medical record에 document**하고, **non-opiate alternative가 그 medical condition에 적절하지 않았음을 indicate**해야 합니다. ‘Chronic pain’이나 ‘cancer’라는 단어만으로 professional judgment·문서화 등 나머지 요건이 모두 충족되었다고 보지 않습니다. 
 
 OUD 치료용 medications에는 이 §19D의 opioid supply 제한 예외가 있다. Pain 치료와 OUD 치료를 같은 코드로 생각하지 않는다. 이 조항과 CII/CIII single-fill 30/90일 상한은 서로 다른 단계에서 검토한다. 
 
 Pharmacist가 모든 성인 opioid 처방에 대해 일생 최초 사용 여부를 별도로 조사해야 한다는 새로운 universal duty를 이 조문만으로 만들어내지 않는다. Prescriber의 법정 의무, pharmacist의 corresponding responsibility, 사실관계상 확인이 필요한 임상적 우려를 구별한다.
+
+근거: [M.G.L. c.94C §19D(a)–(c)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D); [M.G.L. c.94C §23(d)](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23); [247 CMR 9.15(2)](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download). 확인일2026-11-03. 게시 법문을 확인했으며 이 검토에서 개별 statutory amendment의 시행일 이력 전체를 확정하지는 않았습니다.
 
 
 근거:
 
 - [M.G.L. c.94C §19D, opioid prescription supply limits와 예외.](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D)
 
+- [M.G.L. c.94C §23, authorized refills와 supply restrictions.](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23)
+
+- [247 CMR 9, Professional Practice Standards, 12/6/2024 게시본. 특히 9.01,9.02,9.04,9.10–9.25.](https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download)
+
 
 ## Voluntary non-opiate directive
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
 
 환자는 voluntary non-opiate directive를 통해 자신에게 opiate를 처방·투여하지 않도록 의사를 기록할 수 있다. Patient 또는 적격한 proxy/guardian의 철회 경로와 기록을 확인한다. 이는 단순히 chart에 적은 ‘allergy’와 다른 법적 제도이다. 
@@ -2417,6 +2460,9 @@ Good-faith compliance와 emergency·정보 접근 한계 등의 법적 보호를
 
 
 ## OUD: methadone와 buprenorphine
+
+
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
 
 ### Methadone maintenance/detoxification
@@ -4954,6 +5000,9 @@ Policy가 정한 insignificant losses나 unconfirmed losses의 처리를 확인�
 ## DCP의 24시간 보고와 기관별 병렬 의무
 
 
+> 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave7-census.json)
+
+
 ### 105 CMR 700.008
 
 해당 DCP registrant에게 적용되는 §700.008은 controlled substances의 theft, loss 또는 suspected tampering 발견 후 24시간 이내 DCP에 정해진 양식으로 보고하는 규칙이다. Suspected tampering는 확인된 theft와 다른 trigger일 수 있다. 
@@ -7265,6 +7314,9 @@ Massachusetts 247 CMR 9.01(11)의 pharmacy referral 관련 remuneration 금지�
 
 
 ## 시간표를 읽는 방법
+
+
+> 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
 
 Issue date에서 시작: 일반 MA CII validity 30일, out-of-state initial-fill 5일, 일반 requested partial remainder 30일, emergency-oral requested partial 72시간, federal LTCF/terminal partial 60일. 각각의 적용 조건을 본문과 함께 유지한다. 

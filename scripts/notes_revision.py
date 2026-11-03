@@ -14,8 +14,9 @@ REVISION_F = 'revisions/notes/2026-10-30-cdtm0512.json'
 REVISION_G = 'revisions/notes/2026-10-30-cdtm13-vax04.json'
 REVISION_H = 'revisions/notes/2026-11-03-counsel-shield-final.json'
 REVISION_I = 'revisions/notes/2026-11-03-ce-disclosure-final.json'
-PATHS = [REVISION, REVISION_B, REVISION_C, REVISION_D, REVISION_E, REVISION_F, REVISION_G, REVISION_H, REVISION_I]
-IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1', '2026-10-30.mor-presence.1', '2026-10-30.mor-discipline.1', '2026-10-30.discipline-cdtm.1', '2026-10-30.cdtm05-12.1', '2026-10-30.cdtm13-vax04.1', '2026-11-03.counsel-shield-final.1', '2026-11-03.ce-disclosure.1']
+REVISION_J = 'revisions/notes/2026-11-03-refill-cancer-final.json'
+PATHS = [REVISION, REVISION_B, REVISION_C, REVISION_D, REVISION_E, REVISION_F, REVISION_G, REVISION_H, REVISION_I, REVISION_J]
+IDS = ['2026-10-29.personnel-ratios.1', '2026-10-29.personnel-supervision-training.1', '2026-10-30.mor-presence.1', '2026-10-30.mor-discipline.1', '2026-10-30.discipline-cdtm.1', '2026-10-30.cdtm05-12.1', '2026-10-30.cdtm13-vax04.1', '2026-11-03.counsel-shield-final.1', '2026-11-03.ce-disclosure.1', '2026-11-03.refill-cancer.1']
 
 
 def digest(raw):
@@ -39,6 +40,8 @@ def validate_final_note_review(root, revision_raw, revision, revision_path=REVIS
                      {('study_lessons','LAW-041'), ('refresh_cards','RF-034')}),
         REVISION_I: ('ce-disclosure', 'ce-disclosure-final-independent-review.json',
                      'ce-disclosure-final-census.json', {'w1-a-7'}, {('study_lessons','LAW-008')}),
+        REVISION_J: ('refill-cancer', 'refill-cancer-final-independent-review.json',
+                     'refill-cancer-final-census.json', {'w2-c-1','w2-c-12'}, set()),
     }
     active_revision_path = revision_path
     name, review_name, census_name, expected_units, expected = scopes[revision_path]
@@ -95,6 +98,10 @@ def validate_final_note_review(root, revision_raw, revision, revision_path=REVIS
                     not authority['exact_section'] or not authority['law_checked_date']):
                 raise ValueError('Final note authority incomplete')
     patches = {(p['collection'], p['id']): p for p in review['derived_patches']}
+    requested = {(collection, identifier) for collection in ('study_lessons','refresh_cards')
+                 for identifier in revision[collection]}
+    if requested != expected:
+        raise ValueError('Final note requested card scope changed')
     if set(patches) != expected or len(patches) != len(review['derived_patches']):
         raise ValueError('Final note card review scope changed')
     for collection, identifier in expected:
@@ -120,7 +127,7 @@ def revisions(root=ROOT):
         if i and (value['previous_revision']['path'] != PATHS[i-1] or
                   value['previous_revision']['sha256'] != digest((root/PATHS[i-1]).read_bytes())):
             raise ValueError('Stale parent revision hash')
-        if path in {REVISION_H, REVISION_I}:
+        if path in {REVISION_H, REVISION_I, REVISION_J}:
             validate_final_note_review(root, raw, value, path)
         result.append((path,raw,value))
     return result
@@ -135,7 +142,7 @@ def load_notes(root=ROOT, revision_id=None):
         new_sources = revision.get('sources', {})
         expected_sources = [set(), set(), set(), set(), {
             'src-cdtm-c112s24bhalf-20261030', 'src-cdtm-naloxone-order-20261030',
-        }, set(), set(), {'src-shield-act-20251103'}, set()][i]
+        }, set(), set(), {'src-shield-act-20251103'}, set(), set()][i]
         if set(new_sources) != expected_sources or set(new_sources).intersection(data['sources']):
             raise ValueError('Unexpected revision source scope or overwritten source')
         for sid, source in new_sources.items():
@@ -147,7 +154,7 @@ def load_notes(root=ROOT, revision_id=None):
                   ['w1-c-14','w1-c-15','w4-d-17','w3-d-2','w3-d-3','authority-paths','w6-b-17'],
                   ['w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8'],
                   ['w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4'],
-                  ['w3-b-1','w3-d-23'], ['w1-a-7']][i]
+                  ['w3-b-1','w3-d-23'], ['w1-a-7'], ['w2-c-1','w2-c-12']][i]
         if [u['id'] for u in revision['units']] != expected:
             raise ValueError('Unexpected notes revision unit scope')
         for change in revision['units']:
@@ -162,9 +169,9 @@ def load_notes(root=ROOT, revision_id=None):
                 unit['source_ids']=copy.deepcopy(change['source_ids'])
             unit['body_sha256']=digest(unit['body'].encode())
             unit['content_version']=revision['id']
-            if path in {REVISION_H, REVISION_I}:
+            if path in {REVISION_H, REVISION_I, REVISION_J}:
                 unit['independent_content_review'] = validate_final_note_review(root, revision_raw, revision, path)
-        expected_chapters=[{'personnel'},{'personnel'},set(),{'pharmacy-mor','discipline-inspection'}, {'discipline-inspection','cdtm'}, {'cdtm'}, {'cdtm','vaccination-administration'}, set(), set()][i]
+        expected_chapters=[{'personnel'},{'personnel'},set(),{'pharmacy-mor','discipline-inspection'}, {'discipline-inspection','cdtm'}, {'cdtm'}, {'cdtm','vaccination-administration'}, set(), set(), set()][i]
         if set(revision['chapter_highlights']) != expected_chapters:
             raise ValueError('Unexpected revision chapter scope')
         for chapter in data['chapters']:
@@ -187,8 +194,8 @@ def apply_study_revision(data, kind, root=ROOT):
     lookup={x['id']:x for x in data[field]}
     for _,_,revision in revisions(root):
         patches=revision[{'study':'study_lessons','refresh':'refresh_cards'}[kind]]
-        expected_scopes={'study':[{'LAW-012'},{'LAW-012'},set(),{'LAW-015'}, {'LAW-016','LAW-045','LAW-048'}, set(), set(), {'LAW-041'}, {'LAW-008'}],
-                         'refresh':[{'RF-049'},{'RF-049'},set(),set(), {'RF-011'}, set(), set(), {'RF-034'}, set()]}
+        expected_scopes={'study':[{'LAW-012'},{'LAW-012'},set(),{'LAW-015'}, {'LAW-016','LAW-045','LAW-048'}, set(), set(), {'LAW-041'}, {'LAW-008'}, set()],
+                         'refresh':[{'RF-049'},{'RF-049'},set(),set(), {'RF-011'}, set(), set(), {'RF-034'}, set(), set()]}
         if set(patches) != expected_scopes[kind][IDS.index(revision['id'])]:
             raise ValueError('Unexpected derived revision scope')
         for identifier,patch in patches.items():

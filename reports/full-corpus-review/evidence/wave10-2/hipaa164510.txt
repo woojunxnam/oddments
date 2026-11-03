@@ -1,0 +1,1064 @@
+ 
+ 
+ 
+ 
+ eCFR :: 45 CFR 164.510 -- Uses and disclosures requiring an opportunity for the individual to agree or to object.
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ {
+ "imports": {
+ "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+ "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+ "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+ "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+ "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+ "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+ "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+ "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+ "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+ "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+ "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+ "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+ "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+ "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+ "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+ "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+ "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+ "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+ "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+ "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+ "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+ "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+ "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+ "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+ "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+ "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+ "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+ "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+ "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+ "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+ "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+ "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+ "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+ "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+ "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+ "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+ "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+ }
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import "application" 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+
+ 
+ 
+
+ 
+ Site Feedback 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser
+ 
+ × 
+ 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser. This web site is designed for the current versions of
+ Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ × 
+ 
+ Site Feedback 
+ 
+ 
+ 
+ The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+ 
+ 
+ 
+ 
+ 
+ If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+ 
+ 
+ 
+ 
+ Website Feedback
+ 
+ 
+ 
+ 
+ If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+ 
+ 
+ 
+ 
+ Content Feedback
+ 
+ 
+ 
+ If you have questions for the Agency that issued the current document please contact the agency directly. 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ × 
+ 
+ Website Feedback 
+ 
+
+ 
+ 
+ * Your Name 
+ * Email 
+ Attachment 
+ * How can we help you? 
+ 
+ * I am requesting technical help or providing website feedback 
+ 
+ This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+ contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+ information or personal data.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ☰
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Home
+ 
+
+ 
+ 
+ 
+ Browse
+ 
+ 
+
+ 
+ 
+ 
+ Titles
+ 
+ 
+ 
+ Agencies
+ 
+ 
+ 
+
+ 
+ 
+ 
+ CFR Updates
+ 
+ 
+
+ 
+ 
+ 
+ Recent Changes
+ 
+
+ 
+ 
+ Issue Summaries
+ 
+
+ 
+ 
+ Corrections
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Finding Aids
+ 
+ 
+
+ 
+ 
+ 
+ Parallel Table of Authorities
+ 
+
+ 
+ 
+ Subject Index
+ 
+
+ 
+ 
+ Agency-prepared Indexes
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ Reader Aids
+ 
+ 
+
+ 
+ 
+ Reader Aids Home 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ My eCFR
+ 
+ 
+
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign Out 
+ 
+ 
+
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ eCFR 
+ The Electronic Code of Federal Regulations 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Enhanced Content :: FR Reference Enhanced content is provided to the user to provide additional context. 
+ 
+ Enhanced Content :: FR Reference 
+ 
+ 
+
+ 
+ 
+ 
+ Title 45
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ 
+ This content is from the eCFR and is authoritative but unofficial. 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ Displaying title 45, up to date as of 10/30/2026. Title 45 was last amended 10/29/2026. 
+ 
+
+ 
+ view historical versions 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ A drafting site is available for use when drafting amendatory language
+ 
+
+ 
+ switch to drafting site 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+ modal#escClose"
+ data-suggestions-target="modal">
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Navigate by entering citations or phrases 
+ (eg:
+ suggestions#fillExample"
+ class="example badge badge-info">1 CFR 1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">49 CFR 172.101 
+ suggestions#fillExample"
+ class="example badge badge-info">Organization and Purpose 
+ suggestions#fillExample"
+ class="example badge badge-info">1/1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">Regulation Y 
+ suggestions#fillExample"
+ class="example badge badge-info">FAR ).
+ 
+ 
+ Choosing an item from
+ citations and headings 
+ will bring you directly to the content. Choosing an item from
+ full text search results 
+ will bring you to those results. Pressing enter in the search box
+ will also bring you to search results.
+ 
+ 
+ Background and more details are available in the
+ 
+ Search & Navigation 
+ 
+ guide.
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ suggestions#goDefault">
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ suggestions#modal"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion_reference">
+ suggestions#go">
+
+ suggestions#go">
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ placeholder#suggestions"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion">
+ placeholder#suggestions">
+
+ placeholder#suggestions"
+ aria-label="Search">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Title 45 —Public Welfare 
+ 
+ 
+ Subtitle A —Department of Health and Human Services 
+ 
+ 
+ Subchapter C —Administrative Data Standards and Related Requirements 
+ 
+ 
+ Part 164 —Security and Privacy 
+ 
+ 
+ Subpart E —Privacy of Individually Identifiable Health Information 
+ 
+ 
+ § 164.510
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Previous 
+ 
+
+ 
+ Next 
+ 
+
+ 
+ Top 
+ 
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ Table of Contents Enhanced Content - Table of Contents 
+ The in-page Table of Contents is available only when multiple sections are being viewed.
+ 
+ 
+ Use the navigation links in the gray bar above to view the table of contents that this content belongs to.
+ 
+ Enhanced Content - Table of Contents 
+
+ 
+ Details Enhanced Content - Details 
+ URL 
+ 
+ https://www.ecfr.gov/current/title-45/part-164/section-164.510
+ 
+ 
+
+ Citation 
+ 
+ 45 CFR 164.510
+ 
+ 
+
+
+
+ 
+ Agency
+ 
+ 
+ Department of Health and Human Services 
+ 
+
+ 
+
+ 
+ 
+ 
+ Part 164 
+ 
+ 
+ Authority: 
+ 
+ 42 U.S.C. 1302(a) ; 42 U.S.C. 1320d-1320d-9 ; sec. 264, Pub. L. 104-191 , 110 Stat. 2033-2034 ( 42 U.S.C. 1320d-2(note) ); and secs. 13400-13424, Pub. L. 111-5 , 123 Stat. 258-279.
+
+
+ 
+ 
+ 
+ Source: 
+ 
+ 65 FR 82802 , Dec. 28, 2000, unless otherwise noted.
+
+
+ 
+ 
+ 
+ 
+ 
+ Subpart E of Part 164 
+ 
+ 
+ Authority: 
+ 
+ 42 U.S.C. 1320d-2 , 1320d-4 , and 1320d-9 ; sec. 264 of Pub. L. 104-191 , 110 Stat. 2033-2034 ( 42 U.S.C. 1320d-2 (note) ); and secs. 13400-13424, Pub. L. 111-5 , 123 Stat. 258-279.
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Enhanced Content - Details 
+
+ 
+ Print/PDF Enhanced Content - Print 
+ Generate PDF 
+
+ 
+ 
+ 
+ 
+ 
+ This content is from the eCFR and may include recent changes applied to the CFR.
+ The official, published CFR, is updated annually and available below under
+ "Published Edition". You can learn more about the process
+ here .
+ 
+ Enhanced Content - Print 
+
+ 
+ Display Options Enhanced Content - Display Options 
+ 
+ 
+ 
+ 
+ Enhanced Content - Display Options 
+
+ 
+ Subscribe Enhanced Content - Subscribe Subscribe to: 45 CFR 164.510 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Via Email: 
+ 
+ 
+
+ -->
+ Via RSS: -->
+
+ -->
+ 
+ Enhanced Content - Subscribe 
+
+ 
+
+ 
+ Timeline Enhanced Content - Timeline 
+ 
+ 
+ No changes found for this content after 1/03/2017.
+ 
+ 
+ Enhanced Content - Timeline 
+
+ 
+ Go to Date Enhanced Content - Go to Date 
+
+ Date 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Enhanced Content - Go to Date 
+
+ 
+
+ Compare Dates Enhanced Content - Compare Dates 
+
+ Compare 
+ 
+ 
+ 
+ 
+ 
+
+ to 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ Show changes as: red/green purple/orange 
+
+ Show strike-through for removed content yes no 
+ 
+ Enhanced Content - Compare Dates 
+
+ 
+
+ 
+ Published Edition Enhanced Content - Published Edition 
+ View the most recent official publication:
+ 
+
+ 
+ 
+ View Title 45 on govinfo.gov 
+ 
+ 
+ View the PDF for 45 CFR 164.510 
+ 
+ 
+
+ 
+ These links go to the official, published CFR, which is updated annually. As a
+ result, it may not include the most recent changes applied to the CFR.
+ Learn more .
+ 
+ Enhanced Content - Published Edition 
+
+ 
+
+ 
+ Developer Tools Enhanced Content - Developer Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Information and documentation can be found in our
+ developer resources .
+ 
+ Enhanced Content - Developer Tools 
+ 
+
+ 
+
+ 
+ eCFR Content The Code of Federal Regulations (CFR) is the official legal print publication containing the codification of the general and permanent rules published in the Federal Register by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR. Learn more about the eCFR, its status, and the editorial process. 
+
+ 
+ § 164.510 Uses and disclosures requiring an opportunity for the individual to agree or to object. 
+ A covered entity may use or disclose protected health information, provided that the individual is informed in advance of the use or disclosure and has the opportunity to agree to or prohibit or restrict the use or disclosure, in accordance with the applicable requirements of this section. The covered entity may orally inform the individual of and obtain the individual's oral agreement or objection to a use or disclosure permitted by this section. 
+ 
+ ( a ) Standard: Use and disclosure for facility directories — 
+ 
+ ( 1 ) Permitted uses and disclosure. Except when an objection is expressed in accordance with paragraphs (a)(2) or (3) of this section, a covered health care provider may: 
+ 
+ ( i ) Use the following protected health information to maintain a directory of individuals in its facility: 
+ 
+ ( A ) The individual's name; 
+ 
+ 
+ ( B ) The individual's location in the covered health care provider's facility; 
+ 
+ 
+ ( C ) The individual's condition described in general terms that does not communicate specific medical information about the individual; and 
+ 
+ 
+ ( D ) The individual's religious affiliation; and 
+ 
+ 
+ 
+ ( ii ) Use or disclose for directory purposes such information: 
+ 
+ ( A ) To members of the clergy; or 
+ 
+ 
+ ( B ) Except for religious affiliation, to other persons who ask for the individual by name. 
+ 
+ 
+ 
+ 
+ ( 2 ) Opportunity to object. A covered health care provider must inform an individual of the protected health information that it may include in a directory and the persons to whom it may disclose such information (including disclosures to clergy of information regarding religious affiliation) and provide the individual with the opportunity to restrict or prohibit some or all of the uses or disclosures permitted by paragraph (a)(1) of this section. 
+ 
+ 
+ ( 3 ) Emergency circumstances. 
+ 
+ ( i ) If the opportunity to object to uses or disclosures required by paragraph (a)(2) of this section cannot practicably be provided because of the individual's incapacity or an emergency treatment circumstance, a covered health care provider may use or disclose some or all of the protected health information permitted by paragraph (a)(1) of this section for the facility's directory, if such disclosure is: 
+ 
+ ( A ) Consistent with a prior expressed preference of the individual, if any, that is known to the covered health care provider; and 
+ 
+ 
+ ( B ) In the individual's best interest as determined by the covered health care provider, in the exercise of professional judgment. 
+ 
+ 
+ 
+ ( ii ) The covered health care provider must inform the individual and provide an opportunity to object to uses or disclosures for directory purposes as required by paragraph (a)(2) of this section when it becomes practicable to do so. 
+ 
+ 
+ 
+ 
+ ( b ) Standard: Uses and disclosures for involvement in the individual's care and notification purposes — 
+ 
+ ( 1 ) Permitted uses and disclosures. 
+ 
+ ( i ) A covered entity may, in accordance with paragraphs (b)(2) , (b)(3) , or (b)(5) of this section, disclose to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual, the protected health information directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care. 
+ 
+ 
+ ( ii ) A covered entity may use or disclose protected health information to notify, or assist in the notification of (including identifying or locating), a family member, a personal representative of the individual, or another person responsible for the care of the individual of the individual's location, general condition, or death. Any such use or disclosure of protected health information for such notification purposes must be in accordance with paragraphs (b)(2) , (b)(3) , (b)(4) , or (b)(5) of this section, as applicable. 
+ 
+ 
+ 
+ ( 2 ) Uses and disclosures with the individual present. If the individual is present for, or otherwise available prior to, a use or disclosure permitted by paragraph (b)(1) of this section and has the capacity to make health care decisions, the covered entity may use or disclose the protected health information if it: 
+ 
+ ( i ) Obtains the individual's agreement; 
+ 
+ 
+ ( ii ) Provides the individual with the opportunity to object to the disclosure, and the individual does not express an objection; or 
+ 
+ 
+ ( iii ) Reasonably infers from the circumstances, based on the exercise of professional judgment, that the individual does not object to the disclosure. 
+ 
+ 
+ 
+ ( 3 ) Limited uses and disclosures when the individual is not present. If the individual is not present, or the opportunity to agree or object to the use or disclosure cannot practicably be provided because of the individual's incapacity or an emergency circumstance, the covered entity may, in the exercise of professional judgment, determine whether the disclosure is in the best interests of the individual and, if so, disclose only the protected health information that is directly relevant to the person's involvement with the individual's care or payment related to the individual's health care or needed for notification purposes. A covered entity may use professional judgment and its experience with common practice to make reasonable inferences of the individual's best interest in allowing a person to act on behalf of the individual to pick up filled prescriptions, medical supplies, X-rays, or other similar forms of protected health information. 
+ 
+ 
+ ( 4 ) Uses and disclosures for disaster relief purposes. A covered entity may use or disclose protected health information to a public or private entity authorized by law or by its charter to assist in disaster relief efforts, for the purpose of coordinating with such entities the uses or disclosures permitted by paragraph (b)(1)(ii) of this section. The requirements in paragraphs (b)(2) , (b)(3) , or (b)(5) of this section apply to such uses and disclosures to the extent that the covered entity, in the exercise of professional judgment, determines that the requirements do not interfere with the ability to respond to the emergency circumstances. 
+ 
+ ( 5 ) Uses and disclosures when the individual is deceased. If the individual is deceased, a covered entity may disclose to a family member, or other persons identified in paragraph (b)(1) of this section who were involved in the individual's care or payment for health care prior to the individual's death, protected health information of the individual that is relevant to such person's involvement, unless doing so is inconsistent with any prior expressed preference of the individual that is known to the covered entity. 
+ 
+ [ 65 FR 82802 , Dec. 28, 2000, as amended at 67 FR 53270 , Aug. 14, 2002; 78 FR 5699 , Jan. 25, 2013]
+ 
+ 
+ {"origins":[{"level":"part","identifier":"164","label_level":"Part 164","hierarchy":{"title":"45","subtitle":"A","subchapter":"C","part":"164"},"current":false,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/42/1302\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1302(a)\u003c/a\u003e; \u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-1320d-9\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1320d-1320d-9\u003c/a\u003e; sec. 264, \u003ca href=\"https://www.govinfo.gov/link/plaw/104/public/191\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 104-191\u003c/a\u003e, 110 Stat. 2033-2034 (\u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-2\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1320d-2(note)\u003c/a\u003e); and secs. 13400-13424, \u003ca href=\"https://www.govinfo.gov/link/plaw/111/public/5\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 111-5\u003c/a\u003e, 123 Stat. 258-279.\n"],"source":["\u003ca href=\"https://www.federalregister.gov/citation/65-FR-82802\" class=\"fr-reference\" data-reference=\"65 FR 82802\"\u003e65 FR 82802\u003c/a\u003e, Dec. 28, 2000, unless otherwise noted.\n"],"link":"/current/title-45/part-164","title":"Part 164"},{"level":"subpart","identifier":"E","label_level":"Subpart E","hierarchy":{"title":"45","subtitle":"A","subchapter":"C","part":"164","subpart":"E"},"current":false,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-2\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1320d-2\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-4\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e1320d-4\u003c/a\u003e, and \u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-9\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e1320d-9\u003c/a\u003e; sec. 264 of \u003ca href=\"https://www.govinfo.gov/link/plaw/104/public/191\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 104-191\u003c/a\u003e, 110 Stat. 2033-2034 (\u003ca href=\"https://www.govinfo.gov/link/uscode/42/1320d-2\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1320d-2 (note)\u003c/a\u003e); and secs. 13400-13424, \u003ca href=\"https://www.govinfo.gov/link/plaw/111/public/5\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 111-5\u003c/a\u003e, 123 Stat. 258-279.\n"],"source":[],"link":"/current/title-45/part-164/subpart-E","title":"Subpart E of Part 164"}]} 
+
+ eCFR Content 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Pages 
+ 
+ Home 
+ Titles 
+ Search 
+ Recent Changes 
+ Corrections 
+ 
+ 
+
+ 
+ Reader Aids 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+ 
+ Information 
+ 
+ About This Site 
+ Legal Status 
+ Privacy 
+ Accessibility 
+ FOIA 
+ No Fear Act 
+ Continuity Information 
+ 
+ 
+
+ 
+ My eCFR 
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 

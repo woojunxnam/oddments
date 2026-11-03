@@ -78,6 +78,7 @@ def archive_review_notices(old_by_id, input_hashes):
         require(notice['reason'].strip() and notice['issue_type'] in {
             'INCORRECT_KEY', 'AMBIGUOUS_KEY', 'RATIONALE_DEFECT', 'SOURCE_RELATIONSHIP_OPEN',
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
+            'EDITORIAL_CONTEXT_REVIEW',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
         require(not review_relative.is_absolute() and '..' not in review_relative.parts
@@ -101,6 +102,10 @@ def archive_review_notices(old_by_id, input_hashes):
                         reviews[qid]['original_answer_status'].startswith('CORRECT') and
                         reviews[qid]['disposition'] in {'MINOR_EDIT', 'MAJOR_REWRITE'},
                         'Editorial SATA notice lacks a matching supported-key review: ' + qid)
+            if notice['issue_type'] == 'EDITORIAL_CONTEXT_REVIEW':
+                require(reviews[qid]['original_answer_status'].startswith('CORRECT') and
+                        reviews[qid]['disposition'] in {'MINOR_EDIT','MAJOR_REWRITE'},
+                        'Editorial context notice lacks a matching supported-key review: ' + qid)
         seen.update(ids)
     return notices
 
