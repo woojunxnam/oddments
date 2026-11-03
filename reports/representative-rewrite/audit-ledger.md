@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 15 |
-| NOT_YET_IMPLEMENTED | 263 |
+| HOLD_FROM_DEFAULT | 38 |
+| NOT_YET_IMPLEMENTED | 240 |
 
-기본 목록 433개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+기본 목록 410개에는 기존 고품질 96개가 유지됩니다. 별도 작성한 재작성 사례는 74개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 49개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 214개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -140,16 +140,16 @@
 | MA-EXP-0375 | PUB02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | encouraged와CDTMattestation의차이는보존가능하나B는referral일반론,C는genericnote라는약한오답이다. |
 | MA-EXP-0379 | PUB03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Opill과EC,ulipristal과levonorgestrel은제품구분에의미가있다. mifepristone을EC대체라하는유일오답은너무멀며B의보험도별도내용이다. |
 | MA-EXP-0383 | PUB04 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 대리인의standingorder요청은본인assessment조건을바꾸는실제상황이다. 교육필수착각을별도case로넣고모두정답으로만들었다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
-| MA-EXP-0387 | PUB05 | MAJOR_REWRITE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | minor EC와 naloxone의보고기한복사는독립된사건이다. 유일정답C는다른모든minor의료행위로확장하지말라는지문밖일반론이다. |
-| MA-EXP-0391 | PUB06 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 보험benefit와처방권한의차이는중요하지만보험plan조건을주지않아A는추상정답이다. OTC보험청구와처방scope를하나의구매사건에연결할수있다. |
-| MA-EXP-0395 | PUB07 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | naloxone제3자구매와naltrexone대체제안은서로다른결정이고A의buprenorphine혼합제는또다른약물이다. |
+| MA-EXP-0387 | PUB05 | MAJOR_REWRITE / P1 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | minor EC와 naloxone의보고기한복사는독립된사건이다. 유일정답C는다른모든minor의료행위로확장하지말라는지문밖일반론이다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
+| MA-EXP-0391 | PUB06 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 보험benefit와처방권한의차이는중요하지만보험plan조건을주지않아A는추상정답이다. OTC보험청구와처방scope를하나의구매사건에연결할수있다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
+| MA-EXP-0395 | PUB07 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | naloxone제3자구매와naltrexone대체제안은서로다른결정이고A의buprenorphine혼합제는또다른약물이다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
 | MA-EXP-0399 | PUB08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 이전거절이이번offer를없애는지의미있는사례다. 보험수량제한을별도case로넣고모든보기가옳아행동대안이없다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
-| MA-EXP-0403 | PUB09 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | daily제출을안한약국의annualroute와dose단위는실무적이다. A의patientvisibleprofile은다른명제이고실제dose수를계산할자료가없다. |
-| MA-EXP-0407 | PUB10 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 전화만가능한pharmacist라는조건은현장존재판단을바꾼다. unsecurednetwork·volunteer접근·confidentiality면제까지과장된여러결함을겹친다. |
-| MA-EXP-0411 | PUB11 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | originalpatient처방으로여러partner를공급하려는것은실제구별이다. C의EPT와독립STI처방동일시는쉽고A/D는경로정의를반복한다. |
+| MA-EXP-0403 | PUB09 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | daily제출을안한약국의annualroute와dose단위는실무적이다. A의patientvisibleprofile은다른명제이고실제dose수를계산할자료가없다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
+| MA-EXP-0407 | PUB10 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 전화만가능한pharmacist라는조건은현장존재판단을바꾼다. unsecurednetwork·volunteer접근·confidentiality면제까지과장된여러결함을겹친다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
+| MA-EXP-0411 | PUB11 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | originalpatient처방으로여러partner를공급하려는것은실제구별이다. C의EPT와독립STI처방동일시는쉽고A/D는경로정의를반복한다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
 | MA-EXP-0415 | PUB12 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | unnamedEPT예외와unavailablepharmacyreferral은실질적이지만모두정답이다. A의신원정보날조금지는정답문구단서가된다. 현재 보류 이유: 네 선택지가 모두 정답인 SATA로, 오개념을 구별하는 선택지가 없습니다. 기본 연습에서 제외하고 원문·기존 정답·풀이 및 북마크 기록은 보존합니다. 새 사례와 오답을 작성한 뒤 독립 법규·현실성 검토가 필요합니다. |
-| MA-EXP-0419 | COUN01 | REPLACE / P1 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | cashieroffer·supervisedintern상담·technician임상판단은PER12와같은역할구별을다시묻는다. 유일정답C는offer/response기록구분으로사례의업무배치를해결하지않는다. |
-| MA-EXP-0423 | COUN02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 서두르는환자를거절로간주하는실수는현실적이다. A의서명screen은사례밖이며B의refusal을completed로기록하라는오답은너무명백하다. |
+| MA-EXP-0419 | COUN01 | REPLACE / P1 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | cashieroffer·supervisedintern상담·technician임상판단은PER12와같은역할구별을다시묻는다. 유일정답C는offer/response기록구분으로사례의업무배치를해결하지않는다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
+| MA-EXP-0423 | COUN02 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 서두르는환자를거절로간주하는실수는현실적이다. A의서명screen은사례밖이며B의refusal을completed로기록하라는오답은너무명백하다. 현재 보류 이유: 독립 검토에서 같은 두 사례와 명제 선택지의 반복, 노트 의존 단서로 현실성 FAIL 판정되었습니다. 기본 추천에서 보류하고 독립적인 새 사례로 개정해야 합니다. 기존 정답의 법적 지지는 RELEASED 인증이 아닙니다. |
 | MA-EXP-0427 | COUN03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 작은글자와inhaler기술·언어청각장벽은좋은환자조건이나서로다른두환자를묶었다. C의identicalcontent는극단적오답이다. |
 | MA-EXP-0431 | COUN04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | measuringdevice제공과prescriber의도변경은관계가약한두사례이고모두정답이다. A/B/D는측정과사용설명의유사명제를반복한다. |
 | MA-EXP-0435 | COUN05 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | stockroom을통과해야하는상담공간은구체적이다. A의모든hospital면제와B의상담전면불가는쉬운부가오답이다. |
@@ -300,24 +300,24 @@
 | MA-EXP-1015 | EM02 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | m³를L와같게취급하는것은단위상명백하며pass-throughcleanerclass는별도의조건이다. D의종류별threshold일반론이정답이다. |
 | MA-EXP-1019 | EM03 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 미생물report수령과최종동정의차이는중요하며중간정상결과가repeat를지우는지실제경계다. A/C는보고주체와investigation일반론이다. |
 | MA-EXP-1023 | EM04 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | nonviable와viableremediation은다른운영결정이다. alltrue이고specificconditions라고미리충족을가정해실제riskassessment를판정하지않는다. |
-| MA-CASE-0009 | PLUS-SC01 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 6+8=14 후6시간추가라는단일계산은명확하고보기4시간은10시간전부인정오류를겨냥한다. 그러나모든오답해설이정답계산을그대로복사해각오류를설명하지않는다. |
-| MA-CASE-0018 | PLUS-SC02 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 16total/1live에서추가4시간은명확하지만1 are live문법과오답전체가필요량보다많아부족한plan의법적결함을비교하지못한다. |
-| MA-CASE-0022 | PLUS-SC03 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 전년22시간과현재18/1law는carryover와category를함께판단하게해유용하다. 1approvedlawhours문법과복제해설이남는다. |
-| MA-CASE-0031 | PLUS-SC04 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | actualhour와category중복충족을max계산으로명확히묻는다. 1livehours문법과5/7시간오답의생성논리가설명되지않는다. |
-| MA-CASE-0038 | PLUS-SC05 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 2agreements와21total/1related가실질적조건이며9시간오답이agreement별추가를반영한다. agreement(s)와1hours가템플릿흔적이고해설반복이다. |
-| MA-CASE-0046 | PLUS-SC06 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 2021졸업2026년1월transfer는면제/lategrace가둘다해당안되는명확한판정이다. Jan05표기는자연스럽게다듬고A해설을이사례의불충족일자에직접연결해야한다. |
-| MA-CASE-0055 | PLUS-SC07 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 2026졸업7월면허로graduationyear를직접판정한다. C의오답해설은일반요건을유지한다는문장으로왜면제가우선하는지설명하지못한다. |
-| MA-CASE-0071 | PLUS-SC08 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 실제접종이라는role외에결정조건이없어1시간암기문항이다. 제목은workperformed지만directsupervision/temporary역할이없고해설만그조건을언급한다. |
-| MA-CASE-0076 | PLUS-SC09 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 갱신일정작성이라는단일운영작업과네자격의달력오답이병렬이다. 단순암기난도이므로높은reasoning문항으로표시하지말아야한다. |
+| MA-CASE-0009 | PLUS-SC01 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 6+8=14 후6시간추가라는단일계산은명확하고보기4시간은10시간전부인정오류를겨냥한다. 그러나모든오답해설이정답계산을그대로복사해각오류를설명하지않는다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
+| MA-CASE-0018 | PLUS-SC02 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 16total/1live에서추가4시간은명확하지만1 are live문법과오답전체가필요량보다많아부족한plan의법적결함을비교하지못한다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
+| MA-CASE-0022 | PLUS-SC03 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 전년22시간과현재18/1law는carryover와category를함께판단하게해유용하다. 1approvedlawhours문법과복제해설이남는다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
+| MA-CASE-0031 | PLUS-SC04 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | actualhour와category중복충족을max계산으로명확히묻는다. 1livehours문법과5/7시간오답의생성논리가설명되지않는다. 현재 보류 이유: 문항별 검토 결과: Non-CDTM 및 기존 CE의 적격성 명시가 필요하다. 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
+| MA-CASE-0038 | PLUS-SC05 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 2agreements와21total/1related가실질적조건이며9시간오답이agreement별추가를반영한다. agreement(s)와1hours가템플릿흔적이고해설반복이다. 현재 보류 이유: 문항별 검토 결과: 동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다. |
+| MA-CASE-0046 | PLUS-SC06 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 2021졸업2026년1월transfer는면제/lategrace가둘다해당안되는명확한판정이다. Jan05표기는자연스럽게다듬고A해설을이사례의불충족일자에직접연결해야한다. 현재 보류 이유: 문항별 검토 결과: 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN. |
+| MA-CASE-0055 | PLUS-SC07 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 2026졸업7월면허로graduationyear를직접판정한다. C의오답해설은일반요건을유지한다는문장으로왜면제가우선하는지설명하지못한다. 현재 보류 이유: 문항별 검토 결과: 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN. |
+| MA-CASE-0071 | PLUS-SC08 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 실제접종이라는role외에결정조건이없어1시간암기문항이다. 제목은workperformed지만directsupervision/temporary역할이없고해설만그조건을언급한다. 현재 보류 이유: 문항별 검토 결과: Policy III annual vs 247 CMR4.03(4)(e) biennial 관계 미해결. HOLD. 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN. |
+| MA-CASE-0076 | PLUS-SC09 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 갱신일정작성이라는단일운영작업과네자격의달력오답이병렬이다. 단순암기난도이므로높은reasoning문항으로표시하지말아야한다. 현재 보류 이유: 문항별 검토 결과: 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN. |
 | MA-CASE-0082 | PLUS-SC10 | MAJOR_REWRITE / P0_INTERNAL_ANSWER_AMBIGUITY | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 1months문법외에A의Stoppracticeandsatisfyapplicableconditions도넓게참이어서C와상호배타적이지않다. A해설이문구에없는60일초과를가정한다. 현재 보류 이유: 기존 정답 C는 1개월 ordinary lapse에 60일 초과 추가조건 기준이 아직 적용되지 않았다고 설명합니다. 그러나 오답 A의 'Stop practice and satisfy applicable Board reinstatement conditions; MPJE is not automatic from this duration alone'도 일반적인 표현으로는 같은 상황에서 타당하게 읽힙니다. 오답 해설에만 60일 초과 조건을 넣어 A를 배제할 수 없습니다. 정답의 구체성 차이만으로 SBA를 채점하지 않도록 보류합니다. |
-| MA-CASE-0093 | PLUS-SC11 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 13+8근무에서credit20을묻고근무합법성판단을명시적으로분리한범위는정직하다. 그러나금지가능한근무를추상숫자exercise로쓰며19오답의법적혼동근거가없다. |
+| MA-CASE-0093 | PLUS-SC11 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 13+8근무에서credit20을묻고근무합법성판단을명시적으로분리한범위는정직하다. 그러나금지가능한근무를추상숫자exercise로쓰며19오답의법적혼동근거가없다. 현재 보류 이유: 문항별 검토 결과: 별도 current-content independent legal/realism audit 미실행. 원문 보존, 개선 보고서만 작성했으며 공개 문항 개선 구현으로 세지 않는다. |
 | MA-CASE-0100 | PLUS-SC12 | MAJOR_REWRITE / P0_INTERNAL_ANSWER_AMBIGUITY | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 2CPhT+2ordinary는실제적격mix지만C의Fourstaffneedtwopersonmix는일반적으로참이며이사례가그조건을못채웠다는문구가없다. D도다른headcount일반법칙이다. 현재 보류 이유: 4명 중 CPhT 2명인 사례에서 정답 A는 비율과 자격 조합을 충족한다고 설명합니다. 그런데 C의 'Four support staff need the required two-person qualifying mix'도 그 사실과 양립하는 요건 설명이며, D도 별도 3명 조합에 관한 일반 규칙입니다. 해설은 지문에 없는 자격자 부족을 C에 가정합니다. 비교하는 선택지의 적용 조건과 판단을 다시 작성해야 합니다. |
-| MA-CASE-0117 | PLUS-SC13 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | trainer와computertrainee가실제filling을겸해count4가되는좋은조건변화다. 0ordinary와1people등템플릿표현·복제해설이품질을낮춘다. |
+| MA-CASE-0117 | PLUS-SC13 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | trainer와computertrainee가실제filling을겸해count4가되는좋은조건변화다. 0ordinary와1people등템플릿표현·복제해설이품질을낮춘다. 현재 보류 이유: 문항별 검토 결과: 별도 current-content independent legal/realism audit 미실행. 원문 보존, 개선 보고서만 작성했으며 공개 문항 개선 구현으로 세지 않는다. |
 | MA-CASE-0122 | PLUS-SC14 | MAJOR_REWRITE / P0_INTERNAL_ANSWER_AMBIGUITY | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | A의Reassigntaskbecausetierdoesnotauthorize와정답B의pharmacist-onlyboundary는같은상황에서둘다타당하다. A해설은전화처방을설명해제시된finalverification과불일치한다. 현재 보류 이유: CPhT에게 final patient-specific prescription verification을 맡기는 사례에서 A의 업무 재배정과 정답 B의 pharmacist-only 경계 적용은 같은 결론입니다. A의 오답 해설은 이 사례와 무관한 전화처방 수신 권한을 설명합니다. 하나의 정답으로 채점하기 어려워 기본 연습에서 보류합니다. |
-| MA-CASE-0128 | PLUS-SC15 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 17세만불충족인조건은단일limitingcondition을명확히평가한다. pharmacist투여라면서internsupervision조건을붙인템플릿문장이불필요하다. |
-| MA-CASE-0136 | PLUS-SC16 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | currentcertification과10postlicensehours의대조는either/or조건에실질적이다. 질문은무엇을보완하냐인데정답은이미충족이라는문법이맞지않는다. |
-| MA-CASE-0145 | PLUS-SC17 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 35세VI서면referral/consent보험까지조건이명확하나모두충족이라고나열해독립시나리오보다eligibilitychecklist다. distractor는각다른미충족변형의잔재다. |
-| MA-CASE-0154 | PLUS-SC18 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Sep1issue/earliest와Sep30조제는30일validity만판정하며earliest가같아독립constraint가작동하지않는다. 해설은명확하고보기는비교가능하다. |
+| MA-CASE-0128 | PLUS-SC15 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 17세만불충족인조건은단일limitingcondition을명확히평가한다. pharmacist투여라면서internsupervision조건을붙인템플릿문장이불필요하다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
+| MA-CASE-0136 | PLUS-SC16 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | currentcertification과10postlicensehours의대조는either/or조건에실질적이다. 질문은무엇을보완하냐인데정답은이미충족이라는문법이맞지않는다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
+| MA-CASE-0145 | PLUS-SC17 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 35세VI서면referral/consent보험까지조건이명확하나모두충족이라고나열해독립시나리오보다eligibilitychecklist다. distractor는각다른미충족변형의잔재다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
+| MA-CASE-0154 | PLUS-SC18 | MINOR_EDIT / P3 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Sep1issue/earliest와Sep30조제는30일validity만판정하며earliest가같아독립constraint가작동하지않는다. 해설은명확하고보기는비교가능하다. 현재 보류 이유: 문항별 검토 결과: 같은 모델 내 숫자·조건 치환과 일반 행동형 오답 반복으로 실무 판단 변별력이 낮다. 독립 legal/realism 재감사 전 RELEASED 불가. |
 | MA-CASE-0163 | PLUS-SC19 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 24시간경과·60중12기조제라서48잔량이라는명확한행동이다. timeline조건은평이하지만공급량과clock를함께적용하며오답별이유도분리되어있다. |
 | MA-CASE-0173 | PLUS-SC20 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | day29·남은60·요청30으로authorizedbalance와patientrequest를구별한다. 31정오답은근거없는off-by-one이고모든해설이복제계산이다. |
 | MA-CASE-0187 | PLUS-SC21 | MINOR_EDIT / P3 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 6개월초과이면남은4refill도행사불가라는단일결정이명확하다. refill(s)와have문법및모든오답동일해설이남는다. |
@@ -406,7 +406,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `f73aa84ee59c0181ab049ba0789313833d5555620a0752448f3cdec5e036199c` |
-| practice_expansion/2026-10-28-representative/questions.json | `9c7a232064f298d5f07908014c70cb022c0ad6cb699c1d52826e919d69251b86` |
+| practice_expansion/2026-10-28-representative/selection.json | `d6f884dbc1e96869f3644a0aa21d29ec96be2949126925073fa238e5cdc6bd51` |
+| practice_expansion/2026-10-28-representative/questions.json | `6e0568010f7cb5f518512704d20b8a0271b74e64fa72d90d245bb55a75db4b96` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

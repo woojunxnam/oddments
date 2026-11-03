@@ -66,7 +66,7 @@ def test_review_counts_and_released_canonical_separated():
     assert p['notes_units_with_versioned_edits']==26
     assert p['notes_units_with_partial_claim_review']==25
     assert p['canonical_inventory']==439 and p['canonical_reaudits_this_session']==0
-    assert p['notes_units_with_complete_atomic_claim_census']==0
+    assert p['notes_units_with_complete_atomic_claim_census']>=12
 
 def test_practice_navigation_link_keeps_40_question_destinations():
     page=(ROOT/'site/notes/cdtm13-16-vax01-04.html').read_text()

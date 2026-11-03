@@ -244,7 +244,9 @@ def progress(state, ledger, corpus):
             'author_review': {'count': reviewed, 'total': total, 'percent': round(100*reviewed/total, 2)},
             'note_claim_census': {'count': notes, 'total': corpus['notes_units'],
                                  'percent': round(100*notes/corpus['notes_units'], 2)},
-            'independent_legal_audit': {'percent': None, 'status': 'REQUIRES_CANONICAL_AUDIT_VALIDATION'},
+            'independent_legal_audit': {'count': corpus.get('independent_legacy_legal_assessed', 0), 'total': total,
+                'percent': (round(100*corpus['independent_legacy_legal_assessed']/total, 2) if 'independent_legacy_legal_assessed' in corpus else None),
+                'status': 'LEGACY_SOURCE_ASSESSMENT_NOT_CANONICAL_RELEASE_EVIDENCE'},
             'substantive_remediation': {'percent': None, 'status': 'REQUIRES_DEFECT_DISPOSITION_VALIDATION'},
             'verified_deployment': {'percent': None, 'status': corpus['deployment_status']},
             'warning': 'Queue integration is not author-review credit, independent audit, remediation, or release.'}

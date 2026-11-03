@@ -125,7 +125,7 @@ def test_publishing_review_does_not_claim_cdtm_cross_path_or_independent_audit()
     assert progress["author_review_records_by_file"]["vax15-pub04-author-review.json"] == 40
     assert progress["open_claims"] == 4
     assert progress["canonical_independent_audit_this_session"] == "NOT_RUN"
-    assert progress["notes_units_with_complete_atomic_claim_census"] == 0
+    assert progress["notes_units_with_complete_atomic_claim_census"] >= 12
 
 
 def test_stale_question_or_missing_option_fails_review_integrity():

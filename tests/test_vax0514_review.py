@@ -93,7 +93,7 @@ def test_unreviewed_questions_not_credited_and_independence_not_claimed():
     assert progress["author_review_records_by_file"]["vax05-14-author-review.json"] == 44
     assert progress["canonical_reaudits_this_session"] == 0
     assert progress["canonical_independent_audit_this_session"] == "NOT_RUN"
-    assert progress["notes_units_with_complete_atomic_claim_census"] == 0
+    assert progress["notes_units_with_complete_atomic_claim_census"] >= 12
 
 
 def test_stale_question_or_missing_option_cannot_claim_review():

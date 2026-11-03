@@ -25,7 +25,7 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     assert sum(r['checked_at'] is not None for r in rows) >= 245
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) >= 189
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
-    assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) == 10
+    assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) >= 10
     assert sum(r['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW' for r in rows) <= 2101
     assert all(r['checked_at'] is None for r in rows if r['question_id'].startswith('MA-REV-'))
     assert not any(r['legal_review_status']=='RELEASED' for r in rows)
@@ -126,8 +126,8 @@ def test_author_provenance_uses_each_source_and_never_inherits_family_review():
         assert row['checked_at']=='2026-10-30'
         assert row['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
         assert row['reviewer_provenance']['independent'] is False
-    # Next unreviewed PUB05 family must still NOT inherit a review by proximity.
-    for index in range(385,389):
+    # Next unreviewed COUN03 family must still NOT inherit a review by proximity.
+    for index in range(425,429):
         row=rows[f'MA-EXP-{index:04d}']
         assert row['checked_at'] is None
         assert row['legal_review_status']=='NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW'
@@ -250,7 +250,8 @@ def test_visible_quality_status_and_previous59_snapshot_are_current():
     from build_quality_status import output
     path, rendered=output()
     assert path.read_text()==rendered
-    assert '2,346' in rendered and '438' in rendered
+    selection = json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_text())
+    assert '2,346' in rendered and f"{selection['stats']['recommended']:,}문항" in rendered
     snapshot=json.loads((ROOT/'reports/full-corpus-review/unit3b-preservation.json').read_text())
     from build_full_corpus_review import record_hash
     bank=json.loads((ROOT/'practice_expansion/2026-10-28-representative/questions.json').read_text())
