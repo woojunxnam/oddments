@@ -56,6 +56,30 @@ def test_exact_decoder_authenticates_original_main_bytes_and_preserves_audits(sp
     assert not (sandbox/'.git').exists()
 
 
+@pytest.mark.parametrize('change', ['none', 'missing_record', 'duplicate_record',
+    'edited_record', 'other_withdrawal', 'missing_proof', 'edited_physical_question'])
+def test_sba_historical_cohort_requires_the_exact_retained_withdrawal(sandbox,monkeypatch,change):
+    import check_sba_answer_length as sba
+    from qa_common import load_records
+    records=[q for _,q in load_records(sandbox/'data/questions')]
+    question=next(q for q in records if q['question_id']==guard.QID)
+    if change=='missing_record':records.remove(question)
+    elif change=='duplicate_record':records.append(question)
+    elif change=='edited_record':question['choices'][0]['text']+=' edited'
+    elif change=='other_withdrawal':
+        other=next(q for q in records if q['question_id']=='MA-Q-0011')
+        other.update(verification_status='HOLD',lifecycle_status='REVIEW_REQUIRED')
+    elif change=='missing_proof':(sandbox/guard.MANIFEST).unlink()
+    elif change=='edited_physical_question':
+        alter(sandbox,guard.QUESTION,lambda q:q.update(stem=q['stem']+' edited'))
+    monkeypatch.setattr(sba,'DATA',sandbox/'data')
+    report,failed=sba.analyze_sba_answer_length(records)
+    assert failed is (change!='none')
+    assert report['inherited_baseline']['sba_count']==(230 if change=='none' else 229)
+    assert report['historical_safety_withdrawals']['question_ids']==([guard.QID] if change in {'none','other_withdrawal'} else [])
+    assert guard.QID not in report['projected_bank']['question_ids']
+
+
 def test_all_1781_protected_files_pass_with_original_baseline_and_fourteen_guards():
     baseline=json.loads((ROOT/guard.BASELINE).read_bytes())
     result=protected.verify(baseline,ROOT)
