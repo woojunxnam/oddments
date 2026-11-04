@@ -638,3 +638,27 @@ def test_reservation_scanner_allocates_real_fields_not_test_sentinels(tmp_path):
     commit(tmp_path)
     with pytest.raises(ValueError, match="Unsupported reserved ID format"):
         batch.scan_reservations(tmp_path, "HEAD")
+
+
+def test_later_real_reservation_cannot_collide_or_reallocate_enrolled_IDs(
+    template, tmp_path
+):
+    root = tmp_path / "collision"
+    subprocess.run(
+        ["git", "clone", "-q", "--shared", str(template), str(root)], check=True
+    )
+    git(root, "config", "user.name", "Synthetic fixture")
+    git(root, "config", "user.email", "fixture@example.test")
+    a = batch.allocation(root)
+    write(root, "reports/other-allocation.json", {"reserved_ids": ["MA-RW-0094"]})
+    commit(root)
+    batch.validate_current_reservation_ownership(
+        root, a
+    )  # future different reservation is permitted
+    write(root, "reports/other-allocation.json", {"reserved_ids": ["MA-RW-0084"]})
+    commit(root)
+    with pytest.raises(ValueError, match="reservation collides"):
+        batch.validate_current_reservation_ownership(root, a)
+    assert [r["question_id"] for r in batch.allocation(root)["allocations"]] == [
+        r["question_id"] for r in a["allocations"]
+    ]

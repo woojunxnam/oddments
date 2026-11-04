@@ -18,7 +18,9 @@ changes the old adapter's scope to accept arbitrary new candidates.
 The committed base reservation scan reads real producer/allocation fields in
 public banks, authoring, drafts and allocation registries. It records test and
 documentation mentions separately; e.g. a test sentinel `MA-RW-9999` does not
-allocate an ID. The actual maximum reservation is 0083. No existing ID is reused.
+allocate an ID. The actual maximum reservation is 0083. No existing ID is reused. A later tracked
+producer/allocation may reserve another ID, but colliding with these enrolled
+IDs is rejected; the frozen allocation is never recalculated or reassigned.
 
 | New current ID | Held original parent | Final G source | Final F draft source |
 | --- | --- | --- | --- |
@@ -71,7 +73,9 @@ its authoring file is an error.
 Root alone regenerates and commits representative bank/selection data and its
 publication bindings. In-memory compilation produces 87 representative records
 (77 preserved + 10), 152 sources (90 preserved + 62), 13 archive-only candidates,
-and the same ordered 202 defaults. Original355 historical implementation remains
+and the same ordered 202 defaults. The cumulative source edition becomes
+`2026-11-04.representative8`; every old question/source object and the delivery
+edition remain unchanged. Original355 historical implementation remains
 74 rewritten + 3 reused + 211 held + 67 retained = 355. The additional archive
 candidates do not count as historical rewrites. Parent questions, keys, attempts,
 bookmarks, M, old native sources and all four governance policies stay unchanged.

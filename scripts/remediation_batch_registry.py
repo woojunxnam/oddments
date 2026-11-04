@@ -207,6 +207,71 @@ def scan_reservations(root, commit):
     )
 
 
+def validate_current_reservation_ownership(root, a):
+    """A later tracked draft may reserve other IDs, never this batch's IDs.
+
+    Only HEAD/current tracked producer fields are read. No historical worker
+    objects, test sentinel, comments or diagnostic text allocate public IDs.
+    """
+    owned = {r["question_id"] for r in a["allocations"]}
+    allowed = {AUTHORING, ALLOCATION, REGISTRY, BASE + "/questions.json"}
+    paths = (
+        subprocess.check_output(
+            ["git", "-C", str(root), "ls-files", "-z", "--", "*.json"]
+        )
+        .decode()
+        .split("\0")
+    )
+    keys = {
+        "question_id",
+        "replacement_question_id",
+        "reserved_question_id",
+        "allocated_question_id",
+        "public_question_id",
+    }
+    lists = {"reserved_ids", "reserved_question_ids", "allocated_question_ids"}
+    for path in paths:
+        if not path or path in allowed or path.startswith(("tests/", "test-results/")):
+            continue
+        producer = (
+            path in PUBLIC_BANKS
+            or "/authoring/" in path
+            or "/drafts/" in path
+            or "allocation" in Path(path).name
+            or path.endswith("/registry.json")
+        )
+        if not producer:
+            continue
+        found = set()
+
+        def take(v):
+            if isinstance(v, str) and v.startswith("MA-RW-"):
+                require(
+                    re.fullmatch(r"MA-RW-\d{4}", v),
+                    "Unsupported current reservation format: " + path,
+                )
+                found.add(v)
+
+        def walk(value):
+            if isinstance(value, dict):
+                for k, v in value.items():
+                    if k in keys:
+                        take(v)
+                    if k in lists and isinstance(v, list):
+                        for item in v:
+                            take(item)
+                    walk(v)
+            elif isinstance(value, list):
+                for v in value:
+                    walk(v)
+
+        walk(read(root, path))
+        require(
+            not found & owned,
+            "Current tracked reservation collides with enrolled batch: " + path,
+        )
+
+
 def next_ids(reserved, count):
     require(
         count > 0
@@ -706,6 +771,7 @@ def validate_compiled_bank(bank, root=ROOT):
     if load_registry(root) is None:
         return old_validate(bank, root)
     a = allocation(root)
+    validate_current_reservation_ownership(root, a)
     old_validate(legacy_projection(bank, root), root)
     q = {x["question_id"]: x for x in bank["questions"]}
     require(len(q) == len(bank["questions"]), "Duplicate representative ID")
