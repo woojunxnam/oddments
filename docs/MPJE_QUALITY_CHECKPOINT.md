@@ -1,6 +1,6 @@
 # 최신 임무 재개 기록
 
-최신 실행 체크포인트: [추가 독립 감사와 census 보완 재감사](MPJE_MISSION_CHECKPOINT_2026-11-04_REASSESSMENT.md). 저자 검토와 독립 감사·실제 수정·공개 배포 증거는 구분한다. PR189 최종 검사·게시 결과는 해당 PR과 versioned 검증 기록을 확인한다.
+최신 실행 체크포인트: [PR190 공개 검증 및 후속 독립 감사·실질 보완](MPJE_MISSION_CHECKPOINT_2026-11-04_PR190.md). 이전 [census 보완 재감사 기록](MPJE_MISSION_CHECKPOINT_2026-11-04_REASSESSMENT.md)은 당시 snapshot이다. 저자 검토와 독립 감사·실제 수정·공개 배포 증거는 구분한다. PR189 최종 검사·게시 결과는 해당 PR과 versioned 검증 기록을 확인한다.
 
 이전 [2026-11-03 waves11–12 체크포인트](MPJE_MISSION_CHECKPOINT_2026-11-03_WAVES11-12.md)와 아래 배치 기록은 당시 상태다. 현재 완료율 또는 배포 증거로 승계하지 않는다.
 
