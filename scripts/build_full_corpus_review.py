@@ -683,7 +683,11 @@ def build():
     realism_completion_bindings = {}
     realism_completion = load_realism_completion(ROOT,independent_records,public_by_id,source_bindings=realism_completion_bindings)
     realism_completion_legal = {'assessments':realism_completion['legal_assessments'],'records':realism_completion['legal_records']}
-    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal)
+    from remaining9_procedural_metadata import load_metadata as load_remaining9_secondary
+    remaining9_bindings = {}
+    remaining9_secondary = load_remaining9_secondary(ROOT,independent_records,public_by_id,secondary_collections,
+                                                    source_bindings=remaining9_bindings)
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal,remaining9_secondary)
     realism_completion_progress = apply_realism_completion(result,independent_records,realism_completion,secondary['effective_realism_pass'])
     validate_context_default_safety(selection['recommended_ids'],context38_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
@@ -869,6 +873,10 @@ def build():
     if context38_secondary['excluded_primary_key_ids']:
         progress['independent_legacy_context38_supplementary_review'] = context38_secondary['progress']
         progress['independent_legacy_supplementary_review'] = secondary['progress']
+    if remaining9_bindings:
+        progress['independent_legacy_remaining9_procedural_review'] = {
+            **remaining9_secondary['progress'], 'source_bindings': remaining9_bindings,
+            'scope': 'EXACT_NINE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE'}
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
         collections=[dict(path=path, questions=len(read(path)['questions']),

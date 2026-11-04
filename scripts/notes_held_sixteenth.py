@@ -151,7 +151,7 @@ def checkpoint_prefix(root,closure,relative):
 
 
 def bind_supplementary_checkpoints(root,bindings,primary_records):
-    """Bind only the exact three consumers' successful committed-byte reads.
+    """Bind only registered bounded consumers' successful committed-byte reads.
 
     Pending queues remain zero-credit inputs. This does not recursively scan
     arbitrary report paths or claim that unretained/private bytes are present.
