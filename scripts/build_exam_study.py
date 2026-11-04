@@ -6,6 +6,7 @@ from pathlib import Path
 from notes_revision import load_notes, apply_study_revision
 from practice_note_links import build_note_practice_index
 from notes_independent_metadata import load_metadata, notices_for_units
+from curated_study_practice_links import LESSON_ID as CURATED_LESSON_ID, load_curated_practice_candidates
 ROOT=Path(__file__).resolve().parents[1]
 
 def digest(path: Path) -> str:
@@ -25,6 +26,24 @@ def eligible_study_practice(question, recommended, revised, excluded):
     return (qid in recommended and qid in revised
         and question.get('primary_source_verification')=='AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT'
         and bool(records) and all(r.get('access_status')=='READ_OFFICIAL' for r in records))
+
+def study_practice_links(item, questions, recommended, revised, held, curated):
+    """Apply ordinary eligibility, then a scope restriction without a fallback."""
+    allowed=curated.get(item['id'])
+    if item['id']==CURATED_LESSON_ID and allowed is None:
+        raise ValueError('Missing direct practice scope for '+item['id'])
+    candidates=[q for q in questions if eligible_study_practice(q,recommended,revised,held)
+        and (allowed is None or q['question_id'] in allowed)
+        and set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
+    candidates.sort(key=lambda q:(q['question_id'] not in revised,q['question_id'] not in recommended,hashlib.sha256((item['id']+q['question_id']).encode()).hexdigest()))
+    families=set();links=[]
+    for q in candidates:
+        if q['family_id'] in families:continue
+        shared=sorted(set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']})
+        links.append(dict(id=q['question_id'],family=q['family_id'],topic=q['topic'],kind=q['question_type'],shared_units=shared,url='../practice-expansion/#'+q['question_id']))
+        families.add(q['family_id'])
+        if len(links)==(1 if allowed is not None else 3):break
+    return links
 
 def build_payload() -> dict:
     note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
@@ -50,6 +69,7 @@ def build_payload() -> dict:
         held={qid for h in selection['holds'] for qid in [h['legacy_question_id'],*h.get('affected_archive_ids',[])]}
         held.update(qid for notice in selection.get('archive_review_notices',[]) for qid in notice['question_ids'])
     data['note_practice_index']=build_note_practice_index(questions,recommended,notes)
+    curated=load_curated_practice_candidates(ROOT,data['lessons'],{uid:u for uid,(_,u) in units.items()},questions)
     def enrich(x:dict)->None:
         refs=x['note_units']
         if not refs or any(uid not in units for uid in refs): raise ValueError('Unknown source unit '+x['id'])
@@ -62,16 +82,8 @@ def build_payload() -> dict:
         x['source_ids']=list(dict.fromkeys(sid for uid in refs for sid in units[uid][1]['source_ids']))
         x['kind']='source-derived-study-overlay'
     for item in data['lessons']:
-        enrich(item); families=set();links=[]
-        candidates=[q for q in questions if eligible_study_practice(q,recommended,revised,held) and set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']}]
-        candidates.sort(key=lambda q:(q['question_id'] not in revised,q['question_id'] not in recommended,hashlib.sha256((item['id']+q['question_id']).encode()).hexdigest()))
-        for q in candidates:
-            if q['family_id'] in families:continue
-            shared=sorted(set(item['note_units'])&{e['unit_id'] for e in q['note_evidence']})
-            links.append(dict(id=q['question_id'],family=q['family_id'],topic=q['topic'],kind=q['question_type'],shared_units=shared,url='../practice-expansion/#'+q['question_id']))
-            families.add(q['family_id'])
-            if len(links)==3:break
-        item['practice_links']=links
+        enrich(item)
+        item['practice_links']=study_practice_links(item,questions,recommended,revised,held,curated)
     for c in data['comparisons']:
         if c['lesson_id'] not in lessons:raise ValueError('Unknown comparison lesson')
         c['note_units']=c.get('note_units',lessons[c['lesson_id']]['note_units']);enrich(c)
