@@ -8504,7 +8504,7 @@
       "unit_ids": [
         "return-pathways"
       ],
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 1,
       "base_commit": "9777e8a3bae35e69f86c72bc212f8e7a8d2cc953",
       "inventory_ledger_sha256": "db9106209c2d09e0f39ea23a1bf970c214590745c4253822278c47585c4daac9",
@@ -8549,7 +8549,40 @@
       "controller_independence_basis": "Actual nonauthor session did not assess this unit census previously; G authored new atoms and C32 is the separate prior reviewer. All unchanged legal blockers are inherited.",
       "lease_until": "2026-11-04T15:00:07.105715+00:00",
       "worker_branch": "mission/review-independent-notes-reassessment-2c114e804a313bae-attempt-1",
-      "lease_token": "b77734275073ac54fb5036da6acf402aab82716d9662966dd14f0b485c0f9d11"
+      "lease_token": "b77734275073ac54fb5036da6acf402aab82716d9662966dd14f0b485c0f9d11",
+      "result": {
+        "stage": "independent-notes",
+        "actor_provenance": {
+          "actor_id": "/root/independent_wave10_d",
+          "session_id": "/root/independent_wave10_d"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT:/root/independent_wave10_d:20261104",
+        "independent_of_authors": true,
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "job_id": "review-independent-notes-reassessment-2c114e804a313bae",
+        "reassessment_id": "census-wave5-return-pathways-v2-c32-20261104",
+        "unit_hashes": {
+          "return-pathways": "57ab7f2d37fc82a382e82f2cdd5dc775604df19af86373700a6419d535db85e4"
+        },
+        "worker_commit": "bc17076705484904679093b3dbc3701e1b881d9b",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-2c114e804a313bae-result.json",
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/census-wave5-v2-d-review.json",
+          "raw_sha256": "79ab53a5f13c9f0ca38c13ad858e67e3936a6888be18a774d125041003d0d0c5"
+        },
+        "results": [
+          {
+            "unit_id": "return-pathways",
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD"
+          }
+        ]
+      },
+      "result_sha256": "80afd5f546b6220b1d56237147c659de9c269a6c1ce6c44702f4655e6a7e1088",
+      "submitted_at": "2026-11-04T09:53:12.851343+00:00"
     }
   ],
   "events": [
@@ -9582,6 +9615,13 @@
       "job_id": "review-independent-notes-reassessment-1882d552d85ffd9b",
       "commit": "f1871ad75f86d91fb95ee0531a2053992bcd5674",
       "result_sha256": "2023c5211e9e829183f1f8236a4103b04bc7c83abbe2d6ca917ca83a4b03880f"
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T09:53:12.851343+00:00",
+      "job_id": "review-independent-notes-reassessment-2c114e804a313bae",
+      "result_sha256": "80afd5f546b6220b1d56237147c659de9c269a6c1ce6c44702f4655e6a7e1088",
+      "worker_commit": "bc17076705484904679093b3dbc3701e1b881d9b"
     }
   ],
   "reassessments": [
