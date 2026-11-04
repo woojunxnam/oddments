@@ -68,6 +68,15 @@ published commit/tree를 코드의 explicit closure 목록에 고정한다. 공�
 준비한다. 원 closure/preimage는 보존한다. Runtime은 누락 preimage를 current 파일로
 대체하거나 원 Git object에서 몰래 보충하지 않고 SOURCE_BLOCKED로 실패한다.
 
+필요하면 preparation에 `--retain-all`을 추가해 현재 같은 파일까지 실제 published
+Git blob 원바이트로 전부 보존할 수 있다. Python API는 `prepare(..., retain_all=True)`와
+`write_preparation(..., retain_all=True)`를 제공하며 기본값은 기존 changed-only 동작이다.
+이 옵션도 기존 경로의 서로 다른 snapshot을 덮지 않으므로 새 closure output 경로가
+필요하다. Root controller·실제 publication receipt·현재 같은 바이트의 HEAD 검증을
+계속 요구한다. 나중에 적법하게 변경한 helper/test의 과거 바이트를 복원할 때 유용하지만,
+live1781·원14/15·4정책·bank wrapper의 기존 narrow guard는 그대로 적용한다.
+전체 preimage 보존은 closure 승인·N1 활성화·현재 검증 면제나 출시 승인이 아니다.
+
 Runtime은 현재 HEAD와 보존 preimage만으로 전체 원 tree를 임시 read-only view에
 재구성하고 Git tree SHA가 실제 published tree와 같은지 확인한다. 임시 새 HEAD는
 바이트 조회용이며 원 published commit을 위조하거나 옛 Git object를 요구하지 않는다.

@@ -167,12 +167,15 @@ def publication(root,binding):
 
 
 @snapshotted
-def prepare(root,published_commit,publication_binding):
+def prepare(root,published_commit,publication_binding,*,retain_all=False):
     """Return a genuine post-publication proposal plus exact old blobs to retain.
 
     Caller/root chooses new immutable manifest paths and commits the returned
-    payloads. This function never writes a source, approval or activation file.
+    payloads. retain_all also retains currently identical old paths, so later
+    permitted changes do not require another historical-source retrieval.
+    This function never writes a source, approval or activation file.
     """
+    require(type(retain_all)is bool,'retain_all must be an explicit boolean')
     root=Path(root);receipt,assets=publication(root,publication_binding)
     require(published_commit==receipt['published_commit'],'Preparation commit differs from actual publication proof')
     tree=subprocess.check_output(['git','-C',str(root),'rev-parse',published_commit+'^{tree}'],text=True).strip()
@@ -187,9 +190,10 @@ def prepare(root,published_commit,publication_binding):
         raw=subprocess.check_output(['git','-C',str(root),'cat-file','blob',oid]);expected=sha(raw)
         files[relative]={'raw_sha256':expected,'git_blob_sha1':oid,'mode':mode}
         current=path(root,relative)
-        if current.is_file()and sha(current.read_bytes())==expected:
+        unchanged=current.is_file()and sha(current.read_bytes())==expected
+        if unchanged:
             committed(root,relative,expected)
-        else:
+        if retain_all or not unchanged:
             dest=PREIMAGES+published_commit+'/'+relative
             retained[relative]={'path':dest,'raw_sha256':expected}
             if path(root,dest).exists():require(path(root,dest).read_bytes()==raw,'Cannot overwrite a retained publication preimage')
@@ -395,12 +399,12 @@ def verify_old_guards(root,binding):
                     old_git_objects_required=False,view='EXACT_RECONSTRUCTED_PUBLISHED_HEAD_NOT_LIVE_N1')
 
 
-def write_preparation(root,actor,published_commit,publication_binding,output):
+def write_preparation(root,actor,published_commit,publication_binding,output,*,retain_all=False):
     require(actor=='/root'and output.startswith(CLOSURE_PREFIX)and output.endswith('.json'),
             'Only root may retain a new immutable publication closure proposal')
     import note_review_queue as q
     q.validate_state(json.loads(committed(root,q.STATE)),Path(root))
-    manifest,writes=prepare(root,published_commit,publication_binding)
+    manifest,writes=prepare(root,published_commit,publication_binding,retain_all=retain_all)
     writes[output]=encoded(manifest)
     # Validate all destinations first; never overwrite an established revision.
     for relative,raw in writes.items():
@@ -416,12 +420,14 @@ def write_preparation(root,actor,published_commit,publication_binding,output):
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
     parser.add_argument('--actor');parser.add_argument('--prepare',action='store_true');parser.add_argument('--verify-old',action='store_true')
+    parser.add_argument('--retain-all',action='store_true',help='During preparation, retain every actual published Git blob as an immutable preimage')
     parser.add_argument('--published-commit');parser.add_argument('--receipt');parser.add_argument('--output');parser.add_argument('--binding')
     args=parser.parse_args();root=args.root.resolve()
+    require(not args.retain_all or args.prepare,'--retain-all requires --prepare')
     if args.prepare:
         require(args.published_commit and args.receipt and args.output,'Actual published commit, committed primary receipt and new output path required')
         binding={'path':args.receipt,'raw_sha256':sha(committed(root,args.receipt))}
-        print(json.dumps(write_preparation(root,args.actor,args.published_commit,binding,args.output),ensure_ascii=False))
+        print(json.dumps(write_preparation(root,args.actor,args.published_commit,binding,args.output,retain_all=args.retain_all),ensure_ascii=False))
     elif args.binding:
         binding={'path':args.binding,'raw_sha256':sha(committed(root,args.binding))}
         result=verify_old_guards(root,binding)if args.verify_old else validate(root,binding,coverage=True)

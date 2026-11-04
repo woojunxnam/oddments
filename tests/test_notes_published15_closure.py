@@ -10,6 +10,7 @@ import pytest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 import notes_published15_closure as c
+HELPER='tests/synthetic-future-helper.py'
 
 
 def git(root,*args):return subprocess.check_output(['git','-C',str(root),*args],text=True).strip()
@@ -39,6 +40,7 @@ def published(tmp_path,monkeypatch):
         source_bindings={'notes/guide.json':c.sha((root/'notes/guide.json').read_bytes())}))
     put(root,c.PROTECTED,{'files':[{'path':p}for p in protected]})
     put(root,'scripts/notes_revision.py',b'M\n')
+    put(root,HELPER,b'SYNTHETIC OLD UNCHANGED HELPER\n')
     put(root,'revisions/baselines/complete-notes-2026-10-23.1.md',b'SYNTHETIC ORIGINAL BASELINE\n')
     # Keep the real immutable14 tail, but the synthetic fixture exits in a
     # clearly marked prefix after testing only the reconstructed HEAD routing.
@@ -164,3 +166,84 @@ def test_root_only_preparation_does_not_grant_approval_or_activate(published):
     root,ref,_,_,value=published
     with pytest.raises(ValueError,match='Only root'):
         c.write_preparation(root,'worker',value['published_commit'],ref,c.CLOSURE_PREFIX+'another.json')
+
+
+def retain_all(published,monkeypatch):
+    root,ref,_,_,old=published
+    value,writes=c.prepare(root,old['published_commit'],ref,retain_all=True)
+    assert set(value['retained_preimages'])==set(value['full_source_files'])
+    for relative,raw in writes.items():put(root,relative,raw)
+    binding=put(root,c.CLOSURE_PREFIX+'fixture-full-v2.json',value)
+    commit(root,'synthetic immutable full old-tree retention')
+    monkeypatch.setattr(c,'APPROVED_CLOSURES',{
+        **c.APPROVED_CLOSURES,(binding['path'],binding['raw_sha256']):{
+            'published_commit':value['published_commit'],'published_tree':value['published_tree']}})
+    return root,binding,value
+
+
+def test_retain_all_recovers_a_later_changed_previously_unchanged_helper(published,monkeypatch):
+    root,_,_,_,default=published
+    assert HELPER not in default['retained_preimages']
+    original=(root/HELPER).read_bytes()
+    root,binding,value=retain_all(published,monkeypatch)
+    assert value['full_source_files']==default['full_source_files']
+    assert value['published_tree']==default['published_tree']
+    assert value['retained_preimages'][HELPER]=={
+        'path':c.PREIMAGES+value['published_commit']+'/'+HELPER,'raw_sha256':c.sha(original)}
+    put(root,HELPER,b'SYNTHETIC LATER LEGITIMATE CURRENT HELPER\n')
+    commit(root,'synthetic later current helper change')
+    assert c.old_bytes(root,value,HELPER)==original
+    with pytest.raises(ValueError,match='SOURCE_BLOCKED'):
+        c.old_bytes(root,default,HELPER)
+    with c.fixed_view(root,binding)as(view,closure):
+        assert (view/HELPER).read_bytes()==original
+        assert git(view,'rev-parse','HEAD^{tree}')==default['published_tree']
+    assert b'LATER LEGITIMATE'in(root/HELPER).read_bytes()
+
+
+def test_full_retained_preimage_mutation_fails_even_when_current_still_matches(published,monkeypatch):
+    root,binding,value=retain_all(published,monkeypatch)
+    target=value['retained_preimages'][HELPER]['path']
+    put(root,target,b'SYNTHETIC ALTERED PREIMAGE\n');commit(root,'synthetic invalid retained blob')
+    with pytest.raises(ValueError,match='raw SHA changed'):
+        c.validate(root,binding,coverage=True)
+
+
+@pytest.mark.parametrize('source',[HELPER,c.FIFTEENTH])
+def test_retain_all_cannot_overwrite_any_existing_preimage(published,source):
+    root,ref,_,_,value=published
+    target=c.PREIMAGES+value['published_commit']+'/'+source
+    put(root,target,b'SYNTHETIC CONFLICTING EXISTING PREIMAGE\n')
+    with pytest.raises(ValueError,match='Cannot overwrite'):
+        c.prepare(root,value['published_commit'],ref,retain_all=True)
+    assert (root/target).read_bytes()==b'SYNTHETIC CONFLICTING EXISTING PREIMAGE\n'
+
+
+@pytest.mark.parametrize('source',[sorted(c.POLICIES)[0],c.OLD15_CODE,'data/fixture/0000.json'])
+def test_full_preimages_do_not_relax_current_frozen_inputs(published,monkeypatch,source):
+    root,binding,value=retain_all(published,monkeypatch)
+    assert source in value['retained_preimages']
+    put(root,source,(root/source).read_bytes()+b'SYNTHETIC UNAUTHORIZED CURRENT CHANGE\n')
+    commit(root,'synthetic forbidden frozen current change')
+    with pytest.raises(ValueError,match='raw SHA changed'):
+        c.validate(root,binding,coverage=True)
+
+
+def test_root_prepare_cli_retain_all_preserves_existing_manifest_and_requires_new_path(published):
+    import note_review_queue as q
+    root,ref,_,_,value=published
+    put(root,q.STATE,q.empty(root));commit(root,'synthetic root-owned empty note checkpoint')
+    output=c.CLOSURE_PREFIX+'cli-full-v2.json'
+    result=subprocess.run([sys.executable,str(ROOT/'scripts/notes_published15_closure.py'),
+        '--root',str(root),'--actor','/root','--prepare','--retain-all',
+        '--published-commit',value['published_commit'],'--receipt',ref['path'],'--output',output],
+        capture_output=True,text=True,check=True)
+    metadata=json.loads(result.stdout);full=json.loads((root/output).read_bytes())
+    assert metadata['preimages']==len(value['full_source_files'])
+    assert set(full['retained_preimages'])==set(full['full_source_files'])
+    assert (output,metadata['raw_sha256'])not in c.APPROVED_CLOSURES
+    # An existing partial closure cannot silently become a different full one.
+    with pytest.raises(ValueError,match='Refusing to replace'):
+        c.write_preparation(root,'/root',value['published_commit'],ref,
+            c.CLOSURE_PREFIX+'fixture-v1.json',retain_all=True)
+    assert json.loads((root/c.CLOSURE_PREFIX/'fixture-v1.json').read_bytes())==value
