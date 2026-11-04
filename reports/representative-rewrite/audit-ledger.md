@@ -15,9 +15,9 @@
 | HOLD_FROM_DEFAULT | 211 |
 | NOT_YET_IMPLEMENTED | 67 |
 
-이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 88개를 포함하고 8개는 별도 안전 보류합니다. MA-RW 77개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 229개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 65개를 포함하고 31개는 별도 안전 보류합니다. MA-RW 77개 중 기본 포함 70개·안전 보류 4개입니다. 전체 기본 목록은 202개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1341개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1378개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -71,14 +71,14 @@
 | MA-EXP-0095 | PER08 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0024 | NOT_REVERIFIED | birthday cycle과 만료후 대기는 유용하지만 전부정답이고 D의 2년초과는 제시된 경과와 연결되지 않는다. |
 | MA-EXP-0099 | PER09 | MAJOR_REWRITE / P2 | REUSED_EXISTING_QUALITY | MA-REV-0006 | NOT_REVERIFIED | unchanged ScheduleIV와 dose change라는 실제 경계는 보존한다. A의 trainee checklist가 지문 밖이고 유일 정답은 행위 판단보다 schedule 범위 암기다. |
 | MA-EXP-0103 | PER10 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0050 | NOT_REVERIFIED | new CIII 수신과 emergency CII의 pharmacist 경계를 다루지만 모든 해당 주법 예외를 item에서 재검증하지 않았다. C의 임상수정 일반문장은 사례 밖이고 A는 이중자격만 반복한다. |
-| MA-EXP-0107 | PER11 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0051 | NOT_REVERIFIED | VI와 IV transfer 비교는 실제 행동이 바뀌는 유용한 차이다. B의 새 유효기간과 D의 urgency는 지문에 없는 부가명제다. |
+| MA-EXP-0107 | PER11 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0051 (별도 안전 보류) | NOT_REVERIFIED | VI와 IV transfer 비교는 실제 행동이 바뀌는 유용한 차이다. B의 새 유효기간과 D의 urgency는 지문에 없는 부가명제다. |
 | MA-EXP-0111 | PER12 | MAJOR_REWRITE / P2 | REUSED_EXISTING_QUALITY | MA-REV-0008 | NOT_REVERIFIED | barcode 최종검수와 intern상담·interaction 처리의 다양한 역할을 모두 정답 명제로 나열했다. 실제 pharmacist의 업무 재배치 결정이 없다. |
 | MA-EXP-0115 | PER13 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0053 | NOT_REVERIFIED | 완료된 bag 운반과 unprepared stock handling이라는 구별이 좋다. A/B/D가 all/unrestricted 같은 과장으로 틀려 유일 정답 C를 문구만으로 고르기 쉽다. |
 | MA-EXP-0119 | PER14 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0054 | NOT_REVERIFIED | 두 CPhT count 이후 discrepancy adjustment는 실제 흐름이다. B의 unlicensed vendor만 entry 가능이라는 오답은 해당 규칙을 몰라도 쉽게 배제된다. |
-| MA-EXP-0123 | PER15 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0061 | NOT_REVERIFIED | intern을 ordinary로 교체하면 적격조합이 바뀌어 유용한 판단이다. B의 scope 일반론은 이 staffing 결정과 무관한 정답을 추가한다. |
-| MA-EXP-0127 | PER16 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0062 | NOT_REVERIFIED | 3 ordinary에서 intern으로 교체하는 핵심은 좋지만 C의 만료 certification은 사례에 없고 네 보기가 전부정답이다. 1:4와 숫자만 바꾸지 말고 실제 배치결정이 달라져야 한다. |
+| MA-EXP-0123 | PER15 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0061 (별도 안전 보류) | NOT_REVERIFIED | intern을 ordinary로 교체하면 적격조합이 바뀌어 유용한 판단이다. B의 scope 일반론은 이 staffing 결정과 무관한 정답을 추가한다. |
+| MA-EXP-0127 | PER16 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0062 (별도 안전 보류) | NOT_REVERIFIED | 3 ordinary에서 intern으로 교체하는 핵심은 좋지만 C의 만료 certification은 사례에 없고 네 보기가 전부정답이다. 1:4와 숫자만 바꾸지 말고 실제 배치결정이 달라져야 한다. |
 | MA-EXP-0131 | PER17 | MAJOR_REWRITE / P1 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 6명 배치에서 세 번째 intern이 qualifying group에 들 수 있는지 실질 경계가 있다. 정답 B는 실제 staffing 승인 대신 별도제한 확인이라는 추상문장이고 D의 미래 certification은 쉽다. 현재 보류 이유: 현행 Board Policy 2026-02 I.B는 vaccination services를 제공하는 약국에 자격 구성 조건을 갖춘 최대 1 pharmacist : 6 support personnel 경로를 명시한다. 한편 열람한 247 CMR 8.06(3)(a)는 일반적인 최대4명·3명 경로를 규정한다. 이번 작성자 검토에서는 일반적인 6명 허용에 관해 두 자료의 적용 관계를 확립하는 공식 rulemaking, waiver 또는 이에 준하는 설명을 확보하지 못했다. 따라서 제한 없는 허용을 확정 정답으로 삼는 새 문항 작성은 보류한다. 이는 출처 간 적용 관계가 미해결되었다는 뜻이며, Board 정책이 무효라거나 기존 모든 정답이 잘못되었다는 판정이 아니다. |
-| MA-EXP-0135 | PER18 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0064 | NOT_REVERIFIED | 검수된 package 운반과 cashier의 stock selection 차이는 유용하다. C/D는 조건부 제외를 반복하며 B의 게시요건 전면제거는 인위적이다. |
+| MA-EXP-0135 | PER18 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0064 (별도 안전 보류) | NOT_REVERIFIED | 검수된 package 운반과 cashier의 stock selection 차이는 유용하다. C/D는 조건부 제외를 반복하며 B의 게시요건 전면제거는 인위적이다. |
 | MA-EXP-0139 | PER19 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0065 | NOT_REVERIFIED | present substitute pharmacist가 실제 해결책이지만 C의4인 clinic과 A의remote-processing은 다른 경로를 끌어온다. |
 | MA-EXP-0143 | PER20 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | exclusive clinic에서 retail filling으로 활동이 바뀌는 유용한 조건변화다. 모든 보기가 맞고 non-pharmacy consultation 예외까지 추가돼 판단범위가 넓어진다. 현재 보류 이유: Policy 2026-02 II.A/B describes limited four-intern paths while 247 CMR 8.01(16) states a two-intern cap. Official texts were re-read but their application relationship remains unresolved. This is not a policy-invalidity or universal-waiver finding; no unchanged key is adjudicated wrong merely from the source relationship. |
 | MA-EXP-0147 | PER21 | MAJOR_REWRITE / P2 | REWRITTEN_NEW_ID | MA-RW-0067 | NOT_REVERIFIED | 기존 CPhT를 dedicated trainee로 배치하면 category가 달라지는 의미 있는 예외다. B의독립작업과 D의사후지정은 쉽게 틀리고 사례와 별개다. |
@@ -407,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `b6c8600f059626bec1a6f3903aae81c56acd72f7f843b4bb0acde7b9716891b5` |
-| practice_expansion/2026-10-28-representative/questions.json | `e2bc4f0cef1e82c0b815eb5ddf67690efa69ee7a03e4642ec1cce7a0e828a56c` |
+| practice_expansion/2026-10-28-representative/selection.json | `196f8cc5088fdf293e5b21b9e566f779ec35ab83100c7e201a4aaa63b2830a09` |
+| practice_expansion/2026-10-28-representative/questions.json | `835e3d3df2619549dbfe6947636531544142fee4499aeaf8565031c4ab3ec66b` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.
