@@ -1,0 +1,91 @@
+{
+  "observed_at_utc": "2026-11-04T16:26:32.410768+00:00",
+  "purpose": "ACTUAL_EXACT_HEAD_LOOPBACK_HTTP_BROWSER_REGRESSION_NOT_PUBLIC_DEPLOYMENT_OR_LEGAL_AUDIT",
+  "qa_head": "91a58a12cc5f12a09a0cba3a1a692e8fabfb7687",
+  "qa_head_unchanged": true,
+  "qa_tracked_diff_empty": true,
+  "root_site_publisher_exit_code": 0,
+  "site_origin": "LOCAL_LOOPBACK_ONLY_NOT_GITHUB_PAGES",
+  "canonical_release_credit": 0,
+  "independent_legal_audit_credit": 0,
+  "browser_suites": {
+    "passed": 5,
+    "failed": 0,
+    "seconds": 433.46000000000004,
+    "runs": "runs.json"
+  },
+  "checks": {
+    "public_practice": 22,
+    "representative": 19,
+    "new_cases_exercised": 77,
+    "new_cases_planned": 77,
+    "q0012_withdrawal": "PASS",
+    "refresh": 22,
+    "notes": 20
+  },
+  "uncaught_javascript_errors": 0,
+  "notes_external_runtime_requests": [],
+  "screenshots": 16,
+  "additional_actual_gates": [
+    {
+      "script": "scripts/audit_representative_similarity.py --check",
+      "exit_code": 0,
+      "log": "near-check.log"
+    },
+    {
+      "script": "scripts/generate_artifacts.py --check",
+      "exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "log": "canonical-artifacts-check.log"
+    }
+  ],
+  "environment": {
+    "playwright": "1.57.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.8.0"
+  },
+  "limitations": [
+    "Loopback HTTP and isolated browser-origin test storage; actual public GitHub Pages not checked by this worker.",
+    "No physical iOS/Android/Safari testing or new legal correctness certification.",
+    "Earlier QA7006 failures, old2a7 drift and old-publication unrecorded exit remain preserved separately; not retroactively passed.",
+    "Full candidate pytest/CI/public deployment remain root-controller work; this report records only the explicit scripts above."
+  ],
+  "raw_artifact_sha256": {
+    "publisher-completion.log": "ee92e916556b40d1e239773f3450750561b0aa03e400ba766f7497f4ba6db724",
+    "notes.log": "a91a9da4b696041e0f2e8321d85fab16d53c1fbbad165356eea644d9d7b11a27",
+    "near-check.log": "dd595539a64931d640701e9541c73cdad9d2a271b14432a163a59217bee94703",
+    "runs.json": "c910e75fdcdbaa245c153ef8d39c9ab813e6c930c36dc24019fae4ba6cfe05a4",
+    "browser-controller.py": "c3b35e8a13ff1ccbdd5fccab198ee11f8a48316ee4edcf6f262d3614a4a2570a",
+    "refresh.log": "8c339469a18de2456207abd4d223cda1188420a28ccb8862a64767fa99c8fef2",
+    "q0012-withdrawal.log": "7c4a832011c43ccbb15f2843ad1ffd51bff5eeb522e0a4aa9e9486e297445ba8",
+    "published-site-sha256.json": "455332d74987f349d72f06874e2347735c3f332dc6ea55fa615e8bea72704403",
+    "public-practice.log": "c61532fd5d6573ca32af6e1277377a5382a5414457b319b56ee98edd4a4a468f",
+    "canonical-artifacts-check.log": "a2ffc37f658cc62f7fa9f2d6a9aa1d9619dec8e95e7183802d86f73bf8209da3",
+    "representative-rewrites.log": "bb707ecc5ce88d78a6d1bd5889c8b166b138fec6d0eb39cd67f2e6490a7d73ba",
+    "refresh/report.json": "7c3d49309bd48322df508fa9748ec2d330202de764c880ddb746bb625e44dbbf",
+    "refresh/progress-export.json": "5ff7f97d54c62da18e35c3393871062f14723e04a09ac3835cd43108b554dc36",
+    "refresh/card-desktop-dark.png": "00c55c7a4b17f640fd20fbdaf810ff3931ca0a10e09a78778cf9360315aea960",
+    "refresh/card-mobile.png": "32373432af558f1b5f9690f5450da8f36496d782639def3e401868388c7ace27",
+    "refresh/return-path-desktop.png": "4d37b6c2df7fad2eda91f44101e850a7e1403fc8425b749bf74dc04f1a133019",
+    "public-practice/mobile.png": "0c76d8845ab2b65cda55996e9102d619c350c3ea6f6b3bdd292eef82fd74a3d6",
+    "public-practice/report.json": "40e08dd21fc67ffc3a07570c5d2691b3c46075c9615ea423775c59c9ffe27a81",
+    "public-practice/desktop.png": "a680e324bbf063817a843ff06625c4bd422a48ddd152e13e8fde3d4f37cf5817",
+    "public-practice/plus-mobile.png": "20aaa8516d1c27231e0f22e949694e93c2e774ba3806eeecc863292db421853e",
+    "q0012-withdrawal/report.json": "043090a4026b7d578963691e20a34362155b47ec0412ae32cb9365b0c6d75077",
+    "q0012-withdrawal/retained-history.png": "806dd53db90510ba3c0658b77100a37b3a99268ec530e2484b4f49399e8f920a",
+    "representative-rewrites/report.json": "099494c889eb5871ff5ea064db74c94f3069ce631e68c9a3e99b4ada4cf9857c",
+    "representative-rewrites/revision-mobile.png": "8b3a79f2ec8b47762d4a481f0089a9a1a49be767f49ab64786688dd2c582d200",
+    "representative-rewrites/revision-desktop.png": "5489c9a8eb1edaf9408ee9886ecc3dd90065f638a2762dbe8fbd78f3726e33f2",
+    "representative-rewrites/note-practice-mobile.png": "031cac463f3c39320b9250f7d59514510a057bc99da352da85287c329b0f812f",
+    "representative-rewrites/progress.json": "930ba6122d5816f6f331058703a060e855b5ecb52030706787127505cbc463bc",
+    "representative-rewrites/filter-help-mobile.png": "e224c6c941c83c6b975a8685472de51c1a200160787ddede95f6c1e674c2a56c",
+    "notes/storage-denied-mobile.png": "f80f6444e8af1b4e9170f2712a1ce58189572923ece0ade57dde955a1f7b6f31",
+    "notes/report.json": "86e9ccd7334ed8db412f58956af27496008bdc754436045d5e9295b36c222b2b",
+    "notes/chapter-dark.png": "3ebe2801d12243d6ff3119a68929a4338c9f0a579aad9995f7c230f5000eb97f",
+    "notes/home-mobile.png": "4cc51980f087beeb8ef3c857de14e049e6cb968a681b81bb41b390476978bb54",
+    "notes/book-mobile.png": "7b5e01551f7fe02294dc8c6ea876b52d0322ad915e80b8eb9cf97e1492423c61",
+    "notes/home-desktop.png": "94fbe7d5e032fd4cf7a9faa86bca20b54fc5fa345b663590915c2f43b0384354"
+  }
+}
