@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 57/306절. 누락 보완본의 새 독립 검토 대기 3절은 현재 처리 수에서 제외합니다. 누락 지적 0절 · 법규 보류 10절 · 독립 검토의 근거 미확인 10명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 58/306절. 누락 보완본의 새 독립 검토 대기 2절은 현재 처리 수에서 제외합니다. 누락 지적 1절 · 법규 보류 11절 · 독립 검토의 근거 미확인 10명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -491,9 +491,9 @@ Board authorization/program approval 신청은 예정된 presentation보다 최�
 ## 인력의 자격을 구분하는 지도
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-f1-review.json)
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-r3-review.json)
 
-> - 본문 마지막의 “취급할 수 있는 약의 상태가 제한된다”는 unlicensed cashier/vendor가 다룰 수 있는 완성·검증·포장 상태와 unfinished medication handling의 구별이다. 현재009는 licensed personnel과 전문업무 범위의 일반적 구별만,010은 external vendor의 prescription-area 접근 조건만 진술한다.15개 statement 어느 것도 약의 완료 상태에 따른 handling 제한의 존재를 실제 열거하지 않는다. Policy2020-15 I의 filled/verified/bagged 및 unfinished handling 조건은 직접 확인했지만, authority annotation에 있다는 사실을 statement 자체의 열거로 대체할 수 없다. 본문에 없는 세부 숫자를 추가하라는 요구나 단순 분절 개수 차이가 아니라 실제 body에 독립적으로 쓰인 약 상태 조건의 잔여 누락이다.
+> - 본문 마지막의 “Unlicensed cashier와 vendor … 들어갈 수 있는 구역 … 제한된다”는 cashier와vendor 양쪽의 접근 제한을 명시한다. 최종17개 statement 중010은externalvendor의prescription-area조건부접근만,009는unlicensedcashier와licensedpersonnel의일반전문업무구별만적는다. 새V3ADD001은cashier의완성처방판매상태,ADD002는미완성약handling면허요건을열거하므로원F15약상태누락은해소하지만,unlicensedcashier 자신의prescription-area접근제한과완성처방판매·pharmacist offer전달이라는그접근예외의범위는어느statement에도직접열거되지않았다. Policy2020-15§I첫문단의“Except for cashiers … no individual may access the prescription area without a license”를직접확인했다. Source annotation에있는access조건을statement자체로세지않았다. 이는본문에없는새세부숫자요구나분절수차이가아니라실제본문에명시된actor-specific구역접근조건의잔여누락이다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-b-1-census-v3.json)
