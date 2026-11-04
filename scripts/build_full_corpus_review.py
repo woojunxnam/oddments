@@ -80,8 +80,46 @@ def validate_default_review_safety(default_ids, reviews, independent_records):
         realism = review['realism_review']
         if (legal.get('verdict') != 'KEEP' or
                 legal.get('existing_answer_correct') != 'YES' or
-                realism.get('verdict') == 'FAIL'):
+                realism.get('verdict') != 'PASS'):
             raise ValueError('Uncontained independent finding in default practice: ' + review['question_id'])
+
+
+def apply_independent_legacy_review(row, audit_row):
+    """A supported key does not erase an unresolved law or explanation finding."""
+    previous=row['disposition']; previous_blocker=row['blocker']
+    legal=audit_row['legal_review']; realism=audit_row['realism_review']
+    row['author_disposition']=previous
+    row['independent_legacy_legal_assessment']=legal
+    row['independent_legacy_realism_assessment']=realism
+    row['independent_legacy_is_canonical_release_evidence']=False
+    key=legal['existing_answer_correct']; verdict=legal.get('verdict')
+    blocker=None
+    strong={'HOLD','HOLD_FOR_LEGAL_REVIEW','HOLD_SOURCE_RELATIONSHIP','DELETE','REPLACE'}
+    if key in {'AMBIGUOUS','NOT_ASSESSED','NO'}:
+        row['author_answer_key_assessment']=row['answer_key_assessment']
+        row['answer_key_assessment']='INDEPENDENT_LEGACY_'+key
+        disposition='HOLD_FOR_LEGAL_REVIEW'
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif verdict not in {'KEEP','MINOR_EDIT','MAJOR_REWRITE','DELETE'}:
+        disposition='HOLD_FOR_LEGAL_REVIEW'
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif previous in strong:
+        disposition=previous
+    elif verdict=='DELETE':
+        disposition='DELETE'; blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif realism.get('verdict')=='FAIL':
+        disposition='MAJOR_REWRITE'; blocker=audit_row['required_next_action_ko']
+    elif realism.get('verdict')!='PASS':
+        disposition='HOLD'; blocker=realism.get('finding_ko') or audit_row['required_next_action_ko']
+    elif verdict in {'MINOR_EDIT','MAJOR_REWRITE'}:
+        disposition='MAJOR_REWRITE' if previous=='MAJOR_REWRITE' else verdict
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    else:
+        disposition=previous
+    row['disposition']=disposition
+    if blocker:
+        row['author_review_blocker']=previous_blocker
+        row['blocker']=blocker
 
 
 def validate_editorial_assessment(assessment, qid):
@@ -537,20 +575,7 @@ def build():
     for row in result:
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
-            row['author_disposition'] = row['disposition']
-            row['independent_legacy_legal_assessment'] = audit_row['legal_review']
-            row['independent_legacy_realism_assessment'] = audit_row['realism_review']
-            row['independent_legacy_is_canonical_release_evidence'] = False
-            if audit_row['legal_review']['existing_answer_correct'] in {'AMBIGUOUS', 'NOT_ASSESSED', 'NO'}:
-                row['author_answer_key_assessment'] = row['answer_key_assessment']
-                row['author_review_blocker'] = row['blocker']
-                row['answer_key_assessment'] = 'INDEPENDENT_LEGACY_' + audit_row['legal_review']['existing_answer_correct']
-                row['disposition'] = 'HOLD_FOR_LEGAL_REVIEW'
-                row['blocker'] = audit_row['legal_review'].get('blocker') or audit_row['legal_review'].get('finding_ko')
-            elif audit_row['realism_review'].get('verdict') == 'FAIL':
-                row['author_review_blocker'] = row['blocker']
-                row['disposition'] = 'MAJOR_REWRITE'
-                row['blocker'] = audit_row['required_next_action_ko']
+            apply_independent_legacy_review(row,audit_row)
     independent_assessed = [r for r in independent_records if
                             r['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED']
     ids = [r['question_id'] for r in result]
