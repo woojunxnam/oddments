@@ -619,6 +619,10 @@ def build():
                 row['blocker_before_default_hold']=row['blocker']
                 row.update(disposition='HOLD',blocker=hold['reason'])
 
+    from note_question_discrepancies import load_metadata as load_note_links, apply_holds as apply_note_link_holds
+    note_links = load_note_links(ROOT, public_by_id, selection['recommended_ids'])
+    apply_note_link_holds(result, note_links)
+
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
     assert set(baseline['question_record_hashes']) <= set(ids)
@@ -753,6 +757,7 @@ def build():
                     same_team_peer_this_session='NOT_CERTIFIED_BY_THIS_INVENTORY',
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
+    progress['note_link_question_discrepancy_holds'] = note_links['summary']
     if secondary['assessments']:
         progress['independent_legacy_procedural_supplementary_review'] = secondary['progress']
     inventory = dict(

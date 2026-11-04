@@ -247,7 +247,7 @@ def validate_editorial_wording_holds(holds, old_by_id, input_hashes):
                 'Editorial hold quote differs from current choice')
 
 
-def archive_review_notices(old_by_id, input_hashes):
+def _existing_archive_review_notices(old_by_id, input_hashes):
     """Surface known defects without mutating a preserved answer or audit status."""
     path = REPORTS / 'archive-review-notices.json'
     if not path.exists():
@@ -320,6 +320,14 @@ def archive_review_notices(old_by_id, input_hashes):
                         'Editorial context notice lacks a matching supported-key review: ' + qid)
         seen.update(ids)
     return notices
+
+
+def archive_review_notices(old_by_id, input_hashes):
+    # Existing notices retain their original validator and immutable history.
+    from note_question_discrepancies import load_metadata, archive_notices
+    previous = _existing_archive_review_notices(old_by_id, input_hashes)
+    metadata = load_metadata(ROOT, old_by_id)
+    return archive_notices(previous, metadata)
 
 
 def verify_published_baseline(bank):
