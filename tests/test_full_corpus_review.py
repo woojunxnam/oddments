@@ -224,6 +224,15 @@ def protected_copy(tmp_path):
     shutil.copytree(ROOT/'revisions',tmp_path/'revisions')
     dest=tmp_path/'site/notes/build.json';dest.parent.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(ROOT/'site/notes/build.json',dest)
+    # This fixture tests the original fourteen guards in their exact PR190
+    # context. The new wrapper has separate current-source integration tests.
+    fifteenth=tmp_path/'revisions/notes/protected-migration-after190.json'
+    if fifteenth.exists():
+        fifteenth.unlink()
+        shutil.copyfile(tmp_path/'revisions/baselines/complete-notes-pr190.md',
+                        tmp_path/'site/notes/complete-notes.md')
+        shutil.copyfile(tmp_path/'revisions/baselines/notes-build-pr190.json',
+                        tmp_path/'site/notes/build.json')
     for metadata in (ROOT/'revisions/notes').glob('protected-migration-census-*.json'):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
