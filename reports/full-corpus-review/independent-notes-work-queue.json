@@ -8641,7 +8641,7 @@
           ]
         }
       },
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 2,
       "base_commit": "0b32c46a6acd58a272efc9686008aa1e4e5fffec",
       "inventory_ledger_sha256": "b32f06152f6b98af9da66f5dbfe3d3f8c7cf4388f8d151f821d4f0cffb893b03",
@@ -8723,7 +8723,38 @@
       "controller_independence_basis": "Actual fresh spawned nonauthor/nonparent reviewer; old executor workspace and unsent draft lost. Full body/census/source/related inputs must be read anew.",
       "lease_until": "2026-11-04T16:46:15.017136+00:00",
       "worker_branch": "mission/review-independent-notes-inactive-census-fcfb1af49389eb20-attempt-2",
-      "lease_token": "b2c235612d8513778a271098567f909fa1cdc9afc3b41c55009a053f17d3474b"
+      "lease_token": "b2c235612d8513778a271098567f909fa1cdc9afc3b41c55009a053f17d3474b",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/recover_inactive25_review",
+          "session_id": "/root/recover_inactive25_review"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT:/root/recover_inactive25_review:20261104",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "worker_commit": "155b3ab96ae6f46120fec42e6efe83968ca6e36d",
+        "unit_hashes": {
+          "w3-a-3": "e082d19727f6000e00d21a2c78e76405dfd406bf3f1a786242f57a1047c1ab4a"
+        },
+        "results": [
+          {
+            "unit_id": "w3-a-3",
+            "completeness": "COMPLETE",
+            "legal_status": "LEGAL_HOLD"
+          }
+        ],
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-inactive-census-fcfb1af49389eb20-result.json",
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/recovery-inactive25-review.json",
+          "raw_sha256": "7b9e8e6ea20cd236f8eaadfe9c4c35ad0892b5378dba7ab362b170e46bab0854"
+        }
+      },
+      "result_sha256": "c9299942c02d864bd270a0add93232f00af2480834ddd64019fa20bafbcb2834",
+      "submitted_at": "2026-11-04T12:48:54.637782+00:00"
     }
   ],
   "events": [
@@ -9816,6 +9847,13 @@
         "session_id": "/root/recover_inactive25_review"
       },
       "attempt": 2
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T12:48:54.637782+00:00",
+      "job_id": "review-independent-notes-inactive-census-fcfb1af49389eb20",
+      "result_sha256": "c9299942c02d864bd270a0add93232f00af2480834ddd64019fa20bafbcb2834",
+      "worker_commit": "155b3ab96ae6f46120fec42e6efe83968ca6e36d"
     }
   ],
   "reassessments": [
