@@ -1,0 +1,38 @@
+{
+  "pr": 189,
+  "tested_head": "f4ecea13a31b4c8dbdb7ef460b8caee54b571b27",
+  "merge_commit": "172d712e3e45781f4360cc75c43f46bfd0c358cf",
+  "pages_run": 41739839950,
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "build": "PASS",
+      "failure_step": "Deploy to GitHub Pages",
+      "http_status": 500,
+      "reason": "GitHub Pages create-deployment server error; no source/build validation failure",
+      "public_verification": "NOT_RUN"
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL",
+      "observed_at": "2026-11-03T23:35:52.569488+00:00",
+      "scope": "Re-run failed job for the identical merged commit; no gate/workflow changes",
+      "failure_step": "Deploy to GitHub Pages - fetch artifact metadata",
+      "public_verification": "FAIL_OLD_RELEASE_STILL336_DEFAULT",
+      "reason": "Re-running the same workflow run left two artifacts named github-pages; deploy-pages rejected artifact count2. This was not a second HTTP500.",
+      "error_verified_from_job": 126280197849
+    },
+    {
+      "attempt": 3,
+      "kind": "FRESH_WORKFLOW_DISPATCH",
+      "result": "SUCCESS",
+      "expected_head": "172d712e3e45781f4360cc75c43f46bfd0c358cf",
+      "observed_at": "2026-11-03T23:42:08.508580+00:00",
+      "reason": "Same tested main; source build unchanged. GitHub status reports operational, but prior create-deployment calls failed.",
+      "pages_run": 41741216556,
+      "status": "completed",
+      "public_verification": "PASS_10_OF_10_EXACT_FILES"
+    }
+  ]
+}
