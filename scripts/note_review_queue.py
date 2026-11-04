@@ -276,6 +276,11 @@ def recover(state, at=None):
     return recovered
 
 
+def revoke(state, identifier, token, reason, actor, at=None):
+    from review_lease_recovery import revoke_lost_worker
+    return revoke_lost_worker(state, job_for(state, identifier), token, reason, actor, at or timestamp())
+
+
 def claim(state, inv, worker, session, independence_basis, auditor='GPT', auditor_instance=None,
           known_authors=(), minutes=60, at=None):
     require(all(isinstance(x,str) and x.strip() for x in (worker,session,independence_basis,auditor)) and
@@ -514,6 +519,8 @@ def main():
     p.add_argument('--auditor',default='GPT'); p.add_argument('--auditor-instance')
     p.add_argument('--known-author',action='append',default=[]); p.add_argument('--minutes',type=int,default=60)
     commands.add_parser('recover'); commands.add_parser('progress')
+    p = commands.add_parser('revoke'); p.add_argument('--job', required=True)
+    p.add_argument('--token', required=True); p.add_argument('--reason', required=True)
     p = commands.add_parser('reassess'); p.add_argument('--record',required=True)
     p = commands.add_parser('reassess-body'); p.add_argument('--record',required=True)
     p = commands.add_parser('preview-body'); p.add_argument('--record',required=True)
@@ -555,6 +562,7 @@ def main():
             elif args.command == 'claim': output = claim(state,inv,args.worker,args.session,args.independence_basis,
                 args.auditor,args.auditor_instance,args.known_author,args.minutes)
             elif args.command == 'recover': output = recover(state)
+            elif args.command == 'revoke': output = revoke(state,args.job,args.token,args.reason,args.actor)
             elif args.command == 'heartbeat': output = heartbeat(state,args.job,args.token,inv,args.minutes)
             elif args.command == 'worktree': output = prepare_worktree(state,args.job,args.token,inv,root,args.destination)
             elif args.command == 'submit': output = submit(state,args.job,args.token,args.result.read_bytes(),root,inv)

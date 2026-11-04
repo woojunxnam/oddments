@@ -270,6 +270,11 @@ def recover(state, at=None):
     return recovered
 
 
+def revoke(state, job_id, token, reason, actor, at=None):
+    from review_lease_recovery import revoke_lost_worker
+    return revoke_lost_worker(state, get_job(state, job_id), token, reason, actor, at or timestamp())
+
+
 def claim(state, worker, minutes=60, at=None):
     if not worker.strip() or not 1 <= minutes <= 1440:
         raise ValueError('Worker and 1–1440 lease minutes required')
@@ -457,12 +462,15 @@ def main():
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--state', type=Path)
     parser.add_argument('--stage', choices=STAGES, default='author')
+    parser.add_argument('--actor', help='Actual controller identity; lease revocation requires /root')
     commands = parser.add_subparsers(dest='command', required=True)
     p = commands.add_parser('plan'); p.add_argument('--batches', type=int, default=1); p.add_argument('--size', type=int, default=40)
     p.add_argument('--prioritize-remediation-and-default', action='store_true',
                    help='Independent stage only: eligible remediation IDs, then current source-bound defaults, then lexical remainder.')
     p = commands.add_parser('claim'); p.add_argument('--worker', required=True); p.add_argument('--minutes', type=int, default=60)
     commands.add_parser('recover')
+    p = commands.add_parser('revoke'); p.add_argument('--job', required=True)
+    p.add_argument('--token', required=True); p.add_argument('--reason', required=True)
     for name in ('heartbeat', 'submit', 'integrate', 'worktree'):
         p = commands.add_parser(name); p.add_argument('--job', required=True)
         if name != 'integrate': p.add_argument('--token', required=True)
@@ -478,6 +486,7 @@ def main():
                                                         prioritize_remediation_defaults=args.prioritize_remediation_and_default)
         elif args.command == 'claim': output = claim(state, args.worker, args.minutes)
         elif args.command == 'recover': output = recover(state)
+        elif args.command == 'revoke': output = revoke(state, args.job, args.token, args.reason, args.actor)
         elif args.command == 'heartbeat': output = heartbeat(state, args.job, args.token, args.minutes)
         elif args.command == 'submit': output = submit(state, args.job, args.token, json.loads(args.result.read_text()))
         elif args.command == 'integrate': output = integrate(state, args.job, root)
