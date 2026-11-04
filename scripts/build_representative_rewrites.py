@@ -22,8 +22,8 @@ REPORTS = ROOT / 'reports/representative-rewrite'
 ORIGINAL_SELECTION = ROOT / 'practice_expansion/2026-10-27-quality/selection.json'
 COLLECTION = 'representative-20261028'
 INITIAL_EDITION = '2026-10-28.representative1'
-EDITION = '2026-10-30.representative6'
-REVIEW_DATE = '2026-10-30'
+EDITION = '2026-11-04.representative7'
+REVIEW_DATE = '2026-11-04'
 PUBLISHED_UNIT1_COMMIT = 'f112d3578664aa51785ba4596547e8d722fad36c'
 BASE_COMMIT = 'b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36'
 ARCHIVES = [
@@ -185,6 +185,19 @@ def validate_nonlegacy_selection(selection, baseline, by_id, root=None):
     require(len(rewrites) == len(selection['new_ids']) and
             rewrites == {qid for qid in by_id if qid.startswith('MA-RW-')},
             'Rewrite archive preservation changed')
+    archive_links = selection.get('archive_only_replacements', [])
+    archive_ids = {r['replacement_question_id'] for r in archive_links}
+    require(len(archive_ids) == len(archive_links), 'Duplicate archive-only replacement ID')
+    bound_archive_ids = {qid for qid, q in by_id.items() if q.get('archive_only_candidate')}
+    require(archive_ids == bound_archive_ids, 'Archive candidate selection/bank mismatch')
+    for link in archive_links:
+        qid = link['replacement_question_id']
+        q = by_id[qid]
+        require(qid in rewrites and q['revision_of'] == link['legacy_question_id'] and
+                q['content_sha256'] == link['content_sha256'] and
+                link['legacy_question_id'] in {h['legacy_question_id'] for h in selection['holds']} and
+                q['remediation_candidate']['current_id_independent_audit'] == 'PENDING',
+                'Invalid archive-only replacement binding: ' + qid)
     replaced_ids = [r['legacy_question_id'] for r in selection['replacements']]
     original_held_ids = [h['legacy_question_id'] for h in selection['holds']]
     require(len(replaced_ids) == len(set(replaced_ids)) and
@@ -204,12 +217,12 @@ def validate_nonlegacy_selection(selection, baseline, by_id, root=None):
     expected = load_safety_holds(by_id, previous, rewrites, legacy, candidates, {}, root)
     require(selection.get('safety_holds', []) == expected, 'Selection safety holds differ from source evidence')
     held = {h['question_id'] for h in expected}
-    require(set(selection['recommended_ids']) == candidates - held,
+    require(set(selection['recommended_ids']) == candidates - held - archive_ids,
             'Default IDs differ from explicit replacement/hold mappings')
     stats = selection['stats']
     counts = dict(previous_quality=len(previous), previous_quality_default=len(previous - held),
                   previous_quality_safety_held=len(previous & held),
-                  rewrite_default=len(rewrites - held), rewrite_safety_held=len(rewrites & held),
+                  rewrite_default=len(rewrites - held - archive_ids), rewrite_archive_only_candidates=len(archive_ids), rewrite_safety_held=len(rewrites & held),
                   nonlegacy_safety_held_from_default=len(held),
                   original355_default=len(legacy & set(selection['recommended_ids'])),
                   original355_held_from_default=len(selection['holds']))
@@ -405,6 +418,9 @@ def build():
     author_metadata = {}
     for path in source_files:
         d = read(path)
+        if path.name == '10_sata_remediation.json':
+            from build_sata_remediation_candidates import authoring_payload
+            require(d == authoring_payload(ROOT), 'Lossless remediation authoring/proof drift')
         require(d['review_status'] == REVIEW_STATUS, f'{path}: unsupported review claim')
         original_file = path.name in {'01_personnel.json', '02_clinical_authority.json'}
         authored_at = d.get('authored_at', '2026-10-28' if original_file else None)
@@ -450,9 +466,11 @@ def build():
         input_hashes[str(extra_holds.relative_to(ROOT))] = digest(extra_holds.read_bytes())
     validate_editorial_wording_holds(holds,old_by_id,input_hashes)
     require(len({q['question_id'] for q in authored}) == len(authored), 'Duplicate new IDs')
-    addressed = [q['legacy_question_id'] for q in authored] + [h['legacy_question_id'] for h in holds] + [q['legacy_question_id'] for q in reused]
+    addressed = [q['legacy_question_id'] for q in authored if not q.get('archive_only_candidate')] + [h['legacy_question_id'] for h in holds] + [q['legacy_question_id'] for q in reused]
     require(len(set(addressed)) == len(addressed), 'A legacy question has more than one disposition')
     require(set(addressed) <= legacy_ids, 'Disposition outside the original 355')
+    archive_authored = [q for q in authored if q.get('archive_only_candidate')]
+    require(all(q.get('remediation_candidate') for q in archive_authored), 'Unbound archive-only candidate')
     items = []
     for a in sorted(authored, key=lambda q: q['question_id']):
         qid, legacy_id = a['question_id'], a['legacy_question_id']
@@ -490,7 +508,9 @@ def build():
         for uid in a['note_unit_ids']:
             require(uid in question_units, qid + ': unknown note ' + uid)
             chapter, unit = question_units[uid]
-            inherited_source_ids.extend(unit['source_ids'])
+            # Remediation uses the exact retained G primary proofs; note links are context.
+            if not a.get('archive_only_candidate'):
+                inherited_source_ids.extend(unit['source_ids'])
             evidence.append(dict(unit_id=uid, title=unit['title'], body_sha256=unit['body_sha256'],
                 inherited_note_review_date=unit['source_review_date'], inherited_flags=unit['flags'],
                 url=f'https://woojunxnam.github.io/oddments/notes/#chapter/{chapter}/{uid}'))
@@ -510,7 +530,7 @@ def build():
             explanation=dict(core_reasoning=a['core_reasoning_ko'],
                 choice_analysis={c['id']: c['rationale_ko'] for c in a['choices']},
                 choice_authorities=choice_refs,
-                learning_boundary='기존 대표 문항을 별도 사례로 다시 작성했습니다. 원본과 새 문항의 풀이 기록은 각각 보존됩니다. 작성자 출처 대조와 편집 검토이며 독립 법규 감사 또는 실제 시험 난도 보정은 아닙니다.'),
+                learning_boundary=a.get('learning_boundary_ko', '기존 대표 문항을 별도 사례로 다시 작성했습니다. 원본과 새 문항의 풀이 기록은 각각 보존됩니다. 작성자 출처 대조와 편집 검토이며 독립 법규 감사 또는 실제 시험 난도 보정은 아닙니다.')),
             note_evidence=evidence, source_ids=list(dict.fromkeys(inherited_source_ids + primary_ids)),
             authority='; '.join(dict.fromkeys(ref['exact_section'] for ref in primary_refs)),
             primary_source_read_records=[dict(source_id=sid, accessed_at=sources[sid]['checked_at'],
@@ -532,6 +552,9 @@ def build():
             duplicate_review_status='EDITORIAL_DECISION_PATH_COMPARISON_NOT_GLOBAL_SEMANTIC_CERTIFICATION',
             difficulty_status='NOT_CALIBRATED', _statement_truth={c['id']: c['correct'] for c in a['choices']},
         )
+        if a.get('archive_only_candidate'):
+            item['archive_only_candidate'] = True
+            item['remediation_candidate'] = copy.deepcopy(a['remediation_candidate'])
         if a.get('notes_revision'):
             from notes_revision import load_notes
             item['notes_revision'] = load_notes(ROOT, revision_id=a['notes_revision'])['revision_provenance']
@@ -543,7 +566,12 @@ def build():
             item['content_sha256'] = content_hash(item)
         items.append(item)
     replacements = [dict(legacy_question_id=q['revision_of'], replacement_question_id=q['question_id'],
-        kind='NEW_CASE', content_sha256=q['content_sha256']) for q in items]
+        kind='NEW_CASE', content_sha256=q['content_sha256']) for q in items if not q.get('archive_only_candidate')]
+    archive_only_replacements = [dict(legacy_question_id=q['revision_of'], replacement_question_id=q['question_id'],
+        kind='ARCHIVE_ONLY_REPLACEMENT_CANDIDATE', content_sha256=q['content_sha256'])
+        for q in items if q.get('archive_only_candidate')]
+    require(all(r['legacy_question_id'] in {h['legacy_question_id'] for h in holds}
+                for r in archive_only_replacements), 'Archive candidates must retain original HOLDs')
     for reuse in reused:
         existing = reuse['existing_question_id']
         require(existing in original_selection['new_ids'], 'Reuse target is not in unchanged previous96')
@@ -577,7 +605,7 @@ def build():
         edition=EDITION, base_commit=BASE_COMMIT, baseline_selection_path=str(ORIGINAL_SELECTION.relative_to(ROOT)),
         baseline_selection_sha256=digest(ORIGINAL_SELECTION.read_bytes()), recommended_ids=recommended,
         new_ids=[q['question_id'] for q in items], previous_quality_ids=original_selection['new_ids'],
-        replacements=replacements, holds=holds, safety_holds=safety_holds, archive_review_notices=notices,
+        replacements=replacements, archive_only_replacements=archive_only_replacements, holds=holds, safety_holds=safety_holds, archive_review_notices=notices,
         history_policy='All legacy, previous96 and MA-RW IDs/keys remain. No progress, attempt, or bookmark migration. Cross-links are informational only; known key/rationale defects have separate source-bound warnings.',
         stats=dict(recommended=len(recommended), legacy_representatives_remaining=sum(i in legacy_ids for i in recommended),
             baseline_legacy_representatives=355, newly_authored_replacements=len(items),
@@ -585,6 +613,7 @@ def build():
             previous_quality_default=sum(qid in recommended for qid in original_selection['new_ids']),
             previous_quality_safety_held=sum(qid in safety_held_ids for qid in original_selection['new_ids']),
             rewrite_default=sum(q['question_id'] in recommended for q in items),
+            rewrite_archive_only_candidates=len(archive_only_replacements),
             rewrite_safety_held=sum(q['question_id'] in safety_held_ids for q in items),
             nonlegacy_safety_held_from_default=len(safety_holds),
             original355_default=sum(qid in legacy_ids for qid in recommended),
@@ -602,6 +631,9 @@ def build():
         stats=dict(questions=len(items), families=len({q['family_id'] for q in items})),
         source_authoring_hashes=input_hashes, authoring_scope_notes=scope_notes, sources=sources, questions=items)
     verify_published_baseline(bank)
+    from build_sata_remediation_candidates import ALLOCATION, validate_preservation
+    if (ROOT / ALLOCATION).exists():
+        validate_preservation(bank, ROOT)
     metrics = dict(date=REVIEW_DATE, base_commit=BASE_COMMIT,
         method='Exact text normalization retains numbers. Length and key-pattern statistics are review signals, not validity findings. Semantic findings are recorded separately by editors.',
         baseline_legacy_355=pattern_metrics([old_by_id[i] for i in sorted(legacy_ids)]),

@@ -590,6 +590,9 @@ def build():
                            next_action='Review frozen current hash independently before canonical release.')
                 row['choice_by_choice_findings'] = {c['id']: dict(finding_ko=c['rationale_ko'], authorities=c['authority_refs']) for c in a['choices']}
                 row['authority_clauses'] = [r for c in a['choices'] for r in c['authority_refs']]
+            if q.get('archive_only_candidate'):
+                from build_sata_remediation_candidates import bind_candidate_inventory_row
+                bind_candidate_inventory_row(row, q, ROOT)
             row['deployment_status'] = 'CURRENT_BUILD_PUBLICATION_NOT_ASSERTED'
             row['historical_deployment_evidence'] = (
                 ['reports/full-corpus-review/unit3a-deployment.json'] if qid in unit3a_ids else []
