@@ -21,6 +21,7 @@ Q = {q['question_id']: q for q in json.loads((ROOT / adapter.BASE / 'questions.j
 AUTHORING = adapter.authoring_payload(ROOT)
 REAL_CANDIDATE_RECORDS = native.candidate_records
 
+
 def frozen_author_parent(root=ROOT):
     # Capture one committed tree, then select only the immutable baseline prefix.
     # The real controller may append job53 while this test process is running.
@@ -39,7 +40,6 @@ def frozen_author_parent(root=ROOT):
 
 
 FROZEN_AUTHOR_PARENT = frozen_author_parent()
-
 
 
 def write(root, path, value):
@@ -294,6 +294,27 @@ def test_actual_compiled_candidate_object_cannot_change_under_allocated_ID(repo,
     write(root, adapter.BASE + '/questions.json', bank)
     with pytest.raises(ValueError, match='current-record hash changed'):
         native.candidate_records(root)
+
+
+@pytest.mark.parametrize('source', ['report', 'registry'])
+def test_uncommitted_native_author_source_never_credits(repo, source):
+    root, _, _, _, static = repo
+    _, _, path = complete_author_job(repo)
+    target = root / (path if source == 'report' else native.REGISTRY)
+    target.write_bytes(target.read_bytes() + b'\n')
+    with pytest.raises(ValueError, match='must match committed HEAD'):
+        native.load_sources(root, static)
+
+
+def test_legacy_draft_date_cache_cannot_bypass_formal_author_gate(repo):
+    root, _, ledger, *_ = repo
+    for qid in Q:
+        ledger[qid].pop('current_id_author_review_required')
+        ledger[qid]['checked_at'] = '2026-11-04'
+        assert ledger[qid]['author_review_increment'] == 0
+    state = queue.empty('independent-legacy')
+    assert queue.plan(state, {qid: ledger[qid] for qid in Q}, root, size=3, at=NOW) == []
+
 
 def test_fixture_freezes_original_parent_after_real_native_job53_is_appended(repo):
     root, state, *_ = repo

@@ -197,6 +197,7 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
                             ((stage == 'author' and (row['legal_review_status'] == UNREVIEWED or
                              row.get('current_id_author_review_required') is True)) or
                              (stage == 'independent-legacy' and row.get('checked_at') and
+                              row.get('author_review_increment', 1) != 0 and
                               row.get('current_id_author_review_required') is not True and
                               row.get('independent_legacy_legal_assessment') is None)))
         if prioritize_remediation_defaults:

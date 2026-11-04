@@ -498,7 +498,7 @@ def remediation_priority_fixture(tmp_path):
         ledger[qid] = dict(question_id=qid, collection='questions.json', content_sha256=queue.digest(q),
                            legal_review_status='DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT', checked_at=NOW,
                            known_author_editor_actor_ids=q['remediation_candidate']['known_author_editor_actor_ids'],
-                           author_review_increment=0)
+                           author_review_increment=1)
         allocations.append(dict(question_id=qid, original_question_id=original, draft_key=draft))
     for row in ledger.values():
         row['checked_at'] = NOW
@@ -615,6 +615,8 @@ def test_known_actor_metadata_must_match_current_source_even_without_priority_op
 
 def test_bound_G_draft_date_is_not_new_author_review_credit(tmp_path):
     ledger = remediation_priority_fixture(tmp_path)
+    for qid in ('MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'):
+        ledger[qid]['author_review_increment'] = 0
     progress = queue.progress(queue.empty('independent-legacy'), ledger,
         dict(notes_units_with_complete_atomic_claim_census=0, notes_units=306, deployment_status='NOT_RUN'))
     assert progress['author_review']['count'] == len(ledger) - 3
