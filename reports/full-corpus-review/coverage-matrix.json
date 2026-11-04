@@ -5341,7 +5341,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/refill-cancer-final-census.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w2-c-12-census-v2.json",
       "atomic_census_notes_revision": "2026-11-03.refill-cancer.1",
       "atomic_source_blocked_count": 0,
       "atomic_claim_ids": [
@@ -5365,10 +5365,11 @@
         "REFILL-CANCER-FINAL-W2-C-12-018",
         "REFILL-CANCER-FINAL-W2-C-12-019",
         "REFILL-CANCER-FINAL-W2-C-12-020",
-        "REFILL-CANCER-FINAL-W2-C-12-021"
+        "REFILL-CANCER-FINAL-W2-C-12-021",
+        "NOTE-CENSUS-V2-W2-C-12-ADD-001"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -5376,26 +5377,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 21,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/fourth-b-review.json",
         "report_sha256": "d14f1bd89500405bebcad3e95e699f9213130ee68f814281012cad770d5463cc",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-1a27fcbc5afaebf5-result.json",
         "result_sha256": "a2c0ac0b20bf04d87c8bc86ced7491b0ca52c2edae3059cc3f0921610b0a7142",
         "body_sha256": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146",
-        "census_sha256": "dfc12895bcafef7134507378547ec4cd41d45b34d3eaa51498a4285f9d099072",
+        "census_sha256": "f2b4b2615672e79c85098c902c13b66aaa65ab5991140df35e320124f0d9ba33",
         "actor_provenance": {
           "actor_id": "/root/independent_case_b",
           "session_id": "/root/independent_case_b"
         },
         "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-9db4b084482d44bf",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문마지막문장 “Pharmacist가모든성인opioid처방에대해일생최초사용여부를별도로조사해야한다는새로운universalduty를이조문만으로만들어내지않는다”가census21개명제에직접열거되지않았다. 020의처방발행주체practitioner및021의일반correspondingresponsibility만으로이별도조사의무한정이기록되었다고보지않는다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 21,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/fourth-b-review.json",
+            "report_sha256": "d14f1bd89500405bebcad3e95e699f9213130ee68f814281012cad770d5463cc",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-1a27fcbc5afaebf5-result.json",
+            "result_sha256": "a2c0ac0b20bf04d87c8bc86ced7491b0ca52c2edae3059cc3f0921610b0a7142",
+            "body_sha256": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146",
+            "census_sha256": "dfc12895bcafef7134507378547ec4cd41d45b34d3eaa51498a4285f9d099072",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_b",
+              "session_id": "/root/independent_case_b"
+            },
+            "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-1a27fcbc5afaebf5"
+          }
+        ]
       }
     },
     {
@@ -5696,7 +5733,34 @@
         "NOTE-WAVE8-W3-A-1-008",
         "NOTE-WAVE8-W3-A-1-009"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 9,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+        "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+        "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+        "body_sha256": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-2",
@@ -5737,7 +5801,47 @@
         "NOTE-WAVE8-W3-A-2-020",
         "NOTE-WAVE8-W3-A-2-021"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-2-014",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "Board의 일반 label 목록에는 strength/concentration이 있으나, 모든 제형의 법정/USP 상세 범위를 이 목록만으로 완전 인증하지 않는다. 본문의 일반 요약과 underlying USP 직접 검증을 구별한다.",
+            "blocker": "모든 일반 patient label의 법정 strength/concentration 적용 범위·예외를 완전 해소하지 못함. Board newsletter를 USP 원문 직접 검증으로 대체하지 않았음."
+          },
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-2-015",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "§21의 명시적 number-of-units 문구는 tablets/capsules 조건이다. Newsletter의 일반 quantity 목록이 모든 제형에 동일 조문이 적용됨을 뜻한다고 인증하지 않는다.",
+            "blocker": "본문 quantity 일반 표현의 모든 제형별 법적 범위 미해소. tablets/capsules 조문과 Board 요약은 확인했으나 전체 범위는 HOLD."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 19,
+          "LEGAL_HOLD": 2,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+        "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+        "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+        "body_sha256": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-3",
@@ -5780,7 +5884,47 @@
         "NOTE-WAVE8-W3-A-3-022",
         "NOTE-WAVE8-W3-A-3-023"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-3-011",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "§21의 elderly cross-reference와 현재19A14의 Older adult 표기가 다르다. 현재60세 정의와 large-print 문구는 읽었지만 용어 변경·승계의 구체 근거를 이번 범위에서 완결하지 않았다.",
+            "blocker": "두 게시조문 용어 변경의 명시적 승계/적용 관계 추가 확인 필요. 이 한계를 전체 요청자 권리 부정으로 해석하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-3-019",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "실제 배포 문구는 narcotic or controlled substance contained in schedule II or III이다. 본문의 II/III narcotic/opioid 한정 표현은 최소한 non-opioid II/III controlled substance를 빠뜨릴 수 있다.",
+            "blocker": "본문의 opioid/narcotic-only 범위 축소를 수정/해결해야 함. 일반적인 IV narcotic 전체 해석까지 이번 finding으로 확대 확정하지 않는다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 21,
+          "LEGAL_HOLD": 2,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+        "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+        "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+        "body_sha256": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-4",
@@ -5811,7 +5955,47 @@
         "NOTE-WAVE8-W3-A-4-010",
         "NOTE-WAVE8-W3-A-4-011"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-4-010",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "label 변경의 조문과 원 처방 보존·권한 검증을 구분했다. 다만 shield 개인정보·전자 기록·감사 자료의 전체 처리 범위를 이 label 조문 하나로 해결했다고 인증하지 않는다.",
+            "blocker": "전체 identity-data retention/disclosure/privacy scope의 교차법 적용을 완결하지 않음. 일반 identity/authenticity 구별은 확인했지만 모든 원장 처리 권한을 인증하지 않는다."
+          },
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-4-011",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "MA statute와 federal HIPAA reproductive-rule 소송·효력은 서로 다른 법체계이다. 이 본문은 구체 판결 결과를 말하지 않으며 이번 감사도 그 전체 최신 소송 결과를 확인한 것으로 세지 않는다.",
+            "blocker": "현재 HIPAA reproductive-rule litigation/order의 구체 전국/당사자 효력 범위는 본 작업에서 NOT_ASSESSED. MA label법 검증으로 이를 대체하지 않는다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 9,
+          "LEGAL_HOLD": 2,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+        "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+        "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+        "body_sha256": "84f41f3664ae49204508fafede2deaeb2aded7bd058bc24ceee477022215b2d0",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-6",
@@ -5826,7 +6010,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave8-census.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w3-a-6-census-v2.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 1,
       "atomic_claim_ids": [
@@ -5850,9 +6034,90 @@
         "NOTE-WAVE8-W3-A-6-018",
         "NOTE-WAVE8-W3-A-6-019",
         "NOTE-WAVE8-W3-A-6-020",
-        "NOTE-WAVE8-W3-A-6-021"
+        "NOTE-WAVE8-W3-A-6-021",
+        "NOTE-CENSUS-V2-W3-A-6-ADD-001",
+        "NOTE-CENSUS-V2-W3-A-6-ADD-002"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "PENDING_REASSESSMENT",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 1,
+        "omissions": [
+          "본문 w3-a-6의 \"보험 adjudication 결과만으로 법정 interchangeability나 no-substitution 지시를 대체하지 않는다.\"를 census가 명시적으로 열거하지 않았다. 기존001-003은 product/list,015-020은 prescriber no-substitution 요건을 다루나 payer adjudication의 독립된 법적 효과를 직접 또는 명시적 복합 claim으로 담지 않는다. 단순 문장 분할 수 차이가 아니라 보험 지불 판단을 법정 TE/처방 권한으로 대체하지 못한다는 주체·행위 경계의 누락이다."
+        ],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE8-W3-A-6-011",
+            "legal_status": "LEGAL_HOLD",
+            "finding": "FDA는 TE 제품이 release mechanisms에서 다를 수 있다고 명시한다. IR 대 ER은 alternatives이나, 본문의 다른 release formulation이 모든 mechanism 차이를 blanket 금지하는 뜻인지 불명확하다.",
+            "blocker": "IR/ER 차이와 TE가 입증된 제품의 release-mechanism 차이를 구별하도록 본문 범위 명료화 필요. 동일 ER끼리도 무조건 대체 금지라는 승인으로 쓰지 않는다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 0,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+        "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+        "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+        "body_sha256": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+        "census_sha256": "baf526f353f66fc67ba3256ccc9d690b17d72d52a6ece11b9f952c514f461e68",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-ea21ac3262b9db89",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문 w3-a-6의 \"보험 adjudication 결과만으로 법정 interchangeability나 no-substitution 지시를 대체하지 않는다.\"를 census가 명시적으로 열거하지 않았다. 기존001-003은 product/list,015-020은 prescriber no-substitution 요건을 다루나 payer adjudication의 독립된 법적 효과를 직접 또는 명시적 복합 claim으로 담지 않는다. 단순 문장 분할 수 차이가 아니라 보험 지불 판단을 법정 TE/처방 권한으로 대체하지 못한다는 주체·행위 경계의 누락이다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE8-W3-A-6-011",
+                "legal_status": "LEGAL_HOLD",
+                "finding": "FDA는 TE 제품이 release mechanisms에서 다를 수 있다고 명시한다. IR 대 ER은 alternatives이나, 본문의 다른 release formulation이 모든 mechanism 차이를 blanket 금지하는 뜻인지 불명확하다.",
+                "blocker": "IR/ER 차이와 TE가 입증된 제품의 release-mechanism 차이를 구별하도록 본문 범위 명료화 필요. 동일 ER끼리도 무조건 대체 금지라는 승인으로 쓰지 않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 20,
+              "LEGAL_HOLD": 1,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/fifth-c-review.json",
+            "report_sha256": "6f48c97fef5e585e38740719c29572ea6d68443b27ab9f4fc67ae90ac3750829",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-3412f11d8110cc8f-result.json",
+            "result_sha256": "fc70c5bb293b34c0a45688ae7505cfaec831292f414f79b0aad9bc9f8479e47c",
+            "body_sha256": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+            "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_c",
+              "session_id": "/root/independent_case_c"
+            },
+            "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-3412f11d8110cc8f"
+          }
+        ]
+      }
     },
     {
       "unit_id": "w3-a-7",
@@ -5867,7 +6132,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave8-census.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w3-a-7-census-v2.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 0,
       "atomic_claim_ids": [
@@ -5879,9 +6144,75 @@
         "NOTE-WAVE8-W3-A-7-006",
         "NOTE-WAVE8-W3-A-7-007",
         "NOTE-WAVE8-W3-A-7-008",
-        "NOTE-WAVE8-W3-A-7-009"
+        "NOTE-WAVE8-W3-A-7-009",
+        "NOTE-CENSUS-V2-W3-A-7-ADD-001"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "PENDING_REASSESSMENT",
+        "legal_status": "LEGAL_HOLD",
+        "omission_count": 1,
+        "omissions": [
+          "w3-a-7 본문 마지막 문단의 “목록에 있다는 사실이 현재 판매 중임을 항상 보장하는 것은 아니다”라는 현재 marketing-status 한계가 배정 census9개 statement에 열거되지 않았다. Claim008은 제품 대응 관계를 listing으로 결정하지 못할 때 manufacturer/distributor/repackager에 확인하는 절차이며, listing이 current marketed/available 상태를 보장하지 않는다는 독립 명제를 말하지 않는다. Claim009의 same-company inference 금지도 그 명제와 다르다. 본문은 옳은 한계를 이미 보존하므로 본문 오류가 아닌 census 누락이다."
+        ],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 0,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": true,
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+        "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+        "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+        "body_sha256": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+        "census_sha256": "1d8af84d306abf63e893fcb92675e88111141c829149ce84d9926972d8852c5f",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-a9bea3c4426a21be",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "w3-a-7 본문 마지막 문단의 “목록에 있다는 사실이 현재 판매 중임을 항상 보장하는 것은 아니다”라는 현재 marketing-status 한계가 배정 census9개 statement에 열거되지 않았다. Claim008은 제품 대응 관계를 listing으로 결정하지 못할 때 manufacturer/distributor/repackager에 확인하는 절차이며, listing이 current marketed/available 상태를 보장하지 않는다는 독립 명제를 말하지 않는다. Claim009의 same-company inference 금지도 그 명제와 다르다. 본문은 옳은 한계를 이미 보존하므로 본문 오류가 아닌 census 누락이다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 9,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+            "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+            "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+            "body_sha256": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+            "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_f",
+              "session_id": "/root/independent_case_f"
+            },
+            "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-771c735e22eb9a0a"
+          }
+        ]
+      }
     },
     {
       "unit_id": "w3-a-8",
@@ -5911,7 +6242,34 @@
         "NOTE-WAVE8-W3-A-8-009",
         "NOTE-WAVE8-W3-A-8-010"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 10,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+        "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+        "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+        "body_sha256": "de573f780075442ba8369e77421fb003c3cb1ebf357e7b25724827de4ef2b7ef",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-9",
@@ -5940,7 +6298,34 @@
         "NOTE-WAVE8-W3-A-9-008",
         "NOTE-WAVE8-W3-A-9-009"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 9,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+        "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+        "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+        "body_sha256": "7d7e2a9620494046190256cff287e6341a4ab60d5759faaac2f697d8fbf4de25",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-10",
@@ -5981,7 +6366,34 @@
         "NOTE-WAVE8-W3-A-10-020",
         "NOTE-WAVE8-W3-A-10-021"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [],
+        "claim_counts": {
+          "KEEP": 21,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
+        },
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+        "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+        "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+        "body_sha256": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25",
+        "census_sha256": "9d2289011c30000f78eec877f311216fddcf10c6fdbbc7f166ea03700ef8d8d4",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "point-of-sale-price",
@@ -6008,7 +6420,41 @@
         "NOTE-WAVE3-POINT-OF-SALE-PRICE-006",
         "NOTE-WAVE3-POINT-OF-SALE-PRICE-007"
       ],
-      "independent_atomic_census_review": null
+      "independent_atomic_census_review": {
+        "completeness": "COMPLETE",
+        "legal_status": "SOURCE_BLOCKED",
+        "omission_count": 0,
+        "omissions": [],
+        "findings": [
+          {
+            "claim_id": "NOTE-WAVE3-POINT-OF-SALE-PRICE-006",
+            "legal_status": "SOURCE_BLOCKED",
+            "finding": "§21C는 가격 규칙이며 그 자체에서 product-interchange·처방 적법성의 일반 의무를 없애는 문구를 확인하지 못했다. §12D와9.15(2)는 해당 대체·prescriber 검토의 별도 근거다. 그러나 이 복합 명제의 허위청구 제한 전반에 대한 controlling law·적용요건 대조까지 완료한 것으로 주장하지 않는다. 배정의 기존 SOURCE_BLOCKED를 유지하며 이번에 해제하지 않는다.",
+            "blocker": "배정에서 SOURCE_BLOCKED인 NOTE-WAVE3-POINT-OF-SALE-PRICE-006을 유지한다. §21C의 가격 의무와 §12D/9.15의 별도 대체·prescriber 요건은 직접 읽었지만 복합 명제의 허위청구 제한 전반에 대한 controlling law·요건 검증은 완료하지 않았다. 현재 증거를 그 부분까지 확정한 PASS로 부풀리거나 기존 개별 보류를 해제하지 않는다. 내용이 틀렸다고 확정한 판정도 아니다."
+          }
+        ],
+        "claim_counts": {
+          "KEEP": 6,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 1
+        },
+        "requires_review": true,
+        "notice": "독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다.",
+        "report_path": "reports/full-corpus-review/independent-notes/fifth-f-review.json",
+        "report_sha256": "ce9e7e078912c3aeb2d0827ec29ed1f68834e3113dcc9ccaac7d04e1fe1d9ee5",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-771c735e22eb9a0a-result.json",
+        "result_sha256": "ad01bcff5c5a2c7ba12e1ddc4f8c9f79d2cecd437add1126cf00f4bd637a76b3",
+        "body_sha256": "3984409bfdeeee9a11e66f19719981acbff0a0af23df027505854c05eabc4dcc",
+        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_f",
+          "session_id": "/root/independent_case_f"
+        },
+        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "question_audit_credit": 0,
+        "canonical_release_credit": 0
+      }
     },
     {
       "unit_id": "w3-a-11",
