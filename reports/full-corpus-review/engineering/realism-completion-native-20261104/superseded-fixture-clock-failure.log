@@ -1,0 +1,15 @@
+.........................F.....                                          [100%]
+=================================== FAILURES ===================================
+____ test_lost_lease_requeue_uses_new_native_attempt_and_rejects_old_token _____
+tests/test_realism_completion_review.py:300: in test_lost_lease_requeue_uses_new_native_attempt_and_rejects_old_token
+    q.revoke(state,job['job_id'],old['lease_token'],'SYNTHETIC lost worker','/root',at='2026-11-04T12:01:00+00:00')
+scripts/review_queue.py:275: in revoke
+    return revoke_lost_worker(state, get_job(state, job_id), token, reason, actor, at or timestamp())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/review_lease_recovery.py:33: in revoke_lost_worker
+    raise ValueError('Revocation cannot precede queue history')
+E   ValueError: Revocation cannot precede queue history
+--- generated xml file: /workspace/scratch/realism-completion-focused-v3.xml ---
+=========================== short test summary info ============================
+FAILED tests/test_realism_completion_review.py::test_lost_lease_requeue_uses_new_native_attempt_and_rejects_old_token
+1 failed, 30 passed in 40.12s
