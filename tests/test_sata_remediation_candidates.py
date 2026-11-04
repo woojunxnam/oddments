@@ -10,6 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_sata_remediation_candidates as adapter
 import build_representative_rewrites as compiler
+from default_selection_assertions import (source_bound_default_delta,
+    assert_clarifier_only_changes_source_url_metadata)
 
 
 @pytest.fixture(scope='module')
@@ -94,10 +96,6 @@ def test_original_holds_defaults_and_history_are_not_bypassed(compiled):
     selection = compiled[compiler.BASE / 'selection.json']
     manifest = json.loads((ROOT / adapter.ALLOCATION).read_text())
     old = manifest['preserved_selection']
-    assert selection['recommended_ids'] == old['recommended_ids']
-    assert selection['holds'] == old['holds']
-    assert selection['replacements'] == old['replacements']
-    assert selection['safety_holds'] == old['safety_holds']
     candidate_ids = {r['question_id'] for r in manifest['allocations']}
     assert not candidate_ids & set(selection['recommended_ids'])
     assert {r['replacement_question_id'] for r in selection['archive_only_replacements']} == candidate_ids
@@ -105,21 +103,43 @@ def test_original_holds_defaults_and_history_are_not_bypassed(compiled):
     by_id = {q['question_id']: q for p in adapter.PUBLIC_BANKS[:-1]
              for q in json.loads((ROOT / p).read_text())['questions']}
     by_id.update({q['question_id']: q for q in bank['questions']})
+    delta = source_bound_default_delta(selection, old, by_id, ROOT)
+    assert delta['default_count'] == len(old['recommended_ids']) - len(delta['removed_ids'])
+    assert_clarifier_only_changes_source_url_metadata(ROOT)
     compiler.validate_nonlegacy_selection(selection, original, by_id, ROOT)
     invalid = copy.deepcopy(selection)
     invalid['recommended_ids'].append(next(iter(candidate_ids)))
     with pytest.raises(ValueError, match='Default IDs differ'):
         compiler.validate_nonlegacy_selection(invalid, original, by_id, ROOT)
+    # Real source-bound negatives cannot be silently restored; arbitrary deletions also fail.
+    for qid, restore in [(sorted(delta['removed_ids'])[0], True), (selection['recommended_ids'][0], False)]:
+        invalid = copy.deepcopy(selection)
+        if restore:
+            invalid['recommended_ids'].append(qid)
+        else:
+            invalid['recommended_ids'].remove(qid)
+        with pytest.raises(ValueError, match='Default IDs differ'):
+            compiler.validate_nonlegacy_selection(invalid, original, by_id, ROOT)
+    for field, key in [('holds', 'reason'), ('safety_holds', 'reason'), ('replacements', 'replacement_question_id')]:
+        invalid = copy.deepcopy(selection)
+        invalid[field][0][key] = 'changed old history'
+        with pytest.raises(AssertionError):
+            source_bound_default_delta(invalid, old, by_id, ROOT)
 
 
-def test_inventory_binding_is_not_new_author_or_independent_credit(compiled):
+def test_inventory_binding_retains_only_actual_native_author_credit(compiled):
     q = compiled[compiler.BASE / 'questions.json']['questions'][-1]
     row = {}
     adapter.bind_candidate_inventory_row(row, q)
-    assert row['legal_review_status'] == 'DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT'
-    assert row['checked_at_scope'] == 'FORMAL_CURRENT_ID_AUTHOR_REVIEW_REQUIRED'
-    assert row['checked_at'] is None and row['current_id_author_review_required'] is True
-    assert row['author_review_increment'] == row['independent_review_credit'] == row['canonical_release_credit'] == 0
+    # G's real native author job is now integrated; draft metadata still grants no credit.
+    registry = json.loads((ROOT / 'reports/full-corpus-review/sata-remediation-current-id-author-sources.json').read_bytes())
+    assert row['legal_review_status'] == 'AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT'
+    assert row['checked_at_scope'] == 'FORMAL_NATIVE_CURRENT_ID_AUTHOR_REVIEW'
+    assert row['checked_at'] and row['current_id_author_review_required'] is False
+    assert row['native_author_review_job_id'] == registry['sources'][0]['job_id']
+    assert row['review_evidence']['native_author_job_id'] == row['native_author_review_job_id']
+    assert row['author_review_increment'] == 1
+    assert row['independent_review_credit'] == row['canonical_release_credit'] == 0
     assert q['publication_status'] == 'PUBLISHED_PRACTICE'
     assert q['verification_status'] == 'NOT_INDEPENDENTLY_REVIEWED'
     assert q['remediation_candidate']['release_eligible'] is False
@@ -174,3 +194,64 @@ def test_delivered_metadata_changes_are_detected_without_touching_answer_keys():
     data['questions'][0]['edition'] = 'changed delivery metadata'
     with pytest.raises(ValueError, match='Existing delivered object changed'):
         adapter.validate_published_preservation(data)
+
+
+def test_archive_candidates_never_count_as_implemented_original_replacements(compiled, monkeypatch):
+    import build_representative_audit_ledger as ledger
+    selection = compiled[compiler.BASE / 'selection.json']
+    candidates = selection['archive_only_replacements']
+    data = ledger.build_ledger()
+    rows = {r['question_id']: r for r in data['questions']}
+    assert len(rows) == data['counts']['original_representatives'] == 355
+    assert data['counts']['implementation_statuses']['REWRITTEN_NEW_ID'] == (
+        selection['stats']['newly_authored_replacements'] - len(candidates))
+    assert len(candidates) == 3
+    for link in candidates:
+        row = rows[link['legacy_question_id']]
+        assert row['implementation_status'] == 'HOLD_FROM_DEFAULT'
+        assert row['implementation']['replacement_question_id'] is None
+        assert link['replacement_question_id'] not in selection['recommended_ids']
+    original_read = ledger.read
+    def changed(path):
+        value = original_read(path)
+        if path == ledger.SELECTION:
+            value['stats']['newly_authored_replacements'] -= len(candidates)
+        return value
+    monkeypatch.setattr(ledger, 'read', changed)
+    with pytest.raises(ValueError, match='Authored replacement question count mismatch'):
+        ledger.build_ledger()
+
+
+@pytest.mark.parametrize('mutation', ['mapping', 'fourth_candidate', 'clear_original_hold', 'source_proof', 'release'])
+def test_archive_inventory_count_fix_never_accepts_unsupported_candidates(compiled, monkeypatch, mutation):
+    import build_representative_audit_ledger as ledger
+    selection = copy.deepcopy(compiled[compiler.BASE / 'selection.json'])
+    bank = copy.deepcopy(compiled[compiler.BASE / 'questions.json'])
+    original_read = ledger.read
+    candidate = next(q for q in bank['questions'] if q.get('archive_only_candidate'))
+    if mutation == 'mapping':
+        other = next(h['legacy_question_id'] for h in selection['holds']
+                     if h['legacy_question_id'] != candidate['revision_of'])
+        candidate['revision_of'] = other
+        selection['archive_only_replacements'][0]['legacy_question_id'] = other
+    elif mutation == 'fourth_candidate':
+        extra = copy.deepcopy(candidate); extra['question_id'] = 'MA-RW-0084'
+        bank['questions'].append(extra); selection['new_ids'].append(extra['question_id'])
+        selection['archive_only_replacements'].append(dict(
+            legacy_question_id=extra['revision_of'], replacement_question_id=extra['question_id'],
+            kind='ARCHIVE_ONLY_REPLACEMENT_CANDIDATE', content_sha256=extra['content_sha256']))
+        selection['stats']['rewrite_archive_only_candidates'] += 1
+        selection['stats']['newly_authored_replacements'] += 1
+    elif mutation == 'clear_original_hold':
+        selection['holds'] = [h for h in selection['holds'] if h['legacy_question_id'] != candidate['revision_of']]
+        selection['recommended_ids'].append(candidate['revision_of'])
+    elif mutation == 'source_proof':
+        sid = next(sid for sid in bank['sources'] if sid.startswith(adapter.NAMESPACE))
+        bank['sources'][sid]['raw_sha256'] = '0' * 64
+    elif mutation == 'release':
+        candidate['publication_status'] = 'RELEASED'
+    def changed(path):
+        return selection if path == ledger.SELECTION else bank if path == ledger.REVISION_BANK else original_read(path)
+    monkeypatch.setattr(ledger, 'read', changed)
+    with pytest.raises(ValueError):
+        ledger.build_ledger()

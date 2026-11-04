@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_full_corpus_review import apply_independent_legacy_review, record_hash
 from legacy_independent_metadata import integrated_sources
+from default_selection_assertions import source_bound_default_delta
 
 
 @pytest.fixture
@@ -116,7 +117,7 @@ def test_other_ids_keep_exact_existing_behavior(context):
 
 
 def test_real_native_author_and_integrated_independent_sources_bind_only_three_frozen_candidates():
-    from build_sata_remediation_candidates import BASE, bind_candidate_inventory_row
+    from build_sata_remediation_candidates import BASE, ALLOCATION, PUBLIC_BANKS, bind_candidate_inventory_row
     qids = {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'}
     questions = {q['question_id']: q for q in json.loads((ROOT / BASE / 'questions.json').read_bytes())['questions']
                  if q['question_id'] in qids}
@@ -126,7 +127,11 @@ def test_real_native_author_and_integrated_independent_sources_bind_only_three_f
     audits = {r['question_id']: r for s in sources for r in s['records'] if r['question_id'] in qids}
     selection_raw = (ROOT / BASE / 'selection.json').read_bytes()
     selection = json.loads(selection_raw)
-    assert len(selection['recommended_ids']) == 298 and not qids.intersection(selection['recommended_ids'])
+    preserved = json.loads((ROOT / ALLOCATION).read_bytes())['preserved_selection']
+    by_id = {q['question_id']: q for path in PUBLIC_BANKS
+             for q in json.loads((ROOT / path).read_bytes())['questions']}
+    source_bound_default_delta(selection, preserved, by_id, ROOT)
+    assert not qids.intersection(selection['recommended_ids'])
     for qid, q in questions.items():
         row = dict(question_id=qid, content_sha256=record_hash(q))
         bind_candidate_inventory_row(row, q, ROOT)

@@ -68,16 +68,17 @@ def test_independent_archive_warning_requires_an_actual_negative_or_hold(tmp_pat
             question_record_hashes={qid:row['record_sha256']}, review_source=source,
             review_source_sha256=hashlib.sha256(target.read_bytes()).hexdigest())])
         path.write_text(json.dumps(data))
+    # Exercise the retained warning validator; full note-link graph is tested separately.
     notice('MA-CASE-0426')
-    assert len(builder.archive_review_notices(questions, {})) == 1
+    assert len(builder._existing_archive_review_notices(questions, {})) == 1
     notice('MA-CASE-0421')
     with pytest.raises(ValueError, match='lacks a negative or blocked review'):
-        builder.archive_review_notices(questions, {})
+        builder._existing_archive_review_notices(questions, {})
     report['independent_of_authors'] = False
     target.write_text(json.dumps(report))
     notice('MA-CASE-0426')
     with pytest.raises(ValueError, match='independent review provenance'):
-        builder.archive_review_notices(questions, {})
+        builder._existing_archive_review_notices(questions, {})
 
 
 def test_author_archive_warning_binds_actual_individual_finding_and_cannot_invent_a_defect(tmp_path,monkeypatch):
@@ -97,13 +98,13 @@ def test_author_archive_warning_binds_actual_individual_finding_and_cannot_inven
         notice['review_source_sha256']=hashlib.sha256(target.read_bytes()).hexdigest()
         (builder.REPORTS/'archive-review-notices.json').write_text(json.dumps(dict(
             schema_version='practice-archive-review-notices/1',notices=[notice])))
-    save(); assert len(builder.archive_review_notices(questions,{}))==1
+    save(); assert len(builder._existing_archive_review_notices(questions,{}))==1
     original=row['disposition'];row['disposition']='KEEP';save()
-    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder._existing_archive_review_notices(questions,{})
     row['disposition']=original;notice['original_author_blocker']='invented blocker';save()
-    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder._existing_archive_review_notices(questions,{})
     notice['original_author_blocker']=row['blocker'];row['choice_by_choice_findings'].pop('D');save()
-    with pytest.raises(ValueError,match='individual nonKEEP'):builder.archive_review_notices(questions,{})
+    with pytest.raises(ValueError,match='individual nonKEEP'):builder._existing_archive_review_notices(questions,{})
 
 
 @pytest.mark.parametrize('defect',[None,'question_hash','quote','credit'])
