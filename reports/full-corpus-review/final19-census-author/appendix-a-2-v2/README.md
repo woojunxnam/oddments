@@ -21,7 +21,7 @@ pain 처방권한이 검증되었다는 주장으로 확대하지 않는다. 적
 매핑한 명제가 아니며, inherited27SB와037brand군/A007brandmapping의 현재보류도
 해제하지 않는다. 실제 report64KEEP/29SB와 원census authorSOURCEstatus는 서로다른
 축이다. 원author SOURCE_BLOCKED도, 원author checked이지만 독립SB인 record도 전부
-원canonical 그대로 두었다. 소송에 관한 사실이나 법적분쟁을 주장하는 자료가 아니다.
+원canonical 그대로 두었다. 
 
 공식MA PDF 및eCFR HTML의 raw/text/meta6개를 실제worker 원바이트로 보존했다.
 지정본문·문맥과actualGET metadata를 읽고 SHA/GET 시작·완료 timestamp를 확인했다.
