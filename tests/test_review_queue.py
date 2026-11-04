@@ -482,3 +482,139 @@ def test_independent_integration_stays_sequential(tmp_path):
     queue.submit(state, second['job_id'], second['lease_token'], result_for(second), NOW)
     with pytest.raises(ValueError, match='assignment order'):
         queue.integrate(state, second['job_id'], tmp_path, NOW)
+
+
+def remediation_priority_fixture(tmp_path):
+    ledger = fixture_repo(tmp_path)
+    bank = json.loads((tmp_path / 'questions.json').read_text())
+    allocations = []
+    for number, original in zip(range(81, 84), ('MA-EXP-0351', 'MA-EXP-0367', 'MA-EXP-0383')):
+        qid = f'MA-RW-{number:04d}'
+        draft = original + '-remediation-v1'
+        q = dict(question_id=qid, stem=qid, archive_only_candidate=True, revision_of=original,
+                 remediation_candidate=dict(draft_key=draft, current_id_independent_audit='PENDING',
+                    known_author_editor_actor_ids=['/root/independent_case_g', '/root/independent_case_e']))
+        bank['questions'].append(q)
+        ledger[qid] = dict(question_id=qid, collection='questions.json', content_sha256=queue.digest(q),
+                           legal_review_status='DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT', checked_at=NOW,
+                           known_author_editor_actor_ids=q['remediation_candidate']['known_author_editor_actor_ids'],
+                           author_review_increment=0)
+        allocations.append(dict(question_id=qid, original_question_id=original, draft_key=draft))
+    for row in ledger.values():
+        row['checked_at'] = NOW
+    (tmp_path / 'questions.json').write_text(json.dumps(bank))
+    from build_sata_remediation_candidates import ALLOCATION
+    path = tmp_path / ALLOCATION
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(dict(schema_version='sata-remediation-allocation/1', allocations=allocations)))
+    selection = tmp_path / 'selection.json'
+    selection.write_text(json.dumps(dict(recommended_ids=['MA-EXP-0900', 'MA-EXP-0001'])))
+    config = tmp_path / 'site/practice-expansion/publication.json'
+    config.parent.mkdir(parents=True)
+    config.write_text(json.dumps(dict(representative_selection=dict(path='selection.json',
+        sha256=hashlib.sha256(selection.read_bytes()).hexdigest()))))
+    return ledger
+
+
+def test_optional_priority_keeps_lexical_default_and_orders_only_eligible_ids(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    ledger['MA-RW-0082']['independent_legacy_legal_assessment'] = {'already': 'assessed'}
+    normal = queue.empty('independent-legacy')
+    queue.plan(normal, ledger, tmp_path, size=4, at=NOW)
+    assert list(normal['jobs'][0]['question_hashes']) == ['MA-EXP-0001', *queue.FIRST[:3]]
+    assert 'selection_policy' not in normal['jobs'][0]
+    state = queue.empty('independent-legacy')
+    queue.plan(state, ledger, tmp_path, size=4, at=NOW, prioritize_remediation_defaults=True)
+    assert list(state['jobs'][0]['question_hashes']) == ['MA-RW-0081', 'MA-RW-0083', 'MA-EXP-0001', 'MA-EXP-0900']
+    assert state['jobs'][0]['selection_policy'] == 'REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL'
+    assert len(state['jobs'][0]['priority_source_sha256']) == 3
+    before = copy.deepcopy(state)
+    assert queue.plan(state, ledger, tmp_path, at=NOW, prioritize_remediation_defaults=True) == []
+    assert state == before  # outstanding jobs remain untouched and are never replanned
+
+
+def test_priority_does_not_bypass_author_date_or_repeat_integrated_ids(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    ledger['MA-RW-0083']['checked_at'] = None
+    state = queue.empty('independent-legacy')
+    queue.plan(state, ledger, tmp_path, size=2, at=NOW, prioritize_remediation_defaults=True)
+    first = state['jobs'][0]
+    assert list(first['question_hashes']) == ['MA-RW-0081', 'MA-RW-0082']
+    first['status'] = 'INTEGRATED'
+    with pytest.raises(ValueError, match='lack authoritative independent legacy assessment'):
+        queue.plan(state, ledger, tmp_path, size=2, at=NOW, prioritize_remediation_defaults=True)
+    for qid in first['question_hashes']:
+        ledger[qid]['independent_legacy_legal_assessment'] = {'review': 'recorded'}
+    queue.plan(state, ledger, tmp_path, size=2, at=NOW, prioritize_remediation_defaults=True)
+    assert list(state['jobs'][1]['question_hashes']) == ['MA-EXP-0001', 'MA-EXP-0900']
+    assert not set(first['question_hashes']) & set(state['jobs'][1]['question_hashes'])
+    assert 'MA-RW-0083' not in state['jobs'][1]['question_hashes']
+
+
+def test_priority_rejects_stale_selection_or_current_record_and_missing_ledger(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    (tmp_path / 'selection.json').write_text('{"recommended_ids":[]}')
+    with pytest.raises(ValueError, match='Stale source-derived default'):
+        queue.plan(queue.empty('independent-legacy'), ledger, tmp_path, at=NOW, prioritize_remediation_defaults=True)
+    config = tmp_path / 'site/practice-expansion/publication.json'
+    obj = json.loads(config.read_text())
+    obj['representative_selection']['sha256'] = hashlib.sha256((tmp_path / 'selection.json').read_bytes()).hexdigest()
+    config.write_text(json.dumps(obj))
+    bank = json.loads((tmp_path / 'questions.json').read_text())
+    bank['questions'][-1]['stem'] = 'changed after ledger'
+    (tmp_path / 'questions.json').write_text(json.dumps(bank))
+    with pytest.raises(ValueError, match='Stale/unbound remediation priority'):
+        queue.plan(queue.empty('independent-legacy'), ledger, tmp_path, at=NOW, prioritize_remediation_defaults=True)
+    del ledger['MA-RW-0081']
+    with pytest.raises(ValueError, match='missing authoritative ledger'):
+        queue.plan(queue.empty('independent-legacy'), ledger, tmp_path, at=NOW, prioritize_remediation_defaults=True)
+
+
+def test_priority_option_never_changes_author_FIRST_cohort(tmp_path):
+    ledger = fixture_repo(tmp_path)
+    with pytest.raises(ValueError, match='only available for independent-legacy'):
+        queue.plan(queue.empty(), ledger, tmp_path, at=NOW, prioritize_remediation_defaults=True)
+    state = queue.empty()
+    queue.plan(state, ledger, tmp_path, at=NOW)
+    assert list(state['jobs'][0]['question_hashes']) == queue.FIRST
+
+
+def test_new_content_authors_editors_cannot_selfclaim_but_unknown_old_actors_are_not_invented(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    state = queue.empty('independent-legacy')
+    queue.plan(state, ledger, tmp_path, size=3, at=NOW, prioritize_remediation_defaults=True)
+    job = state['jobs'][0]
+    assert job['excluded_worker_actor_ids'] == ['/root/independent_case_e', '/root/independent_case_g']
+    assert len(job['known_author_editor_actor_ids_by_question']) == 3
+    assert state['events'][-1]['selection_policy'] == job['selection_policy']
+    before = copy.deepcopy(state)
+    for worker in job['excluded_worker_actor_ids']:
+        with pytest.raises(ValueError, match='author/editor cannot independently claim'):
+            queue.claim(state, worker, at=NOW)
+        assert state == before
+    claimed = queue.claim(state, '/root/independent_case_c', at=NOW)
+    assert claimed['job_id'] == job['job_id']
+    assert queue.claim(state, '/root/independent_case_c', at=NOW) == claimed
+    old_root = tmp_path / 'old'
+    old_root.mkdir()
+    old_ledger = fixture_repo(old_root)
+    old = queue.empty('independent-legacy')
+    for row in old_ledger.values(): row['checked_at'] = NOW
+    queue.plan(old, old_ledger, old_root, size=1, at=NOW)
+    assert 'excluded_worker_actor_ids' not in old['jobs'][0]
+
+
+def test_known_actor_metadata_must_match_current_source_even_without_priority_option(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    for row in ledger.values(): row['independent_legacy_legal_assessment'] = {'already': 'assessed'}
+    ledger['MA-RW-0081']['independent_legacy_legal_assessment'] = None
+    ledger['MA-RW-0081']['known_author_editor_actor_ids'] = ['/invented/author']
+    with pytest.raises(ValueError, match='Stale known author/editor actor binding'):
+        queue.plan(queue.empty('independent-legacy'), ledger, tmp_path, size=1, at=NOW)
+
+
+def test_bound_G_draft_date_is_not_new_author_review_credit(tmp_path):
+    ledger = remediation_priority_fixture(tmp_path)
+    progress = queue.progress(queue.empty('independent-legacy'), ledger,
+        dict(notes_units_with_complete_atomic_claim_census=0, notes_units=306, deployment_status='NOT_RUN'))
+    assert progress['author_review']['count'] == len(ledger) - 3
