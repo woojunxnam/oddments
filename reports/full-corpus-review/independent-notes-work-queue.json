@@ -6084,7 +6084,7 @@
         "w2-c-15",
         "w2-c-17"
       ],
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 1,
       "base_commit": "9242c43e23297fe3d7910b1d4f56bccef9e136c2",
       "inventory_ledger_sha256": "648391daacf681aad491429b7a0f57fd6428cd49d18e857011449746b62cd11c",
@@ -6102,7 +6102,65 @@
       ],
       "lease_until": "2026-11-04T06:12:23.537696+00:00",
       "worker_branch": "mission/review-independent-notes-1a27fcbc5afaebf5-attempt-1",
-      "lease_token": "b9b13ccc3603f66a56aed2d507405eddd860f905f073a141aa20982062e3f8e1"
+      "lease_token": "b9b13ccc3603f66a56aed2d507405eddd860f905f073a141aa20982062e3f8e1",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_b",
+          "session_id": "/root/independent_case_b"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "author_credit": 0,
+        "job_id": "review-independent-notes-1a27fcbc5afaebf5",
+        "assignment_sha256": "45be6bcf5a9e83abab33473139af45b6221781e46ba123f813e1bc093d727384",
+        "worker_commit": "a65785fb249438309085095f55e283d8b40a75c7",
+        "unit_hashes": {
+          "w2-c-12": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146",
+          "w2-c-13": "739e1bb9ec3f547677baa2458f8c1be437e2afc356eb9bcbefadc76c2f7a6975",
+          "w2-c-14": "878c4749f5341aec124bbdab09ba037055b2a315cab8d45769910752b2b29697",
+          "w2-c-15": "2924b0397cebf62526f3b4b239ba5efea096a64302cef19b7f24abdd8cfc8a43",
+          "w2-c-17": "6a8a603f50424c3ee055ef61bcfaf9d26955d259d1224063078a1a8db0fab4b0"
+        },
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/fourth-b-review.json",
+          "raw_sha256": "d14f1bd89500405bebcad3e95e699f9213130ee68f814281012cad770d5463cc"
+        },
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-1a27fcbc5afaebf5-result.json",
+        "results": [
+          {
+            "unit_id": "w2-c-12",
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD"
+          },
+          {
+            "unit_id": "w2-c-13",
+            "completeness": "COMPLETE",
+            "legal_status": "SOURCE_BLOCKED"
+          },
+          {
+            "unit_id": "w2-c-14",
+            "completeness": "COMPLETE",
+            "legal_status": "SOURCE_BLOCKED"
+          },
+          {
+            "unit_id": "w2-c-15",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          },
+          {
+            "unit_id": "w2-c-17",
+            "completeness": "COMPLETE",
+            "legal_status": "KEEP"
+          }
+        ]
+      },
+      "result_sha256": "a2c0ac0b20bf04d87c8bc86ced7491b0ca52c2edae3059cc3f0921610b0a7142",
+      "submitted_at": "2026-11-04T02:42:11.685148+00:00"
     }
   ],
   "events": [
@@ -6806,6 +6864,13 @@
       "job_id": "review-independent-notes-9ef0ae660e8bc055",
       "commit": "9590c5b81c1c27c70c99cbcd301f3431febd22a7",
       "result_sha256": "fb081fa57e9817eb95466e981a9e34e773773d962d7a9b65090bd897ac6cf7d7"
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T02:42:11.685148+00:00",
+      "job_id": "review-independent-notes-1a27fcbc5afaebf5",
+      "result_sha256": "a2c0ac0b20bf04d87c8bc86ced7491b0ca52c2edae3059cc3f0921610b0a7142",
+      "worker_commit": "a65785fb249438309085095f55e283d8b40a75c7"
     }
   ],
   "reassessments": [
