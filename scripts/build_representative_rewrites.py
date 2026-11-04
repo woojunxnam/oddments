@@ -69,7 +69,7 @@ NONLEGACY_HOLDS = 'reports/representative-rewrite/nonlegacy-default-holds.json'
 NONKEEP_DISPOSITIONS = {'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'HOLD_FOR_LEGAL_REVIEW', 'DELETE', 'REPLACE'}
 OFFICIAL_HOSTS = {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov',
                   'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov',
-                  'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov',
+                  'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov', 'www.dailymed.nlm.nih.gov',
                   'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}
 
 
@@ -194,12 +194,16 @@ def validate_nonlegacy_selection(selection, baseline, by_id, root=None):
     require(len(archive_ids) == len(archive_links), 'Duplicate archive-only replacement ID')
     bound_archive_ids = {qid for qid, q in by_id.items() if q.get('archive_only_candidate')}
     require(archive_ids == bound_archive_ids, 'Archive candidate selection/bank mismatch')
+    if archive_links:
+        from remediation_batch_registry import validate_archive_links
+        validate_archive_links(archive_links, by_id, root or ROOT)
+    held_parents = {h['legacy_question_id'] for h in selection['holds']} | {h['question_id'] for h in selection.get('safety_holds', [])}
     for link in archive_links:
         qid = link['replacement_question_id']
         q = by_id[qid]
         require(qid in rewrites and q['revision_of'] == link['legacy_question_id'] and
                 q['content_sha256'] == link['content_sha256'] and
-                link['legacy_question_id'] in {h['legacy_question_id'] for h in selection['holds']} and
+                link['legacy_question_id'] in held_parents and
                 q['remediation_candidate']['current_id_independent_audit'] == 'PENDING',
                 'Invalid archive-only replacement binding: ' + qid)
     replaced_ids = [r['legacy_question_id'] for r in selection['replacements']]
@@ -406,75 +410,9 @@ def pattern_metrics(questions):
     )
 
 
-def build():
-    original_selection = read(ORIGINAL_SELECTION)
-    original_banks = [read(ROOT / path) for path in ARCHIVES]
-    original_questions = [q for bank in original_banks for q in bank['questions']]
-    old_by_id = {q['question_id']: q for q in original_questions}
-    legacy_ids = set(original_selection['recommended_ids']) - set(original_selection['new_ids'])
-    require(len(legacy_ids) == 355, 'The baseline representative set changed; reconcile explicitly.')
-    guide_raw = (ROOT / 'notes/guide.json').read_bytes()
-    guide = json.loads(guide_raw)
+def compile_authored_items(authored, author_metadata, sources, guide, old_by_id, root=ROOT):
+    """Pure item compilation shared by deterministic enrollment and the normal build."""
     units = {u['id']: (c['id'], u) for c in guide['chapters'] for u in c['units']}
-    source_files = sorted((BASE / 'authoring').glob('*.json'))
-    require(bool(source_files), 'No individually authored source files.')
-    sources, authored, holds, reused, input_hashes, scope_notes = {}, [], [], [], {}, []
-    author_metadata = {}
-    for path in source_files:
-        d = read(path)
-        if path.name == '10_sata_remediation.json':
-            from build_sata_remediation_candidates import authoring_payload
-            require(d == authoring_payload(ROOT), 'Lossless remediation authoring/proof drift')
-        require(d['review_status'] == REVIEW_STATUS, f'{path}: unsupported review claim')
-        original_file = path.name in {'01_personnel.json', '02_clinical_authority.json'}
-        authored_at = d.get('authored_at', '2026-10-28' if original_file else None)
-        require(bool(authored_at), f'{path}: missing authoring date')
-        require(date.fromisoformat(authored_at) <= date.fromisoformat(REVIEW_DATE),
-                f'{path}: future authoring date')
-        item_edition = d.get('edition', INITIAL_EDITION if original_file else None)
-        require(isinstance(item_edition, str)
-                and re.fullmatch(r'\d{4}-\d{2}-\d{2}\.representative\d+', item_edition)
-                and item_edition.split('.')[0] == authored_at,
-                f'{path}: authoring edition/date mismatch')
-        input_hashes[str(path.relative_to(ROOT))] = digest(path.read_bytes())
-        scope_notes.append(dict(authoring_file=str(path.relative_to(ROOT)),
-            source_limitations=d.get('source_limitations', []),
-            legal_reconciliation_notes=d.get('legal_reconciliation_notes', [])))
-        for sid, s in d['sources'].items():
-            host = (urlparse(s['official_url']).hostname or '').lower()
-            require(host in {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov', 'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov', 'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov', 'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}, f'Non-official source: {sid}')
-            require(s['official_url'].startswith('https://'), sid)
-            require(date.fromisoformat(s['checked_at']) <= date.fromisoformat(authored_at)
-                    and s['access_status'] == 'READ_OFFICIAL', f'{sid}: invalid official text read/date')
-            require(s.get('verification_scope') and s.get('retrieval_method'), f'{sid}: missing read scope/provenance')
-            if sid in sources:
-                require(sources[sid]['url'] == s['official_url'], f'Source collision: {sid}')
-                for field in ['checked_at', 'access_status', 'retrieval_method', 'source_currency']:
-                    require(sources[sid].get(field) == s.get(field),
-                            f'{sid}: conflicting {field}; record a distinct source ID')
-                # Two authors may have read different, nonconflicting sections of one source.
-                sources[sid]['exact_sections'] = sorted(set(sources[sid].get('exact_sections', [])) | set(s.get('exact_sections', [])))
-                if s['verification_scope'] not in sources[sid]['verification_scope']:
-                    sources[sid]['verification_scope'] += '\nAdditional author read: ' + s['verification_scope']
-                continue
-            sources[sid] = {**copy.deepcopy(s), 'id': sid, 'url': s['official_url'], 'source_class': 'PUBLIC_OFFICIAL'}
-        authored.extend(d['questions'])
-        for question in d['questions']:
-            author_metadata[question['question_id']] = (authored_at, item_edition)
-        holds.extend(d.get('holds', []))
-        reused.extend(d.get('reuse_existing', []))
-    # Optional separately documented editorial holds do not alter archive bytes or keys.
-    extra_holds = REPORTS / 'default-holds.json'
-    if extra_holds.exists():
-        holds.extend(read(extra_holds)['holds'])
-        input_hashes[str(extra_holds.relative_to(ROOT))] = digest(extra_holds.read_bytes())
-    validate_editorial_wording_holds(holds,old_by_id,input_hashes)
-    require(len({q['question_id'] for q in authored}) == len(authored), 'Duplicate new IDs')
-    addressed = [q['legacy_question_id'] for q in authored if not q.get('archive_only_candidate')] + [h['legacy_question_id'] for h in holds] + [q['legacy_question_id'] for q in reused]
-    require(len(set(addressed)) == len(addressed), 'A legacy question has more than one disposition')
-    require(set(addressed) <= legacy_ids, 'Disposition outside the original 355')
-    archive_authored = [q for q in authored if q.get('archive_only_candidate')]
-    require(all(q.get('remediation_candidate') for q in archive_authored), 'Unbound archive-only candidate')
     items = []
     for a in sorted(authored, key=lambda q: q['question_id']):
         qid, legacy_id = a['question_id'], a['legacy_question_id']
@@ -507,7 +445,7 @@ def build():
             require(a['note_evidence_basis'] == 'EFFECTIVE_REVISION' and a.get('notes_revision'),
                     qid + ': unknown note evidence basis')
             from notes_revision import load_notes
-            revised_guide = load_notes(ROOT, revision_id=a['notes_revision'])
+            revised_guide = load_notes(root, revision_id=a['notes_revision'])
             question_units = {u['id']: (c['id'], u) for c in revised_guide['chapters'] for u in c['units']}
         for uid in a['note_unit_ids']:
             require(uid in question_units, qid + ': unknown note ' + uid)
@@ -561,7 +499,7 @@ def build():
             item['remediation_candidate'] = copy.deepcopy(a['remediation_candidate'])
         if a.get('notes_revision'):
             from notes_revision import load_notes
-            item['notes_revision'] = load_notes(ROOT, revision_id=a['notes_revision'])['revision_provenance']
+            item['notes_revision'] = load_notes(root, revision_id=a['notes_revision'])['revision_provenance']
             require(item['notes_revision']['id'] == a['notes_revision'], qid + ': stale notes revision')
         item['content_sha256'] = content_hash(item)
         if qid in {'MA-RW-0045', 'MA-RW-0046', 'MA-RW-0047'}:
@@ -569,13 +507,91 @@ def build():
             item['source_boundary'] += ' ' + item['authority_caveats'][0]
             item['content_sha256'] = content_hash(item)
         items.append(item)
+    return items
+
+
+def build():
+    original_selection = read(ORIGINAL_SELECTION)
+    original_banks = [read(ROOT / path) for path in ARCHIVES]
+    original_questions = [q for bank in original_banks for q in bank['questions']]
+    old_by_id = {q['question_id']: q for q in original_questions}
+    legacy_ids = set(original_selection['recommended_ids']) - set(original_selection['new_ids'])
+    require(len(legacy_ids) == 355, 'The baseline representative set changed; reconcile explicitly.')
+    guide_raw = (ROOT / 'notes/guide.json').read_bytes()
+    guide = json.loads(guide_raw)
+    units = {u['id']: (c['id'], u) for c in guide['chapters'] for u in c['units']}
+    source_files = sorted((BASE / 'authoring').glob('*.json'))
+    require(bool(source_files), 'No individually authored source files.')
+    sources, authored, holds, reused, input_hashes, scope_notes = {}, [], [], [], {}, []
+    author_metadata = {}
+    for path in source_files:
+        d = read(path)
+        if path.name == '11_phase9_remediation10.json':
+            from remediation_batch_registry import authoring_payload
+            require(d == authoring_payload(ROOT), 'Lossless registered batch authoring/proof drift')
+        if path.name == '10_sata_remediation.json':
+            from build_sata_remediation_candidates import authoring_payload
+            require(d == authoring_payload(ROOT), 'Lossless remediation authoring/proof drift')
+        require(d['review_status'] == REVIEW_STATUS, f'{path}: unsupported review claim')
+        original_file = path.name in {'01_personnel.json', '02_clinical_authority.json'}
+        authored_at = d.get('authored_at', '2026-10-28' if original_file else None)
+        require(bool(authored_at), f'{path}: missing authoring date')
+        require(date.fromisoformat(authored_at) <= date.fromisoformat(REVIEW_DATE),
+                f'{path}: future authoring date')
+        item_edition = d.get('edition', INITIAL_EDITION if original_file else None)
+        require(isinstance(item_edition, str)
+                and re.fullmatch(r'\d{4}-\d{2}-\d{2}\.representative\d+', item_edition)
+                and item_edition.split('.')[0] == authored_at,
+                f'{path}: authoring edition/date mismatch')
+        input_hashes[str(path.relative_to(ROOT))] = digest(path.read_bytes())
+        scope_notes.append(dict(authoring_file=str(path.relative_to(ROOT)),
+            source_limitations=d.get('source_limitations', []),
+            legal_reconciliation_notes=d.get('legal_reconciliation_notes', [])))
+        for sid, s in d['sources'].items():
+            host = (urlparse(s['official_url']).hostname or '').lower()
+            require(host in {'www.mass.gov', 'mass.gov', 'malegislature.gov', 'www.ecfr.gov', 'www.dea.gov', 'www.deadiversion.usdoj.gov', 'www.fda.gov', 'accessdata.fda.gov', 'www.accessdata.fda.gov', 'dailymed.nlm.nih.gov', 'www.dailymed.nlm.nih.gov', 'nabp.pharmacy', 'www.hhs.gov', 'www.cdc.gov'}, f'Non-official source: {sid}')
+            require(s['official_url'].startswith('https://'), sid)
+            require(date.fromisoformat(s['checked_at']) <= date.fromisoformat(authored_at)
+                    and s['access_status'] == 'READ_OFFICIAL', f'{sid}: invalid official text read/date')
+            require(s.get('verification_scope') and s.get('retrieval_method'), f'{sid}: missing read scope/provenance')
+            if sid in sources:
+                require(sources[sid]['url'] == s['official_url'], f'Source collision: {sid}')
+                for field in ['checked_at', 'access_status', 'retrieval_method', 'source_currency']:
+                    require(sources[sid].get(field) == s.get(field),
+                            f'{sid}: conflicting {field}; record a distinct source ID')
+                # Two authors may have read different, nonconflicting sections of one source.
+                sources[sid]['exact_sections'] = sorted(set(sources[sid].get('exact_sections', [])) | set(s.get('exact_sections', [])))
+                if s['verification_scope'] not in sources[sid]['verification_scope']:
+                    sources[sid]['verification_scope'] += '\nAdditional author read: ' + s['verification_scope']
+                continue
+            sources[sid] = {**copy.deepcopy(s), 'id': sid, 'url': s['official_url'], 'source_class': 'PUBLIC_OFFICIAL'}
+        authored.extend(d['questions'])
+        for question in d['questions']:
+            author_metadata[question['question_id']] = (authored_at, item_edition)
+        holds.extend(d.get('holds', []))
+        reused.extend(d.get('reuse_existing', []))
+    # Optional separately documented editorial holds do not alter archive bytes or keys.
+    extra_holds = REPORTS / 'default-holds.json'
+    if extra_holds.exists():
+        holds.extend(read(extra_holds)['holds'])
+        input_hashes[str(extra_holds.relative_to(ROOT))] = digest(extra_holds.read_bytes())
+    validate_editorial_wording_holds(holds,old_by_id,input_hashes)
+    require(len({q['question_id'] for q in authored}) == len(authored), 'Duplicate new IDs')
+    addressed = [q['legacy_question_id'] for q in authored if not q.get('archive_only_candidate')] + [h['legacy_question_id'] for h in holds] + [q['legacy_question_id'] for q in reused]
+    require(len(set(addressed)) == len(addressed), 'A legacy question has more than one disposition')
+    require(set(addressed) <= legacy_ids, 'Disposition outside the original 355')
+    archive_authored = [q for q in authored if q.get('archive_only_candidate')]
+    require(all(q.get('remediation_candidate') for q in archive_authored), 'Unbound archive-only candidate')
+    items = compile_authored_items(authored, author_metadata, sources, guide, old_by_id, ROOT)
     replacements = [dict(legacy_question_id=q['revision_of'], replacement_question_id=q['question_id'],
         kind='NEW_CASE', content_sha256=q['content_sha256']) for q in items if not q.get('archive_only_candidate')]
     archive_only_replacements = [dict(legacy_question_id=q['revision_of'], replacement_question_id=q['question_id'],
         kind='ARCHIVE_ONLY_REPLACEMENT_CANDIDATE', content_sha256=q['content_sha256'])
         for q in items if q.get('archive_only_candidate')]
-    require(all(r['legacy_question_id'] in {h['legacy_question_id'] for h in holds}
-                for r in archive_only_replacements), 'Archive candidates must retain original HOLDs')
+    # The registered coordinator validates original355 and nonlegacy held parents
+    # against their immutable original current-record and native negative sources.
+    from remediation_batch_registry import validate_archive_links
+    validate_archive_links(archive_only_replacements, {q['question_id']:q for q in items}, ROOT)
     for reuse in reused:
         existing = reuse['existing_question_id']
         require(existing in original_selection['new_ids'], 'Reuse target is not in unchanged previous96')
@@ -635,9 +651,8 @@ def build():
         stats=dict(questions=len(items), families=len({q['family_id'] for q in items})),
         source_authoring_hashes=input_hashes, authoring_scope_notes=scope_notes, sources=sources, questions=items)
     verify_published_baseline(bank)
-    from build_sata_remediation_candidates import ALLOCATION, validate_preservation
-    if (ROOT / ALLOCATION).exists():
-        validate_preservation(bank, ROOT)
+    from remediation_batch_registry import validate_compiled_bank
+    validate_compiled_bank(bank, ROOT)
     metrics = dict(date=REVIEW_DATE, base_commit=BASE_COMMIT,
         method='Exact text normalization retains numbers. Length and key-pattern statistics are review signals, not validity findings. Semantic findings are recorded separately by editors.',
         baseline_legacy_355=pattern_metrics([old_by_id[i] for i in sorted(legacy_ids)]),

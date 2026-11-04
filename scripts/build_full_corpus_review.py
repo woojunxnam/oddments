@@ -107,7 +107,8 @@ def apply_current_id_independent_state(row, audit_row, source_binding):
     Frozen source_author_review_binding remains historical draft/engineering
     context. This separate state uses only the committed consumer's binding.
     """
-    if (row.get('question_id') not in {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'} or
+    if ((row.get('question_id') not in {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'} and
+             row.get('current_id_author_batch_id') != 'phase9-ten-final-v2') or
             row.get('checked_at_scope') != 'FORMAL_NATIVE_CURRENT_ID_AUTHOR_REVIEW' or
             row.get('current_id_author_review_required') is not False or source_binding is None):
         return
@@ -549,6 +550,8 @@ def build():
     review_sources = {name: read('reports/full-corpus-review/'+name) for name in REVIEW_FILES}
     from remediation_author_reviews import load_sources
     review_sources.update(load_sources(ROOT, REVIEW_FILES))
+    from remediation_batch_author_reviews import load_sources as batch_author_sources
+    review_sources.update(batch_author_sources(ROOT, REVIEW_FILES))
     review_records = [r for source in review_sources.values() for r in source['records']]
     assert len({r['question_id'] for r in review_records}) == len(review_records)
     reviews = {r['question_id']:r for r in review_records}
@@ -644,7 +647,10 @@ def build():
                 row['choice_by_choice_findings'] = {c['id']: dict(finding_ko=c['rationale_ko'], authorities=c['authority_refs']) for c in a['choices']}
                 row['authority_clauses'] = [r for c in a['choices'] for r in c['authority_refs']]
             if q.get('archive_only_candidate'):
-                from build_sata_remediation_candidates import bind_candidate_inventory_row
+                if q.get('remediation_candidate', {}).get('batch_id'):
+                    from remediation_batch_author_reviews import bind_candidate_inventory_row
+                else:
+                    from build_sata_remediation_candidates import bind_candidate_inventory_row
                 bind_candidate_inventory_row(row, q, ROOT)
             row['deployment_status'] = 'CURRENT_BUILD_PUBLICATION_NOT_ASSERTED'
             row['historical_deployment_evidence'] = (

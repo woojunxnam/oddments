@@ -100,7 +100,7 @@ def build_payload() -> dict:
     data['note_practice_index'] = build_note_practice_index(
         data['questions'], data['quality_selection']['recommended_ids'], load_notes(ROOT))
     if any(q.get('archive_only_candidate') for q in data['questions']):
-        from build_sata_remediation_candidates import validate_published_preservation
+        from remediation_batch_registry import validate_published_preservation
         validate_published_preservation(data, ROOT)
     return data
 

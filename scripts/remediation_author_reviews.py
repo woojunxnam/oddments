@@ -81,12 +81,16 @@ def expected_actor(questions):
 
 
 def validate_submission(job, result):
+    return _validate_submission(job, result, count=3, prefix=PREFIX)
+
+
+def _validate_submission(job, result, *, count, prefix):
     """Called by native submit only for the explicitly marked candidate author job."""
     ids = job.get('current_id_author_review_required_ids', [])
     require(re.fullmatch(r'[0-9a-f]{40}', result.get('worker_commit', '')) is not None,
             'Exact native author worker commit format required')
-    require(job.get('stage', 'author') == 'author' and set(ids) == set(job['question_hashes']) and len(ids) == 3,
-            'Native candidate author job must contain only its three IDs')
+    require(job.get('stage', 'author') == 'author' and set(ids) == set(job['question_hashes']) and len(ids) == count,
+            'Native candidate author job must contain only its exact registered IDs')
     actor = result.get('actor_provenance', {})
     require(result.get('job_id') == job['job_id'] and result.get('stage') == 'author' and
             actor.get('actor_id') == job.get('worker') == job.get('required_author_actor_id') and
@@ -94,16 +98,20 @@ def validate_submission(job, result):
     require(result.get('canonical_audit') is False and result.get('canonical_release_credit') == 0 and
             result.get('independent_review_credit') == 0 and result.get('independent_of_authors') is False, 'Author source cannot create independent/canonical credit')
     paths = {row.get('evidence_path') for row in result['results']}
-    require(len(paths) == 1 and all(isinstance(p, str) and p.startswith(PREFIX) and p.endswith('.json') for p in paths),
+    require(len(paths) == 1 and all(isinstance(p, str) and p.startswith(prefix) and p.endswith('.json') for p in paths),
             'Native candidate author report must use its dedicated prefix')
 
 
 def validate_report(root, job, result, raw, questions):
+    return _validate_report(root, job, result, raw, questions, count=3, schema=SCHEMA)
+
+
+def _validate_report(root, job, result, raw, questions, *, count, schema):
     from build_full_corpus_review import validate_review
     from build_representative_rewrites import OFFICIAL_HOSTS
     report = json.loads(raw)
     actor = expected_actor(questions)
-    require(report.get('schema_version') == SCHEMA and report.get('stage') == 'author' and
+    require(report.get('schema_version') == schema and report.get('stage') == 'author' and
             report.get('job_id') == job['job_id'], 'Wrong native current-ID author report schema/job')
     require(all(report.get('actor_provenance', {}).get(k) == v for k, v in actor.items()) and
             report['actor_provenance'] == result['actor_provenance'] and job['worker'] == actor['actor_id'],
@@ -112,7 +120,7 @@ def validate_report(root, job, result, raw, questions):
             report.get('independent_of_authors') is False and report.get('independent_review_credit') == 0,
             'Native author report must disclaim independence and release')
     records = report.get('records', [])
-    require(len(records) == 3 and {r.get('question_id') for r in records} == set(questions), 'Native author report scope must be exactly three allocated IDs')
+    require(len(records) == count and {r.get('question_id') for r in records} == set(questions), 'Native author report scope must be exactly its allocated IDs')
     for review in records:
         q = questions[review['question_id']]
         validate_review(q, review)

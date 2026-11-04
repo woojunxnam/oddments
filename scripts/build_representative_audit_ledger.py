@@ -117,14 +117,18 @@ def build_ledger():
     safety_held_ids = {h['question_id'] for h in safety_holds}
     archive_candidates = {qid for qid, q in fresh.items() if q.get('archive_only_candidate')}
     if archive_candidates:
-        from build_sata_remediation_candidates import validate_preservation, authoring_payload
-        allocation = validate_preservation(bank, ROOT)
+        from build_sata_remediation_candidates import authoring_payload
+        from remediation_batch_registry import validate_compiled_bank, load_registry, authoring_payload as batch_payload
+        allocation = validate_compiled_bank(bank, ROOT)
         allocated = {r['question_id']: r['original_question_id'] for r in allocation['allocations']}
         require(archive_candidates == set(allocated), 'Unallocated archive-only candidate')
         require({r['replacement_question_id']: r['legacy_question_id']
                  for r in selection['archive_only_replacements']} == allocated,
                 'Archive-only candidate original mapping changed')
-        authored = authoring_payload(ROOT)  # validates retained G/E artifacts and every primary payload
+        authored = authoring_payload(ROOT)  # old3 scope stays exact
+        if load_registry(ROOT) is not None and len(allocation['allocations']) == 13:
+            extra = batch_payload(ROOT)
+            authored = dict(questions=authored['questions']+extra['questions'], sources={**authored['sources'], **extra['sources']})
         for q in authored['questions']:
             stored = fresh[q['question_id']]
             require(stored['remediation_candidate'] == q['remediation_candidate'] and

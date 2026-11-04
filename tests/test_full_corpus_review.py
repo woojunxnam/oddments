@@ -15,17 +15,41 @@ from notes_revision import load_notes, REVISION
 from verify_representative_protected import verify
 
 
+def registered_batch_candidates_in_current_bank():
+    import remediation_batch_registry as batch
+    bank=json.loads((ROOT/batch.BASE/'questions.json').read_bytes())
+    registered=set(batch.current_baseline()['candidate_question_hashes'])
+    present={q['question_id'] for q in bank['questions']} & registered
+    assert not present or present==registered  # no partial/unregistered inventory
+    return present
+
+
 def test_every_id_is_inventoried_without_inheriting_family_passes():
     outputs = build()
     for path, text in outputs.items():
         assert path.read_text() == text
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
-    assert len(rows) == len({r['question_id'] for r in rows}) == 2349
+    new_candidates=registered_batch_candidates_in_current_bank()
+    assert len(rows) == len({r['question_id'] for r in rows}) == 2349+len(new_candidates)
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 2349
+    from remediation_batch_author_reviews import load_sources as batch_author_sources
+    native_sources=batch_author_sources(ROOT)
+    native_new={r['question_id']:r for source in native_sources.values() for r in source['records']}
+    assert set(native_new) <= new_candidates
+    assert sum(r['checked_at'] is not None for r in rows) == 2349+len(native_new)
+    for row in rows:
+        if row['question_id'] not in new_candidates:
+            assert row['checked_at'] is not None  # all original2349 credit retained
+        elif row['question_id'] not in native_new:
+            assert row['checked_at'] is None and row['author_review_increment']==0
+            assert row['current_id_author_review_required'] is True
+        else:
+            assert row['checked_at']==native_new[row['question_id']]['checked_at']
+            assert row['author_review_increment']==1 and row['current_id_author_review_required'] is False
+            assert row['checked_at_scope']=='FORMAL_NATIVE_CURRENT_ID_AUTHOR_REVIEW'
     appended = {r['question_id'] for r in rows
                 if r['implementation_status'] == 'ARCHIVE_ONLY_REPLACEMENT_CANDIDATE'}
-    assert appended == {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'}
+    assert appended == {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'} | new_candidates
     assert all(not r['baseline_member'] for r in rows if r['question_id'] in appended)
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) >= 189
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
@@ -417,7 +441,7 @@ def test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases():
     assert all(record_hash(bank['sources'][sid])==value for sid,value in snapshot['previous_source_record_hashes'].items())
     original_ids=set(snapshot['previous_question_record_hashes'])|set(snapshot['new_question_ids'])
     appended_ids={'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'}
-    assert set(by_id)==original_ids|appended_ids
+    assert set(by_id)==original_ids|appended_ids|registered_batch_candidates_in_current_bank()
     assert snapshot['new_question_ids']==[f'MA-RW-{i:04d}' for i in range(77,81)]
     reviewed=json.loads((ROOT/'reports/full-corpus-review/cdtm-author-review.json').read_text())['records']
     for qid in ['MA-RW-0025','MA-RW-0026','MA-RW-0027','MA-RW-0028']:

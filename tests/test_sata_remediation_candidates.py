@@ -16,7 +16,20 @@ from default_selection_assertions import (source_bound_default_delta,
 
 @pytest.fixture(scope='module')
 def compiled():
-    return compiler.build()
+    # These historical adapter tests deliberately keep their original three-ID
+    # contract. The new batch has independent full-compiler/13-ID tests.
+    value = compiler.build()
+    from remediation_batch_registry import legacy_projection, load_registry, current_baseline
+    if load_registry(ROOT) is not None:
+        value[compiler.BASE / 'questions.json'] = legacy_projection(value[compiler.BASE / 'questions.json'])
+        selection = value[compiler.BASE / 'selection.json']
+        new = set(current_baseline()['candidate_question_hashes'])
+        selection['new_ids'] = [q for q in selection['new_ids'] if q not in new]
+        selection['archive_only_replacements'] = [r for r in selection['archive_only_replacements'] if r['replacement_question_id'] not in new]
+        selection['stats']['newly_authored_replacements'] -= len(new)
+        selection['stats']['rewrite_archive_only_candidates'] -= len(new)
+        selection['stats']['available_total'] -= len(new)
+    return value
 
 
 def test_frozen_allocation_includes_reserved_unpublished_numbers():
@@ -154,7 +167,11 @@ def test_actual_publication_preserves_all_2346_delivered_objects_and_archive_UI(
     data = build_payload()
     frozen = json.loads((ROOT / adapter.OUT / 'published-record-baseline.json').read_text())
     by_id = {q['question_id']: q for q in data['questions']}
-    assert len(by_id) == 2349
+    from remediation_batch_registry import current_baseline
+    new_ids = set(current_baseline()['candidate_question_hashes'])
+    present = set(by_id) & new_ids
+    assert not present or present == new_ids
+    assert len(by_id) == 2349 + len(present)
     assert frozen['question_count'] == 2346
     for qid, expected in frozen['record_hashes'].items():
         assert adapter.record_sha(by_id[qid]) == expected, qid

@@ -17,7 +17,10 @@ import build_sata_remediation_candidates as adapter
 G = '/root/independent_case_g'
 E = '/root/independent_case_e'
 NOW = '2026-11-04T05:00:00+00:00'
-Q = {q['question_id']: q for q in json.loads((ROOT / adapter.BASE / 'questions.json').read_text())['questions'] if q.get('archive_only_candidate')}
+OLD_THREE = {r['question_id'] for r in json.loads((ROOT / adapter.ALLOCATION).read_bytes())['allocations']}
+assert len(OLD_THREE) == 3
+Q = {q['question_id']: q for q in json.loads((ROOT / adapter.BASE / 'questions.json').read_text())['questions'] if q['question_id'] in OLD_THREE}
+assert set(Q) == OLD_THREE
 AUTHORING = adapter.authoring_payload(ROOT)
 REAL_CANDIDATE_RECORDS = native.candidate_records
 

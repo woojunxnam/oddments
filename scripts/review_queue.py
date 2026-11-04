@@ -121,8 +121,14 @@ def remediation_default_priority(root, ledger, candidates):
     if allocation.get('schema_version') != 'sata-remediation-allocation/1':
         raise ValueError('Unsupported remediation allocation priority source')
     rows = allocation.get('allocations', [])
+    if len(rows) != 3:
+        raise ValueError('Invalid original remediation priority allocation')
+    from remediation_batch_registry import registered_rows, load_registry, REGISTRY, ALLOCATION as BATCH_ALLOCATION
+    registered = load_registry(root)
+    if registered is not None:
+        rows = registered_rows(root)
     remediation = [row['question_id'] for row in rows]
-    if len(remediation) != 3 or len(set(remediation)) != 3:
+    if len(remediation) != (13 if registered is not None else 3) or len(set(remediation)) != len(remediation):
         raise ValueError('Invalid remediation priority allocation')
     if not set(remediation) <= set(ledger):
         raise ValueError('Remediation priority missing authoritative ledger IDs; regenerate inventory')
@@ -143,6 +149,10 @@ def remediation_default_priority(root, ledger, candidates):
                 matching[0].get('remediation_candidate', {}).get('draft_key') != allocation_row['draft_key'] or
                 matching[0]['remediation_candidate'].get('current_id_independent_audit') != 'PENDING'):
             raise ValueError('Stale/unbound remediation priority content: ' + qid)
+        if registered is not None and matching[0]['remediation_candidate'].get('batch_id'):
+            from remediation_batch_registry import current_baseline
+            if digest(matching[0]) != current_baseline(root)['candidate_question_hashes'].get(qid):
+                raise ValueError('Changed new-batch current-record priority binding: ' + qid)
     config_path = root / 'site/practice-expansion/publication.json'
     config_raw = config_path.read_bytes()
     selection_binding = json.loads(config_raw)['representative_selection']
@@ -162,6 +172,9 @@ def remediation_default_priority(root, ledger, candidates):
     bindings = {ALLOCATION: hashlib.sha256(allocation_raw).hexdigest(),
                 str(config_path.relative_to(root)): hashlib.sha256(config_raw).hexdigest(),
                 str(relative): hashlib.sha256(raw).hexdigest()}
+    if registered is not None:
+        for path in (REGISTRY, BATCH_ALLOCATION):
+            bindings[path] = hashlib.sha256((root/path).read_bytes()).hexdigest()
     return ordered, bindings
 
 
@@ -200,13 +213,15 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
                               row.get('author_review_increment', 1) != 0 and
                               row.get('current_id_author_review_required') is not True and
                               row.get('independent_legacy_legal_assessment') is None)))
+        if stage == 'independent-legacy':
+            from remediation_batch_author_reviews import validate_independent_candidates
+            validate_independent_candidates(root, ledger, candidates)
         if prioritize_remediation_defaults:
             candidates, priority_bindings = remediation_default_priority(root, ledger, candidates)
         required = [qid for qid in candidates if ledger[qid].get('current_id_author_review_required') is True] if stage == 'author' else []
         if required:
-            from remediation_author_reviews import candidate_records
-            if set(required) != set(candidate_records(root)) or size < 3:
-                raise ValueError('Native current-ID author scope requires exactly the three allocated candidates and size >=3')
+            from remediation_batch_registry import required_author_group
+            required_author_group(root, required, size, len(state['jobs'])+1)
             remainder = [qid for qid in candidates if qid not in required]
             groups = [required] + [remainder[i:i+size] for i in range(0, min(len(remainder), (batches-1)*size), size)]
         else:
@@ -233,6 +248,10 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
                'worker_branch': 'mission/' + job_id, 'created_at': at}
         if stage == 'author' and any(ledger[qid].get('current_id_author_review_required') is True for qid in group):
             from remediation_author_reviews import expected_actor
+            from remediation_batch_registry import required_author_group
+            batch_id = required_author_group(root, group, size, job['sequence'])
+            if batch_id is not None:
+                job['current_id_author_batch_id'] = batch_id
             if not all(ledger[qid].get('current_id_author_review_required') is True for qid in group):
                 raise ValueError('Current-ID author job cannot mix other IDs')
             job['current_id_author_review_required_ids'] = list(group)
@@ -352,8 +371,8 @@ def validate_result(job, result):
     if stage == 'independent-legacy':
         validate_independent_provenance(job, result)
     elif job.get('current_id_author_review_required_ids'):
-        from remediation_author_reviews import validate_submission
-        validate_submission(job, result)
+        from remediation_batch_registry import author_module
+        author_module(job).validate_submission(job, result)
 
 
 def validate_independent_provenance(job, evidence):
@@ -426,8 +445,9 @@ def integrate(state, job_id, root, at=None):
         if job.get('stage') == 'independent-legacy':
             validate_independent_evidence(job, row, json.loads(current))
         elif job.get('current_id_author_review_required_ids'):
-            from remediation_author_reviews import candidate_records, validate_report
-            validate_report(root, job, result, current, candidate_records(root))
+            from remediation_batch_registry import author_module
+            native = author_module(job)
+            native.validate_report(root, job, result, current, native.candidate_records(root))
     at = at or timestamp()
     job.update(status='INTEGRATED', integrated_commit=git(root, 'rev-parse', 'HEAD'), integrated_at=at)
     event(state, 'INTEGRATE', at, job_id=job_id, commit=job['integrated_commit'])
