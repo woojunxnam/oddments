@@ -5071,8 +5071,8 @@
       "unit_ids": [
         "w1-b-1"
       ],
-      "status": "QUEUED",
-      "attempt": 0,
+      "status": "LEASED",
+      "attempt": 1,
       "base_commit": "da5983f3ef976df696014408985e918e7ed08152",
       "inventory_ledger_sha256": "51bfde5efb8628fbc650d1bd36ce85653439660ff8c757c9b9ae46e1e0572a3a",
       "created_at": "2026-11-04T01:47:26.369863+00:00",
@@ -5099,7 +5099,17 @@
             "original_omission_text": "본문 마지막의 “Unlicensed cashier와 vendor … 들어갈 수 있는 구역 … 제한된다”는 cashier와vendor 양쪽의 접근 제한을 명시한다. 최종17개 statement 중010은externalvendor의prescription-area조건부접근만,009는unlicensedcashier와licensedpersonnel의일반전문업무구별만적는다. 새V3ADD001은cashier의완성처방판매상태,ADD002는미완성약handling면허요건을열거하므로원F15약상태누락은해소하지만,unlicensedcashier 자신의prescription-area접근제한과완성처방판매·pharmacist offer전달이라는그접근예외의범위는어느statement에도직접열거되지않았다. Policy2020-15§I첫문단의“Except for cashiers … no individual may access the prescription area without a license”를직접확인했다. Source annotation에있는access조건을statement자체로세지않았다. 이는본문에없는새세부숫자요구나분절수차이가아니라실제본문에명시된actor-specific구역접근조건의잔여누락이다."
           }
         ]
-      }
+      },
+      "actor_provenance": {
+        "actor_id": "/root/independent_case_e",
+        "session_id": "/root/independent_case_e"
+      },
+      "auditor": "GPT",
+      "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+      "controller_independence_basis": "Actual same E session did not author original body/source or final v4 census. Root checked original and correction authors; prior audit work is disclosed, stable actor/session/instance retained and no new identity claimed.",
+      "lease_until": "2026-11-04T04:48:01.622285+00:00",
+      "worker_branch": "mission/review-independent-notes-reassessment-69894308052fd423-attempt-1",
+      "lease_token": "131bb48f3150a0356532424b185db7909da230ede1a4f82b70b0ac28eb650a31"
     }
   ],
   "events": [
@@ -5737,6 +5747,16 @@
       "job_id": "review-independent-notes-reassessment-69894308052fd423",
       "reassessment_id": "census-only-omission-v4-w1-b-1",
       "record_sha256": "6797737de7d563308c779fc7bcddb2c7986a8e62786a6c5cea88d55fcc4e5a68"
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-04T01:48:01.622285+00:00",
+      "job_id": "review-independent-notes-reassessment-69894308052fd423",
+      "actor": {
+        "actor_id": "/root/independent_case_e",
+        "session_id": "/root/independent_case_e"
+      },
+      "attempt": 1
     }
   ],
   "reassessments": [
