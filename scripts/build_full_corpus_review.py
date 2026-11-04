@@ -667,8 +667,9 @@ def build():
     for audit_row in independent_records:
         if audit_row['record_sha256'] != record_hash(public_by_id[audit_row['question_id']]):
             raise ValueError('Stale independent legacy review')
+    from independent_public_style_bindings import validation_sources
     for source in independent_sources:
-        for authority in source['sources']:
+        for authority in validation_sources(ROOT,source,source_bindings=independent_source_bindings):
             validate_independent_source_bytes(authority,ROOT)
     from procedural_secondary_metadata import load_metadata as load_procedural_secondary
     from phase11_secondary_metadata import load_metadata as load_phase11_secondary
