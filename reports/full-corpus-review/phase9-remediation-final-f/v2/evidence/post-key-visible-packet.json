@@ -1,0 +1,92 @@
+{
+  "read_started_after_checkpoint_commit": "ce720ff7",
+  "author_key_rationale_opened_at_utc": "2026-11-04T08:03:03.306974+00:00",
+  "records": [
+    {
+      "source_commit": "359b8ee39a68e9eb224743d67f0e2e228a0c490d",
+      "source_path": "reports/full-corpus-review/phase9-remediation-author-g/v2/drafts/P9-REPAIR-EXP-0515-v2.json",
+      "raw_sha256": "8a6b8f3d858a73adc175cb772c03a7d6e5f95bff9cf4e2a839af2bb03ee6e0d3",
+      "visible_sha256": "1bf2bc9ac8312dd0ae9d10a4fc2964a91198f563a0c12e12cd44577e9bad59f3",
+      "visible": {
+        "draft_key": "P9-REPAIR-EXP-0515",
+        "question_type": "SATA",
+        "stem": "A HIPAA-covered Massachusetts pharmacy discovers one reportable breach of unsecured PHI affecting 620 individuals: 310 reside in Massachusetts and 310 in Rhode Island. The pharmacy has current mailing addresses for everyone affected. There is no law-enforcement delay or other notice exception.\n\nWhich of the following notifications is the pharmacy required to provide under the federal HIPAA breach-notification rules? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Notice to each affected individual without unreasonable delay and no later than 60 calendar days after discovery."
+          },
+          {
+            "id": "B",
+            "text": "Notice to HHS contemporaneously with the individual notices for this breach."
+          },
+          {
+            "id": "C",
+            "text": "Notice to prominent media outlets serving Massachusetts and Rhode Island."
+          },
+          {
+            "id": "D",
+            "text": "An annual HHS log submission within 60 days after year-end in place of contemporaneous HHS notification."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B"
+        ],
+        "explanation": {
+          "core_reasoning": "질문은 연방 HIPAA 규정이 이 사건에서 요구하는 통지만 묻는다. 한 breach 전체 620명은 individual notice와 contemporaneous HHS notification의 대상이다. Media 의무는 전체 합계가 아니라 해당 State 또는 jurisdiction의 residents가 500명을 초과하는지로 판단하므로, 각 주 310명인 이 사건에는 발생하지 않는다. 의무가 없다는 결론을 자발적 추가 통지가 언제나 금지된다는 주장으로 바꾸지 않는다.",
+          "choice_analysis": {
+            "A": "164.404(a)(1)은 영향을 받은 각 individual에게 통지하도록 하고 (b)는 unreasonable delay 없이 discovery 후 최대60 calendar days 이내로 정한다. 연락처가 모두 유효하고 지연 예외도 없으므로 이 개인별 통지 의무가 적용된다. 최대기한을 채우기 위해 정당한 이유 없이 기다려도 된다는 의미는 아니다.",
+            "B": "164.408(a),(b)의 500명 이상 기준은 이 한 breach에 포함된 individuals 전체에 적용한다. 전체620명은 해당 기준을 충족하므로 HHS에 individual notices와 contemporaneously 통지해야 한다. 각 주310명이라는 사실은 이 HHS 경로를 annual-log 경로로 바꾸지 않는다.",
+            "C": "164.406(a)의 prominent-media 통지 의무는 한 State 또는 jurisdiction의 residents가500명을 초과할 때 발생한다. 명시된 각 주310명으로는 이 의무가 생기지 않으므로, 법정 필수 통지를 묻는 이 보기에는 해당하지 않는다. 이 해설은 자발적 추가 공지의 허용 여부나 그 내용에 관한 별도 privacy 검토를 판단하지 않는다.",
+            "D": "164.408(c)의 연말 후60일 log/report 경로는 한 breach 전체가500명 미만인 경우에 적용한다. 이 사건의 전체620명을 주별로 나누어 각각 작은 breach처럼 취급할 수 없으며, annual submission으로 (b)의 contemporaneous HHS 의무를 대체할 수 없다."
+          },
+          "learning_boundary": "연방 HIPAA의 individual/HHS/media 법정 필수 통지 경로만 평가한다. 추가 자발적 media communication의 적법성을 판정하지 않는다. 주별 breach 법률, business-associate 통지, 실제 통지 내용·전송방법, substitute notice 및 law-enforcement delay의 별도 요건은 이 정답으로 인증하지 않는다."
+        }
+      }
+    },
+    {
+      "source_commit": "359b8ee39a68e9eb224743d67f0e2e228a0c490d",
+      "source_path": "reports/full-corpus-review/phase9-remediation-author-g/v2/drafts/P9-REPAIR-EXP-0827-v2.json",
+      "raw_sha256": "eedef331fabaa3f3cf08b3c45b32f196dca99ef5b31827a6ece04bfe45f97f3b",
+      "visible_sha256": "66443c8e41c5fa5e493e90bbeb9cb5794844ebd417963451f59faba3795ae78f",
+      "visible": {
+        "draft_key": "P9-REPAIR-EXP-0827",
+        "question_type": "SATA",
+        "stem": "A DEA-registered central fill pharmacy prepares filled controlled-substance prescriptions for delivery through two retail pharmacies to their patients. Two sealed shipments are confirmed lost in transit before either retail pharmacy receives them.\n\nFor the shipment to North Pharmacy, the central fill pharmacy contracted with the carrier to deliver the prescriptions. For the shipment to South Pharmacy, South Pharmacy contracted with a carrier to retrieve the prescriptions from the central fill pharmacy.\n\nUnder the federal central-fill in-transit-loss provision, which pharmacies are responsible for reporting these losses on DEA Form 106? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The central fill pharmacy is responsible for reporting the loss of the shipment to North Pharmacy."
+          },
+          {
+            "id": "B",
+            "text": "North Pharmacy is responsible for reporting the loss of the shipment sent to North Pharmacy."
+          },
+          {
+            "id": "C",
+            "text": "The central fill pharmacy is responsible for reporting the loss of the shipment to South Pharmacy."
+          },
+          {
+            "id": "D",
+            "text": "South Pharmacy is responsible for reporting the loss of the shipment sent to South Pharmacy."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "1301.76(d)는 중앙조제에서 retail로 운송 중 발생한 분실의 Form106 보고 책임을 운송업체 계약 주체에 따라 배분한다. North행은 central fill이 운송업체를 계약했으므로 central fill이 보고한다. South행은 South retail이 회수 운송업체를 계약했으므로 South가 보고한다. 처방약을 조제한 곳이나 최종 수령 약국이라는 사실만으로 두 운송 건의 보고 주체를 동일하게 만들지 않는다.",
+          "choice_analysis": {
+            "A": "1301.76(d)의 central-fill 계약 문장은 central fill이 carrier와 계약해 filled prescriptions를 retail로 운송할 때 central fill에 in-transit loss의 DEA Form106 보고 책임을 둔다. North행 운송 계약은 central fill이 체결했으므로 이 배정이 맞다.",
+            "B": "North는 최종 수령 retail이지만 본문의 North행 carrier 계약을 체결한 주체는 central fill이다. 1301.76(d)의 해당 문장은 이 운송 중 분실의 Form106 책임을 central fill에 둔다. 수령 예정 약국이라는 사실만으로 이 조항의 책임 주체가 North로 바뀌지 않는다. 다른 통지·협력 의무가 전혀 없다는 주장은 아니다.",
+            "C": "Central fill이 약을 조제했다는 사실은 South행 운송 계약 주체와 다르다. 1301.76(d)의 retail 계약 문장은 retail이 carrier를 계약해 central fill에서 prescriptions를 회수할 때 그 retail에 in-transit loss의 Form106 책임을 둔다. South행 계약은 South가 체결했으므로 이 보기는 그 배분을 뒤바꾼다.",
+            "D": "South는 자신의 carrier를 계약해 central fill에서 prescriptions를 회수하도록 했다. 1301.76(d)의 retail 계약 문장에 따라 South가 이 운송 중 분실을 DEA Form106으로 보고하는 책임을 진다. North행과 South행을 각각 계약 사실에 연결해야 한다."
+          },
+          "learning_boundary": "21CFR1301.76(d)의 중앙조제→retail 운송 중 분실에 대한 Form106 보고 주체만 평가한다. (b)의 별도 initial written notice·완성 Form106 기한, significance 판단, Massachusetts 보고, carrier 보안·계약 허용 요건, 민사상 손해부담이나 다른 주체의 협력 의무를 이 정답으로 판단하지 않는다. 운송 중이라는 사실과 두 carrier 계약 주체는 본문에 명시했다."
+        }
+      }
+    }
+  ]
+}
