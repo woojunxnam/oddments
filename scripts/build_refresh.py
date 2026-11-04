@@ -20,7 +20,7 @@ def build_payload() -> dict:
     author_path = ROOT / 'notes/refresh/guide.json'
     notes = load_notes(ROOT)
     independent_reviews = load_metadata(ROOT, notes)['units']
-    author = apply_study_revision(json.loads(author_path.read_text(encoding='utf-8')), 'refresh', ROOT)
+    author = apply_study_revision(json.loads(author_path.read_text(encoding='utf-8')), 'refresh', ROOT, notes_context=notes)
     units = {u['id']: (ch, u) for ch in notes['chapters'] for u in ch['units']}
     cards = []
     seen = set()
