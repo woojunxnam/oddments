@@ -30,7 +30,8 @@
     "hidden_statement_truth_read": false,
     "other_question_conclusions_accessed": false,
     "source_discovery_note": "부모에게 정책 공식 URL locator만 받았다. 결론/인용문/이전 판정은 전달받지 않았다. original source-id discovery 필터가 pending verification/source-boundary metadata도 출력했지만 실제 법적 판정이나 reviewer 결론은 없었고 그 값은 근거로 사용하지 않았다. 최근접 비교는 stem/choices만 sanitization하여 읽었으며 다른 ID의 key/해설/판정은 출력하지 않았다.",
-    "not_a_queue_claim": "별도 보충 독립 두 문항 검토이며 공유 원장/queue를 claim/submit하지 않음."
+    "not_a_queue_claim": "별도 보충 독립 두 문항 검토이며 공유 원장/queue를 claim/submit하지 않음.",
+    "prior_question_author_or_independent_verdicts_read": false
   },
   "style_profile": {
     "profile_id": "MPJE-MA-PRE2027",
@@ -365,12 +366,21 @@
       "collection": "practice_expansion/2026-10-23/candidates/questions.json",
       "read_scope": {
         "original_stem": true,
-        "all_choices": true,
-        "existing_key": true,
-        "core_explanation": true,
-        "all_choice_explanations": true,
-        "learning_boundary": true,
-        "not_partial_excerpt": true
+        "stored_key_read": true,
+        "complete_core_reasoning_read": true,
+        "learning_boundary_read": true,
+        "all_choices_read": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "all_choice_explanations_read": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
       },
       "stem": "Case A: A pharmacy does not obtain free pediatric vaccine stock through the state program and prepares to vaccinate a patient younger than 19 without discussing potential cost.\n\nCase B: During a non-influenza, non-COVID childhood vaccination visit, staff omit counseling about continuing pediatric or family-practice care.\n\nWhich conclusion correctly addresses Case B? Select ONE answer.",
       "legal_review": {
@@ -1051,12 +1061,21 @@
       "collection": "practice_expansion/2026-10-23/candidates/questions.json",
       "read_scope": {
         "original_stem": true,
-        "all_choices": true,
-        "existing_key": true,
-        "core_explanation": true,
-        "all_choice_explanations": true,
-        "learning_boundary": true,
-        "not_partial_excerpt": true
+        "stored_key_read": true,
+        "complete_core_reasoning_read": true,
+        "learning_boundary_read": true,
+        "all_choices_read": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "all_choice_explanations_read": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
       },
       "stem": "Case A: A pharmacy does not obtain free pediatric vaccine stock through the state program and prepares to vaccinate a patient younger than 19 without discussing potential cost.\n\nCase B: During a non-influenza, non-COVID childhood vaccination visit, staff omit counseling about continuing pediatric or family-practice care.\n\nWhich statements accurately apply to the described cases or the related requirements? Select ALL that apply.",
       "legal_review": {
@@ -1862,5 +1881,5 @@
     "final_verification_ko": "native exact2 hash 집합과 처음 visible input hash 집합을 대조하고 isolated 원본 두 객체의 review_queue.digest를 다시 계산하여 모두 일치함을 확인했다. 모든 per-choice source와 key 계산은 같은 원문 바이트를 대상으로 하며 판정은 변경되지 않았다."
   },
   "no_release": true,
-  "final_evidence_binding_verified_at_utc": "2026-11-04T12:54:08.250430+00:00"
+  "final_evidence_binding_verified_at_utc": "2026-11-04T12:54:26.504319+00:00"
 }
