@@ -11185,9 +11185,9 @@
       "legal_review_status": "PARTIAL_AUTHOR_REVIEW_NOT_CENSUS",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave11-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w3-d-8-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 1,
+      "atomic_source_blocked_count": 2,
       "atomic_claim_ids": [
         "NOTE-WAVE11-W3-D-8-001",
         "NOTE-WAVE11-W3-D-8-002",
@@ -11222,10 +11222,11 @@
         "NOTE-WAVE11-W3-D-8-031",
         "NOTE-WAVE11-W3-D-8-032",
         "NOTE-WAVE11-W3-D-8-033",
-        "NOTE-WAVE11-W3-D-8-034"
+        "NOTE-WAVE11-W3-D-8-034",
+        "NOTE120-CENSUS-W3-D-8-CPA-PATIENT-SCOPE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -11240,26 +11241,69 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 33,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 1
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-b/report.json",
         "report_sha256": "cdfc3bde5ddc426a21e989ccca39516f8d909f00073eba3b9f5c3154e18fbd8d",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c57f83249962043f-result.json",
         "result_sha256": "7c7255b470a11e2ba2688371ad328c62a4472959d4d56cf1870dd04d1df6d16c",
         "body_sha256": "5c0e20e9ca5450254e9494338af308d1e90e4163c2c22bd638722a83b959dde1",
-        "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+        "census_sha256": "be558b20f6fed82a002783331feac0669d4e4a730f9c05ef1fd3ef44bd0e1822",
         "actor_provenance": {
           "actor_id": "/root/independent_notes101_b",
           "session_id": "/root/independent_notes101_b"
         },
         "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-d20eb4936a054b8c",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문은 “약사는 CPA에 해당 환자의 범위와 구체적 delegation 규칙을 명시해야” 한다고 서술한다. Census009의 disease state/primary–co-morbid와023의 delegated duties 범위는 각각 질환과 직원 업무 위임을 열거하지만, CPA에 명시할 해당 환자의 범위라는 별도의 법적 내용을 직접 열거하지 않는다. 환자별 referral/consent와 일반 delegation scope는 동일 명제가 아니므로 해당 본문 명제의 정확한 환자 범위/setting 조건을 별도 열거·대조해야 한다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE11-W3-D-8-034",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "All-setting urgent identification/transmission절차와retail의moreurgentnotification예외를직접읽었다. §16.04(2)(h)는모든urgentcommunication의독립된일률적immediate시계를쓰지않는다. 본문의즉시가운영권고인지별도법적시한인지명확하지않다. 개별대조명제: 본문은 모든setting CPA의 urgent-communication 절차를 식별하고 즉시 전달하는 절차라고 서술한다.",
+                "blocker": "All-setting urgent절차가모든상황에일률적immediate법정clock을만드는지미확정;본문즉시의법적범위명료화필요."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 33,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 1
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-b/report.json",
+            "report_sha256": "cdfc3bde5ddc426a21e989ccca39516f8d909f00073eba3b9f5c3154e18fbd8d",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c57f83249962043f-result.json",
+            "result_sha256": "7c7255b470a11e2ba2688371ad328c62a4472959d4d56cf1870dd04d1df6d16c",
+            "body_sha256": "5c0e20e9ca5450254e9494338af308d1e90e4163c2c22bd638722a83b959dde1",
+            "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes101_b",
+              "session_id": "/root/independent_notes101_b"
+            },
+            "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-c57f83249962043f"
+          }
+        ]
       }
     },
     {
@@ -12646,7 +12690,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/pub05-14-note-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w3-d-22-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 0,
       "atomic_claim_ids": [
@@ -12665,10 +12709,11 @@
         "PUB-NOTE-W3-D-22-013",
         "PUB-NOTE-W3-D-22-014",
         "PUB-NOTE-W3-D-22-015",
-        "PUB-NOTE-W3-D-22-016"
+        "PUB-NOTE-W3-D-22-016",
+        "NOTE120-CENSUS-W3-D-22-AUTHENTICITY"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -12676,26 +12721,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 16,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-b/report.json",
         "report_sha256": "cdfc3bde5ddc426a21e989ccca39516f8d909f00073eba3b9f5c3154e18fbd8d",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c57f83249962043f-result.json",
         "result_sha256": "7c7255b470a11e2ba2688371ad328c62a4472959d4d56cf1870dd04d1df6d16c",
         "body_sha256": "3d9bd52beb9e56765c5bcecc5478226dd78ffcc811a6a1797ad63f8e33a84f3a",
-        "census_sha256": "c1373c4296a4bb7fbb44b17f8691b5af3186a6566265e3abd3bb0a54f878e3ec",
+        "census_sha256": "f8efdc1e3aa5d62d14ef57d013784dc0f4fac6ff59f40d1792aea1e6a6b74f3d",
         "actor_provenance": {
           "actor_id": "/root/independent_notes101_b",
           "session_id": "/root/independent_notes101_b"
         },
         "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-95149f7a796845b2",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문은 EPT에서도 “약물·지시·진정성·allergy concerns 등 가능한 안전 확인”을 유지한다고 명시한다. Census015는 drug/allergy 안전 검토를 열거하지만 prescription authenticity 확인이라는 별도의 조제 전 판단을 열거하지 않는다. Census011의 모르는 DOB/주소를 만들지 않는 의무도 처방 자체의 진정성 판단과 다르다. 현행247CMR9.15(2)(c)는 prescription authentic 판단을 직접 요구하므로 본문의 이 명제를 별도 열거해야 한다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 16,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-b/report.json",
+            "report_sha256": "cdfc3bde5ddc426a21e989ccca39516f8d909f00073eba3b9f5c3154e18fbd8d",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-c57f83249962043f-result.json",
+            "result_sha256": "7c7255b470a11e2ba2688371ad328c62a4472959d4d56cf1870dd04d1df6d16c",
+            "body_sha256": "3d9bd52beb9e56765c5bcecc5478226dd78ffcc811a6a1797ad63f8e33a84f3a",
+            "census_sha256": "c1373c4296a4bb7fbb44b17f8691b5af3186a6566265e3abd3bb0a54f878e3ec",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes101_b",
+              "session_id": "/root/independent_notes101_b"
+            },
+            "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-c57f83249962043f"
+          }
+        ]
       }
     },
     {
@@ -13422,18 +13503,19 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave3-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/inventory-working-example-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 2,
+      "atomic_source_blocked_count": 3,
       "atomic_claim_ids": [
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-001",
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-002",
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-003",
         "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-004",
-        "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-005"
+        "NOTE-WAVE3-INVENTORY-WORKING-EXAMPLE-005",
+        "NOTE120-CENSUS-INVENTORY-WORKING-EXAMPLE-INVESTIGATE-ONE-UNIT"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -13441,26 +13523,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 5,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-c/review.json",
         "report_sha256": "279311b65a4f3ff593258e5ffc72089786e282dcb5c9faf635cc6ecfb91a5f59",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-48409efade6abff2-result.json",
         "result_sha256": "4a559ce0ba0bc9825577e9fd2fb5163d227ad5df382f2dc1c7c0f943991e46dc",
         "body_sha256": "2dfe0eaaa93b54ef071a0b4d48d7aceb2c82ef058ebdbe3d80c78044fca85d85",
-        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "census_sha256": "613e82461ad9ecd6ffa4ce5a351293deb7d920e38b4f85a3d8b8b494177f249b",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_c",
           "session_id": "/root/independent_notes120_c"
         },
         "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-6ea9f176882b7f46",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "OMISSIONS_FOUND / LEGAL_HOLD: 현재본문의 \"실제 109라면 1단위 차이의 원인을 조사합니다\" 및 \"미반영 입고·부분조제·반환·입력 오류·잘못된 교부·theft/diversion을 구분\" 명제가원자목록에서빠졌다. 누락원자:실물량과장부기대량의차이원인을조사해야하며단순잔량수정이나federal significance평가만으로조사를대체하지않는다. 기존001은inventory정의,002는reconciliation정의,003–004는federal significance/보고판단,005는통지시계이므로어느것도적극적차이원인조사의무를기록하지않는다. 새원자mapping의1차근거는247CMR9.21(8)(c)의MOR shall investigate any discrepancy이며(a),(b),(d)는accountability/adjustment맥락이다. 학습예시를모든연방약국에새perpetual의무를부과하는명제로확장하지않는다.100+50−40=110과110−109=1도직접확인했고가상숫자를별개법정의무로취급하지않았다. 기존5원자가모두독립적으로KEEP이어도이누락을숨겨COMPLETE라고하지않는다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 5,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-c/review.json",
+            "report_sha256": "279311b65a4f3ff593258e5ffc72089786e282dcb5c9faf635cc6ecfb91a5f59",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-48409efade6abff2-result.json",
+            "result_sha256": "4a559ce0ba0bc9825577e9fd2fb5163d227ad5df382f2dc1c7c0f943991e46dc",
+            "body_sha256": "2dfe0eaaa93b54ef071a0b4d48d7aceb2c82ef058ebdbe3d80c78044fca85d85",
+            "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_c",
+              "session_id": "/root/independent_notes120_c"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-48409efade6abff2"
+          }
+        ]
       }
     },
     {
@@ -14393,7 +14511,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave12-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-a-8-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 1,
       "atomic_claim_ids": [
@@ -14416,10 +14534,11 @@
         "NOTE-WAVE12-W4-A-8-017",
         "NOTE-WAVE12-W4-A-8-018",
         "NOTE-WAVE12-W4-A-8-019",
-        "NOTE-WAVE12-W4-A-8-020"
+        "NOTE-WAVE12-W4-A-8-020",
+        "NOTE120-CENSUS-W4-A-8-AUTO-DEFROST-DUTY"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -14434,26 +14553,69 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 19,
-          "LEGAL_HOLD": 1,
+          "KEEP": 0,
+          "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
         "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
         "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
         "body_sha256": "8e181120a0c53011f002a7ced33a731d195155b05753841cf5a9f6c3b1f02feb",
-        "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+        "census_sha256": "c46346f73dbaf4956070425597dbfd5505d226ace80344c89d42e0fd3e403de4",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-9f553a3f88fc5fb7",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "Freezer의 자동 defrost 원칙 → 자동 defrost를 갖춘 frost-free freezer가 기본 요건이라는 긍정적 명제가 없다. 기존020은 승인 관계 미확정이라는 메타 설명일 뿐이다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-8-020; 확인 조항: 247 CMR9.22(2);Policy2020-05VI"
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-8-020",
+                "legal_status": "LEGAL_HOLD",
+                "finding": "검토 명제: Freezerauto-defrost기본과temperature-sensitive/manual예외의Boardapproval관계는미확정이다.\n독립 판단: 후속 9.22(2)는 automatic defrost의 예외에 Board 승인을 요구하지만, 이전 Policy2020-05 VI는 highly temperature-sensitive 약과 수동 frost 관리 경로를 설명한다. 일반 정책 문구가 특정 장비의 승인까지 충족하는지 확정하지 못했으므로 LEGAL_HOLD를 유지한다.",
+                "blocker": "후속 regulation은 비자동 defrost freezer에 Board 승인을 요구하지만 이전 policy VI는 민감 제품의 수동 frost 관리 경로를 설명한다. 일반 policy가 특정 장비·운영의 승인을 충족한다는 근거는 확보하지 못했다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 19,
+              "LEGAL_HOLD": 1,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
+            "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
+            "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
+            "body_sha256": "8e181120a0c53011f002a7ced33a731d195155b05753841cf5a9f6c3b1f02feb",
+            "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-d253d7187a2e1696"
+          }
+        ]
       }
     },
     {
@@ -14469,9 +14631,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave12-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-a-9-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 5,
+      "atomic_source_blocked_count": 9,
       "atomic_claim_ids": [
         "NOTE-WAVE12-W4-A-9-001",
         "NOTE-WAVE12-W4-A-9-002",
@@ -14496,10 +14658,16 @@
         "NOTE-WAVE12-W4-A-9-021",
         "NOTE-WAVE12-W4-A-9-022",
         "NOTE-WAVE12-W4-A-9-023",
-        "NOTE-WAVE12-W4-A-9-024"
+        "NOTE-WAVE12-W4-A-9-024",
+        "NOTE120-CENSUS-W4-A-9-AFFECTED-PRODUCT",
+        "NOTE120-CENSUS-W4-A-9-AFFECTED-LOT",
+        "NOTE120-CENSUS-W4-A-9-AFFECTED-QUANTITY",
+        "NOTE120-CENSUS-W4-A-9-REPEATED-EXPOSURE",
+        "NOTE120-CENSUS-W4-A-9-ADMINISTERED-PATIENT-NOTICE",
+        "NOTE120-CENSUS-W4-A-9-DISPENSED-PROVIDER-NOTICE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 6,
         "omissions": [
@@ -14543,26 +14711,98 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 19,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 5
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 6건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
         "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
         "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
         "body_sha256": "0d017cb995780c85770f9df644ed439f612589696e44fe41ecc52e873937d66b",
-        "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+        "census_sha256": "d86b6442719615ecb5b52b09930789bb372c90c3d4f2b1740e5f52119ee4e808",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-1a03484eae3121d1",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 6,
+            "omissions": [
+              "제품·lot·수량 → 영향받은 product identity를 확인한다는 본문의 운영 명제가 없다. 기존017은 전제품 검증 미실시라는 메타 설명이다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-017; 확인 조항: Policy2020-05XV(2)-(5);247CMR9.22(1)",
+              "제품·lot·수량 → 영향받은 lot를 확인한다는 본문의 운영 명제가 없다. 기존018은 lot별 전제품 검증 미실시라는 메타 설명이다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-018; 확인 조항: Policy2020-05XV(2)-(5)",
+              "제품·lot·수량 → 영향받은 quantity를 확인한다는 본문의 운영 명제가 없다. 기존019는 수량별 전제품 검증 미실시라는 메타 설명이다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-019; 확인 조항: Policy2020-05XV(2)-(5)",
+              "반복 노출을 확인한다 → 반복 노출을 확인한다는 본문의 운영 명제가 없다. 기존020은 개별 반복 노출의 전제품 검증 미실시라는 메타 설명이다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-020; 확인 조항: Policy2020-05XV(1)-(5)",
+              "이미 compromised medication이 교부·투여되었다면 필요한 환자·prescriber 통지 → 안전하지 않거나 효과가 없는 제품을 투여한 경우에도 환자에게 통지한다는 원자 명제가 빠졌다. 기존021은 교부한 경우의 환자 통지만 다룬다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-021; 확인 조항: Policy2020-05XV(6)",
+              "이미 compromised medication이 교부·투여되었다면 필요한 환자·prescriber 통지 → 안전하지 않거나 효과가 없는 제품을 교부한 경우에도 healthcare provider에게 통지한다는 원자 명제가 빠졌다. 기존022는 투여한 경우의 provider 통지만 다룬다. 가장 가까운 기존 명제: NOTE-WAVE12-W4-A-9-022; 확인 조항: Policy2020-05XV(6)"
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-9-017",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "검토 명제: Affectedproduct별전체평가요건은이wave에서전제품원문확인하지않았다.\n독립 판단: 기존 명제는 작성자가 모든 제품을 검증하지 않았다는 메타 설명이다. 본문의 affected product 확인이라는 긍정적 운영 명제를 열거하지 않으며, 개별 제품의 안정성 자료도 전부 확보하지 않아 SOURCE_BLOCKED를 유지한다. 이 누락은 별도로 기록했다.",
+                "blocker": "기존 기록은 작성자의 전제품 검증 미완료라는 메타 설명으로 본문의 긍정적 운영 명제를 대신한다. 모든 제품·lot·수량·반복 노출별 안정성 자료를 확보한 것이 아니므로 해당 포괄 범위를 인증하지 않는다. 빠진 본문 명제는 별도 누락으로 밝혔다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-9-018",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "검토 명제: Affectedlot별전체평가요건은이wave에서전제품원문확인하지않았다.\n독립 판단: 기존 명제는 lot별 전제품 검증 미실시라는 메타 설명이다. 본문의 affected lot 확인 명제를 대신하지 않으며, 모든 lot의 안정성을 확인한 것은 아니므로 SOURCE_BLOCKED를 유지한다. 누락도 별도 기록했다.",
+                "blocker": "기존 기록은 작성자의 전제품 검증 미완료라는 메타 설명으로 본문의 긍정적 운영 명제를 대신한다. 모든 제품·lot·수량·반복 노출별 안정성 자료를 확보한 것이 아니므로 해당 포괄 범위를 인증하지 않는다. 빠진 본문 명제는 별도 누락으로 밝혔다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-9-019",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "검토 명제: Affectedquantity별전체평가요건은이wave에서전제품원문확인하지않았다.\n독립 판단: 기존 명제는 quantity별 전제품 검증 미실시라는 메타 설명이다. 본문의 affected quantity 확인 명제를 대신하지 않으며, 무제한 제품 범위의 자료를 확보하지 않아 SOURCE_BLOCKED를 유지한다. 누락도 별도 기록했다.",
+                "blocker": "기존 기록은 작성자의 전제품 검증 미완료라는 메타 설명으로 본문의 긍정적 운영 명제를 대신한다. 모든 제품·lot·수량·반복 노출별 안정성 자료를 확보한 것이 아니므로 해당 포괄 범위를 인증하지 않는다. 빠진 본문 명제는 별도 누락으로 밝혔다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-9-020",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "검토 명제: 반복노출별전체평가요건은이wave에서전제품원문확인하지않았다.\n독립 판단: 기존 명제는 반복 노출별 전제품 검증 미실시라는 메타 설명이다. 본문의 반복 노출 확인 명제와 다르며 모든 제품의 반복 노출 안정성을 확인하지 못해 SOURCE_BLOCKED를 유지한다. 누락도 별도 기록했다.",
+                "blocker": "기존 기록은 작성자의 전제품 검증 미완료라는 메타 설명으로 본문의 긍정적 운영 명제를 대신한다. 모든 제품·lot·수량·반복 노출별 안정성 자료를 확보한 것이 아니므로 해당 포괄 범위를 인증하지 않는다. 빠진 본문 명제는 별도 누락으로 밝혔다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-A-9-024",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "검토 명제: Compromisedproduct투여/교부의별도기관보고는해당trigger를별도검토해야한다.\n독립 판단: 247 CMR20에는 일부 improper dispensing·SADE·compounding 보고 trigger가 있으나 구체적 제품·사건 중대성·시설·제조/조제 상황이 정해져 있지 않다. 모든 기관·MedWatch 보고 경로를 완전히 매핑하지 못했으므로 SOURCE_BLOCKED를 유지한다.",
+                "blocker": "247 CMR20의 일부 보고 trigger는 확인했으나 구체적 제품·사건 중대성·제조/조제 상황·시설과 모든 기관 trigger가 지정되지 않았다. 모든 기관·MedWatch 경로의 완전한 매핑은 미확정이며 환자/provider 통지는 별도로 확인했다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 19,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 5
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 6건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
+            "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
+            "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
+            "body_sha256": "0d017cb995780c85770f9df644ed439f612589696e44fe41ecc52e873937d66b",
+            "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-d253d7187a2e1696"
+          }
+        ]
       }
     },
     {
@@ -14646,7 +14886,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave11-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-a-11-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 0,
       "atomic_claim_ids": [
@@ -14664,10 +14904,11 @@
         "NOTE-WAVE11-W4-A-11-012",
         "NOTE-WAVE11-W4-A-11-013",
         "NOTE-WAVE11-W4-A-11-014",
-        "NOTE-WAVE11-W4-A-11-015"
+        "NOTE-WAVE11-W4-A-11-015",
+        "NOTE120-CENSUS-W4-A-11-COUNSELING-CHANNEL"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -14675,26 +14916,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 15,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
         "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
         "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
         "body_sha256": "f1e0b3dcd4820a0b83ff61027664d3ab16107f7af05b23be38b4f10b762758b9",
-        "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+        "census_sha256": "3fe1efa784bdf9824167efba70a60b7529f440cd05814e687badbb50adc31e28",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-0ce0c1108dc49121",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "필요한 보관 조건과 상담 제공 경로를 사전에 연결한다 → 환자 pickup 경로에서 상담 제공 경로를 사전에 연결한다는 본문 명제가 열거되지 않았다. 기존003은 storage만 다루며001–015 중 상담 경로를 열거한 명제는 없다. 가장 가까운 기존 명제: NOTE-WAVE11-W4-A-11-003; 확인 조항: 247CMR9.18(1),(3)-(5),(8);Shipping advisory Counseling"
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 15,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
+            "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
+            "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
+            "body_sha256": "f1e0b3dcd4820a0b83ff61027664d3ab16107f7af05b23be38b4f10b762758b9",
+            "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-d253d7187a2e1696"
+          }
+        ]
       }
     },
     {
@@ -14975,7 +15252,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave11-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-a-16-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 0,
       "atomic_claim_ids": [
@@ -14987,10 +15264,11 @@
         "NOTE-WAVE11-W4-A-16-006",
         "NOTE-WAVE11-W4-A-16-007",
         "NOTE-WAVE11-W4-A-16-008",
-        "NOTE-WAVE11-W4-A-16-009"
+        "NOTE-WAVE11-W4-A-16-009",
+        "NOTE120-CENSUS-W4-A-16-ACCURACY-PERFORMANCE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -14998,26 +15276,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 9,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
         "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
         "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
         "body_sha256": "b4683e7e3ca1c306742ae0bb9b7fb378a2ba49b13ea7a93d6af6c4fd52a8a81b",
-        "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+        "census_sha256": "3049bbbf33e8375700718ca72be7c4cf4944879290e26dee67d140c2a8864222",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-df8a6b7a32813ce8",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "Automation이 제대로 작동하는지 확인하는 의무 → 자동화 장비의 accuracy/performance를 확인하는 긍정적 의무가 별도로 열거되지 않았다. 기존009는 pharmacist 최종 validation을 대체할 수 없다는 결론이므로 독립된 장비 성능 확인 의무를 대신하지 않는다. 가장 가까운 기존 명제: NOTE-WAVE11-W4-A-16-009; 확인 조항: 247CMR9.19(3),9.04(1)"
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 9,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-d/audit-report.json",
+            "report_sha256": "e181a43e6807349f19c56551b2491bfd4f0f63ef867daa4ef2d7714a78665109",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-d253d7187a2e1696-result.json",
+            "result_sha256": "0c1ac45c2df83fd3d658029cc036edbdd967e6735ea75d541221299d2dfea32e",
+            "body_sha256": "b4683e7e3ca1c306742ae0bb9b7fb378a2ba49b13ea7a93d6af6c4fd52a8a81b",
+            "census_sha256": "9cf929f790084dd1c9c4195d32f054ab5b5803135f60bf5474d188c1a4760a2b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-d253d7187a2e1696"
+          }
+        ]
       }
     },
     {
@@ -16677,9 +16991,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave12-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-b-12-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 0,
+      "atomic_source_blocked_count": 2,
       "atomic_claim_ids": [
         "NOTE-WAVE12-W4-B-12-001",
         "NOTE-WAVE12-W4-B-12-002",
@@ -16696,10 +17010,12 @@
         "NOTE-WAVE12-W4-B-12-013",
         "NOTE-WAVE12-W4-B-12-014",
         "NOTE-WAVE12-W4-B-12-015",
-        "NOTE-WAVE12-W4-B-12-016"
+        "NOTE-WAVE12-W4-B-12-016",
+        "NOTE120-CENSUS-W4-B-12-NONSTERILE-CSP-FACILITY",
+        "NOTE120-CENSUS-W4-B-12-NONSTERILE-CSP-VALIDATION"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 2,
         "omissions": [
@@ -16807,24 +17123,158 @@
         "claim_counts": {
           "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 16
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-e/audit-report.json",
         "report_sha256": "0e03f373c6b0254157014de5a75c58025e16ffff6915e4a45bf94b6c877e80bc",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-80ba6c8c305b8a32-result.json",
         "result_sha256": "4158efbef7e68a19b30fc0cec8ab21e0935e6bf29311de5d084c1a0ccd3c9193",
         "body_sha256": "0330b4f47e35662b39182cf5f2261dbcdb2c9193dcbe1df5f653eb2716a2fa11",
-        "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+        "census_sha256": "b44123a1b3410418caaaaba9be6a834f90a47194aa2970d4a907df62ffb2014b",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_e",
           "session_id": "/root/independent_notes120_e"
         },
         "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-483b8535e541f66e",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 2,
+            "omissions": [
+              "Nonsterile ingredients에서 sterile CSP를 만드는 경로에는 멸균·endotoxin 검토 외에도 해당 시설 요건을 충족해야 한다는 본문 명제가 별도 원자로 열거되지 않았다.",
+              "Nonsterile ingredients에서 sterile CSP를 만드는 경로에는 공정·기법의 적합성을 검증해야 한다는 본문 명제가 별도 원자로 열거되지 않았다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-001",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «최종사용에서sterile조건이필요한injectable조제를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 최종사용에서sterile조건이필요한injectable조제를구별한다. — 명제의 확인대상은 «최종사용에서sterile조건이필요한injectable조제를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-002",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «적절한ophthalmic조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 적절한ophthalmic조제를sterilepreparation범위로구별한다. — 명제의 확인대상은 «적절한ophthalmic조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-003",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «적절한irrigation조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 적절한irrigation조제를sterilepreparation범위로구별한다. — 명제의 확인대상은 «적절한irrigation조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «적절한inhalation조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 적절한inhalation조제를sterilepreparation범위로구별한다. — 명제의 확인대상은 «적절한inhalation조제를sterilepreparation범위로구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Nonsterileingredients로시작해sterileCSP를만드는경로가있다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Nonsterileingredients로시작해sterileCSP를만드는경로가있다. — 명제의 확인대상은 «Nonsterileingredients로시작해sterileCSP를만드는경로가있다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «그경로에서는적절한sterilization조건을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 그경로에서는적절한sterilization조건을확인해야한다. — 명제의 확인대상은 «그경로에서는적절한sterilization조건을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-007",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «해당injectable/nonsterilecomponent조건에서endotoxin위험을별도고려한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 해당injectable/nonsterilecomponent조건에서endotoxin위험을별도고려한다. — 명제의 확인대상은 «해당injectable/nonsterilecomponent조건에서endotoxin위험을별도고려한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-008",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cat1/2/3은oldlow/medium/highrisk를단순번호로바꾼것이아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cat1/2/3은oldlow/medium/highrisk를단순번호로바꾼것이아니다. — 명제의 확인대상은 «Cat1/2/3은oldlow/medium/highrisk를단순번호로바꾼것이아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-009",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category는BUD요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category는BUD요건과연결된다. — 명제의 확인대상은 «Category는BUD요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-010",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category는facility요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category는facility요건과연결된다. — 명제의 확인대상은 «Category는facility요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-011",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category는personnel요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category는personnel요건과연결된다. — 명제의 확인대상은 «Category는personnel요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-012",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category는environmentalmonitoring요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category는environmentalmonitoring요건과연결된다. — 명제의 확인대상은 «Category는environmentalmonitoring요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-013",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category는testing요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category는testing요건과연결된다. — 명제의 확인대상은 «Category는testing요건과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-014",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Category3은특정성분의독성3등급이아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Category3은특정성분의독성3등급이아니다. — 명제의 확인대상은 «Category3은특정성분의독성3등급이아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-015",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Radiopharmaceutical는USP825scope를검토한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Radiopharmaceutical는USP825scope를검토한다. — 명제의 확인대상은 «Radiopharmaceutical는USP825scope를검토한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-12-016",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «별도nuclear/radiation체계검토없이797matrix를모든radioactivepreparation에자동적용하지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 별도nuclear/radiation체계검토없이797matrix를모든radioactivepreparation에자동적용하지않는다. — 명제의 확인대상은 «별도nuclear/radiation체계검토없이797matrix를모든radioactivepreparation에자동적용하지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 0,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 16
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-e/audit-report.json",
+            "report_sha256": "0e03f373c6b0254157014de5a75c58025e16ffff6915e4a45bf94b6c877e80bc",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-80ba6c8c305b8a32-result.json",
+            "result_sha256": "4158efbef7e68a19b30fc0cec8ab21e0935e6bf29311de5d084c1a0ccd3c9193",
+            "body_sha256": "0330b4f47e35662b39182cf5f2261dbcdb2c9193dcbe1df5f653eb2716a2fa11",
+            "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_e",
+              "session_id": "/root/independent_notes120_e"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-80ba6c8c305b8a32"
+          }
+        ]
       }
     },
     {
@@ -17537,9 +17987,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave12-census.json",
+      "atomic_census_source": "reports/full-corpus-review/notes120-census-author/w4-b-17-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 9,
+      "atomic_source_blocked_count": 10,
       "atomic_claim_ids": [
         "NOTE-WAVE12-W4-B-17-001",
         "NOTE-WAVE12-W4-B-17-002",
@@ -17580,10 +18030,11 @@
         "NOTE-WAVE12-W4-B-17-037",
         "NOTE-WAVE12-W4-B-17-038",
         "NOTE-WAVE12-W4-B-17-039",
-        "NOTE-WAVE12-W4-B-17-040"
+        "NOTE-WAVE12-W4-B-17-040",
+        "NOTE120-CENSUS-W4-B-17-ASEPTIC-OBSERVATION"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -17736,26 +18187,207 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 16,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 24
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/notes120-e/audit-report.json",
         "report_sha256": "0e03f373c6b0254157014de5a75c58025e16ffff6915e4a45bf94b6c877e80bc",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-80ba6c8c305b8a32-result.json",
         "result_sha256": "4158efbef7e68a19b30fc0cec8ab21e0935e6bf29311de5d084c1a0ccd3c9193",
         "body_sha256": "562d57885beb4e01f00d77c863ab27135a0030719ee86ce8b2f790d00211b87d",
-        "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+        "census_sha256": "5ec3fa057c1b55fa14527e002e0c0df399bd75166486767c5ccf08b53ca77cef",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_e",
           "session_id": "/root/independent_notes120_e"
         },
         "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-31a8d9beca50f61d",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "Aseptic manipulation competency 평가에는 실제 조작의 observation이 포함되어야 한다는 본문 명제가 별도 claim으로 열거되지 않았다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-001",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Coreknowledge/skills평가는initial에필요하다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Coreknowledge/skills평가는initial에필요하다. — 명제의 확인대상은 «Coreknowledge/skills평가는initial에필요하다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-002",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Coreknowledge/skills평가는최소매12개월필요하다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Coreknowledge/skills평가는최소매12개월필요하다. — 명제의 확인대상은 «Coreknowledge/skills평가는최소매12개월필요하다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-003",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «감독만하는인력과실제compounder의평가범위를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 감독만하는인력과실제compounder의평가범위를구별한다. — 명제의 확인대상은 «감독만하는인력과실제compounder의평가범위를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Initialgarbingqualification은fullhandhygiene/garbing/GFT별도3회이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Initialgarbingqualification은fullhandhygiene/garbing/GFT별도3회이다. — 명제의 확인대상은 «Initialgarbingqualification은fullhandhygiene/garbing/GFT별도3회이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «그3회는연속성공해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 그3회는연속성공해야한다. — 명제의 확인대상은 «그3회는연속성공해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «한번garb후plate만3회찍는방법으로대신하지못한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 한번garb후plate만3회찍는방법으로대신하지못한다. — 명제의 확인대상은 «한번garb후plate만3회찍는방법으로대신하지못한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-007",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cat1/2actualcompounder의garbingcompetency는최소6개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cat1/2actualcompounder의garbingcompetency는최소6개월마다라는기준이다. — 명제의 확인대상은 «Cat1/2actualcompounder의garbingcompetency는최소6개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-008",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cat1/2actualcompounder의asepticcompetency도최소6개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cat1/2actualcompounder의asepticcompetency도최소6개월마다라는기준이다. — 명제의 확인대상은 «Cat1/2actualcompounder의asepticcompetency도최소6개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-009",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cat3actualcompounder의garbingcompetency는최소3개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cat3actualcompounder의garbingcompetency는최소3개월마다라는기준이다. — 명제의 확인대상은 «Cat3actualcompounder의garbingcompetency는최소3개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-010",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cat3actualcompounder의asepticcompetency도최소3개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cat3actualcompounder의asepticcompetency도최소3개월마다라는기준이다. — 명제의 확인대상은 «Cat3actualcompounder의asepticcompetency도최소3개월마다라는기준이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-011",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Directoversight-only인력의garbingcompetency는initial/매12개월이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Directoversight-only인력의garbingcompetency는initial/매12개월이다. — 명제의 확인대상은 «Directoversight-only인력의garbingcompetency는initial/매12개월이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-012",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Directoversight-only인력의asepticcompetency는최소매12개월이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Directoversight-only인력의asepticcompetency는최소매12개월이다. — 명제의 확인대상은 «Directoversight-only인력의asepticcompetency는최소매12개월이다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-013",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «그인력이실제조제를시작하면actualcompounder기준을별도충족해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 그인력이실제조제를시작하면actualcompounder기준을별도충족해야한다. — 명제의 확인대상은 «그인력이실제조제를시작하면actualcompounder기준을별도충족해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-014",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Immediate-use-only인력은task/SOP별training/competency를충족한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Immediate-use-only인력은task/SOP별training/competency를충족한다. — 명제의 확인대상은 «Immediate-use-only인력은task/SOP별training/competency를충족한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-015",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Cleaning/restocking-only인력도task/SOP별training/competency를충족한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Cleaning/restocking-only인력도task/SOP별training/competency를충족한다. — 명제의 확인대상은 «Cleaning/restocking-only인력도task/SOP별training/competency를충족한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-016",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «모든인력에게동일media-fill경로가필요한것은아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 모든인력에게동일media-fill경로가필요한것은아니다. — 명제의 확인대상은 «모든인력에게동일media-fill경로가필요한것은아니다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-017",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Asepticcompetency평가는media-fill과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Asepticcompetency평가는media-fill과연결된다. — 명제의 확인대상은 «Asepticcompetency평가는media-fill과연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-018",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Media-fill뒤glovedfingertip/thumbsampling이연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Media-fill뒤glovedfingertip/thumbsampling이연결된다. — 명제의 확인대상은 «Media-fill뒤glovedfingertip/thumbsampling이연결된다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-019",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Garbing평가와mediafill뒤fingertip평가를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Garbing평가와mediafill뒤fingertip평가를구별한다. — 명제의 확인대상은 «Garbing평가와mediafill뒤fingertip평가를구별한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-020",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Asepticcompetency의directcompoundingareasurfacesampling조건을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Asepticcompetency의directcompoundingareasurfacesampling조건을확인해야한다. — 명제의 확인대상은 «Asepticcompetency의directcompoundingareasurfacesampling조건을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-021",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Initialgarbing양손합계0CFU기준을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Initialgarbing양손합계0CFU기준을확인해야한다. — 명제의 확인대상은 «Initialgarbing양손합계0CFU기준을확인해야한다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-022",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Mediafill뒤fingertip의actionlevel을garbing0CFU와같다고보지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Mediafill뒤fingertip의actionlevel을garbing0CFU와같다고보지않는다. — 명제의 확인대상은 «Mediafill뒤fingertip의actionlevel을garbing0CFU와같다고보지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-023",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «Garbingcount와environmentalsurfacecount를같은검사로보지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: Garbingcount와environmentalsurfacecount를같은검사로보지않는다. — 명제의 확인대상은 «Garbingcount와environmentalsurfacecount를같은검사로보지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE12-W4-B-17-040",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "명제의 확인대상은 «모든samplingfailure가동일mandatorycessation이라는USP문구로추정하지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다.",
+                "blocker": "현재 법규 확정의 미해결범위: 모든samplingfailure가동일mandatorycessation이라는USP문구로추정하지않는다. — 명제의 확인대상은 «모든samplingfailure가동일mandatorycessation이라는USP문구로추정하지않는다.»이다. 직접조회한 공개공식자료를 대조했으나, 이 범위의 현재 USP 정본 전체 조건·예외와 이후 개정 유무를 확보하지 못했다. 저자census나 요약표의 표현만으로 법규확정하지 않는다. USP795/797 current chapter landing GET403의 원문/시각을 보존했다. 2023FAQ·inspection draft·BUD요약은 확인 가능한 범위의 보조자료이며 미확보 원문을 대신하지 않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 16,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 24
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/notes120-e/audit-report.json",
+            "report_sha256": "0e03f373c6b0254157014de5a75c58025e16ffff6915e4a45bf94b6c877e80bc",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-80ba6c8c305b8a32-result.json",
+            "result_sha256": "4158efbef7e68a19b30fc0cec8ab21e0935e6bf29311de5d084c1a0ccd3c9193",
+            "body_sha256": "562d57885beb4e01f00d77c863ab27135a0030719ee86ce8b2f790d00211b87d",
+            "census_sha256": "285de282c776b93ea1ff0dcd004259f497f11aa9a594fa2beb096cb905ffe72b",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_e",
+              "session_id": "/root/independent_notes120_e"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-80ba6c8c305b8a32"
+          }
+        ]
       }
     },
     {
@@ -18972,9 +19604,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave15-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/w5-a-12-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 1,
+      "atomic_source_blocked_count": 2,
       "atomic_claim_ids": [
         "NOTE15-w5-a-12-001",
         "NOTE15-w5-a-12-002",
@@ -18991,10 +19623,11 @@
         "NOTE15-w5-a-12-013",
         "NOTE15-w5-a-12-014",
         "NOTE15-w5-a-12-015",
-        "NOTE15-w5-a-12-016"
+        "NOTE15-w5-a-12-016",
+        "FINAL86-CENSUS-W5-A-12-EXCIPIENT-ASSESSMENT"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -19002,26 +19635,62 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 16,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-a/review.json",
         "report_sha256": "15dabd455658e11adddfb47c9dc1193ab9f066f658456cef7d17e6ac77e9b38f",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-cb554d7dccc8069e-result.json",
         "result_sha256": "fa8f2116e0531d9067b756c1d9212f4a707ab1baab81f8de701de22c886b2d51",
         "body_sha256": "c56718dda4c143c64da508d7f18c2dab626de2ad0ce8b1065cb06dcc76176030",
-        "census_sha256": "6d4baf78373fee0b86e819e8f9de6ac91c1a0b6a28f92a97a0d27e7c8fa84f8d",
+        "census_sha256": "09693b90799c364dff68b52d328b6f13179da05808ab008f0f8b8892ed636e2d",
         "actor_provenance": {
           "actor_id": "/root/independent_notes101_a",
           "session_id": "/root/independent_notes101_a"
         },
         "auditor_instance": "GPT:/root/independent_notes101_a:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-d3d66a734a3ead63",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문 첫 문단의 “Medication뿐 아니라 첨가제”는 비약물 첨가제(excipient)의 안정성·호환성을 실제 체온 및 전체 pump infusion 기간에 대해 평가한다는 추가 원자 명제다. 최종16개 census는 all drugs(4·5), CSP/pump(6), 온도(7·8)만 열거하며 비약물 첨가제를 독립 항목으로 포착하지 않는다. Policy2024-02는 drugs/CSP/pump를 명시하지만 excipient를 직접 별도 열거하지 않아 이 누락 명제의 정확한 법적 범위도 SOURCE_BLOCKED이다. 새 저자 원자 추가와 독립 재평가가 필요하며 이 보고서가 census를 수정하지 않는다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 16,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-a/review.json",
+            "report_sha256": "15dabd455658e11adddfb47c9dc1193ab9f066f658456cef7d17e6ac77e9b38f",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-cb554d7dccc8069e-result.json",
+            "result_sha256": "fa8f2116e0531d9067b756c1d9212f4a707ab1baab81f8de701de22c886b2d51",
+            "body_sha256": "c56718dda4c143c64da508d7f18c2dab626de2ad0ce8b1065cb06dcc76176030",
+            "census_sha256": "6d4baf78373fee0b86e819e8f9de6ac91c1a0b6a28f92a97a0d27e7c8fa84f8d",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes101_a",
+              "session_id": "/root/independent_notes101_a"
+            },
+            "auditor_instance": "GPT:/root/independent_notes101_a:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-cb554d7dccc8069e"
+          }
+        ]
       }
     },
     {
@@ -21143,9 +21812,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave3-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/recall-classification-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 2,
+      "atomic_source_blocked_count": 23,
       "atomic_claim_ids": [
         "NOTE-WAVE3-RECALL-CLASSIFICATION-001",
         "NOTE-WAVE3-RECALL-CLASSIFICATION-002",
@@ -21165,10 +21834,34 @@
         "NOTE-WAVE3-RECALL-CLASSIFICATION-016",
         "NOTE-WAVE3-RECALL-CLASSIFICATION-017",
         "NOTE-WAVE3-RECALL-CLASSIFICATION-018",
-        "NOTE-WAVE3-RECALL-CLASSIFICATION-019"
+        "NOTE-WAVE3-RECALL-CLASSIFICATION-019",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-CLASSIII-ACTION",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-PRECLASSIFICATION-ACTION",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-LOT-DISTINCTION",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-PROGRESS-DISTINCTION",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-ACTUAL-HARM-DISTINCTION",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-IDENTIFY-PRODUCT",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-IDENTIFY-STRENGTH",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-IDENTIFY-FORM",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-IDENTIFY-LOT",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-IDENTIFY-EXPIRY",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-QUARANTINE",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-COMPUTER-BLOCK",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-TRACE-PATIENT",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-TRACE-FACILITY",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-TRACE-SHIPMENT",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-CONTACT",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-RETURN",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-ALTERNATIVE-THERAPY",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-RECONCILE",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-RECORD",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-BOARD-TRIGGER",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-FDA-TRIGGER",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-DSCSA-TRIGGER",
+        "FINAL86-CENSUS-RECALL-CLASSIFICATION-NO-UNIVERSAL-DEADLINE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 5,
         "omissions": [
@@ -21180,26 +21873,66 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 19,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 5건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-b/report.json",
         "report_sha256": "228b1d4083a2e5ac5aabd10775e7e5a25125d41fbb45061c47367aa59de03d1a",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-8f402c90ecadfc0d-result.json",
         "result_sha256": "367d9c5593bcf66395ec1a553a82995ac91e7bfc181dd0d97dfab0747f20449d",
         "body_sha256": "31e22826c4c521158767e5f1bd1fca36894d7d647316b9993bfac74bcb4bc34f",
-        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "census_sha256": "d32eeeaa0d4ff34a96700344b0c6cc7a664ba523149eb274b31d4e3f4f3dd065",
         "actor_provenance": {
           "actor_id": "/root/independent_notes101_b",
           "session_id": "/root/independent_notes101_b"
         },
         "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-5076be453e5dfeaf",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 5,
+            "omissions": [
+              "본문 “Class III라고 무시하거나 ... 방치하지 않습니다”의 ClassIII라는 이유만으로 회수 대응을 생략하지 않는 별도 행동 명제가 census006의 risk definition에 열거되지 않았다. 위험이 낮다는 정의와 대응 생략 금지는 다른 명제이다.",
+              "본문은 FDA class 결정 전 업체 회수 통지를 방치하지 않는다고 한다. census007의 not-yet-classified 상태 정의와010의 두 날짜 차이는 분류 전 실제 회수 통지에 대응해야 한다는 행위 명제를 직접 열거하지 않는다. FDA Enforcement Reports의 firm initiation-before-classification을 확인했다.",
+              "본문은 class와 affected lot·진행 상태·실제 환자 harm이 서로 다른 정보라고 한다. census008은 risk degree,009는 recall depth만 열거하므로 affected lot·진행상태·실제 harm 유무와의 세 별도 구분이 빠져 있다.",
+              "본문 후반 workflow의 product·strength·form·lot·expiry 대조, stock 격리 및 전산 차단 행위가 정의 중심19claim에 없다. 이는 본문이 명시한 학습용 workflow이며 모든 recall의 독립적 동일 법정의무로 자동 확대하지 않고, 실제 recall instruction/적용법에 따른 범위를 따로 열거·판정해야 한다.",
+              "동 workflow에서 이미 교부된 환자·시설·배송분 추적, 회수지시에 따른 연락·반환 및 대체치료 지원, 수량 reconciliation·기록, 해당 Board/FDA/DSCSA 병행 trigger 검토가 전량 미열거이다. 각각의 행위·조건을 구분해야 한다. 마지막의 모든recall에 동일환자연락deadline을 신설하지 않는다는 범위 제한도 census에 없다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 19,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 5건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-b/report.json",
+            "report_sha256": "228b1d4083a2e5ac5aabd10775e7e5a25125d41fbb45061c47367aa59de03d1a",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-8f402c90ecadfc0d-result.json",
+            "result_sha256": "367d9c5593bcf66395ec1a553a82995ac91e7bfc181dd0d97dfab0747f20449d",
+            "body_sha256": "31e22826c4c521158767e5f1bd1fca36894d7d647316b9993bfac74bcb4bc34f",
+            "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes101_b",
+              "session_id": "/root/independent_notes101_b"
+            },
+            "auditor_instance": "GPT:/root/independent_notes101_b:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-8f402c90ecadfc0d"
+          }
+        ]
       }
     },
     {
@@ -21909,7 +22642,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave3-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/parallel-duties-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 7,
       "atomic_claim_ids": [
@@ -21921,10 +22654,11 @@
         "NOTE-WAVE3-PARALLEL-DUTIES-006",
         "NOTE-WAVE3-PARALLEL-DUTIES-007",
         "NOTE-WAVE3-PARALLEL-DUTIES-008",
-        "NOTE-WAVE3-PARALLEL-DUTIES-009"
+        "NOTE-WAVE3-PARALLEL-DUTIES-009",
+        "FINAL86-CENSUS-PARALLEL-DUTIES-CREATE-QRE-RECORD"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -21939,26 +22673,69 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 8,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 1
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-c/review.json",
         "report_sha256": "1ce025f45485bd066ad2a8d5278b1afca8dea0274fb9908c03bca9bfa63beee8",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-abd680775260cd87-result.json",
         "result_sha256": "5150286221c5baa865447234a5656e8df8a534a0f8f7d822912338bceb5f7e12",
         "body_sha256": "31b40864d2d3a333dff782c9150d6eb359f0285297440b5c3ad43f3e947f69e8",
-        "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+        "census_sha256": "04c51c15746c02e22f4ccbf266d394abb5094357b0a8d27c9ff03ab03a935abe",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_c",
           "session_id": "/root/independent_notes120_c"
         },
         "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-387bf6deef48386d",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "OMISSIONS_FOUND / LEGAL_HOLD: 본문은 \"같은 사건에도 환자 통지, prescriber 연락, 내부 QRE record, 외부 report와 제품 disposition이 함께 적용될 수 있습니다\"라고명시한다. 누락원자는해당QRE사건에내부QRE기록작성의무자체도병렬로적용될수있다는적극적명제이다. 기존001은내부기록으로Board보고를대체할수없다는외부보고비대체,002–008은기관/환자/처방자/제품의별도조치,009는기록의보존기간구별이다. 어느것도내부QRE기록을작성해야하는적극적의무를직접기록하지않는다. Mapping:247CMR15.03(2)(a),(b). 조문에24시간이있어도본문이그숫자를쓰지않았으므로새24시간숫자를본문의누락원자로만들지않았다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE3-PARALLEL-DUTIES-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "보존한2024 USCODE360eee-1(d)(4)(B)의 dispenser 통지 문구는 확인했다. 이 자료는 같은 날 보존한2024판이며2026 현재 통합법전·모든 exemption까지 확정한 자료가 아니므로 해당 현행 DSCSA 범위는 SOURCE_BLOCKED이다.",
+                "blocker": "보존한2024 USCODE360eee-1(d)(4)(B)의 dispenser 통지 문구는 확인했다. 이 자료는 같은 날 보존한2024판이며2026 현재 통합법전·모든 exemption까지 확정한 자료가 아니므로 해당 현행 DSCSA 범위는 SOURCE_BLOCKED이다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 8,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 1
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-c/review.json",
+            "report_sha256": "1ce025f45485bd066ad2a8d5278b1afca8dea0274fb9908c03bca9bfa63beee8",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-abd680775260cd87-result.json",
+            "result_sha256": "5150286221c5baa865447234a5656e8df8a534a0f8f7d822912338bceb5f7e12",
+            "body_sha256": "31b40864d2d3a333dff782c9150d6eb359f0285297440b5c3ad43f3e947f69e8",
+            "census_sha256": "75c6b3de5e497eeb6b7f1c472005de115bdddcc0994ace93cffc273e1ec1b400",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_c",
+              "session_id": "/root/independent_notes120_c"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-abd680775260cd87"
+          }
+        ]
       }
     },
     {
@@ -22459,7 +23236,7 @@
       "legal_review_status": "PARTIAL_AUTHOR_REVIEW_WITH_OPEN_CLAIM",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/note-wave4-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/w1-c-14-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 2,
       "atomic_claim_ids": [
@@ -22514,10 +23291,11 @@
         "NOTE-WAVE4-W1-C-14-049",
         "NOTE-WAVE4-W1-C-14-050",
         "NOTE-WAVE4-W1-C-14-051",
-        "NOTE-WAVE4-W1-C-14-052"
+        "NOTE-WAVE4-W1-C-14-052",
+        "FINAL86-CENSUS-W1-C-14-EMPLOYER-NO-IMMUNITY"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -22532,26 +23310,69 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 51,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 1
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-c/review.json",
         "report_sha256": "1ce025f45485bd066ad2a8d5278b1afca8dea0274fb9908c03bca9bfa63beee8",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-abd680775260cd87-result.json",
         "result_sha256": "5150286221c5baa865447234a5656e8df8a534a0f8f7d822912338bceb5f7e12",
         "body_sha256": "2b04afad685ef90a72d314099dc28d4fc6ce5a5cff16878bb670f32ee44ed8ab",
-        "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+        "census_sha256": "650df16b66fa2d9d49460e03ee274ce2e2091b84f1a5885cd8df7dd939e37ba0",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_c",
           "session_id": "/root/independent_notes120_c"
         },
         "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-8dfbbe41be85afd8",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "OMISSIONS_FOUND / LEGAL_HOLD: 본문은 \"실제 안전한 verification 능력이 손상됐는데 고용주가 근무를 승인했다는 이유로 사유가 없어지지도 않는다\"라고명시한다. 누락원자는고용주승인이licensee의impaired/unsafe practice에대한Board규정상사유를면제할권한이아니라는명제이다. 기존005는impaired상태의practice가ground라는일반요건,015는특정최종처분이자동아님,016은치료이력만으로impairment를판정하지않음이며고용주승인의비면책권한경계를직접기록하지않는다. Mapping:247CMR10.03(1)(g),(k),opening 및10.06의Board처분권한. 이누락은실제원자의명확한impairment법규KEEP을지우지않으면서별도로보존한다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE4-W1-C-14-030",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "CMR10.03(1)(y),(z)의7businessdays/(aa)의30days와20.03(3),(4)의14calendar days를직접확인했다.모든중복사건의우선·통합해석을확정한공식clarification은미확보여서SOURCE_BLOCKED이다.",
+                "blocker": "CMR10.03(1)(y),(z)의7businessdays/(aa)의30days와20.03(3),(4)의14calendar days를직접확인했다.모든중복사건의우선·통합해석을확정한공식clarification은미확보여서SOURCE_BLOCKED이다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 51,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 1
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-c/review.json",
+            "report_sha256": "1ce025f45485bd066ad2a8d5278b1afca8dea0274fb9908c03bca9bfa63beee8",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-abd680775260cd87-result.json",
+            "result_sha256": "5150286221c5baa865447234a5656e8df8a534a0f8f7d822912338bceb5f7e12",
+            "body_sha256": "2b04afad685ef90a72d314099dc28d4fc6ce5a5cff16878bb670f32ee44ed8ab",
+            "census_sha256": "44ea82cabecc39fbe510b1f0a6d6d6af333706fc4fcc9934d9080c1255b10743",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_c",
+              "session_id": "/root/independent_notes120_c"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_c:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-abd680775260cd87"
+          }
+        ]
       }
     },
     {
@@ -24038,7 +24859,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-a-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-a-2-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 56,
       "atomic_claim_ids": [
@@ -24124,10 +24945,20 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0080",
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0081",
         "APPENDIX-ATOMS-A-APPENDIX-A-2-0082",
-        "APPENDIX-ATOMS-A-APPENDIX-A-2-0083"
+        "APPENDIX-ATOMS-A-APPENDIX-A-2-0083",
+        "FINAL86-CENSUS-APPENDIX-A-2-A006-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A007-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A008-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A009-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A010-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A011-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A013-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A015-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A016-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-2-A017-FEDERAL-CII"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 10,
         "omissions": [
@@ -24307,26 +25138,234 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 56,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 27
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 10건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
         "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
         "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
         "body_sha256": "2cc6cfdcae61ee8c71e2a4647f2cc262eb977c512a180abe46abb056e6da6b23",
-        "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+        "census_sha256": "5858c99797f0a65adc3e377a0665852337b2b293c8dcf192926f2f79066ee98d",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-960b89f101728212",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 10,
+            "omissions": [
+              "A006: A006의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A007: A007의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A008: A008의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A009: A009의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A010: A010의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A011: A011의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A013: A013의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A015: A015의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A016: A016의 해당 opioid 제품은 MA에서도 CII 규칙의 대상이다. — Federal/MA 열의 두 번째 “Opioid·CII 규칙”은 MA 법규효과이다. 기존 FEDERAL_SCHEDULE 및 opioid 임상역할 명제는 MA700.002 편입의 독립 원자를 대체하지 않는다. (구체 매핑: completeness-omission-map.json)",
+              "A017: 단일성분 codeine의 연방 schedule은II이다. — 원문의Federal열은II를명시하지만A017에는FEDERAL_SCHEDULE 원자가없다. oral/opioid 및 CIII/CV조합예외 배제는 긍정적인II지정을 원자화한 명제와 다르다. (구체 매핑: completeness-omission-map.json)"
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Vicodin 의 정확한 현재 제품 라벨을 확보하지 못했다. A007 의 같은 성분 다른 제품 라벨(71b52788ca096df6)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Vicodin 의 정확한 현재 제품 라벨을 확보하지 못했다. A007 의 같은 성분 다른 제품 라벨(71b52788ca096df6)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Lortab 의 정확한 현재 제품 라벨을 확보하지 못했다. A007 의 같은 성분 다른 제품 라벨(71b52788ca096df6)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Lortab 의 정확한 현재 제품 라벨을 확보하지 못했다. A007 의 같은 성분 다른 제품 라벨(71b52788ca096df6)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0023",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Fentora 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Fentora 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0024",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Lazanda 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Lazanda 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0025",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Subsys 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Subsys 의 정확한 현재 제품 라벨을 확보하지 못했다. A014 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0048",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A010 Morphine 행의 「해당 morphine 제품군에는 경구 solution 이 제시된다.」에필요한 oral|orally,solution 의동시제품근거를확보하지못했다. 확보라벨은 MS Contin 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다.",
+                "blocker": "A010 Morphine 행의 「해당 morphine 제품군에는 경구 solution 이 제시된다.」에필요한 oral|orally,solution 의동시제품근거를확보하지못했다. 확보라벨은 MS Contin 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0049",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A010 Morphine 행의 「Morphine 사용제품의 concentration 을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A010 Morphine 행의 「Morphine 사용제품의 concentration 을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0050",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A010 Morphine 행의 「Morphine 사용제품의 제형을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A010 Morphine 행의 「Morphine 사용제품의 제형을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0051",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A010 Morphine 행의 「Morphine 사용제품의 release 특성을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A010 Morphine 행의 「Morphine 사용제품의 release 특성을 별도 확인해야 한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 MS Contin: 11 DESCRIPTION MS CONTIN (morphine sulfate extended-release tablets) is for oral use and contains morphine sulfate, an opioid agonist. Each tablet contains the following inactive ingredients common to all strengths: cetostearyl alcohol, hydroxyethyl cellulose,. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0056",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A012 Methadone 행의 「해당 methadone 제품군은 경구 제형을 포함한다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A012 Methadone 행의 「해당 methadone 제품군은 경구 제형을 포함한다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0057",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A012 Methadone 행의 「Methadone 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A012 Methadone 행의 「Methadone 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0059",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A013 Fentanyl 행의 「해당 fentanyl product 의 route 는 transdermal 이다.」에필요한 transdermal 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A013 Fentanyl 행의 「해당 fentanyl product 의 route 는 transdermal 이다.」에필요한 transdermal 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0060",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A013 Fentanyl 행의 「해당 product 는 opioid 이다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A013 Fentanyl 행의 「해당 product 는 opioid 이다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0061",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A013 Fentanyl 행의 「Fentanyl patch 는 TIRF 제형이 아니다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A013 Fentanyl 행의 「Fentanyl patch 는 TIRF 제형이 아니다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0062",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A013 Fentanyl 행의 「TIRF REMS 를 fentanyl 성분의 모든 제형에 복사하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A013 Fentanyl 행의 「TIRF REMS 를 fentanyl 성분의 모든 제형에 복사하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0063",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 lozenge 제형이 제시된다.」에필요한 immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 lozenge 제형이 제시된다.」에필요한 immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0064",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 buccal 제형이 제시된다.」에필요한 buccal,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 buccal 제형이 제시된다.」에필요한 buccal,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0065",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 nasal 제형이 제시된다.」에필요한 nasal|intranasal,nasal|intranasal,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 nasal 제형이 제시된다.」에필요한 nasal|intranasal,nasal|intranasal,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0066",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 sublingual 제형이 제시된다.」에필요한 sublingual,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A014 Fentanyl 행의 「해당 TIRF 제품군에는 sublingual 제형이 제시된다.」에필요한 sublingual,immediate.release 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0067",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "TIRF 개별 제품별 현재 REMS 와 공급상태를 이번 정확브랜드 404 자료로 완결할 수 없다.1308.12 의 fentanyl II 만으로 TIRF 법적 접근경로를 인증하지 않는다.",
+                "blocker": "TIRF 개별 제품별 현재 REMS 와 공급상태를 이번 정확브랜드 404 자료로 완결할 수 없다.1308.12 의 fentanyl II 만으로 TIRF 법적 접근경로를 인증하지 않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0068",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Actiq/Fentora/Lazanda/Subsys 의현재 exact FDA 조회가실패했다. 표가재고보증이아니라는 한계는유지하되 현재생산·공급상태가검증되었다고판정하지 않는다.",
+                "blocker": "Actiq/Fentora/Lazanda/Subsys 의현재 exact FDA 조회가실패했다. 표가재고보증이아니라는 한계는유지하되 현재생산·공급상태가검증되었다고판정하지 않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0069",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A015 Meperidine 행의 「Meperidine 제품군에는 경구 제형이 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A015 Meperidine 행의 「Meperidine 제품군에는 경구 제형이 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0070",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A015 Meperidine 행의 「Meperidine 제품군에는 주사 제형이 제시된다.」에필요한 inject 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A015 Meperidine 행의 「Meperidine 제품군에는 주사 제형이 제시된다.」에필요한 inject 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0071",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A015 Meperidine 행의 「Meperidine 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A015 Meperidine 행의 「Meperidine 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0076",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A017 Codeine 행의 「원문 single-ingredient codeine 제형은 경구로 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A017 Codeine 행의 「원문 single-ingredient codeine 제형은 경구로 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0077",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A017 Codeine 행의 「Codeine 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A017 Codeine 행의 「Codeine 은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-2-0083",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A014 Fentanyl 행의 「이 opioid-products 표의 해당 성분은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A014 Fentanyl 행의 「이 opioid-products 표의 해당 성분은 opioid 로 제시된다.」에필요한 opioid|opiate 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 56,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 27
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 10건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
+            "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
+            "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
+            "body_sha256": "2cc6cfdcae61ee8c71e2a4647f2cc262eb977c512a180abe46abb056e6da6b23",
+            "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-89f090ffb076e299"
+          }
+        ]
       }
     },
     {
@@ -24342,7 +25381,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-a-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-a-3-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 4,
       "atomic_claim_ids": [
@@ -24362,10 +25401,11 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0014",
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0015",
         "APPENDIX-ATOMS-A-APPENDIX-A-3-0016",
-        "APPENDIX-ATOMS-A-APPENDIX-A-3-0017"
+        "APPENDIX-ATOMS-A-APPENDIX-A-3-0017",
+        "FINAL86-CENSUS-APPENDIX-A-3-A019-MA-SCHEDULE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -24392,26 +25432,81 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 14,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 3
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
         "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
         "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
         "body_sha256": "8dd3da06ab51ce13ed588b51b6abb8a886c7d3ca15c76e05a0609db05b85df0c",
-        "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+        "census_sha256": "05c5ff0571cde4f17986e533068389cdfcd0f14e13da6969d07dad553571373b",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-8f3dc3c53cbc28aa",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "A019: A019의 해당 제품은 MA ScheduleII 분기이다. — Federal/MA 두 번째 열의 CII 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)"
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-3-0010",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A019 Nabilone 행의 「Nabilone 해당 제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A019 Nabilone 행의 「Nabilone 해당 제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-3-0011",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A019 Nabilone 행의 「Nabilone 해당 dosage form 은 capsule 이다.」에필요한 capsule 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A019 Nabilone 행의 「Nabilone 해당 dosage form 은 capsule 이다.」에필요한 capsule 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-3-0013",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "nabilone 의 II 지정은확인했으나 cannabidiol 의현재정확라벨·성분정의까지이배치에서대조하지못했다. 명칭차이만으로비교전체를완료하지않는다.",
+                "blocker": "nabilone 의 II 지정은확인했으나 cannabidiol 의현재정확라벨·성분정의까지이배치에서대조하지못했다. 명칭차이만으로비교전체를완료하지않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 14,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 3
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
+            "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
+            "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
+            "body_sha256": "8dd3da06ab51ce13ed588b51b6abb8a886c7d3ca15c76e05a0609db05b85df0c",
+            "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-89f090ffb076e299"
+          }
+        ]
       }
     },
     {
@@ -24618,7 +25713,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-a-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-a-5-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 24,
       "atomic_claim_ids": [
@@ -24677,10 +25772,13 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0053",
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0054",
         "APPENDIX-ATOMS-A-APPENDIX-A-5-0055",
-        "APPENDIX-ATOMS-A-APPENDIX-A-5-0056"
+        "APPENDIX-ATOMS-A-APPENDIX-A-5-0056",
+        "FINAL86-CENSUS-APPENDIX-A-5-A033-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-5-A034-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-5-A035-MA-SCHEDULE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 3,
         "omissions": [
@@ -24811,26 +25909,185 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 36,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 20
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 3건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
         "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
         "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
         "body_sha256": "6e544f543d8eba2f5de5133d8ef369f1496c7eb14de91bb48b530247d032bc43",
-        "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+        "census_sha256": "56139f7d01c24ec8ada57a69383a79c249fa584fa6a97d303b66e7e2525e0aa8",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-1f5dc0641a6a8ef8",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 3,
+            "omissions": [
+              "A033: A033의 해당 제품은 MA ScheduleIII 분기이다. — Federal/MA 두 번째 열의 CIII 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A034: A034의 해당 제품은 MA ScheduleIII 분기이다. — Federal/MA 두 번째 열의 CIII 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A035: A035의 해당 제품은 MA ScheduleIII 분기이다. — Federal/MA 두 번째 열의 CIII 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)"
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "AndroGel 의 정확한 현재 제품 라벨을 확보하지 못했다. A029 의 같은 성분 다른 제품 라벨(4b5da809d7c624c8)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "AndroGel 의 정확한 현재 제품 라벨을 확보하지 못했다. A029 의 같은 성분 다른 제품 라벨(4b5da809d7c624c8)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0008",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Tylenol with Codeine 의 정확한 현재 제품 라벨을 확보하지 못했다. A030 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Tylenol with Codeine 의 정확한 현재 제품 라벨을 확보하지 못했다. A030 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0010",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Fiorinal 의 정확한 현재 제품 라벨을 확보하지 못했다. A031 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Fiorinal 의 정확한 현재 제품 라벨을 확보하지 못했다. A031 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0011",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A031 Butalbital + aspirin + caffeine 행의 A031 연방 분류: III 를 특정 제품 조건과 연결하는 controlling rule 을 완결하지 못했다. constituent 의 일반 분류와 product-specific exemption/함량 예외를 구분해야 한다.",
+                "blocker": "A031 Butalbital + aspirin + caffeine 행의 A031 연방 분류: III 를 특정 제품 조건과 연결하는 controlling rule 을 완결하지 못했다. constituent 의 일반 분류와 product-specific exemption/함량 예외를 구분해야 한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0012",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Fioricet with Codeine 의 정확한 현재 제품 라벨을 확보하지 못했다. A032 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Fioricet with Codeine 의 정확한 현재 제품 라벨을 확보하지 못했다. A032 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0013",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「원문 연방분류 주장: III」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「원문 연방분류 주장: III」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0022",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A027 Ketamine 행의 「Compounded ketamine 의 FDA approval 상태를 Spravato 와 동일시하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Ketalar: 11 DESCRIPTION KETALAR (ketamine hydrochloride) injection, for intravenous or intramuscular use, contains ketamine, a nonbarbiturate general anesthetic. Ketamine hydrochloride, USP is a white crystalline powder and has a molecular formula of C 13 H 16 ClNO•HCl. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A027 Ketamine 행의 「Compounded ketamine 의 FDA approval 상태를 Spravato 와 동일시하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Ketalar: 11 DESCRIPTION KETALAR (ketamine hydrochloride) injection, for intravenous or intramuscular use, contains ketamine, a nonbarbiturate general anesthetic. Ketamine hydrochloride, USP is a white crystalline powder and has a molecular formula of C 13 H 16 ClNO•HCl. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0023",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A027 Ketamine 행의 「Compounded ketamine 와 Spravato 의 REMS 는 동일하다고 보지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Ketalar: 11 DESCRIPTION KETALAR (ketamine hydrochloride) injection, for intravenous or intramuscular use, contains ketamine, a nonbarbiturate general anesthetic. Ketamine hydrochloride, USP is a white crystalline powder and has a molecular formula of C 13 H 16 ClNO•HCl. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A027 Ketamine 행의 「Compounded ketamine 와 Spravato 의 REMS 는 동일하다고 보지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Ketalar: 11 DESCRIPTION KETALAR (ketamine hydrochloride) injection, for intravenous or intramuscular use, contains ketamine, a nonbarbiturate general anesthetic. Ketamine hydrochloride, USP is a white crystalline powder and has a molecular formula of C 13 H 16 ClNO•HCl. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0029",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A029 Testosterone 행의 「Testosterone 해당 product 군에는 gel 제형이 제시된다.」에필요한\\bgel\\b 의동시제품근거를확보하지못했다. 확보라벨은 Depo-Testosterone 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다.",
+                "blocker": "A029 Testosterone 행의 「Testosterone 해당 product 군에는 gel 제형이 제시된다.」에필요한\\bgel\\b 의동시제품근거를확보하지못했다. 확보라벨은 Depo-Testosterone 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0034",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A030 Codeine + acetaminophen 행의 「Codeine/APAP 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A030 Codeine + acetaminophen 행의 「Codeine/APAP 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0035",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A030 Codeine + acetaminophen 행의 「해당조합은 analgesic product 로 제시된다.」에필요한 analgesic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A030 Codeine + acetaminophen 행의 「해당조합은 analgesic product 로 제시된다.」에필요한 analgesic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0039",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A031 Butalbital + aspirin + caffeine 행의 「Butalbital/aspirin/caffeine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A031 Butalbital + aspirin + caffeine 행의 「Butalbital/aspirin/caffeine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0040",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A031 Butalbital + aspirin + caffeine 행의 「해당조합은 headache 치료 product 로 제시된다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A031 Butalbital + aspirin + caffeine 행의 「해당조합은 headache 치료 product 로 제시된다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0041",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A031 Butalbital + aspirin + caffeine 행의 「Fioricet/APAP 조합의 product-specific exemption 을 Fiorinal 에 복사하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A031 Butalbital + aspirin + caffeine 행의 「Fioricet/APAP 조합의 product-specific exemption 을 Fiorinal 에 복사하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0042",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「이 four-ingredient product 는 경구제형으로 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「이 four-ingredient product 는 경구제형으로 제시된다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0043",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「Codeine 없는 Fioricet 제품의 exemption 을 with-codeine product 에 적용하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A032 Butalbital + acetaminophen + caffeine + codeine 행의 「Codeine 없는 Fioricet 제품의 exemption 을 with-codeine product 에 적용하지 않는다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0048",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A034 Benzphetamine 행의 「Benzphetamine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A034 Benzphetamine 행의 「Benzphetamine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0051",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A035 Phendimetrazine 행의 「Phendimetrazine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A035 Phendimetrazine 행의 「Phendimetrazine 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0054",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Ketamine 의 III 성분분류와 MAcompounding 권한은다른문제이다. 현재 1308.13(c)(7) 및 Spravato 제품라벨만으로케타민의시설별·투여목적별전체 MA 권한조건을완결하지못했다. 이명제는구체적허가범위를추가정의하고검증해야한다.",
+                "blocker": "Ketamine 의 III 성분분류와 MAcompounding 권한은다른문제이다. 현재 1308.13(c)(7) 및 Spravato 제품라벨만으로케타민의시설별·투여목적별전체 MA 권한조건을완결하지못했다. 이명제는구체적허가범위를추가정의하고검증해야한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-5-0055",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Ketamine 의 III 성분분류와 MAadministration 권한은다른문제이다. 현재 1308.13(c)(7) 및 Spravato 제품라벨만으로케타민의시설별·투여목적별전체 MA 권한조건을완결하지못했다. 이명제는구체적허가범위를추가정의하고검증해야한다.",
+                "blocker": "Ketamine 의 III 성분분류와 MAadministration 권한은다른문제이다. 현재 1308.13(c)(7) 및 Spravato 제품라벨만으로케타민의시설별·투여목적별전체 MA 권한조건을완결하지못했다. 이명제는구체적허가범위를추가정의하고검증해야한다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 36,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 20
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 3건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
+            "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
+            "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
+            "body_sha256": "6e544f543d8eba2f5de5133d8ef369f1496c7eb14de91bb48b530247d032bc43",
+            "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-89f090ffb076e299"
+          }
+        ]
       }
     },
     {
@@ -24913,7 +26170,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-a-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-a-7-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 57,
       "atomic_claim_ids": [
@@ -24995,10 +26252,17 @@
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0076",
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0077",
         "APPENDIX-ATOMS-A-APPENDIX-A-7-0078",
-        "APPENDIX-ATOMS-A-APPENDIX-A-7-0079"
+        "APPENDIX-ATOMS-A-APPENDIX-A-7-0079",
+        "FINAL86-CENSUS-APPENDIX-A-7-A039-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A040-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A042-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A044-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A045-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A047-MA-SCHEDULE",
+        "FINAL86-CENSUS-APPENDIX-A-7-A048-MA-SCHEDULE"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 7,
         "omissions": [
@@ -25223,26 +26487,279 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 44,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 35
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 7건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
         "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
         "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
         "body_sha256": "93e1db8bb49b94e64f979c22a56c4ee4176ffe6321ec3e86383e292fceff2a4a",
-        "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+        "census_sha256": "3482e51f18b09b0e7cadcecdf4053ce34e9b1cceb748c2138e049f033f5b06f6",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_d",
           "session_id": "/root/independent_notes120_d"
         },
         "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-11473e24951ba736",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 7,
+            "omissions": [
+              "A039: A039의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A040: A040의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A042: A042의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A044: A044의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A045: A045의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A047: A047의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)",
+              "A048: A048의 해당 제품은 MA ScheduleIV 분기이다. — Federal/MA 두 번째 열의 CIV 식별/Rx 규칙은 MA분류를 표현한다. 기존 연방 schedule 원자와 일반 Rx authority만으로 MA700.002 편입 명제까지 전수목록에 있다고 볼 수 없다. (구체 매핑: completeness-omission-map.json)"
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0012",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Nayzilam 의 정확한 현재 제품 라벨을 확보하지 못했다. A043 의 같은 성분 다른 제품 라벨(22b80269d5eab26d,16410de9e10f387d)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Nayzilam 의 정확한 현재 제품 라벨을 확보하지 못했다. A043 의 같은 성분 다른 제품 라벨(22b80269d5eab26d,16410de9e10f387d)만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0022",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Onfi 의 정확한 현재 제품 라벨을 확보하지 못했다. A048 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Onfi 의 정확한 현재 제품 라벨을 확보하지 못했다. A048 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0023",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Sympazan 의 정확한 현재 제품 라벨을 확보하지 못했다. A048 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다.",
+                "blocker": "Sympazan 의 정확한 현재 제품 라벨을 확보하지 못했다. A048 의 같은 성분 다른 제품 라벨만으로 이 브랜드의 전체 성분 구성을 확정하지 않는다. 실패 GET 와 오래된 retained version 의 한계는 source metadata 에 남겼다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0027",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A039 Alprazolam 행의 「다른 benzodiazepine 와 같은 mg-equivalence 를 자동가정하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Xanax: 11 DESCRIPTION XANAX contains alprazolam which is a triazolo analog of the 1,4 benzodiazepine class of central nervous system-active compounds. The chemical name of alprazolam is 8-Chloro-1-methyl-6-phenyl-4H-s-triazolo [4,3-α] [1,4] benzodiazepine. The struct. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A039 Alprazolam 행의 「다른 benzodiazepine 와 같은 mg-equivalence 를 자동가정하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Xanax: 11 DESCRIPTION XANAX contains alprazolam which is a triazolo analog of the 1,4 benzodiazepine class of central nervous system-active compounds. The chemical name of alprazolam is 8-Chloro-1-methyl-6-phenyl-4H-s-triazolo [4,3-α] [1,4] benzodiazepine. The struct. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0028",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A039 Alprazolam 행의 「다른 benzodiazepine 와 자동대체를 가정하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Xanax: 11 DESCRIPTION XANAX contains alprazolam which is a triazolo analog of the 1,4 benzodiazepine class of central nervous system-active compounds. The chemical name of alprazolam is 8-Chloro-1-methyl-6-phenyl-4H-s-triazolo [4,3-α] [1,4] benzodiazepine. The struct. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A039 Alprazolam 행의 「다른 benzodiazepine 와 자동대체를 가정하지 않는다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Xanax: 11 DESCRIPTION XANAX contains alprazolam which is a triazolo analog of the 1,4 benzodiazepine class of central nervous system-active compounds. The chemical name of alprazolam is 8-Chloro-1-methyl-6-phenyl-4H-s-triazolo [4,3-α] [1,4] benzodiazepine. The struct. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0031",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A040 Clonazepam 행의 「Clonazepam 과 clonidine 은 다른성분이다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A040 Clonazepam 행의 「Clonazepam 과 clonidine 은 다른성분이다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0032",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A040 Clonazepam 행의 「Clonazepam 과 clonidine 의 법적분류가 같다고 보지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A040 Clonazepam 행의 「Clonazepam 과 clonidine 의 법적분류가 같다고 보지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0036",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A041 Diazepam 행의 「같은 diazepam 이라도 route 를 임의대체하지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A041 Diazepam 행의 「같은 diazepam 이라도 route 를 임의대체하지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0037",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A041 Diazepam 행의 「같은 diazepam 이라도 용기를 임의대체하지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A041 Diazepam 행의 「같은 diazepam 이라도 용기를 임의대체하지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0040",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A042 Lorazepam 행의 「CIV 분류만으로 pharmacy 의 모든 lorazepam administration 이 허용되지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A042 Lorazepam 행의 「CIV 분류만으로 pharmacy 의 모든 lorazepam administration 이 허용되지 않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0042",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A043 Midazolam 행의 「Midazolam 제품군에는 oral syrup 제형이 제시된다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A043 Midazolam 행의 「Midazolam 제품군에는 oral syrup 제형이 제시된다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0043",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A043 Midazolam 행의 「Midazolam 제품군에는 nasalroute 가 제시된다.」에필요한 nasal|intranasal,nasal|intranasal 의동시제품근거를확보하지못했다. 확보라벨은 Midazolam,Midazolam Hydrochloride 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다.",
+                "blocker": "A043 Midazolam 행의 「Midazolam 제품군에는 nasalroute 가 제시된다.」에필요한 nasal|intranasal,nasal|intranasal 의동시제품근거를확보하지못했다. 확보라벨은 Midazolam,Midazolam Hydrochloride 이며다른 route/release/적응증또는옛브랜드를대신사용하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0044",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A043 Midazolam 행의 「Nasal rescue formulation 과 injection 제형을 구별한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Midazolam: DESCRIPTION Midazolam Injection, USP is a water-soluble benzodiazepine available as a sterile, nonpyrogenic parenteral dosage form for intravenous or intramuscular injection. Each mL contains midazolam hydrochloride,USP equivalent to 1 mg midazolam compounded  / Midazolam Hydrochloride: DESCRIPTION Midazolam is a benzodiazepine available as midazolam HCl syrup for oral administration. Midazolam, a white to light yellow crystalline compound, is insoluble in water, but can be solubilized in aqueous solutions by formation of the hydrochloride sa. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A043 Midazolam 행의 「Nasal rescue formulation 과 injection 제형을 구별한다.」에서제품사실과법적효과를분리했다. 직접읽은제품정보는 Midazolam: DESCRIPTION Midazolam Injection, USP is a water-soluble benzodiazepine available as a sterile, nonpyrogenic parenteral dosage form for intravenous or intramuscular injection. Each mL contains midazolam hydrochloride,USP equivalent to 1 mg midazolam compounded  / Midazolam Hydrochloride: DESCRIPTION Midazolam is a benzodiazepine available as midazolam HCl syrup for oral administration. Midazolam, a white to light yellow crystalline compound, is insoluble in water, but can be solubilized in aqueous solutions by formation of the hydrochloride sa. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0045",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A044 Temazepam 행의 「Temazepam 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A044 Temazepam 행의 「Temazepam 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0046",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A044 Temazepam 행의 「Temazepam 은 hypnotic 으로 제시된다.」에필요한 hypnotic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A044 Temazepam 행의 「Temazepam 은 hypnotic 으로 제시된다.」에필요한 hypnotic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0047",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A044 Temazepam 행의 「Temazepam 과 Zdrug 는 같은 generic 이 아니다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A044 Temazepam 행의 「Temazepam 과 Zdrug 는 같은 generic 이 아니다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0048",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A045 Triazolam 행의 「Triazolam 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A045 Triazolam 행의 「Triazolam 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0049",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A045 Triazolam 행의 「Triazolam 은 hypnotic 으로 제시된다.」에필요한 hypnotic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A045 Triazolam 행의 「Triazolam 은 hypnotic 으로 제시된다.」에필요한 hypnotic 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0050",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A045 Triazolam 행의 「Triazolam 처방자의 적법한 권한은 CIV 분류와 별도 확인한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A045 Triazolam 행의 「Triazolam 처방자의 적법한 권한은 CIV 분류와 별도 확인한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0051",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A045 Triazolam 행의 「Triazolam 은 해당 refill 조건을 충족해야 한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A045 Triazolam 행의 「Triazolam 은 해당 refill 조건을 충족해야 한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0052",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A046 Chlordiazepoxide 행의 「Chlordiazepoxide 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A046 Chlordiazepoxide 행의 「Chlordiazepoxide 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0053",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A046 Chlordiazepoxide 행의 「Chlordiazepoxide 는 benzodiazepine 이다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A046 Chlordiazepoxide 행의 「Chlordiazepoxide 는 benzodiazepine 이다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0054",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A046 Chlordiazepoxide 행의 「단일 chlordiazepoxide 와 clidinium 조합의 특정 exempt product 를 구별한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A046 Chlordiazepoxide 행의 「단일 chlordiazepoxide 와 clidinium 조합의 특정 exempt product 를 구별한다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0055",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A047 Clorazepate 행의 「Clorazepate 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A047 Clorazepate 행의 「Clorazepate 해당제형은 경구이다.」에필요한 oral|orally 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0056",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A047 Clorazepate 행의 「Clorazepate 는 benzodiazepine 이다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A047 Clorazepate 행의 「Clorazepate 는 benzodiazepine 이다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0057",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A047 Clorazepate 행의 「Clorazepate 와 clozapine 은 다른성분이다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A047 Clorazepate 행의 「Clorazepate 와 clozapine 은 다른성분이다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0058",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A047 Clorazepate 행의 「Clorazepate 와 clonazepam 은 별도열거성분이다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다.",
+                "blocker": "A047 Clorazepate 행의 「Clorazepate 와 clonazepam 은 별도열거성분이다.」에서제품사실과법적효과를분리했다. 정확한현재제품라벨이확보되지않았다. 이사실만으로명제의범위·대체·권한·절차까지결론낼수있는직접조항연결을완결하지못하여보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0059",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A048 Clobazam 행의 「Clobazam 제품군에는 oral tablet 제형이 제시된다.」에필요한 tablet,tablet 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A048 Clobazam 행의 「Clobazam 제품군에는 oral tablet 제형이 제시된다.」에필요한 tablet,tablet 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0060",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A048 Clobazam 행의 「Clobazam 제품군에는 oral suspension 제형이 제시된다.」에필요한 suspension 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A048 Clobazam 행의 「Clobazam 제품군에는 oral suspension 제형이 제시된다.」에필요한 suspension 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0061",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A048 Clobazam 행의 「Clobazam 제품군에는 oral film 제형이 제시된다.」에필요한 film,film 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A048 Clobazam 행의 「Clobazam 제품군에는 oral film 제형이 제시된다.」에필요한 film,film 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0062",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A048 Clobazam 행의 「Antiseizure 약이라는 이유로 clobazam 을 CV 또는 noncontrolled 로 분류하지 않는다.」에필요한 seizure 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A048 Clobazam 행의 「Antiseizure 약이라는 이유로 clobazam 을 CV 또는 noncontrolled 로 분류하지 않는다.」에필요한 seizure 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0072",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A044 Temazepam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A044 Temazepam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0074",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A045 Triazolam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A045 Triazolam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0078",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A048 Clobazam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다.",
+                "blocker": "A048 Clobazam 행의 「이 benzodiazepine 표의 해당 성분은 benzodiazepine 으로 제시된다.」에필요한 benzodiazepine 의동시제품근거를확보하지못했다. 정확한현재브랜드라벨조회가실패했거나오래된버전뿐이다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-A-APPENDIX-A-7-0079",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "A044 Temazepam 행의 「Temazepam 을다른 sedative 성분과같은 generic 으로취급하지않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다.",
+                "blocker": "A044 Temazepam 행의 「Temazepam 을다른 sedative 성분과같은 generic 으로취급하지않는다.」를읽었으나현재공식자료의정확한성분·기전·제형구획과직접대응하는근거를완결하지못했다. author 분류는독립법규판정을대신하지않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 44,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 35
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 7건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-d/audit-report.json",
+            "report_sha256": "224bad6fa8e31d4978bd4300a4ae799c8a7eec314f0e3353e132f4a90beb97d1",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-89f090ffb076e299-result.json",
+            "result_sha256": "700290561e25f17412969bc49581d7ca6451f85c0c3e70ebd33c26dbac0d1d01",
+            "body_sha256": "93e1db8bb49b94e64f979c22a56c4ee4176ffe6321ec3e86383e292fceff2a4a",
+            "census_sha256": "2787ae9c52459e82d1fc84d1323af182c960f3e526b03043de72b031e02afac2",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_d",
+              "session_id": "/root/independent_notes120_d"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_d:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-89f090ffb076e299"
+          }
+        ]
       }
     },
     {
@@ -27279,7 +28796,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-b-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-b-5-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 14,
       "atomic_claim_ids": [
@@ -27333,10 +28850,12 @@
         "APPENDIX-ATOMS-B-B036-011",
         "APPENDIX-ATOMS-B-B037-011",
         "APPENDIX-ATOMS-B-B038-010",
-        "APPENDIX-ATOMS-B-B039-008"
+        "APPENDIX-ATOMS-B-B039-008",
+        "FINAL86-CENSUS-APPENDIX-B-5-B035-FORMULATION",
+        "FINAL86-CENSUS-APPENDIX-B-5-B038-LAI"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 2,
         "omissions": [
@@ -27382,26 +28901,100 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 45,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 6
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-e/audit-report.json",
         "report_sha256": "44a2ee09b73e7cc8a6744908ddffc0b9ff9c1eb4b031d11eac03df9b4c839fd0",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-2abfcf684ce680cc-result.json",
         "result_sha256": "2ba79de5b303e494124415121d2fe80da6932279213dc2ccabe04f378974fe10",
         "body_sha256": "fd4e13b8d5cf50e68e2023b360441174b14542297aed2edc436bea1f6933e101",
-        "census_sha256": "18bfd43dd1e5592e33ec52ff5ac6fc8c987ef5844c949f8c9c9f8f60757d2f2f",
+        "census_sha256": "7b089cf29ae5dcb8d5e2c62901187479850b5988acf74214c3df53406ee89102",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_e",
           "session_id": "/root/independent_notes120_e"
         },
         "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-815ce3b4fba3f68d",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 2,
+            "omissions": [
+              "B035의두LAI제품 Abilify Maintena와Abilify Asimtufii는서로formulation이달라구별해야한다는본문원자가누락되었다.",
+              "B038의표현Risperidone—long-acting products는이행이장기지속주사제품들을다룬다는원자명제인데별도열거되지않았다."
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B039-001",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "직접 조회한 현재FDA SPL은 generic Haloperidol Decanoate이다. HALDOL DECANOATE exact-brand API404와 DailyMed검색0건을 보존했다. generic 성분표기만으로 특정 역사적 brand의 원문 연결을 검증했다고 표시하지 않는다.",
+                "blocker": "미해결명제: Haldol Decanoate의 원문 성분 연결에는 Haloperidol decanoate가 포함된다. — 직접 조회한 현재FDA SPL은 generic Haloperidol Decanoate이다. HALDOL DECANOATE exact-brand API404와 DailyMed검색0건을 보존했다. generic 성분표기만으로 특정 역사적 brand의 원문 연결을 검증했다고 표시하지 않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B036-007",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Aripiprazole lauroxil는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Aripiprazole lauroxil는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Aripiprazole lauroxil는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B036-008",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Aripiprazole lauroxil의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Aripiprazole lauroxil의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Aripiprazole lauroxil의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B039-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Haloperidol decanoate는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Haloperidol decanoate는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Haloperidol decanoate는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B039-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Haloperidol decanoate의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Haloperidol decanoate의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Haloperidol decanoate의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B039-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "현재generic haloperidol decanoate는Rx이지만 본claim의 표에명시된HALDOL DECANOATE exact-brand 원문status를 확보하지 못했다. Genericlabel로 specificbrand확정을 대신하지 않는다.",
+                "blocker": "미해결명제: Haloperidol decanoate의 표에 명시된 Rx제품은 prescription status이다. — 현재generic haloperidol decanoate는Rx이지만 본claim의 표에명시된HALDOL DECANOATE exact-brand 원문status를 확보하지 못했다. Genericlabel로 specificbrand확정을 대신하지 않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 45,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 6
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-e/audit-report.json",
+            "report_sha256": "44a2ee09b73e7cc8a6744908ddffc0b9ff9c1eb4b031d11eac03df9b4c839fd0",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-2abfcf684ce680cc-result.json",
+            "result_sha256": "2ba79de5b303e494124415121d2fe80da6932279213dc2ccabe04f378974fe10",
+            "body_sha256": "fd4e13b8d5cf50e68e2023b360441174b14542297aed2edc436bea1f6933e101",
+            "census_sha256": "18bfd43dd1e5592e33ec52ff5ac6fc8c987ef5844c949f8c9c9f8f60757d2f2f",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_e",
+              "session_id": "/root/independent_notes120_e"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-2abfcf684ce680cc"
+          }
+        ]
       }
     },
     {
@@ -27417,7 +29010,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/appendix-atoms-b-census.json",
+      "atomic_census_source": "reports/full-corpus-review/final86-census-author/appendix-b-6-census.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 28,
       "atomic_claim_ids": [
@@ -27509,10 +29102,11 @@
         "APPENDIX-ATOMS-B-B049-011",
         "APPENDIX-ATOMS-B-B043-006",
         "APPENDIX-ATOMS-B-B041-011",
-        "APPENDIX-ATOMS-B-B042-009"
+        "APPENDIX-ATOMS-B-B042-009",
+        "FINAL86-CENSUS-APPENDIX-B-6-B047-ACTUAL-ORDER"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -27641,26 +29235,183 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 69,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
-          "SOURCE_BLOCKED": 20
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/final86-e/audit-report.json",
         "report_sha256": "44a2ee09b73e7cc8a6744908ddffc0b9ff9c1eb4b031d11eac03df9b4c839fd0",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-2abfcf684ce680cc-result.json",
         "result_sha256": "2ba79de5b303e494124415121d2fe80da6932279213dc2ccabe04f378974fe10",
         "body_sha256": "0f557729f2dc446a760cdfacd1838ce30cec54ce08f38d96e60d500baca0fb05",
-        "census_sha256": "18bfd43dd1e5592e33ec52ff5ac6fc8c987ef5844c949f8c9c9f8f60757d2f2f",
+        "census_sha256": "071fe38df5cd83164ce1fa5d2817138e5f8b2a0451adfa3f633973be2b48d2be",
         "actor_provenance": {
           "actor_id": "/root/independent_notes120_e",
           "session_id": "/root/independent_notes120_e"
         },
         "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
-        "canonical_release_credit": 0
+        "canonical_release_credit": 0,
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-28a5bf5e3a115817",
+        "review_history": [
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "B047의RxMA VI;실제order필요라는본문중백신/응급약투여경로의epinephrine emergency medication을실제투여하려면그약에대한처방또는standingorder가필요하다는긍정적권한전제가별도로열거되지않았다."
+            ],
+            "findings": [
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B040-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Nitroglycerin는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Nitroglycerin는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Nitroglycerin는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B040-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Nitroglycerin의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Nitroglycerin의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Nitroglycerin의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B041-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Prednisone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Prednisone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Prednisone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B041-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Prednisone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Prednisone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Prednisone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B042-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Methylprednisolone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Methylprednisolone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Methylprednisolone는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B042-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Methylprednisolone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Methylprednisolone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Methylprednisolone의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B043-003",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Acetaminophen는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Acetaminophen는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Acetaminophen는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B043-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "본claim은 acetaminophen 표에명시된Rx제품을 말하지만 실제B043은 Tylenol 단일OTC와복합/기타제품의product-specific경계를 기술한다. 조회한TYLENOL ExtraStrength와단일acetaminophen소아액제는OTC이다. 정확한 namedRx제품/제형 없이 이 원자를 RxKEEP으로 확정할 수 없다.",
+                "blocker": "미해결명제: Acetaminophen의 표에 명시된 Rx제품은 prescription status이다. — 본claim은 acetaminophen 표에명시된Rx제품을 말하지만 실제B043은 Tylenol 단일OTC와복합/기타제품의product-specific경계를 기술한다. 조회한TYLENOL ExtraStrength와단일acetaminophen소아액제는OTC이다. 정확한 namedRx제품/제형 없이 이 원자를 RxKEEP으로 확정할 수 없다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B044-003",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Pseudoephedrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Pseudoephedrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Pseudoephedrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B045-003",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Dextromethorphan는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Dextromethorphan는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Dextromethorphan는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B046-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Diphenhydramine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Diphenhydramine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Diphenhydramine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B047-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Epinephrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Epinephrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Epinephrine는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B047-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Epinephrine의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Epinephrine의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Epinephrine의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B048-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Insulin lispro는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Insulin lispro는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Insulin lispro는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B048-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Insulin lispro의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Insulin lispro의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Insulin lispro의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B049-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Insulin glargine / insulin glargine-yfgn는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다.",
+                "blocker": "미해결명제: Insulin glargine / insulin glargine-yfgn는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다. — Insulin glargine / insulin glargine-yfgn는 federal controlled-drug schedule 대상이 아니라는 원문 명제이다.의전범위부재를확정하려면현행I–V전체의chemical/salt/isomer범위와이제품의정확성분을결박해야한다. 현재I–V원문을확보하여명칭을검사했으나label의명시적noncontrolled문구/모든관련정의까지직접확정하지못한범위는SOURCE_BLOCKED로남긴다. Rx/OTC표시나검색부재만으로noncontrolledPASS하지않는다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B049-006",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "Insulin glargine / insulin glargine-yfgn의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다.",
+                "blocker": "미해결명제: Insulin glargine / insulin glargine-yfgn의 해당 Rx제품은 MA Schedule VI 경로로 평가한다. — Insulin glargine / insulin glargine-yfgn의 해당 Rx제품은 MA Schedule VI 경로로 평가한다.에대하여700.002(F)의법적기준은직접확인했지만이제품의모든I–V제외전제를별도확정하지못했으므로VI분류전체를KEEP으로승격하지않는다. Conditionalrule과실제제품적용을구별한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B043-005",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "단일TYLENOLOTC와codeine함유제품의조건부CIII체계가다름은1308.13(e)(1)(ii)에서지지된다.그러나exactTYLENOLwithCodeine제품의현재/역사적label과함량을직접확보하지못해specificnamedproductCIII명제전체는보류한다.",
+                "blocker": "미해결명제: Acetaminophen: Tylenol with Codeine의 CIII 제품과 단일 OTC Tylenol을 구별한다. — 단일TYLENOLOTC와codeine함유제품의조건부CIII체계가다름은1308.13(e)(1)(ii)에서지지된다.그러나exactTYLENOLwithCodeine제품의현재/역사적label과함량을직접확보하지못해specificnamedproductCIII명제전체는보류한다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B044-007",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "추가MA판매/NPLEx/연령조건의어느범위가OPEN인지본문은한정하지않는다.현재CMEA규정만으로MA제품별권한/제한의전범위를확정할수없어추가MAcontrollingtext/clarification이필요하다.",
+                "blocker": "미해결명제: Pseudoephedrine: 추가 MA 판매사항 일부는 OPEN이다. — 추가MA판매/NPLEx/연령조건의어느범위가OPEN인지본문은한정하지않는다.현재CMEA규정만으로MA제품별권한/제한의전범위를확정할수없어추가MAcontrollingtext/clarification이필요하다."
+              },
+              {
+                "claim_id": "APPENDIX-ATOMS-B-B045-004",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "MA의법안과시행법은구별해야하나현재적용DXM법률/개정시행일을직접확인할exactMA법령자료를확보하지못했다.법안존재나OTClabel만으로연령제한의효력을확정하지않는다.",
+                "blocker": "미해결명제: Dextromethorphan: MA의 법안과 현행 dextromethorphan 법률을 구별해야 한다. — MA의법안과시행법은구별해야하나현재적용DXM법률/개정시행일을직접확인할exactMA법령자료를확보하지못했다.법안존재나OTClabel만으로연령제한의효력을확정하지않는다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 69,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 20
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/final86-e/audit-report.json",
+            "report_sha256": "44a2ee09b73e7cc8a6744908ddffc0b9ff9c1eb4b031d11eac03df9b4c839fd0",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-2abfcf684ce680cc-result.json",
+            "result_sha256": "2ba79de5b303e494124415121d2fe80da6932279213dc2ccabe04f378974fe10",
+            "body_sha256": "0f557729f2dc446a760cdfacd1838ce30cec54ce08f38d96e60d500baca0fb05",
+            "census_sha256": "18bfd43dd1e5592e33ec52ff5ac6fc8c987ef5844c949f8c9c9f8f60757d2f2f",
+            "actor_provenance": {
+              "actor_id": "/root/independent_notes120_e",
+              "session_id": "/root/independent_notes120_e"
+            },
+            "auditor_instance": "GPT:/root/independent_notes120_e:20261104",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-2abfcf684ce680cc"
+          }
+        ]
       }
     },
     {
