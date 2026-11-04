@@ -245,7 +245,11 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
     import phase11_context38_metadata as context38
     root,state,report,_,questions,collections = fixture
     real_load = secondary.load_metadata; captured = {}; other_sources = []
-    def load_fixture(repo,primary,current_questions,current_collections):
+    def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
+        # Retained-source validation must read the actual repository, while
+        # only the builder-level consumer call uses the synthetic retry.
+        if source_bindings is not None:
+            return real_load(repo,primary,current_questions,current_collections,source_bindings=source_bindings)
         captured['primary'] = copy.deepcopy(primary)
         value = real_load(root,primary,questions,collections)
         captured['progress'] = value['progress']
@@ -253,7 +257,9 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         return value
     def capture_other(loader):
         def load_other(*args,**kwargs):
-            value=loader(*args,**kwargs);other_sources.append(value);return value
+            value=loader(*args,**kwargs)
+            if kwargs.get("source_bindings") is None:other_sources.append(value)
+            return value
         return load_other
     monkeypatch.setattr(secondary,'load_metadata',load_fixture)
     monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
