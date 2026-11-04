@@ -76,10 +76,48 @@ job `review-independent-notes-body-4c3229fb7bfb76b6`이다. Root checkpoint847d�
 29의 실제 F report/envelope 경로도 실제 통합 후에만 고정했다. Wave9는 실제 runbook의
 `independent-phase9-[a-d]-review.json`과 같은 basename의 `-result.json`만 출력 계약으로
 허용한다. 이는 파일 존재나 review 완료의 증거가 아니다. 그 실제 source raw SHA와
-최종 manifest는 모든33 job의 실제 통합과 known-negative containment 후에만 계산한다.
+최종 manifest는 아래의 미공개 wave10 확장을 포함한 모든37 job의 실제 통합과
+known-negative containment 후에만 계산한다.
 미래 IG나 임의 source prefix/추가 job을 허용하지 않는다.
-새 note32/question34/author54는 pending이어도 범위 밖이며 별도 검토가 필요하다.
+새 note32/question38/author54는 pending이어도 범위 밖이며 별도 검토가 필요하다.
 기존15 manifest의 old25-job/6985 상태를 현재 source의 final proof로 사용할 수 없다.
+
+### 공개 전 wave10 completion bridge
+
+15는 아직 한 번도 공개하지 않았다. `7ea50249`의 33-job 후보 및 실패한 QA는
+과거 checkpoint로 보존하며 실제 공개 baseline으로 쓰지 않는다. 공개된14의 원
+manifest·MD/build snapshot·기존 decoder는 그대로다. 이 변경은16 body 활성화가 아니다.
+
+실제 `08a417e2e53e83501e2756792cda0168fe4ae8a7`의34–37 할당만 추가한다.
+각40개 whole-record hash와 actual `/root/independent_wave10_[a-d]` actor, 원
+priority-source map digest를 코드에 정확히 결박한다. 총160개 중 할당 당시128개는
+현재 default,32개는 archive였다. 160개 전부 default라고 주장하거나 최종 default
+수를229/298 등으로 강제하지 않는다. 기존33개 job의 ID/hash/actor/원source 검증을
+유지한다. 원1–33의 실제 통합 job 전체 digest도08a의 exact 값으로 고정해 과거
+report/negative/envelope receipt를 함께 재작성하는 우회를 막는다. 새 네 job도
+실제 INTEGRATED event, report와 원 envelope, 전 row/hash,
+primary raw bytes 및 controller-attested provenance를 검증해야 한다.
+
+새 출력 계약은 `independent-phase10-[a-d]-review.json`과 같은 basename의
+`-result.json`이다. 파일명 허용은 파일 존재나 감사 완료의 주장이 아니다.
+QUEUED/LEASED/SUBMITTED나 status-only IG는 manifest 생성을 명시적으로 실패시킨다.
+이전 미공개 manifest의 `annotation_inputs_ready: true`도 이 검사를 건너뛸 수 없다.
+실제37개 source가 커밋되고 기존69개 부정 및 새 실제 부정이 source-bound hold로
+격리된 후에만 root가 새 manifest를 생성·재결박하고 전체 QA를 수행한다.
+
+C36의 실제 source-context 노출 경계는 `MA-RW-0051/0061/0062/0064` 네 개다.
+이 네 row의 `existing_answer_correct: NOT_ASSESSED`, `safe_hold_recommended: true`와
+HOLD 또는 더 강한 MINOR_EDIT/MAJOR_REWRITE/DELETE verdict를 유지해야 한다.
+더 강한 실제 negative를 HOLD로 낮추도록 강제하지 않는다. 원 노출 로그와 잠정40개0 기록은
+history로 보존한다. B40/C나머지36은 실제 fresh primary 판단 대상일 뿐 자동
+YES/PASS가 아니다. 이 annotation은 C4 whole-key credit를 만들거나 기존 negative를
+새 KEEP으로 덮지 않는다. 현재 progress는 current builder와 따로 대조한다.
+
+notes31·author53·census6989·M semantic은 그대로다. private/historical context의
+기존 exact 예외만 유지하며 wave10에 새 예외를 자동 생성하지 않는다. 실제 새
+mismatch가 있으면 원 job/report/origin/raw SHA의 증거부터 확인하고 별도 bounded
+검토를 받아야 한다. runtime 검증에는 HEAD-retained bytes만 필요하며 옛 worker
+Git object를 요구하지 않는다. 이 bridge의 canonical/question/legal 새 credit는0이다.
 
 Canonical Q0012와 연결 SG-CII-LIFECYCLE의 철회는 별도 strict decoder가 담당한다.
 최종15 준비 시 그 decoder와 exact retained cause/metadata-only package가 실제로

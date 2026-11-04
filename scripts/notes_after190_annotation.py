@@ -116,6 +116,24 @@ WAVE9_REPORTS = {sequence:'reports/full-corpus-review/independent-phase9-'+lette
                  for sequence,letter in zip(WAVE9,'abcd')}
 WAVE9_RESULTS = {sequence:'reports/full-corpus-review/independent-phase9-'+letter+'-result.json'
                  for sequence,letter in zip(WAVE9,'abcd')}
+# This fifteenth layer has never been published. The next exact allocation is
+# captured from the real 08a417e2 checkpoint, not inferred from report filenames.
+# 128 were current defaults and 32 were archive items; neither that before count
+# nor a worker's future outcome is a final recommendation or audit assertion.
+WAVE10_DEFINITION_COMMIT = '08a417e2e53e83501e2756792cda0168fe4ae8a7'
+PRIOR_LEGACY_RECEIPTS_SHA = 'db890633bdf6af62cb7cbac313f92666d4d0d39f8e0f30ff29f8a05552c0db69'
+WAVE10_PRIORITY_SOURCES_SHA = 'c55ffe1fbf0a0e59bd7a8605cadf075b7a03d6e5f483c7802c92f01a7ec245c4'
+WAVE10 = {
+    34:('review-independent-legacy-c20f4ee0cf56468b','c20f4ee0cf56468be09bd6192bce9baf299bc87d5376e1617fccec336b6b6b6a','/root/independent_wave10_a'),
+    35:('review-independent-legacy-4bd888eabbe06366','4bd888eabbe063660aae7b675b2fa1f7570f1755136e67df48fb977666cbf5fb','/root/independent_wave10_b'),
+    36:('review-independent-legacy-0c4182784eafa73d','0c4182784eafa73d0204ea09743d5eb2c28f666d8bcce69e3d4960c2e9c692d1','/root/independent_wave10_c'),
+    37:('review-independent-legacy-d0710f4ed5346fe2','d0710f4ed5346fe20bd5b52585ecfbe010697b237bfe2e1bbe730b391a625140','/root/independent_wave10_d'),
+}
+WAVE10_REPORTS = {sequence:'reports/full-corpus-review/independent-phase10-'+letter+'-review.json'
+                  for sequence,letter in zip(WAVE10,'abcd')}
+WAVE10_RESULTS = {sequence:'reports/full-corpus-review/independent-phase10-'+letter+'-result.json'
+                  for sequence,letter in zip(WAVE10,'abcd')}
+WAVE10_NO_KEY_CREDIT = frozenset({'MA-RW-0051','MA-RW-0061','MA-RW-0062','MA-RW-0064'})
 
 
 def require(condition, message):
@@ -171,26 +189,52 @@ def validate_phase7_report(job, report, events):
 
 
 def validate_legacy_scope(state):
-    """29 completed slots plus four explicitly approved current-default slots."""
+    """Exact jobs1-37; allocation/pending status is never a source receipt."""
     jobs = state['jobs']
     projection=[dict(sequence=j['sequence'],job_id=j['job_id'],stage=j.get('stage'),
                      question_hashes=j['question_hashes'])for j in jobs[:29]]
-    require([j['sequence'] for j in jobs] == list(range(1,34)) and
+    require([j['sequence'] for j in jobs] == list(range(1,38)) and
             question_queue.digest(projection)==LEGACY_SCOPE_SHA,
             'After190 legacy job scope expanded; explicit new guard review required')
+    require(question_queue.digest(jobs[:33])==PRIOR_LEGACY_RECEIPTS_SHA,
+            'After190 prior1-33 integrated scope/receipt/history changed')
     for job in jobs:
-        if job['sequence'] in WAVE9:
-            expected=WAVE9[job['sequence']]
+        if job['sequence'] in WAVE9 or job['sequence'] in WAVE10:
+            expected=(WAVE9|WAVE10)[job['sequence']]
             require((job['job_id'],question_queue.digest(job['question_hashes']),job.get('worker'))==expected and
                     len(job['question_hashes'])==40 and job.get('stage')=='independent-legacy',
-                    'After190 exact wave9 scope/current-default actor changed')
+                    'After190 exact wave9/wave10 scope/current actor changed')
+            if job['sequence'] in WAVE10:
+                require(job.get('selection_policy')=='REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL' and
+                        question_queue.digest(job.get('priority_source_sha256'))==WAVE10_PRIORITY_SOURCES_SHA,
+                        'After190 exact wave10 allocation priority provenance changed')
     current_default_ids=[qid for j in jobs if j['sequence'] in WAVE9 for qid in j['question_hashes']]
     require(len(current_default_ids)==len(set(current_default_ids))==160,'Wave9 is not exactly160 distinct default questions')
+    next_ids=[qid for j in jobs if j['sequence'] in WAVE10 for qid in j['question_hashes']]
+    require(len(next_ids)==len(set(next_ids))==160 and not set(next_ids)&set(current_default_ids),
+            'Wave10 is not the exact160 distinct new assigned questions')
     for job in jobs:
         require(job['status']=='INTEGRATED' and job.get('result') and job.get('integrated_commit') and
                 job.get('integrated_at') and any(e.get('kind')=='INTEGRATE'and
                     e.get('job_id')==job['job_id']and e.get('commit')==job['integrated_commit']for e in state['events']),
                 'After190 legacy result pending/LEASED or lacks actual captured integration; integrate/rebind first')
+
+
+def validate_wave10_key_limits(job,report):
+    """Retain the actual C source-context exposure boundary, without new credit.
+
+    This consumes the controller's reported findings. It does not certify the
+    unseen primary law, restore any default or turn the remaining36 into PASS.
+    """
+    if job['sequence'] != 36:
+        return
+    rows={row['question_id']:row for row in report['records']}
+    require(WAVE10_NO_KEY_CREDIT <= set(rows) and all(
+            rows[qid]['legal_review'].get('existing_answer_correct')=='NOT_ASSESSED' and
+            rows[qid]['legal_review'].get('verdict') in {'HOLD','MINOR_EDIT','MAJOR_REWRITE','DELETE'} and
+            rows[qid].get('safe_hold_recommended') is True
+            for qid in WAVE10_NO_KEY_CREDIT),
+            'Wave10 C source-context exposure IDs must retain NOT_ASSESSED/safety hold and zero fresh whole-key credit')
 
 
 def validate_note_scope(state):
@@ -463,6 +507,7 @@ def bind_legacy_checkpoint(root,current,legacy_state,bindings):
                 type(report.get('canonical_release_credit')) is int and report['canonical_release_credit'] == 0,
                 'After190 legacy source identity/credit/raw binding changed')
         validate_phase7_report(current, report, legacy_state['events'])
+        validate_wave10_key_limits(current,report)
         from build_full_corpus_review import validate_independent_source_bytes
         for authority in report.get('sources', []):
             validate_independent_source_bytes(authority, root)
@@ -492,10 +537,12 @@ def bind_legacy_checkpoint(root,current,legacy_state,bindings):
             require(sha(committed(root, source_path, bindings)) == source_sha,
                     'After190 legacy retained source payload changed: ' + source_path)
         sequence=current['sequence']
-        expected_path=(WAVE9_REPORTS[sequence]if sequence in WAVE9 else
+        expected_path=(WAVE10_REPORTS[sequence]if sequence in WAVE10 else
+                       WAVE9_REPORTS[sequence]if sequence in WAVE9 else
                        LEGACY_REPORTS.get(sequence)or NATIVE_LEGACY_REPORT)
         require(expected_path and path==expected_path,'After190 exact integrated report not yet pinned or changed')
-        result_path=(WAVE9_RESULTS[sequence]if sequence in WAVE9 else
+        result_path=(WAVE10_RESULTS[sequence]if sequence in WAVE10 else
+                     WAVE9_RESULTS[sequence]if sequence in WAVE9 else
                      NATIVE_LEGACY_RESULT if sequence==29 else path[:-len('-review.json')]+'-result.json')
         require(result_path,'After190 exact integrated envelope not yet pinned')
         result_raw = committed(root, result_path, bindings)
@@ -510,6 +557,8 @@ def bind_legacy_checkpoint(root,current,legacy_state,bindings):
                      provenance_basis='CONTROLLER_CAPTURED_CLAIM_NOT_IDENTITY_PROOF')
         if historical:entry['historical_context_receipts']=historical
         if private_extracted:entry['unretained_private_extracted_descriptors']=private_extracted
+        if sequence==36:
+            entry['source_context_exposure_no_fresh_key_credit_ids']=sorted(WAVE10_NO_KEY_CREDIT)
     return entry
 
 
@@ -522,6 +571,10 @@ def make_manifest(root=ROOT):
     root = Path(root); bindings = {}; source_head=notes_queue.git(root,'rev-parse','HEAD')
     require(sha(safe_bytes(root, PARENT)) == PARENT_SHA,
             'Published PR190 fourteenth manifest changed; do not rebind a modified parent')
+    # Fail before expensive rendering/current counters while any exact assigned
+    # job is pending. An old unpublished33-job manifest is not a release receipt.
+    legacy_state = json.loads(committed(root, LEGACY_STATE, bindings))
+    validate_legacy_scope(legacy_state)
     baseline_md = safe_bytes(root, BASE_MD); baseline_build_raw = safe_bytes(root, BASE_BUILD)
     require(sha(baseline_md) == BASE_MD_SHA and sha(baseline_build_raw) == BASE_BUILD_SHA,
             'Published PR190 Markdown/build snapshot changed')
@@ -601,9 +654,7 @@ def make_manifest(root=ROOT):
     require(independent['progress']['question_audit_credit'] == independent['progress']['canonical_release_credit'] == 0 and
             independent['progress']['coverage_is_legal_pass'] is False,
             'After190 review processing is not legal/release credit')
-    # All33 exact allocated jobs must have actual committed source receipts.
-    legacy_state = json.loads(committed(root, LEGACY_STATE, bindings))
-    validate_legacy_scope(legacy_state)
+    # All37 exact allocated jobs must have actual committed source receipts.
     integrated_sources(root)
     phase7=[bind_legacy_checkpoint(root,current,legacy_state,bindings)
             for current in legacy_state['jobs']if current['sequence']>=21]
@@ -653,9 +704,11 @@ def make_manifest(root=ROOT):
         wave8_checkpoint=[e for e in phase7 if e['sequence'] in WAVE8],
         native_legacy_checkpoint=[e for e in phase7 if e['sequence']==29],
         wave9_checkpoint=[e for e in phase7 if e['sequence'] in WAVE9],
+        wave10_checkpoint=[e for e in phase7 if e['sequence'] in WAVE10],
         inactive_body_checkpoint=body_checkpoint,native_author_checkpoint=native_author_checkpoint,
         canonical_withdrawal_checkpoint=canonical_withdrawal_checkpoint,
         scope_definition_commit=SCOPE_DEFINITION_COMMIT,
+        wave10_scope_definition_commit=WAVE10_DEFINITION_COMMIT,
         source_bindings=dict(sorted(bindings.items())),
         canonical_audit=False, canonical_release_credit=0, question_audit_credit=0,
         new_author_review_credit=0, new_independent_legal_audit_credit=0)
