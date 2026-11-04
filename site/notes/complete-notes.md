@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 58/306절. 누락 보완본의 새 독립 검토 대기 2절은 현재 처리 수에서 제외합니다. 누락 지적 1절 · 법규 보류 11절 · 독립 검토의 근거 미확인 10명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 60/306절. 누락 지적 1절 · 법규 보류 12절 · 독립 검토의 근거 미확인 13명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -973,10 +973,6 @@ Non-resident pharmacist의 Massachusetts 환자 대상 cognitive services는 원
 ## Pharmacy license와 controlled-substance registration
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-b1-review.json)
-
-> - CENSUS_OMITTED_EXISTING_BODY_SETTING_SCOPE: actualbody의 “Institutional sterile compounding pharmacy, 일반 hospital inpatient pharmacy, retail Drug Store pharmacy를 동일한 setting으로 취급하지 않는다. 조문별 적용 제외를 확인한다.”라는별도범위명제가최종32개statement에포착되지않았다. 기존004는dispensing의DrugStore/institutionalsterile두license경로,006은institutionalsterile대안존재만말하며일반hospitalinpatient와그특정licensee의비동일성·setting별적용범위를열거하지않는다. 247CMR2의Pharmacy/InstitutionalPharmacy정의와6.08별도신청/검사구조를직접읽었고,원문EXP0153–0156가everyhospital자동institutionalsterile을실제로오답으로다루는것도대조했다. 이는새법조건을본문에요구하거나개수차이로만든누락이아니며,원개업clockomission해소와분리된다.
-
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-c-1-census-v3.json)
 
@@ -1048,19 +1044,19 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 ## Manager of Record와 designated PIC
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-g1-review.json)
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-r4-review.json)
 
-> - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고”는 복귀 inventory의 약국 records 보관도 진술한다. 031은 명시적으로 “Resident 인계 inventory”의 보관/비제출이고, 032는 복귀 수행, ADD001은 복귀 필수 서명이다. 일반 records 유지 003이나 ADD001의 body_coverage_span 인용문만으로 복귀 inventory 보관이라는 별도 의무를 명시 열거한 것으로 볼 수 없다.
+> - 새공식note와6.09(1)(c)의designatedMAlicensedPIC조건을대조했다. residentMOR면제를지지하지않지만미면허interimPIC의통합운영범위는확정하지못했다. job의두세대원LEGAL_HOLD목록을그대로승계한다. — 기존독립LEGAL_HOLD원목록및미해결범위를승계한다. 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다.
 
-> - CENSUS_COVERAGE_OMISSION: 같은 본문은 복귀 inventory 자체도 Board에 제출하지 않는다고 policy가 설명한다는 범위를 포함한다. 031의 명제는 “인계 inventory”에 한정되고 ADD001의 statement는 복귀 서명뿐이다. 복귀 inventory의 Board 비제출/해당 policy 귀속이라는 별도 법적 행위·범위 명제가 최종 census에 명시 열거되지 않았다. I(D)(1)의 비제출 문구를 I(D)(2)에 자동 이전하여 누락을 메우지 않는다.
+> - Fresh9.23(5)(a),(b),(d)와PolicyI는30/100포함여부에서서로다른문구다. 그정확한경계의통합Board해석은확보하지못했으며원LEGAL_HOLD를그대로승계한다. — 기존독립LEGAL_HOLD원목록및미해결범위를승계한다. 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다.
 
-> - 해당note와247CMR6.09(1)(c)의MAlicenseddesignatedPIC조건을직접대조했다.원carriedLEGAL_HOLD를정확히승계하며해소하지않는다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다.
+> - 6.09(4)의90dayformalapplication과20.05(2)의14calendardaynotice,PolicyII의5dayinterim/promptformal을따로읽었다. 아무action없는90일은지원되지않지만promptly와최대90일관계의통합기관해석은확보하지못했다. 원두세대LEGAL_HOLD목록을그대로승계한다. — 기존독립LEGAL_HOLD원목록및미해결범위를승계한다. 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
 
-> - Currentregulation의30이상/100이상과currentpolicy의30초과/100초과차이를직접확인했다.경계값Board통합해석은확보하지못했고원carriedLEGAL_HOLD를그대로유지한다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다.
+> - 복귀inventory필수서명은PolicyI(D)(2)의complete문구만으로확정하지못했다. I(D)(1)의서명명시는인계event이고9.23(5)(c)도부재전event다. 일반1304.11inventory기록조건에서returnevent의두MOR필수서명을확인하지못했으며job의원SOURCE_BLOCKED목록·상태를그대로유지한다.
 
-> - 90일formalapplication,14일notification,5일interim/promptapplication을각각확인했지만promptly와90일을단일현재운영기한으로통합하는기관해석을확보하지못했다.원carriedLEGAL_HOLD를그대로유지한다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
+> - 새statement는본문복귀inventory보관명제를직접열거하므로census누락은해소한다. 그러나PolicyI(D)(1)의maintainrecords는인계문장이고I(D)(2)는returncompletion만명시한다. MGL94C15/105700.006(A),(B),(F)/1304.04(a),1304.11(a)의일반records/inventory조건도읽었으나그조건을이특정returnevent와모든MAcontrolledscope에적용하여statement전체를독립확정하지못했다. 보관을금지하거나아무의무없다고판정한것이아니다. SOURCE_BLOCKED로남긴다.
 
-> - 새ADD001의복귀inventory필수서명은새공식raw에서확정하지못했다. I(D)(1)은인계서명을명시하지만I(D)(2)은복귀completion만명시한다.9.23(5)(c)는부재전inventory이며일반record/inventory조문도복귀시두MOR의필수서명을명시하지않는다.단지서명하는행위가가능하다는것과법적필수임을구분하여SOURCE_BLOCKED로유지한다.
+> - 새statement는본문의Policy2022-02귀속및returninventory자체Board비제출을직접열거하므로census누락은해소한다. I(D)(1)의Donotsubmit은handoffinventory를가리키고I(D)(2)의return문장에는동일안내가명시되지않는다. 조문침묵을반환inventory비제출의명시승인으로대신하지않는다. I(C)의복귀notification과inventory자체제출은다르며새명제전체의authority연결은SOURCE_BLOCKED이다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 7개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-c-3-census-v3.json)
