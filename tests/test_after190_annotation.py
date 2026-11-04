@@ -13,6 +13,8 @@ import notes_after190_annotation as annotation
 import verify_representative_protected as protected
 from build_ultimate_notes import make_outputs
 LIVE_MAKE_MANIFEST=annotation.make_manifest
+from published15_test_view import published15_root
+ROOT=published15_root(ROOT)
 
 
 @pytest.fixture(scope='module')
