@@ -110,13 +110,14 @@ def test_review_must_bind_actual_id_hash_provenance_and_official_sources(evidenc
     with pytest.raises(ValueError,match=message):validate(e)
 
 
-def test_true_independent_failure_can_contain_but_pass_cannot(evidence):
+@pytest.mark.parametrize('record_provenance', [None, 'Actual independent session', ['session']])
+def test_true_independent_failure_can_contain_but_pass_cannot(evidence,record_provenance):
     e=evidence
     authorities=e['report']['records'][0]['choice_by_choice_findings']['A']['authorities']
     e['report'].update(independent_of_authors=True,auditor_instance='fixture-independent-session',
                        canonical_audit=False,canonical_release_credit=0,sources=authorities)
     for r in e['report']['records']:
-        r.pop('reviewer_provenance')
+        r['reviewer_provenance']=record_provenance
         r['legal_review']=dict(verdict='KEEP',existing_answer_correct='YES',authorities=authorities)
         r['realism_review']=dict(verdict='FAIL')
     e['persist']()
@@ -124,6 +125,14 @@ def test_true_independent_failure_can_contain_but_pass_cannot(evidence):
     e['report']['records'][0]['realism_review']['verdict']='PASS'
     e['persist']()
     with pytest.raises(ValueError,match='nonKEEP/failure'):validate(e)
+
+
+@pytest.mark.parametrize('record_provenance', [None, 'Claimed author session', ['session']])
+def test_unstructured_provenance_cannot_supply_author_evidence(evidence,record_provenance):
+    evidence['report']['records'][0]['reviewer_provenance']=record_provenance
+    evidence['persist']()
+    with pytest.raises(ValueError,match='nonKEEP/failure'):
+        validate(evidence)
 
 
 def derived_selection(e):
