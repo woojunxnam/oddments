@@ -1,5 +1,19 @@
 # 2026-11-04 — PR190 공개 검증 및 후속 작업
 
+## 최종 후보 갱신 — question37 / note31, 공개 전
+
+최신 GitHub reachability anchor는 `403c328932dabad60d05a5cb06bfbfd6c4785842`다. 본 후보122개 원job과 별도노트후속2개를 합쳐 고유124개 원결과를 보존하며, 별도2개는 본 공개후보 credit에서 제외한다.
+
+PR192 후보에서 phase7/8/current-ID3/phase9/phase10 **643개** 실제 native 검토를 통합했다. 전체 현재2349(원2346 객체 불변), author100%, 독립고유실독1683·key판정1633/2349=69.52%(HOLD/AMBIG 포함)·NOT_ASSESSED50, realismPASS680이다. 새 phase10의147KEEP/5MINOR/8HOLD,152YES/4AMBIG/4NOT_ASSESSED,107realismPASS/53FAIL을 그대로 보존했다. C4의직접source결론노출은정수0keycredit+proceduralHOLD이며내용오답으로바꾸지 않았다.
+
+추가27 default 보류를source/hash로결박하여 이전배치69와합쳐 공개PR191기준298→202(96개제외)다. 남은202 전부 actualcurrenthash legalKEEP/YES/realismPASS임을 별도E가확인했다. Original355보류211,nonlegacy35(REV31/RW4),archive notices1378. 신규55notice중18기존ID는원group전체를previous_notices와rawsnapshot에보존하고최신독립소견을표시했다. 새notifiedID는37뿐이며55를새문항수로과장하지않는다. 원3all-correct/10교정대상은HOLD유지.
+
+이후보의노트는현재79COMPLETE/306=25.82%,55KEEP/15HOLD/9SB,1785claims(1744K/24H/17SB),author6989,OPEN4로고정했다. 별도 mission/mpje-notes-after192의신규20단위(17COMPLETE/3OMISSIONS_FOUND,총333claims)와195claim중누락4는이후보에포함하지않는다. 두branch의현재/공개credit를합쳐부풀리지않는다.
+
+15annotation actual37source 재결박 --write PASS,sourcebindings2139/readytrue;원14·Msemantic·1781baseline유지. V3는 A34의역사nonlegalprogress receipt정확1개만추가하고기존4/private4/v2/v1보존;현재1633counter와202selector는실제builder로따로검증한다. C4는가정한safe_hold_recommended필드대신실제원보고서의typedzero2개/blocker/NA와현재explicitHOLD/제외를검증한다. 원report를고치지않았다. 경계125PASS·containment35PASS 및정규canonical--write/no-filediff. E는동일data의116focused/HTTP41PASS와9c5c9945 full1781보호PASS를실행했다. 최종새HEAD 전체pytest/validator/artifacts/9drift/HTTP/CI/Pages는아직완료전이며이자료만으로병합하지않는다.
+
+G교정10중v1의0515모호성/0827decision중복을v2에서고쳤고sameactualF가별도currenthash2개를재감사해KEEP/YES/PASS를확인했다. 나머지8v1/F증거는불변;신규공개ID/native/releasecredit0이며제품에넣지않고receipt만보존했다. 현재public은여전히PR191(2346/default298/노트59)이고,PR192공개검증은NOT_RUN이다.
+
 ## 실행 갱신 — PR192 DRAFT / 최초 QA 실패 보존 / 다음160 검토 중
 
 PR192 https://github.com/woojunxnam/oddments/pull/192 는 아직 DRAFT이며 병합하지 않았다. 최초 고정7ea50249 전체1114개는1102PASS/12FAIL(989.04초): 과거2346개·ID0080상한 기대6건과 두 역사job fixture에 후속body등록이 섞인6건이다. 원품질/보호/정책 규칙을 유지한 수정8c20df5c+63254d8f 후 정확12실패node를 재실행해12PASS(44.49초). 전체 새head 재실행은 아직이며 이12PASS를 fullQA로 과장하지 않는다. 최초validator0errors/9warnings, artifacts0/0,9drift 및6HTTP PASS. 실패/수정/브라우저증거는 `reports/full-corpus-review/after190-initial-qa-evidence/`에 보존했다. 알려진 실패 후보의 중복/대기 CI14개는 후속새head CI를 위해 취소요청했으며 새후보는 모든QA/CI를 다시 통과해야 한다.
