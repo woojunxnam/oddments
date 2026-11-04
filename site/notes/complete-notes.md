@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 60/306절. 누락 지적 7절 · 법규 보류 15절 · 독립 검토의 근거 미확인 10명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 53/306절. 누락 보완본의 새 독립 검토 대기 7절은 현재 처리 수에서 제외합니다. 누락 지적 0절 · 법규 보류 8절 · 독립 검토의 근거 미확인 9명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -191,7 +191,7 @@ Examination·reciprocity·면허 상태와 연간 CE를 하나의 흐름으로 �
 ## Pharmacist licensure by examination
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-b-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-b-review.json)
 
 > - CENSUS_OMITTED_BODY_PROPOSITION: actualbody “시험 합격 사실만으로 면허가 발급된 것은 아니다”는 시험결과와법적면허발급을구별하는독립명제다.33개기존claim은시험2개·application요소·reciprocity경계는열거하지만이명제자체는기록하지않았다.현재NABPMPJE/NAPLEXResults가passingresultdoesnotconstitutealicense/onlyboardsissue라고명시하여materiality를확인했다.새claim은보고서omission에만기록하며authorcensus는수정하지않았다.
 
@@ -202,7 +202,7 @@ Examination·reciprocity·면허 상태와 연간 CE를 하나의 흐름으로 �
 > - 현재PDF§3.01(1)서두는ACPE-accreditedAND Board-approved라고쓰지만(1)(b)의degree조항은ACPE-accreditedOR Board-approved라고쓴다. 실제본문첫문장은학교서두자체를OR로요약한다. 하나의하위degreeOR만골라전체eligibility를무조건인증할수없고,Board확인또는정확한구분이필요하므로LEGAL_HOLD다. — 공식§3.01(1)openingAND와(1)(b)degreeOR의관계를actualbody가명료화하지않아unconditionalORschooleligibility인증불가.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave3-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-a-2-census-v2.json)
 
 
 ### 기본 자격
@@ -276,12 +276,12 @@ Reciprocity application은 NABP 승인일로부터 1년간 유효하다. Exam fa
 ## Renewal와 lapse
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-c-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-c-review.json)
 
 > - CENSUS_COVERAGE_OMISSION: 본문 “Suspended/revoked 상태가 2년을 초과한 경로는 별도이다. 이 경우 MPJE와 기타 조건이 필요하고, Board가 NAPLEX 합격을 요구할 수도 있다.”의 ‘기타 조건이 필요’라는별도선행의무가배정census에없다.012는MPJE,013은선택적NAPLEX만명시한다.010/011의일반미갱신(otherconditions)은suspended/revoked를배제한경로이므로이disciplinary의무를대신하지않는다.247CMR4.02(7)는MPJE뿐아니라all other conditions as determined by Board의충족을renewal선행요건으로정한다.본문자체의오류나문장분절개수차이라는판정이아니다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave3-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-a-4-census-v2.json)
 
 
 ### 개인 약사 면허의 달력
@@ -499,14 +499,14 @@ Board authorization/program approval 신청은 예정된 presentation보다 최�
 ## 인력의 자격을 구분하는 지도
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-e-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-e-review.json)
 
 > - 본문의 “National certification이 없는 technician와 certified technician의 허용 업무가 다르다”라는 실체적 scope 차이가 열거에서 빠졌다. 기존005는 Board license,006은 certified technician의 Board license,007은 인증기관 정의일 뿐 실제 permitted-duty 차이를 주장하지 않는다.8.02(6)(c)와8.04(4)(c)-(d),현행scope-policyIII.B/C를 별도로 대조할 명제가 필요하다.
 
 > - 본문의 PTT 설명 중 “나이·고용기간·감독·전화처방 관련 제한이 별도로 있다”가 열거에서 빠졌다. 기존008은 PTT license 필요성만 진술하며8.03(2)(a),(4)(b)-(c),(5)의 별도 제한 존재를 포함하지 않는다. 본문에없는 세부수치를 새본문명제로 발명하는 것이 아니라 해당 네 제한 범주의 실제 언급이 census에 없는 것을 지적한다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave4-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-b-1-census-v2.json)
 
 
 Pharmacist: 유효한 Massachusetts pharmacist license와 해당 업무에 필요한 추가 자격을 갖춘 사람이다. 처방의 final dispensing process validation은 pharmacist의 책임이다. 
@@ -983,12 +983,12 @@ Non-resident pharmacist의 Massachusetts 환자 대상 cognitive services는 원
 ## Pharmacy license와 controlled-substance registration
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-b-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-b-review.json)
 
 > - CENSUS_OMITTED_EXISTING_BODY_PROPOSITION: actualbody는 “개업 approval후1 calendar year”를 “Drug Store license의유효기간1년”으로바꾸지말라고명시한다. 기존claim022/023은개업기한/서면허가대안만열거하며면허유효기간과의별도구별명제는없다. 실제§6.04(7)의개업clock과§6.05(2)의odd-year12/31expiry를독립대조하여이차이를확인했다. 법령에만있는새조건을요구하거나claim개수차이로만들어진누락이아니며authorcensus는수정하지않았다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave4-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-1-census-v2.json)
 
 
 ### 사람의 면허와 장소의 허가
@@ -1058,7 +1058,7 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 ## Manager of Record와 designated PIC
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-c-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-c-review.json)
 
 > - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고, 이 inventory 자체를 Board로 제출하지 않는다고 policy가 설명한다.”는복귀inventory에도서명이필요하고policy가이를설명한다고진술한다.배정032는복귀때두MOR가inventory를수행한다는내용이고,029/031은인계inventory의서명·보관/비제출이다.‘복귀inventory의필수서명’이라는추가행위는명시적으로열거되지않았다.단순문장분절수차이가아니라수행과서명의법적의무차이다.
 
@@ -1069,7 +1069,7 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 > - 90일formalapplication과14일notification,5일interim/promptformal은서로다른행동이다.무조치90일은지지되지않으나promptly와최대90일의통합단일기한은이자료만으로확정하지않았다. — 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-3-census-v2.json)
 
 
 ### 기본 역할
@@ -1364,7 +1364,7 @@ MA에 약을 보내는 nonresident pharmacy는 해당 예외 외에는 MA practi
 ## Schedule별 핵심 약물 지도
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-e-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-e-review.json)
 
 > - 본문 “Buprenorphine은 OUD 치료와 일부 pain 제품의 용도가 다르며, 제품 형태와 투약 경로가 달라도 처방 목적·허가사항·특수 공급 규칙을 별도로 확인”하는 법적 제품/공급경로 경계가 census에서 빠졌다.021은CIII분류뿐이고020은methadone경로여서 이를 포함하지 않는다.본문에없는구체용량을추가하는누락판정이아니다.
 
@@ -1373,7 +1373,7 @@ MA에 약을 보내는 nonresident pharmacy는 해당 예외 외에는 MA practi
 > - (ii)는 active nonnarcotic ingredient의 recognized therapeutic amount를 요구하지만(i)는 equal-or-greater isoquinoline alkaloid of opium의 별도 경로다. 현재 statement의 “그 Schedule III codeine mixture”는(ii)에 한정되지 않고,나중에검사대상인authorcitationcontext만추가확인하니026·027모두(i)를인용했다.(i)의대체조성과맞지않는non-narcotic필수단정및잘못된인용이다. 본문의 “등 법정 조성 조건”보다 좁고 단정적인 census 범위를 확정할 수 없다. — (e)(1)(ii) 경로로 명시적으로 한정하거나(i)의 대체 조성을 보존해야 한다. 본문에없는 상세대체성분의 미열거를 본문→census 누락으로 새로 세지는 않는다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w2-a-2-census-v2.json)
 
 
 ### Schedule I와 통상적인 처방의 경계
@@ -2386,7 +2386,7 @@ Receiving pharmacist는 TRANSFER 표시, 원 issue date, original authorized ref
 ## 최초 미조제 EPCS의 일회 이관
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/third-f-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/third-f-review.json)
 
 > - 본문첫문단의 initial unfilled EPCS를보내고받는양쪽retail pharmacy가DEA-registered여야한다는actor/license한정이25개censusstatement에열거되어있지않다. claim002의retail/one-time과claim011·014의DEA번호기록은등록자격전제와다르다. 본문은한정을정확히보존하고있으며본문오류가아닌census누락이다.
 
