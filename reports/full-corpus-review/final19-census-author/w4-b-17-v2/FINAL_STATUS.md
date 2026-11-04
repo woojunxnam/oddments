@@ -1,0 +1,35 @@
+# w4-b-17 V2 실제 통합 후 최종 저자 제출
+
+최종등록입력은 final-proposal-index.json / reassessment.json / final-census.json이다.
+원초안commit 89a5658c353d84b6d5f46616b47d35671272c8b5의 파일16개는
+바이트불변으로보존했다. 과거prep의pending/native미수행표시는당시상태그대로이며최종
+실제결과는이문서와native-final-validation/final-preservation-and-source-proof에분리했다.
+최종census의claim/source는초안과같고최상위stage만최종제출상태로표시했다.
+
+원41개전체canonical claim/source/body를보존하여최종43개이다.
+새2개는 SOURCE_BLOCKED이다. Media-fill 외 해당samplingfailure 뒤 재교육/재자격확인을 열거하되 FAQ53의시설별appropriatecorrectiveaction과MA2022advisory의media-fill한정권고를구별했다.현행section2.2/2.3전문·검사별범위·이후개정불확정한계를유지하며일률적cessation/조제허용을주장하지않는다.
+원authorSB상태와현재actualindependent법규보류는별개축으로보존했다.
+실제상속blocker명제수는25개이며원보고서finding/blocker/hash와
+이전상속이력을native carried_legal_blockers에그대로남겼다.
+
+실제INTEGRATEDparent는job64 review-independent-notes-reassessment-31a8d9beca50f61d이다.
+parentcanonicalSHA d34f680c909f569029dd8d33690c139390f51bd3103111a6093c5c895e21c60f
+reportSHA 3d2142510882880cf1e7a4592ed7feabba1bf607b9c4e23827ceed53b1c60f09
+resultSHA 640bcb7bb541f980eade7f587a9a70d0cc4adcbde83dd5b4d6a876cc274e7ca4
+이parent는실제통합commit2f41b903ed1ea85bcbe4b7f88ca2555f3704fed0의object와같다.
+
+자체fullcheckout에서root정합commit b19b58cfd56699fc62e0723b9ded621f73c45866를merge한
+ownHEAD 161bd37ffc2e9db2853968edd2aab93be6cd95c2에서실제q.inventory(root)→load_notes(root)의모든guard를통과했다.
+그전체306개inventory SHA 37faf302c0f9d0ced6c67f457d5d9e9d7160016fc6843ea6862239805606c132를보존하고자체HEAD의실제선택
+ledger/census전량과bindings/bodySHA를재확인했다.공유ROOT의liveHEAD/contextoverride/
+임의projection/가짜ledger/guard완화/monkeypatch에의존하지않았다.
+커밋한최종record/census를검증HEAD 044fd38e5fbdba7734379b023af6152cfdf90794의실제
+validate_record와unmodifieddisk_reader로검증하여통과했다.이는구문/바인딩검증이며
+독립법규PASS/누락해소확정이아니다. 공식raw/text/meta/timestamp/버전한계를확인하고
+PDF재추출이retainedtext와같음및원workercommit→자체HEAD→disk바이트일치를검증했다.
+원metadata에없는시각이나개별조항효력일을만들지않았다.
+
+기존A32/B19final·old9/final86·본문/원census/source/report·queue/ledger/generated/guard는
+변경하지않았다.등록은전체19wave통합후root가수행한다.저자등록/공유쓰기/독립감사/
+법규PASS/문항/canonicalreleasecredit는0이다.새실제비저자가최종census전량과원누락·
+상속보류를다시심사해야한다. author-handoff-envelope은저자해시목록이며nativeworkerresult가아니다.
