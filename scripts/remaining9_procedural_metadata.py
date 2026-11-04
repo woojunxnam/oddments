@@ -18,7 +18,10 @@ ENGINEER = '/root/remaining9_contract_engineering'
 PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -31,7 +34,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0154': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -44,7 +50,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0155': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -57,7 +66,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0156': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -70,7 +82,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0157': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -83,7 +98,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0158': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -96,7 +114,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0159': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -109,7 +130,10 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
  'MA-EXP-0160': {'exposure_limitations': None,
                  'legal_blocker': '같은actualB세션의과거current-hash specific key assessment이력. 새로운fresh실제세션으로재배정이필요하다.',
                  'original_actor': '/root/independent_case_b',
+                 'original_actor_provenance': {'actor_id': '/root/independent_case_b',
+                                               'session_id': '/root/independent_case_b'},
                  'original_auditor_instance': 'GPT-independent-legacy-root-independent_case_b-20261103',
+                 'original_release_eligibility': {'release_eligible': False},
                  'original_session': '/root/independent_case_b',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -124,7 +148,11 @@ PARENTS = {'MA-EXP-0153': {'exposure_limitations': None,
                                   'displayed during source metadata inspection; not used as law authority; fresh '
                                   'whole-key credit0.',
                  'original_actor': '/root/independent_wave9_c',
+                 'original_actor_provenance': {'actor_id': '/root/independent_wave9_c',
+                                               'actual_new_independent_session': True,
+                                               'session_id': '/root/independent_wave9_c'},
                  'original_auditor_instance': 'GPT:/root/independent_wave9_c:20261104',
+                 'original_release_eligibility': {},
                  'original_session': '/root/independent_wave9_c',
                  'parent_key_status': 'NOT_ASSESSED',
                  'parent_verdict': 'HOLD',
@@ -182,11 +210,7 @@ def validate_parent(read, qid, primary_row, question, binding):
     require(binding == expected, 'Exact procedural parent metadata changed')
     report = json.loads(read(expected['report_path'], expected['report_sha256']))
     no_release(report)
-    require(report.get('stage') == 'independent-legacy' and report.get('independent_of_authors') is True and
-            report.get('actor_provenance') == {'actor_id': expected['original_actor'],
-                                                'session_id': expected['original_session']} and
-            report.get('auditor_instance') == expected['original_auditor_instance'],
-            'Actual original parent identity changed')
+    validate_parent_identity(report, expected)
     rows = [row for row in report['records'] if row['question_id'] == qid]
     require(len(rows) == 1 and queue.digest(rows[0]) == expected['record_sha256'] and
             rows[0] == primary_row, 'Immutable original primary row changed')
@@ -194,13 +218,24 @@ def validate_parent(read, qid, primary_row, question, binding):
     legal = row['legal_review']
     require(legal.get('existing_answer_correct') == 'NOT_ASSESSED' and legal.get('verdict') == 'HOLD' and
             legal.get('blocker') == expected['legal_blocker'] and
-            legal.get('independently_expected_key') in (None, []) and row.get('release_eligible') is False and
+            legal.get('independently_expected_key') in (None, []) and
+            {k: row[k] for k in ('release_eligible',) if k in row} == expected['original_release_eligibility'] and
             row.get('exposure_limitations') == expected['exposure_limitations'] and
             {k: v for k, v in row.get('read_scope', {}).items()
              if any(s in k for s in ('hidden', 'prior', 'exposure'))} == expected['read_scope_exposure'],
             'Only the exact unchanged procedural HOLD is eligible; substantive holds cannot be relabelled')
     require(queue.digest(question) == row['record_sha256'] == expected['question_record_sha256'],
             'Procedural retry current whole-record hash changed')
+
+
+def validate_parent_identity(report, expected):
+    actor = expected.get('original_actor_provenance')
+    require(isinstance(actor, dict) and actor.get('actor_id') == expected['original_actor'] and
+            actor.get('session_id') == expected['original_session'] and
+            report.get('stage') == 'independent-legacy' and report.get('independent_of_authors') is True and
+            report.get('actor_provenance') == actor and
+            report.get('auditor_instance') == expected['original_auditor_instance'],
+            'Actual complete original parent identity changed')
 
 
 def validate_legal(record, question, read, prefix, started, completed):
