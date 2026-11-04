@@ -1,0 +1,394 @@
+{
+  "study": {
+    "path": "site/notes/study-data.js",
+    "raw_sha256": "d6bcb06baa31131d582a33997ccc3ee127e44cffcc67627a8ccb698e22fe74e8",
+    "scope": "Tracked local generated JS snapshot, not verified remote deployed PR190 bytes; metadata may be stale.",
+    "items": [
+      {
+        "id": "LAW-037",
+        "module_id": "m10",
+        "title": "처방전·기록·환자 label",
+        "core": "세 문서는 목적과 필수 항목이 다릅니다.",
+        "why": "원 prescription의 prescriber 확인과 환자 label의 정보는 동일한 표가 아닙니다.",
+        "trap": "내부 전산기록이 맞다는 이유로 환자 label의 누락을 무시하지 않습니다.",
+        "recall": "DEA number의 처방상 확인과 환자 용기 인쇄 의무를 구별하세요.",
+        "note_units": [
+          "w3-a-1",
+          "w3-a-2",
+          "w3-a-3"
+        ],
+        "stored_source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-3": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc"
+        },
+        "source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-3": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "flags": [],
+        "source_ids": [
+          "src-4b5f3e5e6f00",
+          "src-97192fc77578",
+          "src-da8a8280d110",
+          "src-386cb3e809e7"
+        ],
+        "kind": "source-derived-study-overlay"
+      },
+      {
+        "id": "LAW-038",
+        "module_id": "m10",
+        "title": "Interchangeability는 제품별",
+        "core": "성분·함량·제형·route·TE 또는 biologic interchangeability 조건을 확인합니다.",
+        "why": "Orange Book과 Purple Book, 일반 substitution과 authorized generic은 다른 경로입니다.",
+        "trap": "같은 성분·보험 선호·같은 계열만으로 대체 가능하다고 결론내리지 않습니다.",
+        "recall": "Biosimilar와 interchangeable designation을 구별하세요.",
+        "note_units": [
+          "w3-a-6",
+          "w3-a-7",
+          "w3-a-10"
+        ],
+        "stored_source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-7": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25"
+        },
+        "source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-7": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "flags": [],
+        "source_ids": [
+          "src-5ae56622aa3c",
+          "src-94a239f1bcf7",
+          "src-eb2292f04d83",
+          "src-16f1fbbdd07a",
+          "src-da8a8280d110",
+          "src-0a51fd50980a",
+          "src-a8947630c051",
+          "src-84934ddbad7d",
+          "src-7f7e5239723c"
+        ],
+        "kind": "source-derived-study-overlay"
+      }
+    ]
+  },
+  "refresh": {
+    "path": "site/notes/refresh-data.js",
+    "raw_sha256": "ffc4477c9821be98b0df06e9a53c2d9ffe757b1a50e21d7aa84579a1fa486674",
+    "scope": "Tracked local generated JS snapshot, not verified remote deployed PR190 bytes; metadata may be stale.",
+    "items": [
+      {
+        "id": "RF-006",
+        "title": "Prescription · dispensing record · patient label",
+        "takeaway": "주문, 실제 처리 기록, 환자가 보는 사용표시는 다른 문서입니다.",
+        "plain": "원 처방이 적법해야 하고, 실제 교부 제품·수량을 기록해야 하며, 환자 용기의 표시도 정확해야 합니다.",
+        "example": "내부 시스템의 directions가 맞아도 환자 label에 잘못 인쇄되면 문제가 남습니다.",
+        "watch": "처방에 필요한 모든 항목이 환자 label에도 똑같이 필요한 것은 아닙니다.",
+        "note_units": [
+          "w3-a-1",
+          "w3-a-2"
+        ],
+        "stage": "start",
+        "ra_bridge": "승인 문서·batch record·artwork가 서로 다른 역할을 하는 것과 연결합니다.",
+        "external_sources": [],
+        "kind": "notes-summary",
+        "deck": "core",
+        "chapters": [
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b"
+        },
+        "source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-013",
+        "title": "제품을 확인하는 여섯 단서",
+        "takeaway": "성분·함량·제형·투여경로·방출특성·실제 제품을 확인합니다.",
+        "plain": "Brand 이름을 알아도 함량이나 IR/ER가 다를 수 있습니다. 성분명만 일치한다고 모든 제품이 대체 가능하지는 않습니다.",
+        "example": "처방의 extended-release tablet와 선반의 immediate-release tablet을 같은 제품으로 처리하지 않습니다.",
+        "watch": "교환 가능성은 해당 제품 자료와 적용되는 주법을 확인합니다.",
+        "note_units": [
+          "w3-a-2",
+          "w3-a-6"
+        ],
+        "stage": "product",
+        "ra_bridge": "CMC에서 formulation·route 변경을 구별하듯 제품 단위를 정확히 봅니다.",
+        "external_sources": [],
+        "kind": "notes-summary",
+        "deck": "core",
+        "chapters": [
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe"
+        },
+        "source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-014",
+        "title": "Strength · dose · quantity",
+        "takeaway": "한 단위에 든 양, 한 번 쓰는 양, 교부하는 총량은 다릅니다.",
+        "plain": "학습 예시로 1정 10 mg 제품을 한 번에 2정 사용한다면 1회량은 20 mg입니다. #60은 총 60정이라는 별도 정보입니다.",
+        "example": "이 예시에서 “10 mg”과 “2 tablets”와 “60 tablets”를 각각 다른 칸에 놓습니다.",
+        "watch": "가상 계산일 뿐 특정 약의 적정 용량을 권고하지 않습니다.",
+        "note_units": [
+          "w3-a-2",
+          "clocks-and-quantities"
+        ],
+        "stage": "product",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "learning-example",
+        "deck": "core",
+        "chapters": [
+          "label-interchange",
+          "foundations"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20",
+          "2026-10-20–22"
+        ],
+        "stored_source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "clocks-and-quantities": "f3f4d966eb4f72c073de9b98e1b6270c707de064dabe56026c3737459114c893"
+        },
+        "source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "clocks-and-quantities": "f3f4d966eb4f72c073de9b98e1b6270c707de064dabe56026c3737459114c893"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-016",
+        "title": "mg와 mL를 같은 숫자로 읽지 않기",
+        "takeaway": "농도는 mg/mL, 부피는 mL이며 단위를 먼저 맞춥니다.",
+        "plain": "가상 계산: 20 mg/5 mL는 4 mg/mL입니다. 지시된 8 mg의 부피는 8 ÷ 4 = 2 mL입니다.",
+        "example": "원 제품 농도와 처방량을 적은 뒤 단위가 지워지는지 확인합니다.",
+        "watch": "특정 환자·약물의 투여 지시가 아닙니다. 실제 농도·측정기·적정 용량은 별도 검수합니다.",
+        "note_units": [
+          "w3-b-2",
+          "w3-a-2"
+        ],
+        "stage": "product",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "learning-example",
+        "deck": "core",
+        "chapters": [
+          "counseling-dur",
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-b-2": "fd7dc288e01a68c68d5cc108cbcd7590e85ca3b2af5327e3ac8959e59486eb3f",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b"
+        },
+        "source_hashes": {
+          "w3-b-2": "fd7dc288e01a68c68d5cc108cbcd7590e85ca3b2af5327e3ac8959e59486eb3f",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-019",
+        "title": "Generic substitution vs therapeutic change",
+        "takeaway": "동등 제품 선택과 다른 치료로 바꾸는 일은 다릅니다.",
+        "plain": "같은 약리계열이나 비슷한 이름만으로 대체조제하지 않습니다. 정확한 제품·처방자의 지시·적용 규칙을 봅니다.",
+        "example": "재고 부족을 해결하려고 다른 성분의 약으로 임의 변경하지 않습니다.",
+        "watch": "보험이 지불하는 제품과 적법하게 대체 가능한 제품은 같은 질문이 아닙니다.",
+        "note_units": [
+          "w3-a-6",
+          "w3-a-8"
+        ],
+        "stage": "product",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary",
+        "deck": "core",
+        "chapters": [
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-8": "de573f780075442ba8369e77421fb003c3cb1ebf357e7b25724827de4ef2b7ef"
+        },
+        "source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-8": "de573f780075442ba8369e77421fb003c3cb1ebf357e7b25724827de4ef2b7ef"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-020",
+        "title": "Orange Book와 Purple Book",
+        "takeaway": "Small-molecule TE 정보와 biological product 정보는 다른 체계입니다.",
+        "plain": "Orange Book의 제품별 therapeutic equivalence와 Purple Book의 biosimilar/interchangeable 정보를 구별합니다.",
+        "example": "Biosimilar라는 말만으로 pharmacist substitution 조건이 모두 충족됐다고 보지 않습니다.",
+        "watch": "Reference product·정확한 제품·Massachusetts 조건을 함께 확인합니다.",
+        "note_units": [
+          "w3-a-6",
+          "w3-a-10"
+        ],
+        "stage": "product",
+        "ra_bridge": "ANDA와 BLA 경로를 아는 지식을 실제 제품 선택에 연결합니다.",
+        "external_sources": [],
+        "kind": "notes-summary",
+        "deck": "core",
+        "chapters": [
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25"
+        },
+        "source_hashes": {
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-031",
+        "title": "환자용 directions는 이해 가능해야 한다",
+        "takeaway": "내부 약어를 그대로 읽어 주는 것과 이해를 돕는 설명은 다릅니다.",
+        "plain": "용법·경로·기간 등 실제 처방 내용을 환자가 사용할 수 있는 말로 설명합니다.",
+        "example": "읽은 용법을 환자가 자신의 일상에서 어떻게 따를지 다시 설명하도록 부탁합니다.",
+        "watch": "쉽게 풀어 설명하면서 prescriber의 치료 의도를 임의로 바꾸지 않습니다.",
+        "note_units": [
+          "w3-a-2",
+          "w3-b-2"
+        ],
+        "stage": "patient",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary",
+        "deck": "core",
+        "chapters": [
+          "label-interchange",
+          "counseling-dur"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20"
+        ],
+        "stored_source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-b-2": "fd7dc288e01a68c68d5cc108cbcd7590e85ca3b2af5327e3ac8959e59486eb3f"
+        },
+        "source_hashes": {
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-b-2": "fd7dc288e01a68c68d5cc108cbcd7590e85ca3b2af5327e3ac8959e59486eb3f"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      },
+      {
+        "id": "RF-C-label-interchange",
+        "title": "Label·Generic·Biologic 대체조제",
+        "takeaway": "처방·조제기록·환자 라벨의 역할과 실제 교부 제품의 법적 동등성을 연결합니다.",
+        "plain": "같은 성분·같은 회사라는 사실만으로 대체할 수 없습니다.\nBiosimilar와 interchangeable은 다릅니다.",
+        "example": "상세 조건·예외는 아래 연결된 장에서 확인하세요.",
+        "watch": "장 개요입니다. 상세 규칙이나 미확정 적용 관계를 대체하지 않습니다.",
+        "note_units": [
+          "w3-a-1",
+          "w3-a-2",
+          "w3-a-3",
+          "w3-a-4",
+          "w3-a-6",
+          "w3-a-7",
+          "w3-a-8",
+          "w3-a-9",
+          "w3-a-10",
+          "point-of-sale-price"
+        ],
+        "stage": "",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "chapter-overview",
+        "deck": "chapters",
+        "chapters": [
+          "label-interchange"
+        ],
+        "flags": [],
+        "source_review_dates": [
+          "2026-10-20",
+          "2026-10-23"
+        ],
+        "stored_source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-3": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc",
+          "w3-a-4": "558f3b62001dab2f00239be834bbd7b24448265ec4276354cc47d3e050aa54d2",
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-7": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+          "w3-a-8": "de573f780075442ba8369e77421fb003c3cb1ebf357e7b25724827de4ef2b7ef",
+          "w3-a-9": "7d7e2a9620494046190256cff287e6341a4ab60d5759faaac2f697d8fbf4de25",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25",
+          "point-of-sale-price": "3984409bfdeeee9a11e66f19719981acbff0a0af23df027505854c05eabc4dcc"
+        },
+        "source_hashes": {
+          "w3-a-1": "ad0d9874aca2bf4c3f000485450221ca8a832e3f630bd7219d4d05cf6149be23",
+          "w3-a-2": "d013964e64d8ff1a73f9045b020475b671c2fc7d9a27671605af821a3e34150b",
+          "w3-a-3": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc",
+          "w3-a-4": "84f41f3664ae49204508fafede2deaeb2aded7bd058bc24ceee477022215b2d0",
+          "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe",
+          "w3-a-7": "27780735b2ad69fc10feae7e72c019997e68cf11ad0fe9184938b2957097ee68",
+          "w3-a-8": "de573f780075442ba8369e77421fb003c3cb1ebf357e7b25724827de4ef2b7ef",
+          "w3-a-9": "7d7e2a9620494046190256cff287e6341a4ab60d5759faaac2f697d8fbf4de25",
+          "w3-a-10": "eeacbbceacda177a2b727749ff3f13ac89891fd9cdb88a92930ea83c09d93d25",
+          "point-of-sale-price": "3984409bfdeeee9a11e66f19719981acbff0a0af23df027505854c05eabc4dcc"
+        },
+        "source_hash_basis": "ACTUAL_EFFECTIVE_BODY_UTF8",
+        "edited_at": "2026-10-27"
+      }
+    ]
+  }
+}
