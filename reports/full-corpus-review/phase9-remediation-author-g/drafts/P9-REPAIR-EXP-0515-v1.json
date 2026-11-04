@@ -1,0 +1,401 @@
+{
+  "draft_key": "P9-REPAIR-EXP-0515",
+  "original_question_id": "MA-EXP-0515",
+  "original_record_sha256": "966b4ae95be1a0703a9d81dcd513af464c454f591fbe143b44eb18c68ce9f2c9",
+  "original_collection": "practice_expansion/2026-10-23/candidates/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-a-review.json",
+  "native_finding_report_sha256": "b0d96c5fcc2aef545b5c0535a8e01d03416f7ccb84e9008867df59a7ba94e554",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SATA",
+  "stem": "On November 2, 2026, a HIPAA-covered Massachusetts pharmacy discovers one reportable breach of unsecured PHI affecting 620 individuals: 310 reside in Massachusetts and 310 in Rhode Island. The pharmacy has current mailing addresses for all affected individuals. There is no law-enforcement delay or other notice exception.\n\nWhich notification plans comply with the federal breach-notification rules? Select ALL that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Notify the affected individuals without unreasonable delay and no later than 60 calendar days after discovery."
+    },
+    {
+      "id": "B",
+      "text": "Notify HHS contemporaneously with the individual notices for this breach."
+    },
+    {
+      "id": "C",
+      "text": "Notify prominent media outlets in both states because the breach affects 620 individuals in total."
+    },
+    {
+      "id": "D",
+      "text": "Log the breach for HHS submission within 60 days after the end of 2026 instead of using the contemporaneous reporting route."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "한 breach의 총 individuals 수와 media 통지에 쓰는 각 주 residents 수를 구별한다. 620명 전체에 individual notice 및 contemporaneous HHS reporting이 필요하지만, 각 주 310명만으로 prominent-media 통지는 요구되지 않는다. 각 수신자의 기준과 clock을 실제 통지 계획에 적용한다.",
+    "choice_analysis": {
+      "A": "164.404(a),(b)는 영향을 받은 각 individual에게 발견 후 불합리한 지연 없이, 최대 60 calendar days 안에 통지하도록 한다. 이 사례는 연락처가 모두 확보되어 있고 law-enforcement delay도 없으므로 다른 수신자 보고를 기다려 개별 통지를 늦출 수 없다.",
+      "B": "HHS의 즉시 보고 경로는 한 주의 거주자 수가 아니라 breach 전체의 individuals 수에 적용된다. 이번 전체 620명은 500명 이상이므로 164.408(b)에 따라 individual notices와 contemporaneously 보고한다. 각 주 310명이라는 사실을 HHS의 소규모 annual-log 경로에 적용하지 않는다.",
+      "C": "Media notice는 해당 State 또는 jurisdiction의 residents가 500명을 초과할 때 필요하다. 여기서는 각 주 310명이므로 전국 합계 620명만으로 두 주의 prominent-media 의무를 만들지 않는다. HHS의 total-individuals 기준과 media의 resident-by-state 기준이 다르다.",
+      "D": "연말 후 60일의 log/report 경로는 전체 individuals가 500명 미만인 breach에 해당한다. 이번 한 breach는 전체 620명이다. 거주 주별로 나눠 각각 작은 사건인 것처럼 annual route로 돌릴 수 없다."
+    },
+    "learning_boundary": "HIPAA unsecured-PHI breach의 individual/HHS/media 경로를 구별한다. State breach statutes, substitute notice, business-associate 통지 또는 law-enforcement delay의 별도 요건은 이 사례에서 평가하지 않는다."
+  },
+  "visible_content_sha256": "0dd2bdc8f4b27e5f581787921681cb37a68be6058faddb0ebf84562b7b5f9c9f",
+  "design_change_ko": "보기에서 501이 500보다 크지 않다는 산술 모순을 없앴다. 한 breach의 두 주 거주 분포를 주고 실제 recipient·reporting route·deadline을 선택하게 한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "hipaa404",
+        "45 CFR 164.404(a),(b)"
+      ]
+    ],
+    "B": [
+      [
+        "hipaa408",
+        "45 CFR 164.408(a),(b)"
+      ],
+      [
+        "hipaa404",
+        "45 CFR 164.404(a),(b)"
+      ]
+    ],
+    "C": [
+      [
+        "hipaa406",
+        "45 CFR 164.406(a)"
+      ]
+    ],
+    "D": [
+      [
+        "hipaa408",
+        "45 CFR 164.408(b),(c)"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "5101c37b9e180a33e6e0cc59c151e40c584fddf05f32c32e83f6eb1aaed6792d",
+      "author_supported": "YES",
+      "rationale_sha256": "3365afed64c106fe4161f0e888687112e0322f2737d893a7a2fc20774f14578b",
+      "authorities": [
+        {
+          "source_id": "hipaa404",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.404",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.787356+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404.html",
+          "raw_sha256": "2f1ffb81ecdc2ccfbe6492f603d9470ef383b2a909b861b4d0a981c4ee0f2b45",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404.txt",
+          "text_sha256": "821dced7031c06c812fe5594179bc768355ecf8d370b6c46a46bcc567bad6ece",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404-retrieval.json",
+          "retrieval_metadata_sha256": "686fe66accde056411341cae499a0dc6f6917698cd6bc3c58346bf0348188040",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "45 CFR 164.404(a),(b)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "ea296e6c8c06a1cc482a0edb205473e9b03f4e63b52c7833d5fa1c0e89a5acee",
+      "author_supported": "YES",
+      "rationale_sha256": "6aefc1b86379afd6374482247ff36c837987b4c2e69545d93f5e1a334ad54229",
+      "authorities": [
+        {
+          "source_id": "hipaa408",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.408",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.996692+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408.html",
+          "raw_sha256": "5e7aa21ecfa34f91812580e9b560a9637fe8612b265d996cf142343bc7a56aaa",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408.txt",
+          "text_sha256": "6aa30ffe61dd35ad223fc1bf2ffc1867e9dc79473fc2d317f3c7675d6662a021",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408-retrieval.json",
+          "retrieval_metadata_sha256": "4fbdc51b29177f02f262057bd4d29b1fec3c48452efd8b72c9c56cd30fa28839",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "45 CFR 164.408(a),(b)"
+        },
+        {
+          "source_id": "hipaa404",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.404",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.787356+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404.html",
+          "raw_sha256": "2f1ffb81ecdc2ccfbe6492f603d9470ef383b2a909b861b4d0a981c4ee0f2b45",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404.txt",
+          "text_sha256": "821dced7031c06c812fe5594179bc768355ecf8d370b6c46a46bcc567bad6ece",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa404-retrieval.json",
+          "retrieval_metadata_sha256": "686fe66accde056411341cae499a0dc6f6917698cd6bc3c58346bf0348188040",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "45 CFR 164.404(a),(b)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "96e80122e71f32b8ad008b011b55d9b1ec81bfeb36baaa9cb6c7b48be7a2f00d",
+      "author_supported": "NO",
+      "rationale_sha256": "4c4ea1cd8b04dd86f96dc98a0d00daf8b86568f58dac782dab964044abfb7c83",
+      "authorities": [
+        {
+          "source_id": "hipaa406",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.406",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.799027+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa406.html",
+          "raw_sha256": "522de4613ec6e7d7846aa98a7f7e83933d008db6face188c4b89f738d7c6bbb2",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa406.txt",
+          "text_sha256": "4432796245bdd16f98d8f28b841123f931ff485e04ada60117f5d47aef191ada",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa406-retrieval.json",
+          "retrieval_metadata_sha256": "5e0e12c485cb2941ffc51b2ac27ae9f46e820a73ec8990c67e75d39463674e68",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "45 CFR 164.406(a)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "7cb7f85b0e9a350a3b83abe755e65b54a978b0f2aea1988bdcb871eebf88cd26",
+      "author_supported": "NO",
+      "rationale_sha256": "8c7918ba906478d80e8badedd4b780f381258ed77178ded65d94921287754f62",
+      "authorities": [
+        {
+          "source_id": "hipaa408",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-D/section-164.408",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.996692+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408.html",
+          "raw_sha256": "5e7aa21ecfa34f91812580e9b560a9637fe8612b265d996cf142343bc7a56aaa",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408.txt",
+          "text_sha256": "6aa30ffe61dd35ad223fc1bf2ffc1867e9dc79473fc2d317f3c7675d6662a021",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/hipaa408-retrieval.json",
+          "retrieval_metadata_sha256": "4fbdc51b29177f02f262057bd4d29b1fec3c48452efd8b72c9c56cd30fa28839",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "45 CFR 164.408(b),(c)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-EXP-0515",
+      "draft_visible_content_sha256": "0dd2bdc8f4b27e5f581787921681cb37a68be6058faddb0ebf84562b7b5f9c9f",
+      "original_question_id": "MA-EXP-0515",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0089",
+        "cosine": 0.05972,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0089",
+          "stem": "A pharmacist discovers a dispensing error while the patient may still be exposed to harm. Which duties apply? Select all that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Immediately notify the patient or representative and give correction and harm-minimization directions."
+            },
+            {
+              "id": "B",
+              "text": "Finish root-cause analysis before contacting the patient."
+            },
+            {
+              "id": "C",
+              "text": "Always notify the patient before the prescriber in a strict sequence."
+            },
+            {
+              "id": "D",
+              "text": "Immediately notify the prescriber when professional judgment indicates it is warranted."
+            },
+            {
+              "id": "E",
+              "text": "Complete the initial QRE documentation within 24 hours after discovery or notification."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "A",
+            "D",
+            "E"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-EXP-0512",
+        "cosine": 0.224467,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0512",
+          "stem": "Case A: A confirmed reportable breach of unsecured PHI affects 20 individuals, and the pharmacy proposes waiting until the annual HHS report to notify those individuals.\n\nCase B: A manager treats the 60-day outer limit as an automatic permission to wait the full period even though earlier notice is feasible; no authorized delay applies.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The small-breach annual HHS route does not postpone the individual-notification obligation."
+            },
+            {
+              "id": "B",
+              "text": "The small-breach HHS deadline is within 60 days after the discovery calendar year ends."
+            },
+            {
+              "id": "C",
+              "text": "Notice must be provided without unreasonable delay, not routinely held until the outer limit."
+            },
+            {
+              "id": "D",
+              "text": "One regulator filing necessarily serves as notice to all affected individuals."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ],
+          "family_id": "PRIV12",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-EXP-0512",
+        "cosine": 0.224467,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0512",
+          "stem": "Case A: A confirmed reportable breach of unsecured PHI affects 20 individuals, and the pharmacy proposes waiting until the annual HHS report to notify those individuals.\n\nCase B: A manager treats the 60-day outer limit as an automatic permission to wait the full period even though earlier notice is feasible; no authorized delay applies.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The small-breach annual HHS route does not postpone the individual-notification obligation."
+            },
+            {
+              "id": "B",
+              "text": "The small-breach HHS deadline is within 60 days after the discovery calendar year ends."
+            },
+            {
+              "id": "C",
+              "text": "Notice must be provided without unreasonable delay, not routinely held until the outer limit."
+            },
+            {
+              "id": "D",
+              "text": "One regulator filing necessarily serves as notice to all affected individuals."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ],
+          "family_id": "PRIV12",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0081",
+        "cosine": 0.066072,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0081",
+          "stem": "A pharmacy discovers a confirmed controlled-substance theft. Its investigation will take several weeks. The manager proposes making no written contact with DEA until the completed electronic Form 106 is ready.\n\nWhich timeline correctly separates the two federal duties? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Notice: 45 days after discovery; Form 106: 1 business day after notice."
+            },
+            {
+              "id": "B",
+              "text": "Notice: 1 business day; completed Form 106: 45 days after discovery."
+            },
+            {
+              "id": "C",
+              "text": "Notice: 1 business day; completed Form 106: 45 days after investigation ends."
+            },
+            {
+              "id": "D",
+              "text": "Notice and completed Form 106: both 45 days after discovery."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "REV-081",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "EXP0512는 smallbreach20명/annualHHS와 individualclock이고 canonical0089 및 defaultREV0081은 PHI가 아닌 dispensingerror 또는 theft reporting이다. Current620명이 두 주310명씩인 한breach에서 실제 HHS/media/individual route를 선택한다. Threshold의 산술 모순을 보기에 인쇄하지 않는다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

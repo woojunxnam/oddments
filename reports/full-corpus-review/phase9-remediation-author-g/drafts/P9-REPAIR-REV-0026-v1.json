@@ -1,0 +1,577 @@
+{
+  "draft_key": "P9-REPAIR-REV-0026",
+  "original_question_id": "MA-REV-0026",
+  "original_record_sha256": "cb21bdfb22d9eaee8b9b4e52c086d9461f6b2fb0808f8b6bd88c511a0f24f16d",
+  "original_collection": "practice_expansion/2026-10-27-quality/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-d-review.json",
+  "native_finding_report_sha256": "d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SBA",
+  "stem": "A Massachusetts pharmacy receives two otherwise valid Schedule III prescriptions, each written for a 56-day supply in one filling. One is buprenorphine/naloxone for an adult's established opioid-use-disorder treatment. The other is BUTRANS (buprenorphine) transdermal patches for a different adult's established chronic-pain treatment. Neither involves an implantable infusion pump. All other prescribing and dispensing requirements are met; the pharmacist is reviewing the Massachusetts day-supply limit for a single filling.\n\nWhich supply plan fits that limit? Select ONE answer.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Allow a 56-day single filling for both prescriptions."
+    },
+    {
+      "id": "B",
+      "text": "Allow 56 days for the OUD prescription; limit the pain prescription to no more than 30 days in one filling."
+    },
+    {
+      "id": "C",
+      "text": "Limit the OUD prescription to 30 days; allow 56 days for the pain prescription."
+    },
+    {
+      "id": "D",
+      "text": "Limit both prescriptions to 30 days in one filling."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "실제 법적 결정은 복수 CII의 날짜 표기가 아니라 같은 buprenorphine 성분의 처방이 어떤 치료 목적으로 쓰이는지에 따른 MA1회 조제량 예외다. OUD 치료는 최대90일 예외에 포함되지만 이 사례의 opioid pain patch는 일반 최대30일 경로다. 56일이라는 요청이 각각의 상한 안인지 따로 판단한다.",
+    "choice_analysis": {
+      "A": "두 처방 모두 buprenorphine을 포함하지만 c.94C §23(d)의 90일 예외는 OUD 치료라는 적용 목적을 포함한다. BUTRANS는 opioid analgesic이며 이 사례에서는 OUD가 아닌 chronic pain에 사용한다. Non-opioid 또는 implantable-pump 예외에도 해당하지 않으므로 두 처방 모두를 56일분 단일 조제로 승인할 수 없다.",
+      "B": "OUD 치료는 §23(d)(i)의 최대90일 single-filling 예외에 포함되므로 제시된 56일분이 그 상한 안에 있다. 반면 opioid인 buprenorphine patch를 chronic pain에 사용하는 처방은 여기서 나열된 예외가 아니므로 1회 조제량은 최대30일분이다. Patch의 실제 단위 수량과 다른 요건은 별도로 충족해야 하며 30일을 넘지 않는 적법한 수량을 정한다.",
+      "C": "두 경로의 적용을 뒤집은 계획이다. 명시된 확대 예외는 OUD 치료이고 단순 chronic-pain opioid 치료가 아니다. 같은 성분이거나 장기 유지요법이라는 사실만으로 pain 처방에 90일 예외를 주고 OUD 예외를 없앨 수 없다.",
+      "D": "ScheduleIII 또는 opioid라는 분류만으로 OUD에 대한 구체적 예외를 지우지 않는다. 이 OUD 처방은 statutory90-day 상한 안인 56일분을 한 번에 조제할 수 있는 범주다. 두 번째 pain 처방의30일 상한을 첫 번째 OUD 처방에도 그대로 복사한 오류다."
+    },
+    "learning_boundary": "M.G.L. c.94C §23(d)의 ScheduleII/III 1회 조제량 상한에 한정한다. FederalCII multiple-prescription framework, 최초 opioid 처방의7일 규칙, refill 횟수와 임상 적절성은 별도 요건이며 이 사례에서는 충족되었다는 범위를 유지한다."
+  },
+  "visible_content_sha256": "f0812c9bf2730efff73f0ba6f999b82da4f90f67a2b274a4c63550e2dde4d513",
+  "design_change_ko": "최초 설계의31일 만료 사례가0012/REV0025와 겹침을 직접 확인해 다시 설계했다. CII 날짜 표기/유효기간이 아닌 CIII buprenorphine의 OUD-versus-pain 단일 조제량 예외로 실제 법적 route와 결정을 바꿨다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "ma23",
+        "M.G.L. c.94C §23(d)(i)–(iii), general30-day single-filling limit"
+      ],
+      [
+        "1308-13",
+        "21 CFR1308.13(e)(2)(i), buprenorphine"
+      ],
+      [
+        "butrans",
+        "BUTRANS prescribing information revisedMay2026, Highlights and §1, opioid-analgesic pain indication"
+      ]
+    ],
+    "B": [
+      [
+        "ma23",
+        "M.G.L. c.94C §23(d), OUD90-day exception and otherII/III30-day limit"
+      ],
+      [
+        "1308-13",
+        "21 CFR1308.13(e)(2)(i)"
+      ],
+      [
+        "butrans",
+        "BUTRANS §1, opioid analgesic for severe persistent pain"
+      ]
+    ],
+    "C": [
+      [
+        "ma23",
+        "M.G.L. c.94C §23(d)(i) and final general30-day sentence"
+      ],
+      [
+        "butrans",
+        "BUTRANS §1 and Highlights, partial opioid agonist"
+      ]
+    ],
+    "D": [
+      [
+        "ma23",
+        "M.G.L. c.94C §23(d)(i), express OUD single-filling exception"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "b3f82980af8ee230d1c6c32135f5fe0dbe58e8fa06cb39799f1c457f93ffe12c",
+      "author_supported": "NO",
+      "rationale_sha256": "b4d5e2696853b968400902b725eae91cb98f3158998b708bd4b731276a32177a",
+      "authorities": [
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(d)(i)–(iii), general30-day single-filling limit"
+        },
+        {
+          "source_id": "1308-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.097523+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.html",
+          "raw_sha256": "4ff47efa81366eb54ff668257281658be85d3c57dd0f6d6eb82282b97c53b6b7",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.txt",
+          "text_sha256": "75ee4f22c40aff315729a0a6637528e53c23613d5d914cb4ee286ec100dc1861",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13-retrieval.json",
+          "retrieval_metadata_sha256": "c4070ff2fc5caa2191ecba052e6e5c6f962d267e3ccb803471e5ec8f96cae718",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR1308.13(e)(2)(i), buprenorphine"
+        },
+        {
+          "source_id": "butrans",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=794aa355-66de-41b8-aedf-f2c40f6bc664",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:19:45.279925+00:00",
+          "version_or_effective_date_status": "Current official DailyMed KNOA BUTRANS label, revisedMay2026; page UpdatedMay1,2026; API listsSPL32 publishedMay13,2026. Different dates retained. Used opioid-analgesic/partial-agonist pain indication and product identity only; no comprehensive clinical efficacy assessment.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.html",
+          "raw_sha256": "a1cf70aea9f558e39cabe3576eb6f6dcb1ce88f679ea16c46363970f43163c21",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.txt",
+          "text_sha256": "fa7b56da9e9940d61c63e1b05fc81191f2cdde5b65b2dce4be1e3d44c5348200",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans-retrieval.json",
+          "retrieval_metadata_sha256": "f706eb7bca66b92d9c1bff85a1e7ef9a6f7bd72d1260aba4fa4f10997f585c14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "BUTRANS prescribing information revisedMay2026, Highlights and §1, opioid-analgesic pain indication"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "75154b8c9f0e3e2edc1e506a3f0f0b6b82a2b55adc17c62c85bfd3a8ef9ee98b",
+      "author_supported": "YES",
+      "rationale_sha256": "58e378394a2aea62084e18cbe039f31f2e95c4bd512a4eb51e66b41fa4c107ce",
+      "authorities": [
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(d), OUD90-day exception and otherII/III30-day limit"
+        },
+        {
+          "source_id": "1308-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.097523+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.html",
+          "raw_sha256": "4ff47efa81366eb54ff668257281658be85d3c57dd0f6d6eb82282b97c53b6b7",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.txt",
+          "text_sha256": "75ee4f22c40aff315729a0a6637528e53c23613d5d914cb4ee286ec100dc1861",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13-retrieval.json",
+          "retrieval_metadata_sha256": "c4070ff2fc5caa2191ecba052e6e5c6f962d267e3ccb803471e5ec8f96cae718",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR1308.13(e)(2)(i)"
+        },
+        {
+          "source_id": "butrans",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=794aa355-66de-41b8-aedf-f2c40f6bc664",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:19:45.279925+00:00",
+          "version_or_effective_date_status": "Current official DailyMed KNOA BUTRANS label, revisedMay2026; page UpdatedMay1,2026; API listsSPL32 publishedMay13,2026. Different dates retained. Used opioid-analgesic/partial-agonist pain indication and product identity only; no comprehensive clinical efficacy assessment.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.html",
+          "raw_sha256": "a1cf70aea9f558e39cabe3576eb6f6dcb1ce88f679ea16c46363970f43163c21",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.txt",
+          "text_sha256": "fa7b56da9e9940d61c63e1b05fc81191f2cdde5b65b2dce4be1e3d44c5348200",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans-retrieval.json",
+          "retrieval_metadata_sha256": "f706eb7bca66b92d9c1bff85a1e7ef9a6f7bd72d1260aba4fa4f10997f585c14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "BUTRANS §1, opioid analgesic for severe persistent pain"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "5d9c54484764b81830c181d6de416ce481ae1abb18137ffb72fdc94335d905f3",
+      "author_supported": "NO",
+      "rationale_sha256": "e25c676f5ba590379c97e885cae492d0c3c3e300bc13b8c4fd9fad6dc4158b4e",
+      "authorities": [
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(d)(i) and final general30-day sentence"
+        },
+        {
+          "source_id": "butrans",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=794aa355-66de-41b8-aedf-f2c40f6bc664",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:19:45.279925+00:00",
+          "version_or_effective_date_status": "Current official DailyMed KNOA BUTRANS label, revisedMay2026; page UpdatedMay1,2026; API listsSPL32 publishedMay13,2026. Different dates retained. Used opioid-analgesic/partial-agonist pain indication and product identity only; no comprehensive clinical efficacy assessment.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.html",
+          "raw_sha256": "a1cf70aea9f558e39cabe3576eb6f6dcb1ce88f679ea16c46363970f43163c21",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.txt",
+          "text_sha256": "fa7b56da9e9940d61c63e1b05fc81191f2cdde5b65b2dce4be1e3d44c5348200",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans-retrieval.json",
+          "retrieval_metadata_sha256": "f706eb7bca66b92d9c1bff85a1e7ef9a6f7bd72d1260aba4fa4f10997f585c14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "BUTRANS §1 and Highlights, partial opioid agonist"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "b467c11ef183a31faf39bf39b59292e325e578c6a124d1264428a5826f5f65c8",
+      "author_supported": "NO",
+      "rationale_sha256": "4fda7553ba864eab788cb30ebe99f538d12a45a8a31cf3467941b5c690c87b4e",
+      "authorities": [
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(d)(i), express OUD single-filling exception"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [
+    {
+      "source_id": "1308-13",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T05:55:37.097523+00:00",
+      "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.html",
+      "raw_sha256": "4ff47efa81366eb54ff668257281658be85d3c57dd0f6d6eb82282b97c53b6b7",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.txt",
+      "text_sha256": "75ee4f22c40aff315729a0a6637528e53c23613d5d914cb4ee286ec100dc1861",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13-retrieval.json",
+      "retrieval_metadata_sha256": "c4070ff2fc5caa2191ecba052e6e5c6f962d267e3ccb803471e5ec8f96cae718",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "21CFR1308.13(e)(2)(i), buprenorphine ScheduleIII"
+    },
+    {
+      "source_id": "butrans",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=794aa355-66de-41b8-aedf-f2c40f6bc664",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T06:19:45.279925+00:00",
+      "version_or_effective_date_status": "Current official DailyMed KNOA BUTRANS label, revisedMay2026; page UpdatedMay1,2026; API listsSPL32 publishedMay13,2026. Different dates retained. Used opioid-analgesic/partial-agonist pain indication and product identity only; no comprehensive clinical efficacy assessment.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.html",
+      "raw_sha256": "a1cf70aea9f558e39cabe3576eb6f6dcb1ce88f679ea16c46363970f43163c21",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans.txt",
+      "text_sha256": "fa7b56da9e9940d61c63e1b05fc81191f2cdde5b65b2dce4be1e3d44c5348200",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/butrans-retrieval.json",
+      "retrieval_metadata_sha256": "f706eb7bca66b92d9c1bff85a1e7ef9a6f7bd72d1260aba4fa4f10997f585c14",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "BUTRANS Highlights and §1, buprenorphine partial opioid agonist/pain indication"
+    }
+  ],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-REV-0026",
+      "draft_visible_content_sha256": "f0812c9bf2730efff73f0ba6f999b82da4f90f67a2b274a4c63550e2dde4d513",
+      "original_question_id": "MA-REV-0026",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0024",
+        "cosine": 0.103678,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0024",
+          "stem": "A Massachusetts pharmacy receives a prescription for generic buprenorphine sublingual tablets for opioid use disorder with a 90-day quantity. Which quantity rule should the pharmacist apply?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "A 30-day ceiling applies to every Schedule III opioid."
+            },
+            {
+              "id": "B",
+              "text": "Every Schedule III prescription permits a 90-day fill."
+            },
+            {
+              "id": "C",
+              "text": "The initial-opiate seven-day limit controls OUD treatment."
+            },
+            {
+              "id": "D",
+              "text": "The OUD pathway may permit one fill of up to 90 days."
+            },
+            {
+              "id": "E",
+              "text": "Five refills may be combined into one 90-day fill."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0048",
+        "cosine": 0.138587,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0048",
+          "stem": "A Massachusetts pharmacist reviews four otherwise valid II–III prescriptions. Each requests an appropriate quantity within other applicable limits.\n\nWhich categories are included in the stated single-fill 90-day allowance? Select ALL that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The qualifying implantable-infusion-pump category."
+            },
+            {
+              "id": "B",
+              "text": "An ordinary Schedule II opioid pain prescription solely because the patient has used it before."
+            },
+            {
+              "id": "C",
+              "text": "A non-opioid Schedule II medication."
+            },
+            {
+              "id": "D",
+              "text": "Buprenorphine prescribed for opioid use disorder."
+            },
+            {
+              "id": "E",
+              "text": "Every Schedule III product regardless of treatment purpose or category."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "family_id": "REV-048",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-REV-0048",
+        "cosine": 0.138587,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0048",
+          "stem": "A Massachusetts pharmacist reviews four otherwise valid II–III prescriptions. Each requests an appropriate quantity within other applicable limits.\n\nWhich categories are included in the stated single-fill 90-day allowance? Select ALL that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The qualifying implantable-infusion-pump category."
+            },
+            {
+              "id": "B",
+              "text": "An ordinary Schedule II opioid pain prescription solely because the patient has used it before."
+            },
+            {
+              "id": "C",
+              "text": "A non-opioid Schedule II medication."
+            },
+            {
+              "id": "D",
+              "text": "Buprenorphine prescribed for opioid use disorder."
+            },
+            {
+              "id": "E",
+              "text": "Every Schedule III product regardless of treatment purpose or category."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "family_id": "REV-048",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0048",
+        "cosine": 0.138587,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0048",
+          "stem": "A Massachusetts pharmacist reviews four otherwise valid II–III prescriptions. Each requests an appropriate quantity within other applicable limits.\n\nWhich categories are included in the stated single-fill 90-day allowance? Select ALL that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The qualifying implantable-infusion-pump category."
+            },
+            {
+              "id": "B",
+              "text": "An ordinary Schedule II opioid pain prescription solely because the patient has used it before."
+            },
+            {
+              "id": "C",
+              "text": "A non-opioid Schedule II medication."
+            },
+            {
+              "id": "D",
+              "text": "Buprenorphine prescribed for opioid use disorder."
+            },
+            {
+              "id": "E",
+              "text": "Every Schedule III product regardless of treatment purpose or category."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "A",
+            "C",
+            "D"
+          ],
+          "family_id": "REV-048",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "0159의 CIIactualdate/earliestfill 문서작성과 법적 결정을 바꿨다. 초기 redesign의 expired31-day 사례도0012/REV0025와 겹쳐 폐기했다. Final은 동일buprenorphine의 OUD와 opioid-pain 사용을 구별하여 single-fill 예외가 실제로 달라진다. Canonical0024는 OUD 하나의90일 허용, REV0048은 넓은 category 목록이다. 현재는 opioid인 BUTRANS pain을 같은 성분의 OUD와 대조한다. 관련 원칙 overlap은 남으며 추가 coverage0이다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

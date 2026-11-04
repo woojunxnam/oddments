@@ -1,0 +1,535 @@
+{
+  "draft_key": "P9-REPAIR-EXP-0615",
+  "original_question_id": "MA-EXP-0615",
+  "original_record_sha256": "eee1f2ba7768f1fc6ff8d9d060925e9e69ccbd9689df2961c3bd03e2474d7757",
+  "original_collection": "practice_expansion/2026-10-23/candidates/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-a-review.json",
+  "native_finding_report_sha256": "b0d96c5fcc2aef545b5c0535a8e01d03416f7ccb84e9008867df59a7ba94e554",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SBA",
+  "stem": "A Massachusetts physician's electronic prescribing system temporarily fails. The physician has prepared a valid, properly signed paper prescription for oral immediate-release oxycodone, and a courier can deliver the original to the pharmacy before the patient needs the first dose. The adult patient is not in a long-term care facility or hospice, and the prescription is not for parenteral infusion. The patient asks the retail pharmacist to dispense before the courier arrives. The clinic can also fax an image of the prescription now.\n\nWhich dispensing plan is lawful under these facts? Select ONE answer.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Accept an emergency oral order and dispense now because the electronic system is unavailable."
+    },
+    {
+      "id": "B",
+      "text": "Dispense now from the faxed image and file the original when the courier arrives."
+    },
+    {
+      "id": "C",
+      "text": "Receive the original signed paper prescription and dispense after the usual validation."
+    },
+    {
+      "id": "D",
+      "text": "Require a new electronic prescription after the system is restored, despite the valid paper original."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "전자 시스템 장애의 paper-format exception, emergency oral CII의 세 가지 누적 조건, fax의 전달 기능과 original 대체 여부를 구별한다. Original paper가 실제 투여 필요 전에 도착할 수 있으므로 단순 outage를 oral emergency로 바꾸지 않는다. 이 일반 retail oral-oxycodone 사례에서는 원본을 받은 뒤 조제하는 계획이 맞다.",
+    "choice_analysis": {
+      "A": "Temporary electronic failure는 MA에서 paper prescription을 사용할 수 있는 format exception이다. 그 사실만으로 연방 emergency oral CII 조건이 모두 충족되지는 않는다. 본문에서는 original paper가 첫 투여 필요 시점 전에 도착할 수 있으므로 written prescription을 조제 전 제시하는 것이 reasonably impossible하다는 조건을 충족하지 않는다.",
+      "B": "일반 Schedule II paper prescription을 fax로 전송할 수는 있지만 actual dispensing 전에 원 manually signed prescription이 pharmacist에게 제시되어야 한다. 본문은 parenteral infusion·LTCF·hospice의 fax-as-original 예외에 해당하지 않는다. 나중에 원본이 도착한다는 사실이 먼저 교부하는 행위를 허용하지 않는다.",
+      "C": "MA의 temporary technological-failure exception은 유효한 written prescription 사용을 허용한다. 연방 일반 CII 경로도 실제 조제 전에 original manually signed prescription을 제시하면 충족할 수 있다. 본문에서 그 원본을 필요 시점 전에 확보할 수 있으므로 이 구체적 paper 경로를 사용한다.",
+      "D": "전자처방이 일반 원칙이어도 temporary technological failure에 대한 명시적 written-format exception을 없애지 않는다. 본문에서 적법한 paper 원본이 있고 다른 validity 조건도 충족하므로 시스템 복구 후 새 eRx를 받아야만 조제할 수 있는 것은 아니다."
+    },
+    "learning_boundary": "기술 장애가 있는 일반 retail CII의 original paper, fax 전달과 oral-emergency 경로를 구별한다. 실제 emergency oral order의 후속 처방 기한, LTCF/hospice/infusion fax 예외 또는 임상 치료 선택의 전체 요건은 별도로 검토해야 한다."
+  },
+  "visible_content_sha256": "31d70597669d39092eb1ee313033dd6b92fec16ff636e6aebee480c844c3752f",
+  "design_change_ko": "외부 notes를 전제한 보기와 추상적인 두 사례를 제거했다. 실제 courier 도착·fax 이용·기술 장애·환자 설정을 제공해 lawful paper route와 oral/fax 예외를 구체적으로 판단하게 한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "290-10",
+        "21 CFR 290.10(c)"
+      ],
+      [
+        "1306-11",
+        "21 CFR 1306.11(d)"
+      ],
+      [
+        "ma721",
+        "105 CMR 721.070(A)(2)"
+      ]
+    ],
+    "B": [
+      [
+        "1306-11",
+        "21 CFR 1306.11(a),(e)–(g)"
+      ]
+    ],
+    "C": [
+      [
+        "ma721",
+        "105 CMR 721.070(A)(2)"
+      ],
+      [
+        "ma23",
+        "M.G.L. c.94C §23(h)(ii)"
+      ],
+      [
+        "1306-11",
+        "21 CFR 1306.11(a)"
+      ]
+    ],
+    "D": [
+      [
+        "ma721",
+        "105 CMR 721.070(A)(2)"
+      ],
+      [
+        "ma23",
+        "M.G.L. c.94C §23(g),(h)(ii)"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "2c041525c6389f00c743065f851fa014f46c2a97759d9f1a765087253b4d9066",
+      "author_supported": "NO",
+      "rationale_sha256": "f4dae72804cadcfa3055b3614c74af700dc06092eb15d9539b2f2d3f68a57af5",
+      "authorities": [
+        {
+          "source_id": "290-10",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-290/section-290.10",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.612226+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/290-10.html",
+          "raw_sha256": "393b0163b8ce8d3f7527789c2f987ac9f3d626ff6de7adfe94aa6a15724195be",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/290-10.txt",
+          "text_sha256": "2c1811791989f664edd9489aa91bd3ddffd6baaa5047f53e7d80a2be53086bc0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/290-10-retrieval.json",
+          "retrieval_metadata_sha256": "e83a250dca21e32d33549732bb7020024def99ff4a9f621c514167774afd763c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 290.10(c)"
+        },
+        {
+          "source_id": "1306-11",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.523417+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.html",
+          "raw_sha256": "f6478d531c6145bc78c8d0483e56bedca87bad3a4a79611fc538107df497fe25",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.txt",
+          "text_sha256": "22feba5ab622927314ad4730663d1d0d7fa6e1326eda6a7dbb6ff36c3c45edfc",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11-retrieval.json",
+          "retrieval_metadata_sha256": "ba2cb04725d8bd38bb8c2f0948174ff56cc03ad06cff41ccd89d803301388e14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.11(d)"
+        },
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.070(A)(2)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "ce4c1f455016094b14d44eeafb3d12ce24addcb5447eaf1132e1d0ae25cef3e9",
+      "author_supported": "NO",
+      "rationale_sha256": "c89aa5ee88aa7b523ea2c1884db2550a8a934375b27fef5b8047d8d3f2618333",
+      "authorities": [
+        {
+          "source_id": "1306-11",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.523417+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.html",
+          "raw_sha256": "f6478d531c6145bc78c8d0483e56bedca87bad3a4a79611fc538107df497fe25",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.txt",
+          "text_sha256": "22feba5ab622927314ad4730663d1d0d7fa6e1326eda6a7dbb6ff36c3c45edfc",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11-retrieval.json",
+          "retrieval_metadata_sha256": "ba2cb04725d8bd38bb8c2f0948174ff56cc03ad06cff41ccd89d803301388e14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.11(a),(e)–(g)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "c121dc3b6b0b9c9362c086cd5a6bea73abcfc068b081eaa7aedea2eb5c00d9d1",
+      "author_supported": "YES",
+      "rationale_sha256": "425dd3833abb778530de35af19080da7b6f1bcadf1819e0e5d5b35b12a893f8e",
+      "authorities": [
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.070(A)(2)"
+        },
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(h)(ii)"
+        },
+        {
+          "source_id": "1306-11",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.523417+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.html",
+          "raw_sha256": "f6478d531c6145bc78c8d0483e56bedca87bad3a4a79611fc538107df497fe25",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11.txt",
+          "text_sha256": "22feba5ab622927314ad4730663d1d0d7fa6e1326eda6a7dbb6ff36c3c45edfc",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-11-retrieval.json",
+          "retrieval_metadata_sha256": "ba2cb04725d8bd38bb8c2f0948174ff56cc03ad06cff41ccd89d803301388e14",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.11(a)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "71adcaa0bb60404988b29cd83843c68946551087a431b62a5ffd8ae893b7d0a1",
+      "author_supported": "NO",
+      "rationale_sha256": "4528cba53a3a66623671f97b3b37eb555a44028c478f50f503dd8dd7109cee4d",
+      "authorities": [
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.070(A)(2)"
+        },
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(g),(h)(ii)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [
+    {
+      "source_id": "1308-12",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T06:16:34.038573+00:00",
+      "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12.html",
+      "raw_sha256": "6389495a1ec32ee5c429615222db994bf138276f02e898fda6c264c43664d83a",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12.txt",
+      "text_sha256": "20a5dab405da59acf49af5400261a021cd6935e4f2d7b262513b75f7042a6384",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12-retrieval.json",
+      "retrieval_metadata_sha256": "ff895f1f5222a0c4af1f57f11eef08529d720291e453041773ec9ac492bc3aaa",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "21CFR1308.12(b)(1)(xiv), oxycodone ScheduleII"
+    }
+  ],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-EXP-0615",
+      "draft_visible_content_sha256": "31d70597669d39092eb1ee313033dd6b92fec16ff636e6aebee480c844c3752f",
+      "original_question_id": "MA-EXP-0615",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0154",
+        "cosine": 0.097207,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0154",
+          "stem": "A community pharmacy receives by fax an otherwise valid Schedule II prescription for a routine ambulatory patient. The patient is not in an LTCF or hospice and the drug is not a qualifying narcotic compounded for direct parenteral or infusion use. May the fax itself serve as the original Schedule II prescription?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Yes, every faxed Schedule II prescription is an original once a pharmacist receives it."
+            },
+            {
+              "id": "B",
+              "text": "Yes, if the prescriber calls afterward to confirm the fax."
+            },
+            {
+              "id": "C",
+              "text": "No; absent a federal fax-as-original exception, the fax does not itself replace the required original prescription."
+            },
+            {
+              "id": "D",
+              "text": "No, because Schedule II prescriptions may never be transmitted by fax for any purpose."
+            },
+            {
+              "id": "E",
+              "text": "Yes, if the quantity is a seven-day supply or less."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0031",
+        "cosine": 0.120505,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0031",
+          "stem": "A Schedule II prescription is faxed for a resident of a qualifying long-term-care facility. The pharmacy has verified the required prescriber and patient information; other applicable requirements are satisfied.\n\nWhat is the federal effect of the LTCF fax exception? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The fax is valid only as a follow-up to a previous emergency dispensing."
+            },
+            {
+              "id": "B",
+              "text": "The fax permits release only if an emergency oral order is also obtained."
+            },
+            {
+              "id": "C",
+              "text": "Treat this qualifying LTCF fax as the original, subject to the other requirements."
+            },
+            {
+              "id": "D",
+              "text": "The fax permits preparation, but a paper original is required before release."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-031",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-REV-0031",
+        "cosine": 0.120505,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0031",
+          "stem": "A Schedule II prescription is faxed for a resident of a qualifying long-term-care facility. The pharmacy has verified the required prescriber and patient information; other applicable requirements are satisfied.\n\nWhat is the federal effect of the LTCF fax exception? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The fax is valid only as a follow-up to a previous emergency dispensing."
+            },
+            {
+              "id": "B",
+              "text": "The fax permits release only if an emergency oral order is also obtained."
+            },
+            {
+              "id": "C",
+              "text": "Treat this qualifying LTCF fax as the original, subject to the other requirements."
+            },
+            {
+              "id": "D",
+              "text": "The fax permits preparation, but a paper original is required before release."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-031",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0031",
+        "cosine": 0.120505,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0031",
+          "stem": "A Schedule II prescription is faxed for a resident of a qualifying long-term-care facility. The pharmacy has verified the required prescriber and patient information; other applicable requirements are satisfied.\n\nWhat is the federal effect of the LTCF fax exception? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The fax is valid only as a follow-up to a previous emergency dispensing."
+            },
+            {
+              "id": "B",
+              "text": "The fax permits release only if an emergency oral order is also obtained."
+            },
+            {
+              "id": "C",
+              "text": "Treat this qualifying LTCF fax as the original, subject to the other requirements."
+            },
+            {
+              "id": "D",
+              "text": "The fax permits preparation, but a paper original is required before release."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-031",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0154의 ordinaryfax-as-original 금지와 일부 원칙을 공유하지만 현재는 MAoutage로 lawfulpaper가 있고 원본이 필요전도착 가능한 상황에서 oral/fax/paper/electronic의 실제 dispensing plan을 고른다. REV0031은 반대로 qualifyingLTCF fax-as-original 예외다. Scope와 실제 허용 경로가 다름을 확인했다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

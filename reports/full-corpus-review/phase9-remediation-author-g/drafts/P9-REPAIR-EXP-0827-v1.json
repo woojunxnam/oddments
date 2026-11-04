@@ -1,0 +1,373 @@
+{
+  "draft_key": "P9-REPAIR-EXP-0827",
+  "original_question_id": "MA-EXP-0827",
+  "original_record_sha256": "ebf7a78952a25c7229117cf5578f473700049275d1fd172861e88d63270d251d",
+  "original_collection": "practice_expansion/2026-10-23/candidates/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-c-review.json",
+  "native_finding_report_sha256": "f3d4fd169f2125f10509f521b79e25d68b5f461801bfce1027de6c879de4ac1a",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SATA",
+  "stem": "At 4:00 p.m. on Friday, November 6, 2026, a DEA-registered retail pharmacy discovers a confirmed theft of controlled substances. The inventory reconciliation will finish on Thursday, November 12. Monday, November 9 is the next business day; no holiday affects it.\n\nWhich proposed steps meet the federal DEA reporting requirements for this theft? Select ALL that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Send the initial written notice to the local DEA Field Division Office on Monday morning, November 9, while reconciliation continues."
+    },
+    {
+      "id": "B",
+      "text": "Set December 21, 2026 as the latest date for submitting the complete and accurate electronic DEA Form 106."
+    },
+    {
+      "id": "C",
+      "text": "Wait until November 12 to send the initial written notice so that it includes the final inventory count."
+    },
+    {
+      "id": "D",
+      "text": "Use December 24 as the Form 106 deadline if the initial written notice is sent on November 9."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "Confirmed theft에서 one-business-day written notice와 discovery 후 45일의 completed electronic Form 106을 따로 관리한다. 주말은 첫 clock에서 고려하지만 Form 106의 시작점을 written-notice 날짜로 바꾸지 않는다. 최종 조사 완료는 초기 통지를 늦추는 사유가 아니다.",
+    "choice_analysis": {
+      "A": "1301.76(b)의 initial written notice는 discovery로부터 one business day 안에 필요하다. 본문에서 다음 business day가 월요일 11월 9일이라고 명시한다. Known theft의 초기 통지는 최종 수량 조사 완료까지 미루지 않는다.",
+      "B": "별도의 complete and accurate electronic Form 106은 discovery 후 45일 안에 제출한다. 11월 6일에서 45일 후는 12월 21일이다. Initial notice를 어느 날 보냈는지가 이 45일의 시작점을 바꾸지 않는다. 늦어도 이 날짜까지 정확한 양식을 제출하는 계획이다.",
+      "C": "수량을 조사 중이라는 이유로 별도 initial deadline이 중단되지 않는다. 11월 12일은 주어진 next business day인 11월 9일보다 늦다. 초기 written notice와 완전한 후속 Form 106은 같은 시점에 한꺼번에만 제출해야 하는 절차가 아니다.",
+      "D": "이 계산은 discovery가 아니라 initial written notice 날짜부터 45일을 센 것이다. Regulation은 after discovery라고 정한다. 실제 discovery인 11월 6일을 기준으로 12월 21일이며, 월요일의 초기 통지는 새 Form 106 clock을 만들지 않는다."
+    },
+    "learning_boundary": "21CFR1301.76(b)의 retail DEA registrant 연방 보고 의무만 평가한다. Massachusetts Board, DPH, 경찰 또는 다른 운송·중앙조제 경로의 별도 보고 수신기관과 기한은 이 정답으로 결정하지 않는다."
+  },
+  "visible_content_sha256": "fec0557480b9c95e1a9a8595d87b46f4caa999e7998b62fee8efe8f7063b891d",
+  "design_change_ko": "Retrieved current라는 메타 문구를 제거했다. Discovery의 실제 요일·다음 business day·조사 완료일 및 Form106 날짜를 주고 각각의 action/clock을 판단하게 한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "loss",
+        "21 CFR 1301.76(b), initial written notice deadline"
+      ]
+    ],
+    "B": [
+      [
+        "loss",
+        "21 CFR 1301.76(b), complete electronic Form 106 within 45 days after discovery"
+      ]
+    ],
+    "C": [
+      [
+        "loss",
+        "21 CFR 1301.76(b), distinct initial notice and completed Form 106 requirements"
+      ]
+    ],
+    "D": [
+      [
+        "loss",
+        "21 CFR 1301.76(b), discovery trigger for Form 106"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "4e7b8baf69b89becc93e2738845e410e10f342e84b2b5a15509b9746f3a7b223",
+      "author_supported": "YES",
+      "rationale_sha256": "a8442c0d6dd2958f61d71731715df857438eb67343708a1b982955fc1b4e65ee",
+      "authorities": [
+        {
+          "source_id": "loss",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.76",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.274256+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.html",
+          "raw_sha256": "bf9c8a0ba2a893d9d743b447cd5e745099a837ae7f1ee92eb14d496f1ba16c77",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.txt",
+          "text_sha256": "2dc7f426d7604f4916726b5cda9279c22501ce29e4f2a7adcb96265b1120db3c",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss-retrieval.json",
+          "retrieval_metadata_sha256": "67af5fda990accbb7ffdfe5c7b8a4d26e27288eb47b078cd774aee339c9c4dd6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1301.76(b), initial written notice deadline"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "f1feb6dabb2f9abbc6264f2d82b1483cc5c49c9861ea39c9bc6c9ac6b0619e41",
+      "author_supported": "YES",
+      "rationale_sha256": "98ea79e9d0639e8a28f39abd9acd2b613ce4a8a52f8e86c5b26dfd845c1b9a47",
+      "authorities": [
+        {
+          "source_id": "loss",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.76",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.274256+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.html",
+          "raw_sha256": "bf9c8a0ba2a893d9d743b447cd5e745099a837ae7f1ee92eb14d496f1ba16c77",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.txt",
+          "text_sha256": "2dc7f426d7604f4916726b5cda9279c22501ce29e4f2a7adcb96265b1120db3c",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss-retrieval.json",
+          "retrieval_metadata_sha256": "67af5fda990accbb7ffdfe5c7b8a4d26e27288eb47b078cd774aee339c9c4dd6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1301.76(b), complete electronic Form 106 within 45 days after discovery"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "56955588c3bd5c98046c3bcd35a898ba6db798bea7e6a28d12b427303349b0ff",
+      "author_supported": "NO",
+      "rationale_sha256": "2e735c86614002402b71e85799f1a45675e8d4dc7dc572a4cfdd5dcf89b3318c",
+      "authorities": [
+        {
+          "source_id": "loss",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.76",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.274256+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.html",
+          "raw_sha256": "bf9c8a0ba2a893d9d743b447cd5e745099a837ae7f1ee92eb14d496f1ba16c77",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.txt",
+          "text_sha256": "2dc7f426d7604f4916726b5cda9279c22501ce29e4f2a7adcb96265b1120db3c",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss-retrieval.json",
+          "retrieval_metadata_sha256": "67af5fda990accbb7ffdfe5c7b8a4d26e27288eb47b078cd774aee339c9c4dd6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1301.76(b), distinct initial notice and completed Form 106 requirements"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "a41cef0090267125f3ad690dc5b882f593cb7ba7449599e60bc427b810ddcd44",
+      "author_supported": "NO",
+      "rationale_sha256": "3e89587e5dfae4d4bda161874b45fe91f4e7c45fd2bf92a782cd20ae39852d30",
+      "authorities": [
+        {
+          "source_id": "loss",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.76",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.274256+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.html",
+          "raw_sha256": "bf9c8a0ba2a893d9d743b447cd5e745099a837ae7f1ee92eb14d496f1ba16c77",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss.txt",
+          "text_sha256": "2dc7f426d7604f4916726b5cda9279c22501ce29e4f2a7adcb96265b1120db3c",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/loss-retrieval.json",
+          "retrieval_metadata_sha256": "67af5fda990accbb7ffdfe5c7b8a4d26e27288eb47b078cd774aee339c9c4dd6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1301.76(b), discovery trigger for Form 106"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-EXP-0827",
+      "draft_visible_content_sha256": "fec0557480b9c95e1a9a8595d87b46f4caa999e7998b62fee8efe8f7063b891d",
+      "original_question_id": "MA-EXP-0827",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0058",
+        "cosine": 0.142507,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0058",
+          "stem": "On Friday morning, a pharmacy discovers a significant unexplained loss of controlled substances. The investigation cannot be completed that day. Which federal response is correct?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Wait for the investigation before contacting DEA."
+            },
+            {
+              "id": "B",
+              "text": "Give oral notice within 24 hours and take no further action."
+            },
+            {
+              "id": "C",
+              "text": "File Form 106 within one business day instead of separate notice."
+            },
+            {
+              "id": "D",
+              "text": "Send written DEA notice within one business day and Form 106 within 45 calendar days."
+            },
+            {
+              "id": "E",
+              "text": "Notify only the Massachusetts Board because the loss occurred in Massachusetts."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-EXP-0827",
+        "cosine": 0.162834,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0827",
+          "stem": "Case A: A pharmacy discovers a reportable theft and plans to withhold the initial written DEA notice until a final quantity investigation is complete.\n\nCase B: Staff confuse the current provision's completed electronic Form 106 period with the separate initial-notice deadline.\n\nWhich statements accurately apply to the described cases or the related requirements? Select ALL that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The retrieved current 21 CFR 1301.76(b) states 45 days after discovery for the complete electronic Form 106."
+            },
+            {
+              "id": "B",
+              "text": "Significance depends on the specified circumstances and patterns rather than one universal dollar threshold."
+            },
+            {
+              "id": "C",
+              "text": "The applicable initial written DEA notice is due within one business day of discovery."
+            },
+            {
+              "id": "D",
+              "text": "A confirmed theft needs no report whenever only a small quantity was taken."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "A",
+            "B",
+            "C"
+          ],
+          "family_id": "ORD05",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-EXP-0828",
+        "cosine": 0.159856,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0828",
+          "stem": "Case A: A pharmacy discovers a reportable theft and plans to withhold the initial written DEA notice until a final quantity investigation is complete.\n\nCase B: Staff confuse the current provision's completed electronic Form 106 period with the separate initial-notice deadline.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "A confirmed theft needs no report whenever only a small quantity was taken."
+            },
+            {
+              "id": "B",
+              "text": "The applicable initial written DEA notice is due within one business day of discovery."
+            },
+            {
+              "id": "C",
+              "text": "Significance depends on the specified circumstances and patterns rather than one universal dollar threshold."
+            },
+            {
+              "id": "D",
+              "text": "The retrieved current 21 CFR 1301.76(b) states 45 days after discovery for the complete electronic Form 106."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "ORD05",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0081",
+        "cosine": 0.11776,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0081",
+          "stem": "A pharmacy discovers a confirmed controlled-substance theft. Its investigation will take several weeks. The manager proposes making no written contact with DEA until the completed electronic Form 106 is ready.\n\nWhich timeline correctly separates the two federal duties? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Notice: 45 days after discovery; Form 106: 1 business day after notice."
+            },
+            {
+              "id": "B",
+              "text": "Notice: 1 business day; completed Form 106: 45 days after discovery."
+            },
+            {
+              "id": "C",
+              "text": "Notice: 1 business day; completed Form 106: 45 days after investigation ends."
+            },
+            {
+              "id": "D",
+              "text": "Notice and completed Form 106: both 45 days after discovery."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "REV-081",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0058/REV0081도 initialnotice와Form106 두clock을 다루므로 새 독립 법규가 아니다. Current는 Fridayactualdiscovery, Mondaynextbusinessday, Thursdayaudit와 두 calendar-date 계획을 주어 retrieved/source 메타를 없앴다. 원인의 허용범위와 clock 사실을 구체적으로 개선한 non-additive replacement다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

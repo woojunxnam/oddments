@@ -1,0 +1,455 @@
+{
+  "draft_key": "P9-REPAIR-EXP-0851",
+  "original_question_id": "MA-EXP-0851",
+  "original_record_sha256": "904cfee0c387cebc6588491a321a01dc6be73e9e50e88f978d5dca648ff40d23",
+  "original_collection": "practice_expansion/2026-10-23/candidates/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-c-review.json",
+  "native_finding_report_sha256": "f3d4fd169f2125f10509f521b79e25d68b5f461801bfce1027de6c879de4ac1a",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SATA",
+  "stem": "A Massachusetts pharmacy stores unopened LANTUS 10-mL vials in a monitored refrigerator at 5°C; their manufacturer expiration date is ten months away. During counseling, one patient reports keeping a LANTUS SoloStar pen at 23°C since first using it ten days ago. Another patient has kept an opened LANTUS 10-mL vial at 5°C since first using it ten days ago. None of the products has frozen or been exposed to excessive heat or light.\n\nWhich storage or discard instructions follow the product labeling and Massachusetts storage policy? Select ALL that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Keep the unopened vials refrigerated at 5°C and use their manufacturer expiration date if proper storage continues."
+    },
+    {
+      "id": "B",
+      "text": "Refrigerate the opened SoloStar pen at 5°C between uses while keeping its 28-day discard date."
+    },
+    {
+      "id": "C",
+      "text": "Discard the in-use SoloStar pen 28 days after first use, even if insulin remains."
+    },
+    {
+      "id": "D",
+      "text": "Move the opened vial to room temperature because LANTUS labeling prohibits refrigerating an in-use vial."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "같은 insulin이라도 unopened refrigerated vial, opened vial, opened SoloStar pen의 label 조건이 다르다. 제조사 expiration과 in-use28일을 구별하며, opened vial은 냉장 가능하지만 opened pen은 room-temperature only다. MA의 일반 refrigerator 범위만으로 제품별 label 차이를 대신하지 않는다.",
+    "choice_analysis": {
+      "A": "LANTUS labeling 16.2의 unopened refrigerated vial은 2–8°C에서 manufacturer expiration까지 보관할 수 있다. 5°C는 그 범위 안이다. Unopened refrigerated 재고에 opened 또는 room-temperature 제품의 28일 기간을 미리 적용하지 않는다. MA Policy2020-05 I도 package insert에 따른 보관을 요구한다.",
+      "B": "Opened SoloStar pen은 room temperature only이며 do not refrigerate라고 명시한다. 보관 기간 28일을 맞추는 것만으로 보관 온도 조건까지 충족되는 것은 아니다. Opened vial에 허용된 refrigerated storage를 pen에 옮겨 적용하지 않는다.",
+      "C": "SoloStar IFU는 최초 사용 후 최대 28일이며 남은 insulin이 있어도 그 뒤 폐기하도록 명시한다. 현재 23°C는 below30°C 조건에 맞고 아직 10일이 지났지만, 제품 carton의 더 늦은 unopened expiration이 in-use 기간을 늘리지 않는다.",
+      "D": "10-mL vial은 opened 상태에서도 refrigerated 또는 below30°C room-temperature storage를 허용하며 두 경우 모두 28일이다. 따라서 적절히 유지한 5°C에서 반드시 꺼내야 한다는 설명은 pen의 room-temperature-only 조건을 vial에 잘못 적용한 것이다."
+    },
+    "learning_boundary": "LANTUS의 vial/pen별 unopened 및 in-use label 조건을 적용한다. Freeze/heat excursion 뒤 실제 안전성 판정이나 다른 insulin 제품의 기간은 이 수치를 그대로 복사하여 판단하지 않는다."
+  },
+  "visible_content_sha256": "c645370319093fc0a583d686294559b6d7e02dd4071f270fa84773a43ec9bd1a",
+  "design_change_ko": "Feels cold/door alone/every opening 같은 극단적 오답을 제거했다. 실제 LANTUS vial/pen과 온도·개봉 상태·기간을 주고 서로 다른 device label의 그럴듯한 혼동을 선택지로 사용한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "lantus",
+        "LANTUS prescribing information revised May2025, §16.2 storage table, unopened refrigerated 10-mL vial"
+      ],
+      [
+        "storage",
+        "Policy 2020-05 I"
+      ]
+    ],
+    "B": [
+      [
+        "lantus",
+        "LANTUS §16.2 storage table; SoloStar Instructions for Use, After first use"
+      ],
+      [
+        "storage",
+        "Policy 2020-05 I"
+      ]
+    ],
+    "C": [
+      [
+        "lantus",
+        "LANTUS §16.2; SoloStar Instructions for Use, up to28days after first use"
+      ]
+    ],
+    "D": [
+      [
+        "lantus",
+        "LANTUS §16.2 storage table and Vial Instructions for Use, in-use opened vial storage"
+      ],
+      [
+        "storage",
+        "Policy 2020-05 I"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "62d065d5189af5c2338eabcc65790a3ea755adf958e3075d4e339faab0bebfa7",
+      "author_supported": "YES",
+      "rationale_sha256": "1411666370ea6cd8da61d8d9fb9583d7c92d56d06421b9622834b4883065c357",
+      "authorities": [
+        {
+          "source_id": "lantus",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d5e07a0c-7e14-4756-9152-9fea485d654a",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:57:56.029350+00:00",
+          "version_or_effective_date_status": "Current official DailyMed Sanofi LANTUS/SoloStar label, revisedMay2025; page UpdatedJune2,2025; API index listsSPL35 publishedJuly2,2025. Different metadata dates retained separately. Exact change commencement UNKNOWN. Used16.2storage table and device IFUs only.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.html",
+          "raw_sha256": "b5e5fb7311ee391e91bd5ef0560611b021bb62d40cc8336da2d5f8dce90504b9",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.txt",
+          "text_sha256": "b01a81eff1c034d26f09b641899564d15ec14f025746c238880112faebd28ed0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus-retrieval.json",
+          "retrieval_metadata_sha256": "2533ac489af154cabf9d0de624e51cd7261a4e0ea7ee37cb55de2144289b8fb2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "LANTUS prescribing information revised May2025, §16.2 storage table, unopened refrigerated 10-mL vial"
+        },
+        {
+          "source_id": "storage",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-05-refrigerated-and-frozen-medication-storage-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.255041+00:00",
+          "version_or_effective_date_status": "Policy2020-05 adopted2020-06-26, revised2020-10-23; current3-page PDF fully read. UsedI manufacturer-package-insert storage obligation; no privateUSP full text used or republished.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.pdf",
+          "raw_sha256": "c88d06deff6f087f481b02ff1234e5d0e487099277319930d1da78cefdc04e13",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.txt",
+          "text_sha256": "ce3cd1ba203b90bd9a344a46ba52236b98d30202ea850df0acf8dbbacb2a3d08",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage-retrieval.json",
+          "retrieval_metadata_sha256": "710e75d37ae2e84287ef48aa9ba1bbcb9756d32eeaf68f1e59e5f2d4d8cc761d",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-05 I"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "a7d4cf39291ad22ea6af48eed086144b252b69c90e36b77e8b5c9eb527f1fa0b",
+      "author_supported": "NO",
+      "rationale_sha256": "6ba43d5bd7d17103c4549b2974691e7ca5200bc9dc9e0bdca9d89afce01d3894",
+      "authorities": [
+        {
+          "source_id": "lantus",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d5e07a0c-7e14-4756-9152-9fea485d654a",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:57:56.029350+00:00",
+          "version_or_effective_date_status": "Current official DailyMed Sanofi LANTUS/SoloStar label, revisedMay2025; page UpdatedJune2,2025; API index listsSPL35 publishedJuly2,2025. Different metadata dates retained separately. Exact change commencement UNKNOWN. Used16.2storage table and device IFUs only.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.html",
+          "raw_sha256": "b5e5fb7311ee391e91bd5ef0560611b021bb62d40cc8336da2d5f8dce90504b9",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.txt",
+          "text_sha256": "b01a81eff1c034d26f09b641899564d15ec14f025746c238880112faebd28ed0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus-retrieval.json",
+          "retrieval_metadata_sha256": "2533ac489af154cabf9d0de624e51cd7261a4e0ea7ee37cb55de2144289b8fb2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "LANTUS §16.2 storage table; SoloStar Instructions for Use, After first use"
+        },
+        {
+          "source_id": "storage",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-05-refrigerated-and-frozen-medication-storage-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.255041+00:00",
+          "version_or_effective_date_status": "Policy2020-05 adopted2020-06-26, revised2020-10-23; current3-page PDF fully read. UsedI manufacturer-package-insert storage obligation; no privateUSP full text used or republished.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.pdf",
+          "raw_sha256": "c88d06deff6f087f481b02ff1234e5d0e487099277319930d1da78cefdc04e13",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.txt",
+          "text_sha256": "ce3cd1ba203b90bd9a344a46ba52236b98d30202ea850df0acf8dbbacb2a3d08",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage-retrieval.json",
+          "retrieval_metadata_sha256": "710e75d37ae2e84287ef48aa9ba1bbcb9756d32eeaf68f1e59e5f2d4d8cc761d",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-05 I"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "cc312a6dbe47f0813f5fc74eb48d276aa6f1228ad9cf88c757574689ff8df27e",
+      "author_supported": "YES",
+      "rationale_sha256": "937d53d70f6ce5a7a7647003f132fdf11a5326209edfe38677b59549eebb8269",
+      "authorities": [
+        {
+          "source_id": "lantus",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d5e07a0c-7e14-4756-9152-9fea485d654a",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:57:56.029350+00:00",
+          "version_or_effective_date_status": "Current official DailyMed Sanofi LANTUS/SoloStar label, revisedMay2025; page UpdatedJune2,2025; API index listsSPL35 publishedJuly2,2025. Different metadata dates retained separately. Exact change commencement UNKNOWN. Used16.2storage table and device IFUs only.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.html",
+          "raw_sha256": "b5e5fb7311ee391e91bd5ef0560611b021bb62d40cc8336da2d5f8dce90504b9",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.txt",
+          "text_sha256": "b01a81eff1c034d26f09b641899564d15ec14f025746c238880112faebd28ed0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus-retrieval.json",
+          "retrieval_metadata_sha256": "2533ac489af154cabf9d0de624e51cd7261a4e0ea7ee37cb55de2144289b8fb2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "LANTUS §16.2; SoloStar Instructions for Use, up to28days after first use"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "ac8601e22316bf10a5f811e9b5a9fc460c0991f9bbec74ae5b0afca967541c42",
+      "author_supported": "NO",
+      "rationale_sha256": "d9ecb4ad91e023f38d88b6ba28e93c03e9a3c038ba956e9239a4939308b102d1",
+      "authorities": [
+        {
+          "source_id": "lantus",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d5e07a0c-7e14-4756-9152-9fea485d654a",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:57:56.029350+00:00",
+          "version_or_effective_date_status": "Current official DailyMed Sanofi LANTUS/SoloStar label, revisedMay2025; page UpdatedJune2,2025; API index listsSPL35 publishedJuly2,2025. Different metadata dates retained separately. Exact change commencement UNKNOWN. Used16.2storage table and device IFUs only.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.html",
+          "raw_sha256": "b5e5fb7311ee391e91bd5ef0560611b021bb62d40cc8336da2d5f8dce90504b9",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus.txt",
+          "text_sha256": "b01a81eff1c034d26f09b641899564d15ec14f025746c238880112faebd28ed0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/lantus-retrieval.json",
+          "retrieval_metadata_sha256": "2533ac489af154cabf9d0de624e51cd7261a4e0ea7ee37cb55de2144289b8fb2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "LANTUS §16.2 storage table and Vial Instructions for Use, in-use opened vial storage"
+        },
+        {
+          "source_id": "storage",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-05-refrigerated-and-frozen-medication-storage-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.255041+00:00",
+          "version_or_effective_date_status": "Policy2020-05 adopted2020-06-26, revised2020-10-23; current3-page PDF fully read. UsedI manufacturer-package-insert storage obligation; no privateUSP full text used or republished.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.pdf",
+          "raw_sha256": "c88d06deff6f087f481b02ff1234e5d0e487099277319930d1da78cefdc04e13",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage.txt",
+          "text_sha256": "ce3cd1ba203b90bd9a344a46ba52236b98d30202ea850df0acf8dbbacb2a3d08",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/storage-retrieval.json",
+          "retrieval_metadata_sha256": "710e75d37ae2e84287ef48aa9ba1bbcb9756d32eeaf68f1e59e5f2d4d8cc761d",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-05 I"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-EXP-0851",
+      "draft_visible_content_sha256": "c645370319093fc0a583d686294559b6d7e02dd4071f270fa84773a43ec9bd1a",
+      "original_question_id": "MA-EXP-0851",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0093",
+        "cosine": 0.046002,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0093",
+          "stem": "A pharmacy refrigerator is found at 68°F after an overnight equipment failure. Several unopened insulin glargine cartons were stored there, and the pharmacy cannot yet determine how long the temperature was outside the labeled storage range. What should the pharmacist do with those cartons before dispensing?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Dispense them normally because unopened prescription stock cannot be adulterated until it reaches a patient."
+            },
+            {
+              "id": "B",
+              "text": "Relabel each carton with the observed temperature and dispense if the patient accepts the excursion."
+            },
+            {
+              "id": "C",
+              "text": "Segregate the cartons from saleable stock and resolve product integrity under the labeling/manufacturer information before dispensing."
+            },
+            {
+              "id": "D",
+              "text": "Return the cartons to refrigeration for one hour; restoring temperature automatically restores legal saleability."
+            },
+            {
+              "id": "E",
+              "text": "Convert the cartons to patient-return inventory and use the ordinary returned-drug resale rule."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0040",
+        "cosine": 0.099662,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0040",
+          "stem": "A reconstituted product has a short labeled in-use period. Its unopened manufacturer's expiration is months away, and the patient's prescription remains valid for the rest of the year.\n\nWhich conclusion follows? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Limit use of the prepared product to its applicable in-use period."
+            },
+            {
+              "id": "B",
+              "text": "Refrigerating the product restarts its manufacturer's expiration."
+            },
+            {
+              "id": "C",
+              "text": "The prescription's annual validity becomes the prepared product's BUD."
+            },
+            {
+              "id": "D",
+              "text": "A refill authorization permits use after the product's in-use limit."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "REV-040",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-REV-0040",
+        "cosine": 0.099662,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0040",
+          "stem": "A reconstituted product has a short labeled in-use period. Its unopened manufacturer's expiration is months away, and the patient's prescription remains valid for the rest of the year.\n\nWhich conclusion follows? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Limit use of the prepared product to its applicable in-use period."
+            },
+            {
+              "id": "B",
+              "text": "Refrigerating the product restarts its manufacturer's expiration."
+            },
+            {
+              "id": "C",
+              "text": "The prescription's annual validity becomes the prepared product's BUD."
+            },
+            {
+              "id": "D",
+              "text": "A refill authorization permits use after the product's in-use limit."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "REV-040",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0040",
+        "cosine": 0.099662,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0040",
+          "stem": "A reconstituted product has a short labeled in-use period. Its unopened manufacturer's expiration is months away, and the patient's prescription remains valid for the rest of the year.\n\nWhich conclusion follows? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Limit use of the prepared product to its applicable in-use period."
+            },
+            {
+              "id": "B",
+              "text": "Refrigerating the product restarts its manufacturer's expiration."
+            },
+            {
+              "id": "C",
+              "text": "The prescription's annual validity becomes the prepared product's BUD."
+            },
+            {
+              "id": "D",
+              "text": "A refill authorization permits use after the product's in-use limit."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "REV-040",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0093은 unopenedinsulin의 unknownexcursion후 quarantine이고 REV0040은 이름 없는 reconstitutedproduct의 genericin-use 기한이다. Current는 properstorage상태에서 실제LANTUSvial/pen의 device-specificrefrigeration/28day/expiration 차이를 판단한다. Feelscold같은 단서를 제품별 그럴듯한 혼동으로 바꿨다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

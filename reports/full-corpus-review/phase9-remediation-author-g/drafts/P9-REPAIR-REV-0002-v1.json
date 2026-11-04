@@ -1,0 +1,454 @@
+{
+  "draft_key": "P9-REPAIR-REV-0002",
+  "original_question_id": "MA-REV-0002",
+  "original_record_sha256": "df223ded8442eee0252358fd89506d8f0c06fca8cfdfca4544c0ec879e3a0a02",
+  "original_collection": "practice_expansion/2026-10-27-quality/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-d-review.json",
+  "native_finding_report_sha256": "d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SBA",
+  "stem": "A Massachusetts pharmacist who does not practice CDTM has completed 13 eligible CE contact hours for 2026. All applicable live, pharmacy-law and specialized-topic requirements are already satisfied. On December 30 she attends nine hours of ACPE-approved CE, including two hours of pharmacy law, during one calendar day.\n\nWhich entry records the maximum eligible conference credit and her resulting 2026 total? Select ONE answer.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Claim 8 conference hours and record a 2026 total of 21 hours."
+    },
+    {
+      "id": "B",
+      "text": "Claim 7 conference hours and record a 2026 total of 20 hours."
+    },
+    {
+      "id": "C",
+      "text": "Claim 9 conference hours and record a 2026 total of 22 hours."
+    },
+    {
+      "id": "D",
+      "text": "Exclude the two law hours, claim 6 conference hours, and record 19 hours for 2026."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "당일 실제 참석시간, 하루 인정 상한, 연간 최소치, 주제별 최소치를 구별한다. 이 사례는 9시간 참석에서 8시간을 인정하여 13+8=21시간을 기록한다. 연간 최소치까지의 부족분은 7시간이며, 법규 최소치를 이미 채웠다고 새 법규 CE를 총량에서 공제하지 않는다.",
+    "choice_analysis": {
+      "A": "247 CMR 4.03(7)은 하루 인정 상한을 8시간으로 정한다. 따라서 9시간 참석 중 8시간을 인정하고 기존 13시간에 더하면 21시간이다. 연간 최소 20시간을 넘었다고 적격 시간의 기록을 20에서 잘라야 하는 것은 아니다. 이미 충족한 법규 주제 시간이 포함되어 있다는 사실도 하루 상한을 없애거나 그 2시간을 총 CE에서 제외하지 않는다.",
+      "B": "20−13=7은 최소 20시간을 채우는 데 필요한 양이다. 이 문항은 실제 인정 가능한 당일 credit을 묻는다. 하루 상한 8시간을 적용하므로 7시간으로 제한할 근거가 없다. 최소 총량과 하루 인정 상한을 같은 수치로 취급하지 않는다. 이 보기는 최대 인정량을 묻는 질문에 대한 오답이며, 7시간 신청 행위 자체의 위법성을 판정하는 문항은 아니다.",
+      "C": "제공자가 승인한 프로그램에 실제 9시간 참석했어도 하루 인정 상한은 8시간이다. 13+9=22라는 산술 자체가 아니라 9시간을 모두 인정한 전제가 틀렸다. Live 또는 law CE라는 이유의 상한 예외는 제시된 근거에 없다.",
+      "D": "이미 법규 최소치를 충족했다는 이유로 하루 상한 8시간에서 이번 법규 교육 2시간을 다시 빼는 규칙은 없다. 법규 CE도 적격 총 CE에 포함된다. 또한 연간 부족분은 20−13=7시간이므로 6시간을 부족분이라고 설명해서도 안 된다. 이 보기의 합계 19는 이중 공제에서 생긴 잘못된 기록이다."
+    },
+    "learning_boundary": "통상적인 연간 CE의 최대 일일 인정량과 총량 기록에 한정한다. CDTM 추가 CE, 신규 면허 grace period, 졸업연도 면제 또는 Board의 extenuating-circumstance 심사는 이 사례의 범위 밖이다."
+  },
+  "visible_content_sha256": "32a8d2cf8e5f280270cd53de76162d0794fafd19f994931ffce82bea1f1a341b",
+  "design_change_ko": "원 key는 맞았지만 6시간 오답을 연간 부족분으로 설명한 오류를 제거했다. 네 보기 모두 실제 CE 장부의 당일 credit/연간 합계로 맞추고 6시간은 주제 credit의 이중 공제라는 구체적 오해로 설명한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "ce",
+        "247 CMR 4.03(3),(4),(7)"
+      ],
+      [
+        "ce-policy",
+        "Policy 2021-04 I, annual total including specialized topics and maximum daily credit"
+      ]
+    ],
+    "B": [
+      [
+        "ce",
+        "247 CMR 4.03(3),(4),(7)"
+      ]
+    ],
+    "C": [
+      [
+        "ce",
+        "247 CMR 4.03(7)"
+      ],
+      [
+        "ce-policy",
+        "Policy 2021-04 I, maximum eight contact hours per calendar day"
+      ]
+    ],
+    "D": [
+      [
+        "ce",
+        "247 CMR 4.03(4)(a),(7)"
+      ],
+      [
+        "ce-policy",
+        "Policy 2021-04 I, annual total includes specialized requirements"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "9eda4236ba094e4b53ca44caa1d41cb688cba5d2db96bbaca1d51c8d6b1081ca",
+      "author_supported": "YES",
+      "rationale_sha256": "99e4840c9e86ca3273b828d735e371022a15969e075aa14721f346bf5e9e3fc5",
+      "authorities": [
+        {
+          "source_id": "ce",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181230+00:00",
+          "version_or_effective_date_status": "Current official247CMR4 PDF, MARegister1330 dated2017-01-13. Annual20 clause states renewal period beginning2015-01-01; exact commencement of daily8-hour clause UNKNOWN. Named4.03 clauses directly read.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.pdf",
+          "raw_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.txt",
+          "text_sha256": "8b294dc47e51dba1b973b7d15d91b37fb15d3ba4406cb23a2b1e6c8f888da170",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-retrieval.json",
+          "retrieval_metadata_sha256": "1b45e6f950dc066fee9a63eef0802b77f7156b8e1adea72557d9995e2095254e",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 4.03(3),(4),(7)"
+        },
+        {
+          "source_id": "ce-policy",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181740+00:00",
+          "version_or_effective_date_status": "Policy2021-04 adopted2021-10-01, revised2021-12-03/2023-10-05/2023-11-02/2025-09-04; current4-page PDF directly read. Policy revision is not underlying statutory commencement.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.pdf",
+          "raw_sha256": "b89d3a580ce5f6ea233bf178bc1d1acee0129296804948d7cebea5e3f8e8b99b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.txt",
+          "text_sha256": "1c6d5a4fd202ad14388bc65696b3f9c02dcc147c50f0c24bcec5000ba7a9e112",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy-retrieval.json",
+          "retrieval_metadata_sha256": "7c03ddeb81b473adc6d1f1949fa5fa9c5b8edd94936ac862c09564920026ef9c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2021-04 I, annual total including specialized topics and maximum daily credit"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "437e2396dbaa933f2d4f6ba982e44b035abb96e24145e9072edda315b985f85c",
+      "author_supported": "NO",
+      "rationale_sha256": "889ac2f95e35b58d10e14e6a1d4e13751296df6b0281a4353cd5c43e3e7dd633",
+      "authorities": [
+        {
+          "source_id": "ce",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181230+00:00",
+          "version_or_effective_date_status": "Current official247CMR4 PDF, MARegister1330 dated2017-01-13. Annual20 clause states renewal period beginning2015-01-01; exact commencement of daily8-hour clause UNKNOWN. Named4.03 clauses directly read.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.pdf",
+          "raw_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.txt",
+          "text_sha256": "8b294dc47e51dba1b973b7d15d91b37fb15d3ba4406cb23a2b1e6c8f888da170",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-retrieval.json",
+          "retrieval_metadata_sha256": "1b45e6f950dc066fee9a63eef0802b77f7156b8e1adea72557d9995e2095254e",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 4.03(3),(4),(7)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "a88c161aa7f15e849d4d53823aab5c2a42f84bb0afba3992183a78fc2b5a014f",
+      "author_supported": "NO",
+      "rationale_sha256": "43a913a7e841e156871fa4e9872dfc5d6f1765a143d011e7d28a2edef4ef3410",
+      "authorities": [
+        {
+          "source_id": "ce",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181230+00:00",
+          "version_or_effective_date_status": "Current official247CMR4 PDF, MARegister1330 dated2017-01-13. Annual20 clause states renewal period beginning2015-01-01; exact commencement of daily8-hour clause UNKNOWN. Named4.03 clauses directly read.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.pdf",
+          "raw_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.txt",
+          "text_sha256": "8b294dc47e51dba1b973b7d15d91b37fb15d3ba4406cb23a2b1e6c8f888da170",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-retrieval.json",
+          "retrieval_metadata_sha256": "1b45e6f950dc066fee9a63eef0802b77f7156b8e1adea72557d9995e2095254e",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 4.03(7)"
+        },
+        {
+          "source_id": "ce-policy",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181740+00:00",
+          "version_or_effective_date_status": "Policy2021-04 adopted2021-10-01, revised2021-12-03/2023-10-05/2023-11-02/2025-09-04; current4-page PDF directly read. Policy revision is not underlying statutory commencement.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.pdf",
+          "raw_sha256": "b89d3a580ce5f6ea233bf178bc1d1acee0129296804948d7cebea5e3f8e8b99b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.txt",
+          "text_sha256": "1c6d5a4fd202ad14388bc65696b3f9c02dcc147c50f0c24bcec5000ba7a9e112",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy-retrieval.json",
+          "retrieval_metadata_sha256": "7c03ddeb81b473adc6d1f1949fa5fa9c5b8edd94936ac862c09564920026ef9c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2021-04 I, maximum eight contact hours per calendar day"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "a2b3303a95266d0ab7293975a4085416d0a18097e7d3f8d37ae1fb463f920663",
+      "author_supported": "NO",
+      "rationale_sha256": "34dff015646a7b80299940d753e72926a6b0ac18f56ce087088d51dff95a83eb",
+      "authorities": [
+        {
+          "source_id": "ce",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181230+00:00",
+          "version_or_effective_date_status": "Current official247CMR4 PDF, MARegister1330 dated2017-01-13. Annual20 clause states renewal period beginning2015-01-01; exact commencement of daily8-hour clause UNKNOWN. Named4.03 clauses directly read.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.pdf",
+          "raw_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce.txt",
+          "text_sha256": "8b294dc47e51dba1b973b7d15d91b37fb15d3ba4406cb23a2b1e6c8f888da170",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-retrieval.json",
+          "retrieval_metadata_sha256": "1b45e6f950dc066fee9a63eef0802b77f7156b8e1adea72557d9995e2095254e",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 4.03(4)(a),(7)"
+        },
+        {
+          "source_id": "ce-policy",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.181740+00:00",
+          "version_or_effective_date_status": "Policy2021-04 adopted2021-10-01, revised2021-12-03/2023-10-05/2023-11-02/2025-09-04; current4-page PDF directly read. Policy revision is not underlying statutory commencement.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.pdf",
+          "raw_sha256": "b89d3a580ce5f6ea233bf178bc1d1acee0129296804948d7cebea5e3f8e8b99b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy.txt",
+          "text_sha256": "1c6d5a4fd202ad14388bc65696b3f9c02dcc147c50f0c24bcec5000ba7a9e112",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ce-policy-retrieval.json",
+          "retrieval_metadata_sha256": "7c03ddeb81b473adc6d1f1949fa5fa9c5b8edd94936ac862c09564920026ef9c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2021-04 I, annual total includes specialized requirements"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-REV-0002",
+      "draft_visible_content_sha256": "32a8d2cf8e5f280270cd53de76162d0794fafd19f994931ffce82bea1f1a341b",
+      "original_question_id": "MA-REV-0002",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0407",
+        "cosine": 0.132161,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0407",
+          "stem": "A Massachusetts pharmacist has not sought an extension or other relief from the Board. Which continuing education plan satisfies the annual requirements?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Five live hours, including one hour of pharmacy law, plus 15 home-study hours with no additional pharmacy-law content"
+            },
+            {
+              "id": "B",
+              "text": "Four live hours, including two hours of pharmacy law, plus 16 home-study hours"
+            },
+            {
+              "id": "C",
+              "text": "Six live hours, including one hour of pharmacy law, plus 14 home-study hours that include one hour of pharmacy law"
+            },
+            {
+              "id": "D",
+              "text": "Nine live hours, including two hours of pharmacy law, plus 10 home-study hours"
+            },
+            {
+              "id": "E",
+              "text": "Three live hours, including two hours of pharmacy law, plus 17 home-study hours"
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0002",
+        "cosine": 0.259799,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0002",
+          "stem": "A pharmacist has 13 eligible hours and finishes a 9-hour conference on a single day. Live, law, and specialized-topic requirements are satisfied.\n\nHow many conference hours may be applied under the stated daily CE limit? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "8 conference hours."
+            },
+            {
+              "id": "B",
+              "text": "7 conference hours."
+            },
+            {
+              "id": "C",
+              "text": "9 conference hours."
+            },
+            {
+              "id": "D",
+              "text": "6 conference hours."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "REV-002",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-CASE-0005",
+        "cosine": 0.259077,
+        "full_stem_and_all_options": {
+          "question_id": "MA-CASE-0005",
+          "stem": "A Massachusetts pharmacist who does not practice CDTM has 13 eligible CE contact hours. The pharmacist then completes 10 eligible hours at a conference on one calendar day. All live, law, and specialized-topic requirements are otherwise satisfied; the question concerns only the 20-hour total.\n\nHow many additional eligible contact hours are needed for that calendar year? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "7 contact hours"
+            },
+            {
+              "id": "B",
+              "text": "2 contact hours"
+            },
+            {
+              "id": "C",
+              "text": "1 contact hour"
+            },
+            {
+              "id": "D",
+              "text": "0 contact hours"
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ],
+          "family_id": "PLUS-SC01",
+          "collection": "practice_expansion/2026-10-26-plus/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-RW-0010",
+        "cosine": 0.153324,
+        "full_stem_and_all_options": {
+          "question_id": "MA-RW-0010",
+          "stem": "A pharmacist has completed 20 eligible CE contact hours for the year, including five live clinical hours and a two-hour ACPE-approved home-study course designated as pharmacy law. The law course addresses federal pharmacy requirements, not Massachusetts-specific rules. No specialized-practice requirement applies.\n\nHow should the law course be treated for the annual Massachusetts law-CE minimum? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Count it as general CE and add two hours specifically about Massachusetts law."
+            },
+            {
+              "id": "B",
+              "text": "Count its two hours toward the law minimum as part of the 20-hour total."
+            },
+            {
+              "id": "C",
+              "text": "Count it as general CE and repeat two law hours in a live format."
+            },
+            {
+              "id": "D",
+              "text": "Count it toward the law minimum but exclude it from the general 20 hours."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "CE02",
+          "collection": "practice_expansion/2026-10-28-representative/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0407은 annual live/law/home-study 구성이고 CASE0005는10h conference 뒤 minimum 부족량이다. 현재는 maximum daily credit과 이미 충족한 law credit의 이중 공제를 장부 입력으로 구분한다. Default RW0010은 home-study federal-law credit 자체의 적격성이다. 같은 CE 원칙 범위를 재사용하므로 새 법규 coverage credit은0이다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}
