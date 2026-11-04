@@ -1,0 +1,57 @@
+"""Seal the actual A87 validation only; no controller/audit impersonation."""
+import json,hashlib
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[4];P='reports/full-corpus-review/final19-census-author/appendix-a-7-v2/'
+def raw(p):return (ROOT/p).read_bytes()
+def sha(p):return hashlib.sha256(raw(p)).hexdigest()
+def write(p,o):(ROOT/p).write_text(json.dumps(o,ensure_ascii=False,indent=2)+'\n')
+i=json.loads(raw(P+'final-proposal-index.json'));n=json.loads(raw(P+'native-final-validation.json'));p=json.loads(raw(P+'final-preservation-and-source-proof.json'));g=json.loads(raw(P+'own-head-strict-native-inventory-proof.json'));assert n['native_validate_record']=='PASSED'and n['carried_legal_blocker_claim_count']==35 and g['source_guard_passed']
+text=f'''# appendix-a-7 V2 실제 Job72 통합 후 최종 저자 제출
+
+최종입력은 final-proposal-index.json / reassessment.json / final-census.json이다.
+원433bef3c초안19개파일과3개actualauthorGET의raw/text/meta9개는바이트불변이다.
+과거prep의pending/native미수행표시는당시준비상태로보존했다.최종87개claim/sources는
+초안과같고census최상위stage만최종저자제출로표시했다.실제최종결과는이문서와새
+native-final-validation/final-preservation-and-source-proof에분리했다.
+
+원86개전체canonical claim/source/body를보존하여Catapres→clonidine명칭연결1개만
+append했다.FDA2012 NDA017407S037 labelp1의Catapres(clonidinehydrochloride,USP)와
+현재FDA Drugs@FDA NDA017407 productrecord의동일brand/activeingredient를함께
+직접대조했다.FDAproductrecord는Discontinued이며archivedPDF는최신승인label이아닐수
+있다고표시한다.별도NLM SPL본문은Catapres-TTS이며effectiveTime20101210/version1이라
+이를oralCatapres본문과혼동하지않았다.새1개는정확한brand/ingredient식별뿐이며
+route/제형대체/현재공급/법규schedule동일성/정식처방권한을인증하지않는다.
+새AUTHOR_SOURCE_CHECKED와독립법규PASS를구별하며원authorflags와actual35SB를
+모두보존한다.기존031/032등의finding/blocker/원reportSHA와상속이력은native
+carried_legal_blockers에남겨해제하지않았다.
+
+실제parent는Job72 {i['previous_job_id']}이다.
+parentcanonicalSHA {i['previous_job_sha256']}
+reportSHA {i['previous_report']['raw_sha256']}
+resultSHA {i['previous_result']['raw_sha256']}
+이는7d9306fabc1a251122da0fd1e65d0ff03975a4f1의실제INTEGRATEDobject와같다.
+선택ledger는원86개binding이며이author는등록하지않았다.
+
+자체fullcheckout의root정합base8af1b2ca34e3324f38e4748395c5106549948306를merge한
+ownHEAD {g['own_head']}에서actualq.inventory(root)→load_notes(root)의
+전체guard를통과했다.자체전체306개inventorySHA {g['inventory_raw_sha256']}를보존하고
+실제committedledger/census전량의bindings/bodySHA를재확인했다.ROOTlivecontext/
+임의projection/가짜ledger/guard완화/monkeypatch에의존하지않았다.
+커밋한record/census를검증HEAD {n['validation_head']}의실제validate_record와
+unmodifieddisk_reader로검증해통과했다.구문/바인딩검증을독립완전성/법규PASS로
+계산하지않는다.참조{p['reference_count']}개HEAD==disk와이전6V2/f842/846/e2/e1/
+old9/final86/8393/401증거불변도확인했다.
+
+실제보완저자가새로GET한FDA PDF/JSON/NLM XML과metadata의HTTP200·원시각·각SHA를
+확인했고PDFpdftotext-layout/JSON전체prettyserialization/XML전체itertext가savedtext와
+같음을검증했다.2012FDAlabel/2010SPL/현재applicationdatabase의서로다른버전과공급한계를
+명시했으며문서버전/게시일을법규효력일이나현재임상적적합성으로승격하지않았다.
+
+sharedROOT/본문/원source/census/report/queue/ledger/generated/guard의변경과등록은0이다.
+root가전체초기19wave완료후7개V2를정식등록하고새실제비저자가각최종census전량과
+원누락·상속보류를다시심사한다.독립감사/법규PASS/문항/canonicalreleasecredit는0이다.
+author-handoff-envelope은저자제출해시목록이며nativeworkerresult가아니다.
+'''
+(ROOT/(P+'FINAL_STATUS.md')).write_text(text)
+fs=['final-proposal-index.json','reassessment.json','final-census.json','native-final-validation.json','final-preservation-and-source-proof.json','own-head-strict-native-inventory-proof.json','FINAL_STATUS.md'];write(P+'author-handoff-envelope.json',{'purpose':'AUTHOR_HANDOFF_ONLY_NOT_NATIVE_WORKER_RESULT','author_provenance':i['author_provenance'],'previous_job_id':i['previous_job_id'],'previous_job_sha256':i['previous_job_sha256'],'artifacts':[{'path':P+f,'raw_sha256':sha(P+f)}for f in fs],'own_actual_source_guard_passed':True,'native_validate_record_passed':True,'controller_registration_performed':False,'independent_credit':0,'legal_pass_credit':0,'question_credit':0,'release_credit':0})
+m=P+'final-artifact-sha256.json';fs={str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest()for f in sorted((ROOT/P).rglob('*'))if f.is_file()and str(f.relative_to(ROOT))!=m};write(m,{'files':fs,'manifest_excludes_itself':True,'original_draft_and_actual_GET_bytes_preserved':True,'independent_credit':0,'release_credit':0});print('Sealed',len(fs),'A87 artifact hashes')
