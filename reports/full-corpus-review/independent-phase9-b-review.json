@@ -64,7 +64,8 @@
     "reports/full-corpus-review/phase9-b-evidence/assigned-visible-input.json": "f500ff35a1d37f5e55e3d063844183fa2bfb9795df54d5e290a5ae96349dc3bb",
     "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
     "data/exam_style/mpje_style_profile.json": "f699e10e4ada0ced21e60e92b1abaa88329aa315eab1a4a5f1247243f90ec845",
-    "data/blueprint.json": "0dc3a1298c8a119a4580f8bc4120607e5a7a56c95a10164dc0d138afee625f1f"
+    "data/blueprint.json": "0dc3a1298c8a119a4580f8bc4120607e5a7a56c95a10164dc0d138afee625f1f",
+    "practice_expansion/2026-10-28-representative/selection.json": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
   },
   "source_use_declaration_ko": "공식 정부/규제기관 법령·정책을 새로 회수해 보존문을 직접 읽었다. 공개 NABP sample/competency는 형식만 확인했다. 상업 문제은행·보호된 시험·Pre-MPJE·recalled 문항과 다른 reviewer 판정 및 hidden truth 배열을 읽지 않았다. 저작권 표시가 있는 official-hosted guide/newsletter와 NABP raw는 repo에 공개하지 않고 private /tmp 원문과 자체 memo로 구별했다.",
   "retrieval_declaration_ko": "urllib.request, 정상 TLS 인증 검증과 상속 proxy로 2026-11-04 fresh HTTP retrieval. HTTP200뿐 아니라 PDF magic/document title와 해당 section의 실제 내용을 확인했다. 읽은 시점은 same-day retained extraction 재독이며 원 retrieval 시각·raw SHA와 분리했다.",
@@ -1425,7 +1426,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0617의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0617의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -1433,15 +1434,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "접수원·CPhT와 central fill의 구분은 실무적이지만 C는 자칭으로 확인 의무가 사라진다는 과장이고 B는 stem의 practitioner/pharmacist 대조를 그대로 되풀이한다. 서로 다른 두 접수 실패를 한 SATA에 붙여 실제 약사의 다음 행동이 흐려진다.",
+          "no_answer_cue": "접수원·CPhT와 central fill의 구분은 실무적이지만 C는 자칭으로 확인 의무가 사라진다는 과장이고 B는 stem의 practitioner/pharmacist 대조를 그대로 되풀이한다. 서로 다른 두 접수 실패를 한 SATA에 붙여 실제 약사의 다음 행동이 흐려진다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "응급상황을 충족한 처방자 본인의 전화 한 건을 제시하고, 수신자 전환·기록·신원 확인 중 실제 필요한 후속 행동을 경쟁 보기로 설계한다."
@@ -1699,7 +1715,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0625의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0625의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -1707,15 +1723,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Stem이 nonnarcotic와 hospice-narcotic의 차이를 이미 말한다. A의 all other requirements, B의 every/regardless, C의 any/necessarily가 모두 극단적 확장이라 D를 쉽게 추정하게 한다.",
+          "no_answer_cue": "Stem이 nonnarcotic와 hospice-narcotic의 차이를 이미 말한다. A의 all other requirements, B의 every/regardless, C의 any/necessarily가 모두 극단적 확장이라 D를 쉽게 추정하게 한다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제 LTCF 거주 여부·hospice 등록/표시·약물의 narcotic 여부를 제시하고 fax를 원본으로 받을 수 있는 구체적인 처방을 비교한다."
@@ -1975,7 +2006,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0629의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0629의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -1983,15 +2014,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Case A는 qualifying 조건을 이미 전부 충족한다고 선언한다. B와 C는 그 선언의 재진술이며 oral tablet과 otherwise prohibited refill은 fax 법리를 몰라도 배제하기 쉬운 보기다.",
+          "no_answer_cue": "Case A는 qualifying 조건을 이미 전부 충족한다고 선언한다. B와 C는 그 선언의 재진술이며 oral tablet과 otherwise prohibited refill은 fax 법리를 몰라도 배제하기 쉬운 보기다.",
+          "reasoning_not_trivia": "Case A는 qualifying 조건을 이미 전부 충족한다고 선언한다. B와 C는 그 선언의 재진술이며 oral tablet과 otherwise prohibited refill은 fax 법리를 몰라도 배제하기 쉬운 보기다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "제형·route·compounding 여부가 다른 두 실제 fax 주문을 제시하고 어떤 원본/추가 확인이 필요한지 판단하게 한다."
@@ -2193,7 +2241,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0633의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0633의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -2210,6 +2258,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "70시간과 80시간의 실제 deadline 적용을 유지한다. 다른 변형을 새 사례로 세지 않고 이 대표 문항만 사용한다."
@@ -2452,7 +2509,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0644의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0644의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -2469,6 +2526,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "수령 대리인과 적격 partial 요청자의 차이 및 issue-date 시계를 유지한다. 수량이나 날짜를 추가하면 적용 판단이 더 선명해진다."
@@ -2773,7 +2839,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0648의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0648의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -2790,6 +2856,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "두 72시간 기산점과 same-pharmacy 조건을 보존한다. 후속 개작 시 원 발행·첫 조제의 실제 시각으로 문제를 구체화한다."
@@ -3081,7 +3156,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0652의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0652의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -3098,6 +3173,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "타주 처방의 최초 사용과 이미 시작된 remainder를 구별하는 판단을 유지한다. 지리적 eligibility와 redacted-copy 절차는 이 문항의 결론으로 확대하지 않는다."
@@ -3385,7 +3469,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0657의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0657의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -3393,15 +3477,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "두 번만 허가되었다는 stem에 정답 C가 그대로 대응한다. D의 법정 최대보다 적게 허가할 수 없다는 주장은 실무 혼동으로 약하며 두 schedule 사례의 실제 후속 조치가 제시되지 않는다.",
+          "no_answer_cue": "두 번만 허가되었다는 stem에 정답 C가 그대로 대응한다. D의 법정 최대보다 적게 허가할 수 없다는 주장은 실무 혼동으로 약하며 두 schedule 사례의 실제 후속 조치가 제시되지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "구체적인 issue date·사용 refill 횟수·추가 구두 허가를 제시해 남은 합법 refill을 계산하게 한다."
@@ -3646,7 +3745,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0661의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0661의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -3654,15 +3753,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
+          "genuine_legal_confusion_distractors": true,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "no_answer_cue",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "no_answer_cue": "수개월·나중 이관이라는 추상적 날짜만 있고 A는 stem에 없는 PRN의 일반론이다. 모든 오답이 유효기간을 새로 연장한다는 방향이라 실제 거래의 허용 여부를 계산하지 않는다.",
+          "reasoning_not_trivia": "수개월·나중 이관이라는 추상적 날짜만 있고 A는 stem에 없는 PRN의 일반론이다. 모든 오답이 유효기간을 새로 연장한다는 방향이라 실제 거래의 허용 여부를 계산하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "발행·첫 조제·이관·요청 날짜와 잔여 refill을 제시하고 받을 수 있는 수량 또는 거절 사유를 고르게 한다."
@@ -3939,7 +4053,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0665의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0665의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -3956,6 +4070,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "추가 허가 기록과 partial transaction 수의 오류를 함께 다루는 현재 구분을 유지한다. 각 거래의 수량을 명시하면 시스템 정정 판단을 강화할 수 있다."
@@ -4213,7 +4336,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0673의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0673의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -4230,6 +4353,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "중복 authorization과 보존 trigger의 구분을 유지한다. 전체 주 기록 의무가 더 길게 적용될 가능성을 두-year federal minimum과 구별한다."
@@ -4504,7 +4636,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0677의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0677의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -4521,6 +4653,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Print/fax가 electronic initial transfer를 대체하지 않는 실제 전송 결정을 유지한다. III-V refill 보기는 명시된 related-requirements 범위로 읽는다."
@@ -4827,7 +4968,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0681의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0681의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -4844,6 +4985,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "스캔과 electronic-origin의 구분 및 VI의 별도 경로를 유지한다. 직원 scope의 일반론을 추가 권한으로 해석하지 않는다."
@@ -5101,7 +5251,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0689의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0689의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -5109,15 +5259,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
-          "reasoning_not_trivia": false,
+          "no_answer_cue": true,
+          "reasoning_not_trivia": true,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Case A/B의 실제 보고/계정 오류를 해결하는 정답이 없고 유일 정답 B는 일반 patient-care 목적 문장이다. A/C/D의 극단적 의무 대체 주장을 제거하는 방식으로 풀린다.",
+          "natural_rule_combination": "Case A/B의 실제 보고/계정 오류를 해결하는 정답이 없고 유일 정답 B는 일반 patient-care 목적 문장이다. A/C/D의 극단적 의무 대체 주장을 제거하는 방식으로 풀린다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "접근 로그인과 보고 계정을 가진 구체적인 pharmacist의 임무를 제시하고 조회·보고 각각 누구의 어떤 행동이 필요한지 선택하게 한다."
@@ -5377,7 +5542,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0696의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0696의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -5385,15 +5550,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Gabapentin이 enumerated query category가 아니라는 결론이 B case에 거의 쓰여 있다. A/D는 법 적용 절차에 관한 추상문이고 B의 pharmacist-license blanket exemption은 구체적 prescribing 권한도 제시하지 않는다.",
+          "reasoning_not_trivia": "Gabapentin이 enumerated query category가 아니라는 결론이 B case에 거의 쓰여 있다. A/D는 법 적용 절차에 관한 추상문이고 B의 pharmacist-license blanket exemption은 구체적 prescribing 권한도 제시하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제로 처방하는 역할과 약물을 명시하고 opioid/benzodiazepine 여부·waiver 사유를 판단하게 한다. pharmacist 면허만으로 생긴다는 권한 암시는 제거한다."
@@ -5655,7 +5835,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0700의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0700의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -5672,6 +5852,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Gabapentin 보고와 준비/인도의 분리를 유지한다. 특정 Additional Drug의 포함을 Schedule VI 전체로 확대하지 않는다."
@@ -5989,7 +6178,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0705의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0705의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -6006,6 +6195,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제 픽업 agent의 현재 ID를 검사하는 결정을 유지한다. Patient와 recipient를 분리한 현재 사실관계가 실무적이다."
@@ -6325,7 +6523,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0709의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0709의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -6342,6 +6540,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Hardship 사유와 대체 신원기록을 함께 요구하는 적용을 유지한다. Naloxone data collection을 일반 gabapentin ID 경로와 구별한다."
@@ -6588,7 +6795,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0713의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0713의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -6605,6 +6812,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Adult first/minor anytime 및 실제 knowledge의 구분을 유지한다. OUD 약물은 §19D(c) 제외라는 범위를 보존한다."
@@ -6922,7 +7138,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0724의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0724의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -6930,15 +7146,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "정답은 기록이 맞아도 label 누락을 해결하지 못한다는 일반 문장이다. technician 부착으로 최종 책임 전환·drug class로 모든 strength/form 식별·every Rx field 복사라는 오답은 실제 label 선택을 경쟁하지 않는다.",
+          "no_answer_cue": "정답은 기록이 맞아도 label 누락을 해결하지 못한다는 일반 문장이다. technician 부착으로 최종 책임 전환·drug class로 모든 strength/form 식별·every Rx field 복사라는 오답은 실제 label 선택을 경쟁하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "완성된 실제 label 예시와 원 처방을 제시하고 누락 항목 한 가지 또는 pharmacist가 고칠 구체적인 조치를 묻는다."
@@ -7243,7 +7474,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0725의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0725의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -7251,15 +7482,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "genuine_legal_confusion_distractors": true,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "reasoning_not_trivia",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "reasoning_not_trivia": "Large-print와 compounded 표시라는 두 사례에 A의 이름 없는 institutional exception과 D의 BUD가 추가되어 적용 setting이 분산된다. C는 단위가 다르다는 사실만 판별하고 실제 법정 표시 적합성을 묻지 않는다.",
+          "natural_rule_combination": "Large-print와 compounded 표시라는 두 사례에 A의 이름 없는 institutional exception과 D의 BUD가 추가되어 적용 setting이 분산된다. C는 단위가 다르다는 사실만 판별하고 실제 법정 표시 적합성을 묻지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "요청자의 eligibility·실제 출력 characters/inch·compounded label를 명시하여 어떤 수정이 필요한지 판단하게 한다. inpatient 예외는 해당 사실이 있는 별도 상황에서 다룬다."
@@ -7506,7 +7752,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0729의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0729의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -7514,15 +7760,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
-          "reasoning_not_trivia": false,
+          "no_answer_cue": true,
+          "reasoning_not_trivia": true,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Case A/B는 physical drug와 information transfer인데 A/B는 별도 opioid pamphlet의 일반 조건을 말한다. D의 every VI라는 범위 확대만 제거하면 정답이 되며 서로 다른 환자 정보 의무가 자연스럽게 연결되지 않는다.",
+          "natural_rule_combination": "Case A/B는 physical drug와 information transfer인데 A/B는 별도 opioid pamphlet의 일반 조건을 말한다. D의 every VI라는 범위 확대만 제거하면 정답이 되며 서로 다른 환자 정보 의무가 자연스럽게 연결되지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "한 실제 처방에 required warning과 Department pamphlet 제공 여부를 묻거나, 정보 이관은 해당 transfer facts와 함께 독립적으로 평가한다."
@@ -7846,7 +8107,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0733의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0733의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -7854,15 +8115,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "요건을 충족한 protected-care VI라는 선언과 testosterone의 다른 schedule을 대조하지만 A는 pathway를 평가하라는 내용 없는 지시다. C는 label 변경과 원 기록 삭제를 묶고 네 보기 모두 제한을 재진술하여 실제 label 선택을 요구하지 않는다.",
+          "reasoning_not_trivia": "요건을 충족한 protected-care VI라는 선언과 testosterone의 다른 schedule을 대조하지만 A는 pathway를 평가하라는 내용 없는 지시다. C는 label 변경과 원 기록 삭제를 묶고 네 보기 모두 제한을 재진술하여 실제 label 선택을 요구하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "2026-01-01 이후 실제 VI 약과 testosterone 주문, provider 요청 여부, label 견본을 주고 환자 label와 원 기록의 합법적 처리를 각각 구체적으로 판단하게 한다."
@@ -8210,7 +8486,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0737의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0737의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -8218,15 +8494,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "IR/ER나 실제 AB pair 판단을 시키지 않고 유일 정답 D가 insurance 일반론이다. A/B/C는 no distinct/automatically/any라는 극단적 문장이며 실제 제품 비교 자료가 없다.",
+          "no_answer_cue": "IR/ER나 실제 AB pair 판단을 시키지 않고 유일 정답 D가 insurance 일반론이다. A/B/C는 no distinct/automatically/any라는 극단적 문장이며 실제 제품 비교 자료가 없다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제 또는 명확히 가상인 strength/form/route/TE code 쌍을 제시하고 합법적으로 대체 가능한 제품을 선택하게 한다."
@@ -8531,7 +8822,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0744의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0744의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -8539,15 +8830,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Less-expensive/available/interchangeable/no-NS 조건을 모두 stem이 충족한다고 선언한다. B는 그 규칙을 적용하라는 지시이고 C/D의 실제 제품을 숨기거나 편의로 다르게 기록한다는 주장은 설득력 있는 법적 선택지가 아니다.",
+          "no_answer_cue": "Less-expensive/available/interchangeable/no-NS 조건을 모두 stem이 충족한다고 선언한다. B는 그 규칙을 적용하라는 지시이고 C/D의 실제 제품을 숨기거나 편의로 다르게 기록한다는 주장은 설득력 있는 법적 선택지가 아니다.",
+          "reasoning_not_trivia": "Less-expensive/available/interchangeable/no-NS 조건을 모두 stem이 충족한다고 선언한다. B는 그 규칙을 적용하라는 지시이고 C/D의 실제 제품을 숨기거나 편의로 다르게 기록한다는 주장은 설득력 있는 법적 선택지가 아니다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제 원상품과 대체상품의 비용·availability·NS 표시 및 label 두 개를 제시해 선택·표시를 결정하게 한다."
@@ -8794,7 +9102,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0748의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0748의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -8802,15 +9110,28 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "genuine_legal_confusion_distractors": true,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "reasoning_not_trivia": "A와 D는 product correspondence/stock을 확인하라는 일반 원칙이고 B만 every/separate ANDA라는 명백한 과장이다. C는 별도 규칙을 읽으라는 절차 지시라 실제 product-selection 결론이 없다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Generic-name/no-manufacturer 처방과 brand NDA authorized generic의 대응자료를 제시하고 해당 제품 선택이 가능한 이유·추가 확인을 묻는다."
@@ -9089,7 +9410,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0749의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0749의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -9097,15 +9418,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
+          "genuine_legal_confusion_distractors": true,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "reasoning_not_trivia",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "reasoning_not_trivia": "Stem이 genuine emergency와 exception 조건 충족을 먼저 보장한다. A는 Case B가 나열한 누락을 반복하고 B는 routine disregard와 구별하라는 지시여서 네 옳은 보기 사이에서 실제 법 적용을 하지 않는다.",
+          "no_answer_cue": "Stem이 genuine emergency와 exception 조건 충족을 먼저 보장한다. A는 Case B가 나열한 누락을 반복하고 B는 routine disregard와 구별하라는 지시여서 네 옳은 보기 사이에서 실제 법 적용을 하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "야간 NS 처방에 실제 임상 긴급성·연락 가능성·재고·구매자 수락 여부를 주고 지금 조제 가능한지와 필요한 문서화를 묻는다."
@@ -9438,7 +9774,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0756의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0756의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -9446,15 +9782,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "reasoning_not_trivia": true,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "Actual biologic·FDA status·prescriber 지시가 제시되지 않고 Case B는 다른 주 규칙이라는 사실로 A를 직접 부정한다. B/C의 every/every가 광범위해 D만 남기기 쉽다.",
+          "no_answer_cue": "Actual biologic·FDA status·prescriber 지시가 제시되지 않고 Case B는 다른 주 규칙이라는 사실로 A를 직접 부정한다. B/C의 every/every가 광범위해 D만 남기기 쉽다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "제품별 FDA interchangeable 여부와 NS 지시·통보 가능 수단을 주고 MA에서 대체/환자·처방자 통보를 어떻게 하는지 묻는다."
@@ -9684,7 +10035,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0757의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0757의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -9692,15 +10043,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "소매가가 더 낮다는 조건을 이미 말하지만 실제 금액 없이 비교해야 한다는 추상문 D를 고른다. B의 conclusively와 C의 always가 오답임을 드러내며 A는 문항 밖 보편화 경고다.",
+          "no_answer_cue": "소매가가 더 낮다는 조건을 이미 말하지만 실제 금액 없이 비교해야 한다는 추상문 D를 고른다. B의 conclusively와 C의 always가 오답임을 드러내며 A는 문항 밖 보편화 경고다.",
+          "reasoning_not_trivia": "소매가가 더 낮다는 조건을 이미 말하지만 실제 금액 없이 비교해야 한다는 추상문 D를 고른다. B의 conclusively와 C의 always가 오답임을 드러내며 A는 문항 밖 보편화 경고다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "예를 들어 실제 retail 12달러·copay 20달러와 적용 가능한 거래를 주고 pharmacy가 받을 금액 또는 조정할 claim을 묻는다."
@@ -9947,7 +10315,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0761의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0761의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -9955,15 +10323,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
+          "genuine_legal_confusion_distractors": true,
           "no_answer_cue": false,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "no_answer_cue",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "no_answer_cue": "실제 제품과 포장 성능 자료가 없고 A는 확인하라는 일반론, C는 childproof 아님이라는 표어다. Stem이 tamper-evident를 CR로 착각한다고 먼저 알려 D를 쉽게 배제한다.",
+          "reasoning_not_trivia": "실제 제품과 포장 성능 자료가 없고 A는 확인하라는 일반론, C는 childproof 아님이라는 표어다. Stem이 tamper-evident를 CR로 착각한다고 먼저 알려 D를 쉽게 배제한다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "구체적인 OTC 함량·포장 크기와 시험된 package 정보를 주고 special packaging 적용/면제 및 필요한 교체를 판단하게 한다."
@@ -10212,7 +10595,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0765의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0765의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -10220,15 +10603,28 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "genuine_legal_confusion_distractors": true,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
-          "natural_rule_combination": false,
+          "natural_rule_combination": true,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "reasoning_not_trivia": "Case A가 blanket이라고 선언하고 Case B가 모든 미래 처방으로 확대한다고 선언한다. 네 보기는 모두 범위 확인의 재진술이며 D는 stem에 없는 age 일반론이다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "환자가 실제로 한 요청 문구와 특정 prescriber의 지시를 제시하고 새 처방·refill에 적용할 포장을 선택하게 한다. 기록 권고를 법정 서면 의무로 바꾸지 않는다."
@@ -10456,7 +10852,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0769의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0769의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -10473,6 +10869,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "105mg와 110mg의 package-total 계산 및 no-other-substance 조건을 유지한다. 21개라는 tablet 수만 외우게 하지 않는다."
@@ -10717,7 +11122,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0773의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0773의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -10725,15 +11130,30 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
-          "genuine_legal_confusion_distractors": false,
-          "no_answer_cue": false,
+          "genuine_legal_confusion_distractors": true,
+          "no_answer_cue": true,
           "reasoning_not_trivia": false,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "natural_rule_combination",
+          "reasoning_not_trivia"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "natural_rule_combination": "두 사례는 nitroglycerin와 potassium인데 정답 A/B는 다른 mnemonic package와 isosorbide dinitrate의 일반문이다. Case B도 stated 50mEq threshold라고 하여 수치를 이미 제공하고 실제 unit값을 주지 않는다.",
+          "reasoning_not_trivia": "두 사례는 nitroglycerin와 potassium인데 정답 A/B는 다른 mnemonic package와 isosorbide dinitrate의 일반문이다. Case B도 stated 50mEq threshold라고 하여 수치를 이미 제공하고 실제 unit값을 주지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "한 처방의 실제 제형·strength·package total/unit-dose를 주고 해당 product exception을 적용하게 한다. 관련 없는 세 약의 flashcard를 한 SATA로 묶지 않는다."
@@ -11100,7 +11520,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0780의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0780의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -11117,6 +11537,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "다른 약국 기조제약 사용 금지와 실제 planner/closure 점검을 유지한다. home-care에서 환자의 약을 정리하는 다른 서비스까지 동일 금지로 일반화하지 않는다."
@@ -11361,7 +11790,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0792의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0792의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -11378,6 +11807,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Small-package 기록 예외와 physical access 통제를 구분하는 실제 retail 판단을 유지한다. 60mg 예외를 ephedrine 전체로 확대하지 않는다."
@@ -11684,7 +12122,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0796의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0796의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -11692,15 +12130,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
+          "reasoning_not_trivia": true,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "A의 new invented quantity cap은 메타 경고이고 B는 syringe 사례와 다른 CV OTC 일반론이다. C는 stem에 반대되는 every-Rx/ID 과장, D는 기기 구매가 모든 Rx약 허가라는 과장에 대한 자명한 부정이다.",
+          "no_answer_cue": "A의 new invented quantity cap은 메타 경고이고 B는 syringe 사례와 다른 CV OTC 일반론이다. C는 stem에 반대되는 every-Rx/ID 과장, D는 기기 구매가 모든 Rx약 허가라는 과장에 대한 자명한 부정이다.",
+          "natural_rule_combination": "A의 new invented quantity cap은 메타 경고이고 B는 syringe 사례와 다른 CV OTC 일반론이다. C는 stem에 반대되는 every-Rx/ID 과장, D는 기기 구매가 모든 Rx약 허가라는 과장에 대한 자명한 부정이다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "실제 syringe 구매 요청과 구체적인 약물 처방 유무를 구분한 약사 행동을 묻고, 수량·연령·ID를 근거 없이 제한하지 않는 실제 결정을 제시한다."
@@ -11943,7 +12398,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0801의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0801의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -11951,15 +12406,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
+          "reasoning_not_trivia": true,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "원래 food-animal label 문제를 해결하는 보기는 없고 유일 정답 B는 두 번째 VFD 사례의 단순 분류다. A의 every/any, C의 all, D의 all 생략은 극단적이어서 경쟁력이 낮다.",
+          "no_answer_cue": "원래 food-animal label 문제를 해결하는 보기는 없고 유일 정답 B는 두 번째 VFD 사례의 단순 분류다. A의 every/any, C의 all, D의 all 생략은 극단적이어서 경쟁력이 낮다.",
+          "natural_rule_combination": "원래 food-animal label 문제를 해결하는 보기는 없고 유일 정답 B는 두 번째 VFD 사례의 단순 분류다. A의 every/any, C의 all, D의 all 생략은 극단적이어서 경쟁력이 낮다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "식용동물 처방의 실제 label와 withdrawal 지시를 주고 필요한 수정·보류를 선택하게 한다. VFD의 기간·reorder/extralabel은 별도의 실제 feed order로 평가한다."
@@ -12294,7 +12766,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0808의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0808의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -12302,15 +12774,32 @@
           "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
         },
         "criteria": {
-          "actual_jurisprudence_reasoning": false,
+          "actual_jurisprudence_reasoning": true,
           "plausible_practice_setting": true,
           "genuine_legal_confusion_distractors": false,
           "no_answer_cue": false,
-          "reasoning_not_trivia": false,
+          "reasoning_not_trivia": true,
           "natural_rule_combination": false,
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [
+          "genuine_legal_confusion_distractors",
+          "no_answer_cue",
+          "natural_rule_combination"
+        ],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {
+          "genuine_legal_confusion_distractors": "검사 절차 변경과 drug-sample resale는 서로 무관한 두 운영 위반이다. B의 unrestricted와 C의 regardless가 giveaway이며 실제 어떤 certificate/검사 조치를 할지 경쟁하지 않는다.",
+          "no_answer_cue": "검사 절차 변경과 drug-sample resale는 서로 무관한 두 운영 위반이다. B의 unrestricted와 C의 regardless가 giveaway이며 실제 어떤 certificate/검사 조치를 할지 경쟁하지 않는다.",
+          "natural_rule_combination": "검사 절차 변경과 drug-sample resale는 서로 무관한 두 운영 위반이다. B의 unrestricted와 C의 regardless가 giveaway이며 실제 어떤 certificate/검사 조치를 할지 경쟁하지 않는다."
+        },
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Waived-test 절차 변경 사실과 실제 certificate 범위를 주고 검사 중단/재분류 검토 등 구체적 후속 결정을 묻는다. sample inventory는 별도 수령·분배 상황에서 다룬다."
@@ -12557,7 +13046,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0812의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0812의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -12574,6 +13063,15 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "현재 single-sheet 주문과 shipment/receipt 시점의 실제 재고업무 판단을 유지한다. patient partial-fill clock와 혼동하지 않는다."
@@ -12831,7 +13329,7 @@
         "nearest_stem_and_all_choices_read": true,
         "nearest_visible_input_path": "reports/full-corpus-review/phase9-b-evidence/nearest-visible-input.json",
         "nearest_visible_input_sha256": "9caac9fe982c8e006b75631b81007a925cae1fd4b483820c7d30b3f7c725eacf",
-        "duplicate_assessment_ko": "Nearest MA-EXP-0817의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다.",
+        "duplicate_assessment_ko": "Nearest MA-EXP-0817의 stem과 모든 A-D choices를 직접 읽었다. 두 Case A/B는 원문과 동일하며 질문 polarity/형식 및 보기 구성이 바뀐 family 연습변형이다. 동일 family 4개와 공통 Case text도 원 bank의 visible stem으로 확인했다. 이를 새로운 독립 실무상황으로 세지 않는다. Default 대표 하나의 사용 여부와 archive 변형의 존재를 구별하며 복제만으로 법적 키 결론을 추정하지 않았다. 현재 selection의 recommended_ids를 별도로 확인했으며 target은 default이고 이 nearest는 default에 포함되지 않는다. 같은 사례의 archive 연습변형 존재를 default 내 신규 사례 중복으로 계산하지 않는다.",
         "family_variants_are_new_cases": false,
         "style_profile": {
           "profile_id": "MPJE-MA-PRE2027",
@@ -12848,9 +13346,23 @@
           "appropriate_drug_context": true,
           "duplicate_scope_disclosed_no_new_case_credit": true,
           "public_format_only_no_protected_content": true
+        },
+        "failed_criteria": [],
+        "criteria_scope_ko": "최소한의 법률 개념 구별이 존재하는지(actual jurisprudence)와 실제 사례 적용·추론의 충분함(reasoning not trivia)을 구별했다. FAIL이면 모든 기준을 자동 부정하지 않고 이 문항의 구체적 finding에 해당하는 실패만 기록했다. PASS는 아래 기준 전부가 충족된다는 이 세션의 판단이다.",
+        "criterion_findings_ko": {},
+        "nearest_current_default_status": {
+          "target_is_current_default": true,
+          "nearest_is_current_default": false,
+          "selection_path": "practice_expansion/2026-10-28-representative/selection.json",
+          "selection_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
         }
       },
       "required_next_action_ko": "Calendar-year dosage-unit 분모와 추가 distribution의 분자/분모 변화를 유지한다. Revenue 또는 dispensed-only 분모로 바꾸지 않는다."
     }
-  ]
+  ],
+  "rubric_precision_followup": {
+    "reviewed_at_utc": "2026-11-04T05:23:09.691267+00:00",
+    "prior_worker_commit": "c7a3513cf605a6ff515c5e3dd92591f8c37c1816",
+    "finding_ko": "최초 보고의 FAIL 기준 boolean이 여러 차원에 일괄 적용되어 너무 넓었던 점을 정밀화했다. 각 문항의 실제 finding에 부합하는 실패 기준만 false로 좁혔다. 법적 판정40 KEEP/YES, 개별 현실성 판정23 FAIL/17 PASS, 원문 전문 실독 및 source binding은 그대로다. 새 검토자/새 독립 key credit를 만들지 않는다."
+  }
 }
