@@ -14,7 +14,8 @@ STATE = 'reports/full-corpus-review/independent-legacy-work-queue.json'
 PREFIX = 'reports/full-corpus-review/'
 
 
-def integrated_sources(root):
+def integrated_sources(root, *, source_bindings=None):
+    """Optionally expose bindings only after all committed sources validate."""
     def require(condition, message):
         if not condition:
             raise ValueError(message)
@@ -36,6 +37,7 @@ def integrated_sources(root):
     state=committed(STATE)
     queue.state_stage(state,'independent-legacy')
     sources={}
+    bindings={}
     jobs=state['jobs']
     require([j['sequence'] for j in jobs]==list(range(1,len(jobs)+1)),
             'Integrated legacy sequence changed')
@@ -63,4 +65,16 @@ def integrated_sources(root):
             require(len(report['records'])==len(job['question_hashes']) and
                     {r['question_id'] for r in report['records']}==set(job['question_hashes']),
                     'Integrated legacy report assignment differs')
+            if source_bindings is not None:
+                review=next(r for r in report['records'] if r['question_id']==row['question_id'])
+                bindings[row['question_id']]=dict(
+                    question_id=row['question_id'], source_path=relative,
+                    source_sha256=row['evidence_sha256'], job_id=job['job_id'],
+                    record_sha256=job['question_hashes'][row['question_id']],
+                    review_record_sha256=queue.digest(review),
+                    reviewed_at=report.get('reviewed_at'),
+                    auditor_instance=report['auditor_instance'],
+                    actor_provenance=dict(report['actor_provenance']))
+    if source_bindings is not None:
+        source_bindings.update(bindings)
     return list(sources.values())

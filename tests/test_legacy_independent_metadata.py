@@ -53,6 +53,39 @@ def test_future_integrated_report_is_discovered_without_filename_registration(ch
     assert metadata.integrated_sources(root)==[report]
 
 
+def test_optional_bindings_retain_the_validated_source_and_exact_review(checkpoint):
+    root,_,report=checkpoint
+    bindings={}
+    assert metadata.integrated_sources(root,source_bindings=bindings)==[report]
+    assert bindings['Q1']==dict(question_id='Q1',source_path=REPORT,
+        source_sha256=hashlib.sha256((root/REPORT).read_bytes()).hexdigest(),job_id='job1',
+        record_sha256='a'*64,review_record_sha256=queue.digest(report['records'][0]),
+        reviewed_at=None,auditor_instance=report['auditor_instance'],
+        actor_provenance=report['actor_provenance'])
+
+
+def test_later_stale_report_does_not_publish_earlier_partial_bindings(checkpoint):
+    root,state,first=checkpoint
+    second_path=metadata.PREFIX+'second-review.json'
+    second=copy.deepcopy(first)
+    second['records']=[dict(question_id='Q2',record_sha256='d'*64)]
+    write(root,second_path,second)
+    job=copy.deepcopy(state['jobs'][0])
+    job.update(job_id='job2',sequence=2,question_hashes={'Q2':'d'*64})
+    job['result'].update(question_hashes=job['question_hashes'],results=[dict(
+        question_id='Q2',disposition='HOLD',evidence_path=second_path,
+        evidence_sha256=hashlib.sha256((root/second_path).read_bytes()).hexdigest())])
+    state['jobs'].append(job)
+    state['events'].append(dict(kind='INTEGRATE',job_id='job2',commit=job['integrated_commit']))
+    second['unexpected_change']='Retained source no longer matches submitted SHA.'
+    write(root,second_path,second)
+    write(root,metadata.STATE,state);commit(root)
+    bindings={}
+    with pytest.raises(ValueError,match='raw SHA changed'):
+        metadata.integrated_sources(root,source_bindings=bindings)
+    assert bindings=={}
+
+
 @pytest.mark.parametrize('status',['QUEUED','LEASED','SUBMITTED'])
 def test_unintegrated_results_never_receive_publication_credit(checkpoint,status):
     root,state,_=checkpoint;state['jobs'][0]['status']=status
@@ -87,4 +120,6 @@ def test_stale_or_unaccountable_results_fail_closed(checkpoint,change,expected):
         job['result']['results'][0]['evidence_sha256']=hashlib.sha256((root/REPORT).read_bytes()).hexdigest()
     write(root,metadata.STATE,state)
     if not change.startswith('uncommitted'):commit(root)
-    with pytest.raises(ValueError,match=expected): metadata.integrated_sources(root)
+    bindings={}
+    with pytest.raises(ValueError,match=expected): metadata.integrated_sources(root,source_bindings=bindings)
+    assert bindings=={}
