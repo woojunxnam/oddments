@@ -1,4 +1,8 @@
-"""Emergency boundary fixes activate only with exact body/source/audit evidence."""
+"""Historical M activation guards require exact published body/source/audit evidence.
+
+After approved16, these mutation fixtures use its verified published15 view;
+live N1 selection and protection remain covered by the current16/body suites.
+"""
 import copy
 import hashlib
 import json
@@ -16,6 +20,8 @@ from notes_emergency_activation import (
     official_url, validate_emergency_note_review, validate_review_contents,
 )
 from verify_representative_protected import migrated_baseline_bytes, verify
+from published15_test_view import published15_root
+ROOT = published15_root(ROOT)
 
 MIGRATION = 'revisions/notes/protected-migration-emergency-kit.json'
 
@@ -314,8 +320,8 @@ def contents(root):
 
 
 def test_emergency_activation_changes_only_two_bodies_adds_exact_sources_and_preserves_other_notes():
-    before = load_notes(revision_id='2026-11-03.refill-cancer.1')
-    after = load_notes()
+    before = load_notes(ROOT,revision_id='2026-11-03.refill-cancer.1')
+    after = load_notes(ROOT)
     old = {u['id']:u for c in before['chapters'] for u in c['units']}
     new = {u['id']:u for c in after['chapters'] for u in c['units']}
     assert set(old) == set(new)
@@ -339,7 +345,7 @@ def test_four_related_cards_retain_full_source_records_without_new_patch_credit(
         ('refresh','notes/refresh/guide.json','cards',{'RF-054','RF-056'}),
     ]:
         source = json.loads((ROOT/path).read_bytes())
-        revised = apply_study_revision(copy.deepcopy(source), kind)
+        revised = apply_study_revision(copy.deepcopy(source), kind, ROOT)
         assert [r for r in source[field] if r['id'] in ids] == [r for r in revised[field] if r['id'] in ids]
     report = json.loads((ROOT/REVIEW).read_bytes())
     assert report['historical_canonical_four_holds_resolved'] == report['question_audit_credit'] == 0

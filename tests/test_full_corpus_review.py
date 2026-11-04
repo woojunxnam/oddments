@@ -221,19 +221,25 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
 
 @pytest.fixture
 def protected_copy(tmp_path):
-    manifest=json.loads((ROOT/'reports/representative-rewrite/protected-baseline.json').read_text())
+    # Historical PR190/14 guard mutations use the approved exact published15
+    # epoch. Copying current revisions would duplicate the full retained old
+    # tree in every fixture and import the later N1/16 layer into M tests.
+    # All module-level ROOT/build() checks continue to target the actual live tree.
+    from published15_test_view import published15_root
+    source_root=published15_root(ROOT)
+    manifest=json.loads((source_root/'reports/representative-rewrite/protected-baseline.json').read_text())
     safety='reports/full-corpus-review/canonical-q0012-withdrawal'
-    shutil.copytree(ROOT/safety,tmp_path/safety)
+    shutil.copytree(source_root/safety,tmp_path/safety)
     for relative in ['reports/representative-rewrite/protected-baseline.json',
                      'site/generated/preview_allowlist.json']:
         dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
-        shutil.copyfile(ROOT/relative,dest)
+        shutil.copyfile(source_root/relative,dest)
     for row in manifest['files']:
         dest=tmp_path/row['path']; dest.parent.mkdir(parents=True,exist_ok=True)
-        shutil.copyfile(ROOT/row['path'],dest)
-    shutil.copytree(ROOT/'revisions',tmp_path/'revisions')
+        shutil.copyfile(source_root/row['path'],dest)
+    shutil.copytree(source_root/'revisions',tmp_path/'revisions')
     dest=tmp_path/'site/notes/build.json';dest.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(ROOT/'site/notes/build.json',dest)
+    shutil.copyfile(source_root/'site/notes/build.json',dest)
     # This fixture tests the original fourteen guards in their exact PR190
     # context. The new wrapper has separate current-source integration tests.
     fifteenth=tmp_path/'revisions/notes/protected-migration-after190.json'
@@ -243,30 +249,30 @@ def protected_copy(tmp_path):
                         tmp_path/'site/notes/complete-notes.md')
         shutil.copyfile(tmp_path/'revisions/baselines/notes-build-pr190.json',
                         tmp_path/'site/notes/build.json')
-    for metadata in (ROOT/'revisions/notes').glob('protected-migration-census-*.json'):
+    for metadata in (source_root/'revisions/notes').glob('protected-migration-census-*.json'):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(ROOT/path,dest)
+            shutil.copyfile(source_root/path,dest)
     for name in ['protected-migration-independent-notes-wave2.json',
                  'protected-migration-independent-notes-wave3.json']:
-        annotation=ROOT/'revisions/notes'/name
+        annotation=source_root/'revisions/notes'/name
         if annotation.exists():
             for path in json.loads(annotation.read_bytes())['independent_reviews']:
                 dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
-                shutil.copyfile(ROOT/path,dest)
+                shutil.copyfile(source_root/path,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
-    shutil.copytree(ROOT/evidence, tmp_path/evidence)
+    shutil.copytree(source_root/evidence, tmp_path/evidence)
     paths = set()
-    for activation_path in (ROOT/'revisions/notes').glob('*-activation.json'):
+    for activation_path in (source_root/'revisions/notes').glob('*-activation.json'):
         activation = json.loads(activation_path.read_bytes())
-        report = json.loads((ROOT/activation['review_path']).read_bytes())
+        report = json.loads((source_root/activation['review_path']).read_bytes())
         paths.update([activation['review_path'], activation['census_path']])
         paths.update(s['evidence_path'] for s in report['sources'])
         if report.get('prior_review'):
             paths.add(report['prior_review']['path'])
     for path in paths:
         dest = tmp_path/path; dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT/path, dest)
+        shutil.copyfile(source_root/path, dest)
     verify(manifest,tmp_path)
     return tmp_path,manifest
 
