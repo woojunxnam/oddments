@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0331",
+  "family_id": "ADMINISTRATION_ROUTE_SC_IM_ONLY",
+  "area": 2,
+  "topic": "Pharmacist administration",
+  "subtopic": "Route of administration",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist is asked to give an eligible medication in the pharmacy. Which statements about the permitted route are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "An intravenous infusion is permitted where the pharmacist is trained to place a line."
+    },
+    {
+      "id": "B",
+      "text": "Any parenteral route is permitted so long as the product label allows it."
+    },
+    {
+      "id": "C",
+      "text": "The route is at the pharmacist's professional discretion for an eligible product."
+    },
+    {
+      "id": "D",
+      "text": "Administration must accord with manufacturer approved labeling for the product."
+    },
+    {
+      "id": "E",
+      "text": "Only subcutaneous or intramuscular injection is permitted."
+    }
+  ],
+  "correct_choice_ids": [
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "The Administration and Dosing section of the current circular provides that a pharmacist or pharmacy intern may ONLY administer an eligible medication by subcutaneous or intramuscular injection, in accordance with manufacturer approved labeling and any risk evaluation and mitigation strategy requirements for the specific medication. The conditions on dispensing by administration separately state that administration is not intravenous.",
+    "choice_analysis": {
+      "A": "Administration is expressly not intravenous, whatever the pharmacist's skill.",
+      "B": "Only two routes are open, not every parenteral route.",
+      "C": "The route is fixed by the guidance rather than left to discretion.",
+      "D": "Correct: manufacturer approved labeling governs.",
+      "E": "Correct: subcutaneous or intramuscular only."
+    },
+    "related_facts": [
+      "Ceftriaxone appears on the eligible list specifically as an intramuscular injection"
+    ],
+    "mpje_trap": "Candidates treat injection competence as the test and infer that a trained pharmacist may use any route."
+  },
+  "rule_ids": [
+    "MA-ADMIN-ROUTE-AND-DOSING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the route limitation in the Administration and Dosing section",
+    "Read the separate condition that administration is not intravenous",
+    "Apply the manufacturer labeling and risk-strategy overlay"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADMIN-ROUTE-AND-DOSING": {
+          "content_version": 1,
+          "content_hash": "e614a6cce86d4bbc192b2bc7185383212435853f229213066c7eb3acaf0febd7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,24 @@
+{
+  "freeze_date": "2026-09-10",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "8612a41ceeeb2e34e9f42cb713bbeb27caad554b",
+  "auditor_instance_reserved": "GPT-FRESH-B4-SG-REPAIR-V6B",
+  "section_ids": [
+    "SG-MA-SCHEDULE-VI",
+    "SG-MA-ORAL-PRESCRIPTIONS",
+    "SG-MA-OUTSTATE-PRESCRIPTIONS"
+  ],
+  "output_dir": "audits/study_guide/2026-09-10",
+  "file_prefix": "BATCH4-SG-REPAIR-V6B",
+  "manifest_type": "STUDY_GUIDE_REPAIR_CLEAN_FREEZE",
+  "expected_audit_output_path": "audits/study_guide/2026-09-10/GPT-FRESH-B4-SG-REPAIR-V6B-AUDIT.json",
+  "scope_note": "The Massachusetts prescription-pathway trio. SG-MA-OUTSTATE-PRESCRIPTIONS was carved out of SG-MA-ORAL-PRESCRIPTIONS, and SG-MA-SCHEDULE-VI shares the Failover and electronic-prescribing seams with both, so the three are audited together. SG-MA-SCHEDULE-VI and SG-MA-ORAL-PRESCRIPTIONS carry repairs answering the V5 findings; SG-MA-OUTSTATE-PRESCRIPTIONS is at v2 after gaining the s. 18(d3/4) initial partial-dispensing limit and the s. 18(d)/(d1/2) Department copy. Scope-gate signals answered before freezing, recorded so the auditor can see they were considered rather than missed. Taken: MA-ORAL-CS-FOLLOWUP-TIMING and MA-CONTROLLED-EPRESCRIBE were added to SG-CII-EMERGENCY-ORAL after the gate flagged them, and both corrected errors in the draft. MA-CII-PARTIAL-FILL-PATHWAY-LIMITS and MA-OUTSTATE-CII-DEPARTMENT-COPY were added to SG-MA-OUTSTATE-PRESCRIPTIONS for the same reason. Declined with reasons: the M.G.L. c. 94C, s. 18(d) family signals against SG-CII-LIFECYCLE and SG-MA-OUTSTATE-PRESCRIPTIONS are the known corpus duplication -- MA-CII-LESSER-QUANTITY, MA-CII-PARTIAL-PATIENT and MA-CII-REMAINDER-30D restate s. 18(d3/4) alongside MA-CII-PARTIAL-FILL-PATHWAY-LIMITS, and all are frozen by RELEASED question adjudications, so they cannot be consolidated here; the out-of-state conditions themselves are deliberately the subject of SG-MA-OUTSTATE-PRESCRIPTIONS and not of SG-CII-LIFECYCLE. MA-ORAL-CONTROLLED-DOCUMENTATION was declined because the reduce-to-writing and prescriber-authentication duties it carries are already taught in SG-CII-EMERGENCY-ORAL from both a federal source and the emergency-specific 105 CMR 721.060, and adding a third citation for one duty would duplicate legal truth. The remaining 'Prescription format' topic neighbours are topic adjacency rather than shared authority; MA-RX-FAILOVER-ORAL in particular is a Schedule VI device by definition and cannot reach a Schedule II section.",
+  "prior_audit_reference": {
+    "path": "audits/study_guide/2026-09-10/GPT-FRESH-B4-SG-REPAIR-V5-AUDIT.json",
+    "audit_id": "AUDIT-SG-B4-SG-REPAIR-V5-2026-09-10",
+    "auditor_instance": "GPT-FRESH-B4-SG-REPAIR-V5",
+    "role": "HISTORICAL_REPAIR_PROVENANCE",
+    "note": "The V5 audit adjudicated the superseded hashes of SG-MA-SCHEDULE-VI and SG-MA-ORAL-PRESCRIPTIONS and drove this repair. Its dispositions bind none of the hashes frozen here, and it is deliberately excluded from the auditor package so the V6B auditor stays independent. SG-MA-OUTSTATE-PRESCRIPTIONS was carved out of SG-MA-ORAL-PRESCRIPTIONS after that audit and has none of its own."
+  }
+}

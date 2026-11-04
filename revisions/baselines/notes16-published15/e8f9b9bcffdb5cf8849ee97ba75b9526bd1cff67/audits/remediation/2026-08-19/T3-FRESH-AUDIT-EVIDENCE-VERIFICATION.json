@@ -1,0 +1,271 @@
+{
+  "report_type": "T3_FRESH_AUDIT_EVIDENCE_VERIFICATION",
+  "controller_issue": 83,
+  "authorizing_issue": 86,
+  "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+  "audit_pr": 88,
+  "audit_branch": "audit/pre-batch3-coverage-t3-claude-fresh-cov-t3-a",
+  "audit_head_sha": "e08478d7956754142b4f5538e84de64cbec88997",
+  "phase1_lock_commit": "e412cfb1e78a6579a18727ab7fa549f0444836f6",
+  "phase1_lock_blob": "abdd4524b87c521265829050f3dd882851814710",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+  "author_is_not_auditor": true,
+  "status": "PASS",
+  "checks": {
+    "01_auditor_identity": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "TARGETED_INITIAL_BATCH",
+          "review_type": "LEGAL_VERIFICATION"
+        },
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "TARGETED_INITIAL_BATCH",
+          "review_type": "REALISM_REVIEW"
+        }
+      }
+    },
+    "02_lock_precedes_and_is_immutable": {
+      "status": "PASS",
+      "detail": {
+        "lock_commit": "e412cfb1e78a6579a18727ab7fa549f0444836f6",
+        "lock_commit_files": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json"
+        ],
+        "records_commit": "e08478d7956754142b4f5538e84de64cbec88997",
+        "records_commit_files": [
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19.json"
+        ],
+        "lock_is_parent_of_records": true,
+        "lock_epoch": 1787160651,
+        "records_epoch": 1787161429,
+        "seconds_between": 778,
+        "lock_blob_at_lock_commit": "abdd4524b87c521265829050f3dd882851814710",
+        "lock_blob_at_head": "abdd4524b87c521265829050f3dd882851814710"
+      }
+    },
+    "03_no_canonical_or_tooling_edits": {
+      "status": "PASS",
+      "detail": {
+        "changed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19.json"
+        ],
+        "allowed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-COV-T3-A-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19.json"
+        ]
+      }
+    },
+    "04_current_question_hashes": {
+      "status": "PASS",
+      "detail": {
+        "current": {
+          "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+        },
+        "expected": {
+          "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+        }
+      }
+    },
+    "05_no_substantive_drift_since_candidate": {
+      "status": "PASS",
+      "detail": "identical to f13c91c2635e"
+    },
+    "06_governance_authorization_exact": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19": {
+          "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+          "authorizing_issue": 86,
+          "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+          "question_ids": [
+            "MA-Q-0227",
+            "MA-Q-0228"
+          ]
+        },
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19": {
+          "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+          "authorizing_issue": 86,
+          "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+          "question_ids": [
+            "MA-Q-0227",
+            "MA-Q-0228"
+          ]
+        }
+      }
+    },
+    "07_is_valid_targeted_initial_audit": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19": true,
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19": true
+      }
+    },
+    "08_records_bound_to_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19": {
+          "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+        },
+        "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19": {
+          "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+        }
+      }
+    },
+    "09_legal_keep_yes_for_both": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": {
+          "Verdict": "KEEP",
+          "Existing_Answer_Correct": "YES",
+          "Proposed_Answer": "E",
+          "authority_count": 2
+        },
+        "MA-Q-0228": {
+          "Verdict": "KEEP",
+          "Existing_Answer_Correct": "YES",
+          "Proposed_Answer": "A,B,E",
+          "authority_count": 7
+        }
+      }
+    },
+    "10_realism_keep_pass_all_ten_criteria": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": {
+          "Verdict": "KEEP",
+          "Realism_Verdict": "PASS",
+          "criteria_count": 10,
+          "all_criteria_true": true,
+          "notes_length": 4121
+        },
+        "MA-Q-0228": {
+          "Verdict": "KEEP",
+          "Realism_Verdict": "PASS",
+          "criteria_count": 10,
+          "all_criteria_true": true,
+          "notes_length": 4660
+        }
+      }
+    },
+    "11_realism_style_profile_current": {
+      "status": "PASS",
+      "detail": {
+        "record": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        },
+        "current": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        }
+      }
+    },
+    "12_full_bank_comparison_evidence": {
+      "status": "PASS",
+      "detail": {
+        "bank_size_actual": 228,
+        "MA-Q-0227": {
+          "named_comparators": [
+            "MA-Q-0088",
+            "MA-Q-0112",
+            "MA-Q-0113",
+            "MA-Q-0213",
+            "MA-Q-0215"
+          ],
+          "all_exist_in_bank": true,
+          "bank_size_claimed_in_notes": true
+        },
+        "MA-Q-0228": {
+          "named_comparators": [
+            "MA-Q-0216",
+            "MA-Q-0217",
+            "MA-Q-0220",
+            "MA-Q-0227"
+          ],
+          "all_exist_in_bank": true,
+          "bank_size_claimed_in_notes": true
+        }
+      }
+    },
+    "13_blind_lock_integrity": {
+      "status": "PASS",
+      "detail": {
+        "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+        "contamination_status": "CLEAN",
+        "blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+        "blind_answers": {
+          "MA-Q-0227": [
+            "E"
+          ],
+          "MA-Q-0228": [
+            "A",
+            "B",
+            "E"
+          ]
+        },
+        "canonical_keys": {
+          "MA-Q-0227": [
+            "E"
+          ],
+          "MA-Q-0228": [
+            "A",
+            "B",
+            "E"
+          ]
+        },
+        "blind_matches_key": {
+          "MA-Q-0227": true,
+          "MA-Q-0228": true
+        },
+        "expected_keys_confirmed": true,
+        "not_inspected_flags": {
+          "canonical_key_inspected_before_lock": false,
+          "canonical_explanation_inspected_before_lock": false,
+          "canonical_rules_inspected_before_lock": false,
+          "author_reasoning_inspected_before_lock": false
+        }
+      }
+    },
+    "14_blind_package_matches_published": {
+      "status": "PASS",
+      "detail": {
+        "published": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+        "locked": "c83757ce2c28cfde9e376c2ba1008771a93a63ed"
+      }
+    },
+    "15_no_negative_control_residue": {
+      "status": "PASS",
+      "detail": {
+        "residue": [],
+        "worktree_differs_from_commit": []
+      }
+    },
+    "16_no_current_hash_failure": {
+      "status": "PASS",
+      "detail": "none"
+    }
+  },
+  "failures": []
+}

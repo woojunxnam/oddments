@@ -1,0 +1,38 @@
+...........................................F............................ [ 55%]
+.........................................................                [100%]
+=================================== FAILURES ===================================
+_ test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields _
+
+fixture = (PosixPath('/tmp/pytest-of-agent/pytest-20/test_builder_exposes_secondary0/repo'), {'events': [{'attempt': 1, 'job_id'...-CASE-0401': 'practice_expansion/fixture/questions.json', 'MA-CASE-0441': 'practice_expansion/fixture/questions.json'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5ba6ca00b0>
+
+    def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields(fixture,monkeypatch):
+        import build_full_corpus_review as builder
+        root,state,report,_,questions,collections = fixture
+        real_load = secondary.load_metadata; captured = {}
+        def load_fixture(repo,primary,current_questions,current_collections):
+            captured['primary'] = copy.deepcopy(primary)
+            value = real_load(root,primary,questions,collections)
+            captured['progress'] = value['progress']
+            return value
+        monkeypatch.setattr(secondary,'load_metadata',load_fixture)
+        outputs = builder.build()
+        rows = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
+        progress = json.loads(outputs[ROOT/'reports/full-corpus-review/progress.json'])
+        originals = {r['question_id']:r for r in captured['primary']}
+        for qid in secondary.IDS:
+            row = rows[qid]
+            assert row['independent_legacy_legal_assessment'] == originals[qid]['legal_review']
+            assert row['independent_legacy_realism_assessment'] == originals[qid]['realism_review']
+            assert row['independent_legacy_legal_assessment']['existing_answer_correct'] == 'NOT_ASSESSED'
+            assert row['independent_legacy_supplementary_assessment']['record']['legal_review']['verdict'] == 'KEEP'
+            assert row['answer_key_assessment'] == 'INDEPENDENT_LEGACY_NOT_ASSESSED'
+            assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
+            assert row['publication_status'] == 'PRACTICE_CONFIG_ARCHIVE'
+>       assert progress['independent_legacy_legal_assessed'] == captured['progress']['effective_key_assessed']
+E       assert 1755 == 1791
+
+tests/test_procedural_secondary_metadata.py:265: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+1 failed, 128 passed in 192.61s (0:03:12)

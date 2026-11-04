@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Source-first Massachusetts MPJE study and audit system." />
+    <title>Massachusetts MPJE Study System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="notes-entry.css" />
+  <link rel="stylesheet" href="assets/learning-tools.css" data-oddments-tools>
+<script src="assets/learning-tools.js" defer data-oddments-tools></script>
+</head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Source-first pharmacy law</p>
+        <h1>Massachusetts MPJE Study System</h1>
+        <p class="lede">Canonical rules, auditable questions, and no recalled exam content.</p>
+      </div>
+      <div class="header-actions">
+        <a class="ghost-button exam-study-entry" href="notes/#study">MPJE 법규 학습 · 시험 우선</a>
+        <a class="ghost-button notes-entry-link" href="notes/">Ultimate Notes · 통합 노트</a>
+        <a class="ghost-button" href="notes/#refresh">Daily Refresh · 복습 카드</a>
+        <a class="ghost-button notes-entry-link" href="practice-expansion/">1,024문항 · 검토 원고</a>
+        <button id="study-guide-button" class="ghost-button" type="button">Study Guide</button>
+        <button id="history-button" class="ghost-button" type="button">Exam History</button>
+        <button id="bookmark-button" class="ghost-button" type="button" disabled>Bookmark</button>
+      </div>
+    </header>
+
+    <div id="fixture-warning" class="warning-banner" hidden>
+      <strong>Development build:</strong> this warning appears only when a locally generated fixture payload is loaded. The tracked public payload contains RELEASED questions only.
+    </div>
+
+    <main>
+      <section class="ultimate-notes-entry" aria-labelledby="exam-study-title">
+        <div><p class="eyebrow">MPJE FIRST · EXAM LAW STUDY</p><h2 id="exam-study-title">지금은 MPJE 법규 학습부터</h2><p>16단원 · 핵심 법규 64개 · 조건 비교 12개 · 기한 24개 · 30회 학습 순서</p><small>법규 이해 → 조건·예외 → 가리고 설명 → 관련 사례풀이. RA 복귀는 합격 후 보조 경로로 남겼습니다.</small></div>
+        <a class="notes-entry-primary exam-study-entry" href="notes/#study">MPJE 법규 학습 시작 →</a>
+      </section>
+
+      <section class="ultimate-notes-entry" aria-labelledby="ultimate-notes-title">
+        <div><p class="eyebrow">WEEK 1–6 · CONNECTED STUDY NOTES</p><h2 id="ultimate-notes-title">Massachusetts MPJE 통합 노트</h2><p>주제별 상세 설명 · Generic/Brand 사전 · 공식 출처 · 북마크와 읽기 진도</p><small>기존 노트의 중복을 정리한 별도 학습판입니다. 문제은행의 RELEASED·독립 감사 상태와는 구별됩니다.</small></div>
+        <a class="notes-entry-link notes-entry-primary" href="notes/">통합 노트 읽기 →</a>
+      </section>
+
+      <section class="ultimate-notes-entry" aria-labelledby="practice-expansion-title">
+        <div><p class="eyebrow">NEW · DRAFT / NOT RELEASED</p><h2 id="practice-expansion-title">신규 연습문항 1,024개 · 독립 검토 대기</h2><p>영어 문제·한국어 해설 · 256개 사례 묶음 · 통합노트 연결</p><small>기존 시험 모드에는 섞지 않았습니다. 별도 원고·로컬 검토판과 검토 상태를 확인하세요.</small></div>
+        <a class="notes-entry-link notes-entry-primary" href="practice-expansion/">원고·검토 상태 보기 →</a>
+      </section>
+
+      <section class="ultimate-notes-entry" aria-labelledby="refresh-entry-title">
+        <div><p class="eyebrow">SUPPLEMENT · GENERAL REFRESH</p><h2 id="refresh-entry-title">보조 복습 · 기초·약물명·실무</h2><p>전체 복습 카드 · 기초 용어 · 합격 후 RA→약국 복귀</p><small>기초·실무 카드와 기존 약물 부록을 연결합니다. 개인 복습 기록은 합격·현장 역량 인증이 아닙니다.</small></div>
+        <a class="notes-entry-primary" href="notes/#refresh/today">오늘의 카드 시작 →</a>
+      </section>
+
+      <section class="mode-panel" aria-labelledby="mode-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose a workflow</p>
+            <h2 id="mode-heading">Start a session</h2>
+          </div>
+          <p id="data-summary" class="status-copy">Loading canonical site data...</p>
+        </div>
+
+        <div class="mode-grid">
+          <button type="button" data-mode="quick20" class="primary-mode">Quick Exam — 20 Questions</button>
+          <button type="button" data-mode="study">Study Mode</button>
+          <button type="button" data-mode="random">Random Quiz</button>
+          <button type="button" data-mode="mock">Mock Exam</button>
+          <button type="button" data-mode="drug">Drug Drill</button>
+          <button type="button" data-mode="browse">Browse by Subject</button>
+          <button type="button" data-mode="wrong">Retry Wrong Questions</button>
+          <button type="button" data-mode="bookmarked">Bookmarked Quiz</button>
+        </div>
+
+        <div class="filters" aria-label="Question filters">
+          <label>Area<select id="area-filter"><option value="">All areas</option></select></label>
+          <label>Topic<select id="topic-filter"><option value="">All topics</option></select></label>
+          <label>Difficulty<select id="difficulty-filter"><option value="">All levels</option></select></label>
+          <label>Question type<select id="type-filter"><option value="">All types</option></select></label>
+          <label class="checkbox-filter"><input id="drug-filter" type="checkbox" /> Drug questions only</label>
+        </div>
+      </section>
+
+      <section id="dashboard-panel" class="dashboard-panel" aria-labelledby="dashboard-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Local study dashboard</p>
+            <h2 id="dashboard-heading">Progress on this device</h2>
+          </div>
+          <p class="status-copy">No account or backend required.</p>
+        </div>
+        <div id="dashboard-metrics" class="metric-grid"></div>
+        <div class="panel-actions">
+          <button type="button" data-dashboard-action="quick20">Quick Exam 20</button>
+          <button type="button" data-dashboard-action="weakest">Practice Weakest Area</button>
+          <button type="button" data-dashboard-action="mistakes">Retry Recent Mistakes</button>
+          <button id="export-study-data" type="button" class="secondary-button">Export Study Data</button>
+          <button id="import-study-data" type="button" class="secondary-button">Import Study Data</button>
+          <input id="import-study-file" type="file" accept="application/json,.json" hidden />
+        </div>
+        <p id="storage-status" class="status-copy" aria-live="polite"></p>
+      </section>
+
+      <section id="empty-state" class="empty-state">
+        <h2>Released question bank</h2>
+        <p>Select a mode to begin. Questions that have not passed the repository release gates are not included in the public site data.</p>
+      </section>
+
+      <section id="question-panel" class="question-panel" hidden aria-live="polite">
+        <div class="question-meta">
+          <span id="question-position"></span>
+          <span id="question-area"></span>
+          <span id="question-difficulty"></span>
+          <span id="question-type"></span>
+        </div>
+        <h2 id="question-stem"></h2>
+        <p id="ordered-help" class="ordered-help" hidden>Select the steps in the order they should occur.</p>
+        <form id="choice-form" class="choices"></form>
+        <p id="selected-order" class="selected-order" hidden></p>
+
+        <div class="question-actions">
+          <button id="check-answer" type="button">Check Answer</button>
+          <button id="reveal-answer" class="secondary-button" type="button" hidden>Reveal Answer</button>
+          <button id="reset-order" class="secondary-button" type="button" hidden>Reset Order</button>
+          <button id="previous-question" class="ghost-button" type="button" disabled>Back</button>
+          <button id="next-question" class="ghost-button" type="button" disabled>Next</button>
+        </div>
+
+        <div id="result" class="result" hidden></div>
+
+        <details id="explanation" class="explanation" hidden>
+          <summary>Explanation and source audit</summary>
+          <div class="explanation-grid">
+            <section>
+              <h3>Correct Answer</h3>
+              <p id="correct-answer"></p>
+            </section>
+            <section>
+              <h3>Why</h3>
+              <p id="core-reasoning"></p>
+            </section>
+            <section class="full-width">
+              <h3>Choice-by-choice analysis</h3>
+              <dl id="choice-analysis"></dl>
+            </section>
+            <section id="drug-check-section" class="full-width" hidden>
+              <h3>Drug Check</h3>
+              <div id="drug-checks" class="drug-grid"></div>
+            </section>
+            <section>
+              <h3>Related Facts</h3>
+              <ul id="related-facts"></ul>
+            </section>
+            <section>
+              <h3>MPJE Trap</h3>
+              <p id="mpje-trap"></p>
+            </section>
+            <section class="full-width">
+              <details class="authority-details">
+                <summary>Authority / Last Verified</summary>
+                <ul id="authorities"></ul>
+              </details>
+            </section>
+          </div>
+        </details>
+      </section>
+
+      <section id="exam-results" class="results-panel" hidden aria-labelledby="results-heading">
+        <p class="eyebrow">Completed session</p>
+        <h2 id="results-heading">Exam results</h2>
+        <div id="result-summary" class="score-summary"></div>
+        <div class="breakdown-grid">
+          <section><h3>Area breakdown</h3><div id="area-breakdown"></div></section>
+          <section><h3>Topic breakdown</h3><div id="topic-breakdown"></div></section>
+        </div>
+        <section>
+          <h3>Missed questions</h3>
+          <ul id="missed-questions"></ul>
+        </section>
+        <div class="panel-actions">
+          <button id="review-answers" type="button">Review Answers</button>
+          <button id="retry-wrong" type="button">Retry Wrong Questions</button>
+          <button id="practice-topic" type="button">Practice This Topic</button>
+          <button id="open-related-guide" type="button">Open Relevant Study Guide</button>
+          <button id="new-quick20" type="button">Start New Random 20</button>
+        </div>
+      </section>
+
+      <section id="history-panel" class="history-panel" hidden aria-labelledby="history-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">Stored locally</p><h2 id="history-heading">Exam History</h2></div>
+          <button id="close-history" class="ghost-button" type="button">Close</button>
+        </div>
+        <div id="history-list"></div>
+        <div id="history-detail"></div>
+      </section>
+
+      <section id="study-guide-panel" class="study-guide-panel" hidden aria-labelledby="guide-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">Source-backed guide</p><h2 id="guide-heading">Study Guide 1.0</h2></div>
+          <button id="close-study-guide" class="ghost-button" type="button">Close</button>
+        </div>
+        <div class="filters">
+          <label>Search<input id="guide-search" type="search" placeholder="Search verified sections" /></label>
+          <label>Area<select id="guide-area-filter"><option value="">All areas</option><option value="1">Area 1</option><option value="2">Area 2</option><option value="3">Area 3</option><option value="4">Area 4</option></select></label>
+        </div>
+        <div id="guide-sections"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>No backend, authentication, analytics, or personal data collection. Progress is stored only in this browser.</p>
+    </footer>
+
+    <script src="shuffle.js"></script>
+    <script src="session.js"></script>
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

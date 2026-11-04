@@ -60,6 +60,9 @@ def ancestry_bindings(state,job,uid):
             record=entry_for(state,job)['record']
         elif job.get('reassessment_id'):
             record=next(e['record']for e in state['reassessments']if e['record']['reassessment_id']==job['reassessment_id'])
+        elif job.get('inactive_census_successor_id'):
+            from notes_inactive_census_successor import entry_for as inactive_entry
+            record=inactive_entry(state,job)['record']
         else:return result
         job=next(j for j in state['jobs']if j['job_id']==record['previous_job_id'])
 
@@ -72,6 +75,9 @@ def current(job,inv,state,allow_pending=False):
         allowed=ancestry_bindings(state,owner,uid)
         q.require(binding in allowed and inv['units'].get(uid) in allowed,
                   'Assigned body/census differs from explicit current or archived body correction')
+        if owner.get('inactive_census_successor_id'):
+            from notes_inactive_census_successor import current as inactive_current
+            inactive_current(owner,inv,state)
         if owner.get('reassessment_id'):
             record=next(e['record']for e in state['reassessments']if e['record']['reassessment_id']==owner['reassessment_id'])
             q.require(inv['units'].get(uid)==owner['unit_bindings'][uid] or
@@ -104,7 +110,7 @@ def selected_is_current(job,inv):
 
 def current_content_keep_count(state,inv):
     actual=units(inv['notes'])
-    excluded=sum(bool(j.get('body_reassessment_id'))and not selected_is_current(j,inv)and
+    excluded=sum(bool(j.get('body_reassessment_id')or j.get('inactive_census_successor_id'))and not selected_is_current(j,inv)and
                  actual[uid].get('independent_content_review',{}).get('decision')=='KEEP'
                  for uid,j in latest_jobs(state).items())
     return inv['existing_content_keep_units']-excluded
@@ -117,7 +123,7 @@ def derived_inputs(root,notes,uid,candidate):
     for kind,path,collections in [('study','notes/study/guide.json',['lessons','comparisons','clocks']),
                                   ('refresh','notes/refresh/guide.json',['cards','glossary'])]:
         if not (root/path).exists():continue  # Minimal fixtures have no authored cards.
-        data=apply_study_revision(json.loads((root/path).read_bytes()),kind,root)
+        data=apply_study_revision(json.loads((root/path).read_bytes()),kind,root,notes_context=notes)
         for collection in collections:
             for item in data.get(collection,[]):
                 if uid not in item.get('note_units',[]):continue
@@ -472,7 +478,7 @@ def ordered_specs(root,specs):
     state=json.loads(disk_reader(root)(q.STATE,q.raw_sha(path.read_bytes())))
     q.validate_state(state)
     jobs={j['unit_bindings'][j['unit_ids'][0]]['census_path']:j
-          for j in state['jobs']if j.get('reassessment_id')or j.get('body_reassessment_id')}
+          for j in state['jobs']if j.get('reassessment_id')or j.get('body_reassessment_id')or j.get('inactive_census_successor_id')}
     sequence={p:j['sequence']for p,j in jobs.items()}
     q.require(all(s['path'] in sequence for s in specs),'Unregistered note census replacement spec')
     out=[]
@@ -492,7 +498,8 @@ def ordered_specs(root,specs):
 def census_snapshot(root,spec,notes):
     """Exact registered spec only; a caller cannot smuggle an inactive revision."""
     from notes_census_reassessment import registered_specs as census_specs
-    matches=[s for s in ordered_specs(root,registered_specs(root,notes)+census_specs(root,notes))if s==spec]
+    from notes_inactive_census_successor import registered_specs as inactive_specs
+    matches=[s for s in ordered_specs(root,registered_specs(root,notes)+census_specs(root,notes)+inactive_specs(root,notes))if s==spec]
     q.require(len(matches)==1,'Unknown/unreviewed/inactive body census builder spec')
     binding=spec.get('body_correction_record')
     if binding is None:

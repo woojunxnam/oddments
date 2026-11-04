@@ -1,0 +1,136 @@
+{
+  "report_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY-AUTHORING",
+  "date": "2026-08-19",
+  "issue": 86,
+  "controller_issue": 83,
+  "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+  "source_branch": "remediation/pre-batch3-legacy-salvage-t1",
+  "source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+  "author_branch": "remediation/pre-batch3-coverage-t3-diversity",
+  "authored_by": "Claude Code controller/author (Issue #83 controller session)",
+  "independent_audit_status": "NOT_PERFORMED_BY_AUTHOR",
+  "question_ids": [
+    "MA-Q-0227",
+    "MA-Q-0228"
+  ],
+  "question_count": 2,
+  "remediated_deficits": [
+    {
+      "deficit_id": "DIVERSITY-4.3",
+      "headline": "4.3",
+      "label": "Delivery of drugs",
+      "existing_family": "T2_0215_MA_DRUG_DELIVERY",
+      "new_family": "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY",
+      "existing_authority_section": "247 CMR 9.02",
+      "new_authority_section": "247 CMR 9.04(4)"
+    },
+    {
+      "deficit_id": "DIVERSITY-4.6",
+      "headline": "4.6",
+      "label": "Centralized prescription processing / central fill",
+      "existing_family": "T2_0220_MA_CENTRAL_FILL",
+      "new_family": "T3_0228_MA_CENTRAL_FILL_ROUTING",
+      "existing_authority_section": "Policy 2021-02 (ownership / written agreement)",
+      "new_authority_section": "Policy 2021-02, section IV (destination, licensure, scope limits)"
+    }
+  ],
+  "new_rule_ids": [
+    "MA-BEDSIDE-DELIVERY",
+    "MA-CENTRAL-FILL-DISPENSING-ROUTE"
+  ],
+  "new_family_ids": [
+    "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY",
+    "T3_0228_MA_CENTRAL_FILL_ROUTING"
+  ],
+  "new_rule_authorities": {
+    "MA-BEDSIDE-DELIVERY": {
+      "section": "247 CMR 9.04(4)",
+      "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+      "type": "PROMULGATED_REGULATION",
+      "verification_status": "PRIMARY_VERIFIED",
+      "last_verified": "2026-08-19",
+      "content_hash": "bfcff957c781eeedafb496866b3d0361a58ffd68c4fca9a01950695ce9ebef77"
+    },
+    "MA-CENTRAL-FILL-DISPENSING-ROUTE": {
+      "section": "Policy 2021-02, section IV",
+      "url": "https://www.mass.gov/lists/pharmacy-practice-resources",
+      "type": "BOARD_POLICY",
+      "verification_status": "OFFICIAL_POLICY_VERIFIED",
+      "last_verified": "2026-08-19",
+      "content_hash": "90f4e302223e230cbf8eb327a6f5cd711ee9f4d79564848d6be1cfc14275efb6"
+    }
+  },
+  "new_rules_were_necessary": "MA-DRUG-DELIVERY-SHIPPING states the 247 CMR 9.02 mail and common-carrier integrity duty and MA-SHARED-PHARMACY-SERVICES states the Policy 2021-02 ownership or written-agreement structure. Neither states the propositions tested here, and both are frozen inside the released MA-Q-0215 and MA-Q-0220 dependency snapshots, so editing them was not permissible.",
+  "protected_records_unchanged": {
+    "MA-DRUG-DELIVERY-SHIPPING": "7d389ec020fc90c5f33b47f93c3ae087a718986b6646ac580ca3c63137c7e296",
+    "MA-SHARED-PHARMACY-SERVICES": "795e5ca2bece8930737a06bcff5f1d951b77b63ae6e11abd77ad48cb5bf7fda9",
+    "MA-Q-0215": "60cacb955e6fef4d02699c6b3b80f869920551d484dbb9afe8bd1114b911f685",
+    "MA-Q-0220": "72dfe8a9eb2a34ebf251327d80bf8046eec880650ba3070160c8a37d999bc47e"
+  },
+  "t3_release_state": {
+    "MA-Q-0227": {
+      "verification_status": "AUDIT_PENDING",
+      "lifecycle_status": "AUDIT_PENDING",
+      "audits": [],
+      "independent_audit_status": "PENDING",
+      "duplicate_review_status": "PENDING",
+      "final_adjudication": null
+    },
+    "MA-Q-0228": {
+      "verification_status": "AUDIT_PENDING",
+      "lifecycle_status": "AUDIT_PENDING",
+      "audits": [],
+      "independent_audit_status": "PENDING",
+      "duplicate_review_status": "PENDING",
+      "final_adjudication": null
+    }
+  },
+  "question_audit_hashes": {
+    "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+    "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+  },
+  "full_bank_duplicate_pattern_preflight": {
+    "question_count_scanned": 228,
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "max_stem_sequence_ratio_vs_bank": {
+      "MA-Q-0227": 0.387,
+      "MA-Q-0228": 0.486
+    },
+    "max_stem_token_jaccard_vs_bank": {
+      "MA-Q-0227": 0.127,
+      "MA-Q-0228": 0.271
+    },
+    "thresholds": {
+      "stem_sequence_ratio": 0.82,
+      "stem_token_jaccard": 0.76
+    },
+    "shared_normalized_option_texts_with_any_question": 0,
+    "vs_target_families": {
+      "MA-Q-0227_vs_MA-Q-0215": {
+        "stem_sequence_ratio": 0.102,
+        "stem_token_jaccard": 0.103,
+        "core_reasoning_ratio": 0.036,
+        "shared_options": 0
+      },
+      "MA-Q-0228_vs_MA-Q-0220": {
+        "stem_sequence_ratio": 0.045,
+        "stem_token_jaccard": 0.197,
+        "core_reasoning_ratio": 0.078,
+        "shared_options": 0
+      }
+    }
+  },
+  "repository_validation": "PASS (0 errors, 2 pre-existing warnings unchanged)",
+  "full_tests": "PASS (93 passed, 1 skipped)",
+  "generated_artifact_freshness": "PASS",
+  "answer_distribution_effect": "SBA chi-square improved from 14.057554 to 12.928571; severity remains the pre-existing WARNING",
+  "sata_concentration_after": {
+    "three_correct_share": 0.5412,
+    "limit": 0.55,
+    "ABE_share": 0.1059,
+    "limit_key_share": 0.25
+  },
+  "source_policy": "current official primary and official Board sources only; no public non-official signal used (source_signal_ids empty, provenance GEN)",
+  "notes": "Authored by the same Claude Code controller that performed the Issue #83 T2 release and the Issue #40 gate rerun. This session is the author and must not audit this content. Release requires a fresh independent auditor performing a blind solve and immutable lock before canonical key access, then current official-source LEGAL verification and a FULL canonical-bank REALISM review, recorded as audit_scope TARGETED_INITIAL_BATCH under tranche PRE-BATCH3-COVERAGE-T3-DIVERSITY authorized by Issue #86."
+}

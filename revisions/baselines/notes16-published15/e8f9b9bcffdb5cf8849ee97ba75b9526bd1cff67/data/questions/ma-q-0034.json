@@ -1,0 +1,107 @@
+{
+  "question_id": "MA-Q-0034",
+  "family_id": "P2_0034_MA_RX_OUTSTATE_III_VI",
+  "area": 2,
+  "topic": "Prescription validity",
+  "subtopic": "Out-of-state III-VI",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient presents an otherwise authentic out-of-state Ambien prescription 31 days after issue. What is the Massachusetts consequence?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Fill it because federal Schedule IV authority lasts six months."
+    },
+    {
+      "id": "B",
+      "text": "Use the five-day contiguous-state narcotic rule."
+    },
+    {
+      "id": "C",
+      "text": "Accept the prescription after telephone verification on day 31."
+    },
+    {
+      "id": "D",
+      "text": "The Massachusetts 30-day out-of-state window has expired."
+    },
+    {
+      "id": "E",
+      "text": "Change the issue date to the date the pharmacy received it."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "The Massachusetts 30-day out-of-state window has expired. By contrast, 'Fill it because federal Schedule IV authority lasts six months.' uses a legal trigger absent from the stem.",
+    "choice_analysis": {
+      "A": "This near-miss uses a different trigger: Fill it because federal Schedule IV authority lasts six months.",
+      "B": "This near-miss uses a different trigger: Use the five-day contiguous-state narcotic rule.",
+      "C": "This near-miss uses a different trigger: Accept the prescription after telephone verification on day 31.",
+      "D": "The stated facts support this result: The Massachusetts 30-day out-of-state window has expired.",
+      "E": "This near-miss uses a different trigger: Change the issue date to the date the pharmacy received it."
+    },
+    "related_facts": [
+      "zolpidem (Ambien) is used for short-term treatment of insomnia; it is federal Schedule IV and Massachusetts Schedule IV.",
+      "An authorized out-of-state practitioner may issue a Schedule III through VI prescription filled in Massachusetts within 30 days of issue; Schedule III through V prescriptions require pharmacist verification."
+    ],
+    "mpje_trap": "Reject 'Fill it because federal Schedule IV authority lasts six months.' because its legal trigger is absent."
+  },
+  "rule_ids": [
+    "MA-RX-OUTSTATE-III-VI",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "zolpidem"
+  ],
+  "reasoning_steps": [
+    "Classify zolpidem under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Out-of-state Schedule III through VI prescriptions"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-RX-OUTSTATE-III-VI": {
+          "content_version": 1,
+          "content_hash": "c93d14f9318f7f2e5a38b4147f54906b751c6a60e93e482ef17a9aba7498f9cd"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "zolpidem": {
+          "content_version": 1,
+          "content_hash": "26d73ead9e6d01a3a6644c7c1b38b2307cced5ae4946f9b5de1ebd542a5137c6"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

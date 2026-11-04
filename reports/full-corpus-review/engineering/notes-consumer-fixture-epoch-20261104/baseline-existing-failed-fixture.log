@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "/workspace/mpje-pr193-qa/scripts/notes_published15_closure.py", line 95, in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mpje-pr193-qa/scripts/notes_independent_metadata.py", line 72, in load_metadata
+    queue.validate_state(state)
+  File "/workspace/mpje-pr193-qa/scripts/note_review_queue.py", line 172, in validate_state
+    validate_chain(state)
+  File "/workspace/mpje-pr193-qa/scripts/notes_census_reassessment.py", line 65, in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+  File "/workspace/mpje-pr193-qa/scripts/note_review_queue.py", line 31, in require
+    raise ValueError(message)
+ValueError: Inactive census successor has no unique append-ordered assignment

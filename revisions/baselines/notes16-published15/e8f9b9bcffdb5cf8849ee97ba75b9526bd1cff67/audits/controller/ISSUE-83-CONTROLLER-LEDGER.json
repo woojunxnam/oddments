@@ -1,0 +1,616 @@
+{
+  "ledger_type": "CLAUDE_CODE_CONTROLLER_LEDGER",
+  "controller_issue": 83,
+  "controller": "Claude Code (mechanical/governance controller, not an auditor)",
+  "independence_wall": "This controller performs mechanical and governance work only. It does not act as, or impersonate, a fresh independent auditor for any substantive content it authored or repaired. Existing accepted T2 audits were represented, never re-judged.",
+  "start_boundary": {
+    "branch": "repair/pre-batch3-coverage-t2-r1",
+    "required_head": "bfc1be694053f84bf688126246131f16df1374d1",
+    "verified": true,
+    "verified_at_phase": "PHASE_0_START_BOUNDARY"
+  },
+  "current_phase": "BATCH3_B3B_R1_REPAIR_AND_B3C_AUTHORING",
+  "phases": [
+    {
+      "phase": "BATCH3_B3B_AUDIT_VERIFIED_AND_RELEASED",
+      "date": "2026-08-19",
+      "audit_pr": 95,
+      "auditor_instance": "CLAUDE-FRESH-B3B",
+      "process_checks": "16/16 PASS (scripts/verify_tranche_audit.py)",
+      "lock": {
+        "commit": "c480e58f988da9078b8425fa0c358a1ac5a9bb71",
+        "blob": "726b2e26caab8c7238a99e177d4a325c239eb729",
+        "seconds_before_records": 1054,
+        "contamination": "CLEAN"
+      },
+      "blind_result": "32/33 blind answers matched canonical keys; the single divergence is MA-Q-0288",
+      "boundary": "audit branch changed exactly 3 files: Phase-1 lock + 2 audit records",
+      "hashes": "all 33 bind to the frozen B3-B manifest exactly",
+      "released": {
+        "count": 32,
+        "before": 229,
+        "after": 261
+      },
+      "withheld": {
+        "MA-Q-0288": "legal KEEP/YES; realism MINOR_EDIT/FAIL on authentic_distractors only"
+      },
+      "integration": "Released from a merge of the audit head 64916345 onto the post-B3-A release state 8c4d6ba, not from stale pre-B3-A main. Content equivalence proven: all 33 B3-B hashes equal the frozen manifest, all 33 B3-A audited fields identical to candidate 520303fe, every pre-B3-B record byte-identical to 8c4d6ba. Family matrix resolved as a proven union, 331 subset of 364, difference exactly the 33 B3-B families, nothing differing beyond release bookkeeping.",
+      "verifier_generalization": "verify_tranche_audit.py now accepts either Phase-1 lock shape (questions/selected_choice_ids or answers/blind_selected_choice_ids) and asserts the optional freeze_head and blind sha256 fields when a lock declares them; fails closed if no recognized answer container or choice field is present."
+    },
+    {
+      "phase": "BATCH3_B3B_TRANCHE_KEY_SKEW_ADVISORY",
+      "date": "2026-08-19",
+      "raised_by": "CLAUDE-FRESH-B3B",
+      "observation": "B3-B tranche-level SBA key distribution A 6 / B 0 / C 2 / D 1 / E 11.",
+      "why_it_arose": "The tranche was deliberately weighted toward E to correct a long-standing bank-level deficit at position E. That correction succeeded: the full-bank answer-distribution gate moved from WARNING to PASS (n=181, chi2=3.0056, p~0.5596).",
+      "controller_decision": "ADVISORY ONLY - no re-keying of the 32 passing questions.",
+      "rationale": "Re-keying would change current hashes, invalidate otherwise passing current-hash audit evidence and force an unnecessary re-audit of 32 already-cleared items. Each of the 32 passed wording_not_guessable and every other realism criterion individually. The released bank, not the authoring tranche, is the production distribution.",
+      "scope_of_advice": "Relevant only if a B3-B tranche is ever presented standalone as a practice set.",
+      "action": "Recorded; the 32 passing hashes left intact."
+    },
+    {
+      "phase": "PHASE_0_START_BOUNDARY",
+      "title": "Start-boundary verification",
+      "status": "PASS",
+      "verified_start_branch": "repair/pre-batch3-coverage-t2-r1",
+      "verified_start_head": "bfc1be694053f84bf688126246131f16df1374d1",
+      "ls_remote_confirmed": true,
+      "release_branch_created": "release/pre-batch3-t2-guarded-admission-v1",
+      "baseline_qa_at_start_head": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pre_existing_warnings": [
+          "MA-Q-0190: correct option is materially longer than distractors",
+          "answer-position distribution exceeded warning threshold"
+        ],
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS"
+      },
+      "immutable_evidence_verified": {
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-PHASE1-LOCK.json": {
+          "git_blob_sha": "38e0da2165d42add508b65eed995f40447aa9b8f",
+          "sha256": "16071c19e5089ad08366f45a12c87fceea273ee327880437dfafe8448e3f715c",
+          "match": true
+        },
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-LEGAL-VERIFICATION.json": {
+          "git_blob_sha": "cc152b7b34f8f0dd5d2393700c855b4e9c44219c",
+          "match": true
+        },
+        "audits/remediation/2026-08-18/GPT-FRESH-COV-T2-A-FULL-BANK-REALISM-REVIEW.json": {
+          "git_blob_sha": "625a3944a47bfb38492be8d3a5b9342868c817ad",
+          "match": true
+        },
+        "audits/remediation/2026-08-19/AUDIT-GPT-FRESH-COV-T2-B-Q0213-CANONICAL-LEGAL-NORMALIZATION.json": {
+          "git_blob_sha": "88f671ddb3b10d8d2b12d1f67aae716dc4bf0312",
+          "match": true
+        },
+        "audits/remediation/2026-08-19/AUDIT-GPT-FRESH-COV-T2-B-Q0213-CANONICAL-REALISM-NORMALIZATION.json": {
+          "git_blob_sha": "f0fb52cad741548f797a939210ef8e56075da544",
+          "match": true
+        }
+      },
+      "canonical_lineage_measured": {
+        "main": "67626815564062bd7f7bfec5b3667ba0deb03454",
+        "remediation/pre-batch3-legacy-salvage-t1": "516771a93f939c843ba4c2be7ef745718606f448",
+        "remediation/pre-batch3-coverage-t2-author": "b849159ef18d37618ca6badf886e465502436e1b",
+        "repair/pre-batch3-coverage-t2-r1": "bfc1be694053f84bf688126246131f16df1374d1",
+        "shape": "strictly linear: main < legacy-salvage-t1 < coverage-t2-author < coverage-t2-r1"
+      }
+    },
+    {
+      "phase": "PHASE_A_AUDITOR_A_NORMALIZATION",
+      "title": "Deterministic Auditor-A canonical normalization",
+      "status": "PASS",
+      "script": "scripts/normalize_t2a_canonical_audits.py",
+      "transformer_is_auditor": false,
+      "supersedes_issue_82_implementation_mechanics": true,
+      "records_written": [
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18.json",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18.json",
+        "audits/remediation/2026-08-19/T2-AUDITOR-A-CANONICAL-TRANSFORM-PROVENANCE.json"
+      ],
+      "audit_scope": "TARGETED_INITIAL_BATCH",
+      "governance_authorization": {
+        "tranche_id": "PRE-BATCH3-COVERAGE-T2",
+        "authorizing_issue": 68,
+        "represented_candidate_sha": "b849159ef18d37618ca6badf886e465502436e1b",
+        "question_count": 16
+      },
+      "legal_results": "16/16 KEEP, 16/16 Existing_Answer_Correct=YES, Severity NONE -> Low",
+      "realism_results": "15/16 KEEP/Low/PASS; MA-Q-0213 MAJOR_REWRITE/High/FAIL (distinct_from_bank=false) at original pre-repair hash 993eee2f3d84d3532d757924fa22421c93a7cf16d69b26d40d5f660ca3624548",
+      "historical_q0213_failure_preserved": true,
+      "authority_source_type_distribution": {
+        "MA_STATUTE": 7,
+        "MA_PROMULGATED_REGULATION": 2,
+        "MA_BOARD_POLICY": 1,
+        "OTHER_OFFICIAL": 4
+      },
+      "is_valid_targeted_initial_audit": true,
+      "validate_audits": "PASS (0 errors)"
+    },
+    {
+      "phase": "PHASE_B_AUDITOR_B_REGISTRATION",
+      "title": "Auditor-B current-Q0213 canonical registration",
+      "status": "PASS",
+      "script": "scripts/register_t2b_canonical_audits.py",
+      "records_written": [
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-LEGAL-REAUDIT-2026-08-19.json",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19.json",
+        "audits/remediation/2026-08-19/T2-AUDITOR-B-CANONICAL-REGISTRATION-PROVENANCE.json"
+      ],
+      "byte_identity_proof": {
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-LEGAL-REAUDIT-2026-08-19.json": "git blob 88f671ddb3b10d8d2b12d1f67aae716dc4bf0312 (identical to PR #80 accepted record)",
+        "data/audits/AUDIT-GPT-FRESH-COV-T2-B-REALISM-REAUDIT-2026-08-19.json": "git blob f0fb52cad741548f797a939210ef8e56075da544 (identical to PR #80 accepted record)"
+      },
+      "required_current_q0213_hash": "689120dad57db1ef46087cda3450a8df13799d865c67dd9942f46d7911b1ce23",
+      "semantic_fields_modified": false,
+      "validate_audits": "PASS (0 errors)"
+    },
+    {
+      "phase": "PHASE_C_GUARDED_PREFLIGHT",
+      "title": "Guarded T2 preflight",
+      "status": "PASS",
+      "script": "scripts/preflight_prebatch3_t2_release.py",
+      "artifact": "audits/remediation/2026-08-19/PRE-BATCH3-T2-GUARDED-RELEASE-PREFLIGHT.json",
+      "checks_passed": 12,
+      "checks_failed": 0,
+      "checks": [
+        "01_recomputed_current_t2_hashes",
+        "02_fifteen_unchanged_match_auditor_a_hashes",
+        "03_q0213_matches_auditor_b_hash",
+        "04_05_current_hash_legal_and_realism_pass_evidence",
+        "06_historical_q0213_failure_visible_at_old_hash_only",
+        "07_targeted_initial_legal_history_for_all_16",
+        "08_direct_dependency_and_semantic_hash_verification",
+        "09_no_current_hash_adjudicated_failure",
+        "10_q0028_remains_quarantined_and_unpreviewed",
+        "11_preview_membership_captured_before_mutation",
+        "12_no_substantive_t2_change_since_accepted_evidence"
+      ]
+    },
+    {
+      "phase": "PHASE_D_GUARDED_RELEASE",
+      "title": "Guarded release of MA-Q-0211..MA-Q-0226",
+      "status": "PASS",
+      "script": "scripts/release_prebatch3_t2_guarded.py",
+      "artifact": "audits/remediation/2026-08-19/PRE-BATCH3-T2-GUARDED-ADMISSION-V1-REPORT.json",
+      "commit": "0e5a84a97a717e188da384b19b882a9aac791f30",
+      "released_count": 16,
+      "evidence_partition": {
+        "GPT-FRESH-COV-T2-A": "MA-Q-0211, MA-Q-0212, MA-Q-0214..MA-Q-0226 (15)",
+        "GPT-FRESH-COV-T2-B": "MA-Q-0213 (1)"
+      },
+      "preview_before_count": 180,
+      "preview_after_count": 196,
+      "released_bank_before": 149,
+      "released_bank_after": 165,
+      "release_assertions": {
+        "exactly_sixteen_t2_released": true,
+        "t2_audited_content_unchanged": true,
+        "no_unrelated_question_state_change": true,
+        "no_registry_semantic_mutation": true,
+        "q0028_not_released": true,
+        "q0028_not_previewed": true,
+        "q0190_untouched": true,
+        "historical_q0213_failure_visible": true
+      },
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings unchanged from the start boundary)",
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS (clean tree after regeneration)"
+      },
+      "development_fixture_convention": "unchanged true, matching every canonical question in this repository and the T1 PR #66 precedent"
+    },
+    {
+      "phase": "PHASE_E_LINEAGE_PROPAGATION",
+      "title": "Release PR, exact-head CI, canonical lineage propagation",
+      "status": "PASS",
+      "release_pr": {
+        "number": 84,
+        "url": "https://github.com/woojunxnam/oddments/pull/84",
+        "base": "repair/pre-batch3-coverage-t2-r1",
+        "head": "release/pre-batch3-t2-guarded-admission-v1",
+        "head_sha": "f42272dab257272b41e6f85435e0bec913e0f887",
+        "exact_head_ci": "QA runs 32272140018 and 32272226137 both success",
+        "merged_sha": "f0cc09b26d485e599042682134ea8c1b3dc410ef",
+        "sha_guard_used": "f42272dab257272b41e6f85435e0bec913e0f887"
+      },
+      "lineage_merges": [
+        {
+          "pr": 73,
+          "base": "remediation/pre-batch3-coverage-t2-author",
+          "head": "repair/pre-batch3-coverage-t2-r1",
+          "expected_head_sha_guard": "f0cc09b26d485e599042682134ea8c1b3dc410ef",
+          "exact_head_ci": "QA runs 32273158611 and 32273164527 both success",
+          "local_exact_head_qa": "validate_all 0 errors, pytest 93 passed 1 skipped, freshness clean",
+          "merged_sha": "444ef028a753c38de58f978515d2cabac26aedeb"
+        },
+        {
+          "pr": 69,
+          "base": "remediation/pre-batch3-legacy-salvage-t1",
+          "head": "remediation/pre-batch3-coverage-t2-author",
+          "expected_head_sha_guard": "444ef028a753c38de58f978515d2cabac26aedeb",
+          "exact_head_ci": "QA runs 32273484478 and 32273491212 both success",
+          "local_exact_head_qa": "validate_all 0 errors, pytest 93 passed 1 skipped, freshness clean",
+          "merged_sha": "860ec67308772ac63073ed62a7ebdcc565921183"
+        }
+      ],
+      "final_post_t2_canonical_state": {
+        "branch": "remediation/pre-batch3-legacy-salvage-t1",
+        "sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+        "role": "exact SHA that Issue #40 audits"
+      },
+      "evidence_branches_not_merged": [
+        71,
+        77,
+        80
+      ],
+      "packaging_or_freeze_only_files_introduced": false,
+      "known_unrelated_ci_note": "The stale push-triggered workflow apply-legacy-salvage-t1-repairs.yml fires on remediation/pre-batch3-legacy-salvage-t1 and fails closed at its 'Verify repair starting boundary' step without mutating or pushing anything. It failed the same way on the prior PR #52 merge (516771a9) and is pre-existing, not caused by T2."
+    },
+    {
+      "phase": "PHASE_F_FINAL_GATE",
+      "title": "Mandatory final Pre-Batch3 gate (Issue #40 rerun)",
+      "status": "FAIL",
+      "verdict": "FAIL",
+      "batch3": "BLOCKED",
+      "script": "scripts/prebatch3_final_coverage_gate.py",
+      "analysis_branch": "analysis/pre-batch3-coverage-post-t2-v1",
+      "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+      "representation": "FULL_FROM_SCRATCH_RECOMPUTATION_AT_EXACT_POST_T2_SHA",
+      "atomic_pass": 46,
+      "atomic_fail": 0,
+      "release_usable_by_area": {
+        "1": 26,
+        "2": 40,
+        "3": 59,
+        "4": 40
+      },
+      "required_120_mock_allocation": {
+        "1": 26,
+        "2": 40,
+        "3": 29,
+        "4": 25
+      },
+      "slack_by_area": {
+        "1": 0,
+        "2": 0,
+        "3": 30,
+        "4": 15
+      },
+      "blueprint_faithful_120_mock_without_reuse": true,
+      "mock_max_family_repeat": 1,
+      "taxonomy_unresolved": [],
+      "gate_fail_reasons": [
+        "headline family-diversity debt: 4.3 (Delivery of drugs) has only family T2_0215_MA_DRUG_DELIVERY",
+        "headline family-diversity debt: 4.6 (Central fill) has only family T2_0220_MA_CENTRAL_FILL"
+      ],
+      "from_scratch_correction": "2.3b Documentation of counseling/offer recorded as PASS on MA-Q-0086 against a baseline FAIL_NO_DIRECT_QUESTION",
+      "family_diversity_exception_claimed": false,
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pytest": "93 passed, 1 skipped",
+        "generated_artifact_freshness": "PASS"
+      },
+      "artifacts": [
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-FINAL-COVERAGE-MATRIX.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-FINAL-GATE-MANIFEST.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-MINIMUM-REMEDIATION-PLAN.json",
+        "audits/coverage/2026-08-19/POST-T2-PRE-BATCH3-COVERAGE-DEBT.md"
+      ],
+      "consequence": "Batch 3 is NOT unlocked. Phase G is not started. A narrowly scoped remediation issue is created instead."
+    },
+    {
+      "phase": "PHASE_G_BATCH3",
+      "title": "Batch 3 program",
+      "status": "NOT_STARTED_GATE_FAILED",
+      "reason": "Issue #83 Phase F requires the final Pre-Batch3 gate to PASS before Batch 3 unlocks. The gate measured FAIL at 860ec67308772ac63073ed62a7ebdcc565921183.",
+      "batch3": "BLOCKED",
+      "remediation_issue": {
+        "number": 86,
+        "url": "https://github.com/woojunxnam/oddments/issues/86",
+        "title": "Pre-Batch3 remediation T3: close headline family-diversity debt for 4.3 and 4.6",
+        "scope": "2 new Area 4 questions (MA-Q-0227, MA-Q-0228) in 2 new families; nothing else",
+        "frozen_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183"
+      },
+      "gate_evidence_pr": {
+        "number": 85,
+        "url": "https://github.com/woojunxnam/oddments/pull/85",
+        "branch": "analysis/pre-batch3-coverage-post-t2-v1",
+        "merge_intent": "none - evidence branch only"
+      },
+      "no_batch3_plan_artifact_created": true,
+      "no_batch3_questions_authored": true
+    },
+    {
+      "phase": "PHASE_G_BATCH3_UNLOCKED",
+      "title": "Pre-Batch3 gate PASS and Batch 3 unlock",
+      "status": "BATCH3_UNLOCKED_PLAN_LOCKED",
+      "t3_audit": {
+        "auditor": "CLAUDE",
+        "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+        "audit_pr": 88,
+        "audit_head": "e08478d7956754142b4f5538e84de64cbec88997",
+        "phase1_lock_commit": "e412cfb1e78a6579a18727ab7fa549f0444836f6",
+        "phase1_lock_blob": "abdd4524b87c521265829050f3dd882851814710",
+        "blind_answers_matched_keys": true,
+        "legal": "KEEP/YES both",
+        "realism": "KEEP/PASS both, 10/10 criteria",
+        "controller_verification": "16/16 PASS",
+        "contamination_status": "CLEAN"
+      },
+      "t3_release": {
+        "pr": 89,
+        "merged_sha": "b9664b7aacc4ba7fa7b8f7472e4ff3fc336aa294",
+        "lineage_pr": 90,
+        "post_t3_canonical_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+        "released_ids": [
+          "MA-Q-0227",
+          "MA-Q-0228"
+        ],
+        "released_before_after": [
+          165,
+          167
+        ],
+        "preview_before_after": [
+          196,
+          198
+        ]
+      },
+      "final_gate": {
+        "gate": "PRE_BATCH3_FULL_COMPETENCY_COVERAGE_DEBT_POST_T3",
+        "verdict": "PASS",
+        "batch3": "UNLOCKED",
+        "source_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+        "atomic": "46/46",
+        "headline_diversity": "all 22 PASS, min 2 families",
+        "taxonomy_unresolved": 0,
+        "mock_120_without_reuse": true,
+        "mock_max_family_repeat": 1,
+        "release_usable_by_area": {
+          "1": 26,
+          "2": 40,
+          "3": 59,
+          "4": 42
+        },
+        "evidence_branch": "analysis/pre-batch3-coverage-post-t3-v1"
+      },
+      "batch3_plan": {
+        "plan_id": "BATCH3-PLAN-V1",
+        "measured_deficit_total": 193,
+        "releasable_today_from_unreleased_pool": 0,
+        "key_finding": "31 unreleased candidates hold current-hash passing evidence but only from instance-less legacy Phase-2 audits, which the AUDITOR_INSTANCE release policy rejects; verified by a dry release through the real validator",
+        "second_key_finding": "the entire unreleased pool is Areas 3 and 4, so the 132-question Area 1/2 deficit can only be closed by new authoring",
+        "new_authored": 162,
+        "authoring_tranches": [
+          "B3-A 33",
+          "B3-B 33",
+          "B3-C 33",
+          "B3-D 33",
+          "B3-E 30"
+        ],
+        "salvage_tranches": [
+          "B3-S1 31 reaudit",
+          "B3-S2 21 repair+reaudit",
+          "B3-S3 8 fresh audit"
+        ],
+        "id_range": "MA-Q-0229 through MA-Q-0390, no collisions"
+      },
+      "next": "Author and freeze B3-A while B3-S1 salvage audit runs in parallel."
+    },
+    {
+      "phase": "PHASE_T3_DIVERSITY_AUTHORING",
+      "title": "Pre-Batch3 T3 diversity remediation - authoring, freeze and auditor handoff",
+      "status": "AUTHORING_COMPLETE_AWAITING_FRESH_INDEPENDENT_AUDIT",
+      "authorizing_issue": 86,
+      "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+      "verified_source_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+      "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+      "audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+      "freeze_branch_sha": "f1622e70e4d92d24128fe7ad26466adc614b9d92",
+      "branches": {
+        "remediation/pre-batch3-coverage-t3-diversity": "authoring candidate + merged governance authorization",
+        "governance/pre-batch3-t3-targeted-initial-scope": "PR #87, merged",
+        "freeze/pre-batch3-coverage-t3-v1": "freeze-only, not a merge target"
+      },
+      "authored": {
+        "MA-Q-0227": {
+          "headline": "4.3",
+          "family_id": "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY",
+          "question_type": "SBA",
+          "area": 4,
+          "authority": "247 CMR 9.04(4)",
+          "question_audit_hash": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+          "distinct_from": "MA-Q-0215 / T2_0215_MA_DRUG_DELIVERY (247 CMR 9.02 packing and stability duty)"
+        },
+        "MA-Q-0228": {
+          "headline": "4.6",
+          "family_id": "T3_0228_MA_CENTRAL_FILL_ROUTING",
+          "question_type": "SATA",
+          "area": 4,
+          "authority": "Board Policy 2021-02, section IV",
+          "question_audit_hash": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3",
+          "distinct_from": "MA-Q-0220 / T2_0220_MA_CENTRAL_FILL (ownership or written-agreement structure)"
+        }
+      },
+      "new_rules": [
+        "MA-BEDSIDE-DELIVERY",
+        "MA-CENTRAL-FILL-DISPENSING-ROUTE"
+      ],
+      "protected_records_untouched": [
+        "MA-DRUG-DELIVERY-SHIPPING",
+        "MA-SHARED-PHARMACY-SERVICES",
+        "MA-Q-0215",
+        "MA-Q-0220"
+      ],
+      "official_research": {
+        "247 CMR 9.04(4)": "read verbatim from the current official Board publication of 247 CMR 9.00",
+        "247 CMR 9.02": "confirmed as the separate Prescriptions by Mail provision behind MA-Q-0215",
+        "Board Policy 2021-02": "adopted 2/19/21, revised 4/7/22 and 2/6/25; read from the current official Pharmacy Practice Resources publication",
+        "source_classes_used": "PUBLIC_OFFICIAL only; no public non-official signal; provenance GEN"
+      },
+      "preflight": {
+        "duplicate_detector_findings": 0,
+        "structural_pattern_findings": 0,
+        "max_stem_similarity_vs_bank": {
+          "MA-Q-0227": {
+            "sequence": 0.387,
+            "jaccard": 0.127
+          },
+          "MA-Q-0228": {
+            "sequence": 0.486,
+            "jaccard": 0.271
+          }
+        },
+        "similarity_vs_target_family": {
+          "MA-Q-0227_vs_MA-Q-0215": {
+            "sequence": 0.102,
+            "jaccard": 0.103
+          },
+          "MA-Q-0228_vs_MA-Q-0220": {
+            "sequence": 0.045,
+            "jaccard": 0.197
+          }
+        },
+        "shared_normalized_option_texts": 0,
+        "sata_three_correct_share": 0.5412,
+        "sata_key_ABE_share": 0.1059,
+        "sba_answer_distribution_chi_square": {
+          "before": 14.057554,
+          "after": 12.928571
+        }
+      },
+      "qa": {
+        "validate_all": "PASS (0 errors, 2 pre-existing warnings)",
+        "pytest": "98 passed, 1 skipped (5 new T3 policy tests)",
+        "generated_artifact_freshness": "PASS",
+        "exact_head_ci": "QA success on 039badfb (governance) and c7e57194 (freeze)"
+      },
+      "governance_authorization_registered": {
+        "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+        "authorizing_issue": 86,
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "question_ids": [
+          "MA-Q-0227",
+          "MA-Q-0228"
+        ],
+        "audit_scope": "TARGETED_INITIAL_BATCH",
+        "schema_changed": false,
+        "ordinary_initial_batch_minimum_unchanged": 30,
+        "merged_pr": 87
+      },
+      "blind_package": {
+        "path": "audits/remediation/2026-08-19/T3-BLIND-QUESTIONS-PRE-BATCH3-COVERAGE-T3.json",
+        "sha256": "84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9",
+        "exposes": [
+          "question_id",
+          "question_type",
+          "stem",
+          "choices"
+        ],
+        "leakage_check": "PASS"
+      },
+      "auditor_handoff": {
+        "path": "audits/remediation/2026-08-19/T3-FRESH-AUDITOR-HANDOFF-PROMPT.md",
+        "reserved_auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+        "status": "READY_TO_SEND"
+      },
+      "independence_wall": {
+        "author_is_controller": true,
+        "controller_performed_audit": false,
+        "subagent_auditor_used": false,
+        "subagent_declined_because": "A subagent would receive a fresh model context but would still share this filesystem and git repository, where the canonical keyed answers, the authoring report and the git history live. Blind discipline could not be technically enforced before the Phase-1 lock, so genuine isolation cannot be guaranteed and no subagent auditor was spawned."
+      },
+      "stopped_at": "FRESH_INDEPENDENT_AUDIT_HANDOFF",
+      "resume_plan": [
+        "Register the accepted audit evidence canonically.",
+        "Guarded-release MA-Q-0227 and MA-Q-0228 using the T1/T2 fail-closed pattern.",
+        "Rerun scripts/prebatch3_final_coverage_gate.py from the exact post-release SHA.",
+        "If PASS, continue Issue #83 Phase G into Batch 3 planning and execution."
+      ]
+    },
+    {
+      "phase": "PHASE_T3_HANDOFF_CORRECTION",
+      "title": "T3 handoff integrity correction",
+      "status": "CORRECTED",
+      "authorizing_issue": 86,
+      "resolved_freeze_head": "2eb33177ac6c424969520ec8e04df2870610f94f",
+      "superseded_freeze_shas": [
+        "c7e57194c127139a2d06356dbb5cb4f442a07d0d",
+        "f1622e70e4d92d24128fe7ad26466adc614b9d92",
+        "da71c931f08df642d63324523d16855d71f120a6"
+      ],
+      "freeze_head_resolution_method": "git ls-remote origin refs/heads/freeze/pre-batch3-coverage-t3-v1",
+      "defects_found_and_fixed": [
+        {
+          "defect": "FREEZE_SHA_DISCREPANCY",
+          "finding": "Two different SHAs were published for the freeze branch. Resolved mechanically: the stale value was a superseded parent commit, not a parallel branch.",
+          "content_impact": "none"
+        },
+        {
+          "defect": "PLATFORM_DEPENDENT_PACKAGE_SHA256",
+          "finding": "The freeze script hashed raw working-tree bytes. Windows checkout rewrites these files to CRLF, so the published sha256 only reproduced on Windows and would have read as tampering to a Linux or macOS auditor.",
+          "proof": "sha256(CRLF rendering)=84582bb5a7ed1986aaf0394b99ed4b6038c7dcabd500bef5135a530513be40d9 and sha256(LF rendering)=e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851 map to each other exactly under CRLF<->LF; the git blob c83757ce2c28cfde9e376c2ba1008771a93a63ed is unchanged across every freeze commit.",
+          "fix": "file_sha256 now normalizes CRLF to LF, so every published value equals `git show <sha>:<path> | sha256sum` on any platform.",
+          "content_impact": "none; only the attestation's self-referential package_sha256 map changed"
+        },
+        {
+          "defect": "FREEZE_ONLY_INPUTS_UNREACHABLE_FROM_AUDIT_BASE",
+          "finding": "The blind package, both contracts, the manifest and the post-lock reveal exist only on the freeze branch and are absent from the audit base, so the prompt's plain file paths would not have resolved.",
+          "fix": "The prompt now reads them with `git show origin/freeze/...:<path>` and names that single blind-package git show as the one permitted exception to the no-git-show rule."
+        },
+        {
+          "defect": "AUDIT_BASE_TIP_DRIFT",
+          "finding": "The prompt asserted the candidate branch tip equals 36b3ea85229609afb08772a566cca2eb6fbe1be8, but four controller ledger commits had landed since.",
+          "measured_drift": "audits/controller/ISSUE-83-CONTROLLER-LEDGER.json only; data, schemas, scripts, tests and site byte-identical; both question hashes unchanged",
+          "blind_hygiene_note": "The newer ledger records the T3 authoring entry including author distinctness reasoning, so pinning to the exact base commit is also cleaner than following the tip.",
+          "fix": "The auditor is pinned to the exact commit 36b3ea85, tip equality is replaced by ancestry plus a data/schemas/site no-drift check, and the controller ledger is added to the prohibited-read list."
+        }
+      ],
+      "verified_at_final_freeze_head": {
+        "blind_package_present": true,
+        "blind_package_git_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+        "blind_package_sha256_lf": "e6f8cc8852d474287384df7718ca8e96096bb741a1e41310631f6cc252d83851",
+        "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+        "question_hashes_match_at_candidate_base_and_freeze": true,
+        "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+        "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3",
+        "no_question_or_rule_semantic_mutation": true
+      },
+      "authoring_content_altered": false,
+      "governance_authorization_altered": false,
+      "q0028_altered": false,
+      "issue_86_comment_corrected_in_place": "https://github.com/woojunxnam/oddments/issues/86#issuecomment-5345395726",
+      "stopped_at": "FRESH_INDEPENDENT_AUDIT_HANDOFF"
+    }
+  ],
+  "final_state": {
+    "t2_release": "COMPLETE",
+    "canonical_lineage": "PROPAGATED",
+    "final_post_t2_canonical_sha": "860ec67308772ac63073ed62a7ebdcc565921183",
+    "pre_batch3_gate": "PASS",
+    "gate_evidence_branch": "analysis/pre-batch3-coverage-post-t2-v1",
+    "batch3": "UNLOCKED",
+    "remediation_issue_url": "https://github.com/woojunxnam/oddments/issues/86",
+    "t3_remediation": "AUTHORED_AND_FROZEN_AWAITING_FRESH_INDEPENDENT_AUDIT",
+    "t3_represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+    "t3_audit_base_sha": "36b3ea85229609afb08772a566cca2eb6fbe1be8",
+    "pull_requests": {
+      "84": "MERGED - guarded T2 release",
+      "73": "MERGED - T2 repair lineage",
+      "69": "MERGED - T2 remediation into Pre-Batch3 canonical lineage",
+      "85": "OPEN DRAFT - post-T2 gate evidence, not a merge target",
+      "87": "MERGED - T3 targeted-initial governance authorization"
+    },
+    "quarantine_intact": {
+      "MA-Q-0028": "non-released, non-preview"
+    },
+    "validators_weakened": false,
+    "failed_audit_history_deleted": false,
+    "historical_q0213_failure_visible": true,
+    "controller_performed_any_audit": false,
+    "t3_freeze_head": "2eb33177ac6c424969520ec8e04df2870610f94f",
+    "t3_blind_package_blob": "c83757ce2c28cfde9e376c2ba1008771a93a63ed",
+    "post_t3_canonical_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+    "batch3_plan": "BATCH3-PLAN-V1"
+  }
+}

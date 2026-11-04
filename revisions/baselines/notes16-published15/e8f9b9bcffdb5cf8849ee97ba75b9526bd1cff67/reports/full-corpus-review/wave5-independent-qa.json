@@ -1,0 +1,74 @@
+{
+  "schema_version": "independent-legacy-review-qa/1",
+  "checked_at": "2026-11-03",
+  "report_path": "reports/full-corpus-review/wave5-independent-review.json",
+  "report_sha256": "bdee56748325221a80a50e5a7cf3a0b35c3125f27ccef0a903d3c8f5dfa9ce04",
+  "auditor_instance": "codex-mission-independent-wave2-20261103",
+  "review_round": "WAVE5_ORIGINAL_CASE0482_0521",
+  "root_validator_path": "scripts/build_full_corpus_review.py",
+  "root_validator_sha256": "c088e901043d1c0ed8f6260eeec2f224c0efbb44cd80cb8a9cee013712cfd28b",
+  "validation_method_ko": "root 현재 build()의 독립검증 inline 요구사항을 그대로 적용했다. 별도 validate_independent_review 함수는 존재하지 않아 호출했다고 주장하지 않는다. import한 module ROOT를 이 worktree로 고정했고 최신 root 원문과 record_hash를 비교했다. build()/artifact regeneration은 실행하지 않았다.",
+  "checks": [
+    {
+      "check": "exact40 IDs/current root complete-record hashes/stored stem-option-rationale binding",
+      "status": "PASS"
+    },
+    {
+      "check": "all37 cited official evidence SHAs and source_manifest.schema.json",
+      "status": "PASS"
+    },
+    {
+      "check": "160 distinct per-option entries and authorities/HTTPS/section/review-date",
+      "status": "PASS"
+    },
+    {
+      "check": "current root style profile canonical semantic hash/version/file SHA",
+      "status": "PASS"
+    },
+    {
+      "check": "10 realism criteria and per-criterion findings for every40 originals",
+      "status": "PASS"
+    },
+    {
+      "check": "same actual auditor_instance as previous question audit; disjoint IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "all previously tracked files unchanged in this worker",
+      "status": "PASS"
+    },
+    {
+      "check": "full pytest, artifact regeneration, GitHub CI, deployed output",
+      "status": "NOT RUN",
+      "detail_ko": "연구 보고서 범위 검증이며 통합 full QA와 공개 출력 검증은 root의 다음 단계이다."
+    }
+  ],
+  "summary": {
+    "question_ids": 40,
+    "options_read": 160,
+    "distinct_original_statements": 75,
+    "legal_answer_assessed": 37,
+    "key_yes": 37,
+    "key_ambiguous": 0,
+    "key_not_assessed": 3,
+    "blocked_key_uniqueness_ids": [
+      "MA-CASE-0506",
+      "MA-CASE-0507",
+      "MA-CASE-0508"
+    ],
+    "source_blocked": 3,
+    "safe_hold_recommended": 40,
+    "realism_pass": 0,
+    "realism_fail": 40,
+    "canonical_released": 0
+  },
+  "default_recommendation_0493_binding": {
+    "question_id": "MA-CASE-0493",
+    "record_sha256": "b533fa790cee8f113bc1ea3db49dee2b01733ca723536a76021c3f8e497e5d1e",
+    "legal_existing_answer_correct": "YES",
+    "realism_verdict": "FAIL",
+    "safe_hold_recommended": true,
+    "finding_ko": "D의 renewable emergency maintenance prescription은 실제3-day nonrenewable 예외와 구별할 가치가 있다. 정답 B는 어떤 depot인지·누구에게 전달하는지 없이 separate checks라는 일반론이다."
+  },
+  "canonical_release_credit": 0
+}

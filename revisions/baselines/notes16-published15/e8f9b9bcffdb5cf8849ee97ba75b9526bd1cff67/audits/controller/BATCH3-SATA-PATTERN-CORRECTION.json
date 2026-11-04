@@ -1,0 +1,80 @@
+{
+  "record_id": "BATCH3-SATA-PATTERN-CORRECTION",
+  "recorded_by": "CONTROLLER",
+  "recorded_on": "2026-08-20",
+  "issue": 91,
+  "trigger": {
+    "source": "CLAUDE-FRESH-B3C realism audit, tranche-level observation recorded on MA-Q-0295",
+    "observation": "Within tranche B3-C option E carried a correct answer in 11 of 12 SATA items, and no SATA item had three correct options although three is the released bank's modal count. The auditor noted that neither existing gate detects either pattern.",
+    "controller_position": "Confirmed on measurement, and found to extend to B3-D v2 and B3-E v2. The zero-three-correct pattern was an artifact of a deliberate distribution correction by this controller that overshot."
+  },
+  "risk_analysis": {
+    "method": "Read site/shuffle.js and site/app.js rather than assuming.",
+    "stored_slot_patterns": {
+      "exam_visible": false,
+      "reason": "shuffleQuestionChoices re-letters every item from a per-question_id seed, so which stored letter holds a correct answer is decoupled from what a candidate sees.",
+      "severity": "WARNING - bank hygiene for anyone reading site/generated/questions.json directly"
+    },
+    "correct_count_patterns": {
+      "exam_visible": true,
+      "reason": "The same function maps correct_choice_ids one-for-one, so how many options are correct survives shuffling unchanged.",
+      "severity": "ERROR"
+    },
+    "note": "An earlier draft of this analysis asserted that both patterns survive shuffling. That was wrong for the slot pattern and is corrected here."
+  },
+  "gate_added": {
+    "path": "scripts/check_tranche_key_patterns.py",
+    "codes": [
+      "TRANCHE_SATA_COUNT_OMISSION (error): a correct-count holding at least 25% of the bank's SATA is wholly absent from a tranche",
+      "TRANCHE_SATA_SLOT_CONCENTRATION (warning): one letter carries a correct answer in more than 80% of a tranche's SATA",
+      "TRANCHE_SBA_KEY_CONCENTRATION (warning): one letter is the key in more than 50% of a tranche's SBA"
+    ],
+    "measured_before_fix": {
+      "B3-A": "A carries a correct answer in 100% of SATA (12/12) - warning only, pre-existing and released",
+      "B3-B": "E is the SBA key in 55% - warning only, pre-existing and released",
+      "B3-C": "no 3-correct SATA (error); E at 92% (warning)",
+      "B3-D v2": "no 3-correct SATA (error)",
+      "B3-E v2": "no 3-correct SATA (error)"
+    },
+    "measured_after_fix": {
+      "B3-C": "counts {2:7, 3:2, 4:3}; E 83% warning remains",
+      "B3-D v2": "counts {2:6, 3:3, 4:3}; PASS",
+      "B3-E v2": "counts {2:7, 3:2, 4:2}; PASS"
+    },
+    "not_repaired": "B3-A and B3-B carry stored-slot warnings only. Their questions are released and their audit hashes are not disturbed, because the pattern is invisible to a candidate under shuffle.js. Recorded, not hidden."
+  },
+  "questions_edited": {
+    "method": "Each conversion rewrote ONE CORRECT option into a statement the governing text contradicts, drawing the false proposition from the misreading the rule record itself names under common_confusions. Making a true option false is safer than making a false option true, and yields a distractor the source vouches for. No stem was altered and no other option was touched.",
+    "unaudited_tranches": [
+      {"question_id": "MA-Q-0342", "choice": "A", "basis": "M.G.L. c. 112, s. 24B1/2(c)(1)", "now": ["C", "D", "E"]},
+      {"question_id": "MA-Q-0350", "choice": "B", "basis": "105 CMR 700.003(F)(2)", "now": ["A", "C", "E"]},
+      {"question_id": "MA-Q-0355", "choice": "E", "basis": "M.G.L. c. 94C, s. 9(a)", "now": ["A", "B", "D"]},
+      {"question_id": "MA-Q-0361", "choice": "B", "basis": "247 CMR 6.03(5) and (11)", "now": ["A", "D", "E"]},
+      {"question_id": "MA-Q-0389", "choice": "D", "basis": "247 CMR 6.10(2)(b)", "now": ["A", "B", "E"]}
+    ],
+    "audited_tranche_b3c": [
+      {"question_id": "MA-Q-0311", "choice": "B", "basis": "M.G.L. c. 112, s. 24B1/2(a)", "now": ["A", "C", "E"]},
+      {"question_id": "MA-Q-0322", "choice": "E", "basis": "247 CMR 9.01(17), read verbatim 2026-08-20", "now": ["A", "B", "C"]}
+    ],
+    "b3c_consequence": "MA-Q-0311 and MA-Q-0322 now carry new question_audit_hash values, so the CLAUDE-FRESH-B3C audit no longer covers them and they are not release-eligible. That is the intended fail-closed behaviour. Exactly two items were edited, the least that clears the omission. The CLAUDE-FRESH-B3C records are untouched.",
+    "resited": {
+      "question_id": "MA-Q-0322",
+      "problem": "The first replacement made option E assert that a rest period may be aggregated across the day. True as a falsehood, but MA-Q-0323 sits in the same family and already keys that exact discrimination - its key IS the eight consecutive hour rest period and its first distractor IS nine hours in total.",
+      "resolution": "Option E moved to a different false proposition the same paragraph settles: 247 CMR 9.01(17) binds a pharmacist, pharmacy intern, or pharmacy technician, so confining the ceiling to pharmacists is wrong.",
+      "sibling_check": "All seven rewrites were checked against every question sharing their family. Only MA-Q-0322 collided."
+    }
+  },
+  "defect_found_in_own_work": {
+    "what": "The two conversion scripts rewrote option text and choice analysis in the generator modules but left each spec's correct_choice_ids list unchanged, so re-running any author script would have restored the four-correct keys.",
+    "detection": "A module-to-record drift check over stem, choices, correct_choice_ids and explanation reported 7 drifts.",
+    "resolution": "All seven lists corrected; drift re-measured at 0 across all four generator modules."
+  },
+  "gates_after": {
+    "validate_all": "0 errors, 1 pre-existing warning (MA-Q-0190)",
+    "pytest": "98 passed, 1 skipped",
+    "duplicate_detector": 0,
+    "structural_detector": 0,
+    "tranche_key_patterns": "0 errors",
+    "module_record_drift": 0
+  }
+}

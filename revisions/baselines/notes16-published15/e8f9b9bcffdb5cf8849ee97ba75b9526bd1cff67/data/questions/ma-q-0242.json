@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0242",
+  "family_id": "B3A_0242_MA_INTERN_WITHDRAWAL_NOTICE",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Intern withdrawal notification",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy intern withdraws from her PharmD program at the end of a semester. She plans to reapply next year and continues working shifts at the pharmacy. What does the regulation require of her?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Nothing, because her intern licence remains valid until its expiration date."
+    },
+    {
+      "id": "B",
+      "text": "Written notification to the Board within 14 days of the withdrawal."
+    },
+    {
+      "id": "C",
+      "text": "Written notification to the Board within 30 days of the withdrawal."
+    },
+    {
+      "id": "D",
+      "text": "Notification by her preceptor rather than by her."
+    },
+    {
+      "id": "E",
+      "text": "Notification only if she does not reapply within one year."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.01(18) requires a pharmacy intern to provide written notification to the Board within 14 days of withdrawal from an approved college or school of pharmacy or PharmD program. The duty is the intern's own and is triggered by the withdrawal itself, not by any later decision about reapplying.",
+    "choice_analysis": {
+      "A": "Withdrawal triggers an affirmative duty regardless of the licence's expiration date.",
+      "B": "Correct: written notice to the Board within 14 days.",
+      "C": "The deadline is 14 days, not 30.",
+      "D": "The duty runs to the intern personally.",
+      "E": "The duty is not deferred pending a reapplication decision."
+    },
+    "related_facts": [
+      "An intern who has graduated from an approved school may continue acting as an intern until becoming licensed as a pharmacist."
+    ],
+    "mpje_trap": "Graduation and withdrawal are different events: one continues intern capacity, the other triggers a report."
+  },
+  "rule_ids": [
+    "MA-INTERN-WITHDRAWAL-NOTICE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify withdrawal from the program as the triggering event",
+    "Apply the intern's personal written notification duty",
+    "Measure the 14-day deadline from the withdrawal"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-INTERN-WITHDRAWAL-NOTICE": {
+          "content_version": 1,
+          "content_hash": "95ed3e35904268a8ea21c0724ab11d2f4ea2b559bd4402130a5a3ed4b3690301"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

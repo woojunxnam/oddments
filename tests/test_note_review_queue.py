@@ -60,6 +60,39 @@ def claimed(repo, state=None, worker='fresh-auditor'):
     return state,job
 
 
+def test_lost_note_worker_revoke_preserves_provenance_and_fresh_claim(repo):
+    state = planned(repo)
+    job = queue.claim(state, repo[2], 'lost-reviewer', 'lost-session', 'Fresh session checked', minutes=1440, at=NOW)
+    old = copy.deepcopy(job); history = copy.deepcopy(state['events'])
+    queue.revoke(state, job['job_id'], old['lease_token'], 'Original disk unavailable', '/root', LATER)
+    assert state['events'][:-1] == history
+    assert state['events'][-1]['previous_lease']['actor_provenance'] == old['actor_provenance']
+    assert state['events'][-1]['previous_lease']['auditor_instance'] == old['auditor_instance']
+    assert job['status'] == 'QUEUED' and 'lease_token' not in job
+    before = copy.deepcopy(state)
+    queue.revoke(state, job['job_id'], old['lease_token'], 'Original disk unavailable', '/root', LATER)
+    assert state == before
+    replacement = queue.claim(state, repo[2], 'replacement', 'replacement-session', 'Actual new session', at=LATER)
+    assert replacement['attempt'] == old['attempt'] + 1
+    assert replacement['actor_provenance'] == {'actor_id':'replacement','session_id':'replacement-session'}
+    assert replacement['unit_bindings'] == old['unit_bindings']
+    with pytest.raises(ValueError, match='Stale'):
+        queue.require_lease(replacement, old['lease_token'], LATER)
+
+
+@pytest.mark.parametrize('mutation', ['actor', 'token', 'reason', 'submitted', 'integrated'])
+def test_invalid_note_revocation_cannot_rewrite_queue(repo, mutation):
+    state, job = claimed(repo)
+    token, reason, actor = job['lease_token'], 'Workspace lost', '/root'
+    if mutation == 'actor': actor = '/root/worker'
+    if mutation == 'token': token = 'wrong'
+    if mutation == 'reason': reason = ''
+    if mutation in {'submitted', 'integrated'}: job['status'] = mutation.upper()
+    before = copy.deepcopy(state)
+    with pytest.raises(ValueError): queue.revoke(state, job['job_id'], token, reason, actor, LATER)
+    assert state == before
+
+
 def evidence_for(job):
     header = {'stage':queue.STAGE,'independent_of_authors':True,'canonical_audit':False,
               'canonical_release_credit':0,'question_audit_credit':0,

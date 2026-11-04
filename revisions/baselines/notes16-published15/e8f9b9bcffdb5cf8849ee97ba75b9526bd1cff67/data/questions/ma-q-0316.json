@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0316",
+  "family_id": "LICENSEE_CONFIDENTIALITY_AFFIRMATIVE_DUTY",
+  "area": 2,
+  "topic": "Confidentiality",
+  "subtopic": "Licensee duty",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist discloses nothing about any patient to anyone. Completed prescriptions sit face up on an open counter and a printed waiting list showing patient names is visible to everyone standing in the queue. No one is shown to have read either of them. What is the position?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Compliant, because the pharmacist made no disclosure to any third party."
+    },
+    {
+      "id": "B",
+      "text": "Compliant, because no one is shown to have read the information on display."
+    },
+    {
+      "id": "C",
+      "text": "Compliant, provided the pharmacy makes a private consultation area available."
+    },
+    {
+      "id": "D",
+      "text": "In breach, but only once a patient complains about the arrangement."
+    },
+    {
+      "id": "E",
+      "text": "In breach, because the duty includes protecting confidential information."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.01(16) requires a licensee to MAINTAIN patient confidentiality AND to PROTECT a patient's confidential information. The second limb is affirmative, so a pharmacist who discloses nothing may still fail the duty by leaving confidential information exposed in the ordinary workflow of the pharmacy.",
+    "choice_analysis": {
+      "A": "Non-disclosure answers only the first limb of the duty.",
+      "B": "The duty is to protect the information, not to prevent proven reading of it.",
+      "C": "A consultation area addresses counselling privacy, not exposed records.",
+      "D": "A complaint is not an element of the duty.",
+      "E": "Correct: the protective limb is breached by the exposure itself."
+    },
+    "related_facts": [
+      "247 CMR 9.18 separately governs the patient consultation area"
+    ],
+    "mpje_trap": "Candidates reduce confidentiality to a rule against telling people things."
+  },
+  "rule_ids": [
+    "MA-LICENSEE-CONFIDENTIALITY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate the maintain limb from the protect limb",
+    "Note that no disclosure occurred",
+    "Apply the protective limb to the exposed records and list"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-LICENSEE-CONFIDENTIALITY": {
+          "content_version": 1,
+          "content_hash": "3a3886a47faeb524c8da86b6454b9a94b34dedd61a3816aa07d962cbbf665cd4"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

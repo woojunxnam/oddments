@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-28",
+  "base_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
+  "reviewer_session": "/root/recover_drafts",
+  "review_scope": "EDITORIAL_TRIAGE_ONLY",
+  "canonical_independent_audit": false,
+  "official_source_reverification_performed": false,
+  "input_files": [
+    {
+      "path": "practice_expansion/2026-10-23/candidates/questions.json",
+      "sha256": "f2b27d3105f2efab40d3ab943f0f5813bdadd793e5ffa60d262fe5ab4e40a74f"
+    },
+    {
+      "path": "practice_expansion/2026-10-26-plus/questions.json",
+      "sha256": "f9a600504be007913c996163db29a482cc30ae3781055e50dc3ef9d83f2655b6"
+    },
+    {
+      "path": "practice_expansion/2026-10-27-quality/questions.json",
+      "sha256": "27f39f5607b58d56796aadd6c68236d576972150ffd65fcece790aba5ea5e344"
+    },
+    {
+      "path": "practice_expansion/2026-10-27-quality/selection.json",
+      "sha256": "3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64"
+    },
+    {
+      "path": "notes/guide.json",
+      "sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384"
+    },
+    {
+      "path": "data/exam_style/mpje_style_profile.json",
+      "sha256": "f699e10e4ada0ced21e60e92b1abaa88329aa315eab1a4a5f1247243f90ec845"
+    }
+  ],
+  "selection_snapshot_sha256": "b1e0df92bbc7dec6b92e417b2392a8f773b37ef8b177b386460c31c87a296be7",
+  "current_session_source_conflict_received": {
+    "path": "reports/representative-rewrite/ce-deficiency-source-conflict.json",
+    "sha256": "f975a1e2217a3ab99186f1ac9be222c2a9ca750aff054a800f7f42368ce55ea2",
+    "author": "Separate source-provenance investigation by the parent/author team; not a fresh primary-source read by this editorial reviewer.",
+    "propagated_to_legacy_ids": [
+      "MA-EXP-0051",
+      "MA-CASE-0349",
+      "MA-CASE-0795"
+    ]
+  },
+  "policies_read": [
+    "docs/RELEASE_POLICY.md",
+    "docs/AUDIT_WORKFLOW.md",
+    "docs/QUESTION_AUTHORING_STANDARD.md",
+    "docs/SOURCE_USE_POLICY.md",
+    "docs/PRACTICE_QUALITY_AUTHORING_REVIEW.md",
+    "data/exam_style/mpje_style_profile.json"
+  ],
+  "style_profile": {
+    "id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c",
+    "valid_for_exams_before": "2027-03-01",
+    "source_status": "Repository profile reused; no future outline substituted."
+  },
+  "boundaries_ko": [
+    "355개 모두 실제 지문·선택지·선택지별 실질 해설을 읽고 개별 판정을 기록했다. 자동 token·유사도 관찰과 편집자의 개별 판단은 분리했다.",
+    "이 보고서는 편집 triage이며 재작성 완료, 법규 현행성 재검증, author-source PASS 또는 canonical 독립 감사가 아니다. 모든 문항의 legal_correctness는 NOT_REVERIFIED이다.",
+    "연결 노트의 OPEN이 실제 시험하는 경로 밖에 있는 경우 자동 HOLD로 계산하지 않았다. HOLD에는 이번 세션에서 별도 조사로 확인된 CE email/Form 출처 충돌을 반영했다. 나머지가 HOLD가 아니라고 법규 검증을 통과한 것은 아니다.",
+    "원 질문 ID·내용·정답·publication·selection·history·canonical audit 파일은 이 보고서 작성으로 변경하지 않았다.",
+    "MA-REV-0001–0096은 표현 비교용이며 source 질문은 수정하지 않았다. 96개 stem 전체와 별도 명시된 상세 비교 문항만 읽었고 96개 전수 재감사를 주장하지 않는다."
+  ],
+  "classification": "INTERNAL_ITEM_LOGIC_FINDINGS_NOT_NEW_LEGAL_AUTHORITY_VERIFICATION",
+  "finding_count": 3,
+  "findings": [
+    {
+      "question_id": "MA-CASE-0122",
+      "finding_type": "INTERNAL_ITEM_LOGIC_AMBIGUITY",
+      "severity": "DEFINITE_NONEXCLUSIVE_ACTIONS",
+      "reviewed_text_sha256": "30776936cc2c50342fe6aebc6b9e751bfa6b27e02115ec03c9af1d1221a3adfd",
+      "source_content_sha256": "d971063fd24a5af56ebbee314b3716f8542b05aa9ff024c2aa6be3e370850cab",
+      "source_path": "practice_expansion/2026-10-26-plus/questions.json",
+      "stem_exact": "An employee has current full technician license and current national certification. The on-duty pharmacist approves the assignment to handle final patient-specific prescription verification; all other routine training is complete.\n\nHow should the pharmacist evaluate this assignment? Select ONE answer.",
+      "choices_exact": [
+        {
+          "id": "A",
+          "text": "Reassign the task because the stated technician tier does not authorize it."
+        },
+        {
+          "id": "B",
+          "text": "The identified pharmacist-only boundary still applies."
+        },
+        {
+          "id": "C",
+          "text": "The assignment is within the stated personnel pathway."
+        },
+        {
+          "id": "D",
+          "text": "Restore the state license before assigning licensed technician work."
+        }
+      ],
+      "published_correct_choice_ids": [
+        "B"
+      ],
+      "core_reasoning_exact": "Final validation 또는 emergency oral CII 의 pharmacist 역할을 해당 보조인력에 이전하지 않는다.",
+      "all_choice_rationales_exact": {
+        "A": "선택하지 않을 항목. Ordinary technician 와 PTT/CPhT 의 전화처방 권한을 구별한다.",
+        "B": "선택할 항목. Final validation 또는 emergency oral CII 의 pharmacist 역할을 해당 보조인력에 이전하지 않는다.",
+        "C": "선택하지 않을 항목. 해당 현재 자격과 승인/감독을 전제로 그 업무의 scope 를 충족한다.",
+        "D": "선택하지 않을 항목. 현재 national certification 만으로 만료된 state license 를 대체할 수 없다."
+      },
+      "overlapping_options": [
+        "A",
+        "B"
+      ],
+      "reasoning_ko": "Final patient-specific verification을 맡긴 CPhT에게 A는 이 업무를 다른 사람에게 재배치하라고 하고 B는 pharmacist-only boundary가 유지된다고 한다. 둘 다 동일한 pharmacist-only 결정을 표현하여 SBA의 A와 B가 양립한다.",
+      "rationale_problem_ko": "A의 오답 해설은 ordinary technician/PTT/CPhT의 전화처방 권한을 설명한다. 현재 지문은 전화처방이 아니라 final verification이며 이 해설은 A가 틀린 이유가 되지 않는다.",
+      "recommended_fix_ko": "A를 실제로 부적절한 대안으로 바꾸거나 A/B를 합쳐 최종검수 담당자를 직접 묻는다. 의미가 바뀐 수정은 새 ID 또는 명시 version mapping으로 처리한다.",
+      "recommended_publication_action": "HOLD_FROM_DEFAULT_SELECTION_PENDING_EDITORIAL_FIX",
+      "action_applied_by_this_report": false,
+      "official_source_reverification": false,
+      "legal_correctness": "NOT_REVERIFIED",
+      "canonical_legal_audit": false
+    },
+    {
+      "question_id": "MA-CASE-0100",
+      "finding_type": "INTERNAL_ITEM_LOGIC_AMBIGUITY",
+      "severity": "GENERIC_REQUIREMENT_COMPATIBLE_WITH_KEY",
+      "reviewed_text_sha256": "ad6c63a674a24e2fc1696003fb0531015be84b49b6df6699c2ce3be88947c41f",
+      "source_content_sha256": "9dad54cf2e6f70653051f298e72af3a99587efdba8131bd715b0a748bcdfccbb",
+      "source_path": "practice_expansion/2026-10-26-plus/questions.json",
+      "stem_exact": "One pharmacist is not providing vaccination services. The filling team contains 2 currently certified technicians, 0 licensed interns, and 2 ordinary technicians. Everyone is appropriately licensed and is actively assisting prescription preparation. No dedicated-training exclusion applies.\n\nWhich assessment follows Policy 2026-02? Select ONE answer.",
+      "choices_exact": [
+        {
+          "id": "A",
+          "text": "The stated ordinary ratio and qualifying mix are satisfied."
+        },
+        {
+          "id": "B",
+          "text": "The ordinary four-person ceiling is exceeded."
+        },
+        {
+          "id": "C",
+          "text": "Four support staff need the required two-person qualifying mix."
+        },
+        {
+          "id": "D",
+          "text": "Three support staff need at least one intern or certified technician."
+        }
+      ],
+      "published_correct_choice_ids": [
+        "A"
+      ],
+      "core_reasoning_exact": "3 명에는 qualifying 1 명, 4 명에는 qualifying 2 명 조합을 확인한다.",
+      "all_choice_rationales_exact": {
+        "A": "선택할 항목. 3 명에는 qualifying 1 명, 4 명에는 qualifying 2 명 조합을 확인한다.",
+        "B": "선택하지 않을 항목. Vaccination 특례가 없는 일반 1-pharmacist 경로의 최대 support count 는 4 이다.",
+        "C": "선택하지 않을 항목. 4 명 지원인력에 qualifying group 1 명만 있으면 1:4 요건을 충족하지 못한다.",
+        "D": "선택하지 않을 항목. Ordinary technician 3 명만으로 일반 1:3 을 충족하지 못한다."
+      },
+      "overlapping_options": [
+        "C",
+        "A"
+      ],
+      "reasoning_ko": "현재 팀은2CPhT+2ordinary로 네 명이며 A는 적격구성을 충족한다고 한다. C는 네 명에게 두 명의 qualifying mix가 필요하다는 일반 요건만 말하므로 현재 팀에도 참인 필요조건이다. C에는 이 팀이 부족하다는 문구가 없다.",
+      "rationale_problem_ko": "C의 오답 해설은 qualifying group이1명인 상황을 가정하지만 지문에는2명이 있다. 잘못된 사실을 해설에 추가하여 일반적으로 참인 C를 배제한다. D도 세 명 팀의 일반 규칙이지만 현재 네 명 평가에는 직접 적용되지 않는다.",
+      "recommended_fix_ko": "모든 선택지를 이 실제 팀의 적법성·필요한 변경에 대한 결론으로 통일하고 일반적인 필요조건을 오답으로 쓰지 않는다.",
+      "recommended_publication_action": "HOLD_FROM_DEFAULT_SELECTION_PENDING_EDITORIAL_FIX",
+      "action_applied_by_this_report": false,
+      "official_source_reverification": false,
+      "legal_correctness": "NOT_REVERIFIED",
+      "canonical_legal_audit": false
+    },
+    {
+      "question_id": "MA-CASE-0082",
+      "finding_type": "INTERNAL_ITEM_LOGIC_AMBIGUITY",
+      "severity": "BROAD_CONDITIONAL_OPTION_OVERLAP",
+      "reviewed_text_sha256": "71b9f9065ab1ebf45692c1f339bbd0ab6b1bda71650f1d4fcb6e4f17cc5844b4",
+      "source_content_sha256": "68c934027bb01a62a3905b5ca7dbdfd82019d9d88cdfab86dd19d7946b9f6d1e",
+      "source_path": "practice_expansion/2026-10-26-plus/questions.json",
+      "stem_exact": "A pharmacist has been expired solely for ordinary nonrenewal, with no suspension or revocation for 1 months. The pharmacist wants to resume work in Massachusetts. Assume this duration is measured after the applicable expiration or order date.\n\nWhich description best fits the applicable restoration pathway? Select ONE answer.",
+      "choices_exact": [
+        {
+          "id": "A",
+          "text": "Stop practice and satisfy applicable Board reinstatement conditions; MPJE is not automatic from this duration alone."
+        },
+        {
+          "id": "B",
+          "text": "Satisfy the MPJE requirement and other applicable Board conditions before ordinary renewal."
+        },
+        {
+          "id": "C",
+          "text": "Stop practice; the ordinary 60-day additional-condition threshold has not yet been crossed."
+        },
+        {
+          "id": "D",
+          "text": "Satisfy the disciplinary restoration conditions including MPJE; the Board may also require NAPLEX."
+        }
+      ],
+      "published_correct_choice_ids": [
+        "C"
+      ],
+      "core_reasoning_exact": "만료 후 업무 유예는 없으며, 아직 60 일 초과의 추가조건과 구분한다. 복구 승인 전 independent practice 는 하지 않는다.",
+      "all_choice_rationales_exact": {
+        "A": "선택하지 않을 항목. 일반 lapse 60 일 초과는 Board 조건이 필요하지만 2 년 초과 조항과 다르다.",
+        "B": "선택하지 않을 항목. 일반 nonrenewal 2 년 초과에는 MPJE 및 기타 Board 조건이 선행한다.",
+        "C": "선택할 항목. 만료 후 업무 유예는 없으며, 아직 60 일 초과의 추가조건과 구분한다.",
+        "D": "선택하지 않을 항목. Suspended/revoked 2 년 초과 경로에는 MPJE 와 기타 조건, Board 재량 NAPLEX 가능성을 구별한다."
+      },
+      "overlapping_options": [
+        "A",
+        "C"
+      ],
+      "reasoning_ko": "한 달의 ordinary nonrenewal에서 C는 업무 중단과60일 추가조건 경계 미도달을 말한다. A도 업무 중단·적용 가능한 Board 복구조건 충족·기간만으로 MPJE 자동부과 아님이라고 조건부로 말한다. A는60일 추가조건이 이미 적용된다고 명시하지 않아 C와 양립하는 해석이 가능하다.",
+      "rationale_problem_ko": "A의 오답 해설은60일 초과 lapse와2년 초과를 비교하지만 A 문장에는60일 초과라는 주장이 없다. 이 보고서는 A의 모든 현행 법적 의미를 확정하지 않고 선택지의 과도하게 넓은 조건부 표현을 지적한다.",
+      "recommended_fix_ko": "A에 실제로 틀린 trigger 또는 현 업무허가 결론을 명시한다. 현재 문구를 보류하고 복구 조건의 정확한 official section을 함께 재검증한다.",
+      "recommended_publication_action": "HOLD_FROM_DEFAULT_SELECTION_PENDING_EDITORIAL_FIX",
+      "action_applied_by_this_report": false,
+      "official_source_reverification": false,
+      "legal_correctness": "NOT_REVERIFIED",
+      "canonical_legal_audit": false
+    }
+  ],
+  "editorial_scope_updates": [
+    {
+      "update_id": "TRIAGE-CE-0349-20261028",
+      "reviewed_at": "2026-10-28",
+      "question_id": "MA-CASE-0349",
+      "previous_status": "MAJOR_REWRITE",
+      "current_status": "HOLD_FOR_LEGAL_REVIEW",
+      "basis": "Core reasoning and choice A rationale assert the unresolved current CE notification route. Published correct answer B is unchanged and is not designated legally incorrect.",
+      "source_conflict_report": "ce-deficiency-source-conflict.json",
+      "source_content_sha256_unchanged": "62f8be7e2e230dc80407dc6a1092c186be2bf0ef458167670aacb4295bca93fb",
+      "reviewed_text_sha256_unchanged": "4e01e03e4160f4819169f1ff6f463a095e3e4153f6e4e590591ff2cb2e0b3caf",
+      "published_correct_choice_ids_unchanged": [
+        "B"
+      ]
+    }
+  ]
+}

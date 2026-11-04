@@ -1,0 +1,98 @@
+{
+  "question_id": "MA-Q-0318",
+  "family_id": "OPIOID_ANTAGONIST_COUNSELLING_AND_REFERRAL_DUTIES",
+  "area": 2,
+  "topic": "Public health",
+  "subtopic": "Opioid antagonist duties",
+  "difficulty": 3,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy supplies a naloxone rescue kit to one walk-in requestor and has none readily available when a second walk-in asks for one an hour later. Which statements about what the pharmacy owes are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Counselling must be provided to the first requestor at the time of dispensing."
+    },
+    {
+      "id": "B",
+      "text": "The opioid antagonist information pamphlet must be provided at that same time."
+    },
+    {
+      "id": "C",
+      "text": "The second requestor must be referred to the nearest location holding stock."
+    },
+    {
+      "id": "D",
+      "text": "The second requestor may simply be invited to return another day."
+    },
+    {
+      "id": "E",
+      "text": "The referral duty applies even though this pharmacy cannot supply the product."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.06(3) requires counselling and the Board-approved opioid antagonist information pamphlet at the time of dispensing. 247 CMR 9.06(4) requires a pharmacy without one readily available at the time requested to refer the requestor to the nearest location that has one readily available. The referral duty exists precisely because the pharmacy cannot supply.",
+    "choice_analysis": {
+      "A": "Correct: counselling at the time of dispensing.",
+      "B": "Correct: the pamphlet accompanies the counselling.",
+      "C": "Correct: an affirmative referral to the nearest stocked location.",
+      "D": "An invitation to return does not discharge the referral duty.",
+      "E": "Correct: inability to supply is the trigger for the referral duty."
+    },
+    "related_facts": [
+      "The pamphlet is a Board-approved document"
+    ],
+    "mpje_trap": "Candidates treat a stock-out as ending the pharmacy's obligations to the person in front of them."
+  },
+  "rule_ids": [
+    "MA-OPIOID-ANTAGONIST-COUNSEL-REFER"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Take the dispensing and the stock-out as two separate events",
+    "Apply the counselling and pamphlet duties to the dispensing",
+    "Apply the referral duty to the stock-out"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-ANTAGONIST-COUNSEL-REFER": {
+          "content_version": 1,
+          "content_hash": "bd3d305f4c41c5e7cbefaaa797241a22c830127522b9e7506600f7942d1629bb"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

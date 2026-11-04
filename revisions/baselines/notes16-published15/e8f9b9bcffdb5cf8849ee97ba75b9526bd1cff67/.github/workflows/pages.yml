@@ -1,0 +1,116 @@
+name: Deploy MPJE preview to Pages
+on:
+  push:
+    branches: ['main']
+    paths:
+      - 'site/**'
+      - 'practice_expansion/**'
+      - 'scripts/publish_practice.py'
+      - 'scripts/practice_quality.py'
+      - 'scripts/representative_quality.py'
+      - 'scripts/build_refresh.py'
+      - 'notes/refresh/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build enabled practice collections
+        run: |
+          python scripts/build_refresh.py --check
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload built site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: /tmp/mpje-public-site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify actual public practice payload and main-page entry
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import json, os, time, urllib.request
+          from pathlib import Path
+          config=json.loads(Path('site/practice-expansion/publication.json').read_text())
+          base=os.environ['PAGE_URL'].rstrip('/')+'/'
+          suffix='?release='+os.environ['GITHUB_SHA']
+          def read(path):
+              req=urllib.request.Request(base+path+suffix,headers={'Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:return r.read().decode()
+          for attempt in range(12):
+              try:
+                  manifest=json.loads(read('practice-expansion/build.json'))
+                  assert manifest['status']=='PUBLISHED_PRACTICE' and manifest['published_question_count']==config['published_total']
+                  html=read('practice-expansion/')
+                  assert html==Path('/tmp/mpje-public-site/practice-expansion/index.html').read_text(), 'Published practice bytes differ from this build'
+                  assert 'id="ack"' not in html and 'MA-EXP-1024' in html and 'MA-CASE-1152' in html
+                  assert 'const initialQuestion=byId.get(location.hash.slice(1))||filtered[0]||(!selectedNoteId?Q[0]:null);' in html
+                  assert 'if(initialQuestion)openQuestion(initialQuestion);else openFilteredQuestion();' in html
+                  main=read('')
+                  assert f"{config['published_total']:,}문항 연습 시작" in main
+                  assert [x['count'] for x in manifest['collections']]==[config['question_count']]+[x['question_count'] for x in config['additional_banks']]
+                  assert 'id="chaos"' in html and 'MA-REV-0096' in html
+                  selection=json.loads(Path(config['representative_selection']['path']).read_text())
+                  assert manifest['quality_selection']['recommended']==selection['stats']['recommended']
+                  assert manifest['representative_revision']['new_ids']==selection['new_ids']
+                  assert manifest['representative_revision']['replacements']==selection['replacements']
+                  assert 'practice-expansion/?bank=rewrite' in main
+                  assert 'practice-expansion/?bank=plus' in main and 'practice-expansion/?bank=quality' in main
+                  assert read('practice-expansion/quality-core.js')==Path('site/practice-expansion/quality-core.js').read_text()
+                  assert read('practice-expansion/quality-review.html')==Path('site/practice-expansion/quality-review.html').read_text()
+                  print(f"Production practice verified byte-for-byte: {config['published_total']} questions; {selection['stats']['recommended']} default; {len(selection['new_ids'])} separate-ID revisions; previous2272 and unrestricted Chaos10 preserved.")
+                  break
+              except Exception:
+                  if attempt==11:raise
+                  time.sleep(5)
+      - name: Verify actual public refresh assets and shared navigation
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import hashlib, json, os, time, urllib.request
+          from pathlib import Path
+          base=os.environ['PAGE_URL'].rstrip('/')+'/'
+          suffix='?refresh='+os.environ['GITHUB_SHA']
+          expected=json.loads(Path('site/notes/refresh-build.json').read_text())
+          def get(path):
+              req=urllib.request.Request(base+path+suffix,headers={'Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:return r.read()
+          files=['notes/refresh-build.json','notes/refresh-data.js','notes/refresh-core.js',
+                 'notes/refresh.js','notes/refresh.css','notes/notes.js',
+                 'assets/learning-tools.js','assets/learning-tools.css']
+          for attempt in range(12):
+              try:
+                  for path in files:
+                      assert hashlib.sha256(get(path)).digest()==hashlib.sha256((Path('site')/path).read_bytes()).digest(),path
+                  for path in ['', 'notes/', 'notes/book.html', 'practice-expansion/', 'practice-expansion/research.html', 'practice-expansion/quality-review.html']:
+                      text=get(path).decode()
+                      assert text.count('src="'+('' if not path else '../')+'assets/learning-tools.js"')==1,path
+                  assert 'notes/#refresh' in get('').decode()
+                  assert 'refresh-data.js' in get('notes/').decode()
+                  print('Production refresh assets verified byte-for-byte; all six checked pages have shared navigation.')
+                  print(json.dumps(expected,ensure_ascii=False))
+                  break
+              except Exception:
+                  if attempt==11:raise
+                  time.sleep(5)

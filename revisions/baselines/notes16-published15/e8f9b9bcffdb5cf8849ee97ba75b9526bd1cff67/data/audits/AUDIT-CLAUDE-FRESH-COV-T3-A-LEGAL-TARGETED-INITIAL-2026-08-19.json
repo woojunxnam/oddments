@@ -1,0 +1,110 @@
+{
+  "audit_id": "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-COV-T3-A",
+  "audit_date": "2026-08-19",
+  "audit_scope": "TARGETED_INITIAL_BATCH",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "governance_authorization": {
+    "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+    "authorizing_issue": 86,
+    "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+    "question_ids": ["MA-Q-0227", "MA-Q-0228"]
+  },
+  "question_ids": ["MA-Q-0227", "MA-Q-0228"],
+  "question_hashes": {
+    "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+    "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0227",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00: Professional Practice Standards, current official Board publication",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(4)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00: Professional Practice Standards, provision on dispensing medication processed outside the licensed pharmacy premises, read to confirm it is a separate duty that supplies no alternative recipient pathway",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(11)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-08-19"
+        }
+      ],
+      "Problem": "No legal defect found. I independently retrieved the current official Board publication of 247 CMR 9.00 and read 247 CMR 9.04(4) in full. It imposes two cumulative duties on a pharmacy providing bed-side delivery of discharge prescriptions in an inpatient healthcare facility: it must obtain patient consent and may not restrict freedom of choice of pharmacy services, and it shall deliver any medications directly to the patient or the patient's agent. The keyed answer E states the operative defect, because handing the medications to the unit charge nurse as routine workflow terminates delivery with facility staff rather than with the patient or a person the patient has designated as agent. Distractor A is correctly unkeyed because the regulation identifies permitted recipients by their relationship to the patient, not by professional licensure or facility employment. Distractor B is correctly unkeyed because consent is an additional precondition rather than a substitute for the delivery requirement. Distractor C is correctly unkeyed because a facility charting entry documents receipt but does not change who received the medications. Distractor D is correctly unkeyed in the opposite direction, because Massachusetts expressly permits bed-side delivery of discharge prescriptions subject to conditions rather than prohibiting it, so a flat prohibition misstates the regulation. The canonical explanation, choice analysis, related facts and stated trap all track the regulation accurately, and the linked rule record MA-BEDSIDE-DELIVERY reproduces 247 CMR 9.04(4) faithfully. I also confirmed that 247 CMR 9.04(11), on medication processed outside the licensed premises, is a distinct duty that creates no alternative recipient pathway. Independence note: my Phase-1 blind answer, locked and pushed before any canonical record was opened, was E, and it matches the canonical key.",
+      "Proposed_Answer": "E",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0228",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, Policy 2021-02: Shared Pharmacy Service Models Including Central Fill, Remote Processing, and Telepharmacy, adopted 2/19/21 and revised 4/7/22 and 2/6/25, destination rule for centrally filled federally scheduled controlled substances",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "Policy 2021-02, section IV.b.iii",
+          "official_url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, Policy 2021-02, Schedule VI direct-to-patient allowance and its Prescription Monitoring Program carve-out",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "Policy 2021-02, section IV.b.iv",
+          "official_url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, Policy 2021-02, licensure requirement for a central fill pharmacy dispensing into, within, or from Massachusetts",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "Policy 2021-02, section IV.b.i",
+          "official_url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, Policy 2021-02, prohibition on central filling of compounded sterile and complex non-sterile preparations",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "Policy 2021-02, section IV.b.v",
+          "official_url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 6.00: Licensure of Pharmacies, non-resident licensure requirement corroborating that an out-of-state central site needs its own Massachusetts license",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 6.02(4)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "United States Drug Enforcement Administration, provision of prescription information between retail pharmacies and central fill pharmacies for initial and refill prescriptions of Schedule III, IV, or V controlled substances, the federal framework Policy 2021-02 incorporates by reference",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.27(a)(5) and (b)(3)",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFRe4ae2bfb4eae102/section-1306.27",
+          "law_checked_date": "2026-08-19"
+        },
+        {
+          "authority": "United States Drug Enforcement Administration, provision of prescription information between retail pharmacies and central fill pharmacies for prescriptions of Schedule II controlled substances",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.15(a)(4) and (b)(3)",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/subject-group-ECFR8588b52940237ef/section-1306.15",
+          "law_checked_date": "2026-08-19"
+        }
+      ],
+      "Problem": "No legal defect found, with one currency observation recorded below that does not change the verdict. I independently retrieved the current official text of Board Policy 2021-02 and confirmed each keyed and unkeyed proposition against section IV.b. Choice A is correct: section IV.b.iii requires centrally filled Schedule II through V controlled substances to be delivered to the pharmacy where the prescription originated for final dispensing to the patient, and Schedule IV falls inside that band. The federal framework the policy incorporates is consistent, because 21 CFR 1306.27(a)(5) and (b)(3) both presuppose that the filled prescription is delivered to and receipted by the retail pharmacy. Choice B is correct: section IV.b.iv permits centrally filled Schedule VI controlled substances to be delivered or shipped directly to the patient from the central fill pharmacy except for drugs requiring Prescription Monitoring Program reporting, so a Schedule VI drug outside that reporting category is the permitted case. Choice C is correctly unkeyed and is the paired trap for B, because it asserts direct patient shipment for the very category section IV.b.iv carves out, and its stated rationale is also the wrong legal test, since the carve-out turns on Prescription Monitoring Program reporting status rather than on federal scheduling. Choice D is correctly unkeyed: section IV.b.i requires any central fill pharmacy dispensing medications into, within, or from Massachusetts to participating pharmacies to be licensed by Massachusetts as a resident or non-resident retail pharmacy, and the originating pharmacy's license does not extend to the central site. That is independently corroborated by 247 CMR 6.02(4), under which a pharmacy located outside Massachusetts may not dispense or ship any controlled substance into Massachusetts unless it holds a non-resident Drug Store Pharmacy license, and Massachusetts Schedule VI brings ordinary prescription drugs within that term. Choice E is correct: section IV.b.v provides that the central filling of compounded sterile preparations or complex non-sterile preparations to be dispensed into, within, or from Massachusetts is prohibited, and the stem's narrower within-Massachusetts framing falls inside that prohibition. Currency observation: I compared the current 2/6/25 revision against the superseded 4/7/22 revision, which I also retrieved and read. Two differences matter here and both cut in favor of the question as written. The 4/7/22 text qualified the central-fill compounding prohibition with the phrase unless otherwise approved by the Board, which the current text removes, so choice E is now unqualified. The 4/7/22 text also carried a policy-statement paragraph of enforcement forbearance for shared pharmacy services performed in a non-resident pharmacy pending final promulgation of 247 CMR 6.00, which the current text removes, so choice D is unambiguously incorrect on current authority. The item is therefore correct against the current revision and should be rechecked if Policy 2021-02 is revised again. The canonical explanation, choice analysis and stated trap track the policy accurately, and the linked rule record MA-CENTRAL-FILL-DISPENSING-ROUTE reproduces section IV.b faithfully. Independence note: my Phase-1 blind answer, locked and pushed before any canonical record was opened, was A, B and E, and it matches the canonical key.",
+      "Proposed_Answer": "A,B,E",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    }
+  ]
+}

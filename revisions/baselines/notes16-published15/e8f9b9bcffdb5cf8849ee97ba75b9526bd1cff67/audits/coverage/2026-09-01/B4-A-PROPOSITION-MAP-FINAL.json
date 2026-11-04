@@ -1,0 +1,1784 @@
+{
+  "report_type": "B4_A_PROPOSITION_MAP_FINAL",
+  "status": "FINAL_REVIEWED_FOR_AUTHORING",
+  "recorded_on": "2026-09-01",
+  "controller_issue": 121,
+  "source_live_main_sha": "48ba80204c4ae71795802f3b5177bf3b071b5e63",
+  "question_range": {
+    "first": "MA-Q-0407",
+    "last": "MA-Q-0439",
+    "count": 33
+  },
+  "area_allocation": {
+    "1": 9,
+    "2": 12,
+    "3": 7,
+    "4": 5
+  },
+  "planned_item_types": {
+    "SBA": 19,
+    "SATA": 14
+  },
+  "multi_rule_count": 14,
+  "inputs": {
+    "proposition_census": "audits/coverage/2026-09-01/BATCH4-PROPOSITION-CENSUS.json",
+    "family_headroom": "audits/coverage/2026-09-01/BATCH4-FAMILY-HEADROOM.json",
+    "real_exam_signals": "audits/coverage/2026-09-01/BATCH4-REAL-EXAM-SIGNAL-REPORT.json",
+    "released_bank_count": 366
+  },
+  "authority_review": {
+    "reviewed_slots": 33,
+    "initial_pass": 30,
+    "initial_revise": 3,
+    "initial_reject": 0,
+    "resolved_revisions": {
+      "MA-Q-0434": "§22(a)의 practitioner registration number 하나로 고정하고 pharmacist endorsement와 분리했다.",
+      "MA-Q-0438": "electronic Form 222 copy와 CSOS electronic order를 명시적으로 분리했다.",
+      "MA-Q-0439": "과도한 general-inventory 명제를 제거하고 zero-stock initial inventory proposition으로 교체했다."
+    },
+    "final_unresolved_authority_risks": 0
+  },
+  "controls": {
+    "forbidden_rule_ids": [
+      "MA-MH-SUD-ADMIN"
+    ],
+    "forbidden_rule_ids_used": [],
+    "hold_questions_preserved": [
+      "MA-Q-0172"
+    ],
+    "recalled_actual_question_content_retained": 0,
+    "candidate_reports_used_only_as_abstract_signals": true,
+    "cdtm_slot_count": 1,
+    "area4_compounding_slot_count": 2,
+    "multi_rule_target": "10-14 when natural",
+    "novelty_rule": "actor, trigger, exception, jurisdiction, timing, documentation consequence, setting, or legal interaction must materially differ; drug-name substitution alone is insufficient"
+  },
+  "slots": [
+    {
+      "question_id": "MA-Q-0407",
+      "area": 1,
+      "topic": "Licensure",
+      "family_id": "EXP1_0108_PHARMACIST_CE_ANNUAL",
+      "exact_legal_proposition": "연간 20 CE hours 중 home study 또는 mediated instruction은 최대 15 hours만 인정되고 pharmacy law는 최소 2 hours가 필요하다.",
+      "actor": "Pharmacist",
+      "trigger": "연간 CE를 갱신에 적용",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "Board가 승인한 extenuating-circumstances 절차는 별도이다.",
+      "reasoning_task": "총시간, modality cap, pharmacy-law minimum을 동시에 계산한다.",
+      "rule_ids": [
+        "MA-PHARMACIST-CE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0079",
+        "MA-Q-0256"
+      ],
+      "novelty_rationale": "기존 문항은 annual total 또는 daily cap을 물었고 home-study cap과 law minimum의 결합은 다루지 않았다.",
+      "real_exam_signal_support": [
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 3,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-PHARMACIST-CE",
+          "content_version": 1,
+          "content_hash": "6a0bf5a34902c87e52bac2e10883b34a7e1a30b47d97fea59f1700bdbc6ad623",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacist continuing education",
+              "section": "247 CMR 4.03",
+              "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0408",
+      "area": 1,
+      "topic": "Licensure",
+      "family_id": "B3A_0260_MA_CE_RECORD_CONTENT",
+      "exact_legal_proposition": "완료한 CE가 연간 요건에 포함되더라도 증빙은 completion date부터 최소 2년 보존하고 Board request 또는 random audit에 제출해야 한다.",
+      "actor": "Pharmacist",
+      "trigger": "CE audit 요청",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "credit 충족과 documentation 보존은 서로 대체되지 않는다.",
+      "reasoning_task": "CE completion과 record-retention/production duty를 별도로 판정한다.",
+      "rule_ids": [
+        "MA-PHARMACIST-CE",
+        "MA-CE-RECORDKEEPING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0260"
+      ],
+      "novelty_rationale": "기존 문항은 record contents만 다뤘고 earned credit와 2-year retention을 함께 적용하지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-PHARMACIST-CE",
+          "content_version": 1,
+          "content_hash": "6a0bf5a34902c87e52bac2e10883b34a7e1a30b47d97fea59f1700bdbc6ad623",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacist continuing education",
+              "section": "247 CMR 4.03",
+              "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-CE-RECORDKEEPING",
+          "content_version": 1,
+          "content_hash": "4ed7ea4f94aa652b0a772edcd4369dbc938b707dd593aece92104360ffb3582d",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 4.06",
+              "url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0409",
+      "area": 1,
+      "topic": "Licensure",
+      "family_id": "B3A_0261_MA_CE_PROVIDER_CLOCKS",
+      "exact_legal_proposition": "current ACPE 또는 AMA CME Category 1 approval과 good standing을 문서로 입증한 provider는 authorized provider로 간주될 수 있다.",
+      "actor": "CE provider",
+      "trigger": "외부 provider program의 credit 인정 요청",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "기관명만으로 자동 인정되지 않고 current approval와 good standing 증빙이 필요하다.",
+      "reasoning_task": "automatic-recognition 경로와 일반 30-day application 경로를 구분한다.",
+      "rule_ids": [
+        "MA-CE-PROVIDER-APPROVAL"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0261"
+      ],
+      "novelty_rationale": "기존 문항은 일반 application/appeal clocks를 물었고 current national approval 경로를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-CE-PROVIDER-APPROVAL",
+          "content_version": 1,
+          "content_hash": "295a9a4b6650ff47f2535a531858eb28e6706097c00668963a39ff0359df3f03",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 4.04 and 4.07",
+              "url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0410",
+      "area": 1,
+      "topic": "Technician scope",
+      "family_id": "EXP1_0103_TECH_CLINICAL_JUDGMENT",
+      "exact_legal_proposition": "Certified technician도 protocol 또는 pharmacist availability만으로 DUR 판단, clinical conflict resolution, therapy modification, counseling, final validation을 수행할 수 없다.",
+      "actor": "Certified pharmacy technician",
+      "trigger": "unresolved DUR alert 처리 요청",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "mechanical data collection과 pharmacist professional judgment를 구분한다.",
+      "reasoning_task": "실제 요청된 행위가 허용된 technical task인지 금지된 judgment인지 분류한다.",
+      "rule_ids": [
+        "MA-CERT-TECH-SCOPE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0075"
+      ],
+      "novelty_rationale": "기존 문항은 trainee를 중심으로 했고 certified technician에 대한 protocol-delegation 주장을 다루지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-CERT-TECH-SCOPE",
+          "content_version": 1,
+          "content_hash": "142a6daec220d86fa1639fe5c99106bc83ebdb0ceff9ad9ab1ad57e8c5b69d33",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 8.04(4)",
+              "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0411",
+      "area": 1,
+      "topic": "Technician scope",
+      "family_id": "B3A_0234_MA_CERT_TECH_NEW_RX_INFO",
+      "exact_legal_proposition": "Certified technician은 자신을 식별하고 pharmacist-on-duty approval 아래 refill authorization을 요청하거나 누락 정보를 받을 수 있지만 therapy modification 또는 counseling은 할 수 없다.",
+      "actor": "Certified pharmacy technician",
+      "trigger": "prescriber office에 refill authorization 요청",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "일반 technician의 unchanged-refill processing과 certified-technician의 communication scope를 구분한다.",
+      "reasoning_task": "여러 통화 행위 중 허용되는 행위와 professional judgment 행위를 분리한다.",
+      "rule_ids": [
+        "MA-CERT-TECH-SCOPE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0234",
+        "MA-Q-0235"
+      ],
+      "novelty_rationale": "기존 문항은 new-Rx information과 Schedule VI transfer였고 refill-authorization request branch는 미검증이다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-CERT-TECH-SCOPE",
+          "content_version": 1,
+          "content_hash": "142a6daec220d86fa1639fe5c99106bc83ebdb0ceff9ad9ab1ad57e8c5b69d33",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 8.04(4)",
+              "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0412",
+      "area": 1,
+      "topic": "Pharmacy personnel",
+      "family_id": "B3A_0240_MA_TECH_LICENCE_LAPSE",
+      "exact_legal_proposition": "Technician licence가 2년을 초과해 lapse되면 Board는 additional conditions를 부과할 수 있고 renewal 전 practice는 허용되지 않는다.",
+      "actor": "Pharmacy technician",
+      "trigger": "2년 초과 lapse 후 복귀",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "Board가 조건을 요구할 수 있다는 규정이지 특정 시험을 자동으로 의무화하는 규정은 아니다.",
+      "reasoning_task": "짧은 lapse fee pathway와 >2-year Board-conditions pathway를 구분한다.",
+      "rule_ids": [
+        "MA-TECH-LICENSE-RENEWAL"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0240"
+      ],
+      "novelty_rationale": "기존 문항은 3주 lapse 중 practice를 물었고 >2-year branch를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-TECH-LICENSE-RENEWAL",
+          "content_version": 1,
+          "content_hash": "7e7f84e8b7ce8f8986324eeb32955c700016e2998ec648fd64b414f2e9a488e0",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 8.07",
+              "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0413",
+      "area": 1,
+      "topic": "Pharmacy personnel",
+      "family_id": "B3A_0232_MA_RATIO_EXCLUDED_STAFF",
+      "exact_legal_proposition": "Cashier는 professional capacity로 pharmacist를 지원하지 않는 동안만 ratio에서 제외되며 prescription data entry를 시작하면 실제 기능에 따라 ratio와 scope를 다시 평가해야 한다.",
+      "actor": "Cashier acting as support personnel",
+      "trigger": "cashier가 prescription data entry를 시작",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "직함이 아니라 실제 수행 기능이 exclusion과 허용 scope를 결정한다.",
+      "reasoning_task": "role change 시 ratio 포함 여부와 수행 task의 적법성을 연속 판정한다.",
+      "rule_ids": [
+        "MA-SUPPORT-PERSONNEL-RATIO",
+        "MA-TECH-SCOPE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0231",
+        "MA-Q-0232"
+      ],
+      "novelty_rationale": "기존 cashier scenario는 professional work를 전혀 하지 않았고 role transition을 다루지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-SUPPORT-PERSONNEL-RATIO",
+          "content_version": 1,
+          "content_hash": "b4e949b9d5042da94c3cc75d5dd40f304857b2d3f778f327ef0033bcfc2d4628",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 8.06(3)",
+              "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-TECH-SCOPE",
+          "content_version": 1,
+          "content_hash": "812deb12877d2cc5f34d8c8afc7be294670c99174c4300b7acc674314cddf61b",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacy technician scope and pharmacist responsibility",
+              "section": "247 CMR 8.02-.06",
+              "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0414",
+      "area": 1,
+      "topic": "Licensure",
+      "family_id": "B3A_0254_MA_REGISTRATION_LAPSE_LADDER",
+      "exact_legal_proposition": "Pharmacist registration이 60일 초과 2년 미만 lapse되면 conditional renewal 경로이고, >2 years branch의 MPJE requirement와 구분되며 renewal 전 practice는 허용되지 않는다.",
+      "actor": "Pharmacist",
+      "trigger": "61일 lapse 직후 복귀 시도",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "<=60 days, >60 days, >2 years의 서로 다른 branches를 구분한다.",
+      "reasoning_task": "정확한 lapse 기간을 분류한 뒤 renewal 조건과 practice consequence를 적용한다.",
+      "rule_ids": [
+        "MA-PHARMACIST-REGISTRATION-RENEWAL"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0254"
+      ],
+      "novelty_rationale": "기존 문항은 약 30개월 lapse를 물었고 61-day boundary를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-PHARMACIST-REGISTRATION-RENEWAL",
+          "content_version": 1,
+          "content_hash": "9fab2c794a99de66beb3f5b66160f47275c230cd726e1b07092468e19a1e29ab",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 4.02(1) through (5)",
+              "url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0415",
+      "area": 1,
+      "topic": "Licensure",
+      "family_id": "B3B_0277_MA_LICENSURE_APPLICATION_MECHANICS",
+      "exact_legal_proposition": "Exam applicant의 current name이 birth record와 다르면 written name-change notice를 포함한 complete application이 필요하고 incomplete application은 고려되지 않을 수 있다.",
+      "actor": "Pharmacist licensure applicant",
+      "trigger": "birth record와 current name 불일치",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "substantive eligibility와 application completeness는 별도이다.",
+      "reasoning_task": "누락된 name-change documentation이 application 처리에 미치는 결과를 판단한다.",
+      "rule_ids": [
+        "MA-LICENSURE-APPLICATION-MECHANICS"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0277"
+      ],
+      "novelty_rationale": "기존 문항은 birth proof와 fee refund였고 name-change completeness를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 3,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-LICENSURE-APPLICATION-MECHANICS",
+          "content_version": 1,
+          "content_hash": "243f0a65a854cb17fd54474d1442cb75adb1c644cbea4aea149bc2a2dde18e3b",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 3.01(3), (8) and (9)",
+              "url": "https://www.mass.gov/regulations/247-CMR-300-pharmacist-licensure-requirements"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0416",
+      "area": 2,
+      "topic": "Collaborative practice",
+      "family_id": "CDTM_REFERRAL_MEANING_BY_SETTING",
+      "exact_legal_proposition": "Community-pharmacy CDTM에는 patient identity/address, authorized diagnoses, allergies, consent statement, specific instructions를 포함한 individual written referral가 필요하다.",
+      "actor": "CDTM pharmacist",
+      "trigger": "불완전 community referral 수령",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "hospital consultation referral 개념과 community written-referral contents를 구분한다.",
+      "reasoning_task": "setting을 식별한 뒤 누락된 referral content가 authority를 열어 주는지 판단한다.",
+      "rule_ids": [
+        "MA-CDTM-REFERRAL-BY-SETTING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0304"
+      ],
+      "novelty_rationale": "기존 문항은 setting별 referral form만 물었고 community content completeness를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "collaborative_practice_scope_and_lifecycle"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-CDTM-REFERRAL-BY-SETTING",
+          "content_version": 1,
+          "content_hash": "93e4909e529f4bb2227b2eeeff57a04c0ada22ca0b31b7aa999c4f906c7efc09",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Medicine regulations",
+              "section": "243 CMR 2.12(1), definition of Referral",
+              "url": "https://www.mass.gov/regulations/243-CMR-200-licensing-and-the-practice-of-medicine"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0417",
+      "area": 2,
+      "topic": "Patient care",
+      "family_id": "DUR_RESPONSE_MEASURES_AND_DOCUMENTATION",
+      "exact_legal_proposition": "DUR finding에 대한 clinical response는 pharmacist가 결정해야 하고, 선택한 measure가 prescriber/patient consultation 중 무엇이든 pharmacist는 그 measure를 문서화해야 한다.",
+      "actor": "Pharmacist and certified technician",
+      "trigger": "DUR alert가 발생하고 technician이 해결을 제안",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "response measure의 선택은 open-ended이지만 documentation은 mandatory이다.",
+      "reasoning_task": "actor scope를 먼저 판정한 뒤 pharmacist response와 documentation consequence를 적용한다.",
+      "rule_ids": [
+        "MA-DUR-RESPONSE-DOCUMENTATION",
+        "MA-CERT-TECH-SCOPE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0075"
+      ],
+      "novelty_rationale": "기존 bank에는 DUR response-documentation family RELEASED 문항이 없고 technician-role interaction도 미검증이다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "exception_condition_documentation",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-DUR-RESPONSE-DOCUMENTATION",
+          "content_version": 1,
+          "content_hash": "c0443b5bc9071cc4137bae0f2deb258573f36c1c6681669f61098178b53873c8",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.17(2)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-CERT-TECH-SCOPE",
+          "content_version": 1,
+          "content_hash": "142a6daec220d86fa1639fe5c99106bc83ebdb0ceff9ad9ab1ad57e8c5b69d33",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 8.04(4)",
+              "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0418",
+      "area": 2,
+      "topic": "Patient care",
+      "family_id": "COUNSELLING_RECORD_PRESUMPTION",
+      "exact_legal_proposition": "Off-site delivery에는 toll-free pharmacist access와 container-label number가 필요하며, failure-to-accept counseling record가 없으면 counseling 제공의 statutory presumption이 생긴다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "home delivery 후 counseling record 검토",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "remote-access compliance와 evidentiary presumption은 서로 다른 판단이다.",
+      "reasoning_task": "delivery pathway 충족 여부와 absence-of-refusal-record presumption을 차례로 적용한다.",
+      "rule_ids": [
+        "MA-COUNSELING-REMOTE-DELIVERY",
+        "MA-COUNSELING-RECORD-PRESUMPTION"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0213"
+      ],
+      "novelty_rationale": "기존 문항은 toll-free number placement만 물었고 counseling-record presumption과 결합하지 않았다.",
+      "real_exam_signal_support": [
+        "prescription_validity_label_delivery",
+        "exception_condition_documentation",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-COUNSELING-REMOTE-DELIVERY",
+          "content_version": 1,
+          "content_hash": "8775dfc91c1c633979acd4aae50ade32c42af5a68262ad258f3a9f1c163bb822",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts prospective drug review and counseling statute",
+              "section": "M.G.L. c. 94C, § 21A",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-COUNSELING-RECORD-PRESUMPTION",
+          "content_version": 1,
+          "content_hash": "35bfcffa756fd80d7ff3578e61e5d6ab4a002637a7633441709a2aed0a2999af",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 21A, penultimate paragraphs",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0419",
+      "area": 2,
+      "topic": "Patient care",
+      "family_id": "B3B_0285_MA_CONSULTATION_AREA_ACCESS",
+      "exact_legal_proposition": "Patient consultation area는 designated signage와 confidential visual/auditory privacy를 제공해야 한다.",
+      "actor": "Pharmacist manager",
+      "trigger": "consultation area 설치 또는 점검",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "physical accessibility와 privacy/signage 조건을 분리한다.",
+      "reasoning_task": "접근 경로가 적법해도 privacy 또는 signage 결함이 남는지 판단한다.",
+      "rule_ids": [
+        "MA-COUNSELING-CONSULTATION-AREA"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0285"
+      ],
+      "novelty_rationale": "기존 문항은 dispensing area를 통과하는 접근 경로만 다뤘고 privacy/signage를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-COUNSELING-CONSULTATION-AREA",
+          "content_version": 1,
+          "content_hash": "396b5c4bae46092888aa6b44f8a6df4d17632086001f41dc2b3d1f4de63291cb",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.18(6)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0420",
+      "area": 2,
+      "topic": "Professional conduct",
+      "family_id": "B3B_0291_MA_INSTITUTIONAL_DISPENSING",
+      "exact_legal_proposition": "Drug Store licence가 없는 hospital/clinic pharmacy는 employee spouse 또는 child에게도 employee와 같은 household에 사는 경우에만 dispense할 수 있다.",
+      "actor": "Institutional pharmacist",
+      "trigger": "employee 가족에게 outpatient dispensing",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "가족관계만으로 충분하지 않고 same-household condition이 필요하다.",
+      "reasoning_task": "recipient relationship과 household fact를 함께 적용한다.",
+      "rule_ids": [
+        "MA-CONDUCT-INSTITUTIONAL-DISPENSING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0291"
+      ],
+      "novelty_rationale": "기존 문항은 별거 adult sibling이었고 spouse/child의 household condition을 직접 검증하지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-CONDUCT-INSTITUTIONAL-DISPENSING",
+          "content_version": 1,
+          "content_hash": "66e0ce995d44a03a007b94ceaeea763fce0adef63e0eba194034b57d95332efc",
+          "last_verified": "2026-08-19",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.01(13)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0421",
+      "area": 2,
+      "topic": "Confidentiality",
+      "family_id": "LICENSEE_CONFIDENTIALITY_AFFIRMATIVE_DUTY",
+      "exact_legal_proposition": "Licensee에게는 confidential information을 보호할 의무와 unauthorized disclosure를 하지 않을 병렬 의무가 있다.",
+      "actor": "Pharmacist licensee",
+      "trigger": "patient profile 정보를 제3자에게 직접 전달",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "passive protection failure와 affirmative disclosure를 구분한다.",
+      "reasoning_task": "행위가 두 confidentiality limbs 중 어느 의무를 위반하는지 식별한다.",
+      "rule_ids": [
+        "MA-LICENSEE-CONFIDENTIALITY"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0316"
+      ],
+      "novelty_rationale": "기존 문항은 disclosure 없이 정보가 노출된 보호 실패만 다뤘다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-LICENSEE-CONFIDENTIALITY",
+          "content_version": 1,
+          "content_hash": "3a3886a47faeb524c8da86b6454b9a94b34dedd61a3816aa07d962cbbf665cd4",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.01(16)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0422",
+      "area": 2,
+      "topic": "Pharmacist administration",
+      "family_id": "PHARMACIST_INDIVIDUAL_COMPETENCE_SCOPE",
+      "exact_legal_proposition": "개인 pharmacist가 충분히 훈련됐더라도 product 또는 act가 current pharmacist administration scope 밖이면 수행할 수 없다.",
+      "actor": "Pharmacist",
+      "trigger": "훈련된 pharmacist가 current eligible list 밖 medication 투여를 요청받음",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "individual competence와 legally recognized/eligible scope는 누적 요건이다.",
+      "reasoning_task": "개인 자격을 확인한 뒤 product-specific legal scope를 별도로 적용한다.",
+      "rule_ids": [
+        "MA-PHARMACIST-COMPETENCE-SCOPE",
+        "MA-ADMIN-ELIGIBLE-MEDICATIONS"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0321"
+      ],
+      "novelty_rationale": "기존 문항은 profession-wide 허용 act에 개인 training이 없는 반대 상황이었다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-PHARMACIST-COMPETENCE-SCOPE",
+          "content_version": 1,
+          "content_hash": "539821fada4394150ce71f21c1e533cc6f10c896e67319e36a1df6c40fef675b",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.01(4)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-ADMIN-ELIGIBLE-MEDICATIONS",
+          "content_version": 1,
+          "content_hash": "f000a940e8f675abd272f0eac45dc879b48d376f1109c9d6856bf7e9631b9562",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Department of Public Health regulations",
+              "section": "105 CMR 700.004(B)(9)(d)1.",
+              "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "Circular Letter DCP 26-03-124, Pharmacist Administration of Medications, 11 March 2026",
+              "section": "Medications Eligible for Pharmacist or Pharmacy Intern Administration",
+              "url": "https://www.mass.gov/news/pharmacist-administration-of-medications"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0423",
+      "area": 2,
+      "topic": "Pharmacist administration",
+      "family_id": "ADMINISTRATION_PRESCRIPTION_NOTATION_AND_CONTACT",
+      "exact_legal_proposition": "Current DCP guidance의 post-administration prescriber communication은 strongly encouraged이며 statutory validity condition 또는 SHALL duty로 변환할 수 없다.",
+      "actor": "Pharmacist",
+      "trigger": "적법한 administration 후 record 송부 지연",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "best practice/should/encouraged 언어와 mandatory law를 구분한다.",
+      "reasoning_task": "qualifier를 정확히 읽고 administration의 적법성과 권고된 후속 communication을 분리한다.",
+      "rule_ids": [
+        "MA-ADMIN-PRESCRIPTION-NOTATION"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0330"
+      ],
+      "novelty_rationale": "기존 문항은 pre-administration notation/contact였고 post-administration communication의 법적 강도를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-ADMIN-PRESCRIPTION-NOTATION",
+          "content_version": 1,
+          "content_hash": "e08e0b6ca583c441b99aa4a0c8e7ed10bb044c24a3fec1fb51aa94e6fbb0524b",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "Circular Letter DCP 26-03-124, Pharmacist Administration of Medications, 11 March 2026",
+              "section": "Pharmacist-Prescriber Communication",
+              "url": "https://www.mass.gov/news/pharmacist-administration-of-medications"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0424",
+      "area": 2,
+      "topic": "Prescription validity",
+      "family_id": "EXP1_0121_OUTSTATE_III_VI",
+      "exact_legal_proposition": "Out-of-state Schedule III-VI prescription은 30 days 내여야 하고 pharmacist는 모두 authentic/valid 판단을 하지만 별도 prescriber verification 문구는 Schedule III-V에 적용되고 VI에는 적용되지 않는다.",
+      "actor": "Pharmacist",
+      "trigger": "timely out-of-state Schedule VI prescription 수령",
+      "jurisdiction": "MA + FEDERAL",
+      "exception_or_distinction": "general authenticity judgment와 III-V-only additional verification을 구분한다.",
+      "reasoning_task": "federal/MA schedule을 분류하고 issue-date window와 schedule-specific verification을 적용한다.",
+      "rule_ids": [
+        "MA-RX-OUTSTATE-III-VI",
+        "FED-CS-SCHEDULES"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0027",
+        "MA-Q-0034"
+      ],
+      "novelty_rationale": "기존 문항은 verified 또는 late Schedule IV만 다뤘고 Schedule VI distinction을 다루지 않았다.",
+      "real_exam_signal_support": [
+        "federal_state_integrated_application",
+        "prescription_validity_label_delivery",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-OUTSTATE-III-VI",
+          "content_version": 1,
+          "content_hash": "c93d14f9318f7f2e5a38b4147f54906b751c6a60e93e482ef17a9aba7498f9cd",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Out-of-state Schedule III through VI prescriptions",
+              "section": "M.G.L. c. 94C, § 18(c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ]
+        },
+        {
+          "rule_id": "FED-CS-SCHEDULES",
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR Part 1308",
+              "section": "1308.11-1308.15",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "105 CMR 700",
+              "section": "700.002(A)-(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0425",
+      "area": 2,
+      "topic": "Medication returns",
+      "family_id": "MANDATORY_VERSUS_DISCRETIONARY_RETURN_ACCEPTANCE",
+      "exact_legal_proposition": "Pharmacy가 이전에 dispensed한 medication이 suspected defective/contaminated이면 return을 받아야 하고 inventory로 되돌리지 말고 quarantine/dispose해야 한다.",
+      "actor": "Pharmacist",
+      "trigger": "환자가 suspected defective product 반환",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "ordinary therapy-change return과 mandatory suspected-defect return을 구분한다.",
+      "reasoning_task": "acceptance duty를 판정한 뒤 accepted product의 quarantine consequence를 적용한다.",
+      "rule_ids": [
+        "MA-RETURN-ACCEPTANCE-DUTY",
+        "MA-RETURN-QUARANTINE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0317",
+        "MA-Q-0088"
+      ],
+      "novelty_rationale": "기존 문항은 dispensing error 또는 정상 반품이었고 suspected-defect acceptance와 quarantine을 함께 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-RETURN-ACCEPTANCE-DUTY",
+          "content_version": 1,
+          "content_hash": "aa04f509eb8a72ac847704e469aaeb4432a28556fd3022d3b764d7b0669bce37",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.01(7)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-RETURN-QUARANTINE",
+          "content_version": 1,
+          "content_hash": "2bad02039e318bfdad11ef83ffc457b469c22e884447951b0c196151004fb756",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Returned erroneous or defective medication quarantine",
+              "section": "247 CMR 9.01(7)",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0426",
+      "area": 2,
+      "topic": "Professional conduct",
+      "family_id": "ANTI_CIRCUMVENTION_STANDARD",
+      "exact_legal_proposition": "허용되지 않는 administration route를 여러 형식적 단계로 나누어 우회하도록 설계한 arrangement는 각 단계가 외형상 허용돼 보여도 금지된다.",
+      "actor": "Pharmacist licensee",
+      "trigger": "administration route 제한을 피하기 위한 multi-step arrangement",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "direct/indirect circumvention과 실제 statutory route scope를 함께 본다.",
+      "reasoning_task": "route가 허용되는지 판단하고 arrangement의 목적이 restriction 우회인지 평가한다.",
+      "rule_ids": [
+        "MA-CONDUCT-ANTI-CIRCUMVENTION",
+        "MA-ADMINISTER-STATUTORY-ROUTES"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0295"
+      ],
+      "novelty_rationale": "기존 문항은 prescription-transfer sequence였고 administration-route workaround를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "natural_multi_rule_scenarios",
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-CONDUCT-ANTI-CIRCUMVENTION",
+          "content_version": 1,
+          "content_hash": "c0d54e9b61e75f209c5f79644f706b6c43d4c41efd73b46a072424483cd9760b",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.01(2)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-ADMINISTER-STATUTORY-ROUTES",
+          "content_version": 1,
+          "content_hash": "432dee19e2a3691d69193f07a84c78ae54dbe441e610d981699b04bb2f6d2f04",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 1, definition of Administer, clause (c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0427",
+      "area": 2,
+      "topic": "Medication returns",
+      "family_id": "T2_0225_MA_DRUG_RETURN_REUSE_DISTINCT",
+      "exact_legal_proposition": "Prepared but never dispensed medication만 return-to-stock pathway를 사용할 수 있고 original patient container 또는 필수 identifiers/filled expiration을 갖춘 적절한 container와 recall safeguard가 필요하다.",
+      "actor": "Pharmacist",
+      "trigger": "pickup되지 않은 prescription을 reusable inventory로 유지",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "previously dispensed return과 never-dispensed return-to-stock을 구분한다.",
+      "reasoning_task": "threshold status를 확인하고 container/record safeguards를 적용한다.",
+      "rule_ids": [
+        "MA-RETURN-TO-STOCK"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0225"
+      ],
+      "novelty_rationale": "기존 문항은 manufacturer stock bottle prohibition만 다뤘고 alternative container safeguards를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-RETURN-TO-STOCK",
+          "content_version": 1,
+          "content_hash": "e415e542c78e172a243e8f8e977e2c1dae49d121d60c5946a683393439b2d683",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts professional practice standards",
+              "section": "247 CMR 9.13",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0428",
+      "area": 3,
+      "topic": "Prescription transfer",
+      "family_id": "EXP1_0120_RX_TRANSFER_REQUIREMENTS",
+      "exact_legal_proposition": "Massachusetts Schedule VI prescription은 remaining refills가 있어도 issue 후 1년을 넘으면 transfer할 수 없다.",
+      "actor": "Receiving pharmacist",
+      "trigger": "13개월 된 Schedule VI prescription transfer 요청",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "federal controlled schedule intuition과 Massachusetts Schedule VI one-year ceiling을 구분한다.",
+      "reasoning_task": "classification을 확인하고 act-specific transfer consequence를 적용한다.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "MA-SCHEDULE-VI"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0120",
+        "MA-Q-0397"
+      ],
+      "novelty_rationale": "기존 문항은 10-month transfer 또는 fee/agency였고 expired transfer ceiling을 다루지 않았다.",
+      "real_exam_signal_support": [
+        "prescription_validity_label_delivery",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-TRANSFER",
+          "content_version": 2,
+          "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf",
+          "last_verified": "2026-08-14",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts transfer of prescriptions",
+              "section": "247 CMR 9.14",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Certified pharmacy technician Schedule VI transfer scope",
+              "section": "247 CMR 8.04(4)(d)",
+              "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-SCHEDULE-VI",
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Schedule VI prescription-drug status",
+              "section": "105 CMR 700.002(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0429",
+      "area": 3,
+      "topic": "Dispensing requirements",
+      "family_id": "B3E2_CUSTOMER_IDENTIFIER_HARDSHIP",
+      "exact_legal_proposition": "Customer Identifier duty는 Schedule II-V와 formally designated additional drug dispensing에 적용되며 일반 Schedule VI 전체에 자동 적용되지 않는다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "Schedule VI product에 identifier 요구 여부 판단",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "schedule label과 additional-drug designation을 분리하고 특정 drug name은 사용하지 않는다.",
+      "reasoning_task": "dispensing 대상이 enumerated scope에 들어가는지 판정한다.",
+      "rule_ids": [
+        "MA-RX-CUSTOMER-IDENTIFIER"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0379"
+      ],
+      "novelty_rationale": "기존 문항은 hardship cure 절차였고 scope boundary를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "precise_qualifier_and_scope_wording",
+        "controlled_substance_lifecycle_and_actor"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-CUSTOMER-IDENTIFIER",
+          "content_version": 1,
+          "content_hash": "754468f985347b81c80b83897a019a5340fa7524713dc59e73da3e2633039aa6",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.04(14)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0430",
+      "area": 3,
+      "topic": "Dispensing requirements",
+      "family_id": "B3E2_NDC_RECORDING_FALLBACK",
+      "exact_legal_proposition": "Solely-generic-name product에 NDC가 없고 manufacturer도 식별 불가하면 distributor, packer 또는 repacker name으로 ordered fallback한다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "NDC와 manufacturer name이 모두 없는 generic product 기록",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "fallback sequence를 임의로 건너뛸 수 없다.",
+      "reasoning_task": "available identifiers를 순서대로 검사해 기록할 대체 정보를 고른다.",
+      "rule_ids": [
+        "MA-RX-NDC-RECORDING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0375"
+      ],
+      "novelty_rationale": "기존 문항은 manufacturer와 repacker가 모두 있는 경우였고 manufacturer-absent branch를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "prescription_validity_label_delivery",
+        "exception_condition_documentation"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-NDC-RECORDING",
+          "content_version": 1,
+          "content_hash": "d2da0a762209734b7937654ece1d4f1928acc7a16f7fc1514cc3cee09f26dd9d",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.04(7)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0431",
+      "area": 3,
+      "topic": "Dispensing requirements",
+      "family_id": "B3E2_OFFSITE_PROCESSING_VERIFICATION",
+      "exact_legal_proposition": "Offsite processing이 Board-licensed pharmacy에서 수행되면 별도 Massachusetts-pharmacist verification 대신 alternative condition을 충족할 수 있다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "Board-licensed offsite pharmacy가 처리한 medication 수령",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "MA-pharmacist verification과 Board-licensed-site processing은 alternatives이며 사후 inspection과 동일하지 않다.",
+      "reasoning_task": "offsite actor/site status를 확인해 어느 alternative가 충족됐는지 판정한다.",
+      "rule_ids": [
+        "MA-RX-OFFSITE-PROCESSING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0378"
+      ],
+      "novelty_rationale": "기존 문항은 unlicensed out-of-state site와 after-the-fact inspection이었고 licensed-site alternative를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-OFFSITE-PROCESSING",
+          "content_version": 1,
+          "content_hash": "90ae817749c6316663b51ec7d8205c692d456eac3fc0d1582e577cb562eeaecc",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.04(11)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0432",
+      "area": 3,
+      "topic": "Controlled substances",
+      "family_id": "B3F_PARTIAL_FILL_DEADLINE_PATHWAY",
+      "exact_legal_proposition": "Patient-requested Schedule II partial-fill remainder는 initial partial을 한 same pharmacy에서 issue date 후 30 days 이내에만 dispense할 수 있다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "다른 pharmacy 또는 day 31에 remainder 요청",
+      "jurisdiction": "MA + FEDERAL",
+      "exception_or_distinction": "patient-request pathway를 stock-shortage 72-hour 및 out-of-state 5-day branch와 구분한다.",
+      "reasoning_task": "trigger를 분류하고 federal permission과 Massachusetts same-pharmacy/issue-date conditions를 함께 적용한다.",
+      "rule_ids": [
+        "FED-CII-PARTIAL-PATIENT",
+        "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0401"
+      ],
+      "novelty_rationale": "기존 문항은 5-day rule의 in-state applicability를 물었고 same-pharmacy/day-30 combined consequence를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "federal_state_integrated_application",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Patient-requested Schedule II partial fill",
+              "section": "21 CFR 1306.13(b)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d) and s. 18(d1/2)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0433",
+      "area": 3,
+      "topic": "Dispensing",
+      "family_id": "B3F_EMERGENCY_SUBSTITUTION_DEVIATION",
+      "exact_legal_proposition": "Medical emergency에서 no-substitution이 없고 less-expensive interchangeable product가 unavailable이면 brand as written을 dispense할 수 있으며 emergency record와 purchaser written acceptance가 필요하다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "generic unavailable medical emergency",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "no-substitution + brand unavailable branch의 반대 방향 deviation이다.",
+      "reasoning_task": "exception direction을 확인하고 record 및 acceptance conditions를 적용한다.",
+      "rule_ids": [
+        "MA-INTERCHANGE-MEDICAL-EMERGENCY"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0391"
+      ],
+      "novelty_rationale": "기존 문항은 no-substitution brand unavailable branch였고 reverse branch를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation",
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 4,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "MA-INTERCHANGE-MEDICAL-EMERGENCY",
+          "content_version": 1,
+          "content_hash": "efee74a3e21d2d3b4e329856052f7b41d05718d000f04c6795924e328e347c5f",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Board of Registration in Pharmacy regulations",
+              "section": "247 CMR 9.05(1)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0434",
+      "area": 3,
+      "topic": "Prescription format",
+      "family_id": "EXP1_0118_RX_REQUIRED_ELEMENTS",
+      "exact_legal_proposition": "Controlled-substance prescription의 practitioner registration number 누락은 Schedule II pharmacist face endorsement로 cure되지 않는다; 두 표시는 서로 다른 actor의 독립 requirements이다.",
+      "actor": "Dispensing pharmacist",
+      "trigger": "Schedule II prescription에 prescriber registration number가 없지만 pharmacist endorsement는 있음",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "§22(a) required element와 별도 pharmacist endorsement duty를 혼합하지 않는다.",
+      "reasoning_task": "missing field의 actor와 endorsement actor를 식별해 cure 가능 여부를 판정한다.",
+      "rule_ids": [
+        "MA-RX-REQUIRED-ELEMENTS",
+        "MA-CII-PHARMACIST-ENDORSEMENT"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0118",
+        "MA-Q-0383"
+      ],
+      "novelty_rationale": "기존 문항은 patient name/directions 또는 endorsement 자체만 다뤘고 cross-actor non-cure를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "actor_role_distinctions",
+        "prescription_validity_label_delivery",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-RX-REQUIRED-ELEMENTS",
+          "content_version": 1,
+          "content_hash": "1dbe29f655fd1e170779917c9605ac8146e4ffaed06ee651b389d35fc1cbd266",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts controlled-prescription required elements",
+              "section": "M.G.L. c. 94C, § 22(a)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-CII-PHARMACIST-ENDORSEMENT",
+          "content_version": 1,
+          "content_hash": "633cc717708f62db245cafa4d5e4f84eda03a1bfe176fa380e939b5226211097",
+          "last_verified": "2026-08-20",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 23(b) and (c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0435",
+      "area": 4,
+      "topic": "Compounding",
+      "family_id": "T2_0218_MA_HAZARDOUS_COMPOUNDING",
+      "exact_legal_proposition": "Hazardous sterile preparation에는 sterile-compounding specialty licensure와 hazardous-drug handling overlay가 모두 적용되며 하나가 다른 하나를 대체하지 않는다.",
+      "actor": "Pharmacist manager",
+      "trigger": "ordinary/complex-nonsterile license만 가진 pharmacy가 hazardous sterile preparation 계획",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "patient-specific status나 one license는 다른 framework를 제거하지 않는다.",
+      "reasoning_task": "preparation type과 hazardous status를 분류한 뒤 licensure gate와 operational overlay를 누적 적용한다.",
+      "rule_ids": [
+        "MA-STERILE-COMPOUNDING-LICENSE",
+        "MA-HAZARDOUS-COMPOUNDING",
+        "MA-HAZARDOUS-DRUG-HANDLING"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0216",
+        "MA-Q-0218"
+      ],
+      "novelty_rationale": "기존 문항은 nonhazardous sterile licensure 또는 already-licensed hazardous overlay를 각각 분리해 다뤘다.",
+      "real_exam_signal_support": [
+        "compounding_hazardous_personnel_training",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-STERILE-COMPOUNDING-LICENSE",
+          "content_version": 1,
+          "content_hash": "38761f7e40f10eb33be34865db32efcdc27e981701d821ac8de231c039ba6905",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy compounding statute",
+              "section": "M.G.L. c.112, §39F",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacy licensure regulations",
+              "section": "247 CMR 6.06",
+              "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-COMPOUNDING",
+          "content_version": 1,
+          "content_hash": "0fd599a6e4365b4a9e0528f7dc34a70deb2d438cc94b3e673faf8c895782cc38",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts professional practice standards",
+              "section": "247 CMR 9.01(3)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "USP 800 in Community Pharmacies",
+              "section": "Current Board advisory",
+              "url": "https://www.mass.gov/lists/pharmacy-practice-resources"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-HAZARDOUS-DRUG-HANDLING",
+          "content_version": 1,
+          "content_hash": "0762d8544a8f8f09b7171f56a8a24d13026a2e506cbbf666d929695819d63f9d",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts professional practice standards",
+              "section": "247 CMR 9.01(3)",
+              "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "USP 800 in Community Pharmacies",
+              "section": "Current Board advisory",
+              "url": "https://www.mass.gov/lists/pharmacy-practice-resources"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0436",
+      "area": 4,
+      "topic": "Compounding",
+      "family_id": "T2_0217_MA_NONSTERILE_COMPOUNDING",
+      "exact_legal_proposition": "Specialized training/environment가 필요한 complex non-sterile activity는 specialty licensure를 요구하고, commercially available product 사용의 patient-specific significant difference는 price alone로 충족되지 않는다.",
+      "actor": "Pharmacist manager and prescriber",
+      "trigger": "cost-only rationale로 complex non-sterile preparation 계획",
+      "jurisdiction": "MA",
+      "exception_or_distinction": "activity complexity와 patient-specific significant-difference threshold는 독립 gates이다.",
+      "reasoning_task": "compounding category를 분류하고 commercial-product significant-difference 요건을 별도로 적용한다.",
+      "rule_ids": [
+        "MA-COMPLEX-NONSTERILE-LICENSE",
+        "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0217",
+        "MA-Q-0219"
+      ],
+      "novelty_rationale": "기존 문항은 specialty licence와 cost-only significant difference를 각각 따로 물었고 combined threshold failure를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "compounding_hazardous_personnel_training",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "MA-COMPLEX-NONSTERILE-LICENSE",
+          "content_version": 1,
+          "content_hash": "cce033e2ba52348c1ec95b4ef5847d792f267ca52a0b72c4f7fc497e001cb09f",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy definitions",
+              "section": "M.G.L. c.112, §39D",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
+            },
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy compounding statute",
+              "section": "M.G.L. c.112, §39F",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39F"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts pharmacy licensure regulations",
+              "section": "247 CMR 6.07",
+              "url": "https://www.mass.gov/regulations/247-CMR-600-licensure-of-pharmacies"
+            }
+          ]
+        },
+        {
+          "rule_id": "MA-COMPOUNDING-SIGNIFICANT-DIFFERENCE",
+          "content_version": 1,
+          "content_hash": "0657767e64ab3a5cce7c573a0722bd5aeff00094ce7ed4cbd5670e2a49723e69",
+          "last_verified": "2026-08-18",
+          "authorities": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts pharmacy definitions",
+              "section": "M.G.L. c.112, §39D",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 1,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0437",
+      "area": 4,
+      "topic": "Controlled substance inventory",
+      "family_id": "EXP1_0127_CS_INVENTORY_COUNTING",
+      "exact_legal_proposition": "Opened Schedule II는 exact count/measure가 필요하고 opened Schedule III-V는 원칙적으로 estimate 가능하지만 1,000 tablets/capsules 초과 container는 exact count가 필요하다.",
+      "actor": "DEA registrant pharmacist",
+      "trigger": "mixed-schedule biennial inventory count",
+      "jurisdiction": "FEDERAL",
+      "exception_or_distinction": "schedule과 opened-container size를 함께 적용한다.",
+      "reasoning_task": "각 container의 schedule/status/quantity threshold를 분류해 count method를 선택한다.",
+      "rule_ids": [
+        "FED-INVENTORY-COUNT"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0061"
+      ],
+      "novelty_rationale": "기존 문항은 1,200-unit opened Schedule IV만 다뤘고 Schedule II exact rule과 대비하지 않았다.",
+      "real_exam_signal_support": [
+        "controlled_substance_lifecycle_and_actor",
+        "precise_qualifier_and_scope_wording"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "FED-INVENTORY-COUNT",
+          "content_version": 1,
+          "content_hash": "95779b7e7f6f58b3f894630bba9a72c3e83e3646e6e7e163ff640d913a4a267d",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Exact and estimated controlled-substance inventory counts",
+              "section": "21 CFR 1304.11(e)(6)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1304/section-1304.11"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0438",
+      "area": 4,
+      "topic": "Controlled substance procurement",
+      "family_id": "EXP1_0129_FORM222_RECORDS",
+      "exact_legal_proposition": "Electronic copies of DEA Forms 222는 readily retrievable하면 다른 records와 함께 저장돼도 separately maintained로 간주될 수 있지만 CSOS electronic orders 자체는 별도 retention provision을 따른다.",
+      "actor": "DEA registrant pharmacist",
+      "trigger": "Form 222 copy와 CSOS order archive 설계",
+      "jurisdiction": "FEDERAL",
+      "exception_or_distinction": "paper Form 222, electronic Form 222 copy, CSOS electronic order를 같은 객체로 취급하지 않는다.",
+      "reasoning_task": "record object를 먼저 식별하고 해당 maintenance/retention provision을 적용한다.",
+      "rule_ids": [
+        "FED-FORM222-RECORDS",
+        "FED-FORM222-ORDER"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0067",
+        "MA-Q-0128"
+      ],
+      "novelty_rationale": "기존 문항은 paper copies 혼합 또는 CSOS ordering validity만 다뤘고 electronic-copy/order distinction을 다루지 않았다.",
+      "real_exam_signal_support": [
+        "exception_condition_documentation",
+        "natural_multi_rule_scenarios"
+      ],
+      "planned_question_type": "SATA",
+      "planned_difficulty": 5,
+      "multi_rule": true,
+      "official_authority": [
+        {
+          "rule_id": "FED-FORM222-RECORDS",
+          "content_version": 1,
+          "content_hash": "7c04e8285a2af4de7f8b23013bc929b516e95d3aab2be3c300cf99e557f053d9",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "DEA Form 222 preservation",
+              "section": "21 CFR 1305.17(a), (c), and (e)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.17"
+            }
+          ]
+        },
+        {
+          "rule_id": "FED-FORM222-ORDER",
+          "content_version": 1,
+          "content_hash": "c12b5ad96d02de8d7911dffcee77d9d6f542df7da1a8692f5dad189f298ef93c",
+          "last_verified": "2026-08-13",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Schedule I and II ordering by Form 222 or CSOS",
+              "section": "21 CFR 1305.03",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.03"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    },
+    {
+      "question_id": "MA-Q-0439",
+      "area": 4,
+      "topic": "Controlled substance inventory",
+      "family_id": "EXP1_0125_INITIAL_CS_INVENTORY",
+      "exact_legal_proposition": "Registrant가 controlled-substance activity를 시작할 때 on-hand stock이 없어도 zero-stock fact를 initial inventory로 기록해야 한다.",
+      "actor": "New DEA registrant",
+      "trigger": "controlled-substance activity 개시 시 stock 없음",
+      "jurisdiction": "FEDERAL",
+      "exception_or_distinction": "physical count가 zero라는 사실과 inventory record가 불필요하다는 결론을 구분한다.",
+      "reasoning_task": "inventory trigger가 stock receipt가 아니라 registrant activity start인지 판단한다.",
+      "rule_ids": [
+        "FED-INVENTORY-INITIAL"
+      ],
+      "closest_existing_question_ids": [
+        "MA-Q-0059"
+      ],
+      "novelty_rationale": "기존 문항은 first stock activity 시점을 물었고 zero-stock record requirement를 다루지 않았다.",
+      "real_exam_signal_support": [
+        "controlled_substance_lifecycle_and_actor"
+      ],
+      "planned_question_type": "SBA",
+      "planned_difficulty": 3,
+      "multi_rule": false,
+      "official_authority": [
+        {
+          "rule_id": "FED-INVENTORY-INITIAL",
+          "content_version": 2,
+          "content_hash": "6e110d1e7fb2e9cb3b9951fe24818e1847fb7371804c01714fab3a36be8f2ece",
+          "last_verified": "2026-08-14",
+          "authorities": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Initial controlled-substance inventory",
+              "section": "21 CFR 1304.11(b)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1304/section-1304.11"
+            }
+          ]
+        }
+      ],
+      "family_headroom_at_review": 2,
+      "family_max_questions": 2
+    }
+  ]
+}

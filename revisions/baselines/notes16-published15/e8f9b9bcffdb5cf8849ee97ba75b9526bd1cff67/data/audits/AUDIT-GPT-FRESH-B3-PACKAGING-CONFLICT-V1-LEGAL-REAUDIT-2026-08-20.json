@@ -1,0 +1,100 @@
+{
+  "audit_id": "AUDIT-GPT-FRESH-B3-PACKAGING-CONFLICT-V1-LEGAL-REAUDIT-2026-08-20",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-B3-PACKAGING-CONFLICT-V1",
+  "audit_date": "2026-08-20",
+  "audit_scope": "REAUDIT",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "question_ids": [
+    "MA-Q-0169",
+    "MA-Q-0202",
+    "MA-Q-0203"
+  ],
+  "question_hashes": {
+    "MA-Q-0169": "505770da1a192bc506905b2fe88ac8e6ac5425c8d04565c7d2d144cc25120539",
+    "MA-Q-0202": "a3c658d418f93ee9174a51fe68151bd47738fb529912efe5963be6169bca289a",
+    "MA-Q-0203": "a5f2a0ac6bcbc1296c833f40d80ff7cfd219f328611f0d3253227f72f8d81acd"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0169",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Critical",
+      "Existing_Answer_Correct": "NO",
+      "authorities": [
+        {
+          "authority": "247 CMR 9.00: Professional Practice Standards",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.08(3)(b), Mass. Register #1536 (12/06/2024)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Board of Registration in Pharmacy Policy 2023-01: Compliance Packaging and Reusable Dose Planners",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "II. Compliance Packaging; Multi-Drug-Single-Dose Packaging (revised 01/09/2025)",
+          "official_url": "https://www.mass.gov/doc/2023-01-compliance-packaging-and-reusable-dose-planners-pdf/download",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "현재 key B,C,D,E와 core reasoning은 Schedule II/III maintenance medication에 대한 예외가 있다고 가르친다. 그러나 247 CMR 9.08(3)(b)는 maintenance 여부와 무관하게 Schedule II 또는 III controlled substance를 multi-drug-single-dose package로 dispensing하는 것을 금지한다. 01/09/2025 개정 Policy 2023-01에도 해당 allowance가 없고, Multi-Drug-Single-Dose Packaging 절은 'Unless otherwise prohibited'라는 전제로 규정상 금지를 보존한다. 따라서 현재 keyed set은 현행 공식 authority와 정면으로 충돌한다.",
+      "Proposed_Answer": "현재 choices에는 완전한 정답 집합이 없다. 수리 후 정답은 Schedule II 및 III controlled substances가 multi-drug-single-dose package에서 금지된다는 진술이어야 한다.",
+      "Proposed_Rewrite": "maintenance 예외라는 전제를 전부 제거하고, 247 CMR 9.08(3)(b)의 multi-drug-single-dose 금지와 single-drug-single-dose packaging을 혼동하지 않도록 stem, choices, key, explanation을 전면 재작성한다.",
+      "Proposed_Explanation": "247 CMR 9.08(3)(b)는 Schedule II 및 III controlled substances의 multi-drug-single-dose dispensing을 금지한다. 현행 Policy 2023-01은 이 금지에 대한 maintenance exception을 만들지 않는다."
+    },
+    {
+      "Question_ID": "MA-Q-0202",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Critical",
+      "Existing_Answer_Correct": "NO",
+      "authorities": [
+        {
+          "authority": "247 CMR 9.00: Professional Practice Standards",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.08(3)(b), Mass. Register #1536 (12/06/2024)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Board of Registration in Pharmacy Policy 2023-01: Compliance Packaging and Reusable Dose Planners",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "II. Compliance Packaging; Multi-Drug-Single-Dose Packaging (revised 01/09/2025)",
+          "official_url": "https://www.mass.gov/doc/2023-01-compliance-packaging-and-reusable-dose-planners-pdf/download",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "stem, key A,D,E, core reasoning 및 choice analysis는 Schedule II/III maintenance-medication allowance를 전제한다. 247 CMR 9.08(3)(b)는 multi-drug-single-dose package에서 Schedule II 또는 III controlled substances를 금지하므로, A의 Schedule III buprenorphine, D의 Schedule II methylphenidate 및 E의 Schedule III testosterone 시나리오는 maintenance 분류만으로 허용될 수 없다. 현재 key에는 현행법상 맞는 선택지가 없으며 Policy 2023-01도 예외를 제공하지 않는다.",
+      "Proposed_Answer": "현재 keyed choices A,D,E는 모두 부정확하며, 현 choices에는 완전한 정답 집합이 없다.",
+      "Proposed_Rewrite": "존재하지 않는 maintenance allowance를 제거하고, Schedule II/III 금지와 다른 schedule의 medication에도 적용되는 60-day, PRN, compatibility 및 labeling 요건을 구분하도록 시나리오와 choices를 새로 작성한다.",
+      "Proposed_Explanation": "multi-drug-single-dose package에서는 maintenance 또는 acute 분류와 무관하게 Schedule II 및 III controlled substances를 dispense할 수 없다. 다른 medication도 247 CMR 9.08 및 Policy 2023-01의 나머지 요건을 충족해야 한다."
+    },
+    {
+      "Question_ID": "MA-Q-0203",
+      "Verdict": "MAJOR_REWRITE",
+      "Severity": "Critical",
+      "Existing_Answer_Correct": "NO",
+      "authorities": [
+        {
+          "authority": "247 CMR 9.00: Professional Practice Standards",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.08(3)(b), Mass. Register #1536 (12/06/2024)",
+          "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Board of Registration in Pharmacy Policy 2023-01: Compliance Packaging and Reusable Dose Planners",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "II. Compliance Packaging; Multi-Drug-Single-Dose Packaging (revised 01/09/2025)",
+          "official_url": "https://www.mass.gov/doc/2023-01-compliance-packaging-and-reusable-dose-planners-pdf/download",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "stem과 keyed B는 Massachusetts가 Schedule II/III maintenance medication을 multi-drug-single-dose package에 허용한다는 잘못된 전제를 사용한다. 결론 'No' 자체는 맞지만 B의 maintenance-versus-acute rationale는 현행법이 아니다. 247 CMR 9.08(3)(b)에 따라 oxycodone은 Schedule II라는 사실만으로 해당 multi-drug package에서 금지된다. D는 'all compliance packaging'이라고 범위를 과도하게 넓혀 9.08(3)(b)의 multi-drug-single-dose 한정과 맞지 않으므로 현재 choices 중 완전히 옳은 답은 없다.",
+      "Proposed_Answer": "현재 choices에는 완전히 옳은 답이 없다. 수리 후 답은 'No; 247 CMR 9.08(3)(b)가 Schedule II controlled substance의 multi-drug-single-dose dispensing을 금지하기 때문이다.'이어야 한다.",
+      "Proposed_Rewrite": "stem에서 허용 정책이라는 전제를 삭제하고 B를 247 CMR 9.08(3)(b)의 정확한 금지로 교체한다. D는 multi-drug-single-dose package에 한정하거나 distractor로 다시 설계한다.",
+      "Proposed_Explanation": "acute인지 maintenance인지가 이 결과를 가르는 기준이 아니다. Schedule II oxycodone은 247 CMR 9.08(3)(b)에 따라 multi-drug-single-dose package로 dispense할 수 없다. 이 금지를 모든 compliance packaging으로 일반화해서는 안 된다."
+    }
+  ]
+}

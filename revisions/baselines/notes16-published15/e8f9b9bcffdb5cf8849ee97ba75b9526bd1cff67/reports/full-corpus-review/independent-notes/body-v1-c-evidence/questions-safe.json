@@ -1,0 +1,1615 @@
+{
+  "source_root_head": "e4abd30bcb9170489793a86507a85f1437015704",
+  "question_audit_credit": 0,
+  "scope": "All final-census related IDs + all current public note_evidence unit links + independently selected canonical top2 stem/alloptions TFIDF. No hidden truth or prior verdict projected.",
+  "canonical_nearest": [
+    {
+      "question_id": "MA-Q-0399",
+      "score": 0.26087298293305994
+    },
+    {
+      "question_id": "MA-Q-0117",
+      "score": 0.2563243781564611
+    }
+  ],
+  "records": [
+    {
+      "origin": "canonical",
+      "collection": "data/questions/ma-q-0399.json",
+      "whole_record_sha256": "b5e7556dda1072b380608134d37ffe73cf5be9775f923f6da8f6316e22d85e18",
+      "original_visible_content": {
+        "question_id": "MA-Q-0399",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacy licensed for sterile compounding prepares two products on the same morning: a sterile infusion for an outpatient, and a sterile preparation for a patient admitted as an inpatient in the same hospital under its institutional licence. Which statements are correct? Select all that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Both containers must be labelled as a sterile compounded preparation."
+          },
+          {
+            "id": "B",
+            "text": "The outpatient container must also carry the pharmacist-contact telephone number."
+          },
+          {
+            "id": "C",
+            "text": "The telephone must be staffed during regular hours of operation and at least 56 hours a week."
+          },
+          {
+            "id": "D",
+            "text": "The inpatient preparation must also carry the telephone number, since the pharmacy does sterile compounding."
+          },
+          {
+            "id": "E",
+            "text": "The pharmacist reachable on that number must have access to the patient's records."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "M.G.L. c. 94C, s. 21 sets two distinct duties. All drug preparations compounded by a board-licensed pharmacy must carry a label notifying users and practitioners that the drug is a sterile or non-sterile compounded preparation. Separately, pharmacies engaged in sterile or complex non-sterile compounding must provide a telephone number fostering communication between patients and a pharmacist employed by the pharmacy who has access to the patient's records, staffed during regular hours of operation every day and not less than 56 hours per week, affixed to the container alongside the compounded-preparation label. That telephone paragraph does not apply to an institutional pharmacy licensed under c. 112, s. 39I where the sterile preparation is to be administered to an inpatient within the same hospital.",
+          "choice_analysis": {
+            "A": "Correct: the compounded-preparation label duty reaches all such preparations.",
+            "B": "Correct: the outpatient container falls squarely within the telephone paragraph.",
+            "C": "Correct: staffed during regular hours every day and not less than 56 hours per week.",
+            "D": "The telephone paragraph is disapplied for an inpatient preparation within the same hospital.",
+            "E": "Correct: the pharmacist reached must have access to the patient's records."
+          },
+          "related_facts": [
+            "The carve-out is tied to administration within the same hospital, not merely to inpatient status"
+          ],
+          "mpje_trap": "One exception is written into one of the two paragraphs. Reading it as an exception to both strips the required compounded-preparation label from the inpatient container."
+        }
+      }
+    },
+    {
+      "origin": "canonical",
+      "collection": "data/questions/ma-q-0117.json",
+      "whole_record_sha256": "2c72019550df4c1626252646e9a2112e5980b5afcd2235a70632143b7bf171f9",
+      "original_visible_content": {
+        "question_id": "MA-Q-0117",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacy licensed for sterile compounding prepares a patient-specific sterile compounded infusion for outpatient use. The ordinary prescription label is complete, but the final container does not identify the preparation as compounded and does not display the pharmacy's required pharmacist-contact telephone number. What should happen before the product leaves the pharmacy?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Dispense it because ordinary prescription-label elements make all compounded-product labeling requirements optional."
+          },
+          {
+            "id": "B",
+            "text": "Remove the ordinary prescription label and use only the word 'sterile' on the container."
+          },
+          {
+            "id": "C",
+            "text": "Correct the container to identify the sterile compounded preparation and include the required pharmacist-contact information before outpatient dispensing."
+          },
+          {
+            "id": "D",
+            "text": "Dispense it unchanged if the patient has previously received another compounded medication from the pharmacy."
+          },
+          {
+            "id": "E",
+            "text": "Treat the missing information only as a continuing-education issue for the compounding pharmacist."
+          }
+        ],
+        "correct_choice_ids": [
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "The pharmacy must verify the compounded product itself, not just the prescription. Massachusetts adds a compounded-preparation designation and, for covered sterile/complex nonsterile compounding pharmacies, required pharmacist contact information for outpatient products.",
+          "choice_analysis": {
+            "A": "Massachusetts imposes additional compounded-preparation labeling and, for covered pharmacies, pharmacist-contact requirements.",
+            "B": "The additional compounded-product information supplements rather than replaces ordinary applicable labeling duties.",
+            "C": "The facts describe a covered outpatient sterile compounded preparation missing the additional statutory label/contact elements.",
+            "D": "Prior patient experience does not waive the product-specific label and communication requirements.",
+            "E": "The defect is on the dispensed product and communication label, not merely the pharmacist's CE record."
+          },
+          "related_facts": [
+            "Compounded-drug labeling is distinct from compounding CE.",
+            "The institutional inpatient exception does not fit an outpatient dispensing."
+          ],
+          "mpje_trap": "A complete ordinary prescription label can still be incomplete for a compounded preparation."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "570fcf719f6c146053d5b8ce5d62b74224ebf7a2fe42e0b963ff52627f75b934",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0640",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+            "B": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "C": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "D": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "cd69472618a2bea697ab5e899455d6e625c11281f608a3bf759309a95e3bec2d",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0641",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "B": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "C": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "D": "선택할 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "19e00bdc2705b4c1870c80bed9e190016b2b4cb0788344f6889b058f449b7582",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0642",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "B": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "C": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "D": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "7d608b313a756a4ca1046d9701914179fd6fc14122f6c85a536de156229edcb3",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0643",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "B": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "C": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "D": "선택할 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "3a77e706e18c79f8bc8b8211bedc0863c7a09921a1c4a64de7fdb3b5211f9566",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0644",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist uses the relevant FDA Purple Book information when evaluating biological interchangeability."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "D",
+            "text": "During a qualifying medical emergency, a pharmacist uses verbal purchaser agreement alone for the permitted substitution despite the required written acceptance."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다.",
+            "B": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "C": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "D": "선택하지 않을 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 올바른 처리: During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "dfe1b762ef946cbedebb65526981aef2c76db342e545a6bad7eed7731e60f921",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0645",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "During a qualifying medical emergency, a pharmacist uses verbal purchaser agreement alone for the permitted substitution despite the required written acceptance."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          }
+        ],
+        "correct_choice_ids": [
+          "B"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 올바른 처리: During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution.",
+            "B": "선택할 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+            "C": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "D": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "70be88f81e62c6ae7e5ac540b94253122bb91d8da0f907e2effa5453ba891f7c",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0646",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist substitutes a biosimilar after checking its approval but not the required product-specific interchangeability status."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          }
+        ],
+        "correct_choice_ids": [
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. 올바른 처리: A pharmacist uses the relevant FDA Purple Book information when evaluating biological interchangeability.",
+            "B": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label.",
+            "C": "선택할 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+            "D": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "14d1fd8ae778834ff5744d61f949a4d6e520b50ffe7a9a8c1473bb302426f286",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0647",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "During a qualifying medical emergency, a pharmacist uses verbal purchaser agreement alone for the permitted substitution despite the required written acceptance."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 올바른 처리: During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution.",
+            "B": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "C": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling.",
+            "D": "선택할 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "4eaf3c8412845bee6d18bf36ee274ae67b9688220a60f0d5788aa003833e6f8d",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0648",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 환자 written notification 과 내부 재고 기록은 다른 행위이다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "B": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling.",
+            "C": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "D": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "06acf7879f40420109c9045f15ab6eb1d78d3e8ae53848086050b8efe2553bcb",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0685",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist uses the relevant FDA Purple Book information when evaluating biological interchangeability."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다.",
+            "B": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "C": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling.",
+            "D": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "fe5b073ca1f41a1f7dc43c48fa469b3e425732d449e95f882200be43c3c5bd08",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0686",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          }
+        ],
+        "correct_choice_ids": [
+          "B"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "B": "선택할 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+            "C": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "D": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "c02191ca483403561731ef966cab85154aefd64e1a105a2ffeafdc788797fcfa",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0687",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product."
+          },
+          {
+            "id": "B",
+            "text": "During a qualifying medical emergency, a pharmacist uses verbal purchaser agreement alone for the permitted substitution despite the required written acceptance."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist substitutes a biosimilar after checking its approval but not the required product-specific interchangeability status."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+            "B": "선택하지 않을 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 올바른 처리: During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution.",
+            "C": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "D": "선택하지 않을 항목. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. 올바른 처리: A pharmacist uses the relevant FDA Purple Book information when evaluating biological interchangeability."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "f49f94cc8a422b9e1d36a9aa91b0686578526288a22c4dcb10107b846638ca37",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0688",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "C",
+            "text": "During a qualifying medical emergency, a pharmacist uses verbal purchaser agreement alone for the permitted substitution despite the required written acceptance."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+            "B": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "C": "선택하지 않을 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 올바른 처리: During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution.",
+            "D": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "9a0480e0acc7becf832d6ddc43bdd29cbffc45ee0ff47036b5bce96242c79ef3",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0689",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+          "choice_analysis": {
+            "A": "선택할 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+            "B": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "C": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label.",
+            "D": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "97499151c92beb50316c6ae10e1114a7fe3f923fc3c1aa69ac95b25af3d6269a",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0690",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "B": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "C": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "D": "선택할 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "3f7dc7181d110f2171ff23117507860c1bc5b9eb3c14821f6806cd7b5be75680",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0691",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다.",
+            "B": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "C": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "D": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "e2f90405cc2130929b3d4b35f6fc6e1d4c3100811aa0d89e3150739eed2fd511",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0692",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "B": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "C": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "D": "선택할 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "1a858728ee16bf9cd304a8cc02c9908d095d89f21e8319f9ecde973b213a6e46",
+      "original_visible_content": {
+        "question_id": "MA-CASE-0693",
+        "question_type": "SBA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich ONE proposed handling is supported by the applicable requirements?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "B": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "C": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "D": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "76484aff7d52462fe84097eafb6510ce8d1fa1e7684f33f45d25daf4ba2c834e",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1045",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "B",
+            "text": "During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          }
+        ],
+        "correct_choice_ids": [
+          "B",
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "B": "선택할 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다.",
+            "C": "선택할 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다.",
+            "D": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "E": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "47e6e6f643c4ce4bcbfd5f24c188b23b57ffd826018544f7740d241f67fc195f",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1046",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 환자 written notification 과 내부 재고 기록은 다른 행위이다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+            "B": "선택할 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+            "C": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "D": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "E": "선택할 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "5ee995bbd7cf707a50eed10dbd3ca79878779ae437f205097471a52e90cdfc07",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1047",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "E",
+            "text": "During a qualifying medical emergency, a pharmacist documents the date, hour, and nature of the event and obtains written purchaser acceptance for the permitted substitution."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+            "B": "선택할 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+            "C": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "D": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "E": "선택할 항목. Emergency interchange 의 별도 기록과 purchaser written acceptance 조건을 충족한다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "0c0db4d9ad545570120d818a6899d5a4aeadd0497d9eb5776bf25dde46ee1a67",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1048",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist treats a private note to the inventory department as the required patient notification after biological substitution."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          }
+        ],
+        "correct_choice_ids": [
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "B": "선택하지 않을 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 올바른 처리: A pharmacist gives the patient the required written notification after an eligible biological substitution.",
+            "C": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "D": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling.",
+            "E": "선택할 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "1e9cbb3f6d0f9383cde7a1c49d125cb011105fb7d147be2243df1b58a3c9cf6f",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1049",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist gives a reconstituted medication a one-year label date without considering its shorter in-use limit."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+          "choice_analysis": {
+            "A": "선택할 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다.",
+            "B": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label.",
+            "C": "선택하지 않을 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 올바른 처리: A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling.",
+            "D": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "E": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "6e905084ced36bd5f8be4a388863beb852b037740b1fcc8b1e347745d34a5736",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1050",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist changes an immediate-release prescription to an extended-release product with the same ingredient and strength without clarification."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+            "B": "선택할 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다.",
+            "C": "선택하지 않을 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다. 올바른 처리: A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name.",
+            "D": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer.",
+            "E": "선택할 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "4af257500b76b2bbd874fbadbcff05f8f80432e38dbd18f56a6f17a8735840ec",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1051",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist evaluates an exact product’s therapeutic-equivalence relationship rather than relying only on the active ingredient name."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist substitutes a biosimilar after checking its approval but not the required product-specific interchangeability status."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+          "choice_analysis": {
+            "A": "선택할 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다.",
+            "B": "선택할 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다.",
+            "C": "선택할 항목. Ingredient 뿐 아니라 strength/form/route/TE relationship 및 처방 의도를 확인한다. IR/ER 는 자동 대체가 아니다.",
+            "D": "선택할 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다.",
+            "E": "선택하지 않을 항목. Biosimilarity 와 interchangeability 를 구별하고 MA biological substitution 조건을 함께 적용한다. 올바른 처리: A pharmacist uses the relevant FDA Purple Book information when evaluating biological interchangeability."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "b551157c61871fc8895fbf805c97d3c34184c701da0702c5da0f2185bb484335",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1052",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacy deletes the actual prescriber identity from its internal record when a permitted practice name is used on the patient label."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist refuses an otherwise lawful pharmacy-to-pharmacy transfer based on the patient label’s federal transfer warning."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+            "B": "선택하지 않을 항목. 환자용 protected-care label 예외와 원 prescription/권한확인/audit record 를 구별한다. 올바른 처리: A pharmacist preserves the actual prescribing practitioner in internal verification records while using an eligible protected-care practice name on the patient label.",
+            "C": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label.",
+            "D": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "E": "선택하지 않을 항목. Label 의 다른 사람에게 약물 양도 금지와 pharmacist prescription-information transfer 는 다른 의미이다. 올바른 처리: A pharmacist recognizes that a required federal patient-to-patient transfer warning does not prohibit a lawful pharmacy-to-pharmacy prescription-information transfer."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-26-plus/questions.json",
+      "whole_record_sha256": "2bba19170f65e47b97e4c77af70d71ab4b654c4fb2fed44b7439046b9bc11b0d",
+      "original_visible_content": {
+        "question_id": "MA-CASE-1053",
+        "question_type": "SATA",
+        "stem": "A Massachusetts pharmacist reviews outpatient labels and proposed substitutions. Assume the prescriber’s intended ingredient, strength, dosage form, and route are known. Each option describes a separate work-queue record. Assume all other prerequisites are satisfied; judge the action and facts actually stated, not an unstated exception.\n\nWhich proposed actions are supported by the applicable requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A pharmacist applies a shorter product-specific in-use period when it is more limiting than the general label-date ceiling."
+          },
+          {
+            "id": "B",
+            "text": "A pharmacist concludes that any product sold by the same company is the authorized generic of the prescribed brand."
+          },
+          {
+            "id": "C",
+            "text": "A pharmacist labels only the originally prescribed brand when a different interchangeable product is actually dispensed."
+          },
+          {
+            "id": "D",
+            "text": "A pharmacy treats the statutory ten-characters-per-inch wording as an automatic requirement for ten-point type."
+          },
+          {
+            "id": "E",
+            "text": "A pharmacist gives the patient the required written notification after an eligible biological substitution."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "E"
+        ],
+        "explanation": {
+          "core_reasoning": "각 선택지는 별도 기록이다. 같은 약·업무 이름보다 자격, 실제 행위, 시작점과 예외를 비교한다. 환자 written notification 과 내부 재고 기록은 다른 행위이다. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다.",
+          "choice_analysis": {
+            "A": "선택할 항목. Manufacturer expiry, BUD/in-use period, 일반 date ceiling 중 실제 적용되는 더 짧은 제한을 지킨다.",
+            "B": "선택하지 않을 항목. Regulatory product relationship 을 확인한다. 같은 회사라는 이유만으로 authorized generic 을 추정하지 않는다. 올바른 처리: A pharmacist distinguishes an authorized generic marketed under the brand NDA from a separate ANDA product.",
+            "C": "선택하지 않을 항목. 환자 label 은 실제 교부된 제품을 식별해야 한다. 원래 brand 만 남겨 제품 변경이 사라지게 하지 않는다. 올바른 처리: A pharmacist identifies the actually dispensed generic and manufacturer on the applicable interchange label.",
+            "D": "선택하지 않을 항목. Characters-per-inch 와 typographic point 는 다른 단위이다. 환자 방향 표시의 규정 문구를 정확히 읽는다. 올바른 처리: A pharmacy checks an applicable large-print request in characters per inch rather than assuming it means a ten-point font.",
+            "E": "선택할 항목. 환자 written notification 과 내부 재고 기록은 다른 행위이다."
+          },
+          "learning_boundary": "같은 모델의 9개 문항은 조건·기록 조합을 바꾸는 연습 변형이다. 독립된 9개 법규나 실제 기출로 세지 않으며, 세트에는 모델별 한 문항만 선택한다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "842ab6ca856b8afe814ac7879f8062570225d907724a02ec524f1f5894b7afdb",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0725",
+        "question_type": "SBA",
+        "stem": "Case A: An eligible patient requests large-print directions, and staff equate the statute's characters-per-inch requirement with a 10-point font size.\n\nCase B: A compounded prescription is labeled without identifying it as a sterile or nonsterile compounded preparation as applicable.\n\nWhich conclusion correctly addresses Case A? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The compounded preparation's BUD is simply the source manufacturer's expiration in every case."
+          },
+          {
+            "id": "B",
+            "text": "An inpatient label exception removes the same requirements for every outpatient prescription."
+          },
+          {
+            "id": "C",
+            "text": "Compounding identification is unnecessary whenever the ingredient is an approved drug."
+          },
+          {
+            "id": "D",
+            "text": "Characters per inch and point-size units are not interchangeable measures."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "해당 요청은 inch당 characters 조건이며 point size와 다르다. 제품의 준비 경로에 따른 label 의무를 유지한다. 실제 조제 후 BUD와 원 제품 expiration을 구분한다. Setting별 예외의 범위를 유지한다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. 실제 조제 후 BUD와 원 제품 expiration을 구분한다.\n교정된 설명: Beyond-use date and manufacturer expiration refer to different underlying conditions.",
+            "B": "선택하지 않아야 하는 잘못된 설명. Setting별 예외의 범위를 유지한다.\n교정된 설명: An institutional inpatient exception should not be generalized to outpatient prescriptions.",
+            "C": "선택하지 않아야 하는 잘못된 설명. 제품의 준비 경로에 따른 label 의무를 유지한다.\n교정된 설명: The applicable compounded-preparation identification must be included.",
+            "D": "선택해야 하는 옳은 설명. 해당 요청은 inch당 characters 조건이며 point size와 다르다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "7adde7ea5f50a074e23bf81dd4ba77e74488b831d97ad9b2cb6006bd482519d0",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0726",
+        "question_type": "SBA",
+        "stem": "Case A: An eligible patient requests large-print directions, and staff equate the statute's characters-per-inch requirement with a 10-point font size.\n\nCase B: A compounded prescription is labeled without identifying it as a sterile or nonsterile compounded preparation as applicable.\n\nWhich conclusion correctly addresses Case B? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The applicable compounded-preparation identification must be included."
+          },
+          {
+            "id": "B",
+            "text": "A 10-point font automatically proves compliance with the characters-per-inch requirement."
+          },
+          {
+            "id": "C",
+            "text": "The compounded preparation's BUD is simply the source manufacturer's expiration in every case."
+          },
+          {
+            "id": "D",
+            "text": "An inpatient label exception removes the same requirements for every outpatient prescription."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "해당 요청은 inch당 characters 조건이며 point size와 다르다. 제품의 준비 경로에 따른 label 의무를 유지한다. 실제 조제 후 BUD와 원 제품 expiration을 구분한다. Setting별 예외의 범위를 유지한다.",
+          "choice_analysis": {
+            "A": "선택해야 하는 옳은 설명. 제품의 준비 경로에 따른 label 의무를 유지한다.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 해당 요청은 inch당 characters 조건이며 point size와 다르다.\n교정된 설명: Characters per inch and point-size units are not interchangeable measures.",
+            "C": "선택하지 않아야 하는 잘못된 설명. 실제 조제 후 BUD와 원 제품 expiration을 구분한다.\n교정된 설명: Beyond-use date and manufacturer expiration refer to different underlying conditions.",
+            "D": "선택하지 않아야 하는 잘못된 설명. Setting별 예외의 범위를 유지한다.\n교정된 설명: An institutional inpatient exception should not be generalized to outpatient prescriptions."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "e2a93b00f518749afd5d8efd33ef61165b384e35cc047ec2e313e4f154e3feef",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0727",
+        "question_type": "SATA",
+        "stem": "Case A: An eligible patient requests large-print directions, and staff equate the statute's characters-per-inch requirement with a 10-point font size.\n\nCase B: A compounded prescription is labeled without identifying it as a sterile or nonsterile compounded preparation as applicable.\n\nWhich statements accurately apply to the described cases or the related requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "An institutional inpatient exception should not be generalized to outpatient prescriptions."
+          },
+          {
+            "id": "B",
+            "text": "Compounding identification is unnecessary whenever the ingredient is an approved drug."
+          },
+          {
+            "id": "C",
+            "text": "Characters per inch and point-size units are not interchangeable measures."
+          },
+          {
+            "id": "D",
+            "text": "The compounded preparation's BUD is simply the source manufacturer's expiration in every case."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "해당 요청은 inch당 characters 조건이며 point size와 다르다. 제품의 준비 경로에 따른 label 의무를 유지한다. 실제 조제 후 BUD와 원 제품 expiration을 구분한다. Setting별 예외의 범위를 유지한다.",
+          "choice_analysis": {
+            "A": "선택해야 하는 옳은 설명. Setting별 예외의 범위를 유지한다.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 제품의 준비 경로에 따른 label 의무를 유지한다.\n교정된 설명: The applicable compounded-preparation identification must be included.",
+            "C": "선택해야 하는 옳은 설명. 해당 요청은 inch당 characters 조건이며 point size와 다르다.",
+            "D": "선택하지 않아야 하는 잘못된 설명. 실제 조제 후 BUD와 원 제품 expiration을 구분한다.\n교정된 설명: Beyond-use date and manufacturer expiration refer to different underlying conditions."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "32b59882a9bea73ff73d290e8795a661d1ff806b2d1db045f695ca6ce0833f28",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0728",
+        "question_type": "SBA",
+        "stem": "Case A: An eligible patient requests large-print directions, and staff equate the statute's characters-per-inch requirement with a 10-point font size.\n\nCase B: A compounded prescription is labeled without identifying it as a sterile or nonsterile compounded preparation as applicable.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Beyond-use date and manufacturer expiration refer to different underlying conditions."
+          },
+          {
+            "id": "B",
+            "text": "An inpatient label exception removes the same requirements for every outpatient prescription."
+          },
+          {
+            "id": "C",
+            "text": "Characters per inch and point-size units are not interchangeable measures."
+          },
+          {
+            "id": "D",
+            "text": "The applicable compounded-preparation identification must be included."
+          }
+        ],
+        "correct_choice_ids": [
+          "B"
+        ],
+        "explanation": {
+          "core_reasoning": "해당 요청은 inch당 characters 조건이며 point size와 다르다. 제품의 준비 경로에 따른 label 의무를 유지한다. 실제 조제 후 BUD와 원 제품 expiration을 구분한다. Setting별 예외의 범위를 유지한다.",
+          "choice_analysis": {
+            "A": "옳은 설명이므로 오류 선택의 정답이 아님. 실제 조제 후 BUD와 원 제품 expiration을 구분한다.",
+            "B": "오류를 고르는 문항의 정답. Setting별 예외의 범위를 유지한다.\n교정된 설명: An institutional inpatient exception should not be generalized to outpatient prescriptions.",
+            "C": "옳은 설명이므로 오류 선택의 정답이 아님. 해당 요청은 inch당 characters 조건이며 point size와 다르다.",
+            "D": "옳은 설명이므로 오류 선택의 정답이 아님. 제품의 준비 경로에 따른 label 의무를 유지한다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "57ea106de6bcf974f82fee4a2a7bbd90b2afbbecc8f4a3cc3b6a592f19ff6252",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0729",
+        "question_type": "SBA",
+        "stem": "Case A: Staff interpret the federal warning against giving a controlled medicine to another person as prohibiting an otherwise lawful pharmacist-to-pharmacist transfer of prescription information.\n\nCase B: A pharmacy applies that federal Schedule II-IV label warning as a mandatory federal requirement to every Massachusetts Schedule VI medicine.\n\nWhich conclusion correctly addresses Case A? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Every drug in every schedule has an identical opioid-information duty."
+          },
+          {
+            "id": "B",
+            "text": "Any leaflet automatically satisfies the designated opioid-information requirement."
+          },
+          {
+            "id": "C",
+            "text": "The patient-to-person drug warning and prescription-information transfer govern different acts."
+          },
+          {
+            "id": "D",
+            "text": "Every Massachusetts Schedule VI label must bear the same warning by virtue of federal scheduling."
+          }
+        ],
+        "correct_choice_ids": [
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다. MA VI와 federal II–IV의 적용 범위는 다르다. 해당 opioid·narcotic 범주와 예외 setting을 확인한다. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. 해당 opioid·narcotic 범주와 예외 setting을 확인한다.\n교정된 설명: The specified opioid or narcotic patient-information duties have their own product and setting conditions.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.\n교정된 설명: A generic pharmacy leaflet is not automatically the Department-designated opioid information.",
+            "C": "선택해야 하는 옳은 설명. 실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다.",
+            "D": "선택하지 않아야 하는 잘못된 설명. MA VI와 federal II–IV의 적용 범위는 다르다.\n교정된 설명: Massachusetts Schedule VI status alone does not make the federal Schedule II-IV warning mandatory."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "d3da401376285426f9f135f6b954d1ce9ab9b54b1660b86e492f041e37ca9147",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0730",
+        "question_type": "SBA",
+        "stem": "Case A: Staff interpret the federal warning against giving a controlled medicine to another person as prohibiting an otherwise lawful pharmacist-to-pharmacist transfer of prescription information.\n\nCase B: A pharmacy applies that federal Schedule II-IV label warning as a mandatory federal requirement to every Massachusetts Schedule VI medicine.\n\nWhich conclusion correctly addresses Case B? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The label warning prohibits every otherwise lawful prescription-information transfer."
+          },
+          {
+            "id": "B",
+            "text": "Any leaflet automatically satisfies the designated opioid-information requirement."
+          },
+          {
+            "id": "C",
+            "text": "Every drug in every schedule has an identical opioid-information duty."
+          },
+          {
+            "id": "D",
+            "text": "Massachusetts Schedule VI status alone does not make the federal Schedule II-IV warning mandatory."
+          }
+        ],
+        "correct_choice_ids": [
+          "D"
+        ],
+        "explanation": {
+          "core_reasoning": "실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다. MA VI와 federal II–IV의 적용 범위는 다르다. 해당 opioid·narcotic 범주와 예외 setting을 확인한다. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.",
+          "choice_analysis": {
+            "A": "선택하지 않아야 하는 잘못된 설명. 실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다.\n교정된 설명: The patient-to-person drug warning and prescription-information transfer govern different acts.",
+            "B": "선택하지 않아야 하는 잘못된 설명. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.\n교정된 설명: A generic pharmacy leaflet is not automatically the Department-designated opioid information.",
+            "C": "선택하지 않아야 하는 잘못된 설명. 해당 opioid·narcotic 범주와 예외 setting을 확인한다.\n교정된 설명: The specified opioid or narcotic patient-information duties have their own product and setting conditions.",
+            "D": "선택해야 하는 옳은 설명. MA VI와 federal II–IV의 적용 범위는 다르다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "2e3c3e87096830c5da6bddccca59eb5298e0a981e540c873124c771329bdc51b",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0731",
+        "question_type": "SATA",
+        "stem": "Case A: Staff interpret the federal warning against giving a controlled medicine to another person as prohibiting an otherwise lawful pharmacist-to-pharmacist transfer of prescription information.\n\nCase B: A pharmacy applies that federal Schedule II-IV label warning as a mandatory federal requirement to every Massachusetts Schedule VI medicine.\n\nWhich statements accurately apply to the described cases or the related requirements? Select ALL that apply.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "The specified opioid or narcotic patient-information duties have their own product and setting conditions."
+          },
+          {
+            "id": "B",
+            "text": "A generic pharmacy leaflet is not automatically the Department-designated opioid information."
+          },
+          {
+            "id": "C",
+            "text": "The patient-to-person drug warning and prescription-information transfer govern different acts."
+          },
+          {
+            "id": "D",
+            "text": "Every Massachusetts Schedule VI label must bear the same warning by virtue of federal scheduling."
+          }
+        ],
+        "correct_choice_ids": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": {
+          "core_reasoning": "실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다. MA VI와 federal II–IV의 적용 범위는 다르다. 해당 opioid·narcotic 범주와 예외 setting을 확인한다. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.",
+          "choice_analysis": {
+            "A": "선택해야 하는 옳은 설명. 해당 opioid·narcotic 범주와 예외 setting을 확인한다.",
+            "B": "선택해야 하는 옳은 설명. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.",
+            "C": "선택해야 하는 옳은 설명. 실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다.",
+            "D": "선택하지 않아야 하는 잘못된 설명. MA VI와 federal II–IV의 적용 범위는 다르다.\n교정된 설명: Massachusetts Schedule VI status alone does not make the federal Schedule II-IV warning mandatory."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    },
+    {
+      "origin": "public",
+      "collection": "practice_expansion/2026-10-23/candidates/questions.json",
+      "whole_record_sha256": "fdfb204365f3cb1543215b3a3081eceb49f69ad3d15a2279638acbd9e9353b2b",
+      "original_visible_content": {
+        "question_id": "MA-EXP-0732",
+        "question_type": "SBA",
+        "stem": "Case A: Staff interpret the federal warning against giving a controlled medicine to another person as prohibiting an otherwise lawful pharmacist-to-pharmacist transfer of prescription information.\n\nCase B: A pharmacy applies that federal Schedule II-IV label warning as a mandatory federal requirement to every Massachusetts Schedule VI medicine.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Any leaflet automatically satisfies the designated opioid-information requirement."
+          },
+          {
+            "id": "B",
+            "text": "The specified opioid or narcotic patient-information duties have their own product and setting conditions."
+          },
+          {
+            "id": "C",
+            "text": "Massachusetts Schedule VI status alone does not make the federal Schedule II-IV warning mandatory."
+          },
+          {
+            "id": "D",
+            "text": "The patient-to-person drug warning and prescription-information transfer govern different acts."
+          }
+        ],
+        "correct_choice_ids": [
+          "A"
+        ],
+        "explanation": {
+          "core_reasoning": "실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다. MA VI와 federal II–IV의 적용 범위는 다르다. 해당 opioid·narcotic 범주와 예외 setting을 확인한다. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.",
+          "choice_analysis": {
+            "A": "오류를 고르는 문항의 정답. 지정 자료의 내용·형식과 일반 leaflet을 구별한다.\n교정된 설명: A generic pharmacy leaflet is not automatically the Department-designated opioid information.",
+            "B": "옳은 설명이므로 오류 선택의 정답이 아님. 해당 opioid·narcotic 범주와 예외 setting을 확인한다.",
+            "C": "옳은 설명이므로 오류 선택의 정답이 아님. MA VI와 federal II–IV의 적용 범위는 다르다.",
+            "D": "옳은 설명이므로 오류 선택의 정답이 아님. 실물 약물을 다른 사람에게 주는 행위와 pharmacy Rx-information transfer를 구분한다."
+          },
+          "learning_boundary": "같은 family의 네 문항은 같은 두 사례와 네 판단을 공유하는 연습 변형이다. 독립적인 네 임상 사례로 세지 않는다."
+        }
+      }
+    }
+  ]
+}

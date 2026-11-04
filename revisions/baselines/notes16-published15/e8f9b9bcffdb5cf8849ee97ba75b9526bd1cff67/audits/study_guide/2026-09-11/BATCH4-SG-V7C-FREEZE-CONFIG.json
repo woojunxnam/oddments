@@ -1,0 +1,24 @@
+{
+  "freeze_date": "2026-09-11",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "807d5eb08500851c7ce53c267a465f167fc2b637",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B4-SG-V7C",
+  "section_ids": [
+    "SG-MA-ORAL-PRESCRIPTIONS",
+    "SG-MA-OUTSTATE-PRESCRIPTIONS",
+    "SG-MA-SCHEDULE-VI"
+  ],
+  "output_dir": "audits/study_guide/2026-09-11",
+  "file_prefix": "BATCH4-SG-V7C",
+  "manifest_type": "STUDY_GUIDE_REPAIR_CLEAN_FREEZE",
+  "expected_audit_output_path": "audits/study_guide/2026-09-11/CLAUDE-FRESH-B4-SG-V7C-AUDIT.json",
+  "scope_note": "The Massachusetts prescription-pathway trio, repaired after V6B and re-authored under content model 2. Scope-gate signals answered before freezing. Declined: MA-CII-LESSER-QUANTITY, MA-CII-PARTIAL-PATIENT and MA-CII-REMAINDER-30D against SG-MA-OUTSTATE-PRESCRIPTIONS restate M.G.L. c. 94C, s. 18(d3/4) alongside MA-CII-PARTIAL-FILL-PATHWAY-LIMITS, which the section cites; they are the known corpus duplication. MA-ORAL-III-V-FOLLOWUP against SG-MA-SCHEDULE-VI is taught in a section frozen in this same package, so the auditor sees both sides of the seam (SG-MA-OUTSTATE-PRESCRIPTIONS), as are MA-RX-FORMAT-CONTENT and MA-RX-REQUIRED-ELEMENTS against SG-MA-ORAL-PRESCRIPTIONS (SG-MA-SCHEDULE-VI) and the out-of-state family against SG-MA-SCHEDULE-VI. MA-CII-OPIOID-PARTIAL-FILL-NOTATION is taught in SG-CII-LIFECYCLE; MA-EMERGENCY-SITUATION-EXCEPTION and MA-RX-EMERGENCY-ORAL-CII in SG-CII-EMERGENCY-ORAL and SG-MA-ORAL-PRESCRIPTIONS; FED-CS-TRANSFER-REFILL and FED-EPCS-TRANSFER in SG-CIII-V-REFILL-TRANSFER; FED-CS-SCHEDULES in SG-CONTROLLED-SCHEDULES. FED-CORRESPONDING-RESP (21 CFR 1306.04(a)) governs controlled-substance prescriptions, which Schedule VI by definition excludes, and MA-PMP-INPATIENT-EXCLUSION belongs to prescription monitoring; both are recorded as coverage for later sections rather than widened into this one.",
+  "prior_audit_reference": {
+    "path": "audits/study_guide/2026-09-10/GPT-FRESH-B4-SG-REPAIR-V6B-AUDIT.json",
+    "audit_id": "AUDIT-SG-B4-SG-REPAIR-V6B-2026-09-10",
+    "auditor_instance": "GPT-FRESH-B4-SG-REPAIR-V6B",
+    "role": "HISTORICAL_REPAIR_PROVENANCE",
+    "note": "V6B rated the superseded hashes and drove these repairs. Its dispositions bind none of the hashes frozen here, and it is excluded from the auditor package so the V7C auditor stays independent."
+  }
+}

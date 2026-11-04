@@ -1,0 +1,3631 @@
+{
+  "schema_version": "independent-legacy-quality-review/1",
+  "reviewed_at": "2026-11-03",
+  "auditor": "GPT",
+  "auditor_instance": "codex-mission-independent_review-20261103",
+  "independent_of_authors": true,
+  "author_reports_used": false,
+  "scope_ko": "별도 reviewer 세션이 보호된 기존 MA-EXP 문항 40개/160 선택지를 검토했다. 이 ID들은 data/questions canonical inventory 밖에 있으므로 본 파일은 canonical audit registration이나 RELEASED 증거가 아니다. 편집 후 content hash가 바뀌면 적용되지 않는다.",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "style_profile": {
+    "profile_id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  },
+  "style_limitation_ko": "저장된 profile을 읽고 실무성 기준을 적용했다. NABP public sample URL은 이번 세션에 재조회하지 않았으므로 해당 기준은 미검증이고 PASS를 부여하지 않는다.",
+  "source_retrieval_ko": "처음 5개는 Firecrawl live fetch로 조회했다. 추가 Firecrawl 요청은 계정 크레딧 부족으로 실패하여 공식 HTTPS/urllib와 pdftotext, DailyMed 공식 SPL XML로 대체 확인했다. 보호된 시험·상업자료는 사용하지 않았다.",
+  "summary": {
+    "question_ids": 40,
+    "options_read": 160,
+    "legal_answer_assessed": 40,
+    "source_blocked": 0,
+    "realism_pass": 0,
+    "realism_fail": 40,
+    "all_correct_sata_hold_ids": [
+      "MA-EXP-0399",
+      "MA-EXP-0415"
+    ],
+    "canonical_released": 0
+  },
+  "sources": [
+    {
+      "source_id": "ec",
+      "authority": "Massachusetts DPH EC pharmacy guidance",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/info-details/emergency-contraception-information-for-pharmacies",
+      "exact_section": "Reporting requirement; FAQ: minors; How should pharmacist dispense EC",
+      "version_or_publication_date": "current live page; no revision date displayed",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-ec.md",
+      "evidence_sha256": "51bc3ba3d1be585d92f6f555d566703342d37585fdf52ee128ce11d96a75f883"
+    },
+    {
+      "source_id": "naloxone",
+      "authority": "Board Policy 2024-01 Naloxone Dispensing",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/doc/2024-01-naloxone-dispensing-pdf/download",
+      "exact_section": "Introduction; I(B)-(G); II(A)-(B); III(A)-(E)",
+      "version_or_publication_date": "adopted 2024-01-11; revised 2025-02-06",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-naloxone.md",
+      "evidence_sha256": "15c5f42bd2418f372fd773a8d210a2b03763779952c221c2e3b0a7456c7be416"
+    },
+    {
+      "source_id": "ept",
+      "authority": "Board/DCP Policy 2020-08 EPT prescriptions",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/doc/2020-08-expedited-partner-therapy-prescriptions-pdf/download",
+      "exact_section": "Introduction; I(A)-(B); II(A)-(B)",
+      "version_or_publication_date": "adopted 2020-07-31",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-ept.md",
+      "evidence_sha256": "bf50a0458ea5756c2a4b8e0fb200a2b5a9f88d0eb5865af8b981af3131fc3fc3"
+    },
+    {
+      "source_id": "counsel",
+      "authority": "247 CMR 9 Professional Practice Standards",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "exact_section": "9.01(9) (fraud/deception); 9.16(7) patient profiles; 9.17(1)-(2) DUR; 9.18(1)-(5),(8),(10) counseling",
+      "version_or_publication_date": "live official 17-page PDF; separate effective date not established",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-counsel.md",
+      "evidence_sha256": "5ad209e3025d65defde49e8127ca7b5d36926bfe6e2241ec079393738ad43634"
+    },
+    {
+      "source_id": "access",
+      "authority": "Massachusetts Division of Insurance ACCESS Q&A",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/info-details/massachusetts-access-law-common-questions-and-answers-qa",
+      "exact_section": "Does ACCESS apply to all plans?; What contraceptives?; 12-month limitations",
+      "version_or_publication_date": "live official page; cites Chapter120 Acts2017",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-access.md",
+      "evidence_sha256": "f3ab69edd091bf4b168c95e0d5a27d86ab26aa09108e23ec8abe61707346d2f2"
+    },
+    {
+      "source_id": "prescribe",
+      "authority": "DCP26-08-125 Pharmacist prescribing",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+      "exact_section": "Purpose; General Prescribing Requirements(a),(d),(g); Hormonal contraceptive patches and oral hormonal contraceptives; STI Prevention and Treatment",
+      "version_or_publication_date": "2026-08-25; rescinds DCP25-04-124",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-prescribe.txt",
+      "evidence_sha256": "4e799af134a61457131486e5f47e738f46a87f32db7c3b7bd2a8ff562efde226"
+    },
+    {
+      "source_id": "opill",
+      "authority": "FDA first nonprescription daily contraceptive approval",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-nonprescription-daily-oral-contraceptive",
+      "exact_section": "Opening approval paragraphs; not emergency contraception paragraph",
+      "version_or_publication_date": "2023-07-13",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-opill.txt",
+      "evidence_sha256": "d9221c577a218689b751951358d3d90af8054c49b5d4f029477927da8015dbdc"
+    },
+    {
+      "source_id": "narcan",
+      "authority": "FDA first OTC naloxone nasal spray approval",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-over-counter-naloxone-nasal-spray",
+      "exact_section": "Opening approval paragraphs; other formulations remain Rx; case-by-case switch paragraph",
+      "version_or_publication_date": "2023-03-29",
+      "applicable_effective_date": null,
+      "effective_date_limitation_ko": "원문에 별도의 시행일을 확인하지 못했으므로 발행·개정일을 시행일로 추정하지 않는다.",
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-narcan.txt",
+      "evidence_sha256": "c5c645c42d1612f80ebb7f4e2a3a6b8794b39ca274355dc18018535e332b8e62"
+    },
+    {
+      "source_id": "vivitrol",
+      "authority": "DailyMed Vivitrol prescribing information",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd11c435-b0f0-4bb9-ae78-60f101f3703f",
+      "exact_section": "1.1-1.2 Indications and Usage; 4 Contraindications",
+      "version_or_publication_date": "SPL effectiveTime 20260531",
+      "applicable_effective_date": "2026-05-31",
+      "effective_date_limitation_ko": null,
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-vivitrol.txt",
+      "evidence_sha256": "1c30c837301cf8586d66a51cc8de1c912c8061b1aecf44e735e6c253b39126db"
+    },
+    {
+      "source_id": "suboxone",
+      "authority": "DailyMed Suboxone sublingual film prescribing information",
+      "source_type": "PUBLIC_OFFICIAL",
+      "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8a5edcf9-828c-4f97-b671-268ab13a8ecd",
+      "exact_section": "1 Indications and Usage",
+      "version_or_publication_date": "SPL effectiveTime 20251222",
+      "applicable_effective_date": "2025-12-22",
+      "effective_date_limitation_ko": null,
+      "law_checked_date": "2026-11-03",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-pub-suboxone.txt",
+      "evidence_sha256": "eaaf376b41171bde9c39da90cd110ff9322ef428f7ff0158061ddde9900348dc"
+    }
+  ],
+  "records": [
+    {
+      "question_id": "MA-EXP-0385",
+      "record_sha256": "079f718b304c078accca458645fa2becc0fd8a61a9a1f64bd1cae1ee60db7419",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB05",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ec",
+          "naloxone"
+        ],
+        "finding_ko": "EC 미성년자 동의·환자별 조제는 공식 FAQ에 명시되어 있다. EC 보고 페이지는 달력연도 보고만 규정하므로 naloxone 1월15일을 EC에 복사할 근거가 없다. 다른 모든 치료에 대한 포괄 동의권은 이 경로가 부여하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The described EC access guidance does not require parental consent for the minor's EC access.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "An annual reporting requirement makes the naloxone deadline applicable to EC automatically.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "A standing order eliminates the need to create the required patient-specific dispensing record.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "A minor's EC access creates unrestricted consent authority for every unrelated treatment.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "related requirements·모든 unrelated treatment·자동 기한 전용 같은 과도한 문구가 실제 지문 분석 없이 오답을 드러낸다. EC pathway도 구체적으로 이름붙이지 않았다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0386",
+          "MA-EXP-0387",
+          "MA-EXP-0388"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0386",
+      "record_sha256": "e88550e2891290e2ae7d79d7feceb1a7ac8760dec0287aea242416d0a09988bc",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB05",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ec",
+          "naloxone"
+        ],
+        "finding_ko": "EC 미성년자 동의·환자별 조제는 공식 FAQ에 명시되어 있다. EC 보고 페이지는 달력연도 보고만 규정하므로 naloxone 1월15일을 EC에 복사할 근거가 없다. 다른 모든 치료에 대한 포괄 동의권은 이 경로가 부여하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The pharmacy may present parental consent as a universal legal prerequisite for this EC pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The naloxone deadline should not be attributed to EC reporting without an EC source.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "A standing order eliminates the need to create the required patient-specific dispensing record.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "A minor's EC access creates unrestricted consent authority for every unrelated treatment.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "related requirements·모든 unrelated treatment·자동 기한 전용 같은 과도한 문구가 실제 지문 분석 없이 오답을 드러낸다. EC pathway도 구체적으로 이름붙이지 않았다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0385",
+          "MA-EXP-0387",
+          "MA-EXP-0388"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0387",
+      "record_sha256": "63269a055e46af29b426dd17888d1bb0ed7f0de448c9d59e4d771f5af21a2e5e",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB05",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ec",
+          "naloxone"
+        ],
+        "finding_ko": "EC 미성년자 동의·환자별 조제는 공식 FAQ에 명시되어 있다. EC 보고 페이지는 달력연도 보고만 규정하므로 naloxone 1월15일을 EC에 복사할 근거가 없다. 다른 모든 치료에 대한 포괄 동의권은 이 경로가 부여하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A standing order eliminates the need to create the required patient-specific dispensing record.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "An annual reporting requirement makes the naloxone deadline applicable to EC automatically.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The EC consent rule does not establish unrestricted minor consent for every other health service.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The pharmacy may present parental consent as a universal legal prerequisite for this EC pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "related requirements·모든 unrelated treatment·자동 기한 전용 같은 과도한 문구가 실제 지문 분석 없이 오답을 드러낸다. EC pathway도 구체적으로 이름붙이지 않았다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0385",
+          "MA-EXP-0386",
+          "MA-EXP-0388"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0388",
+      "record_sha256": "4df6c7c603a4b29c9b0c7a7a564a7043072e32a59fe981595c2cef9a63fd7b81",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB05",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "ec",
+          "naloxone"
+        ],
+        "finding_ko": "EC 미성년자 동의·환자별 조제는 공식 FAQ에 명시되어 있다. EC 보고 페이지는 달력연도 보고만 규정하므로 naloxone 1월15일을 EC에 복사할 근거가 없다. 다른 모든 치료에 대한 포괄 동의권은 이 경로가 부여하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The described EC access guidance does not require parental consent for the minor's EC access.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "Standing-order dispensing connects to a patient-specific prescription, labeling, and records.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "A minor's EC access creates unrestricted consent authority for every unrelated treatment.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The naloxone deadline should not be attributed to EC reporting without an EC source.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ec",
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "related requirements·모든 unrelated treatment·자동 기한 전용 같은 과도한 문구가 실제 지문 분석 없이 오답을 드러낸다. EC pathway도 구체적으로 이름붙이지 않았다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0385",
+          "MA-EXP-0386",
+          "MA-EXP-0387"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0389",
+      "record_sha256": "6846452b212ad51f8863de5d15152c965a647383975c78847a5563d42dc060f5",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB06",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "access",
+          "prescribe",
+          "opill"
+        ],
+        "finding_ko": "ACCESS 보장 목록과 19F 약사 처방 범위는 별개다. DCP는 oral/patch를 열거하고 보험 FAQ는 self-funded 예외를 설명한다. Opill의 OTC 판매 자격은 보험 청구 조건과 다르다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A coverage benefit permits dispensing any desired product and quantity without regard to authorization.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "B": {
+            "statement": "An insurer's prescription requirement establishes a universal legal prescription requirement for OTC purchase.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "C": {
+            "statement": "A supply benefit described for a covered plan necessarily applies to every self-funded employer plan.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "D": {
+            "statement": "A coverage list does not define the pharmacist's independent prescribing scope.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every formulation/any desired quantity/every self-funded plan 같은 과도한 일반화가 오답 단서다. 실제 보험 유형·제품·처방 수량을 제시해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0390",
+          "MA-EXP-0391",
+          "MA-EXP-0392"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0390",
+      "record_sha256": "3e54fb6e355b696c7dfbb33ad9caf4e72b5d2233abb5b516012430c0c38b9508",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB06",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "access",
+          "prescribe",
+          "opill"
+        ],
+        "finding_ko": "ACCESS 보장 목록과 19F 약사 처방 범위는 별개다. DCP는 oral/patch를 열거하고 보험 FAQ는 self-funded 예외를 설명한다. Opill의 OTC 판매 자격은 보험 청구 조건과 다르다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The claim requirement must be separated from the OTC product's ordinary legal purchase pathway.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "B": {
+            "statement": "A coverage benefit permits dispensing any desired product and quantity without regard to authorization.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "C": {
+            "statement": "A supply benefit described for a covered plan necessarily applies to every self-funded employer plan.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "D": {
+            "statement": "Every formulation on an insurance coverage list is independently prescribable by the pharmacist.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every formulation/any desired quantity/every self-funded plan 같은 과도한 일반화가 오답 단서다. 실제 보험 유형·제품·처방 수량을 제시해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0389",
+          "MA-EXP-0391",
+          "MA-EXP-0392"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0391",
+      "record_sha256": "f2502ea7f2ed22aa0f957950fddc94b248a15af1703560c6c7f035904c91c52a",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB06",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "D"
+        ],
+        "independently_expected_key": [
+          "A",
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "access",
+          "prescribe",
+          "opill"
+        ],
+        "finding_ko": "ACCESS 보장 목록과 19F 약사 처방 범위는 별개다. DCP는 oral/patch를 열거하고 보험 FAQ는 self-funded 예외를 설명한다. Opill의 OTC 판매 자격은 보험 청구 조건과 다르다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The applicable plan and statutory coverage conditions must be identified before applying a supply benefit.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "B": {
+            "statement": "An insurer's prescription requirement establishes a universal legal prescription requirement for OTC purchase.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "C": {
+            "statement": "A coverage benefit permits dispensing any desired product and quantity without regard to authorization.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "D": {
+            "statement": "A coverage list does not define the pharmacist's independent prescribing scope.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every formulation/any desired quantity/every self-funded plan 같은 과도한 일반화가 오답 단서다. 실제 보험 유형·제품·처방 수량을 제시해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0389",
+          "MA-EXP-0390",
+          "MA-EXP-0392"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0392",
+      "record_sha256": "cc72d59d7dadd1c9a2acc6cd44360bfce20638842d0cc68ee97452bf0b70f0fe",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB06",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "access",
+          "prescribe",
+          "opill"
+        ],
+        "finding_ko": "ACCESS 보장 목록과 19F 약사 처방 범위는 별개다. DCP는 oral/patch를 열거하고 보험 FAQ는 self-funded 예외를 설명한다. Opill의 OTC 판매 자격은 보험 청구 조건과 다르다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The claim requirement must be separated from the OTC product's ordinary legal purchase pathway.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "B": {
+            "statement": "A coverage benefit permits dispensing any desired product and quantity without regard to authorization.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "C": {
+            "statement": "The applicable plan and statutory coverage conditions must be identified before applying a supply benefit.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          },
+          "D": {
+            "statement": "A coverage list does not define the pharmacist's independent prescribing scope.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "access",
+              "prescribe",
+              "opill"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every formulation/any desired quantity/every self-funded plan 같은 과도한 일반화가 오답 단서다. 실제 보험 유형·제품·처방 수량을 제시해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0389",
+          "MA-EXP-0390",
+          "MA-EXP-0391"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0393",
+      "record_sha256": "2f8b8734be88d83872e4a3764233b76d37dcaeb01f4568df9a4f453f55209359",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB07",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone",
+          "narcan",
+          "vivitrol",
+          "suboxone"
+        ],
+        "finding_ko": "Policy2024-01은 타인 투여 목적 구매를 허용한다. FDA는 제품별 전환을 설명하며 Vivitrol과 Suboxone의 적응증은 각각 의존 재발 예방·의존 치료다. 약명 또는 antagonist 분류만으로 급성 naloxone 구조제로 대체할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "Naltrexone is an interchangeable substitute for naloxone overdose rescue based solely on class.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "B": {
+            "statement": "Any combination containing naloxone has the legal status of an OTC naloxone rescue kit.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "C": {
+            "statement": "The described naloxone access pathway can include a purchaser intending to administer it to another person.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "D": {
+            "statement": "Every naloxone formulation becomes OTC when one nasal product is approved OTC.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "모든 naloxone 제형/any combination이라는 과도한 주장이 오답을 드러낸다. 실제 제품명·제형을 주고 구조 목적과 법적 판매 경로를 판단하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0394",
+          "MA-EXP-0395",
+          "MA-EXP-0396"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0394",
+      "record_sha256": "fdbe88016f57afbe971a466148d81c11aa55f767ab12ad8689dcb9ca050971de",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB07",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone",
+          "narcan",
+          "vivitrol",
+          "suboxone"
+        ],
+        "finding_ko": "Policy2024-01은 타인 투여 목적 구매를 허용한다. FDA는 제품별 전환을 설명하며 Vivitrol과 Suboxone의 적응증은 각각 의존 재발 예방·의존 치료다. 약명 또는 antagonist 분류만으로 급성 naloxone 구조제로 대체할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The purchaser must personally be the at-risk patient to use the described naloxone pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "B": {
+            "statement": "Every naloxone formulation becomes OTC when one nasal product is approved OTC.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "C": {
+            "statement": "Any combination containing naloxone has the legal status of an OTC naloxone rescue kit.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "D": {
+            "statement": "Naltrexone therapy and naloxone overdose rescue are different drugs and uses.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "모든 naloxone 제형/any combination이라는 과도한 주장이 오답을 드러낸다. 실제 제품명·제형을 주고 구조 목적과 법적 판매 경로를 판단하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0393",
+          "MA-EXP-0395",
+          "MA-EXP-0396"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0395",
+      "record_sha256": "1ef09f2a76048c2ab24f8b41e1a4b13408257ce206fb8547038579f9e912a7ca",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB07",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "B",
+          "C"
+        ],
+        "independently_expected_key": [
+          "A",
+          "B",
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone",
+          "narcan",
+          "vivitrol",
+          "suboxone"
+        ],
+        "finding_ko": "Policy2024-01은 타인 투여 목적 구매를 허용한다. FDA는 제품별 전환을 설명하며 Vivitrol과 Suboxone의 적응증은 각각 의존 재발 예방·의존 치료다. 약명 또는 antagonist 분류만으로 급성 naloxone 구조제로 대체할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A buprenorphine/naloxone combination is not an OTC naloxone rescue kit.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "B": {
+            "statement": "OTC status of a particular naloxone product does not establish OTC status for every naloxone formulation.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "C": {
+            "statement": "Naltrexone therapy and naloxone overdose rescue are different drugs and uses.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "D": {
+            "statement": "The purchaser must personally be the at-risk patient to use the described naloxone pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "모든 naloxone 제형/any combination이라는 과도한 주장이 오답을 드러낸다. 실제 제품명·제형을 주고 구조 목적과 법적 판매 경로를 판단하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0393",
+          "MA-EXP-0394",
+          "MA-EXP-0396"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0396",
+      "record_sha256": "716a79b616e2c1f237fe5a8f7c5d037e5a9fbed5e9138a730381b32863f54d29",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB07",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "naloxone",
+          "narcan",
+          "vivitrol",
+          "suboxone"
+        ],
+        "finding_ko": "Policy2024-01은 타인 투여 목적 구매를 허용한다. FDA는 제품별 전환을 설명하며 Vivitrol과 Suboxone의 적응증은 각각 의존 재발 예방·의존 치료다. 약명 또는 antagonist 분류만으로 급성 naloxone 구조제로 대체할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "Every naloxone formulation becomes OTC when one nasal product is approved OTC.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "B": {
+            "statement": "A buprenorphine/naloxone combination is not an OTC naloxone rescue kit.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "C": {
+            "statement": "The described naloxone access pathway can include a purchaser intending to administer it to another person.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          },
+          "D": {
+            "statement": "Naltrexone therapy and naloxone overdose rescue are different drugs and uses.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone",
+              "narcan",
+              "vivitrol",
+              "suboxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "모든 naloxone 제형/any combination이라는 과도한 주장이 오답을 드러낸다. 실제 제품명·제형을 주고 구조 목적과 법적 판매 경로를 판단하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0393",
+          "MA-EXP-0394",
+          "MA-EXP-0395"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0397",
+      "record_sha256": "c430d391c09a9ba16c5202b615bfccf3b91c03fc348de375a3480aa501e01801",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB08",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "I(C)는 ScheduleII opioid 조제 때마다 offer를 요구한다. 과거 거절 예외는 해당 조항에 없고 I(F)는 규제상 수량 제한과 보험 한도를 구별한다. I(G)는 상담과 pamphlet을 요구한다. Offer는 강제 구매를 뜻하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "OTC approval of some products removes counseling and pamphlet duties from the standing-order dispensing pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The policy's offer trigger applies when the Schedule II opioid is dispensed, despite a previous refusal.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The insurer's one-kit limit is the state's regulatory purchase ceiling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The policy's offer requirement requires the patient to buy a kit.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "환자에게 purchase를 강제한다는 선택지는 실제 혼동으로서 약하다. 이전 거절/이번 offer/보험 한도 판단을 하나의 현실적인 업무 결정으로 통합해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0398",
+          "MA-EXP-0399",
+          "MA-EXP-0400"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0398",
+      "record_sha256": "5b582b3c8d86072226f202dfcc1ba1985645dd98fb2bc9138ac723a5227eb896",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB08",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "I(C)는 ScheduleII opioid 조제 때마다 offer를 요구한다. 과거 거절 예외는 해당 조항에 없고 I(F)는 규제상 수량 제한과 보험 한도를 구별한다. I(G)는 상담과 pamphlet을 요구한다. Offer는 강제 구매를 뜻하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The policy's offer requirement requires the patient to buy a kit.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "OTC approval of some products removes counseling and pamphlet duties from the standing-order dispensing pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "An insurance coverage limit is different from a regulatory quantity limit.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "A previous refusal removes the policy's naloxone-offer trigger from all later opioid dispensing.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "환자에게 purchase를 강제한다는 선택지는 실제 혼동으로서 약하다. 이전 거절/이번 offer/보험 한도 판단을 하나의 현실적인 업무 결정으로 통합해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0397",
+          "MA-EXP-0399",
+          "MA-EXP-0400"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0399",
+      "record_sha256": "0f12078ea787e317f936e9ffa7b76b32749a660add0a8938cc11f98d4bb9abfa",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB08",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "independently_expected_key": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "I(C)는 ScheduleII opioid 조제 때마다 offer를 요구한다. 과거 거절 예외는 해당 조항에 없고 I(F)는 규제상 수량 제한과 보험 한도를 구별한다. I(G)는 상담과 pamphlet을 요구한다. Offer는 강제 구매를 뜻하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "An offer does not require the patient to purchase naloxone.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The described dispensing pathway includes counseling and the appropriate opioid-antagonist pamphlet.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The policy's offer trigger applies when the Schedule II opioid is dispensed, despite a previous refusal.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "An insurance coverage limit is different from a regulatory quantity limit.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "환자에게 purchase를 강제한다는 선택지는 실제 혼동으로서 약하다. 이전 거절/이번 offer/보험 한도 판단을 하나의 현실적인 업무 결정으로 통합해야 한다. 네 선택지 전부가 정답인 SATA여서 선택지 변별 기능도 없다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0397",
+          "MA-EXP-0398",
+          "MA-EXP-0400"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": true,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0400",
+      "record_sha256": "e1cd906bc52f55ea4ccefffe0444e4aec904ba1cc3c9e2fff08062fc4b211ac7",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB08",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "I(C)는 ScheduleII opioid 조제 때마다 offer를 요구한다. 과거 거절 예외는 해당 조항에 없고 I(F)는 규제상 수량 제한과 보험 한도를 구별한다. I(G)는 상담과 pamphlet을 요구한다. Offer는 강제 구매를 뜻하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "An offer does not require the patient to purchase naloxone.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "An insurance coverage limit is different from a regulatory quantity limit.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The policy's offer trigger applies when the Schedule II opioid is dispensed, despite a previous refusal.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "OTC approval of some products removes counseling and pamphlet duties from the standing-order dispensing pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "환자에게 purchase를 강제한다는 선택지는 실제 혼동으로서 약하다. 이전 거절/이번 offer/보험 한도 판단을 하나의 현실적인 업무 결정으로 통합해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0397",
+          "MA-EXP-0398",
+          "MA-EXP-0399"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0401",
+      "record_sha256": "b4c572b01b82c90f1c0b17ddfff3c23bceb166907246878747aedc6b9bb948e9",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB09",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "II(A)는 PMP profile에 나타나지 않는 자료수집 경로임을, II(B)는 대체 연간 보고 1월15일·전년도·약국명/ZIP·총 doses와 보험지급 doses를 명시한다. 처방 건수·package수와 doses는 다른 단위다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The alternative annual report is due by January 15 for the preceding calendar year under the described policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "Prescription counts necessarily equal the required naloxone dose counts.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The annual report requires only the pharmacy name without the specified dose measures.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "Submitting naloxone data necessarily creates the same patient-visible history entry as a controlled drug.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "정책명 없이 described policy에 의존하며 Rx counts와 doses를 실제 숫자로 비교하지 않는다. 출제된 보고자료를 계산·검수하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0402",
+          "MA-EXP-0403",
+          "MA-EXP-0404"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0402",
+      "record_sha256": "96e71a01a2391b1c7bf72e5265952cb6884d6fecadae9ea7b6ba523a46e13892",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB09",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "II(A)는 PMP profile에 나타나지 않는 자료수집 경로임을, II(B)는 대체 연간 보고 1월15일·전년도·약국명/ZIP·총 doses와 보험지급 doses를 명시한다. 처방 건수·package수와 doses는 다른 단위다.",
+        "choice_findings": {
+          "A": {
+            "statement": "Submitting naloxone data necessarily creates the same patient-visible history entry as a controlled drug.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The required aggregate measures use doses rather than simply prescription counts.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "The annual report requires only the pharmacy name without the specified dose measures.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The alternative annual report has no deadline once the pharmacy has a PMP account.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "정책명 없이 described policy에 의존하며 Rx counts와 doses를 실제 숫자로 비교하지 않는다. 출제된 보고자료를 계산·검수하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0401",
+          "MA-EXP-0403",
+          "MA-EXP-0404"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0403",
+      "record_sha256": "80c8bcf32efa572aeaefc738fd756ec4a44b025738e8e52a92078f0e29796272",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB09",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "II(A)는 PMP profile에 나타나지 않는 자료수집 경로임을, II(B)는 대체 연간 보고 1월15일·전년도·약국명/ZIP·총 doses와 보험지급 doses를 명시한다. 처방 건수·package수와 doses는 다른 단위다.",
+        "choice_findings": {
+          "A": {
+            "statement": "Submitting naloxone data necessarily creates the same patient-visible history entry as a controlled drug.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The alternative annual report is due by January 15 for the preceding calendar year under the described policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "Prescription counts necessarily equal the required naloxone dose counts.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The annual report requires only the pharmacy name without the specified dose measures.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "정책명 없이 described policy에 의존하며 Rx counts와 doses를 실제 숫자로 비교하지 않는다. 출제된 보고자료를 계산·검수하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0401",
+          "MA-EXP-0402",
+          "MA-EXP-0404"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0404",
+      "record_sha256": "57b88fc431b7057a30a83b5889708b9d5ff86dc212036b1818ea0397a47f0676",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB09",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "II(A)는 PMP profile에 나타나지 않는 자료수집 경로임을, II(B)는 대체 연간 보고 1월15일·전년도·약국명/ZIP·총 doses와 보험지급 doses를 명시한다. 처방 건수·package수와 doses는 다른 단위다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The alternative annual report is due by January 15 for the preceding calendar year under the described policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "The required aggregate measures use doses rather than simply prescription counts.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "Submitting naloxone data necessarily creates the same patient-visible history entry as a controlled drug.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The required annual fields include pharmacy identification and the specified total and insurance-paid doses.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "정책명 없이 described policy에 의존하며 Rx counts와 doses를 실제 숫자로 비교하지 않는다. 출제된 보고자료를 계산·검수하게 해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0401",
+          "MA-EXP-0402",
+          "MA-EXP-0403"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0405",
+      "record_sha256": "d9c80ca8ed4f81428e16dc6799d2b67717504192d38541ea031b5d5150b269e9",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB10",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "III(A)는 약국과 연결된 MA약사의 현장 상주를, III(B)-(E)는 HIPAA·secure encrypted private 연결·보안 관찰·면허 인력 취급을 요구한다. 이 예외를 모든 Rx 약의 임시 영업허가로 확대할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "An outreach event removes confidentiality obligations because it is outside the pharmacy.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "Public network access and unrestricted volunteer handling meet the described security conditions.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "This exception authorizes technicians to distribute any prescription medicine at temporary events.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "This pathway requires the associated Massachusetts pharmacist's physical presence while naloxone is stored or dispensed.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "기술·보안 위반이 한 사례에 과도하게 누적되어 대면 상주 판단이 쉽게 노출된다. 실제 행사·직원·연결 조건을 구체화해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0406",
+          "MA-EXP-0407",
+          "MA-EXP-0408"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0406",
+      "record_sha256": "d442c164cbec7cb4a82fcd5de01c2bd64373cf779f37c09d5c2328becc920d90",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB10",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "III(A)는 약국과 연결된 MA약사의 현장 상주를, III(B)-(E)는 HIPAA·secure encrypted private 연결·보안 관찰·면허 인력 취급을 요구한다. 이 예외를 모든 Rx 약의 임시 영업허가로 확대할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The described security, licensed handling, observation, and private technology conditions must be met.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "This exception authorizes technicians to distribute any prescription medicine at temporary events.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "An outreach event removes confidentiality obligations because it is outside the pharmacy.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "Telephone availability alone satisfies the remote-location pharmacist-presence requirement.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "기술·보안 위반이 한 사례에 과도하게 누적되어 대면 상주 판단이 쉽게 노출된다. 실제 행사·직원·연결 조건을 구체화해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0405",
+          "MA-EXP-0407",
+          "MA-EXP-0408"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0407",
+      "record_sha256": "3a57860f9c0652906522fcf0805e9e53e53d7df66a2fbe39c80a3d98246be544",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB10",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "D"
+        ],
+        "independently_expected_key": [
+          "A",
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "III(A)는 약국과 연결된 MA약사의 현장 상주를, III(B)-(E)는 HIPAA·secure encrypted private 연결·보안 관찰·면허 인력 취급을 요구한다. 이 예외를 모든 Rx 약의 임시 영업허가로 확대할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "This exception is limited to the specified naloxone service rather than a general remote prescription pharmacy.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "Public network access and unrestricted volunteer handling meet the described security conditions.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "An outreach event removes confidentiality obligations because it is outside the pharmacy.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "This pathway requires the associated Massachusetts pharmacist's physical presence while naloxone is stored or dispensed.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "기술·보안 위반이 한 사례에 과도하게 누적되어 대면 상주 판단이 쉽게 노출된다. 실제 행사·직원·연결 조건을 구체화해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0405",
+          "MA-EXP-0406",
+          "MA-EXP-0408"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0408",
+      "record_sha256": "1b14ebcd8e6476e27c7e87fac1c8aafb2d80fe890520f63cfa11a5535e584f0f",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB10",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "naloxone"
+        ],
+        "finding_ko": "III(A)는 약국과 연결된 MA약사의 현장 상주를, III(B)-(E)는 HIPAA·secure encrypted private 연결·보안 관찰·면허 인력 취급을 요구한다. 이 예외를 모든 Rx 약의 임시 영업허가로 확대할 수 없다.",
+        "choice_findings": {
+          "A": {
+            "statement": "This exception is limited to the specified naloxone service rather than a general remote prescription pharmacy.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "B": {
+            "statement": "An outreach event removes confidentiality obligations because it is outside the pharmacy.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "C": {
+            "statement": "This pathway requires the associated Massachusetts pharmacist's physical presence while naloxone is stored or dispensed.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          },
+          "D": {
+            "statement": "The described security, licensed handling, observation, and private technology conditions must be met.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "naloxone"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "기술·보안 위반이 한 사례에 과도하게 누적되어 대면 상주 판단이 쉽게 노출된다. 실제 행사·직원·연결 조건을 구체화해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0405",
+          "MA-EXP-0406",
+          "MA-EXP-0407"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0409",
+      "record_sha256": "2e9377aef85cd4510e055d861df2dc4e9c6cbfe77d4eb3fb012d9fb60c78f39b",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB11",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "prescribe"
+        ],
+        "finding_ko": "EPT 정책 첫 문단은 chlamydia 한정·파트너 검사 없는 치료를 명시하고 I는 별도 파트너 처방을 요구한다. DCP26-08-125 STI 약사 처방은 별도 교육·statewide guidance 경로이며 EPT와 동일하지 않다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The cited EPT policy automatically extends to all sexually transmitted infections.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "B": {
+            "statement": "The original patient's prescription may be divided among partners as a substitute for separate prescriptions.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "C": {
+            "statement": "The described Massachusetts EPT pathway permits specified partner treatment without individual examination or testing.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "D": {
+            "statement": "EPT and pharmacist independent STI prescribing are the same legal pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every EPT invalid/all STIs/same pathway가 강한 단서다. named/unnamed 파트너별 처방 행동을 구체적으로 비교해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0410",
+          "MA-EXP-0411",
+          "MA-EXP-0412"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0410",
+      "record_sha256": "261e66df1da1c6d2d8c54a8cfcf4ad8d93a02b29c7ef66ba2d0a7a736255ff35",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB11",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "prescribe"
+        ],
+        "finding_ko": "EPT 정책 첫 문단은 chlamydia 한정·파트너 검사 없는 치료를 명시하고 I는 별도 파트너 처방을 요구한다. DCP26-08-125 STI 약사 처방은 별도 교육·statewide guidance 경로이며 EPT와 동일하지 않다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The absence of a separate partner examination makes every described EPT prescription invalid.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "B": {
+            "statement": "EPT and pharmacist independent STI prescribing are the same legal pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "C": {
+            "statement": "The cited EPT policy automatically extends to all sexually transmitted infections.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "D": {
+            "statement": "Partner treatment requires the separate prescription structure described in the policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every EPT invalid/all STIs/same pathway가 강한 단서다. named/unnamed 파트너별 처방 행동을 구체적으로 비교해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0409",
+          "MA-EXP-0411",
+          "MA-EXP-0412"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0411",
+      "record_sha256": "8d7f66fe2ae4f237fcab1d3ccb5867012071dcbdc7f71ca813294fd28c76bbde",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB11",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "B",
+          "D"
+        ],
+        "independently_expected_key": [
+          "A",
+          "B",
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "prescribe"
+        ],
+        "finding_ko": "EPT 정책 첫 문단은 chlamydia 한정·파트너 검사 없는 치료를 명시하고 I는 별도 파트너 처방을 요구한다. DCP26-08-125 STI 약사 처방은 별도 교육·statewide guidance 경로이며 EPT와 동일하지 않다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The cited EPT policy is limited to chlamydia rather than all sexually transmitted infections.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "B": {
+            "statement": "Partner treatment requires the separate prescription structure described in the policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "C": {
+            "statement": "EPT and pharmacist independent STI prescribing are the same legal pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "D": {
+            "statement": "The described Massachusetts EPT pathway permits specified partner treatment without individual examination or testing.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every EPT invalid/all STIs/same pathway가 강한 단서다. named/unnamed 파트너별 처방 행동을 구체적으로 비교해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0409",
+          "MA-EXP-0410",
+          "MA-EXP-0412"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0412",
+      "record_sha256": "f415a47279526babe3daefe331ffa0dfd425a96ccf8ff475237008d309d786ab",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB11",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "ept",
+          "prescribe"
+        ],
+        "finding_ko": "EPT 정책 첫 문단은 chlamydia 한정·파트너 검사 없는 치료를 명시하고 I는 별도 파트너 처방을 요구한다. DCP26-08-125 STI 약사 처방은 별도 교육·statewide guidance 경로이며 EPT와 동일하지 않다.",
+        "choice_findings": {
+          "A": {
+            "statement": "EPT and pharmacist independent STI prescribing are the same legal pathway.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "B": {
+            "statement": "The cited EPT policy is limited to chlamydia rather than all sexually transmitted infections.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "C": {
+            "statement": "The described Massachusetts EPT pathway permits specified partner treatment without individual examination or testing.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          },
+          "D": {
+            "statement": "Partner treatment requires the separate prescription structure described in the policy.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "prescribe"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "every EPT invalid/all STIs/same pathway가 강한 단서다. named/unnamed 파트너별 처방 행동을 구체적으로 비교해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0409",
+          "MA-EXP-0410",
+          "MA-EXP-0411"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0413",
+      "record_sha256": "769f8d1890e42871210fdbe6cf729427240e7b93d429cc1a319501ccef0d5885",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB12",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "counsel"
+        ],
+        "finding_ko": "EPT I(B),II(A)는 이름·주소 대신 EPT 표시를 허용하고 II(B)는 조제 불가/거부 때 다른 약국 소개를 요구한다. 생년월일을 꾸며내지 말라는 판단은 데이터 진실성에 관한 추론이며 정책의 별도 DOB 문구로 인용하지 않는다. 식별 예외는 처방 진위·안전 검토의 포괄 면제가 아니다. 9.01(9)의 부정·기만 금지, 9.16(7)의 reasonable effort profile 정보, 9.17(1)-(2)의 DUR와 함께 읽는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The EPT identifier exception removes the need to assess authenticity or relevant safety concerns.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "The permitted EPT designation is a specific exception to the ordinary identifying-name format.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "A pharmacist who cannot fill EPT has no referral obligation under the described policy.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "Inventing an unknown partner's birth date creates the required lawful patient identity.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "EPT 신원 예외와 referral은 적절한 소재이지만 신원 위조·안전 검토 전면 면제는 지나친 오답이다. 실제 소프트웨어 처리/연계 행동을 설계해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0414",
+          "MA-EXP-0415",
+          "MA-EXP-0416"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0414",
+      "record_sha256": "b98c60e5a76ef0c56e0e973821320c18925fbd89c8e0551fae8b43336e3b5eea",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB12",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "counsel"
+        ],
+        "finding_ko": "EPT I(B),II(A)는 이름·주소 대신 EPT 표시를 허용하고 II(B)는 조제 불가/거부 때 다른 약국 소개를 요구한다. 생년월일을 꾸며내지 말라는 판단은 데이터 진실성에 관한 추론이며 정책의 별도 DOB 문구로 인용하지 않는다. 식별 예외는 처방 진위·안전 검토의 포괄 면제가 아니다. 9.01(9)의 부정·기만 금지, 9.16(7)의 reasonable effort profile 정보, 9.17(1)-(2)의 DUR와 함께 읽는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The EPT identifier exception removes the need to assess authenticity or relevant safety concerns.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Inventing an unknown partner's birth date creates the required lawful patient identity.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "The pharmacist must use the described alternate-pharmacy referral when unable or unwilling to fill.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "The permitted EPT designation makes the prescription invalid solely because a conventional name is absent.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "EPT 신원 예외와 referral은 적절한 소재이지만 신원 위조·안전 검토 전면 면제는 지나친 오답이다. 실제 소프트웨어 처리/연계 행동을 설계해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0413",
+          "MA-EXP-0415",
+          "MA-EXP-0416"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0415",
+      "record_sha256": "48493a706271765c3c30869f3d5cd5b80101d4198b9646986fafa57dba3cead5",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB12",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "independently_expected_key": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "ept",
+          "counsel"
+        ],
+        "finding_ko": "EPT I(B),II(A)는 이름·주소 대신 EPT 표시를 허용하고 II(B)는 조제 불가/거부 때 다른 약국 소개를 요구한다. 생년월일을 꾸며내지 말라는 판단은 데이터 진실성에 관한 추론이며 정책의 별도 DOB 문구로 인용하지 않는다. 식별 예외는 처방 진위·안전 검토의 포괄 면제가 아니다. 9.01(9)의 부정·기만 금지, 9.16(7)의 reasonable effort profile 정보, 9.17(1)-(2)의 DUR와 함께 읽는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "Unknown birth dates or addresses should not be invented to satisfy software fields.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "The permitted EPT designation is a specific exception to the ordinary identifying-name format.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "The pharmacist must use the described alternate-pharmacy referral when unable or unwilling to fill.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "Authenticity, medication instructions, and relevant safety concerns remain subject to appropriate review.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "EPT 신원 예외와 referral은 적절한 소재이지만 신원 위조·안전 검토 전면 면제는 지나친 오답이다. 실제 소프트웨어 처리/연계 행동을 설계해야 한다. 네 선택지 전부가 정답인 SATA여서 선택지 변별 기능도 없다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0413",
+          "MA-EXP-0414",
+          "MA-EXP-0416"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": true,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0416",
+      "record_sha256": "01c15859b7a4c264455f2c81f531a0e1e17fbff80fe94158cba15179cc0ae4a9",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "PUB12",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "ept",
+          "counsel"
+        ],
+        "finding_ko": "EPT I(B),II(A)는 이름·주소 대신 EPT 표시를 허용하고 II(B)는 조제 불가/거부 때 다른 약국 소개를 요구한다. 생년월일을 꾸며내지 말라는 판단은 데이터 진실성에 관한 추론이며 정책의 별도 DOB 문구로 인용하지 않는다. 식별 예외는 처방 진위·안전 검토의 포괄 면제가 아니다. 9.01(9)의 부정·기만 금지, 9.16(7)의 reasonable effort profile 정보, 9.17(1)-(2)의 DUR와 함께 읽는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The pharmacist must use the described alternate-pharmacy referral when unable or unwilling to fill.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Unknown birth dates or addresses should not be invented to satisfy software fields.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "The permitted EPT designation is a specific exception to the ordinary identifying-name format.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "The EPT identifier exception removes the need to assess authenticity or relevant safety concerns.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "ept",
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "EPT 신원 예외와 referral은 적절한 소재이지만 신원 위조·안전 검토 전면 면제는 지나친 오답이다. 실제 소프트웨어 처리/연계 행동을 설계해야 한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0413",
+          "MA-EXP-0414",
+          "MA-EXP-0415"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0417",
+      "record_sha256": "5135bddced98b472663d4439e364c9d14d4a5beb2c254ad64b8f48a783d05c0c",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN01",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(2)의 교육받은 designee는 offer만 할 수 있고 (3)은 pharmacist/intern만 상담하도록 한다. Offer 수행과 상담 완료를 같다고 기록할 수 없다는 판단은 서로 다른 행위의 사실관계 추론이다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The cashier's authority to offer counseling does not include providing clinical counseling.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Documenting the offer necessarily proves that clinical counseling was completed.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "A supervised intern is prohibited from all patient counseling under the described rule.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "National technician certification makes the technician an authorized clinical counselor.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 외부 노트에 의존한다. CPhT의 상담 허용이나 cashier의 용량 변경 같은 노골적 업무범위 위반이 정답을 노출한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0418",
+          "MA-EXP-0419",
+          "MA-EXP-0420"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0418",
+      "record_sha256": "0da733b8f8b334d55660517b33762765d1c6bb4f068a8db547f1c26bd9aa2063",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN01",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(2)의 교육받은 designee는 offer만 할 수 있고 (3)은 pharmacist/intern만 상담하도록 한다. Offer 수행과 상담 완료를 같다고 기록할 수 없다는 판단은 서로 다른 행위의 사실관계 추론이다.",
+        "choice_findings": {
+          "A": {
+            "statement": "National technician certification makes the technician an authorized clinical counselor.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "An appropriately supervised intern may provide the counseling described in the notes.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "Training to extend the offer also authorizes the cashier to decide dose changes during counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "Documenting the offer necessarily proves that clinical counseling was completed.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 외부 노트에 의존한다. CPhT의 상담 허용이나 cashier의 용량 변경 같은 노골적 업무범위 위반이 정답을 노출한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0417",
+          "MA-EXP-0419",
+          "MA-EXP-0420"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0419",
+      "record_sha256": "83f526008be8e6ff6c39b9f4e38c4b71b957a43c73bb4d2b885dc135e389a81d",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN01",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(2)의 교육받은 designee는 offer만 할 수 있고 (3)은 pharmacist/intern만 상담하도록 한다. Offer 수행과 상담 완료를 같다고 기록할 수 없다는 판단은 서로 다른 행위의 사실관계 추론이다.",
+        "choice_findings": {
+          "A": {
+            "statement": "National technician certification makes the technician an authorized clinical counselor.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Training to extend the offer also authorizes the cashier to decide dose changes during counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "The pharmacy must distinguish the offer, the patient's response, and any counseling actually provided.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "A supervised intern is prohibited from all patient counseling under the described rule.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 외부 노트에 의존한다. CPhT의 상담 허용이나 cashier의 용량 변경 같은 노골적 업무범위 위반이 정답을 노출한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0417",
+          "MA-EXP-0418",
+          "MA-EXP-0420"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0420",
+      "record_sha256": "55fc0043ab93fb4fccac3909abd04eff67f0780bf2370597de958318e95ddb0b",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN01",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "C"
+        ],
+        "independently_expected_key": [
+          "C"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(2)의 교육받은 designee는 offer만 할 수 있고 (3)은 pharmacist/intern만 상담하도록 한다. Offer 수행과 상담 완료를 같다고 기록할 수 없다는 판단은 서로 다른 행위의 사실관계 추론이다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A technician cannot replace the authorized counselor by providing the clinical explanation.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "An appropriately supervised intern may provide the counseling described in the notes.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "Documenting the offer necessarily proves that clinical counseling was completed.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "The cashier's authority to offer counseling does not include providing clinical counseling.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 외부 노트에 의존한다. CPhT의 상담 허용이나 cashier의 용량 변경 같은 노골적 업무범위 위반이 정답을 노출한다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0417",
+          "MA-EXP-0418",
+          "MA-EXP-0419"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0421",
+      "record_sha256": "de0be3d199e7894d97ac45f626dd03984ca201cb83c6ad521befa02c3b2a35ea",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN02",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "D"
+        ],
+        "independently_expected_key": [
+          "D"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(4)는 offer와 new/significant therapy counseling을 구별한다. 주어진 사실상 실제 거절이 없으면 거절했다고 할 수 없고 실제 거절은 완료 상담과 다르다. 이 정직한 기록 판단을 9.18에 명시된 별도의 거절 서식·서명 법규라고 인증하지 않는다. 9.01(9)의 fraudulent/deceptive act 금지도 허위 거절 기록과 관련되지만 정확한 서식·보관기간을 여기서 새로 추론하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A patient's actual refusal must instead be recorded as completed counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Any signature on the payment screen proves all counseling requirements were satisfied.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "A new therapy is exempt from counseling whenever a printed leaflet is supplied.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "The first record does not accurately establish an actual counseling refusal.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 자족적인 법규 시나리오가 아니다. Any signature proves all requirements와 거절을 완료로 기록하라는 극단적인 오답이 판단 난도를 낮춘다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0422",
+          "MA-EXP-0423",
+          "MA-EXP-0424"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0422",
+      "record_sha256": "47cb16cbacdcd9b8eda058246ff5a2c1ec7a8ef4237d2f59a628d560416fb371",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN02",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A"
+        ],
+        "independently_expected_key": [
+          "A"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(4)는 offer와 new/significant therapy counseling을 구별한다. 주어진 사실상 실제 거절이 없으면 거절했다고 할 수 없고 실제 거절은 완료 상담과 다르다. 이 정직한 기록 판단을 9.18에 명시된 별도의 거절 서식·서명 법규라고 인증하지 않는다. 9.01(9)의 fraudulent/deceptive act 금지도 허위 거절 기록과 관련되지만 정확한 서식·보관기간을 여기서 새로 추론하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "The second record can accurately describe the offer and the patient's actual decision.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Being in a hurry is enough to record a refusal without offering counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "A new therapy is exempt from counseling whenever a printed leaflet is supplied.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "Any signature on the payment screen proves all counseling requirements were satisfied.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 자족적인 법규 시나리오가 아니다. Any signature proves all requirements와 거절을 완료로 기록하라는 극단적인 오답이 판단 난도를 낮춘다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0421",
+          "MA-EXP-0423",
+          "MA-EXP-0424"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0423",
+      "record_sha256": "1fb221a7d48b1e8bff9b0050264b7c6e91e2d4b686f03a4b9e06ad522d5ffe50",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN02",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "A",
+          "C"
+        ],
+        "independently_expected_key": [
+          "A",
+          "C"
+        ],
+        "negative_lead": false,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(4)는 offer와 new/significant therapy counseling을 구별한다. 주어진 사실상 실제 거절이 없으면 거절했다고 할 수 없고 실제 거절은 완료 상담과 다르다. 이 정직한 기록 판단을 9.18에 명시된 별도의 거절 서식·서명 법규라고 인증하지 않는다. 9.01(9)의 fraudulent/deceptive act 금지도 허위 거절 기록과 관련되지만 정확한 서식·보관기간을 여기서 새로 추론하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "A signature screen alone does not establish what offer or clinical discussion occurred.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "A patient's actual refusal must instead be recorded as completed counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "New therapy and clinically significant therapy require the counseling process described in the notes.",
+            "independent_truth_judgment": true,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "Being in a hurry is enough to record a refusal without offering counseling.",
+            "independent_truth_judgment": false,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 자족적인 법규 시나리오가 아니다. Any signature proves all requirements와 거절을 완료로 기록하라는 극단적인 오답이 판단 난도를 낮춘다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0421",
+          "MA-EXP-0422",
+          "MA-EXP-0424"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    },
+    {
+      "question_id": "MA-EXP-0424",
+      "record_sha256": "52ceb1221a85032c488ce200c8c60e7cbf6ac39a9f7cbbd34634302c01c67d14",
+      "hash_method": "sha256-complete-record-canonical-json",
+      "read_scope": "ORIGINAL_STEM_ALL_CHOICES_AND_CORE_EXPLANATION",
+      "family_id": "COUN02",
+      "legal_review": {
+        "status": "ASSESSED_WITH_SCOPE_LIMITATIONS",
+        "existing_answer_correct": "YES",
+        "stored_key": [
+          "B"
+        ],
+        "independently_expected_key": [
+          "B"
+        ],
+        "negative_lead": true,
+        "source_ids": [
+          "counsel"
+        ],
+        "finding_ko": "9.18(1)-(4)는 offer와 new/significant therapy counseling을 구별한다. 주어진 사실상 실제 거절이 없으면 거절했다고 할 수 없고 실제 거절은 완료 상담과 다르다. 이 정직한 기록 판단을 9.18에 명시된 별도의 거절 서식·서명 법규라고 인증하지 않는다. 9.01(9)의 fraudulent/deceptive act 금지도 허위 거절 기록과 관련되지만 정확한 서식·보관기간을 여기서 새로 추론하지 않는다.",
+        "choice_findings": {
+          "A": {
+            "statement": "New therapy and clinically significant therapy require the counseling process described in the notes.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "B": {
+            "statement": "Any signature on the payment screen proves all counseling requirements were satisfied.",
+            "independent_truth_judgment": false,
+            "selection_expected": true,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "C": {
+            "statement": "The first record does not accurately establish an actual counseling refusal.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          },
+          "D": {
+            "statement": "The second record can accurately describe the offer and the patient's actual decision.",
+            "independent_truth_judgment": true,
+            "selection_expected": false,
+            "source_ids": [
+              "counsel"
+            ]
+          }
+        }
+      },
+      "realism_review": {
+        "verdict": "FAIL",
+        "decision": "MAJOR_REWRITE",
+        "item_specific_ko": "described in the notes는 자족적인 법규 시나리오가 아니다. Any signature proves all requirements와 거절을 완료로 기록하라는 극단적인 오답이 판단 난도를 낮춘다.",
+        "duplicate_evidence_ids": [
+          "MA-EXP-0421",
+          "MA-EXP-0422",
+          "MA-EXP-0423"
+        ],
+        "duplicate_evidence_ko": "같은 family 네 문항이 동일한 CaseA/CaseB와 동일 판단 풀을 재배열한다. 40개의 별개 실무 사례로 보지 않는다.",
+        "criteria": {
+          "jurisprudence_reasoning": true,
+          "plausible_practice_setting": true,
+          "genuine_distractors": false,
+          "no_wording_giveaway": false,
+          "difficulty_from_reasoning": false,
+          "natural_rule_combination": false,
+          "appropriate_drug_context": true,
+          "not_excessively_similar": false,
+          "not_schedule_flashcard": true,
+          "public_style_without_copying": "NOT_EXTERNALLY_REVERIFIED"
+        }
+      },
+      "safe_hold_recommended": false,
+      "release_eligible": false,
+      "required_next_action_ko": "독립된 새 실무 사례와 혼동 가능한 오답으로 재작성 후 새 content hash에 대한 legal/realism 재감사. 이전 ID·정답·학습기록은 보존."
+    }
+  ]
+}

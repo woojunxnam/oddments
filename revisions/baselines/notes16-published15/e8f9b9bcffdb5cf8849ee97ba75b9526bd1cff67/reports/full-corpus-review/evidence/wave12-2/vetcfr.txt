@@ -1,0 +1,1363 @@
+ 
+ 
+ 
+ 
+ eCFR :: 21 CFR Part 530 -- Extralabel Drug Use in Animals
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ {
+ "imports": {
+ "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+ "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+ "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+ "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+ "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+ "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+ "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+ "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+ "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+ "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+ "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+ "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+ "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+ "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+ "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+ "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+ "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+ "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+ "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+ "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+ "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+ "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+ "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+ "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+ "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+ "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+ "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+ "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+ "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+ "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+ "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+ "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+ "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+ "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+ "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+ "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+ "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+ }
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ import "application" 
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+
+
+ 
+ 
+
+ 
+ Site Feedback 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser
+ 
+ × 
+ 
+ 
+ 
+ 
+ 
+ You are using an unsupported browser. This web site is designed for the current versions of
+ Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ × 
+ 
+ Site Feedback 
+ 
+ 
+ 
+ The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+ 
+ 
+ 
+ 
+ 
+ If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+ 
+ 
+ 
+ 
+ Website Feedback
+ 
+ 
+ 
+ 
+ If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+ 
+ 
+ 
+ 
+ Content Feedback
+ 
+ 
+ 
+ If you have questions for the Agency that issued the current document please contact the agency directly. 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ × 
+ 
+ Website Feedback 
+ 
+
+ 
+ 
+ * Your Name 
+ * Email 
+ Attachment 
+ * How can we help you? 
+ 
+ * I am requesting technical help or providing website feedback 
+ 
+ This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+ contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+ information or personal data.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ☰
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Home
+ 
+
+ 
+ 
+ 
+ Browse
+ 
+ 
+
+ 
+ 
+ 
+ Titles
+ 
+ 
+ 
+ Agencies
+ 
+ 
+ 
+
+ 
+ 
+ 
+ CFR Updates
+ 
+ 
+
+ 
+ 
+ 
+ Recent Changes
+ 
+
+ 
+ 
+ Issue Summaries
+ 
+
+ 
+ 
+ Corrections
+ 
+ 
+ 
+
+ 
+ 
+ 
+ Finding Aids
+ 
+ 
+
+ 
+ 
+ 
+ Parallel Table of Authorities
+ 
+
+ 
+ 
+ Subject Index
+ 
+
+ 
+ 
+ Agency-prepared Indexes
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ Reader Aids
+ 
+ 
+
+ 
+ 
+ Reader Aids Home 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ My eCFR
+ 
+ 
+
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign Out 
+ 
+ 
+
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ eCFR 
+ The Electronic Code of Federal Regulations 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Enhanced Content :: FR Reference Enhanced content is provided to the user to provide additional context. 
+ 
+ Enhanced Content :: FR Reference 
+ 
+ 
+
+ 
+ 
+ 
+ Title 21
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+
+ 
+
+ 
+ This content is from the eCFR and is authoritative but unofficial. 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+ 
+ Displaying title 21, up to date as of 10/30/2026. Title 21 was last amended 10/30/2026. 
+ 
+
+ 
+ view historical versions 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ A drafting site is available for use when drafting amendatory language
+ 
+
+ 
+ switch to drafting site 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+ modal#escClose"
+ data-suggestions-target="modal">
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Navigate by entering citations or phrases 
+ (eg:
+ suggestions#fillExample"
+ class="example badge badge-info">1 CFR 1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">49 CFR 172.101 
+ suggestions#fillExample"
+ class="example badge badge-info">Organization and Purpose 
+ suggestions#fillExample"
+ class="example badge badge-info">1/1.1 
+ suggestions#fillExample"
+ class="example badge badge-info">Regulation Y 
+ suggestions#fillExample"
+ class="example badge badge-info">FAR ).
+ 
+ 
+ Choosing an item from
+ citations and headings 
+ will bring you directly to the content. Choosing an item from
+ full text search results 
+ will bring you to those results. Pressing enter in the search box
+ will also bring you to search results.
+ 
+ 
+ Background and more details are available in the
+ 
+ Search & Navigation 
+ 
+ guide.
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ suggestions#goDefault">
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ suggestions#modal"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion_reference">
+ suggestions#go">
+
+ suggestions#go">
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ placeholder#suggestions"
+ placeholder="Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)"
+ aria-label="Search the eCFR"
+ data-suggestions-target="nonModalInput"
+ name="cfr[reference]"
+ id="suggestion">
+ placeholder#suggestions">
+
+ placeholder#suggestions"
+ aria-label="Search">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Title 21 —Food and Drugs 
+ 
+ 
+ Chapter I —Food and Drug Administration, Department of Health and Human Services 
+ 
+ 
+ Subchapter E —Animal Drugs, Feeds, and Related Products 
+ 
+ 
+ Part 530
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ Previous 
+ 
+
+ 
+ Next 
+ 
+
+ 
+ Top 
+ 
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ Table of Contents Enhanced Content - Table of Contents 
+ Part 530 Extralabel Drug Use in Animals 530.1 – 530.41 Subpart A General Provisions 530.1 – 530.5 § 530.1 Scope. § 530.2 Purpose. § 530.3 Definitions. § 530.4 Advertising and promotion. § 530.5 Veterinary records. Subpart B Rules and Provisions for Extralabel Uses of Drugs in Animals 530.10 – 530.13 § 530.10 Provision permitting extralabel use of animal drugs. § 530.11 Limitations. § 530.12 Labeling. § 530.13 Extralabel use from compounding of approved new animal and approved human drugs. Subpart C Specific Provisions Relating to Extralabel Use of Animal and Human Drugs in Food-Producing Animals 530.20 – 530.25 § 530.20 Conditions for permitted extralabel animal and human drug use in food-producing animals. § 530.21 Prohibitions for food-producing animals. § 530.22 Safe levels and analytical methods for food-producing animals. § 530.23 Procedure for setting and announcing safe levels. § 530.24 Procedure for announcing analytical methods for drug residue quantification. § 530.25 Orders prohibiting extralabel uses for drugs in food-producing animals. Subpart D Extralabel Use of Human and Animal Drugs in Animals Not Intended for Human Consumption 530.30 § 530.30 Extralabel drug use in nonfood animals. Subpart E Safe Levels for Extralabel Use of Drugs in Animals and Drugs Prohibited From Extralabel Use in Animals 530.40 – 530.41 § 530.40 Safe levels and availability of analytical methods. § 530.41 Drugs prohibited for extralabel use in animals. 
+ 
+ Enhanced Content - Table of Contents 
+
+ 
+ Details Enhanced Content - Details 
+ URL 
+ 
+ https://www.ecfr.gov/current/title-21/part-530
+ 
+ 
+
+ Citation 
+ 
+ 21 CFR Part 530
+ 
+ 
+
+
+
+ 
+ Agency
+ 
+ 
+ Food and Drug Administration, Department of Health and Human Services 
+ 
+
+ 
+
+ 
+ 
+ 
+ Part 530 
+ 
+ 
+ Authority: 
+ 
+ 15 U.S.C. 1453 , 1454 , 1455 ; 21 U.S.C. 321 , 331 , 351 , 352 , 353 , 355 , 357 , 360b , 371 , 379e .
+
+
+ 
+ 
+ 
+ Source: 
+ 
+ 61 FR 57743 , Nov. 7, 1996, unless otherwise noted.
+
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Enhanced Content - Details 
+
+ 
+ Print/PDF Enhanced Content - Print 
+ (approximately 10+ pages) " href="#">Generate PDF (approximately 10+ pages) 
+
+ 
+ 
+ 
+ 
+ 
+ This content is from the eCFR and may include recent changes applied to the CFR.
+ The official, published CFR, is updated annually and available below under
+ "Published Edition". You can learn more about the process
+ here .
+ 
+ Enhanced Content - Print 
+
+ 
+ Display Options Enhanced Content - Display Options 
+ 
+ 
+ 
+ 
+ Enhanced Content - Display Options 
+
+ 
+ Subscribe Enhanced Content - Subscribe Subscribe to: 21 CFR Part 530 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Via Email: 
+ 
+ 
+
+ -->
+ Via RSS: -->
+
+ -->
+ 
+ Enhanced Content - Subscribe 
+
+ 
+
+ 
+ Timeline Enhanced Content - Timeline 
+ 
+ 
+ No changes found for this content after 1/03/2017.
+ 
+ 
+ Enhanced Content - Timeline 
+
+ 
+ Go to Date Enhanced Content - Go to Date 
+
+ Date 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Enhanced Content - Go to Date 
+
+ 
+
+ Compare Dates Enhanced Content - Compare Dates 
+
+ Compare 
+ 
+ 
+ 
+ 
+ 
+
+ to 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ Show changes as: red/green purple/orange 
+
+ Show strike-through for removed content yes no 
+ 
+ Enhanced Content - Compare Dates 
+
+ 
+
+ 
+ Published Edition Enhanced Content - Published Edition 
+ View the most recent official publication:
+ 
+
+ 
+ 
+ View Title 21 on govinfo.gov 
+ 
+ 
+ View the PDF for 21 CFR Part 530 
+ 
+ 
+
+ 
+ These links go to the official, published CFR, which is updated annually. As a
+ result, it may not include the most recent changes applied to the CFR.
+ Learn more .
+ 
+ Enhanced Content - Published Edition 
+
+ 
+
+ 
+ Developer Tools Enhanced Content - Developer Tools 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ Information and documentation can be found in our
+ developer resources .
+ 
+ Enhanced Content - Developer Tools 
+ 
+
+ 
+
+ 
+ eCFR Content The Code of Federal Regulations (CFR) is the official legal print publication containing the codification of the general and permanent rules published in the Federal Register by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR. Learn more about the eCFR, its status, and the editorial process. 
+ Enhanced Content 
+ View
+ table of contents 
+ for this page.
+ 
+ 
+ PART 530—EXTRALABEL DRUG USE IN ANIMALS
+ 
+
+ Authority: 15 U.S.C. 1453 , 1454 , 1455 ; 21 U.S.C. 321 , 331 , 351 , 352 , 353 , 355 , 357 , 360b , 371 , 379e .
+ 
+
+ Source: 61 FR 57743 , Nov. 7, 1996, unless otherwise noted.
+ 
+
+ Subpart A—General Provisions 
+ 
+ § 530.1 Scope. 
+ This part applies to the extralabel use in an animal of any approved new animal drug or approved new human drug by or on the lawful order of a licensed veterinarian within the context of a valid veterinary-client-patient relationship. 
+ 
+
+ 
+ § 530.2 Purpose. 
+ The purpose of this part is to establish conditions for extralabel use or intended extralabel use in animals by or on the lawful order of licensed veterinarians of Food and Drug Administration approved new animal drugs and approved new human drugs. Such use is limited to treatment modalities when the health of an animal is threatened or suffering or death may result from failure to treat. This section implements the Animal Medicinal Drug Use Clarification Act of 1994 (the AMDUCA) (Pub. L. 103-396). 
+ 
+
+ 
+ § 530.3 Definitions. 
+ 
+ ( a ) Extralabel use means actual use or intended use of a drug in an animal in a manner that is not in accordance with the approved labeling. This includes, but is not limited to, use in species not listed in the labeling, use for indications (disease or other conditions) not listed in the labeling, use at dosage levels, frequencies, or routes of administration other than those stated in the labeling, and deviation from the labeled withdrawal time based on these different uses. 
+ 
+ 
+ ( b ) FDA means the U.S. Food and Drug Administration. 
+ 
+ 
+ ( c ) The phrase a reasonable probability that a drug's use may present a risk to the public health means that FDA has reason to believe that use of a drug may be likely to cause a potential adverse event. 
+ 
+ 
+ ( d ) The phrase use of a drug may present a risk to the public health means that FDA has information that indicates that use of a drug may cause an adverse event. 
+ 
+ 
+ ( e ) The phrase use of a drug presents a risk to the public health means that FDA has evidence that demonstrates that the use of a drug has caused or likely will cause an adverse event. 
+ 
+ 
+ ( f ) A residue means any compound present in edible tissues that results from the use of a drug, and includes the drug, its metabolites, and any other substance formed in or on food because of the drug's use. 
+ 
+ 
+ ( g ) A safe level is a conservative estimate of a drug residue level in edible animal tissue derived from food safety data or other scientific information. Concentrations of residues in tissue below the safe level will not raise human food safety concerns. A safe level is not a safe concentration or a tolerance and does not indicate that an approval exists for the drug in that species or category of animal from which the food is derived. 
+ 
+ 
+ ( h ) Veterinarian means a person licensed by a State or Territory to practice veterinary medicine. 
+ 
+ 
+ ( i ) A valid veterinarian-client-patient relationship is one in which: 
+ 
+ ( 1 ) A veterinarian has assumed the responsibility for making medical judgments regarding the health of (an) animal(s) and the need for medical treatment, and the client (the owner of the animal or animals or other caretaker) has agreed to follow the instructions of the veterinarian; 
+ 
+ 
+ ( 2 ) There is sufficient knowledge of the animal(s) by the veterinarian to initiate at least a general or preliminary diagnosis of the medical condition of the animal(s); and 
+ 
+ ( 3 ) The practicing veterinarian is readily available for followup in case of adverse reactions or failure of the regimen of therapy. Such a relationship can exist only when the veterinarian has recently seen and is personally acquainted with the keeping and care of the animal(s) by virtue of examination of the animal(s), and/or by medically appropriate and timely visits to the premises where the animal(s) are kept. 
+ 
+ 
+
+ 
+ § 530.4 Advertising and promotion. 
+ Nothing in this part shall be construed as permitting the advertising or promotion of extralabel uses in animals of approved new animal drugs or approved human drugs. 
+ 
+
+ 
+ § 530.5 Veterinary records. 
+ 
+ ( a ) As a condition of extralabel use permitted under this part, to permit FDA to ascertain any extralabel use or intended extralabel use of drugs that the agency has determined may present a risk to the public health, veterinarians shall maintain the following records of extralabel uses. Such records shall be legible, documented in an accurate and timely manner, and be readily accessible to permit prompt retrieval of information. Such records shall be adequate to substantiate the identification of the animals and shall be maintained either as individual records or, in food animal practices, on a group, herd, flock, or per-client basis. Records shall be adequate to provide the following information: 
+ 
+ ( 1 ) The established name of the drug and its active ingredient, or if formulated from more than one ingredient, the established name of each ingredient; 
+ 
+ 
+ ( 2 ) The condition treated; 
+ 
+ 
+ ( 3 ) The species of the treated animal(s); 
+ 
+ 
+ ( 4 ) The dosage administered; 
+ 
+ 
+ ( 5 ) The duration of treatment; 
+ 
+ 
+ ( 6 ) The numbers of animals treated; and 
+ 
+ 
+ ( 7 ) The specified withdrawal, withholding, or discard time(s), if applicable, for meat, milk, eggs, or any food which might be derived from any food animals treated. 
+ 
+ 
+ 
+ ( b ) A veterinarian shall keep all required records for 2 years or as otherwise required by Federal or State law, whichever is greater. 
+ 
+ ( c ) Any person who is in charge, control, or custody of such records shall, upon request of a person designated by FDA, permit such person designated by FDA to, at all reasonable times, have access to, permit copying, and verify such records. 
+ 
+
+ 
+
+ Subpart B—Rules and Provisions for Extralabel Uses of Drugs in Animals 
+ 
+ § 530.10 Provision permitting extralabel use of animal drugs. 
+ An approved new animal drug or human drug intended to be used for an extralabel purpose in an animal is not unsafe under section 512 of the act and is exempt from the labeling requirements of section 502(f) of the act if such use is: 
+ 
+ ( a ) By or on the lawful written or oral order of a licensed veterinarian within the context of a valid veterinarian-client-patient relationship; and 
+ 
+ ( b ) In compliance with this part. 
+ 
+
+ 
+ § 530.11 Limitations. 
+ In addition to uses which do not comply with the provision set forth in § 530.10 , the following specific extralabel uses are not permitted and result in the drug being deemed unsafe within the meaning of section 512 of the act: 
+ 
+ ( a ) Extralabel use in an animal of an approved new animal drug or human drug by a lay person (except when under the supervision of a licensed veterinarian); 
+ 
+ 
+ ( b ) Extralabel use of an approved new animal drug or human drug in or on an animal feed; 
+ 
+ 
+ ( c ) Extralabel use resulting in any residue which may present a risk to the public health; and 
+ 
+ ( d ) Extralabel use resulting in any residue above an established safe level, safe concentration or tolerance. 
+ 
+
+ 
+ § 530.12 Labeling. 
+ Any human or animal drug prescribed and dispensed for extralabel use by a veterinarian or dispensed by a pharmacist on the order of a veterinarian shall bear or be accompanied by labeling information adequate to assure the safe and proper use of the product. Such information shall include the following: 
+ 
+ ( a ) The name and address of the prescribing veterinarian. If the drug is dispensed by a pharmacy on the order of a veterinarian, the labeling shall include the name of the prescribing veterinarian and the name and address of the dispensing pharmacy, and may include the address of the prescribing veterinarian; 
+ 
+ 
+ ( b ) The established name of the drug or, if formulated from more than one active ingredient, the established name of each ingredient; 
+ 
+ 
+ ( c ) Any directions for use specified by the veterinarian, including the class/species or identification of the animal or herd, flock, pen, lot, or other group of animals being treated, in which the drug is intended to be used; the dosage, frequency, and route of administration; and the duration of therapy; 
+ 
+ 
+ ( d ) Any cautionary statements; and 
+ 
+ ( e ) The veterinarian's specified withdrawal, withholding, or discard time for meat, milk, eggs, or any other food which might be derived from the treated animal or animals. 
+ 
+
+ 
+ § 530.13 Extralabel use from compounding of approved new animal and approved human drugs. 
+ 
+ ( a ) This part applies to compounding of a product from approved animal or human drugs by a veterinarian or a pharmacist on the order of a veterinarian within the practice of veterinary medicine. Nothing in this part shall be construed as permitting compounding from bulk drugs. 
+ 
+ 
+ ( b ) Extralabel use from compounding of approved new animal or human drugs is permitted if: 
+ 
+ ( 1 ) All relevant portions of this part have been complied with; 
+ 
+ 
+ ( 2 ) There is no approved new animal or approved new human drug that, when used as labeled or in conformity with criteria established in this part, will, in the available dosage form and concentration, appropriately treat the condition diagnosed. Compounding from a human drug for use in food-producing animals will not be permitted if an approved animal drug can be used for the compounding; 
+ 
+ 
+ ( 3 ) The compounding is performed by a licensed pharmacist or veterinarian within the scope of a professional practice; 
+ 
+ 
+ ( 4 ) Adequate procedures and processes are followed that ensure the safety and effectiveness of the compounded product; 
+ 
+ 
+ ( 5 ) The scale of the compounding operation is commensurate with the established need for compounded products (e.g., similar to that of comparable practices); and 
+ 
+ 
+ ( 6 ) All relevant State laws relating to the compounding of drugs for use in animals are followed. 
+ 
+ 
+ ( c ) Guidance on the subject of compounding may be found in guidance documents issued by FDA. 
+ 
+
+ 
+
+ Subpart C—Specific Provisions Relating to Extralabel Use of Animal and Human Drugs in Food-Producing Animals 
+ 
+ § 530.20 Conditions for permitted extralabel animal and human drug use in food-producing animals. 
+ 
+ ( a ) The following conditions must be met for a permitted extralabel use in food-producing animals of approved new animal and human drugs: 
+ 
+ ( 1 ) There is no approved new animal drug that is labeled for such use and that contains the same active ingredient which is in the required dosage form and concentration, except where a veterinarian finds, within the context of a valid veterinarian-client-patient relationship, that the approved new animal drug is clinically ineffective for its intended use. 
+ 
+ 
+ ( 2 ) Prior to prescribing or dispensing an approved new animal or human drug for an extralabel use in food animals, the veterinarian must: 
+ 
+ ( i ) Make a careful diagnosis and evaluation of the conditions for which the drug is to be used; 
+ 
+ 
+ ( ii ) Establish a substantially extended withdrawal period prior to marketing of milk, meat, eggs, or other edible products supported by appropriate scientific information, if applicable; 
+ 
+ 
+ ( iii ) Institute procedures to assure that the identity of the treated animal or animals is carefully maintained; and 
+ 
+ 
+ ( iv ) Take appropriate measures to assure that assigned timeframes for withdrawal are met and no illegal drug residues occur in any food-producing animal subjected to extralabel treatment. 
+ 
+ 
+ 
+ 
+ ( b ) The following additional conditions must be met for a permitted extralabel use of in food-producing animals an approved human drug, or of an animal drug approved only for use in animals not intended for human consumption: 
+ 
+ ( 1 ) Such use must be accomplished in accordance with an appropriate medical rationale; and 
+ 
+ 
+ ( 2 ) If scientific information on the human food safety aspect of the use of the drug in food-producing animals is not available, the veterinarian must take appropriate measures to assure that the animal and its food products will not enter the human food supply. 
+ 
+ 
+ ( c ) Extralabel use of an approved human drug in a food-producing animal is not permitted under this part if an animal drug approved for use in food-producing animals can be used in an extralabel manner for the particular use. 
+ 
+
+ 
+ § 530.21 Prohibitions for food-producing animals. 
+ 
+ ( a ) FDA may prohibit the extralabel use of an approved new animal or human drug or class of drugs in food-producing animals if FDA determines that: 
+ 
+ ( 1 ) An acceptable analytical method needs to be established and such method has not been established or cannot be established; or 
+ 
+ 
+ ( 2 ) The extralabel use of the drug or class of drugs presents a risk to the public health. 
+ 
+ 
+ ( b ) A prohibition may be a general ban on the extralabel use of the drug or class of drugs or may be limited to a specific species, indication, dosage form, route of administration, or combination of factors. 
+ 
+
+ 
+ § 530.22 Safe levels and analytical methods for food-producing animals. 
+ 
+ ( a ) FDA may establish a safe level for extralabel use of an approved human drug or an approved new animal drug when the agency finds that there is a reasonable probability that an extralabel use may present a risk to the public health. FDA may: 
+ 
+ ( 1 ) Establish a finite safe level based on residue and metabolism information from available sources; 
+ 
+ 
+ ( 2 ) Establish a safe level based on the lowest level that can be measured by a practical analytical method; or 
+ 
+ 
+ ( 3 ) Establish a safe level based on other appropriate scientific, technical, or regulatory criteria. 
+ 
+ 
+ 
+ ( b ) FDA may require the development of an acceptable analytical method for the quantification of residues above any safe level established under this part. If FDA requires the development of such an acceptable analytical method, the agency will publish notice of that requirement in the Federal Register. 
+ 
+ 
+ ( c ) The extralabel use of an animal drug or human drug that results in residues exceeding a safe level established under this part is an unsafe use of such drug. 
+ 
+ ( d ) If the agency establishes a safe level for a particular species or category of animals and a tolerance or safe concentration is later established through an approval for that particular species or category of animals, for that species or category of animals, the safe level is superseded by the tolerance or safe concentration for that species or category of animals. 
+ 
+
+ 
+ § 530.23 Procedure for setting and announcing safe levels. 
+ 
+ ( a ) FDA may issue an order establishing a safe level for a residue of an extralabel use of an approved human drug or an approved animal drug. The agency will publish in the Federal Register a notice of the order. The notice will include: 
+ 
+ ( 1 ) A statement setting forth the agency's finding that there is a reasonable probability that extralabel use in animals of the human drug or animal drug may present a risk to the public health; 
+ 
+ 
+ ( 2 ) A statement of the basis for that finding; and 
+ 
+ 
+ ( 3 ) A request for public comments. 
+ 
+ 
+ ( b ) A current listing of those drugs for which a safe level for extralabel drug use in food-producing animals has been established, the specific safe levels, and the availability, if any, of a specific analytical method or methods for drug residue detection will be codified in § 530.40 . 
+ 
+
+ 
+ § 530.24 Procedure for announcing analytical methods for drug residue quantification. 
+ 
+ ( a ) FDA may issue an order announcing a specific analytical method or methods for the quantification of extralabel use drug residues above the safe levels established under § 530.22 for extralabel use of an approved human drug or an approved animal drug. The agency will publish in the Federal Register a notice of the order, including the name of the specific analytical method or methods and the drug or drugs for which the method is applicable. 
+ 
+ ( b ) Copies of analytical methods for the quantification of extralabel use drug residues above the safe levels established under § 530.22 will be available upon request from the Communications and Education Branch (HFV-12), Division of Program Communication and Administrative Management, Center for Veterinary Medicine, 7500 Standish Pl., Rockville, MD 20855. When an analytical method for the detection of extralabel use drug residues above the safe levels established under § 530.22 is developed, and that method is acceptable to the agency, FDA will incorporate that method by reference. 
+ 
+
+ 
+ § 530.25 Orders prohibiting extralabel uses for drugs in food-producing animals. 
+ 
+ ( a ) FDA may issue an order prohibiting extralabel use of an approved new animal or human drug in food-producing animals if the agency finds, after providing an opportunity for public comment, that: 
+ 
+ ( 1 ) An acceptable analytical method required under § 530.22 has not been developed, submitted, and found to be acceptable by FDA or that such method cannot be established; or 
+ 
+ 
+ ( 2 ) The extralabel use in animals presents a risk to the public health. 
+ 
+ 
+ 
+ ( b ) After making a determination that the analytical method required under § 530.22 has not been developed and submitted, or that such method cannot be established, or that an extralabel use in animals of a particular human drug or animal drug presents a risk to the public health, FDA will publish in the Federal Register, with a 90-day delayed effective date, an order of prohibition for an extralabel use of a drug in food-producing animals. Such order shall state that an acceptable analytical method required under § 530.22 has not been developed, submitted, and found to be acceptable by FDA; that such method cannot be established; or that the extralabel use in animals presents a risk to the public health; and shall: 
+ 
+ ( 1 ) Specify the nature and extent of the order of prohibition and the reasons for the prohibition; 
+ 
+ 
+ ( 2 ) Request public comments; and 
+ 
+ 
+ ( 3 ) Provide a period of not less than 60 days for comments. 
+ 
+ 
+ 
+ ( c ) The order of prohibition will become effective 90 days after date of publication of the order unless FDA publishes a notice in the Federal Register prior to that date, that revokes the order of prohibition, modifies it, or extends the period of public comment. 
+ 
+ 
+ ( d ) The agency may publish an order of prohibition with a shorter comment period and/or delayed effective date than specified in paragraph (b) of this section in exceptional circumstances (e.g., where there is immediate risk to the public health), provided that the order of prohibition states that the comment period and/or effective date have been abbreviated because there are exceptional circumstances, and the order of prohibition sets forth the agency's rationale for taking such action. 
+ 
+ 
+ ( e ) If FDA publishes a notice in the Federal Register modifying an order of prohibition, the agency will specify in the modified order of prohibition the nature and extent of the modified prohibition, the reasons for it, and the agency's response to any comments on the original order of prohibition. 
+ 
+ 
+ ( f ) A current listing of drugs prohibited for extralabel use in animals will be codified in § 530.41 . 
+ 
+ 
+ ( g ) After the submission of appropriate information (i.e., adequate data, an acceptable method, approval of a new animal drug application for the prohibited extralabel use, or information demonstrating that the prohibition was based on incorrect data), FDA may, by publication of an appropriate notice in the Federal Register, remove a drug from the list of human and animal drugs prohibited for extralabel use in animals, or may modify a prohibition. 
+ 
+ ( h ) FDA may prohibit extralabel use of a drug in food-producing animals without establishing a safe level. 
+ 
+
+ 
+
+ Subpart D—Extralabel Use of Human and Animal Drugs in Animals Not Intended for Human Consumption 
+ 
+ § 530.30 Extralabel drug use in nonfood animals. 
+ 
+ ( a ) Because extralabel use of animal and human drugs in nonfood-producing animals does not ordinarily pose a threat to the public health, extralabel use of animal and human drugs is permitted in nonfood-producing animal practice except when the public health is threatened. In addition, the provisions of § 530.20(a)(1) will apply to the use of an approved animal drug. 
+ 
+ ( b ) If FDA determines that an extralabel drug use in animals not intended for human consumption presents a risk to the public health, the agency may publish in the Federal Register a notice prohibiting such use following the procedures in § 530.25 . The prohibited extralabel drug use will be codified in § 530.41 . 
+ 
+
+ 
+
+ Subpart E—Safe Levels for Extralabel Use of Drugs in Animals and Drugs Prohibited From Extralabel Use in Animals 
+ 
+ § 530.40 Safe levels and availability of analytical methods. 
+ 
+ ( a ) In accordance with § 530.22 , the following safe levels for extralabel use of an approved animal drug or human drug have been established: [Reserved] 
+ 
+ ( b ) In accordance with § 530.22 , the following analytical methods have been accepted by FDA: [Reserved] 
+ 
+
+ 
+ § 530.41 Drugs prohibited for extralabel use in animals. 
+ 
+ ( a ) The following drugs, families of drugs, and substances are prohibited for extralabel animal and human drug uses in food-producing animals. 
+ 
+ ( 1 ) Chloramphenicol; 
+ 
+ 
+ ( 2 ) Clenbuterol; 
+ 
+ 
+ ( 3 ) Diethylstilbestrol (DES); 
+ 
+ 
+ ( 4 ) Dimetridazole; 
+ 
+ 
+ ( 5 ) Ipronidazole; 
+ 
+ 
+ ( 6 ) Other nitroimidazoles; 
+ 
+ 
+ ( 7 ) Furazolidone. 
+ 
+ 
+ ( 8 ) Nitrofurazone. 
+ 
+ 
+ ( 9 ) Sulfonamide drugs in lactating dairy cattle (except approved use of sulfadimethoxine, sulfabromomethazine, and sulfaethoxypyridazine); 
+ 
+ 
+ ( 10 ) Fluoroquinolones; and 
+ 
+ 
+ ( 11 ) Glycopeptides. 
+ 
+ 
+ ( 12 ) Phenylbutazone in female dairy cattle 20 months of age or older. 
+ 
+ 
+ ( 13 ) Cephalosporins (not including cephapirin) in cattle, swine, chickens, or turkeys: 
+ 
+ ( i ) For disease prevention purposes; 
+ 
+ 
+ ( ii ) At unapproved doses, frequencies, durations, or routes of administration; or 
+ 
+ 
+ ( iii ) If the drug is not approved for that species and production class. 
+ 
+ 
+ 
+ 
+ ( b ) The following drugs, families of drugs, and substances are prohibited for extralabel animal and human drug uses in nonfood-producing animals: [Reserved] 
+ 
+ 
+ ( c ) [Reserved] 
+ 
+ 
+ ( d ) The following drugs, or classes of drugs, that are approved for treating or preventing influenza A, are prohibited from extralabel use in chickens, turkeys, and ducks: 
+ 
+ ( 1 ) Adamantanes. 
+ 
+ ( 2 ) Neuraminidase inhibitors. 
+ 
+ [ 62 FR 27947 , May 22, 1997, as amended at 67 FR 5471 , Feb. 6, 2002; 68 FR 9530 , Feb. 28, 2003; 68 FR 14134 , Mar. 24, 2003; 71 FR 14377 , Mar. 22, 2006; 77 FR 745 , Jan. 6, 2012]
+ 
+ 
+
+ 
+ {"origins":[{"level":"part","identifier":"530","label_level":"Part 530","hierarchy":{"title":"21","chapter":"I","subchapter":"E","part":"530"},"current":true,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/15/1453\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e15 U.S.C. 1453\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/15/1454\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e1454\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/15/1455\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e1455\u003c/a\u003e; \u003ca href=\"https://www.govinfo.gov/link/uscode/21/321\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e21 U.S.C. 321\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/331\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e331\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/351\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e351\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/352\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e352\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/353\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e353\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/355\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e355\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/357\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e357\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/360b\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e360b\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/371\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e371\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/379e\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e379e\u003c/a\u003e.\n"],"source":["\u003ca href=\"https://www.federalregister.gov/citation/61-FR-57743\" class=\"fr-reference\" data-reference=\"61 FR 57743\"\u003e61 FR 57743\u003c/a\u003e, Nov. 7, 1996, unless otherwise noted.\n"],"link":"/current/title-21/part-530","title":"Part 530"}]} 
+
+ eCFR Content 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Pages 
+ 
+ Home 
+ Titles 
+ Search 
+ Recent Changes 
+ Corrections 
+ 
+ 
+
+ 
+ Reader Aids 
+ 
+ 
+ Using the eCFR Point-in-Time System 
+ 
+ 
+ Understanding the eCFR 
+ 
+ 
+ Government Policy and OFR Procedures 
+ 
+ 
+ Developer Resources 
+ 
+ 
+ Recent Site Updates 
+ 
+ 
+ 
+ 
+ Information 
+ 
+ About This Site 
+ Legal Status 
+ Privacy 
+ Accessibility 
+ FOIA 
+ No Fear Act 
+ Continuity Information 
+ 
+ 
+
+ 
+ My eCFR 
+ 
+ 
+ My Subscriptions 
+ 
+ 
+ Sign In / Sign Up 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 

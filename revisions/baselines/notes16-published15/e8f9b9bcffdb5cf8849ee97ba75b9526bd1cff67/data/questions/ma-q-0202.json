@@ -1,0 +1,124 @@
+{
+  "question_id": "MA-Q-0202",
+  "family_id": "B2_DRUG_PACKAGING_TYPE_SCHEDULE_MATRIX",
+  "area": 4,
+  "topic": "Compliance packaging",
+  "subtopic": "Packaging type and controlled-substance schedule matrix",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy is redesigning one patient's compliance packaging. Assuming all other requirements are satisfied, which proposed placements are not prohibited by 247 CMR 9.08(3)(b)? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Place stable Schedule III buprenorphine in the same multi-drug single-dose pouch as the patient's other morning medications."
+    },
+    {
+      "id": "B",
+      "text": "Keep Schedule II methylphenidate in a separate single-drug single-dose package rather than the patient's multi-drug pouch."
+    },
+    {
+      "id": "C",
+      "text": "Place Schedule IV alprazolam in a multi-drug single-dose package after confirming the other packaging requirements."
+    },
+    {
+      "id": "D",
+      "text": "Place stable Schedule III testosterone in a multi-drug single-dose pouch because maintenance status creates an exception."
+    },
+    {
+      "id": "E",
+      "text": "Keep Schedule II oxycodone in a separate single-drug single-dose package rather than combining it with other medications."
+    }
+  ],
+  "correct_choice_ids": [
+    "B",
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.08(3)(b) bars Schedule II and III controlled substances from multi-drug-single-dose packages. It does not create a maintenance exception, does not name Schedule IV, and does not by its own terms prohibit single-drug-single-dose packaging. The question assumes the remaining compatibility, labeling and policy requirements are met.",
+    "choice_analysis": {
+      "A": "Schedule III remains prohibited in a multi-drug-single-dose package.",
+      "B": "Correct: the cited prohibition does not itself reach a separate single-drug-single-dose package.",
+      "C": "Correct under the stated assumption: Schedule IV is outside the Schedule II/III prohibition.",
+      "D": "Maintenance status supplies no exception for Schedule III in a multi-drug package.",
+      "E": "Correct: keeping the Schedule II drug in a separate single-drug package avoids the specific multi-drug prohibition."
+    },
+    "related_facts": [
+      "A placement not prohibited by paragraph (3)(b) must still satisfy every other applicable requirement."
+    ],
+    "mpje_trap": "Classifying only the drug schedule and ignoring the packaging type that defines the prohibition."
+  },
+  "rule_ids": [
+    "MA-COMPLIANCE-PACKAGING"
+  ],
+  "drug_ids": [
+    "methylphenidate",
+    "testosterone-cypionate",
+    "buprenorphine",
+    "oxycodone",
+    "alprazolam"
+  ],
+  "reasoning_steps": [
+    "Classify each drug's schedule",
+    "Distinguish multi-drug-single-dose from single-drug-single-dose packaging",
+    "Apply the Schedule II/III prohibition and preserve all other requirements"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-LEGAL-REAUDIT-2026-08-20",
+    "AUDIT-GPT-FRESH-B3-MINIMUM-REPAIRS-V1-REALISM-REAUDIT-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Issue #91 release-governance controller; 독립 auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 blind-locked legal 및 full-bank realism REAUDIT 이후",
+    "date": "2026-08-20",
+    "notes": "현재 hash에서 legal KEEP/YES 및 realism KEEP/PASS와 모든 realism criteria=true를 동시에 받은 6개만 guarded admission한다. MA-Q-0203은 legal MINOR_EDIT/YES, realism MAJOR_REWRITE/FAIL이므로 이 release set에서 제외하고 AUDIT_PENDING으로 보존한다. Phase-1 blind lock af71dea436e9f6d1a1fdc024938f871dac5e2049가 canonical access보다 먼저 커밋·푸시됐다. MA-Q-0028 격리와 MA-Q-0190 기존 상태는 변경하지 않는다.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COMPLIANCE-PACKAGING": {
+          "content_version": 2,
+          "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "testosterone-cypionate": {
+          "content_version": 1,
+          "content_hash": "f83602d6f873792927cf036bf50db4e05bdc30dfac1a477bf0fb825658415fbc"
+        },
+        "buprenorphine": {
+          "content_version": 1,
+          "content_hash": "cbb940e85e48dde1efbd53ad0704271411892aa7a6d8009e33b537140dc90d43"
+        },
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        },
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

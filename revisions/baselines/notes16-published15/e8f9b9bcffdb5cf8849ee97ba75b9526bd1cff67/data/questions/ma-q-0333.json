@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0333",
+  "family_id": "CDTM_FACILITY_MEDICATION_ORDER_INSTRUMENT",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Prescribing in a facility",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist rounding in a licensed long-term care facility decides to start a controlled substance for a resident. She writes what looks like an ordinary outpatient prescription and leaves it at the nurses' station. What does the regulation require instead?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "A prescription transmitted to the facility's contracted dispensing pharmacy."
+    },
+    {
+      "id": "B",
+      "text": "A written medication order entered on the facility's own medical record for the resident."
+    },
+    {
+      "id": "C",
+      "text": "A countersignature from the supervising physician on the prescription she wrote."
+    },
+    {
+      "id": "D",
+      "text": "An oral order to the nurse on duty, confirmed in writing within 24 hours."
+    },
+    {
+      "id": "E",
+      "text": "A referral back to the supervising physician, who must issue the order himself."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "Where the patient is in a licensed health facility, including a hospital, long-term care facility, ambulatory care clinic or hospice, 105 CMR 700.003(G)(8) authorises the pharmacist to prescribe THROUGH THE USE OF A WRITTEN MEDICATION ORDER ENTERED ON THE PATIENT'S MEDICAL RECORD MAINTAINED AT THE FACILITY, provided that order meets all applicable provisions of the regulation.",
+    "choice_analysis": {
+      "A": "The instrument is a medication order on the facility record, not a transmitted prescription.",
+      "B": "Correct: a written medication order on the facility's record.",
+      "C": "No countersignature is required by the paragraph.",
+      "D": "The paragraph specifies a written order, not an oral one.",
+      "E": "The pharmacist's own prescribing authority is not displaced."
+    },
+    "related_facts": [
+      "The order must still meet all applicable provisions of 105 CMR 700.000"
+    ],
+    "mpje_trap": "Candidates carry the outpatient prescription habit into a setting the regulation treats differently."
+  },
+  "rule_ids": [
+    "MA-CDTM-FACILITY-ORDER"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm the patient is in a licensed health facility",
+    "Identify the instrument the paragraph authorises there",
+    "Note where the order must be entered"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-FACILITY-ORDER": {
+          "content_version": 1,
+          "content_hash": "a0e0c40a5e5e72ccacd3f7de045bca7775a856985445abaf2a081395560c7fde"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

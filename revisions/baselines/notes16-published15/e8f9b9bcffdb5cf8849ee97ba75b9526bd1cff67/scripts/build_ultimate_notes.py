@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Build the standalone Korean notes reader; never mutates question-bank registries.
+
+Run with: python scripts/build_ultimate_notes.py [--check]
+Dependency: mistune==3.2.1 (requirements-notes.txt).
+"""
+from __future__ import annotations
+import argparse, copy, hashlib, html, json, re
+from pathlib import Path
+import mistune
+from notes_revision import load_notes
+from notes_independent_metadata import load_metadata
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'site'/'notes'
+
+def census_annotations(data, ledger_raw):
+    """Surface known source holds only when bound to this exact current body."""
+    rows = {r['unit_id']: r for r in map(json.loads, ledger_raw.decode().splitlines())}
+    result = {}
+    for chapter in data['chapters']:
+        for unit in chapter['units']:
+            row = rows[unit['id']]
+            actual = hashlib.sha256(unit['body'].encode()).hexdigest()
+            if row['actual_effective_body_sha256'] != actual:
+                raise ValueError('Stale note census publication metadata: '+unit['id'])
+            count = row.get('atomic_source_blocked_count', 0)
+            if count:
+                result[unit['id']] = dict(count=count, source=row['atomic_census_source'],
+                    notice=f'저자 주장별 검토에서 근거 확인 보류 주장 {count}개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요.')
+    return result
+
+def independent_notice_html(review):
+    if not review or not review['requires_review']: return ''
+    url='https://github.com/woojunxnam/oddments/blob/main/'+review['report_path']
+    findings=review['omissions']+[f["finding"]+(' — '+f['blocker'] if f.get('blocker') and f['blocker']!=f['finding'] else '') for f in review['findings']]
+    details=('<details class="independent-note-findings"><summary>독립 검토의 누락·보류 사유</summary><ul>'+''.join('<li>'+html.escape(x)+'</li>' for x in findings)+'</ul></details>') if findings else ''
+    return '<div class="independent-note-review"><p class="notice">'+html.escape(review['notice'])+' <a href="'+html.escape(url,quote=True)+'" target="_blank" rel="noopener noreferrer">독립 검토 기록</a></p>'+details+'</div>'
+
+def independent_notice_markdown(review):
+    if not review or not review['requires_review']: return ''
+    url='https://github.com/woojunxnam/oddments/blob/main/'+review['report_path']
+    findings=review['omissions']+[f['finding']+(' — '+f['blocker'] if f.get('blocker') and f['blocker']!=f['finding'] else '') for f in review['findings']]
+    # Audit text is display data, not active Markdown/HTML supplied by a source.
+    clean=lambda value: html.escape(value).replace('\\','\\\\').replace('[','\\[').replace(']','\\]').replace('\n',' ')
+    return '\n> '+clean(review['notice'])+' [독립 검토 기록]('+url+')\n'+''.join('\n> - '+clean(x)+'\n' for x in findings)
+
+def independent_progress_notice(progress):
+    pending=progress.get('pending_census_reassessment_units',0)
+    pending_notice=(f'누락 보완본의 새 독립 검토 대기 {pending}절은 현재 처리 수에서 제외합니다. ' if pending else '')
+    return (f"저자 주장 목록 {progress['author_enumerated_units']}/{progress['total_units']}절 · "
+            f"독립 완전성·법규 검토 처리 {progress['processed_units']}/{progress['total_units']}절. "
+            +pending_notice+
+            f"누락 지적 {progress['omissions_found_units']}절 · 법규 보류 {progress['legal_hold_units']}절 · "
+            f"독립 검토의 근거 미확인 {progress['claim_source_blocked_count']}명제. 검토 처리 수는 법규 통과 수가 아닙니다.")
+
+def render_markdown(text: str) -> str:
+    # USP chapter numbers and inequalities are text, not unknown HTML elements.
+    md=mistune.create_markdown(escape=True,plugins=['table','strikethrough','url'])
+    output=md(text)
+    output=re.sub(r'<table>', '<div class="table-scroll" tabindex="0" role="region" aria-label="비교표 · 가로 스크롤 가능"><table>',output)
+    output=output.replace('</table>','</table></div>')
+    output=output.replace('<a href="http','<a target="_blank" rel="noopener noreferrer" href="http')
+    # Each unit is headed by h2; internal Markdown headings must sit below it.
+    output=re.sub(r'<(/?)h[12]>',r'<\1h3>',output)
+    return output
+
+def make_outputs(root=None) -> dict[Path,str]:
+    root=ROOT if root is None else Path(root)
+    out=root/'site'/'notes'
+    original=(root/'notes'/'guide.json').read_text(encoding='utf-8')
+    data=load_notes(root)
+    ledger=json.loads((root/'notes'/'editorial-map.json').read_text())
+    census_raw=(root/'reports/full-corpus-review/notes-unit-ledger.jsonl').read_bytes()
+    annotations=census_annotations(data,census_raw)
+    independent=load_metadata(root,data,ledger_raw=census_raw)
+    independent_progress=independent_progress_notice(independent['progress'])
+    payload=copy.deepcopy(data)
+    all_ids=set()
+    for ch in payload['chapters']:
+        for u in ch['units']:
+            if u['id'] in all_ids:raise ValueError('Duplicate unit '+u['id'])
+            all_ids.add(u['id'])
+            if u['id'] in annotations:
+                u['atomic_source_review']=annotations[u['id']]
+            if u['id'] in independent['units']:
+                u['independent_atomic_census_review']=independent['units'][u['id']]
+            u['html']=render_markdown(u['body'])
+            u['text']=re.sub(r'<[^>]*>',' ',u['html'])
+            u['text']=html.unescape(re.sub(r'\s+',' ',u['text'])).strip()
+            # Browser search uses plain text, not raw Markdown HTML.
+            del u['body']
+    payload['stats']={'chapters':len(payload['chapters']), 'units':len(all_ids), 'drugs':len(payload['drugs']),
+       'sources':len(payload['sources']), 'input_documents':len(payload['inputs']),
+       'input_sections':ledger['input_sections'], 'merged_input_sections':sum('merged' in x['decision'] for x in ledger['decisions'].values()),
+       'metadata_sections_removed':sum(x['decision']=='publication-metadata-or-repeated-summary' for x in ledger['decisions'].values()),
+       'reading_characters':sum(len(u['text']) for c in payload['chapters'] for u in c['units'])}
+    payload['baseline_content_sha256']=hashlib.sha256(original.encode()).hexdigest()
+    payload['content_sha256']=hashlib.sha256(json.dumps(data,ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+    payload['source_census_ledger_sha256']=hashlib.sha256(census_raw).hexdigest()
+    payload['independent_note_review_progress']=independent['progress']
+    payload['independent_note_review_notice']=independent_progress
+    data_js='/* Generated by scripts/build_ultimate_notes.py. Do not edit. */\nwindow.MPJE_NOTES = '+json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+';\n'
+    book=['<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">',
+      '<title>MA MPJE 통합 노트 · 전체 읽기</title><link rel="stylesheet" href="notes.css"><link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script></head><body class="book-mode">',
+      '<header class="book-head"><a href="./">← 학습 화면</a><h1>Massachusetts MPJE 통합 노트</h1><p>한국어 해설 · English legal terms · 주제별 상세판</p>',
+      '<p class="notice">기본 편집일 2026-10-23 · 현재 개정판 '+html.escape(data['edition'])+' (작성자 확인, OPEN 포함). 원문 대조의 기준일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사·Board 승인·합격 보장이 아닙니다.</p>',
+      '<p class="notice independent-note-progress">'+html.escape(independent_progress)+'</p>',
+      '<p>이 페이지는 JavaScript 없이 전체 본문을 읽고 브라우저의 인쇄 기능으로 저장할 수 있습니다. 출처는 각 절 끝에서 확인할 수 있습니다.</p><nav aria-label="전체 목차"><ol>']
+    for ch in payload['chapters']:book.append(f'<li><a href="#chapter-{ch["id"]}">{html.escape(ch["title"])}</a></li>')
+    book.append('</ol></nav></header><main class="book-main">')
+    markdown=['# Massachusetts MPJE 통합 노트\n','기본 편집일: 2026-10-23. 현재 개정판: '+data['edition']+' (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.\n']
+    markdown.append('\n> '+independent_progress+'\n')
+    for ch,original_ch in zip(payload['chapters'],data['chapters']):
+        book.append(f'<article class="book-chapter" id="chapter-{ch["id"]}"><p class="eyebrow">{html.escape(ch["part"])}</p><h1>{html.escape(ch["title"])}</h1><p class="chapter-lede">{html.escape(ch["summary"])}</p>')
+        markdown.append(f'\n# {ch["title"]}\n\n{ch["summary"]}\n')
+        for u,ou in zip(ch['units'],original_ch['units']):
+            body=re.sub(r'href="#chapter/([a-z-]+)/([a-zA-Z0-9-]+)"',r'href="#\2"',u['html'])
+            body=re.sub(r'href="#chapter/([a-z-]+)"',r'href="#chapter-\1"',body)
+            book.append(f'<section class="reading-unit" id="{u["id"]}"><h2>{html.escape(u["title"])}</h2>')
+            book.append('<p class="unit-meta">'+html.escape(u['source_review_date'])+' · '+html.escape(' / '.join(u['origins']) or '공식 원문 추가 보완')+'</p>')
+            if u['flags']:book.append('<p class="notice">'+html.escape(' · '.join(u['flags']))+'</p>')
+            if u.get('editor_note'):book.append('<p class="editor-note">'+html.escape(u['editor_note'])+'</p>')
+            if u['id'] in annotations:
+                book.append('<p class="notice">'+html.escape(annotations[u['id']]['notice'])+'</p>')
+            book.append(independent_notice_html(u.get('independent_atomic_census_review')))
+            book.append(body)
+            markdown.append('\n## '+u['title']+'\n')
+            markdown.append(independent_notice_markdown(u.get('independent_atomic_census_review')))
+            if u['id'] in annotations:
+                review=annotations[u['id']]
+                review_url='https://github.com/woojunxnam/oddments/blob/main/'+review['source']
+                book.append('<p class="editor-note"><a href="'+html.escape(review_url,quote=True)+'" target="_blank" rel="noopener noreferrer">이 절의 주장별 검토 기록</a></p>')
+                markdown.append('\n> '+review['notice']+' [주장별 검토 기록]('+review_url+')\n')
+            markdown.append('\n'+ou['body']+'\n')
+            if u['source_ids']:
+                book.append('<div class="book-sources"><strong>근거</strong><ul>')
+                markdown.append('\n근거:\n')
+                for sid in u['source_ids']:
+                    s=payload['sources'][sid]
+                    book.append(f'<li><a href="{html.escape(s["url"],quote=True)}" target="_blank" rel="noopener noreferrer">{html.escape(s["title"])}</a></li>')
+                    markdown.append(f'- [{s["title"]}]({s["url"]})\n')
+                book.append('</ul></div>')
+            book.append('</section>')
+        book.append('</article>')
+    book.append('</main><footer class="book-head"><a href="./">학습 화면으로 돌아가기</a></footer></body></html>')
+    manifest={'edition':data['edition'],'content_sha256':payload['content_sha256'],'stats':payload['stats'], 'legal_review_scope':data['legal_review_scope'], 'revision_provenance':data['revision_provenance'], 'baseline_content_sha256':payload['baseline_content_sha256']}
+    manifest['source_census_ledger_sha256']=payload['source_census_ledger_sha256']
+    manifest['independent_note_review_progress']=independent['progress']
+    return {out/'content.js':data_js, out/'book.html':'\n'.join(book), out/'complete-notes.md':'\n'.join(markdown), out/'build.json':json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'}
+
+def main() -> None:
+    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
+    outputs=make_outputs();stale=[]
+    for path,text in outputs.items():
+        if args.check:
+            if not path.exists() or path.read_text(encoding='utf-8')!=text:stale.append(str(path.relative_to(ROOT)))
+        else:path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
+    if stale:raise SystemExit('Stale notes artifacts: '+', '.join(stale))
+    print(('Checked' if args.check else 'Built')+f' {len(outputs)} notes artifacts. Question-bank data untouched.')
+if __name__=='__main__':main()

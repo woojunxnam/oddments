@@ -1,0 +1,238 @@
+{
+  "report_type": "TRANCHE_FRESH_AUDIT_EVIDENCE_VERIFICATION",
+  "tranche": "BATCH3-B3A",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "audit_pr": 93,
+  "audit_branch": "audit/batch3-b3a-claude-fresh-b3a",
+  "audit_base_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+  "audit_head_sha": "00181406588ea0bd02d9315c81e68e0b63baa4a8",
+  "phase1_lock_commit": "61a1faa1a2442caea9657484a27e670c2aad6ad7",
+  "phase1_lock_blob": "fc8e47bc426569595b4b0d730c1c63bbc982fa7b",
+  "represented_candidate_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3A",
+  "author_instance": "CLAUDE-CODE-CONTROLLER-ISSUE-83",
+  "author_is_not_auditor": true,
+  "process_status": "PASS",
+  "release_eligible": [
+    "MA-Q-0229",
+    "MA-Q-0230",
+    "MA-Q-0231",
+    "MA-Q-0232",
+    "MA-Q-0233",
+    "MA-Q-0234",
+    "MA-Q-0235",
+    "MA-Q-0236",
+    "MA-Q-0237",
+    "MA-Q-0238",
+    "MA-Q-0239",
+    "MA-Q-0240",
+    "MA-Q-0242",
+    "MA-Q-0243",
+    "MA-Q-0244",
+    "MA-Q-0245",
+    "MA-Q-0246",
+    "MA-Q-0247",
+    "MA-Q-0248",
+    "MA-Q-0249",
+    "MA-Q-0250",
+    "MA-Q-0251",
+    "MA-Q-0252",
+    "MA-Q-0253",
+    "MA-Q-0254",
+    "MA-Q-0255",
+    "MA-Q-0257",
+    "MA-Q-0258",
+    "MA-Q-0259",
+    "MA-Q-0260",
+    "MA-Q-0261"
+  ],
+  "release_blocked": {
+    "MA-Q-0241": [
+      "realism_verdict=MINOR_EDIT",
+      "realism_result=FAIL",
+      "criteria_false=['distinct_from_bank']"
+    ],
+    "MA-Q-0256": [
+      "realism_verdict=MINOR_EDIT",
+      "realism_result=FAIL",
+      "criteria_false=['distinct_from_bank']"
+    ]
+  },
+  "checks": {
+    "01_auditor_identity": {
+      "status": "PASS",
+      "detail": {
+        "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-B3A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "INITIAL_BATCH",
+          "review_type": "LEGAL_VERIFICATION"
+        },
+        "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19": {
+          "auditor": "CLAUDE",
+          "auditor_instance": "CLAUDE-FRESH-B3A",
+          "independent": true,
+          "audit_status": "FULLY_ADJUDICATED",
+          "audit_scope": "INITIAL_BATCH",
+          "review_type": "REALISM_REVIEW"
+        }
+      }
+    },
+    "02_lock_precedes_and_is_immutable": {
+      "status": "PASS",
+      "detail": {
+        "lock_commit": "61a1faa1a2442caea9657484a27e670c2aad6ad7",
+        "lock_commit_files": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-PHASE1-BLIND-LOCK.json"
+        ],
+        "records_commit": "00181406588ea0bd02d9315c81e68e0b63baa4a8",
+        "records_commit_files": [
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19.json"
+        ],
+        "lock_is_ancestor_of_records": true,
+        "lock_epoch": 1787167368,
+        "records_epoch": 1787168210,
+        "seconds_between": 842,
+        "lock_blob_at_lock_commit": "fc8e47bc426569595b4b0d730c1c63bbc982fa7b",
+        "lock_blob_at_head": "fc8e47bc426569595b4b0d730c1c63bbc982fa7b"
+      }
+    },
+    "03_no_canonical_or_tooling_edits": {
+      "status": "PASS",
+      "detail": {
+        "changed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19.json"
+        ],
+        "allowed": [
+          "audits/remediation/2026-08-19/CLAUDE-FRESH-B3A-PHASE1-BLIND-LOCK.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19.json",
+          "data/audits/AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19.json"
+        ]
+      }
+    },
+    "04_audit_base_is_the_candidate": {
+      "status": "PASS",
+      "detail": {
+        "merge_base": "520303fe457fb4320601bd2400afe1f51c32e63a",
+        "candidate_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+        "audit_base_sha": "520303fe457fb4320601bd2400afe1f51c32e63a"
+      }
+    },
+    "05_records_bound_to_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "missing_questions": [],
+        "matches": {
+          "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19": true,
+          "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19": true
+        }
+      }
+    },
+    "06_no_substantive_drift_since_candidate": {
+      "status": "PASS",
+      "detail": "identical to 520303fe457f"
+    },
+    "07_full_coverage_no_extras": {
+      "status": "PASS",
+      "detail": {
+        "legal_count": 33,
+        "realism_count": 33,
+        "legal_missing": [],
+        "realism_missing": [],
+        "legal_extra": [],
+        "realism_extra": []
+      }
+    },
+    "08_legal_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "09_realism_results_structurally_complete": {
+      "status": "PASS",
+      "detail": "all complete"
+    },
+    "10_realism_style_profile_current": {
+      "status": "PASS",
+      "detail": {
+        "record": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        },
+        "current": {
+          "profile_id": "MPJE-MA-PRE2027",
+          "content_version": 1,
+          "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+        }
+      }
+    },
+    "11_full_bank_comparison_evidence": {
+      "status": "PASS",
+      "detail": {
+        "bank_size_actual": 261,
+        "bank_size_expected": 261,
+        "defects": "none"
+      }
+    },
+    "12_blind_lock_integrity": {
+      "status": "PASS",
+      "detail": {
+        "auditor_instance": "CLAUDE-FRESH-B3A",
+        "contamination_status": "CLEAN",
+        "blind_package_blob": "f72d246dedfd69b1c16797105545788f44ef5694",
+        "represented_candidate_sha": "520303fe457fb4320601bd2400afe1f51c32e63a",
+        "locked_question_count": 33,
+        "blind_matches_key_count": 33,
+        "blind_mismatches": [],
+        "not_inspected_flags": {
+          "canonical_key_inspected_before_lock": false,
+          "canonical_explanation_inspected_before_lock": false,
+          "canonical_rules_inspected_before_lock": false,
+          "author_reasoning_inspected_before_lock": false
+        }
+      }
+    },
+    "13_blind_package_matches_published": {
+      "status": "PASS",
+      "detail": {
+        "published": "f72d246dedfd69b1c16797105545788f44ef5694",
+        "locked": "f72d246dedfd69b1c16797105545788f44ef5694"
+      }
+    },
+    "14_no_uncommitted_audit_edits": {
+      "status": "PASS",
+      "detail": "clean"
+    },
+    "15_release_partition_computed": {
+      "status": "PASS",
+      "detail": {
+        "eligible_count": 31,
+        "blocked_count": 2,
+        "blocked": {
+          "MA-Q-0241": [
+            "realism_verdict=MINOR_EDIT",
+            "realism_result=FAIL",
+            "criteria_false=['distinct_from_bank']"
+          ],
+          "MA-Q-0256": [
+            "realism_verdict=MINOR_EDIT",
+            "realism_result=FAIL",
+            "criteria_false=['distinct_from_bank']"
+          ]
+        }
+      }
+    },
+    "16_no_hidden_current_hash_failure_on_eligible": {
+      "status": "PASS",
+      "detail": "none"
+    }
+  },
+  "failures": []
+}

@@ -58,6 +58,33 @@ python scripts/review_queue.py recover
 
 ## 증거 제출과 순차 통합
 
+### 작업자 환경이 사라진 경우의 명시적 임대 회수
+
+아직 만료되지 않은 임대를 만료된 것으로 기록하지 않는다. 작업자 디스크가
+실제로 사라졌거나 작업자가 더 이상 제출할 수 없음을 확인한 root controller만
+현재 token과 구체적인 사유로 임대를 회수할 수 있다.
+
+```bash
+python scripts/review_queue.py --stage independent-legacy --actor /root revoke \
+  --job JOB --token CURRENT_TOKEN --reason '기존 작업자 디스크를 복구할 수 없어 새 실제 세션에 재배정'
+python scripts/review_queue.py --stage independent-legacy claim --worker ACTUAL_NEW_ACTOR
+```
+
+`LEASE_REVOKED` event는 실제 회수 시각, 이전 작업자·branch·임대기한·attempt와
+token SHA를 보존한다. 기존 event와 증거를 지우지 않으며 `LEASED`만 `QUEUED`로
+되돌린다. 이전 token은 즉시 무효이며 새 claim은 attempt와 branch를 새로 만든다.
+원 작업자의 provenance를 새 reviewer의 provenance로 가장하지 않는다. 제출·통합된
+결과는 회수할 수 없다. 같은 token/사유로 아직 QUEUED인 동일 attempt에 재요청하면
+멱등적이며, 다른 사유나 새 attempt에 대한 옛 token 요청은 거절한다.
+
+노트 큐에도 같은 명령을 사용한다. 실제 controller checkpoint 위치에서 실행하며
+기존 본문·census binding, 부모 검토의 HOLD와 author 제외 규칙은 변경하지 않는다.
+
+```bash
+python scripts/note_review_queue.py --actor /root revoke \
+  --job JOB --token CURRENT_TOKEN --reason '기존 작업자 디스크를 복구할 수 없어 새 실제 세션에 재배정'
+```
+
 작업자는 기존 문항별 검토 보고서를 작성하고 commit합니다. controller에 전달할 별도 manifest는 다음 형식입니다. 같은 보고서가 여러 ID를 포함하면 path와 파일 SHA를 각 ID에 반복 참조할 수 있습니다. manifest 자체는 worker commit 뒤에 작성해도 됩니다.
 
 ```json

@@ -1,0 +1,21 @@
+{
+  "freeze_date": "2026-09-11",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "807d5eb08500851c7ce53c267a465f167fc2b637",
+  "auditor_instance_reserved": "CLAUDE-FRESH-B4-SG-V7L",
+  "section_ids": [
+    "SG-CONTROLLED-SCHEDULES"
+  ],
+  "output_dir": "audits/study_guide/2026-09-11",
+  "file_prefix": "BATCH4-SG-V7L",
+  "manifest_type": "STUDY_GUIDE_COVERAGE_CLEAN_FREEZE",
+  "expected_audit_output_path": "audits/study_guide/2026-09-11/CLAUDE-FRESH-B4-SG-V7L-AUDIT.json",
+  "scope_note": "Replaces the V7A reservation (CLAUDE-FRESH-B4-SG-V7A). That auditor run terminated on an API content-filter error before writing any record, so no disposition exists for V7A. The V7A identity is retired unused rather than handed to a second context, and its package stays as history. SG-CONTROLLED-SCHEDULES is now frozen alone so a repeat failure on schedule material cannot hold the other two sections back. Re-authored under content model 2 in PR #153; no earlier audit binds the hash frozen here. The scope gate reports no actionable signal for this section.",
+  "replaces_reservation": {
+    "auditor_instance": "CLAUDE-FRESH-B4-SG-V7A",
+    "package_path": "audits/study_guide/2026-09-11/BATCH4-SG-V7A-AUDIT-PACKAGE.json",
+    "outcome": "TERMINATED_WITHOUT_RECORD",
+    "reason": "API content-filter error terminated the auditor run before any audit record was written"
+  }
+}

@@ -47,7 +47,7 @@ def study_practice_links(item, questions, recommended, revised, held, curated):
 
 def build_payload() -> dict:
     note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
-    notes=load_notes(ROOT); data=apply_study_revision(json.loads(author_path.read_text()), "study", ROOT)
+    notes=load_notes(ROOT); data=apply_study_revision(json.loads(author_path.read_text()), "study", ROOT, notes_context=notes)
     independent_reviews=load_metadata(ROOT,notes)['units']
     chapters={c['id']:c for c in notes['chapters']}
     units={u['id']:(c,u) for c in notes['chapters'] for u in c['units']}

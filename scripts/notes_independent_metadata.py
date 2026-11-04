@@ -9,6 +9,7 @@ import json
 import re
 
 import note_review_queue as queue
+from notes_published15_closure import head_bytes_match, snapshotted
 
 
 def notice_for(completeness, legal_status, omission_count):
@@ -39,7 +40,8 @@ def evidence_bindings(value):
         for child in value: yield from evidence_bindings(child)
 
 
-def load_metadata(root, notes=None, ledger_raw=None):
+@snapshotted
+def load_metadata(root, notes=None, ledger_raw=None, source_bindings=None):
     """Return current integrated reviews and pending safety markers without mutation."""
     inv = queue.inventory(root,notes,ledger_raw=ledger_raw)
     result = {'units':{},'progress':{
@@ -58,7 +60,7 @@ def load_metadata(root, notes=None, ledger_raw=None):
         queue.safe_path(root,relative,output=output)
         if relative not in cache:
             raw = queue.safe_path(root,relative).read_bytes()
-            queue.require(queue.git(root,'show','HEAD:'+relative,binary=True) == raw,
+            queue.require(head_bytes_match(root,relative,raw),
                           'Uncommitted independent note metadata/evidence: '+relative)
             cache[relative] = raw
         raw = cache[relative]
@@ -74,6 +76,9 @@ def load_metadata(root, notes=None, ledger_raw=None):
     if state.get('body_reassessments'):
         from notes_body_reassessment import validate_registered as validate_bodies
         validate_bodies(state,root,inv['notes'],committed)
+    if state.get('inactive_census_successors'):
+        from notes_inactive_census_successor import validate_registered as validate_inactive
+        validate_inactive(state,root,inv['notes'],committed)
     latest = latest_jobs(state)
     revised_units = {e['record']['unit_id'] for e in state.get('reassessments',[])}
     body_units={e['record']['unit_id']for e in state.get('body_reassessments',[])}
@@ -127,11 +132,14 @@ def load_metadata(root, notes=None, ledger_raw=None):
                 question_audit_credit=0,canonical_release_credit=0)
             if uid in revised_units:
                 result['units'][uid].update(current_review_valid=True,job_id=job['job_id'],review_history=history)
-            if job.get('body_reassessment_id'):
+            if job.get('body_reassessment_id')or job.get('inactive_census_successor_id'):
                 from notes_body_reassessment import selected_is_current, BLOCKER
                 target=result['units'][uid]
-                target.update(candidate_review_valid=True,body_reassessment_id=job['body_reassessment_id'],
+                target.update(candidate_review_valid=True,body_reassessment_id=job.get('body_reassessment_id'),
                               publication_blocker=BLOCKER)
+                if job.get('inactive_census_successor_id'):
+                    target.pop('body_reassessment_id',None)
+                    target['inactive_census_successor_id']=job['inactive_census_successor_id']
                 if not selected_is_current(job,inv):
                     target.update(current_review_valid=False,candidate_legal_status=record['legal_status'],
                         legal_status='LEGAL_HOLD',requires_review=True,
@@ -139,7 +147,7 @@ def load_metadata(root, notes=None, ledger_raw=None):
                         notice='교정 후보의 독립 검토는 보존됐지만 활성 본문과 아직 결박되지 않았습니다. 기존 본문·새 후보 모두 현재 credit를 승계하지 않으며 별도 공개 body migration까지 검토 보류합니다.')
     for uid,job in latest.items():
         queue.current(job,inv,state,allow_pending=True)
-        if not (job.get('reassessment_id')or job.get('body_reassessment_id')) or job['status'] == 'INTEGRATED': continue
+        if not (job.get('reassessment_id')or job.get('body_reassessment_id')or job.get('inactive_census_successor_id')) or job['status'] == 'INTEGRATED': continue
         previous = result['units'][uid]
         history = previous.pop('review_history',[]) + [{**previous,'current_review_valid':False}]
         result['units'][uid] = dict(previous,current_review_valid=False,review_history=history,
@@ -154,6 +162,13 @@ def load_metadata(root, notes=None, ledger_raw=None):
                 body_sha256=job['unit_bindings'][uid]['body_sha256'],candidate_review_valid=False,
                 publication_blocker=BLOCKER,basis='BODY_CORRECTION_PENDING_FULL_FRESH_NON_AUTHOR_REVIEW',
                 notice='본문 교정 후보의 전문·모든 claim·기존 법규 negative·관련 derived 자료에 대한 새 non-author 검토가 대기 중입니다. 원래 KEEP는 승계하지 않으며 이 절은 daily 학습에서 제외되는 검토 보류 상태입니다.')
+        if job.get('inactive_census_successor_id'):
+            from notes_body_reassessment import BLOCKER
+            result['units'][uid].update(completeness='PENDING_INACTIVE_BODY_CENSUS_SUCCESSOR',
+                body_sha256=job['unit_bindings'][uid]['body_sha256'],candidate_review_valid=False,
+                inactive_census_successor_id=job['inactive_census_successor_id'],publication_blocker=BLOCKER,
+                basis='INACTIVE_BODY_CENSUS_PENDING_FULL_FRESH_REVIEW_NOT_ACTIVE',
+                notice='비활성 교정 본문의 25개 주장 목록에 대한 새 독립 검토가 대기 중입니다. 활성 M 본문은 그대로이며, 기존 누락과 법적 보류를 보존하고 현재 credit 없이 daily 학습에서 제외합니다.')
     rows = [r for r in result['units'].values() if r.get('current_review_valid',True)]; p = result['progress']
     if revised_units:
         p['pending_census_reassessment_units'] = sum(not r.get('current_review_valid',True)for uid,r in result['units'].items()if uid not in body_units)
@@ -163,8 +178,10 @@ def load_metadata(root, notes=None, ledger_raw=None):
         p['existing_current_body_content_keep_units']=current_content_keep_count(state,inv)
         p['pending_census_reassessment_units']=sum(bool(j.get('reassessment_id'))and j['status']!='INTEGRATED'for j in latest.values())
         p['pending_body_reassessment_units']=sum(bool(latest[uid].get('body_reassessment_id'))and latest[uid]['status']!='INTEGRATED'for uid in body_units)
-        p['inactive_body_candidate_units']=sum(bool(latest[uid].get('body_reassessment_id'))and not selected_is_current(latest[uid],inv)for uid in body_units)
-        p['reviewed_body_candidates_not_current_credit']=sum(bool(latest[uid].get('body_reassessment_id'))and result['units'][uid].get('candidate_review_valid',False)and
+        if state.get('inactive_census_successors'):
+            p['pending_inactive_census_successor_units']=sum(bool(j.get('inactive_census_successor_id'))and j['status']!='INTEGRATED'for j in latest.values())
+        p['inactive_body_candidate_units']=sum(bool(latest[uid].get('body_reassessment_id')or latest[uid].get('inactive_census_successor_id'))and not selected_is_current(latest[uid],inv)for uid in body_units)
+        p['reviewed_body_candidates_not_current_credit']=sum(bool(latest[uid].get('body_reassessment_id')or latest[uid].get('inactive_census_successor_id'))and result['units'][uid].get('candidate_review_valid',False)and
                                                             not result['units'][uid]['current_review_valid']for uid in body_units)
     p.update(processed_units=len(rows),complete_units=sum(r['completeness'] == 'COMPLETE' for r in rows),
              omissions_found_units=sum(r['completeness'] == 'OMISSIONS_FOUND' for r in rows),
@@ -176,6 +193,8 @@ def load_metadata(root, notes=None, ledger_raw=None):
              claim_keep_count=sum(r['claim_counts']['KEEP'] for r in rows),
              claim_legal_hold_count=sum(r['claim_counts']['LEGAL_HOLD'] for r in rows),
              claim_source_blocked_count=sum(r['claim_counts']['SOURCE_BLOCKED'] for r in rows))
+    if source_bindings is not None:
+        source_bindings.update({relative:queue.raw_sha(raw)for relative,raw in cache.items()})
     return result
 
 

@@ -1,0 +1,1635 @@
+{
+  "package_type": "STUDY_GUIDE_FULL_PROSE_INDEPENDENT_AUDIT",
+  "freeze_date": "2026-09-01",
+  "authorizing_issue": 121,
+  "represented_candidate_branch": "main",
+  "represented_candidate_sha": "b24bdc5ccb062dae7fe9b2cd30684322d1f8c038",
+  "auditor_instance_reserved": "GPT-FRESH-B4-SG-PILOT-V1",
+  "independent": true,
+  "author_is_not_auditor": true,
+  "section_ids": [
+    "SG-CONTROLLED-SCHEDULES",
+    "SG-CII-LIFECYCLE",
+    "SG-CIII-V-REFILL-TRANSFER",
+    "SG-MA-SCHEDULE-VI",
+    "SG-FED-MA-INTERACTION"
+  ],
+  "permitted_dispositions": [
+    "KEEP",
+    "MINOR_EDIT",
+    "MAJOR_REWRITE",
+    "HOLD"
+  ],
+  "review_criteria": [
+    "paraphrase_fidelity",
+    "material_exceptions",
+    "ma_vs_federal_distinctions",
+    "actor_and_scope",
+    "deadlines",
+    "forms",
+    "decision_logic",
+    "overgeneralization",
+    "unsupported_propositions",
+    "practice_question_mapping",
+    "study_usefulness_without_legal_distortion"
+  ],
+  "release_rule": "정확히 동결된 current section hash에 대해 독립 auditor가 KEEP을 부여하고 모든 dependency hash가 current일 때만 공개할 수 있다. 다른 disposition은 비공개로 유지한다.",
+  "auditor_instruction": "각 section을 현재 공식 authority와 독립적으로 대조하고, controller의 예상 결론 없이 평가한다. 각 disposition과 finding을 section content_hash 및 모든 dependency hash에 결속한다.",
+  "sections": [
+    {
+      "section_id": "SG-CONTROLLED-SCHEDULES",
+      "content_version": 1,
+      "content_hash": "82b2b43198e0df073be124dee14c2d90aaa71a52b1d817ce90ee931eb1d18429",
+      "canonical_path": "data/study_guide/sections/sg-controlled-schedules.json",
+      "canonical_blob": "cc7d72e53a86baf46501cbdca0a916b860f21f62",
+      "full_prose_under_review": {
+        "section_id": "SG-CONTROLLED-SCHEDULES",
+        "content_version": 1,
+        "content_hash": "82b2b43198e0df073be124dee14c2d90aaa71a52b1d817ce90ee931eb1d18429",
+        "title": "Controlled Substance Schedule Overview",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Controlled substance classification",
+        "subtopic": "Federal schedules and Massachusetts Schedule VI",
+        "learning_objectives": [
+          "Separate federal controlled-substance status from Massachusetts scheduling consequences.",
+          "Identify the legal consequence that actually controls instead of reasoning from a schedule label alone."
+        ],
+        "rule_ids": [
+          "FED-CS-SCHEDULES",
+          "MA-SCHEDULE-VI"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CS-SCHEDULES": {
+            "content_version": 1,
+            "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+          },
+          "MA-SCHEDULE-VI": {
+            "content_version": 1,
+            "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "Federal controlled-substance schedules are defined in 21 CFR Part 1308 and drug-specific classification requires the applicable schedule provision.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES"
+            ]
+          },
+          {
+            "text": "Massachusetts Schedule VI captures prescription drugs not otherwise placed in Massachusetts Schedules I through V.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          },
+          {
+            "text": "A Massachusetts Schedule VI label does not by itself establish federal controlled status or routine MassPAT reporting.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A question asks whether a named drug is federally controlled.",
+            "action": "Identify the drug's exact federal schedule provision before applying federal consequences.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES"
+            ]
+          },
+          {
+            "condition": "A prescription drug is not in Massachusetts Schedules I through V.",
+            "action": "Evaluate it under Massachusetts Schedule VI and then apply the separate rule governing the requested act.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "Federal scheduling and Massachusetts Schedule VI answer different classification questions; neither label alone supplies every dispensing, transfer, or reporting consequence.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES",
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "A drug-specific or act-specific rule may add a narrower consequence, so classification is the start of the analysis rather than the final answer.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES",
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "timing_deadlines": [],
+        "forms_records": [],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Confirm the controlling federal and Massachusetts classification before applying an act-specific rule.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES",
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Treating every Massachusetts Schedule VI drug as federally controlled is incorrect.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES",
+              "MA-SCHEDULE-VI"
+            ]
+          },
+          {
+            "text": "Treating the schedule label as a complete answer to refill, transfer, or reporting questions skips the operative rule.",
+            "rule_ids": [
+              "FED-CS-SCHEDULES",
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0009"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CS-SCHEDULES",
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR Part 1308",
+              "section": "1308.11-1308.15",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "105 CMR 700",
+              "section": "700.002(A)-(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+            }
+          ],
+          "rule_summary": "Federal controlled-substance classifications are established in 21 CFR Part 1308; drug-specific questions must cite the exact applicable schedule section rather than an undifferentiated omnibus reference.",
+          "exceptions": [
+            "Massachusetts Schedule VI includes prescription drugs not placed in another Massachusetts schedule and can add state-specific consequences without changing federal status."
+          ],
+          "canonical_path": "data/rules/fed-controlled-schedules.json",
+          "canonical_blob": "d110c2e544f1f7160e050b3155e1af5ab5f4e13f"
+        },
+        {
+          "rule_id": "MA-SCHEDULE-VI",
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Schedule VI prescription-drug status",
+              "section": "105 CMR 700.002(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+            }
+          ],
+          "rule_summary": "Massachusetts Schedule VI includes prescription drugs not otherwise placed in Schedules I through V; Schedule VI status does not itself make a drug federally controlled or routinely MassPAT-reportable.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-schedule-vi.json",
+          "canonical_blob": "f15f027b8ff88e2cec90d588ab5611fe6c4aa07b"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0009",
+          "question_hash": "e85f485729b440b2b5b7308d15a772beb98b4c14e952c4a098c63d5fe9d5ece8",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0009.json",
+          "canonical_blob": "cc71b08d3fc3f252ef5904ac63b43d225ae289b4"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-CII-LIFECYCLE",
+      "content_version": 1,
+      "content_hash": "6f21ee9a78f16468b5cff9466a76305f751b9d6b47f4fd43ac367a2dbeee792a",
+      "canonical_path": "data/study_guide/sections/sg-cii-lifecycle.json",
+      "canonical_blob": "cb6523954e10db9b73e8e3479e3156b637f88505",
+      "full_prose_under_review": {
+        "section_id": "SG-CII-LIFECYCLE",
+        "content_version": 1,
+        "content_hash": "6f21ee9a78f16468b5cff9466a76305f751b9d6b47f4fd43ac367a2dbeee792a",
+        "title": "Schedule II Prescriptions, Emergency Oral Orders, and Partial Fills",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Controlled prescriptions",
+        "subtopic": "Schedule II lifecycle",
+        "learning_objectives": [
+          "Distinguish a prohibited refill from a lawful remainder of a partial fill.",
+          "Choose the correct deadline by identifying why and under which pathway a Schedule II prescription was partially filled.",
+          "Apply the emergency oral quantity and follow-up requirements as separate conditions."
+        ],
+        "rule_ids": [
+          "FED-CII-NO-REFILL",
+          "FED-CII-EMERGENCY-ORAL",
+          "FED-CII-EMERGENCY-FOLLOWUP",
+          "FED-CII-PARTIAL-72H",
+          "FED-CII-PARTIAL-PATIENT",
+          "MA-CII-VALIDITY-30D",
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CII-NO-REFILL": {
+            "content_version": 1,
+            "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+          },
+          "FED-CII-EMERGENCY-ORAL": {
+            "content_version": 1,
+            "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103"
+          },
+          "FED-CII-EMERGENCY-FOLLOWUP": {
+            "content_version": 1,
+            "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe"
+          },
+          "FED-CII-PARTIAL-72H": {
+            "content_version": 1,
+            "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad"
+          },
+          "FED-CII-PARTIAL-PATIENT": {
+            "content_version": 1,
+            "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+          },
+          "MA-CII-VALIDITY-30D": {
+            "content_version": 1,
+            "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+          },
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+            "content_version": 1,
+            "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "A Schedule II prescription may not be refilled; a lawful unfilled remainder is not a refill.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL"
+            ]
+          },
+          {
+            "text": "Emergency oral Schedule II dispensing is limited to the quantity necessary for the emergency period after immediate communication and reasonable prescriber identification.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-ORAL"
+            ]
+          },
+          {
+            "text": "The prescriber must deliver the required written or electronic follow-up prescription within seven days after authorizing the emergency oral dispensing.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "text": "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after issue.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "The original Schedule II quantity was fully dispensed.",
+            "action": "Do not process an additional dispensing as a refill; require a new lawful prescription unless another distinct pathway applies.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL"
+            ]
+          },
+          {
+            "condition": "The pharmacy could not supply the full Schedule II quantity.",
+            "action": "Use the federal stock-shortage partial-fill pathway and its 72-hour remainder rule.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H"
+            ]
+          },
+          {
+            "condition": "The patient or prescriber requested a Schedule II partial fill and state law permits it.",
+            "action": "Use the patient-request pathway and complete any remainder within the applicable 30-day boundary.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "condition": "A Massachusetts patient requests a lesser quantity.",
+            "action": "Record the partial fill, keep later remainder dispensing at the same pharmacy, and apply the Massachusetts issue-date deadlines.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "Federal patient-requested partial filling operates only where state law permits; Massachusetts adds same-pharmacy, patient-record, and issue-date conditions.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "The 72-hour remainder rule is tied to the pharmacy's inability to supply the full quantity and should not be substituted for a patient-requested partial-fill pathway.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Massachusetts' five-day initial partial-dispensing limit in this statute applies to prescriptions filled under the specified out-of-state Schedule II subsections, not every patient-requested partial fill.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Emergency oral Schedule II follow-up",
+            "timeframe": "Within 7 days after oral authorization",
+            "consequence": "The required written or electronic follow-up must reach the pharmacy.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          },
+          {
+            "event": "Stock-shortage Schedule II remainder",
+            "timeframe": "Within 72 hours",
+            "consequence": "Otherwise notify the prescriber and obtain a new prescription for further quantity.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H"
+            ]
+          },
+          {
+            "event": "Patient-requested Schedule II remainder",
+            "timeframe": "No later than 30 days after issue",
+            "consequence": "The remaining portion cannot be dispensed after the deadline.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "event": "Massachusetts written or electronic Schedule II validity",
+            "timeframe": "30 days after issue",
+            "consequence": "The prescription becomes invalid.",
+            "rule_ids": [
+              "MA-CII-VALIDITY-30D"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "Massachusetts requires a notation of each partial dispensing and quantity in the pharmacy patient record, accessible to the prescriber on request.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Identify the factual trigger for a partial fill before selecting a deadline.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "role": "Prescriber",
+            "duty": "Deliver the required emergency oral Schedule II follow-up prescription within seven days.",
+            "rule_ids": [
+              "FED-CII-EMERGENCY-FOLLOWUP"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Calling every later Schedule II dispensing a refill erases the lawful partial-fill remainder distinction.",
+            "rule_ids": [
+              "FED-CII-NO-REFILL",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Choosing 72 hours whenever a Schedule II prescription is partial ignores who requested the partial fill and why.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-72H",
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0011",
+          "MA-Q-0012",
+          "MA-Q-0021",
+          "MA-Q-0094",
+          "MA-Q-0104",
+          "MA-Q-0401"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-NO-REFILL",
+          "content_version": 1,
+          "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Schedule II prescriptions may not be refilled",
+              "section": "21 CFR 1306.12(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
+            }
+          ],
+          "rule_summary": "Federal law prohibits refilling a Schedule II prescription; additional dispensing requires a new lawful prescription or a permitted remainder of a partial fill.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-no-refill.json",
+          "canonical_blob": "6aaa8b2178dfb52e15440aabb7fc73086980e69f"
+        },
+        {
+          "rule_id": "FED-CII-EMERGENCY-ORAL",
+          "content_version": 1,
+          "content_hash": "1c6fde6445865c7e578a5e90da1c145330b883907bf4e75b88acb72571d18103",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Emergency oral Schedule II prescription requirements",
+              "section": "21 CFR 1306.11(d)(1)-(4)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "In a defined emergency, a pharmacist may dispense an oral Schedule II prescription only in the quantity necessary for the emergency period after immediate communication with and reasonable identification of the prescriber.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-oral.json",
+          "canonical_blob": "cfafa97095ce8b98fcf605e0e1c4c1282c78c887"
+        },
+        {
+          "rule_id": "FED-CII-EMERGENCY-FOLLOWUP",
+          "content_version": 1,
+          "content_hash": "d659cf088b81393781674d30fe0dc73f13b6cae1c805353d524d8fc692cb41fe",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Follow-up after emergency oral Schedule II dispensing",
+              "section": "21 CFR 1306.11(d)(4)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11"
+            }
+          ],
+          "rule_summary": "The prescriber must deliver the required written or electronic follow-up Schedule II prescription to the pharmacy within seven days after authorizing emergency oral dispensing.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-emergency-followup.json",
+          "canonical_blob": "ed1a3d1fb7eaacf6086f1c31862fd43b4b1db728"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-72H",
+          "content_version": 1,
+          "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Schedule II partial fill caused by pharmacy inability",
+              "section": "21 CFR 1306.13(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "When a Schedule II prescription is partially filled because the pharmacy cannot supply the full quantity, the remaining portion must generally be supplied within 72 hours or the pharmacist must notify the prescriber and obtain a new prescription for further quantity.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-72h.json",
+          "canonical_blob": "735d7c0568b4e31b225f1c22638407fa23250b0e"
+        },
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Patient-requested Schedule II partial fill",
+              "section": "21 CFR 1306.13(b)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "A Schedule II prescription may be partially filled at the patient or prescriber request when state law permits, with the remaining portion dispensed no later than 30 days after the prescription was written unless a shorter applicable limit controls.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-patient.json",
+          "canonical_blob": "72bb9b5836a8dd48ac2999e382e07f3ae33ce959"
+        },
+        {
+          "rule_id": "MA-CII-VALIDITY-30D",
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts Schedule II prescription validity",
+              "section": "M.G.L. c. 94C, § 23(a)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
+            }
+          ],
+          "rule_summary": "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after its issue date.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-cii-validity-30d.json",
+          "canonical_blob": "c572b5cc971d78a53013bb7c24f181c30e389afc"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-20",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d) and s. 18(d1/2)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ],
+          "rule_summary": "Under M.G.L. c. 94C, s. 18(d3/4) a pharmacist filling a Schedule II prescription SHALL, if requested by the patient, dispense a lesser quantity; ONLY THE SAME PHARMACY that dispensed the lesser quantity may dispense the remaining portion; a notation of the partial fill and quantity goes in the patient record, accessible to the prescriber on request; and the remaining portion MUST BE FILLED NOT LATER THAN 30 DAYS AFTER THE PRESCRIPTION ISSUE DATE. The separate FIVE-DAY limit on the INITIAL partial dispensing applies only to a prescription FILLED PURSUANT TO SUBSECTION (d) OR (d1/2) -- respectively a nonnarcotic Schedule II prescription issued by an out-of-state practitioner, and a narcotic Schedule II prescription issued by a practitioner registered in Maine or a state contiguous with the commonwealth.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-cii-partial-fill-pathway-limits.json",
+          "canonical_blob": "638eb9642d75e2cf4a866034f60c75ec1fc6f5b6"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0011",
+          "question_hash": "ebe1d835c312f6005f85c60c457f5e6ffe57f0dc0af24ddb78418ceb67a15afe",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0011.json",
+          "canonical_blob": "a4a0b5116724bb9d03dfa6063138a14d9d10cd89"
+        },
+        {
+          "question_id": "MA-Q-0012",
+          "question_hash": "218f8940f7ffbc3671f6a49499105caa44ed9a2fe4ec4b84c3289b2253b3f81d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0012.json",
+          "canonical_blob": "b64fee88c2963adb994fb9a0703df0ccfbd0b079"
+        },
+        {
+          "question_id": "MA-Q-0021",
+          "question_hash": "6b63f495f16e1ecee7b1dea3900ada1d8fa4d1206677d40a1321fefde6cc775a",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0021.json",
+          "canonical_blob": "ed5e7c0b5c5962aae853ab6f40f7d48ad2e6cd89"
+        },
+        {
+          "question_id": "MA-Q-0094",
+          "question_hash": "c4aa86b07636293511ec5747c9d7c612f4e87ac506355cba1320b51b47a0efc2",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0094.json",
+          "canonical_blob": "9f58a9c067e22f79311312d961a495ecfedf4852"
+        },
+        {
+          "question_id": "MA-Q-0104",
+          "question_hash": "48b7db5158e12cd458f7a1c7efc3d628eeffac0f02b1f11185a4d70f43b0e1f3",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0104.json",
+          "canonical_blob": "be5a5dac9dbeb8f8bd2a78a1276dcf88195a771a"
+        },
+        {
+          "question_id": "MA-Q-0401",
+          "question_hash": "bff4c9ae13a2b123c3214de18d5bf275b533662670771ea910baa72e5bf1811d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0401.json",
+          "canonical_blob": "934b3607aca3e10eafd5a6c047e3858d2363b550"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-CIII-V-REFILL-TRANSFER",
+      "content_version": 1,
+      "content_hash": "54432524e5e4b2da1459dc3ed4f0c95e4fb8e25132dc456b53dfee13eaf7d3df",
+      "canonical_path": "data/study_guide/sections/sg-ciii-v-refill-transfer.json",
+      "canonical_blob": "480f602cc5ed27de826771176fba928ef94e3f10",
+      "full_prose_under_review": {
+        "section_id": "SG-CIII-V-REFILL-TRANSFER",
+        "content_version": 1,
+        "content_hash": "54432524e5e4b2da1459dc3ed4f0c95e4fb8e25132dc456b53dfee13eaf7d3df",
+        "title": "Schedule III-V Refills and Massachusetts Transfers",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Controlled prescription dispensing",
+        "subtopic": "Refill and transfer limits",
+        "learning_objectives": [
+          "Apply both the issue-date clock and refill-count limit to Schedule III and IV prescriptions.",
+          "Separate transfer eligibility from the prescription's remaining lawful refill capacity.",
+          "Recognize the special Massachusetts treatment of Schedule VI transfers."
+        ],
+        "rule_ids": [
+          "FED-CS-REFILL-III-IV",
+          "MA-RX-CV-REFILL",
+          "MA-RX-TRANSFER",
+          "MA-ORAL-III-V-FOLLOWUP"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CS-REFILL-III-IV": {
+            "content_version": 1,
+            "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+          },
+          "MA-RX-CV-REFILL": {
+            "content_version": 1,
+            "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+          },
+          "MA-RX-TRANSFER": {
+            "content_version": 2,
+            "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+          },
+          "MA-ORAL-III-V-FOLLOWUP": {
+            "content_version": 1,
+            "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "Federal law limits Schedule III and IV prescriptions to five refills and six months after the issue date unless renewed by the practitioner.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV"
+            ]
+          },
+          {
+            "text": "Massachusetts Schedule V prescriptions likewise may not be refilled more than five times or later than six months after issue.",
+            "rule_ids": [
+              "MA-RX-CV-REFILL"
+            ]
+          },
+          {
+            "text": "Massachusetts requires a timely patient-requested transfer, prohibits a transfer fee, and permits a pharmacy to act as the patient's agent to obtain the transfer.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A Schedule III or IV refill is requested.",
+            "action": "Check both elapsed time from issue and the number of prior refills; either exhausted limit blocks the refill.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV"
+            ]
+          },
+          {
+            "condition": "A Massachusetts Schedule V refill is requested.",
+            "action": "Apply the five-refill and six-month limits independently.",
+            "rule_ids": [
+              "MA-RX-CV-REFILL"
+            ]
+          },
+          {
+            "condition": "A patient or authorized agent requests a Massachusetts prescription transfer.",
+            "action": "Transfer remaining authorized refills timely without charging a transfer fee, subject to the prescription-specific limits.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          },
+          {
+            "condition": "An out-of-state practitioner issues an oral Schedule III-V prescription through the Massachusetts pathway.",
+            "action": "Record the request for written follow-up within seven days or any shorter federal period.",
+            "rule_ids": [
+              "MA-ORAL-III-V-FOLLOWUP"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "For Schedule III and IV refills, the federal five-refill and six-month limits remain operative when Massachusetts transfer rules are applied.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-TRANSFER"
+            ]
+          },
+          {
+            "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions, but a Schedule VI prescription may not be transferred more than one year after issue.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "A transfer does not create new refill authority or restart an issue-date clock.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL",
+              "MA-RX-TRANSFER"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Schedule III-IV refill window",
+            "timeframe": "Within 6 months after issue",
+            "consequence": "No further fill or refill after the federal time limit without practitioner renewal.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV"
+            ]
+          },
+          {
+            "event": "Massachusetts Schedule V refill window",
+            "timeframe": "Within 6 months after issue",
+            "consequence": "No refill after the state time limit or after five refills.",
+            "rule_ids": [
+              "MA-RX-CV-REFILL"
+            ]
+          },
+          {
+            "event": "Massachusetts Schedule VI transfer",
+            "timeframe": "Not more than 1 year after issue",
+            "consequence": "The prescription may not be transferred after that point.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          },
+          {
+            "event": "Out-of-state oral Schedule III-V follow-up request",
+            "timeframe": "Within 7 days or shorter federal period",
+            "consequence": "The pharmacist records requesting written follow-up.",
+            "rule_ids": [
+              "MA-ORAL-III-V-FOLLOWUP"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "The out-of-state oral Schedule III-V pathway requires the pharmacist to record the follow-up request.",
+            "rule_ids": [
+              "MA-ORAL-III-V-FOLLOWUP"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Receiving pharmacy",
+            "duty": "Obtain the patient-requested transfer and preserve the remaining lawful refill limits.",
+            "rule_ids": [
+              "MA-RX-TRANSFER",
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Starting a six-month clock at the first dispensing rather than the issue date gives the prescription excess life.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          },
+          {
+            "text": "Assuming a transfer renews or expands refill authority confuses movement of a prescription with creation of a new prescription.",
+            "rule_ids": [
+              "MA-RX-TRANSFER",
+              "FED-CS-REFILL-III-IV"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0009",
+          "MA-Q-0099",
+          "MA-Q-0120",
+          "MA-Q-0124",
+          "MA-Q-0397"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CS-REFILL-III-IV",
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR 1306.22",
+              "section": "1306.22(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+            }
+          ],
+          "rule_summary": "A Schedule III or IV prescription may not be filled or refilled more than six months after its issue date and may not be refilled more than five times unless renewed by the practitioner.",
+          "exceptions": [],
+          "canonical_path": "data/rules/fed-ciii-civ-refill.json",
+          "canonical_blob": "6610c2a0153c252cefbee4e834a9fdf4f3cf6c06"
+        },
+        {
+          "rule_id": "MA-RX-CV-REFILL",
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "247 CMR 9: Professional Practice Standards",
+              "section": "9.04(13)",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            }
+          ],
+          "rule_summary": "A Massachusetts Schedule V prescription may not be refilled more than five times or later than six months after the prescription was issued.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-cv-refill.json",
+          "canonical_blob": "a1bcd7e98fa415d8fe047260530463494b5e94d5"
+        },
+        {
+          "rule_id": "MA-RX-TRANSFER",
+          "content_version": 2,
+          "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts transfer of prescriptions",
+              "section": "247 CMR 9.14",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Certified pharmacy technician Schedule VI transfer scope",
+              "section": "247 CMR 8.04(4)(d)",
+              "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+            }
+          ],
+          "rule_summary": "Under current 247 CMR 9.14, a pharmacy must timely transfer a prescription at the request of the patient or authorized agent, may act as the patient's agent to obtain the transfer, and may not charge a transfer fee. Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions; remaining authorized refills may be transferred, but a Schedule VI prescription may not be transferred more than one year after issuance. Under 247 CMR 8.04, a certified pharmacy technician may perform a Schedule VI transfer with approval of the pharmacist on duty.",
+          "exceptions": [
+            "Schedule-specific federal requirements may add restrictions for federally controlled prescriptions; do not automatically import those mechanics into a Massachusetts Schedule VI transfer."
+          ],
+          "canonical_path": "data/rules/ma-rx-transfer.json",
+          "canonical_blob": "98b999866526745ef8b06a6ca29b34e82fa19a9d"
+        },
+        {
+          "rule_id": "MA-ORAL-III-V-FOLLOWUP",
+          "content_version": 1,
+          "content_hash": "0c28e260b15915b3c85a6ff7f428a09f8f02b054f3f4c3e32606847592cf6ad0",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts oral Schedule III through V follow-up request",
+              "section": "M.G.L. c. 94C, § 18(c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ],
+          "rule_summary": "For an oral Schedule III through V prescription issued under the out-of-state pathway, the pharmacist records requesting a written prescription within seven days or the shorter federal period.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-oral-iii-v-followup.json",
+          "canonical_blob": "abab039fdd1c5f6bd591d48213fbe6747c26b05c"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0009",
+          "question_hash": "e85f485729b440b2b5b7308d15a772beb98b4c14e952c4a098c63d5fe9d5ece8",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0009.json",
+          "canonical_blob": "cc71b08d3fc3f252ef5904ac63b43d225ae289b4"
+        },
+        {
+          "question_id": "MA-Q-0099",
+          "question_hash": "f6e84564a81a340f979e52ceab52a8a67285e4aa8c55e5b015c4b02a681bb6b9",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0099.json",
+          "canonical_blob": "21ceebc41bcb642bb5c637c698328fea02a73221"
+        },
+        {
+          "question_id": "MA-Q-0120",
+          "question_hash": "67565e6e874baf3c5981573f0856de87347b50ff66d9e910c0e6ec8c9c32b7d5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0120.json",
+          "canonical_blob": "316ec2c6f1a6601b3ed4a4492cc4feb02b296472"
+        },
+        {
+          "question_id": "MA-Q-0124",
+          "question_hash": "5217dd1ef061f4edbb59ec691ef18603228f41caec1f144f6dbdb438b1b3f714",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0124.json",
+          "canonical_blob": "599ffa0b3c4ca248f48f9cf6aa951a4316330cb2"
+        },
+        {
+          "question_id": "MA-Q-0397",
+          "question_hash": "bc197ca3617e7bb10e510dcf7d6403d88d997429aff55895fd26c7b137d6ea28",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0397.json",
+          "canonical_blob": "67185bab7717c02519d6424f6161677adc39832d"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-MA-SCHEDULE-VI",
+      "content_version": 1,
+      "content_hash": "37d132362f737053cae6a9f9fefdbcbfde8a9cac7d915ce9c607d63791090c38",
+      "canonical_path": "data/study_guide/sections/sg-ma-schedule-vi.json",
+      "canonical_blob": "54856018bf2cf47e54882eb6040c0f116479f8d2",
+      "full_prose_under_review": {
+        "section_id": "SG-MA-SCHEDULE-VI",
+        "content_version": 1,
+        "content_hash": "37d132362f737053cae6a9f9fefdbcbfde8a9cac7d915ce9c607d63791090c38",
+        "title": "Massachusetts Schedule VI",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Controlled substance classification",
+        "subtopic": "Schedule VI prescription lifecycle",
+        "learning_objectives": [
+          "Recognize Schedule VI as a Massachusetts prescription-drug classification rather than a federal controlled schedule.",
+          "Apply Massachusetts prescription elements, oral documentation, electronic-prescribing exceptions, and transfer rules without inventing federal consequences."
+        ],
+        "rule_ids": [
+          "MA-SCHEDULE-VI",
+          "MA-CONTROLLED-EPRESCRIBE",
+          "MA-ORAL-CONTROLLED-DOCUMENTATION",
+          "MA-RX-REQUIRED-ELEMENTS",
+          "MA-RX-TRANSFER"
+        ],
+        "verified_rule_dependencies": {
+          "MA-SCHEDULE-VI": {
+            "content_version": 1,
+            "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+          },
+          "MA-CONTROLLED-EPRESCRIBE": {
+            "content_version": 2,
+            "content_hash": "3f041439027702fc2a8f1e55c8d6e208aafdd028934e2453afac42e4d1a7a224"
+          },
+          "MA-ORAL-CONTROLLED-DOCUMENTATION": {
+            "content_version": 1,
+            "content_hash": "16354be2ce556e706e3c1761b9ba185f753c94d8eb906408b7c8b27f6732ec36"
+          },
+          "MA-RX-REQUIRED-ELEMENTS": {
+            "content_version": 1,
+            "content_hash": "1dbe29f655fd1e170779917c9605ac8146e4ffaed06ee651b389d35fc1cbd266"
+          },
+          "MA-RX-TRANSFER": {
+            "content_version": 2,
+            "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "Massachusetts Schedule VI includes prescription drugs not otherwise placed in Massachusetts Schedules I through V.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          },
+          {
+            "text": "Schedule VI prescriptions are excepted from the Massachusetts electronic-prescribing requirement, while all other validity requirements remain applicable.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE"
+            ]
+          },
+          {
+            "text": "An oral controlled-substance prescription must be reduced to writing immediately with the required information; the later documentation provision identified in this rule does not apply to Schedule VI.",
+            "rule_ids": [
+              "MA-ORAL-CONTROLLED-DOCUMENTATION"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A prescription drug is not in Massachusetts Schedules I-V.",
+            "action": "Classify it under Schedule VI, then identify the separate rule governing validity, documentation, dispensing, or transfer.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          },
+          {
+            "condition": "A Schedule VI prescription is written or oral rather than electronic.",
+            "action": "Do not reject it solely for that format; apply the Schedule VI electronic-prescribing exception and all remaining prescription requirements.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE",
+              "MA-RX-REQUIRED-ELEMENTS",
+              "MA-ORAL-CONTROLLED-DOCUMENTATION"
+            ]
+          },
+          {
+            "condition": "A patient requests transfer of a Schedule VI prescription with authorized refills remaining.",
+            "action": "Use the Massachusetts transfer pathway and the one-year transfer boundary.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "Schedule VI is a Massachusetts classification and does not itself make a drug federally controlled.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "The Schedule VI electronic-prescribing exception removes that format mandate, not the required prescription elements or oral documentation duties.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE",
+              "MA-RX-REQUIRED-ELEMENTS",
+              "MA-ORAL-CONTROLLED-DOCUMENTATION"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Massachusetts Schedule VI transfer",
+            "timeframe": "Not more than 1 year after issue",
+            "consequence": "The prescription may not be transferred after the statutory transfer window.",
+            "rule_ids": [
+              "MA-RX-TRANSFER"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "The pharmacist must immediately reduce an oral controlled-substance prescription to writing with the required Massachusetts prescription information.",
+            "rule_ids": [
+              "MA-ORAL-CONTROLLED-DOCUMENTATION",
+              "MA-RX-REQUIRED-ELEMENTS"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Validate required prescription elements even when the Schedule VI electronic-prescribing exception applies.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE",
+              "MA-RX-REQUIRED-ELEMENTS"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Reading the electronic-prescribing exception as an exemption from all prescription validity requirements is incorrect.",
+            "rule_ids": [
+              "MA-CONTROLLED-EPRESCRIBE",
+              "MA-RX-REQUIRED-ELEMENTS"
+            ]
+          },
+          {
+            "text": "Treating Schedule VI as a federal schedule creates legal consequences that the Massachusetts classification does not supply.",
+            "rule_ids": [
+              "MA-SCHEDULE-VI"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0097",
+          "MA-Q-0116",
+          "MA-Q-0118",
+          "MA-Q-0120"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "MA-SCHEDULE-VI",
+          "content_version": 1,
+          "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts Schedule VI prescription-drug status",
+              "section": "105 CMR 700.002(F)",
+              "url": "https://www.mass.gov/doc/105-cmr-700-implementation-of-mgl-c94c-0/download"
+            }
+          ],
+          "rule_summary": "Massachusetts Schedule VI includes prescription drugs not otherwise placed in Schedules I through V; Schedule VI status does not itself make a drug federally controlled or routinely MassPAT-reportable.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-schedule-vi.json",
+          "canonical_blob": "f15f027b8ff88e2cec90d588ab5611fe6c4aa07b"
+        },
+        {
+          "rule_id": "MA-CONTROLLED-EPRESCRIBE",
+          "content_version": 2,
+          "content_hash": "3f041439027702fc2a8f1e55c8d6e208aafdd028934e2453afac42e4d1a7a224",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Standards for prescription format and security in Massachusetts",
+              "section": "105 CMR 721.070(A), (C)",
+              "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download"
+            },
+            {
+              "type": "OFFICIAL_GUIDANCE",
+              "name": "DCP Electronic Prescribing and Dispensing Manual",
+              "section": "DCP 19-12-108; pharmacist exception verification",
+              "url": "https://www.mass.gov/circular-letter/circular-dcp-19-12-108-electronic-prescribing-and-dispensing-manual"
+            }
+          ],
+          "rule_summary": "Massachusetts generally requires covered prescriptions to be issued electronically subject to 105 CMR 721.070 exceptions and waivers. Schedule VI prescriptions are excepted from the state electronic-prescribing requirement under 105 CMR 721.070(A)(9). Under 105 CMR 721.070(C), a pharmacist who receives an otherwise valid written or oral prescription is not required to verify that the prescription properly falls within an electronic-prescribing exception or waiver; all other prescription and controlled-substance requirements still apply.",
+          "exceptions": [
+            "Schedule VI prescriptions are excepted from the Massachusetts electronic-prescribing requirement under 105 CMR 721.070(A)(9).",
+            "Other enumerated exceptions and waivers may permit a covered prescription to be issued in written or oral form."
+          ],
+          "canonical_path": "data/rules/ma-controlled-eprescribe.json",
+          "canonical_blob": "456631997966d327d66005578a770e1f0a85e8bd"
+        },
+        {
+          "rule_id": "MA-ORAL-CONTROLLED-DOCUMENTATION",
+          "content_version": 1,
+          "content_hash": "16354be2ce556e706e3c1761b9ba185f753c94d8eb906408b7c8b27f6732ec36",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws c. 94C",
+              "section": "§ 20(a)-(c)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section20"
+            }
+          ],
+          "rule_summary": "On receiving an oral prescription for a controlled substance, the pharmacist must immediately reduce it to writing with the information required by M.G.L. c. 94C §20 and make a reasonable effort to authenticate an unfamiliar prescriber; the subsection requiring later electronic or written documentation expressly does not apply to Schedule VI.",
+          "exceptions": [
+            "The follow-up prescription requirement in §20(c) does not apply to Schedule VI, but immediate reduction to writing and validity duties still apply."
+          ],
+          "canonical_path": "data/rules/ma-oral-controlled-documentation.json",
+          "canonical_blob": "dfa2538a8ae71dd122b2dc90b1ed554e0b80a905"
+        },
+        {
+          "rule_id": "MA-RX-REQUIRED-ELEMENTS",
+          "content_version": 1,
+          "content_hash": "1dbe29f655fd1e170779917c9605ac8146e4ffaed06ee651b389d35fc1cbd266",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts controlled-prescription required elements",
+              "section": "M.G.L. c. 94C, § 22(a)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22"
+            }
+          ],
+          "rule_summary": "A controlled-substance prescription must include the practitioner, patient, drug, strength, directions, date, registration, cautionary, and refill information required by Massachusetts law.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/ma-rx-required-elements.json",
+          "canonical_blob": "ee17d618ab3c45c10681484ee98b20703db16ba5"
+        },
+        {
+          "rule_id": "MA-RX-TRANSFER",
+          "content_version": 2,
+          "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-14",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Massachusetts transfer of prescriptions",
+              "section": "247 CMR 9.14",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            },
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "Certified pharmacy technician Schedule VI transfer scope",
+              "section": "247 CMR 8.04(4)(d)",
+              "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
+            }
+          ],
+          "rule_summary": "Under current 247 CMR 9.14, a pharmacy must timely transfer a prescription at the request of the patient or authorized agent, may act as the patient's agent to obtain the transfer, and may not charge a transfer fee. Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions; remaining authorized refills may be transferred, but a Schedule VI prescription may not be transferred more than one year after issuance. Under 247 CMR 8.04, a certified pharmacy technician may perform a Schedule VI transfer with approval of the pharmacist on duty.",
+          "exceptions": [
+            "Schedule-specific federal requirements may add restrictions for federally controlled prescriptions; do not automatically import those mechanics into a Massachusetts Schedule VI transfer."
+          ],
+          "canonical_path": "data/rules/ma-rx-transfer.json",
+          "canonical_blob": "98b999866526745ef8b06a6ca29b34e82fa19a9d"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0097",
+          "question_hash": "fb02d9a8b7d75062c7ff2341cdfc5b0f69bda5716ce555631f9f96234a0fa1d8",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0097.json",
+          "canonical_blob": "e8cccec79ecfbcaa8ba0583ac8cafc2d7123122f"
+        },
+        {
+          "question_id": "MA-Q-0116",
+          "question_hash": "b0aeafe5720ad589dda2bbe40d4ff52dc6798a77522bfc515ab6c452f8ce093b",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0116.json",
+          "canonical_blob": "69455078c10b0073a8e96c95ac6fff1e71b1d6fd"
+        },
+        {
+          "question_id": "MA-Q-0118",
+          "question_hash": "82a7f27839b559180d40710e3a82f32085fd50b4f57c3a3aca329c099a41d3ed",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0118.json",
+          "canonical_blob": "d4d4a16cf85e54bc27c7419e90caa3384cb80512"
+        },
+        {
+          "question_id": "MA-Q-0120",
+          "question_hash": "67565e6e874baf3c5981573f0856de87347b50ff66d9e910c0e6ec8c9c32b7d5",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0120.json",
+          "canonical_blob": "316ec2c6f1a6601b3ed4a4492cc4feb02b296472"
+        }
+      ]
+    },
+    {
+      "section_id": "SG-FED-MA-INTERACTION",
+      "content_version": 1,
+      "content_hash": "842a9a03713a79a3b32c49f2510fd29887fff011f2a10d776a4cdb739807bdad",
+      "canonical_path": "data/study_guide/sections/sg-fed-ma-interaction.json",
+      "canonical_blob": "9b4aac314c7c616b5c603f5909a4c69700d5c1e8",
+      "full_prose_under_review": {
+        "section_id": "SG-FED-MA-INTERACTION",
+        "content_version": 1,
+        "content_hash": "842a9a03713a79a3b32c49f2510fd29887fff011f2a10d776a4cdb739807bdad",
+        "title": "Federal and Massachusetts Rule Interaction",
+        "areas": [
+          2,
+          3
+        ],
+        "topic": "Federal and state interaction",
+        "subtopic": "Layered controlled-prescription analysis",
+        "learning_objectives": [
+          "Solve a federal-state interaction by identifying the same actor, event, and prescription pathway under both sources.",
+          "Avoid selecting a familiar federal limit before checking Massachusetts conditions that also govern the transaction."
+        ],
+        "rule_ids": [
+          "FED-CII-PARTIAL-PATIENT",
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "FED-CS-REFILL-III-IV",
+          "MA-RX-CV-REFILL"
+        ],
+        "verified_rule_dependencies": {
+          "FED-CII-PARTIAL-PATIENT": {
+            "content_version": 1,
+            "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6"
+          },
+          "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS": {
+            "content_version": 1,
+            "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607"
+          },
+          "FED-CS-REFILL-III-IV": {
+            "content_version": 1,
+            "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+          },
+          "MA-RX-CV-REFILL": {
+            "content_version": 1,
+            "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+          }
+        },
+        "quick_review": [
+          {
+            "text": "Federal patient-requested Schedule II partial filling is conditioned on state law permitting the partial fill.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT"
+            ]
+          },
+          {
+            "text": "Massachusetts supplies same-pharmacy, record, and issue-date requirements for its patient-requested Schedule II pathway.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "Federal Schedule III-IV and Massachusetts Schedule V refill rules each use both a five-refill limit and a six-month issue-date limit for their respective schedules.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "decision_logic": [
+          {
+            "condition": "A transaction is governed by both federal and Massachusetts controlled-substance law.",
+            "action": "Define the drug schedule, actor, trigger, and pathway first; then apply every rule whose scope actually reaches those facts.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          },
+          {
+            "condition": "Federal law permits a patient-requested Schedule II partial fill where state law allows it.",
+            "action": "Continue to the Massachusetts conditions instead of stopping at federal permission.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "condition": "A refill question names Schedule III, IV, or Massachusetts Schedule V.",
+            "action": "Choose the rule with the correct schedule scope and check both count and issue-date limits.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "ma_vs_federal": [
+          {
+            "text": "Federal permission for a patient-requested Schedule II partial fill does not displace Massachusetts' same-pharmacy and recordkeeping conditions.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "The similar five-refill and six-month formulations for Schedule III-IV and Massachusetts Schedule V must still be matched to the correct schedule scope.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "exceptions": [
+          {
+            "text": "A nearby rule with a familiar number is not controlling unless its actor, schedule, and triggering facts match the transaction.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "timing_deadlines": [
+          {
+            "event": "Patient-requested Schedule II remainder",
+            "timeframe": "No later than 30 days after issue",
+            "consequence": "Both federal and Massachusetts pathway limits must be satisfied.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "event": "Schedule III-IV or Massachusetts Schedule V refill",
+            "timeframe": "Within 6 months after issue",
+            "consequence": "The applicable five-refill limit must also remain unexhausted.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "forms_records": [
+          {
+            "text": "The Massachusetts patient-requested Schedule II pathway requires a pharmacy patient-record notation for each partial dispensing and quantity.",
+            "rule_ids": [
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "role_duties": [
+          {
+            "role": "Pharmacist",
+            "duty": "Apply federal permission and Massachusetts conditions to the same defined transaction before reaching a conclusion.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          }
+        ],
+        "common_traps": [
+          {
+            "text": "Stopping after finding a permissive federal rule can omit a Massachusetts condition that still governs the dispensing.",
+            "rule_ids": [
+              "FED-CII-PARTIAL-PATIENT",
+              "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS"
+            ]
+          },
+          {
+            "text": "Transplanting a correct number from the wrong schedule produces a wrong result even when the number looks familiar.",
+            "rule_ids": [
+              "FED-CS-REFILL-III-IV",
+              "MA-RX-CV-REFILL"
+            ]
+          }
+        ],
+        "drug_examples": [],
+        "practice_question_ids": [
+          "MA-Q-0009",
+          "MA-Q-0021",
+          "MA-Q-0099",
+          "MA-Q-0401"
+        ],
+        "last_verified": null,
+        "verification_status": "AUDIT_PENDING",
+        "independent_audit_id": null
+      },
+      "rule_dependencies": [
+        {
+          "rule_id": "FED-CII-PARTIAL-PATIENT",
+          "content_version": 1,
+          "content_hash": "e909027c748cc5251d94d1e35f5eb866727b54bce17dd4c8e488816663c7fef6",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "Patient-requested Schedule II partial fill",
+              "section": "21 CFR 1306.13(b)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13"
+            }
+          ],
+          "rule_summary": "A Schedule II prescription may be partially filled at the patient or prescriber request when state law permits, with the remaining portion dispensed no later than 30 days after the prescription was written unless a shorter applicable limit controls.",
+          "exceptions": [
+            "Apply any narrower setting-specific, product-specific, or emergency exception before the general rule."
+          ],
+          "canonical_path": "data/rules/fed-cii-partial-patient.json",
+          "canonical_blob": "72bb9b5836a8dd48ac2999e382e07f3ae33ce959"
+        },
+        {
+          "rule_id": "MA-CII-PARTIAL-FILL-PATHWAY-LIMITS",
+          "content_version": 1,
+          "content_hash": "fbd71a11e8ecccb6ff28f41360581d654511a937f7215ff535d6dbc951919607",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-20",
+          "authority": [
+            {
+              "type": "STATUTE",
+              "name": "Massachusetts General Laws",
+              "section": "M.G.L. c. 94C, s. 18(d3/4), read with s. 18(d) and s. 18(d1/2)",
+              "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
+            }
+          ],
+          "rule_summary": "Under M.G.L. c. 94C, s. 18(d3/4) a pharmacist filling a Schedule II prescription SHALL, if requested by the patient, dispense a lesser quantity; ONLY THE SAME PHARMACY that dispensed the lesser quantity may dispense the remaining portion; a notation of the partial fill and quantity goes in the patient record, accessible to the prescriber on request; and the remaining portion MUST BE FILLED NOT LATER THAN 30 DAYS AFTER THE PRESCRIPTION ISSUE DATE. The separate FIVE-DAY limit on the INITIAL partial dispensing applies only to a prescription FILLED PURSUANT TO SUBSECTION (d) OR (d1/2) -- respectively a nonnarcotic Schedule II prescription issued by an out-of-state practitioner, and a narcotic Schedule II prescription issued by a practitioner registered in Maine or a state contiguous with the commonwealth.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-cii-partial-fill-pathway-limits.json",
+          "canonical_blob": "638eb9642d75e2cf4a866034f60c75ec1fc6f5b6"
+        },
+        {
+          "rule_id": "FED-CS-REFILL-III-IV",
+          "content_version": 1,
+          "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "FEDERAL_REGULATION",
+              "name": "21 CFR 1306.22",
+              "section": "1306.22(a)",
+              "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
+            }
+          ],
+          "rule_summary": "A Schedule III or IV prescription may not be filled or refilled more than six months after its issue date and may not be refilled more than five times unless renewed by the practitioner.",
+          "exceptions": [],
+          "canonical_path": "data/rules/fed-ciii-civ-refill.json",
+          "canonical_blob": "6610c2a0153c252cefbee4e834a9fdf4f3cf6c06"
+        },
+        {
+          "rule_id": "MA-RX-CV-REFILL",
+          "content_version": 1,
+          "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241",
+          "status": "CURRENT",
+          "verification_status": "PRIMARY_VERIFIED",
+          "last_verified": "2026-08-13",
+          "authority": [
+            {
+              "type": "PROMULGATED_REGULATION",
+              "name": "247 CMR 9: Professional Practice Standards",
+              "section": "9.04(13)",
+              "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+            }
+          ],
+          "rule_summary": "A Massachusetts Schedule V prescription may not be refilled more than five times or later than six months after the prescription was issued.",
+          "exceptions": [],
+          "canonical_path": "data/rules/ma-cv-refill.json",
+          "canonical_blob": "a1bcd7e98fa415d8fe047260530463494b5e94d5"
+        }
+      ],
+      "practice_question_dependencies": [
+        {
+          "question_id": "MA-Q-0009",
+          "question_hash": "e85f485729b440b2b5b7308d15a772beb98b4c14e952c4a098c63d5fe9d5ece8",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0009.json",
+          "canonical_blob": "cc71b08d3fc3f252ef5904ac63b43d225ae289b4"
+        },
+        {
+          "question_id": "MA-Q-0021",
+          "question_hash": "6b63f495f16e1ecee7b1dea3900ada1d8fa4d1206677d40a1321fefde6cc775a",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0021.json",
+          "canonical_blob": "ed5e7c0b5c5962aae853ab6f40f7d48ad2e6cd89"
+        },
+        {
+          "question_id": "MA-Q-0099",
+          "question_hash": "f6e84564a81a340f979e52ceab52a8a67285e4aa8c55e5b015c4b02a681bb6b9",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0099.json",
+          "canonical_blob": "21ceebc41bcb642bb5c637c698328fea02a73221"
+        },
+        {
+          "question_id": "MA-Q-0401",
+          "question_hash": "bff4c9ae13a2b123c3214de18d5bf275b533662670771ea910baa72e5bf1811d",
+          "verification_status": "RELEASED",
+          "lifecycle_status": "RELEASED",
+          "canonical_path": "data/questions/ma-q-0401.json",
+          "canonical_blob": "934b3607aca3e10eafd5a6c047e3858d2363b550"
+        }
+      ]
+    }
+  ]
+}

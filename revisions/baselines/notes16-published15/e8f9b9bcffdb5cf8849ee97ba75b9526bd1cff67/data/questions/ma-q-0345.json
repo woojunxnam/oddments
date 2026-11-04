@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0345",
+  "family_id": "CONTRACEPTION_NO_APPOINTMENT_CONDITION",
+  "area": 2,
+  "topic": "Pharmacist prescribing",
+  "subtopic": "Access conditions",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A busy Massachusetts pharmacy decides that patients wanting the pharmacist to prescribe a hormonal contraceptive must book a slot in advance so the pharmacist can plan her day. Walk-ins are told to come back at a booked time. Is that policy permissible?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Yes, because appointment scheduling is ordinary workflow management."
+    },
+    {
+      "id": "B",
+      "text": "Yes, provided the earliest available slot is within seven days."
+    },
+    {
+      "id": "C",
+      "text": "Yes, provided the pharmacy also offers a walk-in service one day a week."
+    },
+    {
+      "id": "D",
+      "text": "No, because the patient must instead be referred to a prescriber."
+    },
+    {
+      "id": "E",
+      "text": "No, because requiring an appointment for this service is prohibited."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "The rules adopted under M.G.L. c. 94C, s. 19F(b) must PROHIBIT a pharmacist from requiring a patient to schedule an appointment with the pharmacist for the prescribing or dispensing of a hormonal contraceptive patch or self-administered oral hormonal contraceptive. The prohibition is on requiring an appointment, however reasonable the operational motive.",
+    "choice_analysis": {
+      "A": "The statute removes this particular workflow tool for this service.",
+      "B": "No timeliness proviso rescues a requirement to book.",
+      "C": "A limited walk-in window does not cure a requirement imposed the rest of the week.",
+      "D": "Referral is not the answer; the service is the pharmacist's to provide.",
+      "E": "Correct: requiring an appointment is prohibited."
+    },
+    "related_facts": [
+      "A pharmacist may still offer an appointment the patient is free to decline"
+    ],
+    "mpje_trap": "Candidates weigh the operational reasonableness of the policy instead of applying an express prohibition."
+  },
+  "rule_ids": [
+    "MA-CONTRACEPTION-NO-APPOINTMENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the service as pharmacist prescribing of hormonal contraception",
+    "Read the express prohibition on requiring an appointment",
+    "Distinguish requiring an appointment from offering one"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CONTRACEPTION-NO-APPOINTMENT": {
+          "content_version": 1,
+          "content_hash": "0536f8a678563c062955fe196a3252b6eecf82fd6bea745cc3114e1fadf6bf9d"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

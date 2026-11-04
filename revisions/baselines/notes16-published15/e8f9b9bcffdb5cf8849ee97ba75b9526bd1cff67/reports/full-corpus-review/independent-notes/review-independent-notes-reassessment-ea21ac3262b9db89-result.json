@@ -1,0 +1,122 @@
+{
+  "stage": "independent-notes",
+  "job_id": "review-independent-notes-reassessment-ea21ac3262b9db89",
+  "independent_of_authors": true,
+  "actor_provenance": {
+    "actor_id": "/root/independent_case_b",
+    "session_id": "/root/independent_case_b"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "author_review_credit": 0,
+  "reviewed_at": "2026-11-04",
+  "worker_commit": "b775d34e75d360f0671b7ab735c5637029ea9ef6",
+  "unit_hashes": {
+    "w3-a-6": "be1b22496152be251114cd4245fbed4a2e987c8288fcb22f73c6707d388159fe"
+  },
+  "evidence": {
+    "path": "reports/full-corpus-review/independent-notes/census-v2-b-review.json",
+    "raw_sha256": "24eb377ce647bae79dcbccda48dd8f4c772dcbf3890648eb0124a826af539cc7"
+  },
+  "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-ea21ac3262b9db89-result.json",
+  "results": [
+    {
+      "unit_id": "w3-a-6",
+      "completeness": "COMPLETE",
+      "legal_status": "LEGAL_HOLD"
+    }
+  ],
+  "reassessment_review": {
+    "reassessment_id": "census-only-omission-v2-w3-a-6",
+    "record_sha256": "2f36838cc9da03423c830f6a35158158fb53e4d0cb4b378af5591972736bba7e",
+    "omission_resolutions": [
+      {
+        "omission_sha256": "2a66001e7f673dab4125277fe518a233e7bf797322a899404af57f1670454a48",
+        "claim_ids": [
+          "NOTE-CENSUS-V2-W3-A-6-ADD-001",
+          "NOTE-CENSUS-V2-W3-A-6-ADD-002"
+        ],
+        "explanation": "새 ADD001은 보험 adjudication과 법정 product interchangeability의 구별, ADD002는 같은 보험 결과와 적법한 prescriber no-substitution 효력의 구별을 각각 열거한다. 서로 다른 법적 대상이므로 두 실제 atom이며 product/list 및 prescriber-format 원 claim과 중복으로 세지 않는다. 기존011 SOURCE_BLOCKED/LEGAL_HOLD와 법적 예외는 유지한다.",
+        "original_omission_text": "본문 w3-a-6의 \"보험 adjudication 결과만으로 법정 interchangeability나 no-substitution 지시를 대체하지 않는다.\"를 census가 명시적으로 열거하지 않았다. 기존001-003은 product/list,015-020은 prescriber no-substitution 요건을 다루나 payer adjudication의 독립된 법적 효과를 직접 또는 명시적 복합 claim으로 담지 않는다. 단순 문장 분할 수 차이가 아니라 보험 지불 판단을 법정 TE/처방 권한으로 대체하지 못한다는 주체·행위 경계의 누락이다."
+      }
+    ],
+    "final_census_read_completely": true,
+    "all_original_omissions_reassessed": true,
+    "all_original_propositions_preserved": true
+  },
+  "omission_resolution_assessments": [
+    {
+      "omission_sha256": "2a66001e7f673dab4125277fe518a233e7bf797322a899404af57f1670454a48",
+      "original_omission_text": "본문 w3-a-6의 \"보험 adjudication 결과만으로 법정 interchangeability나 no-substitution 지시를 대체하지 않는다.\"를 census가 명시적으로 열거하지 않았다. 기존001-003은 product/list,015-020은 prescriber no-substitution 요건을 다루나 payer adjudication의 독립된 법적 효과를 직접 또는 명시적 복합 claim으로 담지 않는다. 단순 문장 분할 수 차이가 아니라 보험 지불 판단을 법정 TE/처방 권한으로 대체하지 못한다는 주체·행위 경계의 누락이다.",
+      "claim_ids": [
+        "NOTE-CENSUS-V2-W3-A-6-ADD-001",
+        "NOTE-CENSUS-V2-W3-A-6-ADD-002"
+      ],
+      "assessment": "RESOLVED_IN_ENUMERATION",
+      "resolved": true,
+      "finding_ko": "원문보험문장은보험판단과제품의법정적격성,보험판단과처방자의적법한대체금지지시효력이라는별개대상을갖는다. 기존001–003/015–020은각법적구조를다뤘지만payer의단독효과를명시하지않았고새ADD001/ADD002가정확히그누락을메운다. 기존본문명제를새법으로창작하거나단순문장개수차이로누락해소를판정하지않았다.",
+      "new_claim_legal_statuses": {
+        "NOTE-CENSUS-V2-W3-A-6-ADD-001": "KEEP",
+        "NOTE-CENSUS-V2-W3-A-6-ADD-002": "KEEP"
+      },
+      "does_not_close_inherited_legal_blockers": true,
+      "author_assertion_alone_used_as_proof": false,
+      "authorities": [
+        {
+          "source_id": "cmr720",
+          "authority": "105 CMR720",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-720-list-of-interchangeable-drug-products/download",
+          "exact_section": "720.010,.020,.050–.080",
+          "law_checked_date": "2026-11-04",
+          "reviewed_at": "2026-11-04",
+          "effective_date": null,
+          "version_or_effective_date_status": "Official regulation webpage labels version2004-07-09; posted PDF raw captured2026-11-04. Separateoperativecommencementnotestablished. Appendix historicalproductrows/emptyexceptionstatus not certified as current.",
+          "retrieved_at": "2026-11-04T04:39:14.564578+00:00",
+          "retrieval_provenance": "ActualfreshNov4normalTLSofficialGET200; relevantoriginalsectiondirectlyread. Nootherworkerraworoldretrievalrelabeledfresh.",
+          "evidence_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/cmr720.pdf",
+          "evidence_sha256": "a2cfa8e9be84266fd49c6e075b29f76b25f49038ec1b9d6a6e4a25d58738713d",
+          "retrieval_metadata_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/cmr720-retrieval.json",
+          "retrieval_metadata_raw_sha256": "4fdc3aba57456d1f76c49e8c50951f20c715e16ea5243cf4be0b7eb136091e3b"
+        },
+        {
+          "source_id": "law12d",
+          "authority": "M.G.L. c.112 §12D",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12D",
+          "exact_section": "§12D no-substitution and statutoryselectionparagraphs",
+          "law_checked_date": "2026-11-04",
+          "reviewed_at": "2026-11-04",
+          "effective_date": null,
+          "version_or_effective_date_status": "Current official GeneralLaws consolidator retrieved2026-11-04; individualamendmenteffectivedatehistorynotestablished.",
+          "retrieved_at": "2026-11-04T04:39:14.572591+00:00",
+          "retrieval_provenance": "ActualfreshNov4normalTLSofficialGET200; relevantoriginalsectiondirectlyread. Nootherworkerraworoldretrievalrelabeledfresh.",
+          "evidence_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/law12d.html",
+          "evidence_sha256": "00becd4a321bfbb95d610c9d645063a758a7ed09754fe874b74d9f7a2780ba30",
+          "retrieval_metadata_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/law12d-retrieval.json",
+          "retrieval_metadata_raw_sha256": "da369389ac1c3a555c27422446e56c549990bbb0e28392212330aba00fdaa3ec"
+        },
+        {
+          "source_id": "cmr721",
+          "authority": "105 CMR721",
+          "source_type": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "exact_section": "721.020(B)",
+          "law_checked_date": "2026-11-04",
+          "reviewed_at": "2026-11-04",
+          "effective_date": null,
+          "version_or_effective_date_status": "Official PDF footer2024-09-27; captured2026-11-04. Separateoperativecommencementnotestablished; printed/publicationdate is not retrievaldate.",
+          "retrieved_at": "2026-11-04T04:39:14.577146+00:00",
+          "retrieval_provenance": "ActualfreshNov4normalTLSofficialGET200; relevantoriginalsectiondirectlyread. Nootherworkerraworoldretrievalrelabeledfresh.",
+          "evidence_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/cmr721.pdf",
+          "evidence_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "retrieval_metadata_path": "reports/full-corpus-review/independent-notes/census-v2-b-evidence/cmr721-retrieval.json",
+          "retrieval_metadata_raw_sha256": "79935a676909b3554a9dbc782c1e27781e14de4459291878f5dc73a556b30321"
+        }
+      ]
+    }
+  ]
+}

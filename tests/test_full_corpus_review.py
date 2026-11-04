@@ -206,11 +206,19 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
         'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
         'w3-b-1','w3-d-23','w1-a-7',
         'w2-c-1','w2-c-12',
-        'w4-a-19','w4-a-20',
+        'w4-a-19','w4-a-20','w3-a-3',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']
     assert hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest() == '004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
+    assert hashlib.sha256(new['w3-a-3']['body'].encode()).hexdigest() == 'e082d19727f6000e00d21a2c78e76405dfd406bf3f1a786242f57a1047c1ab4a'
+    note_rows = [json.loads(line) for line in (ROOT/'reports/full-corpus-review/notes-unit-ledger.jsonl').read_text().splitlines()]
+    review = next(row for row in note_rows if row['unit_id']=='w3-a-3')['independent_atomic_census_review']
+    assert review['current_review_valid'] is True
+    assert review['completeness']=='COMPLETE' and review['legal_status']=='LEGAL_HOLD'
+    assert review['requires_review'] is True and review['canonical_release_credit']==0
+    assert review['claim_counts']=={'KEEP':24,'LEGAL_HOLD':1,'SOURCE_BLOCKED':0}
+    assert any(f['claim_id']=='NOTE-WAVE8-W3-A-3-011' and f['legal_status']=='LEGAL_HOLD' and f['blocker'] for f in review['findings'])
     from build_exam_study import build_payload
     study=build_payload()
     assert 'OPEN' in next(l for l in study['lessons'] if l['id']=='LAW-012')['core']
@@ -221,19 +229,25 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
 
 @pytest.fixture
 def protected_copy(tmp_path):
-    manifest=json.loads((ROOT/'reports/representative-rewrite/protected-baseline.json').read_text())
+    # Historical PR190/14 guard mutations use the approved exact published15
+    # epoch. Copying current revisions would duplicate the full retained old
+    # tree in every fixture and import the later N1/16 layer into M tests.
+    # All module-level ROOT/build() checks continue to target the actual live tree.
+    from published15_test_view import published15_root, mutable_copytree
+    source_root=published15_root(ROOT)
+    manifest=json.loads((source_root/'reports/representative-rewrite/protected-baseline.json').read_text())
     safety='reports/full-corpus-review/canonical-q0012-withdrawal'
-    shutil.copytree(ROOT/safety,tmp_path/safety)
+    mutable_copytree(source_root/safety,tmp_path/safety)
     for relative in ['reports/representative-rewrite/protected-baseline.json',
                      'site/generated/preview_allowlist.json']:
         dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
-        shutil.copyfile(ROOT/relative,dest)
+        shutil.copyfile(source_root/relative,dest)
     for row in manifest['files']:
         dest=tmp_path/row['path']; dest.parent.mkdir(parents=True,exist_ok=True)
-        shutil.copyfile(ROOT/row['path'],dest)
-    shutil.copytree(ROOT/'revisions',tmp_path/'revisions')
+        shutil.copyfile(source_root/row['path'],dest)
+    mutable_copytree(source_root/'revisions',tmp_path/'revisions')
     dest=tmp_path/'site/notes/build.json';dest.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(ROOT/'site/notes/build.json',dest)
+    shutil.copyfile(source_root/'site/notes/build.json',dest)
     # This fixture tests the original fourteen guards in their exact PR190
     # context. The new wrapper has separate current-source integration tests.
     fifteenth=tmp_path/'revisions/notes/protected-migration-after190.json'
@@ -243,30 +257,30 @@ def protected_copy(tmp_path):
                         tmp_path/'site/notes/complete-notes.md')
         shutil.copyfile(tmp_path/'revisions/baselines/notes-build-pr190.json',
                         tmp_path/'site/notes/build.json')
-    for metadata in (ROOT/'revisions/notes').glob('protected-migration-census-*.json'):
+    for metadata in (source_root/'revisions/notes').glob('protected-migration-census-*.json'):
         for path in json.loads(metadata.read_bytes())['census_sources']:
             dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(ROOT/path,dest)
+            shutil.copyfile(source_root/path,dest)
     for name in ['protected-migration-independent-notes-wave2.json',
                  'protected-migration-independent-notes-wave3.json']:
-        annotation=ROOT/'revisions/notes'/name
+        annotation=source_root/'revisions/notes'/name
         if annotation.exists():
             for path in json.loads(annotation.read_bytes())['independent_reviews']:
                 dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
-                shutil.copyfile(ROOT/path,dest)
+                shutil.copyfile(source_root/path,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
-    shutil.copytree(ROOT/evidence, tmp_path/evidence)
+    mutable_copytree(source_root/evidence, tmp_path/evidence)
     paths = set()
-    for activation_path in (ROOT/'revisions/notes').glob('*-activation.json'):
+    for activation_path in (source_root/'revisions/notes').glob('*-activation.json'):
         activation = json.loads(activation_path.read_bytes())
-        report = json.loads((ROOT/activation['review_path']).read_bytes())
+        report = json.loads((source_root/activation['review_path']).read_bytes())
         paths.update([activation['review_path'], activation['census_path']])
         paths.update(s['evidence_path'] for s in report['sources'])
         if report.get('prior_review'):
             paths.add(report['prior_review']['path'])
     for path in paths:
         dest = tmp_path/path; dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT/path, dest)
+        shutil.copyfile(source_root/path, dest)
     verify(manifest,tmp_path)
     return tmp_path,manifest
 
@@ -435,9 +449,12 @@ def test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases():
 def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
     outputs=build()
     rows={r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
-    assert rows['MA-EXP-0223']['answer_key_assessment']=='INCORRECT_KEY'
-    assert rows['MA-EXP-0224']['answer_key_assessment']=='AMBIGUOUS_KEY'
-    assert rows['MA-EXP-0224']['disposition']=='MAJOR_REWRITE'
+    assert rows['MA-EXP-0223']['answer_key_assessment']=='INDEPENDENT_LEGACY_NO'
+    assert rows['MA-EXP-0223']['author_answer_key_assessment']=='INCORRECT_KEY'
+    assert rows['MA-EXP-0224']['answer_key_assessment']=='INDEPENDENT_LEGACY_AMBIGUOUS'
+    assert rows['MA-EXP-0224']['author_answer_key_assessment']=='AMBIGUOUS_KEY'
+    assert rows['MA-EXP-0224']['disposition']=='HOLD_FOR_LEGAL_REVIEW'
+    assert rows['MA-EXP-0224']['author_disposition']=='MAJOR_REWRITE'
     assert rows['MA-EXP-0223']['answer_key_crosscheck']['matches'] is False
     assert rows['MA-EXP-0224']['answer_key_crosscheck']['sba_unique'] is False
     for qid in ['MA-EXP-0228',*[f'MA-EXP-{i:04d}' for i in range(233,237)]]:

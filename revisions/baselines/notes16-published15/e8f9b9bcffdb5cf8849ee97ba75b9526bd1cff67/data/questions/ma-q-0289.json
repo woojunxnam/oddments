@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0289",
+  "family_id": "B3B_0289_MA_PMP_REGISTRATION_DUTY",
+  "area": 2,
+  "topic": "Pharmacist practice",
+  "subtopic": "Monitoring program registration",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A newly hired Massachusetts pharmacist dispenses medications reported to the Prescription Monitoring Program. Her pharmacy holds an institutional MassPAT account that the Manager of Record administers. What does the regulation require of her personally?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "She shall register with and maintain login information for the monitoring system."
+    },
+    {
+      "id": "B",
+      "text": "Nothing further, because the pharmacy's account covers all dispensing staff."
+    },
+    {
+      "id": "C",
+      "text": "She must register only if she dispenses Schedule II controlled substances."
+    },
+    {
+      "id": "D",
+      "text": "She must register within 30 days of her first Board disciplinary contact."
+    },
+    {
+      "id": "E",
+      "text": "She must register only if the Manager of Record delegates monitoring duties to her."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.15(1) requires a pharmacist who dispenses medications reported to the Massachusetts Prescription Monitoring Program to register with, and maintain login information for, the electronic system authorized by M.G.L. c. 94C, § 24A, known as PMP or MassPAT. The duty is personal and includes maintaining the login, not merely enrolling once.",
+    "choice_analysis": {
+      "A": "Correct: personal registration and maintained login information.",
+      "B": "A pharmacy-level account does not discharge the individual duty.",
+      "C": "The trigger is dispensing medications reported to the program, not a single schedule.",
+      "D": "The duty is not linked to disciplinary contact.",
+      "E": "The duty does not depend on delegation by the Manager of Record."
+    },
+    "related_facts": [
+      "The pharmacist must separately make the four validity determinations before filling."
+    ],
+    "mpje_trap": "An institutional account does not satisfy a duty the regulation places on the dispensing pharmacist."
+  },
+  "rule_ids": [
+    "MA-PMP-REGISTRATION-DUTY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the trigger as dispensing medications reported to the program",
+    "Attach the duty to the individual pharmacist",
+    "Include maintaining login information, not only initial registration"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PMP-REGISTRATION-DUTY": {
+          "content_version": 1,
+          "content_hash": "e856fd2a68c939ee3c359eaf0bf8e7c6fb1f77847f7ec55363e94c391e0614f7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

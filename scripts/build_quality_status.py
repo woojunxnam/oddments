@@ -18,7 +18,8 @@ def output():
     previous_held=st.get('previous_quality_safety_held',0)
     rewrite_default=st.get('rewrite_default',st['newly_authored_replacements'])
     rewrite_held=st.get('rewrite_safety_held',0)
-    supplementary=progress.get('independent_legacy_procedural_supplementary_review')
+    supplementary=progress.get('independent_legacy_supplementary_review',
+        progress.get('independent_legacy_procedural_supplementary_review'))
     supplementary_notice=('' if supplementary is None else
         f"<p>절차적 미평가의 별도 보충 검토 {supplementary['supplementary_integrated_records']}개 중 "
         f"새 정답 평가 {supplementary['supplementary_new_key_assessed']}개를 고유 ID 기준으로 반영했습니다. "

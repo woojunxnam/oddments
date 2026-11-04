@@ -1,0 +1,84 @@
+{
+  "record_id": "B3S3-V2-AUDITOR-SIDE-FINDINGS-VERIFICATION",
+  "recorded_by": "CONTROLLER",
+  "recorded_on": "2026-08-20",
+  "issue": 91,
+  "context": "CLAUDE-FRESH-B3S3-V2 raised three findings outside the scope of its tranche. Each was verified against primary text before any action, rather than accepted on the auditor's word. Two are confirmed, one is refuted, and one of the two confirmed carries a correction to the auditor's proposed replacement citation.",
+  "findings": [
+    {
+      "id": 1,
+      "auditor_claim": "FED-PSE-QUANTITY cites 21 CFR 1314.20 for the 9 g / 30-day ceiling; that section does not contain it (it is 21 U.S.C. 844(a)).",
+      "verdict": "CONFIRMED",
+      "verification": {
+        "source": "eCFR API, title 21 part 1314 section 1314.20, retrieved 2026-08-20",
+        "text_found": "(a) a regulated seller may not in a single calendar day sell any purchaser more than 3.6 grams ...; (b) a MOBILE RETAIL VENDOR may not in any 30-day period sell an individual purchaser more than 7.5 grams ...",
+        "conclusion": "1314.20 supports the 3.6 g daily seller restriction. Its only 30-day figure is 7.5 g and it binds mobile retail vendors alone. The section does not contain 9 g.",
+        "second_source": "uscode.house.gov, 21 U.S.C. 844(a), retrieved 2026-08-20: 'unlawful for any person to knowingly or intentionally purchase at retail during a 30 day period more than 9 grams of ephedrine base, pseudoephedrine base, or phenylpropanolamine base in a scheduled listed chemical product'"
+      },
+      "substantive_effect": "None. The rule's stated limits are correct; only the authority list was incomplete.",
+      "action": "21 U.S.C. 844(a) added to FED-PSE-QUANTITY authority for the 9 g / 30-day element, which is a prohibition on the purchaser rather than a restriction on the seller.",
+      "released_questions_affected": [
+        "MA-Q-0009",
+        "MA-Q-0107",
+        "MA-Q-0108"
+      ],
+      "release_impact": "None. QUESTION_AUDIT_FIELDS carries rule_ids, not rule content, so a rule-record edit does not change any question_audit_hash."
+    },
+    {
+      "id": 2,
+      "auditor_claim": "MA-PMP-REPORTING pinpoints 105 CMR 700.012(C)(7); the additional-drug power is at 700.012(A)(8) in the current text.",
+      "verdict": "CONFIRMED IN PART - the record is wrong, and so is the auditor's replacement",
+      "verification": {
+        "source": "105 CMR 700.000 official PDF from mass.gov, retrieved and text-extracted 2026-08-20",
+        "text_found": "(7) The Commissioner may provide de-identified data ... (8) The Commissioner may determine that a drug is an 'additional drug' for purposes of 105 CMR 700.012, because it carries a bona fide potential for abuse ... (9) Data collected or generated pursuant to 105 CMR 700.012(A) shall not be a public record ... (D) Security Protections.",
+        "conclusion": "The additional-drug power is paragraph (8), and the run (7)(8)(9) closes immediately before subsection (D), so these paragraphs sit under subsection (C). The correct pinpoint is 700.012(C)(8). The record's (C)(7) is off by one. The auditor's (A)(8) has the wrong subsection letter.",
+        "also_verified": "700.012(A)(1) carries the reporting requirement, as the record states, and is correct."
+      },
+      "action": "MA-PMP-REPORTING authority corrected from 700.012(A)(1), 700.012(C)(7) to 700.012(A)(1), 700.012(C)(8).",
+      "released_questions_affected": [
+        "MA-Q-0009",
+        "MA-Q-0025",
+        "MA-Q-0031",
+        "MA-Q-0037",
+        "MA-Q-0179",
+        "MA-Q-0182",
+        "MA-Q-0198",
+        "MA-Q-0199",
+        "MA-Q-0201",
+        "MA-Q-0210"
+      ],
+      "release_impact": "None, for the reason given in finding 1."
+    },
+    {
+      "id": 3,
+      "auditor_claim": "MA-Q-0014 places a patient-requested partial fill 12 days after issue, which cannot satisfy the 5-day requirement in M.G.L. c. 94C, s. 18(d3/4).",
+      "verdict": "REFUTED",
+      "verification": {
+        "source": "malegislature.gov, M.G.L. c. 94C, s. 18, retrieved 2026-08-20",
+        "text_found": "(d3/4) ... The initial partial dispensing of a prescription filled pursuant to subsection (d) or (d1/2) shall be filled not more than 5 days after the prescription issue date. The remaining portion filled pursuant to this subsection must be filled not later than 30 days after the prescription issue date.",
+        "why_the_claim_fails": "The 5-day limit is conditioned on the prescription having been filled pursuant to subsection (d) or (d1/2). Subsection (d) is not 'nonnarcotic Schedule II' at large: it governs a prescription for a nonnarcotic Schedule II substance ISSUED BY AN OUT-OF-STATE PRACTITIONER. Subsection (d1/2) governs a narcotic Schedule II prescription issued by a practitioner registered in Maine or a contiguous state. MA-Q-0014 describes an ordinary in-state prescription partially filled at patient request, so neither pathway is engaged and the 5-day limit does not reach it. The 30-day issue-date deadline governs, which is what the item keys.",
+        "conclusion": "MA-Q-0014's key is correct on the law."
+      },
+      "action": "None to the question. MA-Q-0014 remains AUDIT_PENDING and unreleased on its own separate footing.",
+      "note": "Recorded because a plausible, confidently stated audit finding turned on a subsection whose scope the auditor did not read. The verification also surfaced an unused and well-discriminating proposition for future authoring: the 5-day initial-partial limit applies only on the out-of-state pathway."
+    }
+  ],
+  "disposition": {
+    "status": "FINDINGS_CONFIRMED_AND_RECORDED; DATA_CORRECTION_DEFERRED",
+    "what_was_attempted": "Both confirmed citation corrections were applied to data/rules and the repository's own scripts/update_content_hashes.py was run, as validate_all directs.",
+    "what_that_revealed": {
+      "mechanism": "A released question's final_adjudication.verified_dependencies pins the content_version and content_hash of every rule AND drug it was adjudicated against. Drug records in turn pin the rules they depend on through verified_rule_dependencies.",
+      "propagation": "MA-PMP-REPORTING and FED-PSE-QUANTITY are depended on by 62 drug records, so re-hashing the two rules re-hashed 62 drugs, which broke the adjudication pins of released questions that cite those drugs but not those rules. MA-Q-0207 is an example: it cites lorazepam, alprazolam and pregabalin, and no edited rule.",
+      "measured": "validate_all went from 0 errors to 82 errors; tests/test_release_build_semantics.py failed."
+    },
+    "why_the_correction_was_reverted": "Re-pinning those adjudication snapshots would mean this controller silently re-adjudicating released questions that independent adjudicators signed off on, against dependency content the controller itself had just changed. That is self-certification of released material and is not available to the controller. Reverting is not the same as hiding: the two defects and their verified correct pinpoints are recorded above and stand on the record.",
+    "scope_of_the_deferred_defect": "Citation accuracy only. Neither correction changes a rule's operative content, so no question's key or explanation is affected and no released answer is wrong.",
+    "follow_up_required_after_BATCH3_COMPLETE": [
+      "Apply the FED-PSE-QUANTITY authority addition (21 U.S.C. 844(a) for the 9 g / 30-day purchaser limit) and the MA-PMP-REPORTING pinpoint correction ((C)(7) -> (C)(8)).",
+      "Run scripts/update_content_hashes.py and accept the propagation into the 62 dependent drug records.",
+      "Route the ~13 released questions whose adjudication pins break to an independent re-adjudication rather than a controller re-pin.",
+      "Only then re-run validate_all and the release build test."
+    ],
+    "reverted_at": "commit following e2f24f7 on author/batch3-b3e-v2"
+  }
+}

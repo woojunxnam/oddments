@@ -1,0 +1,98 @@
+{
+  "package_type": "FROZEN_AUDIT_CONTRACT",
+  "review_type": "REALISM_REVIEW",
+  "audit_date": "2026-08-20",
+  "audit_scope": "REAUDIT",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-B3-Q0203-V2",
+  "independent": true,
+  "audit_status_required": "FULLY_ADJUDICATED",
+  "tranche": "BATCH3-Q0203-V2",
+  "authorizing_issue": 91,
+  "represented_candidate_branch": "codex/batch3-q0203-v2-repair",
+  "represented_candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "freeze_branch": "freeze/batch3-q0203-v2",
+  "source_branch": "codex/batch3-minimum-release-pass1",
+  "source_sha": "c15c49e76e1a5c87d35a6cc5bb111f2e7b427cb2",
+  "question_ids": [
+    "MA-Q-0203"
+  ],
+  "question_hashes": {
+    "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+  },
+  "question_file_blobs": {
+    "MA-Q-0203": "cd71f7bb2a469302ca98b412ef3ef88f9c1eadbd"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-COMPLIANCE-PACKAGING": {
+        "content_version": 2,
+        "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+      }
+    },
+    "drugs": {
+      "methylphenidate": {
+        "content_version": 1,
+        "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "phase_order": [
+    "PHASE_1_BLIND_SOLVE_AND_IMMUTABLE_LOCK",
+    "PHASE_2_UNSEAL_CANONICAL_KEYS_AND_DEPENDENCIES",
+    "PHASE_3_REALISM_REVIEW"
+  ],
+  "output_record": {
+    "path": "data/audits/AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20.json",
+    "schema": "schemas/audit.schema.json",
+    "audit_scope": "REAUDIT",
+    "independent": true,
+    "audit_status": "FULLY_ADJUDICATED"
+  },
+  "style_profile": {
+    "profile_id": "MPJE-MA-PRE2027",
+    "content_version": 1,
+    "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+  },
+  "required_result_fields": [
+    "Question_ID",
+    "Verdict",
+    "Severity",
+    "Realism_Verdict",
+    "Reviewed_Date",
+    "Criteria",
+    "Notes"
+  ],
+  "required_criteria": [
+    "jurisprudence_reasoning",
+    "practice_plausibility",
+    "authentic_distractors",
+    "wording_not_guessable",
+    "reasoning_not_trivia",
+    "natural_rule_combination",
+    "appropriate_drug_context",
+    "distinct_from_bank",
+    "not_schedule_flashcard",
+    "public_style_without_copying"
+  ],
+  "comparison_scope": {
+    "scope": "FULL_CANONICAL_BANK",
+    "question_directory": "data/questions",
+    "expected_record_count_at_candidate": 406,
+    "requirement": "Compare each reviewed item against the entire canonical bank, not a sample and not the existing duplicate report, and record the closest comparison question IDs in Notes."
+  },
+  "release_qualifying_result": {
+    "Verdict": "KEEP",
+    "Realism_Verdict": "PASS"
+  }
+}

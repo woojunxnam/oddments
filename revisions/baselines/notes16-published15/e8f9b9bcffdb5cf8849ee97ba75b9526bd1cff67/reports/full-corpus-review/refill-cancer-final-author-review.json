@@ -1,0 +1,174 @@
+{
+  "schema_version": "focused-note-author-revision/1",
+  "revision_path": "revisions/notes/2026-11-03-refill-cancer-final.json",
+  "revision_id": "2026-11-03.refill-cancer.1",
+  "revision_sha256": "b20405bd4176bc29cbf5ab802f44a4b2c27bb49640b707726b916c29a4eaef02",
+  "previous_revision": {
+    "path": "revisions/notes/2026-11-03-ce-disclosure-final.json",
+    "sha256": "bb0019fe73e41e87a393d2af471cffcb98c96a02ad63d678e73eb8d796e33593"
+  },
+  "base_guide_sha256": "004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384",
+  "status": "AUTHOR_REVISED_PENDING_SEPARATE_INDEPENDENT_REVIEW",
+  "activation": false,
+  "changed_unit_ids": [
+    "w2-c-1",
+    "w2-c-12"
+  ],
+  "old_new_bindings": [
+    {
+      "unit_id": "w2-c-1",
+      "expected_old_body_sha256": "c8098a09d475951aa251c24654f3d589368a3cbd021709f2c9fc18444f24f561",
+      "new_body_sha256": "fac9d2296c51af6db3e5dd50487b1fa80d7765df12162b5ff890229bc4e8af87"
+    },
+    {
+      "unit_id": "w2-c-12",
+      "expected_old_body_sha256": "73a814cd4020d6912e149677086384685b2bb317b7b8b935aa4feed8a7053bbf",
+      "new_body_sha256": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "W6-ORAL-REFILL-SCOPE",
+      "source_report": "reports/full-corpus-review/note-wave6-census.json",
+      "action": "AUTHOR_REVISED_PENDING_INDEPENDENT_REVIEW",
+      "scope_ko": "1306.22(e)의III–IV추가oral절차와initial-fillingquantity비교기준을명시한다.MAV의기존statecap/source를보존하고미확인추가authorization세부를연방절차로확정하지않는다."
+    },
+    {
+      "finding_id": "W6-CANCER-TRIGGER",
+      "source_report": "reports/full-corpus-review/note-wave6-census.json",
+      "action": "AUTHOR_REVISED_PENDING_INDEPENDENT_REVIEW",
+      "scope_ko": "19D(b)의painassociatedwithacancerdiagnosis와judgment/documentation조건을정확히명시한다.암의활성상태만으로면제를생성하지않는다."
+    }
+  ],
+  "derived_records_review": [
+    {
+      "kind": "study",
+      "id": "LAW-029",
+      "source_path": "notes/study/guide.json",
+      "source_file_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "effective_snapshot": {
+        "id": "LAW-029",
+        "module_id": "m08",
+        "title": "6개월·최대 5 refills",
+        "core": "Federal III–IV와 MA V의 출처를 구분하고 issue date를 기준으로 봅니다.",
+        "why": "법정 최대 refill 횟수는 prescriber의 실제 허가 횟수를 늘리지 않습니다.",
+        "trap": "Original fill을 refill 1회로 세거나 transfer로 6개월을 새로 시작하지 않습니다.",
+        "recall": "0 refills 처방에 법정 최대 5회가 자동 생기지 않는 이유를 설명하세요.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-2"
+        ]
+      },
+      "entire_body_read": true,
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    },
+    {
+      "kind": "study",
+      "id": "LAW-035",
+      "source_path": "notes/study/guide.json",
+      "source_file_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "effective_snapshot": {
+        "id": "LAW-035",
+        "module_id": "m09",
+        "title": "Opioid 7일의 대상",
+        "core": "Adult first outpatient opioid와 minor opioid의 기본 제한을 구분합니다.",
+        "why": "예외의 clinical judgment·문서화와 OUD 치료의 별도 취급을 함께 읽습니다.",
+        "trap": "모든 성인의 모든 subsequent opioid를 무조건 7일로 제한하지 않습니다.",
+        "recall": "7-day prescribing 제한과 CII/CIII single-fill 상한을 분리하세요.",
+        "note_units": [
+          "w2-c-12"
+        ]
+      },
+      "entire_body_read": true,
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    },
+    {
+      "kind": "refresh",
+      "id": "RF-037",
+      "source_path": "notes/refresh/guide.json",
+      "source_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "effective_snapshot": {
+        "id": "RF-037",
+        "title": "Refill의 시계는 원 발행일에서",
+        "takeaway": "첫 fill이나 transfer가 늦어도 원 처방의 시계가 새로 시작되지 않습니다.",
+        "plain": "허용 refill 수와 유효기간, 이미 사용한 수량을 함께 확인합니다.",
+        "example": "다른 약국으로 옮긴 날을 새 issue date로 입력하지 않습니다.",
+        "watch": "법정 최대 횟수는 처방자의 refill authorization을 자동 추가하지 않습니다.",
+        "note_units": [
+          "w2-c-1",
+          "w2-c-5"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "entire_body_read": true,
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    },
+    {
+      "kind": "refresh",
+      "id": "RF-043",
+      "source_path": "notes/refresh/guide.json",
+      "source_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "effective_snapshot": {
+        "id": "RF-043",
+        "title": "III–IV와 MA V: 6개월·5 refills",
+        "takeaway": "기간·횟수·처방자 authorization을 모두 확인합니다.",
+        "plain": "Federal III–IV의 상한과 Massachusetts V의 상한은 결과가 같아도 근거가 다릅니다. Original fill은 refill과 구별합니다.",
+        "example": "Refills 0인 처방에 법정 최대 5회를 자동으로 부여하지 않습니다.",
+        "watch": "Schedule VI의 1년 체계를 그대로 가져오지 않습니다.",
+        "note_units": [
+          "w2-c-1"
+        ],
+        "stage": "authorization",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "entire_body_read": true,
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    },
+    {
+      "kind": "refresh",
+      "id": "RF-050",
+      "source_path": "notes/refresh/guide.json",
+      "source_file_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "effective_snapshot": {
+        "id": "RF-050",
+        "title": "Refill 연락과 clinical clarification",
+        "takeaway": "변경 없는 정보 전달과 drug-therapy 변경 판단은 다릅니다.",
+        "plain": "전화업무라는 공통점보다 대화에서 실제로 무엇을 하려는지 봅니다.",
+        "example": "같은 directions의 refill authorization 요청과 새로운 dose를 정하는 연락을 구별합니다.",
+        "watch": "Trainee·ordinary technician·certified technician의 권한을 하나로 묶지 않습니다.",
+        "note_units": [
+          "w1-b-6",
+          "w2-c-1"
+        ],
+        "stage": "operations",
+        "ra_bridge": "",
+        "external_sources": [],
+        "kind": "notes-summary"
+      },
+      "entire_body_read": true,
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    }
+  ],
+  "other_derived_records_read": [
+    {
+      "path": "notes/study/guide.json",
+      "id": "clock-09",
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    },
+    {
+      "path": "notes/refresh/guide.json",
+      "term": "Refill / Partial fill",
+      "disposition": "NO_PATCH_SAME_FALSE_ASSERTION_ABSENT"
+    }
+  ],
+  "source_use_ko": "공식eCFR·Massachusetts법률·CMR·Boardpolicy만직접읽고사용했다.새질문이나상업자료를복제하지않는다.",
+  "unresolved_scope_ko": "MA V의구체추가oral절차를federalIII–IV와같다고확정하지않았으며기존OPEN4/다른agency관계는변경하지않는다.",
+  "independent": false,
+  "independent_verification_credit": 0,
+  "loader_exports_migrations_generated_modified": false
+}

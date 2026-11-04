@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0335",
+  "family_id": "CDTM_IMMEDIATE_TREATMENT_PROCUREMENT_CHANNEL",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Supply for immediate treatment",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist plans to hold stock for dispensing for immediate treatment under her agreement. Which statements about how she may obtain it are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Any product she may prescribe may be bought from her usual wholesaler."
+    },
+    {
+      "id": "B",
+      "text": "A Schedule IV product may be bought from a wholesaler for this purpose."
+    },
+    {
+      "id": "C",
+      "text": "Schedule VI products she is authorised to prescribe may be ordered from a wholesaler."
+    },
+    {
+      "id": "D",
+      "text": "Schedule II to V products may be bought from a distributor if properly recorded."
+    },
+    {
+      "id": "E",
+      "text": "Schedule II to V products may come from the supervising physician or a patient's order."
+    }
+  ],
+  "correct_choice_ids": [
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "105 CMR 700.003(G)(6) permits ordering from a drug wholesaler, manufacturer, laboratory or distributor, for purposes of dispensing for immediate treatment, only those controlled substances IN SCHEDULE VI which the pharmacist is authorised to prescribe. For Schedules II through V dispensed for immediate treatment, the pharmacist may obtain the substances ONLY as supplied by the supervising physician or obtained through a prescription or medication order for the patient.",
+    "choice_analysis": {
+      "A": "The channel turns on the schedule, not on prescribing authority alone.",
+      "B": "Wholesaler purchase is closed for Schedules II through V in this pathway.",
+      "C": "Correct: Schedule VI may be ordered from those sources.",
+      "D": "Record keeping does not open a channel the regulation closes.",
+      "E": "Correct: those are the only two routes for Schedules II through V."
+    },
+    "related_facts": [
+      "The pharmacist must also be authorised under 700.003(G) to prescribe the substance"
+    ],
+    "mpje_trap": "Candidates assume that a pharmacy entitled to buy a product for dispensing may buy it for any purpose."
+  },
+  "rule_ids": [
+    "MA-CDTM-IMMEDIATE-TREATMENT-SUPPLY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Classify the product by schedule",
+    "Apply the wholesaler route to Schedule VI only",
+    "Apply the physician-supply or patient-specific route to Schedules II through V"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-IMMEDIATE-TREATMENT-SUPPLY": {
+          "content_version": 1,
+          "content_hash": "334624bd1020cfd0793028ac6df798ff0242fe862f41f078a2a97f677ebfd072"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

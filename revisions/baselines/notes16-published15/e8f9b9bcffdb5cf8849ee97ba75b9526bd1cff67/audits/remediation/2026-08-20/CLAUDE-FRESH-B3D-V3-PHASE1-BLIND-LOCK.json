@@ -1,0 +1,391 @@
+{
+  "phase": "PHASE_1_BLIND_SOLVE",
+  "audit_date": "2026-08-20",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3D-V3",
+  "tranche": "BATCH3-B3D",
+  "audit_scope": "INITIAL_BATCH",
+  "represented_candidate_sha": "1cc76f458f6584edc3dfad8387240ea968201b64",
+  "freeze_branch": "freeze/batch3-b3d-v3",
+  "freeze_head_expected": "0f7e076c2094f812c71b66dab40009b1dbfdd8ba",
+  "freeze_head_observed": "0f7e076c2094f812c71b66dab40009b1dbfdd8ba",
+  "blind_package_path": "audits/remediation/2026-08-20/B3DV3-BLIND-QUESTIONS.json",
+  "blind_package_blob": "524395abc6408fc1e19e14aaa03683d352ae4cb0",
+  "blind_package_sha256": "aa7d509c7ba3ab74905b0e161639c673562bf23a3288eb4d9e15f493e43b9dda",
+  "question_count": 35,
+  "question_ids": [
+    "MA-Q-0328",
+    "MA-Q-0329",
+    "MA-Q-0330",
+    "MA-Q-0331",
+    "MA-Q-0332",
+    "MA-Q-0333",
+    "MA-Q-0334",
+    "MA-Q-0335",
+    "MA-Q-0336",
+    "MA-Q-0337",
+    "MA-Q-0338",
+    "MA-Q-0339",
+    "MA-Q-0340",
+    "MA-Q-0341",
+    "MA-Q-0342",
+    "MA-Q-0343",
+    "MA-Q-0344",
+    "MA-Q-0345",
+    "MA-Q-0346",
+    "MA-Q-0347",
+    "MA-Q-0348",
+    "MA-Q-0349",
+    "MA-Q-0350",
+    "MA-Q-0351",
+    "MA-Q-0352",
+    "MA-Q-0353",
+    "MA-Q-0354",
+    "MA-Q-0355",
+    "MA-Q-0356",
+    "MA-Q-0357",
+    "MA-Q-0358",
+    "MA-Q-0359",
+    "MA-Q-0360",
+    "MA-Q-0311",
+    "MA-Q-0322"
+  ],
+  "questions": [
+    {
+      "question_id": "MA-Q-0328",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reasoning": "DPH Circular Letter DCP 26-03-124 (Pharmacist Administration of Medications, 3/11/2026) lists the ONLY eligible generics: LAI antipsychotics incl. paliperidone palmitate (A true); 'Gender-Affirming Care Medications: Testosterone (all salts)' (B true); 'HIV Prevention Medications: Cabotegravir' (C true); and states 'The following generic medications ... are the only medications eligible', so the list is closed, not illustrative (D false). The circular states 'There is no requirement for pharmacists or pharmacy interns to administer these medications' (E true)."
+    },
+    {
+      "question_id": "MA-Q-0329",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "C"
+      ],
+      "reasoning": "DCP 26-03-124 NOTE: 'A pharmacist may administer medications for addiction treatment, including methadone, pursuant to an order, ONLY in a registered opioid treatment program.' Reinforced by 21 CFR 1306.07(a) (current as of the 8/18/2026 title-21 issue), which permits administration of a Schedule II narcotic for maintenance/detoxification only where the practitioner is separately DEA-registered as a narcotic treatment program. Training and CPR (B) are necessary but not sufficient; a prescription (A) cannot cure the setting limit; D overstates, since the circular does allow such administration inside an OTP."
+    },
+    {
+      "question_id": "MA-Q-0330",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "A"
+      ],
+      "reasoning": "DCP 26-03-124 (p.5): prescribers 'should' include the notation 'for pharmacist administration', and 'A pharmacist or pharmacy intern receiving a prescription for eligible medications without the notation is encouraged to contact the prescriber if, in their professional judgment, it appears the medication is intended to be administered'. The guidance is hortatory, not a bar: contact is encouraged and administration remains available, so B, C, D and E each invent a mandatory step the circular does not impose."
+    },
+    {
+      "question_id": "MA-Q-0331",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "D",
+        "E"
+      ],
+      "reasoning": "DCP 26-03-124, 'Administration and Dosing - Manufacturers' Instructions': 'A pharmacist or pharmacy intern may only administer an eligible medication by subcutaneous or intramuscular injection, in accordance with manufacturer approved labeling and any risk evaluation and mitigation (REMS) requirements' (D and E true). Condition (c) of 'Dispensing by Administration' separately provides 'Administration is not intravenous' (A false). B and C are false because the route is fixed by the circular, not by the label alone or by pharmacist discretion."
+    },
+    {
+      "question_id": "MA-Q-0332",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "DCP 26-03-124 condition (d): the medication must be 'available in single-dose packaging and prescribed in single doses, with or without refills'. The 'Prescriber Assessment' section repeats that reassessment 'does not preclude the issuance of valid prescriptions with available refills'. Refills therefore do not disqualify the prescription, so the pharmacist is right (D). E is wrong because the single-dose condition governs both packaging and prescribing, not packaging only."
+    },
+    {
+      "question_id": "MA-Q-0333",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "B"
+      ],
+      "reasoning": "105 CMR 700.003(G)(8): a collaborating pharmacist 'may prescribe a controlled substance for a patient in a licensed health facility, including a hospital, long term care facility, ambulatory care clinic or hospice, through the use of a written medication order entered on the patient's medical record maintained at the facility'. In a licensed long-term care facility the medication-order route on the facility record is the prescribed instrument, not an outpatient prescription."
+    },
+    {
+      "question_id": "MA-Q-0334",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "The 105 CMR 700.003(G)(8) medication-order route is expressly confined to 'a patient in a licensed health facility, including a hospital, long term care facility, ambulatory care clinic or hospice'. An assisted living residence holding no health facility licence is outside that set, so the route is unavailable (D). E is overbroad: nothing bars a pharmacist from providing services at a residence; only this particular prescribing instrument is unavailable."
+    },
+    {
+      "question_id": "MA-Q-0335",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "C",
+        "E"
+      ],
+      "reasoning": "105 CMR 700.003(G)(6): the pharmacist 'may order from a drug wholesaler, manufacturer, laboratory or distributor, for purposes of dispensing for immediate treatment, those controlled substances in Schedule VI which the pharmacist is authorized ... to prescribe' (C true); and 'For the purposes of dispensing controlled substances in Schedules II through V for immediate treatment ..., the pharmacist may obtain such controlled substances only as supplied by the supervising physician or obtained through a prescription or medication order for the patient' (E true). A is too broad, B fails because Schedule IV falls in the II-V band, and D is contradicted by the word 'only'."
+    },
+    {
+      "question_id": "MA-Q-0336",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "105 CMR 700.003(G)(5): the pharmacist 'may dispense a controlled substance for immediate treatment in accordance with M.G.L. c. 94C, s. 9, provided the pharmacist is authorized by 105 CMR 700.003(G) to prescribe such controlled substance'. The immediate-treatment power is expressly parasitic on prescribing authority, so a Schedule VI product outside the agreement's authorised list may not be dispensed under it."
+    },
+    {
+      "question_id": "MA-Q-0337",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "A"
+      ],
+      "reasoning": "105 CMR 700.003(G) permits a pharmacist to 'issue, modify or discontinue a prescription or medication order as authorized in a collaborative practice agreement'. Discontinuation is a separately enumerated act that must itself be authorised; it is not subsumed in authority to modify. 247 CMR 16.04(2)(b) likewise requires the agreement to state 'specific pharmacist prescribing authority'. B's 'lesser step' reasoning has no statutory footing."
+    },
+    {
+      "question_id": "MA-Q-0338",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "E"
+      ],
+      "reasoning": "105 CMR 700.003(G)(2) requires that 'the pharmacist registers with the Department, in accordance with 105 CMR 700.004, and the DEA, if applicable, ... for the purpose of prescribing under 105 CMR 700.000'. 105 CMR 700.004(C) requires a separate registration for each separate activity, so a registration held so the pharmacy could dispense does not carry prescribing. 247 CMR 16.02(1)(f)1 confirms the requirement of a current Department controlled substance registration where prescriptive practices are included."
+    },
+    {
+      "question_id": "MA-Q-0339",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "C"
+      ],
+      "reasoning": "105 CMR 700.003(G)(2) requires DEA registration only 'if applicable'. Massachusetts Schedule VI is defined by 105 CMR 700.002(F) as all prescription drugs not included in any other schedule, and is not a federal schedule, so DEA registration is not applicable to a purely Schedule VI prescriber. A pharmacist prescribing in federally controlled schedules does need DEA registration. Hence the first may proceed and the second may not."
+    },
+    {
+      "question_id": "MA-Q-0340",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(c)(5) limits the retail setting to 'patients 18 years of age or older' (A true); 'an extension by 30 days of current drug therapy prescribed by the supervising physician' (C true); and 'administration of vaccines or the modification of dosages of medications prescribed by the supervising physician for [eight named conditions] and co-morbidities' (E true). The same clause expressly allows a retail pharmacist whose agreement 'specifically allows initial prescriptions for referred patients' to issue Schedule VI prescriptions 'for a patient diagnosis specified in the supervising physician's individual referral', mirrored in 247 CMR 16.03(5)(e)4 (B true). D is false because dosage modification reaches only medications prescribed by the supervising physician for the enumerated conditions, not 'any medication the patient is currently taking'."
+    },
+    {
+      "question_id": "MA-Q-0341",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "B"
+      ],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(c)(5) confers in the retail setting 'an extension by 30 days of current drug therapy prescribed by the supervising physician'; 247 CMR 16.03(5)(e)1.a puts it as 'extend current drug therapy by 30 days for not more than two 30 day periods'. Initiating an equivalent agent (A) or substituting a similar agent (D) is not the continuation power, indefinite extension (C) exceeds the 30-day cap, and E denies a power the statute plainly grants."
+    },
+    {
+      "question_id": "MA-Q-0342",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "C",
+        "D",
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(c) and 247 CMR 16.03 assign approval setting by setting: long-term care facility medical director or designee (C true); hospice medical director or designee (D true); and ambulatory care clinics require 'on-site supervision by the attending physician and a collaborating pharmacist' in addition to committee or medical-director approval (E true). A is false because hospital approval is by the medical staff executive committee or designee, not the Department. B is false because the settings are enumerated separately with their own approvers, so no single system-wide approval suffices."
+    },
+    {
+      "question_id": "MA-Q-0343",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(c)(4) permits CDTM in ambulatory care clinics 'with on-site supervision by the attending physician and a collaborating pharmacist', and 247 CMR 16.03(4) repeats the on-site requirement. Correct approval by the medical staff executive committee satisfies a different, cumulative condition; a wholly remote pharmacist with no physician present fails the on-site element, so the arrangement is non-compliant."
+    },
+    {
+      "question_id": "MA-Q-0344",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "A"
+      ],
+      "reasoning": "M.G.L. c. 112, s. 24B1/2(c)(5) lists 'administration of vaccines' among retail collaborative powers and 247 CMR 16.03(5)(b) provides that pharmacists 'as authorized pursuant to a collaborative practice agreement, may administer vaccines'. The Commissioner-order route in 105 CMR 700.003(F) is an additional pathway for a designated vaccine during a shortage, not a precondition (C false). The eligible-medication list in DPH Circular DCP 26-03-124 governs mental health, substance use, gender-affirming, HIV-prevention and STI medications and contains no vaccines, so its silence is irrelevant (D false)."
+    },
+    {
+      "question_id": "MA-Q-0345",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 19F(c)(ii)(A) requires the rules to 'prohibit a pharmacist from ... requiring a patient to schedule an appointment with the pharmacist for the prescribing or dispensing of a hormonal contraceptive patch or self-administered oral hormonal contraceptive'. A mandatory-booking policy with walk-ins turned away is precisely what is barred; no seven-day or one-day-a-week qualification appears in the statute."
+    },
+    {
+      "question_id": "MA-Q-0346",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 19F(c)(i) requires the pharmacist to '(C) refer the patient to the patient's primary care practitioner or reproductive health care practitioner, if applicable, upon prescribing and dispensing ... or advise the patient to consult with a primary care practitioner or reproductive health care practitioner' (A and B are the two limbs of that disjunctive duty); '(D) provide the patient with a written record of the ... contraceptive prescribed and dispensed' (C true); and '(E) dispense ... as soon as practicable after the pharmacist issues the prescription' (E true). D is false: no practitioner agreement is a precondition to supply."
+    },
+    {
+      "question_id": "MA-Q-0347",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 19F(c)(i)(E) requires the pharmacist to 'dispense the hormonal contraceptive patch or self-administered oral hormonal contraceptive to the patient as soon as practicable after the pharmacist issues the prescription'. With an equivalent product in stock, deferring collection to the following week is not as soon as practicable. The written record duty (C) is cumulative and does not excuse the delay."
+    },
+    {
+      "question_id": "MA-Q-0348",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "B",
+        "D",
+        "E"
+      ],
+      "reasoning": "105 CMR 700.003(F) conditions the pathway on a vaccine 'designated by the Commissioner' (E true) and on the Commissioner determining 'that there are or will be insufficient health care professionals available for timely vaccine administration' and issuing an authorising order (B true). 105 CMR 700.003(F)(1)(b) requires administration 'in accordance with the Commissioner's order AND the order or prescription of a duly registered practitioner' (D true), which is why C is false. A is false because a standing prescription alone does not open the pathway."
+    },
+    {
+      "question_id": "MA-Q-0349",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "B"
+      ],
+      "reasoning": "105 CMR 700.003(F)(1)(c): 'with respect to a student administering vaccine pursuant to 105 CMR 700.003(F), authorized and supervised by a licensed and qualified health care professional.' The regulation expressly contemplates students under the pathway (so C is wrong) but does not place them on the same footing as licensees (A) nor impose a separate Department certification (D) or a notification precondition (E)."
+    },
+    {
+      "question_id": "MA-Q-0350",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "C",
+        "E"
+      ],
+      "reasoning": "105 CMR 700.003(F)(2)(b) requires written protocols covering 'proper storage, handling and return of vaccine, recordkeeping regarding administration, response to adverse events, and safe and appropriate administration of vaccine'. Training and the adverse-event plan being already in hand, the remaining required subjects are storage (A), return of vaccine (C) and recordkeeping regarding administration (E). Marketing (B) and reimbursement (D) appear nowhere in the provision."
+    },
+    {
+      "question_id": "MA-Q-0351",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 18B(c): a prescription 'electronically transmitted to an outpatient pharmacy shall be presumed to be valid ... and a pharmacist in an outpatient setting shall not be held in violation of this section for dispensing a controlled substance in contradiction to a voluntary non-opiate directive form, except upon evidence that the pharmacist acted knowingly against the voluntary non-opiate directive form.' On these facts the pharmacist did not know of the directive, so the statutory safe harbour applies."
+    },
+    {
+      "question_id": "MA-Q-0352",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "E"
+      ],
+      "reasoning": "The two actors are governed differently within M.G.L. c. 94C, s. 18B. Subsection (c) shields the outpatient pharmacist from violation of the section absent evidence of knowing conduct, and both actors here were merely careless. Subsection (e) separately provides that 'Any board of professional licensure may limit, condition or suspend the license of or assess fines against a licensed health care provider who recklessly or negligently fails to comply with a person's voluntary non-opiate directive form', which reaches the negligent nurse practitioner, who has no equivalent safe harbour. Hence the pharmacist is protected and the practitioner is exposed."
+    },
+    {
+      "question_id": "MA-Q-0353",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "C",
+        "D"
+      ],
+      "reasoning": "105 CMR 700.003(G)(7) requires that 'the prescribing pharmacist clearly identifies their name and professional designation to the dispensing pharmacist and provides their registration number, work address, phone number, and the name of the supervising physician'. Registration number (C) and supervising physician's name (D) are on that list. A is wrong because the provision requires a work address, not a home address; B and E are not among the required particulars."
+    },
+    {
+      "question_id": "MA-Q-0354",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "C"
+      ],
+      "reasoning": "The caller supplied every particular required by 105 CMR 700.003(G)(7) except the name of the supervising physician, which the provision expressly requires. The transmission is therefore incomplete and should not be filled as transmitted until that particular is supplied. D is wrong because M.G.L. c. 94C, s. 20 and 105 CMR 700.003(G)(7) together expressly contemplate a collaborating pharmacist issuing an oral prescription."
+    },
+    {
+      "question_id": "MA-Q-0355",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "B",
+        "D"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 9(a) authorises listed practitioners, 'when registered under said section 7', acting in good faith, to 'possess controlled substances as may reasonably be required for the purpose of patient treatment and may administer controlled substances or may cause the same to be administered under his direction by a nurse' (A and B true). The pharmacist appears in the enumeration only as 'pharmacist as limited by said subsection (g) of said section 7 and section 24B1/2 of said chapter 112' (D true, C false). E is false because registration under s. 7 is a stated precondition, cumulative with good faith, not displaced by it."
+    },
+    {
+      "question_id": "MA-Q-0356",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "E"
+      ],
+      "reasoning": "In M.G.L. c. 94C, s. 9(a) the physician is listed without qualification, whereas the pharmacist is listed as 'limited by said subsection (g) of said section 7 and section 24B1/2 of said chapter 112' - two further provisions. Because s. 24B1/2 is the collaborative practice agreement statute, a pharmacist with no agreement cannot rely on s. 9 alone, while the identically registered physician can. A and B ignore the asymmetry, C reverses it, and D denies the possession authority s. 9(a) plainly confers."
+    },
+    {
+      "question_id": "MA-Q-0357",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "B",
+        "C"
+      ],
+      "reasoning": "The three regimes differ. M.G.L. c. 94C, s. 19B(d): the pharmacist 'shall annually report to the department the number of opioid antagonist doses dispensed' (B true). Section 19E(d): a pharmacist dispensing a COVID-19 control measure 'shall, upon request, report to the department on the doses, tests or devices dispensed' (C true). Section 19A(e) requires emergency contraception to be reported annually, not only on inquiry (D false), and because the schedules differ no single combined annual return satisfies all three (A false). All three provisions state the reports shall not identify any individual patient (E false)."
+    },
+    {
+      "question_id": "MA-Q-0358",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "D"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 19B(d): opioid antagonist reports 'shall not identify an individual patient, shall be confidential and shall not constitute a public record as defined in clause Twenty-sixth of section 7 of chapter 4.' The statute withholds public-record status from the reports themselves, so redaction (B) does not convert them, and the department's separate duty to publish an aggregate annual report does not open the underlying filings (E)."
+    },
+    {
+      "question_id": "MA-Q-0359",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "reasoning": "M.G.L. c. 94C, s. 1, definition of 'Administer', para. (c), sets out three distinct clauses for a registered pharmacist: (i) 'regulations promulgated by the department ... governing pharmacist administration of medications for treatment of mental health and substance use disorder and at the direction of a prescribing practitioner' (B and C true, and the two requirements are cumulative); (ii) 'a prescription for testosterone for gender-affirming care' (D true); and (iii) 'a prescription for the treatment and prevention of sexually transmitted infections ... or for the prevention of HIV' (E true). Because they are three separate clauses with different conditions, A is false."
+    },
+    {
+      "question_id": "MA-Q-0360",
+      "question_type": "SBA",
+      "selected_choice_ids": [
+        "A"
+      ],
+      "reasoning": "243 CMR 2.12 provides that 'A physician shall be deemed ineligible to participate in CDTM if he or she has voluntarily surrendered or has had suspended, revoked or restricted his or her controlled substances license, permit or registration, either state or federal.' Ineligibility is automatic on the surrender, expressly covers federal registrations, and does not depend on any board notice or on the state medical licence remaining unrestricted."
+    },
+    {
+      "question_id": "MA-Q-0311",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "C",
+        "E"
+      ],
+      "reasoning": "The statutory definition in M.G.L. c. 112, s. 24B1/2(a) requires 'a written and signed agreement between a pharmacist ... and a supervising physician' (A true); 'Each collaborative practice agreement shall be subject to review and renewal on a biennial basis' (C true); and 'A collaborative practice agreement shall include individually developed guidelines for any prescriptive practice of the pharmacist' (E true). B is the negation of 'The collaborative practice shall be within the scope of the supervising physician's practice'. D is false: the definition imposes no filing-with-the-Board precondition, and 247 CMR 16.04(6) requires only that a copy be maintained in the primary practice setting, readily retrievable."
+    },
+    {
+      "question_id": "MA-Q-0322",
+      "question_type": "SATA",
+      "selected_choice_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "reasoning": "247 CMR 9.01(17) (promulgation dated 12/6/24): a pharmacist 'may not practice in a pharmacy for more than 12 hours in a 24 hour period without completing an eight consecutive hour rest period ... In the event of an extenuating circumstance, a pharmacist ... may exceed 12 hours in order to act in the best interest of the patient, provided the time in excess of 12 hours is minimized and the licensee documents the extenuating circumstance.' A, B and C track the three limbs. D is false because the exception turns on an extenuating circumstance in the patient's interest, not on a manager's instruction. E is false because the provision binds 'a pharmacist, pharmacy intern, or pharmacy technician' alike."
+    }
+  ],
+  "authorities_consulted": [
+    "M.G.L. c. 94C, s. 1 (definition of 'Administer', incl. para. (c)(i)-(iii) on registered pharmacist administration) - malegislature.gov official General Laws text, current text as published and retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 9 (administering and dispensing in the course of professional practice) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 18B (voluntary non-opiate directive form) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 19 (prescription; restrictions on issuance) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 19A (emergency contraception) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 19B (dispensing, possessing and administering opioid antagonist) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 19E (dispensing of COVID-19 control measures under standing order) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 19F (pharmacist prescribing and dispensing of hormonal contraceptive patches and self-administered oral hormonal contraceptives) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 112, s. 24B1/2 (pharmacist collaborative practice agreements; collaborative drug therapy management) - malegislature.gov, current text retrieved 2026-08-20",
+    "M.G.L. c. 112, s. 24B3/4 (implementation of collaborative drug therapy management; rules and regulations) - malegislature.gov, current text retrieved 2026-08-20",
+    "St. 2026, c. 65 (Approved April 19, 2026) - malegislature.gov Session Laws; checked to confirm its s. 6 amends the 'Marihuana' definition in c. 94C s. 1 and does NOT alter the 'Administer' definition (negative check)",
+    "105 CMR 700.000: Implementation of M.G.L. c. 94C - official mass.gov Department of Public Health regulation PDF (current posted edition, incl. 700.001 'Administer', 700.002(F) Schedule VI, 700.003(F) Commissioner-order vaccine pathway, 700.003(G) collaborating pharmacist conditions, 700.004 registration requirements); retrieved 2026-08-20",
+    "247 CMR 16.00: Collaborative Drug Therapy Management - official mass.gov Board of Registration in Pharmacy regulation PDF (text carries MA REG. #1354, dated 12-15-17); retrieved 2026-08-20",
+    "247 CMR 9.00: Professional Practice Standards, incl. 9.01(17) twelve-hour provision - official mass.gov Board of Registration in Pharmacy regulation PDF (promulgation footer 12/6/24); retrieved 2026-08-20",
+    "247 CMR 6.00: Licensure of Pharmacies - official mass.gov Board of Registration in Pharmacy regulation PDF; retrieved 2026-08-20 (consulted, not ultimately relied on)",
+    "243 CMR 2.00 incl. 2.12: Collaborative Drug Therapy Management (CDTM) with Authorized Pharmacists - official mass.gov Board of Registration in Medicine regulation PDF; retrieved 2026-08-20",
+    "Massachusetts DPH Circular Letter DCP 26-03-124, 'Pharmacist Administration of Medications', James G. Lavery, Director, Bureau of Health Professions Licensure, dated March 11, 2026 (expressly replaces DCP 23-04-118 dated April 21, 2023) - official mass.gov document; retrieved 2026-08-20",
+    "21 CFR 1306.07 (administering or dispensing of narcotic drugs) - eCFR official API, title 21 issue date 2026-08-18; retrieved 2026-08-20"
+  ],
+  "source_acquisition_method": "All authority was retrieved first-hand by this auditor from official government endpoints during the blind phase, before any repository material other than the blind package was opened. M.G.L. sections and the 2026 session law were fetched from malegislature.gov over HTTPS with a browser User-Agent and parsed from the <p> elements following id=\"skipTo\". Massachusetts regulation and DPH circular PDFs were fetched from official mass.gov /doc/<slug>/download endpoints (curl first, then Python urllib with browser headers after mass.gov bot-mitigation began returning 403 to curl) and their text extracted locally with PyMuPDF. 21 CFR 1306.07 was fetched from the official eCFR versioner API (https://www.ecfr.gov/api/versioner/v1/full/2026-08-18/title-21.xml). Web search was used only to locate official document URLs and was never relied on as substantive authority; one search-derived claim (that the c. 94C s. 1 'Administer' definition was amended by St. 2026, c. 65, s. 6) was checked against the session law itself and found incorrect, and the primary text was used instead. No commercial summary, secondary compilation, LLM summary or search snippet was used as a ground of decision.",
+  "canonical_key_inspected_before_lock": false,
+  "canonical_explanation_inspected_before_lock": false,
+  "canonical_rules_inspected_before_lock": false,
+  "author_reasoning_inspected_before_lock": false,
+  "contamination_status": "CLEAN",
+  "sealed_material_boundary_statement": "Before writing and committing this lock the only repository content I read was the blind package at audits/remediation/2026-08-20/B3DV3-BLIND-QUESTIONS.json (blob 524395abc6408fc1e19e14aaa03683d352ae4cb0), read via 'git show 0f7e076c2094f812c71b66dab40009b1dbfdd8ba:<path>', together with the following non-substantive git metadata: the freeze branch head SHA, the blob id and size of the blind package, and the file-name-only --stat listing of freeze commit 0f7e076 (names of the seven frozen files, no contents). Within the blind package I read only package_type, audit_date, tranche, authorizing_issue, auditor_instance_reserved, represented_candidate_branch, represented_candidate_sha, question_ids, instruction, content_boundary, and for each item its question_id, question_type, stem and choices. I did NOT open data/questions/, data/rules/, the B3DV3 LEGAL contract, the B3DV3 REALISM contract, the B3DV3 POSTLOCK-DEPENDENCIES file, the B3DV3 freeze config, the B3DV3 clean-freeze manifest, the B3DV3 governance Phase-0 attestation, the generated site payload, any scripts/batch3* authoring script, any audits/controller/ record, GitHub Issue #91, or any git history or diff for these questions. No answer key, explanation, choice analysis, rule identifier, area/topic tag or author reasoning was visible to me at any point before this lock.",
+  "attestation": "I am CLAUDE-FRESH-B3D-V3, an independent fresh auditor. I authored none of the 35 questions in tranche BATCH3-B3D, contributed nothing to their drafting, review or repair, and consulted no author or prior auditor about them. I solved all 35 items blind, from the stems and choices alone, against current official authority that I retrieved myself from malegislature.gov, official mass.gov regulation and DPH circular documents, and the official eCFR API, as itemised in authorities_consulted. Every selection recorded here is my own independent determination reached before any keyed answer, explanation, rule record or author rationale was available to me. Where I judged an item genuinely contestable on the authority as written - MA-Q-0340 choice B (whether the retail initial-prescription power stated in M.G.L. c. 112, s. 24B1/2(c)(5) counts as a correct unconditional statement given its 'specifically allows' precondition) and MA-Q-0346 choice E (whether the dispense-as-soon-as-practicable duty 'attaches at that point' when dispensing has already occurred) - I have recorded my reasoning and my chosen reading rather than deferring resolution. I did not weaken, bypass or modify any validator, schema, test, gate, question record or rule record in producing this lock."
+}

@@ -1,0 +1,98 @@
+{
+  "question_id": "MA-Q-0260",
+  "family_id": "B3A_0260_MA_CE_RECORD_CONTENT",
+  "area": 1,
+  "topic": "Licensure",
+  "subtopic": "Continuing education records",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist is selected for a random continuing education audit. Which elements must her documentation or statements of credit contain? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The name of the authorized provider."
+    },
+    {
+      "id": "B",
+      "text": "The title and number of the continuing education program."
+    },
+    {
+      "id": "C",
+      "text": "The date of completion of the program."
+    },
+    {
+      "id": "D",
+      "text": "The number of contact hours earned."
+    },
+    {
+      "id": "E",
+      "text": "The registrant's employer at the time of the program."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 4.06(1) requires documentation or a statement of credit containing the name of the authorized provider, the participant's name, the title and number of the program, the date of completion and the number of contact hours earned, retained for at least two years from the date of completion. 247 CMR 4.06(2) requires production to the Board on request and in response to random audits. The registrant's employer is not among the required elements.",
+    "choice_analysis": {
+      "A": "Correct: the authorized provider's name is required.",
+      "B": "Correct: the program title and number are required.",
+      "C": "Correct: the completion date is required.",
+      "D": "Correct: the contact hours earned are required.",
+      "E": "The employer is not a required element of the documentation."
+    },
+    "related_facts": [
+      "Retention is measured from the date of completion rather than from the renewal date."
+    ],
+    "mpje_trap": "A bare attendance confirmation is not enough; specific data elements are prescribed."
+  },
+  "rule_ids": [
+    "MA-CE-RECORDKEEPING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the audit as triggering the production duty",
+    "Check the documentation against the five required elements",
+    "Confirm retention runs at least two years from the date of completion"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CE-RECORDKEEPING": {
+          "content_version": 1,
+          "content_hash": "4ed7ea4f94aa652b0a772edcd4369dbc938b707dd593aece92104360ffb3582d"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

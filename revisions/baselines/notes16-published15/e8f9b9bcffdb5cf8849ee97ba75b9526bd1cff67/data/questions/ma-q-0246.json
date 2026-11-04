@@ -1,0 +1,100 @@
+{
+  "question_id": "MA-Q-0246",
+  "family_id": "B3A_0246_MA_SUPPORT_TITLE_ACCURACY",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Support personnel identification",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy has just learned that a staff member's technician certification lapsed. The staff member continues to wear a name tag reading Certified Pharmacy Technician while the pharmacy sorts out the paperwork. What should the pharmacy do about the name tag?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Change the tag to read Pharmacy Technician."
+    },
+    {
+      "id": "B",
+      "text": "Leave the tag unchanged until the certification is restored."
+    },
+    {
+      "id": "C",
+      "text": "Remove the name tag entirely until the certification is restored."
+    },
+    {
+      "id": "D",
+      "text": "Change the tag to read Pharmacy Technician Trainee."
+    },
+    {
+      "id": "E",
+      "text": "Leave the tag unchanged if the pharmacist on duty documents the lapse."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.04(3)(b) requires an individual whose certification has lapsed to use the title pharmacy technician, and 247 CMR 8.02(6)(a) requires a pharmacy technician to wear a name tag with the individual's first name and that title. The displayed title must track the credential actually held.",
+    "choice_analysis": {
+      "A": "Correct: the individual must use the pharmacy technician title.",
+      "B": "Continuing to display a lapsed credential misstates the individual's status.",
+      "C": "A name tag is still required; the title on it changes.",
+      "D": "Trainee is a different credential the individual does not hold.",
+      "E": "Internal documentation does not authorise displaying a lapsed credential."
+    },
+    "related_facts": [
+      "Interns wear a tag showing their name and the words pharmacy intern."
+    ],
+    "mpje_trap": "The tag must state the credential actually held, not the role the pharmacy would like to assign."
+  },
+  "rule_ids": [
+    "MA-SUPPORT-NAME-TAGS",
+    "MA-CERT-TECH-LAPSE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Establish which credential the individual currently holds",
+    "Match the required title to that credential",
+    "Correct the displayed title rather than removing identification"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SUPPORT-NAME-TAGS": {
+          "content_version": 1,
+          "content_hash": "4edd4ea5bcacf358c6598ef8468ff03f0bbe5259eebc671856cc7bea6a29b97b"
+        },
+        "MA-CERT-TECH-LAPSE": {
+          "content_version": 1,
+          "content_hash": "ecea84ee5125a4c074ff4604f0f3d85993dd0157a54d2844016433722e89a0f8"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

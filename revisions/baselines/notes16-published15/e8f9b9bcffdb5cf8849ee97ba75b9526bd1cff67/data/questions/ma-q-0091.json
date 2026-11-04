@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0091",
+  "family_id": "V3_0091_RECALL_LOT_ACTION",
+  "area": 3,
+  "topic": "Product safety",
+  "subtopic": "Recall response",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A wholesaler sends a Class II recall notice identifying one lot of a blood-pressure medication. The pharmacy has bottles from the affected lot and from an unaffected lot, and several patients previously received the affected lot. What is the best immediate pharmacy response?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Stop dispensing every strength and lot of the drug until the manufacturer ends the recall."
+    },
+    {
+      "id": "B",
+      "text": "Segregate the affected lot, preserve lot traceability, and follow the recall notice for inventory and patient follow-up."
+    },
+    {
+      "id": "C",
+      "text": "Continue dispensing the affected lot until each patient confirms whether the medication caused symptoms."
+    },
+    {
+      "id": "D",
+      "text": "Tell every patient taking the drug to stop therapy immediately, regardless of the recalled lot or notice."
+    },
+    {
+      "id": "E",
+      "text": "Return only unopened affected bottles and leave opened affected bottles available for completion of existing prescriptions."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "The legal and operational decision is lot-specific. The pharmacy removes the identified lot from availability, preserves traceability, and follows the recall notice rather than expanding or narrowing the recall on its own.",
+    "choice_analysis": {
+      "A": "The recall is lot-specific; unaffected stock is not automatically removed from use unless the notice directs that broader action.",
+      "B": "This matches the lot-specific recall response: remove affected stock from availability, preserve traceability, and follow the notice's instructions.",
+      "C": "A recalled lot should not remain available for dispensing while the pharmacy waits for symptom reports.",
+      "D": "A recall does not automatically mean every patient using every lot should stop therapy; the pharmacy follows the recall's risk and patient instructions.",
+      "E": "Affected stock is segregated from dispensing based on the recall, not kept available because a bottle has already been opened."
+    },
+    "related_facts": [
+      "Recall notices may identify specific lots, strengths, or packages.",
+      "Patient instructions depend on the recall notice and risk, not merely on the word 'recall'."
+    ],
+    "mpje_trap": "A recall is not an automatic order to stop every patient's therapy or destroy every lot of the product."
+  },
+  "rule_ids": [
+    "FED-RECALL"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the exact recalled lot and affected inventory",
+    "Separate inventory action from patient clinical instructions"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-14",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-RECALL": {
+          "content_version": 1,
+          "content_hash": "8fca475dc68c561d7946a651d5c794066e8e7f17653fc6a93c81bc8774c385bf"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

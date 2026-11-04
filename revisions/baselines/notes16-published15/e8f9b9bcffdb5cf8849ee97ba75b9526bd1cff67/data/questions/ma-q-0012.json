@@ -1,0 +1,106 @@
+{
+  "question_id": "MA-Q-0012",
+  "family_id": "P2_0012_MA_CII_VALIDITY_30D",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule II validity",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Dispense because a stimulant prescription remains valid for six months."
+    },
+    {
+      "id": "B",
+      "text": "Treat the Schedule II prescription as expired under the 30-day Massachusetts validity rule."
+    },
+    {
+      "id": "C",
+      "text": "Call the prescriber and use that confirmation to restart the 30-day clock."
+    },
+    {
+      "id": "D",
+      "text": "Transfer the unfilled prescription so the receiving pharmacy can treat it as new."
+    },
+    {
+      "id": "E",
+      "text": "Apply the one-year Schedule VI transfer period."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "'Treat the Schedule II prescription as expired under the 30-day Massachusetts validity rule.' is the governing result. By contrast, 'Dispense because a stimulant prescription remains valid for six months.' would require that the prescription were Schedule III or IV and still within the federal refill window. The decisive cue appears in 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?'.",
+    "choice_analysis": {
+      "A": "'Dispense because a stimulant prescription remains valid for six months.' would apply only if the prescription were Schedule III or IV and still within the federal refill window; 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?' states otherwise.",
+      "B": "'Treat the Schedule II prescription as expired under the 30-day Massachusetts validity rule.': supported by schedule ii validity.",
+      "C": "'Call the prescriber and use that confirmation to restart the 30-day clock.' would apply only if a new prescription bearing a new lawful issue date were issued; 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?' states otherwise.",
+      "D": "'Transfer the unfilled prescription so the receiving pharmacy can treat it as new.' would apply only if transfer changed neither the original issue date nor Massachusetts validity; 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?' states otherwise.",
+      "E": "'Apply the one-year Schedule VI transfer period.' would apply only if the drug were Massachusetts Schedule VI rather than Schedule II; 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?' states otherwise."
+    },
+    "related_facts": [
+      "lisdexamfetamine (Vyvanse) is used for attention deficit hyperactivity disorder and moderate to severe binge eating disorder; it is federal Schedule II and Massachusetts Schedule II.",
+      "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after its issue date."
+    ],
+    "mpje_trap": "'Dispense because a stimulant prescription remains valid for six months.' would apply if the prescription were Schedule III or IV and still within the federal refill window. In 'At prescription intake, a Vyvanse prescription is presented 31 days after its issue date with no prior dispensing. What should the Massachusetts pharmacist conclude?', that predicate is missing."
+  },
+  "rule_ids": [
+    "MA-CII-VALIDITY-30D",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "lisdexamfetamine"
+  ],
+  "reasoning_steps": [
+    "Classify lisdexamfetamine under the federal and Massachusetts schedules before selecting a legal pathway"
+  ],
+  "verification_status": "HOLD",
+  "lifecycle_status": "REVIEW_REQUIRED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-VALIDITY-30D": {
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "lisdexamfetamine": {
+          "content_version": 1,
+          "content_hash": "3ae518cc186d2997d82ea286d89c02d77e7441e633d1a805239cdb3bb73b5d06"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

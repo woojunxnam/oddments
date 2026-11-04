@@ -1,0 +1,210 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from qa_common import DATA, load_json, write_json
+
+
+def rewrite_q0098() -> None:
+    path = DATA / "questions" / "ma-q-0098.json"
+    q = load_json(path)
+    q.update(
+        {
+            "family_id": "EXP1_0098_NALOXONE_PRODUCT_STATUS",
+            "area": 2,
+            "topic": "Public health",
+            "subtopic": "Naloxone product status and retail handling",
+            "difficulty": 4,
+            "question_type": "SBA",
+            "stem": (
+                "During a shelf audit, a Massachusetts pharmacist finds two naloxone nasal-spray cartons mixed together: "
+                "one is an FDA-labeled OTC package with Drug Facts, while the other is prescription-labeled and states that "
+                "federal law prohibits dispensing without a prescription. Both contain naloxone. What is the most appropriate correction?"
+            ),
+            "choices": [
+                {
+                    "id": "A",
+                    "text": "Move both cartons to prescription inventory because Massachusetts treats every naloxone product as prescription-only once it enters a pharmacy."
+                },
+                {
+                    "id": "B",
+                    "text": "Keep the OTC-labeled carton available for ordinary retail sale, but return the prescription-labeled carton to prescription inventory for dispensing only through lawful prescription or standing-order authority."
+                },
+                {
+                    "id": "C",
+                    "text": "Treat both cartons as OTC when their active ingredient and strength match because the FDA nonprescription status attaches to naloxone itself rather than to the labeled product."
+                },
+                {
+                    "id": "D",
+                    "text": "Treat the OTC-labeled carton as prescription-only whenever a customer wants insurance billed because the payment method changes the product's legal classification."
+                },
+                {
+                    "id": "E",
+                    "text": "Allow the prescription-labeled carton to be sold from the shelf without an order whenever the purchaser says the naloxone is for a person at risk of overdose."
+                },
+            ],
+            "correct_choice_ids": ["B"],
+            "explanation": {
+                "core_reasoning": (
+                    "Massachusetts DCP distinguishes FDA-labeled OTC naloxone from prescription naloxone by the product's approved packaging. "
+                    "OTC naloxone may be handled as an OTC retail product, while prescription-labeled naloxone remains subject to the prescription/standing-order dispensing pathway."
+                ),
+                "choice_analysis": {
+                    "A": "Current Massachusetts guidance expressly recognizes FDA-labeled OTC naloxone as a separate nonprescription product category.",
+                    "B": "The packaging identifies two legally distinct product pathways: ordinary OTC retail sale for the OTC package and prescription or standing-order dispensing for the prescription-labeled package.",
+                    "C": "OTC status does not automatically convert every naloxone product; Massachusetts DCP directs users to distinguish the products by their FDA-approved packaging.",
+                    "D": "Insurance billing can affect how a transaction is processed, but it does not transform an FDA-labeled OTC package into a prescription-only product.",
+                    "E": "Broad naloxone access does not erase the order requirement for a package that remains prescription-labeled; that product requires lawful prescription or standing-order authority."
+                },
+                "related_facts": [
+                    "Massachusetts DCP states that OTC naloxone and prescription naloxone are separate and distinct products governed by different requirements.",
+                    "FDA-labeled OTC naloxone may be stocked for direct shelf access; prescription naloxone remains available through patient-specific prescriptions or the statewide standing order."
+                ],
+                "mpje_trap": "Do not classify the product only by active ingredient; the FDA-approved package identifies whether the carton is OTC or prescription naloxone."
+            },
+            "rule_ids": ["MA-NALOXONE"],
+            "drug_ids": ["naloxone", "naloxone-otc"],
+            "reasoning_steps": [
+                "Distinguish the two cartons by FDA-approved labeling rather than active ingredient alone",
+                "Apply Massachusetts DCP's separate treatment of OTC and prescription naloxone",
+                "Select the inventory and dispensing pathway that matches each product category"
+            ],
+            "verification_status": "AUDIT_PENDING",
+            "lifecycle_status": "AUDIT_PENDING",
+            "audits": [],
+            "duplicate_review_status": "PENDING",
+            "independent_audit_status": "PENDING",
+            "final_adjudication": None,
+        }
+    )
+    write_json(path, q)
+
+
+def rewrite_q0110() -> None:
+    path = DATA / "questions" / "ma-q-0110.json"
+    q = load_json(path)
+    q.update(
+        {
+            "family_id": "EXP1_0110_CS_PAMPHLET_EXCEPTION",
+            "area": 3,
+            "topic": "Dispensing",
+            "subtopic": "Schedule II and III consumer education exceptions",
+            "difficulty": 4,
+            "question_type": "SBA",
+            "stem": (
+                "During final verification, a community pharmacist reviews a morphine extended-release prescription for a patient "
+                "whose record documents outpatient palliative care under Massachusetts law. The technician has held the bag because "
+                "the usual Massachusetts Schedule II/III consumer pamphlet is not attached. What is the most appropriate response?"
+            ),
+            "choices": [
+                {
+                    "id": "A",
+                    "text": "Hold the prescription until the pamphlet is added because every community-pharmacy Schedule II dispensing requires it without exception."
+                },
+                {
+                    "id": "B",
+                    "text": "Dispense without the pamphlet only if the prescriber separately writes an order waiving the education requirement for this fill."
+                },
+                {
+                    "id": "C",
+                    "text": "The pamphlet is not required for this documented outpatient palliative-care patient, although the pharmacist must still satisfy the other applicable dispensing requirements."
+                },
+                {
+                    "id": "D",
+                    "text": "The pamphlet exception applies to long-term-care residents only, so outpatient palliative care does not change the requirement."
+                },
+                {
+                    "id": "E",
+                    "text": "The pamphlet may be omitted only when the controlled substance is prescribed for substance-use-disorder or opioid-dependence treatment."
+                },
+            ],
+            "correct_choice_ids": ["C"],
+            "explanation": {
+                "core_reasoning": (
+                    "Massachusetts generally requires the designated consumer pamphlet when a community pharmacy dispenses a narcotic or other controlled substance in Schedule II or III. "
+                    "The statute expressly creates several exceptions, including a patient receiving outpatient palliative care under M.G.L. c.111 §227."
+                ),
+                "choice_analysis": {
+                    "A": "The Schedule II/III pamphlet rule is not absolute; the statute lists specific exceptions.",
+                    "B": "The outpatient palliative-care exception comes from the statute and does not depend on a prescriber writing a separate pamphlet-waiver order.",
+                    "C": "Documented outpatient palliative care is an express statutory exception to the Schedule II/III pamphlet-distribution requirement.",
+                    "D": "Long-term-care residence is one exception, but outpatient palliative care is a separate independent exception.",
+                    "E": "Substance-use-disorder or opioid-dependence treatment is another exception, not the only one."
+                },
+                "related_facts": [
+                    "M.G.L. c.94C §21 lists outpatient palliative care, long-term-care residence, and treatment of substance use disorder or opioid dependence as separate pamphlet exceptions.",
+                    "An exception to the pamphlet requirement does not waive unrelated prescription, labeling, counseling, or controlled-substance dispensing obligations."
+                ],
+                "mpje_trap": "First identify the general Schedule II/III education rule, then check whether the patient's setting or indication matches one of the statute's express exceptions."
+            },
+            "rule_ids": ["MA-CS-II-III-PAMPHLET"],
+            "drug_ids": ["morphine"],
+            "reasoning_steps": [
+                "Identify morphine as a Schedule II controlled substance and recognize the usual pamphlet trigger",
+                "Identify the documented outpatient palliative-care setting",
+                "Apply the statutory exception without treating it as a waiver of other dispensing duties"
+            ],
+            "verification_status": "AUDIT_PENDING",
+            "lifecycle_status": "AUDIT_PENDING",
+            "audits": [],
+            "duplicate_review_status": "PENDING",
+            "independent_audit_status": "PENDING",
+            "final_adjudication": None,
+        }
+    )
+    write_json(path, q)
+
+
+def update_family_matrix() -> None:
+    path = DATA / "exam_style" / "question_family_matrix.json"
+    matrix = load_json(path)
+    families = {family["family_id"]: family for family in matrix["families"]}
+
+    naloxone = families["EXP1_0098_NALOXONE_PATHWAY"]
+    naloxone.update(
+        {
+            "family_id": "EXP1_0098_NALOXONE_PRODUCT_STATUS",
+            "area": 2,
+            "topic": "Public health",
+            "subtopic": "Naloxone product status and retail handling",
+            "primary_rule_ids": ["MA-NALOXONE"],
+            "secondary_rule_ids": [],
+            "drug_required": True,
+            "scenario_types": ["inventory review", "retail product classification"],
+            "common_traps": ["assuming FDA OTC approval converts every prescription-labeled naloxone package into an OTC product"],
+            "target_difficulties": [4],
+            "target_item_types": ["SBA"],
+        }
+    )
+
+    label = families["V3_0110_CONTROLLED_LABEL_ELEMENTS"]
+    label.update(
+        {
+            "family_id": "EXP1_0110_CS_PAMPHLET_EXCEPTION",
+            "area": 3,
+            "topic": "Dispensing",
+            "subtopic": "Schedule II and III consumer education exceptions",
+            "primary_rule_ids": ["MA-CS-II-III-PAMPHLET"],
+            "secondary_rule_ids": [],
+            "drug_required": True,
+            "scenario_types": ["final verification", "patient education exception"],
+            "common_traps": ["treating the Schedule II/III pamphlet requirement as absolute instead of checking statutory setting and indication exceptions"],
+            "target_difficulties": [4],
+            "target_item_types": ["SBA"],
+        }
+    )
+
+    matrix["last_reviewed"] = "2026-08-14"
+    write_json(path, matrix)
+
+
+def main() -> int:
+    rewrite_q0098()
+    rewrite_q0110()
+    update_family_matrix()
+    print("rewrote MA-Q-0098 and MA-Q-0110 with distinct applied decision paths")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

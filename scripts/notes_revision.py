@@ -189,10 +189,21 @@ def load_notes(root=ROOT, revision_id=None):
             return data
     if revision_id is not None:
         raise ValueError('Unknown requested notes revision')
-    return data
+    from notes_held_sixteenth import apply_if_bound
+    return apply_if_bound(root,data)
 
 
-def apply_study_revision(data, kind, root=ROOT):
+def apply_study_revision(data, kind, root=ROOT, *, notes_context=None):
+    """Apply the same authored patches and tag their explicit note context.
+
+    Historical callers supply their already raw-SHA-validated immutable notes.
+    Live builders omit that context and must still validate current load_notes.
+    A missing historical provenance is an error, never a fallback to live N1.
+    """
+    if notes_context is not None and (not isinstance(notes_context,dict) or
+            not isinstance(notes_context.get('revision_provenance'),dict) or
+            not notes_context['revision_provenance']):
+        raise ValueError('Explicit notes context requires retained revision provenance')
     field={'study':'lessons','refresh':'cards'}[kind]
     lookup={x['id']:x for x in data[field]}
     for _,_,revision in revisions(root):
@@ -205,5 +216,6 @@ def apply_study_revision(data, kind, root=ROOT):
             if identifier not in lookup or not set(patch)<=set(lookup[identifier]):
                 raise ValueError('Unknown revised learning field')
             lookup[identifier].update(copy.deepcopy(patch))
-    data['notes_revision']=load_notes(root)['revision_provenance']
+    notes=load_notes(root)if notes_context is None else notes_context
+    data['notes_revision']=copy.deepcopy(notes['revision_provenance'])
     return data

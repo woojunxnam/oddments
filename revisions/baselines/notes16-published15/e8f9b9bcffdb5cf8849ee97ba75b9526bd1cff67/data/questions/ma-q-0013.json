@@ -1,0 +1,106 @@
+{
+  "question_id": "MA-Q-0013",
+  "family_id": "P2_0013_MA_CII_OUTSTATE",
+  "area": 2,
+  "topic": "Prescription validity",
+  "subtopic": "Out-of-state Schedule II prescriptions",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy receives a Focalin prescription issued four days ago by a properly registered New Hampshire prescriber. The pharmacist verifies the prescription and prescriber. Which conclusion is most defensible?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Reject it because all out-of-state Schedule II prescriptions are prohibited."
+    },
+    {
+      "id": "B",
+      "text": "Apply the five-day contiguous-state narcotic rule because all Schedule II drugs are narcotics."
+    },
+    {
+      "id": "C",
+      "text": "Dispense under the nonnarcotic Schedule II out-of-state pathway after verification."
+    },
+    {
+      "id": "D",
+      "text": "Use the 30-day out-of-state Schedule III-through-VI window."
+    },
+    {
+      "id": "E",
+      "text": "Dispense without verification because New Hampshire is contiguous."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "Dispense under the nonnarcotic Schedule II out-of-state pathway after verification. By contrast, 'Reject it because all out-of-state Schedule II prescriptions are prohibited.' uses a legal trigger absent from the stem.",
+    "choice_analysis": {
+      "A": "This near-miss uses a different trigger: Reject it because all out-of-state Schedule II prescriptions are prohibited.",
+      "B": "This near-miss uses a different trigger: Apply the five-day contiguous-state narcotic rule because all Schedule II drugs are narcotics.",
+      "C": "The stated facts support this result: Dispense under the nonnarcotic Schedule II out-of-state pathway after verification.",
+      "D": "This near-miss uses a different trigger: Use the 30-day out-of-state Schedule III-through-VI window.",
+      "E": "This near-miss uses a different trigger: Dispense without verification because New Hampshire is contiguous."
+    },
+    "related_facts": [
+      "dexmethylphenidate (Focalin) is used for attention deficit hyperactivity disorder; it is federal Schedule II and Massachusetts Schedule II.",
+      "Massachusetts applies a five-day presentation window and different issuing-state conditions to out-of-state narcotic and nonnarcotic Schedule II prescriptions."
+    ],
+    "mpje_trap": "Reject 'Reject it because all out-of-state Schedule II prescriptions are prohibited.' because its legal trigger is absent."
+  },
+  "rule_ids": [
+    "MA-CII-OUTSTATE",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "dexmethylphenidate"
+  ],
+  "reasoning_steps": [
+    "Classify dexmethylphenidate under the federal and Massachusetts schedules before selecting a legal pathway"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-OUTSTATE": {
+          "content_version": 1,
+          "content_hash": "356c4dd39d308dbc6c22ab6f047b42cbe47b5e3634f6876dd8ca227f22749888"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "dexmethylphenidate": {
+          "content_version": 1,
+          "content_hash": "77bb97c1da08bbdabcd10ce7b11581e8e50d622c96ccce8bd0b7981dd749a7b8"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

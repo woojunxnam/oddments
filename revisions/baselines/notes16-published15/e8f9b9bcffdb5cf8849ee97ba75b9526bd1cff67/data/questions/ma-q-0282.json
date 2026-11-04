@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0282",
+  "family_id": "B3B_0282_MA_COUNSELING_DESIGNEE_TRAINING",
+  "area": 2,
+  "topic": "Patient care",
+  "subtopic": "Offer by a designee",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy assigns front-counter staff to make the offer to counsel at pickup so the pharmacist can stay at the verification station. What does the regulation require of that arrangement?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The pharmacist shall ensure the designee is appropriately trained to make the offer to counsel."
+    },
+    {
+      "id": "B",
+      "text": "The designee must hold a pharmacy technician licence before making any offer."
+    },
+    {
+      "id": "C",
+      "text": "The arrangement is prohibited, because only a pharmacist may make the offer."
+    },
+    {
+      "id": "D",
+      "text": "The designee must document each offer in the patient profile at the time it is made."
+    },
+    {
+      "id": "E",
+      "text": "The arrangement requires prior written approval from the Board of Registration."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.18(1) allows a pharmacist or a pharmacist's designee to offer the counseling services of the pharmacist to each person who receives a prescription medication, and 247 CMR 9.18(2) requires the pharmacist to ensure the designee is appropriately trained to make the offer.",
+    "choice_analysis": {
+      "A": "Correct: the pharmacist must ensure the designee is appropriately trained.",
+      "B": "The regulation refers to a designee rather than requiring a technician licence.",
+      "C": "A designee may make the offer.",
+      "D": "Contemporaneous profile documentation of every offer is not the stated requirement.",
+      "E": "No advance Board approval is required for the arrangement."
+    },
+    "related_facts": [
+      "Counseling itself may only be provided by a pharmacist or a pharmacy intern."
+    ],
+    "mpje_trap": "The regulation constrains the designee through a training duty on the pharmacist, not through a credential."
+  },
+  "rule_ids": [
+    "MA-COUNSELING-WHO-MAY-COUNSEL"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm that a designee may make the offer",
+    "Locate the pharmacist's duty regarding that designee",
+    "Apply the appropriate-training requirement"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-COUNSELING-WHO-MAY-COUNSEL": {
+          "content_version": 1,
+          "content_hash": "bdafd491aedbc9fcc77201da1b49935a62f9af010ef13d583fb7c2dbfb1efb46"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,5 @@
+Board minutes2023-11-02
+
+실제minutes는changeallowsScheduleIIandIIImaintenancemedicationsinmulti-drug-single-dosecompliancepackages라고명시하고unanimousapproveedits를기록.이는단순policy생략과다른명시적자료이나현행규정금지와의통합해석은여전히HOLD.
+
+판본/효력 한계: Meeting2023-11-02;BOPapproved2023-12-07.정책변경승인의회의기록이며CMR을자동폐지했다는효력판단아님.

@@ -1,0 +1,180 @@
+{
+  "artifact_type": "BATCH4_POST_B4A_CONTROLLER_CHECKPOINT",
+  "status": "AUTHORITATIVE_CHECKPOINT",
+  "relationship_to_prior_handoff": "Records state after the Study Guide REPAIR-V3 cycle and the MA-Q-0426 V2 re-audit. It does not overwrite audits/controller/BATCH4-CLAUDE-HANDOFF-2026-09-02.json, which remains the historical handoff.",
+  "repository": "https://github.com/woojunxnam/oddments",
+  "checkpoint_date": "2026-09-04",
+  "authorizing_issue": 121,
+  "live_main_sha_at_checkpoint_parent": "6318bb6f1e534ed7320f2db0c95110949a7817e7",
+  "released_total": 398,
+  "released_by_area": {
+    "Area_1": 87,
+    "Area_2": 131,
+    "Area_3": 100,
+    "Area_4": 80
+  },
+  "four_mock_target": {
+    "Area_1": 104,
+    "Area_2": 160,
+    "Area_3": 116,
+    "Area_4": 100,
+    "total": 480
+  },
+  "remaining_deficits": {
+    "Area_1": 17,
+    "Area_2": 29,
+    "Area_3": 16,
+    "Area_4": 20,
+    "total": 82
+  },
+  "MA_Q_0426": {
+    "lifecycle_status": "AUDIT_PENDING",
+    "verification_status": "AUDIT_PENDING",
+    "independent_audit_status": "FAILED",
+    "duplicate_review_status": "CLEAR",
+    "audited_hash": "0f1f0db5e1cb32ee009bcf6959af54d9d4009215a71a82f7afd82be443227ef2",
+    "prior_hash_superseded": "a15e9a4f6b63d19f68d4c9af966d10b36f9f06663426e569ef652dedf357f519",
+    "auditor_instance": "GPT-FRESH-B4A-Q0426-V2",
+    "freeze": {
+      "candidate_sha": "1f4a3dcf1c5c91a7e54b647a570057728c095f2c",
+      "freeze_commit": "63548a3341effe49e60e52897162a26042633f2d",
+      "blind_package_sha256": "264d754d3b76a062a37fe092871652f772bb520bd055ae011cd609511d80821f",
+      "clean_freeze_manifest_sha256": "810c409900692ac417325d590b1979725f8095c5db0ee0ac7587bebf3abfc953"
+    },
+    "phase1_lock": {
+      "path": "audits/remediation/2026-09-04/GPT-FRESH-B4A-Q0426-V2-PHASE1-BLIND-LOCK.json",
+      "sha256": "a488f4339b49026133976241bf130b3124026ea02e1a528c94c13449d21f35cd",
+      "blind_selected": "C",
+      "blind_confidence": 0.95,
+      "contamination": false
+    },
+    "legal_audit": {
+      "audit_id": "AUDIT-GPT-FRESH-B4A-Q0426-V2-LEGAL-2026-09-04",
+      "path": "data/audits/AUDIT-GPT-FRESH-B4A-Q0426-V2-LEGAL-2026-09-04.json",
+      "sha256": "90bf2dcc019ead8c4c041e34fbae4c1b914bb33396f57f5a50c8d497467c436c",
+      "verdict": "KEEP",
+      "severity": "Low",
+      "existing_answer_correct": "YES",
+      "qualifies": true
+    },
+    "realism_audit": {
+      "audit_id": "AUDIT-GPT-FRESH-B4A-Q0426-V2-REALISM-2026-09-04",
+      "path": "data/audits/AUDIT-GPT-FRESH-B4A-Q0426-V2-REALISM-2026-09-04.json",
+      "sha256": "dee534ca2c4810c244ffbacfd57884686f1946e1e54fbb0b572a65fbe2fc1b53",
+      "verdict": "MAJOR_REWRITE",
+      "severity": "Medium",
+      "realism_verdict": "FAIL",
+      "failed_criteria": [
+        "authentic_distractors",
+        "wording_not_guessable"
+      ],
+      "qualifies": false
+    },
+    "release_status": "NOT_RELEASED",
+    "blocker": "The realism review failed at the repaired hash and escalated the required remedy from MINOR_EDIT to MAJOR_REWRITE. Two structural cues survive: exactly one of five options carries negative polarity while the other four validate or excuse the arrangement, and the stem asserts the pretext conclusion instead of supplying facts from which it must be inferred. Choice B is additionally refuted by an express stem fact, so the item functions as four options. The audit also records that the stem stipulates away the Massachusetts step, so M.G.L. c. 94C, s. 1(c) is never exercised.",
+    "next_repair_requires": [
+      "A MAJOR_REWRITE, which exceeds the minimal wording repair previously authorized.",
+      "Removing the polarity cue, replacing choice B, converting the conclusion-laden stem clause into neutral operational facts, and requiring the candidate to apply the enumerated administration categories rather than being told the answer.",
+      "A new audit hash, a new immutable freeze, and a third unused auditor identity. GPT-FRESH-B4A and GPT-FRESH-B4A-Q0426-V2 are both spent."
+    ]
+  },
+  "study_guide": {
+    "public_count": 2,
+    "public": [
+      "SG-CONTROLLED-SCHEDULES",
+      "SG-FED-MA-INTERACTION"
+    ],
+    "pending": {
+      "SG-CII-LIFECYCLE": {
+        "content_version": 3,
+        "content_hash": "3f12347a397b70bc04a4f571223b27b4dec5a81e538bdb3eb89bdeb0fe90dba6",
+        "v3_disposition": "MAJOR_REWRITE",
+        "v3_severity": "High",
+        "v3_failed_criteria": [
+          "deadlines",
+          "decision_logic",
+          "forms",
+          "ma_vs_federal_distinctions",
+          "material_exceptions",
+          "study_usefulness_without_legal_distortion"
+        ]
+      },
+      "SG-CIII-V-REFILL-TRANSFER": {
+        "content_version": 3,
+        "content_hash": "dd4911c0164d5fae1ffba55aa730909b6a17426a92bad95e3afff6915c4d37c6",
+        "v3_disposition": "MINOR_EDIT",
+        "v3_severity": "Medium",
+        "v3_failed_criteria": [
+          "actor_and_scope",
+          "deadlines",
+          "material_exceptions"
+        ]
+      },
+      "SG-MA-SCHEDULE-VI": {
+        "content_version": 3,
+        "content_hash": "2e8b2d6040218d677416c7eebe61ecaeae6061b764e804612de826794ff2d5b6",
+        "v3_disposition": "MINOR_EDIT",
+        "v3_severity": "Medium",
+        "v3_failed_criteria": [
+          "actor_and_scope"
+        ]
+      }
+    },
+    "v3_audit": {
+      "audit_id": "AUDIT-SG-B4-SG-REPAIR-V3-2026-09-04",
+      "auditor_instance": "GPT-FRESH-B4-SG-REPAIR-V3",
+      "freeze_sha": "4f7d2ffe6864dc1da9be78de4cd92d6812884235"
+    },
+    "spent_auditor_identities": [
+      "GPT-FRESH-B4-SG-PILOT-V1",
+      "GPT-FRESH-B4-SG-REPAIR-V2",
+      "GPT-FRESH-B4-SG-REPAIR-V3"
+    ]
+  },
+  "B4B": {
+    "status": "RECALCULATION_AUTHORIZED_NOT_STARTED",
+    "prior_provisional_allocation": {
+      "total_slots": 33,
+      "Area_1": 8,
+      "Area_2": 11,
+      "Area_3": 8,
+      "Area_4": 6,
+      "authority": "PROVISIONAL_NOT_AUTHORIZED"
+    },
+    "reserved_id_range": "MA-Q-0440..MA-Q-0472",
+    "recalculation_basis": [
+      "exact current deficits recorded in this checkpoint",
+      "full proposition census",
+      "family headroom",
+      "current RELEASED bank",
+      "audits/coverage/2026-09-01/BATCH4-REAL-EXAM-SIGNAL-REPORT.json abstract realism signals",
+      "current canonical rules and current official authority"
+    ],
+    "authority_recheck_ids": [
+      "MA-Q-0453",
+      "MA-Q-0454",
+      "MA-Q-0456",
+      "MA-Q-0459",
+      "MA-Q-0460",
+      "MA-Q-0461",
+      "MA-Q-0465",
+      "MA-Q-0468",
+      "MA-Q-0469"
+    ],
+    "duplicate_risk_first_replacement_candidate": "MA-Q-0457",
+    "gate": "No authoring before the recalculated 33-slot proposition map is reviewed and durable."
+  },
+  "parallel_lanes": {
+    "LANE_A_B4B_EXPANSION": "Recalculate B4-B from the deficits in this checkpoint, then lock a new 33-slot proposition map for MA-Q-0440..MA-Q-0472 and live-recheck the nine authority-risk slots.",
+    "LANE_B_STUDY_GUIDE_REPAIR_V4": "Repair the three private sections. Take SG-CIII-V-REFILL-TRANSFER and SG-MA-SCHEDULE-VI first for faster public coverage; treat SG-CII-LIFECYCLE separately because its federal 60-day LTCF window against the Massachusetts 30-day invalidity in M.G.L. c. 94C, s. 23(a) is a high-severity legal issue. Each changed section needs a new hash, a new freeze, a new fresh auditor and an exact-current-hash KEEP before publication.",
+    "sequencing_note": "The heavier SG-CII-LIFECYCLE rewrite must not block Lane A question production."
+  },
+  "preserved_blockers": {
+    "MA-Q-0426": "Realism FAIL at hash 0f1f0db5...; unreleased.",
+    "MA-MH-SUD-ADMIN": "Known shared-rule legal wording blocker; not a dependency of MA-Q-0426.",
+    "MA-Q-0172": "HOLD, tied to MA-MH-SUD-ADMIN.",
+    "MA-Q-0028": "Quarantined after current-hash realism distinctness failure.",
+    "MA-Q-0190": "Answer-length warning preserved.",
+    "inherited_SBA_leakage_debt": "149/230 unchanged; prospective tranche 8/19 (42.1%)."
+  }
+}

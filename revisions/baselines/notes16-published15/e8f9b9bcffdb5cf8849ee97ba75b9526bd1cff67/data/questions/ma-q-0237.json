@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0237",
+  "family_id": "B3A_0237_MA_TRAINEE_TELEPHONE_BAR",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Technician trainee limits",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy technician trainee working under the direct supervision of a pharmacist is asked to answer the pharmacy telephone during a staffing crunch and take a new prescription from a prescriber's agent. Which statement is correct?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The trainee may take the prescription while under direct supervision."
+    },
+    {
+      "id": "B",
+      "text": "The trainee may take the prescription if the pharmacist listens on a second handset."
+    },
+    {
+      "id": "C",
+      "text": "The trainee may take the prescription if it is for a Schedule VI drug."
+    },
+    {
+      "id": "D",
+      "text": "The trainee may not take prescriptions over the telephone."
+    },
+    {
+      "id": "E",
+      "text": "The trainee may take the prescription after 500 hours of trainee employment."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 8.03(4)(b) allows a pharmacy technician trainee to perform the duties of a pharmacy technician under direct pharmacist supervision, but 247 CMR 8.03(4)(c) carves out an express exception: a trainee may not take prescriptions over the telephone. Direct supervision does not lift that carve-out.",
+    "choice_analysis": {
+      "A": "Direct supervision is the general condition, but the telephone carve-out overrides it.",
+      "B": "Monitoring the call does not remove the express prohibition.",
+      "C": "The prohibition is not limited by schedule.",
+      "D": "Correct: trainees may not take prescriptions over the telephone.",
+      "E": "The 500-hour figure relates to technician licensure eligibility, not telephone authority."
+    },
+    "related_facts": [
+      "A pharmacy technician trainee must be at least 16 years of age, while a pharmacy technician must be at least 18."
+    ],
+    "mpje_trap": "A general grant of technician duties does not survive an express carve-out written into the same section."
+  },
+  "rule_ids": [
+    "MA-TECH-TRAINEE-LIMITS"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Start from the general rule that a trainee may perform technician duties under direct supervision",
+    "Locate the express telephone carve-out that applies to trainees only",
+    "Apply the carve-out despite the supervision being in place"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-TECH-TRAINEE-LIMITS": {
+          "content_version": 1,
+          "content_hash": "409bd1b919a88db4eaeab2bdded75ce3c439ab1217a461fd65a5829d02b046af"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

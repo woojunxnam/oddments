@@ -1,0 +1,187 @@
+........................................................................ [  4%]
+........................................................................ [  9%]
+........................................................................ [ 14%]
+........................................................................ [ 19%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+........................................................................ [ 33%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+........................................................................ [ 48%]
+........................................................................ [ 52%]
+........................................................................ [ 57%]
+.....................................................................FF. [ 62%]
+....FFFF.............................................................FF. [ 67%]
+........................................................................ [ 72%]
+........................................................................ [ 76%]
+....................................F................................... [ 81%]
+........................................................................ [ 86%]
+........................................................................ [ 91%]
+........................................................................ [ 96%]
+..........................................................               [100%]
+=================================== FAILURES ===================================
+_ test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive _
+tests/test_notes_independent_metadata.py:105: in test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive
+    metadata = load_metadata(root,notes)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+_ test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches _
+tests/test_notes_independent_metadata.py:130: in test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches
+    assert load_metadata(target,notes)['progress']['processed_units'] == 10
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+___ test_stale_actual_body_or_selected_census_never_retains_previous_credit ____
+tests/test_notes_independent_metadata.py:159: in test_stale_actual_body_or_selected_census_never_retains_previous_credit
+    with pytest.raises(ValueError,match='Assigned ledger/census/body changed'): load_metadata(root,notes)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+
+During handling of the above exception, another exception occurred:
+tests/test_notes_independent_metadata.py:159: in test_stale_actual_body_or_selected_census_never_retains_previous_credit
+    with pytest.raises(ValueError,match='Assigned ledger/census/body changed'): load_metadata(root,notes)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E    Regex: 'Assigned ledger/census/body changed'
+E    Input: 'Inactive census successor has no unique append-ordered assignment'
+_ test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent _
+tests/test_notes_independent_metadata.py:165: in test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent
+    first = load_metadata(root,notes,ledger_raw=ledger)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+_ test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter _
+tests/test_notes_independent_metadata.py:175: in test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter
+    root,notes,state = actual_reports; reviews=load_metadata(root,notes)['units']
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+___ test_frontend_renders_independent_warning_and_findings_with_escaped_text ___
+tests/test_notes_independent_metadata.py:189: in test_frontend_renders_independent_warning_and_findings_with_escaped_text
+    root,notes,state=actual_reports; review=load_metadata(root,notes)['units']['w1-a-4']
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_independent_metadata.py:72: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:65: in validate_chain
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+scripts/note_review_queue.py:31: in require
+    raise ValueError(message)
+E   ValueError: Inactive census successor has no unique append-ordered assignment
+_ test_phase10_preserves_355_historical_statuses_question_objects_and_M_source _
+tests/test_phase10_default_transition.py:112: in test_phase10_preserves_355_historical_statuses_question_objects_and_M_source
+    assert hashlib.sha256(json.dumps(notes, ensure_ascii=False, sort_keys=True).encode()).hexdigest() == before['effective_notes_semantic_sha256']
+E   AssertionError: assert '29da006df520...33bb10e97f48c' == 'e1519c0290ff...d4495a03f1824'
+E     
+E     - e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824
+E     + 29da006df52036af1570c02ac635ef7f7e15ab70dc541191c0633bb10e97f48c
+_ test_phase10_archive_notice_splits_preserve_whole_previous_groups_and_exact_sources _
+tests/test_phase10_default_transition.py:129: in test_phase10_archive_notice_splits_preserve_whole_previous_groups_and_exact_sources
+    result = phase10_archive_history(ROOT)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/default_selection_assertions.py:207: in phase10_archive_history
+    assert fields(row) == fields(old), 'Untouched/split original notice metadata changed'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Untouched/split original notice metadata changed
+_ test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields _
+tests/test_procedural_secondary_metadata.py:261: in test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+    outputs = builder.build()
+              ^^^^^^^^^^^^^^^
+scripts/build_full_corpus_review.py:729: in build
+    effective_notes = load_notes(ROOT)
+                      ^^^^^^^^^^^^^^^^
+scripts/notes_revision.py:193: in load_notes
+    return apply_if_bound(root,data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:132: in apply_if_bound
+    config,closure,state,job,archived,candidate,binding=source_contract(root)
+                                                        ^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:64: in source_contract
+    return validate_source_payload(root,config,binding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:78: in validate_source_payload
+    closure=old.validate(root,config['closure'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:275: in validate
+    validate_archive_notice_wrapper(root,value)
+scripts/notes_published15_closure.py:323: in validate_archive_notice_wrapper
+    supplementary=validated_sources(root,[r for report in reports for r in report['records']])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/supplementary_checkpoint_bindings.py:44: in validated_sources
+    metadata=consumer.load_metadata(root,primary_records,questions,collections,source_bindings=staged)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields.<locals>.load_fixture() got an unexpected keyword argument 'source_bindings'
+------ generated xml file: /workspace/scratch/mpje-pr193-91a58-junit.xml -------
+=========================== short test summary info ============================
+FAILED tests/test_notes_independent_metadata.py::test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive
+FAILED tests/test_notes_independent_metadata.py::test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches
+FAILED tests/test_notes_independent_metadata.py::test_stale_actual_body_or_selected_census_never_retains_previous_credit
+FAILED tests/test_notes_independent_metadata.py::test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent
+FAILED tests/test_notes_independent_metadata.py::test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter
+FAILED tests/test_notes_independent_metadata.py::test_frontend_renders_independent_warning_and_findings_with_escaped_text
+FAILED tests/test_phase10_default_transition.py::test_phase10_preserves_355_historical_statuses_question_objects_and_M_source
+FAILED tests/test_phase10_default_transition.py::test_phase10_archive_notice_splits_preserve_whole_previous_groups_and_exact_sources
+FAILED tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+9 failed, 1489 passed in 7255.85s (2:00:55)

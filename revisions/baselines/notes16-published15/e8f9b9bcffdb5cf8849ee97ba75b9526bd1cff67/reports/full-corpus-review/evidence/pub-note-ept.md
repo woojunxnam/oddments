@@ -1,0 +1,27 @@
+Retrieved 2026-11-03 from https://www.mass.gov/doc/2020-08-expedited-partner-therapy-prescriptions-pdf/download
+
+# The Commonwealth of Massachusetts
+
+Executive Office of Health and Human Services Department of Public Health Bureau of Health Professions Licensure 250 Washington Street, Boston, MA 02108-4619
+
+Tel: 617-973-0800 TTY : 617-973-0988 <u>www.mass.gov/dph/boards</u>
+
+## Board of Registration in Pharmacy Drug Control Program
+
+## Policy 2020-08: Expedited Partner Therapy Prescriptions
+
+This policy outlines dispensing procedures for Expedited Partner Therapy Prescriptions (“EPT”). EPT is the practice of treating the sex partners of people diagnosed with Chlamydia infection without examining or testing the partner. This policy applies only to the treatment of Chlamydia infection.
+
+Patients diagnosed with Chlamydia infection are at an increased risk of re-infection after treatment if their partner(s) is not also treated. EPT helps interrupt the spread of disease by providing treatment to those partners who may be unwilling or unable to seek medical care on their own.
+
+**I. Prescriptions for EPT** In accordance with <u>105 CMR 700.003(H)</u>, a separate prescription for the sex partner must be provided in one of two ways:
+A. A prescription is issued for named sex partner(s) of the infected patient; or
+B. A prescription is issued using “Expedited Partner Therapy,” “E.P.T.” or “EPT” in place of the patient’s name and address.
+**II. Filling of EPT Prescriptions**
+
+A. Create a patient profile and prescription label using “Expedited Partner Therapy,” “E.P.T.” or “EPT” in place of the patient’s name and address.
+B. If a pharmacist is unable or unwilling to fill an EPT prescription, the pharmacist must refer the patient to an alternate pharmacy.
+## Please direct any questions to: <u>Pharmacy.Admin@mass.gov</u>
+
+## Adopted: 7/31/20
+

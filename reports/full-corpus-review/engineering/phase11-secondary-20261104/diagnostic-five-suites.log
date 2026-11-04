@@ -1,0 +1,106 @@
+........................................................................ [ 33%]
+........................................................................ [ 66%]
+......................F................F........................F..F.... [ 99%]
+.                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_every_id_is_inventoried_without_inheriting_family_passes _________
+
+    def test_every_id_is_inventoried_without_inheriting_family_passes():
+        outputs = build()
+        for path, text in outputs.items():
+>           assert path.read_text() == text
+E           assert '{"question_i..._case_f"}}}\n' == '{"question_i..._case_f"}}}\n'
+E             
+E             Skipping 20751350 identical leading characters in diff, use -v to show
+E             Skipping 15768947 identical trailing characters in diff, use -v to show
+E             - _sha256":"68f604c7a8fa20e9727a04e16734bc2e9f08fad995ae55ad4f58a8e7f29168b1"},"source_result":{"path":"reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-f81941202344cc03-result.json","raw_sha256":"49963d7102a63d6aa295cb2f00135ee888751b84dd71aae76717f026a17c72e7"},"source_job_id":"review-independent-notes-reassessment-f81941202344cc03","actor_provenance":{"actor_id":"/root/independent_procedural_ret...
+E             
+E             ...Full output truncated (526 lines hidden), use '-vv' to show
+
+tests/test_full_corpus_review.py:21: AssertionError
+_ test_revised_units_preserve_cross_surface_warning_without_review_certificate _
+
+    def test_revised_units_preserve_cross_surface_warning_without_review_certificate():
+        baseline=json.loads((ROOT/'notes/guide.json').read_text())
+        effective=load_notes(ROOT)
+        old={u['id']:u for c in baseline['chapters'] for u in c['units']}
+        new={u['id']:u for c in effective['chapters'] for u in c['units']}
+        assert old.keys()==new.keys()
+        assert {uid for uid in old if old[uid]!=new[uid]} == {
+            'w1-b-8','w1-b-9','w1-b-10','w1-c-4','w1-c-5','w1-c-7','w6-b-8','w1-c-13',
+            'w1-c-14','w1-c-15','w4-d-17','w3-d-2','w3-d-3','authority-paths','w6-b-17',
+            'w3-d-4','w3-d-5','w3-d-6','w3-d-7','w3-d-8',
+            'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
+            'w3-b-1','w3-d-23','w1-a-7',
+            'w2-c-1','w2-c-12',
+            'w4-a-19','w4-a-20',
+        }
+        assert 'OPEN' in new['w1-b-8']['body']
+        assert '과거 읽음' in new['w1-b-8']['editor_note']
+        assert hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest() == '004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
+        from build_exam_study import build_payload
+>       study=build_payload()
+              ^^^^^^^^^^^^^^^
+
+tests/test_full_corpus_review.py:215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def build_payload() -> dict:
+        note_path=ROOT/'notes/guide.json'; author_path=ROOT/'notes/study/guide.json'
+        notes=load_notes(ROOT); data=apply_study_revision(json.loads(author_path.read_text()), "study", ROOT)
+        independent_reviews=load_metadata(ROOT,notes)['units']
+        chapters={c['id']:c for c in notes['chapters']}
+        units={u['id']:(c,u) for c in notes['chapters'] for u in c['units']}
+        modules={m['id']:m for m in data['modules']}
+        lessons={x['id']:x for x in data['lessons']}
+        if len(lessons)!=len(data['lessons']): raise ValueError('Duplicate lesson ID')
+        config=json.loads((ROOT/'site/practice-expansion/publication.json').read_text())
+        paths=['practice_expansion/2026-10-23/candidates/questions.json']+[a['path'] for a in config['additional_banks']]
+        questions=[]
+        for path in paths:
+            bank=json.loads((ROOT/path).read_text());questions.extend(bank['questions'])
+            if bank['input_guide_sha256']!=digest(note_path): raise ValueError('Question-note snapshot mismatch')
+        recommended=set(); revised=set(); held=set()
+        if config.get('representative_selection'):
+            selection_path=ROOT/config['representative_selection']['path']
+>           if digest(selection_path)!=config['representative_selection']['sha256']:raise ValueError('Stale representative selection')
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           ValueError: Stale representative selection
+
+scripts/build_exam_study.py:66: ValueError
+_______ test_visible_quality_status_and_previous59_snapshot_are_current ________
+
+    def test_visible_quality_status_and_previous59_snapshot_are_current():
+        from build_quality_status import output
+        path, rendered=output()
+>       assert path.read_text()==rendered
+E       AssertionError: assert '<!doctype ht...ody></html>\n' == '<!doctype ht...ody></html>\n'
+E         
+E         Skipping 1534 identical leading characters in diff, use -v to show
+E         - </td><td>1753/2349 (74.63%)</td><td>원문 읽음 1803개, 정답 미평가 50개. 모호·실패 판정을 포함하며 canonical RELEASED 승인이 아님</td></tr>
+E         ?           ^^        ^^ ^^                   -
+E         + </td><td>1633/2349 (69.52%)</td><td>원문 읽음 1683개, 정답 미평가 50개. 모호·실패 판정을 포함하며 canonical RELEASED 승인이 아님</td></tr>
+E         ?           ^^        ^^ ^^                  +
+E           <tr><td>이번 작업의 실제 문항 재작성</td><td>0/2349 (0%)</td><td>PR182 이후 원문·보기·정답 객체를 보존. 기존 MA-RW 77개는 이전 작성 실적</td></tr>...
+E         
+E         ...Full output truncated (40 lines hidden), use '-vv' to show
+
+tests/test_full_corpus_review.py:374: AssertionError
+__ test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct ___
+
+    def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
+        outputs=build()
+        rows={r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
+>       assert rows['MA-EXP-0223']['answer_key_assessment']=='INCORRECT_KEY'
+E       AssertionError: assert 'INDEPENDENT_LEGACY_NO' == 'INCORRECT_KEY'
+E         
+E         - INCORRECT_KEY
+E         + INDEPENDENT_LEGACY_NO
+
+tests/test_full_corpus_review.py:438: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_full_corpus_review.py::test_every_id_is_inventoried_without_inheriting_family_passes
+FAILED tests/test_full_corpus_review.py::test_revised_units_preserve_cross_surface_warning_without_review_certificate
+FAILED tests/test_full_corpus_review.py::test_visible_quality_status_and_previous59_snapshot_are_current
+FAILED tests/test_full_corpus_review.py::test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct
+4 failed, 213 passed in 457.23s (0:07:37)

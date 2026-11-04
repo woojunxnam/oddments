@@ -1,0 +1,97 @@
+{
+  "question_id": "MA-Q-0252",
+  "family_id": "B3A_0252_MA_RETIRED_STATUS_LIMITS",
+  "area": 1,
+  "topic": "Licensure",
+  "subtopic": "Retired licence status",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist is considering petitioning for retired licence status. Which statements are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Retired status is a nondisciplinary status."
+    },
+    {
+      "id": "B",
+      "text": "A licensee with retired status may not practise."
+    },
+    {
+      "id": "C",
+      "text": "Eligibility requires that the licence is not surrendered, suspended or revoked at the time of the petition."
+    },
+    {
+      "id": "D",
+      "text": "Retired status prevents the Board from taking disciplinary action against the licensee."
+    },
+    {
+      "id": "E",
+      "text": "The Board must review any later petition to return the licence to current status."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 3.04 makes retired status nondisciplinary, bars practice while retired, and conditions eligibility on the licence not being surrendered, suspended or revoked and on an intent to retire permanently from active practice in the Commonwealth and all other jurisdictions. It expressly preserves the Board's power to discipline a retired licensee and expressly permits the Board to decline to review a reinstatement petition.",
+    "choice_analysis": {
+      "A": "Correct: the regulation calls retired status nondisciplinary.",
+      "B": "Correct: a retired licensee may not practise.",
+      "C": "Correct: the licence must be free of surrender, suspension or revocation at the time of the petition.",
+      "D": "The Board may still discipline a licensee whose status is retired.",
+      "E": "The Board may decline to review a petition for reinstatement or return to current status."
+    },
+    "related_facts": [
+      "The licensee must demonstrate intent to retire permanently from practice in all jurisdictions, not only Massachusetts."
+    ],
+    "mpje_trap": "Nondisciplinary does not mean protected; retirement is neither a shield nor a guaranteed round trip."
+  },
+  "rule_ids": [
+    "MA-LICENSURE-RETIREMENT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Classify retired status as voluntary and nondisciplinary",
+    "Apply the bar on practice while retired",
+    "Preserve the Board's disciplinary reach and its discretion over reinstatement"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-LICENSURE-RETIREMENT": {
+          "content_version": 1,
+          "content_hash": "71f65b36248c99fd6f784cdae2d27219277c4f66ddc9d0bc454deaf88e127fb3"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

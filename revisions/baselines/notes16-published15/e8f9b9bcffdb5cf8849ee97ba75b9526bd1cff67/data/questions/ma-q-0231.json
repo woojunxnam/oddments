@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0231",
+  "family_id": "B3A_0231_MA_SUPPORT_RATIO_COMPOSITION",
+  "area": 1,
+  "topic": "Pharmacy personnel",
+  "subtopic": "Support personnel supervisory ratios",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist is scheduling a shift and wants to work with four support personnel assisting in filling prescriptions. Which staffing combinations satisfy the minimum supervisory ratio? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "One certified pharmacy technician, one pharmacy intern and two pharmacy technicians."
+    },
+    {
+      "id": "B",
+      "text": "Two certified pharmacy technicians and two pharmacy technician trainees."
+    },
+    {
+      "id": "C",
+      "text": "One pharmacy intern, one pharmacy technician and two pharmacy technician trainees."
+    },
+    {
+      "id": "D",
+      "text": "Four pharmacy technicians whose licences are all current."
+    },
+    {
+      "id": "E",
+      "text": "One certified pharmacy technician and three pharmacy technician trainees."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "A four-to-one ratio is available only when the composition conditions in 247 CMR 8.06(3)(a)1 are met: at least one certified pharmacy technician and one pharmacy intern, or at least two certified pharmacy technicians, or two pharmacy interns. Otherwise the maximum is three support personnel. Combination A satisfies the first condition and combination B the second.",
+    "choice_analysis": {
+      "A": "Correct: one certified pharmacy technician plus one intern satisfies the first stated condition.",
+      "B": "Correct: two certified pharmacy technicians satisfy the second stated condition.",
+      "C": "A single intern with no certified technician does not meet any of the four-person conditions.",
+      "D": "Current licences do not substitute for the required credential mix.",
+      "E": "One certified technician alone does not unlock the four-person ratio."
+    },
+    "related_facts": [
+      "Sales clerks, messengers, delivery personnel and secretaries are excluded from the ratio when not supporting the pharmacist professionally."
+    ],
+    "mpje_trap": "Four support personnel is not a headcount allowance; the credential mix is the operative condition."
+  },
+  "rule_ids": [
+    "MA-SUPPORT-PERSONNEL-RATIO"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Recognize that four support personnel is conditional rather than a flat allowance",
+    "Test each combination against the three stated credential compositions",
+    "Fall back to the three-person maximum where no condition is met"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-SUPPORT-PERSONNEL-RATIO": {
+          "content_version": 1,
+          "content_hash": "b4e949b9d5042da94c3cc75d5dd40f304857b2d3f778f327ef0033bcfc2d4628"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,114 @@
+{
+  "question_id": "MA-Q-0192",
+  "family_id": "B2_DRUG_CII_MULTI_RX_MATRIX",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Multiple C-II real-drug prescriptions",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A practitioner sees a patient on August 14 and considers issuing separate future Schedule II prescriptions. Which sets are consistent with the federal multiple-prescription framework, assuming legitimate medical purpose and state law are satisfied? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Two oxycodone prescriptions dated August 14 totaling 60 days, with the second carrying a lawful earliest-fill instruction"
+    },
+    {
+      "id": "B",
+      "text": "Three methylphenidate prescriptions postdated September, October, and November even though all were actually issued August 14"
+    },
+    {
+      "id": "C",
+      "text": "One oxycodone prescription written with five refills to create the same 90-day result"
+    },
+    {
+      "id": "D",
+      "text": "Three methylphenidate prescriptions all dated August 14, totaling 90 days, with appropriate earliest-fill instructions on the later prescriptions"
+    },
+    {
+      "id": "E",
+      "text": "Three lisdexamfetamine prescriptions all issued on August 14, totaling 90 days, with later prescriptions carrying earliest-fill dates"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Lawful future C-II therapy uses separate prescriptions issued on the real date with earliest-fill instructions; it does not use postdating or refills.",
+    "choice_analysis": {
+      "A": "Federal multiple-prescription structure is not limited to stimulants.",
+      "B": "Later prescriptions should not be postdated.",
+      "C": "C-II refills remain prohibited.",
+      "D": "That structure can fit the federal pathway.",
+      "E": "Separate C-II prescriptions may be staged this way."
+    },
+    "related_facts": [
+      "The federal total under this pathway may not exceed a 90-day supply."
+    ],
+    "mpje_trap": "Thinking the rule applies only to ADHD stimulants or permits postdating."
+  },
+  "rule_ids": [
+    "FED-CII-MULTIPLE"
+  ],
+  "drug_ids": [
+    "methylphenidate",
+    "lisdexamfetamine",
+    "oxycodone"
+  ],
+  "reasoning_steps": [
+    "Confirm each drug is Schedule II",
+    "Distinguish separate prescriptions from refills",
+    "Check issue date, total supply, and earliest-fill instructions"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-MULTIPLE": {
+          "content_version": 1,
+          "content_hash": "694b6f18a3291974d5cdb3cef3ce520f5abbc34ddbc2793ba340cc0bcbdb9ccc"
+        }
+      },
+      "drugs": {
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "lisdexamfetamine": {
+          "content_version": 1,
+          "content_hash": "3ae518cc186d2997d82ea286d89c02d77e7441e633d1a805239cdb3bb73b5d06"
+        },
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

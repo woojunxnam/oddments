@@ -1,0 +1,87 @@
+{
+  "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+  "actor_provenance": {
+    "actor_id": "/root/independent_case_c",
+    "session_id": "/root/independent_case_c"
+  },
+  "reviewed_at": "2026-11-03",
+  "status": "SOURCE_BLOCKED",
+  "attempted_official_definition_routes": [
+    {
+      "source_id": "ma-sade-form",
+      "official_url": "https://www.mass.gov/doc/serious-adverse-drug-event-pdf/download",
+      "resolved_url": "https://www.mass.gov/doc/serious-adverse-drug-event-pdf/download",
+      "retrieved_at": "2026-11-03T22:56:07.367691+00:00",
+      "http_status": 404,
+      "bytes": 87465,
+      "raw_sha256": "8627234f6fa65183da5e5fb644ff474a91bc65c18f47d0c051ff745ad5ae5478",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/ma-sade-form.html.gz",
+      "evidence_sha256": "f42f736ed8dc120472f79c175a8736d58c5c83f467f094e0ce8296f44a0c81f6",
+      "payload_type": "HTML_REQUIRES_ACTUAL_REVIEW",
+      "retrieval": "Fresh official HTTPS, normalTLS/inheritedproxy; URL discovery only from search",
+      "verification_status": "HTTP_FAILURE_NOT_VERIFIED"
+    },
+    {
+      "source_id": "ma-sade-landing",
+      "official_url": "https://www.mass.gov/how-to/report-a-serious-adverse-drug-event",
+      "resolved_url": "https://www.mass.gov/how-to/report-a-serious-adverse-drug-event",
+      "retrieved_at": "2026-11-03T22:56:50.351519+00:00",
+      "http_status": 404,
+      "bytes": 87441,
+      "raw_sha256": "6d2e86f82b56549e282a79b5bcaf3187bdf0305143b69f5441318af819394adc",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/ma-sade-landing.html.gz",
+      "evidence_sha256": "02adfb1abbad5032fbdcf493db4610ea5fc67d8f91df61e4255b9259e01cd5a2",
+      "payload_type": "HTML_REQUIRES_ACTUAL_REVIEW",
+      "retrieval": "Fresh official HTTPS, normalTLS/inheritedproxy; links taken from live official page where available",
+      "verification_status": "HTTP_FAILURE_NOT_VERIFIED"
+    },
+    {
+      "source_id": "ma-incident-portal",
+      "official_url": "https://healthprofessionlicensing.mass.gov/public-incident-reports",
+      "resolved_url": "https://healthprofessionlicensing.mass.gov/public-incident-reports",
+      "retrieved_at": "2026-11-03T23:02:30.545507+00:00",
+      "http_status": 403,
+      "bytes": 118,
+      "raw_sha256": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/ma-incident-portal.html.gz",
+      "evidence_sha256": "823812dfb50add6de550fe08651d65065468a4f0b515bee1553f2a1487d50b4d",
+      "payload_type": "HTML_REQUIRES_ACTUAL_REVIEW",
+      "retrieval": "Fresh official public incident portal, inheritedproxy/normalTLS; no login or account action",
+      "verification_status": "HTTP_FAILURE_NOT_VERIFIED"
+    }
+  ],
+  "verified_context": [
+    {
+      "source_id": "247cmr2",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/247cmr2.pdf",
+      "evidence_sha256": "3575e130a6ea228cd7fa691ff0aa53b143d4dce39cb7dcb8801fb4d32743926c",
+      "exact_section": "2.00 Contact Hour / Continuing Education / CEU definitions; official landing confirms this exact download; patient-received QRE definition not located in supplied current PDF"
+    },
+    {
+      "source_id": "247cmr15",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/247cmr15.pdf",
+      "evidence_sha256": "84a762263a236957f8bc10c9b0cbdaa8e7496828ba42d2dbc210b113d750472a",
+      "exact_section": "Full2pages15.02(1);15.03(1)-(3);15.04(1)-(4)"
+    },
+    {
+      "source_id": "247cmr20",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/247cmr20.pdf",
+      "evidence_sha256": "cc1824c84971f05e83ba5ac7bb8e1777bfd22d80e78044c10b4f89a626dc7eb0",
+      "exact_section": "20.02(1)-(5);20.06(2)-(3);20.07(3), distinct statutory/reporting pathways"
+    },
+    {
+      "source_id": "mgl111-51h",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/mgl111-51h.html.gz",
+      "evidence_sha256": "2ff137c9172208ecf8472cf17717192fbff7614019cce3c5228fe2c54eb253b2",
+      "exact_section": "§51H(a) seriousadversedrugeventdefinition only; doesnotverify claimedEDadditional-monitoring serious-injurydefinition"
+    },
+    {
+      "source_id": "ma-reporting-overview",
+      "evidence_path": "reports/full-corpus-review/evidence/independent-phase5-c/ma-reporting-overview.pdf",
+      "evidence_sha256": "d8857a4ebe5ad1a4721e207d12893e2c309715d3d0a99c42b0e8f386422c17a5",
+      "exact_section": "All4pages actualUpdated10/6/26; p2CEdeficienciesMandatoryDisclosureForm; noQRE/EDdefinition supplied"
+    }
+  ],
+  "finding_ko": "실제제공current247CMR2/15범위에서patient-received로한정한QRE정의를확인하지못했다.MGL111§51H의SADE정의는읽었으나ED추가testing/monitoring만을seriousinjury로정하는해당특수정의는확인못했다.검색index가보인10/30/25oldform은fresh404이고현공개incidentportal은403이다.실제200인ReportingOverview의10/6/26개정본문에도이정의는없다.Boarddraft정의를현행으로전용하지않는다.",
+  "legal_limit": "No assertion that ED-onlyinjuryisneverserious, orthatnearmisscannotbeCQI/QRE. Narrow factualinterceptedversusreceiveddistinctioniskeptseparatefromunverifiedlegaldefinition."
+}

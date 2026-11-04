@@ -1,0 +1,96 @@
+{
+  "question_id": "MA-Q-0085",
+  "family_id": "P2_0085_MA_PRODUR",
+  "area": 3,
+  "topic": "Patient care",
+  "subtopic": "Prospective review",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "Before dispensing a new prescription, a Massachusetts pharmacist's prospective review identifies a clinically significant interaction. Which actions are consistent with the current prospective drug-review duty? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Let a technician independently resolve the interaction if the dispensing software supplies a recommended override code."
+    },
+    {
+      "id": "B",
+      "text": "Skip prospective review because the prescriber sent the prescription electronically."
+    },
+    {
+      "id": "C",
+      "text": "Ensure the pharmacist conducts prospective drug review before the new prescription is dispensed or delivered."
+    },
+    {
+      "id": "D",
+      "text": "Automatically refuse every prescription that generates an alert without considering the specific problem or communicating when appropriate."
+    },
+    {
+      "id": "E",
+      "text": "Take appropriate measures to resolve an identified therapy problem, which may include consultation with the prescriber or patient and documentation of the measures taken."
+    }
+  ],
+  "correct_choice_ids": [
+    "C",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Massachusetts requires pharmacist prospective review before each new prescription is dispensed or delivered. When a potential therapy problem is identified, the pharmacist must use professional judgment and take appropriate measures to resolve it; electronic transmission and a software alert do not transfer that duty to a technician or make automatic refusal the only lawful response.",
+    "choice_analysis": {
+      "A": "Incorrect. Clinical resolution of a DUR problem requires pharmacist professional judgment.",
+      "B": "Incorrect. Electronic prescribing does not remove the prospective-review requirement.",
+      "C": "Correct. The prospective review occurs before dispensing or delivery of a new prescription.",
+      "D": "Incorrect. The rule requires appropriate resolution, not automatic refusal of every alert.",
+      "E": "Correct. Appropriate resolution can involve prescriber/patient consultation and documentation of the action taken."
+    },
+    "related_facts": [
+      "Potential problems include therapeutic duplication, contraindications, interactions, dosage or duration problems, allergies, and abuse or misuse."
+    ],
+    "mpje_trap": "A computer alert is an input to pharmacist review, not a substitute for pharmacist judgment."
+  },
+  "rule_ids": [
+    "MA-PRODUR"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the prescription as new",
+    "Apply the prospective-review timing requirement",
+    "Use pharmacist judgment to resolve and document a clinically significant problem"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PRODUR": {
+          "content_version": 1,
+          "content_hash": "c13f8a1494f419f447282d5faa303afe4176b2862ef71fad444b76efd7cc668d"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

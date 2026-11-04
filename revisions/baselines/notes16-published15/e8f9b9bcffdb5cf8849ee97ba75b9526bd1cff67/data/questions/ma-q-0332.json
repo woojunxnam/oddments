@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0332",
+  "family_id": "ADMINISTRATION_ROUTE_SC_IM_ONLY",
+  "area": 2,
+  "topic": "Pharmacist administration",
+  "subtopic": "Single-dose condition",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts prescriber writes for an eligible injectable to be administered in the pharmacy, specifying a single dose with three refills. The pharmacy manager says the refills make the prescription unusable for administration because the conditions require single doses. Who is right?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The manager, because refills convert it into a course of therapy."
+    },
+    {
+      "id": "B",
+      "text": "The manager, because each administration needs its own prescription."
+    },
+    {
+      "id": "C",
+      "text": "The manager, unless the prescriber confirms the intent in writing."
+    },
+    {
+      "id": "D",
+      "text": "The pharmacist, because single-dose prescribing may carry refills."
+    },
+    {
+      "id": "E",
+      "text": "The pharmacist, because the single-dose condition governs packaging only."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "Among the conditions for dispensing by administration, the medication must be available in single-dose packaging AND prescribed in single doses, WITH OR WITHOUT REFILLS. The condition therefore controls how each dose is prescribed and packaged, and expressly tolerates refills, so a single dose with three refills satisfies it.",
+    "choice_analysis": {
+      "A": "The condition contemplates refills in terms.",
+      "B": "No rule requires a fresh prescription for each administration.",
+      "C": "No prescriber confirmation is required to cure a condition that is already met.",
+      "D": "Correct: the words with or without refills answer the point.",
+      "E": "The condition reaches both the packaging and the prescribing."
+    },
+    "related_facts": [
+      "Prescribers must reassess the patient and prescription at appropriate intervals"
+    ],
+    "mpje_trap": "Candidates read single doses as excluding repetition and stop before the words that permit it."
+  },
+  "rule_ids": [
+    "MA-ADMIN-ROUTE-AND-DOSING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the single-dose condition in full, including its closing words",
+    "Separate the packaging limb from the prescribing limb",
+    "Apply the express tolerance of refills"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADMIN-ROUTE-AND-DOSING": {
+          "content_version": 1,
+          "content_hash": "e614a6cce86d4bbc192b2bc7185383212435853f229213066c7eb3acaf0febd7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 359, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 352, in main
+    result=verify_old_guards(root,binding)if args.verify_old else validate(root,binding,coverage=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 315, in verify_old_guards
+    with fixed_view(root,binding)as(view,closure):
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 284, in fixed_view
+    closure=validate(root,binding,coverage=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 85, in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 253, in validate
+    for p in frozen:committed(root,p,files[p]['raw_sha256'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 107, in committed
+    require(expected is None or sha(raw)==expected,'Closure input raw SHA changed: '+relative)
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 57, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Closure input raw SHA changed: practice_expansion/2026-10-28-representative/questions.json

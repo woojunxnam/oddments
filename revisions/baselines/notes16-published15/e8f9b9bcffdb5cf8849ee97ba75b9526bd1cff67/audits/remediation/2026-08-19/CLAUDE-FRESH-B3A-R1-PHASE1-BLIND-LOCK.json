@@ -1,0 +1,95 @@
+{
+  "phase": "PHASE_1_BLIND_LOCK",
+  "audit_date": "2026-08-19",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3A-R1",
+  "tranche": "BATCH3-B3A-R1",
+  "audit_scope": "REAUDIT",
+  "authorizing_issue": 91,
+  "represented_candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+  "represented_candidate_branch": "repair/batch3-b3a-realism-r1",
+  "freeze_branch": "freeze/batch3-b3a-r1-v1",
+  "freeze_head_expected": "a26c5430035d48b1892563b0b8bc8c24368a1988",
+  "freeze_head_observed": "a26c5430035d48b1892563b0b8bc8c24368a1988",
+  "freeze_head_match": true,
+  "blind_package_path": "audits/remediation/2026-08-19/B3A-R1-BLIND-QUESTIONS.json",
+  "blind_package_blob": "e46621b380e3f3e3daf1430622fa1e0dd99701c5",
+  "blind_package_blob_expected": "e46621b380e3f3e3daf1430622fa1e0dd99701c5",
+  "blind_package_sha256": "196b064e954d6e4bf9681714d4e84df435e689cb81bd986c228473e0fd850993",
+  "blind_package_sha256_expected": "196b064e954d6e4bf9681714d4e84df435e689cb81bd986c228473e0fd850993",
+  "blind_package_integrity": "VERIFIED",
+  "dedicated_worktree": {
+    "used": true,
+    "path": "../oddments-audit-b3a-r1-claude-fresh-b3a-r1",
+    "audit_branch": "audit/batch3-b3a-r1-claude-fresh-b3a-r1",
+    "created_from": "c7b438f253089b74231e50040603458d46d20e6c",
+    "controller_worktree_untouched": true
+  },
+  "boundary_checks": {
+    "candidate_object_type": "commit",
+    "candidate_is_ancestor_of_freeze_branch": true,
+    "candidate_is_ancestor_of_repair_branch": true,
+    "data_and_schemas_diff_candidate_to_repair_tip": "EMPTY",
+    "no_later_canonical_semantic_drift": true
+  },
+  "questions": [
+    {
+      "question_id": "MA-Q-0241",
+      "question_type": "SATA",
+      "selected_choice_ids": ["A", "C", "E"],
+      "rejected_choice_ids": ["B", "D"],
+      "blind_reasoning": "The controlling provision is 247 CMR 8.05(3), which sits within the section captioned Requirements for the Handling of Schedule II Controlled Substances by Pharmacy Interns, Certified Pharmacy Technicians, Pharmacy Technicians, and Pharmacy Technician Trainees. Its operative sentence is that a certified pharmacy technician, pharmacy technician, or pharmacy technician trainee may not handle any hydrocodone-only extended release medication that is not in an abuse deterrent form, and that pharmacy interns under the direct supervision of a registered pharmacist may handle hydrocodone-only extended release medication that is not in an abuse deterrent formulation. Choice A is correct because the abuse deterrent status of the formulation is the express operative condition of the prohibition; a hydrocodone-only extended release product that is in an abuse deterrent form is simply not within the prohibited class. Choice C is correct because 8.05(3) names all three support personnel categories expressly, including the pharmacy technician trainee, and Massachusetts licenses both pharmacy technicians under 247 CMR 8.02(1) and certified pharmacy technicians under 247 CMR 8.04(1). Choice E is correct as the direct converse of the not in an abuse deterrent form limitation. Choice B is incorrect because the prohibition is drug specific and formulation specific: it reaches hydrocodone-only extended release products lacking abuse deterrence, not every extended release opioid in stock, and neither 247 CMR 8.02 nor 247 CMR 8.04 imposes any general extended release opioid handling bar on technicians. Choice D is incorrect because it imports the approval mechanism of 247 CMR 8.05(2) into 8.05(3). Section 8.05(2) permits a pharmacy technician to assist in transporting, and a certified pharmacy technician to assist in transporting and handling, Schedule II controlled substances where the pharmacist has approved that individual as evidenced by written policies and procedures to be followed in the pharmacy. That approval pathway does not appear in and does not qualify 8.05(3). Section 8.05(3) is an unconditional bar as to the three technician categories, and the only relief it grants runs to pharmacy interns under the direct supervision of a registered pharmacist. Pharmacist approval evidenced by written policies and procedures therefore cannot authorize a certified technician to handle a non abuse deterrent hydrocodone-only extended release product.",
+      "official_sources_consulted": [
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-05",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-02",
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-8-04",
+        "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians"
+      ],
+      "authority_currency_note": "Mass.gov shows the current official version of 247 CMR 8.00 dated 04/25/2025. The verbatim 8.05 text relied on carries amendment history through Mass Register Issue 1546, effective 1/9/2025 (compliance), and the operative 8.05(3) sentence is unchanged in the current version."
+    },
+    {
+      "question_id": "MA-Q-0256",
+      "question_type": "SBA",
+      "selected_choice_ids": ["E"],
+      "rejected_choice_ids": ["A", "B", "C", "D"],
+      "blind_reasoning": "247 CMR 4.03(7) provides that a registrant may not earn more than eight contact hours of continuing education in a calendar day. The cap is stated without qualification as to delivery format, so it binds a single day live conference exactly as it binds any other program; the registrant may therefore apply only eight of the twelve contact hours earned that day. Choice E states both the correct number and the correct rationale and is the answer. Choice C is wrong on the number, since the regulation sets eight and not ten. Choices A and B are wrong because 247 CMR 4.03(7) draws no live versus home study distinction; the only medium specific limit in 247 CMR 4.03 is 4.03(4)(b), which caps home study and other mediated instruction at no more than 15 contact hours per calendar year, and that is an annual cap on a different axis, not a daily rule and not a source of exemption for live programming. Choice D is wrong because nothing in 247 CMR 4.03 shifts December earned hours into a later cycle; to the contrary, 4.03(5) provides that contact hours may not be carried over from one calendar year to another, which confirms that hours are credited to the calendar year in which they are earned, so December hours count toward that same calendar year and an answer of none would be doubly incorrect.",
+      "official_sources_consulted": [
+        "https://www.law.cornell.edu/regulations/massachusetts/247-CMR-4-03",
+        "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement"
+      ],
+      "authority_currency_note": "Mass.gov shows the current official version of 247 CMR 4.00 dated 01/13/2017, which matches the amendment stamp on the verbatim text relied on, Mass Register Issue 1330, effective 1/13/2017. No later amendment to 247 CMR 4.03 was found."
+    }
+  ],
+  "canonical_key_inspected_before_lock": false,
+  "canonical_explanation_inspected_before_lock": false,
+  "canonical_rules_inspected_before_lock": false,
+  "author_or_repair_reasoning_inspected_before_lock": false,
+  "prior_audit_findings_inspected_before_lock": false,
+  "canonical_question_files_inspected_before_lock": false,
+  "legal_contract_inspected_before_lock": false,
+  "realism_contract_inspected_before_lock": false,
+  "postlock_dependencies_inspected_before_lock": false,
+  "clean_freeze_manifest_inspected_before_lock": false,
+  "repair_script_inspected_before_lock": false,
+  "controller_ledger_inspected_before_lock": false,
+  "pull_requests_or_issues_inspected_before_lock": false,
+  "git_history_for_target_questions_inspected_before_lock": false,
+  "b3b_sibling_candidate_inspected_before_lock": false,
+  "contamination_status": "CLEAN",
+  "incidental_disclosures": [
+    {
+      "item": "candidate commit subject line",
+      "text_seen": "repair: B3-A realism R1 - move MA-Q-0241 and MA-Q-0256 onto distinct decision paths",
+      "how_encountered": "Emitted automatically by the mandated command git worktree add -b audit/batch3-b3a-r1-claude-fresh-b3a-r1 <path> c7b438f253089b74231e50040603458d46d20e6c. Git prints the subject of the checked out commit; this output was not solicited and could not be suppressed while performing the required worktree step.",
+      "substantive_content_revealed": "NONE",
+      "assessment": "The line discloses only that the repair was categorised as a realism or decision path change. It contains no keyed answer, no choice analysis, no explanation text, no rule identifier, no legal proposition and no prior audit conclusion. It supplied no information capable of influencing the selection of choices for either question.",
+      "influenced_blind_answers": false
+    }
+  ],
+  "attestation": {
+    "statement": "I, acting as auditor CLAUDE under auditor_instance CLAUDE-FRESH-B3A-R1, attest that both MA-Q-0241 and MA-Q-0256 were solved independently and in full before any unseal. At the time each selected_choice_ids value above was fixed, I had read no canonical keyed answer, no canonical explanation or choice analysis, no canonical rule record, no authoring or repair reasoning, no repair script, no frozen legal or realism contract, no post lock dependency package, no clean freeze manifest, no controller ledger entry, no prior audit finding for these Question IDs, and no git history, diff, blame or commit message for the target question files. The only question content read before this lock was the Git blob verified and sha256 verified blind package audits/remediation/2026-08-19/B3A-R1-BLIND-QUESTIONS.json at freeze/batch3-b3a-r1-v1. All legal reasoning above was derived solely from current official Massachusetts authority that I opened myself during this session, as listed per question. I did not author or repair either question under review. The single incidental disclosure recorded above is reported truthfully and did not influence either answer.",
+    "solved_independently_before_unseal": true,
+    "auditor_did_not_author_or_repair": true,
+    "answers_immutable_from_this_point": true
+  }
+}

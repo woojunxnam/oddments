@@ -1,0 +1,115 @@
+{
+  "question_id": "MA-Q-0183",
+  "family_id": "B2_DRUG_EMERGENCY_ADD_LOADERS",
+  "area": 4,
+  "topic": "Automated dispensing devices",
+  "subtopic": "Emergency-kit loader matrix",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A retail pharmacy uses an approved ADD as an emergency medication kit. Which loader/drug combinations comply with the Massachusetts loading rule? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Certified pharmacy technician loads methylphenidate"
+    },
+    {
+      "id": "B",
+      "text": "Pharmacy intern loads methylphenidate"
+    },
+    {
+      "id": "C",
+      "text": "Ordinary pharmacy technician loads alprazolam"
+    },
+    {
+      "id": "D",
+      "text": "Ordinary pharmacy technician loads gabapentin"
+    },
+    {
+      "id": "E",
+      "text": "Ordinary pharmacy technician loads methylphenidate"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "In an emergency-kit ADD, an ordinary technician is limited to III-VI, while certified technicians and interns may load C-II under the policy.",
+    "choice_analysis": {
+      "A": "Certified technicians are listed loaders without the ordinary-tech III-VI limitation.",
+      "B": "Interns are listed authorized loaders.",
+      "C": "Ordinary technicians may load Schedule III-VI.",
+      "D": "Schedule VI is within the ordinary-tech emergency-kit range.",
+      "E": "Schedule II is outside the ordinary-tech range."
+    },
+    "related_facts": [
+      "A pharmacist and licensed nurse are also listed emergency-kit loaders."
+    ],
+    "mpje_trap": "Assuming every technician credential has the same Schedule II authority."
+  },
+  "rule_ids": [
+    "MA-ADD-CORE"
+  ],
+  "drug_ids": [
+    "alprazolam",
+    "gabapentin",
+    "methylphenidate"
+  ],
+  "reasoning_steps": [
+    "Identify emergency-kit ADD rather than routine dispensing",
+    "Classify actor credential",
+    "Classify drug schedule"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADD-CORE": {
+          "content_version": 1,
+          "content_hash": "764d5dcb67ae53ba3885bab0ec078c3e20a331fe0593d6f5434fd892c4a7de45"
+        }
+      },
+      "drugs": {
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        },
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

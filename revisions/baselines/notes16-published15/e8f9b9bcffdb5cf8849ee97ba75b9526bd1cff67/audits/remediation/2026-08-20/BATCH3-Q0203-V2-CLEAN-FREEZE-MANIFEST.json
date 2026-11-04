@@ -1,0 +1,61 @@
+{
+  "manifest_type": "BATCH3-Q0203-V2_CLEAN_FREEZE",
+  "created_date": "2026-08-20",
+  "tranche": "BATCH3-Q0203-V2",
+  "audit_scope": "REAUDIT",
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "source_branch": "codex/batch3-minimum-release-pass1",
+  "source_sha": "c15c49e76e1a5c87d35a6cc5bb111f2e7b427cb2",
+  "represented_candidate_branch": "codex/batch3-q0203-v2-repair",
+  "represented_candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "freeze_branch": "freeze/batch3-q0203-v2",
+  "auditor_instance_reserved": "GPT-FRESH-B3-Q0203-V2",
+  "author_is_not_auditor": true,
+  "question_count": 1,
+  "question_ids": [
+    "MA-Q-0203"
+  ],
+  "question_hashes": {
+    "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+  },
+  "question_file_blobs": {
+    "MA-Q-0203": "cd71f7bb2a469302ca98b412ef3ef88f9c1eadbd"
+  },
+  "new_rule_file_blobs": {
+    "MA-COMPLIANCE-PACKAGING": "aebf1bfaaf4218440040ac3e1fb9756397b27d46"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-COMPLIANCE-PACKAGING": {
+        "content_version": 2,
+        "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+      }
+    },
+    "drugs": {
+      "methylphenidate": {
+        "content_version": 1,
+        "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "quality_gates_at_freeze": {
+    "repository_validation": "PASS - validate_all.py: 0 errors, 1 pre-existing MA-Q-0190 warning",
+    "full_tests": "PASS - 98 passed, 1 skipped",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "release_state": "365 RELEASED; MA-Q-0203 remains AUDIT_PENDING and is absent from preview",
+    "repair_generator_reproduction": "PASS - pass1 source inputs reproduced the v2 question hash, family row and repair report byte-identically"
+  }
+}

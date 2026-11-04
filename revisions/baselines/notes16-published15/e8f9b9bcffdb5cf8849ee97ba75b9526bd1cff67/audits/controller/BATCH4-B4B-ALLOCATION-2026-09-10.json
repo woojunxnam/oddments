@@ -1,0 +1,424 @@
+{
+  "artifact_id": "BATCH4-B4B-ALLOCATION-2026-09-10",
+  "artifact_type": "TRANCHE_ALLOCATION",
+  "stage": "STAGE_1_ALLOCATION_ONLY",
+  "status": "PROPOSED_AWAITING_CONTROLLER_AUTHORIZATION",
+  "authorizing_issue": 121,
+  "recorded_on": "2026-09-10",
+  "measured_at_commit": "c7225989a3c6a5eb5de09372861e9c0b0fa55e7b",
+  "measurement_source": "audits/coverage/2026-09-10/B4-B-RECALCULATION-INPUTS.json",
+  "tranche": {
+    "name": "B4-B",
+    "first_id": "MA-Q-0440",
+    "last_id": "MA-Q-0472",
+    "slots": 33
+  },
+  "supersedes": {
+    "allocation": {
+      "area_1": 8,
+      "area_2": 11,
+      "area_3": 8,
+      "area_4": 6
+    },
+    "status": "PROVISIONAL_NOT_AUTHORIZED",
+    "reason": "The 8/11/8/6 split was computed against a 366-released baseline and was never authorized. It is not carried forward mechanically. scripts/batch4_baseline.py line 37 still hardcodes it and should be corrected before anything is regenerated from that script."
+  },
+  "method": {
+    "rule": "Largest remainder on each Area's share of the remaining deficit.",
+    "why": "Family caps are not the binding constraint anywhere -- the bank holds roughly six times its shortfall in usable family headroom -- so the split is driven by the deficit itself rather than by capacity. Largest remainder makes the rounding reproducible rather than chosen.",
+    "inputs": {
+      "released_total": 398,
+      "released_by_area": {
+        "1": 87,
+        "2": 131,
+        "3": 100,
+        "4": 80
+      },
+      "four_mock_target_by_area": {
+        "1": 104,
+        "2": 160,
+        "3": 116,
+        "4": 100
+      },
+      "deficit_by_area": {
+        "1": 17,
+        "2": 29,
+        "3": 16,
+        "4": 20
+      },
+      "total_deficit": 82,
+      "four_mock_target_provenance": "104/160/116/100 is a planning figure recorded in audits/controller/BATCH4-POST-B4A-CHECKPOINT-2026-09-04.json, not a blueprint field. blueprint.json carries Area weights of 22/33/24/21 percent of a 120-item mock, which across four mocks imply 105.6/158.4/115.2/100.8. Each Area rounds within 1.6 items of its weight."
+    }
+  },
+  "allocation": {
+    "area_1": 7,
+    "area_2": 12,
+    "area_3": 6,
+    "area_4": 8
+  },
+  "areas": [
+    {
+      "area": 1,
+      "name": "Licensure / Personnel",
+      "released": 87,
+      "four_mock_target": 104,
+      "deficit": 17,
+      "exact_share_of_33": 6.84,
+      "allocated_slots": 7,
+      "id_block": {
+        "first": "MA-Q-0440",
+        "last": "MA-Q-0446",
+        "ids": [
+          "MA-Q-0440",
+          "MA-Q-0441",
+          "MA-Q-0442",
+          "MA-Q-0443",
+          "MA-Q-0444",
+          "MA-Q-0445",
+          "MA-Q-0446"
+        ]
+      },
+      "residual_deficit_after_b4b": 10,
+      "question_type_budget": {
+        "sata": 2,
+        "sba": 5,
+        "current_released_sata_share": 0.4598,
+        "projected_released_sata_share": 0.4468
+      },
+      "novelty_budget": {
+        "slots_available_on_untested_canonical_law": 0,
+        "slots_that_must_recut_an_already_cited_rule": 7,
+        "canonical_rules_cited_exactly_once": 40,
+        "untested_unclaimed_rules": []
+      }
+    },
+    {
+      "area": 2,
+      "name": "Pharmacist Practice",
+      "released": 131,
+      "four_mock_target": 160,
+      "deficit": 29,
+      "exact_share_of_33": 11.67,
+      "allocated_slots": 12,
+      "id_block": {
+        "first": "MA-Q-0447",
+        "last": "MA-Q-0458",
+        "ids": [
+          "MA-Q-0447",
+          "MA-Q-0448",
+          "MA-Q-0449",
+          "MA-Q-0450",
+          "MA-Q-0451",
+          "MA-Q-0452",
+          "MA-Q-0453",
+          "MA-Q-0454",
+          "MA-Q-0455",
+          "MA-Q-0456",
+          "MA-Q-0457",
+          "MA-Q-0458"
+        ]
+      },
+      "residual_deficit_after_b4b": 17,
+      "question_type_budget": {
+        "sata": 4,
+        "sba": 8,
+        "current_released_sata_share": 0.374,
+        "projected_released_sata_share": 0.3706
+      },
+      "novelty_budget": {
+        "slots_available_on_untested_canonical_law": 6,
+        "slots_that_must_recut_an_already_cited_rule": 6,
+        "canonical_rules_cited_exactly_once": 38,
+        "untested_unclaimed_rules": [
+          {
+            "rule_id": "MA-CII-OPIOID-PARTIAL-FILL-NOTATION",
+            "authority": [
+              "M.G.L. c. 94C, s. 22(c)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-LIFECYCLE",
+              "SG-FED-MA-INTERACTION"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING",
+              "VERIFIED"
+            ]
+          },
+          {
+            "rule_id": "MA-ORAL-CS-FOLLOWUP-TIMING",
+            "authority": [
+              "M.G.L. c. 94C, s. 20(c)",
+              "M.G.L. c. 94C, s. 23(h)",
+              "105 CMR 721.070(B)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-EMERGENCY-ORAL",
+              "SG-MA-ORAL-PRESCRIPTIONS",
+              "SG-MA-SCHEDULE-VI"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "MA-OUTSTATE-CII-DEPARTMENT-COPY",
+            "authority": [
+              "M.G.L. c. 94C, s. 18(d)",
+              "M.G.L. c. 94C, s. 18(d1/2)"
+            ],
+            "carried_by_sections": [
+              "SG-MA-OUTSTATE-PRESCRIPTIONS"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "MA-RX-EMERGENCY-ORAL-CII",
+            "authority": [
+              "105 CMR 721.060(A), (B)(1)-(B)(5)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-EMERGENCY-ORAL",
+              "SG-MA-ORAL-PRESCRIPTIONS"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "MA-RX-FAILOVER-ORAL",
+            "authority": [
+              "105 CMR 721.010",
+              "105 CMR 721.020(G)",
+              "105 CMR 721.040(C)"
+            ],
+            "carried_by_sections": [
+              "SG-MA-ORAL-PRESCRIPTIONS",
+              "SG-MA-SCHEDULE-VI"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "MA-RX-WRITTEN-FORMAT",
+            "authority": [
+              "105 CMR 721.020(F)",
+              "105 CMR 721.040(A)",
+              "M.G.L. c. 94C, s. 23(i)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-EMERGENCY-ORAL",
+              "SG-MA-ORAL-PRESCRIPTIONS",
+              "SG-MA-SCHEDULE-VI"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "area": 3,
+      "name": "Dispensing Requirements",
+      "released": 100,
+      "four_mock_target": 116,
+      "deficit": 16,
+      "exact_share_of_33": 6.44,
+      "allocated_slots": 6,
+      "id_block": {
+        "first": "MA-Q-0459",
+        "last": "MA-Q-0464",
+        "ids": [
+          "MA-Q-0459",
+          "MA-Q-0460",
+          "MA-Q-0461",
+          "MA-Q-0462",
+          "MA-Q-0463",
+          "MA-Q-0464"
+        ]
+      },
+      "residual_deficit_after_b4b": 10,
+      "question_type_budget": {
+        "sata": 4,
+        "sba": 2,
+        "current_released_sata_share": 0.31,
+        "projected_released_sata_share": 0.3302
+      },
+      "novelty_budget": {
+        "slots_available_on_untested_canonical_law": 6,
+        "slots_that_must_recut_an_already_cited_rule": 0,
+        "canonical_rules_cited_exactly_once": 33,
+        "untested_unclaimed_rules": [
+          {
+            "rule_id": "FED-CII-EMERGENCY-ORAL-RECORDS",
+            "authority": [
+              "21 CFR 1306.11(d)(2), (d)(4), (d)(5)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-EMERGENCY-ORAL"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "FED-CII-LTCF-TERMINAL-RECORDS",
+            "authority": [
+              "21 CFR 1306.13(c)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-LIFECYCLE"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "FED-CII-PARTIAL-FILL-NOTATION",
+            "authority": [
+              "21 CFR 1306.13(a), (b)(5)"
+            ],
+            "carried_by_sections": [
+              "SG-CII-LIFECYCLE"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "FED-CS-TRANSFER-REFILL",
+            "authority": [
+              "21 CFR 1306.25(a), (b), (e)"
+            ],
+            "carried_by_sections": [
+              "SG-CIII-V-REFILL-TRANSFER"
+            ],
+            "gating_section_status": [
+              "VERIFIED"
+            ]
+          },
+          {
+            "rule_id": "MA-PMP-TRANSMISSION-TIMING",
+            "authority": [
+              "105 CMR 700.012(A)(5), (A)(6)"
+            ],
+            "carried_by_sections": [
+              "SG-MA-SCHEDULE-VI"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          },
+          {
+            "rule_id": "MA-SCHEDULE-VI-VALIDITY",
+            "authority": [
+              "247 CMR 9.04(12)",
+              "247 CMR 9.04(15)"
+            ],
+            "carried_by_sections": [
+              "SG-MA-SCHEDULE-VI"
+            ],
+            "gating_section_status": [
+              "AUDIT_PENDING"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "area": 4,
+      "name": "Pharmacy Operations",
+      "released": 80,
+      "four_mock_target": 100,
+      "deficit": 20,
+      "exact_share_of_33": 8.05,
+      "allocated_slots": 8,
+      "id_block": {
+        "first": "MA-Q-0465",
+        "last": "MA-Q-0472",
+        "ids": [
+          "MA-Q-0465",
+          "MA-Q-0466",
+          "MA-Q-0467",
+          "MA-Q-0468",
+          "MA-Q-0469",
+          "MA-Q-0470",
+          "MA-Q-0471",
+          "MA-Q-0472"
+        ]
+      },
+      "residual_deficit_after_b4b": 12,
+      "question_type_budget": {
+        "sata": 2,
+        "sba": 6,
+        "current_released_sata_share": 0.375,
+        "projected_released_sata_share": 0.3636
+      },
+      "novelty_budget": {
+        "slots_available_on_untested_canonical_law": 0,
+        "slots_that_must_recut_an_already_cited_rule": 8,
+        "canonical_rules_cited_exactly_once": 35,
+        "untested_unclaimed_rules": []
+      }
+    }
+  ],
+  "residual_after_b4b": {
+    "by_area": {
+      "area_1": 10,
+      "area_2": 17,
+      "area_3": 10,
+      "area_4": 12
+    },
+    "total": 49,
+    "note": "A further tranche of 49 items is needed after B4-B to reach the four-mock target."
+  },
+  "structural_budget": {
+    "sata_total": 12,
+    "sba_total": 21,
+    "bank_sata_share_now": 0.3769,
+    "bank_sata_share_projected": 0.3759,
+    "b4a_tranche_sata_share": 0.4375,
+    "rationale": "B4-A ran 4.7 points SATA-richer than the bank and pulled the average up. This tranche holds the bank line overall while moving each Area toward it: Area 1 is SATA-rich at 46.0 percent and takes the fewest, Area 3 is the outlier at 31.0 percent and takes the most relative to its size.",
+    "sata_three_of_five": {
+      "released_now": "74/150",
+      "share_now": 0.4933,
+      "structural_cap": 0.55,
+      "new_three_of_five_cap": 4,
+      "projected_share_at_cap": 0.4815,
+      "note": "Weighting the new SATA block toward a 3-correct key would spend the margin under the whole-bank structural gate. Holding new 3-of-5 items to 4 of 12 keeps roughly seven points of headroom."
+    }
+  },
+  "sequencing_constraint": {
+    "statement": "Stage 2, the per-slot proposition map, must not be locked until the V6 audits report. Eleven of the twelve canonical rules that could carry a novel slot are dependencies of Study Guide sections frozen for independent audit at this commit, and each of those rules records that an independent audit is still required. FED-CS-TRANSFER-REFILL is the exception: it is carried by SG-CIII-V-REFILL-TRANSFER, which is already VERIFIED, so it is available now.",
+    "pending_audits": [
+      "audits/study_guide/2026-09-10/BATCH4-SG-REPAIR-V6A-AUDIT-PACKAGE.json",
+      "audits/study_guide/2026-09-10/BATCH4-SG-REPAIR-V6B-AUDIT-PACKAGE.json"
+    ]
+  },
+  "findings_that_changed_the_plan": [
+    {
+      "finding": "Untested canonical law is no longer nearly exhausted.",
+      "detail": "The 2026-09-10 measurement found 13 canonical rules with no released citation and only 4 unclaimed by any candidate. At this commit there are 12 unclaimed. The Study Guide lane produced the difference: repairing sections against primary sources required canonical homes for law the bank had never represented.",
+      "consequence": "Novel-proposition capacity for B4-B rose from 4 slots to 12, concentrated in Areas 2 and 3."
+    },
+    {
+      "finding": "Area 1 still has no untested canonical law and owes 17 items.",
+      "detail": "Every canonical Area 1 rule is already cited by a released question.",
+      "consequence": "All 7 Area 1 slots must re-cut an already cited rule. Its 40 rules cited exactly once are the only workable seam, and a citation count is not itself evidence that an unexercised proposition remains."
+    },
+    {
+      "finding": "Area 2 remains the pinch point on every measure at once.",
+      "detail": "Largest deficit at 29, tightest headroom ratio at 3.2x, 34 of 114 families at cap, the only blocked families in the bank -- seven Pharmacist administration families depending on MA-MH-SUD-ADMIN, locking 14 otherwise usable slots -- and three of the four density-flagged topics.",
+      "consequence": "Area 2 takes the largest block at 12 and carries the most risk. Six of those slots can sit on untested law; the other six must re-cut cited rules inside the tightest Area in the bank."
+    }
+  ],
+  "explicit_non_actions": [
+    "No question record was created or edited.",
+    "No per-slot proposition was chosen.",
+    "The superseded 8/11/8/6 allocation was not carried forward.",
+    "scripts/batch4_baseline.py was not modified; its hardcoded tranche table is recorded as debt."
+  ]
+}

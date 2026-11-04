@@ -1,0 +1,67 @@
+{
+  "stage": "engineering",
+  "purpose": "UNPUBLISHED_FIFTEENTH_ANNOTATION_BOUNDED_SCOPE_COMPLETION",
+  "actor_provenance": {
+    "actor_id": "/root/independent_procedural_retry",
+    "session_id": "/root/independent_procedural_retry"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+  "worker_commit": "88ab8fddc7a4d15e3996512b54fd7bf978929069",
+  "source_base_commit": "e4abd30bcb9170489793a86507a85f1437015704",
+  "changed_paths": [
+    "docs/AFTER190_NOTE_ANNOTATION_GUARD.md",
+    "scripts/notes_after190_annotation.py",
+    "tests/test_after190_annotation.py"
+  ],
+  "committed_file_raw_sha256s": {
+    "docs/AFTER190_NOTE_ANNOTATION_GUARD.md": "0a864305eb0f4c0087b7dca110a35eff40880934de501a6789c1d3046d327a2c",
+    "scripts/notes_after190_annotation.py": "fa9ab004632003691a76ac05e8424690c8874ece9ce51a370d47e9013751e070",
+    "tests/test_after190_annotation.py": "126ebb3d6516437ffcc1d45b5e3c418ee3a66cd25a35bc847e73ecec84326a6c"
+  },
+  "tests": {
+    "bounded_command": "python -m pytest -q tests/test_after190_annotation.py tests/test_notes_body_reassessment.py tests/test_census_revisions.py tests/test_canonical_q0012_withdrawal.py -k 'not test_all_1781_protected_files_pass_with_original_baseline_and_fourteen_guards'",
+    "passed": 209,
+    "skipped_not_run_due_to_final_source_pending": 31,
+    "deselected_whole_inventory_integration_gate": 1,
+    "duration_seconds": 63.42
+  },
+  "read_only_actual_checks": {
+    "source_base_commit": "e4abd30bcb9170489793a86507a85f1437015704",
+    "active_body_semantic_sha256": "e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824",
+    "body_units_preserved": 306,
+    "current_processed_units": 79,
+    "current_complete_units": 79,
+    "selected_author_claims": 6989,
+    "inactive_body_current_credit": 0,
+    "candidate_claim_count": 24,
+    "published14_sha256": "53537abd57b56bc8a839901a766de916c7a06b4275beba8bd2ebf435adf0353e",
+    "old_fourteen_decoder_tail_unchanged": true,
+    "strict_canonical_decoder_manifest_sha256": "29510b19ca7b4bd89fd4d1f7b8574d76144c45070c0d06a58b43b9b679881563",
+    "new_legal_or_canonical_credit": 0
+  },
+  "postcommit_bytes": "PASS",
+  "worktree_clean": true,
+  "source_candidate_all15_files_unchanged": true,
+  "root_shared_state_generated_policies_old_manifests_or_baselines_changed_by_worker": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "new_independent_legal_audit_credit": 0,
+  "blockers": [
+    "Q30-33 actual independent reports/envelopes/primary payloads and sequential IG pending",
+    "Current final default selection must contain all known negative findings using source-bound holds",
+    "Final15 manifest/export/build source binding and full1781 integration gate not passed",
+    "Root frozen QA/CI/publication required after actual final source checkpoint"
+  ],
+  "final_manifest_written": false,
+  "new_body_activated": false,
+  "checked_at": "2026-11-04T05:34:22.390444+00:00",
+  "whole_inventory_gate": {
+    "command": "python -m pytest -q tests/test_canonical_q0012_withdrawal.py::test_all_1781_protected_files_pass_with_original_baseline_and_fourteen_guards",
+    "result": "FAILED_BLOCKED_BY_ACTUAL_PENDING_SOURCE_NOT_PASSED",
+    "failed": 1,
+    "duration_seconds": 10.42,
+    "reason": "After190 legacy result pending/LEASED or lacks actual captured integration; integrate/rebind first",
+    "tested_commit": "88ab8fddc7a4d15e3996512b54fd7bf978929069"
+  }
+}

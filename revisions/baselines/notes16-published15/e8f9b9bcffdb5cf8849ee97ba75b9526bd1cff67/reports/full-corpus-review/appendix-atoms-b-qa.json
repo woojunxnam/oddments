@@ -1,0 +1,1735 @@
+{
+  "schema_version": "appendix-author-census-qa/1",
+  "checked_at": "2026-11-03",
+  "author_instance": "codex-appendix-atoms-b-20261103",
+  "review_type": "AUTHOR_ENUMERATION_NOT_INDEPENDENT",
+  "census_path": "reports/full-corpus-review/appendix-atoms-b-census.json",
+  "census_sha256": "18bfd43dd1e5592e33ec52ff5ac6fc8c987ef5844c949f8c9c9f8f60757d2f2f",
+  "unit_body_hashes": {
+    "appendix-a-8": "8bbd7e42d0cdbb850ed084834adc997d1565f691624319f62ad6d1f7e75d1e19",
+    "appendix-a-9": "7273720f17625cd1565c9ff2a5812efc71748577ac73161f4ef8edf888ab97ca",
+    "appendix-b-1": "e91c4150b75840a5e4eddb35a786017a14d0e1c8fb59b194e09ea25e8b149e9d",
+    "appendix-b-2": "d3c91fb474795fae552ef749e41578cbe67144539e2b9f26171a7bd5d56d35b5",
+    "appendix-b-3": "6aec8bfc4d59137dfcdcd592c355226e52ee19dfb97c71e2b79707ff68f64873",
+    "appendix-b-4": "51de8c24af07b300fda14c359532bb21ee1401464d61451c45597557580d9fc8",
+    "appendix-b-5": "fd4e13b8d5cf50e68e2023b360441174b14542297aed2edc436bea1f6933e101",
+    "appendix-b-6": "0f557729f2dc446a760cdfacd1838ce30cec54ce08f38d96e60d500baca0fb05"
+  },
+  "summary": {
+    "units_enumerated": 8,
+    "product_rows_read": 76,
+    "claims_enumerated": 675,
+    "author_source_checked_claims": 529,
+    "source_blocked_claims": 146,
+    "independently_verified_claims": 0
+  },
+  "checks": [
+    {
+      "check": "validate_note_census with actual effective unit bodies",
+      "status": "PASS",
+      "detail_ko": "8개 단위·675개 claim의 원문 UTF-8 해시, source evidence 해시, 범위·개수·보류 이유 검증."
+    },
+    {
+      "check": "source_manifest.schema.json",
+      "status": "PASS",
+      "detail_ko": "131개 공식 출처의 Class A permission manifest를 schema 및 format checker로 검증."
+    },
+    {
+      "check": "all claim authority references / blocked primary IDs",
+      "status": "PASS",
+      "detail_ko": "확인된 명제의 authority URL/source를 대조하고 보류 명제는 source_id null·구체적 blocker를 유지."
+    },
+    {
+      "check": "protected tracked-file changes before commit",
+      "status": "PASS",
+      "detail_ko": "기존 tracked 파일 diff 없음. 원문·기존 census·loader·generated artifact 변경 없음."
+    },
+    {
+      "check": "full pytest / deterministic generation / GitHub CI / public deployment",
+      "status": "NOT RUN",
+      "detail_ko": "이 worker의 신규 연구 보고서만 검증했다. 통합·full QA·publication은 root의 다음 작업이며 이 보고서는 수행을 주장하지 않는다."
+    },
+    {
+      "check": "git diff --cached --check authored report JSON only",
+      "status": "PASS",
+      "detail_ko": "공식 raw XML/TXT에는 원문 공백이 있어 전체 diff --check는 whitespace를 보고했다. 근거 원문 bytes와 SHA 보존을 위해 정규화하지 않았으며 작성한4개 보고서 JSON은 whitespace check를 통과했다."
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/abilify-asimtufii-meta.json",
+      "sha256": "3a44fbf4bce45c0dfeade14ee23d65145083178d0cac44aa861d88fd0a753c56",
+      "bytes": 846
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/abilify-asimtufii.json",
+      "sha256": "30c6a9bd7c1126a32f65535c17cca2f7c74dc155c157dc9496a1478da1abe373",
+      "bytes": 176829
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/abilify-maintena-initial-meta.json",
+      "sha256": "0c8d092f6aef3ff1e4e168e3a519faf4818005e154c913c359f054bf2c5b1951",
+      "bytes": 471
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/abilify-maintena-meta.json",
+      "sha256": "787d5592c19d5f12ec8ed6f684bf64165a58b89acd1a5ffa2faf1cc98060e03e",
+      "bytes": 842
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/abilify-maintena.json",
+      "sha256": "3a92c39d3e689c78e598868fe7b98799a5a3ee4f82f684aa66c323fb10305446",
+      "bytes": 185493
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/absorica-meta.json",
+      "sha256": "2a5ea7fc3cae730a9d0037777599f173331b1225839771b78577f5e1b6a22edf",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/absorica.json",
+      "sha256": "9d36e30332d25346a146b8e76a7604b5a68c2bf463beb28456207b9e863a370b",
+      "bytes": 170486
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/adipex-p-initial-meta.json",
+      "sha256": "2b6402b8dcd6516abbe19ecb0840945d9feb2f5fe78636b9c5efc88c6559e372",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/adipex-p-meta.json",
+      "sha256": "2b41a19b7295ecb33c099b03254a569e46a67505273131900d6f204b0dbec36d",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/adipex-p-spl-meta.json",
+      "sha256": "e6de1fa58d4ebd176f9ab071991875442668e1ad325db393c3c5544b2c58e70d",
+      "bytes": 419
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/admelog-initial-meta.json",
+      "sha256": "2799f3f75c2669f0019f03abc418ef7858b0ae531a9220d9d40a381a984a4918",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/admelog-meta.json",
+      "sha256": "39fa6da72f7446d0bb3612a97f50ad2c3174d6cfb347804db5395945967ad755",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/admelog.json",
+      "sha256": "aa56e8e93659dc0af8b98c8376135d89e18ccbe23bccd16ca0a9c79b21bf9bd3",
+      "bytes": 131177
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ambien-cr-meta.json",
+      "sha256": "50fa88eabdd39504435b5c90caadb63ee01dec76e5d9c5d93097e45e6e45438b",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ambien-cr.json",
+      "sha256": "e388404481e491f9830d4e777b92f6ff565a7b9ad70e7ec6cc4629cb9a647582",
+      "bytes": 132406
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ambien-meta.json",
+      "sha256": "255d775bbe01a6c0cb789567b97848950060080f71dd1879bb626406b0c712a9",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ambien.json",
+      "sha256": "50c02538525397ab2f4620bd5297b09f94897d6162bb02052b0fd47c4c07a48a",
+      "bytes": 113157
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/amnesteem-meta.json",
+      "sha256": "99cb1b05fe657fe8037eafd9ca609090727544abf6243a64898f122d8896f28e",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/amnesteem.json",
+      "sha256": "a00a6e04b7fb1db364932c7de28fcb28640abd8f356c5f570f11ab8e44310df4",
+      "bytes": 142877
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/apretude-meta.json",
+      "sha256": "c0f665156a8e4b743ae7ad3e8febf633b918f10dab5ac167fe8c7450f771bba0",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/apretude.json",
+      "sha256": "55d0a0b6b9889947eaaa3bcffe924f81d1aaec49e156229da3f1e8b05cc070f2",
+      "bytes": 288025
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada-initial-meta.json",
+      "sha256": "a24544b678826ff273fa5bccd9f75d86bfb0392f0a059b9b8f4298c021afc381",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada-initio-initial-meta.json",
+      "sha256": "9480114bc0db0358fe4f071fc9b210bb8c140d0940e53b6610683153c73bfff8",
+      "bytes": 468
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada-initio-meta.json",
+      "sha256": "2a2cfcbfe8e1a368e42fb7f363e86f1f768380a0a85a88f41a0beb3c04a4b063",
+      "bytes": 838
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada-initio.json",
+      "sha256": "297e15625fd8810c1eebfb6078e02da8ec1986cd4f1806551a1262d6ab6f81df",
+      "bytes": 115930
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada-meta.json",
+      "sha256": "1a8f38d35f29a60ee0b3b02b1792427f843cbfc99da90289e32d58ef73f2a2d4",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/aristada.json",
+      "sha256": "0297a4841b10b8255eb36255049d51d08f30778c066d29b520b4c8b5d7020ea9",
+      "bytes": 148593
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/auvi-q-meta.json",
+      "sha256": "9d5848367f421da370e3b262e966a8763167fee3988ca122cb4c05d88e391603",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/auvi-q.json",
+      "sha256": "31462ea1d66ed902286cc9917eff9a061504d22b15072e29af25d84c3527245c",
+      "bytes": 100174
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/belsomra-initial-meta.json",
+      "sha256": "d3e8600869a2f2db9779bc605bfff29d4e853e364fef05ec2cb5b111d0bcbbd6",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/belsomra-meta.json",
+      "sha256": "63e84b63f2d7909f513404e5c528999622993b3124a65052d88d7b19f990ac2a",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/belsomra.json",
+      "sha256": "8572f431cc025cc30b0b890d0fadc720cfa518ed09b0ca4fcb60848eca0f3eff",
+      "bytes": 110991
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/benadryl-meta.json",
+      "sha256": "1a871ad37d21947dafdef2874f5e1fec56434f2c9e0f42d90ec75db88311db14",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/benadryl.json",
+      "sha256": "610f07620878202aa8cf61f34319047e21ee5959cca3f59d3dd69dbb16b3c206",
+      "bytes": 6612
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/briviact-meta.json",
+      "sha256": "3ea88e09c111708cdb28ffd63f6e6804623d6544b2551dc6b4af0947a8927501",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/briviact.json",
+      "sha256": "bbf785c50583541152aa5dff88c6d67dc7cb7157fc4efdb44c75968264f2e7ff",
+      "bytes": 122259
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cabenuva-meta.json",
+      "sha256": "d50055310d29923e736e6d4767c054a6ef9aa139b734fae521eabfd8e992f7cc",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cabenuva.json",
+      "sha256": "e30f95d3ff312c11a78eb9b55b11d60fca035c08c5bfe9fff482cbd0783d4f13",
+      "bytes": 515429
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/caprelsa-initial-meta.json",
+      "sha256": "55c323f4ad461bdc964a11801646c954d3de0d3d48f81ce41e1c3a4445fccbc1",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/caprelsa-meta.json",
+      "sha256": "843df932a652ce9a8a8f86058a0538e88c6c680dc3cb5a574380a5ebf7ec024d",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/caprelsa.json",
+      "sha256": "2f392a59672e12b94790d1f3d2550f1bc338ac73f355e42ca3d1bfa0b3efd036",
+      "bytes": 111844
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/claravis-meta.json",
+      "sha256": "5cce53cba918f64d85ac2aa6070b84ad5a2098d1758f91189d3d39fbfe231f85",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/claravis.json",
+      "sha256": "47db61dd69ef9fc2e49839f18b807d31d0f9fd72c33c8c3328659f8197c8ebd2",
+      "bytes": 144070
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/clozaril-meta.json",
+      "sha256": "5f75ae83e472ccc6379adb32d5f87a749e22c43c357f23c7c2194db3d5620bb2",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/clozaril.json",
+      "sha256": "c057ac9706c3dcb2c0617c51ccd25861f8e4b48fe36f3dfd0a6ea68523fcc35a",
+      "bytes": 294879
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmea-source.json",
+      "sha256": "68fe1a463b0032f1c8686b04f8a906e458055641347b50a5eb358aa58d7096da",
+      "bytes": 671
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmea.txt",
+      "sha256": "feb559f95d0b7e7f87f95a45baca3e1089d9ceed33db42e98e20ed86702f3e5c",
+      "bytes": 6445
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmea25-source.json",
+      "sha256": "5010e2afdcfa3d3db4dcac088a8b5dc74c16734e8fd20fb88b3f7eda09d26d5d",
+      "bytes": 675
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmea25.txt",
+      "sha256": "93de78825b0708253d71b72aac938e92178dc4601769188f315ae0d6acd014b1",
+      "bytes": 6660
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmr700-source.json",
+      "sha256": "f784812d7a0628aacc9c46ebbd06e95a0bec28505f9208cb109633b67eb524bd",
+      "bytes": 675
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cmr700.txt",
+      "sha256": "a5ee9a06303929f8e53995701f62f253b396fc64ddd6dc73c2cb774d3f32580d",
+      "bytes": 174031
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/conzip-meta.json",
+      "sha256": "146d9beba0e13bf9caada459daba19641fbb50da9ca693f87711ef1f277a119f",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/conzip.json",
+      "sha256": "1258eb1602e8e59791cbc1081587525e98692f39eb3f422ff246de2b76fb023c",
+      "bytes": 203660
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cytotec-meta.json",
+      "sha256": "416218b799483558477759b32cc8bcd9aee4641b34e1919da5f9439d0b11f029",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/cytotec.json",
+      "sha256": "6516d001662dac0f9212957b203897dc1f9ea78804cf6784d3747043a43b8312",
+      "bytes": 59359
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/dailymed-summaries.json",
+      "sha256": "b0aaefe772700e2a5064edd1b38bb31ee79625031ae575e7ee6609dd89a308fe",
+      "bytes": 10856
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/dayvigo-initial-meta.json",
+      "sha256": "53772f6336ef91b078df8cc3d8e79ce69a1ac25126cd5dc320c565a878893d3c",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/dayvigo-meta.json",
+      "sha256": "2efea963e19c0a840034d84669ee0f1f797e083e51b5cedc75253922594c888b",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/dayvigo.json",
+      "sha256": "4a07e3104d2dd30b450c1fcf30817a36693e7dc49a522343901aeee7954db143",
+      "bytes": 125913
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/delsym-meta.json",
+      "sha256": "c663afb24d3518964560f4b7e6962f43735b3654202767d46340242196c4c064",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/delsym.json",
+      "sha256": "49265f4cde25d986ba29d69d4f918c69ce67b31dcaface5e86b118bc79fc3d8a",
+      "bytes": 7418
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/depo-provera-meta.json",
+      "sha256": "f503c151e05ce175d3523237aff43bf1d96f8b4cf1261b0497c64417e23799e6",
+      "bytes": 826
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/depo-provera.json",
+      "sha256": "b8208355664338b9514a2529d1bc95017987917837dab176e9baf4cfcff1acdc",
+      "bytes": 100083
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/descovy-initial-meta.json",
+      "sha256": "c36dfdef35c4c87698bd0ebf9e14d9c1b5e1fbac7801aab549240c3d09050a5b",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/descovy-meta.json",
+      "sha256": "5af489b26b51e2cb633ff9b5a7705708c8b9c95a69a61f944a682fb1d0a37e62",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/descovy.json",
+      "sha256": "02e8757f7a6e66f7bf6f1830ad6cae3da5afe499e060b3ff2e955c9ae91421d3",
+      "bytes": 234247
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/doryx-initial-meta.json",
+      "sha256": "61be01ced69eba70f96893d65777483f565920cf512bf0a0b4a444c71efea42e",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/doryx-meta.json",
+      "sha256": "c741a51fbf26d6d6b45c5bdbd4d1aaa5d97d406d7b64fe671591fa3cc267b415",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/doryx-spl-meta.json",
+      "sha256": "7960ad3c895763f19b19903804057cd6e1eed9ff9433d777cb29d0ca34c4edb2",
+      "bytes": 1478
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/doryx-spl.txt",
+      "sha256": "5dc3726aa2e6feceb9a48fb300db213a563c70b67c0b208b1bb35852f9bc6ed1",
+      "bytes": 45951
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/doryx-spl.xml",
+      "sha256": "edaa4f31da425627017888b9cf9df019dc024ac8e190fa6f40e79e88ae743a20",
+      "bytes": 138226
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ella-initial-meta.json",
+      "sha256": "bce37e755fe578be6a6c0e1f83a610e9874a54b26c42f80682fb761fa02bf578",
+      "bytes": 435
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ella-meta.json",
+      "sha256": "8dce571e5e011123149744266834f438375e0021297e865a69ebe70fbcc90c79",
+      "bytes": 435
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ella-spl-meta.json",
+      "sha256": "87dfdc2806d6acd8c865c343206f4ccd5ea4bc7c760dd242c7e507e825f8e49d",
+      "bytes": 2461
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ella-spl.txt",
+      "sha256": "851c611a90a6533f41dc12cd29de39726ca2f51c8db289b83510fb9079f999a7",
+      "bytes": 67300
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ella-spl.xml",
+      "sha256": "4dc1c3ae6014ee093441e090a5c75e7c74e5c93aaaa47465ae3e84363817182d",
+      "bytes": 139975
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/epipen-initial-meta.json",
+      "sha256": "83a53290bd3b4b92f0b5516086399ae4571a80b42153138178b80d9705327754",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/epipen-meta.json",
+      "sha256": "2e1d00c6f90923dbb05b35a7ca5477a1065d09bb646aece2f942ffbcfef6e12b",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/epipen.json",
+      "sha256": "99c7f8e9f7658a1daa6d7eb71dc86abfe360c1e8dac8adf141a6fb9b64f84237",
+      "bytes": 88249
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/fazaclo-initial-meta.json",
+      "sha256": "da0aaa7a8b2b5c5d4726c53db9f1e1bbdefdff53d96b09fe3743a25969fdee7a",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/fazaclo-meta.json",
+      "sha256": "fa50312667d6b81e69c94d655a4dec72f6739894ffad8bf32e6e7ce9b7c9d5b7",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/fazaclo-spl-meta.json",
+      "sha256": "58f63bdada1b28aedf3b65ed29c3a87fe8d2761956b3b2e41a86ac00b5e8320b",
+      "bytes": 415
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/filspari-initial-meta.json",
+      "sha256": "8911f9b0d3f7c04e8cd737dd545d2ebdf99eef56137b7a6f7f85d067ca15249e",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/filspari-meta.json",
+      "sha256": "608bfb5e3f26ddd6c91ead30400588da4db7c37c49899397a88704814141e8c3",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/filspari.json",
+      "sha256": "9c6d559a133b82a9b51ce825ebaed10525b8b0b41fe30747bf618b7da07fd2d5",
+      "bytes": 129004
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/fycompa-meta.json",
+      "sha256": "e0f68542dda77e751c9eb2e2f901a90a65c0b0a823b97709632634c5a0458d87",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-acetaminophen-meta.json",
+      "sha256": "02437d90b43de9a08c6a7e74a80609c76b6b960f888157679b15c022cde6e022",
+      "bytes": 716
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-acetaminophen.json",
+      "sha256": "d4cc16d3ce8e3ffb65e0bb62d4613f33d714a8bd74284ee2940fee953dfe9694",
+      "bytes": 9938
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-butorphanol-meta.json",
+      "sha256": "3ad2dcbb574372110d4797697440581f160f239a7dc938244feeb02574a620fa",
+      "bytes": 704
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-butorphanol.json",
+      "sha256": "c22de0de3762b0df2ff40bbc0ffc69742a449adb44fa3ef5a2158c6ed65db732",
+      "bytes": 106101
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-ceftriaxone-meta.json",
+      "sha256": "3665cb97da443041954db3ad4dd8bcecf79d99eb7b346b2b6e425f5e64f5833b",
+      "bytes": 704
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-ceftriaxone.json",
+      "sha256": "cb114e6e74260f02b00ecfb512d058fbb0a96f8803be30f2ccb4348cc3b2a3eb",
+      "bytes": 98319
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-codeine-guaifenesin-meta.json",
+      "sha256": "7f38646a514170c31fa7579f497586cc99d4331310b19c1e759d287f06a6ea5d",
+      "bytes": 761
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-codeine-guaifenesin.json",
+      "sha256": "1b6e0b72f0c839c170a4787e0341be01664b0966a5355e024e6ca343e7a9474e",
+      "bytes": 10219
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-codeine-promethazine-meta.json",
+      "sha256": "ef3f037c8cfb1eac29b5376c04f6826a52a7eef89172550095e90f46587c6633",
+      "bytes": 764
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-codeine-promethazine.json",
+      "sha256": "5fbe81748e343fafa24a53ab796b561d5a43b3485df8284cb6ed76c7a6b8668a",
+      "bytes": 173809
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-doxycycline-meta.json",
+      "sha256": "e93fe14f7fbdd5406f8cc2338853897b5a4107290e72985971ed7026c4d343d7",
+      "bytes": 704
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-doxycycline.json",
+      "sha256": "625eb01a3efdace1db2cea932676705b5d984499fcd7ab476fef99729ddb53c0",
+      "bytes": 42062
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-haloperidol-decanoate-meta.json",
+      "sha256": "e1753851221a4d110bc170e754eca532c8abbaf183d3d00ddc4f71e2fdc0a505",
+      "bytes": 734
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-haloperidol-decanoate.json",
+      "sha256": "bc672840f5d6a180c59aaabd2b1c653654df7bab4b0a75700486fdc30fd5b379",
+      "bytes": 62333
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-naltrexone-oral-meta.json",
+      "sha256": "8e77f444ced3e1a76e8edb10eb654d54a9000f3c72f374cf6a6c600ab8b77ed3",
+      "bytes": 731
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-naltrexone-oral.json",
+      "sha256": "be082e96c300ff7baf360d741e9d912a90e6be8a0a7a2ffadaa3b76953c8cceb",
+      "bytes": 65567
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-phenobarbital-meta.json",
+      "sha256": "bbca86581c724a51b716e0256326288f006162958137ecf8492f1ea4bc2bebb4",
+      "bytes": 716
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-phenobarbital.json",
+      "sha256": "46527f1c77436d4a6fe1c2e1de7b7fdb5f75ef55ab3f86149a0c67b17ca2efb7",
+      "bytes": 48248
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-prednisone-meta.json",
+      "sha256": "18412fe410a443c7daceacc05a7f941b00acddc4760241419af2eef72d0611b3",
+      "bytes": 707
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-prednisone.json",
+      "sha256": "cd3d833de99ef1a27aa02a7ccd4cf9f548ab6733d104706a63199987b4b8f066",
+      "bytes": 77012
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-pseudoephedrine-meta.json",
+      "sha256": "31a78b86011aca0c7c02539f41548734de9595339d27f977c587fe3c4350a748",
+      "bytes": 716
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-pseudoephedrine.json",
+      "sha256": "ad7129ce46ad857906356df3a862020f008ae3b846f18271c9cb7871d9663e4f",
+      "bytes": 7766
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-tramadol-ir-meta.json",
+      "sha256": "eaa4c870ac06d6a5ffdb01663c498c8022da861f321b5e5aab07f35fed3d6fa3",
+      "bytes": 721
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/generic-tramadol-ir.json",
+      "sha256": "60f672e1cd890aa4f6a7a5a710ccf63c7060bc3d8b25ec342890496b20ffe791",
+      "bytes": 206383
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/gralise-meta.json",
+      "sha256": "aba2ce893453d6734c9801509b296cdfdedb56dd5d223dcd631d7d77c9ebf53b",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/gralise.json",
+      "sha256": "96012776d20f06500bb5cc95d92eb85c0079743064442227812772ad36a43c07",
+      "bytes": 94468
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/haldol-decanoate-initial-meta.json",
+      "sha256": "10c443352d572abebb431f760826f0950dbdf58a66808f41fc21cee547aac7d8",
+      "bytes": 471
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/haldol-decanoate-meta.json",
+      "sha256": "66fbef6b3cf50b581ab0ff2122ff31bd1c0b8a8f8e1514d97a18e1a6880de3d5",
+      "bytes": 471
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/haldol-decanoate-spl-meta.json",
+      "sha256": "2d9f3d5e241235addcd02c1fcbb7fdef99b5b5a261fef23033210d5b49813053",
+      "bytes": 451
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/horizant-meta.json",
+      "sha256": "e946351eb07c3ca9c51287d281abca30e46bbe66983ac0515d75f61abc957f97",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/horizant.json",
+      "sha256": "5b3f4d52b75853f6bfbbe9f7f4c1e99a0ecc690812ef4ebbb2729dd4e410ed2c",
+      "bytes": 114329
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/humalog-meta.json",
+      "sha256": "b53ea843e72d8c4ecb6cce911d857589e77968182913b490b21518528b51d5bd",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/humalog.json",
+      "sha256": "1ad6af28d7dc9e9602ea0d1c997e3520d05e83251acb1c6f3a5b06dad31ce1f2",
+      "bytes": 267555
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/imitrex-meta.json",
+      "sha256": "5beeaaac3c467b663d634caf946a5aae28e2afdb6dd6894da548981ae64f6884",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/imitrex.json",
+      "sha256": "9296a3e1c988e8c5f8afc07b08164e5d7ec45eaef664b93f3ffbec559c23d820",
+      "bytes": 106817
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-hafyera-initial-meta.json",
+      "sha256": "bb6deafffd441e294d370b516b8efc6e6e72ce49df9eb9ea3dc8b32972c21479",
+      "bytes": 465
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-hafyera-meta.json",
+      "sha256": "955c84b8169dd32674092d9d6e13ad82b688f9c81139bc1bef3cb102e0e06b4c",
+      "bytes": 834
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-hafyera.json",
+      "sha256": "7a5750073fc8f8558aee6706b67e4934448da55d5352868d2aaae9ca81431d32",
+      "bytes": 180924
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-sustenna-initial-meta.json",
+      "sha256": "9dd89ed9d817cdbd83a22296f4746f82b2c7985d9b083fd5482adbfe62cf7b99",
+      "bytes": 468
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-sustenna-meta.json",
+      "sha256": "dad3a23f5516facc7a7aed7cc64699b501d4c84f1123ca9cab387270ebc9759a",
+      "bytes": 838
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-sustenna.json",
+      "sha256": "adbd1d96721ab16d2bdb4cfc3c058e2558671d47e1d65e8ac011e9a479707008",
+      "bytes": 218674
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-trinza-initial-meta.json",
+      "sha256": "33af8cc62c03fe98e03e6244c716bd29043be3c6ed0f98bf968a026e9f118899",
+      "bytes": 462
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-trinza-meta.json",
+      "sha256": "6351a499ec0273f50558957701c98f8971636a9b0c28e6699a0ea09d51a0d2a8",
+      "bytes": 830
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/invega-trinza.json",
+      "sha256": "5828c8692778d66210a2ad6a9d1e3d9cc0c4b2714842af56bf66d0f4d6d0ee8b",
+      "bytes": 190157
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/keppra-meta.json",
+      "sha256": "3ba18a378c8de9a7a828e71decbc66b1ecc3e5286273a30fc3122994f7e3767b",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/kloxxado-initial-meta.json",
+      "sha256": "73cbec633a6908074ad5c24ec1da9652707ce43434ae8de3ddb0cb1f0f17903f",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/kloxxado-meta.json",
+      "sha256": "b51f73771d8fb6ab84b0ef01e9294e5f6291530c96dd7d7635855cf3e73a330c",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/kloxxado.json",
+      "sha256": "15b0c2245afbec1a71fbd53bec24e5c5f2861a5de853fd204e08fca4b80a98a5",
+      "bytes": 104119
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/korlym-meta.json",
+      "sha256": "cf25d420570d95fad819d3a385a0aaca427bbda5e30e093e6f2a8e19c2955630",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/korlym.json",
+      "sha256": "f28f43aaecacb6e1c226ff50df0ec7eed1bf42be955f1d43d82e5aceb9d6adf4",
+      "bytes": 107445
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/label-summaries-r2.json",
+      "sha256": "1e35bf988a15aa760f259a2e2f6e03f405ef7768311fdc32b0b26ba190a4e409",
+      "bytes": 48900
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/label-summaries.json",
+      "sha256": "83e7de23e73603218990407cb5e024d2d97d78b5394ce39f90627d7f778d01b3",
+      "bytes": 79248
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lamictal-meta.json",
+      "sha256": "1bfe2668565413b5479f6b0ad696bf5132b21590889a732191e593fc406c53ce",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lamictal.json",
+      "sha256": "99cfb9f3b59374ff8333faaa03a625b686154707579a3571abc28592ce463370",
+      "bytes": 400255
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lantus-meta.json",
+      "sha256": "e1ea58dba530084c6180adb24a74072174bd5d715017d7006252847d96abbcbe",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lantus.json",
+      "sha256": "7a63fb8f6a6b7878a1eaff08d54b0dde1e1ca1c115abae0bfb84363876bfe422",
+      "bytes": 164493
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/letairis-meta.json",
+      "sha256": "c73d9d09e1ab327e6652d5a648216a2a7f7a120d33da662dca37a3401f91832c",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/letairis.json",
+      "sha256": "d6576f4c369bdd0b02f9c2ff4c3abaaa4999c0c68a83668864c5255fb70d31ee",
+      "bytes": 97545
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lomaira-initial-meta.json",
+      "sha256": "3a12a1fe91509f3bd6138d70762a3d1613f96ad63bc99212caabe1475e3b7a63",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lomaira-meta.json",
+      "sha256": "2c058a9cc095b7b51c7ed9991b4ba79d40701199f1e856ff6c41b223525e8d1d",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lomaira.json",
+      "sha256": "735259c41ce2ee421cd203be0480bf4af52ffaefe9f3310beb67a90d1f054df6",
+      "bytes": 21985
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lomotil-meta.json",
+      "sha256": "b09c1cace35fb41831ca9e4b6369f590e9c9f3049c9618999103b5d7624c2457",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lomotil.json",
+      "sha256": "9ccb0b22892ad8b61428b7193caac60b9baeaec6f850047da9b95c3fca8c305f",
+      "bytes": 28167
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/luminal-initial-meta.json",
+      "sha256": "2fd0b9263e2ae230a88522cca8823f993e5f2c8f2a5d3d387ab6a6d1e4ee970d",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/luminal-meta.json",
+      "sha256": "5cade1ba7e3070f0554480f2905fb6e4a959e2ba37b82bc1ff583ebb57eb2c23",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/luminal-spl-meta.json",
+      "sha256": "fca682154c8de7af2dcea4d0cfd0cca65abf3550ea56a7159f5198dcf6f6d0f2",
+      "bytes": 415
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lunesta-meta.json",
+      "sha256": "fb8da8bb309880d600cc54a51d4affae23882a3ea3a57a5865c7b827f776e118",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lunesta.json",
+      "sha256": "ef6e6ced327f692073c86d73c0f8ff6b3e95c5f9e288f15e8b7027f5ac0c3db8",
+      "bytes": 108587
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lyrica-cr-meta.json",
+      "sha256": "15a74b209e96d2d887291b0b3ee008ad5ea4590dba9d0ab0f43e37cb8b32b53a",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lyrica-cr.json",
+      "sha256": "a4efa99dd61c108f157b2c54692678aa2f9c8ff9e943956fd0eaf32936cdd393",
+      "bytes": 186314
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lyrica-meta.json",
+      "sha256": "649d1b15b227bc8afda4d21dd8b0d47096f3d99db0d935ce6bec607e1ea51d4b",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/lyrica.json",
+      "sha256": "4e4ae92d8b7ae7ec9fecad49806e54dbe8a0e7f8dc2e628f67ffb24f44e33401",
+      "bytes": 359144
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/medrol-meta.json",
+      "sha256": "ea1b4f2c157b29208870dec0045209dd34139a1143a59ab48af4539b476af15e",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/medrol.json",
+      "sha256": "f226db22c52fd8aac7e639633520e2f3a7d5f12453dd33e8361cd71c5101016a",
+      "bytes": 41318
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mgl12d-source.json",
+      "sha256": "6fce4763681c67725d40eec6d0ec6d599ac93b0e2c0988c423410923b278c174",
+      "bytes": 680
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mgl12d.txt",
+      "sha256": "ff4b8c672377a360de38683f43c3bab33335586a4ac98c4a86fcaa0f46fba7db",
+      "bytes": 8512
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mgl3-source.json",
+      "sha256": "e6aac20fe7dc730f7da8a9e3e839dcde35b6f53a7351dac6bc6090d5a39ee267",
+      "bytes": 673
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mgl3.txt",
+      "sha256": "34dc79d5e91bbe2ba8e949fa77a8190ba06c382ed32e5f65e961005c787f40b7",
+      "bytes": 6863
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mife-fda-source.json",
+      "sha256": "814b1a576907276539fee12d27dfa11d62e6a008d2837976c3e34b0628756a67",
+      "bytes": 781
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mife-fda.txt",
+      "sha256": "829829a9f1efa0dc8aa12be093dd3aa607d97cf7d75e51d2fce844c096dce952",
+      "bytes": 33765
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mifeprex-initial-meta.json",
+      "sha256": "60b9c3be2eb7a16d9d0dae55b30e61d6d2989b3447d7d1aee11897d29a8f33e1",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mifeprex-meta.json",
+      "sha256": "12424b2f0d0c6ce6b005567f85fdb0999e75f888fa5d1df19cd37745856a1e2f",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mifeprex-spl-meta.json",
+      "sha256": "90c16e6485f2568d8b610da4882e8526135d770d050e680d856fc3de32c1adcf",
+      "bytes": 1168
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mifeprex-spl.txt",
+      "sha256": "48136ffd8a2f03d64adb5051cb8c6857ccede1f73f111ecc8bd09944b3c7900b",
+      "bytes": 69881
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/mifeprex-spl.xml",
+      "sha256": "0a80d1b5f40d2593de03997224be39cb2b25a7be2bf2b5dd36f744bdb4caac3b",
+      "bytes": 137305
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/motofen-meta.json",
+      "sha256": "5bf1aef010a28a3433087e22029ceee68e00b8f5bfc9e0f4e917108d3874c1f7",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/motofen.json",
+      "sha256": "9803aa4b51b6589fd14eaf354de3d4962de09bdc11c93b881facd84a8535f5d9",
+      "bytes": 18679
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/narcan-fda-source.json",
+      "sha256": "6911e3cb3b23315a5fed29793fc161c9063f3e4a16ae315d25c7ea05351ab7ef",
+      "bytes": 713
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/narcan-fda.txt",
+      "sha256": "1987f18c15dc3731fadb804bc6b55fca89b4c4197920eea094a8f9b722f14e4a",
+      "bytes": 8867
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/narcan-meta.json",
+      "sha256": "636a150fadb85b4950d56815bf20090a66feb121e0e9bc7ce8e55dec7a6c61ad",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/narcan.json",
+      "sha256": "f5b07719b044d45ce42a7c12803ec9961757ef8734a4b74ae08d10cbcd3d7650",
+      "bytes": 80430
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/neurontin-meta.json",
+      "sha256": "f98b898f0cccb52981a2502016a76a85bfdb88a47203cd4f7e9f231fab63cedc",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/neurontin.json",
+      "sha256": "fbcda702549188845c88fa44cd085579c709586b87678f0c04efd91cf4cf328b",
+      "bytes": 178305
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nitrostat-meta.json",
+      "sha256": "4b6fd5cc7d1e54d042f99219ea0d61d1549a4e8460d070aa133dd1f16071dd02",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nitrostat.json",
+      "sha256": "66cc744699db73156243db647a6e199f73348b333edf834cbdac251d3d5cdaf8",
+      "bytes": 47608
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nuvaring-meta.json",
+      "sha256": "0f43617d29face09debc8537d0f4e533cc9be2251261a1d5d410eea142c7a794",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nuvaring.json",
+      "sha256": "ccfe7107fdfd92ea7687f0e459de788ccab19f838d85c62d788d9f87b4e4d092",
+      "bytes": 109887
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nuvigil-meta.json",
+      "sha256": "efe366b7e97bb46b33a1d3ff7eec5a093b9c1618bc0b16dcdbdbe88979e78606",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/nuvigil.json",
+      "sha256": "d01b17663d3485e35b611e22e209e327c6b5a5219f97260f2a92be84fe5ec84f",
+      "bytes": 158157
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opill-meta.json",
+      "sha256": "904b887389fb0e4edf93c77c5e9bacc25e87cea88fd9ea13faf5a9c5153f0163",
+      "bytes": 798
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opill.json",
+      "sha256": "679588c2af273abdc784393992c520e22981fba7bbd771047ae9bcac9bab5c45",
+      "bytes": 26536
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsumit-initial-meta.json",
+      "sha256": "c0bbe67ad00d3733e5f6a4aa2efaa3e046b137ba77d085eac48b47cb9a34275d",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsumit-meta.json",
+      "sha256": "3222be38a0216a6b330b67fc20efff056980ad089b80eb4894c9ad721ea1ab97",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsumit.json",
+      "sha256": "6e5a730bb2c252b1bb9462c5c44331f371536eedc9c29db426ec61b6439a2c33",
+      "bytes": 80051
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsynvi-initial-meta.json",
+      "sha256": "4e3d03ea4a904eb1779a3a04ef8d2b7c217aa4668c7de176985994a63e58ef6c",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsynvi-meta.json",
+      "sha256": "a6ef9382bf596484b28423a394ecc5ac3d471b6e7962aa0da03e0771b39bdfc2",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opsynvi.json",
+      "sha256": "d8e04ae63949e062ef9d0a2ba9b31bc3bf73e29ad383531de592714666d07543",
+      "bytes": 133165
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opvee-initial-meta.json",
+      "sha256": "d4e24b71b16ca51237388affe40b3dc963a73281deaedbca2bff3bcddb43e135",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opvee-meta.json",
+      "sha256": "ac831012a1ea10b457920f62bd193adf3c635de46840b56763cdd08d694522ad",
+      "bytes": 798
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/opvee.json",
+      "sha256": "9cd9066696937665ecf275557610569cc01d3e493c7fc0d4fb7ffcf4f3ef5979",
+      "bytes": 117932
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/perseris-initial-meta.json",
+      "sha256": "bc472da91e5bfe16ba045358aee1c148ce8caf69c3da61bcd00c64f24c40aac7",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/perseris-meta.json",
+      "sha256": "eba072b82165d1eb51f8156b82251a4edffa09415b16e362da56e749400d14ae",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/perseris-spl-meta.json",
+      "sha256": "bc13528acababaab336715b9e86195d5555ed4646a7ebb0d2f7ef8035d7fdccf",
+      "bytes": 1155
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/perseris-spl.txt",
+      "sha256": "b4e9853b0631e4c4d37dd4be45fe9cc33a0e318450e1ca5f41dd048c2846b61b",
+      "bytes": 166165
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/perseris-spl.xml",
+      "sha256": "0a76495a9feba916b90b600582df3a8876dbfb88cb47fe23a626c77b7f285a7f",
+      "bytes": 359815
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/plan-b-one-step-meta.json",
+      "sha256": "a6a7cac74d3d596ec8a2015401edaddd524e4fb04923a637aae0fb141a96c9a3",
+      "bytes": 838
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/plan-b-one-step.json",
+      "sha256": "9e2e4773e11e0e75de602e0d9663f5ba335abf32abbd5c03e1f110504a2965a6",
+      "bytes": 5457
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/pmp-source.json",
+      "sha256": "e06935955423d7d110255be2db14737aced869d1c3ce7ced45df7ec9d478f944",
+      "bytes": 667
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/pmp.txt",
+      "sha256": "7a9adad1b5c9a4028d818e1636f4157c838877dae6338568fb91fd02411dca7b",
+      "bytes": 9756
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/provera-meta.json",
+      "sha256": "0277365de83641e3989736151079f24f70801742e4bba085b13b34b36886f248",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/provera.json",
+      "sha256": "3410ccef437efb19aa96279fd444acc276f91c30c5dfff0f6d05efb5f8082315",
+      "bytes": 84969
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/provigil-meta.json",
+      "sha256": "81dbbfaed1377a02d381a8c3e4916962d1d4670c2948875126339defe14af752",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/provigil.json",
+      "sha256": "760ec2ebc28ff16ec0ee9996cfec2279154478b9b29528ac8c71b0c95b526de9",
+      "bytes": 119391
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/qsymia-meta.json",
+      "sha256": "f7107488537eac2bfec8c508065331598d18abab91d9d9563dafaff6f937a00d",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/qsymia.json",
+      "sha256": "e0fe76fa694140783e38ccfec0fda2b2be31845df1fc4bc12155f81f380a574d",
+      "bytes": 286529
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/quviviq-initial-meta.json",
+      "sha256": "d8332c17585757026fb0193ab136a1d2d385a83a438d8d3b4f2e9ff9fd731890",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/quviviq-meta.json",
+      "sha256": "e20e163c5268abc462d21ad4899d35a5da5462af5e8cd00aab6fc0dc48309343",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/quviviq.json",
+      "sha256": "25c95e7be71385a63eebeadc75ced80f985f86976a12f1e055ac4f3abd5da7d7",
+      "bytes": 99941
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rayos-initial-meta.json",
+      "sha256": "4eda2e51f5b52bea88c8f35f9997838a2c58456387e845725198613b8970246d",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rayos-meta.json",
+      "sha256": "4f0018a31b0c930e3ba7b9cb127e055668312ac2b4b3d78dba4ed83fd6bd760e",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rayos-spl-meta.json",
+      "sha256": "4dda6d5783c7da1edad94c2e49871d7a0f1c3ba40e28c0cc9f7c3173ae3612d8",
+      "bytes": 407
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/revia-initial-meta.json",
+      "sha256": "ca66d0654949dc0d2c1fa33232ffb5533ac5b25a30537155ad55568e09489f6f",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/revia-meta.json",
+      "sha256": "85c91101e0c8a433fce2ed9c0e35cad4566ba9ff1a88a5d68fd14f91d0b7ad58",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/revia-spl-meta.json",
+      "sha256": "132740a4d6242da315f73469f16a05bb74f186041a3f523a191895047844b7d2",
+      "bytes": 1199
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/revia-spl.txt",
+      "sha256": "7589447c7e7445333f721ca7467039a88407cf17bd8540b0d8f3e0e71d2011cb",
+      "bytes": 1420
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/revia-spl.xml",
+      "sha256": "107e2a4b56c428b06e5f3611a5a1c7d739e5f8af657bd42030b713e2b4fafc26",
+      "bytes": 15940
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-initial-meta.json",
+      "sha256": "4b4a09dd3ee8f2f7162dfd4a5d06f99943e23a745d93b77114bfc11f5216f3eb",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-meta.json",
+      "sha256": "34625fd3746bdd784cccf121c1822a29bcafd0dd68fe6390f77f9433da37e811",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-source.json",
+      "sha256": "c2f8118965ec8420d5305791b5f34deffa5b06b4fd76c72888fbeecfc7ae05b3",
+      "bytes": 724
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-spl-meta.json",
+      "sha256": "6e3edbe20e10b96a8d682bb3507ca75faf4b3ab14a8c66c798ea70e5d9defe53",
+      "bytes": 1186
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-spl.txt",
+      "sha256": "ee996e3c698ca03c526ad7fc90e575ff383f1e350b5df6b41b1fbda3b3ab5e9a",
+      "bytes": 47137
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy-spl.xml",
+      "sha256": "712c4741379e2f3d90e273f09c8aec227e8caa50a30a9cb4db3e5616cab97a9d",
+      "bytes": 94422
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rextovy.txt",
+      "sha256": "26dabd87b295cb20c1710d671403e4d6a23dc88838ccb1749f3637792699ab06",
+      "bytes": 5820
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/reyvow-meta.json",
+      "sha256": "ddd8a17be1a7b7cbbb5f6b1f4236feded99b9eea90d778be28402923cd20728f",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/reyvow.json",
+      "sha256": "98367d45c49201bd37b8798e7d24c9385a92418cb1b0bca3e5c2cc01a7c9b1a9",
+      "bytes": 88359
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/risperdal-consta-initial-meta.json",
+      "sha256": "6d9254c44b9b342fef85f6ba1856ae38cdde9eb1578eb4fa203f5db0426bab20",
+      "bytes": 471
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/risperdal-consta-meta.json",
+      "sha256": "259d7cc7ca35dca1cd9a48d1da18b4d8297a54294c44dc9ab9c261cee02d71e0",
+      "bytes": 842
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/risperdal-consta.json",
+      "sha256": "ed817f01ff35a732a23bb77cdd1c7dae89251d5b1d51163a6fd80ed80ba37e72",
+      "bytes": 192836
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rivive-fda-source.json",
+      "sha256": "10c7766bd28ee35dc58cbf1b6c102ffd6f5ebb00bdc150bdb2200566acc9db54",
+      "bytes": 722
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rivive-fda.txt",
+      "sha256": "b3b10f475480c9c5dd6a01f7201c74664f8a63d661fb1e5824527a4166f8322c",
+      "bytes": 6285
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rivive-meta.json",
+      "sha256": "dd1ada5248fa610e941f935748f68dc2f7da9e7f6c05b909c84c7bbf3a2d9de4",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rivive.json",
+      "sha256": "71ef3d02017e48dda022b6440cc04eb322c8d05d6bb334b0b10958c9061f794a",
+      "bytes": 8780
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/robitussin-a-c-initial-meta.json",
+      "sha256": "bface0413d6b591cb42e3c29115cf615c869d00a20cfbb3c30aeceeb73de34d1",
+      "bytes": 465
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/robitussin-a-c-meta.json",
+      "sha256": "11a37eddf7d57ed05967756519e83edb70fe058371bf8ad5396fd70edbdc1dfc",
+      "bytes": 465
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/robitussin-a-c-spl-meta.json",
+      "sha256": "63325def355b0dd97ab5b315823898dfd73bde5aaca1a1ec8d79ebfa9f903f84",
+      "bytes": 443
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rocephin-initial-meta.json",
+      "sha256": "2172d9acc50d19b24a5d4754d32d89fef04964e519644780368f6d94d48a1a89",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rocephin-meta.json",
+      "sha256": "7e27e9da1d4c3f310517a0fddd34a6467c6c6710edc1897b3a88a31ff9ebae19",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/rocephin-spl-meta.json",
+      "sha256": "fba63c0ab285a45d779fbb9e93735bb9cd593ee5aa6e9d17634645c107861e4d",
+      "bytes": 419
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee-fda-source.json",
+      "sha256": "a0ce979507b1caee86fa1207ed897e50fdb9de6a47a369be6fad69b9d46348b0",
+      "bytes": 471
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee-initial-meta.json",
+      "sha256": "504c44f1ffe0681ea08d97f658541b26b584af9bdb651399ab5d5b4826d265f6",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee-letter-source.json",
+      "sha256": "0866f77cb9c24dc5b348eabea00f74564a284b56d2d274da207869564ee0009d",
+      "bytes": 701
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee-letter.txt",
+      "sha256": "999e6fd0799d0a14fa1e53858a643f240b3c37b0282383a39064d1cb04dbb9e8",
+      "bytes": 18040
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee-meta.json",
+      "sha256": "8c13b6c5d28e15a494eec84f6bbb512a9f5b4bdb9ef4f44ec90ebc946c5543da",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/semglee.json",
+      "sha256": "5fbe285f07ed134ae894e1c7c8ff13bf0aa2e2a88bf1c8385dd7b2a0dc64a62e",
+      "bytes": 212838
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/soma-meta.json",
+      "sha256": "3682aaffbb7fa0c57d9f2912d393e06cab9d20f4dfb6db916072a3bbe1a68be4",
+      "bytes": 794
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/soma.json",
+      "sha256": "c32162eeafd669171da0db4017c35e4d68ff731398c0473c8e3485c1b6a7d4df",
+      "bytes": 60829
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sonata-initial-meta.json",
+      "sha256": "972d6e905ad6e5e155f92939c5bea0a33fe675a29f53e514f95c91227cd4d38a",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sonata-meta.json",
+      "sha256": "e64978806b874c35ccf01c424485e6dbef24ef6e1f21c9bfba757cb9b66dbd96",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sonata-spl-meta.json",
+      "sha256": "e4986ddbf9e5b325a1324981fc0d0bcdc4dcbbe557422e8d0506b6f96f4bd55b",
+      "bytes": 1157
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sonata-spl.txt",
+      "sha256": "dc08b5fb884bce164661fc157b088f539fa1b8df6708da6292c0cc3b126762af",
+      "bytes": 83748
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sonata-spl.xml",
+      "sha256": "998d87baec4031fcd664216b596b9ce5ed5d8407fd3f4b50e9d56a3571989c2d",
+      "bytes": 131792
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/stadol-initial-meta.json",
+      "sha256": "ba3b278a81b1797fec4a3d3ed0b66be82c2ac9eb2dcb7be0b776d1e78fd96f89",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/stadol-meta.json",
+      "sha256": "a8f95d70a045f67a3361a950a2994fe8359d71726a1642f488aee1983b2d5103",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/stadol-spl-meta.json",
+      "sha256": "fe34d71a8960f5e1eeac10fed5d044d58b135476a51e3c0b383fd9663a89854a",
+      "bytes": 411
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-initial-meta.json",
+      "sha256": "abb56ab3025181d6e2383b3548197fd4ff650b776426a171677a364fe9c12814",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-meta.json",
+      "sha256": "ebe4fb1a48e8e89f1b52066bf7a3e2b1c8c4d349187baedc78e71b5cc12b228d",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-pe-meta.json",
+      "sha256": "a5a0745f34364e24268bc688ab43d528e89346663be3b1020e840b165373b373",
+      "bytes": 453
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-pe-specific-meta.json",
+      "sha256": "590d8be63788141f11a24c1f2a74065805a0cbe128e77cd1a147c4e41689555e",
+      "bytes": 666
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-pe-specific.txt",
+      "sha256": "0dc0ed4ede6041a9092b85b668773afc32c42b2cc7aa8b3177e3c41d9799c98a",
+      "bytes": 6611
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-pse-specific-meta.json",
+      "sha256": "6dfd93c5bd040b1cd81c98465c2195148c21b383a84dddad5b79ba3a1e8cb91f",
+      "bytes": 668
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-pse-specific.txt",
+      "sha256": "842acfb5bd778aa3a94148e3b2cbe21091d61601e1882a623af1df26c769fe13",
+      "bytes": 3968
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-spl-meta.json",
+      "sha256": "9d8a32b933205bd9490fb706addd4d6e41964dc2fe55962a83aca28663ac85a3",
+      "bytes": 3608
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-spl.txt",
+      "sha256": "776d0d6d19c151acef8b163af23d54ccbb50222426efcb767c2f6c47d75e4a1f",
+      "bytes": 6427
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sudafed-spl.xml",
+      "sha256": "f6ecf4032dc1afc43c9d627a11ee78f7695c41b22f79eaaef8ed2ff2290ccaf0",
+      "bytes": 31155
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sunlenca-meta.json",
+      "sha256": "412ad5b22908b09588caa5d2126d83bf9727dbf8dd10c3c2f7117f797f042238",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/sunlenca.json",
+      "sha256": "b973b6ec44fb4c1e614b2ec2e8fdfeefd0c701439c2389e515a6e9d8e3ff93f7",
+      "bytes": 179485
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tracleer-meta.json",
+      "sha256": "7a56a110012e0598bc6e1102d3a33916546b784ada37e76045a9375922877594",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tracleer.json",
+      "sha256": "27100b5413091be64670e68c42e1199cbfb53b15e45ce6d75c1836e11cbe4c8e",
+      "bytes": 125290
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/truvada-meta.json",
+      "sha256": "ef34f92d4c262b980674639fe2a14dc724a495e45dfb041c5cf24abb286db9f3",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/truvada.json",
+      "sha256": "b65521066fc0538ee2461ee1edaaf72459ab80243a1c3be6c11aed85f3b268bd",
+      "bytes": 239766
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tryvio-initial-meta.json",
+      "sha256": "2852de28ccc8bf4a3798d9f55b307a094768df7c84675ddf762a526026d4ea74",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tryvio-meta.json",
+      "sha256": "7560c53a7ce8eb7183cdb800d93ee4e93f468221c4f2925b344258a8ede40bf1",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tryvio.json",
+      "sha256": "e7d75070e68940c697654a396859b88a804af336c471c1c0e630a6f374bb4a9f",
+      "bytes": 72808
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-initial-meta.json",
+      "sha256": "4db43cf7befa7546b71a71b995acf769c2a2157c38ac01ef26a8e8cff5a9fc1a",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-meta.json",
+      "sha256": "fa049fcd4396d60b76e9f8f3d2bb5a28260b957f41e3419acdeed04120a17515",
+      "bytes": 444
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-plain-specific-meta.json",
+      "sha256": "202191b62a65518ef7a54930c885c459a628968bf3519e061dcab2b84523c912",
+      "bytes": 672
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-plain-specific.txt",
+      "sha256": "b917f848874ca5b5864d387a6764be1c64abb24890ace910bf24fc60e5cdcda5",
+      "bytes": 5820
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-spl-meta.json",
+      "sha256": "fcd15c192880b9f46d23a168a636db357cbcd8afbada770494a5a789caf3e71b",
+      "bytes": 3669
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-spl.txt",
+      "sha256": "24609fbb09d7a570091926c0eea1b2e51c4f91dcd78c6f62e9b7c7262eab033d",
+      "bytes": 7582
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-spl.xml",
+      "sha256": "ec827436ab305ec06e4b1cb32b1668a2c2e152949fa3c40f8e8041ddeb9088b3",
+      "bytes": 31003
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/tylenol-with-codeine-meta.json",
+      "sha256": "a26b2be2793bb653f3756d2c4c35b5957fdcb66763f109ee10779652431df6ab",
+      "bytes": 483
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultracet-initial-meta.json",
+      "sha256": "c58fda5e85a11609ee523ff9065a149723e4bfad2eeb70f8b5fc2e816843aead",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultracet-meta.json",
+      "sha256": "9f6fb7c989a7905e3e914ccb0661e37c72978dfdf36cee2c2851623ed7d3b3d0",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultracet-spl-meta.json",
+      "sha256": "5d628c61c8c72f6d4e036101afee9f7ca8c1c680c7f0ea4b089e2c16b5aae013",
+      "bytes": 1442
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultracet-spl.txt",
+      "sha256": "e9e6abbce3609f6ae2983942bd7c908c575484db1112c1d18376bb75c625aaac",
+      "bytes": 59957
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultracet-spl.xml",
+      "sha256": "56a7742170dc54129893c6a161abc1388f743735bbd3b54149fa7fd342c7a0c4",
+      "bytes": 121726
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultram-initial-meta.json",
+      "sha256": "816162fdfdf4d6e0f176dd1442aa33d108425d86e4a26abcf1f7d7ed1c03def1",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultram-meta.json",
+      "sha256": "81190291a80f896349e9a1267f75b9feb5b6136fb122575718b6d2ed50e832b4",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultram-spl-meta.json",
+      "sha256": "d7be6ffa031f6446babda39931d15485c355931ff4c352ea84b08c3563db3541",
+      "bytes": 3438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultram-spl.txt",
+      "sha256": "d34225536635b9259643bcce8139970347f97f66bf46e4b6cdc983b7fd36baed",
+      "bytes": 17393
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ultram-spl.xml",
+      "sha256": "61f67f073ea37a8c1385762b8475afb4a280ae5009d115e92f0f943804403be4",
+      "bytes": 60613
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/uzedy-initial-meta.json",
+      "sha256": "d2f831ab80a1a2be4b63ccbd79d642bf7822f539e18cf98d9911514c79e01e41",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/uzedy-meta.json",
+      "sha256": "67b9658515f7ff34db9873acc5accf7005924c4d8b36abcec77f081df3e85b23",
+      "bytes": 438
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/uzedy-spl-meta.json",
+      "sha256": "6fe077a4eb9322e9668d87d4e1e7382ad88dbd37c87bf7831afe07cfdcfc31c7",
+      "bytes": 1189
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/uzedy-spl.txt",
+      "sha256": "f8ba9209ece6a8d624fdf29756450936999d5bbc907343a8d6173774b8ecdbbb",
+      "bytes": 193618
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/uzedy-spl.xml",
+      "sha256": "75d8abdff8691a467d095866f6769d90a426ee5c5987e53b07668d43ab60d641",
+      "bytes": 395744
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/versacloz-initial-meta.json",
+      "sha256": "4f57b96abd0f893b4016de9549699db1387cb5b4ee2cd4f1a06b4da7a757f80a",
+      "bytes": 450
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/versacloz-meta.json",
+      "sha256": "74f15ea3f62e4b955b21279d2f2cab7f1796fc27af9b4e005625921839c9a41b",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/versacloz.json",
+      "sha256": "d941cc46ee7a1b7501ad498663fe6ab89f679971d28a3956f7740c7d29f18013",
+      "bytes": 155231
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/viberzi-meta.json",
+      "sha256": "f9b952a64296141ee8ed0d3aa8e24e309191446343b250b5545b2b7f6181cb84",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/viberzi.json",
+      "sha256": "a307825c59be1406471cdcb2a7a32e6cb2abbac6281b5d8ed6644b8cee47bbf6",
+      "bytes": 90987
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vibramycin-initial-meta.json",
+      "sha256": "c24060043b35f07fb49009f369420da50d1298da89304c1b72872db8b8dcc809",
+      "bytes": 453
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vibramycin-meta.json",
+      "sha256": "0bfb9063398de54110b92f83b0947eac6e177466e6c83f6151ebac6d2794b0c5",
+      "bytes": 453
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vibramycin-spl-meta.json",
+      "sha256": "56939cdbac16758de5b413facdf592008c125d1c6b18b4afd1e585fefaa553ee",
+      "bytes": 427
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vimpat-meta.json",
+      "sha256": "9797bb9e78510a71312a20e12b25cc75ce48fe9007e83dfbc4b5dd6d23824c65",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vimpat.json",
+      "sha256": "99ca482f53672a2300e3e04f184355089e03e93dad49aec446cdcb31b3d8b847",
+      "bytes": 158196
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vivitrol-initial-meta.json",
+      "sha256": "de09505b556099e1af7cdf33721fa25aa1ac6845b9edfcaa8ebf24734ff616c1",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vivitrol-meta.json",
+      "sha256": "20ad019692fd921f0d598fe9195fd329978beeb4b949e5afdaac68282a3d6d10",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/vivitrol.json",
+      "sha256": "21a9dfe99c4ad6ec9e791d4ce8358d3fbe45e3029c65a214a9434a9dc1a0e96b",
+      "bytes": 148261
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/xcopri-meta.json",
+      "sha256": "5c78c514d525449f9d5e6f04715c2b042225c105754b606fdc4ba2f8c943892a",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/xcopri.json",
+      "sha256": "c790f3dc259a34e563795dd7311d0d8e1eaa401ca9761fe6fa9224f939d2ed74",
+      "bytes": 156278
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/xulane-initial-meta.json",
+      "sha256": "4f2304350ce208cf938db5f025fad6389f9dc3e126aba7f10dba39c44efc360a",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/xulane-meta.json",
+      "sha256": "11ab96385bd985d9f59cad62cd801171ef935bf0ef8e18672f09dee521c8fff5",
+      "bytes": 802
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/xulane.json",
+      "sha256": "9b7f0e98d553fb26f1d3f4c1d80afa69413570ec652ddb30dacf93a0072fae6a",
+      "bytes": 188067
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/yeztugo-meta.json",
+      "sha256": "24a6491dbcefac9a3e510701f2620c5f3984279a4247a08d2b10acf5c60ea2cf",
+      "bytes": 806
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/yeztugo.json",
+      "sha256": "9538703aca85846c378868445b30bdb136d1de4229fc115d9c14b69208f023fc",
+      "bytes": 156040
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zithromax-meta.json",
+      "sha256": "b844ddd113e78c1c417908a603e507721bc2c5996a0dba36652b5d8ba8faa4f1",
+      "bytes": 814
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zithromax.json",
+      "sha256": "976ba74673816ceaaffa07d817b9ba6c4084afad413fde7bc17d3583d72637ad",
+      "bytes": 126048
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ztalmy-initial-meta.json",
+      "sha256": "ad8bacb66a37ab9075b7277af16c99782e0504b306af838c2391b34f38740ea4",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ztalmy-meta.json",
+      "sha256": "07d0ed99d01b827f52bfcd232aecc62a299933d026b2f716afbbfa499bf7df53",
+      "bytes": 441
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ztalmy-spl-meta.json",
+      "sha256": "f6143fa753557c1abd941ee1210bb1643890657d55e797a70bc165bbb2bbf8ae",
+      "bytes": 1158
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ztalmy-spl.txt",
+      "sha256": "a5b32ac9104581272a669fbb905401bd521db428371ae0d1685639e9a07690b1",
+      "bytes": 83109
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/ztalmy-spl.xml",
+      "sha256": "62f427a3774f457262e40de7d3e5e79f92919d41e2f36850a20f727b14d69452",
+      "bytes": 168749
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zulresso-meta.json",
+      "sha256": "283ba5794b38ddd386027458eb84297958476e898edd38983faee507cb083b80",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zurzuvae-initial-meta.json",
+      "sha256": "e3295a547f3cf36f17e65c1c3a11c44444279d13aa2a3ce4aa285eba5eaa34d0",
+      "bytes": 447
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zurzuvae-meta.json",
+      "sha256": "0cec8a48a91696f60a3427ddfe6f9ea2535379412edec21910c1235f20c7fb2d",
+      "bytes": 810
+    },
+    {
+      "path": "reports/full-corpus-review/evidence/appendix-atoms-b/zurzuvae.json",
+      "sha256": "87ebd223bcac0fa53f7455efb0e973fa97aa6e8ba28e828098d67417a9373d6a",
+      "bytes": 110772
+    }
+  ],
+  "independent_legal_verified": false,
+  "release_credit": 0,
+  "material_findings_ko": [
+    "FDA/DailyMed 검색 성공을 정확한 제품 확인과 동일시하지 않았다. Revia/Ultram 등 오매칭5건을 명시적으로 제외했다.",
+    "원문의 historical brand, 직접 noncontrolled 근거, MA 권한 적용 등146개 주장은 SOURCE_BLOCKED로 보존한다.",
+    "YEZTUGO의 승인된 조건부 주간 oral interim dosing과 원문이 명명하지 않은 investigational weekly pill을 혼동하지 않는다.",
+    "SPL의 오래된 REMS 문구보다 현행 FDA 상태공지를 대조했고, iPLEDGE 미래 시행일을 이미 시행된 것으로 처리하지 않았다.",
+    "PPPA105mg/84mg tablet 예외에는 다른 대상물질 부재 조건도 별도 원자로 명시했다."
+  ],
+  "next_action_ko": "root가 지정8개 단위만 기존 partial census에서 명시적으로 대체 등록한 뒤 독립 완전성·법규 감사를 진행한다. 작성자 열거 COMPLETE는 모든 주장 법규 통과 또는 release 인증을 뜻하지 않는다."
+}

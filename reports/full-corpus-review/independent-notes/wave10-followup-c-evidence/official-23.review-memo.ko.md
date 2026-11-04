@@ -1,0 +1,5 @@
+15 USC1473 current official OLRC
+
+현재temporaryformat의유효한공식URL에서법문과현행성banner를실독.비적합처방포장은order에지시되거나purchaser가요청한경우만가능.구형view.xhtml의404는근거로쓰지않음.
+
+판본/효력 한계: UnitedStatesCodeOnlinecurrentthroughPL119-136,2026-10-22.개별request요건최초시행일은1970법/1972기능이전history와구별하여미확정.

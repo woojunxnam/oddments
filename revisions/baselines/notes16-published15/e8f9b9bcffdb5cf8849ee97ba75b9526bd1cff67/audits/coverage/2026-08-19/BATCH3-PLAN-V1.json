@@ -1,0 +1,312 @@
+{
+  "plan_id": "BATCH3-PLAN-V1",
+  "plan_type": "BATCH3_MASTER_PLAN",
+  "date": "2026-08-19",
+  "controller_issue": 83,
+  "unlocked_by": {
+    "gate": "PRE_BATCH3_FULL_COMPETENCY_COVERAGE_DEBT_POST_T3",
+    "verdict": "PASS",
+    "frozen_source_sha": "c0373b32a99806600fe7873f4ba088bcc0a9a210",
+    "evidence_branch": "analysis/pre-batch3-coverage-post-t3-v1"
+  },
+  "frozen_measurement_sha": "b84436756f23f07ccf70183f3e2d591aab543408",
+  "objective": {
+    "target_release_usable_total": 360,
+    "target_sets": 3,
+    "per_set_allocation": {
+      "1": 26,
+      "2": 40,
+      "3": 29,
+      "4": 25
+    },
+    "required_by_area": {
+      "1": 78,
+      "2": 120,
+      "3": 87,
+      "4": 75
+    },
+    "rationale": "Three non-overlapping blueprint-faithful 120-question mocks."
+  },
+  "measured_start_state": {
+    "canonical_questions": 228,
+    "released": 167,
+    "unreleased": 61,
+    "released_by_area": {
+      "1": 26,
+      "2": 40,
+      "3": 59,
+      "4": 42
+    },
+    "deficit_by_area": {
+      "1": 52,
+      "2": 80,
+      "3": 28,
+      "4": 33
+    },
+    "deficit_total": 193,
+    "highest_used_question_id": "MA-Q-0228",
+    "next_free_question_id": "MA-Q-0229",
+    "id_gaps": [],
+    "quarantined": [
+      "MA-Q-0028"
+    ],
+    "saturated_families": 26
+  },
+  "salvage_finding": {
+    "releasable_today": 0,
+    "critical_finding": "No unreleased candidate can be released today. 31 of them hold current-hash passing legal and realism evidence, but that evidence comes only from the twelve legacy Phase-2 audit records, which predate the auditor_instance field. data/release_requirements.json uses distinctness_basis AUDITOR_INSTANCE, so the release gate rejects them with 'lacks auditor_instance required by release policy'. Verified by a dry release of MA-Q-0011 through the real validator.",
+    "classification": {
+      "NEEDS_FRESH_AUDIT": 8,
+      "NEEDS_FRESH_INSTANCE_AUDIT": 31,
+      "NEEDS_REPAIR_AND_REAUDIT": 21,
+      "QUARANTINED": 1
+    },
+    "classification_by_area": {
+      "NEEDS_FRESH_AUDIT": {
+        "3": 8
+      },
+      "NEEDS_FRESH_INSTANCE_AUDIT": {
+        "3": 12,
+        "4": 19
+      },
+      "NEEDS_REPAIR_AND_REAUDIT": {
+        "3": 16,
+        "4": 5
+      },
+      "QUARANTINED": {
+        "3": 1
+      }
+    },
+    "second_critical_finding": "The entire unreleased pool sits in Areas 3 and 4. It contributes nothing to Areas 1 and 2, which carry 132 of the 193 deficit. Areas 1 and 2 can only be closed by new authoring."
+  },
+  "salvage_tranches": [
+    {
+      "tranche": "B3-S1",
+      "scope": "REAUDIT",
+      "count": 31,
+      "areas": {
+        "3": 12,
+        "4": 19
+      },
+      "question_ids": [
+        "MA-Q-0011",
+        "MA-Q-0012",
+        "MA-Q-0019",
+        "MA-Q-0021",
+        "MA-Q-0022",
+        "MA-Q-0024",
+        "MA-Q-0025",
+        "MA-Q-0026",
+        "MA-Q-0031",
+        "MA-Q-0033",
+        "MA-Q-0037",
+        "MA-Q-0039",
+        "MA-Q-0051",
+        "MA-Q-0052",
+        "MA-Q-0053",
+        "MA-Q-0055",
+        "MA-Q-0056",
+        "MA-Q-0057",
+        "MA-Q-0058",
+        "MA-Q-0061",
+        "MA-Q-0062",
+        "MA-Q-0063",
+        "MA-Q-0064",
+        "MA-Q-0065",
+        "MA-Q-0067",
+        "MA-Q-0069",
+        "MA-Q-0070",
+        "MA-Q-0071",
+        "MA-Q-0072",
+        "MA-Q-0074",
+        "MA-Q-0089"
+      ],
+      "work": "No content change. One fresh independent auditor instance supplies current-hash LEGAL and REALISM records so the AUDITOR_INSTANCE gate is satisfied.",
+      "why_cheapest": "Content already passed an independent audit at the exact current hash; only the evidence attribution is stale.",
+      "initial_history": "satisfied by the existing INITIAL_BATCH Phase-2 legal records, which the history gate accepts without auditor_instance"
+    },
+    {
+      "tranche": "B3-S2",
+      "scope": "REPAIR_THEN_REAUDIT",
+      "count": 21,
+      "areas": {
+        "3": 16,
+        "4": 5
+      },
+      "question_ids": [
+        "MA-Q-0014",
+        "MA-Q-0018",
+        "MA-Q-0023",
+        "MA-Q-0029",
+        "MA-Q-0035",
+        "MA-Q-0038",
+        "MA-Q-0041",
+        "MA-Q-0042",
+        "MA-Q-0043",
+        "MA-Q-0044",
+        "MA-Q-0045",
+        "MA-Q-0046",
+        "MA-Q-0047",
+        "MA-Q-0048",
+        "MA-Q-0049",
+        "MA-Q-0050",
+        "MA-Q-0054",
+        "MA-Q-0066",
+        "MA-Q-0068",
+        "MA-Q-0073",
+        "MA-Q-0090"
+      ],
+      "work": "Repair the defect each current-hash failing audit recorded, re-freeze, then obtain a fresh independent re-audit on the new hash."
+    },
+    {
+      "tranche": "B3-S3",
+      "scope": "FRESH_AUDIT",
+      "count": 8,
+      "areas": {
+        "3": 8
+      },
+      "question_ids": [
+        "MA-Q-0001",
+        "MA-Q-0002",
+        "MA-Q-0003",
+        "MA-Q-0005",
+        "MA-Q-0006",
+        "MA-Q-0007",
+        "MA-Q-0008",
+        "MA-Q-0010"
+      ],
+      "work": "No current-hash evidence exists. Freeze and obtain a first fresh independent audit."
+    }
+  ],
+  "authoring_tranches": [
+    {
+      "tranche": "B3-A",
+      "audit_scope": "INITIAL_BATCH",
+      "area_allocation": {
+        "1": 33
+      },
+      "theme": "Area 1 licensure, personnel scope and discipline breadth",
+      "first": "MA-Q-0229",
+      "last": "MA-Q-0261",
+      "count": 33
+    },
+    {
+      "tranche": "B3-B",
+      "audit_scope": "INITIAL_BATCH",
+      "area_allocation": {
+        "1": 19,
+        "2": 14
+      },
+      "theme": "Area 1 remainder plus Area 2 prescription validity and prescriber authority",
+      "first": "MA-Q-0262",
+      "last": "MA-Q-0294",
+      "count": 33
+    },
+    {
+      "tranche": "B3-C",
+      "audit_scope": "INITIAL_BATCH",
+      "area_allocation": {
+        "2": 33
+      },
+      "theme": "Area 2 patient care, counseling, public health and confidentiality",
+      "first": "MA-Q-0295",
+      "last": "MA-Q-0327",
+      "count": 33
+    },
+    {
+      "tranche": "B3-D",
+      "audit_scope": "INITIAL_BATCH",
+      "area_allocation": {
+        "2": 33
+      },
+      "theme": "Area 2 drug-use limits, administration and product handling",
+      "first": "MA-Q-0328",
+      "last": "MA-Q-0360",
+      "count": 33
+    },
+    {
+      "tranche": "B3-E",
+      "audit_scope": "INITIAL_BATCH",
+      "area_allocation": {
+        "3": 16,
+        "4": 14
+      },
+      "theme": "Area 3 and 4 top-up, sized after the salvage tranches report",
+      "first": "MA-Q-0361",
+      "last": "MA-Q-0390",
+      "count": 30
+    }
+  ],
+  "tranche_sizing_rule": {
+    "every_tranche_between_30_and_40": true,
+    "no_final_tranche_below_30": true,
+    "sizes": [
+      33,
+      33,
+      33,
+      33,
+      30
+    ],
+    "id_collision_check": "MA-Q-0229 through MA-Q-0390, contiguous, no overlap with the existing 228 records and no reuse of any gap; the measured bank has no ID gaps"
+  },
+  "capacity_arithmetic": {
+    "new_authored": 162,
+    "area_1_new": 52,
+    "area_2_new": 80,
+    "area_3_new": 16,
+    "area_4_new": 14,
+    "salvage_assumed_conservatively": 31,
+    "projected_release_usable_if_plan_completes": {
+      "1": 78,
+      "2": 120,
+      "3": 87,
+      "4": 75,
+      "total": 360
+    },
+    "conservatism": "Only the 31 B3-S1 candidates are counted as salvage capacity. The 29 candidates in B3-S2 and B3-S3 are treated as margin, not planned capacity, because repair and first-audit outcomes are unknown."
+  },
+  "priority_order": [
+    "Areas 1 and 2 first: they hold 132 of the 193 deficit and had zero slack at the post-T3 gate.",
+    "Run B3-S1 in parallel with B3-A authoring; it needs no authoring capacity.",
+    "Size B3-E only after B3-S1, B3-S2 and B3-S3 have reported."
+  ],
+  "pipeline": [
+    "Author and freeze B3-A; hand it to a fresh auditor.",
+    "While B3-A is audited, author and freeze B3-B and run the B3-S1 salvage audit.",
+    "Release B3-A after its audit passes; hand B3-B to a fresh auditor.",
+    "While B3-B is audited, author and freeze B3-C. Continue this pattern through B3-E.",
+    "Rerun scripts/prebatch3_final_coverage_gate.py and the three-set feasibility after each release."
+  ],
+  "standards": {
+    "official_sources_only": "current MA statute, 247 CMR, Board policy and advisories, and current federal authority; no commercial or recalled material",
+    "family_policy": "new distinct families; 26 families are already saturated at their max_questions_in_final_bank and must not be extended",
+    "duplicate_preflight": "full-bank duplicate and structural-pattern preflight before every freeze",
+    "answer_distribution": "steer keys toward under-represented positions; the bank carries a pre-existing answer-position WARNING",
+    "sata_concentration": "3-correct SATA keys sit at 54 percent against a 55 percent limit; new SATA items must vary correct-count",
+    "item_mix": "current released mix is SBA 95 / SATA 72 and difficulty 3/4/5 = 33/92/42"
+  },
+  "audit_policy": {
+    "default": "one genuinely fresh independent auditor instance completing BOTH LEGAL_VERIFICATION and REALISM_REVIEW on the exact current hashes",
+    "second_opinion_only_for": [
+      "authority conflict",
+      "legal ambiguity",
+      "multiple defensible answers",
+      "disputed realism or duplicate finding",
+      "explicit governance decision"
+    ],
+    "independence_wall": "the controller authors and must never audit its own content; each tranche gets a blind package, a prohibited-read contract and an immutable Phase-1 lock before key access"
+  },
+  "reusable_automation": {
+    "existing": [
+      "scripts/guarded_release.py",
+      "scripts/verify_t3_audit_evidence.py",
+      "scripts/prebatch3_final_coverage_gate.py",
+      "scripts/batch3_inventory.py"
+    ],
+    "to_generalize": [
+      "freeze and blind-package generation",
+      "audit-package validation",
+      "full-bank comparator report"
+    ]
+  }
+}

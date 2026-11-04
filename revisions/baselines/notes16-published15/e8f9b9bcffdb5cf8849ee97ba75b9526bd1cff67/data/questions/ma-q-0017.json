@@ -1,0 +1,107 @@
+{
+  "question_id": "MA-Q-0017",
+  "family_id": "P2_0017_MA_OPIOID_SEVEN_DAY",
+  "area": 2,
+  "topic": "Opioid prescribing",
+  "subtopic": "Initial supply",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A 16-year-old patient has received opiates before and now presents a 10-day Norco prescription for outpatient dental pain. No statutory exception is documented. A staff member says the seven-day rule no longer applies because this is not the minor's first opiate prescription. What should the pharmacist recognize?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The staff member is correct; the minor rule applies only to a first opiate prescription, just like the adult rule."
+    },
+    {
+      "id": "B",
+      "text": "The staff member is incorrect; the minor provision generally limits an opiate prescription to seven days at any time unless a statutory exception is properly documented."
+    },
+    {
+      "id": "C",
+      "text": "The 10-day quantity becomes permissible if a parent signs the prescription at pickup."
+    },
+    {
+      "id": "D",
+      "text": "The Schedule II quantity rule automatically overrides the minor-specific seven-day provision."
+    },
+    {
+      "id": "E",
+      "text": "Prior opioid exposure converts the patient to the adult first-prescription rule even though the patient is still a minor."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "Section 19D distinguishes adults from minors. The adult ceiling is tied to the first outpatient opiate prescription, while the minor provision applies to an opiate prescription at any time, subject to the statute's documented exceptions.",
+    "choice_analysis": {
+      "A": "Incorrect. The minor provision is not limited to the first opiate prescription.",
+      "B": "Correct. Prior opiate history does not remove the minor-specific seven-day rule.",
+      "C": "Incorrect. Parental signature is not a substitute for the practitioner's statutory exception findings and documentation.",
+      "D": "Incorrect. A broader Schedule II quantity rule does not erase the more specific minor supply limit.",
+      "E": "Incorrect. Prior exposure does not change the patient's age or the statutory minor provision."
+    },
+    "related_facts": [
+      "The statute separately requires discussion with the parent or guardian of a minor about opiate risks and why the prescription is necessary."
+    ],
+    "mpje_trap": "Do not copy the adult 'first prescription' trigger into the separate minor rule."
+  },
+  "rule_ids": [
+    "MA-OPIOID-SEVEN-DAY",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "hydrocodone-acetaminophen"
+  ],
+  "reasoning_steps": [
+    "Identify that the patient is a minor",
+    "Separate the minor rule from the adult first-prescription trigger",
+    "Check for a documented exception before accepting a supply greater than seven days"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-SEVEN-DAY": {
+          "content_version": 1,
+          "content_hash": "acce06fea2d6e3a8cb7b9bbb2a6ca9ede1ffa023d4a42585a3424341432264cb"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "hydrocodone-acetaminophen": {
+          "content_version": 1,
+          "content_hash": "9ccbae3ef944c9f9019296002efc7162041f1169871c3e07a554a21f8d697bc5"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

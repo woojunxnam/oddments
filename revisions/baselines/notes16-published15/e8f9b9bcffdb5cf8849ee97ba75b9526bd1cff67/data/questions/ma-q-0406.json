@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0406",
+  "family_id": "B3F_PMP_ADDITIONAL_DRUG_DESIGNATION",
+  "area": 3,
+  "topic": "Prescription monitoring",
+  "subtopic": "Designation of an additional drug",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist reads a journal piece arguing that a particular Schedule VI medicine is being diverted and should be watched. Her pharmacy does not report its dispensing to the Prescription Monitoring Program. What determines whether that dispensing becomes reportable?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The pharmacy's own assessment that the drug carries a bona fide potential for abuse."
+    },
+    {
+      "id": "B",
+      "text": "Rescheduling of the drug out of Schedule VI into Schedules II through V."
+    },
+    {
+      "id": "C",
+      "text": "A prescriber's request that the pharmacy report its dispensing of the drug."
+    },
+    {
+      "id": "D",
+      "text": "A determination by the Commissioner, followed by notification to dispensers."
+    },
+    {
+      "id": "E",
+      "text": "Publication of the diversion evidence in the professional literature."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "105 CMR 700.012(C)(8) provides that the Commissioner may determine that a drug is an additional drug for the purposes of 105 CMR 700.012 because it carries a bona fide potential for abuse, on factors including addiction risk, known recreational use, known regular diversion for misuse, and known contribution to overdose. Upon making such a determination the Commissioner shall notify all dispensers that they must begin to report the dispensing of that additional drug as directed in 105 CMR 700.012(A). The duty arrives with the determination and the notification.",
+    "choice_analysis": {
+      "A": "The factors guide the Commissioner's determination; the pharmacy does not make it.",
+      "B": "Rescheduling would bring the drug in through 700.012(A)(1), but it is not what the additional-drug route requires.",
+      "C": "A prescriber has no role in creating the reporting duty.",
+      "D": "Correct: the Commissioner determines, then notifies all dispensers.",
+      "E": "Evidence of diversion is one of the factors, not the operative event."
+    },
+    "related_facts": [
+      "Gabapentin is reported under this route rather than by rescheduling"
+    ],
+    "mpje_trap": "The journal evidence tracks the statutory factors closely, which makes it feel like the trigger. The trigger is the Commissioner's act, not the evidence behind it."
+  },
+  "rule_ids": [
+    "MA-PMP-ADDITIONAL-DRUG-DESIGNATION"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the drug's current schedule and reporting status",
+    "Locate who holds the power to designate an additional drug",
+    "Wait for the determination and the notification before treating the duty as live"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PMP-ADDITIONAL-DRUG-DESIGNATION": {
+          "content_version": 1,
+          "content_hash": "3188412cd3eb7d1aae9d43805b3a786b82c9cc276cb8a8c1622ea51a7c6a0cd9"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

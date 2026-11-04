@@ -1,0 +1,108 @@
+{
+  "question_id": "MA-Q-0020",
+  "family_id": "P2_0020_MA_OUTSTATE_CII_NARCOTIC",
+  "area": 2,
+  "topic": "Prescription validity",
+  "subtopic": "Out-of-state narcotic",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Use the 30-day out-of-state Schedule III-through-VI window."
+    },
+    {
+      "id": "B",
+      "text": "Fill any state's Schedule II narcotic prescription within five days."
+    },
+    {
+      "id": "C",
+      "text": "Skip direct verification because Rhode Island is contiguous."
+    },
+    {
+      "id": "D",
+      "text": "Treat electronic transmission as resetting the five-day issue period."
+    },
+    {
+      "id": "E",
+      "text": "Apply the contiguous-state Schedule II narcotic pathway and its five-day and verification conditions."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "'Apply the contiguous-state Schedule II narcotic pathway and its five-day and verification conditions.' is the governing result. By contrast, 'Use the 30-day out-of-state Schedule III-through-VI window.' would require that fentanyl were in Schedule III through VI rather than Schedule II. The decisive cue appears in 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?'.",
+    "choice_analysis": {
+      "A": "'Use the 30-day out-of-state Schedule III-through-VI window.' would apply only if fentanyl were in Schedule III through VI rather than Schedule II; 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?' states otherwise.",
+      "B": "'Fill any state's Schedule II narcotic prescription within five days.' would apply only if the Massachusetts pathway were not limited by origin-state and other statutory conditions; 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?' states otherwise.",
+      "C": "'Skip direct verification because Rhode Island is contiguous.' would apply only if contiguity eliminated the statute's verification requirement; 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?' states otherwise.",
+      "D": "'Treat electronic transmission as resetting the five-day issue period.' would apply only if the transmission date rather than the issue date controlled; 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?' states otherwise.",
+      "E": "'Apply the contiguous-state Schedule II narcotic pathway and its five-day and verification conditions.': supported by out-of-state narcotic."
+    },
+    "related_facts": [
+      "fentanyl (Duragesic) is used for severe persistent pain in opioid-tolerant patients requiring continuous opioid treatment; it is federal Schedule II and Massachusetts Schedule II.",
+      "Massachusetts may fill a Schedule II narcotic prescription from Maine or a contiguous state within five days of issue after required authentication and verification; separate delivery provisions govern certain out-of-state residents."
+    ],
+    "mpje_trap": "'Use the 30-day out-of-state Schedule III-through-VI window.' would apply if fentanyl were in Schedule III through VI rather than Schedule II. In 'At a Massachusetts pharmacy, a fentanyl prescription from a Rhode Island practitioner was issued four days ago and the pharmacist obtains direct verification. What Massachusetts rule is central?', that predicate is missing."
+  },
+  "rule_ids": [
+    "MA-OUTSTATE-CII-NARCOTIC",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "fentanyl"
+  ],
+  "reasoning_steps": [
+    "Classify fentanyl under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Out-of-state Schedule II narcotic prescriptions",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Out-of-state narcotic"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OUTSTATE-CII-NARCOTIC": {
+          "content_version": 1,
+          "content_hash": "f45553bc92cd5d1a116d6dbff6d306161b04591b700f32a639f00b1261153b9a"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "fentanyl": {
+          "content_version": 1,
+          "content_hash": "69898d337d02738835e970a28397f422308bfc9ea8892f356ccd8567d8f4f888"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

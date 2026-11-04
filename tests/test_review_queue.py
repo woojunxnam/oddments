@@ -72,6 +72,46 @@ def test_stale_worker_cannot_submit_after_recovery(tmp_path):
         queue.require_lease(job, old_token, LATER)
 
 
+def test_lost_worker_revocation_preserves_history_and_reassigns_before_expiry(tmp_path):
+    state, _ = initial(tmp_path)
+    job = queue.claim(state, 'lost-worker', minutes=1440, at=NOW)
+    old = copy.deepcopy(job); history = copy.deepcopy(state['events'])
+    queue.revoke(state, job['job_id'], old['lease_token'], 'Workspace unavailable', '/root', LATER)
+    assert state['events'][:-1] == history
+    assert state['events'][-1]['at'] == LATER
+    assert state['events'][-1]['previous_lease']['worker'] == 'lost-worker'
+    assert state['events'][-1]['previous_lease']['worker_branch'] == old['worker_branch']
+    assert state['events'][-1]['lease_token_sha256'] == hashlib.sha256(old['lease_token'].encode()).hexdigest()
+    assert job['status'] == 'QUEUED' and 'lease_token' not in job
+    snapshot = copy.deepcopy(state)
+    queue.revoke(state, job['job_id'], old['lease_token'], 'Workspace unavailable', '/root', LATER)
+    assert state == snapshot
+    with pytest.raises(ValueError, match='Conflicting'):
+        queue.revoke(state, job['job_id'], old['lease_token'], 'Different reason', '/root', LATER)
+    replacement = queue.claim(state, 'actual-new-worker', at=LATER)
+    assert replacement['attempt'] == old['attempt'] + 1
+    assert replacement['worker_branch'] != old['worker_branch']
+    with pytest.raises(ValueError, match='Stale'):
+        queue.require_lease(replacement, old['lease_token'], LATER)
+    with pytest.raises(ValueError, match='current LEASED'):
+        queue.revoke(state, job['job_id'], old['lease_token'], 'Workspace unavailable', '/root', LATER)
+
+
+@pytest.mark.parametrize('mutation', ['actor', 'token', 'reason', 'submitted', 'integrated', 'backdate'])
+def test_invalid_lost_worker_revocation_is_atomic(tmp_path, mutation):
+    state, _ = initial(tmp_path)
+    job = queue.claim(state, 'worker', at=NOW)
+    token, reason, actor, at = job['lease_token'], 'Workspace lost', '/root', LATER
+    if mutation == 'actor': actor = '/root/worker'
+    if mutation == 'token': token = 'wrong'
+    if mutation == 'reason': reason = ' '
+    if mutation in {'submitted', 'integrated'}: job['status'] = mutation.upper()
+    if mutation == 'backdate': at = '2026-11-03T11:59:00+00:00'
+    before = copy.deepcopy(state)
+    with pytest.raises(ValueError): queue.revoke(state, job['job_id'], token, reason, actor, at)
+    assert state == before
+
+
 def result_for(job):
     result = {'question_hashes': copy.deepcopy(job['question_hashes']), 'worker_commit': 'a'*40,
             'results': [{'question_id': qid, 'disposition': 'SOURCE_BLOCKED',

@@ -1,0 +1,103 @@
+{
+  "question_id": "MA-Q-0089",
+  "family_id": "P2_0089_MA_QRE_NOTIFY",
+  "area": 4,
+  "topic": "Quality assurance",
+  "subtopic": "QRE notification",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A pharmacist discovers a dispensing error while the patient may still be exposed to harm. Which duties apply? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Immediately notify the patient or representative and give correction and harm-minimization directions."
+    },
+    {
+      "id": "B",
+      "text": "Finish root-cause analysis before contacting the patient."
+    },
+    {
+      "id": "C",
+      "text": "Always notify the patient before the prescriber in a strict sequence."
+    },
+    {
+      "id": "D",
+      "text": "Immediately notify the prescriber when professional judgment indicates it is warranted."
+    },
+    {
+      "id": "E",
+      "text": "Complete the initial QRE documentation within 24 hours after discovery or notification."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "The supported conclusions on these facts are: Immediately notify the patient or representative and give correction and harm-minimization directions. Immediately notify the prescriber when professional judgment indicates it is warranted. Complete the initial QRE documentation within 24 hours after discovery or notification.",
+    "choice_analysis": {
+      "A": "Supported: Immediately notify the patient or representative and give correction and harm-minimization directions.",
+      "B": "Not supported: Finish root-cause analysis before contacting the patient.",
+      "C": "Not supported: Always notify the patient before the prescriber in a strict sequence.",
+      "D": "Supported: Immediately notify the prescriber when professional judgment indicates it is warranted.",
+      "E": "Supported: Complete the initial QRE documentation within 24 hours after discovery or notification."
+    },
+    "related_facts": [
+      "On discovery of a quality-related event, the pharmacist must immediately notify the patient or representative, notify the prescriber when professionally indicated, and give corrective and harm-minimization directions.",
+      "The pharmacist who discovers or receives notice of a quality-related event must initially document it within 24 hours after discovery or notification."
+    ],
+    "mpje_trap": "Distinguish this near-miss from the controlling rule: 'Finish root-cause analysis before contacting the patient.'"
+  },
+  "rule_ids": [
+    "MA-QRE-NOTIFY",
+    "MA-QRE-DOCUMENT-24H"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Match the scenario's operative facts to Immediate response after discovery of a quality-related event",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from QRE notification",
+    "Confirm the exception, documentation, and timing conditions against the cited official authority"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-B-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-QRE-NOTIFY": {
+          "content_version": 1,
+          "content_hash": "dfc596358e84206d67635bb632e7cf6d544ed937b80a33cb82c266f3cd8ef5ff"
+        },
+        "MA-QRE-DOCUMENT-24H": {
+          "content_version": 1,
+          "content_hash": "fc2bd96b7513ca05971e727a6f825f23974515caace7107474f7cb7072dddf37"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

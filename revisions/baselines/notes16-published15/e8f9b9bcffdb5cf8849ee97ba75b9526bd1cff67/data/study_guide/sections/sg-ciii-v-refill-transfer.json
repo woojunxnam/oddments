@@ -1,0 +1,960 @@
+{
+  "section_id": "SG-CIII-V-REFILL-TRANSFER",
+  "content_version": 7,
+  "content_hash": "f35cfc9b515844226b602ca3b28a901afa61980df6dcbcd4bc91f175f5251269",
+  "title": "Schedule III-V Refills and Massachusetts Transfers",
+  "areas": [
+    2,
+    3
+  ],
+  "topic": "Controlled prescription dispensing",
+  "subtopic": "Refill and transfer limits",
+  "learning_objectives": [
+    "Apply both the issue-date clock and refill-count limit to Schedule III and IV prescriptions.",
+    "Separate transfer eligibility from the prescription's remaining lawful refill capacity.",
+    "Recognize the special Massachusetts treatment of Schedule VI transfers.",
+    "Separate the federal one-time limit on a Schedule III-V refill transfer from the Massachusetts duty to transfer at the patient's request.",
+    "Identify who may execute a transfer, and separate the initial-dispensing electronic transfer from the refill-purpose transfer."
+  ],
+  "rule_ids": [
+    "FED-CS-REFILL-III-IV",
+    "FED-CS-TRANSFER-REFILL",
+    "MA-RX-CV-REFILL",
+    "MA-RX-TRANSFER",
+    "FED-EPCS-TRANSFER",
+    "MA-SCHEDULE-VI",
+    "MA-SCHEDULE-VI-VALIDITY",
+    "MA-CS-REFILL-AUTHORIZATION",
+    "MA-SCHEDULES-FEDERAL-INCORPORATION",
+    "MA-RX-DATE-COUNTING",
+    "FED-CS-TRANSFER-RECORDS",
+    "MA-ISCP-DISPENSING-EXCLUSIONS",
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER"
+  ],
+  "verified_rule_dependencies": {
+    "FED-CS-REFILL-III-IV": {
+      "content_version": 1,
+      "content_hash": "f4476f5f94d3aa53727119d12e2fa42fb19bd2f6a75aea471c2973e164fbf434"
+    },
+    "FED-CS-TRANSFER-REFILL": {
+      "content_version": 1,
+      "content_hash": "040cd647fd90b066b9417c9baced11ebeda0801da56a8193ff6968aa74a34de5"
+    },
+    "MA-RX-CV-REFILL": {
+      "content_version": 1,
+      "content_hash": "41d772944817ca306c72b1eb9c90f5648f29ffd12e5998b08b46be831a89d241"
+    },
+    "MA-RX-TRANSFER": {
+      "content_version": 2,
+      "content_hash": "1a99c508dbc423f1c72889b80be41940b080066ded97c11d67c7b623351517bf"
+    },
+    "FED-EPCS-TRANSFER": {
+      "content_version": 1,
+      "content_hash": "7178501775bb54d4f589b59d8aa86806eb7ff39f65feee75a431d95224d1385e"
+    },
+    "MA-SCHEDULE-VI": {
+      "content_version": 1,
+      "content_hash": "32fcadb1dec76d25a808999b3a42bd3afa4c2c952665d42512ab6cfeb60eb5c9"
+    },
+    "MA-SCHEDULE-VI-VALIDITY": {
+      "content_version": 1,
+      "content_hash": "efc932e4118e6457a82f447f29b2bedfe8c869759917648864d2baf4944132ec"
+    },
+    "MA-CS-REFILL-AUTHORIZATION": {
+      "content_version": 1,
+      "content_hash": "4b89a24b17a6a642a9ec9e4a4fe7d0e9a219b2a2e6bcae287add935fb44a5067"
+    },
+    "MA-SCHEDULES-FEDERAL-INCORPORATION": {
+      "content_version": 1,
+      "content_hash": "c511c47d1faddf7b96106d6287d628fc8e090e133402134fe4c9055cbd48b323"
+    },
+    "MA-RX-DATE-COUNTING": {
+      "content_version": 1,
+      "content_hash": "9f2eeac77483b922835f41d8bf8b01afefde2f8b6e13b7c6104d400a521b4841"
+    },
+    "FED-CS-TRANSFER-RECORDS": {
+      "content_version": 1,
+      "content_hash": "812eac9b5c9b8b7ec9a33927a7a23a18b1e66bbbff687343c588ed21b1ad97bd"
+    },
+    "MA-ISCP-DISPENSING-EXCLUSIONS": {
+      "content_version": 1,
+      "content_hash": "f88e2629ff91bcfe7884c9741fc6d231b919af86956e66655348621e02937280"
+    },
+    "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER": {
+      "content_version": 1,
+      "content_hash": "a313803d1a97cc1d0408593ac9b9632475b360cdf64ad4180382314bdd94eba4"
+    }
+  },
+  "orientation": [
+    {
+      "text": "A refillable controlled prescription carries two separate ceilings, and both must be checked before every dispensing. One is a count of refills; the other is a clock that runs from the date the practitioner issued the prescription, not from the day the pharmacy first dispensed it. In Massachusetts the count itself follows 247 CMR 9.04(10): to decide whether a prescription is within date, the pharmacist counts the day after the prescription was written as day one. Federal law sets both for Schedules III and IV in a single sentence: no such prescription may be filled or refilled more than six months after the issue date, and no such prescription authorized to be refilled may be refilled more than five times. The word 'filled' matters. The six-month bar is not a limit on refills alone; a prescription that has never been dispensed at all is equally out of time once six months have passed. The two ceilings are also independent rather than cumulative, so a prescription with four unused refills and a seven-month-old issue date is exhausted, and a prescription two months old that has already been refilled five times is exhausted too. Neither ceiling is lifted by anything the pharmacy does; the practitioner must renew the therapy on a new prescription.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "Massachusetts contributes the schedule the federal refill provision leaves out. 21 CFR 1306.22 is written for Schedules III and IV, and it does not supply refill limits for Schedule V. 247 CMR 9.04(13) fills that space with the same pair of numbers and the same structure: a licensee may not fill or refill a Schedule V prescription more than six months after the date it was issued, and a Schedule V prescription may not be refilled more than five times. Because the state provision borrows the federal shape, candidates often recall the figures correctly but attribute them to the wrong sovereign; on a Massachusetts Schedule V question the authority is the state regulation. That subsection also carries a facility-scope limit the federal rule has no counterpart to: 247 CMR 9.04(15) provides that the requirements of 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies, and the same provision also reaches the counting rule in 9.04(10) and the Schedule VI rule in 9.04(12). The exclusion removes those state subsections from that facility type; it does not disapply any other body of law that may reach the same dispensing.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "FED-CS-REFILL-III-IV",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "text": "Transfer is a different question from refill capacity, and confusing the two is the most productive error in this area. A transfer moves an existing prescription from one pharmacy to another. It does not create refill authority, and it does not restart the issue-date clock; the prescription arrives at the receiving pharmacy with exactly the refills and the issue date it already had. What Massachusetts adds is a duty on the pharmacy rather than a limit on the prescription. Under 247 CMR 9.14, a pharmacy shall transfer a prescription to another pharmacy at the request of a patient or the patient's agent, in a timely manner so as not to delay patient therapy; the pharmacy may act as the patient's agent in order to facilitate the transfer; and a pharmacy may not charge a fee for transferring a prescription. That trio is a consumer-protection layer. It answers whether the pharmacy must move the prescription, who does the legwork, and what it may cost the patient. It says nothing at all about how many transfers the prescription itself is entitled to.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "That second question is federal. 21 CFR 1306.25(a) permits the transfer of original prescription information for a Schedule III, IV or V controlled substance for the purpose of refill dispensing between pharmacies on a one-time basis only. The single circumstance that changes the number is a shared record: pharmacies electronically sharing a real-time, online database may instead transfer up to the maximum refills permitted by law and the prescriber's authorization. The structure follows the concern. Each hand-off between two separate recordkeeping systems is a seam where a prescription could be dispensed twice, which is why the transferring pharmacist voids the original and the receiving pharmacist records where it came from and how many refills survive; where both pharmacies read and write the same live record, that seam does not exist and the cap is unnecessary. The two sovereigns then stack in one direction only. 21 CFR 1306.25(e) makes the federal procedure permissible only if allowable under existing State or other applicable law, so a state may withhold transfers the federal rule would permit. Nothing runs the other way: a state duty to transfer does not manufacture federal transfer capacity, so the Massachusetts obligation operates within the one-time cap rather than over it.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Massachusetts Schedule VI sits outside that federal cap entirely, and the reason lies in how Massachusetts builds its schedules. M.G.L. c. 94C, s. 2(a) directs that the first five Massachusetts schedules incorporate the federal ones, and 105 CMR 700.002(A) through (E) define them as the substances listed in 21 CFR 1308.11 through 1308.15; 105 CMR 700.002(F) then places in Schedule VI all prescription drugs not included in any other schedule. 21 CFR 1306.25 reaches substances listed in federal Schedules III through V, which are the substances Massachusetts places in its own Schedules III through V, so it does not reach a Schedule VI drug. (Section 2(a1/2) also requires a substance newly controlled under federal law to be placed in a corresponding Massachusetts schedule within 30 days of the federal notice.) The state regulation governs alone, and it is more generous than the federal rule it borrows its procedure from: 247 CMR 9.14(4)(a) directs that Schedule VI prescriptions transfer in the same manner as Schedules III through V prescriptions, 9.14(4)(b) permits transfer up to the maximum number of remaining refills authorized by the prescriber, and 9.14(4)(c) bars transfer of a Schedule VI prescription authorizing refills more than one year from the date it was issued. Read together, the Schedule VI transfer limit is a count of refills bounded by an age, not a count of transfers. The same one-year clock governs refilling. Under 247 CMR 9.04(12) a Schedule VI prescription is valid for one year from the date of issue and may not be refilled after one year, and M.G.L. c. 94C, s. 23(f) allows a refill only where the original prescription provides for refilling and specifies the number of refills; that section reaches Schedule VI because s. 1 defines a controlled substance as one in any schedule the chapter refers to. Where a Schedule VI prescription has expired or has no refills left and prescriber authorization cannot be obtained in a timely manner, 9.04(12) lets the pharmacist, in professional judgment, dispense up to a 14-day supply or the smallest available unit-of-use package. Do not import the five-refill and six-month figures from Schedules III through V into a Schedule VI prescription.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "text": "Finally, federal law offers two transfer pathways, not one, and they are told apart by whether the prescription has ever been dispensed. 21 CFR 1306.25 is the refill-purpose pathway just described: it presupposes a prescription with refills remaining, reaches Schedules III through V, and carries the shared-database allowance. 21 CFR 1306.08(e) is separate. It permits the transfer for initial dispensing of an electronic controlled-substance prescription between retail pharmacies, upon request from the patient, on a one-time basis only, and it reaches Schedules II through V. Where the prescription transferred on this pathway is a Schedule III, IV or V substance and includes authorized refills, those refills travel with the initial prescription to the receiving pharmacy. The pathway is narrow in the ways the refill-purpose rule is not: the prescription must stay in electronic form and must not be altered, and there is no shared-database counterpart, so it remains available once, whatever database the two pharmacies share. Both federal pathways require the transfer to be communicated directly between two licensed pharmacists, and both are permissible only where state law allows the transfer. That pharmacist-to-pharmacist requirement is why the Massachusetts allowance in 247 CMR 8.04(4)(d) for a certified pharmacy technician to perform prescription transfers, with the approval of the pharmacist on duty, is confined to Schedule VI, where no federal pathway operates.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "comparison_tables": [
+    {
+      "title": "Refill ceilings, and which sovereign supplies each one",
+      "columns": [
+        "Schedule",
+        "Maximum refills",
+        "Time limit, measured from the issue date",
+        "Source"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Schedule III",
+            "5",
+            "No fill and no refill more than 6 months after issue",
+            "21 CFR 1306.22(a), federal"
+          ],
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV"
+          ]
+        },
+        {
+          "cells": [
+            "Schedule IV",
+            "5",
+            "No fill and no refill more than 6 months after issue",
+            "21 CFR 1306.22(a), federal; the same sentence covers Schedules III and IV"
+          ],
+          "rule_ids": [
+            "FED-CS-REFILL-III-IV"
+          ]
+        },
+        {
+          "cells": [
+            "Schedule V",
+            "5",
+            "No fill and no refill more than 6 months after issue",
+            "247 CMR 9.04(13), Massachusetts; the federal refill provision is written for Schedules III and IV"
+          ],
+          "rule_ids": [
+            "MA-RX-CV-REFILL",
+            "FED-CS-REFILL-III-IV"
+          ]
+        },
+        {
+          "cells": [
+            "Schedule V at an institutional sterile compounding pharmacy",
+            "Not supplied by 247 CMR 9.04(13)",
+            "Not supplied by 247 CMR 9.04(13)",
+            "247 CMR 9.04(15) provides that 9.04(13) does not apply to that facility type"
+          ],
+          "rule_ids": [
+            "MA-RX-CV-REFILL",
+            "MA-ISCP-DISPENSING-EXCLUSIONS"
+          ]
+        },
+        {
+          "cells": [
+            "Schedule VI",
+            "Those the original prescription provides for and numbers: M.G.L. c. 94C, s. 23(f) bars any other refill",
+            "Valid for one year from the date of issue, and no refill after one year; if the prescription has expired or has no refills left and the prescriber cannot be reached in time, a professional-judgment supply of up to 14 days or the smallest unit-of-use package",
+            "247 CMR 9.04(12) and M.G.L. c. 94C, s. 23(f), Massachusetts; 247 CMR 9.04(15) excludes institutional sterile compounding pharmacies from 9.04(12)"
+          ],
+          "rule_ids": [
+            "MA-SCHEDULE-VI-VALIDITY",
+            "MA-CS-REFILL-AUTHORIZATION",
+            "MA-SCHEDULE-VI",
+            "MA-ISCP-DISPENSING-EXCLUSIONS"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Two federal transfer pathways, told apart by whether the prescription has been dispensed",
+      "columns": [
+        "Feature",
+        "Refill-purpose transfer, 21 CFR 1306.25",
+        "Initial-dispensing electronic transfer, 21 CFR 1306.08(e)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Schedules reached",
+            "III, IV and V",
+            "II through V"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "State of the prescription",
+            "Already dispensed, with refills remaining",
+            "Unfilled; the transfer is for the initial dispensing"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Form the prescription may take",
+            "Paper, oral reduced to writing, or electronic",
+            "Electronic only, and it must stay electronic and unaltered"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Who asks for it",
+            "The federal rule does not condition the transfer on a patient request; in Massachusetts the patient or the patient's agent triggers a duty to transfer",
+            "Upon request from the patient"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER",
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Which pharmacies",
+            "Between pharmacies",
+            "Between retail pharmacies"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "How many transfers",
+            "One-time basis only",
+            "One-time basis only"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Shared real-time, online database alternative",
+            "Yes: transfer up to the maximum refills permitted by law and the prescriber's authorization",
+            "No counterpart; the pathway stays one-time whatever database the pharmacies share"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Who executes it",
+            "Communicated directly between two licensed pharmacists",
+            "Communicated directly between two licensed pharmacists"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "State-law condition",
+            "Permissible only if allowable under existing State or other applicable law",
+            "Permissible only if allowed by state law"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "FED-EPCS-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Records and how long they are kept",
+            "VOID and transfer entries at the sending end, transfer history at the receiving end; original and transferred prescriptions kept two years from the date of last refill",
+            "Transfer entries added to the electronic record at both ends; kept two years from the date of the transfer by both pharmacies"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-RECORDS"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "One patient request, seen by each sovereign",
+      "columns": [
+        "Issue",
+        "Federal, 21 CFR 1306.25",
+        "Massachusetts, 247 CMR 9.14 and 8.04(4)(d)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Must the pharmacy transfer when the patient asks?",
+            "The rule permits a transfer; it imposes no duty to transfer",
+            "Yes: a pharmacy shall transfer at the request of the patient or the patient's agent, in a timely manner so as not to delay patient therapy"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "May the pharmacy charge for the transfer?",
+            "The rule says nothing about fees",
+            "No: a pharmacy may not charge a fee for transferring a prescription"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Must the patient telephone the other pharmacy herself?",
+            "The rule says nothing about who initiates the contact",
+            "No: the pharmacy may act as the patient's agent in order to facilitate the transfer"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "How many refill-purpose transfers of a Schedule III-V prescription?",
+            "One, unless the pharmacies electronically share a real-time, online database",
+            "The state duty operates within that federal cap; it does not lift it, and 1306.25(e) makes the federal procedure depend on state law permitting transfers rather than the reverse"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER"
+          ]
+        },
+        {
+          "cells": [
+            "Schedule VI",
+            "Outside the rule: 1306.25 reaches substances listed in federal Schedules III-V, which Massachusetts places in its own Schedules III-V; Schedule VI holds prescription drugs included in none of the other schedules",
+            "Transfers in the same manner as Schedules III-V, up to the maximum remaining refills the prescriber authorized, and not more than one year after issue"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER",
+            "MA-SCHEDULE-VI",
+            "MA-SCHEDULES-FEDERAL-INCORPORATION"
+          ]
+        },
+        {
+          "cells": [
+            "Who may execute the transfer",
+            "Two licensed pharmacists, communicating directly",
+            "A certified pharmacy technician may perform transfers for Schedule VI only, with the approval of the pharmacist on duty"
+          ],
+          "rule_ids": [
+            "FED-CS-TRANSFER-REFILL",
+            "MA-RX-TRANSFER"
+          ]
+        }
+      ]
+    }
+  ],
+  "worked_examples": [
+    {
+      "scenario": "A Schedule IV prescription was issued on 1 March authorizing five refills. The patient first had it dispensed on 5 March and used three refills at Pharmacy A. On 20 August she asks Pharmacy B to obtain it, and the transfer is completed on 22 August. On 10 September she asks Pharmacy B for the next refill. May Pharmacy B dispense it?",
+      "steps": [
+        "Start with the two ceilings. 21 CFR 1306.22(a) bars filling or refilling a Schedule III or IV prescription more than six months after the date on which it was issued, so the window closes six months after 1 March. Counted the Massachusetts way, the day after issue is day one (247 CMR 9.04(10)), so 1 March itself is not counted.",
+        "Count the refills separately. Three of the five authorized refills have been used, so two remain and the five-refill ceiling is not the obstacle in this fact pattern.",
+        "Ask what the 22 August transfer changed. It moved the prescription without creating new refill authority and without restarting the issue-date clock, so the prescription reached Pharmacy B carrying the same 1 March issue date and the same two remaining refills.",
+        "Apply the clock on 10 September. The six-month period measured from 1 March has run, and unused authorized refills do not survive the time limit."
+      ],
+      "resolution": "Pharmacy B may not dispense the refill; only a new prescription from the practitioner restores capacity. The scenario invites two errors at once: starting the six months at the 5 March first dispensing, and treating the two unused refills as authority that outlives the clock.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "scenario": "A Massachusetts patient's Schedule III prescription with refills remaining was transferred from Pharmacy A to Pharmacy B last month. She now asks Pharmacy C to obtain it from Pharmacy B, and mentions that Pharmacy B told her it would charge five dollars to send it and that she would have to telephone Pharmacy B herself. Pharmacies B and C do not share a prescription database.",
+      "steps": [
+        "Identify the pathway. The prescription has already been dispensed and has refills remaining, so this is a refill-purpose transfer under 21 CFR 1306.25 rather than the initial-dispensing electronic transfer.",
+        "Apply the federal ceiling before the state duty. 1306.25(a) permits the refill-purpose transfer of Schedule III-V prescription information on a one-time basis only, and that transfer has already been used moving the prescription from A to B.",
+        "Test the exception. It is available only where the pharmacies electronically share a real-time, online database. B and C do not, so the alternative allowing transfer up to the maximum authorized refills is unavailable.",
+        "Do not read the Massachusetts duty as an override. 247 CMR 9.14(1) says when a pharmacy must transfer; 1306.25(e) makes the federal procedure permissible only if allowable under state law, so state law can withhold a federally permitted transfer but cannot supply federal transfer capacity the federal rule withholds.",
+        "Separate the two complaints the patient actually raised. The fee and the legwork are governed by 247 CMR 9.14(3) and 9.14(2), which forbid a transfer fee and permit the pharmacy to act as the patient's agent; those rules are unaffected by the transfer count."
+      ],
+      "resolution": "The second refill-purpose transfer is not available on these facts, and a new prescription is what moves the therapy to Pharmacy C. The five-dollar charge and the instruction that the patient make her own telephone call were both improper regardless. The trap is reading the Massachusetts duty to transfer on request as removing the federal one-time cap.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER",
+        "FED-EPCS-TRANSFER"
+      ]
+    },
+    {
+      "scenario": "A Massachusetts patient asks Pharmacy C to obtain a Schedule VI prescription issued eight months ago with four refills remaining. It has already been transferred once, from Pharmacy A to Pharmacy B. Pharmacy C has a certified pharmacy technician on shift and the pharmacist on duty approves her doing the work. A colleague objects that the federal one-time limit forbids a second transfer and that only a pharmacist may execute one.",
+      "steps": [
+        "Classify the drug first. Massachusetts Schedules I through V are the substances the federal schedules list (M.G.L. c. 94C, s. 2(a); 105 CMR 700.002(A)-(E)), and 105 CMR 700.002(F) puts in Schedule VI only prescription drugs included in no other schedule. A Schedule VI drug is therefore not one of the substances the federal Schedules III, IV and V list.",
+        "That settles the first objection. 21 CFR 1306.25 governs the transfer of Schedule III, IV and V prescription information, so it never reaches this prescription and its one-time cap has nothing here to limit.",
+        "Apply the state rule that does govern. 247 CMR 9.14(4)(a) puts a Schedule VI transfer on the same footing as a Schedule III-V transfer, and 9.14(4)(b) permits transfer up to the maximum number of remaining refills authorized by the prescriber, which is a count of refills rather than a count of transfers.",
+        "Check the state ceilings that do exist. 247 CMR 9.14(4)(c) bars transferring a Schedule VI prescription authorizing refills more than one year from the date it was issued, and eight months is inside that period. The refills themselves are also still usable, because 247 CMR 9.04(12) keeps a Schedule VI prescription valid, and refillable, for one year from issue.",
+        "Now the second objection. The federal requirement that a transfer be communicated directly between two licensed pharmacists belongs to the federal pathways, which do not reach this prescription, and 247 CMR 8.04(4)(d) permits a certified pharmacy technician to perform prescription transfers between pharmacies for Schedule VI only, with the approval of the pharmacist on duty."
+      ],
+      "resolution": "Both halves of the colleague's objection fail: the second transfer is permitted and the technician may execute it with the pharmacist's approval. The error the scenario invites is carrying a federal Schedule III-V mechanic across to a Massachusetts Schedule VI prescription that no federal schedule reaches.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "scenario": "A prescriber transmits an electronic Schedule II prescription to retail Pharmacy A. The drug is out of stock and nothing has been dispensed. The patient asks Pharmacy A to send the prescription to retail Pharmacy B. A technician offers to print it and fax it across, and a colleague says a Schedule II prescription can never be moved between pharmacies.",
+      "steps": [
+        "Rule out the wrong pathway. 21 CFR 1306.25 transfers prescription information for the purpose of refill dispensing, and this prescription has never been dispensed, so that rule is not the one in play.",
+        "Identify the right one. 21 CFR 1306.08(e) permits the transfer for initial dispensing of an electronic controlled-substance prescription between retail pharmacies, upon request from the patient, on a one-time basis only, and it reaches Schedules II through V.",
+        "Refuse the print-and-fax. The pathway requires the prescription to remain in electronic form and unaltered; converting it to another form defeats the transfer.",
+        "Refuse the technician's participation on this transfer. The federal pathway requires the transfer to be communicated directly between two licensed pharmacists, and the Massachusetts certified-technician transfer authority is confined to Schedule VI in any event.",
+        "Note what is not available here. This pathway carries no shared-database counterpart, so it stays one-time regardless of what record system the two pharmacies share."
+      ],
+      "resolution": "The transfer is lawful, but only electronically, pharmacist to pharmacist, and once. The colleague's flat rule is the error the scenario invites; a never-dispensed electronic Schedule II prescription has a transfer pathway even though the refill-transfer rule does not reach Schedule II.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "retrieval_prompts": [
+    {
+      "prompt": "A Schedule III or IV prescription may not be filled or refilled more than ______ after the date it was issued, and may not be refilled more than ______ times.",
+      "answer": "six months; five. Both limits are in 21 CFR 1306.22(a), and each is independent of the other.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "prompt": "Which sovereign supplies the five-refill and six-month limits for a Schedule V prescription, and which facility type is excluded from them?",
+      "answer": "Massachusetts, at 247 CMR 9.04(13); the federal refill provision at 21 CFR 1306.22(a) is written for Schedules III and IV. 247 CMR 9.04(15) provides that 9.04(13) does not apply to institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "prompt": "True or false: the six-month clock starts running at the first dispensing, and it limits refills only.",
+      "answer": "False on both counts. 21 CFR 1306.22(a) and 247 CMR 9.04(13) each measure from the date the prescription was issued, and each bars filling as well as refilling once six months have passed, so a prescription that has never been dispensed is equally out of time. In Massachusetts the day after the prescription was written counts as day one (247 CMR 9.04(10)).",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "prompt": "How many times may Schedule III-V prescription information be transferred for refill purposes, and what single circumstance changes that number?",
+      "answer": "Once. Pharmacies electronically sharing a real-time, online database may instead transfer up to the maximum refills permitted by law and the prescriber's authorization.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "prompt": "A patient asks a retail pharmacy to move a never-dispensed electronic Schedule II prescription to another retail pharmacy. Which pathway applies, and does the shared-database allowance help?",
+      "answer": "The initial-dispensing electronic transfer under 21 CFR 1306.08(e), which reaches Schedules II through V. No: that pathway has no shared-database counterpart and stays one-time, and the prescription must remain electronic and unaltered.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "prompt": "True or false: because Massachusetts requires a pharmacy to transfer on the patient's request, a Schedule IV prescription that has already been transferred once may be transferred again.",
+      "answer": "False. 247 CMR 9.14(1) says when a transfer must happen; 21 CFR 1306.25(a) says how many are available, and 1306.25(e) makes the federal procedure turn on state law permitting transfers rather than the reverse. Absent a shared real-time, online database, the second transfer is unavailable.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "prompt": "Why does the federal one-time refill-transfer limit not cap a Massachusetts Schedule VI transfer, and what state ceiling applies instead?",
+      "answer": "Because Massachusetts Schedules I-V are the substances the federal schedules list (M.G.L. c. 94C, s. 2(a); 105 CMR 700.002(A)-(E)) and Schedule VI holds only prescription drugs in none of them (700.002(F)), so a Schedule VI drug is not a federal Schedule III-V substance and 21 CFR 1306.25 does not reach it. 247 CMR 9.14(4)(b) permits transfer up to the maximum remaining refills the prescriber authorized, and 9.14(4)(c) bars transfer of a refill-authorizing Schedule VI prescription more than one year after issue.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "A Massachusetts Schedule VI prescription issued 13 months ago still shows two refills, and the prescriber cannot be reached today. May it be refilled, and what may the pharmacist do?",
+      "answer": "It may not be refilled: under 247 CMR 9.04(12) a Schedule VI prescription is valid for one year from the date of issue and may not be refilled after one year. Because prescriber authorization cannot be obtained in a timely manner, the pharmacist may, in professional judgment, dispense a quantity not exceeding 14 days or the smallest available unit-of-use package.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "prompt": "Who may execute a prescription transfer, federally and in Massachusetts?",
+      "answer": "Federally, the transfer must be communicated directly between two licensed pharmacists, on both the refill-purpose pathway and the initial-dispensing electronic pathway. Massachusetts adds that a certified pharmacy technician may perform prescription transfers between pharmacies for Schedule VI only, with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "FED-EPCS-TRANSFER",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "prompt": "What must the transferring and receiving pharmacists record on a refill-purpose transfer of a Schedule III-V prescription, and how long are the records kept?",
+      "answer": "The transferring pharmacist writes 'VOID' on the prescription (or marks the electronic record as transferred) and records the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name. The receiving pharmacist records the prescription's history (issue date, refills authorized and remaining, dates and locations of earlier fills, and the transferring and originally filling pharmacies), writing 'transfer' on the face of a paper or oral prescription or creating an electronic record for an electronic one. The original and transferred prescriptions are kept for two years from the date of last refill.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "prompt": "How does a Massachusetts pharmacist count days when deciding whether a prescription is within date?",
+      "answer": "The day after the prescription was written is day one (247 CMR 9.04(10)); the issue date itself is not counted. 247 CMR 9.04(15) disapplies this counting rule at institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    }
+  ],
+  "quick_review": [
+    {
+      "text": "Federal law bars filling or refilling a Schedule III or IV prescription more than six months after the issue date and bars more than five refills; only a new prescription lifts either limit.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "text": "For pharmacies subject to 247 CMR 9.04(13), a Massachusetts Schedule V prescription may not be filled or refilled more than six months after issue, and may not be refilled more than five times; that subsection does not apply to institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "text": "For pharmacies subject to 247 CMR 9.04(12), a Massachusetts Schedule VI prescription is valid for one year from issue and may not be refilled after one year, and any refill needs the original prescription to provide for refilling and state the number of refills (M.G.L. c. 94C, s. 23(f)).",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "text": "At a pharmacy subject to 247 CMR 9.04(10), the day after the prescription was written is day one when deciding whether it is within date.",
+      "rule_ids": [
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "Massachusetts requires a timely patient-requested transfer, prohibits a transfer fee, and permits a pharmacy to act as the patient's agent to obtain the transfer.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Transfer of Schedule III-V prescription information for refill purposes is permitted between pharmacies on a one-time basis only, unless the pharmacies electronically share a real-time, online database.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "Transfer of an unfilled electronic controlled-substance prescription for initial dispensing is a separate federal pathway, permitted between retail pharmacies at the patient's request on a one-time basis only, and it reaches Schedules II through V.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER"
+      ]
+    }
+  ],
+  "decision_logic": [
+    {
+      "condition": "A Schedule III or IV refill is requested.",
+      "action": "Check both elapsed time from issue and the number of prior refills; either exhausted limit blocks the refill.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "condition": "A Massachusetts Schedule V refill is requested at a pharmacy subject to 247 CMR 9.04(13).",
+      "action": "Apply the five-refill and six-month limits independently.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "condition": "A Massachusetts Schedule VI refill is requested at a pharmacy subject to 247 CMR 9.04(12).",
+      "action": "Confirm the original prescription provides for refills and states their number, and that it is within one year of issue. Past one year, or with no refills left, dispense only a professional-judgment supply of up to 14 days or the smallest unit-of-use package, and only if prescriber authorization cannot be obtained in time.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION"
+      ]
+    },
+    {
+      "condition": "The facility is an institutional sterile compounding pharmacy.",
+      "action": "Do not apply the Schedule V refill limits in 247 CMR 9.04(13), the Schedule VI rule in 9.04(12) or the counting rule in 9.04(10) through those provisions; 247 CMR 9.04(15) excludes that facility type.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "condition": "A patient or authorized agent requests a Massachusetts prescription transfer.",
+      "action": "Transfer remaining authorized refills timely without charging a transfer fee, subject to the prescription-specific limits.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "condition": "A patient asks to move a Schedule III, IV or V prescription with authorized refills remaining to another pharmacy.",
+      "action": "Confirm the prescription has not already been transferred once, unless the two pharmacies electronically share a real-time online database, before applying the Massachusetts transfer duty.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "condition": "A patient asks a retail pharmacy to move an ELECTRONIC controlled-substance prescription that has never been dispensed to another retail pharmacy.",
+      "action": "Use the initial-dispensing electronic transfer pathway rather than the refill-transfer rule, keep the prescription in electronic form and unaltered, and treat it as available once only. A never-dispensed paper prescription has no federal transfer pathway.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER"
+      ]
+    },
+    {
+      "condition": "A Schedule III-V prescription is transferred for refill purposes.",
+      "action": "The transferring pharmacist voids the prescription and records where it went; the receiving pharmacist records the prescription's transfer history, writing 'transfer' on the face of a paper or oral prescription or creating an electronic record for an electronic one; the original and transferred prescriptions are kept for two years from the date of last refill.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    }
+  ],
+  "ma_vs_federal": [
+    {
+      "text": "For Schedule III and IV refills the federal five-refill and six-month limits remain operative when the Massachusetts transfer rules are applied, and so does the separate federal limit permitting a Schedule III-V refill-purpose transfer only once.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "Massachusetts Schedule VI prescriptions transfer in the same manner as Schedule III-V prescriptions and may move up to the maximum number of remaining refills the prescriber authorized, with the only ceiling being that a refill-authorising Schedule VI prescription may not be transferred more than one year after issue. The federal one-time limit does not cap them, because it reaches only substances in federal Schedules III-V, which Massachusetts places in its own Schedules III-V, while Schedule VI holds prescription drugs included in none of the other schedules.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "MA-SCHEDULE-VI",
+        "MA-SCHEDULES-FEDERAL-INCORPORATION"
+      ]
+    },
+    {
+      "text": "For Schedule VI the refill limits come from Massachusetts: 247 CMR 9.04(12) makes the prescription valid for one year and bars refills after that, and M.G.L. c. 94C, s. 23(f) requires the original prescription to provide for and number any refill. The Schedule III-V figures of five refills and six months do not carry across.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-CS-REFILL-AUTHORIZATION",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "A federal controlled-prescription transfer must pass directly between two licensed pharmacists, while Massachusetts lets a certified pharmacy technician do the work for Schedule VI only, with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "text": "A transfer does not create new refill authority or restart an issue-date clock.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "The Schedule V refill limits in 247 CMR 9.04(13) do not apply to institutional sterile compounding pharmacies under 247 CMR 9.04(15).",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "text": "247 CMR 9.04(15) also removes the Schedule VI rule in 9.04(12) and the day-counting rule in 9.04(10) from institutional sterile compounding pharmacies.",
+      "rule_ids": [
+        "MA-ISCP-DISPENSING-EXCLUSIONS",
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-DATE-COUNTING"
+      ]
+    },
+    {
+      "text": "Where a Schedule VI prescription has expired or has no remaining refills and prescriber authorization cannot be obtained in a timely manner, the pharmacist may, in professional judgment, dispense a quantity not exceeding 14 days or the smallest available unit-of-use package; that is not an ordinary refill.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "text": "Pharmacies electronically sharing a real-time, online database may transfer up to the maximum refills permitted by law and the prescriber's authorization instead of the one-time limit.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "The real-time shared-database allowance belongs to the refill-purpose transfer rule; the initial-dispensing electronic transfer carries no such counterpart and stays one-time.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "The initial-dispensing transfer in 21 CFR 1306.08(e) is for a prescription's first dispensing. Once a Schedule II prescription has been partially filled, no federal transfer pathway moves its remaining portion to another pharmacy.",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "FED-EPCS-TRANSFER"
+      ]
+    }
+  ],
+  "timing_deadlines": [
+    {
+      "event": "Schedule III-IV refill window",
+      "timeframe": "Within 6 months after issue",
+      "consequence": "No further fill or refill after the federal time limit without practitioner renewal.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "event": "Massachusetts Schedule V refill window at a pharmacy subject to 247 CMR 9.04(13)",
+      "timeframe": "Within 6 months after issue",
+      "consequence": "No first fill and no refill after the state time limit, and no refill once five are used.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL",
+        "MA-ISCP-DISPENSING-EXCLUSIONS"
+      ]
+    },
+    {
+      "event": "Refill of a Massachusetts Schedule VI prescription at a pharmacy subject to 247 CMR 9.04(12)",
+      "timeframe": "Not more than 1 year after issue",
+      "consequence": "No refill after one year; if the prescriber cannot be reached in time, only a professional-judgment supply of up to 14 days or the smallest unit-of-use package.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY"
+      ]
+    },
+    {
+      "event": "Remaining-refill transfer of a Massachusetts Schedule VI prescription authorizing refills",
+      "timeframe": "Not more than 1 year after issue",
+      "consequence": "247 CMR 9.14(4)(c) does not permit that remaining-refill transfer after the one-year point.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "event": "Records of a refill-purpose transfer of Schedule III-V prescription information",
+      "timeframe": "2 years from the date of last refill",
+      "consequence": "The original and transferred prescriptions must be kept for that period.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "event": "Records of an initial-dispensing electronic transfer",
+      "timeframe": "2 years from the date of the transfer",
+      "consequence": "Both the transferring and the receiving pharmacy keep the electronic records documenting the transfer for that period.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    }
+  ],
+  "forms_records": [
+    {
+      "text": "On a refill-purpose transfer the transferring pharmacist writes 'VOID' on the face of the invalidated prescription (for an electronic prescription, adds to its record that it has been transferred), records the name, address and DEA registration number of the pharmacy it went to and the name of the receiving pharmacist, and records the date of the transfer and his or her own name.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "For a paper prescription, or an oral one reduced to writing, the receiving pharmacist writes 'transfer' on its face, reduces to writing all the information a prescription must contain, and adds the original issue date, the original number of refills authorized, the date of original dispensing, the valid refills remaining with the dates and locations of previous refills, the transferring pharmacy's name, address, DEA registration number and prescription number, the transferring pharmacist's name, and the name, address, DEA registration number and prescription number of the pharmacy that originally filled it. For an electronic prescription transferred electronically, the transferring pharmacist sends that history with the prescription, and the receiving pharmacist creates an electronic record containing it and his or her own name.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "The original and transferred prescriptions are kept for two years from the date of last refill, and pharmacies that share one electronic prescription record must still meet every information requirement of a manual transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "text": "On an initial-dispensing electronic transfer the transferring pharmacist adds to the electronic record that it has been transferred, the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name; the receiving pharmacist adds 'transfer', the transferring pharmacy's name, address and DEA registration number, the transferring pharmacist's name, the date and his or her own name. Software may fill in these fields, but the pharmacist must ensure they are complete and accurate, and both pharmacies keep the records for two years from the date of the transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS",
+        "FED-EPCS-TRANSFER"
+      ]
+    }
+  ],
+  "role_duties": [
+    {
+      "role": "Receiving pharmacist",
+      "duty": "Record the federal transfer data: on a paper or oral prescription, 'transfer' on its face with the full prescription information and transfer history; on an electronic refill transfer, an electronic record with the receiving pharmacist's name and everything transferred; on an initial-dispensing transfer, the entries the electronic-transfer rule lists. The prescription keeps the refills and the issue date it already had.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS",
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "role": "Transferring pharmacy",
+      "duty": "Transfer the prescription at the request of the patient or the patient's agent in a timely manner so as not to delay therapy, without charging a fee; on a Schedule III-V refill transfer, the transferring pharmacist writes 'VOID' on the prescription (or marks the electronic record as transferred) and records the receiving pharmacy's name, address and DEA registration number, the receiving pharmacist's name, the date and his or her own name.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL",
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    },
+    {
+      "role": "Receiving pharmacy (Massachusetts)",
+      "duty": "May act as the patient's agent to obtain the transfer. This is a permission; the duty to transfer rests on the pharmacy asked to send the prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "role": "Transferring and receiving pharmacists",
+      "duty": "Communicate a federal controlled-prescription transfer directly between the two of them; the transfer is a pharmacist-to-pharmacist act.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "FED-EPCS-TRANSFER"
+      ]
+    },
+    {
+      "role": "Certified pharmacy technician",
+      "duty": "Perform a prescription transfer only for Schedule VI, and only with the approval of the pharmacist on duty.",
+      "rule_ids": [
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "role": "Transferring and receiving pharmacies",
+      "duty": "Keep the transfer records for two years: from the date of last refill on a refill-purpose transfer, and from the date of transfer, at both pharmacies, on an initial-dispensing electronic transfer.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-RECORDS"
+      ]
+    }
+  ],
+  "common_traps": [
+    {
+      "text": "Starting a six-month clock at the first dispensing rather than the issue date gives the prescription excess life.",
+      "rule_ids": [
+        "FED-CS-REFILL-III-IV",
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Assuming a transfer renews or expands refill authority confuses movement of a prescription with creation of a new prescription.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-REFILL-III-IV"
+      ]
+    },
+    {
+      "text": "Treating the Massachusetts duty to transfer on patient request as removing the federal one-time limit on a Schedule III-V refill transfer.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "Concluding that a Schedule II prescription can never move between pharmacies overlooks the one-time initial-dispensing transfer of an unfilled electronic prescription.",
+      "rule_ids": [
+        "FED-EPCS-TRANSFER"
+      ]
+    },
+    {
+      "text": "Letting a certified pharmacy technician transfer a Schedule III-V prescription ignores both the Schedule VI limit on that authority and the federal pharmacist-to-pharmacist requirement.",
+      "rule_ids": [
+        "MA-RX-TRANSFER",
+        "FED-CS-TRANSFER-REFILL"
+      ]
+    },
+    {
+      "text": "Reading the Massachusetts Schedule V six-month limit as reaching only refills would let a seven-month-old prescription be dispensed for the first time.",
+      "rule_ids": [
+        "MA-RX-CV-REFILL"
+      ]
+    },
+    {
+      "text": "Carrying the federal one-time transfer limit across to a Massachusetts Schedule VI prescription refuses a second transfer the regulation allows.",
+      "rule_ids": [
+        "FED-CS-TRANSFER-REFILL",
+        "MA-RX-TRANSFER",
+        "MA-SCHEDULE-VI"
+      ]
+    },
+    {
+      "text": "Treating the Schedule VI one-year figure as a transfer bar only lets a prescription be refilled after 247 CMR 9.04(12) has ended its validity.",
+      "rule_ids": [
+        "MA-SCHEDULE-VI-VALIDITY",
+        "MA-RX-TRANSFER"
+      ]
+    },
+    {
+      "text": "Sending a partially filled Schedule II prescription through the initial-dispensing transfer overlooks that the pathway is for a prescription's first dispensing, and that no federal pathway moves the remaining portion.",
+      "rule_ids": [
+        "FED-CS-PARTIAL-REMAINDER-NO-TRANSFER",
+        "FED-EPCS-TRANSFER"
+      ]
+    }
+  ],
+  "drug_examples": [],
+  "practice_question_ids": [
+    "MA-Q-0120",
+    "MA-Q-0397"
+  ],
+  "last_verified": "2026-09-11",
+  "verification_status": "VERIFIED",
+  "independent_audit_id": "AUDIT-SG-B4-SG-V8B-2026-09-11"
+}

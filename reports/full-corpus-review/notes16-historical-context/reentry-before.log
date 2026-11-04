@@ -1,0 +1,33 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_actual_archived_authored_cards_match_original_preview_without_current_held_reentry _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fd2e38e46b0>
+
+    def test_actual_archived_authored_cards_match_original_preview_without_current_held_reentry(monkeypatch):
+        record,notes,candidate,preview=actual_inputs();original=copy.deepcopy(notes)
+        def reentry(*a,**k):raise AssertionError('HELD_SOURCE_CURRENT_LOAD_REENTRY')
+        monkeypatch.setattr(revision,'load_notes',reentry)
+>       actual=body.derived_inputs(ROOT,notes,'w3-a-3',candidate)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_historical_derived_notes_context.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_body_reassessment.py:126: in derived_inputs
+    data=apply_study_revision(json.loads((root/path).read_bytes()),kind,root)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_revision.py:209: in apply_study_revision
+    data['notes_revision']=load_notes(root)['revision_provenance']
+                           ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (PosixPath('/workspace/mpje-notes16-config'),), k = {}
+
+>   def reentry(*a,**k):raise AssertionError('HELD_SOURCE_CURRENT_LOAD_REENTRY')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: HELD_SOURCE_CURRENT_LOAD_REENTRY
+
+tests/test_historical_derived_notes_context.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_historical_derived_notes_context.py::test_actual_archived_authored_cards_match_original_preview_without_current_held_reentry
+1 failed in 0.16s

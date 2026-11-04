@@ -1,0 +1,94 @@
+{
+  "question_id": "MA-Q-0061",
+  "family_id": "P2_0061_FED_INVENTORY_COUNT",
+  "area": 4,
+  "topic": "Controlled substance inventory",
+  "subtopic": "Counting method",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Estimate because exact counts are required only for Schedule II."
+    },
+    {
+      "id": "B",
+      "text": "Estimate after subtracting quantities shown on invoices."
+    },
+    {
+      "id": "C",
+      "text": "Count exactly only if the bottle originally contained 1,000 units or fewer."
+    },
+    {
+      "id": "D",
+      "text": "Move tablets into two smaller containers and estimate each."
+    },
+    {
+      "id": "E",
+      "text": "Use an exact count because the opened container holds more than 1,000 dosage units."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "'Use an exact count because the opened container holds more than 1,000 dosage units.' is the governing result. By contrast, 'Estimate because exact counts are required only for Schedule II.' would require that the opened-container exception had no more-than-1,000-unit threshold. The decisive cue appears in 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?'.",
+    "choice_analysis": {
+      "A": "'Estimate because exact counts are required only for Schedule II.' would apply only if the opened-container exception had no more-than-1,000-unit threshold; 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?' states otherwise.",
+      "B": "'Estimate after subtracting quantities shown on invoices.' would apply only if derived bookkeeping could replace the required physical count; 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?' states otherwise.",
+      "C": "'Count exactly only if the bottle originally contained 1,000 units or fewer.' would apply only if the threshold operated in the opposite direction; 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?' states otherwise.",
+      "D": "'Move tablets into two smaller containers and estimate each.' would apply only if repackaging during inventory could avoid the large-container rule; 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?' states otherwise.",
+      "E": "'Use an exact count because the opened container holds more than 1,000 dosage units.': supported by counting method."
+    },
+    "related_facts": [
+      "Schedule II inventory requires an exact count or measure; Schedule III through V opened containers may generally be estimated unless the container holds more than 1,000 units.",
+      "21 CFR 1304.11(e)(6)"
+    ],
+    "mpje_trap": "'Estimate because exact counts are required only for Schedule II.' would apply if the opened-container exception had no more-than-1,000-unit threshold. In 'While reviewing the prescription, during inventory, a pharmacist estimates the contents of an opened bottle containing 1,200 Schedule IV tablets. What should change?', that predicate is missing."
+  },
+  "rule_ids": [
+    "FED-INVENTORY-COUNT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Match the scenario's operative facts to Exact and estimated controlled-substance inventory counts"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-INVENTORY-COUNT": {
+          "content_version": 1,
+          "content_hash": "95779b7e7f6f58b3f894630bba9a72c3e83e3646e6e7e163ff640d913a4a267d"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

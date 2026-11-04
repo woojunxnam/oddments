@@ -1,0 +1,93 @@
+{
+  "question_id": "MA-Q-0215",
+  "family_id": "T2_0215_MA_DRUG_DELIVERY",
+  "area": 4,
+  "topic": "Pharmacy operations",
+  "subtopic": "Medication delivery and shipping",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy plans to mail a temperature-sensitive prescription using a common carrier. The proposed packaging cannot reasonably maintain the product's labeled storage conditions during the expected transit. What should the pharmacy do?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Ship it because use of a common carrier transfers responsibility for product stability to the carrier."
+    },
+    {
+      "id": "B",
+      "text": "Ship it if the patient agrees to accept the risk of temperature excursion."
+    },
+    {
+      "id": "C",
+      "text": "Use a packing and transportation method that protects medication integrity and stability before sending the prescription."
+    },
+    {
+      "id": "D",
+      "text": "Remove the labeled storage directions so the carrier is not responsible for them."
+    },
+    {
+      "id": "E",
+      "text": "Convert the order to an in-store pickup without telling the patient."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "Massachusetts permits prescription delivery by mail or common carrier when lawful, but the pharmacy remains responsible for ensuring that packing, shipping, transportation, and delivery do not adversely affect medication integrity or stability. The proposed method should be corrected before shipment.",
+    "choice_analysis": {
+      "A": "Using a lawful carrier does not shift the pharmacy's regulatory responsibility for medication integrity.",
+      "B": "Patient consent does not cure an inadequate shipping process.",
+      "C": "Correct: the pharmacy must use a method that protects integrity and stability.",
+      "D": "Removing directions does not change the product's storage requirements.",
+      "E": "Changing the delivery arrangement without patient communication is not the required shipping safeguard."
+    },
+    "related_facts": [],
+    "mpje_trap": "Carrier legality does not answer whether the pharmacy's shipping method protects the medication."
+  },
+  "rule_ids": [
+    "MA-DRUG-DELIVERY-SHIPPING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate permission to use a carrier from the pharmacy's continuing operational duties",
+    "Identify temperature control as an integrity and stability issue",
+    "Choose a shipping method that maintains appropriate medication conditions"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T2-A-LEGAL-TARGETED-INITIAL-2026-08-18",
+    "AUDIT-GPT-FRESH-COV-T2-A-REALISM-TARGETED-INITIAL-2026-08-18"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #83 after independent GPT-FRESH-COV-T2-A and GPT-FRESH-COV-T2-B audits",
+    "date": "2026-08-19",
+    "notes": "Pre-Batch3 Coverage T2 guarded admission under Issue #83, authorized as tranche PRE-BATCH3-COVERAGE-T2 by Issue #68. Current-hash legal KEEP/YES and full-bank realism KEEP/PASS evidence was selected per question: the fifteen unchanged items use the deterministically normalized GPT-FRESH-COV-T2-A targeted-initial evidence, and the repaired MA-Q-0213 uses the fresh GPT-FRESH-COV-T2-B current-hash re-audit. The historical pre-repair MA-Q-0213 realism failure remains stored against its original content hash and was not converted to a pass. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-DRUG-DELIVERY-SHIPPING": {
+          "content_version": 1,
+          "content_hash": "7d389ec020fc90c5f33b47f93c3ae087a718986b6646ac580ca3c63137c7e296"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

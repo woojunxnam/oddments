@@ -1,0 +1,58 @@
+{
+  "observed_at_utc": "2026-11-04T13:39:11.692133+00:00",
+  "source_commit": "1577fca985fb7c9cc4bf84fe50954416d0aaa7b1",
+  "base_commit": "054c7bb3b7e12f3ce34407ae335746a82c4e3d35",
+  "purpose": "SOURCE_ONLY_RETAIN_ALL_PREIMAGES_SYNTHETIC_QA_NOT_PUBLICATION_OR_ACTIVATION",
+  "actual_root_preparation": false,
+  "actual_closure_approval": false,
+  "actual_activation": false,
+  "canonical_release_credit": 0,
+  "full_candidate_qa": false,
+  "tests": [
+    {
+      "log": "focused-core.log",
+      "passed": 3,
+      "failed": 0,
+      "deselected": 28,
+      "seconds": 31.99,
+      "scope": "Core subset, included in module run; do not add to module total."
+    },
+    {
+      "log": "closure-module.log",
+      "passed": 31,
+      "failed": 0,
+      "seconds": 199.11,
+      "scope": "Complete closure module collected before the extra standalone CLI misuse test was added."
+    },
+    {
+      "log": "cli-preparation-only.log",
+      "passed": 1,
+      "failed": 0,
+      "seconds": 0.1,
+      "scope": "Additional CLI misuse guard; no file creation."
+    }
+  ],
+  "unchanged_guard_function_sha256": {
+    "head_snapshot": "287b27b88cd39cde12a31a6dc2c63f9e805b077e6eef8aa33d0c7e5b1231c499",
+    "path": "38d6683cf5df796baf11c0b61070b1813cb32ccf65228c6957bdcb102f72dd63",
+    "committed": "6f8ff9fd95c2934651a032c8f6d33801224db2633d10eed40fec110130d4709c",
+    "proof": "620f6a591b4bed42b877fad8baf8989007f4195353980bf46cb74b4ad701b205",
+    "publication": "72712b9d78e7ccc47361307710a153b2dbda94140f1544d60212a66917ec8482",
+    "validate": "7842a2a4499dc1550bab0bb259ca7f9f6d9c63385dc90128238340d14e1ceed0",
+    "validate_archive_notice_wrapper": "6da552ae145af206e15950ae0aa01cf2ad6d97ac69c82c5d05fbbacedfb449da",
+    "old_bytes": "f73f684bb7ad1587acec26a3ce305800440ac5282797e8fe3340684a0be45869",
+    "fixed_view": "0d95b427a543423b4bf9d6e2cee8d031ff1125faef481429967f886f3b09e17d",
+    "verify_old_guards": "2ae43968ac9c625a97dbd38b35e17dc7ce2777a6932a7088cf72b3d6f715078f"
+  },
+  "raw_log_sha256": {
+    "focused-core.log": "ab84dac3d097920598ff2e71450e28b59b44a6f2e87154ae3966ce1b32e72c13",
+    "closure-module.log": "3115493df5def7bb71a428a8f495237c8579743bb74bf8d3d6006083fdc07f7e",
+    "cli-preparation-only.log": "4e8b6c5a89da44bf05d17100903172be04033067c113a6831bdfafbd42b7da52"
+  },
+  "limitations": [
+    "All receipt/GitHub/HTTP inputs are explicitly synthetic fixtures. No actual publication proof is created.",
+    "Default changed-only behavior and existing output/preimage overwrite refusal remain in force.",
+    "Full preimage retention does not waive live1781, four policies, old14/15, narrow bank notice wrapper or exact old-tree verification.",
+    "Root must separately prepare, commit and explicitly approve any actual new closure."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0362",
+  "family_id": "B3E_OWNERSHIP_TRANSFER_DUAL_DUTIES",
+  "area": 4,
+  "topic": "Pharmacy licensure",
+  "subtopic": "Transfer of ownership",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy is being sold. Twenty days before the closing date the buyer submits a complete licence application with the controlled substance inventory report and the bill of sale. The seller files nothing, on the basis that the buyer's application tells the Board everything it needs. Is the seller's position sound?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "No, because the outgoing licensee owes the Board its own notice of the transfer."
+    },
+    {
+      "id": "B",
+      "text": "No, because the seller must instead surrender the licence to the Board first."
+    },
+    {
+      "id": "C",
+      "text": "Yes, because the buyer's application was filed more than 14 days ahead."
+    },
+    {
+      "id": "D",
+      "text": "Yes, because the inventory report identifies both pharmacies to the Board."
+    },
+    {
+      "id": "E",
+      "text": "Yes, provided the seller countersigns the buyer's licence application."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 6.11 imposes two separate 14-day duties. At least 14 days before the transfer the LICENSEE shall notify the Board of the proposed transfer and comply with the closing and controlled substance distribution provisions; at least 14 days before the transfer the PROPOSED NEW LICENSEE shall submit its application. One filing does not answer the other duty.",
+    "choice_analysis": {
+      "A": "Correct: the outgoing licensee's notice is a distinct obligation.",
+      "B": "Surrender is not what the section requires in place of notice.",
+      "C": "Timeliness of the buyer's filing does not discharge the seller's.",
+      "D": "The inventory report is an application component, not the seller's notice.",
+      "E": "A countersignature is not contemplated by the section."
+    },
+    "related_facts": [
+      "The Board may test the buyer against the 247 CMR 6.03 suitability factors"
+    ],
+    "mpje_trap": "Candidates treat a transfer as a single transaction with a single filing."
+  },
+  "rule_ids": [
+    "MA-PHARMACY-OWNERSHIP-TRANSFER"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate the duty on the outgoing licensee from the duty on the incoming one",
+    "Check each against the 14-day clock",
+    "Note that the seller must also meet the closing and drug-distribution provisions"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3E-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3E-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3E-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-E v3 guarded admission of 27 of 30 questions. CLAUDE-FRESH-B3E-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 27 current hashes. MA-Q-0365 is held back on the independent legal MINOR_EDIT finding. MA-Q-0377 and MA-Q-0389 are held back on independent realism failures. Their negative audit history remains preserved at the audited hashes. The Phase-1 blind lock was committed before canonical-key access; the one blind divergence, MA-Q-0377, was disclosed and resolved in favor of the canonical key but the item still failed realism. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMACY-OWNERSHIP-TRANSFER": {
+          "content_version": 1,
+          "content_hash": "b62dcd0c9008e60ec97d10f568bdd5149ecc535662fe34678d97d9f63621931a"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}
