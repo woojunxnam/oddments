@@ -36,7 +36,13 @@ PROTECTED='reports/representative-rewrite/protected-baseline.json'
 POLICIES={'docs/RELEASE_POLICY.md','docs/AUDIT_WORKFLOW.md','docs/SOURCE_USE_POLICY.md','docs/QUESTION_AUTHORING_STANDARD.md'}
 # Root binds actual path/rawSHA/commit/tree only after actual main/CI/Pages/assets.
 # There is intentionally no proposed candidate or future merge in this table.
-APPROVED_CLOSURES={}
+APPROVED_CLOSURES={
+    ('revisions/notes/published15-closures/pr192-resume-v1.json',
+     '6a981911268dd32acd7c314e13286f7643e0a8ae99503e41ef949e476012cdfc'): {
+        'published_commit': 'e8f9b9bcffdb5cf8849ee97ba75b9526bd1cff67',
+        'published_tree': '0039604281827d2dec95df65a05536bd3b735897',
+    },
+}
 _HEAD_VIEW=ContextVar('published15_head_view',default=None)
 DYNAMIC_PUBLICATION_INPUTS={
     'reports/full-corpus-review/progress.json','reports/full-corpus-review/notes-unit-ledger.jsonl',
