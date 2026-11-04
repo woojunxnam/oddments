@@ -21,6 +21,26 @@ Q = {q['question_id']: q for q in json.loads((ROOT / adapter.BASE / 'questions.j
 AUTHORING = adapter.authoring_payload(ROOT)
 REAL_CANDIDATE_RECORDS = native.candidate_records
 
+def frozen_author_parent(root=ROOT):
+    # Capture one committed tree, then select only the immutable baseline prefix.
+    # The real controller may append job53 while this test process is running.
+    head = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
+    raw = subprocess.check_output(['git', '-C', str(root), 'show', head + ':' + native.QUEUE])
+    baseline_raw = (root / native.BASELINE).read_bytes()
+    assert hashlib.sha256(baseline_raw).hexdigest() == native.BASELINE_SHA256
+    baseline = json.loads(baseline_raw)
+    state = json.loads(raw)
+    state['jobs'] = state['jobs'][:len(baseline['original_52_job_hashes'])]
+    state['events'] = state['events'][:len(baseline['original_event_hashes'])]
+    assert len(state['jobs']) == 52
+    assert [native.digest(j) for j in state['jobs']] == baseline['original_52_job_hashes']
+    assert [native.digest(e) for e in state['events']] == baseline['original_event_hashes']
+    return state
+
+
+FROZEN_AUTHOR_PARENT = frozen_author_parent()
+
+
 
 def write(root, path, value):
     p = root / path
@@ -40,8 +60,7 @@ def commit(root):
 
 @pytest.fixture
 def repo(tmp_path, monkeypatch):
-    state = json.loads((ROOT / native.QUEUE).read_text())
-    assert len(state['jobs']) == 52
+    state = copy.deepcopy(FROZEN_AUTHOR_PARENT)
     write(tmp_path, native.QUEUE, state)
     static = ['synthetic-old-a.json', 'synthetic-old-b.json']
     for f in static: write(tmp_path, 'reports/full-corpus-review/' + f, {'fixture': f})
@@ -275,3 +294,12 @@ def test_actual_compiled_candidate_object_cannot_change_under_allocated_ID(repo,
     write(root, adapter.BASE + '/questions.json', bank)
     with pytest.raises(ValueError, match='current-record hash changed'):
         native.candidate_records(root)
+
+def test_fixture_freezes_original_parent_after_real_native_job53_is_appended(repo):
+    root, state, *_ = repo
+    complete_author_job(repo)
+    assert len(state['jobs']) == 53
+    parent = frozen_author_parent(root)
+    assert len(parent['jobs']) == 52
+    assert len(parent['events']) == len(FROZEN_AUTHOR_PARENT['events'])
+    assert parent == FROZEN_AUTHOR_PARENT
