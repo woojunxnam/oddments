@@ -8642,7 +8642,7 @@
         }
       },
       "status": "LEASED",
-      "attempt": 1,
+      "attempt": 2,
       "base_commit": "0b32c46a6acd58a272efc9686008aa1e4e5fffec",
       "inventory_ledger_sha256": "b32f06152f6b98af9da66f5dbfe3d3f8c7cf4388f8d151f821d4f0cffb893b03",
       "created_at": "2026-11-04T10:00:25.067261+00:00",
@@ -8715,15 +8715,15 @@
         "publication_blocker": "ROOT_SEPARATE_16_FROM_ACTUALLY_PUBLISHED_15_SNAPSHOT"
       },
       "actor_provenance": {
-        "actor_id": "/root/independent_inactive25_b",
-        "session_id": "/root/independent_inactive25_b"
+        "actor_id": "/root/recover_inactive25_review",
+        "session_id": "/root/recover_inactive25_review"
       },
       "auditor": "GPT",
-      "auditor_instance": "GPT:/root/independent_inactive25_b:20261104",
-      "controller_independence_basis": "Actual fresh fork-none session; neither N1 body or E25 author, source/engineering R/E, nor actual C31 parent auditor; no inherited positive legal judgments; all25 and related visible questions freshly assessed",
-      "lease_until": "2026-11-04T16:07:28.963338+00:00",
-      "worker_branch": "mission/review-independent-notes-inactive-census-fcfb1af49389eb20-attempt-1",
-      "lease_token": "71a41e6e87130d9df5ffccb1ba2fa10b34d992e1bed5e407623c16c680ee34cf"
+      "auditor_instance": "GPT:/root/recover_inactive25_review:20261104",
+      "controller_independence_basis": "Actual fresh spawned nonauthor/nonparent reviewer; old executor workspace and unsent draft lost. Full body/census/source/related inputs must be read anew.",
+      "lease_until": "2026-11-04T16:46:15.017136+00:00",
+      "worker_branch": "mission/review-independent-notes-inactive-census-fcfb1af49389eb20-attempt-2",
+      "lease_token": "b2c235612d8513778a271098567f909fa1cdc9afc3b41c55009a053f17d3474b"
     }
   ],
   "events": [
@@ -9786,6 +9786,36 @@
         "session_id": "/root/independent_inactive25_b"
       },
       "attempt": 1
+    },
+    {
+      "kind": "LEASE_REVOKED",
+      "at": "2026-11-04T12:46:01.651996+00:00",
+      "job_id": "review-independent-notes-inactive-census-fcfb1af49389eb20",
+      "controller_actor": "/root",
+      "reason": "Previous executor was replaced; unpublished worker workspace and commit are absent in the new environment. Original result not recoverable from GitHub. Revoke lost session at actual current time and assign a genuinely new reviewer without inheriting its conclusions.",
+      "attempt": 1,
+      "lease_token_sha256": "eea9bd000e0eca5de9a682554af730d0a659e8ed7605ed9f2e33b3f691758e1c",
+      "previous_lease": {
+        "actor_provenance": {
+          "actor_id": "/root/independent_inactive25_b",
+          "session_id": "/root/independent_inactive25_b"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT:/root/independent_inactive25_b:20261104",
+        "worker_branch": "mission/review-independent-notes-inactive-census-fcfb1af49389eb20-attempt-1",
+        "lease_until": "2026-11-04T16:07:28.963338+00:00",
+        "controller_independence_basis": "Actual fresh fork-none session; neither N1 body or E25 author, source/engineering R/E, nor actual C31 parent auditor; no inherited positive legal judgments; all25 and related visible questions freshly assessed"
+      }
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-04T12:46:15.017136+00:00",
+      "job_id": "review-independent-notes-inactive-census-fcfb1af49389eb20",
+      "actor": {
+        "actor_id": "/root/recover_inactive25_review",
+        "session_id": "/root/recover_inactive25_review"
+      },
+      "attempt": 2
     }
   ],
   "reassessments": [

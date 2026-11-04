@@ -14093,8 +14093,8 @@
         "MA-EXP-0360": "b5b34e5b94b72cd86df0a94331e218e5e1ad5b70c7c3dec6e137cce85a6f96ce"
       },
       "status": "LEASED",
-      "attempt": 1,
-      "worker_branch": "mission/review-independent-legacy-5fd2d27fe6c887a0-attempt-1",
+      "attempt": 2,
+      "worker_branch": "mission/review-independent-legacy-5fd2d27fe6c887a0-attempt-2",
       "created_at": "2026-11-04T09:33:58.670809+00:00",
       "stage": "independent-legacy",
       "selection_policy": "REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL",
@@ -14103,9 +14103,9 @@
         "site/practice-expansion/publication.json": "0e3dfdedc34b42c21a4a4062fd16993a5c541c39eb7da6c8ce40d1b201b37575",
         "practice_expansion/2026-10-28-representative/selection.json": "196f8cc5088fdf293e5b21b9e566f779ec35ab83100c7e201a4aaa63b2830a09"
       },
-      "worker": "/root/independent_wave11_d",
-      "lease_until": "2026-11-04T15:49:10.331359+00:00",
-      "lease_token": "9f59d293d6d5198e49479dc13d66447bd167684537c561e158c30ed5bf92b368"
+      "worker": "/root/recover_d_review",
+      "lease_until": "2026-11-04T16:46:01.600976+00:00",
+      "lease_token": "1192e7f5db61bc51452c1ace3d3e33c301abb313f46b430030d40c79e7089cba"
     }
   ],
   "events": [
@@ -15006,6 +15006,27 @@
       "at": "2026-11-04T12:40:42.807856+00:00",
       "job_id": "review-independent-legacy-64f5e598bb8bb555",
       "commit": "3c6bd928f8b89a7ecc0bedb291b6b5932550ae5e"
+    },
+    {
+      "kind": "LEASE_REVOKED",
+      "at": "2026-11-04T12:46:01.600912+00:00",
+      "job_id": "review-independent-legacy-5fd2d27fe6c887a0",
+      "controller_actor": "/root",
+      "reason": "Previous executor was replaced; unpublished worker workspace and commit are absent in the new environment. Original result not recoverable from GitHub. Revoke lost session at actual current time and assign a genuinely new reviewer without inheriting its conclusions.",
+      "attempt": 1,
+      "lease_token_sha256": "1bc55298f41ac61b7670972865d1d81f23ae3565b98b9208e76e13a3cb66e321",
+      "previous_lease": {
+        "worker": "/root/independent_wave11_d",
+        "worker_branch": "mission/review-independent-legacy-5fd2d27fe6c887a0-attempt-1",
+        "lease_until": "2026-11-04T15:49:10.331359+00:00"
+      }
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-04T12:46:01.600976+00:00",
+      "job_id": "review-independent-legacy-5fd2d27fe6c887a0",
+      "worker": "/root/recover_d_review",
+      "attempt": 2
     }
   ]
 }
