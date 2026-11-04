@@ -1,7 +1,7 @@
-"""Source-only N1 held activation and sixteenth gate; approvals are absent.
+"""Held N1 source and publication gates bound to immutable retained evidence.
 
 Builder-source approval is separate from publication approval. Both require real
-published15 proof and an actual complete fresh25 review; this module creates none.
+published15 proof and an actual complete fresh25 review.
 """
 import argparse
 import copy
@@ -19,7 +19,16 @@ SOURCE='revisions/notes/held-n1-activation.json'
 MANIFEST='revisions/notes/protected-migration-held-n1.json'
 EDITION='2026-11-04.w3-a-3-held.1'
 SIBLINGS={'w3-a-15','w3-a-16','return-pathways'}
-APPROVED_ACTIVATION_SOURCES={}
+APPROVED_ACTIVATION_SOURCES={('revisions/notes/held-n1-activation.json', '0c3ca7df16bded60f8a097def841fa3b34992e1eb982acc7403f1581627dc6dc'): {'closure': {'path': 'revisions/notes/published15-closures/pr192-full-source-v2.json',
+                                                                                                                               'raw_sha256': '11a17399fd1b76ffb862fdaedb6ef4d6153784256588afa7e14b53ecb3ddf158'},
+                                                                                                                   'review': {'job_id': 'review-independent-notes-inactive-census-fcfb1af49389eb20',
+                                                                                                                              'actor_provenance': {'actor_id': '/root/recover_inactive25_review',
+                                                                                                                                                   'session_id': '/root/recover_inactive25_review'},
+                                                                                                                              'auditor_instance': 'GPT:/root/recover_inactive25_review:20261104',
+                                                                                                                              'report': {'path': 'reports/full-corpus-review/independent-notes/recovery-inactive25-review.json',
+                                                                                                                                         'raw_sha256': '7b9e8e6ea20cd236f8eaadfe9c4c35ad0892b5378dba7ab362b170e46bab0854'},
+                                                                                                                              'result': {'path': 'reports/full-corpus-review/independent-notes/review-independent-notes-inactive-census-fcfb1af49389eb20-result.json',
+                                                                                                                                         'raw_sha256': 'c9299942c02d864bd270a0add93232f00af2480834ddd64019fa20bafbcb2834'}}}}
 APPROVED_MIGRATIONS={}
 
 
