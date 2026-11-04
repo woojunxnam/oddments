@@ -1,9 +1,9 @@
 # Massachusetts MPJE 통합 노트
 
-기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
+기본 편집일: 2026-10-23. 현재 개정판: 2026-11-04.w3-a-3-held.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 79/306절. 누락 지적 0절 · 법규 보류 15절 · 독립 검토의 근거 미확인 17명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 100/306절. 누락 지적 0절 · 법규 보류 19절 · 독립 검토의 근거 미확인 29명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -2783,14 +2783,12 @@ Label은 환자가 실제로 사용할 수 있는 정보여야 한다. 보험 cl
 ## 추가 label 요건과 특별 상황
 
 
-> 교정 후보의 독립 검토는 보존됐지만 활성 본문과 아직 결박되지 않았습니다. 기존 본문·새 후보 모두 현재 credit를 승계하지 않으며 별도 공개 body migration까지 검토 보류합니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/body-v1-c-review.json)
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/recovery-inactive25-review.json)
 
-> - 본문 “제조사 제품을 단순히 다른 용기에 옮겼다는 사실만으로 모든 법적 분류가 동일해지지는 않는다”는 mere repackaging과 compounding 등의 법적 분류가 용기 변경 사실만으로 동일해지지 않는다는 별도 명제를 제시한다. 최종24개 census에는 이 분류 명제가 직접 열거되지 않았다. 008은 compounded 표시·packaging BUD·manufacturer expiry가 다른 정보라는 statement이며, 001의 compounded container label 명제와 함께 읽어도 제조사 제품의 단순 용기 변경이 법적 분류에 미치는 한정을 열거하지 않는다.
-
-> - §21의 elderly cross-reference와 현재19A14의 Older adult 표기가 다르다. 현재60세 정의와 large-print 문구는 읽었지만 용어 변경·승계의 구체 근거를 이번 범위에서 완결하지 않았다. — 두 게시조문 용어 변경의 명시적 승계/적용 관계 추가 확인 필요. 이 한계를 전체 요청자 권리 부정으로 해석하지 않는다.
+> - 실제 §21은 elderly라고 참조하고 현재 §19A14는 Older adult로 게시돼 있다. 두 조문과60세 정의를 새로 읽었으나 변경·승계의 명시적 근거를 이번 범위에서 완결하지 못했다. 원011 finding/blocker와 두 원보고서SHA를 그대로 상속한다. — 두 게시조문 용어 변경의 명시적 승계/적용 관계 추가 확인 필요. 이 한계를 전체 요청자 권리 부정으로 해석하지 않는다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/body-corrections/w3-a-3-v1/census-v2-author-e/census.json)
 
 
 ### Compounded preparation
@@ -2807,9 +2805,9 @@ Compounding 표시, beyond-use date, manufacturer expiration date는 서로 다�
 
 해당 Schedule II·III·IV patient label에는 처방받은 환자 이외의 사람에게 약물을 넘기는 것이 연방법상 금지된다는 경고를 표시한다. 이 경고의 'transfer'는 환자 사이에서 약물을 주고받는 행위에 관한 것으로, pharmacist-to-pharmacist prescription-information transfer와 같은 의미가 아니다. Schedule VI 전체에 federal controlled-drug warning을 법적 필수사항이라고 일률적으로 붙이지 않는다. 
 
-### Opioid/narcotic information
+### Department 지정 환자 정보자료
 
-c.94C §21의 해당 Schedule II·III narcotic/opioid prescription에는 Department가 정한 환자 정보 자료의 제공 의무가 연결된다. Outpatient palliative care, LTCF resident, SUD treatment 등 조문의 예외를 함께 읽는다. Pharmacy가 임의로 만든 일반 leaflet이 모든 지정 자료의 요건을 자동 충족하는 것은 아니다.
+c.94C §21은 pharmacist의 지정 pamphlet 배포 trigger를 “a narcotic or controlled substance contained in schedule II or III”를 dispensing하는 경우로 규정한다. II·III controlled substance를 non-opioid라는 이유만으로 그 배포 대상에서 제외하지 않는다. Outpatient palliative care, LTCF resident, SUD treatment 등 조문의 예외를 함께 읽는다. Pharmacy가 임의로 만든 일반 leaflet이 모든 지정 자료의 요건을 자동 충족하는 것은 아니다.
 
 
 근거:
@@ -3080,6 +3078,20 @@ OTC의 규제 대상 여부는 별도로 확인한다. 예를 들어 acetaminoph
 ## 용기의 재사용과 안정성
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/wave10-followup-c-review.json)
+
+> - 인용된(c)원문에는재사용금지만있고원body가말한그조문내reuse예외는확인되지않는다.CPSC2023p13도refillbottle/vialreuse에No라고답한다.명시적예외가있는것처럼읽히는원KO는수정전보류한다. — 원body의“1700.15(c)의 reuse 제한과 예외”는확인된조문/공식FAQ의범위를초과한다.허용예외를추측하지말고정확한명시근거나한정문구가필요하다.
+
+> - Lightresistance라는제품별요구는일반incorporation존재만으로각제품/USP정의를모두확인했다고말할수없다.원문은제품을특정하지않아기존차단을유지한다. — 금지된USP전문을확보하지않았고제품별FDA라벨도특정되지않았다.일반의무만확인되며각light-resistanttechnicalrequirement는미확인.
+
+> - Tight/well-closed의정의·성능과제품별적용은별도기술자료가필요하다.공개CMR의준수의무확인이그기술전체의검증은아니다. — 특정제품/허용된기술근거가없어tight/well-closed요건전체를검증하지못함.USP원문반입안함.
+
+> - 수분보호는제품·포장별문제이다.이름없는모든약물의moisture안정성을한괄검증할수없으므로기존미확정범위를유지한다. — 각제품의수분안정성/FDA라벨/적합포장자료가특정되지않아실제요건미확인.
+
+> - Originalcontainer를요구하는제품은제품별라벨이필요하다.현재body가제품을정하지않으므로모든원용기요건을지지하는척하지않는다. — 제품별라벨/원용기보관조건미특정.일반incorporation을개별제품허용으로대체하지않음.
+
+> - NonCR요청이모든화학적안정성을입증한다는규칙은없다.하지만각제품의구체기한·보호성능은확보하지못했으므로일반원칙과제품별미확인을구분해차단한다. — 전제품chemicalstability/USPtechnical조건은미확인.원자료가허용범위에서제품별로필요하다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 6개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
@@ -3101,8 +3113,12 @@ Light-resistant, tight/well-closed, moisture protection, original-container 요�
 ## Reusable dose planners
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/census-wave5-v2-a-review.json)
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+> - 직접 읽은 I(6)는 60-day supply 상한이고 9.01(12)는 expired/substandard drug의 일반 금지다. 따라서 60일을 어떤 약의 안정성 보증으로 인증할 수 없다. 다만 본문이 요구하는 실제 약물·해당 planner/container의 안정성 확인에는 제품명, 재료, 보관조건, 제조사 label/expiry가 필요하고 이 입력에는 없다. 원 C32의 개별 제품 안정성·더 짧은 실제 한도 미확정 판단을 해소하지 않고 그대로 유지한다. Compliance-packaging II(9)(d)/9.08(5)(d)의 BUD 공식을 reusable I의 제품별 안정성 증거로 전용하지 않았다. — 약물과planner재료가특정되지않아제품별안정성·실제manufacturerexpiry적용을확정하지못함.60일을제품안정성수치로간주하지않는다.
+
+
+> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census-v2-author-g/census/w3-a-15-census-v2.json)
 
 
 환자 요청에 따른 reusable dose planner는 지정된 clean area와 적절한 written procedures, 손위생·contamination control, medication identification·stability를 고려한다. 다른 pharmacy가 이미 조제한 약을 가져와 혼합 포장하는 것과 해당 pharmacy의 적법한 조제 경로를 구별한다. 
@@ -3122,8 +3138,16 @@ Dose planner에 넣을 약이 해당 container에서 안정한지 확인하고 �
 ## Single-drug·multi-drug compliance packaging
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/census-wave5-v2-b-review.json)
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+> - 일반 incorporation 의무는9.08(1)(g)에서 새로 확인했다. 그러나 적용 USP container·packaging technical requirements 전체를 특정하거나 읽지 않았으므로 원 SOURCE_BLOCKED 범위를 유지한다. — 원 blocker 유지: 허용된공개제품자료나특정technicalrequirement가없고USPfulltext는읽거나보존하지않았다.
+
+> - 게시CMR9.08(3)(b)의 CII/CIII 금지, 현행Policy의 Unless otherwise prohibited 및2023 Board의 maintenance 허용 승인기록을 모두 직접 읽었다. 승인기록 존재가 현재 게시 규정의 자동 폐지나 모든controlled약의 통합 허용을 증명하지 않으므로 원 LEGAL_HOLD를 그대로 유지한다. — 원 LEGAL_HOLD 유지: 공식게시CMR금지와Board의maintenanceCII/CIII허용개정설명의관계를해소하는명시적현재통합근거가없다.원HOLD범위는해소되지않았고공식확인/정확한현행적용범위가필요하다.
+
+> - 정책II(9)(d)/9.08(5)(d)의 BUD는 manufacturer shortest expiration 또는60일보다 길 수 없음을 확인했으나 특정 drug/material 조합이나 실제 제품별 stability 자료는 확보하지 않았다. 일반60일 규칙으로 모든 제품 안정성을 인증하지 않고 원 SOURCE_BLOCKED를 유지한다. — 원 blocker 유지: 각제품의라벨·재포장안정성/USPtechnical자료가특정·확보되지않아모든실제stability검증은미완료.
+
+
+> 저자 주장별 검토에서 근거 확인 보류 주장 4개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave5-census-v2-author-g/census/w3-a-16-census-v2.json)
 
 
 ### 공통 조건
@@ -3153,6 +3177,10 @@ Policy 경로에서도 CII prescription validity·no-refill·partial-fill 조건
 ## Compliance pack의 BUD와 label
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/wave10-followup-c-review.json)
+
+> - 특정drug의shorterstability기간은제품/조건자료없이는수치로확정할수없다.일반60일/expiryceiling확인만으로그미확인을제거하지않는다. — drug및재료/보관조건이특정되지않아제품별shorterstability기한을확인하지못함.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
@@ -3174,6 +3202,10 @@ Medication list가 바뀌면 실제 pack 내용, label, patient directions와 ph
 ## 보완 판단: policy의 생략은 CII/CIII 허용의 증거가 아닙니다
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/wave10-followup-c-review.json)
+
+> - 정책에서금지를반복하지않았다는사실만으로규정폐지를추론할수없다는좁은논리는타당하다.그러나원body는이를별도명시변경이확인되지않았다는암기지침으로확장한다.현재확보Nov2023minutes는maintenanceII/III허용개정을명시하므로이적용판단을그대로KEEP하지않는다. — 게시금지와명시적Boardmaintenance허용기록의관계를해소해야한다.허용/금지를일괄확정하지말고편집상적용판단의근거·한계를수정한뒤현재공식적용범위를확인할것.
+
 
 게시된 247 CMR 9.08(3)(b)는 multi-drug-single-dose package에 Schedule II 또는 III를 넣어 dispense하는 것을 금지합니다. 2025년 개정 Policy 2023-01의 multi-drug 문단은 **Unless otherwise prohibited**라는 전제를 둡니다.
 
@@ -3190,8 +3222,14 @@ Medication list가 바뀌면 실제 pack 내용, label, patient directions와 ph
 ## Return to stock·환자 반환·같은 환자 재포장
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/return31-review/review-final.json)
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave3-census.json)
+> - 일반 expiry·60일 ceiling과 labeling 적합성은 제품별 stability/BUD 이전 및 반환 보관조건을 확정하지 않는다. 원026 SOURCE_BLOCKED를 native carry 그대로 유지하며 승격하지 않는다. — 제품별stability/BUD transfer와 실제반환보관조건 및 제품FDA labeling을 전부대조하지못함. 기존native38 SOURCE_BLOCKED는이번census-only경로로승격불가.
+
+> - 새 statement는 본문의 수량 추적을 직접 열거하므로 원 누락을 해소한다. 독립적으로 다시 읽은 (4)(c)는 accounts for/documents이며 (5)(b)는 별도 label total quantity 의무이다. 이 본문 명제의 독립적 수량 기록 필드·법적 강도·정확한 범위를 확정할 추가 공식 근거가 없어 SOURCE_BLOCKED로 유지한다. — Repackaging 기록의 accounts for/documents와 package label의 total quantity는 별개 요구이다. 본문의 수량 추적 명제에 관한 독립적 법적 강도·정확한 적용 범위를 별도 공식 근거로 확정하지 못했다. 운영 권고인지 법적 의무인지도 미확정이므로 KEEP로 판단하지 않는다.
+
+
+> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/return-quantity-census-v4-author-recovery/census.json)
 
 
 반환이라는 이름이 같아도 약이 환자에게 이미 교부되었는지와 다음 목적이 다릅니다.
@@ -3414,6 +3452,10 @@ REMS 제거 후에도 pharmacy는 적법한 prescription, dose·interaction revi
 
 ## Mifepristone REMS와 Massachusetts access
 
+
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/wave10-followup-d-review.json)
+
+> - 기존 author SOURCE_BLOCKED 이력을 그대로 보존한다. 새 primary에서 Prescriber Agreement 수령/보유 확인, 그 forms의 record 유지, dispensing/shipping/process 기록 유지라는 일반 의무는 직접 확인했다. 그러나 원 census의 &#x27;구체 보존조건 전체&#x27;는 대상·기간·형식이 불특정하고 이 조항에 숫자 보존기간이 없으므로 그 포괄 명제 전체를 검증 완료로 승격하지 않는다. — 원 census가 말하는 구체 보존조건 전체의 범위·기간·형식 불특정. 일반 유지 의무는 새 primary로 확인했으나 포괄 명제 전부의 검증으로 확대하지 않는다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
