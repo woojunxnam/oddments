@@ -87,7 +87,7 @@ def test_inherited_all_correct_sata_is_not_mislabeled_as_realistic():
 
 def test_unreviewed_questions_not_credited_and_independence_not_claimed():
     progress = read("reports/full-corpus-review/progress.json")
-    assert progress["current_questions"] == 2346
+    assert progress["current_questions"] == 2349
     assert progress["question_ids_with_review_records"] >= 245
     assert progress["legal_review_counts"]["NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW"] <= 2101
     assert progress["author_review_records_by_file"]["vax05-14-author-review.json"] == 44
