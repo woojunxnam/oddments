@@ -43,7 +43,8 @@ jobs:
   revision:
     if: github.event_name != 'workflow_run'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # Retained-source checks alone exceeded 20 minutes; retain every gate and step.
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

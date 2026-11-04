@@ -233,11 +233,11 @@ def protected_copy(tmp_path):
     # epoch. Copying current revisions would duplicate the full retained old
     # tree in every fixture and import the later N1/16 layer into M tests.
     # All module-level ROOT/build() checks continue to target the actual live tree.
-    from published15_test_view import published15_root
+    from published15_test_view import published15_root, mutable_copytree
     source_root=published15_root(ROOT)
     manifest=json.loads((source_root/'reports/representative-rewrite/protected-baseline.json').read_text())
     safety='reports/full-corpus-review/canonical-q0012-withdrawal'
-    shutil.copytree(source_root/safety,tmp_path/safety)
+    mutable_copytree(source_root/safety,tmp_path/safety)
     for relative in ['reports/representative-rewrite/protected-baseline.json',
                      'site/generated/preview_allowlist.json']:
         dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
@@ -245,7 +245,7 @@ def protected_copy(tmp_path):
     for row in manifest['files']:
         dest=tmp_path/row['path']; dest.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(source_root/row['path'],dest)
-    shutil.copytree(source_root/'revisions',tmp_path/'revisions')
+    mutable_copytree(source_root/'revisions',tmp_path/'revisions')
     dest=tmp_path/'site/notes/build.json';dest.parent.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(source_root/'site/notes/build.json',dest)
     # This fixture tests the original fourteen guards in their exact PR190
@@ -269,7 +269,7 @@ def protected_copy(tmp_path):
                 dest=tmp_path/path;dest.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copyfile(source_root/path,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
-    shutil.copytree(source_root/evidence, tmp_path/evidence)
+    mutable_copytree(source_root/evidence, tmp_path/evidence)
     paths = set()
     for activation_path in (source_root/'revisions/notes').glob('*-activation.json'):
         activation = json.loads(activation_path.read_bytes())

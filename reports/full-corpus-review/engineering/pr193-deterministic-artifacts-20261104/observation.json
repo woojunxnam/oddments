@@ -1,0 +1,91 @@
+{
+  "observed_at_utc": "2026-11-04T16:05:09.099669+00:00",
+  "source_commit": "98984834df2ad202a02ab8cf45add24fe67b48d0",
+  "purpose": "ACTUAL_CI_DRIFT_DIAGNOSIS_AND_READ_ONLY_FIXED_QA_GATES_NOT_LEGAL_OR_PUBLICATION_APPROVAL",
+  "qa_head": "2a7f76e5a2cb785a60cf78dc125bd4a7715f4f7a",
+  "qa_tracked_files_changed_by_worker": false,
+  "qa_head_changed_by_worker": false,
+  "original_ci_failures": [
+    {
+      "head_prefix": "7006c5c4",
+      "cause": "Generated representative editorial ledger JSON/Markdown drift",
+      "log": "ci7006-representative-failure.log"
+    },
+    {
+      "head_prefix": "2a7f76e5",
+      "cause": "Near-candidate input digest drift",
+      "log": "ci2a7-representative-failure.log"
+    }
+  ],
+  "actual_completed_gates": {
+    "passed": 9,
+    "failed": 1,
+    "total": 10,
+    "seconds": 1798.01,
+    "runs": "check-runs.json",
+    "only_failure": "Existing representative similarity file still has the previous input bank digest. Every score, record and neighbor is unchanged."
+  },
+  "candidate_commits": [
+    {
+      "commit": "845ae28e2546a4fe65de77aa91f5979e704334c8",
+      "paths": [
+        "reports/representative-rewrite/audit-ledger.json",
+        "reports/representative-rewrite/audit-ledger.md"
+      ],
+      "scope": "Generated source-bound notices/count/input metadata only; original355 question/triage records and default202 unchanged."
+    },
+    {
+      "commit": "98984834df2ad202a02ab8cf45add24fe67b48d0",
+      "paths": [
+        "reports/representative-rewrite/near-candidates.json"
+      ],
+      "scope": "One input_sha256 value only;2788 records/all scores/counts/neighbors unchanged."
+    }
+  ],
+  "final16_manifest_rebinding_required_for_these_artifact_bytes_only": false,
+  "production_guard_changes": 0,
+  "canonical_release_credit": 0,
+  "external_publication": {
+    "status": "NOT_COUNTED_REQUIRES_RUN_ON_NEW_PERFORMANCE_SOURCE",
+    "log": "external-publication.log",
+    "orchestrator_exit_code": 130,
+    "producer_exit_code": null,
+    "reason": "Root requested pause after current checks for verified performance-source update. Orchestrator was stopped; producer had completed before orchestrator result capture. The unrecorded producer exit is not inferred from its output or counted as PASS."
+  },
+  "browser_regressions": "NOT_RUN_YET_ROOT_PRIORITY_CHANGED_TO_ALL_DETERMINISTIC_GATES",
+  "environment_versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.8.0",
+    "playwright": "1.57.0",
+    "pytest": "8.4.2",
+    "jsonschema": "4.26.0",
+    "mistune": "3.2.1"
+  },
+  "limitations": [
+    "9 PASS and1 genuine FAIL are fixed-QA2a7 pre-performance observations, not final candidate fullQA.",
+    "Root controller alone may update QA HEAD, apply artifacts and rerun all checks/fullpytest/browser on the next exact candidate.",
+    "Original old preimages, current frozen1781/14/15, policies, banks and all native evidence remain unchanged."
+  ],
+  "raw_evidence_sha256": {
+    "representative-audit-ledger.log": "62c57145b600c7cd5ad9df33cb78f7575f0062f7c93f57176cce8f04a05b9f91",
+    "final16-binding-impact.json": "38b91fe219d2475a726635687bd53016a245973ce2e649539961e3c1f688ebd7",
+    "ci2a7-representative-failure.log": "9572c2355fcf2c346ca6af0cd2058a7b122e9c2b6f883627f62b1a0d77d76d89",
+    "check-controller.py": "c1badfc119dee14637c44bbb268939503678a7b25037282ba20075615fd2d1b6",
+    "ultimate-notes.log": "ff61ee38367dfe13d1efc2ab2f1b60bda8f85f9779e767adad77bd582b19eaed",
+    "full-protection.log": "7cff7189d59e883b13cee45d3690505eab68f32a96da58aecdba13ec094b7e97",
+    "exam-study.log": "07d314d31ec3e0faff637b0e6101803e1baeaceff657837be4f08f23361fbce5",
+    "audit-ledger-diff.json": "45ff6ec0abd1b6b50f32bf193e20c6c5eafecbaf4748b667667547e28653b4f8",
+    "quality-javascript.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ci7006-representative-failure.log": "3df32a23e8936090d3f2cf6081f1662707600f8d7e6303fed001c4c87eea7d64",
+    "representative-similarity.log": "e2a6e29f14eab8765cb1482f925bc7ec6202fd9ab5d3d36a46133fef77a61cce",
+    "near-candidates-diff.json": "7823d748a76ecd4cc8dd729d24e57f7d50a9c641cb8d416b848d57ae0371eb18",
+    "quality-status.log": "6db6035f308776055a79b2ec9f649720f224944db0f0319c5103a854e763bdbe",
+    "full-corpus.log": "cad3e63341feae9372bf38288c162ac5aecb61cb3ff1c146a2c85f0456a2da2d",
+    "refresh.log": "115f990a5bbacd2a7c764660ea08fefb39394573c8cfadc5ae2eb954ad41be4b",
+    "environment-install.log": "f8690bf251769f503b8fe50b7577ad10a24017df41203c71ebd6ec4e52e16df3",
+    "check-runs.json": "d204b93593428bae2d40cdf47d7b7ce3c62b515a04b9a291808cc538d67469b2",
+    "external-publication.log": "ee92e916556b40d1e239773f3450750561b0aa03e400ba766f7497f4ba6db724",
+    "representative-rewrites.log": "8638f19cd579ba1a206fc0bf6cf24f3a74d0e33f74b8f9f2db8baf38f1cfa68f"
+  }
+}
