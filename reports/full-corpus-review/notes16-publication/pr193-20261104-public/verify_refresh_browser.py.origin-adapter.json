@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-04T20:42:29.751917+00:00",
+  "source_path": "scripts/verify_refresh_browser.py",
+  "source_sha256": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d",
+  "adapted_sha256": "e4f7409260511870f2c821e0ba646b9d4389b77db05b69207c624e80fd1adb4c",
+  "origin": "https://woojunxnam.github.io/oddments/",
+  "removed_server_selection": "    if not a.inline_preview:\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(a.site)))\n        threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'\n    else:base='https://refresh-preview.invalid/'",
+  "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+  "assertions_changed": false,
+  "isolated_headless_context": true,
+  "real_user_browser_profile_used": false,
+  "limitation": "Chromium headless viewport checks, not physical iOS/Android/Safari."
+}

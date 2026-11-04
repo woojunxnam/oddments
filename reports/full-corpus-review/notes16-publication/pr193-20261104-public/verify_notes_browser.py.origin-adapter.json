@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-04T20:41:08.819338+00:00",
+  "source_path": "scripts/verify_notes_browser.py",
+  "source_sha256": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1",
+  "adapted_sha256": "9bdac52c731026eac2817b2b0fc5459f5917f8a6d44a58db97624741aa2eadc7",
+  "origin": "https://woojunxnam.github.io/oddments/",
+  "removed_server_selection": "    if not args.inline_preview:\n        class Handler(http.server.SimpleHTTPRequestHandler):\n            def log_message(self,*args):pass\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(SITE)))\n        threading.Thread(target=server.serve_forever,daemon=True).start()\n        base=f'http://127.0.0.1:{server.server_port}/'\n    else:base=''",
+  "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+  "assertions_changed": false,
+  "isolated_headless_context": true,
+  "real_user_browser_profile_used": false,
+  "limitation": "Chromium headless viewport checks, not physical iOS/Android/Safari."
+}
