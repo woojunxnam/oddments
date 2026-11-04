@@ -28,7 +28,9 @@ def main():
     revision = data['representative_revision']
     by_id = {q['question_id']: q for q in data['questions']}
     new = [by_id[i] for i in revision['new_ids']]
-    first = new[0]
+    recommended_ids = set(data['quality_selection']['recommended_ids'])
+    rewrite_default_ids = {q['question_id'] for q in new} & recommended_ids
+    first = next(q for q in new if q['question_id'] in rewrite_default_ids)
     legacy_id = first['revision_of']
     legacy_attempt = dict(correct=False, selected=[by_id[legacy_id]['choices'][0]['id']], at='2026-10-27T20:00:00Z', edition='2026-10-27.practice3-quality')
     seed = dict(v=1, bookmarks=[legacy_id, 'MA-REV-0096'], attempts={legacy_id: legacy_attempt}, theme='light', large=False)
@@ -73,7 +75,6 @@ def main():
             expect(page.locator('#collection')).to_have_attribute('aria-describedby', 'collection-help')
             expect(page.locator('#filter-summary')).to_have_attribute('role', 'status')
             expect(page.locator('#filter-summary')).to_have_attribute('aria-live', 'polite')
-            recommended_ids = set(data['quality_selection']['recommended_ids'])
             for scope in ['recommended', 'all']:
                 page.locator('#scope').select_option(scope)
                 for collection in ['', *[group['id'] for group in data['collections']]]:
@@ -183,7 +184,7 @@ def main():
             outside = next(q for q in new if q['question_id'] not in linked)
             page.goto(base + 'practice-expansion/?bank=rewrite&note=' + unit_id + '#' + outside['question_id'], wait_until='networkidle')
             assert diag()['active'] == outside['question_id']
-            assert set(diag()['filteredIds']) == linked & set(revision['new_ids'])
+            assert set(diag()['filteredIds']) == linked & rewrite_default_ids
             expect(page.locator('#note-context-help')).to_contain_text('현재 열린 문항은 이 절의 연결 문항이 아닙니다')
             page.locator('#query').fill('no-matching-filter-for-note')
             page.locator('#next').click()
@@ -202,12 +203,12 @@ def main():
 
             page.goto(base + 'practice-expansion/?bank=rewrite', wait_until='networkidle')
             for button, maximum in [('practice', 20), ('timed', 120)]:
-                ceiling = min(maximum, len({q['family_id'] for q in new}))
+                ceiling = min(maximum, len({by_id[qid]['family_id'] for qid in rewrite_default_ids}))
                 assert diag()['filterSummary']['standardCeiling' if button == 'practice' else 'timedCeiling'] == ceiling
                 page.locator('#' + button).click()
                 observed = diag()
                 assert 0 < len(observed['sessionIds']) <= ceiling
-                assert set(observed['sessionIds']) <= set(revision['new_ids'])
+                assert set(observed['sessionIds']) <= rewrite_default_ids
                 assert len(observed['sessionFamilies']) == len(set(observed['sessionFamilies']))
                 expect(page.locator('#scope')).to_be_disabled()
                 expect(page.locator('#collection')).to_be_disabled()
@@ -261,7 +262,10 @@ def main():
                 ok('identified archive defects show explicit warnings alongside any replacement links without rewriting old answer keys or attempts')
             page.goto(base + 'practice-expansion/?bank=rewrite', wait_until='networkidle')
             expect(page.locator('#collection')).to_have_value('representative-20261028')
-            assert diag()['filtered'] == len(new)
+            # A rewrite collection contains both current defaults and archive-only candidates.
+            assert set(diag()['filteredIds']) == {q['question_id'] for q in new} & recommended_ids
+            page.locator('#scope').select_option('all')
+            assert set(diag()['filteredIds']) == {q['question_id'] for q in new}
             page.set_viewport_size({'width': 320, 'height': 900})
             for q in new:
                 # Exercise actual form controls and both grading outcomes for every new item.

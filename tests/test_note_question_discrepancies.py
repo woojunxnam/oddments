@@ -191,7 +191,12 @@ def test_all_eleven_derived_holds_preserve_actual_old_keep_and_negative_opinions
     rows, selection = actual_outputs
     baseline = {r['question_id']: r for r in map(json.loads,
         (ROOT / 'reports/full-corpus-review/question-ledger.jsonl').read_text().splitlines())}
-    assert len(rows) == len(baseline) == 2346
+    from build_sata_remediation_candidates import ALLOCATION
+    allocation = json.loads((ROOT / ALLOCATION).read_bytes())
+    preserved_ids = set(allocation['public_question_record_hashes'])
+    candidate_ids = {r['question_id'] for r in allocation['allocations']}
+    assert len(preserved_ids) == 2346 and len(candidate_ids) == 3
+    assert set(rows) == set(baseline) == preserved_ids | candidate_ids
     assert sum(rows[qid]['before_note_link_discrepancy_hold']['disposition'] == 'KEEP'
                for qid in links.CHOICES) == 6
     for qid, old in baseline.items():
@@ -200,11 +205,15 @@ def test_all_eleven_derived_holds_preserve_actual_old_keep_and_negative_opinions
             assert row == old
             continue
         assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
-        assert row['before_note_link_discrepancy_hold'] == old
+        # Regeneration is idempotent after these holds have already been published.
+        if 'before_note_link_discrepancy_hold' in old:
+            assert row == old
+        original = old.get('before_note_link_discrepancy_hold', old)
+        assert row['before_note_link_discrepancy_hold'] == original
         for field in ('author_disposition', 'independent_legacy_legal_assessment',
                       'independent_legacy_realism_assessment', 'reviewer_provenance',
                       'answer_key_assessment', 'choice_by_choice_findings'):
-            if field in old: assert row[field] == old[field]
+            if field in original: assert row[field] == original[field]
         assert row['note_link_discrepancy_hold']['question_audit_credit'] == 0
     assert not set(links.CHOICES) & set(selection['recommended_ids'])
 

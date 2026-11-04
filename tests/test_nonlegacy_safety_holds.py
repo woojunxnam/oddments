@@ -128,6 +128,21 @@ def test_true_independent_failure_can_contain_but_pass_cannot(evidence):
 
 def derived_selection(e):
     baseline_build=builder.build()
+    # Retain every live containment except this fixture's explicit same-ID replacement.
+    # Replacing the whole set would silently restore native-negative REV0026/0027
+    # while their independent archive warnings correctly remain in force.
+    existing=baseline_build[builder.BASE/'selection.json']['safety_holds']
+    replaced={h['question_id'] for h in e['holds']}
+    combined=[h for h in existing if h['question_id'] not in replaced]+e['holds']
+    for hold in existing:
+        if hold['question_id'] in replaced:
+            continue
+        relative=hold['review_source'];target=e['root']/relative
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes((ROOT/relative).read_bytes())
+    write(e['root']/builder.NONLEGACY_HOLDS,
+          dict(schema_version='nonlegacy-default-safety-holds/1',holds=combined))
+    e['combined_holds']=combined
     original_loader=builder.load_safety_holds
     def fixture_loader(by_id,previous,rewrites,legacy,defaults,hashes,root=None):
         return original_loader(by_id,previous,rewrites,legacy,defaults,hashes,e['root'])
@@ -141,21 +156,22 @@ def test_builder_separates_counts_and_preserves_every_raw_question(evidence):
     e=evidence
     before,result,s=derived_selection(e)
     old=before[builder.BASE/'selection.json']
-    held={h['question_id'] for h in e['holds']}
+    held={h['question_id'] for h in e['combined_holds']}
     candidates = set(old['recommended_ids']) | {h['question_id'] for h in old['safety_holds']}
     assert set(s['recommended_ids']) == candidates - held
     assert s['stats']['recommended'] == len(candidates) - len(held)
     assert s['stats']['previous_quality']==96
-    assert s['stats']['previous_quality_default']==95
-    assert s['stats']['previous_quality_safety_held']==1
+    previous_held=held & set(old['previous_quality_ids'])
+    assert s['stats']['previous_quality_default']==96-len(previous_held)
+    assert s['stats']['previous_quality_safety_held']==len(previous_held)
     assert s['stats']['rewrite_safety_held']==1
-    assert s['stats']['rewrite_default']==len(s['new_ids'])-1
+    assert s['stats']['rewrite_default']==len(s['new_ids'])-s['stats']['rewrite_archive_only_candidates']-1
     for key in ['legacy_representatives_remaining','held_from_default','baseline_legacy_representatives',
                 'newly_authored_replacements','replaced_by_existing_quality','available_total']:
         assert s['stats'][key]==old['stats'][key]
     assert s['holds']==old['holds'] and s['previous_quality_ids']==old['previous_quality_ids']
     assert result[builder.BASE/'questions.json']['questions']==before[builder.BASE/'questions.json']['questions']
-    assert builder.validate_nonlegacy_selection(s,e['baseline'],e['by_id'],e['root'])==e['holds']
+    assert builder.validate_nonlegacy_selection(s,e['baseline'],e['by_id'],e['root'])==e['combined_holds']
     tampered=copy.deepcopy(s)
     tampered['recommended_ids'].remove('MA-REV-0001')
     with pytest.raises(ValueError,match='explicit replacement/hold'):
@@ -178,11 +194,11 @@ def test_attach_rechecks_evidence_and_raw_records_instead_of_delivery_metadata(e
     with patch.object(practice_quality,'ROOT',e['root']):
         data=practice_quality.attach(copy.deepcopy(original),dict(path=selection_path,sha256=sha))
     assert data['questions']==original['questions']
-    assert data['representative_revision']['safety_holds']==e['holds']
+    assert data['representative_revision']['safety_holds']==e['combined_holds']
     assert len(data['quality_selection']['new_ids'])==96
     assert len(data['representative_revision']['previous_quality_ids'])==96
     html=render(data)
-    assert '기본 포함 95개·별도 안전 보류 1개' in html
+    assert f"기본 포함 {s['stats']['previous_quality_default']}개·별도 안전 보류 {s['stats']['previous_quality_safety_held']}개" in html
     assert 'QC.chaos(Q,count)' in html and "KEY='oddments.mpje.practice.v1'" in html
     # Execute the actual generated warning function for both previous96 and MA-RW.
     function=next(line for line in html.splitlines() if line.startswith('function revisionNotice('))
@@ -228,19 +244,18 @@ def test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses(eviden
     assert updated['counts']['implementation_statuses']==old['counts']['implementation_statuses']
     assert updated['counts']['original_representatives']==355
     assert updated['counts']['previous_quality_retained']==96
-    assert updated['counts']['previous_quality_default']==95
-    assert updated['counts']['previous_quality_safety_held']==1
+    assert updated['counts']['previous_quality_default']==selection['stats']['previous_quality_default']
+    assert updated['counts']['previous_quality_safety_held']==selection['stats']['previous_quality_safety_held']
     assert updated['counts']['rewrite_safety_held']==1
-    # Replace the live safety-hold set with this fixture's two holds. The
-    # repository may already contain real, evidence-bound safety holds.
+    # Merge the fixture with live source-bound holds; never restore other negatives.
     assert updated['counts']['current_default'] == len(selection['recommended_ids'])
     assert updated['counts']['current_default'] == (
-        old['counts']['current_default'] + old['counts']['nonlegacy_safety_held_from_default'] - 2)
+        old['counts']['current_default'] + old['counts']['nonlegacy_safety_held_from_default'] - len(e['combined_holds']))
     assert [r['editorial_triage'] for r in updated['questions']]==[r['editorial_triage'] for r in old['questions']]
     rwrow=next(r for r in updated['questions'] if r['implementation']['replacement_question_id']=='MA-RW-0001')
     assert rwrow['implementation_status']=='REWRITTEN_NEW_ID'
     assert rwrow['implementation']['replacement_is_in_current_default'] is False
     assert rwrow['implementation']['replacement_default_safety_hold']==e['holds'][1]
     text=ledger.render_markdown(updated).decode()
-    assert '기본 목록에는 95개를 포함하고 1개는 별도 안전 보류' in text
+    assert f"기본 목록에는 {selection['stats']['previous_quality_default']}개를 포함하고 {selection['stats']['previous_quality_safety_held']}개는 별도 안전 보류" in text
     assert 'MA-RW-0001 (별도 안전 보류)' in text
