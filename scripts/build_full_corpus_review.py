@@ -752,7 +752,8 @@ def build():
             'w4-a-20': 'reports/full-corpus-review/note-wave12-census.json'}))
     from notes_census_reassessment import registered_specs
     from notes_body_reassessment import registered_specs as registered_body_specs, ordered_specs
-    census_specs.extend(ordered_specs(ROOT,registered_specs(ROOT,effective_notes)+registered_body_specs(ROOT,effective_notes)))
+    from notes_inactive_census_successor import registered_specs as registered_inactive_specs
+    census_specs.extend(ordered_specs(ROOT,registered_specs(ROOT,effective_notes)+registered_body_specs(ROOT,effective_notes)+registered_inactive_specs(ROOT,effective_notes)))
     census_units, census_claims = compose_note_censuses(census_specs, effective, by_id, ROOT)
     complete_census_units = {uid for uid, unit in census_units.items() if
         unit['census_status'] == 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'}
