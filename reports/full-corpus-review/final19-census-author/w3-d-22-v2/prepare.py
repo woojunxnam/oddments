@@ -1,0 +1,43 @@
+"""Author-only second omission preparation; no fabricated native predecessor."""
+import copy,json,subprocess,sys
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[4];sys.path.insert(0,str(ROOT/'scripts'))
+import note_review_queue as q
+P='reports/full-corpus-review/final19-census-author/w3-d-22-v2/'
+COMMIT='bf49d56fc5cfd7501a5570696fc97a4d5e929152'
+REVIEW='reports/full-corpus-review/independent-notes/final19-b/review-independent-notes-reassessment-95149f7a796845b2/'
+AUTHOR={'actor_id':'/root/notes101_omission_census_author','session_id':'notes101-omission-census-author-actual-20261104'}
+def blob(commit,path):return subprocess.check_output(['git','show',commit+':'+path],cwd=ROOT)
+def save(path,raw):
+ dst=ROOT/path;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(raw);return q.raw_sha(raw)
+def write(path,obj):return save(path,q.encoded(obj))
+rawreport=blob(COMMIT,REVIEW+'report.json');assert q.raw_sha(rawreport)=='ce94efe674a296f6da2fc43ea018bc4fef1414169355a0711819fe9a6bc2bbdf'
+report=json.loads(rawreport);review=report['records'][0];assert review['unit_id']=='w3-d-22' and review['completeness']=='OMISSIONS_FOUND' and len(review['omissions'])==2
+save(P+'inputs/final19-b-report.json',rawreport)
+b=review['binding'];oldraw=blob('HEAD',b['census_path']);assert q.raw_sha(oldraw)==b['census_sha256'];old=json.loads(oldraw)
+body=blob('HEAD','reports/full-corpus-review/notes120-census-author/bodies/w3-d-22.txt');assert q.raw_sha(body)==b['body_sha256'];save(P+'body.txt',body)
+assert len(old['claims'])==17 and {c['claim_id']:q.digest(c)for c in old['claims']}==b['claim_record_sha256s'] and q.digest(old['units'][0])==b['census_unit_record_sha256']
+ss=copy.deepcopy(old['sources']);new_sources={};retained=[]
+for key in ['cmr9','ept-current']:
+ inventory=report['source_inventory'][key];meta=json.loads(blob(COMMIT,REVIEW+'sources/'+key+'.meta.json'));paths={}
+ for label,suffix in [('raw','.raw'),('text','.txt'),('metadata','.meta.json')]:
+  original=REVIEW+'sources/'+key+suffix;raw=blob(COMMIT,original);path=P+'sources/'+key+suffix;sha=save(path,raw);expected=inventory['assets'][{'raw':'raw','text':'txt','metadata':'meta.json'}[label]]['raw_sha256'];assert sha==expected
+  if label=='raw':assert raw.startswith(b'%PDF-')and sha==meta['raw_sha256']
+  paths[label+'_path']=path;paths[label+'_sha256']=sha;retained.append({'original_commit':COMMIT,'original_path':original,'path':path,'raw_sha256':sha,'original_bytes_preserved':True})
+ source={'source_id':'final19-v2-author-'+key,'source_type':'PUBLIC_OFFICIAL','official_url':inventory['official_url'],'source_evidence':paths['raw_path'],'source_evidence_sha256':paths['raw_sha256'],'text_evidence_path':paths['text_path'],'text_evidence_sha256':paths['text_sha256'],'retrieval_metadata_path':paths['metadata_path'],'retrieval_metadata_sha256':paths['metadata_sha256'],'retained_from_commit':COMMIT,'retained_original_base':REVIEW+'sources/'+key,'law_checked_date':'2026-11-04','author_read_date':'2026-11-04','exact_section':'247 CMR9.01(9);9.16(7)(a),(8);9.17(1) opening,(f),(i),(2)'if key=='cmr9'else'Policy2020-08 I(A)–(B),II(A)','version_or_effective_date_status':'Mass.Register1536/2024-12-06 표시. 각 조항의 별도 효력일과 이후 개정 이력 전부는 확정하지 않았다. 2026-11-04 보존 공식 원문 저자 대조.'if key=='cmr9'else'Policy2020-08 adopted2020-07-31. 별도 시행일과 이후 개정 이력 전부는 확정하지 않았다. 2026-11-04 보존 공식 PDF 전문 저자 대조.','retention_scope_ko':'실제 최종 감사자가 회수한 공식 PDF/text/meta 원바이트를 보존하여 보완 저자가 다시 읽었다. 이 저자의 새 retrieval 또는 독립 감사라는 뜻이 아니다.','source_use_manifest':{'source_id':'final19-v2-author-'+key,'source_class':'PUBLIC_OFFICIAL','publisher':'Massachusetts Board of Registration in Pharmacy / DPH','url':inventory['official_url'],'access_type':'PUBLIC','authority_level':'PRIMARY_OFFICIAL','permission_status':'VERIFIED','legal_authority_allowed':True,'question_text_storage_allowed':False,'ai_processing_allowed':True,'public_repo_allowed':True,'notes':'SOURCE_USE_POLICY Class A; public official primary law/policy only.','last_reviewed':'2026-11-04'}}
+ new_sources[key]=source;ss[source['source_id']]=source
+adds=[('PARTNER-IDENTITY','EPT의 원 환자 이름을 다른 partner의 신원인 것처럼 임의로 사용해서는 안 된다.',['cmr9','ept-current'],['247 CMR9.01(9)','247 CMR9.16(7)(a),(8)','Policy2020-08 I(A)–(B),II(A)'],'사기·기만 금지와 처방 대상 환자의 profile, named/unnamed EPT 경로를 함께 대조한 신원 경계이다. 원 환자가 실제 partner와 같은 사람이라는 별도 사실이 없는 상황의 허위 신원 사용을 말한다. EPT 허용 표기 자체를 허위로 취급하지 않으며 institutional sterile compounding의9.16(8) 예외를 없애지 않는다.'),('DIRECTIONS-SAFETY','EPT에서도 가능한 약물 지시의 안전성 검토를 유지해야 한다.',['cmr9'],['247 CMR9.17(1) opening,(f),(i),(2)'],'신규 처방·medication order 교부 전 DUR의 reasonable effort 범위에서 잘못된 용량·치료기간 및 drug/dose/directions의 유의한 변경을 확인하는 문언을 대조했다. EPT의 이름 표기 예외가 이 검토를 없애지 않는다는 본문 명제이다. 모든 지시의 변경이나 별도 상담 의무·새 수치·기한을 신설하지 않는다.')]
+claims=copy.deepcopy(old['claims']);ids=[]
+for suffix,statement,keys,sections,scope in adds:
+ cid='FINAL19-CENSUS-W3-D-22-V2-'+suffix;ids.append(cid);s=new_sources[keys[0]]
+ c={'claim_id':cid,'unit_id':'w3-d-22','unit_content_sha256':b['body_sha256'],'statement_ko':statement,'record_granularity':'AUTHOR_ENUMERATED_ATOMIC_PROPOSITION','legal_claim_kind':'MATERIAL_NOTE_PROPOSITION','is_complete_atomic_enumeration_evidence':True,'review_status':'AUTHOR_SOURCE_CHECKED','source_id':s['source_id'],'authority_clauses':sections,'checked_at':'2026-11-04','related_question_ids':[],'blocker':None,'author_provenance':AUTHOR,'independent':False,'author_source_analysis_ko':scope,'verification_scope_ko':'저자의 본문 누락 열거 및 지정 공식 조항 대조이며 독립 완전성/법규 PASS·question·release 증거가 아니다.','supporting_source_ids':[new_sources[k]['source_id']for k in keys],'supporting_authorities':[copy.deepcopy(new_sources[k])for k in keys]}
+ for k in ['official_url','source_evidence','source_evidence_sha256','text_evidence_path','text_evidence_sha256','retrieval_metadata_path','retrieval_metadata_sha256','law_checked_date','version_or_effective_date_status']:c[k]=s[k]
+ assert ' '.join(statement.split())not in {' '.join(o['statement_ko'].split())for o in old['claims']};claims.append(c)
+u=copy.deepcopy(old['units'][0]);u.update(claim_count=19,source_checked_claim_count=sum(c['review_status']=='AUTHOR_SOURCE_CHECKED'for c in claims),source_blocked_claim_count=sum(c['review_status']=='SOURCE_BLOCKED'for c in claims),independent_verified_claim_count=0,independent_completeness_status='PENDING')
+census={'schema_version':1,'purpose':'CENSUS_ONLY_OMISSION_REASSESSMENT','stage':'AUTHOR_PREPARATION_PENDING_ACTUAL_PARENT_INTEGRATION','author_provenance':AUTHOR,'reviewed_at':'2026-11-04','independent_audit':False,'canonical_release_credit':0,'question_audit_credit':0,'body_mutated':False,'sources':ss,'units':[u],'claims':claims}
+assert all(q.digest(a)==q.digest(z)for a,z in zip(old['claims'],claims));assert all(q.digest(s)==q.digest(ss[k])for k,s in old['sources'].items())
+cp=P+'census.json';sha=write(cp,census)
+write(P+'preparation-index.json',{'purpose':'AUTHOR_PREPARATION_ONLY_PENDING_ACTUAL_PARENT_INTEGRATION','author_provenance':AUTHOR,'unit_id':'w3-d-22','original_binding':b,'body_sha256':b['body_sha256'],'original_claim_count':17,'proposed_claim_count':19,'added_claim_ids':ids,'changed_claim_ids':[],'original_claims_canonical_preserved':True,'all_original_sources_canonical_preserved':True,'census_path':cp,'census_sha256':sha,'reviewer_commit':COMMIT,'source_report':{'original_path':REVIEW+'report.json','retained_path':P+'inputs/final19-b-report.json','raw_sha256':q.raw_sha(rawreport)},'omission_resolutions':[{'omission_sha256':q.raw_sha(o.encode()),'claim_ids':[ids[i]],'explanation':'실제 본문과 기존17개명제를 대조하여 해당 누락을 별도 새 명제로 열거했다. 저자 source checked는 독립 누락 해소 확정/법규 PASS가 아니며 새 비저자 재심사가 필요하다.'}for i,o in enumerate(review['omissions'])],'actual_parent_integration_confirmed':False,'native_reassessment_record_written':False,'native_validate_record_performed':False,'controller_registration_performed':False,'canonical_release_credit':0,'question_audit_credit':0,'independent_audit_credit':0})
+write(P+'retained-primary-source-manifest.json',new_sources);write(P+'retained-source-byte-proof.json',{'retained_files':retained,'author_only':True,'new_retrieval':False})
+write(P+'preservation-preparation-proof.json',{'original_census_sha256':q.raw_sha(oldraw),'all17_claim_canonical_sha256s':{c['claim_id']:q.digest(c)for c in old['claims']},'all_original_sources_canonical_sha256s':{k:q.digest(s)for k,s in old['sources'].items()},'all17_claims_preserved':True,'all_original_sources_preserved':True,'body_sha256':q.raw_sha(body),'body_bytes_preserved':True,'new_claims':2,'changed_claims':0,'native_validate_record_performed':False,'actual_parent_integration_confirmed':False,'independent_credit':0})
+print('Prepared17+2=19; actual parent integration/native record/native validation pending')
