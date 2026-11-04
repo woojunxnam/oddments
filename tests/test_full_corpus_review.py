@@ -206,11 +206,19 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
         'w3-d-9','w3-d-10','w3-c-1','w3-c-2','w3-c-3','w3-c-4',
         'w3-b-1','w3-d-23','w1-a-7',
         'w2-c-1','w2-c-12',
-        'w4-a-19','w4-a-20',
+        'w4-a-19','w4-a-20','w3-a-3',
     }
     assert 'OPEN' in new['w1-b-8']['body']
     assert '과거 읽음' in new['w1-b-8']['editor_note']
     assert hashlib.sha256((ROOT/'notes/guide.json').read_bytes()).hexdigest() == '004c2f9f309db00705a3b35ddd2fa1fb360235f4fd0d364a9ccdf8b3c43aa384'
+    assert hashlib.sha256(new['w3-a-3']['body'].encode()).hexdigest() == 'e082d19727f6000e00d21a2c78e76405dfd406bf3f1a786242f57a1047c1ab4a'
+    note_rows = [json.loads(line) for line in (ROOT/'reports/full-corpus-review/notes-unit-ledger.jsonl').read_text().splitlines()]
+    review = next(row for row in note_rows if row['unit_id']=='w3-a-3')['independent_atomic_census_review']
+    assert review['current_review_valid'] is True
+    assert review['completeness']=='COMPLETE' and review['legal_status']=='LEGAL_HOLD'
+    assert review['requires_review'] is True and review['canonical_release_credit']==0
+    assert review['claim_counts']=={'KEEP':24,'LEGAL_HOLD':1,'SOURCE_BLOCKED':0}
+    assert any(f['claim_id']=='NOTE-WAVE8-W3-A-3-011' and f['legal_status']=='LEGAL_HOLD' and f['blocker'] for f in review['findings'])
     from build_exam_study import build_payload
     study=build_payload()
     assert 'OPEN' in next(l for l in study['lessons'] if l['id']=='LAW-012')['core']
