@@ -1,5 +1,6 @@
 """Deterministic inventory, not a bulk legal-review certification."""
 import argparse
+import copy
 import gzip
 import hashlib
 import json
@@ -100,7 +101,52 @@ def validate_independent_archive_safety(selection, independent_records):
             raise ValueError('Unsurfaced independent archive finding: ' + review['question_id'])
 
 
-def apply_independent_legacy_review(row, audit_row):
+def apply_current_id_independent_state(row, audit_row, source_binding):
+    """Describe the three native candidates' validated assessment, without credit.
+
+    Frozen source_author_review_binding remains historical draft/engineering
+    context. This separate state uses only the committed consumer's binding.
+    """
+    if (row.get('question_id') not in {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'} or
+            row.get('checked_at_scope') != 'FORMAL_NATIVE_CURRENT_ID_AUTHOR_REVIEW' or
+            row.get('current_id_author_review_required') is not False or source_binding is None):
+        return
+    author_job=row.get('native_author_review_job_id')
+    if (not author_job or row.get('review_evidence', {}).get('native_author_job_id') != author_job):
+        raise ValueError('Unbound native current-ID author review')
+    if (source_binding.get('question_id') != row['question_id'] or
+            audit_row['question_id'] != row['question_id'] or
+            source_binding.get('record_sha256') != row['content_sha256'] or
+            audit_row['record_sha256'] != row['content_sha256'] or
+            source_binding.get('review_record_sha256') != record_hash(audit_row) or
+            row.get('independent_legacy_legal_assessment') != audit_row['legal_review'] or
+            row.get('independent_legacy_realism_assessment') != audit_row['realism_review']):
+        raise ValueError('Stale current-ID independent review binding')
+    path=Path(source_binding.get('source_path', ''))
+    if (path.is_absolute() or '..' in path.parts or
+            not str(path).startswith('reports/full-corpus-review/') or
+            not source_binding.get('source_sha256') or not source_binding.get('job_id') or
+            source_binding.get('actor_provenance', {}).get('actor_id') in
+            row.get('known_author_editor_actor_ids', [])):
+        raise ValueError('Invalid current-ID independent source provenance')
+    legal=audit_row['legal_review']; realism=audit_row['realism_review']
+    passed=(legal.get('verdict')=='KEEP' and legal.get('existing_answer_correct')=='YES' and
+            realism.get('verdict')=='PASS')
+    incomplete=(legal.get('existing_answer_correct')=='NOT_ASSESSED' or
+                realism.get('verdict')=='NOT_ASSESSED')
+    row['current_id_independent_review_status']=(
+        'SOURCE_BOUND_PASS' if passed else 'SOURCE_BOUND_INCOMPLETE' if incomplete else 'SOURCE_BOUND_NOT_PASSED')
+    row['current_id_independent_review_source']=copy.deepcopy(source_binding)
+    if passed and row['disposition']=='KEEP':
+        row['next_action']='Current-ID independent review passed; root QA, publication and default-selection review remain pending. Candidate remains archive-only.'
+    else:
+        row['next_action']=(row.get('blocker') or legal.get('blocker') or
+                            audit_row.get('required_next_action_ko') or
+                            realism.get('finding_ko') or legal.get('finding_ko') or
+                            'Complete the unresolved current-ID independent assessment before root release review.')
+
+
+def apply_independent_legacy_review(row, audit_row, *, source_binding=None):
     """A supported key does not erase an unresolved law or explanation finding."""
     previous=row['disposition']; previous_blocker=row['blocker']
     legal=audit_row['legal_review']; realism=audit_row['realism_review']
@@ -136,6 +182,7 @@ def apply_independent_legacy_review(row, audit_row):
     if blocker:
         row['author_review_blocker']=previous_blocker
         row['blocker']=blocker
+    apply_current_id_independent_state(row, audit_row, source_binding)
 
 
 def validate_editorial_assessment(assessment, qid):
@@ -608,9 +655,10 @@ def build():
     apply_citation_errata(result)
     apply_case0217_reconciliation(result, {q['question_id']: q for q in all_questions})
     from legacy_independent_metadata import integrated_sources
+    independent_source_bindings = {}
     independent_sources = [read('reports/full-corpus-review/' + name) for name in (
         'pub05-14-independent-review.json', 'wave2-independent-review.json',
-        'wave5-independent-review.json')]+integrated_sources(ROOT)
+        'wave5-independent-review.json')]+integrated_sources(ROOT,source_bindings=independent_source_bindings)
     independent_records = [r for source in independent_sources for r in source['records']]
     if (any(not source['independent_of_authors'] for source in independent_sources) or
             len({r['question_id'] for r in independent_records}) != len(independent_records)):
@@ -634,7 +682,8 @@ def build():
             row['independent_legacy_supplementary_assessment'] = supplementary
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
-            apply_independent_legacy_review(row,audit_row)
+            apply_independent_legacy_review(row,audit_row,
+                source_binding=independent_source_bindings.get(row['question_id']))
         hold=holds.get(row['question_id']) or safety_holds.get(row['question_id'])
         if hold:
             row['default_practice_hold']=hold
