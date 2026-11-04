@@ -19,14 +19,19 @@ def validate_chain(state):
     queue.require(isinstance(records,list) and len({r['record']['reassessment_id'] for r in records}) == len(records),
                   'Duplicate census reassessment')
     by_id = {r['record']['reassessment_id']:r for r in records}
-    latest = {}; used = set(); used_bodies=set()
+    latest = {}; used = set(); used_bodies=set(); used_inactive=set()
     for job in state['jobs']:
         queue.require(job.get('purpose')!='BODY_CORRECTION_REASSESSMENT'or job.get('body_reassessment_id'),
                       'Body purpose requires an explicit body correction record')
+        queue.require(job.get('purpose')!='INACTIVE_BODY_CENSUS_SUCCESSOR'or job.get('inactive_census_successor_id'),
+                      'Inactive census purpose requires an explicit successor record')
         queue.require(len(job['unit_ids']) == len(set(job['unit_ids'])) and
                       set(job['unit_ids']) == set(job['unit_bindings']), 'Invalid note job unit scope')
         rid = job.get('reassessment_id')
-        if job.get('body_reassessment_id'):
+        if job.get('inactive_census_successor_id'):
+            from notes_inactive_census_successor import chain_link
+            chain_link(state,job,latest,used_inactive)
+        elif job.get('body_reassessment_id'):
             from notes_body_reassessment import chain_link
             chain_link(state,job,latest,used_bodies)
         elif rid is not None:
@@ -55,6 +60,13 @@ def validate_chain(state):
                   [j['body_reassessment_id']for j in state['jobs']if j.get('body_reassessment_id')]==
                   [e['record']['body_reassessment_id']for e in body_records],
                   'Body correction has no unique append-ordered assignment')
+    inactive=state.get('inactive_census_successors',[])
+    queue.require(isinstance(inactive,list)and len(inactive)<=1 and
+                  len(inactive)==len({e['record']['inactive_census_successor_id']for e in inactive})and
+                  used_inactive=={e['record']['inactive_census_successor_id']for e in inactive}and
+                  [j['inactive_census_successor_id']for j in state['jobs']if j.get('inactive_census_successor_id')]==
+                  [e['record']['inactive_census_successor_id']for e in inactive],
+                  'Inactive census successor has no unique append-ordered assignment')
     # A multi-unit job appears repeatedly in latest.values(); deduplicate jobs first.
     owners = {j['job_id']:j for j in latest.values()}
     claims = [cid for j in owners.values() for uid,b in j['unit_bindings'].items()
