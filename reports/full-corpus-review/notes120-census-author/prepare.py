@@ -41,11 +41,11 @@ C={
  ('REPEATED-EXPOSURE','온도 excursion 평가에서는 해당 제품의 반복 노출 여부를 확인해야 한다.','storage','Policy2020-05 XV.1–5','정책 XV.1–5는 length/magnitude 평가와 제조사 확인을 정하지만 본문의 반복 노출별 요건 전체를 직접 열거하지 않는다. 개별 제품의 반복노출 안정성 자료가 없으며 기존020 보류를 유지한다.'),
  ('ADMINISTERED-PATIENT-NOTICE','안전하지 않거나 유효하지 않은 제품을 이미 환자에게 투여했다면 그 환자에게 통지해야 한다.','storage','Policy2020-05 XV.6',None),
  ('DISPENSED-PROVIDER-NOTICE','안전하지 않거나 유효하지 않은 제품을 이미 환자에게 교부했다면 그 환자의 health care provider에게 통지해야 한다.','storage','Policy2020-05 XV.6',None)],
-'w4-a-11':[('COUNSELING-CHANNEL','Specialty-to-retail pickup을 포함한 배송의 상담 경로에서는 서면 약물정보와 질문할 전화번호를 제공하라는 Board advisory 권고를 확인한다.','shipping','Medication Delivery and Shipping advisory:Counseling;Delivery to Alternative Locations',None)],
+'w4-a-11':[('COUNSELING-CHANNEL','Specialty-to-retail patient pickup 경로에서는 환자가 상담을 받을 수 있도록 서면 약물정보와 문의 전화번호의 제공 경로를 사전에 마련한다는 Board 배송 advisory 권고를 확인한다.','shipping','Medication Delivery and Shipping advisory:Counseling;Delivery to Alternative Locations',None)],
 'w4-a-16':[('ACCURACY-PERFORMANCE','약국은 고형제 전자계수기와 다른 전자측정장치의 정확성과 성능을 보장해야 한다.','cmr9','247 CMR9.19(3)',None)],
 'w4-b-12':[
  ('NONSTERILE-CSP-FACILITY','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 시설 조건을 충족해야 한다.','uspfaq','공개 USP797 FAQ87,95; current full chapter 시설조건 미확인','원문 본문의 시설 전제를 열거했으나 현행 USP-NF 해당 전문·시설별 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. Category 일반 시설명제010만으로 이 별도 경로의 조건이 입증되지는 않는다.'),
- ('NONSTERILE-CSP-VALIDATION','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 검증 조건을 충족해야 한다.','uspfaq','공개 USP797 FAQ142; current full chapter 공정·기법 검증조건 미확인','원문 본문의 검증 전제를 열거했으나 sterilization validation 등의 현행 정확한 검증 항목과 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. 기존 sterilization·endotoxin 명제를 바꾸지 않는다.')],
+ ('NONSTERILE-CSP-VALIDATION','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 멸균 공정·기법의 적합성을 검증해야 한다.','uspfaq','공개 USP797 FAQ142; current full chapter 공정·기법 검증조건 미확인','원문 본문의 검증 전제를 열거했으나 sterilization validation 등의 현행 정확한 검증 항목과 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. 기존 sterilization·endotoxin 명제를 바꾸지 않는다.')],
 'w4-b-17':[('ASEPTIC-OBSERVATION','Aseptic manipulation competency 평가에는 실제 무균조작의 observation이 포함된다.','uspfaq','공개 USP797 FAQ44,48–52,61; fullchapter2.3 observation의 정확조건 미확인','본문의 observation을 media-fill 및 sampling과 구별해 독립 열거했다. 현행 USP-NF exact observation 요건·평가자·주기·2026 개정 여부를 아직 취득·확정하지 않았으며 기존 source-blocked technical 조건을 해제하지 않는다.')]
 }
 packets={ab:json.loads(Path('/workspace/scratch/notes120-'+ab+'-visible-input.json').read_bytes())for ab in 'bcde'}
