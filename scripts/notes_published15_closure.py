@@ -59,6 +59,8 @@ DYNAMIC_PUBLICATION_INPUTS={
 }
 REPRESENTATIVE_BANK='practice_expansion/2026-10-28-representative/questions.json'
 ARCHIVE_NOTICES='reports/representative-rewrite/archive-review-notices.json'
+PUBLICATION_CONFIG='site/practice-expansion/publication.json'
+REPRESENTATIVE_SELECTION='practice_expansion/2026-10-28-representative/selection.json'
 
 
 def require(ok,message):
@@ -257,13 +259,15 @@ def validate(root,binding,*,coverage=False):
                     (p.startswith('revisions/notes/protected-migration')and p.endswith('.json'))}
     parent=json.loads(committed(root,FIFTEENTH,files[FIFTEENTH]['raw_sha256']))
     frozen|={p for p in parent['source_bindings']if p.startswith('reports/')and p not in DYNAMIC_PUBLICATION_INPUTS}
-    config='site/practice-expansion/publication.json'
+    config=PUBLICATION_CONFIG
     if config in files:
-        settings=json.loads(committed(root,config,files[config]['raw_sha256']))
+        settings=json.loads(old_bytes(root,value,config))
         frozen|={config,'practice_expansion/2026-10-23/candidates/questions.json'}
         frozen|={b['path']for b in settings['additional_banks']}
     for p in frozen:
-        if p==REPRESENTATIVE_BANK and sha(committed(root,p))!=files[p]['raw_sha256']:
+        if p==PUBLICATION_CONFIG and sha(committed(root,p))!=files[p]['raw_sha256']:
+            validate_publication_config(root,value)
+        elif p==REPRESENTATIVE_BANK and sha(committed(root,p))!=files[p]['raw_sha256']:
             validate_archive_notice_wrapper(root,value)
         else:committed(root,p,files[p]['raw_sha256'])
     current_guard=committed(root,OLD_GUARD).decode()
@@ -335,6 +339,69 @@ def validate_archive_notice_wrapper(root,closure):
     # The existing builder checks every negative finding/source hash/current
     # question binding and exact deterministic bank/selection/metrics outputs.
     verify_representative_outputs(root)
+    return {'primary_records':[r for report in reports for r in report['records']],
+            'supplementary_sources':supplementary}
+
+
+def validate_publication_config(root,closure):
+    """Only two coupled byte digests may follow proven archive warnings.
+
+    The publication source scope and ordered original202 defaults cannot change.
+    This is an actual-current-byte binding, never an alias for a stale SHA.
+    """
+    original=json.loads(old_bytes(root,closure,PUBLICATION_CONFIG))
+    current=json.loads(committed(root,PUBLICATION_CONFIG));normalized=copy.deepcopy(current)
+    require(original['representative_selection']['path']==REPRESENTATIVE_SELECTION and
+            current['representative_selection']['path']==REPRESENTATIVE_SELECTION,
+            'Publication selection path is immutable')
+    old_entries=[entry for entry in original['additional_banks']if entry['path']==REPRESENTATIVE_BANK]
+    new_entries=[entry for entry in normalized['additional_banks']if entry['path']==REPRESENTATIVE_BANK]
+    require(len(old_entries)==len(new_entries)==1,'Exactly one original representative bank descriptor is required')
+    old_selection_digest=closure['full_source_files'][REPRESENTATIVE_SELECTION]['raw_sha256']
+    old_bank_digest=closure['full_source_files'][REPRESENTATIVE_BANK]['raw_sha256']
+    require(original['representative_selection']['sha256']==old_selection_digest and
+            old_entries[0]['sha256']==old_bank_digest,
+            'Published configuration must bind its exact original selection and bank bytes')
+    selection_raw=committed(root,REPRESENTATIVE_SELECTION)
+    bank_raw=committed(root,REPRESENTATIVE_BANK)
+    require(current['representative_selection']['sha256']==sha(selection_raw) and
+            new_entries[0]['sha256']==sha(bank_raw),
+            'Publication selection and bank digests must match actual committed current bytes')
+    normalized['representative_selection']['sha256']=old_selection_digest
+    new_entries[0]['sha256']=old_bank_digest
+    require(encoded(normalized)==encoded(original),
+            'Only the two proven selection/bank SHA fields may change in publication configuration')
+    old_selection=json.loads(old_bytes(root,closure,REPRESENTATIVE_SELECTION))
+    selection=json.loads(selection_raw);defaults=selection['recommended_ids']
+    require(isinstance(defaults,list) and defaults==old_selection['recommended_ids'] and
+            len(defaults)==len(set(defaults))==202,
+            'The original ordered202 default question IDs must remain exact')
+    validated=validate_archive_notice_wrapper(root,closure)
+    validate_publication_default_safety(root,closure,selection,validated)
+
+
+def validate_publication_default_safety(root,closure,selection,validated):
+    """Keep every actual primary/supplementary negative and exposure exclusion."""
+    records=list(validated['primary_records'])
+    for name in ('pub05-14-independent-review.json','wave2-independent-review.json','wave5-independent-review.json'):
+        relative='reports/full-corpus-review/'+name
+        if relative in closure['full_source_files']:
+            report=json.loads(committed(root,relative,closure['full_source_files'][relative]['raw_sha256']))
+            records.extend(report['records'])
+    reports={}
+    for qid,binding in validated['supplementary_sources'].items():
+        relative=binding['source_path']
+        if relative not in reports:
+            reports[relative]=json.loads(committed(root,relative,binding['source_sha256']))
+        rows=[r for r in reports[relative]['records']if r['question_id']==qid]
+        require(len(rows)==1,'Validated supplementary default input lost its exact row')
+        records.extend(rows)
+    from build_full_corpus_review import validate_default_review_safety,validate_independent_archive_safety
+    validate_default_review_safety(selection['recommended_ids'],{},records)
+    validate_independent_archive_safety(selection,records)
+    import phase11_context38_metadata as context38
+    context38.validate_default_safety(selection['recommended_ids'],{
+        'excluded_primary_key_ids':list(context38.IDS)if path(root,context38.STATE).exists()else []})
 
 
 def verify_representative_outputs(root):
