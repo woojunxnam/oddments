@@ -26,14 +26,29 @@ def complete_shape(state):
     return state
 
 
-def test_actual_allocation_exact37_slots_and_four_new_actors_are_not_results(state):
+def pending_shape(state):
+    """An explicit historical lifecycle fixture, not the live completed state."""
+    ids={job['job_id'] for job in state['jobs'][33:]}
+    for job in state['jobs'][33:]:
+        job['status']='LEASED'
+        for key in ('result','submitted_at','integrated_commit','integrated_at'):
+            job.pop(key,None)
+    state['events']=[event for event in state['events'] if not
+                     (event.get('job_id') in ids and event.get('kind') in {'SUBMIT','INTEGRATE'})]
+    return state
+
+
+def test_exact_allocation_distinguishes_actual_receipts_from_a_pending_fixture(state):
     assert len(state['jobs'])==37
     assert a.WAVE10_DEFINITION_COMMIT=='08a417e2e53e83501e2756792cda0168fe4ae8a7'
     assert all((j['job_id'],a.question_queue.digest(j['question_hashes']),j['worker'])==a.WAVE10[j['sequence']]
                for j in state['jobs'][33:])
-    assert all(j['status']=='LEASED' and 'result' not in j for j in state['jobs'][33:])
+    assert all(j['status']=='INTEGRATED' and j.get('result') for j in state['jobs'][33:])
+    a.validate_legacy_scope(state)
+    pending=pending_shape(copy.deepcopy(state))
+    assert all(j['status']=='LEASED' and 'result' not in j for j in pending['jobs'][33:])
     with pytest.raises(ValueError,match='pending/LEASED'):
-        a.validate_legacy_scope(state)
+        a.validate_legacy_scope(pending)
 
 
 @pytest.mark.parametrize('defect',['old33_only','extra38','id','hash','actor','stage','priority',
@@ -71,14 +86,29 @@ def test_pending_actual_sources_cannot_reuse_old_unpublished_ready_manifest_or_w
     saved=json.loads(before[a.MANIFEST]);saved['annotation_inputs_ready']=True
     original=a.safe_bytes
     monkeypatch.setattr(a,'safe_bytes',lambda root,p:a.notes_queue.encoded(saved)if p==a.MANIFEST else original(root,p))
+    # The real four jobs are now integrated. Inject the explicitly pending
+    # checkpoint at the reader boundary to keep testing the refusal contract.
+    pending=pending_shape(json.loads((ROOT/a.LEGACY_STATE).read_bytes()))
+    read=a.committed
+    def pending_checkpoint(root,path,bindings):
+        if path==a.LEGACY_STATE:
+            raw=a.notes_queue.encoded(pending)
+            bindings[path]=a.sha(raw)
+            return raw
+        return read(root,path,bindings)
+    monkeypatch.setattr(a,'committed',pending_checkpoint)
     with pytest.raises(ValueError,match='pending/LEASED'):
         a.decode(ROOT,a.EXPORT,before[a.EXPORT])
     assert all((ROOT/p).read_bytes()==raw for p,raw in before.items())
 
 
-@pytest.mark.parametrize('defect',[None,'stronger_negative','positive_key','ambiguous_key','keep','unsafe','missing_id'])
+@pytest.mark.parametrize('defect',[None,'stronger_negative','positive_key','ambiguous_key','keep','unsafe',
+                                 'missing_id','credit','bool_credit','missing_blocker','blocked_scope'])
 def test_c4_exposure_boundary_cannot_be_turned_into_fresh_key_credit(defect):
-    report={'records':[dict(question_id=qid,legal_review={'existing_answer_correct':'NOT_ASSESSED','verdict':'HOLD'},
+    report={'whole_key_credit_blocked_ids':sorted(a.WAVE10_NO_KEY_CREDIT),
+            'records':[dict(question_id=qid,legal_review={'existing_answer_correct':'NOT_ASSESSED','verdict':'HOLD',
+                        'whole_key_assessment_credit':0,'fresh_whole_key_credit':0,
+                        'blocker':'PROCEDURAL_PRIOR_SOURCE_CONCLUSION_EXPOSURE: synthetic boundary fixture'},
                             safe_hold_recommended=True)for qid in sorted(a.WAVE10_NO_KEY_CREDIT)]}
     if defect=='positive_key':report['records'][0]['legal_review']['existing_answer_correct']='YES'
     elif defect=='stronger_negative':report['records'][0]['legal_review']['verdict']='MAJOR_REWRITE'
@@ -86,6 +116,10 @@ def test_c4_exposure_boundary_cannot_be_turned_into_fresh_key_credit(defect):
     elif defect=='keep':report['records'][0]['legal_review']['verdict']='KEEP'
     elif defect=='unsafe':report['records'][0]['safe_hold_recommended']=False
     elif defect=='missing_id':report['records'].pop()
+    elif defect=='credit':report['records'][0]['legal_review']['fresh_whole_key_credit']=1
+    elif defect=='bool_credit':report['records'][0]['legal_review']['whole_key_assessment_credit']=False
+    elif defect=='missing_blocker':report['records'][0]['legal_review'].pop('blocker')
+    elif defect=='blocked_scope':report['whole_key_credit_blocked_ids'].pop()
     if defect not in {None,'stronger_negative'}:
         with pytest.raises(ValueError,match='zero fresh whole-key credit'):
             a.validate_wave10_key_limits({'sequence':36},report)
@@ -93,6 +127,18 @@ def test_c4_exposure_boundary_cannot_be_turned_into_fresh_key_credit(defect):
         a.validate_wave10_key_limits({'sequence':36},report)
         # Same source-context precaution must not become a batch-wide key ban.
         a.validate_wave10_key_limits({'sequence':35},{'records':[]})
+
+
+@pytest.mark.parametrize('defect',[None,'missing_hold','restored_default'])
+def test_current_c4_containment_is_checked_separately_from_source_declarations(defect):
+    selection=json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_bytes())
+    qid=sorted(a.WAVE10_NO_KEY_CREDIT)[0]
+    if defect=='missing_hold':selection['safety_holds']=[row for row in selection['safety_holds'] if row['question_id']!=qid]
+    elif defect=='restored_default':selection['recommended_ids'].append(qid)
+    if defect is None:a.validate_wave10_default_holds(selection)
+    else:
+        with pytest.raises(ValueError,match='explicit and excluded'):
+            a.validate_wave10_default_holds(selection)
 
 
 @pytest.fixture
@@ -106,8 +152,11 @@ def synthetic_receipt(tmp_path,state):
     report=dict(stage='independent-legacy',independent_of_authors=True,auditor='GPT',
         auditor_instance='SYNTHETIC_METADATA_NOT_A_REAL_REVIEW',actor_provenance=actor,
         canonical_audit=False,canonical_release_credit=0,sources=[],
+        whole_key_credit_blocked_ids=sorted(a.WAVE10_NO_KEY_CREDIT),
         records=[dict(question_id=qid,record_sha256=raw,
-                      legal_review={'existing_answer_correct':'NOT_ASSESSED','verdict':'HOLD'},
+                      legal_review={'existing_answer_correct':'NOT_ASSESSED','verdict':'HOLD',
+                                    'whole_key_assessment_credit':0,'fresh_whole_key_credit':0,
+                                    'blocker':'PROCEDURAL_PRIOR_SOURCE_CONCLUSION_EXPOSURE: synthetic metadata'},
                       safe_hold_recommended=True)for qid,raw in job['question_hashes'].items()])
     raw=a.notes_queue.encoded(report);path=a.WAVE10_REPORTS[36]
     result=dict(stage='independent-legacy',independent_of_authors=True,auditor='GPT',

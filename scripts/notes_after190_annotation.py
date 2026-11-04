@@ -229,12 +229,25 @@ def validate_wave10_key_limits(job,report):
     if job['sequence'] != 36:
         return
     rows={row['question_id']:row for row in report['records']}
-    require(WAVE10_NO_KEY_CREDIT <= set(rows) and all(
+    blocked=report.get('whole_key_credit_blocked_ids')
+    require(isinstance(blocked,list) and len(blocked)==len(WAVE10_NO_KEY_CREDIT) and
+            set(blocked)==WAVE10_NO_KEY_CREDIT and WAVE10_NO_KEY_CREDIT <= set(rows) and all(
             rows[qid]['legal_review'].get('existing_answer_correct')=='NOT_ASSESSED' and
             rows[qid]['legal_review'].get('verdict') in {'HOLD','MINOR_EDIT','MAJOR_REWRITE','DELETE'} and
-            rows[qid].get('safe_hold_recommended') is True
+            all(type(rows[qid]['legal_review'].get(key)) is int and
+                rows[qid]['legal_review'][key]==0 for key in
+                ('whole_key_assessment_credit','fresh_whole_key_credit')) and
+            str(rows[qid]['legal_review'].get('blocker','')).startswith(
+                'PROCEDURAL_PRIOR_SOURCE_CONCLUSION_EXPOSURE:') and
+            rows[qid].get('safe_hold_recommended',True) is True
             for qid in WAVE10_NO_KEY_CREDIT),
             'Wave10 C source-context exposure IDs must retain NOT_ASSESSED/safety hold and zero fresh whole-key credit')
+
+
+def validate_wave10_default_holds(selection):
+    require(WAVE10_NO_KEY_CREDIT <= {row['question_id'] for row in selection.get('safety_holds',[])} and
+            not WAVE10_NO_KEY_CREDIT & set(selection['recommended_ids']),
+            'Wave10 C procedural holds must remain explicit and excluded from current defaults')
 
 
 def validate_note_scope(state):
@@ -304,6 +317,8 @@ def bind_current_review_context(root,bindings):
     """Historical receipts cannot stand in for current counters/instructions."""
     from after190_historical_context import PROGRESS,RUNBOOK
     committed(root,RUNBOOK,bindings)
+    selection=committed(root,'practice_expansion/2026-10-28-representative/selection.json',bindings)
+    validate_wave10_default_holds(json.loads(selection))
     current=committed(root,PROGRESS,bindings)
     # Isolated import keeps a caller's alternate/shallow root independent of this
     # interpreter's module globals. build() returns payloads and writes nothing.
