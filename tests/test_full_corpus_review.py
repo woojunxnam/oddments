@@ -435,8 +435,10 @@ def test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases():
 def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
     outputs=build()
     rows={r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
-    assert rows['MA-EXP-0223']['answer_key_assessment']=='INCORRECT_KEY'
-    assert rows['MA-EXP-0224']['answer_key_assessment']=='AMBIGUOUS_KEY'
+    assert rows['MA-EXP-0223']['answer_key_assessment']=='INDEPENDENT_LEGACY_NO'
+    assert rows['MA-EXP-0223']['author_answer_key_assessment']=='INCORRECT_KEY'
+    assert rows['MA-EXP-0224']['answer_key_assessment']=='INDEPENDENT_LEGACY_AMBIGUOUS'
+    assert rows['MA-EXP-0224']['author_answer_key_assessment']=='AMBIGUOUS_KEY'
     assert rows['MA-EXP-0224']['disposition']=='MAJOR_REWRITE'
     assert rows['MA-EXP-0223']['answer_key_crosscheck']['matches'] is False
     assert rows['MA-EXP-0224']['answer_key_crosscheck']['sba_unique'] is False
