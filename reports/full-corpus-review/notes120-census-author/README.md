@@ -18,17 +18,24 @@ canonical 내용은 그대로 보존했다. 기존 HOLD/SOURCE_BLOCKED의 해소
 HEAD 원 census raw SHA, unit/claim canonical SHA, 기존 source object 보존,
 실제 신규 proposition delta를 검증한다. 원자 상태를 추정해 KEEP으로 만들지 않는다.
 
-현재 B의 2단원(w3-d-8, w3-d-22)은 실제 native INTEGRATED job에 binding된
-single-unit reassessment record를 작성했다. 나머지 7개는 실제 통합 predecessor가
-확정되기 전이므로 native record를 만들지 않았다. `finalize-integrated.py`는
+9단원 모두 실제 native INTEGRATED job47–50의 원보고서·result envelope·binding에
+고정한 single-unit reassessment record를 작성했다. `finalize-integrated.py`는
 현재 HEAD의 실제 native 상태에서 INTEGRATED인 predecessor만 받아들인다.
-`proposal-index.json`은 확정된 record와 미확정 단원을 분리해 기록한다.
+`proposal-index.json`은 각 record/census의 정확한 경로와 raw SHA 및
+predecessor canonical SHA를 기록하며 pending 목록은 비어 있다.
+D의 6개 omission과 E의 2개 omission은 각각의 실제 새 명제와 1:1로 연결했다.
+새 전체 census는 합계194개 원자로서 179개 보존과 15개 append로 구성된다.
+신규15개 중6개는 AUTHOR_SOURCE_CHECKED,9개는 SOURCE_BLOCKED이며 독립 verdict가 아니다.
 
 정확한 scope를 확정하지 못한 신규 명제는 SOURCE_BLOCKED이다. 특히 CPA의
 환자 범위에 관한 본문은 community-specific written referral 조건과 모든 setting의
 CPA 범위를 혼동할 수 있어, 16.04(1),(2)의 한계를 새 blocker에 명시했다.
-재고 1단위 차이의 원인 조사와 nonsterile-source CSP 시설/검증 및 aseptic
-observation은 정확한 현행 공식 문언 대조가 추가로 필요하다.
+재고 1단위 차이의 원인 조사는 247 CMR9.21(8)(c)의 MOR/ScheduleII perpetual
+inventory 의무와 대조했으나, 본문의 숫자 예시가 주체·setting을 특정하지 않은 한계를
+SB로 남긴다. 해당 주 규정의 non-resident 및 institutional sterile compounding
+범위도 구별했다. 공개 USPFAQ8,87,95,142,44–52,61의 지정 문언을 직접 읽고
+새 시설·검증·observation 명제에 raw/text/metadata SHA를 기록했으나
+현행 정본 전체의 정확한 기술조건·이후 amendment까지 인증하지 않아 SB를 유지한다.
 
 D의 refrigeration/shipping 원문은 실제 D worker commit의 공식 PDF/text/metadata
 원바이트를 보존하고 지정 조항을 다시 읽었다. B의 247 CMR9/16도 실제 감사자의
@@ -43,6 +50,13 @@ Auto-defrost의 positive duty만 별도 열거하고 기존 예외/Board-approva
 권고이며 강행 규정으로 승격하지 않는다. PPA의 accuracy/performance는
 247 CMR9.19(3)의 명시 의무를 별도로 열거했다.
 
-최종 source report/omission 문자열이 바뀌면 실제 최종 INTEGRATED 원보고서의
-바이트로만 omission SHA를 확정한다. 새 비저자 감사자가 최종 census 전체와 원래
+최종 source report/omission 문자열은 실제 INTEGRATED 원보고서 원바이트로
+SHA를 확정했다. `native-validation.json`은9개 actual `validate_record`와
+수정하지 않은 `disk_reader`를 통한 성공 및 carried legal blockers를 기록한다.
+원 strict inventory SHA를 다시 검증하고306개 body SHA를 전량 재확인했다.
+`historical-byte-check.json`은 모든 native source와 원보고서/envelope/census의
+HEAD==disk raw 검증을, `preservation-and-scope-check.json`은179개 원자와 모든
+원 source object 보존 및 ownprefix 바깥의 authored diff0을 기록한다.
+현재 다음86단위 job이 LEASED이므로 native register의 wave-completion 요건에
+따라 root가 해당 wave 완료까지 등록을 기다린다. 이 저자는 register를 호출하지 않았다. 새 비저자 감사자가 최종 census 전체와 원래
 누락을 재검토해야 한다. 원장·큐·loader/guard·문항·생성물은 수정하지 않는다.

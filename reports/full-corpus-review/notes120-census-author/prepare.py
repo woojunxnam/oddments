@@ -8,9 +8,9 @@ AUTHOR={'actor_id':'/root/notes101_omission_census_author','session_id':'notes10
 def blob(commit,path):return subprocess.check_output(['git','show',commit+':'+path],cwd=ROOT)
 def write(path,obj):
  dst=ROOT/path;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(q.encoded(obj));return q.raw_sha(dst.read_bytes())
-def retain(key,commit,original_base):
- meta_path=original_base+'.meta.json';meta=json.loads(blob(commit,meta_path)); url=meta['official_url']; saved={}
- for label,suffix in [('raw','.pdf'),('text','.txt'),('metadata','.meta.json')]:
+def retain(key,commit,original_base,raw_extension='.pdf'):
+ meta_path=original_base+'.meta.json';meta=json.loads(blob(commit,meta_path)); url=meta.get('official_url',meta.get('requested_url')); saved={}
+ for label,suffix in [('raw',raw_extension),('text','.txt'),('metadata','.meta.json')]:
   src=original_base+suffix;raw=blob(commit,src);dst=P+'sources/'+key+suffix
   (ROOT/dst).parent.mkdir(parents=True,exist_ok=True);(ROOT/dst).write_bytes(raw)
   saved[label+'_path']=dst;saved[label+'_sha256']=q.raw_sha(raw)
@@ -20,17 +20,19 @@ sources={
  'cdtm':retain('cdtm','606ecc3d','reports/full-corpus-review/independent-notes/notes120-b/sources/cdtm'),
  'cmr9':retain('cmr9','606ecc3d','reports/full-corpus-review/independent-notes/notes120-b/sources/conduct'),
  'storage':retain('storage','a1953187e9b46d7f2eac020f1d91c2d19f6047d9','reports/full-corpus-review/independent-notes/notes120-d/sources/3cc436f60a831369'),
+ 'uspfaq':retain('uspfaq','b1906ae61468f97d92dc693411d22245304b72cd','reports/full-corpus-review/independent-notes/notes120-e/sources/cadcfb75b0135f72','.raw'),
  'shipping':retain('shipping','a1953187e9b46d7f2eac020f1d91c2d19f6047d9','reports/full-corpus-review/independent-notes/notes120-d/sources/86b25003cfc915eb')}
 VERSIONS={'cdtm':'PDF는 Mass.Register1354,2017-12-15를 표시한다. 개별 조항의 별도 시행일은 확정하지 않았다. 2026-11-04 지정 원문 저자 재검토.','cmr9':'PDF는 Mass.Register1536,2024-12-06를 표시한다. 개별 조항의 별도 시행일은 확정하지 않았다. 2026-11-04 지정 원문 저자 재검토.','storage':'Policy2020-05: adopted2020-06-26,revised2020-10-23. 별도 시행일 표시는 확인되지 않았다. 2026-11-04 저자 재검토.','shipping':'Advisory adopted2018-06-28,revised2025-01-09. Best-practice recommendation이며 규정 의무로 승격하지 않는다. 2026-11-04 저자 재검토.'}
+VERSIONS['uspfaq']='공개 USP797 FAQ는2023-12-11판이며 FAQ8은2023-11-01 official date와2024-05-01 reference title 변경을 설명한다. 현재 정본 전문 및 이후2026 amendment 여부는 확인하지 않았다. FAQ만으로 미수록 technical 조건의 현행 적용을 인증하지 않는다.'
 for key,s in sources.items():
  s['version_or_effective_date_status']=VERSIONS[key]
- s['source_use_manifest']={'source_id':s['source_id'],'source_class':'PUBLIC_OFFICIAL','publisher':'Massachusetts Department of Public Health / Board of Registration in Pharmacy','url':s['official_url'],'access_type':'PUBLIC','authority_level':'PRIMARY_OFFICIAL','permission_status':'VERIFIED','legal_authority_allowed':True,'question_text_storage_allowed':False,'ai_processing_allowed':True,'public_repo_allowed':True,'notes':'SOURCE_USE_POLICY Class A; retained public official primary bytes, no question content.','last_reviewed':'2026-11-04'}
- s['exact_section']={'cdtm':'247 CMR16.04(1),(2);16.03(5)(c)–(d)','cmr9':'247 CMR9.15(2)(c),9.19(3),9.22(2)','storage':'Policy2020-05 VI,XV.1–6','shipping':'Medication Delivery and Shipping advisory:Counseling;Delivery to Alternative Locations'}[key]
+ s['source_use_manifest']={'source_id':s['source_id'],'source_class':'PUBLIC_OFFICIAL','publisher':('USP' if key=='uspfaq' else 'Massachusetts Department of Public Health / Board of Registration in Pharmacy'),'url':s['official_url'],'access_type':'PUBLIC','authority_level':'PRIMARY_OFFICIAL','permission_status':'VERIFIED','legal_authority_allowed':True,'question_text_storage_allowed':False,'ai_processing_allowed':True,'public_repo_allowed':True,'notes':'SOURCE_USE_POLICY Class A; retained public official primary bytes, no question content.','last_reviewed':'2026-11-04'}
+ s['exact_section']={'cdtm':'247 CMR16.04(1),(2);16.03(5)(c)–(d)','cmr9':'247 CMR9.15(2)(c),9.19(3),9.21(8)(a)–(d),(11)–(12),9.22(2)','storage':'Policy2020-05 VI,XV.1–6','shipping':'Medication Delivery and Shipping advisory:Counseling;Delivery to Alternative Locations','uspfaq':'USP797 public FAQ8,44–52,61,87,95,142; current full-text scope and later amendments not established'}[key]
 # A source may demonstrate the limit of a proposition while that proposition remains blocked.
 C={
 'w3-d-8': [('CPA-PATIENT-SCOPE','약사는 CPA에 해당 환자의 범위를 명시해야 한다.','cdtm','247 CMR16.04(1),(2);16.03(5)(c)–(d)','16.04(1)은 community pharmacy setting에서 특정 환자의 written referral와 consent를 요구하지만, 모든 setting의 CPA에 동일한 독립 patient-scope 항목을 적도록 하는 본문 문구의 정확한 범위는 이 조항만으로 확정하지 못했다. Disease-state 목록이나 staff delegation 범위와 환자 범위를 같은 것으로 대체하지 않는다.')],
 'w3-d-22':[('AUTHENTICITY','약사는 EPT prescription을 조제하기 전에도 professional judgment로 처방 자체가 진정한지 판단해야 한다.','cmr9','247 CMR9.15(2)(c)',None)],
-'inventory-working-example':[('INVESTIGATE-ONE-UNIT','시작100·입고50·교부40으로 예상110인 재고의 실물이109이면 1단위 차이의 원인을 조사한다.',None,'본문의 재고 예시; 적용 inventory/reconciliation 조사근거 추가 대조 필요','수량 예시의 차이 원인 조사라는 독립 본문 명제를 열거했다. 실제 1단위 불일치에 대한 주체·setting·통제물질별 조사 의무의 정확한 공식 조항을 아직 확정하지 않았으며, significant-loss 여부나 통지시계를 이 명제로 결정하지 않는다.')],
+'inventory-working-example':[('INVESTIGATE-ONE-UNIT','시작100·입고50·교부40으로 예상110인 재고의 실물이109이면 1단위 차이의 원인을 조사한다.','cmr9','247 CMR9.21(8)(a)–(d),(11)–(12); 특히(8)(c)의 MOR discrepancy 조사','247 CMR9.21(8)(c)는 Schedule II perpetual inventory의 MOR에게 모든 discrepancy 조사 의무를 정한다. (11)은 non-resident pharmacy 제외, (12)는 institutional sterile compounding에105CMR700체계를 적용한다. 숫자 예시의 원인 조사를 열거했지만 본문은 주체·setting·Schedule을 특정하지 않아 보편적 연방 perpetual/조사 의무로 인증할 수 없다. 단순 장부 잔량 수정이나 federal significance 판단이 원인 조사를 대신한다는 뜻이 아니며 통지시계를 멈추지 않는다.')],
 'w4-a-8':[('AUTO-DEFROST-DUTY','약국의 freezer는 Board가 달리 승인하지 않는 한 frost-free 및 automatic defrost cycle을 갖추어야 한다.','cmr9','247 CMR9.22(2);Policy2020-05 VI와의 예외관계는 기존 blocker 유지',None)],
 'w4-a-9':[
  ('AFFECTED-PRODUCT','온도 excursion 평가에서는 영향을 받은 제품을 확인해야 한다.','storage','Policy2020-05 XV.1–5','정책은 excursion 평가와 제품별 제조사 안전·유효성 확인을 정한다. 본문에 열거된 product별 확인 단계 전체의 정확한 자료·범위 및 해당 제품 원문을 확정하지 못했다. 기존017의 미완료 설명은 그대로 보존한다.'),
@@ -42,9 +44,9 @@ C={
 'w4-a-11':[('COUNSELING-CHANNEL','Specialty-to-retail pickup을 포함한 배송의 상담 경로에서는 서면 약물정보와 질문할 전화번호를 제공하라는 Board advisory 권고를 확인한다.','shipping','Medication Delivery and Shipping advisory:Counseling;Delivery to Alternative Locations',None)],
 'w4-a-16':[('ACCURACY-PERFORMANCE','약국은 고형제 전자계수기와 다른 전자측정장치의 정확성과 성능을 보장해야 한다.','cmr9','247 CMR9.19(3)',None)],
 'w4-b-12':[
- ('NONSTERILE-CSP-FACILITY','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 시설 조건을 충족해야 한다.',None,'USP797 nonsterile starting components의 시설 조건; current official text 추가 대조 필요','원문 본문의 시설 전제를 열거했으나 현행 USP-NF 해당 전문·시설별 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. Category 일반 시설명제010만으로 이 별도 경로의 조건이 입증되지는 않는다.'),
- ('NONSTERILE-CSP-VALIDATION','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 검증 조건을 충족해야 한다.',None,'USP797 nonsterile starting components의 검증 조건; current official text 추가 대조 필요','원문 본문의 검증 전제를 열거했으나 sterilization validation 등의 현행 정확한 검증 항목과 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. 기존 sterilization·endotoxin 명제를 바꾸지 않는다.')],
-'w4-b-17':[('ASEPTIC-OBSERVATION','Aseptic manipulation competency 평가에는 실제 무균조작의 observation이 포함된다.',None,'USP797 personnel aseptic manipulation competency observation; current official text 추가 대조 필요','본문의 observation을 media-fill 및 sampling과 구별해 독립 열거했다. 현행 USP-NF exact observation 요건·평가자·주기·2026 개정 여부를 아직 취득·확정하지 않았으며 기존 source-blocked technical 조건을 해제하지 않는다.')]
+ ('NONSTERILE-CSP-FACILITY','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 시설 조건을 충족해야 한다.','uspfaq','공개 USP797 FAQ87,95; current full chapter 시설조건 미확인','원문 본문의 시설 전제를 열거했으나 현행 USP-NF 해당 전문·시설별 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. Category 일반 시설명제010만으로 이 별도 경로의 조건이 입증되지는 않는다.'),
+ ('NONSTERILE-CSP-VALIDATION','Nonsterile ingredients에서 sterile CSP를 만드는 경로에서는 적절한 검증 조건을 충족해야 한다.','uspfaq','공개 USP797 FAQ142; current full chapter 공정·기법 검증조건 미확인','원문 본문의 검증 전제를 열거했으나 sterilization validation 등의 현행 정확한 검증 항목과 적용조건·2026 개정 여부를 아직 취득·확정하지 않았다. 기존 sterilization·endotoxin 명제를 바꾸지 않는다.')],
+'w4-b-17':[('ASEPTIC-OBSERVATION','Aseptic manipulation competency 평가에는 실제 무균조작의 observation이 포함된다.','uspfaq','공개 USP797 FAQ44,48–52,61; fullchapter2.3 observation의 정확조건 미확인','본문의 observation을 media-fill 및 sampling과 구별해 독립 열거했다. 현행 USP-NF exact observation 요건·평가자·주기·2026 개정 여부를 아직 취득·확정하지 않았으며 기존 source-blocked technical 조건을 해제하지 않는다.')]
 }
 packets={ab:json.loads(Path('/workspace/scratch/notes120-'+ab+'-visible-input.json').read_bytes())for ab in 'bcde'}
 inputs={x['unit']['id']:x for d in packets.values() for x in d['units']}

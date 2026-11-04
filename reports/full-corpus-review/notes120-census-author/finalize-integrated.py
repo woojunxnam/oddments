@@ -7,12 +7,19 @@ import notes_census_reassessment as nr
 P='reports/full-corpus-review/notes120-census-author/'
 def write(path,obj):
  (ROOT/path).write_bytes(q.encoded(obj));return q.raw_sha((ROOT/path).read_bytes())
+_materialized={}
 def materialize(path,sha=None):
+ if path in _materialized:
+  raw=_materialized[path]
+  if sha:assert q.raw_sha(raw)==sha
+  assert (ROOT/path).read_bytes()==raw
+  return raw
  raw=subprocess.check_output(['git','show','HEAD:'+path],cwd=ROOT)
  if sha:assert q.raw_sha(raw)==sha
  dst=ROOT/path
  if not dst.exists():dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(raw)
  assert dst.read_bytes()==raw
+ _materialized[path]=raw
  return raw
 state=json.loads(materialize(q.STATE));nr.validate_chain(state)
 index=json.loads((ROOT/(P+'preparation-index.json')).read_bytes());ledger=[json.loads(l)for l in materialize(q.LEDGER).decode().splitlines()]
@@ -35,7 +42,9 @@ for row in index['records']:
  census=json.loads((ROOT/row['census_path']).read_bytes());census['stage']='AUTHOR_PROPOSAL_PENDING_INDEPENDENT_REASSESSMENT';csha=write(row['census_path'],census)
  for source in census['sources'].values():
   if not source['source_evidence'].startswith(P):materialize(source['source_evidence'],source['source_evidence_sha256'])
- rec={'schema_version':1,'purpose':nr.PURPOSE,'reassessment_id':'notes120-census-omission-'+uid+'-v1','unit_id':uid,'body_sha256':row['body_sha256'],'previous_job_id':job['job_id'],'previous_job_sha256':q.digest(job),'previous_binding':row['original_binding'],'previous_result':{'path':result['result_path'],'raw_sha256':job['result_sha256']},'previous_report':result['evidence'],'previous_ledger_fields':fields,'replacement':{'census_path':row['census_path'],'census_sha256':csha,'notes_revision':fields['atomic_census_notes_revision']},'author_provenance':index['author_provenance'],'change_basis':'실제 native INTEGRATED 독립감사의 원 누락지적을 보존하고 별도 저자가 누락명제만 append했다. 기존 법규 HOLD/SOURCE_BLOCKED 해소 및 독립 PASS 인정은 수행하지 않는다.','claim_mapping':{cid:[cid]for cid in row['original_binding']['claim_record_sha256s']},'added_claim_ids':row['added_claim_ids'],'changed_claim_ids':[],'omission_resolutions':[{'omission_sha256':q.raw_sha(o.encode()),'claim_ids':row['added_claim_ids'],'explanation':'단원 전문과 기존 원자 전량을 읽고 이 누락에 해당하는 실제 새 명제를 append했다. 원 claim/source canonical 내용과 기존 blocker는 보존한다. 정확한 법규 적용범위를 확정하지 못한 신규 명제는 SOURCE_BLOCKED로 열거하며 독립 완전성 해소 여부는 새 실제 비저자 감사자가 판단한다.'}for o in review['omissions']]}
+ omission_claim_groups=([ [cid]for cid in row['added_claim_ids']] if uid in {'w4-a-9','w4-b-12'} else [row['added_claim_ids']])
+ assert len(omission_claim_groups)==len(review['omissions'])
+ rec={'schema_version':1,'purpose':nr.PURPOSE,'reassessment_id':'notes120-census-omission-'+uid+'-v1','unit_id':uid,'body_sha256':row['body_sha256'],'previous_job_id':job['job_id'],'previous_job_sha256':q.digest(job),'previous_binding':row['original_binding'],'previous_result':{'path':result['result_path'],'raw_sha256':job['result_sha256']},'previous_report':result['evidence'],'previous_ledger_fields':fields,'replacement':{'census_path':row['census_path'],'census_sha256':csha,'notes_revision':fields['atomic_census_notes_revision']},'author_provenance':index['author_provenance'],'change_basis':'실제 native INTEGRATED 독립감사의 원 누락지적을 보존하고 별도 저자가 누락명제만 append했다. 기존 법규 HOLD/SOURCE_BLOCKED 해소 및 독립 PASS 인정은 수행하지 않는다.','claim_mapping':{cid:[cid]for cid in row['original_binding']['claim_record_sha256s']},'added_claim_ids':row['added_claim_ids'],'changed_claim_ids':[],'omission_resolutions':[{'omission_sha256':q.raw_sha(o.encode()),'claim_ids':omission_claim_groups[oi],'explanation':'단원 전문과 기존 원자 전량을 읽고 이 누락에 해당하는 실제 새 명제를 append했다. 원 claim/source canonical 내용과 기존 blocker는 보존한다. 정확한 법규 적용범위를 확정하지 못한 신규 명제는 SOURCE_BLOCKED로 열거하며 독립 완전성 해소 여부는 새 실제 비저자 감사자가 판단한다.'}for oi,o in enumerate(review['omissions'])]}
  rp=P+uid+'-reassessment.json';rsha=write(rp,rec)
  row['census_sha256']=csha;row['final_integrated_predecessor_record']=rp
  finals.append({'unit_id':uid,'census_path':row['census_path'],'census_sha256':csha,'record_path':rp,'record_sha256':rsha,'previous_job_id':job['job_id'],'previous_job_sha256':q.digest(job),'previous_report':result['evidence']})
