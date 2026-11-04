@@ -168,13 +168,16 @@ tree에서 전체 검증·CI·배포 검사를 다시 수행한다.
 
 ## 과거 입력 receipt와 현재 source의 구별
 
-일부 immutable wave9 report는 읽기 당시의 progress, 운영 runbook, nearest-default
-selection 원본 SHA를 기록했다. 이를 현재229 selector나 현재 progress와 같은 바이트로
+일부 immutable wave9·wave10 report는 읽기 당시의 progress, 운영 runbook, nearest-default
+selection 원본 SHA를 기록했다. 이를 현재 selector나 현재 progress와 같은 바이트로
 취급하지 않는다. `after190_historical_context.py`와
-`reports/full-corpus-review/after190-historical-context/registry-v2.json`은 실제 job/report
+`reports/full-corpus-review/after190-historical-context/registry-v3.json`은 실제 job/report
 raw SHA, 원 path+SHA, 정확한 report JSON pointer와 retained path+동일 SHA를 결박한다.
 허용은 A30 progress·당시 운영 runbook, B31의40 nearest-default context와 D33 input
-selection의 정확4개뿐이다. RELEASE/AUDIT/SOURCE_USE/QUESTION_AUTHORING 정책,
+selection의 기존 정확4개와 A34 progress receipt 한 개뿐이다. V3는 원 v2
+`6e33c9d2…f6652c`·v1 `989354cc…e30536`의 바이트 체인을 검증하고 기존 네 항목과
+private descriptor 네 개의 변경·삭제·재분류를 허용하지 않는다.
+RELEASE/AUDIT/SOURCE_USE/QUESTION_AUTHORING 정책,
 style/blueprint, primary authority, question이나 current ledger에는 alias를 제공하지 않는다.
 
 과거 progress와 당시 운영 runbook은 준비 때 알려진 실제 worker/root Git blob에서
@@ -182,7 +185,10 @@ style/blueprint, primary authority, question이나 current ledger에는 alias를
 `phase9-before-selection.json`의 정확한 원 바이트를 재사용한다. Runtime은 HEAD의
 보존본만 검증하며 옛 worker Git object를 요구하지 않는다. 현재 운영 runbook은
 별도로 HEAD와 대조하고, 현재 progress는 현재 실제 builder의 읽기 전용 결과와
-동일해야 한다. 현재 selector/default safety·원2346 object·primary 검사도 그대로 실행한다.
+동일해야 한다. A34는 원 worker `f63cf221dfa43ae5528b6e13c58091116afca1d7`의
+progress 원본 `d72abc65…b1d6`(당시1477 집계)을 보존한 단일
+`/methodology/read_docs/5/path` receipt다. 현재1633 집계의 alias가 아니며
+현재 selector/default safety·원2346 object·primary 검사도 그대로 실행한다.
 
 B31의 sources[8,12,39,40]에는 copyright-restricted memo-only source의 private
 `extracted_path/SHA`가 있다. 이 정확4개는 원 report·source index/id·path/hash·공개
