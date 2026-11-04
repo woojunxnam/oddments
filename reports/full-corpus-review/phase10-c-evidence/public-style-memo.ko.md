@@ -1,0 +1,1 @@
+공개 NABP competency/Take the MPJE 안내를 Exa의공식URL추출로실독했다.원본HTTP직접조회는403이며Exa의상류원문raw/freshness는인증하지않는다.현재안내는2027-03-01이전outline의4영역22/33/24/21가중치,연방과주법을통합하여상황에적용하는법적판단,120selectedresponse/150분형식이다.이것은개별법적정답의근거가아니다.보호된실제시험·Pre-MPJE·상용질문은열지않았다.NABP질문/본문을repo에저장하지않고locator/hash/자체메모만남겼다.인접문항은우리corpus의허용stem·모든choice만추출하여직접읽었다.
