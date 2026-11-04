@@ -66,10 +66,12 @@ def actual_reports(tmp_path):
     # The fixture deliberately captures the original two jobs. Restore their
     # immutable ledger bindings from the append-only version records when the
     # live repository has selected a later census for one of these units.
+    restored=set()
     for entry in state.get('reassessments',[]):
         record=entry['record']
-        if record['unit_id'] in captured_ids:
+        if record['unit_id'] in captured_ids and record['unit_id'] not in restored:
             next(r for r in rows if r['unit_id']==record['unit_id']).update(record['previous_ledger_fields'])
+            restored.add(record['unit_id'])
     state.pop('reassessments',None)
     for relative in {queue.LEDGER,*[r['atomic_census_source'] for r in rows if r['atomic_census_source']]}:
         path=root/relative; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(ROOT/relative,path)
