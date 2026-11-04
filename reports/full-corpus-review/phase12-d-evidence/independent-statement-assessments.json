@@ -1,0 +1,748 @@
+{
+  "RET04": {
+    "Removed medication may not be transferred into general stock or dispensed to a different patient.": {
+      "statement_supported": true,
+      "finding_ko": "제거한 약은 일반 inventory로 복귀시키거나 반환 환자 외 다른 환자에게 교부할 수 없다. same-patient 예외를 일반 RTS로 확대하면 안 된다.",
+      "authority_ids": [
+        "PACK_RETURN"
+      ]
+    },
+    "The described pathway permits appropriate modification and re-dispensing of that pharmacy's package to the same patient.": {
+      "statement_supported": true,
+      "finding_ko": "이 약국이 먼저 교부한 다약 단회포장에 대해 같은 환자로 한정해 중단약 제거·새 치료약 추가와 재교부를 허용한다. 모든 반환약의 일반 재사용 허가는 아니다.",
+      "authority_ids": [
+        "PACK_RETURN",
+        "PACK_POLICY"
+      ]
+    },
+    "The original label can remain unchanged after its listed drug is removed or replaced.": {
+      "statement_supported": false,
+      "finding_ko": "내용물이 제거·대체되면 재교부 전 9.08(5)에 맞게 실제 약명·강도·수량 등 표시를 갱신해야 하므로 이미 틀려진 원래 라벨을 그대로 둘 수 없다.",
+      "authority_ids": [
+        "PACK_LABEL"
+      ]
+    },
+    "The pharmacy must record the repackaging, removal, re-dispensing, and responsible pharmacist.": {
+      "statement_supported": true,
+      "finding_ko": "재포장·제거·재교부를 설명하는 기록과 변경 약사 식별을 명시적으로 요구한다. 원래 조제기록만으로 후속 변경을 대체하지 않는다.",
+      "authority_ids": [
+        "PACK_RETURN"
+      ]
+    }
+  },
+  "RET05": {
+    "A 60-day packaging maximum proves 60 days of stability for every drug.": {
+      "statement_supported": false,
+      "finding_ko": "60일은 다약 포장 공급량/BUD의 상한이다. 원 제조자 expiry·허가 라벨·실제 안정성을 무시한 모든 약의 60일 안정성 보증이 아니다.",
+      "authority_ids": [
+        "PACK_STABILITY",
+        "PACK_POLICY"
+      ]
+    },
+    "A correct outer-box label makes identification on removable cells unnecessary.": {
+      "statement_supported": false,
+      "finding_ko": "분리 가능한 cell마다 충분한 크기의 약명·강도 라벨을 요구한다. outer box 표시는 개별 cell 의무를 대체하지 못한다.",
+      "authority_ids": [
+        "PACK_LABEL"
+      ]
+    },
+    "Moving the medicine into a fresh package restarts a new 60-day stability period.": {
+      "statement_supported": false,
+      "finding_ko": "새 포장으로 원 제조자 용기상 expiry가 초기화되지 않는다. 12일 남은 적용 한계보다 새 60일을 부여할 근거가 없다.",
+      "authority_ids": [
+        "PACK_STABILITY"
+      ]
+    },
+    "Repackaging cannot extend the medicine past its applicable shorter expiration or stability limit.": {
+      "statement_supported": true,
+      "finding_ko": "BUD는 원 제조자 용기의 가장 짧은 expiry 또는 60일을 넘을 수 없고 FDA labeling·compatibility 조건도 지켜야 한다. 제시한 12일 한계를 연장할 수 없다.",
+      "authority_ids": [
+        "PACK_STABILITY",
+        "PACK_POLICY"
+      ]
+    },
+    "The packaging maximum is a ceiling, not a guarantee that every contained medicine is stable that long.": {
+      "statement_supported": true,
+      "finding_ko": "9.08(3)(a),(5)(d)의 60일 상한과 개별 약물의 안정성 충족은 별도 판단이다. shorter limit를 적용한다.",
+      "authority_ids": [
+        "PACK_STABILITY"
+      ]
+    },
+    "The removable cells must carry the required identification rather than relying only on the outer box.": {
+      "statement_supported": true,
+      "finding_ko": "재교부 전에도 분리되는 각 cell에 각 약의 name과 strength를 표시해야 한다. 외부 상자에만 표시하는 방법은 부족하다.",
+      "authority_ids": [
+        "PACK_LABEL"
+      ]
+    },
+    "Updating instructions alone is sufficient even if discontinued tablets remain in the pack.": {
+      "statement_supported": false,
+      "finding_ko": "중단약을 제거하고 남은/새 약과 라벨이 일치하도록 재포장하는 경로이다. 계속 복용될 cell에 중단약이 남아 있는데 instructions만 고치는 조치로 대체할 수 없다.",
+      "authority_ids": [
+        "PACK_RETURN",
+        "PACK_LABEL"
+      ]
+    }
+  },
+  "RET06": {
+    "A failed delivery, an uncollected pharmacy prescription, and a patient return are distinct custody situations.": {
+      "statement_supported": true,
+      "finding_ko": "never-dispensed RTS는 9.13(1), 이미 환자에게 교부된 반환약은 9.01(5),(7) 및 개별 예외의 영역이다. failed delivery는 실제 인도·보관 상태를 확인해야 하므로 같은 custody로 단정할 수 없다.",
+      "authority_ids": [
+        "CUSTODY",
+        "RTS_RECALL",
+        "SHIP"
+      ]
+    },
+    "An intact outer package does not by itself establish acceptable temperature exposure and product integrity.": {
+      "statement_supported": true,
+      "finding_ko": "밀봉 외관은 온도기록이나 안정성 평가가 아니다. 약국은 packing/shipping/transport가 약의 integrity·stability를 훼손하지 않게 해야 한다.",
+      "authority_ids": [
+        "SHIP",
+        "DELIVERY_ADVISORY"
+      ]
+    },
+    "Any carrier loss makes all investigation and applicable reporting solely the carrier's responsibility.": {
+      "statement_supported": false,
+      "finding_ko": "carrier가 관여했다는 이유만으로 약국의 적절한 조사·보호·해당 보고책임이 모두 없어지지 않는다. federally controlled theft/significant loss의 registrant 의무도 있다. 모든 loss가 같은 보고대상이라는 뜻은 아니다.",
+      "authority_ids": [
+        "SHIP",
+        "LOSS",
+        "DELIVERY_ADVISORY"
+      ]
+    },
+    "Every returned package has the same legal custody and reuse status.": {
+      "statement_supported": false,
+      "finding_ko": "never-dispensed RTS와 patient return 및 failed-delivery에는 교부·custody에 따른 구분이 있다. 모든 returned package의 법적 재사용 가능성이 같다는 명제는 성립하지 않는다.",
+      "authority_ids": [
+        "CUSTODY",
+        "RTS_RECALL"
+      ]
+    },
+    "Sealed outer packaging conclusively proves acceptable temperature history.": {
+      "statement_supported": false,
+      "finding_ko": "외부 포장 봉인은 운송 중 허용 온도나 약물 무결성을 확정하지 않는다. 실제 노출/보관을 평가해야 한다.",
+      "authority_ids": [
+        "SHIP"
+      ]
+    },
+    "The potentially affected RTS medicine cannot be re-dispensed until the pharmacy confirms it is not within the recalled lot.": {
+      "statement_supported": true,
+      "finding_ko": "potentially recalled RTS는 정확한 lot가 recall 밖이라고 확인되기 전에는 교부할 수 없다는 9.13(3)의 직접 요건이다.",
+      "authority_ids": [
+        "RTS_RECALL"
+      ]
+    },
+    "Uncertain lot identity permits dispensing if the container was originally filled before the recall notice.": {
+      "statement_supported": false,
+      "finding_ko": "회수통지 전에 최초 조제했더라도 potentially subject RTS의 lot 확인 의무가 없어지지 않는다. 불명확하면 재교부할 수 없다.",
+      "authority_ids": [
+        "RTS_RECALL"
+      ]
+    }
+  },
+  "RET07": {
+    "An authorized collector may reopen the liner to perform an ordinary tablet inventory.": {
+      "statement_supported": false,
+      "finding_ko": "봉인한 inner liner는 열거나 x-ray·분석·관통할 수 없고 deposited substance의 count/sort/inventory도 금지된다. 일반 재고실사 명목의 예외는 없다.",
+      "authority_ids": [
+        "LINER_NO_OPEN"
+      ]
+    },
+    "Collected patient medication is not a supply source for the pharmacy's saleable inventory.": {
+      "statement_supported": true,
+      "finding_ko": "ultimate-user 수거는 destruction 목적이며 deposited drug를 따로 회수·취급할 수 없다. 식별 가능하다는 이유로 saleable stock이 되지 않는다.",
+      "authority_ids": [
+        "COLLECTION_PURPOSE",
+        "LINER_NO_OPEN",
+        "CUSTODY"
+      ]
+    },
+    "Identifiable medicine recovered from a collection liner may be returned to saleable stock.": {
+      "statement_supported": false,
+      "finding_ko": "식별 가능한 포장이라도 수거함 투입 후 개별 취급이 금지되고 destruction 경로를 따라야 한다. 반환 재고로 회수할 수 없다.",
+      "authority_ids": [
+        "COLLECTION_PURPOSE",
+        "LINER_NO_OPEN"
+      ]
+    },
+    "Mailing controlled drugs in any envelope to any pharmacy is a compliant mail-back program.": {
+      "statement_supported": false,
+      "finding_ko": "mail-back은 적격 collector/law enforcement 및 preaddressed·postage-paid·unique-ID 등 정해진 package를 사용해야 한다. 아무 봉투·아무 약국으로 보내는 것은 그 경로가 아니다.",
+      "authority_ids": [
+        "MAIL_BACK"
+      ]
+    },
+    "Required unique identification and transfer or destruction records concern the liner's controlled handling.": {
+      "statement_supported": true,
+      "finding_ko": "추적 가능한 permanent unique ID와 설치·제거·보관·파괴이동/파괴 기록을 요구한다. 안의 tablet별 수량 실사와 구분된다.",
+      "authority_ids": [
+        "LINER_RECORD",
+        "LINER_ID"
+      ]
+    },
+    "Sealing a liner eliminates its identification and movement-record requirements.": {
+      "statement_supported": false,
+      "finding_ko": "봉인 후에도 unique ID는 남고 제거·보관·인계·파괴 관련 날짜·크기·직원 등 기록을 유지한다. 봉인은 추적 면제가 아니다.",
+      "authority_ids": [
+        "LINER_RECORD",
+        "LINER_ID"
+      ]
+    },
+    "The sealed collection liner must not be opened to sort or count its contents.": {
+      "statement_supported": true,
+      "finding_ko": "1317.60(c)의 봉인 후 개봉 금지와 1317.75(c)의 count/sort/inventory 금지가 직접 적용된다.",
+      "authority_ids": [
+        "LINER_NO_OPEN"
+      ]
+    }
+  },
+  "RET08": {
+    "Any two people present satisfy the permitted witness combination regardless of their roles.": {
+      "statement_supported": false,
+      "finding_ko": "LTCF는 collector 직원 1명과 지정된 supervisor-level LTCF 직원 1명, 또는 collector 직원 2명의 수행/감독 조합이어야 한다. 아무 두 사람으로 충족되지 않는다.",
+      "authority_ids": [
+        "LTCF_LINER"
+      ]
+    },
+    "Liner installation and removal must use the specifically authorized personnel or witness combination.": {
+      "statement_supported": true,
+      "finding_ko": "1317.80(c)는 설치·제거·이동·보관에 특정 인력의 수행 또는 감독을 요구한다. 일반 수거함과 LTCF의 허용 조합을 구분한다.",
+      "authority_ids": [
+        "LTCF_LINER"
+      ]
+    },
+    "The removed-liner clock starts at the resident's original prescription date.": {
+      "statement_supported": false,
+      "finding_ko": "sealed liner의 LTCF 최대 보관은 removal 후부터 3 business days이다. resident의 original prescription issue date는 기산점이 아니다.",
+      "authority_ids": [
+        "LTCF_LINER"
+      ]
+    },
+    "The removed-liner storage clock begins at removal rather than the earlier resident event.": {
+      "statement_supported": true,
+      "finding_ko": "1317.80(d)는 upon removal 이후 LTCF의 지정 보안 cabinet/room에 최대 3 business days 보관하도록 한다. resident event 시계와 별개다.",
+      "authority_ids": [
+        "LTCF_LINER"
+      ]
+    },
+    "The resident-medication clock begins only when an unrelated liner is later removed.": {
+      "statement_supported": false,
+      "finding_ko": "resident medication은 영구 중단·전원·사망에 따른 use discontinuation 직후부터 최대 3 business days 내 receptacle로 옮긴다. 무관한 liner removal까지 기다리지 않는다.",
+      "authority_ids": [
+        "LTCF_RESIDENT"
+      ]
+    },
+    "The resident-medication clock relates to the discontinuation or other specified resident event.": {
+      "statement_supported": true,
+      "finding_ko": "1317.80(a)는 prescriber에 의한 permanent discontinuation, resident transfer 또는 death에 따른 discontinuation을 trigger로 한다. 해당 II-V/ultimate-user 경로의 범위 안에서 옳다.",
+      "authority_ids": [
+        "LTCF_RESIDENT"
+      ]
+    },
+    "The shared number means the two rules are one combined deadline.": {
+      "statement_supported": false,
+      "finding_ko": "resident medication을 receptacle로 옮길 의무와 제거된 sealed liner의 secure LTCF storage 의무는 대상·행위·기산점이 다르다. 숫자가 같아도 하나의 deadline이 아니다.",
+      "authority_ids": [
+        "LTCF_RESIDENT",
+        "LTCF_LINER"
+      ]
+    },
+    "The two three-business-day rules have different subjects and triggers.": {
+      "statement_supported": true,
+      "finding_ko": "1317.80(a)는 resident의 discontinuation 후 disposal-transfer, (d)는 liner removal 후 LTCF 보관이다. 각각 3 business days라는 수가 같아도 다른 규칙이다.",
+      "authority_ids": [
+        "LTCF_RESIDENT",
+        "LTCF_LINER"
+      ]
+    }
+  },
+  "RX01": {
+    "A DEA registration replaces every applicable Massachusetts controlled-substance registration.": {
+      "statement_supported": false,
+      "finding_ko": "연방 등록은 관할 주의 등록/활동범위를 대체하지 않는다. MA §7의 해당 등록과 연방 권한을 별도로 충족해야 한다. 구체적인 등록면제는 그 자체 조건으로 판단한다.",
+      "authority_ids": [
+        "MCSR",
+        "AUTHORITY"
+      ]
+    },
+    "A correct DEA check digit conclusively establishes the prescriber's current legal authority.": {
+      "statement_supported": false,
+      "finding_ko": "산술 check digit는 실제 현재 등록·등록자 신원·주 면허상 처방 scope를 증명하지 못한다. 1306.03의 실질 권한과 9.15의 진정성 판단이 필요하다.",
+      "authority_ids": [
+        "AUTHORITY",
+        "MA_VERIFY"
+      ]
+    },
+    "A valid-looking DEA number does not establish current registration, identity, or scope.": {
+      "statement_supported": true,
+      "finding_ko": "형식상 번호와 실제 current registration·identity·scope는 별도다. 처방 가능한 jurisdictional authority와 registered/exempt 상태 및 authenticity를 확인해야 한다.",
+      "authority_ids": [
+        "AUTHORITY",
+        "MA_VERIFY"
+      ]
+    },
+    "Any hospital employee may prescribe using the hospital DEA number merely by wearing its badge.": {
+      "statement_supported": false,
+      "finding_ko": "hospital badge만으로 처방할 수 없다. 해당 individual practitioner의 주 권한·기관 검증·고용 scope·기관 승인·internal code와 목록 등 1301.22(c)의 누적 요건을 충족해야 한다.",
+      "authority_ids": [
+        "INSTITUTION"
+      ]
+    },
+    "DEA and Massachusetts controlled-substance registration requirements must be considered separately.": {
+      "statement_supported": true,
+      "finding_ko": "DEA와 MA 등록은 별도 체계다. 면허/활동·등록범위와 해당 exemption을 함께 확인하며 하나로 다른 것을 자동 대체하지 않는다.",
+      "authority_ids": [
+        "MCSR",
+        "AUTHORITY"
+      ]
+    },
+    "The professional's actual license and authorized scope must match the proposed treatment.": {
+      "statement_supported": true,
+      "finding_ko": "prescription은 jurisdiction상 허용된 individual practitioner가 usual professional course와 legitimate medical purpose로 발행해야 한다. 직함만으로 scope를 확대하지 않는다.",
+      "authority_ids": [
+        "AUTHORITY",
+        "MA_PURPOSE"
+      ]
+    },
+    "The title 'doctor' supplies unrestricted prescribing scope for every drug and patient.": {
+      "statement_supported": false,
+      "finding_ko": "doctor라는 호칭은 약물·환자·목적 제한을 없애지 않는다. 직역의 실제 권한과 usual course 조건이 적용된다.",
+      "authority_ids": [
+        "AUTHORITY",
+        "MA_PURPOSE"
+      ]
+    }
+  },
+  "RX02": {
+    "A single unusual feature should be evaluated rather than treated as conclusive proof of fraud.": {
+      "statement_supported": true,
+      "finding_ko": "unusual feature는 구체 사실과 정당 목적을 평가할 단서이지 모든 환자에 대한 fraud 확정명제가 아니다. professional judgment로 진정성과 목적을 판단한다.",
+      "authority_ids": [
+        "MA_VERIFY",
+        "FED_PURPOSE"
+      ]
+    },
+    "All required fields being present conclusively establishes a legitimate prescription.": {
+      "statement_supported": false,
+      "finding_ko": "required fields의 완성과 legitimate medical purpose/usual course는 별도 조건이다. 내용이 다 적혔다는 사실만으로 substantive legitimacy가 확정되지 않는다.",
+      "authority_ids": [
+        "FED_PURPOSE",
+        "MA_PURPOSE"
+      ]
+    },
+    "An unexplained concern may be erased from the record once payment is approved.": {
+      "statement_supported": false,
+      "finding_ko": "보험 승인으로 material concern이 해결되거나 처방의 진정성이 생기지 않는다. 적절한 확인 후 판단 근거를 보존하는 것이 corresponding responsibility에 부합한다. 법에 없는 일률적 concern-record 양식 의무를 새로 만들지 않는다.",
+      "authority_ids": [
+        "FED_PURPOSE",
+        "MA_VERIFY"
+      ]
+    },
+    "Completed fields do not remove the pharmacist's corresponding responsibility to evaluate legitimacy.": {
+      "statement_supported": true,
+      "finding_ko": "1306.04(a)와 MA §19(a)는 처방자의 책임과 조제 약사의 corresponding responsibility를 함께 둔다. 형식 완결성으로 약사의 목적 평가가 면제되지 않는다.",
+      "authority_ids": [
+        "FED_PURPOSE",
+        "MA_PURPOSE"
+      ]
+    },
+    "One unusual feature conclusively proves that every such patient is committing fraud.": {
+      "statement_supported": false,
+      "finding_ko": "사실상 정당한 설명이 가능한 한 특징을 모든 환자의 fraud 증명으로 일반화할 수 없다. 9.15는 개별 professional judgment를 요구한다.",
+      "authority_ids": [
+        "MA_VERIFY"
+      ]
+    },
+    "The pharmacist should use appropriate information and document the resolution of a material concern.": {
+      "statement_supported": true,
+      "finding_ko": "material concern을 실제 정보로 확인하고 해소 과정을 기록하는 조치는 corresponding responsibility와 처방/기록 의무에 부합한다. 이 문장은 should이며 모든 단서에 독립적인 새 법정 보고양식을 요구한다는 뜻은 아니다.",
+      "authority_ids": [
+        "FED_PURPOSE",
+        "MA_VERIFY"
+      ]
+    },
+    "The prescriber's signature transfers all legal responsibility away from the pharmacist.": {
+      "statement_supported": false,
+      "finding_ko": "처방자의 서명은 dispensing pharmacist의 corresponding responsibility를 이전·소멸시키지 않는다. 양 책임이 공존한다.",
+      "authority_ids": [
+        "FED_PURPOSE",
+        "MA_PURPOSE"
+      ]
+    }
+  },
+  "RX03": {
+    "A specific patient-product delivery exception must be evaluated on its own scope.": {
+      "statement_supported": true,
+      "finding_ko": "1317 수거예외가 아니라 1306.07(f)의 patient-specific injection/implantation delivery 등 해당 제품·목적·환자·기간과 기록 범위를 따져야 한다. 이를 일반 stock permission으로 확대할 수 없다.",
+      "authority_ids": [
+        "DEPOT_DELIVERY",
+        "FED_PURPOSE"
+      ]
+    },
+    "Adding any patient name converts a general office-stock order into a lawful patient prescription.": {
+      "statement_supported": false,
+      "finding_ko": "MA §19(b) 및 연방1306.04(b)는 practitioner 일반 stock 조달용 처방을 금지한다. patient name을 넣어 실제 office-stock 목적을 바꾸지 못한다.",
+      "authority_ids": [
+        "MA_PURPOSE",
+        "FED_PURPOSE"
+      ]
+    },
+    "An exception for one patient-specific injectable authorizes general office stock for every drug.": {
+      "statement_supported": false,
+      "finding_ko": "specific patient의 주사/삽입 치료용 delivery 예외에도 general dispensing stock 금지가 남는다. 모든 약의 office stock 허용으로 일반화되지 않는다.",
+      "authority_ids": [
+        "DEPOT_DELIVERY"
+      ]
+    },
+    "Moving a stock bottle to another pharmacy is the same transaction as transferring refill information.": {
+      "statement_supported": false,
+      "finding_ko": "실물 stock의 registrant간 distribution과 환자 prescription/refill information의 transfer는 다른 거래다. 전자 처방정보를 옮기는 절차로 실물 유통 기록을 대체할 수 없다.",
+      "authority_ids": [
+        "DISTRIBUTION",
+        "MA_PURPOSE"
+      ]
+    },
+    "Patient-prescription paperwork alone supplies every authorization for registrant stock distribution.": {
+      "statement_supported": false,
+      "finding_ko": "환자처방 서류만으로 stock distribution의 registration·record·해당 I/II ordering 요건을 충족하지 못한다. dispenser distribution 예외에는 등록자·기록·5% 등 조건이 남는다.",
+      "authority_ids": [
+        "DISTRIBUTION"
+      ]
+    },
+    "The general office-stock purpose is not made a legitimate patient prescription by adding a patient's name.": {
+      "statement_supported": true,
+      "finding_ko": "의도된 용도가 unrelated patients의 general office stock이면 §19(b)/1306.04(b)의 금지 대상이다. 환자 이름을 추가해 patient-specific prescription으로 만들 수 없다.",
+      "authority_ids": [
+        "MA_PURPOSE",
+        "FED_PURPOSE"
+      ]
+    },
+    "The stock transaction requires the applicable distribution, registration, ordering, and record pathway.": {
+      "statement_supported": true,
+      "finding_ko": "실물 stock supply는 해당 distribution/registration/record 경로로 검토해야 한다. 1307.11의 dispenser 예외에서도 상대방 등록·양측 기록·I/II order form·연간5% 조건 등이 남는다. every stock transaction에 새 distributor registration이 필수라는 뜻은 아니다.",
+      "authority_ids": [
+        "DISTRIBUTION"
+      ]
+    }
+  },
+  "RX04": {
+    "A prescriber signature automatically constitutes a no-substitution direction.": {
+      "statement_supported": false,
+      "finding_ko": "no substitution은 default가 아니고 독립 요소여야 하며 signature 등 다른 요소로 충족할 수 없다는 721.020(B)(1),(3)의 직접 문언이다.",
+      "authority_ids": [
+        "RX_FIELDS"
+      ]
+    },
+    "Any missing patient information is valid simply because some public-health prescriptions have exceptions.": {
+      "statement_supported": false,
+      "finding_ko": "patient name/address 예외는 veterinary·naloxone/승인 antagonist·EPT·지정 public-health 경로 등 열거된 범위다. 어떤 public-health 예외가 있다는 사실이 모든 누락을 허용하지 않는다.",
+      "authority_ids": [
+        "RX_FIELDS"
+      ]
+    },
+    "Listing only a therapeutic class necessarily supplies the required medication information.": {
+      "statement_supported": false,
+      "finding_ko": "치료군만 적는 것은 actual drug name·strength·dosage form·quantity·directions 등 required field를 대체하지 못한다.",
+      "authority_ids": [
+        "ISSUE_DATE",
+        "RX_FIELDS"
+      ]
+    },
+    "The actual issue date and any separate earliest-fill instruction must be distinguished.": {
+      "statement_supported": true,
+      "finding_ko": "실제 발행하고 서명한 날을 issue date로 적고 허용되는 future-fill instruction은 별도로 둔다. pickup 예정일로 원 발행일을 대체하지 않는다.",
+      "authority_ids": [
+        "ISSUE_DATE"
+      ]
+    },
+    "The planned pickup date may replace the actual issue date as an ordinary formatting preference.": {
+      "statement_supported": false,
+      "finding_ko": "모든 controlled prescription은 issued/signed day로 date해야 한다. future pickup 날짜는 허용된 earliest-fill instruction과 다르며 format 취향으로 actual issue date를 바꿀 수 없다.",
+      "authority_ids": [
+        "ISSUE_DATE"
+      ]
+    },
+    "The prescription must identify the actual medication, strength, form, quantity, and directions as required.": {
+      "statement_supported": true,
+      "finding_ko": "1306.05(a)는 drug name·strength·dosage form·quantity·directions를 요구하고 MA721.020(D)도 actual medication 정보를 요구한다. therapeutic class만으로 부족하다.",
+      "authority_ids": [
+        "ISSUE_DATE",
+        "RX_FIELDS"
+      ]
+    },
+    "The signature alone is not the separate no-substitution instruction.": {
+      "statement_supported": true,
+      "finding_ko": "721.020(B)(3)는 no-substitution이 unique element이며 signature로 충족되지 않는다고 명시한다.",
+      "authority_ids": [
+        "RX_FIELDS"
+      ]
+    }
+  },
+  "RX05": {
+    "A pharmacist may overwrite the original signed electronic order to make a later change appear original.": {
+      "statement_supported": false,
+      "finding_ko": "나중 변경이 원래 서명본에 있었던 것처럼 원 기록을 덮어쓸 수 없다. 수신 원본을 archive하고 허용 annotation과 audit trail을 보존해야 한다.",
+      "authority_ids": [
+        "EPCS_RECORD"
+      ]
+    },
+    "An agent's transmission role does not permit using the prescriber's credentials to sign as the prescriber.": {
+      "statement_supported": true,
+      "finding_ko": "agent가 data entry/transmission을 도와도 prescriber의 token/password/생체요소를 공유하거나 대신 서명할 수 없다.",
+      "authority_ids": [
+        "EPCS_SIGNATURE"
+      ]
+    },
+    "An authorized agent may sign EPCS with the prescriber's personal credentials as ordinary transmission assistance.": {
+      "statement_supported": false,
+      "finding_ko": "1311.102(a)는 prescriber의 credentials로 다른 사람이 서명하는 것을 금지한다. 전송 보조 권한과 개인 인증 서명은 다르다.",
+      "authority_ids": [
+        "EPCS_SIGNATURE"
+      ]
+    },
+    "An ordinary text-message photograph is not automatically compliant EPCS.": {
+      "statement_supported": true,
+      "finding_ko": "ordinary text photo만으로 validated authenticated generation/signing/transmission application이 되지 않는다. 실제 EPCS 조건을 갖추어야 한다. lawful non-EPCS format 가능성과는 구별한다.",
+      "authority_ids": [
+        "EPCS_FORMAT",
+        "EPCS_RULE"
+      ]
+    },
+    "Every prescription image received through an electronic device is compliant EPCS.": {
+      "statement_supported": false,
+      "finding_ko": "전자기기로 받은 이미지라는 점만으로 EPCS가 되는 것이 아니다. 1306.08과1311 및 MA721.010의 시스템·서명·전송 조건을 적용한다.",
+      "authority_ids": [
+        "EPCS_FORMAT",
+        "EPCS_RULE"
+      ]
+    },
+    "Scanning a paper prescription retroactively makes it an originally issued EPCS.": {
+      "statement_supported": false,
+      "finding_ko": "스캔은 원래 종이였던 prescription의 보관 형태를 바꿀 뿐 originally issued EPCS로 소급 전환하지 못한다.",
+      "authority_ids": [
+        "EPCS_FORMAT",
+        "EPCS_RULE"
+      ]
+    },
+    "Scanning paper changes its storage form, not its original prescription-transmission category.": {
+      "statement_supported": true,
+      "finding_ko": "종이 원본을 scan해 저장하는 것과 전자처방 시스템에서 생성·인증서명·전송한 원본은 법적 발행/전송 category가 다르다.",
+      "authority_ids": [
+        "EPCS_FORMAT",
+        "EPCS_RULE"
+      ]
+    }
+  },
+  "RX06": {
+    "A paper prescription is necessarily invalid even when an applicable electronic-prescribing exception exists.": {
+      "statement_supported": false,
+      "finding_ko": "적용 가능한 temporary failure 등의 예외는 lawful written/oral format을 허용할 수 있다. 다른 controlled prescription 조건이 충족되었다면 nonelectronic이라는 이유만으로 필연 invalid가 되지 않는다.",
+      "authority_ids": [
+        "EP_EXCEPTION"
+      ]
+    },
+    "An LTCF exception with a past endpoint remains universally available without a verified extension.": {
+      "statement_supported": false,
+      "finding_ko": "721.070(A)(11)는 과거 endpoint 또는 Department가 정한 later date를 두는 경로이지 모든 후속 처방의 무조건 면제가 아니다. 여기서 실제 연장 부재를 단정하지 않으며, verified extension 없이 universal coverage를 주장하는 명제가 틀리다.",
+      "authority_ids": [
+        "EP_EXCEPTION"
+      ]
+    },
+    "An applicable electronic-prescribing exception may permit another lawful format while other conditions remain.": {
+      "statement_supported": true,
+      "finding_ko": "721.070(A)(2)의 temporary technology/electrical failure 예외라도 서면/구두 처방의 나머지 주·연방 요건은 남는다. CII 일반 refill 권한은 생기지 않는다.",
+      "authority_ids": [
+        "EP_EXCEPTION",
+        "ORAL_CII"
+      ]
+    },
+    "An electronic-prescribing waiver authorizes an ordinary oral Schedule II refill.": {
+      "statement_supported": false,
+      "finding_ko": "EP waiver는 전자형식 의무의 예외일 뿐 CII refill 금지를 지우거나 ordinary oral prescription 경로를 만들지 않는다. oral CII는 별도의 qualifying emergency 조건을 따라야 한다.",
+      "authority_ids": [
+        "ORAL_CII",
+        "EP_EXCEPTION"
+      ]
+    },
+    "Not having to verify the EP exception eliminates every prescription-legitimacy check.": {
+      "statement_supported": false,
+      "finding_ko": "721.070(C)의 구체적 EP exception verification 면제는 otherwise valid 처방에 한정된다. 진정성·권한·목적 검증을 없애지 않는다.",
+      "authority_ids": [
+        "EP_EXCEPTION",
+        "MA_VERIFY"
+      ]
+    },
+    "The pharmacist's specific exception-verification relief does not waive authenticity or prescriber-authority review.": {
+      "statement_supported": true,
+      "finding_ko": "exception/waiver 자체를 확인할 의무가 없다는 조항과 처방의 authenticity/권한·legitimate purpose 판단은 별도다.",
+      "authority_ids": [
+        "EP_EXCEPTION",
+        "MA_VERIFY"
+      ]
+    },
+    "The waiver does not create an ordinary oral Schedule II refill authority.": {
+      "statement_supported": true,
+      "finding_ko": "CII no-refill와 ordinary oral 금지는 waiver로 바뀌지 않는다. emergency oral은 refill이 아니라 자체 요건에 따른 새 authorization이다.",
+      "authority_ids": [
+        "ORAL_CII",
+        "EP_EXCEPTION"
+      ]
+    }
+  },
+  "RX07": {
+    "A permitted generic substitution is different from replacing the prescribed drug with a different therapy.": {
+      "statement_supported": true,
+      "finding_ko": "Policy II.B는 prescribed controlled substance 변경을 금지하되 generic substitution을 구별한다. 다른 active therapy로 바꾸는 것과 허용 interchangeable product를 고르는 것은 다르다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "Changing the patient identity or supplying the prescriber's signature is outside the stated pharmacy correction pathway.": {
+      "statement_supported": true,
+      "finding_ko": "Policy II.A,D는 다른 환자로 patient name 변경과 prescriber signature 추가/변경을 금지하며 새 처방을 요구한다. 가족 동의로 보완할 수 없다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "Every change of active therapy is a lawful generic substitution.": {
+      "statement_supported": false,
+      "finding_ko": "다른 active therapy의 선택은 일반 generic substitution이 아니다. Policy II.B의 약물 변경 금지와 generic 예외를 구분한다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "Permission to add a missing issue date permits changing an already written issue date.": {
+      "statement_supported": false,
+      "finding_ko": "III.A.i.a와III.B.i는 누락된 issue date의 추가만 허용한다. 이미 기재된 날짜를 다시 쓰는 권한으로 확대하지 못한다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "The pharmacy may change the patient and supply the signature if the family agrees.": {
+      "statement_supported": false,
+      "finding_ko": "환자 이름을 다른 가족 구성원으로 변경하거나 처방자 서명을 약국이 채우는 것은 II.A,D에 따라 새 처방을 요구한다. 가족 동의는 예외가 아니다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "The pharmacy may move the earliest-fill date earlier as a routine clerical correction.": {
+      "statement_supported": false,
+      "finding_ko": "Schedule II earliest-fill date는 Policy II.E상 변경·추가할 수 없는 요소다. clerical correction으로 earlier date를 정할 수 없다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    },
+    "The stated Schedule II earliest-fill change requires a new lawful prescription.": {
+      "statement_supported": true,
+      "finding_ko": "이미 있는 CII earliest-fill date를 바꾸려면 Policy II.E상 새 처방이 필요하다. 현 처방에서 authorized correction으로 처리하지 않는다.",
+      "authority_ids": [
+        "CHANGE_CORE"
+      ]
+    }
+  },
+  "RX08": {
+    "An agent permitted to confirm an address may authorize every Schedule II strength change under the same clause.": {
+      "statement_supported": false,
+      "finding_ko": "CII strength 변경은III.A.i.g에 따라 prescriber consultation 대상이다.III.A.i.c의 주소 변경에만 허용된 authorized agent를 모든 clinical change로 확대할 수 없다.",
+      "authority_ids": [
+        "CHANGE_AGENT"
+      ]
+    },
+    "An authorized correction requires a record of the change, date, responsible pharmacist, and applicable authorization.": {
+      "statement_supported": true,
+      "finding_ko": "Policy IV는 date·item changed/added·해당 authorizing prescriber·accepting/making pharmacist 이름을 computerized system 또는 written prescription에 기록하도록 한다.",
+      "authority_ids": [
+        "CHANGE_RECORD"
+      ]
+    },
+    "Gabapentin cannot be treated as an ordinary non-PMP drug for a pathway expressly excluding PMP drugs.": {
+      "statement_supported": true,
+      "finding_ko": "현재 DCP는 Gabapentin을 Schedule VI이지만 PMP 대상 drug of concern으로 명시한다. Policy III.C.iii.a의 without-consultation days-supply 변경은 non-PMP drug에 한정되므로 그 경로에 gabapentin을 넣을 수 없다. prescriber consultation을 통한 다른 허용 변경까지 금지한다는 뜻은 아니다.",
+      "authority_ids": [
+        "PMP_GABA",
+        "CHANGE_AGENT",
+        "PMP_REG"
+      ]
+    },
+    "Gabapentin qualifies for the non-PMP-only adjustment pathway because Massachusetts calls it Schedule VI.": {
+      "statement_supported": false,
+      "finding_ko": "MA Schedule VI와 PMP 대상 여부는 같지 않다. gabapentin은 PMP reportable이므로 non-PMP-only/no-consultation days-supply 경로에 적격하지 않다.",
+      "authority_ids": [
+        "PMP_GABA",
+        "CHANGE_AGENT"
+      ]
+    },
+    "Permission to add a missing number allows using any plausible registration number.": {
+      "statement_supported": false,
+      "finding_ko": "누락 등록번호 추가 권한이 실제 prescriber의 정확한 번호와 신원확인을 면제하지 않는다. 임의로 그럴듯한 번호를 넣으면 required registration 정보가 되지 않는다.",
+      "authority_ids": [
+        "CHANGE_AGENT",
+        "MA_VERIFY"
+      ]
+    },
+    "The address-related agent provision does not establish agent authority for the Schedule II strength change.": {
+      "statement_supported": true,
+      "finding_ko": "주소 관련 authorized-agent 허용은 strength 변경에 적용되지 않는다. CII clinical change에는 PolicyIII.A.i의 prescriber consultation이 필요하다.",
+      "authority_ids": [
+        "CHANGE_AGENT"
+      ]
+    },
+    "The unexplained notation 'MD OK' necessarily records every required detail of a change.": {
+      "statement_supported": false,
+      "finding_ko": "MD OK만으로 date·changed item·authorizing prescriber(해당 시)·변경 약사라는 네 요소가 모두 기록되었다고 확정할 수 없다. 실제 필요한 내용을 남겨야 한다.",
+      "authority_ids": [
+        "CHANGE_RECORD"
+      ]
+    }
+  },
+  "CII01": {
+    "A lawful partial supply uses the original authorization rather than creating a refill.": {
+      "statement_supported": true,
+      "finding_ko": "법에 맞는 partial filling은 원 처방의 authorized total 안에서 일부씩 교부하는 구조다. 그 사실만으로 새 refill이 되지 않는다. 72시간·30일·LTCF/terminal 특수기한은 각각 그 경로가 실제 적용될 때 판단한다.",
+      "authority_ids": [
+        "NO_REFILL"
+      ]
+    },
+    "A new Schedule II prescription is legally the same transaction as refilling the old prescription.": {
+      "statement_supported": false,
+      "finding_ko": "새 lawful CII prescription은 새 authorization이며 금지된 기존 처방 refill과 같지 않다.",
+      "authority_ids": [
+        "NO_REFILL",
+        "MA_CII"
+      ]
+    },
+    "A prescriber's written refill count does not create Schedule II refill authority.": {
+      "statement_supported": true,
+      "finding_ko": "Oxycodone은 연방II이며1306.12(a), MA§23(b)는 CII refill을 금지한다. prescriber가 refill count를 적어도 권한이 생기지 않는다.",
+      "authority_ids": [
+        "OXY_CII",
+        "NO_REFILL",
+        "MA_CII"
+      ]
+    },
+    "An electronic Schedule II prescription needs no pharmacist final validation.": {
+      "statement_supported": false,
+      "finding_ko": "247 CMR9.04(1)는 licensed pharmacist의 final dispensing process validation을 요구하며 EPCS만의 면제를 두지 않는다. MA§23(c)의 endorsement도 별도로 남는다.",
+      "authority_ids": [
+        "FINAL_VALIDATION",
+        "MA_CII"
+      ]
+    },
+    "Every partial supply is an additional refill prohibited solely because it is Schedule II.": {
+      "statement_supported": false,
+      "finding_ko": "1306.13은 조건에 맞는 CII partial fill을 명시 허용한다. 모든 partial supply를 refill로 일반화해 금지할 수 없다.",
+      "authority_ids": [
+        "NO_REFILL"
+      ]
+    },
+    "The prescriber's written count makes two Schedule II refills permissible.": {
+      "statement_supported": false,
+      "finding_ko": "처방자의 two refills 문구는CII no-refill을 override하지 않는다. 새 lawful prescription과 partial fill의 구분이 필요하다.",
+      "authority_ids": [
+        "NO_REFILL",
+        "MA_CII"
+      ]
+    }
+  }
+}
