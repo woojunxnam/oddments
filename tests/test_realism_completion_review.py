@@ -125,6 +125,9 @@ def make_report(f,index=0,verdict='PASS'):
                 prior_question_author_or_independent_verdicts_read=False,hidden_statement_truth_read=False),
             realism_review=dict(verdict=verdict,decision='KEEP'if verdict=='PASS'else 'HOLD',criteria=criteria,
                 criterion_findings_ko={k:'SYNTHETIC '+uid+' criterion '+k for k in r.CRITERIA},finding_ko='SYNTHETIC individual '+uid,duplicate_evidence=duplicate))
+        if verdict in {'NOT_ASSESSED','HOLD'}:
+            row['realism_review']['criteria'][r.CRITERIA[0]]=None
+            row['realism_review']['blocker']='SYNTHETIC legal premise/path remains unspecified; no fabricated FAIL'
         if uid in LEGAL_IDS:
             rawpath=prefix+'official.raw';textpath=prefix+'official.txt';metapath=prefix+'official-meta.json'
             raw=b'SYNTHETIC OFFICIAL RAW';text=b'SYNTHETIC OFFICIAL TEXT'
@@ -508,3 +511,65 @@ def test_fixed4_no_and_ambiguous_are_distinct_from_yes_keep(fixture):
     legal.update(existing_answer_correct='AMBIGUOUS',verdict='HOLD',independently_expected_key=[],blocker='SYNTHETIC genuinely unresolved interpretation')
     for option in legal['per_choice_findings']:option['proposition_supported']=None
     r.validate_report(job,scope,report,read_memory(paths),inputs,public)
+
+
+def install_original_native_inventory(fixture):
+    """Synthetic native136 + static10 mirrors the production caller split."""
+    root,state,scope,inputs,public,primary=fixture
+    path='reports/full-corpus-review/synthetic-native-primary.json'
+    provenance=dict(stage='independent-legacy',independent_of_authors=True,auditor='GPT',auditor_instance='prior-instance',
+        actor_provenance={'actor_id':'prior-reviewer','session_id':'prior-reviewer'},canonical_audit=False,canonical_release_credit=0)
+    report={**provenance,'records':primary[10:]};write(root,path,report)
+    hashes={row['question_id']:row['record_sha256']for row in primary[10:]}
+    result={**provenance,'question_hashes':hashes,'worker_commit':'b'*40,'results':[dict(question_id=uid,disposition='INDEPENDENT_ASSESSED',evidence_path=path,evidence_sha256=r.sha(r.encoded(report)))for uid in hashes]}
+    native=q.empty('independent-legacy');job=dict(job_id='synthetic-old-native136',stage='independent-legacy',sequence=1,status='INTEGRATED',
+        worker='prior-reviewer',question_hashes=hashes,result=result,integrated_commit='c'*40,integrated_at='2026-11-04T11:58:00+00:00')
+    native['jobs']=[job];native['events']=[dict(kind='INTEGRATE',job_id=job['job_id'],commit='c'*40)]
+    from legacy_independent_metadata import STATE
+    write(root,STATE,native);commit(root,'SYNTHETIC original native/static complete inventory')
+
+
+def blocked_notice(proof,report):
+    row=proof['record'];return dict(question_ids=[row['question_id']],question_record_hashes={row['question_id']:row['record_sha256']},
+        issue_type='INDEPENDENT_REVIEW_FINDING',reason=row['realism_review']['blocker'],checked_at=report['reviewed_at'],
+        review_source=proof['report_path'],review_source_sha256=proof['report_sha256'])
+
+
+@pytest.mark.parametrize('grade',['NOT_ASSESSED','HOLD'])
+def test_integrated_blocked_style_has_bound_negative_and_explicit_archive_warning(fixture,monkeypatch,grade):
+    root,state,scope,inputs,public,primary=fixture;complete(fixture,verdict=grade);install_original_native_inventory(fixture)
+    from supplementary_checkpoint_bindings import validated_sources
+    sources=validated_sources(root,primary);metadata=m.load_metadata(root,primary,public)
+    assert len(sources)==40 and all(proof['negative']for proof in sources.values())
+    first=next(iter(metadata['assessments'].values()));report=json.loads((root/first['report_path']).read_bytes());notice=blocked_notice(first,report)
+    assert m.verified_blocked_notice(root,notice,first['record'],report)is True
+    selection={'recommended_ids':[],'archive_review_notices':[],'safety_holds':[]}
+    # Existing HOLD guidance can remain; choosing this new report activates
+    # exact proof coverage for its completed blocked rows.
+    m.validate_archive_containment(selection,metadata)
+    selected_but_missing_proof={**notice,'question_record_hashes':{}}
+    selection['archive_review_notices']=[selected_but_missing_proof]
+    with pytest.raises(ValueError,match='actual source-bound archive notice'):m.validate_archive_containment(selection,metadata)
+    selection['archive_review_notices']=[blocked_notice(proof,report)for proof in metadata['assessments'].values()]
+    m.validate_archive_containment(selection,metadata)
+    import build_representative_rewrites as builder
+    target='reports/representative-rewrite/archive-review-notices.json'
+    write(root,target,{'schema_version':'practice-archive-review-notices/1','notices':[notice]})
+    monkeypatch.setattr(builder,'ROOT',root);monkeypatch.setattr(builder,'REPORTS',root/'reports/representative-rewrite')
+    assert builder._existing_archive_review_notices(public,{})==[notice]
+    assert 'legal_review'not in first['record']and all(row['legal_review']['verdict']=='HOLD'for row in primary)
+
+
+@pytest.mark.parametrize('defect',['pending','unbound_sha','different_purpose','missing_blocker','wrong_reason','stale_hash'])
+def test_blocked_style_warning_rejects_pending_or_unbound_arbitrary_source(fixture,defect):
+    root,state,scope,inputs,public,primary=fixture;complete(fixture,verdict='NOT_ASSESSED');install_original_native_inventory(fixture)
+    metadata=m.load_metadata(root,primary,public);proof=next(iter(metadata['assessments'].values()))
+    report=json.loads((root/proof['report_path']).read_bytes());row=copy.deepcopy(proof['record']);notice=blocked_notice(proof,report)
+    if defect=='pending':
+        state['jobs'][0]['status']='SUBMITTED';write(root,r.STATE,state);commit(root)
+    elif defect=='unbound_sha':notice['review_source_sha256']='0'*64
+    elif defect=='different_purpose':report['purpose']='ARBITRARY_UNREVIEWED_REPORT'
+    elif defect=='missing_blocker':row['realism_review'].pop('blocker')
+    elif defect=='wrong_reason':notice['reason']='A vague pending warning does not expose the actual blocker.'
+    else:row['record_sha256']='0'*64
+    assert m.verified_blocked_notice(root,notice,row,report)is False
