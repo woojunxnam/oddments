@@ -439,7 +439,8 @@ def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
     assert rows['MA-EXP-0223']['author_answer_key_assessment']=='INCORRECT_KEY'
     assert rows['MA-EXP-0224']['answer_key_assessment']=='INDEPENDENT_LEGACY_AMBIGUOUS'
     assert rows['MA-EXP-0224']['author_answer_key_assessment']=='AMBIGUOUS_KEY'
-    assert rows['MA-EXP-0224']['disposition']=='MAJOR_REWRITE'
+    assert rows['MA-EXP-0224']['disposition']=='HOLD_FOR_LEGAL_REVIEW'
+    assert rows['MA-EXP-0224']['author_disposition']=='MAJOR_REWRITE'
     assert rows['MA-EXP-0223']['answer_key_crosscheck']['matches'] is False
     assert rows['MA-EXP-0224']['answer_key_crosscheck']['sba_unique'] is False
     for qid in ['MA-EXP-0228',*[f'MA-EXP-{i:04d}' for i in range(233,237)]]:
