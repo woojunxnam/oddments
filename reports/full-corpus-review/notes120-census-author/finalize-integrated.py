@@ -26,6 +26,7 @@ for row in index['records']:
  uid=row['unit_id'];job=nr.latest_jobs(state).get(uid)
  if not job or job['status']!='INTEGRATED':pending.append(uid);continue
  assert job['unit_bindings'][uid]==row['original_binding']
+ materialize(row['original_binding']['census_path'],row['original_binding']['census_sha256'])
  result=job['result'];report=json.loads(materialize(result['evidence']['path'],result['evidence']['raw_sha256']))
  materialize(result['result_path'],job['result_sha256'])
  review=next(r for r in report['records']if r['unit_id']==uid);assert review['completeness']=='OMISSIONS_FOUND'
