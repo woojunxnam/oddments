@@ -6,6 +6,12 @@
 실제 SHA는 `remaining9_procedural_metadata.py`에 고정한다. 다른 출처 차단·실질적
 법적 모호성·편집 결함을 이 절차적 사유로 바꾸지 않는다.
 
+부모 provenance는 actor/session만 재구성하지 않고 원 헤더의 전체 dict를 정확히
+결박한다. 원 9-c 헤더의 `actual_new_independent_session: true`도 그대로 보존한다.
+원 MA-EXP-0823 row에는 release_eligible 필드가 없고 원 8-b의 8개에는 false가 있다.
+이 존재 여부와 원값도 각 고정 parent에 그대로 결박한다. 임의 필드 부재를 허용하는
+일반 예외가 아니며, 새 supplementary 9개 record는 explicit false가 필수다.
+
 원 primary 보고서·HOLD·정답·본문·이력·기존 현실성 판정은 바꾸지 않는다. 새
 supplementary 판정은 고유한 current-hash 정답 판정 집계만 추가할 수 있다.
 canonical RELEASED·새 원문 실독 인원·새 현실성 PASS·기본 연습 복귀 credit는 0이다.

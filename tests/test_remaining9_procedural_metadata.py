@@ -55,6 +55,8 @@ def data(tmp_path, monkeypatch):
     parents = {uid: dict(report_path=PARENT, report_sha256=route.sha((root/PARENT).read_bytes()),
         record_sha256=queue.digest(row), question_record_sha256=hashes[uid],
         original_actor='/root/fixture-old', original_session='/root/fixture-old',
+        original_actor_provenance=copy.deepcopy(provenance['actor_provenance']),
+        original_release_eligibility={'release_eligible':False},
         original_auditor_instance='GPT:fixture-old', legal_blocker='SYNTHETIC_PROCEDURAL_PRIOR_EXPOSURE',
         parent_key_status='NOT_ASSESSED', parent_verdict='HOLD', exposure_limitations=None,
         read_scope_exposure={'prior_specific_key_exposure': True}) for uid, row in zip(route.IDS, primary)}
@@ -180,7 +182,8 @@ def test_pending_native_work_has_no_credit_and_does_not_read_unfinished_report(d
     'hidden_truth','prior_conclusion','option_hash','rationale_hash','visible_hash','partial_options','missing_authority',
     'wrong_key','polarity','selection','realism_pass','raw_source','text_source','meta_source','failed_http',
     'metadata_raw_binding','old_cache_retimed','review_before_read','wrong_source_host','missing_effective_limit',
-    'current_body','duplicate_primary','preclaim_source','preclaim_review','duplicate_claim','unresolved_assessed_option'])
+    'current_body','duplicate_primary','preclaim_source','preclaim_review','duplicate_claim','unresolved_assessed_option',
+    'fresh_release_field_missing','parent_release_presence_forged'])
 def test_every_native_source_identity_and_scope_mutation_fails_closed(data,defect):
     d=data;root=d['root'];state=d['state'];scope=state[route.SCOPE_KEY];job=state['jobs'][0]
     row=d['report']['records'][0];legal=row['legal_review'];reviewer=scope['fresh_reviewer'];uid=route.IDS[0]
@@ -242,6 +245,8 @@ def test_every_native_source_identity_and_scope_mutation_fails_closed(data,defec
     elif defect=='preclaim_review':state['events'][0]['at']='2026-11-04T23:00:00+00:00'
     elif defect=='duplicate_claim':state['events'].append(copy.deepcopy(state['events'][0]))
     elif defect=='unresolved_assessed_option':legal['per_choice_findings'][1]['proposition_supported']=None
+    elif defect=='fresh_release_field_missing':row.pop('release_eligible')
+    elif defect=='parent_release_presence_forged':scope['previous_evidence'][uid]['original_release_eligibility']={}
     if defect not in {'envelope_raw','envelope_unbound','submit_event'}:
         refresh(d)
     else:
@@ -346,3 +351,32 @@ def test_registration_cannot_reset_existing_native_state(data):
     with pytest.raises(ValueError,match='reused/recovered'):
         prepare(data['root'],data['state'][route.SCOPE_KEY]['fresh_reviewer'])
     assert(data['root']/route.STATE).read_bytes()==before
+
+
+@pytest.mark.parametrize('uid',['MA-EXP-0153','MA-EXP-0823'])
+def test_full_original_provenance_constant_matches_both_actual_committed_parent_headers(uid):
+    binding=route.PARENTS[uid]
+    raw=subprocess.check_output(['git','-C',str(ROOT),'show','HEAD:'+binding['report_path']])
+    assert route.sha(raw)==binding['report_sha256']
+    source=json.loads(raw)
+    assert source['actor_provenance']==binding['original_actor_provenance']
+    route.validate_parent_identity(source,binding)
+    row=next(x for x in source['records']if x['question_id']==uid)
+    assert {k:row[k]for k in ('release_eligible',)if k in row}==binding['original_release_eligibility']
+    if uid=='MA-EXP-0823':assert source['actor_provenance']['actual_new_independent_session'] is True
+    else:assert set(source['actor_provenance'])=={'actor_id','session_id'}
+
+
+@pytest.mark.parametrize('mutation',['false','remove','add','scalar_actor','scalar_session'])
+def test_exact_extra_original_provenance_cannot_be_dropped_changed_or_expanded(mutation):
+    binding=copy.deepcopy(route.PARENTS['MA-EXP-0823'])
+    source=dict(stage='independent-legacy',independent_of_authors=True,
+        actor_provenance=copy.deepcopy(binding['original_actor_provenance']),
+        auditor_instance=binding['original_auditor_instance'])
+    if mutation=='false':source['actor_provenance']['actual_new_independent_session']=False
+    elif mutation=='remove':source['actor_provenance'].pop('actual_new_independent_session')
+    elif mutation=='add':source['actor_provenance']['extra_unsupported_provenance']=True
+    elif mutation=='scalar_actor':binding['original_actor']='renamed-original-actor'
+    else:binding['original_session']='renamed-original-session'
+    with pytest.raises(ValueError,match='complete original parent identity'):
+        route.validate_parent_identity(source,binding)
