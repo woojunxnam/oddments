@@ -184,6 +184,7 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
         uncredited = sorted(qid for qid in assigned if qid not in ledger or
                             (stage == 'author' and
                              (ledger[qid]['legal_review_status'] == UNREVIEWED or
+                              ledger[qid].get('current_id_author_review_required') is True or
                               ledger[qid].get('checked_at') is None)) or
                             (stage == 'independent-legacy' and
                              ledger[qid].get('independent_legacy_legal_assessment') is None))
@@ -193,12 +194,22 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
                              ', '.join(uncredited))
         candidates = sorted(qid for qid, row in ledger.items()
                             if qid not in assigned and
-                            ((stage == 'author' and row['legal_review_status'] == UNREVIEWED) or
+                            ((stage == 'author' and (row['legal_review_status'] == UNREVIEWED or
+                             row.get('current_id_author_review_required') is True)) or
                              (stage == 'independent-legacy' and row.get('checked_at') and
+                              row.get('current_id_author_review_required') is not True and
                               row.get('independent_legacy_legal_assessment') is None)))
         if prioritize_remediation_defaults:
             candidates, priority_bindings = remediation_default_priority(root, ledger, candidates)
-        groups = [candidates[i:i+size] for i in range(0, min(len(candidates), batches*size), size)]
+        required = [qid for qid in candidates if ledger[qid].get('current_id_author_review_required') is True] if stage == 'author' else []
+        if required:
+            from remediation_author_reviews import candidate_records
+            if set(required) != set(candidate_records(root)) or size < 3:
+                raise ValueError('Native current-ID author scope requires exactly the three allocated candidates and size >=3')
+            remainder = [qid for qid in candidates if qid not in required]
+            groups = [required] + [remainder[i:i+size] for i in range(0, min(len(remainder), (batches-1)*size), size)]
+        else:
+            groups = [candidates[i:i+size] for i in range(0, min(len(candidates), batches*size), size)]
     created = []
     for group in groups:
         records = {qid: current_record(root, ledger[qid]) for qid in group}
@@ -219,6 +230,13 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
         job = {'job_id': job_id, 'sequence': len(state['jobs']) + 1,
                'question_hashes': hashes, 'status': 'QUEUED', 'attempt': 0,
                'worker_branch': 'mission/' + job_id, 'created_at': at}
+        if stage == 'author' and any(ledger[qid].get('current_id_author_review_required') is True for qid in group):
+            from remediation_author_reviews import expected_actor
+            if not all(ledger[qid].get('current_id_author_review_required') is True for qid in group):
+                raise ValueError('Current-ID author job cannot mix other IDs')
+            job['current_id_author_review_required_ids'] = list(group)
+            job['required_author_actor_id'] = expected_actor(records)['actor_id']
+            job['selection_policy'] = 'CURRENT_ID_AUTHOR_REVIEW_REQUIRED'
         if stage != 'author':
             job['stage'] = stage
         if known_actors:
@@ -233,6 +251,8 @@ def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediatio
         details = {} if priority_bindings is None else dict(
             selection_policy='REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL',
             priority_source_sha256=priority_bindings)
+        if any(j.get('current_id_author_review_required_ids') for j in state['jobs'] if j['job_id'] in created):
+            details['selection_policy'] = 'CURRENT_ID_AUTHOR_REVIEW_REQUIRED_THEN_LEXICAL'
         event(state, 'PLAN', at, job_ids=created, **details)
     return created
 
@@ -256,12 +276,16 @@ def claim(state, worker, minutes=60, at=None):
     recover(state, at)
     active = [j for j in state['jobs'] if j['status'] == 'LEASED' and j['worker'] == worker]
     if active:
+        if active[0].get('required_author_actor_id') and worker != active[0]['required_author_actor_id']:
+            raise ValueError('Required content author must claim current-ID author job')
         if worker in active[0].get('excluded_worker_actor_ids', []):
             raise ValueError('Known content author/editor cannot independently claim: ' + worker)
         return active[0]  # idempotent reconnect, not another assignment
     queued = next((j for j in state['jobs'] if j['status'] == 'QUEUED'), None)
     if queued is None:
         return None
+    if queued.get('required_author_actor_id') and worker != queued['required_author_actor_id']:
+        raise ValueError('Required content author must claim current-ID author job')
     if worker in queued.get('excluded_worker_actor_ids', []):
         raise ValueError('Known content author/editor cannot independently claim: ' + worker)
     queued.update(status='LEASED', worker=worker, attempt=queued['attempt'] + 1,
@@ -326,6 +350,9 @@ def validate_result(job, result):
         raise ValueError('Exact worker commit required')
     if stage == 'independent-legacy':
         validate_independent_provenance(job, result)
+    elif job.get('current_id_author_review_required_ids'):
+        from remediation_author_reviews import validate_submission
+        validate_submission(job, result)
 
 
 def validate_independent_provenance(job, evidence):
@@ -397,6 +424,9 @@ def integrate(state, job_id, root, at=None):
             raise ValueError('Evidence must be committed before checkpoint')
         if job.get('stage') == 'independent-legacy':
             validate_independent_evidence(job, row, json.loads(current))
+        elif job.get('current_id_author_review_required_ids'):
+            from remediation_author_reviews import candidate_records, validate_report
+            validate_report(root, job, result, current, candidate_records(root))
     at = at or timestamp()
     job.update(status='INTEGRATED', integrated_commit=git(root, 'rev-parse', 'HEAD'), integrated_at=at)
     event(state, 'INTEGRATE', at, job_id=job_id, commit=job['integrated_commit'])

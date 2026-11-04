@@ -117,7 +117,8 @@ def test_inventory_binding_is_not_new_author_or_independent_credit(compiled):
     row = {}
     adapter.bind_candidate_inventory_row(row, q)
     assert row['legal_review_status'] == 'DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT'
-    assert row['checked_at_scope'] == 'ORIGINAL_G_DRAFT_SOURCE_REVIEW_DATE_ONLY'
+    assert row['checked_at_scope'] == 'FORMAL_CURRENT_ID_AUTHOR_REVIEW_REQUIRED'
+    assert row['checked_at'] is None and row['current_id_author_review_required'] is True
     assert row['author_review_increment'] == row['independent_review_credit'] == row['canonical_release_credit'] == 0
     assert q['publication_status'] == 'PUBLISHED_PRACTICE'
     assert q['verification_status'] == 'NOT_INDEPENDENTLY_REVIEWED'

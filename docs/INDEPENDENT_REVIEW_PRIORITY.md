@@ -23,10 +23,13 @@ actual actor IDs pass unchanged through source, ledger and job; claim rejects a
 known author/editor for that job. Existing unknown actor identities are not
 inferred. Claim's worker string must be the actual actor ID, as required by the
 independent workflow; this guard is not an identity authentication service.
-Original G draft dates used for scheduling add zero author-review credit.
+Original G draft dates add zero author-review credit. Pending candidates first
+require G's native current-ID author job and its HEAD-bound registered evidence;
+see [the author-review contract](SATA_REMEDIATION_NATIVE_AUTHOR.md).
 
-After root integrates and regenerates the authoritative inventory, it may plan
-only these three for another actual session, then later plan the next waves:
+After root integrates, completes G's native author job and regenerates its
+authoritative inventory, it may plan these three for another actual session,
+then later plan the next waves:
 
 ```sh
 python scripts/review_queue.py --stage independent-legacy plan --size 3 --prioritize-remediation-and-default

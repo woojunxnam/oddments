@@ -35,10 +35,11 @@ The original publication edition/date is retained so the 2,346 delivered objects
 remain identical; the three source items carry the legitimate Nov 4 authoring
 edition. Root owns any subsequent publication/version decision.
 
-The inventory status `DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT` records the
-original G source-review date for scheduling only. It gives no new author or
-independent credit. A different actual session must review the final compiled IDs
-through the main independent queue. These are non-additive remediation variants;
+The inventory status `DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT` retains the
+original G source date separately and explicitly requires formal current-ID author
+review. G's actual native author job must be integrated and registered before a
+different actual session reviews the final IDs through the main independent queue.
+See [the exact native author contract](SATA_REMEDIATION_NATIVE_AUTHOR.md). These are non-additive remediation variants;
 particularly 0367 overlaps existing Q0175/CASE0328 principles and confers no extra
 legal-topic coverage certification.
 
