@@ -1,0 +1,97 @@
+{
+  "question_id": "MA-Q-0248",
+  "family_id": "B3A_0248_MA_EXAM_ELIGIBILITY_PATHWAYS",
+  "area": 1,
+  "topic": "Licensure",
+  "subtopic": "Examination eligibility",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "Two applicants seek Massachusetts pharmacist licensure by examination. One graduated from an ACPE-accredited school; the other graduated from a non-approved foreign school. Which statements are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Both applicants must have completed a pharmacy internship in accordance with 247 CMR 8.01(1)."
+    },
+    {
+      "id": "B",
+      "text": "The foreign graduate must have received official FPGEC certification from NABP."
+    },
+    {
+      "id": "C",
+      "text": "Both applicants must be 18 years of age or older by the scheduled examination date."
+    },
+    {
+      "id": "D",
+      "text": "FPGEC certification relieves the foreign graduate of the internship requirement."
+    },
+    {
+      "id": "E",
+      "text": "The ACPE-accredited graduate is exempt from the good moral character requirement."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 3.01(1) and (2) impose the internship requirement, the age requirement measured by the scheduled examination date and the good moral character requirement on both pathways. FPGEC certification substitutes for the accredited degree on the foreign pathway; it does not substitute for the internship.",
+    "choice_analysis": {
+      "A": "Correct: the internship requirement applies on both pathways.",
+      "B": "Correct: official FPGEC certification from NABP is required on the foreign pathway.",
+      "C": "Correct: the age requirement is measured by the scheduled examination date.",
+      "D": "FPGEC certification replaces the accredited degree, not the internship.",
+      "E": "Good moral character is required on both pathways."
+    },
+    "related_facts": [
+      "The foreign graduate must also submit an official copy of the FPGEC certificate and the Board must receive official NABP notification."
+    ],
+    "mpje_trap": "FPGEC certification stands in for the accredited degree, not for the internship."
+  },
+  "rule_ids": [
+    "MA-PHARMACIST-EXAM-ELIGIBILITY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Separate the requirements common to both pathways from the pathway-specific ones",
+    "Identify what FPGEC certification actually substitutes for",
+    "Confirm the internship requirement survives on the foreign pathway"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A blind-locked legal and full-bank realism audit (PR #93)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-A initial admission. The independent CLAUDE-FRESH-B3A audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 31 of them; its Phase-1 blind lock was committed 842 seconds before any canonical key access and its 33 blind answers matched all 33 canonical keys. Controller verification of that evidence passed all 16 process checks (B3A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly two questions, MA-Q-0241 and MA-Q-0256, are withheld: both are legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion distinct_from_bank, MA-Q-0241 against MA-Q-0076 and MA-Q-0256 against MA-Q-0079. They are routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 31 are not held hostage to that repair. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMACIST-EXAM-ELIGIBILITY": {
+          "content_version": 1,
+          "content_hash": "63c2d09af78d2dc69e9768dbdbc9ed6a7f31d65607982b8ee7e1ceac5136bcf7"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

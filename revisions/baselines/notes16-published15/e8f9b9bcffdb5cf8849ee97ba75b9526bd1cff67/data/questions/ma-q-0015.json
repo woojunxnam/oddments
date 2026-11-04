@@ -1,0 +1,107 @@
+{
+  "question_id": "MA-Q-0015",
+  "family_id": "P2_0015_MA_OPIOID_SEVEN_DAY",
+  "area": 2,
+  "topic": "Opioid prescribing",
+  "subtopic": "Initial supply",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "An adult patient receives a lawful 14-day outpatient prescription for buprenorphine-naloxone specifically for treatment of opioid use disorder. A staff member says Massachusetts' seven-day initial-opiate statute automatically requires the prescription to be reduced to seven days. What is the best response to that specific claim?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Agree, because every medication related to an opioid is subject to the seven-day statute regardless of indication."
+    },
+    {
+      "id": "B",
+      "text": "Disagree. The seven-day statute expressly does not apply to medications designed for treatment of substance abuse or opioid dependence; the prescription must instead satisfy the other laws governing its OUD pathway."
+    },
+    {
+      "id": "C",
+      "text": "Agree unless the patient has previously filled an opioid prescription in Massachusetts."
+    },
+    {
+      "id": "D",
+      "text": "Disagree because buprenorphine-naloxone becomes Massachusetts Schedule VI when used for OUD."
+    },
+    {
+      "id": "E",
+      "text": "Reduce the quantity to seven days without prescriber involvement because pharmacists may unilaterally rewrite any opioid prescription to comply with supply limits."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "M.G.L. c. 94C, § 19D(c) excludes medications designed for treatment of substance abuse or opioid dependence from the seven-day supply statute. That exclusion answers the narrow seven-day question; it does not waive the separate federal and state requirements that govern buprenorphine-naloxone and OUD treatment.",
+    "choice_analysis": {
+      "A": "Incorrect. Section 19D contains an express treatment-indication exclusion.",
+      "B": "Correct. The seven-day statute itself does not apply to the described OUD-treatment medication, while other applicable prescribing/dispensing rules remain in force.",
+      "C": "Incorrect. The statutory exclusion here turns on the OUD-treatment purpose, not prior opioid-fill history.",
+      "D": "Incorrect. Buprenorphine-naloxone remains Schedule III; the result comes from the § 19D treatment exclusion.",
+      "E": "Incorrect. The statutory issue does not create a general pharmacist power to rewrite a prescription."
+    },
+    "related_facts": [
+      "The adult first-outpatient seven-day rule and the OUD-treatment exclusion must be read together."
+    ],
+    "mpje_trap": "Do not stop at the word 'opioid'; first determine whether the statute expressly excludes the treatment pathway."
+  },
+  "rule_ids": [
+    "MA-OPIOID-SEVEN-DAY",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "buprenorphine-naloxone"
+  ],
+  "reasoning_steps": [
+    "Identify the medication and its stated OUD-treatment purpose",
+    "Apply the express § 19D(c) exclusion before applying the seven-day ceiling",
+    "Keep separate OUD prescribing/dispensing requirements outside the narrow question"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-18",
+  "audits": [
+    "AUDIT-GPT-FRESH-COV-T1-B-LEGAL-INITIAL-2026-08-17",
+    "AUDIT-GPT-FRESH-COV-T1-B-REALISM-INITIAL-2026-08-17"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent T1 B/D/H audits",
+    "date": "2026-08-18",
+    "notes": "Pre-Batch3 T1 guarded admission under Issue #65. Current-hash legal KEEP/YES and realism KEEP/PASS evidence was selected per question from fresh Auditor B, D, or H evidence. MA-Q-0028 remains quarantined after current-hash realism failure and is not released.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-SEVEN-DAY": {
+          "content_version": 1,
+          "content_hash": "acce06fea2d6e3a8cb7b9bbb2a6ca9ede1ffa023d4a42585a3424341432264cb"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "buprenorphine-naloxone": {
+          "content_version": 1,
+          "content_hash": "24664a461faa87188a04f64952acf6d3a472e127afecd7e151b44525f683950f"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

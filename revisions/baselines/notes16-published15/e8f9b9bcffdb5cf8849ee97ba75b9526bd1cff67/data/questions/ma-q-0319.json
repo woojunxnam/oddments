@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0319",
+  "family_id": "OPIOID_ANTAGONIST_PURCHASER_BILLING_BEFORE_DISPENSING",
+  "area": 2,
+  "topic": "Public health",
+  "subtopic": "Opioid antagonist billing",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy is asked for naloxone by a woman who explains that she intends it for her adult son, who is not present. She does not ask to pay out of pocket. Whose insurance coverage should the pharmacy pursue, and at what point?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The son's coverage, and the claim may be submitted after the product is supplied."
+    },
+    {
+      "id": "B",
+      "text": "The son's coverage, and the claim must be submitted before it is supplied."
+    },
+    {
+      "id": "C",
+      "text": "The mother's coverage, and the claim may be submitted after it is supplied."
+    },
+    {
+      "id": "D",
+      "text": "The mother's coverage, and the claim must be submitted before it is supplied."
+    },
+    {
+      "id": "E",
+      "text": "Neither, because a purchase intended for another person must be paid in cash."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "M.G.L. c. 94C, s. 19B(e) requires the transaction to be treated, for billing and cost-sharing purposes, as dispensing a prescription TO THE PERSON PURCHASING the opioid antagonist regardless of the ultimate user, and requires a reasonable effort to identify the purchaser's coverage and submit a claim PRIOR TO DISPENSING unless the purchaser asks to pay out of pocket.",
+    "choice_analysis": {
+      "A": "The ultimate user's coverage is not the one to pursue.",
+      "B": "The purchaser is the mother, not the son.",
+      "C": "The timing limb requires the claim before the product is supplied.",
+      "D": "Correct on both the purchaser and the timing.",
+      "E": "Third-party purchase is expressly contemplated by the statute."
+    },
+    "related_facts": [
+      "The purchaser may still elect to pay out of pocket"
+    ],
+    "mpje_trap": "Candidates bill the person who will use the product, which is the intuitive but wrong party here."
+  },
+  "rule_ids": [
+    "MA-OPIOID-ANTAGONIST-BILLING"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the purchaser as distinct from the intended ultimate user",
+    "Apply the treat-as-dispensed-to-the-purchaser rule",
+    "Apply the before-dispensing timing to the claim"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3C-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3C-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3C blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-C guarded admission of 28 of 33 questions. CLAUDE-FRESH-B3C returned LEGAL KEEP and Existing_Answer_Correct YES on all 33, and REALISM PASS on 30. Five questions are held back. MA-Q-0309, MA-Q-0310 and MA-Q-0313 failed realism with a MAJOR_REWRITE verdict and are not released; their failed audit history is preserved unchanged as evidence bound to the hash that was audited. MA-Q-0311 and MA-Q-0322 passed both reviews, but the later tranche SATA correct-count correction changed their question_audit_hash, so the CLAUDE-FRESH-B3C evidence no longer covers their current content; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash rather than released on stale evidence. Every hash in expected_hashes was verified against the hashes pinned in the B3C legal and realism contracts at freeze commit 136d2fea, which agree with each other. The auditor's Phase-1 blind lock was committed before any canonical key access and its blind answers matched the canonical keys on all 33 items. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-OPIOID-ANTAGONIST-BILLING": {
+          "content_version": 1,
+          "content_hash": "cd7ef1239e4b13795e011a044de49479a72544aff88032fe5cc9acbca08b376c"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

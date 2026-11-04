@@ -1,0 +1,76 @@
+{
+  "schema_version": "same-team-peer-review/1",
+  "review_date": "2026-10-30",
+  "base_main_commit": "c4a05c8bf48ecc333e331b3c267607af6590ac40",
+  "scope": "Same-team editorial and technical cross-check; not a fresh independent canonical legal audit.",
+  "canonical_independent_audit": false,
+  "canonical_release_status_changed": false,
+  "question_review": {
+    "authoring_source": "practice_expansion/2026-10-28-representative/authoring/09_discipline_procedures.json",
+    "authoring_source_sha256": "6acbcfd16bdb436153f47d62483147cabb961fe7540c63225ab05188e9a710ef",
+    "reviewer": "same-team learning_ui agent, with root final integration",
+    "question_ids": [
+      "MA-RW-0077",
+      "MA-RW-0078",
+      "MA-RW-0079",
+      "MA-RW-0080"
+    ],
+    "final_complete_record_sha256": {
+      "MA-RW-0077": "34a5c6f9c172b98c11e3c458cd8ae741ef8ecbaaebdc68f817e4646cd3cd7ed5",
+      "MA-RW-0078": "3c1c213b8ad52613ddb694b55ad656b783a136ca0e6bfa3f818c326e88f6732b",
+      "MA-RW-0079": "3e70dac1cc9f6ef67bc91a796773bb94fbbf7cf771e801f9019c754a364bde0c",
+      "MA-RW-0080": "1ee5aca5ced85e4f15ac45c57a1532a264b026b46c45be170002ffe352f98589"
+    },
+    "status": "NO_REMAINING_KEY_DEFECT_IDENTIFIED_IN_BOUNDED_REVIEW",
+    "reviewed_dimensions": [
+      "Single/best answer or independent SATA judgments",
+      "English stem/choices and Korean explanation for every choice",
+      "Exact cited provisions and effective note evidence",
+      "Distractor plausibility, cueing and preserved old question IDs"
+    ],
+    "resolved_findings": [
+      {
+        "question_id": "MA-RW-0078",
+        "issue": "The name of the required disciplinary category in the stem could reveal the answer.",
+        "resolution": "Removed that answer term and made the Board designation of the disciplinary arrangement explicit, without claiming all consent conditions are disciplinary."
+      },
+      {
+        "question_id": "MA-RW-0079",
+        "issue": "One choice was too self-evident to test meaningful legal application.",
+        "resolution": "Replaced it with a concrete claim that requesting a limited hearing permits use of quarantined stock; the explanation addresses the continuing notice."
+      }
+    ],
+    "limitation": "Only the listed four new questions received this cross-check. Original 32 and existing CDTM four have separate author source records, not an independent reviewer certification."
+  },
+  "technical_review": {
+    "reviewer": "same-team final_integration_review agent",
+    "scope": [
+      "Exact note_evidence.unit_id mapping",
+      "Combined note/bank/search/review filters",
+      "Empty-note behavior and explicit question hash precedence",
+      "Timed-set navigation and old localStorage keys",
+      "Archive warnings and replacement links",
+      "Protected migration scope and unchanged canonical gates"
+    ],
+    "resolved_findings": [
+      {
+        "files": [
+          ".github/workflows/pages.yml",
+          "tests/test_practice_expansion_integration.py"
+        ],
+        "issue": "Both checks still asserted the old initialization substring after note-filter handling changed.",
+        "resolution": "Assert hash then filtered question priority and permit Q[0] fallback only when no note filter exists; preserve the empty-filter branch."
+      }
+    ],
+    "focused_test": {
+      "command": "python -m pytest tests/test_practice_expansion_integration.py -q",
+      "status": "PASS",
+      "passed": 16,
+      "seconds": 1.51
+    },
+    "status": "NO_OTHER_CONCRETE_BLOCKER_IDENTIFIED_IN_REVIEWED_DIFF",
+    "browser_execution": "NOT_RUN_BY_PEER; use exact-head CI and production execution evidence"
+  },
+  "review_record_author": "root, compiled from the completed same-session author/peer messages and final file hashes",
+  "publication_evidence": "This review does not assert CI, merge or deployment; see the batch validation record and exact PR workflow runs."
+}

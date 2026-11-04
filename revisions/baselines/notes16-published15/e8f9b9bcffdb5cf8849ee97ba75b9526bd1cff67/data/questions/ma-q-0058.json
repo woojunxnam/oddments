@@ -1,0 +1,97 @@
+{
+  "question_id": "MA-Q-0058",
+  "family_id": "P2_0058_FED_THEFT_LOSS_DEA",
+  "area": 4,
+  "topic": "Controlled substance security",
+  "subtopic": "Theft and loss",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "On Friday morning, a pharmacy discovers a significant unexplained loss of controlled substances. The investigation cannot be completed that day. Which federal response is correct?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Wait for the investigation before contacting DEA."
+    },
+    {
+      "id": "B",
+      "text": "Give oral notice within 24 hours and take no further action."
+    },
+    {
+      "id": "C",
+      "text": "File Form 106 within one business day instead of separate notice."
+    },
+    {
+      "id": "D",
+      "text": "Send written DEA notice within one business day and Form 106 within 45 calendar days."
+    },
+    {
+      "id": "E",
+      "text": "Notify only the Massachusetts Board because the loss occurred in Massachusetts."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "The registrant must give the responsible DEA Field Division written notice within one business day of discovery. The separate complete and accurate electronic DEA Form 106 is due within 45 calendar days after discovery, allowing the investigation to inform the documentation without delaying initial notice.",
+    "choice_analysis": {
+      "A": "The investigation does not postpone the one-business-day written notice.",
+      "B": "Oral notice alone does not satisfy the written notice and Form 106 duties.",
+      "C": "The regulation creates separate notice and Form 106 requirements with different deadlines.",
+      "D": "Correct. Initial written notice and Form 106 completion run on distinct clocks.",
+      "E": "State reporting cannot replace the registrant's federal duties."
+    },
+    "related_facts": [
+      "Written notice to the responsible DEA Field Division is due within one business day after discovery.",
+      "A complete and accurate electronic DEA Form 106 is due within 45 calendar days after discovery.",
+      "The duties apply even if the drugs are later recovered or responsible parties are identified."
+    ],
+    "mpje_trap": "Do not collapse the initial-notification deadline into the later Form 106 completion deadline."
+  },
+  "rule_ids": [
+    "FED-THEFT-LOSS-DEA"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the event as a significant loss",
+    "Apply the one-business-day written-notice clock",
+    "Apply the separate 45-calendar-day Form 106 clock"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-THEFT-LOSS-DEA": {
+          "content_version": 1,
+          "content_hash": "dfd4fc959351088147ae3e63b28f77f0cca1419d7841593744efacb85b6219eb"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

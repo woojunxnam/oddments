@@ -1,0 +1,15 @@
+import json,pathlib,hashlib,re
+w=pathlib.Path('/workspace/independent-notes4-e');e=w/'reports/full-corpus-review/independent-notes/fourth-e-evidence';j=json.load(open('/tmp/independent-notes4-e-assignment.json'));ids=j['unit_ids'];cen=json.load(open(e/'assigned-census-visible-claims.json'))['units'];old_related={q for cs in cen.values()for c in cs for q in c.get('related_question_ids',[])};config=json.load(open(w/'site/practice-expansion/publication.json'));ps=['practice_expansion/2026-10-23/candidates/questions.json']+[a['path']for a in config['additional_banks']];allq=[(str(p.relative_to(w)),json.load(open(p)))for p in sorted((w/'data/questions').glob('*.json'))]+[(p,q)for p in ps for q in json.load(open(w/p))['questions']];digest=lambda x:hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest();records=[]
+for path,q in allq:
+ refs=json.dumps({k:v for k,v in q.items()if k not in ['stem','choices','explanation','_statement_truth','primary_source_verification','independent_legal_audit','independent_realism_audit']},ensure_ascii=False);matched=[uid for uid in ids if uid in refs];target=q['stem']+' '+' '.join(c['text']for c in q['choices']);searched=bool(re.search(r'MassPAT|PMP|customer.identifier|government.issued.ID|Schedule VI.*transfer|transfer.*Schedule VI',target,re.I))
+ if not(matched or q['question_id']in old_related or searched):continue
+ v={k:q[k]for k in ['question_id','question_type','stem','choices','correct_choice_ids','explanation']};records.append({'question_id':q['question_id'],'collection':path,'record_sha256':digest(q),'visible_content_sha256':digest(v),'linked_unit_ids':matched,'census_historical_related_id':q['question_id']in old_related,'additional_search_match':searched,'original_visible_content':v})
+pack={'method':'Exact unit references and historical census related IDs plus safe stem/all-choice target query; original whole objects hash/search input only, no truth/prior verdict printed.','search_scope':{'canonical':439,'public':2346,'regex':'MassPAT|PMP|customer.identifier|government.issued.ID|Schedule VI.*transfer|transfer.*Schedule VI'},'records':records};(e/'related-question-visible-input.json').write_text(json.dumps(pack,ensure_ascii=False,indent=2)+'\n');cat=[];ix={}
+def ref(v):
+ if isinstance(v,str):
+  if v not in ix:ix[v]=len(cat);cat.append(v)
+  return {'text_ref':ix[v]}
+ if isinstance(v,dict):return{k:ref(x)for k,x in v.items()}
+ if isinstance(v,list):return[ref(x)for x in v]
+ return v
+maps=[{'question_id':q['question_id'],'refs':ref(q['original_visible_content'])}for q in records];(e/'related-question-exact-text-catalog.json').write_text(json.dumps({'catalog':cat,'question_maps':maps,'method':'Lossless exact-string dedup; not compressed legal reasoning'},ensure_ascii=False,indent=2)+'\n');print('questions',len(records),'options',sum(len(q['original_visible_content']['choices'])for q in records),'strings',len(cat),'chars',sum(map(len,cat)));print([q['question_id']for q in records])

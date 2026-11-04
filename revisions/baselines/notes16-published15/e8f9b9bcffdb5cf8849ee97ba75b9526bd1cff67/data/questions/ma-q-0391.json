@@ -1,0 +1,97 @@
+{
+  "question_id": "MA-Q-0391",
+  "family_id": "B3F_EMERGENCY_SUBSTITUTION_DEVIATION",
+  "area": 3,
+  "topic": "Dispensing",
+  "subtopic": "Substitution in a medical emergency",
+  "difficulty": 4,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist faces a medical emergency at 2 a.m. The only prescription on hand is marked 'no substitution', the prescribed brand is not in stock, and an interchangeable product on the Massachusetts list is. The pharmacist dispenses the interchangeable product. Which statements about this dispensing are correct? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "A medical emergency permits filling a 'no substitution' prescription this way when the brand is out of stock."
+    },
+    {
+      "id": "B",
+      "text": "The pharmacist's own note of the emergency completes what the regulation asks of the pharmacy."
+    },
+    {
+      "id": "C",
+      "text": "The date, hour and nature of the emergency must be recorded on the prescription or in the pharmacy system."
+    },
+    {
+      "id": "D",
+      "text": "The purchaser must indicate acceptance of the deviation in writing."
+    },
+    {
+      "id": "E",
+      "text": "The deviation runs only toward the cheaper product, never toward the brand as written."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 9.05(1)(a) permits a pharmacist in a medical emergency to fill a prescription marked 'no substitution' by dispensing a less expensive interchangeable product allowed by the Massachusetts List of Interchangeable Drugs if the particular brand is not in stock. 247 CMR 9.05(1)(b) attaches two conditions to any such instance: the pharmacist must record the date, hour and nature of the medical emergency on the back of the prescription or in the computerized pharmacy system, AND the person purchasing the drug product must indicate acceptance of this deviation from the law in writing.",
+    "choice_analysis": {
+      "A": "Correct: the emergency limb is exactly this situation, brand out of stock.",
+      "B": "The pharmacist's record is one of two conditions; the purchaser's written acceptance is the other.",
+      "C": "Correct: date, hour and nature, on the prescription or in the system.",
+      "D": "Correct: the purchaser indicates acceptance of the deviation in writing.",
+      "E": "The same paragraph also permits dispensing the brand as written when no interchangeable product is in stock."
+    },
+    "related_facts": [
+      "The prescriptions are to be clearly identifiable and available for inspection"
+    ],
+    "mpje_trap": "Candidates stop at the permission and miss that the deviation is conditioned on a purchaser signature as well as a pharmacy record."
+  },
+  "rule_ids": [
+    "MA-INTERCHANGE-MEDICAL-EMERGENCY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Confirm a medical emergency, which is what opens the paragraph at all",
+    "Match the direction of the deviation to which product is missing from stock",
+    "Apply both conditions, the pharmacy's record and the purchaser's written acceptance"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-INTERCHANGE-MEDICAL-EMERGENCY": {
+          "content_version": 1,
+          "content_hash": "efee74a3e21d2d3b4e329856052f7b41d05718d000f04c6795924e328e347c5f"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

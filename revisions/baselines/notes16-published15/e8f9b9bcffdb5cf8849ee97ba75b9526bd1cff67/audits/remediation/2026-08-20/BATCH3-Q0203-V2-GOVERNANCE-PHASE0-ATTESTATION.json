@@ -1,0 +1,63 @@
+{
+  "attestation_type": "GOVERNANCE_PRECERTIFIED_PHASE0",
+  "date": "2026-08-20",
+  "tranche": "BATCH3-Q0203-V2",
+  "audit_scope": "REAUDIT",
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "candidate_branch": "codex/batch3-q0203-v2-repair",
+  "candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "freeze_branch": "freeze/batch3-q0203-v2",
+  "auditor_instance_reserved": "GPT-FRESH-B3-Q0203-V2",
+  "question_ids": [
+    "MA-Q-0203"
+  ],
+  "question_hashes": {
+    "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+  },
+  "dependency_snapshots": {
+    "rules": {
+      "MA-COMPLIANCE-PACKAGING": {
+        "content_version": 2,
+        "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+      }
+    },
+    "drugs": {
+      "methylphenidate": {
+        "content_version": 1,
+        "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+      }
+    },
+    "blueprint": {
+      "blueprint_id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "profile_id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "package_sha256": {
+    "audits/remediation/2026-08-20/BATCH3-Q0203-V2-BLIND-QUESTIONS.json": "4f4c56e923d4ea605848de9e13d6a9eb487444ae183ca166d7fdf26749d3f9aa",
+    "audits/remediation/2026-08-20/BATCH3-Q0203-V2-LEGAL-CONTRACT.json": "735e625f538be0f8809236c05657bc1127bbfc1dbfa262de748a2f60158ce9f6",
+    "audits/remediation/2026-08-20/BATCH3-Q0203-V2-REALISM-CONTRACT.json": "0a8fe3fcc0c9f6d48bb893b791557dfc6548a44382a9c7d899bbeb72655e432b",
+    "audits/remediation/2026-08-20/BATCH3-Q0203-V2-CLEAN-FREEZE-MANIFEST.json": "9c200f1149c3112089e91abe19a915c18759ceffc1893905b452dbbe5334a514",
+    "audits/remediation/2026-08-20/BATCH3-Q0203-V2-POSTLOCK-DEPENDENCIES.json": "4d675390c3735a7c3dff7886f92c1e8c24a94ebe60e0e54885b69ed666865fbd"
+  },
+  "package_git_note": "sha256 values are LF-normalized and equal `git show <sha>:<path> | sha256sum`",
+  "quality_gates": {
+    "repository_validation": "PASS - validate_all.py: 0 errors, 1 pre-existing MA-Q-0190 warning",
+    "full_tests": "PASS - 98 passed, 1 skipped",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "release_state": "365 RELEASED; MA-Q-0203 remains AUDIT_PENDING and is absent from preview",
+    "repair_generator_reproduction": "PASS - pass1 source inputs reproduced the v2 question hash, family row and repair report byte-identically"
+  },
+  "auditor_phase0_required": false,
+  "auditor_start_phase": "PHASE_1_BLIND_SOLVE",
+  "independence_statement": "BATCH3-Q0203-V2 was authored by the Claude Code controller session running Issue #83. That session must not audit it. The audit requires a separate session whose pre-lock inputs are the sanitized blind package and current official sources only, recorded under a distinct auditor_instance.",
+  "safe_content_statement": "This attestation contains hashes, blob identifiers and dependency metadata only. It contains no canonical keyed answer, explanation or author reasoning."
+}

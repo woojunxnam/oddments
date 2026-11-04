@@ -1,0 +1,169 @@
+Retrieved 2026-11-03 from https://www.mass.gov/news/enhanced-protections-for-health-care-providers-of-gender-affirming-and-reproductive-health-care
+
+![Massachusetts State Seal](https://www.mass.gov/libraries/mayflower-artifacts/assets/images/logo/stateseal-white.png)
+An official website of the Commonwealth of Massachusetts
+Here's how you know
+
+## Official websites use .mass.gov
+
+A .mass.gov website belongs to an official government
+organization in Massachusetts.
+
+
+## Secure websites use HTTPS
+
+A lock icon or https:// means you've safely connected
+to the official website. Share sensitive information
+only on official, secure websites.
+
+
+- This page, Enhanced Protections for Health Care Providers of Gender-Affirming and Reproductive Health Care, is
+offered by
+
+- [Bureau of Health Professions Licensure](https://www.mass.gov/orgs/bureau-of-health-professions-licensure)
+- Show more
+
+News
+
+
+# News   Enhanced Protections for Health Care Providers of Gender-Affirming and Reproductive Health Care
+
+## Notices & Alerts  HideExpand
+
+- ### notice Service Notice: Main Phone Lines Temporarily DownUpdated Oct. 23, 2026, 04:45 pm+
+
+
+
+
+
+[Main Phone Lines Temporarily Down](https://www.mass.gov/alerts/service-notice-main-phone-lines-temporarily-down#5557046 "Learn more Service Notice: Main Phone Lines Temporarily Down")
+
+
+11/25/2025
+
+
+- Bureau of Health Professions Licensure
+
+This memorandum provides updates to licensees of the Bureau of Health Professions Licensure and the Board of Registration in Medicine regarding enhanced protections for health care providers of reproductive and gender-affirming health care.
+
+**Background:**
+
+On July 29, 2022, former Governor Baker signed into law Chapter 127 of the Acts of 2022, An Act Expanding Protections for Reproductive and Gender Affirming Care, commonly referred to as the “Shield Law.” This law protects certain health care providers from disqualification from licensure, and from Board discipline, on the basis of providing, or assisting in providing, reproductive and gender affirming health care services if the services provided would be lawful and consistent with good professional practice if they occurred entirely within Massachusetts. Health care providers included in the original Shield Law include: nurses, physicians, pharmacists, physician assistants, genetic counselors, psychologists, and social workers.
+
+**Shield Law 2.0:**
+
+On August 7, 2025, Governor Healey signed into law Chapter 16 of the Acts of 2025, An Act Strengthening Health Care Protections in the Commonwealth, also referred to as the “Shield Law 2.0.”1 This law further strengthens protections for healthcare providers who offer reproductive and gender-affirming care in the state, in response to escalating threats from other states and the federal government seeking to criminalize such care.
+
+In addition, the Shield Law 2.0 expands protections to all health care professionals operating under a board of registration, including the boards of Allied Heath, Allied Mental Health, Chiropractors, Community Health Workers, Dentists, Dispensing Opticians, Hearing Instrument Specialists, Midwives, Naturopaths, Nursing Home Administrators, Nutritionists and Dieticians, Optometrists, Perfusionists, Podiatrists, Respiratory Therapists, and Speech Pathologists and Audiologists. For a full list of providers included in Shield Law 2.0, please see the Appendix.
+
+**What Does This Mean for You?**
+
+1. **Protection from Out-of-State Legal Actions:**
+1. Protection from Out-of-State Investigations: The law prohibits Massachusetts state and local authorities, including law enforcement and state agencies, from cooperating with out-of-state or federal investigations into legally protected reproductive and gender-affirming care provided in Massachusetts.
+2. No Extradition or Arrest: The Governor cannot surrender a person charged in another state for "legally protected health care activity" unless the crime was committed while physically present in that state. Massachusetts courts are also prohibited from issuing arrest warrants based on other states' anti-abortion or anti-gender-affirming care laws.
+3. Limits on Data Sharing: The law restricts business entities that provide electronic communication or remote computing services in Massachusetts from disclosing information in response to civil or criminal legal requests if they know the information relates to a resident seeking protected care.
+2. Professional and Licensing Protections:
+1. Licensing Boards: Boards of Registration are prohibited from taking disciplinary action against a provider's license for providing or assisting with care that is legal in Massachusetts, even if it is illegal elsewhere.
+2. Exclusion from Public Records: The law forbids the inclusion of information on a provider's public profile if it arises from legal or disciplinary actions in another state related to providing protected care.
+3. No Discrimination from Insurers: It prevents medical malpractice insurers from discriminating against providers or increasing their premiums based on the fact that they offer reproductive or gender-affirming services.
+3. Practical Updates to Enhance Protection:
+1. Prescription Labels: The law allows Schedule VI medications prescribed for reproductive or gender-affirming care to be labeled with the name of a healthcare practice instead of an individual practitioner, providing an extra layer of privacy. This exception does not apply to federally controlled substances, such as testosterone. Prescription labels for federally controlled substances in Schedules II – IV will continue to require a prescriber name.
+2. Drug Monitoring Programs: The law excludes certain reproductive and gender-affirming medications from the state's drug monitoring programs, unless the Department of Public Health specifically requires them.
+3. Emergency Care Mandate: The law mandates that acute-care hospitals provide emergency services, including abortion care when medically necessary, to any patient who is injured or seeking emergency treatment.
+
+Shield Law 2.0 solidifies Massachusetts's commitment to ensuring that healthcare decisions are made between a patient and their provider, free from political interference and out-of-state influence. It provides a robust legal framework to protect healthcare professionals who provide lawful, evidence-based care in Massachusetts.
+
+Providers should note, however, that the Massachusetts Shield Laws cannot prevent other states from taking law enforcement actions within their own borders and that providers should use caution when traveling.
+
+Thank you for your continued commitment to the health and well-being of your patients and their families.
+
+**Appendix:**
+
+Shield Law 2.0 protections apply to the following boards of registration:
+
+- Board of Allied Health Professions
+- Board of Registration for Speech-Language Pathology and Audiology
+- Board of Registration in Dentistry
+- Board of Registration in Medicine
+- Board of Registration in Midwifery
+- Board of Registration in Naturopathy
+- Board of Registration in Nursing
+- Board of Registration in Optometry
+- Board of Registration in Pharmacy
+- Board of Registration in Podiatry
+- Board of Registration of Allied Mental Health and Human Service Professions
+- Board of Registration of Chiropractors
+- Board of Registration of Community Health Workers
+- Board of Registration of Dieticians and Nutritionists
+- Board of Registration of Dispensing Opticians
+- Board of Registration of Genetic Counselors
+- Board of Registration of Hearing Instrument Specialists
+- Board of Registration of Nursing Home Administrators
+- Board of Registration of Perfusionists
+- Board of Registration of Physician Assistants
+- Board of Registration of Psychologists
+- Board of Registration of Social Workers
+- Board of Respiratory Care
+
+## Downloads
+
+### Additional Resources
+
+[DPH Shield Law Guidance September 2025, Open PDF file, 265.75 KB](https://www.mass.gov/doc/dph-shield-law-guidance-september-2025/download)(PDF 265.75 KB)
+
+![](https://www.mass.gov/files/2019-01/DPH%20logo_2.png)
+
+## [Bureau of Health Professions Licensure](https://www.mass.gov/orgs/bureau-of-health-professions-licensure)
+
+BHPL oversees the licensing of health care professionals in the state of Massachusetts.
+
+
+
+## Help Us Improve Mass.gov  with your feedback
+
+Did you find what you were looking for on this webpage?
+
+
+Yes
+
+No
+
+If you have any suggestions for the website, please let us know.
+
+How can we improve the page? \*
+
+Please do not include personal or contact information.You will not get a response
+
+The feedback will only be used for improving the website. If you need assistance, please [contact the Bureau of Health Professions Licensure](https://www.mass.gov/orgs/bureau-of-health-professions-licensure). Please limit your input to 500 characters.
+
+500/500
+
+500 characters remaining
+
+Please remove any contact information or personal data from your feedback. **You will NOT get a response**.
+
+If you need assistance, please [contact the Bureau of Health Professions Licensure](https://www.mass.gov/orgs/bureau-of-health-professions-licensure).
+
+500/500
+
+500 characters remaining
+
+Please let us know how we can improve this page.
+
+Please remove any contact information or personal data from your feedback. **You will NOT get a response**.
+
+If you need assistance, please [contact the Bureau of Health Professions Licensure](https://www.mass.gov/orgs/bureau-of-health-professions-licensure).
+
+Thank you for your website feedback! We will use this information to improve this page.
+
+If you would like to continue helping us improve Mass.gov, [join our user panel](https://www.mass.gov/user-panel?utm_source=survey) to test new features for the site.
+
+[Feedback](https://www.mass.gov/news/enhanced-protections-for-health-care-providers-of-gender-affirming-and-reproductive-health-care#feedback)
+
+![](https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg)
+
+Original text
+
+Rate this translation
+
+Your feedback will be used to help improve Google Translate

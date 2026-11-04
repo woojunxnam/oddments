@@ -1,0 +1,124 @@
+{
+  "question_id": "MA-Q-0210",
+  "family_id": "B2_DRUG_ADD_CREDENTIAL_CAPSTONE",
+  "area": 1,
+  "topic": "Technician scope",
+  "subtopic": "Cross-credential drug stocking",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "At an eligible Massachusetts hospital ADD, evaluate each stocking action independently. Which are permitted under the current technician stocking policy? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "A PTT loads pharmacist-verified alprazolam with electronic validation under pharmacist direction/supervision"
+    },
+    {
+      "id": "B",
+      "text": "A PTT loads pharmacist-verified methylphenidate because the pharmacist is available by phone"
+    },
+    {
+      "id": "C",
+      "text": "A licensed non-PTT technician under pharmacist supervision loads pharmacist-verified methylphenidate with electronic validation"
+    },
+    {
+      "id": "D",
+      "text": "A nationally certified licensed technician, without prior pharmacist verification, transfers sealed non-patient-specific warfarin using electronic validation"
+    },
+    {
+      "id": "E",
+      "text": "A nationally certified licensed technician, without prior pharmacist verification, uses the same shortcut for gabapentin"
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "ADD stocking authority depends on the exact credential, schedule, verification status, and for the certified-tech shortcut, PMP status.",
+    "choice_analysis": {
+      "A": "PTTs may stock verified Schedule III-VI.",
+      "B": "PTTs may not use this pathway for Schedule II.",
+      "C": "Licensed non-PTT technicians may stock verified Schedule II-VI.",
+      "D": "That fits the non-PMP Schedule VI shortcut.",
+      "E": "PMP drugs such as gabapentin are excluded."
+    },
+    "related_facts": [
+      "Electronic validation is a common safeguard across these stocking pathways."
+    ],
+    "mpje_trap": "Assuming 'technician' is one legal role or that national certification erases the gabapentin exclusion."
+  },
+  "rule_ids": [
+    "MA-ADD-TECH",
+    "MA-PMP-REPORTING"
+  ],
+  "drug_ids": [
+    "alprazolam",
+    "methylphenidate",
+    "warfarin",
+    "gabapentin"
+  ],
+  "reasoning_steps": [
+    "Classify each technician credential",
+    "Classify each drug schedule/PMP status",
+    "Apply verification and supervision conditions independently"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-ADD-TECH": {
+          "content_version": 1,
+          "content_hash": "a32ebb12ceb7156a458dbe419d4b98a4a9e4576442546d1dfaa48e00431dd7f7"
+        },
+        "MA-PMP-REPORTING": {
+          "content_version": 1,
+          "content_hash": "20b8b829974567b5c43ebe7763fa27a545b66e652c869265757a92a7f755d5be"
+        }
+      },
+      "drugs": {
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        },
+        "methylphenidate": {
+          "content_version": 1,
+          "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+        },
+        "warfarin": {
+          "content_version": 1,
+          "content_hash": "8e3f44294b87cb229543764e9e4f6a68dd2c0dd7fafbee55584379090dbc0a8c"
+        },
+        "gabapentin": {
+          "content_version": 1,
+          "content_hash": "30fb8ee5429d84f6b25d456c0302df7de287c58f4e0755f07c7927a9c38651ba"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

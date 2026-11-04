@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0354",
+  "family_id": "PHARMACIST_PRESCRIBER_IDENTIFICATION_PARTICULARS",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Receiving pharmacist decision",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist takes a telephoned prescription from a collaborating pharmacist who gives her name, professional designation, registration number, work address and a callback number, but does not name the supervising physician. What should the receiving pharmacist do?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Fill it, because the caller supplied the identifying particulars that matter."
+    },
+    {
+      "id": "B",
+      "text": "Fill it, and record that the supervising physician was not identified."
+    },
+    {
+      "id": "C",
+      "text": "Decline to fill it as transmitted until the supervising physician is named."
+    },
+    {
+      "id": "D",
+      "text": "Decline to fill it, because a pharmacist may not telephone a prescription at all."
+    },
+    {
+      "id": "E",
+      "text": "Fill it, provided she verifies the caller's registration number independently."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "The proviso in 105 CMR 700.003(G)(7) lists the supervising physician's name among the particulars the prescribing pharmacist must provide to the dispensing pharmacist. The transmission is incomplete without it, so it may not be filled as transmitted; the cure is to obtain the missing particular.",
+    "choice_analysis": {
+      "A": "The physician's name is one of the listed particulars.",
+      "B": "Recording the gap does not close it.",
+      "C": "Correct: the missing particular must be supplied first.",
+      "D": "The paragraph contemplates issuing under M.G.L. c. 94C, s. 20.",
+      "E": "Verifying one particular does not supply another."
+    },
+    "related_facts": [
+      "The particulars are supplied to the dispensing pharmacist, not to the patient"
+    ],
+    "mpje_trap": "Candidates weigh whether the missing item is important instead of checking it against the list."
+  },
+  "rule_ids": [
+    "MA-PHARMACIST-PRESCRIBER-ID"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Check the transmission against the listed particulars",
+    "Identify the missing one",
+    "Treat the transmission as incomplete rather than invalid in principle"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PHARMACIST-PRESCRIBER-ID": {
+          "content_version": 1,
+          "content_hash": "d9f59a20678ecb26eb7d4d7629e1720e1eb24ad8c995715bd1475dd939d13e9c"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

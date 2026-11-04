@@ -1,0 +1,102 @@
+{
+  "question_id": "MA-Q-0186",
+  "family_id": "B2_DRUG_HOSPICE_OXY_FAX",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Hospice oxycodone fax",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A hospice physician faxes a valid oxycodone Schedule II prescription to the pharmacy and the prescription indicates that the patient is a hospice patient. What is the correct federal consequence?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The hospice Schedule II narcotic exception treats this fax as the original prescription."
+    },
+    {
+      "id": "B",
+      "text": "The fax can be used as the original after oxycodone is changed to Schedule III for hospice dispensing."
+    },
+    {
+      "id": "C",
+      "text": "The fax requires the seven-day follow-up process used for an emergency oral Schedule II authorization."
+    },
+    {
+      "id": "D",
+      "text": "The fax exception also permits refills because the patient is receiving hospice care."
+    },
+    {
+      "id": "E",
+      "text": "The fax exception excludes opioid narcotics and applies to nonnarcotic Schedule II drugs instead."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "A properly designated hospice oxycodone prescription can use the fax as the original under the federal hospice exception.",
+    "choice_analysis": {
+      "A": "Oxycodone is a Schedule II narcotic and the prescription carries the required hospice status fact.",
+      "B": "Hospice use does not reclassify oxycodone from Schedule II.",
+      "C": "That follow-up rule belongs to emergency oral authorization, not this hospice fax exception.",
+      "D": "The transmission exception does not create Schedule II refill authority.",
+      "E": "The hospice exception is specifically relevant to Schedule II narcotics."
+    },
+    "related_facts": [
+      "The exception changes the original-prescription requirement, not the drug's schedule."
+    ],
+    "mpje_trap": "Importing emergency-oral follow-up or refill rules."
+  },
+  "rule_ids": [
+    "FED-CII-FAX"
+  ],
+  "drug_ids": [
+    "oxycodone"
+  ],
+  "reasoning_steps": [
+    "Identify oxycodone as a C-II narcotic",
+    "Confirm hospice designation",
+    "Apply the fax-as-original exception"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-FAX": {
+          "content_version": 1,
+          "content_hash": "1bddcf9ca6a67bd64aa81eafb758e2dd80b5bd81478fb919257428551f829808"
+        }
+      },
+      "drugs": {
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

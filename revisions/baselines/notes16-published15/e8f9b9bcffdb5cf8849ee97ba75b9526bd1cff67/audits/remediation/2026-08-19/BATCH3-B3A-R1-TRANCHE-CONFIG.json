@@ -1,0 +1,52 @@
+{
+  "tranche_id": "BATCH3-B3A-R1",
+  "report_type": "BATCH3_B3A_R1_GUARDED_ADMISSION_V1",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "release_date": "2026-08-19",
+  "source_branch": "repair/batch3-b3a-realism-r1",
+  "represented_candidate_sha": "c7b438f253089b74231e50040603458d46d20e6c",
+  "question_ids": [
+    "MA-Q-0241",
+    "MA-Q-0256"
+  ],
+  "expected_hashes": {
+    "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+    "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+  },
+  "evidence": {
+    "MA-Q-0241": {
+      "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+    },
+    "MA-Q-0256": {
+      "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+    }
+  },
+  "legal_review_dates": {
+    "MA-Q-0241": "2026-08-19",
+    "MA-Q-0256": "2026-08-19"
+  },
+  "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 blind-locked focused REAUDIT (PR #98) and its official-source cure",
+  "adjudication_notes": "Batch 3 B3-A R1 admission of the two questions CLAUDE-FRESH-B3A initially withheld on realism distinctness. Both were repaired onto genuinely different current-law decision paths, MA-Q-0241 onto 247 CMR 8.05(3) and MA-Q-0256 onto 247 CMR 4.03(7), and re-audited by a separate instance CLAUDE-FRESH-B3A-R1 whose Phase-1 blind lock preceded the records and whose 2/2 blind answers matched the canonical keys. Controller verification passed 16/16 process checks, and the subsequent official-source cure passed a further 11/11: the lock blob is unchanged, the REALISM record is byte-identical, both hashes are preserved, and the only LEGAL changes are source provenance plus one citation narrowed from 247 CMR 8.03 to 8.03(1), independently confirmed correct against the official Mass.gov text. The earlier Cornell LII consultation is preserved in the record as superseded rather than erased. Released from a forward-port onto current main rather than a merge, so the B3-B tranche and the 261-question release state cannot roll back. MA-Q-0288 remains withheld pending its own focused REAUDIT and MA-Q-0028 remains quarantined.",
+  "preview_source_audits": [
+    "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3A-REALISM-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+  ],
+  "preview_notice": "Preview contains prior released questions plus the 29 Pre-Batch3 T1 legacy questions admitted under Issue #65, the 16 Pre-Batch3 Coverage T2 questions admitted under Issue #83, the 2 Pre-Batch3 T3 diversity questions admitted under Issue #86, and the 31 Batch 3 S1 legacy questions admitted under Issue #91 on recovered session provenance for evidence that already passed independently. MA-Q-0028 is quarantined after a current-hash realism distinctness failure and is not shown, and the 31 Batch 3 B3-A questions admitted under Issue #91 after the independent CLAUDE-FRESH-B3A audit. MA-Q-0241 and MA-Q-0256 are deliberately excluded pending realism repair, and the 32 Batch 3 B3-B questions admitted under Issue #91 after the independent CLAUDE-FRESH-B3B audit. MA-Q-0288 is deliberately excluded pending realism repair, and the 2 repaired Batch 3 B3-A questions MA-Q-0241 and MA-Q-0256 admitted under Issue #91 after the independent CLAUDE-FRESH-B3A-R1 focused REAUDIT. MA-Q-0288 is deliberately excluded pending its own realism reaudit.",
+  "report_path": "audits/remediation/2026-08-19/BATCH3-B3A-R1-GUARDED-ADMISSION-V1-REPORT.json",
+  "preflight_path": "audits/remediation/2026-08-19/BATCH3-B3A-R1-GUARDED-RELEASE-PREFLIGHT.json"
+}

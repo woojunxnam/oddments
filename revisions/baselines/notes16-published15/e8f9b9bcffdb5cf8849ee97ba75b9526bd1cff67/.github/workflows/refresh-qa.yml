@@ -1,0 +1,64 @@
+name: Refresh cards and site navigation QA
+on:
+  push:
+    paths:
+      - 'notes/**'
+      - 'site/**'
+      - 'scripts/build_refresh.py'
+      - 'scripts/build_ultimate_notes.py'
+      - 'scripts/publish_practice.py'
+      - 'scripts/verify_refresh_browser.py'
+      - 'scripts/capture_refresh_layout.py'
+      - 'tests/test_refresh.py'
+      - 'tests/browser/refresh-core.test.cjs'
+      - '.github/workflows/refresh-qa.yml'
+  pull_request:
+    paths:
+      - 'notes/**'
+      - 'site/**'
+      - 'scripts/build_refresh.py'
+      - 'scripts/build_ultimate_notes.py'
+      - 'scripts/publish_practice.py'
+      - 'scripts/verify_refresh_browser.py'
+      - 'scripts/capture_refresh_layout.py'
+      - 'tests/test_refresh.py'
+      - 'tests/browser/refresh-core.test.cjs'
+      - '.github/workflows/refresh-qa.yml'
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source fidelity and deterministic builds
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python scripts/build_ultimate_notes.py --check
+          python scripts/build_refresh.py --check
+          python -m pytest tests/test_refresh.py tests/test_ultimate_notes.py tests/test_casebank_plus.py tests/test_practice_expansion_integration.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          node --check site/notes/refresh.js
+          node --check site/assets/learning-tools.js
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
+          git diff --exit-code
+      - name: Exercise new and existing experiences over real HTTP
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_refresh_browser.py --site /tmp/mpje-public-site
+          python scripts/capture_refresh_layout.py --site /tmp/mpje-public-site
+          python scripts/verify_notes_browser.py
+          python scripts/verify_public_practice.py --site /tmp/mpje-public-site
+      - name: Retain real browser reports and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-and-regression-browser-evidence
+          path: test-results
+          retention-days: 7

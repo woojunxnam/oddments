@@ -1,0 +1,181 @@
+{
+  "report_id": "CE-DEFICIENCY-SOURCE-CONFLICT-20261028",
+  "status": "HOLD_FOR_LEGAL_REVIEW",
+  "checked_at": "2026-10-28",
+  "review_type": "AUTHOR_SOURCE_PROVENANCE_INVESTIGATION_NOT_INDEPENDENT_AUDIT",
+  "affected_legacy_question_id": "MA-EXP-0051",
+  "reserved_new_question_id": "MA-RW-0013",
+  "hold_id": "HOLD-RW-0013",
+  "question_published": false,
+  "question_text_modified_by_this_investigation": false,
+  "authoring_file_sha256_unchanged": "e63ee235c729a3c4390bf0e39224f49aaf02236a1e732af388b3e9fc606aa126",
+  "summary_ko": "같은 2025-09-04 개정 Policy 2021-04를 인용하면서 통합노트는 Board email을, 이번에 확보한 공식 PDF 추출문과 검색 본문은 Mandatory Disclosure Form을 안내한다. 2026-05-12 Reporting Requirement Overview도 CE deficiencies를 Mandatory Disclosure Form 항목에 포함한다. 저장소에서 email 교정을 뒷받침하는 별도의 공식 원문 보관본이나 Board 회신은 확인하지 못했다. 직접 공식 PDF 요청은 403이므로 2026-10-28 현재 제공되는 PDF binary와 cache의 일치까지 검증한 것은 아니다. 이 조사에서는 HOLD를 해제하지 않는다.",
+  "official_evidence": [
+    {
+      "id": "policy-current-url",
+      "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+      "section": "Policy 2021-04, I. General Compliance Information, final bullet (page 2 of 4)",
+      "observed_method": "Official-URL full-text extraction through Exa, repeated; system1 targeted search returned the same notification passage with the revision footer.",
+      "observed_notification_excerpt": "must submit a Mandatory Disclosure Form with a detailed statement explaining the reasons.",
+      "observed_revision_footer": "Adopted: 10/1/21; revised: 12/3/21; 10/5/23; 11/2/23; 9/4/25",
+      "search_reference": "turn30search0",
+      "date_evidence": "Revision date and notification passage were returned together in one official-URL search result.",
+      "direct_open_status": "403 Forbidden",
+      "currentness_limit": "The extractor did not expose origin HTTP response headers, raw PDF bytes, an origin timestamp, or a forced live-fetch guarantee. A newly performed retrieval is not proof that indexed/cached text equals the current origin binary.",
+      "finding_ko": "문구 차이를 단순히 2025-09-04 이전의 구판과 이후 신판 차이라고 단정할 근거가 없다. 현재 검색에서 같은 개정일이 표시된 문서도 Form을 명시한다."
+    },
+    {
+      "id": "reporting-overview",
+      "url": "https://www.mass.gov/doc/reporting-requirement-overview-pdf/download",
+      "section": "Individual Licensees table, page 2 of 4",
+      "observed_method": "Official-URL full-text extraction through Exa; system1 search independently returned the table and update footer.",
+      "observed_update_date": "2026-05-12",
+      "search_reference": "turn29search2",
+      "observed_summary_ko": "Individual Licensees 표가 disciplinary action 또는 loss of certification 항목에 CE deficiencies를 포함시키고 247 CMR 20.03(4), 14 calendar days, Mandatory Disclosure Form을 나란히 제시한다.",
+      "application_limit_ko": "이 표만으로 아직 징계·자격 상실이 없는 모든 CE 부족 상태에 동일한 기산점이 적용된다고 새 문항을 확정하지 않았다. 원문 규정과 적용 사실을 함께 판정해야 한다.",
+      "direct_open_status": "403 Forbidden"
+    },
+    {
+      "id": "cmr4",
+      "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+      "section": "247 CMR 4.03(6)",
+      "observed_method": "Official-URL full-text extraction through Exa during personnel source review.",
+      "observed_summary_ko": "필요 contact hours를 완료하지 못했거나 신체적 장애로 home-study 한도를 충족하지 못한 경우 상세한 특별 사유 진술을 위증죄 적용 하 서명하여 제출하고 Board가 renewal 여부를 판단하는 조항이다.",
+      "application_limit_ko": "이 조항은 email이 유일한 제출 방식이라는 근거가 아니며 부족 시간을 자동 면제하지 않는다."
+    },
+    {
+      "id": "cmr20",
+      "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+      "section": "247 CMR 20.01; 20.03(4)",
+      "observed_method": "Official-URL full-text extraction through Exa during personnel source review.",
+      "observed_summary_ko": "보고 방식·형식은 Board가 정하며 disciplinary action 또는 certification loss 보고 조항이 존재한다.",
+      "application_limit_ko": "CE 부족의 발견, renewal 신청, 징계 조치, 자격 상실이라는 서로 다른 사건의 기산점을 합성해 단일 정답으로 만들지 않았다."
+    },
+    {
+      "id": "alternate-policy-url",
+      "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements/download",
+      "section": "Policy 2021-04, I. General CE Compliance Information",
+      "observed_method": "URL discovered through Exa search and then fully fetched.",
+      "observed_summary_ko": "다른 공식 URL의 추출문은 Board에 상세 사유 statement를 제공한다고만 기재하며 email을 특정하지 않는다. 이 버전은 immunization을 2 hours every 2 years로 표시하여 위 pdf URL의 annual 1 hour 본문과도 다르다.",
+      "revision_date_verified": false,
+      "currentness_limit": "No revision footer was exposed in this extraction; do not silently use this alternative URL as the current policy version."
+    },
+    {
+      "id": "september2025-minutes",
+      "url": "https://www.mass.gov/doc/board-of-pharmacy-meeting-agenda-and-minutes-september-4-2025-0/download",
+      "section": "2025-09-04 agenda and general-session minutes; agenda VI and exhibits",
+      "observed_method": "Official-URL full-text extraction through Exa.",
+      "observed_summary_ko": "Agenda와 exhibit 목록에 CE Policy 2021-04가 등장하지만 확보한 minutes 본문에서 CE 미충족 통지를 email로 바꾸었다는 설명이나 결정은 찾지 못했다.",
+      "evidence_limit": "Absence from the extracted meeting text does not prove that no change occurred; the actual policy exhibit/version history was not independently obtained."
+    }
+  ],
+  "notes_provenance": {
+    "guide_file": "notes/guide.json",
+    "unit_id": "w1-a-7",
+    "unit_body_sha256": "295a4e763bb1c36fea26914041b6dc9aa1d45e3b5a86e827aad42fad823bf010",
+    "kind": "source-derived",
+    "source_review_date_claimed_in_note": "2026-10-22",
+    "editor_note": "CE 미충족 통지는 현행 게시 policy의 상세 사유 email 안내로 통일했습니다. 수정 이력은 편집 기록에 보존합니다.",
+    "claim_summary_ko": "Policy 2021-04(2025-09-04 개정) §I가 CE 부족의 상세 사유를 Board에 email하도록 안내한다는 문구.",
+    "policy_source_entry": {
+      "id": "src-7470f2e1235b",
+      "title": "Policy 2021-04 — Continuing Education, revised 9/4/2025; §§I,III",
+      "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+      "checked_at": null,
+      "access": "original-note reference"
+    },
+    "regulation_source_entry": {
+      "id": "src-40e00d06b90b",
+      "title": "247 CMR 4.00, Personal Registration Renewal; Continuing Education Requirement, §§4.02–4.08.",
+      "url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+      "checked_at": null,
+      "access": "original-note reference"
+    },
+    "editorial_map_entries": {
+      "W1-A:7": {
+        "decision": "retained-and-relocated",
+        "chapter": "licensure-ce",
+        "unit": "w1-a-7"
+      },
+      "W6-B:6": {
+        "decision": "merged-into-current-body",
+        "chapter": "licensure-ce",
+        "unit": "w1-a-7"
+      }
+    },
+    "input_metadata": [
+      {
+        "id": "W1-A",
+        "sha256": "5f0b4063f44e25d5526ce14dfee651bd64adcf3b3e43e40e3ccfa2874abb44b6",
+        "source_review_date": "2026-10-22",
+        "section_count": 13
+      },
+      {
+        "id": "W6-B",
+        "sha256": "53c78ef1e40561f8e4fa90e14ac64da634c39f20f801f1da50b295d581c4bae3",
+        "source_review_date": "2026-10-22",
+        "section_count": 20
+      }
+    ],
+    "main_history": {
+      "endpoint": "https://api.github.com/repos/woojunxnam/oddments/commits?path=notes/guide.json&per_page=100",
+      "returned_commits": 1,
+      "introducing_commit": "503397955cf123c9369a4d476dbc874cef84ff2f",
+      "merged_at": "2026-10-23T17:58:38Z",
+      "pull_request": "https://github.com/woojunxnam/oddments/pull/162",
+      "pr_body_explicitly_says_corrected_ce_email_guidance": true,
+      "pr_comments_returned": 0
+    },
+    "provenance_gap_ko": "Policy source entry의 checked_at은 null이고 access는 original-note reference이다. W1-A:7 보존과 W6-B:6 병합 경로는 있으나 email 교정 당시 공식 PDF 보관본·HTTP retrieval 증거·Board 회신은 해당 파일들과 PR 본문/댓글에서 확인되지 않았다. 22개 원본 학습 문서는 저장소에 본문으로 포함되지 않고 metadata/hash만 남아 있어 그 입력 문서의 별도 수정 이력까지 확인했다고 할 수 없다."
+  },
+  "retrieval_artifact_hashes": [
+    {
+      "filename": "personnel-primary-source-text.txt",
+      "sha256": "6bb44b7134bb5646001739061b6687ad12c5efd0c8609dd9cf4a41a663b6fb1f",
+      "scope": "Hash of local extracted text bundle, not of the official PDF binary."
+    },
+    {
+      "filename": "personnel-supporting-source-text.txt",
+      "sha256": "20d56c7639e054f401b83343024796216562bf45409c6fcc3f87e3f439c2c17c",
+      "scope": "Hash of local extracted text bundle, not of the official PDF binary."
+    },
+    {
+      "filename": "ce-conflict-policy-repeat.txt",
+      "sha256": "c7f2c3c5a3287d2e297fa360813be3650ad0a1682c136c9dfbfadc6c9c3f139d",
+      "scope": "Hash of local extracted text bundle, not of the official PDF binary."
+    },
+    {
+      "filename": "ce-conflict-official-followup.txt",
+      "sha256": "f6f5323c4a6969a817c2ca158a32e187ffaec4549e34a36c05cf3e052a1480b6",
+      "scope": "Hash of local extracted text bundle, not of the official PDF binary."
+    },
+    {
+      "filename": "ce-conflict-alternative-policy.txt",
+      "sha256": "53667b96934a39e717e68f3dca378598a48520377591d1e106eb2bdeb70071d3",
+      "scope": "Hash of local extracted text bundle, not of the official PDF binary."
+    }
+  ],
+  "failed_or_inconclusive_attempts": [
+    {
+      "method": "Official PDF open through search service",
+      "result": "403 Forbidden for policy PDF and overview PDF"
+    },
+    {
+      "method": "Firecrawl scrape attempted earlier in source review",
+      "result": "Insufficient credits; not used as evidence"
+    },
+    {
+      "method": "Inferred DOCX-suffix URL fetched through Exa",
+      "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-docx/download",
+      "result": "CRAWL_NOT_FOUND; not a verified official DOCX location"
+    }
+  ],
+  "disposition": {
+    "hold_lifted": false,
+    "notes_modified": false,
+    "canonical_release_status_changed": false,
+    "independent_legal_audit_completed": false,
+    "board_contacted": false,
+    "next_evidence_needed_ko": "공식 페이지가 현재 연결하는 PDF/DOCX 원본과 실제 파일 확인일을 확보하고, 제출 방식에 관한 Board 최신 지침 또는 확인 가능한 개정 이력과 대조한다. 기존 노트의 email 교정 원본이 있으면 그 문구·날짜·URL을 함께 비교한다. 적용 범위와 기산점이 확정되기 전까지 확정 정답 문항으로 공개하지 않는다."
+  }
+}

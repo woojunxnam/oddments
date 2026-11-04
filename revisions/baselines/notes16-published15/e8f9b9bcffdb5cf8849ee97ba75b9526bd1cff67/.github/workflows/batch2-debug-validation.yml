@@ -1,0 +1,74 @@
+name: Batch 2 Validation Diagnostics
+
+on:
+  push:
+    branches: [author/mpje-expansion-batch2]
+    paths:
+      - '.github/workflows/batch2-debug-validation.yml'
+      - 'repair_specs/batch2/**'
+      - 'scripts/build_batch2_content.py'
+      - 'scripts/repair_batch2_quality.py'
+      - 'scripts/repair_batch2_numeric_option_sets.py'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -q -r requirements-dev.txt
+      - run: python scripts/build_batch2_content.py && python scripts/repair_batch2_quality.py && python scripts/repair_batch2_numeric_option_sets.py && python scripts/update_content_hashes.py && python scripts/generate_artifacts.py --write
+      - name: Print duplicate and structural reports
+        shell: bash
+        run: |
+          echo '=== duplicate_report.json ==='
+          cat duplicate_report.json
+          echo '=== structural_pattern_report.json ==='
+          cat structural_pattern_report.json
+          echo '=== answer_distribution_report.json ==='
+          cat answer_distribution_report.json
+      - name: Annotated validate_all diagnostics
+        shell: bash
+        run: |
+          set +e
+          python scripts/validate_all.py > /tmp/validate.log 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            tail -n 120 /tmp/validate.log | while IFS= read -r line; do echo "::error::$line"; done
+            exit $code
+          fi
+          cat /tmp/validate.log
+      - name: Annotated structural diagnostics
+        if: success()
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_structural_patterns.py > /tmp/structural.log 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            tail -n 120 /tmp/structural.log | while IFS= read -r line; do echo "::error::$line"; done
+            exit $code
+          fi
+          cat /tmp/structural.log
+      - name: Annotated pytest diagnostics
+        if: success()
+        shell: bash
+        run: |
+          set +e
+          python -m pytest -q > /tmp/pytest.log 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            tail -n 120 /tmp/pytest.log | while IFS= read -r line; do echo "::error::$line"; done
+            exit $code
+          fi
+          cat /tmp/pytest.log

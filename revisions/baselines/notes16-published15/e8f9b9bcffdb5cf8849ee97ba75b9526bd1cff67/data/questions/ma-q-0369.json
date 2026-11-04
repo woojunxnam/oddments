@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0369",
+  "family_id": "B3E_THEFT_LOSS_TAMPERING_REPORT",
+  "area": 4,
+  "topic": "Mandatory reporting",
+  "subtopic": "Theft, loss or tampering",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "On a Monday a Massachusetts pharmacy discovers that a controlled substance package delivered the previous Wednesday shows signs of having been opened and resealed. Nothing is confirmed missing. The Manager of Record plans to investigate for a few days and then decide whether to report. What does the regulation require?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "A report to the Drug Control Program within 24 hours of Monday's discovery."
+    },
+    {
+      "id": "B",
+      "text": "A report to the Board of Registration in Pharmacy within 24 hours of Monday."
+    },
+    {
+      "id": "C",
+      "text": "A report to the Drug Control Program within 24 hours of the Wednesday delivery."
+    },
+    {
+      "id": "D",
+      "text": "No report, because no controlled substance has been confirmed missing."
+    },
+    {
+      "id": "E",
+      "text": "A report once the internal investigation establishes that a loss occurred."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "105 CMR 700.008 requires a registrant to report the theft, loss OR SUSPECTED TAMPERING of any controlled substances to the DRUG CONTROL PROGRAM within the Department WITHIN 24 HOURS OF DISCOVERY, on the form the Drug Control Program provides or approves. Suspected tampering is itself a trigger, and the clock runs from discovery rather than from the underlying event.",
+    "choice_analysis": {
+      "A": "Correct on the recipient and on the clock.",
+      "B": "The report goes to the Drug Control Program.",
+      "C": "The clock runs from discovery, not from delivery.",
+      "D": "Suspected tampering triggers the duty without a confirmed loss.",
+      "E": "Waiting for the investigation would breach the 24-hour requirement."
+    },
+    "related_facts": [
+      "The report is made on the form the Drug Control Program provides or approves"
+    ],
+    "mpje_trap": "Candidates wait for confirmation of an actual loss before starting a clock that has already run."
+  },
+  "rule_ids": [
+    "MA-THEFT-LOSS-TAMPERING-REPORT"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the trigger, which includes suspected tampering",
+    "Fix the start of the clock at discovery",
+    "Identify the recipient as the Drug Control Program"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3E-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3E-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3E-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-E v3 guarded admission of 27 of 30 questions. CLAUDE-FRESH-B3E-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 27 current hashes. MA-Q-0365 is held back on the independent legal MINOR_EDIT finding. MA-Q-0377 and MA-Q-0389 are held back on independent realism failures. Their negative audit history remains preserved at the audited hashes. The Phase-1 blind lock was committed before canonical-key access; the one blind divergence, MA-Q-0377, was disclosed and resolved in favor of the canonical key but the item still failed realism. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-THEFT-LOSS-TAMPERING-REPORT": {
+          "content_version": 1,
+          "content_hash": "e613e1af55d1e14fc3612e36dd28f6e24ba2088bd84e8be6cb55e047efd6e01f"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

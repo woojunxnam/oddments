@@ -1,0 +1,70 @@
+name: Practice quality and chaos regression
+on:
+  push:
+    paths:
+      - 'practice_expansion/**'
+      - 'site/practice-expansion/**'
+      - 'site/notes/study*'
+      - 'scripts/*quality*'
+      - 'scripts/select_quality_representatives.py'
+      - 'scripts/publish_practice.py'
+      - 'scripts/verify_public_practice.py'
+      - 'tests/test_practice_quality.py'
+      - '.github/workflows/practice-quality-qa.yml'
+  pull_request:
+    paths:
+      - 'practice_expansion/**'
+      - 'site/practice-expansion/**'
+      - 'scripts/**'
+      - 'tests/test_practice_quality.py'
+      - '.github/workflows/practice-quality-qa.yml'
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source, selection and deterministic-build checks
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python -m pytest tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q
+          python scripts/build_exam_study.py --check
+          node --check site/practice-expansion/quality-core.js
+          python scripts/publish_practice.py --output /tmp/mpje-public-site
+          git diff --exit-code
+      - name: Existing real HTTP and storage regression
+        run: |
+          python -m playwright install --with-deps chromium
+          python scripts/verify_public_practice.py --site /tmp/mpje-public-site
+      - name: Chaos duplicate occurrences and revised cases over HTTP
+        run: |
+          python -m http.server 8765 --directory /tmp/mpje-public-site >/tmp/quality-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          python - <<'PY'
+          import time, urllib.request
+          for n in range(50):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8765/practice-expansion/',timeout=1) as r:
+                      assert r.status==200
+                  break
+              except OSError:
+                  if n==49: raise
+                  time.sleep(.1)
+          PY
+          python scripts/verify_quality_reader.py --html /tmp/mpje-public-site/practice-expansion/index.html --base-url http://127.0.0.1:8765 --evidence test-results/practice-quality-http
+      - name: Retain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: practice-quality-browser-evidence
+          path: test-results/
+          retention-days: 7

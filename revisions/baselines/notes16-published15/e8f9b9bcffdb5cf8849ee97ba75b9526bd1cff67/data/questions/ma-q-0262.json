@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0262",
+  "family_id": "B3B_0262_MA_CONVICTION_DEFINITION",
+  "area": 1,
+  "topic": "Licensure and discipline",
+  "subtopic": "Conviction definition",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacist resolved a criminal matter in another state by admitting to sufficient facts, and the case was continued without a finding and later dismissed. She tells the Board she has no conviction to report. How should that resolution be characterised for Board purposes?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Not a conviction, because the case was ultimately dismissed by the court."
+    },
+    {
+      "id": "B",
+      "text": "Not a conviction, because no sentence was ever imposed upon her."
+    },
+    {
+      "id": "C",
+      "text": "Not a conviction, because the matter arose outside of the Commonwealth."
+    },
+    {
+      "id": "D",
+      "text": "A conviction only if the Board separately finds that she committed the crime."
+    },
+    {
+      "id": "E",
+      "text": "A conviction, because an admission to sufficient facts and a continuance without a finding are included."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 10.02 defines conviction to include any admission to or finding of sufficient facts to warrant a finding of guilt, regardless of adjudication, a continuance without a finding, and any plea of guilty or nolo contendere, of or to a crime in any jurisdiction, accepted by the court, whether or not a sentence has been imposed. Each of the features she relies on is expressly inside the definition.",
+    "choice_analysis": {
+      "A": "Regardless of adjudication is part of the definition, so a later dismissal does not remove it.",
+      "B": "The definition applies whether or not a sentence has been imposed.",
+      "C": "The definition reaches a crime in any jurisdiction.",
+      "D": "No separate Board finding is needed; the definition applies on its own terms.",
+      "E": "Correct: both features named are inside the regulatory definition."
+    },
+    "related_facts": [
+      "A conviction of a person licensed by the Board is conclusive evidence of the commission of that crime in a disciplinary proceeding based upon it."
+    ],
+    "mpje_trap": "The regulatory definition is broader than the ordinary meaning and expressly covers a continuance without a finding."
+  },
+  "rule_ids": [
+    "MA-DISCIPLINE-CONVICTION-DEFINITION"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the regulatory definition rather than the ordinary meaning of conviction",
+    "Match the admission to sufficient facts and the continuance without a finding to the listed items",
+    "Disregard the absence of a sentence and the out-of-state forum"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-DISCIPLINE-CONVICTION-DEFINITION": {
+          "content_version": 1,
+          "content_hash": "b7b08050830a276e702571c3a69149ae1b3ccdcbfb9d51ff626f238f6ee27175"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

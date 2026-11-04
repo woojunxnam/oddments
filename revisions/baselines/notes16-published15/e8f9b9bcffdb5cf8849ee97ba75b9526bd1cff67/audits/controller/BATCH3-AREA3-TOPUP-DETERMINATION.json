@@ -1,0 +1,95 @@
+{
+  "record_id": "BATCH3-AREA3-TOPUP-DETERMINATION",
+  "recorded_by": "CONTROLLER",
+  "recorded_on": "2026-08-20",
+  "issue": 91,
+  "summary": "The B3-S3 legacy salvage returned nothing usable, which put Area 3 six questions short of the Issue #91 minimum even on the assumption that every unaudited question passes. Tranche B3-F answers that measured deficit with sixteen new Area-3 questions, MA-Q-0391 through MA-Q-0406.",
+
+  "trigger": {
+    "event": "CLAUDE-FRESH-B3S3-V2 first independent audit completed 2026-08-20",
+    "result": "LEGAL KEEP 7 / MINOR_EDIT 1, all eight Existing_Answer_Correct YES; REALISM PASS 0 / FAIL 8 (MAJOR_REWRITE 7, DELETE 1)",
+    "release_usable_from_b3s3": 0,
+    "failure_pattern": "near-clones of released items, bare number recall, and options recoverable from their own wording without legal knowledge -- the same structural weakness recorded for B3-S2"
+  },
+
+  "measured_position_before_b3f": {
+    "method": "counted from the canonical records, assuming every unaudited B3-D v2 and B3-E v2 question passes its audit and the two hash-stale B3-C items are restored",
+    "released_now": {"total": 263, "area_1": 78, "area_2": 53, "area_3": 71, "area_4": 61},
+    "best_case_projection": {"total": 357, "area_1": 78, "area_2": 121, "area_3": 81, "area_4": 77},
+    "minima": {"total": 360, "area_1": 78, "area_2": 120, "area_3": 87, "area_4": 75},
+    "gap": {"total": -3, "area_1": 0, "area_2": 1, "area_3": -6, "area_4": 2},
+    "note": "Area 3 is the binding constraint and the total is short as well. No amount of audit success elsewhere closes it."
+  },
+
+  "why_not_repair_b3s2": {
+    "governing_instruction": "Issue #91 STEP 10 keeps B3-S2 off the critical path unless a measured Area deficit cannot otherwise be satisfied.",
+    "assessment": "The deficit is real, so S2 became eligible for reconsideration. It was still rejected: BATCH3-S2-REPAIR-PLAN.json records 12 of 16 Area-3 S2 questions as MAJOR_REWRITE, which is re-authoring under a heavier burden, since each rewrite must also escape the distinct_from_bank findings already recorded against it. Authoring from propositions no rule in the bank has cited is both faster and stronger.",
+    "s2_status": "unchanged; history and repair plan preserved"
+  },
+
+  "source_census": {
+    "capacity_check": "Area 3 holds 124 free family slots across 87 families, so slot capacity was never the constraint.",
+    "rules_never_used": "0 -- every Area-3 rule in the bank already carries at least one question, so a top-up had to come from propositions the bank had not yet reduced to rules.",
+    "method": "247 CMR 9.00 was retrieved as the official PDF and every 9.xx section compared against the authority citations of every existing rule.",
+    "sections_cited_by_no_rule": ["9.03", "9.05", "9.07", "9.08", "9.11", "9.12", "9.19", "9.20", "9.22", "9.25"],
+    "sections_used_by_b3f": ["9.05", "9.07", "9.08", "9.11", "9.12", "9.14", "9.22"],
+    "sections_left_unused": {
+      "9.03": "advertising -- Area 4",
+      "9.19": "pharmacy operation -- Area 4",
+      "9.20": "non-resident pharmacies -- Area 4",
+      "9.25": "plans of correction -- Area 4"
+    },
+    "further_primary_sources": [
+      "M.G.L. c. 94C s. 18(d), (d1/2) and (d3/4), s. 18D and s. 21, read on malegislature.gov 2026-08-20",
+      "21 CFR 208.24 and 208.26, read through the eCFR API 2026-08-20",
+      "105 CMR 700.012(A)(1), (A)(2) and (C)(8), read in the official PDF 2026-08-20"
+    ],
+    "novelty_probe": "Each of the nineteen candidate propositions was regex-probed against the stem and every option of all 390 existing questions. Nine returned no hit at all. Ten returned hits that were inspected question by question; two were dropped as too close -- 247 CMR 9.04(4) bed-side delivery against MA-Q-0227, and the M.G.L. c. 94C s. 18(d) out-of-state verification duty against MA-Q-0013, MA-Q-0020 and MA-Q-0027. Sixteen survived.",
+    "rejected_on_the_record": [
+      {"proposition": "247 CMR 9.04(4) bed-side delivery consent", "reason": "MA-Q-0227 already keys that bed-side medications must reach the patient or the patient's agent, and carries a consent distractor"},
+      {"proposition": "M.G.L. c. 94C s. 18(d) out-of-state verification", "reason": "three released questions already work this pathway"},
+      {"proposition": "M.G.L. c. 94C s. 5 excepted preparation retail sale", "reason": "MA-Q-0121 is a SATA already covering identification, record and the four-ounce limit together"},
+      {"proposition": "FED-PSE-LOG-ID general logbook duty", "reason": "the mirror image of MA-Q-0107's 60 mg exception"},
+      {"proposition": "FED-CII-PARTIAL-72H within-window remainder", "reason": "the mirror image of MA-Q-0094"}
+    ]
+  },
+
+  "composition": {
+    "question_ids": "MA-Q-0391..MA-Q-0406",
+    "count": 16,
+    "area": 3,
+    "new_rules": 11,
+    "reused_rules": ["MA-RX-TRANSFER", "MA-CS-II-III-PAMPHLET", "MA-COMPOUND-LABEL-CONTACT", "MA-CII-OPIOID-ANTAGONIST-OFFER", "FED-PSE-QUANTITY"],
+    "new_families": 16,
+    "family_cap": 2,
+    "caps_raised": 0,
+    "why_sixteen": "Six close the deficit. B3-C lost 2 of 33 to audit attrition, about 6 percent; sixteen leaves margin at roughly double that rate and lifts the total above 360 as well. Every one of the sixteen rests on a distinct primary proposition, so none is filler."
+  },
+
+  "structural_targets": {
+    "types": "11 SBA / 5 SATA",
+    "sba_keys": {"A": 2, "B": 2, "C": 2, "D": 3, "E": 2},
+    "sata_correct_counts": {"2": 2, "3": 2, "4": 1},
+    "sata_slot_presence": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 2},
+    "note": "The tranche deliberately carries three-correct SATA items, the pattern BATCH3-SATA-PATTERN-CORRECTION records as surviving site/shuffle.js. An initial draft came out with keys A1 B2 C3 D5 E0 and two items where the correct option was the only hedged one; both were corrected before the tranche was applied."
+  },
+
+  "projection_after_b3f": {
+    "assumption": "every unaudited question passes",
+    "total": 373,
+    "area_1": 78,
+    "area_2": 121,
+    "area_3": 97,
+    "area_4": 77,
+    "margin_over_minima": {"total": 13, "area_1": 0, "area_2": 1, "area_3": 10, "area_4": 2},
+    "caution": "Area 1 sits exactly on its minimum with no margin, and Area 2 has one. Neither has an unaudited candidate outstanding, so neither can absorb a loss. Both are already audited and released, so no further attrition is expected there."
+  },
+
+  "governance_note_for_issue_91": {
+    "blueprint_unchanged": true,
+    "minima_unchanged": true,
+    "audit_standards_unchanged": true,
+    "id_range": "MA-Q-0391..MA-Q-0406 extends beyond the B3-E reservation of MA-Q-0361..MA-Q-0390, which was fully consumed by the B3-E v2 expansion. Allocating further sequential identifiers is ordinary authoring and changes no blueprint quantity.",
+    "prior_projections_preserved": "The original B3-E projection and the B3-E v2 measured adaptive outcome both stand. This record appends the B3-F outcome; it replaces nothing."
+  }
+}

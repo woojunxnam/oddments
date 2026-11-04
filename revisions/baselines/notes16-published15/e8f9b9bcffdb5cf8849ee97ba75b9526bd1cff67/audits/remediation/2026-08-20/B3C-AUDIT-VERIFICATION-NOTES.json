@@ -1,0 +1,53 @@
+{
+  "record_id": "B3C-AUDIT-VERIFICATION-NOTES",
+  "recorded_by": "CONTROLLER",
+  "recorded_on": "2026-08-20",
+  "subject": "scripts/verify_tranche_audit.py run against the CLAUDE-FRESH-B3C audit, and what each residual FAIL means",
+  "why_this_note_exists": "The verifier returns FAIL overall. None of the residual failures indicates a defect in the audit or in the 28 questions released from it, and saying so requires going through them one at a time rather than reporting a bare verdict.",
+  "runs": [
+    {"audit_base_sha": "136d2fea779728aa7cfac9b31d84164ade03bcfe", "note": "the freeze commit the audit branch was cut from; makes check 03 meaningful, fails check 04 on field semantics"},
+    {"audit_base_sha": "e181e038625b32f79ba6910c35a4f20d3a7335e2", "note": "the represented candidate; check 04 PASSES, and check 03 then also counts the freeze package files added between the candidate and the branch"}
+  ],
+  "checks_passed": ["01_auditor_identity", "02_lock_precedes_and_is_immutable", "04_audit_base_is_the_candidate (second run)", "07_full_coverage_no_extras", "08_legal_results_structurally_complete", "09_realism_results_structurally_complete", "10_realism_style_profile_current", "13_blind_package_matches_published", "14_no_uncommitted_audit_edits", "15_release_partition_computed", "16_no_hidden_current_hash_failure_on_eligible"],
+  "residual_failures": [
+    {
+      "check": "03_no_canonical_or_tooling_edits",
+      "observed": "against the freeze base the branch changes one file more than the contract allows: audits/remediation/2026-08-20/B3C-PHASE1-BLIND-LOCK.json",
+      "explanation": "CLAUDE-FRESH-B3C hit an API session limit mid-audit and was resumed. Its first run wrote B3C-PHASE1-BLIND-LOCK.json using answers[]/blind_selected_choice_ids; the resumed run wrote CLAUDE-FRESH-B3C-PHASE1-BLIND-LOCK.json using the questions[]/selected_choice_ids schema the verifier reads. Both are the same auditor's work on the same package, and the two locks agree with each other on all 33 items. This is a tidiness defect caused by the controller's dispatch prompt naming field names that did not match the established schema, not a second audit and not contamination.",
+      "substantive": false,
+      "controller_fault": true,
+      "fixed_forward": "The B3-D v3, B3-E v3 and B3-F dispatch prompts specify the verifier's exact schema and filename. All three locks landed conformant on the first attempt."
+    },
+    {
+      "check": "05_records_bound_to_current_hashes",
+      "observed": "the records' bound hashes no longer match current for the tranche as a whole",
+      "explanation": "MA-Q-0311 and MA-Q-0322 were edited after the audit, by the tranche SATA correct-count correction. Neither was released. The other 31 questions' hashes are unchanged, which is what the release actually rested on: every hash in the release config was checked against the hashes pinned in the B3C legal and realism contracts at the freeze commit.",
+      "substantive": false
+    },
+    {
+      "check": "06_no_substantive_drift_since_candidate",
+      "observed": "['MA-Q-0311', 'MA-Q-0322']",
+      "explanation": "Exactly the two questions the controller edited and deliberately withheld from release. The check is reporting the intended state.",
+      "substantive": false
+    },
+    {
+      "check": "11_full_bank_comparison_evidence",
+      "observed": "bank_size_actual 406, bank_size_expected 327, defects none",
+      "explanation": "The check measures the bank as it stands now. CLAUDE-FRESH-B3C audited when the bank held 327 questions; it now holds 406 because B3-D, B3-E and B3-F were authored afterwards. The check can only pass at the moment of the audit, and it reports no defects.",
+      "substantive": false
+    },
+    {
+      "check": "12_blind_lock_integrity",
+      "observed": "blind_package_blob null; blind_mismatches ['MA-Q-0311', 'MA-Q-0322']; 31 of 33 blind answers match the current keys",
+      "explanation": "Two separate things. The conformant lock omits the blind_package_blob field, which the controller's prompt did not require. And the two blind mismatches are the two questions whose keys the controller changed after the audit: the auditor's blind answers matched the keys as they stood when it locked. Contamination is CLEAN and all four not-inspected-before-lock flags are false.",
+      "substantive": false
+    }
+  ],
+  "release_partition_from_the_verifier": {
+    "eligible": 30,
+    "blocked": {"MA-Q-0309": "realism MAJOR_REWRITE, distinct_from_bank", "MA-Q-0310": "realism MAJOR_REWRITE, distinct_from_bank", "MA-Q-0313": "realism MAJOR_REWRITE, distinct_from_bank"},
+    "controller_released": 28,
+    "difference_explained": "The verifier's partition does not apply hash currency. MA-Q-0311 and MA-Q-0322 are in its eligible 30 but were withheld because their hashes moved after the audit; they are carried into the CLAUDE-FRESH-B3D-V3 package for a first audit at their current hash."
+  },
+  "conclusion": "Every residual failure is explained by the controller's own later edits, the growth of the bank since the audit, or a controller-caused prompt defect. Check 16, no hidden current-hash failure among eligible questions, passes. The 28-question release stands."
+}

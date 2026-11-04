@@ -1,0 +1,156 @@
+{
+  "phase": "PHASE_1_BLIND_SOLVE",
+  "audit_date": "2026-08-20",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3F",
+  "tranche": "BATCH3-B3F",
+  "audit_scope": "TARGETED_INITIAL_BATCH",
+  "represented_candidate_sha": "1cc76f458f6584edc3dfad8387240ea968201b64",
+  "freeze_branch": "freeze/batch3-b3f-v1",
+  "freeze_head_expected": "f798d3e286bd920bc47f5574568409029f6ab912",
+  "freeze_head_observed": "f798d3e286bd920bc47f5574568409029f6ab912",
+  "blind_package_path": "audits/remediation/2026-08-20/B3F-BLIND-QUESTIONS.json",
+  "blind_package_blob": "7d6dac5f6b341d9376998c3bc629b151c481cd76",
+  "blind_package_sha256": "68e503234d3a4d3a6e2cca74f736bd4c9c912af1e176755f4f553f5dd9b15610",
+  "question_count": 16,
+  "question_ids": [
+    "MA-Q-0391",
+    "MA-Q-0392",
+    "MA-Q-0393",
+    "MA-Q-0394",
+    "MA-Q-0395",
+    "MA-Q-0396",
+    "MA-Q-0397",
+    "MA-Q-0398",
+    "MA-Q-0399",
+    "MA-Q-0400",
+    "MA-Q-0401",
+    "MA-Q-0402",
+    "MA-Q-0403",
+    "MA-Q-0404",
+    "MA-Q-0405",
+    "MA-Q-0406"
+  ],
+  "questions": [
+    {
+      "question_id": "MA-Q-0391",
+      "question_type": "SATA",
+      "selected_choice_ids": ["A", "C", "D"],
+      "reasoning": "247 CMR 9.05(1)(a) (Mass. Register #1536, 12/6/2024) states that 'In a medical emergency a pharmacist may fill a prescription marked \"no substitution\" by dispensing a less expensive interchangeable drug product as allowed by the Massachusetts List of Interchangeable Drugs if the particular brand is not in stock' -- so A is correct. 247 CMR 9.05(1)(b) requires that 'the pharmacist must record the date, hour, and nature of the medical emergency on the back of the prescription or in the computerized pharmacy system AND the person purchasing the drug product must indicate acceptance of this deviation from the law in writing' -- so C and D are both correct, and B is wrong because the pharmacist's own record is only half of the requirement; the purchaser's written acceptance is separately required and the prescriptions must additionally be clearly identifiable and available for Board review. E is wrong because 247 CMR 9.05(1)(a) runs in both directions: its second clause expressly allows a pharmacist in a medical emergency to fill a prescription NOT marked 'no substitution' by dispensing the brand name product as written when no less expensive interchangeable product is in stock."
+    },
+    {
+      "question_id": "MA-Q-0392",
+      "question_type": "SBA",
+      "selected_choice_ids": ["B"],
+      "reasoning": "247 CMR 9.07(1) (Mass. Register #1536, 12/6/2024) provides flatly that 'A pharmacy may not place any medication in a reusable daily dosage planner that was previously dispensed by a different pharmacy.' The prohibition is unconditional: it is not lifted by the patient's request (the opening words of 9.07 make the patient's request the trigger for the service, not a cure for the bar), by the product being sealed and in date, by a patient acknowledgement, or by segregated labelling. C is wrong because a transfer would change the pharmacy of record going forward but would not change the fact that the physical product in hand was previously dispensed by the other pharmacy; the bar attaches to the medication, not to the prescription file. Answer B."
+    },
+    {
+      "question_id": "MA-Q-0393",
+      "question_type": "SBA",
+      "selected_choice_ids": ["D"],
+      "reasoning": "247 CMR 9.08(1)(c) (Mass. Register #1536, 12/6/2024) conditions all compliance packaging on the requirement that 'The compliance packaging does not conflict with the USP-DI monograph or FDA-approved labeling.' Where FDA-approved labeling directs that the product be retained in its original container with its desiccant until use, placing it in a multi-drug-single-dose package conflicts with that labeling and is therefore barred. A is wrong because 247 CMR 9.08 imposes the condition on the pharmacy regardless of who requests the packaging. B is wrong because 9.08(1) states substantive outcome conditions ((c) through (h)) alongside the procedural ones in (a) and (b). C is wrong because patient consent is nowhere made a substitute for 9.08(1)(c). E is a fabricated instrument; the actual controlled-substance restriction on multi-drug-single-dose packaging is 247 CMR 9.08(3)(b), which is a prohibition on Schedules II and III, not a 'maintenance-medication policy', and it is not what controls a moisture-sensitive non-controlled tablet."
+    },
+    {
+      "question_id": "MA-Q-0394",
+      "question_type": "SATA",
+      "selected_choice_ids": ["B", "E"],
+      "reasoning": "A system that counts, fills vials and labels is Pharmacy Processing Automation under 247 CMR 9.11 (Mass. Register #1536, 12/6/2024). 9.11(1)(b) requires that 'if lot numbers are comingled in a single cell, the pharmacy maintains a policy and procedure to quarantine all comingled lot numbers in the event a single lot number is recalled' -- so B is correct and A is wrong, because the regulation contemplates comingling and regulates it rather than banning it. 9.11(1)(a) requires that 'the PPA utilizes technological verifications, such as bar code verification, electronic verification, weight verification, radio frequency identification (RFID), or another similar process, to ensure that the correct medication is dispensed' -- so E is correct and C is wrong, because a human visual check is not the technological verification the regulation demands. D is wrong because 247 CMR 9.11(2)(c) requires PPA policies and procedures covering controlled substance accountability as a standing condition of using PPA at all; it is not deferred until Schedule II drugs enter the system."
+    },
+    {
+      "question_id": "MA-Q-0395",
+      "question_type": "SBA",
+      "selected_choice_ids": ["A"],
+      "reasoning": "247 CMR 9.12 (Mass. Register #1536, 12/6/2024) permits a pharmacy to use an automated dispensing device for controlled substances only if, among other conditions, '(1) The ADD is located in a licensed health care facility.' A group medical practice that is not a licensed health care facility fails that threshold condition, and no amount of logging, alarming or written procedure substitutes for it -- the policies and procedures in 9.12(4) are additional requirements, not alternatives. B is therefore wrong. C is wrong because 247 CMR 9.12 contains no separate cabinet-registration pathway for the host site. D is wrong because 9.12(1) is not schedule-differentiated. E is wrong because 9.12 expressly permits ADD use for controlled substances when its conditions are met. Answer A."
+    },
+    {
+      "question_id": "MA-Q-0396",
+      "question_type": "SATA",
+      "selected_choice_ids": ["A", "B", "D"],
+      "reasoning": "247 CMR 9.22(2) (Mass. Register #1536, 12/6/2024) provides: 'A pharmacy shall utilize a combination refrigerator/freezer or a standalone refrigerator or standalone freezer. Freezer units shall be frost-free with an automatic defrost cycle, unless otherwise approved by the Board. A pharmacy may not utilize an appliance that contains a freezer compartment within the refrigerator space, such as a dorm-style refrigerator.' That makes A correct (the dorm-style internal-freezer appliance is expressly barred), makes B correct (frost-free with automatic defrost unless the Board approves otherwise), and makes E wrong -- a combination refrigerator/freezer unit is the first permitted option named in the same sentence. C is wrong because the equipment prohibition in 9.22(2) is categorical and is not cured by monitoring data; temperature logging under 9.22(4) is an additional duty, not a waiver. D is correct under 247 CMR 9.22(1), which requires policies and procedures that 'include a protocol to respond to any out of range temperature, including an assessment of the integrity of the medication.'"
+    },
+    {
+      "question_id": "MA-Q-0397",
+      "question_type": "SBA",
+      "selected_choice_ids": ["C"],
+      "reasoning": "247 CMR 9.14 (Mass. Register #1536, 12/6/2024) provides at (3) that 'A pharmacy may not charge a fee for transferring a prescription' and at (2) that 'The pharmacy may act as the patient's agent in order to facilitate a transfer.' The fee is therefore impermissible, and the receiving pharmacy is not entitled to push the initiating call back onto the patient as a precondition -- 9.14(2) contemplates the pharmacy acting as her agent, and 9.14(1) requires the holding pharmacy to transfer at the request of 'a patient or his or her agent' in a timely manner so as not to delay therapy. A and B are wrong on the fee. D is wrong because the patient need not initiate personally. E is wrong because the fee prohibition in 9.14(3) is not confined to the transferring pharmacy and 9.14(2) expressly allows the pharmacy to act as agent. Answer C."
+    },
+    {
+      "question_id": "MA-Q-0398",
+      "question_type": "SBA",
+      "selected_choice_ids": ["E"],
+      "reasoning": "M.G.L. c. 94C, s. 21 (current text on malegislature.gov as of 2026-08-20) requires: 'A pharmacist shall distribute the pamphlet when dispensing a narcotic or controlled substance contained in schedule II or III; provided, however, that pharmacists shall not be required to distribute the pamphlet if: (1) the patient is receiving outpatient palliative care pursuant to section 227 of chapter 111; (2) the patient is a resident of a long-term care facility; or (3) the narcotic or controlled substance is prescribed for use in the treatment of substance use disorder or opioid dependence.' Exception (2) applies squarely: the patient is a long-term care facility resident, so the pamphlet is not required. A is wrong because the duty is expressly qualified. B is wrong because the exemption is not conditioned on any written undertaking by the facility. C states the right result on a wrong ground -- the exemption turns on the patient's residence status, not on a theory that delivery to a facility is not a dispensing. D is wrong because the statute contains no first-fill limitation. Answer E."
+    },
+    {
+      "question_id": "MA-Q-0399",
+      "question_type": "SATA",
+      "selected_choice_ids": ["A", "B", "C", "E"],
+      "reasoning": "M.G.L. c. 94C, s. 21 (current text on malegislature.gov as of 2026-08-20) provides in its fourth paragraph that 'All drug preparations compounded, made or formulated by a pharmacy licensed by the board of registration in pharmacy shall have affixed to their container by the compounding pharmacy a label notifying prescribed users and practitioners that the drug is either a sterile or non-sterile compounded drug preparation' -- that duty is not qualified by the inpatient carve-out, so A is correct for both containers. The fifth paragraph provides that pharmacies engaged in sterile or complex non-sterile compounding and licensed under c. 112, ss. 39G to 39I 'shall provide a telephone number to foster communication between patients in the commonwealth and a pharmacist employed by the pharmacy who has access to the patient's records. The phone shall be staffed during regular hours of operation every day and not less than 56 hours per week. The phone number shall be affixed to the drug's container...' -- which makes B, C and E correct. D is wrong because the same paragraph closes with an express carve-out: 'This paragraph shall not apply to an institutional pharmacy licensed pursuant to section 39I of chapter 112 if the sterile drug preparation compounded by such pharmacy is to be administered to an individual admitted as an inpatient within the same hospital.'"
+    },
+    {
+      "question_id": "MA-Q-0400",
+      "question_type": "SBA",
+      "selected_choice_ids": ["B"],
+      "reasoning": "M.G.L. c. 94C, s. 18D(b) (current text on malegislature.gov as of 2026-08-20) provides: 'A pharmacist dispensing an opioid contained in Schedule II of section 3 shall inform the patient on the potential adverse risks of the prescription opioid and shall offer to dispense an opioid antagonist to the patient, and where applicable, to a designee of the patient, or for a patient who is a minor, to the minor's parent or guardian.' The adverse-risk element is already done, so the remaining statutory step is the antagonist offer, directed for a minor patient to the parent or guardian -- here the mother. A and E are wrong because the statute expressly addresses the minor case rather than excluding it. C and D are wrong because the offer is a freestanding pharmacist duty under s. 18D(b) and is not conditioned on any prescriber order or authorisation. Answer B."
+    },
+    {
+      "question_id": "MA-Q-0401",
+      "question_type": "SBA",
+      "selected_choice_ids": ["C"],
+      "reasoning": "M.G.L. c. 94C, s. 18(d3/4) (current text on malegislature.gov as of 2026-08-20) provides: 'A pharmacist filling a prescription for a schedule II substance shall, if requested by the patient, dispense the prescribed substance in a lesser quantity than indicated on the prescription... The initial partial dispensing of a prescription filled pursuant to subsection (d) or (d1/2) shall be filled not more than 5 days after the prescription issue date. The remaining portion filled pursuant to this subsection must be filled not later than 30 days after the prescription issue date.' The five-day cap is expressly limited to prescriptions filled under s. 18(d) (a nonnarcotic Schedule II prescription from an out-of-state prescriber) or s. 18(d1/2) (a narcotic Schedule II prescription from a prescriber in Maine or a state contiguous with the commonwealth). This prescription came from a Massachusetts physician, so neither pathway applies and the five-day cap does not bite. A and B are therefore wrong. D is wrong because a deadline does govern: the remaining portion must be filled within 30 days of the issue date, and s. 18(d3/4) also confines the remaining portion to the same pharmacy that dispensed the lesser quantity. E is wrong because the statutory clocks run from the prescription issue date, not from the first dispensing. Answer C."
+    },
+    {
+      "question_id": "MA-Q-0402",
+      "question_type": "SBA",
+      "selected_choice_ids": ["A"],
+      "reasoning": "21 CFR 208.26(b) (eCFR current as of 2026-08-20) provides: 'If the licensed practitioner who prescribes a drug product subject to this part determines that it is not in a particular patient's best interest to receive a Medication Guide because of significant concerns about the effect of a Medication Guide, the licensed practitioner may direct that the Medication Guide not be provided to the particular patient. However, the authorized dispenser of a prescription drug product subject to this part shall provide a Medication Guide to any patient who requests information when the drug product is dispensed regardless of any such direction by the licensed practitioner.' The patient's request at the counter therefore overrides the prescriber's direction, and the dispenser must provide the Guide. C, D and E all fail on the express words 'regardless of any such direction' and on the absence of any writing or re-authorisation condition. B is wrong because the regulation requires the Medication Guide itself, not a substitute leaflet. Answer A."
+    },
+    {
+      "question_id": "MA-Q-0403",
+      "question_type": "SBA",
+      "selected_choice_ids": ["D"],
+      "reasoning": "21 CFR 208.24(e) (eCFR current as of 2026-08-20) provides: 'Each authorized dispenser of a prescription drug product for which a Medication Guide is required under this part shall, when the product is dispensed to a patient (or to a patient's agent), provide a Medication Guide directly to each patient (or to the patient's agent) unless an exemption applies under 208.26.' The regulation expressly equates the patient's agent with the patient and fixes the timing at dispensing, so holding the Guide back for a later personal visit is not compliant. A misreads 'directly to each patient' as excluding the agent, when the parenthetical does the opposite. B and C invent conditions the regulation does not contain, and E invents a 24-hour posting rule that appears nowhere in part 208. Answer D."
+    },
+    {
+      "question_id": "MA-Q-0404",
+      "question_type": "SATA",
+      "selected_choice_ids": ["B", "C", "D"],
+      "reasoning": "21 CFR 1314.20(a) (eCFR current as of 2026-08-20) provides: 'Without regard to the number of transactions, a regulated seller (including a mobile retail vendor) may not in a single calendar day sell any purchaser more than 3.6 grams of ephedrine base, 3.6 grams of pseudoephedrine base, or 3.6 grams of phenylpropanolamine base in scheduled listed chemical products.' 21 CFR 1300.02 defines 'Regulated seller' as 'a retail distributor (including a pharmacy or a mobile retail vendor)', so the pharmacy is the restricted party -- B is correct -- and a 5 gram sale exceeds 3.6 grams, so C is correct. A is wrong: 7.5 grams is not a daily figure; the 7.5 gram figures in 21 CFR 1314.20(b) and 1314.100(b) are 30-day mobile-retail-vendor and mail-order limits, and the 7.5 gram figure in 21 U.S.C. 844(a) is the carrier-shipped sub-cap within the 9 gram allowance. D is correct: 21 U.S.C. 844(a) (uscode.house.gov, current through the prelim edition consulted 2026-08-20) makes it unlawful 'for any person to knowingly or intentionally purchase at retail during a 30 day period more than 9 grams of ephedrine base, pseudoephedrine base, or phenylpropanolamine base in a scheduled listed chemical product', and 5 grams eleven days ago plus a further 5 grams is 10 grams inside the same 30-day window. E is wrong for the same reason: 21 U.S.C. 844(a) is addressed to 'any person' who purchases at retail, i.e. the purchaser, not the seller."
+    },
+    {
+      "question_id": "MA-Q-0405",
+      "question_type": "SBA",
+      "selected_choice_ids": ["E"],
+      "reasoning": "M.G.L. c. 94C, s. 24A(b) (current text on malegislature.gov as of 2026-08-20) provides that 'The requirements of this section shall not apply to the dispensing of controlled substances to inpatients in a hospital', and 105 CMR 700.012(A)(2) (Mass. Register #1514, 2/2/2024) repeats it in operational terms: '105 CMR 700.012 shall not apply to the dispensing pursuant to a medication order of a controlled substance to an inpatient in a hospital.' The ward dispensing against a medication order is therefore outside the reporting duty. The discharge prescription is a dispensing of a Schedule II controlled substance pursuant to a prescription to the ultimate user, which falls within 105 CMR 700.012(A)(1) and s. 24A(c)(1) and must be reported. A is wrong because the exemption turns on inpatient status, not on the dispenser being a hospital pharmacy. B and D are wrong because the inpatient exemption is statutory and unconditional, not curable or displaceable by a separate hospital system. C inverts the rule. Answer E."
+    },
+    {
+      "question_id": "MA-Q-0406",
+      "question_type": "SBA",
+      "selected_choice_ids": ["D"],
+      "reasoning": "The PMP reaches Schedules II through V plus 'additional drugs', which M.G.L. c. 94C, s. 24A(a)(1) defines as 'substances determined by the department to carry a bona fide potential for abuse.' 105 CMR 700.012(C)(8) (Mass. Register #1514, 2/2/2024) supplies the mechanism: 'The Commissioner may determine that a drug is an \"additional drug\" for purposes of 105 CMR 700.012, because it carries a bona fide potential for abuse based on factors including, but not limited to...' and then 'Upon making such a determination, the Commissioner shall notify all dispensers that they must begin to report the dispensing of such additional drug pursuant to prescription as directed in 105 CMR 700.012(A).' So the trigger is a Commissioner determination followed by notification to dispensers. A is wrong because the bona fide potential for abuse judgment is the Commissioner's, not each pharmacy's. C is wrong because no prescriber request creates a reporting obligation. E is wrong because publication is at most one of the underlying factual factors, not the operative act. B describes a different route that would remove the drug from Schedule VI altogether rather than answering what makes a Schedule VI dispensing reportable, and it is not the mechanism the PMP framework provides for Schedule VI drugs. Answer D."
+    }
+  ],
+  "authorities_consulted": [
+    "247 CMR 9.00: Professional Practice Standards (Massachusetts Board of Registration in Pharmacy) -- official mass.gov PDF, footer date 12/6/24, Mass. Register #1536, 12/6/2024; sections relied on: 9.05, 9.07, 9.08, 9.11, 9.12, 9.14, 9.22",
+    "247 CMR 6.00: Licensure of Pharmacies -- official mass.gov PDF, Mass. Register #1546, 4/25/2025 (consulted for licence categories referenced by the sterile compounding item)",
+    "247 CMR 2.00: Definitions -- official mass.gov PDF (consulted; contains no definition of reusable daily dosage planner, automated dispensing device or licensed health care facility)",
+    "247 CMR 17.00: Sterile Compounding -- official mass.gov PDF, but the posted document is marked 'DRAFT 247 CMR 17.00 (proposed new section) Board review: 1/12/23'; treated as NOT current operative authority and not relied on for any answer",
+    "105 CMR 700.000: Implementation of M.G.L. c. 94C (Massachusetts Department of Public Health) -- official mass.gov PDF, Mass. Register #1514, 2/2/2024; section relied on: 700.012(A)(1), 700.012(A)(2), 700.012(C)(8)",
+    "M.G.L. c. 94C, s. 17 -- malegislature.gov official General Laws text, retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 18, including subsections (d), (d1/2) and (d3/4) -- malegislature.gov official General Laws text, retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 18D -- malegislature.gov official General Laws text, retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 21 -- malegislature.gov official General Laws text, retrieved 2026-08-20",
+    "M.G.L. c. 94C, s. 24A -- malegislature.gov official General Laws text, retrieved 2026-08-20",
+    "21 CFR part 208 (Medication Guides for Prescription Drug Products), ss. 208.24 and 208.26 -- eCFR current edition, retrieved 2026-08-20",
+    "21 CFR part 1314 (Retail Sale of Scheduled Listed Chemical Products), ss. 1314.20 and 1314.100 -- eCFR current edition, retrieved 2026-08-20",
+    "21 CFR 1300.02 (definition of 'Regulated seller') -- eCFR current edition, retrieved 2026-08-20",
+    "21 U.S.C. 844(a) -- uscode.house.gov prelim edition, retrieved 2026-08-20"
+  ],
+  "source_acquisition_method": "All authority was retrieved first-hand over HTTPS by this auditor. Massachusetts regulations were downloaded as the official mass.gov regulation PDFs (247 CMR 9.00, 247 CMR 6.00, 247 CMR 2.00, 247 CMR 17.00 via https://www.mass.gov/doc/<slug>/download; 105 CMR 700.000 via the download link published on https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c) and their text extracted locally with PyMuPDF. Massachusetts General Laws sections were fetched as the malegislature.gov section pages and the statutory text taken from the paragraphs following the id=\"skipTo\" anchor. Federal regulations were fetched from the eCFR current edition at ecfr.gov and federal statute from uscode.house.gov. Web search was used only to locate the official document URLs; no search snippet, secondary compilation, commercial summary, Cornell LII, Justia, or LLM-generated summary was used as substantive authority for any answer. No repository file other than the blind package was opened before this lock.",
+  "canonical_key_inspected_before_lock": false,
+  "canonical_explanation_inspected_before_lock": false,
+  "canonical_rules_inspected_before_lock": false,
+  "author_reasoning_inspected_before_lock": false,
+  "contamination_status": "CLEAN",
+  "sealed_material_boundary_statement": "Before writing this lock the only repository content I read was audits/remediation/2026-08-20/B3F-BLIND-QUESTIONS.json, extracted from blob 7d6dac5f6b341d9376998c3bc629b151c481cd76 at freeze SHA f798d3e286bd920bc47f5574568409029f6ab912, which contains only question_id, question_type, stem and choices plus package identity metadata. I additionally ran repository-neutral git plumbing to verify identity only: git rev-parse on the freeze branch and on the blind package path, git cat-file -t/-s on the blind blob and on the represented candidate commit, git worktree list, git status --porcelain, and a directory listing of audits/remediation/2026-08-20/ (filenames only, no file contents). I did not open data/questions/, data/rules/, B3F-LEGAL-CONTRACT.json, B3F-REALISM-CONTRACT.json, B3F-POSTLOCK-DEPENDENCIES.json, B3F-FREEZE-CONFIG.json, B3F-CLEAN-FREEZE-MANIFEST.json, B3F-GOVERNANCE-PHASE0-ATTESTATION.json, any generated site payload, any scripts/batch3* authoring script, any audits/controller/ record, any existing data/audits/ record, GitHub Issue #91, or any git history, log, diff or blame touching these 16 questions.",
+  "attestation": "I am CLAUDE-FRESH-B3F, an independent fresh auditor. I did not author, review, revise or advise on any of the 16 questions MA-Q-0391 through MA-Q-0406, nor on any rule, explanation or answer key associated with them, and I have not communicated with their author. I solved all 16 items blind from the stems and choices alone, deriving each answer from current official primary authority that I retrieved myself from malegislature.gov, the official mass.gov regulation PDFs, ecfr.gov and uscode.house.gov, and I recorded my selections and grounds above before opening any keyed answer, explanation, rule record, contract, dependency file or author reasoning. Where my reading of the authority is uncertain I have said so in the reasoning rather than resolving it by guessing at the author's intent."
+}

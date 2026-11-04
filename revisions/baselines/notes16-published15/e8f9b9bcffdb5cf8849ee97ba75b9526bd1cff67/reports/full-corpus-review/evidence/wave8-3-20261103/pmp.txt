@@ -1,0 +1,3208 @@
+Data Submission Guide for Dispensers
+Massachusetts Prescription Monitoring Program
+
+
+
+
+                               May 2023
+                               Version 5.2
+
+
+
+
+ 9901 Linn Station Road, Suite 500 | Louisville, KY 40223 | bamboohealth.com
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                                                                  Table of Contents
+
+
+
+Table of Contents
+1   Reporting Requirements ............................................................................................................1
+2   Guidelines for Data Submitters ..................................................................................................3
+    2.1     Prescription Records and File Upload Specifications ............................................................ 3
+3   Accessing Clearinghouse ...........................................................................................................4
+    3.1     Creating Your Account .............................................................................................................. 4
+    3.2     Logging In to PMP Clearinghouse .......................................................................................... 9
+4   Data Delivery Methods............................................................................................................. 10
+    4.1     Secure FTP ................................................................................................................................ 10
+    4.2     Web Portal Upload .................................................................................................................. 11
+    4.3     Manual Entry (UCF) .................................................................................................................. 12
+    4.4     Zero Reports ............................................................................................................................. 15
+            4.4.1         Submit a Single-Click Zero Report ......................................................................... 16
+            4.4.2         Create a New Zero Report ....................................................................................... 19
+5   Data Compliance ...................................................................................................................... 21
+    5.1     File Listings ............................................................................................................................... 21
+    5.2     UCF Listings .............................................................................................................................. 22
+    5.3     Error Correction ....................................................................................................................... 24
+            5.3.1         View Records with Errors ......................................................................................... 25
+            5.3.2         Error Correction via PMP Clearinghouse ............................................................... 25
+            5.3.3         Error View and Correction on MassPAT ................................................................. 26
+            5.3.4         Error Correction via File Submission ...................................................................... 26
+6   Email Reports ........................................................................................................................... 28
+    6.1     File Failed Report ..................................................................................................................... 28
+    6.2     File Status Report..................................................................................................................... 28
+    6.3     Zero Report Confirmation ...................................................................................................... 32
+7   Managing Your Upload Account.............................................................................................. 33
+    7.1     Adding Users to Your Upload Account................................................................................. 33
+            7.1.1         Changing Another User’s Password ....................................................................... 34
+    7.2     Adding PMPs to Your Upload Account ................................................................................ 36
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                                                         i
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                                                                      Table of Contents
+
+
+     7.3      Adding SFTP Access to an Upload Account ......................................................................... 37
+     7.4      Editing Your Upload Account................................................................................................. 39
+     7.5      Changing Administrator Account .......................................................................................... 41
+8    Managing Your User Profile ..................................................................................................... 42
+     8.1      Editing Your Profile.................................................................................................................. 42
+     8.2      Changing Your Password........................................................................................................ 43
+     8.3      Resetting Your Password ........................................................................................................ 44
+9    Assistance and Support............................................................................................................ 47
+     9.1      Technical Assistance ................................................................................................................ 47
+     9.2      Administrative Assistance ....................................................................................................... 47
+10 Document Information............................................................................................................. 48
+     10.1        Disclaimer .............................................................................................................................. 48
+     10.2        Change Log ........................................................................................................................... 48
+Appendix A: ASAP 4.2A Specifications ........................................................................................... 51
+Appendix B: Data Entry Guidance .................................................................................................. 67
+     AIR03, AIR04, AIR05: ID of Person Picking Up Prescription .......................................................... 67
+     Exceptions to AIR03, AIR04, and AIR05 ........................................................................................... 68
+     Deliveries ............................................................................................................................................. 68
+     DSP06: Refill Number ........................................................................................................................ 69
+     DSP13 Partial Fills ............................................................................................................................... 69
+     DSP18–21: Electronic Prescriptions.................................................................................................. 70
+     PAT22: Country of Non-U.S. Resident ............................................................................................. 70
+     PRE02 and PRE09: Prescriber DEA and XDEA Numbers................................................................ 70
+     Guidance on Metric Quantity Reporting......................................................................................... 71
+     Reporting Compounded Prescriptions............................................................................................ 71
+     Reporting Gabapentin Prescriptions ............................................................................................... 71
+     Reporting Naloxone Dispensations ................................................................................................. 72
+Appendix C: ASAP Zero Report Specifications ............................................................................... 74
+     Sample Zero Report ........................................................................................................................... 75
+Appendix D: SFTP Configuration .................................................................................................... 76
+     SFTP Connection Details ................................................................................................................... 76
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                                                            ii
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                                                                 Table of Contents
+
+
+     PMP Subfolders .................................................................................................................................. 77
+     Public (SSH/RSA) Key Authentication .............................................................................................. 78
+Appendix E: Data Submission Waivers ........................................................................................... 80
+     Annual Data Submission Waiver ...................................................................................................... 80
+     Days of Operation Waiver ................................................................................................................. 80
+     Temporary Waiver .............................................................................................................................. 80
+Appendix F: Correct Use of Codes in DSP01 .................................................................................. 81
+     Error Correction .................................................................................................................................. 81
+     Submit a New Record ........................................................................................................................ 81
+     Revise a Record .................................................................................................................................. 81
+     Void a Record ..................................................................................................................................... 82
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                                                       iii
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Reporting Requirements
+
+
+
+
+1 Reporting Requirements
+         The Massachusetts Prescription Monitoring Program (MA PMP), authorized by M.G.L.
+         Chapter 94C §24A, collects dispensing information on Schedule II through V (M.G.L.
+         Chapter 94C §3) controlled substances and DPH-designated drugs (105 CMR 700.012(7))
+         dispensed pursuant to a prescription. The Massachusetts Department of Public Health
+         (MA DPH) analyzes PMP data to:
+         •    Determine prescribing and dispensing trends;
+         •    Provide patient prescription history information to prescribers and dispensers;
+         •    Provide educational information to healthcare providers and the public; and
+         •    Provide case information to regulatory and law enforcement agencies concerning
+              drug distribution and diversion.
+         Pharmacies are required to submit dispensing information on federally controlled
+         substances in Schedules II through V and gabapentin, a Massachusetts Schedule VI
+         substance, within 24 hours or the next business day to the State of Massachusetts
+         through the PMP Clearinghouse application provided by Bamboo Health, Inc. (Bamboo).
+         For more information on the reporting requirements, please visit the PMP website.
+         The MA PMP reporting requirements apply to all pharmacies registered with the
+         Massachusetts Board of Pharmacy and to all pharmacies in health facilities registered
+         with the MA DPH that dispense federally controlled substances in Schedules II–V and
+         gabapentin. In addition, the MA PMP reporting requirements apply to any pharmacy
+         located in another state, commonwealth, district, or territory that delivers a prescription
+         (via U.S.P.S. or common carrier) in Schedules II─V and gabapentin to a person who is
+         located in Massachusetts. This includes, but is not limited to, mail-order pharmacies.
+         This Data Submission Guide provides the guidelines, specifications, and instructions for
+         submitting prescription data to the MA PMP. The Department is committed to working
+         with pharmacies to comply with these requirements. Pharmacies are a critical partner in
+         the accuracy of the data in the PMP and should ensure that their pharmacists are
+         reporting the right information into the system.
+         At the micro-level, the PMP is a clinical tool that assists doctors, other prescribers, and
+         dispensers in safely caring for their patients. Pain is subjective, and healthcare providers
+         want to balance the real need for pain management with the potential risks of opioid
+         misuse. The PMP helps them do that, and it is important that they have accurate, timely
+         information.
+         On the macro-level, the PMP is a powerful analytical tool that allows MA DPH to look at
+         trends so that MA DPH can understand different patterns of prescribing and use. The MA
+         DPH can then use that data to make evidence-based decisions on public health policies
+         and interventions.
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                       1
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                            Reporting Requirements
+
+
+
+         Without accurate and timely information, none of these objectives can be achieved. The
+         MA DPH appreciates all of your assistance in meeting our shared goals of providing
+         critical prescription information.
+
+                                             MA PMP Reporting Requirements
+           Drug Schedule            PMP Reporting Requirement               Frequency of Reporting
+                                                                            Requirement
+           Schedule 1                                No                                      N/A
+           Schedule 2                                Yes                    Within 24 hours or the next business
+                                                                            day
+           Schedule 3                                Yes                    Within 24 hours or the next business
+                                                                            day
+           Schedule 4                                Yes                    Within 24 hours or the next business
+                                                                            day
+           Schedule 5                                Yes                    Within 24 hours or the next business
+                                                                            day
+           Schedule 6                           Gabapentin                  Within 24 hours or the next business
+                                                                            day
+
+         MA DPH and Bamboo Health have made every effort to ensure the accuracy of the
+         information in this document at the time of printing. However, information may change
+         without notice. Please see the Change Log section of this document for a complete list of
+         changes.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                  2
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Guidelines for Data Submitters
+
+
+
+
+2 Guidelines for Data Submitters
+         2.1 Prescription Records and File Upload
+             Specifications
+                   •   All data required within M.G.L. Chapter 94C §24A must be reported to the MA
+                       PMP through PMP Clearinghouse within 24 hours or the next business day
+                       following the most recent transmission.
+                   •   Files should be in ASAP 4.2A format.
+                   •   The primary email account in the User Profile must be monitored for
+                       communications from Clearinghouse by the data submitter.
+                   •   Reports for multiple pharmacies can be in the same upload file in any order.
+                   •   If a pharmacy does not dispense any federally controlled Schedule II–V
+                       substances or gabapentin for the preceding reporting period, it must file a
+                       Zero Report for that reporting period or it will be considered noncompliant.
+                       See Zero Reports for additional details.
+                   •   A Data Submission Waiver may be requested to avoid filing a Zero Report on
+                       days of the week the pharmacy is closed or for other specified reasons—see
+                       Appendix E: Data Submission Waivers.
+                   •   Prescription records that contain errors and are rejected by PMP
+                       Clearinghouse must be corrected and resubmitted.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                               3
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Accessing Clearinghouse
+
+
+
+
+3 Accessing Clearinghouse
+         This chapter describes how to create your PMP Clearinghouse account and how to log in
+         to the PMP Clearinghouse web portal.
+
+
+         3.1 Creating Your Account
+                   Prior to submitting data, you must create an account. If you are currently
+                   registered with the Bamboo Health PMP Clearinghouse system, you do not need
+                   to register for a new account—you will be able to add Massachusetts to your
+                   existing account for data submissions. A single account holder can submit to
+                   multiple PMPs. If you have an existing PMP Clearinghouse account, please refer
+                   to Adding PMPs to Your Upload Account to add PMPs to your account.
+                   Notes:
+                   •   Data from multiple pharmacies can be uploaded in the same file. For example,
+                       chain pharmacies may send in one file containing controlled substance
+                       dispensing information for all their pharmacies licensed in the PMP.
+                       Therefore, chains with multiple stores need only to set up one account to
+                       upload a file.
+                   •   PMP Clearinghouse allows users to submit data through the web portal via
+                       manual entry (UCF) or upload of ASAP files. For users who prefer an
+                       encrypted transfer method, SFTP access is also available. You may set up your
+                       SFTP account during the account creation process.
+                   •   If you need to make changes to an existing PMP Clearinghouse upload
+                       account, please refer to Managing Your Upload Account.
+                   Perform the following steps to create an account:
+                   1. Open an internet browser window and navigate to the PMP Clearinghouse
+                      Account Registration page located at
+                      https://pmpclearinghouse.net/registrations/new.
+                       The Account Registration page is displayed as shown on the following page.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        4
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   Accessing Clearinghouse
+
+
+
+
+                   2. Complete your Profile Details.
+
+
+
+
+                       a. Enter your current, valid email address in the Email Address field.
+                            Note: The email address you provide here will act as your username when
+                            logging into the PMP Clearinghouse system.
+                       b. Enter a password for your account in the Password field, then re-enter it
+                          in the Password Confirmation field. The password requirements are
+                          provided below.
+                            Passwords must contain:
+                            •    At least eight (8) characters
+                            •    One (1) uppercase letter
+                            •    One (1) lowercase letter
+                            •    One (1) number
+                            •    One (1) special character, such as !, @, #, $, etc.
+                   3. Complete your Personal and Employer information, noting the following:
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          5
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Accessing Clearinghouse
+
+
+
+                       •    Required fields are marked with a red asterisk (*).
+                       •    You may be able to auto-populate your Personal and/or Employer
+                            information by entering your (or your employer’s) DEA, NPI, and/or
+                            NCPDP number, then clicking the search icon (     ). If the number you
+                            entered is found, your information will automatically be populated.
+
+
+
+
+                   4. If secure file transfer protocol (SFTP) is required, complete the Data
+                      Submission section of the page.
+                       Notes:
+                       •    If SFTP access is not required, you do not need to complete the Data
+                            Submission section and you may continue to step 5.
+                       •    You may add SFTP access to an existing account. Please refer to Adding
+                            SFTP Access to an Upload Account for complete instructions.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        6
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   Accessing Clearinghouse
+
+
+
+                       a. Click to select the Enable SFTP Access checkbox.
+                            The SFTP access fields are displayed.
+
+
+
+
+                       b. Your SFTP Username is automatically generated using the first five
+                          characters of your employer’s name + your employer’s phone number +
+                          @prodpmpsftp. For example, if you entered “Test” as your employer’s
+                          name and “555-555-5555” as your employer’s phone number, your SFTP
+                          username would be test5555555555@prodpmpsftp.
+                       c. Enter a password for your SFTP account in the SFTP Password field, then
+                          re-enter it in the SFTP Password Confirmation field. The password
+                          requirements are provided below.
+                            Passwords must contain:
+                            •    At least eight (8) characters
+                            •    One (1) uppercase letter
+                            •    One (1) lowercase letter
+                            •    One (1) number
+                            •    One (1) special character, such as !, @, #, $, etc.
+                            This password will be input into the pharmacy software so that
+                            submissions can be automated.
+                            Notes:
+                            •    This password can be the same as the one previously entered under
+                                 Profile.
+                            •    Unlike the Profile password (i.e., your user account password), the
+                                 SFTP password does not expire.
+                            •    The URL to connect via SFTP is sftp://sftp.pmpclearinghouse.net.
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          7
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Accessing Clearinghouse
+
+
+
+                            •    Additional details on SFTP configuration can be found in Appendix D:
+                                 SFTP Configuration.
+                   5. In the Submission Destinations section of the page, select the PMP(s) for
+                      which you will be submitting data.
+                   6. Click Submit.
+                       The request is submitted to the PMP administrator for each of the PMPs you
+                       selected for data submission, and the Registration Information Overview page
+                       is displayed.
+
+
+
+
+                   7. Click Continue.
+                       The PMP Clearinghouse Login page is displayed; however, you will not be
+                       able to log in until your account has been approved. Once the PMP
+                       administrator has approved your request, you will receive a welcome email
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        8
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Accessing Clearinghouse
+
+
+
+                       instructing you to confirm your account. Follow the instructions in the email
+                       to confirm your account and begin submitting data to PMP AWARxE.
+
+
+         3.2 Logging In to PMP Clearinghouse
+                   1. Open an internet browser window and navigate to the PMP Clearinghouse
+                      Login page located at https://pmpclearinghouse.net/users/sign_in.
+
+
+
+
+                   2. Enter the email address you used to create your account in the Email Address
+                      field.
+                   3. Enter your password in the Password field.
+                       Note: If you have forgotten your password, have completed your registration
+                       but did not receive the account confirmation email, or your account has been
+                       locked and you did not receive the email with instructions for unlocking your
+                       account, please refer to the links in the Help section of the page. For detailed
+                       instructions on resetting your password, refer to Resetting Your Password.
+                   4. Click Login.
+                       The PMP Clearinghouse home page is displayed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        9
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                      Data Delivery Methods
+
+
+
+
+4 Data Delivery Methods
+         This chapter provides information about data delivery methods you can use to upload
+         your controlled substance reporting data file(s) to PMP Clearinghouse.
+         For quick reference, you may click the desired hyperlink in the following table to view the
+         step-by-step instructions for your chosen data delivery method:
+
+           Delivery Method                                                           Page
+           Secure FTP                                                                10
+           Web Portal Upload                                                         11
+           Manual Entry (UCF)                                                        12
+           Zero Reports                                                              15
+
+
+         4.1 Secure FTP
+                   If you are submitting data to PMP Clearinghouse using SFTP, you must configure
+                   individual subfolders for the PMP systems to which you are submitting data.
+                   These subfolders must be created in the homedir/directory folder, which is where
+                   you are directed once authenticated, and should be named using the PMP
+                   abbreviation (e.g., AK, DC, GU, KS, MA, PR, etc.). Data files not submitted to a
+                   PMP subfolder will be required to have a manual PMP assignment made on the
+                   File Listings page. Please refer to PMP Subfolders for additional details on this
+                   process.
+                   1. If you do not have a PMP Clearinghouse account, perform the steps in
+                      Creating Your Account.
+                       Or
+                   2. If you have a PMP Clearinghouse account but have not enabled SFTP access,
+                      perform the steps in Adding SFTP Access to an Upload Account.
+                   3. Prepare the data file(s) for submission, using the ASAP specifications
+                      described in Appendix A: ASAP 4.2A Specifications.
+                   4. SFTP the file to sftp://sftp.pmpclearinghouse.net.
+                   5. When prompted, enter the username and password you created when setting
+                      up the SFTP account.
+                   6. Place the file in the appropriate PMP-abbreviated directory.
+                   7. You can view the results of the transfer/upload on the Submissions page in
+                      PMP Clearinghouse.
+                   Note: If you place the data file in the root directory and not a PDMP sub-folder, a
+                     symbol with a mouse over hint of “Determine PMP” is displayed on the File
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          10
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+                   Status page, and you will be prompted to select a destination PMP to which the
+                   data should be sent.
+
+         4.2 Web Portal Upload
+                   1. If you do not have an account, perform the steps in Creating Your Account.
+                   2. Prepare the data file(s) for submission, using the ASAP specifications
+                      described in Appendix A: ASAP 4.2A Specifications.
+                       Note: Files for upload should be named in a unique fashion, with a prefix
+                       constructed from the date (YYYYMMDD) and a suffix of “.dat”. An example file
+                       name would be “20220415.dat”.
+                   3. Log in to PMP Clearinghouse.
+                   4. From the home page, click the File Upload tab.
+
+
+
+
+                       The File Upload page is displayed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     11
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+                   5. Select the PMP to which you are submitting the file from the drop-down list
+                      in the Select a PMP field.
+                   6. Click the Browse button, located next to the File Upload field, and select the
+                      file you created in step 2.
+                   7. Click Upload.
+                       A message is displayed prompting you to confirm the submission.
+
+
+
+
+                   8. Click Upload to continue with the file submission.
+                       Your file is uploaded, and you can view the results of the upload on the File
+                       Submissions page.
+                       Note: When uploading a file, the file name must be unique. If the file name is
+                       not unique, a message is displayed indicating that the file name has already
+                       been taken.
+
+         4.3 Manual Entry (UCF)
+                   You can manually enter your prescription information into the PMP
+                   Clearinghouse system using the Universal Claim Form (UCF) within the PMP
+                   Clearinghouse web portal. This form allows you to enter patient, prescriber,
+                   dispenser, and prescription information.
+                   1. If you do not have an account, perform the steps in Creating Your Account.
+                   2. Log in to PMP Clearinghouse.
+                   3. Click UCF Submissions.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     12
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+
+                       The UCF Listings page is displayed.
+
+
+
+
+                   4. Click the New Claim Form tab, located at the top of the page.
+                       The Create Universal Claim Form page is displayed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     13
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+                   5. Select the PMP to which you are submitting data from the drop-down list in
+                      the Select a PMP field.
+                   6. Complete the required fields.
+                       Notes:
+                       •    An asterisk (*) indicates a required field.
+                       •    If you are entering a compound, click the Compound checkbox in the
+                            Drug Information section of the page, complete the required fields for the
+                            first drug ingredient, then click Add New to add additional drug
+                            ingredients.
+                   7. Once you have completed all required fields, click Save.
+                       The Submit Now button is displayed at the top of the page.
+
+
+
+
+                   8. Click Submit Now to continue with the data submission process.
+                       A message is displayed prompting you to confirm the data submission.
+
+
+
+
+                   9. Click OK.
+                       Your data will be validated upon submission. If there are any errors on the
+                       UCF form, they are displayed at the top of the page.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     14
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+
+                       Note: If there are no errors, you are returned to the Submitted Claim Forms
+                       page and your report is listed there.
+                   10. Correct the indicated errors, then repeat steps 7–9.
+                       Once your data has been successfully submitted, your report is listed on the
+                       UCF Listings page.
+
+
+
+
+         4.4 Zero Reports
+                   If you have no dispensations to report for the preceding reporting period, you
+                   must report this information to the MA PMP.
+                   You may submit your zero report through the PMP Clearinghouse web portal by
+                   following the steps below or via SFTP using the ASAP Standard for Zero Reports.
+                   For additional details on submitting via SFTP, please refer to Appendix C: ASAP
+                   Zero Report Specifications.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     15
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                  Data Delivery Methods
+
+
+
+                   You may submit zero reports through the PMP Clearinghouse web portal using
+                   one of the following methods:
+                   •   Submit a single-click zero report
+                   •   Create a new zero report
+
+                   4.4.1 Submit a Single-Click Zero Report
+                            Single-click zero reporting allows you to create a profile for the pharmacy
+                            that includes its identifiers (e.g., DEA, NPI, NCPDP), so you do not have to
+                            enter it each time you submit a zero report.
+                            To create a pharmacy profile and begin submitting single-click zero
+                            reports:
+                            1. If you do not have an account, perform the steps in Creating Your
+                               Account.
+                            2. Log in to PMP Clearinghouse.
+                            3. Click Zero Reports.
+
+
+
+
+                                 The Zero Report Listings page is displayed.
+
+
+
+
+                            4. Click the Create Zero Report tab.
+                                 The Create Zero Report page is displayed. Note that Submit a Single
+                                 Click Zero Report is selected by default.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                      16
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   Data Delivery Methods
+
+
+
+
+                                 •    Any pharmacies you have already configured for single-click zero
+                                      reporting are displayed at the bottom of the page. Continue to
+                                      Step 10 to submit a zero report for those pharmacies.
+                                 •    If you have not configured your pharmacy for single-click zero
+                                      reporting, continue to Step 5.
+                            5. Click Add New Pharmacy.
+                                 The New Pharmacy page is displayed.
+
+
+
+
+                            6. Select the PMP for which you are submitting a zero report from the
+                               drop-down list in the PMP field.
+                            7. Enter the pharmacy’s name in the Pharmacy field.
+                            8. Populate the NCPDP, DEA Number, and/or NPI fields as required by
+                               the PMP you selected in step 6. If any of these fields are required, a
+                               red asterisk (*) will be displayed next to that field once you have
+                               selected a PMP.
+                            9. Click Save.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                       17
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   Data Delivery Methods
+
+
+
+                                 The pharmacy is saved and will be listed under the drop-down for the
+                                 selected PMP, which is located at the bottom of the page.
+
+
+
+
+                            10. Click the plus sign (“+”) next to the PMP for which you wish to submit
+                                a zero report.
+                                 The list of pharmacies you have configured for single-click zero
+                                 reporting for that PMP is displayed. Note that this page allows you to
+                                 submit a zero report for the current date (Today) or the previous day
+                                 (Yesterday).
+
+
+
+
+                            11. Click Today to submit a zero report for the current date;
+                                 Or
+                            12. Click Yesterday to submit a zero report for the previous date.
+                                 Once the report is submitted, the submission is indicated on the
+                                 screen, and the zero report is displayed on the Zero Report Listings
+                                 tab.
+
+
+
+
+                                 Note: You may edit or delete a pharmacy from this page.
+                                 •    To edit a pharmacy, click Edit to display the Edit Pharmacy page
+                                      and make any necessary changes. Refer to steps 6–9 for guidance
+                                      on entering pharmacy information.
+                                 •    To delete a pharmacy, click Delete. You will be prompted to
+                                      confirm the deletion. Once you confirm the deletion, the pharmacy
+                                      configuration will be removed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                       18
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Delivery Methods
+
+
+
+                   4.4.2 Create a New Zero Report
+                            1. If you do not have an account, perform the steps in Creating Your
+                               Account.
+                            2. Log in to PMP Clearinghouse.
+                            3. Click Zero Reports.
+
+
+
+
+                                 The Zero Report Listings page is displayed.
+
+
+
+
+                            4. Click the Create Zero Report tab.
+                                 The Create Zero Report page is displayed. Note that Submit a Single
+                                 Click Zero Report is selected by default.
+
+
+
+
+                            5. Click the button to select Create new Zero Report.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     19
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                    Data Delivery Methods
+
+
+
+                                 The Create Zero Report page is displayed.
+
+
+
+
+                            6. Select the PMP for which you are submitting a zero report from the
+                               drop-down list in the Select a PMP field.
+                            7. Enter the start date and end date for the zero report in the Start date
+                               and End date fields using the MM/DD/YYYY format. You may also
+                               select the dates from the calendar that is displayed when you click in
+                               these fields.
+
+
+
+
+                            8. Enter your NCPDP, DEA, and/or NPI numbers, if required by your PMP.
+                                 Note: If any of these fields are required by your PMP, they will be
+                                 marked with a red asterisk (*).
+                            9. Click Submit.
+                                 Your zero report is submitted to PMP Clearinghouse and will be
+                                 displayed on the Zero Report Listings tab.
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        20
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                       Data Compliance
+
+
+
+
+5 Data Compliance
+         This chapter describes how to view the status of your submitted data files and how to
+         correct errors.
+
+
+         5.1 File Listings
+                   The File Listings page displays information extracted from the data files
+                   submitted to PMP Clearinghouse, including the file name, number of records
+                   identified within the data file, number of records that contain warnings, number
+                   of records that contain errors, and the date and time of submission. Click File
+                   Submissions to access this page.
+
+
+
+
+                   •   The Status column, located at the end of each row, displays the file status via
+                       color-coded icon. Hovering over the icon will display the status message.
+                   •   The Status Report column, located next to the Status column, contains a link
+                       to the status report for that file. Please refer to File Status Report for more
+                       information on how to read and interpret this report.
+
+                   If a file contains errors, it will have a  symbol with a mouse over hint of
+                   “Pending Dispensation Error” within the status column. You can click the error
+                   icon in the Status column to display the Error Correction page, which allows you
+                   to view the records containing errors (see View Records for more information).
+                   Please refer to Error Correction for instructions on how to correct errors.
+                   If a file is unable to be parsed into the PMP Clearinghouse application, it will have
+                   an       symbol with a mouse over hint of “ASAP Errors.” Clicking the icon will
+                   display the detailed error, which indicates what element was missing or
+                   malformed. To correct these errors, a new file must be submitted to PMP
+                   Clearinghouse. It is not necessary to void a file that failed parsing since it was not
+                   successfully submitted to PMP Clearinghouse.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     21
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                        Data Compliance
+
+
+
+                   If you submitted a file via SFTP without using a PMP-specific sub-folder, the file
+                   will be displayed, and  symbol will be displayed in the status column with a
+                   mouse over hint of “Determine PMP.” Clicking the icon will prompt you to select
+                   a destination PMP to which the data file will be transferred.
+
+
+
+
+                   If you submitted a zero report via file upload or SFTP that is malformed or
+                   missing information, the file will be displayed, and an exclamation mark icon
+                   inside a red triangle will be displayed in the status column. Hovering over the
+                   icon will display the “Invalid Zero Report” error. Clicking on the icon will display
+                   the detailed error message. To correct these errors, a new zero report must be
+                   submitted. Error example:
+
+
+
+
+         5.2 UCF Listings
+                   The UCF Listings page displays information about the UCFs submitted to PMP
+                   Clearinghouse, including the number of warnings and errors. Click UCF
+                   Submissions to access this page.
+
+
+
+
+                   The Status column, located at the end of each row, displays the UCF’s status. Data
+                   entered into the UCF is validated upon submission; therefore, successfully
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        22
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                       Data Compliance
+
+
+
+                   submitted UCFs should not contain errors. However, if you have attempted to
+                   submit a UCF with errors and did not immediately correct those errors and
+                   submit the record, you have 30 days to make updates to these records in
+                   Clearinghouse.
+                   1. To view pending or incomplete submissions, click the Manage Claim Forms
+                      tab.
+
+
+
+
+                       The Pending Claim Forms page is displayed.
+
+
+
+
+                   2. Click Edit next to the form you wish to update.
+                       Note: If it has been longer than 30 days, the Edit option will not be available.
+                       You must click Delete to delete the record and start over.
+                       The Edit Universal Claim Form page is displayed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     23
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                     Data Compliance
+
+
+
+                   3. Make the necessary corrections or changes, and then click Submit Now,
+                      located at the top of the page.
+                       A message is displayed prompting you to confirm the data submission.
+
+
+
+
+                   4. Click OK.
+                       Your data will be validated upon submission. If there are any remaining errors
+                       on the UCF form, they are displayed at the top of the page.
+
+
+
+
+                       Note: If there are no errors, you are returned to the UCF Listings page and
+                       your report is listed there.
+                   5. Correct the indicated errors, then repeat steps 3-4.
+                   Once your data has been successfully submitted, your report is listed on the UCF
+                   Listings page.
+
+
+         5.3 Error Correction
+                   Clearinghouse account administrators and sub-submitters receive an email
+                   receipt upon submission of dispensations. This receipt will include any warnings
+                   or errors for that specific submission. Clearinghouse account administrators and
+                   sub-submitters are authorized to correct any errors or warnings that may occur
+                   when dispensations are submitted. Please be sure Clearinghouse account email
+                   addresses are kept current to ensure receipt of notices.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                    24
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                        Data Compliance
+
+
+
+                   5.3.1 View Records with Errors
+                            The Error Correction page displays more information about the records
+                            within a selected data file that need correcting, including Prescription
+                            Number, Segment Type, Warning Count, and Error Count. To access this
+                            page, click the “Pending Dispensation Error” message in the Status
+                            column of the File Listings page.
+
+
+
+
+                            The Correct button, located at the end of each row, allows you to make
+                            corrections to the record.
+
+                   5.3.2 Error Correction via PMP Clearinghouse
+                            Once you click Correct on the Error Correction page, the Errors page is
+                            displayed. This page displays detailed information about the records
+                            within a selected data file that need correcting, including all the fields
+                            contained within the record and the originally submitted value, and allows
+                            you to correct those records.
+
+
+
+
+                            •    The Corrected Value column allows you to enter a new value to
+                                 correct the error.
+                            •    The Message column displays the relevant error message explaining
+                                 why the value entered in that field did not pass the validation rules.
+                            For files that failed to parse, the error identified is "best effort" and any
+                            information we could not parse is listed as "unparseable" in the file. In this
+                            case, you must submit a corrected file.
+                            To correct records:
+                            1. Identify the fields that require corrections. Fields containing errors are
+                               highlighted in red, as shown in the screenshot above.
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                        25
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                         Data Compliance
+
+
+
+                            2. Enter the corrected value in the Corrected Value column.
+                            3. Click Submit.
+                                 The error is processed through the validation rules.
+                                 a. If the changes pass the validation rules, the record is valid, and a
+                                    message is displayed indicating that the errors have been
+                                    corrected. The File Listings and Error Correction pages are also
+                                    updated.
+                                 b. If the changes fail the validation rules, a message is displayed
+                                    indicating that there was a problem correcting the errors, and the
+                                    Message column is updated with any new error message. Repeat
+                                    steps 2–3 until the errors have been corrected and the file can be
+                                    successfully submitted.
+
+                   5.3.3 Error View and Correction on MassPAT
+                            Pharmacists who are responsible for data submission for a pharmacy or
+                            pharmacies can request access to the Error Correction and Rx
+                            Maintenance features in their personal MassPAT account.
+                            These convenient features allow the pharmacist to view and correct
+                            records that have failed to parse and correct records that have been
+                            accepted into MassPAT but contain inaccuracies that need to be fixed. For
+                            more information contact the MA PMP at: mapmp.dph@mass.gov.
+
+                   5.3.4 Error Correction via File Submission
+                            The ASAP 4.2A standard requires a pharmacy to select an indicator in the
+                            DSP01 (Reporting Status) field. These indicators allow you to submit new
+                            records, revise and resubmit records, and void (delete) erroneous records.
+                            These actions are indicated by supplying one of the following values in
+                            the DSP01 field:
+                            •    00 New Record – indicates a new record
+                            •    01 Revise – indicates that one or more data elements in a previously-
+                                 submitted record have been revised
+                            •    02 Void – indicates that the original record should be removed
+                            To revise a record:
+                            1. Create a record with the value 01 in the DSP01 field.
+                            2. Populate the following fields with the same information originally
+                               submitted in the erroneous record:
+                                 •    NCPDP/NABP Provider ID (PHA02)
+                                 •    DEA Number (PHA03)
+                                 •    Prescription number (DSP02)
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                         26
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                        Data Compliance
+
+
+
+                                 •    Date Filled (DSP05)
+                                 •    Refill number (DSP06)
+                                 •    Quantity (DSP09)
+                                 Note: If you need to revise any of the fields listed above, you must
+                                 delete the original record and submit a new one with the correct
+                                 information. Otherwise, a duplicate record will be created.
+                            3. Fill in all other data fields with the correct information. This
+                               information will override the original data linked to the fields
+                               referenced in step 2.
+                            4. Submit the record.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                      27
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                               Email Reports
+
+
+
+
+6 Email Reports
+         Email status reports are automatically sent to all users associated with a specific data
+         submitter account. These reports are used to identify errors in files that have been
+         submitted and to confirm zero report submissions. Please be sure that the primary email
+         account in the User Profile will be monitored for communications from Clearinghouse by
+         the data submitter.
+
+
+         6.1 File Failed Report
+                   You will receive the File Failed Report if a submitted file was not able to be
+                   parsed and was not processed into PMP Clearinghouse. The report contains a
+                   description of the error encountered within the file. In the event of a failed file, a
+                   new file should be submitted with the necessary corrections.
+                   Note: Failed files are not parsed into Clearinghouse and do not require a voided
+                   ASAP file to remove it from the system.
+                   An example File Failed Report is provided below.
+                   SUBJ: Massachusetts ASAP file: fake-test3.txt - Parse Failure
+
+                   BODY:
+                   Error Message
+                   -----------------------------------------------------------------------------
+                   Failed to decode the value '04' for the bean id 'transactionControlType'.
+
+
+
+                   Summary:
+                   * File Name: fake-test3.txt
+                   * ASAP Version: 4.2A
+                   * Transaction Control Number: unparseable
+                   * Transaction Control Type: unparseable
+                   * Date of Submission: January 30, 2022
+
+                   NOTE: This file could not be received into the system because the system could not
+                   recognize its content as a valid ASAP format. Action is required to resolve the issues and
+                   a subsequent file should be submitted. As such the information provided in this report is
+                   "best effort" and any information we could not parse is listed as "unparseable" in the
+                   fields above.
+
+
+         6.2 File Status Report
+                   The File Status Report serves as notification that a data file is currently being
+                   parsed by the PMP system.
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                           28
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                           Email Reports
+
+
+
+                   This report identifies specific records in the submitted data file and returns
+                   identifying information about the record, including specific errors identified
+                   during the validation process. It uses fixed-width columns and contains a
+                   summary section after the error listings. Each column contains a blank two-digit
+                   pad at the end of the data.
+                   The columns are set to the following lengths:
+
+                       Column                                            Length
+                       DEA                                               11 (9 + pad)
+                       NCPDP                                             9 (7 + pad)
+                       NPI                                               12 (10 + pad)
+                       Prescription                                      27 (25 + pad)
+                       Filled                                            10 (8 + pad)
+                       Segment                                           18 (16 + pad)
+                       Field                                             18 (16 + pad)
+                       Type                                              9 (7 + pad)
+                       Message                                           Arbitrary
+
+                   The File Status Report notifies you of the following scenarios:
+                   •      Total records: The total number of records contained in the submitted data
+                          file.
+                   •      Duplicate records: The number of records that were identified as already
+                          existing within the PMP system. Duplicate records are not imported to
+                          prevent improper patient information.
+                   •      Records in process: The number of records remaining to be processed into
+                          the system (usually only displays a number if the file has not finished loading
+                          at the time the report is sent out).
+                          Note: Records remaining to be processed will continue to be processed even
+                          after the status report is sent.
+                   •      Records with errors: The number of records that contain errors. These errors
+                          must be corrected for the record to be imported into the system. If a zero (0)
+                          is displayed, there are no errors in the data. Please refer to Error Correction
+                          for instructions on correcting errors.
+                   •      Records with warnings: The number of records that contain warnings. These
+                          warnings do not need to be corrected for the record to be imported into the
+                          system. If a zero (0) is displayed, there are no warnings in the data.
+                   •      Records imported with warnings: The number of records with warnings that
+                          were imported. If a record contains both warnings and errors, the errors must
+                          be corrected to be submitted to the system. Please refer to Error Correction
+                          for instructions on correcting errors.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                       29
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          Email Reports
+
+
+
+                   •   Records imported without warnings: The number of records without warnings
+                       that were imported.
+                   Note: The initial File Status Report is sent out two (2) hours after the file has been
+                   submitted to the system. Additional reports will be sent out every 24 hours if
+                   errors continue to be identified within a submitted data file.
+                   An example File Status Report is provided on the following page.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                      30
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                                                                       Email Reports
+
+
+
+SUBJ: Massachusetts ASAP file: fake-test3.txt - Status Report
+
+BODY:
+DEA          NCPDP NPI                  Prescription               Filled      Segment           Field Type      Message
+--------------------------------------------------------------------------------------------------------------------------------
+BE1234567 1347347 9034618394 123486379596-0                        20220808 Dispensation         refill_number WARNING message example
+DE9841394 3491849 4851947597 357199504833-345                      20220808 Dispensation         days_supply       ERROR message example
+
+
+Summary:
+* File Name: fake-test3.txt
+* ASAP Version: 4.2A
+* Transaction Control Number: 23489504823
+* Transaction Control Type: send
+* Date of Submission: August 9, 2022
+* Total Record Count: ###
+* Duplicate Records: ###
+* In Process Count: ###
+* Records with Error Count: ###
+* Imported Records Count: ###
+* Records Imported with Warning Count: ###
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                                                   31
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                       Email Reports
+
+
+
+         6.3 Zero Report Confirmation
+                   You will receive a Zero Report Confirmation after successfully submitting a zero
+                   report to PMP Clearinghouse. This report displays the PMP to which the zero
+                   report was submitted, date range for the zero report, date the zero report was
+                   submitted to PMP Clearinghouse, and date the report was originally created.
+                   An example Zero Report Confirmation is provided below.
+                   SUBJ: ASAP Zero Report: zero_reports_20220306KSMCPS.DAT
+
+
+                   BODY:
+                   Summary:
+                   * File Name: zero_reports_20220306KSMCPS.DAT
+                   * PMP Name: Mass
+                   * Date Range: 2022-03-06 - 2022-03-06
+                   * Submission Date: 2022-03-07
+                   * ASAP Creation Date: 2022-03-07
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                    32
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+
+7 Managing Your Upload Account
+         The Account menu option allows you to manage the information associated with your
+         organization’s upload account, including adding users, PMPs, and SFTP access to your
+         account as well as editing your organization’s account information.
+         Note: This chapter contains information for managing the upload account with which
+         your user account is associated. For information about editing and managing your
+         individual user account, including how to change your password, please refer to
+         Managing Your User Profile.
+
+         7.1 Adding Users to Your Upload Account
+                   PMP Clearinghouse allows data submitters to add new users to the system who
+                   have the same rights and access to submitting data and viewing file status. This
+                   practice allows you to create an account to be used for a backup individual.
+                  1. Log in to PMP Clearinghouse.
+                  2. Click Account.
+
+
+
+
+                   3. Select Users from the Account drop-down menu.
+                       The Account Users page is displayed.
+
+
+
+
+                   4. Click New User, located in the top right corner of the page.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            33
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+                       The New Data Submitter User page is displayed.
+
+
+
+
+                   5. Enter the new data submitter’s email address, first name, and last name in the
+                      appropriate fields. Note that all fields are required.
+                   6. Click Submit.
+                       The user is added to the list of data submitters for your organization, and you
+                       are returned to the Account Users page.
+                   7. Please inform the new user of the account creation.
+                       a. The user will receive an email with a link for them to confirm their
+                          account.
+                       b. Once the account has been confirmed, the user will need to navigate to
+                          the PMP Clearinghouse Login page and click Forgot your password? to
+                          create a password for their account and log in.
+                       c. Upon logging in, the user will be able to view all files submitted for your
+                          organization’s upload account.
+
+                   7.1.1 Changing Another User’s Password
+                            If a user is unable to update their own password, a data submitter can
+                            update a password for any additional users linked to the admin account.
+                            1. Log in to PMP Clearinghouse.
+                            2. Click Account.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            34
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+
+
+                            3. Select Users from the Account drop-down menu.
+                                 The Account Users page is displayed.
+
+
+
+
+                            4. Click the Edit button, located to the right of the user’s information.
+                                 The Edit Data Submitter User page is displayed.
+
+
+
+
+                            5. Enter a new password for the user in the Password field, then re-enter
+                               it in the Password confirmation field. The password requirements are
+                               provided below.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            35
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+                                 Passwords must contain:
+                                 •    At least eight (8) characters
+                                 •    One (1) uppercase letter
+                                 •    One (1) lowercase letter
+                                 •    One (1) number
+                                 •    One (1) special character, such as !, @, #, $, etc.
+                            6. Click Submit.
+                                 The password is changed.
+
+
+         7.2 Adding PMPs to Your Upload Account
+                   If your organization needs to submit data files to an additional PMP that uses
+                   PMP AWARxE, you can submit the request through PMP Clearinghouse.
+                   1. Log in to PMP Clearinghouse.
+                   2. Click Account.
+
+
+
+
+                   3. Select Multi State Approval from the Account drop-down menu.
+                       The Multi State Approval page is displayed. This page displays all PMPs
+                       currently using the PMP AWARxE system as well as your data sharing status
+                       with each PMP.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            36
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+                   4. To request to submit data to another PMP, click to select the checkbox next
+                      to that PMP.
+                       PMP Clearinghouse automatically saves your changes, and your request is
+                       submitted to the PMP administrator for review and approval. Once the
+                       request has been approved, the status for that PMP will change from
+                       “Pending” to “Approved,” and you may begin submitting data to that PMP.
+                       Notes:
+                       •    If you are submitting data via SFTP, the file must be located in the proper
+                            subfolder to ensure delivery to the desired PMP.
+                       •    To cancel data submission to a PMP, uncheck the box for that PMP. Note
+                            that if you need to submit data to that PMP again in the future, you will
+                            have to go through the approval process again.
+
+         7.3 Adding SFTP Access to an Upload Account
+                   If a registered upload account did not request an SFTP account during the
+                   account creation process, you can request one at any time using the Account
+                   menu option.
+                   1. Log in to PMP Clearinghouse.
+                   2. Click Account.
+
+
+
+
+                   3. Select SFTP Details.
+                       The SFTP Account page is displayed.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            37
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+                       Note: If an SFTP account already exists for the upload account, the username
+                       is displayed on the SFTP Account page.
+
+
+
+
+                       You cannot change the SFTP account username; however, you can update the
+                       password by clicking Edit.
+                   4. Click Create.
+                       The Create a New SFTP Account page is displayed.
+
+
+
+
+                   5. Enter a username for the account in the Name field.
+                       Notes:
+                       •    The username must contain a minimum of eight (8) characters.
+                       •    Once the SFTP account has been created, you cannot change the
+                            username.
+                   6. Enter a password for the account in the Password field, then re-enter it in the
+                      Password confirmation field. The password requirements are provided below.
+                       Passwords must contain:
+                       •    At least eight (8) characters
+                       •    One (1) uppercase letter
+                       •    One (1) lowercase letter
+                       •    One (1) number
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            38
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+                       •    One (1) special character, such as !, @, #, $, etc.
+                       Once the account has been successfully created, this password will be input
+                       into the pharmacy software so that submissions can be automated.
+                       Notes:
+                       •    This password can be the same as the one used when the upload account
+                            was created.
+                       •    Unlike your Profile password (i.e., your user account password), the SFTP
+                            password does not expire.
+                       •    The URL to connect via SFTP is sftp://sftp.pmpclearinghouse.net.
+                       •    Additional details on SFTP configuration can be found in Appendix D:
+                            SFTP Configuration.
+                   7. Click Create.
+                       The account is created, and the username is displayed.
+
+
+
+
+         7.4 Editing Your Upload Account
+                   Note: This function only allows you to edit your organization’s upload account. If
+                   you need to edit your individual profile information, please refer to Editing Your
+                   Profile.
+                   1. Log in to PMP Clearinghouse.
+                   2. Click Account.
+
+
+
+
+                   3. Select Account Details.
+                       The Account page is displayed as shown on the following page.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            39
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+
+
+                   4. Click Edit.
+                       The Edit Account page is displayed.
+
+
+
+
+                   5. Update the information as necessary, then click Submit.
+                       The account information is updated.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            40
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your Upload Account
+
+
+         7.5 Changing Administrator Account
+                   If the Clearinghouse administrator account needs to be transferred from one user
+                   to another, please contact PMP Clearinghouse directly at 1-855-5MA-4PMP (1-
+                   855-562-4767).
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                            41
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your User Profile
+
+
+
+8 Managing Your User Profile
+         This chapter describes how to manage your individual user profile, including how to edit
+         your profile and manage your password.
+         Note: This chapter contains information for managing your individual user profile. For
+         information about managing your organization’s upload account, including how to add
+         users, please refer to Managing Your Upload Account.
+
+         8.1 Editing Your Profile
+                   Note: This function only allows you to edit your individual profile information. If
+                   you need to edit the Organization Information, please refer to Editing Your
+                   Upload Account.
+                   1. Log in to PMP Clearinghouse.
+                   2. Click My Profile.
+
+
+
+
+                   3. Select Edit My Profile.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          42
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your User Profile
+
+
+
+
+                   4. Update your information as necessary, then click Submit.
+                       Your changes are saved, and your updated profile is displayed.
+
+
+         8.2 Changing Your Password
+                   Note: Clearinghouse passwords expire every 90 days. You can use this function to
+                   proactively change your password before it expires. If your password has already
+                   expired, or you have forgotten your password, navigate to the PMP
+                   Clearinghouse Login page and click Forgot your password? to reset it. Please
+                   refer to Resetting Your Password for more information.
+                   1. Log in to PMP Clearinghouse.
+                   2. Click My Profile.
+
+
+
+
+                   3. Select Change Password.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          43
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your User Profile
+
+
+
+
+                   4. Enter your current password in the Current Password field.
+                   5. Enter your new password in the Password field, then re-enter it in the
+                      Password confirmation field. The password requirements are provided below.
+                       Passwords must contain:
+                       •    At least eight (8) characters
+                       •    One (1) uppercase letter
+                       •    One (1) lowercase letter
+                       •    One (1) number
+                       •    One (1) special character, such as !, @, #, $, etc.
+                   6. Click Update.
+                       Your password is updated, and you will use it the next time you log in to PMP
+                       Clearinghouse.
+
+
+         8.3 Resetting Your Password
+                   If you have forgotten your password or your password has expired, perform the
+                   following steps to reset it.
+                   1. Open an internet browser window and navigate to the PMP Clearinghouse
+                      Login page located at https://pmpclearinghouse.net/users/sign_in.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          44
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your User Profile
+
+
+
+
+                   2. Click the Forgot your password? link, located in the Help section of the page.
+                       The Forgot your password page is displayed.
+
+
+
+
+                   3. Enter the email address associated with your user account, then click Send me
+                      reset password instructions.
+                   4. Once you receive the reset password email, click the Change my password
+                      link within the email.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          45
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Managing Your User Profile
+
+
+                       The Change your password page is displayed.
+
+
+
+
+                   5. Enter your new password in the New password field, then re-enter it in the
+                      Confirm your new password field. The password requirements are provided
+                      below.
+                       Passwords must contain:
+                       •    At least eight (8) characters
+                       •    One (1) uppercase letter
+                       •    One (1) lowercase letter
+                       •    One (1) number
+                       •    One (1) special character, such as !, @, #, $, etc.
+                   6. Click Change my password.
+                       Your password is changed, and you can now use it to log in to PMP
+                       Clearinghouse.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                          46
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Assistance and Support
+
+
+
+9 Assistance and Support
+         9.1 Technical Assistance
+                   If you need additional help with any of the procedures outlined in this guide, you
+                   can:
+                   •   Contact Bamboo Health at 1-855-5MA-4PMP (1-855-562-4767);
+                       OR
+                   •   Create a support request at the following URL:
+                       https://pmpclearinghouse.zendesk.com/hc/en-us/
+                   Technical assistance is available 24 hours per day, 7 days per week, 365 days per
+                   year.
+
+
+         9.2 Administrative Assistance
+                   If you have non-technical questions regarding the MA PMP, please contact:
+                   Phone: 617-753-7310
+                   E-mail: mapmp.dph@mass.gov
+                   Website: http://www.mass.gov/dph/dcp/pmp
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                      47
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                                Document Information
+
+
+
+10 Document Information
+         10.1 Disclaimer
+                   Bamboo Health has made every effort to ensure the accuracy of the information
+                   in this document at the time of printing; however, information is subject to
+                   change.
+
+
+         10.2 Change Log
+                    Version        Date               Chapter/Section           Change Made
+                    1.0            02/16/2016         N/A                       N/A; initial publication
+                    1.1            02/26/2016         Global                    Updated per Pharmacy Kickoff
+                                                                                Meeting feedback
+                    1.2            04/05/2016         File Status Report        Added additional compliance
+                                                                                language
+                                                      ASAP 4.2                  Changed DSP18–DSP21 from
+                                                      Specifications            conditional to optional
+                                                                                Modified condition of AIR07/AIR08
+                    2.0            06/21/2016         Deliveries                Updated language regarding AIR06
+                                                      Appendix D                Added appendix
+                    3.0            05/10/2017         Global                    Added requirement for pharmacies
+                                                                                to submit gabapentin (effective
+                                                                                08/01/2017); for details, refer to
+                                                                                Reporting Gabapentin Prescriptions
+                                                      ASAP 4.2                  AIR fields (customer ID):
+                                                      Specifications            •    AIR11 – customer ID must be
+                                                                                     collected at pick-up only
+                                                                                     (effective 08/01/2017)
+                                                                                •    AIR03, 04, 05 – customer ID
+                                                                                     must be collected for refills
+                                                                                     (effective 08/01/2017)
+                                                                                •    AIR03, 04, 05 – customer ID
+                                                                                     must be collected for
+                                                                                     gabapentin (effective
+                                                                                     08/01/2017)
+                                                                                Added requirement for PRE01
+                                                                                (prescriber NPI) to be submitted in
+                                                                                each record (effective 08/01/2017)
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                    48
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                               Document Information
+
+
+                    Version        Date               Chapter/Section           Change Made
+                                                                                Changed PRE02 (prescriber DEA) to
+                                                                                be conditionally required (effective
+                                                                                08/01/2017)
+                                                                                Changed PRE03 (DEA suffix) to
+                                                                                optional (effective 08/01/2017)
+                    4.0            08/01/2018         Error Correction          Clarified error correction process
+                                                      Error Correction in       Added new section
+                                                      MassPAT
+                                                      Appendix E/Data           Added appendix
+                                                      Submission
+                                                      Waivers
+                    5.0            08/01/2022         Global                    Updated to current document
+                                                                                template
+                                                                                Updated screenshots to reflect
+                                                                                updated user interface (note that
+                                                                                this is only a cosmetic change; no
+                                                                                functionality changes are included)
+                                                      6.2/UCF Listings          Added clarification on correcting
+                                                                                UCF errors
+                                                      6.3.3/Error               Added section on correcting errors
+                                                      Correction via File       by submitting a revision file using
+                                                      Submission                01 (revise) in the DSP01 field
+                                                      4.4/Zero Reports          Separated into two sections (Submit
+                                                                                a Single-Click Zero Report and
+                                                                                Create a New Zero Report) to reflect
+                                                                                the addition of the single-click zero
+                                                                                report submission functionality
+                                                      4.4.1/Submit a            Added new section with instructions
+                                                      Single-Click Zero         for submitting a single-click zero
+                                                      Report                    report.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                     49
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                               Document Information
+
+
+                    Version        Date               Chapter/Section           Change Made
+                                                      Appendix A                Updated to accommodate new
+                                                                                fields for ASAP 4.2A:
+                                                                                •    PHA13 - Pharmacy License
+                                                                                     Number is optional
+                                                                                •    DSP01 – Reporting Status has a
+                                                                                     new limited data set option
+                                                                                •    DSP05 – Date Filled has been
+                                                                                     changed to Date Prepared
+                                                                                •    DSP22 – Quantity Prescribed is
+                                                                                     conditionally required
+                                                                                •    DSP24 – Treatment Type is
+                                                                                     optional
+                                                                                •    DSP25 – Diagnosis Code is
+                                                                                     conditionally required
+                                                                                •    PRE09 – XDEA Number is
+                                                                                     conditionally required
+                                                                                Clarified fields required for
+                                                                                Veterinary Prescriptions (PAT07,
+                                                                                PAT08, and PAT23)
+                                                                                DSP18-21 are now conditionally
+                                                                                required for electronic prescriptions
+                                                                                Added clarifications to AIR05-08
+                                                                                Added clarifications to Deliveries
+                                                      Appendix F                Added new appendix to correspond
+                                                                                with upgrade to ASAP 4.2A
+                                                      Global                    Updated guide to reflect Bamboo
+                                                                                Health branding.
+                    5.1            10/05/2022         Error Correction          Clarified error correction process
+                                                      Naloxone                  Naloxone submission guidance
+                                                                                added.
+                    5.2            05/09/2023         ASAP AIR Section          Added AIR11
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                    50
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+
+Appendix A: ASAP 4.2A Specifications
+         The following table lists the required definitions for submitting ASAP 4.2A records to the
+         MA PMP. Please refer to Appendix B: Data Entry Guidance for more information on those
+         fields that may require extra guidance for proper data entry.
+         The Requirement column uses the following codes:
+         •    R = Required submission
+         •    C = Conditional submission; please refer to notes
+         •    O = Optional submission; please submit if available
+         Note: For additional details or examples, please consult the full Implementation Guide
+         for the ASAP Standard for Prescription-Monitoring Programs, Version 4 Release 2. That
+         document is available from the American Society for Automation in Pharmacy at
+         www.asapnet.org or by phone at (610) 825-7783.
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+ TH: Transaction Header (required)
+ Used to indicate the start of a transaction. It also assigns the data element separator, segment
+ terminator, and control number.
+              TH01         Version/Release Number                                         R
+                           Code uniquely identifying the transaction.
+                           Format = xx.x
+              TH02         Transaction Control Number                                     R
+                           Sender assigned code uniquely identifying a
+                           transaction.
+              TH03         Transaction Type                                               R
+                           Identifies the purpose of initiating the
+                           transaction.
+                           •    01 Send/Request Transaction
+                           •    02 Acknowledgement (used in Response
+                                only)
+                           •    03 Error Receiving (used in Response only)
+                           •    04 Void (used to void a specific Rx in a real-
+                                time transmission or an entire batch that has
+                                been transmitted)
+              TH04         Response ID                                                   O
+                           Contains the Transaction Control Number of a
+                           transaction that initiated the transaction.
+                           Required in response transaction only.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 51
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              TH05         Creation Date                                                  R
+                           Date the transaction was created. Format:
+                           CCYYMMDD.
+              TH06         Creation Time                                                  R
+                           Time the transaction was created. Format:
+                           HHMMSS or HHMM.
+              TH07         File Type                                                      R
+                           •    P = Production
+                           •    T = Test
+              TH08         Routing Number                                                O
+                           Reserved for real-time transmissions that go
+                           through a network switch to indicate, if
+                           necessary, the specific PMP the transaction
+                           should be routed to.
+              TH09         Segment Terminator Character                                   R
+                           This terminates the TH segment and sets the
+                           actual value of the data segment terminator for
+                           the entire transaction.
+ IS: Information Source (required)
+ Used to convey the name and identification numbers of the entity supplying the information.
+              IS01         Unique Information Source ID                                   R
+                           Reference number or identification number.
+                           (Example: phone number)
+              IS02         Information Source Entity Name                                 R
+                           Entity name of the Information Source.
+              IS03         Message                                                       O
+                           Free-form text message.
+ PHA: Pharmacy Header (required)
+ Used to identify the pharmacy or dispensing prescriber.
+ Note: It is required that information be provided in at least one of the following fields: PHA01, PHA02, or
+ PHA03.
+              PHA01        National Provider Identifier (NPI)                            O
+                           Identifier assigned to the pharmacy by CMS.
+              PHA02        NCPDP/NABP Provider ID                                         R
+                           Identifier assigned to pharmacy by the National
+                           Council for Prescription Drug Programs.
+              PHA03        DEA Number                                                     R
+                           Identifier assigned to the pharmacy by the Drug
+                           Enforcement Administration.
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 52
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PHA04        Pharmacy Name                                                  R
+                           Free-form name of the pharmacy.
+              PHA05        Address Information – 1                                       O
+                           Free-form text for address information.
+              PHA06        Address Information – 2                                       O
+                           Free-form text for address information.
+              PHA07        City Address                                                   R
+                           Free-form text for city name.
+              PHA08        State Address                                                  R
+                           U.S. Postal Service state code or other regional
+                           jurisdiction code.
+              PHA09        ZIP Code Address                                               R
+                           U.S. Postal Service ZIP Code.
+              PHA10        Phone Number                                                  O
+                           Complete phone number including area code. Do
+                           not include hyphens.
+              PHA11        Contact Name                                                  O
+                           Free-form name.
+              PHA12        Chain Site ID                                                  C        If the pharmacy
+                           Store number assigned by the chain to the                               has multiple
+                           pharmacy location. Used when the PMP needs to                           locations, submit
+                           identify the specific pharmacy from which                               the chain site ID
+                           information is required.                                                (location ID).
+
+              PHA13        Pharmacy Permit/License Number                                O
+                           This field helps identify the sending pharmacy.
+ PAT: Patient Information (required)
+ Used to report the patient’s name and basic information as contained in the pharmacy
+ record.
+              PAT01        ID Qualifier of Patient Identifier                            O
+                           Code identifying the jurisdiction that issues the
+                           ID in PAT03.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 53
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PAT02        ID Qualifier                                                  O         Do not submit
+                           Code to identify the type of ID in PAT03. If PAT02                      03 Unique
+                           is used, PAT03 is required.                                             System ID or 07
+                           •    01 Military ID                                                     Social Security
+                                                                                                   Number.
+                           •    02 State Issued ID
+                           •    04 Permanent Resident Card (Green Card)
+                           •    05 Passport ID
+                           •    06 Driver’s License ID
+                           •    08 Tribal ID
+                           •    99 Other (agreed upon ID)
+              PAT03        ID of Patient                                                 O
+                           Identification number for the patient as indicated
+                           in PAT02.
+                           An example would be the driver’s license number.
+              PAT04        ID Qualifier of Additional Patient Identifier                 O
+                           Code identifying the jurisdiction that issues the
+                           ID in PAT06.
+                           Used if the PMP requires such identification.
+              PAT05        Additional Patient ID Qualifier                               O         Do not submit
+                           Code to identify the type of ID in PAT06 if the                         03 Unique
+                           PMP requires a second identifier. If PAT05 is                           System ID or 07
+                           used, PAT06 is required.                                                Social Security
+                           •    01 Military ID                                                     Number.
+                           •    02 State Issued ID
+                           •    04 Permanent Resident Card
+                           •    05 Passport ID
+                           •    06 Driver’s License ID
+                           •    08 Tribal ID
+                           •    99 Other (agreed upon ID)
+              PAT06        Additional ID                                                 O
+                           Identification that might be required by the PMP
+                           to further identify the individual. An example
+                           might be that in PAT03 driver’s license is required
+                           and in PAT06 another form of ID is also required.
+              PAT07        Last Name                                                      R        For veterinary
+                           Patient’s last name.                                                    scripts (PAT20 =
+                                                                                                   02), use the
+                                                                                                   owner’s last
+                                                                                                   name.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 54
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PAT08        First Name                                                     R        For veterinary
+                           Patient’s first name.                                                   scripts (PAT20 =
+                                                                                                   02), use the
+                                                                                                   animal’s name.
+              PAT09        Middle Name                                                   O
+                           Patient’s middle name or initial if available.
+              PAT10        Name Prefix                                                   O
+                           Patient’s name prefix such as Mr. or Dr.
+              PAT11        Name Suffix                                                   O
+                           Patient’s name suffix such as Jr. or the III.
+              PAT12        Address Information – 1                                        R
+                           Free-form text for street address information.
+              PAT13        Address Information – 2                                       O
+                           Free-form text for additional address information.
+              PAT14        City Address                                                   R
+                           Free-form text for city name.
+              PAT15        State Address                                                  R
+                           U.S. Postal Service state code or other regional
+                           jurisdiction code.
+              PAT16        ZIP Code Address                                               R
+                           U.S. Postal Service ZIP code.
+                           Populate with zeros if patient address is outside
+                           the U.S.
+              PAT17        Phone Number                                                  O
+                           Complete phone number including area code. Do
+                           not include hyphens. For situations in which the
+                           patient does not have a phone number, submit
+                           ten 9s (i.e., 9999999999).
+              PAT18        Date of Birth                                                  R        If PAT20 = 02
+                           Date patient was born.                                                  (Veterinary
+                           Format: CCYYMMDD                                                        Patient) and the
+                                                                                                   animal’s date of
+                                                                                                   birth is
+                                                                                                   unknown, enter
+                                                                                                   the best
+                                                                                                   estimate.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 55
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PAT19        Gender Code                                                    R
+                           Code indicating the sex of the patient.
+                           •    F Female
+                           •    M Male
+                           •    U Unknown
+              PAT20        Species Code                                                   R
+                           Used if required by the PMP to differentiate a
+                           prescription for an individual from one prescribed
+                           for an animal.
+                           •    01 Human
+                           •    02 Veterinary Patient
+              PAT21        Patient Location Code                                          R
+                           Code indicating where patient is located when
+                           receiving pharmacy services.
+                           •    01 Home
+                           •    02 Intermediary Care
+                           •    03 Nursing Home
+                           •    04 Long-Term/Extended Care
+                           •    05 Rest Home
+                           •    06 Boarding Home
+                           •    07 Skilled-Care Facility
+                           •    08 Sub-Acute Care Facility
+                           •    09 Acute Care Facility
+                           •    10 Outpatient
+                           •    11 Hospice
+                           •    98 Unknown
+                           •    99 Other
+              PAT22        Country of Non-U.S. Resident                                   C        Submit if the
+                           Used when the patient’s address is a foreign                            patient is not a
+                           country.                                                                U.S. resident.
+
+              PAT23        Name of Animal                                                O         If providing an
+                           Used if required by the PMP for prescriptions                           entry, submit the
+                           written by a veterinarian and the pharmacist has                        name of the
+                           access to this information at the time of                               animal as
+                           dispensing the prescription.                                            Animal’s First
+                                                                                                   Name and
+                                                                                                   Owner’s Last
+                                                                                                   Lame (e.g., Fluffy
+                                                                                                   Smith).
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 56
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+ DSP: Dispensing Record (required)
+ Used to identify the basic components of a dispensing of a given prescription order including the date
+ and quantity.
+              DSP01        Reporting Status                                               R        To void a record,
+                           DSP01 requires one of the following codes, and                          rather than
+                           an empty or blank field no longer indicates a new                       sending all fields
+                           prescription transaction:                                               exactly the same
+                           •    00 New Record (indicates a new prescription                        as the original
+                                dispensing transaction)                                            record,
+                                                                                                   pharmacies can
+                           •    01 Revise (indicates that one or more data
+                                                                                                   optionally
+                                element values in a previously submitted
+                                                                                                   instead send the
+                                transaction are being revised)
+                                                                                                   following
+                           •    02 Void (message to the PMP to remove the
+                                                                                                   Limited Data Set
+                                original prescription transaction from its data,
+                                                                                                   when DPS01 =
+                                or to mark the record as invalid or to be
+                                                                                                   02:
+                                ignored).
+                                                                                                   •   PHA02
+                           Note: For prescriptions voided with a code 02, a
+                                                                                                       (NCPDP/
+                           limited data set is being offered as an option
+                                                                                                       NABP
+                           PDMPs can elect to use rather than requiring the
+                                                                                                       Provider ID)
+                           entire prescription to be voided. This option is
+                                                                                                   •   PHA03 (DEA
+                           offered in order to streamline the process in the
+                                                                                                       Number)
+                           pharmacy when voiding a prescription. See
+                           Appendix F.                                                             •   DSP02
+                                                                                                       (Prescription
+                                                                                                       Number)
+                                                                                                   •   DSP03 (Date
+                                                                                                       Written)
+                                                                                                   •   DSP05 (Date
+                                                                                                       Filled)
+                                                                                                   •   DSP06 (Refill
+                                                                                                       Number)
+                                                                                                   •   DSP13
+                                                                                                       (Partial Fill
+                                                                                                       Indicator)
+              DSP02        Prescription Number                                            R
+                           Serial number assigned to the prescription by the
+                           pharmacy.
+              DSP03        Date Written                                                   R
+                           Date the prescription was written (authorized).
+                           Format: CCYYMMDD
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                     57
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              DSP04        Refills Authorized                                             R
+                           The number of refills authorized by the
+                           prescriber.
+              DSP05        Date Filled                                                    R
+                           Date prescription was prepared.
+                           Format: CCYYMMDD
+              DSP06        Refill Number                                                  R
+                           Number of the fill of the prescription.
+                           0 indicates New Rx; 01-99 indicates the explicit fill
+                           after that original fill.
+              DSP07        Product ID Qualifier                                           R
+                           Used to identify the type of product ID contained
+                           in DSP08.
+                           •    01 NDC
+                           •    06 Compound (indicates a compound; if
+                                used, the CDI segment becomes a required
+                                segment)
+              DSP08        Product ID                                                     R
+                           Full 11-digit NDC number, as indicated in DSP07,
+                           created by adding a leading zero to the
+                           appropriate segment to result in a 5-4-2
+                           formatted NDC number, without punctuation. If
+                           06 Compound is indicated in DSP07, use 99999
+                           as the first five characters; CDI then becomes
+                           required.
+              DSP09        Quantity Dispensed                                             R
+                           Number of metric units dispensed in metric
+                           decimal format.
+                           Example: 2.5
+                           Note: For compounds, show the first quantity in
+                           CDI04.
+              DSP10        Days’ Supply                                                   R
+                           Estimated number of days the medication will
+                           last.
+              DSP11        Drug Dosage Units Code                                         R
+                           Identifies the unit of measure for the quantity
+                           dispensed in DSP09.
+                           •    01 Each
+                           •    02 Milliliters (ml)
+                           •    03 Grams (gm)
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 58
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              DSP12        Transmission Form of Rx Origin Code                            R        Do not submit
+                           Code indicating how the pharmacy received the                           06 value of
+                           prescription.                                                           “Transferred/
+                           •    01 Written Prescription                                            Forwarded RX.”
+                           •    02 Telephone Prescription
+                           •    03 Telephone Emergency Prescription
+                           •    04 Fax Prescription
+                           •    05 Electronic Prescription
+                           •    06 Transferred/Forwarded
+                           •    99 Other
+              DSP13        Partial Fill Indicator                                         R
+                           Used when the quantity in DSP 09 is less than the
+                           metric quantity per dispensing authorized by the
+                           prescriber. This dispensing activity is often
+                           referred to as a split filling.
+                           •    00 Not a Partial Fill
+                           •    01 First Partial Fill
+                           Note: For additional fills per prescription,
+                           increment by 1. So, the second partial fill would
+                           be reported as 02, up to a maximum of 99.
+              DSP14        Pharmacist National Provider Identifier (NPI)                 O
+                           Identifier assigned to the pharmacist by CMS.
+                           This number can be used to identify the
+                           pharmacist dispensing the medication.
+              DSP15        Pharmacist State License Number                               O
+                           This data element can be used to identify the
+                           pharmacist dispensing the medication.
+                           Assigned to the pharmacist by the Licensing
+                           Board.
+              DSP16        Classification Code for Payment Type                           R
+                           Code identifying the type of payment (i.e., how it
+                           was paid for).
+                           •    01 Private Pay (cash, check, debit, credit)
+                           •    02 Medicaid
+                           •    03 Medicare
+                           •    04 Commercial Insurance
+                           •    05 Military Installations and VA
+                           •    06 Workers’ Compensation
+                           •    07 Indian Nations
+                           •    99 Other
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 59
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              DSP17        Date Sold                                                      R        For deliveries,
+                           Usage of this field depends on the pharmacy                             enter the date
+                           management system having the ability to capture                         delivered to the
+                           the sale event date.                                                    patient. See
+                           Format: CCYYMMDD                                                        Deliveries on
+                                                                                                   page 688.
+              DSP18        RxNorm Code Qualifier                                          C        If DSP12 = 05
+                           RxNorm Code that is populated in the DRU-010-                           (electronic),
+                           09 field in the SCRIPT transaction.                                     provide DSP18–
+                           •    01 Semantic Clinical Drug (SCD)                                    21.
+                           •    02 Semantic Branded Drug (SBD)
+                           •    03 Generic Package (GPCK)
+                           •    04 Branded Package (BPCK)
+              DSP19        RxNorm Code                                                    C
+                           Used for electronic prescriptions to capture the
+                           prescribed drug product identification.
+              DSP20        Electronic Prescription Reference Number                       C
+                           This field should be populated with the Initiator
+                           Reference Number from field UIB-030-01 in the
+                           SCRIPT transaction.
+              DSP21        Electronic Prescription Order Number                           C
+                           This field should be populated with the Initiator
+                           Control Reference from field UIH-030-01 in the
+                           SCRIPT standard.
+              DSP22        Quantity Prescribed                                            C        If DSP13 is
+                           This field adds clarity to the value reported in                        populated,
+                           DSP13, Partial Fill Indicator.                                          DSP22 is
+                                                                                                   required.
+              DSP23        Rx Sig                                                        O
+                           This field captures the actual directions printed
+                           on the prescription vial label.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 60
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              DSP24        Treatment Type                                                O         This should only
+                           This field indicates that the prescription is for                       be reported if
+                           opioid dependency treatment.                                            provided by the
+                           •    01 – Not used for Opioid Dependency                                provider with
+                                Treatment                                                          the prescription.
+                           •    02 – Used for Opioid Dependency Treatment
+                           •    03 – Pain Associated with Active and
+                                Aftercare Cancer Treatment
+                           •    04 – Palliative Care in Conjunction with a
+                                Serious Illness
+                           •    05 – End-of-Life and Hospice Care
+                           •    06 – A Pregnant Individual with a Pre-existing
+                                Prescription for Opioids
+                           •    07 – Acute Pain for an Individual with an
+                                Existing Opioid Prescription for Chronic Pain
+                           •    08 – Individuals Pursuing an Active Taper of
+                                Opioid Medications
+                           •    09 – Patient is Participating in a Pain
+                                Management Contract
+                           •    99 – Other (trading partner agreed upon
+                                reason)
+                           Note: Codes 03–99 can only be reported if
+                           provided by the prescriber.
+              DSP25        Diagnosis Code                                                 C        Required if
+                           This field is used to report the ICD-10 code. If                        DSP12 = 05
+                           required by a PDMP.                                                     Electronic
+                                                                                                   Prescription.
+                                                                                                   Include when
+                                                                                                   the ICD-10 code
+                                                                                                   is available.
+ PRE: Prescriber Information (required)
+ Used to identify the prescriber of the prescription.
+              PRE01        National Provider Identifier (NPI)                             R        See Reporting
+                           Identifier assigned to the prescriber by CMS.                           Gabapentin
+                                                                                                   Prescriptions
+                                                                                                   page 71 for
+                                                                                                   guidance on
+                                                                                                   veterinarians.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                  61
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PRE02        DEA Number                                                     C        Required for all
+                           Identifying number assigned to a prescriber or an                       Schedule II–V
+                           institution by the Drug Enforcement                                     prescriptions.
+                           Administration (DEA).                                                   Required for
+                                                                                                   Schedule VI
+                                                                                                   prescriptions
+                                                                                                   when the
+                                                                                                   prescriber has a
+                                                                                                   DEA number –
+                                                                                                   For Gabapentin,
+                                                                                                   see Reporting
+                                                                                                   Gabapentin
+                                                                                                   Prescriptions on
+                                                                                                   page 71.
+                                                                                                   Do not enter
+                                                                                                   XDEA in this
+                                                                                                   field. XDEA
+                                                                                                   number should
+                                                                                                   now be reported
+                                                                                                   in PRE09.
+              PRE03        DEA Number Suffix                                              C         Enter when a
+                           Identifying number assigned to a prescriber by an                        DEA suffix is
+                           institution when the institution’s number is used                          present.
+                           as the DEA number.
+              PRE04        Prescriber State License Number                               O
+                           Identification assigned to the prescriber by the
+                           Licensing Board.
+              PRE05        Last Name                                                      R
+                           Prescriber’s last name.
+              PRE06        First Name                                                     R
+                           Prescriber’s first name.
+              PRE07        Middle Name                                                   O
+                           Prescriber’s middle name or initial.
+              PRE08        Phone Number                                                  O
+                           Complete phone number including area code. Do
+                           not include hyphens.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 62
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              PRE09        XDEA Number                                                    C        Enter when
+                           This field is in addition to Treatment Type in the                      dispensing MAT
+                           DSP segment.                                                            products
+                                                                                                   containing
+                                                                                                   buprenorphine.
+                                                                                                   See page 70 for
+                                                                                                   further details
+                                                                                                   on XDEA entry.
+ CDI: Compound Drug Ingredient Detail (situational)
+ Use of this segment is required when medication dispensed is a compound and one of the ingredients is
+ a PMP reporting drug. If more than one ingredient is for a prescription monitoring program reporting
+ drug, then this would be incremented by one for each compound ingredient being reported.
+ If CDI is filled in, the NDC of DSP08 must begin with 99999. The other 6 digits can be comprised of the
+ digits of choice by the submitter.
+              CDI01        Compound Drug Ingredient Sequence Number                       C        If DSP07 = 06
+                           First reportable ingredient is 1; each additional                       (compound), all
+                           reportable ingredient is incremented by 1.                              elements of CDI
+                                                                                                   are required.
+              CDI02        Product ID Qualifier                                           C
+                           Code to identify the type of product ID contained
+                           in CDI03.
+                           •    01 NDC
+              CDI03        Product ID                                                     C
+                           Full 11-digit NDC Number, as indicated in CDI02,
+                           created by adding a leading zero to the
+                           appropriate segment to result in a 5-4-2
+                           formatted NDC number, without punctuation.
+              CDI04        Compound Ingredient Quantity                                   C
+                           Metric decimal quantity of the ingredient
+                           identified in CDI03.
+                           Example: 2.5
+              CDI05        Compound Drug Dosage Units Code                                C
+                           Identifies the unit of measure for the quantity
+                           dispensed in CDI04.
+                           •    01 Each (used to report as package)
+                           •    02 Milliliters (ml) (for liters, adjust to the
+                                decimal milliliter equivalent)
+                           •    03 Grams (gm) (for milligrams, adjust to the
+                                decimal gram equivalent)
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 63
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+ AIR: Additional Information Reporting (situational)
+ Used when issued serialized Rx pads are used, the PMP requires information on the person dropping off
+ or picking up the prescription, or for data elements not included in other detail segments.
+ Note: If this segment is used, at least one of the data elements (fields) will be required .
+              AIR01        State Issuing Rx Serial Number                                O
+                           U.S.P.S. state code or other regional jurisdiction
+                           code that issued serialized prescription blank.
+                           This is required if AIR02 is used.
+              AIR02        State Issued Rx Serial Number                                 O
+                           Number assigned to issued serialized prescription
+                           blank.
+              AIR03        Issuing Jurisdiction                                           C        Please note that
+                           Code identifying the jurisdiction that issues the                       the code for
+                           ID in AIR04. Used if required by the PMP and                            “Other” in the
+                           AIR04 is equal to 02 or 06.                                             List of
+                                                                                                   Jurisdictions is
+                                                                                                   now “99”.
+                                                                                                   For exceptions
+                                                                                                   to AIR03, 04,
+                                                                                                   and 05, please
+                                                                                                   refer to
+                                                                                                   Appendix B.
+              AIR04        ID Qualifier of Person Dropping Off or Picking Up              C        Please do not
+                           Rx                                                                      submit 03
+                           Used to identify the type of ID contained in AIR05                      Unique System
+                           for person dropping off or picking up the                               ID or 07 Social
+                           prescription.                                                           Security
+                           •    01 Military ID                                                     Number.
+                           •    02 State Issued ID                                                 Use code “99” to
+                                                                                                   indicate “other”
+                           •    04 Permanent Resident Card (Green Card)
+                                                                                                   for the MA
+                           •    05 Passport ID
+                                                                                                   Commission for
+                           •    06 Driver’s License ID                                             the Blind ID.
+                           •    08 Tribal ID
+                           •    99 Other (agreed upon ID)
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                  64
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              AIR05        ID of Person Picking Up Rx                                     R        If an acceptable
+                           ID number of patient or person picking up or                            ID is not
+                           dropping off the prescription.                                          available for
+                                                                                                   entry, enter
+                                                                                                   “cust signed Rx”
+                                                                                                   and follow
+                                                                                                   instructions
+                                                                                                   detailed in
+                                                                                                   Exceptions to
+                                                                                                   AIR03, AIR04,
+                                                                                                   and AIR05, page
+                                                                                                   68.
+                                                                                                   For deliveries,
+                                                                                                   enter ”delivery.”
+                                                                                                   See page 688,
+                                                                                                   Deliveries.
+                                                                                                   For Naloxone
+                                                                                                   dispensations,
+                                                                                                   enter
+                                                                                                   “Naloxone”. See
+                                                                                                   additional
+                                                                                                   guidance in
+                                                                                                   Appendix B
+              AIR06        Relationship of Person Picking Up Rx                           R        Do not choose
+                           Code indicating the relationship of the person.                         from all
+                           •    01 Patient                                                         available ASAP
+                                                                                                   relationship
+                           •    99 Other
+                                                                                                   codes. Choose
+                                                                                                   “01” if the
+                                                                                                   customer is the
+                                                                                                   patient, or “99” if
+                                                                                                   the customer is
+                                                                                                   not the patient.
+                                                                                                   For Deliveries,
+                                                                                                   choose “99”
+                                                                                                   Other.
+              AIR07        Last Name of Person Picking Up Rx                              C        Required if the
+                           Last name of person picking up the prescription.                        person picking
+                                                                                                   up is not the
+              AIR08        First Name of Person Picking Up Rx                             C
+                                                                                                   patient (AIR06 =
+                           First name of person picking up the prescription.                       99).
+                                                                                                   For deliveries,
+                                                                                                   leave blank.
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                   65
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                          ASAP 4.2A Specifications
+
+
+ Segment Element           Element Name                                              Requirement        Notes
+         ID
+              AIR09        Last Name or Initials of Pharmacist                           O
+                           Last name or initials of pharmacist dispensing the
+                           medication.
+              AIR10        First Name of Pharmacist                                      O
+                           First name of pharmacist dispensing the
+                           medication.
+              AIR11        Dropping Off/Picking Up Identifier Qualifier                  O
+                           Additional qualifier for the ID contained in AIR05.
+                           • 01 Person Dropping Off
+                           • 02 Person Picking Up
+                           • 03 Unknown/Not Applicable
+ TP: Pharmacy Trailer (required)
+ Used to identify the end of data for a given pharmacy and provide the count of the total number of
+ detail segments reported for the pharmacy, including the PHA and TP segment.
+              TP01         Detail Segment Count                                           R
+                           Number of detail segments included for the
+                           pharmacy including the pharmacy header (PHA)
+                           and the pharmacy trailer (TP) segments.
+ TT: Transaction Trailer (required)
+ Used to indicate the end of the transaction and provide the count of the total number of segments
+ included in the transaction.
+              TT01         Transaction Control Number                                     R
+                           Identifying control number that must be unique.
+                           Assigned by the originator of the transaction.
+                           Must match the number in TH02.
+              TT02         Segment Count                                                  R
+                           Total number of segments included in the
+                           transaction including the header and trailer
+                           segments.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                 66
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Entry Guidance
+
+
+
+Appendix B: Data Entry Guidance
+         This section is designed to address those fields that may require extra guidance for
+         proper data entry.
+         Please note: The names used for data fields in this section may differ from the labels
+         assigned by software providers programming pharmacy systems.
+         The comprehensive list of specific data elements that pharmacies are required to collect
+         and submit to the MA PMP is provided in Appendix A of this document.
+         Pharmacies and pharmacy corporations are advised to consult their software providers
+         regarding the alphanumeric code values, drop-down list choices, and terminology to use
+         for data entry screens.
+
+
+AIR03, AIR04, AIR05: ID of Person Picking Up Prescription
+         The pharmacy is required to obtain and submit to the MA PMP the information from the
+         customer’s government-issued ID for all federally controlled Schedule II–V drugs and
+         gabapentin (Schedule VI), including refill prescriptions for these medications. The
+         pharmacy is required to check that the photo ID matches the customer taking
+         possession of the prescription and that the ID is valid and not out of date. Obtaining and
+         reporting the customer ID is mandatory except in the limited circumstances described in
+         the Exceptions to AIR03, AIR04, AIR05 section of this document.
+         The customer and patient may or may not be the same person. For example, the
+         customer may be a parent picking up a prescription for a child, a relative picking up a
+         prescription for a housebound family member, or the customer may be a pet owner.
+         Important Note: A previously stored ID should never be automatically entered. With each
+         new prescription, the pharmacy must inspect and data-enter the specific valid ID
+         information of the customer who receives the filled prescription. A Social Security
+         Number is not an acceptable form of customer ID and therefore should not be
+         submitted.
+         Currently acceptable forms of customer ID are:
+         •    Military ID
+         •    State Issued ID
+              −    Motor Vehicles Identification
+         •    Permanent Resident Card (Green Card)
+         •    Passport ID
+         •    Driver’s License ID
+         •    Tribal ID
+         •    Other (agreed-upon ID)
+              −    MA Commission for the Blind Identification Card
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                   67
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Entry Guidance
+
+
+         The customer ID field must contain only the alphanumeric characters of the ID number
+         that has been issued by the governmental agency. Do not add punctuation marks (e.g.,
+         dashes, question marks) or additional information (e.g., MA, NO CHECKS, MOTHER, LIC#,
+         NH LIC, or any text other than the ID number itself).
+         For Massachusetts Registry of Motor Vehicles license numbers that begin with the letter
+         “S,” please be careful when entering the “S.” Transcription errors have caused the “S” to
+         be mistakenly entered as a “3,” “5,” or “8.”
+         For Permanent Resident Card ID numbers, enter the Alien number. Include the leading
+         letter “A” as part of the number if it is printed as part of or preprinted in front of the
+         Alien number. Permanent Resident Cards are typically composed of nine characters.
+         However, some have been issued with eight characters and some with ten characters.
+         Enter the exact number as it appears on the card.
+
+
+Exceptions to AIR03, AIR04, and AIR05
+         The exceptions to the collecting and reporting requirements for customer ID information
+         are:
+         1. On a case-by-case basis, a pharmacist is permitted to dispense a controlled
+            substance in Schedules II through V and gabapentin without obtaining positive ID
+            provided that:
+              a. The pharmacist has reason to believe that the failure to dispense the Schedule II–
+                 V substance or gabapentin at this time would result in a serious hardship for the
+                 ultimate user or agent of the ultimate user; and
+              b. The pharmacist documents the reason; and
+              c. The ultimate user or agent of the ultimate user prints his or her name and
+                 address on the reverse side of the prescription and signs his or her name thereto,
+                 or in the case of an electronic prescription, provides an electronic signature; and
+              d. The pharmacist enters “cust signed rx” in the customer ID field (AIR05) rather
+                 than leaving the field blank.
+         MA DPH does not require the collection of customer ID for deliveries. The term “delivery”
+         should be entered in the customer ID field (AIR05). See further guidance on deliveries
+         below.
+
+
+Deliveries
+         When a pharmacy delivers in person or through a common carrier to a private residence
+         or to a facility where the patient is located, the MA PMP does not require the pharmacy
+         to collect and report a customer ID. The pharmacy will use its internal procedures for
+         tracking deliveries.
+         When submitting data utilizing the “deliveries exception,” pharmacies should populate
+         the relevant ASAP fields as follows:
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                    68
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                               Data Entry Guidance
+
+
+           Field         Description                 Value
+                                                     The pharmacist should use his/her professional judgment to
+                                                     determine which of the available ASAP location codes
+           PAT21         Patient Location Code
+                                                     applies. Be as accurate as possible in selecting the code. Do
+                                                     not leave the field blank.
+           DSP17         Date Sold                   Enter the date delivered to the patient.
+                         Issuing Jurisdiction of
+           AIR03                                     Leave blank.
+                         the Customer ID
+           AIR04         ID Qualifier                Leave blank.
+           AIR05         Customer ID                 Enter the word “delivery”.
+                         Relationship of the
+           AIR06         customer to the             Choose “Other” for relationship to patient; ASAP code 99.
+                         patient
+                         Last Name of Person
+           AIR07                                     Leave blank.
+                         Picking Up Rx
+                         First Name of Person
+           AIR08                                     Leave blank.
+                         Picking Up Rx
+
+
+DSP06: Refill Number
+         An original prescription is a prescription that upon dispensing is issued/assigned a new
+         prescription number by the dispensing pharmacy. Prescriptions that constitute
+         continuation of drug therapy and that are issued/assigned a new prescription number
+         are original prescriptions. The code for an original prescription is “0” (zero).
+         Refills of prescriptions are those prescriptions dispensed in accordance with the refill
+         indication on a prescription having a previously issued/assigned prescription number.
+         The codes indicating the fill number correspond to that dispensing (e.g., “01” for first fill
+         after the initial dispensing, “02” for second fill, etc.). PRN is not an acceptable code to
+         indicate a refill.
+         Partial fills are entered in DSP13. See guidance on entry of DSP06 and DSP13 for partially
+         filled dispensations in DSP13 Partial Fills below.
+
+
+DSP13 Partial Fills
+         Please see the table below for guidance on entry of DSP06 and DSP13 for partial fills:
+
+           First fill:                  DSP06                DSP13
+           First partial fill           DSP06 = 0            DSP13 = 01
+           Second partial fill          DSP06 = 0            DSP13 = 02
+           First refill:                DSP06                DSP13
+           First partial fill           DSP06 = 01           DSP13 = 01
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                                   69
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Entry Guidance
+
+
+             Second partial fill   DSP06 = 01               DSP13 = 02
+
+
+DSP18–21: Electronic Prescriptions
+         DSP18–21 are the fields that must be populated from the NCPDP script transmission for
+         electronic prescriptions. It is anticipated that the pharmacy software will be constructed
+         such that these fields will be automatically populated behind the scenes without the
+         pharmacy personnel performing the data entry. For electronic prescriptions, DSP12
+         (Transmission Form of Rx Origin Code) must be coded as “05.”
+         When any of this information comes across in the NCPDP SCRIPT transmission from the
+         prescriber, the pharmacy software needs to insert the information into the respective
+         data elements for the data submission to the MA PMP. The electronic prescription fields
+         are:
+         •      DSP18 RxNorm Qualifier: (See the comment regarding DSP19 below.)
+         •      DSP19 RxNorm: ASAP 4.2A specifies that DSP18 and DSP19 should not be required
+                until RxNorm becomes an industry standard. Therefore, until greater than 50% of the
+                electronic prescriptions begin coming across in the NCPDP feed as actual RxNorm
+                values, the MA PMP is permitting pharmacies to either omit or include DSP18 and
+                DSP19 values. When greater than 50% of the NCPDP feeds begin coming across as
+                actual RxNorm values, pharmacies must populate those fields.
+
+
+PAT22: Country of Non-U.S. Resident
+         If the patient does not have a U.S. address, enter the country name in PAT22. If the
+         patient has a U.S. address, leave this field blank. If your pharmacy software is set up for
+         you to enter non-U.S. country information in a different address field that is submitted to
+         the MA PMP (for example, in the zip code field), it is permissible to continue using that
+         field instead.
+
+
+PRE02 and PRE09: Prescriber DEA and XDEA Numbers
+         The pharmacy is required to submit the prescriber’s personal DEA number in PRE02, if
+         the prescriber has a DEA number. For guidance on how to report records for prescribers
+         of gabapentin (Schedule VI) who do not have a DEA number, please see the Reporting
+         Gabapentin Prescriptions section of this document.
+         For prescription drug products containing buprenorphine, when both the physician’s
+         primary DEA number and the DATA 2000 waiver ID (“X”) number appears on the
+         prescription, the MA PMP requires the physician’s primary DEA number in PRE02. XDEA
+         entry is optional and should only be entered in PRE09.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                   70
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   Data Entry Guidance
+
+
+Guidance on Metric Quantity Reporting
+         Accurate reporting of metric quantities is essential for providers who review patient
+         records and MA PMP staff who perform data analyses. To aid in accurate and consistent
+         reporting of metric quantities, the following guidance has been developed using
+         information from the commercial databases most frequently used in pharmacy data
+         entry:
+         •    Use “each” when referring to the following dosage forms: capsule, diaphragm, disc,
+              patch, plaster, suppository, suture, tablet, troche, and wafer.
+         •    Use “mL” when referring to the following dosage forms: aerosol liquids (note: some
+              formulations are powders; use “gm”), elixirs, emulsions, extracts, mouthwash, oils,
+              shampoos, liquid soaps, solutions, sprays, suspensions, syrups, and tinctures.
+              Example: For 1 package of 10 morphine sulfate syringes, each syringe containing 2
+              mL of 10 mg/mL morphine, the total volume dispensed is 20 mL, and the metric
+              quantity reported will be “20.”
+         •    Use “gm” when referring to the following dosage forms: aerosol powders (note:
+              some formulations are liquids; use “mL”), creams, crystals, gels, jellies, granules,
+              ointments, and powders.
+         In cases where NCPDP Billing Unit standard offers specific guidance on particular
+         product formulations, the MA PMP will accept such guidance as an acceptable basis of
+         metric quantity calculation and will not consider it to be a conflict with ASAP or the
+         instructions above.
+
+
+Reporting Compounded Prescriptions
+         Enter code “06” in DSP07. In the DSP08 field, where the National Drug Code (NDC)
+         number is normally entered for the prescription, the pharmacy will either enter (a) the
+         number “9” eleven times (i.e.,“99999999999”), or (b) an in-house assigned eleven-
+         character compound code, provided the first five characters are nines. Also, enter code
+         “06” in DSP07. The specific NDC number, the metric quantity, and the unit of measure
+         (gm, mL, or each) of each reportable ingredient must also be submitted to the MA PMP.
+         Pharmacies and pharmacy corporations are advised to consult with their software
+         providers for guidance on how to enter this data.
+
+
+Reporting Gabapentin Prescriptions
+         Typically, records submitted to the MA PMP requires a prescriber’s DEA. Gabapentin is a
+         Schedule VI drug and as such may be obtained from prescribers who do not have a DEA
+         registration and from veterinarians who have neither a DEA registration nor NPI. Refer to
+         the scenarios below for guidance.
+         Scenario 1: Prescriber does not prescribe Schedule II–V controlled substances but does
+         prescribe gabapentin. Prescriber does not have a DEA number.
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     71
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                             Data Entry Guidance
+
+
+         Guideline: Leave the prescriber DEA number field blank and input the prescriber NPI
+         number in the appropriate data submission field.
+         Scenario 2: Prescriber is a veterinarian who does not prescribe drugs in Schedules II–V
+         but does prescribe gabapentin. Because CMS will not issue an NPI to a veterinarian, the
+         prescriber does not have an NPI.
+         Guideline: Leave the prescriber DEA number field blank and insert “1234567893” in the
+         prescriber NPI field and “02” in the species code field.
+         If there are any other circumstances for which reporting of gabapentin presents issues
+         for your pharmacy, please contact the MA PMP at mapmp.dph@mass.gov.
+
+
+Reporting Naloxone Dispensations
+         Updated October 5, 2022: Reporting Naloxone Dispensations to the Massachusetts
+         Prescription Monitoring Program
+
+         To satisfy the pharmacy reporting requirements in M.G.L. c. 94C section 19B, please
+         include naloxone dispensing information with daily submissions to the Massachusetts
+         Prescription Monitoring Program (PMP). This preferred reporting mechanism will replace
+         the annual report to the Department. Submission of naloxone dispensation data to the
+         PMP is for data collection purposes only and will not appear on a patient’s PMP profile.
+         Please work with your vendor or pharmacy software administrator to ensure that
+         naloxone products are added to the list of reported drugs within 30 days of the date of
+         this notice. See below for additional guidance on naloxone data submission to the PMP:
+
+                   •     If collecting and entering patient identifying data for naloxone dispensation,
+                         you may enter and submit fields as usual, except AIR 05- ID of Person Picking
+                         Up Rx. Please enter “Naloxone” in this field as seen below. The collection of a
+                         patient ID is not required. The PMP will suppress identifying information for
+                         aggregate reporting.
+
+                   •     If you are not collecting and entering patient identifying data for naloxone
+                         dispensation, you may submit the following to the PMP:
+
+                       ASAP Field                 Description                            Entry
+                       PAT07                      Last Name                              Rescue Kit
+                       PAT08                      First Name                             Naloxone
+                       PAT12                      Address                                Naloxone Rescue Kit
+                       PAT14                      City Address                           Pharmacy City
+                       PAT15                      State Address                          Pharmacy State
+                       PAT16                      ZIP Code Address                       Pharmacy Zip Code
+
+                       AIR04                      ID Qualifier of Person Picking Up Rx   99
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                               72
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                             Data Entry Guidance
+
+
+                    AIR05                         ID of Person Picking Up Rx             Naloxone
+
+                    AIR06                         Relationship of Person Picking Up Rx   Other
+
+                    AIR07                         Last Name of Person Picking Up Rx      Rescue Kit
+
+                    AIR08                         First Name of Person Picking Up Rx     Naloxone
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                               73
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 ASAP Zero Report Specifications
+
+
+
+Appendix C: ASAP Zero Report
+Specifications
+The following table contains the required definitions for submitting zero reports via SFTP or
+manual upload to the MA PMP. It lists the Segment and Element ID with pre-populated data to
+be used as an example for constructing a zero report. For more details regarding these Segment
+or Elements IDs, or for details on reporting actual dispensations, please refer to Appendix A:
+ASAP 4.2A Specifications.
+
+ Segment Element ID                 Element Name                                                 Requirement
+ TH: Transaction Header (required)
+               TH01                 4.2A                                                                 R
+               TH02                 123456                                                               R
+               TH05                 20220401                                                             R
+               TH06                 223000                                                               R
+               TH07                 P                                                                    R
+               TH09                 \\                                                                   R
+ IS: Information Source (required)
+               IS01                 7705555555                                                           R
+               IS02                 PHARMACY NAME                                                        R
+                                    Date Range of Report                                                 R
+               IS03
+                                    #YYYYMMDD#-#YYYYMMDD#
+ PHA: Pharmacy Header (required)
+               PHA03                ZZ1234567                                                            R
+ PAT: Patient Information (required)
+               PAT07                REPORT                                                               R
+               PAT08                ZERO                                                                 R
+ DSP: Dispensing Record (required)
+               DSP05                20220401                                                             R
+ PRE: Prescriber Information (required; can be null as follows: PRE*******\)
+ CDI: Compound Drug Ingredient Detail
+ AIR: Additional Information Reporting
+ TP: Pharmacy Trailer (required)
+               TP01                 7                                                                    R
+ TT: Transaction Trailer (required)
+               TT01                 123456                                                               R
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                               74
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 ASAP Zero Report Specifications
+
+
+               TT02                 10                                                                   R
+
+
+
+
+Sample Zero Report
+         The following example illustrates a zero report using the above values.
+
+
+         TH*4.2A*123456*01**20220108*223000*P**\\
+         IS*7705555555*PHARMACY NAME*#20220101#-#20220107#\
+         PHA*** ZZ1234567\
+         PAT*******REPORT*ZERO************\
+         DSP*****20220108******\
+         PRE*\
+         CDI*\
+         AIR*\
+         TP*7\
+         TT*123456*10\
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                               75
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                  SFTP Configuration
+
+
+
+Appendix D: SFTP Configuration
+         This appendix describes the SFTP configurations required to upload your data to PMP
+         Clearinghouse.
+         Note: Submitting data via SFTP requires that you have an existing PMP Clearinghouse
+         account with SFTP access.
+         •    If you need to create a PMP Clearinghouse account, please refer to Creating Your
+              Account. You will be able to set up your SFTP account during the account creation
+              process.
+         •    If you have an existing PMP Clearinghouse account but do not have SFTP access,
+              please refer to Adding SFTP Access to an Upload Account.
+
+SFTP Connection Details
+         Hostname: sftp.pmpclearinghouse.net
+         Bamboo Health recommends that you use the hostname when configuring the
+         connection rather than the IP address, as the IP address is subject to change.
+         Port: 22
+         Note: The port will always be 22.
+         •    Credentials: Your SFTP account credentials (username and password) can be found
+              within the PMP Clearinghouse website. To locate your credentials, log in to PMP
+              Clearinghouse, then click Account > SFTP Details > Edit.
+         •    Your username cannot be modified; however, you can update your password.
+              Note: Your current SFTP password cannot be seen or recovered. If you have
+              forgotten or lost it, you will need to create a new one. For more information on
+              changing the SFTP password, please refer to Adding SFTP Access to an Upload
+              Account.
+         •    Once you have established SFTP access, you can test the SFTP connection, but you
+              will not be able to submit data to a PMP until your account has been approved by
+              the PMP administrator.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                   76
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                  SFTP Configuration
+
+
+PMP Subfolders
+         PMP Clearinghouse is the data repository for numerous PMPs. As such, data submitted
+         via SFTP must be placed in the appropriate folder for the state for which you are
+         submitting data so that it can be properly imported to that PMP. The creation of
+         subfolders must be done outside of the PMP Clearinghouse website using third-party
+         software, such as an SSH client or a command line utility. Files placed in the root/home
+         directory of the SFTP server will not be imported, as this will cause the dispensing entity
+         to appear as noncompliant/delinquent.
+         Your pharmacy software will need to be configured to place files in the appropriate PMP
+         folder when submitting. You may need to contact your software vendor for additional
+         assistance with this process.
+         NOTE: Capitalization of the abbreviated PMP folders’ names has no bearing on whether
+         or not Clearinghouse processes the files; however, some pharmacy systems, especially
+         *nix-based systems, will require that the exact case is used when specifying the target
+         folder.
+         There are two methods by which to create PMP subfolders for SFTP submissions:
+         1. Via SSH client (e.g., WinSCP, FileZilla, etc.)
+              a. Log in to your SFTP account.
+              b. Create the required directories under /homedir.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                   77
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                   SFTP Configuration
+
+
+         2. Via command prompt
+              a. Log in to your SFTP account using command prompt.
+              b. Type “mkdir” followed by a space and then the PMP abbreviation you are using
+                 (e.g., mkdir MA).
+                   NOTE: The PMP folder must be titled with the two-letter abbreviation as specified
+                   above.
+
+
+
+
+Public (SSH/RSA) Key Authentication
+         PMP Clearinghouse supports SSH key authentication. The generation of the key is
+         outside the scope of this document; however, general guidelines about the key, along
+         with how to import/load it, are provided below.
+         Note: PGP Encryption is not supported.
+         •    Supported Key Types:
+              −    SSH-2 RSA 2048 bit length
+         •    Unsupported Key Types:
+              −    SSH-1 RSA
+              −    SSH-2 DSA
+         •    Correct Public Key Format: If opened in a text editor, the key should look like the
+              screenshot below.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                    78
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                    SFTP Configuration
+
+
+
+
+         •    Incorrect Public Key Format: If opened in a text editor, the key SHOULD NOT look like
+              the screenshot below.
+
+
+
+
+         •    Once the key has been generated, it should be named “authorized_keys”.
+              Notes:
+              •    There is no file extension.
+              •    There is an underscore between the words authorized and keys.
+         •    A .ssh subfolder needs to be created in the SFTP account’s home directory. The
+              “authorized_keys” file must be placed in the .ssh folder. The creation of this folder
+              follows the same process as creating a PMP subfolder. Please refer to PMP
+              Subfolders for steps on creating subfolders.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                     79
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Data Submission Waivers
+
+
+
+Appendix E: Data Submission Waivers
+         The MA PMP has three types of Data Submission Waivers available to pharmacies to
+         waive them of their requirement to report to the PMP. These waivers are available on the
+         Pharmacy Reporting and Data Submission section of the MA PMP website and must be
+         returned via email to mapmp.dph@mass.gov.
+
+
+Annual Data Submission Waiver
+         Pharmacies that do not dispense Controlled Substances in Schedules II–V, gabapentin, or
+         any additional drugs that the Department has determined must be reported to the PMP
+         may complete an Annual Reporting Waiver Request Form to request a waiver of the
+         requirement that pharmacies must report to the PMP. If a pharmacy receiving this waiver
+         nevertheless dispenses from Schedules II–V or any additional drug required for
+         submission to the PMP by the Department, the waiver will not apply to such activity. The
+         pharmacy will be required to report such dispensing to the PMP.
+
+
+Days of Operation Waiver
+         Pharmacies that are not open seven (7) days a week to dispense Controlled Substances
+         in Schedules II–V, gabapentin, or any additional drugs that the Department has
+         determined must be reported to the PMP may complete a Days of Operation Waiver
+         Request Form to waive the requirement that pharmacies must report to the PMP every
+         day.
+
+
+Temporary Waiver
+         Pharmacies that experience unforeseen circumstances preventing them from submitting
+         to the PMP for an extended period of time can submit a Temporary Pharmacy Waiver
+         Request Form from daily submissions.
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                       80
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Correct Use of Codes in DSP01
+
+
+
+Appendix F: Correct Use of Codes in DSP01
+Error Correction
+         The ASAP 4.2A standard requires a dispenser to select a code in the DSP01 field.
+         Dispensers may submit new records, revise and resubmit records, and void (delete)
+         records. This is communicated by supplying one of the following values in the DSP01
+         field:
+         •    “00” New Record – indicates a new record.
+         •    “01” Revise – indicates that one or more data elements in a previously submitted
+              record have been revised.
+         •    “02” Void – indicates that the original record should be deleted.
+
+
+Submit a New Record
+         Perform the following steps to submit a new record:
+         1. Create a record with the value “00” in the DSP01 field.
+         2. Populate all other required fields and submit the record.
+         Note: These steps are used to submit new records or to submit records that were
+         previously submitted but received a fatal status on the dispenser’s error report. Records
+         with fatal errors are not loaded into the PDMP system. The errors in these records must
+         be corrected in the dispenser’s system and resubmitted using the “00” status in the
+         DSP01 field.
+
+Revise a Record
+         Perform the following steps to revise a record:
+         1. Create a record with the value “01” in the DSP01 field.
+         2. Populate the following fields with the same information originally submitted in the
+            record that is being revised:
+              •    PHA02 (NCPDP/NABP Provider ID)
+              •    PHA03 (DEA Number)
+              •    DSP02 (Prescription Number)
+              •    DSP05 (Date Filled)
+              •    DSP06 (Refill Number)
+              •    DSP09 (Quantity Dispensed)
+         3. Fill in all other data fields with the correct information. This information will override
+            the original data linked to the fields referenced in step 2.
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                             81
+Massachusetts Prescription Monitoring Program
+Data Submission Guide for Dispensers                                                 Correct Use of Codes in DSP01
+
+
+         4. Submit the record.
+         Important Note: If any of the fields referenced in Step 2 are part of the correction, the
+         record should first be voided and then resubmitted using the value “00” in the DSP01
+         field.
+
+Void a Record
+         Perform the following steps to void (delete) a record:
+         1. Send a record with the value “02” in the DSP01 field.
+         2. Fill in all other data identical to the original record. This will void the original record.
+         3. An option to sending all the identical data in the prescription is to send a limited
+            data set. The reason for a limited data set to void a prescription is to simplify the
+            process in the pharmacy. This data set would be an option that a PDMP could
+            require, rather than the identical data of the entire original prescription. The entire
+            limited data set would be sent and if a PDMP does not require a data element, it
+            would be ignored by the PDMP.
+
+         Limited Data Set to Void a Prescription
+              •    PHA02 (NCPDP/NABP Provider ID)
+              •    PHA03 (DEA Number)
+              •    DSP02 (Prescription Number)
+              •    DSP05 (Date Filled)
+              •    DSP06 (Refill Number)
+              •    DSP09 (Quantity Dispensed)
+
+
+
+
+Copyright © 2016-2022 Bamboo Health, Inc. All rights reserved.
+Do not copy or distribute without the express written permission of Bamboo Health.                             82
+

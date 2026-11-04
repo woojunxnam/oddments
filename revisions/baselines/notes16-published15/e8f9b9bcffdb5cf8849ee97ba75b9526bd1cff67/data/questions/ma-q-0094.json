@@ -1,0 +1,108 @@
+{
+  "question_id": "MA-Q-0094",
+  "family_id": "V3_0094_CII_STOCK_SHORTAGE_REMAINDER",
+  "area": 3,
+  "topic": "Partial filling",
+  "subtopic": "Pharmacy inability",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts pharmacy receives a valid oxycodone Schedule II prescription for 30 tablets but has only 12 tablets in stock. The patient wants the full prescribed quantity; the pharmacy dispenses 12 solely because it cannot supply the rest. Four days later the remaining stock arrives. What is the controlling federal consequence?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "The balance may be dispensed within 30 days because every Schedule II partial fill uses the patient-requested 30-day pathway."
+    },
+    {
+      "id": "B",
+      "text": "The pharmacy may treat the remaining 18 tablets as a refill because the original total quantity was not dispensed."
+    },
+    {
+      "id": "C",
+      "text": "The remaining 18 tablets may be transferred to another pharmacy once the original pharmacy receives stock."
+    },
+    {
+      "id": "D",
+      "text": "The ordinary 72-hour shortage-remainder period has passed, so further quantity generally requires prescriber notification and a new prescription."
+    },
+    {
+      "id": "E",
+      "text": "The original pharmacy may dispense the balance at any time before the Massachusetts 30-day Schedule II validity period ends."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "The reason for the partial fill determines the legal pathway. A pharmacy-stock shortage invokes the federal 72-hour remainder framework, not the patient-requested 30-day framework.",
+    "choice_analysis": {
+      "A": "The initial partial fill was caused by pharmacy inability, not the patient's election to receive a lesser quantity.",
+      "B": "Schedule II prescriptions are not refilled; the shortage remainder is governed by the specific partial-fill rule.",
+      "C": "A shortage remainder is not transformed into a transferable refill.",
+      "D": "For a partial fill caused by inability to supply the full quantity, the federal shortage pathway generally requires the remainder within 72 hours.",
+      "E": "The general prescription-validity period does not displace the shorter federal shortage-remainder rule."
+    },
+    "related_facts": [
+      "Patient-requested and pharmacy-inability partial fills have different predicates.",
+      "A Schedule II remainder is not a refill."
+    ],
+    "mpje_trap": "Ask why the first partial fill occurred before choosing a deadline."
+  },
+  "rule_ids": [
+    "FED-CII-PARTIAL-72H",
+    "FED-CII-NO-REFILL"
+  ],
+  "drug_ids": [
+    "oxycodone"
+  ],
+  "reasoning_steps": [
+    "Classify why the first partial fill occurred",
+    "Apply the shortage-specific remainder rule",
+    "Reject the refill analogy"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-14",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP1-V3-A-LEGAL-REAUDIT-2026-08-14",
+    "AUDIT-GPT-FRESH-EXP1-V3-A-REALISM-REAUDIT-2026-08-14"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol editor after independent Issue #27 audit",
+    "date": "2026-08-14",
+    "notes": "Wave 2 admission after one fresh independent auditor completed current-hash legal KEEP/YES and realism KEEP/PASS under the single-auditor release policy.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-PARTIAL-72H": {
+          "content_version": 1,
+          "content_hash": "2e874db6e70a50eeb7ea35362146da5b747a737092a1b9c61c7231d6205830ad"
+        },
+        "FED-CII-NO-REFILL": {
+          "content_version": 1,
+          "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+        }
+      },
+      "drugs": {
+        "oxycodone": {
+          "content_version": 1,
+          "content_hash": "a67eeb5eb0b8c01cf49c9a539fd24603ec6dea0c500bb5218542b7ff76ef2854"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0405",
+  "family_id": "B3F_PMP_INPATIENT_EXCLUSION",
+  "area": 3,
+  "topic": "Prescription monitoring",
+  "subtopic": "Scope of the reporting duty",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts hospital pharmacy dispenses oxycodone twice for the same patient on the same day: once against a medication order while she is an inpatient on the ward, and once against a discharge prescription she takes home that afternoon. Which dispensings must be reported to the Prescription Monitoring Program?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Neither, because both were dispensed by a hospital pharmacy."
+    },
+    {
+      "id": "B",
+      "text": "Both, because the reporting duty reaches every Schedule II dispensing."
+    },
+    {
+      "id": "C",
+      "text": "The inpatient medication order only."
+    },
+    {
+      "id": "D",
+      "text": "Both, unless the hospital reports inpatient administration through a separate system."
+    },
+    {
+      "id": "E",
+      "text": "The discharge prescription only."
+    }
+  ],
+  "correct_choice_ids": [
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "105 CMR 700.012(A)(1) applies the reporting requirement to every pharmacy registered with the Commissioner that dispenses a controlled substance pursuant to a prescription in Schedules II through V or an additional drug. 105 CMR 700.012(A)(2) then states that 105 CMR 700.012 shall not apply to the dispensing pursuant to a medication order of a controlled substance to an inpatient in a hospital. Two facts must coincide for the exclusion, a medication order and an inpatient; the discharge prescription satisfies neither and is reportable.",
+    "choice_analysis": {
+      "A": "The exclusion turns on the medication order and inpatient status, not on the pharmacy's setting.",
+      "B": "The reporting duty is expressly disapplied for inpatient medication orders.",
+      "C": "That reverses the exclusion; the medication order is the dispensing that is excluded.",
+      "D": "No alternative-reporting condition appears in the paragraph.",
+      "E": "Correct: the discharge prescription is dispensed pursuant to a prescription to a patient going home."
+    },
+    "related_facts": [
+      "An out-of-state pharmacy delivering such a substance to a person in Massachusetts is within the duty"
+    ],
+    "mpje_trap": "Both dispensings happen in the same building on the same day for the same patient, which invites a single answer for both."
+  },
+  "rule_ids": [
+    "MA-PMP-INPATIENT-EXCLUSION"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Classify each dispensing as against a medication order or against a prescription",
+    "Establish whether the patient was an inpatient at the time of that dispensing",
+    "Apply the exclusion only where both facts hold"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3F-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3F-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3F blind-locked legal and full-bank realism targeted initial audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-F guarded admission of 13 of 16 questions after Issue #91 explicitly authorized BATCH3-B3F as a targeted initial batch at represented candidate 1cc76f458f6584edc3dfad8387240ea968201b64. CLAUDE-FRESH-B3F returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 13 current hashes. MA-Q-0393, MA-Q-0398 and MA-Q-0404 remain held back on independent realism failures; their negative audit history remains preserved. The Phase-1 blind lock preceded canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-PMP-INPATIENT-EXCLUSION": {
+          "content_version": 1,
+          "content_hash": "6360cb9797b05a9b3d859682a9332cdade9a1f0cd1301f1b298b46430242c3fa"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

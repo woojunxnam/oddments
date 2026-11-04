@@ -1,0 +1,258 @@
+{
+  "artifact_type": "BATCH4_CLAUDE_CODE_HANDOFF",
+  "status": "AUTHORITATIVE_HANDOFF",
+  "repository": "https://github.com/woojunxnam/oddments",
+  "handoff_date": "2026-09-02",
+  "authoritative_main_sha": "b8ed41a913d8e6199674190017155b00ce00a3a7",
+  "authoritative_main_sha_semantics": "Exact merged main content checkpoint after B4-A guarded release PR #135. The later handoff-artifact-only merge may advance main without changing this referenced release state.",
+  "master_issue": 121,
+  "scope_boundary": {
+    "completed": "Finish B4-A, durabilize the repaired Study Guide hashes, and hand off to Claude Code.",
+    "not_authorized_in_this_handoff": [
+      "B4-B authoring or freeze",
+      "Study Guide repair re-audit execution",
+      "MA-Q-0426 repair",
+      "new UX work",
+      "new research",
+      "Supabase activation"
+    ]
+  },
+  "released_total": 398,
+  "released_by_area": {
+    "Area_1": 87,
+    "Area_2": 131,
+    "Area_3": 100,
+    "Area_4": 80
+  },
+  "four_mock_target": {
+    "Area_1": 104,
+    "Area_2": 160,
+    "Area_3": 116,
+    "Area_4": 100,
+    "total": 480
+  },
+  "remaining_deficits": {
+    "Area_1": 17,
+    "Area_2": 29,
+    "Area_3": 16,
+    "Area_4": 20,
+    "total": 82
+  },
+  "B4A": {
+    "status": "GUARDED_RELEASE_COMPLETE",
+    "release_pr": 135,
+    "release_merge_sha": "b8ed41a913d8e6199674190017155b00ce00a3a7",
+    "proposition_map_merge_sha": "15abfda6e41ec42a9cc8e4e6c07315df521b7de2",
+    "proposition_map_artifact_sha256": "50cf09f836f98999fe18b3115467d4ebe7d5bbe66e9adcb5b52a2f948199e222",
+    "represented_candidate_sha": "dd06d1da063126212cffcf8d443e3b25ad403c0f",
+    "freeze_sha": "acee99d0d6596f368586fb8f5f5466e48d86f42c",
+    "blind_package_sha256": "89f0b3c3c8359b9bc8ed2a179114be071a7b299f046ebb2f316a87796489a5e0",
+    "freeze_manifest_sha256": "c8208daedf89d3dfbe47efcb15e8ea27b2c52475c0162143fd2a9063d1ec9e60",
+    "phase1_lock_sha": "361c30f222960077848b47eb1a31907d80a6ba6f",
+    "phase1_lock_artifact_sha256": "f2ce5aeb730e8f8bd3251689f9bd10d87ec1b78439fb11d2947abb2bc2348caf",
+    "final_audit_sha": "7342d2fee5128775f7395febfd99f8df6d1826d6",
+    "auditor_instance": "GPT-FRESH-B4A",
+    "audit_merge_pr": 134,
+    "audit_merge_sha": "0b68e820eebac65e75e82f13055e3069cbf91ed3",
+    "final_audit_artifacts": {
+      "final_adjudication": {
+        "path": "audits/remediation/2026-09-01/GPT-FRESH-B4A-PHASE2-3-FINAL-ADJUDICATION.json",
+        "sha256": "15c2bfcb51436cee38207aa6404e261329915dd69e545fe8289fd911decb96d1"
+      },
+      "legal": {
+        "path": "data/audits/AUDIT-GPT-FRESH-B4A-LEGAL-INITIAL-2026-09-01.json",
+        "sha256": "cb95477fe0536294acb591081eb3a3d8e9a85e71bb4e5313238b8dfdb77d53d1"
+      },
+      "realism": {
+        "path": "data/audits/AUDIT-GPT-FRESH-B4A-REALISM-INITIAL-2026-09-01.json",
+        "sha256": "1accb1c23391fa16c6ce82408bfb4815c40886fd9e51ad66384d464ee36447de"
+      },
+      "controller_verification": {
+        "path": "audits/remediation/2026-09-02/B4A-FRESH-AUDIT-EVIDENCE-VERIFICATION.json",
+        "checks_passed": 16,
+        "checks_total": 16
+      }
+    },
+    "verdict_counts": {
+      "KEEP": 32,
+      "MINOR_EDIT": 1,
+      "MAJOR_REWRITE": 0,
+      "HOLD": 0
+    },
+    "released_ids": [
+      "MA-Q-0407",
+      "MA-Q-0408",
+      "MA-Q-0409",
+      "MA-Q-0410",
+      "MA-Q-0411",
+      "MA-Q-0412",
+      "MA-Q-0413",
+      "MA-Q-0414",
+      "MA-Q-0415",
+      "MA-Q-0416",
+      "MA-Q-0417",
+      "MA-Q-0418",
+      "MA-Q-0419",
+      "MA-Q-0420",
+      "MA-Q-0421",
+      "MA-Q-0422",
+      "MA-Q-0423",
+      "MA-Q-0424",
+      "MA-Q-0425",
+      "MA-Q-0427",
+      "MA-Q-0428",
+      "MA-Q-0429",
+      "MA-Q-0430",
+      "MA-Q-0431",
+      "MA-Q-0432",
+      "MA-Q-0433",
+      "MA-Q-0434",
+      "MA-Q-0435",
+      "MA-Q-0436",
+      "MA-Q-0437",
+      "MA-Q-0438",
+      "MA-Q-0439"
+    ],
+    "unreleased": {
+      "MA-Q-0426": {
+        "lifecycle_status": "AUDIT_PENDING",
+        "legal_disposition": "KEEP",
+        "realism_disposition": "MINOR_EDIT",
+        "realism_verdict": "FAIL",
+        "failed_criteria": [
+          "authentic_distractors",
+          "wording_not_guessable"
+        ],
+        "exact_reason": "The explicit internal emails state the evasion intent, making keyed choice C obvious rather than testing realistic legal discrimination.",
+        "required_before_release": "Apply a wording-only repair, produce a new audit hash, and obtain a new independent current-hash legal and realism audit. Do not inherit the prior KEEP/MINOR_EDIT decisions across the changed hash."
+      }
+    },
+    "post_merge_verification": {
+      "canonical_released_total": 398,
+      "public_payload_total": 398,
+      "MA_Q_0426_in_public_payload": false,
+      "generated_artifacts_current": true,
+      "github_actions_required_checks": "PASS",
+      "browser_QA": "PASS"
+    }
+  },
+  "Study_Guide": {
+    "public": [
+      "SG-CONTROLLED-SCHEDULES"
+    ],
+    "public_count": 1,
+    "repaired_pending": {
+      "SG-CII-LIFECYCLE": "76f9c5d5455b60985473779403140fb620f970c4aefb30a427d6e245369a603b",
+      "SG-CIII-V-REFILL-TRANSFER": "c988b33e24c6e7f92cf83dc28be23ae8a0159dcb3d66259a171c7ef7cddbbc20",
+      "SG-MA-SCHEDULE-VI": "acd8cf4012eaf122517c6c36785e077b5a63a9e13d5eb72e823e9047a8ed61b4",
+      "SG-FED-MA-INTERACTION": "36fea844335a78a330d0954b2ea3356a23136a37e39c98a1e7532b5f507c146e"
+    },
+    "repaired_pending_state": {
+      "verification_status": "AUDIT_PENDING",
+      "publication": "PRIVATE",
+      "independent_audit_id": null
+    },
+    "repair_pr": 132,
+    "repair_merge_sha": "b2055a91a88ac96474c601365a82347aa24d7009",
+    "repair_freeze_pr": 133,
+    "repair_freeze_sha": "3b68d6c051c864ce04e87bbd9c09dffe109b75b1",
+    "package_path": "audits/study_guide/2026-09-02/BATCH4-SG-REPAIR-V2-AUDIT-PACKAGE.json",
+    "package_sha256": "531b56ee7f28be231cf61e529e41d83936bc89eb412bd330320f8519e17336e1",
+    "manifest_path": "audits/study_guide/2026-09-02/BATCH4-SG-REPAIR-V2-FREEZE-MANIFEST.json",
+    "manifest_sha256": "e5d3fe7c839815064e19c02d2a5ddfaf1c37b5cbd93d9adb398a922b30acf80f",
+    "prior_audit_reference": {
+      "path": "audits/study_guide/2026-09-01/GPT-FRESH-B4-SG-PILOT-V1-AUDIT.json",
+      "sha256": "ba002ea0fd15b3300ae43a8bec4f52ca85950b0ff6eecd07aa53dbc9c670b9b4",
+      "reuse_for_repaired_hashes": false
+    },
+    "reserved_next_auditor": "GPT-FRESH-B4-SG-REPAIR-V2",
+    "required_next_auditor_independence": "Use a fresh auditor identity distinct from GPT-FRESH-B4-SG-PILOT-V1. Publish only exact-current-hash sections receiving independent KEEP."
+  },
+  "Lane_D": {
+    "status": "COMPLETE_ABSTRACT_SIGNALS_ONLY",
+    "artifact_path": "audits/coverage/2026-09-01/BATCH4-REAL-EXAM-SIGNAL-REPORT.json",
+    "source_counts": {
+      "official_NABP": 8,
+      "Massachusetts_candidate_reports": 20,
+      "Massachusetts_unique_urls": 12,
+      "cross_state_candidate_reports": 26,
+      "cross_state_unique_urls": 22,
+      "named_cross_state_jurisdictions": 11,
+      "total_candidate_reports": 46,
+      "total_evidence_records_including_official": 54
+    },
+    "recalled_question_policy": {
+      "report_level_encountered_and_discarded": 9,
+      "content_units_encountered_and_discarded": 17,
+      "retained_recalled_questions": 0,
+      "retained_answer_choices": 0,
+      "retained_candidate_answer_correctness_inferences": 0,
+      "verdict": "ALL_RECALL_DETAILS_DISCARDED"
+    }
+  },
+  "UX": {
+    "Quick20": "COMPLETE_VERIFIED",
+    "history": "COMPLETE_VERIFIED",
+    "export_import": "COMPLETE_VERIFIED",
+    "browser_QA_checkpoint": {
+      "public_questions_loaded": 398,
+      "new_B4A_questions_drawn_in_Quick20": [
+        "MA-Q-0421",
+        "MA-Q-0424"
+      ],
+      "MA_Q_0426_absent": true,
+      "Back_Next": "PASS",
+      "history_save_and_open": "PASS",
+      "Study_Guide": "PASS",
+      "console_errors": 0
+    }
+  },
+  "known_debt_and_blockers": {
+    "MA-Q-0426": "Current-hash realism MINOR_EDIT/FAIL; wording makes the keyed answer guessable. Unreleased.",
+    "MA-MH-SUD-ADMIN": "Known shared-rule legal wording blocker; preserve until separately repaired and independently re-audited.",
+    "MA-Q-0172": "Known dependent question hold associated with MA-MH-SUD-ADMIN; do not release without the established repair and re-audit path.",
+    "MA-Q-0028": "Quarantined after current-hash realism distinctness failure.",
+    "MA-Q-0190": "Known inherited warning/hold; preserve existing governance state.",
+    "inherited_SBA_leakage_debt": {
+      "status": "OPEN_INHERITED_DEBT",
+      "count": 149,
+      "SBA_total": 230,
+      "B4A_prospective_result": "9/19 = 47.4%; projected aggregate 158/249; no individual extreme"
+    }
+  },
+  "B4B": {
+    "status": "PROVISIONAL_NOT_AUTHORIZED",
+    "prior_provisional_total_slots": 33,
+    "prior_provisional_allocation_by_area": {
+      "Area_1": 8,
+      "Area_2": 11,
+      "Area_3": 8,
+      "Area_4": 6
+    },
+    "prior_provisional_question_types": {
+      "SBA": 22,
+      "SATA": 11
+    },
+    "prior_provisional_natural_multi_rule": 12,
+    "prior_provisional_live_authority_rechecks": 9,
+    "authority_recheck_ids": [
+      "MA-Q-0453",
+      "MA-Q-0454",
+      "MA-Q-0456",
+      "MA-Q-0459",
+      "MA-Q-0460",
+      "MA-Q-0461",
+      "MA-Q-0465",
+      "MA-Q-0468",
+      "MA-Q-0469"
+    ],
+    "duplicate_risk_first_replacement_candidate": "MA-Q-0457",
+    "required_recalculation": "Recalculate the entire provisional allocation from post-B4A deficits 17/29/16/20 before any proposition freeze or authoring. Nothing in this provisional plan is authoritative."
+  },
+  "exact_next_actions_for_claude": [
+    "FIRST: Independently re-audit the four exact repaired Study Guide hashes from audits/study_guide/2026-09-02/BATCH4-SG-REPAIR-V2-AUDIT-PACKAGE.json using the reserved fresh identity GPT-FRESH-B4-SG-REPAIR-V2; do not reuse GPT-FRESH-B4-SG-PILOT-V1 and publish only exact-current-hash KEEP sections.",
+    "SECOND: Repair MA-Q-0426 wording only to remove answer-guessability, generate a new audit hash, and obtain a new independent current-hash legal and realism audit before any release.",
+    "THIRD: Recalculate the provisional B4-B allocation against exact post-B4A deficits 17/29/16/20 and live-verify the nine authority-risk slots before proposition lock or authoring.",
+    "ALWAYS: Preserve release-only public payload semantics and all listed blockers; do not infer release from candidate count or stale audit hashes."
+  ]
+}

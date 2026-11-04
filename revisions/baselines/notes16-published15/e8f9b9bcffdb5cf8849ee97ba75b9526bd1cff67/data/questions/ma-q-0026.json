@@ -1,0 +1,107 @@
+{
+  "question_id": "MA-Q-0026",
+  "family_id": "P2_0026_FED_CIII_V_REFILL",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule III-IV refills",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Require renewed prescriber authorization because the federal five-refill limit has been reached."
+    },
+    {
+      "id": "B",
+      "text": "Dispense a sixth refill because the prescription is still under six months old."
+    },
+    {
+      "id": "C",
+      "text": "Treat the original notation as a practitioner renewal."
+    },
+    {
+      "id": "D",
+      "text": "Use Massachusetts Schedule V rules instead of the federal Schedule IV rule."
+    },
+    {
+      "id": "E",
+      "text": "Transfer the prescription to obtain five more refills."
+    }
+  ],
+  "correct_choice_ids": [
+    "A"
+  ],
+  "explanation": {
+    "core_reasoning": "'Require renewed prescriber authorization because the federal five-refill limit has been reached.' is the governing result. By contrast, 'Dispense a sixth refill because the prescription is still under six months old.' would require that the federal rule imposed only a time limit and no five-refill maximum. The decisive cue appears in 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?'.",
+    "choice_analysis": {
+      "A": "'Require renewed prescriber authorization because the federal five-refill limit has been reached.': supported by schedule iii-iv refills.",
+      "B": "'Dispense a sixth refill because the prescription is still under six months old.' would apply only if the federal rule imposed only a time limit and no five-refill maximum; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "C": "'Treat the original notation as a practitioner renewal.' would apply only if renewal occurred without a new or renewed practitioner authorization; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "D": "'Use Massachusetts Schedule V rules instead of the federal Schedule IV rule.' would apply only if alprazolam were Schedule V in Massachusetts; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise.",
+      "E": "'Transfer the prescription to obtain five more refills.' would apply only if transfer reset the federal refill count; 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?' states otherwise."
+    },
+    "related_facts": [
+      "alprazolam (Xanax) is used for anxiety disorder and panic disorder; it is federal Schedule IV and Massachusetts Schedule IV.",
+      "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner."
+    ],
+    "mpje_trap": "'Dispense a sixth refill because the prescription is still under six months old.' would apply if the federal rule imposed only a time limit and no five-refill maximum. In 'While reconciling pharmacy records, a Xanax prescription issued five months ago has already been refilled five times. The patient asks for another refill. What should occur?', that predicate is missing."
+  },
+  "rule_ids": [
+    "FED-CIII-V-REFILL",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "alprazolam"
+  ],
+  "reasoning_steps": [
+    "Classify alprazolam under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Federal Schedule III and IV refill limits"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CIII-V-REFILL": {
+          "content_version": 1,
+          "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "alprazolam": {
+          "content_version": 1,
+          "content_hash": "2deb8dea42ddd0f908388d2cac254356fc22efd96b8f9a7745598229191c6fa6"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

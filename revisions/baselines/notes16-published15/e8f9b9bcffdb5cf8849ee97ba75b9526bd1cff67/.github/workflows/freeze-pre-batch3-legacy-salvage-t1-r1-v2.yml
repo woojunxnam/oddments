@@ -1,0 +1,97 @@
+name: Freeze Pre-Batch3 Legacy Salvage T1 R1 V2
+
+on:
+  push:
+    branches:
+      - freeze/pre-batch3-legacy-salvage-t1-r1-v2
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out clean changed-item freeze branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+
+      - name: Verify clean freeze starting boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          CANDIDATE=6035cd92939bc094d0077b87d93ef8ac0b784415
+          git merge-base --is-ancestor "$CANDIDATE" HEAD
+          python - <<'PY'
+          import subprocess
+          candidate = "6035cd92939bc094d0077b87d93ef8ac0b784415"
+          changed = set(subprocess.check_output(["git", "diff", "--name-only", f"{candidate}..HEAD"], text=True).splitlines())
+          expected = {
+              "scripts/freeze_legacy_salvage_t1_r1_v2.py",
+              "scripts/verify_prebatch3_t1_r1_v2_freeze.py",
+              ".github/workflows/freeze-pre-batch3-legacy-salvage-t1-r1-v2.yml",
+          }
+          if changed != expected:
+              raise SystemExit(f"unexpected pre-freeze drift: {sorted(changed)}")
+          print("clean T1 r1 v2 starting boundary: PASS")
+          PY
+
+      - name: Generate sanitized changed-item frozen inputs
+        run: python scripts/freeze_legacy_salvage_t1_r1_v2.py
+
+      - name: Enforce freeze write boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import subprocess
+          lines = subprocess.check_output(["git", "status", "--porcelain=v1", "--untracked-files=all"], text=True).splitlines()
+          paths = {line[3:].split(" -> ")[-1] for line in lines}
+          expected = {
+              "audits/remediation/2026-08-17/GPT-D-BLIND-QUESTIONS-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json",
+              "audits/remediation/2026-08-17/GPT-D-LEGAL-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json",
+              "audits/remediation/2026-08-17/GPT-D-REALISM-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json",
+              "audits/remediation/2026-08-17/PRE-BATCH3-LEGACY-SALVAGE-T1-R1-CLEAN-FREEZE-V2-MANIFEST.json",
+          }
+          if paths != expected:
+              raise SystemExit(f"unexpected freeze writes: {sorted(paths)}")
+          print("T1 r1 v2 freeze write boundary: PASS")
+          PY
+
+      - name: Verify sanitized freeze mechanically
+        run: python scripts/verify_prebatch3_t1_r1_v2_freeze.py
+
+      - name: Validate repository
+        run: python scripts/validate_all.py
+
+      - name: Run full tests
+        run: python -m pytest -q
+
+      - name: Prove generated-artifact freshness
+        run: python scripts/generate_artifacts.py --write && git diff --exit-code -- answer_distribution_report.json structural_pattern_report.json generated site/generated/questions.json
+
+      - name: Commit sanitized changed-item frozen inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audits/remediation/2026-08-17/GPT-D-BLIND-QUESTIONS-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json
+          git add audits/remediation/2026-08-17/GPT-D-LEGAL-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json
+          git add audits/remediation/2026-08-17/GPT-D-REALISM-PRE-BATCH3-LEGACY-SALVAGE-T1-R1.json
+          git add audits/remediation/2026-08-17/PRE-BATCH3-LEGACY-SALVAGE-T1-R1-CLEAN-FREEZE-V2-MANIFEST.json
+          git commit -m "freeze: lock sanitized T1 r1 v2 fresh-audit inputs"
+
+      - name: Push sanitized frozen inputs
+        run: git push origin HEAD:freeze/pre-batch3-legacy-salvage-t1-r1-v2

@@ -1,0 +1,106 @@
+{
+  "question_id": "MA-Q-0022",
+  "family_id": "P2_0022_MA_CII_VALIDITY_30D",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule II validity",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Dispense after confirming that the prescriber still wants the medication supplied."
+    },
+    {
+      "id": "B",
+      "text": "The Schedule II prescription is invalid because more than 30 days have elapsed since issue."
+    },
+    {
+      "id": "C",
+      "text": "Use the federal six-month refill clock because Demerol is controlled."
+    },
+    {
+      "id": "D",
+      "text": "Transfer the prescription before dispensing to restore validity."
+    },
+    {
+      "id": "E",
+      "text": "Treat 35 days as acceptable when no prior quantity was dispensed."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "'The Schedule II prescription is invalid because more than 30 days have elapsed since issue.' is the governing result. By contrast, 'Dispense after confirming that the prescriber still wants the medication supplied.' would require that prescriber confirmation could extend an expired Schedule II prescription without a new prescription. The decisive cue appears in 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?'.",
+    "choice_analysis": {
+      "A": "'Dispense after confirming that the prescriber still wants the medication supplied.' would apply only if prescriber confirmation could extend an expired Schedule II prescription without a new prescription; 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?' states otherwise.",
+      "B": "'The Schedule II prescription is invalid because more than 30 days have elapsed since issue.': supported by schedule ii validity.",
+      "C": "'Use the federal six-month refill clock because Demerol is controlled.' would apply only if meperidine were Schedule III or IV rather than Schedule II; 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?' states otherwise.",
+      "D": "'Transfer the prescription before dispensing to restore validity.' would apply only if a transfer changed the original issue date; 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?' states otherwise.",
+      "E": "'Treat 35 days as acceptable when no prior quantity was dispensed.' would apply only if Massachusetts validity depended on prior dispensing rather than elapsed time from issue; 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?' states otherwise."
+    },
+    "related_facts": [
+      "meperidine (Demerol) is used for pain severe enough to require an opioid when alternatives are inadequate; it is federal Schedule II and Massachusetts Schedule II.",
+      "A Massachusetts written or electronic Schedule II prescription becomes invalid 30 days after its issue date."
+    ],
+    "mpje_trap": "'Dispense after confirming that the prescriber still wants the medication supplied.' would apply if prescriber confirmation could extend an expired Schedule II prescription without a new prescription. In 'During a prescriber call, a never-filled Demerol prescription is brought to a Massachusetts pharmacy 35 days after issue. What is the result?', that predicate is missing."
+  },
+  "rule_ids": [
+    "MA-CII-VALIDITY-30D",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "meperidine"
+  ],
+  "reasoning_steps": [
+    "Classify meperidine under the federal and Massachusetts schedules before selecting a legal pathway"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CII-VALIDITY-30D": {
+          "content_version": 1,
+          "content_hash": "789f9b38da0eeb62cab23a16a33fadae34dea76d3cb1529e22e41489942e8bad"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "meperidine": {
+          "content_version": 1,
+          "content_hash": "9fa16bb10d1c678f48cf00bc18bef2582c922d57e21afdf07e050ca8379fea91"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

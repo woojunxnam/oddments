@@ -1,0 +1,40 @@
+{
+  "tranche": "BATCH3-Q0203-V2",
+  "audit_scope": "REAUDIT",
+  "package_version": 2,
+  "authorizing_issue": 91,
+  "controller_issue": 83,
+  "freeze_date": "2026-08-20",
+  "source_branch": "codex/batch3-minimum-release-pass1",
+  "candidate_branch": "codex/batch3-q0203-v2-repair",
+  "candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "source_sha": "c15c49e76e1a5c87d35a6cc5bb111f2e7b427cb2",
+  "auditor_type": "GPT",
+  "output_dir": "audits/remediation/2026-08-20",
+  "freeze_branch": "freeze/batch3-q0203-v2",
+  "auditor_instance": "GPT-FRESH-B3-Q0203-V2",
+  "legal_audit_id": "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+  "realism_audit_id": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20",
+  "question_ids": [
+    "MA-Q-0203"
+  ],
+  "bank_size_at_candidate": 406,
+  "file_prefix": "BATCH3-Q0203-V2",
+  "composition": {
+    "area_2": 0,
+    "area_3": 0,
+    "area_4": 1,
+    "total": 1
+  },
+  "package_note": "MA-Q-0203 v2 replaces the v1 Schedule III buprenorphine multi-drug pouch scenario after fresh audit found a stale oxycodone drug dependency and a realism collision with MA-Q-0202 choice A. The v2 candidate tests the distinct oral-liquid-single-dose boundary with methylphenidate and remains AUDIT_PENDING.",
+  "quality_gates": {
+    "repository_validation": "PASS - validate_all.py: 0 errors, 1 pre-existing MA-Q-0190 warning",
+    "full_tests": "PASS - 98 passed, 1 skipped",
+    "generated_artifact_freshness": "PASS",
+    "duplicate_detector_findings": 0,
+    "structural_pattern_findings": 0,
+    "release_state": "365 RELEASED; MA-Q-0203 remains AUDIT_PENDING and is absent from preview",
+    "repair_generator_reproduction": "PASS - pass1 source inputs reproduced the v2 question hash, family row and repair report byte-identically"
+  },
+  "source_note": "Candidate is a clean descendant of the first six-question guarded release commit and carries the prior v1 FAIL evidence without modifying it. No v2 audit result is present."
+}

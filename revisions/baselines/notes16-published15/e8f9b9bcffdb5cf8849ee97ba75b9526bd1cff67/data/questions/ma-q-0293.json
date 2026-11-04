@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0293",
+  "family_id": "B3B_0293_MA_CDTM_CE_EVIDENCE",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "CDTM continuing education evidence",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist completed her required collaborative practice continuing education two years ago and her current agreement was signed six months ago. She proposes to discard the older documentation. What does the regulation require?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "She may discard it, because the courses are now more than two years old."
+    },
+    {
+      "id": "B",
+      "text": "She may discard it once her pharmacist registration has been renewed."
+    },
+    {
+      "id": "C",
+      "text": "She must retain it for at least two years after the date of the current agreement."
+    },
+    {
+      "id": "D",
+      "text": "She must retain it for the entire life of her pharmacist licence."
+    },
+    {
+      "id": "E",
+      "text": "She must forward it to each supervising physician instead of retaining it."
+    }
+  ],
+  "correct_choice_ids": [
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "247 CMR 16.02(2) requires an authorized pharmacist participating in collaborative drug therapy management to maintain evidence of completion of required continuing education for at least two years after the date of the current collaborative practice agreement. The clock runs from the agreement date, not from the course date or the registration renewal.",
+    "choice_analysis": {
+      "A": "The retention clock does not run from the course date.",
+      "B": "Registration renewal is not the trigger for discarding CDTM evidence.",
+      "C": "Correct: two years measured from the date of the current agreement.",
+      "D": "The regulation sets a two-year period rather than a lifetime one.",
+      "E": "Forwarding to supervising physicians is a different duty, triggered by discipline."
+    },
+    "related_facts": [
+      "At least five additional contact hours of Board-approved continuing education are required in each year of the agreement term."
+    ],
+    "mpje_trap": "The retention clock starts at the current agreement, so old course dates do not release the records."
+  },
+  "rule_ids": [
+    "MA-CDTM-CE-EVIDENCE"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Identify the applicable retention period for CDTM continuing education evidence",
+    "Fix the clock's start at the date of the current agreement",
+    "Conclude the older documentation is still within the retention period"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3B-LEGAL-INITIAL-2026-08-19",
+    "AUDIT-CLAUDE-FRESH-B3B-REALISM-INITIAL-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3B blind-locked legal and full-bank realism audit (PR #95)",
+    "date": "2026-08-19",
+    "notes": "Batch 3 tranche B3-B initial admission. The independent CLAUDE-FRESH-B3B audit returned legal KEEP / Existing_Answer_Correct YES for all 33 questions and full-bank realism KEEP/PASS for 32 of them; its Phase-1 blind lock was committed 1054 seconds before any canonical key access and 32 of its 33 blind answers matched the canonical keys. Controller verification of that evidence passed all 16 process checks (B3B-FRESH-AUDIT-EVIDENCE-VERIFICATION.json). Exactly one question, MA-Q-0288, is withheld: it is legally correct and legal KEEP/YES, but realism returned MINOR_EDIT/FAIL on the single criterion authentic_distractors, and it is also the one item whose blind answer diverged from the key. It is routed to a narrow repair lineage and a focused REAUDIT under a new auditor_instance rather than released or discarded. The other 32 are not held hostage to that repair. This release descends from the post-B3-A release state 8c4d6ba via a merge whose content equivalence was proven: all 33 B3-B hashes equal the frozen manifest and every pre-B3-B record is byte-identical to the post-B3-A release state. MA-Q-0028 remains quarantined and is not released or previewed. The auditor's tranche-level SBA key-skew observation is recorded as an advisory only; the 32 passing hashes are deliberately left intact.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-CE-EVIDENCE": {
+          "content_version": 1,
+          "content_hash": "0ba3f674e53b42f30b8050b9b26cc587aaf1f50d6db29e693a6193da2e92d2c4"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

@@ -1,0 +1,138 @@
+{
+  "report_type": "BATCH3_B3A_R1_GUARDED_ADMISSION_V1_PREFLIGHT",
+  "tranche_id": "BATCH3-B3A-R1",
+  "authorizing_issue": 91,
+  "question_ids": [
+    "MA-Q-0241",
+    "MA-Q-0256"
+  ],
+  "status": "PASS",
+  "current_question_hashes": {
+    "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+    "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+  },
+  "evidence": {
+    "MA-Q-0241": {
+      "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+    },
+    "MA-Q-0256": {
+      "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+    }
+  },
+  "dependency_snapshots": {
+    "MA-Q-0241": {
+      "rules": {
+        "MA-CII-SUPPORT-HANDLING": {
+          "content_version": 1,
+          "content_hash": "b7ef537adc43c788ea46fa4089cd390b0ff4ccc8ff67b27899a6a49a88a6e174"
+        }
+      },
+      "drugs": {}
+    },
+    "MA-Q-0256": {
+      "rules": {
+        "MA-CE-ANNUAL-STRUCTURE": {
+          "content_version": 1,
+          "content_hash": "aedbbdb378c1b42730a955ee455b9806e2a2d10b9270e94a7c155fdf2902e279"
+        }
+      },
+      "drugs": {}
+    }
+  },
+  "release_context": {
+    "blueprint": {
+      "id": "MPJE-MA-PRE2027-BLUEPRINT",
+      "content_version": 1,
+      "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+    },
+    "style_profile": {
+      "id": "MPJE-MA-PRE2027",
+      "content_version": 1,
+      "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+    }
+  },
+  "preview_before_count": 261,
+  "released_before_count": 261,
+  "checks": {
+    "01_recomputed_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": "e831eac133cc7b9f9bdf39d13fcdd0173f51e4295578239b659d047273cf4857",
+        "MA-Q-0256": "8957348ac38e4040c039d4529e3cb67c4ee36a06174025f71cfaf553a284b250"
+      }
+    },
+    "02_not_already_released": {
+      "status": "PASS",
+      "detail": "all candidates are unreleased"
+    },
+    "03_current_hash_legal_and_realism_evidence": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": {
+          "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+          "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+        },
+        "MA-Q-0256": {
+          "legal": "AUDIT-CLAUDE-FRESH-B3A-R1-LEGAL-REAUDIT-2026-08-19",
+          "realism": "AUDIT-CLAUDE-FRESH-B3A-R1-REALISM-REAUDIT-2026-08-19"
+        }
+      }
+    },
+    "04_valid_initial_audit_history": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": [
+          "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19"
+        ],
+        "MA-Q-0256": [
+          "AUDIT-CLAUDE-FRESH-B3A-LEGAL-INITIAL-2026-08-19"
+        ]
+      }
+    },
+    "05_dependency_verification": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0241": {
+          "rules": {
+            "MA-CII-SUPPORT-HANDLING": {
+              "content_version": 1,
+              "content_hash": "b7ef537adc43c788ea46fa4089cd390b0ff4ccc8ff67b27899a6a49a88a6e174"
+            }
+          },
+          "drugs": {}
+        },
+        "MA-Q-0256": {
+          "rules": {
+            "MA-CE-ANNUAL-STRUCTURE": {
+              "content_version": 1,
+              "content_hash": "aedbbdb378c1b42730a955ee455b9806e2a2d10b9270e94a7c155fdf2902e279"
+            }
+          },
+          "drugs": {}
+        }
+      }
+    },
+    "06_no_current_hash_failure": {
+      "status": "PASS",
+      "detail": "none"
+    },
+    "07_quarantine_intact": {
+      "status": "PASS",
+      "detail": {
+        "verification_status": "AUDIT_PENDING",
+        "in_preview": false
+      }
+    },
+    "08_preview_captured_before_mutation": {
+      "status": "PASS",
+      "detail": {
+        "preview_before_count": 261,
+        "released_before_count": 261,
+        "tranche_in_preview_before": []
+      }
+    }
+  },
+  "failures": []
+}

@@ -1,0 +1,156 @@
+{
+  "report_type": "PRE_BATCH3_T3_GUARDED_ADMISSION_V1",
+  "tranche_id": "PRE-BATCH3-COVERAGE-T3-DIVERSITY",
+  "controller_issue": 83,
+  "authorizing_issue": 86,
+  "date": "2026-08-19",
+  "source_branch": "remediation/pre-batch3-coverage-t3-diversity",
+  "represented_candidate_sha": "f13c91c2635ea153a1ea19d9dfb34bcbe12f30c2",
+  "released_count": 2,
+  "released_ids": [
+    "MA-Q-0227",
+    "MA-Q-0228"
+  ],
+  "evidence": {
+    "MA-Q-0227": {
+      "legal": "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+    },
+    "MA-Q-0228": {
+      "legal": "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+      "realism": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+    }
+  },
+  "current_question_hashes": {
+    "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+    "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+  },
+  "question_hashes_before_and_after_equal": true,
+  "current_hash_gate": "PASS",
+  "family_matrix_changes": {
+    "T3_0227_MA_BEDSIDE_DISCHARGE_DELIVERY": {
+      "current_candidate_count": [
+        1,
+        1
+      ],
+      "current_released_count": [
+        0,
+        1
+      ]
+    },
+    "T3_0228_MA_CENTRAL_FILL_ROUTING": {
+      "current_candidate_count": [
+        1,
+        1
+      ],
+      "current_released_count": [
+        0,
+        1
+      ]
+    }
+  },
+  "preview": {
+    "before_count": 196,
+    "after_count": 198,
+    "added_ids": [
+      "MA-Q-0227",
+      "MA-Q-0228"
+    ],
+    "removed_ids": [],
+    "source_audits_added": [
+      "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+      "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+    ],
+    "source_audits_unique": true,
+    "q0028_present_after": false
+  },
+  "release_assertions": {
+    "exactly_tranche_released": true,
+    "audited_content_unchanged": true,
+    "no_unrelated_question_state_change": true,
+    "no_registry_semantic_mutation": true,
+    "q0028_not_released": true,
+    "q0028_not_previewed": true,
+    "q0190_untouched": true
+  },
+  "release_boundary_failures": [],
+  "preflight": {
+    "01_recomputed_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": "e4366cb456fcb126e4a96988320d32dcf0258d432acb1df73ecca7bee3c2065e",
+        "MA-Q-0228": "bb334d740968d63ec5861ef1713adf672383bf572715daac0eec90f4cf8bead3"
+      }
+    },
+    "02_not_already_released": {
+      "status": "PASS",
+      "detail": "all candidates are unreleased"
+    },
+    "03_current_hash_legal_and_realism_evidence": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": {
+          "legal": "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+          "realism": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+        },
+        "MA-Q-0228": {
+          "legal": "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19",
+          "realism": "AUDIT-CLAUDE-FRESH-COV-T3-A-REALISM-TARGETED-INITIAL-2026-08-19"
+        }
+      }
+    },
+    "04_valid_initial_audit_history": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": [
+          "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19"
+        ],
+        "MA-Q-0228": [
+          "AUDIT-CLAUDE-FRESH-COV-T3-A-LEGAL-TARGETED-INITIAL-2026-08-19"
+        ]
+      }
+    },
+    "05_dependency_verification": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0227": {
+          "rules": {
+            "MA-BEDSIDE-DELIVERY": {
+              "content_version": 1,
+              "content_hash": "bfcff957c781eeedafb496866b3d0361a58ffd68c4fca9a01950695ce9ebef77"
+            }
+          },
+          "drugs": {}
+        },
+        "MA-Q-0228": {
+          "rules": {
+            "MA-CENTRAL-FILL-DISPENSING-ROUTE": {
+              "content_version": 1,
+              "content_hash": "90f4e302223e230cbf8eb327a6f5cd711ee9f4d79564848d6be1cfc14275efb6"
+            }
+          },
+          "drugs": {}
+        }
+      }
+    },
+    "06_no_current_hash_failure": {
+      "status": "PASS",
+      "detail": "none"
+    },
+    "07_quarantine_intact": {
+      "status": "PASS",
+      "detail": {
+        "verification_status": "AUDIT_PENDING",
+        "in_preview": false
+      }
+    },
+    "08_preview_captured_before_mutation": {
+      "status": "PASS",
+      "detail": {
+        "preview_before_count": 196,
+        "released_before_count": 165,
+        "tranche_in_preview_before": []
+      }
+    }
+  }
+}

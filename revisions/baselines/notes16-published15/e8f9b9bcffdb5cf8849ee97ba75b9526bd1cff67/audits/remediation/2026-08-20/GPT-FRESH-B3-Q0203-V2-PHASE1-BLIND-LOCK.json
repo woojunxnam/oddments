@@ -1,0 +1,53 @@
+{
+  "lock_type": "PHASE_1_BLIND_SOLVE_IMMUTABLE_LOCK",
+  "date": "2026-08-20",
+  "tranche": "BATCH3-Q0203-V2",
+  "auditor": "GPT",
+  "auditor_instance": "GPT-FRESH-B3-Q0203-V2",
+  "independent": true,
+  "freeze_branch": "freeze/batch3-q0203-v2",
+  "freeze_sha": "0ca6b25a290c75bcb59ca1c2fad08f8e55845280",
+  "represented_candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "question_id": "MA-Q-0203",
+  "frozen_question_hash": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d",
+  "selected_answer": "C",
+  "substantive_reasoning": "247 CMR 9.08(1)은 compliance packaging에 oral-liquid-single-dose packaging, single-drug-single-dose packaging, multi-drug-single-dose packaging을 각각 포함한다. 같은 항 (1)(h)는 처방에 따른 조제가 아닌 한 oral-liquid-single-dose package에 commercially available medication을 하나보다 많이 넣지 못하게 한다. 제시된 사실은 각 container에 methylphenidate oral solution 한 dose만 넣고 두 번째 drug는 넣지 않는 경우다. 반면 9.08(3)의 제목과 도입문은 multi-drug-single-dose packaging을 solid oral dosage forms에 관하여 규율하고, (3)(b)는 그 multi-drug-single-dose package 안에 Schedule II 또는 III controlled substance를 넣어 조제하는 것만 금지한다. 따라서 질문이 명시적으로 분리해 둔 다른 요건의 충족 여부와 무관하게, (3)(b) 자체는 이 oral-liquid-single-dose plan을 금지하지 않는다. 정답은 C이다.",
+  "choice_analysis": {
+    "A": "오답. (3)(b)는 모든 compliance packaging을 금지하지 않고 multi-drug-single-dose package만 대상으로 한다.",
+    "B": "오답. 같은 날 다른 prescription을 dispense했다는 사실은 개별 oral-liquid-single-dose container를 multi-drug package로 바꾸지 않는다.",
+    "C": "정답. (3)(b)의 금지는 Schedule II 또는 III controlled substance가 multi-drug-single-dose package에 들어가는 경우에 한정된다.",
+    "D": "오답. (3)(b)에는 prescriber authorization 예외나 요건이 없다.",
+    "E": "오답. patient consent가 container의 법적 packaging 유형을 바꾼다는 규정은 (3)(b)에 없다."
+  },
+  "official_sources": [
+    {
+      "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.08",
+      "source_type": "CURRENT_OFFICIAL_STATE_REGULATION",
+      "exact_section": "247 CMR 9.08(1), 9.08(1)(h), 9.08(2), 9.08(3), and 9.08(3)(b)",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+      "official_pdf_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "law_checked_date": "2026-08-20",
+      "source_page_date": "2024-12-06",
+      "pdf_sha256": "9e1f9d1d2813f761ee7d275c83e220f371382a2e81e0f485f2b7aaabcddce22a",
+      "pinpoint": "PDF page 6 of 17; printed page 247 CMR - 54"
+    }
+  ],
+  "source_acquisition": {
+    "method": "Mass.gov 공식 regulation landing page를 독립 검색한 뒤 그 페이지의 official PDF download URL을 직접 확보했다. PDF를 repository 밖의 임시 경로로 내려받아 SHA-256을 계산하고, PDF page 6을 text extraction과 2x raster rendering으로 각각 검토했다.",
+    "retrieved_at_date": "2026-08-20",
+    "landing_page_observation": "공식 Mass.gov regulation page는 247 CMR 9.00을 Board of Registration in Pharmacy 규정으로 표시하고 Date를 12/06/2024로 표시한다.",
+    "access_note": "브라우저 open은 Mass.gov에서 HTTP 403을 반환했으나 검색 색인에서 공식 landing page와 규정 문언을 확인했고, 같은 공식 page의 PDF download endpoint는 직접 다운로드에 성공했다."
+  },
+  "contamination_boundary": {
+    "prelock_repository_files_read": [
+      "audits/remediation/2026-08-20/BATCH3-Q0203-V2-GOVERNANCE-PHASE0-ATTESTATION.json",
+      "audits/remediation/2026-08-20/BATCH3-Q0203-V2-LEGAL-CONTRACT.json",
+      "audits/remediation/2026-08-20/BATCH3-Q0203-V2-REALISM-CONTRACT.json",
+      "audits/remediation/2026-08-20/BATCH3-Q0203-V2-BLIND-QUESTIONS.json"
+    ],
+    "external_material_read": "위 official_sources에 기재한 현재 공식 1차 자료와 해당 source를 찾기 위한 검색 결과만 읽었다.",
+    "prohibited_material_not_read": "canonical data/questions, data/rules, data/audits, postlock dependencies, controller 또는 author 기록, Issue #91, generated payloads, MA-Q-0203 관련 git history/diff/blame를 읽지 않았다.",
+    "prior_auditor_contact": "prior auditor GPT-FRESH-B3-MINIMUM-REPAIRS-V1의 산출물이나 판단을 보거나 전달받지 않았고 연락하지 않았다."
+  },
+  "attestation": "본 선택과 이유는 sanitized blind package와 제가 독립적으로 확보한 현재 공식 1차 자료만을 토대로 작성했다. canonical answer, explanation, rule dependency, prior audit 또는 author reasoning을 unseal하지 않은 상태에서 이 lock을 커밋하고 push한다. 이후 비교 결과와 무관하게 이 Phase-1 선택은 변경하지 않는다."
+}

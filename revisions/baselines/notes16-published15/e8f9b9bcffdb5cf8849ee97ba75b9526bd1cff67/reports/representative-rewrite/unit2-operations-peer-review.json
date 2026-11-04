@@ -1,0 +1,791 @@
+{
+  "date": "2026-10-29",
+  "review_kind": "WITHIN_TEAM_PEER_REVIEW_NOT_CANONICAL_INDEPENDENT_AUDIT",
+  "reviewer_role": "Personnel question author reviewing another team author’s pharmacy-operations questions; author keys and source records were visible.",
+  "authoring_file": "practice_expansion/2026-10-28-representative/authoring/04_pharmacy_operations.json",
+  "input_file_sha256": "a27daa5577e6e5cf3c1ddb61f022c1c3fd0add7fa45e9fec00f16dedddc96b78",
+  "input_file_unchanged_by_reviewer": true,
+  "question_hash_method": "SHA-256 of UTF-8 JSON with ensure_ascii=False, sort_keys=True, separators=(comma,colon). The file hash is over the raw authoring file bytes.",
+  "summary": {
+    "questions_reviewed": 6,
+    "choices_reviewed": 25,
+    "confirmed_true_options": 8,
+    "confirmed_false_options": 17,
+    "KEEP": 6,
+    "MINOR_EDIT": 0,
+    "MAJOR_REWRITE": 0,
+    "HOLD_FOR_LEGAL_REVIEW": 0,
+    "key_changes_recommended": 0
+  },
+  "source_checks": [
+    {
+      "source_id": "rw2-ops-cmr6",
+      "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+      "method": "Reviewer freshly retrieved the full official-URL text through Exa on2026-10-29 and read6.02,6.04,6.09,6.10,6.11,6.12. Official landing date2025-04-25 and6.10 exception were cross-checked with official search.",
+      "evidence": [
+        "recovery/unit2-operations-peer-primary.txt",
+        "turn48search0",
+        "turn48search8"
+      ]
+    },
+    {
+      "source_id": "rw2-ops-cmr9",
+      "official_url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+      "method": "Reviewer retrieved the full official-URL text earlier in the same2026-10-29 work and reread9.21(1)–(2),(6),(10)–(12) and9.23(2)(f),(5) for this peer review. Official landing page confirms12/6/2024 posting.",
+      "evidence": [
+        "recovery/unit2-personnel-primary-text.txt",
+        "turn48search1"
+      ]
+    },
+    {
+      "source_id": "rw2-ops-cmr20",
+      "official_url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+      "method": "Reviewer freshly retrieved official-URL full text through Exa and reread20.05(1)–(3) to verify the declared unresolved reporting-clock boundary.",
+      "evidence": [
+        "recovery/unit2-operations-peer-primary.txt"
+      ]
+    },
+    {
+      "source_id": "rw2-ops-mgl112-39",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39",
+      "method": "Official Legislature HTML opened and statutory body read on2026-10-29.",
+      "evidence": [
+        "turn48view0"
+      ]
+    },
+    {
+      "source_id": "rw2-ops-mgl94c-1",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section1",
+      "method": "Official Legislature HTML opened on2026-10-29; the controlled-substance definition was read. The retrieved page shows anOctober28 header, so no origin-freshness timestamp is inferred.",
+      "evidence": [
+        "turn48view1"
+      ]
+    },
+    {
+      "source_id": "rw2-ops-nabp-pre2027",
+      "official_url": "https://nabp.pharmacy/programs/examinations/mpje/competency-statements/",
+      "method": "Reviewer opened the official current page earlier in the same2026-10-29 work and read1.1,4.2,4.7 and theMarch1,2027 transition notice. Scope mapping only, not legal authority.",
+      "evidence": [
+        "turn41view0"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "question_id": "MA-RW-0055",
+      "legacy_question_id": "MA-EXP-0155",
+      "question_sha256": "3fa0bfca2b5964d8ffe7735a97b5d9e2bdd6e109fa62587644069da940cdc709",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "C"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. 6.02(1) requires the facility license to dispense a stated Massachusetts controlled substance. c.94C §1 includes substances in any state schedule; limiting stock to Schedule VI does not supply a facility exception.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.02(1)"
+            },
+            {
+              "source_id": "rw2-ops-mgl94c-1",
+              "exact_section": "M.G.L. c. 94C, §1, definition of Controlled substance"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The proposed MOR signature is an application component under 6.04(2)(a), and the retail permit remains a Board-issued authorization under c.112 §39. Personal management responsibility does not issue the pending facility license.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.02(1); 6.04(2)(a)"
+            },
+            {
+              "source_id": "rw2-ops-mgl112-39",
+              "exact_section": "M.G.L. c. 112, §39, first paragraph"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. The stated new retail storefront is within the Drug Store Pharmacy route, not the institutional sterile-compounding alternative. Its personal pharmacist license does not satisfy 6.02(1). The explanation correctly avoids claiming that this single license completes every other opening requirement.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.02(1)"
+            },
+            {
+              "source_id": "rw2-ops-mgl112-39",
+              "exact_section": "M.G.L. c. 112, §39, first paragraph"
+            },
+            {
+              "source_id": "rw2-ops-mgl94c-1",
+              "exact_section": "M.G.L. c. 94C, §1, definition of Controlled substance"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. 6.02(1) applies to dispensing; subsections(2)–(3) add separate compounding licenses. Finished manufacturer packaging does not erase the base dispensing-license requirement.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.02(1)–(3)"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "A still-pending retail facility application is insufficient despite an active pharmacist license, MOR designation, Schedule VI-only stock, and absence of compounding. One correct answer; none of the three supposed substitutes issues the facility permit.",
+        "scenario_realism": "A staged retail opening using finished Schedule VI products is a plausible licensing misunderstanding. Each distractor names a different proposed substitute for the missing facility permission.",
+        "decision_path_uniqueness": "Compared with MA-REV-0012’s renewal calendars, this case applies the prerequisite for first dispensing. CanonicalMA-Q-0216 tests an additional sterile license after the base license already exists; the present case lacks the base license. Related licensing concepts exist; this is not a claim of a globally new rule.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "SBA key length was assessed in both characters and word tokens. This item’s key is not uniquely longest by characters. The sole-word-longest cases0056 and0057 differ by one and two tokens from their nearest alternatives and retain comparable action units; no substantive length cue was identified.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "4.7"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0012",
+        "MA-Q-0216"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    },
+    {
+      "question_id": "MA-RW-0056",
+      "legacy_question_id": "MA-EXP-0159",
+      "question_sha256": "6b815e6484206bbde93035cf0ae0aa16a1b164209cdd9389118c97762ea2bd18",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "B"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. 6.04(7) has a separate initial-opening condition; the stated unexpired license does not remove it.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.04(7)"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. Fourteen months exceeds one calendar year after Board application approval, and the regulation expressly provides the written-permission route for a later opening. It is a step required before this delayed opening, not a guarantee that permission will be granted.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.04(7)"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The claim that the Board cannot permit a later opening contradicts the express second branch of 6.04(7). The item does not prohibit the Board from requiring additional information.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.04(7)"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. Board approval of the application is the specified trigger. Initial receipt of medication stock is not the trigger in this provision.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.04(7)"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "6.04(7) directly supports the written-permission branch beyond one calendar year. The scenario deliberately separates the approval, opening, and printed expiration dates and does not assert that permission is automatic.",
+        "scenario_realism": "Construction delay and an unexpired permit create a credible competing-calendar mistake. The false new-application inevitability and stock-receipt trigger are distinct misunderstandings.",
+        "decision_path_uniqueness": "MA-REV-0012 and canonicalMA-Q-0221 decide regular expiration/renewal timing. This case requires the separate delayed-initial-opening permission. The material trigger and required administrative action differ.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "SBA key length was assessed in both characters and word tokens. This item’s key is not uniquely longest by characters. The sole-word-longest cases0056 and0057 differ by one and two tokens from their nearest alternatives and retain comparable action units; no substantive length cue was identified.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "4.7"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0012",
+        "MA-Q-0221"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    },
+    {
+      "question_id": "MA-RW-0057",
+      "legacy_question_id": "MA-EXP-0163",
+      "question_sha256": "4092c92a451b2b30647096b11d9f8681f9c5726d97b0c6b8fcc4b701a79b9d80",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "D"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. 6.09(1)(a)2 gives the good-standing proof a three-month benchmark; paragraph3 gives the inspection a two-year benchmark. Applying the former to both documents is wrong.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.09(1)(a)2–3"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. Two-month proof satisfies paragraph2, while a thirty-month inspection fails paragraph3. A home-state renewal cycle is not a substitute inspection freshness benchmark.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.09(1)(a)2–3"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. Active home-state licensure and dated application documents are independent requirements. Current licensure does not make the thirty-month inspection current for this application.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.09(1)(a)2–3"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. The two-month proof is within three months, and the inspection must have occurred within the preceding two years. The rationale retains the Board’s additional-inspection discretion under6.09(1)(b).",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.09(1)(a)2–3; 6.09(1)(b)"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "The exact three-month proof and two-year inspection provisions were read. With other application components stipulated complete, one document meets the benchmark and the other does not; no assumption about equivalent home-state authorization changes that result.",
+        "scenario_realism": "An application reviewer choosing which dated document to replace is a practical task. All alternatives assess the same two documents, avoiding unrelated licensing trivia.",
+        "decision_path_uniqueness": "MA-REV-0022 asks whether separate Massachusetts nonresident authorization is needed before shipment. This case is already in the application process and separates two document ages. The replaced legacy representative had both documents outside their limits; the new condition changes which document needs replacement.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "SBA key length was assessed in both characters and word tokens. This item’s key is not uniquely longest by characters. The sole-word-longest cases0056 and0057 differ by one and two tokens from their nearest alternatives and retain comparable action units; no substantive length cue was identified.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "4.7"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0022",
+        "MA-EXP-0163"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    },
+    {
+      "question_id": "MA-RW-0058",
+      "legacy_question_id": "MA-EXP-0167",
+      "question_sha256": "e79e34c302dc6844e948afa23fb2e3f3094af94457bae1babfd2524a9d431f32",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "A"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. 9.21(1) requires the secured prescription area, (2) adds appropriate CII storage, (6) assigns security/access responsibility to the MOR and pharmacist on duty, and (10) includes expired or return-pending stock. The answer restores both location and storage compliance.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr9",
+              "exact_section": "247 CMR 9.21(1)–(2), (6), (10)"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. Removal from saleable stock does not remove security duties because9.21(10) expressly covers expired stock pending disposition.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr9",
+              "exact_section": "247 CMR 9.21(1), (10)"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. A locked front-store office remains outside the prescription area. Meeting one access-control feature cannot replace9.21(1)’s location requirement.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr9",
+              "exact_section": "247 CMR 9.21(1)–(2), (10)"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The on-duty pharmacist has a current security responsibility under9.21(6). Logging a concern for the next MOR shift does not make the present storage compliant.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr9",
+              "exact_section": "247 CMR 9.21(1), (6), (10)"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "The resident retail setting and absence of an already completed reverse-distribution transfer keep9.21 applicable. The on-duty pharmacist’s current responsibility is explicit; a routine day off does not require adjudicating the extended-absence MOR appointment rules.",
+        "scenario_realism": "Return-pending stock stored by front-store staff is a credible workflow failure. The locked-office alternative is plausible but still misses the secured-prescription-area requirement.",
+        "decision_path_uniqueness": "MA-REV-0080 requires retaining already secured expired stock in on-hand accounting; this case requires physical relocation and compliant storage now. MA-REV-0013 concerns simultaneous MOR appointments. CanonicalMA-Q-0102 shares security restoration but uses a broken cabinet and no-loss/reporting distinction; the present scope should be described as representative practice improvement, not a globally unprecedented security decision.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "SBA key length was assessed in both characters and word tokens. This item’s key is not uniquely longest by characters. The sole-word-longest cases0056 and0057 differ by one and two tokens from their nearest alternatives and retain comparable action units; no substantive length cue was identified.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "1.1",
+            "4.2"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0013",
+        "MA-REV-0080",
+        "MA-Q-0102"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    },
+    {
+      "question_id": "MA-RW-0059",
+      "legacy_question_id": "MA-EXP-0171",
+      "question_sha256": "905dab5bd0bd81e7bfd6613d0a2d0a1d0de249522884fb190b35644762498ecd",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "B",
+        "C",
+        "E"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The licensee or representative may sign the application, while6.10(2)(a)’s unavailable-MOR inventory-report substitute is an authorized staff pharmacist. A nonpharmacist owner’s application signature does not qualify as that report signature.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.10(2), opening paragraph; 6.10(2)(a)"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. The opening paragraph of6.10(2) calls for the licensee or duly authorized representative and the proposed new MOR to sign the application. The option chooses one of the stated licensee-side alternatives and does not require a separate representative if the licensee signs personally.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.10(2), opening paragraph"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE WITH STATED BOUNDARY. Serious illness is an expressly listed unavailability reason. The final stem says the authorized staff pharmacist actually participated in the inventory and the incoming MOR signed; the option uses the authorized staff report-signature route and Board notification at application submission. It does not claim that a staff signature alone replaces the application, the inventory attestation, or every required signature.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.10(2)(a), staff-pharmacist inventory-report exception"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. An inventory report cannot replace the change application required by6.10(1)–(2). The other application components remain relevant; the option is not merely suggesting an additional inventory attachment.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.10(1)–(2)"
+            }
+          ]
+        },
+        {
+          "choice_id": "E",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. The attestation includes that the inventory report was filed with the pharmacy’s controlled-substance records. Submitting the application does not eliminate pharmacy custody of the actual report.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.10(2)(a), inventory and filing attestation"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "All five choices were checked against the exact6.10(2) opening paragraph and6.10(2)(a). The final stem cures the previously raised missing-participation concern. The literal distinction between application, inventory report, and attestation remains visible; the selected answers are appropriate steps, not a declaration that these alone form a complete approved application.",
+        "scenario_realism": "Serious illness preventing a departing manager’s handover signature is an expressly contemplated practice circumstance. The new-MOR and staff-pharmacist participation facts support a truthful handover record.",
+        "decision_path_uniqueness": "MA-REV-0014 tests which schedules enter an ordinary handover inventory. This case stipulates the correct inventory scope and changes the departing MOR’s availability, permitting a staff-pharmacist report-signature route that is unavailable merely for convenience in canonicalMA-Q-0389.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "Three of five SATA choices are true. The true and false choices have similar length and complete action units; this is not an all-correct pattern.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "4.2",
+            "4.7"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0014",
+        "MA-Q-0389"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    },
+    {
+      "question_id": "MA-RW-0060",
+      "legacy_question_id": "MA-EXP-0175",
+      "question_sha256": "321a665d6599643fc3d98190868a11663ba721dfb6c2fc1bf5248416392d35bd",
+      "disposition": "KEEP",
+      "answer_key_correct": true,
+      "reviewed_key": [
+        "C"
+      ],
+      "choice_reviews": [
+        {
+          "choice_id": "A",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The name notice can be timely, but6.04(8) makes the pharmacy license nontransferable and6.11(2) separately requires the proposed new licensee’s application. An unchanged address does not transfer the seller’s permit.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.04(8); 6.11(2); 6.12"
+            }
+          ]
+        },
+        {
+          "choice_id": "B",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The name event occurred five days ago. Waiting until fourteen days before a sale six weeks away would miss6.12’s separate fourteen-day name-notice period. The future sale does not restart the earlier clock.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.11(1)–(2); 6.12"
+            }
+          ]
+        },
+        {
+          "choice_id": "C",
+          "keyed_correct": true,
+          "assessed_truth": "TRUE",
+          "finding": "TRUE. 6.12 requires written name-change notice with authorizing documentation within fourteen days;6.11(1)–(2) imposes the seller notice and buyer application at least fourteen days before ownership transfer. The rationale preserves documentation and Board approval as separate from timely filing.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.11(1)–(3); 6.12"
+            }
+          ]
+        },
+        {
+          "choice_id": "D",
+          "keyed_correct": false,
+          "assessed_truth": "FALSE",
+          "finding": "FALSE. The post-change fourteen-day name rule cannot be reused as the ownership filing rule. Both ownership duties are expressly at least fourteen days before transfer.",
+          "exact_authorities_rechecked": [
+            {
+              "source_id": "rw2-ops-cmr6",
+              "exact_section": "247 CMR 6.11(1)–(2); 6.12"
+            }
+          ]
+        }
+      ],
+      "quality_axes": {
+        "legal_correctness": "The already-effective operating-name change and future transfer to a different legal entity trigger different directions of fourteen-day filing rules. The single correct sequence addresses both; it does not treat timely filing as approval or as fulfillment of stock-transfer requirements.",
+        "scenario_realism": "Bundling administrative filings during a sale is plausible, and the proposed delay would concretely miss the earlier deadline. Alternatives have comparable two-step structures.",
+        "decision_path_uniqueness": "MA-REV-0016 covers the sale obligations generally. CanonicalMA-Q-0390 covers rename-only notification andMA-Q-0362 covers the seller’s independent sale notice. This case combines a completed name change with a later sale so waiting for the later event would miss the earlier clock. The actual added event changes the required sequence; underlying rules are already represented elsewhere.",
+        "distractor_quality": "All distractors state a recognizable alternative authorization, trigger, actor, document, or storage interpretation. No edit is required on the reviewed input.",
+        "answer_pattern_bias": "SBA key length was assessed in both characters and word tokens. This item’s key is not uniquely longest by characters. The sole-word-longest cases0056 and0057 differ by one and two tokens from their nearest alternatives and retain comparable action units; no substantive length cue was identified.",
+        "explanation_quality": "Every keyed and unkeyed choice has its own Korean reason. The explanation distinguishes the permissive rule, limiting condition, and required action without borrowing an unrelated clock.",
+        "source_precision": "Each choice resolves to the exact official provision actually reread. The posted-document and extraction limitations are recorded below; no fresh raw-PDF identity is certified.",
+        "exam_relevance": {
+          "outline": "MPJE-MA-PRE2027",
+          "competency_codes": [
+            "4.7"
+          ],
+          "finding": "Codes agree with the current pre-2027 NABP statements for facility licensure, inventory/security, or pharmacist responsibility. The future outline is not applied."
+        }
+      },
+      "comparison_items_read": [
+        "MA-REV-0016",
+        "MA-Q-0390",
+        "MA-Q-0362"
+      ],
+      "source_boundary": "Within-team peer review of the stated facts and cited sections only. These six questions do not adjudicate the conflicting ten-day versus fourteen-day individual MOR resignation notification language.",
+      "findings": []
+    }
+  ],
+  "answer_pattern_metrics": {
+    "types": {
+      "SBA": 5,
+      "SATA": 1
+    },
+    "SBA_keys": {
+      "C": 2,
+      "B": 1,
+      "D": 1,
+      "A": 1
+    },
+    "all_correct_SATA": 0,
+    "sole_longest_SBA_key_characters": 0,
+    "sole_longest_SBA_key_words": 2,
+    "word_tokenization": "Python regex word-boundary word-character tokens; not a psychometric measurement.",
+    "item_lengths": [
+      {
+        "question_id": "MA-RW-0055",
+        "character_lengths": {
+          "A": 132,
+          "B": 123,
+          "C": 134,
+          "D": 134
+        },
+        "word_lengths": {
+          "A": 17,
+          "B": 15,
+          "C": 17,
+          "D": 18
+        },
+        "key": [
+          "C"
+        ],
+        "sole_longest_key_characters": false,
+        "sole_longest_key_words": false
+      },
+      {
+        "question_id": "MA-RW-0056",
+        "character_lengths": {
+          "A": 108,
+          "B": 105,
+          "C": 92,
+          "D": 95
+        },
+        "word_lengths": {
+          "A": 15,
+          "B": 17,
+          "C": 16,
+          "D": 16
+        },
+        "key": [
+          "B"
+        ],
+        "sole_longest_key_characters": false,
+        "sole_longest_key_words": true
+      },
+      {
+        "question_id": "MA-RW-0057",
+        "character_lengths": {
+          "A": 117,
+          "B": 123,
+          "C": 126,
+          "D": 125
+        },
+        "word_lengths": {
+          "A": 19,
+          "B": 19,
+          "C": 17,
+          "D": 21
+        },
+        "key": [
+          "D"
+        ],
+        "sole_longest_key_characters": false,
+        "sole_longest_key_words": true
+      },
+      {
+        "question_id": "MA-RW-0058",
+        "character_lengths": {
+          "A": 105,
+          "B": 114,
+          "C": 116,
+          "D": 100
+        },
+        "word_lengths": {
+          "A": 18,
+          "B": 17,
+          "C": 19,
+          "D": 19
+        },
+        "key": [
+          "A"
+        ],
+        "sole_longest_key_characters": false,
+        "sole_longest_key_words": false
+      },
+      {
+        "question_id": "MA-RW-0059",
+        "character_lengths": {
+          "A": 116,
+          "B": 108,
+          "C": 111,
+          "D": 120,
+          "E": 122
+        },
+        "word_lengths": {
+          "A": 17,
+          "B": 16,
+          "C": 18,
+          "D": 17,
+          "E": 17
+        },
+        "key": [
+          "B",
+          "C",
+          "E"
+        ]
+      },
+      {
+        "question_id": "MA-RW-0060",
+        "character_lengths": {
+          "A": 136,
+          "B": 133,
+          "C": 123,
+          "D": 136
+        },
+        "word_lengths": {
+          "A": 22,
+          "B": 23,
+          "C": 22,
+          "D": 23
+        },
+        "key": [
+          "C"
+        ],
+        "sole_longest_key_characters": false,
+        "sole_longest_key_words": false
+      }
+    ]
+  },
+  "comparison_scope": {
+    "closest_quality_items_read": [
+      "MA-REV-0012",
+      "MA-REV-0013",
+      "MA-REV-0014",
+      "MA-REV-0016",
+      "MA-REV-0022",
+      "MA-REV-0080"
+    ],
+    "closest_canonical_items_read": [
+      "MA-Q-0216",
+      "MA-Q-0221",
+      "MA-Q-0102",
+      "MA-Q-0389",
+      "MA-Q-0390",
+      "MA-Q-0362"
+    ],
+    "assigned_legacy_scenarios_read": [
+      "MA-EXP-0155",
+      "MA-EXP-0159",
+      "MA-EXP-0163",
+      "MA-EXP-0167",
+      "MA-EXP-0171",
+      "MA-EXP-0175"
+    ],
+    "previous_rewrite_topics_scenarios_available": 46,
+    "normalized_exact_stem_matches_against_prior96_and46": [],
+    "limit": "The reviewer read the cited closest cases and their options, not every canonical question. Underlying licensing/security rules overlap other corpus items. No global new-decision total or global semantic-duplicate-free certification is asserted."
+  },
+  "prior_concern_resolution": {
+    "question_id": "MA-RW-0059",
+    "concern": "An earlier draft was reported by the parent to omit whether the staff pharmacist actually participated in the inventory, permitting an unintended reading of after-the-fact signature substitution.",
+    "current_input_evidence": "The reviewed a27daa input explicitly states that the proposed new MOR and authorized staff pharmacist completed the handover inventory, and that the new MOR signed the report.",
+    "resolution": "Resolved for this current input. The staff role is anchored in actual participation and a listed serious-illness circumstance. The text does not claim that the staff report signature alone makes the whole application complete."
+  },
+  "unresolved_out_of_scope_authority": {
+    "issue": "Individual MOR resignation/termination notice is ten days in9.23(2)(f) but fourteen calendar days in20.05(3).",
+    "disposition": "REMAINS_UNRESOLVED_OUTSIDE_KEYED_ITEMS",
+    "effect": "No definitive notification-clock answer is used by any of these six cases. The separate facility20.05(1) duty is not confused with the individual provision."
+  },
+  "limits": [
+    "Official Mass.gov full-text extractions may use a crawler cache. Matching posted dates and indexed provisions do not establish a verified origin-PDF binary or response-header version.",
+    "This team peer review is not a fresh independent canonical LEGAL_VERIFICATION or REALISM_REVIEW session, and author/editor source checks do not satisfy canonical release gates.",
+    "The six current keys and25 option propositions were assessed. Broader medication, facility, or administrative-law applicability is limited to the stated facts.",
+    "No question/source file, canonical audit, existing question ID, history record, bookmark, or release status was modified by this reviewer.",
+    "No CI, publication build, HTTP, browser, or deployment result is claimed in this content-review report."
+  ],
+  "independent_legal_audit_completed": false,
+  "independent_realism_audit_completed": false,
+  "canonical_release_changed": false
+}

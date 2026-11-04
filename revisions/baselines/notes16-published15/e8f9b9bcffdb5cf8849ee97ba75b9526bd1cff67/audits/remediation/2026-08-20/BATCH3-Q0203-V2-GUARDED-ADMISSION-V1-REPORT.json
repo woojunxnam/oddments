@@ -1,0 +1,127 @@
+{
+  "report_type": "BATCH3_Q0203_V2_GUARDED_ADMISSION_V1",
+  "tranche_id": "BATCH3-Q0203-V2",
+  "controller_issue": 83,
+  "authorizing_issue": 91,
+  "date": "2026-08-20",
+  "source_branch": "codex/batch3-q0203-v2-repair",
+  "represented_candidate_sha": "78a76aa9d9646ed28fdcca678e7e274da2489f7b",
+  "released_count": 1,
+  "released_ids": [
+    "MA-Q-0203"
+  ],
+  "evidence": {
+    "MA-Q-0203": {
+      "legal": "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+      "realism": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+    }
+  },
+  "current_question_hashes": {
+    "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+  },
+  "question_hashes_before_and_after_equal": true,
+  "current_hash_gate": "PASS",
+  "family_matrix_changes": {
+    "B2_ORAL_LIQUID_SINGLE_DOSE_SCOPE": {
+      "current_candidate_count": [
+        1,
+        1
+      ],
+      "current_released_count": [
+        0,
+        1
+      ]
+    }
+  },
+  "preview": {
+    "before_count": 365,
+    "after_count": 366,
+    "added_ids": [
+      "MA-Q-0203"
+    ],
+    "removed_ids": [],
+    "source_audits_added": [
+      "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+      "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+    ],
+    "source_audits_unique": true,
+    "q0028_present_after": false
+  },
+  "release_assertions": {
+    "exactly_tranche_released": true,
+    "audited_content_unchanged": true,
+    "no_unrelated_question_state_change": true,
+    "no_registry_semantic_mutation": true,
+    "q0028_not_released": true,
+    "q0028_not_previewed": true,
+    "q0190_untouched": true
+  },
+  "release_boundary_failures": [],
+  "preflight": {
+    "01_recomputed_current_hashes": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": "ce251a6a745881352e0dfbc030efd479603cf96c4d43d2a1ae3a3cfed76c335d"
+      }
+    },
+    "02_not_already_released": {
+      "status": "PASS",
+      "detail": "all candidates are unreleased"
+    },
+    "03_current_hash_legal_and_realism_evidence": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": {
+          "legal": "AUDIT-GPT-FRESH-B3-Q0203-V2-LEGAL-REAUDIT-2026-08-20",
+          "realism": "AUDIT-GPT-FRESH-B3-Q0203-V2-REALISM-REAUDIT-2026-08-20"
+        }
+      }
+    },
+    "04_valid_initial_audit_history": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": [
+          "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15"
+        ]
+      }
+    },
+    "05_dependency_verification": {
+      "status": "PASS",
+      "detail": {
+        "MA-Q-0203": {
+          "rules": {
+            "MA-COMPLIANCE-PACKAGING": {
+              "content_version": 2,
+              "content_hash": "98da9e6947a6bb5feee600f1e52ed1324c609442f99cd72828922001d000f91d"
+            }
+          },
+          "drugs": {
+            "methylphenidate": {
+              "content_version": 1,
+              "content_hash": "4811f9e9c4762186f029fcbae5fd038dc81759a9e252b252d82ef3f26204b18c"
+            }
+          }
+        }
+      }
+    },
+    "06_no_current_hash_failure": {
+      "status": "PASS",
+      "detail": "none"
+    },
+    "07_quarantine_intact": {
+      "status": "PASS",
+      "detail": {
+        "verification_status": "AUDIT_PENDING",
+        "in_preview": false
+      }
+    },
+    "08_preview_captured_before_mutation": {
+      "status": "PASS",
+      "detail": {
+        "preview_before_count": 365,
+        "released_before_count": 365,
+        "tranche_in_preview_before": []
+      }
+    }
+  }
+}

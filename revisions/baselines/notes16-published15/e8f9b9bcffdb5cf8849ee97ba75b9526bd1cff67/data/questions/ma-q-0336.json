@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0336",
+  "family_id": "CDTM_IMMEDIATE_TREATMENT_PROCUREMENT_CHANNEL",
+  "area": 2,
+  "topic": "Collaborative practice",
+  "subtopic": "Precondition on the power",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A Massachusetts collaborating pharmacist holds a Department registration for the purpose of prescribing and a valid agreement. She wishes to dispense a Schedule VI product for immediate treatment. That particular product is not among those her agreement authorises her to prescribe. May she do so?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Yes, because immediate treatment is a separate power from prescribing."
+    },
+    {
+      "id": "B",
+      "text": "Yes, because the product sits in Schedule VI, the least restricted schedule."
+    },
+    {
+      "id": "C",
+      "text": "Yes, provided she notifies the supervising physician within 24 hours."
+    },
+    {
+      "id": "D",
+      "text": "No, because the power runs only to substances she is authorised to prescribe."
+    },
+    {
+      "id": "E",
+      "text": "No, because dispensing for immediate treatment requires a patient-specific order."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "The immediate-treatment power at 105 CMR 700.003(G)(5) is expressly conditioned: the pharmacist may dispense a controlled substance for immediate treatment PROVIDED the pharmacist is authorized by 700.003(G) to prescribe such controlled substance. Prescribing authority for that substance is the gate, and holding a prescribing-purpose registration does not supply it.",
+    "choice_analysis": {
+      "A": "The two powers are linked by an express proviso.",
+      "B": "Schedule alone does not answer the proviso.",
+      "C": "Notification does not cure a missing precondition.",
+      "D": "Correct: the proviso ties the power to what she may prescribe.",
+      "E": "A patient-specific order is the supply route for other schedules, not the gate here."
+    },
+    "related_facts": [
+      "Schedule VI stock for this purpose may be ordered from a wholesaler"
+    ],
+    "mpje_trap": "Candidates treat immediate-treatment dispensing as an emergency power standing on its own."
+  },
+  "rule_ids": [
+    "MA-CDTM-IMMEDIATE-TREATMENT-SUPPLY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Read the proviso attached to the immediate-treatment power",
+    "Check whether the agreement authorises prescribing of this substance",
+    "Separate registration from agreement authority"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-20",
+  "audits": [
+    "AUDIT-CLAUDE-FRESH-B3D-V3-LEGAL-INITIAL-2026-08-20",
+    "AUDIT-CLAUDE-FRESH-B3D-V3-REALISM-INITIAL-2026-08-20"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT Desktop release-governance controller under Issue #91 after the independent CLAUDE-FRESH-B3D-V3 blind-locked legal and full-bank realism audit",
+    "date": "2026-08-20",
+    "notes": "Batch 3 B3-D v3 guarded admission of 31 of 35 questions. CLAUDE-FRESH-B3D-V3 returned LEGAL KEEP and Existing_Answer_Correct YES plus REALISM PASS for these 31 current hashes. MA-Q-0340 and MA-Q-0348 are held back because the independent legal audit found their canonical keys wrong; MA-Q-0350 and MA-Q-0359 are held back for realism failures. Their negative audit history remains preserved at the audited hashes. MA-Q-0311 and MA-Q-0322 are admitted only on the fresh B3-D v3 evidence covering their post-correction current hashes, never on stale B3-C evidence. The Phase-1 blind lock was committed before canonical-key access. MA-Q-0028 remains quarantined and MA-Q-0172 remains on hold.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-CDTM-IMMEDIATE-TREATMENT-SUPPLY": {
+          "content_version": 1,
+          "content_hash": "334624bd1020cfd0793028ac6df798ff0242fe862f41f078a2a97f677ebfd072"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

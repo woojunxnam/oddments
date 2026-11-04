@@ -1,0 +1,1246 @@
+# PROFESSIONAL PRACTICE STANDARDS
+
+## 247 CMR 9.00:
+
+## Section
+
+9.01:   General Practice Standards 
+9.02:   Prescriptions by Mail 
+9.03:   Advertising 
+9.04:   Requirements for Dispensing and Refilling Prescriptions 
+9.05:   Interchangeable Drugs 
+9.06:   Opioid Antagonists 
+9.07:   Reusable Daily Dosage Planners 
+9.08:   Compliance Packaging 
+9.09:   Emergency Medication Kits 
+9.10:   Automated Pharmacy Systems 
+9.11:   Pharmacy Processing Automation 
+9.12:   Automated Dispensing Devices 
+9.13:   Return to Stock 
+9.14:   Transfer of Prescriptions 
+9.15:   Verifying a Practitioner's Prescriptive Authority 
+9.16:   Maintenance of Pharmacy Records 
+9.17:   Prospective Drug Utilization Review 
+9.18:   Patient Counseling 
+9.19:   Pharmacy Operation 
+9.20:   Non-resident Pharmacies 
+9.21:   Security of Controlled Substances 
+9.22:   Proper Storage of Refrigerated and Frozen Medications 
+9.23:   Pharmacist Manager of Record 
+9.24:   Inspection and Investigation of Pharmacies 
+9.25:   Plans of Correction
+
+## <u>9.01:</u> General Practice Standards
+
+(1) A licensee shall conduct professional activities in conformity with M.G.L. c. 112, §§ 24 
+through 42D, M.G.L. c. 94C, and 247 CMR 2.00: *Definitions.*
+
+(2) A licensee may not process a prescription; dispense a drug, device, or other substance; or 
+administer a controlled substance or vaccine in a manner which is intended, either directly or 
+indirectly, to circumvent any law or regulation governing the practice of pharmacy.
+
+(3) Unless otherwise regulated by the Board, a licensee shall adhere to the most current 
+standards established by each chapter of the United States Pharmacopeia ("USP").
+
+(4) A pharmacist shall practice pharmacy within the scope of his or her education, training, and 
+experience and within the recognized pharmacist scope of practice.
+
+(5) Unless otherwise permitted by law, regulation, or Board policy, a licensee may not 
+re-dispense any medication which has been previously dispensed.
+
+(6) A licensee may not accept or purchase medications designated as "drug samples not for 
+resale" for the purpose of compounding, repacking, or in any way reselling said medications.
+
+(7) A pharmacy shall accept a medication that it previously dispensed to a patient if the 
+medication:
+
+(a) was dispensed to the patient in error; or
+
+(b) is suspected to be defective or contaminated.
+
+A medication accepted by a pharmacy pursuant to 247 CMR 9.01 may not be returned to the 
+pharmacy's inventory and must be quarantined and properly disposed. A pharmacy is not 
+required to accept a medication from a patient that was properly dispensed and not defective at 
+the time it was dispensed.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.01:   continued
+
+(8) While on duty, a pharmacist shall be responsible for the proper preservation, storage, and 
+security of all controlled substances in the pharmacy.
+
+(9) A licensee may not engage in any fraudulent or deceptive act.
+
+(10) A licensee may not in any way aid or abet the unlawful practice of pharmacy.
+
+(11) A licensee may not offer, solicit, or receive remuneration or anything of value to or from 
+any person who owns, operates, manages, or is an employee of a hospital, nursing home, or other 
+health care facility in return for a referral to a pharmacy, pharmacist, pharmacy technician, or 
+pharmacy intern or the generation of business from sale or furnishing of any drugs, devices, or 
+services to any such persons or institutions.
+
+(12) A licensee may not dispense or distribute any expired, outdated, defective, contaminated, 
+counterfeit, contraband, or otherwise substandard drug or device to any person or entity who is 
+not licensed or legally authorized to receive such drug or device.
+
+(13) Unless otherwise permitted by law, a pharmacist connected with, or employed by, a 
+hospital or clinic pharmacy that does not hold a Drug Store pharmacy license may not dispense 
+drugs to any person other than inpatients or outpatients of the hospital or clinic, or to employees 
+of said hospital or clinic, or to said employees' spouses and children who live in the same 
+household with said employees.
+
+(14) A licensee may not provide any practitioner with blank prescription forms which refer to 
+any pharmacist or pharmacy.
+
+(15) A licensee may not refuse to compound simple or moderate non-sterile compounded 
+preparations customary to the community needs except upon extenuating circumstances or by 
+a waiver of Board regulation.
+
+(16) A licensee shall maintain patient confidentiality and protect a patient's confidential 
+information.
+
+(17) A pharmacist, pharmacy intern, or pharmacy technician may not practice in a pharmacy 
+for more than 12 hours in a 24 hour period without completing an eight consecutive hour rest 
+period prior to resuming work in a pharmacy. In the event of an extenuating circumstance, a 
+pharmacist, pharmacy intern, or pharmacy technician may exceed 12 hours in order to act in the 
+best interest of the patient, provided the time in excess of 12 hours is minimized and the licensee 
+documents the extenuating circumstance.
+
+(18) A pharmacist, pharmacy intern, and pharmacy technician shall carry, post on the wall of 
+the pharmacy where he or she works, or have readily available at the pharmacy where he or she 
+works, a license issued by the Board.
+
+(19) A pharmacist shall wear a name tag with at least his or her first name and the title 
+"Pharmacist", "Registered Pharmacist", or "R.Ph.".
+
+(20) A pharmacist shall maintain an NABP e-profile number.
+
+(21) A pharmacist shall comply with all elements of a drug's FDA required risk evaluation and 
+mitigation strategy ("REMS"), including any distribution or dispensing restriction included in 
+its REMS.
+
+## <u>9.02:</u> Prescriptions by Mail
+
+(1) A pharmacy and pharmacist may dispense prescription drugs by mail or common carrier in 
+a manner consistent with federal and state laws and regulations.
+
+(2) A pharmacy shall ensure that packing, shipping, and transportation processes do not 
+adversely affect the integrity or stability of medications dispensed by mail.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.02:   continued
+
+(3) A pharmacy shall maintain policies and procedures regarding packing, shipping, 
+transporting, and delivering controlled substances.
+
+## <u>9.03:</u> Advertising
+
+A licensee may not engage in any advertising that is false, deceptive, or misleading.
+
+## <u>9.04:</u> Requirements for Dispensing and Refilling Prescriptions
+
+(1) A licensed pharmacist is responsible for the final dispensing process validation of a 
+prescription.
+
+(2) A pharmacy shall utilize a computerized pharmacy system for processing prescriptions and 
+for maintaining patient profiles.
+
+(3) A licensee shall ensure the label affixed to a prescription drug container or package is 
+clearly printed by a computerized pharmacy system. In the event of printing or equipment 
+failure, a prescription label may be legibly handwritten or typed during an emergency period.
+
+(4) A pharmacy that provides bed-side delivery service of discharge prescriptions to patients 
+in an inpatient healthcare facility must obtain patient consent to provide such services and may 
+not restrict a patient's freedom of choice of pharmacy services. A pharmacy that provides 
+bed-side delivery service shall deliver any medications directly to the patient or patient's agent.
+
+(5) A licensee shall adhere to 105 CMR 721.000: *Standards for Prescription Format and* 
+*Security in Massachusetts* when dispensing a controlled substance in Schedule II in an 
+emergency situation.
+
+(6) A pharmacist who refills a prescription for a controlled substance in Schedules III through 
+VI shall record the following information in the computerized pharmacy system or on the written 
+prescription:
+
+(a) the date of dispensing;
+
+(b) the amount of drug dispensed; and
+
+(c) his or her initials.
+
+(7) Whenever a prescription drug has been distributed solely under a generic name, the 
+dispensing pharmacist shall record the NDC number in the computerized pharmacy system. In 
+the event an NDC number does not exist, the pharmacist shall record the name of the 
+manufacturer, or, if the manufacturer's name is not available, the name of the distributor, packer, 
+or repacker.
+
+(8) A pharmacy intern, or certified pharmacy technician who has the approval of the pharmacist 
+on duty may receive new prescriptions over the telephone from a prescriber or authorized agent.
+
+(9) A pharmacist or individual acting on behalf of a pharmacy may not collect prescriptions at 
+industrial plants, places of business, or other sites where specific groups of people are regularly 
+employed or affiliated, unless the following requirements are met:
+
+(a) the prescriptions are written for persons regularly employed at, or affiliated with, such 
+plant, place of business, or other such site or the immediate family members living at the 
+same address of persons regularly employed at, or affiliated with, such plant, place of 
+business, or other such site;
+
+(b) a pharmacist, pharmacy employee, or authorized agent of the pharmacy collects the 
+prescriptions in person;
+
+(c) a pharmacist, pharmacy employee, or authorized agent of the pharmacy dispenses the 
+prescription medications directly to the patient or patient's agent;
+
+(d) a pharmacist, pharmacy employee, or authorized agent of the pharmacy returns all 
+prescription medications that he or she does not dispense directly to a patient or patient's 
+agent to the pharmacy. Prescription medications may not be left or stored at the delivery 
+location; and
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+9.04:   continued
+
+(e) the pharmacist and pharmacy shall be responsible for the conduct of any pharmacy 
+employee or authorized agent acting on the pharmacist's behalf.
+
+(10) In order to determine whether a prescription is within date, a pharmacist shall count the 
+day after the prescription was written as day one.
+
+(11) A pharmacy may not dispense any medication that was processed outside its licensed 
+pharmacy premises unless said process was verified by a Massachusetts licensed pharmacist or 
+performed in a pharmacy licensed by the Board.
+
+(12) A prescription for a Schedule VI medication is valid for one year from the date of issue. 
+A licensee may not refill a Schedule VI prescription after one year. In the event a Schedule VI 
+prescription expires or has no remaining refills and the pharmacist is unable to obtain prescriber 
+authorization in a timely manner, the pharmacist in his or her professional judgment may 
+dispense a quantity not to exceed 14 days or the smallest available unit of use packaging.
+
+(13) A licensee may not fill or refill a prescription for a Schedule V controlled substance more 
+than six months after the date on which said prescription was issued. A prescription for a 
+Schedule V controlled substance may not be refilled more than five times.
+
+(14) Requirements for Positive Identification for Dispensing of a Controlled Substance in 
+Schedule II through V:
+
+(a) For the purposes of 247 CMR 9.04, Customer Identifier means the identification number 
+on a valid government issued identification, as specified by the Department, which a licensee 
+obtains by inspecting the identification of the ultimate user or agent of the ultimate user to 
+whom a prescription is dispensed.
+
+(b) A licensee shall require that a Customer Identifier be presented by the ultimate user or 
+agent of the ultimate user to whom a prescription for a controlled substance in Schedules II 
+through V, or a controlled substance classified as an additional drug in accordance with 
+105CMR 700.012(A)(1) is dispensed.
+
+(c) A licensee may dispense a controlled substance in Schedule II through V or an 
+additional drug without requiring a customer identifier provided that:
+
+1. the licensee has reason to believe that the failure to dispense the controlled substance 
+or additional drug would result in a serious hardship for the ultimate user or agent of the 
+ultimate user, and documents the reason; and
+
+2. the ultimate user or agent of the ultimate user prints his or her name and address on 
+the reverse side of the prescription or in an electronic or paper prescription log and signs 
+his or her name thereto.
+
+(d) The Commissioner may waive or modify the requirement for a customer identifier for 
+prescription refills, prescription deliveries or other activities specified in the PMP Data Entry 
+and Data Submitters Guide.
+
+(15) The requirements of 247 CMR 9.04(4), (5), (6), (9), (10), (12), (13), and (14) do not apply 
+to institutional sterile compounding pharmacies.
+
+## <u>9.05:</u> Interchangeable Drugs
+
+(1) <u>Medical Emergencies</u>
+
+(a) In a medical emergency a pharmacist may fill a prescription marked "no substitution" 
+by dispensing a less expensive interchangeable drug product as allowed by the *Massachusetts 
+List of Interchangeable Drugs* if the particular brand is not in stock; similarly, a pharmacist 
+may fill a prescription not marked "no substitution" in a medical emergency by dispensing 
+the brand name product as written if he or she has no less expensive interchangeable drug 
+product in stock to be dispensed.
+
+(b) In such instances, the pharmacist must record the date, hour, and nature of the medical 
+emergency on the back of the prescription or in the computerized pharmacy system and the 
+person purchasing the drug product must indicate acceptance of this deviation from the law 
+in writing. All such prescriptions shall be clearly identifiable and available for review by the 
+Board.
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+9.05:   continued
+
+(2) <u>Generic Prescriptions</u>. Upon receiving a prescription for a generic name drug product with 
+no manufacturer specified by the prescriber, a pharmacist may select, regardless of whether or 
+not the prescriber has marked "no substitution" on the prescription, any legally marketed drug 
+product whether or not it appears in the *Massachusetts List of Interchangeable Drugs,* in 
+accordance with the prescriber's intent and the normal exercise of professional judgment.
+
+## (3) Labeling
+
+(a) When a less expensive generic drug product has been dispensed, the words 
+"interchange" plus the generic name and manufacturer of the product shall appear on the 
+label in the following manner: "Interchange": (Generic name of less expensive drug product 
+dispensed plus manufacturer);
+
+(b) When a less expensive brand name drug product has been dispensed, the words 
+"interchange" plus either the generic name and manufacturer of the product or the less 
+expensive brand name dispensed shall appear on the label in the following manner: 
+"Interchange": (generic name of less expensive brand drug plus manufacturer of brand name 
+of less expensive drug product);
+
+(c) In addition to the above, the brand name of the prescribed drug product may also appear 
+on the label in the following manner: "Interchange": (name of less expensive generic drug 
+product plus manufacturer or brand name drug product actually dispensed) for (brand name 
+drug product dispensed);
+
+(d) Abbreviations are permissible as long as they are commonly understood. For example, 
+"IC" may be used for "interchange" and manufacturers' names may be abbreviated as shown 
+in the *Massachusetts List of Interchangeable Drugs;*
+
+(e) 247 CMR 9.05 shall only apply to prescriptions dispensed by a pharmacy with a Drug 
+Store Pharmacy License.
+
+## <u>9.06:</u> Opioid Antagonists
+
+(1) For purposes of 247 CMR 9.06:
+
+(a) High overdose area shall mean a geographical area that appears on a list published by 
+the Board, in consultation with the Department of Public Health, of areas with high incidence 
+of opiate overdose.
+
+(b) "Opioid antagonist information pamphlet" shall mean a Board approved pamphlet that 
+provides information about an opioid antagonist and responding to an overdose.
+
+(c) Opioid antagonist shall mean naloxone or any other drug approved by the United States 
+Food and Drug Administration as a competitive narcotic antagonist used in the reversal of 
+overdoses caused by opioids;
+
+(d) Statewide standing order shall mean an order issued by the Commissioner or a physician 
+designated by the Commissioner of the Department of Public Health and registered to 
+distribute or dispense controlled substances pursuant to M.G.L. c. 94C, § 19B;
+
+## (2) High overdose area:
+
+(a) A pharmacy located in a high overdose area shall maintain a continuous supply of 
+naloxone rescue kits or other approved opioid antagonists readily available for dispensing. 
+(b) A pharmacy that is not located a high overdose area may dispense naloxone rescue kits 
+or other approved opioid antagonists pursuant to the statewide standing order or a 
+prescription, provided that the pharmacy complies with all other provisions in 247 CMR 
+9.06.
+
+(3) A pharmacy that dispenses a naloxone rescue kit or other approved opioid antagonist shall 
+provide counseling and the "opioid antagonist information pamphlet" at the time of dispensing.
+
+(4) A pharmacy that does not have a naloxone rescue kit or other approved opioid antagonist 
+readily available for dispensing at the time requested shall refer the requestor to the nearest 
+location that has a naloxone rescue kit or other approved opioid antagonist readily available.
+
+(5) A pharmacy that assembles opioid antagonist rescue kits shall affix a label to the outer 
+package noting "Opioid Antagonist Rescue Kit" or "[NAME OF THE OPIOID ANTAGONIST] 
+Rescue Kit" and the expiration date, which shall be based on the expiration date of the included 
+unit.
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+## <u>9.07:</u> Reusable Daily Dosage Planners
+
+At the patient's or patient's agent's request a pharmacy may dispense medications in a 
+reusable daily dosage planner provided the following requirements are met:
+
+(1) A pharmacy may not place any medication in a reusable daily dosage planner that was 
+previously dispensed by a different pharmacy.
+
+(2) The pharmacy designates a space that allows for the orderly placement of equipment, 
+materials, and medications, for the proper preparation of reusable daily dosage planners, and for 
+the prevention of cross-contamination.
+
+(3) The pharmacy maintains policies and procedures pertaining to reusable daily dosage 
+planners that include cleaning, labeling, dispensing, and proper hand hygiene.
+
+(4) The pharmacy cleans and stores reusable daily dosage planners in a manner that prevents 
+contamination to the pharmacy environment or reusable daily dosage planner.
+
+(5) The pharmacy labels each reusable daily dosage planner with all information required by 
+M.G.L. c. 94C, § 21 for each medication.
+
+## <u>9.08:</u> Compliance Packaging
+
+(1) A pharmacy or pharmacist may utilize compliance packaging, including 
+oral-liquid-single-dose packaging, single-drug-single-dose packaging, and 
+multi-drug-single-dose packaging provided the following requirements are met:
+
+(a) The pharmacy designates a space that allows for the orderly placement of equipment, 
+materials, and medications, for the proper preparation of the compliance packaging, and for 
+the prevention of cross contamination.
+
+(b) The pharmacy maintains policies and procedures pertaining to each type of compliance 
+packaging utilized that include cleaning, labeling, dispensing, proper hand hygiene, 
+quarantine, and reverse distribution.
+
+(c) The compliance packaging does not conflict with the USP-DI monograph or 
+FDA-approved labeling.
+
+(d) The medications are compatible with packaging components and with each other.
+
+(e) The compliance packaging is designed to prevent the container from being re-closed, 
+to show evidence of having been opened, and in such a manner that the label cannot be 
+altered or removed.
+
+(f) A licensee may not place a quantity of drugs in compliance packaging that exceeds the 
+capacity of the container or that may cause damage to the individual dosage forms.
+
+(g) The compliance packaging must adhere to USP requirements for containers and 
+packaging.
+
+(h) A licensee may not place more than one commercially available medication into an 
+oral-liquid-single-dose package unless compounded pursuant to a prescription.
+
+## (2) <u>Single-drug-single-dose Packaging</u>.
+
+(a) A pharmacy or pharmacist may utilize single-drug-single-dose packaging for solid oral 
+dosage forms.
+
+(b) If a pharmacy or pharmacist places a medication in a single-drug-single-dose package 
+prior to the receipt of a patient specific prescription, the pharmacy and pharmacist shall 
+properly label the package and utilize a bar-code scanning or similar technology to ensure 
+proper identification of the pre-packaged medication at the time of dispensing.
+
+(3) <u>Multi-drug-single-dose Packaging</u>. A pharmacy or pharmacist may utilize 
+multi-drug-single-dose packaging for solid oral dosage forms provided the following 
+requirements are met:
+
+(a) A licensee may not dispense more than a 60-day supply of medication in a 
+multi-drug-single-dose package.
+
+(b) A licensee may not dispense Schedules II or III controlled substances in a 
+multi-drug-single-dose package.
+
+(c) A licensee may not dispense medications to be taken on an as needed basis in a 
+multi-drug-single-dose package.
+
+---
+
+9.08:   continued
+
+(4) <u>Return and Repackaging of Multi-drug-single-dose Packaging</u>.
+
+(a) A pharmacy or pharmacist may accept a return of a multi-drug-single-dose package that 
+the pharmacy previously dispensed for the purpose of repackaging and re-dispensing to that 
+same patient.
+
+1. If a patient's medication was discontinued, a pharmacy may remove the discontinued 
+drug(s) from the multi-drug-single-dose package and re-dispense the remaining 
+medications in the multi-drug-single-dose package to the same patient.
+
+2. If a patient's drug therapy changed, a pharmacy may remove the discontinued drug(s) 
+from the multi-drug-single-dose package(s) and may add a new medication(s) to the 
+multi-drug-single-dose package and re-dispense the multi-drug-single-dose package to 
+the same patient.
+
+3. A pharmacy shall label the multi-drug-single-dose package in accordance with 
+247 CMR 9.08(5) prior to re-dispensing.
+
+4. A pharmacy shall implement policies and procedures pertaining to security and 
+accountability of controlled substances during return and repackaging.
+
+(b) A licensee may not return any medication removed from a multi-drug-single-dose 
+package to inventory. A licensee may not dispense any medication removed from a 
+multi-drug-single-dose package to any patient other than the patient who returned the 
+multi-drug-single-dose package.
+
+(c) A pharmacy shall maintain a record that accounts for and documents any repackaging, 
+removal, or re-dispensing of any medication it previously dispensed in a 
+multi-drug-single-dose package. The record shall identify the pharmacist making the change.
+
+(5) A licensee shall label each oral-liquid-single dose, single-drug-single-dose, and 
+multi-drug-single-dose package with the following information:
+
+(a) information required by M.G.L. c. 94C, § 21 and USP for each medication in the 
+package;
+
+(b) the name, strength, physical description, and total quantity of each drug dispensed;
+
+(c) the dispensing or preparation date;
+
+(d) a beyond-use date, which may not exceed the shortest expiration date on the original 
+manufacturer's container or 60 days, for each drug contained in a multi-drug-single-dose 
+package; and
+
+(e) the telephone number of the pharmacy.
+
+(6) If the compliance package has removable cells, a pharmacy shall label each cell with a label 
+of sufficient size to properly and clearly label each cell with each drug name and strength.
+
+## <u>9.09:</u> Emergency Medication Kits
+
+(1) A pharmacy shall maintain a policy and procedure for the proper dispensing of medication 
+through emergency medication kits pertaining to security, maintenance, and use.
+
+(2) A pharmacy shall reconcile medication dispensed through emergency medication kits with 
+prescriptions or orders.
+
+(3) A pharmacy may only provide emergency medication kits to types of facilities approved by 
+the Board.
+
+## <u>9.10:</u> Automated Pharmacy Systems
+
+(1) A pharmacy may dispense Schedule IV - VI controlled substances from an Automated 
+Pharmacy System ("APS") to a patient or a patient's agent during or after pharmacy hours of 
+operation provided the following requirements are met:
+
+(a) The APS is located within the same building as the pharmacy.
+
+(b) The APS is secured against or within a wall or floor in a manner that prevents 
+unauthorized access and removal.
+
+(c) The location and APS are monitored by continuous, recordable video surveillance.
+
+(d) A pharmacy may not stock medications in an APS that require refrigeration or 
+reconstitution.
+
+---
+
+9.10:   continued
+
+(e) The APS utilizes industry standard technological verification, such as barcode 
+verification, electronic verification, weight verification, radio frequency identification, or 
+another similar process, to ensure the correct medication is dispensed to the correct patient.
+
+(f) The APS or the pharmacy that operates the APS maintains electronic data that creates 
+an audit trail of activity and includes the identity of each person to whom a drug was 
+released.
+
+(g) The pharmacy provides the patient an opportunity for a pharmacist consultation during 
+all hours that the APS is in operation for dispensing.
+
+(h) The pharmacy allows the patient to choose whether or not to use an APS.
+
+(2) A pharmacy with an APS shall maintain policies and procedures pertaining to the APS that 
+include:
+
+(a) APS location(s);
+
+(b) operation and maintenance;
+
+(c) security;
+
+(d) controlled substances accountability;
+
+(e) quality assurance;
+
+(f) stocking and return activities; and
+
+(g) patient confidentiality.
+
+## <u>9.11:</u> Pharmacy Processing Automation
+
+(1) A pharmacy may utilize Pharmacy Processing Automation ("PPA") to count, fill vials or 
+compliance packaging, and label, provided the following requirements are met:
+
+(a) the PPA utilizes technological verifications, such as bar code verification, electronic 
+verification, weight verification, radio frequency identification (RFID), or another similar 
+process, to ensure that the correct medication is dispensed; and
+
+(b) if lot numbers are comingled in a single cell, the pharmacy maintains a policy and 
+procedure to quarantine all comingled lot numbers in the event a single lot number is 
+recalled.
+
+(2) The pharmacy shall implement and maintain policies and procedures pertaining to the PPA 
+that include:
+
+(a) operation and maintenance;
+
+(b) security;
+
+(c) controlled substance accountability;
+
+(d) quality assurance; and
+
+(e) stocking and return activities.
+
+## <u>9.12:</u> Automated Dispensing Devices
+
+A pharmacy may utilize an automated dispensing device ("ADD") for controlled substances 
+provided that:
+
+(1) The ADD is located in a licensed health care facility;
+
+(2) Dispensing is pursuant to a valid patient specific prescription or order;
+
+(3) Utilization is in accordance with all laws, regulations, and policies; and
+
+(4) The pharmacy maintains ADD policies and procedures including the following:
+
+(a) location;
+
+(b) operation and maintenance;
+
+(c) security;
+
+(d) controlled substances accountability;
+
+(e) quality assurance;
+
+(f) stocking and return activities; and
+
+(g) patient confidentiality.
+
+## <u>9.13:</u> Return to Stock
+
+(1) In the event a pharmacy prepares a prescription for dispensing but the medication is not 
+dispensed, the pharmacy may return the medication to stock. A pharmacy shall ensure the 
+following conditions are satisfied if it returns a medication to stock:
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+9.13:   continued
+
+(a) A pharmacy may not return a medication to the manufacturer's stock bottle.
+
+(b) A pharmacy shall keep a medication to be returned to stock in the original patient 
+container or place medication an appropriate container and shall affix a label to the container 
+containing the following information:
+
+1. product name;
+
+2. strength or concentration;
+
+3. name of the manufacturer, supplier, or NDC number; and
+
+4. the expiration date assigned at the time of filling.
+
+(2) A pharmacy shall maintain a policy and procedure regarding returning medications to stock.
+
+(3) In the event of a recall, a pharmacy may not dispense any medication that has been returned 
+to stock and is potentially subject to the recall unless it can confirm the specific lot number is not 
+included in the recall.
+
+## <u>9.14:</u> Transfer of Prescriptions
+
+(1) A pharmacy shall transfer a prescription to another pharmacy, at the request of a patient or 
+his or her agent, in a timely manner so as not to delay patient therapy.
+
+(2) The pharmacy may act as the patient's agent in order to facilitate a transfer.
+
+(3) A pharmacy may not charge a fee for transferring a prescription.
+
+(4) <u>Schedule VI</u>.
+
+(a) A pharmacy shall transfer prescriptions for Schedule VI controlled substances in the 
+same manner as prescriptions for Schedules III - V controlled substances.
+
+(b) Prescriptions for Schedule VI controlled substances may be transferred up to the 
+maximum number of remaining refills authorized by the prescriber.
+
+(c) A pharmacy may not transfer a prescription authorizing refills for Schedule VI 
+controlled substances more than one year from the date the prescription was issued.
+
+## <u>9.15:</u> Verifying a Practitioner's Prescriptive Authority
+
+(1) A pharmacist who dispenses medications reported to the Massachusetts Prescription 
+Monitoring Program ("PMP") shall register with and maintain login information for the 
+electronic system to monitor the prescribing and dispensing of controlled substances authorized 
+by M.G.L. c. 94C, § 24A, known as PMP or MassPAT.
+
+(2) A pharmacist may not fill a prescription unless the pharmacist, in the exercise of his or her 
+professional judgment, determines that:
+
+(a) the prescription was issued for a legitimate medical purpose by a practitioner acting in 
+the usual course of his or her professional practice;
+
+(b) there is a valid patient-practitioner relationship;
+
+(c) the prescription is authentic; and
+
+(d) the dispensing is in accordance with M.G.L. c. 94C, § 19(a).
+
+## <u>9.16:</u> Maintenance of Pharmacy Records
+
+(1) A pharmacist and pharmacy shall maintain prescription records, purchasing and return 
+records, and disposal and destruction records in a readily retrievable manner for at least two 
+years.
+
+(2) Prescriptions for Schedule II controlled substances shall be segregated if maintained in 
+paper format, and electronically separable if maintained in electronic format.
+
+(3) Prescriptions for Schedule III, IV, and V controlled substances shall be segregated if 
+maintained in paper format, and electronically separable if maintained in electronic format.
+
+---
+
+9.16:   continued
+
+(4) Prescriptions for Schedule VI controlled substances shall be segregated if maintained in 
+paper format and electronically separable if maintained in electronic format.
+
+(5) A pharmacy shall be able to print readable copies of electronic prescriptions.
+
+(6) A pharmacy shall be able to print electronically stored images of prescriptions.
+
+(7) A pharmacist and pharmacy shall maintain a confidential patient profile for each patient to 
+whom a prescription is dispensed. The computerized pharmacy system shall provide for the 
+immediate retrieval of information necessary for the pharmacist to identify previously dispensed 
+drugs at the time the prescription is presented for dispensing. The pharmacist or pharmacist's 
+designee shall make a reasonable effort to obtain, record, and maintain the following 
+information:
+
+(a) name, address, contact information, date of birth or age, and gender of the patient for 
+whom the prescription is intended;
+
+(b) patient history, including known drug allergies and drug reactions;
+
+(c) a comprehensive list of medications and relevant devices dispensed by the pharmacy; 
+and
+
+(d) the pharmacist's comments relevant to the patient's drug therapy.
+
+(8) The requirements in 247 CMR 9.16 do not apply to institutional sterile compounding 
+pharmacies.
+
+## <u>9.17:</u> Prospective Drug Utilization Review
+
+(1) A pharmacist shall conduct a prospective drug utilization review ("DUR") before each new 
+prescription or medication order is dispensed or delivered to a patient or a patient's agent. The 
+DUR may include a review of computerized alerts, the patient record, and each new and renewed 
+prescription or medication order for the purpose of promoting therapeutic appropriateness, by 
+making a reasonable effort to identify the following:
+
+(a) over-utilization or under-utilization;
+
+(b) therapeutic duplication;
+
+(c) drug-disease contraindication;
+
+(d) drug-drug interaction;
+
+(e) drug-food interaction;
+
+(f) incorrect drug dosage or duration of drug treatment;
+
+(g) drug-allergy interactions;
+
+(h) abuse or misuse;
+
+(i) any significant change in drug, dose, or directions; and
+
+(j) any age related contraindications.
+
+(2) Upon identifying any of the above, a pharmacist shall take appropriate measures to ensure 
+the proper care of the patient which may include consultation with the prescribing practitioner 
+or direct consultation with the patient or patient's agent. A pharmacist shall document any 
+measures taken in response to a drug utilization review.
+
+(3) The DUR shall be based upon current standards which may include the following:
+
+(a) the American Hospital Formulary Service Drug Information;
+
+(b) the United States Pharmacopoeia Drug Information;
+
+(c) the American Medical Association Drug Evaluations;
+
+(d) *Plumb's Veterinary Drug Handbook;* and
+
+(e) other peer-reviewed medical literature.
+
+## <u>9.18:</u> Patient Counseling
+
+(1) A pharmacist or pharmacist's designee shall offer the counseling services of the pharmacist 
+to each person who receives a prescription medication.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.18:   continued
+
+(2) A pharmacist shall ensure his or her designee is appropriately trained to make the offer to 
+counsel.
+
+(3) Counseling shall be made by a pharmacist or a pharmacy intern. A pharmacy technician or 
+other individual may not counsel any patient.
+
+(4) A pharmacist or pharmacy intern shall provide counseling on each new drug therapy and 
+each drug therapy that in the pharmacist's professional judgment is deemed to be significant for 
+the health and safety of the patient.
+
+(5) When counseling a patient, a pharmacist or pharmacy intern shall provide such information 
+which, in the pharmacist's professional judgment, is necessary for the patient to understand the 
+proper use of the patient's prescription which may include the following:
+
+(a) name, description, and indication of the medication;
+
+(b) dosage form, dosage, route of administration and duration of therapy;
+
+(c) special directions and instructions for preparation, administration, and use by the patient;
+
+(d) common side and adverse effects or interactions and therapeutic contraindications or 
+precautions with legend and non-legend medications and other substances which the 
+pharmacist deems relevant;
+
+(e) techniques for self-monitoring drug therapy;
+
+(f) proper storage and disposal;
+
+(g) prescription refill information; and
+
+(h) action to be taken in the event of a missed dose or adverse reaction.
+
+(6) A pharmacy shall have a designated patient consultation area, with signage stating "Patient 
+Consultation Area", designed to provide adequate privacy for confidential visual and auditory 
+patient counseling. The private consultation area shall be accessible by a patient from the outside 
+of the prescription dispensing area without having to traverse a stockroom or the prescription 
+dispensing area.
+
+(7) A pharmacy shall post a sign of not less than 11 inches in height by 14 inches in width in 
+a conspicuous place, adjacent to each area where prescriptions are dispensed, for the purpose of 
+informing customers of their right to counseling by a pharmacist. Said sign shall read, in letters 
+not less than ½ inch in height: "Dear patients, you have the right to know about the proper use 
+of your medication and its effects. If you need more information please ask the pharmacist."
+
+(8) A pharmacy and pharmacist shall ensure counseling is available at all times when a 
+pharmacy is open for business.
+
+(9) A pharmacy and pharmacist shall dispense or recommend a proper measuring device with 
+all liquid medications.
+
+(10) The provisions of 247 CMR 9.18 do not apply to pharmacists while practicing in an 
+inpatient setting, unless otherwise required by law or regulation.
+
+## <u>9.19:</u> Pharmacy Operation
+
+(1) A pharmacy shall maintain the following on the pharmacy premises:
+
+(a) a current copy or electronic version of the *Massachusetts List of Interchangeable 
+Drugs,* including the *Orange Book,* Additional List, Exception List;
+
+(b) a current copy or access to electronic version with quarterly updates of a compendia 
+appropriate to the practice setting approved by the pharmacist manager of record;
+
+(c) a current copy or access to electronic version of laws and regulations governing the 
+practice of pharmacy, including, M.G.L. c. 94C, M.G.L. c. 112, §§ 24 through 42A, 
+105 CMR 700.000: *Implementation of M.G.L. c. 94C,* 105 CMR 720.00: *List of* 
+*Interchangeable Drug Products,* and 105 CMR 721.00: *Standards for Prescription Format 
+and Security in Massachusetts* , and 247 CMR 2.00 through 21.00;
+
+(d) a current copy or access to electronic version of *Plumb's Veterinary Drug Handbook* or 
+other veterinary reference approved by the Board;
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.19:   continued
+
+(e) a balance capable of accurately weighing quantities as small as ten milligrams, which 
+shall be tested and sealed by the state or local sealer of weights and measures at least once 
+each calendar year.  All new balances shall have "legal for trade" designation;
+
+(f) the equipment, supplies, and medications necessary to conduct the practice of pharmacy 
+in accordance with the usual needs of the community and scope of practice of the pharmacy;
+
+(g) the equipment necessary to perform simple and moderate non-sterile compounding;
+
+(h) policies and procedures to ensure supplies, tools, utensils, and equipment are used and 
+maintained in a manner that avoids cross contamination and ensures proper functioning;
+
+(i) a potable water supply in or near the prescription area in order to wash hands and 
+equipment. The sink shall have hot and cold water, soap or detergent, and single use towels; 
+and
+
+(j) a designated compounding area for simple and moderate non-sterile compounding.
+
+(2) A pharmacy that obtained its Drug Store pharmacy license on or after July 1, 2020 shall 
+have a prescription area that is at least 325 square feet.
+
+(3) A pharmacy shall ensure the accuracy and performance of electronic counting machines for 
+solid dosage forms and other electronic measuring devices.
+
+(4) The prescription area shall provide for the arrangement and storage of drugs, supplies, and 
+equipment in a manner that is calculated to prevent accidental misuse, cross contamination, and 
+error.
+
+(5) A pharmacy shall store medications in the manufacturer's stock bottles or in other stock 
+containers that are clearly labeled with the product name, strength or concentration, NDC 
+number, manufacturer or supplier, lot number, assigned expiration date, and date that the 
+medication was transferred out of its original stock bottle.
+
+(6) A pharmacy shall be clean and sanitary and in good repair at all times.
+
+(7) Pharmacy equipment shall be clean and sanitary and in good repair at all times.
+
+(8) A pharmacy in Massachusetts shall conspicuously display within the pharmacy:
+
+(a) the pharmacy's Massachusetts Drug Store pharmacy license;
+
+(b) other pharmacy license issued by the Board, as applicable;
+
+(c) the pharmacy's Massachusetts controlled substance registration; and
+
+(d) the pharmacy's U.S. Drug Enforcement Administration registration.
+
+A non-resident pharmacy shall maintain the documents identified in 247 CMR 9.19(8) in a 
+readily retrievable manner.
+
+(9) As applicable, a pharmacy shall post on the wall or maintain the following in readily 
+retrievable location:
+
+(a) immunization certifications and current CPR card for each pharmacist and pharmacy 
+intern that perform immunizations;
+
+(b) current power of attorney ("POA") forms required for DEA 222 forms, as applicable;
+
+(c) Collaborative Drug Therapy Management Agreements;
+
+(d) written finding from the Board waiving any Board regulations; and
+
+(e) standing orders, if any.
+
+(10) A pharmacy shall have a sign affixed to each customer entrance that is easily observable 
+from the outside and clearly identifies the presence of a pharmacy.
+
+(11) A pharmacy shall conspicuously display, in legible letters not less than one inch high, over, 
+on, or adjacent to the main entrance of the pharmacy, the name of the pharmacist Manager of 
+Record.
+
+(12) A pharmacy shall effectuate a recall of medication that is or may be defective in any way.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.19:   continued
+
+(13) A pharmacy shall obtain and record consent from a patient or patient's agent prior to 
+enrolling that patient in an automatic refill program. A pharmacy shall provide a method for 
+patients to discontinue participation in an automatic refill program.
+
+(14) A pharmacy shall meet the following requirements concerning the posting of hours of 
+operation:
+
+(a) The hours of operation shall be prominently posted at all consumer entrances to the 
+pharmacy and, in the case of a pharmacy located within a retail establishment, the hours shall 
+also be posted at all consumer entrances to the retail store and at the pharmacy; and
+
+(b) if the hours of operation of a pharmacy located within another retail establishment are 
+different from those of the retail establishment, all advertising referring to the pharmacy shall 
+clearly specify the pharmacy's hours of operation.
+
+(15) A pharmacy shall maintain a written continuity of care plan that describes the manner in 
+which patient needs will be met in the event the pharmacy is unexpectedly unable to provide 
+pharmacy services. The pharmacy shall notify the Board if pharmacy operations are 
+unexpectedly suspended for more than 24 hours.
+
+## (16) <u>Registered Pharmacists on Duty</u>.
+
+(a) Unless otherwise permitted by law or regulation, a licensed pharmacist shall be on the 
+pharmacy premises at all times the pharmacy is open for business and shall be present at all 
+times when non-pharmacist personnel have unrestricted access to the pharmacy.
+
+(b) While on duty, a pharmacist shall:
+
+1. ensure compliance with supervisory ratios in accordance with 247 CMR 8.06: *Duties 
+of Pharmacist Utilizing Pharmacy Interns, Certified Pharmacy Technicians, Pharmacy* 
+*Technicians, and Pharmacy Technician Trainees;*
+
+2. maintain proper storage and security of controlled substances;
+
+3. report problems with sanitary conditions or repair to Manager of Record;
+
+4. limit access to all pharmacy areas to authorized personnel;
+
+5. be familiar with applicable Board approved audit tool(s); and
+
+6. have access to all pharmacy records and be able to provide requested records to Board 
+investigators.
+
+## (17) <u>Temporary Absence of a Pharmacist</u>.
+
+(a) In any pharmacy that is staffed by a single pharmacist, the pharmacist may leave the 
+pharmacy prescription area temporarily for necessary and appropriate breaks and meal 
+periods without closing the pharmacy or removing ancillary staff from the pharmacy if the 
+pharmacist reasonably believes that the security of the controlled substances and devices will 
+be maintained in his or her absence. A pharmacist must remain on the pharmacy premises, 
+but is not required to remain in the prescription area. A temporary absence shall not exceed 
+30 minutes per six hours.
+
+(b) During a pharmacist's temporary absence, a pharmacy may not provide any prescription 
+medication to a patient or a patient's agent unless the prescription is a refill medication that 
+the pharmacist has checked and determined not to require the consultation of a pharmacist 
+prior to being released to the patient. A new prescription which has been previously 
+prepared, visibly checked by a pharmacist, and had a drug utilization performed by a 
+pharmacist, may be picked up by a patient provided that a log, including the patient's phone 
+number, of all such transactions is kept. The pharmacist upon return from break and within 
+a reasonable time shall call the patient to review any pertinent counseling deemed 
+appropriate.
+
+(c) During a pharmacist's temporary absence, the pharmacy technical support staff may 
+continue to perform the non-discretionary duties. However, any duty performed by any 
+member of the ancillary staff shall be reviewed by a pharmacist upon his or her return to the 
+pharmacy.
+
+(d) In pharmacies where there are two or more pharmacists on duty, the pharmacists shall 
+stagger their breaks and meal periods so that the pharmacy is not left without a pharmacist 
+for a temporary period.
+
+(e) A pharmacy shall maintain written policies and procedures regarding the operation of 
+the pharmacy during the temporary absence of a pharmacist.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.19:   continued
+
+(18) Upon commencement of the employment of a registered pharmacist, pharmacy intern, 
+pharmacy technician, or pharmacy technician in training, the pharmacy shall verify that the 
+individual's license to practice is current.
+
+(19) A pharmacy shall store and dispose of waste in a sanitary and timely manner.
+
+(20) A pharmacy shall maintain an e-Profile Number from the National Association of Boards 
+of Pharmacy ("NABP") or other national database, as required by the Board.
+
+(21) A pharmacy shall perform a self-inspection within seven days of any renovation, 
+expansion, relocation, or change of Manager of Record, and at least one time per year, utilizing 
+a Board-approved inspection tool for routine compliance, sterile compounding, and non-sterile 
+compounding, as applicable.  The pharmacy shall retain the completed self-inspection tool for 
+at least two years.
+
+(22) A pharmacy shall maintain a readily accessible policy and procedure for computer 
+downtime which shall include:
+
+(a) a process for filling prescriptions during downtime;
+
+(b) a process for ensuring prescriptions dispensed during computer downtime are duly 
+recorded in the patient's medication profile of the computerized pharmacy system when it 
+becomes operational;
+
+(c) continuity of care, if necessary; and
+
+(d) process for performing an appropriate drug utilization review.
+
+(23) The requirements of 247 CMR 9.19(1)(e), (1)(j), (2), (9), (10), (11), (14), (16), and (17) 
+do not apply to non-resident pharmacies.
+
+(24) The requirements of 247 CMR 9.19(1)(a), (1)(d), (1)(e), (1)(g), (1)(j), (8), (11), and (20) 
+do not apply to institutional sterile compounding pharmacies.
+
+## <u>9.20:</u> Non-resident Pharmacies
+
+A non-resident pharmacy shall comply with all Massachusetts laws and regulations 
+governing the practice of pharmacy when filling, dispensing, or shipping medications into 
+Massachusetts, unless otherwise specified.
+
+## <u>9.21:</u> Security of Controlled Substances
+
+(1) A pharmacy shall store all controlled substances within the secured prescription area and 
+in a safe and secure manner.
+
+(2) A pharmacy shall store Schedules II through V controlled substances in a securely locked 
+and substantially constructed cabinet, or similarly secured storage area, or dispersed throughout 
+the stock of Schedule VI controlled substances and in such a manner as to obstruct theft and 
+diversion.
+
+(3) A pharmacy shall maintain a centrally monitored security system that is able to detect a 
+breach in security and is designed to prevent theft. A pharmacy shall activate the security system 
+when the pharmacy is closed.
+
+(4) A pharmacy shall maintain surveillance cameras in a manner designed to record theft and 
+diversion of controlled substances. A pharmacy shall retain video records for at least 14 days 
+or, in the case of known or suspected theft or diversion, at least two years.
+
+(5) A pharmacy that is located within another retail establishment shall be secured by a floor 
+to ceiling barrier, securely locked and separately alarmed at all times when the pharmacy is 
+closed.
+
+---
+
+247 CMR:   BOARD OF REGISTRATION IN PHARMACY
+
+9.21:   continued
+
+(6) The pharmacist Manager of Record and the pharmacist on duty are responsible for pharmacy 
+security and shall control access to the prescription area.
+
+(7) All drug order deliveries containing controlled substances shall be delivered directly to the 
+pharmacy.
+
+## (8) Schedule II Perpetual inventory
+
+(a) A pharmacy and pharmacist shall maintain a perpetual inventory of each controlled 
+substance in Schedule II which the pharmacy has received, dispensed, or disposed of. The 
+perpetual inventory may be in a hard copy, written format or in an electronic format. The 
+perpetual inventory shall reflect the amount of each Schedule II controlled substance that is 
+located on the pharmacy premises.
+
+(b) The perpetual inventory record shall include the names and strengths of each Schedule 
+II control substance, quantity of each drug purchased or added to inventory, starting 
+inventory, prescription numbers, dispensed quantity, remaining balance, and pharmacist 
+identification for each transaction.
+
+(c) A pharmacy shall reconcile the perpetual inventory for each Schedule II controlled 
+substance at least once every ten days by performing an accurate physical count of inventory 
+on hand and comparing that number with the perpetual inventory. The Manager of Record 
+shall investigate any discrepancy and report any significant loss or suspected theft in 
+accordance with federal and state requirements.
+
+(d) A pharmacy shall require any inventory adjustment resulting from a discrepancy be 
+performed only by the pharmacist Manager of Record. In the absence of the Manager of 
+Record, a pharmacist designee may make the changes and report to Manager of Record.
+
+(e) An unlicensed individual may not make any entry into or adjust the perpetual inventory. 
+(f) A certified pharmacy technician may make entries into the perpetual inventory.
+
+(9) A pharmacy shall maintain an accurate record of all controlled substances returned to a 
+reverse distributor or disposed of in accordance with state and federal laws and regulations, 
+including proper DEA forms in the case of Schedule II controlled substances.
+
+(10) Each requirement of 247 CMR 9.21 shall apply to controlled substances that are expired, 
+quarantined, or pending reverse distribution.
+
+(11) The requirements of 247 CMR 9.21 do not apply to non-resident pharmacies.
+
+(12) An institutional sterile compounding pharmacy shall store and secure controlled substances 
+in accordance with 105 CMR 700.000: *Implementation of M.G.L. c. 94C.*
+
+## <u>9.22:</u> Proper Storage of Refrigerated and Frozen Medications
+
+(1) A pharmacy shall maintain policies and procedures to ensure proper refrigeration equipment 
+is available, of adequate size, and utilized to maintain proper refrigeration and freezer 
+temperatures. The policies and procedures shall include a protocol to respond to any out of range 
+temperature, including an assessment of the integrity of the medication.
+
+(2) A pharmacy shall utilize a combination refrigerator/freezer or a standalone refrigerator or 
+standalone freezer. Freezer units shall be frost-free with an automatic defrost cycle, unless 
+otherwise approved by the Board. A pharmacy may not utilize an appliance that contains a 
+freezer compartment within the refrigerator space, such as a dorm-style refrigerator.
+
+(3) A pharmacy shall measure and maintain refrigerator and freezer temperatures in accordance 
+with Board guidance.
+
+(4) A pharmacy shall maintain temperature logs to clearly identify out of range temperatures 
+and shall document actions taken in response to an out of range temperature. A pharmacy shall 
+maintain records for at least one year.
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+9.22:   continued
+
+(5) A pharmacy may not store any food or beverage in a refrigerator or freezer used to store 
+medications.
+
+## <u>9.23:</u> Pharmacist Manager of Record
+
+(1) A pharmacy shall designate a Manager of Record who is registered as a pharmacist in 
+Massachusetts.
+
+(2) A Manager of Record is responsible for the following:
+
+(a) operation of the pharmacy in compliance with M.G.L. c. 112, §§ 24 through 42D, 
+M.G.L. c. 94C, and 247 CMR 2.00:  *Definitions;*
+
+(b) the proper maintenance of records as required by M.G.L. c. 112, §§ 24 through 42D, 
+M.G.L. c. 94C, and 247 CMR 2.00: *Definitions;*
+
+(c) planning and maintaining adequate staffing that promotes patient safety;
+
+(d) the establishment, monitoring, and enforcement of policies and procedures which 
+maintain the standards of professional practice, compliance with state and federal laws and 
+regulations governing the practice of pharmacy, and adequate staffing.
+
+(e) the maintenance of records relating to the responsibilities of pharmacy technicians as 
+outlined in 247 CMR 8.02(6);
+
+(f) notification to the Board in writing of his/her termination or resignation as pharmacist 
+Manager of Record within ten days;
+
+(g) taking an inventory of controlled substances in Schedules II, III, IV and V, in accordance 
+with 21 CFR § 1304.11;
+
+(h) maintaining a copy of all standing orders used by the pharmacy; and
+
+(i) ensuring technician training program is Board approved and up to date, if applicable.
+
+(3) A Manager of Record of a retail drug store pharmacy may not be the Manager of Record of 
+more than one pharmacy at a time.
+
+(4) A Manager of Record shall work an average of at least 30 hours per week at the pharmacy 
+he or she manages.
+
+## (5) Temporary Absence of a Manager of Record
+
+(a) A pharmacy shall appoint an Interim Manager who is registered by the Board prior to 
+any planned absence of the Manager of Record that is expected to last 30 days or longer.
+
+(b) A pharmacy shall appoint an Interim Manager who is registered by the Board within five 
+days of any unplanned absence of the Manager of Record that is likely to last 30 days or 
+longer.
+
+(c) Prior to his or her absence, a Manager of Record shall perform a controlled substances 
+inventory that is signed by the Manager of Record and the Interim Manager. If the Manager 
+of Record is unexpectedly not available, another registered pharmacist shall perform the 
+controlled substances inventory.
+
+(d) In the event a Manager of Record is away from his or her position for 100 days or more, 
+the pharmacy shall submit an application for a change of Manager of Record.
+
+## <u>9.24:</u> Inspections and Investigations of Pharmacies
+
+(1) The Board or its designee(s) may visit any pharmacy licensed by the Board at any time 
+without prior notice and inspect the pharmacy staff, activities, and records to determine 
+compliance with laws and regulations governing the practice of pharmacy.
+
+(2) All costs associated with inspections of non-resident pharmacies shall be paid by the 
+non-resident pharmacy or applicant.
+
+(3) A pharmacy shall provide all documents requested by the Board or its designee(s) in 
+connection with an inspection or investigation.
+
+---
+
+# 247 CMR: BOARD OF REGISTRATION IN PHARMACY
+
+## <u>9.25:</u> Plans of Correction
+
+(1) A pharmacy shall submit to the Board a written plan of correction for each violation cited 
+in a statement of deficiency or inspection report within 21 days or in the timeframe directed by 
+the Board. A pharmacy shall prepare and submit a plan of correction in the manner and format 
+specified by the Board.
+
+(2) A plan of correction shall describe the corrective action in response to each violation cited 
+in a statement of deficiency or inspection report, expected completion or implementation date 
+for the plan of correction, and individual(s) responsible for each action.
+
+(3) The Manager of Record and the licensee who supervises the Manager of Record's practice 
+of pharmacy, if applicable, shall sign the plan of correction.
+
+(4) A pharmacy shall achieve compliance with the laws and regulations governing the practice 
+of pharmacy in the most expeditious manner possible.
+
+(5) A plan of correction which does not meet the requirements of the relevant 247 CMR section 
+shall be considered unacceptable by the Board and returned to the pharmacy. The pharmacy 
+shall submit a revised plan of correction within seven days.
+
+## REGULATORY AUTHORITY
+
+247 CMR 9.00:   M.G.L. c. 94C, §§ 6, 19B and 19C, and c. 112, §§ 12D, 30, and 42A.

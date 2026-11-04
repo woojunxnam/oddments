@@ -1,0 +1,108 @@
+{
+  "question_id": "MA-Q-0039",
+  "family_id": "P2_0039_FED_CIII_V_REFILL",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule III-IV refills",
+  "difficulty": 5,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Dispense because the profile still displays two refills."
+    },
+    {
+      "id": "B",
+      "text": "Start a new six-month window from the last dispensing."
+    },
+    {
+      "id": "C",
+      "text": "Apply the 30-day Schedule II rule instead."
+    },
+    {
+      "id": "D",
+      "text": "The six-month issue-date limit prevents another Schedule IV refill."
+    },
+    {
+      "id": "E",
+      "text": "Extend validity after documenting continued insomnia."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "'The six-month issue-date limit prevents another Schedule IV refill.' is the governing result. By contrast, 'Dispense because the profile still displays two refills.' would require that unused refills remained valid after the issue-date limit. The decisive cue appears in 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?'.",
+    "choice_analysis": {
+      "A": "'Dispense because the profile still displays two refills.' would apply only if unused refills remained valid after the issue-date limit; 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?' states otherwise.",
+      "B": "'Start a new six-month window from the last dispensing.' would apply only if the controlling clock did not run from issue; 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?' states otherwise.",
+      "C": "'Apply the 30-day Schedule II rule instead.' would apply only if daridorexant were Schedule II; 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?' states otherwise.",
+      "D": "'The six-month issue-date limit prevents another Schedule IV refill.': supported by schedule iii-iv refills.",
+      "E": "'Extend validity after documenting continued insomnia.' would apply only if clinical need allowed a pharmacist to extend federal authorization; 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?' states otherwise."
+    },
+    "related_facts": [
+      "daridorexant (Quviviq) is used for treatment of insomnia with sleep-onset or sleep-maintenance difficulty; it is federal Schedule IV and Massachusetts Schedule IV.",
+      "A Schedule III or IV prescription may not be filled or refilled more than six months after issue and may not be refilled more than five times unless renewed by the practitioner."
+    ],
+    "mpje_trap": "'Dispense because the profile still displays two refills.' would apply if unused refills remained valid after the issue-date limit. In 'During an end-of-shift check, a Quviviq prescription still shows two refills but was issued six months and two days ago. What should control the decision?', that predicate is missing."
+  },
+  "rule_ids": [
+    "FED-CIII-V-REFILL",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "daridorexant"
+  ],
+  "reasoning_steps": [
+    "Classify daridorexant under the federal and Massachusetts schedules before selecting a legal pathway",
+    "Match the scenario's operative facts to Federal Schedule III and IV refill limits",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Schedule III-IV refills"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CIII-V-REFILL": {
+          "content_version": 1,
+          "content_hash": "c7d08629b00c70eec60e05e24efa7686ec0a9b0c6c6054ca8c792305a3c78ea8"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "daridorexant": {
+          "content_version": 1,
+          "content_hash": "7a998b25a5aee52d5fc083481ee42b596cd8e1f50d90deccb11d9f30341d7999"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

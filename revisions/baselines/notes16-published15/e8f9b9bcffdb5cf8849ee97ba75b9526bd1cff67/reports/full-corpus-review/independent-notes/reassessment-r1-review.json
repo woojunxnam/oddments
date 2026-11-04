@@ -1,0 +1,932 @@
+{
+  "schema_version": "independent-notes-reassessment-report/1",
+  "stage": "independent-notes",
+  "independent_of_authors": true,
+  "actor_provenance": {
+    "actor_id": "/root/independent_procedural_retry",
+    "session_id": "/root/independent_procedural_retry"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "reviewed_at": "2026-11-04",
+  "actual_clock_utc": "2026-11-04 00:28:45 UTC",
+  "job_id": "review-independent-notes-reassessment-02ddf0fd83ad336b",
+  "worker_base_commit": "770fe850032df4a80350f9defad4be41eba8da5c",
+  "author_date_preservation_ko": "원census/claim/sourcechecked_at2026-11-03을변경하지않았다. 이독립검토와공식sourcefresh확보는실제2026-11-04이다. 안정된instance의20261103 suffix는세션식별자이며이번검토일을의미하지않는다.",
+  "read_scope": {
+    "final_census_read_completely": true,
+    "final_census_read_method": "All claim JSON fields, every source descriptor and all remaining top-level/unit metadata read, with repeated related-ID lists shared losslessly. No unseen census tail was treated as read.",
+    "actual_load_notes_body_read_completely": true,
+    "all_original_claims_preserved_exactly": 16,
+    "all_original_omissions_read": true,
+    "all_55_linked_visible_questions_read": true,
+    "unrelated_prior_review_conclusions_read": false,
+    "prior_legal_KEEP_findings_used_as_evidence": false,
+    "body_census_queue_original_reports_changed": false
+  },
+  "binding_validation": {
+    "path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/binding-preservation-check.json",
+    "raw_sha256": "4d0061c4253f623ebf31ce79c8b1a381a46a4321e457bb4060cdd20902d27e1c",
+    "root_current_inventory_and_selected_binding": "PASS",
+    "root_final_ledger_commit": "dff9c6c2351c99e2d3d5ef76dd1f6457288b952b",
+    "root_claim_commit": "7485c838c10b09540ed67e8899424e9ef9df7432",
+    "registration_ledger_provenance_sha256": "28a474546177cbe6df18957d1c534136275b5832649ca55ea107baa651a1275f",
+    "final_committed_ledger_raw_sha256": "081d2820f0989ccf6413915dee2686a183fb4e5efb6cab41bdc2818f017fc005",
+    "whole_ledger_raw_equality_claimed": false
+  },
+  "sources": [
+    {
+      "source_type": "PUBLIC_OFFICIAL",
+      "authority": "247 CMR 4.00",
+      "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+      "exact_section": "247 CMR 4.02(1)-(8)",
+      "law_checked_date": "2026-11-04",
+      "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+      "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+      "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+      "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+      "retrieval_provenance": {
+        "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+        "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+        "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+        "content_type": "application/pdf",
+        "bytes": 40467
+      }
+    },
+    {
+      "source_type": "PUBLIC_OFFICIAL",
+      "authority": "247 CMR 6.00",
+      "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+      "exact_section": "247 CMR 6.05(2); 6.09(1)(d)1",
+      "law_checked_date": "2026-11-04",
+      "version_or_effective_date_status": "247 CMR 6.00 official current download retrieved 2026-11-04. Retrieved PDF has substantive 6.05(2) and 6.09(1)(d) text; publication/commencement date is not printed in extracted pages and is not independently established. No new legal effective date inferred from retrieval.",
+      "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/pharmacy-license.pdf",
+      "evidence_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1",
+      "raw_payload_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1",
+      "retrieval_provenance": {
+        "requested_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+        "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T00:24:16.110031+00:00",
+        "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+        "content_type": "application/pdf",
+        "bytes": 148436
+      }
+    },
+    {
+      "source_type": "PUBLIC_OFFICIAL",
+      "authority": "247 CMR 8.00",
+      "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+      "exact_section": "247 CMR 8.07(1)-(4)",
+      "law_checked_date": "2026-11-04",
+      "version_or_effective_date_status": "Mass. Register #1546 dated 2025-04-25; page containing 8.07 displays 4/25/25 (Effective 1/9/25). Other chapter pages have earlier corrected effective dates; no uniform chapter commencement assumed.",
+      "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/personnel.pdf",
+      "evidence_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+      "raw_payload_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+      "retrieval_provenance": {
+        "requested_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+        "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T00:24:16.268352+00:00",
+        "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+        "content_type": "application/pdf",
+        "bytes": 122079
+      }
+    },
+    {
+      "source_type": "PUBLIC_OFFICIAL",
+      "authority": "M.G.L. c.112 §1B",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+      "exact_section": "M.G.L. c.112 §1B(c)",
+      "law_checked_date": "2026-11-04",
+      "version_or_effective_date_status": "Massachusetts Legislature current General Laws c.112 §1B(c), fresh official page retrieved 2026-11-04. Historic enactment/last-amendment commencement not separately reconstructed. Statute says not less than 90 days, so no automatic-invalidity-on-day-91 inference.",
+      "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/military-statute.html",
+      "evidence_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+      "raw_payload_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+      "retrieval_provenance": {
+        "requested_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+        "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T00:26:51.061168+00:00",
+        "method": "Fresh official HTTPS network request using urllib.request, default proxy and normal TLS verification",
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 78849
+      }
+    },
+    {
+      "source_type": "PUBLIC_OFFICIAL",
+      "authority": "247 CMR 4.00",
+      "official_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+      "exact_section": "Current date label 01/13/2017 and download link, publication context only",
+      "law_checked_date": "2026-11-04",
+      "version_or_effective_date_status": "Current official Mass.gov regulation landing displays 01/13/2017; publication context only, not separate commencement evidence.",
+      "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal-landing.html",
+      "evidence_sha256": "5124e1622e19e65ebd8cb0bc27300be57413ecdd2c04816777ffafaa8608f127",
+      "raw_payload_sha256": "5124e1622e19e65ebd8cb0bc27300be57413ecdd2c04816777ffafaa8608f127",
+      "retrieval_provenance": {
+        "requested_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+        "official_url": "https://www.mass.gov/regulations/247-CMR-400-personal-registration-renewal-continuing-education-requirement",
+        "http_status": 200,
+        "retrieved_at": "2026-11-04T00:26:51.455268+00:00",
+        "method": "Fresh official HTTPS network request using urllib.request, default proxy and normal TLS verification",
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 208238
+      }
+    }
+  ],
+  "retrieval_method_ko": "이세션의앞선Firecrawlcredit부족상태를재시도하지않고정상TLS인증과환경proxy를그대로사용하는urllib공식HTTPS직접조회로새payload를확보했다. HTTP200만으로근거로삼지않고PDFsignature와해당조문본문및HTML의법문을직접읽었다. 과거cache를오늘새live라고표시하지않았다.",
+  "records": [
+    {
+      "unit_id": "w1-a-4",
+      "binding": {
+        "body_sha256": "59e16a3dc82b12d5736c91bbc49f4cfca8ce04559cebadce25fa9c0b6519ad7d",
+        "census_path": "reports/full-corpus-review/census-corrections/v2/census/w1-a-4-census-v2.json",
+        "census_sha256": "e4081d4132406fddf930debdfa98c46fd094943a2523903c2ac1c23b66cd4ea0",
+        "census_unit_record_sha256": "294f8222c0006cbf8ba88ad598b3a399d0c15b28bb03515d127178eda7a81910",
+        "ledger_binding_sha256": "3530a82dd156a28adb7c76ac37b7f855d46bf948a6ce684b3e710d6482d20d22",
+        "claim_record_sha256s": {
+          "NOTE-WAVE3-W1-A-4-001": "d3a5938dd488670a512fd4da479b3b753b276d55574b79400941fcbfcdb5f29e",
+          "NOTE-WAVE3-W1-A-4-002": "59d35db7ca8dee48ee559dfe16b2144cd7ecfebbad281eba7a0e7cb596b3e41a",
+          "NOTE-WAVE3-W1-A-4-003": "a53b29833f2b6597958403139d52d1763c619f203e242480e4e5cead563bc52b",
+          "NOTE-WAVE3-W1-A-4-004": "3c8dd3a1b79088d6e8d10af09ce316340dccf8559597dba287dadf303f30dbe0",
+          "NOTE-WAVE3-W1-A-4-005": "93ef9d1d44f83de34971b3eeffd59e54a96da8ac1ecb5dfb0445400850f00d32",
+          "NOTE-WAVE3-W1-A-4-006": "f8919bb5c176312c5fbc1230ecf424aaeee734a4745f26f3620501e2c63f7a03",
+          "NOTE-WAVE3-W1-A-4-007": "6df5d20662638202aaee3bdde18ae19d6efff0f8786c05db0705d905ca72f53d",
+          "NOTE-WAVE3-W1-A-4-008": "6870e3b0e3bd48e7708a6a7fb0822c8ff818d941ecd88ab526415246316e8149",
+          "NOTE-WAVE3-W1-A-4-009": "a9edec2efda5013459eb6b006ed377fb65c3d7c96433313a7367d0afaed8f6a8",
+          "NOTE-WAVE3-W1-A-4-010": "60d66d35d23336b27d79d03134feaf3bd886f16460d9731cbcd56c1fa7928467",
+          "NOTE-WAVE3-W1-A-4-011": "9327cfbeddeb29de6efe3513d632926e53a33d774c9baccddf1aa62bb6f297b3",
+          "NOTE-WAVE3-W1-A-4-012": "f358122ca3ad7851b7c5e8f3f9c926cad5653d2a8469b672cfd3497bc5b31c0e",
+          "NOTE-WAVE3-W1-A-4-013": "96d65ac83b7e9ad832bee5dd5b710b8e370e1b15677209787412d6adf4a2549f",
+          "NOTE-WAVE3-W1-A-4-014": "438afda3e4ef97d912cf3a79346f7210ebd7f84a3d291661eae9c6222546996b",
+          "NOTE-WAVE3-W1-A-4-015": "d301e23a14f71089d2a324e339514438499cb8e4ff3840d06bafee97a5bd54ee",
+          "NOTE-WAVE3-W1-A-4-016": "7b9bb30b10ae6aaceb520f15312068dd9749ff455ac4ca249b3c6c51b5ab66ba",
+          "NOTE-CENSUS-V2-W1-A-4-ADD-001": "5462cc8cdbc7e1fa3eb8854dbb3c7ca6f5a9c2a32321c30e0477c2e2cff4677c"
+        },
+        "source_blocked_claim_ids": [
+          "NOTE-WAVE3-W1-A-4-003",
+          "NOTE-WAVE3-W1-A-4-004"
+        ],
+        "author_nonlegal_classification": null,
+        "known_author_ids": [
+          "/root/independent_case_h",
+          "AUTHOR_CENSUS_CORRECTION /root/independent_case_h NOT_INDEPENDENT",
+          "AUTHOR_NOTE_WAVE3_CODEX_20261103_NOT_INDEPENDENT"
+        ]
+      },
+      "body_read_completely": true,
+      "completeness": "COMPLETE",
+      "completeness_method": "실제 load_notes 전문→각 의무/상태/기간/예외의 독자 atomic inventory→final census17명제 전부의 양방향 coverage→원16개 JSON/statement의불변보존→원omission hash와ADD의실제명제→공식조문→55개 실제관련문항을 대조했다. 문장개수나저자count만으로COMPLETE를만들지않았다.",
+      "omissions": [],
+      "legal_status": "KEEP",
+      "claims": [
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-001",
+          "claim_record_sha256": "d3a5938dd488670a512fd4da479b3b753b276d55574b79400941fcbfcdb5f29e",
+          "statement_ko": "개인 pharmacist registration은 짝수해12월31일 만료한다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "247 CMR 4.02(1)은 모든 personal registration의 일반 만료일을 짝수 해 12월 31일로 정한다. 본문 뒤에 명시된 active-service 예외를 지우는 무조건 명제로 읽지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(1)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-002",
+          "claim_record_sha256": "59d35db7ca8dee48ee559dfe16b2144cd7ecfebbad281eba7a0e7cb596b3e41a",
+          "statement_ko": "계속 practice하려면 다음해1월1일 전에 갱신한다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "같은 4.02(1)은 계속 pharmacy practice를 하려는 registrant의 갱신을 다음 해 1월 1일 전에 요구한다. 만료일과 다음 해 시작점의 순서를 확인했다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(1)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-003",
+          "claim_record_sha256": "a53b29833f2b6597958403139d52d1763c619f203e242480e4e5cead563bc52b",
+          "statement_ko": "DrugStore pharmacy license는 홀수해 주기이다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "새 공식 247 CMR 6.05(2)는 Drug Store Pharmacy license가 발급 뒤 각 홀수 해 12월 31일에 만료함을 명시한다. 6.09(1)(d)1은 non-resident Drug Store도 같은 주기이다. 개인 pharmacist 및 compounding의 연간 달력과 혼동하지 않는다. 원 author SOURCE_BLOCKED 기록은 그대로 두고 이번 독립 조회로 이 명제만 판정한다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 6.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+              "exact_section": "247 CMR 6.05(2); 6.09(1)(d)1",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "247 CMR 6.00 official current download retrieved 2026-11-04. Retrieved PDF has substantive 6.05(2) and 6.09(1)(d) text; publication/commencement date is not printed in extracted pages and is not independently established. No new legal effective date inferred from retrieval.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/pharmacy-license.pdf",
+              "evidence_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1",
+              "raw_payload_sha256": "8d1def57328d628a0c2e5a3a7adac28afa2d361585c09550b571f92eafa919f1",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:16.110031+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 148436
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": true,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-004",
+          "claim_record_sha256": "3c8dd3a1b79088d6e8d10af09ce316340dccf8559597dba287dadf303f30dbe0",
+          "statement_ko": "Technician renewal은 생일 기준 주기이다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "새 공식 247 CMR 8.07(1)은 pharmacy technician license가 매 2년 licensee의 생일에 만료함을 명시한다. national certification이나 pharmacist 짝수 해 주기로 바꾸지 않는다. 원 author SOURCE_BLOCKED 기록은 수정하지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 8.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+              "exact_section": "247 CMR 8.07(1)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Mass. Register #1546 dated 2025-04-25; page containing 8.07 displays 4/25/25 (Effective 1/9/25). Other chapter pages have earlier corrected effective dates; no uniform chapter commencement assumed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/personnel.pdf",
+              "evidence_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+              "raw_payload_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:16.268352+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 122079
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": true,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-005",
+          "claim_record_sha256": "93ef9d1d44f83de34971b3eeffd59e54a96da8ac1ecb5dfb0445400850f00d32",
+          "statement_ko": "만료 후 pharmacy practice는 unlicensed practice이다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(3)은 personal registration 만료 후 pharmacy practice를 unlicensed practice로 규정한다. 본문의 군 복무 유효성 연장이 적용되는 사람은 아직 ordinary expiration이 발생했다고 보지 않는다는 문맥도 함께 유지한다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(3), read with (8)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-006",
+          "claim_record_sha256": "f8919bb5c176312c5fbc1230ecf424aaeee734a4745f26f3620501e2c63f7a03",
+          "statement_ko": "신청서 제출이나 fee납부만으로 현재 valid registration을 가정하지 않는다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(1)-(3)의 요구는 실제 갱신과 유효한 registration에 연결된다. 신청서 제출·납부 사실만으로 아직 expired인 registration에 practice 권한이 있다고 추정할 수 없다. 적법하게 완료된 갱신의 효력을 부정하거나 새로운 처리기한을 만든다는 뜻은 아니다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(1)-(3)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-007",
+          "claim_record_sha256": "6df5d20662638202aaee3bdde18ae19d6efff0f8786c05db0705d905ca72f53d",
+          "statement_ko": "Suspended/revoked가 아닌 일반 lapse60일 초과에는 Board 조건이 필요하다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(4)는 suspension/revocation이 없는 일반 미갱신이 60일을 초과한 신청자에게 Board가 부과한 조건 충족을 요구한다. 정확히 60일과 그보다 긴 기간, ordinary lapse와 discipline을 구분했다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(4)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-008",
+          "claim_record_sha256": "6870e3b0e3bd48e7708a6a7fb0822c8ff818d941ecd88ab526415246316e8149",
+          "statement_ko": "그 Board 조건에는 additionalCE가 포함될 수 있다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(4)의 may include는 추가 CE가 Board 조건에 포함될 수 있다는 재량 표현이다. 모든 60일 초과에 특정 CE 시수나 NAPLEX를 일률적으로 부과하는 규칙이 아니다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(4)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-009",
+          "claim_record_sha256": "a9edec2efda5013459eb6b006ed377fb65c3d7c96433313a7367d0afaed8f6a8",
+          "statement_ko": "60일 초과만으로 MPJE가 반드시 요구된다고 이 조문은 말하지 않는다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(4)는 60일 초과라는 사실만으로 MPJE를 자동 명시하지 않는다. 2년 초과 일반 미갱신의 4.02(5)나 disciplinary 4.02(6)-(7)가 별도로 적용될 수 있음을 면제하지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(4)-(7)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-010",
+          "claim_record_sha256": "60d66d35d23336b27d79d03134feaf3bd886f16460d9731cbcd56c1fa7928467",
+          "statement_ko": "일반 lapse2년 초과는 MPJE 합격이 선행조건이다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(5)는 suspension/revocation 없는 personal registration 미갱신이 2년을 초과하면 MPJE를 take and pass해야 함을 renewal prerequisite으로 명시한다. technician나 타 주 면허의 일반 규칙으로 확대하지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(5)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-011",
+          "claim_record_sha256": "9327cfbeddeb29de6efe3513d632926e53a33d774c9baccddf1aa62bb6f297b3",
+          "statement_ko": "일반 lapse2년 초과는 기타 Board조건도 충족해야 한다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(5)의 and meet all other conditions as determined by the Board도 갱신 선행요건이다. MPJE만 통과하면 다른 조건 없이 업무가 복구된다는 의미가 아니다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(5)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-012",
+          "claim_record_sha256": "f358122ca3ad7851b7c5e8f3f9c926cad5653d2a8469b672cfd3497bc5b31c0e",
+          "statement_ko": "Suspension/revocation2년 초과 경로는 MPJE를 요구한다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(7)은 revoked/suspended 상태가 2년을 초과한 personal registration renewal 경로에서 MPJE 합격을 요구한다. 일반 만료 경로와 별개이며 6개월–2년 suspension에도 별도 4.02(6)가 있다는 사실을 없애지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(7)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-013",
+          "claim_record_sha256": "96d65ac83b7e9ad832bee5dd5b710b8e370e1b15677209787412d6adf4a2549f",
+          "statement_ko": "그 disciplinary 경로에서 Board는 NAPLEX를 요구할 수 있다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(7)의 which may include taking and passing the NAPLEX는 Board의 가능 조건이다. 이 disciplinary 경로에서 NAPLEX를 항상 요구하거나 항상 배제한다는 설명은 틀리다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(7)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-014",
+          "claim_record_sha256": "438afda3e4ef97d912cf3a79346f7210ebd7f84a3d291661eae9c6222546996b",
+          "statement_ko": "Active military service 등록은 active duty 해제 후90일까지 유효하다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(8)은 qualifying active service 중 registration을 release 후 90일까지 유효하게 보호한다. 상위법 c.112 §1B(c)는 not less than 90 days라고 하므로 이 명제로 day 91에 반드시 무효라고 단정하지 않는다. 기산점은 인쇄된 만료일이 아니라 active-duty release이다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(8)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            },
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "M.G.L. c.112 §1B",
+              "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+              "exact_section": "M.G.L. c.112 §1B(c)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts Legislature current General Laws c.112 §1B(c), fresh official page retrieved 2026-11-04. Historic enactment/last-amendment commencement not separately reconstructed. Statute says not less than 90 days, so no automatic-invalidity-on-day-91 inference.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/military-statute.html",
+              "evidence_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+              "raw_payload_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+              "retrieval_provenance": {
+                "requested_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+                "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:26:51.061168+00:00",
+                "method": "Fresh official HTTPS network request using urllib.request, default proxy and normal TLS verification",
+                "content_type": "text/html; charset=utf-8",
+                "bytes": 78849
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-015",
+          "claim_record_sha256": "d301e23a14f71089d2a324e339514438499cb8e4ff3840d06bafee97a5bd54ee",
+          "statement_ko": "짝수해10월1일 이후 현역이면 해당 biennialCE exemption 문구가 적용된다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "4.02(8)은 해당 짝수 해 October 1st 이후 active service인 경우 그 짝수 해 12월 31일 직전 biennial cycle의 4.03 CE requirement를 제외한다. 특정 cycle만의 예외이며 이후 모든 연도의 면제가 아니다. after October 1st의 경계를 임의로 10월 1일 당일 포함으로 확장하지 않는다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(8)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-WAVE3-W1-A-4-016",
+          "claim_record_sha256": "7b9bb30b10ae6aaceb520f15312068dd9749ff455ac4ca249b3c6c51b5ab66ba",
+          "statement_ko": "이90일은 일반 지원자 모두의 renewal grace가 아니다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "90일 보호는 4.02(8) 및 c.112 §1B(c)의 active-service 요건을 만족하는 사람에게 연결된다. 일반 civilian expired registrant 모두에게 부여되는 practice grace가 아니며 4.02(3)이 일반 만료 후 practice를 제한한다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(3),(8)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            },
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "M.G.L. c.112 §1B",
+              "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+              "exact_section": "M.G.L. c.112 §1B(c)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts Legislature current General Laws c.112 §1B(c), fresh official page retrieved 2026-11-04. Historic enactment/last-amendment commencement not separately reconstructed. Statute says not less than 90 days, so no automatic-invalidity-on-day-91 inference.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/military-statute.html",
+              "evidence_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+              "raw_payload_sha256": "bea205f0397319125f7e5592243f8efdc685251d3fb620a0311f46d521262be6",
+              "retrieval_provenance": {
+                "requested_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+                "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section1B",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:26:51.061168+00:00",
+                "method": "Fresh official HTTPS network request using urllib.request, default proxy and normal TLS verification",
+                "content_type": "text/html; charset=utf-8",
+                "bytes": 78849
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        },
+        {
+          "claim_id": "NOTE-CENSUS-V2-W1-A-4-ADD-001",
+          "claim_record_sha256": "5462cc8cdbc7e1fa3eb8854dbb3c7ca6f5a9c2a32321c30e0477c2e2cff4677c",
+          "statement_ko": "약사 personal registration이 revoked 또는 suspended 상태로2년을 초과한 갱신 경로에서는 Board가 정한 기타 조건도 갱신의 선행요건으로 충족해야 한다.",
+          "claim_read_completely": true,
+          "legal_status": "KEEP",
+          "finding": "신규 ADD-001은 4.02(7)의 and meet all other conditions as determined by the Board를 독립적으로 열거한다. 대상은 revoked/suspended 상태가 2년을 초과한 personal registration renewal이며, MPJE 합격과 기타 조건 모두 갱신 전 prerequisite이다. 일반 lapse의 4.02(5), 선택적 NAPLEX만의 013, 또는 원래 MPJE만의 012로 대체할 수 없어 원 omission을 실제로 해소한다.",
+          "blocker": null,
+          "authorities": [
+            {
+              "source_type": "PUBLIC_OFFICIAL",
+              "authority": "247 CMR 4.00",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "exact_section": "247 CMR 4.02(7)",
+              "law_checked_date": "2026-11-04",
+              "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+              "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+              "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+              "retrieval_provenance": {
+                "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+                "http_status": 200,
+                "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+                "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+                "content_type": "application/pdf",
+                "bytes": 40467
+              }
+            }
+          ],
+          "historical_author_review_date": "2026-11-03",
+          "independent_review_date": "2026-11-04",
+          "inherited_legal_blockers": [],
+          "historical_author_source_blocked": false,
+          "author_source_status_not_mutated": true
+        }
+      ],
+      "reassessment_review": {
+        "reassessment_id": "census-only-omission-v2-w1-a-4",
+        "record_sha256": "1f0a5e97ef6e5ae59678beb9d965f901fff1dde8f43d952845471bebd7475df5",
+        "omission_resolutions": [
+          {
+            "omission_sha256": "ccd54836d9d6790e9e331f3edbbea6084360f9673d239c08ff4701634db81588",
+            "claim_ids": [
+              "NOTE-CENSUS-V2-W1-A-4-ADD-001"
+            ],
+            "explanation": "일반 lapse와 구별하여 suspended/revoked2년초과 경로의 all other Board conditions 선행의무를 별도로 열거했다. 기존 MPJE/optional NAPLEX 두명제는 수정하지 않았다.",
+            "original_omission_text": "CENSUS_COVERAGE_OMISSION: 본문 “Suspended/revoked 상태가 2년을 초과한 경로는 별도이다. 이 경우 MPJE와 기타 조건이 필요하고, Board가 NAPLEX 합격을 요구할 수도 있다.”의 ‘기타 조건이 필요’라는별도선행의무가배정census에없다.012는MPJE,013은선택적NAPLEX만명시한다.010/011의일반미갱신(otherconditions)은suspended/revoked를배제한경로이므로이disciplinary의무를대신하지않는다.247CMR4.02(7)는MPJE뿐아니라all other conditions as determined by Board의충족을renewal선행요건으로정한다.본문자체의오류나문장분절개수차이라는판정이아니다."
+          }
+        ],
+        "final_census_read_completely": true,
+        "all_original_omissions_reassessed": true,
+        "all_original_propositions_preserved": true
+      },
+      "independent_atomic_inventory": {
+        "path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/independent-atomic-inventory.json",
+        "raw_sha256": "82cabec66503a5b6c6f11889a7475747319afbcfb081441273f889de148b7e2b",
+        "legal_proposition_count": 17,
+        "remaining_omissions": []
+      },
+      "original_omission_reassessment": [
+        {
+          "original_omission_sha256": "ccd54836d9d6790e9e331f3edbbea6084360f9673d239c08ff4701634db81588",
+          "original_omission_text": "CENSUS_COVERAGE_OMISSION: 본문 “Suspended/revoked 상태가 2년을 초과한 경로는 별도이다. 이 경우 MPJE와 기타 조건이 필요하고, Board가 NAPLEX 합격을 요구할 수도 있다.”의 ‘기타 조건이 필요’라는별도선행의무가배정census에없다.012는MPJE,013은선택적NAPLEX만명시한다.010/011의일반미갱신(otherconditions)은suspended/revoked를배제한경로이므로이disciplinary의무를대신하지않는다.247CMR4.02(7)는MPJE뿐아니라all other conditions as determined by Board의충족을renewal선행요건으로정한다.본문자체의오류나문장분절개수차이라는판정이아니다.",
+          "mapped_new_claim_ids": [
+            "NOTE-CENSUS-V2-W1-A-4-ADD-001"
+          ],
+          "resolution_status": "RESOLVED_BY_DISTINCT_OPERATIVE_PROPOSITION",
+          "independent_finding_ko": "기존012의MPJE와013의optionalNAPLEX,011의ordinarylapseotherconditions를 대신사용하지 않고 ADD가 disciplinary>2년의allotherBoardconditions를그자체로열거했다. 본문실제문구와4.02(7)에대조해해소를확인했다.",
+          "authority": {
+            "source_type": "PUBLIC_OFFICIAL",
+            "authority": "247 CMR 4.00",
+            "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+            "exact_section": "247 CMR 4.02(7)",
+            "law_checked_date": "2026-11-04",
+            "version_or_effective_date_status": "Massachusetts official current download and regulation landing both identify MA Register #1330, dated 2017-01-13. Fresh retrieval/review 2026-11-04 is not the effective date; separate historical commencement of each cited clause not reconstructed.",
+            "evidence_path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/renewal.pdf",
+            "evidence_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+            "raw_payload_sha256": "257628b5c6bf02aac4e0a79501a411f3b25692661452c4b4d5107ae7e46a909e",
+            "retrieval_provenance": {
+              "requested_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "official_url": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download",
+              "http_status": 200,
+              "retrieved_at": "2026-11-04T00:24:15.873355+00:00",
+              "method": "Fresh official HTTPS network request using Python urllib.request with default environment proxy and normal TLS certificate verification",
+              "content_type": "application/pdf",
+              "bytes": 40467
+            }
+          }
+        }
+      ],
+      "claim_mapping_preservation": {
+        "original_claim_count": 16,
+        "exact_original_json_records_unchanged": 16,
+        "added_claim_ids": [
+          "NOTE-CENSUS-V2-W1-A-4-ADD-001"
+        ],
+        "changed_original_claim_ids": [],
+        "all_original_statement_propositions_preserved": true,
+        "carried_legal_blockers": {},
+        "inherited_blocker_closure_attempted": false,
+        "author_source_blocked_note": "003/004의저자SOURCE_BLOCKED는원문보존되었다. job의inheritedindependentlegalblocker는빈목록이다. 이번감사자는해당2개도공식6.05(2),8.07(1)을새조회해독립KEEP로판정했다."
+      },
+      "threshold_deadline_scope_exception_review_ko": "개인짝수해12/31·1/1전,DrugStore홀수해,technician생일매2년,strict>60일/strict>2년,ordinaryvsdiscipline,MPJE필수와NAPLEX재량,Board기타조건선행,active-service/release+90일,afterOct1및해당biennialcycle을각각확인했다. 법문에없는일반grace를추가하지않았고6개월–2년discipline은본문밖별도경로로구별했다.",
+      "practice_question_alignment": {
+        "path": "reports/full-corpus-review/independent-notes/reassessment-r1-evidence/claim-practice-alignment.json",
+        "raw_sha256": "573a162de8b2c2742cb76344d0770ae624d8af9f53e8f4b588d35d140aabbd41",
+        "linked_questions_read": 55,
+        "new_claim_direct_question_ids": [
+          "MA-CASE-0089",
+          "MA-CASE-0090",
+          "MA-EXP-0025",
+          "MA-EXP-0026",
+          "MA-EXP-0027",
+          "MA-EXP-0028"
+        ],
+        "new_claim_original_empty_metadata_is_not_no_match": true,
+        "question_audit_credit": 0
+      },
+      "summary_ko": "원누락1건은ADD의별도조건명제로해소되었고본문에남은census누락을발견하지못했다.17명제는확보한현행공식근거범위에서KEEP이다. 본문변경·기존원보고서삭제·저자census수정은없고root통합전현재coveragecredit를주장하지않는다."
+    }
+  ],
+  "limitations_ko": [
+    "별도시행일/최종개정법률의history를확보하지못한곳은authority의version_or_effective_date_status에명시했다. 실제조회일을시행일로대체하지않았다.",
+    "단원본문과실제연결문항의해당주제portion을검토했다.55개질문의전체독립legal/realismcanonicalaudit로승격하지않는다.",
+    "전체ledgerrawSHA는등록시provenance와재생성후값이다르나선택단원binding은동일하고rootcurrentinventory검증을통과했다.",
+    "기존독립bodycontentKEEP/authorenumeration/새독립completeness/legal처리및releasecredit는별개이다."
+  ]
+}

@@ -1,0 +1,34 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive _
+
+actual_reports = (PosixPath('/tmp/after190-note-fixture-fail/test_only_integrated_committed0/repo'), {'chapters': [{'highlights': ['개인 ...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive(actual_reports):
+        root,notes,state = actual_reports
+        original = copy.deepcopy(notes)
+>       metadata = load_metadata(root,notes)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_notes_independent_metadata.py::test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive
+1 failed in 2.11s

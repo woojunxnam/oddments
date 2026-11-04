@@ -1,0 +1,109 @@
+{
+  "question_id": "MA-Q-0208",
+  "family_id": "B2_DRUG_HOSPICE_CATEGORY_CAPS",
+  "area": 4,
+  "topic": "Hospice pharmacy",
+  "subtopic": "Acute-use drug categories",
+  "difficulty": 5,
+  "question_type": "SATA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "An inpatient Massachusetts hospice has 18 licensed beds. Under the acute-use ADD circular, its caps are 100 Schedule II-V analgesic units, 60 Schedule II-V sedative/anticonvulsant units, and 50 Schedule VI ancillary units. Which proposed category totals comply? Select all that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "101 Schedule II-V analgesic units because one extra unit may be borrowed from the ancillary category"
+    },
+    {
+      "id": "B",
+      "text": "70 Schedule II-V sedative units because the hospice has fewer than 21 beds"
+    },
+    {
+      "id": "C",
+      "text": "100 units of approved morphine/other Schedule II-V analgesic stock in the analgesic category"
+    },
+    {
+      "id": "D",
+      "text": "60 units of approved lorazepam/other Schedule II-V sedative stock in the sedative category"
+    },
+    {
+      "id": "E",
+      "text": "40 units of an approved Schedule VI ancillary antiemetic in the ancillary category"
+    }
+  ],
+  "correct_choice_ids": [
+    "C",
+    "D",
+    "E"
+  ],
+  "explanation": {
+    "core_reasoning": "Hospice acute-use limits are separate category caps; unused capacity in one category does not increase another category's limit.",
+    "choice_analysis": {
+      "A": "Category caps are separate.",
+      "B": "The 11-20 bed sedative cap is 60.",
+      "C": "That is at the 100-unit analgesic cap.",
+      "D": "That is at the 60-unit cap.",
+      "E": "That is below the 50-unit cap."
+    },
+    "related_facts": [
+      "The hospice need not stock each maximum."
+    ],
+    "mpje_trap": "Treating the three category maxima as one fungible pool."
+  },
+  "rule_ids": [
+    "MA-HOSPICE-ACUTE"
+  ],
+  "drug_ids": [
+    "morphine",
+    "lorazepam"
+  ],
+  "reasoning_steps": [
+    "Place 18 beds in the 11-20 tier",
+    "Map each drug category to its separate cap",
+    "Reject shifting unused capacity across categories"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-15",
+  "audits": [
+    "AUDIT-GPT-FRESH-EXP2-A-LEGAL-INITIAL-W2-2026-08-15",
+    "AUDIT-GPT-FRESH-EXP2-A-REALISM-INITIAL-W2-2026-08-15"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "GPT-5.6-Sol release-governance editor after independent Batch 2 audits",
+    "date": "2026-08-17",
+    "notes": "Batch 2 Round-2 release governance. Current-hash legal and realism evidence was selected question-by-question. The Issue #39 mixed realism artifact is retained as historical raw evidence; Round-2 Impact9 uses the fresh Issue #44 GPT-FRESH-EXP2-C audit.",
+    "verified_dependencies": {
+      "rules": {
+        "MA-HOSPICE-ACUTE": {
+          "content_version": 1,
+          "content_hash": "128ee1a1b353f19f764d305995ce4cf8729e34eefd0a875aff66da4a08be1d6d"
+        }
+      },
+      "drugs": {
+        "morphine": {
+          "content_version": 1,
+          "content_hash": "f9ae33c7e6276cf2af15610bde5e364a84e025ee5fbae4387e0fecd918681c49"
+        },
+        "lorazepam": {
+          "content_version": 1,
+          "content_hash": "9dfcb50fb3ca1da7fc7898e245d7d99f1fe0dc67d93e1021245e44edbb68d461"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

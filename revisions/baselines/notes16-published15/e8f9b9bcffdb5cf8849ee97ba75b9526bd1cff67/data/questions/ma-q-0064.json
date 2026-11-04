@@ -1,0 +1,95 @@
+{
+  "question_id": "MA-Q-0064",
+  "family_id": "P2_0064_FED_FORM222_60DAY",
+  "area": 4,
+  "topic": "Controlled substance procurement",
+  "subtopic": "Form validity",
+  "difficulty": 4,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Ship the balance because 60 business days have not elapsed."
+    },
+    {
+      "id": "B",
+      "text": "Extend the form by documenting the supplier's back order."
+    },
+    {
+      "id": "C",
+      "text": "Use the original form indefinitely for any unfilled balance."
+    },
+    {
+      "id": "D",
+      "text": "The ordinary 60-day Form 222 validity and partial-shipment window has expired."
+    },
+    {
+      "id": "E",
+      "text": "Change the execution date after the purchaser agrees."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "'The ordinary 60-day Form 222 validity and partial-shipment window has expired.' is the governing result. By contrast, 'Ship the balance because 60 business days have not elapsed.' would require that 21 CFR 1305.13 measured business rather than calendar days. The decisive cue appears in 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?'.",
+    "choice_analysis": {
+      "A": "'Ship the balance because 60 business days have not elapsed.' would apply only if 21 CFR 1305.13 measured business rather than calendar days; 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?' states otherwise.",
+      "B": "'Extend the form by documenting the supplier's back order.' would apply only if a back order created an extension beyond the 60-day period; 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?' states otherwise.",
+      "C": "'Use the original form indefinitely for any unfilled balance.' would apply only if partial-shipment authorization had no expiration; 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?' states otherwise.",
+      "D": "'The ordinary 60-day Form 222 validity and partial-shipment window has expired.': supported by form validity.",
+      "E": "'Change the execution date after the purchaser agrees.' would apply only if the supplier could alter the date to revive the form; 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?' states otherwise."
+    },
+    "related_facts": [
+      "A supplier may make partial shipments on an accepted DEA Form 222 during the 60-day period after execution; the form is generally invalid after 60 days.",
+      "21 CFR 1305.13(b)"
+    ],
+    "mpje_trap": "'Ship the balance because 60 business days have not elapsed.' would apply if 21 CFR 1305.13 measured business rather than calendar days. In 'During a controlled-substance review, a supplier plans to ship the unfilled balance of a DEA Form 222 order 64 days after execution. What is the problem?', that predicate is missing."
+  },
+  "rule_ids": [
+    "FED-FORM222-60DAY"
+  ],
+  "drug_ids": [],
+  "reasoning_steps": [
+    "Match the scenario's operative facts to DEA Form 222 validity and partial shipments",
+    "Reject nearby rules whose schedule, trigger, deadline, or actor differs from Form validity"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-LEGAL-B-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE8-REAUDIT-V2-PROV-REALISM-B-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-FORM222-60DAY": {
+          "content_version": 1,
+          "content_hash": "bcf16225009bf0f430d6c3cb655c932a153ccdb7f39be5db2ac521dba231a444"
+        }
+      },
+      "drugs": {},
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}

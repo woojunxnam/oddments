@@ -1,0 +1,21 @@
+{
+  "schema_version": "note-census-validation/1",
+  "wave_id": "NOTE-WAVE5",
+  "checked_at": "2026-11-03",
+  "census_path": "reports/full-corpus-review/note-wave5-census.json",
+  "census_sha256": "50d3311e7f84d64ee35cdb92b90514e7475c0c8244a2cc92a66d3125dc0fc526",
+  "result": "PASS",
+  "checks": [
+    "repository validate_note_census:20actual-body hashes,657uniqueclaims,31source-evidence hashes,questionIDbindings,status/blocker invariants",
+    "all20assignmentIDs/actualhashes preserved",
+    "sourcecheckedclaims copy primary URL/evidence hashes and effective-date unknown explicitly",
+    "independent count0;author-only enumeration;existing OPENregistry and notes remain unchanged",
+    "new primary text whitespace normalized for clean diff; raw HTTP payload SHA256 preserved separately"
+  ],
+  "author_source_checked_claim_count": 638,
+  "source_blocked_claim_count": 19,
+  "full_pytest": "NOT RUN — report/evidence-only worker;root owns integrated repository checks",
+  "deterministic_artifact_regeneration": "NOT RUN — shared generated files must not be written by worker",
+  "github_ci": "NOT RUN — root integration required",
+  "deployment": "NOT RUN — root release gate required"
+}

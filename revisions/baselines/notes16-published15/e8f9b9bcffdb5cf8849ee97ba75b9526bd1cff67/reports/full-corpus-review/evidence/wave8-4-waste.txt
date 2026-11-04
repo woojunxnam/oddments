@@ -1,0 +1,377 @@
+eCFR :: 40 CFR 266.506 -- Conditional exemption for hazardous waste pharmaceuticals that are also controlled substances and household waste pharmaceuticals collected by an authorized collector.
+{
+  "imports": {
+    "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+    "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+    "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+    "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+    "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+    "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+    "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+    "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+    "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+    "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+    "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+    "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+    "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+    "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+    "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+    "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+    "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+    "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+    "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+    "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+    "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+    "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+    "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+    "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+    "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+    "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+    "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+    "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+    "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+    "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+    "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+    "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+    "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+    "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+    "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+    "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+  }
+}
+import "application"
+Site Feedback
+You are using an unsupported browser
+×
+You are using an unsupported browser. This web site is designed for the current versions of
+          Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+×
+Site Feedback
+The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+Website Feedback
+If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+Content Feedback
+If you have questions for the Agency that issued the current document please contact the agency directly.
+×
+Website Feedback
+*
+Your Name
+*
+Email
+Attachment
+*
+How can we help you?
+*
+I am requesting technical help or providing website feedback
+This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+            contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+            information or personal data.
+☰
+Home
+Browse
+Titles
+Agencies
+CFR Updates
+Recent Changes
+Issue Summaries
+Corrections
+Finding Aids
+Parallel Table of Authorities
+Subject Index
+Agency-prepared Indexes
+Reader Aids
+Reader Aids Home
+Using the eCFR Point-in-Time System
+Understanding the eCFR
+Government Policy and OFR Procedures
+Developer Resources
+Recent Site Updates
+My eCFR
+My Subscriptions
+Sign Out
+Sign In / Sign Up
+eCFR
+The Electronic Code of Federal Regulations
+Enhanced Content :: FR Reference
+Enhanced content is provided to the user to provide additional context.
+Enhanced Content :: FR Reference
+Title 40
+This content is from the eCFR and is authoritative but unofficial.
+Displaying title 40, up to date as of 10/30/2026. Title 40 was last amended 10/30/2026.
+view historical versions
+A
+drafting site is available
+for use when drafting amendatory language
+switch to drafting site
+Navigate by entering citations or phrases
+(eg:
+1 CFR 1.1
+49 CFR 172.101
+Organization and Purpose
+1/1.1
+Regulation Y
+FAR
+).
+Choosing an item from
+citations and headings
+will bring you directly to the content. Choosing an item from
+full text search results
+will bring you to those results. Pressing enter in the search box
+              will also bring you to search results.
+Background and more details are available in the
+Search & Navigation
+guide.
+Title 40
+—Protection of Environment
+Chapter I
+—Environmental Protection Agency
+Subchapter I
+—Solid Wastes
+Part 266
+—Standards for the Management of Specific Hazardous Wastes and Specific Types of Hazardous Waste Management Facilities
+Subpart P
+—Hazardous Waste Pharmaceuticals
+§ 266.506
+Previous
+Next
+Top
+Table of Contents
+Enhanced Content - Table of Contents
+The in-page Table of Contents is available only when multiple sections are being viewed.
+Use the navigation links in the gray bar above to view the table of contents that this content belongs to.
+Enhanced Content - Table of Contents
+Details
+Enhanced Content - Details
+URL
+https://www.ecfr.gov/current/title-40/part-266/section-266.506
+Citation
+40 CFR 266.506
+Agency
+Environmental Protection Agency
+Part 266
+Authority:
+42 U.S.C. 1006
+,
+2002(a)
+,
+3001-3009
+,
+3014
+,
+3017
+,
+6905
+,
+6906
+,
+6912
+,
+6921
+,
+6922
+,
+6924-6927
+,
+6934
+, and
+6937
+.
+Source:
+50 FR 666
+, Jan. 4, 1985, unless otherwise noted.
+Subpart P of Part 266
+Source:
+84 FR 5940
+, Feb. 22, 2019, unless otherwise noted.
+Enhanced Content - Details
+Print/PDF
+Enhanced Content - Print
+Generate PDF
+This content is from the eCFR and may include recent changes applied to the CFR.
+        The official, published CFR, is updated annually and available below under
+        "Published Edition". You can learn more about the process
+here
+.
+Enhanced Content - Print
+Display Options
+Enhanced Content - Display Options
+Enhanced Content - Display Options
+Subscribe
+Enhanced Content - Subscribe
+Subscribe to:
+40 CFR 266.506
+Via Email:
+Enhanced Content - Subscribe
+Timeline
+Enhanced Content - Timeline
+Show only dates with regulatory amendments (
+)
+12/07/2023
+view on this date
+view change
+introduced
+8/09/2023
+view on this date
+view change
+introduced
+compare to most recent
+8/21/2019
+view on this date
+view change
+introduced
+compare to most recent
+Enhanced Content - Timeline
+Go to Date
+Enhanced Content - Go to Date
+Date
+Enhanced Content - Go to Date
+Compare Dates
+Enhanced Content - Compare Dates
+Compare
+to
+Show changes as:
+red/green
+purple/orange
+Show strike-through for removed content
+yes
+no
+Enhanced Content - Compare Dates
+Published Edition
+Enhanced Content - Published Edition
+View the most recent official publication:
+View Title 40 on govinfo.gov
+View the PDF for 40 CFR 266.506
+These links go to the official, published CFR, which is updated annually. As a
+      result, it may not include the most recent changes applied to the CFR.
+Learn more
+.
+Enhanced Content - Published Edition
+Developer Tools
+Enhanced Content - Developer Tools
+Information and documentation can be found in our
+developer resources
+.
+Enhanced Content - Developer Tools
+eCFR Content
+The
+Code of Federal Regulations
+(CFR) is the official legal print publication containing the codification of the general and permanent rules published in the
+Federal Register
+by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR.
+Learn more
+about the eCFR, its status, and the editorial process.
+§ 266.506 Conditional exemption for hazardous waste pharmaceuticals that are also controlled substances and household waste pharmaceuticals collected by an authorized collector.
+(
+a
+)
+Conditional exemptions.
+Provided the conditions of
+paragraph (b)
+of this section are met, the following are exempt from
+40 CFR parts 262
+through
+273
+:
+(
+1
+)
+Hazardous waste pharmaceuticals that are also listed on a schedule of controlled substances by the Drug Enforcement Administration in
+21 CFR part 1308
+, and
+(
+2
+)
+Household waste pharmaceuticals that are collected by an authorized collector (as defined by the Drug Enforcement Administration) registered with the Drug Enforcement Administration that commingles the household waste pharmaceuticals with controlled substances from an ultimate user (as defined by the Drug Enforcement Administration).
+(
+b
+)
+Conditions for exemption.
+The hazardous waste pharmaceuticals must be:
+(
+1
+)
+Managed in compliance with the sewer prohibition of
+§ 266.505
+; and
+(
+2
+)
+Collected, stored, transported, and disposed of in compliance with all applicable Drug Enforcement Administration regulations for controlled substances; and
+(
+3
+)
+Destroyed by a method that Drug Enforcement Administration has publicly deemed in writing to meet their non-retrievable standard of destruction or combusted at one of the following:
+(
+i
+)
+A permitted large municipal waste combustor, subject to
+40 CFR part 62 subpart FFF
+or applicable state plan for existing large municipal waste combustors, or
+40 CFR part 60 subparts Eb
+for new large municipal waste combustors; or
+(
+ii
+)
+A permitted small municipal waste combustor, subject to
+40 CFR part 62 subpart JJJ
+or applicable state plan for existing small municipal waste combustors, or
+40 CFR part 60 subparts AAAA
+for new small municipal waste combustors; or
+(
+iii
+)
+A permitted hospital, medical and infectious waste incinerator, subject to
+40 CFR part 62, subpart HHH
+, or applicable state plan for existing hospital, medical and infectious waste incinerators, or
+40 CFR part 60, subpart Ec
+,
+f
+or new hospital, medical and infectious waste incinerators; or
+(
+iv
+)
+A permitted commercial and industrial solid waste incinerator, subject to
+40 CFR part 62, subpart III
+, or applicable state plan for existing commercial and industrial solid waste incinerators, or
+40 CFR part 60, subpart CCCC
+,
+f
+or new commercial and industrial solid waste incinerators; or
+(
+v
+)
+A permitted hazardous waste combustor subject to
+40 CFR part 63 subpart EEE
+.
+[
+84 FR 5940
+, Feb. 22, 2019, as amended at
+88 FR 54113
+, Aug. 9, 2023]
+{"origins":[{"level":"part","identifier":"266","label_level":"Part 266","hierarchy":{"title":"40","chapter":"I","subchapter":"I","part":"266"},"current":false,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/42/1006\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e42 U.S.C. 1006\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/2002\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e2002(a)\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/3001\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e3001-3009\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/3014\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e3014\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/3017\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e3017\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6905\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6905\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6906\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6906\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6912\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6912\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6921\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6921\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6922\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6922\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6924\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6924-6927\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6934\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6934\u003c/a\u003e, and \u003ca href=\"https://www.govinfo.gov/link/uscode/42/6937\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e6937\u003c/a\u003e.\n"],"source":["\u003ca href=\"https://www.federalregister.gov/citation/50-FR-666\" class=\"fr-reference\" data-reference=\"50 FR 666\"\u003e50 FR 666\u003c/a\u003e, Jan. 4, 1985, unless otherwise noted.\n"],"link":"/current/title-40/part-266","title":"Part 266"},{"level":"subpart","identifier":"P","label_level":"Subpart P","hierarchy":{"title":"40","chapter":"I","subchapter":"I","part":"266","subpart":"P"},"current":false,"authority":[],"source":["\u003ca href=\"https://www.federalregister.gov/citation/84-FR-5940\" class=\"fr-reference\" data-reference=\"84 FR 5940\"\u003e84 FR 5940\u003c/a\u003e, Feb. 22, 2019, unless otherwise noted.\n"],"link":"/current/title-40/part-266/subpart-P","title":"Subpart P of Part 266"}]}
+eCFR Content
+Pages
+Home
+Titles
+Search
+Recent Changes
+Corrections
+Reader Aids
+Using the eCFR Point-in-Time System
+Understanding the eCFR
+Government Policy and OFR Procedures
+Developer Resources
+Recent Site Updates
+Information
+About This Site
+Legal Status
+Privacy
+Accessibility
+FOIA
+No Fear Act
+Continuity Information
+My eCFR
+My Subscriptions
+Sign In / Sign Up

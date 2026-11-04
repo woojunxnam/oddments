@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woojunxnam/oddments/schemas/study_guide_audit.schema.json",
+  "title": "Independent Study Guide Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "audit_id",
+    "auditor",
+    "auditor_instance",
+    "audit_date",
+    "independent",
+    "audit_status",
+    "represented_freeze_sha",
+    "audit_package_path",
+    "audit_package_sha256",
+    "section_ids",
+    "section_hashes",
+    "dependency_snapshots",
+    "results"
+  ],
+  "properties": {
+    "audit_id": {"type": "string", "pattern": "^AUDIT-SG-[A-Z0-9-]+$"},
+    "auditor": {"enum": ["GPT", "CLAUDE", "HUMAN"]},
+    "auditor_instance": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9._:-]*$"},
+    "audit_date": {"type": "string", "format": "date"},
+    "independent": {"const": true},
+    "audit_status": {"const": "FULLY_ADJUDICATED"},
+    "represented_freeze_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "audit_package_path": {"type": "string", "pattern": "^audits/study_guide/.+-AUDIT-PACKAGE\\.json$"},
+    "audit_package_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "section_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^SG-[A-Z0-9-]+$"}
+    },
+    "section_hashes": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {"^SG-[A-Z0-9-]+$": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+      "additionalProperties": false
+    },
+    "dependency_snapshots": {"type": "object"},
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/result"}
+    }
+  },
+  "$defs": {
+    "criterionVerdict": {"enum": ["PASS", "FAIL"]},
+    "authority": {
+      "type": "object",
+      "required": ["official_url", "exact_section", "checked_date"],
+      "properties": {
+        "official_url": {"type": "string", "pattern": "^https://"},
+        "exact_section": {"type": "string", "minLength": 1},
+        "checked_date": {"type": "string", "format": "date"}
+      }
+    },
+    "finding": {
+      "type": "object",
+      "required": ["severity", "criterion", "location", "problem", "rationale"],
+      "properties": {
+        "severity": {"enum": ["Low", "Medium", "High", "Critical"]},
+        "criterion": {"type": "string"},
+        "location": {"type": "string"},
+        "problem": {"type": "string"},
+        "rationale": {"type": "string"},
+        "authorities": {"type": "array", "items": {"$ref": "#/$defs/authority"}}
+      }
+    },
+    "criteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "paraphrase_fidelity",
+        "material_exceptions",
+        "ma_vs_federal_distinctions",
+        "actor_and_scope",
+        "deadlines",
+        "forms",
+        "decision_logic",
+        "overgeneralization",
+        "unsupported_propositions",
+        "practice_question_mapping",
+        "study_usefulness_without_legal_distortion"
+      ],
+      "properties": {
+        "paraphrase_fidelity": {"$ref": "#/$defs/criterionVerdict"},
+        "material_exceptions": {"$ref": "#/$defs/criterionVerdict"},
+        "ma_vs_federal_distinctions": {"$ref": "#/$defs/criterionVerdict"},
+        "actor_and_scope": {"$ref": "#/$defs/criterionVerdict"},
+        "deadlines": {"$ref": "#/$defs/criterionVerdict"},
+        "forms": {"$ref": "#/$defs/criterionVerdict"},
+        "decision_logic": {"$ref": "#/$defs/criterionVerdict"},
+        "overgeneralization": {"$ref": "#/$defs/criterionVerdict"},
+        "unsupported_propositions": {"$ref": "#/$defs/criterionVerdict"},
+        "practice_question_mapping": {"$ref": "#/$defs/criterionVerdict"},
+        "study_usefulness_without_legal_distortion": {"$ref": "#/$defs/criterionVerdict"}
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "section_id",
+        "section_hash",
+        "disposition",
+        "severity",
+        "criteria",
+        "findings",
+        "authorities_checked",
+        "practice_mapping_verdict",
+        "summary"
+      ],
+      "properties": {
+        "section_id": {"type": "string", "pattern": "^SG-[A-Z0-9-]+$"},
+        "section_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "disposition": {"enum": ["KEEP", "MINOR_EDIT", "MAJOR_REWRITE", "HOLD"]},
+        "severity": {"enum": ["None", "Low", "Medium", "High", "Critical"]},
+        "criteria": {"$ref": "#/$defs/criteria"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+        "authorities_checked": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/authority"}},
+        "practice_mapping_verdict": {"enum": ["PASS", "FAIL"]},
+        "summary": {"type": "string"}
+      }
+    }
+  }
+}

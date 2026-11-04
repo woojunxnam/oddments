@@ -1,0 +1,108 @@
+{
+  "question_id": "MA-Q-0011",
+  "family_id": "P2_0011_FED_CII_NO_REFILL",
+  "area": 3,
+  "topic": "Controlled prescriptions",
+  "subtopic": "Schedule II refills",
+  "difficulty": 3,
+  "question_type": "SBA",
+  "provenance": "GEN",
+  "source_signal_ids": [],
+  "stem": "A patient says the pharmacy dispensed only 20 of 30 Adderall tablets because stock was short 10 days ago. The profile instead shows all 30 tablets were dispensed, and the original prescription says \"3 refills.\" What should the pharmacist do?",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Process one of the printed refills."
+    },
+    {
+      "id": "B",
+      "text": "Dispense 10 tablets as a stock-shortage remainder."
+    },
+    {
+      "id": "C",
+      "text": "Ask the prescriber to add a refill by telephone."
+    },
+    {
+      "id": "D",
+      "text": "Decline further dispensing; require a new lawful prescription."
+    },
+    {
+      "id": "E",
+      "text": "Treat the notation as three future-dated prescriptions."
+    }
+  ],
+  "correct_choice_ids": [
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "Because the record shows the Schedule II prescription was completely dispensed, neither a remainder nor a refill remains. The printed refill notation is ineffective, so further dispensing requires a new lawful prescription.",
+    "choice_analysis": {
+      "A": "The five-refill framework does not apply to Schedule II prescriptions.",
+      "B": "A remainder exists only after an actual, documented partial fill; the record shows the full quantity was dispensed.",
+      "C": "A telephone change cannot add a refill to a completed Schedule II prescription.",
+      "D": "Correct. A completed Schedule II prescription cannot be refilled.",
+      "E": "A refill notation does not create separate prescriptions with their own issue and earliest-fill dates."
+    },
+    "related_facts": [
+      "Adderall is a federal and Massachusetts Schedule II drug.",
+      "Federal law prohibits Schedule II refills; a genuine partial-fill balance is a different legal pathway."
+    ],
+    "mpje_trap": "Do not convert a claimed shortage into a remainder when the dispensing record documents completion."
+  },
+  "rule_ids": [
+    "FED-CII-NO-REFILL",
+    "FED-CS-SCHEDULES"
+  ],
+  "drug_ids": [
+    "amphetamine-dextroamphetamine"
+  ],
+  "reasoning_steps": [
+    "Classify Adderall as Schedule II",
+    "Distinguish a completed dispensing from a documented partial-fill balance",
+    "Reject refill and oral-change pathways for the completed prescription"
+  ],
+  "verification_status": "RELEASED",
+  "lifecycle_status": "RELEASED",
+  "last_legal_review": "2026-08-19",
+  "audits": [
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-LEGAL-A-2026-08-19",
+    "AUDIT-GPT-PHASE2-ISSUE12-REAUDIT-V3-PROV-REALISM-A-2026-08-19"
+  ],
+  "duplicate_review_status": "CLEAR",
+  "independent_audit_status": "PASSED",
+  "final_adjudication": {
+    "decision": "KEEP",
+    "adjudicator": "Claude Code release-governance controller under Issue #91 after the B3-S1 legacy audit provenance migration",
+    "date": "2026-08-19",
+    "notes": "Batch 3 salvage tranche S1. These questions already held current-hash independent legal KEEP/YES and full-bank realism KEEP/PASS evidence from two documented independent GPT audit sessions, but that evidence predated the auditor_instance field and so failed the AUDITOR_INSTANCE release policy. Issue #8 and merged PR #10, and Issue #12 and merged PR #13, each demanded one NEW independent conversation and are the provable origin of those records. The session provenance was recovered additively: the historical records are untouched and the normalized copies change no verdict, authority, criterion, note or question hash. No substantive re-audit was performed or needed. MA-Q-0028 remains quarantined and is not released or previewed.",
+    "verified_dependencies": {
+      "rules": {
+        "FED-CII-NO-REFILL": {
+          "content_version": 1,
+          "content_hash": "0be5f57c67a796566a0deb7dec6ae25f349c7ec269a36f45c18b9e5fbf0a3eb6"
+        },
+        "FED-CS-SCHEDULES": {
+          "content_version": 1,
+          "content_hash": "7b4b6f9f82c86944dd8cefc1dd1aa2e684bfff4dd4aaed21d99e68c1091d025c"
+        }
+      },
+      "drugs": {
+        "amphetamine-dextroamphetamine": {
+          "content_version": 1,
+          "content_hash": "b1bd93919f680a5cb42a00c2aa230521c40e0af343ac5677536414db3526f468"
+        }
+      },
+      "blueprint": {
+        "id": "MPJE-MA-PRE2027-BLUEPRINT",
+        "content_version": 1,
+        "content_hash": "4d5e3acaccaa562b16e53740e802a3a05ada5900a09a65585f3e6f94d7827a86"
+      },
+      "style_profile": {
+        "id": "MPJE-MA-PRE2027",
+        "content_version": 1,
+        "content_hash": "293be8fdcd39af2255a22a0423b7123d5cfcf7c0e6c561872eb0ef04e745015c"
+      }
+    }
+  },
+  "development_fixture": true
+}
