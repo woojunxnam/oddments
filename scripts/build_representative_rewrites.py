@@ -31,6 +31,11 @@ ARCHIVES = [
     'practice_expansion/2026-10-26-plus/questions.json',
     'practice_expansion/2026-10-27-quality/questions.json',
 ]
+HISTORICAL_REVIEW_SNAPSHOTS = {
+    'reports/full-corpus-review/pub05-14-independent-review.json': '573f8cb1979be264771a1dd44d72cdb758d51ece3e6ab28e7a09e0debce0cedc',
+    'reports/full-corpus-review/wave2-independent-review.json': '3e10a5a56713b66f09de70b36b7f52984c95f49cae4f0cce71c0d8cee8d9a3bc',
+    'reports/full-corpus-review/wave5-independent-review.json': 'bdee56748325221a80a50e5a7cf3a0b35c3125f27ccef0a903d3c8f5dfa9ce04',
+}
 REVIEW_STATUS = 'AUTHOR_SOURCE_REVIEW_NOT_INDEPENDENT_AUDIT'
 
 
@@ -247,7 +252,7 @@ def validate_editorial_wording_holds(holds, old_by_id, input_hashes):
                 'Editorial hold quote differs from current choice')
 
 
-def archive_review_notices(old_by_id, input_hashes):
+def _existing_archive_review_notices(old_by_id, input_hashes):
     """Surface known defects without mutating a preserved answer or audit status."""
     path = REPORTS / 'archive-review-notices.json'
     if not path.exists():
@@ -267,6 +272,7 @@ def archive_review_notices(old_by_id, input_hashes):
             'ALL_CORRECT_SATA_EDITORIAL_REVIEW',
             'EDITORIAL_CONTEXT_REVIEW',
             'INDEPENDENT_REVIEW_FINDING',
+            'HISTORICAL_REVIEW_FINDING',
             'AUTHOR_REVIEW_FINDING',
         }, 'Unclassified archive notice')
         review_relative = Path(notice['review_source'])
@@ -281,19 +287,28 @@ def archive_review_notices(old_by_id, input_hashes):
                     source.get('independent_of_authors') is True and source.get('auditor_instance') and
                     source.get('canonical_audit') is False and source.get('canonical_release_credit') == 0,
                     'Archive notice lacks independent review provenance')
+        if notice['issue_type'] == 'HISTORICAL_REVIEW_FINDING':
+            source = json.loads(review_raw)
+            require(HISTORICAL_REVIEW_SNAPSHOTS.get(str(review_relative)) == digest(review_raw) and
+                    source.get('stage') is None and source.get('independent_of_authors') is True and
+                    source.get('auditor_instance') and source.get('canonical_audit') is False and
+                    source.get('canonical_release_credit') == 0 and
+                    notice.get('new_independent_review_credit') == 0,
+                    'Historical warning lacks its exact retained review snapshot')
         for qid in ids:
             actual = digest(json.dumps(old_by_id[qid], ensure_ascii=False, sort_keys=True,
                                        separators=(',', ':')).encode())
             require(actual == notice['question_record_hashes'][qid], 'Stale archive notice: ' + qid)
             require(qid in reviews and reviews[qid]['record_sha256'] == actual,
                     'Archive notice lacks a matching reviewed ID: ' + qid)
-            if notice['issue_type'] == 'INDEPENDENT_REVIEW_FINDING':
+            if notice['issue_type'] in {'INDEPENDENT_REVIEW_FINDING', 'HISTORICAL_REVIEW_FINDING'}:
                 review = reviews[qid]
                 require(review.get('legal_review', {}).get('verdict') in {
                             'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'DELETE', 'REPLACE'} or
                         review.get('legal_review', {}).get('existing_answer_correct') in {
                             'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
-                        review.get('realism_review', {}).get('verdict') == 'FAIL',
+                        review.get('realism_review', {}).get('verdict') in {
+                            'FAIL', 'MINOR_EDIT', 'MAJOR_REWRITE'},
                         'Independent archive notice lacks a negative or blocked review: ' + qid)
             if notice['issue_type'] == 'AUTHOR_REVIEW_FINDING':
                 review=reviews[qid]
@@ -320,6 +335,14 @@ def archive_review_notices(old_by_id, input_hashes):
                         'Editorial context notice lacks a matching supported-key review: ' + qid)
         seen.update(ids)
     return notices
+
+
+def archive_review_notices(old_by_id, input_hashes):
+    # Existing notices retain their original validator and immutable history.
+    from note_question_discrepancies import load_metadata, archive_notices
+    previous = _existing_archive_review_notices(old_by_id, input_hashes)
+    metadata = load_metadata(ROOT, old_by_id)
+    return archive_notices(previous, metadata)
 
 
 def verify_published_baseline(bank):

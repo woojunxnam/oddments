@@ -84,6 +84,22 @@ def validate_default_review_safety(default_ids, reviews, independent_records):
             raise ValueError('Uncontained independent finding in default practice: ' + review['question_id'])
 
 
+def validate_independent_archive_safety(selection, independent_records):
+    """A retained negative finding needs a visible, source-bound archive warning."""
+    visible = {qid for notice in selection['archive_review_notices']
+               for qid in notice['question_ids']}
+    visible.update(hold['legacy_question_id'] for hold in selection['holds'])
+    visible.update(hold['question_id'] for hold in selection.get('safety_holds', []))
+    for review in independent_records:
+        legal, realism = review['legal_review'], review['realism_review']
+        negative = (legal.get('verdict') in {
+                        'MINOR_EDIT', 'MAJOR_REWRITE', 'HOLD', 'DELETE', 'REPLACE'} or
+                    legal.get('existing_answer_correct') in {'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
+                    realism.get('verdict') in {'FAIL', 'MINOR_EDIT', 'MAJOR_REWRITE'})
+        if negative and review['question_id'] not in visible:
+            raise ValueError('Unsurfaced independent archive finding: ' + review['question_id'])
+
+
 def apply_independent_legacy_review(row, audit_row):
     """A supported key does not erase an unresolved law or explanation finding."""
     previous=row['disposition']; previous_blocker=row['blocker']
@@ -601,6 +617,7 @@ def build():
     secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,
         {r['question_id']:r['collection'] for r in result})
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
+    validate_independent_archive_safety(selection, independent_records+secondary['records'])
     independent_by_id = {r['question_id']: r for r in independent_records}
     for row in result:
         supplementary = secondary['assessments'].get(row['question_id'])
@@ -618,6 +635,10 @@ def build():
                 row['disposition_before_default_hold']=row['disposition']
                 row['blocker_before_default_hold']=row['blocker']
                 row.update(disposition='HOLD',blocker=hold['reason'])
+
+    from note_question_discrepancies import load_metadata as load_note_links, apply_holds as apply_note_link_holds
+    note_links = load_note_links(ROOT, public_by_id, selection['recommended_ids'])
+    apply_note_link_holds(result, note_links)
 
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
@@ -753,6 +774,7 @@ def build():
                     same_team_peer_this_session='NOT_CERTIFIED_BY_THIS_INVENTORY',
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
+    progress['note_link_question_discrepancy_holds'] = note_links['summary']
     if secondary['assessments']:
         progress['independent_legacy_procedural_supplementary_review'] = secondary['progress']
     inventory = dict(

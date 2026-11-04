@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 146 |
-| NOT_YET_IMPLEMENTED | 132 |
+| HOLD_FROM_DEFAULT | 147 |
+| NOT_YET_IMPLEMENTED | 131 |
 
-이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 299개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 298개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1150개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1151개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -385,7 +385,7 @@
 | MA-CASE-0910 | PLUS-MR14 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 서로 다른 다섯 제품의 규칙을 나열하며 MA-CASE-0478의 Brixadi·TIRF 오답이 그대로 반복된다. |
 | MA-CASE-0919 | PLUS-MR15 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Methadone indication·X-waiver 제거·stock transfer를 묶고 유일 오답은 schedule 숫자가 DUR를 면제한다는 명백한 오류이다. 현재 보류 이유: 독립 법규 키 판단과 별도로 현실성 FAIL: 정답은legitimatepurpose/validcurrentauthority/lawfulstockroute를확인하고개념을distinguish하는문장이다.오답은low-schedule이면DUR없음,discontinuedidentifier필수,renewableemergencymethadone,neighborcuriosity처럼명백한오남용이어서실제허가·기산점·제형사실을판단하는부담이작다. 실제정답보기A,B,C,D: A pharmacist distinguishes a legitimate methadone analgesia prescription from a methadone prescription written solely for OUD maintenance outside an OTP. / 실제오답보기E: A pharmacist concludes that a low schedule number removes the need to assess a clinically significant sedative combination. |
 | MA-CASE-1005 | PLUS-MR24 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 스캔 EPCS·수량 변경은 MA-CASE-0595와 반복된다. Forgery와 paper replacement는 의미 있는 다른 경로지만 두 사건을 실제로 연결하지 않는다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 eligible exception과 remaining rules 충족을 직접 말하고, C/E는 검토·논의의 부재를 명시합니다. 개별 처방의 실제 자료를 적용하기 전에 문장에 제시된 준수 여부로 답을 추측할 수 있습니다. |
-| MA-CASE-1014 | PLUS-MR25 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Initial CII EPCS와 IV refill transfer를 별도 기록으로 혼합하고 보존·원 issue date 오류는 MA-CASE-0607과 반복된다. |
+| MA-CASE-1014 | PLUS-MR25 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Initial CII EPCS와 IV refill transfer를 별도 기록으로 혼합하고 보존·원 issue date 오류는 MA-CASE-0607과 반복된다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 필요한 first-fill transfer 정보를 기록한다고 정답 조건 자체를 선언합니다. 어떤 정보가 실제로 누락됐는지 또는 어느 전송 기록이 요건을 충족하는지 판단할 사실이 없어, 다른 보기의 별도 법규 지식과 무관하게 B를 문구만으로 고를 수 있습니다. 법규 키 오류를 판정한 기록은 아닙니다. |
 | MA-CASE-1022 | PLUS-MR26 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 응급 follow-up을 두 번째 공급으로 쓰는 오류와 CII refill 허용은 매우 명백하다. Central-fill·90일 supply·hospice fax는 MA-CASE-0617과 반복된다. |
 | MA-CASE-1027 | PLUS-MR27 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Shortage72시간과 요청partial30일을 구분하는 학습 목표는 유용하나 다섯 별도 기록에서 새 stock도착 재시작이라는 쉬운 유일 오답을 찾는다. |
 | MA-CASE-1042 | PLUS-MR28 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | MA-CASE-0631의 네 보기 경로를 반복하면서 transfer가 refill을 복원한다는 추가 극단 오답을 붙인다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: A는 prescriber authorization이 없다고, E는 이동만으로 refill을 복원한다고 선언합니다. B/C/D는 eligible·required·remaining authorization 및 의뢰라는 준수 방향을 제시하여 실제 조제 이력의 수치 판단을 약화합니다. |
@@ -407,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `247e84317e1eb244fc03c0416f9dbad56031fb958785a37768ed6112a4f3ee58` |
-| practice_expansion/2026-10-28-representative/questions.json | `a9f94bdf651d7ed2d829fbe3910970d04adabb5da87e706b7e7c3ac2ec098c1e` |
+| practice_expansion/2026-10-28-representative/selection.json | `4b285eb61f912a99b96617a955f0de2be281e94e5929304fb446e26e80b22346` |
+| practice_expansion/2026-10-28-representative/questions.json | `70d5343df101dc9e2837b3440c0fa877e35c7b7cf9318240023c024e939b02a9` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

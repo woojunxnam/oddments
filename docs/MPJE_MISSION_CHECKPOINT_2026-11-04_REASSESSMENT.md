@@ -11,7 +11,7 @@ PR: https://github.com/woojunxnam/oddments/pull/190 (Draft).
 | 노트 저자 열거 | 306/306, 100% | 6984명제, 저자 근거 확인6098/BLOCKED886 |
 | 독립 atomic 완전성 | 59/306, 19.28% | 현재 처리60절, 누락1절. 법규 PASS가 아님 |
 | 독립 노트 법규 | KEEP42/HOLD12/BLOCKED6 | 미확정·기존blocker를 유지 |
-| 기본 연습 | 299개 | 전체2346개 보존; 기본 제외 원355중146+MA-REV3개. 보류는 실제 재작성 실적으로 세지 않음 |
+| 기본 연습 | 298개 | 전체2346개 보존; 기본 제외 원355중147+MA-REV3개. 보류는 실제 재작성 실적으로 세지 않음 |
 | 배포 검증 | 이전PR189 10/10,100% | 이 PR190의 최종 게시 검증은 아직 NOT RUN |
 
 ## 이번 통합과 검증 범위
@@ -28,7 +28,7 @@ MA-CASE-0401/0441은 실제 새 fork_none 세션의 보충 검토를 별도field
 
 노트 의미·editionM e1519c0290ff220eb8251307e26340d76d394a7ec1f3e651194d4495a03f1824는 바꾸지 않았다. 기존13개migration과 PR189 Markdown/build snapshot은 원바이트로 유지한다. 14번째 annotation guard는 정확한4개wave3보고서·부모·semantic/edition/provenance·exportSHA만 허용한다. 미검토·누락·HOLD/SB 절과연결카드는경고/일일복습제외를유지한다.
 
-기본0861/0867/0879/0883/0895/0903/0919는최종독립FAIL로제외했다. 후속phase7 default16개stem·80보기를root가직접읽고12개구체wording단서를 별도로보류했다. phase7-default-editorial-holds.json은법규/keyNOT_ASSESSED·설명전체미검토·독립credit0·author증분0이며 actualquote/currenthash에결박한다. 독립작업자에게이editor판정을답으로제공하지않는다. 남은1014/1022/1027/1091은독립검토중이므로추가확정negative가오면해당공개후보도수정/재검증한다.
+기본0861/0867/0879/0883/0895/0903/0919는최종독립FAIL로제외했다. 후속phase7 default16개stem·80보기를root가직접읽고13개구체wording단서를 별도로보류했다. phase7-default-editorial-holds.json은법규/keyNOT_ASSESSED·설명전체미검토·독립credit0·author증분0이며 actualquote/currenthash에결박한다. 독립작업자에게이editor판정을답으로제공하지않는다. 남은1022/1027/1091은독립검토중이므로추가확정negative가오면해당공개후보도수정/재검증한다.
 
 ## 현재 실행·재개
 
@@ -48,3 +48,5 @@ Root /workspace/oddments만 queue/공유generated를쓴다. Reviewer는각branch
 PR189는merge172d712e3e45781f4360cc75c43f46bfd0c358cf, freshPages41741216556, 공개10파일SHA와후속2workflow성공을 pr189-deployment*.json에보존했다. 첫Pages500/실패job재시도의중복artifact/새dispatch성공을정확히구분했다. 이성공을PR190의검사로승계하지않는다. 새로운Pages재시도도검증한동일head의freshworkflow를사용하고결과를확인한다.
 
 임무는미완료다. 추가1306문항의최초독립검토,나머지246노트unit의최초atomic검토,잔여누락·note/question문맥불일치·인용오류의실제수정또는HOLD,필수독립증거및해당변경의게시검증이남아있다. 전체은행을검증완료또는안전암기인증으로표시하지않는다.
+
+PR190 최초고정ce3d6e0은로컬full679PASS/9driftPASS/browser5suitePASS였지만 CI678PASS+shallowfixture Gitidentity미설정1FAIL이었다. Fixture는빈globalconfig에서자신의localidentity를설정하도록수정했다. 검증중새로확정된1014wordingcue도제외해수정된최종head에서전체QA/CI를다시확인한다. 최초head를출시성공으로세지않는다.
