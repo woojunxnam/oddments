@@ -1,0 +1,613 @@
+{
+  "draft_key": "P9-REPAIR-EXP-0735",
+  "original_question_id": "MA-EXP-0735",
+  "original_record_sha256": "a8113262917a49f6e834dc39a0384ba5968ed3846bc080c7a0ec268eae3d0d6e",
+  "original_collection": "practice_expansion/2026-10-23/candidates/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-b-review.json",
+  "native_finding_report_sha256": "9cda0d5da313a5b4a7592affcf8a081afefec515fa10594e8f38429009484ece",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SATA",
+  "stem": "On November 4, 2026, River Pharmacy receives a valid oral estradiol prescription, classified in Massachusetts Schedule VI, and a valid electronic testosterone prescription, classified in Schedule III. Both are for lawful gender-affirming care. The same verified prescriber, Dr. Elena Lee of Harbor Health Practice, requests that the practice name replace her individual name on the patient labels. The pharmacy is filling the prescriptions for the patients; the prescriber is not dispensing medication directly. All other prescription and labeling conditions are satisfied.\n\nWhich proposed label or record actions are correct? Select ALL that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Print 'Harbor Health Practice' in the estradiol label's prescriber-name field in response to Dr. Lee's request."
+    },
+    {
+      "id": "B",
+      "text": "Print only 'Harbor Health Practice' as the prescriber on the testosterone label as well."
+    },
+    {
+      "id": "C",
+      "text": "Keep Dr. Lee's actual identity in the original prescription records for both orders."
+    },
+    {
+      "id": "D",
+      "text": "Replace River Pharmacy's name and address on the estradiol label with Harbor Health Practice's name and address."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "C"
+  ],
+  "explanation": {
+    "core_reasoning": "시행일이 지난 provider 요청의 VI label substitution과 federal Schedule III label 의무를 각각 적용한다. Estradiol의 prescriber-name field는 practice name으로 바꾸지만 testosterone에는 개별 practitioner 이름이 남는다. 실제 source prescription의 practitioner identity와 pharmacy name/address는 이 label exception으로 사라지지 않는다.",
+    "choice_analysis": {
+      "A": "Acts 2025 c.16 §7이 개정한 c.94C §21은 protected reproductive/gender-affirming care에서 provider 요청이 있으면 practice name을 개별 prescriber name 대신 label에 쓰도록 한다. §27에 따라 2026년 1월 1일부터 효력이 있으므로 이번 날짜에 적용된다. Schedule VI에는 이 name substitution을 막는 해당 federal controlled-substance label 요건이 없다.",
+      "B": "Testosterone은 federal Schedule III anabolic steroid이며 1306.24(a)는 issuing practitioner의 이름을 package label에 요구한다. State amendment도 except as required by federal law라는 제한을 둔다. 같은 care purpose와 같은 provider 요청이 있어도 testosterone에서 개별 practitioner 이름을 빼는 근거가 되지 않는다.",
+      "C": "이 예외는 patient label의 특정 name field를 바꾼다. Oral VI의 원 기록은 c.94C §20(a)에 따라 실제 practitioner name/address/registration 등을 기록하며, electronic CIII 처방은 1306.05(a)의 practitioner 정보가 필요하다. 원 처방의 보존 의무도 남는다. Practice-name label을 이유로 실제 처방자 기록을 덮어쓰거나 삭제하지 않는다.",
+      "D": "개정된 §21 첫 문단은 pharmacy name and address를 여전히 요구한다. 둘째 문단의 예외는 prescribing practitioner의 이름을 prescribing practice name으로 바꾸는 것이며 dispensing pharmacy의 이름·주소를 없애지 않는다. Prescriber가 직접 조제하는 별도 §22 경로의 practice-name/address 문구를 retail pharmacy filling에 복사하지 않는다."
+    },
+    "learning_boundary": "2026년1월1일 이후 protected-care VI의 provider-requested label name과 federalCIII label을 비교한다. 이는 투여·prescribing 권한, 모든 protected-care 법률 또는 PMP 제외 범위 전체를 판단하는 예외가 아니다."
+  },
+  "visible_content_sha256": "b8166949f8b0c72d2669e81b2257113272a637d7c20167aa76ebf67e756d545a",
+  "design_change_ko": "All-correct SATA와 pathway를 평가하라는 추상 문구를 없앴다. 실제 두 약의 label field와 원 record, pharmacy identity를 서로 다른 제안으로 제시하고 genuine federal/state 및 dispensing-actor 혼동을 오답으로 사용한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "act16",
+        "Acts 2025 c.16 §§7,27, c.94C §21 amended label paragraphs"
+      ],
+      [
+        "shield",
+        "DPH memorandum 2025-09-26, Practical Updates: Prescription Labels"
+      ]
+    ],
+    "B": [
+      [
+        "1308-13",
+        "21 CFR 1308.13(f)(84), testosterone entry"
+      ],
+      [
+        "1306-24",
+        "21 CFR 1306.24(a)"
+      ],
+      [
+        "act16",
+        "Acts 2025 c.16 §7, federal-law proviso"
+      ]
+    ],
+    "C": [
+      [
+        "ma20",
+        "M.G.L. c.94C §20(a), oral prescription record"
+      ],
+      [
+        "1306-05",
+        "21 CFR 1306.05(a), practitioner identity fields"
+      ],
+      [
+        "ma23",
+        "M.G.L. c.94C §23(e)"
+      ],
+      [
+        "act16",
+        "Acts 2025 c.16 §7, label-specific exception"
+      ]
+    ],
+    "D": [
+      [
+        "act16",
+        "Acts 2025 c.16 §7 first and second label paragraphs; §8 distinct direct-dispensing context"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "e7a71a24328d3f62e52c361a6388b411086440d8bd292170a3174949ef81aa95",
+      "author_supported": "YES",
+      "rationale_sha256": "98c109f4a0786ee1a1a4337a8e741c5b621bf08b09cd45bcc7cd83d36b04e6a1",
+      "authorities": [
+        {
+          "source_id": "act16",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.029004+00:00",
+          "version_or_effective_date_status": "Acts2025c16 approved2025-08-07; §7 amendsc94C§21 and is expressly effective2026-01-01 under§27. Actual §§7,8,27 read. §8 is contextual direct-dispensing text, and is not assigned§7’s effective date.",
+          "effective_date": "2026-01-01",
+          "effective_date_status": "EXPLICIT_ACT16_SECTION27_FOR_SECTION7",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.html",
+          "raw_sha256": "aa161cf41bfa94cd11ed0a433348c0e452b9e1f3ceff5d71b517958ff082aa12",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.txt",
+          "text_sha256": "8bcfd5081dcdbec064d3124fcfcd6ad44f8914d26323b824b309e46a2ecb275f",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16-retrieval.json",
+          "retrieval_metadata_sha256": "060e6ff1a73d0487254f6c2da73c3784d805e3f847882d2402eda0bf858e6de6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Acts 2025 c.16 §§7,27, c.94C §21 amended label paragraphs"
+        },
+        {
+          "source_id": "shield",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/dph-shield-law-guidance-september-2025/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.059443+00:00",
+          "version_or_effective_date_status": "DPH memorandum dated2025-09-26, Practical Updates Prescription Labels directly read. Controlling legal rule comes from enactedActs2025c16§§7,27 and federal CFR; broad untested memo statements are NOT_ASSESSED.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/shield.pdf",
+          "raw_sha256": "bee378b070517ce36a410cb2d640a8d8f8d211afe0213a43ad404e67d7364ffd",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/shield.txt",
+          "text_sha256": "0ba22e8c61282cb013ae54c5648d945c46d0fcedcd89e1b6dd8818f38a4991b5",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/shield-retrieval.json",
+          "retrieval_metadata_sha256": "313dd40092ec4f4224cac0649c2d426007f3941ac1c65afc00e9fe7f6755632a",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "DPH memorandum 2025-09-26, Practical Updates: Prescription Labels"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "39f85b7121faf4c7e1c4ecf437fdb2376a2e6d8bec7e7ac416d58880cea2b9d9",
+      "author_supported": "NO",
+      "rationale_sha256": "b7303fea886751e56a57a34236255b65afdb0797ae7cbb7f1b42063a6692f1d3",
+      "authorities": [
+        {
+          "source_id": "1308-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.097523+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.html",
+          "raw_sha256": "4ff47efa81366eb54ff668257281658be85d3c57dd0f6d6eb82282b97c53b6b7",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.txt",
+          "text_sha256": "75ee4f22c40aff315729a0a6637528e53c23613d5d914cb4ee286ec100dc1861",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13-retrieval.json",
+          "retrieval_metadata_sha256": "c4070ff2fc5caa2191ecba052e6e5c6f962d267e3ccb803471e5ec8f96cae718",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1308.13(f)(84), testosterone entry"
+        },
+        {
+          "source_id": "1306-24",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.24",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:59:24.373766+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-24.html",
+          "raw_sha256": "1517e193161ea9b41c2567c25e9517562fdfb892ac526edbf47f7117f4c2713a",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-24.txt",
+          "text_sha256": "149d9a5160f11da6249e9a9e19abbf329a07d7f0e591083701ff1022137cdc75",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-24-retrieval.json",
+          "retrieval_metadata_sha256": "46619577ebbc5cb94d04e6c57beb3e6ef45461db93e0c09499ce4e37ec5a6d33",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.24(a)"
+        },
+        {
+          "source_id": "act16",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.029004+00:00",
+          "version_or_effective_date_status": "Acts2025c16 approved2025-08-07; §7 amendsc94C§21 and is expressly effective2026-01-01 under§27. Actual §§7,8,27 read. §8 is contextual direct-dispensing text, and is not assigned§7’s effective date.",
+          "effective_date": "2026-01-01",
+          "effective_date_status": "EXPLICIT_ACT16_SECTION27_FOR_SECTION7",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.html",
+          "raw_sha256": "aa161cf41bfa94cd11ed0a433348c0e452b9e1f3ceff5d71b517958ff082aa12",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.txt",
+          "text_sha256": "8bcfd5081dcdbec064d3124fcfcd6ad44f8914d26323b824b309e46a2ecb275f",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16-retrieval.json",
+          "retrieval_metadata_sha256": "060e6ff1a73d0487254f6c2da73c3784d805e3f847882d2402eda0bf858e6de6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Acts 2025 c.16 §7, federal-law proviso"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "5a44d4ba6961b7a919dde0e0423ff0367026d6c5de05af527f0202aa13e9a36a",
+      "author_supported": "YES",
+      "rationale_sha256": "6f3c0099ecfdc94c73f270572ab318ae2c3f8a56147a736646ce8451bc960c79",
+      "authorities": [
+        {
+          "source_id": "ma20",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section20",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:03:13.593140+00:00",
+          "version_or_effective_date_status": "Current official MGLc94C§20; used(a)oral prescription record identity fields ONLY. Exact commencement UNKNOWN. Paragraph(c)follow-up/default/exception clocks were observed but are OUTSIDE new tested propositions and not collapsed into a single rule.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma20.html",
+          "raw_sha256": "c2b3969928128eabdb05a364b6402c00b9fbd3274677774abbfc082061fba9c0",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma20.txt",
+          "text_sha256": "7714b10ec50cc35fc3cf0261ebc061dd240e9ef23728ee0c0d2bb9674ad650f5",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma20-retrieval.json",
+          "retrieval_metadata_sha256": "8cd4e8b1d5b346ecfa0632a8982fa25ad0421bc5f0abfae6104916ee53b4bb6b",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §20(a), oral prescription record"
+        },
+        {
+          "source_id": "1306-05",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.05",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.314344+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-05.html",
+          "raw_sha256": "906b9270846007f8b0890ba9b86115b0ec799d368bd7d44d055ab6a68b9e4445",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-05.txt",
+          "text_sha256": "a02c5bbb84e97e9df1f6e62e021509873d23f64a4cbf0f67bbee42efa4cf6cb0",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-05-retrieval.json",
+          "retrieval_metadata_sha256": "57c665730b64733972d7af5a5ef6413d33856504dfad26bec55d0c32281b5e05",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.05(a), practitioner identity fields"
+        },
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(e)"
+        },
+        {
+          "source_id": "act16",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.029004+00:00",
+          "version_or_effective_date_status": "Acts2025c16 approved2025-08-07; §7 amendsc94C§21 and is expressly effective2026-01-01 under§27. Actual §§7,8,27 read. §8 is contextual direct-dispensing text, and is not assigned§7’s effective date.",
+          "effective_date": "2026-01-01",
+          "effective_date_status": "EXPLICIT_ACT16_SECTION27_FOR_SECTION7",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.html",
+          "raw_sha256": "aa161cf41bfa94cd11ed0a433348c0e452b9e1f3ceff5d71b517958ff082aa12",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.txt",
+          "text_sha256": "8bcfd5081dcdbec064d3124fcfcd6ad44f8914d26323b824b309e46a2ecb275f",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16-retrieval.json",
+          "retrieval_metadata_sha256": "060e6ff1a73d0487254f6c2da73c3784d805e3f847882d2402eda0bf858e6de6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Acts 2025 c.16 §7, label-specific exception"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "e72944cd7c2e6ee1fb78296d54d1e0a067749e022fc3f3c222b955da906b1255",
+      "author_supported": "NO",
+      "rationale_sha256": "f33f9cb8f589d699f7700d247be5c09ea3fcceb6fd5ad119ad817e900a87df99",
+      "authorities": [
+        {
+          "source_id": "act16",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/SessionLaws/Acts/2025/Chapter16",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:37.029004+00:00",
+          "version_or_effective_date_status": "Acts2025c16 approved2025-08-07; §7 amendsc94C§21 and is expressly effective2026-01-01 under§27. Actual §§7,8,27 read. §8 is contextual direct-dispensing text, and is not assigned§7’s effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.html",
+          "raw_sha256": "aa161cf41bfa94cd11ed0a433348c0e452b9e1f3ceff5d71b517958ff082aa12",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16.txt",
+          "text_sha256": "8bcfd5081dcdbec064d3124fcfcd6ad44f8914d26323b824b309e46a2ecb275f",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/act16-retrieval.json",
+          "retrieval_metadata_sha256": "060e6ff1a73d0487254f6c2da73c3784d805e3f847882d2402eda0bf858e6de6",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Acts 2025 c.16 §7 first and second label paragraphs; §8 distinct direct-dispensing context"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [
+    {
+      "source_id": "ma3",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section3",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T06:16:34.587215+00:00",
+      "version_or_effective_date_status": "Current official MGLc94C§3(6), ScheduleVI prescription drug not included inI–V. Exact clause commencement UNKNOWN.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma3.html",
+      "raw_sha256": "3ce4724648f2e08de642410bc782e94a210f04f38d4750533f5b4c4a5abab877",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma3.txt",
+      "text_sha256": "50a8687e52af0c577142e04387874821d45cf329cb79bf81f3e5b35e8b2fc7f1",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma3-retrieval.json",
+      "retrieval_metadata_sha256": "fa40cd4afff566a05a79205ad9a444415df7e24ce9b68745e46389c841af9fb4",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "MGLc94C§3(6)"
+    },
+    {
+      "source_id": "estradiol",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9333d92f-2585-4b99-aaea-87c01c95125e",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T06:23:10.514259+00:00",
+      "version_or_effective_date_status": "Current official DailyMed EPIC Estradiol tablet label: human prescription drug, DEA ScheduleNone; page UpdatedFebruary26,2026, API indexSPL13 publishedOctober2,2026. Dates are distinct. No claim that gender-affirming use is an FDA-labeled indication.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/estradiol.html",
+      "raw_sha256": "e97ce0dd86277ef5ab4f90646f3b8327382172207e3bad43ed61b7d2b3b61ab6",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/estradiol.txt",
+      "text_sha256": "558e0732b92ab2f186a123156fa0746b76fd907872bfbb17155e5c4b50d6057e",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/estradiol-retrieval.json",
+      "retrieval_metadata_sha256": "011ba263190a954c17e00c611581f90316a67c99b2d6f18c36cf1a4b818ee806",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "DailyMed Estradiol tablet ProductInformation, HUMAN PRESCRIPTION DRUG and DEA ScheduleNone"
+    },
+    {
+      "source_id": "1308-13",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T05:55:37.097523+00:00",
+      "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.html",
+      "raw_sha256": "4ff47efa81366eb54ff668257281658be85d3c57dd0f6d6eb82282b97c53b6b7",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13.txt",
+      "text_sha256": "75ee4f22c40aff315729a0a6637528e53c23613d5d914cb4ee286ec100dc1861",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-13-retrieval.json",
+      "retrieval_metadata_sha256": "c4070ff2fc5caa2191ecba052e6e5c6f962d267e3ccb803471e5ec8f96cae718",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "21CFR1308.13(f)(84), testosterone ScheduleIII"
+    }
+  ],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-EXP-0735",
+      "draft_visible_content_sha256": "b8166949f8b0c72d2669e81b2257113272a637d7c20167aa76ebf67e756d545a",
+      "original_question_id": "MA-EXP-0735",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0174",
+        "cosine": 0.087672,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0174",
+          "stem": "A Massachusetts pharmacist receives several prescriptions for testosterone cypionate. Which scenarios fit the current statutory pharmacist-administration category specifically because of the indication? Select all that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "A veterinarian's testosterone order for an animal, relying on the human gender-affirming administration provision"
+            },
+            {
+              "id": "B",
+              "text": "A prescribed dose for gender-affirming care"
+            },
+            {
+              "id": "C",
+              "text": "A subsequent prescribed gender-affirming dose after the pharmacist verifies the same authorized pathway remains satisfied"
+            },
+            {
+              "id": "D",
+              "text": "A prescribed dose for routine testosterone-replacement therapy for hypogonadism, relying only on the gender-affirming statute"
+            },
+            {
+              "id": "E",
+              "text": "A bodybuilding request with no valid prescription"
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "B",
+            "C"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-EXP-0733",
+        "cosine": 0.143769,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0733",
+          "stem": "Case A: For an eligible protected-care Schedule VI prescription, the prescriber requests the permitted practice-name label treatment.\n\nCase B: Staff apply the same Schedule VI exception to testosterone and delete the actual prescriber identity from the pharmacy's original record.\n\nWhich conclusion correctly addresses Case A? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Using a practice name means prescriber-identity verification is no longer necessary."
+            },
+            {
+              "id": "B",
+              "text": "The eligible Schedule VI request must be assessed under the specific practice-name label pathway."
+            },
+            {
+              "id": "C",
+              "text": "The Schedule VI label exception authorizes both the testosterone label change and erasure of internal prescriber identity."
+            },
+            {
+              "id": "D",
+              "text": "Use in gender-affirming care makes every medicine Schedule VI."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "LAB04",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-EXP-0733",
+        "cosine": 0.143769,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0733",
+          "stem": "Case A: For an eligible protected-care Schedule VI prescription, the prescriber requests the permitted practice-name label treatment.\n\nCase B: Staff apply the same Schedule VI exception to testosterone and delete the actual prescriber identity from the pharmacy's original record.\n\nWhich conclusion correctly addresses Case A? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Using a practice name means prescriber-identity verification is no longer necessary."
+            },
+            {
+              "id": "B",
+              "text": "The eligible Schedule VI request must be assessed under the specific practice-name label pathway."
+            },
+            {
+              "id": "C",
+              "text": "The Schedule VI label exception authorizes both the testosterone label change and erasure of internal prescriber identity."
+            },
+            {
+              "id": "D",
+              "text": "Use in gender-affirming care makes every medicine Schedule VI."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "LAB04",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0039",
+        "cosine": 0.062393,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0039",
+          "stem": "A pharmacy's original controlled prescription contains the prescriber's DEA number. During label review, a technician assumes that every field on the original prescription must appear identically on the patient's container.\n\nWhich distinction should the pharmacist explain? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Information present in the original prescription need not be accurate on the label."
+            },
+            {
+              "id": "B",
+              "text": "A correctly printed container label eliminates the need to retain the prescription."
+            },
+            {
+              "id": "C",
+              "text": "Check the separate original-prescription, dispensing-record and label requirements."
+            },
+            {
+              "id": "D",
+              "text": "The pharmacy can remove patient directions if the prescriber gives written instructions elsewhere."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-039",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0174는 testosterone administration indication이지 dispensing label이 아니다. EXP0733은 추상pathway instruction이며 현재는 실제VIoral/CIIIeRx 두 label field와 실제 provider record 및 pharmacy address를 결정한다. REV0039는 일반label/원처방 구분이므로 보호care exception의Jan2026시행과 federaloverride를 인증해주지 않는다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

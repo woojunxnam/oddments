@@ -1,0 +1,370 @@
+{
+  "draft_key": "P9-REPAIR-REV-0020",
+  "original_question_id": "MA-REV-0020",
+  "original_record_sha256": "59b17325a5856127bd2f1dfc273938564d5e534ce2f370b9620049196f45f1a4",
+  "original_collection": "practice_expansion/2026-10-27-quality/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-d-review.json",
+  "native_finding_report_sha256": "d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SBA",
+  "stem": "A Massachusetts pharmacy is preparing an adult influenza clinic under a valid standing order. A qualified immunizing pharmacist will counsel patients, select each vaccine and directly supervise administration. Two fully licensed technicians have current CPR certification and completed the ACPE six-hour technician course, including two hours of live injection training.\n\nAlex is not nationally certified, has worked 520 hours after full technician licensure, and has completed 90 minutes of documented on-the-job training with an experienced certified immunizer. Blake holds current PTCB certification, has worked 300 hours after full technician licensure, and has completed two additional documented on-the-job hours with an experienced certified immunizer. Both have completed a skills checklist. All other applicable conditions are satisfied.\n\nWhich staffing assignment is permitted now? Select ONE answer.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Assign Alex to prepare and administer vaccines; Blake must first reach 500 post-licensure hours."
+    },
+    {
+      "id": "B",
+      "text": "Assign Blake to prepare and administer vaccines; Alex needs further on-the-job training."
+    },
+    {
+      "id": "C",
+      "text": "Assign both technicians because the six-hour course includes the required workplace training."
+    },
+    {
+      "id": "D",
+      "text": "Assign neither technician until each holds national certification and has 500 post-licensure hours."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "국가 certification 또는 면허 후 500시간의 대안과 6시간 기본 과정·최소 2시간 추가 OJT·checklist·CPR를 분리한다. Blake는 certification 경로로 500시간 미만이어도 적격이다. Alex는 500시간 경로를 갖췄어도 90분 OJT 때문에 아직 투여할 수 없다. Technician은 약사의 임상 선택을 대신하지 않는다.",
+    "choice_analysis": {
+      "A": "Alex의 520시간은 national certification 대신 사용할 수 있는 경험 자격을 충족한다. 그러나 추가 OJT 90분은 최소 2시간에 미달한다. 반대로 Blake는 national certification이 있으므로 500시간을 별도로 채울 필요가 없다. 자격 대안과 별도 교육 요건을 뒤바꾼 배정이다.",
+      "B": "Blake는 national certification이라는 자격 대안을 충족하고 6시간 과정 및 추가 OJT 2시간·checklist·CPR를 갖췄다. Alex는 경험 대안은 충족했으나 추가 OJT가 30분 부족하다. Pharmacist의 환자 상담·백신 선택 후 승인 및 직접 감독 아래 physical preparation/administration을 배정하는 범위다.",
+      "C": "6시간 ACPE 과정의 live training과 최소 2시간의 추가 documented OJT는 별개다. 과정 안의 2시간 live training을 다시 workplace OJT로 계산하여 Alex의 90분을 보완할 수 없다. Checklist를 끝냈다는 사실도 요구된 추가 시간을 줄이지 않는다.",
+      "D": "정책 III(D)(1)은 national certification 또는 full PT licensure 이후 500시간을 대안으로 정한다. 두 조건을 모두 요구하지 않는다. Blake가 300시간이라는 이유로 현재 적격성을 부정할 수 없고, Alex에게 필요한 것은 certification 취득이 아니라 부족한 추가 OJT의 보완이다."
+    },
+    "learning_boundary": "성인 routine-vaccine clinic에서 technician 자격과 추가 OJT를 적용한다. 소아 연령 경계, travel vaccines, off-site clinic, MIIS 및 adverse-event reporting의 전체 요건은 이 사례의 범위 밖이다."
+  },
+  "visible_content_sha256": "920822dde446112cb82d550a744fc2707478c02a831bc43caa947a3a8fc927d1",
+  "design_change_ko": "미완료 OJT라는 정답 명칭을 stem에서 반복하지 않는다. 실제 90분/2시간, certification/면허 후 근무시간을 제공하여 지금 배정 가능한 사람을 법규로 판단하게 한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "vax",
+        "Policy 2023-02 III(D)(1)–(3)"
+      ]
+    ],
+    "B": [
+      [
+        "vax",
+        "Policy 2023-02 opening supervision paragraphs; III(A),(B),III(D)(1)–(4)"
+      ]
+    ],
+    "C": [
+      [
+        "vax",
+        "Policy 2023-02 III(D)(2),(3)"
+      ]
+    ],
+    "D": [
+      [
+        "vax",
+        "Policy 2023-02 III(D)(1)(a),(b),III(D)(3)"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "9be025172b0b777bd2044bebd20760184215fbe475abd46c48a12b9028be17f1",
+      "author_supported": "NO",
+      "rationale_sha256": "96a67e85ff6cf228a0a85081facff5bf269748f7ab3610a3ea053bcfa51d5fdf",
+      "authorities": [
+        {
+          "source_id": "vax",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182476+00:00",
+          "version_or_effective_date_status": "Policy2023-02 adopted2023-05-04, revised2023-09-07/2025-09-04; actual six-page PDF read. Used introduction and III(A),(B),(D)(1)–(4); exact underlying clause commencement UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.pdf",
+          "raw_sha256": "5eab7f6df1dc2223fe910c38036bd3a2c9548e9c85b7299f5772e877e7ec6955",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.txt",
+          "text_sha256": "7b196cf24314b852647e2602a520243d237a2ebb1942d1f283c3447c61e7623a",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax-retrieval.json",
+          "retrieval_metadata_sha256": "c22d7d1e6486028312c3626c80fe75991a74d25a62e319159559164f59090e55",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2023-02 III(D)(1)–(3)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "6fafe2d214b9d1750a23251e15c5e20c4c24593ff9889fa9b10dfb64341a6c06",
+      "author_supported": "YES",
+      "rationale_sha256": "561cda3b717e4da32a69fc5f80e31bbabcaab33b7c868c02fde6bd47fb56b790",
+      "authorities": [
+        {
+          "source_id": "vax",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182476+00:00",
+          "version_or_effective_date_status": "Policy2023-02 adopted2023-05-04, revised2023-09-07/2025-09-04; actual six-page PDF read. Used introduction and III(A),(B),(D)(1)–(4); exact underlying clause commencement UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.pdf",
+          "raw_sha256": "5eab7f6df1dc2223fe910c38036bd3a2c9548e9c85b7299f5772e877e7ec6955",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.txt",
+          "text_sha256": "7b196cf24314b852647e2602a520243d237a2ebb1942d1f283c3447c61e7623a",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax-retrieval.json",
+          "retrieval_metadata_sha256": "c22d7d1e6486028312c3626c80fe75991a74d25a62e319159559164f59090e55",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2023-02 opening supervision paragraphs; III(A),(B),III(D)(1)–(4)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "9a801b3a0116eeb4603a9ec81e480b8e087f8723f644e76502ef6daf9ced9b4f",
+      "author_supported": "NO",
+      "rationale_sha256": "8ce9a8157a42839265717f5fd2edab20dece8b47d7f8b5ebe52b773273cad676",
+      "authorities": [
+        {
+          "source_id": "vax",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182476+00:00",
+          "version_or_effective_date_status": "Policy2023-02 adopted2023-05-04, revised2023-09-07/2025-09-04; actual six-page PDF read. Used introduction and III(A),(B),(D)(1)–(4); exact underlying clause commencement UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.pdf",
+          "raw_sha256": "5eab7f6df1dc2223fe910c38036bd3a2c9548e9c85b7299f5772e877e7ec6955",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.txt",
+          "text_sha256": "7b196cf24314b852647e2602a520243d237a2ebb1942d1f283c3447c61e7623a",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax-retrieval.json",
+          "retrieval_metadata_sha256": "c22d7d1e6486028312c3626c80fe75991a74d25a62e319159559164f59090e55",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2023-02 III(D)(2),(3)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "d353fca13b9a8d368065aeb764f5faf15da03bdb320b76bb4622c4e2ca60fd66",
+      "author_supported": "NO",
+      "rationale_sha256": "5c06c221da3a9874abc7109da81f47f8e3f5953a400a9754f0531d0a7faa2a17",
+      "authorities": [
+        {
+          "source_id": "vax",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182476+00:00",
+          "version_or_effective_date_status": "Policy2023-02 adopted2023-05-04, revised2023-09-07/2025-09-04; actual six-page PDF read. Used introduction and III(A),(B),(D)(1)–(4); exact underlying clause commencement UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.pdf",
+          "raw_sha256": "5eab7f6df1dc2223fe910c38036bd3a2c9548e9c85b7299f5772e877e7ec6955",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax.txt",
+          "text_sha256": "7b196cf24314b852647e2602a520243d237a2ebb1942d1f283c3447c61e7623a",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/vax-retrieval.json",
+          "retrieval_metadata_sha256": "c22d7d1e6486028312c3626c80fe75991a74d25a62e319159559164f59090e55",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2023-02 III(D)(1)(a),(b),III(D)(3)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-REV-0020",
+      "draft_visible_content_sha256": "920822dde446112cb82d550a744fc2707478c02a831bc43caa947a3a8fc927d1",
+      "original_question_id": "MA-REV-0020",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0329",
+        "cosine": 0.089457,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0329",
+          "stem": "A patient asks a Massachusetts community pharmacist to administer methadone for addiction treatment. The patient presents a valid prescription from a practitioner, and the pharmacist has completed injection training and holds current CPR certification. May the pharmacist administer it there?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Yes, because the pharmacist holds a valid prescription for the patient."
+            },
+            {
+              "id": "B",
+              "text": "Yes, because the pharmacist has completed the required training and certification."
+            },
+            {
+              "id": "C",
+              "text": "No, because that administration may occur only in a registered opioid treatment program."
+            },
+            {
+              "id": "D",
+              "text": "No, because a pharmacist may never administer any medication for addiction treatment."
+            },
+            {
+              "id": "E",
+              "text": "No, unless the prescriber attends the pharmacy at the time of administration."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0020",
+        "cosine": 0.254729,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0020",
+          "stem": "A fully licensed technician has worked 520 hours after full licensure, has current CPR, and has completed the required six-hour vaccine course. National certification is not held. The documented on-the-job skills training has not yet occurred.\n\nWhich remaining requirement is identified by these facts? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Repeating 500 hours as a trainee before using the completed full-license hours."
+            },
+            {
+              "id": "B",
+              "text": "Obtaining national certification because experience cannot be used instead."
+            },
+            {
+              "id": "C",
+              "text": "Completing a PharmD before any supervised vaccine administration."
+            },
+            {
+              "id": "D",
+              "text": "The additional documented on-the-job training and skills checklist."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ],
+          "family_id": "REV-020",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-EXP-0316",
+        "cosine": 0.21977,
+        "full_stem_and_all_options": {
+          "question_id": "MA-EXP-0316",
+          "stem": "Case A: A technician completes a six-hour ACPE-accredited vaccination course that includes two live hours but skips the separate documented on-the-job training.\n\nCase B: A second technician's course is entirely recorded video, and the pharmacy proposes substituting unsupervised practice for hands-on assessment.\n\nWhich proposed interpretation is INCORRECT? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Technician training may omit vaccine-reaction recognition if the pharmacist is present."
+            },
+            {
+              "id": "B",
+              "text": "The six-hour course does not replace the additional two hours of documented on-the-job training."
+            },
+            {
+              "id": "C",
+              "text": "The course must include the specified live instruction and hands-on technique assessment."
+            },
+            {
+              "id": "D",
+              "text": "On-the-job training requires an experienced certified immunizer and documented skills assessment."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "VAX07",
+          "collection": "practice_expansion/2026-10-23/candidates/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-RW-0047",
+        "cosine": 0.203523,
+        "full_stem_and_all_options": {
+          "question_id": "MA-RW-0047",
+          "stem": "A technician's vaccine-training file contains a six-hour ACPE course completed entirely through recorded modules. The technician also completed two documented hours of on-the-job training with an experienced certified immunizer and a skills checklist. The MOR is reviewing the initial education requirements for the DPH vaccine program.\n\nWhat education deficiency remains? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "None; the six course hours and two on-the-job hours may be combined into an undifferentiated eight-hour total."
+            },
+            {
+              "id": "B",
+              "text": "The on-the-job hours must be doubled, after which the recorded course can count as the required live component."
+            },
+            {
+              "id": "C",
+              "text": "The ACPE course must satisfy the live-training requirement; the additional on-the-job training does not replace it."
+            },
+            {
+              "id": "D",
+              "text": "One hour of annual immunization CE can replace the missing course component because that is the pharmacist standard."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "VAX07",
+          "collection": "practice_expansion/2026-10-28-representative/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Original0020의 missingOJT echo와 달리90분 대2시간, certification 대500h를 실제 배정에 적용한다. EXP0316/RW0047은 별도 live/OJT 요구를 다루지만 recordedcourse 결함이 핵심이고, 현재는 두 직원 중 누가 지금 투여할 수 있는지를 결정한다. Canonical0329의 methadoneOTP 제한과는 권한/행위가 다르다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

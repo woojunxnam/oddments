@@ -1,0 +1,564 @@
+{
+  "draft_key": "P9-REPAIR-REV-0027",
+  "original_question_id": "MA-REV-0027",
+  "original_record_sha256": "03b2f21d03d7cc380e8b556dca2175139b4bdf812fddae002d8ed6fdf48e8c5a",
+  "original_collection": "practice_expansion/2026-10-27-quality/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-d-review.json",
+  "native_finding_report_sha256": "d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SATA",
+  "stem": "A Massachusetts pharmacy receives a valid electronic prescription issued November 2, 2026 by a Massachusetts physician for 60 Schedule II methylphenidate tablets. The pharmacy has all 60 in stock. On November 9 the adult patient requests 20 tablets. During a consultation at 10:00 a.m., the prescriber authorizes 20 tablets per partial dispensing under that prescription. No quantity has yet been dispensed.\n\nWhich actions or conclusions apply to this requested-partial-fill pathway? Select ALL that apply.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Record the later authorization as 'Authorized by Practitioner to Partial Fill,' with the practitioner's name, discussion date and time, and pharmacist's initials."
+    },
+    {
+      "id": "B",
+      "text": "Dispense 30 tablets if the patient changes the request, because the original prescription authorizes 60 in total."
+    },
+    {
+      "id": "C",
+      "text": "Start the remainder's 30-day filling period on November 9, when the first partial dispensing occurs."
+    },
+    {
+      "id": "D",
+      "text": "At the patient's request, the same pharmacy may dispense another 20-tablet partial quantity on November 25 while the prescriber's plan remains in effect."
+    }
+  ],
+  "correct_choice_ids": [
+    "A",
+    "D"
+  ],
+  "explanation": {
+    "core_reasoning": "재고 부족이 없는 요청 partial fill에서, 발행 뒤 prescriber 협의와 지정 annotation, 환자가 초과할 수 없는 partial quantity, 원 issue-date clock 및 같은 약국 잔량 교부를 함께 적용한다. 72시간 shortage 경로를 복사하지 않고, 30일을 최초 교부일부터 다시 세지도 않는다.",
+    "choice_analysis": {
+      "A": "1306.13(b)(3)은 처방 발행 후에도 pharmacist와 협의하여 prescriber가 partial fill을 승인할 수 있게 한다. 이 후속 요청은 (b)(5)(i)의 지정 문구, 처방자 이름, 논의 날짜·시각 및 약사 initials를 기록해야 한다. 이는 실제 협의의 기록이며 원 issue date를 바꾸는 행위가 아니다. 환자 요청 및 실제 quantity/date/dispenser 기록도 별도로 충족한다.",
+      "B": "Prescriber가 각 partial dispensing을 20정으로 정한 경우 환자는 그보다 큰 partial quantity를 요청할 수 없다. 전체 처방량 60정 이하라는 조건과 각 partial에 대한 prescriber 제한은 동시에 적용된다. 30정 요청은 원 총량보다 적어도 이 협의 내용에 맞지 않는다.",
+      "C": "Requested-partial 경로의 30일은 최초 partial 날짜가 아니라 원 prescription written/issue date인 11월 2일에서 계산한다. MA도 issue date 기준을 유지한다. 후속 prescriber 협의나 실제 최초 교부가 11월 9일이라고 하여 30일 기간을 다시 시작하지 않는다.",
+      "D": "이 사례는 재고가 부족해서 일부만 준 (a)가 아니라 환자·prescriber가 요청한 (b) 경로다. 11월 25일은 11월 2일 발행 후 30일 이내이고 같은 약국이며, 각 partial 20정 및 총 60정 한도를 지킨다. 따라서 단지 최초 partial로부터 72시간이 지났다는 이유로 새 처방이 필수인 것은 아니다. 실제 교부 내용은 매번 기록한다."
+    },
+    "learning_boundary": "MA prescriber, 충분한 stock, 실제 후속 협의 및 요청 partial-fill에 한정한다. Shortage72시간 경로, out-of-state initial five-day 경계, LTCF/terminal-illness 경로를 이 사례에 복사하지 않는다."
+  },
+  "visible_content_sha256": "23d35be511ede27ac232eb37ae1c0864f1c70d184209912863113a738337f1d6",
+  "design_change_ko": "Shortage 72시간 초과 문제에서 actual requested pathway의 후속 prescriber 승인·구체 기록·partial 수량 권한·issue-date clock으로 법적 결정을 바꿨다. 단순 약명·수량 변경이 아니다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "1306-13",
+        "21 CFR 1306.13(b)(3),(b)(5)(i),(ii)"
+      ],
+      [
+        "ma18",
+        "M.G.L. c.94C §18(d¾)"
+      ],
+      [
+        "ma721",
+        "105 CMR 721.055(C)"
+      ]
+    ],
+    "B": [
+      [
+        "1306-13",
+        "21 CFR 1306.13(b)(1)(iv),(b)(3),(b)(4)"
+      ]
+    ],
+    "C": [
+      [
+        "1306-13",
+        "21 CFR 1306.13(b)(2),(3)"
+      ],
+      [
+        "ma721",
+        "105 CMR 721.055(B)(2)"
+      ],
+      [
+        "ma23",
+        "M.G.L. c.94C §23(a)"
+      ]
+    ],
+    "D": [
+      [
+        "1306-13",
+        "21 CFR 1306.13(b)(1)–(5)"
+      ],
+      [
+        "ma18",
+        "M.G.L. c.94C §18(d¾)"
+      ],
+      [
+        "ma721",
+        "105 CMR 721.055(B),(C)"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "2d7bdbe702da88ec293935878682f2775fc4ff9a841040da4c2e68c586b77a79",
+      "author_supported": "YES",
+      "rationale_sha256": "0eba398d74efeb80c88f0ad1b8067434bf219602bbc664d9c6cdf82a6ff9d4b2",
+      "authorities": [
+        {
+          "source_id": "1306-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.597815+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.html",
+          "raw_sha256": "d2f791ff49b9ac566169e50d43110d361d7f74526eaac8458101fa9dcac2b09e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.txt",
+          "text_sha256": "2a7742b1ca45bebd4a48c63567d549cc8d2f3574c025ed4d0d8116e9b7319f3b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13-retrieval.json",
+          "retrieval_metadata_sha256": "5110f4665240126775ac68954a62b78547562f8f9b622a96b63ce319cf4fa0ca",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.13(b)(3),(b)(5)(i),(ii)"
+        },
+        {
+          "source_id": "ma18",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:00:41.953027+00:00",
+          "version_or_effective_date_status": "Current official MGLc94C§18, specifically(d¾), patient-requested partial record/same-pharmacy/issue-date conditions. Exact clause commencement UNKNOWN. No out-of-state exception is silently imported into the MA-prescriber draft.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18.html",
+          "raw_sha256": "70580562341b2b8b356934b8b3edf1ad63806ed93b46bbec1275c16e1831ca71",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18.txt",
+          "text_sha256": "61c80f6e7e6211f02189acd34c43b22838a7cb4b3e016e7fb371bff1a6c7ab91",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18-retrieval.json",
+          "retrieval_metadata_sha256": "318f7bfb4ecd3d9386bcf96322e989da79eb6d76baab4c3a6a26d4d14df68be2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §18(d¾)"
+        },
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.055(C)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "d8e6f88dedffc496c937afc43b306ee658818a53e01e9abf16633015466f9a9e",
+      "author_supported": "NO",
+      "rationale_sha256": "61a1fe01f6e3fac79a95cf1c792412d23d27e3da8a8c684ae172be5460b88282",
+      "authorities": [
+        {
+          "source_id": "1306-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.597815+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.html",
+          "raw_sha256": "d2f791ff49b9ac566169e50d43110d361d7f74526eaac8458101fa9dcac2b09e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.txt",
+          "text_sha256": "2a7742b1ca45bebd4a48c63567d549cc8d2f3574c025ed4d0d8116e9b7319f3b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13-retrieval.json",
+          "retrieval_metadata_sha256": "5110f4665240126775ac68954a62b78547562f8f9b622a96b63ce319cf4fa0ca",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.13(b)(1)(iv),(b)(3),(b)(4)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "c364ff15b430884d9366c5c106a08cdfc0c34b58edee4674ebf89f17324796f5",
+      "author_supported": "NO",
+      "rationale_sha256": "68b3e269df6dedf8e747a96da90a5697268ddb45ee3c228428934af286c850dc",
+      "authorities": [
+        {
+          "source_id": "1306-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.597815+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.html",
+          "raw_sha256": "d2f791ff49b9ac566169e50d43110d361d7f74526eaac8458101fa9dcac2b09e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.txt",
+          "text_sha256": "2a7742b1ca45bebd4a48c63567d549cc8d2f3574c025ed4d0d8116e9b7319f3b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13-retrieval.json",
+          "retrieval_metadata_sha256": "5110f4665240126775ac68954a62b78547562f8f9b622a96b63ce319cf4fa0ca",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.13(b)(2),(3)"
+        },
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.055(B)(2)"
+        },
+        {
+          "source_id": "ma23",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182771+00:00",
+          "version_or_effective_date_status": "Current official compiled MGLc94C§23 text served2026-11-04. Used(d)OUD90-day/single-filling30-day limits,(e)retention,(h)(ii)outage exception and(a)partial context. No specific page update date or clause commencement displayed: UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.html",
+          "raw_sha256": "530b97780f390ac54f443b38a250aa2f0b73bde418ee264fad48e218a7f37c8b",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23.txt",
+          "text_sha256": "21e518244d78c811f7f644e10bfe475effc7d6254922ce89d8397015b18ee69b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma23-retrieval.json",
+          "retrieval_metadata_sha256": "28f6ca43a12abc831475c6771717a533a833f0eb238e59b047a2e9bd841a07e8",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §23(a)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "25651516e544abbf5603a6e42e2c12b546672c8146203553a6dc715b611bdaa1",
+      "author_supported": "YES",
+      "rationale_sha256": "07c5a4769f5fabbefc1cdf1c6cffd454dd012a09feca0f66f1b56a7435044903",
+      "authorities": [
+        {
+          "source_id": "1306-13",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.13",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.597815+00:00",
+          "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.html",
+          "raw_sha256": "d2f791ff49b9ac566169e50d43110d361d7f74526eaac8458101fa9dcac2b09e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13.txt",
+          "text_sha256": "2a7742b1ca45bebd4a48c63567d549cc8d2f3574c025ed4d0d8116e9b7319f3b",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1306-13-retrieval.json",
+          "retrieval_metadata_sha256": "5110f4665240126775ac68954a62b78547562f8f9b622a96b63ce319cf4fa0ca",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "21 CFR 1306.13(b)(1)–(5)"
+        },
+        {
+          "source_id": "ma18",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T06:00:41.953027+00:00",
+          "version_or_effective_date_status": "Current official MGLc94C§18, specifically(d¾), patient-requested partial record/same-pharmacy/issue-date conditions. Exact clause commencement UNKNOWN. No out-of-state exception is silently imported into the MA-prescriber draft.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18.html",
+          "raw_sha256": "70580562341b2b8b356934b8b3edf1ad63806ed93b46bbec1275c16e1831ca71",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18.txt",
+          "text_sha256": "61c80f6e7e6211f02189acd34c43b22838a7cb4b3e016e7fb371bff1a6c7ab91",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma18-retrieval.json",
+          "retrieval_metadata_sha256": "318f7bfb4ecd3d9386bcf96322e989da79eb6d76baab4c3a6a26d4d14df68be2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "M.G.L. c.94C §18(d¾)"
+        },
+        {
+          "source_id": "ma721",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.636393+00:00",
+          "version_or_effective_date_status": "Current105CMR721 PDF, MARegister1531/2024-09-27. Used721.055(A)–(C) and721.070(A)(2). Exact original commencement of clauses UNKNOWN; oral-followup721.060/070(B) is outside new tested propositions.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.pdf",
+          "raw_sha256": "b0b688751ff7090b8d9eef5eef26470c2e42f37291569aa71a1617a9459e6d0e",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721.txt",
+          "text_sha256": "2edeec59334f31f41e7680e7f36c30640a580b9a72875e02381d47662368eded",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/ma721-retrieval.json",
+          "retrieval_metadata_sha256": "373fc708a8b1312b12d8d368f38fe60860ca4b7421fb3309186934aa6a79498c",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "105 CMR 721.055(B),(C)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [
+    {
+      "source_id": "1308-12",
+      "source_class": "PUBLIC_OFFICIAL",
+      "official_url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12",
+      "law_checked_date": "2026-11-04",
+      "retrieved_at": "2026-11-04T06:16:34.038573+00:00",
+      "version_or_effective_date_status": "Current eCFR served section personally read2026-11-04; source/amendment notes retained in raw. Exact original clause commencement UNKNOWN; retrieval date is not effective date.",
+      "effective_date": null,
+      "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+      "body_verified_current_primary": true,
+      "http_status": 200,
+      "used_as_legal_proof": true,
+      "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12.html",
+      "raw_sha256": "6389495a1ec32ee5c429615222db994bf138276f02e898fda6c264c43664d83a",
+      "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12.txt",
+      "text_sha256": "20a5dab405da59acf49af5400261a021cd6935e4f2d7b262513b75f7042a6384",
+      "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/1308-12-retrieval.json",
+      "retrieval_metadata_sha256": "ff895f1f5222a0c4af1f57f11eef08529d720291e453041773ec9ac492bc3aaa",
+      "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+      "tls_verification": true,
+      "raw_public_republication": true,
+      "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+      "exact_section": "21CFR1308.12(d)(4), methylphenidate ScheduleII"
+    }
+  ],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-REV-0027",
+      "draft_visible_content_sha256": "23d35be511ede27ac232eb37ae1c0864f1c70d184209912863113a738337f1d6",
+      "original_question_id": "MA-REV-0027",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0101",
+        "cosine": 0.146385,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0101",
+          "stem": "A patient presents a valid oxycodone Schedule II prescription for 20 tablets and tells the pharmacist, before any dispensing, that she wants only 8 tablets because she is concerned about keeping extra opioid tablets at home. The pharmacy has all 20 tablets in stock. Which action is supported by Massachusetts law?",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Refuse the request because Schedule II prescriptions must be dispensed only in the exact quantity written."
+            },
+            {
+              "id": "B",
+              "text": "Dispense all 20 tablets and advise the patient to discard the unwanted tablets at home."
+            },
+            {
+              "id": "C",
+              "text": "Change the prescription quantity to 8 only after obtaining a replacement prescription from the prescriber."
+            },
+            {
+              "id": "D",
+              "text": "Dispense the requested lesser quantity and document the partial dispensing in the patient record."
+            },
+            {
+              "id": "E",
+              "text": "Treat the request as a pharmacy-stock shortage and use the federal 72-hour remainder rule."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "D"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0037",
+        "cosine": 0.167019,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0037",
+          "stem": "A valid Schedule III prescription authorizes 60 tablets for the current fill. At the patient's request, the pharmacy dispenses 20 and later 25 tablets. The issue-date time limit has not expired.\n\nWhat is the maximum quantity remaining under that 60-tablet authorization? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "20 tablets."
+            },
+            {
+              "id": "B",
+              "text": "60 tablets."
+            },
+            {
+              "id": "C",
+              "text": "15 tablets."
+            },
+            {
+              "id": "D",
+              "text": "35 tablets."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-037",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-REV-0037",
+        "cosine": 0.167019,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0037",
+          "stem": "A valid Schedule III prescription authorizes 60 tablets for the current fill. At the patient's request, the pharmacy dispenses 20 and later 25 tablets. The issue-date time limit has not expired.\n\nWhat is the maximum quantity remaining under that 60-tablet authorization? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "20 tablets."
+            },
+            {
+              "id": "B",
+              "text": "60 tablets."
+            },
+            {
+              "id": "C",
+              "text": "15 tablets."
+            },
+            {
+              "id": "D",
+              "text": "35 tablets."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-037",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-REV-0037",
+        "cosine": 0.167019,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0037",
+          "stem": "A valid Schedule III prescription authorizes 60 tablets for the current fill. At the patient's request, the pharmacy dispenses 20 and later 25 tablets. The issue-date time limit has not expired.\n\nWhat is the maximum quantity remaining under that 60-tablet authorization? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "20 tablets."
+            },
+            {
+              "id": "B",
+              "text": "60 tablets."
+            },
+            {
+              "id": "C",
+              "text": "15 tablets."
+            },
+            {
+              "id": "D",
+              "text": "35 tablets."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "C"
+          ],
+          "family_id": "REV-037",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      }
+    },
+    "finding_ko": "0094의 stockshortage/72h/newRx 결정을 반복하지 않는다. Canonical0101은 환자의 lesserquantity 요청 자체, 0401은 out-of-state5day, 0432는 다른약국/issue30day다. 현재는 발행 뒤 prescriber 협의의 구체 annotation과 per-partial20정 권한, laterpatient30정 요청 및 Nov25의 같은약국 교부를 판단한다. REV0037은 CIII단순잔량산술이라 다르다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}

@@ -1,0 +1,455 @@
+{
+  "draft_key": "P9-REPAIR-REV-0005",
+  "original_question_id": "MA-REV-0005",
+  "original_record_sha256": "74a924957f12817750fd9c71b4a23d7034b7dca8b898e71b04ed1c86a76d500b",
+  "original_collection": "practice_expansion/2026-10-27-quality/questions.json",
+  "native_finding_report_path": "reports/full-corpus-review/independent-phase9-d-review.json",
+  "native_finding_report_sha256": "d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c",
+  "author_provenance": {
+    "actor_id": "/root/independent_case_g",
+    "session_id": "/root/independent_case_g",
+    "stable_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+    "role": "SUBSTANTIVE_AUTHOR_REMEDIATION_NOT_INDEPENDENT"
+  },
+  "authored_at": "2026-11-04",
+  "status": "DRAFT_PENDING_DIFFERENT_ACTUAL_SESSION_REVIEW",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "independent_review_credit": 0,
+  "author_review_credit": 0,
+  "additional_coverage_credit": 0,
+  "release_eligible": false,
+  "public_activation": false,
+  "question_type": "SBA",
+  "stem": "A Massachusetts physician telephones a community pharmacy with a new Schedule IV prescription. The pharmacist on duty can supervise and has approved an eligible technician to receive the call. Four employees have current Massachusetts personnel licenses: Mara's national certification expired yesterday; Eli has current Board-recognized national certification; Noor is a pharmacy technician trainee; and Jon is an ordinary pharmacy technician with 15 years of experience and no national certification.\n\nWhich employee may receive this new prescription under the technician scope rules? Select ONE answer.",
+  "choices": [
+    {
+      "id": "A",
+      "text": "Mara, whose state technician license remains active."
+    },
+    {
+      "id": "B",
+      "text": "Eli, whose state license and national certification are current."
+    },
+    {
+      "id": "C",
+      "text": "Noor, acting under the pharmacist's direct supervision."
+    },
+    {
+      "id": "D",
+      "text": "Jon, based on his documented experience as a licensed technician."
+    }
+  ],
+  "correct_choice_ids": [
+    "B"
+  ],
+  "explanation": {
+    "core_reasoning": "수령할 실제 사람의 현재 주 면허와 national certification, trainee 여부 및 행위의 성격을 함께 판단한다. Eli의 현재 CPhT 자격과 약사 approval이 새 IV 전화처방 수신을 허용한다. Mara·Jon의 ordinary 범위와 Noor의 trainee 전화 수신 금지는 별개로 적용한다.",
+    "choice_analysis": {
+      "A": "국가 certification이 만료되면 유효한 주 technician 면허가 남아 있어도 247 CMR 8.04(3)에 따라 ordinary technician 범위로 제한된다. 변경 없는 refill authorization 수령과 이번 새 Schedule IV 처방 수령은 다르다. 주 면허가 자동 취소된다는 뜻이 아니라 추가 certified scope를 유지할 수 없다는 뜻이다.",
+      "B": "현재 Board technician 면허와 인정되는 national certification을 가진 CPhT는 약사 on-duty approval 및 감독 아래 새 Schedule III–VI verbal prescription을 받을 수 있다. 이 사례의 IV가 그 범위에 포함된다. 수령 뒤 pharmacist의 임상 판단과 최종 dispensing validation 책임까지 이전되는 것은 아니다.",
+      "C": "PTT의 일반 업무에는 직접 감독이 요구되지만 전화처방 수신은 별도의 명시적 금지다. 직접 감독만으로 8.03(4)(c)를 해제하지 않는다. 기존 처방 데이터 입력을 돕는 것과 새 전화처방을 수신하는 주체가 되는 일을 구별한다.",
+      "D": "장기간의 ordinary PT 경력만으로 CPhT의 새 verbal prescription 수신 범위가 생기지 않는다. Ordinary PT에게 허용된 변경 없는 III–VI refill authorization과 이번 새 IV 처방은 다르다. 백신 업무의 500시간 대체 자격 경로를 모든 technician 업무에 일반화하지 않는다."
+    },
+    "learning_boundary": "Technician 간 새 ScheduleIV 전화처방 수신 범위와 현재 certification을 평가한다. Emergency oralCII, 독립 임상 변경, pharmacist/intern의 전체 직무 범위를 이 정답으로 일반화하지 않는다."
+  },
+  "visible_content_sha256": "3e1ccf5fdec8aec4418da9cd628d615b11917b387937e5f49201762cf6254432",
+  "design_change_ko": "허용 범위가 있는 사람에게 넘기라는 순환적 정답을 없앴다. 실제 면허·certification·경험·감독 상태를 가진 직원 네 명 중 수신자를 결정하게 한다.",
+  "option_source_specs": {
+    "A": [
+      [
+        "personnel",
+        "247 CMR 8.04(3)(a)–(c),8.02(6)(c)"
+      ],
+      [
+        "scope",
+        "Policy 2020-15 III(B)(1),III(C)(5)"
+      ]
+    ],
+    "B": [
+      [
+        "personnel",
+        "247 CMR 8.04(1),(2),(4)(c)"
+      ],
+      [
+        "scope",
+        "Policy 2020-15 III(C)(5),III(D)(2)–(6)"
+      ]
+    ],
+    "C": [
+      [
+        "personnel",
+        "247 CMR 8.03(4)(b),(c)"
+      ]
+    ],
+    "D": [
+      [
+        "personnel",
+        "247 CMR 8.02(6)(c),8.04(2),(4)(c)"
+      ],
+      [
+        "scope",
+        "Policy 2020-15 III(B)(1),III(C)(5)"
+      ]
+    ]
+  },
+  "option_proofs": [
+    {
+      "choice_id": "A",
+      "option_text_sha256": "9e022ab6b9ac2ab7371d2296cb658847db04264077c08f8e8237326e83dc138d",
+      "author_supported": "NO",
+      "rationale_sha256": "e7e1e556e69ff7d24eea05ce5ec803132e8bbd7576a24cd1e4d271497ea95f3a",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182010+00:00",
+          "version_or_effective_date_status": "Current247CMR8, MARegister1546/2025-04-25; page effective dates2018-04-06/2025-01-09 retained. Exact original commencement of used telephone/certification clauses UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.pdf",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.txt",
+          "text_sha256": "52f56cf01cbb92ff95c0ebb01de117616f8cfbc1d766831f62e58e1dcb6139ac",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel-retrieval.json",
+          "retrieval_metadata_sha256": "e32be8d118a2708d37a30c57bd4f4c0d2a125d9f422251b3d052769790452696",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 8.04(3)(a)–(c),8.02(6)(c)"
+        },
+        {
+          "source_id": "scope",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-15-scope-of-practice-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182277+00:00",
+          "version_or_effective_date_status": "Policy2020-15 adopted2020-12-18, revised2023-12-07/2025-11-06/2026-09-03. Current technician III(B)(1),III(C)(5),III(D) sections directly read; no blanket vaccine prohibition inferred from older regulation text.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.pdf",
+          "raw_sha256": "de807ea09333d15eb37d4d8a56e4f6973c834fe849763724575fdda6f453f045",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.txt",
+          "text_sha256": "c6d2317f5cb4468d22bfb3537fee832d38d7b819322ef2fc028df95eaecc367e",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope-retrieval.json",
+          "retrieval_metadata_sha256": "37a948a28fffc6947bb968491d606e7969c79108a14d9cf5817e3e75e56592f2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-15 III(B)(1),III(C)(5)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "B",
+      "option_text_sha256": "053aef8a455a36ac464133412315f6375ed788619be86d14da7b7a12db602d52",
+      "author_supported": "YES",
+      "rationale_sha256": "984860ac6241f7a2d11b9f06f1592b7c1c00ef024c1a223702c6b01eab63daf2",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182010+00:00",
+          "version_or_effective_date_status": "Current247CMR8, MARegister1546/2025-04-25; page effective dates2018-04-06/2025-01-09 retained. Exact original commencement of used telephone/certification clauses UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.pdf",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.txt",
+          "text_sha256": "52f56cf01cbb92ff95c0ebb01de117616f8cfbc1d766831f62e58e1dcb6139ac",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel-retrieval.json",
+          "retrieval_metadata_sha256": "e32be8d118a2708d37a30c57bd4f4c0d2a125d9f422251b3d052769790452696",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 8.04(1),(2),(4)(c)"
+        },
+        {
+          "source_id": "scope",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-15-scope-of-practice-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182277+00:00",
+          "version_or_effective_date_status": "Policy2020-15 adopted2020-12-18, revised2023-12-07/2025-11-06/2026-09-03. Current technician III(B)(1),III(C)(5),III(D) sections directly read; no blanket vaccine prohibition inferred from older regulation text.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.pdf",
+          "raw_sha256": "de807ea09333d15eb37d4d8a56e4f6973c834fe849763724575fdda6f453f045",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.txt",
+          "text_sha256": "c6d2317f5cb4468d22bfb3537fee832d38d7b819322ef2fc028df95eaecc367e",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope-retrieval.json",
+          "retrieval_metadata_sha256": "37a948a28fffc6947bb968491d606e7969c79108a14d9cf5817e3e75e56592f2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-15 III(C)(5),III(D)(2)–(6)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "C",
+      "option_text_sha256": "ba42a419aa8c8efb950057e5a5b305ad4fa5ebaed7f8bdd5daa04ec001e95353",
+      "author_supported": "NO",
+      "rationale_sha256": "75d1dbda2fd37b2c9970f59e6f49948d4aff68acd6d4763c76a5e14ce3f745e6",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182010+00:00",
+          "version_or_effective_date_status": "Current247CMR8, MARegister1546/2025-04-25; page effective dates2018-04-06/2025-01-09 retained. Exact original commencement of used telephone/certification clauses UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.pdf",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.txt",
+          "text_sha256": "52f56cf01cbb92ff95c0ebb01de117616f8cfbc1d766831f62e58e1dcb6139ac",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel-retrieval.json",
+          "retrieval_metadata_sha256": "e32be8d118a2708d37a30c57bd4f4c0d2a125d9f422251b3d052769790452696",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 8.03(4)(b),(c)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    },
+    {
+      "choice_id": "D",
+      "option_text_sha256": "cd2f7edb052d3d34cb7873bbe9ba98b3e0cbc5b275e11b88e93b1c2af60c7f41",
+      "author_supported": "NO",
+      "rationale_sha256": "866d96d3754c8e754d846c01a7475303f024bfbcb59fa3ccc7709ca9044d8928",
+      "authorities": [
+        {
+          "source_id": "personnel",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182010+00:00",
+          "version_or_effective_date_status": "Current247CMR8, MARegister1546/2025-04-25; page effective dates2018-04-06/2025-01-09 retained. Exact original commencement of used telephone/certification clauses UNKNOWN.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.pdf",
+          "raw_sha256": "ffd98ce039ce9719337be045d17e4916ee34ab4e34c4ba8770b26fada44ea714",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel.txt",
+          "text_sha256": "52f56cf01cbb92ff95c0ebb01de117616f8cfbc1d766831f62e58e1dcb6139ac",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/personnel-retrieval.json",
+          "retrieval_metadata_sha256": "e32be8d118a2708d37a30c57bd4f4c0d2a125d9f422251b3d052769790452696",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "247 CMR 8.02(6)(c),8.04(2),(4)(c)"
+        },
+        {
+          "source_id": "scope",
+          "source_class": "PUBLIC_OFFICIAL",
+          "official_url": "https://www.mass.gov/doc/2020-15-scope-of-practice-pdf/download",
+          "law_checked_date": "2026-11-04",
+          "retrieved_at": "2026-11-04T05:55:36.182277+00:00",
+          "version_or_effective_date_status": "Policy2020-15 adopted2020-12-18, revised2023-12-07/2025-11-06/2026-09-03. Current technician III(B)(1),III(C)(5),III(D) sections directly read; no blanket vaccine prohibition inferred from older regulation text.",
+          "effective_date": null,
+          "effective_date_status": "VERSION_RECORDED_INDIVIDUAL_COMMENCEMENT_UNKNOWN_EXCEPT_ACT16_SECTION7_2026_01_01",
+          "body_verified_current_primary": true,
+          "http_status": 200,
+          "used_as_legal_proof": true,
+          "raw_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.pdf",
+          "raw_sha256": "de807ea09333d15eb37d4d8a56e4f6973c834fe849763724575fdda6f453f045",
+          "text_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope.txt",
+          "text_sha256": "c6d2317f5cb4468d22bfb3537fee832d38d7b819322ef2fc028df95eaecc367e",
+          "retrieval_metadata_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/scope-retrieval.json",
+          "retrieval_metadata_sha256": "37a948a28fffc6947bb968491d606e7969c79108a14d9cf5817e3e75e56592f2",
+          "retrieval_method": "LIVE_OFFICIAL_HTTPS_urllib",
+          "tls_verification": true,
+          "raw_public_republication": true,
+          "permissions_basis": "PUBLIC_OFFICIAL under current SOURCE_USE_POLICY; NABP sample raw is handled separately and not copied into this artifact.",
+          "exact_section": "Policy 2020-15 III(B)(1),III(C)(5)"
+        }
+      ],
+      "scope_assessed": "ACTOR_ACTION_CONDITIONS_EXCEPTIONS_REQUIRED_VS_PERMITTED_FOR_STATED_CASE"
+    }
+  ],
+  "option_support_definition": "Correct response to the exact stated lead-in and facts; NO for a lower-credit record in a maximum-credit question is not a blanket prohibition on voluntary underclaiming.",
+  "independent_of_authors": false,
+  "scenario_fact_authorities": [],
+  "source_review_status": "AUTHOR_SOURCE_CHECKED_DRAFT_NOT_INDEPENDENT",
+  "source_blocker": null,
+  "nearby_comparison": {
+    "status": "ACTUAL_FULL_STEMS_AND_ALL_OPTIONS_READ_AUTHOR_COMPARISON_NOT_INDEPENDENT_PASS",
+    "comparison_record": {
+      "draft_key": "P9-REPAIR-REV-0005",
+      "draft_visible_content_sha256": "3e1ccf5fdec8aec4418da9cd628d615b11917b387937e5f49201762cf6254432",
+      "original_question_id": "MA-REV-0005",
+      "nearest_canonical": {
+        "question_id": "MA-Q-0376",
+        "cosine": 0.128616,
+        "full_stem_and_all_options": {
+          "question_id": "MA-Q-0376",
+          "stem": "A prescriber's office telephones a Massachusetts pharmacy with a new prescription while the pharmacist on duty is counselling another patient. Which statements about who may take the call are correct? Select all that apply.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Only the pharmacist may take a new prescription by telephone."
+            },
+            {
+              "id": "B",
+              "text": "Any pharmacy employee may take it and pass it to the pharmacist to check."
+            },
+            {
+              "id": "C",
+              "text": "A pharmacy intern may receive a new prescription over the telephone."
+            },
+            {
+              "id": "D",
+              "text": "An uncertified technician may take it provided the pharmacist verifies it afterwards."
+            },
+            {
+              "id": "E",
+              "text": "A certified technician with the on-duty pharmacist's approval may receive it."
+            }
+          ],
+          "question_type": "SATA",
+          "correct_choice_ids": [
+            "C",
+            "E"
+          ]
+        }
+      },
+      "nearest_public": {
+        "question_id": "MA-REV-0005",
+        "cosine": 0.207128,
+        "full_stem_and_all_options": {
+          "question_id": "MA-REV-0005",
+          "stem": "A technician's Massachusetts license remains active, but national certification expired yesterday. A new Schedule IV prescription is telephoned to the pharmacy.\n\nWho should receive this new prescription under the personnel distinctions in the notes? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Route this new Schedule IV order to a recipient whose current scope permits it."
+            },
+            {
+              "id": "B",
+              "text": "This technician, provided the call is described as a refill in the computer."
+            },
+            {
+              "id": "C",
+              "text": "This technician, provided the pharmacist signs the entry before dispensing."
+            },
+            {
+              "id": "D",
+              "text": "A trainee, provided the caller repeats the prescription to two employees."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "A"
+          ],
+          "family_id": "REV-005",
+          "collection": "practice_expansion/2026-10-27-quality/questions.json"
+        }
+      },
+      "nearest_public_excluding_original": {
+        "question_id": "MA-RW-0050",
+        "cosine": 0.151895,
+        "full_stem_and_all_options": {
+          "question_id": "MA-RW-0050",
+          "stem": "A prescriber telephones a new Schedule VI prescription. The pharmacist on duty approves a Massachusetts-licensed technician with current national certification to receive the call. The prescriber supplies the drug, strength, directions, quantity, and other required information. No therapeutic clarification is needed.\n\nWhich workflow is consistent with the technician’s scope? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Route the call to the pharmacist because technician telephone authority is limited to unchanged refills."
+            },
+            {
+              "id": "B",
+              "text": "Have the technician identify as certified and receive the order for pharmacist review."
+            },
+            {
+              "id": "C",
+              "text": "Have the technician receive the order and complete its final dispensing verification."
+            },
+            {
+              "id": "D",
+              "text": "Have the technician complete the clinical review because the prescriber supplied every required field."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "PER10",
+          "collection": "practice_expansion/2026-10-28-representative/questions.json"
+        }
+      },
+      "nearest_current_default": {
+        "question_id": "MA-RW-0050",
+        "cosine": 0.151895,
+        "full_stem_and_all_options": {
+          "question_id": "MA-RW-0050",
+          "stem": "A prescriber telephones a new Schedule VI prescription. The pharmacist on duty approves a Massachusetts-licensed technician with current national certification to receive the call. The prescriber supplies the drug, strength, directions, quantity, and other required information. No therapeutic clarification is needed.\n\nWhich workflow is consistent with the technician’s scope? Select ONE answer.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Route the call to the pharmacist because technician telephone authority is limited to unchanged refills."
+            },
+            {
+              "id": "B",
+              "text": "Have the technician identify as certified and receive the order for pharmacist review."
+            },
+            {
+              "id": "C",
+              "text": "Have the technician receive the order and complete its final dispensing verification."
+            },
+            {
+              "id": "D",
+              "text": "Have the technician complete the clinical review because the prescriber supplied every required field."
+            }
+          ],
+          "question_type": "SBA",
+          "correct_choice_ids": [
+            "B"
+          ],
+          "family_id": "PER10",
+          "collection": "practice_expansion/2026-10-28-representative/questions.json"
+        }
+      }
+    },
+    "finding_ko": "Canonical0376과 defaultRW0050도 새 전화처방 수신 원칙을 다룬다. 현재는 expiredcert/currentcert/PTT/ordinary15년 경력 네 실제 직원의 current credential을 비교하여 순환문구를 없앴다. 인력 원칙의 overlap을 공개하며 추가 독립 법규로 세지 않는다.",
+    "additional_coverage_credit": 0,
+    "corpus_counts": {
+      "canonical": 439,
+      "public": 2349,
+      "source_defined_remaining_default": 229
+    },
+    "evidence_path": "reports/full-corpus-review/phase9-remediation-author-g/evidence/nearest-comparisons.json",
+    "evidence_sha256": "b499e341b1d4a4c976c4a0f71f3e202ab077d029eb772ede40eac57ec6cf2ba8"
+  }
+}
