@@ -83,7 +83,9 @@ def test_five_explicit_notes_overlay_sections_and_author_claim_scope():
 
 def test_corpus_counts_do_not_inflate_canonical_or_learner_progress():
     progress=read('reports/full-corpus-review/progress.json')
-    assert progress['current_questions']==2346
+    # The frozen 2,346-question cohort is preserved; three separately reviewed
+    # replacement candidates are appended in the archive without release credit.
+    assert progress['current_questions']==2349
     # Monotonic later review batches may add IDs/claims; do not erase this frozen cohort.
     assert progress['question_ids_with_review_records']>=161
     assert progress['legal_review_counts']['NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW']<=2185
@@ -97,4 +99,4 @@ def test_corpus_counts_do_not_inflate_canonical_or_learner_progress():
     assert progress['canonical_inventory']==439
     assert progress['canonical_reaudits_this_session']==0
     assert progress['canonical_independent_audit_this_session']=='NOT_RUN'
-    assert read('reports/full-corpus-review/inventory-definitions.json')['public_practice_questions']==2346
+    assert read('reports/full-corpus-review/inventory-definitions.json')['public_practice_questions']==2349

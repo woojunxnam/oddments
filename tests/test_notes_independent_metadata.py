@@ -73,6 +73,10 @@ def actual_reports(tmp_path):
             next(r for r in rows if r['unit_id']==record['unit_id']).update(record['previous_ledger_fields'])
             restored.add(record['unit_id'])
     state.pop('reassessments',None)
+    # This fixture contains only the original two completed jobs. A later body
+    # reassessment belongs to its own assignment and must not be copied into a
+    # historical checkpoint after that assignment has deliberately been removed.
+    state.pop('body_reassessments',None)
     for relative in {queue.LEDGER,*[r['atomic_census_source'] for r in rows if r['atomic_census_source']]}:
         path=root/relative; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(ROOT/relative,path)
     (root/queue.LEDGER).write_text(''.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))+'\n' for r in rows))
