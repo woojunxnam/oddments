@@ -26,13 +26,13 @@ edition, revision provenance와 build의 의미 필드를 PR190와 대조한다.
 해시와 독립 노트 review progress 이외의 build 변경은 허용하지 않는다.
 
 최종 v4 census, version record, 실제 23번 E3 job의 INTEGRATED 상태와 현재
-report/envelope/source raw SHA를 결박한다. 현재 6,985개는 author enumeration 수이며
+report/envelope/source raw SHA를 결박한다. 현재 6,989개는 author enumeration 수이며
 새 author source check나 independent legal audit credit로 바꾸지 않는다. 독립 노트
 consumer가 현재 body/census/claim·원 blocker·실제 controller가 선언한 actor/session과
 source를 다시 검증하고 처리 수·KEEP/HOLD/SOURCE_BLOCKED를 계산한다. 신원 문자열은
 controller-attested declaration이며 암호학적인 신원 인증이 아니다.
-선택된 29개 census의 path/raw SHA 전체도 controller source
-`f2eb58b3a3e387a94a34cef8f970ed93f5dbce8a`의 고정 map digest와 대조한다.
+선택된 32개 census의 path/raw SHA 전체도 controller source
+`e78af1cd5ccdd749c3599aa4f36a217af4d06552`의 고정 map digest와 대조한다.
 claim 수가 같아도 다른 census로 바꿔 `--write`하는 방식으로 범위를 넓힐 수 없다.
 E3 원 envelope에 선언된 42개 artifact를 모두 현재 커밋의 원바이트로 대조한다.
 
@@ -40,20 +40,56 @@ E3 원 envelope에 선언된 42개 artifact를 모두 현재 커밋의 원바이
 추가로 15번째 manifest 자체의 `annotation_inputs_ready`가 false이면 게시 검증은
 실패한다. source 변경 후 옛 pending manifest를 그대로 출시할 수 없다.
 
-Phase 7은 이미 배정된 legacy job 21–24의 정확한 ID 범위만 checkpoint에 기록한다.
-Pending job은 근거 실적으로 취급하지 않는다. 노트 후속 job 24–25도 root가
-지정한 정확한 10개 unit 범위만 허용하며 LEASED 상태의 새 credit는 0이다.
-해당 job이 실제 통합되면 동일한 노트 consumer로 원 report/envelope/actor를 검증한다. INTEGRATED 결과가 생기면 현재
-커밋된 report, 원 result envelope, submit/claim/integrate 연결과 actor/session 및
-0 canonical credit를 검사한다. 이 metadata가 바뀌면 manifest를 명시적으로
-재결박해야 하며 임의의 다른 report나 새 job 범위는 허용하지 않는다.
+이 미출시 15번째 guard의 최종 범위는 다음과 같다. 배정 정의를 고정한 것은
+미래 결과를 인증한 것이 아니다. 실제 원장·원 report·envelope·보존 primary bytes와
+claim/submit/integrate 연결을 현재 HEAD에서 확인한 뒤에만 final manifest를 준비한다.
 
-원장 자동 연속 배정을 위해 controller가 같은 source에서 명시한 wave 8의
-job 25–28 네 정의만 추가로 허용한다. `MA-EXP-0009`–`0168`의 네 40문항 묶음이며,
-정확한 job ID와 전체 `question_hashes` map digest를 코드에 고정한다. QUEUED,
-LEASED, SUBMITTED 동안 새 evidence/review credit는 0이다. 어느 하나라도
-INTEGRATED이거나 integration 이력이 있으면 이 guard는 실패한다. 실제 후속
-통합을 반영하려면 다음 bounded guard 검토가 필요하다. 새 job 29 등은 허용하지 않는다.
+- Legacy question job1–29와 root가 `804178fd`에 실제 배정한 CURRENT DEFAULT wave9의
+  30–33까지 정확한 sequence/ID/stage/question-hash map. 30–33은 각각40문항이며 실제
+  fresh actor `/root/independent_wave9_a`–`d`도 고정한다. 모두 실제 INTEGRATED여야 한다.
+  Phase7의21–24, wave8의25–28, native 현재ID 세 문항의29와 wave9의160문항을 각각
+  결박한다. QUEUED/LEASED/SUBMITTED 또는 status만 조작한 IG는 실패한다.
+- Notes job1–30의 정확한 ID/unit-binding map과 실제 INTEGRATED 결과. 28–30의 F 작성
+  immutable v2 census 보완도 기존 negative/history를 그대로 검증한다.
+- 오직 하나의31번 `BODY_CORRECTION_REASSESSMENT`: w3-a-3의 R 작성 후보를 root가 새
+  immutable record에 재등록한 정확한 경로·raw SHA·job ID. 원 record, candidate revision,
+  24-claim census, 원26번 parent/report/envelope, mapping, 011 HOLD와019/024의 원 negative는
+  그대로여야 한다. 현재 M 본문·선택6989 census에는 새 후보를 넣지 않는다.
+  QUEUED/LEASED/SUBMITTED/INTEGRATED 어느 상태에서도 inactive/current credit0이며
+  metadata의 `current_review_valid:false`, `LEGAL_HOLD`, review 경고를 요구한다.
+- Author job53의 실제 G 세 문항 current-ID source review와 원63개 static source.
+  기존 consumer의 original52 job/event와 모든 static raw SHA 검사를 유지한다.
+  Author 결과를 독립 감사로 바꾸지 않는다. 원2346 question objects와 추가 native3의
+  archive-only 상태를 보존한다. Allocation의 default298은 before snapshot이다.
+  최종 default 수를298로 강제하지 않는다. 실제 현재 hash에 결박된 부정 finding의
+  명시적 safety hold로만 default를 줄일 수 있으며, 원 hold/history를 보존한다.
+  기존 selection/default-review/archive-warning safety validator로 현재 미보류 negative를
+  차단한다. 새 failed default를 KEEP으로 덮거나 이전298 밖의 ID를 추가할 수 없다.
+
+31의 실제 재등록 record는 `.../w3-a-3-v1/registrations/after-census-v2.json`,
+raw SHA `945e120c2676793b7f6649d0eaa5a3cb4eb22b3f2e85fd56d273331a0730dd1c`,
+job `review-independent-notes-body-4c3229fb7bfb76b6`이다. Root checkpoint847d의 명시적
+재결박이며, 보존 ledger와 현재 ledger를 직접 비교해 target 불변·전체306 body 불변과
+정확히 `[w2-c-12,w3-a-6,w3-a-7]`의 sibling census 차이만 확인한다. 현재 처리 수는
+실제 최신 binding에서 계산한다. 비활성31 때문에 원 current credit 하나가 제외되며,
+이전80을 새 현재 수로 고정하거나 N 활성화를 이미 한 것으로 취급하지 않는다.
+29의 실제 F report/envelope 경로도 실제 통합 후에만 고정했다. Wave9는 실제 runbook의
+`independent-phase9-[a-d]-review.json`과 같은 basename의 `-result.json`만 출력 계약으로
+허용한다. 이는 파일 존재나 review 완료의 증거가 아니다. 그 실제 source raw SHA와
+최종 manifest는 모든33 job의 실제 통합과 known-negative containment 후에만 계산한다.
+미래 IG나 임의 source prefix/추가 job을 허용하지 않는다.
+새 note32/question34/author54는 pending이어도 범위 밖이며 별도 검토가 필요하다.
+기존15 manifest의 old25-job/6985 상태를 현재 source의 final proof로 사용할 수 없다.
+
+Canonical Q0012와 연결 SG-CII-LIFECYCLE의 철회는 별도 strict decoder가 담당한다.
+최종15 준비 시 그 decoder와 exact retained cause/metadata-only package가 실제로
+존재하고 검증되어야 한다. Notes annotation이 canonical RELEASED 복귀나 guide VERIFIED
+복귀를 허용하지 않는다. 기존1781 protected inventory·공개14 manifest와 decoder를
+바꾸지 않으며, root가 실제 hotfix를 병합한 뒤 두 경로의 합성 검사를 수행한다.
+
+새 candidate 본문 공개는 이 annotation guard 범위 밖이다. 실제15 출시 snapshot을
+기준으로 root가 별도16번째 body migration을 만들어 검증해야 한다. 이31의 독립
+후보 검토도 활성 본문과 일치하기 전에는 현재 credit를 얻지 않는다.
 
 검증은 먼저 현재 source로 export/build를 메모리에서 재생성하여 manifest의
 예상 바이트와 대조한다. `new_sha256`만 바꿔 임의의 annotation이나 법규 승인을
@@ -86,3 +122,8 @@ python scripts/verify_representative_protected.py
 ```sh
 python -m pytest -q tests/test_after190_annotation.py tests/test_emergency_note_activation.py
 ```
+
+실제 최종 source가 미완료인 동안 준비된 final manifest가 필요한 integration fixture는
+`NOT_RUN` 사유로 skip한다. 범위·tamper·원14 보존·실제 author source 검증은 별도로 실행한다.
+Skip을 final gate PASS로 보고하지 않는다. Root는 모든 실제 source와15 manifest를 고정한
+tree에서 전체 검증·CI·배포 검사를 다시 수행한다.
