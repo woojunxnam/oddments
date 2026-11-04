@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/notes-final19-60-63-integrate.py", line 25, in <module>
+    inv=q.inventory(ROOT)
+        ^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/note_review_queue.py", line 88, in inventory
+    notes = load_notes(root)
+            ^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_revision.py", line 193, in load_notes
+    return apply_if_bound(root,data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 132, in apply_if_bound
+    config,closure,state,job,archived,candidate,binding=source_contract(root)
+                                                        ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 95, in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 64, in source_contract
+    return validate_source_payload(root,config,binding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 78, in validate_source_payload
+    closure=old.validate(root,config['closure'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 95, in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 273, in validate
+    validate_publication_config(root,value)
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 383, in validate_publication_config
+    validated=validate_archive_notice_wrapper(root,closure)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 345, in validate_archive_notice_wrapper
+    verify_representative_outputs(root)
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 420, in verify_representative_outputs
+    require(result.returncode==0,'Current archive notices or deterministic representative outputs are invalid: '+result.stdout+result.stderr)
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 67, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Current archive notices or deterministic representative outputs are invalid: Checked practice_expansion/2026-10-28-representative/questions.json
+Traceback (most recent call last):
+  File "/workspace/oddments/scripts/build_representative_rewrites.py", line 677, in <module>
+    main()
+  File "/workspace/oddments/scripts/build_representative_rewrites.py", line 669, in main
+    require(path.exists() and path.read_bytes() == payload, f'Generated drift: {path.relative_to(ROOT)}')
+  File "/workspace/oddments/scripts/build_representative_rewrites.py", line 61, in require
+    raise ValueError(message)
+ValueError: Generated drift: practice_expansion/2026-10-28-representative/selection.json
+
