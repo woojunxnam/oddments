@@ -372,8 +372,12 @@ def compose_note_censuses(specs, effective, by_id, root=ROOT):
     for spec in specs:
         path = root / spec['path']
         census = json.loads(path.read_text())
-        snapshot = {u['id']: u for c in load_notes(root, revision_id=spec['notes_revision'])['chapters']
-                    for u in c['units']}
+        if 'body_correction_record' in spec or 'body_correction_history' in spec:
+            from notes_body_reassessment import census_snapshot
+            snapshot = census_snapshot(root,spec,{'chapters':[{'units':list(effective.values())}]})
+        else:
+            snapshot = {u['id']: u for c in load_notes(root, revision_id=spec['notes_revision'])['chapters']
+                        for u in c['units']}
         source_units = validate_note_census(census, snapshot, by_id, root)
         overlap = set(source_units) & set(selected)
         if set(spec.get('supersedes', {})) != overlap:
@@ -693,7 +697,8 @@ def build():
             'w4-a-19': 'reports/full-corpus-review/note-wave11-census.json',
             'w4-a-20': 'reports/full-corpus-review/note-wave12-census.json'}))
     from notes_census_reassessment import registered_specs
-    census_specs.extend(registered_specs(ROOT,effective_notes))
+    from notes_body_reassessment import registered_specs as registered_body_specs, ordered_specs
+    census_specs.extend(ordered_specs(ROOT,registered_specs(ROOT,effective_notes)+registered_body_specs(ROOT,effective_notes)))
     census_units, census_claims = compose_note_censuses(census_specs, effective, by_id, ROOT)
     complete_census_units = {uid for uid, unit in census_units.items() if
         unit['census_status'] == 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'}
