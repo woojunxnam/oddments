@@ -1,0 +1,388 @@
+eCFR :: 21 CFR 1306.13 -- Partial filling of prescriptions.
+{
+  "imports": {
+    "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+    "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+    "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+    "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+    "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+    "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+    "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+    "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+    "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+    "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+    "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+    "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+    "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+    "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+    "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+    "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+    "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+    "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+    "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+    "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+    "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+    "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+    "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+    "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+    "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+    "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+    "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+    "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+    "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+    "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+    "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+    "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+    "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+    "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+    "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+    "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+  }
+}
+import "application"
+Site Feedback
+You are using an unsupported browser
+×
+You are using an unsupported browser. This web site is designed for the current versions of
+          Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+×
+Site Feedback
+The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+Website Feedback
+If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+Content Feedback
+If you have questions for the Agency that issued the current document please contact the agency directly.
+×
+Website Feedback
+*
+Your Name
+*
+Email
+Attachment
+*
+How can we help you?
+*
+I am requesting technical help or providing website feedback
+This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+            contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+            information or personal data.
+☰
+Home
+Browse
+Titles
+Agencies
+CFR Updates
+Recent Changes
+Issue Summaries
+Corrections
+Finding Aids
+Parallel Table of Authorities
+Subject Index
+Agency-prepared Indexes
+Reader Aids
+Reader Aids Home
+Using the eCFR Point-in-Time System
+Understanding the eCFR
+Government Policy and OFR Procedures
+Developer Resources
+Recent Site Updates
+My eCFR
+My Subscriptions
+Sign Out
+Sign In / Sign Up
+eCFR
+The Electronic Code of Federal Regulations
+Enhanced Content :: FR Reference
+Enhanced content is provided to the user to provide additional context.
+Enhanced Content :: FR Reference
+Title 21
+This content is from the eCFR and is authoritative but unofficial.
+Displaying title 21, up to date as of 11/02/2026. Title 21 was last amended 11/02/2026.
+view historical versions
+A
+drafting site is available
+for use when drafting amendatory language
+switch to drafting site
+Navigate by entering citations or phrases
+(eg:
+1 CFR 1.1
+49 CFR 172.101
+Organization and Purpose
+1/1.1
+Regulation Y
+FAR
+).
+Choosing an item from
+citations and headings
+will bring you directly to the content. Choosing an item from
+full text search results
+will bring you to those results. Pressing enter in the search box
+              will also bring you to search results.
+Background and more details are available in the
+Search & Navigation
+guide.
+Title 21
+—Food and Drugs
+Chapter II
+—Drug Enforcement Administration, Department of Justice
+Part 1306
+—Prescriptions
+Controlled Substances Listed in Schedule II
+§ 1306.13
+Previous
+Next
+Top
+Table of Contents
+Enhanced Content - Table of Contents
+The in-page Table of Contents is available only when multiple sections are being viewed.
+Use the navigation links in the gray bar above to view the table of contents that this content belongs to.
+Enhanced Content - Table of Contents
+Details
+Enhanced Content - Details
+URL
+https://www.ecfr.gov/current/title-21/part-1306/section-1306.13
+Citation
+21 CFR 1306.13
+Agency
+Drug Enforcement Administration, Department of Justice
+Part 1306
+Authority:
+21 U.S.C. 821
+,
+823(k)
+,
+829
+,
+831
+,
+871(b)
+, unless otherwise noted.
+Source:
+36 FR 7799
+, Apr. 24, 1971;
+36 FR 13386
+, July 21, 1971, unless otherwise noted. Redesignated at
+38 FR 26609
+, Sept. 24, 1973.
+Enhanced Content - Details
+Print/PDF
+Enhanced Content - Print
+Generate PDF
+This content is from the eCFR and may include recent changes applied to the CFR.
+        The official, published CFR, is updated annually and available below under
+        "Published Edition". You can learn more about the process
+here
+.
+Enhanced Content - Print
+Display Options
+Enhanced Content - Display Options
+Enhanced Content - Display Options
+Subscribe
+Enhanced Content - Subscribe
+Subscribe to:
+21 CFR 1306.13
+Via Email:
+Enhanced Content - Subscribe
+Timeline
+Enhanced Content - Timeline
+Show only dates with regulatory amendments (
+)
+8/21/2023
+view on this date
+view change
+introduced
+7/21/2023
+view on this date
+view change
+introduced
+compare to most recent
+Enhanced Content - Timeline
+Go to Date
+Enhanced Content - Go to Date
+Date
+Enhanced Content - Go to Date
+Compare Dates
+Enhanced Content - Compare Dates
+Compare
+to
+Show changes as:
+red/green
+purple/orange
+Show strike-through for removed content
+yes
+no
+Enhanced Content - Compare Dates
+Published Edition
+Enhanced Content - Published Edition
+View the most recent official publication:
+View Title 21 on govinfo.gov
+View the PDF for 21 CFR 1306.13
+These links go to the official, published CFR, which is updated annually. As a
+      result, it may not include the most recent changes applied to the CFR.
+Learn more
+.
+Enhanced Content - Published Edition
+Developer Tools
+Enhanced Content - Developer Tools
+Information and documentation can be found in our
+developer resources
+.
+Enhanced Content - Developer Tools
+eCFR Content
+The
+Code of Federal Regulations
+(CFR) is the official legal print publication containing the codification of the general and permanent rules published in the
+Federal Register
+by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR.
+Learn more
+about the eCFR, its status, and the editorial process.
+§ 1306.13 Partial filling of prescriptions.
+(
+a
+)
+The partial filling of a prescription for a controlled substance listed in Schedule II is permissible if the pharmacist is unable to supply the full quantity called for in a written or emergency oral prescription and he makes a notation of the quantity supplied on the face of the written prescription, written record of the emergency oral prescription, or in the electronic prescription record. The remaining portion of the prescription may be filled within 72 hours of the first partial filling; however, if the remaining portion is not or cannot be filled within the 72-hour period, the pharmacist shall notify the prescribing individual practitioner. No further quantity may be supplied beyond 72 hours without a new prescription.
+(
+b
+)
+Partial filling of a prescription for a schedule II controlled substance at the request of the prescribing practitioner or patient:
+(
+1
+)
+General requirements.
+A prescription for a schedule II controlled substance may be partially filled if all of the following conditions are satisfied:
+(
+i
+)
+It is not prohibited by State law;
+(
+ii
+)
+The prescription is written and filled in accordance with the Act, this chapter, and State law.
+(
+iii
+)
+The partial fill is requested by the patient, by one acting on behalf of the patient (parent or legal guardian of a minor patient, or caregiver of an adult patient named in a medical power of attorney), or by the practitioner who wrote the prescription; and
+(
+iv
+)
+The total quantity dispensed in all partial fillings does not exceed the total quantity prescribed.
+(
+2
+)
+Time limitations on filling the remaining portions of a partially filled prescription for a schedule II controlled substance.
+If all the conditions of
+paragraph (b)(1)
+of this section are satisfied, and the prescription is partially filled, remaining portions of a partially filled prescription for a schedule II controlled substance, if filled, must be filled not later than 30 days after the date on which the prescription is written, except that in the case of an emergency oral prescription, as described in subsection 309(a) of the Act (
+21 U.S.C. 829(a)
+), the remaining portions of a partially filled prescription for a schedule II controlled substance, if filled, must be filled not later than 72 hours after the prescription is issued.
+(
+3
+)
+How a practitioner may request that a prescription for a schedule II controlled substance be partially filled.
+Where a practitioner issues a prescription for a schedule II controlled substance and wants the prescription to be partially filled, the practitioner must specify the quantity to be dispensed in each partial filling on the face of the written prescription, in the written record of the emergency oral prescription, or in the record for an electronic prescription. After consultation with a pharmacist, a practitioner may authorize a partial fill for the prescription at a date after which the prescription was initially issued; however, the prescription must be filled not later than 30 days after the date on which the prescription is written, except that in the case of an emergency oral prescription, as described in subsection 309(a) of the Act (
+21 U.S.C. 829(a)
+), the remaining portions of a partially filled prescription for a schedule II controlled substance, if filled, must be filled not later than 72 hours after the prescription is issued. The pharmacist must notate this subsequent request in accordance with
+paragraph (b)(5)
+of this section. All required information in this paragraph, except that of an authorization for partial filling at a later date, must be included on the prescription, along with the other information required by
+§ 1306.05
+, at the time the practitioner signs the prescription, or in the case of an emergency oral prescription, this information must be communicated by the prescribing practitioner to the pharmacist at the time that the oral communication is taking place.
+(
+4
+)
+How a patient or one acting on a patient's behalf may request that a prescription for a schedule II controlled substance be partially filled.
+A patient may request that his/her prescription for a schedule II controlled substance be partially filled. A caregiver named in an adult patient's medical power of attorney may request the adult patient's prescription be partially filled. When a patient is a minor (under age 18), a parent or legal guardian of the minor may request the prescription be partially filled. Where a practitioner has requested the partial filling of a prescription in accordance with
+paragraph (b)(3)
+of this section, neither the patient, the parent or legal guardian (in the case of a minor), nor the caregiver of an adult patient named in a medical power of attorney may request a partial filling in an amount greater than that specified by the practitioner. A request by the patient, the adult patient's caregiver named in the medical power of attorney, or the parent/legal guardian of a minor patient may be made: in person; in writing if signed by the patient, the adult patient's caregiver named in the medical power of attorney, or the parent/legal guardian of a minor patient; or by a phone call to the pharmacist from the patient, the adult patient's caregiver named in the medical power of attorney, or the parent/legal guardian of a minor patient.
+(
+5
+)
+How a pharmacy must record the partial filling of a prescription for a schedule II controlled substance.
+(
+i
+)
+Upon partially filling a prescription at the request of the prescribing practitioner, as requested when the prescriber issued the prescription, in accordance with
+paragraph (b)(3)
+of this section, the pharmacist must make a notation of the quantity dispensed on the face of the written prescription or in the pharmacy's electronic records, in the written record or the pharmacy's electronic records of the emergency oral prescription, or in the record of the electronic prescription. When the pharmacist partially fills a prescription, after the prescriber has conveyed this request in a consultation with a pharmacist in accordance with paragraph (b)(3), the pharmacist must note the following: “Authorized by Practitioner to Partial Fill,” the name of the practitioner, the date and time of the discussion, and the pharmacist's initials. In addition, for each such partial filling (whether requested by the prescriber on the prescription or after consultation with the pharmacist), the pharmacy must maintain a record of dispensing that includes the date of each dispensing, the name or initials of the individual who dispensed the substance, and all other information required by
+21 CFR 1306.22(c)
+for schedule III and IV prescription refills. For electronic prescriptions specifically, such required information pertaining to the quantity dispensed, date dispensed, and the dispenser must be linked to each electronic controlled substance prescription record.
+(
+ii
+)
+Upon partially filling a prescription at the request of the patient, the caregiver of an adult patient who is named in their medical power of attorney, or a parent or legal guardian of a minor patient, in accordance with
+paragraph (b)(4)
+of this section, the pharmacist must make a notation of the following on the face of the written prescription or in the pharmacy's electronic records, in the written record or the pharmacy's electronic records of the emergency oral prescription, or in the record of the electronic prescription: (I) “The [patient, parent or legal guardian of a minor patient, or caregiver of an adult patient named in a medical power of attorney] requested partial fill on [date such request was made]” and (II) the quantity dispensed. In addition, for each such partial filling, the pharmacy must maintain a record of dispensing that includes the date of each dispensing, the name or initials of the individual who dispensed the substance, and all other information required by
+21 CFR 1306.22(c)
+for schedule III and IV prescriptions. For electronic prescriptions specifically, such required information pertaining to the quantity dispensed, date dispensed, and the dispenser must be linked to each electronic controlled substance prescription record.
+(
+c
+)
+A prescription for a Schedule II controlled substance written for a patient in a Long Term Care Facility (LTCF) or for a patient with a medical diagnosis documenting a terminal illness may be filled in partial quantities to include individual dosage units. If there is any question whether a patient may be classified as having a terminal illness, the pharmacist must contact the practitioner prior to partially filling the prescription. Both the pharmacist and the prescribing practitioner have a corresponding responsibility to assure that the controlled substance is for a terminally ill patient. The pharmacist must record on the prescription whether the patient is “terminally ill” or an “LTCF patient.” A prescription that is partially filled and does not contain the notation “terminally ill” or “LTCF patient” shall be deemed to have been filled in violation of the Act. For each partial filling, the dispensing pharmacist shall record on the back of the prescription (or on another appropriate record, uniformly maintained, and readily retrievable) the date of the partial filling, quantity dispensed, remaining quantity authorized to be dispensed, and the identification of the dispensing pharmacist. The total quantity of Schedule II controlled substances dispensed in all partial fillings must not exceed the total quantity prescribed. Schedule II prescriptions for patients in a LTCF or patients with a medical diagnosis documenting a terminal illness shall be valid for a period not to exceed 60 days from the issue date unless sooner terminated by the discontinuance of medication.
+(
+d
+)
+Information pertaining to current Schedule II prescriptions for patients in a LTCF or for patients with a medical diagnosis documenting a terminal illness may be maintained in a computerized system if this system has the capability to permit:
+(
+1
+)
+Output (display or printout) of the original prescription number, date of issue, identification of prescribing individual practitioner, identification of patient, address of the LTCF or address of the hospital or residence of the patient, identification of medication authorized (to include dosage, form, strength and quantity), listing of the partial fillings that have been dispensed under each prescription and the information required in
+§ 1306.13(c)
+.
+(
+2
+)
+Immediate (real time) updating of the prescription record each time a partial filling of the prescription is conducted.
+(
+3
+)
+Retrieval of partially filled Schedule II prescription information is the same as required by
+§ 1306.22(b) (4)
+and
+(5)
+for Schedule III and IV prescription refill information.
+(Authority:
+21 U.S.C. 801
+,
+et seq.
+)
+[
+36 FR 7799
+, Apr. 24, 1971. Redesignated at
+38 FR 26609
+, Sept. 24, 1973, and amended at
+45 FR 54330
+, July 15, 1980;
+56 FR 25027
+, June 3, 1991;
+62 FR 13965
+, Mar. 24, 1997;
+75 FR 16308
+, Mar. 31, 2010;
+88 FR 47001
+, July 21, 2023]
+{"origins":[{"level":"part","identifier":"1306","label_level":"Part 1306","hierarchy":{"title":"21","chapter":"II","part":"1306"},"current":false,"authority":["\u003ca href=\"https://www.govinfo.gov/link/uscode/21/821\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e21 U.S.C. 821\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/823\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e823(k)\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/829\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e829\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/831\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e831\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/21/871\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e871(b)\u003c/a\u003e, unless otherwise noted.\n"],"source":["\u003ca href=\"https://www.federalregister.gov/citation/36-FR-7799\" class=\"fr-reference\" data-reference=\"36 FR 7799\"\u003e36 FR 7799\u003c/a\u003e, Apr. 24, 1971; \u003ca href=\"https://www.federalregister.gov/citation/36-FR-13386\" class=\"fr-reference\" data-reference=\"36 FR 13386\"\u003e36 FR 13386\u003c/a\u003e, July 21, 1971, unless otherwise noted. Redesignated at \u003ca href=\"https://www.federalregister.gov/citation/38-FR-26609\" class=\"fr-reference\" data-reference=\"38 FR 26609\"\u003e38 FR 26609\u003c/a\u003e, Sept. 24, 1973.\n"],"link":"/current/title-21/part-1306","title":"Part 1306"}]}
+eCFR Content
+Pages
+Home
+Titles
+Search
+Recent Changes
+Corrections
+Reader Aids
+Using the eCFR Point-in-Time System
+Understanding the eCFR
+Government Policy and OFR Procedures
+Developer Resources
+Recent Site Updates
+Information
+About This Site
+Legal Status
+Privacy
+Accessibility
+FOIA
+No Fear Act
+Continuity Information
+My eCFR
+My Subscriptions
+Sign In / Sign Up
