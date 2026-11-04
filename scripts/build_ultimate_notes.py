@@ -64,13 +64,15 @@ def render_markdown(text: str) -> str:
     output=re.sub(r'<(/?)h[12]>',r'<\1h3>',output)
     return output
 
-def make_outputs() -> dict[Path,str]:
-    original=(ROOT/'notes'/'guide.json').read_text(encoding='utf-8')
-    data=load_notes(ROOT)
-    ledger=json.loads((ROOT/'notes'/'editorial-map.json').read_text())
-    census_raw=(ROOT/'reports/full-corpus-review/notes-unit-ledger.jsonl').read_bytes()
+def make_outputs(root=None) -> dict[Path,str]:
+    root=ROOT if root is None else Path(root)
+    out=root/'site'/'notes'
+    original=(root/'notes'/'guide.json').read_text(encoding='utf-8')
+    data=load_notes(root)
+    ledger=json.loads((root/'notes'/'editorial-map.json').read_text())
+    census_raw=(root/'reports/full-corpus-review/notes-unit-ledger.jsonl').read_bytes()
     annotations=census_annotations(data,census_raw)
-    independent=load_metadata(ROOT,data,ledger_raw=census_raw)
+    independent=load_metadata(root,data,ledger_raw=census_raw)
     independent_progress=independent_progress_notice(independent['progress'])
     payload=copy.deepcopy(data)
     all_ids=set()
@@ -144,7 +146,7 @@ def make_outputs() -> dict[Path,str]:
     manifest={'edition':data['edition'],'content_sha256':payload['content_sha256'],'stats':payload['stats'], 'legal_review_scope':data['legal_review_scope'], 'revision_provenance':data['revision_provenance'], 'baseline_content_sha256':payload['baseline_content_sha256']}
     manifest['source_census_ledger_sha256']=payload['source_census_ledger_sha256']
     manifest['independent_note_review_progress']=independent['progress']
-    return {OUT/'content.js':data_js, OUT/'book.html':'\n'.join(book), OUT/'complete-notes.md':'\n'.join(markdown), OUT/'build.json':json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'}
+    return {out/'content.js':data_js, out/'book.html':'\n'.join(book), out/'complete-notes.md':'\n'.join(markdown), out/'build.json':json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'}
 
 def main() -> None:
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
