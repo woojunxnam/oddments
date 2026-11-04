@@ -671,8 +671,11 @@ def build():
         for authority in source['sources']:
             validate_independent_source_bytes(authority,ROOT)
     from procedural_secondary_metadata import load_metadata as load_procedural_secondary
-    secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,
-        {r['question_id']:r['collection'] for r in result})
+    from phase11_secondary_metadata import load_metadata as load_phase11_secondary, combine_metadata
+    secondary_collections = {r['question_id']:r['collection'] for r in result}
+    procedural_secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,secondary_collections)
+    phase11_secondary = load_phase11_secondary(ROOT,independent_records,public_by_id,secondary_collections)
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     validate_independent_archive_safety(selection, independent_records+secondary['records'])
     independent_by_id = {r['question_id']: r for r in independent_records}
@@ -835,8 +838,11 @@ def build():
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
     progress['note_link_question_discrepancy_holds'] = note_links['summary']
-    if secondary['assessments']:
-        progress['independent_legacy_procedural_supplementary_review'] = secondary['progress']
+    if procedural_secondary['assessments']:
+        progress['independent_legacy_procedural_supplementary_review'] = procedural_secondary['progress']
+    if phase11_secondary['assessments']:
+        progress['independent_legacy_phase11_supplementary_review'] = phase11_secondary['progress']
+        progress['independent_legacy_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
         collections=[dict(path=path, questions=len(read(path)['questions']),
