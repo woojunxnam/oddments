@@ -161,3 +161,56 @@ def source_bound_phase10_delta(selection, by_id, root):
     result['wrong_key_removed_ids'] = {qid for qid in result['removed_ids']
         if reviews[qid]['legal_review']['existing_answer_correct'] == 'NO'}
     return result
+
+
+def phase10_archive_history(root, notices=None):
+    """Compare split current groups and previous_notices to exact before-phase10 bytes."""
+    root = Path(root)
+    _, definitions = phase10_snapshot(root)
+    state = json.loads((root / 'reports/full-corpus-review/independent-legacy-work-queue.json').read_bytes())
+    jobs = [j for j in state['jobs'] if 34 <= j['sequence'] <= 37]
+    assert [{k: j[k] for k in ('sequence', 'job_id', 'stage', 'question_hashes')} for j in jobs] == definitions
+    if any(j['status'] != 'INTEGRATED' for j in jobs):
+        raise ValueError('PHASE10_NOT_INTEGRATED: archive history review is not complete')
+    raw = (root / 'reports/full-corpus-review/phase10-before-archive-review-notices.json').read_bytes()
+    assert raw_sha(raw) == '00654444d3f30e4c39274d757f8058c96ce617a7f10dd35609b758ce418912a3'
+    before = json.loads(raw)['notices']
+    raw = (root / 'reports/full-corpus-review/phase10-before-nonlegacy-default-holds.json').read_bytes()
+    assert raw_sha(raw) == 'f35cd12e83f05d183c9e603504b44adbc8dfe3bcc5e177dbf568d20e75ef663d'
+    before_holds = json.loads(raw)['holds']
+    current_holds = json.loads((root / 'reports/representative-rewrite/nonlegacy-default-holds.json').read_bytes())['holds']
+    current_hold_by_id = {h['question_id']: h for h in current_holds}
+    assert all(current_hold_by_id.get(h['question_id']) == h for h in before_holds)
+    current = json.loads((root / 'reports/representative-rewrite/archive-review-notices.json').read_bytes())['notices'] if notices is None else notices
+    old_by_id = {qid: n for n in before for qid in n['question_ids']}
+    current_by_id = {qid: n for n in current for qid in n['question_ids']}
+    assert len(old_by_id) == sum(len(n['question_ids']) for n in before)
+    assert len(current_by_id) == sum(len(n['question_ids']) for n in current), 'Duplicate current archive notice ID'
+    assert set(old_by_id) <= set(current_by_id), 'Original archive notice ID disappeared'
+    reviews, bindings = native_reviews(root)
+    assigned = {qid for j in definitions for qid in j['question_hashes']}
+    phase10_sources = {bindings[qid]['source_path'] for qid in assigned}
+    expected = {qid for qid in assigned if not qid.startswith('MA-RW-') and (
+        reviews[qid]['legal_review']['verdict'] != 'KEEP'
+        or reviews[qid]['legal_review']['existing_answer_correct'] != 'YES'
+        or reviews[qid]['realism_review']['verdict'] != 'PASS')}
+    actual = {qid for n in current if n['review_source'] in phase10_sources for qid in n['question_ids']}
+    assert actual == expected, 'Current archive notices differ from actual native phase10 findings'
+    for qid, old in old_by_id.items():
+        row = current_by_id[qid]
+        if qid in actual:
+            assert row.get('previous_notices') == [old], 'Full original notice group/history changed'
+        else:
+            assert set(row['question_ids']) <= set(old['question_ids'])
+            assert row['question_record_hashes'] == {x: old['question_record_hashes'][x] for x in row['question_ids']}
+            fields = lambda n: {k: v for k, v in n.items() if k not in ('question_ids', 'question_record_hashes')}
+            assert fields(row) == fields(old), 'Untouched/split original notice metadata changed'
+    for qid in actual:
+        row, binding = current_by_id[qid], bindings[qid]
+        assert row['review_source'] == binding['source_path']
+        assert row['review_source_sha256'] == binding['source_sha256']
+        assert row['question_record_hashes'][qid] == binding['record_sha256']
+        if qid not in old_by_id:
+            assert not row.get('previous_notices'), 'Invented previous notice history'
+    return dict(native_notice_ids=actual, replaced_prior_ids=actual & set(old_by_id),
+                newly_notified_ids=actual - set(old_by_id), total_current_notice_ids=len(current_by_id))

@@ -25,7 +25,7 @@
   "future_default_count_asserted": false,
   "actual_unbound_default_ids_before_phase10": 128,
   "all128_in_exact_phase10_assignments": true,
-  "preparation_tests_passed": 8,
+  "preparation_tests_passed": 9,
   "test_scope": "exact snapshots/pending-wave rejection/unsupported restoration-removal/history changes/original355 objects and M preservation/proceduralHOLD!=wrongkey",
   "final_native_phase10_QA_status": "WAITING_ROOT_ALL4_INTEGRATED_CONTAINMENT_AND_GENERATED_SNAPSHOT",
   "required_next_steps": [
@@ -47,5 +47,18 @@
     "reports/phase10-default-qa-e/phase10-job-bindings.json": "9a1cfa36b6c3f44924ee5ddbccbbc298b3e2106eb31a97811170242ae64e413b",
     "reports/phase10-default-qa-e/original-history-and-M-snapshot.json": "0a65d1c60c53d68f463562590553a1e8f39fee7c508a3906ef6bcb301355e171",
     "reports/phase10-default-qa-e/before-phase10-selection.json": "b6c8600f059626bec1a6f3903aae81c56acd72f7f843b4bb0acde7b9716891b5"
+  },
+  "archive_history_check_prepared": {
+    "before_archive_raw_sha256": "00654444d3f30e4c39274d757f8058c96ce617a7f10dd35609b758ce418912a3",
+    "before_nonlegacy_holds_raw_sha256": "f35cd12e83f05d183c9e603504b44adbc8dfe3bcc5e177dbf568d20e75ef663d",
+    "required_invariants": [
+      "unique current notice IDs",
+      "all old IDs retained",
+      "every replaced ID carries exact full original group object in previous_notices",
+      "untouched split groups preserve all metadata and exact ID/hash subset",
+      "new notice IDs and report hashes equal actual negative phase10 source records",
+      "old nonlegacy hold objects remain exact"
+    ],
+    "current_final_history_result": "NOT_RUN_UNTIL_FINAL_ROOT_SOURCE_MERGED"
   }
 }
