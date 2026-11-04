@@ -570,14 +570,19 @@ def build():
         for authority in source['sources']:
             if hashlib.sha256((ROOT/authority['evidence_path']).read_bytes()).hexdigest() != authority['evidence_sha256']:
                 raise ValueError('Stale independent source evidence')
-    validate_default_review_safety(selection['recommended_ids'], reviews, independent_records)
+    from procedural_secondary_metadata import load_metadata as load_procedural_secondary
+    secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,
+        {r['question_id']:r['collection'] for r in result})
+    validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     independent_by_id = {r['question_id']: r for r in independent_records}
     for row in result:
+        supplementary = secondary['assessments'].get(row['question_id'])
+        if supplementary is not None:
+            row['independent_legacy_supplementary_assessment'] = supplementary
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
             apply_independent_legacy_review(row,audit_row)
-    independent_assessed = [r for r in independent_records if
-                            r['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED']
+
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
     assert set(baseline['question_record_hashes']) <= set(ids)
@@ -685,9 +690,9 @@ def build():
                     editorial_rubric_assessed_ids=sum(r['editorial_quality_assessment'] is not None for r in result),
                     editorial_rubric_is_release_certificate=False,
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
-                    independent_legacy_legal_assessed=len(independent_assessed),
-                    independent_legacy_originals_read=len(independent_records),
-                    independent_legacy_keys_unassessed=len(independent_records)-len(independent_assessed),
+                    independent_legacy_legal_assessed=secondary['progress']['effective_key_assessed'],
+                    independent_legacy_originals_read=secondary['progress']['unique_originals_read'],
+                    independent_legacy_keys_unassessed=secondary['progress']['effective_keys_unassessed'],
                     independent_legacy_realism_pass=sum(r['realism_review'].get('verdict') == 'PASS' for r in independent_records),
                     independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
@@ -712,6 +717,8 @@ def build():
                     same_team_peer_this_session='NOT_CERTIFIED_BY_THIS_INVENTORY',
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
+    if secondary['assessments']:
+        progress['independent_legacy_procedural_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
         collections=[dict(path=path, questions=len(read(path)['questions']),
