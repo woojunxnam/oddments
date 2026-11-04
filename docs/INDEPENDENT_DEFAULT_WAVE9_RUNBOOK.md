@@ -67,7 +67,9 @@ hash, 실제 actor와 source bytes를 확인한다. 잘못된 기존 generated�
 커밋 후 자기 `/tmp/independent-phase9-LETTER-result.json`에 미커밋 envelope를 만든다.
 stage/실제 actor/auditor/instance/independence 선언과 canonical credit0, exact
 question_hashes, 실제 40자 worker_commit, 40 results(question_id,
-INDEPENDENT_LEGACY_ASSESSED 또는 실제 native 허용 disposition,
+INDEPENDENT_ASSESSED 또는 실제 native 허용 disposition,
 evidence_path/evidence_sha256)를 제공한다. `scripts/review_queue.py`의 실제 계약을
 확인한다. Commit 안에 자기 SHA를 넣지 않는다. Root만 submit→증거 통합→원 envelope
 보존→sequence 순서 integrate한다. 보고서 완료/원장 통합은 canonical RELEASED가 아니다.
+
+Source context는 source_ids/note_evidence/family_id/topic/area의 명시 whitelist만 추출한다. 나머지 필드를 제외 목록으로 덤프하면 _statement_truth 등이 노출될 수 있다. 우발 노출은 숨기지 않고 해당 실제 세션의 새 whole-key credit를 차단하여 기록한다.
