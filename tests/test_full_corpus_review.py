@@ -20,9 +20,13 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     for path, text in outputs.items():
         assert path.read_text() == text
     rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
-    assert len(rows) == len({r['question_id'] for r in rows}) == 2346
+    assert len(rows) == len({r['question_id'] for r in rows}) == 2349
     assert sum(r['baseline_member'] for r in rows) == 2328
-    assert sum(r['checked_at'] is not None for r in rows) == 2346
+    assert sum(r['checked_at'] is not None for r in rows) == 2349
+    appended = {r['question_id'] for r in rows
+                if r['implementation_status'] == 'ARCHIVE_ONLY_REPLACEMENT_CANDIDATE'}
+    assert appended == {'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'}
+    assert all(not r['baseline_member'] for r in rows if r['question_id'] in appended)
     assert sum(r['legal_review_status']=='AUTHOR_SOURCE_CHECKED_NOT_INDEPENDENT' for r in rows) >= 189
     assert sum(r['implementation_status']=='NEW_DISTINCT_ID' for r in rows) == 18
     assert sum(r['legal_review_status']=='HOLD_SOURCE_RELATIONSHIP' for r in rows) >= 10
@@ -369,7 +373,7 @@ def test_visible_quality_status_and_previous59_snapshot_are_current():
     path, rendered=output()
     assert path.read_text()==rendered
     selection = json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_text())
-    assert '2,346' in rendered and f"{selection['stats']['recommended']:,}문항" in rendered
+    assert '2,349' in rendered and f"{selection['stats']['recommended']:,}문항" in rendered
     snapshot=json.loads((ROOT/'reports/full-corpus-review/unit3b-preservation.json').read_text())
     from build_full_corpus_review import record_hash
     bank=json.loads((ROOT/'practice_expansion/2026-10-28-representative/questions.json').read_text())
@@ -411,12 +415,21 @@ def test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases():
     assert len(snapshot['previous_source_record_hashes'])==75
     assert all(record_hash(by_id[qid])==value for qid,value in snapshot['previous_question_record_hashes'].items())
     assert all(record_hash(bank['sources'][sid])==value for sid,value in snapshot['previous_source_record_hashes'].items())
-    assert set(by_id)==set(snapshot['previous_question_record_hashes'])|set(snapshot['new_question_ids'])
+    original_ids=set(snapshot['previous_question_record_hashes'])|set(snapshot['new_question_ids'])
+    appended_ids={'MA-RW-0081', 'MA-RW-0082', 'MA-RW-0083'}
+    assert set(by_id)==original_ids|appended_ids
     assert snapshot['new_question_ids']==[f'MA-RW-{i:04d}' for i in range(77,81)]
     reviewed=json.loads((ROOT/'reports/full-corpus-review/cdtm-author-review.json').read_text())['records']
     for qid in ['MA-RW-0025','MA-RW-0026','MA-RW-0027','MA-RW-0028']:
         validate_review(by_id[qid],next(r for r in reviewed if r['question_id']==qid))
-    assert not any(int(qid.rsplit('-',1)[1])>80 for qid in by_id)
+    allocation=json.loads((ROOT/'reports/representative-rewrite/sata-remediation/allocation.json').read_text())
+    assert {row['question_id'] for row in allocation['allocations']}==appended_ids
+    selection=json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_text())
+    for qid in appended_ids:
+        assert by_id[qid]['archive_only_candidate'] is True
+        assert by_id[qid]['independent_legal_audit'] is None
+        assert by_id[qid]['independent_realism_audit'] is None
+        assert qid not in selection['recommended_ids']
 
 
 def test_known_key_defects_and_conditional_reviews_are_not_counted_as_correct():
