@@ -1,5 +1,5 @@
 import collections,datetime,hashlib,json,pathlib,sys
-OUT=pathlib.Path(__file__).parent; PREFIX=OUT.as_posix()+'/'
+OUT=pathlib.Path(__file__).parent; PREFIX=OUT.resolve().relative_to(pathlib.Path.cwd()).as_posix()+'/'
 p=json.loads((OUT/'notes101-a-visible-input.json').read_text());job=json.loads((OUT/'notes101-a-assignment.json').read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 source_meta={int(f.name.split('.')[0]):json.loads(f.read_text()) for f in (OUT/'sources').glob('*.meta.json')}
@@ -240,6 +240,6 @@ report.update(independent_of_authors=True,canonical_audit=False,canonical_releas
 (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 manifest=[]
 for f in sorted((OUT/'sources').iterdir()):
- if f.is_file():manifest.append({'path':f.as_posix(),'raw_sha256':sha(f),'bytes':f.stat().st_size})
+ if f.is_file():manifest.append({'path':f.resolve().relative_to(pathlib.Path.cwd()).as_posix(),'raw_sha256':sha(f),'bytes':f.stat().st_size})
 (OUT/'source-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report['summary'],ensure_ascii=False))
