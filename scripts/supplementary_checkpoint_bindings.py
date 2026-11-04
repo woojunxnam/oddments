@@ -70,7 +70,7 @@ def validated_sources(root,primary_records,*,source_bindings=None):
                 legal.get('existing_answer_correct')in {'NO','AMBIGUOUS','NOT_ASSESSED'})
             current=dict(source_path=assessment['report_path'],source_sha256=assessment['report_sha256'],
                 record_sha256=row['record_sha256'],reviewed_at=report['reviewed_at'],negative=negative,
-                supplementary_only=True,does_not_override_primary=True,canonical_release_credit=0)
+                supplementary_only=True,does_not_override_primary=True,canonical_release_credit=0,review_kind='REALISM_COMPLETION')
             sources[qid]=merge_completion_source(qid,previous,current)
     procedural.retained_result(None,staged,source_bindings)
     return sources

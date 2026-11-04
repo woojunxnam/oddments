@@ -9,6 +9,21 @@ from realism_completion_legal4 import LEGAL_IDS
 from notes_published15_closure import snapshotted
 
 
+def fill_static_primary(root,provided,read):
+    """Complete only the three original static reports; verify any overlap."""
+    result=copy.deepcopy(provided);by_id={row['question_id']:row for row in result}
+    route.require(len(by_id)==len(result),'Duplicate supplied primary rows')
+    for name in ('pub05-14-independent-review.json','wave2-independent-review.json','wave5-independent-review.json'):
+        path='reports/full-corpus-review/'+name
+        route.require((root/path).exists(),'Required original static primary report is missing: '+path)
+        report=json.loads(read(path))
+        for row in report['records']:
+            uid=row['question_id']
+            if uid in by_id:route.require(by_id[uid]==row,'Static/native primary overlap differs')
+            else:result.append(copy.deepcopy(row));by_id[uid]=row
+    return result
+
+
 @snapshotted
 def load_metadata(root,primary_records,public,*,source_bindings=None):
     result={'assessments':{},'records':[],'legal_assessments':{},'legal_records':[],
@@ -24,6 +39,7 @@ def load_metadata(root,primary_records,public,*,source_bindings=None):
         route.require(path not in retained or retained[path]==route.sha(raw),'Conflicting retained source bytes')
         retained[path]=route.sha(raw);return raw
     state=route.read_json(read,route.STATE);scope=route.read_json(read,route.SCOPE,state['realism_completion_scope']['raw_sha256'])
+    primary_records=fill_static_primary(root,primary_records,read)
     primary={r['question_id']:r for r in primary_records};route.require(len(primary)==len(primary_records),'Duplicate primary reviews')
     route.validate_state(state,scope)
     current,collections,canonical=route.questions(root,read)
@@ -127,3 +143,20 @@ def validate_archive_containment(selection,supplement):
         else:
             route.require(any(matches(n,uid,proof)for n in selection['archive_review_notices']),
                           'Fresh realism FAIL requires an actual source-bound archive notice: '+uid)
+
+
+@route.snapshotted
+def validate_publication_style_inputs(root,selection,primary_records,style_inputs):
+    """Typed dispatch: no invented legal grade is added to style-only rows."""
+    read=lambda p,h=None:route.disk_read(root,p,h)
+    public,_,_=route.questions(root,read)
+    metadata=load_metadata(root,primary_records,public)
+    for uid,binding,row in style_inputs:
+        route.require(binding.get('review_kind')=='REALISM_COMPLETION'and uid not in LEGAL_IDS,
+                      'Unknown legal-free supplementary record type')
+        proof=metadata['assessments'].get(uid)
+        route.require(proof is not None and proof['record']==row and
+            proof['report_path']==binding['source_path']and proof['report_sha256']==binding['source_sha256'],
+            'Style-only row lacks its exact committed native/current-hash proof')
+    validate_archive_containment(selection,metadata)
+    return metadata

@@ -65,6 +65,10 @@ def template(tmp_path_factory):
         nearest_inputs=dict(path=r.INPUTS,raw_sha256=r.sha(r.encoded(inputs))),
         reviewers=[dict(actor_id=a,session_id=a,auditor_instance=i,fork_turns='none',controller_independence_basis='Root must actually spawn a fresh session before claim; queued allocation is not a claim or identity proof.')for a,i in zip(r.ACTORS,r.INSTANCES)],
         canonical_release_credit=0,key_assessment_credit=0,legal_audit_credit=0,new_original_read_credit=0)
+    for path in r.STATIC_PRIMARY_PATHS:write(root,path,{'records':primary[:10]if path.endswith('wave2-independent-review.json')else []})
+    scope['static_primary_sources']={p:r.sha((root/p).read_bytes())for p in r.STATIC_PRIMARY_PATHS}
+    origin_raw=subprocess.check_output(['git','show','HEAD:'+r.APPROVED_ORIGIN['path']],cwd=Path(__file__).resolve().parents[1])
+    write(root,r.APPROVED_ORIGIN['path'],origin_raw);scope['format_cache_origin']=copy.deepcopy(r.APPROVED_ORIGIN)
     write(root,r.SCOPE,scope);write(root,r.INPUTS,inputs)
     for path in r.WORKER_PUBLIC_FILES:
         if path!=r.STYLE:write(root,path,b'SYNTHETIC PUBLIC WORKER DOCUMENT\n')
@@ -85,10 +89,10 @@ def fixture(template,tmp_path,monkeypatch):
     return root,state,scope,inputs,public,primary
 
 
-def claim(f,index=0):
+def claim(f,index=0,at='2026-11-04T12:00:00+00:00'):
     root,state,scope,*_=f
     return r.claim(root,state,scope,r.ACTORS[index],r.ACTORS[index],r.INSTANCES[index],
-        fresh_session_actually_created=True,at='2026-11-04T12:00:00+00:00')
+        fresh_session_actually_created=True,at=at)
 
 
 def make_report(f,index=0,verdict='PASS'):
@@ -147,10 +151,11 @@ def read_memory(paths):
     return read
 
 
-def complete(f,index=0,verdict='PASS',extra_worker_path=None):
-    root,state,scope,inputs,public,_=f;assigned=claim(f,index);write(root,r.STATE,state);commit(root,'SYNTHETIC actual claim')
+def complete(f,index=0,verdict='PASS',extra_worker_path=None,use_format_cache=False):
+    root,state,scope,inputs,public,_=f;assigned=claim(f,index,at='2026-11-04T19:00:00+00:00'if use_format_cache else '2026-11-04T12:00:00+00:00');write(root,r.STATE,state);commit(root,'SYNTHETIC actual claim')
     job=state['jobs'][index];q.git(root,'checkout','-qb',job['worker_branch'],job['base_commit'])
     report,paths=make_report(f,index,verdict)
+    if use_format_cache:cached_format(report,paths,job)
     for path,value in paths.items():write(root,path,value)
     if extra_worker_path is not None:write(root,extra_worker_path,b'UNAUTHORIZED SYNTHETIC worker mutation')
     reportpath=job['output_prefix']+'report.json';write(root,reportpath,report);worker=commit(root,'SYNTHETIC worker evidence')
@@ -160,9 +165,9 @@ def complete(f,index=0,verdict='PASS',extra_worker_path=None):
     result.update(worker_commit=worker,question_hashes=job['question_hashes'],result_path=job['output_prefix']+'result.json',
         results=[dict(question_id=uid,disposition='INDEPENDENT_ASSESSED',evidence_path=reportpath,evidence_sha256=r.sha(r.encoded(report)))for uid in job['question_hashes']])
     write(root,result['result_path'],result)
-    r.submit(root,state,scope,job['job_id'],assigned['lease_token'],result,inputs,public,at='2026-11-04T12:07:00+00:00')
+    r.submit(root,state,scope,job['job_id'],assigned['lease_token'],result,inputs,public,at='2026-11-04T19:07:00+00:00'if use_format_cache else '2026-11-04T12:07:00+00:00')
     write(root,r.STATE,state);commit(root,'SYNTHETIC submitted envelope')
-    r.integrate(root,state,scope,job['job_id'],inputs,public,at='2026-11-04T12:08:00+00:00')
+    r.integrate(root,state,scope,job['job_id'],inputs,public,at='2026-11-04T19:08:00+00:00'if use_format_cache else '2026-11-04T12:08:00+00:00')
     write(root,r.STATE,state);commit(root,'SYNTHETIC ordered integration')
     return result,report
 
@@ -385,3 +390,121 @@ def test_worker_view_is_small_and_does_not_checkout_prior_verdicts_or_hidden_ori
     assert not(destination/scope['collections'][r.IDS[0]]).exists()
     assert not(destination/scope['primary'][r.IDS[0]]['report_path']).exists()
     assert q.git(destination,'rev-parse','HEAD')==a['base_commit']and q.git(destination,'status','--porcelain')==''
+
+
+@pytest.mark.parametrize('verdict',['PASS','FAIL'])
+def test_integrated_style_only_rows_follow_actual_published15_default_safety_dispatch(fixture,verdict):
+    root,state,scope,inputs,public,primary=fixture;complete(fixture,verdict=verdict)
+    from supplementary_checkpoint_bindings import validated_sources
+    import notes_published15_closure as closure
+    sources=validated_sources(root,primary)
+    assert all('legal_review'not in row for row in make_report(fixture)[0]['records'])
+    notices=[]
+    for row in primary:
+        uid=row['question_id'];proof=sources.get(uid)if verdict=='FAIL'else None
+        notices.append(dict(question_ids=[uid],issue_type='INDEPENDENT_REVIEW_FINDING',
+            review_source=proof['source_path']if proof else scope['primary'][uid]['report_path'],
+            review_source_sha256=proof['source_sha256']if proof else scope['primary'][uid]['report_raw_sha256'],
+            question_record_hashes={uid:row['record_sha256']}))
+    selection=dict(recommended_ids=[],holds=[],safety_holds=[],archive_review_notices=notices)
+    validated=dict(primary_records=primary,supplementary_sources=sources)
+    closure.validate_publication_default_safety(root,{'full_source_files':{}},selection,validated)
+    selection['recommended_ids']=[r.IDS[0]]
+    with pytest.raises(ValueError,match='cannot return to default'):closure.validate_publication_default_safety(root,{'full_source_files':{}},selection,validated)
+    if verdict=='FAIL':
+        selection['recommended_ids']=[];selection['archive_review_notices'].clear()
+        with pytest.raises(ValueError,match='actual source-bound archive notice'):closure.validate_publication_default_safety(root,{'full_source_files':{}},selection,validated)
+
+
+def test_pending_publication_path_completes_static_parent_inventory_without_keyerror(fixture):
+    root,state,scope,inputs,public,primary=fixture
+    static='reports/full-corpus-review/wave2-independent-review.json'
+    partial=primary[10:]
+    from supplementary_checkpoint_bindings import validated_sources
+    import notes_published15_closure as closure
+    bindings={};sources=validated_sources(root,partial,source_bindings=bindings)
+    assert sources=={}and static in bindings
+    assert m.load_metadata(root,partial,public)['progress']['integrated_units']==0
+    selection=dict(recommended_ids=[],holds=[],safety_holds=[],archive_review_notices=[{'question_ids':[row['question_id']]}for row in primary])
+    closure.validate_publication_default_safety(root,{'full_source_files':{static:{'raw_sha256':r.sha((root/static).read_bytes())}}},selection,
+        {'primary_records':partial,'supplementary_sources':sources})
+    bad=copy.deepcopy(partial);bad[0]['realism_review']['verdict']='PASS'
+    write(root,static,{'records':primary[:10]+[primary[10]]});commit(root)
+    with pytest.raises(ValueError,match='overlap differs'):m.load_metadata(root,bad,public)
+
+
+def cached_format(report,paths,job):
+    current=paths[report['public_format_evidence']['metadata_path']]
+    origin_raw=subprocess.check_output(['git','show','HEAD:'+r.APPROVED_ORIGIN['path']],cwd=Path(__file__).resolve().parents[1])
+    origin=json.loads(origin_raw)
+    for key in ('official_url','final_url','status','retrieved_at','raw_sha256','text_sha256'):current[key]=origin[key]
+    current.update(retrieval_mode='SAME_DAY_RETAINED_CACHE',read_at='2026-11-04T19:02:00+00:00')
+    report['completed_at']='2026-11-04T19:06:00+00:00'
+    paths[report['public_format_evidence']['memo_path']]['reviewed_at']='2026-11-04T19:05:00+00:00'
+    report['public_format_evidence']['memo_sha256']=r.sha(r.encoded(paths[report['public_format_evidence']['memo_path']]))
+    path=job['output_prefix']+'format-origin-meta.json';paths[path]=origin_raw
+    report['public_format_evidence'].update(origin_metadata_path=path,origin_metadata_sha256=r.sha(origin_raw),metadata_sha256=r.sha(r.encoded(current)))
+    return origin,path
+
+
+def test_same_day_retained_format_cache_keeps_original_get_and_reads_after_claim(fixture):
+    root,state,scope,inputs,public,primary=fixture;claim(fixture,at='2026-11-04T19:00:00+00:00');job=state['jobs'][0];report,paths=make_report(fixture)
+    origin,path=cached_format(report,paths,job);before=copy.deepcopy(origin)
+    allowed=r.validate_report(job,scope,report,read_memory(paths),inputs,public)
+    assert path in allowed and origin==before and origin['retrieved_at']=='2026-11-04T18:19:26.088117+00:00'
+    assert paths[report['public_format_evidence']['metadata_path']]['read_at']=='2026-11-04T19:02:00+00:00'
+
+
+@pytest.mark.parametrize('defect',['origin_sha','original_status','original_timestamp','raw_sha','text_sha','wrong_day','read_before_claim','unknown_mode','live_old_get','origin_outside_prefix'])
+def test_cached_format_rejects_forged_origin_status_time_or_payload_binding(fixture,defect):
+    root,state,scope,inputs,public,_=fixture;claim(fixture,at='2026-11-04T19:00:00+00:00');job=state['jobs'][0];report,paths=make_report(fixture)
+    origin,path=cached_format(report,paths,job);meta=paths[report['public_format_evidence']['metadata_path']];source=report['public_format_evidence']
+    if defect=='origin_sha':source['origin_metadata_sha256']='0'*64
+    elif defect=='original_status':origin['status']=403;source['origin_metadata_sha256']=r.sha(r.encoded(origin))
+    elif defect=='original_timestamp':origin['retrieved_at']='2026-11-04T11:01:00+00:00';source['origin_metadata_sha256']=r.sha(r.encoded(origin))
+    elif defect=='raw_sha':origin['raw_sha256']='0'*64;source['origin_metadata_sha256']=r.sha(r.encoded(origin))
+    elif defect=='text_sha':origin['text_sha256']='0'*64;source['origin_metadata_sha256']=r.sha(r.encoded(origin))
+    elif defect=='wrong_day':meta['retrieved_at']='2026-11-03T11:00:00+00:00'
+    elif defect=='read_before_claim':meta['read_at']='2026-11-04T11:59:00+00:00'
+    elif defect=='unknown_mode':meta['retrieval_mode']='LIVE_OR_WHATEVER'
+    elif defect=='live_old_get':meta['retrieval_mode']='LIVE'
+    else:source['origin_metadata_path']='outside/format-origin-meta.json'
+    if defect in {'original_status','original_timestamp','raw_sha','text_sha'}:paths[path]=r.encoded(origin)
+    source['metadata_sha256']=r.sha(r.encoded(meta))
+    with pytest.raises(ValueError):r.validate_report(job,scope,report,read_memory(paths),inputs,public)
+
+
+@pytest.mark.parametrize('defect',['null_truths','false_truths','expected_contradiction','polarity_mismatch','keep_ambiguous'])
+def test_fixed4_assessed_key_requires_complete_polarity_consistent_option_truth(fixture,defect):
+    root,state,scope,inputs,public,_=fixture
+    for i in range(4):claim(fixture,i)
+    job=state['jobs'][3];report,paths=make_report(fixture,3);legal=report['records'][-1]['legal_review']
+    if defect=='null_truths':
+        for item in legal['per_choice_findings']:item['proposition_supported']=None
+    elif defect=='false_truths':
+        for item in legal['per_choice_findings']:item['proposition_supported']=False
+    elif defect=='expected_contradiction':legal.update(existing_answer_correct='NO',independently_expected_key=['B'],verdict='MAJOR_REWRITE')
+    elif defect=='polarity_mismatch':legal['polarity']='INCORRECT'
+    else:legal.update(existing_answer_correct='AMBIGUOUS',verdict='KEEP',independently_expected_key=[])
+    with pytest.raises(ValueError):r.validate_report(job,scope,report,read_memory(paths),inputs,public)
+
+
+def test_actual_native_cache_origin_is_exactly_retained_and_counts_only_after_integration(fixture):
+    root,state,scope,inputs,public,primary=fixture;result,report=complete(fixture,use_format_cache=True)
+    path=report['public_format_evidence']['origin_metadata_path']
+    assert (root/path).read_bytes()==(root/r.APPROVED_ORIGIN['path']).read_bytes()
+    bindings={};metadata=m.load_metadata(root,primary,public,source_bindings=bindings)
+    assert metadata['progress']['integrated_units']==40 and path in bindings and r.APPROVED_ORIGIN['path']in bindings
+    assert r.sha((root/path).read_bytes())==r.APPROVED_ORIGIN['raw_sha256']
+
+
+def test_fixed4_no_and_ambiguous_are_distinct_from_yes_keep(fixture):
+    root,state,scope,inputs,public,_=fixture
+    for i in range(4):claim(fixture,i)
+    job=state['jobs'][3];report,paths=make_report(fixture,3);legal=report['records'][-1]['legal_review']
+    legal.update(existing_answer_correct='NO',verdict='MAJOR_REWRITE',independently_expected_key=['B'])
+    for option in legal['per_choice_findings']:option['proposition_supported']=option['choice_id']=='B'
+    r.validate_report(job,scope,report,read_memory(paths),inputs,public)
+    legal.update(existing_answer_correct='AMBIGUOUS',verdict='HOLD',independently_expected_key=[],blocker='SYNTHETIC genuinely unresolved interpretation')
+    for option in legal['per_choice_findings']:option['proposition_supported']=None
+    r.validate_report(job,scope,report,read_memory(paths),inputs,public)

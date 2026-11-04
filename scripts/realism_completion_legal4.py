@@ -28,6 +28,11 @@ def validate_legal(row,question,read,prefix,completed):
     require(legal.get('prior_conclusions_read')is False and legal.get('hidden_truth_read')is False,'Exposure cannot gain a new key assessment')
     expected=legal.get('independently_expected_key');require(isinstance(expected,list)and len(expected)==len(set(expected))and
         set(expected)<={c['id']for c in question['choices']},'Independent expected key must use actual options')
+    lead=question['stem'].rsplit('\n\n',1)[-1]
+    expected_polarity='INCORRECT'if re.search(r'\b(?:incorrect|except|not|least)\b',lead,re.I)else 'CORRECT'
+    require(question['question_type']=='SBA'and legal['polarity']==expected_polarity,'Fixed4 SBA type/actual question lead polarity mismatch')
+    if verdict=='KEEP':require(key=='YES','KEEP cannot claim an ambiguous or unassessed/wrong key')
+    if key in {'AMBIGUOUS','NOT_ASSESSED'}:require(verdict=='HOLD'and nonempty(legal.get('blocker')),'Incomplete or ambiguous key requires explicit HOLD/blocker')
     if key=='YES':require(expected==question['correct_choice_ids'],'YES requires the complete independently expected stored combination')
     if key=='NO':require(expected!=question['correct_choice_ids'],'NO must identify a distinct independent combination')
     if key=='NOT_ASSESSED':require(verdict=='HOLD'and not expected,'Unassessed remains HOLD with no invented key')
@@ -64,4 +69,8 @@ def validate_legal(row,question,read,prefix,completed):
         require(choice.get('proposition_supported')is None or type(choice['proposition_supported'])is bool,'Unknown option assessment')
         refs=choice.get('authority_refs',[])
         require(isinstance(refs,list)and set(refs)<=ids and(key=='NOT_ASSESSED'or bool(refs)),'Every assessed option needs exact official authority references')
+    if key in {'YES','NO'}:
+        require(all(type(c.get('proposition_supported'))is bool for c in choices),'Assessed key requires every option truth to be boolean')
+        selected={c['choice_id']for c in choices if c['proposition_supported']is(expected_polarity=='CORRECT')}
+        require(set(expected)==selected and len(expected)==1,'Complete SBA expected key must equal the polarity-adjusted option truth set')
     return paths
