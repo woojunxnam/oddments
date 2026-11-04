@@ -1,0 +1,31 @@
+...........................................................F............ [ 97%]
+..                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_every_native_source_identity_and_scope_mutation_fails_closed[parent_release_presence_forged] _
+
+data = {'collections': {'MA-EXP-0153': 'practice_expansion/fixture/questions.json', 'MA-EXP-0154': 'practice_expansion/fixtur...EXP-0158', 'read_scope': {'prior_specific_key_exposure': True}, 'realism_review': {'verdict': 'FAIL'}, ...}, ...], ...}
+defect = 'parent_release_presence_forged'
+
+    @pytest.mark.parametrize('defect',[
+        'extra_scope','parent_raw','parent_row','parent_question','substantive_parent','parent_actor','author_history',
+        'extra_job','extra_job_id','missing_author','reviewer_parent','reviewer_root','reviewer_engineer','reviewer_author',
+        'instance_parent','session_alias','claim_exclusion','claim_event','submit_event','integrate_event','native_binding',
+        'worker_commit','report_actor','envelope_raw','envelope_unbound','report_extra','canonical','release',
+        'hidden_truth','prior_conclusion','option_hash','rationale_hash','visible_hash','partial_options','missing_authority',
+        'wrong_key','polarity','selection','realism_pass','raw_source','text_source','meta_source','failed_http',
+        'metadata_raw_binding','old_cache_retimed','review_before_read','wrong_source_host','missing_effective_limit',
+        'current_body','duplicate_primary','preclaim_source','preclaim_review','duplicate_claim','unresolved_assessed_option',
+        'fresh_release_field_missing','parent_release_presence_forged'])
+    def test_every_native_source_identity_and_scope_mutation_fails_closed(data,defect):
+        d=data;root=d['root'];state=d['state'];scope=state[route.SCOPE_KEY];job=state['jobs'][0]
+        row=d['report']['records'][0];legal=row['legal_review'];reviewer=scope['fresh_reviewer'];uid=route.IDS[0]
+        if defect=='extra_scope': scope['question_ids'].append('MA-EXP-9999')
+        elif defect.startswith('parent_'):
+>           key={'parent_raw':'report_sha256','parent_row':'record_sha256','parent_question':'question_record_sha256','parent_actor':'original_actor'}[defect]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'parent_release_presence_forged'
+
+tests/test_remaining9_procedural_metadata.py:192: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_remaining9_procedural_metadata.py::test_every_native_source_identity_and_scope_mutation_fails_closed[parent_release_presence_forged]
+1 failed, 73 passed in 3.21s
