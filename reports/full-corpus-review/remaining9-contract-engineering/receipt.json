@@ -1,0 +1,119 @@
+{
+  "checked_at_utc": "2026-11-04T23:20:29.864269+00:00",
+  "engineering_base_head": "06c47fd5ed21539ee91a31f7cc670214f80cbd28",
+  "tested_engineering_source_head": "3e14f645f251ba7c52518f3243f6395c0ae17c40",
+  "source_files": [
+    {
+      "path": "docs/REMAINING9_PROCEDURAL_RECHECK.md",
+      "raw_sha256": "341b55887502b23ec726d30327cdff9da5250adeb09a69095335334da64a6a36"
+    },
+    {
+      "path": "scripts/build_full_corpus_review.py",
+      "raw_sha256": "f5b1c711c8e3c84c0212b81632cf3fc11f186fa4bf60f7e39b83bd35a5c06f92"
+    },
+    {
+      "path": "scripts/notes_held_sixteenth.py",
+      "raw_sha256": "9f9616997bfbb58cb468832543fdf453b8366eb89c106514f8c9f1c5f2be3e20"
+    },
+    {
+      "path": "scripts/prepare_remaining9_procedural.py",
+      "raw_sha256": "49ce2d0361187b65d43c7cf526250d0efa8616f4866a45e09c99a487de386479"
+    },
+    {
+      "path": "scripts/remaining9_procedural_metadata.py",
+      "raw_sha256": "a1f0f55eb3b61e4b1828f60c93301b990ab80c0bcea4b49a4eac22d891b87e5d"
+    },
+    {
+      "path": "scripts/supplementary_checkpoint_bindings.py",
+      "raw_sha256": "ecedd51758800618cf7833ffe71f787775fa261f4bf424133f45acb34051031b"
+    },
+    {
+      "path": "tests/test_procedural_secondary_metadata.py",
+      "raw_sha256": "6009f427f7c6bc33e0ca3f9466049a44807ef02d96fe9e9e9a09b3ee2d87d35d"
+    },
+    {
+      "path": "tests/test_remaining9_procedural_metadata.py",
+      "raw_sha256": "cbb111a078fc05916d488e193f692398a7e23219423b6979563f70fdb924c463"
+    }
+  ],
+  "actual_key_reviews_or_registrations_performed": 0,
+  "canonical_release_credit": 0,
+  "new_realism_pass_credit": 0,
+  "latest_postcommit_regression": {
+    "command": "/workspace/mpje-ci-checks-venv/bin/python -m pytest tests/test_remaining9_procedural_metadata.py tests/test_procedural_secondary_metadata.py tests/test_phase11_secondary_metadata.py tests/test_phase11_context38_metadata.py tests/test_supplementary_checkpoint_bindings.py -k 'not test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields' -q",
+    "passed": 221,
+    "deselected": 1,
+    "seconds": 68.19,
+    "exit_code": 0,
+    "scope": "Exact9 contracts and original strict consumers; not full QA or release gate completion"
+  },
+  "latest_new_contract_only": {
+    "passed": 65,
+    "seconds": 4.41,
+    "exit_code": 0
+  },
+  "earlier_sparse_fixture_failures_preserved": {
+    "first_union": {
+      "passed": 125,
+      "failed": 14,
+      "errors": 75,
+      "seconds": 8.84,
+      "cause": "Sparse checkout omitted original state/ledger/source/checkpoint fixture files; preserved unchanged and exact HEAD files materialized."
+    },
+    "after_partial_materialization": {
+      "passed": 217,
+      "failed": 2,
+      "errors": 0,
+      "seconds": 72.94,
+      "cause": "Sparse checkout omitted full builder publication and quality selection fixtures."
+    },
+    "quality_scope_after_exact_source_materialization": {
+      "passed": 1,
+      "seconds": 1.45,
+      "exit_code": 0
+    }
+  },
+  "remaining_full_repository_execution_required": [
+    "tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields",
+    "Current candidate validators, deterministic artifacts, whole pytest, exact-head GitHub CI and public deployment verification"
+  ],
+  "fixture_assertion_change": "All original assertions retained; capture actual legal4 and exact9 inputs for the expected unique secondary union. This full-builder test requires the complete root repository and has not been marked PASS here.",
+  "evidence_files": [
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-focused.log",
+      "raw_sha256": "7b7dc968e86fa907213d36997207c0dc857c0601ec90695f0b29dc17b912e2c9"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-union.log",
+      "raw_sha256": "37ba1224242ee60613e45d8760972a1876bc00c899d70095da825cc6b15257ed"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-union-after-materialization.log",
+      "raw_sha256": "2f1e168acedfb539d3543dcc08ff49bef9437fde1b91853e3f0e7ad4acaa7e58"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-union-final-local.log",
+      "raw_sha256": "f16b915df8bc4eb392a8c840363d1b4714bb10f6b159bb437066dba956edf534"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-focused-final.log",
+      "raw_sha256": "de595c6d45e2f62cbe5a25085723669f5e7e221dc9d28a29f7f184bff2f8d631"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-quality-scope.log",
+      "raw_sha256": "d4d8bec58329c891fa8379b6ddc7c3aa83907b0034facabf7d9cb4c9eab75bde"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-union-final-postcommit.log",
+      "raw_sha256": "4dfdaf7f8aa37ff57736f7c285f437aed8ba8f0701f4333a6eccd7278d884ca2"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-contract-source-preservation.json",
+      "raw_sha256": "607e6b90e36064ee480d05587a56633862695ea18d28f03704f9c7dc65fffee6"
+    },
+    {
+      "path": "reports/full-corpus-review/remaining9-contract-engineering/remaining9-procedural-contract-metadata.json",
+      "raw_sha256": "96114e5dd47c926980eafa67f7b4b707de89ef0a260f39e5d1242d026dc39484"
+    }
+  ]
+}
