@@ -8,6 +8,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from datetime import datetime
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -51,6 +52,8 @@ DYNAMIC_PUBLICATION_INPUTS={
     'reports/representative-rewrite/default-holds.json','reports/representative-rewrite/nonlegacy-default-holds.json',
     'practice_expansion/2026-10-28-representative/selection.json',
 }
+REPRESENTATIVE_BANK='practice_expansion/2026-10-28-representative/questions.json'
+ARCHIVE_NOTICES='reports/representative-rewrite/archive-review-notices.json'
 
 
 def require(ok,message):
@@ -250,13 +253,79 @@ def validate(root,binding,*,coverage=False):
         settings=json.loads(committed(root,config,files[config]['raw_sha256']))
         frozen|={config,'practice_expansion/2026-10-23/candidates/questions.json'}
         frozen|={b['path']for b in settings['additional_banks']}
-    for p in frozen:committed(root,p,files[p]['raw_sha256'])
+    for p in frozen:
+        if p==REPRESENTATIVE_BANK and sha(committed(root,p))!=files[p]['raw_sha256']:
+            validate_archive_notice_wrapper(root,value)
+        else:committed(root,p,files[p]['raw_sha256'])
     current_guard=committed(root,OLD_GUARD).decode()
     require(OLD14_ANCHOR in current_guard and sha(current_guard[current_guard.index(OLD14_ANCHOR):].encode())==OLD14_TAIL_SHA,
             'Live original14 decoder tail changed; historical view is not a bypass')
     if coverage:
         for p,entry in files.items():old_bytes(root,value,p)
     return value
+
+
+def validate_archive_notice_wrapper(root,closure):
+    """Only a native negative notice's input digest may evolve in this bank.
+
+    Every question, answer, source and other wrapper field stays identical to
+    the actually published bank. Historical bytes remain in the old-tree view.
+    This is not an authoring, legal-pass or release exception.
+    """
+    old_bank=json.loads(old_bytes(root,closure,REPRESENTATIVE_BANK))
+    current=json.loads(committed(root,REPRESENTATIVE_BANK));normalized=copy.deepcopy(current)
+    old_digest=old_bank['source_authoring_hashes'][ARCHIVE_NOTICES]
+    require(old_digest==closure['full_source_files'][ARCHIVE_NOTICES]['raw_sha256'],
+            'Published representative wrapper lacks its exact original notice source')
+    notice_raw=committed(root,ARCHIVE_NOTICES)
+    require(normalized['source_authoring_hashes'][ARCHIVE_NOTICES]==sha(notice_raw),
+            'Representative notice input digest is stale')
+    normalized['source_authoring_hashes'][ARCHIVE_NOTICES]=old_digest
+    require(normalized==old_bank,'Only the archive-notice digest may change in the published representative bank')
+    old_notices=json.loads(old_bytes(root,closure,ARCHIVE_NOTICES))['notices']
+    notices=json.loads(notice_raw)['notices']
+    def project(notice,qid):
+        value=copy.deepcopy(notice);value['question_ids']=[qid]
+        value['question_record_hashes']={qid:notice['question_record_hashes'][qid]}
+        return value
+    def index(rows):
+        result={}
+        for n in rows:
+            for qid in n['question_ids']:
+                require(qid not in result,'Repeated archive notice ID')
+                result[qid]=n
+        return result
+    previous=index(old_notices);latest=index(notices)
+    require(set(previous)<=set(latest),'Published archive warnings cannot disappear')
+    def preserved(node,qid,expected):
+        if qid in node.get('question_ids',[]) and project(node,qid)==expected:return True
+        return any(preserved(n,qid,expected)for n in node.get('previous_notices',[]))
+    from legacy_independent_metadata import integrated_sources
+    bindings={};integrated_sources(Path(root),source_bindings=bindings)
+    for qid,notice in latest.items():
+        original=previous.get(qid)
+        if original is not None and project(notice,qid)==project(original,qid):continue
+        if original is not None:
+            require(any(preserved(n,qid,project(original,qid))for n in notice.get('previous_notices',[])),
+                    'Changed archive warning must preserve its exact published history: '+qid)
+        binding=bindings.get(qid)
+        required={'question_ids','question_record_hashes','issue_type','reason','checked_at','review_source','review_source_sha256'}
+        require(required<=set(notice)<=required|{'previous_notices'} and
+                notice['issue_type']=='INDEPENDENT_REVIEW_FINDING' and binding is not None and
+                notice['review_source']==binding['source_path'] and
+                notice['review_source_sha256']==binding['source_sha256'] and
+                notice['question_record_hashes'][qid]==binding['record_sha256'] and
+                notice['checked_at']==str(binding['reviewed_at'])[:10],
+                'Archive wrapper delta requires actual integrated current-ID independent evidence: '+qid)
+    # The existing builder checks every negative finding/source hash/current
+    # question binding and exact deterministic bank/selection/metrics outputs.
+    verify_representative_outputs(root)
+
+
+def verify_representative_outputs(root):
+    result=subprocess.run([sys.executable,str(Path(root)/'scripts/build_representative_rewrites.py'),'--check'],
+                          cwd=root,env=git_env(),capture_output=True,text=True)
+    require(result.returncode==0,'Current archive notices or deterministic representative outputs are invalid: '+result.stdout+result.stderr)
 
 
 def old_bytes(root,closure,relative):
