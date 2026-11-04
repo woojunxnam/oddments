@@ -1,5 +1,17 @@
 # 2026-11-04 — PR190 공개 검증 및 후속 작업
 
+## 실행 갱신 — PR192 DRAFT / 최초 QA 실패 보존 / 다음160 검토 중
+
+PR192 https://github.com/woojunxnam/oddments/pull/192 는 아직 DRAFT이며 병합하지 않았다. 최초 고정7ea50249 전체1114개는1102PASS/12FAIL(989.04초): 과거2346개·ID0080상한 기대6건과 두 역사job fixture에 후속body등록이 섞인6건이다. 원품질/보호/정책 규칙을 유지한 수정8c20df5c+63254d8f 후 정확12실패node를 재실행해12PASS(44.49초). 전체 새head 재실행은 아직이며 이12PASS를 fullQA로 과장하지 않는다. 최초validator0errors/9warnings, artifacts0/0,9drift 및6HTTP PASS. 실패/수정/브라우저증거는 `reports/full-corpus-review/after190-initial-qa-evidence/`에 보존했다. 알려진 실패 후보의 중복/대기 CI14개는 후속새head CI를 위해 취소요청했으며 새후보는 모든QA/CI를 다시 통과해야 한다.
+
+후속 별도 branch `mission/mpje-after192`, root worktree `/workspace/mpje-next-wave`는 실제 새세션 A/B/C/D의 native Q34–37을40개씩 LEASED로 보존한다. 정확 authoritative ledger 자동선택160=default미검토128+archive32이며 원 assignment/visible packets/runbook을 GitHub에 push했다. 다른 actual session을 같은 actor의 새이름으로 가장하지 않았다. 현재 결과는 아직통합전이므로 아래1477/2349·노트79를 올리지 않는다.
+
+새 실제 검토에서 default REV0043/0053 realismFAIL,0074MINOR_EDIT 및 REV0082/0084/0086/0088/0090/0093 realismFAIL이 조기통보됐다. 추가finding은 각 actual 최종report를 기준으로 처리한다. 이 knownnegative들도 안전보류 없이 PR192를 병합하지 않는다. 따라서 미공개15 annotation 후보를 actual Q37까지 재결박하는 좁은 completion engineering을 R이 별도branch에서 진행중이다. 원 공개14/1781/M본문/정책 불변; 새37 모두 실제통합·부정안전보류·재생성·전체QA·CI·공개검증 전 출시는 차단한다.
+
+Source-context 노출도 정확히 보존한다. B의source topic/retrieval metadata와 C의일반 미검증source법규주장은 hidden truth/이전 same-sessionwholekey와 구별하여 actualfreshprimary를 재확인한다. C의직접 keyed-point/기존holdhint연결 RW0051/0061/0062/0064만 NOT_ASSESSED·proceduralHOLD·새wholekeycredit0으로 차단하며 실제새세션 재검토가 필요하다. 초기잠정40전체0 및 whitelist위반/disclosure를 삭제하지 않는다. R별도절차의견과 root범위적용은 `phase10-procedural/`에 보존했다. 판정조정으로 자동KEEP이나 canonicalcredit를 주지 않는다.
+
+G의 추가10교정초안은 F별도검토 중 EXP0515 의무/허용표현모호성과 EXP0827 기존canonical판단구조중복이 지적됐다. 아직최종검토전이며 원10개HOLD와새공개/native/releasecredit0 유지.16본문작업은 실제15공개 closure 후 별도held-note활성화guard와 E25claim+actualfresh재검토가 필요하다. 계획/후보를 현재검증으로 소급하지 않는다.
+
 ## 최신 후속 체크포인트 — 2026-11-04, PR191 배포 완료 / 후속판 최종 QA 준비
 
 이 절이 아래 역사 기록보다 최신이다. PR191 https://github.com/woojunxnam/oddments/pull/191 은 tested `6f77d4572d915a49557aca7f2287679975e94441`과 동일 tree로 main `2421c4c3c4e805eebf5df227c51c266122928db4`에 병합했다. 전체 pytest777PASS, validator0errors/9warnings, artifact0/0, 9drift 및 regeneration/no-diff, 5HTTP suites와 기존 사용자기록 보존 검사 PASS. exact-head CI는 QA8SUCCESS/배포 전1SKIPPED. Pages41776289242 및 main/postdeploy 총10workflow SUCCESS, 공개14critical assets HTTP200/SHA와 실제 origin 브라우저3검사 PASS. 근거는 `reports/full-corpus-review/pr191-local-validation.json`, `pr191-deployment.json`과 validation-evidence다. MA-Q-0012와 연결 guide는 상태만 보류했고 원문/키/과거감사/사용자기록을 보존했다.

@@ -121,6 +121,10 @@ def validate_safety_holds(holds, by_id, previous_ids, rewrite_ids, legacy_ids,
                 'Safety review lacks matching current record: ' + qid)
         review = matching[0]
         provenance = review.get('reviewer_provenance', {})
+        # Native independent records may describe per-record provenance in prose.
+        # Only a structured author declaration can satisfy the separate author path.
+        if not isinstance(provenance, dict):
+            provenance = {}
         author = (provenance.get('independent') is False and
                   bool(provenance.get('author_session')) and bool(review.get('checked_at')))
         independent = (report.get('independent_of_authors') is True and

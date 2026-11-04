@@ -1,4 +1,4 @@
-"""Four exact historical input receipts; never aliases for current/primary data.
+"""Five exact historical input receipts; never aliases for current/primary data.
 
 Original Git objects were resolved during preparation. Runtime uses committed
 HEAD-retained bytes only and cannot discover or enroll another historical input.
@@ -6,10 +6,13 @@ HEAD-retained bytes only and cannot discover or enroll another historical input.
 import hashlib
 import json
 
-REGISTRY='reports/full-corpus-review/after190-historical-context/registry-v2.json'
-REGISTRY_SHA='6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c'
-PREVIOUS_REGISTRY='reports/full-corpus-review/after190-historical-context/registry.json'
-PREVIOUS_REGISTRY_SHA='989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536'
+REGISTRY='reports/full-corpus-review/after190-historical-context/registry-v3.json'
+REGISTRY_SHA='b8aec584727e759f2567c9188f48f525f71216e266a09d7caa67b0f6203916e4'
+PREVIOUS_REGISTRY='reports/full-corpus-review/after190-historical-context/registry-v2.json'
+PREVIOUS_REGISTRY_SHA='6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c'
+ORIGINAL_REGISTRY='reports/full-corpus-review/after190-historical-context/registry.json'
+ORIGINAL_REGISTRY_SHA='989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536'
+WAVE10_WORKER='f63cf221dfa43ae5528b6e13c58091116afca1d7'
 PROGRESS='reports/full-corpus-review/progress.json'
 RUNBOOK='docs/INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md'
 SELECTION='practice_expansion/2026-10-28-representative/selection.json'
@@ -27,6 +30,8 @@ ALLOWED=(
   'reports/full-corpus-review/phase9-before-selection.json','HISTORICAL_NEAREST_DEFAULT_COMPARISON_CONTEXT'),
  ('review-independent-legacy-2afb2b3095530da6',33,'reports/full-corpus-review/independent-phase9-d-review.json','d6571f097d57da4aed2ba824f624a842ef96aade83b700209feecd85702a3d4c',SELECTION,OLD_SELECTION,
   ('/input_binding/selection_path',),'reports/full-corpus-review/phase9-before-selection.json','HISTORICAL_ASSIGNED_DEFAULT_INPUT_CONTEXT'),
+ ('review-independent-legacy-c20f4ee0cf56468b',34,'reports/full-corpus-review/independent-phase10-a-review.json','d8682944aa380f5de941b489742dc191bbe3bac6f4478feed8bd3f92b48ba54d',PROGRESS,'d72abc651be64cf440b77946aff654553add1bc1082db1fe8c31ae0ce682b1d6',
+  ('/methodology/read_docs/5/path',),PREFIX+'progress-d72abc.json','HISTORICAL_NONLEGAL_PROGRESS_READ_RECEIPT'),
 )
 
 PRIVATE_FIELDS=('source_index', 'source_id', 'official_url', 'source_type', 'extracted_path', 'extracted_sha256', 'original_raw_sha256', 'retained_memo_path', 'retained_memo_sha256')
@@ -85,16 +90,24 @@ def registry(root,bindings,committed):
     raw=committed(root,REGISTRY,bindings)
     require(sha(raw)==REGISTRY_SHA,'Historical context registry raw SHA changed')
     data=json.loads(raw)
-    require(data.get('schema_version')=='after190-input-retention/2'and
+    require(data.get('schema_version')=='after190-input-retention/3'and
             data.get('purpose')=='EXACT_HISTORICAL_RECEIPTS_AND_UNRETAINED_PRIVATE_DESCRIPTORS'and
             data.get('canonical_audit')is False and all(type(data.get(k))is int and data[k]==0 for k in
                 ('canonical_release_credit','question_audit_credit','new_independent_legal_audit_credit')),
             'Historical context purpose/credit changed')
     require(data.get('previous_registry')=={'path':PREVIOUS_REGISTRY,'raw_sha256':PREVIOUS_REGISTRY_SHA},
-            'Original historical receipt registry binding changed')
+            'Previous historical receipt registry binding changed')
     old_raw=committed(root,PREVIOUS_REGISTRY,bindings)
-    require(sha(old_raw)==PREVIOUS_REGISTRY_SHA and data['entries']==json.loads(old_raw)['entries'],
+    require(sha(old_raw)==PREVIOUS_REGISTRY_SHA,'Historical context v2 registry raw SHA changed')
+    old=json.loads(old_raw)
+    original_raw=committed(root,ORIGINAL_REGISTRY,bindings)
+    require(sha(original_raw)==ORIGINAL_REGISTRY_SHA and
+            old.get('previous_registry')=={'path':ORIGINAL_REGISTRY,'raw_sha256':ORIGINAL_REGISTRY_SHA},
+            'Historical context v1 registry chain changed')
+    require(data['entries'][:4]==old['entries']==json.loads(original_raw)['entries'],
             'Original four historical receipts changed')
+    require(data.get('private_extracted_descriptors')==old['private_extracted_descriptors'],
+            'Original four private descriptors changed')
     require([identity(e)for e in data['entries']]==list(ALLOWED),'Historical context scope expanded or changed')
     for e in data['entries']:
         require(e['retained_raw_sha256']==e['origin_raw_sha256']and e['current_binding_override']is False and
@@ -126,6 +139,8 @@ def resolve(root,job,report_path,report_sha,origin,old_sha,pointers,bindings,com
     if not matches:return None
     require(len(matches)==1,'Duplicate historical context scope')
     expected=matches[0]
+    if expected[1]==34:
+        require(job['result']['worker_commit']==WAVE10_WORKER,'Historical wave10 original worker changed')
     require(set(pointers)==set(expected[6]),'Historical context reference location changed; not a primary/current alias')
     entries=registry(root,bindings,committed)['entries']
     entry=next(e for e in entries if identity(e)==expected)
