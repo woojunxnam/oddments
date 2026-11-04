@@ -301,7 +301,9 @@ def validate_archive_notice_wrapper(root,closure):
         if qid in node.get('question_ids',[]) and project(node,qid)==expected:return True
         return any(preserved(n,qid,expected)for n in node.get('previous_notices',[]))
     from legacy_independent_metadata import integrated_sources
-    bindings={};integrated_sources(Path(root),source_bindings=bindings)
+    bindings={};reports=integrated_sources(Path(root),source_bindings=bindings)
+    from supplementary_checkpoint_bindings import validated_sources
+    supplementary=validated_sources(root,[r for report in reports for r in report['records']])
     for qid,notice in latest.items():
         original=previous.get(qid)
         if original is not None and project(notice,qid)==project(original,qid):continue
@@ -309,6 +311,10 @@ def validate_archive_notice_wrapper(root,closure):
             require(any(preserved(n,qid,project(original,qid))for n in notice.get('previous_notices',[])),
                     'Changed archive warning must preserve its exact published history: '+qid)
         binding=bindings.get(qid)
+        if binding is None or (notice.get('review_source'),notice.get('review_source_sha256'))!=(binding['source_path'],binding['source_sha256']):
+            binding=supplementary.get(qid)
+            require(binding is not None and binding['negative'],
+                    'Archive wrapper requires an actual integrated negative supplementary source: '+qid)
         required={'question_ids','question_record_hashes','issue_type','reason','checked_at','review_source','review_source_sha256'}
         require(required<=set(notice)<=required|{'previous_notices'} and
                 notice['issue_type']=='INDEPENDENT_REVIEW_FINDING' and binding is not None and

@@ -30,7 +30,7 @@ def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
 
-def committed_reader(root):
+def committed_reader(root, *, source_bindings=None):
     cache = {}
     def read(relative,expected=None):
         require(isinstance(relative,str), 'Supplementary evidence path must be a string')
@@ -49,8 +49,21 @@ def committed_reader(root):
         raw = cache[relative]
         require(expected is None or (isinstance(expected,str) and re.fullmatch('[0-9a-f]{64}',expected) and sha(raw) == expected),
                 'Supplementary input/evidence raw SHA changed: '+relative)
+        if source_bindings is not None:
+            require(source_bindings.get(relative,sha(raw)) == sha(raw),
+                    'Conflicting supplementary retained-byte binding: '+relative)
+            source_bindings[relative] = sha(raw)
         return raw
     return read
+
+
+def retained_result(result, retained, source_bindings):
+    """Publish only the successful consumer's exact committed read trace."""
+    if source_bindings is not None:
+        require(all(source_bindings.get(path,digest) == digest for path,digest in retained.items()),
+                'Conflicting validated supplementary source bindings')
+        source_bindings.update(retained)
+    return result
 
 
 def evidence_bindings(value):
@@ -125,7 +138,7 @@ def no_release(value,required=True):
             credit == 0, 'Supplementary evidence cannot claim canonical release credit')
 
 
-def load_metadata(root,primary_records,questions,collections):
+def load_metadata(root,primary_records,questions,collections, *, source_bindings=None):
     """Validate committed fixed-scope evidence; never mutate primary rows or queues.
 
     `questions` contains actual source objects; `collections` maps IDs to their
@@ -134,7 +147,8 @@ def load_metadata(root,primary_records,questions,collections):
     """
     result = {'assessments':{},'records':[],'progress':counts(primary_records,[])}
     if not (root/STATE).exists(): return result
-    read = committed_reader(root)
+    retained = {}
+    read = committed_reader(root,source_bindings=retained if source_bindings is not None else None)
     state = json.loads(read(STATE)); queue.state_stage(state,'independent-legacy')
     scope = state.get('procedural_recheck_scope',{})
     require(scope.get('schema_version') == 1 and scope.get('purpose') == PURPOSE and
@@ -174,7 +188,7 @@ def load_metadata(root,primary_records,questions,collections):
     # A live lease carries no new credit. Validate captured identity when present;
     # old checkpoints need the new header before any integrated result is consumed.
     if scope.get('fresh_reviewer') is not None: validate_reviewer(scope,job,{qid:questions[qid] for qid in IDS},previous_instances)
-    if job['status'] != 'INTEGRATED': return result
+    if job['status'] != 'INTEGRATED': return retained_result(result,retained,source_bindings)
     reviewer = validate_reviewer(scope,job,{qid:questions[qid] for qid in IDS},previous_instances)
     require(type(job.get('attempt')) is int and job['attempt'] >= 1 and
             job.get('worker_branch') == 'mission/'+job['job_id']+'-attempt-'+str(job['attempt']) and
@@ -259,4 +273,4 @@ def load_metadata(root,primary_records,questions,collections):
             supplementary_only=True,does_not_override_primary=True,canonical_release_credit=0)
     result['records'] = copy.deepcopy(assessed)
     result['progress'] = counts(primary_records,assessed)
-    return result
+    return retained_result(result,retained,source_bindings)

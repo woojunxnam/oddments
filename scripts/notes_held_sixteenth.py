@@ -140,6 +140,17 @@ def checkpoint_prefix(root,closure,relative):
                 'Published native history cannot be rewritten by sixteen')
 
 
+def bind_supplementary_checkpoints(root,bindings,primary_records):
+    """Bind only the exact three consumers' successful committed-byte reads.
+
+    Pending queues remain zero-credit inputs. This does not recursively scan
+    arbitrary report paths or claim that unretained/private bytes are present.
+    All publications are staged until every present strict consumer succeeds.
+    """
+    from supplementary_checkpoint_bindings import validated_sources
+    validated_sources(root,primary_records,source_bindings=bindings)
+
+
 @old.snapshotted
 def expected_migration(root,closure_binding):
     config,source_closure,state,job,previous,candidate,source_binding=source_contract(root)
@@ -170,10 +181,11 @@ def expected_migration(root,closure_binding):
     legacy_path='reports/full-corpus-review/independent-legacy-work-queue.json'
     legacy_raw=old.committed(root,legacy_path);bindings[legacy_path]=old.sha(legacy_raw)
     from legacy_independent_metadata import integrated_sources
-    legacy_sources={};integrated_sources(root,source_bindings=legacy_sources)
+    legacy_sources={};legacy_reports=integrated_sources(root,source_bindings=legacy_sources)
     for receipt in legacy_sources.values():
         old.committed(root,receipt['source_path'],receipt['source_sha256'])
         bindings[receipt['source_path']]=receipt['source_sha256']
+    bind_supplementary_checkpoints(root,bindings,[r for report in legacy_reports for r in report['records']])
     from build_ultimate_notes import make_outputs
     outputs=make_outputs(root=root);md=outputs[Path(root)/old.EXPORT].encode();build=outputs[Path(root)/old.BUILD].encode()
     old.require(old.committed(root,old.EXPORT)==md and old.committed(root,old.BUILD)==build,

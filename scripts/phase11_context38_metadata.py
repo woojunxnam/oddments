@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 
 import review_queue as queue
 from procedural_secondary_metadata import (committed_reader, counts, evidence_bindings,
-    no_release, principals, require, sha)
+    no_release, principals, require, retained_result, sha)
 
 STATE = 'reports/full-corpus-review/phase11-context38-recheck-work-queue.json'
 PREFIX = 'reports/full-corpus-review/'
@@ -123,7 +123,7 @@ def validate_reviewer(scope,job,questions,previous_instances=()):
     return reviewer
 
 
-def load_metadata(root,primary_records,questions,collections):
+def load_metadata(root,primary_records,questions,collections, *, source_bindings=None):
     """Validate committed fixed-scope evidence; never mutate primary rows or queues.
 
     `questions` contains actual source objects; `collections` maps IDs to their
@@ -136,7 +136,8 @@ def load_metadata(root,primary_records,questions,collections):
         require(not (root/DISCLOSURE).exists(),
                 'Retained aggregate exposure requires the exact38 queue; cannot restore conditioned primary credit')
         return result
-    read = committed_reader(root)
+    retained = {}
+    read = committed_reader(root,source_bindings=retained if source_bindings is not None else None)
     state = json.loads(read(STATE)); queue.state_stage(state,'independent-legacy')
     scope = state.get('phase11_context38_scope',{})
     require(scope.get('schema_version') == 1 and scope.get('purpose') == PURPOSE and
@@ -187,7 +188,7 @@ def load_metadata(root,primary_records,questions,collections):
     # A live lease carries no new credit. Validate captured identity when present;
     # old checkpoints need the new header before any integrated result is consumed.
     if scope.get('fresh_reviewer') is not None: validate_reviewer(scope,job,{qid:questions[qid] for qid in IDS},previous_instances)
-    if job['status'] != 'INTEGRATED': return result
+    if job['status'] != 'INTEGRATED': return retained_result(result,retained,source_bindings)
     reviewer = validate_reviewer(scope,job,{qid:questions[qid] for qid in IDS},previous_instances)
     require(type(job.get('attempt')) is int and job['attempt'] >= 1 and
             job.get('worker_branch') == 'mission/'+job['job_id']+'-attempt-'+str(job['attempt']) and
@@ -279,4 +280,4 @@ def load_metadata(root,primary_records,questions,collections):
             supplementary_only=True,does_not_override_primary=True,canonical_release_credit=0)
     result['records'] = copy.deepcopy(assessed)
     result['progress'] = combine_metadata(primary_records,result)['progress']
-    return result
+    return retained_result(result,retained,source_bindings)

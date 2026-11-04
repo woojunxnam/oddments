@@ -6,6 +6,7 @@ import pytest
 
 import notes_published15_closure as c
 import legacy_independent_metadata as native
+import supplementary_checkpoint_bindings as supplementary
 from test_notes_published15_closure import put,commit,git
 
 
@@ -36,6 +37,7 @@ def wrapper(tmp_path,monkeypatch):
     commit(root,'synthetic exact preserved bank and notice wrapper update')
     def integrated(root,source_bindings):
         source_bindings['SYNTHETIC-1']=dict(source_path='reports/full-corpus-review/native.json',source_sha256='native',record_sha256='q1',reviewed_at='2026-11-04')
+        return []
     monkeypatch.setattr(native,'integrated_sources',integrated)
     monkeypatch.setattr(c,'verify_representative_outputs',lambda root:None)
     return root,dict(full_source_files=files,retained_preimages=preimages),currentbank,current_notices
@@ -82,3 +84,22 @@ def test_failed_deterministic_builder_is_not_a_wrapper_exception(wrapper,monkeyp
     def failure(root):raise ValueError('synthetic deterministic builder rejection')
     monkeypatch.setattr(c,'verify_representative_outputs',failure)
     with pytest.raises(ValueError,match='deterministic'):c.validate_archive_notice_wrapper(root,closure)
+
+
+@pytest.mark.parametrize('condition',['negative','positive','pending','unknown_source'])
+def test_only_strictly_validated_integrated_supplementary_negative_can_source_a_new_warning(wrapper,monkeypatch,condition):
+    root,closure,bank,notices=wrapper
+    notices['notices'][0]['review_source']='reports/full-corpus-review/fresh-supplement.json'
+    notices['notices'][0]['review_source_sha256']='fresh'
+    bank['source_authoring_hashes'][c.ARCHIVE_NOTICES]=c.sha(c.encoded(notices))
+    put(root,c.REPRESENTATIVE_BANK,bank);put(root,c.ARCHIVE_NOTICES,notices)
+    commit(root,'synthetic supplementary warning boundary '+condition)
+    # Strict consumer proof/provenance is separately exercised with real
+    # committed fixture queues, envelopes, reports and raw bytes.
+    source=dict(source_path='reports/full-corpus-review/fresh-supplement.json',source_sha256='fresh',
+                record_sha256='q1',reviewed_at='2026-11-04',negative=condition!='positive')
+    if condition=='unknown_source':source['source_path']='reports/full-corpus-review/unrelated.json'
+    monkeypatch.setattr(supplementary,'validated_sources',lambda *a,**k:{}if condition=='pending'else{'SYNTHETIC-1':source})
+    if condition=='negative':c.validate_archive_notice_wrapper(root,closure)
+    else:
+        with pytest.raises(ValueError):c.validate_archive_notice_wrapper(root,closure)
