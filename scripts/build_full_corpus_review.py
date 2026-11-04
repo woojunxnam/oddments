@@ -457,7 +457,7 @@ def build():
     reviews = {r['question_id']:r for r in review_records}
     selection = read('practice_expansion/2026-10-28-representative/selection.json')
     replacements = {x['legacy_question_id']: x['replacement_question_id'] for x in selection['replacements']}
-    holds = {x['legacy_question_id'] for x in selection['holds']}
+    holds = {x['legacy_question_id']:x for x in selection['holds']}
     safety_holds = {x['question_id']: x for x in selection.get('safety_holds', [])}
     authoring = {}
     author_metadata = {}
@@ -582,6 +582,15 @@ def build():
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
             apply_independent_legacy_review(row,audit_row)
+        hold=holds.get(row['question_id']) or safety_holds.get(row['question_id'])
+        if hold:
+            row['default_practice_hold']=hold
+            # Legal/realism opinions remain separate. A positive opinion must
+            # not erase an unresolved, unchanged-content editorial hold.
+            if row['disposition']=='KEEP':
+                row['disposition_before_default_hold']=row['disposition']
+                row['blocker_before_default_hold']=row['blocker']
+                row.update(disposition='HOLD',blocker=hold['reason'])
 
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']

@@ -8,7 +8,7 @@ import pytest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from build_full_corpus_review import apply_independent_legacy_review, validate_default_review_safety
+from build_full_corpus_review import apply_independent_legacy_review, validate_default_review_safety, build, OUT
 
 
 def record(qid):
@@ -49,3 +49,18 @@ def test_incomplete_realism_review_cannot_become_a_default_pass():
     assert row['disposition']=='HOLD'
     with pytest.raises(ValueError,match='Uncontained independent finding'):
         validate_default_review_safety([audit['question_id']],{},[audit])
+
+
+def test_actual_editorial_hold_survives_later_positive_independent_opinion_in_final_ledger():
+    payload=build()[OUT/'question-ledger.jsonl']
+    rows={r['question_id']:r for r in map(json.loads,payload.splitlines())}
+    row=rows['MA-CASE-0781']
+    assert row['independent_legacy_legal_assessment']['verdict']=='KEEP'
+    assert row['independent_legacy_realism_assessment']['verdict']=='PASS'
+    assert row['disposition']=='HOLD'
+    assert row['implementation_status']=='HELD_FROM_DEFAULT_PRESERVED_IN_ARCHIVE'
+    selection=json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_bytes())
+    original=next(h for h in selection['holds'] if h['legacy_question_id']=='MA-CASE-0781')
+    assert row['default_practice_hold']==original and row['blocker']==original['reason']
+    assert row['disposition_before_default_hold']=='KEEP'
+    assert row['independent_legacy_is_canonical_release_evidence'] is False
