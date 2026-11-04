@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import json
 from typing import Any
 
 from qa_common import DATA, load_records
@@ -94,9 +95,26 @@ def analyze_sba_answer_length(
         and question.get("verification_status") == "RELEASED"
         and question.get("lifecycle_status") == "RELEASED"
     ]
+    # Keep the frozen measurement cohort separate from the current release set.
+    # Only the exact, source-bound safety withdrawal may retain its historical
+    # measurement. An absent/edited item or another status change gets no credit.
+    withdrawn = []
+    candidates = [q for q in records if q.get("question_id") == "MA-Q-0012"]
+    if len(candidates) == 1 and candidates[0].get("verification_status") == "HOLD":
+        from canonical_q0012_withdrawal import QUESTION, digest, read, validate
+
+        root = DATA.parent
+        try:
+            preimages = validate(root)
+            if digest(candidates[0]) == digest(json.loads(read(root, QUESTION))):
+                withdrawn.append(json.loads(preimages[QUESTION]))
+        except (ValueError, OSError, KeyError):
+            # The unchanged 230-item integrity gate below must fail closed.
+            pass
+    historical_baseline = sorted(baseline + withdrawn, key=_number)
     prospective = [question for question in records if _number(question) > BASELINE_MAX_ID]
 
-    baseline_summary = _summary(baseline)
+    baseline_summary = _summary(historical_baseline)
     prospective_summary = _summary(prospective)
     projected_summary = _summary(baseline + prospective)
     prospective_tranches = _tranches(prospective, first_id=BASELINE_MAX_ID + 1)
@@ -109,7 +127,7 @@ def analyze_sba_answer_length(
     gate(
         "BASELINE_COHORT_INTEGRITY",
         baseline_summary["sba_count"] == BASELINE_REFERENCE_SBA_COUNT,
-        f"Expected {BASELINE_REFERENCE_SBA_COUNT} RELEASED SBA items through MA-Q-{BASELINE_MAX_ID:04d}; observed {baseline_summary['sba_count']}.",
+        f"Expected {BASELINE_REFERENCE_SBA_COUNT} historical SBA items through MA-Q-{BASELINE_MAX_ID:04d}; observed {baseline_summary['sba_count']}, including {len(withdrawn)} exact documented safety withdrawal(s).",
     )
     gate(
         "INHERITED_DEBT_NON_REGRESSION",
@@ -156,7 +174,7 @@ def analyze_sba_answer_length(
         },
         "threshold_basis": {
             "baseline_reference": f"{BASELINE_REFERENCE_FIRST_LONGEST}/{BASELINE_REFERENCE_SBA_COUNT}",
-            "historical_33_id_tranches": _tranches(baseline, first_id=11),
+            "historical_33_id_tranches": _tranches(historical_baseline, first_id=11),
             "rationale": "The 50% prospective ceiling is materially below the 64.78% inherited rate and is consistent with the improved recent 33-ID cohorts (42.9%, 22.2%, 52.6%, 42.1%).",
         },
         "thresholds": {
@@ -167,6 +185,12 @@ def analyze_sba_answer_length(
             "extreme_token_delta": EXTREME_TOKEN_DELTA,
         },
         "inherited_baseline": baseline_summary,
+        "active_baseline": _summary(baseline),
+        "historical_safety_withdrawals": {
+            "question_ids": [q["question_id"] for q in withdrawn],
+            "included_in_projected_bank": False,
+            "audit_or_release_credit": 0,
+        },
         "prospective": {
             **prospective_summary,
             "tranches": prospective_tranches,

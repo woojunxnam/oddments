@@ -218,6 +218,12 @@ def test_revised_units_preserve_cross_surface_warning_without_review_certificate
 @pytest.fixture
 def protected_copy(tmp_path):
     manifest=json.loads((ROOT/'reports/representative-rewrite/protected-baseline.json').read_text())
+    safety='reports/full-corpus-review/canonical-q0012-withdrawal'
+    shutil.copytree(ROOT/safety,tmp_path/safety)
+    for relative in ['reports/representative-rewrite/protected-baseline.json',
+                     'site/generated/preview_allowlist.json']:
+        dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(ROOT/relative,dest)
     for row in manifest['files']:
         dest=tmp_path/row['path']; dest.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(ROOT/row['path'],dest)
