@@ -123,7 +123,7 @@ def derived_inputs(root,notes,uid,candidate):
     for kind,path,collections in [('study','notes/study/guide.json',['lessons','comparisons','clocks']),
                                   ('refresh','notes/refresh/guide.json',['cards','glossary'])]:
         if not (root/path).exists():continue  # Minimal fixtures have no authored cards.
-        data=apply_study_revision(json.loads((root/path).read_bytes()),kind,root)
+        data=apply_study_revision(json.loads((root/path).read_bytes()),kind,root,notes_context=notes)
         for collection in collections:
             for item in data.get(collection,[]):
                 if uid not in item.get('note_units',[]):continue
