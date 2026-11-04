@@ -9939,6 +9939,47 @@
       "submitted_at": "2026-11-04T04:04:40.843379+00:00",
       "integrated_commit": "1c525482423c8115dc08239ac33e9461e2e41534",
       "integrated_at": "2026-11-04T04:04:43.005385+00:00"
+    },
+    {
+      "job_id": "review-independent-legacy-33d5e9e0df442f7e",
+      "sequence": 29,
+      "question_hashes": {
+        "MA-RW-0081": "47e1f193e28738327099aa1f03702a31f19753eb0788b44ad9cfd083edfd23e0",
+        "MA-RW-0082": "1a15058e5fac087561551538d0673d1f540a64b1318580e0b40f8b41aad8a491",
+        "MA-RW-0083": "d9c85108ea03bccbcf291ffffc1594777875f901bcd0e63c911b30385683b2bb"
+      },
+      "status": "LEASED",
+      "attempt": 1,
+      "worker_branch": "mission/review-independent-legacy-33d5e9e0df442f7e-attempt-1",
+      "created_at": "2026-11-04T04:51:08.581236+00:00",
+      "stage": "independent-legacy",
+      "known_author_editor_actor_ids_by_question": {
+        "MA-RW-0081": [
+          "/root/independent_case_g",
+          "/root/independent_case_e"
+        ],
+        "MA-RW-0082": [
+          "/root/independent_case_g",
+          "/root/independent_case_e"
+        ],
+        "MA-RW-0083": [
+          "/root/independent_case_g",
+          "/root/independent_case_e"
+        ]
+      },
+      "excluded_worker_actor_ids": [
+        "/root/independent_case_e",
+        "/root/independent_case_g"
+      ],
+      "selection_policy": "REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL",
+      "priority_source_sha256": {
+        "reports/representative-rewrite/sata-remediation/allocation.json": "b4869303714843dc3f86d0de3984478fe94b375562fa84a8ebf8dde9e70ef938",
+        "site/practice-expansion/publication.json": "13100e37c0f8d7bbaf718c093d0209665581d92a44ada44fae70c1a71e35e0b3",
+        "practice_expansion/2026-10-28-representative/selection.json": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
+      },
+      "worker": "/root/independent_case_f",
+      "lease_until": "2026-11-04T08:51:08.723203+00:00",
+      "lease_token": "572f58dc0a9f62ed8b93747f364f0ecb0716733b90dab4496cf66366d390488e"
     }
   ],
   "events": [
@@ -10543,6 +10584,26 @@
       "at": "2026-11-04T04:04:43.005385+00:00",
       "job_id": "review-independent-legacy-69f7982833d308b0",
       "commit": "1c525482423c8115dc08239ac33e9461e2e41534"
+    },
+    {
+      "kind": "PLAN",
+      "at": "2026-11-04T04:51:08.581236+00:00",
+      "job_ids": [
+        "review-independent-legacy-33d5e9e0df442f7e"
+      ],
+      "selection_policy": "REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL",
+      "priority_source_sha256": {
+        "reports/representative-rewrite/sata-remediation/allocation.json": "b4869303714843dc3f86d0de3984478fe94b375562fa84a8ebf8dde9e70ef938",
+        "site/practice-expansion/publication.json": "13100e37c0f8d7bbaf718c093d0209665581d92a44ada44fae70c1a71e35e0b3",
+        "practice_expansion/2026-10-28-representative/selection.json": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46"
+      }
+    },
+    {
+      "kind": "CLAIM",
+      "at": "2026-11-04T04:51:08.723203+00:00",
+      "job_id": "review-independent-legacy-33d5e9e0df442f7e",
+      "worker": "/root/independent_case_f",
+      "attempt": 1
     }
   ]
 }
