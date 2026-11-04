@@ -859,7 +859,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w1-b-1-census-v2.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v3/census/w1-b-1-census-v3.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 1,
       "atomic_claim_ids": [
@@ -877,10 +877,12 @@
         "NOTE-CENSUS-V2-W1-B-1-ADD-002",
         "NOTE-CENSUS-V2-W1-B-1-ADD-003",
         "NOTE-CENSUS-V2-W1-B-1-ADD-004",
-        "NOTE-CENSUS-V2-W1-B-1-ADD-005"
+        "NOTE-CENSUS-V2-W1-B-1-ADD-005",
+        "NOTE-CENSUS-V3-W1-B-1-ADD-001",
+        "NOTE-CENSUS-V3-W1-B-1-ADD-002"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -888,28 +890,28 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 15,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/reassessment-f1-review.json",
         "report_sha256": "d6fb9fb6693eeb329fb26cfbef75fc065462bdec470fb48f9e573cedaa513c03",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-c896605e005b11e0-result.json",
         "result_sha256": "6086cec1f231621fa79aff8da692e1a55d3d700c0b7ae5d51f382d02c04f15d0",
         "body_sha256": "d7972893697c7b5a025ff80c0fec6ddcb3590657fbc9052ca47b793eca935b28",
-        "census_sha256": "0ae8a901cbff5b1cb26b4fec2c9880969c629cb2f0332f0daf517bf6e326b2d4",
+        "census_sha256": "6061fe09d000385d1b7772939704ede95e5ec768cdfc8478a7f82e78d6715f82",
         "actor_provenance": {
           "actor_id": "/root/independent_case_f",
           "session_id": "/root/independent_case_f"
         },
         "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
         "canonical_release_credit": 0,
-        "current_review_valid": true,
-        "job_id": "review-independent-notes-reassessment-c896605e005b11e0",
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-f81941202344cc03",
         "review_history": [
           {
             "completeness": "OMISSIONS_FOUND",
@@ -943,6 +945,38 @@
             "canonical_release_credit": 0,
             "current_review_valid": false,
             "job_id": "review-independent-notes-3e90585223b70e32"
+          },
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "본문 마지막의 “취급할 수 있는 약의 상태가 제한된다”는 unlicensed cashier/vendor가 다룰 수 있는 완성·검증·포장 상태와 unfinished medication handling의 구별이다. 현재009는 licensed personnel과 전문업무 범위의 일반적 구별만,010은 external vendor의 prescription-area 접근 조건만 진술한다.15개 statement 어느 것도 약의 완료 상태에 따른 handling 제한의 존재를 실제 열거하지 않는다. Policy2020-15 I의 filled/verified/bagged 및 unfinished handling 조건은 직접 확인했지만, authority annotation에 있다는 사실을 statement 자체의 열거로 대체할 수 없다. 본문에 없는 세부 숫자를 추가하라는 요구나 단순 분절 개수 차이가 아니라 실제 body에 독립적으로 쓰인 약 상태 조건의 잔여 누락이다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 15,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/reassessment-f1-review.json",
+            "report_sha256": "d6fb9fb6693eeb329fb26cfbef75fc065462bdec470fb48f9e573cedaa513c03",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-c896605e005b11e0-result.json",
+            "result_sha256": "6086cec1f231621fa79aff8da692e1a55d3d700c0b7ae5d51f382d02c04f15d0",
+            "body_sha256": "d7972893697c7b5a025ff80c0fec6ddcb3590657fbc9052ca47b793eca935b28",
+            "census_sha256": "0ae8a901cbff5b1cb26b4fec2c9880969c629cb2f0332f0daf517bf6e326b2d4",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_f",
+              "session_id": "/root/independent_case_f"
+            },
+            "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-reassessment-c896605e005b11e0"
           }
         ]
       }
@@ -1779,7 +1813,7 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w1-c-1-census-v2.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v3/census/w1-c-1-census-v3.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
       "atomic_source_blocked_count": 3,
       "atomic_claim_ids": [
@@ -1814,10 +1848,12 @@
         "NOTE-WAVE4-W1-C-1-029",
         "NOTE-WAVE4-W1-C-1-030",
         "NOTE-WAVE4-W1-C-1-031",
-        "NOTE-CENSUS-V2-W1-C-1-ADD-001"
+        "NOTE-CENSUS-V2-W1-C-1-ADD-001",
+        "NOTE-CENSUS-V3-W1-C-1-ADD-001",
+        "NOTE-CENSUS-V3-W1-C-1-ADD-002"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 1,
         "omissions": [
@@ -1825,28 +1861,28 @@
         ],
         "findings": [],
         "claim_counts": {
-          "KEEP": 32,
+          "KEEP": 0,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/reassessment-b1-review.json",
         "report_sha256": "fda12c842f9243f41b4563544e071fa7dc34ee221e64360fe7aa267c2f23f97e",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-4179bdc2ce4075da-result.json",
         "result_sha256": "fdfb9c4853bf0b55fc1e9591edd4bd4b902f5f64f9b7bfa836dfc1f41ba68f07",
         "body_sha256": "94a38046f17d9ba7f26745d69ebdc1078e389bd6f5383e853214be9787189737",
-        "census_sha256": "4f4887ecfa0e73015fc7e84c916abd2b147d125e17c2d6d117a2f4634b90e499",
+        "census_sha256": "013a4a9dedf4ff963992ebfbc6e887907c6776cda6144618e904167733f167a9",
         "actor_provenance": {
           "actor_id": "/root/independent_case_b",
           "session_id": "/root/independent_case_b"
         },
         "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
         "canonical_release_credit": 0,
-        "current_review_valid": true,
-        "job_id": "review-independent-notes-reassessment-4179bdc2ce4075da",
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-e2a0764483e67ef9",
         "review_history": [
           {
             "completeness": "OMISSIONS_FOUND",
@@ -1879,6 +1915,38 @@
             "canonical_release_credit": 0,
             "current_review_valid": false,
             "job_id": "review-independent-notes-39be992a9ef111a9"
+          },
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 1,
+            "omissions": [
+              "CENSUS_OMITTED_EXISTING_BODY_SETTING_SCOPE: actualbody의 “Institutional sterile compounding pharmacy, 일반 hospital inpatient pharmacy, retail Drug Store pharmacy를 동일한 setting으로 취급하지 않는다. 조문별 적용 제외를 확인한다.”라는별도범위명제가최종32개statement에포착되지않았다. 기존004는dispensing의DrugStore/institutionalsterile두license경로,006은institutionalsterile대안존재만말하며일반hospitalinpatient와그특정licensee의비동일성·setting별적용범위를열거하지않는다. 247CMR2의Pharmacy/InstitutionalPharmacy정의와6.08별도신청/검사구조를직접읽었고,원문EXP0153–0156가everyhospital자동institutionalsterile을실제로오답으로다루는것도대조했다. 이는새법조건을본문에요구하거나개수차이로만든누락이아니며,원개업clockomission해소와분리된다."
+            ],
+            "findings": [],
+            "claim_counts": {
+              "KEEP": 32,
+              "LEGAL_HOLD": 0,
+              "SOURCE_BLOCKED": 0
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/reassessment-b1-review.json",
+            "report_sha256": "fda12c842f9243f41b4563544e071fa7dc34ee221e64360fe7aa267c2f23f97e",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-4179bdc2ce4075da-result.json",
+            "result_sha256": "fdfb9c4853bf0b55fc1e9591edd4bd4b902f5f64f9b7bfa836dfc1f41ba68f07",
+            "body_sha256": "94a38046f17d9ba7f26745d69ebdc1078e389bd6f5383e853214be9787189737",
+            "census_sha256": "4f4887ecfa0e73015fc7e84c916abd2b147d125e17c2d6d117a2f4634b90e499",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_b",
+              "session_id": "/root/independent_case_b"
+            },
+            "auditor_instance": "GPT-independent-legacy-root-independent_case_b-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-reassessment-4179bdc2ce4075da"
           }
         ]
       }
@@ -1963,9 +2031,9 @@
       "legal_review_status": "UNREVIEWED",
       "atomic_claim_census_complete": true,
       "atomic_claim_census_status": "COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK",
-      "atomic_census_source": "reports/full-corpus-review/census-corrections/v2/census/w1-c-3-census-v2.json",
+      "atomic_census_source": "reports/full-corpus-review/census-corrections/v3/census/w1-c-3-census-v3.json",
       "atomic_census_notes_revision": "2026-10-30.cdtm13-vax04.1",
-      "atomic_source_blocked_count": 5,
+      "atomic_source_blocked_count": 7,
       "atomic_claim_ids": [
         "NOTE-WAVE5-W1-C-3-001",
         "NOTE-WAVE5-W1-C-3-002",
@@ -2015,10 +2083,12 @@
         "NOTE-WAVE5-W1-C-3-046",
         "NOTE-WAVE5-W1-C-3-047",
         "NOTE-WAVE5-W1-C-3-048",
-        "NOTE-CENSUS-V2-W1-C-3-ADD-001"
+        "NOTE-CENSUS-V2-W1-C-3-ADD-001",
+        "NOTE-CENSUS-V3-W1-C-3-ADD-001",
+        "NOTE-CENSUS-V3-W1-C-3-ADD-002"
       ],
       "independent_atomic_census_review": {
-        "completeness": "OMISSIONS_FOUND",
+        "completeness": "PENDING_REASSESSMENT",
         "legal_status": "LEGAL_HOLD",
         "omission_count": 2,
         "omissions": [
@@ -2052,28 +2122,28 @@
           }
         ],
         "claim_counts": {
-          "KEEP": 45,
-          "LEGAL_HOLD": 3,
-          "SOURCE_BLOCKED": 1
+          "KEEP": 0,
+          "LEGAL_HOLD": 0,
+          "SOURCE_BLOCKED": 0
         },
         "requires_review": true,
-        "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
         "report_path": "reports/full-corpus-review/independent-notes/reassessment-g1-review.json",
         "report_sha256": "c0b7cee47f1350adcd920847c69cef015822b515c27f63ed2e7a159ec5923e9f",
         "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-9a2599f286bb6988-result.json",
         "result_sha256": "5ad1a438d759c2369cbd96ed8200088925fdba89db3be65e995f3da9a9fcd395",
         "body_sha256": "d1af9624cf17b17b3f661f26a4952d74c9fd69088910b9df3d503efc91df2455",
-        "census_sha256": "33bff542739b223aaeb63849c5528e167801abb08df68f3a61d2552c67f1c1a7",
+        "census_sha256": "a324fef109f122603722f98420d842557ab1e9e004f15a09dc02859c070e0aa9",
         "actor_provenance": {
           "actor_id": "/root/independent_case_g",
           "session_id": "/root/independent_case_g"
         },
         "auditor_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
-        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
         "question_audit_credit": 0,
         "canonical_release_credit": 0,
-        "current_review_valid": true,
-        "job_id": "review-independent-notes-reassessment-9a2599f286bb6988",
+        "current_review_valid": false,
+        "job_id": "review-independent-notes-reassessment-046b8b63f185d610",
         "review_history": [
           {
             "completeness": "OMISSIONS_FOUND",
@@ -2125,6 +2195,64 @@
             "canonical_release_credit": 0,
             "current_review_valid": false,
             "job_id": "review-independent-notes-5c1dd810efa0d283"
+          },
+          {
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD",
+            "omission_count": 2,
+            "omissions": [
+              "CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고”는 복귀 inventory의 약국 records 보관도 진술한다. 031은 명시적으로 “Resident 인계 inventory”의 보관/비제출이고, 032는 복귀 수행, ADD001은 복귀 필수 서명이다. 일반 records 유지 003이나 ADD001의 body_coverage_span 인용문만으로 복귀 inventory 보관이라는 별도 의무를 명시 열거한 것으로 볼 수 없다.",
+              "CENSUS_COVERAGE_OMISSION: 같은 본문은 복귀 inventory 자체도 Board에 제출하지 않는다고 policy가 설명한다는 범위를 포함한다. 031의 명제는 “인계 inventory”에 한정되고 ADD001의 statement는 복귀 서명뿐이다. 복귀 inventory의 Board 비제출/해당 policy 귀속이라는 별도 법적 행위·범위 명제가 최종 census에 명시 열거되지 않았다. I(D)(1)의 비제출 문구를 I(D)(2)에 자동 이전하여 누락을 메우지 않는다."
+            ],
+            "findings": [
+              {
+                "claim_id": "NOTE-WAVE5-W1-C-3-034",
+                "legal_status": "LEGAL_HOLD",
+                "finding": "해당note와247CMR6.09(1)(c)의MAlicenseddesignatedPIC조건을직접대조했다.원carriedLEGAL_HOLD를정확히승계하며해소하지않는다.",
+                "blocker": "원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE5-W1-C-3-038",
+                "legal_status": "LEGAL_HOLD",
+                "finding": "Currentregulation의30이상/100이상과currentpolicy의30초과/100초과차이를직접확인했다.경계값Board통합해석은확보하지못했고원carriedLEGAL_HOLD를그대로유지한다.",
+                "blocker": "원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다."
+              },
+              {
+                "claim_id": "NOTE-WAVE5-W1-C-3-048",
+                "legal_status": "LEGAL_HOLD",
+                "finding": "90일formalapplication,14일notification,5일interim/promptapplication을각각확인했지만promptly와90일을단일현재운영기한으로통합하는기관해석을확보하지못했다.원carriedLEGAL_HOLD를그대로유지한다.",
+                "blocker": "원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다."
+              },
+              {
+                "claim_id": "NOTE-CENSUS-V2-W1-C-3-ADD-001",
+                "legal_status": "SOURCE_BLOCKED",
+                "finding": "새ADD001의복귀inventory필수서명은새공식raw에서확정하지못했다. I(D)(1)은인계서명을명시하지만I(D)(2)은복귀completion만명시한다.9.23(5)(c)는부재전inventory이며일반record/inventory조문도복귀시두MOR의필수서명을명시하지않는다.단지서명하는행위가가능하다는것과법적필수임을구분하여SOURCE_BLOCKED로유지한다.",
+                "blocker": "새ADD001의복귀inventory필수서명은새공식raw에서확정하지못했다. I(D)(1)은인계서명을명시하지만I(D)(2)은복귀completion만명시한다.9.23(5)(c)는부재전inventory이며일반record/inventory조문도복귀시두MOR의필수서명을명시하지않는다.단지서명하는행위가가능하다는것과법적필수임을구분하여SOURCE_BLOCKED로유지한다."
+              }
+            ],
+            "claim_counts": {
+              "KEEP": 45,
+              "LEGAL_HOLD": 3,
+              "SOURCE_BLOCKED": 1
+            },
+            "requires_review": true,
+            "notice": "독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요.",
+            "report_path": "reports/full-corpus-review/independent-notes/reassessment-g1-review.json",
+            "report_sha256": "c0b7cee47f1350adcd920847c69cef015822b515c27f63ed2e7a159ec5923e9f",
+            "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-9a2599f286bb6988-result.json",
+            "result_sha256": "5ad1a438d759c2369cbd96ed8200088925fdba89db3be65e995f3da9a9fcd395",
+            "body_sha256": "d1af9624cf17b17b3f661f26a4952d74c9fd69088910b9df3d503efc91df2455",
+            "census_sha256": "33bff542739b223aaeb63849c5528e167801abb08df68f3a61d2552c67f1c1a7",
+            "actor_provenance": {
+              "actor_id": "/root/independent_case_g",
+              "session_id": "/root/independent_case_g"
+            },
+            "auditor_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+            "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
+            "question_audit_credit": 0,
+            "canonical_release_credit": 0,
+            "current_review_valid": false,
+            "job_id": "review-independent-notes-reassessment-9a2599f286bb6988"
           }
         ]
       }
@@ -4743,35 +4871,33 @@
         "NOTE-CENSUS-V2-W2-C-6-ADD-002"
       ],
       "independent_atomic_census_review": {
-        "completeness": "PENDING_REASSESSMENT",
-        "legal_status": "LEGAL_HOLD",
-        "omission_count": 1,
-        "omissions": [
-          "본문첫문단의 initial unfilled EPCS를보내고받는양쪽retail pharmacy가DEA-registered여야한다는actor/license한정이25개censusstatement에열거되어있지않다. claim002의retail/one-time과claim011·014의DEA번호기록은등록자격전제와다르다. 본문은한정을정확히보존하고있으며본문오류가아닌census누락이다."
-        ],
+        "completeness": "COMPLETE",
+        "legal_status": "KEEP",
+        "omission_count": 0,
+        "omissions": [],
         "findings": [],
         "claim_counts": {
-          "KEEP": 0,
+          "KEEP": 27,
           "LEGAL_HOLD": 0,
           "SOURCE_BLOCKED": 0
         },
-        "requires_review": true,
-        "notice": "census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다.",
-        "report_path": "reports/full-corpus-review/independent-notes/third-f-review.json",
-        "report_sha256": "a872594a408db1f1f329de219cf73f76ca432510c444490f8ab8103ad0896adf",
-        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-b04334c09d9cfccd-result.json",
-        "result_sha256": "3053df9fe53bcc94eaf0277979dfd28b30f4ba8e303f7847b47e1091e65d759c",
+        "requires_review": false,
+        "notice": null,
+        "report_path": "reports/full-corpus-review/independent-notes/reassessment-e1-review.json",
+        "report_sha256": "e541f45159589134cac5cb00f4824d0166f79a38c24b765630ca6da1ac1cf8f8",
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-68379fd3dddf02cc-result.json",
+        "result_sha256": "c0fa0ae17a53741875f7125c2c1eeb89b199247a1e3e75dcff83da2f177d4e6f",
         "body_sha256": "914a95f3fbd48f418c89b8f5766c5887e5d749733e2e5b06f7998cf4208011a6",
         "census_sha256": "5e325255ee4f81336af3046eb4ca89d46bec415f7d0f0779e5508796b0259a64",
         "actor_provenance": {
-          "actor_id": "/root/independent_case_f",
-          "session_id": "/root/independent_case_f"
+          "actor_id": "/root/independent_case_e",
+          "session_id": "/root/independent_case_e"
         },
-        "auditor_instance": "gpt-independent-legacy-root-independent-case-f-20261103",
-        "basis": "CENSUS_ONLY_REASSESSMENT_PENDING_FRESH_INDEPENDENT_REVIEW",
+        "auditor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+        "basis": "INTEGRATED_CURRENT_BINDING_CONTROLLER_ATTESTED_DECLARATION",
         "question_audit_credit": 0,
         "canonical_release_credit": 0,
-        "current_review_valid": false,
+        "current_review_valid": true,
         "job_id": "review-independent-notes-reassessment-68379fd3dddf02cc",
         "review_history": [
           {

@@ -12,12 +12,12 @@
 |---|---:|
 | REWRITTEN_NEW_ID | 74 |
 | REUSED_EXISTING_QUALITY | 3 |
-| HOLD_FROM_DEFAULT | 134 |
-| NOT_YET_IMPLEMENTED | 144 |
+| HOLD_FROM_DEFAULT | 146 |
+| NOT_YET_IMPLEMENTED | 132 |
 
-이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 311개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
+이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 93개를 포함하고 3개는 별도 안전 보류합니다. MA-RW 74개 중 기본 포함 74개·안전 보류 0개입니다. 전체 기본 목록은 299개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1138개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1150개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -384,22 +384,22 @@
 | MA-CASE-0903 | PLUS-MR13 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Daily norgestrel·ulipristal Rx·levonorgestrel OTC·EC standing order·naloxone 상담을 별도 환자 없이 나열한다. Coverage가 scope를 확장한다는 유일 오답은 반복된다. 현재 보류 이유: 독립 법규 키 판단과 별도로 현실성 FAIL: 정답은제품/보험/권한을distinguish하거나필수기록·상담·referral을따르는문장이다.오답은blanktemplate를signedorder로보기,Rx-only제품을무order판매,coverage를statutory권한으로보기등직접적과잉추정이어서실제사용자·order·제품조건을풀지않아도답이노출된다. 실제정답보기A,B,D,E: A pharmacist explains that Opill is a daily norgestrel contraceptive rather than emergency contraception. / 실제오답보기C: A pharmacist treats insurance coverage of a contraceptive injection as independent statutory permission to prescribe that injection. |
 | MA-CASE-0910 | PLUS-MR14 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 서로 다른 다섯 제품의 규칙을 나열하며 MA-CASE-0478의 Brixadi·TIRF 오답이 그대로 반복된다. |
 | MA-CASE-0919 | PLUS-MR15 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Methadone indication·X-waiver 제거·stock transfer를 묶고 유일 오답은 schedule 숫자가 DUR를 면제한다는 명백한 오류이다. 현재 보류 이유: 독립 법규 키 판단과 별도로 현실성 FAIL: 정답은legitimatepurpose/validcurrentauthority/lawfulstockroute를확인하고개념을distinguish하는문장이다.오답은low-schedule이면DUR없음,discontinuedidentifier필수,renewableemergencymethadone,neighborcuriosity처럼명백한오남용이어서실제허가·기산점·제형사실을판단하는부담이작다. 실제정답보기A,B,C,D: A pharmacist distinguishes a legitimate methadone analgesia prescription from a methadone prescription written solely for OUD maintenance outside an OTP. / 실제오답보기E: A pharmacist concludes that a low schedule number removes the need to assess a clinically significant sedative combination. |
-| MA-CASE-1005 | PLUS-MR24 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 스캔 EPCS·수량 변경은 MA-CASE-0595와 반복된다. Forgery와 paper replacement는 의미 있는 다른 경로지만 두 사건을 실제로 연결하지 않는다. |
+| MA-CASE-1005 | PLUS-MR24 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 스캔 EPCS·수량 변경은 MA-CASE-0595와 반복된다. Forgery와 paper replacement는 의미 있는 다른 경로지만 두 사건을 실제로 연결하지 않는다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 eligible exception과 remaining rules 충족을 직접 말하고, C/E는 검토·논의의 부재를 명시합니다. 개별 처방의 실제 자료를 적용하기 전에 문장에 제시된 준수 여부로 답을 추측할 수 있습니다. |
 | MA-CASE-1014 | PLUS-MR25 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Initial CII EPCS와 IV refill transfer를 별도 기록으로 혼합하고 보존·원 issue date 오류는 MA-CASE-0607과 반복된다. |
 | MA-CASE-1022 | PLUS-MR26 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 응급 follow-up을 두 번째 공급으로 쓰는 오류와 CII refill 허용은 매우 명백하다. Central-fill·90일 supply·hospice fax는 MA-CASE-0617과 반복된다. |
 | MA-CASE-1027 | PLUS-MR27 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Shortage72시간과 요청partial30일을 구분하는 학습 목표는 유용하나 다섯 별도 기록에서 새 stock도착 재시작이라는 쉬운 유일 오답을 찾는다. |
-| MA-CASE-1042 | PLUS-MR28 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | MA-CASE-0631의 네 보기 경로를 반복하면서 transfer가 refill을 복원한다는 추가 극단 오답을 붙인다. |
-| MA-CASE-1051 | PLUS-MR29 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Biologic substitution 통지·Purple Book·large print 단위·일반 generic label을 한 문제에 혼합한다. Biosimilar 승인만으로 교환한다는 유일 오답은 이미 학습한 규칙이다. |
-| MA-CASE-1058 | PLUS-MR30 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Prescriber request 범위는 유용한 차이지만 recall lot·오조제 반품·VI 60일 packaging은 서로 무관한 운영 사건이다. |
-| MA-CASE-1063 | PLUS-MR31 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 계정·조회·보고·DUR를 구별한다는 일반 문장이 네 정답이고 실제 collecting agent ID라는 유일 오답은 MA-CASE-0662와 동일하다. |
-| MA-CASE-1085 | PLUS-MR33 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 부족 조사·영상 보존은 연결 가능하지만 실제 부족 사건이 없다. 수령 전 입고·2년까지 reconciliation 생략은 약한 오답이다. |
+| MA-CASE-1042 | PLUS-MR28 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | MA-CASE-0631의 네 보기 경로를 반복하면서 transfer가 refill을 복원한다는 추가 극단 오답을 붙인다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: A는 prescriber authorization이 없다고, E는 이동만으로 refill을 복원한다고 선언합니다. B/C/D는 eligible·required·remaining authorization 및 의뢰라는 준수 방향을 제시하여 실제 조제 이력의 수치 판단을 약화합니다. |
+| MA-CASE-1051 | PLUS-MR29 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Biologic substitution 통지·Purple Book·large print 단위·일반 generic label을 한 문제에 혼합한다. Biosimilar 승인만으로 교환한다는 유일 오답은 이미 학습한 규칙이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: E만 required interchangeability 확인을 하지 않는다고 명시하고 A는 eligible substitution의 required notification이라고 정답 조건을 이미 붙입니다. 개별 제품·라벨·요청 자료를 대조하는 판단 대신 준수 문구의 대비가 강합니다. |
+| MA-CASE-1058 | PLUS-MR30 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Prescriber request 범위는 유용한 차이지만 recall lot·오조제 반품·VI 60일 packaging은 서로 무관한 운영 사건이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 요청 범위 밖 처방임을 직접 드러내고, E는 적용되는 60일 제한 이내라고 스스로 한정합니다. 실제 요청 문서·포장 기간·제품 조건을 비교하기 전에 준수 결론을 고를 수 있는 단서가 있습니다. |
+| MA-CASE-1063 | PLUS-MR31 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 계정·조회·보고·DUR를 구별한다는 일반 문장이 네 정답이고 실제 collecting agent ID라는 유일 오답은 MA-CASE-0662와 동일하다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 actual collecting agent requirement를 평가하지 않는다고 명시합니다. C/E는 permitted access와 required account를 충족한다고 제시하여 실제 수령인·권한·보고 자료 없이 단일 미준수 보기를 찾기 쉽습니다. |
+| MA-CASE-1085 | PLUS-MR33 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 부족 조사·영상 보존은 연결 가능하지만 실제 부족 사건이 없다. 수령 전 입고·2년까지 reconciliation 생략은 약한 오답이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: D는 물품이 도착·검수되기도 전에 수령 처리한다고 말하고 E는 전산 잔고를 이유로 정기 대조를 건너뛰는 반면, B는 longer applicable 기간을 따른다고 이미 선언합니다. 실제 재고·일자·대조 기록의 적용이 부족합니다. |
 | MA-CASE-1091 | PLUS-MR34 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 서류 이름 구별·dosage unit 산정·등록 확인이 정답이며 60일 시계 재시작만 오답이다. MA-CASE-0713과 동일한 판단이 많다. |
-| MA-CASE-1104 | PLUS-MR35 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | SATA이지만 정답은 A 하나이며 MA-CASE-0722와 같은 추상적 recall return 구별이다. 일반봉투·public volunteer·liner 재개봉은 명백한 오답이다. |
-| MA-CASE-1111 | PLUS-MR36 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | MA-CASE-0736의 세 행동을 다시 정답으로 쓰며 유일 오답은 manufacturer 통화 뒤 excursion 기록 삭제이다. |
-| MA-CASE-1123 | PLUS-MR37 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 상용제품 재구성·flavoring·medical need·patient Rx를 별도 참 문장으로 묶고 hazardous 분쇄를 일반 counting으로 보는 쉬운 오답만 둔다. |
-| MA-CASE-1128 | PLUS-MR38 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | SATA 정답 하나이며 source vial limit과 finished CSP BUD를 구별한다는 일반 문장이다. 실제 puncture·preparation·administration 시간이 없다. |
-| MA-CASE-1139 | PLUS-MR39 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | Hazardous 분쇄와 503B sourcing·FDA product approval·청소 단계가 별개이며 비통제약이라는 이유의 면제만 오답이다. |
-| MA-CASE-1151 | PLUS-MR40 | MAJOR_REWRITE / P2 | NOT_YET_IMPLEMENTED | — | NOT_REVERIFIED | 보고기관·사건 유형 없이 agency clock를 늦추는 오류를 묻는다. 연결 노트는 improper dispensing와 SADE의 trigger가 다름을 설명하므로 어떤 시계인지 더 구체화해야 한다. |
+| MA-CASE-1104 | PLUS-MR35 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | SATA이지만 정답은 A 하나이며 MA-CASE-0722와 같은 추상적 recall return 구별이다. 일반봉투·public volunteer·liner 재개봉은 명백한 오답이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B/D는 required authorization·required employees의 부재를 직접 제시하고, A만 authorized recall 반환 경로를 명시합니다. 실제 수거 권한·인력·라이너 상태를 비교하기 전에 문구로 답을 추측하기 쉽습니다. |
+| MA-CASE-1111 | PLUS-MR36 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | MA-CASE-0736의 세 행동을 다시 정답으로 쓰며 유일 오답은 manufacturer 통화 뒤 excursion 기록 삭제이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: B는 rationale 보존 없이 기록을 지운다고 명시하고, 다른 보기는 제품별 지침 확인·권한 확인·배송 상담·chain of custody 검토를 선언합니다. 실제 제품·시간·온도·연락 기록을 적용할 분기가 약합니다. |
+| MA-CASE-1123 | PLUS-MR37 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 상용제품 재구성·flavoring·medical need·patient Rx를 별도 참 문장으로 묶고 hazardous 분쇄를 일반 counting으로 보는 쉬운 오답만 둔다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: D는 hazardous tablets를 nonhazardous counting으로 취급한다고 직접 대비합니다. E는 required valid prescription 충족을 말해 구체 조제법·환자 필요·조성 자료를 비교하기 전의 표현 단서가 강합니다. |
+| MA-CASE-1128 | PLUS-MR38 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | SATA 정답 하나이며 source vial limit과 finished CSP BUD를 구별한다는 일반 문장이다. 실제 puncture·preparation·administration 시간이 없다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: A/E는 corresponding facility/testing 및 required hands-on competency의 부재를 직접 명시합니다. D만 두 기한을 구별하는 검토 행위로 제시되어 실제 CSP·시설·시험 자료에 근거한 판단보다 문구 대비가 강합니다. USP 법규·키 검증을 수행했다는 뜻은 아닙니다. |
+| MA-CASE-1139 | PLUS-MR39 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | Hazardous 분쇄와 503B sourcing·FDA product approval·청소 단계가 별개이며 비통제약이라는 이유의 면제만 오답이다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: Stem이 세 분류를 구분하라고 이미 안내하는데 A는 비연방 schedule을 이유로 hazardous control을 면제한다고 말합니다. 나머지는 재평가·권한 확인·구별이라는 방향을 제시하여 실제 노출·공급 자료에 대한 법규 적용이 약합니다. |
+| MA-CASE-1151 | PLUS-MR40 | MAJOR_REWRITE / P2 | HOLD_FROM_DEFAULT | — | NOT_REVERIFIED | 보고기관·사건 유형 없이 agency clock를 늦추는 오류를 묻는다. 연결 노트는 improper dispensing와 SADE의 trigger가 다름을 설명하므로 어떤 시계인지 더 구체화해야 한다. 현재 보류 이유: 현재 원문의 지문·모든 보기를 직접 읽은 편집 보류: A/C/D/E는 별도 보고·범위 검토·required log·recall이라는 보호 조치를 선언하고 B만 기산점 재시작을 제안합니다. 구체 사건 유형·기관·인식 시점·보고 문서 없이 단일 시간 선택지와 일반 준수 문장을 대비하는 구성이므로 보류합니다. 보고 기산점의 법적 옳고 그름은 여기서 판정하지 않습니다. |
 
 ## 재현 입력
 
@@ -407,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `eaf5707b3b5afbd6201af406a3cc80c2a5f113f85c9bc6ac773684461e288362` |
-| practice_expansion/2026-10-28-representative/questions.json | `12c815aa1b48b86a9bd41c3dad9f9c83cb6312d8a429c639ae19eadff5a78c77` |
+| practice_expansion/2026-10-28-representative/selection.json | `247e84317e1eb244fc03c0416f9dbad56031fb958785a37768ed6112a4f3ee58` |
+| practice_expansion/2026-10-28-representative/questions.json | `a9f94bdf651d7ed2d829fbe3910970d04adabb5da87e706b7e7c3ac2ec098c1e` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.

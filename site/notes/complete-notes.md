@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 59/306절. 누락 보완본의 새 독립 검토 대기 1절은 현재 처리 수에서 제외합니다. 누락 지적 3절 · 법규 보류 13절 · 독립 검토의 근거 미확인 11명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 57/306절. 누락 보완본의 새 독립 검토 대기 3절은 현재 처리 수에서 제외합니다. 누락 지적 0절 · 법규 보류 10절 · 독립 검토의 근거 미확인 10명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -491,12 +491,12 @@ Board authorization/program approval 신청은 예정된 presentation보다 최�
 ## 인력의 자격을 구분하는 지도
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-f1-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-f1-review.json)
 
 > - 본문 마지막의 “취급할 수 있는 약의 상태가 제한된다”는 unlicensed cashier/vendor가 다룰 수 있는 완성·검증·포장 상태와 unfinished medication handling의 구별이다. 현재009는 licensed personnel과 전문업무 범위의 일반적 구별만,010은 external vendor의 prescription-area 접근 조건만 진술한다.15개 statement 어느 것도 약의 완료 상태에 따른 handling 제한의 존재를 실제 열거하지 않는다. Policy2020-15 I의 filled/verified/bagged 및 unfinished handling 조건은 직접 확인했지만, authority annotation에 있다는 사실을 statement 자체의 열거로 대체할 수 없다. 본문에 없는 세부 숫자를 추가하라는 요구나 단순 분절 개수 차이가 아니라 실제 body에 독립적으로 쓰인 약 상태 조건의 잔여 누락이다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-b-1-census-v2.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-b-1-census-v3.json)
 
 
 Pharmacist: 유효한 Massachusetts pharmacist license와 해당 업무에 필요한 추가 자격을 갖춘 사람이다. 처방의 final dispensing process validation은 pharmacist의 책임이다. 
@@ -973,12 +973,12 @@ Non-resident pharmacist의 Massachusetts 환자 대상 cognitive services는 원
 ## Pharmacy license와 controlled-substance registration
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-b1-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-b1-review.json)
 
 > - CENSUS_OMITTED_EXISTING_BODY_SETTING_SCOPE: actualbody의 “Institutional sterile compounding pharmacy, 일반 hospital inpatient pharmacy, retail Drug Store pharmacy를 동일한 setting으로 취급하지 않는다. 조문별 적용 제외를 확인한다.”라는별도범위명제가최종32개statement에포착되지않았다. 기존004는dispensing의DrugStore/institutionalsterile두license경로,006은institutionalsterile대안존재만말하며일반hospitalinpatient와그특정licensee의비동일성·setting별적용범위를열거하지않는다. 247CMR2의Pharmacy/InstitutionalPharmacy정의와6.08별도신청/검사구조를직접읽었고,원문EXP0153–0156가everyhospital자동institutionalsterile을실제로오답으로다루는것도대조했다. 이는새법조건을본문에요구하거나개수차이로만든누락이아니며,원개업clockomission해소와분리된다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-1-census-v2.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-c-1-census-v3.json)
 
 
 ### 사람의 면허와 장소의 허가
@@ -1048,7 +1048,7 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 ## Manager of Record와 designated PIC
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-g1-review.json)
+> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-g1-review.json)
 
 > - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고”는 복귀 inventory의 약국 records 보관도 진술한다. 031은 명시적으로 “Resident 인계 inventory”의 보관/비제출이고, 032는 복귀 수행, ADD001은 복귀 필수 서명이다. 일반 records 유지 003이나 ADD001의 body_coverage_span 인용문만으로 복귀 inventory 보관이라는 별도 의무를 명시 열거한 것으로 볼 수 없다.
 
@@ -1063,7 +1063,7 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 > - 새ADD001의복귀inventory필수서명은새공식raw에서확정하지못했다. I(D)(1)은인계서명을명시하지만I(D)(2)은복귀completion만명시한다.9.23(5)(c)는부재전inventory이며일반record/inventory조문도복귀시두MOR의필수서명을명시하지않는다.단지서명하는행위가가능하다는것과법적필수임을구분하여SOURCE_BLOCKED로유지한다.
 
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-3-census-v2.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 7개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-c-3-census-v3.json)
 
 
 ### 기본 역할
@@ -2375,10 +2375,6 @@ Receiving pharmacist는 TRANSFER 표시, 원 issue date, original authorized ref
 
 ## 최초 미조제 EPCS의 일회 이관
 
-
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/third-f-review.json)
-
-> - 본문첫문단의 initial unfilled EPCS를보내고받는양쪽retail pharmacy가DEA-registered여야한다는actor/license한정이25개censusstatement에열거되어있지않다. claim002의retail/one-time과claim011·014의DEA번호기록은등록자격전제와다르다. 본문은한정을정확히보존하고있으며본문오류가아닌census누락이다.
 
 
 ### Federal 및 Massachusetts 조건
