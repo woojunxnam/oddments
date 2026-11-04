@@ -9,6 +9,7 @@ import json
 import re
 
 import note_review_queue as queue
+from notes_published15_closure import head_bytes_match, snapshotted
 
 
 def notice_for(completeness, legal_status, omission_count):
@@ -39,6 +40,7 @@ def evidence_bindings(value):
         for child in value: yield from evidence_bindings(child)
 
 
+@snapshotted
 def load_metadata(root, notes=None, ledger_raw=None, source_bindings=None):
     """Return current integrated reviews and pending safety markers without mutation."""
     inv = queue.inventory(root,notes,ledger_raw=ledger_raw)
@@ -58,7 +60,7 @@ def load_metadata(root, notes=None, ledger_raw=None, source_bindings=None):
         queue.safe_path(root,relative,output=output)
         if relative not in cache:
             raw = queue.safe_path(root,relative).read_bytes()
-            queue.require(queue.git(root,'show','HEAD:'+relative,binary=True) == raw,
+            queue.require(head_bytes_match(root,relative,raw),
                           'Uncommitted independent note metadata/evidence: '+relative)
             cache[relative] = raw
         raw = cache[relative]

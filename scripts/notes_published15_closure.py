@@ -105,14 +105,18 @@ def path(root,relative):
     return target
 
 
-def committed(root,relative,expected=None):
-    p=path(root,relative);raw=p.read_bytes()
+def head_bytes_match(root,relative,raw):
+    """Compare fresh disk bytes with the exact HEAD, reusing only its tree index."""
     view=_HEAD_VIEW.get()
     if view is not None and view['root']==Path(root).resolve():
         actual=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
-        exact=view['objects'].get(relative)==actual
-    else:exact=subprocess.check_output(['git','-C',str(root),'show','HEAD:'+relative])==raw
-    require(exact,
+        return view['objects'].get(relative)==actual
+    return subprocess.check_output(['git','-C',str(root),'show','HEAD:'+relative])==raw
+
+
+def committed(root,relative,expected=None):
+    p=path(root,relative);raw=p.read_bytes()
+    require(head_bytes_match(root,relative,raw),
             'Closure input is not exact HEAD bytes: '+relative)
     require(expected is None or sha(raw)==expected,'Closure input raw SHA changed: '+relative)
     return raw

@@ -2,6 +2,7 @@
 import json
 
 import note_review_queue as queue
+from notes_published15_closure import head_bytes_match
 
 PURPOSE = 'CENSUS_ONLY_OMISSION_REASSESSMENT'
 LEDGER_FIELDS = ('unit_id','chapter_id','actual_effective_body_sha256',
@@ -77,7 +78,7 @@ def validate_chain(state):
 def disk_reader(root):
     def read(path,sha):
         raw = queue.safe_path(root,path).read_bytes()
-        queue.require(queue.raw_sha(raw) == sha and queue.git(root,'show','HEAD:'+path,binary=True) == raw,
+        queue.require(queue.raw_sha(raw) == sha and head_bytes_match(root,path,raw),
                       'Uncommitted or changed reassessment snapshot: '+path)
         return raw
     return read
