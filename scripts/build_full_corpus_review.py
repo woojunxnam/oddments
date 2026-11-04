@@ -671,11 +671,15 @@ def build():
         for authority in source['sources']:
             validate_independent_source_bytes(authority,ROOT)
     from procedural_secondary_metadata import load_metadata as load_procedural_secondary
-    from phase11_secondary_metadata import load_metadata as load_phase11_secondary, combine_metadata
+    from phase11_secondary_metadata import load_metadata as load_phase11_secondary
+    from phase11_context38_metadata import (load_metadata as load_context38_secondary,
+        combine_metadata, validate_default_safety as validate_context_default_safety)
     secondary_collections = {r['question_id']:r['collection'] for r in result}
     procedural_secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,secondary_collections)
     phase11_secondary = load_phase11_secondary(ROOT,independent_records,public_by_id,secondary_collections)
-    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary)
+    context38_secondary = load_context38_secondary(ROOT,independent_records,public_by_id,secondary_collections)
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary)
+    validate_context_default_safety(selection['recommended_ids'],context38_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     validate_independent_archive_safety(selection, independent_records+secondary['records'])
     independent_by_id = {r['question_id']: r for r in independent_records}
@@ -687,6 +691,13 @@ def build():
         if audit_row:
             apply_independent_legacy_review(row,audit_row,
                 source_binding=independent_source_bindings.get(row['question_id']))
+        limitation = context38_secondary['primary_limitations'].get(row['question_id'])
+        if limitation is not None:
+            row['independent_legacy_primary_assessment_limitation'] = copy.deepcopy(limitation)
+            if supplementary is not None:
+                row['independent_legacy_primary_assessment_limitation']['fresh_supplementary_evidence'] = {
+                    key:copy.deepcopy(supplementary[key]) for key in
+                    ('report_path','report_sha256','result_path','result_raw_sha256','actor_provenance','auditor_instance')}
         hold=holds.get(row['question_id']) or safety_holds.get(row['question_id'])
         if hold:
             row['default_practice_hold']=hold
@@ -813,7 +824,7 @@ def build():
                     independent_legacy_legal_assessed=secondary['progress']['effective_key_assessed'],
                     independent_legacy_originals_read=secondary['progress']['unique_originals_read'],
                     independent_legacy_keys_unassessed=secondary['progress']['effective_keys_unassessed'],
-                    independent_legacy_realism_pass=sum(r['realism_review'].get('verdict') == 'PASS' for r in independent_records),
+                    independent_legacy_realism_pass=secondary['effective_realism_pass'],
                     independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
                     notes_units_with_partial_claim_review=len(reviewed_units),
@@ -842,6 +853,9 @@ def build():
         progress['independent_legacy_procedural_supplementary_review'] = procedural_secondary['progress']
     if phase11_secondary['assessments']:
         progress['independent_legacy_phase11_supplementary_review'] = phase11_secondary['progress']
+        progress['independent_legacy_supplementary_review'] = secondary['progress']
+    if context38_secondary['excluded_primary_key_ids']:
+        progress['independent_legacy_context38_supplementary_review'] = context38_secondary['progress']
         progress['independent_legacy_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
