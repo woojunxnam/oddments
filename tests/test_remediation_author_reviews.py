@@ -89,7 +89,12 @@ def repo(tmp_path, monkeypatch):
         version_or_effective_date_status='SYNTHETIC_TEST_ONLY_NOT_LEGAL_EVIDENCE', body_verified_current_primary=True,
         http_status=200, used_as_legal_proof=True, raw_path=raw_path, raw_sha256=primary_sha,
         retrieval_metadata_path=metadata_path, retrieval_metadata_sha256=hashlib.sha256((tmp_path / metadata_path).read_bytes()).hexdigest())
-    ledger = queue.read_ledger(ROOT)
+    # This fixture replays historical author53 only. Later registered batches
+    # have their own exact native lifecycle fixtures and must not join this job.
+    old_inventory = set(json.loads((ROOT / adapter.ALLOCATION).read_bytes())['public_question_record_hashes']) | OLD_THREE
+    assert len(old_inventory) == 2349
+    ledger = {qid: row for qid, row in queue.read_ledger(ROOT).items() if qid in old_inventory}
+    assert set(ledger) == old_inventory
     for qid, q in Q.items():
         ledger[qid] = dict(question_id=qid, content_sha256=queue.digest(q), collection=adapter.BASE + '/questions.json',
             legal_review_status=native.STATUS, current_id_author_review_required=True, checked_at=None,
