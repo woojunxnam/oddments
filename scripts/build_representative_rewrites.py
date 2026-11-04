@@ -220,7 +220,9 @@ def validate_editorial_wording_holds(holds, old_by_id, input_hashes):
         if hold.get('finding_type')!='ROOT_EDITORIAL_WORDING_HOLD':
             continue
         qid=hold['legacy_question_id'];relative=hold['evidence_report']
-        require(relative=='reports/full-corpus-review/phase5-default-editorial-holds.json',
+        require(relative in {
+                    'reports/full-corpus-review/phase5-default-editorial-holds.json',
+                    'reports/full-corpus-review/phase7-default-editorial-holds.json'},
                 'Unexpected editorial hold evidence path')
         raw=(ROOT/relative).read_bytes();source=json.loads(raw)
         require(digest(raw)==hold['evidence_report_sha256'], 'Stale editorial hold evidence')

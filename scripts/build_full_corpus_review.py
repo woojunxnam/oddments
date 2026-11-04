@@ -80,8 +80,46 @@ def validate_default_review_safety(default_ids, reviews, independent_records):
         realism = review['realism_review']
         if (legal.get('verdict') != 'KEEP' or
                 legal.get('existing_answer_correct') != 'YES' or
-                realism.get('verdict') == 'FAIL'):
+                realism.get('verdict') != 'PASS'):
             raise ValueError('Uncontained independent finding in default practice: ' + review['question_id'])
+
+
+def apply_independent_legacy_review(row, audit_row):
+    """A supported key does not erase an unresolved law or explanation finding."""
+    previous=row['disposition']; previous_blocker=row['blocker']
+    legal=audit_row['legal_review']; realism=audit_row['realism_review']
+    row['author_disposition']=previous
+    row['independent_legacy_legal_assessment']=legal
+    row['independent_legacy_realism_assessment']=realism
+    row['independent_legacy_is_canonical_release_evidence']=False
+    key=legal['existing_answer_correct']; verdict=legal.get('verdict')
+    blocker=None
+    strong={'HOLD','HOLD_FOR_LEGAL_REVIEW','HOLD_SOURCE_RELATIONSHIP','DELETE','REPLACE'}
+    if key in {'AMBIGUOUS','NOT_ASSESSED','NO'}:
+        row['author_answer_key_assessment']=row['answer_key_assessment']
+        row['answer_key_assessment']='INDEPENDENT_LEGACY_'+key
+        disposition='HOLD_FOR_LEGAL_REVIEW'
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif verdict not in {'KEEP','MINOR_EDIT','MAJOR_REWRITE','DELETE'}:
+        disposition='HOLD_FOR_LEGAL_REVIEW'
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif previous in strong:
+        disposition=previous
+    elif verdict=='DELETE':
+        disposition='DELETE'; blocker=legal.get('blocker') or legal.get('finding_ko')
+    elif realism.get('verdict')=='FAIL':
+        disposition='MAJOR_REWRITE'; blocker=audit_row['required_next_action_ko']
+    elif realism.get('verdict')!='PASS':
+        disposition='HOLD'; blocker=realism.get('finding_ko') or audit_row['required_next_action_ko']
+    elif verdict in {'MINOR_EDIT','MAJOR_REWRITE'}:
+        disposition='MAJOR_REWRITE' if previous=='MAJOR_REWRITE' else verdict
+        blocker=legal.get('blocker') or legal.get('finding_ko')
+    else:
+        disposition=previous
+    row['disposition']=disposition
+    if blocker:
+        row['author_review_blocker']=previous_blocker
+        row['blocker']=blocker
 
 
 def validate_editorial_assessment(assessment, qid):
@@ -100,6 +138,34 @@ def validate_editorial_assessment(assessment, qid):
 def record_hash(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
                                    separators=(',', ':')).encode()).hexdigest()
+
+
+def validate_independent_source_bytes(authority, root=ROOT):
+    """Verify captured bytes, including failed attempts; this grants no law credit."""
+    pairs=[]
+    for path_key,sha_key in [('evidence_path','evidence_sha256'),('raw_path','raw_sha256')]:
+        # Historical sources may retain extracted text/memo and only the SHA
+        # of an unretained original payload. Do not claim to verify that raw
+        # payload; every actual retained path still requires its matching SHA.
+        if path_key in authority or (path_key=='evidence_path' and sha_key in authority):
+            path=authority.get(path_key);sha=authority.get(sha_key)
+            if not isinstance(path,str) or not isinstance(sha,str):
+                raise ValueError('Incomplete independent source evidence binding')
+            relative=Path(path)
+            if (path_key=='raw_path' and relative.is_absolute() and pairs and
+                    authority.get('public_raw_redistribution') is False and
+                    'memo' in authority.get('public_evidence_mode','').lower()):
+                # A declared private copyrighted original is not a repository
+                # payload. Verify the retained memo, never claim the raw read.
+                continue
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('Unsafe independent source evidence path')
+            pairs.append((relative,sha))
+    if not pairs:
+        raise ValueError('Missing independent source evidence binding')
+    for relative,sha in pairs:
+        if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=sha:
+            raise ValueError('Stale independent source evidence')
 
 
 def read(path):
@@ -419,7 +485,7 @@ def build():
     reviews = {r['question_id']:r for r in review_records}
     selection = read('practice_expansion/2026-10-28-representative/selection.json')
     replacements = {x['legacy_question_id']: x['replacement_question_id'] for x in selection['replacements']}
-    holds = {x['legacy_question_id'] for x in selection['holds']}
+    holds = {x['legacy_question_id']:x for x in selection['holds']}
     safety_holds = {x['question_id']: x for x in selection.get('safety_holds', [])}
     authoring = {}
     author_metadata = {}
@@ -530,29 +596,29 @@ def build():
             raise ValueError('Stale independent legacy review')
     for source in independent_sources:
         for authority in source['sources']:
-            if hashlib.sha256((ROOT/authority['evidence_path']).read_bytes()).hexdigest() != authority['evidence_sha256']:
-                raise ValueError('Stale independent source evidence')
-    validate_default_review_safety(selection['recommended_ids'], reviews, independent_records)
+            validate_independent_source_bytes(authority,ROOT)
+    from procedural_secondary_metadata import load_metadata as load_procedural_secondary
+    secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,
+        {r['question_id']:r['collection'] for r in result})
+    validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     independent_by_id = {r['question_id']: r for r in independent_records}
     for row in result:
+        supplementary = secondary['assessments'].get(row['question_id'])
+        if supplementary is not None:
+            row['independent_legacy_supplementary_assessment'] = supplementary
         audit_row = independent_by_id.get(row['question_id'])
         if audit_row:
-            row['author_disposition'] = row['disposition']
-            row['independent_legacy_legal_assessment'] = audit_row['legal_review']
-            row['independent_legacy_realism_assessment'] = audit_row['realism_review']
-            row['independent_legacy_is_canonical_release_evidence'] = False
-            if audit_row['legal_review']['existing_answer_correct'] in {'AMBIGUOUS', 'NOT_ASSESSED', 'NO'}:
-                row['author_answer_key_assessment'] = row['answer_key_assessment']
-                row['author_review_blocker'] = row['blocker']
-                row['answer_key_assessment'] = 'INDEPENDENT_LEGACY_' + audit_row['legal_review']['existing_answer_correct']
-                row['disposition'] = 'HOLD_FOR_LEGAL_REVIEW'
-                row['blocker'] = audit_row['legal_review'].get('blocker') or audit_row['legal_review'].get('finding_ko')
-            elif audit_row['realism_review'].get('verdict') == 'FAIL':
-                row['author_review_blocker'] = row['blocker']
-                row['disposition'] = 'MAJOR_REWRITE'
-                row['blocker'] = audit_row['required_next_action_ko']
-    independent_assessed = [r for r in independent_records if
-                            r['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED']
+            apply_independent_legacy_review(row,audit_row)
+        hold=holds.get(row['question_id']) or safety_holds.get(row['question_id'])
+        if hold:
+            row['default_practice_hold']=hold
+            # Legal/realism opinions remain separate. A positive opinion must
+            # not erase an unresolved, unchanged-content editorial hold.
+            if row['disposition']=='KEEP':
+                row['disposition_before_default_hold']=row['disposition']
+                row['blocker_before_default_hold']=row['blocker']
+                row.update(disposition='HOLD',blocker=hold['reason'])
+
     ids = [r['question_id'] for r in result]
     assert len(ids) == len(set(ids)) == config['published_total']
     assert set(baseline['question_record_hashes']) <= set(ids)
@@ -605,6 +671,8 @@ def build():
         notes_revision='2026-11-03.emergency-kit.1', supersedes={
             'w4-a-19': 'reports/full-corpus-review/note-wave11-census.json',
             'w4-a-20': 'reports/full-corpus-review/note-wave12-census.json'}))
+    from notes_census_reassessment import registered_specs
+    census_specs.extend(registered_specs(ROOT,effective_notes))
     census_units, census_claims = compose_note_censuses(census_specs, effective, by_id, ROOT)
     complete_census_units = {uid for uid, unit in census_units.items() if
         unit['census_status'] == 'COMPLETE_AUTHOR_ENUMERATION_PENDING_INDEPENDENT_COMPLETENESS_CHECK'}
@@ -658,9 +726,9 @@ def build():
                     editorial_rubric_assessed_ids=sum(r['editorial_quality_assessment'] is not None for r in result),
                     editorial_rubric_is_release_certificate=False,
                     canonical_inventory=len(canonical), canonical_reaudits_this_session=0,
-                    independent_legacy_legal_assessed=len(independent_assessed),
-                    independent_legacy_originals_read=len(independent_records),
-                    independent_legacy_keys_unassessed=len(independent_records)-len(independent_assessed),
+                    independent_legacy_legal_assessed=secondary['progress']['effective_key_assessed'],
+                    independent_legacy_originals_read=secondary['progress']['unique_originals_read'],
+                    independent_legacy_keys_unassessed=secondary['progress']['effective_keys_unassessed'],
                     independent_legacy_realism_pass=sum(r['realism_review'].get('verdict') == 'PASS' for r in independent_records),
                     independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
@@ -685,6 +753,8 @@ def build():
                     same_team_peer_this_session='NOT_CERTIFIED_BY_THIS_INVENTORY',
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
+    if secondary['assessments']:
+        progress['independent_legacy_procedural_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
         collections=[dict(path=path, questions=len(read(path)['questions']),

@@ -107,11 +107,14 @@ def test_author_archive_warning_binds_actual_individual_finding_and_cannot_inven
 
 
 @pytest.mark.parametrize('defect',[None,'question_hash','quote','credit'])
-def test_editorial_cue_holds_require_actual_current_text_and_never_legal_credit(tmp_path,monkeypatch,defect):
-    relative='reports/full-corpus-review/phase5-default-editorial-holds.json'
+@pytest.mark.parametrize('relative',[
+    'reports/full-corpus-review/phase5-default-editorial-holds.json',
+    'reports/full-corpus-review/phase7-default-editorial-holds.json'])
+def test_editorial_cue_holds_require_actual_current_text_and_never_legal_credit(tmp_path,monkeypatch,defect,relative):
     source=json.loads((ROOT/relative).read_bytes())
     holds=json.loads((ROOT/'reports/representative-rewrite/default-holds.json').read_bytes())['holds']
-    hold=copy.deepcopy(next(h for h in holds if h.get('finding_type')=='ROOT_EDITORIAL_WORDING_HOLD'))
+    hold=copy.deepcopy(next(h for h in holds if h.get('finding_type')=='ROOT_EDITORIAL_WORDING_HOLD'
+                            and h['evidence_report']==relative))
     row=next(r for r in source['records'] if r['question_id']==hold['legacy_question_id'])
     questions={q['question_id']:q for q in json.loads((ROOT/builder.ARCHIVES[1]).read_bytes())['questions']}
     if defect=='question_hash':row['record_sha256']='0'*64

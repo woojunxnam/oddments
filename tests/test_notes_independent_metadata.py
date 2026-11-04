@@ -18,15 +18,29 @@ from build_ultimate_notes import independent_notice_html, independent_notice_mar
 
 def test_second_integrated_cohort_preserves_new_omissions_and_official_source_blockers():
     reviews=load_metadata(ROOT)
-    p=reviews['progress']
-    assert (p['processed_units'],p['complete_units'],p['omissions_found_units'])==(40,34,6)
-    assert (p['legal_keep_units'],p['legal_hold_units'],p['source_blocked_units'])==(27,11,2)
-    assert p['assessed_claims']==1014
-    assert p['canonical_release_credit']==p['question_audit_credit']==0
+    state=json.loads((ROOT/queue.STATE).read_bytes())
+    # This historical cohort remains immutable as subsequent waves and census
+    # reassessments change the current coverage. Check the captured evidence,
+    # rather than freezing the live consumer at its former global totals.
+    jobs=state['jobs'][:8]
+    assert all(j['status']=='INTEGRATED' for j in jobs)
+    records=[]
+    for job in jobs:
+        binding=job['result']['evidence']; raw=(ROOT/binding['path']).read_bytes()
+        assert queue.raw_sha(raw)==binding['raw_sha256']
+        records.extend(json.loads(raw)['records'])
+    assert len(records)==40
+    assert sum(r['completeness']=='COMPLETE' for r in records)==34
+    assert sum(r['completeness']=='OMISSIONS_FOUND' for r in records)==6
+    assert [sum(r['legal_status']==s for r in records)
+            for s in ['KEEP','LEGAL_HOLD','SOURCE_BLOCKED']]==[27,11,2]
+    assert sum(len(r['claims']) for r in records)==1014
+    assert reviews['progress']['canonical_release_credit']==reviews['progress']['question_audit_credit']==0
     for uid in ['w1-c-1','w1-c-3','w2-a-2']:
         unit=reviews['units'][uid]
-        assert unit['completeness']=='OMISSIONS_FOUND' and unit['requires_review']
-        assert unit['omissions'] and '누락' in unit['notice']
+        history=[*unit.get('review_history',[]),unit]
+        old=next(r for r in history if r['completeness']=='OMISSIONS_FOUND')
+        assert old['requires_review'] and old['omissions'] and '누락' in old['notice']
     for uid in ['w1-b-12','w2-a-8']:
         unit=reviews['units'][uid]
         assert unit['legal_status']=='SOURCE_BLOCKED' and unit['requires_review']
@@ -42,18 +56,30 @@ def actual_reports(tmp_path):
     Original worker objects/branches deliberately do not exist in this repository.
     """
     root = tmp_path/'repo'; root.mkdir(); notes = load_notes(ROOT)
-    ledger = (ROOT/queue.LEDGER).read_bytes()
-    rows = [json.loads(s) for s in ledger.decode().splitlines()]
-    for relative in {queue.LEDGER,*[r['atomic_census_source'] for r in rows if r['atomic_census_source']]}:
-        path=root/relative; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(ROOT/relative,path)
-    shutil.copytree(ROOT/queue.OUTPUT,root/queue.OUTPUT,dirs_exist_ok=True)
-    subprocess.run(['git','init','-q','-b','main',str(root)],check=True)
-    queue.git(root,'config','user.name','Publication fixture'); queue.git(root,'config','user.email','fixture@example.test')
-    queue.git(root,'add','.'); queue.git(root,'commit','-qm','actual audit/census bytes for consumer fixture')
     state = json.loads((ROOT/queue.STATE).read_bytes())
     state['jobs'] = [j for j in state['jobs'] if j.get('result',{}).get('evidence',{}).get('path') in {
         queue.OUTPUT+'first-c-review.json',queue.OUTPUT+'first-f-review.json'}]
     assert len(state['jobs']) == 2
+    captured_ids={uid for j in state['jobs'] for uid in j['unit_ids']}
+    ledger = (ROOT/queue.LEDGER).read_bytes()
+    rows = [json.loads(s) for s in ledger.decode().splitlines()]
+    # The fixture deliberately captures the original two jobs. Restore their
+    # immutable ledger bindings from the append-only version records when the
+    # live repository has selected a later census for one of these units.
+    restored=set()
+    for entry in state.get('reassessments',[]):
+        record=entry['record']
+        if record['unit_id'] in captured_ids and record['unit_id'] not in restored:
+            next(r for r in rows if r['unit_id']==record['unit_id']).update(record['previous_ledger_fields'])
+            restored.add(record['unit_id'])
+    state.pop('reassessments',None)
+    for relative in {queue.LEDGER,*[r['atomic_census_source'] for r in rows if r['atomic_census_source']]}:
+        path=root/relative; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(ROOT/relative,path)
+    (root/queue.LEDGER).write_text(''.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))+'\n' for r in rows))
+    shutil.copytree(ROOT/queue.OUTPUT,root/queue.OUTPUT,dirs_exist_ok=True)
+    subprocess.run(['git','init','-q','-b','main',str(root)],check=True)
+    queue.git(root,'config','user.name','Publication fixture'); queue.git(root,'config','user.email','fixture@example.test')
+    queue.git(root,'add','.'); queue.git(root,'commit','-qm','actual audit/census bytes for consumer fixture')
     state['events'] = []
     for i,job in enumerate(state['jobs'],1):
         job.update(sequence=i,status='INTEGRATED',integrated_commit=queue.git(root,'rev-parse','HEAD'),

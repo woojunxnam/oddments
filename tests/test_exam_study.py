@@ -41,7 +41,9 @@ def test_open_and_implementation_boundaries_remain_visible():
 
 def test_independent_note_hold_is_visible_in_the_actual_derived_lesson():
     held=next(l for l in D['lessons'] if l['id']=='LAW-005')
-    assert any(r['unit_id']=='w1-a-2' and r['completeness']=='OMISSIONS_FOUND'
+    # The v2 census closes its omission while the unchanged body retains the
+    # independently recorded legal HOLD. Closing completeness is not law KEEP.
+    assert any(r['unit_id']=='w1-a-2' and r['completeness']=='COMPLETE'
                and r['legal_status']=='LEGAL_HOLD' and r['notice']
                for r in held['independent_atomic_census_reviews'])
     cleared=next(l for l in D['lessons'] if l['id']=='LAW-008')
