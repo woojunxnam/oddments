@@ -226,3 +226,24 @@ def test_fresh_positive_cannot_authorize_a_default_return(fixture):
     secondary.validate_default_safety([],result)
 
 
+def test_retained_exposure_cannot_lose_queue_to_restore_primary_credit(fixture):
+    root,*_=fixture
+    (root/secondary.STATE).unlink()
+    with pytest.raises(ValueError,match='cannot restore conditioned primary credit'):
+        load(fixture)
+
+
+@pytest.mark.parametrize('exposure',['boolean','explicit_accidental'])
+def test_reexposed_unassessed_key_cannot_reintroduce_realism_pass_credit(fixture,exposure):
+    root,state,report,*_=fixture
+    row=report['records'][0]
+    if exposure=='boolean':row['read_scope']['prior_question_author_or_independent_verdicts_read']=True
+    else:row['read_scope']['hidden_truth']='ACCIDENTAL prior exposure'
+    row['legal_review'].update(existing_answer_correct='NOT_ASSESSED',verdict='HOLD')
+    save(root,state,report,refresh=True)
+    p=load(fixture)['progress']
+    assert p['effective_key_assessed']==38
+    assert p['fresh_context38_pass_with_procedural_exposure']==1
+    assert p['effective_realism_pass']==6
+
+

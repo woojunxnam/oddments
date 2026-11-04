@@ -241,14 +241,23 @@ def test_secondary_keep_cannot_authorize_default_return_or_hide_primary_failures
 
 def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields(fixture,monkeypatch):
     import build_full_corpus_review as builder
+    import phase11_secondary_metadata as phase11
+    import phase11_context38_metadata as context38
     root,state,report,_,questions,collections = fixture
-    real_load = secondary.load_metadata; captured = {}
+    real_load = secondary.load_metadata; captured = {}; other_sources = []
     def load_fixture(repo,primary,current_questions,current_collections):
         captured['primary'] = copy.deepcopy(primary)
         value = real_load(root,primary,questions,collections)
         captured['progress'] = value['progress']
+        captured['source'] = value
         return value
+    def capture_other(loader):
+        def load_other(*args,**kwargs):
+            value=loader(*args,**kwargs);other_sources.append(value);return value
+        return load_other
     monkeypatch.setattr(secondary,'load_metadata',load_fixture)
+    monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
+    monkeypatch.setattr(context38,'load_metadata',capture_other(context38.load_metadata))
     outputs = builder.build()
     rows = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
     progress = json.loads(outputs[ROOT/'reports/full-corpus-review/progress.json'])
@@ -262,9 +271,11 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         assert row['answer_key_assessment'] == 'INDEPENDENT_LEGACY_NOT_ASSESSED'
         assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
         assert row['publication_status'] == 'PRACTICE_CONFIG_ARCHIVE'
-    assert progress['independent_legacy_legal_assessed'] == captured['progress']['effective_key_assessed']
+    combined=context38.combine_metadata(captured['primary'],captured['source'],*other_sources)['progress']
+    assert progress['independent_legacy_legal_assessed'] == combined['effective_key_assessed']
     assert progress['independent_legacy_originals_read'] == len(originals)
-    assert progress['independent_legacy_keys_unassessed'] == captured['progress']['primary_keys_unassessed']-2
+    assert progress['independent_legacy_keys_unassessed'] == combined['effective_keys_unassessed']
+    assert progress['independent_legacy_procedural_supplementary_review'] == captured['progress']
     assert progress['independent_legacy_procedural_supplementary_review']['canonical_release_credit'] == 0
     assert progress['canonical_independent_audit_this_session'] == 'NOT_RUN'
     # Every primary FAIL remains present even when an unrelated supplementary KEEP is added.

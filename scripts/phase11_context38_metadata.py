@@ -73,10 +73,20 @@ def combine_metadata(primary,*sources):
     original = {row['question_id']:row for row in primary}
     require(excluded <= set(original), 'Excluded primary keys have no original history')
     original_pass = {qid for qid,row in original.items() if row.get('realism_review',{}).get('verdict') == 'PASS'}
-    fresh_pass = {row['question_id'] for source in sources for row in source['records']
+    fresh_rows = {row['question_id']:row for source in sources for row in source['records']
                   if row['question_id'] in excluded and row['realism_review'].get('verdict') == 'PASS'}
+    fresh_pass = set(fresh_rows)
+    exposed = set()
+    for qid,row in fresh_rows.items():
+        scope = row.get('read_scope',{})
+        if (any(scope.get(key) is True for key in ('accidental_hidden_truth_exposure',
+                'prior_author_or_independent_conclusions_read','prior_question_author_or_independent_verdicts_read',
+                'hidden_statement_truth_read','hidden_truth_used_as_evidence')) or
+                any(isinstance(scope.get(key),str) and 'ACCIDENTAL' in scope[key].upper() for key in
+                    ('hidden_truth','prior_assigned_author_or_independent_conclusions'))):
+            exposed.add(qid)
     conflicting = {qid for qid in fresh_pass if original[qid].get('realism_review',{}).get('verdict') == 'FAIL'}
-    result['effective_realism_pass'] = len((original_pass-excluded)|(fresh_pass-conflicting))
+    result['effective_realism_pass'] = len((original_pass-excluded)|(fresh_pass-conflicting-exposed))
     if excluded:
         result['progress'].update(raw_primary_key_assessed=sum(
             row['legal_review']['existing_answer_correct'] != 'NOT_ASSESSED' for row in primary),
@@ -86,6 +96,7 @@ def combine_metadata(primary,*sources):
             excluded_context_conditioned_primary_realism_pass=len(original_pass&excluded),
             fresh_context38_realism_pass=len(fresh_pass),
             fresh_context38_pass_with_preserved_primary_fail=len(conflicting),
+            fresh_context38_pass_with_procedural_exposure=len(exposed),
             effective_realism_pass=result['effective_realism_pass'])
     return result
 
@@ -121,7 +132,10 @@ def load_metadata(root,primary_records,questions,collections):
     """
     result = {'assessments':{},'records':[],'primary_limitations':{},'excluded_primary_key_ids':[],
               'progress':counts(primary_records,[])}
-    if not (root/STATE).exists(): return result
+    if not (root/STATE).exists():
+        require(not (root/DISCLOSURE).exists(),
+                'Retained aggregate exposure requires the exact38 queue; cannot restore conditioned primary credit')
+        return result
     read = committed_reader(root)
     state = json.loads(read(STATE)); queue.state_stage(state,'independent-legacy')
     scope = state.get('phase11_context38_scope',{})
