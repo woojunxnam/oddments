@@ -211,7 +211,7 @@ def test_reassessment_recovery_token_sequence_duplicate_and_current_staleness(re
     with pytest.raises(ValueError,match='history changed'): queue.validate_state(state)
 
 
-def test_builder_hook_and_shallow_reader_validate_historical_raw_snapshots_and_current_only(remediation,tmp_path):
+def test_builder_hook_and_shallow_reader_validate_historical_raw_snapshots_and_current_only(remediation,tmp_path,monkeypatch):
     root,notes,_,state,old,spec = remediation; register(remediation); inv = switch_ledger(remediation)
     specs = revisions.registered_specs(root,notes)
     assert specs == [{'path':REPLACEMENT,'notes_revision':'current',
@@ -222,8 +222,12 @@ def test_builder_hook_and_shallow_reader_validate_historical_raw_snapshots_and_c
     for row in rows: row['independent_atomic_census_review'] = metadata['units'].get(row['unit_id'])
     computed = ''.join(json.dumps(r)+'\n' for r in rows).encode()
     assert load_metadata(root,notes,ledger_raw=computed) == metadata
+    global_config=tmp_path/'empty-global.gitconfig';global_config.write_text('')
+    monkeypatch.setenv('GIT_CONFIG_GLOBAL',str(global_config))
     shallow = tmp_path/'shallow'
     subprocess.run(['git','clone','-q','--depth','1',root.as_uri(),str(shallow)],check=True)
+    queue.git(shallow,'config','user.name','Census snapshot fixture')
+    queue.git(shallow,'config','user.email','fixture@example.test')
     with pytest.raises(subprocess.CalledProcessError): queue.git(shallow,'cat-file','-e',old['result']['worker_commit']+'^{commit}')
     assert load_metadata(shallow,notes) == metadata
     old_census = shallow/spec['previous_binding']['census_path']
