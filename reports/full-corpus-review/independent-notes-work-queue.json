@@ -4097,7 +4097,7 @@
       "unit_ids": [
         "w1-c-3"
       ],
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 1,
       "base_commit": "770fe850032df4a80350f9defad4be41eba8da5c",
       "inventory_ledger_sha256": "28a474546177cbe6df18957d1c534136275b5832649ca55ea107baa651a1275f",
@@ -4163,7 +4163,39 @@
       "controller_independence_basis": "Actual existing G session authored neither assigned original body/source nor corrected census. Root checked historical and correction author IDs. Prior independent question/note audits are disclosed and not new identity or authoring.",
       "lease_until": "2026-11-04T03:33:19.060215+00:00",
       "worker_branch": "mission/review-independent-notes-reassessment-9a2599f286bb6988-attempt-1",
-      "lease_token": "6ac91a3b9261e0cbb24fdf5a2b421522cad1e556df4186d19d0677c65d0c93bb"
+      "lease_token": "6ac91a3b9261e0cbb24fdf5a2b421522cad1e556df4186d19d0677c65d0c93bb",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_g",
+          "session_id": "/root/independent_case_g"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "gpt-independent-phase3-g-root-independent_case_g-20261103",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "author_review_credit": 0,
+        "worker_commit": "f2707527e890dcc5bff5e042e4eff65a661e6d33",
+        "unit_hashes": {
+          "w1-c-3": "d1af9624cf17b17b3f661f26a4952d74c9fd69088910b9df3d503efc91df2455"
+        },
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/reassessment-g1-review.json",
+          "raw_sha256": "c0b7cee47f1350adcd920847c69cef015822b515c27f63ed2e7a159ec5923e9f"
+        },
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-9a2599f286bb6988-result.json",
+        "results": [
+          {
+            "unit_id": "w1-c-3",
+            "completeness": "OMISSIONS_FOUND",
+            "legal_status": "LEGAL_HOLD"
+          }
+        ]
+      },
+      "result_sha256": "5ad1a438d759c2369cbd96ed8200088925fdba89db3be65e995f3da9a9fcd395",
+      "submitted_at": "2026-11-04T00:52:00.192970+00:00"
     },
     {
       "job_id": "review-independent-notes-reassessment-0ad422ac8532a083",
@@ -4916,6 +4948,13 @@
       "job_id": "review-independent-notes-reassessment-4179bdc2ce4075da",
       "commit": "9a62d836e811f1ac5156aaf9b4c24f9ce73902de",
       "result_sha256": "fdfb9c4853bf0b55fc1e9591edd4bd4b902f5f64f9b7bfa836dfc1f41ba68f07"
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T00:52:00.192970+00:00",
+      "job_id": "review-independent-notes-reassessment-9a2599f286bb6988",
+      "result_sha256": "5ad1a438d759c2369cbd96ed8200088925fdba89db3be65e995f3da9a9fcd395",
+      "worker_commit": "f2707527e890dcc5bff5e042e4eff65a661e6d33"
     }
   ],
   "reassessments": [
