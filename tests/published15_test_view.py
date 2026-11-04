@@ -16,6 +16,11 @@ def published15_root(root):
     key=str(root.resolve())
     if key not in _VIEWS:
         context=old.fixed_view(root,metadata['closure']);view,_=context.__enter__();_VIEWS[key]=(context,view)
+        # TemporaryDirectory registers its weakref finalizer during entry.
+        # Run our generator exits first so their permission restoration still
+        # sees the views, then let TemporaryDirectory finish normal cleanup.
+        atexit.unregister(close)
+        atexit.register(close)
     return _VIEWS[key][1]
 
 
