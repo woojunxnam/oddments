@@ -1,0 +1,148 @@
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	﻿2026-11-04T14:52:20.3613960Z ##[group]Run python -m pip install -r requirements-dev.txt playwright==1.57.0 scikit-learn==1.8.0
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3614612Z [36;1mpython -m pip install -r requirements-dev.txt playwright==1.57.0 scikit-learn==1.8.0[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3615074Z [36;1mpython scripts/build_representative_rewrites.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3615612Z [36;1mpython scripts/build_representative_audit_ledger.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3615968Z [36;1mpython scripts/audit_representative_similarity.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3616293Z [36;1mpython scripts/verify_representative_protected.py[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3616599Z [36;1mpython scripts/build_full_corpus_review.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3616902Z [36;1mpython scripts/build_quality_status.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3617240Z [36;1mpython -m pytest tests/test_full_corpus_review.py -q[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3618320Z [36;1mpython -m pytest tests/test_representative_rewrites.py tests/test_representative_filters.py tests/test_practice_note_links.py tests/test_practice_quality.py tests/test_practice_expansion_integration.py tests/test_casebank_plus.py tests/test_exam_study.py tests/test_refresh.py tests/test_ultimate_notes.py practice_expansion/2026-10-23/tests/test_expansion.py -q[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3619431Z [36;1mpython scripts/build_exam_study.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3619702Z [36;1mpython scripts/build_refresh.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3619967Z [36;1mpython scripts/build_ultimate_notes.py --check[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3620493Z [36;1mnode --check site/practice-expansion/quality-core.js[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3620857Z [36;1mpython scripts/publish_practice.py --output /tmp/mpje-revision-site[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3621177Z [36;1mgit diff --exit-code[0m
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3653934Z shell: /usr/bin/bash -e {0}
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3654182Z env:
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3654440Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3654799Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3655173Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3655483Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3655792Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3656089Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:20.3656370Z ##[endgroup]
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.7715853Z Collecting playwright==1.57.0
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.8311512Z   Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl.metadata (3.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.8904306Z Collecting scikit-learn==1.8.0
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9014015Z   Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9330262Z Collecting jsonschema<5,>=4.23 (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9434312Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9641847Z Collecting pytest<9,>=8.3 (from -r requirements-dev.txt (line 2))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9749944Z   Downloading pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:21.9908126Z Collecting mistune==3.2.1 (from -r /home/runner/work/oddments/oddments/requirements-notes.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.0032854Z   Downloading mistune-3.2.1-py3-none-any.whl.metadata (1.9 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.0152908Z Collecting pyee<14,>=13 (from playwright==1.57.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.0256335Z   Downloading pyee-13.0.1-py3-none-any.whl.metadata (3.0 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.1329220Z Collecting greenlet<4.0.0,>=3.1.1 (from playwright==1.57.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.1435691Z   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.2858100Z Collecting numpy>=1.24.1 (from scikit-learn==1.8.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.2966903Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.3972996Z Collecting scipy>=1.10.0 (from scikit-learn==1.8.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.4081627Z   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.4628420Z Collecting joblib>=1.3.0 (from scikit-learn==1.8.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.4732839Z   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.4846493Z Collecting threadpoolctl>=3.2.0 (from scikit-learn==1.8.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.4952542Z   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5086485Z Collecting attrs>=22.2.0 (from jsonschema<5,>=4.23->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5191295Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5298561Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema<5,>=4.23->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5403616Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5741334Z Collecting referencing>=0.28.4 (from jsonschema<5,>=4.23->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.5845364Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.7939254Z Collecting rpds-py>=0.25.0 (from jsonschema<5,>=4.23->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8046719Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8142829Z Collecting iniconfig>=1 (from pytest<9,>=8.3->-r requirements-dev.txt (line 2))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8245471Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8372357Z Collecting packaging>=20 (from pytest<9,>=8.3->-r requirements-dev.txt (line 2))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8477815Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8584865Z Collecting pluggy<2,>=1.5 (from pytest<9,>=8.3->-r requirements-dev.txt (line 2))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8692668Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8831085Z Collecting pygments>=2.7.2 (from pytest<9,>=8.3->-r requirements-dev.txt (line 2))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.8938402Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9061191Z Collecting fqdn (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9162922Z   Downloading fqdn-1.6.0-py3-none-any.whl.metadata (9.4 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9280245Z Collecting idna (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9384961Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9486300Z Collecting isoduration (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9589904Z   Downloading isoduration-20.11.0-py3-none-any.whl.metadata (5.7 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9701882Z Collecting jsonpointer>1.13 (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9807098Z   Downloading jsonpointer-3.8-py3-none-any.whl.metadata (2.7 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:22.9899214Z Collecting rfc3339-validator (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.0002356Z   Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl.metadata (1.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.0101158Z Collecting rfc3987 (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.0988977Z   Downloading rfc3987-1.3.8-py2.py3-none-any.whl.metadata (7.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1105301Z Collecting uri-template (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1208766Z   Downloading uri_template-1.3.0-py3-none-any.whl.metadata (8.8 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1327381Z Collecting webcolors>=1.11 (from jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1430540Z   Downloading webcolors-25.10.0-py3-none-any.whl.metadata (2.2 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1564658Z Collecting typing-extensions (from pyee<14,>=13->playwright==1.57.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1671253Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1787730Z Collecting cloudpickle>=3.0 (from joblib>=1.3.0->scikit-learn==1.8.0)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.1891090Z   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2136850Z Collecting arrow>=0.15.0 (from isoduration->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2239375Z   Downloading arrow-1.4.0-py3-none-any.whl.metadata (7.7 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2358564Z Collecting python-dateutil>=2.7.0 (from arrow>=0.15.0->isoduration->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2460979Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2572660Z Collecting tzdata (from arrow>=0.15.0->isoduration->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2675940Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2782885Z Collecting six (from rfc3339-validator->jsonschema[format]<5,>=4.23->-r requirements-dev.txt (line 1))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.2886355Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.3032247Z Downloading playwright-1.57.0-py3-none-manylinux1_x86_64.whl (46.0 MB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.9000859Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 MB 78.6 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:23.9105930Z Downloading scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (8.9 MB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.1174658Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 42.4 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.1286056Z Downloading mistune-3.2.1-py3-none-any.whl (53 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.1968149Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.2764435Z Downloading pytest-8.4.2-py3-none-any.whl (365 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.3960560Z Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.5563072Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 2.3 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.5669304Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.6350624Z Downloading pyee-13.0.1-py3-none-any.whl (15 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.7053924Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:24.7951323Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.0245659Z Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.1051227Z Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.2243182Z Downloading jsonpointer-3.8-py3-none-any.whl (10 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.5135698Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.5843655Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.8851553Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 55.4 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.8959838Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:25.9828439Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.1044846Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 8.3 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.1153251Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.1924035Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.3228709Z Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.8931286Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 61.8 MB/s  0:00:00
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:26.9037821Z Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.0005611Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.0803619Z Downloading webcolors-25.10.0-py3-none-any.whl (14 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.1513531Z Downloading fqdn-1.6.0-py3-none-any.whl (12 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.2798161Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.4192763Z Downloading isoduration-20.11.0-py3-none-any.whl (11 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.5590760Z Downloading arrow-1.4.0-py3-none-any.whl (68 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:27.8386799Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.0282395Z Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.1386812Z Downloading rfc3987-1.3.8-py2.py3-none-any.whl (13 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.3997135Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.4976169Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.5275790Z Downloading uri_template-1.3.0-py3-none-any.whl (11 kB)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:28.9371234Z Installing collected packages: rfc3987, webcolors, uri-template, tzdata, typing-extensions, threadpoolctl, six, rpds-py, pygments, pluggy, packaging, numpy, mistune, jsonpointer, iniconfig, idna, greenlet, fqdn, cloudpickle, attrs, scipy, rfc3339-validator, referencing, python-dateutil, pytest, pyee, joblib, scikit-learn, playwright, jsonschema-specifications, arrow, jsonschema, isoduration
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:40.0371259Z 
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:40.0397338Z Successfully installed arrow-1.4.0 attrs-26.1.0 cloudpickle-3.1.2 fqdn-1.6.0 greenlet-3.5.6 idna-3.20 iniconfig-2.3.1 isoduration-20.11.0 joblib-1.6.0 jsonpointer-3.8 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mistune-3.2.1 numpy-2.5.4 packaging-26.3 playwright-1.57.0 pluggy-1.7.0 pyee-13.0.1 pygments-2.21.0 pytest-8.4.2 python-dateutil-4.0.0 referencing-0.37.0 rfc3339-validator-0.1.4 rfc3987-1.3.8 rpds-py-2026.9.1 scikit-learn-1.8.0 scipy-1.18.1 six-1.17.0 threadpoolctl-3.7.0 typing-extensions-4.16.0 tzdata-2026.6 uri-template-1.3.0 webcolors-25.10.0
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:40.0404782Z 
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:40.0405158Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:40.0405754Z [notice] To update, run: pip install --upgrade pip
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.0327366Z Checked practice_expansion/2026-10-28-representative/questions.json
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.0328149Z Checked practice_expansion/2026-10-28-representative/selection.json
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.0328801Z Checked reports/representative-rewrite/pattern-metrics.json
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7613119Z Traceback (most recent call last):
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7613850Z   File "/home/runner/work/oddments/oddments/scripts/build_representative_audit_ledger.py", line 349, in <module>
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7614311Z     main()
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7614969Z   File "/home/runner/work/oddments/oddments/scripts/build_representative_audit_ledger.py", line 339, in main
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7615840Z     require(path.exists() and path.read_bytes() == payload, 'Generated ledger drift: ' + relative(path))
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7616477Z   File "/home/runner/work/oddments/oddments/scripts/build_representative_audit_ledger.py", line 39, in require
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7616929Z     raise ValueError(message)
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7617368Z ValueError: Generated ledger drift: reports/representative-rewrite/audit-ledger.json
+revision	Immutable inputs, deterministic revisions, and existing learning contracts	2026-11-04T14:52:55.7736808Z ##[error]Process completed with exit code 1.
