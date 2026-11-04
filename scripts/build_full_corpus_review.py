@@ -496,6 +496,8 @@ def build():
     baseline = read('reports/full-corpus-review/baseline-inventory.json')
     assert baseline['question_count'] == len(baseline['question_record_hashes']) == 2328
     review_sources = {name: read('reports/full-corpus-review/'+name) for name in REVIEW_FILES}
+    from remediation_author_reviews import load_sources
+    review_sources.update(load_sources(ROOT, REVIEW_FILES))
     review_records = [r for source in review_sources.values() for r in source['records']]
     assert len({r['question_id'] for r in review_records}) == len(review_records)
     reviews = {r['question_id']:r for r in review_records}

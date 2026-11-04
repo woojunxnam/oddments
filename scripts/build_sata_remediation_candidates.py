@@ -298,8 +298,8 @@ def validate_preservation(bank, root=ROOT):
 def bind_candidate_inventory_row(row, question, root=ROOT):
     """Expose frozen author-source provenance for scheduling, never E review credit.
 
-    checked_at is explicitly the G source date, not a current-ID legal verdict.
-    This separate status is excluded from existing author-source credit counts.
+    The G draft date remains context. checked_at stays empty until a committed
+    native current-ID author review passes the narrow source consumer.
     """
     authored = authoring_payload(root)
     matches = [a for a in authored['questions'] if a['question_id'] == question['question_id']]
@@ -319,16 +319,19 @@ def bind_candidate_inventory_row(row, question, root=ROOT):
             'Candidate cannot inherit compiled-ID audit')
     row.update(disposition='AUDIT_PENDING',
         legal_review_status='DRAFT_SOURCE_REVIEW_BOUND_NOT_CURRENT_ID_AUDIT',
-        checked_at=authored['authored_at'], checked_at_scope='ORIGINAL_G_DRAFT_SOURCE_REVIEW_DATE_ONLY',
+        checked_at=None, checked_at_scope='FORMAL_CURRENT_ID_AUTHOR_REVIEW_REQUIRED',
+        source_author_review_date=authored['authored_at'], current_id_author_review_required=True,
         source_author_review_binding=question['remediation_candidate'],
         known_author_editor_actor_ids=question['remediation_candidate']['known_author_editor_actor_ids'],
         reviewer_provenance=dict(author_session=authored['author_session'],
             engineering_provenance=ENGINEER, independent='NOT_RUN_FOR_COMPILED_ID'),
         implementation_status='ARCHIVE_ONLY_REPLACEMENT_CANDIDATE',
         blocker='Compiled current-ID legal and realism review pending; original HOLD/default unchanged.',
-        next_action='Assign a different actual session through the independent main queue.',
+        next_action='Assign the actual content author a native current-ID author review before independent assessment.',
         answer_key_assessment='EXACT_G_DRAFT_KEY_COPY_NOT_NEW_ENGINEERING_ASSESSMENT',
         author_review_increment=0, independent_review_credit=0, canonical_release_credit=0)
+    from remediation_author_reviews import apply_review
+    apply_review(row, question, root)
 
 
 def validate_published_preservation(data, root=ROOT):
