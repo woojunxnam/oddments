@@ -44,12 +44,17 @@ def read_ledger(root):
     return {r['question_id']: r for r in rows}
 
 
-def current_hash(root, row):
+def current_record(root, row):
     """Check actual collection too; a stale generated ledger cannot authorize work."""
     bank = json.loads((root / row['collection']).read_text())
     found = [q for q in bank['questions'] if q['question_id'] == row['question_id']]
     if len(found) != 1 or digest(found[0]) != row['content_sha256']:
         raise ValueError('Stale ledger content: ' + row['question_id'])
+    return found[0]
+
+
+def current_hash(root, row):
+    current_record(root, row)
     return row['content_sha256']
 
 
@@ -107,11 +112,67 @@ def event(state, kind, at, **fields):
     state['events'].append({'kind': kind, 'at': at, **fields})
 
 
-def plan(state, ledger, root, batches=1, size=40, at=None):
+def remediation_default_priority(root, ledger, candidates):
+    """Read current source bindings; caller has already applied all ledger gates."""
+    from build_sata_remediation_candidates import ALLOCATION
+    allocation_path = root / ALLOCATION
+    allocation_raw = allocation_path.read_bytes()
+    allocation = json.loads(allocation_raw)
+    if allocation.get('schema_version') != 'sata-remediation-allocation/1':
+        raise ValueError('Unsupported remediation allocation priority source')
+    rows = allocation.get('allocations', [])
+    remediation = [row['question_id'] for row in rows]
+    if len(remediation) != 3 or len(set(remediation)) != 3:
+        raise ValueError('Invalid remediation priority allocation')
+    if not set(remediation) <= set(ledger):
+        raise ValueError('Remediation priority missing authoritative ledger IDs; regenerate inventory')
+    banks = {}
+    for allocation_row in rows:
+        qid = allocation_row['question_id']
+        row = ledger[qid]
+        collection = row['collection']
+        relative = Path(collection)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError('Unsafe remediation priority collection')
+        if collection not in banks:
+            banks[collection] = json.loads((root / collection).read_bytes())
+        matching = [q for q in banks[collection]['questions'] if q['question_id'] == qid]
+        if (len(matching) != 1 or digest(matching[0]) != row['content_sha256'] or
+                not matching[0].get('archive_only_candidate') or
+                matching[0].get('revision_of') != allocation_row['original_question_id'] or
+                matching[0].get('remediation_candidate', {}).get('draft_key') != allocation_row['draft_key'] or
+                matching[0]['remediation_candidate'].get('current_id_independent_audit') != 'PENDING'):
+            raise ValueError('Stale/unbound remediation priority content: ' + qid)
+    config_path = root / 'site/practice-expansion/publication.json'
+    config_raw = config_path.read_bytes()
+    selection_binding = json.loads(config_raw)['representative_selection']
+    relative = Path(selection_binding['path'])
+    if relative.is_absolute() or '..' in relative.parts:
+        raise ValueError('Unsafe default priority source path')
+    raw = (root / relative).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != selection_binding['sha256']:
+        raise ValueError('Stale source-derived default priority selection')
+    defaults = json.loads(raw)['recommended_ids']
+    if len(defaults) != len(set(defaults)) or not set(defaults) <= set(ledger):
+        raise ValueError('Invalid source-derived default priority IDs; regenerate inventory')
+    eligible = set(candidates)
+    ordered = sorted(eligible & set(remediation))
+    ordered += sorted((eligible & set(defaults)) - set(ordered))
+    ordered += sorted(eligible - set(ordered))
+    bindings = {ALLOCATION: hashlib.sha256(allocation_raw).hexdigest(),
+                str(config_path.relative_to(root)): hashlib.sha256(config_raw).hexdigest(),
+                str(relative): hashlib.sha256(raw).hexdigest()}
+    return ordered, bindings
+
+
+def plan(state, ledger, root, batches=1, size=40, at=None, prioritize_remediation_defaults=False):
     if not 1 <= batches <= 4 or not 1 <= size <= 40:
         raise ValueError('Use 1–4 batches of 1–40 IDs')
     at = at or timestamp()
     stage = state_stage(state)
+    if prioritize_remediation_defaults and stage != 'independent-legacy':
+        raise ValueError('Remediation/default priority is only available for independent-legacy planning')
+    priority_bindings = None
     if not state['jobs'] and stage == 'author':
         groups = [FIRST]
         if any(qid not in ledger or ledger[qid]['legal_review_status'] != UNREVIEWED for qid in FIRST):
@@ -135,10 +196,24 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
                             ((stage == 'author' and row['legal_review_status'] == UNREVIEWED) or
                              (stage == 'independent-legacy' and row.get('checked_at') and
                               row.get('independent_legacy_legal_assessment') is None)))
+        if prioritize_remediation_defaults:
+            candidates, priority_bindings = remediation_default_priority(root, ledger, candidates)
         groups = [candidates[i:i+size] for i in range(0, min(len(candidates), batches*size), size)]
     created = []
     for group in groups:
-        hashes = {qid: current_hash(root, ledger[qid]) for qid in group}
+        records = {qid: current_record(root, ledger[qid]) for qid in group}
+        hashes = {qid: ledger[qid]['content_sha256'] for qid in group}
+        known_actors = {}
+        if stage == 'independent-legacy':
+            for qid, record in records.items():
+                actual = record.get('remediation_candidate', {}).get('known_author_editor_actor_ids', [])
+                if (not isinstance(actual, list) or
+                        any(not isinstance(actor, str) or not actor.strip() for actor in actual) or
+                        len(actual) != len(set(actual)) or
+                        ledger[qid].get('known_author_editor_actor_ids', []) != actual):
+                    raise ValueError('Stale known author/editor actor binding: ' + qid)
+                if actual:
+                    known_actors[qid] = actual
         prefix = 'review-' if stage == 'author' else 'review-independent-legacy-'
         job_id = prefix + digest(hashes)[:16]
         job = {'job_id': job_id, 'sequence': len(state['jobs']) + 1,
@@ -146,10 +221,19 @@ def plan(state, ledger, root, batches=1, size=40, at=None):
                'worker_branch': 'mission/' + job_id, 'created_at': at}
         if stage != 'author':
             job['stage'] = stage
+        if known_actors:
+            job['known_author_editor_actor_ids_by_question'] = known_actors
+            job['excluded_worker_actor_ids'] = sorted({actor for actors in known_actors.values() for actor in actors})
+        if priority_bindings is not None:
+            job['selection_policy'] = 'REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL'
+            job['priority_source_sha256'] = priority_bindings
         state['jobs'].append(job)
         created.append(job_id)
     if created:
-        event(state, 'PLAN', at, job_ids=created)
+        details = {} if priority_bindings is None else dict(
+            selection_policy='REMEDIATION_THEN_SOURCE_DEFAULT_THEN_LEXICAL',
+            priority_source_sha256=priority_bindings)
+        event(state, 'PLAN', at, job_ids=created, **details)
     return created
 
 
@@ -172,10 +256,14 @@ def claim(state, worker, minutes=60, at=None):
     recover(state, at)
     active = [j for j in state['jobs'] if j['status'] == 'LEASED' and j['worker'] == worker]
     if active:
+        if worker in active[0].get('excluded_worker_actor_ids', []):
+            raise ValueError('Known content author/editor cannot independently claim: ' + worker)
         return active[0]  # idempotent reconnect, not another assignment
     queued = next((j for j in state['jobs'] if j['status'] == 'QUEUED'), None)
     if queued is None:
         return None
+    if worker in queued.get('excluded_worker_actor_ids', []):
+        raise ValueError('Known content author/editor cannot independently claim: ' + worker)
     queued.update(status='LEASED', worker=worker, attempt=queued['attempt'] + 1,
                   lease_until=(datetime.fromisoformat(at) + timedelta(minutes=minutes)).isoformat())
     queued['worker_branch'] = 'mission/' + queued['job_id'] + '-attempt-' + str(queued['attempt'])
@@ -317,7 +405,8 @@ def integrate(state, job_id, root, at=None):
 def progress(state, ledger, corpus):
     state_stage(state)
     total = len(ledger)
-    reviewed = sum(r['checked_at'] is not None for r in ledger.values())
+    reviewed = sum(r['checked_at'] is not None and r.get('author_review_increment', 1) != 0
+                   for r in ledger.values())
     notes = corpus['notes_units_with_complete_atomic_claim_census']
     return {'queue_jobs': {status: sum(j['status'] == status for j in state['jobs'])
                            for status in ('QUEUED', 'LEASED', 'SUBMITTED', 'INTEGRATED')},
@@ -339,6 +428,8 @@ def main():
     parser.add_argument('--stage', choices=STAGES, default='author')
     commands = parser.add_subparsers(dest='command', required=True)
     p = commands.add_parser('plan'); p.add_argument('--batches', type=int, default=1); p.add_argument('--size', type=int, default=40)
+    p.add_argument('--prioritize-remediation-and-default', action='store_true',
+                   help='Independent stage only: eligible remediation IDs, then current source-bound defaults, then lexical remainder.')
     p = commands.add_parser('claim'); p.add_argument('--worker', required=True); p.add_argument('--minutes', type=int, default=60)
     commands.add_parser('recover')
     for name in ('heartbeat', 'submit', 'integrate', 'worktree'):
@@ -352,7 +443,8 @@ def main():
     root = args.root.resolve()
     path = state_path(root, args.stage, args.state)
     with checkpoint(path, args.stage) as state:
-        if args.command == 'plan': output = plan(state, read_ledger(root), root, args.batches, args.size)
+        if args.command == 'plan': output = plan(state, read_ledger(root), root, args.batches, args.size,
+                                                        prioritize_remediation_defaults=args.prioritize_remediation_and_default)
         elif args.command == 'claim': output = claim(state, args.worker, args.minutes)
         elif args.command == 'recover': output = recover(state)
         elif args.command == 'heartbeat': output = heartbeat(state, args.job, args.token, args.minutes)
