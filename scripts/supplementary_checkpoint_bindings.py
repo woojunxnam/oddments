@@ -59,14 +59,14 @@ def validated_sources(root,primary_records,*,source_bindings=None):
                               negative=negative,supplementary_only=True,does_not_override_primary=True,
                               canonical_release_credit=0)
     if has_completion:
-        from realism_completion_metadata import load_metadata as load_realism_completion
+        from realism_completion_metadata import load_metadata as load_realism_completion, blocked_realism
         metadata=load_realism_completion(root,primary_records,all_public,source_bindings=staged)
         for qid,assessment in metadata['assessments'].items():
             previous=sources.get(qid)
             procedural.require(previous is None or qid in procedural.IDS,'Unexpected supplementary realism overlap')
             report=json.loads(read(assessment['report_path'],assessment['report_sha256']))
             row=assessment['record'];legal=row.get('legal_review',{});realism=row['realism_review']
-            negative=(realism['verdict']=='FAIL' or legal.get('verdict')in {'MINOR_EDIT','MAJOR_REWRITE','HOLD','DELETE'}or
+            negative=(realism['verdict']=='FAIL' or blocked_realism(row)or legal.get('verdict')in {'MINOR_EDIT','MAJOR_REWRITE','HOLD','DELETE'}or
                 legal.get('existing_answer_correct')in {'NO','AMBIGUOUS','NOT_ASSESSED'})
             current=dict(source_path=assessment['report_path'],source_sha256=assessment['report_sha256'],
                 record_sha256=row['record_sha256'],reviewed_at=report['reviewed_at'],negative=negative,

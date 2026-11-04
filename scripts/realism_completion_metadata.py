@@ -135,14 +135,20 @@ def validate_archive_containment(selection,supplement):
             notice.get('review_source')==proof['report_path']and notice.get('review_source_sha256')==proof['report_sha256']and
             notice.get('question_record_hashes',{}).get(uid)==proof['record']['record_sha256']):return True
         return any(matches(previous,uid,proof)for previous in notice.get('previous_notices',[]))
+    def adopts(notice,uid,proof):
+        if (uid in notice.get('question_ids',[])and notice.get('review_source')==proof['report_path']and
+            notice.get('review_source_sha256')==proof['report_sha256']):return True
+        return any(adopts(previous,uid,proof)for previous in notice.get('previous_notices',[]))
     for uid,proof in supplement['assessments'].items():
-        if proof['record']['realism_review']['verdict']!='FAIL':continue
+        is_fail=proof['record']['realism_review']['verdict']=='FAIL'
+        adopted_blocked=(blocked_realism(proof['record'])and any(adopts(n,uid,proof)for n in selection['archive_review_notices']))
+        if not is_fail and not adopted_blocked:continue
         if uid in LEGAL_IDS:
             route.require(any(h['question_id']==uid for h in selection.get('safety_holds',[])),
                           'Fixed4 must retain its original nonlegacy safety hold')
         else:
             route.require(any(matches(n,uid,proof)for n in selection['archive_review_notices']),
-                          'Fresh realism FAIL requires an actual source-bound archive notice: '+uid)
+                          'Fresh realism FAIL/blocked HOLD requires an actual source-bound archive notice: '+uid)
 
 
 @route.snapshotted
@@ -160,3 +166,28 @@ def validate_publication_style_inputs(root,selection,primary_records,style_input
             'Style-only row lacks its exact committed native/current-hash proof')
     validate_archive_containment(selection,metadata)
     return metadata
+
+
+def blocked_realism(row):
+    """A completed typed report can disclose uncertainty without inventing FAIL."""
+    style=row.get('realism_review',{})
+    return (style.get('verdict')in {'NOT_ASSESSED','HOLD'}and style.get('decision')=='HOLD'and
+            route.nonempty(style.get('blocker')))
+
+
+@route.snapshotted
+def verified_blocked_notice(root,notice,row,report):
+    """Only an actual integrated completion row may use blocked-style notices."""
+    if (notice.get('issue_type')!='INDEPENDENT_REVIEW_FINDING'or report.get('purpose')!=route.PURPOSE or
+        not blocked_realism(row)):return False
+    read=lambda p,h=None:route.disk_read(root,p,h)
+    public,_,_=route.questions(root,read)
+    metadata=load_metadata(root,original_records(root,read),public)
+    uid=row['question_id'];proof=metadata['assessments'].get(uid)
+    if proof is None:return False
+    return (proof['record']==row and proof['report_path']==notice.get('review_source')and
+            proof['report_sha256']==notice.get('review_source_sha256')and
+            route.read_json(read,proof['report_path'],proof['report_sha256'])==report and
+            notice.get('question_record_hashes',{}).get(uid)==row['record_sha256']and
+            row['realism_review']['blocker']in notice.get('reason','')and
+            notice.get('checked_at')==report['reviewed_at'])
