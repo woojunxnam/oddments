@@ -243,8 +243,10 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
     import build_full_corpus_review as builder
     import phase11_secondary_metadata as phase11
     import phase11_context38_metadata as context38
+    import realism_completion_metadata as completion
+    import remaining9_procedural_metadata as remaining9
     root,state,report,_,questions,collections = fixture
-    real_load = secondary.load_metadata; captured = {}; other_sources = []
+    real_load = secondary.load_metadata; captured = {}; other_sources = []; current_sources = {}
     def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
         # Retained-source validation must read the actual repository, while
         # only the builder-level consumer call uses the synthetic retry.
@@ -264,6 +266,20 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
     monkeypatch.setattr(secondary,'load_metadata',load_fixture)
     monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
     monkeypatch.setattr(context38,'load_metadata',capture_other(context38.load_metadata))
+    def capture_current(name,loader,legal_only=False):
+        def load_current(repo,primary,public,*args,**kwargs):
+            value=loader(repo,primary,public,*args,**kwargs)
+            # Capture only the actual producer's complete public/current primary
+            # input, not partial native-only inputs read by retention guards.
+            expected={r['question_id']for r in captured.get('primary',[])}
+            if expected and repo==ROOT and {r['question_id']for r in primary}==expected and set(public)==expected:
+                assert name not in current_sources
+                current_sources[name]=({'assessments':value['legal_assessments'],'records':value['legal_records']}
+                                       if legal_only else value)
+            return value
+        return load_current
+    monkeypatch.setattr(completion,'load_metadata',capture_current('legal4',completion.load_metadata,legal_only=True))
+    monkeypatch.setattr(remaining9,'load_metadata',capture_current('remaining9',remaining9.load_metadata))
     outputs = builder.build()
     rows = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
     progress = json.loads(outputs[ROOT/'reports/full-corpus-review/progress.json'])
@@ -277,7 +293,8 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         assert row['answer_key_assessment'] == 'INDEPENDENT_LEGACY_NOT_ASSESSED'
         assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
         assert row['publication_status'] == 'PRACTICE_CONFIG_ARCHIVE'
-    combined=context38.combine_metadata(captured['primary'],captured['source'],*other_sources)['progress']
+    assert set(current_sources)=={'legal4','remaining9'}
+    combined=context38.combine_metadata(captured['primary'],captured['source'],*other_sources,*current_sources.values())['progress']
     assert progress['independent_legacy_legal_assessed'] == combined['effective_key_assessed']
     assert progress['independent_legacy_originals_read'] == len(originals)
     assert progress['independent_legacy_keys_unassessed'] == combined['effective_keys_unassessed']
