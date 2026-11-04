@@ -1,0 +1,48 @@
+{
+  "verified_at_utc": "2026-11-04T00:04:00.941707+00:00",
+  "same_actor_session": true,
+  "official_source_retrieval_dates_preserved": "2026-11-03; no November4 live retrieval claimed",
+  "precommit_validation": {
+    "status": "PASS",
+    "current_root_bindings": 5,
+    "body_and_census_claims": 111,
+    "primary_source_raw_bindings": 23,
+    "related_question_full_record_and_visible_hashes": 55,
+    "related_choice_and_rationale_bindings": 230,
+    "derived_visible_records": 10,
+    "claim_legal_status": {
+      "KEEP": 106,
+      "SOURCE_BLOCKED": 3,
+      "LEGAL_HOLD": 2
+    },
+    "unit_legal_status": {
+      "SOURCE_BLOCKED": 2,
+      "LEGAL_HOLD": 1,
+      "KEEP": 2
+    },
+    "current_root_note_queue_validate_result": "PASS",
+    "current_root_validate_evidence": "PASS",
+    "committed_evidence": "NOT_RUN_BEFORE_COMMIT",
+    "report_sha256": "6789fba78af22ce6e2fc16e4dad1f373082d71aa4678fd5183be00ec18670042",
+    "worker_commit": "7ea8496483f154a1db7799cea616a26fae5d02d2",
+    "envelope_written": false,
+    "queue_submit_or_integrate": "NOT_RUN_ROOT_ONLY"
+  },
+  "mandatory_tests": {
+    "command": "python -m pytest -q tests/test_note_review_queue.py tests/test_review_queue.py",
+    "result": "77 passed in 3.31s",
+    "actual_execution_date_utc": "2026-11-03",
+    "repeated_on_november4": false
+  },
+  "queue_submit_or_integrate": "NOT_RUN_ROOT_ONLY",
+  "scope": "Worker report and dedicated evidence only. No body/census/question/queue/generated edits.",
+  "git_diff_check": {
+    "authored_json_python": "PASS",
+    "raw_official_html_and_extracted_text": "ORIGINAL_WHITESPACE_PRESERVED",
+    "raw_whitespace_issue_count": 11041,
+    "raw_whitespace_extensions": {
+      ".html": 11041
+    },
+    "reason": "Official response bytes remain unchanged so raw SHA bindings stay exact; extracted plain text is likewise retained."
+  }
+}
