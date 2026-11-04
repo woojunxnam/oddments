@@ -11,6 +11,9 @@ from default_selection_assertions import (phase10_snapshot, source_bound_phase10
     source_bound_selection_delta)
 
 ROOT = Path(__file__).resolve().parents[1]
+# This module checks the exact phase10 transition and its published M epoch.
+from published15_test_view import published15_root
+ROOT = published15_root(ROOT)
 
 
 def raw_questions():
