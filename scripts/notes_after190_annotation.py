@@ -35,14 +35,37 @@ NOTE_DELTA_UNIT = 'w1-b-1'
 V4_CENSUS = 'reports/full-corpus-review/census-corrections/v4/census/w1-b-1-census-v4.json'
 V4_RECORD = 'reports/full-corpus-review/census-corrections/v4/record/w1-b-1-census-v4-record.json'
 LEGACY_STATE = 'reports/full-corpus-review/independent-legacy-work-queue.json'
-# Exact selected census path/raw-SHA map at controller source f2eb58b3. A
-# different author enumeration needs another bounded review, even at equal count.
-CENSUS_BINDINGS_SHA = '10ed514a4f2af318274b38fae714e50319bd21b061d8f0e171149b85df7aa052'
+# Exact already-committed definitions at e78af1cd, not future result receipts.
+# make_manifest still requires actual integrated results and the one explicit
+# inactive body registration before preparing any final source/export pins.
+SCOPE_DEFINITION_COMMIT = 'e78af1cd5ccdd749c3599aa4f36a217af4d06552'
+CENSUS_BINDINGS_SHA = 'e9fa1f3aea3cd7b7a7ce727424454572f4a28a062ba6b85b449ff2afe3b73f7b'
+CENSUS_COUNT = 6989
+NOTE_SCOPE_SHA = '6c630c76c38a33a8adaf32013d1666f363d6f3a3ac836565adfcf2e289a60008'
+LEGACY_SCOPE_SHA = 'b223b853c533c24a60b05708d64809734c1063da914f52955632ec3edfb0fdb5'
+BEFORE_DEFAULT_IDS_SHA = '6101485e9abfa7639343e44e07b9f35d37fde175708595c0976ac89545c89e02'
+ALLOCATION_SHA = 'b4869303714843dc3f86d0de3984478fe94b375562fa84a8ebf8dde9e70ef938'
+BODY_ORIGINAL_RECORD = 'reports/full-corpus-review/body-corrections/w3-a-3-v1/record.json'
+BODY_ORIGINAL_SHA = 'cfe060fb2bb2a06769d02f712899ca7de8b24e5f3538b82a0744a125d8c5722d'
+BODY_REGISTRATION_RECORD = 'reports/full-corpus-review/body-corrections/w3-a-3-v1/registrations/after-census-v2.json'
+BODY_REGISTRATION_SHA = '945e120c2676793b7f6649d0eaa5a3cb4eb22b3f2e85fd56d273331a0730dd1c'
+BODY_JOB_ID = 'review-independent-notes-body-4c3229fb7bfb76b6'
+BODY_REGISTRATION_ID = 'body-w3-a-3-pamphlet-scope-v1-after-census-v2'
+BODY_REGISTRATION_CHECKPOINT = '847d3ea688ffa2495eb628b411b44026c61a0b9b'
+NATIVE_LEGACY_REPORT = 'reports/full-corpus-review/sata-remediation-current-id-independent/f-review.json'
+NATIVE_LEGACY_RESULT = 'reports/full-corpus-review/sata-remediation-current-id-independent/f-result.json'
 NOTE_FOLLOWUPS = {
     24: ('review-independent-notes-9ef0ae660e8bc055',
          ['w2-c-7','w2-c-8','w2-c-9','w2-c-10','w2-c-11']),
     25: ('review-independent-notes-1a27fcbc5afaebf5',
          ['w2-c-12','w2-c-13','w2-c-14','w2-c-15','w2-c-17']),
+    26: ('review-independent-notes-3412f11d8110cc8f',
+         ['w3-a-1','w3-a-2','w3-a-3','w3-a-4','w3-a-6']),
+    27: ('review-independent-notes-771c735e22eb9a0a',
+         ['w3-a-7','w3-a-8','w3-a-9','w3-a-10','point-of-sale-price']),
+    28: ('review-independent-notes-reassessment-9db4b084482d44bf',['w2-c-12']),
+    29: ('review-independent-notes-reassessment-ea21ac3262b9db89',['w3-a-6']),
+    30: ('review-independent-notes-reassessment-a9bea3c4426a21be',['w3-a-7']),
 }
 PHASE7 = {
     21: 'review-independent-legacy-a3bec3528521ade0',
@@ -56,9 +79,8 @@ PHASE7_HASHES = {
     23: '49b99543bb088e14385c3c670f3ecff5f79bf3bd7ecdf535f416454aed681297',
     24: '56ad670d4fad09fa4187ccc72bf7931f4322eeeff2a9a07c2b85d7acae9c8b65',
 }
-# Explicit pending definitions supplied by the controller at f2eb58b3. They may
-# progress through submission, but this guard grants no integrated scope to them.
-PENDING_LEGACY = {
+# Exact phase8 definitions; actual committed integrated receipts are now required.
+WAVE8 = {
     25: ('review-independent-legacy-ff9c4b960dd7395f',
          'ff9c4b960dd7395fbd87a79a3b21e6000fe1af522ced6a9291f8670dbe693c65'),
     26: ('review-independent-legacy-fa06bb98482969e9',
@@ -68,6 +90,31 @@ PENDING_LEGACY = {
     28: ('review-independent-legacy-69f7982833d308b0',
          '69f7982833d308b0cd6c08b08407a93118bed7701224a10028950572f5f1cd87'),
 }
+LEGACY_REPORTS = {
+    21:'reports/full-corpus-review/independent-phase7-c-review.json',
+    22:'reports/full-corpus-review/independent-phase7-b-review.json',
+    23:'reports/full-corpus-review/independent-phase7-g-review.json',
+    24:'reports/full-corpus-review/independent-phase7-f-review.json',
+    25:'reports/full-corpus-review/independent-phase8-c-review.json',
+    26:'reports/full-corpus-review/independent-phase8-f-review.json',
+    27:'reports/full-corpus-review/independent-phase8-g-review.json',
+    28:'reports/full-corpus-review/independent-phase8-b-review.json',
+}
+# Root explicitly allocated these exact CURRENT DEFAULT jobs at 804178fd.
+# Their pending definitions confer no evidence; all four need actual IG before
+# final preparation. New jobs or different actors need another bounded review.
+WAVE9 = {
+    30:('review-independent-legacy-1ccd0d652abebe82','1ccd0d652abebe8220fa9bf063bb31d2cbc44f230d6e535dea51bb7af14abe5c','/root/independent_wave9_a'),
+    31:('review-independent-legacy-3f7eb071e35ba44e','3f7eb071e35ba44e77f029a47dc32d3166bf2f716f5bd32be597e6cd72aaf136','/root/independent_wave9_b'),
+    32:('review-independent-legacy-a159c90daad5e611','a159c90daad5e611a195f5a8a7547e86ac6789f3f2ffe66d12835c0db25f045f','/root/independent_wave9_c'),
+    33:('review-independent-legacy-2afb2b3095530da6','2afb2b3095530da62bea10a0a096c5474c99549a5caad4c73f97797c75e416a3','/root/independent_wave9_d'),
+}
+# Output contract in INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md, not an assertion that
+# these files/results exist. Raw source hashes are derived only after every IG.
+WAVE9_REPORTS = {sequence:'reports/full-corpus-review/independent-phase9-'+letter+'-review.json'
+                 for sequence,letter in zip(WAVE9,'abcd')}
+WAVE9_RESULTS = {sequence:'reports/full-corpus-review/independent-phase9-'+letter+'-result.json'
+                 for sequence,letter in zip(WAVE9,'abcd')}
 
 
 def require(condition, message):
@@ -123,28 +170,51 @@ def validate_phase7_report(job, report, events):
 
 
 def validate_legacy_scope(state):
-    """Four approved integrations plus four exact pending definitions only."""
+    """29 completed slots plus four explicitly approved current-default slots."""
     jobs = state['jobs']
-    expected = dict(PHASE7)
-    expected.update({sequence: value[0] for sequence, value in PENDING_LEGACY.items()})
-    require([j['sequence'] for j in jobs] == list(range(1,29)) and
-            {j['sequence']:j['job_id'] for j in jobs if j['sequence'] >= 21} == expected,
+    projection=[dict(sequence=j['sequence'],job_id=j['job_id'],stage=j.get('stage'),
+                     question_hashes=j['question_hashes'])for j in jobs[:29]]
+    require([j['sequence'] for j in jobs] == list(range(1,34)) and
+            question_queue.digest(projection)==LEGACY_SCOPE_SHA,
             'After190 legacy job scope expanded; explicit new guard review required')
     for job in jobs:
-        sequence = job['sequence']
-        if sequence < 21:
-            continue
-        expected_sha = PHASE7_HASHES.get(sequence) or PENDING_LEGACY[sequence][1]
-        require(job.get('stage') == 'independent-legacy' and
-                len(job['question_hashes']) == 40 and
-                question_queue.digest(job['question_hashes']) == expected_sha,
-                'After190 exact legacy question scope changed')
-        if sequence in PENDING_LEGACY:
-            require(job['status'] in {'QUEUED','LEASED','SUBMITTED'} and
-                    not job.get('integrated_commit') and not job.get('integrated_at') and
-                    not any(e.get('kind') == 'INTEGRATE' and e.get('job_id') == job['job_id']
-                            for e in state['events']),
-                    'After190 wave8 integration is outside this guard; new bounded approval required')
+        if job['sequence'] in WAVE9:
+            expected=WAVE9[job['sequence']]
+            require((job['job_id'],question_queue.digest(job['question_hashes']),job.get('worker'))==expected and
+                    len(job['question_hashes'])==40 and job.get('stage')=='independent-legacy',
+                    'After190 exact wave9 scope/current-default actor changed')
+    current_default_ids=[qid for j in jobs if j['sequence'] in WAVE9 for qid in j['question_hashes']]
+    require(len(current_default_ids)==len(set(current_default_ids))==160,'Wave9 is not exactly160 distinct default questions')
+    for job in jobs:
+        require(job['status']=='INTEGRATED' and job.get('result') and job.get('integrated_commit') and
+                job.get('integrated_at') and any(e.get('kind')=='INTEGRATE'and
+                    e.get('job_id')==job['job_id']and e.get('commit')==job['integrated_commit']for e in state['events']),
+                'After190 legacy result pending/LEASED or lacks actual captured integration; integrate/rebind first')
+
+
+def validate_note_scope(state):
+    jobs=state['jobs'];original=jobs[:30]
+    projection=[dict(sequence=j['sequence'],job_id=j['job_id'],unit_bindings=j['unit_bindings'])for j in original]
+    require(len(jobs)==31 and [j['sequence']for j in jobs]==list(range(1,32)) and
+            notes_queue.digest(projection)==NOTE_SCOPE_SHA and
+            {j['sequence']:(j['job_id'],j['unit_ids'])for j in original if j['sequence']>=24}==NOTE_FOLLOWUPS,
+            'After190 note scope needs exact jobs1-30 plus the committed inactive body job31')
+    require(all(j['status']=='INTEGRATED'and j.get('result')and j.get('integrated_commit')and j.get('integrated_at')and
+                any(e.get('kind')=='INTEGRATE'and e.get('job_id')==j['job_id']and e.get('commit')==j['integrated_commit']for e in state['events'])
+                for j in original),'After190 note result pending/LEASED; integrate/rebind jobs1-30 first')
+    require(BODY_REGISTRATION_RECORD and BODY_REGISTRATION_SHA and BODY_JOB_ID,
+            'After190 exact root body registration is not yet bound; no future receipt is assumed')
+    job=jobs[30]
+    require(job['job_id']==BODY_JOB_ID and job.get('purpose')=='BODY_CORRECTION_REASSESSMENT' and
+            job['unit_ids']==['w3-a-3'] and not job.get('reassessment_id') and
+            len(state.get('body_reassessments',[]))==1,
+            'After190 inactive body correction scope expanded or mixed with census-only review')
+    entry=state['body_reassessments'][0]
+    require(entry['record_path']==BODY_REGISTRATION_RECORD and entry['raw_sha256']==BODY_REGISTRATION_SHA and
+            job['body_reassessment_record_sha256']==BODY_REGISTRATION_SHA and
+            job['body_reassessment_id']==entry['record']['body_reassessment_id'],
+            'After190 root body registration path/raw SHA differs')
+    return job
 
 
 def retained_evidence_bindings(value):
@@ -189,13 +259,234 @@ def zero_credit(value):
             'After190 annotation cannot create legal/author/question/release credit')
 
 
+def bind_inactive_body(root,state,job,independent,bindings):
+    """One exact root re-registration; never an active body/credit exception."""
+    original=json.loads(committed(root,BODY_ORIGINAL_RECORD,bindings))
+    require(bindings[BODY_ORIGINAL_RECORD]==BODY_ORIGINAL_SHA,'Original inactive body record changed')
+    record=json.loads(committed(root,BODY_REGISTRATION_RECORD,bindings))
+    require(bindings[BODY_REGISTRATION_RECORD]==BODY_REGISTRATION_SHA and
+            record==state['body_reassessments'][0]['record'] and
+            set(record)==set(original)|{'registration_rebinding'} and
+            record['body_reassessment_id']==BODY_REGISTRATION_ID and
+            all(record.get(k)==v for k,v in original.items()if k not in
+                {'body_reassessment_id','other_current_bindings_sha256'}),
+            'Body re-registration changed candidate, parent, mapping, law evidence or original negatives')
+    rebinding=record['registration_rebinding']
+    require(set(rebinding)=={'purpose','controller_actor','parent_record','root_checkpoint','previous_ledger_snapshot',
+                            'changed_sibling_census_units','changed_sibling_binding_hashes','all_306_active_bodies_unchanged',
+                            'body_census_parent_claims_and_negatives_unchanged','independent_credit'} and
+            rebinding['purpose']=='CONTROLLER_OPERATIONAL_FINGERPRINT_REBIND_NOT_BODY_OR_CENSUS_EDIT'and
+            rebinding['controller_actor']=='/root'and
+            rebinding['parent_record']=={'path':BODY_ORIGINAL_RECORD,'raw_sha256':BODY_ORIGINAL_SHA}and
+            rebinding['root_checkpoint']==BODY_REGISTRATION_CHECKPOINT and
+            rebinding['all_306_active_bodies_unchanged']is True and
+            rebinding['body_census_parent_claims_and_negatives_unchanged']is True and
+            type(rebinding['independent_credit'])is int and rebinding['independent_credit']==0,
+            'Body operational re-registration provenance/scope changed')
+    snapshot=rebinding['previous_ledger_snapshot'];old_raw=committed(root,snapshot['path'],bindings)
+    require(sha(old_raw)==snapshot['raw_sha256'],'Previous retained census ledger changed')
+    current=notes_queue.inventory(root);previous=notes_queue.inventory(root,current['notes'],ledger_raw=old_raw);uid='w3-a-3'
+    changed=sorted(k for k,b in previous['units'].items()if current['units'].get(k)!=b)
+    require(changed==rebinding['changed_sibling_census_units']==['w2-c-12','w3-a-6','w3-a-7']and
+            rebinding['changed_sibling_binding_hashes']=={k:{'before':notes_queue.digest(previous['units'][k]),
+                'after':notes_queue.digest(current['units'][k])}for k in changed} and
+            current['units'][uid]==previous['units'][uid]==original['previous_binding']and
+            all(b['body_sha256']==current['units'][k]['body_sha256']for k,b in previous['units'].items())and
+            notes_queue.digest({k:b for k,b in previous['units'].items()if k!=uid})==original['other_current_bindings_sha256']and
+            notes_queue.digest({k:b for k,b in current['units'].items()if k!=uid})==record['other_current_bindings_sha256'],
+            'Body registration must change only the exact three sibling census bindings, not any body or target claim')
+    row=independent['units']['w3-a-3']
+    require(row.get('current_review_valid')is False and row.get('requires_review')is True and
+            row.get('legal_status')=='LEGAL_HOLD' and
+            job['unit_bindings']['w3-a-3']['body_sha256']!=original['previous_binding']['body_sha256'],
+            'Inactive body candidate cannot inherit old KEEP or current legal/release credit')
+    for payload in (record,json.loads(safe_bytes(root,record['replacement']['census_path'])),
+                    json.loads(safe_bytes(root,record['primary_retrieval']['path']))):
+        for path,expected in set(retained_evidence_bindings(payload)):
+            require(sha(committed(root,path,bindings))==expected,'Inactive body retained source raw SHA changed: '+path)
+    return dict(job_id=job['job_id'],sequence=31,status=job['status'],unit_id='w3-a-3',
+        record_path=BODY_REGISTRATION_RECORD,record_raw_sha256=BODY_REGISTRATION_SHA,
+        original_record_path=BODY_ORIGINAL_RECORD,original_record_raw_sha256=BODY_ORIGINAL_SHA,
+        binding=job['unit_bindings']['w3-a-3'],current_review_valid=False,
+        candidate_review_valid=row.get('candidate_review_valid',False),current_credit=0,
+        publication_blocker=record['publication_blocker'])
+
+
+def validate_selection_delta(selection,before,negative_ids):
+    """Only explicit, reviewed unsafe removals; retain the before snapshot/history."""
+    final_ids=selection['recommended_ids']
+    require(len(final_ids)==len(set(final_ids))and set(final_ids)<=set(before['recommended_ids'])and
+            final_ids==[qid for qid in before['recommended_ids']if qid in set(final_ids)],
+            'After190 cannot restore or invent defaults; final selection may only remove source-bound unsafe items')
+    for collection,key in [('holds','legacy_question_id'),('safety_holds','question_id')]:
+        after={h[key]:h for h in selection[collection]}
+        require(len(after)==len(selection[collection])and all(after.get(h[key])==h for h in before[collection]),
+                'Original default hold/history changed')
+    added_holds=({h['legacy_question_id']for h in selection['holds']}-{h['legacy_question_id']for h in before['holds']})|(
+        {h['question_id']for h in selection['safety_holds']}-{h['question_id']for h in before['safety_holds']})
+    require(set(before['recommended_ids'])-set(final_ids)==added_holds and added_holds<=set(negative_ids),
+            'Final default removals differ from explicit current source-bound negative findings')
+
+
+def bind_native_author(root,bindings):
+    from build_full_corpus_review import REVIEW_FILES
+    import remediation_author_reviews as native
+    from build_sata_remediation_candidates import BASE,PUBLIC_BANKS,PUBLISHED_BASELINE,ALLOCATION,validate_preservation
+    sources=native.load_sources(root,REVIEW_FILES)
+    baseline=native.read_baseline(root)
+    state=json.loads(committed(root,native.QUEUE,bindings))
+    require(len(REVIEW_FILES)==63 and len(state['jobs'])==53 and len(sources)==1,
+            'After190 author scope must remain original63 static sources plus actual native job53')
+    for path in (native.BASELINE,native.REGISTRY,*baseline['static_source_sha256']):committed(root,path,bindings)
+    job=state['jobs'][52];result=job['result']
+    report_path='reports/full-corpus-review/'+next(iter(sources))
+    report=sources[report_path.removeprefix('reports/full-corpus-review/')]
+    for relative,expected in set(retained_evidence_bindings(report)):
+        require(sha(committed(root,relative,bindings))==expected,'Native author retained payload changed')
+    committed(root,report_path,bindings)
+    result_path=report_path.removesuffix('-review.json')+'-result.json'
+    require(json.loads(committed(root,result_path,bindings))==result,'Native author original envelope changed')
+    selection_path='practice_expansion/2026-10-28-representative/selection.json'
+    selection=json.loads(committed(root,selection_path,bindings))
+    allocation_raw=committed(root,ALLOCATION,bindings)
+    require(sha(allocation_raw)==ALLOCATION_SHA,'Original native allocation/preservation snapshot changed')
+    allocation=json.loads(allocation_raw);before=allocation['preserved_selection']
+    require(len(before['recommended_ids'])==298 and notes_queue.digest(before['recommended_ids'])==BEFORE_DEFAULT_IDS_SHA,
+            'After190 before-default298 snapshot changed')
+    legacy_state=json.loads(safe_bytes(root,LEGACY_STATE))
+    require(all(set(j['question_hashes'])<=set(before['recommended_ids'])for j in legacy_state['jobs']if j['sequence'] in WAVE9),
+            'Wave9 scope is not the exact original current-default cohort')
+    final_ids=selection['recommended_ids']
+    bank=json.loads(committed(root,BASE+'/questions.json',bindings));validate_preservation(bank,root)
+    public=[q for p in PUBLIC_BANKS for q in json.loads(committed(root,p,bindings))['questions']]
+    public_by_id={q['question_id']:q for q in public}
+    require(len(public)==len(public_by_id)==2349,
+            'After190 archive scope must remain the original2346 plus exactly three native candidates')
+    require(all(notes_queue.digest(public_by_id[qid])==expected for qid,expected in allocation['public_question_record_hashes'].items())and
+            len(allocation['public_question_record_hashes'])==2346,'Original2346 stored question objects changed')
+    from build_representative_rewrites import validate_nonlegacy_selection
+    baseline_selection=json.loads(committed(root,'practice_expansion/2026-10-27-quality/selection.json',bindings))
+    validate_nonlegacy_selection(selection,baseline_selection,public_by_id,root)
+    from build_full_corpus_review import validate_default_review_safety,validate_independent_archive_safety,ACTIONABLE_AUTHOR_DISPOSITIONS
+    from procedural_secondary_metadata import load_metadata as secondary_metadata
+    static=[json.loads(committed(root,'reports/full-corpus-review/'+p,bindings))for p in REVIEW_FILES]
+    static+=list(sources.values())
+    reviews={r['question_id']:r for source in static for r in source['records']}
+    reports=[json.loads(committed(root,'reports/full-corpus-review/'+p,bindings))for p in
+             ('pub05-14-independent-review.json','wave2-independent-review.json','wave5-independent-review.json')]+integrated_sources(root)
+    records=[r for report in reports for r in report['records']]
+    require(len(records)==len({r['question_id']for r in records})and
+            all(r['record_sha256']==notes_queue.digest(public_by_id[r['question_id']])for r in records),
+            'Default safety review references stale current question objects')
+    collections={q['question_id']:p for p in PUBLIC_BANKS for q in json.loads(safe_bytes(root,p))['questions']}
+    secondary=secondary_metadata(root,records,public_by_id,collections)
+    negatives={qid for qid,r in reviews.items()if r['disposition'] in ACTIONABLE_AUTHOR_DISPOSITIONS}
+    negatives.update(r['question_id']for r in records+secondary['records']if
+                     r['legal_review'].get('verdict')!='KEEP'or r['legal_review'].get('existing_answer_correct')!='YES'or
+                     r['realism_review'].get('verdict')!='PASS')
+    validate_selection_delta(selection,before,negatives)
+    validate_default_review_safety(final_ids,reviews,records+secondary['records'])
+    validate_independent_archive_safety(selection,records+secondary['records'])
+    for path in ('reports/representative-rewrite/default-holds.json','reports/representative-rewrite/nonlegacy-default-holds.json'):
+        committed(root,path,bindings)
+    for path in (PUBLISHED_BASELINE,ALLOCATION,'site/practice-expansion/publication.json'):committed(root,path,bindings)
+    candidates=native.candidate_records(root)
+    require(not set(candidates)&set(selection['recommended_ids']) and all(q['archive_only_candidate']is True for q in candidates.values()),
+            'Native candidates must remain archive-only, outside default practice')
+    return dict(job_id=job['job_id'],sequence=53,status='INTEGRATED',static_source_count=63,
+        candidate_question_hashes=job['question_hashes'],actor_provenance=result['actor_provenance'],
+        report_path=report_path,report_raw_sha256=bindings[report_path],result_path=result_path,
+        result_raw_sha256=bindings[result_path],independent_review_credit=0,canonical_release_credit=0,
+        archive_question_count=2349,before_default_count=298,before_default_ids_sha256=BEFORE_DEFAULT_IDS_SHA,
+        default_count=len(final_ids),default_ids_sha256=notes_queue.digest(final_ids),
+        provenance_basis='CONTROLLER_CAPTURED_NATIVE_AUTHOR_NOT_INDEPENDENT_REVIEW')
+
+
+def bind_canonical_withdrawal(root,bindings):
+    try:
+        import canonical_q0012_withdrawal as withdrawal
+    except ImportError as error:
+        raise ValueError('After190 final gate requires the merged strict Q0012/linked-guide withdrawal decoder')from error
+    withdrawal.validate(root)
+    committed(root,withdrawal.MANIFEST,bindings)
+    for path in (*withdrawal.PATHS,withdrawal.PREVIEW):committed(root,path,bindings)
+    return dict(manifest_path=withdrawal.MANIFEST,manifest_raw_sha256=bindings[withdrawal.MANIFEST],
+        current_protected_path_sha256s={p:bindings[p]for p in withdrawal.PATHS},
+        verification='EXACT_WITHDRAWAL_CAUSE_PACKAGE_AND_METADATA_ONLY_DECODE',canonical_release_credit=0)
+
+
+def bind_legacy_checkpoint(root,current,legacy_state,bindings):
+    """Validate one exact actual source receipt; this helper creates no audit.
+
+    make_manifest separately requires the complete approved scope to be IG.
+    """
+    require(current['status']=='INTEGRATED','Legacy source receipt is not actually integrated')
+    question_queue.validate_result(current,current['result'])
+    entry = dict(job_id=current['job_id'], sequence=current['sequence'], status=current['status'],
+                 new_question_audit_credit=0, new_canonical_release_credit=0)
+    if current['status'] == 'INTEGRATED':
+        submitted = current['result']; actor = submitted.get('actor_provenance', {})
+        require(actor.get('actor_id') == current.get('worker') and actor.get('session_id') and
+                submitted.get('auditor_instance') and any(
+                    e.get('kind') == 'CLAIM' and e.get('job_id') == current['job_id'] and
+                    e.get('worker') == current['worker'] and e.get('attempt') == current['attempt']
+                    for e in legacy_state['events']),
+                'After190 legacy source lacks controller-captured claim provenance')
+        evidence = {(r['evidence_path'], r['evidence_sha256']) for r in current['result']['results']}
+        require(len(evidence) == 1, 'After190 requires one source-bound report per legacy job')
+        path, expected = next(iter(evidence))
+        report = json.loads(committed(root, path, bindings))
+        require(len(report.get('records',[]))==len(current['question_hashes'])and
+                {r.get('question_id')for r in report['records']}==set(current['question_hashes']),
+                'Legacy report row scope changed')
+        for row in submitted['results']:question_queue.validate_independent_evidence(current,row,report)
+        require(sha(safe_bytes(root, path)) == expected and report['actor_provenance'] == actor and
+                report.get('stage') == 'independent-legacy' and report.get('canonical_audit') is False and
+                type(report.get('canonical_release_credit')) is int and report['canonical_release_credit'] == 0,
+                'After190 legacy source identity/credit/raw binding changed')
+        validate_phase7_report(current, report, legacy_state['events'])
+        from build_full_corpus_review import validate_independent_source_bytes
+        for authority in report.get('sources', []):
+            validate_independent_source_bytes(authority, root)
+        private_payloads = {(a.get('raw_path'),a.get('raw_sha256')) for a in report.get('sources', [])
+                            if a.get('public_raw_redistribution') is False and
+                            'memo' in a.get('public_evidence_mode','').lower()}
+        for source_path, source_sha in set(retained_evidence_bindings(report)):
+            # A declared private copyrighted raw payload was already handled
+            # by the existing validator; only retained repository bytes bind.
+            if PurePosixPath(source_path).is_absolute():
+                require((source_path,source_sha) in private_payloads,
+                        'After190 unexpected unretained absolute evidence path')
+                continue
+            require(sha(committed(root, source_path, bindings)) == source_sha,
+                    'After190 legacy retained source payload changed: ' + source_path)
+        sequence=current['sequence']
+        expected_path=(WAVE9_REPORTS[sequence]if sequence in WAVE9 else
+                       LEGACY_REPORTS.get(sequence)or NATIVE_LEGACY_REPORT)
+        require(expected_path and path==expected_path,'After190 exact integrated report not yet pinned or changed')
+        result_path=(WAVE9_RESULTS[sequence]if sequence in WAVE9 else
+                     NATIVE_LEGACY_RESULT if sequence==29 else path[:-len('-review.json')]+'-result.json')
+        require(result_path,'After190 exact integrated envelope not yet pinned')
+        result_raw = committed(root, result_path, bindings)
+        require(json.loads(result_raw) == submitted and any(
+                    e.get('kind') == 'SUBMIT' and e.get('job_id') == current['job_id'] and
+                    e.get('result_sha256') == notes_queue.digest(submitted)
+                    for e in legacy_state['events']),
+                'After190 legacy envelope/submission binding changed')
+        entry.update(actor_provenance=actor, auditor_instance=submitted['auditor_instance'],
+                     evidence_path=path, evidence_sha256=expected,
+                     result_path=result_path, result_raw_sha256=sha(result_raw),
+                     provenance_basis='CONTROLLER_CAPTURED_CLAIM_NOT_IDENTITY_PROOF')
+    return entry
+
+
 def make_manifest(root=ROOT):
     """Derive an exact proposal from current attested sources; never refresh old guards.
 
-    Later E3/phase7 source changes require rerunning this explicit preparation and
+    Actual source changes require rerunning this explicit preparation and
     review, not a permissive wildcard. Semantic edits require another pathway.
     """
-    root = Path(root); bindings = {}
+    root = Path(root); bindings = {}; source_head=notes_queue.git(root,'rev-parse','HEAD')
     require(sha(safe_bytes(root, PARENT)) == PARENT_SHA,
             'Published PR190 fourteenth manifest changed; do not rebind a modified parent')
     baseline_md = safe_bytes(root, BASE_MD); baseline_build_raw = safe_bytes(root, BASE_BUILD)
@@ -208,12 +499,10 @@ def make_manifest(root=ROOT):
             notes['revision_provenance'] == baseline['revision_provenance'],
             'After190 annotation cannot authorize semantic/edition/provenance changes')
     state = json.loads(committed(root, notes_queue.STATE, bindings)); notes_queue.validate_state(state)
-    require(len(state['jobs']) == 25 and
-            {j['sequence']: (j['job_id'],j['unit_ids']) for j in state['jobs'] if j['sequence'] >= 24} == NOTE_FOLLOWUPS,
-            'After190 note job scope expanded; explicit new guard review required')
+    body_job=validate_note_scope(state)
     job = next(j for j in state['jobs'] if j['job_id'] == NOTE_DELTA_JOB)
     validate_delta_job(job)
-    ledger = safe_bytes(root, notes_queue.LEDGER)
+    ledger = committed(root, notes_queue.LEDGER,bindings)
     rows = [json.loads(line) for line in ledger.decode().splitlines()]
     selected = {r['unit_id']: r for r in rows}
     require(selected[NOTE_DELTA_UNIT]['atomic_census_source'] == V4_CENSUS,
@@ -245,6 +534,18 @@ def make_manifest(root=ROOT):
         require(path.startswith('reports/full-corpus-review/independent-notes/reassessment-e3-') and
                 sha(committed(root, path, bindings)) == artifact['raw_sha256'],
                 'After190 E3 original artifact raw payload changed')
+    body_checkpoint=bind_inactive_body(root,state,body_job,independent,bindings)
+    # Bind every original/integrated note source, including retained authorities.
+    from notes_independent_metadata import evidence_bindings
+    for note_job in state['jobs']:
+        if note_job['status']!='INTEGRATED':continue
+        result=note_job['result']
+        for path,expected in [(result['evidence']['path'],result['evidence']['raw_sha256']),
+                              (result['result_path'],note_job['result_sha256'])]:
+            require(sha(committed(root,path,bindings))==expected,'Integrated note report/envelope changed')
+        report=json.loads(safe_bytes(root,result['evidence']['path']))
+        for path,expected in set(notes_queue.validate_evidence(note_job,result,report))|set(evidence_bindings(report)):
+            require(sha(committed(root,path,bindings))==expected,'Integrated note retained source changed')
     followups = []
     for followup in state['jobs']:
         if followup['sequence'] not in NOTE_FOLLOWUPS:
@@ -267,69 +568,14 @@ def make_manifest(root=ROOT):
     require(independent['progress']['question_audit_credit'] == independent['progress']['canonical_release_credit'] == 0 and
             independent['progress']['coverage_is_legal_pass'] is False,
             'After190 review processing is not legal/release credit')
-    # Only the already allocated four phase7 jobs may extend this checkpoint.
-    # Pending jobs grant no new evidence; integrated reports must be current,
-    # controller-attested independent-legacy records with preserved envelopes.
+    # All33 exact allocated jobs must have actual committed source receipts.
     legacy_state = json.loads(committed(root, LEGACY_STATE, bindings))
     validate_legacy_scope(legacy_state)
     integrated_sources(root)
-    phase7 = []
-    for current in legacy_state['jobs']:
-        if current['sequence'] not in PHASE7:
-            continue
-        entry = dict(job_id=current['job_id'], sequence=current['sequence'], status=current['status'],
-                     new_question_audit_credit=0, new_canonical_release_credit=0)
-        if current['status'] == 'INTEGRATED':
-            submitted = current['result']; actor = submitted.get('actor_provenance', {})
-            require(actor.get('actor_id') == current.get('worker') and actor.get('session_id') and
-                    submitted.get('auditor_instance') and any(
-                        e.get('kind') == 'CLAIM' and e.get('job_id') == current['job_id'] and
-                        e.get('worker') == current['worker'] and e.get('attempt') == current['attempt']
-                        for e in legacy_state['events']),
-                    'After190 phase7 lacks controller-captured claim provenance')
-            evidence = {(r['evidence_path'], r['evidence_sha256']) for r in current['result']['results']}
-            require(len(evidence) == 1, 'After190 phase7 requires one source-bound report per job')
-            path, expected = next(iter(evidence))
-            report = json.loads(committed(root, path, bindings))
-            require(sha(safe_bytes(root, path)) == expected and report['actor_provenance'] == actor and
-                    report.get('stage') == 'independent-legacy' and report.get('canonical_audit') is False and
-                    type(report.get('canonical_release_credit')) is int and report['canonical_release_credit'] == 0,
-                    'After190 phase7 source identity/credit/raw binding changed')
-            validate_phase7_report(current, report, legacy_state['events'])
-            from build_full_corpus_review import validate_independent_source_bytes
-            for authority in report.get('sources', []):
-                validate_independent_source_bytes(authority, root)
-            private_payloads = {(a.get('raw_path'),a.get('raw_sha256')) for a in report.get('sources', [])
-                                if a.get('public_raw_redistribution') is False and
-                                'memo' in a.get('public_evidence_mode','').lower()}
-            for source_path, source_sha in set(retained_evidence_bindings(report)):
-                # A declared private copyrighted raw payload was already handled
-                # by the existing validator; only retained repository bytes bind.
-                if PurePosixPath(source_path).is_absolute():
-                    require((source_path,source_sha) in private_payloads,
-                            'After190 unexpected unretained absolute evidence path')
-                    continue
-                require(sha(committed(root, source_path, bindings)) == source_sha,
-                        'After190 phase7 retained source payload changed: ' + source_path)
-            require(path.startswith('reports/full-corpus-review/independent-phase7-') and
-                    path.endswith('-review.json'), 'After190 phase7 report path expanded')
-            result_path = path[:-len('-review.json')] + '-result.json'
-            result_raw = committed(root, result_path, bindings)
-            require(json.loads(result_raw) == submitted and any(
-                        e.get('kind') == 'SUBMIT' and e.get('job_id') == current['job_id'] and
-                        e.get('result_sha256') == notes_queue.digest(submitted)
-                        for e in legacy_state['events']),
-                    'After190 phase7 envelope/submission binding changed')
-            entry.update(actor_provenance=actor, auditor_instance=submitted['auditor_instance'],
-                         evidence_path=path, evidence_sha256=expected,
-                         result_path=result_path, result_raw_sha256=sha(result_raw),
-                         provenance_basis='CONTROLLER_CAPTURED_CLAIM_NOT_IDENTITY_PROOF')
-        phase7.append(entry)
-    pending_legacy = [dict(job_id=j['job_id'], sequence=j['sequence'], status=j['status'],
-                           question_hashes=j['question_hashes'],
-                           evidence_credit=0, question_audit_credit=0, canonical_release_credit=0,
-                           integration_scope='NOT_GRANTED_REQUIRES_NEW_BOUNDED_GUARD_REVIEW')
-                      for j in legacy_state['jobs'] if j['sequence'] in PENDING_LEGACY]
+    phase7=[bind_legacy_checkpoint(root,current,legacy_state,bindings)
+            for current in legacy_state['jobs']if current['sequence']>=21]
+    native_author_checkpoint=bind_native_author(root,bindings)
+    canonical_withdrawal_checkpoint=bind_canonical_withdrawal(root,bindings)
     from build_ultimate_notes import make_outputs
     outputs = make_outputs(root=root)
     expected_md = outputs[root / EXPORT].encode(); expected_build = outputs[root / BUILD].encode()
@@ -343,8 +589,10 @@ def make_manifest(root=ROOT):
             built['independent_note_review_progress'] == independent['progress'],
             'After190 generated annotation metadata differs from current source derivation')
     census_claim_count = sum(len(r['atomic_claim_ids']) for r in rows)
-    require(len(rows) == len(selected) == 306 and census_claim_count == 6985,
-            'After190 author census scope changed beyond the actual v4 addition')
+    require(len(rows) == len(selected) == 306 and census_claim_count == CENSUS_COUNT,
+            'After190 author census scope changed beyond the exact v4/F3v2 selection')
+    require(notes_queue.git(root,'rev-parse','HEAD')==source_head,
+            'After190 source HEAD advanced during preparation; freeze the checkpoint and rerun')
     return dict(schema_version='notes-protected-after190-annotation-migration/1',
         purpose='FIFTEENTH_ANNOTATION_LAYER_NOT_SEMANTIC_OR_AUDIT_APPROVAL',
         publication_base_status='MERGED_PR190_TREE_MATCHED_PUBLIC_ORIGIN_NOT_ATTESTED_BY_THIS_GUARD',
@@ -367,7 +615,13 @@ def make_manifest(root=ROOT):
                         report=job['result']['evidence'], result_path=job['result']['result_path'],
                         result_raw_sha256=job['result_sha256'], binding=job['unit_bindings'][NOTE_DELTA_UNIT]),
         followup_note_checkpoint=followups, e3_original_artifact_count=42,
-        phase7_checkpoint=phase7, pending_legacy_checkpoint=pending_legacy,
+        phase7_checkpoint=[e for e in phase7 if e['sequence'] in PHASE7],
+        wave8_checkpoint=[e for e in phase7 if e['sequence'] in WAVE8],
+        native_legacy_checkpoint=[e for e in phase7 if e['sequence']==29],
+        wave9_checkpoint=[e for e in phase7 if e['sequence'] in WAVE9],
+        inactive_body_checkpoint=body_checkpoint,native_author_checkpoint=native_author_checkpoint,
+        canonical_withdrawal_checkpoint=canonical_withdrawal_checkpoint,
+        scope_definition_commit=SCOPE_DEFINITION_COMMIT,
         source_bindings=dict(sorted(bindings.items())),
         canonical_audit=False, canonical_release_credit=0, question_audit_credit=0,
         new_author_review_credit=0, new_independent_legal_audit_credit=0)

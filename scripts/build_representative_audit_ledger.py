@@ -115,6 +115,24 @@ def build_ledger():
     from build_representative_rewrites import validate_nonlegacy_selection
     safety_holds = validate_nonlegacy_selection(selection, baseline, {**original, **fresh}, ROOT)
     safety_held_ids = {h['question_id'] for h in safety_holds}
+    archive_candidates = {qid for qid, q in fresh.items() if q.get('archive_only_candidate')}
+    if archive_candidates:
+        from build_sata_remediation_candidates import validate_preservation, authoring_payload
+        allocation = validate_preservation(bank, ROOT)
+        allocated = {r['question_id']: r['original_question_id'] for r in allocation['allocations']}
+        require(archive_candidates == set(allocated), 'Unallocated archive-only candidate')
+        require({r['replacement_question_id']: r['legacy_question_id']
+                 for r in selection['archive_only_replacements']} == allocated,
+                'Archive-only candidate original mapping changed')
+        authored = authoring_payload(ROOT)  # validates retained G/E artifacts and every primary payload
+        for q in authored['questions']:
+            stored = fresh[q['question_id']]
+            require(stored['remediation_candidate'] == q['remediation_candidate'] and
+                    stored['publication_status'] == 'PUBLISHED_PRACTICE',
+                    'Archive candidate cannot inherit release or audit credit')
+        for sid, source in authored['sources'].items():
+            expected_source = dict(source, id=sid, url=source['official_url'], source_class='PUBLIC_OFFICIAL')
+            require(bank['sources'].get(sid) == expected_source, 'Archive candidate source proof changed: ' + sid)
 
     replacements = {}
     for record in selection['replacements']:
@@ -212,7 +230,9 @@ def build_ledger():
     counts = {status: sum(row['implementation_status'] == status for row in questions)
               for status in IMPLEMENTATION_STATUSES}
     expected = selection['stats']
-    require(counts['REWRITTEN_NEW_ID'] == expected['newly_authored_replacements'], 'Rewrite count mismatch.')
+    # Archive-only candidates add authored questions without replacing a held original.
+    require(len(fresh) == expected['newly_authored_replacements'], 'Authored replacement question count mismatch.')
+    require(counts['REWRITTEN_NEW_ID'] == len(fresh) - len(archive_candidates), 'Rewrite count mismatch.')
     require(counts['REUSED_EXISTING_QUALITY'] == expected['replaced_by_existing_quality'], 'Reuse count mismatch.')
     require(counts['HOLD_FROM_DEFAULT'] == expected['held_from_default'], 'Hold count mismatch.')
     require(counts['NOT_YET_IMPLEMENTED'] == expected['legacy_representatives_remaining'], 'Remaining count mismatch.')

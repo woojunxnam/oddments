@@ -25,6 +25,7 @@ def attach(data, revision_selection=None):
   raw_by_id={q['question_id']:q for bank in raw_banks for q in bank['questions']}
   safety_holds=validate_nonlegacy_selection(revised,selection,raw_by_id,ROOT)
   data['representative_revision']={k:revised[k] for k in ['edition','replacements','holds','stats','new_ids','history_policy']}
+  data['representative_revision']['archive_only_replacements']=revised.get('archive_only_replacements',[])
   data['representative_revision']['safety_holds']=safety_holds
   data['representative_revision']['previous_quality_ids']=revised['previous_quality_ids']
   notices=revised.get('archive_review_notices',[])

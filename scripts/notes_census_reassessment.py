@@ -19,12 +19,17 @@ def validate_chain(state):
     queue.require(isinstance(records,list) and len({r['record']['reassessment_id'] for r in records}) == len(records),
                   'Duplicate census reassessment')
     by_id = {r['record']['reassessment_id']:r for r in records}
-    latest = {}; used = set()
+    latest = {}; used = set(); used_bodies=set()
     for job in state['jobs']:
+        queue.require(job.get('purpose')!='BODY_CORRECTION_REASSESSMENT'or job.get('body_reassessment_id'),
+                      'Body purpose requires an explicit body correction record')
         queue.require(len(job['unit_ids']) == len(set(job['unit_ids'])) and
                       set(job['unit_ids']) == set(job['unit_bindings']), 'Invalid note job unit scope')
         rid = job.get('reassessment_id')
-        if rid is not None:
+        if job.get('body_reassessment_id'):
+            from notes_body_reassessment import chain_link
+            chain_link(state,job,latest,used_bodies)
+        elif rid is not None:
             queue.require(rid in by_id and rid not in used and len(job['unit_ids']) == 1,
                           'Unknown/duplicate reassessment assignment')
             entry = by_id[rid]; record = entry['record']; uid = record['unit_id']
@@ -43,6 +48,13 @@ def validate_chain(state):
                   [j['reassessment_id'] for j in state['jobs'] if j.get('reassessment_id')] ==
                   [r['record']['reassessment_id'] for r in records],
                   'Reassessment has no unique append-ordered assignment')
+    body_records=state.get('body_reassessments',[])
+    queue.require(isinstance(body_records,list) and
+                  len(body_records)==len({e['record']['body_reassessment_id']for e in body_records}) and
+                  used_bodies=={e['record']['body_reassessment_id']for e in body_records} and
+                  [j['body_reassessment_id']for j in state['jobs']if j.get('body_reassessment_id')]==
+                  [e['record']['body_reassessment_id']for e in body_records],
+                  'Body correction has no unique append-ordered assignment')
     # A multi-unit job appears repeatedly in latest.values(); deduplicate jobs first.
     owners = {j['job_id']:j for j in latest.values()}
     claims = [cid for j in owners.values() for uid,b in j['unit_bindings'].items()
@@ -172,7 +184,11 @@ def validate_registered(state,root,notes,read=None):
     for entry in state.get('reassessments',[]):
         record = json.loads(read(entry['record_path'],entry['raw_sha256']))
         queue.require(record == entry['record'], 'Captured reassessment differs from immutable record')
-        binding,carried = validate_record(state,record,root,notes,read)
+        context=notes
+        if state.get('body_reassessments'):
+            from notes_body_reassessment import historical_notes
+            context=historical_notes(state,record['unit_id'],record['body_sha256'],notes,read)
+        binding,carried = validate_record(state,record,root,context,read)
         job = next(j for j in state['jobs'] if j.get('reassessment_id') == record['reassessment_id'])
         previous = next(j for j in state['jobs'] if j['job_id'] == record['previous_job_id'])
         original_authors = set(previous.get('known_author_ids',[])) | set(record['previous_binding']['known_author_ids'])
