@@ -9,14 +9,53 @@
         "MA-EXP-0338": "454e0c4b3e85b32863904bbf64c7ce7a972b98988d276d33a25adf75b14dc7f3",
         "MA-EXP-0339": "e03f664bd50a9cb61d8c2419561b3259d32da1d0aa8183db6571fb99956a0881"
       },
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 1,
       "worker_branch": "mission/review-independent-legacy-phase11-procedural-06af888b7a3f4a37-attempt-1",
       "created_at": "2026-11-04T12:50:41.723630+00:00",
       "stage": "independent-legacy",
       "worker": "/root/fresh_two_keys",
       "lease_until": "2026-11-04T16:50:41.723661+00:00",
-      "lease_token": "628cfe7cb8f9dfebeb0731dc03e35839eab2debef2abee10f974a89c42cc7366"
+      "lease_token": "628cfe7cb8f9dfebeb0731dc03e35839eab2debef2abee10f974a89c42cc7366",
+      "result": {
+        "stage": "independent-legacy",
+        "independent_of_authors": true,
+        "auditor": "GPT",
+        "auditor_instance": "/root/fresh_two_keys",
+        "actor_provenance": {
+          "actor_id": "/root/fresh_two_keys",
+          "session_id": "/root/fresh_two_keys",
+          "actual_new_review_session": true,
+          "source_question_author": false,
+          "worktree": "/workspace/mpje-fresh-two-keys",
+          "branch": "mission/review-independent-legacy-phase11-procedural-06af888b7a3f4a37-attempt-1",
+          "base_commit": "763d39fdbb30aae975d5bebff791c22d13730688",
+          "claims": "실제 위 canonical sub-agent 세션 하나. 다른 report 파일을 별도 독립 instance로 세지 않음.",
+          "initial_branch": "audit/fresh-two-keys-20261104"
+        },
+        "question_hashes": {
+          "MA-EXP-0338": "454e0c4b3e85b32863904bbf64c7ce7a972b98988d276d33a25adf75b14dc7f3",
+          "MA-EXP-0339": "e03f664bd50a9cb61d8c2419561b3259d32da1d0aa8183db6571fb99956a0881"
+        },
+        "worker_commit": "9790ab1f82e50b11b394c72920eea410aba4fa4f",
+        "job_id": "review-independent-legacy-phase11-procedural-06af888b7a3f4a37",
+        "canonical_release_credit": 0,
+        "results": [
+          {
+            "question_id": "MA-EXP-0338",
+            "disposition": "NEEDS_REMEDIATION",
+            "evidence_path": "reports/full-corpus-review/fresh-two-keys-20261104/report.json",
+            "evidence_sha256": "a45aa9e2f1049300487f3c743519c84ba2d83a0c658afe805ac5081a71c56195"
+          },
+          {
+            "question_id": "MA-EXP-0339",
+            "disposition": "NEEDS_REMEDIATION",
+            "evidence_path": "reports/full-corpus-review/fresh-two-keys-20261104/report.json",
+            "evidence_sha256": "a45aa9e2f1049300487f3c743519c84ba2d83a0c658afe805ac5081a71c56195"
+          }
+        ]
+      },
+      "submitted_at": "2026-11-04T12:56:48.025625+00:00"
     }
   ],
   "events": [
@@ -33,6 +72,12 @@
       "job_id": "review-independent-legacy-phase11-procedural-06af888b7a3f4a37",
       "worker": "/root/fresh_two_keys",
       "attempt": 1
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T12:56:48.025625+00:00",
+      "job_id": "review-independent-legacy-phase11-procedural-06af888b7a3f4a37",
+      "result_sha256": "573b5b97f67b0b46fad22b4c4674ef3a1027d46fe01d8e496f0ee3784f8b83f0"
     }
   ]
 }
