@@ -3529,7 +3529,7 @@
       "unit_ids": [
         "w1-a-2"
       ],
-      "status": "LEASED",
+      "status": "SUBMITTED",
       "attempt": 1,
       "base_commit": "770fe850032df4a80350f9defad4be41eba8da5c",
       "inventory_ledger_sha256": "28a474546177cbe6df18957d1c534136275b5832649ca55ea107baa651a1275f",
@@ -3595,7 +3595,42 @@
       "controller_independence_basis": "Actual existing C session did not author seven corrected census files or the assigned original body/source; wrapper engineering changed no legal content. Root checked original and correction author IDs. Same actual instance, no renaming or new identity claim.",
       "lease_until": "2026-11-04T03:21:59.329199+00:00",
       "worker_branch": "mission/review-independent-notes-reassessment-ddae74576efe413c-attempt-1",
-      "lease_token": "0df796d634874a640393aa123f0ac09d580d6b4aa191db74bb318cffaca4cbd8"
+      "lease_token": "0df796d634874a640393aa123f0ac09d580d6b4aa191db74bb318cffaca4cbd8",
+      "result": {
+        "stage": "independent-notes",
+        "independent_of_authors": true,
+        "actor_provenance": {
+          "actor_id": "/root/independent_case_c",
+          "session_id": "/root/independent_case_c"
+        },
+        "auditor": "GPT",
+        "auditor_instance": "GPT:/root/independent_case_c:independent-legacy-20261103",
+        "canonical_audit": false,
+        "canonical_release_credit": 0,
+        "question_audit_credit": 0,
+        "job_id": "review-independent-notes-reassessment-ddae74576efe413c",
+        "reassessment_id": "census-only-omission-v2-w1-a-2",
+        "worker_commit": "a645fef0505fb913af01c42971f7652e9d36d229",
+        "unit_hashes": {
+          "w1-a-2": "c8e8d1cc10c237875dd609fe393b45c10adb820f1fcd96975a07411663524fb5"
+        },
+        "evidence": {
+          "path": "reports/full-corpus-review/independent-notes/reassessment-c1-review.json",
+          "raw_sha256": "8d02bcaa058a9e98cc1c865c3a258e8266f95f80a1ca2da13fcaa679d5a88cac"
+        },
+        "result_path": "reports/full-corpus-review/independent-notes/review-independent-notes-reassessment-ddae74576efe413c-result.json",
+        "results": [
+          {
+            "unit_id": "w1-a-2",
+            "completeness": "COMPLETE",
+            "legal_status": "LEGAL_HOLD"
+          }
+        ],
+        "reviewed_at": "2026-11-04",
+        "completed_at": "2026-11-04T00:39:09.899043+00:00"
+      },
+      "result_sha256": "cd0419b43cf459a71fde5d3829f67c0be77f95fa62047e171e923f9467c2125f",
+      "submitted_at": "2026-11-04T00:44:10.013093+00:00"
     },
     {
       "job_id": "review-independent-notes-reassessment-02ddf0fd83ad336b",
@@ -4760,6 +4795,13 @@
         "session_id": "/root/independent_case_e"
       },
       "attempt": 1
+    },
+    {
+      "kind": "SUBMIT",
+      "at": "2026-11-04T00:44:10.013093+00:00",
+      "job_id": "review-independent-notes-reassessment-ddae74576efe413c",
+      "result_sha256": "cd0419b43cf459a71fde5d3829f67c0be77f95fa62047e171e923f9467c2125f",
+      "worker_commit": "a645fef0505fb913af01c42971f7652e9d36d229"
     }
   ],
   "reassessments": [
