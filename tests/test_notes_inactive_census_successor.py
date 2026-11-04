@@ -24,6 +24,12 @@ def test_actual_source_preview_has_no_registration_activation_or_current_credit(
     root=Path(__file__).resolve().parents[1]
     before={p:q.raw_sha((root/p).read_bytes())for p in [q.STATE,q.LEDGER,'site/notes/complete-notes.md',
         'revisions/notes/protected-migration-after190.json','revisions/notes/protected-migration-independent-notes-wave3.json']}
+    from notes_revision import load_notes
+    actual=q.inventory(root,load_notes(root))['units']['w3-a-3']['body_sha256']
+    if actual==successor.SCOPE['body_sha256']:
+        with pytest.raises(ValueError,match='real M'):successor.preview(root)
+        assert all(q.raw_sha((root/p).read_bytes())==v for p,v in before.items())
+        return
     value=successor.preview(root)
     assert not value['registration_record_created']and not value['current_review_valid']
     assert value['old_claim_count']==24 and value['new_claim_count']==25 and value['original_sources_preserved']==42

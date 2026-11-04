@@ -189,7 +189,8 @@ def load_notes(root=ROOT, revision_id=None):
             return data
     if revision_id is not None:
         raise ValueError('Unknown requested notes revision')
-    return data
+    from notes_held_sixteenth import apply_if_bound
+    return apply_if_bound(root,data)
 
 
 def apply_study_revision(data, kind, root=ROOT):

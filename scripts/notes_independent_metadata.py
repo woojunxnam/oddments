@@ -39,7 +39,7 @@ def evidence_bindings(value):
         for child in value: yield from evidence_bindings(child)
 
 
-def load_metadata(root, notes=None, ledger_raw=None):
+def load_metadata(root, notes=None, ledger_raw=None, source_bindings=None):
     """Return current integrated reviews and pending safety markers without mutation."""
     inv = queue.inventory(root,notes,ledger_raw=ledger_raw)
     result = {'units':{},'progress':{
@@ -191,6 +191,8 @@ def load_metadata(root, notes=None, ledger_raw=None):
              claim_keep_count=sum(r['claim_counts']['KEEP'] for r in rows),
              claim_legal_hold_count=sum(r['claim_counts']['LEGAL_HOLD'] for r in rows),
              claim_source_blocked_count=sum(r['claim_counts']['SOURCE_BLOCKED'] for r in rows))
+    if source_bindings is not None:
+        source_bindings.update({relative:queue.raw_sha(raw)for relative,raw in cache.items()})
     return result
 
 

@@ -166,6 +166,9 @@ def make_baseline(main_tree, root=ROOT):
 
 
 def migrated_baseline_bytes(root, relative, current):
+    if relative=='site/notes/complete-notes.md'and (root/'revisions/notes/protected-migration-held-n1.json').exists():
+        from notes_held_sixteenth import decode
+        return decode(root,relative,current)
     if relative in ('data/questions/ma-q-0012.json','data/exam_style/question_family_matrix.json',
                     'data/study_guide/sections/sg-cii-lifecycle.json'):
         from canonical_q0012_withdrawal import decode
