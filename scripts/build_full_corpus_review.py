@@ -679,10 +679,18 @@ def build():
     procedural_secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,secondary_collections)
     phase11_secondary = load_phase11_secondary(ROOT,independent_records,public_by_id,secondary_collections)
     context38_secondary = load_context38_secondary(ROOT,independent_records,public_by_id,secondary_collections)
-    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary)
+    from realism_completion_metadata import load_metadata as load_realism_completion, apply_metadata as apply_realism_completion
+    realism_completion_bindings = {}
+    realism_completion = load_realism_completion(ROOT,independent_records,public_by_id,source_bindings=realism_completion_bindings)
+    realism_completion_legal = {'assessments':realism_completion['legal_assessments'],'records':realism_completion['legal_records']}
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal)
+    realism_completion_progress = apply_realism_completion(result,independent_records,realism_completion,secondary['effective_realism_pass'])
     validate_context_default_safety(selection['recommended_ids'],context38_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     validate_independent_archive_safety(selection, independent_records+secondary['records'])
+    from realism_completion_metadata import validate_archive_containment as validate_realism_completion_containment
+    if realism_completion_bindings:
+        validate_realism_completion_containment(selection,realism_completion)
     independent_by_id = {r['question_id']: r for r in independent_records}
     for row in result:
         supplementary = secondary['assessments'].get(row['question_id'])
@@ -825,7 +833,7 @@ def build():
                     independent_legacy_legal_assessed=secondary['progress']['effective_key_assessed'],
                     independent_legacy_originals_read=secondary['progress']['unique_originals_read'],
                     independent_legacy_keys_unassessed=secondary['progress']['effective_keys_unassessed'],
-                    independent_legacy_realism_pass=secondary['effective_realism_pass'],
+                    independent_legacy_realism_pass=realism_completion_progress['effective_realism_pass'],
                     independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
                     notes_units_with_partial_claim_review=len(reviewed_units),
@@ -850,6 +858,9 @@ def build():
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
     progress['note_link_question_discrepancy_holds'] = note_links['summary']
+    if realism_completion_bindings:
+        progress['independent_legacy_realism_completion_supplementary_review'] = {**realism_completion_progress,'source_bindings':realism_completion_bindings}
+        progress['independent_legacy_raw_primary_realism_pass'] = realism_completion_progress['raw_primary_realism_pass']
     if procedural_secondary['assessments']:
         progress['independent_legacy_procedural_supplementary_review'] = procedural_secondary['progress']
     if phase11_secondary['assessments']:

@@ -392,6 +392,7 @@ def validate_publication_default_safety(root,closure,selection,validated):
         if relative in closure['full_source_files']:
             report=json.loads(committed(root,relative,closure['full_source_files'][relative]['raw_sha256']))
             records.extend(report['records'])
+    primary_records=list(records);style_inputs=[]
     reports={}
     for qid,binding in validated['supplementary_sources'].items():
         relative=binding['source_path']
@@ -399,7 +400,12 @@ def validate_publication_default_safety(root,closure,selection,validated):
             reports[relative]=json.loads(committed(root,relative,binding['source_sha256']))
         rows=[r for r in reports[relative]['records']if r['question_id']==qid]
         require(len(rows)==1,'Validated supplementary default input lost its exact row')
-        records.extend(rows)
+        if 'legal_review'in rows[0]:records.extend(rows)
+        else:style_inputs.append((qid,binding,rows[0]))
+    from realism_completion_review import STATE as COMPLETION_STATE, SCOPE as COMPLETION_SCOPE
+    if style_inputs or path(root,COMPLETION_STATE).exists()or path(root,COMPLETION_SCOPE).exists():
+        from realism_completion_metadata import validate_publication_style_inputs
+        validate_publication_style_inputs(root,selection,primary_records,style_inputs)
     from build_full_corpus_review import validate_default_review_safety,validate_independent_archive_safety
     validate_default_review_safety(selection['recommended_ids'],{},records)
     validate_independent_archive_safety(selection,records)

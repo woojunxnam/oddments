@@ -1,0 +1,12 @@
+# 공개15 typed dispatch·당일 캐시·고정4 정답 일관성 보완
+
+이 증거는 초기 후보78d34b82의 후속 수정입니다. 초기 후보의 notes_published15_closure 바이트/AST 동일 주장은 이 후속 후보에 적용하지 않습니다. 실제 코드 검토에서 다음 경로 문제를 확인해 수정했습니다.
+
+- P1: source binding에 들어온 legal-free 현실성 row를 기존 법규 필수 safety guard가 읽으면 legal_review KeyError가 발생했습니다. 공개15 default safety 함수만 명시적 typed dispatch를 추가했습니다. 실제 법규 row는 기존 guard로 전달하고, REALISM_COMPLETION 전용 row는 정확 native report/source/current hash 재검증, 전146 default 제외, 실제 negative source warning 검사를 거칩니다. dummy 법규 판정은 만들지 않습니다.
+- P1: 공개15 archive caller는 native primary만 전달했지만146 중에는 원 static wave2 row도 있습니다. 신규 consumer만 정확한 원 static3와 native 입력을 committed bytes로 병합하고 모든 overlap의 row 동등성을 검사합니다. Static3 raw SHA도 scope에 고정합니다. PENDING부터 누락·변조는 fail closed이며 KeyError로 처리하지 않습니다. 기존 세 fixed consumer의 인수/범위는 그대로입니다.
+- 당일 캐시: LIVE GET은 기존처럼 claim 이후 실제 조회여야 합니다. SAME_DAY_RETAINED_CACHE는 승인된 원 metadata를 worker의 format-origin-meta.json에 원 바이트 그대로 복사해야 합니다. 승인 원본은 final26-evidence/sources/nabpformat.meta.json, SHA636934be58e2fd6567b355d40a76d7748d51b005674aa7903da480ceb847a665, 실제 원 조회2026-11-04T18:19:26.088117+00:00입니다. 원 URL/status200/조회시각/raw/text SHA와 worker 새 metadata가 일치하며, actual claim 후 read_at/own memo reviewed_at부터 completed_at까지 chronology를 검증합니다. 원본에 없던 raw_path/text_path를 원 metadata에 추가하지 않습니다. 저작권 raw/text는 public 미보존이며 이 검증은 retained own memo와 exact 원 metadata를 검증합니다. 원 payload의 실제 private 실독은 reviewer가 수행합니다. Worker commit의 허용 파일은 origin metadata 한 파일만 정확히 늘립니다.
+- P2: 네 고정 법규 재감사 원문은 실제 모두 SBA이며 질문 lead는 positive입니다. YES/NO는 모든 option truth가 bool이고, 선언한 polarity가 실제 lead와 맞으며, polarity에 따른 true/false 집합이 complete expected key의 정확한 단일 보기와 일치해야 합니다. KEEP는 YES만 가능하고, AMBIGUOUS/NOT_ASSESSED는 명시적 HOLD/blocker를 요구합니다. 기존 key를 하드코딩하거나 바꾸지 않습니다.
+
+최종 집중59 PASS87.71초: actual native cached commit/submit/integrate, style-only PASS/FAIL와 공개15 default safety 혼합 경로, native-only/PENDING caller의 static inventory 보완, cache 변조/403/원시각/hash/사전 재독 거부, law4 null/false/극성/expected-set 모순 거부와 명시적 NO/AMBIGUOUS 처리를 포함합니다. 기존 공개15/native/source contracts114 PASS229.69초도 보존했습니다. 원본 기존 테스트와 assertion은 변경하지 않았습니다. 법규 기본 guard 및 기존 fixed2/38/native engine/네 정책은 그대로이며, 공개15의 이 typed dispatch 함수 변경만 이유와 함께 새 AST 증거로 기록합니다.
+
+새 scope 제안 SHA는05230f1a2f37443baf77dfc3d0ce336310a9d2d45bdf316525c8c8421345e8c4이며 대상146과 실제 reviewer identity는 같습니다. 이전 scope 제안은 비활성 역사 자료입니다. 실제 root plan/claim/audit/report/integration은 이 작업에서 실행하지 않았고 PASS/release credit0입니다. 전체 pytest/CI/배포 완료를 주장하지 않습니다.

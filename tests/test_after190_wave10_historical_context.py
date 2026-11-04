@@ -10,6 +10,8 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 import after190_historical_context as h
 import notes_after190_annotation as a
+from published15_test_view import published15_root
+ROOT=published15_root(ROOT)
 
 
 @pytest.fixture

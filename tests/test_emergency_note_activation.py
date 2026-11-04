@@ -20,7 +20,7 @@ from notes_emergency_activation import (
     official_url, validate_emergency_note_review, validate_review_contents,
 )
 from verify_representative_protected import migrated_baseline_bytes, verify
-from published15_test_view import published15_root
+from published15_test_view import published15_root, mutable_copytree
 ROOT = published15_root(ROOT)
 
 MIGRATION = 'revisions/notes/protected-migration-emergency-kit.json'
@@ -36,16 +36,16 @@ def sha(raw):
 
 @pytest.fixture
 def emergency_copy(tmp_path):
-    shutil.copytree(ROOT/'revisions', tmp_path/'revisions')
-    shutil.copytree(ROOT/'notes', tmp_path/'notes')
+    mutable_copytree(ROOT/'revisions', tmp_path/'revisions')
+    mutable_copytree(ROOT/'notes', tmp_path/'notes')
     safety='reports/full-corpus-review/canonical-q0012-withdrawal'
-    shutil.copytree(ROOT/safety,tmp_path/safety)
+    mutable_copytree(ROOT/safety,tmp_path/safety)
     for relative in ['reports/representative-rewrite/protected-baseline.json',
                      'site/generated/preview_allowlist.json']:
         dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(ROOT/relative,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
-    shutil.copytree(ROOT/evidence, tmp_path/evidence)
+    mutable_copytree(ROOT/evidence, tmp_path/evidence)
     paths = {'site/notes/build.json', 'site/notes/complete-notes.md',
              'reports/full-corpus-review/note-wave8-census.json',
              'reports/full-corpus-review/note-wave9-census.json'}

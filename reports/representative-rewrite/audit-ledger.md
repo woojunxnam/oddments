@@ -17,7 +17,7 @@
 
 이전 MA-REV 96개는 모두 보관하며, 기본 목록에는 65개를 포함하고 31개는 별도 안전 보류합니다. MA-RW 77개 중 기본 포함 70개·안전 보류 4개입니다. 전체 기본 목록은 202개입니다. 원본의 제자리 수정·삭제 및 새 canonical 독립 감사는 각각 0개입니다.
 
-대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1378개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
+대표 보류·관련 변형·후속 오류 또는 조건부 판단을 합쳐 원본 1398개에 검토 안내가 연결됩니다. 이 수는 대표 355개 중 보류 수와 별개이며 전체 목록·Chaos에서 원본 접근을 없애지 않습니다.
 
 ## 최초 편집 판정 보존
 
@@ -407,7 +407,7 @@
 |---|---|
 | reports/representative-rewrite/legacy-editorial-triage.json | `01a319750ea8e092a1a0b48ec3b91285ff3cfabf30b6e4111903580c662e3865` |
 | practice_expansion/2026-10-27-quality/selection.json | `3032ad16a4f3044e1cdba4119bafd1e1d142c88ad8aeebe378a5f0be8f1a0e64` |
-| practice_expansion/2026-10-28-representative/selection.json | `196f8cc5088fdf293e5b21b9e566f779ec35ab83100c7e201a4aaa63b2830a09` |
-| practice_expansion/2026-10-28-representative/questions.json | `835e3d3df2619549dbfe6947636531544142fee4499aeaf8565031c4ab3ec66b` |
+| practice_expansion/2026-10-28-representative/selection.json | `1764c90fd801cf1cd70368e0d49456256d57dbeac57ae8e8c7b5b765bafd7695` |
+| practice_expansion/2026-10-28-representative/questions.json | `eb94fa96864632d408d220a5ac2534c843016af60559551352f4096f2b70f405` |
 
 `python scripts/build_representative_audit_ledger.py --check`는 현재 입력과 JSON·Markdown 산출물의 바이트 일치를 확인합니다.
