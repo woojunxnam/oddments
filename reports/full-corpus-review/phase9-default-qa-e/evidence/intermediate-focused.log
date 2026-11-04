@@ -1,0 +1,57 @@
+..............................................F.F....................... [ 91%]
+.......                                                                  [100%]
+=================================== FAILURES ===================================
+__ test_attach_rechecks_evidence_and_raw_records_instead_of_delivery_metadata __
+
+evidence = {'baseline': {'decisions': [{'basis': 'Lexical repetition and wording-risk heuristics, one representative per existing...256': 'c2bf4f684da27033d9a34a9cb7447ccd58c2ff14740de6eadfc0dc2b8a590588', 'reason': '테스트 보류 이유 MA-RW-0001', ...}], ...}
+
+    def test_attach_rechecks_evidence_and_raw_records_instead_of_delivery_metadata(evidence):
+        e=evidence
+        _,result,s=derived_selection(e)
+        for relative in [*builder.ARCHIVES,'practice_expansion/2026-10-27-quality/selection.json',
+                         'practice_expansion/2026-10-28-representative/questions.json']:
+            target=e['root']/relative;target.parent.mkdir(parents=True,exist_ok=True);target.symlink_to(ROOT/relative)
+        selection_path='practice_expansion/2026-10-28-representative/selection.json'
+        sha=write(e['root']/selection_path,s)
+        original=build_payload()
+        with patch.object(practice_quality,'ROOT',e['root']):
+            data=practice_quality.attach(copy.deepcopy(original),dict(path=selection_path,sha256=sha))
+        assert data['questions']==original['questions']
+>       assert data['representative_revision']['safety_holds']==e['holds']
+E       AssertionError: assert [{'next_actio...d', ...}, ...] == [{'next_actio...W-0001', ...}]
+E         
+E         At index 0 diff: {'question_id': 'MA-REV-0075', 'question_record_sha256': '3cff5f0ce6a4b4d472530c06f4c1c1f890c7eb9bb768b0eaebb0d47e71a3cf88', 'review_source': 'reports/full-corpus-review/wave14-2-author-review.json', 'review_source_sha256': '7af503888c560388be40989d65cb305261665199f677fa879fd5cfea3c3eee17', 'reason': '법적키는맞지만core의inheritednote/새원문열람여부문장은학습자에게필요한설명대신내부검토provenance를노출한다. 새authorreview와기존원문history를구별하면서교육용core를정리하는MINOR_EDIT를제안한다. 독립legal/realism감사미실시. 이authorreview는기존currenthash감사/보류history를override하거나새release승인을만들지않는다.', 'next_action': '원문과 기존 정답·기록을 보존하...
+E         
+E         ...Full output truncated (3 lines hidden), use '-vv' to show
+
+tests/test_nonlegacy_safety_holds.py:197: AssertionError
+____ test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses _____
+
+evidence = {'baseline': {'decisions': [{'basis': 'Lexical repetition and wording-risk heuristics, one representative per existing...256': 'c2bf4f684da27033d9a34a9cb7447ccd58c2ff14740de6eadfc0dc2b8a590588', 'reason': '테스트 보류 이유 MA-RW-0001', ...}], ...}
+
+    def test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses(evidence):
+        import build_representative_audit_ledger as ledger
+        e=evidence
+        _,_,selection=derived_selection(e)
+>       old=ledger.build_ledger()
+            ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_nonlegacy_safety_holds.py:235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_representative_audit_ledger.py:215: in build_ledger
+    require(counts['REWRITTEN_NEW_ID'] == expected['newly_authored_replacements'], 'Rewrite count mismatch.')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Rewrite count mismatch.'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Rewrite count mismatch.
+
+scripts/build_representative_audit_ledger.py:39: ValueError
+----------- generated xml file: /tmp/phase9-default-qa-e-focused.xml -----------
+=========================== short test summary info ============================
+FAILED tests/test_nonlegacy_safety_holds.py::test_attach_rechecks_evidence_and_raw_records_instead_of_delivery_metadata
+FAILED tests/test_nonlegacy_safety_holds.py::test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses
+2 failed, 77 passed in 153.26s (0:02:33)
