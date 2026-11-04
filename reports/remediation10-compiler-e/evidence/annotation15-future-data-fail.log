@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/remediation10-integration-preview-e/scripts/notes_after190_annotation.py", line 764, in <module>
+    main()
+  File "/tmp/remediation10-integration-preview-e/scripts/notes_after190_annotation.py", line 751, in main
+    expected = notes_queue.encoded(make_manifest())
+                                   ^^^^^^^^^^^^^^^
+  File "/tmp/remediation10-integration-preview-e/scripts/notes_after190_annotation.py", line 603, in make_manifest
+    body_job=validate_note_scope(state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/remediation10-integration-preview-e/scripts/notes_after190_annotation.py", line 256, in validate_note_scope
+    require(len(jobs)==31 and [j['sequence']for j in jobs]==list(range(1,32)) and
+  File "/tmp/remediation10-integration-preview-e/scripts/notes_after190_annotation.py", line 141, in require
+    raise ValueError(message)
+ValueError: After190 note scope needs exact jobs1-30 plus the committed inactive body job31
