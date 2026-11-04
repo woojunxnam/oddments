@@ -45,8 +45,11 @@ def independent_notice_markdown(review):
     return '\n> '+clean(review['notice'])+' [독립 검토 기록]('+url+')\n'+''.join('\n> - '+clean(x)+'\n' for x in findings)
 
 def independent_progress_notice(progress):
+    pending=progress.get('pending_census_reassessment_units',0)
+    pending_notice=(f'누락 보완본의 새 독립 검토 대기 {pending}절은 현재 처리 수에서 제외합니다. ' if pending else '')
     return (f"저자 주장 목록 {progress['author_enumerated_units']}/{progress['total_units']}절 · "
             f"독립 완전성·법규 검토 처리 {progress['processed_units']}/{progress['total_units']}절. "
+            +pending_notice+
             f"누락 지적 {progress['omissions_found_units']}절 · 법규 보류 {progress['legal_hold_units']}절 · "
             f"독립 검토의 근거 미확인 {progress['claim_source_blocked_count']}명제. 검토 처리 수는 법규 통과 수가 아닙니다.")
 

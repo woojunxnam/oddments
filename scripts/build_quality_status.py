@@ -25,6 +25,8 @@ def output():
         f"기존 primary 정답 평가 {supplementary['primary_key_assessed']}개와 중복 합산하지 않습니다. "
         "원래 NOT_ASSESSED·HOLD·현실성 FAIL과 부정 이력을 그대로 보존하며, 보충 KEEP도 원문 수정 없이 "
         "기존 보류를 해제하거나 기본 연습 복귀·canonical RELEASED 승인을 만들지 않습니다. 정답 평가 수는 법규 PASS 수가 아닙니다.</p>")
+    pending=progress['independent_note_completeness_legal_review'].get('pending_census_reassessment_units',0)
+    pending_notice=(f'<p>누락을 보완한 노트 {pending}절은 새 독립 검토 대기 상태로, 현재 처리·완전성 완료 수에서 제외합니다. 원래 누락 지적과 법규 보류 이력은 유지합니다.</p>' if pending else '')
     body=f'''<main><h1>문제은행 검토 범위와 현재 상태</h1>
 <p>현재 연습판 설정: 기본 <strong>{st['recommended']:,}문항</strong> · 전체 보관 <strong>{st['available_total']:,}문항</strong>. 보관 수는 법규 검증 완료 수가 아닙니다.</p>
 <table><thead><tr><th>원래 대표355개 처리</th><th>수</th></tr></thead><tbody>
@@ -41,7 +43,7 @@ def output():
 <tr><td>노트 저자 주장 열거</td><td>{progress['notes_units_with_author_atomic_claim_enumeration_records']}/306 ({100*progress['notes_units_with_author_atomic_claim_enumeration_records']/306:.2f}%)</td><td>저자 기록 존재 수이며 누락 없는 완전성을 뜻하지 않음</td></tr>
 <tr><td>독립 노트 열거 완전성 확인</td><td>{progress['notes_units_with_complete_atomic_claim_census']}/306 ({100*progress['notes_units_with_complete_atomic_claim_census']/306:.2f}%)</td><td>독립 처리 {progress['independent_note_completeness_legal_review']['processed_units']}절 중 누락 지적 {progress['independent_note_completeness_legal_review']['omissions_found_units']}절은 보완 필요</td></tr>
 <tr><td>배포 검증</td><td>이 집계에서 인증하지 않음</td><td>정확한 빌드의 CI와 공개 파일 대조 기록을 별도로 확인</td></tr>
-</tbody></table>{supplementary_notice}
+</tbody></table>{supplementary_notice}{pending_notice}
 <p>기본 연습에서 증거를 바탕으로 보류한 문항은 원래 대표 {st['held_from_default']}개와 MA-REV/MA-RW 별도 {previous_held+rewrite_held}개입니다. 보류는 실제 재작성 완료 수에 더하지 않습니다. 아카이브 {st['archive_ids_with_review_notice']}개에는 구체적인 검토 안내가 있습니다. 독립 현실성 PASS {progress['independent_legacy_realism_pass']}개도 법규·해설의 모든 문제를 해소했다는 뜻은 아닙니다. 정답이 맞아도 해설 오류·모호성·근거 미확인·정답 추측 단서가 있으면 안내를 확인하세요.</p>
 <p>노트의 {progress.get('atomic_claims_enumerated',0)}개 저자 열거 명제 중 공식근거 대조 {progress.get('atomic_claims_source_checked',0)}개·SOURCE_BLOCKED {progress.get('atomic_claims_source_blocked',0)}개를 별도 기록했습니다. 독립 검토의 법규 상태는 KEEP {progress['independent_note_completeness_legal_review']['legal_keep_units']}절·HOLD {progress['independent_note_completeness_legal_review']['legal_hold_units']}절·SOURCE_BLOCKED {progress['independent_note_completeness_legal_review']['source_blocked_units']}절입니다. 열거의 완전성과 법규 확인을 구분합니다. 누락·보류 절과 연결 카드에는 실제 사유를 표시하고 자동 일일 복습에서 제외합니다.</p>
 <p>노트의 versioned 본문 수정은 누적 {progress['notes_units_with_versioned_edits']}절이고, 현재 최종 본문의 별도 검토 기록은 {progress['notes_units_with_independent_final_content_review']}절입니다. 이를 전체306절의 독립 명제 감사 완료 수로 확대하지 않습니다. 기존 인력 비율·intern·reporting·CDTM의 OPEN {progress['open_claims']}건은 유지합니다. USP 접근 제한과 미확인 시행 관계도 임의로 확정하지 않습니다.</p>

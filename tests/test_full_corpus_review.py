@@ -48,9 +48,20 @@ def test_every_id_is_inventoried_without_inheriting_family_passes():
     assert progress['inventory_is_legal_review'] is False
     assert progress['canonical_independent_audit_this_session'] == 'NOT_RUN'
     assert progress['notes_units_with_author_atomic_claim_enumeration_records'] == 306
-    assert progress['notes_units_with_complete_atomic_claim_census'] == 34
+    # Current credit comes from the latest integrated report for each unit;
+    # later census versions awaiting reassessment do not inherit old credit.
+    state=json.loads((ROOT/'reports/full-corpus-review/independent-notes-work-queue.json').read_bytes())
+    latest={uid:j for j in state['jobs'] for uid in j['unit_ids']}
+    complete=set()
+    for uid,job in latest.items():
+        if job['status']!='INTEGRATED':continue
+        binding=job['result']['evidence'];raw=(ROOT/binding['path']).read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==binding['raw_sha256']
+        record=next(r for r in json.loads(raw)['records'] if r['unit_id']==uid)
+        if record['completeness']=='COMPLETE':complete.add(uid)
+    assert progress['notes_units_with_complete_atomic_claim_census'] == len(complete)
     assert progress['author_atomic_claim_enumeration_complete'] is True
-    assert progress['atomic_claim_census_complete'] is False
+    assert progress['atomic_claim_census_complete'] == (len(complete)==306)
 
 
 def test_known_current_failures_cannot_remain_in_default_practice():
@@ -266,7 +277,7 @@ def test_census_annotation_migration_cannot_authorize_changed_note_semantics(pro
     path=root/'site/notes/build.json'
     build=json.loads(path.read_bytes());build['content_sha256']='0'*64
     path.write_text(json.dumps(build))
-    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed|Independent-note annotation cannot authorize semantic note changes'):
+    with pytest.raises(ValueError,match='cannot authorize a semantic note edit|Emergency-kit current semantic build changed|(?:Independent-note|Wave3 independent-note) annotation cannot authorize semantic note changes'):
         verify(manifest,root)
 
 
