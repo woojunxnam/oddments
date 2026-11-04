@@ -14,13 +14,20 @@ from qa_common import QUESTION_AUDIT_FIELDS, question_audit_hash
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = 'reports/full-corpus-review/canonical-q0012-withdrawal/'
 MANIFEST = PREFIX + 'protected-migration.json'
-MANIFEST_SHA = '27eb1bd5a867a450bacab76f494d6da83d5ae7e37386b5207fe6ae7b31682b6d'
+MANIFEST_SHA = '29510b19ca7b4bd89fd4d1f7b8574d76144c45070c0d06a58b43b9b679881563'
+PREVIOUS_MANIFEST_SHA = '27eb1bd5a867a450bacab76f494d6da83d5ae7e37386b5207fe6ae7b31682b6d'
 BASELINE = 'reports/representative-rewrite/protected-baseline.json'
 BASELINE_SHA = 'a4f25cd55d3377b088bcb27c63a75a9c4f52b88c4197900cf43bf8456d5c0f57'
 QUESTION = 'data/questions/ma-q-0012.json'
 FAMILY = 'data/exam_style/question_family_matrix.json'
 PREVIEW = 'site/generated/preview_allowlist.json'
-PATHS = (QUESTION, FAMILY)
+GUIDE = 'data/study_guide/sections/sg-cii-lifecycle.json'
+GUIDE_ID = 'SG-CII-LIFECYCLE'
+GUIDE_HASH = '0a89087ba5869e6692864fd5496f11f80801e7c927584cdcca093e90a83b5a4a'
+PATHS = (QUESTION, FAMILY, GUIDE)
+CURRENT_COVERAGE = PREFIX + 'current-study-guide-coverage.json'
+HISTORICAL_COVERAGE = 'audits/coverage/2026-09-01/BATCH4-STUDY-GUIDE-COVERAGE.json'
+HISTORICAL_COVERAGE_SHA = '8fcac3472225879bb0f133612eda35bad6370bcd784ca2822e3d87288969c47e'
 QID = 'MA-Q-0012'
 FAMILY_ID = 'P2_0012_MA_CII_VALIDITY_30D'
 AUDIT_HASH = '218f8940f7ffbc3671f6a49499105caa44ed9a2fe4ec4b84c3289b2253b3f81d'
@@ -120,11 +127,33 @@ def validate_preview(before, after, config):
             'Canonical withdrawal preview may remove Q0012 only; no restored or added release')
 
 
+def validate_guide(before,after):
+    from study_guide_common import study_guide_content_hash
+    require(before.get('section_id') == after.get('section_id') == GUIDE_ID and
+            before.get('verification_status') == 'VERIFIED' and
+            after.get('verification_status') == 'REVIEW_REQUIRED',
+            'Linked guide must remain REVIEW_REQUIRED; old VERIFIED status cannot be restored')
+    expected=copy.deepcopy(before);expected['verification_status']='REVIEW_REQUIRED'
+    require(digest(after) == digest(expected) and
+            before.get('content_version') == after.get('content_version') == 6 and
+            before.get('content_hash') == after.get('content_hash') == study_guide_content_hash(after) == GUIDE_HASH and
+            len(after['practice_question_ids']) == 8 and QID in after['practice_question_ids'],
+            'Linked guide withdrawal changed prose, references, content hash/version, or historical audit')
+
+
 def validate(root=ROOT):
     """Verify the fixed cause package and the one exact withdrawal transition."""
     root = Path(root)
     spec = json.loads(read(root,MANIFEST,MANIFEST_SHA))
     no_credit(spec)
+    previous=spec['previous_manifest']
+    require(previous['raw_sha256'] == PREVIOUS_MANIFEST_SHA,
+            'Linked guide cannot replace original Q0012 withdrawal manifest')
+    old=json.loads(read(root,previous['path'],PREVIOUS_MANIFEST_SHA))
+    require(all(digest(spec[k]) == digest(v) for k,v in old.items() if k not in {'protected_paths','changes'}) and
+            all(spec['changes'][p] == b for p,b in old['changes'].items()) and
+            old['protected_paths'] == [QUESTION,FAMILY],
+            'Linked guide changed original question/family/preview/cause bindings')
     require(spec['schema_version'] == 'canonical-q0012-safety-withdrawal/1' and
             spec['question_id'] == QID and spec['family_id'] == FAMILY_ID and
             tuple(spec['protected_paths']) == PATHS and
@@ -153,6 +182,7 @@ def validate(root=ROOT):
     validate_question(before_q,after_q)
     validate_family(json.loads(preimages[FAMILY]),json.loads(current[FAMILY]))
     validate_preview(json.loads(preimages[PREVIEW]),json.loads(current[PREVIEW]),config)
+    validate_guide(json.loads(preimages[GUIDE]),json.loads(current[GUIDE]))
     for path,raw in current.items():
         require(sha(raw) == spec['changes'][path]['after_raw_sha256'],
                 'Canonical withdrawal current bytes differ from exact authorized transition: '+path)
@@ -175,7 +205,61 @@ def validate(root=ROOT):
             'Canonical withdrawal released set or Q0028 quarantine changed')
     validate_cause(root,spec,before_q)
     validate_report(root,spec,before_q,after_q)
+    binding=spec['linked_guide_withdrawal_report']
+    linked=json.loads(read(root,binding['path'],binding['raw_sha256']));no_credit(linked)
+    require(linked.get('report_type') == 'LINKED_GUIDE_SAFETY_WITHDRAWAL_NOT_NEW_AUDIT' and
+            linked.get('section_id') == GUIDE_ID and linked.get('section_content_hash') == GUIDE_HASH and
+            linked.get('status_after') == 'REVIEW_REQUIRED' and linked.get('question_id') == QID and
+            linked.get('question_audit_hash') == AUDIT_HASH and
+            linked.get('same_hash_verified_restoration_allowed') is False and
+            linked.get('all_prose_refs_hash_and_audit_fields_preserved') is True and
+            type(linked.get('guide_audit_credit')) is int and linked['guide_audit_credit'] == 0 and
+            linked.get('before_raw_sha256') == sha(preimages[GUIDE]) and
+            linked.get('after_raw_sha256') == sha(current[GUIDE]),
+            'Linked guide withdrawal report differs from exact private source pair')
+    require(spec['coverage'] == {'historical_path':HISTORICAL_COVERAGE,
+            'historical_raw_sha256':HISTORICAL_COVERAGE_SHA,'current_path':CURRENT_COVERAGE},
+            'Linked guide coverage scope changed')
+    read(root,HISTORICAL_COVERAGE,HISTORICAL_COVERAGE_SHA)
     return preimages
+
+
+def preserved_withheld_reference(root,section,question):
+    """Only this exact private section/question pair may retain its old mapping."""
+    root=Path(root)
+    require(section.get('section_id') == GUIDE_ID and question.get('question_id') == QID,
+            'Preserved private guide reference cannot expand to another section or question')
+    validate(root)
+    require(digest(section) == digest(json.loads(read(root,GUIDE))) and
+            digest(question) == digest(json.loads(read(root,QUESTION))),
+            'Preserved private guide reference differs from actual guarded canonical sources')
+    return True
+
+
+def current_coverage_path(root):
+    """Keep the protected historical report immutable; never fall back on failure."""
+    validate(root)
+    return Path(root)/CURRENT_COVERAGE
+
+
+def coverage_snapshot(coverage,questions,guide):
+    public=guide['sections'];public_ids={s['section_id'] for s in public}
+    public_rules={rid for s in public for rid in s['rule_ids']}
+    require(len(questions['questions']) == 397 and
+            QID not in {q['question_id'] for q in questions['questions']} and
+            GUIDE_ID not in public_ids and QID not in guide['question_to_sections'] and
+            GUIDE_ID not in {sid for ids in guide['question_to_sections'].values() for sid in ids} and
+            coverage['sections']['by_status']['VERIFIED'] == len(public) == guide['meta']['public_verified_section_count'] and
+            coverage['canonical_rules']['covered_by_verified_public_section'] == len(public_rules),
+            'Current linked-guide coverage differs from actual public release payloads')
+    result=copy.deepcopy(coverage)
+    result['safety_withdrawal']={
+        'question_id':QID,'withheld_section_id':GUIDE_ID,'canonical_released_question_count':397,
+        'public_verified_section_count':len(public),'public_rule_count':len(public_rules),
+        'guard_manifest_raw_sha256':MANIFEST_SHA,'historical_coverage_path':HISTORICAL_COVERAGE,
+        'historical_coverage_raw_sha256':HISTORICAL_COVERAGE_SHA,
+        'canonical_audit':False,'canonical_release_credit':0,'question_audit_credit':0,'guide_audit_credit':0}
+    return result
 
 
 def validate_cause(root,spec,before_question):

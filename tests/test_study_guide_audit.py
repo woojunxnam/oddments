@@ -82,6 +82,12 @@ def test_every_public_section_holds_a_current_hash_keep(root: Path) -> None:
     for section_id, section in sections.items():
         if section_id in verified:
             continue
+        if section_id == 'SG-CII-LIFECYCLE' and section['verification_status']=='REVIEW_REQUIRED':
+            from canonical_q0012_withdrawal import preserved_withheld_reference
+            question=load_json(root/'data/questions/ma-q-0012.json')
+            assert preserved_withheld_reference(root,section,question)
+            assert section['independent_audit_id']  # unchanged KEEP remains historical while current publication is withheld
+            continue
         # Anything without such a KEEP stays private, whatever earlier audits said.
         assert section["verification_status"] == "AUDIT_PENDING"
         assert section["independent_audit_id"] is None

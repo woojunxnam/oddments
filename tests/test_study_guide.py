@@ -19,9 +19,12 @@ def test_canonical_study_guide_pilot_validates(registry_indexes) -> None:
             "SG-MA-SCHEDULE-VI", "SG-FED-MA-INTERACTION"} <= set(sections)
     verified = [s for s in sections.values() if s["verification_status"] == "VERIFIED"]
     pending = [s for s in sections.values() if s["verification_status"] == "AUDIT_PENDING"]
+    withheld = [s for s in sections.values() if s["verification_status"] == "REVIEW_REQUIRED"]
     # Every section is either independently verified or still fails closed, and the
     # audit reference tracks that state exactly. Counts move as tranches publish.
-    assert len(verified) + len(pending) == len(sections)
+    assert len(verified) + len(pending) + len(withheld) == len(sections)
+    assert {s['section_id'] for s in withheld} == {'SG-CII-LIFECYCLE'}
+    assert all(s['independent_audit_id'] for s in withheld)  # preserved historical audit, not publication approval
     # `verified` is legitimately empty while the whole guide sits between content models:
     # every section was re-authored and none has been re-audited yet. Publication is what
     # the invariants below protect, not the count.
@@ -48,7 +51,7 @@ def test_public_payload_fails_closed_until_independent_verification() -> None:
     # still pending is absent at the static-file layer, not merely hidden in the UI.
     assert {section["section_id"] for section in public["sections"]} == verified_ids
     assert public["meta"]["section_count"] == len(verified_ids)
-    assert public["meta"]["pending_section_count"] == len(canonical) - len(verified_ids)
+    assert public["meta"]["pending_section_count"] == sum(s['verification_status']=='AUDIT_PENDING' for s in canonical.values())
     # The public question map is built from public sections only, so it empties when nothing
     # is verified rather than leaking a pending section through a practice-question link.
     assert set(public["question_to_sections"]) <= {
@@ -124,8 +127,10 @@ def test_every_pilot_practice_link_is_release_usable(registry_indexes) -> None:
 
     _, questions = validate_questions(rules)
     linked = {
-        question_id for section in sections.values() for question_id in section["practice_question_ids"]
+        question_id for section in sections.values() if section['verification_status']=='VERIFIED'
+        for question_id in section["practice_question_ids"]
     }
     assert linked
     assert all(questions[question_id]["verification_status"] == "RELEASED" for question_id in linked)
     assert all(questions[question_id]["lifecycle_status"] == "RELEASED" for question_id in linked)
+    assert 'MA-Q-0012' not in linked
