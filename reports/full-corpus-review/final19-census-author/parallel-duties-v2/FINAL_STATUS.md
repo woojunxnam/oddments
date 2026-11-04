@@ -1,0 +1,35 @@
+# parallel-duties V2 실제 통합 후 최종 저자 제출
+
+최종등록입력은 final-proposal-index.json / reassessment.json / final-census.json이다.
+원초안commit 8241687fad2a96e21950b3fbfbddae02399d5a65의 파일22개는
+바이트불변으로보존했다. 과거prep의pending/native미수행표시는당시상태그대로이며최종
+실제결과는이문서와native-final-validation/final-preservation-and-source-proof에분리했다.
+최종census의claim/source는초안과같고최상위stage만최종제출상태로표시했다.
+
+원10개전체canonical claim/source/body를보존하여최종12개이다.
+새2개는지정primary대조 AUTHOR_SOURCE_CHECKED이다. 24715.04(2),20.02(4),(5),45CFR164.530(j)의서로다른기록대상과기산점을구별한다.모든처방/inventory/CE/DSCSA대상·기산점전수목록을인증하지않고005DSCSASB를유지한다. 원GET완료시각이없는metadata에재독시각을대입하지않았다.
+원authorSB상태와현재actualindependent법규보류는별개축으로보존했다.
+실제상속blocker명제수는1개이며원보고서finding/blocker/hash와
+이전상속이력을native carried_legal_blockers에그대로남겼다.
+
+실제INTEGRATEDparent는job67 review-independent-notes-reassessment-387bf6deef48386d이다.
+parentcanonicalSHA cafa028b49035aaff1ee07dd5bb81e2d086df7de08c50d017cfaeb55831e27c9
+reportSHA 2ab4bc977b35bc6f1cb0f5537d8df327c83d4becffb347b78fdf43b3d8cb85e6
+resultSHA 0d1c4ab3ead2e96634c50bab6b4465fe5b253534fe786f53e573f9d3020ffa98
+이parent는실제통합commit2f41b903ed1ea85bcbe4b7f88ca2555f3704fed0의object와같다.
+
+자체fullcheckout에서root정합commit b19b58cfd56699fc62e0723b9ded621f73c45866를merge한
+ownHEAD 161bd37ffc2e9db2853968edd2aab93be6cd95c2에서실제q.inventory(root)→load_notes(root)의모든guard를통과했다.
+그전체306개inventory SHA 37faf302c0f9d0ced6c67f457d5d9e9d7160016fc6843ea6862239805606c132를보존하고자체HEAD의실제선택
+ledger/census전량과bindings/bodySHA를재확인했다.공유ROOT의liveHEAD/contextoverride/
+임의projection/가짜ledger/guard완화/monkeypatch에의존하지않았다.
+커밋한최종record/census를검증HEAD 044fd38e5fbdba7734379b023af6152cfdf90794의실제
+validate_record와unmodifieddisk_reader로검증하여통과했다.이는구문/바인딩검증이며
+독립법규PASS/누락해소확정이아니다. 공식raw/text/meta/timestamp/버전한계를확인하고
+PDF재추출이retainedtext와같음및원workercommit→자체HEAD→disk바이트일치를검증했다.
+원metadata에없는시각이나개별조항효력일을만들지않았다.
+
+기존A32/B19final·old9/final86·본문/원census/source/report·queue/ledger/generated/guard는
+변경하지않았다.등록은전체19wave통합후root가수행한다.저자등록/공유쓰기/독립감사/
+법규PASS/문항/canonicalreleasecredit는0이다.새실제비저자가최종census전량과원누락·
+상속보류를다시심사해야한다. author-handoff-envelope은저자해시목록이며nativeworkerresult가아니다.
