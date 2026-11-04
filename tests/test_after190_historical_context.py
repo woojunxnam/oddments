@@ -20,7 +20,7 @@ def state():return json.loads((ROOT/a.LEGACY_STATE).read_bytes())
 def job_for(state,sequence):return state['jobs'][sequence-1]
 
 
-@pytest.mark.parametrize('index',range(4))
+@pytest.mark.parametrize('index',range(len(h.ALLOWED)))
 def test_exact_historical_receipt_uses_retained_head_bytes_without_replacing_current_binding(state,index):
     e=h.ALLOWED[index];job=job_for(state,e[1]);bindings={}
     current=a.committed(ROOT,e[4],bindings);current_sha=a.sha(current)
@@ -147,7 +147,7 @@ def test_history_runtime_works_in_real_shallow_checkout_without_original_worker_
     config=tmp_path/'empty.gitconfig';config.write_text('');monkeypatch.setenv('GIT_CONFIG_GLOBAL',str(config))
     shallow=tmp_path/'shallow'
     subprocess.run(['git','clone','-q','--depth','1','--no-checkout',ROOT.as_uri(),str(shallow)],check=True)
-    paths=[h.REGISTRY,h.PREVIOUS_REGISTRY,*{e[7]for e in h.ALLOWED}]
+    paths=[h.REGISTRY,h.PREVIOUS_REGISTRY,h.ORIGINAL_REGISTRY,*{e[7]for e in h.ALLOWED}]
     subprocess.run(['git','-C',str(shallow),'checkout','HEAD','--',*paths],check=True)
     for e in h.ALLOWED:
         job=job_for(state,e[1]);worker=job['result']['worker_commit']

@@ -1,0 +1,221 @@
+{
+  "head": "7ea50249f77fba8a84ea212ceef64f4033a694d4",
+  "checks": [
+    {
+      "name": "drift-1",
+      "command": [
+        "python",
+        "scripts/build_representative_rewrites.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-1.log"
+    },
+    {
+      "name": "drift-2",
+      "command": [
+        "python",
+        "scripts/build_representative_audit_ledger.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-2.log"
+    },
+    {
+      "name": "drift-3",
+      "command": [
+        "python",
+        "scripts/audit_representative_similarity.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-3.log"
+    },
+    {
+      "name": "drift-4",
+      "command": [
+        "python",
+        "scripts/verify_representative_protected.py"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-4.log"
+    },
+    {
+      "name": "drift-5",
+      "command": [
+        "python",
+        "scripts/build_full_corpus_review.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-5.log"
+    },
+    {
+      "name": "drift-6",
+      "command": [
+        "python",
+        "scripts/build_exam_study.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-6.log"
+    },
+    {
+      "name": "drift-7",
+      "command": [
+        "python",
+        "scripts/build_refresh.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-7.log"
+    },
+    {
+      "name": "drift-8",
+      "command": [
+        "python",
+        "scripts/build_ultimate_notes.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-8.log"
+    },
+    {
+      "name": "drift-9",
+      "command": [
+        "python",
+        "scripts/build_quality_status.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-drift-9.log"
+    },
+    {
+      "name": "git-diff-after-regeneration",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-git-diff-after-regeneration.log"
+    },
+    {
+      "name": "publish",
+      "command": [
+        "python",
+        "scripts/publish_practice.py",
+        "--output",
+        "/tmp/mpje-after190-final-site"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-publish.log"
+    },
+    {
+      "name": "notes-browser",
+      "command": [
+        "python",
+        "scripts/verify_notes_browser.py",
+        "--output",
+        "/tmp/mpje-after190-final-notes-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-notes-browser.log"
+    },
+    {
+      "name": "study-browser",
+      "command": [
+        "python",
+        "scripts/verify_exam_study.py",
+        "--site",
+        "/tmp/mpje-after190-final-site",
+        "--output",
+        "/tmp/mpje-after190-final-study-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-study-browser.log"
+    },
+    {
+      "name": "rewrites-browser",
+      "command": [
+        "python",
+        "scripts/verify_representative_rewrites.py",
+        "--site",
+        "/tmp/mpje-after190-final-site",
+        "--evidence",
+        "/tmp/mpje-after190-final-rewrites-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-rewrites-browser.log"
+    },
+    {
+      "name": "refresh-browser",
+      "command": [
+        "python",
+        "scripts/verify_refresh_browser.py",
+        "--site",
+        "/tmp/mpje-after190-final-site",
+        "--output",
+        "/tmp/mpje-after190-final-refresh-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-refresh-browser.log"
+    },
+    {
+      "name": "public-browser",
+      "command": [
+        "python",
+        "scripts/verify_public_practice.py",
+        "--site",
+        "/tmp/mpje-after190-final-site",
+        "--output",
+        "/tmp/mpje-after190-final-public-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-public-browser.log"
+    },
+    {
+      "name": "userdata-browser",
+      "command": [
+        "python",
+        "scripts/verify_q0012_withdrawal_browser.py",
+        "--site",
+        "/tmp/mpje-after190-final-site",
+        "--output",
+        "/tmp/mpje-after190-final-userdata-browser"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-userdata-browser.log"
+    },
+    {
+      "name": "git-diff-after-browsers",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "/tmp/mpje-after190-final-git-diff-after-browsers.log"
+    }
+  ],
+  "observed_at": "2026-11-04T06:58:24.715444+00:00",
+  "status": "PASS"
+}

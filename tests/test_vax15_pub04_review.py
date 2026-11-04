@@ -119,7 +119,7 @@ def test_publishing_review_does_not_claim_cdtm_cross_path_or_independent_audit()
     assert any("supersedes DCP 25-04-124" in x.get("version", "")
                for x in source["source_register"])
     progress = read("reports/full-corpus-review/progress.json")
-    assert progress["current_questions"] == 2346
+    assert progress["current_questions"] == 2349
     assert progress["question_ids_with_review_records"] >= 285
     assert progress["legal_review_counts"]["NOT_REVERIFIED_IN_FULL_CORPUS_REVIEW"] <= 2061
     assert progress["author_review_records_by_file"]["vax15-pub04-author-review.json"] == 40

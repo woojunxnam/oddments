@@ -1,0 +1,26 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_______ test_corpus_counts_do_not_inflate_canonical_or_learner_progress ________
+
+    def test_corpus_counts_do_not_inflate_canonical_or_learner_progress():
+        progress=read('reports/full-corpus-review/progress.json')
+>       assert progress['current_questions']==2346
+E       assert 2349 == 2346
+
+tests/test_cdtm0512_review.py:86: AssertionError
+________ test_every_id_is_inventoried_without_inheriting_family_passes _________
+
+    def test_every_id_is_inventoried_without_inheriting_family_passes():
+        outputs = build()
+        for path, text in outputs.items():
+            assert path.read_text() == text
+        rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
+>       assert len(rows) == len({r['question_id'] for r in rows}) == 2346
+E       AssertionError: assert 2349 == 2346
+E        +  where 2349 = len({'MA-CASE-0001', 'MA-CASE-0002', 'MA-CASE-0003', 'MA-CASE-0004', 'MA-CASE-0005', 'MA-CASE-0006', ...})
+
+tests/test_full_corpus_review.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cdtm0512_review.py::test_corpus_counts_do_not_inflate_canonical_or_learner_progress
+FAILED tests/test_full_corpus_review.py::test_every_id_is_inventoried_without_inheriting_family_passes
+2 failed in 26.04s

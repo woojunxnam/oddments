@@ -110,13 +110,14 @@ def test_review_must_bind_actual_id_hash_provenance_and_official_sources(evidenc
     with pytest.raises(ValueError,match=message):validate(e)
 
 
-def test_true_independent_failure_can_contain_but_pass_cannot(evidence):
+@pytest.mark.parametrize('record_provenance', [None, 'Actual independent session', ['session']])
+def test_true_independent_failure_can_contain_but_pass_cannot(evidence,record_provenance):
     e=evidence
     authorities=e['report']['records'][0]['choice_by_choice_findings']['A']['authorities']
     e['report'].update(independent_of_authors=True,auditor_instance='fixture-independent-session',
                        canonical_audit=False,canonical_release_credit=0,sources=authorities)
     for r in e['report']['records']:
-        r.pop('reviewer_provenance')
+        r['reviewer_provenance']=record_provenance
         r['legal_review']=dict(verdict='KEEP',existing_answer_correct='YES',authorities=authorities)
         r['realism_review']=dict(verdict='FAIL')
     e['persist']()
@@ -124,6 +125,14 @@ def test_true_independent_failure_can_contain_but_pass_cannot(evidence):
     e['report']['records'][0]['realism_review']['verdict']='PASS'
     e['persist']()
     with pytest.raises(ValueError,match='nonKEEP/failure'):validate(e)
+
+
+@pytest.mark.parametrize('record_provenance', [None, 'Claimed author session', ['session']])
+def test_unstructured_provenance_cannot_supply_author_evidence(evidence,record_provenance):
+    evidence['report']['records'][0]['reviewer_provenance']=record_provenance
+    evidence['persist']()
+    with pytest.raises(ValueError,match='nonKEEP/failure'):
+        validate(evidence)
 
 
 def derived_selection(e):
@@ -164,8 +173,9 @@ def test_builder_separates_counts_and_preserves_every_raw_question(evidence):
     previous_held=held & set(old['previous_quality_ids'])
     assert s['stats']['previous_quality_default']==96-len(previous_held)
     assert s['stats']['previous_quality_safety_held']==len(previous_held)
-    assert s['stats']['rewrite_safety_held']==1
-    assert s['stats']['rewrite_default']==len(s['new_ids'])-s['stats']['rewrite_archive_only_candidates']-1
+    rewrite_held=held & set(s['new_ids'])
+    assert s['stats']['rewrite_safety_held']==len(rewrite_held)
+    assert s['stats']['rewrite_default']==len(s['new_ids'])-s['stats']['rewrite_archive_only_candidates']-len(rewrite_held)
     for key in ['legacy_representatives_remaining','held_from_default','baseline_legacy_representatives',
                 'newly_authored_replacements','replaced_by_existing_quality','available_total']:
         assert s['stats'][key]==old['stats'][key]
@@ -246,7 +256,8 @@ def test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses(eviden
     assert updated['counts']['previous_quality_retained']==96
     assert updated['counts']['previous_quality_default']==selection['stats']['previous_quality_default']
     assert updated['counts']['previous_quality_safety_held']==selection['stats']['previous_quality_safety_held']
-    assert updated['counts']['rewrite_safety_held']==1
+    assert updated['counts']['rewrite_safety_held']==len(
+        {h['question_id'] for h in e['combined_holds']} & set(selection['new_ids']))
     # Merge the fixture with live source-bound holds; never restore other negatives.
     assert updated['counts']['current_default'] == len(selection['recommended_ids'])
     assert updated['counts']['current_default'] == (
@@ -259,3 +270,22 @@ def test_nonlegacy_safety_holds_do_not_change_original355_ledger_statuses(eviden
     text=ledger.render_markdown(updated).decode()
     assert f"기본 목록에는 {selection['stats']['previous_quality_default']}개를 포함하고 {selection['stats']['previous_quality_safety_held']}개는 별도 안전 보류" in text
     assert 'MA-RW-0001 (별도 안전 보류)' in text
+
+
+def test_explicit_independent_procedural_hold_contains_without_inventing_a_wrong_key(evidence):
+    e=evidence
+    authorities=e['report']['records'][0]['choice_by_choice_findings']['A']['authorities']
+    e['report'].update(independent_of_authors=True,auditor_instance='fixture-independent-session',
+        canonical_audit=False,canonical_release_credit=0,sources=authorities)
+    for row in e['report']['records']:
+        row.pop('reviewer_provenance')
+        row['legal_review']=dict(verdict='HOLD',existing_answer_correct='NOT_ASSESSED',authorities=authorities)
+        row['realism_review']=dict(verdict='NOT_ASSESSED')
+    e['persist']()
+    assert validate(e)==e['holds']
+    assert all(r['legal_review']['existing_answer_correct']=='NOT_ASSESSED' for r in e['report']['records'])
+    # A missing assessment without an explicit HOLD is not itself a source-bound failure.
+    e['report']['records'][0]['legal_review']['verdict']='KEEP'
+    e['persist']()
+    with pytest.raises(ValueError,match='nonKEEP/failure'):
+        validate(e)
