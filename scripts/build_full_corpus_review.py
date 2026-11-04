@@ -140,6 +140,34 @@ def record_hash(value):
                                    separators=(',', ':')).encode()).hexdigest()
 
 
+def validate_independent_source_bytes(authority, root=ROOT):
+    """Verify captured bytes, including failed attempts; this grants no law credit."""
+    pairs=[]
+    for path_key,sha_key in [('evidence_path','evidence_sha256'),('raw_path','raw_sha256')]:
+        # Historical sources may retain extracted text/memo and only the SHA
+        # of an unretained original payload. Do not claim to verify that raw
+        # payload; every actual retained path still requires its matching SHA.
+        if path_key in authority or (path_key=='evidence_path' and sha_key in authority):
+            path=authority.get(path_key);sha=authority.get(sha_key)
+            if not isinstance(path,str) or not isinstance(sha,str):
+                raise ValueError('Incomplete independent source evidence binding')
+            relative=Path(path)
+            if (path_key=='raw_path' and relative.is_absolute() and pairs and
+                    authority.get('public_raw_redistribution') is False and
+                    'memo' in authority.get('public_evidence_mode','').lower()):
+                # A declared private copyrighted original is not a repository
+                # payload. Verify the retained memo, never claim the raw read.
+                continue
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('Unsafe independent source evidence path')
+            pairs.append((relative,sha))
+    if not pairs:
+        raise ValueError('Missing independent source evidence binding')
+    for relative,sha in pairs:
+        if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=sha:
+            raise ValueError('Stale independent source evidence')
+
+
 def read(path):
     return json.loads((ROOT / path).read_text())
 
@@ -568,8 +596,7 @@ def build():
             raise ValueError('Stale independent legacy review')
     for source in independent_sources:
         for authority in source['sources']:
-            if hashlib.sha256((ROOT/authority['evidence_path']).read_bytes()).hexdigest() != authority['evidence_sha256']:
-                raise ValueError('Stale independent source evidence')
+            validate_independent_source_bytes(authority,ROOT)
     from procedural_secondary_metadata import load_metadata as load_procedural_secondary
     secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,
         {r['question_id']:r['collection'] for r in result})
