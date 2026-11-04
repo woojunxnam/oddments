@@ -147,7 +147,7 @@ def inventory(root, notes=None, ledger_raw=None):
                 provenance_ids({'reviewer_provenance':census.get('reviewer_provenance')}) |
                 provenance_ids(census.get('author_provenance',{})) |
                 provenance_ids(counted) | provenance_ids(claims) | provenance_ids(unit.get('author_provenance',{})))}
-    return {'ledger_sha256':raw_sha(raw), 'total_units':len(rows), 'units':eligible,
+    return {'root':str(root),'ledger_sha256':raw_sha(raw), 'total_units':len(rows), 'units':eligible,
             'notes':notes, 'existing_content_keep_units':sum(u.get('independent_content_review',{}).get('decision') == 'KEEP'
                                               for u in actual.values())}
 
@@ -205,9 +205,14 @@ def job_for(state, identifier):
 
 
 def current(job, inv, state=None, allow_pending=False):
+    body_handled=set()
+    if state is not None and state.get('body_reassessments'):
+        from notes_body_reassessment import current as body_current
+        body_handled=body_current(job,inv,state,allow_pending)
     from notes_census_reassessment import latest_jobs
     latest = latest_jobs(state) if state is not None else {}
     for uid,binding in job['unit_bindings'].items():
+        if uid in body_handled:continue
         selected = inv['units'].get(uid)
         owner = latest.get(uid,job)
         if owner['job_id'] != job['job_id']:
@@ -225,6 +230,9 @@ def validate_reassessments(state, inv, root):
     if state.get('reassessments'):
         from notes_census_reassessment import validate_registered
         validate_registered(state,root,inv['notes'])
+    if state.get('body_reassessments'):
+        from notes_body_reassessment import validate_registered as validate_bodies
+        validate_bodies(state,root,inv['notes'],inv=inv)
 
 
 def plan(state, inv, root, batches=1, size=5, at=None):
@@ -269,6 +277,7 @@ def claim(state, inv, worker, session, independence_basis, auditor='GPT', audito
           known_authors=(), minutes=60, at=None):
     require(all(isinstance(x,str) and x.strip() for x in (worker,session,independence_basis,auditor)) and
             worker != CONTROLLER and 1 <= minutes <= 1440, 'Fresh worker/session and controller independence basis required')
+    if state.get('body_reassessments'):validate_reassessments(state,inv,Path(inv['root']))
     auditor_instance = auditor_instance or session; at = at or timestamp(); recover(state,at)
     provenance = {'actor_id':worker,'session_id':session}
     active = next((j for j in state['jobs'] if j['status'] == 'LEASED' and j['actor_provenance']['actor_id'] == worker),None)
@@ -351,6 +360,9 @@ def validate_evidence(job, result, report):
                     'final_census_read_completely':True,'all_original_omissions_reassessed':True,
                     'all_original_propositions_preserved':True},
                     'Fresh final-census assessment of every original omission required')
+        if job.get('body_reassessment_id'):
+            from notes_body_reassessment import validate_review
+            validate_review(job,row)
         for c in claims:
             inherited = job.get('carried_legal_blockers',{}).get(uid,{}).get(c.get('claim_id'),[])
             if inherited:
@@ -461,14 +473,18 @@ def progress(state, inv, root=None):
             integrate(state,job['job_id'],root,inv)
     from notes_census_reassessment import latest_jobs
     latest = latest_jobs(state)
-    rows = [r for uid,j in latest.items() if j['status'] == 'INTEGRATED'
+    from notes_body_reassessment import selected_is_current, current_content_keep_count
+    rows = [r for uid,j in latest.items() if j['status'] == 'INTEGRATED' and
+            (not j.get('body_reassessment_id') or selected_is_current(j,inv))
             for r in j['result']['results'] if r['unit_id'] == uid]
     return {'total_note_units':inv['total_units'],'author_enumerated_units':len(inv['units']),
         'not_enumerated_units':inv['total_units']-len(inv['units']),
-        'existing_current_body_content_keep_units':inv['existing_content_keep_units'],
+        'existing_current_body_content_keep_units':current_content_keep_count(state,inv),
         'independent_completeness_legal_processed_units':len(rows),
         'pending_census_reassessment_units':sum(bool(j.get('reassessment_id')) and j['status'] != 'INTEGRATED'
                                                for j in latest.values()),
+        'pending_body_reassessment_units':sum(bool(j.get('body_reassessment_id')) and j['status']!='INTEGRATED'for j in latest.values()),
+        'inactive_body_candidate_units':sum(bool(j.get('body_reassessment_id'))and not selected_is_current(j,inv)for j in latest.values()),
         'completeness':{s:sum(r['completeness'] == s for r in rows) for s in sorted(COMPLETE)},
         'legal':{s:sum(r['legal_status'] == s for r in rows) for s in sorted(UNIT_LEGAL)},
         'queue_jobs':{s:sum(j['status'] == s for j in state['jobs']) for s in ('QUEUED','LEASED','SUBMITTED','INTEGRATED')},
@@ -489,6 +505,8 @@ def main():
     p.add_argument('--known-author',action='append',default=[]); p.add_argument('--minutes',type=int,default=60)
     commands.add_parser('recover'); commands.add_parser('progress')
     p = commands.add_parser('reassess'); p.add_argument('--record',required=True)
+    p = commands.add_parser('reassess-body'); p.add_argument('--record',required=True)
+    p = commands.add_parser('preview-body'); p.add_argument('--record',required=True)
     for name in ('heartbeat','worktree','submit','integrate'):
         p = commands.add_parser(name); p.add_argument('--job',required=True)
         if name != 'integrate': p.add_argument('--token',required=True)
@@ -496,7 +514,10 @@ def main():
         if name == 'worktree': p.add_argument('--destination',type=Path,required=True)
         if name == 'submit': p.add_argument('--result',type=Path,required=True)
     args = parser.parse_args(); root = args.root.resolve(); inv = inventory(root)
-    if args.command == 'progress':
+    if args.command == 'preview-body':
+        from notes_body_reassessment import preview
+        output=preview(root,args.record)
+    elif args.command == 'progress':
         path = safe_path(root,STATE); state = json.loads(path.read_bytes()) if path.exists() else empty(root)
         validate_state(state,root); output = progress(state,inv,root)
     else:
@@ -505,6 +526,9 @@ def main():
             if args.command == 'reassess':
                 from notes_census_reassessment import register
                 output = register(state,inv,root,args.record)
+            elif args.command == 'reassess-body':
+                from notes_body_reassessment import register as register_body
+                output=register_body(state,inv,root,args.record)
             elif args.command == 'plan': output = plan(state,inv,root,args.batches,args.size)
             elif args.command == 'claim': output = claim(state,inv,args.worker,args.session,args.independence_basis,
                 args.auditor,args.auditor_instance,args.known_author,args.minutes)
