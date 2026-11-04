@@ -26,10 +26,15 @@ def native_reviews(root):
 
 def source_bound_default_delta(selection, preserved, by_id, root):
     """Require unchanged old objects and explain every removal by a native failure."""
-    root = Path(root)
     assert len(preserved['recommended_ids']) == 298
     assert len(preserved['holds']) == 147 and len(preserved['safety_holds']) == 3
     assert len(preserved['replacements']) == 77
+    return source_bound_selection_delta(selection, preserved, by_id, root)
+
+
+def source_bound_selection_delta(selection, preserved, by_id, root):
+    """Same strict source-bound transition for a separately pinned historical snapshot."""
+    root = Path(root)
     assert selection['replacements'] == preserved['replacements']
     added = []
     counts = {}
@@ -100,3 +105,59 @@ def assert_clarifier_only_changes_source_url_metadata(root):
     assert all(row == original_by_id[qid] for qid, row in restored.items())
     proof = root / clarification['retained_body_proof_path']
     assert raw_sha(proof.read_bytes()) == clarification['retained_body_proof_sha256']
+
+
+PHASE10_BEFORE = 'reports/phase10-default-qa-e/before-phase10-selection.json'
+PHASE10_BEFORE_SHA = 'b6c8600f059626bec1a6f3903aae81c56acd72f7f843b4bb0acde7b9716891b5'
+PHASE10_BINDINGS = 'reports/phase10-default-qa-e/phase10-job-bindings.json'
+PHASE10_BINDINGS_SHA = '9a1cfa36b6c3f44924ee5ddbccbbc298b3e2106eb31a97811170242ae64e413b'
+
+
+def phase10_snapshot(root):
+    root = Path(root)
+    raw = (root / PHASE10_BEFORE).read_bytes()
+    assert raw_sha(raw) == PHASE10_BEFORE_SHA, 'Before-phase10 selector bytes changed'
+    before = json.loads(raw)
+    assert len(before['recommended_ids']) == 229
+    assert len(before['holds']) == 211 and len(before['safety_holds']) == 8
+    assert before['stats']['rewrite_default'] == 74
+    raw = (root / PHASE10_BINDINGS).read_bytes()
+    assert raw_sha(raw) == PHASE10_BINDINGS_SHA, 'Phase10 assigned definitions changed'
+    return before, json.loads(raw)['job_definitions']
+
+
+def source_bound_phase10_delta(selection, by_id, root):
+    """A pending wave is an explicit rejection, never a completed QA/positive result."""
+    root = Path(root)
+    before, expected = phase10_snapshot(root)
+    state = json.loads((root / 'reports/full-corpus-review/independent-legacy-work-queue.json').read_bytes())
+    jobs = [j for j in state['jobs'] if 34 <= j['sequence'] <= 37]
+    assert [{k: j[k] for k in ('sequence', 'job_id', 'stage', 'question_hashes')} for j in jobs] == expected
+    if any(j['status'] != 'INTEGRATED' for j in jobs):
+        raise ValueError('PHASE10_NOT_INTEGRATED: no complete transition or review credit asserted')
+    result = source_bound_selection_delta(selection, before, by_id, root)
+    reviews, bindings = native_reviews(root)
+    assigned = {j['job_id']: j['question_hashes'] for j in expected}
+    for qid in result['removed_ids']:
+        binding = bindings[qid]
+        assert binding['job_id'] in assigned, 'Removal is outside the exact four phase10 jobs'
+        assert assigned[binding['job_id']][qid] == binding['record_sha256']
+    assigned_ids = set().union(*(set(ids) for ids in assigned.values()))
+    expected_removed = {qid for qid in set(before['recommended_ids']) & assigned_ids
+        if reviews[qid]['legal_review']['verdict'] != 'KEEP'
+        or reviews[qid]['legal_review']['existing_answer_correct'] != 'YES'
+        or reviews[qid]['realism_review']['verdict'] != 'PASS'}
+    assert result['removed_ids'] == expected_removed, 'Uncontained current phase10 finding or unsupported removal'
+    for qid in selection['recommended_ids']:
+        assert qid in bindings and qid in reviews, 'Current default lacks an actual native assessment'
+        actual = raw_sha(json.dumps(by_id[qid], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode())
+        assert bindings[qid]['record_sha256'] == reviews[qid]['record_sha256'] == actual
+        assert reviews[qid]['legal_review']['verdict'] == 'KEEP'
+        assert reviews[qid]['legal_review']['existing_answer_correct'] == 'YES'
+        assert reviews[qid]['realism_review']['verdict'] == 'PASS'
+    # Incomplete key assessment remains a procedural/source limitation, not an invented wrong key.
+    result['key_not_assessed_removed_ids'] = {qid for qid in result['removed_ids']
+        if reviews[qid]['legal_review']['existing_answer_correct'] == 'NOT_ASSESSED'}
+    result['wrong_key_removed_ids'] = {qid for qid in result['removed_ids']
+        if reviews[qid]['legal_review']['existing_answer_correct'] == 'NO'}
+    return result
