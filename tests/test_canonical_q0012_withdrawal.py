@@ -28,7 +28,8 @@ def sandbox(tmp_path,spec):
     # object is needed: exact pinned archive bytes are sufficient for this hold.
     shutil.copytree(ROOT/'data/questions',tmp_path/'data/questions')
     shutil.copytree(ROOT/guard.PREFIX,tmp_path/guard.PREFIX)
-    paths={guard.FAMILY,guard.PREVIEW,guard.BASELINE}
+    paths={guard.FAMILY,guard.PREVIEW,guard.BASELINE,guard.GUIDE,guard.HISTORICAL_COVERAGE,
+           spec['previous_manifest']['path']}
     paths.update(r['preimage_path'] for r in spec['changes'].values())
     for relative in paths:
         target=tmp_path/relative;target.parent.mkdir(parents=True,exist_ok=True)
@@ -67,7 +68,8 @@ def test_all_1781_protected_files_pass_with_original_baseline_and_fourteen_guard
 
 
 def test_retained_inputs_are_actual_current_committed_bytes(spec):
-    paths={guard.BASELINE,spec['config']['path'],spec['withdrawal_report']['path']}
+    paths={guard.BASELINE,spec['config']['path'],spec['withdrawal_report']['path'],
+           spec['previous_manifest']['path'],spec['linked_guide_withdrawal_report']['path']}
     paths.update(r['preimage_path'] for r in spec['changes'].values())
     paths.update(spec['source_bindings'])
     for relative in paths:
@@ -223,3 +225,99 @@ def test_original_1781_file_baseline_cannot_be_rewritten(sandbox):
 def test_false_withdrawal_report_assertion_cannot_be_accepted(sandbox,spec):
     alter(sandbox,spec['withdrawal_report']['path'],lambda r:r['assertions'].update(hash_unchanged=False))
     with pytest.raises(ValueError):guard.validate(sandbox)
+
+
+@pytest.mark.parametrize('change',['verified_restore','prose','refs','hash','version','audit','date'])
+def test_linked_guide_may_change_only_its_status_and_cannot_be_republished(sandbox,change):
+    def mutate(value):
+        if change=='verified_restore':value['verification_status']='VERIFIED'
+        elif change=='prose':value['orientation'][0]['text']+=' 한글 본문 변경'
+        elif change=='refs':value['practice_question_ids'].remove(guard.QID)
+        elif change=='hash':value['content_hash']='0'*64
+        elif change=='version':value['content_version']+=1
+        elif change=='audit':value['independent_audit_id']=None
+        else:value['last_verified']='2026-11-04'
+    alter(sandbox,guard.GUIDE,mutate)
+    with pytest.raises(ValueError):guard.validate(sandbox)
+
+
+def test_linked_guide_retains_exact_hash_practice_refs_and_historical_audit(sandbox,spec):
+    from study_guide_common import study_guide_content_hash
+    before=json.loads((sandbox/spec['changes'][guard.GUIDE]['preimage_path']).read_bytes())
+    after=json.loads((sandbox/guard.GUIDE).read_bytes())
+    assert {k for k in before if before[k]!=after[k]}=={'verification_status'}
+    assert before['content_hash']==after['content_hash']==study_guide_content_hash(after)==guard.GUIDE_HASH
+    question=json.loads((sandbox/guard.QUESTION).read_bytes())
+    assert guard.preserved_withheld_reference(sandbox,after,question)
+
+
+@pytest.mark.parametrize('change',['verified','other_section','other_question','missing_manifest',
+                                  'missing_pair','fake_manifest'])
+def test_only_exact_private_guide_reference_can_warn_instead_of_error(sandbox,registry_indexes,change):
+    from validate_study_guide import validate_study_guide
+    from study_guide_common import study_guide_content_hash
+    shutil.copytree(ROOT/'data/study_guide',sandbox/'data/study_guide',dirs_exist_ok=True)
+    questions={q['question_id']:q for p in (sandbox/'data/questions').glob('*.json')
+               for q in [json.loads(p.read_bytes())]}
+    rules,_=registry_indexes
+    good,_=validate_study_guide(rules,questions,data_root=sandbox/'data')
+    assert good.ok and any('preserved non-public reference' in x for x in good.warnings)
+    if change=='verified':alter(sandbox,guard.GUIDE,lambda s:s.update(verification_status='VERIFIED'))
+    elif change=='other_section':
+        other=next(p for p in (sandbox/'data/study_guide/sections').glob('*.json')if p.name!='sg-cii-lifecycle.json')
+        v=json.loads(other.read_bytes());v['practice_question_ids'].append(guard.QID)
+        v['verification_status']='REVIEW_REQUIRED';v['content_hash']=study_guide_content_hash(v)
+        other.write_bytes(encoded(v))
+    elif change=='other_question':questions['MA-Q-0011']['verification_status']='HOLD'
+    elif change=='missing_manifest':(sandbox/guard.MANIFEST).unlink()
+    elif change=='fake_manifest':(sandbox/guard.MANIFEST).write_bytes(b'{}\n')
+    else:(sandbox/guard.QUESTION).unlink()
+    report,_=validate_study_guide(rules,questions,data_root=sandbox/'data')
+    assert not report.ok and any('not RELEASE-usable' in x for x in report.errors)
+
+
+def test_actual_release_views_exclude_both_question_and_linked_section():
+    from build_site_data import build_site_payload
+    from build_study_guide_data import build_study_guide_payload,build_study_guide_coverage
+    questions=build_site_payload(include_fixtures=False);guide=build_study_guide_payload(include_pending=False)
+    assert len(questions['questions'])==397 and guard.QID not in {q['question_id']for q in questions['questions']}
+    assert guard.GUIDE_ID not in {s['section_id']for s in guide['sections']}
+    assert guard.QID not in guide['question_to_sections']
+    current=guard.coverage_snapshot(build_study_guide_coverage(),questions,guide)
+    assert current['safety_withdrawal']['canonical_released_question_count']==397
+    assert current['safety_withdrawal']['public_verified_section_count']==len(guide['sections'])
+    assert current['safety_withdrawal']['public_rule_count']==len({r for s in guide['sections']for r in s['rule_ids']})
+    assert guard.sha((ROOT/guard.HISTORICAL_COVERAGE).read_bytes())==guard.HISTORICAL_COVERAGE_SHA
+
+
+@pytest.mark.parametrize('change',['manifest','historical_report','guide_restore','question_restore'])
+def test_current_coverage_never_falls_back_to_overwriting_historical_audit(sandbox,change):
+    if change=='manifest':(sandbox/guard.MANIFEST).unlink()
+    elif change=='historical_report':
+        p=sandbox/guard.HISTORICAL_COVERAGE;p.write_bytes(p.read_bytes()+b'\n')
+    elif change=='guide_restore':alter(sandbox,guard.GUIDE,lambda s:s.update(verification_status='VERIFIED'))
+    else:alter(sandbox,guard.QUESTION,lambda q:q.update(verification_status='RELEASED',lifecycle_status='RELEASED'))
+    with pytest.raises(ValueError):guard.current_coverage_path(sandbox)
+
+
+@pytest.mark.parametrize('change',['question_reimport','guide_reimport','reverse_link','section_count','rule_count'])
+def test_current_coverage_rejects_fake_public_counts_or_unsafe_reimport(change):
+    questions=json.loads((ROOT/'site/generated/questions.json').read_bytes())
+    guide=json.loads((ROOT/'site/generated/study_guide.json').read_bytes())
+    coverage=json.loads((ROOT/guard.CURRENT_COVERAGE).read_bytes())
+    if change=='question_reimport':questions['questions'][0]['question_id']=guard.QID
+    elif change=='guide_reimport':guide['sections'].append({'section_id':guard.GUIDE_ID,'rule_ids':[]})
+    elif change=='reverse_link':guide['question_to_sections'][guard.QID]=[guard.GUIDE_ID]
+    elif change=='section_count':coverage['sections']['by_status']['VERIFIED']+=1
+    else:coverage['canonical_rules']['covered_by_verified_public_section']+=1
+    with pytest.raises(ValueError):guard.coverage_snapshot(coverage,questions,guide)
+
+
+def test_artifact_adapter_missing_guard_is_an_error_not_historical_path_fallback(sandbox,monkeypatch):
+    import generate_artifacts
+    monkeypatch.setattr(generate_artifacts,'ROOT',sandbox)
+    for name in ['analyze_answer_distribution','analyze_structural_patterns','analyze_sba_answer_length']:
+        monkeypatch.setattr(generate_artifacts,name,lambda:(None,None))
+    (sandbox/guard.MANIFEST).unlink()
+    with pytest.raises(ValueError):generate_artifacts.artifact_payloads()
+    assert guard.sha((sandbox/guard.HISTORICAL_COVERAGE).read_bytes())==guard.HISTORICAL_COVERAGE_SHA

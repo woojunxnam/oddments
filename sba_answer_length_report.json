@@ -9,12 +9,11 @@
     "historical_33_id_tranches": [
       {
         "id_range": "MA-Q-0011..MA-Q-0043",
-        "sba_count": 23,
-        "first_longest_keyed": 18,
-        "first_longest_share": 0.782609,
+        "sba_count": 22,
+        "first_longest_keyed": 17,
+        "first_longest_share": 0.772727,
         "question_ids": [
           "MA-Q-0011",
-          "MA-Q-0012",
           "MA-Q-0013",
           "MA-Q-0015",
           "MA-Q-0016",
@@ -343,13 +342,12 @@
     "extreme_token_delta": 6
   },
   "inherited_baseline": {
-    "sba_count": 230,
-    "first_longest_keyed": 149,
-    "first_longest_share": 0.647826,
+    "sba_count": 229,
+    "first_longest_keyed": 148,
+    "first_longest_share": 0.646288,
     "question_ids": [
       "MA-Q-0004",
       "MA-Q-0011",
-      "MA-Q-0012",
       "MA-Q-0013",
       "MA-Q-0015",
       "MA-Q-0016",
@@ -636,13 +634,12 @@
     "individual_extremes": []
   },
   "projected_bank": {
-    "sba_count": 249,
-    "first_longest_keyed": 157,
-    "first_longest_share": 0.630522,
+    "sba_count": 248,
+    "first_longest_keyed": 156,
+    "first_longest_share": 0.629032,
     "question_ids": [
       "MA-Q-0004",
       "MA-Q-0011",
-      "MA-Q-0012",
       "MA-Q-0013",
       "MA-Q-0015",
       "MA-Q-0016",
@@ -894,13 +891,13 @@
   "gates": [
     {
       "code": "BASELINE_COHORT_INTEGRITY",
-      "status": "PASS",
-      "detail": "Expected 230 RELEASED SBA items through MA-Q-0406; observed 230."
+      "status": "FAIL",
+      "detail": "Expected 230 RELEASED SBA items through MA-Q-0406; observed 229."
     },
     {
       "code": "INHERITED_DEBT_NON_REGRESSION",
       "status": "PASS",
-      "detail": "Inherited cohort may improve but must not exceed 149/230; observed 149/230."
+      "detail": "Inherited cohort may improve but must not exceed 149/230; observed 148/229."
     },
     {
       "code": "PROSPECTIVE_TRANCHE_SHARE",
@@ -910,7 +907,7 @@
     {
       "code": "PROJECTED_BANK_NON_REGRESSION",
       "status": "PASS",
-      "detail": "Projected bank must not exceed 149/230; observed 157/249."
+      "detail": "Projected bank must not exceed 149/230; observed 156/248."
     },
     {
       "code": "PROSPECTIVE_INDIVIDUAL_EXTREMES",
@@ -918,5 +915,5 @@
       "detail": "Found 0 prospective SBA item(s) at or above both the 1.6x and +6-token thresholds."
     }
   ],
-  "severity": "PASS"
+  "severity": "ERROR"
 }

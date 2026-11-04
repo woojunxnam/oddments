@@ -15,14 +15,17 @@ controller가 포착한 선언의 보존이며 암호학적인 신원 인증이 
 `reports/full-corpus-review/canonical-q0012-withdrawal/protected-migration.json`의
 원바이트 SHA를 코드에 고정한다. 자동 재결박·일반 data 예외·새 경로 허용 기능은 없다.
 원 1,781개 파일의 baseline JSON, SHA·Git blob 기록 및 기존 note guard 14개는 보존한다.
-보호 verifier에는 정확한 다음 두 path에 대한 decoder만 추가한다.
+보호 verifier에는 정확한 다음 세 path에 대한 decoder만 추가한다.
 
 - `data/questions/ma-q-0012.json`: `verification_status`는 `RELEASED -> HOLD`,
   `lifecycle_status`는 `RELEASED -> REVIEW_REQUIRED`만 허용한다.
 - `data/exam_style/question_family_matrix.json`: 정확한
   `P2_0012_MA_CII_VALIDITY_30D.current_released_count`만 `1 -> 0`으로 바꾼다.
+- `data/study_guide/sections/sg-cii-lifecycle.json`: 철회된 Q0012를 참조하므로
+  `verification_status`만 `VERIFIED -> REVIEW_REQUIRED`로 바꾼다. 본문·8개 practice
+  ID·content_version 6·content_hash `0a89087b…`·과거 audit ID·last_verified는 보존한다.
 
-두 현재 파일은 `revisions/baselines/canonical-q0012-withdrawal/`의 원 preimage로
+세 현재 파일은 `revisions/baselines/canonical-q0012-withdrawal/`의 원 preimage로
 decode하고, 기존 baseline의 크기·SHA-256·원 Git blob SHA-1을 그대로 검증한다.
 preimage 자체를 변경하거나 새 baseline을 만드는 방식은 허용하지 않는다.
 나머지 438개 canonical question은 원바이트가 같아야 하고, 전체 file 집합도 439개다.
@@ -44,11 +47,30 @@ hash와 현재 보존된 원문을 대조하고, 그 의미를 fresh whole-quest
 복원할 권한이 아니다. 추가 KEEP 기록으로 기존 문제를 덮어쓰는 것도 허용하지 않는다.
 실제 내용 수정·새 독립 감사·별도 명시 guard 승인이 필요한 후속 경로는 이번 범위 밖이다.
 
+Study-guide validator는 이 정확한 section/hash와 Q0012 HOLD 쌍을 전체 guard로 확인한
+경우에만 기존 연결을 비공개 참조라는 warning으로 보존한다. VERIFIED section의
+non-RELEASE-usable 참조와 다른 section/question의 연결 오류는 계속 ERROR다.
+Compiler의 VERIFIED-only 필터는 그대로이며 SG-CII-LIFECYCLE과 Q0012 역방향 연결은
+실제 public payload에서 제외된다. 과거 KEEP은 이 현재 safety hold를 해제하지 않는다.
+
+첫 철회 manifest `27eb1bd5…`도 별도 preimage로 보존하고 원 Q/family/preview/cause
+결박이 바뀌지 않았는지 대조한다. Linked-guide 철회 report는 추가 engineering 기록이며
+새 guide/canonical/question 독립 감사나 release credit가 아니다.
+
+표준 artifact builder가 쓰던 `audits/coverage/2026-09-01/BATCH4-STUDY-GUIDE-COVERAGE.json`은
+SHA `8fcac347…`의 동결된 과거 증거로 보존한다. 현재의 정확한 HOLD/withheld pair가
+성립할 때만 현재 coverage를 withdrawal 폴더의 `current-study-guide-coverage.json`으로
+생성·검사한다. Guard 실패나 삭제 시 과거 경로로 fallback하지 않는다. 현재 397개
+released question·40개 public guide·427개 public-rule coverage는 실제 release payload로
+대조하며, 이 집계는 법규 PASS나 새 감사 credit가 아니다.
+
 검사:
 
 ```sh
 python scripts/canonical_q0012_withdrawal.py
 python scripts/verify_representative_protected.py
+python scripts/generate_artifacts.py --write
+python scripts/generate_artifacts.py
 python -m pytest -q tests/test_canonical_q0012_withdrawal.py
 ```
 
