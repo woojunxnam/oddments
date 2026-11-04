@@ -117,3 +117,27 @@ def test_phase10_preserves_355_historical_statuses_question_objects_and_M_source
     assert unit['atomic_census_source'] == before['M_unit']['selected_census_path']
     assert unit['atomic_claim_ids'] == before['M_unit']['atomic_claim_ids']
     assert hashlib.sha256((ROOT / unit['atomic_census_source']).read_bytes()).hexdigest() == before['M_unit']['selected_census_raw_sha256']
+
+
+def test_phase10_archive_notice_splits_preserve_whole_previous_groups_and_exact_sources():
+    from default_selection_assertions import phase10_archive_history
+    state = json.loads((ROOT / 'reports/full-corpus-review/independent-legacy-work-queue.json').read_bytes())
+    if any(j['status'] != 'INTEGRATED' for j in state['jobs'] if 34 <= j['sequence'] <= 37):
+        with pytest.raises(ValueError, match='PHASE10_NOT_INTEGRATED'):
+            phase10_archive_history(ROOT)
+        return
+    result = phase10_archive_history(ROOT)
+    assert result['native_notice_ids'] == result['replaced_prior_ids'] | result['newly_notified_ids']
+    assert not result['replaced_prior_ids'] & result['newly_notified_ids']
+    current = json.loads((ROOT / 'reports/representative-rewrite/archive-review-notices.json').read_bytes())['notices']
+    if result['replaced_prior_ids']:
+        bad = copy.deepcopy(current)
+        qid = sorted(result['replaced_prior_ids'])[0]
+        row = next(n for n in bad if qid in n['question_ids'])
+        row['previous_notices'][0]['reason'] += ' altered prior history'
+        with pytest.raises(AssertionError, match='Full original notice group/history changed'):
+            phase10_archive_history(ROOT, bad)
+    bad = copy.deepcopy(current)
+    bad.append(copy.deepcopy(bad[0]))
+    with pytest.raises(AssertionError, match='Duplicate current archive notice ID'):
+        phase10_archive_history(ROOT, bad)
