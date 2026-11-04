@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import stat
 
 import pytest
 
@@ -67,3 +68,24 @@ def test_regression_control_reproduces_old_atexit_order_failure(tmp_path):
     result=run_case(before,output,1)
     assert 'FileNotFoundError'in result.stderr
     assert not (output/'closed.txt').exists()
+
+
+def test_readonly_published_copy_is_mutable_without_touching_source(tmp_path):
+    from published15_test_view import mutable_copytree
+    source=tmp_path/'verified-view';nested=source/'nested';nested.mkdir(parents=True)
+    original=nested/'evidence.json';original.write_bytes(b'EXACT HISTORICAL FIXTURE BYTES\n')
+    original.chmod(0o444);nested.chmod(0o555);source.chmod(0o555)
+    try:
+        destination=mutable_copytree(source,tmp_path/'mutation-copy')
+        copied=destination/'nested/evidence.json'
+        assert copied.read_bytes()==original.read_bytes()
+        assert copied.stat().st_ino!=original.stat().st_ino
+        copied.write_bytes(b'INTENTIONAL TEST TAMPER\n')
+        copied.unlink()
+        (destination/'nested/new-case.json').write_bytes(b'new fixture')
+        assert original.read_bytes()==b'EXACT HISTORICAL FIXTURE BYTES\n'
+        assert stat.S_IMODE(original.stat().st_mode)==0o444
+        assert stat.S_IMODE(nested.stat().st_mode)==0o555
+        assert stat.S_IMODE(source.stat().st_mode)==0o555
+    finally:
+        source.chmod(0o755);nested.chmod(0o755);original.chmod(0o644)

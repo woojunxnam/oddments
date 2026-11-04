@@ -1,8 +1,24 @@
 """Historical guard tests use the same approved frozen15 input view as runtime."""
 import atexit
 import json
+import shutil
+import stat
 
 _VIEWS={}
+
+
+def mutable_copytree(source,destination):
+    """Independent mutation fixtures copy bytes, then relax only their own mode.
+
+    The verified published view stays read-only. copytree never hard-links the
+    source, so later fixture edits cannot change historical or live evidence.
+    """
+    result=shutil.copytree(source,destination)
+    for item in [result,*result.rglob('*')]:
+        mode=item.stat().st_mode|stat.S_IWUSR
+        if item.is_dir():mode|=stat.S_IXUSR
+        item.chmod(mode)
+    return result
 
 
 def published15_root(root):

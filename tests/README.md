@@ -15,6 +15,9 @@ frozen source를 사용한다. 모듈의 ROOT와 전체 `build()`·현재 N1·�
 실제 현재 tree를 유지한다. 현재16·본문·census·보호 검사는 해당 live integration
 suite에서도 계속 수행한다. Fixture는 독립된 일반 복사본이므로 mutation이 원본에
 전파될 수 있는 hard link를 사용하지 않는다.
+검증된 frozen view의 읽기 전용 mode가 mutation fixture에 전파되지 않도록
+`mutable_copytree`는 복사가 끝난 **복사본에만** owner-write 권한을 추가한다.
+원 view의 바이트·권한·inode는 그대로 두며 기존 tamper/unlink 검사를 모두 실행한다.
 
 최종16이 아직 없으면 helper가 live ROOT를 반환하는 기존 동작은 유지된다.
 N1/최종16 준비 중에 이 대용량 역사 fixture들을 미리 실행해 검증 완료로 세지 않는다.
