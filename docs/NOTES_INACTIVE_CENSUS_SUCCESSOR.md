@@ -30,10 +30,14 @@ python scripts/note_review_queue.py preview-inactive-census
 실제 활성 M semantic `e1519c02…`, 해당 절의 원 body `16124c09…`와 현재 binding을
 유지한다. 새 E25를 공개 ledger에 선택하지 않는다. Preview는 현재 credit0,
 HOLD·daily 제외와 실제 source/parent bindings를 반환한다. 다른305절의 등록 당시
-claim binding은 실제 M ledger snapshot으로 결박한다. 이 좁은 successor 검토 동안
-그 binding이 바뀌면 자동 수용하지 않는다. 별도 실제 근거와 새 bounded 검토가 필요하며
-원 record/snapshot을 덮어써서 통과시키지 않는다. Native 독립 annotation만 추가되는
-것은 이 author/body binding을 바꾸지 않는다.
+claim binding은 실제 M ledger snapshot으로 결박한다. 이후 같은 본문의 sibling
+census가 적법한 append-only native 재평가로 진화할 수 있다. 원 snapshot/binding은
+그대로 두고, 원 binding에서 현재 binding까지 정확히 이어지는 등록 record·원명제 보존·
+carry·HEAD source 및 실제 native history를 다시 검증한다. 미통합 등록은 처리 credit0이며
+실제 INTEGRATED는 원 report/envelope/authority bytes와 event도 검증한다. 임의 row/source
+변경·body 변경·최신 version의 과거 binding 복귀·누락된 native chain은 거부한다.
+다른3절을 먼저 통합하고 새 실제 snapshot으로25를 등록하는 순서도 가능하다.
+이미25를 등록했어도 후속 sibling version 때문에 역사 body record를 지우거나 고칠 필요가 없다.
 
 등록 record는 실제 활성 M snapshot과 비활성 N1 parent를 동시에 명시한다.
 `notes_revision`은 기존 candidate-origin ID를 그대로 사용하며 미래 active N1의
