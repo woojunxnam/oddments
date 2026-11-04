@@ -32,6 +32,12 @@ def sha(raw):
 def emergency_copy(tmp_path):
     shutil.copytree(ROOT/'revisions', tmp_path/'revisions')
     shutil.copytree(ROOT/'notes', tmp_path/'notes')
+    safety='reports/full-corpus-review/canonical-q0012-withdrawal'
+    shutil.copytree(ROOT/safety,tmp_path/safety)
+    for relative in ['reports/representative-rewrite/protected-baseline.json',
+                     'site/generated/preview_allowlist.json']:
+        dest=tmp_path/relative;dest.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(ROOT/relative,dest)
     evidence = 'reports/full-corpus-review/evidence/emergency-kit-final-independent-20261103'
     shutil.copytree(ROOT/evidence, tmp_path/evidence)
     paths = {'site/notes/build.json', 'site/notes/complete-notes.md',
