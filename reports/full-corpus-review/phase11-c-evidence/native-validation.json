@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "native_checks": [
+    "export_legacy_review_input.export exact whole-record hash and visible whitelist binding",
+    "review_queue.validate_independent_provenance",
+    "review_queue.validate_result",
+    "review_queue.validate_independent_evidence x40",
+    "build_full_corpus_review.validate_independent_source_bytes every actual authority",
+    "qa_common.semantic_content_hash style/blueprint; native JSON schemas"
+  ],
+  "question_count": 40,
+  "choice_count": 160,
+  "dispositions": {
+    "NEEDS_REMEDIATION": 38,
+    "INDEPENDENT_ASSESSED": 2
+  },
+  "report_path": "reports/full-corpus-review/independent-phase11-c-review.json",
+  "report_sha256": "69f8920b557f53900cba6e2eb5a67cae3dddba4ba166eeb67eef5b9746691ea1",
+  "canonical_release_credit": 0,
+  "author_review_credit": 0,
+  "note": "Read-only validation. No submit/integrate/generated/bank/governance mutation. Final worker commit must be rebound after committing this evidence.",
+  "whitespace_check": {
+    "authored_python_json_markdown": "PASS",
+    "verbatim_official_raw_and_extracted_text": "Retained without whitespace normalization; unrestricted git diff --check reports original official-capture whitespace. This is not reported as a full whitespace-check pass."
+  }
+}
