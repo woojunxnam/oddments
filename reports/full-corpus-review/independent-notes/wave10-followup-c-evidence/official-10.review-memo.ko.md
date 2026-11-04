@@ -1,0 +1,5 @@
+21 CFR1317
+
+registrantinventory disposal/reversedistribution/recall과ultimateusercollection/recall이서로다른경로다.일반DEApharmacy등록만으로collector허가가되지않고registrationmodification과location/method조건이있다.
+
+판본/효력 한계: eCFR Title21currentthrough2026-11-02.각절최초시행일미확정.
