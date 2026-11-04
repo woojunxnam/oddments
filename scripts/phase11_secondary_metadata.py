@@ -136,7 +136,12 @@ def load_metadata(root,primary_records,questions,collections):
         raw = read(path,row['evidence_sha256'])
         if path not in reports:
             report = json.loads(raw); no_release(report)
-            require(report.get('stage') == 'independent-legacy' and report.get('job_id') == job['job_id'] and
+            native = report.get('native_assignment_binding',{})
+            require(all(native.get(key) == job[key] for key in
+                        ('job_id','sequence','question_hashes','stage','worker','worker_branch','attempt')) and
+                    ('job_id' not in report or report['job_id'] == job['job_id']),
+                    'Supplementary report native assignment binding changed')
+            require(report.get('stage') == 'independent-legacy' and
                     report.get('question_hashes') == job['question_hashes'] and
                     len(report['records']) == len(IDS) and {r['question_id'] for r in report['records']} == set(IDS),
                     'Supplementary report must contain exactly the fixed two current questions')

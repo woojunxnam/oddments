@@ -58,3 +58,9 @@ python -m pytest -q tests/test_phase11_secondary_metadata.py \
 ```
 
 Fixture 통과는 실제 보고서·독립 법규 감사·배포 증거를 대체하지 않는다.
+
+실제 fresh 보고서의 `native_assignment_binding`에는 job ID·sequence·question hashes·
+stage·worker·worker branch·attempt가 해당 native job과 모두 같아야 한다. 별도
+최상위 `job_id`가 있으면 그것도 같아야 하며, 이미 커밋한 보고서에 이 필드를
+추가하려고 원바이트를 덮어쓰지 않는다. 기존 다른 bounded consumer는 이 형식으로
+확장하거나 변경하지 않는다.

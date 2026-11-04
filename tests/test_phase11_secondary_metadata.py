@@ -91,6 +91,9 @@ def fixture(tmp_path):
         evidence_sha256=secondary.sha((root/SOURCE).read_bytes()),raw_evidence_path=RAW,raw_sha256=secondary.sha((root/RAW).read_bytes()))
     job = state['jobs'][0]
     report = dict(provenance,job_id=job['job_id'],question_hashes=job['question_hashes'],sources=[authority],records=[])
+    report['native_assignment_binding'] = dict(job_id=job['job_id'],sequence=1,
+        question_hashes=job['question_hashes'],stage='independent-legacy',worker=secondary.ACTOR,
+        worker_branch='mission/'+job['job_id']+'-attempt-1',attempt=1)
     for old in primary[:2]:
         record = dict(question_id=old['question_id'],record_sha256=old['record_sha256'],
             read_scope={'original_stem':True,'all_choices_read':['A','B','C','D'],
@@ -290,6 +293,22 @@ def test_official_authority_requires_raw_payload_and_explicit_commencement_limit
     save(root,state,report,refresh=True)
     with pytest.raises(ValueError,match='Incomplete supplementary official authority'):
         load(fixture)
+
+
+@pytest.mark.parametrize('field',['job_id','sequence','question_hashes','stage','worker','worker_branch','attempt'])
+def test_captured_native_assignment_must_match_every_actual_job_binding(fixture,field):
+    root,state,report,*_ = fixture
+    report['native_assignment_binding'].pop(field)
+    save(root,state,report,refresh=True)
+    with pytest.raises(ValueError,match='native assignment binding changed'):
+        load(fixture)
+
+
+def test_nested_native_binding_is_sufficient_without_rewriting_original_report(fixture):
+    root,state,report,*_ = fixture
+    report.pop('job_id')
+    save(root,state,report,refresh=True)
+    assert load(fixture)['progress']['supplementary_new_key_assessed'] == 2
 
 
 def test_shallow_consumer_needs_no_original_worker_objects_or_branches(fixture,tmp_path):
