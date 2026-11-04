@@ -78,12 +78,70 @@ def chain_link(state,job,latest,used):
     used.add(identifier)
 
 
+def sibling_evolution(job,inv,state,read=None):
+    """Prove forward, registered census-only supersession of historical305.
+
+    Pending registered author versions confer no independent credit. Integrated
+    versions additionally require their actual HEAD report/envelope/authorities.
+    This is not a wildcard for changed rows, new bodies or unregistered sources.
+    """
+    r=entry_for(state,job)['record'];uid=r['unit_id'];root=Path(inv['root'])
+    read=read or census_only.disk_reader(root)
+    archived=json.loads(read(r['active_notes_snapshot']['path'],r['active_notes_snapshot']['raw_sha256']))
+    baseline=q.inventory(root,archived,ledger_raw=read(r['active_ledger_snapshot']['path'],r['active_ledger_snapshot']['raw_sha256']))
+    q.require(set(baseline['units'])==set(inv['units'])and
+              q.digest({k:b for k,b in baseline['units'].items()if k!=uid})==r['other_current_bindings_sha256'],
+              'Historical305 registration snapshot changed or unit set expanded')
+    changes=[k for k,b in baseline['units'].items()if k!=uid and b!=inv['units'][k]]
+    latest=census_only.latest_jobs(state)
+    evolved=[k for k,j in latest.items()if k!=uid and j.get('reassessment_id')and
+             j['unit_bindings'][k]!=baseline['units'].get(k)]
+    if not changes and not evolved:return []
+    q.validate_state(state)
+    census_only.validate_registered(state,root,inv['notes'],read)
+    for sibling in evolved:
+        owner=latest[sibling]
+        # Validate only this sibling; an old multi-unit job can also contain
+        # the inactive target, which would otherwise recurse into this helper.
+        q.current({**owner,'unit_ids':[sibling],'unit_bindings':{sibling:owner['unit_bindings'][sibling]}},
+                  inv,state,allow_pending=True)
+    entries_by_id={e['record']['reassessment_id']:e for e in state.get('reassessments',[])}
+    proof=[]
+    for sibling in sorted(changes):
+        cursor=baseline['units'][sibling];target=inv['units'][sibling];steps=[]
+        q.require(cursor['body_sha256']==target['body_sha256'],'Sibling body changes are outside inactive census succession')
+        for node in state['jobs']:
+            rid=node.get('reassessment_id')
+            if not rid or node['unit_ids']!=[sibling]:continue
+            e=entries_by_id[rid];record=e['record']
+            if record['previous_binding']!=cursor:continue
+            q.require(not(node.get('body_reassessment_id')or node.get('inactive_census_successor_id')) and
+                      record['purpose']==census_only.PURPOSE and node['unit_bindings'][sibling]['body_sha256']==cursor['body_sha256'],
+                      'Only explicit forward same-body native census versions may supersede historical305')
+            if node['status']=='INTEGRATED':
+                result=node['result'];q.validate_result(node,result)
+                q.require(json.loads(read(result['result_path'],node['result_sha256']))==result and
+                          any(x.get('kind')=='INTEGRATE'and x.get('job_id')==node['job_id']and
+                              x.get('commit')==node.get('integrated_commit')and x.get('result_sha256')==node['result_sha256']
+                              for x in state['events']),'Sibling integrated census lacks exact captured native history')
+                report=json.loads(read(result['evidence']['path'],result['evidence']['raw_sha256']))
+                from notes_independent_metadata import evidence_bindings
+                for path,sha in set(q.validate_evidence(node,result,report))|set(evidence_bindings(report)):read(path,sha)
+            cursor=node['unit_bindings'][sibling]
+            steps.append(dict(job_id=node['job_id'],status=node['status'],record_path=e['record_path'],
+                record_raw_sha256=e['raw_sha256'],binding_sha256=q.digest(cursor),independent_credit_created=0))
+            if cursor==target:break
+        q.require(steps and cursor==target,'Current sibling binding has no exact append-only native census chain')
+        proof.append(dict(unit_id=sibling,original_binding_sha256=q.digest(baseline['units'][sibling]),
+            current_binding_sha256=q.digest(target),native_census_supersessions=steps))
+    return proof
+
+
 def current(job,inv,state):
     """Only the real M binding or fully integrated exact N1/25 is admissible."""
     r=entry_for(state,job)['record'];uid=r['unit_id'];selected=inv['units'].get(uid)
     actual=body.units(inv['notes'])[uid]
-    q.require(q.digest({k:b for k,b in inv['units'].items()if k!=uid})==r['other_current_bindings_sha256'],
-              'Inactive successor other305 current bindings changed; explicit new bounded review is required')
+    sibling_evolution(job,inv,state)
     if selected==r['active_binding']:
         q.require(q.digest(actual)==r['active_unit_record_sha256']and semantic_sha(inv['notes'])==SCOPE['active_semantic_sha256'],
                   'Inactive successor active M unit changed')

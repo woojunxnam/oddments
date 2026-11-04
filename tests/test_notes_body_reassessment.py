@@ -45,6 +45,9 @@ def correction(repo,request):
         row=report['records'][0];row['claims'][0].update(legal_status='LEGAL_HOLD',finding='Incorrect original legal scope',blocker='Correct the source body scope')
         row['legal_status']='LEGAL_HOLD'
         if getattr(request,'param',None)=='omissions':row.update(completeness='OMISSIONS_FOUND',omissions=['Original independently found omission'])
+        if getattr(request,'param',None)=='sibling_omissions':
+            for sibling in report['records'][1:4]:
+                sibling.update(completeness='OMISSIONS_FOUND',omissions=['Omitted sibling atom'],legal_status='LEGAL_HOLD')
     result,worker=worker_result(repo,state,old,negative)
     q.submit(state,old['job_id'],old['lease_token'],q.encoded(result),root,inv,NOW)
     integrate_files(root,result);q.integrate(state,old['job_id'],root,inv,NOW);persist(root,state)
