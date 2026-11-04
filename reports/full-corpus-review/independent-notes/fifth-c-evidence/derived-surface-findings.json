@@ -1,0 +1,63 @@
+{
+  "read_scope": "2 effective study lessons,1 comparison,1 module summary;8 refresh cards,3 glossary entries,1 chapter summary; matching local generated JS content also actually read. Study full builder failed before result, fallback applies current revisions; raw historical guide text not treated as active.",
+  "build_status": {
+    "study": {
+      "status": "BUILD_BLOCKED_FALLBACK_EFFECTIVE_REVISION_CONTENT",
+      "exception_type": "ValueError",
+      "error": "Stale representative selection",
+      "writes": false
+    },
+    "refresh": {
+      "status": "BUILT_READ_ONLY",
+      "writes": false
+    }
+  },
+  "question_audit_credit": 0,
+  "findings": [
+    {
+      "surface_ids": [
+        "LAW-037",
+        "RF-006",
+        "RF-031"
+      ],
+      "finding": "원 처방/기록/label 구별 및 명확한 directions를 유지한다. 검토한 연결 범위에서 새 수량·기한·법적 모순을 확인하지 않았다. 전체 labels/USP 범위 HOLD를 해소하지 않는다.",
+      "status": "NO_CONTRADICTION_IN_REVIEWED_SCOPE"
+    },
+    {
+      "surface_ids": [
+        "LAW-038",
+        "compare-07",
+        "RF-013",
+        "RF-019",
+        "RF-020"
+      ],
+      "finding": "제품별 TE와 IR/ER·보험/제품 동등성 구별은 본문/primary와 정합적이다. RF-013은 구체 IR/ER 예라서 본문의 다른 release formulation에 대한 blanket mechanism 해석 HOLD를 자동 해소하지 않는다. Biologic/Purple Book 세부는 다른 연결 unit 범위이며 이번 unit6의 모든 법으로 인증하지 않는다.",
+      "status": "NO_CONTRADICTION_IN_REVIEWED_SCOPE"
+    },
+    {
+      "surface_ids": [
+        "RF-014",
+        "RF-016"
+      ],
+      "finding": "가상 산술10mg×2=20mg,60정 quantity 및20mg/5mL=4mg/mL,8mg=2mL를 확인했다. 명시적 학습 예시이며 실제 처방 적정 dose/권한으로 표현하지 않는다.",
+      "status": "FICTIONAL_CALCULATION_CHECKED"
+    },
+    {
+      "surface_ids": [
+        "RF-C-label-interchange",
+        "chapter:label-interchange",
+        "module:m10"
+      ],
+      "finding": "장/모듈 요약은 세부 조건을 대체하지 않는다고 표시한다. 검토한5절 관련 scope에서 추가 잘못된 수치/기한을 확인하지 않았다. 본문 legal HOLD를 summary KEEP로 덮지 않는다.",
+      "status": "NO_CONTRADICTION_IN_REVIEWED_SCOPE"
+    },
+    {
+      "surface_ids": [
+        "RF-C-label-interchange"
+      ],
+      "finding": "w3-a-4 stored_source_hashes는558f3b...라는 역사적 값이나 실제 source_hashes는현재84f41f...와 일치한다. ACTUAL_EFFECTIVE_BODY_UTF8가 현재 기준으로 명시되어 있어 historical stored hash 차이를 현행 본문 drift로 오인하지 않았다.",
+      "status": "HISTORICAL_METADATA_DIFFERENCE_CURRENT_HASH_CORRECT"
+    }
+  ],
+  "published_scope": "Tracked local JS snapshots only; not remote deployed PR190 bytes. Existing selection/publication metadata drift is separately recorded; no generator writes or repairs."
+}
