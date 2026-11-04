@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-04T04:48:39.602376+00:00",
+  "current_worker_and_root_whole_record_hashes": 3,
+  "complete_current_visible_objects_match": 3,
+  "choices_and_korean_rationales": 14,
+  "fresh_current_official_sources": 4,
+  "mixed_SATA_expected_sets": {
+    "MA-RW-0081": [
+      "A",
+      "C",
+      "D"
+    ],
+    "MA-RW-0082": [
+      "A",
+      "C"
+    ],
+    "MA-RW-0083": [
+      "A",
+      "C",
+      "E"
+    ]
+  },
+  "existing_validate_review": "PASS3",
+  "native_validate_submission": "PASS",
+  "review_queue_validate_result": "PASS",
+  "native_validate_report_HEAD": "NOT_RUN_PRECOMMIT_REQUIRES_RETAINED_HEAD_SOURCE_BYTES",
+  "dispositions": {
+    "AUTHOR_REVIEWED": 3
+  },
+  "body_key_source_metadata_draft_changes": 0,
+  "independent_credit": 0,
+  "canonical_release_credit": 0,
+  "credit_before_root_registry_and_integration": 0,
+  "report_sha256": "a359f275e8fa26a5c029581672ba207cdd9e6cf61005c9d6aa36f536f04188b4",
+  "worker_commit": "15741bc98ab005770380967579ac9d4903ee12bf",
+  "envelope_written": false,
+  "root_submit_integrate_registry": "NOT_RUN_ROOT_ONLY",
+  "scope": "PRECOMMIT current root pure validators plus exact worker/root record hashes; actual native HEAD source validation follows commit and is reported in uncommitted result receipt.",
+  "validator_code_basis": {
+    "root_head": "6db98bef9ec194edc810fd4c19d04e4fbb997744",
+    "modules": [
+      {
+        "path": "scripts/remediation_author_reviews.py",
+        "raw_sha256": "5aa4f38831811da82214e2bb0d288adcba332c5644707475a51b874c8d6084e1"
+      },
+      {
+        "path": "scripts/build_full_corpus_review.py",
+        "raw_sha256": "3dfcd329083fdae4e4f673c40e9e2c01bbf0c5799b07c40119075d9c7eb189e7"
+      },
+      {
+        "path": "scripts/review_queue.py",
+        "raw_sha256": "565617f88157ee586791be038b6bf5a196d129531296c6e6be6a11c6f2f0a197"
+      }
+    ]
+  },
+  "focused_tests": {
+    "command": "python -m pytest -q tests/test_remediation_author_reviews.py tests/test_sata_remediation_candidates.py",
+    "worker_base_commit": "15741bc98ab005770380967579ac9d4903ee12bf",
+    "outcome": "2 failed, 8 passed, 19 errors in 17.89s",
+    "native_fixture_setup_error": "19 errors: fixture asserts exactly52jobs, but native AUTHOR job53 is already leased. Test source unchanged by this worker.",
+    "publication_failure": "2 tests: publish_practice.py:68 Additional bank hash changed; reconcile publication metadata. Publication metadata is outside author-owned scope and was not changed.",
+    "root_follow_up_ko": "Root가 이후 fixture 수정 commit2821976c/6db98bef를 알렸다. 이 worker는 cherry-pick/테스트 수정 없이 원 실행 실패를 보존한다. 현재 root 테스트가 통과했다고 이 보고서가 대신 주장하지 않는다.",
+    "legal_key_effect": "NONE_INFERRED; current candidate whole-record hashes and all14 source/choice bindings validated independently. Root publication QA remains separate.",
+    "full_repository_qa": "NOT_RUN_NOT_REQUIRED"
+  }
+}
