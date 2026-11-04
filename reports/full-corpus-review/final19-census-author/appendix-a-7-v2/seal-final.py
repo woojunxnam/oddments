@@ -24,6 +24,9 @@ route/제형대체/현재공급/법규schedule동일성/정식처방권한을인
 새AUTHOR_SOURCE_CHECKED와독립법규PASS를구별하며원authorflags와actual35SB를
 모두보존한다.기존031/032등의finding/blocker/원reportSHA와상속이력은native
 carried_legal_blockers에남겨해제하지않았다.
+원보고서source_retrievals의과거scratch text경로8개는nativeauthority경로와구별했다.
+모두같은SHA의커밋된source사본에연결해검증했으며최종검증에서외부절대경로를읽지
+않았다.매핑과한계는preservationproof에기록했고원보고서는변경하지않았다.
 
 실제parent는Job72 {i['previous_job_id']}이다.
 parentcanonicalSHA {i['previous_job_sha256']}
