@@ -188,7 +188,7 @@ def test_every_native_source_identity_and_scope_mutation_fails_closed(data,defec
     d=data;root=d['root'];state=d['state'];scope=state[route.SCOPE_KEY];job=state['jobs'][0]
     row=d['report']['records'][0];legal=row['legal_review'];reviewer=scope['fresh_reviewer'];uid=route.IDS[0]
     if defect=='extra_scope': scope['question_ids'].append('MA-EXP-9999')
-    elif defect.startswith('parent_'):
+    elif defect in {'parent_raw','parent_row','parent_question','parent_actor'}:
         key={'parent_raw':'report_sha256','parent_row':'record_sha256','parent_question':'question_record_sha256','parent_actor':'original_actor'}[defect]
         scope['previous_evidence'][uid][key]='0'*64
     elif defect=='substantive_parent':
