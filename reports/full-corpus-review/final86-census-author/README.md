@@ -78,3 +78,12 @@ commit12e3bb68에서 바이트 불변이며 이전 index SHA는
 `check-preservation.py`는 원 claim/source 전량 canonical 보존, omission SHA,
 원문 바이트 및 source/report/result/census의 disk==HEAD를 검증한다. 이 author는
 queue/ledger/원본문/문항/생성물/loader/guard를 수정하지 않고 register를 호출하지 않는다.
+
+최종 검증에서 19개 모두 native validate_record/disk_reader를 통과했다. 기존650개
+canonical 원명제와 모든 기존 source object, 원본문, old9 prefix가 보존됐고 참조
+1,746개 파일의 disk==HEAD가 확인됐다. `known-authors-and-carried-blockers.json`은
+실제 replacement의 author 제외 이력과 원 author union, carried blocker 수를 남긴다.
+`retained-original-byte-check.json`은 새로 보존한 16개 출처의 48개 raw/text/meta가
+원래 통합 commit·현재 HEAD 원경로·저자 snapshot 사이에 완전히 같음을 확인한다.
+전체306개 body는 notes120 및 Final86의 실제 strict notes snapshot 사이에서도
+UTF-8 바이트가 동일하다. 기존 source-only 보고서나 index는 갱신하지 않았다.
