@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import subprocess
+import sys
 
 import note_review_queue as notes_queue
 import review_queue as question_queue
@@ -217,7 +218,7 @@ def validate_note_scope(state):
     return job
 
 
-def retained_evidence_bindings(value):
+def retained_evidence_references(value,pointer=''):
     """Pair retained bytes with their own SHA, not an underlying remote raw SHA.
 
     A provenance memo's `path`/`sha256` may also describe the fetched payload's
@@ -242,13 +243,30 @@ def retained_evidence_bindings(value):
                 candidates.extend(('sha256','raw_sha256','file_sha256'))
             for hash_key in candidates:
                 if hash_key in value:
-                    yield path, value[hash_key]
+                    yield path, value[hash_key], pointer+'/'+key.replace('~','~0').replace('/','~1')
                     break
-        for child in value.values():
-            yield from retained_evidence_bindings(child)
+        for key,child in value.items():
+            yield from retained_evidence_references(child,pointer+'/'+key.replace('~','~0').replace('/','~1'))
     elif isinstance(value, list):
-        for child in value:
-            yield from retained_evidence_bindings(child)
+        for index,child in enumerate(value):
+            yield from retained_evidence_references(child,pointer+'/'+str(index))
+
+
+def retained_evidence_bindings(value):
+    for path,expected,_ in retained_evidence_references(value):yield path,expected
+
+
+def bind_current_review_context(root,bindings):
+    """Historical receipts cannot stand in for current counters/instructions."""
+    from after190_historical_context import PROGRESS,RUNBOOK
+    committed(root,RUNBOOK,bindings)
+    current=committed(root,PROGRESS,bindings)
+    # Isolated import keeps a caller's alternate/shallow root independent of this
+    # interpreter's module globals. build() returns payloads and writes nothing.
+    code=('import sys;sys.path.insert(0,sys.argv[1]);import build_full_corpus_review as b;'
+          'sys.stdout.write(b.build()[b.OUT/"progress.json"])')
+    expected=subprocess.check_output([sys.executable,'-c',code,str(root/'scripts')],cwd=root)
+    require(current==expected,'Current progress differs from actual source builder; historical receipts cannot replace counters')
 
 
 def zero_credit(value):
@@ -451,12 +469,25 @@ def bind_legacy_checkpoint(root,current,legacy_state,bindings):
         private_payloads = {(a.get('raw_path'),a.get('raw_sha256')) for a in report.get('sources', [])
                             if a.get('public_raw_redistribution') is False and
                             'memo' in a.get('public_evidence_mode','').lower()}
-        for source_path, source_sha in set(retained_evidence_bindings(report)):
+        references={}
+        for source_path,source_sha,pointer in retained_evidence_references(report):
+            references.setdefault((source_path,source_sha),set()).add(pointer)
+        historical=[];private_extracted=[]
+        from after190_historical_context import resolve as resolve_historical,resolve_private
+        for (source_path,source_sha),pointers in references.items():
             # A declared private copyrighted raw payload was already handled
             # by the existing validator; only retained repository bytes bind.
             if PurePosixPath(source_path).is_absolute():
+                descriptor=resolve_private(root,current,path,expected,report,source_path,source_sha,pointers,bindings,committed)
+                if descriptor:
+                    private_extracted.append(descriptor)
+                    continue
                 require((source_path,source_sha) in private_payloads,
                         'After190 unexpected unretained absolute evidence path')
+                continue
+            receipt=resolve_historical(root,current,path,expected,source_path,source_sha,pointers,bindings,committed)
+            if receipt:
+                historical.append(receipt)
                 continue
             require(sha(committed(root, source_path, bindings)) == source_sha,
                     'After190 legacy retained source payload changed: ' + source_path)
@@ -477,6 +508,8 @@ def bind_legacy_checkpoint(root,current,legacy_state,bindings):
                      evidence_path=path, evidence_sha256=expected,
                      result_path=result_path, result_raw_sha256=sha(result_raw),
                      provenance_basis='CONTROLLER_CAPTURED_CLAIM_NOT_IDENTITY_PROOF')
+        if historical:entry['historical_context_receipts']=historical
+        if private_extracted:entry['unretained_private_extracted_descriptors']=private_extracted
     return entry
 
 
@@ -575,6 +608,7 @@ def make_manifest(root=ROOT):
     phase7=[bind_legacy_checkpoint(root,current,legacy_state,bindings)
             for current in legacy_state['jobs']if current['sequence']>=21]
     native_author_checkpoint=bind_native_author(root,bindings)
+    bind_current_review_context(root,bindings)
     canonical_withdrawal_checkpoint=bind_canonical_withdrawal(root,bindings)
     from build_ultimate_notes import make_outputs
     outputs = make_outputs(root=root)

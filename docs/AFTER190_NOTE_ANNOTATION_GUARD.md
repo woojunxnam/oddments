@@ -127,3 +127,29 @@ python -m pytest -q tests/test_after190_annotation.py tests/test_emergency_note_
 `NOT_RUN` 사유로 skip한다. 범위·tamper·원14 보존·실제 author source 검증은 별도로 실행한다.
 Skip을 final gate PASS로 보고하지 않는다. Root는 모든 실제 source와15 manifest를 고정한
 tree에서 전체 검증·CI·배포 검사를 다시 수행한다.
+
+## 과거 입력 receipt와 현재 source의 구별
+
+일부 immutable wave9 report는 읽기 당시의 progress, 운영 runbook, nearest-default
+selection 원본 SHA를 기록했다. 이를 현재229 selector나 현재 progress와 같은 바이트로
+취급하지 않는다. `after190_historical_context.py`와
+`reports/full-corpus-review/after190-historical-context/registry-v2.json`은 실제 job/report
+raw SHA, 원 path+SHA, 정확한 report JSON pointer와 retained path+동일 SHA를 결박한다.
+허용은 A30 progress·당시 운영 runbook, B31의40 nearest-default context와 D33 input
+selection의 정확4개뿐이다. RELEASE/AUDIT/SOURCE_USE/QUESTION_AUTHORING 정책,
+style/blueprint, primary authority, question이나 current ledger에는 alias를 제공하지 않는다.
+
+과거 progress와 당시 운영 runbook은 준비 때 알려진 실제 worker/root Git blob에서
+선언된 SHA를 확인해 원 바이트를 보존했다. Selection은 이미 HEAD에 있던
+`phase9-before-selection.json`의 정확한 원 바이트를 재사용한다. Runtime은 HEAD의
+보존본만 검증하며 옛 worker Git object를 요구하지 않는다. 현재 운영 runbook은
+별도로 HEAD와 대조하고, 현재 progress는 현재 실제 builder의 읽기 전용 결과와
+동일해야 한다. 현재 selector/default safety·원2346 object·primary 검사도 그대로 실행한다.
+
+B31의 sources[8,12,39,40]에는 copyright-restricted memo-only source의 private
+`extracted_path/SHA`가 있다. 이 정확4개는 원 report·source index/id·path/hash·공개
+금지 선언과 해당 relative retained memo를 결박한 **비보존 설명값**이다. CI가 private
+원문/추출문 바이트를 검증했다고 주장하지 않는다. 원 raw와 text는 repo에 반입하지 않는다.
+Retained memo의 HEAD 바이트·SHA 검사는 계속하며 다른 absolute/public/미선언 경로는
+거부한다. Registry의 원 v1·원 보고서·envelope·기존14 manifest와 decoder는 보존한다.
+이 보존 작업은 새 법규 판단·현재 counter 변경·감사 또는 release credit를 만들지 않는다.

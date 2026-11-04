@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import notes_after190_annotation as annotation
 import verify_representative_protected as protected
 from build_ultimate_notes import make_outputs
+LIVE_MAKE_MANIFEST=annotation.make_manifest
 
 
 @pytest.fixture(scope='module')
@@ -34,6 +35,10 @@ def overlay(monkeypatch, prepared):
     def read(root, relative):
         return values[relative] if relative in values else original(root, relative)
     monkeypatch.setattr(annotation, 'safe_bytes', read)
+    # The module fixture derives this expected proposal from the real complete
+    # current source graph once. Wrapper mutation cases isolate decode/equality;
+    # source/semantic mutation cases below explicitly restore the live derivation.
+    monkeypatch.setattr(annotation,'make_manifest',lambda root=ROOT:copy.deepcopy(manifest))
     return values, manifest, markdown, build
 
 
@@ -121,7 +126,7 @@ def test_credit_inflation_including_boolean_zero_is_rejected(overlay, key):
 
 
 @pytest.mark.parametrize('path', [annotation.PARENT, annotation.BASE_MD, annotation.BASE_BUILD])
-def test_even_a_rehashed_modified_published_parent_or_snapshot_is_rejected(overlay, path):
+def test_even_a_rehashed_modified_published_parent_or_snapshot_is_rejected(monkeypatch,overlay,path):
     values, manifest, markdown, _ = overlay
     values[path] = (ROOT / path).read_bytes() + b'\n'
     changed = copy.deepcopy(manifest)
@@ -129,6 +134,7 @@ def test_even_a_rehashed_modified_published_parent_or_snapshot_is_rejected(overl
            annotation.BASE_BUILD:'baseline_build_sha256'}[path]
     changed[key] = annotation.sha(values[path])
     values[annotation.MANIFEST] = annotation.notes_queue.encoded(changed)
+    monkeypatch.setattr(annotation,'make_manifest',LIVE_MAKE_MANIFEST)
     with pytest.raises(ValueError, match='fourteenth manifest changed|snapshot changed'):
         annotation.decode(ROOT, annotation.EXPORT, markdown)
 
@@ -152,9 +158,11 @@ def test_stale_current_build_even_with_unchanged_semantics_is_rejected(overlay):
 
 @pytest.mark.parametrize('path', [annotation.V4_CENSUS, annotation.V4_RECORD,
                                  annotation.notes_queue.STATE, annotation.LEGACY_STATE])
-def test_current_source_payload_changes_are_not_silently_rebound(overlay, path):
+def test_current_source_payload_changes_are_not_silently_rebound(monkeypatch,overlay,path):
     values, _, markdown, _ = overlay
     values[path] = (ROOT / path).read_bytes() + b'\n'
+    # Explicit live source proof, rather than the wrapper's cached expectation.
+    monkeypatch.setattr(annotation,'make_manifest',LIVE_MAKE_MANIFEST)
     with pytest.raises(ValueError, match='Uncommitted after190'):
         annotation.decode(ROOT, annotation.EXPORT, markdown)
 
@@ -163,6 +171,7 @@ def test_actual_semantic_change_cannot_use_annotation_wrapper(monkeypatch, overl
     _, _, markdown, _ = overlay
     notes = copy.deepcopy(annotation.load_notes(ROOT)); notes['chapters'][0]['units'][0]['body'] += ' New legal claim.'
     monkeypatch.setattr(annotation, 'load_notes', lambda root: notes)
+    monkeypatch.setattr(annotation,'make_manifest',LIVE_MAKE_MANIFEST)
     with pytest.raises(ValueError, match='cannot authorize semantic'):
         annotation.decode(ROOT, annotation.EXPORT, markdown)
 
@@ -233,7 +242,8 @@ def test_final_legacy_scope_or_missing_integration_cannot_be_permitted_by_rebind
     elif change == 'pending': job['status'] = 'LEASED'
     elif change == 'history':
         state['events']=[e for e in state['events']if not(e.get('kind')=='INTEGRATE'and e.get('job_id')==job['job_id'])]
-    elif change=='fake_ig':state['jobs'][-1]['status']='INTEGRATED'
+    elif change=='fake_ig':
+        state['jobs'][-1]['status']='INTEGRATED';state['jobs'][-1].pop('result',None)
     else:
         extra = copy.deepcopy(job); extra['sequence'] = 29; state['jobs'].append(extra)
     with pytest.raises(ValueError, match='scope|pending|integration'):
@@ -286,8 +296,12 @@ def test_actual_incomplete_final_input_is_rejected_without_writing_any_publicati
     state=json.loads((ROOT/annotation.notes_queue.STATE).read_bytes())
     legacy=json.loads((ROOT/annotation.LEGACY_STATE).read_bytes())
     if len(state['jobs'])==31 and all(j['status']=='INTEGRATED'for j in state['jobs'][:30]+legacy['jobs']):
-        pytest.skip('NOT_RUN: this fixture applies only while actual final results are pending')
-    with pytest.raises(ValueError,match='exact jobs1-30|pending/LEASED|not yet bound'):annotation.make_manifest(ROOT)
+        # Actual receipts are now complete; exercise the pending negative on an
+        # in-memory copy rather than inventing or writing a pending checkpoint.
+        pending=copy.deepcopy(legacy);pending['jobs'][-1]['status']='LEASED'
+        with pytest.raises(ValueError,match='pending/LEASED'):annotation.validate_legacy_scope(pending)
+    else:
+        with pytest.raises(ValueError,match='exact jobs1-30|pending/LEASED|not yet bound'):annotation.make_manifest(ROOT)
     assert all((ROOT/p).read_bytes()==raw for p,raw in before.items())
 
 
@@ -438,7 +452,11 @@ def test_only_exact_wave9_current_default_assignments_are_in_scope_and_pending_i
     elif defect=='changed_hash':state['jobs'][30]['question_hashes'][next(iter(state['jobs'][30]['question_hashes']))]='0'*64
     elif defect=='extra_job':state['jobs'].append(dict(state['jobs'][32],sequence=34))
     elif defect=='partial_ig':
-        for j in state['jobs'][29:]:j['status']='INTEGRATED'  # no actual results/events
+        for j in state['jobs'][29:]:
+            j['status']='INTEGRATED';j.pop('result',None)  # status-only without actual receipt
+    if defect is None:
+        annotation.validate_legacy_scope(state)
+        return
     with pytest.raises(ValueError,match='scope|pending|integration'):annotation.validate_legacy_scope(state)
 
 
