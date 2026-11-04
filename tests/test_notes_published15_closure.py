@@ -247,3 +247,10 @@ def test_root_prepare_cli_retain_all_preserves_existing_manifest_and_requires_ne
         c.write_preparation(root,'/root',value['published_commit'],ref,
             c.CLOSURE_PREFIX+'fixture-v1.json',retain_all=True)
     assert json.loads((root/c.CLOSURE_PREFIX/'fixture-v1.json').read_bytes())==value
+
+
+def test_retain_all_cli_is_preparation_only(tmp_path):
+    result=subprocess.run([sys.executable,str(ROOT/'scripts/notes_published15_closure.py'),
+        '--root',str(tmp_path),'--retain-all'],capture_output=True,text=True)
+    assert result.returncode!=0 and '--retain-all requires --prepare'in result.stderr
+    assert list(tmp_path.iterdir())==[]
