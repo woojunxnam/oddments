@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 53/306절. 누락 보완본의 새 독립 검토 대기 7절은 현재 처리 수에서 제외합니다. 누락 지적 0절 · 법규 보류 8절 · 독립 검토의 근거 미확인 9명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 59/306절. 누락 보완본의 새 독립 검토 대기 1절은 현재 처리 수에서 제외합니다. 누락 지적 3절 · 법규 보류 13절 · 독립 검토의 근거 미확인 11명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -191,15 +191,11 @@ Examination·reciprocity·면허 상태와 연간 CE를 하나의 흐름으로 �
 ## Pharmacist licensure by examination
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-b-review.json)
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-c1-review.json)
 
-> - CENSUS_OMITTED_BODY_PROPOSITION: actualbody “시험 합격 사실만으로 면허가 발급된 것은 아니다”는 시험결과와법적면허발급을구별하는독립명제다.33개기존claim은시험2개·application요소·reciprocity경계는열거하지만이명제자체는기록하지않았다.현재NABPMPJE/NAPLEXResults가passingresultdoesnotconstitutealicense/onlyboardsissue라고명시하여materiality를확인했다.새claim은보고서omission에만기록하며authorcensus는수정하지않았다.
+> - 현재 CMR의75% 문구와 NABP의Pass/Fail 보고를 각각 직접 읽었지만, 그 둘만으로 raw correct percentage와 passing standard의 수학적 관계나 equating 공식을 입증하지 않는다. 이 범위의 공식 상세 설명을 이번에 확인하지 않아 원SOURCE_BLOCKED를 유지한다. — 현재 공식 raw-percentage/scaling/equating 상세 관계를 이 결과보고 페이지에서 확인할 수 없다. 원독립 SOURCE_BLOCKED를 census-only 경로에서 해소하지 않는다.
 
-> - CENSUS_OMITTED_BODY_ACTOR_PROPOSITION: 실제 본문 “개인별 최종 적격성은 Board가 결정한다”는 판단 주체를 정한 별도 명제다. 기존33개 census의 Board 서류수신/불완전신청 거절/학교요건 조항은 각각 다른 행위이며 이 최종 적격성 주체를 명시적으로 열거하지 않는다. w1-a-3의 별도unit claim006에 같은 역할 구별이 있다는 사실로 w1-a-2 census를 완전하다고 대신 판단하지 않았다. 이 omission은 현재 본문에 실제로 있는 문장과 배정 census의 내용 대응에서 찾았으며 cardinality 차이를 근거로 만들지 않았다.
-
-> - NABP공식페이지에서adaptive전달과Pass/Fail보고는확인했지만,이는rawcorrectpercentage와passingstandard의수학적관계를완전히증명하는문서가아니다. 추정FAQURL은404이고이번감사에서현재공식scoring-method/equating설명을직접확보하지못했다. 따라서교육적주의문구를틀렸다고하지않되이명제의상세점수해석은SOURCE_BLOCKED로남긴다. — 현재공식rawpercentage/scaling/equating설명미확보. adaptive/passfail만으로scoringformula를추론하지않음;추정FAQ404는검증0.
-
-> - 현재PDF§3.01(1)서두는ACPE-accreditedAND Board-approved라고쓰지만(1)(b)의degree조항은ACPE-accreditedOR Board-approved라고쓴다. 실제본문첫문장은학교서두자체를OR로요약한다. 하나의하위degreeOR만골라전체eligibility를무조건인증할수없고,Board확인또는정확한구분이필요하므로LEGAL_HOLD다. — 공식§3.01(1)openingAND와(1)(b)degreeOR의관계를actualbody가명료화하지않아unconditionalORschooleligibility인증불가.
+> - 오늘 currentPDF에서도 학교 서두는 ACPE-accredited AND Board-approved이고 degree 하위조항은 OR다. 실제 본문 첫 문장은 학교 경로를 OR로 요약한다. 하위 degree 조건의OR만으로 전체 학교 eligibility의 OR를 인증하지 않으며 원LEGAL_HOLD를 유지한다. — 현재 본문의 학교 OR 요약과 공식3.01(1)서두AND/degree조항OR의 범위가 명료화되지 않았다. 원독립LEGAL_HOLD를 이 census-only 감사로 해소하지 않는다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-a-2-census-v2.json)
@@ -275,10 +271,6 @@ Reciprocity application은 NABP 승인일로부터 1년간 유효하다. Exam fa
 
 ## Renewal와 lapse
 
-
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-c-review.json)
-
-> - CENSUS_COVERAGE_OMISSION: 본문 “Suspended/revoked 상태가 2년을 초과한 경로는 별도이다. 이 경우 MPJE와 기타 조건이 필요하고, Board가 NAPLEX 합격을 요구할 수도 있다.”의 ‘기타 조건이 필요’라는별도선행의무가배정census에없다.012는MPJE,013은선택적NAPLEX만명시한다.010/011의일반미갱신(otherconditions)은suspended/revoked를배제한경로이므로이disciplinary의무를대신하지않는다.247CMR4.02(7)는MPJE뿐아니라all other conditions as determined by Board의충족을renewal선행요건으로정한다.본문자체의오류나문장분절개수차이라는판정이아니다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-a-4-census-v2.json)
@@ -499,11 +491,9 @@ Board authorization/program approval 신청은 예정된 presentation보다 최�
 ## 인력의 자격을 구분하는 지도
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/first-e-review.json)
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-f1-review.json)
 
-> - 본문의 “National certification이 없는 technician와 certified technician의 허용 업무가 다르다”라는 실체적 scope 차이가 열거에서 빠졌다. 기존005는 Board license,006은 certified technician의 Board license,007은 인증기관 정의일 뿐 실제 permitted-duty 차이를 주장하지 않는다.8.02(6)(c)와8.04(4)(c)-(d),현행scope-policyIII.B/C를 별도로 대조할 명제가 필요하다.
-
-> - 본문의 PTT 설명 중 “나이·고용기간·감독·전화처방 관련 제한이 별도로 있다”가 열거에서 빠졌다. 기존008은 PTT license 필요성만 진술하며8.03(2)(a),(4)(b)-(c),(5)의 별도 제한 존재를 포함하지 않는다. 본문에없는 세부수치를 새본문명제로 발명하는 것이 아니라 해당 네 제한 범주의 실제 언급이 census에 없는 것을 지적한다.
+> - 본문 마지막의 “취급할 수 있는 약의 상태가 제한된다”는 unlicensed cashier/vendor가 다룰 수 있는 완성·검증·포장 상태와 unfinished medication handling의 구별이다. 현재009는 licensed personnel과 전문업무 범위의 일반적 구별만,010은 external vendor의 prescription-area 접근 조건만 진술한다.15개 statement 어느 것도 약의 완료 상태에 따른 handling 제한의 존재를 실제 열거하지 않는다. Policy2020-15 I의 filled/verified/bagged 및 unfinished handling 조건은 직접 확인했지만, authority annotation에 있다는 사실을 statement 자체의 열거로 대체할 수 없다. 본문에 없는 세부 숫자를 추가하라는 요구나 단순 분절 개수 차이가 아니라 실제 body에 독립적으로 쓰인 약 상태 조건의 잔여 누락이다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-b-1-census-v2.json)
@@ -983,9 +973,9 @@ Non-resident pharmacist의 Massachusetts 환자 대상 cognitive services는 원
 ## Pharmacy license와 controlled-substance registration
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-b-review.json)
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-b1-review.json)
 
-> - CENSUS_OMITTED_EXISTING_BODY_PROPOSITION: actualbody는 “개업 approval후1 calendar year”를 “Drug Store license의유효기간1년”으로바꾸지말라고명시한다. 기존claim022/023은개업기한/서면허가대안만열거하며면허유효기간과의별도구별명제는없다. 실제§6.04(7)의개업clock과§6.05(2)의odd-year12/31expiry를독립대조하여이차이를확인했다. 법령에만있는새조건을요구하거나claim개수차이로만들어진누락이아니며authorcensus는수정하지않았다.
+> - CENSUS_OMITTED_EXISTING_BODY_SETTING_SCOPE: actualbody의 “Institutional sterile compounding pharmacy, 일반 hospital inpatient pharmacy, retail Drug Store pharmacy를 동일한 setting으로 취급하지 않는다. 조문별 적용 제외를 확인한다.”라는별도범위명제가최종32개statement에포착되지않았다. 기존004는dispensing의DrugStore/institutionalsterile두license경로,006은institutionalsterile대안존재만말하며일반hospitalinpatient와그특정licensee의비동일성·setting별적용범위를열거하지않는다. 247CMR2의Pharmacy/InstitutionalPharmacy정의와6.08별도신청/검사구조를직접읽었고,원문EXP0153–0156가everyhospital자동institutionalsterile을실제로오답으로다루는것도대조했다. 이는새법조건을본문에요구하거나개수차이로만든누락이아니며,원개업clockomission해소와분리된다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-1-census-v2.json)
@@ -1058,15 +1048,19 @@ Non-resident pharmacy는 Massachusetts로 filling, dispensing 또는 shipping할
 ## Manager of Record와 designated PIC
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-c-review.json)
+> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 2건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-g1-review.json)
 
-> - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고, 이 inventory 자체를 Board로 제출하지 않는다고 policy가 설명한다.”는복귀inventory에도서명이필요하고policy가이를설명한다고진술한다.배정032는복귀때두MOR가inventory를수행한다는내용이고,029/031은인계inventory의서명·보관/비제출이다.‘복귀inventory의필수서명’이라는추가행위는명시적으로열거되지않았다.단순문장분절수차이가아니라수행과서명의법적의무차이다.
+> - CENSUS_COVERAGE_OMISSION: 본문 “Resident pharmacy는 인수인계와 복귀 때 inventory를 실시·서명하여 약국 records에 보관하고”는 복귀 inventory의 약국 records 보관도 진술한다. 031은 명시적으로 “Resident 인계 inventory”의 보관/비제출이고, 032는 복귀 수행, ADD001은 복귀 필수 서명이다. 일반 records 유지 003이나 ADD001의 body_coverage_span 인용문만으로 복귀 inventory 보관이라는 별도 의무를 명시 열거한 것으로 볼 수 없다.
 
-> - residentMOR의MA등록요건을없애는note는아니다.다만MA면허전nonresidentinterimPIC의통합적합법운영범위는policy특수note와MAlicensedPIC규정사이에서확정하지못했다. — Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다.
+> - CENSUS_COVERAGE_OMISSION: 같은 본문은 복귀 inventory 자체도 Board에 제출하지 않는다고 policy가 설명한다는 범위를 포함한다. 031의 명제는 “인계 inventory”에 한정되고 ADD001의 statement는 복귀 서명뿐이다. 복귀 inventory의 Board 비제출/해당 policy 귀속이라는 별도 법적 행위·범위 명제가 최종 census에 명시 열거되지 않았다. I(D)(1)의 비제출 문구를 I(D)(2)에 자동 이전하여 누락을 메우지 않는다.
 
-> - 현재두공식원문이30/100의포함경계에서서로다름을실제로확인했다.어느문구가정확한30일/100일사례의통합정답인지Board해석은확보하지못했다. — 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다.
+> - 해당note와247CMR6.09(1)(c)의MAlicenseddesignatedPIC조건을직접대조했다.원carriedLEGAL_HOLD를정확히승계하며해소하지않는다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. Policy의notyet-MA-license interimPIC note는읽었으나current규정의MAlicensedPIC요건과합쳐일반licenseexception의범위를인증할공식통합해석을확보하지못했다.주외specialnote를residentMOR면제로확대하지않는다.
 
-> - 90일formalapplication과14일notification,5일interim/promptformal은서로다른행동이다.무조치90일은지지되지않으나promptly와최대90일의통합단일기한은이자료만으로확정하지않았다. — 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
+> - Currentregulation의30이상/100이상과currentpolicy의30초과/100초과차이를직접확인했다.경계값Board통합해석은확보하지못했고원carriedLEGAL_HOLD를그대로유지한다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 30일/100일의정확한포함경계에대한현재regulation/policy의통합Board해석을확보하지못했다.두텍스트의존재확인을법적충돌해소로세지않는다.
+
+> - 90일formalapplication,14일notification,5일interim/promptapplication을각각확인했지만promptly와90일을단일현재운영기한으로통합하는기관해석을확보하지못했다.원carriedLEGAL_HOLD를그대로유지한다. — 원carriedLEGAL_HOLD의목록·상태를해소하지않고정확히유지한다. 14-daynotification/5-dayinterim과90-dayformalapplication을구별할수는있으나policy의promptly와6.09(4)의최대90일을단일시험정답기한으로통합하는공식해석은미확보다.
+
+> - 새ADD001의복귀inventory필수서명은새공식raw에서확정하지못했다. I(D)(1)은인계서명을명시하지만I(D)(2)은복귀completion만명시한다.9.23(5)(c)는부재전inventory이며일반record/inventory조문도복귀시두MOR의필수서명을명시하지않는다.단지서명하는행위가가능하다는것과법적필수임을구분하여SOURCE_BLOCKED로유지한다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 5개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w1-c-3-census-v2.json)
@@ -1364,13 +1358,9 @@ MA에 약을 보내는 nonresident pharmacy는 해당 예외 외에는 MA practi
 ## Schedule별 핵심 약물 지도
 
 
-> census 누락 보완본의 새 독립 완전성 검토가 대기 중입니다. 기존 누락 지적과 미해결 법규 보류는 이력에 보존되며, 이 절은 검토 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/second-e-review.json)
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-r2-review.json)
 
-> - 본문 “Buprenorphine은 OUD 치료와 일부 pain 제품의 용도가 다르며, 제품 형태와 투약 경로가 달라도 처방 목적·허가사항·특수 공급 규칙을 별도로 확인”하는 법적 제품/공급경로 경계가 census에서 빠졌다.021은CIII분류뿐이고020은methadone경로여서 이를 포함하지 않는다.본문에없는구체용량을추가하는누락판정이아니다.
-
-> - 본문 “schedule이 낮다는 이유로 일반적인 처방 적법성·환자안전 의무가 약해지는 것도 아니다”라는 실체적 공통의무가 census에서 빠졌다.004는CIresearch와ordinaryII–Vretail경로구별,016은CIIrefill금지,040/041은분류/PMP대상구별이므로lower-schedule에서도남는legitimacy/안전의무를직접포함하지않는다.다른unit의유사명제가이unit의미열거를대신하지않는다.
-
-> - (ii)는 active nonnarcotic ingredient의 recognized therapeutic amount를 요구하지만(i)는 equal-or-greater isoquinoline alkaloid of opium의 별도 경로다. 현재 statement의 “그 Schedule III codeine mixture”는(ii)에 한정되지 않고,나중에검사대상인authorcitationcontext만추가확인하니026·027모두(i)를인용했다.(i)의대체조성과맞지않는non-narcotic필수단정및잘못된인용이다. 본문의 “등 법정 조성 조건”보다 좁고 단정적인 census 범위를 확정할 수 없다. — (e)(1)(ii) 경로로 명시적으로 한정하거나(i)의 대체 조성을 보존해야 한다. 본문에없는 상세대체성분의 미열거를 본문→census 누락으로 새로 세지는 않는다.
+> - 새공식본문도(i)의equal-or-greaterisoquinolinealkaloid대체경로와(ii)의recognizedtherapeuticamountactive nonnarcotic경로를분리한다. 원statement는(ii)에한정되지않고원citation은(i)이므로nonnarcotic을모든CIIIcodeinemixture에필수로단정할수없다. 원LEGAL_HOLD를정확히승계하며이보완경로로수정·해제하지않는다. — (e)(1)(ii) 경로로 명시적으로 한정하거나(i)의 대체 조성을 보존해야 한다. 본문에없는 상세대체성분의 미열거를 본문→census 누락으로 새로 세지는 않는다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w2-a-2-census-v2.json)
