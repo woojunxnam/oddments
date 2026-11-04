@@ -77,6 +77,10 @@ def actual_reports(tmp_path):
     # reassessment belongs to its own assignment and must not be copied into a
     # historical checkpoint after that assignment has deliberately been removed.
     state.pop('body_reassessments',None)
+    # This later inactive successor also belongs to a removed body job. Keep
+    # its strict ancestry checks in live consumers; omit the unrelated chain
+    # only from this deliberately isolated original C/F checkpoint.
+    state.pop('inactive_census_successors',None)
     for relative in {queue.LEDGER,*[r['atomic_census_source'] for r in rows if r['atomic_census_source']]}:
         path=root/relative; path.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(ROOT/relative,path)
     (root/queue.LEDGER).write_text(''.join(json.dumps(r,ensure_ascii=False,separators=(',',':'))+'\n' for r in rows))
