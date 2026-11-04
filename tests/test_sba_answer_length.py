@@ -42,6 +42,19 @@ def test_live_baseline_is_measured_exactly() -> None:
     assert report["inherited_baseline"]["sba_count"] == 230
     assert report["inherited_baseline"]["first_longest_keyed"] == 149
     assert report["inherited_baseline"]["first_longest_share"] == 0.647826
+    assert report["active_baseline"]["sba_count"] == 229
+    assert report["active_baseline"]["first_longest_keyed"] == 148
+    assert report["historical_safety_withdrawals"]["question_ids"] == ["MA-Q-0012"]
+    assert "MA-Q-0012" not in report["projected_bank"]["question_ids"]
+
+
+def test_synthetic_held_q0012_cannot_borrow_live_withdrawal_proof(canonical_question):
+    questions = _baseline(canonical_question)
+    questions[11].update(verification_status="HOLD", lifecycle_status="REVIEW_REQUIRED")
+    report, failed = analyze_sba_answer_length(questions)
+    assert failed is True
+    assert report["inherited_baseline"]["sba_count"] == 229
+    assert report["historical_safety_withdrawals"]["question_ids"] == []
 
 
 def test_inherited_debt_passes_but_prospective_tranche_regression_fails(canonical_question) -> None:
