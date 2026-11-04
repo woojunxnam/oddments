@@ -21,12 +21,14 @@ STATE=PREFIX+'work-queue.json'
 SCOPE=PREFIX+'controller-scope.json'
 INPUTS=PREFIX+'nearest-visible-input.json'
 STYLE='data/exam_style/mpje_style_profile.json'
+STATIC_PRIMARY_PATHS=tuple('reports/full-corpus-review/'+name for name in ('pub05-14-independent-review.json','wave2-independent-review.json','wave5-independent-review.json'))
 PURPOSE='FIXED146_REALISM_COMPLETION_FIXED4_LEGAL_RETRY_NO_DEFAULT_OR_RELEASE_OVERRIDE'
 ACTORS=tuple('/root/realism95_'+letter for letter in 'abcd')
 INSTANCES=tuple('GPT:'+actor+':20261104' for actor in ACTORS)
 CRITERIA=('jurisprudence_reasoning','practice_plausibility','authentic_distractors',
  'wording_not_guessable','reasoning_not_trivia','natural_rule_combination',
  'appropriate_drug_context','distinct_from_bank','not_schedule_flashcard','public_style_without_copying')
+APPROVED_ORIGIN={'path':'reports/full-corpus-review/final26-evidence/sources/nabpformat.meta.json','raw_sha256':'636934be58e2fd6567b355d40a76d7748d51b005674aa7903da480ceb847a665'}
 FORMAT_URL='https://nabp.pharmacy/programs/examinations/mpje/take-the-mpje-exam/'
 BINDING_KEYS=('job_id','sequence','question_hashes','stage','worker','worker_branch','attempt')
 
@@ -184,11 +186,12 @@ def build_scope(root):
     require(set(found)==set(IDS),'Exact146 original integrated primary bindings required')
     selection=read_json(read,'practice_expansion/2026-10-28-representative/selection.json')
     require(not set(IDS)&set(selection['recommended_ids']),'All146 must remain outside default practice')
+    read(APPROVED_ORIGIN['path'],APPROVED_ORIGIN['raw_sha256'])
     style=read(STYLE);profile=json.loads(style)
     inputs=nearest_inputs(public,canonical)
     scope=dict(schema_version=1,purpose=PURPOSE,controller_actor='/root',question_ids=list(IDS),
         question_hashes={uid:q.digest(public[uid])for uid in IDS},collections={uid:collections[uid]for uid in IDS},
-        primary=found,prior_supplementary=prior_supplementary(root,[row for report in reports for row in report['records']],public,collections),style_profile=dict(path=STYLE,raw_sha256=sha(style),profile_id=profile['profile_id'],
+        static_primary_sources={p:sha(read(p))for p in STATIC_PRIMARY_PATHS},format_cache_origin=copy.deepcopy(APPROVED_ORIGIN),primary=found,prior_supplementary=prior_supplementary(root,[row for report in reports for row in report['records']],public,collections),style_profile=dict(path=STYLE,raw_sha256=sha(style),profile_id=profile['profile_id'],
             content_version=profile['content_version'],content_hash=profile['content_hash']),
         nearest_inputs=dict(path=INPUTS,raw_sha256=sha(encoded(inputs))),
         reviewers=[dict(actor_id=a,session_id=a,auditor_instance=i,fork_turns='none',
@@ -204,11 +207,16 @@ def validate_scope(scope,primary,public,read,expected_prior):
     require(scope.get('purpose')==PURPOSE and scope.get('controller_actor')=='/root'and
             scope.get('question_ids')==list(IDS)and set(scope['primary'])==set(IDS),'Fixed146 controller scope changed')
     require(scope['question_hashes']=={uid:q.digest(public[uid])for uid in IDS},'Current146 question hashes changed')
+    require(set(scope.get('static_primary_sources',{}))==set(STATIC_PRIMARY_PATHS),'Exact original static3 source scope required')
+    for path,expected in scope['static_primary_sources'].items():read(path,expected)
+    require(scope.get('format_cache_origin')==APPROVED_ORIGIN,'Approved official format cache origin changed')
+    read(APPROVED_ORIGIN['path'],APPROVED_ORIGIN['raw_sha256'])
     profile=read_json(read,STYLE,scope['style_profile']['raw_sha256'])
     require(scope['style_profile']==dict(path=STYLE,raw_sha256=sha(read(STYLE)),profile_id=profile['profile_id'],
         content_version=profile['content_version'],content_hash=profile['content_hash']),'Current style profile changed')
     require(scope['reviewers']==[dict(actor_id=a,session_id=a,auditor_instance=i,fork_turns='none',
         controller_independence_basis='Root must actually spawn a fresh session before claim; queued allocation is not a claim or identity proof.')for a,i in zip(ACTORS,INSTANCES)],'Actual reviewer/session scope changed')
+    require(set(IDS)<=set(primary),'Complete static3/native primary inventory required')
     for uid,binding in scope['primary'].items():
         raw=read(binding['report_path'],binding['report_raw_sha256']);report=json.loads(raw)
         rows=[r for r in report['records']if r['question_id']==uid]
@@ -314,7 +322,8 @@ def export_packet(root,assigned,scope,inputs):
     require(sha(encoded(inputs))==scope['nearest_inputs']['raw_sha256'],'Nearest packet changed')
     packet.update(style_profile=scope['style_profile'],comparison_counts={'canonical':439,'public':2349},
         comparison_pool_sha256=inputs['pool_visible_sha256'],
-        nearest_visible={uid:inputs['records'][uid]for uid in assigned['question_hashes']})
+        nearest_visible={uid:inputs['records'][uid]for uid in assigned['question_hashes']},
+        public_format_cache_origin=dict(binding=copy.deepcopy(APPROVED_ORIGIN),original_metadata=json.loads(disk_read(root,APPROVED_ORIGIN['path'],APPROVED_ORIGIN['raw_sha256']))))
     return packet
 
 
@@ -335,13 +344,33 @@ def validate_report(job,scope,report,read,inputs,public):
     require(all(p.startswith(allowed)for p in paths),'Format evidence outside own worker prefix')
     memo=read_json(read,paths[0],source['memo_sha256']);meta=read_json(read,paths[1],source['metadata_sha256'])
     require(nonempty(memo.get('own_abstract_memo_ko'))and memo.get('source_is_format_only')is True and
-        memo.get('protected_material_not_used')is True and moment(memo['reviewed_at'])<=completed,'Retained own format memo required')
+        memo.get('protected_material_not_used')is True and moment(job['claim_started_at'])<=moment(memo['reviewed_at'])<=completed,'Retained own format memo required')
     require(meta.get('official_url')==meta.get('final_url')==FORMAT_URL and
         'raw_path'in meta and meta['raw_path']is None and 'text_path'in meta and meta['text_path']is None and
         meta.get('retention')=='PRIVATE_NOT_REDISTRIBUTED','Public raw/text redistribution prohibited; own memo only')
     for key in ('raw_sha256','text_sha256'):require(re.fullmatch('[0-9a-f]{64}',meta.get(key,'')),'Format retrieval SHA required')
-    fetched=moment(meta['retrieved_at']);read_at=moment(meta['read_at'])
-    require(moment(job['claim_started_at'])<=fetched<=read_at<=completed and fetched.date()==read_at.date()==completed.date(),'Actual format retrieval/read/review timestamps required')
+    fetched=moment(meta['retrieved_at']);read_at=moment(meta['read_at']);claim_at=moment(job['claim_started_at'])
+    mode=meta.get('retrieval_mode','LIVE')
+    require(mode in {'LIVE','SAME_DAY_RETAINED_CACHE'},'Unknown format retrieval mode')
+    require(fetched<=read_at<=completed and fetched.date()==read_at.date()==completed.date()and claim_at<=read_at,
+            'Actual format retrieval/read/review timestamps required')
+    if mode=='LIVE':
+        require(claim_at<=fetched,'A live format GET must follow the actual claim')
+        require('origin_metadata_path'not in source and 'origin_metadata_sha256'not in source,'Live retrieval cannot hide an origin cache')
+    else:
+        origin_path=source.get('origin_metadata_path')
+        require(origin_path==allowed+'format-origin-meta.json','Exact own-prefix original format metadata required')
+        require(scope.get('format_cache_origin')==APPROVED_ORIGIN and source.get('origin_metadata_sha256')==APPROVED_ORIGIN['raw_sha256'],
+                'Retained cache must copy the exact controller-approved original metadata bytes')
+        origin=read_json(read,origin_path,APPROVED_ORIGIN['raw_sha256'])
+        require(isinstance(source.get('origin_metadata_sha256'),str)and re.fullmatch('[0-9a-f]{64}',source['origin_metadata_sha256']),
+                'Origin metadata must bind exact raw SHA')
+        for key in ('official_url','final_url','retrieved_at','raw_sha256','text_sha256'):
+            require(key in origin and origin[key]==meta[key],'Original cache metadata differs: '+key)
+        require(origin.get('status')==meta.get('status')==200 and origin.get('public_raw_redistribution')is False,
+                'Same-day retained cache needs genuine original official200 retrieval')
+        paths.append(origin_path)
+
     from realism_completion_legal4 import LEGAL_IDS, validate_legal
     rows=report.get('records',[])
     require(len(rows)==len(job['question_hashes'])and{r['question_id']for r in rows}==set(job['question_hashes']),'Missing/duplicate/extra realism rows')

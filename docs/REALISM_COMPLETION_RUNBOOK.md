@@ -16,3 +16,7 @@ Root만 다음 변경 작업을 실행합니다. 공통 인수는 `python script
 8. `heartbeat --job --token`은 실제 lease를 연장합니다. 실제 worker 소실 시 `revoke --job --token --reason`은 append-only 기존 revoke를 사용합니다. 소급 시각/old actor 사칭 없이 새 attempt/token으로 다시 배정합니다. 동일 submit/integrate는 idempotent하며 결과가 다른 재제출은 거부합니다.
 
 원 primary report/grade/key, author·법규 negative, 질문 본문/사용자 기록/default 선택은 바뀌지 않습니다. 새 source grade와 proof를 별도로 추가합니다. Raw primary PASS를 보존하고 effective PASS는 기존 PASS와 유효한 신규 PASS의 unique union입니다. 기존 realism HOLD/FAIL을 덮어쓰거나 이미 집계한 보충 PASS를 다시 세지 않습니다. 고정4 외 법규/key credit은0, 전체146의 새 원문-read/author/canonical RELEASED credit은0입니다. 고정4도 실제 current-hash 독립 key 판정만 최대4개 합집합에 추가합니다. Native 통합 전에는 pending이며 report 파일 존재만으로 진척을 올리지 않습니다.
+
+후속 dispatch/cache 보완: 공개15 보호 절차는 기존 법규 필수 guard에 실제 법규 기록만 전달합니다. Legal-free source는 명시적 REALISM_COMPLETION 타입과 현재 hash/native source를 엄격 consumer로 다시 검증하고 전146 default 제외 및 실제 negative 안내를 별도로 확인합니다. Static3와 native parent inventory는 committed bytes로 병합하고 중복은 동등해야 합니다. 보호 함수의 이 typed dispatch 변경은 후속 증거에 명시하며 이전 AST 동일 주장을 현재 코드에 재사용하지 않습니다.
+
+캐시는 이미 커밋된 `reports/full-corpus-review/final26-evidence/sources/nabpformat.meta.json`의 정확 SHA636934be58e2fd6567b355d40a76d7748d51b005674aa7903da480ceb847a665를 scope에 승인 결박합니다. Worker packet에 제공하는 것은 이 source-only 원 metadata뿐이며 prior question verdict는 포함하지 않습니다. Worker는 자기 prefix에 원 metadata를 정확히 복사하고, 새 own metadata/memo에는 실제 claim 후 재독 시각과 SAME_DAY_RETAINED_CACHE를 기록합니다. 원200/조회시각/raw/text SHA는 변경할 수 없고, origin raw는 public에 보존하지 않습니다. Worker commit의 허용 파일 집합에는 이 정확 origin metadata 한 파일만 추가됩니다. 다른 임의 파일 허용은 없습니다.
