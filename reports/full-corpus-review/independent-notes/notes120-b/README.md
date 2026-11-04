@@ -1,0 +1,1 @@
+20단위372명제 독립본문/census/legal감사. 자세한결론:PRIMARY_FINDINGS.md와report.json. 실제배정/입력원bytes와33개공식원문raw/text/meta,실패attempt1개보존. 전용증거prefix외파일수정없음. credit0. 결과envelope는증거commit후/tmp에별도로생성하며workerbranch에commit하지않는다.
