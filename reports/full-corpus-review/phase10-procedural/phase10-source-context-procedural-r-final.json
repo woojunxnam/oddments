@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "purpose": "READ_ONLY_SOURCE_CONTEXT_PROCEDURAL_OPINION",
+  "reviewed_at_utc": "2026-11-04T07:06:08Z",
+  "actor_provenance": {
+    "actor_id": "/root/independent_procedural_retry",
+    "session_id": "/root/independent_procedural_retry"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+  "source_root_commit": "7ea50249f77fba8a84ea212ceef64f4033a694d4",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "new_independent_key_assessment_credit": 0,
+  "conclusion_ko": "현재 확인된 source 저자 설명·retrieval 이력 노출만을 근거로 B/C 배정40개 전체의 새 whole-key 판정을 자동 차단해야 한다는 명시 규칙은 확인되지 않았다. 숨은 truth, 기존 질문별 결론, 동일 세션의 과거 whole-key 판단, author/editor 이력과 구별해야 한다. 입력 whitelist 위반과 앵커링 한계는 실제로 공개·보존해야 하며, 기존 질문별 negative의 노출이 확인된 ID에는 legacy runbook의 NOT_ASSESSED/HOLD 및 실제 fresh 세션 재배정 규칙을 그대로 적용한다. 이 의견은 KEEP/독립 PASS 인증이나 정책 예외가 아니다.",
+  "facts_and_limits": {
+    "root_attested_facts": [
+      "B/C는 실제 새 non-author 세션이다. hidden_statement_truth/per-option truth 배열, 다른 reviewer 결론, 같은 세션의 과거 whole-key 판단은 노출되지 않았다는 root 설명을 전제로 한다.",
+      "B 노출은 RW0001–0004/0008 관련 외국대학 졸업자·시험실패1년 source scope이고, C는 배정 RW0029–0072 중 actual40개와 관련된 CDTM/transfer/personnel source 주장 및 PER17 hold 참조다.",
+      "허용 visible packet 자체는 저장 key와 core/각 보기 KO 해설 전체를 포함한다. 이 원문도 검증 대상이며 법적 근거가 아니다."
+    ],
+    "directly_read": [
+      "7ea50249의 네 정책과 두 legacy/default runbook 및 visible-input exporter 전문을 읽었다.",
+      "대표 bank sources에서 verification_scope/retrieval_method/evidence_reference만 제한 투영해 실제 노출 내용의 종류를 확인했다. question 전체/숨은 truth/기존 독립 보고서 결과를 읽지 않았다.",
+      "C independence-disclosure.ko.md를 읽었다. 그 문서의 자발적 40개0 선언은 노출 사실의 기록으로 보존하되, 독립적인 정책 해석을 대신하지 않았다."
+    ],
+    "not_run": [
+      "전체 원래 tool-output transcript의 누락 없는 대조",
+      "각 노출 문장과 80개 배정문항 전 보기/key/해설의 의미 중복 대조",
+      "PER17 참조가 어느 배정 ID의 과거 질문별 부정판정인지 확정하는 whole-question 재감사",
+      "법규·현실성 판정 또는 실제 source retrieval"
+    ],
+    "conditioning_ko": "root가 제공한 노출 범위와 실제 transcript가 다르거나 숨은/기존 질문별 결론이 더 발견되면 이 조건부 의견의 적용 범위를 즉시 축소해야 한다."
+  },
+  "policy_bindings": [
+    {
+      "path": "docs/RELEASE_POLICY.md",
+      "raw_sha256": "da26dd691188dc8b15e3ec9242fbb8d7378bc5d3ab5696203c729d07524516b7"
+    },
+    {
+      "path": "docs/AUDIT_WORKFLOW.md",
+      "raw_sha256": "16dfa1a6b3e45dc8ba76f330e07ecb012d9973d2ee805910511d55799791be31"
+    },
+    {
+      "path": "docs/SOURCE_USE_POLICY.md",
+      "raw_sha256": "b065455458fb4adb39fea1989bb1c48c408a2cc631aaca79e22df819695c31d9"
+    },
+    {
+      "path": "docs/QUESTION_AUTHORING_STANDARD.md",
+      "raw_sha256": "104e434e7a21c566763dc727ffe13dda4df985b2a79257a77dafd23dd8015e15"
+    },
+    {
+      "path": "docs/INDEPENDENT_LEGACY_REVIEW_RUNBOOK.md",
+      "raw_sha256": "5174ac4fc3e952556121d50bc7563d0fff147bd9459c69513a0718c161651ef4"
+    },
+    {
+      "path": "docs/INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md",
+      "raw_sha256": "ddab027929c78cf60bd73f35649301cebad9b94ffc387de6fe3c1a48ee29fbf1"
+    },
+    {
+      "path": "scripts/export_legacy_review_input.py",
+      "raw_sha256": "8c979c9ad81ed0ff9cdbd6b6df78d41681228b53b8a5a26a22b88cd8091fa80f"
+    }
+  ],
+  "literal_rules": [
+    {
+      "path": "docs/AUDIT_WORKFLOW.md",
+      "quote": "Author/editor가 자신이 방금 수정한 current content를 별도 independent auditor로 자가 인증하면 안 됩니다.",
+      "application_ko": "독립성의 명시 hard exclusion이다. 저자가 아닌 fresh 세션이 저자의 검증 대상 주장에 노출된 사실 자체와 동일하지 않다."
+    },
+    {
+      "path": "docs/INDEPENDENT_LEGACY_REVIEW_RUNBOOK.md",
+      "quote": "금지된 기존 결론이 우발적으로 노출되면 해당 ID의 노출 한계·NOT_ASSESSED/HOLD를 기록하고 별도 실제 fresh 세션으로 재배정한다.",
+      "application_ko": "명시 trigger는 금지된 기존 결론이고 명시 범위는 해당 ID다. 모든 source 설명 노출을 40개 전체의 결론 노출로 자동 등치하라는 문장은 없다."
+    },
+    {
+      "path": "docs/INDEPENDENT_LEGACY_REVIEW_RUNBOOK.md",
+      "quote": "모든 원 stem, 모든 보기, 기존 key, core/각 보기 한국어 해설을 직접 읽는다. 보고서나 metadata의 기존 저자 판정을 법적 사실로 사용하지 않는다. 이전 author/independent 보고서 및 후보를 읽어 답을 상속하지 않는다. 필요하면 원 질문 자체의 공식 source URL/authority만 discovery에 사용한다.",
+      "application_ko": "Source registry의 추가 법규 해설을 출력한 것은 허용 discovery 범위를 벗어난 절차 실수다. 다만 미검증 저자 rule 주장과 질문별 정답·기존 독립 결론의 노출 여부는 내용으로 구분해야 한다. 저자 주장을 authority로 승계하면 안 된다."
+    },
+    {
+      "path": "docs/INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md",
+      "quote": "Source context는 source_ids/note_evidence/family_id/topic/area의 명시 whitelist만 추출한다. 나머지 필드를 제외 목록으로 덤프하면 _statement_truth 등이 노출될 수 있다. 우발 노출은 숨기지 않고 해당 실제 세션의 새 whole-key credit를 차단하여 기록한다.",
+      "application_ko": "이 운영 문구는 더 엄격하고 모호함이 남는다. 해당 문단의 숨은 truth 등 노출을 차단하는 지시를 그대로 적용해야 한다. 그러나 모든 whitelist 밖의 출처 날짜·접근 설명까지 무조건 배정 전체40개 차단이라고 범위가 명시돼 있지는 않다. 본 의견은 이 문구를 삭제·개정하거나 우회하지 않는다. 적용 대상인 금지된 내용이 실제로 무엇이고 어느 ID에 해당하는지 근거를 남겨야 한다."
+    },
+    {
+      "path": "docs/INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md",
+      "quote": "자기 실제 세션이 이전에 해당 원문의 whole-key 결론을 평가했거나 author/editor였다면 그 이력을 기록하고 새 독립 key 판단으로 세지 않는다.",
+      "application_ko": "해당 사실이 있으면 새 instance 이름이나 disclosure로 복구할 수 없다. 현재 root 설명상 이 사실은 없다."
+    },
+    {
+      "path": "docs/SOURCE_USE_POLICY.md",
+      "quote": "final legal conclusion은 current official law로 독립 검증해야 합니다.",
+      "application_ko": "Source registry의 설명, 옛 retrieval 성공 주장, source 검증 요약은 이번 판정의 법률 증거가 될 수 없다. 실제 공식 본문/effective scope를 새로 확인해야 한다."
+    }
+  ],
+  "content_distinctions": [
+    {
+      "kind": "topic locator / retrieval provenance",
+      "observed_example": "Foreign-graduate examination eligibility; failed-examination one-year rule; Exa/403 설명",
+      "decision_ko": "토픽·접근이력만으로 숨은 option truth 또는 독립 whole-key 결론을 보았다고 볼 수 없다. 같은 source가 40개에 연결된다는 이유로 모두 차단할 근거도 아니다."
+    },
+    {
+      "kind": "unverified author legal assertions",
+      "observed_example": "CDTM minimum25 annual hours, five additional relevant hours; direct communication between two licensed pharmacists for eligible ScheduleIV refill transfer",
+      "decision_ko": "정답에 영향을 주는 주장이고 앵커링 위험이 있으므로 단순 URL 노출로 축소하면 안 된다. 허용된 key/해설에도 법적 주장이 있으므로 주장 노출만을 독립성 상실과 등치하지 않는다. 해당 actor가 실제 primary에서 scope·예외·상태/연방 차이·전 보기를 독립 계산했는지 보고서로 입증해야 한다. 원 author 주장을 인용·승계하면 안 된다."
+    },
+    {
+      "kind": "existing hold hint",
+      "observed_example": "rw3-ratio-policy2026-02: PolicyI.B vs247CMR8.06(3) relationship remains reason for PER17 hold",
+      "decision_ko": "기존 저자 보류 힌트라는 실제 노출을 반드시 기록한다. 이를 단순한 neutral locator로 부르면 안 된다. 현재 제공 사실상 배정 RW문항의 whole-key/option 판정 또는 다른 reviewer 결론은 아니다. PER17과 실제 배정 ID의 질문별 과거 negative가 동일하다고 확인되면 그 ID는 NOT_ASSESSED/HOLD+fresh 재배정 대상이며, 관련 없는 나머지40개로 자동 전파하지 않는다."
+    },
+    {
+      "kind": "hidden truth / prior whole-key conclusion",
+      "decision_ko": "이번 미노출 전제와 별개로 실제 발견되면 해당 ID 새 whole-key credit0, 정직한 노출 기록, 실제 별도 fresh 세션 재배정이다. 이후 입력 정리나 새 label로 노출을 취소하지 않는다."
+    }
+  ],
+  "recommended_root_action_ko": [
+    "원 tool-output 로그를 그대로 보존하고 B/C가 본 source_id·필드·문장·노출 시점·연관 ID의 목록을 evidence에 고정한다. Root 잠정40개0 판단도 당시 판단의 history로 보존하고 원 disclosure를 덮어쓰지 않는다.",
+    "필드명만으로 독립성/오염을 결정하지 말고 실제 hidden truth·기존 질문별 판정·자기 whole-key 이력·author 이력의 존재를 ID별로 판정한다. 불명확 ID는 credit0를 유지한다.",
+    "금지된 기존 결론 노출이 없는 범위는 fresh primary와 전 option/극성/키/전 KO 설명의 실제 재검증 결과를 보고 독립 판정 가능 여부를 판단한다. 이 procedural opinion만으로 credit를 올리거나 자동KEEP하지 않는다.",
+    "C의 PER17 prior-hold 힌트와 keyed-point 표현은 별도 anchoring limitation으로 남기고 사실에 맞게 nonblind source-context exposure라 표시한다. 법적 증거로 사용하지 않았다는 실제 per-choice primary 증거를 요구한다.",
+    "실제 금지 결론 노출이 확인되면 그 ID는 새 세션으로 재배정한다. 40개 전체를 제외하려면 전체에 해당하는 노출/이력 또는 적용되는 명시 운영조건을 구체적으로 기록한다. 새 법적 negative는 credit 유무와 무관하게 즉시 안전 HOLD한다."
+  ],
+  "repository_mutations": 0,
+  "policy_changes": 0,
+  "queue_changes": 0,
+  "new_exception_or_authorization": false,
+  "root_subsequently_attested_exact_mapping": {
+    "b": "전체40 eligibility 유지; source topic/retrieval만 노출, 직접 key/이전 질문별 결론 없음",
+    "c_conservatively_blocked_question_ids": [
+      "MA-RW-0051",
+      "MA-RW-0061",
+      "MA-RW-0062",
+      "MA-RW-0064"
+    ],
+    "c_eligible_remaining_assigned_count": 36,
+    "mapping": {
+      "rw2-per-cfr1306-25": [
+        "MA-RW-0051"
+      ],
+      "rw3-ratio-policy2026-02": [
+        "MA-RW-0061",
+        "MA-RW-0062",
+        "MA-RW-0064"
+      ]
+    },
+    "opinion_ko": "이 정확한4개 노출 범위에 strict 운영 경계를 적용하고 B40/C나머지36은 disclosure+실제 fresh primary 평가 대상만 유지한다는 판단에 반대되는 명시 문언은 확인하지 못했다. C4는 whole-key credit0/NOT_ASSESSED/HOLD와 실제 fresh 재배정, 나머지는 자동YES/PASS 없이 실제 결과로 판단한다. 원40개0 잠정/disclosure 이력을 삭제하지 않는다."
+  }
+}

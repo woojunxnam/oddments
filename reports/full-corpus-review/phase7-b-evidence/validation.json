@@ -1,0 +1,29 @@
+{
+  "validated_at": "2026-11-04T02:08:06.752391+00:00",
+  "root_validator_path": "/workspace/oddments/scripts/review_queue.py",
+  "root_validator_sha256": "20a837f960ba7e93ce9a4f469573e86c3f8a0d22805711e83974a66fcd5f5846",
+  "report_path": "reports/full-corpus-review/independent-phase7-b-review.json",
+  "report_sha256": "56d6a1d1d986fa5e978939275772e06b5572babd8174b0cf8dd14a4d673d7ddc",
+  "checks": {
+    "current_root_queue_assignment_exact": true,
+    "worker_current_original_whole_hashes_40": true,
+    "root_current_original_whole_hashes_40": true,
+    "exact40_and_hashes": true,
+    "all200_choices_explanations_independent_keys_10criteria_evidence_bindings": true,
+    "nearest80_current_whole_hashes_stems_all_options": true,
+    "all_current_public_raw_and_extracted_bytes_bound": true,
+    "source_manifest_full_schema_all_entries": true,
+    "restricted_guide_and_sample_raw_excluded": true,
+    "current_root_validate_result_and_40_validate_independent_evidence": true,
+    "all_policy_schema_style_pins_match": true
+  },
+  "tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider tests/test_review_queue.py tests/test_legacy_independent_metadata.py",
+    "result": "57 passed in1.26s"
+  },
+  "not_performed": [
+    "queue submit/integrate",
+    "canonical admission/RELEASED promotion"
+  ],
+  "validation_scope": "Precommit concrete report/evidence integrity. Final worker SHA and committed bytes checked after commit in /tmp envelope validation."
+}

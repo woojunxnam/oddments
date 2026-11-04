@@ -1,0 +1,112 @@
+{
+  "snapshot_commit": "e3326697776412285c76f5081cb0eed35feeaf6d",
+  "effective_note_body_sha256": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146",
+  "method": "load_notes + apply_study_revision overlays; inspect actual effective content independently of publication metadata builder",
+  "publication_build_attempt": {
+    "study": {
+      "status": "BLOCKED",
+      "exception_type": "CalledProcessError",
+      "message": "Command '['git', '-C', '/tmp/census-reassessment-v2-c-controller-snapshot', 'show', 'HEAD:reports/full-corpus-review/independent-notes-work-queue.json']' returned non-zero exit status 128."
+    }
+  },
+  "surfaces": [
+    {
+      "kind": "study",
+      "field": "lessons",
+      "item": {
+        "id": "LAW-035",
+        "module_id": "m09",
+        "title": "Opioid 7일의 대상",
+        "core": "Adult first outpatient opioid와 minor opioid의 기본 제한을 구분합니다.",
+        "why": "예외의 clinical judgment·문서화와 OUD 치료의 별도 취급을 함께 읽습니다.",
+        "trap": "모든 성인의 모든 subsequent opioid를 무조건 7일로 제한하지 않습니다.",
+        "recall": "7-day prescribing 제한과 CII/CIII single-fill 상한을 분리하세요.",
+        "note_units": [
+          "w2-c-12"
+        ]
+      }
+    },
+    {
+      "kind": "study",
+      "field": "modules",
+      "item": {
+        "id": "m09",
+        "title": "PMP·ID·Opioid·OUD",
+        "exam_task": "조회·보고·신분확인·치료 목적을 따로 판단합니다.",
+        "competencies": [
+          "2.1",
+          "3.1",
+          "3.3",
+          "3.4"
+        ],
+        "chapters": [
+          "pmp-oud"
+        ],
+        "lessons": [
+          "LAW-033",
+          "LAW-034",
+          "LAW-035",
+          "LAW-036"
+        ]
+      }
+    },
+    {
+      "kind": "notes",
+      "field": "chapter_summary",
+      "item": {
+        "id": "pmp-oud",
+        "title": "MassPAT·신분확인·Opioid·OUD",
+        "part": "처방의 적법성",
+        "summary": "조회, 데이터 보고, 고객 확인, 약물치료의 법적 경로를 분리합니다.",
+        "highlights": [
+          "PMP reporting과 prescribing 전 query는 같은 의무가 아닙니다.",
+          "Methadone pain과 OUD 경로를 구분합니다."
+        ]
+      }
+    }
+  ],
+  "current_root_readonly_builder": {
+    "root_head": "fc78b7906b18a777809781ab9888efcb86f4a766",
+    "status": "SUCCESS",
+    "effective_content": [
+      {
+        "id": "LAW-035",
+        "title": "Opioid 7일의 대상",
+        "core": "Adult first outpatient opioid와 minor opioid의 기본 제한을 구분합니다.",
+        "why": "예외의 clinical judgment·문서화와 OUD 치료의 별도 취급을 함께 읽습니다.",
+        "trap": "모든 성인의 모든 subsequent opioid를 무조건 7일로 제한하지 않습니다.",
+        "recall": "7-day prescribing 제한과 CII/CIII single-fill 상한을 분리하세요.",
+        "note_units": [
+          "w2-c-12"
+        ],
+        "source_hashes": {
+          "w2-c-12": "f6896e12237411cae4f00b882990d3717821acc5e73cc35417a02ce53f52a146"
+        }
+      }
+    ]
+  },
+  "search_scope": {
+    "study": {
+      "overlay_applied": true,
+      "path": "notes/study/guide.json",
+      "source_raw_sha256": "bd87d11fa52a37a67eebc1f203a7c03fb9ebc9d959ad5ba273cea6412dd5846c",
+      "fields_searched": {
+        "lessons": 64,
+        "comparisons": 12,
+        "clocks": 24
+      },
+      "matching_items": [
+        "LAW-035"
+      ]
+    },
+    "refresh": {
+      "overlay_applied": true,
+      "path": "notes/refresh/guide.json",
+      "source_raw_sha256": "fd51c12380530c248f0c208ac55ae2ff3345ef11dd48ed42e9df314dc9118e09",
+      "fields_searched": {
+        "cards": 72
+      },
+      "matching_items": []
+    }
+  }
+}

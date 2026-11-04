@@ -3,7 +3,7 @@
 기본 편집일: 2026-10-23. 현재 개정판: 2026-11-03.emergency-kit.1 (작성자 검토; OPEN 포함). 기존 읽음 기록은 이전 읽기 이력이며 새 판본 숙련도가 아닙니다. 원문 대조일과 확인 범위는 절별로 다릅니다. 독립 전수 법률감사 또는 합격 보장이 아닙니다.
 
 
-> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 60/306절. 누락 지적 1절 · 법규 보류 12절 · 독립 검토의 근거 미확인 13명제. 검토 처리 수는 법규 통과 수가 아닙니다.
+> 저자 주장 목록 306/306절 · 독립 완전성·법규 검토 처리 79/306절. 누락 지적 0절 · 법규 보류 15절 · 독립 검토의 근거 미확인 17명제. 검토 처리 수는 법규 통과 수가 아닙니다.
 
 
 # 법규를 읽는 구조와 시험 범위
@@ -491,12 +491,8 @@ Board authorization/program approval 신청은 예정된 presentation보다 최�
 ## 인력의 자격을 구분하는 지도
 
 
-> 독립 검토에서 본문의 법적 주장에 대한 census 누락 지적 1건이 나왔습니다. 이 절의 주장 목록은 보완이 필요합니다. 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/reassessment-r3-review.json)
 
-> - 본문 마지막의 “Unlicensed cashier와 vendor … 들어갈 수 있는 구역 … 제한된다”는 cashier와vendor 양쪽의 접근 제한을 명시한다. 최종17개 statement 중010은externalvendor의prescription-area조건부접근만,009는unlicensedcashier와licensedpersonnel의일반전문업무구별만적는다. 새V3ADD001은cashier의완성처방판매상태,ADD002는미완성약handling면허요건을열거하므로원F15약상태누락은해소하지만,unlicensedcashier 자신의prescription-area접근제한과완성처방판매·pharmacist offer전달이라는그접근예외의범위는어느statement에도직접열거되지않았다. Policy2020-15§I첫문단의“Except for cashiers … no individual may access the prescription area without a license”를직접확인했다. Source annotation에있는access조건을statement자체로세지않았다. 이는본문에없는새세부숫자요구나분절수차이가아니라실제본문에명시된actor-specific구역접근조건의잔여누락이다.
-
-
-> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v3/census/w1-b-1-census-v3.json)
+> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v4/census/w1-b-1-census-v4.json)
 
 
 Pharmacist: 유효한 Massachusetts pharmacist license와 해당 업무에 필요한 추가 자격을 갖춘 사람이다. 처방의 final dispensing process validation은 pharmacist의 책임이다. 
@@ -2487,6 +2483,10 @@ PMP 기록은 일반적인 공개 데이터가 아니다. 환자 본인의 기�
 ## PMP reporting 대상과 시점
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fourth-e-review.json)
+
+> - 실제 current statute의24h proviso, regulation endnextbusinessday, DCP/guide의24h-or-nextbusinessday 및 approved days waiver를 각각 읽었다. 주말/휴무일·waiver 없는 경우의 관계를 확정하는 추가 공식조정 근거를 확보하지 못했다. 한 source의 표현만으로 다른source를 무시하거나 승인없이 clock연장을 허용한다고 인증하지 않는다. — Statute≥24h와regulation/guide nextbusinessday의주말·휴무일/승인waiver경계적용관계를확정하는공식조정근거미확보.각표현의존재만확인하여무조건clock으로합치지않는다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
@@ -2613,6 +2613,12 @@ Pharmacist가 모든 성인 opioid 처방에 대해 일생 최초 사용 여부�
 ## Voluntary non-opiate directive
 
 
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fourth-b-review.json)
+
+> - 개인철회는(a)로확인했지만guardian/proxy의현재구체override절차는(b)(iii)위임만으로확정하지않았다. 공식DPH검색페이지및추정form/info경로를확인했으나구체규정원문확보에이르지못했다. — 적격guardian/proxy의구체적현재절차/위임규정범위미확보. authorSB표시때문이아니라이번직접출처범위의한계이다.
+
+> - (c)의knowingly예외와(d)의goodfaith보호는직접읽었다. 그러나emergencypersonnel규정및정보접근한계별면제관계를종합확정할자료는찾지못했다. 따라서포괄적무시허가나그반대의모든상황절대금지를인증하지않는다. — emergency구체면제및information-access상황별법적효과의현재공식실행근거미확보; bounded(c)knowledge명제와별도이다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
 
@@ -2631,6 +2637,10 @@ Good-faith compliance와 emergency·정보 접근 한계 등의 법적 보호를
 
 ## OUD: methadone와 buprenorphine
 
+
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fourth-b-review.json)
+
+> - 직접확인한823(l)과EO268은prescriberregistrationattestation제도이다. 여기서pharmacy의모든처방별certificate수집의무를새로추론하지않았다. 그러나모든다른현행pharmacy의무의부존재까지확정할공식범위는이번자료에없어기존미해결범위를닫지않는다. — MATEregistration규칙외의pharmacy별certificate확인의무관계는미확정; 좁은prescriberattestation근거를포괄부존재증명으로삼지않음.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave6-census.json)
@@ -2744,6 +2754,12 @@ Pharmacist가 final dispensing validation을 수행한다. Technician의 label �
 ## Massachusetts patient label의 기본 항목
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fifth-c-review.json)
+
+> - Board의 일반 label 목록에는 strength/concentration이 있으나, 모든 제형의 법정/USP 상세 범위를 이 목록만으로 완전 인증하지 않는다. 본문의 일반 요약과 underlying USP 직접 검증을 구별한다. — 모든 일반 patient label의 법정 strength/concentration 적용 범위·예외를 완전 해소하지 못함. Board newsletter를 USP 원문 직접 검증으로 대체하지 않았음.
+
+> - §21의 명시적 number-of-units 문구는 tablets/capsules 조건이다. Newsletter의 일반 quantity 목록이 모든 제형에 동일 조문이 적용됨을 뜻한다고 인증하지 않는다. — 본문 quantity 일반 표현의 모든 제형별 법적 범위 미해소. tablets/capsules 조문과 Board 요약은 확인했으나 전체 범위는 HOLD.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
@@ -2766,6 +2782,12 @@ Label은 환자가 실제로 사용할 수 있는 정보여야 한다. 보험 cl
 
 ## 추가 label 요건과 특별 상황
 
+
+> 교정 후보의 독립 검토는 보존됐지만 활성 본문과 아직 결박되지 않았습니다. 기존 본문·새 후보 모두 현재 credit를 승계하지 않으며 별도 공개 body migration까지 검토 보류합니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/body-v1-c-review.json)
+
+> - 본문 “제조사 제품을 단순히 다른 용기에 옮겼다는 사실만으로 모든 법적 분류가 동일해지지는 않는다”는 mere repackaging과 compounding 등의 법적 분류가 용기 변경 사실만으로 동일해지지 않는다는 별도 명제를 제시한다. 최종24개 census에는 이 분류 명제가 직접 열거되지 않았다. 008은 compounded 표시·packaging BUD·manufacturer expiry가 다른 정보라는 statement이며, 001의 compounded container label 명제와 함께 읽어도 제조사 제품의 단순 용기 변경이 법적 분류에 미치는 한정을 열거하지 않는다.
+
+> - §21의 elderly cross-reference와 현재19A14의 Older adult 표기가 다르다. 현재60세 정의와 large-print 문구는 읽었지만 용어 변경·승계의 구체 근거를 이번 범위에서 완결하지 않았다. — 두 게시조문 용어 변경의 명시적 승계/적용 관계 추가 확인 필요. 이 한계를 전체 요청자 권리 부정으로 해석하지 않는다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 2개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
@@ -2804,6 +2826,12 @@ c.94C §21의 해당 Schedule II·III narcotic/opioid prescription에는 Departm
 ## Reproductive·gender-affirming care의 prescriber label
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fifth-c-review.json)
+
+> - label 변경의 조문과 원 처방 보존·권한 검증을 구분했다. 다만 shield 개인정보·전자 기록·감사 자료의 전체 처리 범위를 이 label 조문 하나로 해결했다고 인증하지 않는다. — 전체 identity-data retention/disclosure/privacy scope의 교차법 적용을 완결하지 않음. 일반 identity/authenticity 구별은 확인했지만 모든 원장 처리 권한을 인증하지 않는다.
+
+> - MA statute와 federal HIPAA reproductive-rule 소송·효력은 서로 다른 법체계이다. 이 본문은 구체 판결 결과를 말하지 않으며 이번 감사도 그 전체 최신 소송 결과를 확인한 것으로 세지 않는다. — 현재 HIPAA reproductive-rule litigation/order의 구체 전국/당사자 효력 범위는 본 작업에서 NOT_ASSESSED. MA label법 검증으로 이를 대체하지 않는다.
+
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 3개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
 
@@ -2827,8 +2855,12 @@ Massachusetts의 protected-care law와 federal HIPAA reproductive-health rule의
 ## Generic substitution의 법적 구조
 
 
+> 독립 법규 검토가 보류 상태입니다. 확정된 법규 판단으로 암기하지 말고 보류 사유를 확인하세요. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/census-v2-b-review.json)
 
-> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave8-census.json)
+> - IR대ER은pharmaceuticalalternatives지만FDA는TE제품끼리도release mechanisms등이달라질수있다고명시한다. 본문의다른releaseformulation이IR/ER차이를뜻하는지모든mechanism차이를금지하는지명확하지않다. 새공식자료접근에성공했어도기존법규HOLD를census-only경로로해제하지않는다. — IR/ER 차이와 TE가 입증된 제품의 release-mechanism 차이를 구별하도록 본문 범위 명료화 필요. 동일 ER끼리도 무조건 대체 금지라는 승인으로 쓰지 않는다.
+
+
+> 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/census-corrections/v2/census/w3-a-6-census-v2.json)
 
 
 ### 같은 성분이라는 사실만으로 충분하지 않다
@@ -2949,6 +2981,10 @@ Technician가 허용된 system entry를 수행하는 것과 최종 대체 여부
 
 ## 추가 보완: 계산대의 lesser-price 규칙
 
+
+> 독립 검토에서도 근거를 확인하지 못한 법적 주장이 있습니다. 해당 주장은 확인 보류 상태입니다. [독립 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/independent-notes/fifth-f-review.json)
+
+> - §21C는 가격 규칙이며 그 자체에서 product-interchange·처방 적법성의 일반 의무를 없애는 문구를 확인하지 못했다. §12D와9.15(2)는 해당 대체·prescriber 검토의 별도 근거다. 그러나 이 복합 명제의 허위청구 제한 전반에 대한 controlling law·적용요건 대조까지 완료한 것으로 주장하지 않는다. 배정의 기존 SOURCE_BLOCKED를 유지하며 이번에 해제하지 않는다. — 배정에서 SOURCE_BLOCKED인 NOTE-WAVE3-POINT-OF-SALE-PRICE-006을 유지한다. §21C의 가격 의무와 §12D/9.15의 별도 대체·prescriber 요건은 직접 읽었지만 복합 명제의 허위청구 제한 전반에 대한 controlling law·요건 검증은 완료하지 않았다. 현재 증거를 그 부분까지 확정한 PASS로 부풀리거나 기존 개별 보류를 해제하지 않는다. 내용이 틀렸다고 확정한 판정도 아니다.
 
 
 > 저자 주장별 검토에서 근거 확인 보류 주장 1개가 있습니다. 확인된 사항과 구분해 읽고, 보류된 내용을 확정된 법규 판단으로 암기하지 마세요. [주장별 검토 기록](https://github.com/woojunxnam/oddments/blob/main/reports/full-corpus-review/note-wave3-census.json)

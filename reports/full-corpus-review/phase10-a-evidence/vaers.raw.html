@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>VAERS - Report an Adverse Event</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/custom.css?v=5.0">
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/banner.js?v=5.0"></script>
+
+	
+	<!-- added for the apple-touch errors in the logs -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+	<link rel="manifest" href="/images/manifest.json">
+	<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#abcf7d">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body id="report">
+    <!-- blue top bar -->
+    <div class="full-width blue-bg">
+        <div class="square-8px"></div>
+    </div>
+    <div class="container">
+		<div id="Language_toggle">
+			<a lang="es" href="reporteventSpanish.html">en Español</a>
+            <span id="skip"><a href="#main">Skip to Main Content</a></span> <!-- VAER-2330 508 Skip nav links -->
+		</div>
+		<header>
+            <div class="alert maintain-warning" id="maintenance-banner-eng"></div>
+            <div id="logo">
+                <a href="index.html"><img src="images/vaers-logo.png" alt="VAERS Home" title="Vaccine Adverse Event Reporting System"></a>
+            </div>
+        </header>
+        <!-- Begin main content -->
+        <a id="main"></a> <!-- VAER-2330 508 Skip nav links -->
+        <div class="row">
+            <div class="col-md-12 clearfix">
+                <div class="title">
+                    <h1><a href="index.html">VAERS Home</a></h1>
+                </div>
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="grid-even-columns">
+            <div class="flow">
+                <nav>
+                    <div id="nav">
+                        <div class="navbar-header">
+						</br>
+                        <div class="alert mobile-maintain-warning" id="maintenance-banner-mobile-eng"></div>
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#vaersNavbar" aria-expanded="false" aria-controls="navbar">
+                            <span tabindex="0">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar top-bar"></span>
+                                <span class="icon-bar middle-bar"></span>
+                                <span class="icon-bar bottom-bar"></span>
+                            </span>
+                          </button>
+                            <span class="visible-xs navbar-brand"><a href="index.html">VAERS</a></span>
+                        </div>
+                        <div class="navbar-collapse collapse" id="vaersNavbar">
+                            <ul>
+                                <li>
+                                    <a href="index.html" target="_top">VAERS Home</a>
+                                    <ul>
+                                        <li>
+                                            <a href="about.html" target="_top">About VAERS</a>
+                                        </li>
+                                        <li class="parent-menu-item">
+                                            <span class="menu-toggle"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                            <a href="reportevent.html" target="_top">Report an Adverse Event</a>
+                                            <ul class="sub-menu-show">
+                                                <li><a href="esub/index.jsp" target="_top" autofocus>Report Online</a></li>
+                                                <li><a href="uploadFile/index.jsp" target="_top">Report Using a PDF Form</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="parent-menu-item">
+                                            <span class="menu-toggle"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            <a href="data.html" target="_top">VAERS Data</a>
+                                            <ul>
+                                                <li><a href="data.html" target="_top">VAERS Data Sets</a></li>
+                                                <li><a href="data/dataguide.html" target="_top">Guide to Interpreting Data</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="parent-menu-item">
+                                            <span class="menu-toggle"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            <a href="resources.html" target="_top">Resources</a>
+                                            <ul>
+                                                <li><a href="resources/govtsites.html" target="_top">Government Websites</a></li>
+                                                <li><a href="resources/infoproviders.html" target="_top">For Healthcare Providers</a></li>
+                                                <li><a href="resources/materials.html" target="_top"> Materials and Learning Tools</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="autoupload.html" target="_top">Submit Follow-Up Information</a></li>
+                                        <li><a href="faq.html" target="_top">Frequently Asked Questions</a></li>
+                                        <li><a href="contact.html" target="_top">Contact Us</a></li>
+                                        <li><a href="privacy.html" target="_top">Privacy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /.nav-side-menu -->
+            </div>
+            <div class="flowRight">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Breadcrumbs -->
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Report an Adverse Event</li>
+                            <li class="pull-right"><a href="reporteventspanish.html">en Español</a></li>
+                        </ol>
+                        <!-- /.breadcrumb -->
+
+                        <figure class="max-width-272px pull-right">
+                            <div class="img_section">
+                                <img class="border" src="images/reporteventimg.jpg" alt="Doctor consulting patient on how to report to VAERS" title="Doctor consulting patient on how to report to VAERS">
+                                <figcaption>
+                                <div class="caption"><b><a href="faq.html">Click here for information on reporting to VAERS after COVID-19 vaccination</a></b></div>					
+                                </figcaption>
+                            </div>	
+                        </figure>
+
+                        <!--- VAER-1076 - created acordion sections. --->
+                        <div class="panel-group" id="accordion">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    Report an Adverse Event to VAERS  <i class="indicator fa fa-chevron-right fa-pull-right"></i></a>
+                                    </h4>
+                                </div>
+                                <!--- /.panel-heading --->
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>The Vaccine Adverse Event Reporting System (VAERS) is a national early warning system to detect possible safety problems in vaccines used in the United States. VAERS accepts and analyzes reports of adverse events (AEs) after a person has received a vaccination. Anyone can report an adverse event to VAERS. Healthcare professionals are required to report certain adverse events and vaccine manufacturers are required to report all adverse events that come to their attention.</p>
+                                        
+                                        <p>Healthcare providers are <b><u>required by law</u></b> to report to VAERS:</p>
+                                        <ul>
+                                            <li>Any adverse event listed in the <a href="/docs/VAERS_Table_of_Reportable_Events_Following_Vaccination.pdf" target="_blank">VAERS Table of Reportable Events Following Vaccination</a> that occurs within the specified time period after vaccinations</li>
+                                            <li>An adverse event listed by the vaccine manufacturer as a contraindication to further doses of the vaccine</li>					
+                                        </ul>
+                                        
+                                        <p>Healthcare providers are strongly <b><u>encouraged</u></b> to report to VAERS:</p>
+                                        <ul>
+                                        <li>Any adverse event that occurs after the administration of a vaccine licensed in the United States, whether it is or is not clear that a vaccine caused the adverse event</li>
+                                        <li>Vaccine administration errors</li>
+                                        </ul>
+
+                                        
+                                        <p>Vaccine manufacturers are required to report to VAERS all adverse events that come to their attention.</p>
+                                        
+                                        <p>Online reporting is strongly encouraged. Please report clinically important adverse events that occur after vaccination of adults and children, even if you are not sure whether the vaccine caused the adverse event.</p>
+
+                                        <p>VAERS accepts all reports, including reports of vaccination errors.
+                                        
+                                    </div>
+                                    <!--- /.panel-body --->
+                                </div>
+                                <!--- /.collapse1 --->
+                            </div>
+                            <!--- /.panel panel-default --->
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                    VAERS Reporting Information for COVID-19 Vaccines <i class="indicator fa fa-chevron-right fa-pull-right"></i></a>
+                                    </h4>
+                                </div>
+                                <!--- /.panel-heading --->
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>The Vaccine Adverse Event Reporting System (VAERS) is a national early warning system to detect possible safety problems in vaccines used in the United States. VAERS accepts and analyzes reports of adverse events (AEs) after a person has received a vaccination.</p>
+
+                                        <p><b>For licensed COVID-19 vaccines</b> (Moderna and Pfizer-BioNTech in people ages 12 years and older), healthcare providers are strongly encouraged to report to VAERS:</p>
+                                        <ul>
+                                            <li>Any adverse event that occurs after the administration of a vaccine licensed in the United States, whether or not it is clear that a vaccine caused the adverse event</li>
+                                            <li>Vaccine administration errors, whether or not associated with an adverse event</li>
+                                        </ul>
+
+                                        <p><b>For COVID-19 vaccines given under an Emergency Use Authorization (EUA),</b> vaccination providers are <b>required</b> to report to VAERS:</p>
+                                        <ul>
+                                            <li>Vaccine administration errors, whether or not associated with an adverse event</li>
+                                            <li>Serious adverse events regardless of causality. Serious adverse events per FDA are defined as:
+                                                <ul>
+                                                    <li>Death</li>
+                                                    <li>A life-threatening adverse event</li>
+                                                    <li>Inpatient hospitalization or prolongation of existing hospitalization</li>
+                                                    <li>A persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions</li>
+                                                    <li>A congenital anomaly/birth defect</li>
+                                                    <li>An important medical event that based on appropriate medical judgement may jeopardize the individual and may require medical or surgical intervention to prevent one of the outcomes listed above</li>
+                                                </ul>
+                                            </li>
+                                            <li>Cases of Multisystem Inflammatory Syndrome (MIS) in children and adults</li>
+                                            <li>Cases of myocarditis</li>
+                                            <li>Cases of pericarditis</li>
+                                            <li>Cases of COVID-19 that result in hospitalization or death</li>
+                                        </ul>
+                                        <p>Reporting is also encouraged for any other clinically significant adverse event, even if it is uncertain whether the vaccine caused the event. </p>
+                                    
+                                    <!---- 
+                                        <p>Healthcare providers who administer COVID-19 vaccines should report the following to VAERS:</p>
+                                        <ul>
+                                            <li>Vaccine administration errors whether or not associated with an adverse event(AE)</li>
+                                            <li>Serious AEs regardless of causality. Serious AEs per FDA are defined as:
+                                                <ul>
+                                                    <li>Death</li>
+                                                    <li>A life-threatening AE</li>
+                                                    <li>Inpatient hospitalization or prolongation of existing hospitalization</li>
+                                                    <li>A persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions</li>
+                                                    <li>A congenital anomaly/birth defect</li>
+                                                    <li>An important medical event that based on appropriate medical judgement may jeopardize the individual and may require medical or surgical intervention to prevent one of the outcomes listed above</li>
+                                                </ul>
+                                            </li>
+                                            <li>Cases of myocarditis after a Pfizer-BioNTech, Moderna, Novavax, or Janssen COVID-19 vaccine</li>
+                                            <li>Cases of pericarditis after a Pfizer-BioNTech, Moderna, Novavax, or Janssen COVID-19 vaccine</li>
+                                            <li>Cases of Multisystem Inflammatory Syndrome in children and adults</li>
+                                            <li>Cases of COVID-19 that result in hospitalization or death</li>
+                                        </ul>
+                                        <p>Healthcare providers are also encouraged to report to VAERS any additional clinically significant AEs following vaccination, even if unsure whether vaccination caused the event.</p>
+                                    --->    
+                                    </div>
+                                    <!--- /.panel-body --->
+                                </div>
+                                <!--- /.collapse2 --->
+                            </div>
+                            <!--- /.panel panel-default - end  --->
+
+                            <!-- nirsevimab reporting section 09/06/2023-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                    VAERS Reporting Requirements for Beyfortus (nirsevimab) <i class="indicator fa fa-chevron-right fa-pull-right"></i></a>
+                                    </h4>
+                                </div>
+                                <!--- /.panel-heading --->
+                                <div id="collapse4" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <!---
+                                        <p>To report an adverse event after Beyfortus (nirsevimab)*</p>
+                                        --->
+                                        <p>To report an adverse event (including administration errors) after Beyfortus (nirsevimab)*</p>
+                                        <ul>
+                                            <li>If Beyfortus (nirsevimab) was given at the same visit with one or more vaccinations:
+                                                <ul>
+                                                    <li>Report to VAERS at <a href="#submitReport">VAERS - Report an Adverse Event (hhs.gov)</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>If Beyfortus (nirsevimab) was given alone with no other vaccinations on the same visit:
+                                                <ul>
+                                                    <li>Report to MedWatch at <a href="https://www.accessdata.fda.gov/scripts/medwatch/index.cfm" target="_blank">MedWatch Online Voluntary Reporting Form (fda.gov)</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <p>*Beyfortus (nirsevimab) is not a vaccine. It is a monoclonal antibody given by injection and used in newborns, infants, and young children to protect them from respiratory syncytial virus (RSV). It may be given at the same time that vaccinations are given.</p>
+                                    </div>
+                                    <!--- /.panel-body --->
+                                </div>
+                                <!--- /.collapse4 --->
+                            </div>
+                            <!--- /.panel panel-default --->
+
+                            <!-- Monkeypox reporting section 09/09/2022-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                    VAERS Reporting Requirements for Monkeypox vaccines  <i class="indicator fa fa-chevron-right fa-pull-right"></i></a>
+                                    </h4>
+                                </div>
+                                <!--- /.panel-heading --->
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>The vaccination provider must report all serious* adverse events following administration of JYNNEOS or ACAM2000 vaccine and vaccine administration errors to the Vaccine Adverse Event Reporting System (VAERS) by submitting online at <a href="#submitReport" >https://vaers.hhs.gov/reportevent.html</a>.</p>
+                                        <p>The vaccination provider is responsible for mandatory reporting of the following listed events following JYNNEOS or ACAM2000 vaccination to VAERS:</p>
+                                        <ul>
+                                            <li>Vaccine administration errors whether or not associated with an adverse event(AE)</li>
+                                            <li>Serious* adverse events (irrespective of attribution to vaccination)</li>
+                                            <li>Cases of cardiac events, including myocarditis and pericarditis</li>
+                                            <li>Cases of thromboembolic events and neurovascular events</li>
+                                        </ul>
+
+                                        <p>*Serious adverse events are defined as:</p>
+                                        <ul>
+                                            <li>Death</li>
+                                            <li>A life-threatening AE</li>
+                                            <li>Inpatient hospitalization or prolongation of existing hospitalization</li>
+                                            <li>A persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions</li>
+                                            <li>A congenital anomaly/birth defect</li>
+                                            <li>An important medical event that based on appropriate medical judgement may jeopardize the individual and may require medical or surgical intervention to prevent one of the outcomes listed above</li>
+                                        </ul>
+                                            
+                                        <p>Providers are encouraged to also report to VAERS any additional clinically significant AEs following vaccination, even if they are not sure if vaccination caused the event.</p>
+                                        <p>As of August 9, 2022, FDA issued an Emergency Use Authorization (EUA) for JYNNEOS monkeypox vaccine. It authorizes the vaccine to be administered in one of two ways:</p>
+                                        <ol>
+                                            <li>Intradermally (between the layers of the skin) on the inner aspect of the forearm, and</li>
+                                            <li>Subcutaneously (under the skin) in the upper arm above the elbow</li>		
+                                        </ol>
+                                        <p>These are considered routes of vaccination. When submitting a VAERS report, ensure that you document the <b>Route</b> in <b>Section 17</b> of the VAERS form, by choosing “intradermal” or “subcutaneous” from the selection menu.</p>
+                                    </div>
+                                    <!--- /.panel-body --->
+                                </div>
+                                <!--- /.collapse3 --->
+                            </div>
+                            <!--- /.panel panel-default --->
+
+
+                        </div>
+                        <!--- /.accordion --->
+
+                        <p><strong>Knowingly filing a false VAERS report is a violation of Federal law (18 U.S. Code § 1001) punishable by fine and imprisonment.</strong></p>
+						<!--- VAER 1076 - Div created to link to anchor tag. --->
+                        <div id="submitReport"></div>
+                        <h3>Two Ways to Submit an Online Report to VAERS</h3>
+
+                    </div>
+                    <!--- /.col-md-12 --->
+                </div>
+                <!--- /.row --->
+
+                <div class="row" >
+                    <div class="col-md-8">
+
+                        <div class="feature-box fbx-4X">
+                            <a href="/esub/index.jsp">
+                                <img src="images/reporteventfea2_small.jpg" alt="A woman completing a VAERS report online" title="A woman completing a VAERS report online">
+                                <div class="feature-box-content">
+                                    <h3>Option 1 - Report Online to VAERS</h3>
+                                    <p>Submit a VAERS report online. For security purposes, the form will time out after 20 minutes of inactivity per page. You will receive a warning when 5 minutes remain. If the form times out, your form will expire and any information you entered will be lost. </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="feature-box fbx-4X">
+                            <a href="/uploadFile/index.jsp">
+                                <img src="images/reporteventfea1_small.jpg" alt="Healthcare professional completing a writable PDF form on his computer" title="Healthcare professional completing a writable PDF form on his computer">
+                                <div class="feature-box-content">
+                                    <h3>Option 2 - Report using a Writable PDF Form</h3>
+                                    <p>Download the Writable PDF Form to a computer. Complete the VAERS report offline if you do not have time to complete it all at once. Return to this page to upload the completed Writable PDF form by clicking here.</p>
+                                </div>
+                            </a>
+                        </div>
+						<p><strong>If you need further assistance with reporting to VAERS, please email <a href="mailto:vaersinfo@cdc.gov">vaersinfo@cdc.gov</a> or call 1-800-822-7967.</strong></p>
+                    </div>
+                    <!-- /.col-md-8 -->
+                    <div class="col-md-4">
+                        <div class="alert alert-info pull-left">
+                            <h2>Checklist</h2>
+                            <div class="alert-inner-padding">
+                                <p><strong>What will I need to fill out the report?</strong></p>
+                                <ul>
+									<li>Patient information (age, date of birth, sex)</li>
+                                    <li>Vaccine information (brand name, dosage)</li>
+                                    <li>Date, time, and location administered</li>
+                                    <li>Date and time when adverse event(s) started</li>
+                                    <li>Symptoms and outcome of the adverse event(s)</li>
+                                    <li>Medical tests and laboratory results (if applicable)</li>
+                                    <li>Physician's contact information (if applicable)</li>
+								</ul>
+									
+								<form action="/docs/VAERS 2.0_Checklist.pdf" method="post" target="_blank">
+									<button type="submit" class="btn btn-primary">Full checklist</button>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-md-4 -->
+                </div>
+				<!-- /.row -->
+
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h3><b>What happens after a report is submitted</b></h3>
+                        <p>Each VAERS report is assigned a VAERS identification number. This number can be used to provide additional information about the report to VAERS, if necessary. VAERS will send the identification number to the reporting individual in a confirmation letter (electronically or by mail, depending on communications preferences listed on the original report).</p>
+						<p>Other than the confirmation letter, <b>VAERS will only reach out to the reporting individual for additional information if “essential fields” of the VAERS form are not filled out. VAERS will not contact the reporting individual by phone for follow-up.</b> Additional information requests are sent electronically or by mail and will explain what information is missing from the report and how the reporter can update it.</p>
+						<p>The VAERS program follows up on reports classified as serious by attempting to obtain medical records to better understand the event. These requests for medical records are made directly to health institutions or public health authorities that create and maintain medical records. The medical records are added to the permanent record under the VAERS ID, compliant with privacy standards.</p>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <h3>Privacy Protection</h3>
+                        <p>Information identifying the person who received the vaccine and the person who filed the report is not made available to the public. You or your health care provider may be contacted for further information after your report is received.</p>
+                        <p>Information supplied in the online submission form is transmitted securely to VAERS. Visit the <a href="privacy.html">VAERS Privacy Policies and Disclaimers section</a> for more information about Secure Sockets Layer and data transmission.</p>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+            </div>
+            <!--- /. flowRight --->
+        </div>
+        <!--- /. grid-even-columns  -->
+        <div class="row">
+          <div class="col-md-12 no-side-padding">
+              <div class="footer text-center padding-25px light-gray-bg margin-top-25px margin-bottom-25px side-padding-15px" >
+                    <ul>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="mailto:vaersinfo@cdc.gov">vaersinfo@cdc.gov</a></li>
+                    </ul>
+                    <ul>
+                        <li >
+                            <a id="footer-noborder" href="https://urldefense.us/v3/__https:/www.hhs.gov/vulnerability-disclosure-policy/index.html__;!!JRQnnSFuzw7wjAKq6ti6!gyBeT_HGREEd5t14KdwIRf5ZQVFqyRtp14miSwyxziZwqdmRMEA3YjGiHz5gU4Q$">Vulnerability Disclosure Policy - HHS.gov</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.usa.gov">USA.gov</a></li>
+                        <li><a href="https://www.cdc.gov/">Centers for Disease Control and Prevention</a></li>
+                        <li><a href="http://www.fda.gov/">Food and Drug Administration</a></li>
+                        <li><a href="https://www.hhs.gov/">U.S. Department of Health &amp; Human Services</a></li>
+                    </ul>
+                    <p>VAERS is co-sponsored by the Centers for Disease Control and Prevention (CDC), and the Food and Drug Administration (FDA), agencies of the U.S. Department of Health and Human Services (HHS).</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+        <a aria-label="Back to top" id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="icon-arrow-up"></span></a>
+
+
+    <!--| Guidance Information modal content -->
+    <div id="guidance" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Guidance on Reporting Vaccination Errors</h4>
+                </div>
+                <div class="modal-body">
+                  <p>VAERS is primarily concerned with monitoring adverse health events and we encourage reporting of clinically significant adverse health events following vaccination. Using clinical judgment, healthcare professionals can decide whether or not to report a medical error at their own discretion. For example, a healthcare professional may elect to report vaccination errors that do not have an associated adverse health event, especially if they think the vaccination error may pose a safety risk (<i>e.g., administering a live vaccine to an immunocompromised patient</i>) or that the error would be preventable with public health action or education.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--| COVID Guidance Information modal content -->
+    <div id="covidguidance" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Guidance on Reporting Adverse Events after COVID-19 Vaccination</h4>
+                </div>
+                <div class="modal-body">
+						<p>Healthcare professionals are <b><u>encouraged</u></b> to report any clinically significant adverse event following vaccination to VAERS, even if they are not sure if vaccination caused the event.</p>
+						<p>Healthcare providers are <b><u>required</u></b> to report the following adverse events after COVID-19 vaccination, and other adverse events if later revised by CDC, to VAERS:</p>
+							<ul>
+								<li>Vaccination administration errors, whether or not associated with an adverse event</li>
+								<li>Severe COVID-19 illness (e.g., resulting in hospitalization)</li>
+								<li>Cases of observed Multisystem Inflammatory Syndrome</li>
+								<li>Serious adverse events (AEs) regardless of causality. Serious AEs are defined as:</li>
+									<ol>
+										<li>&nbsp;Death;</li>
+										<li>&nbsp;A life-threatening adverse event;</li>
+										<li>&nbsp;Inpatient hospitalization or prolongation of existing hospitalization;</li>
+										<li>&nbsp;Persistent or significant incapacity or substantial disruption of the ability to conduct normal life functions; </li>
+										<li>&nbsp;A congenital anomaly/birth defect; </li>
+										<li>&nbsp;Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes listed above.</li>           
+									</ol>
+							</ul>
+							
+									
+						<p>Also report any additional select adverse events and/or any revised safety reporting requirements per FDA's conditions of authorized use of vaccine(s) throughout the duration of any COVID-19 Vaccine being authorized under an Emergency Use Authorization (EUA).</p>
+                                    
+                </div>
+    			  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/accordion.js"></script>
+    <script src="js/scrollTop.js"></script>
+    <script src="js/sidebarMenuToggle.js"></script>
+    <script src="js/setActiveLink.js"></script>
+</body>
+
+</html>

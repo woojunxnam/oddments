@@ -1,0 +1,205 @@
+{
+  "schema_version": "annotation15-wave10-context-b-engineering/1",
+  "purpose": "EXACT_ONE_HISTORICAL_NONLEGAL_PROGRESS_RECEIPT_RETENTION",
+  "prepared_at": "2026-11-04T07:54:25.450765+00:00",
+  "actor_provenance": {
+    "actor_id": "/root/independent_wave10_b",
+    "session_id": "/root/independent_wave10_b"
+  },
+  "source_root_commit": "1be3a2c6210ea0edd97270708200b990e0ed0e3d",
+  "tested_source_commit": "9fe92982e4b044ec01bb10a9d436184068474714",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "new_author_review_credit": 0,
+  "new_independent_legal_audit_credit": 0,
+  "implementation_scope": {
+    "historical_receipt_count": 5,
+    "old_receipt_count_unchanged": 4,
+    "new_receipt_count": 1,
+    "private_descriptor_count_unchanged": 4,
+    "new_private_exceptions": 0,
+    "new_copyrighted_raw_or_extracted_text_files": 0,
+    "new_entry": {
+      "job_id": "review-independent-legacy-c20f4ee0cf56468b",
+      "sequence": 34,
+      "report_path": "reports/full-corpus-review/independent-phase10-a-review.json",
+      "report_raw_sha256": "d8682944aa380f5de941b489742dc191bbe3bac6f4478feed8bd3f92b48ba54d",
+      "origin_path": "reports/full-corpus-review/progress.json",
+      "origin_raw_sha256": "d72abc651be64cf440b77946aff654553add1bc1082db1fe8c31ae0ce682b1d6",
+      "reference_pointers": [
+        "/methodology/read_docs/5/path"
+      ],
+      "reference_semantics": "HISTORICAL_NONLEGAL_PROGRESS_READ_RECEIPT",
+      "retained_path": "reports/full-corpus-review/after190-historical-context/snapshots/progress-d72abc.json",
+      "retained_raw_sha256": "d72abc651be64cf440b77946aff654553add1bc1082db1fe8c31ae0ce682b1d6",
+      "preparation_provenance": {
+        "method": "EXACT_KNOWN_GIT_BLOB_READ_DURING_PREPARATION_ONLY",
+        "source_commit": "f63cf221dfa43ae5528b6e13c58091116afca1d7",
+        "source_path": "reports/full-corpus-review/progress.json",
+        "source_git_blob_sha1": "0bb9434a47983ac524fe2a2adbac0f19ca1f5d51",
+        "source_raw_sha256": "d72abc651be64cf440b77946aff654553add1bc1082db1fe8c31ae0ce682b1d6",
+        "worker_commit": "f63cf221dfa43ae5528b6e13c58091116afca1d7"
+      },
+      "current_binding_override": false,
+      "canonical_release_credit": 0,
+      "question_audit_credit": 0
+    },
+    "registries": [
+      {
+        "path": "reports/full-corpus-review/after190-historical-context/registry-v3.json",
+        "raw_sha256": "b8aec584727e759f2567c9188f48f525f71216e266a09d7caa67b0f6203916e4"
+      },
+      {
+        "path": "reports/full-corpus-review/after190-historical-context/registry-v2.json",
+        "raw_sha256": "6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c"
+      },
+      {
+        "path": "reports/full-corpus-review/after190-historical-context/registry.json",
+        "raw_sha256": "989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536"
+      }
+    ],
+    "runtime": "Exact job/sequence/report SHA/origin path+SHA/single pointer/original worker/retained HEAD bytes/preparation Git-blob provenance; runtime never loads original worker Git object.",
+    "current_counter_is_not_alias": {
+      "historical_independent_legacy_legal_assessed": 1477,
+      "current_independent_legacy_legal_assessed": 1633
+    },
+    "private_scope": "Only original four memo-bound unretained private descriptors; no runtime private text byte verification or new redistribution."
+  },
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_after190_historical_context.py tests/test_after190_wave10_historical_context.py",
+      "status": "PASS",
+      "passed": 84,
+      "coverage": [
+        "actual five receipts",
+        "A34 full report pointer and original worker",
+        "new snapshot missing/tamper",
+        "wrong job/sequence/report/report SHA/worker/origin/origin SHA/pointer/primary pointer/extra pointer",
+        "pinned v1/v2/v3 raw hashes",
+        "rehash scope/provenance attacks",
+        "old receipt change/delete/reclassification",
+        "no new private descriptor",
+        "current counter tamper with old1477 snapshot",
+        "four actual policy-byte mutations",
+        "all59 negative default-restoration rejections",
+        "all27 new safety-hold removal rejections",
+        "actual depth1 shallow checkout with all original worker objects absent"
+      ]
+    },
+    {
+      "command": "a.bind_legacy_checkpoint(ROOT, state[\"jobs\"][33], state, {})",
+      "status": "PASS",
+      "historical_receipt_count": 1,
+      "retained_binding_count": 93
+    },
+    {
+      "command": "a.bind_current_review_context(ROOT,{})",
+      "status": "PASS",
+      "method": "Current HEAD progress bytes compared with actual read-only source builder output"
+    },
+    {
+      "command": "a.bind_native_author(ROOT,{})",
+      "status": "PASS",
+      "archive_question_count": 2349,
+      "default_count": 202
+    },
+    {
+      "command": "python -m pytest -q tests/test_emergency_note_activation.py::test_semantic_migration_decodes_j_export_and_j_build_context tests/test_emergency_note_activation.py::test_semantic_migration_cannot_weaken_old_guards_or_rebind_context",
+      "status": "PASS",
+      "passed": 6
+    },
+    {
+      "command": "python scripts/notes_after190_annotation.py (read-only stdout to /tmp/annotation15-wave10-context-b-manifest-candidate.json)",
+      "status": "BLOCKED_OUTSIDE_TASK_SCOPE",
+      "reason": "Wave10 C source-context exposure IDs must retain NOT_ASSESSED/safety hold and zero fresh whole-key credit",
+      "actual_manifest_write_attempted": false
+    },
+    {
+      "command": "python -m pytest -q tests/test_canonical_q0012_withdrawal.py::test_all_1781_protected_files_pass_with_original_baseline_and_fourteen_guards",
+      "status": "BLOCKED_OUTSIDE_TASK_SCOPE",
+      "failed": 1,
+      "reason": "Wave10 C source-context exposure IDs must retain NOT_ASSESSED/safety hold and zero fresh whole-key credit",
+      "full_1781_pass_claimed": false
+    },
+    {
+      "command": "python -m pytest -q tests/test_after190_annotation.py tests/test_after190_wave10_completion.py",
+      "status": "PARTIAL_OUTSIDE_TASK_BLOCKERS",
+      "passed": 92,
+      "failed": 2,
+      "errors": 31,
+      "reasons": [
+        "Wave10 C source-context exposure IDs must retain NOT_ASSESSED/safety hold and zero fresh whole-key credit",
+        "Old completion tests still expect actual integrated wave10 jobs to be LEASED/pending."
+      ],
+      "scope_expanded_to_fix": false
+    },
+    {
+      "command": "git diff --check HEAD~1 HEAD",
+      "status": "PASS"
+    }
+  ],
+  "preservation_checks": [
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/registry.json",
+      "raw_sha256": "989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/registry-v2.json",
+      "raw_sha256": "6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "reports/full-corpus-review/independent-phase10-a-review.json",
+      "raw_sha256": "d8682944aa380f5de941b489742dc191bbe3bac6f4478feed8bd3f92b48ba54d",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "reports/full-corpus-review/independent-phase10-a-result.json",
+      "raw_sha256": "d0aab90f3efc55c77b1ea888e1188c1e2de792c4d3bbd08c7dd7188d93d096a4",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "reports/full-corpus-review/independent-legacy-work-queue.json",
+      "raw_sha256": "8744d270d6741950032d22211f6af74da69d8291ab1fbc0151d543fe1a837eea",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "docs/RELEASE_POLICY.md",
+      "raw_sha256": "da26dd691188dc8b15e3ec9242fbb8d7378bc5d3ab5696203c729d07524516b7",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "docs/AUDIT_WORKFLOW.md",
+      "raw_sha256": "16dfa1a6b3e45dc8ba76f330e07ecb012d9973d2ee805910511d55799791be31",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "docs/SOURCE_USE_POLICY.md",
+      "raw_sha256": "b065455458fb4adb39fea1989bb1c48c408a2cc631aaca79e22df819695c31d9",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "docs/QUESTION_AUTHORING_STANDARD.md",
+      "raw_sha256": "104e434e7a21c566763dc727ffe13dda4df985b2a79257a77dafd23dd8015e15",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "revisions/notes/protected-migration-independent-notes-wave3.json",
+      "raw_sha256": "53537abd57b56bc8a839901a766de916c7a06b4275beba8bd2ebf435adf0353e",
+      "unchanged_from_source_head": true
+    },
+    {
+      "path": "scripts/verify_representative_protected.py",
+      "raw_sha256": "3b640dbf8b0a1290c5452300ace0cb882046a23bbf59a144f90f93b03a2ac031",
+      "unchanged_from_source_head": true
+    }
+  ],
+  "old_jobs_1_to_33_digest": "db890633bdf6af62cb7cbac313f92666d4d0d39f8e0f30ff29f8a05552c0db69",
+  "limitations": [
+    "Actual manifest --write, root shared generated files, queues, native reports, original report verdicts and envelopes were not modified.",
+    "Final annotation15/1781 gate must be rerun by root after its separate C36 guard and current-manifest integration.",
+    "No legal judgment or new audit/release credit is created."
+  ]
+}

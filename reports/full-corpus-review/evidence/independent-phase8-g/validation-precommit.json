@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "current_root_record_and_complete_visible_hashes": 40,
+  "choices_and_rationales": 160,
+  "manual_propositions": 77,
+  "primary_source_bindings": 8,
+  "criteria_assessed": 400,
+  "polarity_counts": {
+    "POSITIVE_SBA": 20,
+    "SATA": 10,
+    "INCORRECT_SBA": 10
+  },
+  "legal_answers": {
+    "YES": 40
+  },
+  "legal_verdicts": {
+    "KEEP": 40
+  },
+  "realism_verdicts": {
+    "FAIL": 19,
+    "PASS": 21
+  },
+  "dispositions": {
+    "NEEDS_REMEDIATION": 19,
+    "INDEPENDENT_ASSESSED": 21
+  },
+  "historical_raw_snapshot_valid": 52,
+  "historical_snapshot_noncurrent_not_automatic_defect": 12,
+  "nearest_full_stem_options_candidates": 68,
+  "assigned_default_intersection": 0,
+  "style_profile_semantic_and_schema": "PASS",
+  "current_root_validate_result": "PASS",
+  "current_root_validate_independent_evidence": "PASS40",
+  "report_sha256": "1c71c5ff8050b0df140606501cd9aa4f9ad79b687f03b3f4130664660b11a0af",
+  "worker_commit": "4bd47d74b4b069383ad93035986c626c472810e3",
+  "envelope_written": false,
+  "queue_submit_or_integrate": "NOT_RUN_ROOT_ONLY",
+  "validation_time_utc": "2026-11-04T03:44:02.220810+00:00",
+  "root_head_at_final_precommit_record_check": "34e38c7b3d2b87ca5b3d9528dff5eb5121c923e4",
+  "worker_commit_scope": "PRECOMMIT_BASE_ONLY; final exact worker commit is recorded solely in the postcommit envelope",
+  "checks_ko": [
+    "현재 root 안전 exporter가 반환하는 전체 visible 40건과 assignment canonical whole-record SHA 40개를 일치 확인했다. Raw question/ledger/숨은 truth는 모델에 출력하지 않았다.",
+    "공식 primary 8개의 raw/text/retrieval SHA와 section/URL/date/normal TLS binding, 160개 보기·풀이 및 400개 criterion을 검사했다.",
+    "원 snapshot note binding 52개는 모두 실제 원 body UTF8와 일치한다. Current overlay와 다른 12개를 자동 문항 오류/법규 HOLD로 처리하지 않는지 확인했다.",
+    "현재 추천 교집합 0, 세션/원저자 범위, canonical/release/author credit 0 및 기존 본문·키·상태·생성물 수정 0을 검사했다."
+  ],
+  "focused_tests": {
+    "command": "python -m pytest -q tests/test_review_queue.py tests/test_legacy_independent_metadata.py",
+    "result": "57 passed in 1.07s",
+    "run_in": "/workspace/independent-phase8-g",
+    "full_repository_qa": "NOT_RUN_NOT_REQUIRED_FOR_REVIEW_ONLY_TASK"
+  },
+  "validator_script_sha256": "19c82da40ef1f51128b9a1c7b05397cdb656e1fa1217a8a7fac46d665b846278",
+  "git_scope_check": {
+    "staged_files": 49,
+    "only_assigned_report_and_evidence": true,
+    "protected_files_changed": 0,
+    "authored_json_python_whitespace": "PASS",
+    "diff_check_raw_html_returncode": 2,
+    "raw_html_whitespace_preserved": [
+      "1306-11.html",
+      "1306-12.html",
+      "1306-25.html"
+    ],
+    "reason_ko": "공식 원문 HTML의 원 whitespace를 raw SHA 보존을 위해 그대로 유지했다. 작성한 JSON/Python whitespace 검사는 통과했다."
+  }
+}

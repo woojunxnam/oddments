@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "purpose": "BOUNDED_INDEPENDENT_CODE_REVIEW_ANNOTATION15_RETENTION_NOT_LEGAL_AUDIT",
+  "reviewed_at_utc": "2026-11-04T06:59:39.531469+00:00",
+  "reviewed_root_commit": "f68ed940293be26913ca7efaab43b2d8a69e5ef6",
+  "head_at_report": "7ea50249f77fba8a84ea212ceef64f4033a694d4",
+  "actor_provenance": {
+    "actor_id": "/root/independent_case_e",
+    "session_id": "/root/independent_case_e"
+  },
+  "actor_instance": "gpt-independent-session-root-independent_case_e-20261103",
+  "same_actual_session": true,
+  "review_role": "NONAUTHOR_OF_THIS_RETENTION_CHANGE; prior E notes/engineering exposure disclosed by unchanged actual identity",
+  "scope_commits": {
+    "runtime_original": "ebf7fbf3",
+    "runtime_root": "5dcc1a5ec741370eb5fd1bfe2be46f2c26b5ba0f",
+    "registry_v1_root": "f8c1de73",
+    "registry_v2_root": "e2b77b68"
+  },
+  "result": "NO_BLOCKING_FINDINGS_IN_BOUNDED_REVIEW",
+  "findings": [],
+  "checks": [
+    {
+      "area": "exact historical context4",
+      "result": "PASS",
+      "source": [
+        "scripts/after190_historical_context.py:16",
+        "scripts/after190_historical_context.py:85",
+        "scripts/after190_historical_context.py:119",
+        "scripts/notes_after190_annotation.py:473"
+      ],
+      "reason_ko": "실제job/sequence/report path+rawSHA/origin path+oldSHA/pointer집합을 모두 고정한다. Registry v2와 원v1 rawSHA 및 entries equality를 요구하고 retained HEAD bytes/oldSHA/GitblobSHA1/preparationworker 문자열을 확인한다. 매칭이 안 되면 일반 current-byte validation으로 돌아가며 scope를 확대하지 않는다."
+    },
+    {
+      "area": "copyright private extracted descriptors4",
+      "result": "PASS",
+      "source": [
+        "scripts/after190_historical_context.py:32",
+        "scripts/after190_historical_context.py:103",
+        "scripts/after190_historical_context.py:147",
+        "scripts/notes_after190_annotation.py:478"
+      ],
+      "reason_ko": "B31의 source index8/12/39/40, sourceid/type/URL/privatepath/extractedSHA/originalrawSHA/retainedmemo path+SHA와 정확한 extracted_path pointer만 허용한다. retained memo의 HEAD bytes/SHA/identity를 검증하고 style-only memo는 not_legal_proof=true를 요구한다. runtime_text_bytes_verified=false와 memo-only scope를 유지하며 private 원문 바이트를 열거나 검증했다고 주장하지 않는다. 다른 absolute extracted/public path는 기존 일반 차단 경로로 귀결된다."
+    },
+    {
+      "area": "current counters/selector/governance/primary",
+      "result": "PASS",
+      "source": [
+        "scripts/notes_after190_annotation.py:259",
+        "scripts/notes_after190_annotation.py:334",
+        "scripts/notes_after190_annotation.py:389",
+        "scripts/notes_after190_annotation.py:409",
+        "scripts/notes_after190_annotation.py:464",
+        "scripts/notes_after190_annotation.py:611"
+      ],
+      "reason_ko": "현재 progress는 fresh subprocess의 실제 build_full_corpus_review.build() 반환값과 byte동일해야 한다. 현재runbook은 HEAD와 별도결박하고 selector는 실제 source-bound negative removal/default/archive validators를 계속 실행한다. SOURCE_USE/RELEASE/AUDIT/QUESTION_AUTHORING/style 및 primary/question/ledger에는 historical alias가 없다. 실제 finalmanifest current sourcebindings가 현재 HEAD bytes를 가리키는 것을 직접 확인했다. 기존 private raw-payload memo 처리는 새 extracted4 allowlist와 구별된다."
+    },
+    {
+      "area": "missing/corrupt/shallow",
+      "result": "PASS",
+      "source": [
+        "scripts/notes_after190_annotation.py:130",
+        "scripts/after190_historical_context.py:132",
+        "scripts/after190_historical_context.py:163"
+      ],
+      "reason_ko": "committed()는 safe relative/non-symlink/current-file와 HEAD blob 동일을 요구한다. 원 retained4의 누락/변조와 memo4 변조는 예외로 차단하며 current파일/옛 Gitobject fetch로 대체하지 않는다. 실제 shallow checkout에서 원 worker commit이 없음을 확인했고 네 historical receipt와 네 private memo-only descriptor가 HEAD retained bytes만으로 동작했다."
+    },
+    {
+      "area": "original14/protected1781/currentcredit0",
+      "result": "PASS_STATIC_CHAIN_AND_CREDIT; ROOT_REPORTED_GATE_NOT_RERUN",
+      "source": [
+        "scripts/notes_after190_annotation.py:520",
+        "scripts/notes_after190_annotation.py:626",
+        "scripts/notes_after190_annotation.py:664",
+        "scripts/verify_representative_protected.py:168",
+        "scripts/verify_representative_protected.py:180",
+        "scripts/verify_representative_protected.py:526"
+      ],
+      "reason_ko": "15decoder는 exactexport path/currentmanifest==fresh make_manifest/currentMD+buildSHA와 parent14/baseMD/rawhash/semantic equality를 확인한 뒤 원PR190 baseline MD를 반환한다. caller는 이어서 기존14부터원guard 전체를 계속 실행한다. 보호manifest 파일수/records과기존1781 baseline validator를 변경하지 않았다. annotation purpose/publication NOT_GRANTED와 모든 legal/author/question/canonicalcredit0을 유지한다."
+    }
+  ],
+  "own_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python -m pytest -q -p no:cacheprovider --basetemp=/tmp/annotation15-e-review-tests tests/test_after190_historical_context.py",
+    "passed": 43,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 17.74,
+    "output": "43 passed in 17.74s",
+    "output_sha256": "08c199e659a265b519b8f1ee58502f131d64ae7bb993f575b1f4f8dfe686efeb",
+    "extra_direct_probes_passed": 16,
+    "extra_probe_breakdown": {
+      "historical4_each_missing_and_corrupt": 8,
+      "private4_retained_memo_hash_corruption": 4,
+      "private4_actual_shallow_without_old_worker_object_no_private_path_reads": 4
+    },
+    "shallow_historical4_covered_by_43tests": true,
+    "source_only_fixture_changes": "Monkeypatches in memory and test clones under/tmp only; original repository/source/Git refs/generated files were not edited."
+  },
+  "root_reported_checks_not_claimed_as_own_rerun": {
+    "annotation_check": "PASS reported by controller",
+    "protected1781": "PASS reported by controller",
+    "R_existing_tests134": "PASS0skip reported by controller",
+    "fullQA": "STILL_PENDING; not run by this bounded review"
+  },
+  "current_source_bindings_directly_compared": {
+    "reports/full-corpus-review/progress.json": "d72abc651be64cf440b77946aff654553add1bc1082db1fe8c31ae0ce682b1d6",
+    "docs/INDEPENDENT_DEFAULT_WAVE9_RUNBOOK.md": "ddab027929c78cf60bd73f35649301cebad9b94ffc387de6fe3c1a48ee29fbf1",
+    "practice_expansion/2026-10-28-representative/selection.json": "b6c8600f059626bec1a6f3903aae81c56acd72f7f843b4bb0acde7b9716891b5",
+    "docs/RELEASE_POLICY.md": "da26dd691188dc8b15e3ec9242fbb8d7378bc5d3ab5696203c729d07524516b7",
+    "docs/AUDIT_WORKFLOW.md": "16dfa1a6b3e45dc8ba76f330e07ecb012d9973d2ee805910511d55799791be31",
+    "docs/SOURCE_USE_POLICY.md": "b065455458fb4adb39fea1989bb1c48c408a2cc631aaca79e22df819695c31d9",
+    "docs/QUESTION_AUTHORING_STANDARD.md": "104e434e7a21c566763dc727ffe13dda4df985b2a79257a77dafd23dd8015e15",
+    "data/exam_style/mpje_style_profile.json": "f699e10e4ada0ced21e60e92b1abaa88329aa315eab1a4a5f1247243f90ec845"
+  },
+  "pinned_read_files": [
+    {
+      "path": "scripts/after190_historical_context.py",
+      "raw_sha256": "ddf0b989273b04fd5c18df07fafe450681d1343ebccfa7c0d69f912e3f3b297f",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "scripts/notes_after190_annotation.py",
+      "raw_sha256": "156ef8409ec6082c3a713431468c6851155199c5b42b14be5f2f03d050e81b9c",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "scripts/build_full_corpus_review.py",
+      "raw_sha256": "b771b5d98d7fc815867f98990ded95733688f35b1d9f790384c6247e3e4db75d",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "scripts/verify_representative_protected.py",
+      "raw_sha256": "3b640dbf8b0a1290c5452300ace0cb882046a23bbf59a144f90f93b03a2ac031",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "scripts/canonical_q0012_withdrawal.py",
+      "raw_sha256": "a1a7174f29b56f5c7ef4596700ee9e1c7c3e9749fd95e5db9d8af6ac787a2565",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/registry.json",
+      "raw_sha256": "989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/registry-v2.json",
+      "raw_sha256": "6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/snapshots/progress-ec8518.json",
+      "raw_sha256": "ec8518f63f78ea7003730d305e6914dcb5d4b5d9ba3eaf82a6e16f957824fe51",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "reports/full-corpus-review/after190-historical-context/snapshots/wave9-operational-runbook-daac621.md",
+      "raw_sha256": "daac6213ebbb2f1c22d141a7b2d2cda6c00893ff4a91b1fefc6033e2425600f3",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "reports/full-corpus-review/phase9-before-selection.json",
+      "raw_sha256": "a2908ebf508c3ae6ef1c728d1cda84b6db41d834208e1f5d6b2929bd36654b46",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "docs/AFTER190_NOTE_ANNOTATION_GUARD.md",
+      "raw_sha256": "b0ef2ce13923e08878eb336b5862fc8ba2ea618cbdf37c13fc877d28c7754127",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "tests/test_after190_historical_context.py",
+      "raw_sha256": "1fb24f2ee9d04b7ad542ac09a40522d84731d80901134ab6f62a085777be9f5f",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "tests/test_after190_annotation.py",
+      "raw_sha256": "95895ec87dc96648e13feb87f921235884968831dcf030f0303ebf9e5f0a89fe",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "revisions/notes/protected-migration-after190.json",
+      "raw_sha256": "1f52c51a0de71291c0a954f894599560af4d992433cc7e0050a0fbde7e8ee3d3",
+      "same_as_reviewed_commit": true
+    },
+    {
+      "path": "revisions/notes/protected-migration-independent-notes-wave3.json",
+      "raw_sha256": "53537abd57b56bc8a839901a766de916c7a06b4275beba8bd2ebf435adf0353e",
+      "same_as_reviewed_commit": true
+    }
+  ],
+  "limitations": [
+    "이는 bounded code review이며 새 법규 원문 감사·current legal assessment·canonical/release 승인 또는 fullQA 완료가 아니다.",
+    "private raw/extracted SHA는 원worker 선언의 보존된 descriptor이다. CI의 실제 private-text byte검증으로 해석하지 않는다.",
+    "준비 단계의 source_commit/worker identity는 보존 raw/blob consistency로 결박된 provenance 선언이며 새 외부 신원 증명으로 과장하지 않는다.",
+    "전체134/1781/annotation--check를 추가로 반복하지 않았다. 직접 실행한43tests+추가16probes와 호출 경로/현재 binding 정적·바이트 대조를 구별했다."
+  ],
+  "shared_source_git_generated_writes": false,
+  "review_report_path": "/tmp/annotation15-final-code-review-e.json",
+  "canonical_audit": false,
+  "credits": {
+    "author_review_credit": 0,
+    "independent_legal_audit_credit": 0,
+    "question_audit_credit": 0,
+    "canonical_release_credit": 0
+  },
+  "release_eligible": false
+}

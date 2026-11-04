@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "purpose": "ENGINEERING_NOTES_BODY_CORRECTION_REASSESSMENT_VALIDATION",
+  "stage": "engineering",
+  "actor_provenance": {
+    "actor_id": "/root/independent_procedural_retry",
+    "session_id": "/root/independent_procedural_retry"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+  "reviewed_at": "2026-11-04T04:51:09+00:00",
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "new_independent_legal_audit_credit": 0,
+  "source_commit": "d714c0940ceb3785f6d1d2bf919f6c14929db653",
+  "source_base_commit": "259a0fb963069b4f29d0f68b1a34e651369fe1fc",
+  "state": "INACTIVE_AUTHOR_DRAFT_ENGINEERING_VALIDATED_NOT_INDEPENDENTLY_REVIEWED",
+  "source_record": {
+    "path": "reports/full-corpus-review/body-corrections/w3-a-3-v1/record.json",
+    "raw_sha256": "cfe060fb2bb2a06769d02f712899ca7de8b24e5f3538b82a0744a125d8c5722d"
+  },
+  "author_revision": {
+    "path": "revisions/notes/candidates/2026-11-04-w3-a-3-pamphlet-scope-v1.json",
+    "raw_sha256": "b2f8c8db6d4c2538edf410939eaf9ce4396973d203fcd70ccb5ed1fc4164ed76"
+  },
+  "author_census": {
+    "path": "reports/full-corpus-review/body-corrections/w3-a-3-v1/census.json",
+    "raw_sha256": "3989096b1c43abfd73996e8ce99abe52699cdadd4ada8252ce7514540cf65a04"
+  },
+  "engineering_file_raw_sha256s": {
+    "scripts/notes_body_reassessment.py": "1cb86dc22e694fc1e594a427aebaa7c9976bc690652406cd7977dc46331a33c4",
+    "scripts/note_review_queue.py": "f2a793ba391bc87ae0736ed51a0f6a1071bdc2f25852c009618565939d42b901",
+    "scripts/notes_census_reassessment.py": "9bfa4adbe0096e634a006b8cec5269960fdab518b50016e42b3b9a6967bad0f7",
+    "scripts/notes_independent_metadata.py": "91fa2b331cb43f43e5d59eb31aa2ab800b02e79663328b537517f7b28222da58",
+    "scripts/build_full_corpus_review.py": "18c6e5326b5fb3fbad7734d4c710fda107773b6979dcaaa3a7b19140a882bcff",
+    "tests/test_notes_body_reassessment.py": "b0b099d4af1802e036a7004ed7d9b182a36405f0e1c5e87dbe7544c61e23760a",
+    "docs/NOTES_BODY_CORRECTION_REASSESSMENT.md": "2cf66f70a3acca39b02bebfd0a1171770a794f41ff3ae4d9135fa877a4d5ef9e",
+    "reports/full-corpus-review/body-corrections/w3-a-3-v1/inactive-preview.json": "3ff477226ccd58b4542b37e50493fd853bbca2ee3b7de1c1e35bc56dd0394086"
+  },
+  "tests": [
+    {
+      "command": "python -m pytest -q tests/test_notes_body_reassessment.py tests/test_census_revisions.py tests/test_note_review_queue.py tests/test_notes_census_reassessment.py tests/test_notes_independent_metadata.py",
+      "result": "PASS",
+      "passed": 124,
+      "duration_seconds": 58.44,
+      "fixture_scope": "Synthetic temporary Git repositories/worktrees; not legal audit evidence"
+    }
+  ],
+  "actual_read_only_checks": {
+    "active_notes_match_archived_effective_notes": true,
+    "active_units": 306,
+    "other_units_and_claim_bindings_unchanged": 305,
+    "current_target_body_sha256": "16124c0925f7388178a9218895ea8d511436f2ca601c56f6c503e5c180e2bffc",
+    "candidate_body_sha256": "e082d19727f6000e00d21a2c78e76405dfd406bf3f1a786242f57a1047c1ab4a",
+    "candidate_claim_count": 24,
+    "candidate_in_active_revision_paths": false,
+    "inactive_preview_matches_actual_read_only_cli": true,
+    "old_default_metadata_output_unchanged": true,
+    "old_default_metadata_output_raw_sha256": "e33ac4ba8d85da2d8d4d70a66c568b29c43e5a0434605ee87612fe518e41ebed",
+    "old_default_metadata_processed_units": 80,
+    "new_candidate_current_credit": 0,
+    "source_commit_files_unchanged": true,
+    "old_source_body_census_policy_manifests_baselines_state_generated_bytes_changed": 0,
+    "git_diff_check": "PASS"
+  },
+  "negative_test_scope": [
+    "author actor/session/instance and original author exclusion",
+    "root checkpoint denial to workers",
+    "same-body/whitespace/source-date pseudo-corrections",
+    "statutory dates and operational deadlines remain semantic propositions",
+    "omitted/duplicate mappings and out-of-span or unrelated changes",
+    "self-certified author audit/credit",
+    "source/record/archive/primary/derived tamper",
+    "lease expiry, new attempt branch and stale token fencing",
+    "duplicate/mixed-purpose jobs and unfinished-wave registration",
+    "full fresh final body/census/derived and original-negative proof",
+    "unchanged legal blockers cannot be KEEP",
+    "HTTP200 access page / missing or inconsistent retrieval and review dates",
+    "original omissions explicitly reassessed and unresolved omissions retained",
+    "inactive or submitted candidate current credit zero",
+    "ordered integration of distinct inactive candidates",
+    "exact registered active census builder spec; unknown spec rejected",
+    "census-only successor after explicit synthetic future activation preserves legal HOLD",
+    "current HEAD shallow reader without old worker commit objects"
+  ],
+  "not_run": [
+    "actual root checkpoint registration or lease",
+    "actual non-author independent review of this new body/census and derived inputs",
+    "active/default/source body replacement",
+    "full published builders for inactive candidate",
+    "published-15-based 16th protected body migration",
+    "full repository pytest suite and deployment (root responsibility)"
+  ],
+  "blockers": [
+    "ROOT_SEPARATE_16_FROM_ACTUALLY_PUBLISHED_15_SNAPSHOT",
+    "FULL_FRESH_NON_AUTHOR_BODY_CENSUS_NEGATIVES_OMISSIONS_DERIVED_REVIEW_REQUIRED",
+    "UNCHANGED_NOTE_WAVE8_W3_A_3_011_LEGAL_HOLD_MUST_CARRY",
+    "NO_GENERAL_IV_NARCOTIC_OR_UNRECONSTRUCTED_EFFECTIVE_DATE_CERTIFICATION"
+  ],
+  "registration_rebind_limit": "If unrelated selected census bindings change after this source checkpoint, root must append a new immutable registration record/fingerprint; never overwrite the source record or relax the other-unit guard.",
+  "provenance_limit": "Controller-attested actual actor/session/source reading; not external identity authentication or new legal PASS."
+}

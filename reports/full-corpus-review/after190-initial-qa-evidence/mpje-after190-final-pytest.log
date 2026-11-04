@@ -1,0 +1,314 @@
+........................................................................ [  6%]
+........................................................................ [ 12%]
+........................................................................ [ 19%]
+........................................................................ [ 25%]
+..F..................................................................... [ 32%]
+........................................................................ [ 38%]
+.............F.........................................F.F.............. [ 45%]
+........................................................................ [ 51%]
+........................................................................ [ 58%]
+........................................................................ [ 64%]
+...............FF.....FFFF.............................................. [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 90%]
+........................................................................ [ 96%]
+..........................F....F..                                       [100%]
+=================================== FAILURES ===================================
+_______ test_corpus_counts_do_not_inflate_canonical_or_learner_progress ________
+
+    def test_corpus_counts_do_not_inflate_canonical_or_learner_progress():
+        progress=read('reports/full-corpus-review/progress.json')
+>       assert progress['current_questions']==2346
+E       assert 2349 == 2346
+
+tests/test_cdtm0512_review.py:86: AssertionError
+________ test_every_id_is_inventoried_without_inheriting_family_passes _________
+
+    def test_every_id_is_inventoried_without_inheriting_family_passes():
+        outputs = build()
+        for path, text in outputs.items():
+            assert path.read_text() == text
+        rows = [json.loads(s) for s in outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines()]
+>       assert len(rows) == len({r['question_id'] for r in rows}) == 2346
+E       AssertionError: assert 2349 == 2346
+E        +  where 2349 = len({'MA-CASE-0001', 'MA-CASE-0002', 'MA-CASE-0003', 'MA-CASE-0004', 'MA-CASE-0005', 'MA-CASE-0006', ...})
+
+tests/test_full_corpus_review.py:23: AssertionError
+_______ test_visible_quality_status_and_previous59_snapshot_are_current ________
+
+    def test_visible_quality_status_and_previous59_snapshot_are_current():
+        from build_quality_status import output
+        path, rendered=output()
+        assert path.read_text()==rendered
+        selection = json.loads((ROOT/'practice_expansion/2026-10-28-representative/selection.json').read_text())
+>       assert '2,346' in rendered and f"{selection['stats']['recommended']:,}문항" in rendered
+E       assert ('2,346' in '<!doctype html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initia...css" data-oddments-tools><script src="../assets/learning-tools.js" defer data-oddments-tools></script></body></html>\n')
+
+tests/test_full_corpus_review.py:372: AssertionError
+___ test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases ___
+
+    def test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases():
+        from build_full_corpus_review import record_hash
+        snapshot=json.loads((ROOT/'reports/full-corpus-review/discipline-cdtm-preservation.json').read_text())
+        bank=json.loads((ROOT/'practice_expansion/2026-10-28-representative/questions.json').read_text())
+        by_id={q['question_id']:q for q in bank['questions']}
+        assert snapshot['base_main_commit']=='c4a05c8bf48ecc333e331b3c267607af6590ac40'
+        assert len(snapshot['previous_question_record_hashes'])==70
+        assert len(snapshot['previous_source_record_hashes'])==75
+        assert all(record_hash(by_id[qid])==value for qid,value in snapshot['previous_question_record_hashes'].items())
+        assert all(record_hash(bank['sources'][sid])==value for sid,value in snapshot['previous_source_record_hashes'].items())
+>       assert set(by_id)==set(snapshot['previous_question_record_hashes'])|set(snapshot['new_question_ids'])
+E       AssertionError: assert {'MA-RW-0001'...RW-0006', ...} == {'MA-RW-0001'...RW-0006', ...}
+E         
+E         Extra items in the left set:
+E         'MA-RW-0081'
+E         'MA-RW-0083'
+E         'MA-RW-0082'
+E         Use -v to get more diff
+
+tests/test_full_corpus_review.py:414: AssertionError
+_ test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive _
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_only_integrated_committed0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive(actual_reports):
+        root,notes,state = actual_reports
+        original = copy.deepcopy(notes)
+>       metadata = load_metadata(root,notes)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+_ test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches _
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_consumption_works_in_shal0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+tmp_path = PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_consumption_works_in_shal0')
+
+    def test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches(actual_reports,tmp_path):
+        root,notes,state = actual_reports
+        target = tmp_path/'shallow'
+        subprocess.run(['git','clone','-q','--depth','1',root.as_uri(),str(target)],check=True)
+        with pytest.raises(subprocess.CalledProcessError):
+            queue.git(target,'cat-file','-e',state['jobs'][0]['result']['worker_commit']+'^{commit}')
+>       assert load_metadata(target,notes)['progress']['processed_units'] == 10
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+___ test_stale_actual_body_or_selected_census_never_retains_previous_credit ____
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_stale_actual_body_or_sele0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_stale_actual_body_or_selected_census_never_retains_previous_credit(actual_reports):
+        root,notes,state = actual_reports
+        changed = copy.deepcopy(notes)
+        next(u for c in changed['chapters'] for u in c['units'] if u['id']=='w1-a-4')['body'] += ' Changed legal condition.'
+        with pytest.raises(ValueError,match='Stale ledger/current body'): load_metadata(root,changed)
+        census = root/state['jobs'][0]['unit_bindings']['w1-a-4']['census_path']
+        census.write_bytes(census.read_bytes()+b'\n')
+        queue.git(root,'add','.'); queue.git(root,'commit','-qm','tampered selected census')
+>       with pytest.raises(ValueError,match='Assigned ledger/census/body changed'): load_metadata(root,notes)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+
+During handling of the above exception, another exception occurred:
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_stale_actual_body_or_sele0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_stale_actual_body_or_selected_census_never_retains_previous_credit(actual_reports):
+        root,notes,state = actual_reports
+        changed = copy.deepcopy(notes)
+        next(u for c in changed['chapters'] for u in c['units'] if u['id']=='w1-a-4')['body'] += ' Changed legal condition.'
+        with pytest.raises(ValueError,match='Stale ledger/current body'): load_metadata(root,changed)
+        census = root/state['jobs'][0]['unit_bindings']['w1-a-4']['census_path']
+        census.write_bytes(census.read_bytes()+b'\n')
+        queue.git(root,'add','.'); queue.git(root,'commit','-qm','tampered selected census')
+>       with pytest.raises(ValueError,match='Assigned ledger/census/body changed'): load_metadata(root,notes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'Assigned ledger/census/body changed'
+E        Input: 'Body correction has no unique append-ordered assignment'
+
+tests/test_notes_independent_metadata.py:155: AssertionError
+_ test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent _
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_computed_ledger_annotatio0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent(actual_reports):
+        root,notes,state = actual_reports
+        ledger = (root/queue.LEDGER).read_bytes()
+>       first = load_metadata(root,notes,ledger_raw=ledger)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+_ test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter _
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_real_omission_and_ratio_i0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter(actual_reports):
+>       root,notes,state = actual_reports; reviews=load_metadata(root,notes)['units']
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+___ test_frontend_renders_independent_warning_and_findings_with_escaped_text ___
+
+actual_reports = (PosixPath('/tmp/mpje-after190-final-pytest-tmp/test_frontend_renders_independ0/repo'), {'chapters': [{'highlights': [...1d4', 'kind': 'INTEGRATE', 'result_sha256': '61c0bcb11e5fc19752347ab919e6d67a89ce688696354566774afb49be3160be'}], ...})
+
+    def test_frontend_renders_independent_warning_and_findings_with_escaped_text(actual_reports):
+>       root,notes,state=actual_reports; review=load_metadata(root,notes)['units']['w1-a-4']
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_notes_independent_metadata.py:185: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/notes_independent_metadata.py:70: in load_metadata
+    queue.validate_state(state)
+scripts/note_review_queue.py:172: in validate_state
+    validate_chain(state)
+scripts/notes_census_reassessment.py:52: in validate_chain
+    queue.require(isinstance(body_records,list) and
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False
+message = 'Body correction has no unique append-ordered assignment'
+
+    def require(condition, message):
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Body correction has no unique append-ordered assignment
+
+scripts/note_review_queue.py:31: ValueError
+_____ test_unreviewed_questions_not_credited_and_independence_not_claimed ______
+
+    def test_unreviewed_questions_not_credited_and_independence_not_claimed():
+        progress = read("reports/full-corpus-review/progress.json")
+>       assert progress["current_questions"] == 2346
+E       assert 2349 == 2346
+
+tests/test_vax0514_review.py:90: AssertionError
+__ test_publishing_review_does_not_claim_cdtm_cross_path_or_independent_audit __
+
+    def test_publishing_review_does_not_claim_cdtm_cross_path_or_independent_audit():
+        source = review()
+        assert source["coverage"]["conditionally_source_checked_ids"] == 4
+        assert source["coverage"]["author_source_checked_ids"] == 36
+        conditional = {r["question_id"] for r in source["records"]
+                       if r["legal_review_status"]
+                       == "AUTHOR_CONDITIONAL_SOURCE_CHECK_NOT_INDEPENDENT"}
+        assert conditional == {f"MA-EXP-{n:04d}" for n in range(373, 377)}
+        assert all(r["original_answer_status"] == "CORRECT_WITH_SCOPE_QUALIFICATION"
+                   for r in source["records"] if r["question_id"] in conditional)
+        for entry in source["source_register"]:
+            assert not ("247-cmr-1700" in entry["url"].lower())  # DRAFT 247 CMR17 is not authority.
+        assert any("supersedes DCP 23-04-118" in x.get("version", "")
+                   for x in source["source_register"])
+        assert any("supersedes DCP 25-04-124" in x.get("version", "")
+                   for x in source["source_register"])
+        progress = read("reports/full-corpus-review/progress.json")
+>       assert progress["current_questions"] == 2346
+E       assert 2349 == 2346
+
+tests/test_vax15_pub04_review.py:122: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cdtm0512_review.py::test_corpus_counts_do_not_inflate_canonical_or_learner_progress
+FAILED tests/test_full_corpus_review.py::test_every_id_is_inventoried_without_inheriting_family_passes
+FAILED tests/test_full_corpus_review.py::test_visible_quality_status_and_previous59_snapshot_are_current
+FAILED tests/test_full_corpus_review.py::test_discipline_cdtm_preserves_previous70_and_reuses_existing_cdtm_cases
+FAILED tests/test_notes_independent_metadata.py::test_only_integrated_committed_reports_provide_metadata_and_negative_findings_survive
+FAILED tests/test_notes_independent_metadata.py::test_consumption_works_in_shallow_checkout_without_worker_objects_or_branches
+FAILED tests/test_notes_independent_metadata.py::test_stale_actual_body_or_selected_census_never_retains_previous_credit
+FAILED tests/test_notes_independent_metadata.py::test_computed_ledger_annotations_are_not_bindings_and_regeneration_is_idempotent
+FAILED tests/test_notes_independent_metadata.py::test_real_omission_and_ratio_intern_holds_render_in_html_markdown_and_derived_adapter
+FAILED tests/test_notes_independent_metadata.py::test_frontend_renders_independent_warning_and_findings_with_escaped_text
+FAILED tests/test_vax0514_review.py::test_unreviewed_questions_not_credited_and_independence_not_claimed
+FAILED tests/test_vax15_pub04_review.py::test_publishing_review_does_not_claim_cdtm_cross_path_or_independent_audit
+12 failed, 1102 passed in 989.04s (0:16:29)

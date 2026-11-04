@@ -1,0 +1,19 @@
+.....................................F.................................. [100%]
+=================================== FAILURES ===================================
+_ test_all_eleven_derived_holds_preserve_actual_old_keep_and_negative_opinions _
+
+actual_outputs = ({'MA-CASE-0001': {'answer_key_assessment': 'CORRECT', 'answer_key_crosscheck': {'all_correct_sata': False, 'expected_...8a5c6731871fa6e330ac6795fd36', 'baseline_selection_path': 'practice_expansion/2026-10-27-quality/selection.json', ...})
+
+    def test_all_eleven_derived_holds_preserve_actual_old_keep_and_negative_opinions(actual_outputs):
+        rows, selection = actual_outputs
+        baseline = {r['question_id']: r for r in map(json.loads,
+            (ROOT / 'reports/full-corpus-review/question-ledger.jsonl').read_text().splitlines())}
+>       assert len(rows) == len(baseline) == 2346
+E       AssertionError: assert 2349 == 2346
+E        +  where 2349 = len({'MA-CASE-0001': {'answer_key_assessment': 'CORRECT', 'answer_key_crosscheck': {'all_correct_sata': False, 'expected_f...hor_review_blocker': '동일 모델 수치변형과 반복 해설의 독립 realism·중복 검토 및 versioned 개선 필요. 이 보고서는 release evidence가 아니다.', ...}, ...})
+
+tests/test_note_question_discrepancies.py:194: AssertionError
+---------- generated xml file: /tmp/phase9-default-qa-e-consumers.xml ----------
+=========================== short test summary info ============================
+FAILED tests/test_note_question_discrepancies.py::test_all_eleven_derived_holds_preserve_actual_old_keep_and_negative_opinions
+1 failed, 71 passed in 106.22s (0:01:46)

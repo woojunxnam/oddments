@@ -65,6 +65,7 @@ def emergency_copy(tmp_path):
                               ('notes-build-pr188.json','build.json')]:
             shutil.copyfile(tmp_path/'revisions/baselines'/source,tmp_path/'site/notes'/target)
     (tmp_path/'revisions/notes/protected-migration-independent-notes-wave3.json').unlink(missing_ok=True)
+    (tmp_path/'revisions/notes/protected-migration-after190.json').unlink(missing_ok=True)
     return tmp_path
 
 
