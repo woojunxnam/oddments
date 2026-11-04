@@ -1,0 +1,69 @@
+{
+  "stage": "engineering",
+  "purpose": "EXACT_HISTORICAL_INPUT_RETENTION_NOT_LEGAL_CERTIFICATION",
+  "actor_provenance": {
+    "actor_id": "/root/independent_procedural_retry",
+    "session_id": "/root/independent_procedural_retry"
+  },
+  "auditor": "GPT",
+  "auditor_instance": "GPT:/root/independent_procedural_retry:20261103",
+  "checked_at": "2026-11-04T06:44:37.945554+00:00",
+  "source_base_commit": "b5c876903be6ed08b3654c4b763e9d6249d7b5e1",
+  "commits_in_order": [
+    "5268b3c7ef5303504052c83e5bfdd799b764a589",
+    "0cfa101c91332c9757af06975318f2edd8ed1288",
+    "ebf7fbf3df2f1e16e7a4342bbcdee3992bc5a4f7"
+  ],
+  "worker_commit": "ebf7fbf3df2f1e16e7a4342bbcdee3992bc5a4f7",
+  "changed_paths": [
+    "docs/AFTER190_NOTE_ANNOTATION_GUARD.md",
+    "reports/full-corpus-review/after190-historical-context/registry-v2.json",
+    "reports/full-corpus-review/after190-historical-context/registry.json",
+    "reports/full-corpus-review/after190-historical-context/snapshots/progress-ec8518.json",
+    "reports/full-corpus-review/after190-historical-context/snapshots/wave9-operational-runbook-daac621.md",
+    "scripts/after190_historical_context.py",
+    "scripts/notes_after190_annotation.py",
+    "tests/test_after190_annotation.py",
+    "tests/test_after190_historical_context.py"
+  ],
+  "postcommit_bytes": "PASS",
+  "worktree_clean": true,
+  "tests": {
+    "command": "python -m pytest -q tests/test_after190_historical_context.py tests/test_after190_annotation.py",
+    "passed": 134,
+    "skipped": 0,
+    "failed": 0,
+    "seconds": 88.67,
+    "previously_pending_31_cases": "EXECUTED_WITH_ACTUAL_COMPLETE_SOURCE_PROPOSAL",
+    "old_worker_objects_absent_in_real_shallow_resolver_test": true
+  },
+  "actual_read_only_proposal": {
+    "ready": true,
+    "default_count": 229,
+    "historical_receipts": 4,
+    "unretained_private_descriptors": 4,
+    "source_bindings": 1822,
+    "path": "/tmp/annotation15-context-proposal-final.json",
+    "raw_sha256": "1f52c51a0de71291c0a954f894599560af4d992433cc7e0050a0fbde7e8ee3d3",
+    "current_progress_matches_head_and_full_actual_builder": true
+  },
+  "registry_v1": {
+    "path": "reports/full-corpus-review/after190-historical-context/registry.json",
+    "raw_sha256": "989354cc809d64afc20d8f0108cf7937151bb01cdb2459f77a1697d056e30536"
+  },
+  "registry_v2": {
+    "path": "reports/full-corpus-review/after190-historical-context/registry-v2.json",
+    "raw_sha256": "6e33c9d2119706752646e342eb1615fddd526935cb54dc260ea1e384ddf6652c"
+  },
+  "canonical_audit": false,
+  "canonical_release_credit": 0,
+  "question_audit_credit": 0,
+  "new_independent_legal_audit_credit": 0,
+  "root_manifest_or_generated_written": false,
+  "private_raw_or_full_text_added": false,
+  "original_ig_reports_envelopes_policy_old14_and_source_question_bytes_changed": false,
+  "remaining": [
+    "Root cherry-pick commits and derive/write actual final15 manifest against root final committed source",
+    "Root frozen physical artifact/protected1781/fullQA/CI/PR192/publication checks"
+  ]
+}

@@ -1,5 +1,25 @@
 # 2026-11-04 — PR190 공개 검증 및 후속 작업
 
+## 최신 후속 체크포인트 — 2026-11-04, PR191 배포 완료 / 후속판 최종 QA 준비
+
+이 절이 아래 역사 기록보다 최신이다. PR191 https://github.com/woojunxnam/oddments/pull/191 은 tested `6f77d4572d915a49557aca7f2287679975e94441`과 동일 tree로 main `2421c4c3c4e805eebf5df227c51c266122928db4`에 병합했다. 전체 pytest777PASS, validator0errors/9warnings, artifact0/0, 9drift 및 regeneration/no-diff, 5HTTP suites와 기존 사용자기록 보존 검사 PASS. exact-head CI는 QA8SUCCESS/배포 전1SKIPPED. Pages41776289242 및 main/postdeploy 총10workflow SUCCESS, 공개14critical assets HTTP200/SHA와 실제 origin 브라우저3검사 PASS. 근거는 `reports/full-corpus-review/pr191-local-validation.json`, `pr191-deployment.json`과 validation-evidence다. MA-Q-0012와 연결 guide는 상태만 보류했고 원문/키/과거감사/사용자기록을 보존했다.
+
+후속 `mission/mpje-after190`은 아직 미배포다. 현재 inventory2349(원2346 객체 불변 + archive-only MA-RW0081/82/83). Author2349/2349=100%. 실제 독립고유원문1523, key판단1477/2349=62.88%(HOLD/AMBIGUOUS 포함), NOT_ASSESSED46, realismPASS573. 이 값은 canonical RELEASED 인증이 아니다. Native Q33/notes31/author53/supplement1 총118 INTEGRATED 원 job을 보존했다. phase9 C의0823은 hidden truth 노출을 그대로 기록하고 NOT_ASSESSED/HOLD 처리했다. phase8 B153–160도 같은 실제 세션의 과거 key 이력 때문에8개 NOT_ASSESSED를 유지한다.
+
+실제 phase9 160검토의 부정69개(68 realismFAIL + REV0002 해설 MINOR_EDIT)를 default에서 안전 보류했다. 추천298→229, original355 HOLD211 + nonlegacy HOLD8=219, archive notices1341. 원문·키·시도·북마크는 삭제하지 않는다. 69개 근거와 정확한 ID는 `phase9-default-safety-dispositions.json`, 이전 ordered selection은 `phase9-before-selection.json`. D26/27의 source URL retention 메타데이터는 별도 불변 addendum으로 정정하고 원 native report/result/verdict는 유지했다. 후속 배포 전 공개판에는 이69개 제외가 아직 반영되지 않았다.
+
+새 SATA3은 actual G current-ID author와 별도 actual F current-ID 독립검토를 완료했다. KEEP/YES/PASS3이지만 archive-only이며 original0351/0367/0383은 계속 held/default제외다. 기존74 rewrite는 과거 실적이다. 이 임무 새 substantive content 공개완료는 현재0/3=0%다. 새로운 G 교정 초안10개는 별도 branch `mission/phase9-remediation-author-g` 최종 `b7e87d5f3086d77e33f9ac350eeaa2522c93f1fd`에 보존했고 final independent/legal/native pipeline 전 current/public/canonical credit0이다. receipt는 `pending-author-proposals/phase9-remediation-author-g-result.json`이며 원69 HOLD 해제에 쓰지 않는다.
+
+현재 note COMPLETE79/306=25.82%, unit55KEEP/15HOLD/9SOURCE_BLOCKED, current claims1785=1744KEEP/24HOLD/17SB. Author열거6989=6103authorchecked+886SB는 독립 완료가 아니다. Census-v2 재평가3개를 실제 C/B/E가 완료했다. w3-a-3의 미활성 body 후보24claims는 C가23KEEP+기존011HOLD 및 새 분류문장 omission으로 OMISSIONS_FOUND/LEGAL_HOLD 판정했다. 현재 M본문을 바꾸거나 과거 review를 지우지 않았다. 따라서 inactive 후보 등록 전의80COMPLETE 역사기록과 현재79를 구별한다. E의 누락 atom 추가25claim source는 `mission/w3-a-3-census-v2-author-e` `be8e5a826e7b49b8517dd9a00f635f107da8975a`에 보존됐으나 실제 N1활성화와 native 등록 전 BLOCKED/current credit0이며 receipt만 root에 남겼다. OPEN4 유지.
+
+15annotation은 actual Q33/notes31/author53 및 current sources에 묶어 생성했다. historical nonlegal context4와 unretained copyrighted descriptor4만 exact allowlist로 구별하고 현재 수치·정책·공식 primary는 현재 바이트를 검증한다. 원문/추출문 private payload를 반입하거나 CI가 검증했다고 주장하지 않는다. R134PASS0skip, root annotation--check와 1781protected(60,969,461bytes) PASS. 공개14manifest53537abd…와 M본문 semantic e1519c…는 그대로다. 미활성 N1 body activation은 실제15 공개 후 별도16 migration이 필요하며 이 annotation으로 인증하지 않는다.
+
+최신 worker reachability anchor `checkpoints/mpje-audit-workers-20261103`는 `1d962df7abfe267e535ab9a22a9e3f326ed87126`. 모든118 원job과 별도 engineering/source proposals를 GitHub에 보존했다. 완료되고 clean하며 이 anchor에 포함된 worktree21개만 제거해 전체 QA 공간을 확보했다. branches/objects/원증거는 보존했다. 공유 queue/generated는 root만 순차 갱신한다. 다음 신규 작업은 authoritative ledger 자동선택을 사용하며 frozen release candidate와 분리한다.
+
+후속판 전체 pytest/validators/artifacts/9drift/HTTP/CI/Pages는 아래 최종 validation receipt가 생성되기 전 NOT_RUN이다. Root는 현재 후속판을 고정하고 전체 QA를 실행한다. 실제 물리 기기/Safari/psychometric 검증 NOT_RUN. Author100%를 임무 완료로 보고하지 않는다.
+
+## 이하 이전 체크포인트(당시 상태, 최신 값으로 소급하지 않음)
+
 ## 최신 후속 체크포인트 — 2026-11-04, PR191 검증 중
 
 이 절이 아래 역사적 실행 목록보다 최신이다. PR190 main push QA와 Pages 및 후속 배포 검사 총11workflow는 모두 SUCCESS이며 공개10파일 HTTP200/SHA와 실제 origin 브라우저 검증을 완료했다. 공개판 baseline은 아래 기록대로 유지한다.
