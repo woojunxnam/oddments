@@ -30,7 +30,9 @@ metadata는 실제 공개15의 보존 원본과 같아야 한다. 원 warning의
 hash/sourceSHA/검토일에 결박한다. 기존 builder가 모든 negative/source binding과
 bank/selection/metrics의 결정적 재생성을 통과해야 한다.
 
-`wrapper-qa.log`는 이 경계의 16개 합성 공격/허용 테스트 PASS 결과다. 합성 native
+`wrapper-qa.log`는 이 경계의 16개 합성 공격/허용 테스트 PASS 결과다.
+최종 `closure-wrapper-qa.log`는 기존 published15 closure 회귀검사와 새 wrapper
+검사를 함께 실행한 39 PASS / 0 FAIL / 0 ERROR(115.52초) 원 로그다. 합성 native
 경계 stub은 테스트용이며 실제 법규·검토·공개 증거가 아니다. 실제 root 후보에
 직접 새 guard를 적용했을 때 개별 문항·native 출처·과거 warning 보존은 통과했지만
 마지막 selection.json 재생성 drift 검사가 실패해 정상 차단했다. Root가 현재
