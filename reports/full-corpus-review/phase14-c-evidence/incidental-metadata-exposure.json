@@ -1,0 +1,38 @@
+{
+  "occurred": true,
+  "classification": "INCIDENTAL_AUTHOR_SOURCE_AND_SELECTION_METADATA_NOT_PRIOR_INDEPENDENT_ASSIGNED_VERDICT",
+  "assigned_prior_independent_verdict_read": false,
+  "scope_limitation": "No mapped existing author/independent verdict for an assigned ID was read. Complete original visible explanations are authorized author statements. The separate metadata below was excluded from factual/legal/realism reasoning.",
+  "events": [
+    {
+      "command": "Python structure probe print(str(d.get('sources'))[:6000]) on notes/guide.json",
+      "observed": "First 6000 characters of sources dict, including checked_at/access/original_checked_at/scope_note from early sources. Values included src-da8a8280d110 checked_at2026-10-23, access official URL extracted text; PDF visual fetch blocked; original_checked_at2026-10-20; scope_note 포장·기록·DUR·상담·security 등. Other examples were src-54fc8631a05f scope_note 표의 정확히 50 beds 경계가 게시문에 명료하지 않음; 임의 보정 금지.; src-41d4f362a9df scope_note 표의 10/21 beds 경계가 명료하지 않음.; src-8638fed9ada5 scope_note 개정 1/9/2025. unless otherwise prohibited 문구를 유지.",
+      "assigned_id_linkage": "none; these early locator entries did not contain question IDs or assigned verdicts"
+    },
+    {
+      "command": "Python print(json.dumps(publication.json,ensure_ascii=False,indent=2)[:9000])",
+      "observed": {
+        "independent_review_status": "NOT_INDEPENDENTLY_REVIEWED"
+      },
+      "assigned_id_linkage": "global publication status only, not an assigned-ID adjudication"
+    },
+    {
+      "command": "rg -n 'archive|default|selected_question|excluded|family|representative' site/practice-expansion/quality-core.js practice_expansion/2026-10-28-representative/selection.json | head -45",
+      "observed_author_reason_lines": {
+        "1338/1357": "문항별 검토 결과: 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN.",
+        "1376": "문항별 검토 결과: Policy III annual vs 247 CMR4.03(4)(e) biennial 관계 미해결. HOLD. 동일 family 내 템플릿 숫자/날짜 치환과 반복 해설의 실질 재작성 필요; independent legal/realism NOT_RUN.",
+        "1528": "문항별 검토 결과: 현재 사실관계에서 왜 각 선택지가 적용/불적용되는지 설명을 교정하고 반복 family와의 중복을 줄여야 한다. 독립 legal/realism audit 미수행; 이 report는 release certificate가 아니다."
+      },
+      "other_observed_author_metadata": {
+        "line931_affected_archive_notice_scope": "This session individually read the four PER17 variants. PLUS candidates from the recovered draft are queued for individual review, not inherited as complete.",
+        "line964_affected_archive_notice_scope": "Four PER20 records directly teach the four-intern path. Four PER19 records mention it indirectly in core/rationale; their ordinary direct-supervision keys are not adjudicated wrong and 0139 has a separate new-ID replacement, not an additional hold disposition.",
+        "lines1050_1058_evidence_report": "reports/representative-rewrite/ce-deficiency-source-conflict.json",
+        "line1051_next_action": "Verify the current official CE-deficiency submission route and its trigger before writing a replacement. The listed archive variants repeat the email assertion in a choice or rationale and receive the same notice without key edits."
+      },
+      "assigned_id_linkage": "The rg stdout did not show which IDs map to these reasons. No follow-up author reason search/read performed.",
+      "action": "Only recommended_ids membership was subsequently projected programmatically; no author reasons used."
+    }
+  ],
+  "recorded_at": "2026-11-04T17:23:59.522092+00:00",
+  "boundary": "This disclosure does not reclassify author metadata as an independent finding. The report independently cites retrieved primary sources and original visible facts; canonical audit credit remains zero."
+}
