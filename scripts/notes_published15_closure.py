@@ -321,6 +321,8 @@ def validate_archive_notice_wrapper(root,closure):
     bindings={};reports=integrated_sources(Path(root),source_bindings=bindings)
     from supplementary_checkpoint_bindings import validated_sources
     supplementary=validated_sources(root,[r for report in reports for r in report['records']])
+    from source3_recovered_legal_metadata import validate_notice_bindings
+    validate_notice_bindings(notices,supplementary)
     for qid,notice in latest.items():
         original=previous.get(qid)
         if original is not None and project(notice,qid)==project(original,qid):continue
@@ -330,6 +332,9 @@ def validate_archive_notice_wrapper(root,closure):
         binding=bindings.get(qid)
         if binding is None or (notice.get('review_source'),notice.get('review_source_sha256'))!=(binding['source_path'],binding['source_sha256']):
             binding=supplementary.get(qid)
+            if qid=='MA-CASE-0790' and binding and binding.get('review_kind')=='SOURCE3_RECOVERED_LEGAL':
+                from source3_recovered_legal_metadata import negative_notice_source
+                binding=negative_notice_source(qid,notice,binding)
             require(binding is not None and binding['negative'],
                     'Archive wrapper requires an actual integrated negative supplementary source: '+qid)
         required={'question_ids','question_record_hashes','issue_type','reason','checked_at','review_source','review_source_sha256'}
@@ -392,6 +397,7 @@ def validate_publication_default_safety(root,closure,selection,validated):
         if relative in closure['full_source_files']:
             report=json.loads(committed(root,relative,closure['full_source_files'][relative]['raw_sha256']))
             records.extend(report['records'])
+    primary_records=list(records);style_inputs=[]
     reports={}
     for qid,binding in validated['supplementary_sources'].items():
         relative=binding['source_path']
@@ -399,7 +405,12 @@ def validate_publication_default_safety(root,closure,selection,validated):
             reports[relative]=json.loads(committed(root,relative,binding['source_sha256']))
         rows=[r for r in reports[relative]['records']if r['question_id']==qid]
         require(len(rows)==1,'Validated supplementary default input lost its exact row')
-        records.extend(rows)
+        if 'legal_review'in rows[0]:records.extend(rows)
+        else:style_inputs.append((qid,binding,rows[0]))
+    from realism_completion_review import STATE as COMPLETION_STATE, SCOPE as COMPLETION_SCOPE
+    if style_inputs or path(root,COMPLETION_STATE).exists()or path(root,COMPLETION_SCOPE).exists():
+        from realism_completion_metadata import validate_publication_style_inputs
+        validate_publication_style_inputs(root,selection,primary_records,style_inputs)
     from build_full_corpus_review import validate_default_review_safety,validate_independent_archive_safety
     validate_default_review_safety(selection['recommended_ids'],{},records)
     validate_independent_archive_safety(selection,records)

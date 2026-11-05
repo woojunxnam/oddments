@@ -1,0 +1,33 @@
+{
+  "audited_commit": "cdd3617c91c307eb8571708fcd19eb5643ff4d72",
+  "previous_commit": "78d34b823a17dba462b4da393431f009002e26f0",
+  "repository_mutated": false,
+  "remaining_confirmed_blockers": [],
+  "previous_findings": {
+    "P1_INCOMPLETE_PARENT_INVENTORY": "FIXED: exact actual retained-scope/current-question/native-report inventory succeeds after fill_static_primary; incomplete inventory now fails explicitly.",
+    "P1_UNTYPED_LEGACY_GUARD": "FIXED: typed dispatch avoids legal-free rows entering legacy legal guard. Independent in-memory plumbing checks and actual fixture tests preserve no-default and source-bound FAIL notice requirements.",
+    "P2_INCONSISTENT_ASSESSED_KEY": "FIXED: all-null/all-false proposition sets rejected; consistent single-answer truth/key passes. KEEP requires YES, incomplete/ambiguous requires HOLD/blocker."
+  },
+  "independent_focused_run": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /workspace/mpje-ci-checks-venv/bin/python -m pytest -q -p no:cacheprovider --basetemp /workspace/scratch/realism-cdd-readonly-pytest tests/test_realism_completion_review.py -k 'publication or cache or assessed_key or fixed4_no or existing_secondary or exact_two_overlap'",
+    "passed": 22,
+    "deselected": 37,
+    "duration_seconds": 13.50,
+    "cases": "Published15 native-only/static completion, mixed style PASS/FAIL dispatch, no-default and notice removal rejection, cache exact origin/metadata tampering/time/read chronology, actual native cache integration, legal truth/polarity/key consistency, existing fixed2 negative/PASS overlap preservation."
+  },
+  "independent_fixed4_union_run": {
+    "test": "test_all_four_native_jobs_only_four_new_keys_and_no_default_or_double_credit",
+    "passed": 1,
+    "deselected": 58,
+    "duration_seconds": 10.73,
+    "verified": "Synthetic four-native-job integration limits legal key union to exact fixed4, preserves original primary HOLD/NOT_ASSESSED, unique originals and zero canonical release credit."
+  },
+  "cache_origin": {
+    "metadata_raw_sha256": "636934be58e2fd6567b355d40a76d7748d51b005674aa7903da480ceb847a665",
+    "original_retrieved_at": "2026-11-04T18:19:26.088117+00:00",
+    "verified": "Exact committed origin metadata bytes/hash retain original GET time. SAME_DAY_RETAINED_CACHE retains original URL/status/time/raw/text SHA and requires claim-time-or-later reread; LIVE still requires GET after claim."
+  },
+  "reproduction_script": "/workspace/scratch/realism-completion-readonly-review-cdd-repro.py",
+  "reproduction_results": "/workspace/scratch/realism-completion-readonly-review-cdd-results.json",
+  "limits": "Code and synthetic-fixture verification only. No question-level legal/style verdicts issued and no actual audit-progress credit. Typed-dispatch in-memory repro substitutes validated metadata; isolated fixture tests exercise real native consumers and committed evidence."
+}

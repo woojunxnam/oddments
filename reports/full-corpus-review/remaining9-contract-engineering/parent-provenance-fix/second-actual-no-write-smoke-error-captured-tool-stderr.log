@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<stdin>", line 12, in <module>
+  File "/workspace/remaining9-contract/scripts/prepare_remaining9_procedural.py", line 30, in prepare
+    route.validate_parent(read, uid, rows[0], questions[uid], binding)
+  File "/workspace/remaining9-contract/scripts/remaining9_procedural_metadata.py", line 210, in validate_parent
+    require(legal.get('existing_answer_correct') == 'NOT_ASSESSED' and legal.get('verdict') == 'HOLD' and
+  File "/workspace/remaining9-contract/scripts/procedural_secondary_metadata.py", line 26, in require
+    if not condition: raise ValueError(message)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Only the exact unchanged procedural HOLD is eligible; substantive holds cannot be relabelled

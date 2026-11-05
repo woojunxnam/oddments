@@ -667,8 +667,9 @@ def build():
     for audit_row in independent_records:
         if audit_row['record_sha256'] != record_hash(public_by_id[audit_row['question_id']]):
             raise ValueError('Stale independent legacy review')
+    from independent_public_style_bindings import validation_sources
     for source in independent_sources:
-        for authority in source['sources']:
+        for authority in validation_sources(ROOT,source,source_bindings=independent_source_bindings):
             validate_independent_source_bytes(authority,ROOT)
     from procedural_secondary_metadata import load_metadata as load_procedural_secondary
     from phase11_secondary_metadata import load_metadata as load_phase11_secondary
@@ -678,10 +679,28 @@ def build():
     procedural_secondary = load_procedural_secondary(ROOT,independent_records,public_by_id,secondary_collections)
     phase11_secondary = load_phase11_secondary(ROOT,independent_records,public_by_id,secondary_collections)
     context38_secondary = load_context38_secondary(ROOT,independent_records,public_by_id,secondary_collections)
-    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary)
+    from realism_completion_metadata import load_metadata as load_realism_completion, apply_metadata as apply_realism_completion
+    realism_completion_bindings = {}
+    realism_completion = load_realism_completion(ROOT,independent_records,public_by_id,source_bindings=realism_completion_bindings)
+    realism_completion_legal = {'assessments':realism_completion['legal_assessments'],'records':realism_completion['legal_records']}
+    from remaining9_procedural_metadata import load_metadata as load_remaining9_secondary
+    remaining9_bindings = {}
+    remaining9_secondary = load_remaining9_secondary(ROOT,independent_records,public_by_id,secondary_collections,
+                                                    source_bindings=remaining9_bindings)
+    from source3_recovered_legal_metadata import load_metadata as load_source3_secondary
+    source3_bindings = {}
+    source3_secondary = load_source3_secondary(ROOT,independent_records,public_by_id,secondary_collections,
+                                              source_bindings=source3_bindings)
+    from source3_recovered_legal_metadata import validate_archived_legal_sources
+    validate_archived_legal_sources(selection,source3_secondary)
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal,remaining9_secondary,source3_secondary)
+    realism_completion_progress = apply_realism_completion(result,independent_records,realism_completion,secondary['effective_realism_pass'])
     validate_context_default_safety(selection['recommended_ids'],context38_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
     validate_independent_archive_safety(selection, independent_records+secondary['records'])
+    from realism_completion_metadata import validate_archive_containment as validate_realism_completion_containment
+    if realism_completion_bindings:
+        validate_realism_completion_containment(selection,realism_completion)
     independent_by_id = {r['question_id']: r for r in independent_records}
     for row in result:
         supplementary = secondary['assessments'].get(row['question_id'])
@@ -824,7 +843,7 @@ def build():
                     independent_legacy_legal_assessed=secondary['progress']['effective_key_assessed'],
                     independent_legacy_originals_read=secondary['progress']['unique_originals_read'],
                     independent_legacy_keys_unassessed=secondary['progress']['effective_keys_unassessed'],
-                    independent_legacy_realism_pass=secondary['effective_realism_pass'],
+                    independent_legacy_realism_pass=realism_completion_progress['effective_realism_pass'],
                     independent_legacy_review_is_canonical_release_evidence=False,
                     notes_chapters=len(notes['chapters']), notes_units=len(units),
                     notes_units_with_partial_claim_review=len(reviewed_units),
@@ -849,6 +868,9 @@ def build():
                     canonical_independent_audit_this_session='NOT_RUN',
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
     progress['note_link_question_discrepancy_holds'] = note_links['summary']
+    if realism_completion_bindings:
+        progress['independent_legacy_realism_completion_supplementary_review'] = {**realism_completion_progress,'source_bindings':dict(sorted(realism_completion_bindings.items()))}
+        progress['independent_legacy_raw_primary_realism_pass'] = realism_completion_progress['raw_primary_realism_pass']
     if procedural_secondary['assessments']:
         progress['independent_legacy_procedural_supplementary_review'] = procedural_secondary['progress']
     if phase11_secondary['assessments']:
@@ -856,6 +878,16 @@ def build():
         progress['independent_legacy_supplementary_review'] = secondary['progress']
     if context38_secondary['excluded_primary_key_ids']:
         progress['independent_legacy_context38_supplementary_review'] = context38_secondary['progress']
+        progress['independent_legacy_supplementary_review'] = secondary['progress']
+    if remaining9_bindings:
+        progress['independent_legacy_remaining9_procedural_review'] = {
+            **remaining9_secondary['progress'], 'source_bindings': dict(sorted(remaining9_bindings.items())),
+            'scope': 'EXACT_NINE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE'}
+    if source3_bindings:
+        progress['independent_legacy_source3_recovered_legal_review'] = {
+            **source3_secondary['progress'], 'source_bindings': dict(sorted(source3_bindings.items())),
+            'scope': 'EXACT_THREE_RECOVERED_SOURCE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE',
+            'new_independent_people_credit': 0, 'new_realism_pass_credit': 0}
         progress['independent_legacy_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',

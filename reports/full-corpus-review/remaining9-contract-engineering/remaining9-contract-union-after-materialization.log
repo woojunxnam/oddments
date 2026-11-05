@@ -1,0 +1,109 @@
+........................................................................ [ 32%]
+.................................FF..................................... [ 65%]
+........................................................................ [ 98%]
+...                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields _
+
+fixture = (PosixPath('/tmp/pytest-of-agent/pytest-43/test_builder_exposes_secondary0/repo'), {'events': [{'attempt': 1, 'job_id'...-CASE-0401': 'practice_expansion/fixture/questions.json', 'MA-CASE-0441': 'practice_expansion/fixture/questions.json'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f75017502c0>
+
+    def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields(fixture,monkeypatch):
+        import build_full_corpus_review as builder
+        import phase11_secondary_metadata as phase11
+        import phase11_context38_metadata as context38
+        root,state,report,_,questions,collections = fixture
+        real_load = secondary.load_metadata; captured = {}; other_sources = []
+        def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
+            # Retained-source validation must read the actual repository, while
+            # only the builder-level consumer call uses the synthetic retry.
+            if source_bindings is not None:
+                return real_load(repo,primary,current_questions,current_collections,source_bindings=source_bindings)
+            captured['primary'] = copy.deepcopy(primary)
+            value = real_load(root,primary,questions,collections)
+            captured['progress'] = value['progress']
+            captured['source'] = value
+            return value
+        def capture_other(loader):
+            def load_other(*args,**kwargs):
+                value=loader(*args,**kwargs)
+                if kwargs.get("source_bindings") is None:other_sources.append(value)
+                return value
+            return load_other
+        monkeypatch.setattr(secondary,'load_metadata',load_fixture)
+        monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
+        monkeypatch.setattr(context38,'load_metadata',capture_other(context38.load_metadata))
+>       outputs = builder.build()
+                  ^^^^^^^^^^^^^^^
+
+tests/test_procedural_secondary_metadata.py:267: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_full_corpus_review.py:545: in build
+    config = read('site/practice-expansion/publication.json')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/build_full_corpus_review.py:235: in read
+    return json.loads((ROOT / path).read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workspace/remaining9-contract/site/practice-expansion/publication.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workspace/remaining9-contract/site/practice-expansion/publication.json'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_____ test_quality_scope_explains_unique_count_and_preserved_primary_holds _____
+
+fixture = (PosixPath('/tmp/pytest-of-agent/pytest-43/test_quality_scope_explains_un0/repo'), {'events': [{'attempt': 1, 'job_id'...-CASE-0401': 'practice_expansion/fixture/questions.json', 'MA-CASE-0441': 'practice_expansion/fixture/questions.json'})
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-43/test_quality_scope_explains_un0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f74fd1401d0>
+
+    def test_quality_scope_explains_unique_count_and_preserved_primary_holds(fixture,tmp_path,monkeypatch):
+        import build_quality_status as quality
+        result = load(fixture)
+        for relative in ('practice_expansion/2026-10-28-representative/selection.json',
+            'reports/representative-rewrite/pattern-metrics.json','reports/full-corpus-review/progress.json',
+            'reports/full-corpus-review/inventory-definitions.json','site/practice-expansion/quality-review.html'):
+>           target = tmp_path/relative; target.parent.mkdir(parents=True,exist_ok=True); target.write_bytes((ROOT/relative).read_bytes())
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_procedural_secondary_metadata.py:299: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workspace/remaining9-contract/practice_expansion/2026-10-28-representative/selection.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workspace/remaining9-contract/practice_expansion/2026-10-28-representative/selection.json'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+FAILED tests/test_procedural_secondary_metadata.py::test_quality_scope_explains_unique_count_and_preserved_primary_holds
+2 failed, 217 passed in 72.94s (0:01:12)

@@ -1,0 +1,34 @@
+{
+  "audited_commit": "78d34b823a17dba462b4da393431f009002e26f0",
+  "base_commit": "8e0346a2aadead973ab67a5fda7948e356a7653e",
+  "repository_mutated": false,
+  "question_verdicts_issued": false,
+  "reproduction_command": "PYTHONDONTWRITEBYTECODE=1 python /workspace/scratch/realism-completion-readonly-review-repro.py",
+  "findings": [
+    {
+      "id": "P1_INCOMPLETE_PARENT_INVENTORY",
+      "priority": "P1",
+      "lines": ["scripts/notes_published15_closure.py:321-323", "scripts/supplementary_checkpoint_bindings.py:63", "scripts/realism_completion_metadata.py:27-31", "scripts/realism_completion_review.py:215"],
+      "finding_ko": "published15 wrapper는 native integrated_sources만 전달하지만 새 scope는 wave2 등 별도 static primary도 요구한다. queue가 QUEUED인 단계부터 MA-CASE-0001 parent lookup이 KeyError로 중단된다.",
+      "repro": "Exact retained proposed scope/current question objects/native-only report inventory passed to exact validate_scope raises KeyError('MA-CASE-0001').",
+      "recommendation_ko": "guard caller에서 새 consumer가 검증하는 전체 원 primary inventory를 전달하고 QUEUED-state wrapper 회귀를 추가한다."
+    },
+    {
+      "id": "P1_UNTYPED_LEGACY_GUARD",
+      "priority": "P1",
+      "lines": ["scripts/supplementary_checkpoint_bindings.py:64-74", "scripts/notes_published15_closure.py:396-405", "scripts/build_full_corpus_review.py:95-96", "scripts/realism_completion_review.py:349-351"],
+      "finding_ko": "새 realism-only 행에는 legal_review가 금지되어 있는데 기존 archive safety guard는 legal_review를 무조건 읽는다. 첫 native integration 뒤 PASS라도 published15/default safety 검증이 KeyError로 중단된다.",
+      "repro": "Exact validate_independent_archive_safety called with a permitted realism-only PASS row raises KeyError('legal_review').",
+      "recommendation_ko": "검증된 style-only 행을 명시적으로 dispatch하고 새 strict scope/no-default/negative-source containment 검증을 유지한다. 기존 법규 guard 조건은 완화하지 않는다."
+    },
+    {
+      "id": "P2_INCONSISTENT_ASSESSED_KEY",
+      "priority": "P2",
+      "lines": ["scripts/realism_completion_legal4.py:29-33", "scripts/realism_completion_legal4.py:58-66", "scripts/realism_completion_metadata.py:71"],
+      "finding_ko": "고정4 법규 validator는 option 판정과 expected key/polarity를 연결하지 않는다. CORRECT/YES/KEEP expected A인데 모든 option 판정이 null 또는 false인 synthetic 보고서를 허용하며 key union 집계 대상이 된다.",
+      "repro": "Exact validate_legal accepts both all-null and all-false per-choice proposition_supported with YES/KEEP, polarity CORRECT and expected ['A'].",
+      "recommendation_ko": "assessed YES/NO는 모든 option의 완료된 bool 판정 및 polarity에 따른 expected-key 일관성을 요구한다. AMBIGUOUS/NOT_ASSESSED는 명시적으로 별도 처리한다."
+    }
+  ],
+  "limits": "This is an exact-commit code audit. Reports/declarations and hashes prove internal binding, not actual reviewer reading, source retrieval authenticity, or legal correctness. No NABP request or question-text judgment was performed."
+}

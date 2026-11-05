@@ -325,7 +325,8 @@ def _existing_archive_review_notices(old_by_id, input_hashes):
                         review.get('legal_review', {}).get('existing_answer_correct') in {
                             'NO', 'AMBIGUOUS', 'NOT_ASSESSED'} or
                         review.get('realism_review', {}).get('verdict') in {
-                            'FAIL', 'MINOR_EDIT', 'MAJOR_REWRITE'},
+                            'FAIL', 'MINOR_EDIT', 'MAJOR_REWRITE'}or
+                        verified_completion_blocked_notice(ROOT,notice,review,json.loads(review_raw)),
                         'Independent archive notice lacks a negative or blocked review: ' + qid)
             if notice['issue_type'] == 'AUTHOR_REVIEW_FINDING':
                 review=reviews[qid]
@@ -352,6 +353,13 @@ def _existing_archive_review_notices(old_by_id, input_hashes):
                         'Editorial context notice lacks a matching supported-key review: ' + qid)
         seen.update(ids)
     return notices
+
+
+
+def verified_completion_blocked_notice(root,notice,row,source):
+    # This separate typed case never widens ordinary pending/legacy verdicts.
+    from realism_completion_metadata import verified_blocked_notice
+    return verified_blocked_notice(root,notice,row,source)
 
 
 def archive_review_notices(old_by_id, input_hashes):
