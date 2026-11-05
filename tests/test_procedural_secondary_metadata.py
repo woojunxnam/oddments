@@ -244,9 +244,24 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
     import phase11_secondary_metadata as phase11
     import phase11_context38_metadata as context38
     import realism_completion_metadata as completion
+    import realism_completion_review as completion_route
     import remaining9_procedural_metadata as remaining9
     root,state,report,_,questions,collections = fixture
     real_load = secondary.load_metadata; captured = {}; other_sources = []; current_sources = {}
+    actual_prior_loaders = {secondary: real_load, phase11: phase11.load_metadata,
+                            context38: context38.load_metadata}
+    actual_prior = completion_route.prior_supplementary
+    retained_prior_roots = []
+    def prior_in_actual_repository(repo,*args,**kwargs):
+        # A nested immutable-source consumer must never receive the direct
+        # producer's synthetic report paths under the real repository root.
+        with monkeypatch.context() as native_sources:
+            for module, loader in actual_prior_loaders.items():
+                native_sources.setattr(module,'load_metadata',loader)
+            value=actual_prior(repo,*args,**kwargs)
+        retained_prior_roots.append(repo)
+        return value
+    monkeypatch.setattr(completion_route,'prior_supplementary',prior_in_actual_repository)
     def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
         # Retained-source validation must read the actual repository, while
         # only the builder-level consumer call uses the synthetic retry.
@@ -294,6 +309,7 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
         assert row['publication_status'] == 'PRACTICE_CONFIG_ARCHIVE'
     assert set(current_sources)=={'legal4','remaining9'}
+    assert retained_prior_roots and all(repo==ROOT for repo in retained_prior_roots)
     combined=context38.combine_metadata(captured['primary'],captured['source'],*other_sources,*current_sources.values())['progress']
     assert progress['independent_legacy_legal_assessed'] == combined['effective_key_assessed']
     assert progress['independent_legacy_originals_read'] == len(originals)
