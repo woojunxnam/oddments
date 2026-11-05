@@ -1,0 +1,98 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields _
+
+fixture = (PosixPath('/tmp/pytest-of-agent/pytest-53/test_builder_exposes_secondary0/repo'), {'events': [{'attempt': 1, 'job_id'...-CASE-0401': 'practice_expansion/fixture/questions.json', 'MA-CASE-0441': 'practice_expansion/fixture/questions.json'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fde183a4080>
+
+    def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields(fixture,monkeypatch):
+        import build_full_corpus_review as builder
+        import phase11_secondary_metadata as phase11
+        import phase11_context38_metadata as context38
+        import realism_completion_metadata as completion
+        import remaining9_procedural_metadata as remaining9
+        root,state,report,_,questions,collections = fixture
+        real_load = secondary.load_metadata; captured = {}; other_sources = []; current_sources = {}
+        def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
+            # Retained-source validation must read the actual repository, while
+            # only the builder-level consumer call uses the synthetic retry.
+            if source_bindings is not None:
+                return real_load(repo,primary,current_questions,current_collections,source_bindings=source_bindings)
+            captured['primary'] = copy.deepcopy(primary)
+            value = real_load(root,primary,questions,collections)
+            captured['progress'] = value['progress']
+            captured['source'] = value
+            return value
+        def capture_other(loader):
+            def load_other(*args,**kwargs):
+                value=loader(*args,**kwargs)
+                if kwargs.get("source_bindings") is None:other_sources.append(value)
+                return value
+            return load_other
+        monkeypatch.setattr(secondary,'load_metadata',load_fixture)
+        monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
+        monkeypatch.setattr(context38,'load_metadata',capture_other(context38.load_metadata))
+        def capture_current(name,loader,legal_only=False):
+            def load_current(repo,primary,public,*args,**kwargs):
+                value=loader(repo,primary,public,*args,**kwargs)
+                # Capture only the actual producer's complete public/current primary
+                # input, not partial native-only inputs read by retention guards.
+                expected={r['question_id']for r in captured.get('primary',[])}
+                if expected and repo==ROOT and {r['question_id']for r in primary}==expected and set(public)==expected:
+                    assert name not in current_sources
+                    current_sources[name]=({'assessments':value['legal_assessments'],'records':value['legal_records']}
+                                           if legal_only else value)
+                return value
+            return load_current
+        monkeypatch.setattr(completion,'load_metadata',capture_current('legal4',completion.load_metadata,legal_only=True))
+        monkeypatch.setattr(remaining9,'load_metadata',capture_current('remaining9',remaining9.load_metadata))
+>       outputs = builder.build()
+                  ^^^^^^^^^^^^^^^
+
+tests/test_procedural_secondary_metadata.py:283: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_full_corpus_review.py:684: in build
+    realism_completion = load_realism_completion(ROOT,independent_records,public_by_id,source_bindings=realism_completion_bindings)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_procedural_secondary_metadata.py:271: in load_current
+    value=loader(repo,primary,public,*args,**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/realism_completion_metadata.py:46: in load_metadata
+    prior=route.prior_supplementary(root,primary_records,public,collections)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/realism_completion_review.py:154: in prior_supplementary
+    raw=disk_read(root,proof['report_path'],proof['report_sha256']);report=json.loads(raw)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/realism_completion_review.py:56: in disk_read
+    raw=committed(root,relative)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:118: in committed
+    p=path(root,relative);raw=p.read_bytes()
+                              ^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workspace/oddments/reports/full-corpus-review/fixture-procedural-review.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workspace/oddments/reports/full-corpus-review/fixture-procedural-review.json'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1013: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+1 failed in 14.30s
