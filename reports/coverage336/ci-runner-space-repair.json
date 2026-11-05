@@ -1,0 +1,62 @@
+{
+  "kind": "CI_RUNNER_DISK_SPACE_MITIGATION_NOT_GATE_RELAXATION",
+  "observed_at_utc": "2026-11-05T18:05:03.082256+00:00",
+  "failed_existing_main": "65120ff0bace38f561240c5e0b6bb322d33243a5",
+  "official_run_id": 42043966700,
+  "official_url": "https://github.com/woojunxnam/oddments/actions/runs/42043966700",
+  "official_failure_type": "System.IO.IOException: No space left on device",
+  "official_annotations": [
+    {
+      "path": ".github",
+      "blob_href": "https://github.com/woojunxnam/oddments/blob/65120ff0bace38f561240c5e0b6bb322d33243a5/.github",
+      "start_line": 0,
+      "start_column": null,
+      "end_line": 0,
+      "end_column": null,
+      "annotation_level": "failure",
+      "title": "",
+      "message": "System.IO.IOException: No space left on device : '/home/runner/actions-runner/cached/2.338.2/_diag/Worker_20261105-142339-utc.log'\n   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)\n   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)\n   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)\n   at System.Diagnostics.TextWriterTraceListener.Flush()\n   at GitHub.Runner.Common.HostTraceListener.WriteHeader(String source, TraceEventType eventType, Int32 id)\n   at GitHub.Runner.Common.HostTraceListener.TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, Int32 id, String message)\n   at System.Diagnostics.TraceSource.TraceEvent(TraceEventType eventType, Int32 id, String message)\n   at GitHub.Runner.Worker.Worker.RunAsync(String pipeIn, String pipeOut)\n   at GitHub.Runner.Worker.Worker.RunAsync(String pipeIn, String pipeOut)\n   at GitHub.Runner.Worker.Program.MainAsync(IHostContext context, String[] args)\nSystem.IO.IOException: No space left on device : '/home/runner/actions-runner/cached/2.338.2/_diag/Worker_20261105-142339-utc.log'\n   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)\n   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)\n   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)\n   at System.Diagnostics.TextWriterTraceListener.Flush()\n   at GitHub.Runner.Common.HostTraceListener.WriteHeader(String source, TraceEventType eventType, Int32 id)\n   at GitHub.Runner.Common.HostTraceListener.TraceEvent(TraceEventCache eventCache, String source, TraceEventType eventType, Int32 id, String message)\n   at System.Diagnostics.TraceSource.TraceEvent(TraceEventType eventType, Int32 id, String message)\n   at GitHub.Runner.Common.Tracing.Error(Exception exception)\n   at GitHub.Runner.Worker.Program.MainAsync(IHostContext context, String[] args)\nUnhandled exception. System.IO.IOException: No space left on device : '/home/runner/actions-runner/cached/2.338.2/_diag/Worker_20261105-142339-utc.log'\n   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)\n   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)\n   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)\n   at System.Diagnostics.TextWriterTraceListener.Flush()\n   at System.Diagnostics.TraceSource.Flush()\n   at GitHub.Runner.Common.Tracing.Dispose(Boolean disposing)\n   at GitHub.Runner.Common.Tracing.Dispose()\n   at GitHub.Runner.Common.TraceManager.Dispose(Boolean disposing)\n   at GitHub.Runner.Common.TraceManager.Dispose()\n   at GitHub.Runner.Common.HostContext.Dispose(Boolean disposing)\n   at GitHub.Runner.Common.HostContext.Dispose()\n   at GitHub.Runner.Worker.Program.Main(String[] args)",
+      "raw_details": ""
+    },
+    {
+      "path": ".github",
+      "blob_href": "https://github.com/woojunxnam/oddments/blob/65120ff0bace38f561240c5e0b6bb322d33243a5/.github",
+      "start_line": 1,
+      "start_column": null,
+      "end_line": 1,
+      "end_column": null,
+      "annotation_level": "notice",
+      "title": "",
+      "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+      "raw_details": ""
+    }
+  ],
+  "previous_candidate": "2880a4537137d90a6bb6a300bdecb955fab415fd",
+  "change": "Enable built-in pytest tmp_path_retention_policy=failed, already documented in tests/README.md. Passed temporary fixture directories are removed; failed test fixtures remain available.",
+  "scope": "No test commands, assertions, rules, questions, holds, native validators or generated payloads are changed.",
+  "validation_probe": {
+    "started_at": "2026-11-05T18:04:26.209881+00:00",
+    "command": [
+      "/workspace/mpje-ci-checks-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-c",
+      "/workspace/oddments/pytest.ini",
+      "--basetemp",
+      "/workspace/scratch/coverage336-pytest-retention-repair/temporary-fixtures",
+      "/workspace/scratch/coverage336-pytest-retention-repair/test_retention.py"
+    ],
+    "exit_code": 1,
+    "intentional_failure_expected": true,
+    "passed_and_failed_tests_both_executed": true,
+    "successful_fixture_markers_remaining": 0,
+    "failed_fixture_markers_retained": 1,
+    "failed_evidence_content_correct": true,
+    "source_config_sha256": "3c6033516f15bc4b70c040156a3d4900a902f79b9e843dd2330601a6a4206ef6",
+    "test_assertions_disabled": false
+  },
+  "probe_raw_log_sha256": "eef043c8d890a7137509cde74d407366b045228a4660b4158ee6fdfd9d26e164",
+  "limitation": "Mitigates cumulative passed tmp_path fixture copies; does not assert that all possible runner disk usage causes are resolved. Full exact-candidate CI still required.",
+  "new_question_or_legal_release_credit": 0
+}
