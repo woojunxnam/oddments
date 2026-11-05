@@ -246,6 +246,7 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
     import realism_completion_metadata as completion
     import realism_completion_review as completion_route
     import remaining9_procedural_metadata as remaining9
+    import source3_recovered_legal_metadata as source3
     root,state,report,_,questions,collections = fixture
     real_load = secondary.load_metadata; captured = {}; other_sources = []; current_sources = {}
     actual_prior_loaders = {secondary: real_load, phase11: phase11.load_metadata,
@@ -295,6 +296,7 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         return load_current
     monkeypatch.setattr(completion,'load_metadata',capture_current('legal4',completion.load_metadata,legal_only=True))
     monkeypatch.setattr(remaining9,'load_metadata',capture_current('remaining9',remaining9.load_metadata))
+    monkeypatch.setattr(source3,'load_metadata',capture_current('source3',source3.load_metadata))
     outputs = builder.build()
     rows = {r['question_id']:r for r in map(json.loads,outputs[ROOT/'reports/full-corpus-review/question-ledger.jsonl'].splitlines())}
     progress = json.loads(outputs[ROOT/'reports/full-corpus-review/progress.json'])
@@ -308,7 +310,7 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
         assert row['answer_key_assessment'] == 'INDEPENDENT_LEGACY_NOT_ASSESSED'
         assert row['disposition'] == 'HOLD_FOR_LEGAL_REVIEW'
         assert row['publication_status'] == 'PRACTICE_CONFIG_ARCHIVE'
-    assert set(current_sources)=={'legal4','remaining9'}
+    assert set(current_sources)=={'legal4','remaining9','source3'}
     assert retained_prior_roots and all(repo==ROOT for repo in retained_prior_roots)
     combined=context38.combine_metadata(captured['primary'],captured['source'],*other_sources,*current_sources.values())['progress']
     assert progress['independent_legacy_legal_assessed'] == combined['effective_key_assessed']

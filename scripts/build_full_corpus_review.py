@@ -687,7 +687,11 @@ def build():
     remaining9_bindings = {}
     remaining9_secondary = load_remaining9_secondary(ROOT,independent_records,public_by_id,secondary_collections,
                                                     source_bindings=remaining9_bindings)
-    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal,remaining9_secondary)
+    from source3_recovered_legal_metadata import load_metadata as load_source3_secondary
+    source3_bindings = {}
+    source3_secondary = load_source3_secondary(ROOT,independent_records,public_by_id,secondary_collections,
+                                              source_bindings=source3_bindings)
+    secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal,remaining9_secondary,source3_secondary)
     realism_completion_progress = apply_realism_completion(result,independent_records,realism_completion,secondary['effective_realism_pass'])
     validate_context_default_safety(selection['recommended_ids'],context38_secondary)
     validate_default_review_safety(selection['recommended_ids'], reviews, independent_records+secondary['records'])
@@ -877,6 +881,12 @@ def build():
         progress['independent_legacy_remaining9_procedural_review'] = {
             **remaining9_secondary['progress'], 'source_bindings': remaining9_bindings,
             'scope': 'EXACT_NINE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE'}
+    if source3_bindings:
+        progress['independent_legacy_source3_recovered_legal_review'] = {
+            **source3_secondary['progress'], 'source_bindings': source3_bindings,
+            'scope': 'EXACT_THREE_RECOVERED_SOURCE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE',
+            'new_independent_people_credit': 0, 'new_realism_pass_credit': 0}
+        progress['independent_legacy_supplementary_review'] = secondary['progress']
     inventory = dict(
         basis='Actual current source records; collection/family/topic/notes/review are different dimensions.',
         collections=[dict(path=path, questions=len(read(path)['questions']),
