@@ -1,0 +1,230 @@
+{
+  "purpose": "PREPARED_EXTERNAL_EXECUTABLE_VERIFIER_V2_SYNTAX_CLI_AND_BOUNDED_JOB_REGRESSION_ONLY",
+  "observed_at": "2026-11-05T02:31:49.346373+00:00",
+  "planning_source_head": "486fd9ff789c2c1dfa5331d63d9fbb3d08fc7108",
+  "helper_path": "/workspace/scratch/final306_public_verifier.py",
+  "helper_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+  "helper_mode_octal": "0o700",
+  "syntax_static_status": "PASS_NOT_CANDIDATE_QA",
+  "required_CLI": {
+    "candidate_sha": true,
+    "merge_sha": true,
+    "pages_run_id": true,
+    "qa_run_ids": true,
+    "checkout": true,
+    "evidence_output": true,
+    "expected_site": true,
+    "expected_manifest": true,
+    "pr_number": true,
+    "premerge_pr_proof": true
+  },
+  "syntax_help_missing_argument_receipts": [
+    {
+      "label": "syntax",
+      "argv": [
+        "/workspace/mpje-ci-checks-venv/bin/python",
+        "-m",
+        "py_compile",
+        "/workspace/scratch/final306_public_verifier.py"
+      ],
+      "started_at": "2026-11-05T02:31:49.085713+00:00",
+      "completed_at": "2026-11-05T02:31:49.142615+00:00",
+      "actual_exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "network_browser_publisher_or_QA_executed": false
+    },
+    {
+      "label": "help",
+      "argv": [
+        "/workspace/mpje-ci-checks-venv/bin/python",
+        "/workspace/scratch/final306_public_verifier.py",
+        "--help"
+      ],
+      "started_at": "2026-11-05T02:31:49.142665+00:00",
+      "completed_at": "2026-11-05T02:31:49.233329+00:00",
+      "actual_exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "4c2ae7db337ce76ca10186908b29e5bf1afeab1d020ddbeb54a7f34198e1a212",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "network_browser_publisher_or_QA_executed": false
+    },
+    {
+      "label": "missing-required-cli",
+      "argv": [
+        "/workspace/mpje-ci-checks-venv/bin/python",
+        "/workspace/scratch/final306_public_verifier.py"
+      ],
+      "started_at": "2026-11-05T02:31:49.233369+00:00",
+      "completed_at": "2026-11-05T02:31:49.312673+00:00",
+      "actual_exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "712c383ecdfc0c41794802c12d40536ebef94f08a1566c69a0c9c38fa5458b01",
+      "network_browser_publisher_or_QA_executed": false
+    }
+  ],
+  "invalid_non40_SHA_rejected_by_pure_type_parser": true,
+  "actual_candidate_merge_pages_QA_inputs": null,
+  "actual_premerge_operational_proof_available_or_generated": false,
+  "premerge_proof_source_validation_only": true,
+  "job_contract_synthetic_regression_receipt": {
+    "path": "/workspace/scratch/final306-public-verifier-job-regression-receipt.json",
+    "raw_sha256": "bc9b2c8a155324dfb773649c26aa6e3c81701f9cb13fbc297808901f1e86c5b8"
+  },
+  "initial_independent_peer_findings": {
+    "path": "/workspace/scratch/final306-public-verifier-initial-peer-static-evidence.json",
+    "raw_sha256": "465000f7bc6ad3a8a1e115a393a7dff786d45610d4db09bb6cf167bf3f703090"
+  },
+  "normal_conditional_production_skip_scope": "Only exam-study studySUCCESS+productionSKIPPED and representative revisionSUCCESS+productionSKIPPED for actual push/pull_request and exact source if; every other skip/missing/unknown/failure rejected; main pending recorded separately",
+  "current_PR_binding": "Actual merged PR headSHA=candidate and official main base plus separately retained premerge raw5 API head/base/merge-ref/tree/parents proof; current operational proof not generated",
+  "dynamic_inputs_not_hardcoded": true,
+  "original_historical_helpers": {
+    "public-verification.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/public-verification.py",
+      "raw_sha256": "3ad2d2666c5b53f29cbcdf145ff5d65db9117ef12f562cec5665eb4ae4581510"
+    },
+    "production-browser-adapter.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/production-browser-adapter.py",
+      "raw_sha256": "d95da312beb6793d654601b0065f194e6d0ceed606dbe59f91f23ea1ab7f2bf4"
+    },
+    "verify-public-state.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/verify-public-state.py",
+      "raw_sha256": "d351297043e95388eac2a14172bd2bcea8f1e23ef83725c5c4999f30a0b4573a"
+    }
+  },
+  "parameterization_map": [
+    {
+      "historical": "public-verification.py api_snapshot/fetch40/browsers",
+      "new_methods": [
+        "Verification.api_snapshot",
+        "Verification.assets",
+        "Verification.browsers"
+      ],
+      "changes": [
+        "Mandatory actual candidate/merge full40SHA, actual Pages ID, actual candidate8 QA run IDs, new PR, clean checkout, new external output and fresh expected-site/manifest.",
+        "No old commit/run/metric response or PASS copied. Fresh API raw HTTP/body receipts and fresh canonical40 GET responses.",
+        "Current premerge candidate8 required successful; main8+actual successfulPages9 observations separately PENDING/FAILED/ALL_SUCCESS. Two production runs observed but final completion proof remains root-owned.",
+        "API/local tested/merged tree equality, actual Pages head and deployment successful at canonical origin, source and scripts unchanged before/after.",
+        "New manifest source_head/source_tree/exit0/complete40SHA plus fresh external publisher rebuild exact byte equality; tracked checkout never written."
+      ]
+    },
+    {
+      "historical": "production-browser-adapter.py",
+      "new_method": "adapt_browser_source",
+      "changes": [
+        "Exact notes/refresh loopback-selection-only replacement in memory, current source and adapted SHA recorded.",
+        "Every original Assert AST preserved; no inline-preview; all real-origin reload/import/export/storage/navigation branches preserved.",
+        "Five current original scripts run sequentially with external output; modes/report statuses and Q0012 history preservation checked."
+      ]
+    },
+    {
+      "historical": "verify-public-state.py",
+      "new_methods": [
+        "Verification.candidate_metrics",
+        "Verification.public_state"
+      ],
+      "changes": [
+        "Compute current2349 unique-key union2312/37 and effective880 union from frozen candidate ledgers, compare dynamic public candidate payload.",
+        "Compute306 units/7086 claims and36LEGAL_HOLD/890SOURCE_BLOCKED from candidate payload per-unit claim_counts; compare approved task scope and current source progress.",
+        "Fresh runtime full payload equality plus actual public quality page, N1 body/HOLD011/history/notice/daily0, CASE0790 exact source3KEEP/primaryHOLD/rawstyleNOT_ASSESSED/supplementFAIL/default exclusion/previous_notices.",
+        "Actual study/refresh daily UI-selected IDs must exclude related N1 lessons/cards in ephemeral storage."
+      ]
+    }
+  ],
+  "adapter_assertion_static_proofs": {
+    "verify_notes_browser.py": {
+      "original_sha256": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1",
+      "adapted_sha256": "9bdac52c731026eac2817b2b0fc5459f5917f8a6d44a58db97624741aa2eadc7",
+      "removed_selection": "    if not args.inline_preview:\n        class Handler(http.server.SimpleHTTPRequestHandler):\n            def log_message(self,*args):pass\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(SITE)))\n        threading.Thread(target=server.serve_forever,daemon=True).start()\n        base=f'http://127.0.0.1:{server.server_port}/'\n    else:base=''",
+      "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+      "all_assert_AST_identical": true,
+      "origin": "https://woojunxnam.github.io/oddments/",
+      "isolated_context": true,
+      "real_user_profile_used": false,
+      "assert_count": 22,
+      "inline_preview_used": false,
+      "original_current_script_path": "scripts/verify_notes_browser.py",
+      "static_compilation_only": true,
+      "adapted_script_executed": false
+    },
+    "verify_refresh_browser.py": {
+      "original_sha256": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d",
+      "adapted_sha256": "e4f7409260511870f2c821e0ba646b9d4389b77db05b69207c624e80fd1adb4c",
+      "removed_selection": "    if not a.inline_preview:\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(a.site)))\n        threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'\n    else:base='https://refresh-preview.invalid/'",
+      "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+      "all_assert_AST_identical": true,
+      "origin": "https://woojunxnam.github.io/oddments/",
+      "isolated_context": true,
+      "real_user_profile_used": false,
+      "assert_count": 19,
+      "inline_preview_used": false,
+      "original_current_script_path": "scripts/verify_refresh_browser.py",
+      "static_compilation_only": true,
+      "adapted_script_executed": false
+    }
+  },
+  "approved_scope_intentionally_pinned_from_current_task_not_measured_PASS": {
+    "questions": 2349,
+    "key_assessed": 2312,
+    "key_unassessed": 37,
+    "effective_realism_PASS": 880,
+    "note_units": 306,
+    "note_claims": 7086,
+    "claim_LEGAL_HOLD": 36,
+    "claim_SOURCE_BLOCKED": 890,
+    "default_questions": 202,
+    "representative_questions": 77
+  },
+  "bank77_intentionally_preserved_SHA": "99520b18352b850fdf0148370d7fe34059a242b79e01f3909fc2f489244cc999",
+  "expected_manifest_required_schema": {
+    "source_head": "actual full40 candidate or merge SHA",
+    "source_tree": "actual git tree SHA of source_head",
+    "exit_code": 0,
+    "all_file_sha256": "fresh complete40 path->SHA256 mapping; every file must match expected-site and actual future external publisher rebuild"
+  },
+  "future_argv_template": [
+    "/workspace/mpje-ci-checks-venv/bin/python",
+    "/workspace/scratch/final306_public_verifier.py",
+    "--candidate-sha",
+    "<ACTUAL_APPROVED_CANDIDATE_FULL40_SHA>",
+    "--merge-sha",
+    "<ACTUAL_MERGE_FULL40_SHA>",
+    "--pages-run-id",
+    "<ACTUAL_SUCCESSFUL_PAGES_RUN_ID>",
+    "--qa-run-ids",
+    "<EIGHT_ACTUAL_SUCCESSFUL_PREMERGE_CANDIDATE_RUN_IDS>",
+    "--pr-number",
+    "<ACTUAL_NEW_MERGED_PR>",
+    "--premerge-pr-proof",
+    "<ACTUAL_ROOT_RETAINED_PREMERGE_RAW5_API_PROOF_JSON>",
+    "--checkout",
+    "<CLEAN_FULL_EXACT_MERGE_CHECKOUT>",
+    "--expected-site",
+    "<FRESH_EXACT_PUBLISHED_OUTPUT_OUTSIDE_CHECKOUT>",
+    "--expected-manifest",
+    "<FRESH_SOURCE_BOUND_COMPLETE40_SHA_MANIFEST>",
+    "--evidence-output",
+    "<NEW_NONEXISTING_DISJOINT_EXTERNAL_EVIDENCE_DIR>"
+  ],
+  "runtime_execution_deferred": [
+    "No HTTP/API/current-deployment GET was performed.",
+    "No publisher, browser, candidate QA, local whole pytest, release guard or native mutation was executed by this preparation.",
+    "Future invocation requires parent instruction after exact approved candidate, merge and successful Pages deployment; required candidate8 include actual GitHub full-pytest QA.",
+    "Main postmerge PENDING is retained as PENDING and cannot substitute for final main9workflow plus2production job success proof. Public helper alone never declares overall release completion.",
+    "Full checkout must retain exact native evidence and immutable published15 preimages; no sparse missing-source waiver.",
+    "Prepared helper has syntax/CLI/adapter AST validation only; actual network/platform/browser behavior has not been exercised.",
+    "If complete published membership changes from40, source block changes, source hashes change, redirects/cache return mismatches, or any script fails, stop and preserve failure without weakening guards.",
+    "Current task numeric scope is intentionally strict and computed against candidate data; later authorized content-scope changes require explicit review."
+  ],
+  "actual_execution_counts": {
+    "network_requests": 0,
+    "browser_suites": 0,
+    "publisher_runs": 0,
+    "QA_or_release_checks": 0,
+    "root_mutations": 0,
+    "native_mutations": 0
+  },
+  "new_PASS_or_legal_or_canonical_release_credit": 0
+}

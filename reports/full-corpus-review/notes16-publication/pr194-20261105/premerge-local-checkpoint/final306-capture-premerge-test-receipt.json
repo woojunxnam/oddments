@@ -1,0 +1,252 @@
+{
+  "purpose": "SYNTAX_CLI_AND_OFFLINE_SYNTHETIC_CAPTURE_SCHEMA_REGRESSION_NOT_ACTUAL_PREMERGE_EVIDENCE",
+  "reviewed_at_utc": "2026-11-05T03:28:32.989738+00:00",
+  "helper_path": "/workspace/scratch/final306_capture_premerge.py",
+  "helper_sha256": "abf47ea842ad370006e134a7a2aa90a654ba820448b1cfb34ef5f795f38ec8b8",
+  "compatible_verifier_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+  "syntax_in_memory": true,
+  "offline_cases": [
+    {
+      "case": "fully_mocked_capture_success",
+      "exit_code": 0,
+      "mocked_GET_calls": 7,
+      "outcome": "EXPECTED_SUCCESS_SOURCE_PROOF_ONLY",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_head_changed",
+      "exit_code": 1,
+      "mocked_GET_calls": 1,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_already_merged",
+      "exit_code": 1,
+      "mocked_GET_calls": 1,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_base_repository",
+      "exit_code": 1,
+      "mocked_GET_calls": 1,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_main_changed",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_candidate_commit",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_merge_tree",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_ref_identity",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_ref_type",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_parents",
+      "exit_code": 1,
+      "mocked_GET_calls": 5,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_stability_head",
+      "exit_code": 1,
+      "mocked_GET_calls": 7,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_stability_base",
+      "exit_code": 1,
+      "mocked_GET_calls": 7,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_stability_main",
+      "exit_code": 1,
+      "mocked_GET_calls": 7,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_http404",
+      "exit_code": 1,
+      "mocked_GET_calls": 1,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "fully_mocked_capture_invalid_json",
+      "exit_code": 1,
+      "mocked_GET_calls": 1,
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    },
+    {
+      "case": "environment GH_HOST",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "environment GH_HTTP_UNIX_SOCKET",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "environment GH_INSECURE",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "environment GITHUB_INSECURE",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "environment GIT_SSL_NO_VERIFY",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "normal_auth_inherited_without_debug_or_environment_logging",
+      "outcome": "EXPECTED_ACCEPTANCE"
+    },
+    {
+      "case": "existing output rejected",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "Git checkout output rejected",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "partial_200_timeout_still_fails_and_preserves_raw_body",
+      "outcome": "EXPECTED_FAILURE_EVIDENCE_NO_PASS",
+      "actual_exit_code": null,
+      "partial_http_status": 200,
+      "credentials_not_persisted": true,
+      "temporary_evidence_removed_after_case": true
+    }
+  ],
+  "offline_case_count": 24,
+  "CLI_cases": [
+    {
+      "case": "help",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/final306_capture_premerge.py",
+        "--help"
+      ],
+      "actual_exit_code": 0,
+      "expected_exit_code": 0,
+      "started_at_utc": "2026-11-05T03:28:32.819083+00:00",
+      "stdout_sha256": "fcb465e56c66d99a91297f6de985c597b04b6ba0680240c81668428781922e5d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "API_calls": 0
+    },
+    {
+      "case": "missing",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/final306_capture_premerge.py"
+      ],
+      "actual_exit_code": 2,
+      "expected_exit_code": 2,
+      "started_at_utc": "2026-11-05T03:28:32.866992+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cd334735e18d648147496fb114bf79b89eb2c0500563164465206d3f51db9983",
+      "API_calls": 0
+    },
+    {
+      "case": "invalid_sha",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/final306_capture_premerge.py",
+        "--candidate-sha",
+        "bad",
+        "--pr-number",
+        "9",
+        "--output-new-dir",
+        "/unused"
+      ],
+      "actual_exit_code": 2,
+      "expected_exit_code": 2,
+      "started_at_utc": "2026-11-05T03:28:32.908907+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "16f9327170195edf78cceed6ec487923804e2d06a55e18af08ec5910a6621218",
+      "API_calls": 0
+    },
+    {
+      "case": "invalid_PR",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/final306_capture_premerge.py",
+        "--candidate-sha",
+        "1111111111111111111111111111111111111111",
+        "--pr-number",
+        "0",
+        "--output-new-dir",
+        "/unused"
+      ],
+      "actual_exit_code": 2,
+      "expected_exit_code": 2,
+      "started_at_utc": "2026-11-05T03:28:32.946806+00:00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2d31821baafbba3b7c79347080f6e3f2d59d91a89c35dcbf5868c1c9a3d1975f",
+      "API_calls": 0
+    }
+  ],
+  "real_API_requests": 0,
+  "browsers": 0,
+  "publisher_runs": 0,
+  "ROOT_changes": 0,
+  "operational_premerge_proofs_created": 0,
+  "temporary_synthetic_evidence_removed": true,
+  "new_candidate_QA_or_release_credit": 0
+}

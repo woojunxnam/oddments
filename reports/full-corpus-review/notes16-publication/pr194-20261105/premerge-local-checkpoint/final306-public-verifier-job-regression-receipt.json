@@ -1,0 +1,596 @@
+{
+  "purpose": "PURE_SYNTHETIC_JOB_PR_METADATA_CONTRACT_REGRESSION_NOT_ACTUAL_QA_OR_PREMERGE_PROOF",
+  "observed_at": "2026-11-05T02:30:35.213861+00:00",
+  "helper_path": "/workspace/scratch/final306_public_verifier.py",
+  "helper_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+  "actual_workflow_source_head": "486fd9ff789c2c1dfa5331d63d9fbb3d08fc7108",
+  "tests": 68,
+  "all_contract_cases_passed": true,
+  "cases": [
+    {
+      "case": "qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "validate",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "validate",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "validate"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-quality-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "quality",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-quality-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "quality",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-quality-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "practice-quality-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-quality-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "quality"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "representative-quality-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "revision",
+            "status": "SUCCESS"
+          },
+          {
+            "name": "production",
+            "status": "EXPECTED_CONDITIONAL_SKIPPED",
+            "source_if": "github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'",
+            "actual_event": "push"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "representative-quality-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "revision",
+            "status": "SUCCESS"
+          },
+          {
+            "name": "production",
+            "status": "EXPECTED_CONDITIONAL_SKIPPED",
+            "source_if": "github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'",
+            "actual_event": "pull_request"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "representative-quality-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "representative-quality-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "representative-quality-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "production",
+          "revision"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "representative-quality-qa.yml forbidden production success on push",
+      "result": "EXPECTED_REJECTION",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "representative-quality-qa.yml workflow_run cannot count validation",
+      "result": "EXPECTED_REJECTION",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "representative-quality-qa.yml altered production condition",
+      "result": "EXPECTED_REJECTION",
+      "error": "Exact conditional production source changed"
+    },
+    {
+      "case": "representative-quality-qa.yml production cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "notes-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "notes",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "notes-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "notes",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "notes-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "notes-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "notes-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "notes"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "refresh-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "refresh",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "refresh-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "refresh",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "refresh-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "refresh-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "refresh-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "refresh"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "exam-study-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "study",
+            "status": "SUCCESS"
+          },
+          {
+            "name": "production",
+            "status": "EXPECTED_CONDITIONAL_SKIPPED",
+            "source_if": "github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'",
+            "actual_event": "push"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "exam-study-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "study",
+            "status": "SUCCESS"
+          },
+          {
+            "name": "production",
+            "status": "EXPECTED_CONDITIONAL_SKIPPED",
+            "source_if": "github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'",
+            "actual_event": "pull_request"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "exam-study-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "exam-study-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "exam-study-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "production",
+          "study"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "exam-study-qa.yml forbidden production success on push",
+      "result": "EXPECTED_REJECTION",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "exam-study-qa.yml workflow_run cannot count validation",
+      "result": "EXPECTED_REJECTION",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "exam-study-qa.yml altered production condition",
+      "result": "EXPECTED_REJECTION",
+      "error": "Exact conditional production source changed"
+    },
+    {
+      "case": "exam-study-qa.yml production cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "public-practice-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "public-practice",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "public-practice-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "public-practice",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "public-practice-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "public-practice-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "public-practice-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "public-practice"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-expansion-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "draft",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-expansion-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "SUCCESS",
+        "job_checks": [
+          {
+            "name": "draft",
+            "status": "SUCCESS"
+          }
+        ],
+        "missing_pending_job_names": [],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "practice-expansion-qa.yml primary skipped",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml missing primary",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "practice-expansion-qa.yml unknown extra job",
+      "result": "EXPECTED_REJECTION",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-expansion-qa.yml primary failure",
+      "result": "EXPECTED_REJECTION",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml queued main partial",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": {
+        "status": "PENDING",
+        "job_checks": [],
+        "missing_pending_job_names": [
+          "draft"
+        ],
+        "arbitrary_skips_allowed": false
+      }
+    },
+    {
+      "case": "synthetic exact PR binding",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": null
+    },
+    {
+      "case": "synthetic wrong PR head",
+      "result": "EXPECTED_REJECTION",
+      "error": "Actual merged PR head is not tested candidate"
+    },
+    {
+      "case": "synthetic wrong PR base",
+      "result": "EXPECTED_REJECTION",
+      "error": "Actual PR base is not exact official main"
+    },
+    {
+      "case": "synthetic wrong PR repo",
+      "result": "EXPECTED_REJECTION",
+      "error": "Actual PR base is not exact official main"
+    }
+  ],
+  "actual_network_browser_publisher_QA_native_execution_count": 0,
+  "actual_or_placeholder_operational_premerge_proof_generated": false,
+  "future_release_or_real_job_success_credit": 0
+}

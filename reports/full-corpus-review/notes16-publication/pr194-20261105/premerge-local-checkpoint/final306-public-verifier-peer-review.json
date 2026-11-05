@@ -1,0 +1,180 @@
+{
+  "schema": "final306-public-verifier-independent-peer-review/1",
+  "reviewed_at_utc": "2026-11-05T02:33:52.392311+00:00",
+  "reviewer_actor": "/root/remaining9_contract_engineering",
+  "review_root_head_observed": "b5e97466b7e6c43f60a4f0fb781b968d15d2e4bf",
+  "decision": "ACCEPT_EXTERNAL_HELPER_FOR_FUTURE_EXACT_CANDIDATE_EXECUTION_ONLY",
+  "reviewed_helper": {
+    "path": "/workspace/scratch/final306_public_verifier.py",
+    "raw_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+    "bytes": 48357
+  },
+  "original_helper_sha256": "2741c36cb63ab7170234e3cda4076f209e5c619739601e25843c92c5d2db7f74",
+  "author_revision_method_ko": "독립 정적검토의 발견을 작성담당 /root/queue_lease_recovery와 협의하여 담당자가 외부 helper만 수정했습니다. reviewer가 ROOT나 helper를 수정하지 않았습니다. 수정된 exact rawSHA를 다시 독립 검토했습니다.",
+  "resolved_findings": [
+    {
+      "id": "F1",
+      "original_helper_sha256": "2741c36cb63ab7170234e3cda4076f209e5c619739601e25843c92c5d2db7f74",
+      "severity": "EXECUTION_BLOCKER",
+      "original_issue_ko": "정상 PR/push production SKIPPED도 일괄 실패로 판정",
+      "resolution_ko": "정확한 workflow/job/원if에 결박된 validation_jobs로 수정. 다른 skip은 계속 거부",
+      "status": "RESOLVED_OFFLINE_CONFIRMED"
+    },
+    {
+      "id": "F2",
+      "severity": "PROVENANCE_GAP",
+      "original_issue_ko": "실제 merged PR head와 candidate/base main·repo 명시결박 누락",
+      "resolution_ko": "require_pr_binding 및 actual retained premerge raw5 proof·QA 완료/merge 시각 대조 추가",
+      "status": "RESOLVED_STATIC_AND_OFFLINE_CONFIRMED"
+    },
+    {
+      "id": "F3",
+      "severity": "OBSERVATION_GAP",
+      "original_issue_ko": "추가 production 관측이 workflow_dispatch만 조회하여 실제 workflow_run job 누락",
+      "resolution_ko": "exam-study/representative workflow_run 실제jobs관측 추가, 완료 credit은 계속0",
+      "status": "RESOLVED_OFFLINE_CONFIRMED"
+    },
+    {
+      "id": "F4",
+      "severity": "HARDENING",
+      "original_issue_ko": "gh host/debug환경 명시고정 없음",
+      "resolution_ko": "공식host고정+debugenv제거, credential 직접로그0",
+      "status": "RESOLVED_STATIC_CONFIRMED"
+    }
+  ],
+  "checks": [
+    {
+      "id": "candidate-merge-pr-tree-and-ci",
+      "status": "STATIC_AND_OFFLINE_MOCK_CONFIRMED",
+      "evidence_ko": "새 candidate/merge full40 SHA·PR number·Pages ID·8 QA IDs·clean exact-merge checkout 필수. 실제 PR head==candidate/base official main/repository, GitHub+local 양쪽 candidate/merge tree 동일, main==merge, Pages exactSHA/workflow/SUCCESS와 deployment exactorigin/SUCCESS를 요구합니다. 8 QA 각각 exactcandidate/path/name/status 및 실제 required job SUCCESS를 확인합니다."
+    },
+    {
+      "id": "conditional-job-scope",
+      "status": "INDEPENDENT_OFFLINE_MOCK_CONFIRMED",
+      "evidence_ko": "현재 workflow 원 declared jobs/job명/조건을 검증하며 exam-study study와 representative revision은 반드시 SUCCESS입니다. 원 production if가 정확히 동일하고 event push/PR일 때만 production completed/SKIPPED를 허용합니다. 다른 skip/missing/unknown/duplicate/실패·조건변조/workflow_run을 validation으로 세는 것은 거부합니다. ROOT workflow나 gate 수정이 아닙니다."
+    },
+    {
+      "id": "premerge-raw-proof",
+      "status": "STATIC_AND_EPHEMERAL_SYNTHETIC_MOCK_CONFIRMED_NOT_OPERATIONAL_PROOF",
+      "evidence_ko": "root의 실제 schema에 맞는 --premerge-pr-proof를 필수화합니다. 공식 raw5 response를 SHA/URL/200/TLS·경로·UTC와 함께 재파싱하여 open/unmerged PR head/base/main, candidate/merge-ref tree, ref SHA/parents를 대조합니다. proof 관측시각은 QA 완료 이후·실제 merge 전이어야 합니다. 실제 운영 proof나 candidate 값을 이 리뷰에서 생성하지 않았습니다. 독립 temporary synthetic test 파일은 반환 전에 삭제됐습니다."
+    },
+    {
+      "id": "expected-published40-and-canonical-gets",
+      "status": "STATIC_CONFIRMED_RUNTIME_NOT_RUN",
+      "evidence_ko": "새 manifest exactsourcehead/tree/exit0 및 전체40 경로→SHA와 실제 expected-site 원바이트를 대조합니다. 미래 명시적 실행 때 external publisher를 다시 실행해 동일 bytes를 요구하고, canonical HTTPS40 GET을 initial/final 두번 검증합니다. query/fragment/cachebuster0, 기본 urllib TLS 검증 유지, 200·정확 finalURL·SHA 일치 필수. old14는 경로 membership일 뿐 oldresponse/PASS 재사용0입니다."
+    },
+    {
+      "id": "old-pr193-reuse",
+      "status": "STATIC_CONFIRMED",
+      "evidence_ko": "과거 PR193 실제 run/commit/QA/response/PASS 상수를 입력으로 읽는 경로가 없습니다. approved scope2349/2312/37/880/306/7086/36/890/default202/bank77은 task의 엄격한 기대값이며 candidate로 계산된 값과 비교합니다. BANK77 SHA는 의도된 원본 보존 계약이고 과거 PASS가 아닙니다."
+    },
+    {
+      "id": "all-five-original-browsers",
+      "status": "STATIC_AND_ADAPTER_IN_MEMORY_COMPILE_CONFIRMED_RUNTIME_NOT_RUN",
+      "evidence_ko": "현재 원5 scripts를 exact frozen checkout에서 실행하도록 구성합니다. public/representative/Q0012는 실제 origin --base-url을 사용합니다. notes/refresh adapter는 원 loopback선택 한블록만 교체하며 나머지 source 전체와 모든 Assert AST가 동일함을 독립 확인했습니다. 생성adapter 문자열도 독립 in-memory compile했습니다. expect/navigation/import/export/storage 분기는 삭제하지 않았으며 inline-preview를 금지합니다."
+    },
+    {
+      "id": "q0012-origin-storage",
+      "status": "STATIC_CONFIRMED_RUNTIME_NOT_RUN",
+      "evidence_ko": "원 Q0012 script의 browser.new_page 새 격리 context·실제 origin synthetic session/답안/score/contenthash·wrong/bookmarks/completed·reload/export/history 표시 assertions를 그대로 사용하고 status/base_url/head/보존결과를 요구합니다. 실제 사용자 profile이나 원 사용자 storage를 사용하지 않습니다."
+    },
+    {
+      "id": "n1-and-case0790",
+      "status": "STATIC_CONFIRMED_RUNTIME_NOT_RUN",
+      "evidence_ko": "N1 current bodyhash와 전체306 bodymap/current review·HOLD011/blocker/history를 candidate에 대조하고 실제 공개 payload equality, 보류 UI와 실제 daily lesson/card ID N1교집합0을 검사합니다. CASE0790 actual primary 법규HOLD/realismNOT_ASSESSED, supplementary styleFAIL와 legalKEEP, HOLD disposition/default 제외/previous_notices 및 published actualnotice equality를 확인합니다. 이것은 독립 법규 판정이나 보류 해제 기능이 아닙니다."
+    },
+    {
+      "id": "pending-main-and-production-credit",
+      "status": "INDEPENDENT_OFFLINE_FULL_API_MOCK_CONFIRMED",
+      "evidence_ko": "full api_snapshot 메서드의 API transport를 전부 목업하여 main run없음→PENDING, 필수job진행중→PENDING, 실제필수jobs모두완료→ALL_SUCCESS, 필수jobskip→FAILED를 확인했습니다. actual workflow_run production은 관측하되 final trigger/완료 credit0입니다. observation은 public software와 main status를 분리하고 overall_release_completion_asserted=False·production2 별도증거필요를 보존합니다. PENDING 상태의 helper exit0은 전체 release 성공을 뜻하지 않습니다."
+    },
+    {
+      "id": "credentials-and-official-api",
+      "status": "STATIC_CONFIRMED",
+      "evidence_ko": "gh api --hostname github.com --include --method GET만 사용하며 GH_DEBUG/DEBUG 환경을 제거합니다. credential을 직접 읽거나 argv/JSON에 기록하지 않고 요청 Authorization header를 출력하는 코드도 없습니다. raw stdout은 API response, stderr는 debug제거된 호출 결과입니다. Actions signed logs URL을 조회하지 않습니다. 실제 인증 호출을 이 리뷰에서 실행하지 않았습니다."
+    },
+    {
+      "id": "readonly-checkout-and-new-evidence",
+      "status": "STATIC_CONFIRMED_RUNTIME_NOT_RUN",
+      "evidence_ko": "checkout과 expected-site에 겹치지 않는 nonexisting 고유 evidence directory만 허용하며 overwrite를 거부합니다. source/head/clean status/script SHA를 실행 전후 점검합니다. verifier source/inputmanifest/API raw/HTTP raw/browserlogs+reports/sourcebound publisher 출력+hashmanifest가 모두 external evidence prefix 아래 기록됩니다. publisher/browser 자식 프로세스에 PYTHONDONTWRITEBYTECODE=1을 설정하여 원 checkout pycache 생성을 방지합니다. helper 자체는 ROOT/native/ledger/CI mutation 명령을 포함하지 않습니다."
+    }
+  ],
+  "independent_mock_evidence": {
+    "path": "/workspace/scratch/final306-public-verifier-peer-mock-receipt.json",
+    "raw_sha256": "8c351f1bd418e7c2e0ae7f0ac0a4239312c9bb937cb17d3c05ef55eccb669edf",
+    "bytes": 28131
+  },
+  "independent_mock_case_count": 139,
+  "author_evidence": [
+    {
+      "path": "/workspace/scratch/final306-public-verifier-review.json",
+      "raw_sha256": "950a8ae6ef6e7f6ab9b34435206e6713f650160eb541c3495d962f1565bf84f1",
+      "bytes": 11205
+    },
+    {
+      "path": "/workspace/scratch/final306-public-verifier-review-v2.json",
+      "raw_sha256": "8f91ff0a9300a8ab350694f33ff2ba8fcd674090bf25849b2080906f91eb7607",
+      "bytes": 12393
+    },
+    {
+      "path": "/workspace/scratch/final306-public-verifier-job-regression-receipt.json",
+      "raw_sha256": "bc9b2c8a155324dfb773649c26aa6e3c81701f9cb13fbc297808901f1e86c5b8",
+      "bytes": 17658
+    }
+  ],
+  "initial_independent_findings_and_adapter_proof": {
+    "path": "/workspace/scratch/final306-public-verifier-initial-peer-static-evidence.json",
+    "raw_sha256": "465000f7bc6ad3a8a1e115a393a7dff786d45610d4db09bb6cf167bf3f703090",
+    "bytes": 2449
+  },
+  "current_source_script_workflow_rawsha": [
+    {
+      "path": "scripts/verify_public_practice.py",
+      "raw_sha256": "6663176fca32812f0f9f553f4d8b5732e874269c8fa0c8704dc020343ddee6d5"
+    },
+    {
+      "path": "scripts/verify_notes_browser.py",
+      "raw_sha256": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1"
+    },
+    {
+      "path": "scripts/verify_refresh_browser.py",
+      "raw_sha256": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d"
+    },
+    {
+      "path": "scripts/verify_q0012_withdrawal_browser.py",
+      "raw_sha256": "9d4c1bf42a1a1102388b8e2d3de2eacfd5bd16bf55b9b2d8c1938d5a6d519d11"
+    },
+    {
+      "path": "scripts/verify_representative_rewrites.py",
+      "raw_sha256": "0c6f5477edfa75de3b0a15930d1ff413d2abb3d11ef6bdca568183efef9da70c"
+    },
+    {
+      "path": ".github/workflows/exam-study-qa.yml",
+      "raw_sha256": "f8ef08fbdca08eafdbf8cd4d3072565a72546f4ae0366a63c4d38a297727575a"
+    },
+    {
+      "path": ".github/workflows/representative-quality-qa.yml",
+      "raw_sha256": "76f0971490e1e358a0e4a85e11b29d7a99a20c84f253e25f93d5946f41b876aa"
+    }
+  ],
+  "runtime_limits_ko": [
+    "실제 candidate/merge/새PR/Pages/8QA/premerge proof/40asset 결과는 아직 이 리뷰에 존재하지 않습니다. 가상 운영 proof를 만들거나 미리 PASS를 작성하지 않았습니다.",
+    "TLS/redirect/cache/browser/platform 동작은 실제 실행 전에는 확인되지 않았습니다. 현재 139 local synthetic metadata 사례와 syntax/AST 검토는 새 후보 QA나 실제 공개 검증이 아닙니다.",
+    "이 helper 단독으로 전체 출시 완료를 선언하지 않습니다. root가 실제 main9workflow 및 정확한 Pages-triggered production2 job 성공을 별도 증거로 결박해야 합니다.",
+    "실제 후보/문서/스크립트/파일membership이 달라져 helper가 중단하면 실패를 보존하고 새 범위를 검토합니다. 기존 assertion·보호 규칙을 약화하지 않습니다.",
+    "Chromium headless viewport 검사는 물리기기/Safari/공식시험난도 또는 법규 PASS를 증명하지 않습니다."
+  ],
+  "actual_execution_counts_by_peer": {
+    "network_requests": 0,
+    "browsers": 0,
+    "publisher_runs": 0,
+    "candidate_QA_or_release_checks": 0,
+    "ROOT_mutations": 0,
+    "helper_mutations": 0,
+    "operational_premerge_proofs_created": 0,
+    "offline_synthetic_metadata_cases": 139
+  },
+  "new_candidate_QA_credit": 0,
+  "legal_or_canonical_release_credit": 0,
+  "overall_release_completion_asserted": false
+}

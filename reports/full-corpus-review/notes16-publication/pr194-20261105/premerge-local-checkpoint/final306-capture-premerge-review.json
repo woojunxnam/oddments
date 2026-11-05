@@ -1,0 +1,98 @@
+{
+  "schema": "final306-capture-premerge-preparation-review/1",
+  "reviewed_at_utc": "2026-11-05T03:31:33.098296+00:00",
+  "author_actor": "/root/remaining9_contract_engineering",
+  "helper_path": "/workspace/scratch/final306_capture_premerge.py",
+  "helper_sha256": "abf47ea842ad370006e134a7a2aa90a654ba820448b1cfb34ef5f795f38ec8b8",
+  "helper_mode_octal": "0o700",
+  "decision": "IMPLEMENTED_SYNTAX_CLI_AND_OFFLINE_SCHEMA_VERIFIED_ACTUAL_CAPTURE_NOT_RUN",
+  "required_CLI": {
+    "candidate_sha": "actual lowercase full40 commit SHA",
+    "pr_number": "actual positive integer",
+    "output_new_dir": "nonexisting external directory outside every Git checkout"
+  },
+  "actual_candidate_or_future_PR_hardcoded": false,
+  "compatible_reader": {
+    "path": "/workspace/scratch/final306_public_verifier.py",
+    "raw_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+    "function": "load_premerge_proof",
+    "reuse_ko": "해당 승인 source SHA를 검증한 뒤 action 없는 module namespace로 읽어 기존 reader를 그대로 호출합니다. 새 schema/판정 규칙을 별도로 복제해 완화하지 않습니다."
+  },
+  "actual_future_execution_contract_ko": [
+    "root가 최종 후보의 모든 실제 QA가 끝난 뒤에만 실행합니다. helper 자체는 QA완료·병합·배포를 수행하거나 완료로 인증하지 않습니다. 기존 public verifier는 실제 QA job 완료시각과 retained proof시각을 다시 대조합니다.",
+    "원5GET: pulls/N, commits/main, commits/candidate, git/ref/pull/N/merge, commits/실제refSHA. 이후 final PR/main 2GET을 추가하여 실제 head/base/state/main SHA/tree가 캡처 중 변하지 않았는지 확인합니다.",
+    "실제 PR는 open/unmerged·exactcandidate head·official repository main base여야 합니다. 원main.sha==base.sha, candidate/refcommit tree동일, merge-ref SHA/type/identity 및 정확한 두 parent candidate+base를 확인합니다.",
+    "원HTTP와 원응답body를 별도 파일로 저장하고 명령·실제exit/status·UTC·rawSHA·bodySHA를 requestreceipt에 기록합니다. wrapper필드는 root합의schema_version1/purpose/repository/PR/candidate/tree/base/ref/refTree/observed 및 다섯 relativepath/rawSHA/officialURL/200/TLS/retrieved binding입니다.",
+    "7GET과 stability검증을 마친 후에만 premerge-proof.json을 저장하고 기존 load_premerge_proof로 원5response를 다시 검증합니다. 성공receipt는 sourceproof만 의미하며 QA/법규/merge/release credit0입니다.",
+    "각 실패분기는 이미 수집된 rawHTTP/body/receipt+failure.json+artifactSHA를 보존합니다. 잘못된 조건·200partial timeout도 성공receipt나 wrapper를 만들지 않습니다. 기존dir/타Git checkout 출력은 쓰기 전에 거부합니다.",
+    "모든 gh호출은 --hostname github.com --include --method GET입니다. alternate GH_HOST/socket/insecureenv를 거부하며 debugenv를 제거합니다. credentials는 정상gh인증으로만 상속하고 argv·env·Authorization header를 출력하지 않습니다. stderr는 전체내용대신 SHA/길이만 저장합니다.",
+    "출력은 새external prefix뿐이며 source code사본·입력·rawHTTP/body·receipt·stability·wrapper·success/failure·artifactmanifest를 보존합니다. ROOT/CI/native/source/기존evidence overwrite 명령은 없습니다. source/validator SHA가 중간변경되면 중단합니다."
+  ],
+  "test_receipt": {
+    "path": "/workspace/scratch/final306-capture-premerge-test-receipt.json",
+    "raw_sha256": "13e674cd5e91d32b0ed689fb0fe81a11c98f22cf5fc7efffa8f2b946f28de581",
+    "offline_synthetic_cases": 24,
+    "CLI_cases": 4,
+    "syntax_compile_in_memory": true,
+    "schema_compatibility_positive": "기존 exact reader를 synthetic 7GET 임시capture 결과에 실제 호출해 성공; 테스트dir은 즉시삭제",
+    "negative_cases": [
+      "head변경",
+      "이미merged",
+      "base다른repo",
+      "main변경",
+      "candidatecommit변경",
+      "refidentity/type",
+      "merge-reftree변경",
+      "parent누락",
+      "종료head/base/main변경",
+      "HTTP404",
+      "invalidJSON",
+      "부분200timeout",
+      "alternatehost/socket/insecureTLSenv",
+      "기존output/Gitcheckoutoutput",
+      "stderr credentialmarker 미보존"
+    ]
+  },
+  "independent_peer_review": {
+    "actor": "/root/queue_lease_recovery",
+    "status": "ACCEPTED_STATIC_AND_PURE_SYNTHETIC_ONLY_NOT_ACTUAL_CAPTURE",
+    "path": "/workspace/scratch/final306-capture-premerge-independent-review.json",
+    "raw_sha256": "3ffe547e8c3e53db13f23bd9b0629ee2f801e18d707a303ba7622cb8d741ff9a",
+    "independent_in_memory_cases": 29,
+    "blocking_findings": 0,
+    "helper_changed_by_peer": false,
+    "real_API_browser_publisher_or_ROOT_mutation": 0
+  },
+  "future_argv_template": [
+    "python",
+    "/workspace/scratch/final306_capture_premerge.py",
+    "--candidate-sha",
+    "<ACTUAL_FINAL_TESTED_FULL40_SHA>",
+    "--pr-number",
+    "<ACTUAL_NEW_OPEN_PR_NUMBER>",
+    "--output-new-dir",
+    "<NEW_EXTERNAL_NONEXISTING_PREMERGE_EVIDENCE_DIR>"
+  ],
+  "future_success_output_files": [
+    "premerge-proof.json",
+    "capture-receipt.json",
+    "stability-receipt.json",
+    "artifact-sha256.json",
+    "executed-capture-source.py",
+    "inputs.json",
+    "api/*http.raw",
+    "api/*response.raw.json",
+    "api/*receipt.json"
+  ],
+  "actual_execution_counts": {
+    "real_API_requests": 0,
+    "browsers": 0,
+    "publisher_runs": 0,
+    "candidate_QA_or_release_checks": 0,
+    "ROOT_changes": 0,
+    "native_CI_or_GitHub_mutations": 0,
+    "operational_premerge_proofs_created": 0
+  },
+  "new_candidate_QA_or_legal_or_canonical_release_credit": 0,
+  "no_new_permission_flow_added": true
+}

@@ -1,0 +1,178 @@
+{
+  "purpose": "INDEPENDENT_STATIC_CAPTURE_HELPER_PEER_REVIEW_NOT_ACTUAL_PREMERGE_CAPTURE",
+  "observed_at": "2026-11-05T03:31:09.861120+00:00",
+  "source_path": "/workspace/scratch/final306_capture_premerge.py",
+  "source_sha256": "abf47ea842ad370006e134a7a2aa90a654ba820448b1cfb34ef5f795f38ec8b8",
+  "verdict": "ACCEPT_SOURCE_WITH_EXECUTION_DEFERRED",
+  "review_method": [
+    "Independent full source read",
+    "AST parse and inert module import; no Capture/main/run/get invocation",
+    "Pure in-memory synthetic metadata/parser/environment cases only",
+    "Approved a0e compatibility reader SHA/callable verified without loading any operational proof"
+  ],
+  "synthetic_cases": 29,
+  "cases": [
+    {
+      "case": "synthetic exact initial head/base/tree/parents",
+      "outcome": "EXPECTED_ACCEPTANCE"
+    },
+    {
+      "case": "synthetic wrong PR head",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic foreign base repository",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic wrong base branch",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic closed PR",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic already merged PR",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic different main SHA",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic wrong candidate SHA",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic different merge tree",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic wrong ref number",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic ref not commit",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic wrong ref commit SHA",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic missing merge parent",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic duplicate merge parents",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic third merge parent",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic stable ending responses",
+      "outcome": "EXPECTED_ACCEPTANCE"
+    },
+    {
+      "case": "ending head moved",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "ending main tree moved",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic HTTP200",
+      "outcome": "EXPECTED_ACCEPTANCE"
+    },
+    {
+      "case": "synthetic HTTP302",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic HTTP401",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic HTTP500",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "HTTP JSON array rejected",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic forbidden environment GH_HOST",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic forbidden environment GH_HTTP_UNIX_SOCKET",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic forbidden environment GH_INSECURE",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic forbidden environment GITHUB_INSECURE",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic forbidden environment GIT_SSL_NO_VERIFY",
+      "outcome": "EXPECTED_REJECTION",
+      "error_type": "ValueError"
+    },
+    {
+      "case": "synthetic debug removed/auth inherited without serialization",
+      "outcome": "EXPECTED_ACCEPTANCE"
+    }
+  ],
+  "source_findings": {
+    "only_official_GET": true,
+    "all_7_actual_responses_required_before_source_proof": true,
+    "first5_raw_body_SHA_and_status_values_rechecked_by_approved_reader": true,
+    "exact_candidate_mainbase_merge_ref_tree_two_parents_required": true,
+    "ending_open_PR_head_base_and_main_SHA_tree_changes_rejected": true,
+    "new_external_output_and_no_overwrite": true,
+    "debug_and_stderr_content_not_persisted": true,
+    "raw_non200_timeout_failure_evidence_retained_NO_PASS": true,
+    "source_proof_not_candidate_QA_or_merge_or_deployment_certificate": true
+  },
+  "blocking_findings": [],
+  "operational_capture_API_requests": 0,
+  "current_public_GET_browser_publisher_or_QA_executions": 0,
+  "ROOT_or_helper_mutations": 0,
+  "operational_or_placeholder_premerge_proof_generated": false,
+  "future_success_or_release_credit": 0,
+  "limitations": [
+    "These synthetic pure-function checks are not actual API/proof capture or candidate CI.",
+    "Full actual QA must finish before root invokes operational helper; all real timestamps/HTTP/refs derive from that future capture."
+  ]
+}

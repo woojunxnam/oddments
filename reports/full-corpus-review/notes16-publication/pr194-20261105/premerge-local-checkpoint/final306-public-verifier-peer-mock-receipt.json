@@ -1,0 +1,845 @@
+{
+  "purpose": "INDEPENDENT_OFFLINE_PURE_METADATA_MOCKS_NO_OPERATIONAL_PROOF_OR_QA",
+  "reviewed_at_utc": "2026-11-05T02:31:54.437737+00:00",
+  "helper_raw_sha256": "a0e0b737a97289ecd41273c47f7ca02740feb3053087d89023e0432aec184c6d",
+  "case_count": 139,
+  "cases": [
+    {
+      "case": "qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: validate"
+    },
+    {
+      "case": "qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "practice-quality-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "practice-quality-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "practice-quality-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: quality"
+    },
+    {
+      "case": "practice-quality-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "practice-quality-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-quality-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-quality-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "practice-quality-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "practice-quality-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "practice-quality-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "representative-quality-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "representative-quality-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "representative-quality-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: revision"
+    },
+    {
+      "case": "representative-quality-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "representative-quality-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "representative-quality-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "representative-quality-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "representative-quality-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "representative-quality-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "representative-quality-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "representative-quality-qa.yml false-if production success",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "representative-quality-qa.yml false-if production failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "representative-quality-qa.yml false-if production cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "representative-quality-qa.yml missing conditional job on completed run",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "representative-quality-qa.yml altered production condition",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Exact conditional production source changed"
+    },
+    {
+      "case": "representative-quality-qa.yml production not yet materialized main pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "notes-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "notes-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "notes-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: notes"
+    },
+    {
+      "case": "notes-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "notes-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "notes-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "notes-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "notes-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "notes-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "notes-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "refresh-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "refresh-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "refresh-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: refresh"
+    },
+    {
+      "case": "refresh-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "refresh-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "refresh-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "refresh-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "refresh-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "refresh-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "refresh-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "exam-study-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "exam-study-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "exam-study-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: study"
+    },
+    {
+      "case": "exam-study-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "exam-study-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "exam-study-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "exam-study-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "exam-study-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "exam-study-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "exam-study-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "exam-study-qa.yml false-if production success",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "exam-study-qa.yml false-if production failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "exam-study-qa.yml false-if production cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Only exact false-if production SKIPPED is allowed on push/PR"
+    },
+    {
+      "case": "exam-study-qa.yml missing conditional job on completed run",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "exam-study-qa.yml altered production condition",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Exact conditional production source changed"
+    },
+    {
+      "case": "exam-study-qa.yml production not yet materialized main pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "public-practice-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "public-practice-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "public-practice-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: public-practice"
+    },
+    {
+      "case": "public-practice-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "public-practice-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "public-practice-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "public-practice-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "public-practice-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "public-practice-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "public-practice-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "practice-expansion-qa.yml normal push",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "practice-expansion-qa.yml normal pull_request",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "SUCCESS"
+    },
+    {
+      "case": "practice-expansion-qa.yml required skipped",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml required failure",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml required cancelled",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml required neutral",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job failed/cancelled/skipped: draft"
+    },
+    {
+      "case": "practice-expansion-qa.yml missing required",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Required validation job missing"
+    },
+    {
+      "case": "practice-expansion-qa.yml unknown job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-expansion-qa.yml duplicate job",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unknown or duplicate validation job"
+    },
+    {
+      "case": "practice-expansion-qa.yml production workflow_run as validation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Validation run must be actual push or pull_request"
+    },
+    {
+      "case": "practice-expansion-qa.yml empty main job list pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "practice-expansion-qa.yml required in_progress pending",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "PENDING"
+    },
+    {
+      "case": "practice-expansion-qa.yml changed declared jobs",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Declared workflow jobs changed"
+    },
+    {
+      "case": "actual merged PR binding positive",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": null
+    },
+    {
+      "case": "head mismatch",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual merged PR head is not tested candidate"
+    },
+    {
+      "case": "base branch",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual PR base is not exact official main"
+    },
+    {
+      "case": "base repository",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual PR base is not exact official main"
+    },
+    {
+      "case": "merge mismatch",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual PR merge mismatch"
+    },
+    {
+      "case": "wrong PR",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual PR merge mismatch"
+    },
+    {
+      "case": "not merged",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual PR merge mismatch"
+    },
+    {
+      "case": "ephemeral synthetic proof shape positive not operational",
+      "result": "EXPECTED_ACCEPTANCE",
+      "value": "validated"
+    },
+    {
+      "case": "proof wrong raw SHA",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Original API raw SHA mismatch: pull"
+    },
+    {
+      "case": "proof wrong official URL",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Exact official actual200/TLS API binding required"
+    },
+    {
+      "case": "proof non200",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Exact official actual200/TLS API binding required"
+    },
+    {
+      "case": "proof TLS false",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Exact official actual200/TLS API binding required"
+    },
+    {
+      "case": "proof traversal",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unsafe raw API path"
+    },
+    {
+      "case": "proof absolute path",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Unsafe raw API path"
+    },
+    {
+      "case": "future observation",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Premerge proof claims a future observation"
+    },
+    {
+      "case": "rehash cannot bypass raw current head changed",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Retained raw PR was not actual open premerge candidate"
+    },
+    {
+      "case": "rehash cannot bypass already merged raw PR",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Retained raw PR was not actual open premerge candidate"
+    },
+    {
+      "case": "rehash cannot bypass raw merge tree changed",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual raw candidate and PR merge-ref trees differ"
+    },
+    {
+      "case": "rehash cannot bypass missing raw base parent",
+      "result": "EXPECTED_REJECTION",
+      "error_type": "ValueError",
+      "error": "Actual raw PR merge parents do not include candidate and base"
+    }
+  ],
+  "origin_adapters": {
+    "verify_notes_browser.py": {
+      "original_sha256": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1",
+      "adapted_sha256": "9bdac52c731026eac2817b2b0fc5459f5917f8a6d44a58db97624741aa2eadc7",
+      "removed_selection": "    if not args.inline_preview:\n        class Handler(http.server.SimpleHTTPRequestHandler):\n            def log_message(self,*args):pass\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(SITE)))\n        threading.Thread(target=server.serve_forever,daemon=True).start()\n        base=f'http://127.0.0.1:{server.server_port}/'\n    else:base=''",
+      "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+      "all_assert_AST_identical": true,
+      "origin": "https://woojunxnam.github.io/oddments/",
+      "isolated_context": true,
+      "real_user_profile_used": false,
+      "assert_count": 22,
+      "inline_preview_used": false,
+      "all_other_source_exact": true
+    },
+    "verify_refresh_browser.py": {
+      "original_sha256": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d",
+      "adapted_sha256": "e4f7409260511870f2c821e0ba646b9d4389b77db05b69207c624e80fd1adb4c",
+      "removed_selection": "    if not a.inline_preview:\n        server=http.server.ThreadingHTTPServer(('127.0.0.1',0),partial(Handler,directory=str(a.site)))\n        threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'\n    else:base='https://refresh-preview.invalid/'",
+      "replacement": "    base='https://woojunxnam.github.io/oddments/'",
+      "all_assert_AST_identical": true,
+      "origin": "https://woojunxnam.github.io/oddments/",
+      "isolated_context": true,
+      "real_user_profile_used": false,
+      "assert_count": 19,
+      "inline_preview_used": false,
+      "all_other_source_exact": true
+    }
+  },
+  "generated_adapter_syntax_in_memory": true,
+  "syntax_in_memory": true,
+  "ephemeral_synthetic_files_cleaned_up": true,
+  "actual_network_requests": 0,
+  "browsers": 0,
+  "publisher_runs": 0,
+  "root_mutations": 0,
+  "new_candidate_QA_credit": 0,
+  "independent_full_api_snapshot_offline_cases": [
+    {
+      "case": "no_main_runs",
+      "expected": "PENDING",
+      "actual": "PENDING",
+      "final_production_credit": 0
+    },
+    {
+      "case": "required_running",
+      "expected": "PENDING",
+      "actual": "PENDING",
+      "final_production_credit": 0
+    },
+    {
+      "case": "all_required_completed",
+      "expected": "ALL_SUCCESS",
+      "actual": "ALL_SUCCESS",
+      "final_production_credit": 0
+    },
+    {
+      "case": "required_skipped",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "final_production_credit": 0
+    }
+  ],
+  "all_API_calls_mocked_no_real_transport": true
+}
