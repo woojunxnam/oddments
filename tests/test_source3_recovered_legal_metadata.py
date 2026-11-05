@@ -591,5 +591,3 @@ def test_actual_legal_negative_needs_its_new_source_and_default_exclusion(data):
     notice['review_source']=PARENT
     with pytest.raises(ValueError):
         route.validate_archived_legal_sources({'recommended_ids':[],'archive_review_notices':[notice]},r)
-
-
