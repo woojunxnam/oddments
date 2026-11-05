@@ -1,0 +1,50 @@
+{
+  "status": "INDEPENDENT_CODE_REVIEW_COMPLETE_ONE_BOUNDED_READER_FINDING",
+  "reviewed_commit": "9f2f4551392fc45305b563bfdc38eff5f83f67bd",
+  "reviewed_four_file_sha256": {
+    "scripts/canonical_successor.py": "eabdd3e21c767be5654638db36bf4698fc77545726a427abdcefb94aa87b3bfc",
+    "scripts/qa_common.py": "47d0bfb6a571a78fc7747729bd143a740c95d45b7ab8f7f0c14d475f341a100c",
+    "tests/test_canonical_successor_infrastructure.py": "aafa8af41fce95971a80c607d84332fed4224a88b25e95e8becf2cf993ed25c4",
+    "docs/CANONICAL_SUCCESSOR_INFRASTRUCTURE.md": "7c9168703c46140173603f7c16786f0011ad22a292284d53646d37507dcc7b78"
+  },
+  "all_four_files_read_in_full": true,
+  "source_author_is_reviewer": false,
+  "actual_focused_tests": {
+    "count": 58,
+    "passed": 58,
+    "seconds": 4.95,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /workspace/mpje-ci-checks-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_canonical_successor_infrastructure.py tests/test_content_hashes.py tests/test_duplicates.py tests/test_question_validation.py --basetemp /workspace/scratch/coverage336-successor-independent-code-review/focused58-temp",
+    "cwd": "/workspace/mpje-336-successor",
+    "raw_log": "focused58.log"
+  },
+  "earlier_subset_tests": {
+    "count": 40,
+    "passed": 40,
+    "seconds": 0.62,
+    "raw_log": "focused40.log"
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "P2",
+      "title": "Committed preimage reader accepts symlink blobs as regular source bytes",
+      "file": "scripts/canonical_successor.py",
+      "line": 114,
+      "evidence": "committed-symlink-reader-probe.json",
+      "observed": "Git tree mode120000 linked.json resolves to a blob. The reader checks blob type and raw object SHA but not its tree mode, so returns link-target text actual.json. The filesystem reader rejects that same symlink.",
+      "effect": "Breaks the documented regular-source/symlink-rejection reader contract. It does not enable admission, approval, legacy replay or release in this inactive version. Caller-trusted immutable commit selection remains a separate documented requirement.",
+      "recommendation": "Resolve each exact tree path and require mode100644 or100755 with blob type. Bind returned batch OID/size to that tree entry; reject final/intermediate symlink, directory and gitlink fixtures. Keep this as a separate reviewed hardening change.",
+      "status": "REPRODUCED_NOT_FIXED_BY_REVIEWER"
+    }
+  ],
+  "activation_boundary": "Unconditionally inactive. Enrollment file or symlink is rejected, arbitrary approval/replay keyword claims cannot activate. No dispatcher or promotion API is introduced.",
+  "caller_seal_boundary": "Caller-supplied anchor/Seal maps are boundary comparison inputs and are not authenticated approval. trusted_output_seals exact inventory and SHA bind before outputs; same forged content.js before/after without matching trusted map is rejected. Even a caller-created map cannot produce activation, approval or actual legacy execution credit.",
+  "legacy_preservation": "Existing guard/producer source unchanged and no legacy script imports successor. 439 canonical,397 RELEASED,16 delivery holds retained; all439 old/new audit hashes identical, all397 public hashes match.",
+  "unicode_review": "ASCII fast path and numeric masking compatibility tested in both modes on402 inputs; NFC preserves Hangul and composed/decomposed equivalents; distinct Korean legal meanings stay distinct and identical duplicate strings remain equal. Hash field lists and canonicalize/hash implementations are unchanged.",
+  "scope_limit": "Not an admission implementation or native audit. No whole validator/full pytest/generation/1781 replay repeated. The engineer separately reported1781 PASS; this review does not claim that run as its own.",
+  "sealed_f877_tool_artifact_files_preserved": 17,
+  "reviewer_source_edits": 0,
+  "new_canonical_or_drug_or_rule_or_audit_records": 0,
+  "approval_admission_RELEASED_CI_production_credit": 0,
+  "source_hashes_stable_after_tests": true
+}

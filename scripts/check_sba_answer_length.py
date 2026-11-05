@@ -86,7 +86,13 @@ def analyze_sba_answer_length(
     questions: list[dict[str, Any]] | None = None,
     *,
     require_prospective_sample: bool = False,
+    admission_context=None,
 ) -> tuple[dict[str, Any], bool]:
+    if admission_context is not None:
+        from canonical_admission import require_context
+        context = require_context(admission_context, native=False)
+        if context.root != DATA.parent.resolve():
+            raise ValueError("SBA measurement admission context/root mismatch")
     records = questions if questions is not None else [record for _, record in load_records(DATA / "questions")]
     baseline = [
         question
@@ -105,9 +111,13 @@ def analyze_sba_answer_length(
 
         root = DATA.parent
         try:
-            preimages = validate(root)
-            if digest(candidates[0]) == digest(json.loads(read(root, QUESTION))):
-                withdrawn.append(json.loads(preimages[QUESTION]))
+            if admission_context is None:
+                preimages = validate(root)
+                if digest(candidates[0]) == digest(json.loads(read(root, QUESTION))):
+                    withdrawn.append(json.loads(preimages[QUESTION]))
+            else:
+                from canonical_admission import historical_sba_withdrawal
+                withdrawn.append(historical_sba_withdrawal(admission_context, candidates[0]))
         except (ValueError, OSError, KeyError):
             # The unchanged 230-item integrity gate below must fail closed.
             pass

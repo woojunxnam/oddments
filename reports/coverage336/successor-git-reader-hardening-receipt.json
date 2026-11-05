@@ -1,0 +1,129 @@
+{
+  "purpose": "INACTIVE_SUCCESSOR_GIT_REGULAR_FILE_READER_HARDENING_NOT_ADMISSION",
+  "source_base_commit": "2880a4537137d90a6bb6a300bdecb955fab415fd",
+  "previous_local_infrastructure_commit": "9f2f4551392fc45305b563bfdc38eff5f83f67bd",
+  "previous_execution_receipt_path": "reports/coverage336/successor-infrastructure-receipt.json",
+  "previous_execution_receipt_sha256": "3a5807ab7e37cce19d0a2dc73573b0b8ce961d55b130460b349bfeb878572b7e",
+  "reviewer_session": "/root/coverage336_existing_matches",
+  "source_author_is_reviewer": false,
+  "previous_actual_review": {
+    "tests_passed": 58,
+    "finding": "P2/R1 committed mode120000 symlink blob accepted; not an activation bypass",
+    "retained_unchanged": true,
+    "report": "reports/coverage336/successor-independent-code-review/original/review-results.json"
+  },
+  "hardening": {
+    "function": "read_committed_preimages",
+    "allowed_Git_tree_modes": [
+      "100644",
+      "100755"
+    ],
+    "required_tree_object_type": "blob",
+    "exact_literal_tree_path_inventory": true,
+    "batch_OID_must_equal_tree_OID": true,
+    "raw_object_SHA_integrity_check_retained": true,
+    "rejected": [
+      "final symlink120000",
+      "intermediate symlink",
+      "directory tree",
+      "gitlink160000"
+    ],
+    "accepted_regressions": [
+      "regular file",
+      "executable source",
+      "nested path",
+      "literal bracket path",
+      "Unicode path"
+    ]
+  },
+  "reviewed_current_four_file_sha256": {
+    "scripts/canonical_successor.py": "997de5224a3812ac0495f75b82483f60656b331ed603845599608f1f64ec1c84",
+    "scripts/qa_common.py": "47d0bfb6a571a78fc7747729bd143a740c95d45b7ab8f7f0c14d475f341a100c",
+    "tests/test_canonical_successor_infrastructure.py": "f2e8bcfc58de3b5c7b19b9565ec28952fe32beed45a3775eae0f84721bba0f1c",
+    "docs/CANONICAL_SUCCESSOR_INFRASTRUCTURE.md": "9b221fb505e0692c3bb4189f7f33379e0e1c4cb89226c71b225ecda8841e8b23"
+  },
+  "actual_author_focused_tests": {
+    "command": "/workspace/mpje-ci-checks-venv/bin/python -m pytest -q tests/test_canonical_successor_infrastructure.py tests/test_content_hashes.py tests/test_duplicates.py tests/test_question_validation.py",
+    "count": 63,
+    "passed": 63,
+    "seconds": 4.93,
+    "stdout_sha256": "7a9a4426fe4ed2dececeaddac16a3403c6af1080338c428c086c1a54f350e53a"
+  },
+  "actual_independent_current_hash_review": {
+    "report": "reports/coverage336/successor-independent-code-review/mode-hardening/review-addendum.json",
+    "report_sha256": "ca09077057be73a0ae3e71c6b66dd476c131692a20cabd39473b2dfecd0058c5",
+    "tests_passed": 63,
+    "seconds": 4.99,
+    "P2_R1": "RESOLVED_AT_EXACT_CURRENT_HASH",
+    "new_findings": 0,
+    "independent_actual_Git_positive_paths": 7,
+    "independent_actual_unsafe_paths_rejected": 4,
+    "valid_other_blob_mock_response_rejected_by_tree_OID": true,
+    "mock_is_not_legacy_replay": true
+  },
+  "evidence_copies_exact_bytes": {
+    "reports/coverage336/successor-independent-code-review/original/review-results.json": {
+      "sha256": "4618c8314cbdd23f3cf88c413f5bb75ff5d1e44a31e7fcee1fef2561cff3e1b2",
+      "bytes": 4030
+    },
+    "reports/coverage336/successor-independent-code-review/original/findings.json": {
+      "sha256": "4fe7b997bc00426a753122c9812acebf7d5dc42aa5e64433c943416f9a3d8f78",
+      "bytes": 1070
+    },
+    "reports/coverage336/successor-independent-code-review/original/committed-symlink-reader-probe.json": {
+      "sha256": "0c8b5580335ed45f3382931ac0dd170ffb28c1bc935055eb607f0963f2257d17",
+      "bytes": 685
+    },
+    "reports/coverage336/successor-independent-code-review/original/focused58.log": {
+      "sha256": "9d63a9cfbc6c407e5f37f23464185e4b0f6df60fb8c68a8a8c030bf13cb965c8",
+      "bytes": 99
+    },
+    "reports/coverage336/successor-independent-code-review/original/focused40.log": {
+      "sha256": "360066524deb5db5c96b632c2d1e6dc55ad954c35a19c1f21f33c7ad4f81db10",
+      "bytes": 99
+    },
+    "reports/coverage336/successor-independent-code-review/mode-hardening/review-addendum.json": {
+      "sha256": "ca09077057be73a0ae3e71c6b66dd476c131692a20cabd39473b2dfecd0058c5",
+      "bytes": 2555
+    },
+    "reports/coverage336/successor-independent-code-review/mode-hardening/independent-reader-probes.json": {
+      "sha256": "f3349bca83deee721c35d72f2b30462c7a1105581f2f11fd9e353c98a54cb233",
+      "bytes": 1986
+    },
+    "reports/coverage336/successor-independent-code-review/mode-hardening/focused63.log": {
+      "sha256": "8cf1a3df77c9c007e2f2d48b9ec9a1ba066d9ca6333785612547ce2523955f99",
+      "bytes": 99
+    }
+  },
+  "original1781_protection": {
+    "previous_single_actual_run": "PASS",
+    "verified_files": 1781,
+    "verified_bytes": 60969461,
+    "original_baseline_commit": "b5bd6b02c7ea8a5c6731871fa6e330ac6795fd36",
+    "repeat_runs_for_this_hardening": 0,
+    "scope": "Existing original1781 verifier on2880 source base; existing notes15/16 historical path. Not new canonical successor replay."
+  },
+  "preserved_state": {
+    "original439_ID_body_key_history_status": 439,
+    "original_RELEASED_membership": 397,
+    "quarantine": [
+      "MA-Q-0012",
+      "MA-Q-0028"
+    ],
+    "delivery_holds": 16,
+    "notes_units": 306,
+    "atomic_claims": 7086,
+    "data_notes_schemas_site_and_old_guard_producer_diff_from2880": 0,
+    "qa_common_sha256_unchanged_from_previous_review": "47d0bfb6a571a78fc7747729bd143a740c95d45b7ab8f7f0c14d475f341a100c"
+  },
+  "current_UI_f877_CI_credit": 0,
+  "UI_f877_pytest_config_not_imported_or_rebased": true,
+  "whole_pytest_artifact_write_generation_GitHub_CI_push_PR_deployment": 0,
+  "new_canonical_rule_drug_audit_records": 0,
+  "approval_admission_legal_realism_RELEASED_note_PASS_credit": 0,
+  "activation_allowed": false,
+  "legacy_dispatch_unchanged": true,
+  "caller_trusted_commit_scope_Seal_map_authentication_still_external": true,
+  "remaining": "Actual canonical admission remains blocked pending exact approved content/dependency delta, native current-hash nonauthor audits/adjudication, authenticated enrollment, source-only context/replay/producer/coverage integration and full candidate QA.",
+  "commit_self_reference_excluded": true
+}

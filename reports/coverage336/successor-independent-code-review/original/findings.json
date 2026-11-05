@@ -1,0 +1,14 @@
+[
+  {
+    "id": "R1",
+    "severity": "P2",
+    "title": "Committed preimage reader accepts symlink blobs as regular source bytes",
+    "file": "scripts/canonical_successor.py",
+    "line": 114,
+    "evidence": "committed-symlink-reader-probe.json",
+    "observed": "Git tree mode120000 linked.json resolves to a blob. The reader checks blob type and raw object SHA but not its tree mode, so returns link-target text actual.json. The filesystem reader rejects that same symlink.",
+    "effect": "Breaks the documented regular-source/symlink-rejection reader contract. It does not enable admission, approval, legacy replay or release in this inactive version. Caller-trusted immutable commit selection remains a separate documented requirement.",
+    "recommendation": "Resolve each exact tree path and require mode100644 or100755 with blob type. Bind returned batch OID/size to that tree entry; reject final/intermediate symlink, directory and gitlink fixtures. Keep this as a separate reviewed hardening change.",
+    "status": "REPRODUCED_NOT_FIXED_BY_REVIEWER"
+  }
+]

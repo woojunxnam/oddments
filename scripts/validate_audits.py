@@ -28,6 +28,37 @@ TARGETED_INITIAL_BATCH_AUTHORIZATIONS = {
         "represented_candidate_sha": "1cc76f458f6584edc3dfad8387240ea968201b64",
         "question_ids": frozenset(f"MA-Q-{index:04d}" for index in range(391, 407)),
     },
+    # Issue #196: exact focused11 source-lock and current hashes; scope only.
+    "FOCUSED-MPJE336-FOCUSED11": {
+        "authorizing_issue": 196,
+        "represented_candidate_sha": "40905fc1b895e2254f0a979f6d87e2f7e474021c",
+        "question_ids": frozenset({
+            "MA-Q-0441",
+            "MA-Q-0446",
+            "MA-Q-0448",
+            "MA-Q-0451",
+            "MA-Q-0452",
+            "MA-Q-0453",
+            "MA-Q-0456",
+            "MA-Q-0459",
+            "MA-Q-0461",
+            "MA-Q-0465",
+            "MA-Q-0468",
+        }),
+        "question_hashes": {
+            "MA-Q-0441": "4fc702e7e02938457b0af345e38c0162371cb8c528179be5425a7a95ee7e81ad",
+            "MA-Q-0446": "b18989503ce0edd87ef3cd4b79b8f50cbfe566191a0a526f5427c266430093f0",
+            "MA-Q-0448": "3c4c8135761b4e208a7140cef7708dde10856f64018f081db5f50c411c8b04d3",
+            "MA-Q-0451": "34bda60837330705badc801838713229d646778ffeb6fe18be46fa99cc177be9",
+            "MA-Q-0452": "835adcd1f23f0321039dae094234831105550a7a91fa3ad30be41df700a960a4",
+            "MA-Q-0453": "5b677d3ac2d38b2fbdcde25b0d7c0737ca864888f0127e20fb7a67bd2471d3d8",
+            "MA-Q-0456": "11131c31be205b22c34607ca84567245bd665c11169aaf430e9b98ff00473d63",
+            "MA-Q-0459": "afc59770277751e2d4afa76f8a26737dc4b6a5a0d1af4cfbe29ede6d79ae8f95",
+            "MA-Q-0461": "9d28d6e3aabf5416217d9e7a40efc4afee641a4932b79e9c0caa1c533ea1a95e",
+            "MA-Q-0465": "1d05ea3862897d2cddff4e302ccd7ea447f66fbf51ba428dc954ca4aa670a894",
+            "MA-Q-0468": "c121ac08b6232b2f5d3d4471cad3fb6232b920d98731aeecb3eedf6fa7f893f6",
+        },
+    },
 }
 GIT_SHA_PATTERN = re.compile(r"^[a-f0-9]{40}$")
 
@@ -80,6 +111,11 @@ def _targeted_initial_governance_errors(audit: dict) -> list[str]:
             errors.append(
                 "TARGETED_INITIAL_BATCH governance authorization question_ids must exactly match audit question_ids"
             )
+
+    if "question_hashes" in governed and audit.get("question_hashes") != governed["question_hashes"]:
+        errors.append(
+            f"TARGETED_INITIAL_BATCH tranche {tranche_id} question_hashes do not match the exact authorized hashes"
+        )
 
     return errors
 
