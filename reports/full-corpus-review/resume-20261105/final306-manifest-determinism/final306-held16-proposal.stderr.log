@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 268, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 258, in main
+    result=propose_builder_source(ROOT,binding)if args.propose_source else expected_migration(ROOT,binding)
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_published15_closure.py", line 95, in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_held_sixteenth.py", line 188, in expected_migration
+    bind_current_review_context(root,bindings)  # Current counters, never historical aliases.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/oddments/scripts/notes_after190_annotation.py", line 328, in bind_current_review_context
+    require(current==expected,'Current progress differs from actual source builder; historical receipts cannot replace counters')
+  File "/workspace/oddments/scripts/notes_after190_annotation.py", line 141, in require
+    raise ValueError(message)
+ValueError: Current progress differs from actual source builder; historical receipts cannot replace counters

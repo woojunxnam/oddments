@@ -1,0 +1,460 @@
+{
+  "purpose": "READ_ONLY_PREPARATION_FOR_FUTURE_EXACT_CANDIDATE_PUBLIC_VERIFICATION_NOT_EXECUTED",
+  "observed_at_utc": "2026-11-05T01:36:09.228803+00:00",
+  "planning_source_head": "cfff5e131b0068e0259fb1f9d6eefb78f50f705e",
+  "current_deployment_measured": false,
+  "network_requests_executed": 0,
+  "browser_or_validation_commands_executed": 0,
+  "root_files_HEAD_commits_native_state_mutated": false,
+  "new_candidate_sha": null,
+  "new_merge_sha": null,
+  "new_pages_run_id": null,
+  "new_deployment_id": null,
+  "future_execution_requires_parent_instruction_and_exact_approved_candidate": true,
+  "origin": "https://woojunxnam.github.io/oddments/",
+  "existing_helpers": {
+    "public-verification.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/public-verification.py",
+      "source_sha256": "3ad2d2666c5b53f29cbcdf145ff5d65db9117ef12f562cec5665eb4ae4581510",
+      "historical_only": true,
+      "must_not_execute_without_new_exact_bindings": true
+    },
+    "production-browser-adapter.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/production-browser-adapter.py",
+      "source_sha256": "d95da312beb6793d654601b0065f194e6d0ceed606dbe59f91f23ea1ab7f2bf4",
+      "historical_only": true,
+      "must_not_execute_without_new_exact_bindings": true
+    },
+    "verify-public-state.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/verify-public-state.py",
+      "source_sha256": "d351297043e95388eac2a14172bd2bcea8f1e23ef83725c5c4999f30a0b4573a",
+      "historical_only": true,
+      "must_not_execute_without_new_exact_bindings": true
+    },
+    "finalize-observation.py": {
+      "path": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/finalize-observation.py",
+      "source_sha256": "539ac76df64cd60d4bc89ff8145742e2674572649bd45107c50190cb5def74e9",
+      "historical_only": true,
+      "must_not_execute_without_new_exact_bindings": true
+    }
+  },
+  "historical_evidence_reference": {
+    "prefix": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/",
+    "old_candidate": "12d1751707f917737736b1aba208b2468d054d72",
+    "old_merge": "c8e8f7b825e576887220867b322779dc5b1c8d67",
+    "old_canonical_asset_count": 40,
+    "old_public_browser_suites": 5,
+    "old_postmerge_workflow_observation_status": "PENDING",
+    "reuse_allowed_only_for_path_membership_adapter_pattern_and_assertion_contract": true,
+    "old_responses_hashes_screenshots_PASS_do_not_count_for_future_candidate": true
+  },
+  "execution_order": [
+    {
+      "step": 1,
+      "name": "Freeze approved candidate and expected public bytes",
+      "requires": [
+        "Actual newly approved final16 manifest, all existing release guards, relevant validators, full pytest and candidate GitHub required gates passed for exact SHA.",
+        "Freeze candidate worktree and record local commit/tree plus git status.",
+        "Run existing publisher on exact tested candidate into a separate external directory; retain command, source head, actual start/end/exit/raw log.",
+        "Enumerate every actual publish output file, generate fresh path->SHA256 manifest and verify each local file against it; do not import old SHA values.",
+        "Compare actual membership to historical40 and critical14; missing/new files require explicit review and full coverage, never silently select only historical files."
+      ],
+      "publisher_argv_template": [
+        "/workspace/mpje-venv/bin/python",
+        "scripts/publish_practice.py",
+        "--output",
+        "<EXACT_CANDIDATE_PUBLISHED_SITE>"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "step": 2,
+      "name": "Bind actual merge tree and Pages deployment",
+      "requires": [
+        "Use actual new PR response merged=true/merge_commit_sha.",
+        "Fetch fresh GitHub API raw responses for actual candidate/merge tree and compare to local git rev-parse <sha>^{tree}; require four-way tested-candidate/actual-merge local/API tree equality. If unequal, stop for explicit diff/revalidation, do not claim equivalence.",
+        "Observe actual Pages run completed/success and head_sha=actual mergeSHA, exact job/deployment success for same SHA.",
+        "Record all required current-candidate and postmerge run/check conclusions; pending/failed/cancelled is not success; intermediate previously-cancelled worker jobs grant no credit.",
+        "Capture API before and after browser/asset observations to detect deployment/main movement."
+      ],
+      "fresh_read_only_gh_api_commands": [
+        {
+          "name": "pull",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/pulls/<NEW_PR_NUMBER>"
+          ]
+        },
+        {
+          "name": "candidate_commit",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/git/commits/<EXACT_TESTED_CANDIDATE_SHA>"
+          ]
+        },
+        {
+          "name": "merge_commit",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/git/commits/<ACTUAL_MERGE_SHA>"
+          ]
+        },
+        {
+          "name": "main_ref",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/git/ref/heads/main"
+          ]
+        },
+        {
+          "name": "candidate_runs",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/actions/runs?head_sha=<EXACT_TESTED_CANDIDATE_SHA>&per_page=100"
+          ]
+        },
+        {
+          "name": "merge_runs",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/actions/runs?head_sha=<ACTUAL_MERGE_SHA>&per_page=100"
+          ]
+        },
+        {
+          "name": "merge_checks",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/commits/<ACTUAL_MERGE_SHA>/check-runs?per_page=100"
+          ]
+        },
+        {
+          "name": "pages_run",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/actions/runs/<NEW_PAGES_RUN_ID>"
+          ]
+        },
+        {
+          "name": "pages_jobs",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/actions/runs/<NEW_PAGES_RUN_ID>/jobs?per_page=100"
+          ]
+        },
+        {
+          "name": "deployments",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/deployments?sha=<ACTUAL_MERGE_SHA>&per_page=100"
+          ]
+        },
+        {
+          "name": "deployment_statuses",
+          "argv": [
+            "gh",
+            "api",
+            "repos/woojunxnam/oddments/deployments/<ACTUAL_DEPLOYMENT_ID>/statuses"
+          ]
+        }
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "step": 3,
+      "name": "Fetch actual canonical HTTPS40 including critical14",
+      "method": "GET",
+      "url_template": "https://woojunxnam.github.io/oddments/<PATH>",
+      "public_asset_query_parameters_allowed": false,
+      "query_or_timestamp_cachebuster_allowed": false,
+      "TLS_verification_required": true,
+      "allowed_request_headers": {
+        "User-Agent": "<NEW_CANDIDATE_VERIFICATION_ID>",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+      },
+      "per_response_record": [
+        "request URL/headers",
+        "actual start/completed UTC",
+        "HTTP status",
+        "final URL",
+        "response headers",
+        "actual byte length",
+        "SHA256 of new response bytes",
+        "expected fresh candidate SHA256",
+        "byte equality result",
+        "raw response file path+SHA where retained"
+      ],
+      "requirements": [
+        "Every canonical URL has empty query and fragment; same-origin expected canonical final path, status200 and exact bytes. Wrong MIME/soft200/redirect/cache mismatch is retained as failure.",
+        "Newly fetch initial and final observations; retain all attempts and timestamps if propagation lags, no overwrite or relabelled old success.",
+        "Derive critical14 success from these same fresh canonical responses.",
+        "No browser-only or loopback response substitutes for canonical public fetch."
+      ],
+      "historical40_paths_membership_only": [
+        "styles.css",
+        "storage.js",
+        "session.js",
+        "preview-filter.js",
+        "index.html",
+        "shuffle.js",
+        "notes-entry.css",
+        "app.js",
+        "generated/README.md",
+        "generated/preview_allowlist.json",
+        "generated/questions.json",
+        "generated/study_guide.json",
+        "assets/learning-tools.css",
+        "assets/learning-tools.js",
+        "practice-expansion/build.json",
+        "practice-expansion/status.css",
+        "practice-expansion/publication.json",
+        "practice-expansion/quality-review.html",
+        "practice-expansion/index.html",
+        "practice-expansion/research.html",
+        "practice-expansion/quality-core.js",
+        "notes/study.css",
+        "notes/notes.js",
+        "notes/cdtm05-12.html",
+        "notes/book.html",
+        "notes/refresh-build.json",
+        "notes/notes.css",
+        "notes/build.json",
+        "notes/refresh.css",
+        "notes/cdtm13-16-vax01-04.html",
+        "notes/index.html",
+        "notes/study-build.json",
+        "notes/content.js",
+        "notes/study.html",
+        "notes/refresh.js",
+        "notes/refresh-core.js",
+        "notes/refresh-data.js",
+        "notes/complete-notes.md",
+        "notes/study.js",
+        "notes/study-data.js"
+      ],
+      "critical14_paths_membership_only": [
+        "index.html",
+        "practice-expansion/index.html",
+        "practice-expansion/build.json",
+        "practice-expansion/quality-review.html",
+        "notes/build.json",
+        "notes/content.js",
+        "notes/notes.js",
+        "notes/book.html",
+        "notes/complete-notes.md",
+        "notes/study-data.js",
+        "notes/refresh-data.js",
+        "generated/questions.json",
+        "generated/study_guide.json",
+        "generated/preview_allowlist.json"
+      ],
+      "new_expected_asset_sha256": null,
+      "status": "NOT_RUN"
+    },
+    {
+      "step": 4,
+      "name": "Run five unchanged browser contracts on actual HTTPS origin",
+      "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+      "commands": [
+        {
+          "suite": "public-practice",
+          "current_script_path": "scripts/verify_public_practice.py",
+          "source_sha256": "6663176fca32812f0f9f553f4d8b5732e874269c8fa0c8704dc020343ddee6d5",
+          "current_cli_accepts_base_url": true,
+          "argv_template": [
+            "/workspace/mpje-ci-checks-venv/bin/python",
+            "scripts/verify_public_practice.py",
+            "--base-url",
+            "https://woojunxnam.github.io/oddments/",
+            "--site",
+            "<EXACT_CANDIDATE_PUBLISHED_SITE>",
+            "--output",
+            "<NEW_EXTERNAL_PUBLIC_EVIDENCE_DIR>/public-practice"
+          ],
+          "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+          "requires_new_origin_adapter": false,
+          "status": "NOT_RUN"
+        },
+        {
+          "suite": "notes",
+          "current_script_path": "scripts/verify_notes_browser.py",
+          "source_sha256": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1",
+          "current_cli_accepts_base_url": false,
+          "argv_template": [
+            "/workspace/mpje-ci-checks-venv/bin/python",
+            "<NEW_ORIGIN_ONLY_ADAPTER>",
+            "verify_notes_browser.py",
+            "--output",
+            "<NEW_EXTERNAL_PUBLIC_EVIDENCE_DIR>/notes"
+          ],
+          "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+          "requires_new_origin_adapter": true,
+          "status": "NOT_RUN"
+        },
+        {
+          "suite": "refresh",
+          "current_script_path": "scripts/verify_refresh_browser.py",
+          "source_sha256": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d",
+          "current_cli_accepts_base_url": false,
+          "argv_template": [
+            "/workspace/mpje-ci-checks-venv/bin/python",
+            "<NEW_ORIGIN_ONLY_ADAPTER>",
+            "verify_refresh_browser.py",
+            "--site",
+            "<EXACT_CANDIDATE_PUBLISHED_SITE>",
+            "--output",
+            "<NEW_EXTERNAL_PUBLIC_EVIDENCE_DIR>/refresh"
+          ],
+          "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+          "requires_new_origin_adapter": true,
+          "status": "NOT_RUN"
+        },
+        {
+          "suite": "q0012-withdrawal",
+          "current_script_path": "scripts/verify_q0012_withdrawal_browser.py",
+          "source_sha256": "9d4c1bf42a1a1102388b8e2d3de2eacfd5bd16bf55b9b2d8c1938d5a6d519d11",
+          "current_cli_accepts_base_url": true,
+          "argv_template": [
+            "/workspace/mpje-ci-checks-venv/bin/python",
+            "scripts/verify_q0012_withdrawal_browser.py",
+            "--base-url",
+            "https://woojunxnam.github.io/oddments/",
+            "--site",
+            "<EXACT_CANDIDATE_PUBLISHED_SITE>",
+            "--output",
+            "<NEW_EXTERNAL_PUBLIC_EVIDENCE_DIR>/q0012-withdrawal"
+          ],
+          "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+          "requires_new_origin_adapter": false,
+          "status": "NOT_RUN"
+        },
+        {
+          "suite": "representative-rewrites",
+          "current_script_path": "scripts/verify_representative_rewrites.py",
+          "source_sha256": "0c6f5477edfa75de3b0a15930d1ff413d2abb3d11ef6bdca568183efef9da70c",
+          "current_cli_accepts_base_url": true,
+          "argv_template": [
+            "/workspace/mpje-ci-checks-venv/bin/python",
+            "scripts/verify_representative_rewrites.py",
+            "--base-url",
+            "https://woojunxnam.github.io/oddments/",
+            "--site",
+            "<EXACT_CANDIDATE_PUBLISHED_SITE>",
+            "--evidence",
+            "<NEW_EXTERNAL_PUBLIC_EVIDENCE_DIR>/representative-rewrites"
+          ],
+          "cwd_template": "<FROZEN_MERGE_WORKTREE>",
+          "requires_new_origin_adapter": false,
+          "status": "NOT_RUN"
+        }
+      ],
+      "sequential_execution": true,
+      "requirements": [
+        "Fresh ephemeral headless Chromium contexts, no real-user profile/login/storage. Record actual executable/version/viewports.",
+        "Retain each exact argv/cwd/source HEAD before/after/source-script SHA/log start/end/exit/rawSHA/report/screenshots/request/pageerror evidence.",
+        "The three direct --base-url scripts use the actual canonical origin; do not claim a loopback run as production.",
+        "Notes/refresh lack --base-url. Use a newly parameterized external in-memory adapter modeled on retained production-browser-adapter.py; replace only exact-one loopback server-selection block with canonical origin, record original/adapted SHA and exact patch, preserve assertion AST and real navigation/reload/storage branches; no source-script edits.",
+        "Do not use --inline-preview: it simulates storage and omits actual navigation/reload tests.",
+        "Browser functional ?bank=/?note= routes from unchanged tests remain meaningful feature tests, not cachebusters and not canonical40 byte requests; preserve these assertions.",
+        "Existing negative scenarios intentionally block synthetic storage/abort a payload; retain their context and distinguish them from real production errors.",
+        "Any suite failure remains FAIL and must be investigated without weakening guards/assertions."
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "step": 5,
+      "name": "Observe current published corpus/status/held N1 proof",
+      "existing_helper_reference": "reports/full-corpus-review/notes16-publication/pr193-20261104-public/verify-public-state.py",
+      "requires": [
+        "Create candidate-bound expectation input from new frozen published payloads/progress; old helper hardcoded1793/100 must not be reused.",
+        "Verify actual quality page and runtime diagnostics match current candidate counts, total2349/default202/77bank, and current-source record hashes.",
+        "Verify public MPJE_NOTES has306 current units and candidate census progress; COMPLETE is not legal PASS.",
+        "Verify w3-a-3 current bodySHA, current valid review with LEGAL_HOLD/requires_review/nonempty notice, original NOTE-WAVE8-W3-A-3-011 LEGAL_HOLD/blocker, preserved review_history and zero canonical/question release credit.",
+        "Verify current N1 study/refresh review notice and daily exclusions using actual public payloads and existing actual selectors; preserve original learning IDs.",
+        "Observe CASE0790 archived primary law/style negative and prior/current source history; source3 positive legal supplement must not erase it or restore default.",
+        "Retain actual request/pageerror/screenshots/source payload bytes/hashes and JSON outputs; do not issue new legal judgments."
+      ],
+      "planning_baseline_only_not_future_expected_input": {
+        "keys": 2312,
+        "unassessed": 37,
+        "effective_realism_PASS": 880,
+        "notes_COMPLETE": 306,
+        "claims": 7086,
+        "claim_HOLD": 36,
+        "claim_SOURCE_BLOCKED": 890
+      },
+      "status": "NOT_RUN"
+    },
+    {
+      "step": 6,
+      "name": "Final exact-source receipt and remote evidence checkpoint",
+      "requires": [
+        "Fresh final API snapshot and canonical response pass prove same exact deployed merge/tree remained current through observation.",
+        "All required candidate/postmerge GitHub gates, Pages/deployment, canonical assets, five browser suites and source-bound public-state checks must have actual final successful observations.",
+        "Build immutable evidence manifest path->SHA256 for all logs/receipts/raw API/public responses/reports/screenshots/adapters.",
+        "Separate software/deployment proof from independent legal/style audit and canonical release credit.",
+        "If final workflow still pending, report PENDING; do not reuse previous PR193/old candidate PASS.",
+        "Commit evidence only on separately authorized evidence branch/checkpoint without advancing a frozen tested source during tests."
+      ],
+      "status": "NOT_RUN"
+    }
+  ],
+  "Q0012_actual_origin_storage_contract": {
+    "current_script": "scripts/verify_q0012_withdrawal_browser.py",
+    "question_id": "MA-Q-0012",
+    "retained_historical_audit_hash": "218f8940f7ffbc3671f6a49499105caa44ed9a2fe4ec4b84c3289b2253b3f81d",
+    "real_origin": "https://woojunxnam.github.io/oddments/",
+    "storage_implementation_reference": "site/storage.js",
+    "storage_mechanisms": [
+      "localStorage progress",
+      "IndexedDB saved exam sessions via MpjeStorage"
+    ],
+    "required_observations": [
+      "Seed synthetic prior completed session via actual MpjeSessions/MpjeStorage at real public origin, then actual reload.",
+      "Withdrawn QID absent from current canonical payload and reverse guide mapping; SG-CII-LIFECYCLE absent.",
+      "Current unchanged script expects397 canonical questions and40 guide sections; these are canonical app contract counts, distinct from2349 practice expansion and40 public assets. Do not change constants merely to pass.",
+      "exportData exam_history exactly retains seeded session responses/hash/score and question_content_hashes[MA-Q-0012].",
+      "wrong/bookmarks/completed retain original withdrawn ID and history detail displays retained audit hash.",
+      "No real user data is accessed, cleared or rewritten; dedicated ephemeral context is destroyed after capture.",
+      "Report zero canonical audit credit and actual console errors."
+    ],
+    "execution_status": "NOT_RUN"
+  },
+  "limitations_and_pending_inputs": [
+    "Exact final approved candidate/merge/tree, new PR number, new required check results, new Pages run/deployment ID and fresh expected asset manifest are not yet available; they must be supplied from actual future observations.",
+    "Historical orchestration hardcodes old /workspace/mpje-pr193-public,12d175,c8e8f7b,run41907593476 and1793/100; current paths shown are references, not a ready current-candidate command.",
+    "Five browser suite scripts exist now. Notes/refresh require the bounded origin adapter; no current production --base-url option.",
+    "Headless Chromium desktop/mobile viewports are software emulation, not physical Safari/iOS/Android testing.",
+    "No current-public HTTP/API/browser measurement was performed in preparing this file.",
+    "No future PASS, release approval, legal assessment or canonical audit credit is predicted."
+  ],
+  "source_file_sha256s": {
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/https40-final.json": "f9d99eca5d37d94dc9c946aaf0718521b7a57caf3de73e7713ee45582b5e116b",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/critical14-subset.json": "4833699c8a80fe627cfc2d6b38ef0b2cc403b25ee46fc633d3a7aa45f5b87385",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/public-verification.py": "3ad2d2666c5b53f29cbcdf145ff5d65db9117ef12f562cec5665eb4ae4581510",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/production-browser-adapter.py": "d95da312beb6793d654601b0065f194e6d0ceed606dbe59f91f23ea1ab7f2bf4",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/verify-public-state.py": "d351297043e95388eac2a14172bd2bcea8f1e23ef83725c5c4999f30a0b4573a",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/finalize-observation.py": "539ac76df64cd60d4bc89ff8145742e2674572649bd45107c50190cb5def74e9",
+    "scripts/verify_public_practice.py": "6663176fca32812f0f9f553f4d8b5732e874269c8fa0c8704dc020343ddee6d5",
+    "scripts/verify_notes_browser.py": "d1f391c6ad3921f6ae65cfea02abe9551136c259a7edf77c56a839ea7354c8d1",
+    "scripts/verify_refresh_browser.py": "2c854c3df6e25e5b62d4d9a06347b918f27a95afc3d2c0266b2ec2d8288e844d",
+    "scripts/verify_q0012_withdrawal_browser.py": "9d4c1bf42a1a1102388b8e2d3de2eacfd5bd16bf55b9b2d8c1938d5a6d519d11",
+    "scripts/verify_representative_rewrites.py": "0c6f5477edfa75de3b0a15930d1ff413d2abb3d11ef6bdca568183efef9da70c",
+    "scripts/canonical_q0012_withdrawal.py": "a1a7174f29b56f5c7ef4596700ee9e1c7c3e9749fd95e5db9d8af6ac787a2565",
+    "site/storage.js": "02b8a1b2e2df061441a224bc58f7bb9d3df818a41a2eba88364aa8e3bdae22fd",
+    "site/notes/study.js": "79f90b04476f7aeeab87ba301da01a6ee7d591810b6193e3c6b404ab94ff72cb",
+    "site/notes/refresh-core.js": "a9ef5a40f3338359c9ecb1bdf844b615e7be90f12d3d2519bd9174525626151e",
+    "reports/full-corpus-review/progress.json": "963cdc047fd7e7dfad2ce3fe14cc340a6c5162f7c3450a751f4aa66753e31640",
+    "reports/full-corpus-review/notes16-publication/pr193-20261104-public/observation.json": "fa4d3ac65c48756eaec9ee3f9145fd56ee4302d47084c8dbae55177971df2c43"
+  }
+}

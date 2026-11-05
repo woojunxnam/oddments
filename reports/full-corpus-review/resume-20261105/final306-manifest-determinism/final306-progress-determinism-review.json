@@ -1,0 +1,214 @@
+{
+  "schema": "final306-progress-determinism-readonly-review/1",
+  "reviewed_at_utc": "2026-11-05T01:48:11.516831+00:00",
+  "reviewer_actor": "/root/remaining9_contract_engineering",
+  "source_head": "cfff5e131b0068e0259fb1f9d6eefb78f50f705e",
+  "status": "STATIC_CAUSAL_PATH_CONFIRMED_ACTUAL_FAILURE_SEMANTIC_DIFF_PENDING_ROOT",
+  "root_mutations": 0,
+  "other_worktree_code_mutations": 0,
+  "new_tests_or_builds_run_by_reviewer": 0,
+  "new_candidate_qa_credit": 0,
+  "failure": {
+    "command_receipt": {
+      "command": [
+        "/workspace/mpje-ci-checks-venv/bin/python",
+        "scripts/notes_held_sixteenth.py",
+        "--propose-migration",
+        "--closure",
+        "revisions/notes/published15-closures/pr192-full-source-v2.json"
+      ],
+      "source_head": "cfff5e131b0068e0259fb1f9d6eefb78f50f705e",
+      "started_at": "2026-11-05T01:24:06.472613+00:00",
+      "completed_at": "2026-11-05T01:45:29.788553+00:00",
+      "wall_seconds": 1283.315963703004,
+      "exit_code": 1,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_path": "/workspace/scratch/final306-held16-proposal.json",
+      "stderr_path": "/workspace/scratch/final306-held16-proposal.stderr.log"
+    },
+    "raw_evidence": [
+      {
+        "path": "/workspace/scratch/final306-held16-proposal.stderr.log",
+        "bytes": 1404,
+        "raw_sha256": "1b5ac00e63a84a308c3c3837da9f0be9f0dbf7773fe9a47a7cb2ce5729593858"
+      },
+      {
+        "path": "/workspace/scratch/final306-held16-proposal.receipt.json",
+        "bytes": 674,
+        "raw_sha256": "36635210e3f3df650e6c8024a1446402b2b09d0803e82633d6f82b7fde6e2e63"
+      },
+      {
+        "path": "/workspace/scratch/final306-held16-proposal.json",
+        "bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "exception_exact": "ValueError: Current progress differs from actual source builder; historical receipts cannot replace counters",
+    "failure_location": "scripts/notes_after190_annotation.py:328 require(current == expected, ...)",
+    "guard_assessment_ko": "정상적으로 서로 다른 실제 원바이트를 거부한 강한 guard입니다. JSON semantic equality로 대체하거나 exception을 잡아 우회하지 않습니다."
+  },
+  "observations": {
+    "producer_pretty_serialization": "scripts/build_full_corpus_review.py:924 json.dumps(x, ensure_ascii=False, indent=2)+newline, sort_keys 없음",
+    "fresh_consumer": "scripts/notes_after190_annotation.py:326 별도 Python interpreter subprocess에서 b.build()[progress.json]을 생성하여 HEAD committed raw progress와 비교",
+    "source9_unordered_read": "scripts/remaining9_procedural_metadata.py:360 set(evidence_bindings(report)) 순회",
+    "source3_unordered_read": "scripts/source3_recovered_legal_metadata.py:158 set(evidence_bindings(report)) 순회",
+    "readtrace_insertion": "scripts/procedural_secondary_metadata.py:33 committed_reader의 source_bindings[relative] = sha(raw), L60 retained_result의 update(retained)",
+    "output_sinks": [
+      {
+        "line_at_review_head": 872,
+        "before": "{**realism_completion_progress,'source_bindings':realism_completion_bindings}",
+        "after": "{**realism_completion_progress,'source_bindings':dict(sorted(realism_completion_bindings.items()))}"
+      },
+      {
+        "line_at_review_head": 884,
+        "before": "**remaining9_secondary['progress'], 'source_bindings': remaining9_bindings,",
+        "after": "**remaining9_secondary['progress'], 'source_bindings': dict(sorted(remaining9_bindings.items())),"
+      },
+      {
+        "line_at_review_head": 888,
+        "before": "**source3_secondary['progress'], 'source_bindings': source3_bindings,",
+        "after": "**source3_secondary['progress'], 'source_bindings': dict(sorted(source3_bindings.items())),"
+      }
+    ],
+    "actual_current_progress_raw_sha256": "963cdc047fd7e7dfad2ce3fe14cc340a6c5162f7c3450a751f4aa66753e31640",
+    "actual_current_binding_map_metadata": [
+      {
+        "progress_pointer": "/independent_legacy_realism_completion_supplementary_review/source_bindings",
+        "count": 489,
+        "keys_are_currently_lexically_sorted": false,
+        "mapping_semantic_sha256": "df8402697f8df6e42670d473504cc71a82bc1c3bf527194895a6cf06e7cf6097",
+        "current_ordered_key_list_sha256": "3307c976f16ffc20bc435077d1266283abfe7cc595b94929d88f6592db008db6",
+        "sorted_ordered_key_list_sha256": "5b78d9b471bb48d23bc4300e29dc902f98fc1ba2450d209ebb8ad32c3c042d3c"
+      },
+      {
+        "progress_pointer": "/independent_legacy_remaining9_procedural_review/source_bindings",
+        "count": 46,
+        "keys_are_currently_lexically_sorted": false,
+        "mapping_semantic_sha256": "958b90713c1a2defe438e6130d599b5368ba64f9b2bc6e9a2c688d5e789d8c8c",
+        "current_ordered_key_list_sha256": "9d994a97cd65e55db286885e2fd82e1e510b02ff3db66865140a38c3a94e627a",
+        "sorted_ordered_key_list_sha256": "d61f9ba7fcd54489b5668534077315e341f2ad29cff2a4f98d6bc056e44045a9"
+      },
+      {
+        "progress_pointer": "/independent_legacy_source3_recovered_legal_review/source_bindings",
+        "count": 47,
+        "keys_are_currently_lexically_sorted": false,
+        "mapping_semantic_sha256": "a4665b73b9e01fbf0f18240bc2c557880380ba761636db11004186419c75631a",
+        "current_ordered_key_list_sha256": "b4d83544a38792fcfeaec7db5faee44631146282030433c7168a341f36dd4387",
+        "sorted_ordered_key_list_sha256": "4cdd850c9cc78b7e4848b1ebafa88ef54c96a2cf47a25d64255319cc83aa9c26"
+      }
+    ],
+    "realism_caveat_ko": "realism consumer는 조사한 현재 경로에서 deterministic list/job 순회입니다. 이번 원인으로 확정하지 않습니다. 해당 sibling source_bindings도 동일한 공개 표현 계약으로 정렬하면 향후 readtrace 순서 변경이 출력 바이트를 흔들지 않습니다. 모든 실제 reads/값은 보존합니다."
+  },
+  "causal_assessment_ko": "서로 다른 PYTHONHASHSEED/프로세스의 문자열 tuple set 순회순서는 달라질 수 있습니다. 동일한 evidence가 다른 순서로 검증되면 retained mapping의 키/값은 같아도 삽입순서가 바뀌고 json.dumps는 이 순서를 보존합니다. 따라서 새9/3 source_bindings가 서로 다른 raw progress를 만들 수 있다는 정적 인과 경로가 확인됩니다. 이번 1283초 실패가 이 원인뿐이라는 주장은 root가 보존한 실제 fresh builder 출력과 committed 전체 출력의 semantic diff 결과 후에만 확정합니다.",
+  "narrow_patch_recommendation": {
+    "file": "scripts/build_full_corpus_review.py",
+    "changes": [
+      {
+        "line_at_review_head": 872,
+        "before": "{**realism_completion_progress,'source_bindings':realism_completion_bindings}",
+        "after": "{**realism_completion_progress,'source_bindings':dict(sorted(realism_completion_bindings.items()))}"
+      },
+      {
+        "line_at_review_head": 884,
+        "before": "**remaining9_secondary['progress'], 'source_bindings': remaining9_bindings,",
+        "after": "**remaining9_secondary['progress'], 'source_bindings': dict(sorted(remaining9_bindings.items())),"
+      },
+      {
+        "line_at_review_head": 888,
+        "before": "**source3_secondary['progress'], 'source_bindings': source3_bindings,",
+        "after": "**source3_secondary['progress'], 'source_bindings': dict(sorted(source3_bindings.items())),"
+      }
+    ],
+    "scope_ko": "세 source_bindings dict의 progress 출력 표현 순서만 lexicographic repository-relative path 순서로 고정합니다. 원 consumer readtrace·set 중복제거·evidence validation·실제수행순서는 건드리지 않습니다. 원본 dict mutate 없이 sorted items의 새 dict를 생성합니다.",
+    "avoid": [
+      "전체 pretty에 sort_keys=True를 추가하여 모든 기존 산출물/보호 manifest를 불필요하게 재정렬",
+      "모든 source reader/set loop를 고쳐 actual readtrace 검증 흐름까지 변경",
+      "고정 PYTHONHASHSEED를 제품/CI 환경에 강제하여 원인 은폐",
+      "bind_current_review_context를 JSON semantic equality로 완화",
+      "현재값·counts·sourceSHA·negative/HOLD·default 제외·canonical credit 변경",
+      "old protected manifest SHA를 실제 재생성 없이 수동으로 예측 변경"
+    ]
+  },
+  "confirmation_required_before_patch_ko": [
+    "root의 actual fresh b.build read-only 결과 8개 원파일 전체와 committed baseline을 원바이트로 보존하고 각각 SHA를 기록합니다.",
+    "전체 JSON/JSONL semantic 비교에서 수정이유가 source_bindings 순서뿐인지 확인합니다. 원장/카운터/값 차이가 있으면 추가 원인을 따로 분석하며 자동 정렬로 덮지 않습니다.",
+    "source9/source3 세 mapping keyset 및 모든 digest가 정확히 같아야 합니다. 전체 progress를 재귀 비교하여 순서 외 changed/missing/added 값 0을 확인합니다."
+  ],
+  "test_design_for_root_future_execution": [
+    {
+      "id": "focused-serialization-contract",
+      "purpose_ko": "동일한 current validated source path→SHA mapping을 서로 다른 실제 삽입 순서로 producer에 제공해 공개 progress raw bytes가 같고 각 세 map 키가 lexical order인지 검증합니다. 순서 정렬 외 값·키·counts·holds·credit은 모두 동일해야 합니다. 기존 fullbuilder fixture의 모든 primary/publication assertions를 유지하며 그 실제 consumer 반환 bindings 순서를 주입하거나 래핑합니다. raw 비교를 semantic 비교로 바꾸지 않습니다."
+    },
+    {
+      "id": "hashseed-independent-actual-build",
+      "purpose_ko": "동일 clean committed candidate를 freeze한 상태에서 서로 다른 2 Python hash seed로 fresh process의 실제 b.build 전체8출력을 각각 외부에 보존합니다. 모든 출력 raw SHA가 서로 같고 committed current artifacts와 같아야 합니다. 이미 root가 보존한 실제 build와 subsequent guard subprocess는 실제 프로세스 경계를 제공하나 explicit 2seed regression도 더 직접적인 확인입니다. 전역 환경 고정은 해결책이 아닙니다.",
+      "future_commands_not_run": [
+        "PYTHONHASHSEED=0 python scripts/build_full_corpus_review.py --check",
+        "PYTHONHASHSEED=1 python scripts/build_full_corpus_review.py --check"
+      ]
+    },
+    {
+      "id": "value-change-negative",
+      "purpose_ko": "source binding digest 한 글자 변경, 키 누락/추가, counts 변조가 같은 정렬을 통과하더라도 기존 strict source validator/current raw builder 비교에서 거부됨을 검사합니다. source missing·uncommitted·wrongSHA·원HOLD를 positive로 바꾸는 기존 mutation tests도 유지합니다."
+    },
+    {
+      "id": "raw-guard-format-negative",
+      "purpose_ko": "bind_current_review_context의 expected/current가 JSON 의미는 같지만 공백·개행·키 순서 raw가 다를 때도 반드시 실패하도록 mutation test합니다. 원 Current progress differs 예외와 exact raw `current==expected` guard를 유지합니다."
+    },
+    {
+      "id": "existing-guards-and-real-proposal",
+      "purpose_ko": "기존 after190 historical counter/derived counter/1477snapshot rejection, supplementary retainedsource/새9/3/source146 negative 및 actual fullbuilder fixture를 그대로 실행합니다. 실제 결정적 artifact 재생성·커밋 후 held16 --propose-migration을 실제 다시 실행합니다. 성공하면 actual final16 manifest rawSHA 결박·보호 --check·관련validators·전체pytest·exact-head CI·새공개검증을 수행하며 이전 실패 원로그를 append-only 보존합니다."
+    }
+  ],
+  "source_inventory": [
+    {
+      "path": "scripts/build_full_corpus_review.py",
+      "raw_sha256": "c979cef9b331bdfdfd09afe989582f0b4282f435a83b3190b6f4f081cb6d08bb"
+    },
+    {
+      "path": "scripts/notes_after190_annotation.py",
+      "raw_sha256": "b1f2563f6827a005d46d59caa87964c2effba388d698aa7d886063ff5fa178a4"
+    },
+    {
+      "path": "scripts/remaining9_procedural_metadata.py",
+      "raw_sha256": "f5e4f6d7502ed1f8281b052fc93b444729d1e9b35af06aa7e1ca69d0624675ff"
+    },
+    {
+      "path": "scripts/source3_recovered_legal_metadata.py",
+      "raw_sha256": "9346a73f3f3aa056d981a8289970837b6d08dba4d7f30ea6b95288fa6b5d0b47"
+    },
+    {
+      "path": "scripts/procedural_secondary_metadata.py",
+      "raw_sha256": "fc28d6cb4700709ad6945eda874f8bbab3b30d0513b78f634c07120cfef04926"
+    },
+    {
+      "path": "scripts/realism_completion_metadata.py",
+      "raw_sha256": "efe0444ab026308100ed86a354e4c61c051f8305bc094f6640884e10ac6309a6"
+    },
+    {
+      "path": "scripts/realism_completion_review.py",
+      "raw_sha256": "6859e039aca7fbb160d978bd91aa751f8c9094e5fb5ed85c10cb54910ab8ee46"
+    },
+    {
+      "path": "scripts/supplementary_checkpoint_bindings.py",
+      "raw_sha256": "af9a75736e3ed0180b090be9894e8925c196261fc470254a41c4395a0a8be3e0"
+    },
+    {
+      "path": "scripts/notes_held_sixteenth.py",
+      "raw_sha256": "9f9616997bfbb58cb468832543fdf453b8366eb89c106514f8c9f1c5f2be3e20"
+    },
+    {
+      "path": "tests/test_after190_historical_context.py",
+      "raw_sha256": "03b58424972b973a7fbe2a5bc40e3b05f93311ffa73a27b9c09879405f85865b"
+    },
+    {
+      "path": "tests/test_after190_wave10_historical_context.py",
+      "raw_sha256": "dc3a67933f2035444127b037002106438047ef9e4c9f065df72955470209d342"
+    },
+    {
+      "path": "tests/test_procedural_secondary_metadata.py",
+      "raw_sha256": "affbdf4c5c906b40d2b98c46ab113041c81acd08d22c41087edd12874b6a746c"
+    }
+  ],
+  "completion_state": "READ_ONLY_ANALYSIS_AND_PATCH_RECOMMENDATION_ONLY_ACTUAL_CAUSE_CONFIRMATION_PENDING_ROOT"
+}

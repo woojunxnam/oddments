@@ -869,7 +869,7 @@ def build():
                     deployment_status='CURRENT_BUILD_PUBLICATION_NOT_ASSERTED')
     progress['note_link_question_discrepancy_holds'] = note_links['summary']
     if realism_completion_bindings:
-        progress['independent_legacy_realism_completion_supplementary_review'] = {**realism_completion_progress,'source_bindings':realism_completion_bindings}
+        progress['independent_legacy_realism_completion_supplementary_review'] = {**realism_completion_progress,'source_bindings':dict(sorted(realism_completion_bindings.items()))}
         progress['independent_legacy_raw_primary_realism_pass'] = realism_completion_progress['raw_primary_realism_pass']
     if procedural_secondary['assessments']:
         progress['independent_legacy_procedural_supplementary_review'] = procedural_secondary['progress']
@@ -881,11 +881,11 @@ def build():
         progress['independent_legacy_supplementary_review'] = secondary['progress']
     if remaining9_bindings:
         progress['independent_legacy_remaining9_procedural_review'] = {
-            **remaining9_secondary['progress'], 'source_bindings': remaining9_bindings,
+            **remaining9_secondary['progress'], 'source_bindings': dict(sorted(remaining9_bindings.items())),
             'scope': 'EXACT_NINE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE'}
     if source3_bindings:
         progress['independent_legacy_source3_recovered_legal_review'] = {
-            **source3_secondary['progress'], 'source_bindings': source3_bindings,
+            **source3_secondary['progress'], 'source_bindings': dict(sorted(source3_bindings.items())),
             'scope': 'EXACT_THREE_RECOVERED_SOURCE_LEGAL_ONLY_NO_PRIMARY_NEGATIVE_OR_REALISM_OVERRIDE',
             'new_independent_people_credit': 0, 'new_realism_pass_credit': 0}
         progress['independent_legacy_supplementary_review'] = secondary['progress']
