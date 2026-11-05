@@ -452,3 +452,144 @@ def test_policy_cannot_be_called_cmr_and_draft_documents_cannot_gain_current_law
     with pytest.raises(ValueError):load(data)
 
 
+def paired_sources(data, legal_negative=True, style_negative=True):
+    uid=route.STYLE_OVERLAP_ID
+    shared=dict(record_sha256=queue.digest(data['questions'][uid]),supplementary_only=True,
+                does_not_override_primary=True,canonical_release_credit=0,reviewed_at='2026-11-04')
+    legal=dict(shared,source_path=data['report_path'],source_sha256='a'*64,
+               review_kind=route.REVIEW_KIND,negative=legal_negative)
+    style=dict(shared,source_path='reports/full-corpus-review/realism-completion-v1/c/report.json',
+               source_sha256='b'*64,review_kind='REALISM_COMPLETION',negative=style_negative)
+    return legal,style
+
+
+@pytest.mark.parametrize('legal_negative,style_negative',[(True,True),(True,False),(False,True),(False,False)])
+def test_exact0790_keeps_both_sources_and_only_selects_the_notices_actual_negative(data,legal_negative,style_negative):
+    uid=route.STYLE_OVERLAP_ID;legal,style=paired_sources(data,legal_negative,style_negative)
+    merged=route.merge_validated_style_source(uid,legal,style)
+    assert merged['negative']is legal_negative
+    assert merged['source_path']==legal['source_path']
+    assert merged['realism_completion_source']==style
+    assert legal.get('realism_completion_source')is None
+    for source,negative in [(legal,legal_negative),(style,style_negative)]:
+        notice=dict(review_source=source['source_path'],review_source_sha256=source['source_sha256'],
+                    question_record_hashes={uid:source['record_sha256']})
+        chosen=route.negative_notice_source(uid,notice,merged)
+        assert(chosen is not None)is negative
+        if chosen:assert chosen['source_sha256']==source['source_sha256']and chosen['negative']is True
+        notice['review_source_sha256']='c'*64
+        assert route.negative_notice_source(uid,notice,merged)is None
+
+
+@pytest.mark.parametrize('defect',['other_id','legal_kind','style_kind','legal_path','style_path',
+                                  'body_hash','raw_hash','nonboolean_negative','canonical','primary_override'])
+def test_overlap_dispatch_does_not_expand_ids_sources_or_negative_override(data,defect):
+    uid=route.STYLE_OVERLAP_ID;legal,style=paired_sources(data)
+    if defect=='other_id':uid=route.IDS[0]
+    elif defect=='legal_kind':legal['review_kind']='UNAPPROVED_SOURCE'
+    elif defect=='style_kind':style['review_kind']='UNAPPROVED_STYLE'
+    elif defect=='legal_path':legal['source_path']='reports/full-corpus-review/forged-law.json'
+    elif defect=='style_path':style['source_path']='reports/full-corpus-review/forged-style.json'
+    elif defect=='body_hash':style['record_sha256']='c'*64
+    elif defect=='raw_hash':style['source_sha256']='not-a-sha'
+    elif defect=='nonboolean_negative':style['negative']=1
+    elif defect=='canonical':legal['canonical_release_credit']=1
+    else:style['does_not_override_primary']=False
+    with pytest.raises(ValueError):route.merge_validated_style_source(uid,legal,style)
+
+
+def test_existing_guards_still_block_default_restore_and_lost_style_history(data):
+    from build_full_corpus_review import validate_default_review_safety
+    from realism_completion_metadata import validate_archive_containment
+    uid=route.STYLE_OVERLAP_ID
+    r=load(data)
+    for target in route.IDS:
+        with pytest.raises(ValueError,match='Uncontained independent'):
+            validate_default_review_safety([target],{},data['primary']+r['records'])
+    validate_default_review_safety([],{},data['primary']+r['records'])
+    with pytest.raises(ValueError,match='cannot return to default'):
+        validate_archive_containment({'recommended_ids':[uid]}, {'assessments':{}})
+    legal,style=paired_sources(data)
+    notice=dict(question_ids=[uid],question_record_hashes={uid:style['record_sha256']},
+        issue_type='INDEPENDENT_REVIEW_FINDING',review_source=style['source_path'],
+        review_source_sha256=style['source_sha256'])
+    supplement={'assessments':{uid:dict(record={'record_sha256':style['record_sha256'],
+        'realism_review':{'verdict':'FAIL'}},report_path=style['source_path'],report_sha256=style['source_sha256'])}}
+    legal_notice={**notice,'review_source':legal['source_path'],'review_source_sha256':legal['source_sha256']}
+    with pytest.raises(ValueError,match='requires an actual source-bound archive notice'):
+        validate_archive_containment({'recommended_ids':[],'archive_review_notices':[legal_notice]},supplement)
+    legal_notice['previous_notices']=[notice]
+    validate_archive_containment({'recommended_ids':[],'archive_review_notices':[legal_notice]},supplement)
+
+
+@pytest.mark.parametrize('status',['INTEGRATED','QUEUED','LEASED','SUBMITTED'])
+@pytest.mark.parametrize('style_verdict',['FAIL','HOLD'])
+def test_retained_collector_preserves_realism_source_during_pending3_and_pairs_it_after_integration(data,monkeypatch,status,style_verdict):
+    import supplementary_checkpoint_bindings as retained
+    import realism_completion_review as realism_route
+    import realism_completion_metadata as realism_meta
+    root=data['root'];uid=route.STYLE_OVERLAP_ID
+    write(root,'site/practice-expansion/publication.json',{'additional_banks':[{'path':COLLECTION}]})
+    write(root,'practice_expansion/2026-10-23/candidates/questions.json',{'questions':[]})
+    write(root,realism_route.STATE,{'fixture_marker':'Style consumer is mocked at its already-validated boundary'})
+    path='reports/full-corpus-review/realism-completion-v1/c/report.json'
+    style_row={'question_id':uid,'record_sha256':queue.digest(data['questions'][uid]),
+               'realism_review':{'verdict':style_verdict,'decision':'HOLD','blocker':'Synthetic actual-style-consumer boundary'}}
+    write(root,path,{'reviewed_at':'2026-11-04','records':[style_row]})
+    proof=dict(record=style_row,report_path=path,report_sha256=route.sha((root/path).read_bytes()))
+    data['state']['jobs'][0]['status']=status
+    refresh(data)
+    monkeypatch.setattr(retained,'CONSUMERS',((route,route.STATE),))
+    monkeypatch.setattr(realism_meta,'load_metadata',lambda *a,**k:{'assessments':{uid:proof}})
+    bindings={};sources=retained.validated_sources(root,data['primary'],source_bindings=bindings)
+    if status=='INTEGRATED':
+        assert sources[uid]['review_kind']==route.REVIEW_KIND
+        assert sources[uid]['realism_completion_source']['source_path']==path
+        assert sources[uid]['realism_completion_source']['negative']is True
+    else:
+        assert sources[uid]['review_kind']=='REALISM_COMPLETION'
+        assert sources[uid]['source_path']==path and sources[uid]['negative']is True
+        assert data['report_path']not in bindings
+    assert path in bindings and route.STATE in bindings and route.RECOVERY_REPORT in bindings
+
+
+def exact_notice(uid,source):
+    return dict(question_ids=[uid],question_record_hashes={uid:source['record_sha256']},
+        issue_type='INDEPENDENT_REVIEW_FINDING',review_source=source['source_path'],
+        review_source_sha256=source['source_sha256'],checked_at=str(source['reviewed_at'])[:10])
+
+
+@pytest.mark.parametrize('legal_negative,style_negative',[(True,True),(True,False),(False,True),(False,False)])
+def test_each_negative_keeps_its_exact_date_and_current_or_previous_source_history(data,legal_negative,style_negative):
+    uid=route.STYLE_OVERLAP_ID;legal,style=paired_sources(data,legal_negative,style_negative)
+    merged=route.merge_validated_style_source(uid,legal,style)
+    notices=[exact_notice(uid,s)for s in (legal,style)if s['negative']]
+    route.validate_notice_bindings(notices,{uid:merged})
+    for n in range(len(notices)):
+        with pytest.raises(ValueError,match='lost its source-bound archive history'):
+            route.validate_notice_bindings(notices[:n]+notices[n+1:],{uid:merged})
+        wrong=copy.deepcopy(notices);wrong[n]['checked_at']='2026-11-05'
+        with pytest.raises(ValueError):route.validate_notice_bindings(wrong,{uid:merged})
+    if len(notices)==2:
+        notices[0]['previous_notices']=[notices[1]]
+        route.validate_notice_bindings([notices[0]],{uid:merged})
+
+
+def test_actual_legal_negative_needs_its_new_source_and_default_exclusion(data):
+    uid=route.IDS[0];r=load(data)
+    route.validate_archived_legal_sources({'recommended_ids':[],'archive_review_notices':[]},r)
+    with pytest.raises(ValueError,match='cannot return to default'):
+        route.validate_archived_legal_sources({'recommended_ids':[uid],'archive_review_notices':[]},r)
+    data['report']['records'][0]['legal_review'].update(verdict='HOLD',existing_answer_correct='AMBIGUOUS',
+        independently_expected_key=[],blocker='Synthetic actual missing material fact')
+    refresh(data);r=load(data);p=r['assessments'][uid]
+    notice=exact_notice(uid,dict(record_sha256=p['record']['record_sha256'],source_path=p['report_path'],
+        source_sha256=p['report_sha256'],reviewed_at=p['reviewed_at']))
+    with pytest.raises(ValueError,match='lost its source-bound archive history'):
+        route.validate_archived_legal_sources({'recommended_ids':[],'archive_review_notices':[]},r)
+    route.validate_archived_legal_sources({'recommended_ids':[],'archive_review_notices':[notice]},r)
+    notice['review_source']=PARENT
+    with pytest.raises(ValueError):
+        route.validate_archived_legal_sources({'recommended_ids':[],'archive_review_notices':[notice]},r)
+
+

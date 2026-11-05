@@ -73,6 +73,8 @@ PARENTS = {'MA-CASE-0785': {'exposure_limitations': None,
 AUTHOR_BINDINGS = {'reports/full-corpus-review/wave6-4-author-review.json': {'known_principals': ['20261103-wave6-4'],
                                                            'raw_sha256': '8b68cf420b33d868cff4881f5d38d8415575387711a16d6bb200ef5699cf5bd9'}}
 JOB_ID = 'review-independent-legacy-source3-' + queue.digest({qid:PARENTS[qid]['question_record_sha256']for qid in IDS})[:16]
+REVIEW_KIND = 'SOURCE3_RECOVERED_LEGAL'
+STYLE_OVERLAP_ID = 'MA-CASE-0790'
 
 def validate_reviewer(scope, job, questions):
     reviewer = scope.get('fresh_reviewer', {})
@@ -251,6 +253,7 @@ def load_metadata(root, primary_records, questions, collections, *, source_bindi
             result_path=envelope['path'], result_raw_sha256=envelope['raw_sha256'],
             actor_provenance=copy.deepcopy(reviewer['actor_provenance']), auditor=reviewer['auditor'],
             auditor_instance=reviewer['auditor_instance'], controller_independence_basis=reviewer['controller_independence_basis'],
+            reviewed_at=report['reviewed_at'],
             independence_basis='ROOT_ATTESTED_ACTUAL_FRESH_SESSION_NOT_IDENTITY_PROOF',
             supplementary_only=True, does_not_override_primary=True, canonical_release_credit=0)
     result['records'] = copy.deepcopy(report['records'])
@@ -311,4 +314,76 @@ def validate_legal(record, question, read, prefix, started, completed):
             text = read(authority['text_path'], authority['text_sha256']).decode()
             require(kind == 'OFFICIAL_REGULATION' and 'DRAFT' not in text,
                     'A proposed CMR draft cannot be labelled an operative regulation')
+
+
+def merge_validated_style_source(qid, legal, style):
+    """Join only the exact0790 outputs of two already-validated consumers."""
+    from realism_completion_review import IDS as style_ids, PREFIX as style_prefix
+    require(set(IDS) & set(style_ids) == {STYLE_OVERLAP_ID} and qid == STYLE_OVERLAP_ID and
+            legal.get('review_kind') == REVIEW_KIND and style.get('review_kind') == 'REALISM_COMPLETION' and
+            legal.get('source_path') == PREFIX + 'source3-independent/' + JOB_ID + '/report.json' and
+            isinstance(style.get('source_path'), str) and style['source_path'].startswith(style_prefix) and
+            style['source_path'].endswith('/report.json') and
+            legal.get('record_sha256') == style.get('record_sha256') == PARENTS[qid]['question_record_sha256'] and
+            all(re.fullmatch('[0-9a-f]{64}', item.get('source_sha256', '')) and
+                type(item.get('negative')) is bool and item.get('canonical_release_credit') == 0 and
+                item.get('supplementary_only') is True and item.get('does_not_override_primary') is True
+                for item in (legal, style)),
+            'Only the exact current0790 legal3/realism146 validated-source overlap is permitted')
+    require('realism_completion_source' not in legal, 'Repeated style/legal source merge')
+    # Keep each source's own negative flag. A style negative must never turn
+    # the legal KEEP report into a fictitious negative, or be erased by KEEP.
+    return {**copy.deepcopy(legal), 'realism_completion_source': copy.deepcopy(style)}
+
+
+def negative_notice_source(qid, notice, binding):
+    """Resolve a notice's exact negative path/SHA within the validated0790 pair."""
+    if qid != STYLE_OVERLAP_ID or not binding or binding.get('review_kind') != REVIEW_KIND:
+        return binding
+    style = binding.get('realism_completion_source')
+    if style is not None:
+        merge_validated_style_source(qid, {k:v for k,v in binding.items() if k != 'realism_completion_source'}, style)
+    matches = [source for source in (binding, style) if source is not None and
+               source.get('negative') is True and
+               source.get('source_path') == notice.get('review_source') and
+               source.get('source_sha256') == notice.get('review_source_sha256') and
+               source.get('record_sha256') == notice.get('question_record_hashes', {}).get(qid)]
+    require(len(matches) <= 1, 'Repeated exact0790 negative source')
+    return matches[0] if matches else None
+
+
+def validate_notice_bindings(notices, sources):
+    """Every actual new-law or paired-style negative keeps its exact visible history."""
+    def matches(notice,qid,source):
+        return ((qid in notice.get('question_ids',[]) and
+                 notice.get('issue_type') == 'INDEPENDENT_REVIEW_FINDING' and
+                 notice.get('review_source') == source['source_path'] and
+                 notice.get('review_source_sha256') == source['source_sha256'] and
+                 notice.get('question_record_hashes',{}).get(qid) == source['record_sha256'] and
+                 notice.get('checked_at') == str(source['reviewed_at'])[:10]) or
+                any(matches(prior,qid,source) for prior in notice.get('previous_notices',[])))
+    for qid,binding in sources.items():
+        if binding.get('review_kind') != REVIEW_KIND:
+            continue
+        require(qid in IDS, 'Recovered-law source expanded beyond its actual three IDs')
+        style=binding.get('realism_completion_source')
+        if style is not None:
+            merge_validated_style_source(qid,{k:v for k,v in binding.items()if k!='realism_completion_source'},style)
+        for source in (binding,style):
+            if source is not None and source['negative']:
+                require(any(matches(notice,qid,source) for notice in notices),
+                        'Actual source3/legal or paired realism negative lost its source-bound archive history: '+qid)
+
+
+def validate_archived_legal_sources(selection,metadata):
+    require(not set(selection['recommended_ids']) & set(IDS),
+            'The exact recovered-source three cannot return to default through supplementary credit')
+    sources={}
+    for qid,proof in metadata['assessments'].items():
+        legal=proof['record']['legal_review']
+        sources[qid]=dict(review_kind=REVIEW_KIND,source_path=proof['report_path'],
+            source_sha256=proof['report_sha256'],record_sha256=proof['record']['record_sha256'],
+            reviewed_at=proof['reviewed_at'],negative=legal['verdict']in{'MINOR_EDIT','MAJOR_REWRITE','HOLD','DELETE'}or
+                legal['existing_answer_correct']in{'NO','AMBIGUOUS','NOT_ASSESSED'})
+    validate_notice_bindings(selection['archive_review_notices'],sources)
 

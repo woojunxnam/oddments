@@ -109,3 +109,14 @@ primary HOLD·현실성·정답·본문·이력·기본 연습 제외는 그대�
 trace를 source3에도 적용하므로 final16은 새로운 queue·회수 근거·보고서·자료를
 정확히 결박한다. 기존 guard를 완화하지 않는다. 현재 후보의 validators·결정적
 재생성·전체 pytest·exact-head CI·공개 검증을 별도로 완료해야 한다.
+
+MA-CASE-0790은 기존 146개 현실성 감사와 겹치는 유일한 ID다. 두 strict 소비자가
+각각 검증한 legal3·realism146 자료를 함께 보존한다. legal KEEP가 기존 현실성
+FAIL/HOLD를 지우지 않으며, 기존 현실성 자료가 새 법규 NO/AMBIGUOUS/HOLD를
+가리지 않는다. Notice는 자신이 명시한 정확한 path/raw SHA/current question SHA에
+일치하는 실제 negative source만 선택한다. 기존 ordinary negative·날짜·hash 검사는
+그대로 실행한다. Source3가 pending이면 기존 현실성 source를 그대로 반환한다.
+다른 ID의 overlap, 알 수 없는 source, positive를 negative로 취급하는 시도는 실패한다.
+새 법규 negative notice가 앞에 오더라도 기존 현실성 notice를 previous_notices에
+정확히 남겨 기존 style containment 검사가 계속 확인하도록 한다. 기본 연습 제외는
+기존 primary 및 현실성 guard를 통해 계속 검사한다.

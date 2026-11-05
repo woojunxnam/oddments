@@ -321,6 +321,8 @@ def validate_archive_notice_wrapper(root,closure):
     bindings={};reports=integrated_sources(Path(root),source_bindings=bindings)
     from supplementary_checkpoint_bindings import validated_sources
     supplementary=validated_sources(root,[r for report in reports for r in report['records']])
+    from source3_recovered_legal_metadata import validate_notice_bindings
+    validate_notice_bindings(notices,supplementary)
     for qid,notice in latest.items():
         original=previous.get(qid)
         if original is not None and project(notice,qid)==project(original,qid):continue
@@ -330,6 +332,9 @@ def validate_archive_notice_wrapper(root,closure):
         binding=bindings.get(qid)
         if binding is None or (notice.get('review_source'),notice.get('review_source_sha256'))!=(binding['source_path'],binding['source_sha256']):
             binding=supplementary.get(qid)
+            if qid=='MA-CASE-0790' and binding and binding.get('review_kind')=='SOURCE3_RECOVERED_LEGAL':
+                from source3_recovered_legal_metadata import negative_notice_source
+                binding=negative_notice_source(qid,notice,binding)
             require(binding is not None and binding['negative'],
                     'Archive wrapper requires an actual integrated negative supplementary source: '+qid)
         required={'question_ids','question_record_hashes','issue_type','reason','checked_at','review_source','review_source_sha256'}
