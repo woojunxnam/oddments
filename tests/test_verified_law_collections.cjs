@@ -84,9 +84,11 @@ test("public collection data rejects hidden extra fields and private reference t
 test("actual delivery holds preserve the reviewed negative IDs without changing canonical eligibility fields", () => {
   const original = JSON.parse(fs.readFileSync(path.join(root, "reports/coverage336/public-set-review.json"), "utf8"));
   const addendum = JSON.parse(fs.readFileSync(path.join(root, "reports/coverage336/public-two-item-addendum.json"), "utf8"));
+  const secondOpinion = JSON.parse(fs.readFileSync(path.join(root, "reports/coverage336/public12-second-opinion.json"), "utf8"));
   const knownNegativeIds = [
     ...original.results.filter((item) => item.recommendation !== "INCLUDE_UNCHANGED_PUBLIC_ITEM").map((item) => item.question_id),
     ...addendum.results.filter((item) => item.curated_delivery_recommendation === "EXCLUDE").map((item) => item.question_id),
+    ...secondOpinion.questions.filter((item) => item.legal_verdict !== "PASS" || item.realism_verdict !== "PASS").map((item) => item.question_id),
   ];
   const heldIds = new Set(overlay.holds.map((item) => item.question_id));
   assert.ok(knownNegativeIds.every((id) => heldIds.has(id)), "previously reviewed negatives cannot disappear silently");
