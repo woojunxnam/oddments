@@ -1,0 +1,59 @@
+{
+  "status": "CURRENT_HASH_CONSUMER_HARDENING_REVIEW_COMPLETE_H1_H3_FIXED_ONE_P2_REMAINS_NOT_READY",
+  "anchor_commit": "ea19d9881ec5b6a476f7dfc113cd1a4bc18c92da",
+  "reviewed_source_sha256": {
+    "scripts/canonical_admission.py": "2b7af2165ce0f2cba103d32aa1a643d237889f3a1d5f5cd2971de84d8995c3c8",
+    "scripts/canonical_admission_registry.py": "44ccb9049d76b5e0b5e9a4db2f5a2920d8f10e3a5bf6de439bc699874836e5c0",
+    "scripts/canonical_native_view.py": "37930d45b1183ba7d2f8bc6891ff557c0efd8bc7a3883cf9b3d81616087a897c",
+    "scripts/guarded_canonical_admission.py": "945c7a87c119358b3544f8809ddff2a71c46ff4ad53e1b71750634e0ddd37fbc",
+    "scripts/preflight_external_canonical.py": "40f8c09d955ee9c8eb013140868b5aba5ac3a1773f62ea8a3b94e7f6635f10f7",
+    "scripts/prepare_canonical_base_proof.py": "ec21ff441a7e7fc780c7425b1d49bea221410516c0991417ecd1ca35d18533ca",
+    "scripts/qa_common.py": "999d9b30fab2dd7721ac22165ac993f32cc9b16460766b5b1cb17c0541caccb9",
+    "scripts/validate_study_guide.py": "ce213c2cb9a114a6ce61fc3f073399abb69005fe36eb23468964fc8da161674f",
+    "scripts/build_study_guide_data.py": "c340ca22772699b338a611446a15f601e1a79f6656f15d2d0a92a2dd3a093e46",
+    "tests/test_canonical_registered_context.py": "634d86f2f99e5b325422a28ce1493eebf3313857b185be978d3202148af143ac",
+    "docs/CANONICAL_GUARDED_ADMISSION.md": "c511041764cdcf3a7bd2fb638e2e44b83b12331a19a22f423468cce460b40a16"
+  },
+  "prior_addendum_sha256": "31dfd39148f0ba47bab76bfbeab06afd9b044d184d8277fbeac5cacfeaa57f73",
+  "prior_artifacts_preserved": 131,
+  "original_H_findings": {
+    "H1": "Original untracked and ignored publishable-file additions now rejected. New J1 index-hidden byte/symlink variant remains.",
+    "H2": "Exact current M/N/E bytes must be regular HEAD blobs in both normal and internal validation entry points. Untracked or differing metadata is rejected.",
+    "H3": "Full caller coverage, question payload and guide must match cached actual producer values; the return is a deepcopy of expected native K."
+  },
+  "actual_independent_probes": "H1-H3-current-consumer-probes.json",
+  "actual_small_probe_count": 11,
+  "new_finding": {
+    "id": "J1",
+    "severity": "P2",
+    "title": "Publishable disk bytes and symlinks can evade Git-index-based dirty checks",
+    "file": "scripts/canonical_admission.py",
+    "line": 73,
+    "evidence": "git-index-hidden-UI-mutation-probe.json",
+    "observed": "require_clean_delivery_workspace compares published path membership but trusts git diff HEAD for byte integrity. Both assume-unchanged and skip-worktree hide a tracked site/app.js body change; the actual helper accepts it. With skip-worktree, replacing that tracked path with a symlink to a synthetic external file is also accepted. HEAD/runtime/data/registry need not change.",
+    "impact_boundary": "This is a post-validation source-integrity defect before production enrollment, not an empty-registry authorization bypass. The actual publisher copies the entire site tree. No generation, external data read, publication or real token mint occurred.",
+    "probe_scope": "Real synthetic Git repositories and the current actual helper; no monkeypatch of authorization or native validators. Only the Git index flags changed.",
+    "recommendation": "Read every published HEAD path through read_current_preimages to reject final/component symlinks, read its immutable HEAD regular blob and compare exact bytes directly. Keep inventory/unknown-file/known-seal checks; use Git dirty reporting only as an additional check."
+  },
+  "actual_focused_tests": {
+    "passed": 103,
+    "seconds": 7.25,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /workspace/mpje-ci-checks-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_canonical_successor_infrastructure.py tests/test_content_hashes.py tests/test_duplicates.py tests/test_question_validation.py tests/test_canonical_registered_context.py --basetemp /workspace/scratch/coverage336-registered-independent-consumer-hardening/focused103-temp",
+    "cwd": "/workspace/mpje-336-successor",
+    "raw_log": "focused103.log"
+  },
+  "actual_status": {
+    "status": "NO_ENROLLED_ADMISSION",
+    "activation_allowed": false,
+    "new_eligible_count": 0,
+    "actual_legacy_replay_executed": false
+  },
+  "DERIVED4_and_K_hash_direction_retained": "Actual producer equality and cached-K consumption checks remain. No manifest references a future K SHA, and full-value caller API binding is now present. No actual positive registered E2E was run.",
+  "actual_successful30_to40_registration_E2E": false,
+  "CI_routing_and_subsequent_versioned_lifecycle_complete": false,
+  "private31_preflight_text_read": false,
+  "source_modified_by_reviewer": 0,
+  "whole_native1781_fullpytest_generation_commit_push_runs": 0,
+  "admission_RELEASED_native_audit_CI_production_credit": 0,
+  "readiness": "NOT_READY"
+}

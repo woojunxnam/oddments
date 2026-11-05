@@ -1,0 +1,59 @@
+{
+  "scope": "SYNTHETIC_POST_NATIVE_CONSUMER_FIXTURES_NOT_REGISTRY_AUTHORIZATION_OR_NATIVE_SUCCESS",
+  "checks": [
+    {
+      "check": "EXACT_COMMITTED_MNE_BYTES",
+      "accepted": true
+    },
+    {
+      "check": "H2_IDENTICAL_BUT_UNTRACKED_METADATA",
+      "rejected": true,
+      "error": "Missing or unexpected committed regular-file path"
+    },
+    {
+      "check": "H2_WRONG_COMMITTED_METADATA_BYTES",
+      "rejected": true,
+      "error": "Enrollment/manifest/context must be exact committed HEAD regular blobs"
+    },
+    {
+      "check": "H1_UNTRACKED_PUBLISHABLE_FILE",
+      "rejected": true,
+      "error": "Unlisted untracked source outside exact derived coverage"
+    },
+    {
+      "check": "H1_IGNORED_PUBLISHABLE_FILE",
+      "rejected": true,
+      "error": "Unlisted or missing publishable UI disk source"
+    },
+    {
+      "check": "H3_EXACT_NATIVE_VALUES_AND_DEEPCOPY",
+      "accepted": true
+    },
+    {
+      "check": "H3_EQUAL_COUNTS_ARBITRARY_COVERAGE",
+      "rejected": true,
+      "error": "Supplied coverage differs from actual native producer"
+    },
+    {
+      "check": "H3_EQUAL_COUNT_ALTERED_QUESTION",
+      "rejected": true,
+      "error": "Supplied question/guide payload differs from actual native producer"
+    },
+    {
+      "check": "H3_EQUAL_COUNT_ALTERED_GUIDE",
+      "rejected": true,
+      "error": "Supplied question/guide payload differs from actual native producer"
+    },
+    {
+      "check": "EXACT_CALCULATED_UNTRACKED_K_EXCEPTION",
+      "accepted": true
+    },
+    {
+      "check": "K_TAMPERED_VALUE",
+      "rejected": true,
+      "error": "Derived coverage is not actual native output"
+    }
+  ],
+  "production_registry_empty": true,
+  "actual_native1781_generation_or_admission_runs": 0
+}

@@ -6,6 +6,8 @@ import math
 import re
 import unicodedata
 from collections import Counter
+from contextvars import ContextVar
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
@@ -131,11 +133,25 @@ class QAReport:
         return not self.errors
 
 
+_CANONICAL_READ_VIEW = ContextVar('canonical_read_view',default=None)
+
+
+@contextmanager
+def canonical_read_view(view):
+    """Scoped read-only provider; default disk APIs and hash functions are unchanged."""
+    token=_CANONICAL_READ_VIEW.set(view)
+    try:yield
+    finally:_CANONICAL_READ_VIEW.reset(token)
+
+
 def load_json(path: Path) -> Any:
+    view=_CANONICAL_READ_VIEW.get()
+    if view is not None:return view.load_json(path)
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, value: Any) -> None:
+    if _CANONICAL_READ_VIEW.get() is not None:raise ValueError('Native proposal/context view is read-only')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -194,6 +210,8 @@ def drug_consequence_rule_ids(drug: dict[str, Any]) -> set[str]:
 
 
 def iter_json_files(directory: Path) -> list[Path]:
+    view=_CANONICAL_READ_VIEW.get()
+    if view is not None:return view.iter_json_files(directory)
     return sorted(path for path in directory.glob("*.json") if path.is_file())
 
 

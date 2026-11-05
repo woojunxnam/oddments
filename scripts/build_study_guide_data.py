@@ -8,10 +8,10 @@ from validate_rules import validate_rules
 from validate_study_guide import validate_study_guide
 
 
-def build_study_guide_payload(*, include_pending: bool = False) -> dict[str, Any]:
+def build_study_guide_payload(*, include_pending: bool = False, admission_context=None) -> dict[str, Any]:
     rule_report, rules = validate_rules()
     question_report, questions = validate_questions(rules)
-    guide_report, sections = validate_study_guide(rules, questions)
+    guide_report, sections = validate_study_guide(rules, questions, withdrawal_context=admission_context)
     if not rule_report.ok or not question_report.ok or not guide_report.ok:
         raise ValueError("Study Guide canonical validation failed")
 
@@ -58,10 +58,10 @@ def build_study_guide_payload(*, include_pending: bool = False) -> dict[str, Any
     }
 
 
-def build_study_guide_coverage() -> dict[str, Any]:
+def build_study_guide_coverage(*, admission_context=None) -> dict[str, Any]:
     _, rules = validate_rules()
     _, questions = validate_questions(rules)
-    _, sections = validate_study_guide(rules, questions)
+    _, sections = validate_study_guide(rules, questions, withdrawal_context=admission_context)
     families = load_json(DATA / "exam_style" / "question_family_matrix.json")["families"]
     current_rules = {
         rule_id for rule_id, rule in rules.items() if rule.get("status") == "CURRENT"
