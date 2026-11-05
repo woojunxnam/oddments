@@ -4,6 +4,7 @@ import json
 import hashlib
 import math
 import re
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -253,10 +254,18 @@ def find_placeholders(value: Any) -> list[str]:
 
 
 def normalize_text(text: str, normalize_numbers: bool = False) -> str:
-    normalized = text.casefold()
+    normalized = unicodedata.normalize("NFC", text.casefold())
     if normalize_numbers:
         normalized = re.sub(r"\b\d+(?:\.\d+)?\b", "<num>", normalized)
-    normalized = re.sub(r"[^a-z0-9<>]+", " ", normalized)
+    if normalized.isascii():
+        # Pairwise question comparisons keep the existing fast ASCII path.
+        normalized = re.sub(r"[^a-z0-9<>]+", " ", normalized)
+    else:
+        normalized = "".join(
+            character if (character.isalnum() or character in "<>"
+                          or unicodedata.category(character).startswith("M")) else " "
+            for character in normalized
+        )
     return " ".join(normalized.split())
 
 
