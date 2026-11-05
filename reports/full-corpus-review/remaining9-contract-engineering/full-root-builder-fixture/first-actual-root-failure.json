@@ -1,0 +1,12 @@
+{
+  "observed_at_utc": "2026-11-05T00:14:40.627033+00:00",
+  "tested_head": "5b213997972747c2d4ea9a80b02cf33ddfc1af5c",
+  "command": "/workspace/mpje-ci-checks-venv/bin/python -m pytest tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields -q",
+  "exit_code": 1,
+  "tests_failed": 1,
+  "duration_seconds": 14.3,
+  "raw_log_sha256": "7b9e4e9e957e81a301842b988573d8573987d09cfe982044f24c94c2103c3b15",
+  "cause": "Synthetic secondary metadata loader patched for direct producer call also affected actual ROOT prior_supplementary retained-source validation, returning fixture-procedural-review.json from a different repository namespace.",
+  "required_fix": "Isolate synthetic producer fixture from actual prior/retention loaders without changing production guards or removing original assertions.",
+  "whole_qa_pass": false
+}
