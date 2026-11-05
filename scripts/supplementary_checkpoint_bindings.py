@@ -10,11 +10,13 @@ import procedural_secondary_metadata as procedural
 import phase11_secondary_metadata as phase11
 import phase11_context38_metadata as context38
 import remaining9_procedural_metadata as remaining9
+import source3_recovered_legal_metadata as source3
 
 CONSUMERS=((procedural,'reports/full-corpus-review/procedural-recheck-work-queue.json'),
            (phase11,'reports/full-corpus-review/phase11-procedural-recheck-work-queue.json'),
            (context38,'reports/full-corpus-review/phase11-context38-recheck-work-queue.json'),
-           (remaining9,'reports/full-corpus-review/remaining9-procedural-work-queue.json'))
+           (remaining9,'reports/full-corpus-review/remaining9-procedural-work-queue.json'),
+           (source3,'reports/full-corpus-review/source3-recovered-legal-work-queue.json'))
 
 
 def validated_sources(root,primary_records,*,source_bindings=None):
