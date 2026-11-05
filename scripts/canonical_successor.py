@@ -111,6 +111,18 @@ def read_committed_preimages(root, commit, paths):
     for path in paths:safe_path(path)
     object_type = subprocess.check_output(['git','cat-file','-t',commit],cwd=root).strip()
     require(object_type==b'commit', 'Source anchor is not a Git commit')
+    tree = subprocess.check_output(['git','--literal-pathspecs','ls-tree','-z',commit,'--',*paths],cwd=root)
+    tree_blobs = {}
+    for entry in tree.split(b'\0'):
+        if not entry:continue
+        metadata, name = entry.split(b'\t',1)
+        mode, kind, oid = metadata.split()
+        relative = name.decode('utf-8')
+        require(relative not in tree_blobs, 'Duplicate committed tree path')
+        require(mode in {b'100644',b'100755'} and kind==b'blob',
+            'Committed preimage is not a regular source file: '+relative)
+        tree_blobs[relative] = oid
+    require(set(tree_blobs)==set(paths), 'Missing or unexpected committed regular-file path')
     response = subprocess.run(['git','cat-file','--batch'],cwd=root,
         input=''.join(commit+':'+path+'\n' for path in paths).encode(),capture_output=True,check=True).stdout
     cursor = 0;result = {}
@@ -119,6 +131,7 @@ def read_committed_preimages(root, commit, paths):
         require(end>=cursor, 'Truncated Git blob header')
         fields = response[cursor:end].split();cursor=end+1
         require(len(fields)==3 and fields[1]==b'blob', 'Committed preimage is not a blob: '+path)
+        require(fields[0]==tree_blobs[path], 'Blob response differs from immutable tree entry')
         size=int(fields[2]);raw=response[cursor:cursor+size];cursor+=size
         require(len(raw)==size and response[cursor:cursor+1]==b'\n', 'Truncated Git preimage')
         cursor+=1

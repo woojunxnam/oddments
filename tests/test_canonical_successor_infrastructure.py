@@ -292,3 +292,34 @@ def test_same_forged_content_js_before_after_hash_or_omitted_trusted_seal_is_rej
         successor.note_source_context_only(raw,parent['source_bindings'],parent['source_bindings'],outputs,outputs,claims,claims,added,added,trusted_output_seals=omitted)
     with pytest.raises(successor.BoundaryViolation,match='preimages are required'):
         successor.note_source_context_only(raw,parent['source_bindings'],parent['source_bindings'],outputs,outputs,claims,claims,added,added)
+
+
+@pytest.fixture
+def committed_source_modes(tmp_path):
+    def git(*args):
+        return subprocess.check_output(['git','-C',str(tmp_path),*args])
+    git('init','--quiet');git('config','user.name','Synthetic Test');git('config','user.email','synthetic@example.invalid')
+    (tmp_path/'actual.json').write_bytes(b'{"synthetic":true}\n')
+    (tmp_path/'literal[1].json').write_bytes(b'{"literal":true}\n')
+    (tmp_path/'한글.json').write_bytes(b'{"unicode":true}\n')
+    (tmp_path/'script.py').write_bytes(b'# synthetic executable source\n');(tmp_path/'script.py').chmod(0o755)
+    (tmp_path/'nested').mkdir();(tmp_path/'nested/item.json').write_bytes(b'{"nested":true}\n')
+    (tmp_path/'linked.json').symlink_to('actual.json')
+    (tmp_path/'linked-dir').symlink_to('nested',target_is_directory=True)
+    git('add','.');git('commit','--quiet','-m','synthetic source modes')
+    first=git('rev-parse','HEAD').decode().strip()
+    git('update-index','--add','--cacheinfo','160000,'+first+',vendor')
+    git('commit','--quiet','-m','synthetic gitlink without external repository')
+    return tmp_path,git('rev-parse','HEAD').decode().strip()
+
+
+@pytest.mark.parametrize('path',['linked.json','linked-dir/item.json','nested','vendor'])
+def test_git_source_reader_rejects_final_intermediate_symlink_tree_and_gitlink(committed_source_modes,path):
+    root,commit=committed_source_modes
+    with pytest.raises(successor.BoundaryViolation):successor.read_committed_preimages(root,commit,[path])
+
+
+def test_git_source_reader_accepts_regular_and_executable_literal_unicode_paths(committed_source_modes):
+    root,commit=committed_source_modes
+    paths=['actual.json','script.py','literal[1].json','한글.json','nested/item.json']
+    assert successor.read_committed_preimages(root,commit,paths)=={path:(root/path).read_bytes() for path in paths}

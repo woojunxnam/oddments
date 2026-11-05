@@ -4,7 +4,7 @@
 
 ## 구현 범위
 
-`scripts/canonical_successor.py`는 실제 regular file과 immutable Git commit의 blob preimage를 읽습니다. Git 조회는 checkout, clone, baseline 등록 없이 수행합니다. source reader는 누락·중복·경로 이탈·symlink를 거부합니다. Git commit과 파일 목록은 별도로 신뢰할 수 있는 manifest에서 공급해야 하며, reader가 임의 commit을 승인하지 않습니다.
+`scripts/canonical_successor.py`는 실제 regular file과 immutable Git commit의 blob preimage를 읽습니다. Git 조회는 checkout, clone, baseline 등록 없이 수행합니다. filesystem reader는 누락·중복·경로 이탈·symlink를 거부합니다. Git reader도 exact literal path의 tree mode가 `100644` 또는 `100755`인 blob만 받고 tree OID와 실제 batch blob OID를 결박합니다. 최종/중간 symlink·directory tree·gitlink는 거부합니다. Git commit과 파일 목록은 별도로 신뢰할 수 있는 manifest에서 공급해야 하며, reader가 임의 commit을 승인하지 않습니다.
 
 경계 검사는 frozen inventory와 기대 바이트를 재등록하지 않고 원본 파일을 대조합니다. 추가 파일은 `data/questions/`, `data/audits/`, `data/rules/`, `data/drugs/`의 정확한 직접 JSON 경로·크기·SHA에 한정합니다. 기존 canonical 질문과 family의 semantic 입력도 실제 봉인된 원문 바이트에 결박합니다. 기존 family의 의미·규정·cap·순서를 유지하고 실제 registry 개수만 반영하며, 새 행은 실제 새 질문에 사용되어야 합니다. ordinary INITIAL 후보는 기존 규정대로 30–40개입니다.
 
