@@ -386,4 +386,3 @@ def validate_archived_legal_sources(selection,metadata):
             reviewed_at=proof['reviewed_at'],negative=legal['verdict']in{'MINOR_EDIT','MAJOR_REWRITE','HOLD','DELETE'}or
                 legal['existing_answer_correct']in{'NO','AMBIGUOUS','NOT_ASSESSED'})
     validate_notice_bindings(selection['archive_review_notices'],sources)
-
