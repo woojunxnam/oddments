@@ -1,0 +1,128 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields _
+
+fixture = (PosixPath('/tmp/pytest-of-agent/pytest-59/test_builder_exposes_secondary0/repo'), {'events': [{'attempt': 1, 'job_id'...-CASE-0401': 'practice_expansion/fixture/questions.json', 'MA-CASE-0441': 'practice_expansion/fixture/questions.json'})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7feed26181d0>
+
+    def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields(fixture,monkeypatch):
+        import build_full_corpus_review as builder
+        import phase11_secondary_metadata as phase11
+        import phase11_context38_metadata as context38
+        import realism_completion_metadata as completion
+        import realism_completion_review as completion_route
+        import remaining9_procedural_metadata as remaining9
+        import source3_recovered_legal_metadata as source3
+        root,state,report,_,questions,collections = fixture
+        real_load = secondary.load_metadata; captured = {}; other_sources = []; current_sources = {}
+        actual_prior_loaders = {secondary: real_load, phase11: phase11.load_metadata,
+                                context38: context38.load_metadata}
+        actual_prior = completion_route.prior_supplementary
+        retained_prior_roots = []
+        def prior_in_actual_repository(repo,*args,**kwargs):
+            # A nested immutable-source consumer must never receive the direct
+            # producer's synthetic report paths under the real repository root.
+            with monkeypatch.context() as native_sources:
+                for module, loader in actual_prior_loaders.items():
+                    native_sources.setattr(module,'load_metadata',loader)
+                value=actual_prior(repo,*args,**kwargs)
+            retained_prior_roots.append(repo)
+            return value
+        monkeypatch.setattr(completion_route,'prior_supplementary',prior_in_actual_repository)
+        def load_fixture(repo,primary,current_questions,current_collections,*,source_bindings=None):
+            # Retained-source validation must read the actual repository, while
+            # only the builder-level consumer call uses the synthetic retry.
+            if source_bindings is not None:
+                return real_load(repo,primary,current_questions,current_collections,source_bindings=source_bindings)
+            captured['primary'] = copy.deepcopy(primary)
+            value = real_load(root,primary,questions,collections)
+            captured['progress'] = value['progress']
+            captured['source'] = value
+            return value
+        def capture_other(loader):
+            def load_other(*args,**kwargs):
+                value=loader(*args,**kwargs)
+                if kwargs.get("source_bindings") is None:other_sources.append(value)
+                return value
+            return load_other
+        monkeypatch.setattr(secondary,'load_metadata',load_fixture)
+        monkeypatch.setattr(phase11,'load_metadata',capture_other(phase11.load_metadata))
+        monkeypatch.setattr(context38,'load_metadata',capture_other(context38.load_metadata))
+        def capture_current(name,loader,legal_only=False):
+            def load_current(repo,primary,public,*args,**kwargs):
+                value=loader(repo,primary,public,*args,**kwargs)
+                # Capture only the actual producer's complete public/current primary
+                # input, not partial native-only inputs read by retention guards.
+                expected={r['question_id']for r in captured.get('primary',[])}
+                if expected and repo==ROOT and {r['question_id']for r in primary}==expected and set(public)==expected:
+                    assert name not in current_sources
+                    current_sources[name]=({'assessments':value['legal_assessments'],'records':value['legal_records']}
+                                           if legal_only else value)
+                return value
+            return load_current
+        monkeypatch.setattr(completion,'load_metadata',capture_current('legal4',completion.load_metadata,legal_only=True))
+        monkeypatch.setattr(remaining9,'load_metadata',capture_current('remaining9',remaining9.load_metadata))
+        monkeypatch.setattr(source3,'load_metadata',capture_current('source3',source3.load_metadata))
+>       outputs = builder.build()
+                  ^^^^^^^^^^^^^^^
+
+tests/test_procedural_secondary_metadata.py:300: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_full_corpus_review.py:748: in build
+    effective_notes = load_notes(ROOT)
+                      ^^^^^^^^^^^^^^^^
+scripts/notes_revision.py:193: in load_notes
+    return apply_if_bound(root,data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:132: in apply_if_bound
+    config,closure,state,job,archived,candidate,binding=source_contract(root)
+                                                        ^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:64: in source_contract
+    return validate_source_payload(root,config,binding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_held_sixteenth.py:78: in validate_source_payload
+    closure=old.validate(root,config['closure'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/notes_published15_closure.py:273: in validate
+    validate_publication_config(root,value)
+scripts/notes_published15_closure.py:389: in validate_publication_config
+    validate_publication_default_safety(root,closure,selection,validated)
+scripts/notes_published15_closure.py:413: in validate_publication_default_safety
+    validate_publication_style_inputs(root,selection,primary_records,style_inputs)
+scripts/notes_published15_closure.py:95: in wrapped
+    with head_snapshot(root):return function(root,*args,**kwargs)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/realism_completion_metadata.py:159: in validate_publication_style_inputs
+    metadata=load_metadata(root,primary_records,public)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+repo = PosixPath('/workspace/oddments')
+primary = [{'canonical_release_credit': 0, 'collection': 'practice_expansion/2026-10-26-plus/questions.json', 'disposition': 'IN...EPENDENT_ASSESSED', 'facts_independently_applied': {'first': 20, 'hours': 72, 'remaining': 40, 'total': 60}, ...}, ...]
+public = {'MA-CASE-0001': {'_statement_truth': {'A': False, 'B': False, 'C': True, 'D': False}, 'additional_primary_evidence': ...: False, 'C': False, 'D': False}, 'additional_primary_evidence': [], 'area': 1, 'authored_at': '2026-10-26', ...}, ...}
+args = (), kwargs = {}
+value = {'assessments': {'MA-CASE-0001': {'actor_provenance': {'actor_id': '/root/realism95_a', 'session_id': '/root/realism95...하는지 구별한다.', ...}, 'decision': 'KEEP', ...}, ...}], 'prior_realism_negative_ids': ['MA-CASE-0401', 'MA-CASE-0441'], ...}
+expected = {'MA-CASE-0001', 'MA-CASE-0002', 'MA-CASE-0003', 'MA-CASE-0004', 'MA-CASE-0005', 'MA-CASE-0006', ...}
+@py_assert1 = False
+@py_format3 = "'legal4' not in {'legal4': {'assessments': {'MA-RW-0051': {'actor_provenance': {'actor_id': '/root/realism95_d', 'ses... 'canonical_release_credit': 0, 'effective_key_assessed': 2292, 'effective_keys_unassessed': 57, ...}, 'records': []}}"
+@py_format5 = "assert 'legal4' not in {'legal4': {'assessments': {'MA-RW-0051': {'actor_provenance': {'actor_id': '/root/realism95_d... 'canonical_release_credit': 0, 'effective_key_assessed': 2292, 'effective_keys_unassessed': 57, ...}, 'records': []}}"
+
+    def load_current(repo,primary,public,*args,**kwargs):
+        value=loader(repo,primary,public,*args,**kwargs)
+        # Capture only the actual producer's complete public/current primary
+        # input, not partial native-only inputs read by retention guards.
+        expected={r['question_id']for r in captured.get('primary',[])}
+        if expected and repo==ROOT and {r['question_id']for r in primary}==expected and set(public)==expected:
+>           assert name not in current_sources
+E           AssertionError: assert 'legal4' not in {'legal4': {'assessments': {'MA-RW-0051': {'actor_provenance': {'actor_id': '/root/realism95_d', 'session_id': '/root/..., 'canonical_release_credit': 0, 'effective_key_assessed': 2292, 'effective_keys_unassessed': 57, ...}, 'records': []}}
+
+tests/test_procedural_secondary_metadata.py:292: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_procedural_secondary_metadata.py::test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publication_fields
+1 failed in 215.94s (0:03:35)

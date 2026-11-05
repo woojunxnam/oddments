@@ -289,9 +289,16 @@ def test_builder_exposes_secondary_separately_and_keeps_all_primary_and_publicat
             # input, not partial native-only inputs read by retention guards.
             expected={r['question_id']for r in captured.get('primary',[])}
             if expected and repo==ROOT and {r['question_id']for r in primary}==expected and set(public)==expected:
-                assert name not in current_sources
-                current_sources[name]=({'assessments':value['legal_assessments'],'records':value['legal_records']}
-                                       if legal_only else value)
+                current=({'assessments':value['legal_assessments'],'records':value['legal_records']}
+                         if legal_only else value)
+                if name in current_sources:
+                    # The publication guard legitimately validates the complete
+                    # source again. Its evidence must remain exactly identical;
+                    # count the producer input once in the expected union.
+                    assert current_sources[name]['assessments'] == current['assessments']
+                    assert current_sources[name]['records'] == current['records']
+                else:
+                    current_sources[name]=current
             return value
         return load_current
     monkeypatch.setattr(completion,'load_metadata',capture_current('legal4',completion.load_metadata,legal_only=True))
