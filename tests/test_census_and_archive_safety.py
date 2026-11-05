@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 
 import pytest
@@ -51,6 +52,11 @@ def test_nonlegal_proof_cannot_be_rebound_after_changing_independent_finding(tmp
 
 
 def test_independent_archive_warning_requires_an_actual_negative_or_hold(tmp_path, monkeypatch):
+    # The completion fallback verifies a stable HEAD before dispatching by report type.
+    subprocess.run(['git', 'init', '-q', str(tmp_path)], check=True)
+    subprocess.run(['git', '-C', str(tmp_path), '-c', 'user.name=Fixture',
+                    '-c', 'user.email=fixture@example.invalid', '-c', 'commit.gpgsign=false',
+                    'commit', '--allow-empty', '-qm', 'Initialize warning validator fixture'], check=True)
     source = 'reports/full-corpus-review/independent-phase2-e-review.json'
     raw = (ROOT/source).read_bytes()
     target = tmp_path/source; target.parent.mkdir(parents=True, exist_ok=True); target.write_bytes(raw)
