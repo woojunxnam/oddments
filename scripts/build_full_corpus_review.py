@@ -691,6 +691,8 @@ def build():
     source3_bindings = {}
     source3_secondary = load_source3_secondary(ROOT,independent_records,public_by_id,secondary_collections,
                                               source_bindings=source3_bindings)
+    from source3_recovered_legal_metadata import validate_archived_legal_sources
+    validate_archived_legal_sources(selection,source3_secondary)
     secondary = combine_metadata(independent_records,procedural_secondary,phase11_secondary,context38_secondary,realism_completion_legal,remaining9_secondary,source3_secondary)
     realism_completion_progress = apply_realism_completion(result,independent_records,realism_completion,secondary['effective_realism_pass'])
     validate_context_default_safety(selection['recommended_ids'],context38_secondary)

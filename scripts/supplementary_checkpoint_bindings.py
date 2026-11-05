@@ -62,12 +62,18 @@ def validated_sources(root,primary_records,*,source_bindings=None):
                               record_sha256=row['record_sha256'],reviewed_at=report.get('reviewed_at'),
                               negative=negative,supplementary_only=True,does_not_override_primary=True,
                               canonical_release_credit=0)
+            if consumer is source3:
+                sources[qid]['review_kind']=source3.REVIEW_KIND
     if has_completion:
         from realism_completion_metadata import load_metadata as load_realism_completion, blocked_realism
         metadata=load_realism_completion(root,primary_records,all_public,source_bindings=staged)
         for qid,assessment in metadata['assessments'].items():
             previous=sources.get(qid)
-            procedural.require(previous is None or qid in procedural.IDS,'Unexpected supplementary realism overlap')
+            recovered_overlap=previous is not None and previous.get('review_kind')==source3.REVIEW_KIND
+            if recovered_overlap:
+                procedural.require(qid==source3.STYLE_OVERLAP_ID,'Unexpected recovered-source realism overlap')
+            else:
+                procedural.require(previous is None or qid in procedural.IDS,'Unexpected supplementary realism overlap')
             report=json.loads(read(assessment['report_path'],assessment['report_sha256']))
             row=assessment['record'];legal=row.get('legal_review',{});realism=row['realism_review']
             negative=(realism['verdict']=='FAIL' or blocked_realism(row)or legal.get('verdict')in {'MINOR_EDIT','MAJOR_REWRITE','HOLD','DELETE'}or
@@ -75,7 +81,10 @@ def validated_sources(root,primary_records,*,source_bindings=None):
             current=dict(source_path=assessment['report_path'],source_sha256=assessment['report_sha256'],
                 record_sha256=row['record_sha256'],reviewed_at=report['reviewed_at'],negative=negative,
                 supplementary_only=True,does_not_override_primary=True,canonical_release_credit=0,review_kind='REALISM_COMPLETION')
-            sources[qid]=merge_completion_source(qid,previous,current)
+            if recovered_overlap:
+                sources[qid]=source3.merge_validated_style_source(qid,previous,current)
+            else:
+                sources[qid]=merge_completion_source(qid,previous,current)
     procedural.retained_result(None,staged,source_bindings)
     return sources
 
