@@ -3,7 +3,10 @@
 const DATA_URL = "generated/questions.json";
 const GUIDE_URL = "generated/study_guide.json";
 const requestedSeed = new URLSearchParams(window.location.search).get("seed");
+const requestedParameters = new URLSearchParams(window.location.search);
+const curatedRequested = requestedParameters.has("set") || requestedParameters.has("question");
 let sessionCounter = 0;
+let progressStorageUnavailable = false;
 
 const elements = {
   fixtureWarning: document.querySelector("#fixture-warning"), dataSummary: document.querySelector("#data-summary"),
@@ -30,12 +33,17 @@ const elements = {
   historyDetail: document.querySelector("#history-detail"), studyGuidePanel: document.querySelector("#study-guide-panel"),
   guideSections: document.querySelector("#guide-sections"), guideSearch: document.querySelector("#guide-search"),
   guideAreaFilter: document.querySelector("#guide-area-filter"),
+  curatedContext: document.querySelector("#curated-context"), curatedTitle: document.querySelector("#curated-title"),
+  curatedDescription: document.querySelector("#curated-description"),
+  curatedReviewLink: document.querySelector("#curated-review-link"), deliveryNotice: document.querySelector("#delivery-notice"),
 };
 
 const state = {
   payload: null, guide: null, mode: null, sessionSeed: null, startedAt: null, queue: [], responses: [], index: 0,
   question: null, selected: new Set(), order: [], answered: false, revealed: false, correct: null,
-  lastSession: null, progress: MpjeStorage.loadProgress(),
+  lastSession: null, progress: loadProgressSafely(),
+  curated: { requested: curatedRequested, ready: !curatedRequested, questionIds: null, error: "", hold: null },
+  delivery: { ready: false, context: null, error: "" },
 };
 
 function createSessionSeed(mode) {
@@ -50,7 +58,18 @@ function createSessionId() {
   return `session-${randomPart}`;
 }
 
-function saveProgress() { MpjeStorage.saveProgress(state.progress); }
+function storageUnavailableNotice() {
+  progressStorageUnavailable = true;
+  elements.storageStatus.textContent = "이 브라우저에서는 학습 기록을 저장할 수 없습니다. 현재 화면에서는 계속 학습할 수 있습니다.";
+}
+function loadProgressSafely() {
+  try { return MpjeStorage.loadProgress(); }
+  catch (_error) { progressStorageUnavailable = true; return MpjeStorage.defaultProgress(); }
+}
+function saveProgress() {
+  try { MpjeStorage.saveProgress(state.progress); }
+  catch (_error) { storageUnavailableNotice(); }
+}
 function addUnique(list, value) { if (!list.includes(value)) list.push(value); }
 function removeValue(list, value) { const index = list.indexOf(value); if (index >= 0) list.splice(index, 1); }
 function escapeHtml(value) { return String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[character])); }
@@ -68,10 +87,31 @@ function populateFilters(questions) {
   fillSelect(elements.typeFilter, [...new Set(questions.map((question) => question.question_type))].sort());
 }
 
+function canDeliver(question) {
+  if (!state.delivery.ready || !question) return false;
+  const current = state.payload.questions.find((item) => item.question_id === question.question_id);
+  return Boolean(current && current.question_content_hash === question.question_content_hash
+    && MpjeCollections.isDeliveryUsable(question, MpjeSessions.isReleaseUsable, state.delivery.context));
+}
+
+async function initializeDeliveryHolds(payload) {
+  const response = await fetch("verified-law/delivery-holds.json", { cache: "no-store" });
+  if (!response.ok) throw new Error("문항 보류 안내를 불러오지 못해 자동 학습을 중지했습니다. 잠시 후 다시 시도해 주세요.");
+  state.delivery.context = MpjeCollections.validateDeliveryHolds(payload, await response.json(), MpjeSessions.isReleaseUsable);
+  state.delivery.ready = true;
+  elements.deliveryNotice.hidden = state.delivery.context.heldCount === 0;
+  elements.deliveryNotice.textContent = `추가 검토가 필요한 ${state.delivery.context.heldCount}문항의 학습·채점을 보류합니다. 기존 풀이 기록과 북마크는 유지됩니다.`;
+}
+
 function filteredQuestions() {
+  if (!state.payload || !state.delivery.ready || (state.curated.requested && !state.curated.ready)) return [];
   const area = elements.areaFilter.value; const topic = elements.topicFilter.value;
   const difficulty = elements.difficultyFilter.value; const type = elements.typeFilter.value; const drugOnly = elements.drugFilter.checked;
-  return state.payload.questions.filter((question) => MpjeSessions.isReleaseUsable(question)
+  const pool = state.curated.requested
+    ? [...state.curated.questionIds].map((id) => state.payload.questions.find((question) => question.question_id === id))
+    : state.payload.questions;
+  return pool.filter((question) => canDeliver(question)
+    && (!state.curated.requested || state.curated.questionIds.has(question.question_id))
     && (!area || String(question.area) === area) && (!topic || question.topic === topic)
     && (!difficulty || String(question.difficulty) === difficulty) && (!type || question.question_type === type)
     && (!drugOnly || question.drug_ids.length > 0));
@@ -85,11 +125,50 @@ function hideSecondaryPanels() {
   elements.examResults.hidden = true; elements.historyPanel.hidden = true; elements.studyGuidePanel.hidden = true;
 }
 
+function showCuratedUnavailable(message, hold = null) {
+  state.queue = []; state.responses = []; state.question = null; state.index = 0;
+  elements.curatedContext.hidden = false;
+  elements.curatedTitle.textContent = "선택한 학습 범위를 열 수 없습니다";
+  elements.curatedDescription.textContent = message;
+  elements.curatedReviewLink.hidden = !hold;
+  if (hold) elements.curatedReviewLink.href = hold.review.url;
+  elements.emptyState.hidden = false; elements.emptyState.replaceChildren();
+  const heading = document.createElement("h2"); heading.textContent = "학습 링크를 확인해 주세요";
+  const description = document.createElement("p"); description.textContent = message;
+  elements.emptyState.append(heading, description); elements.questionPanel.hidden = true;
+}
+
+async function initializeCuratedSelection(payload) {
+  const response = await fetch("verified-law/sets.json", { cache: "no-store" });
+  if (!response.ok) throw new Error("선택한 학습 목록을 불러오지 못했습니다. 다른 주제를 선택하거나 다시 시도해 주세요.");
+  const selection = MpjeCollections.resolveSelection(payload, await response.json(), window.location.search, MpjeSessions.isReleaseUsable, state.delivery.context);
+  state.curated.ready = true; state.curated.questionIds = new Set(selection.questionIds);
+  elements.curatedContext.hidden = false;
+  elements.curatedTitle.textContent = selection.set?.title || "기존 승인 문항 바로 보기";
+  elements.curatedDescription.textContent = selection.set
+    ? `${selection.set.description} 선택한 범위: ${selection.questionIds.length}문항.`
+    : "링크로 선택한 기존 승인 문항 1개를 학습합니다.";
+  return selection;
+}
+
 function startMode(mode, overrideQuestions = null) {
+  if (!state.delivery.ready) {
+    showCuratedUnavailable(state.delivery.error || "문항 보류 안내를 확인하고 있습니다."); return;
+  }
+  if (state.curated.requested && !state.curated.ready) {
+    showCuratedUnavailable(state.curated.error || "선택한 학습 범위를 확인하고 있습니다.", state.curated.hold); return;
+  }
   state.mode = mode; state.sessionSeed = createSessionSeed(mode); state.startedAt = new Date().toISOString();
   state.responses = []; state.lastSession = null; hideSecondaryPanels();
   document.querySelectorAll("[data-mode]").forEach((button) => button.classList.toggle("active", button.dataset.mode === mode));
   let questions = overrideQuestions ? [...overrideQuestions] : filteredQuestions();
+  const blocked = questions.map((question) => MpjeCollections.getDeliveryHold(question, state.delivery.context)).filter(Boolean);
+  questions = questions.filter(canDeliver);
+  if (!questions.length && blocked.length) {
+    showCuratedUnavailable("이 문항의 학습·채점을 보류합니다. " + blocked[0].reason + " 기존 학습 기록은 유지됩니다.", blocked[0]); return;
+  }
+  if (state.curated.requested) questions = questions.filter((question) =>
+    MpjeSessions.isReleaseUsable(question) && state.curated.questionIds.has(question.question_id));
   try {
     if (mode === "quick20") questions = MpjeSessions.createQuick20(questions, state.sessionSeed);
     if (mode === "drug") questions = questions.filter((question) => question.drug_ids.length > 0);
@@ -104,6 +183,14 @@ function startMode(mode, overrideQuestions = null) {
     elements.questionPanel.hidden = true; return;
   }
   if (!questions.length) {
+    state.queue = []; state.responses = []; state.question = null;
+    const requestedIds = mode === "wrong" ? state.progress.wrong : mode === "bookmarked" ? state.progress.bookmarks : [];
+    const held = state.payload.questions.filter((question) => requestedIds.includes(question.question_id)
+      && (!state.curated.requested || state.curated.questionIds.has(question.question_id)))
+      .map((question) => MpjeCollections.getDeliveryHold(question, state.delivery.context)).find(Boolean);
+    if (held) {
+      showCuratedUnavailable("이 문항의 학습·채점을 보류합니다. " + held.reason + " 기존 학습 기록은 유지됩니다.", held); return;
+    }
     elements.emptyState.hidden = false; elements.emptyState.innerHTML = "<h2>No matching questions</h2><p>Adjust the filters or choose another mode.</p>";
     elements.questionPanel.hidden = true; return;
   }
@@ -117,6 +204,11 @@ function saveCurrentResponse() {
 
 function renderCurrentQuestion() {
   const canonical = state.queue[state.index]; const response = state.responses[state.index];
+  if (!canDeliver(canonical)) {
+    const hold = state.delivery.ready ? MpjeCollections.getDeliveryHold(canonical, state.delivery.context) : null;
+    showCuratedUnavailable(hold ? "이 문항의 학습·채점을 보류합니다. " + hold.reason + " 기존 학습 기록은 유지됩니다." : "이 문항은 현재 자동 학습을 제공하지 않습니다.", hold);
+    return;
+  }
   state.question = MpjeShuffle.shuffleQuestionChoices(canonical, state.sessionSeed);
   state.selected = new Set(response?.selected || []); state.order = [...(response?.order || [])];
   state.answered = Boolean(response?.answered); state.revealed = Boolean(response?.revealed); state.correct = response?.correct ?? null;
@@ -181,6 +273,11 @@ function answersMatch(left, right, ordered) {
 }
 
 function checkAnswer(revealed = false) {
+  if (!canDeliver(state.question)) {
+    const hold = state.delivery.ready ? MpjeCollections.getDeliveryHold(state.question, state.delivery.context) : null;
+    showCuratedUnavailable(hold ? "이 문항의 학습·채점을 보류합니다. " + hold.reason + " 기존 학습 기록은 유지됩니다." : "이 문항은 현재 채점을 제공하지 않습니다.", hold);
+    return;
+  }
   if (state.answered) return; const selected = selectedAnswer();
   if (!revealed && selected.length === 0) { elements.result.hidden = false; elements.result.className = "result incorrect"; elements.result.textContent = "Select an answer before checking."; return; }
   const ordered = state.question.question_type === "ORDERED_RESPONSE"; const correct = answersMatch(selected, state.question.correct_choice_ids, ordered);
@@ -241,7 +338,8 @@ function formatElapsed(seconds) { return `${Math.floor(seconds / 60)}:${String(s
 async function finishSession() {
   saveCurrentResponse();
   const record = MpjeSessions.buildCompletedSession({ sessionId: createSessionId(), examType: examTypeForMode(state.mode), sessionSeed: state.sessionSeed, startedAt: state.startedAt, completedAt: new Date().toISOString(), queue: state.queue, responses: state.responses });
-  await MpjeStorage.saveSession(record); state.lastSession = record; renderResults(record); await renderDashboard();
+  try { await MpjeStorage.saveSession(record); } catch (_error) { storageUnavailableNotice(); }
+  state.lastSession = record; renderResults(record); await renderDashboard();
 }
 
 function renderResults(record) {
@@ -259,7 +357,9 @@ function renderResults(record) {
 function metricCard(value, label) { return `<article class="metric-card"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></article>`; }
 
 async function renderDashboard() {
-  const sessions = await MpjeStorage.listSessions(); const areaTotals = Object.values(state.progress.byArea);
+  let sessions = [];
+  try { sessions = await MpjeStorage.listSessions(); } catch (_error) { storageUnavailableNotice(); }
+  const areaTotals = Object.values(state.progress.byArea);
   const correct = areaTotals.reduce((sum, item) => sum + item.correct, 0); const attempted = areaTotals.reduce((sum, item) => sum + item.attempted, 0);
   const quick = sessions.find((session) => session.exam_type === "QUICK_20"); const mock = sessions.find((session) => session.exam_type === "MOCK_120");
   elements.dashboardMetrics.innerHTML = [metricCard(attempted ? `${Math.round((100 * correct) / attempted)}%` : "—", "Overall accuracy"), metricCard(quick ? `${quick.score.correct}/${quick.score.total}` : "—", "Recent Quick 20"), metricCard(mock ? `${mock.score.correct}/${mock.score.total}` : "—", "Recent Mock 120"), metricCard(String(state.progress.wrong.length), "Wrong questions"), metricCard(String(state.progress.bookmarks.length), "Bookmarks")].join("");
@@ -268,7 +368,9 @@ async function renderDashboard() {
 function examTypeLabel(type) { return { QUICK_20: "Quick 20", MOCK_120: "Mock 120", TOPIC_QUIZ: "Topic Quiz", WRONG_ANSWER_QUIZ: "Wrong Answers", BOOKMARKED_QUIZ: "Bookmarked" }[type] || type; }
 
 async function showHistory() {
-  hideSecondaryPanels(); elements.questionPanel.hidden = true; elements.historyPanel.hidden = false; const sessions = await MpjeStorage.listSessions();
+  hideSecondaryPanels(); elements.questionPanel.hidden = true; elements.historyPanel.hidden = false;
+  let sessions = [];
+  try { sessions = await MpjeStorage.listSessions(); } catch (_error) { storageUnavailableNotice(); }
   if (!sessions.length) { elements.historyList.innerHTML = "<p class=\"muted\">No completed sessions are stored on this device.</p>"; elements.historyDetail.replaceChildren(); return; }
   elements.historyList.innerHTML = `<table class="history-table"><thead><tr><th>Date</th><th>Type</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${sessions.map((session) => `<tr><td>${escapeHtml(session.completed_at.slice(0, 10))}</td><td>${escapeHtml(examTypeLabel(session.exam_type))}</td><td>${session.score.correct}/${session.score.total} ${session.score.percentage}%</td><td>${formatElapsed(session.elapsed_seconds)}</td><td><button type="button" data-history-id="${escapeHtml(session.session_id)}">Open</button></td></tr>`).join("")}</tbody></table>`;
   elements.historyList.querySelectorAll("[data-history-id]").forEach((button) => button.addEventListener("click", async () => renderHistoryDetail(await MpjeStorage.getSession(button.dataset.historyId))));
@@ -295,7 +397,7 @@ function renderGuideSection(section) {
   const status = verified ? `<span class="guide-summary-meta">Independently verified ${escapeHtml(section.last_verified || "")}</span>` : `<span class="status-badge pending">Audit pending — not independently verified</span>`;
   const roles = new Map(); section.role_duties.forEach((item) => roles.set(item.role, [...(roles.get(item.role) || []), item.duty]));
   const sources = [...new Map(section.authorities.map((authority) => [`${authority.name}|${authority.section}|${authority.url}`, authority])).values()];
-  const practice = section.practice_question_ids.filter((id) => state.payload?.questions.some((question) => question.question_id === id));
+  const practice = section.practice_question_ids.filter((id) => state.payload?.questions.some((question) => question.question_id === id && canDeliver(question)));
   const body = [
     guideBlock("What you should be able to do", guideList(section.learning_objectives, escapeHtml)),
     guideBlock("The big picture", section.orientation.map((paragraph) => `<p>${text(paragraph)}</p>`).join(""), "guide-orientation"),
@@ -366,7 +468,31 @@ document.querySelectorAll("[data-dashboard-action]").forEach((button) => button.
 Promise.all([
   fetch(DATA_URL).then((response) => { if (!response.ok) throw new Error(`Question data HTTP ${response.status}`); return response.json(); }),
   fetch(GUIDE_URL).then((response) => { if (!response.ok) throw new Error(`Study Guide HTTP ${response.status}`); return response.json(); }),
-]).then(([payload, guide]) => {
-  state.payload = payload; state.guide = guide; populateFilters(payload.questions); elements.fixtureWarning.hidden = !payload.meta.development_fixture_mode;
-  elements.dataSummary.textContent = `${payload.meta.question_count} ${payload.meta.development_fixture_mode ? "development fixtures" : "released questions"} loaded`; renderDashboard();
+]).then(async ([payload, guide]) => {
+  state.payload = payload; state.guide = guide; elements.fixtureWarning.hidden = !payload.meta.development_fixture_mode;
+  if (progressStorageUnavailable) storageUnavailableNotice();
+  try { await initializeDeliveryHolds(payload); }
+  catch (error) {
+    state.delivery.ready = false; state.delivery.error = error.message || "문항 보류 안내를 확인해야 합니다.";
+    elements.dataSummary.textContent = "문항 보류 안내 확인 필요";
+    showCuratedUnavailable(state.delivery.error); renderDashboard(); return;
+  }
+  if (state.curated.requested) {
+    try {
+      const selection = await initializeCuratedSelection(payload);
+      const selected = selection.questionIds.map((id) => payload.questions.find((question) => question.question_id === id));
+      populateFilters(selected); elements.dataSummary.textContent = `기존 승인 문항 ${selected.length}개 선택 · 전체 ${payload.meta.question_count}개`;
+      renderDashboard();
+      const initial = selection.initialQuestionId ? selected.filter((question) => question.question_id === selection.initialQuestionId) : selected;
+      startMode("study", initial);
+    } catch (error) {
+      state.curated.ready = false; state.curated.error = error.message || "선택한 학습 범위를 확인해 주세요.";
+      state.curated.hold = error.deliveryHold || null;
+      elements.dataSummary.textContent = "선택한 학습 범위를 사용할 수 없습니다.";
+      showCuratedUnavailable(state.curated.error, error.deliveryHold || null); renderDashboard();
+    }
+    return;
+  }
+  const available = payload.questions.filter(canDeliver);
+  populateFilters(available); elements.dataSummary.textContent = `기존 공개 문항 ${available.length}개 학습 가능 · ${state.delivery.context.heldCount}개 검토 보류`; renderDashboard();
 }).catch((error) => { elements.dataSummary.textContent = "Site data failed to load."; elements.emptyState.innerHTML = `<h2>Unable to load data</h2><p>Serve the site over HTTP and rebuild generated data. ${escapeHtml(error.message)}</p>`; });

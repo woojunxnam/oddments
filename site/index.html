@@ -22,6 +22,7 @@
         <a class="ghost-button notes-entry-link" href="notes/">Ultimate Notes · 통합 노트</a>
         <a class="ghost-button" href="notes/#refresh">Daily Refresh · 복습 카드</a>
         <a class="ghost-button notes-entry-link" href="practice-expansion/">1,024문항 · 검토 원고</a>
+        <a class="ghost-button" href="verified-law/">기존 승인 문항 · 주제별 학습</a>
         <button id="study-guide-button" class="ghost-button" type="button">Study Guide</button>
         <button id="history-button" class="ghost-button" type="button">Exam History</button>
         <button id="bookmark-button" class="ghost-button" type="button" disabled>Bookmark</button>
@@ -80,6 +81,14 @@
           <label>Question type<select id="type-filter"><option value="">All types</option></select></label>
           <label class="checkbox-filter"><input id="drug-filter" type="checkbox" /> Drug questions only</label>
         </div>
+        <aside id="curated-context" class="status-copy" aria-live="polite" hidden>
+          <h3 id="curated-title"></h3>
+          <p id="curated-description"></p>
+          <p><a id="curated-review-link" href="#" target="_blank" rel="noopener noreferrer" hidden>문항 보류 사유 확인</a></p>
+          <p>기존 영어 문항과 해설을 사용합니다. 시험·오답·북마크 모드에도 현재 선택한 범위가 적용됩니다.</p>
+          <p><a href="verified-law/">다른 주제 선택</a> · <a id="clear-curated" href="./">전체 문제은행으로 돌아가기</a></p>
+        </aside>
+        <p id="delivery-notice" class="status-copy" role="status" hidden></p>
       </section>
 
       <section id="dashboard-panel" class="dashboard-panel" aria-labelledby="dashboard-heading">
@@ -216,6 +225,7 @@
     <script src="shuffle.js"></script>
     <script src="session.js"></script>
     <script src="storage.js"></script>
+    <script src="verified-law/collections.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
