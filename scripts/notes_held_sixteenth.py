@@ -30,6 +30,8 @@ APPROVED_ACTIVATION_SOURCES={('revisions/notes/held-n1-activation.json', '0c3ca7
                                                                                                                               'result': {'path': 'reports/full-corpus-review/independent-notes/review-independent-notes-inactive-census-fcfb1af49389eb20-result.json',
                                                                                                                                          'raw_sha256': 'c9299942c02d864bd270a0add93232f00af2480834ddd64019fa20bafbcb2834'}}}}
 APPROVED_MIGRATIONS={('revisions/notes/protected-migration-held-n1.json', '2988639546a558cd468d4da07261224be0473cdfbe5af1db74f24fc661e5dccb'): {'closure': {'path': 'revisions/notes/published15-closures/pr192-full-source-v2.json',
+                                                                                                                                        'raw_sha256': '11a17399fd1b76ffb862fdaedb6ef4d6153784256588afa7e14b53ecb3ddf158'}},
+ ('revisions/notes/protected-migration-held-n1.json', '4cf793e0293887a0e20dc5951cc694b596274954d872e20ced15601902f3fcf9'): {'closure': {'path': 'revisions/notes/published15-closures/pr192-full-source-v2.json',
                                                                                                                                         'raw_sha256': '11a17399fd1b76ffb862fdaedb6ef4d6153784256588afa7e14b53ecb3ddf158'}}}
 
 
