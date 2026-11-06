@@ -80,6 +80,26 @@ def searchable_text(row: dict) -> str:
     return " ".join(parts).lower()
 
 
+def review_excerpt(row: dict) -> dict:
+    """Public-bank text for human comparison; this is NOT an audit or clearance."""
+    choices = [
+        {"id": choice.get("id"), "text": choice.get("text")}
+        for choice in row.get("choices", [])
+        if isinstance(choice, dict)
+    ]
+    explanation = row.get("explanation")
+    if not isinstance(explanation, dict):
+        explanation = {}
+    return {
+        "stem": row.get("stem") or row.get("question") or row.get("scenario") or "",
+        "choices": choices,
+        "canonical_answer": row.get("correct_choice_ids"),
+        "draft_proposed_answer": row.get("proposed_key"),
+        "core_reasoning": explanation.get("core_reasoning") or row.get("core_ko") or "",
+        "choice_analysis": explanation.get("choice_analysis") or row.get("analysis_ko") or {},
+    }
+
+
 def overlaps(row: dict, probe: tuple) -> tuple[int, int, list[str]]:
     text = searchable_text(row)
     hits = []
@@ -117,6 +137,7 @@ def screen(root: Path, *, limit: int = 12) -> dict:
                     "matched_concepts": hit_count,
                     "snippet": re.sub(r"\s+", " ", text[:230]).strip(),
                     "evidence_contexts": contexts,
+                    "review_excerpt": review_excerpt(row),
                 })
     result = {
         "screen_type": "concept_overlap_not_exact_or_semantic_clearance",
@@ -128,6 +149,8 @@ def screen(root: Path, *, limit: int = 12) -> dict:
         "duplicate_review_status": "NOT_CLEAR_NEEDS_HUMAN_FULL_TEXT_COMPARISON",
     }
     for name, matches in candidates.items():
+    # Retain full questions only for the selected top source/family matches.
+    # These are public bank records, not any private candidate's content.
         matches.sort(key=lambda v: (-v["score"], -v["matched_concepts"], v["id"], v["source"]))
         families = set()
         top = []
