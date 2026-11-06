@@ -1,0 +1,151 @@
+name: Verify deployed draft33 practice
+on:
+  push:
+    branches: ['verification/draft33-public-ecf3d9df-20261106']
+permissions:
+  contents: read
+  actions: write
+jobs:
+  verify-public33:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      EXPECTED_MERGE: 'ecf3d9df1ff7429070fd129ccc5ce3a6b61d41ce'
+      EXPECTED_PAGES_RUN: '42184854372'
+      VERIFY_BRANCH: 'verification/draft33-public-ecf3d9df-20261106'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'ecf3d9df1ff7429070fd129ccc5ce3a6b61d41ce'
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Cancel only this verification branch duplicate QA
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          token=os.environ['GH_TOKEN']
+          branch=os.environ['VERIFY_BRANCH']
+          sha=os.environ['GITHUB_SHA']
+          repo='woojunxnam/oddments'
+          def request(path,method='GET'):
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+'/'+path,method=method,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  return response.read()
+          try:
+              rows=json.loads(request('actions/runs?head_sha='+sha+'&event=push&per_page=100'))['workflow_runs']
+              for row in rows:
+                  if row['head_sha']==sha and row['head_branch']==branch and row['event']=='push' and row['path']=='.github/workflows/qa.yml' and row['status']!='completed':
+                      request('actions/runs/'+str(row['id'])+'/cancel','POST')
+                      print('Cancelled only the duplicate QA on this verification-only branch:',row['id'],'not PASS credit')
+          except Exception as error:
+              print('Optional duplicate-run cancellation unavailable:',type(error).__name__)
+          PY
+      - name: Bind actual deployment to tested source and candidate CI
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, subprocess, urllib.request
+          out=pathlib.Path('test-results/draft33-production');out.mkdir(parents=True,exist_ok=True)
+          merge=os.environ['EXPECTED_MERGE'];candidate='ee12084b901cd10be776ee76049d475ad40b9055'
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==merge
+          assert subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip()=='792fee00202c905e002d56d86c410457efe64a91'
+          def api(path):
+              req=urllib.request.Request('https://api.github.com/repos/woojunxnam/oddments/'+path,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+              with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)
+          pr=api('pulls/198');assert pr['merged'] and pr['merge_commit_sha']==merge and pr['head']['sha']==candidate
+          pages=api('actions/runs/'+os.environ['EXPECTED_PAGES_RUN'])
+          assert pages['head_sha']==merge and pages['head_branch']=='main' and pages['event']=='push' and pages['path']=='.github/workflows/pages.yml' and pages['status']=='completed' and pages['conclusion']=='success'
+          spec={"42148660765":{"path":".github/workflows/qa.yml","jobs":{"validate":"success"}},"42148660688":{"path":".github/workflows/exam-study-qa.yml","jobs":{"study":"success","production":"skipped"}},"42148660793":{"path":".github/workflows/public-practice-qa.yml","jobs":{"public-practice":"success"}},"42148660866":{"path":".github/workflows/practice-quality-qa.yml","jobs":{"quality":"success"}},"42148660801":{"path":".github/workflows/notes-qa.yml","jobs":{"notes":"success"}},"42148660828":{"path":".github/workflows/representative-quality-qa.yml","jobs":{"revision":"success","production":"skipped"}},"42148660874":{"path":".github/workflows/practice-expansion-qa.yml","jobs":{"draft":"success"}},"42148660780":{"path":".github/workflows/refresh-qa.yml","jobs":{"refresh":"success"}},"42148660752":{"path":".github/workflows/draft-practice-qa.yml","jobs":{"draft33":"success"}}}
+          proof=[]
+          for rid, expected in spec.items():
+              run=api('actions/runs/'+rid)
+              assert run['head_sha']==candidate and run['event']=='pull_request' and run['path']==expected['path'] and run['status']=='completed' and run['conclusion']=='success'
+              jobs=api('actions/runs/'+rid+'/attempts/'+str(run['run_attempt'])+'/jobs?per_page=100')['jobs']
+              assert all(j['name'] in expected['jobs'] for j in jobs)
+              selected=[]
+              for name, conclusion in expected['jobs'].items():
+                  rows=[j for j in jobs if j['name']==name]
+                  historical_skip=False
+                  if not rows and conclusion=='skipped':
+                      history=api('actions/runs/'+rid+'/jobs?filter=all&per_page=100')['jobs']
+                      rows=sorted([j for j in history if j['name']==name],key=lambda j:j['id'],reverse=True)[:1]
+                      historical_skip=True
+                  assert len(rows)==1,(rid,name)
+                  j=rows[0]
+                  assert j['status']=='completed' and j['conclusion']==conclusion
+                  selected.append({**{k:j[k] for k in ['id','name','status','conclusion']},'historical_source_conditional_skip_not_PASS_credit':historical_skip})
+              proof.append({'id':int(rid),'path':run['path'],'head_sha':run['head_sha'],'conclusion':run['conclusion'],'run_attempt':run['run_attempt'],'jobs':selected})
+          (out/'source-and-CI-binding.json').write_text(json.dumps({'merge':merge,'candidate':candidate,'tree':'792fee00202c905e002d56d86c410457efe64a91','premerge_CI9':proof,'Pages_run':pages['id'],'new_native_RELEASED':0},indent=2)+'\n')
+          print('Actual merge tree, merged PR198, successful Pages run and all9 candidate workflows/jobs bound.')
+          PY
+      - name: Install pinned browser and existing build dependencies
+        run: |
+          python -m pip install -r requirements-dev.txt playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Rebuild the exact merged public site
+        run: python scripts/publish_practice.py --output "$RUNNER_TEMP/draft33-public-site"
+      - name: Match all51 actual public HTTPS assets to the merge build
+        run: |
+          python - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          import hashlib,json,os,pathlib,time,urllib.request
+          origin='https://woojunxnam.github.io/oddments/'
+          built=pathlib.Path(os.environ['RUNNER_TEMP'])/'draft33-public-site'
+          out=pathlib.Path('test-results/draft33-production');out.mkdir(parents=True,exist_ok=True)
+          entries=[{'path':str(p.relative_to(built)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(built.rglob('*')) if p.is_file()]
+          assert len(entries)==51,len(entries)
+          def fetch(entry):
+              req=urllib.request.Request(origin+entry['path']+'?draft33='+os.environ['EXPECTED_MERGE'],headers={'Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as r:data=r.read()
+              assert len(data)==entry['bytes'] and hashlib.sha256(data).hexdigest()==entry['sha256'],entry['path']
+              return entry
+          for attempt in range(12):
+              try:
+                  with ThreadPoolExecutor(max_workers=6) as pool:checked=list(pool.map(fetch,entries))
+                  break
+              except Exception as error:
+                  print('Public asset observation retry',attempt+1,type(error).__name__,str(error)[:180])
+                  if attempt==11:raise
+                  time.sleep(5)
+          (out/'actual-51-asset-sha256.json').write_text(json.dumps(checked,indent=2)+'\n')
+          print('Actual public HTTPS assets matched source build:51/51.')
+          PY
+      - name: Exercise all33 questions on the actual public site
+        run: python scripts/verify_draft_practice_browser.py --base-url https://woojunxnam.github.io/oddments/ --output test-results/draft33-production/browser
+      - name: Verify real homepage and topic entry clicks and record receipt
+        run: |
+          python - <<'PY'
+          import json,os,pathlib
+          from playwright.sync_api import sync_playwright
+          origin='https://woojunxnam.github.io/oddments/'
+          out=pathlib.Path('test-results/draft33-production')
+          with sync_playwright() as p:
+              browser=p.chromium.launch();context=browser.new_context();page=context.new_page()
+              page.goto(origin);page.get_by_role('link',name='33문항 바로 풀기 →',exact=True).click()
+              page.wait_for_function("document.querySelector('#load-status').textContent.includes('제안 답 채점 32개')")
+              assert page.url.startswith(origin+'draft-practice/')
+              page.goto(origin+'verified-law/')
+              page.get_by_role('link',name='신규 초안 33문항 풀기',exact=True).click()
+              page.wait_for_function("document.querySelector('#load-status').textContent.includes('제안 답 채점 32개')")
+              assert page.locator('#question-list button').count()==33
+              page.screenshot(path=str(out/'actual-public-entry.png'),full_page=False)
+              context.close();browser.close()
+          report=json.loads((out/'browser/report.json').read_text())
+          assert report['status']=='PASS' and report['question_count']==33 and report['proposed_key_gradable']==32 and report['held_ungraded']==1
+          receipt={'status':'PUBLIC_DRAFT33_DEPLOYED_AND_VERIFIED','merge_sha':os.environ['EXPECTED_MERGE'],'tested_candidate':'ee12084b901cd10be776ee76049d475ad40b9055','Pages_run_id':int(os.environ['EXPECTED_PAGES_RUN']),'public51_assets_match':True,'public33_browser_checks':report['checks_passed'],'main_and_topic_entry_clicks':True,'new_canonical_RELEASED':0,'new_legal_or_realism_audit_credit':0,'real_user_profile_used':False}
+          (out/'deployment-receipt.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n')
+          print('DRAFT33_PUBLIC_VERIFICATION_RECEIPT='+json.dumps(receipt,ensure_ascii=False))
+          PY
+      - name: Preserve actual public deployment evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: draft33-actual-public-deployment-evidence
+          path: test-results/draft33-production/
+          retention-days: 30
