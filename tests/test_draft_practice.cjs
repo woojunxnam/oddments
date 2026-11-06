@@ -43,6 +43,7 @@ test("source or payload mutations fail closed instead of changing a legal HOLD i
     d => d.questions[0].authorities[0].url = "https://www.mass.gov.example.com/",
     d => d.questions[0].private_source_path = "unexpected",
     d => d.questions[0].proposed_key = ["AB"],
+    d => d.questions[0].analysis_ko = { "A|B|C|D": "합쳐진 잘못된 해설" },
   ];
   for (const mutate of negative) { const d = copy(payload); mutate(d); assert.throws(() => core.validate(d)); }
   const d = copy(payload); d.questions[0].analysis_ko.A += " altered";

@@ -9,8 +9,11 @@
   const hash = /^[a-f0-9]{64}$/;
   const id = /^MA-DRAFT33-\d{3}$/;
   const text = value => typeof value === "string" && value.trim().length > 0;
-  const exactKeys = (value, keys) => value && typeof value === "object" && !Array.isArray(value)
-    && Object.keys(value).sort().join("|") === [...keys].sort().join("|");
+  const exactKeys = (value, keys) => {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+    const actual = Object.keys(value).sort(), expected = [...keys].sort();
+    return actual.length === expected.length && actual.every((key, index) => key === expected[index]);
+  };
   function requireValue(value, message) { if (!value) throw new Error(message); }
   function stable(value) {
     if (Array.isArray(value)) return "[" + value.map(stable).join(",") + "]";

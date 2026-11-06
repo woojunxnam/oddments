@@ -141,6 +141,17 @@ def verify(base_url: str, output: Path) -> dict:
         assert page.locator('#question-panel').is_hidden()
         assert page.locator('#question-list button').count() == 0
         checks.append('Payload failure is visible and provides no stale grading UI')
+        context.close()
+        malformed = json.loads(actual)
+        malformed['questions'][0]['analysis_ko'] = {'A|B|C|D': '합쳐진 잘못된 해설'}
+        body = {k: v for k, v in malformed['questions'][0].items() if k != 'content_hash'}
+        malformed['questions'][0]['content_hash'] = hashlib.sha256(json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        context = browser.new_context(); page = context.new_page()
+        page.route('**/draft-practice/questions.json', lambda route: route.fulfill(status=200, content_type='application/json', body=json.dumps(malformed, ensure_ascii=False)))
+        page.goto(base + 'draft-practice/'); page.locator('#load-error').wait_for(state='visible')
+        assert page.locator('#question-panel').is_hidden()
+        assert page.locator('#question-list button').count() == 0
+        checks.append('Rehashed malformed combined rationale keys are rejected before display or grading')
         context.close(); browser.close()
     result = {'status': 'PASS', 'base_url': base, 'question_count': 33, 'proposed_key_gradable': 32, 'held_ungraded': 1, 'questions_sha256': hashlib.sha256(actual).hexdigest(), 'checks_passed': checks, 'uncaught_js_errors': errors, 'real_user_profile_used': False, 'canonical_RELEASED_or_legal_audit_credit': 0}
     (output / 'report.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
