@@ -114,3 +114,43 @@ jobs:
               except Exception:
                   if attempt==11:raise
                   time.sleep(5)
+      - name: Verify published draft33 assets match merged source
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: python
+        run: |
+          import hashlib, os, time, urllib.request
+          from pathlib import Path
+          base = os.environ['PAGE_URL'].rstrip('/') + '/'
+          suffix = '?ui_release=' + os.environ['GITHUB_SHA']
+          paths = ['draft-practice/', 'draft-practice/app.js',
+                   'draft-practice/core.js', 'draft-practice/styles.css',
+                   'draft-practice/questions.json']
+          for attempt in range(12):
+              try:
+                  for path in paths:
+                      expected = (Path('/tmp/mpje-public-site') / (path + 'index.html' if path.endswith('/') else path)).read_bytes()
+                      request = urllib.request.Request(base + path + suffix, headers={'Cache-Control': 'no-cache'})
+                      with urllib.request.urlopen(request, timeout=30) as response:
+                          actual = response.read()
+                      assert hashlib.sha256(actual).digest() == hashlib.sha256(expected).digest(), path
+                  print('Five draft-practice assets match the actual published HTTPS site.')
+                  break
+              except Exception:
+                  if attempt == 11:
+                      raise
+                  time.sleep(5)
+      - name: Exercise actual published draft33 browser behavior
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          python scripts/verify_draft_practice_browser.py --base-url "$PAGE_URL" --output test-results/draft33-public
+      - name: Retain published draft33 verification screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: published-draft33-browser-evidence
+          path: test-results/draft33-public/
+          retention-days: 14
