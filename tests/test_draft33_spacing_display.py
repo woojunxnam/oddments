@@ -8,7 +8,7 @@ SITE = ROOT / "site" / "draft-practice"
 
 def test_spacing_overrides_cover_exact_affected_range():
     text = (SITE / "explanation-spacing.js").read_text(encoding="utf-8")
-    ids = re.findall(r'"(MA-DRAFT33-\\d{3})": \\{', text)
+    ids = re.findall(r'"(MA-DRAFT33-\d{3})": \{', text)
     assert ids == [f"MA-DRAFT33-{n:03d}" for n in range(22, 34)]
     assert text.count("choices:{") == 12
     assert "MutationObserver(applySpacing)" in text
