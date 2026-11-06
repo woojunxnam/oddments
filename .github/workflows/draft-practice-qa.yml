@@ -17,6 +17,10 @@ on:
       - 'tests/test_draft_practice.*'
       - 'scripts/verify_draft_practice_browser.py'
       - '.github/workflows/draft-practice-qa.yml'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ (github.event_name == 'workflow_run' && github.run_id) || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_run' }}
+
 permissions:
   contents: read
 jobs:

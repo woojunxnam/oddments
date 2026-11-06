@@ -12,7 +12,7 @@ import threading
 import time
 import urllib.request
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import expect, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +24,9 @@ def verify(base_url: str, output: Path) -> dict:
     with urllib.request.urlopen(base + 'draft-practice/questions.json?qa=' + str(time.time_ns()), timeout=30) as response:
         actual = response.read()
     assert actual == expected, 'Draft questions differ from this checkout'
+    expected_spacing = (ROOT / 'site/draft-practice/explanation-spacing.js').read_bytes()
+    with urllib.request.urlopen(base + 'draft-practice/explanation-spacing.js?qa=' + str(time.time_ns()), timeout=30) as response:
+        assert response.read() == expected_spacing, 'Spacing corrections differ from this checkout'
     payload = json.loads(actual)
     checks = ['Actual HTTP questions bytes match the checkout']
     errors = []
@@ -35,6 +38,8 @@ def verify(base_url: str, output: Path) -> dict:
         page.on('pageerror', lambda e: errors.append(str(e)))
         page.goto(base + 'draft-practice/')
         page.wait_for_function("document.querySelector('#load-status').textContent.includes('제안 답 채점 32개')")
+        spacing = page.evaluate('window.MpjeDraftSpacing')
+        assert set(spacing) == {f'MA-DRAFT33-{n:03d}' for n in range(22, 34)}
         assert page.locator('#question-list button').count() == 33
         assert not page.locator('#question-panel').is_hidden()
         # No provisional score, wrong highlight, or old feedback before submission.
@@ -52,15 +57,18 @@ def verify(base_url: str, output: Path) -> dict:
             page.locator('#choices input[value="' + q['proposed_key'][0] + '"]').check()
             page.locator('#check').click()
             assert page.locator('#explanation').is_visible()
-            assert page.locator('#core-reasoning').inner_text() == q['core_ko']
+            correction = spacing.get(q['id'])
+            expect(page.locator('#core-reasoning')).to_have_text(correction['core'] if correction else q['core_ko'])
             assert page.locator('#choice-analysis .analysis-card').count() == 4
             assert page.locator('#authorities li').count() == len(q['authorities'])
             assert page.locator('#review-details li').count() == len(q['authorities'])
             assert page.locator('#blockers li').count() == len(q['blockers_ko'])
             assert page.locator('#result .answer-summary dt').count() == 2
             assert '내가 선택한 답' in page.locator('#result').inner_text()
-            for reason in q['analysis_ko'].values():
-                assert reason in page.locator('#choice-analysis').inner_text()
+            reasons = correction['choices'] if correction else q['analysis_ko']
+            assert set(reasons) == set('ABCD')
+            for index, letter in enumerate('ABCD'):
+                expect(page.locator('#choice-analysis .analysis-card').nth(index).locator('dd p')).to_have_text(reasons[letter])
             if q['scoring_policy'] == 'NO_GRADE':
                 assert '점수 집계를 하지 않습니다' in page.locator('#result').inner_text()
                 assert '판정 보류' in page.locator('#result h3').inner_text()
