@@ -82,8 +82,14 @@ def searchable_text(row: dict) -> str:
 
 def overlaps(row: dict, probe: tuple) -> tuple[int, int, list[str]]:
     text = searchable_text(row)
-    hits = [(pattern, weight) for pattern, weight in probe if re.search(pattern, text, re.I)]
-    return len(hits), sum(weight for _, weight in hits), [p for p, _ in hits]
+    hits = []
+    contexts = []
+    for pattern, weight in probe:
+        match = re.search(pattern, text, re.I)
+        if match:
+            hits.append(weight)
+            contexts.append(text[max(0, match.start() - 55):match.end() + 85].strip())
+    return len(hits), sum(hits), contexts[:3]
 
 
 def screen(root: Path, *, limit: int = 12) -> dict:
@@ -102,13 +108,15 @@ def screen(root: Path, *, limit: int = 12) -> dict:
                 continue
             ident = str(row.get("question_id") or row.get("id") or f"row:{pos + 1}")
             for name, probe in PROBES.items():
-                hit_count, score, patterns = overlaps(row, probe)
+                hit_count, score, contexts = overlaps(row, probe)
                 if hit_count < 2:
                     continue
                 candidates[name].append({
-                    "id": ident, "source": rel, "score": score,
+                    "id": ident, "family_id": str(row.get("family_id") or ident),
+                    "source": rel, "score": score,
                     "matched_concepts": hit_count,
                     "snippet": re.sub(r"\s+", " ", text[:230]).strip(),
+                    "evidence_contexts": contexts,
                 })
     result = {
         "screen_type": "concept_overlap_not_exact_or_semantic_clearance",
@@ -121,9 +129,18 @@ def screen(root: Path, *, limit: int = 12) -> dict:
     }
     for name, matches in candidates.items():
         matches.sort(key=lambda v: (-v["score"], -v["matched_concepts"], v["id"], v["source"]))
+        families = set()
+        top = []
+        for item in matches:
+            family_key = (item["source"], item["family_id"])
+            if family_key in families:
+                continue
+            families.add(family_key)
+            top.append(item)
         result["probes"][name] = {
             "candidate_occurrences": len(matches),
-            "top": matches[:limit],
+            "distinct_source_families": len(families),
+            "top": top[:limit],
         }
     return result
 
@@ -142,9 +159,10 @@ def main() -> None:
     for source, count in result["source_counts"].items():
         print(f"SOURCE: {source}: {count}")
     for name, section in result["probes"].items():
-        print(f"\nPROBE: {name}; possible overlaps: {section['candidate_occurrences']}")
+        print(f"\nPROBE: {name}; possible overlaps: {section['candidate_occurrences']} in {section['distinct_source_families']} source/families")
         for item in section["top"]:
-            print(f"  {item['score']:02d} {item['id']} [{item['source']}] {item['snippet'][:175]}")
+            evidence = " | ".join(item["evidence_contexts"])
+            print(f"  {item['score']:02d} {item['id']} [{item['source']}] {evidence[:240]}")
     print("STATUS: NOT_CLEAR — lexical concept screening does not prove independent legal or duplicate audit")
 
 
