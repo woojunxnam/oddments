@@ -32,7 +32,7 @@
       const label = element("label"); label.className = "choice";
       const input = element("input"); input.type = "radio"; input.name = "answer"; input.value = c.id; input.checked = r.pick === c.id;
       const span = element("span", `${c.id}. ${c.text}`); label.append(input, span); form.append(label);
-      input.addEventListener("change", () => { r.pick = c.id; r.checked = false; persist(); $("#result").hidden = true; $("#explanation").hidden = true; stats(); updateList(); });
+      input.addEventListener("change", () => { r.pick = c.id; r.checked = false; persist(); clearChoiceFeedback(); $("#result").hidden = true; $("#explanation").hidden = true; stats(); updateList(); });
     }
     message("#check", q.scoring_policy === "NO_GRADE" ? "선택 기록·검토" : "답 확인·채점");
     $("#result").hidden = true; $("#explanation").hidden = true;
@@ -44,27 +44,125 @@
     if (updateUrl) history.replaceState(null, "", "#" + encodeURIComponent(id));
     updateList(); if (focus) $("#question-stem").focus({ preventScroll: true });
   }
-  function showExplanation(q) {
-    message("#proposed-answer", q.scoring_policy === "NO_GRADE" ? `보류 중인 작성자 제안: ${q.proposed_key.join(", ")} · 확정 정답 아님` : `작성자 제안 답: ${q.proposed_key.join(", ")} · 정식 승인 대기`);
-    message("#core-reasoning", q.core_ko); const dl = $("#choice-analysis"); dl.replaceChildren();
-    for (const c of q.choices) dl.append(element("dt", `${c.id}. ${c.text}`), element("dd", q.analysis_ko[c.id]));
-    const sources = $("#authorities"); sources.replaceChildren();
-    for (const a of q.authorities) {
-      const li = element("li"); const link = element("a", a.section); link.href = a.url; link.target = "_blank"; link.rel = "noopener noreferrer";
-      const limit = element("p", `기존 확인일: ${a.checked} · 효력일·적용 범위: ${a.effective_limit}`); limit.className = "source-limit"; li.append(link, limit); sources.append(li);
+  // Payload rationales are plain Korean text, not trusted HTML. Build all formatting
+  // with text nodes and safe DOM elements; never interpret a source string as markup.
+  function addEmphasis(target, value) {
+    for (const chunk of value.split(/(\*\*[^*\n]+\*\*)/g)) {
+      if (!chunk) continue;
+      if (chunk.startsWith("**") && chunk.endsWith("**")) target.append(element("strong", chunk.slice(2, -2)));
+      else target.append(document.createTextNode(chunk));
     }
-    const blockers = $("#blockers"); blockers.replaceChildren(...q.blockers_ko.map(t => element("li", t)));
+  }
+  function prose(target, value) {
+    target.replaceChildren();
+    for (const block of value.replace(/\r\n?/g, "\n").split(/\n{2,}/)) {
+      if (!block.trim()) continue;
+      const lines = block.split("\n");
+      const allBullets = lines.every(line => /^\s*[-*]\s+\S/.test(line));
+      if (allBullets) {
+        const list = element("ul");
+        for (const line of lines) {
+          const li = element("li"); addEmphasis(li, line.replace(/^\s*[-*]\s+/, "")); list.append(li);
+        }
+        target.append(list);
+      } else {
+        const paragraph = element("p");
+        addEmphasis(paragraph, block.replace(/^\s{0,3}#{1,6}\s+/gm, ""));
+        target.append(paragraph);
+      }
+    }
+  }
+  function clearChoiceFeedback() {
+    for (const label of $("#choices").querySelectorAll(".choice")) {
+      label.classList.remove("picked-matched", "picked-different", "picked-held", "proposed");
+      label.querySelector(".choice-feedback")?.remove();
+    }
+  }
+  function markChoices(q, pick) {
+    clearChoiceFeedback();
+    for (const label of $("#choices").querySelectorAll(".choice")) {
+      const choiceId = label.querySelector("input").value;
+      let text = "";
+      if (choiceId === pick) {
+        if (q.scoring_policy === "NO_GRADE") {
+          label.classList.add("picked-held"); text = "내 선택 · 판정 보류";
+        } else if (choiceId === q.proposed_key[0]) {
+          label.classList.add("picked-matched"); text = "내 선택 · 제안 답과 일치";
+        } else {
+          label.classList.add("picked-different"); text = "내 선택 · 제안 답과 다름";
+        }
+      } else if (q.scoring_policy !== "NO_GRADE" && choiceId === q.proposed_key[0]) {
+        label.classList.add("proposed"); text = "작성자 제안 답 · 미승인";
+      }
+      if (text) {
+        const badge = element("span", text); badge.className = "choice-feedback";
+        label.append(badge);
+      }
+    }
+  }
+  function showExplanation(q) {
+    message("#proposed-answer", q.scoring_policy === "NO_GRADE"
+      ? "판정 보류 · 작성자 제안 답을 검증된 정답으로 표시하지 않습니다."
+      : "작성자 제안 답: " + q.proposed_key[0] + " · 독립 법규·현실성 감사와 정식 승인 대기");
+    prose($("#core-reasoning"), q.core_ko);
+    const dl = $("#choice-analysis"); dl.replaceChildren();
+    for (const c of q.choices) {
+      const card = element("div"); card.className = "analysis-card";
+      const reason = element("dd"); prose(reason, q.analysis_ko[c.id]);
+      card.append(element("dt", c.id + ". " + c.text), reason);
+      dl.append(card);
+    }
+    const sources = $("#authorities"), timing = $("#review-details");
+    sources.replaceChildren(); timing.replaceChildren();
+    for (const a of q.authorities) {
+      const li = element("li"), link = element("a", a.section);
+      link.href = a.url; link.target = "_blank"; link.rel = "noopener noreferrer";
+      li.append(link); sources.append(li);
+      timing.append(element("li", a.section + " · 공식 자료 확인일: " + a.checked + " · 적용 시점·예외·확인 한계: " + a.effective_limit));
+    }
+    const blockers = $("#blockers");
+    blockers.replaceChildren(...q.blockers_ko.map(t => element("li", t)));
     $("#explanation").hidden = false;
   }
   function showResult(commit = true) {
-    const q = byId.get(current); const r = record(q);
+    const q = byId.get(current), r = record(q);
+    const box = $("#result");
     try {
       const result = core.grade(q, r.pick);
       if (commit) { r.checked = true; persist(); }
-      $("#result").className = "result " + (result.status === "HOLD" ? "held" : result.matches ? "matched" : "different");
-      message("#result", result.status === "HOLD" ? `선택 ${r.pick}를 기록했습니다. 법규·시점 HOLD로 정답 판정과 점수 집계를 하지 않습니다.` : result.matches ? `선택 ${r.pick}: 작성자 제안 답과 일치합니다. 초안 답 기준이며 정식 검증 완료를 뜻하지 않습니다.` : `선택 ${r.pick}: 작성자 제안 답과 다릅니다. 제안 답 ${q.proposed_key[0]}의 해설과 공식 근거를 검토해 주세요.`);
-      $("#result").hidden = false; showExplanation(q); stats(); updateList();
-    } catch (error) { message("#result", error.message); $("#result").hidden = false; }
+      const state = result.status === "HOLD" ? "held" : result.matches ? "matched" : "different";
+      box.className = "result draft-result " + state;
+      box.replaceChildren();
+      const heading = result.status === "HOLD" ? "① 판정 보류 · 점수 제외"
+        : result.matches ? "① 제안 답과 일치 · 임시 판정" : "① 오답 — 제안 정답 기준";
+      const description = result.status === "HOLD"
+        ? "법규·시점 HOLD로 정답 판정과 점수 집계를 하지 않습니다. 아래 미확인 사항을 확인하세요."
+        : result.matches
+          ? "작성자 제안 답과 일치합니다. 독립 법규 감사 및 정식 검증 완료를 뜻하지 않습니다."
+          : "작성자 제안 답과 다릅니다. 아래에서 내 선택과 제안 정답의 판단 근거를 비교하세요.";
+      const answers = element("dl"); answers.className = "answer-summary";
+      const addAnswer = (label, value) => answers.append(element("dt", label), element("dd", value));
+      const myChoice = q.choices.find(c => c.id === r.pick);
+      addAnswer("내가 선택한 답", r.pick + ". " + myChoice.text);
+      if (result.status === "HOLD") {
+        addAnswer("판정 상태", "보류 · 작성자 제안 정답은 채점 및 오답 표시에서 제외");
+      } else {
+        const proposed = q.choices.find(c => c.id === q.proposed_key[0]);
+        addAnswer("작성자 제안 정답", proposed.id + ". " + proposed.text);
+      }
+      box.append(element("h3", heading), element("p", description), answers);
+      box.hidden = false;
+      markChoices(q, r.pick);
+      showExplanation(q); stats(); updateList();
+      if (commit) box.focus();
+    } catch (error) {
+      box.className = "result draft-result needs-answer";
+      message("#result", error.message || "답을 하나 선택해 주세요.");
+      box.hidden = false;
+      $("#explanation").hidden = true;
+      clearChoiceFeedback();
+      if (commit) box.focus();
+    }
   }
   function matches(q) {
     const scope = $("#scope").value, r = records[q.id];

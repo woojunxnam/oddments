@@ -43,12 +43,27 @@
       <h2 id="question-stem" lang="en" tabindex="-1"></h2>
       <form id="choices" class="choices" aria-label="답 선택" lang="en"></form>
       <div class="question-actions"><button id="check" type="button">답 확인·채점</button><button id="reveal" class="secondary-button" type="button">해설 바로 보기</button><button id="previous" class="ghost-button" type="button">이전</button><button id="next" class="ghost-button" type="button">다음</button></div>
-      <p id="result" class="result" role="status" aria-live="polite" hidden></p>
+      <section id="result" class="result draft-result" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden></section>
       <section id="explanation" class="explanation" aria-labelledby="explanation-title" hidden>
-        <h3 id="explanation-title">작성자 제안 답과 한국어 해설</h3><p id="proposed-answer"></p><p id="core-reasoning"></p>
-        <h4>선택지별 해설</h4><dl id="choice-analysis"></dl>
-        <h4>공식 근거와 확인 한계</h4><ol id="authorities"></ol>
-        <details><summary>현재 검토·보류 사항</summary><ul id="blockers"></ul></details>
+        <h3 id="explanation-title">한국어 해설 · 독립 감사 대기</h3>
+        <p id="proposed-answer" class="explanation-label"></p>
+        <section class="explanation-section" aria-labelledby="core-title">
+          <h4 id="core-title">② 핵심 해설</h4>
+          <div id="core-reasoning" class="explanation-prose"></div>
+        </section>
+        <section class="explanation-section" aria-labelledby="choice-title">
+          <h4 id="choice-title">③ 선택지별 해설</h4>
+          <dl id="choice-analysis"></dl>
+        </section>
+        <section class="explanation-section" aria-labelledby="authority-title">
+          <h4 id="authority-title">④ 공식 근거</h4>
+          <ol id="authorities"></ol>
+        </section>
+        <section class="explanation-section" aria-labelledby="review-title">
+          <h4 id="review-title">⑤ 적용 시점·예외·검토일·미확인 사항</h4>
+          <ul id="review-details"></ul>
+          <ul id="blockers" class="review-blockers"></ul>
+        </section>
       </section>
       <div class="draft-note"><label for="note">내 검토 메모</label><textarea id="note" maxlength="10000" rows="4" placeholder="사실관계·보기·해설에 대한 의견을 남기세요."></textarea></div>
     </section>

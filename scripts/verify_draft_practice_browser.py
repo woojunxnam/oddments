@@ -37,6 +37,10 @@ def verify(base_url: str, output: Path) -> dict:
         page.wait_for_function("document.querySelector('#load-status').textContent.includes('제안 답 채점 32개')")
         assert page.locator('#question-list button').count() == 33
         assert not page.locator('#question-panel').is_hidden()
+        # No provisional score, wrong highlight, or old feedback before submission.
+        assert page.locator('#result').is_hidden()
+        assert page.locator('#choices .choice-feedback').count() == 0
+        page.screenshot(path=str(output / 'draft33-before-answer.png'), full_page=False)
         for index, q in enumerate(payload['questions']):
             page.locator('[data-question-id="' + q['id'] + '"]').click()
             assert page.locator('#question-stem').inner_text() == q['stem']
@@ -49,20 +53,40 @@ def verify(base_url: str, output: Path) -> dict:
             page.locator('#check').click()
             assert page.locator('#explanation').is_visible()
             assert page.locator('#core-reasoning').inner_text() == q['core_ko']
+            assert page.locator('#choice-analysis .analysis-card').count() == 4
+            assert page.locator('#authorities li').count() == len(q['authorities'])
+            assert page.locator('#review-details li').count() == len(q['authorities'])
+            assert page.locator('#blockers li').count() == len(q['blockers_ko'])
+            assert page.locator('#result .answer-summary dt').count() == 2
+            assert '내가 선택한 답' in page.locator('#result').inner_text()
             for reason in q['analysis_ko'].values():
                 assert reason in page.locator('#choice-analysis').inner_text()
             if q['scoring_policy'] == 'NO_GRADE':
                 assert '점수 집계를 하지 않습니다' in page.locator('#result').inner_text()
+                assert '판정 보류' in page.locator('#result h3').inner_text()
+                assert page.locator('#choices .picked-held').count() == 1
+                assert page.locator('#choices .proposed').count() == 0
+                assert '작성자 제안 정답' not in page.locator('#result .answer-summary dt').all_inner_texts()
             else:
                 assert '작성자 제안 답과 일치' in page.locator('#result').inner_text()
+                assert page.locator('#choices .picked-matched').count() == 1
+                assert page.locator('#choices .picked-different').count() == 0
+                assert '작성자 제안 정답' in page.locator('#result').inner_text()
         assert '채점·확인 33/33 · 제안 답 일치 32 · 다름 0 · HOLD 확인 1' in page.locator('#progress').inner_text()
         checks.append('All33 stems/132 choices and Korean rationales render; 32 proposed-key matches + HOLD excluded')
         first = payload['questions'][0]
         page.locator('[data-question-id="' + first['id'] + '"]').click()
         wrong = next(c['id'] for c in first['choices'] if c['id'] != first['proposed_key'][0])
         page.locator('#choices input[value="' + wrong + '"]').check()
+        assert page.locator('#result').is_hidden()
+        assert page.locator('#choices .choice-feedback').count() == 0
         page.locator('#check').click()
+        assert '오답 — 제안 정답 기준' in page.locator('#result h3').inner_text()
         assert '제안 답과 다릅니다' in page.locator('#result').inner_text()
+        assert page.locator('#choices .picked-different').count() == 1
+        assert page.locator('#choices .proposed').count() == 1
+        assert first['proposed_key'][0] in page.locator('#result .answer-summary').inner_text()
+        page.screenshot(path=str(output / 'draft33-after-wrong-answer.png'), full_page=False)
         note = '<img src=x onerror="window.__injected=1"> 검토 메모 😀'
         page.locator('#note').fill(note)
         page.locator('#bookmark').click()
@@ -114,6 +138,11 @@ def verify(base_url: str, output: Path) -> dict:
         assert page.locator('#question-stem').inner_text() == first['stem']
         page.locator('#next').click()
         assert page.locator('#question-stem').inner_text() == payload['questions'][1]['stem']
+        # This question was already answered in the all-33 sweep, so its own
+        # saved result must restore, not the previous question's wrong state.
+        assert page.locator('#result h3').inner_text().startswith('① 제안 답과 일치')
+        assert page.locator('#choices .picked-different').count() == 0
+        assert page.locator('#choices .picked-matched').count() == 1
         page.locator('#previous').click()
         assert page.locator('#question-stem').inner_text() == first['stem']
         page.locator('#shuffle').click()
@@ -122,8 +151,20 @@ def verify(base_url: str, output: Path) -> dict:
         for width in (320, 390, 768, 1440):
             page.set_viewport_size({'width': width, 'height': 900})
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
+            actual_size = page.locator('#question-stem').evaluate('(e) => parseFloat(getComputedStyle(e).fontSize)')
+            if width <= 360:
+                assert actual_size == 16, (width, actual_size)
+            elif width <= 560:
+                assert actual_size == 17, (width, actual_size)
+            else:
+                assert actual_size == 18, (width, actual_size)
             page.screenshot(path=str(output / f'draft33-{width}.png'), full_page=False)
-        checks.append('No horizontal overflow at320/390/768/1440 widths')
+        page.set_viewport_size({'width': 390, 'height': 900})
+        page.evaluate("document.documentElement.style.fontSize = '200%'")
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), '200% text zoom'
+        page.screenshot(path=str(output / 'draft33-390-text-zoom-200.png'), full_page=False)
+        page.evaluate("document.documentElement.style.fontSize = ''")
+        checks.append('No horizontal overflow at320/390/768/1440 widths and 200% text zoom; 16/17/18px stems verified')
         assert not errors, errors
         context.close()
         context = browser.new_context()
