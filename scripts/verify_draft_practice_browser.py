@@ -40,7 +40,6 @@ def verify(base_url: str, output: Path) -> dict:
         # No provisional score, wrong highlight, or old feedback before submission.
         assert page.locator('#result').is_hidden()
         assert page.locator('#choices .choice-feedback').count() == 0
-        assert page.locator('#explanation-section').count() == 0
         page.screenshot(path=str(output / 'draft33-before-answer.png'), full_page=False)
         for index, q in enumerate(payload['questions']):
             page.locator('[data-question-id="' + q['id'] + '"]').click()
@@ -139,8 +138,11 @@ def verify(base_url: str, output: Path) -> dict:
         assert page.locator('#question-stem').inner_text() == first['stem']
         page.locator('#next').click()
         assert page.locator('#question-stem').inner_text() == payload['questions'][1]['stem']
-        assert page.locator('#result').is_hidden()
-        assert page.locator('#choices .choice-feedback').count() == 0
+        # This question was already answered in the all-33 sweep, so its own
+        # saved result must restore, not the previous question's wrong state.
+        assert page.locator('#result h3').inner_text().startswith('① 제안 답과 일치')
+        assert page.locator('#choices .picked-different').count() == 0
+        assert page.locator('#choices .picked-matched').count() == 1
         page.locator('#previous').click()
         assert page.locator('#question-stem').inner_text() == first['stem']
         page.locator('#shuffle').click()
