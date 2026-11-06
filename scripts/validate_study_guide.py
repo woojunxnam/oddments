@@ -27,8 +27,12 @@ def validate_study_guide(
     questions: dict[str, dict[str, Any]] | None = None,
     *,
     data_root: Path = DATA,
+    withdrawal_context=None,
 ) -> tuple[QAReport, dict[str, dict[str, Any]]]:
     report = QAReport()
+    if withdrawal_context is not None:
+        from canonical_admission import require_context
+        require_context(withdrawal_context,native=False)
     if rules is None:
         rule_report, rules = validate_rules()
         report.extend(rule_report)
@@ -102,7 +106,8 @@ def validate_study_guide(
                         section.get('verification_status') == 'REVIEW_REQUIRED' and question_id == 'MA-Q-0012'):
                     from canonical_q0012_withdrawal import preserved_withheld_reference
                     try:
-                        preserved_private_reference = preserved_withheld_reference(data_root.parent,section,question)
+                        preserved_private_reference = (preserved_withheld_reference(data_root.parent,section,question) if withdrawal_context is None
+                            else withdrawal_context.verify_withheld_reference(section,question))
                     except (ValueError,OSError) as exc:
                         report.error(f"{path}: private withdrawal source proof failed: {exc}")
                 if preserved_private_reference:

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "J1",
+    "severity": "P2",
+    "title": "Publishable disk bytes and symlinks can evade Git-index-based dirty checks",
+    "file": "scripts/canonical_admission.py",
+    "line": 73,
+    "evidence": "git-index-hidden-UI-mutation-probe.json",
+    "observed": "require_clean_delivery_workspace compares published path membership but trusts git diff HEAD for byte integrity. Both assume-unchanged and skip-worktree hide a tracked site/app.js body change; the actual helper accepts it. With skip-worktree, replacing that tracked path with a symlink to a synthetic external file is also accepted. HEAD/runtime/data/registry need not change.",
+    "impact_boundary": "This is a post-validation source-integrity defect before production enrollment, not an empty-registry authorization bypass. The actual publisher copies the entire site tree. No generation, external data read, publication or real token mint occurred.",
+    "probe_scope": "Real synthetic Git repositories and the current actual helper; no monkeypatch of authorization or native validators. Only the Git index flags changed.",
+    "recommendation": "Read every published HEAD path through read_current_preimages to reject final/component symlinks, read its immutable HEAD regular blob and compare exact bytes directly. Keep inventory/unknown-file/known-seal checks; use Git dirty reporting only as an additional check."
+  }
+]
