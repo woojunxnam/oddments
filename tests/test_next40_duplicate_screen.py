@@ -31,3 +31,17 @@ def test_canonical_one_question_file(tmp_path):
     out = module.screen(tmp_path)
     assert out["source_counts"]["data/questions/ma-q-0001.json"] == 1
     assert out["probes"]["IMG_0008_referral_payment"]["top"][0]["id"] == "M1"
+
+
+def test_repeated_variants_collapse_to_one_source_family(tmp_path):
+    sample = tmp_path / "practice_expansion/x/questions.json"
+    sample.parent.mkdir(parents=True)
+    sample.write_text(json.dumps({"questions": [
+        {"question_id": "X-1", "family_id": "ONE", "stem": "nonsterile designated compounding area"},
+        {"question_id": "X-2", "family_id": "ONE", "stem": "nonsterile designated compounding area"},
+        {"question_id": "Y-1", "family_id": "TWO", "stem": "nonsterile designated compounding area"},
+    ]}), encoding="utf-8")
+    found = module.screen(tmp_path)["probes"]["IMG_0005_nonsterile_area"]
+    assert found["candidate_occurrences"] == 3
+    assert found["distinct_source_families"] == 2
+    assert len(found["top"]) == 2
