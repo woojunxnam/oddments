@@ -22,6 +22,8 @@ def test_scan_sample_and_no_false_clear(tmp_path):
     assert out["probes"]["IMG_0005_nonsterile_area"]["top"][0]["id"] == "X1"
     assert out["probes"]["IMG_0040_civil_subpoena"]["top"][0]["id"] == "X2"
     assert out["duplicate_review_status"] == "NOT_CLEAR_NEEDS_HUMAN_FULL_TEXT_COMPARISON"
+    assert out["probes"]["IMG_0005_nonsterile_area"]["top"][0]["review_excerpt"]["stem"] == "A nonsterile compounding designated area is required."
+    assert out["probes"]["IMG_0040_civil_subpoena"]["top"][0]["review_excerpt"]["canonical_answer"] is None
 
 
 def test_canonical_one_question_file(tmp_path):
@@ -45,3 +47,21 @@ def test_repeated_variants_collapse_to_one_source_family(tmp_path):
     assert found["candidate_occurrences"] == 3
     assert found["distinct_source_families"] == 2
     assert len(found["top"]) == 2
+
+
+def test_comparison_excerpt_includes_choices_key_and_rationale(tmp_path):
+    sample = tmp_path / "data/questions/ma-q-0500.json"
+    sample.parent.mkdir(parents=True)
+    sample.write_text(json.dumps({
+        "question_id": "M500",
+        "stem": "A nursing home offers a Medicare pharmacy referral remuneration payment.",
+        "choices": [{"id": "A", "text": "Accept the fee."}, {"id": "B", "text": "Decline the fee."}],
+        "correct_choice_ids": ["B"],
+        "explanation": {"core_reasoning": "MA facility remuneration restriction",
+                        "choice_analysis": {"A": "Incorrect", "B": "Correct"}}
+    }), encoding="utf-8")
+    record = module.screen(tmp_path)["probes"]["IMG_0008_referral_payment"]["top"][0]["review_excerpt"]
+    assert record["choices"] == [{"id": "A", "text": "Accept the fee."}, {"id": "B", "text": "Decline the fee."}]
+    assert record["canonical_answer"] == ["B"]
+    assert record["core_reasoning"] == "MA facility remuneration restriction"
+    assert record["choice_analysis"]["A"] == "Incorrect"
