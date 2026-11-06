@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="새로 작성한 Massachusetts MPJE 사례 33개. 영어 문제와 한국어 해설로 직접 풀어보는 공개 초안 연습판입니다.">
+  <title>신규 초안 33문항 연습 | Massachusetts MPJE</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../assets/learning-tools.css" data-oddments-tools>
+  <script src="../assets/learning-tools.js" defer data-oddments-tools></script>
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#question-stem">문제로 바로 이동</a>
+  <header class="site-header">
+    <div><p class="eyebrow">MASSACHUSETTS MPJE · DRAFT PRACTICE</p><h1>신규 초안 33문항 연습</h1><p class="lede">영어 문제를 풀고 한국어 해설과 공식 근거를 확인하세요.</p></div>
+    <nav class="header-actions" aria-label="학습 메뉴"><a class="ghost-button" href="../">전체 문제은행</a><a class="ghost-button" href="../practice-expansion/">기존 온라인 연습</a><a class="ghost-button" href="../notes/">통합 노트</a></nav>
+  </header>
+  <main>
+    <section class="mode-panel" aria-labelledby="about-title">
+      <h2 id="about-title">33개 초안을 바로 풀어보세요</h2>
+      <p class="draft-disclosure">공식 1차 자료에서 새로 작성한 공개 초안입니다. 정식 감사 등록·최종 승인이 남아 있어, 채점은 <strong>작성자의 제안 답 기준</strong>입니다. 법규·시점 HOLD 1개는 점수에서 제외합니다. 336개 신규 문항 완성본이나 합격 예측이 아닙니다.</p>
+      <p id="load-status" role="status" aria-live="polite">문항을 불러오고 있습니다.</p>
+      <p id="load-error" role="alert" hidden></p>
+      <p id="storage-warning" class="warning-banner" role="status" hidden>이 브라우저에서 자동 저장을 이용할 수 없거나 이전 기록을 읽지 못했습니다. 닫기 전에 기록을 내보내 주세요.</p>
+      <div class="draft-controls">
+        <label>문항 찾기<input id="search" type="search" placeholder="주제·영어·한국어 검색"></label>
+        <label>학습 범위<select id="scope"><option value="all">전체 33개</option><option value="unanswered">아직 채점하지 않은 문항</option><option value="wrong">제안 답과 다른 문항</option><option value="bookmarked">북마크</option><option value="hold">법규·시점 HOLD</option></select></label>
+        <button id="shuffle" type="button" class="secondary-button" disabled>순서 섞기</button>
+      </div>
+      <p id="progress" role="status" aria-live="polite"></p>
+      <div class="draft-backup"><button id="export" type="button" class="ghost-button" disabled>연습 기록 내보내기</button><label>기록 불러오기<input id="import" type="file" accept="application/json,.json" disabled></label></div>
+      <p id="backup-status" role="status" aria-live="polite"></p>
+    </section>
+    <nav id="question-list" class="question-list" aria-label="초안 문항 선택"></nav>
+    <p id="empty" class="empty-state" hidden>현재 조건에 맞는 문항이 없습니다. 검색어나 학습 범위를 바꿔 주세요.</p>
+    <section id="question-panel" class="question-panel" hidden aria-labelledby="question-stem">
+      <div class="question-meta"><span id="position"></span><span id="question-status"></span><button id="bookmark" class="ghost-button" type="button" aria-pressed="false">북마크</button></div>
+      <p id="question-topic" class="eyebrow"></p>
+      <p id="hold-notice" class="warning-banner" hidden></p>
+      <h2 id="question-stem" lang="en" tabindex="-1"></h2>
+      <form id="choices" class="choices" aria-label="답 선택" lang="en"></form>
+      <div class="question-actions"><button id="check" type="button">답 확인·채점</button><button id="reveal" class="secondary-button" type="button">해설 바로 보기</button><button id="previous" class="ghost-button" type="button">이전</button><button id="next" class="ghost-button" type="button">다음</button></div>
+      <p id="result" class="result" role="status" aria-live="polite" hidden></p>
+      <section id="explanation" class="explanation" aria-labelledby="explanation-title" hidden>
+        <h3 id="explanation-title">작성자 제안 답과 한국어 해설</h3><p id="proposed-answer"></p><p id="core-reasoning"></p>
+        <h4>선택지별 해설</h4><dl id="choice-analysis"></dl>
+        <h4>공식 근거와 확인 한계</h4><ol id="authorities"></ol>
+        <details><summary>현재 검토·보류 사항</summary><ul id="blockers"></ul></details>
+      </section>
+      <div class="draft-note"><label for="note">내 검토 메모</label><textarea id="note" maxlength="10000" rows="4" placeholder="사실관계·보기·해설에 대한 의견을 남기세요."></textarea></div>
+    </section>
+    <noscript><p class="warning-banner">문제를 풀려면 자바스크립트를 켜 주세요. <a href="questions.json">33개 초안 데이터</a>는 그대로 읽을 수 있습니다.</p></noscript>
+  </main>
+</body>
+</html>
