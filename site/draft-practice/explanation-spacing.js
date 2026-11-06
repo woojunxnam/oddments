@@ -49,3 +49,23 @@ window.MpjeDraftSpacing = {
   choices:{A:"A의 등록 거절에는 맞지만 B의 PA 거절을 처방자 등록용 SCC 55로 해결할 수는 없다.",B:"서로 다른 거절 사유에 필드와 코드를 뒤바꿨다.",C:"A에는 SCC 55, B에는 영업시간 외 PA 응급 공급용 LOS 03을 적용해 공식 경로를 구분한다.",D:"B에는 맞지만 A의 처방자 등록 거절에 일반 PA 응급 코드를 대신 적용한 것이다."}
  }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const panel = document.querySelector("#explanation");
+  if (!panel) return;
+  function applySpacing() {
+    const label = document.querySelector("#position")?.textContent || "";
+    const id = Object.keys(window.MpjeDraftSpacing).find(key => label.includes(key));
+    const correction = window.MpjeDraftSpacing[id];
+    if (!correction) return;
+    const core = panel.querySelector("#core-reasoning p");
+    if (core && core.textContent !== correction.core) core.textContent = correction.core;
+    panel.querySelectorAll("#choice-analysis .analysis-card").forEach((card, i) => {
+      const p = card.querySelector("dd p");
+      const value = correction.choices["ABCD"[i]];
+      if (p && value && p.textContent !== value) p.textContent = value;
+    });
+  }
+  new MutationObserver(applySpacing).observe(panel, {childList:true, subtree:true});
+  applySpacing();
+});
