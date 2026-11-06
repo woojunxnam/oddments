@@ -1,0 +1,359 @@
+{
+  "audit_id": "AUDIT-CLAUDE-FRESH-B3S3-V2-LEGAL-INITIAL-2026-08-20",
+  "auditor": "CLAUDE",
+  "auditor_instance": "CLAUDE-FRESH-B3S3-V2",
+  "audit_date": "2026-08-20",
+  "audit_scope": "REAUDIT",
+  "review_type": "LEGAL_VERIFICATION",
+  "independent": true,
+  "audit_status": "FULLY_ADJUDICATED",
+  "question_ids": [
+    "MA-Q-0001",
+    "MA-Q-0002",
+    "MA-Q-0003",
+    "MA-Q-0005",
+    "MA-Q-0006",
+    "MA-Q-0007",
+    "MA-Q-0008",
+    "MA-Q-0010"
+  ],
+  "question_hashes": {
+    "MA-Q-0001": "4656688a021b2cb975686d7295598359bc7ca5debb044639b82f10ac459c4de9",
+    "MA-Q-0002": "933b4efd220b1a3fe901d63cf0e7364c4f7fd8084757b9a61dd1f671ecee2cf6",
+    "MA-Q-0003": "9a9c8c30ccd1da0239186c1dfe4ce970bac5714528fbff54b5f95a5d10afd65a",
+    "MA-Q-0005": "0074e68b608e446b6212f3ad419a1d398eeeef01b89750dc5e14bce170bf8b3e",
+    "MA-Q-0006": "56401ebdedcc1562754c5655076b4fbbb5b2ec3490eac7d2c7af447c53a0fe4d",
+    "MA-Q-0007": "a94a74d61eabfaba93b4900735290529407fedd78bf069681d57b90edaab31ac",
+    "MA-Q-0008": "fd553c6a661b1887fef5d856b28ceb586aeb6af9977447999720ad68b73babc0",
+    "MA-Q-0010": "324956b5e9b7bc133655564587544f3d2deb4ec0bd0bc44e4b2119460a1a8b63"
+  },
+  "results": [
+    {
+      "Question_ID": "MA-Q-0001",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00: Professional Practice Standards, current official Board publication dated 12/06/2024, retrieved from the mass.gov regulation page. 247 CMR 9.04(13) reads: 'A licensee may not fill or refill a prescription for a Schedule V controlled substance more than six months after the date on which said prescription was issued. A prescription for a Schedule V controlled substance may not be refilled more than five times.'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(13)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000: Implementation of M.G.L. c. 94C, current official publication dated 02/02/2024. 700.002(E) makes Massachusetts Schedule V consist of the substances listed in 21 CFR 1308.15; 700.002(F) makes Schedule VI consist of 'all prescription drugs, which are not included in any other schedule established by the Commissioner.'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.002(E) and 105 CMR 700.002(F)",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, Schedule V depressants, listing '(7) Pregabalin [(S)-3-(aminomethyl)-5-methylhexanoic acid]' at DEA drug code 2782. Retrieved from the U.S. Government Publishing Office. www.ecfr.gov was not used because it answered with a 302 redirect to an anti-bot interstitial.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1308.15(e)(7)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xml/CFR-2025-title21-vol9-sec1308-15.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00, Schedule VI validity: 'A prescription for a Schedule VI medication is valid for one year from the date of issue. A licensee may not refill a Schedule VI prescription after one year.' Read to confirm that the one-year period belongs to Schedule VI and not to Schedule V.",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(12)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "Scope note. This is the FIRST independent audit of legacy content, not a reaudit: these eight records have carried verification_status AUDIT_PENDING and an empty audits array since 2026-08-13 and have never held a current-hash independent audit. The frozen contract labels the scope LEGACY_SALVAGE_FIRST_AUDIT, which is not a value the audit schema accepts. INITIAL_BATCH requires at least 30 results and TARGETED_INITIAL_BATCH is restricted by scripts/validate_audits.py to a closed governance whitelist that does not contain BATCH3-S3, so REAUDIT is the only schema-valid and validator-valid small-batch scope available to this auditor. I did not modify the schema or the validator to widen it; the controller should add a BATCH3-S3 entry to TARGETED_INITIAL_BATCH_AUTHORIZATIONS (authorizing issue 91, represented candidate SHA 7e74148e33f191f1be04b30001eb8b840706c611) if the record is to carry its true scope label. No legal defect. I established the chain myself from primary sources rather than relying on the dependency records. Pregabalin is a federal Schedule V substance at 21 CFR 1308.15(e)(7); Massachusetts Schedule V is defined by incorporation of 21 CFR 1308.15 at 105 CMR 700.002(E), so pregabalin is Massachusetts Schedule V and not Schedule VI. Federal law supplies no refill-count ceiling for Schedule V: 21 CFR 1306.22 is confined on its face to Schedules III and IV and 21 CFR 1306.23 addresses only partial filling. The operative limit is 247 CMR 9.04(13), which states two independent limits in consecutive sentences: no fill or refill more than six months after issue, and no more than five refills. On the stated facts five months have run, so the time limit is not yet breached, but five refills have been dispensed, so the count ceiling is exhausted and keyed answer C is correct. Distractor A is correctly unkeyed because the one-year period belongs to Schedule VI under 247 CMR 9.04(12), not Schedule V. Distractor B is correctly unkeyed because 105 CMR 700.002(F) confines Schedule VI to prescription drugs not placed in another schedule, and a pharmacist cannot reclassify a scheduled drug. Distractor D is correctly unkeyed because it treats the six-month window as the only operative limit. The canonical explanation, choice analysis and trap all track the regulation accurately, and the linked rule MA-RX-CV-REFILL reproduces 247 CMR 9.04(13) faithfully with a live official URL. Note for the record: this item is legally sound but fails the companion realism review on distinctness from the bank. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "C",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0002",
+      "Verdict": "MINOR_EDIT",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000, current official publication dated 02/02/2024. 700.012(A)(1) applies PMP reporting to a pharmacy 'that dispenses a controlled substance pursuant to a prescription in Schedules II through V, or a controlled substance classified by the Department as an additional drug'; 105 CMR 700.001 defines 'Additional Drug' as 'a controlled substance in Schedule VI determined by the Department to carry a bona fide potential for abuse'; and 700.012(A)(8) supplies the designation criteria and the duty to notify dispensers. In the current compiled text the designation power sits at 700.012(A)(8); 700.012(C)(7) is the unrelated de-identified-data provision.",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.012(A)(1), 105 CMR 700.012(A)(8), 105 CMR 700.001",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, Drug Control Program, 'Pharmacy reporting and data submission': 'Every pharmacy registered with the Commissioner, that dispenses a controlled substance pursuant to a prescription in Schedules II through V, and Gabapentin (105 CMR 700.012(7))' must report; and 'Pharmacies are required to submit data to the PMP for all dispensations of Schedule II-V medications and Gabapentin, a Schedule VI medication designated by the Commissioner as a drug of concern.'",
+          "source_type": "MA_DCP_GUIDANCE",
+          "exact_section": "Who must report; Gabapentin prescriptions filled at a VA facility",
+          "official_url": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 24A, the prescription monitoring program statute, which reaches 'all schedule II to V, inclusive, controlled substances' and authorises the Department to designate 'additional drugs' carrying a bona fide potential for abuse.",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 24A",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section24A",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000: Implementation of M.G.L. c. 94C, current official publication dated 02/02/2024. 700.002(E) makes Massachusetts Schedule V consist of the substances listed in 21 CFR 1308.15; 700.002(F) makes Schedule VI consist of 'all prescription drugs, which are not included in any other schedule established by the Commissioner.'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.002(E) and 105 CMR 700.002(F)",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, restrictions on sales quantity. 1314.20(a) bars a regulated seller from selling any customer more than '3.6 grams of ephedrine base, 3.6 grams of pseudoephedrine base, or 3.6 grams of phenylpropanolamine base' in a single calendar day 'without regard to the number of transactions'. 1314.20(b) imposes a separate 7.5 gram per 30-day ceiling on mobile retail vendors only. This section does NOT contain the 9 gram 30-day figure.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1314.20(a) and (b)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1314-20.xml",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "The keyed set A and B is correct, but the canonical explanation contains a wording defect that warrants a minor edit. core_reasoning states that 'gabapentin is the designated Massachusetts Schedule VI additional drug in this fixture'. The qualifier 'in this fixture' is authoring scaffolding that has leaked into learner-facing text, and it is also inaccurate in substance: gabapentin's status is not a property of this repository's fixture data but a live designation by the Commissioner of Public Health under 105 CMR 700.012(A)(8), which the Drug Control Program states in terms on its current reporting page. A candidate reading the explanation is told the premise is an artefact of the exercise rather than current Massachusetts law. On the merits: 105 CMR 700.012(A)(1) reaches dispensing of Schedules II through V pursuant to a prescription and of any designated additional drug; pregabalin is Massachusetts Schedule V by incorporation at 105 CMR 700.002(E) of 21 CFR 1308.15(e)(7), so B is reportable; gabapentin is a Schedule VI drug designated as an additional drug, so A is reportable. Option C is correctly unkeyed because an ordinary CMEA retail sale of pseudoephedrine is an over-the-counter transaction in a scheduled listed chemical product governed by 21 CFR part 1314, not the dispensing of a Schedule II-V controlled substance or an additional drug pursuant to a prescription; it therefore falls outside 105 CMR 700.012(A)(1). Option D is correctly unkeyed because A and B are both in-stream. Separate dependency defect, recorded here because MA-Q-0002 is the item that rests on it: the rule record MA-PMP-REPORTING (data/rules/ma-pmp-reporting.json) pinpoints '105 CMR 700.012(A)(1), 700.012(C)(7)'. In the current compiled regulation dated 02/02/2024 the additional-drug designation power is at 700.012(A)(8); 700.012(C)(7) is the unrelated provision permitting the Commissioner to release de-identified data for statistical research. The rule's substantive statement is right and its URLs resolve, but the second pinpoint should be corrected to 700.012(A)(8). Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "A, B",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": "Massachusetts MassPAT reporting under 105 CMR 700.012(A)(1) covers dispensing of Schedule II through V controlled substances pursuant to a prescription and dispensing of any drug the Commissioner has designated an additional drug under 105 CMR 700.012(A)(8). Pregabalin is Massachusetts Schedule V, because 105 CMR 700.002(E) adopts the Schedule V list in 21 CFR 1308.15, where pregabalin appears. Gabapentin is a Massachusetts Schedule VI drug that the Commissioner has designated as a reportable additional drug, and the Drug Control Program instructs pharmacies to submit all gabapentin dispensations to the PMP. Both are therefore reportable on the basis of the drug alone, whatever the indication. An ordinary CMEA retail sale of pseudoephedrine is not reportable to MassPAT, because it is an over-the-counter transaction in a scheduled listed chemical product under 21 CFR part 1314 rather than a prescription dispensing of a Schedule II-V controlled substance or an additional drug."
+    },
+    {
+      "Question_ID": "MA-Q-0003",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "M.G.L. c. 94C, s. 18(d3/4), read in full on the Legislature's official site: 'A pharmacist filling a prescription for a schedule II substance shall, if requested by the patient, dispense the prescribed substance in a lesser quantity than indicated on the prescription. The remaining portion may be filled upon patient request in accordance with federal law; provided, however, that only the same pharmacy that originally dispensed the lesser quantity shall dispense the remaining portion. ... The initial partial dispensing of a prescription filled pursuant to subsection (d) or (d1/2) shall be filled not more than 5 days after the prescription issue date. The remaining portion filled pursuant to this subsection must be filled not later than 30 days after the prescription issue date.'",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 18(d3/4)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, partial filling of a Schedule II prescription at the request of the patient or the prescribing practitioner. 1306.13(b)(1) conditions the pathway on state law permitting it; 1306.13(b)(2) requires that remaining portions 'must be filled not later than 30 days after the date on which the prescription is written.'",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.13(b)(1) and (b)(2)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1306-13.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 23(a): 'A written or electronic prescription for a controlled substance in Schedule II shall become invalid 30 days after the date of issuance.' s. 23(b): such a prescription 'shall not be refilled.'",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 23(a) and s. 23(b)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, Schedule II stimulants, listing methylphenidate at DEA drug code 1724.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1308.12(d)(4)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xml/CFR-2025-title21-vol9-sec1308-12.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 22(c): an opioid Schedule II prescription 'shall include a notation on the prescription that the patient may fill, upon request, the prescription in compliance with subsection (d3/4) of section 18 in an amount not to exceed the full prescribed quantity.' Read to confirm that s. 18(d3/4) is the operative Massachusetts partial-fill provision.",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 22(c)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "No legal defect. Methylphenidate is Schedule II at 21 CFR 1308.12(d)(4) and Massachusetts Schedule II by incorporation at 105 CMR 700.002(B). The decisive provision is M.G.L. c. 94C, s. 18(d3/4), which I read in full: after providing for the patient-requested lesser quantity it states 'provided, however, that only the same pharmacy that originally dispensed the lesser quantity shall dispense the remaining portion.' The second pharmacy therefore has no lawful route to the balance on day 20 or any other day, so keyed answer B is correct. The federal layer agrees rather than conflicting: 21 CFR 1306.13(b)(1) conditions the patient-requested pathway on state law permitting it, and 1306.13(b)(2) sets an outer limit of 30 days from the date written, which is a deadline and not a transfer permission. Distractor A is correctly unkeyed on two independent grounds, because a Schedule II partial-fill balance is not a refill and because s. 23(b) bars refilling a Schedule II prescription at all. Distractor C is correctly unkeyed because nothing converts an undispensed balance into a new prescription; s. 23(a) makes the prescription invalid 30 days after issuance and s. 18(d3/4) closes the remainder window at the same point. Distractor D is correctly unkeyed because dispensing does not reschedule a drug. The keyed option's phrase 'belongs to the original pharmacy's partial-fill record' is loose as drafting, since the operative reason is the statutory same-pharmacy restriction rather than a records concept, but it is not legally wrong and it does not make another option defensible. The linked rule MA-CII-PARTIAL-PATIENT reproduces the 5-day and 30-day figures correctly. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "B",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0005",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Code of Federal Regulations, restrictions on sales quantity. 1314.20(a) bars a regulated seller from selling any customer more than '3.6 grams of ephedrine base, 3.6 grams of pseudoephedrine base, or 3.6 grams of phenylpropanolamine base' in a single calendar day 'without regard to the number of transactions'. 1314.20(b) imposes a separate 7.5 gram per 30-day ceiling on mobile retail vendors only. This section does NOT contain the 9 gram 30-day figure.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1314.20(a) and (b)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1314-20.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "United States Code: 'It shall be unlawful for any person to knowingly or intentionally purchase at retail during a 30 day period more than 9 grams of ephedrine base, pseudoephedrine base, or phenylpropanolamine base in a scheduled listed chemical product, except that, of such 9 grams, not more than 7.5 grams may be imported by means of shipping through any private or commercial carrier or the Postal Service.' This, not 21 CFR 1314.20, is where the 9 gram 30-day ceiling lives.",
+          "source_type": "FEDERAL_STATUTE",
+          "exact_section": "21 U.S.C. 844(a)",
+          "official_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title21/html/USCODE-2023-title21-chap13-subchapI-partD-sec844.htm",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "The keyed answer B is correct. 21 CFR 1314.20(a) caps a regulated seller at 3.6 grams of pseudoephedrine base per customer per calendar day without regard to the number of transactions, so a single 4.0 gram request is barred by the daily ceiling. With no purchases in the preceding 30 days the running 30-day total would be 4.0 grams, comfortably under the 9 gram ceiling in 21 U.S.C. 844(a). Distractor A inverts the two figures, C is arithmetically false on the 30-day leg, and D is false because the daily ceiling is exceeded. The item's own text needs no edit. Dependency defect recorded against the supporting rule rather than the question: the rule record FED-PSE-QUANTITY (data/rules/fed-pseudoephedrine-quantity.json) is the sole authority behind this item and attributes BOTH numeric facts to '21 CFR Part 1314, section 1314.20'. I read 1314.20 in the official GPO text: paragraph (a) contains the 3.6 gram daily limit, paragraph (b) contains a 7.5 gram per 30-day limit that applies only to mobile retail vendors, and the section contains no 9 gram figure at all. The 9 gram per 30-day retail ceiling is a purchaser-side prohibition in 21 U.S.C. 844(a). The rule's numbers are right and the answer is right, but its citation for the 30-day fact is wrong and should be corrected to 21 U.S.C. 844(a). Two of the rule's authority URLs across this tranche point at www.ecfr.gov, which now answers with a 302 redirect to an anti-bot interstitial rather than the regulation; the govinfo.gov GPO texts used here resolve and are equally official. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "B",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0006",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "M.G.L. c. 94C, s. 23(d): 'Unless otherwise prohibited by statute, prescriptions for the following controlled substances in Schedule II or III may be filled for a maximum of a 90-day supply of such substance upon a single filling for: (i) the treatment of opioid use disorder, including, but not limited to, buprenorphine; (ii) non-opioid controlled substances, including, but not limited to, methylphenidate and testosterone; and (iii) implantable infusion pumps. All other prescriptions for controlled substances in Schedule II or III may be filled for a maximum of a 30-day supply of such substance upon a single filling.'",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 23(d)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy / Drug Control Program, Policy 2024-05: Schedules II and III Quantity Limits, published 10/17/2024, superseding Policy 2023-06: 'M.G.L. 94C s. 23(d) has been updated to allow Schedules II and III prescriptions to be written and filled for a 90-day supply for the following: drugs for the treatment of opioid use disorder, such as buprenorphine products; any non-opioids in Schedules II and III, such as stimulants and testosterone; and implantable infusion pumps. All other Schedule II and III medications (e.g., opioids) may only be filled for a maximum 30-day supply.' Verified live and current on the audit date.",
+          "source_type": "MA_BOARD_POLICY",
+          "exact_section": "Policy 2024-05, Schedules II and III Quantity Limits",
+          "official_url": "https://www.mass.gov/news/policy-2024-05-schedules-ii-and-iii-quantity-limits",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, Schedule III narcotic drugs, listing buprenorphine at DEA drug code 9064. Read to confirm that a buprenorphine-naloxone combination product is a Schedule III controlled substance and that the naloxone component does not decontrol it.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1308.13(e)(2)(i)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xml/CFR-2025-title21-vol9-sec1308-13.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000, current official publication dated 02/02/2024. 700.002(B) makes Massachusetts Schedule II consist of the substances listed in 21 CFR 1308.12 and 700.002(C) makes Schedule III consist of the substances listed in 21 CFR 1308.13; 700.002(F) confines Schedule VI to prescription drugs not included in any other schedule.",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.002(B), (C) and (F)",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "No legal defect. Buprenorphine is a Schedule III narcotic at 21 CFR 1308.13(e)(2)(i) and Massachusetts Schedule III by incorporation at 105 CMR 700.002(C); combining it with naloxone does not decontrol the product. The Massachusetts quantity framework is M.G.L. c. 94C, s. 23(d), which caps other Schedule II or III prescriptions at a 30-day supply per filling but permits up to a 90-day supply on a single filling for '(i) the treatment of opioid use disorder, including, but not limited to, buprenorphine.' Keyed answer C states both halves accurately, including the conditional 'may qualify', which is right because s. 23(d) opens with 'Unless otherwise prohibited by statute'. Distractor A is correctly unkeyed because an antagonist component does not decontrol a scheduled narcotic. Distractor B is correctly unkeyed twice over, because not every opioid-related product is Schedule II and because Schedule III prescriptions may carry refills under 21 CFR 1306.22(a). Distractor D is correctly unkeyed because 105 CMR 700.002(F) confines Schedule VI to prescription drugs not included in any other schedule and dispensing does not reschedule anything. I separately verified the explanation's citation: Board of Registration in Pharmacy Policy 2024-05, Schedules II and III Quantity Limits, is a real and current instrument published 10/17/2024 superseding Policy 2023-06, and it states the 90-day OUD pathway in the terms the explanation uses. One drafting observation that does not change the verdict: the explanation cites only the Board policy, whereas the policy itself describes the change as an update to M.G.L. c. 94C, s. 23(d); naming the statute alongside the policy would put the authority hierarchy the right way round. A second, out-of-scope observation: the rule record MA-CS-QUANTITY-II-III describes the 30-day cap as applying to 'Schedule II and III opioid prescriptions', whereas s. 23(d) applies it to all other Schedule II or III prescriptions; the practical effect is the same because the non-opioid categories fall in the carve-out, but the summary is narrower than the statute. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "C",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0007",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "M.G.L. c. 94C, s. 18(d3/4), read in full on the Legislature's official site: 'A pharmacist filling a prescription for a schedule II substance shall, if requested by the patient, dispense the prescribed substance in a lesser quantity than indicated on the prescription. The remaining portion may be filled upon patient request in accordance with federal law; provided, however, that only the same pharmacy that originally dispensed the lesser quantity shall dispense the remaining portion. ... The initial partial dispensing of a prescription filled pursuant to subsection (d) or (d1/2) shall be filled not more than 5 days after the prescription issue date. The remaining portion filled pursuant to this subsection must be filled not later than 30 days after the prescription issue date.'",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 18(d3/4)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, partial filling of a Schedule II prescription at the request of the patient or the prescribing practitioner. 1306.13(b)(1) conditions the pathway on state law permitting it; 1306.13(b)(2) requires that remaining portions 'must be filled not later than 30 days after the date on which the prescription is written.'",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.13(b)(1) and (b)(2)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1306-13.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 23(a): 'A written or electronic prescription for a controlled substance in Schedule II shall become invalid 30 days after the date of issuance.' s. 23(b): such a prescription 'shall not be refilled.'",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 23(a) and s. 23(b)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "M.G.L. c. 94C, s. 22(c): an opioid Schedule II prescription 'shall include a notation on the prescription that the patient may fill, upon request, the prescription in compliance with subsection (d3/4) of section 18 in an amount not to exceed the full prescribed quantity.' Read to confirm that s. 18(d3/4) is the operative Massachusetts partial-fill provision.",
+          "source_type": "MA_STATUTE",
+          "exact_section": "M.G.L. c. 94C, s. 22(c)",
+          "official_url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section22",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "No legal defect in the keyed sequence. M.G.L. c. 94C, s. 18(d3/4) fixes all four events and their order. The patient's request is the predicate and precedes the reduced initial quantity, which is choice B. The initial partial dispensing follows and 'shall be filled not more than 5 days after the prescription issue date', which is choice D. The patient then returns for the balance, and 'only the same pharmacy that originally dispensed the lesser quantity shall dispense the remaining portion', which is choice A. The completing dispensing 'must be filled not later than 30 days after the prescription issue date', which is choice C, and this is congruent with 21 CFR 1306.13(b)(2) and with the 30-day validity of a Schedule II prescription under s. 23(a). The keyed order B, D, A, C is therefore correct and every factual predicate in every option is an accurate statement of current Massachusetts law, including the 5-day figure, which I confirmed is a real statutory requirement rather than a narrative flourish. The item nevertheless fails the companion realism review, because the correct order is recoverable from the temporal wording of the options without any Massachusetts law; that is a construction defect, not a legal error, and it is recorded in the realism record. One cross-reference observation outside this tranche's scope: MA-Q-0014 places a patient-requested partial fill of Dexedrine 'at this pharmacy 12 days after issue', which cannot satisfy the 5-day initial dispensing requirement in s. 18(d3/4); that neighbouring item's fact pattern should be checked by whoever owns it. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "B, D, A, C",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0008",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Code of Federal Regulations, refilling of prescriptions: no prescription for a controlled substance listed in Schedule III or IV may be filled or refilled more than six months after the date on which it was issued, and it may not be refilled more than five times. The section is confined on its face to Schedules III and IV.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.22(a)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1306-22.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, Schedule III narcotic drugs, listing buprenorphine at DEA drug code 9064. Read to confirm that a buprenorphine-naloxone combination product is a Schedule III controlled substance and that the naloxone component does not decontrol it.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1308.13(e)(2)(i)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xml/CFR-2025-title21-vol9-sec1308-13.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000, current official publication dated 02/02/2024. 700.002(B) makes Massachusetts Schedule II consist of the substances listed in 21 CFR 1308.12 and 700.002(C) makes Schedule III consist of the substances listed in 21 CFR 1308.13; 700.002(F) confines Schedule VI to prescription drugs not included in any other schedule.",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.002(B), (C) and (F)",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00, Schedule VI validity: 'A prescription for a Schedule VI medication is valid for one year from the date of issue. A licensee may not refill a Schedule VI prescription after one year.' Read to confirm that the one-year period belongs to Schedule VI and not to Schedule V.",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(12)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "No legal defect. Buprenorphine-naloxone is Schedule III at 21 CFR 1308.13(e)(2)(i) and Massachusetts Schedule III by incorporation at 105 CMR 700.002(C). 21 CFR 1306.22(a) provides that no Schedule III or IV prescription may be filled or refilled more than six months after the date on which it was issued, and it fixes that clock to the issue date rather than to the first dispensing. An authorised but unused refill confers no independent life on the prescription once the window closes, so keyed answer A is correct and a new prescription is required. Distractor B states the rule the regulation does not adopt, measuring from the first dispensing. Distractor C is correctly unkeyed because the naloxone component alters neither scheduling nor the refill window, and the one-year period belongs to Massachusetts Schedule VI under 247 CMR 9.04(12). Distractor D is correctly unkeyed because an unused refill authorisation does not migrate into another schedule. The canonical explanation and related facts are accurate, including the observation that count and time are independent checks. This item is legally sound but fails the companion realism review as redundant against three existing bank items. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "A",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    },
+    {
+      "Question_ID": "MA-Q-0010",
+      "Verdict": "KEEP",
+      "Severity": "Low",
+      "Existing_Answer_Correct": "YES",
+      "authorities": [
+        {
+          "authority": "Massachusetts Board of Registration in Pharmacy, 247 CMR 9.00: Professional Practice Standards, current official Board publication dated 12/06/2024, retrieved from the mass.gov regulation page. 247 CMR 9.04(13) reads: 'A licensee may not fill or refill a prescription for a Schedule V controlled substance more than six months after the date on which said prescription was issued. A prescription for a Schedule V controlled substance may not be refilled more than five times.'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "247 CMR 9.04(13)",
+          "official_url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, refilling of prescriptions: no prescription for a controlled substance listed in Schedule III or IV may be filled or refilled more than six months after the date on which it was issued, and it may not be refilled more than five times. The section is confined on its face to Schedules III and IV.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.22(a)",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2024-title21-vol9/xml/CFR-2024-title21-vol9-sec1306-22.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Code of Federal Regulations, partial filling of prescriptions for controlled substances in Schedules III, IV and V; permits partial filling where each partial filling is recorded as a refilling, the cumulative quantity does not exceed the quantity prescribed, and no dispensing occurs more than six months after the date of issue. Read to confirm that federal law supplies no refill-count ceiling for Schedule V.",
+          "source_type": "FEDERAL_REGULATION",
+          "exact_section": "21 CFR 1306.23",
+          "official_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol9/xml/CFR-2025-title21-vol9-sec1306-23.xml",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "Massachusetts Department of Public Health, 105 CMR 700.000: Implementation of M.G.L. c. 94C, current official publication dated 02/02/2024. 700.002(E) makes Massachusetts Schedule V consist of the substances listed in 21 CFR 1308.15; 700.002(F) makes Schedule VI consist of 'all prescription drugs, which are not included in any other schedule established by the Commissioner.'",
+          "source_type": "MA_PROMULGATED_REGULATION",
+          "exact_section": "105 CMR 700.002(E) and 105 CMR 700.002(F)",
+          "official_url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+          "law_checked_date": "2026-08-20"
+        },
+        {
+          "authority": "United States Code, Controlled Substances Act savings provision: no provision of the subchapter shall be construed as indicating an intent to occupy the field to the exclusion of state law unless there is a positive conflict such that the two cannot consistently stand together. Read to confirm that a stricter Massachusetts Schedule V refill rule creates no preemption conflict.",
+          "source_type": "FEDERAL_STATUTE",
+          "exact_section": "21 U.S.C. 903",
+          "official_url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title21/html/USCODE-2023-title21-chap13-subchapI-partE-sec903.htm",
+          "law_checked_date": "2026-08-20"
+        }
+      ],
+      "Problem": "No legal defect. The stem's premise is accurate: 21 CFR 1306.22 is confined on its face to Schedules III and IV, and the neighbouring Schedule V provision, 21 CFR 1306.23, addresses partial filling rather than a refill ceiling, so federal law alone leaves a Massachusetts pharmacist without a Schedule V refill count. 247 CMR 9.04(13) supplies it, imposing both a six-month-from-issue limit and a five-refill maximum on Schedule V prescriptions, so keyed answer D is correct. Distractor A is correctly unkeyed because no federal provision reschedules a Schedule V drug on dispensing. Distractor B is correctly unkeyed as a matter of preemption: 21 U.S.C. 903 preserves state authority absent a positive conflict, and a stricter state refill rule creates none. Distractor C is correctly unkeyed because Schedule V substances are controlled substances by definition under 21 CFR 1308.15 and 105 CMR 700.002(E). The canonical explanation and trap track this correctly. The item is legally sound but fails the companion realism review on distractor authenticity, guessability, practice plausibility and distinctness. Independence: my Phase-1 blind answer was locked in audits/remediation/2026-08-20/B3S3V2-PHASE1-BLIND-LOCK.json and pushed to audit/batch3-s3-v2-claude-fresh-b3s3-v2 (commit 85a70e2) before any canonical record, post-lock reveal, rule record, drug record or generated payload was opened.",
+      "Proposed_Answer": "D",
+      "Proposed_Rewrite": "",
+      "Proposed_Explanation": ""
+    }
+  ]
+}
