@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from copy import deepcopy
 
+import pytest
+
 from check_sba_answer_length import analyze_sba_answer_length
 
 
@@ -68,6 +70,16 @@ def test_inherited_debt_passes_but_prospective_tranche_regression_fails(canonica
         gate["code"] == "PROSPECTIVE_TRANCHE_SHARE" and gate["status"] == "FAIL"
         for gate in report["gates"]
     )
+
+
+def test_measurement_context_rejects_caller_pass_even_without_withdrawn_item():
+    from canonical_successor import BoundaryViolation
+
+    class CallerPass:
+        native_ok = True
+
+    with pytest.raises(BoundaryViolation, match="Unvalidated"):
+        analyze_sba_answer_length([], admission_context=CallerPass())
 
 
 def test_balanced_prospective_tranche_passes(canonical_question) -> None:

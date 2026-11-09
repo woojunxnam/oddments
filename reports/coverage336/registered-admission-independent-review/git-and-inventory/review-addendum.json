@@ -1,0 +1,82 @@
+{
+  "status": "INDEPENDENT_HARDENING_ADDENDUM_ORIGINAL_R1_R4_REPROS_FIXED_THREE_RESIDUAL_FINDINGS_NOT_READY",
+  "reviewed_anchor_commit": "ea19d9881ec5b6a476f7dfc113cd1a4bc18c92da",
+  "reviewed_uncommitted_source_sha256": {
+    "scripts/canonical_admission.py": "d56f1c64fa57df30f89b42fed8aa7b4adbeb6cbfafd7104e92f3b326398138a6",
+    "scripts/canonical_admission_registry.py": "44ccb9049d76b5e0b5e9a4db2f5a2920d8f10e3a5bf6de439bc699874836e5c0",
+    "scripts/canonical_native_view.py": "37930d45b1183ba7d2f8bc6891ff557c0efd8bc7a3883cf9b3d81616087a897c",
+    "scripts/guarded_canonical_admission.py": "945c7a87c119358b3544f8809ddff2a71c46ff4ad53e1b71750634e0ddd37fbc",
+    "scripts/preflight_external_canonical.py": "40f8c09d955ee9c8eb013140868b5aba5ac3a1773f62ea8a3b94e7f6635f10f7",
+    "scripts/prepare_canonical_base_proof.py": "ec21ff441a7e7fc780c7425b1d49bea221410516c0991417ecd1ca35d18533ca",
+    "scripts/qa_common.py": "999d9b30fab2dd7721ac22165ac993f32cc9b16460766b5b1cb17c0541caccb9",
+    "scripts/validate_study_guide.py": "ce213c2cb9a114a6ce61fc3f073399abb69005fe36eb23468964fc8da161674f",
+    "scripts/build_study_guide_data.py": "c340ca22772699b338a611446a15f601e1a79f6656f15d2d0a92a2dd3a093e46",
+    "tests/test_canonical_registered_context.py": "7ba7603e51c33e3fa9f3ec0d4b844d3ba2f5ec5341d562b2cc0ca850974fd134",
+    "docs/CANONICAL_GUARDED_ADMISSION.md": "2479413a3521c645d430adb062665811ca36f7ad62e7080bf69274a4e70ef56a"
+  },
+  "changed_since_sealed_prior_review": [
+    "scripts/canonical_admission.py",
+    "tests/test_canonical_registered_context.py",
+    "docs/CANONICAL_GUARDED_ADMISSION.md"
+  ],
+  "prior_review_results_sha256": "7ec3328940316c1ab6e792eaab3e6bbe9dd536407b257ebfa1c024a9a57c9e20",
+  "prior_sealed_artifacts_preserved": 102,
+  "original_findings": {
+    "R1": "Original undeclared tracked UI changes on both Git boundaries now rejected; further worktree/HEAD closure appears in H1/H2.",
+    "R2": "Original new protected-file post-token addition now rejected by real inventory enumeration.",
+    "R3": "Unsafe ID, wrong resolved namespace and coverage-directory symlink now rejected.",
+    "R4": "Boolean/numeric/string version aliases rejected; integer1 accepted."
+  },
+  "new_DERIVED4_contract": "The four exact report paths are added to sealed before/after changes and protected base/current inventories. Each is compared against real internal native producer results before native_ok. Independent exact-predicate tests reject altered values for all four; actual full recomputation was not repeated.",
+  "new_K_contract": "Content/base exclude K, so no future K SHA appears in manifest. The expected K is calculated after M/N hashes exist, cached and compared on consumption when the file exists. Independent post-mint fixtures accept the exact cached value and reject a forged K. Full real registration success remains unexecuted. H3 concerns the separate public input-taking API.",
+  "actual_tests": {
+    "passed": 100,
+    "seconds": 6.52,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /workspace/mpje-ci-checks-venv/bin/python -m pytest -q -p no:cacheprovider tests/test_canonical_successor_infrastructure.py tests/test_content_hashes.py tests/test_duplicates.py tests/test_question_validation.py tests/test_canonical_registered_context.py --basetemp /workspace/scratch/coverage336-registered-independent-hardening/focused100-temp",
+    "cwd": "/workspace/mpje-336-successor",
+    "raw_log": "focused100.log"
+  },
+  "findings": [
+    {
+      "id": "H1",
+      "severity": "P2",
+      "title": "A post-validation handle still permits an untracked publishable UI file",
+      "file": "scripts/canonical_admission.py",
+      "line": 230,
+      "evidence": "postmint-untracked-ui-probe.json",
+      "observed": "require_context now rejects dirty tracked files and new protected inventory, but site/verified-law/unlisted.js is untracked and outside the enumerated source maps. It is accepted with unchanged HEAD/code/known seals. publish_practice.py copies the entire site tree, so that extra disk source is publishable despite not being part of reviewed Git content.",
+      "probe_limit": "A test-only already-valid-token fixture was used with the actual inventory function. No production token was minted and no site generation/publication occurred.",
+      "recommendation": "Reject untracked nonignored source, with only the exact computed coverage K as an explicit validated exception. Also compare the entire publishable site disk inventory and bytes against HEAD so ignored publishable additions cannot evade the check."
+    },
+    {
+      "id": "H2",
+      "severity": "P2",
+      "title": "Manifest, notes context and enrollment are not required to be committed HEAD blobs",
+      "file": "scripts/canonical_admission.py",
+      "line": 320,
+      "evidence": "uncommitted-metadata-closure-probe.json",
+      "observed": "The new whole-delta helper uses subset allowlists. A HEAD containing only the registry change passes while exact M/N/E JSON files exist solely as untracked disk inputs. Current-source hash checks bind those bytes to registry hashes, but no later check binds them to HEAD regular blobs. The registry can therefore claim a registered context that a clean clone of that HEAD cannot reconstruct.",
+      "probe_limit": "Actual Git-delta/current-reader helpers were exercised; the production registry remains empty and no complete native registration was run. Exact SHA authorization is not bypassed.",
+      "recommendation": "Require all M/N/E paths to exist as regular HEAD blobs with exact raw bytes equal to the reviewed/current bindings. Validate the exact required post-content path set, retaining K only as a separately calculated optional output."
+    },
+    {
+      "id": "H3",
+      "severity": "P2",
+      "title": "The public registered coverage API can return caller data as current native coverage",
+      "file": "scripts/canonical_admission.py",
+      "line": 435,
+      "evidence": "public-coverage-value-binding-probe.json",
+      "observed": "coverage_snapshot checks selected counts through _coverage_value, then copies the caller coverage object into current_native_coverage. A caller-added field survives and the returned K can differ from context._expected_coverage. The actual artifact producer path recomputes correctly, and a later existing-K consumer check rejects the forged value; those do not bind the public API return itself.",
+      "probe_limit": "An explicit setup mock stands in for the already-validated context to test the actual public API value predicate only. This does not obtain registry authorization, native PASS, admission or release.",
+      "recommendation": "Only return registered coverage when the full supplied coverage, guide and payload match the actual producer values cached at mint. Keep the internal producer calculation path separate from public caller-input validation and unchanged legacy defaults."
+    }
+  ],
+  "production_registry_remains_empty": true,
+  "no_caller_PASS_authorization_or_new_production_token_demonstrated": true,
+  "actual30_to40_registered_success_E2E": false,
+  "CI_routing_historical_fixed_count_and_subsequent_context_lifecycle_complete": false,
+  "readiness": "NOT_READY",
+  "source_edits_by_reviewer": 0,
+  "whole_native_original1781_fullpytest_regeneration_commit_push_runs": 0,
+  "actual_admission_native_audit_RELEASED_CI_production_credit": 0
+}
