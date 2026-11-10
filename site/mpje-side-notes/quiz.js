@@ -189,7 +189,7 @@
     { slug: 'numbers-records', title: 'Numbers / Record Retention' },
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
-    { slug: 'cumulative-practice', title: 'Cumulative Practice (400 available)' }
+    { slug: 'cumulative-practice', title: 'Cumulative Practice (420 available)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
@@ -239,7 +239,7 @@
       index < CHAPTERS.length - 1 ? 'Next: ' + CHAPTERS[index + 1].title + ' →' : 'All chapters →'));
     if (slug !== 'cumulative-practice') {
       nav.append(link('../cumulative-practice/?chapter=' + encodeURIComponent(slug),
-        'Practice ' + (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'nonsterile-compounding'].includes(slug) ? '20' : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
+        'Practice ' + (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'nonsterile-compounding'].includes(slug) ? '20' : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
     }
     const footer = document.querySelector('body > footer') || document.querySelector('footer');
     if (footer) footer.before(nav);
