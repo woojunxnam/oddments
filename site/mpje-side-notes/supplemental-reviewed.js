@@ -311,7 +311,7 @@ window.MPJE_SUPPLEMENTAL_VERIFIED = {
       "sourceUrl": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download"
     },
     {
-      "question": "A Massachusetts-licensed certified pharmacy technician is asked to transfer a valid, unfilled Schedule VI prescription to another Massachusetts pharmacy. The pharmacist on duty has approved the transfer. Which action fits the technician's scope, assuming other transfer conditions are met?",
+      "question": "A Massachusetts-licensed certified pharmacy technician is asked to transfer a valid Schedule VI prescription with refills remaining to another Massachusetts pharmacy. The pharmacist on duty has approved the transfer. Which action fits the technician's scope, assuming other transfer conditions are met?",
       "choices": [
         "Transfer Schedule II prescriptions as well because they are more urgent",
         "Transfer any Schedule III–VI prescription under the same broad rule",
