@@ -189,7 +189,7 @@
     { slug: 'numbers-records', title: 'Numbers / Record Retention' },
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
-    { slug: 'cumulative-practice', title: 'Cumulative Practice (540 Questions)' }
+    { slug: 'cumulative-practice', title: 'Cumulative Practice (280 available)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
