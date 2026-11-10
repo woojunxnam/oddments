@@ -33,3 +33,44 @@
 .quiz .mcq-footer{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:24px 0 2px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
 .mcq-score{font-size:1rem;color:var(--accent2)}
 @media(max-width:620px){.quiz .mcq-card{padding:12px}.mcq-choice{padding:11px 10px;gap:7px;grid-template-columns:19px 24px minmax(0,1fr)}.mcq-overview{gap:8px}.mcq-progress{width:100%;flex:1 1 100%}.quiz .mcq-feedback{padding:12px}}
+
+
+/* Previous/Next links shared by every chapter, and Chapter 28 practice picker. */
+.study-chapter-nav{
+  max-width:1180px; margin:24px auto 10px; padding:16px 18px;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;
+  border:1px solid var(--line); border-radius:14px; background:#f8fbff;
+}
+.study-nav-link{
+  display:flex; align-items:center; justify-content:center; min-height:44px;
+  padding:11px 13px; border:1px solid #bfcee1; border-radius:10px;
+  background:#fff; color:var(--accent2); text-decoration:none; font-weight:650;
+  line-height:1.4; text-align:center; overflow-wrap:anywhere;
+}
+.study-nav-link:hover,.study-nav-link:focus-visible{
+  background:#e6f0fc; border-color:#7aa4d2; text-decoration:underline;
+}
+.study-nav-library{background:#edf3fc}
+.study-nav-practice{grid-column:1/-1; background:#e5f2ff}
+.practice-label{display:block;font-weight:650;margin:12px 0 8px}
+.practice-select{
+  display:block; width:100%; padding:12px 14px; border:1px solid #b8cadb;
+  border-radius:10px; background:#fff; color:var(--text); font-size:1rem; line-height:1.35;
+}
+.practice-actions{display:flex; flex-wrap:wrap; gap:9px; margin:14px 0}
+.practice-nav-button{
+  border:1px solid #9db6d3; border-radius:10px; padding:12px 15px;
+  color:#163b64; background:#eaf2fb; cursor:pointer; font-weight:650; line-height:1.4;
+}
+.practice-nav-button:hover:not(:disabled),.practice-nav-button:focus-visible{background:#d9ebfc}
+.practice-nav-button:disabled{opacity:.48;cursor:not-allowed}
+.practice-secondary{background:#fff}
+#review-status{font-weight:600}
+@media(max-width:750px){
+  .study-chapter-nav{margin:16px 10px; padding:12px; grid-template-columns:repeat(2,minmax(0,1fr))}
+  .study-nav-link{padding:12px 8px}
+  .study-nav-library{grid-column:1/-1;grid-row:2}
+  .study-nav-practice{grid-column:1/-1}
+  .practice-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .practice-actions #review-library{grid-column:1/-1}
+}

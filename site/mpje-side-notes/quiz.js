@@ -159,8 +159,77 @@
     updateScore();
   }
 
-  function initialize() {
+  // Shared chapter order ensures that every existing page receives Previous/Next
+  // links without modifying or duplicating the 27 original study guides.
+  const CHAPTERS = [
+    { slug: 'nonsterile-compounding', title: 'Nonsterile Compounding' },
+    { slug: 'sterile-compounding', title: 'Sterile Compounding' },
+    { slug: 'hd-outsourcing-nuclear', title: 'Hazardous Drugs / 503B / Nuclear' },
+    { slug: 'fda-supply-chain', title: 'FDA / DSCSA / Supply Chain' },
+    { slug: 'ordering-inventory', title: 'DEA Ordering / Inventory' },
+    { slug: 'security-loss-disposal', title: 'Security / Loss / Disposal' },
+    { slug: 'storage-shipping', title: 'Storage / Shipping' },
+    { slug: 'shared-automation', title: 'Shared Services / Automation' },
+    { slug: 'vaccination-administration', title: 'Vaccinations / Administration' },
+    { slug: 'cdtm', title: 'Collaborative Drug Therapy Management' },
+    { slug: 'prescribing-public-health', title: 'Pharmacist Prescribing / Public Health' },
+    { slug: 'label-interchange', title: 'Labels / Substitution' },
+    { slug: 'counseling-dur', title: 'Counseling / DUR' },
+    { slug: 'rems', title: 'FDA REMS' },
+    { slug: 'privacy', title: 'HIPAA / Privacy' },
+    { slug: 'schedules-registration', title: 'Drug Schedules / Registration' },
+    { slug: 'prescription-validity', title: 'Prescription Validity' },
+    { slug: 'cii-core', title: 'Schedule II Core' },
+    { slug: 'cii-partial-outstate', title: 'CII Partial Fills / Out-of-State' },
+    { slug: 'refills-transfer', title: 'Refills / Transfers' },
+    { slug: 'pmp-oud', title: 'MassPAT / OUD' },
+    { slug: 'licensure-ce', title: 'Licensure / CE' },
+    { slug: 'personnel', title: 'Personnel / Supervision' },
+    { slug: 'pharmacy-mor', title: 'Pharmacy Licensing / MOR' },
+    { slug: 'numbers-records', title: 'Numbers / Record Retention' },
+    { slug: 'drug-directory', title: 'Drug Directory' },
+    { slug: 'open-register', title: 'Open Legal Register' },
+    { slug: 'cumulative-practice', title: 'Cumulative Practice (540 Questions)' }
+  ];
+  window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
+
+  function addChapterNavigation() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const last = parts[parts.length - 1];
+    const slug = last === 'index.html' ? parts[parts.length - 2] : last;
+    const index = CHAPTERS.findIndex(chapter => chapter.slug === slug);
+    if (index < 0 || document.querySelector('.study-chapter-nav')) return;
+
+    const nav = element('nav', 'study-chapter-nav');
+    nav.setAttribute('aria-label', 'Previous and next MPJE chapters');
+    function link(href, label, className) {
+      const anchor = element('a', className || 'study-nav-link', label);
+      anchor.href = href;
+      return anchor;
+    }
+    nav.append(link(index > 0 ? '../' + CHAPTERS[index - 1].slug + '/' : '../',
+      index > 0 ? '← Previous: ' + CHAPTERS[index - 1].title : '← All chapters'));
+    nav.append(link('../', 'All chapters', 'study-nav-link study-nav-library'));
+    nav.append(link(index < CHAPTERS.length - 1 ? '../' + CHAPTERS[index + 1].slug + '/' : '../',
+      index < CHAPTERS.length - 1 ? 'Next: ' + CHAPTERS[index + 1].title + ' →' : 'All chapters →'));
+    if (slug !== 'cumulative-practice') {
+      nav.append(link('../cumulative-practice/?chapter=' + encodeURIComponent(slug),
+        'Practice 20 questions for this chapter', 'study-nav-link study-nav-practice'));
+    }
+    const footer = document.querySelector('body > footer') || document.querySelector('footer');
+    if (footer) footer.before(nav);
+    else document.body.append(nav);
+  }
+
+  // Used by Chapter 28 when a selected chapter's original and supplemental
+  // questions have loaded. All existing chapter pages continue to work alone.
+  window.MPJE_ENHANCE_QUIZZES = () => {
     document.querySelectorAll('section.quiz').forEach(enhanceQuiz);
+  };
+
+  function initialize() {
+    window.MPJE_ENHANCE_QUIZZES();
+    addChapterNavigation();
   }
 
   if (document.readyState === 'loading') {
