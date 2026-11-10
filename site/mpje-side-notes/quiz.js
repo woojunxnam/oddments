@@ -239,7 +239,7 @@
       index < CHAPTERS.length - 1 ? 'Next: ' + CHAPTERS[index + 1].title + ' →' : 'All chapters →'));
     if (slug !== 'cumulative-practice') {
       nav.append(link('../cumulative-practice/?chapter=' + encodeURIComponent(slug),
-        'Practice 20 questions for this chapter', 'study-nav-link study-nav-practice'));
+        'Practice ' + (slug === 'nonsterile-compounding' ? '20' : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
     }
     const footer = document.querySelector('body > footer') || document.querySelector('footer');
     if (footer) footer.before(nav);
