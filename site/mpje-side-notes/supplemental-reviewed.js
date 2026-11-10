@@ -285,7 +285,7 @@ window.MPJE_SUPPLEMENTAL_VERIFIED = {
       "answer": "D",
       "explanations": [
         "The qualified core may include licensed certified technicians and up to two licensed interns.",
-        "The policy does not require five interns.",
+        "The special vaccination ratio requires a qualifying core of licensed certified technicians and up to two licensed interns, not five interns.",
         "The special 1:6 allowance is tied to pharmacies providing vaccination services.",
         "Correct. Three licensed certified technicians supply the qualifying core for the special six-person team."
       ],
@@ -304,7 +304,7 @@ window.MPJE_SUPPLEMENTAL_VERIFIED = {
       "explanations": [
         "Correct. Board Policy 2026-02 excludes the trainer only while not independently supporting the pharmacist outside the dedicated training relationship.",
         "A schedule designation alone cannot authorize unrelated independent support while excluded.",
-        "There is no blanket ratio waiver.",
+        "The dedicated-trainer exclusion is narrow; it does not waive the staffing ratio for other independent prescription-filling work.",
         "Final dispensing process validation remains a pharmacist responsibility."
       ],
       "citation": "Board Policy 2026-02 § III(A)–(B)",
