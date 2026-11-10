@@ -96,7 +96,7 @@
     if (!match) throw new Error('A source question has no A–D answer.');
     return match[1].toUpperCase();
   }
-  function makeDetails(prompt, choices, answer, explanations, sourceSlug, originIndex) {
+  function makeDetails(prompt, choices, answer, explanations, sourceSlug, originIndex, citation, sourceUrl) {
     const details = document.createElement('details');
     const summary = document.createElement('summary');
     summary.textContent = prompt;
@@ -127,6 +127,15 @@
     anchor.href = '../' + sourceSlug + '/#quiz';
     anchor.textContent = 'Read the original study guide and legal references';
     attribution.append(anchor);
+    if (citation && sourceUrl) {
+      const separator = document.createTextNode(' · Verified legal basis: ');
+      const official = document.createElement('a');
+      official.href = sourceUrl;
+      official.target = '_blank';
+      official.rel = 'noopener noreferrer';
+      official.textContent = citation;
+      attribution.append(separator, official);
+    }
     body.append(attribution);
     details.append(summary, body);
     return details;
@@ -138,6 +147,13 @@
   // Keep those unreviewed items out of scored practice rather than expose
   // misleading answer keys. Preserve the ten manually written exercises.
   function supplementalQuestions(slug) {
+    const reviewed = window.MPJE_SUPPLEMENTAL_VERIFIED?.[slug];
+    if (Array.isArray(reviewed) && reviewed.length) {
+      return reviewed.map((q, i) => makeDetails(
+        'Supplemental question ' + (i + 1) + '. ' + q.question,
+        q.choices, q.answer, q.explanations, slug, i, q.citation, q.sourceUrl
+      ));
+    }
     if (slug !== 'nonsterile-compounding') return [];
     return manuallyAuthored.map((q, i) => makeDetails(
       'Supplemental question ' + (i + 1) + '. ' + q.question,
@@ -185,14 +201,17 @@
       const additional = supplementalQuestions(slug);
       sectionTitle(original, '10 original chapter questions', 'These questions and answer keys are inherited from the existing study guide; this consolidation did not independently certify their legal accuracy.');
       sourceQs.forEach(q => original.append(document.importNode(q, true)));
-      sectionTitle(extra, '10 supplemental nonsterile-compounding cases', 'Separately authored applications of the linked chapter. Use the chapter sources when studying; a full independent legal audit is still needed.');
+      sectionTitle(extra, '10 supplemental ' + (slug === 'nonsterile-compounding' ? 'nonsterile-compounding' : 'reviewed') + ' cases',
+        slug === 'nonsterile-compounding'
+          ? 'Separately authored applications of the linked chapter. An independent end-to-end legal audit is still needed.'
+          : 'Individually authored pharmacist-decision scenarios; each has a specific official-source citation and explanations for every answer choice. Reviewed November 10, 2026.');
       additional.forEach(q => extra.append(q));
       original.hidden = false;
       extra.hidden = additional.length === 0;
       window.MPJE_ENHANCE_QUIZZES?.();
       const count = sourceQs.length + additional.length;
       status.textContent = count + ' questions available for Chapter ' + (index + 1) + ': 10 original'
-        + (additional.length ? ' + 10 supplemental cases.' : '. Previous automatically generated error-analysis drills are withdrawn pending individual rewriting and legal review.')
+        + (additional.length ? ' + 10 supplemental cases.' : '. Supplemental scenarios for this topic are not yet published; synthetic drills remain withdrawn.')
         + ' Chapter ' + (index + 1) + ' of ' + chapters.length + '.';
       history.replaceState(null, '', '?chapter=' + encodeURIComponent(slug));
     } catch (err) {
