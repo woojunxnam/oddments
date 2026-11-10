@@ -162,30 +162,30 @@
   // Shared chapter order ensures that every existing page receives Previous/Next
   // links without modifying or duplicating the 27 original study guides.
   const CHAPTERS = [
-    { slug: 'nonsterile-compounding', title: 'Nonsterile Compounding' },
-    { slug: 'sterile-compounding', title: 'Sterile Compounding' },
-    { slug: 'hd-outsourcing-nuclear', title: 'Hazardous Drugs / 503B / Nuclear' },
-    { slug: 'fda-supply-chain', title: 'FDA / DSCSA / Supply Chain' },
-    { slug: 'ordering-inventory', title: 'DEA Ordering / Inventory' },
-    { slug: 'security-loss-disposal', title: 'Security / Loss / Disposal' },
-    { slug: 'storage-shipping', title: 'Storage / Shipping' },
-    { slug: 'shared-automation', title: 'Shared Services / Automation' },
-    { slug: 'vaccination-administration', title: 'Vaccinations / Administration' },
-    { slug: 'cdtm', title: 'Collaborative Drug Therapy Management' },
-    { slug: 'prescribing-public-health', title: 'Pharmacist Prescribing / Public Health' },
-    { slug: 'label-interchange', title: 'Labels / Substitution' },
-    { slug: 'counseling-dur', title: 'Counseling / DUR' },
-    { slug: 'rems', title: 'FDA REMS' },
-    { slug: 'privacy', title: 'HIPAA / Privacy' },
+    { slug: 'licensure-ce', title: 'Licensure / CE' },
+    { slug: 'personnel', title: 'Personnel / Supervision' },
+    { slug: 'pharmacy-mor', title: 'Pharmacy Licensing / MOR' },
     { slug: 'schedules-registration', title: 'Drug Schedules / Registration' },
     { slug: 'prescription-validity', title: 'Prescription Validity' },
     { slug: 'cii-core', title: 'Schedule II Core' },
     { slug: 'cii-partial-outstate', title: 'CII Partial Fills / Out-of-State' },
     { slug: 'refills-transfer', title: 'Refills / Transfers' },
     { slug: 'pmp-oud', title: 'MassPAT / OUD' },
-    { slug: 'licensure-ce', title: 'Licensure / CE' },
-    { slug: 'personnel', title: 'Personnel / Supervision' },
-    { slug: 'pharmacy-mor', title: 'Pharmacy Licensing / MOR' },
+    { slug: 'label-interchange', title: 'Labels / Substitution' },
+    { slug: 'counseling-dur', title: 'Counseling / DUR' },
+    { slug: 'rems', title: 'FDA REMS' },
+    { slug: 'privacy', title: 'HIPAA / Privacy' },
+    { slug: 'vaccination-administration', title: 'Vaccinations / Administration' },
+    { slug: 'cdtm', title: 'Collaborative Drug Therapy Management' },
+    { slug: 'prescribing-public-health', title: 'Pharmacist Prescribing / Public Health' },
+    { slug: 'ordering-inventory', title: 'DEA Ordering / Inventory' },
+    { slug: 'security-loss-disposal', title: 'Security / Loss / Disposal' },
+    { slug: 'storage-shipping', title: 'Storage / Shipping' },
+    { slug: 'shared-automation', title: 'Shared Services / Automation' },
+    { slug: 'nonsterile-compounding', title: 'Nonsterile Compounding' },
+    { slug: 'sterile-compounding', title: 'Sterile Compounding' },
+    { slug: 'hd-outsourcing-nuclear', title: 'Hazardous Drugs / 503B / Nuclear' },
+    { slug: 'fda-supply-chain', title: 'FDA / DSCSA / Supply Chain' },
     { slug: 'numbers-records', title: 'Numbers / Record Retention' },
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
@@ -193,12 +193,37 @@
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
+  // Make the chapter badge, footer, and cross-chapter link labels agree with
+  // the canonical order. Original study HTML and legal/Q&A content remain intact.
+  function alignChapterNumbers(index) {
+    const shown = String(index + 1).padStart(2, '0');
+    function retitle(node, chapterNumber) {
+      if (!node) return;
+      const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+      let child;
+      while ((child = walker.nextNode())) {
+        child.nodeValue = child.nodeValue.replace(/\bChapter\s+\d+\b/gi, 'Chapter ' + chapterNumber);
+      }
+    }
+    retitle(document.querySelector('.hero .eyebrow'), shown);
+    retitle(document.querySelector('body > footer'), shown);
+    document.title = document.title.replace(/\bChapter\s+\d+\b/i, 'Chapter ' + shown);
+    document.querySelectorAll('a[href^="../"]').forEach(anchor => {
+      const path = (anchor.getAttribute('href') || '').match(/^\.\.\/([a-z0-9-]+)\/(?:[#?].*)?$/);
+      if (!path || !/\bChapter\s+\d+\b/i.test(anchor.textContent)) return;
+      const target = CHAPTERS.findIndex(c => c.slug === path[1]);
+      if (target >= 0) retitle(anchor, String(target + 1).padStart(2, '0'));
+    });
+  }
+
   function addChapterNavigation() {
     const parts = window.location.pathname.split('/').filter(Boolean);
     const last = parts[parts.length - 1];
     const slug = last === 'index.html' ? parts[parts.length - 2] : last;
     const index = CHAPTERS.findIndex(chapter => chapter.slug === slug);
-    if (index < 0 || document.querySelector('.study-chapter-nav')) return;
+    if (index < 0) return;
+    alignChapterNumbers(index);
+    if (document.querySelector('.study-chapter-nav')) return;
 
     const nav = element('nav', 'study-chapter-nav');
     nav.setAttribute('aria-label', 'Previous and next MPJE chapters');
