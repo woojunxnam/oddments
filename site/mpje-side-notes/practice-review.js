@@ -1,6 +1,4 @@
-/* Cumulative practice, Chapter 28. Fetches the original, unchanged study-guide quizzes from this same Pages site.
-   Every chapter offers its ten original questions plus ten additional application/error-analysis exercises.
-   Supplemental questions are derived from existing chapter explanations; they are not new independent legal opinions. */
+/* Cumulative practice, Chapter 28. Loads the source chapter quizzes unchanged.\n   Automatically synthesized error-analysis exercises were withdrawn after a\n   quality review; only separately authored supplemental cases remain. */
 (() => {
   'use strict';
   const letters = 'ABCD';
@@ -92,27 +90,11 @@
   function textNode(node) {
     return (node ? node.textContent : '').replace(/\s+/g, ' ').trim();
   }
-  function questionText(q) {
-    return textNode(q.querySelector('summary')).replace(/^(?:Question\s*\d+|Q\s*\d+)\s*[.:-]\s*/i, '');
-  }
   function parseAnswer(q) {
     const heading = q.querySelector('.answer p strong');
     const match = textNode(heading).match(/^Correct(?:\s+answer)?:\s*([A-D])\b/i);
     if (!match) throw new Error('A source question has no A–D answer.');
     return match[1].toUpperCase();
-  }
-  function parseReasons(q) {
-    const reasons = {};
-    q.querySelectorAll('.answer p').forEach(p => {
-      const strong = p.querySelector('strong');
-      const m = textNode(strong).match(/^([A-D]):$/);
-      if (m) {
-        let wording = textNode(p).replace(/^[A-D]:\s*/, '');
-        wording = wording.replace(/^(?:Correct|Yes|No|Right|Wrong)[.,:;]\s*/i, '');
-        reasons[m[1]] = wording || textNode(p);
-      }
-    });
-    return Object.keys(reasons).length === 4 ? reasons : null;
   }
   function makeDetails(prompt, choices, answer, explanations, sourceSlug, originIndex) {
     const details = document.createElement('details');
@@ -143,39 +125,26 @@
     attribution.className = 'refline';
     const anchor = document.createElement('a');
     anchor.href = '../' + sourceSlug + '/#quiz';
-    anchor.textContent = 'Underlying chapter question ' + (originIndex + 1);
+    anchor.textContent = 'Read the original study guide and legal references';
     attribution.append(anchor);
     body.append(attribution);
     details.append(summary, body);
     return details;
   }
-  function transformedQuestions(source, slug) {
-    if (slug === 'nonsterile-compounding') {
-      return manuallyAuthored.map((q, i) => makeDetails(
-        'Additional question ' + (i + 1) + '. ' + q.question,
-        q.choices, q.answer, q.explanations, slug, i
-      ));
-    }
-    return source.map((q, i) => {
-      const oldChoices = Array.from(q.querySelectorAll('.answer ol.answers > li')).map(textNode);
-      if (oldChoices.length !== 4) throw new Error('A source question has fewer than 4 answers.');
-      const key = parseAnswer(q), correctIndex = letters.indexOf(key);
-      const wrong = [0, 1, 2, 3].filter(j => j !== correctIndex)[i % 3];
-      const reasons = parseReasons(q);
-      if (!reasons) throw new Error('Missing complete explanations for ' + slug + ' question ' + (i + 1));
-      const order = [0, 1, 2, 3].map(j => (j + i) % 4);
-      const correctAnswer = letters[order.indexOf(wrong)];
-      const oldLetters = letters;
-      const choices = order.map(j => reasons[oldLetters[j]]);
-      const rationale = order.map(j => j === wrong
-        ? 'Correct. This directly explains why the quoted answer "' + oldChoices[wrong] + '" is incorrect in the original legal scenario.'
-        : 'This reason addresses a DIFFERENT original option ("' + oldChoices[j] + '"), not the particular incorrect answer quoted in the question.');
-      const prompt = 'Additional question ' + (i + 1)
-        + '. A trainee answers "' + oldChoices[wrong] + '" in this case: '
-        + questionText(q) + ' Which explanation MOST SPECIFICALLY explains the trainee\'s mistake?';
-      return makeDetails(prompt, choices, correctAnswer, rationale, slug, i);
-    });
+  // The previous algorithm manufactured 260 extra "questions" by turning
+  // answers to other options into choices. That is not a valid substitute for
+  // independently written MPJE scenarios and sometimes produces fragments
+  // such as "Correct." or "Not the policy." as purported answers.
+  // Keep those unreviewed items out of scored practice rather than expose
+  // misleading answer keys. Preserve the ten manually written exercises.
+  function supplementalQuestions(slug) {
+    if (slug !== 'nonsterile-compounding') return [];
+    return manuallyAuthored.map((q, i) => makeDetails(
+      'Supplemental question ' + (i + 1) + '. ' + q.question,
+      q.choices, q.answer, q.explanations, slug, i
+    ));
   }
+
   function sectionTitle(el, name, description) {
     el.replaceChildren();
     const title = document.createElement('h2');
@@ -213,16 +182,18 @@
         if (q.querySelectorAll('.answer ol.answers > li').length !== 4) throw new Error('Source option count changed.');
         parseAnswer(q);
       });
-      const additional = transformedQuestions(sourceQs, slug);
-      if (additional.length !== 10) throw new Error('Expected 10 additional questions.');
-      sectionTitle(original, 'Original 10 questions', 'Copied directly from this chapter\'s existing English Side Notes, including its original answer explanations.');
+      const additional = supplementalQuestions(slug);
+      sectionTitle(original, '10 original chapter questions', 'These questions and answer keys are inherited from the existing study guide; this consolidation did not independently certify their legal accuracy.');
       sourceQs.forEach(q => original.append(document.importNode(q, true)));
-      sectionTitle(extra, '10 additional application and error-analysis questions', 'New practice prompts built from the chapter\'s verified topics and answer explanations. They reinforce the same source material and do not assert new independently researched laws.');
+      sectionTitle(extra, '10 supplemental nonsterile-compounding cases', 'Separately authored applications of the linked chapter. Use the chapter sources when studying; a full independent legal audit is still needed.');
       additional.forEach(q => extra.append(q));
       original.hidden = false;
-      extra.hidden = false;
+      extra.hidden = additional.length === 0;
       window.MPJE_ENHANCE_QUIZZES?.();
-      status.textContent = '20 questions ready: 10 original + 10 additional. Chapter ' + (index + 1) + ' of ' + chapters.length + '.';
+      const count = sourceQs.length + additional.length;
+      status.textContent = count + ' questions available for Chapter ' + (index + 1) + ': 10 original'
+        + (additional.length ? ' + 10 supplemental cases.' : '. Previous automatically generated error-analysis drills are withdrawn pending individual rewriting and legal review.')
+        + ' Chapter ' + (index + 1) + ' of ' + chapters.length + '.';
       history.replaceState(null, '', '?chapter=' + encodeURIComponent(slug));
     } catch (err) {
       if (key !== request) return;
