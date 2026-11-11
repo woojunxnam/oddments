@@ -12,7 +12,7 @@
   const prev = document.getElementById('review-prev');
   const next = document.getElementById('review-next');
   const guide = document.getElementById('review-source');
-  const chapters = (window.MPJE_CHAPTERS || []).filter(c => c.slug !== 'cumulative-practice');
+  const chapters = (window.MPJE_CHAPTERS || []).filter(c => c.slug !== 'cumulative-practice' && c.slug !== 'drug-memorization');
   let request = 0;
 
   if (!chapters.length || !select || !original || !extra || !moderate || !hard) {
