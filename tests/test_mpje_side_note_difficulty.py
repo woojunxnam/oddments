@@ -26,7 +26,7 @@ def read_difficulty(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
     marker = "), {"
     assert marker in text, f"Missing data wrapper in {path}"
-    return json.loads("{" + text.split(marker, 1)[1].rsplit(");", 1)[0].split("{", 1)[1])
+    return json.loads(text[text.index(marker) + 3 : text.rfind(");")])
 
 
 def test_expanded_chapters_have_20_original_items_each() -> None:
