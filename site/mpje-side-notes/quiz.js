@@ -189,7 +189,8 @@
     { slug: 'numbers-records', title: 'Numbers / Record Retention' },
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
-    { slug: 'cumulative-practice', title: 'Cumulative Practice (540 available)' }
+    { slug: 'cumulative-practice', title: 'Cumulative Practice (540 available)' },
+    { slug: 'drug-memorization', title: 'Drug Memorization Lab (151 entries)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
