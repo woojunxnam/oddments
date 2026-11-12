@@ -1,24 +1,24 @@
-/* Original Massachusetts MPJE Chapter 12 moderate/hard REMS scenarios. FDA source review 2026-11-11; independent legal audit pending. */
+/* New Massachusetts MPJE rems moderate/hard practice, 2026-11-11; independent legal audit pending. */
 Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWED = {}), {
   "rems": {
     "moderate": [
       {
-        "question": "A patient presents a valid clozapine prescription on November 11, 2026. The pharmacy's legacy software demands a Clozapine REMS enrollment and ANC authorization number. What is the correct FDA-based response?",
+        "question": "Two REMS-certified healthcare clinics each order SUBLOCADE directly from an authorized distributor. Clinic A has three unexpired syringes it will not use and wants to lend them to Clinic B while Clinic B awaits a shipment. Which action follows the SUBLOCADE REMS?",
         "choices": [
-          "Refuse every clozapine prescription until FDA restores the prior REMS",
-          "Require the patient and pharmacy to enroll in the previous clozapine REMS before any dispensing",
-          "Recognize that FDA eliminated the clozapine REMS effective June 13, 2025; keep appropriate ANC monitoring in clinical care without using the discontinued REMS authorization gate",
-          "Substitute a different antipsychotic because the REMS was removed"
+          "Loan the syringes freely because both clinics hold REMS certification",
+          "Give the syringes to patients to carry between the two clinics",
+          "Do not transfer or loan the syringes between the clinics; follow the REMS-controlled distribution and inventory requirements",
+          "Re-label the syringes as ordinary sublingual buprenorphine before transferring them"
         ],
         "answer": "C",
         "explanations": [
-          "FDA has removed, not paused until reactivation, the former clozapine REMS.",
-          "Prior REMS enrollment and ANC reporting are no longer dispensing prerequisites.",
-          "Correct. FDA removed the REMS effective June 13, 2025 while recommending ANC monitoring according to labeling.",
-          "Eliminating REMS does not by itself authorize therapy substitution."
+          "Certification does not remove the REMS restriction on distribution, transfer, loan or sale of SUBLOCADE.",
+          "The injectable product must be administered by a healthcare professional, not carried home by the patient.",
+          "Correct. FDA SUBLOCADE labeling §5.2 specifies that certified settings and pharmacies must not distribute, transfer, loan or sell their SUBLOCADE stock.",
+          "Changing the product's name cannot change its identity or bypass the REMS."
         ],
-        "citation": "FDA Drug Safety Communication — Clozapine REMS Removed (effective June 13, 2025)",
-        "sourceUrl": "https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine"
+        "citation": "FDA SUBLOCADE Prescribing Information §5.2 (2025)",
+        "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/209819s031lbl.pdf"
       },
       {
         "question": "A Massachusetts retail pharmacy wishes to fill a prescription for mifepristone for medical termination of pregnancy. The prescriber is certified under the applicable REMS, but the pharmacy has not enrolled. What must the pharmacy do?",
