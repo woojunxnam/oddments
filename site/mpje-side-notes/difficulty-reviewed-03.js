@@ -6,15 +6,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A corporation purchases an existing Massachusetts Drug Store Pharmacy and intends to keep the seller's Board license on the wall after the sale. No new ownership application has been approved. What must it do?",
         "choices": [
           "The buyer may continue indefinitely because the premises has not changed",
-          "Massachusetts pharmacy licenses are nontransferable; ownership changes require the appropriate new Board authorization rather than reusing the seller's license",
           "The pharmacy manager can endorse the back of the old license to transfer it",
+          "Massachusetts pharmacy licenses are nontransferable; ownership changes require the appropriate new Board authorization rather than reusing the seller's license",
           "A valid DEA number alone makes the facility pharmacy license transferable"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Licensure belongs to the legal licensee and cannot simply pass with the property.",
-          "Correct. 247 CMR 6 requires a new licensing process for ownership change.",
           "The MOR cannot transfer facility authority by signing a certificate.",
+          "Correct. 247 CMR 6 requires a new licensing process for ownership change.",
           "Federal DEA registration does not replace MA Board pharmacy licensure."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
@@ -41,16 +41,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA retail pharmacy has obtained an opening license but has not opened for 13 months. The owner asks to begin operating tomorrow without checking the Board's approval period. Which rule matters?",
         "choices": [
-          "Board pharmacy approval never expires while construction continues",
-          "A pharmacy can open based solely on a local business permit",
           "The pharmacy must address the one-year Board opening/permit validity requirement and obtain any needed renewed authority before opening",
+          "A pharmacy can open based solely on a local business permit",
+          "Board pharmacy approval never expires while construction continues",
           "Any license may be transferred to the nearest open pharmacy"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "State authority is time-limited in the specified circumstances.",
-          "Local business authorization is not the state pharmacy operating license.",
           "Correct. 247 CMR 6 establishes a one-year opening deadline absent the applicable extension/approval.",
+          "Local business authorization is not the state pharmacy operating license.",
+          "State authority is time-limited in the specified circumstances.",
           "Facility permissions cannot be transferred at will."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
@@ -59,17 +59,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A licensed MA Drug Store Pharmacy also begins sterile compounding. The owner says the existing Drug Store license permits the service without a separate pharmacy specialty license. What is required?",
         "choices": [
-          "Nothing because a pharmacist has a PharmD",
+          "Obtain the separate applicable sterile-compounding pharmacy license/authorization, in addition to maintaining the Drug Store license",
           "Only an FDA NDC assignment for each CSP",
           "An ordinary retail license always includes any compounding service",
-          "Obtain the separate applicable sterile-compounding pharmacy license/authorization, in addition to maintaining the Drug Store license"
+          "Nothing because a pharmacist has a PharmD"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "Individual qualifications do not automatically license the facility specialty activity.",
+          "Correct. MA pharmacy licensing law requires a qualifying sterile specialty license for this activity.",
           "An NDC does not establish a pharmacy sterile-compounding permit.",
           "MA distinguishes ordinary and specialty pharmacy activities.",
-          "Correct. MA pharmacy licensing law requires a qualifying sterile specialty license for this activity."
+          "Individual qualifications do not automatically license the facility specialty activity."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
@@ -115,15 +115,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Only the company's insurance carrier receives notice",
           "Written notice is unnecessary if the MOR resigns voluntarily",
-          "The departing MOR must notify the Board in writing of resignation or termination within ten days, separate from facility duties",
-          "Only DEA Form 106 can report a manager change"
+          "Only DEA Form 106 can report a manager change",
+          "The departing MOR must notify the Board in writing of resignation or termination within ten days, separate from facility duties"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "MOR departure is a Board licensing matter, not an insurance-only event.",
           "Voluntary resignation does not waive the notification rule.",
-          "Correct. 247 CMR 9.23(2)(f) imposes a personal ten-day written notice.",
-          "DEA Form 106 is for theft/significant loss, not MOR resignation."
+          "DEA Form 106 is for theft/significant loss, not MOR resignation.",
+          "Correct. 247 CMR 9.23(2)(f) imposes a personal ten-day written notice."
         ],
         "citation": "247 CMR 9.23 — Pharmacist Manager of Record",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -132,16 +132,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A Massachusetts retail pharmacy permanently closes. It has patients who obtained prescriptions during the prior ninety days. What advance patient-continuity obligation is relevant?",
         "choices": [
           "The pharmacy may close with no notice if all staff resign",
-          "Only the wholesalers need notice",
+          "Provide the required advance Board/patient notices and arrange access to records/medicines, including patients served during the statutory 90-day lookback",
           "The pharmacy may destroy profiles immediately and send no communications",
-          "Provide the required advance Board/patient notices and arrange access to records/medicines, including patients served during the statutory 90-day lookback"
+          "Only the wholesalers need notice"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "Closure triggers patient notice and continuity requirements.",
-          "Wholesaler contacts cannot replace patient and Board notices.",
+          "Correct. 247 CMR 6.13 includes advance closure notice and specified recently served patients.",
           "Records and patient access cannot be destroyed summarily.",
-          "Correct. 247 CMR 6.13 includes advance closure notice and specified recently served patients."
+          "Wholesaler contacts cannot replace patient and Board notices."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
@@ -168,16 +168,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A licensed Massachusetts pharmacy uses a designated MOR but the pharmacist says regulators must schedule inspections in advance to allow staff to prepare files. What does 247 CMR 9.24 say?",
         "choices": [
           "Only nonresident pharmacies may ever be inspected",
-          "The Board or designee may inspect licensed pharmacies without prior notice and require requested compliance records",
+          "Pharmacy inspections are purely voluntary",
           "Inspection is limited to pharmacies after a verified death",
-          "Pharmacy inspections are purely voluntary"
+          "The Board or designee may inspect licensed pharmacies without prior notice and require requested compliance records"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "The state's inspection authority is not restricted to nonresident facilities.",
-          "Correct. 247 CMR 9.24 expressly allows visits without advance notice.",
+          "Licensure includes regulatory inspection obligations.",
           "Patient harm is not an inspection prerequisite.",
-          "Licensure includes regulatory inspection obligations."
+          "Correct. 247 CMR 9.24 expressly allows visits without advance notice."
         ],
         "citation": "247 CMR 9.19–9.24 — Professional Operations, Hours and Inspections",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -188,15 +188,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA pharmacist agrees to serve as the retail MOR for two separately licensed drug stores, working 20 hours weekly at each. Neither has an individual Board waiver. Which combined problem exists?",
         "choices": [
           "Two stores under one chain are legally one MOR location",
-          "Forty combined weekly hours automatically fulfill every MOR condition",
           "An MA retail MOR generally may manage only one retail pharmacy at a time and must average at least 30 hours weekly at that specific store",
+          "Forty combined weekly hours automatically fulfill every MOR condition",
           "The MOR rule applies only if the store dispenses Schedule II opioids"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "Facility-specific requirements are not aggregated across distinct stores.",
-          "Working many total hours does not cure the one-store and per-location standards.",
           "Correct. 247 CMR 9.23(3)–(4) requires both one-store exclusivity and the specified time at the managed pharmacy.",
+          "Working many total hours does not cure the one-store and per-location standards.",
           "MOR requirements are not limited to Schedule II operations."
         ],
         "citation": "247 CMR 9.23 — Pharmacist Manager of Record",
@@ -207,15 +207,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "An interim manager may be an unlicensed technician for the first two weeks",
           "Forty-five days is shorter than a year, so there is no MOR action",
-          "An appointment is necessary only when the 100-day period expires",
-          "Appoint a qualified interim MOR within the required five-calendar-day unplanned absence period, notify the Board and perform the relevant controlled-substance inventory steps"
+          "Appoint a qualified interim MOR within the required five-calendar-day unplanned absence period, notify the Board and perform the relevant controlled-substance inventory steps",
+          "An appointment is necessary only when the 100-day period expires"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "An interim MOR must be a Board-licensed pharmacist.",
           "Extended departure invokes management requirements separate from shift coverage.",
-          "The 100-day threshold concerns a formal replacement application, not all interim responsibilities.",
-          "Correct. Policy 2022-02 and 247 CMR 9.23 provide an interim process for the unplanned extended absence."
+          "Correct. Policy 2022-02 and 247 CMR 9.23 provide an interim process for the unplanned extended absence.",
+          "The 100-day threshold concerns a formal replacement application, not all interim responsibilities."
         ],
         "citation": "MA Board Policy 2022-02, revised 2025 — MOR Absence/Departure",
         "sourceUrl": "https://www.mass.gov/doc/2022-02-extended-absence-or-departure-of-a-manager-of-record-or-designated-pharmacist-in-charge-pdf/download"
@@ -223,16 +223,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy plans to relocate from one Massachusetts street address to another in six weeks. The owner assumes the current Board permit and DEA registration can simply be used at the new address without any prior review. What is appropriate?",
         "choices": [
-          "Submit the required advance relocation application and await Board authorization; also verify separate DEA and state-controlled registration location requirements",
-          "Begin dispensing at the new site and notify the Board after one year",
           "Moving premises has no legal effect if the pharmacy's name stays the same",
+          "Begin dispensing at the new site and notify the Board after one year",
+          "Submit the required advance relocation application and await Board authorization; also verify separate DEA and state-controlled registration location requirements",
           "Update only the cash register address and ignore licensing"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. MA 247 CMR 6 requires advance relocation authorization, with separate controlled-location credentials as applicable.",
-          "Postponing notice until long after operation conflicts with licensing conditions.",
           "Location changes may affect permits and controlled registrations.",
+          "Postponing notice until long after operation conflicts with licensing conditions.",
+          "Correct. MA 247 CMR 6 requires advance relocation authorization, with separate controlled-location credentials as applicable.",
           "Retail point-of-sale updates do not replace professional licensing."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
@@ -295,16 +295,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacy notifies the Board of a planned closure 14 days ahead and arranges transfer of controlled inventory on the closure day. The seller wants to send transfer attestations only at the next biennial renewal. Which timing detail is missing?",
         "choices": [
-          "A signed inventory must document the controlled stock transferred on the actual transfer day, with the applicable attestations due within ten days afterward",
-          "The transaction may be documented by the patient whose last prescription was filled",
           "A pharmacy may dispense from unrecorded transferred Schedule II stock indefinitely",
+          "The transaction may be documented by the patient whose last prescription was filled",
+          "A signed inventory must document the controlled stock transferred on the actual transfer day, with the applicable attestations due within ten days afterward",
           "An ownership change exempts Schedule VI PMP-reportable drugs from all inventory duties"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. 247 CMR 6.14 requires contemporaneous inventory and prompt transfer attestations, not biennial deferral.",
-          "Patients do not replace transferor/transferee stock records.",
           "Controlled-stock accountability remains necessary.",
+          "Patients do not replace transferor/transferee stock records.",
+          "Correct. 247 CMR 6.14 requires contemporaneous inventory and prompt transfer attestations, not biennial deferral.",
           "MA transfer requirements also account for applicable PMP-reportable Schedule VI products."
         ],
         "citation": "247 CMR 6.01–6.14 — Massachusetts Pharmacy Facility Licensure",
@@ -333,15 +333,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "The departing pharmacist has no personal duty once the employer files paperwork",
           "Only a corporate notice is required under 247 CMR 9.23",
-          "The outgoing MOR's personal written notice is due within ten days under 247 CMR 9.23(2)(f), separate from the facility's Board reporting duties",
-          "An MOR can report departure only when a patient files a complaint"
+          "An MOR can report departure only when a patient files a complaint",
+          "The outgoing MOR's personal written notice is due within ten days under 247 CMR 9.23(2)(f), separate from the facility's Board reporting duties"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "An individual MOR obligation remains even after corporate action.",
           "MA explicitly specifies personal notice.",
-          "Correct. The two reporting actors and triggers have independent requirements.",
-          "Patient complaints are not necessary to trigger the departing MOR's notice."
+          "Patient complaints are not necessary to trigger the departing MOR's notice.",
+          "Correct. The two reporting actors and triggers have independent requirements."
         ],
         "citation": "247 CMR 9.23 — Pharmacist Manager of Record",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
