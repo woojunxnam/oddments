@@ -6,15 +6,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A Massachusetts Board regulation states a 14-day or smallest-unit-of-use Schedule VI emergency continuation, but Policy 2023-04 describes a 30-day or smallest-package pathway. Which study statement is justified?",
         "choices": [
           "Both sources unambiguously set a 30-day regulatory maximum",
-          "The Board policy automatically repealed the published 247 CMR language",
           "The official texts differ; a guide should identify the specific 14-day regulation and the policy's different 30-day wording rather than asserting one uniform rule",
+          "The Board policy automatically repealed the published 247 CMR language",
           "Every Schedule VI drug qualifies for a 30-day supply, including gabapentin"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "247 CMR 9.04(12) has a different written maximum.",
-          "A policy is not itself an enacted amendment to a regulation.",
           "Correct. The discrepancy must be presented as unresolved source-specific guidance, including each pathway's conditions.",
+          "A policy is not itself an enacted amendment to a regulation.",
           "Policy 2023-04 excludes gabapentin and is not a universal allowance."
         ],
         "citation": "247 CMR 9.04(12) and Board Policy 2023-04 — Schedule VI continuity of care",
@@ -23,17 +23,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacist reviews a multidrug single-dose compliance package containing Schedule II oxycodone and points to a recent policy that says Schedule II–III drugs may be included unless otherwise prohibited. What does that last phrase require?",
         "choices": [
-          "Check the enacted 247 CMR 9.08(3)(b), which prohibits Schedule II/III in the specified multidrug single-dose package; a policy's qualified wording does not waive it",
+          "Change the oxycodone to Schedule VI once included in the package",
           "Assume every controlled drug is always permitted whenever packaging is convenient",
           "Treat the package as ordinary childproof manufacturer labeling, outside pharmacy law",
-          "Change the oxycodone to Schedule VI once included in the package"
+          "Check the enacted 247 CMR 9.08(3)(b), which prohibits Schedule II/III in the specified multidrug single-dose package; a policy's qualified wording does not waive it"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. The regulation-specific prohibition is the 'otherwise prohibited' rule that matters.",
+          "Repackaging does not change oxycodone's schedule.",
           "Patient convenience does not cancel an enacted packaging restriction.",
           "Pharmacy-made compliance packaging remains subject to state standards.",
-          "Repackaging does not change oxycodone's schedule."
+          "Correct. The regulation-specific prohibition is the 'otherwise prohibited' rule that matters."
         ],
         "citation": "247 CMR 9.08(3)(b) — Compliance Packaging",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -61,15 +61,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "An electronic signature must appear in the patient's insurance portal",
           "The pharmacist's dispensing label serves as the original follow-up",
-          "The patient must personally telephone the DPH within 24 hours",
-          "A written prescription must reach the pharmacy within seven days, or the shorter federal period if applicable, with the specified mailed-postmark provision"
+          "The prescriber must provide the qualifying written follow-up within seven days or a shorter applicable federal limit; a mailed order must be postmarked within that period",
+          "The patient must personally telephone the DPH within 24 hours"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Insurance portals are not the prescribed follow-up route.",
           "The dispensing label does not substitute for practitioner documentation.",
-          "The patient is not the statutory follow-up prescriber.",
-          "Correct. MA §20(c) provides a seven-day written follow-up route for qualifying ePrescribing exceptions, subject to shorter federal law."
+          "Correct. MA §20(c) provides a limited seven-day written follow-up route when an ePrescribing exception exists and addresses mailing deadlines.",
+          "The patient is not the statutory follow-up prescriber."
         ],
         "citation": "M.G.L. c.94C §20(c) — Oral Controlled Prescription Follow-up",
         "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section20"
@@ -77,15 +77,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A qualifying California prescriber issues an out-of-state nonnarcotic Schedule II prescription. The MA pharmacist knows the state's ordinary CII first-fill period is 30 days. What additional timeframe must be checked?",
         "choices": [
-          "The Massachusetts out-of-state nonnarcotic CII initial-dispensing pathway has a five-day issue-date window, which is separate from ordinary in-state CII validity",
           "Thirty days automatically applies to every out-of-state CII first fill",
+          "The Massachusetts out-of-state nonnarcotic CII initial-dispensing pathway has a five-day issue-date window, which is separate from ordinary in-state CII validity",
           "All out-of-state Schedule II prescriptions are invalid even with verification",
           "The out-of-state prescription is refillable for six months"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. MA §18(d) sets a narrower initial-dispensing clock for qualifying nonnarcotic CII orders.",
           "Using only the general §23 period overlooks the specific out-of-state rule.",
+          "Correct. MA §18(d) sets a narrower initial-dispensing clock for qualifying nonnarcotic CII orders.",
           "MA provides conditions under which out-of-state nonnarcotic CII may be filled.",
           "Schedule II prescriptions are not refillable."
         ],
@@ -96,15 +96,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacist sees a federal rule permitting certain terminally ill patients' Schedule II prescriptions to be partially filled for up to sixty days from issue. A trainee says this automatically overrides all Massachusetts deadlines. What is correct?",
         "choices": [
           "Federal law always gives the longest possible dispensing window",
-          "A federal maximum does not erase a more restrictive state rule; determine the exact MA and federal pathway for the patient before relying on the full 60 days",
           "Every partial fill is actually a prohibited refill",
+          "A federal maximum does not erase a more restrictive state rule; determine the exact MA and federal pathway for the patient before relying on the full 60 days",
           "Only Schedule VI medicines can ever be partially dispensed"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "More permissive federal text does not itself displace an applicable stricter MA restriction.",
-          "Correct. §1306.13(c) gives a conditional federal ceiling; both jurisdictions must be analyzed.",
           "Lawful partial fills are distinct from refills.",
+          "Correct. §1306.13(c) gives a conditional federal ceiling; both jurisdictions must be analyzed.",
           "Federal Schedule II partial filling is expressly recognized."
         ],
         "citation": "21 CFR 1306.13(b)–(c) — Federal Schedule II Partial-Fill Rules",
@@ -115,15 +115,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Treat the new rules as effective since the date FDA approved them in February",
           "Drop the iPLEDGE REMS until November 15",
-          "Use the active program rules on the dispensing date and verify FDA's scheduled transition instead of pre-applying later operational changes",
-          "Dispense any quantity without a certified pharmacy because the implementation was delayed"
+          "Dispense any quantity without a certified pharmacy because the implementation was delayed",
+          "Use the active program rules on the dispensing date and verify FDA's scheduled transition instead of pre-applying later operational changes"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Approval, intended go-live and actual operation are not identical dates.",
           "A delayed modification does not suspend the existing REMS.",
-          "Correct. FDA postponed the iPLEDGE modification to November 15, 2026, with interim guidance.",
-          "Certification and program safeguards remain relevant."
+          "Certification and program safeguards remain relevant.",
+          "Correct. FDA postponed the iPLEDGE modification to November 15, 2026, with interim guidance."
         ],
         "citation": "FDA — iPLEDGE REMS Modifications Scheduled November 15, 2026",
         "sourceUrl": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/ipledge-risk-evaluation-and-mitigation-strategy-rems"
@@ -133,15 +133,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Every dispenser is exempt from all DSCSA provisions immediately",
           "The exemption permanently repealed suspect-drug investigations",
-          "The small-dispensers test applies to a single store regardless of corporate ownership",
-          "The announced future exemption uses a company-wide qualified-staff threshold measured on November 27, 2026, with specified enhanced DSCSA provisions exempted through November 27, 2027"
+          "The announced future exemption uses a company-wide qualified-staff threshold measured on November 27, 2026, with specified enhanced DSCSA provisions exempted through November 27, 2027",
+          "The small-dispensers test applies to a single store regardless of corporate ownership"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Publication does not mean a blanket exemption for all dispensers.",
           "Suspect/illegitimate-product protections are not generally repealed.",
-          "FDA specifies a company-wide rather than single-location headcount.",
-          "Correct. Different announcement, eligibility and end dates must not be conflated."
+          "Correct. Different announcement, eligibility and end dates must not be conflated.",
+          "FDA specifies a company-wide rather than single-location headcount."
         ],
         "citation": "FDA — Small-Dispenser DSCSA Exemptions, August 6, 2026",
         "sourceUrl": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/exemptions-under-drug-supply-chain-security-act"
@@ -168,15 +168,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An applicant plans to sit the Massachusetts MPJE on March 4, 2027. Which official NABP examination outline applies, rather than the one used for a November 2026 exam?",
         "choices": [
           "Only the 2017 MA Board pharmacy technician guideline",
-          "The NABP MPJE Content Outline effective for exams administered on or after March 1, 2027",
           "The old MPJE Competency Statements continue forever",
+          "The NABP MPJE Content Outline effective for exams administered on or after March 1, 2027",
           "The FDA Orange Book replaces the MPJE exam blueprint"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Technician guidelines are law study sources, not the NABP exam blueprint.",
-          "Correct. NABP schedules the new content outline beginning March 1, 2027.",
           "Previous competency statements govern exams administered before March 1, 2027.",
+          "Correct. NABP schedules the new content outline beginning March 1, 2027.",
           "The Orange Book is a drug-product resource, not an exam outline."
         ],
         "citation": "NABP — MPJE Content Outline transition effective March 1, 2027",
@@ -187,17 +187,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacy receives a no-refill Schedule VI maintenance-drug request while the prescriber is unreachable. The pharmacist cites a 30-day policy amount, but a published regulation says 14 days for an emergency continuation. Which approach avoids treating a policy as a regulatory amendment?",
         "choices": [
-          "Consult the exact conditions and both sources, use the controlling enacted rule and seek Board clarification where they conflict rather than asserting 30 days universally",
+          "Use the full 30 days even when the drug is gabapentin, excluded by the policy",
           "Treat the policy's larger number as automatic repeal of 247 CMR",
           "Dispense 90 days because the patient has chronic disease",
-          "Use the full 30 days even when the drug is gabapentin, excluded by the policy"
+          "Consult the exact conditions and both sources, use the controlling enacted rule and seek Board clarification where they conflict rather than asserting 30 days universally"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. The source conflict cannot be collapsed into a universal 30-day rule; applicability and legal hierarchy must be checked.",
+          "Gabapentin is expressly excluded from Policy 2023-04's specified pathway.",
           "A Board policy does not amend a regulation merely by using another number.",
           "Chronic need is not a blanket 90-day emergency authority.",
-          "Gabapentin is expressly excluded from Policy 2023-04's specified pathway."
+          "Correct. The source conflict cannot be collapsed into a universal 30-day rule; applicability and legal hierarchy must be checked."
         ],
         "citation": "MA Board Policy 2023-04 — Continuity of Care",
         "sourceUrl": "https://www.mass.gov/doc/2023-04-continuity-of-care-pdf/download"
@@ -205,15 +205,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA physician directly telephones an emergency Schedule II prescription, and the patient can receive no written or electronic original immediately. The practitioner has no ePrescribing exception. Which combination of deadlines must be evaluated?",
         "choices": [
-          "Only the seven-day federal follow-up matters, since Massachusetts cannot impose a shorter one",
           "Both the MA §20(c) two-day electronic follow-up and the federal §1306.11 seven-day emergency written follow-up obligations must be assessed through a legally compliant route",
+          "Only the seven-day federal follow-up matters, since Massachusetts cannot impose a shorter one",
           "Only the patient's insurance authorization period determines validity",
           "Send a pharmacist-created Schedule III refill in place of all follow-ups"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "Federal maximum timing does not eliminate a stricter compatible state follow-up.",
           "Correct. The two sources have distinct wording and obligations; the pharmacist must not assume one filing automatically cures both.",
+          "Federal maximum timing does not eliminate a stricter compatible state follow-up.",
           "Insurance timing does not set the emergency CII documentation rule.",
           "Schedule II refills and reclassification are not substitutes for prescriber follow-up."
         ],
@@ -224,15 +224,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA pharmacy fills a qualifying nonnarcotic CII prescription from a California prescriber within the five-day window after confirming authority. The team records the patient name in the pharmacy's normal dispensing log. What additional statutory out-of-state report is relevant?",
         "choices": [
           "Send an unredacted copy with the patient's home address to every local pharmacy",
-          "Keep only a 30-day inventory count; no out-of-state documentation is needed",
           "Submit the required redacted prescription copy/report to the MA department within 30 days after dispensing, excluding specified patient identifiers",
+          "Keep only a 30-day inventory count; no out-of-state documentation is needed",
           "Mail DEA Form 222 to the patient within 24 hours"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "MA §18(d) excludes patient name/address from the special submitted report.",
-          "The out-of-state route includes a separate state report.",
           "Correct. The statutory report follows within thirty days after dispensing, independent of the five-day first-fill timing.",
+          "The out-of-state route includes a separate state report.",
           "DEA 222 concerns inventory purchasing, not the dispensed patient's prescription."
         ],
         "citation": "M.G.L. c.94C §18(c)–(d¾) — Out-of-State Controlled Prescriptions",
@@ -241,17 +241,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Florida physician issues an oxycodone prescription for ordinary in-person pickup at a Massachusetts retail pharmacy four days after issuance. A trainee believes satisfying the five-day clock alone makes the narcotic order eligible. What other limitation matters?",
         "choices": [
-          "Every federal prescription is valid in every state if presented within five days",
+          "The ordinary MA in-person out-of-state narcotic Schedule II pathway also has specified neighboring-state limits; Florida does not qualify through that route merely because the issue date is recent",
           "All out-of-state narcotic CII are eligible for ordinary MA walk-in pickup without geographic restriction",
           "Oxycodone becomes nonnarcotic because the prescriber is out of state",
-          "The ordinary MA in-person out-of-state narcotic Schedule II pathway also has specified neighboring-state limits; Florida does not qualify through that route merely because the issue date is recent"
+          "Every federal prescription is valid in every state if presented within five days"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "MA §18(d½) imposes more than just a first-fill deadline.",
+          "Correct. Geography, practitioner verification and timing all need to be checked; separate conditional mail-delivery exceptions are different.",
           "An out-of-state DEA registration does not waive MA's narcotic CII geographic conditions.",
           "Oxycodone remains a narcotic CII product.",
-          "Correct. Geography, practitioner verification and timing all need to be checked; separate conditional mail-delivery exceptions are different."
+          "MA §18(d½) imposes more than just a first-fill deadline."
         ],
         "citation": "M.G.L. c.94C §18(c)–(d¾) — Out-of-State Controlled Prescriptions",
         "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18"
@@ -297,15 +297,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "The Board must approve every pharmacist regardless of actual credentials",
           "A PharmD earned in any year automatically supersedes the published regulation without further verification",
-          "The conflicting source wording calls for current Board clarification or a qualifying experience/equivalency route, not an assumption that new PharmD alone resolves every regulatory condition",
-          "Any licensed pharmacist may practice CDTM immediately without a CPA"
+          "Any licensed pharmacist may practice CDTM immediately without a CPA",
+          "The conflicting source wording calls for current Board clarification or a qualifying experience/equivalency route, not an assumption that new PharmD alone resolves every regulatory condition"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "The law includes defined qualification routes, not a blanket discretionary admission.",
           "Relying on one sentence ignores the published regulation's historical qualifier.",
-          "Correct. This is a known unresolved qualification wording discrepancy best verified with the regulator before practice.",
-          "CDTM remains a written, supervised agreement pathway."
+          "CDTM remains a written, supervised agreement pathway.",
+          "Correct. This is a known unresolved qualification wording discrepancy best verified with the regulator before practice."
         ],
         "citation": "247 CMR 16.02 pharmacist qualifications; M.G.L. c.112 §24B½",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download"
@@ -313,17 +313,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A 2026 question writer sees that a Board policy on compliance packaging includes Schedule II/III if 'not otherwise prohibited' but the enacted 247 CMR 9.08 disallows them in multi-drug single-dose packs. What is the best answer construction?",
         "choices": [
-          "Make 'all CII/III packing is allowed' the correct answer because the policy is newer",
+          "Specify the particular multi-drug single-dose package and apply the enacted prohibition; the policy's qualifying phrase does not supersede it",
           "Hide the regulation from students to avoid controversy",
           "Assume packaging changes a drug's schedule",
-          "Specify the particular multi-drug single-dose package and apply the enacted prohibition; the policy's qualifying phrase does not supersede it"
+          "Make 'all CII/III packing is allowed' the correct answer because the policy is newer"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "A newer advisory/policy does not necessarily erase a specific enacted prohibition.",
+          "Correct. The enacted regulation directly addresses the format; the policy explicitly reserves other prohibitions.",
           "Removing conflicting evidence would misteach the law.",
           "Packaging cannot reschedule a drug.",
-          "Correct. The enacted regulation directly addresses the format; the policy explicitly reserves other prohibitions."
+          "A newer advisory/policy does not necessarily erase a specific enacted prohibition."
         ],
         "citation": "247 CMR 9.08(3)(b) — Compliance Packaging",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -331,17 +331,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy corporation evaluates the August 2026 FDA DSCSA small-dispenser exemption. Individual Stores A and B each have 14 eligible full-time workers; the common company employs 28 eligible workers on the November 27, 2026 measurement date. What is the correct analysis?",
         "choices": [
-          "The company-wide total of 28 exceeds FDA's 25-or-fewer eligibility test, even though each store has only 14",
+          "The exemption automatically cancels all illegitimate-product notifications regardless of company size",
           "Both locations qualify separately because there are fewer than 25 workers at each address",
           "Only one store counts, chosen by the company",
-          "The exemption automatically cancels all illegitimate-product notifications regardless of company size"
+          "The company-wide total of 28 exceeds FDA's 25-or-fewer eligibility test, even though each store has only 14"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. FDA uses the owner-company's qualifying staff total on its specified date.",
+          "DSCSA suspect and illegitimate safeguards are not universally waived.",
           "Store-level counts do not override company-level measurement.",
           "Company cannot select a subset of employees to reclassify its size.",
-          "DSCSA suspect and illegitimate safeguards are not universally waived."
+          "Correct. FDA uses the owner-company's qualifying staff total on its specified date."
         ],
         "citation": "FDA — Small-Dispenser DSCSA Exemptions, August 6, 2026",
         "sourceUrl": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/exemptions-under-drug-supply-chain-security-act"
@@ -350,19 +350,19 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A study guide quotes a 2026 proposed change to 247 CMR 13 nuclear pharmacy requirements as enforceable today and uses it to negate a published enacted version. Which verification sequence is necessary?",
         "choices": [
           "Assume every Massachusetts draft becomes law when posted on the public website",
-          "Check the MA regulations index for enacted text and effective date; treat proposed revisions as nonbinding until adopted, then reconcile with active USP <825> and statute",
           "The date of the school's MPJE exam controls the effective date of nuclear regulations",
+          "Check the MA regulations index for enacted text and effective date; treat proposed revisions as nonbinding until adopted, then reconcile with active USP <825> and statute",
           "Use a social media summary rather than official Board and USP sources"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Draft publication alone is not enactment.",
-          "Correct. Source hierarchy requires distinguishing proposals from effective regulations and separately applicable compendial standards.",
           "Exam date does not establish regulatory enactment.",
+          "Correct. Source hierarchy requires distinguishing proposals from effective regulations and separately applicable compendial standards.",
           "Social media summaries are not controlling sources."
         ],
-        "citation": "21 CFR Part 1308 — Exact Drug Product Classification",
-        "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308"
+        "citation": "MA Board of Registration in Pharmacy — Draft Regulations vs. Enacted Text",
+        "sourceUrl": "https://www.mass.gov/lists/draft-regulations-for-the-board-of-registration-in-pharmacy"
       }
     ]
   }
