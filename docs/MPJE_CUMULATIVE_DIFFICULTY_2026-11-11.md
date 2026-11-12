@@ -1,11 +1,11 @@
 # Massachusetts MPJE — Chapter 28 Difficulty Expansion
 
-**Status date:** 2026-11-11 (America/New_York)
+**Status date:** 2026-11-12 (America/New_York)
 **Scope:** Preserve the 540 original + supplemental questions. Add 10 Moderate and 10 Hard independently written application questions to each of 27 chapters (540 new items; goal 1,080).
 
 **Published main-branch baseline:** 540 questions (270 original + 270 supplemental).
-**Branch count after the changes in this PR:** 720 (baseline 540 plus 180 draft source-reviewed difficulty items).
-**Remaining:** 360 new items, across 18 chapters.
+**Branch count after the changes in this PR:** 780 (baseline 540 plus 240 draft source-reviewed difficulty items).
+**Remaining:** 300 new items, across 15 chapters.
 **Legal review status:** Each newly authored question includes a citation to a primary federal or Massachusetts source and has been checked for one intended answer and four individual rationales. This is a preliminary source-based author review, **not** a completed independent auditor's approval. Source pages and law can change; verify their effective dates before release. Main question-bank canonical audit gates are not bypassed or represented as complete.
 
 | Chapter | Topic | Moderate | Hard | Authored date | Independent legal audit |
@@ -23,9 +23,9 @@
 | 11 | [Counseling & DUR](../site/mpje-side-notes/counseling-dur/index.html) | 10/10 | 10/10 | 2026-11-11 | Pending |
 | 12 | [REMS](../site/mpje-side-notes/rems/index.html) | 10/10 | 10/10 | 2026-11-11 | Pending |
 | 13 | [Privacy](../site/mpje-side-notes/privacy/index.html) | 10/10 | 10/10 | 2026-11-11 | Pending |
-| 14 | [Vaccination & Administration](../site/mpje-side-notes/vaccination-administration/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 15 | [CDTM](../site/mpje-side-notes/cdtm/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 16 | [Pharmacist Prescribing & Public Health](../site/mpje-side-notes/prescribing-public-health/index.html) | 0/10 | 0/10 | Pending | Pending |
+| 14 | [Vaccination & Administration](../site/mpje-side-notes/vaccination-administration/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 15 | [CDTM](../site/mpje-side-notes/cdtm/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 16 | [Pharmacist Prescribing & Public Health](../site/mpje-side-notes/prescribing-public-health/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 17 | [DEA Ordering & Inventory](../site/mpje-side-notes/ordering-inventory/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 18 | [Security, Loss, Disposal](../site/mpje-side-notes/security-loss-disposal/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 19 | [Storage & Shipping](../site/mpje-side-notes/storage-shipping/index.html) | 0/10 | 0/10 | Pending | Pending |
@@ -44,7 +44,7 @@
 - All new items require four distinct options, a single best answer, four option-specific explanations, and a specific official source URL; cite controlling section.
 - Moderate: preferably two legal determinations or an exception. Hard: interacting federal and Massachusetts requirements, multiple clocks, competing responsibilities, or nuanced exceptions.
 - Before a release claim: verify question and answer against controlling law, any active Board policy, effective dates; check A–D distribution, duplication, difficulty, and usability. Original guide content and canonical question bank remain untouched.
-- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 360 remaining items are unfinished.
+- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 300 remaining items are unfinished.
 
 ## This branch's new question assets
 
@@ -57,6 +57,9 @@
 - `site/mpje-side-notes/difficulty-reviewed-11.js`: Counseling / Prospective DUR (20).
 - `site/mpje-side-notes/difficulty-reviewed-12.js`: REMS / iPLEDGE / FDA effective dates (20).
 - `site/mpje-side-notes/difficulty-reviewed-13.js`: HIPAA / 42 CFR Part 2 / MA privacy (20).
+- `site/mpje-side-notes/difficulty-reviewed-14.js`: Vaccine / MIIS / nonvaccine medication administration (20).
+- `site/mpje-side-notes/difficulty-reviewed-15.js`: CDTM qualifications / referrals / scope and deadlines (20).
+- `site/mpje-side-notes/difficulty-reviewed-16.js`: Pharmacist prescribing / public health (20).
 - `site/mpje-side-notes/practice-review.js`: Difficulty-tier loading and score sections.
 - `site/mpje-side-notes/cumulative-practice/index.html`: UI for separate tiers and accurate count.
 - `site/mpje-side-notes/quiz.js`: Chapter labels and 27-chapter selector fix.
@@ -77,3 +80,10 @@
 - Authored 60 more original scenario questions (10 Moderate + 10 Hard per chapter) from current official primary materials, including 247 CMR 9.17–9.18 and c.94C §21A for patient counseling and DUR; FDA product-specific REMS sources and the planned iPLEDGE November 15, 2026 change; HIPAA, 42 CFR Part 2 (February 2026 compliance), Massachusetts 201 CMR 17 and c.93H breach notices.
 - High-yield boundaries: counseling refusal does not waive prospective DUR; clozapine REMS ended June 13, 2025 but clinical monitoring remains; mifepristone, SPRAVATO and BRIXADI use distinct dispensing pathways; 2024 HIPAA reproductive privacy amendment was mostly vacated in June 2025 without repealing the general HIPAA rule.
 - Authored count: 720 total / 180 new; 360 new difficulty-tier questions remain. Independent legal audit, complete UI browser testing and live publication must be verified separately.
+
+## Chapter 14–16 continuation (2026-11-12)
+
+- Authored 60 original new questions: Chapter 14 Vaccination / Nonvaccine Administration; Chapter 15 CDTM; Chapter 16 Pharmacist Prescribing / Public Health. Each has 10 Moderate and 10 Hard questions with A–D rationales and a primary-source citation.
+- Authorities: revised Board Vaccine Policy 2023-02 (2025), 105 CMR 222 (MIIS), DCP Circular 26-03-124 (2026), 247 CMR 16 and 243 CMR 2.12, DCP Circular 26-08-125 (Aug 2026), M.G.L. c.94C §19F (amended 2025), Board naloxone Policy 2024-01, EC §19A, ACCESS coverage and chlamydia EPT Policy 2020-08.
+- Key distinctions: state vaccine age 5 vs conditional PREP Act age 3; technician vaccine scope vs pharmacist/intern nonvaccine administration age 18 and IM/SC; MIIS mandatory 72-hour report vs sharing objection; retail CDTM age 18, Schedule II–V excluded, referral and two separate 24-hour clocks; disputed new PharmD eligibility under 247 CMR 16.02 vs M.G.L. c.112 §24B½; §19F oral/patch prescribing independent of CDTM and distinct from ACCESS coverage.
+- Total written: **780** (540 existing + 240 difficulty-tier). **300** difficulty-tier cases remain in 15 chapters. Source-based authorship/structural testing is not a substitute for independent legal review. GitHub PR remains a Draft until release criteria and public deployment are verified.
