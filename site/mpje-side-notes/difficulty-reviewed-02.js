@@ -5,17 +5,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A 17-year-old high-school student seeks a Massachusetts pharmacy support license. The owner plans to apply directly for the full pharmacy technician registration rather than trainee status. What age distinction matters?",
         "choices": [
-          "A pharmacy technician trainee may qualify at age 16; full pharmacy technician registration normally requires age 18",
+          "All full technician licenses require a PharmD degree",
           "Both trainee and full technician licenses have a minimum age of 21",
           "A 17-year-old may independently counsel patients without registration",
-          "All full technician licenses require a PharmD degree"
+          "A pharmacy technician trainee may qualify at age 16; full pharmacy technician registration normally requires age 18"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. Massachusetts distinguishes the age-16 PTT pathway from the age-18 technician license.",
+          "PharmD is a pharmacist degree, not a technician licensing prerequisite.",
           "The state does not impose a universal age-21 threshold for these roles.",
           "A teenager's age does not grant pharmacy counseling authority.",
-          "PharmD is a pharmacist degree, not a technician licensing prerequisite."
+          "Correct. Massachusetts distinguishes the age-16 PTT pathway from the age-18 technician license."
         ],
         "citation": "247 CMR 8.01–8.05 — Interns, Technicians, Trainees and Scope",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
@@ -23,15 +23,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy technician trainee has remained on an MA trainee registration for more than one year, despite completing 1,500 hours of relevant work. Management wants to continue scheduling the worker indefinitely as a PTT. What is the problem?",
         "choices": [
-          "PTT registration has no time or experience limit",
           "The trainee classification is limited by the one-year/1,500-hour transition framework and is not an indefinite substitute for full technician licensure",
+          "PTT registration has no time or experience limit",
           "Completion of 1,500 hours automatically makes the worker a pharmacist",
           "Anyone who performs cashier duties becomes a licensed certified technician"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "MA explicitly imposes limits on the trainee period.",
           "Correct. A PTT must progress under the 247 CMR 8 licensing framework rather than remain indefinitely.",
+          "MA explicitly imposes limits on the trainee period.",
           "Trainee hours do not independently grant pharmacist licensure.",
           "Cashier duties do not create pharmacy technician certification."
         ],
@@ -42,15 +42,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An applicant has current national pharmacy technician certification but no Massachusetts pharmacy technician license. A pharmacy wants the applicant to start prescription preparation as a certified technician. What is required?",
         "choices": [
           "National certification replaces all state licensure in Massachusetts",
-          "The employee may prepare Schedule II drugs while the application is pending",
           "Obtain the appropriate Massachusetts technician license before performing work reserved to licensed technicians; national certification alone is not a state registration",
+          "The employee may prepare Schedule II drugs while the application is pending",
           "Obtain an individual DEA pharmacist registration instead"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "MA requires state licensing in addition to relevant certifications.",
-          "Unlicensed candidates cannot assume reserved technical roles.",
           "Correct. State registration and national certification answer different qualification questions.",
+          "Unlicensed candidates cannot assume reserved technical roles.",
           "DEA pharmacist registration is not a technician licensing process."
         ],
         "citation": "247 CMR 8.01–8.05 — Interns, Technicians, Trainees and Scope",
@@ -61,15 +61,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Continue counting as a certified technician forever based on prior certification",
           "Treat the person as a licensed pharmacy intern",
-          "Count as two ordinary technicians because the employee formerly had certification",
-          "Do not count the person as a currently licensed certified technician while certification is lapsed; reassess scope and ratios"
+          "Do not count the person as a currently licensed certified technician while certification is lapsed; reassess scope and ratios",
+          "Count as two ordinary technicians because the employee formerly had certification"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Current national certification is part of certified status.",
           "Technician and intern are different licensed tiers.",
-          "Staff ratios do not double count one worker.",
-          "Correct. Lapsed certification affects the enhanced ratio category and work permissions."
+          "Correct. Lapsed certification affects the enhanced ratio category and work permissions.",
+          "Staff ratios do not double count one worker."
         ],
         "citation": "Board Policy 2026-02 — Ratios, Supervision and Dedicated Training Personnel",
         "sourceUrl": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download"
@@ -77,15 +77,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A retail pharmacist supervises three support staff preparing prescriptions: one licensed intern and two licensed ordinary technicians. There are no certified technicians. Does the 2026 MA general ratio permit this?",
         "choices": [
-          "Yes, the ordinary 1:3 option is allowed with at least one licensed intern or licensed certified technician among three staff",
           "No, every three-person team requires two certified technicians",
+          "Yes, the ordinary 1:3 option is allowed with at least one licensed intern or licensed certified technician among three staff",
           "No, the pharmacist may supervise only one technician in total",
           "Yes, but the intern may perform final pharmacist verification without supervision"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. Policy 2026-02 allows 1:3 with at least one intern or certified technician.",
           "The two-certified condition is one path for 1:4, not 1:3.",
+          "Correct. Policy 2026-02 allows 1:3 with at least one intern or certified technician.",
           "MA permits larger qualified staffing ratios.",
           "Intern scope remains supervised; permitted staffing is not independent pharmacist authority."
         ],
@@ -96,15 +96,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacist supervises four support workers actively filling prescriptions: two licensed certified technicians and two licensed ordinary technicians. Which general staffing rule applies?",
         "choices": [
           "Four workers always violate Massachusetts ratios",
-          "One pharmacist to four support workers may be permissible because two are licensed certified technicians",
           "Four workers are permitted only when all are pharmacy interns",
+          "One pharmacist to four support workers may be permissible because two are licensed certified technicians",
           "The technicians may independently counsel patients because of the ratio"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Policy 2026-02 provides a conditional 1:4 option.",
-          "Correct. At least two certified technicians meet one specified 1:4 combination.",
           "Two interns are an alternative qualifying mix, not the sole route.",
+          "Correct. At least two certified technicians meet one specified 1:4 combination.",
           "Staff ratio does not confer patient counseling authority."
         ],
         "citation": "Board Policy 2026-02 — Ratios, Supervision and Dedicated Training Personnel",
@@ -115,15 +115,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Yes, only if the pharmacist does not perform any vaccine service",
           "No, because the six-person ratio is never authorized in MA",
-          "Yes, the vaccination-specific policy can permit 1:6 when its conditions and qualifying trained personnel mix are met",
-          "No, because every one of six employees must be a licensed pharmacist"
+          "No, because every one of six employees must be a licensed pharmacist",
+          "Yes, the vaccination-specific policy can permit 1:6 when its conditions and qualifying trained personnel mix are met"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Vaccine operations do not eliminate pharmacist responsibility.",
           "The Board includes a specific qualified vaccination 1:6 pathway.",
-          "Correct. A 1:6 team including at least three licensed certified technicians can satisfy the mix condition in a qualifying vaccine setting.",
-          "Support personnel are permitted subject to defined ratios."
+          "Support personnel are permitted subject to defined ratios.",
+          "Correct. A 1:6 team including at least three licensed certified technicians can satisfy the mix condition in a qualifying vaccine setting."
         ],
         "citation": "Board Policy 2026-02 — Ratios, Supervision and Dedicated Training Personnel",
         "sourceUrl": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download"
@@ -132,16 +132,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A trained technician offers an MA patient an opportunity to ask questions about a new medicine. The patient asks for advice about a possible drug interaction. What should happen?",
         "choices": [
           "The technician must provide the full drug interaction analysis independently",
-          "A trained cashier can replace every pharmacist interaction once the offer is made",
+          "A pharmacist or pharmacy intern should provide the actual patient counseling and clinical assessment; a trained technician may make the offer",
           "The patient must instead contact the manufacturer for all questions",
-          "A pharmacist or pharmacy intern should provide the actual patient counseling and clinical assessment; a trained technician may make the offer"
+          "A trained cashier can replace every pharmacist interaction once the offer is made"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "Offering consultation differs from performing professional clinical counseling.",
-          "Cashier training does not grant pharmacist-level scope.",
+          "Correct. 247 CMR 9.18 distinguishes a trained designee's offer from pharmacist/intern counseling.",
           "The manufacturer is not the substitute for required pharmacy counseling.",
-          "Correct. 247 CMR 9.18 distinguishes a trained designee's offer from pharmacist/intern counseling."
+          "Cashier training does not grant pharmacist-level scope."
         ],
         "citation": "247 CMR 9.18 — Patient Counseling by Pharmacists and Pharmacy Interns",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -168,16 +168,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacy technician trainee takes a phone call from a prescriber wishing to issue a new Schedule VI prescription orally and offers to record the order without pharmacist involvement. Which role limitation applies?",
         "choices": [
           "All telephone prescriptions may be received by a trainee if the drug is Schedule VI",
-          "Pharmacy technician trainees are not authorized to receive new oral prescriptions; route the call to the pharmacist or another legally authorized recipient",
+          "The trainee may reclassify the medication as nonprescription",
           "A PTT may independently sign the doctor's prescription",
-          "The trainee may reclassify the medication as nonprescription"
+          "Pharmacy technician trainees are not authorized to receive new oral prescriptions; route the call to the pharmacist or another legally authorized recipient"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "Schedule VI classification does not automatically authorize trainee telephone orders.",
-          "Correct. The trainee scope does not include receiving new oral prescriptions.",
+          "A pharmacy employee cannot reschedule the medication.",
           "Prescribing authority cannot be assumed by a technician trainee.",
-          "A pharmacy employee cannot reschedule the medication."
+          "Correct. The trainee scope does not include receiving new oral prescriptions."
         ],
         "citation": "247 CMR 8.01–8.05 — Interns, Technicians, Trainees and Scope",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
@@ -206,15 +206,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A dedicated technician trainer is expressly excluded from the pharmacist's prescription-filling staff count because the trainer only teaches a trainee. The manager then reassigns the trainer to unrelated active prescription entry for most of the shift. Which analysis is correct?",
         "choices": [
           "The trainer remains excluded from the ratio regardless of actual tasks",
-          "The trainer's new active prescription-filling duties require inclusion in the applicable supervisory ratio and rechecking staff mix",
           "Any person with the word trainer in the job title replaces an on-duty pharmacist",
+          "The trainer's new active prescription-filling duties require inclusion in the applicable supervisory ratio and rechecking staff mix",
           "Trainer status permits dispensing without verification"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "The exemption follows genuinely dedicated training duties, not a job title alone.",
-          "Correct. Policy 2026-02 conditions trainer exclusion on work assigned for training rather than unrelated prescription preparation.",
           "Trainer status is not independent pharmacy practice authority.",
+          "Correct. Policy 2026-02 conditions trainer exclusion on work assigned for training rather than unrelated prescription preparation.",
           "Final verification remains a pharmacist responsibility."
         ],
         "citation": "Board Policy 2026-02 — Ratios, Supervision and Dedicated Training Personnel",
@@ -241,17 +241,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist physically leaves an MA retail pharmacy for an offsite appointment while a pharmacy intern and technician continue preparing and releasing prescription medication. The pharmacist plans to review later by video. Which limitation applies?",
         "choices": [
-          "The intern automatically becomes an unrestricted pharmacist when alone",
+          "Directly supervised intern activity and final dispensing require the applicable on-premises pharmacist presence; a remote connection is not a blanket exception",
           "Remote video automatically satisfies every form of direct pharmacist supervision",
           "Once a pharmacist returns the prior independent dispensings become lawful",
-          "Directly supervised intern activity and final dispensing require the applicable on-premises pharmacist presence; a remote connection is not a blanket exception"
+          "The intern automatically becomes an unrestricted pharmacist when alone"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "Intern registration is not full independent pharmacist licensure.",
+          "Correct. 247 CMR 8 and pharmacy practice policy separate allowed supervised tasks from unstaffed dispensing.",
           "The normal on-premises/direct supervision requirements do not vanish because video is available.",
           "Later review does not retroactively create required supervision.",
-          "Correct. 247 CMR 8 and pharmacy practice policy separate allowed supervised tasks from unstaffed dispensing."
+          "Intern registration is not full independent pharmacist licensure."
         ],
         "citation": "247 CMR 8.01–8.05 — Interns, Technicians, Trainees and Scope",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
@@ -296,15 +296,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A licensed certified technician in a qualified hospital with an on-site pharmacy offers to stock an ADD with unverified, non-patient-specific gabapentin and ordinary Schedule VI items, using barcode validation. Which distinction controls?",
         "choices": [
           "All Schedule VI medicines qualify for unverified loading because no DEA schedule applies",
-          "Any automated dispensing device allows technicians to stock Schedule II without verification",
           "The narrow certified-technician unverified stocking allowance excludes PMP-reportable Schedule VI medications such as gabapentin; other qualifying stock may be allowed under the policy",
+          "Any automated dispensing device allows technicians to stock Schedule II without verification",
           "A bar code always eliminates any pharmacist-supervision responsibility"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "Additional Drug PMP designation can affect the specialized stocking exception.",
-          "Schedule II stock has different restrictions.",
           "Correct. Policy 2023-08 carves out reportable Schedule VI substances from the specified limited exception.",
+          "Schedule II stock has different restrictions.",
           "Automated checks do not waive the procedure's other controls."
         ],
         "citation": "Board Policy 2023-08 — Pharmacy Technician Stocking of Automated Dispensing Devices",
@@ -331,16 +331,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist intends to provide clinical counseling for a new vaccine administered by a licensed technician. The technician has completed the vaccination training but no pharmacist has reviewed the patient's indicated vaccine or contraindications. What must be done?",
         "choices": [
-          "Have the pharmacist perform appropriate vaccine clinical assessment and selection, while the qualified technician may administer under the policy's supervision conditions",
-          "Let the technician independently decide clinical contraindications as long as the pharmacist initials the receipt later",
           "Treat vaccination administration training as full prescriptive authority",
+          "Let the technician independently decide clinical contraindications as long as the pharmacist initials the receipt later",
+          "Have the pharmacist perform appropriate vaccine clinical assessment and selection, while the qualified technician may administer under the policy's supervision conditions",
           "Vaccines are exempt from patient counseling and clinical screening"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. MA Policy 2023-02 divides clinical selection/screening from appropriately qualified personnel administering a vaccine.",
-          "Retrospective initials do not replace clinical evaluation before administration.",
           "Training in injection does not create independent prescribing scope.",
+          "Retrospective initials do not replace clinical evaluation before administration.",
+          "Correct. MA Policy 2023-02 divides clinical selection/screening from appropriately qualified personnel administering a vaccine.",
           "Vaccines require appropriate screening and information."
         ],
         "citation": "Board Policy 2023-02 (revised 2025) — Vaccine Administration",
@@ -350,16 +350,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacy technician trainee accepts a new controlled Schedule IV telephone prescription while the pharmacist is busy, and a licensed technician later enters it. The pharmacy says the later data entry cures who received the order. What is the legal defect?",
         "choices": [
           "A later computer entry always validates an improperly received oral prescription",
-          "The initial oral prescription communication must be received by an authorized person; the PTT's unauthorized receipt is not cured by subsequent data entry, and the pharmacist should obtain a lawful order",
+          "Schedule IV medicines are exempt from Massachusetts personnel rules",
           "A PTT is permitted to sign Schedule IV prescriptions if a technician is present",
-          "Schedule IV medicines are exempt from Massachusetts personnel rules"
+          "The initial oral prescription communication must be received by an authorized person; the PTT's unauthorized receipt is not cured by subsequent data entry, and the pharmacist should obtain a lawful order"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "Data entry is not a substitute for authorized acceptance of a new oral order.",
-          "Correct. Technician trainee scope prohibits accepting telephone orders; a pharmacist should obtain compliant authorization.",
+          "Schedule IV prescription processing remains regulated.",
           "Trainees cannot act as prescribers.",
-          "Schedule IV prescription processing remains regulated."
+          "Correct. Technician trainee scope prohibits accepting telephone orders; a pharmacist should obtain compliant authorization."
         ],
         "citation": "247 CMR 8.01–8.05 — Interns, Technicians, Trainees and Scope",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download"
