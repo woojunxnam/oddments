@@ -5,16 +5,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "At 10:00 a.m. Monday, an MA pharmacist is told that a wrong-drug prescription reached the patient, who has not reported injury. The store intends to finish a root-cause review next month. What is the first CQI timeline?",
         "choices": [
-          "Wait until the monthly CQI meeting before contacting the patient",
-          "File a serious-injury Board report automatically even with no evidence of injury",
           "Provide immediate appropriate notification and mitigation, and document the QRE initially within 24 hours after the pharmacist learned of it",
+          "File a serious-injury Board report automatically even with no evidence of injury",
+          "Wait until the monthly CQI meeting before contacting the patient",
           "Keep the matter undocumented unless a prescriber files a complaint"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "247 CMR 15.03 calls for prompt patient safety action.",
-          "Serious injury/death has a separate Board reporting trigger; not every QRE is that category.",
           "Correct. MA requires immediate patient-related steps and initial QRE documentation within 24 hours.",
+          "Serious injury/death has a separate Board reporting trigger; not every QRE is that category.",
+          "247 CMR 15.03 calls for prompt patient safety action.",
           "QRE documentation is not conditional on a complaint."
         ],
         "citation": "247 CMR 15.03(1)–(3) — Quality-Related Event Notification and Documentation",
@@ -23,16 +23,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy analyzes an ordinary Quality-Related Event under its CQI program and intends to delete the file 13 months after the QRE report. What is the minimum Massachusetts record period?",
         "choices": [
-          "At least two years from the date of the QRE report, with records in an orderly and retrievable form",
-          "One year from the patient complaint",
           "At least 30 days after the next refill",
+          "One year from the patient complaint",
+          "At least two years from the date of the QRE report, with records in an orderly and retrievable form",
           "Exactly six months because CQI is internal"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. 247 CMR 15.04(2) requires records of QREs for at least two years from the report date.",
-          "A one-year period is too short.",
           "Prescription refill timing is unrelated to CQI retention.",
+          "A one-year period is too short.",
+          "Correct. 247 CMR 15.04(2) requires records of QREs for at least two years from the report date.",
           "Internal quality status does not remove the state retention duty."
         ],
         "citation": "247 CMR 15.04 — CQI Records Retained at Least Two Years",
@@ -42,16 +42,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A Massachusetts pharmacy manager discovers on Tuesday that a previous dispensing error caused a patient's serious injury. What Board reporting clock applies to that discovery, independent of ordinary CQI records?",
         "choices": [
           "Only the federal DEA one-business-day theft deadline",
-          "Within seven business days after discovery of serious injury or death related to improper dispensing",
+          "Within 60 days after the patient signs a liability release",
           "The first business day after the pharmacy's next annual inspection",
-          "Within 60 days after the patient signs a liability release"
+          "Within seven business days after discovery of serious injury or death related to improper dispensing"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "DEA theft reporting is a different type of event.",
-          "Correct. 247 CMR 20.02(1) uses seven business days after discovering serious injury/death caused by improper dispensing.",
+          "Patient settlement paperwork does not replace Board notification.",
           "Annual inspections do not start the serious-injury report clock.",
-          "Patient settlement paperwork does not replace Board notification."
+          "Correct. 247 CMR 20.02(1) uses seven business days after discovering serious injury/death caused by improper dispensing."
         ],
         "citation": "247 CMR 20.02(1)–(5) — Serious Improper Dispensing and Adverse Drug Events",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-20-reporting/download"
@@ -60,16 +60,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacy reports to the Massachusetts Board a serious adverse drug event related to a drug compounded at that pharmacy. The report is filed November 12. Which record-retention rule applies?",
         "choices": [
           "Discard the incident file after two years because it is a QRE",
-          "Keep it only until the adverse event resolves",
+          "Retain the serious event records for at least five years from the date the report was filed with the Board",
           "Keep every medical record for exactly 15 years under HIPAA",
-          "Retain the serious event records for at least five years from the date the report was filed with the Board"
+          "Keep it only until the adverse event resolves"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "The event has a distinct §20.02 retention requirement in addition to CQI.",
-          "Event resolution does not stop the retention rule.",
+          "Correct. 247 CMR 20.02(4) measures five years from Board report filing.",
           "HIPAA does not set a universal 15-year medical-record rule.",
-          "Correct. 247 CMR 20.02(4) measures five years from Board report filing."
+          "Event resolution does not stop the retention rule."
         ],
         "citation": "247 CMR 20.02(1)–(5) — Serious Improper Dispensing and Adverse Drug Events",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-20-reporting/download"
@@ -77,17 +77,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A licensed MA pharmacy learns that a compounded sterile product it previously dispensed may contain a defective ingredient. It has unopened units in stock and affected units at several hospitals. What should happen immediately?",
         "choices": [
-          "Initiate the required recall, segregate remaining stock and start appropriate tracing and notification, without postponing action until every test result is definitive",
+          "Sell the remainder at a discount if the hospital agrees",
           "Keep dispensing until the Board assigns a recall class",
           "Wait seven days before taking inventory action",
-          "Sell the remainder at a discount if the hospital agrees"
+          "Initiate the required recall, segregate remaining stock and start appropriate tracing and notification, without postponing action until every test result is definitive"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. c.112 §39D(e) mandates immediate recall when a compounded preparation is or may be defective.",
+          "Discounting a potentially defective preparation is not a lawful risk control.",
           "An FDA classification is not a prerequisite for immediate protective action.",
           "The seven-day log obligation does not postpone recall.",
-          "Discounting a potentially defective preparation is not a lawful risk control."
+          "Correct. c.112 §39D(e) mandates immediate recall when a compounded preparation is or may be defective."
         ],
         "citation": "M.G.L. c.112 §39D(e) — Recall and Defective Drug Preparation Log",
         "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D"
@@ -113,16 +113,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A federally registered pharmacy discovers a confirmed theft of oxycodone and sends its DEA Form 106 after 20 days, but made no other DEA report. Which independent federal step was missed?",
         "choices": [
-          "DEA requires only a six-month stock summary after theft",
-          "The pharmacy must send its 503B product list in June",
           "DEA must receive the initial written notice within one business day of discovery, separate from the later Form 106 deadline",
+          "The pharmacy must send its 503B product list in June",
+          "DEA requires only a six-month stock summary after theft",
           "No federal report is due unless the thief is identified"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "The initial DEA theft/significant-loss notice has a short deadline.",
-          "503B product reporting concerns outsourcing facilities, not theft reporting.",
           "Correct. 21 CFR 1301.76(b) requires initial written notification within one business day; Form 106 follows within 45 days.",
+          "503B product reporting concerns outsourcing facilities, not theft reporting.",
+          "The initial DEA theft/significant-loss notice has a short deadline.",
           "Identifying the suspect is not a prerequisite for federal reporting."
         ],
         "citation": "21 CFR §1301.76(b) — Theft and Significant Loss Notice / Form 106",
@@ -133,15 +133,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Every initial suspicion must always be reported as a confirmed illegitimate product within one minute",
           "The product becomes eligible for sale again automatically after 24 hours",
-          "Only a federal theft report is relevant to drug authenticity",
-          "The DSCSA notification clock starts when the trading partner determines the product is illegitimate; suspect-product quarantine and investigation occur earlier"
+          "The DSCSA notification clock starts when the trading partner determines the product is illegitimate; suspect-product quarantine and investigation occur earlier",
+          "Only a federal theft report is relevant to drug authenticity"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Suspect and illegitimate are distinct defined DSCSA stages.",
           "Elapsed time alone does not authenticate a package.",
-          "DEA loss rules are different from FDA counterfeit-product reporting.",
-          "Correct. FDA requires notification within 24 hours after an illegitimate-product determination."
+          "Correct. FDA requires notification within 24 hours after an illegitimate-product determination.",
+          "DEA loss rules are different from FDA counterfeit-product reporting."
         ],
         "citation": "FDA — Notify FDA of Illegitimate Products Within 24 Hours",
         "sourceUrl": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/notify-fda-illegitimate-products"
@@ -149,16 +149,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Massachusetts nuclear pharmacy keeps ordinary acquisition and disposition records for only 24 months, reasoning that federal DEA stock records are often two years. Which nuclear-specific minimum matters?",
         "choices": [
-          "Retain the relevant radiopharmaceutical acquisition and disposition records for at least three years under 247 CMR 13.05",
-          "Keep all nuclear records only until radioactive decay is complete",
           "Retain the records for only 30 days unless a patient requests access",
+          "Keep all nuclear records only until radioactive decay is complete",
+          "Retain the relevant radiopharmaceutical acquisition and disposition records for at least three years under 247 CMR 13.05",
           "A nuclear pharmacy is exempt from any state acquisition records"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. Massachusetts's enacted nuclear pharmacy rule sets a distinct three-year minimum.",
-          "Physical radioactive decay does not eliminate transaction documentation.",
           "Thirty days is not the specific nuclear retention requirement.",
+          "Physical radioactive decay does not eliminate transaction documentation.",
+          "Correct. Massachusetts's enacted nuclear pharmacy rule sets a distinct three-year minimum.",
           "Nuclear dispensing remains subject to acquisition and disposition accountability."
         ],
         "citation": "247 CMR 13.05(5) — Nuclear Pharmacy Acquisition/Disposition Records",
@@ -167,15 +167,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Massachusetts drug store maintains a camera recording of ordinary pharmacy activity for ten days and deletes it automatically. No theft or diversion is known or suspected. What is the state minimum for routine security video?",
         "choices": [
-          "Ten days is the universal required minimum",
           "At least fourteen days for ordinary video, with a longer two-year rule for known or suspected theft/diversion footage",
+          "Ten days is the universal required minimum",
           "Every video must be preserved for exactly six years regardless of content",
           "The rule applies only to Schedule VI products"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "Ten days is below the ordinary 14-day requirement.",
           "Correct. 247 CMR 9.21(4) differentiates 14-day routine retention from the two-year theft/diversion period.",
+          "Ten days is below the ordinary 14-day requirement.",
           "Six years is associated with different federal records, not all pharmacy footage.",
           "Pharmacy controlled-stock security video is not Schedule VI-only."
         ],
@@ -189,15 +189,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Both events trigger only the 15-calendar-day federal 503B report",
           "The seven-business-day serious-injury Board clock starts on Monday even though the injury was not then known",
-          "QRE initial documentation was due within 24 hours of pharmacist discovery Monday; the separate seven-business-day Board clock follows discovery of the related serious injury Thursday",
-          "All documentation may wait until a single annual CQI report"
+          "All documentation may wait until a single annual CQI report",
+          "QRE initial documentation was due within 24 hours of pharmacist discovery Monday; the separate seven-business-day Board clock follows discovery of the related serious injury Thursday"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "503B outsourcing adverse-event reporting is a different rule.",
           "The §20.02 clock is tied to discovery of serious injury/death related to improper dispensing.",
-          "Correct. QRE discovery and subsequent injury discovery can create different event-triggered clocks.",
-          "Annual review does not suspend either prompt duty."
+          "Annual review does not suspend either prompt duty.",
+          "Correct. QRE discovery and subsequent injury discovery can create different event-triggered clocks."
         ],
         "citation": "247 CMR 20.02(1)–(5) — Serious Improper Dispensing and Adverse Drug Events",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-20-reporting/download"
@@ -205,15 +205,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacy knows its compounded sterile drug may be defective and recalls it Monday. Its MOR plans to submit the defective-drug log at the end of the month and discard the log after three years. What should change?",
         "choices": [
-          "Immediate recall is correct, but the log must be made available to the Board within seven days of recall and retained for at least ten years",
           "No Board log is needed if affected products were compounded for a hospital",
+          "Immediate recall is correct, but the log must be made available to the Board within seven days of recall and retained for at least ten years",
           "Only a two-year QRE record is required after recall",
           "The pharmacy must wait for a confirmed serious injury before recording a recall"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. c.112 §39D(e) imposes immediate recall, seven-day log availability and ten-year defective preparation log retention.",
           "Compounded products distributed to hospitals are within the defined recall reach.",
+          "Correct. c.112 §39D(e) imposes immediate recall, seven-day log availability and ten-year defective preparation log retention.",
           "The specific defective-preparation rule is longer than ordinary QRE retention.",
           "Potential defect triggers recall without awaiting patient harm."
         ],
@@ -241,17 +241,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy receives serious unexpected adverse-event information on April 3 regarding an earlier drug it compounded as a registered 503B outsourcing facility. It has not compounded anything this year and wants to wait for its June zero-product report. What is wrong?",
         "choices": [
-          "No federal event report can be required when recent 503B production is zero",
+          "The serious/unexpected adverse-event Alert report is separately due as soon as possible and within 15 calendar days from initial information receipt",
           "The required reporting period is six years because that is the tracing-record clock",
           "The next June product report is the only federal report for a 503B firm",
-          "The serious/unexpected adverse-event Alert report is separately due as soon as possible and within 15 calendar days from initial information receipt"
+          "No federal event report can be required when recent 503B production is zero"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "Current production volume does not erase reports involving an earlier 503B product.",
+          "Correct. FDA 503B guidance applies the 21 CFR 310.305 15-day Alert reporting requirement.",
           "Record-retention and adverse-event submission clocks are different.",
           "Periodic compounded-product reporting is distinct from safety event reporting.",
-          "Correct. FDA 503B guidance applies the 21 CFR 310.305 15-day Alert reporting requirement."
+          "Current production volume does not erase reports involving an earlier 503B product."
         ],
         "citation": "FDA — Adverse Event Reports for 503B Outsourcing Facilities",
         "sourceUrl": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adverse-event-reporting-outsourcing-facilities-under-section-503b-federal-food-drug-and-cosmetic-act"
@@ -259,17 +259,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A covered pharmacy maintains HIPAA privacy policies and training documents for six years, but the owner believes this proves that every medical record can be destroyed after the same six years. What is the legally correct distinction?",
         "choices": [
-          "HIPAA's six-year documentation retention is not a universal patient medical-record destruction deadline; other state and federal pharmacy record requirements may be longer or shorter",
+          "Six years is the minimum for every nuclear pharmacy record regardless of its own regulation",
           "All patient prescriptions must be destroyed exactly six years after dispensing",
           "Only DSCSA records can ever be retained for longer than six years",
-          "Six years is the minimum for every nuclear pharmacy record regardless of its own regulation"
+          "HIPAA's six-year documentation retention is not a universal patient medical-record destruction deadline; other state and federal pharmacy record requirements may be longer or shorter"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. 45 CFR 164.530(j) addresses specified privacy-rule documentation and does not create a uniform medical-record retention schedule.",
+          "Nuclear pharmacy has a separate three-year minimum for certain records.",
           "Other laws set prescription, controlled and clinical record retention periods.",
           "Several different federal/state laws can impose longer retention for specific matters.",
-          "Nuclear pharmacy has a separate three-year minimum for certain records."
+          "Correct. 45 CFR 164.530(j) addresses specified privacy-rule documentation and does not create a uniform medical-record retention schedule."
         ],
         "citation": "45 CFR 164.530(j) — HIPAA Documentation Retention",
         "sourceUrl": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.530"
@@ -278,15 +278,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacy learns of a suspected theft of controlled stock and identifies a security-camera recording relevant to the event. The usual fourteen-day overwriting schedule would erase it tomorrow. Which rule changes the retention period?",
         "choices": [
           "The ordinary fourteen-day storage limit always takes precedence",
-          "Any suspected diversion requires keeping the relevant recording for at least two years under 247 CMR 9.21 rather than letting the routine retention overwrite it",
           "Only a manufacturer can preserve camera footage",
+          "Any suspected diversion requires keeping the relevant recording for at least two years under 247 CMR 9.21 rather than letting the routine retention overwrite it",
           "All camera video becomes a six-year HIPAA document"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "The state security rule expressly provides a longer period for theft/diversion footage.",
-          "Correct. Suspected diversion invokes the two-year preservation requirement for the relevant recording.",
           "The pharmacy retains security-video obligations.",
+          "Correct. Suspected diversion invokes the two-year preservation requirement for the relevant recording.",
           "HIPAA documentation retention is a distinct category."
         ],
         "citation": "247 CMR 9.21(4),(8) — Security Footage and CII Reconciliation",
@@ -296,15 +296,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA sterile compounding pharmacy receives an action-level microbiology report on Wednesday and finds that a defective CSP batch distributed last week may have resulted from the same environmental problem. What distinct duties must be assessed?",
         "choices": [
           "Only the ordinary two-year QRE retention rule applies",
-          "An action-level EM notice removes the obligation to recall defective CSPs",
           "Report the action-level result under the one-business-day Policy 2026-03 clock and separately evaluate immediate defective-CSP recall, reporting and log requirements under §39D",
+          "An action-level EM notice removes the obligation to recall defective CSPs",
           "All action-level results automatically change the drug's federal schedule"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "Environmental and defective-product statutes may both apply.",
-          "One report does not eliminate another independent product-quality obligation.",
           "Correct. EM notification and defective compounded-drug recall/reporting have separate triggers and timelines.",
+          "One report does not eliminate another independent product-quality obligation.",
           "Drug schedule is unrelated to an environmental-monitoring deviation."
         ],
         "citation": "MA Board Policy 2026-03 — Action-Level Environmental Monitoring Results",
@@ -350,15 +350,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A drug store stores refrigerated vaccines and has automated overnight monitoring, but the temperature excursions and staff actions are erased after six months. A staff member says the six-month interval is enough because no products were lost. What is the relevant Massachusetts record rule?",
         "choices": [
           "No temperature logs need to be kept once the refrigerator returns to the proper range",
-          "247 CMR 9.22(4) requires recording out-of-range events and actions taken and retaining the temperature records for at least one year",
           "Only microbiological ISO 5 monitoring records must ever be retained",
+          "247 CMR 9.22(4) requires recording out-of-range events and actions taken and retaining the temperature records for at least one year",
           "All refrigerator data are required to be filed with the DEA every 45 days"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Temperature logging duties apply even without confirmed spoiled product.",
-          "Correct. 247 CMR 9.22 addresses excursion/action documentation and one-year record retention.",
           "Cold-chain logs are separate from sterile cleanroom microbiological monitoring.",
+          "Correct. 247 CMR 9.22 addresses excursion/action documentation and one-year record retention.",
           "DEA 45-day Form 106 deadlines are unrelated to refrigerator logs."
         ],
         "citation": "247 CMR 9.22(4) — Temperature Logs and Excursion Documentation",
