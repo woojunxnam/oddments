@@ -163,7 +163,7 @@
     ));
   }
 
-  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate']);
+  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange']);
   function difficultyQuestions(slug, level) {
     const set = window.MPJE_DIFFICULTY_REVIEWED?.[slug]?.[level];
     if (!set) return [];
