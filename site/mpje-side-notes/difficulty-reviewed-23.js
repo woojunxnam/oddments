@@ -5,16 +5,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacist finds that a medicine appears on the current NIOSH hazardous-drug list but is not federally scheduled. A technician believes no special handling is necessary because it is not a controlled substance. Which conclusion is best?",
         "choices": [
-          "Controlled scheduling and occupational hazardous-drug classification address different risks; applicable USP <800> handling protections still matter",
-          "The drug automatically becomes federal Schedule II because NIOSH listed it",
           "NIOSH classification requires every hazardous drug to be kept in a DEA safe",
+          "The drug automatically becomes federal Schedule II because NIOSH listed it",
+          "Controlled scheduling and occupational hazardous-drug classification address different risks; applicable USP <800> handling protections still matter",
           "Only radiopharmaceuticals can qualify as hazardous drugs"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. USP <800> protects workers and the environment from drug-exposure hazards independently of DEA abuse-potential scheduling.",
-          "The NIOSH list does not itself alter a drug's DEA schedule.",
           "DEA controlled-drug storage rules are distinct from HD handling and containment.",
+          "The NIOSH list does not itself alter a drug's DEA schedule.",
+          "Correct. USP <800> protects workers and the environment from drug-exposure hazards independently of DEA abuse-potential scheduling.",
           "Hazardous drugs can include antineoplastics and other nonradioactive medications."
         ],
         "citation": "USP General Chapter <800> Hazardous Drugs — Handling in Healthcare Settings",
@@ -23,15 +23,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy uses its printed 2016 NIOSH hazardous-drug reference list and has not reviewed the updated publication issued after 2024. Which resource should guide the current drug-specific hazardous inventory assessment?",
         "choices": [
-          "The oldest list in the pharmacy's binder controls indefinitely",
           "The 2024 NIOSH hazardous-drug list published as DHHS (NIOSH) 2025-103 supersedes the 2016 list",
+          "The oldest list in the pharmacy's binder controls indefinitely",
           "Any pharmaceutical package insert without the word 'hazardous' overrides NIOSH",
           "The annual controlled-substance inventory automatically determines the HD list"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "NIOSH expressly superseded its 2016 list.",
           "Correct. NIOSH Publication 2025-103 is the updated 2024 hazardous-drug listing.",
+          "NIOSH expressly superseded its 2016 list.",
           "Package inserts may contain warnings but are not a universal substitute for the NIOSH and facility risk assessment.",
           "DEA inventory records do not create the NIOSH hazardous drug list."
         ],
@@ -43,15 +43,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Any documented AOR permanently waives all containment and PPE even when the drug is manipulated",
           "Crushing tablets eliminates the drug's hazardous classification",
-          "An AOR may support alternative handling for qualifying intact products, but manipulating/crushing hazardous drugs generally requires full applicable containment controls",
-          "The AOR converts the preparation into an FDA-approved generic"
+          "The AOR converts the preparation into an FDA-approved generic",
+          "An AOR may support alternative handling for qualifying intact products, but manipulating/crushing hazardous drugs generally requires full applicable containment controls"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "USP <800> distinguishes intact dosage forms from manipulations creating hazardous exposure.",
           "Hazard classification does not disappear during crushing.",
-          "Correct. Risk-based alternative controls for selected intact products cannot be assumed to apply to active crushing or hazardous compounding.",
-          "AOR addresses employee exposure, not FDA marketing approval."
+          "AOR addresses employee exposure, not FDA marketing approval.",
+          "Correct. Risk-based alternative controls for selected intact products cannot be assumed to apply to active crushing or hazardous compounding."
         ],
         "citation": "USP General Chapter <800> Hazardous Drugs — Handling in Healthcare Settings",
         "sourceUrl": "https://doi.usp.org/USPNF/USPNF_M7808_07_01.html"
@@ -60,16 +60,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A facility registered with FDA under section 503B compounds sterile drug products for hospital office stock. A buyer asks why no individual patient prescription was issued before the facility prepared the batch. Which answer is correct?",
         "choices": [
           "503B products must always have a named patient prescription before compounding",
-          "An FDA outsourcing registration means FDA approved that exact finished product",
+          "503B may compound qualifying products without patient-specific prescriptions, but cGMP and all other applicable conditions continue to apply",
           "503B products are exempt from federal current good manufacturing practice requirements",
-          "503B may compound qualifying products without patient-specific prescriptions, but cGMP and all other applicable conditions continue to apply"
+          "An FDA outsourcing registration means FDA approved that exact finished product"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "A principal distinction from 503A is that federal 503B does not require patient-specific prescriptions.",
-          "Facility registration is not FDA approval of a finished compound.",
+          "Correct. Outsourcing is a conditional federal pathway allowing office-stock production without individual orders, not unrestricted manufacturing.",
           "503B is subject to cGMP, unlike qualifying 503A exemptions.",
-          "Correct. Outsourcing is a conditional federal pathway allowing office-stock production without individual orders, not unrestricted manufacturing."
+          "Facility registration is not FDA approval of a finished compound."
         ],
         "citation": "FDA — FD&C Act provisions applying to 503A and 503B compounding",
         "sourceUrl": "https://www.fda.gov/drugs/human-drug-compounding/fdc-act-provisions-apply-human-drug-compounding"
@@ -77,15 +77,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A registered 503B outsourcing facility compounds sterile preparations during February and April but none in May. Under FDA's routine reporting schedule, when must products produced during those months be reported?",
         "choices": [
-          "In the June reporting window covering drug products compounded December 1 through May 31",
           "Only in December of the following year",
+          "In the June reporting window covering drug products compounded December 1 through May 31",
           "No report is required if the product was not dispensed directly to patients",
           "Only after a product has an FDA recall"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. The June 503B product report covers the prior December–May six-month production window.",
           "December reporting covers June–November production.",
+          "Correct. The June 503B product report covers the prior December–May six-month production window.",
           "Product reporting is based on compounded products, not solely direct retail sales.",
           "A recall is not the routine product-report trigger."
         ],
@@ -96,16 +96,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A federally registered outsourcing facility did not compound any drug products during June through November. In December it proposes submitting nothing because there are no products to list. What is correct?",
         "choices": [
           "Only facilities with active 503B patient prescriptions submit reports",
-          "A zero-product report is still required for the applicable December reporting period",
+          "The facility can file a DEA Form 222 instead of the product report",
           "Nothing is due until the next FDA inspection",
-          "The facility can file a DEA Form 222 instead of the product report"
+          "A zero-product report is still required for the applicable December reporting period"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "FDA's reporting obligation applies even with no compounded products.",
-          "Correct. Registered outsourcing facilities report their products or submit a no-products report every June and December.",
+          "DEA ordering forms do not substitute for FDA outsourcing reports.",
           "FDA inspection dates do not replace periodic product reporting.",
-          "DEA ordering forms do not substitute for FDA outsourcing reports."
+          "Correct. Registered outsourcing facilities report their products or submit a no-products report every June and December."
         ],
         "citation": "FDA — Human Drug Compounding Registration and Product Reporting Procedures",
         "sourceUrl": "https://www.fda.gov/drugs/electronic-drug-registration-and-listing-system-edrls/human-drug-compounding-registration-and-product-reporting-procedures"
@@ -113,16 +113,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An FDA-registered outsourcing facility in another state plans to ship sterile compounded drugs directly to Massachusetts hospitals. It argues that federal 503B registration is the only approval it needs. What is the problem?",
         "choices": [
-          "A 503B facility can never distribute products outside its home state",
-          "Every hospital recipient must hold a federal DEA manufacturer registration",
           "Massachusetts has separate nonresident outsourcing facility registration requirements under 247 CMR 21.04",
+          "Every hospital recipient must hold a federal DEA manufacturer registration",
+          "A 503B facility can never distribute products outside its home state",
           "Each hospital must treat the compounded products as Schedule II"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "Federal 503B permits qualifying interstate distribution subject to other applicable laws.",
-          "DEA registration depends on drug/control activity, not every compounded hospital purchase.",
           "Correct. Federal registration does not replace the Massachusetts nonresident outsourcing registration pathway.",
+          "DEA registration depends on drug/control activity, not every compounded hospital purchase.",
+          "Federal 503B permits qualifying interstate distribution subject to other applicable laws.",
           "Compounding or interstate shipment does not determine controlled schedule."
         ],
         "citation": "247 CMR 21.02–21.05 — Massachusetts Outsourcing Facility Registration",
@@ -133,15 +133,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "The next June product-report cycle",
           "Two years after the product is compounded",
-          "Only when the hospital confirms the drug caused the event beyond all doubt",
-          "Submit the report to FDA as soon as possible but no later than 15 calendar days after the facility initially receives the adverse-event information"
+          "Submit the report to FDA as soon as possible but no later than 15 calendar days after the facility initially receives the adverse-event information",
+          "Only when the hospital confirms the drug caused the event beyond all doubt"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "The June/December product list is separate from adverse-event reporting.",
           "Two years is not the serious/unexpected initial reporting clock.",
-          "The FDA reporting standard does not require absolute causal proof before any report.",
-          "Correct. The 503B adverse-event guidance incorporates the 21 CFR 310.305 15-calendar-day Alert report."
+          "Correct. The 503B adverse-event guidance incorporates the 21 CFR 310.305 15-calendar-day Alert report.",
+          "The FDA reporting standard does not require absolute causal proof before any report."
         ],
         "citation": "FDA — Adverse Event Reporting for Outsourcing Facilities (section 503B; 21 CFR 310.305)",
         "sourceUrl": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adverse-event-reporting-outsourcing-facilities-under-section-503b-federal-food-drug-and-cosmetic-act"
@@ -168,16 +168,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A nuclear pharmacy prepares a radioactive drug for a hospital. Staff print only an internal stock barcode on the outer shielded container. Which essential nuclear-specific labeling must be added?",
         "choices": [
           "A generic black-box FDA REMS statement for every radiopharmaceutical",
-          "The radiation symbol, 'Caution – Radioactive Material', radionuclide identity, activity at calibration and applicable expiration information",
+          "Only the ordinary manufacturer's NDC number",
           "Only the retail pharmacy's coupon price",
-          "Only the ordinary manufacturer's NDC number"
+          "The radiation symbol, 'Caution – Radioactive Material', radionuclide identity, activity at calibration and applicable expiration information"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "Nuclear labeling rules require specialized activity and warning information.",
-          "Correct. 247 CMR 13.05(12) specifies the radiation symbol, caution text, nuclide/activity and other necessary outer-container details.",
+          "NDC alone does not communicate required radiation handling data.",
           "Price is not a radiopharmaceutical shielding-label substitute.",
-          "NDC alone does not communicate required radiation handling data."
+          "Correct. 247 CMR 13.05(12) specifies the radiation symbol, caution text, nuclide/activity and other necessary outer-container details."
         ],
         "citation": "247 CMR 13.03–13.06 — Nuclear Pharmacy Licensure and Dispensing",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-13-registration-requirements-and-minimal-professional-standards-for-nuclear-pharmacies/download"
@@ -187,16 +187,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A hospital purchases a sterile 503B compound from an FDA-registered vendor, then discovers the vendor's listing has no current Massachusetts nonresident registration. The hospital believes the vendor's recent FDA inspection automatically fills the state gap. Which response is best?",
         "choices": [
-          "Confirm the federal 503B status and separate MA 247 CMR 21.04 registration before relying on the vendor's distribution into Massachusetts; inspection alone is not a state license",
-          "Accept without further verification because FDA registration grants MA nonresident status automatically",
           "Assume every interstate 503B purchase is categorically prohibited",
+          "Accept without further verification because FDA registration grants MA nonresident status automatically",
+          "Confirm the federal 503B status and separate MA 247 CMR 21.04 registration before relying on the vendor's distribution into Massachusetts; inspection alone is not a state license",
           "Require patient-specific prescriptions for all 503B products even when the federal pathway does not require them"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. FDA facility registration, inspection history and Massachusetts nonresident authorization are distinct questions.",
-          "A federal registration cannot create a state outsourcing credential by itself.",
           "MA provides an interstate registration path rather than a universal ban.",
+          "A federal registration cannot create a state outsourcing credential by itself.",
+          "Correct. FDA facility registration, inspection history and Massachusetts nonresident authorization are distinct questions.",
           "503B differs from 503A on the individual patient prescription condition."
         ],
         "citation": "247 CMR 21.02–21.05 — Massachusetts Outsourcing Facility Registration",
@@ -225,15 +225,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "A hospital purchase order waives all 503B ingredient rules",
           "Any bulk substance is permitted if it is USP-grade",
-          "503B bulk substance eligibility must meet the applicable clinical-need list or qualifying FDA shortage condition, along with other statutory safeguards",
-          "Only a retail pharmacy's DEA Form 222 controls bulk APIs"
+          "Only a retail pharmacy's DEA Form 222 controls bulk APIs",
+          "503B bulk substance eligibility must meet the applicable clinical-need list or qualifying FDA shortage condition, along with other statutory safeguards"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Commercial purchase does not waive §503B bulk-substance eligibility.",
           "Ingredient quality alone is not a replacement for 503B list/shortage conditions.",
-          "Correct. FDA treats 503B bulk ingredients under a restricted statutory framework that is distinct from simple hospital procurement.",
-          "DEA Form 222 orders Schedule I/II controlled stock rather than authorizing all APIs."
+          "DEA Form 222 orders Schedule I/II controlled stock rather than authorizing all APIs.",
+          "Correct. FDA treats 503B bulk ingredients under a restricted statutory framework that is distinct from simple hospital procurement."
         ],
         "citation": "FDA — Bulk Drug Substances Used in Compounding Under 503B",
         "sourceUrl": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503b-fdc-act"
@@ -242,16 +242,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A registered outsourcing facility produces no products during June–November, but a serious unexpected drug-event report concerning an earlier preparation is received in October. Which two federal reporting duties must be treated separately?",
         "choices": [
           "With no products produced, both FDA duties disappear",
-          "Only the six-month product-report window matters",
+          "Submit a serious/unexpected adverse-event report within its 15-calendar-day clock, and separately submit the December no-products report for the production period",
           "The facility can wait to include the event with its December no-products report",
-          "Submit a serious/unexpected adverse-event report within its 15-calendar-day clock, and separately submit the December no-products report for the production period"
+          "Only the six-month product-report window matters"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "Absence of current production does not erase event reporting on a previous product.",
-          "Product reporting and adverse-event reporting are distinct.",
+          "Correct. FDA 503B product reports and 15-day Alert reports address separate information and deadlines.",
           "Waiting for December could miss the event's statutory clock.",
-          "Correct. FDA 503B product reports and 15-day Alert reports address separate information and deadlines."
+          "Product reporting and adverse-event reporting are distinct."
         ],
         "citation": "FDA — Adverse Event Reporting for Outsourcing Facilities (section 503B; 21 CFR 310.305)",
         "sourceUrl": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adverse-event-reporting-outsourcing-facilities-under-section-503b-federal-food-drug-and-cosmetic-act"
@@ -278,15 +278,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A nuclear pharmacy sends a radiopharmaceutical with an otherwise valid order to a hospital, but the hospital does not administer it. The pharmacist argues that returning unused radioactive drug stock would violate ordinary retail return-to-stock policy. What is legally appropriate?",
         "choices": [
           "All unused radiopharmaceuticals may be sold to another walk-in patient",
-          "The nuclear pharmacy should handle the unused product through the specified return and NRC-compliant disposal procedure, and document what quantity was returned",
           "Return is never allowed because the radioactive package was outside the pharmacy",
+          "The nuclear pharmacy should handle the unused product through the specified return and NRC-compliant disposal procedure, and document what quantity was returned",
           "Simply re-label the product as an OTC supplement"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Reassignment to another patient requires distinct legal and safety considerations.",
-          "Correct. 247 CMR 13.05(9) requires the unadministered prescribed radiopharmaceutical to be returned for regulated disposal with return documentation.",
           "An ordinary retail return rule does not erase nuclear disposal requirements.",
+          "Correct. 247 CMR 13.05(9) requires the unadministered prescribed radiopharmaceutical to be returned for regulated disposal with return documentation.",
           "Relabeling does not remove radioactive or prescription-drug controls."
         ],
         "citation": "247 CMR 13.03–13.06 — Nuclear Pharmacy Licensure and Dispensing",
