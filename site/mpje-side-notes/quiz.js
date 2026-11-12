@@ -189,7 +189,7 @@
     { slug: 'numbers-records', title: 'Numbers / Record Retention' },
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
-    { slug: 'cumulative-practice', title: 'Cumulative Practice (720 available)' },
+    { slug: 'cumulative-practice', title: 'Cumulative Practice (780 available)' },
     { slug: 'drug-memorization', title: 'Drug Memorization Lab (151 entries)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
@@ -240,7 +240,7 @@
       index < CHAPTERS.length - 1 ? 'Next: ' + CHAPTERS[index + 1].title + ' →' : 'All chapters →'));
     if (slug !== 'cumulative-practice' && slug !== 'drug-memorization') {
       nav.append(link('../cumulative-practice/?chapter=' + encodeURIComponent(slug),
-        'Practice ' + (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records', 'drug-directory', 'open-register'].includes(slug) ? (['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy'].includes(slug) ? '40' : '20') : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
+        'Practice ' + (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records', 'drug-directory', 'open-register'].includes(slug) ? (['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health'].includes(slug) ? '40' : '20') : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
     }
     const footer = document.querySelector('body > footer') || document.querySelector('footer');
     if (footer) footer.before(nav);
