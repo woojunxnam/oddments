@@ -5,17 +5,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A patient has prescriptions for Adderall and Ambien. A trainee says both are Schedule II because they affect the central nervous system. Which pairing is correct?",
         "choices": [
-          "Adderall (amphetamine salts) is Schedule II; Ambien (zolpidem) is Schedule IV",
+          "Both are Schedule II because each acts on the CNS",
           "Both Adderall and Ambien are Schedule III",
           "Adderall is Schedule VI in Massachusetts; Ambien is Schedule II",
-          "Both are Schedule II because each acts on the CNS"
+          "Adderall (amphetamine salts) is Schedule II; Ambien (zolpidem) is Schedule IV"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. Amphetamine products are federal CII stimulants, while zolpidem is federal CIV.",
+          "Clinical CNS activity is not how all products receive identical schedules.",
           "Neither is a federal Schedule III product.",
           "Massachusetts does not convert amphetamine into Schedule VI.",
-          "Clinical CNS activity is not how all products receive identical schedules."
+          "Correct. Amphetamine products are federal CII stimulants, while zolpidem is federal CIV."
         ],
         "citation": "DEA Diversion Control — Controlled Substance Schedules, 2026",
         "sourceUrl": "https://www.deadiversion.usdoj.gov/schedules/schedules.html"
@@ -41,16 +41,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist sees Neurontin and Lyrica prescriptions for two patients in Massachusetts. Which state/federal distinction is correct?",
         "choices": [
-          "Both are federal Schedule V because both treat neuropathic pain",
-          "Gabapentin is federal Schedule II and pregabalin is a nonprescription product",
           "Neurontin (gabapentin) is Massachusetts Schedule VI and reportable to MassPAT; Lyrica (pregabalin) is federal Schedule V",
+          "Gabapentin is federal Schedule II and pregabalin is a nonprescription product",
+          "Both are federal Schedule V because both treat neuropathic pain",
           "Neither medicine is reportable in Massachusetts because they are not opioids"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "Pregabalin is federally Schedule V; gabapentin is not.",
-          "Gabapentin is not a federal Schedule II drug.",
           "Correct. The federal and Massachusetts schedules differ, and gabapentin is an MA PMP Additional Drug.",
+          "Gabapentin is not a federal Schedule II drug.",
+          "Pregabalin is federally Schedule V; gabapentin is not.",
           "MassPAT reporting includes some non-opioid substances."
         ],
         "citation": "MA DPH Pharmacy Reporting and Data Submission (gabapentin additional drug)",
@@ -61,15 +61,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Both are Schedule V because they contain acetaminophen",
           "Percocet is Schedule III, while Tylenol with Codeine No. 3 is Schedule II",
-          "Both may be refilled for six months because they are opioid combinations",
-          "Percocet (oxycodone/acetaminophen) is Schedule II; Tylenol with Codeine No. 3 is a qualifying Schedule III codeine combination"
+          "Percocet (oxycodone/acetaminophen) is Schedule II; Tylenol with Codeine No. 3 is a qualifying Schedule III codeine combination",
+          "Both may be refilled for six months because they are opioid combinations"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Acetaminophen does not make an oxycodone product Schedule V.",
           "Oxycodone products remain Schedule II.",
-          "Percocet cannot be refilled because it is CII.",
-          "Correct. Product-specific active controlled ingredient and formulation matter."
+          "Correct. Product-specific active controlled ingredient and formulation matter.",
+          "Percocet cannot be refilled because it is CII."
         ],
         "citation": "DEA Diversion Control — Controlled Substance Schedules, 2026",
         "sourceUrl": "https://www.deadiversion.usdoj.gov/schedules/schedules.html"
@@ -77,17 +77,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A prescriber writes for Xanax and the pharmacist retrieves a bottle of alprazolam. Which classification and dispensing analysis is correct?",
         "choices": [
-          "Alprazolam is Schedule IV; legally authorized refills are subject to the applicable original-issue age and quantity limits",
+          "The trade name Xanax is Schedule III while the generic alprazolam is Schedule VI",
           "Xanax is an OTC anxiety supplement, so no prescription is necessary",
           "Alprazolam is CII and can never have any refill",
-          "The trade name Xanax is Schedule III while the generic alprazolam is Schedule VI"
+          "Alprazolam is Schedule IV; legally authorized refills are subject to the applicable original-issue age and quantity limits"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. Brand and generic contain the same CIV ingredient; III/IV refills have federal six-month/five-refill limits.",
+          "Brand and generic names do not produce different schedules for the same scheduled ingredient.",
           "Xanax is not an OTC supplement.",
           "Alprazolam is a benzodiazepine in CIV.",
-          "Brand and generic names do not produce different schedules for the same scheduled ingredient."
+          "Correct. Brand and generic contain the same CIV ingredient; III/IV refills have federal six-month/five-refill limits."
         ],
         "citation": "21 CFR 1308.14 — Schedule IV substances",
         "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.14"
@@ -114,15 +114,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A patient asks for FDA-approved OTC Narcan nasal spray and asks whether this means oral naltrexone tablets are now available OTC as an identical drug. What is the correct distinction?",
         "choices": [
           "Narcan and naltrexone are two names for the same formulation",
-          "An FDA OTC switch automatically applies to every opioid-antagonist drug",
           "Narcan nasal naloxone has an FDA OTC pathway, but naltrexone is a different active ingredient and prescription drug with a distinct role",
+          "An FDA OTC switch automatically applies to every opioid-antagonist drug",
           "Narcan is CII because it treats an opioid overdose"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "Naloxone and naltrexone are different molecules.",
-          "OTC switches are product/strength-specific, not class-wide.",
           "Correct. Drug identity and regulatory status must be checked for each product.",
+          "OTC switches are product/strength-specific, not class-wide.",
           "Naloxone is not a Schedule II opioid."
         ],
         "citation": "FDA — Prescription-to-Nonprescription Switch List, naloxone and norgestrel",
@@ -132,16 +132,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A patient asks whether Plan B One-Step and ella have identical prescription requirements because both are emergency contraception. Which statement is accurate?",
         "choices": [
           "Both are federally controlled Schedule IV",
-          "Neither is available through any pharmacist standing-order pathway",
+          "Plan B (levonorgestrel) is OTC; ella (ulipristal acetate) is prescription-only under FDA status, with Massachusetts emergency-contraception pathways potentially available",
           "Both are Schedule II because they influence hormones",
-          "Plan B (levonorgestrel) is OTC; ella (ulipristal acetate) is prescription-only under FDA status, with Massachusetts emergency-contraception pathways potentially available"
+          "Neither is available through any pharmacist standing-order pathway"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "Emergency contraception is not automatically controlled Schedule IV.",
-          "MA has a statewide emergency contraception standing-order mechanism.",
+          "Correct. Similar intended use does not mean the same federal OTC/Rx status.",
           "These medicines are not Schedule II.",
-          "Correct. Similar intended use does not mean the same federal OTC/Rx status."
+          "MA has a statewide emergency contraception standing-order mechanism."
         ],
         "citation": "Massachusetts Emergency Contraception Information for Pharmacies",
         "sourceUrl": "https://www.mass.gov/info-details/emergency-contraception-information-for-pharmacies"
@@ -168,16 +168,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA pharmacy receives prescriptions for metformin and gabapentin. A trainee says both must be handled identically because they are Schedule VI. Which correction matters?",
         "choices": [
           "Metformin is federal Schedule II and gabapentin is federal Schedule III",
-          "Both are Schedule VI in Massachusetts, but gabapentin is a separately designated Additional Drug requiring PMP reporting",
+          "Both may be refilled as federal Schedule III drugs",
           "Neither requires a lawful prescription because MA Schedule VI is OTC",
-          "Both may be refilled as federal Schedule III drugs"
+          "Both are Schedule VI in Massachusetts, but gabapentin is a separately designated Additional Drug requiring PMP reporting"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "Both are commonly MA Schedule VI; they are not federal CII/CIII.",
-          "Correct. Schedule VI is broad, while the PMP Additional Drug designation changes the pharmacy's reporting duty.",
+          "Federal CIII refill rules do not automatically govern MA Schedule VI.",
           "Schedule VI consists of prescription drugs.",
-          "Federal CIII refill rules do not automatically govern MA Schedule VI."
+          "Correct. Schedule VI is broad, while the PMP Additional Drug designation changes the pharmacy's reporting duty."
         ],
         "citation": "M.G.L. c.94C §3 Schedule VI and MA DPH MCSR information",
         "sourceUrl": "https://www.mass.gov/info-details/learn-about-massachusetts-controlled-substances-registration-mcsr-for-practitioners"
@@ -187,17 +187,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA patient has an otherwise valid Suboxone (buprenorphine/naloxone) prescription with five authorized refills. A technician applies the no-refill rule for oxycodone because both are opioids. Which conclusion is correct?",
         "choices": [
-          "Suboxone is federally Schedule III and may have authorized refills within the five-refill/six-month federal limits, unlike Schedule II oxycodone",
+          "The pharmacy may treat the five refills as five new original CII prescriptions",
           "The Suboxone refills are categorically illegal because all opioids are CII",
           "Suboxone becomes noncontrolled when prescribed for OUD",
-          "The pharmacy may treat the five refills as five new original CII prescriptions"
+          "Suboxone is federally Schedule III and may have authorized refills within the five-refill/six-month federal limits, unlike Schedule II oxycodone"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. The drug's controlled schedule, not the broad opioid label, determines the refill framework.",
+          "CIII refills are not the same as sequential CII originals.",
           "Buprenorphine is Schedule III rather than Schedule II.",
           "Clinical use for OUD does not remove federal scheduling.",
-          "CIII refills are not the same as sequential CII originals."
+          "Correct. The drug's controlled schedule, not the broad opioid label, determines the refill framework."
         ],
         "citation": "21 CFR 1306.12 and 1306.22 — CII prohibition versus CIII–IV refills",
         "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.22"
@@ -205,53 +205,53 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A patient prescribed Sublocade wants the pharmacy to replace it with a Butrans patch because both list buprenorphine. What must the pharmacist consider?",
         "choices": [
-          "The products are legally interchangeable whenever the generic ingredient is the same",
           "Sublocade and Butrans are different dose forms, indications and delivery systems; Sublocade has a professional-administered restricted program, so substitution requires a valid clinical/prescriber pathway",
+          "The products are legally interchangeable whenever the generic ingredient is the same",
           "Both products are over-the-counter because buprenorphine is Schedule VI",
           "Having the same controlled schedule permits free conversion between formulations"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "Sharing active ingredient does not establish equivalence for route/strength/indication.",
           "Correct. Long-acting injected Sublocade and transdermal Butrans are not automatic substitutions; product-specific REMS and orders matter.",
+          "Sharing active ingredient does not establish equivalence for route/strength/indication.",
           "Buprenorphine is Schedule III.",
           "Controlled schedule does not prove therapeutic or formulation interchangeability."
         ],
-        "citation": "FDA BRIXADI prescribing information; REMS distribution restrictions",
-        "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/210136s012lbl.pdf"
+        "citation": "FDA SUBLOCADE Prescribing Information (2026); REMS and healthcare-professional administration",
+        "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/209819s037lbl.pdf"
       },
       {
         "question": "An MA pharmacist gets a request for an emergency no-refill continuation of gabapentin and cites Board Policy 2023-04's Schedule VI pathway. What critical drug-specific restriction must be checked?",
         "choices": [
-          "Gabapentin is federally Schedule II, so it may always be supplied only by an emergency oral CII prescription",
-          "All Schedule VI medicines qualify under the policy regardless of PMP reporting",
           "The Board's continuity policy excludes gabapentin, despite its MA Schedule VI status and separate PMP reporting",
+          "All Schedule VI medicines qualify under the policy regardless of PMP reporting",
+          "Gabapentin is federally Schedule II, so it may always be supplied only by an emergency oral CII prescription",
           "Gabapentin is OTC in MA because it is not federally controlled"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "Gabapentin is not a federal Schedule II controlled drug.",
-          "MA Schedule VI includes drugs with exceptions to particular Board policies.",
           "Correct. Policy 2023-04 explicitly excludes gabapentin from the specified no-refill continuity pathway.",
+          "MA Schedule VI includes drugs with exceptions to particular Board policies.",
+          "Gabapentin is not a federal Schedule II controlled drug.",
           "MA Schedule VI is the prescription drug category, not an OTC category."
         ],
-        "citation": "247 CMR 9.04 — Massachusetts controlled prescription dispensing and refills",
-        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+        "citation": "MA Board Policy 2023-04 — Continuity of Care (gabapentin excluded)",
+        "sourceUrl": "https://www.mass.gov/doc/2023-04-continuity-of-care-pdf/download"
       },
       {
         "question": "A Massachusetts patient requests a sixth refill of Lyrica (pregabalin) eight months after the prescription was issued and insists the pharmacy can use the one-year Schedule VI refill rule. Which answer is correct?",
         "choices": [
           "One-year Schedule VI validity applies because pregabalin treats neuropathic pain",
           "Pregabalin is CII and can never be dispensed on any prescription",
-          "The patient may obtain unlimited refills under the original prescription if the prescriber is reachable",
-          "Lyrica is federally Schedule V, not MA Schedule VI, and Massachusetts limits Schedule V refills to five within the applicable six-month window"
+          "Lyrica is federally Schedule V, not MA Schedule VI, and Massachusetts limits Schedule V refills to five within the applicable six-month window",
+          "The patient may obtain unlimited refills under the original prescription if the prescriber is reachable"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Pregabalin's federal Schedule V classification controls the relevant MA controlled refill conditions.",
           "Pregabalin is not a federal CII drug.",
-          "Prescriber availability does not override Schedule V refill/age limits.",
-          "Correct. MA 247 CMR 9.04(13) establishes Schedule V limits analogous to III/IV for this purpose."
+          "Correct. MA 247 CMR 9.04(13) establishes Schedule V limits analogous to III/IV for this purpose.",
+          "Prescriber availability does not override Schedule V refill/age limits."
         ],
         "citation": "247 CMR 9.04 — Massachusetts controlled prescription dispensing and refills",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
@@ -259,34 +259,34 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A patient receives a valid prescription for oxycodone OxyContin showing two refills. Which statement best separates the brand's identity from legal first dispensing and future refills?",
         "choices": [
-          "OxyContin is Schedule II: an otherwise lawful original dispensing can occur even though an erroneous refill notation cannot authorize subsequent refills",
+          "The pharmacy may refill OxyContin for six months because it is an extended-release formulation",
           "The brand name removes Schedule II restrictions from controlled oxycodone",
           "The printed refill notation automatically creates two independently valid sequential prescriptions",
-          "The pharmacy may refill OxyContin for six months because it is an extended-release formulation"
+          "OxyContin is Schedule II: an otherwise lawful original dispensing can occur even though an erroneous refill notation cannot authorize subsequent refills"
         ],
-        "answer": "A",
+        "answer": "D",
         "explanations": [
-          "Correct. The lawful first fill and forbidden CII refills are separate legal questions.",
+          "Schedule II refills are prohibited regardless of release mechanism.",
           "Extended-release brand does not alter oxycodone scheduling.",
           "Refill instructions do not become independent signed originals.",
-          "Schedule II refills are prohibited regardless of release mechanism."
+          "Correct. The lawful first fill and forbidden CII refills are separate legal questions."
         ],
-        "citation": "21 CFR 1308.12 — Schedule II substances",
-        "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12"
+        "citation": "21 CFR 1306.12(a) — Schedule II refills prohibited",
+        "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.12"
       },
       {
         "question": "A patient on Neurontin needs refills, while another on Lyrica presents a prescription issued eight months earlier. A pharmacist assumes their similar uses mean identical legal expiry. What is correct?",
         "choices": [
           "Both have federal Schedule V status and expire simultaneously",
-          "Gabapentin is MA Schedule VI with its own one-year validity framework and PMP reporting; pregabalin is federally Schedule V with more restrictive original-prescription refill limits",
           "Both are controlled Schedule II when used for neuropathic pain",
+          "Gabapentin is MA Schedule VI with its own one-year validity framework and PMP reporting; pregabalin is federally Schedule V with more restrictive original-prescription refill limits",
           "The brand names change the schedules even when the generic active ingredients are identical"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Federal pregabalin and MA gabapentin categories differ.",
-          "Correct. Similar neuropathic-pain indications do not create identical schedules, refill clocks or PMP duties.",
           "Neither medicine is classified as CII in that circumstance.",
+          "Correct. Similar neuropathic-pain indications do not create identical schedules, refill clocks or PMP duties.",
           "Scheduling depends on substances/formulations, not arbitrary brand versus generic labeling."
         ],
         "citation": "MA DPH Pharmacy Reporting and Data Submission (gabapentin additional drug)",
@@ -313,17 +313,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist compares clozapine and isotretinoin prescriptions dated November 12, 2026. The system still demands the former clozapine REMS approval and omits iPLEDGE checks for isotretinoin. What correction is needed?",
         "choices": [
-          "Both drugs have no active FDA REMS because they are not federally controlled",
+          "FDA removed clozapine REMS in June 2025 (clinical ANC monitoring remains recommended), while isotretinoin still has active iPLEDGE requirements with modifications scheduled November 15, 2026",
           "Reinstate clozapine REMS and ignore iPLEDGE until 2027",
           "Require ANC results through iPLEDGE for both drugs",
-          "FDA removed clozapine REMS in June 2025 (clinical ANC monitoring remains recommended), while isotretinoin still has active iPLEDGE requirements with modifications scheduled November 15, 2026"
+          "Both drugs have no active FDA REMS because they are not federally controlled"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "REMS obligations do not depend exclusively on DEA scheduling.",
+          "Correct. Review product-specific REMS status and effective dates rather than copying old software restrictions.",
           "The 2025 clozapine REMS removal is effective; isotretinoin has a separate program.",
           "ANC monitoring is a clozapine concern, not a universal iPLEDGE upload.",
-          "Correct. Review product-specific REMS status and effective dates rather than copying old software restrictions."
+          "REMS obligations do not depend exclusively on DEA scheduling."
         ],
         "citation": "FDA — Removal of Clozapine REMS effective June 13, 2025",
         "sourceUrl": "https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine"
@@ -331,16 +331,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Massachusetts pharmacist has two rescue products: Narcan nasal naloxone OTC and a prescribed naltrexone tablet. A technician wants to counsel that the tablet is an equivalent immediate overdose rescue and fill it under the naloxone statewide standing order. What is correct?",
         "choices": [
-          "The standing-order/naloxone rescue pathway is product-specific; naltrexone is not a replacement for acute opioid-overdose reversal and remains a distinct prescription therapy",
-          "Every opioid antagonist is legally interchangeable with OTC Narcan",
           "Naltrexone tablets become OTC when a patient has a family member at overdose risk",
+          "Every opioid antagonist is legally interchangeable with OTC Narcan",
+          "The standing-order/naloxone rescue pathway is product-specific; naltrexone is not a replacement for acute opioid-overdose reversal and remains a distinct prescription therapy",
           "All opioid antagonists are federally Schedule II"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. Acute naloxone reversal and longer-acting naltrexone treatment differ in drug, timing, indication and legal authority.",
-          "Pharmacologic class does not establish equivalence.",
           "Narcan's OTC status does not extend automatically to naltrexone.",
+          "Pharmacologic class does not establish equivalence.",
+          "Correct. Acute naloxone reversal and longer-acting naltrexone treatment differ in drug, timing, indication and legal authority.",
           "Antagonists do not all have federal Schedule II status."
         ],
         "citation": "FDA — Prescription-to-Nonprescription Switch List, naloxone and norgestrel",
