@@ -4,8 +4,8 @@
 **Scope:** Preserve the 540 original + supplemental questions. Add 10 Moderate and 10 Hard independently written application questions to each of 27 chapters (540 new items; goal 1,080).
 
 **Original source baseline:** 540 questions (270 original + 270 supplemental).
-**Branch count for this batch:** 900 (baseline 540 plus 360 new source-reviewed difficulty items).
-**Remaining:** 180 new items, across 9 chapters.
+**Branch count for this batch:** 960 (baseline 540 plus 420 new source-reviewed difficulty items).
+**Remaining:** 120 new items, across 6 chapters.
 **Legal review status:** Each newly authored question includes a citation to a primary federal or Massachusetts source and has been checked for one intended answer and four individual rationales. This is a preliminary source-based author review, **not** a completed independent auditor's approval. Source pages and law can change; verify their effective dates before release. Main question-bank canonical audit gates are not bypassed or represented as complete.
 
 | Chapter | Topic | Moderate | Hard | Authored date | Independent legal audit |
@@ -32,9 +32,9 @@
 | 20 | [Shared Services & Automation](../site/mpje-side-notes/shared-automation/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 21 | [Nonsterile Compounding](../site/mpje-side-notes/nonsterile-compounding/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 22 | [Sterile Compounding](../site/mpje-side-notes/sterile-compounding/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
-| 23 | [Hazardous Drugs, 503B, Nuclear](../site/mpje-side-notes/hd-outsourcing-nuclear/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 24 | [FDA & Drug Supply Chain](../site/mpje-side-notes/fda-supply-chain/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 25 | [Reporting Deadlines & Records](../site/mpje-side-notes/numbers-records/index.html) | 0/10 | 0/10 | Pending | Pending |
+| 23 | [Hazardous Drugs, 503B, Nuclear](../site/mpje-side-notes/hd-outsourcing-nuclear/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 24 | [FDA & Drug Supply Chain](../site/mpje-side-notes/fda-supply-chain/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 25 | [Reporting Deadlines & Records](../site/mpje-side-notes/numbers-records/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 26 | [Drug Directory](../site/mpje-side-notes/drug-directory/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 27 | [Open Legal Register](../site/mpje-side-notes/open-register/index.html) | 0/10 | 0/10 | Pending | Pending |
 
@@ -44,7 +44,7 @@
 - All new items require four distinct options, a single best answer, four option-specific explanations, and a specific official source URL; cite controlling section.
 - Moderate: preferably two legal determinations or an exception. Hard: interacting federal and Massachusetts requirements, multiple clocks, competing responsibilities, or nuanced exceptions.
 - Before a release claim: verify question and answer against controlling law, any active Board policy, effective dates; check A–D distribution, duplication, difficulty, and usability. Original guide content and canonical question bank remain untouched.
-- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 180 remaining items are unfinished.
+- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 120 remaining items are unfinished.
 
 ## This branch's new question assets
 
@@ -66,6 +66,9 @@
 - `site/mpje-side-notes/difficulty-reviewed-20.js`: Shared services and automation (20).
 - `site/mpje-side-notes/difficulty-reviewed-21.js`: USP <795> and nonsterile compounding (20).
 - `site/mpje-side-notes/difficulty-reviewed-22.js`: USP <797> and sterile compounding (20).
+- `site/mpje-side-notes/difficulty-reviewed-23.js`: USP <800>, 503B outsourcing, nuclear (20).
+- `site/mpje-side-notes/difficulty-reviewed-24.js`: FDA DSCSA, NDC, recall/approval (20).
+- `site/mpje-side-notes/difficulty-reviewed-25.js`: Reporting deadlines and records (20).
 - `site/mpje-side-notes/practice-review.js`: Difficulty-tier loading and score sections.
 - `site/mpje-side-notes/cumulative-practice/index.html`: UI for separate tiers and accurate count.
 - `site/mpje-side-notes/quiz.js`: Chapter labels and 27-chapter selector fix.
@@ -108,3 +111,11 @@
 - **Ch21:** FDA 503A patient-specific/anticipatory conditions and bulk ingredient COA, MA Policy 2023-07 complex nonsterile requirements, USP <795> default BUD categories, and special 3-hour CE; clarifies local stock-out does not alone justify commercial copies.
 - **Ch22:** USP <797> immediate-use timing, category distinctions, 2025-01 rapid method controls, MA Policy 2026-03 action-level EM reporting, enhanced ISO 5 response, and draft-vs-enacted sources. 2026-03 policy is effective September 3, 2026 and requires one-business-day reporting from microbiology report receipt. 
 - **Progress:** 900 authored total, 360 new cases across Ch5–22; 180 remain (Ch1–4 and Ch23–27). As elsewhere, independent legal audit and real browser deployment verification must be tracked separately; code-level schema review is not legal signoff.
+
+## Chapters 23–25 continuation (2026-11-12)
+
+- 60 new source-linked original cases: Ch23 Hazardous Drugs / 503B Outsourcing / Nuclear Pharmacy, Ch24 FDA/DSCSA/Supply Chain, Ch25 Reporting Clocks and Records; 10 Moderate + 10 Hard per chapter.
+- **Ch23:** NIOSH 2024 list (2025-103), USP <800>, FDA 503B June/December reports, serious unexpected 15-calendar-day alerts, nonresident 247 CMR 21, nuclear 247 CMR 13.05 three-year record and 72-hour identity/emergency follow-up. Distinguish enacted 247 CMR 13 from proposed revision.
+- **Ch24:** FDA August 2026 small dispenser exemption for qualifying company-wide <=25 qualified full-time workers as of November 27, 2026 (specified enhanced provisions through November 27, 2027), suspect vs illegitimate product, illegitimate 24-hour notice, NDC listing != approval, recalls, IND/ANDA/BLA/OTC, 2033 NDC rule date.
+- **Ch25:** MA 247 CMR 15 QRE 24-hour initial document/2-year retention, 247 CMR 20 serious injury 7 business days/5-year report retention, defective compounded drug recall immediately/7-day Board log/10 years, EM 2026 action level one business day, DEA theft first business day + 45-day Form 106, DSCSA illegitimate 24-hour, 503B Alert 15 calendar days, nuclear 3 years, security footage 14 days or 2 years where theft suspected.
+- 960 authored total = 540 original/supplemental + 420 new; 120 new remain (Ch1–4, 26–27). Source-based author validation is not an independent end-to-end legal audit; see each item’s official citations. Preserve original guides and published question banks unchanged.

@@ -34,6 +34,9 @@ ASSETS = {
     "shared-automation": "difficulty-reviewed-20.js",
     "nonsterile-compounding": "difficulty-reviewed-21.js",
     "sterile-compounding": "difficulty-reviewed-22.js",
+    "hd-outsourcing-nuclear": "difficulty-reviewed-23.js",
+    "fda-supply-chain": "difficulty-reviewed-24.js",
+    "numbers-records": "difficulty-reviewed-25.js",
 }
 
 
@@ -68,7 +71,7 @@ def test_expanded_chapters_have_20_new_items_each() -> None:
                 stem = re.sub(r"\W+", "", q["question"].lower())
                 assert stem not in seen_questions, (slug, tier, q["question"])
                 seen_questions.add(stem)
-    assert len(seen_questions) == 360
+    assert len(seen_questions) == 420
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is not installed")
@@ -90,8 +93,8 @@ def test_cumulative_page_loads_tiers_before_renderer() -> None:
         assert chapter in js
     for section in ["review-original", "review-extra", "review-moderate", "review-hard"]:
         assert f'id="{section}"' in page
-    assert "900 practice questions" in page
-    assert "180" in page
+    assert "960 practice questions" in page
+    assert "120" in page
     assert "moderateCases.length + hardCases.length" in js
     assert "c.slug !== 'drug-memorization'" in js
     assert "? '40' : '20'" in picker
