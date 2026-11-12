@@ -16,6 +16,10 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site" / "mpje-side-notes"
 ASSETS = {
+    "licensure-ce": "difficulty-reviewed-01.js",
+    "personnel": "difficulty-reviewed-02.js",
+    "pharmacy-mor": "difficulty-reviewed-03.js",
+    "schedules-registration": "difficulty-reviewed-04.js",
     "prescription-validity": "difficulty-reviewed-05.js",
     "cii-core": "difficulty-reviewed-06.js",
     "cii-partial-outstate": "difficulty-reviewed-07.js",
@@ -37,6 +41,8 @@ ASSETS = {
     "hd-outsourcing-nuclear": "difficulty-reviewed-23.js",
     "fda-supply-chain": "difficulty-reviewed-24.js",
     "numbers-records": "difficulty-reviewed-25.js",
+    "drug-directory": "difficulty-reviewed-26.js",
+    "open-register": "difficulty-reviewed-27.js",
 }
 
 
@@ -66,12 +72,13 @@ def test_expanded_chapters_have_20_new_items_each() -> None:
                 assert q["sourceUrl"].split("/")[2] in {
                     "www.ecfr.gov", "malegislature.gov", "www.mass.gov",
                     "www.fda.gov", "www.accessdata.fda.gov", "www.hhs.gov",
-                    "www.deadiversion.usdoj.gov", "www.cdc.gov", "www.govinfo.gov", "pe.usps.com", "doi.usp.org", "pages.usp.org"
+                    "www.deadiversion.usdoj.gov", "www.cdc.gov", "www.govinfo.gov", "pe.usps.com", "doi.usp.org", "pages.usp.org", "www.dea.gov", "nabp.pharmacy"
                 }
                 stem = re.sub(r"\W+", "", q["question"].lower())
                 assert stem not in seen_questions, (slug, tier, q["question"])
                 seen_questions.add(stem)
-    assert len(seen_questions) == 420
+    assert len(seen_questions) == 540
+    assert len(ASSETS) == 27
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is not installed")
@@ -93,8 +100,8 @@ def test_cumulative_page_loads_tiers_before_renderer() -> None:
         assert chapter in js
     for section in ["review-original", "review-extra", "review-moderate", "review-hard"]:
         assert f'id="{section}"' in page
-    assert "960 practice questions" in page
-    assert "120" in page
+    assert "1,080 practice questions" in page
+    assert "270 new Moderate and 270 new Hard" in page
     assert "moderateCases.length + hardCases.length" in js
     assert "c.slug !== 'drug-memorization'" in js
     assert "? '40' : '20'" in picker
