@@ -3,9 +3,9 @@
 **Status date:** 2026-11-12 (America/New_York)
 **Scope:** Preserve the 540 original + supplemental questions. Add 10 Moderate and 10 Hard independently written application questions to each of 27 chapters (540 new items; goal 1,080).
 
-**Published main-branch baseline:** 540 questions (270 original + 270 supplemental).
-**Branch count after the changes in this PR:** 840 (baseline 540 plus 300 draft source-reviewed difficulty items).
-**Remaining:** 240 new items, across 12 chapters.
+**Original source baseline:** 540 questions (270 original + 270 supplemental).
+**Branch count for this batch:** 900 (baseline 540 plus 360 new source-reviewed difficulty items).
+**Remaining:** 180 new items, across 9 chapters.
 **Legal review status:** Each newly authored question includes a citation to a primary federal or Massachusetts source and has been checked for one intended answer and four individual rationales. This is a preliminary source-based author review, **not** a completed independent auditor's approval. Source pages and law can change; verify their effective dates before release. Main question-bank canonical audit gates are not bypassed or represented as complete.
 
 | Chapter | Topic | Moderate | Hard | Authored date | Independent legal audit |
@@ -29,9 +29,9 @@
 | 17 | [DEA Ordering & Inventory](../site/mpje-side-notes/ordering-inventory/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 18 | [Security, Loss, Disposal](../site/mpje-side-notes/security-loss-disposal/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 19 | [Storage & Shipping](../site/mpje-side-notes/storage-shipping/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
-| 20 | [Shared Services & Automation](../site/mpje-side-notes/shared-automation/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 21 | [Nonsterile Compounding](../site/mpje-side-notes/nonsterile-compounding/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 22 | [Sterile Compounding](../site/mpje-side-notes/sterile-compounding/index.html) | 0/10 | 0/10 | Pending | Pending |
+| 20 | [Shared Services & Automation](../site/mpje-side-notes/shared-automation/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 21 | [Nonsterile Compounding](../site/mpje-side-notes/nonsterile-compounding/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 22 | [Sterile Compounding](../site/mpje-side-notes/sterile-compounding/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 23 | [Hazardous Drugs, 503B, Nuclear](../site/mpje-side-notes/hd-outsourcing-nuclear/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 24 | [FDA & Drug Supply Chain](../site/mpje-side-notes/fda-supply-chain/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 25 | [Reporting Deadlines & Records](../site/mpje-side-notes/numbers-records/index.html) | 0/10 | 0/10 | Pending | Pending |
@@ -44,7 +44,7 @@
 - All new items require four distinct options, a single best answer, four option-specific explanations, and a specific official source URL; cite controlling section.
 - Moderate: preferably two legal determinations or an exception. Hard: interacting federal and Massachusetts requirements, multiple clocks, competing responsibilities, or nuanced exceptions.
 - Before a release claim: verify question and answer against controlling law, any active Board policy, effective dates; check A–D distribution, duplication, difficulty, and usability. Original guide content and canonical question bank remain untouched.
-- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 240 remaining items are unfinished.
+- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 180 remaining items are unfinished.
 
 ## This branch's new question assets
 
@@ -63,6 +63,9 @@
 - `site/mpje-side-notes/difficulty-reviewed-17.js`: DEA ordering and inventory (20).
 - `site/mpje-side-notes/difficulty-reviewed-18.js`: Security, theft, loss, and disposal (20).
 - `site/mpje-side-notes/difficulty-reviewed-19.js`: Cold-chain storage and medication delivery (20).
+- `site/mpje-side-notes/difficulty-reviewed-20.js`: Shared services and automation (20).
+- `site/mpje-side-notes/difficulty-reviewed-21.js`: USP <795> and nonsterile compounding (20).
+- `site/mpje-side-notes/difficulty-reviewed-22.js`: USP <797> and sterile compounding (20).
 - `site/mpje-side-notes/practice-review.js`: Difficulty-tier loading and score sections.
 - `site/mpje-side-notes/cumulative-practice/index.html`: UI for separate tiers and accurate count.
 - `site/mpje-side-notes/quiz.js`: Chapter labels and 27-chapter selector fix.
@@ -97,3 +100,11 @@
 - Official verification boundary: DEA 21 CFR 1305.05/.13/.22, 1304.11, 1307.11; MA 247 CMR 9.21, 9.22, 9.13, 9.19; DEA 1301.76 and Part 1317; MA Policy 2026-01, Policy 2020-05 and the 2025 Shipping Advisory; USPS Publication 52.
 - High-yield traps: paper Form 222 60 days from execution vs receipt, annual 5% dispenser stock distribution exemption vs dispensing, federal biennial inventories vs MA ten-day Schedule II reconciliations; separate federal one-business-day/45-day and MA seven-calendar-day theft/loss reporting; confirmed vs unconfirmed MA losses; and Board *advisory recommendations* for shipping distinct from binding cold-chain/dispensing law.
 - Count: 840 authored total, 300 new cases added, 240 remain across 12 chapters. The 300 new items have preliminary author/source and structural review, **not** independent end-to-end legal certification. Do not release as verified-canonical practice until required review gates are satisfied.
+
+## Chapters 20–22 batch (2026-11-12)
+
+- Added 60 original source-linked cases: Ch20 Shared Pharmacy Services/Automation, Ch21 Nonsterile Compounding, Ch22 Sterile Compounding; 10 Moderate and 10 Hard in each chapter.
+- **Ch20:** MA Policy 2021-02 (revised 2025), enacted 247 CMR 9.10–9.12, Policy 2023-08, and DEA central-fill requirements; distinguished APS customer pickup, PPA internal automation, ADD healthcare facility, and remote processing/telepharmacy.
+- **Ch21:** FDA 503A patient-specific/anticipatory conditions and bulk ingredient COA, MA Policy 2023-07 complex nonsterile requirements, USP <795> default BUD categories, and special 3-hour CE; clarifies local stock-out does not alone justify commercial copies.
+- **Ch22:** USP <797> immediate-use timing, category distinctions, 2025-01 rapid method controls, MA Policy 2026-03 action-level EM reporting, enhanced ISO 5 response, and draft-vs-enacted sources. 2026-03 policy is effective September 3, 2026 and requires one-business-day reporting from microbiology report receipt. 
+- **Progress:** 900 authored total, 360 new cases across Ch5–22; 180 remain (Ch1–4 and Ch23–27). As elsewhere, independent legal audit and real browser deployment verification must be tracked separately; code-level schema review is not legal signoff.
