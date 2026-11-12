@@ -1,4 +1,4 @@
-/* Chapter 9 initial moderate cases; hard tier appended in follow-up commit. */
+/* Hand-authored moderate and hard cases for Chapter 09. Source review: 2026-11-11; independent audit pending. */
 Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWED = {}), {
   "pmp-oud": {
     "moderate": [
@@ -181,6 +181,188 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         ],
         "citation": "21 CFR §1306.07(a)–(d)",
         "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.07"
+      }
+    ],
+    "hard": [
+      {
+        "question": "A hospital administers an opioid to an admitted inpatient under a medication order. At discharge, the hospital's outpatient pharmacy fills a separate Schedule II prescription for home use. How should these events be treated for MA PMP reporting?",
+        "choices": [
+          "Report the inpatient administration as an ordinary retail prescription",
+          "Ignore the outpatient dispensing because the hospital treated the patient earlier",
+          "Both inpatient medication orders and retail discharge fills are exempt",
+          "The inpatient medication order and outpatient dispensing are distinct; report the outpatient prescription dispensing as required"
+        ],
+        "answer": "D",
+        "explanations": [
+          "MA's inpatient medication-order exception is not equivalent to outpatient retail dispensing.",
+          "A discharge prescription is a separate reportable transaction.",
+          "Hospital location alone does not exempt its outpatient prescription dispensing.",
+          "Correct. §24A(b) and 105 CMR 700.012 distinguish inpatient medication orders from outpatient dispensing."
+        ],
+        "citation": "M.G.L. c.94C §24A(b)–(d); 105 CMR 700.012(A)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section24A"
+      },
+      {
+        "question": "A patient takes alprazolam and receives a new outpatient oxycodone prescription. The pharmacist says the prescriber's MassPAT query means no other legal duties remain at the pharmacy. Which response is best?",
+        "choices": [
+          "Only prescribers have responsibilities after consulting MassPAT",
+          "The prescriber's PMP query, the pharmacy's reporting of opioid dispensing, and the pharmacist's Schedule II opioid risk/antagonist offer are separate responsibilities",
+          "Marking 'MassPAT checked' automatically cancels the pharmacist's naloxone offer",
+          "Checking PMP authorizes two Schedule II refills"
+        ],
+        "answer": "B",
+        "explanations": [
+          "Both pharmacies and prescribers have distinct legal duties.",
+          "Correct. Query, reporting, and the pharmacist risk/antagonist offer should not be conflated.",
+          "The pharmacist's duty under §18D is independent of the prescriber's query.",
+          "Schedule II refills are prohibited regardless of a PMP query."
+        ],
+        "citation": "M.G.L. c.94C §18D(b)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18D"
+      },
+      {
+        "question": "An MA pharmacy fills three gabapentin prescriptions but no federally scheduled II–V prescriptions during the reporting period. The reporting software proposes a Zero Report. What is correct?",
+        "choices": [
+          "The gabapentin dispensings must be reported; a Zero Report is not appropriate because reportable Additional Drug activity occurred",
+          "Gabapentin must be reclassified as federal Schedule V before a report can be sent",
+          "No PMP report is required unless oxycodone was dispensed",
+          "A single fictitious Schedule II report can replace the three gabapentin reports"
+        ],
+        "answer": "A",
+        "explanations": [
+          "Correct. MA requires gabapentin submissions even though it is Schedule VI.",
+          "Massachusetts' additional-drug designation does not affect federal scheduling.",
+          "Opioids are not required for gabapentin to be reportable.",
+          "Reporting fictitious claims is not a lawful substitute."
+        ],
+        "citation": "MA DCP Pharmacy Reporting and Data Submission; Dispenser Guide v5.2",
+        "sourceUrl": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission"
+      },
+      {
+        "question": "A pharmacy sends Schedule II dispensing transactions to the MassPAT clearinghouse on time. The next week two entries are listed as rejected due to invalid required data. How should the pharmacy respond?",
+        "choices": [
+          "No action; uploading a file is the entire reporting requirement",
+          "Replace rejected items with a Zero Report",
+          "Correct the rejected records and resubmit them rather than treating an attempted upload as completed reporting",
+          "Ask the prescriber to classify the medication as OTC"
+        ],
+        "answer": "C",
+        "explanations": [
+          "An unsuccessful submission is not an accepted dispensing report.",
+          "A Zero Report is only appropriate when there are no reportable dispensings.",
+          "Correct. DCP guidance requires correction and resubmission of rejected reports.",
+          "Controlled-substance status cannot be changed to fix data submission errors."
+        ],
+        "citation": "MA DCP Pharmacy Reporting and Data Submission; Dispenser Guide v5.2",
+        "sourceUrl": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission"
+      },
+      {
+        "question": "A New Hampshire pharmacy is authorized to mail a patient's Schedule IV medication to the patient's Massachusetts home. Its manager claims Massachusetts PMP rules apply only to pharmacies physically in Massachusetts. What is correct?",
+        "choices": [
+          "Only the New Hampshire prescriber reports it, never the pharmacy",
+          "An MA delivery is reportable only if it is fentanyl",
+          "Reporting is the customer's responsibility",
+          "MA PMP reporting extends to qualifying out-of-state pharmacies delivering reportable controlled substances to Massachusetts recipients"
+        ],
+        "answer": "D",
+        "explanations": [
+          "Dispensers have an independent reporting duty.",
+          "MA reporting extends to Schedule II–V and certain additional drugs, not fentanyl alone.",
+          "The patient is not the required pharmacy reporter.",
+          "Correct. The DCP and 105 CMR 700.012 apply to covered out-of-state dispensers delivering into MA."
+        ],
+        "citation": "MA DCP Pharmacy Reporting and Data Submission; Dispenser Guide v5.2",
+        "sourceUrl": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission"
+      },
+      {
+        "question": "A Massachusetts pharmacy does not use the preferred daily PMP reporting method for naloxone dispensed under the statewide standing order. Which alternative is described by the Board's revised 2024-01 policy?",
+        "choices": [
+          "Email the annual report of the prior calendar year's dispensed naloxone doses and required metrics by January 15",
+          "Do not report naloxone because it is not a Schedule II drug",
+          "Report only naloxone kits given with oxycodone",
+          "Submit a monthly Schedule II methadone inventory instead"
+        ],
+        "answer": "A",
+        "explanations": [
+          "Correct. The Board policy specifies a January 15 annual report if daily PMP naloxone reporting is not used.",
+          "Naloxone has a separate reporting requirement.",
+          "Standalone naloxone dispensing is also within the required reporting scope.",
+          "An unrelated DEA controlled-drug inventory is not a substitute."
+        ],
+        "citation": "Board Policy 2024-01 (2025 revision), §II",
+        "sourceUrl": "https://www.mass.gov/doc/2024-01-naloxone-dispensing-pdf/download"
+      },
+      {
+        "question": "A physician writes an adult patient's first outpatient Schedule II opioid prescription for cancer pain, covering 14 days. The physician documents why treatment beyond seven days is necessary and why a non-opiate alternative is inappropriate. No other restriction applies. Which analysis is correct?",
+        "choices": [
+          "The first-outpatient seven-day statute has absolutely no exceptions",
+          "The documented cancer-pain exception may allow more than seven days, but all other prescription validity and Schedule II restrictions still apply",
+          "The exception creates two automatic refills",
+          "Using the drug for cancer pain reclassifies it as Schedule III"
+        ],
+        "answer": "B",
+        "explanations": [
+          "c.94C §19D(b) has an explicit exception for qualifying documented cancer pain.",
+          "Correct. The exception to the seven-day limitation does not waive other controlled-prescription rules.",
+          "Schedule II refills remain prohibited.",
+          "An indication does not change federal scheduling."
+        ],
+        "citation": "M.G.L. c.94C §19D(a)–(c)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D"
+      },
+      {
+        "question": "An emergency department practitioner who is not an opioid treatment program needs to bridge one patient's OUD treatment while arranging a referral. Which action is within federal §1306.07(b), assuming other law permits it?",
+        "choices": [
+          "Write an unlimited take-home methadone maintenance prescription",
+          "Start an indefinitely renewable outpatient methadone regimen",
+          "Directly dispense, rather than prescribe, up to a three-day emergency supply at one time without renewal or extension",
+          "Waive all other controlled-substance registration requirements"
+        ],
+        "answer": "C",
+        "explanations": [
+          "The emergency rule is for direct dispensing, not unrestricted maintenance prescribing.",
+          "The emergency treatment may not be renewed or extended.",
+          "Correct. The three-day rule permits a short direct-dispensing bridge to treatment referral.",
+          "Other state and federal requirements remain applicable."
+        ],
+        "citation": "21 CFR §1306.07(b)",
+        "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.07"
+      },
+      {
+        "question": "A pharmacist knows a patient has an active voluntary non-opiate directive and has not revoked it. The pharmacy receives a standard outpatient oxycodone prescription that conflicts with the directive. What is the key §18B legal issue?",
+        "choices": [
+          "An outpatient prescription always overrides a known directive",
+          "The pharmacy may erase the directive without obtaining valid revocation",
+          "The pharmacist may replace oxycodone with another prescribed drug without authorization",
+          "The usual outpatient-prescription presumption is not a safe harbor for knowingly dispensing contrary to an active directive"
+        ],
+        "answer": "D",
+        "explanations": [
+          "§18B(c) limits the presumption when the pharmacist knowingly acts contrary to the directive.",
+          "Revocation has its own process; a pharmacist may not arbitrarily erase the directive.",
+          "Drug substitution does not cure the conflict with no prescriber authorization.",
+          "Correct. The statute explicitly distinguishes knowing action against a directive."
+        ],
+        "citation": "M.G.L. c.94C §18B(c)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18B"
+      },
+      {
+        "question": "A Massachusetts pharmacy is closed on a holiday and dispenses no reportable medications. A technician assumes an automatic Zero Report waiver applies to every closed day. What should the manager check?",
+        "choices": [
+          "Whether another pharmacy can enter a fabricated transaction for that day",
+          "Whether the pharmacy has a waiver covering closed days; absent an applicable waiver, follow the DCP Zero Report requirement",
+          "Whether naloxone became federal Schedule V on the holiday",
+          "Whether the physician's office is also closed"
+        ],
+        "answer": "B",
+        "explanations": [
+          "Inventing transactions is not an acceptable reporting substitute.",
+          "Correct. The dispenser guide allows applying for a closed-day waiver; closure is not itself proof one exists.",
+          "Naloxone scheduling is unrelated to a waiver for zero reporting.",
+          "Prescriber office closure does not determine a pharmacy's reporting status."
+        ],
+        "citation": "MA DCP Pharmacy Reporting and Data Submission; Dispenser Guide v5.2",
+        "sourceUrl": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission"
       }
     ]
   }
