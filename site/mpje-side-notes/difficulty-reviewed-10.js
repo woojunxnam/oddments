@@ -1,4 +1,4 @@
-/* Hand-authored Chapter 10 Moderate items; Hard cases appended in next commit. */
+/* Chapter 10: hand-authored moderate and hard Massachusetts MPJE applications. Official source review 2026-11-11; independent legal audit pending. */
 Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWED = {}), {
   "label-interchange": {
     "moderate": [
@@ -181,6 +181,188 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         ],
         "citation": "M.G.L. c.112 §12EE(b)–(f)",
         "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE"
+      }
+    ],
+    "hard": [
+      {
+        "question": "A Massachusetts pharmacy receives a brand-name prescription with a valid 'no substitution' instruction. The product is out of stock, the patient needs immediate treatment in a documented medical emergency, and a less expensive MLID-listed equivalent is available. What must be true for the special interchange pathway?",
+        "choices": [
+          "The prescriber is unavailable, so the pharmacist may dispense without documenting anything",
+          "The emergency allows interchanging even when the patient refuses",
+          "The pharmacy may add a refill and supply the generic automatically",
+          "The pharmacist may use the specified emergency interchange exception only with required date/time/nature documentation and the purchaser's written acceptance"
+        ],
+        "answer": "D",
+        "explanations": [
+          "247 CMR 9.05(1) requires specific medical-emergency documentation.",
+          "The person purchasing must indicate acceptance in writing.",
+          "The exception is not authority to add refills.",
+          "Correct. The narrowly allowed emergency deviation is conditional on documentation and written purchaser acceptance."
+        ],
+        "citation": "247 CMR 9.05(1)–(3)",
+        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+      },
+      {
+        "question": "A prescriber writes an otherwise valid prescription using only the generic drug name and does not specify a manufacturer, but marks 'no substitution.' The MA pharmacist must choose among legitimately marketed versions of that generic. Which rule specifically applies?",
+        "choices": [
+          "The pharmacist may dispense only the oldest brand-name product",
+          "247 CMR 9.05(2) permits selecting a legally marketed product consistent with the prescriber's intent, even if the generic prescription is marked 'no substitution'",
+          "The pharmacist must deny any generic prescription marked 'no substitution'",
+          "The drug automatically becomes a biologic because no manufacturer was selected"
+        ],
+        "answer": "B",
+        "explanations": [
+          "The physician wrote the generic without identifying a particular brand product.",
+          "Correct. The Massachusetts generic-name rule permits professional selection without a named manufacturer, regardless of the no-substitution mark.",
+          "The regulation expressly addresses this form of prescription.",
+          "Manufacturer selection does not determine biologic status."
+        ],
+        "citation": "247 CMR 9.05(1)–(3)",
+        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+      },
+      {
+        "question": "An FDA Orange Book entry shows that one product has both AB1 and AB2 ratings for the same strength. Another product carries only AB2. A technician says the first product's AB1 code makes any substitution with the second impossible. Which conclusion is most accurate?",
+        "choices": [
+          "The shared AB2 code can establish therapeutic equivalence between these specific products; products with multiple codes should not be treated as belonging to only one group",
+          "Only identical brand names can ever be therapeutically equivalent",
+          "FDA assigns all AB codes according to the prescriber's DEA license",
+          "An AB1 code cancels every other code assigned to that product"
+        ],
+        "answer": "A",
+        "explanations": [
+          "Correct. FDA explains that some products have multiple AB ratings and a shared code can establish TE within that group.",
+          "Trade names are not the defining TE criterion.",
+          "TE codes are drug product evaluations, not prescriber registration data.",
+          "Having AB1 does not erase a valid AB2 rating."
+        ],
+        "citation": "FDA Orange Book Preface §1.7 (multiple TE codes)",
+        "sourceUrl": "https://www.fda.gov/drugs/development-approval-process-drugs/orange-book-preface"
+      },
+      {
+        "question": "A new generic enters the Massachusetts interchangeable-drug list after an older brand prescription was written. The effective interchange date has passed; the next refill is due and the original prescriber has not issued 'no substitution.' Which statement best follows the DPH midstream policy?",
+        "choices": [
+          "The pharmacist must always wait exactly 90 days after the list posting before switching",
+          "The old prescription can never undergo interchange during an authorized refill",
+          "The applicable interchange requirement may apply at the refill; the pharmacist uses judgment about notifying patient/prescriber and a new valid no-substitution order can prevent interchange",
+          "The patient must be informed by the pharmacy's DEA registration number rather than about the actual product"
+        ],
+        "answer": "C",
+        "explanations": [
+          "The policy provides an outer 90-day implementation window, not a mandatory waiting period.",
+          "Midstream interchange can occur on a refill of an earlier prescription.",
+          "Correct. DPH describes when substitution becomes effective and professional judgment on communication.",
+          "DEA registration numbers do not replace patient-specific interchange communication."
+        ],
+        "citation": "MA DPH Policy on Drug Interchangeability and Midstream Interchange",
+        "sourceUrl": "https://www.mass.gov/info-details/policy-on-drug-interchangeability-and-midstream-interchange"
+      },
+      {
+        "question": "An MA pharmacist has confirmed that a proposed biosimilar is FDA-designated as interchangeable with the brand biologic. The prescriber has separately entered a written, patient-specific instruction not to substitute that biologic. What action is correct?",
+        "choices": [
+          "The FDA designation cancels any patient-specific instruction",
+          "The pharmacist may replace the product as long as the patient pays less",
+          "Adding the interchangeable product to a prior authorization makes substitution mandatory",
+          "Do not substitute under the usual §12EE pathway because the patient-specific written prescriber prohibition remains effective"
+        ],
+        "answer": "D",
+        "explanations": [
+          "MA law expressly gives effect to the prescriber's written instruction.",
+          "Price does not override the patient's specific prohibition.",
+          "Coverage authorization does not negate statutory substitution restrictions.",
+          "Correct. §12EE(c) prohibits substitution after a patient-specific written contrary instruction."
+        ],
+        "citation": "M.G.L. c.112 §12EE(c)–(f)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE"
+      },
+      {
+        "question": "An MA pharmacist lawfully dispenses an FDA-interchangeable biologic in place of the prescribed brand. The pharmacy cannot update the patient's interoperable EHR, and the prescriber asks when it will learn about the switch. Which workflow satisfies the state rule?",
+        "choices": [
+          "No prescriber notification is required whenever FDA has designated interchangeability",
+          "Notify the prescriber within a reasonable time through the permitted fax/electronic or accessible pharmacy-record route, provide the patient's written notice, and retain the required substitution record",
+          "Send a message only to the insurer and destroy the substitution record after one week",
+          "Notify the prescriber verbally and withhold the patient's written notification"
+        ],
+        "answer": "B",
+        "explanations": [
+          "The state law requires notifying the practitioner after such substitution.",
+          "Correct. §12EE provides alternatives where interoperable EHR notation is unavailable and also requires written patient notice and record retention.",
+          "Insurer contact does not replace statutory notification and retention.",
+          "Oral prescriber contact alone does not replace the required patient written notice."
+        ],
+        "citation": "M.G.L. c.112 §12EE(c)–(f)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE"
+      },
+      {
+        "question": "A Massachusetts insured patient purchases a drug with an $82 insurance cost-sharing amount and a $34 pharmacy retail cash price. The pharmacy benefit manager's contract discourages low-cost cash transactions. Which amount must the pharmacy charge under c.94C §21C?",
+        "choices": [
+          "The lesser $34, and a PBM contract cannot prohibit the pharmacy from complying with the statute",
+          "$82 because the patient's plan determines the legally required charge",
+          "$116 because both charges must be collected",
+          "The pharmacy may refuse to disclose the retail amount and charge any fee"
+        ],
+        "answer": "A",
+        "explanations": [
+          "Correct. §21C sets the lesser-of rule and prevents PBM contracts from blocking compliance.",
+          "The statute explicitly compares cost sharing against retail price.",
+          "Combining amounts violates the lesser-of requirement.",
+          "Arbitrary higher charges are inconsistent with the statute."
+        ],
+        "citation": "M.G.L. c.94C §21C(b)–(d)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21C"
+      },
+      {
+        "question": "A patient enrolled in MassHealth receives a prescribed narrow-therapeutic-index immunosuppressant for a kidney transplant. The pharmacist lawfully interchanges to another qualifying NTI transplant immunosuppressant. Which extra Massachusetts step should be considered?",
+        "choices": [
+          "No additional action applies because both products are FDA-approved",
+          "All biologic substitution notification requirements replace the transplant rule",
+          "Notify the prescribing physician about this particular transplant-immunosuppressant substitution as required by c.112 §12D",
+          "Assume the patient can stop drug-concentration monitoring after the interchange"
+        ],
+        "answer": "C",
+        "explanations": [
+          "c.112 §12D contains a special notice obligation for this defined MassHealth circumstance.",
+          "The §12D transplant notification duty is independently relevant.",
+          "Correct. The statute specifies prescriber notification for these MassHealth transplant NTI immunosuppressant substitutions.",
+          "Interchangeability does not eliminate clinically necessary monitoring."
+        ],
+        "citation": "M.G.L. c.112 §12D, MassHealth transplant NTI immunosuppressants",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12D"
+      },
+      {
+        "question": "A pharmacist lawfully interchanges an eligible less-expensive generic product for a brand-name outpatient prescription at an MA drug-store pharmacy. The dispensing label gives the original brand name but not the actual generic manufacturer or an interchange notation. What should be done?",
+        "choices": [
+          "No correction: the prescriber's brand name is always the only required name",
+          "Replace the directions with 'generic product' and omit the prescribed dose",
+          "Use only the NDC number because Massachusetts bans manufacturer names on labels",
+          "Apply the 247 CMR 9.05(3) interchange label convention identifying the generic product and manufacturer actually dispensed, while retaining required prescription-label elements"
+        ],
+        "answer": "D",
+        "explanations": [
+          "The legal requirement is to identify the actual substituted product, not merely the written brand.",
+          "Directions remain required under c.94C §21.",
+          "MA's interchange labeling explicitly contemplates manufacturer identification.",
+          "Correct. The actual generic and manufacturer belong on the interchange label."
+        ],
+        "citation": "247 CMR 9.05(1)–(3)",
+        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+      },
+      {
+        "question": "A veterinarian lawfully issues a controlled prescription for an animal. The MA pharmacy's technician argues that §21 requires the same human patient-name field used on other controlled-substance labels, or dispensing is forbidden. Which statement is correct?",
+        "choices": [
+          "Every veterinary prescription must include the animal owner's name as a human patient and omit the drug name",
+          "c.94C §21 exempts veterinary prescriptions from its human patient-name label element, while other required labeling information still matters",
+          "Veterinary controlled-substance packages need no dispensing date or directions",
+          "A veterinarian can sign only prescriptions for Schedule VI products"
+        ],
+        "answer": "B",
+        "explanations": [
+          "The statute's exception concerns the patient-name element; it does not remove every other label duty.",
+          "Correct. §21 says the patient-name requirement does not apply to veterinary prescriptions.",
+          "Date, pharmacy information, medication, directions and applicable warnings still matter.",
+          "Qualified veterinarians have broader prescribing authority subject to state and federal law."
+        ],
+        "citation": "M.G.L. c.94C §21 (labeling required elements)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21"
       }
     ]
   }
