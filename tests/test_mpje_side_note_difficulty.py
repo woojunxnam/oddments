@@ -25,6 +25,9 @@ ASSETS = {
     "counseling-dur": "difficulty-reviewed-11.js",
     "rems": "difficulty-reviewed-12.js",
     "privacy": "difficulty-reviewed-13.js",
+    "vaccination-administration": "difficulty-reviewed-14.js",
+    "cdtm": "difficulty-reviewed-15.js",
+    "prescribing-public-health": "difficulty-reviewed-16.js",
 }
 
 
@@ -54,12 +57,12 @@ def test_expanded_chapters_have_20_new_items_each() -> None:
                 assert q["sourceUrl"].split("/")[2] in {
                     "www.ecfr.gov", "malegislature.gov", "www.mass.gov",
                     "www.fda.gov", "www.accessdata.fda.gov", "www.hhs.gov",
-                    "www.deadiversion.usdoj.gov"
+                    "www.deadiversion.usdoj.gov", "www.cdc.gov", "www.govinfo.gov"
                 }
                 stem = re.sub(r"\W+", "", q["question"].lower())
                 assert stem not in seen_questions, (slug, tier, q["question"])
                 seen_questions.add(stem)
-    assert len(seen_questions) == 180
+    assert len(seen_questions) == 240
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is not installed")
@@ -81,8 +84,8 @@ def test_cumulative_page_loads_tiers_before_renderer() -> None:
         assert chapter in js
     for section in ["review-original", "review-extra", "review-moderate", "review-hard"]:
         assert f'id="{section}"' in page
-    assert "720 practice questions" in page
-    assert "360" in page
+    assert "780 practice questions" in page
+    assert "300" in page
     assert "moderateCases.length + hardCases.length" in js
     assert "c.slug !== 'drug-memorization'" in js
     assert "? '40' : '20'" in picker
