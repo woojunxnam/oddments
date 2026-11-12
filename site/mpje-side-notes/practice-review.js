@@ -163,7 +163,7 @@
     ));
   }
 
-  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records']);
+  const difficultyChapters = new Set(['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records', 'drug-directory', 'open-register']);
   function difficultyQuestions(slug, level) {
     const set = window.MPJE_DIFFICULTY_REVIEWED?.[slug]?.[level];
     if (!set) return [];
