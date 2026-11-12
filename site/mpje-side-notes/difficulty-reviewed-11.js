@@ -1,23 +1,23 @@
-/* Original Massachusetts MPJE Chapter 11 moderate/hard counseling and DUR scenarios. Author/source review 2026-11-11; independent audit pending. */
+/* New Massachusetts MPJE counseling-dur moderate/hard practice, 2026-11-11; independent legal audit pending. */
 Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWED = {}), {
   "counseling-dur": {
     "moderate": [
       {
-        "question": "A Massachusetts pharmacy technician offers a patient an opportunity to speak with the pharmacist about a newly prescribed inhaler. The patient accepts and asks how to prime it. What should the technician do?",
+        "question": "An MA pharmacy lets an untrained cashier offer pharmacist counseling, then assigns a certified technician to explain the medication if the patient accepts. A licensed pharmacist and intern are available. Which workflow change is required?",
         "choices": [
-          "Demonstrate the entire inhaler technique independently because the offer was made by the technician",
-          "Refer the accepted counseling request to a pharmacist or pharmacy intern, who may provide the technique instruction",
-          "Ask a cashier to give clinical advice because any employee may counsel if an offer was made",
-          "Explain only common side effects and leave the remaining counseling to the patient's internet search"
+          "Let the cashier and technician continue because a pharmacist is in the building",
+          "Train the counseling-offer designee and ensure actual patient counseling is given by the pharmacist or pharmacy intern",
+          "Remove the offer entirely whenever the patient has filled the drug before",
+          "Permit the technician to counsel independently after a manager signs a waiver"
         ],
         "answer": "B",
         "explanations": [
-          "A trained designee may make the offer, but a technician may not conduct patient counseling.",
-          "Correct. 247 CMR 9.18(1)–(4) separates the offer by a trained designee from counseling by a pharmacist or intern.",
-          "Nonlicensed employees may not provide professional pharmacy counseling.",
-          "Counseling content, including administration technique, is a pharmacist/intern responsibility."
+          "Being supervised does not remove the requirement to train the designee or use an authorized counselor.",
+          "Correct. 247 CMR 9.18 permits a properly trained designee to offer counseling; the pharmacist or pharmacy intern must actually provide it.",
+          "An offer remains required to each recipient of prescription medication under 247 CMR 9.18(1).",
+          "Employer permission cannot extend a technician's professional counseling scope."
         ],
-        "citation": "247 CMR 9.18(1)–(10) — Patient Counseling",
+        "citation": "247 CMR 9.18(1)–(4) — Offer and provision of counseling",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       },
       {
