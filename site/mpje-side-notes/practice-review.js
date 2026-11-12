@@ -7,13 +7,15 @@
   const chapterTitle = document.getElementById('review-chapter-title');
   const original = document.getElementById('review-original');
   const extra = document.getElementById('review-extra');
+  const moderate = document.getElementById('review-moderate');
+  const hard = document.getElementById('review-hard');
   const prev = document.getElementById('review-prev');
   const next = document.getElementById('review-next');
   const guide = document.getElementById('review-source');
-  const chapters = (window.MPJE_CHAPTERS || []).filter(c => c.slug !== 'cumulative-practice');
+  const chapters = (window.MPJE_CHAPTERS || []).filter(c => c.slug !== 'cumulative-practice' && c.slug !== 'drug-memorization');
   let request = 0;
 
-  if (!chapters.length || !select || !original || !extra) {
+  if (!chapters.length || !select || !original || !extra || !moderate || !hard) {
     if (status) status.textContent = 'The practice chapter list could not load. Open the individual guides.';
     return;
   }
@@ -128,7 +130,7 @@
     anchor.textContent = 'Read the original study guide and legal references';
     attribution.append(anchor);
     if (citation && sourceUrl) {
-      const separator = document.createTextNode(' · Verified legal basis: ');
+      const separator = document.createTextNode(' · Legal reference: ');
       const official = document.createElement('a');
       official.href = sourceUrl;
       official.target = '_blank';
@@ -161,6 +163,22 @@
     ));
   }
 
+  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping']);
+  function difficultyQuestions(slug, level) {
+    const set = window.MPJE_DIFFICULTY_REVIEWED?.[slug]?.[level];
+    if (!set) return [];
+    if (!Array.isArray(set) || set.length !== 10) throw new Error('Expected 10 ' + level + ' questions for ' + slug);
+    return set.map((q, i) => {
+      if (!q.question || !Array.isArray(q.choices) || q.choices.length !== 4 ||
+          !Array.isArray(q.explanations) || q.explanations.length !== 4 ||
+          !letters.includes(q.answer) || !q.citation || !/^https:\/\//.test(q.sourceUrl || '')) {
+        throw new Error('Invalid ' + level + ' question ' + (i + 1) + ' for ' + slug);
+      }
+      return makeDetails(level[0].toUpperCase() + level.slice(1) + ' question ' + (i + 1) + '. ' + q.question,
+        q.choices, q.answer, q.explanations, slug, i, q.citation, q.sourceUrl);
+    });
+  }
+
   function sectionTitle(el, name, description) {
     el.replaceChildren();
     const title = document.createElement('h2');
@@ -185,6 +203,8 @@
     status.textContent = 'Loading source questions for Chapter ' + (index + 1) + '…';
     original.hidden = true;
     extra.hidden = true;
+    moderate.hidden = true;
+    hard.hidden = true;
     chapterTitle.textContent = 'Chapter ' + (index + 1) + ': ' + chapters[index].title;
     guide.href = '../' + slug + '/';
     try {
@@ -199,6 +219,11 @@
         parseAnswer(q);
       });
       const additional = supplementalQuestions(slug);
+      const moderateCases = difficultyQuestions(slug, 'moderate');
+      const hardCases = difficultyQuestions(slug, 'hard');
+      if (difficultyChapters.has(slug) && (moderateCases.length !== 10 || hardCases.length !== 10)) {
+        throw new Error('Difficulty expansion is incomplete for ' + slug);
+      }
       sectionTitle(original, '10 original chapter questions', 'These questions and answer keys are inherited from the existing study guide; this consolidation did not independently certify their legal accuracy.');
       sourceQs.forEach(q => original.append(document.importNode(q, true)));
       sectionTitle(extra, '10 supplemental ' + (slug === 'nonsterile-compounding' ? 'nonsterile-compounding' : 'reviewed') + ' cases',
@@ -206,13 +231,24 @@
           ? 'Separately authored applications of the linked chapter. An independent end-to-end legal audit is still needed.'
           : 'Individually authored pharmacist-decision scenarios; each has a specific official-source citation and explanations for every answer choice. Reviewed November 10, 2026.');
       additional.forEach(q => extra.append(q));
+      sectionTitle(moderate, '10 Moderate application questions',
+        'Apply two connected rules or realistic exceptions. Source-reviewed November 11, 2026; independent legal audit remains pending.');
+      moderateCases.forEach(q => moderate.append(q));
+      sectionTitle(hard, '10 Hard multi-rule questions',
+        'Work through interacting federal and Massachusetts rules, exceptions, and deadlines. Source-reviewed November 11, 2026; independent legal audit remains pending.');
+      hardCases.forEach(q => hard.append(q));
       original.hidden = false;
       extra.hidden = additional.length === 0;
+      moderate.hidden = moderateCases.length === 0;
+      hard.hidden = hardCases.length === 0;
       window.MPJE_ENHANCE_QUIZZES?.();
-      const count = sourceQs.length + additional.length;
+      const count = sourceQs.length + additional.length + moderateCases.length + hardCases.length;
       status.textContent = count + ' questions available for Chapter ' + (index + 1) + ': 10 original'
-        + (additional.length ? ' + 10 supplemental cases.' : '. Supplemental scenarios for this topic are not yet published; synthetic drills remain withdrawn.')
-        + ' Chapter ' + (index + 1) + ' of ' + chapters.length + '.';
+        + (additional.length ? ' + ' + additional.length + ' supplemental' : '')
+        + (moderateCases.length ? ' + ' + moderateCases.length + ' moderate' : '')
+        + (hardCases.length ? ' + ' + hardCases.length + ' hard' : '')
+        + '. Chapter ' + (index + 1) + ' of ' + chapters.length + '.'
+        + (count === 20 ? ' Additional difficulty sets for this topic are not yet published.' : '');
       history.replaceState(null, '', '?chapter=' + encodeURIComponent(slug));
     } catch (err) {
       if (key !== request) return;
