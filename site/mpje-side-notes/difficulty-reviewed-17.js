@@ -289,7 +289,7 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
           "A closure triggers, not eliminates, relevant transfer and inventory obligations.",
           "Correct. Federal Schedule II stock orders and MA facility stock accounting both remain relevant; the specific lawful closure pathway must be verified."
         ],
-        "citation": "247 CMR 6.10: Change of manager of record and inventory",
+        "citation": "247 CMR 6.14: Closure/ownership stock transfer; 21 CFR Part 1305 for Schedule II orders",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download"
       },
       {
