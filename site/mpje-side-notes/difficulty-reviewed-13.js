@@ -1,23 +1,23 @@
-/* Original Massachusetts MPJE Chapter 13 Privacy and Part 2 moderate/hard scenarios. Source/author review 2026-11-11; independent legal audit pending. */
+/* New Massachusetts MPJE privacy moderate/hard practice, 2026-11-11; independent legal audit pending. */
 Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWED = {}), {
   "privacy": {
     "moderate": [
       {
-        "question": "A pharmacy staff member opens a celebrity's medication history out of curiosity. The staff member neither prints nor tells anyone what was viewed. Which HIPAA conclusion is correct?",
+        "question": "A patient posts a negative public review of a pharmacy and openly mentions taking a prescription medicine. The pharmacy manager plans a public reply listing the patient's other prescriptions to justify the pharmacy's actions. What is the HIPAA issue?",
         "choices": [
-          "Access is acceptable as long as nothing is disclosed outside the pharmacy",
-          "Curiosity access is a payment operation because the employee works at the pharmacy",
-          "The employee may continue as long as the patient is famous",
-          "Access to PHI without a legitimate work-related purpose is not authorized merely because it remains undisclosed"
+          "The patient's public post automatically authorizes any pharmacy reply containing PHI",
+          "PHI may always be revealed to defend a business's online reputation",
+          "Only an employee's printed paper records are protected, not social media messages",
+          "The patient's own public statement does not authorize the pharmacy to disclose additional protected prescription information in its public response"
         ],
         "answer": "D",
         "explanations": [
-          "Unauthorized use of PHI can violate privacy safeguards even without external disclosure.",
-          "Payment operations do not cover unrelated employee curiosity.",
-          "Public notoriety does not waive HIPAA protections.",
-          "Correct. Internal use/access to PHI must be tied to a permitted purpose and workforce authorization."
+          "A patient's public statement does not itself grant a covered pharmacy permission to disclose other PHI.",
+          "Marketing or reputation management is not an unrestricted HIPAA disclosure exception.",
+          "An unauthorized electronic disclosure can implicate HIPAA even when no paper record is involved.",
+          "Correct. The pharmacy needs a proper HIPAA basis for its own disclosure; a public review is not blanket patient authorization."
         ],
-        "citation": "HHS HIPAA Privacy Rule — Uses and Disclosures / TPO",
+        "citation": "HHS HIPAA Privacy Rule — Permitted Uses and Disclosures",
         "sourceUrl": "https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html"
       },
       {
