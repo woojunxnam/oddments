@@ -46,7 +46,7 @@ permissions:
 jobs:
   revision:
     if: github.event_name != 'workflow_run'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Retained-source checks alone exceeded 20 minutes; retain every gate and step.
     timeout-minutes: 300
     steps:
@@ -88,7 +88,7 @@ jobs:
           retention-days: 14
   production:
     if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
