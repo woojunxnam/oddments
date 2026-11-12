@@ -163,7 +163,7 @@
     ));
   }
 
-  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health']);
+  const difficultyChapters = new Set(['prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping']);
   function difficultyQuestions(slug, level) {
     const set = window.MPJE_DIFFICULTY_REVIEWED?.[slug]?.[level];
     if (!set) return [];
