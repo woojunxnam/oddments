@@ -147,21 +147,21 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       },
       {
-        "question": "A pharmacy uses remote prescription processing at an outside office. It plans to let the remote technician perform the final physical product verification and release medication without any pharmacist review. What is the main problem?",
+        "question": "A Massachusetts pharmacy uses telepharmacy video technology to verify final patient-specific products remotely. The owner proposes removing the only pharmacist physically on duty at the dispensing pharmacy. Which requirement applies?",
         "choices": [
-          "Data entry cannot be performed electronically under any circumstances",
-          "A shared prescription database eliminates every pharmacist responsibility",
-          "All prescriptions become invalid if processing occurs outside the building",
-          "Remote processing under the MA model excludes final product verification and dispensing responsibility"
+          "Remote high-resolution verification automatically eliminates every on-site pharmacist requirement",
+          "Policy 2021-02 still requires at least one licensed pharmacist on the premises of the Board-licensed pharmacy that dispenses the final product",
+          "A trained technician can replace the on-site pharmacist when a video camera is present",
+          "An automated pickup locker grants a general exemption from telepharmacy supervision"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
-          "Remote licensed data processing can be permitted under certain conditions.",
-          "Shared technology does not waive professional pharmacist responsibilities.",
-          "Remote location does not automatically void a legally verified prescription.",
-          "Correct. Policy 2021-02 §V expressly separates remote processing from final product verification and dispensing."
+          "Remote verification is authorized for certain functions but does not waive an on-site pharmacist.",
+          "Correct. Policy 2021-02 §VI(b)(ii) expressly requires one pharmacist on the dispensing pharmacy premises.",
+          "Technician participation cannot eliminate this particular pharmacist presence requirement.",
+          "APS permissions are distinct from telepharmacy staffing obligations."
         ],
-        "citation": "MA Board Policy 2021-02 (revised 2025), §§V–VI — Remote Processing and Telepharmacy",
+        "citation": "MA Board Policy 2021-02 (revised 2025), §VI — Telepharmacy",
         "sourceUrl": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download"
       },
       {
@@ -221,22 +221,22 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "sourceUrl": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download"
       },
       {
-        "question": "An MA pharmacy uses a robot that combines three lots of the same oral tablet into one storage cell. The next month the FDA recalls one lot and the robot cannot distinguish which patient's packages included it. What is the safest legally required response?",
+        "question": "A Massachusetts-licensed central-fill retail pharmacy offers to prepare a patient-specific compounded sterile IV bag for another retail pharmacy, then send it back for patient dispensing. Both parties have an agreement and use a secure database. What is the remaining Massachusetts restriction?",
         "choices": [
-          "Discard only the known original manufacturer's bottle, leaving other commingled product for sale",
-          "Invoke the 247 CMR 9.11 commingled-lot policy to quarantine all lots in the affected cell and investigate dispensing/recall traceability",
-          "Keep dispensing because robotics is presumed error-free",
-          "Label all affected packages with a fictitious new lot number"
+          "Shared-service contracts automatically authorize all sterile and complex nonsterile compounding",
+          "Only a physician's signature is needed because sterility is a clinical issue",
+          "The central filling of compounded sterile preparations or complex nonsterile preparations for Massachusetts dispensing is prohibited under Board Policy 2021-02",
+          "Being a nonresident central-fill pharmacy removes the prohibition"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
-          "Quarantining only the source bottle cannot identify mixed material.",
-          "Correct. 247 CMR 9.11(1)(b) requires policies to quarantine all commingled lots when one is recalled.",
-          "Technical automation does not exempt recall compliance.",
-          "Inventing traceability data is not permissible."
+          "An agreement does not override the explicit compounding restriction.",
+          "Patient orders are necessary but not enough to permit prohibited central-fill compounding.",
+          "Correct. Policy 2021-02 §IV(b)(v) explicitly prohibits this central-fill compounding pathway.",
+          "The restriction includes preparations dispensed into, within or from Massachusetts."
         ],
-        "citation": "247 CMR 9.11(1)–(2) — Pharmacy Processing Automation",
-        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+        "citation": "MA Board Policy 2021-02 (revised 2025), §IV(b)(v) — Central Fill Compounding",
+        "sourceUrl": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download"
       },
       {
         "question": "A licensed certified technician is authorized under the relevant MA ADD policy to load certain unverified, non-patient-specific Schedule VI stock with electronic validation. The drug is gabapentin, which is specifically PMP-reportable. What should the pharmacy conclude?",
@@ -311,22 +311,22 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
       },
       {
-        "question": "An MA pharmacy plans to dispense Schedule V and VI prescriptions through a pickup locker. The locker is correctly anchored in the same building and video-monitored. The pharmacy claims it can make locker use mandatory for every patient because the physical safeguards are compliant. What is wrong?",
+        "question": "An MA central-fill pharmacy prepares an ordinary Schedule VI lisinopril prescription and a separate Schedule VI gabapentin prescription for patients at the originating pharmacy. It plans to ship both directly to the patients. What is the state-law distinction?",
         "choices": [
-          "No patient choice requirement applies once the unit is physically secured",
-          "Only Schedule IV drugs may be dispensed through any APS",
-          "An APS cannot be operated during usual pharmacy hours",
-          "247 CMR 9.10 requires the pharmacy to let the patient choose whether to use an APS, separately from its security conditions"
+          "Both are eligible for direct shipment whenever the originating pharmacy signed an agreement",
+          "Neither may ever be shipped by any pharmacy because they are Schedule VI",
+          "Only the gabapentin may be shipped directly because it has additional PMP reporting",
+          "Non-PMP-reportable Schedule VI may be shipped directly under the policy, but PMP-reportable drugs such as gabapentin are excluded from that direct-to-patient central-fill option"
         ],
         "answer": "D",
         "explanations": [
-          "Physical controls and patient choice are independent elements.",
-          "The allowed schedules include IV–VI.",
-          "The rule allows use during and after pharmacy hours with proper controls.",
-          "Correct. §9.10(1)(h) expressly requires patient choice about APS use."
+          "The Board policy makes a specific exception for PMP-reportable Schedule VI.",
+          "Schedule VI non-PMP-reportable central-fill medicines may be directly shipped under specified conditions.",
+          "Gabapentin is specifically excluded from this exception.",
+          "Correct. Policy 2021-02 §IV(b)(iv) distinguishes reportable Schedule VI drugs from other Schedule VI central-fill shipments."
         ],
-        "citation": "247 CMR 9.10(1)–(2) — Automated Pharmacy Systems",
-        "sourceUrl": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download"
+        "citation": "MA Board Policy 2021-02 (revised 2025), §IV(b)(iv) — Direct Shipment Exception",
+        "sourceUrl": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download"
       },
       {
         "question": "Two pharmacy corporations with a written shared-services contract wish to host a pharmacy data-processing team in Canada. They will use encryption and US-licensed pharmacists for review. What does the Massachusetts Board's shared-services policy require?",
