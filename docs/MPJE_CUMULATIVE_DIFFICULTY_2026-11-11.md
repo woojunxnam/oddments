@@ -4,8 +4,8 @@
 **Scope:** Preserve the 540 original + supplemental questions. Add 10 Moderate and 10 Hard independently written application questions to each of 27 chapters (540 new items; goal 1,080).
 
 **Published main-branch baseline:** 540 questions (270 original + 270 supplemental).
-**Branch count after the changes in this PR:** 780 (baseline 540 plus 240 draft source-reviewed difficulty items).
-**Remaining:** 300 new items, across 15 chapters.
+**Branch count after the changes in this PR:** 840 (baseline 540 plus 300 draft source-reviewed difficulty items).
+**Remaining:** 240 new items, across 12 chapters.
 **Legal review status:** Each newly authored question includes a citation to a primary federal or Massachusetts source and has been checked for one intended answer and four individual rationales. This is a preliminary source-based author review, **not** a completed independent auditor's approval. Source pages and law can change; verify their effective dates before release. Main question-bank canonical audit gates are not bypassed or represented as complete.
 
 | Chapter | Topic | Moderate | Hard | Authored date | Independent legal audit |
@@ -26,9 +26,9 @@
 | 14 | [Vaccination & Administration](../site/mpje-side-notes/vaccination-administration/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 15 | [CDTM](../site/mpje-side-notes/cdtm/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 16 | [Pharmacist Prescribing & Public Health](../site/mpje-side-notes/prescribing-public-health/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
-| 17 | [DEA Ordering & Inventory](../site/mpje-side-notes/ordering-inventory/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 18 | [Security, Loss, Disposal](../site/mpje-side-notes/security-loss-disposal/index.html) | 0/10 | 0/10 | Pending | Pending |
-| 19 | [Storage & Shipping](../site/mpje-side-notes/storage-shipping/index.html) | 0/10 | 0/10 | Pending | Pending |
+| 17 | [DEA Ordering & Inventory](../site/mpje-side-notes/ordering-inventory/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 18 | [Security, Loss, Disposal](../site/mpje-side-notes/security-loss-disposal/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
+| 19 | [Storage & Shipping](../site/mpje-side-notes/storage-shipping/index.html) | 10/10 | 10/10 | 2026-11-12 | Pending |
 | 20 | [Shared Services & Automation](../site/mpje-side-notes/shared-automation/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 21 | [Nonsterile Compounding](../site/mpje-side-notes/nonsterile-compounding/index.html) | 0/10 | 0/10 | Pending | Pending |
 | 22 | [Sterile Compounding](../site/mpje-side-notes/sterile-compounding/index.html) | 0/10 | 0/10 | Pending | Pending |
@@ -44,7 +44,7 @@
 - All new items require four distinct options, a single best answer, four option-specific explanations, and a specific official source URL; cite controlling section.
 - Moderate: preferably two legal determinations or an exception. Hard: interacting federal and Massachusetts requirements, multiple clocks, competing responsibilities, or nuanced exceptions.
 - Before a release claim: verify question and answer against controlling law, any active Board policy, effective dates; check A–D distribution, duplication, difficulty, and usability. Original guide content and canonical question bank remain untouched.
-- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 300 remaining items are unfinished.
+- The public Chapter 28 page must never advertise the 1,080 final target as already available while any of 240 remaining items are unfinished.
 
 ## This branch's new question assets
 
@@ -60,6 +60,9 @@
 - `site/mpje-side-notes/difficulty-reviewed-14.js`: Vaccine / MIIS / nonvaccine medication administration (20).
 - `site/mpje-side-notes/difficulty-reviewed-15.js`: CDTM qualifications / referrals / scope and deadlines (20).
 - `site/mpje-side-notes/difficulty-reviewed-16.js`: Pharmacist prescribing / public health (20).
+- `site/mpje-side-notes/difficulty-reviewed-17.js`: DEA ordering and inventory (20).
+- `site/mpje-side-notes/difficulty-reviewed-18.js`: Security, theft, loss, and disposal (20).
+- `site/mpje-side-notes/difficulty-reviewed-19.js`: Cold-chain storage and medication delivery (20).
 - `site/mpje-side-notes/practice-review.js`: Difficulty-tier loading and score sections.
 - `site/mpje-side-notes/cumulative-practice/index.html`: UI for separate tiers and accurate count.
 - `site/mpje-side-notes/quiz.js`: Chapter labels and 27-chapter selector fix.
@@ -87,3 +90,10 @@
 - Authorities: revised Board Vaccine Policy 2023-02 (2025), 105 CMR 222 (MIIS), DCP Circular 26-03-124 (2026), 247 CMR 16 and 243 CMR 2.12, DCP Circular 26-08-125 (Aug 2026), M.G.L. c.94C §19F (amended 2025), Board naloxone Policy 2024-01, EC §19A, ACCESS coverage and chlamydia EPT Policy 2020-08.
 - Key distinctions: state vaccine age 5 vs conditional PREP Act age 3; technician vaccine scope vs pharmacist/intern nonvaccine administration age 18 and IM/SC; MIIS mandatory 72-hour report vs sharing objection; retail CDTM age 18, Schedule II–V excluded, referral and two separate 24-hour clocks; disputed new PharmD eligibility under 247 CMR 16.02 vs M.G.L. c.112 §24B½; §19F oral/patch prescribing independent of CDTM and distinct from ACCESS coverage.
 - Total written: **780** (540 existing + 240 difficulty-tier). **300** difficulty-tier cases remain in 15 chapters. Source-based authorship/structural testing is not a substitute for independent legal review. GitHub PR remains a Draft until release criteria and public deployment are verified.
+
+## Chapters 17–19 batch (2026-11-12)
+
+- Added 60 hand-authored A–D application cases: 20 each for DEA ordering/inventory, security/loss/disposal, and cold-chain/storage/shipping.
+- Official verification boundary: DEA 21 CFR 1305.05/.13/.22, 1304.11, 1307.11; MA 247 CMR 9.21, 9.22, 9.13, 9.19; DEA 1301.76 and Part 1317; MA Policy 2026-01, Policy 2020-05 and the 2025 Shipping Advisory; USPS Publication 52.
+- High-yield traps: paper Form 222 60 days from execution vs receipt, annual 5% dispenser stock distribution exemption vs dispensing, federal biennial inventories vs MA ten-day Schedule II reconciliations; separate federal one-business-day/45-day and MA seven-calendar-day theft/loss reporting; confirmed vs unconfirmed MA losses; and Board *advisory recommendations* for shipping distinct from binding cold-chain/dispensing law.
+- Count: 840 authored total, 300 new cases added, 240 remain across 12 chapters. The 300 new items have preliminary author/source and structural review, **not** independent end-to-end legal certification. Do not release as verified-canonical practice until required review gates are satisfied.
