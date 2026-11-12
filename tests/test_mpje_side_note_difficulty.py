@@ -19,6 +19,9 @@ ASSETS = {
     "prescription-validity": "difficulty-reviewed-05.js",
     "cii-core": "difficulty-reviewed-06.js",
     "cii-partial-outstate": "difficulty-reviewed-07.js",
+    "refills-transfer": "difficulty-reviewed-08.js",
+    "pmp-oud": "difficulty-reviewed-09.js",
+    "label-interchange": "difficulty-reviewed-10.js",
 }
 
 
@@ -29,7 +32,7 @@ def read_difficulty(path: Path) -> dict:
     return json.loads(text[text.index(marker) + 3 : text.rfind(");")])
 
 
-def test_expanded_chapters_have_20_original_items_each() -> None:
+def test_expanded_chapters_have_20_new_items_each() -> None:
     seen_questions: set[str] = set()
     for slug, filename in ASSETS.items():
         data = read_difficulty(SITE / filename)
@@ -51,7 +54,7 @@ def test_expanded_chapters_have_20_original_items_each() -> None:
                 stem = re.sub(r"\W+", "", q["question"].lower())
                 assert stem not in seen_questions, (slug, tier, q["question"])
                 seen_questions.add(stem)
-    assert len(seen_questions) == 60
+    assert len(seen_questions) == 120
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="Node.js is not installed")
@@ -73,8 +76,8 @@ def test_cumulative_page_loads_tiers_before_renderer() -> None:
         assert chapter in js
     for section in ["review-original", "review-extra", "review-moderate", "review-hard"]:
         assert f'id="{section}"' in page
-    assert "600 practice questions" in page
-    assert "480" in page
+    assert "660 practice questions" in page
+    assert "420" in page
     assert "moderateCases.length + hardCases.length" in js
     assert "c.slug !== 'drug-memorization'" in js
     assert "? '40' : '20'" in picker
