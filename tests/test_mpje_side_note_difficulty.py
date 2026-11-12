@@ -60,7 +60,7 @@ def test_expanded_chapters_have_20_new_items_each() -> None:
                 assert q["sourceUrl"].split("/")[2] in {
                     "www.ecfr.gov", "malegislature.gov", "www.mass.gov",
                     "www.fda.gov", "www.accessdata.fda.gov", "www.hhs.gov",
-                    "www.deadiversion.usdoj.gov", "www.cdc.gov", "www.govinfo.gov"
+                    "www.deadiversion.usdoj.gov", "www.cdc.gov", "www.govinfo.gov", "pe.usps.com"
                 }
                 stem = re.sub(r"\W+", "", q["question"].lower())
                 assert stem not in seen_questions, (slug, tier, q["question"])
