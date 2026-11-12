@@ -6,15 +6,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An Idaho-licensed pharmacist receives NABP license-transfer approval for Massachusetts and has paid the state application fee, but has not passed the Massachusetts MPJE or received a Board license. A pharmacy offers an immediate pharmacist shift. What is permitted?",
         "choices": [
           "The pharmacist may practice independently because NABP's approval is the same as a state license",
-          "The applicant must complete the MA reciprocity requirements, including the MPJE and Board issuance, before independently practicing as an MA pharmacist",
           "The applicant may supervise licensed technicians as pharmacist while awaiting MPJE",
+          "The applicant must complete the MA reciprocity requirements, including the MPJE and Board issuance, before independently practicing as an MA pharmacist",
           "Passing NAPLEX in Idaho means all other MA licensing steps automatically disappear"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "NABP preliminary evaluation does not itself confer MA licensure.",
-          "Correct. Under 247 CMR 3.02 the Board makes the final reciprocity decision and requires MPJE for eligible graduates.",
           "Professional pharmacist duties require the applicable active MA license.",
+          "Correct. Under 247 CMR 3.02 the Board makes the final reciprocity decision and requires MPJE for eligible graduates.",
           "Prior NAPLEX success does not waive the Massachusetts reciprocity process."
         ],
         "citation": "247 CMR 3.01–3.02 — Examination and Reciprocity Licensure",
@@ -77,15 +77,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist finished pharmacy school and was first licensed in 2026. The employer assumes that graduation exempts the pharmacist from the annual CE requirement for all of 2027. Which statement is right?",
         "choices": [
-          "The pharmacist is exempt for every year after graduation until the first disciplinary hearing",
           "The graduation-year exemption is not an indefinite waiver; the pharmacist must satisfy applicable 2027 CE requirements",
+          "The pharmacist is exempt for every year after graduation until the first disciplinary hearing",
           "An employer may permanently exempt all newly licensed pharmacists",
           "Any CE hours earned in 2026 automatically carry to 2027"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "MA's graduation-based CE relief is limited.",
           "Correct. The exemption does not extend indefinitely into later calendar years.",
+          "MA's graduation-based CE relief is limited.",
           "Employer policy cannot remove Board requirements.",
           "CE carryover is not generally permitted as a way to meet the next year's minimum."
         ],
@@ -95,15 +95,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacist earned 26 qualifying CE hours in 2025 and only 14 in 2026. A supervisor proposes moving six excess 2025 hours to 2026. Which outcome follows?",
         "choices": [
-          "No carryover is allowed; the pharmacist must satisfy the distinct annual 2026 minimum",
           "Any credit beyond twenty carries forward automatically for three years",
+          "No carryover is allowed; the pharmacist must satisfy the distinct annual 2026 minimum",
           "The pharmacist can count the pharmacy's technician training hours instead",
           "Only hours earned after the renewal deadline are subject to annual limits"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. Extra CE in an earlier year cannot automatically fix a shortfall in a later year.",
           "The regulation has no broad three-year rollover.",
+          "Correct. Extra CE in an earlier year cannot automatically fix a shortfall in a later year.",
           "Another employee's training cannot substitute for pharmacist CE.",
           "Each calendar year has its own requirement."
         ],
@@ -150,15 +150,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacist voluntarily obtained retired status under Massachusetts registration rules. A retail employer asks the pharmacist to cover a shift, saying no patient counseling will be required. What must be recognized?",
         "choices": [
           "Retired status permits only Schedule VI dispensing",
-          "The pharmacist must restore the appropriate active registration before performing pharmacist duties, irrespective of assignment details",
           "Any former pharmacist may practice without registration on weekends",
+          "The pharmacist must restore the appropriate active registration before performing pharmacist duties, irrespective of assignment details",
           "Retired status automatically converts into an intern license"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "Retired status does not grant partial ordinary active-pharmacist privileges.",
-          "Correct. Approved retired registration is not active practice authorization.",
           "Pharmacist professional duties require active licensure.",
+          "Correct. Approved retired registration is not active practice authorization.",
           "Retirement does not create a new intern credential."
         ],
         "citation": "247 CMR 4.01–4.07 — Registration Renewal and Continuing Education",
@@ -169,15 +169,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "The law and policy both expressly prescribe an identical biennial hour only",
           "The Board's current policy requires no immunization CE",
-          "The 2025-revised Board CE policy requires annual immunization CE; study notes should disclose its difference from the older posted regulation rather than silently merge the two",
-          "A pharmacist can satisfy the vaccine CE rule using any unrelated technician training"
+          "A pharmacist can satisfy the vaccine CE rule using any unrelated technician training",
+          "The 2025-revised Board CE policy requires annual immunization CE; study notes should disclose its difference from the older posted regulation rather than silently merge the two"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "The current Board policy describes an annual period.",
           "The revised policy does include immunization-specific training.",
-          "Correct. This is a source-status distinction: current Board policy and older 247 CMR wording are not identical.",
-          "An individual's pharmacist CE must meet the applicable activity-specific requirement."
+          "An individual's pharmacist CE must meet the applicable activity-specific requirement.",
+          "Correct. This is a source-status distinction: current Board policy and older 247 CMR wording are not identical."
         ],
         "citation": "MA Board Policy 2021-04 (revised September 2025) — Continuing Education",
         "sourceUrl": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download"
@@ -187,15 +187,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist in 2026 earns six live CE hours, including two law hours, and sixteen approved home-study hours. Which assessment correctly handles the Massachusetts 15-hour home-study credit maximum and the yearly total?",
         "choices": [
-          "Six live plus at most fifteen credited home-study hours yields twenty-one eligible hours, meeting the general 20-hour/live/law dimensions if other requirements are satisfied",
           "All sixteen home-study hours are automatically creditable under the unlimited-online exception",
+          "Six live plus at most fifteen credited home-study hours yields twenty-one eligible hours, meeting the general 20-hour/live/law dimensions if other requirements are satisfied",
           "Only the six live hours may count, because all home study is prohibited",
           "The pharmacist fails automatically because twenty-two raw hours were earned"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. Six qualifying live plus 15 allowable home-study equals 21; topic and other CE conditions still matter.",
           "MA has a stated home-study credit cap.",
+          "Correct. Six qualifying live plus 15 allowable home-study equals 21; topic and other CE conditions still matter.",
           "Approved home study is permitted up to the specified maximum.",
           "Exceeding 20 raw hours is not itself a failure."
         ],
@@ -206,16 +206,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "For calendar year 2026, an MA pharmacist earns four live hours including two law hours, plus eighteen approved home-study hours. The manager says the total 22 raw hours is sufficient. What is the problem?",
         "choices": [
           "The law hours must never be part of live credit",
-          "Only fifteen home-study hours may count and the pharmacist also lacks the fifth live hour; 4 + 15 = 19 credited hours",
+          "Massachusetts law requires forty live hours each year",
           "Every hour counts because the course providers were accredited",
-          "Massachusetts law requires forty live hours each year"
+          "Only fifteen home-study hours may count and the pharmacist also lacks the fifth live hour; 4 + 15 = 19 credited hours"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "Law hours may be in live credit if qualifying.",
-          "Correct. Both the 15-home ceiling and five-live minimum create deficiencies here.",
+          "Forty live hours annually is not the MA rule.",
           "Accreditation does not remove the state's format constraints.",
-          "Forty live hours annually is not the MA rule."
+          "Correct. Both the 15-home ceiling and five-live minimum create deficiencies here."
         ],
         "citation": "MA Board Policy 2021-04 (revised September 2025) — Continuing Education",
         "sourceUrl": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download"
@@ -241,17 +241,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist licensed by reciprocity in Massachusetts has a current active state license but wants to supervise another state pharmacy remotely on the assumption that NABP license transfer supplies that second state license. What must be checked?",
         "choices": [
-          "Massachusetts licensure automatically authorizes independent practice in all U.S. jurisdictions",
+          "Pharmacist licenses are jurisdiction-specific; a transferred MA credential does not itself provide an active unrestricted license in another state",
           "NABP transfer permanently preapproves every future state",
           "Electronic prescribing automatically overrides pharmacist jurisdiction rules",
-          "Pharmacist licenses are jurisdiction-specific; a transferred MA credential does not itself provide an active unrestricted license in another state"
+          "Massachusetts licensure automatically authorizes independent practice in all U.S. jurisdictions"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "States issue their own licenses.",
+          "Correct. Practice authority depends on the relevant jurisdiction's license and law.",
           "NABP transfer assists qualification evaluation, not universal authorization.",
           "Technology does not erase professional licensure boundaries.",
-          "Correct. Practice authority depends on the relevant jurisdiction's license and law."
+          "States issue their own licenses."
         ],
         "citation": "247 CMR 3.01–3.02 — Examination and Reciprocity Licensure",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download"
@@ -259,15 +259,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Massachusetts pharmacist misses required CE for 2026, emails the Board describing the shortage, and immediately assumes the report excuses the obligation. Which statement is most defensible?",
         "choices": [
-          "A required deficiency disclosure is not automatic CE forgiveness; the Board must determine the applicable correction/remediation while professional requirements remain in force",
           "Writing to the Board automatically converts the missing hours into live hours",
+          "A required deficiency disclosure is not automatic CE forgiveness; the Board must determine the applicable correction/remediation while professional requirements remain in force",
           "An email grants another two years of credit without further action",
           "CE deficiencies are never subject to Board review"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. The revised MA Board policy directs deficiency communication but does not grant an automatic waiver.",
           "An email cannot substitute for accredited live education.",
+          "Correct. The revised MA Board policy directs deficiency communication but does not grant an automatic waiver.",
           "Renewal/CE requirements cannot be extended unilaterally.",
           "The Board can investigate or address CE compliance."
         ],
@@ -278,33 +278,33 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA pharmacist earned 20 qualifying CE hours in 2025 and 20 in 2026, but one year's coursework contains no law hours. The employer asserts that 40 hours across two years is enough for December 2026 renewal. What is missing?",
         "choices": [
           "Every second year's law hours may always be skipped if the two-year total reaches 40",
-          "Applicable annual law CE content is a separate requirement; the combined total does not eliminate that year's two-law-hour duty",
+          "MA law requires exclusively home-study CE",
           "Only pharmacy technicians need law CE",
-          "MA law requires exclusively home-study CE"
+          "Applicable annual law CE content is a separate requirement; the combined total does not eliminate that year's two-law-hour duty"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "MA's per-year topic minimum is not replaced by aggregate credits.",
-          "Correct. Annual law-topic conditions matter alongside total hours.",
+          "Home study alone cannot replace required live format.",
           "Pharmacist law CE is specifically required.",
-          "Home study alone cannot replace required live format."
+          "Correct. Annual law-topic conditions matter alongside total hours."
         ],
         "citation": "MA Board Policy 2021-04 (revised September 2025) — Continuing Education",
         "sourceUrl": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download"
       },
       {
-        "question": "An MA pharmacist provides clinical drug therapy management under a qualifying CPA and verifies complex nonsterile CSPs. The pharmacist has 20 general CE hours including 3 complex-nonsterile hours and believes this replaces CDTM's additional annual CE. Which analysis is right?",
+        "question": "An MA pharmacist provides clinical drug therapy management under a qualifying CPA and verifies complex nonsterile preparations (CNSPs). The pharmacist has 20 general CE hours including 3 complex-nonsterile hours and believes this replaces CDTM's additional annual CE. Which analysis is right?",
         "choices": [
-          "Complex nonsterile compounding and CDTM have exactly the same additional hours",
-          "Any 20 hours is enough for all specialty practices with no distinct competency requirements",
           "CDTM generally requires five additional related hours beyond the 20 standard annual hours; complex-nonsterile specialty CE may count within the base 20 but does not automatically eliminate CDTM's separate requirement",
+          "Any 20 hours is enough for all specialty practices with no distinct competency requirements",
+          "Complex nonsterile compounding and CDTM have exactly the same additional hours",
           "CDTM hours can be replaced with an insurance premium payment"
         ],
-        "answer": "C",
+        "answer": "A",
         "explanations": [
-          "The two specialties have different CE rules.",
-          "The ordinary 20 are not the entire CDTM requirement.",
           "Correct. 247 CMR 16.02 requires five additional CDTM-related hours, unlike the compounding hours credited within base CE.",
+          "The ordinary 20 are not the entire CDTM requirement.",
+          "The two specialties have different CE rules.",
           "Professional liability insurance is separate from CE."
         ],
         "citation": "247 CMR 16.02 — CDTM Eligibility and Additional CE",
@@ -314,16 +314,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A pharmacist records ten continuing-education hours on a single date and eight on a second date, then adds two more hours on a third date. All education is otherwise valid. For annual MA CE counting, how many of the twenty raw hours can be counted?",
         "choices": [
           "All twenty because courses were accredited",
-          "Eighteen because the two extra hours are from another calendar day",
+          "Eighteen because only eight of the first ten-hour day can be counted; 8 + 8 + 2 = 18",
           "Twenty-two because the longer day earns an instructor bonus",
-          "Eighteen because only eight of the first ten-hour day can be counted; 8 + 8 + 2 = 18"
+          "Twenty, because moving two hours to another day means the first ten-hour day's total may all be counted"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "The eight-hour daily cap still applies.",
-          "Eighteen is the arithmetic total after the first day is capped, but the reason is the per-day rule.",
+          "Correct. The capped first day yields 8 and the next days 8 and 2, totaling 18.",
           "An instructor bonus cannot be inferred.",
-          "Correct. The capped first day yields 8 and the next days 8 and 2, totaling 18."
+          "Changing the timing of later hours cannot eliminate the eight-hour cap on the ten-hour first day."
         ],
         "citation": "247 CMR 4.01–4.07 — Registration Renewal and Continuing Education",
         "sourceUrl": "https://www.mass.gov/doc/247-cmr-4-personal-registration-renewal-continuing-education-requirement/download"
@@ -331,15 +331,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An eligible reciprocity applicant obtained NABP approval six months ago and passed the MPJE, but the Massachusetts Board requested additional evidence of internship history and has not issued a license. May a pharmacy hire them as its pharmacist on duty?",
         "choices": [
-          "No; NABP approval and a passing MPJE result are not a Board-issued active pharmacist license, so the applicant cannot fill that professional role until licensure is complete",
           "Yes; the applicant's MA pharmacist license automatically exists at NABP approval",
+          "No; NABP approval and a passing MPJE result are not a Board-issued active pharmacist license, so the applicant cannot fill that professional role until licensure is complete",
           "Yes, as long as the pharmacy MOR accepts the internship statement verbally",
           "Only if the applicant agrees not to counsel patients"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. The Board determines eligibility and issues the professional registration after all requirements are met.",
           "NABP acts as preliminary evaluator, not as state licensing authority.",
+          "Correct. The Board determines eligibility and issues the professional registration after all requirements are met.",
           "A MOR cannot waive required licensure documentation.",
           "Reserved pharmacist acts are not limited to counseling."
         ],
@@ -349,15 +349,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA pharmacist fails the MPJE and waits fourteen months before applying to retake it. The candidate argues passing NAPLEX earlier allows use of the older score indefinitely under 247 CMR 3.01. What should be checked?",
         "choices": [
-          "Federal DEA law determines all MPJE retake timing",
           "The regulation's one-year examination retake/passing window, which may require a new examination process rather than retaining the prior result indefinitely",
+          "Federal DEA law determines all MPJE retake timing",
           "CE provider accreditation replaces examination results",
           "NABP's public sample items authorize a permanent retake waiver"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "State pharmacist licensure rules address the MA exam timeframe.",
           "Correct. 247 CMR 3.01(7) includes one-year limits affecting when earlier exam results may be considered together.",
+          "State pharmacist licensure rules address the MA exam timeframe.",
           "Continuing education does not replace an entry-level licensing exam.",
           "Practice items do not create retake privileges."
         ],
