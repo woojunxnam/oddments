@@ -5,15 +5,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A newly licensed MA physician intends to prescribe only amoxicillin and lisinopril. The physician asks whether a DEA controlled-substance registration is needed for these ordinary Schedule VI prescriptions. Which statement is correct?",
         "choices": [
-          "All Schedule VI prescriptions require both MCSR and DEA registration",
           "An otherwise authorized prescriber needs appropriate Massachusetts controlled-substance registration for Schedule VI, but not a DEA registration solely for Schedule VI activity",
+          "All Schedule VI prescriptions require both MCSR and DEA registration",
           "Any physician license automatically waives all Massachusetts registration",
           "An individual pharmacist must obtain the prescriber's DEA number in place of an MCSR"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "DEA registration is generally for federal Schedules II–V activities.",
           "Correct. MA Schedule VI is a state prescription-drug classification; MCSR applies but federal DEA registration is not needed solely for VI.",
+          "DEA registration is generally for federal Schedules II–V activities.",
           "Professional license and state controlled registration are separate.",
           "A pharmacist's professional credential cannot replace the prescriber's registration."
         ],
@@ -23,15 +23,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "An MA physician has a valid medical license and an MCSR that covers Schedule II but has not obtained DEA registration. The physician wants to issue a routine oxycodone prescription. What is missing?",
         "choices": [
-          "Applicable DEA registration for Schedule II activity, in addition to the state professional license and MCSR",
           "A valid insurance provider number automatically replaces federal registration",
+          "Applicable DEA registration for Schedule II activity, in addition to the state professional license and MCSR",
           "Every oxycodone product is Schedule VI in Massachusetts",
           "Registration is unnecessary when a patient has chronic pain"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. Controlled Schedule II prescribing generally requires federal DEA and MA MCSR authority.",
           "An insurance ID is not a DEA controlled registration.",
+          "Correct. Controlled Schedule II prescribing generally requires federal DEA and MA MCSR authority.",
           "Oxycodone remains a Schedule II opioid.",
           "Clinical indication does not waive controlled-prescribing registration."
         ],
@@ -43,15 +43,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Both are Schedule VI in MA because they have accepted medical use",
           "Ketamine is Schedule I and testosterone is nonprescription",
-          "Both ketamine and testosterone products are Schedule III controlled substances",
-          "Ketamine and testosterone are Schedule IV because they are not opioid drugs"
+          "Ketamine and testosterone are Schedule IV because they are not opioid drugs",
+          "Both ketamine and testosterone products are Schedule III controlled substances"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Accepted medical use does not automatically mean Schedule VI.",
           "Ketamine is a medical Schedule III drug, not Schedule I in this setting.",
-          "Correct. Federal Schedule III includes ketamine and many anabolic steroid/testosterone preparations.",
-          "Non-opioid identity does not set Schedule IV."
+          "Non-opioid identity does not set Schedule IV.",
+          "Correct. Federal Schedule III includes ketamine and many anabolic steroid/testosterone preparations."
         ],
         "citation": "DEA Diversion Control — Federal Schedules I–V",
         "sourceUrl": "https://www.deadiversion.usdoj.gov/schedules/schedules.html"
@@ -59,17 +59,17 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A Massachusetts patient receives gabapentin and pregabalin from two specialists. Which schedule and MassPAT distinction should the pharmacist apply?",
         "choices": [
-          "Both drugs are federal Schedule II",
+          "Gabapentin is Massachusetts Schedule VI but separately PMP-reportable; pregabalin is a federally Schedule V drug",
           "Gabapentin is federal Schedule V and pregabalin is federal Schedule VI",
           "Neither has any MA reporting requirement because they are not opioids",
-          "Gabapentin is Massachusetts Schedule VI but separately PMP-reportable; pregabalin is a federally Schedule V drug"
+          "Both drugs are federal Schedule II"
         ],
-        "answer": "D",
+        "answer": "A",
         "explanations": [
-          "Neither medicine is federal Schedule II.",
+          "Correct. Similar therapeutic use does not establish identical legal classification.",
           "Federal pregabalin V and MA gabapentin VI should not be reversed.",
           "Gabapentin is a designated Additional Drug for MA PMP.",
-          "Correct. Similar therapeutic use does not establish identical legal classification."
+          "Neither medicine is federal Schedule II."
         ],
         "citation": "Massachusetts DPH Pharmacy Reporting and Data Submission (Gabapentin)",
         "sourceUrl": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission"
@@ -77,15 +77,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacy technician compares prescriptions for Xanax (alprazolam) and Ritalin (methylphenidate). Which schedule pair best controls dispensing and refills?",
         "choices": [
-          "Xanax is CII and Ritalin is CIV",
           "Xanax is federal Schedule IV, while Ritalin is Schedule II and cannot be refilled",
+          "Xanax is CII and Ritalin is CIV",
           "Both are federal Schedule V because neither contains an opioid",
           "Both may be refilled five times within six months"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "Alprazolam and methylphenidate have different schedules.",
           "Correct. Alprazolam is CIV; methylphenidate is CII with no refills.",
+          "Alprazolam and methylphenidate have different schedules.",
           "Federal scheduling is not based solely on opioid content.",
           "Schedule II is not refillable."
         ],
@@ -95,15 +95,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist asks whether two pharmacies under one corporation can share a single DEA retail pharmacy registration while dispensing Schedule II medication from both physical addresses. What is the usual rule?",
         "choices": [
-          "Each principal place of controlled-substance dispensing ordinarily needs its own DEA registration; common ownership alone does not merge the two locations",
           "One DEA registration always covers every branch nationwide",
+          "Each principal place of controlled-substance dispensing ordinarily needs its own DEA registration; common ownership alone does not merge the two locations",
           "DEA registration is issued only to physicians and never pharmacies",
           "A pharmacy NPI automatically substitutes for DEA registration"
         ],
-        "answer": "A",
+        "answer": "B",
         "explanations": [
-          "Correct. 21 CFR 1301.12 generally requires separate registration at each principal place of activity.",
           "Corporate ownership does not by itself collapse facility registrations.",
+          "Correct. 21 CFR 1301.12 generally requires separate registration at each principal place of activity.",
           "Retail pharmacies are DEA registrants for controlled-substance dispensing.",
           "NPI serves a different identification purpose."
         ],
@@ -132,16 +132,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A Massachusetts retail pharmacist performs ordinary Schedule II dispensing as an employee of a fully DEA-registered pharmacy. The trainee claims the pharmacist must have a separate individual DEA registration solely to verify and dispense each prescription. What is the applicable distinction?",
         "choices": [
           "The pharmacist is exempt from all professional licensing rules",
-          "The pharmacist automatically has personal prescribing privileges for every Schedule II",
+          "An employee pharmacist may perform authorized dispensing under the registered pharmacy's DEA registration within the employee/agent exception and applicable state scope",
           "Every technician may dispense under the pharmacy's registration without pharmacist involvement",
-          "An employee pharmacist may perform authorized dispensing under the registered pharmacy's DEA registration within the employee/agent exception and applicable state scope"
+          "The pharmacist automatically has personal prescribing privileges for every Schedule II"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "Employee exceptions do not remove MA pharmacist licensing.",
-          "Dispensing under an employer does not automatically authorize independent controlled prescribing.",
+          "Correct. Federal §1301.22 employee rules and state professional scope distinguish pharmacy registration from personal prescriber registration.",
           "Technicians do not acquire pharmacist authority from DEA registration.",
-          "Correct. Federal §1301.22 employee rules and state professional scope distinguish pharmacy registration from personal prescriber registration."
+          "Dispensing under an employer does not automatically authorize independent controlled prescribing."
         ],
         "citation": "21 CFR 1301.22 — Employee/Institutional Exceptions to Registration",
         "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.22"
@@ -149,16 +149,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A student reads the April 2026 federal marijuana final rule and concludes every cannabis product, including any recreational plant material, became freely dispensable by every retail pharmacy as Schedule III. Which source-based correction is right?",
         "choices": [
-          "The final rule covers defined FDA-approved marijuana products and state-licensed medical marijuana, but it is not blanket legalization/rescheduling of every cannabis product or removal of DEA registration duties",
-          "Every recreational cannabis product is now automatically noncontrolled",
           "The April rule converted all cannabis to MA Schedule VI",
+          "Every recreational cannabis product is now automatically noncontrolled",
+          "The final rule covers defined FDA-approved marijuana products and state-licensed medical marijuana, but it is not blanket legalization/rescheduling of every cannabis product or removal of DEA registration duties",
           "Any pharmacist may sell marijuana without applicable professional or business registration"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. 91 FR 22714 distinguishes specified FDA-approved/state-licensed medical marijuana from other marijuana and preserves registration safeguards.",
-          "The final rule expressly retains Schedule I treatment outside the defined eligible routes.",
           "State/federal classification is not a blanket MA Schedule VI designation.",
+          "The final rule expressly retains Schedule I treatment outside the defined eligible routes.",
+          "Correct. 91 FR 22714 distinguishes specified FDA-approved/state-licensed medical marijuana from other marijuana and preserves registration safeguards.",
           "Professional and federal requirements continue to apply."
         ],
         "citation": "DEA Final Rule, 91 FR 22714, April 28, 2026 — Defined Medical Marijuana Schedule III",
@@ -168,15 +168,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A practitioner buys and stores federally controlled medicines at Office A but only writes electronic prescriptions at Office B without storing or purchasing drugs there. Which MA DCP guidance affects separate MCSR registrations?",
         "choices": [
           "All practitioners need exactly one MCSR regardless of controlled inventory locations",
-          "Separate MCSR registrations are needed at locations where the practitioner is responsible for purchasing/storage, whereas prescriber-only offices without stock may use the applicable DCP address policy",
           "An MCSR permits purchasing Schedule II drugs at any unregistered warehouse",
+          "Separate MCSR registrations are needed at locations where the practitioner is responsible for purchasing/storage, whereas prescriber-only offices without stock may use the applicable DCP address policy",
           "Federal DEA registration is never location-specific"
         ],
-        "answer": "B",
+        "answer": "C",
         "explanations": [
           "MA gives distinct guidance for stock-responsible sites.",
-          "Correct. DCP's address guidance focuses separate MCSR locations on purchase/storage activity and recognizes flexibility for no-stock practitioners.",
           "Controlled purchases/storage remain subject to site-specific rules.",
+          "Correct. DCP's address guidance focuses separate MCSR locations on purchase/storage activity and recognizes flexibility for no-stock practitioners.",
           "DEA has separate-location registration rules."
         ],
         "citation": "Massachusetts DCP — MCSR Address and Separate-Locations Guidance",
@@ -189,15 +189,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "State authorization alone permits all federally controlled substances",
           "The FDA's NDC listing replaces a missing DEA schedule authority",
-          "The physician lacks the matching federal Schedule II registration for that activity; state and federal credentials both must authorize CII",
-          "MA Schedule II prescriptions may be treated as Schedule VI when the patient has chronic pain"
+          "MA Schedule II prescriptions may be treated as Schedule VI when the patient has chronic pain",
+          "The physician lacks the matching federal Schedule II registration for that activity; state and federal credentials both must authorize CII"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Both state and federal registrations must be appropriate.",
           "An NDC identifies drug listings, not prescriber DEA authority.",
-          "Correct. A federal Schedule III–V authorization does not itself permit Schedule II prescribing.",
-          "Clinical indication does not reschedule oxycodone."
+          "Clinical indication does not reschedule oxycodone.",
+          "Correct. A federal Schedule III–V authorization does not itself permit Schedule II prescribing."
         ],
         "citation": "Massachusetts DPH — Controlled Substances Registration Requirements",
         "sourceUrl": "https://www.mass.gov/orgs/massachusetts-controlled-substances-registration"
@@ -207,15 +207,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "All Schedule II prescriptions are capped at seven days, without exceptions",
           "Both 60-day supplies are lawful because both drugs are non-opioids",
-          "Both can instead be issued as two refills of thirty days",
-          "MA permits up to ninety days for qualifying non-opioid Schedule II drugs such as methylphenidate, while an ordinary opioid pain prescription is generally subject to a thirty-day single-fill limit"
+          "MA permits up to ninety days for qualifying non-opioid Schedule II drugs such as methylphenidate, while an ordinary opioid pain prescription is generally subject to a thirty-day single-fill limit",
+          "Both can instead be issued as two refills of thirty days"
         ],
-        "answer": "D",
+        "answer": "C",
         "explanations": [
           "Seven-day first-opiate restrictions exist but are not the universal single-fill limit for all CII drugs.",
           "Oxycodone is an opioid and not in the usual 90-day non-opioid category.",
-          "Schedule II refills are prohibited.",
-          "Correct. c.94C §23(d) and relevant Board policy distinguish the ordinary opioid and non-opioid supply limits."
+          "Correct. c.94C §23(d) and relevant Board policy distinguish the ordinary opioid and non-opioid supply limits.",
+          "Schedule II refills are prohibited."
         ],
         "citation": "M.G.L. c.94C §23(d) — Schedule II–III quantity limits",
         "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23"
@@ -223,16 +223,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A pharmacist encounters buprenorphine/naloxone for OUD and methadone for OUD maintenance. Both are opioid therapies, but they have different federal schedules. What is the legally relevant retail difference?",
         "choices": [
-          "Buprenorphine products such as Suboxone are Schedule III and may be prescribed through a lawful office-based pathway; Schedule II methadone OUD maintenance generally follows OTP rules rather than an ordinary retail prescription",
-          "Methadone becomes Schedule VI whenever it treats addiction",
           "Every OUD medication is Schedule I and therefore not available for treatment",
+          "Methadone becomes Schedule VI whenever it treats addiction",
+          "Buprenorphine products such as Suboxone are Schedule III and may be prescribed through a lawful office-based pathway; Schedule II methadone OUD maintenance generally follows OTP rules rather than an ordinary retail prescription",
           "Schedule III buprenorphine cannot be used for OUD unless it is compounded in an FDA 503B facility"
         ],
-        "answer": "A",
+        "answer": "C",
         "explanations": [
-          "Correct. Substance schedule and federally regulated treatment program are separate determinants of distribution.",
-          "Clinical indication does not reclassify methadone to VI.",
           "FDA-approved OUD medications can be lawfully provided through regulated pathways.",
+          "Clinical indication does not reclassify methadone to VI.",
+          "Correct. Substance schedule and federally regulated treatment program are separate determinants of distribution.",
           "503B outsourcing is unrelated to routine office-based buprenorphine prescribing."
         ],
         "citation": "21 CFR 1306.07 — Controlled Opioid Treatment Programs",
@@ -242,16 +242,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "An MA patient has an otherwise valid gabapentin Schedule VI prescription and a pregabalin Schedule V prescription. The pharmacist assumes both can receive a no-refill emergency continuation under Board Policy 2023-04. Which analysis is correct?",
         "choices": [
           "Both are Schedule VI because they treat neuropathic pain",
-          "The policy excludes gabapentin from its no-refill Schedule VI pathway and does not convert federally Schedule V pregabalin into Schedule VI",
+          "Both may be supplied as Schedule II emergency oral orders",
           "Pregabalin becomes an OTC medicine when there are no refills",
-          "Both may be supplied as Schedule II emergency oral orders"
+          "The policy excludes gabapentin from its no-refill Schedule VI pathway and does not convert federally Schedule V pregabalin into Schedule VI"
         ],
-        "answer": "B",
+        "answer": "D",
         "explanations": [
           "MA VI and federal V statuses are distinct.",
-          "Correct. Policy 2023-04 excludes gabapentin and is not a general Schedule V emergency prescription rule.",
+          "Drug schedules cannot be altered to use an emergency route.",
           "Lack of refills does not change OTC status.",
-          "Drug schedules cannot be altered to use an emergency route."
+          "Correct. Policy 2023-04 excludes gabapentin and is not a general Schedule V emergency prescription rule."
         ],
         "citation": "MA Board Policy 2023-04 — Schedule VI Continuity of Care",
         "sourceUrl": "https://www.mass.gov/doc/2023-04-continuity-of-care-pdf/download"
@@ -261,15 +261,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "choices": [
           "Electronic prescriptions automatically authorize controlled storage anywhere",
           "State registration is required only for the practitioner's home address",
-          "The DCP's location guidance requires a separate MCSR where the practitioner is responsible for purchasing or storing controlled substances, while federal DEA location rules must also be met",
-          "Controlled substances become Schedule VI whenever stored at a second office"
+          "Controlled substances become Schedule VI whenever stored at a second office",
+          "The DCP's location guidance requires a separate MCSR where the practitioner is responsible for purchasing or storing controlled substances, while federal DEA location rules must also be met"
         ],
-        "answer": "C",
+        "answer": "D",
         "explanations": [
           "Digital prescribing does not waive physical inventory accountability.",
           "A residential address is not the controlling stock site.",
-          "Correct. Purchase/storage creates site-specific DCP requirements and separate federal issues.",
-          "Storage address does not change scheduling."
+          "Storage address does not change scheduling.",
+          "Correct. Purchase/storage creates site-specific DCP requirements and separate federal issues."
         ],
         "citation": "Massachusetts DCP — MCSR Address and Separate-Locations Guidance",
         "sourceUrl": "https://www.mass.gov/info-details/policies-and-guidelines-for-mcsr"
@@ -313,15 +313,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
       {
         "question": "A licensed retail pharmacist performs final verification of controlled prescriptions under the pharmacy's DEA registration. Separately, the pharmacist wants to independently prescribe eligible oral contraception under MA §19F. Why must the two roles be assessed separately?",
         "choices": [
-          "A pharmacy DEA registration grants every employee unlimited personal prescribing scope",
           "Ordinary employee dispensing authority does not automatically permit prescribing; the §19F pathway has its own NPI, training, clinical and conditional same-pharmacy MCSR requirements",
+          "A pharmacy DEA registration grants every employee unlimited personal prescribing scope",
           "Any pharmacy intern may prescribe Schedule II without state authorization",
           "Any pharmacist may prescribe all drugs because MA recognizes Schedule VI"
         ],
-        "answer": "B",
+        "answer": "A",
         "explanations": [
-          "Registered dispensing and individual prescriptive authority are not identical.",
           "Correct. The 2026 independent prescribing circular has separate scope, training, documentation and registration conditions.",
+          "Registered dispensing and individual prescriptive authority are not identical.",
           "Interns do not acquire broad CII prescriptive authority merely by working at a pharmacy.",
           "MA Schedule VI classification does not grant universal prescribing."
         ],
@@ -332,15 +332,15 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A patient requests a sixth refill on a federally Schedule IV diazepam prescription that was issued only four months earlier. The prescriber had printed '10 refills.' Which rule controls even if the prescription is not yet six months old?",
         "choices": [
           "The printed number of refills overrides all federal ceilings",
-          "The pharmacy may change the prescription to Schedule VI to honor more refills",
           "Federal Schedule III–IV prescriptions are limited to five refills within six months from original issue, so a sixth refill is not permitted on the same order",
+          "The pharmacy may change the prescription to Schedule VI to honor more refills",
           "Any refill becomes a new original prescription when it is sent electronically"
         ],
-        "answer": "C",
+        "answer": "B",
         "explanations": [
           "Prescriber instructions cannot override federal refill caps.",
-          "Changing the schedule to gain refills is not permitted.",
           "Correct. Both the maximum refill count and the age limit must be met.",
+          "Changing the schedule to gain refills is not permitted.",
           "A refill transmission is not automatically a new signed original order."
         ],
         "citation": "21 CFR 1306.12 and 1306.22 — CII versus CIII–IV refill conditions",
@@ -350,16 +350,16 @@ Object.assign(window.MPJE_DIFFICULTY_REVIEWED || (window.MPJE_DIFFICULTY_REVIEWE
         "question": "A practice manager assumes an MA MCSR for Schedule VI-only medications allows obtaining and storing oxycodone at an unregistered new branch because the practice's corporate DEA registration exists elsewhere. What combined error exists?",
         "choices": [
           "An MCSR for VI automatically covers all controlled schedules and addresses",
-          "DEA registration is necessary only for antibiotics",
+          "Both controlled-schedule authority and location-specific state/federal registrations must be verified before acquiring and storing Schedule II stock at that branch",
           "Any corporate DEA number covers unlimited locations by default",
-          "Both controlled-schedule authority and location-specific state/federal registrations must be verified before acquiring and storing Schedule II stock at that branch"
+          "DEA registration is necessary only for antibiotics"
         ],
-        "answer": "D",
+        "answer": "B",
         "explanations": [
           "State MCSR schedule permissions are specific.",
-          "DEA is required for CII and other federally controlled activity.",
+          "Correct. The proposed activity involves a different federal schedule and physical stock location.",
           "Separate locations may need separate DEA and state credentials.",
-          "Correct. The proposed activity involves a different federal schedule and physical stock location."
+          "DEA is required for CII and other federally controlled activity."
         ],
         "citation": "21 CFR 1301.12 — Separate DEA Registration Locations",
         "sourceUrl": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.12"
