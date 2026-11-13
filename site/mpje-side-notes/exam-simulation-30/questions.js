@@ -832,12 +832,12 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Policy 2026-02 does not allow a four-person filling team with only one certified technician and no intern. At 1:4, the permitted compositions include two certified technicians, two interns, or a certified technician together with an intern."
       },
       {
-        "text": "One licensed pharmacy intern and three noncertified pharmacy technicians.",
-        "why": "A single pharmacy intern permits only the ordinary 1:3 composition unless another qualifying person is present. Four active support personnel need an additional certified technician or a second intern."
-      },
-      {
         "text": "Two certified pharmacy technicians and two noncertified pharmacy technicians.",
         "why": "Policy 2026-02, Section I(A)(1)(b), permits 1:4 when at least two active support personnel are licensed certified pharmacy technicians. The fifth employee doing only inventory receiving need not be included in the filling ratio under Section I(C)."
+      },
+      {
+        "text": "One licensed pharmacy intern and three noncertified pharmacy technicians.",
+        "why": "A single pharmacy intern permits only the ordinary 1:3 composition unless another qualifying person is present. Four active support personnel need an additional certified technician or a second intern."
       },
       {
         "text": "Four licensed pharmacy interns performing prescription-filling duties under the same pharmacist.",
@@ -845,7 +845,7 @@ window.MPJE_CH30_QUESTIONS = [
       }
     ],
     "correct": [
-      "C"
+      "B"
     ],
     "citation": "MA Board Policy 2026-02 §§I(A), I(C), II; 247 CMR 8.01(16)",
     "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
@@ -868,16 +868,16 @@ window.MPJE_CH30_QUESTIONS = [
         "why": "Massachusetts Circular DCP 26-08-125 expressly states that a pharmacist need not obtain a personal MCSR when both the prescribing and dispensing occur at one pharmacy location, provided all other applicable conditions are met."
       },
       {
-        "text": "The pharmacist may prescribe and dispense oral PrEP under §19F without a separate personal MCSR in this same-location situation, provided all other applicable requirements are met.",
-        "why": "DCP 26-08-125 permits pharmacist prescribing of covered HIV-prevention medications under statewide guidance and qualifying training. It requires an NPI and expressly waives a separate pharmacist MCSR when prescribing and dispensing both occur at a single pharmacy location."
-      },
-      {
         "text": "The pharmacist may omit the NPI and document the encounter only if the pharmacy transfers the resulting prescription to a different pharmacy for dispensing.",
         "why": "DCP 26-08-125 requires the pharmacist to obtain an NPI and document prescribing and dispensing activities. Dispensing elsewhere would also fall outside the circular's specifically described same-location MCSR exemption."
+      },
+      {
+        "text": "The pharmacist may prescribe and dispense oral PrEP under §19F without a separate personal MCSR in this same-location situation, provided all other applicable requirements are met.",
+        "why": "DCP 26-08-125 permits pharmacist prescribing of covered HIV-prevention medications under statewide guidance and qualifying training. It requires an NPI and expressly waives a separate pharmacist MCSR when prescribing and dispensing both occur at a single pharmacy location."
       }
     ],
     "correct": [
-      "C"
+      "D"
     ],
     "citation": "M.G.L. c.94C §19F; DCP Circular 26-08-125, General Prescribing Requirements and HIV Prevention",
     "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
@@ -925,16 +925,16 @@ window.MPJE_CH30_QUESTIONS = [
     "stem": "A Massachusetts patient with limited hand dexterity specifically requests a conventional (non-child-resistant) container for ONE newly prescribed oral medication subject to the federal Poison Prevention Packaging Act (PPPA). The pharmacist documents that request and dispenses the medication accordingly. Two weeks later, the patient presents a DIFFERENT new prescription for another PPPA-covered oral medication. No blanket packaging request was made, the prescriber has not requested conventional packaging for the second prescription, and the patient makes no new packaging request. What is the BEST legally supported dispensing approach?",
     "choices": [
       {
-        "text": "Use conventional packaging for the second prescription because the first documented request permanently waives child-resistant packaging for all future prescriptions.",
-        "why": "CPSC expressly distinguishes a specific request for one prescription from a request covering all medications. The first request does not automatically become a blanket waiver for other prescriptions."
+        "text": "The first prescription may use conventional packaging at the patient's request, but the second generally needs child-resistant packaging absent a new specific request, a valid blanket request, or a prescriber direction.",
+        "why": "CPSC's PPPA guidance permits a patient-specific packaging request while explaining that a request for one prescription does not extend to an unrelated future prescription. Without a separate exemption or request, the second prescription uses compliant packaging."
       },
       {
         "text": "The first conventional container was impermissible because only a prescriber, not a patient, can authorize dispensing without child-resistant packaging.",
         "why": "The PPPA permits a consumer or the prescribing practitioner to specifically request conventional packaging for a covered prescription; a patient request is legally sufficient for the first prescription."
       },
       {
-        "text": "The first prescription may use conventional packaging at the patient's request, but the second generally needs child-resistant packaging absent a new specific request, a valid blanket request, or a prescriber direction.",
-        "why": "CPSC's PPPA guidance permits a patient-specific packaging request while explaining that a request for one prescription does not extend to an unrelated future prescription. Without a separate exemption or request, the second prescription uses compliant packaging."
+        "text": "Use conventional packaging for the second prescription because the first documented request permanently waives child-resistant packaging for all future prescriptions.",
+        "why": "CPSC expressly distinguishes a specific request for one prescription from a request covering all medications. The first request does not automatically become a blanket waiver for other prescriptions."
       },
       {
         "text": "The pharmacist may independently choose conventional packaging for the second prescription based on the patient's known dexterity limitations, without a new patient or prescriber request.",
@@ -942,7 +942,7 @@ window.MPJE_CH30_QUESTIONS = [
       }
     ],
     "correct": [
-      "C"
+      "A"
     ],
     "citation": "Poison Prevention Packaging Act §4(b); 16 CFR 1701.1; CPSC Poison Prevention Packaging Guide (Jan. 2023), p. 12",
     "url": "https://www.cpsc.gov/s3fs-public/PoisonPreventionPackagingAGuideforHealthcareProfessionals.pdf",
@@ -979,7 +979,7 @@ window.MPJE_CH30_QUESTIONS = [
       "D"
     ],
     "citation": "FD&C Act §582(d)(4)(A)–(B) (21 U.S.C. §360eee-1); FDA DSCSA Verification Systems Guidance (Dec. 2023)",
-    "url": "https://www.fda.gov/drugs/drug-quality-and-security-act-dqsa/title-ii-drug-quality-and-security-act",
+    "url": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/title-ii-drug-quality-and-security-act",
     "verified": "2026-11-13"
   }
 ];
