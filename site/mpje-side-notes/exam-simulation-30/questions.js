@@ -1011,5 +1011,174 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "FD&C Act §582(d)(4)(A)–(B) (21 U.S.C. §360eee-1); FDA DSCSA Verification Systems Guidance (Dec. 2023)",
     "url": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/title-ii-drug-quality-and-security-act",
     "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-031",
+    "set": 7,
+    "area": 1,
+    "kind": "single",
+    "topic": "Internship eligibility: ACPE experiential hours",
+    "topicKey": "intern-education",
+    "stem": "Two first-time Massachusetts pharmacist-licensure applicants submit internship records in November 2026. Applicant X graduated from an ACPE-accredited PharmD program in 2026 and has Board-acceptable verification of 1,500 hours acquired through experiential pharmacy education, but no additional paid internship. Applicant Y graduated from an ACPE-accredited program in 2011 and can verify only 1,000 school rotation hours; Y has no other Board-approved internship hours. Assume all other licensure requirements can be met. Which interpretation of the Massachusetts internship requirement is MOST accurate?",
+    "choices": [
+      {
+        "text": "Both applicants satisfy the requirement because an ACPE pharmacy degree always replaces separate internship-hour documentation regardless of graduation year.",
+        "why": "The Board's 2012-and-later ACPE graduate policy is not automatically retroactive to the 2011 graduate. Applicant Y has only 1,000 verified hours, with no additional approved internship hours."
+      },
+      {
+        "text": "Applicant X must obtain 500 additional hours outside the PharmD curriculum because every applicant must separately complete the 1,000-plus-500 internship pathway.",
+        "why": "247 CMR 8.01(1)(b) provides a separate route for 1,500 qualifying hours from ACPE experiential pharmacy education. The 1,000-plus-500 route is not a mandatory extra requirement for X."
+      },
+      {
+        "text": "Applicant Y qualifies through the pre-2012 graduation policy, but Applicant X must complete 500 hours after graduation.",
+        "why": "The Board's guidance for graduates through 2011 describes 1,000 school rotation hours plus 500 additional verified hours. It does not impose an extra post-graduation 500-hour requirement on a 2026 ACPE graduate."
+      },
+      {
+        "text": "Applicant X satisfies the internship-hour requirement through qualifying ACPE experiential education; Applicant Y needs additional Board-acceptable internship hours.",
+        "why": "247 CMR 8.01(1)(b) recognizes 1,500 hours of ACPE experiential pharmacy education. The Board's guidance treats 2012-and-later ACPE graduates as satisfying the intern-hour requirement, but the 2011 applicant with only 1,000 documented school rotation hours has not fulfilled the historic additional-hour requirement."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 8.01(1)(a)–(b); MA Board, Intern Hours Requirement for Pharmacist Licensure (2012 graduate transition)",
+    "url": "https://www.mass.gov/info-details/intern-hours-requirement-for-pharmacist-licensure",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-032",
+    "set": 7,
+    "area": 2,
+    "kind": "single",
+    "topic": "Clozapine: FDA REMS removal versus ANC monitoring",
+    "topicKey": "rems",
+    "stem": "In November 2026 a Massachusetts community pharmacist receives a valid first prescription for clozapine. The pharmacy is not enrolled in the former Clozapine REMS, and the patient's absolute neutrophil count (ANC) has not been entered into a REMS portal. The pharmacist has assessed the prescription and the prescriber will arrange ANC monitoring according to current labeling. No other dispensing concern exists. Which conclusion BEST reflects FDA requirements in effect on this date?",
+    "choices": [
+      {
+        "text": "Dispensing must wait until both the patient and pharmacy reenroll in the Clozapine REMS and the ANC is uploaded to the REMS portal.",
+        "why": "FDA eliminated the Clozapine REMS effective June 13, 2025. Enrollment and REMS ANC submission are no longer federal prerequisites to clozapine dispensing."
+      },
+      {
+        "text": "The prescription may be dispensed without former REMS enrollment or REMS ANC verification, while the drug's neutropenia warnings and clinical ANC monitoring guidance remain important.",
+        "why": "FDA formally removed the Clozapine REMS effective June 13, 2025. Pharmacies no longer verify eligibility through the REMS, but the boxed neutropenia warning and recommendations for prescriber ANC monitoring remain in the labeling."
+      },
+      {
+        "text": "The removal of the Clozapine REMS also removed the boxed warning and the clinical need for ANC monitoring during treatment.",
+        "why": "FDA retained the warning about severe neutropenia and expressly advises prescribers to continue ANC monitoring as outlined in labeling; removing an administrative REMS does not remove the safety risk."
+      },
+      {
+        "text": "The REMS exemption is limited to patients who have already taken clozapine for six months; new-start prescriptions still require mandatory pharmacy certification.",
+        "why": "The FDA removal applies to clozapine prescriptions generally, including new starts; it is not a conditional six-month grandfathering or stabilization exemption."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "FDA Drug Safety Communication, Aug. 27, 2025: Clozapine REMS eliminated effective June 13, 2025; 247 CMR 9.01(21)",
+    "url": "https://www.fda.gov/drugs/drug-safety-communications/fda-removes-risk-evaluation-and-mitigation-strategy-rems-program-antipsychotic-drug-clozapine",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-033",
+    "set": 7,
+    "area": 2,
+    "kind": "multi",
+    "topic": "HIPAA breach thresholds: exactly 500 affected residents",
+    "topicKey": "hipaa-breach",
+    "stem": "A HIPAA-covered Massachusetts pharmacy and its business associate discover a reportable breach of UNSECURED protected health information affecting EXACTLY 500 Massachusetts residents. The parties confirm the breach is reportable after risk assessment, have valid contact information for affected people, and have no applicable law-enforcement delay. Consider only the FEDERAL HIPAA Breach Notification Rule; any separate Massachusetts notification obligations must be addressed independently. Which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The covered pharmacy must notify affected individuals without unreasonable delay and no later than 60 calendar days after the breach is discovered under HIPAA.",
+        "why": "45 CFR 164.404 requires individual notification without unreasonable delay and not later than 60 calendar days after discovery. The exact 500-person count does not eliminate individual notice."
+      },
+      {
+        "text": "The covered pharmacy must notify the HHS Secretary for this breach on the timetable for 500 or more individuals, rather than waiting for the annual report for smaller breaches.",
+        "why": "45 CFR 164.408(b) applies to breaches involving 500 or more people, including exactly 500. The Secretary is notified contemporaneously with individual notice, subject to the rule's timing requirements."
+      },
+      {
+        "text": "Because exactly 500 Massachusetts residents were affected, the pharmacy must also provide federal media notice to prominent Massachusetts outlets.",
+        "why": "45 CFR 164.406 requires media notice when a breach involves MORE THAN 500 residents of a state or jurisdiction. Exactly 500 triggers HHS reporting at the larger-breach threshold but not the federal media-notification requirement."
+      },
+      {
+        "text": "The business associate must notify the covered pharmacy without unreasonable delay and no later than 60 calendar days after the business associate's discovery of the breach.",
+        "why": "45 CFR 164.410 requires a business associate to notify the covered entity without unreasonable delay and not later than 60 calendar days after discovery. The covered entity remains responsible for ensuring required individual notifications occur."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "45 CFR 164.404, 164.406 (>500 state residents), 164.408 (≥500 individuals), 164.410; HHS HIPAA Breach Notification Rule",
+    "url": "https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-034",
+    "set": 7,
+    "area": 3,
+    "kind": "multi",
+    "topic": "Schedule IV refill transfers: shared online database exception",
+    "topicKey": "refills-transfers",
+    "stem": "A patient has a valid, previously filled Schedule IV prescription with authorized refills remaining. Two Massachusetts pharmacies (X and Y) do NOT share a real-time online database. Another pair (R and S) electronically share the same real-time online prescription database. The patient requests refill transfers, all pharmacies are properly registered, and no separate restrictions apply. Under current federal requirements and Massachusetts pharmacy law, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A refill transfer between X and Y is generally limited to one transfer and must be communicated directly between two licensed pharmacists under the federal controlled-substance transfer procedure.",
+        "why": "21 CFR 1306.25(a) provides a one-time rule for Schedule III–V refill transfers between pharmacies lacking a shared real-time online database. Subsection (b)(1) requires direct pharmacist-to-pharmacist communication."
+      },
+      {
+        "text": "A Massachusetts certified pharmacy technician may independently communicate the Schedule IV refill transfer with on-duty pharmacist approval because technician transfer authority extends to every Schedule II–VI prescription.",
+        "why": "247 CMR 8.04(4)(d) allows a certified technician with pharmacist approval to transfer Schedule VI prescriptions. It does not extend to Schedule IV transfers; federal 21 CFR 1306.25(b)(1) requires two licensed pharmacists."
+      },
+      {
+        "text": "R and S may use the shared real-time online database exception for additional Schedule IV refill transfers, but only within the refills legally available and authorized by the prescriber.",
+        "why": "21 CFR 1306.25(a) permits multiple transfers when pharmacies electronically share a real-time online database, only up to the maximum authorized refills and applicable law; the other documentation requirements remain."
+      },
+      {
+        "text": "The original and transferred Schedule IV prescription records must be retained for at least two years measured from the date of the last refill.",
+        "why": "21 CFR 1306.25(c) requires both original and transferred prescription records be kept two years from the last refill; that clock is not simply two years after the original issue date."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "21 CFR 1306.25(a)–(e); 247 CMR 9.14(1)–(3); 247 CMR 8.04(4)(d)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.25",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-035",
+    "set": 7,
+    "area": 4,
+    "kind": "single",
+    "topic": "USP <797> immediate-use CSP: 3 products versus 4 containers",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "At 8:15 a.m., appropriately trained personnel begin preparing a patient-specific immediate-use compounded sterile preparation (CSP) in a hospital patient-care area. They use TWO vials of the same sterile drug, ONE vial of Sterile Water for Injection, and ONE bag of sterile normal saline: four physical containers, but three different sterile products. Aseptic technique, compatibility, preparation-specific conditions, and all other USP <797> immediate-use requirements are satisfied. A different clinician, not witnessed by the preparer, will begin administration at 12:05 p.m. The CSP bears the required immediate-use label. Which conclusion is MOST accurate?",
+    "choices": [
+      {
+        "text": "The CSP must be discarded because immediate-use preparations are limited to three physical vials or bags, regardless of whether they contain the same sterile product.",
+        "why": "USP <797> limits immediate-use preparation to three DIFFERENT sterile products, not three total containers. Two vials of an identical sterile drug count as one different product."
+      },
+      {
+        "text": "The CSP must be discarded because administration must start within one hour of the end of compounding, even when all other immediate-use requirements are satisfied.",
+        "why": "The revised USP <797> immediate-use standard permits administration to begin within four hours following the START of preparation, not a universal one-hour period following completion."
+      },
+      {
+        "text": "The CSP can qualify for immediate-use administration because it contains only three different sterile products, administration begins within four hours of the start, and the required label is present.",
+        "why": "USP <797> Section 1.3 and USP's official FAQs permit multiple containers of the same sterile product as long as there are no more than three different sterile products. From 8:15 a.m. to 12:05 p.m. is 3 hours 50 minutes, within the four-hour start-of-preparation limit. When the preparer does not administer or witness administration, the immediate-use label is required."
+      },
+      {
+        "text": "The CSP may be administered as late as 12:35 p.m. because the four-hour period begins when preparation is finished rather than when it starts.",
+        "why": "The four-hour immediate-use clock starts when preparation BEGINS (8:15 a.m. in this case); administration at 12:35 p.m. would exceed that time limit regardless of the completion time."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "USP <797> §1.3 Immediate-Use CSPs; USP official <797> FAQs (Dec. 11, 2023), items 22, 25, 40",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-13"
   }
 ];
