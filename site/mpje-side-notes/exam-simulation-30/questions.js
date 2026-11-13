@@ -1,4 +1,4 @@
-/* Chapter 30: Original high-difficulty practice questions; law checked 2026-11-13. No exam recalls or secure items. */
+/* Chapter 30: Original high-difficulty practice questions; legal sources rechecked 2026-11-13. No exam recalls or secure items. */
 window.MPJE_CH30_QUESTIONS = [
   {
     "id": "E30-001",
@@ -630,6 +630,164 @@ window.MPJE_CH30_QUESTIONS = [
     ],
     "citation": "M.G.L. c.94C §19D(a)–(c)",
     "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section19D",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-021",
+    "set": 5,
+    "kind": "single",
+    "topic": "Emergency OUD treatment — DEA three-day rule",
+    "stem": "A DEA-registered practitioner in a Massachusetts emergency department is not registered as an opioid treatment program (OTP). A patient with opioid use disorder needs short-term withdrawal treatment while the department arranges referral to an OTP. Assume Massachusetts and other applicable laws permit the contemplated on-site dispensing, and no separate prescription authorization is being used. Under the federal exception in 21 CFR 1306.07(b), which action is MOST appropriate?",
+    "choices": [
+      {
+        "text": "Write an outpatient prescription for a three-day supply of methadone and send it to a community pharmacy for the patient to pick up.",
+        "why": "The special emergency provision in 21 CFR 1306.07(b) permits the practitioner to dispense, but not prescribe, a narcotic drug while referral arrangements are made. A community pharmacy prescription is not authorized by this exception."
+      },
+      {
+        "text": "Directly dispense no more than a three-day supply of the narcotic medication at one time while arranging referral; do not renew or extend this emergency course.",
+        "why": "The amended 21 CFR 1306.07(b) permits a non-OTP practitioner to dispense, but not prescribe, up to a three-day supply at one time while arranging referral; the emergency treatment cannot be renewed or extended."
+      },
+      {
+        "text": "Directly dispense a seven-day supply whenever the nearest OTP cannot offer an appointment within three days.",
+        "why": "An unavailable appointment does not expand the special federal three-day maximum. Other independent treatment authorities are outside the stated emergency exception."
+      },
+      {
+        "text": "Dispense only one day's medication at a time for up to three consecutive days, because a three-day supply may never be given at once.",
+        "why": "This describes the older pre-August-2023 federal limitation. The revised regulation allows up to three days' supply to be dispensed at one time, subject to the other requirements."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1306.07(b) (amended effective Aug. 8, 2023)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.07",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-022",
+    "set": 5,
+    "kind": "multi",
+    "topic": "When a Schedule II fax serves as the original",
+    "stem": "A Massachusetts pharmacy receives otherwise valid, prescriber-transmitted facsimile prescriptions for Schedule II medications. Assume an applicable Massachusetts exception permits paper/fax transmission, all necessary federal prescription elements are present, and no oral emergency authorization is involved. In which cases may the fax itself serve as the original prescription under 21 CFR 1306.11? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A fax for morphine oral solution for a patient enrolled in a state-licensed hospice program; the prescription notes that the patient is a hospice patient.",
+        "why": "21 CFR 1306.11(g) permits a facsimile to serve as the original for a Schedule II narcotic prescribed to a qualifying hospice patient when the required hospice notation is included."
+      },
+      {
+        "text": "A fax for oxycodone tablets for a homebound patient with a terminal diagnosis who is not enrolled in hospice, does not reside in an LTCF, and will not receive an infusion.",
+        "why": "A terminal diagnosis alone does not meet the special hospice-fax condition. Nor does this ordinary oral prescription meet the LTCF or compounded infusion exception, so the original signed paper prescription is generally required."
+      },
+      {
+        "text": "A fax for methylphenidate tablets for a resident of a qualifying long-term care facility (LTCF).",
+        "why": "21 CFR 1306.11(f) allows a facsimile to serve as the original for a Schedule II prescription for an LTCF resident; unlike the hospice exception, the provision is not limited to narcotics."
+      },
+      {
+        "text": "A fax for a Schedule II narcotic to be compounded specifically for direct administration to the patient by intrathecal infusion.",
+        "why": "21 CFR 1306.11(e) allows the fax as the original when a Schedule II narcotic is to be compounded for direct administration by a qualifying parenteral, including intraspinal, infusion."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "21 CFR 1306.11(a), (e)–(g)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-023",
+    "set": 5,
+    "kind": "single",
+    "topic": "Returned prescription drugs — Massachusetts",
+    "stem": "A patient brings two sealed prescription packages back to the same Massachusetts pharmacy. Package X contains the wrong strength, which the pharmacy confirms it dispensed in error. Package Y was correctly dispensed, is not suspected to be defective or contaminated, and the patient simply no longer wants it. Neither medication has been taken, and the packages appear unopened. Which response BEST complies with 247 CMR 9.01?",
+    "choices": [
+      {
+        "text": "Accept both packages and return them to saleable inventory after the pharmacist confirms the seals are intact.",
+        "why": "247 CMR 9.01(5) and (7) do not permit re-dispensing or returning error-related or suspected defective/contaminated patient returns to saleable stock merely because they are sealed."
+      },
+      {
+        "text": "Refuse both returns unless the patient proves an actual injury from taking the wrongly dispensed medication.",
+        "why": "247 CMR 9.01(7) requires the pharmacy to accept a medication it dispensed in error; proof of ingestion or injury is not a condition."
+      },
+      {
+        "text": "Accept both packages because all previously dispensed medication must be taken back, then dispose of only Package X.",
+        "why": "The rule requires acceptance of medication dispensed in error or suspected defective/contaminated; it does not require accepting a properly dispensed, nondefective medication merely because it is unwanted."
+      },
+      {
+        "text": "Accept Package X, quarantine it and properly dispose of it; the pharmacy is not required by this provision to accept Package Y.",
+        "why": "Under 247 CMR 9.01(7), wrongly dispensed medication must be accepted and cannot return to inventory. Properly dispensed medication that was not defective at dispensing need not be accepted."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 9.01(5), (7)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-024",
+    "set": 5,
+    "kind": "multi",
+    "topic": "DEA five-percent rule — pharmacy-to-pharmacy distribution",
+    "stem": "A DEA-registered Massachusetts retail pharmacy wishes to transfer controlled-substance stock to a second DEA-registered retail pharmacy for that pharmacy's general dispensing to patients (not a patient-specific prescription transfer). Assume every other Massachusetts and federal condition is satisfied. Under 21 CFR 1307.11, which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "If the annual volume of qualifying distributions is exactly 5% of the total controlled-substance dosage units distributed and dispensed in the same calendar year, the distributing pharmacy may use the exemption from separate distributor registration if all other conditions are met.",
+        "why": "The 5% ceiling in 21 CFR 1307.11(a)(1)(iv) is inclusive: qualifying distributions must not exceed 5% of the total dosage units distributed and dispensed during that calendar year."
+      },
+      {
+        "text": "A Schedule II transfer under this exemption needs only matching electronic inventory entries at both pharmacies; DEA Form 222 or an appropriate electronic order is unnecessary.",
+        "why": "21 CFR 1307.11(a)(1)(iii) and Part 1305 still require the controlled-substance order form or compliant electronic ordering method when Schedule II stock is distributed."
+      },
+      {
+        "text": "The receiving pharmacy must be registered to dispense the controlled substance, and the distribution and receipt must be properly documented by both parties.",
+        "why": "21 CFR 1307.11(a)(1)(i)–(ii) requires the receiving practitioner to be registered to dispense and both the distributing and receiving parties to maintain transaction records."
+      },
+      {
+        "text": "The 5% limit is measured by the wholesale dollar value of the stock transferred, rather than the number of controlled-substance dosage units.",
+        "why": "The regulation uses dosage units, not purchase cost, prescription revenue, number of packages, or wholesale dollar value."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1307.11(a)(1), (b); 21 CFR Part 1305",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1307/section-1307.11",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-025",
+    "set": 5,
+    "kind": "single",
+    "topic": "Compounding commercially available drug copies",
+    "stem": "A Massachusetts community pharmacy receives requests to compound a preparation with the same active ingredient, similar strength, and route as an FDA-approved product that remains commercially available and is not on the FDA drug shortages list. Assume the pharmacy otherwise meets applicable 503A, Massachusetts, and USP requirements. Which request BEST supports lawful patient-specific compounding of an essentially similar preparation?",
+    "choices": [
+      {
+        "text": "A prescriber requests the compounded preparation solely because it would cost the patient 30% less than the commercially available product.",
+        "why": "M.G.L. c.112 §39D and Massachusetts Board Policy 2020-02 expressly reject price difference alone as the significant medical difference needed to justify compounding a copy."
+      },
+      {
+        "text": "A pharmacist documents an individual patient's reported preference for a dye-free version, but the prescriber makes no patient-specific determination of a medically significant difference.",
+        "why": "The Massachusetts requirement calls for documented medical need as determined by the prescribing practitioner. The pharmacist's unilateral preference documentation does not substitute for that prescriber determination."
+      },
+      {
+        "text": "A prescriber provides a patient-specific prescription and documents that a dye in the approved product causes this patient's allergic reaction and that removal creates a significant clinical difference.",
+        "why": "M.G.L. c.112 §39D and Board Policy 2020-02 recognize a patient-specific, prescriber-documented medical need such as removal of a dye as a potential significant difference; all other compounding safeguards still apply."
+      },
+      {
+        "text": "The pharmacy routinely prepares copies for future walk-in patients because its local wholesaler is temporarily out of stock, even though the approved product remains commercially available.",
+        "why": "Local inventory inconvenience alone does not authorize routine compounding of essentially identical products. Patient-specific conditions and the federal 503A restriction against routinely compounding copies still apply."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "M.G.L. c.112 §39D(a); MA Board Policy 2020-02; FD&C Act §503A(b)(1)(D)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D",
     "verified": "2026-11-13"
   }
 ];
