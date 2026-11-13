@@ -190,7 +190,8 @@
     { slug: 'drug-directory', title: 'Drug Directory' },
     { slug: 'open-register', title: 'Open Legal Register' },
     { slug: 'cumulative-practice', title: 'Cumulative Practice (1,080 available)' },
-    { slug: 'drug-memorization', title: 'Drug Memorization Lab (151 entries)' }
+    { slug: 'drug-memorization', title: 'Drug Memorization Lab (151 entries)' },
+    { slug: 'advanced-practice', title: 'Advanced Exam Simulations (20 questions)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
@@ -238,7 +239,7 @@
     nav.append(link('../', 'All chapters', 'study-nav-link study-nav-library'));
     nav.append(link(index < CHAPTERS.length - 1 ? '../' + CHAPTERS[index + 1].slug + '/' : '../',
       index < CHAPTERS.length - 1 ? 'Next: ' + CHAPTERS[index + 1].title + ' →' : 'All chapters →'));
-    if (slug !== 'cumulative-practice' && slug !== 'drug-memorization') {
+    if (slug !== 'cumulative-practice' && slug !== 'drug-memorization' && slug !== 'advanced-practice') {
       nav.append(link('../cumulative-practice/?chapter=' + encodeURIComponent(slug),
         'Practice ' + (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records', 'drug-directory', 'open-register'].includes(slug) ? (['licensure-ce', 'personnel', 'pharmacy-mor', 'schedules-registration', 'prescription-validity', 'cii-core', 'cii-partial-outstate', 'refills-transfer', 'pmp-oud', 'label-interchange', 'counseling-dur', 'rems', 'privacy', 'vaccination-administration', 'cdtm', 'prescribing-public-health', 'ordering-inventory', 'security-loss-disposal', 'storage-shipping', 'shared-automation', 'nonsterile-compounding', 'sterile-compounding', 'hd-outsourcing-nuclear', 'fda-supply-chain', 'numbers-records', 'drug-directory', 'open-register'].includes(slug) ? '40' : '20') : '10') + ' questions for this chapter', 'study-nav-link study-nav-practice'));
     }
