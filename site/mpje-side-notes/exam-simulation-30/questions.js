@@ -818,5 +818,168 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "M.G.L. c.112 §39D(a); MA Board Policy 2020-02; FD&C Act §503A(b)(1)(D)",
     "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section39D",
     "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-026",
+    "set": 6,
+    "area": 1,
+    "kind": "single",
+    "topic": "2026 Massachusetts supervisory ratios",
+    "stem": "A Massachusetts community pharmacy is not providing vaccination services. One pharmacist supervises four Massachusetts-licensed support personnel who are actively filling prescriptions. A fifth licensed technician is on the premises but performs only inventory receiving and does not participate in prescription preparation or filling. No waiver or dedicated-trainer arrangement applies. Under Board Policy 2026-02, which four-person filling team satisfies the ordinary 1:4 supervisory ratio?",
+    "choices": [
+      {
+        "text": "One certified pharmacy technician and three noncertified pharmacy technicians.",
+        "why": "Policy 2026-02 does not allow a four-person filling team with only one certified technician and no intern. At 1:4, the permitted compositions include two certified technicians, two interns, or a certified technician together with an intern."
+      },
+      {
+        "text": "Two certified pharmacy technicians and two noncertified pharmacy technicians.",
+        "why": "Policy 2026-02, Section I(A)(1)(b), permits 1:4 when at least two active support personnel are licensed certified pharmacy technicians. The fifth employee doing only inventory receiving need not be included in the filling ratio under Section I(C)."
+      },
+      {
+        "text": "One licensed pharmacy intern and three noncertified pharmacy technicians.",
+        "why": "A single pharmacy intern permits only the ordinary 1:3 composition unless another qualifying person is present. Four active support personnel need an additional certified technician or a second intern."
+      },
+      {
+        "text": "Four licensed pharmacy interns performing prescription-filling duties under the same pharmacist.",
+        "why": "Four interns filling prescriptions are not permitted under the ordinary intern-supervision provisions. The exceptional four-intern supervisory arrangements in Policy 2026-02 do not authorize four interns to fill prescriptions in a nonvaccinating community pharmacy."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "MA Board Policy 2026-02 §§I(A), I(C), II; 247 CMR 8.01(16)",
+    "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-027",
+    "set": 6,
+    "area": 2,
+    "kind": "single",
+    "topic": "Pharmacist prescribing of oral HIV PrEP",
+    "stem": "In November 2026, a Massachusetts-licensed community pharmacist plans to independently prescribe an FDA-approved oral HIV pre-exposure prophylaxis (PrEP) medication for an eligible adult. The pharmacist holds an NPI, completed an appropriately accredited 2.5-hour course addressing HIV risk assessment, symptoms, and prevention modalities (not only pharmacology), and will follow the applicable statewide PrEP guidance, counseling, documentation, and referral requirements. The prescription and dispensing will occur at the SAME pharmacy. The pharmacist does not hold a separate Massachusetts Controlled Substance Registration (MCSR). Which statement is MOST accurate?",
+    "choices": [
+      {
+        "text": "The pharmacist must first obtain a physician-signed collaborative drug therapy management agreement, even though the 2026 state pharmacist-prescribing guidance is followed.",
+        "why": "M.G.L. c.94C §19F independently authorizes qualifying pharmacists to prescribe covered HIV-prevention medications under statewide guidance. A separate CDTM agreement is not required simply to invoke this authority."
+      },
+      {
+        "text": "The pharmacist cannot prescribe because a personal MCSR is mandatory for every prescription issued by a pharmacist, even when it is dispensed at the same pharmacy.",
+        "why": "Massachusetts Circular DCP 26-08-125 expressly states that a pharmacist need not obtain a personal MCSR when both the prescribing and dispensing occur at one pharmacy location, provided all other applicable conditions are met."
+      },
+      {
+        "text": "The pharmacist may omit the NPI and document the encounter only if the pharmacy transfers the resulting prescription to a different pharmacy for dispensing.",
+        "why": "DCP 26-08-125 requires the pharmacist to obtain an NPI and document prescribing and dispensing activities. Dispensing elsewhere would also fall outside the circular's specifically described same-location MCSR exemption."
+      },
+      {
+        "text": "The pharmacist may prescribe and dispense oral PrEP under §19F without a separate personal MCSR in this same-location situation, provided all other applicable requirements are met.",
+        "why": "DCP 26-08-125 permits pharmacist prescribing of covered HIV-prevention medications under statewide guidance and qualifying training. It requires an NPI and expressly waives a separate pharmacist MCSR when prescribing and dispensing both occur at a single pharmacy location."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §19F; DCP Circular 26-08-125, General Prescribing Requirements and HIV Prevention",
+    "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-028",
+    "set": 6,
+    "area": 2,
+    "kind": "multi",
+    "topic": "2026 Part 2 consent and SUD counseling notes",
+    "stem": "A HIPAA-covered Massachusetts pharmacy receives ordinary substance-use-disorder treatment records from a federally assisted 42 CFR Part 2 program pursuant to the patient's valid, written single consent for future treatment, payment, and health care operations (TPO). The pharmacy is also asked to obtain a separately maintained set of the treating counselor's SUD counseling notes, but the patient has NOT given any separate consent for those notes. No other disclosure exception or state-specific restriction applies. Under the Part 2 rule with a February 16, 2026 compliance date, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The single TPO consent automatically authorizes the pharmacy to obtain the separately maintained SUD counseling notes on the same terms as the ordinary treatment record.",
+        "why": "The 2024 Part 2 rule expressly creates special protection for separately maintained SUD counseling notes; a broad TPO consent does not replace the separate patient consent required for those notes."
+      },
+      {
+        "text": "For the ordinary Part 2 treatment records received under the valid TPO consent, the HIPAA-covered pharmacy may make later disclosures as HIPAA permits, subject to Part 2's additional prohibition on using records in proceedings against the patient.",
+        "why": "HHS's 2024 Part 2 final rule allows HIPAA-covered entities receiving Part 2 records under a single TPO consent to redisclose according to HIPAA, except for the more protective restriction on legal proceedings against the patient."
+      },
+      {
+        "text": "Once the pharmacy has the ordinary records under a TPO consent, a general subpoena alone makes their use in criminal proceedings against that patient permissible.",
+        "why": "Part 2's special protection against using SUD records against the patient remains in force. A general subpoena alone is not equivalent to the specific patient consent or Part 2-compliant court-order process required for such proceedings."
+      },
+      {
+        "text": "The pharmacy generally needs separate consent for the separately maintained SUD counseling notes; the ordinary TPO consent does not cover that special note category.",
+        "why": "The revised 42 CFR Part 2 rule treats separately maintained SUD counseling notes analogously to psychotherapy notes and requires specific patient consent, rather than relying on a broad TPO consent."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "42 CFR Part 2 (2024 final rule; compliance Feb. 16, 2026); HHS Part 2 Final Rule Fact Sheet, Patient Consent and SUD Counseling Notes",
+    "url": "https://www.hhs.gov/hipaa/for-professionals/regulatory-initiatives/fact-sheet-42-cfr-part-2-final-rule/index.html",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-029",
+    "set": 6,
+    "area": 3,
+    "kind": "single",
+    "topic": "PPPA prescription packaging and patient waiver",
+    "stem": "A Massachusetts patient with limited hand dexterity specifically requests a conventional (non-child-resistant) container for ONE newly prescribed oral medication subject to the federal Poison Prevention Packaging Act (PPPA). The pharmacist documents that request and dispenses the medication accordingly. Two weeks later, the patient presents a DIFFERENT new prescription for another PPPA-covered oral medication. No blanket packaging request was made, the prescriber has not requested conventional packaging for the second prescription, and the patient makes no new packaging request. What is the BEST legally supported dispensing approach?",
+    "choices": [
+      {
+        "text": "The first prescription may use conventional packaging at the patient's request, but the second generally needs child-resistant packaging absent a new specific request, a valid blanket request, or a prescriber direction.",
+        "why": "CPSC's PPPA guidance permits a patient-specific packaging request while explaining that a request for one prescription does not extend to an unrelated future prescription. Without a separate exemption or request, the second prescription uses compliant packaging."
+      },
+      {
+        "text": "The first conventional container was impermissible because only a prescriber, not a patient, can authorize dispensing without child-resistant packaging.",
+        "why": "The PPPA permits a consumer or the prescribing practitioner to specifically request conventional packaging for a covered prescription; a patient request is legally sufficient for the first prescription."
+      },
+      {
+        "text": "Use conventional packaging for the second prescription because the first documented request permanently waives child-resistant packaging for all future prescriptions.",
+        "why": "CPSC expressly distinguishes a specific request for one prescription from a request covering all medications. The first request does not automatically become a blanket waiver for other prescriptions."
+      },
+      {
+        "text": "The pharmacist may independently choose conventional packaging for the second prescription based on the patient's known dexterity limitations, without a new patient or prescriber request.",
+        "why": "The patient's difficulty opening packaging can inform counseling but does not independently authorize the pharmacist to waive special packaging. The choice must come from the patient or prescriber unless another specific exemption applies."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "Poison Prevention Packaging Act §4(b); 16 CFR 1701.1; CPSC Poison Prevention Packaging Guide (Jan. 2023), p. 12",
+    "url": "https://www.cpsc.gov/s3fs-public/PoisonPreventionPackagingAGuideforHealthcareProfessionals.pdf",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-030",
+    "set": 6,
+    "area": 4,
+    "kind": "multi",
+    "topic": "DSCSA verification: suspect versus illegitimate product",
+    "stem": "A Massachusetts community pharmacy is a dispenser subject to the Drug Supply Chain Security Act (DSCSA). It finds a questionable product identifier on a prescription drug package that it holds in inventory and determines the package is a SUSPECT product. The pharmacy begins an investigation with its trading partners. Later, evidence establishes that it is an ILLEGITIMATE product. Assume no applicable waiver, exemption, or enforcement-discretion relief. Which statements accurately describe the dispenser's federal DSCSA obligations? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "At the point the package is determined to be suspect, it must be quarantined apart from product intended for distribution while the pharmacy promptly investigates.",
+        "why": "FD&C Act §582(d)(4)(A) requires the dispenser to quarantine a suspect product and promptly investigate its legitimacy; it cannot simply continue dispensing it while verifying the identifier."
+      },
+      {
+        "text": "The pharmacy must notify FDA and all immediate trading partners within 24 hours of the initial SUSPECT classification, even before it determines the product is illegitimate.",
+        "why": "The federal 24-hour illegitimate-product notification requirement for dispensers is triggered by the determination of illegitimacy, not merely by the initial classification of a product as suspect."
+      },
+      {
+        "text": "After determining that the product is illegitimate, the pharmacy must notify FDA and appropriate immediate trading partners within 24 hours of that determination.",
+        "why": "Under §582(d)(4)(B)(ii), the dispenser must notify FDA and immediate trading partners that it has reason to believe may have received the illegitimate product within 24 hours after determining illegitimacy."
+      },
+      {
+        "text": "The pharmacy must retain records of the suspect-product investigation for at least six years after the investigation is concluded.",
+        "why": "FD&C Act §582(d)(4)(A)(iv) requires dispensers to retain suspect-product investigation records for at least six years after the conclusion of the investigation, regardless of the outcome."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "FD&C Act §582(d)(4)(A)–(B) (21 U.S.C. §360eee-1); FDA DSCSA Verification Systems Guidance (Dec. 2023)",
+    "url": "https://www.fda.gov/drugs/drug-supply-chain-security-act-dscsa/title-ii-drug-quality-and-security-act",
+    "verified": "2026-11-13"
   }
 ];
