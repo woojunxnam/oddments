@@ -19,6 +19,8 @@
       state = {set:sets.includes(Number(raw.set)) ? Number(raw.set) : 1, answers:raw.answers, submitted:raw.submitted};
     }
   } catch(_) { /* Storage is optional. */ }
+  const requestedSet = Number(new URLSearchParams(window.location.search).get('set'));
+  if (sets.includes(requestedSet)) state.set = requestedSet;
   function save() { try { localStorage.setItem(key, JSON.stringify(state)); } catch(_) {} }
   function getAnswer(q) {
     const value = state.answers[q.id] || [];
@@ -30,7 +32,7 @@
     const b = [...q.correct].sort().join(',');
     return a === b;
   }
-  function switchSet(set) {state.set = set; save(); render(); $('set-heading').focus();}
+  function switchSet(set) {state.set = set; save(); const url = new URL(window.location.href); url.searchParams.set('set', String(set)); window.history.replaceState(null, '', url); render(); $('set-heading').focus();}
   function renderTabs() {
     const root = $('set-tabs'); root.replaceChildren();
     sets.forEach(s => {
