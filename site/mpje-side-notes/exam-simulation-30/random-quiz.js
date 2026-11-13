@@ -88,7 +88,9 @@
     return q && Number.isInteger(q.area) && q.area >= 1 && q.area <= 4 &&
       ['single', 'multi'].includes(q.kind) && Array.isArray(q.choices) &&
       q.choices.length === 4 && q.choices.every(c => c && c.text && c.why) &&
-      Array.isArray(q.correct) && q.correct.length >= 1 &&
+      Array.isArray(q.correct) && q.correct.length === (q.kind === 'single' ? 1 : q.correct.length) &&
+      (q.kind === 'single' || (q.correct.length >= 2 && q.correct.length <= 3)) &&
+      new Set(q.correct).size === q.correct.length &&
       q.correct.every(v => letters.includes(v)) && typeof q.url === 'string' &&
       q.url.startsWith('https://');
   }
