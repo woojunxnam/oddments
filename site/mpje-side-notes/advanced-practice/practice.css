@@ -1,0 +1,39 @@
+/* Chapter 30: independent, mobile-friendly five-question exam sessions */
+.session-toolbar{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin:16px 0 20px}
+.session-toolbar label{flex:1 1 350px;display:grid;gap:7px;font-weight:700}
+.session-toolbar select{font:inherit;min-height:48px;width:100%;padding:10px 12px;border:1px solid #aec1d4;border-radius:10px;background:#fff;color:#162a40}
+.session-toolbar select:focus-visible{outline:3px solid #7fb4e6;outline-offset:3px}
+.exam-legend{font-size:.88rem;color:var(--muted);margin:4px 0 14px}
+.session-intro{font-size:.95rem;color:#344a60}
+.session-progress{background:#eaf3fd;border:1px solid #bad4ee;border-radius:10px;padding:12px;font-weight:700;color:#183f69}
+.exam-card{display:block;min-width:0;border:1px solid #c8d6e3;background:#fff;border-radius:15px;margin:22px 0;padding:17px 18px}
+.exam-stem{font-weight:730;font-size:1.04rem;line-height:1.6;white-space:pre-wrap;padding:0 7px}
+.exam-type{display:inline-block;background:#eaf0f7;color:#23486f;border-radius:5px;margin:8px 0 3px;font-size:.73rem;font-weight:800;letter-spacing:.06em;padding:3px 7px}
+.exam-options{display:grid;gap:10px;margin:14px 0}
+.exam-option{display:grid;grid-template-columns:22px 28px minmax(0,1fr);align-items:start;gap:10px;border:1.5px solid #d5e1ed;border-radius:10px;padding:12px 13px;cursor:pointer;line-height:1.48;background:#fbfdff;overflow-wrap:anywhere}
+.exam-option input{width:19px;height:19px;margin:3px 0 0;accent-color:#22679b}
+.exam-option:focus-within{outline:3px solid #7fb4e6;outline-offset:2px}
+.exam-option:hover:not(:has(input:disabled)){background:#eaf5fe;border-color:#8dadd0}
+.exam-letter{font-size:.88rem;text-align:center;font-weight:800;color:#285379;padding:1px 4px;background:#e8f0f8;border-radius:5px}
+.exam-option.is-selected{border-color:#2f78ad;background:#eaf5ff}
+.exam-option.is-correct-answer{border-color:#29815b;background:#f0fbf3}
+.exam-option.is-incorrect-selection{border-color:#b74849;background:#fff2f2}
+.exam-option:has(input:disabled){cursor:default}
+.exam-option-text{min-width:0}
+.exam-feedback{background:#f6f9fc;border-top:1px solid #d0dce8;padding:12px;margin-top:15px;border-radius:9px;line-height:1.53}
+.exam-feedback[hidden],.exam-score[hidden],.exam-controls [hidden]{display:none}
+.answer-correct,.answer-incorrect{font-size:1rem;font-weight:800}
+.answer-correct{color:#16613c}.answer-incorrect{color:#943c3c}
+.answer-detail{margin:8px 0}
+.exam-references{font-size:.85rem;line-height:1.65;padding-top:10px;margin-top:12px;border-top:1px solid #dce5ed}
+.exam-controls{display:flex;flex-wrap:wrap;gap:12px}
+.exam-controls button{font:inherit;min-height:48px;padding:11px 20px;border-radius:10px;font-weight:750;cursor:pointer}
+.exam-submit{background:#154f84;color:white;border:1px solid #154f84}
+.exam-submit:disabled{background:#c8d2dc;color:#596879;border-color:#c8d2dc;cursor:not-allowed}
+.exam-reset{background:#f5faff;color:#154f84;border:1px solid #97b7d5}
+.exam-controls button:focus-visible{outline:3px solid #7fb4e6;outline-offset:3px}
+.exam-score{margin:18px 0;padding:17px;border-radius:12px;background:#e6f2ff;font-weight:800;color:#153d62}
+.chapter-steps{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.chapter-steps a{display:inline-flex;padding:8px 12px;border-radius:9px;border:1px solid #aac2db;text-decoration:none;background:#f4f9ff;font-weight:650}
+@media(max-width:620px){.exam-card{padding:13px 11px}.exam-option{grid-template-columns:20px 23px minmax(0,1fr);padding:11px 9px;gap:7px}.exam-stem{font-size:.99rem}.hero{padding:25px 18px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
