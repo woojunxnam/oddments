@@ -33,7 +33,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate Chapter 30 topic inventory
-        run: python scripts/update_ch30_topic_inventory.py --check
+        run: |
+          python scripts/update_ch30_topic_inventory.py --write
+          git diff --exit-code -- site/mpje-side-notes/exam-simulation-30/topic-inventory.json
+          python scripts/update_ch30_topic_inventory.py --check
       - name: Build enabled practice collections
         run: |
           python scripts/build_refresh.py --check
