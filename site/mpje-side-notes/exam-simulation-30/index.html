@@ -11,6 +11,7 @@
 <script src="../quiz.js" defer></script>
 <script src="questions.js" defer></script>
 <script src="study.js" defer></script>
+<script src="random-quiz.js" defer></script>
 </head>
 <body>
 <header><nav class="top" aria-label="Site navigation"><strong>MPJE · English Side Notes</strong><a href="../">All English chapters</a><a href="../cumulative-practice/">Chapter 28: Cumulative Practice</a><a href="../../notes/#home">Original Korean Notes</a></nav></header>
@@ -26,6 +27,7 @@
 <h2>Chapter contents</h2>
 <div class="links">
 <a href="#how-to-practice">How to practice</a>
+<a href="#random-practice">Random 10 · Balanced Areas</a>
 <a href="#practice">Five five-question practice sets</a>
 <a href="#verification">Legal references &amp; review status</a>
 <a href="../drug-memorization/">Previous: Chapter 29</a>
@@ -38,6 +40,31 @@
 <p>These original questions simulate legal reasoning difficulty, exceptions, multiple authorities, and nearby distractors. The difficulty has not been psychometrically calibrated against secure NABP questions, and no candidate recollections have been copied into this collection.</p>
 <p class="exam-muted">Your answers are saved locally in this browser when storage is available. Use the "Retake this set" button to clear that set only.</p>
 <div class="callout caution"><strong>Exam preparation:</strong> Before relying on any rule, check its effective date and the linked source. Massachusetts Board policies, enacted regulations, federal rules, and USP standards are not interchangeable. Some topics have unresolved interpretive tensions; this is an author-reviewed learning set, not an independently audited canonical examination bank.</div>
+</section>
+<section class="panel" id="random-practice">
+<h2>Random 10 — Balanced MPJE Areas</h2>
+<p><strong>Generate a new 10-question mix each time:</strong> Area 1 (2), Area 2 (3), Area 3 (3), Area 4 (2). Questions are sampled without replacement, shuffled, and checked to avoid producing the same ten-question combination consecutively. Separate random sets can share individual questions as the bank grows.</p>
+<div class="random-area-breakdown" aria-label="Random ten question area distribution">
+<span>Area 1 · Licensure/Personnel <strong>2</strong></span>
+<span>Area 2 · Pharmacist Practice <strong>3</strong></span>
+<span>Area 3 · Dispensing <strong>3</strong></span>
+<span>Area 4 · Operations <strong>2</strong></span>
+</div>
+<p id="random-pool" class="exam-muted">Loading the available question pool…</p>
+<p class="exam-muted">This is a custom study mix, not the exact official exam distribution. The area labels follow the <a href="https://nabp.pharmacy/programs/examinations/mpje/competency-statements/">NABP MPJE Competency Statements</a> used for exams before March 1, 2027. The blueprint changes on March 1, 2027; these legacy-area labels are retained for consistency until the study design is updated.</p>
+<div class="exam-actions random-actions-top">
+<button type="button" id="random-new-top" class="primary">New Random 10</button>
+</div>
+<p id="random-message" class="exam-muted" aria-live="polite"></p>
+<div class="exam-toolbar"><h3 id="random-heading">10-question random quiz</h3><strong id="random-progress" aria-live="polite">Loading…</strong></div>
+<div id="random-question-grid"></div>
+<div id="random-score" class="exam-score" role="status" tabindex="-1" hidden></div>
+<div class="exam-actions">
+<button type="button" id="random-submit" class="primary" disabled>Submit all 10 answers</button>
+<button type="button" id="random-retake" hidden>Retake these 10</button>
+<button type="button" id="random-new-bottom">New Random 10</button>
+</div>
+<p class="exam-muted">Answers and A–D explanations stay hidden until all ten responses are submitted. SATA questions receive credit only when the selected answers exactly match the answer key. Random quiz progress is stored separately from fixed five-question sets when browser storage is available.</p>
 </section>
 <section class="panel" id="practice">
 <h2>Advanced practice sets</h2>
