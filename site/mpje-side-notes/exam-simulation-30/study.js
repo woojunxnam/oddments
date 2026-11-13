@@ -84,7 +84,10 @@
           if(q.kind==='single'){state.answers[q.id]=[letter];}
           else {if(input.checked)a.add(letter);else a.delete(letter);state.answers[q.id]=[...a];}
           save();
-          renderQuestions();
+          const qs = all.filter(item => item.set === state.set);
+          const answered = qs.filter(isComplete).length;
+          $('set-progress').textContent = answered + '/' + qs.length + ' answered';
+          $('submit-set').disabled = answered !== qs.length;
           renderTabs();
         });
         choices.append(label);
@@ -140,7 +143,14 @@
   });
   $('prev-set').addEventListener('click',()=>switchSet(Math.max(sets[0],state.set-1)));
   $('next-set').addEventListener('click',()=>switchSet(Math.min(sets[sets.length-1],state.set+1)));
-  if(all.length !== 20 || sets.length !== 4) {
+  if(!all.length || all.length % 5 !== 0 || sets.length !== all.length / 5
+    || sets.some(set => {
+      const qs = all.filter(q => q.set === set);
+      return qs.length !== 5 || qs.filter(q => q.kind === 'single').length !== 3
+        || qs.filter(q => q.kind === 'multi').length !== 2
+        || qs.some(q => !q.id || !q.url || q.choices.length !== 4
+          || !Array.isArray(q.correct) || !q.correct.length);
+    })) {
     $('set-desc').textContent='Question data could not be validated. Please report this to the maintainer.';
     return;
   }
