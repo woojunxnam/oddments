@@ -32,6 +32,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate Chapter 30 topic inventory
+        run: python scripts/update_ch30_topic_inventory.py --check
       - name: Build enabled practice collections
         run: |
           python scripts/build_refresh.py --check
@@ -148,6 +150,10 @@ jobs:
           python -m pip install playwright==1.57.0
           python -m playwright install --with-deps chromium
           python scripts/verify_draft_practice_browser.py --base-url "$PAGE_URL" --output test-results/draft33-public
+      - name: Exercise published Chapter 30 question review and random quiz
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python scripts/verify_ch30_browser.py --base-url "$PAGE_URL"
       - name: Retain published draft33 verification screenshots
         if: always()
         uses: actions/upload-artifact@v4

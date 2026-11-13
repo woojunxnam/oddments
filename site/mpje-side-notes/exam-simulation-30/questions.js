@@ -10,6 +10,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topic": "CDTM qualifications",
+    "topicKey": "cdtm",
     "stem": "A Massachusetts pharmacist earned a PharmD in 2022 and has practiced as a licensed pharmacist for four years. The pharmacist holds an unrestricted Massachusetts license, maintains the required liability insurance, and wishes to enter a FIRST CDTM agreement in November 2026. The Board has not determined that any education or residency is equivalent to five years of experience. Which statement is MOST accurate?",
     "choices": [
       {
@@ -42,6 +43,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "multi",
     "topic": "Certified technician scope",
+    "topicKey": "technician-scope",
     "stem": "A certified Massachusetts pharmacy technician holds current Board-accepted certification. A pharmacist on duty approves the delegated task. Which activities may this technician legally perform? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -75,6 +77,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Counseling and final validation",
+    "topicKey": "counseling-dur",
     "stem": "A Massachusetts patient picks up a chronic-medication refill and a newly prescribed inhaler. The patient declines counseling for the refill but accepts it for the inhaler. A pharmacist, pharmacy intern, and suitably trained pharmacy technician are on duty. Which workflow BEST complies with Massachusetts law?",
     "choices": [
       {
@@ -107,6 +110,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "multi",
     "topic": "USP <800> sterile hazardous drug",
+    "topicKey": "sterile-hazardous-compounding",
     "stem": "A Massachusetts facility prepares a sterile injectable antineoplastic drug designated hazardous under applicable NIOSH criteria. The drug requires manipulation and is subject to USP <800>. Which statements correctly describe sterile hazardous-drug compounding? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -140,6 +144,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topic": "Controlled-drug pickup identification",
+    "topicKey": "controlled-pickup-id",
     "stem": "A Massachusetts patient comes to pick up a valid Schedule II prescription but lacks government-issued identification. The pharmacist reasonably believes that refusing to dispense would cause serious hardship. No other identifier exemption applies. Which action is permitted if all other dispensing conditions are satisfied?",
     "choices": [
       {
@@ -172,6 +177,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topic": "Out-of-state Schedule II partial fills",
+    "topicKey": "cii-partial-fills",
     "stem": "A Rhode Island physician issues a valid methylphenidate Schedule II prescription for 60 tablets on November 4, 2026. The patient presents it to a Massachusetts pharmacy on November 8, requests a 20-tablet initial partial fill, and receives 20 tablets. On November 27, the patient requests the remaining 40 tablets from that SAME pharmacy. The initial patient-requested partial fill was documented, and all other requirements are met. What is the MOST accurate answer?",
     "choices": [
       {
@@ -204,6 +210,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "multi",
     "topic": "Unfilled prescription transfers",
+    "topicKey": "refills-transfers",
     "stem": "A patient asks a Massachusetts pharmacy to transfer several NEVER-FILLED prescriptions to another licensed Massachusetts pharmacy for INITIAL dispensing. Systems and pharmacist-to-pharmacist procedures otherwise comply with law. Which transfers are permitted? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -237,6 +244,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Emergency oral Schedule II follow-up",
+    "topicKey": "controlled-prescriptions",
     "stem": "A Massachusetts pharmacist receives a qualifying emergency oral prescription for a Schedule II medication and satisfies verification, documentation, quantity, and other legal requirements. The prescriber proposes sending the follow-up prescription within seven BUSINESS days. What is MOST appropriate?",
     "choices": [
       {
@@ -269,6 +277,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "multi",
     "topic": "CQI dispensing event",
+    "topicKey": "quality-safety",
     "stem": "A Massachusetts community pharmacy dispenses the wrong strength. The patient has the medication but calls BEFORE taking any dose, and the pharmacist confirms the error. The patient is uninjured. Under the state's continuous quality improvement rules, which statements are true? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -302,6 +311,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topic": "Schedule II–III 90-day supply",
+    "topicKey": "controlled-quantity",
     "stem": "A Massachusetts pharmacist receives four otherwise valid new prescriptions, each requesting a 90-day supply. Assume no other patient, federal, or payer restriction bars the full quantity. Which prescription MAY be filled as one 90-day dispensing under Massachusetts law?",
     "choices": [
       {
@@ -334,6 +344,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topic": "Biennial pharmacist CE",
+    "topicKey": "licensure-ce",
     "stem": "A Massachusetts pharmacist seeks renewal in December 2026. The pharmacist does not compound or immunize and has no CE waiver. In 2025, the pharmacist earns 22 contact hours: 18 home-study/mediated hours (including two law hours) and four live hours. In 2026, the pharmacist earns 24 hours: ten home study and 14 live (including two law hours). Every activity is approved; no more than eight hours are earned on any one day. Which conclusion is MOST accurate?",
     "choices": [
       {
@@ -366,6 +377,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "multi",
     "topic": "MassPAT reporting",
+    "topicKey": "masspat",
     "stem": "A Massachusetts community pharmacy and a nonresident mail-order pharmacy dispense controlled substances to Massachusetts patients. No reporting waiver applies. Which statements correctly distinguish MassPAT pharmacy reporting duties from prescriber query duties? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -400,6 +412,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "single",
     "topic": "USP <795> BUD",
+    "topicKey": "nonsterile-compounding",
     "stem": "A Massachusetts pharmacy compounds patient-specific nonsterile preparations under USP <795>: X is a NONPRESERVED aqueous oral suspension (water activity 0.95); Y is a nonaqueous oral liquid (water activity 0.45). There is no applicable USP–NF monograph or preparation-specific stability data, and no shorter BUD factor. Which pair matches the DEFAULT maximum beyond-use dates?",
     "choices": [
       {
@@ -432,6 +445,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "multi",
     "topic": "Vaccination workflow",
+    "topicKey": "immunization",
     "stem": "A Massachusetts pharmacy vaccinates a 55-year-old against herpes zoster under an otherwise valid standing order. A qualified pharmacist is on duty; the patient is eligible and has no contraindication. Under the Massachusetts vaccine workflow and federal VIS requirements, which statements are correct? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -466,6 +480,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "single",
     "topic": "Federal inventory exact count",
+    "topicKey": "controlled-inventory",
     "stem": "A Massachusetts retail pharmacy performs its biennial controlled-substance inventory and has: (1) an opened Schedule II oxycodone bottle with 42 tablets; (2) an opened 2,000-tablet Schedule III container holding about 1,250 tablets; (3) an opened 1,000-tablet Schedule IV container holding about 400 tablets; and (4) ten expired Schedule II tablets secured and awaiting reverse distribution. The pharmacy maintains a Schedule II perpetual inventory. Which method is MOST accurate?",
     "choices": [
       {
@@ -498,6 +513,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topic": "Pharmacist break",
+    "topicKey": "workforce-supervision",
     "stem": "A Massachusetts community pharmacy has only one pharmacist. During a scheduled 25-minute meal break, the pharmacist remains on the premises but outside the prescription area. Before leaving, the pharmacist has prepared, visually checked and performed prospective DUR on a NEW prescription for a patient. The pharmacy has compliant break policies and preserves drug security. Which pickup procedure is MOST consistent with 247 CMR 9.19(17)?",
     "choices": [
       {
@@ -530,6 +546,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "multi",
     "topic": "Pharmacy closure notices",
+    "topicKey": "pharmacy-operations",
     "stem": "A Massachusetts resident community pharmacy plans a permanent closure on December 20, 2026. Assume no Board waiver. Under 247 CMR 6.13, which actions are required? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -564,6 +581,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "single",
     "topic": "Theft and significant loss reports",
+    "topicKey": "security-loss",
     "stem": "On a Monday, a Massachusetts DEA-registered resident community pharmacy confirms an actual theft of a bottle of Schedule II oxycodone and becomes aware of it that morning. No holidays or special exemptions apply. Which reporting plan BEST meets federal and Massachusetts reporting rules?",
     "choices": [
       {
@@ -596,6 +614,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "multi",
     "topic": "Generic and authorized-generic interchange",
+    "topicKey": "interchange",
     "stem": "A Massachusetts pharmacy evaluates prescriptions for a brand product for which a less expensive, reasonably available interchangeable product is listed, along with a different FDA-authorized generic. No patient-specific exception or safety issue applies. Which statements are accurate? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -630,6 +649,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Opiate seven-day exception",
+    "topicKey": "opioid-oud",
     "stem": "A Massachusetts practitioner plans a 10-day outpatient oxycodone prescription for a 17-year-old after acute surgery. The practitioner determines in professional medical judgment that more than seven days is required for the acute condition, documents that condition and why a non-opiate alternative is inappropriate, and discusses opiate risks and necessity with the minor's parent. All other prescription and dispensing rules are satisfied. Which statement is MOST accurate under M.G.L. c.94C §19D?",
     "choices": [
       {
@@ -662,6 +682,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Emergency OUD treatment — DEA three-day rule",
+    "topicKey": "opioid-oud",
     "stem": "A DEA-registered practitioner in a Massachusetts emergency department is not registered as an opioid treatment program (OTP). A patient with opioid use disorder needs short-term withdrawal treatment while the department arranges referral to an OTP. Assume Massachusetts and other applicable laws permit the contemplated on-site dispensing, and no separate prescription authorization is being used. Under the federal exception in 21 CFR 1306.07(b), which action is MOST appropriate?",
     "choices": [
       {
@@ -694,6 +715,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "multi",
     "topic": "When a Schedule II fax serves as the original",
+    "topicKey": "controlled-prescriptions",
     "stem": "A Massachusetts pharmacy receives otherwise valid, prescriber-transmitted facsimile prescriptions for Schedule II medications. Assume an applicable Massachusetts exception permits paper/fax transmission, all necessary federal prescription elements are present, and no oral emergency authorization is involved. In which cases may the fax itself serve as the original prescription under 21 CFR 1306.11? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -728,6 +750,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Returned prescription drugs — Massachusetts",
+    "topicKey": "quality-safety",
     "stem": "A patient brings two sealed prescription packages back to the same Massachusetts pharmacy. Package X contains the wrong strength, which the pharmacy confirms it dispensed in error. Package Y was correctly dispensed, is not suspected to be defective or contaminated, and the patient simply no longer wants it. Neither medication has been taken, and the packages appear unopened. Which response BEST complies with 247 CMR 9.01?",
     "choices": [
       {
@@ -760,6 +783,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "multi",
     "topic": "DEA five-percent rule — pharmacy-to-pharmacy distribution",
+    "topicKey": "controlled-inventory",
     "stem": "A DEA-registered Massachusetts retail pharmacy wishes to transfer controlled-substance stock to a second DEA-registered retail pharmacy for that pharmacy's general dispensing to patients (not a patient-specific prescription transfer). Assume every other Massachusetts and federal condition is satisfied. Under 21 CFR 1307.11, which statements are accurate? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -793,6 +817,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "single",
     "topic": "Compounding commercially available drug copies",
+    "topicKey": "nonsterile-compounding",
     "stem": "A Massachusetts community pharmacy receives requests to compound a preparation with the same active ingredient, similar strength, and route as an FDA-approved product that remains commercially available and is not on the FDA drug shortages list. Assume the pharmacy otherwise meets applicable 503A, Massachusetts, and USP requirements. Which request BEST supports lawful patient-specific compounding of an essentially similar preparation?",
     "choices": [
       {
@@ -825,6 +850,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 1,
     "kind": "single",
     "topic": "2026 Massachusetts supervisory ratios",
+    "topicKey": "workforce-supervision",
     "stem": "A Massachusetts community pharmacy is not providing vaccination services. One pharmacist supervises four Massachusetts-licensed support personnel who are actively filling prescriptions. A fifth licensed technician is on the premises but performs only inventory receiving and does not participate in prescription preparation or filling. No waiver or dedicated-trainer arrangement applies. Under Board Policy 2026-02, which four-person filling team satisfies the ordinary 1:4 supervisory ratio?",
     "choices": [
       {
@@ -857,6 +883,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "single",
     "topic": "Pharmacist prescribing of oral HIV PrEP",
+    "topicKey": "public-health-prescribing",
     "stem": "In November 2026, a Massachusetts-licensed community pharmacist plans to independently prescribe an FDA-approved oral HIV pre-exposure prophylaxis (PrEP) medication for an eligible adult. The pharmacist holds an NPI, completed an appropriately accredited 2.5-hour course addressing HIV risk assessment, symptoms, and prevention modalities (not only pharmacology), and will follow the applicable statewide PrEP guidance, counseling, documentation, and referral requirements. The prescription and dispensing will occur at the SAME pharmacy. The pharmacist does not hold a separate Massachusetts Controlled Substance Registration (MCSR). Which statement is MOST accurate?",
     "choices": [
       {
@@ -889,6 +916,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 2,
     "kind": "multi",
     "topic": "2026 Part 2 consent and SUD counseling notes",
+    "topicKey": "privacy-part2",
     "stem": "A HIPAA-covered Massachusetts pharmacy receives ordinary substance-use-disorder treatment records from a federally assisted 42 CFR Part 2 program pursuant to the patient's valid, written single consent for future treatment, payment, and health care operations (TPO). The pharmacy is also asked to obtain a separately maintained set of the treating counselor's SUD counseling notes, but the patient has NOT given any separate consent for those notes. No other disclosure exception or state-specific restriction applies. Under the Part 2 rule with a February 16, 2026 compliance date, which statements are correct? SELECT ALL THAT APPLY.",
     "choices": [
       {
@@ -922,6 +950,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 3,
     "kind": "single",
     "topic": "PPPA prescription packaging and patient waiver",
+    "topicKey": "label-packaging",
     "stem": "A Massachusetts patient with limited hand dexterity specifically requests a conventional (non-child-resistant) container for ONE newly prescribed oral medication subject to the federal Poison Prevention Packaging Act (PPPA). The pharmacist documents that request and dispenses the medication accordingly. Two weeks later, the patient presents a DIFFERENT new prescription for another PPPA-covered oral medication. No blanket packaging request was made, the prescriber has not requested conventional packaging for the second prescription, and the patient makes no new packaging request. What is the BEST legally supported dispensing approach?",
     "choices": [
       {
@@ -954,6 +983,7 @@ window.MPJE_CH30_QUESTIONS = [
     "area": 4,
     "kind": "multi",
     "topic": "DSCSA verification: suspect versus illegitimate product",
+    "topicKey": "dscsa",
     "stem": "A Massachusetts community pharmacy is a dispenser subject to the Drug Supply Chain Security Act (DSCSA). It finds a questionable product identifier on a prescription drug package that it holds in inventory and determines the package is a SUSPECT product. The pharmacy begins an investigation with its trading partners. Later, evidence establishes that it is an ILLEGITIMATE product. Assume no applicable waiver, exemption, or enforcement-discretion relief. Which statements accurately describe the dispenser's federal DSCSA obligations? SELECT ALL THAT APPLY.",
     "choices": [
       {

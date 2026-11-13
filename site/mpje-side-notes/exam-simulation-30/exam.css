@@ -14,3 +14,29 @@
 #random-heading{margin:0}
 #random-practice{scroll-margin-top:20px}
 @media(max-width:620px){.random-area-breakdown{grid-template-columns:1fr}.random-area-label{font-size:.69rem}.random-question .exam-question-head{gap:5px}}
+
+
+/* Individual question checking, bookmarks, and spaced review */
+.ch30-question .exam-question-head{align-items:center}
+.ch30-bookmark{font:inherit;font-size:.82rem;font-weight:700;margin-left:auto;min-height:40px;padding:8px 12px;color:#234f75;background:#f3f8ff;border:1px solid #bdd1e5;border-radius:8px;cursor:pointer}
+.ch30-bookmark.is-saved{background:#fff4d7;color:#674a0e;border-color:#d9b46b}
+.ch30-bookmark:focus-visible,.ch30-check:focus-visible,.ch30-retry:focus-visible,
+#wrong-refresh:focus-visible,#saved-refresh:focus-visible{outline:3px solid #679edc;outline-offset:3px}
+.ch30-question-actions{margin-top:14px;justify-content:flex-start}
+.ch30-question-actions .ch30-check,.ch30-question-actions .ch30-retry{min-width:180px}
+.ch30-question .exam-choice.is-selected{background:#eaf4ff;border-color:#3a80b3}
+.ch30-question .exam-choice:has(input:disabled){cursor:default}
+.ch30-question .exam-choice:has(input:disabled):hover{border-color:#c8d4e3}
+.ch30-question .exam-choice.is-correct:hover{border-color:#30836d!important}
+.ch30-question .exam-choice.is-wrong:hover{border-color:#bf625e!important}
+.exam-feedback[tabindex="-1"]:focus{outline:none}
+.exam-history{font-size:.83rem;color:#6e4c20;background:#fff8ec;padding:7px 10px;border-radius:7px;margin-top:12px}
+#wrong-review,#saved-review,#review-inventory{scroll-margin-top:20px}
+#wrong-question-grid .exam-question,#saved-question-grid .exam-question{margin-top:16px}
+#wrong-refresh,#saved-refresh{margin-top:0}
+.ch30-empty{padding:17px;background:#f2f7fc;border:1px dashed #b3c7da;border-radius:11px}
+#review-nav-count{font-weight:700}
+@media(max-width:650px){
+  .ch30-bookmark{margin-left:0;min-height:38px}
+  .ch30-question-actions .ch30-check,.ch30-question-actions .ch30-retry{width:100%}
+}
