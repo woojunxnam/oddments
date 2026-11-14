@@ -1180,5 +1180,174 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "USP <797> §1.3 Immediate-Use CSPs; USP official <797> FAQs (Dec. 11, 2023), items 22, 25, 40",
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-036",
+    "set": 8,
+    "area": 1,
+    "kind": "single",
+    "topic": "Community CDTM: prescribing, documentation and physician notification",
+    "topicKey": "cdtm",
+    "stem": "A Massachusetts community pharmacist has all required CDTM qualifications and a current MCSR. A supervising physician and pharmacist have signed a collaborative practice agreement with written diabetes-management prescribing protocols. A 52-year-old patient has a patient-specific written referral identifying diabetes, has provided written informed consent, and is already receiving metformin (Massachusetts Schedule VI) prescribed by that physician. The pharmacist proposes to modify the metformin dose under the protocol. No urgent circumstances or other legal restrictions apply. Which plan is FULLY consistent with 247 CMR 16.03 and 16.04?",
+    "choices": [
+      {
+        "text": "Modify metformin under the protocol, document the change in the patient's medical record, and forward a copy of the modification to the supervising physician within 72 hours.",
+        "why": "The appropriate therapy and medical-record documentation are not enough: 247 CMR 16.03(5)(e)2 requires a copy of a modification to be provided to the supervising physician within 24 hours of issuance unless more urgent notification is needed."
+      },
+      {
+        "text": "Modify metformin under the protocol and send the physician a copy within 24 hours, but record the action only in a pharmacy dispensing worksheet rather than the patient's medical record.",
+        "why": "The 24-hour notification is appropriate, but 247 CMR 16.03(5)(e)2 and 16.04(2)(e) also require the action to be noted in the patient's medical record; a dispensing worksheet alone does not satisfy that duty."
+      },
+      {
+        "text": "Modify metformin under the protocol, note the action in the patient's medical record, and send the supervising physician a copy of the modification within 24 hours.",
+        "why": "The patient-specific referral, written consent, covered diagnosis, authorized Schedule VI therapy, permanent medical-record documentation, and 24-hour transmission of the medication modification satisfy the stated community-CDTM requirements."
+      },
+      {
+        "text": "Instead of modifying metformin, use the same CDTM agreement to increase the patient's Schedule IV clonazepam dose after the supervising physician verbally approves and receives written notice within 24 hours.",
+        "why": "247 CMR 16.03(5)(e)3 prohibits a community-pharmacy CDTM pharmacist from prescribing Schedule II through V controlled substances even if the physician approves and receives prompt notice."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 16.03(5)(c)–(e), 16.04(1)–(2): community CDTM patient referral, limited prescribing, and physician notification",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-037",
+    "set": 8,
+    "area": 2,
+    "kind": "single",
+    "topic": "MIIS objection: reporting versus data-sharing access",
+    "topicKey": "immunization",
+    "stem": "At a Massachusetts community pharmacy, a properly qualified pharmacist administers an indicated recombinant zoster vaccine to a 55-year-old patient under a valid standing order. All screening and pre-administration VIS requirements are met. At the visit, the patient completes a Massachusetts Immunization Information System (MIIS) data-sharing objection form and gives it directly to the pharmacist. The pharmacy has MIIS GUI access and no regulatory waiver. Which response MOST accurately satisfies Massachusetts requirements?",
+    "choices": [
+      {
+        "text": "Do not report this dose to MIIS because the patient's written data-sharing objection exempts the pharmacy from submitting the immunization record.",
+        "why": "105 CMR 222.100 requires reporting of new immunizations within 72 hours. An objection to MIIS data sharing limits access among MIIS users; it does not cancel the provider's reporting duty."
+      },
+      {
+        "text": "Report the immunization to MIIS within 72 hours; forward the objection form to DPH within 24 hours of receipt and change the patient's MIIS data-sharing status in the GUI.",
+        "why": "105 CMR 222.100(A) requires reporting within 72 hours. Section 222.105(B)(2) separately requires a provider receiving the objection form to send it to DPH within 24 hours and update the recipient's data-sharing status in the MIIS GUI."
+      },
+      {
+        "text": "Report the immunization within 72 hours and retain the objection in the pharmacy's records, but leave the patient's MIIS data-sharing setting unchanged until DPH contacts the pharmacy.",
+        "why": "The provider must not merely retain the objection: 105 CMR 222.105(B)(2) requires the form to be returned to DPH within 24 hours and the sharing status to be changed in the GUI."
+      },
+      {
+        "text": "Forward the patient's objection form to DPH within 72 hours, then report the vaccination only if the patient subsequently withdraws the objection.",
+        "why": "The form must be forwarded within 24 hours of receipt, not 72 hours. The dose must still be reported within 72 hours even when data sharing has been restricted."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "105 CMR 222.100(A) and 222.105(A)–(B): immunization reporting and MIIS data-sharing objections",
+    "url": "https://www.mass.gov/doc/105-cmr-222-massachusetts-immunization-information-system/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-038",
+    "set": 8,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Mail-delivered liquid prescriptions: counseling refusal and DUR",
+    "topicKey": "counseling-dur",
+    "stem": "A Massachusetts community pharmacy fills a NEW oral antibiotic suspension and sends it to a patient who elected delivery to their home. The pharmacy provides the patient with a toll-free number enabling direct contact with its pharmacist; the patient is reached, is offered pharmacist counseling, and expressly declines. A pharmacy technician prepares the package, and the pharmacist has not yet performed the prospective drug utilization review (DUR). Assume no inpatient exception or other special waiver applies. Which actions or conclusions are consistent with Massachusetts law? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "For a patient electing delivery away from the pharmacy, access to a toll-free telephone service facilitating communication with the pharmacist may satisfy the statutory counseling-access requirement.",
+        "why": "M.G.L. c.94C, §21A allows counseling-access obligations for delivery outside a pharmacy to be met by giving the recipient access to a toll-free telephone service for communication with the pharmacist."
+      },
+      {
+        "text": "The technician's completion of a computerized interaction screen substitutes for the pharmacist's prospective DUR, allowing this new prescription to be released without pharmacist review.",
+        "why": "M.G.L. c.94C, §21A and 247 CMR 9.17 place the prospective drug review responsibility on a pharmacist before a new prescription is dispensed or delivered. A technician's computerized screening alone does not replace it."
+      },
+      {
+        "text": "The pharmacy should record the patient's refusal of counseling in the appropriate patient record or signature log, even though the offer was made.",
+        "why": "M.G.L. c.94C, §21A requires reasonable efforts to document patient information, including any failure to accept a counseling offer; 130 CMR 406.446 likewise specifies documenting patient refusals for MassHealth prescriptions."
+      },
+      {
+        "text": "The pharmacist or pharmacy must dispense or recommend an appropriate measuring device for the liquid antibiotic suspension.",
+        "why": "247 CMR 9.18(9) requires a pharmacy and pharmacist to dispense or recommend a proper measuring device with liquid medications, independent of the patient's decision to decline counseling."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §21A; 247 CMR 9.17 and 9.18(9); 130 CMR 406.446: mail-delivery counseling, DUR, refusal and measuring devices",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21A",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-039",
+    "set": 8,
+    "area": 3,
+    "kind": "multi",
+    "topic": "MassPAT additional drugs and naloxone: reporting versus visibility",
+    "topicKey": "masspat",
+    "stem": "A Massachusetts community pharmacy dispenses prescribed gabapentin (Massachusetts Schedule VI), a Schedule IV tramadol prescription, and naloxone to eligible Massachusetts residents. A separate patient receives gabapentin from a federal Veterans Affairs (VA) pharmacy. The community pharmacy is reviewing its MassPAT data obligations and what prescribers will see on patient PMP profiles. Assume no waivers apply to the community pharmacy. Which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Prescribed gabapentin dispensed at the Massachusetts community pharmacy must be reported to the PMP, even though it remains a Massachusetts Schedule VI drug.",
+        "why": "Massachusetts DPH designates gabapentin an additional drug for PMP reporting under 105 CMR 700.012. Schedule VI classification does not remove the community pharmacy's reporting obligation."
+      },
+      {
+        "text": "The VA pharmacy's gabapentin dispensing may not appear in MassPAT because federal VA reporting is limited by statute to federally controlled Schedule II–V prescriptions.",
+        "why": "The Massachusetts DPH reporting guidance explains that VA pharmacies are limited by federal statute to reporting Schedule II–V dispensings, so their Schedule VI gabapentin transactions will not appear on a patient's PMP report."
+      },
+      {
+        "text": "An out-of-state mail pharmacy delivering prescribed gabapentin to a Massachusetts resident is exempt from Massachusetts PMP reporting solely because gabapentin is not federally scheduled.",
+        "why": "105 CMR 700.012(A)(1) extends reporting to covered out-of-state pharmacies delivering controlled substances or designated additional drugs to people in Massachusetts. Gabapentin's federal unscheduled status alone is not an exemption."
+      },
+      {
+        "text": "DPH permits naloxone dispensing information to be included in daily PMP submissions for data collection; that naloxone information does not appear on the patient's PMP profile, and patient ID collection is not required for those dispensings.",
+        "why": "Massachusetts DPH describes daily PMP submission as its preferred naloxone-reporting method under M.G.L. c.94C §19B, clarifies that naloxone entries are data-collection-only and not visible on patient profiles, and does not require patient ID for naloxone submissions."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "105 CMR 700.012(A)(1),(5),(8); DPH Pharmacy Reporting and Data Submission: Gabapentin, VA dispensings, and naloxone",
+    "url": "https://www.mass.gov/info-details/pharmacy-reporting-and-data-submission",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-040",
+    "set": 8,
+    "area": 4,
+    "kind": "single",
+    "topic": "DEA Form 222: partial stock shipments and sixty-day expiration",
+    "topicKey": "controlled-inventory",
+    "stem": "A DEA-registered Massachusetts retail pharmacy executed a valid PAPER DEA Form 222 on September 1, 2026, ordering ten commercial containers of a Schedule II medication. The supplier shipped four containers on September 12. It can ship the other six 45 days after the form was executed, directly to the registered location printed on the order. The pharmacy maintains a copy of its order and is able to document the actual quantity and receipt date for each shipment. No military procurement or other exception applies. Which statement BEST describes the lawful procedure under 21 CFR 1305.13?",
+    "choices": [
+      {
+        "text": "The supplier may supply the remaining six containers through additional shipments within 60 days of the form date, and the purchaser must record the containers furnished and the receipt dates on its retained copy.",
+        "why": "21 CFR 1305.13(b) permits partial shipments completing the balance within 60 days after the Form 222 date. Subsection (e) requires the purchaser to record the number of containers received and receipt dates on its retained copy."
+      },
+      {
+        "text": "The first partial shipment automatically closes the paper DEA Form 222, so an entirely new form is required for the remaining six containers even within 60 days.",
+        "why": "A supplier may supply the unfilled balance of a Form 222 in later partial shipments during the 60-day validity period. A new form is not inherently necessary merely because the first shipment was partial."
+      },
+      {
+        "text": "The 60-day validity clock starts with the first shipment on September 12 rather than the execution date, so the supplier can ship the balance for 60 days after that shipment.",
+        "why": "21 CFR 1305.13(b) measures the 60-day limit from the date of the DEA Form 222 as executed by the purchaser, not from the first shipment or the supplier's acknowledgment."
+      },
+      {
+        "text": "The pharmacy may redirect the remaining containers to a different branch with its own DEA registration without changing the paper DEA Form 222 because both locations belong to the same owner.",
+        "why": "21 CFR 1305.13(c) generally requires the supplier to ship to the purchaser and location printed on the Form 222. Common ownership and separate DEA registration do not independently authorize delivery to another location."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "21 CFR 1305.13(a)–(e): DEA Form 222 partial shipments, location, purchaser records and 60-day limit",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.13",
+    "verified": "2026-11-13"
   }
 ];
