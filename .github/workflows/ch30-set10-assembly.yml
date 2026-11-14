@@ -1,0 +1,135 @@
+name: Assemble and validate Chapter 30 Set 10
+on:
+  push:
+    branches: [feature/ch30-set10-20261114]
+    paths: [.github/workflows/ch30-set10-assembly.yml]
+permissions:
+  contents: write
+concurrency:
+  group: ch30-set10-assembly
+  cancel-in-progress: false
+jobs:
+  assemble:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: feature/ch30-set10-20261114
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Append only the five new cases and regenerate inventory
+        shell: python
+        run: |
+          import json, re, subprocess, hashlib
+          from pathlib import Path
+          p=Path('site/mpje-side-notes/exam-simulation-30')
+          batch=json.loads(Path('.ch30-set10-pending.json').read_text())
+          original=(p/'questions.js').read_text()
+          m=re.search(r'window\.MPJE_CH30_QUESTIONS\s*=\s*(\[[\s\S]*\]);\s*$', original)
+          assert m, 'Canonical array not found'
+          old=json.loads(m.group(1)); new=batch['questions']
+          assert len(old)==batch['expected_count']==45 and old[-1]['id']==batch['expected_last_id']
+          assert len(new)==5 and [q['area'] for q in new]==[1,2,2,3,4]
+          assert sum(q['kind']=='single' for q in new)==3 and sum(q['kind']=='multi' for q in new)==2
+          assert [q['id'] for q in new]==[f'E30-{i:03}' for i in range(46,51)]
+          combined=old+new
+          assert len({q['id'] for q in combined})==50
+          assert len({' '.join(q['stem'].lower().split()) for q in combined})==50
+          for q in new:
+              assert q['set']==10 and q['verified']=='2026-11-14'
+              assert len(q['choices'])==4 and all(c['text'] and len(c['why'])>60 for c in q['choices'])
+              assert len(set(q['correct']))==len(q['correct']) and set(q['correct'])<=set('ABCD')
+              assert len(q['correct'])==1 if q['kind']=='single' else 2<=len(q['correct'])<=3
+              assert q['url'].startswith('https://') and q['citation']
+          (p/'questions.js').write_text(original[:m.start(1)]+json.dumps(combined,ensure_ascii=False,indent=2)+';\n')
+          reread=json.loads(re.search(r'window\.MPJE_CH30_QUESTIONS\s*=\s*(\[[\s\S]*\]);\s*$',(p/'questions.js').read_text()).group(1))
+          assert reread[:45]==old, 'Existing questions were changed'
+          catalog=json.loads((p/'topic-catalog.json').read_text())
+          keys={t['key'] for t in catalog['topics']}
+          assert not any(t['key'] in keys for t in batch['new_topics'])
+          catalog['topics']+=batch['new_topics']
+          (p/'topic-catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n')
+          subprocess.run(['python','scripts/update_ch30_topic_inventory.py','--write'],check=True)
+          subprocess.run(['python','scripts/update_ch30_topic_inventory.py','--check'],check=True)
+          inv=json.loads((p/'topic-inventory.json').read_text())
+          assert inv['question_count']==50 and inv['area_counts']=={'1':9,'2':18,'3':10,'4':13}
+          assert len(inv['topic_counts'])==30
+          changes={
+            p/'index.html': [
+              ('45 original advanced Massachusetts MPJE practice questions in nine scored sets','50 original advanced Massachusetts MPJE practice questions in ten scored sets'),
+              ('<strong>45 original, hard-to-very-hard questions</strong> organized into nine sets of five','<strong>50 original, hard-to-very-hard questions</strong> organized into ten sets of five'),
+              ('Nine five-question practice sets','Ten five-question practice sets'),
+              ('Updated November 13, 2026','Updated November 14, 2026'),
+              ('Questions reflect statutory and regulatory checks as of November 13, 2026','Set 10 sources were checked November 14, 2026; earlier questions retain their recorded verification dates')],
+            Path('site/mpje-side-notes/index.html'): [
+              ('30. Exam-Level MA MPJE Practice · 45 Original Questions','30. Exam-Level MA MPJE Practice · 50 Original Questions'),
+              ('Nine fixed five-question sets (45 original questions)','Ten fixed five-question sets (50 original questions)')],
+            Path('site/mpje-side-notes/quiz.js'): [('Exam-Level MA MPJE Practice (45 questions)','Exam-Level MA MPJE Practice (50 questions)')]
+          }
+          for file,pairs in changes.items():
+              text=file.read_text()
+              for before,after in pairs:
+                  assert before in text, f'Missing expected token in {file}: {before}'
+                  text=text.replace(before,after,1)
+              file.write_text(text)
+          for file in list(p.glob('*.js'))+[Path('site/mpje-side-notes/quiz.js')]:
+              subprocess.run(['node','--check',str(file)],check=True)
+          print('PASS: 45 original question objects unchanged; 50 unique IDs/stems; 3 SBA/2 SATA; Areas 1/2/1/1; 30 topic families; generator and JS syntax.')
+      - name: Install focused browser test dependencies
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Exercise existing study features and every new Set 10 item
+        run: |
+          python -m http.server 8765 --directory site > /tmp/ch30-server.log 2>&1 &
+          python scripts/verify_ch30_browser.py --base-url http://127.0.0.1:8765/
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              context=browser.new_context(viewport={'width':390,'height':844})
+              page=context.new_page(); errors=[]
+              page.on('pageerror',lambda e: errors.append(str(e)))
+              page.goto('http://127.0.0.1:8765/mpje-side-notes/exam-simulation-30/?set=10',wait_until='domcontentloaded')
+              page.locator('#question-grid .ch30-question').first.wait_for()
+              assert page.locator('#set-heading').inner_text()=='Practice Set 10'
+              assert page.locator('#question-grid .ch30-question').count()==5
+              assert page.locator('#question-grid .exam-feedback').count()==0
+              questions=page.evaluate('window.MPJE_CH30_QUESTIONS.filter(q=>q.set===10)')
+              assert len(questions)==5
+              for i,q in enumerate(questions):
+                  card=page.locator('#question-grid [data-question-id="'+q['id']+'"]')
+                  for letter in q['correct']: card.locator('input[value="'+letter+'"]').check()
+                  card.locator('.ch30-check').click()
+                  assert card.locator('.exam-right').count()==1
+                  assert card.locator('.exam-explanations > p').count()>=4
+                  assert page.locator('#question-grid .exam-feedback').count()==i+1
+              assert page.locator('#set-progress').inner_text()=='5/5 checked'
+              q=next(q for q in questions if q['kind']=='multi')
+              card=page.locator('#question-grid [data-question-id="'+q['id']+'"]')
+              card.locator('.ch30-retry').click()
+              card.locator('input[value="'+q['correct'][0]+'"]').check()
+              card.locator('.ch30-check').click()
+              assert card.locator('.exam-wrong').count()==1, 'Incomplete SATA was incorrectly accepted'
+              card.locator('.ch30-retry').click()
+              extra=next(x for x in 'ABCD' if x not in q['correct'])
+              for letter in q['correct']+[extra]: card.locator('input[value="'+letter+'"]').check()
+              card.locator('.ch30-check').click()
+              assert card.locator('.exam-wrong').count()==1, 'Extra SATA option was incorrectly accepted'
+              assert page.locator('#saved-question-grid [data-question-id="'+q['id']+'"]').count()==1
+              page.reload(wait_until='domcontentloaded')
+              assert page.locator('#saved-question-grid [data-question-id="'+q['id']+'"]').count()==1
+              assert not errors, errors
+              page.screenshot(path='/tmp/ch30-set10-mobile.png',full_page=True)
+              browser.close()
+          print('PASS: all five Set 10 items; per-item hidden feedback; 5/5 correct; incomplete/overselected SATA rejected; repeated-wrong bookmark persists; mobile viewport.')
+          PY
+      - name: Commit canonical files only and remove assembly helpers
+        run: |
+          rm .ch30-set10-pending.json .github/workflows/ch30-set10-assembly.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- .ch30-set10-pending.json .github/workflows/ch30-set10-assembly.yml site/mpje-side-notes/exam-simulation-30/questions.js site/mpje-side-notes/exam-simulation-30/topic-catalog.json site/mpje-side-notes/exam-simulation-30/topic-inventory.json site/mpje-side-notes/exam-simulation-30/index.html site/mpje-side-notes/index.html site/mpje-side-notes/quiz.js
+          git commit -m 'Append Set 10 to canonical bank, regenerate inventory, verify new quiz, remove assembly helpers'
+          git push origin HEAD:feature/ch30-set10-20261114
