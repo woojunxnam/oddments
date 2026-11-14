@@ -1349,5 +1349,173 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "21 CFR 1305.13(a)–(e): DEA Form 222 partial shipments, location, purchaser records and 60-day limit",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1305/section-1305.13",
     "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-041",
+    "set": 9,
+    "area": 1,
+    "kind": "single",
+    "topic": "Pharmacy technician trainee: cumulative hours and telephone prescriptions",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts-licensed pharmacy technician trainee is 19 years old and has worked 1,505 cumulative hours as a trainee over ten months. The person has neither obtained a pharmacy technician license nor received a Board extension, and no other exception to the trainee employment limit applies. A pharmacist offers to supervise the trainee for another month and asks the trainee to accept new verbal prescriptions from prescribers during that period. Which statement is MOST accurate?",
+    "choices": [
+      {
+        "text": "The trainee can continue filling prescriptions until one full year has elapsed but must refer telephone prescriptions to the pharmacist.",
+        "why": "The employment limit in 247 CMR 8.03(5) is 1,500 hours OR one year, whichever occurs first, absent a stated exception. Already exceeding 1,500 hours disqualifies continued trainee work despite having fewer than 12 months of experience."
+      },
+      {
+        "text": "The trainee may continue working if a certified pharmacy technician directly supervises the filling work and a pharmacist later validates each prescription.",
+        "why": "The regulation requires direct supervision by a pharmacist and does not permit additional trainee employment beyond the statutory hour limit through certified-technician supervision or a final pharmacist check. Taking prescriptions by telephone is also prohibited for trainees."
+      },
+      {
+        "text": "The trainee cannot continue working as a trainee under these facts, and receiving prescriptions by telephone is prohibited for trainees even before reaching the employment limit.",
+        "why": "247 CMR 8.03(5) bars trainee employment after 1,500 hours or one year, whichever is shorter, absent an exception; none applies. Separately, 247 CMR 8.03(4)(c) prohibits a trainee from taking prescriptions over the telephone."
+      },
+      {
+        "text": "The trainee may restart a new 1,500-hour limit on January 1 because the trainee-hour maximum is measured separately for each calendar year.",
+        "why": "The regulatory 1,500-hour trainee period is cumulative employment, not an annual allowance that resets each January. The pharmacist cannot create an exception by changing the calendar year."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.03(4)(b)–(c), 8.03(5): trainee scope and 1,500-hour/one-year limit",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-042",
+    "set": 9,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Pharmacist-initiated contraception: initial visit, screening and supply",
+    "topicKey": "public-health-prescribing",
+    "stem": "In November 2026, a Massachusetts-licensed pharmacist with the appropriate contraceptive-prescribing training and an NPI evaluates a clinically eligible adult requesting a first oral hormonal contraceptive. The pharmacist uses the required self-screening risk assessment, provides counseling, and will meet all documentation and dispensing requirements. No previous contraception prescription, CDTM agreement, or primary-care visit is documented. Under M.G.L. c.94C §19F and current DPH Circular DCP 26-08-125, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may prescribe an eligible FDA-approved self-administered oral hormonal contraceptive without proof that a primary care practitioner previously prescribed contraception for this patient.",
+        "why": "The amended §19F(a) authorizes pharmacist-initiated oral hormonal contraceptive prescribing regardless of the patient's previous prescription history, provided applicable screening, training and clinical safeguards are met."
+      },
+      {
+        "text": "A patient-specific collaborative drug therapy management agreement or authorization from a physician is a mandatory prerequisite for an initial pharmacist-issued oral contraceptive prescription.",
+        "why": "The independent pharmacist-prescribing authority in M.G.L. c.94C §19F does not require a CDTM agreement or a patient-specific physician prescription when the pharmacist follows its specific requirements."
+      },
+      {
+        "text": "The pharmacy must not require the patient to make a scheduled pharmacist appointment solely to obtain the authorized oral contraceptive prescription and dispensing.",
+        "why": "The 2026 DPH circular states that a scheduled pharmacist appointment shall not be required for oral hormonal contraceptive or patch prescribing/dispensing under §19F."
+      },
+      {
+        "text": "The pharmacist may issue a valid oral hormonal contraceptive prescription for up to a 12-month supply when the required self-screening, training, counseling and other requirements are satisfied.",
+        "why": "Circular DCP 26-08-125 permits a prescription for up to, but not more than, a 12-month supply, subject to manufacturer labeling and clinical eligibility."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §19F(a)–(c); DPH Circular DCP 26-08-125 (Aug. 25, 2026), Hormonal Contraceptives",
+    "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-043",
+    "set": 9,
+    "area": 2,
+    "kind": "single",
+    "topic": "Naloxone for a third party: standing order and purchaser insurance",
+    "topicKey": "opioid-oud",
+    "stem": "A Massachusetts resident asks a community pharmacist for a naloxone rescue kit to keep available for a coworker at risk of overdose. The resident has no individual naloxone prescription and wants to use the resident's own prescription insurance. The pharmacy participates in the Massachusetts statewide naloxone standing order; no coverage exclusion or other dispensing restriction is present. Which workflow is MOST consistent with Massachusetts law and Board Policy 2024-01?",
+    "choices": [
+      {
+        "text": "Decline to dispense until the coworker is present and presents an individual naloxone prescription, because insurance billing must be under the intended recipient's name.",
+        "why": "M.G.L. c.94C §19B and the statewide standing order permit a person to obtain naloxone to administer to someone else. An individual prescription or the intended recipient's presence is not necessary under that pathway."
+      },
+      {
+        "text": "Provide naloxone only as a retail OTC purchase; the statewide standing order cannot be used when the purchaser intends to help another individual.",
+        "why": "The statewide standing order expressly supports dispensing to a person purchasing naloxone for another individual, including handling the transaction as a prescription for insurance billing."
+      },
+      {
+        "text": "Dispense under the standing order but bill the coworker's prescription insurance even though the purchaser is the resident, because the coworker will ultimately use the medication.",
+        "why": "For insurance billing and cost sharing, §19B(e) directs the pharmacy to treat the purchaser as the prescription recipient regardless of who ultimately uses the antagonist. Billing the coworker solely because of intended use would disregard this distinction."
+      },
+      {
+        "text": "Dispense under the statewide standing order, make a reasonable effort to identify and bill the purchaser's insurance, and provide naloxone counseling and the required opioid-antagonist information material.",
+        "why": "M.G.L. c.94C §19B permits third-party naloxone purchase and calls for reasonable purchaser-insurance identification/claim submission unless the purchaser elects to pay out of pocket. Board Policy 2024-01 also requires counseling and an opioid-antagonist information pamphlet."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §19B(b)–(e); MA Board Policy 2024-01 Naloxone Dispensing, §§I(B), I(D)–(G)",
+    "url": "https://www.mass.gov/doc/2024-01-naloxone-dispensing-pdf/download",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-044",
+    "set": 9,
+    "area": 3,
+    "kind": "single",
+    "topic": "Behind-the-counter pseudoephedrine: daily and 30-day base limits",
+    "topicKey": "otc-pseudoephedrine",
+    "stem": "A self-certified Massachusetts community pharmacy sells scheduled listed pseudoephedrine products in person, not by mail order or mobile vendor. A purchaser who presents valid government-issued photo identification has already bought 2.70 grams of pseudoephedrine BASE on the current calendar day and 8.30 grams during the relevant rolling 30-day period (including today's earlier purchases). All proposed quantities below are stated in pseudoephedrine BASE equivalents; there is no other applicable restriction or exemption. Which proposed transaction is legally permissible under the federal CMEA rules?",
+    "choices": [
+      {
+        "text": "Sell an additional 0.90 grams with a signed log entry, because the calendar-day amount becomes exactly 3.60 grams.",
+        "why": "The single-day quantity would be within the 3.6-gram daily limit, but the 30-day total would become 9.20 grams, above the separate 9-gram purchaser limit in 21 U.S.C. §844(a). Both limits must be satisfied."
+      },
+      {
+        "text": "Sell an additional 0.60 grams with compliant photo-ID verification and logbook documentation, because the daily and rolling 30-day totals remain below their respective limits.",
+        "why": "The resulting quantities are 3.30 grams today (2.70 + 0.60), below 3.60 grams, and 8.90 grams in 30 days (8.30 + 0.60), below 9.00 grams. The seller must also comply with the behind-the-counter and logbook requirements."
+      },
+      {
+        "text": "Sell an additional 0.75 grams in two separate transactions at different registers, each with its own log entry, because no single transaction exceeds the daily limit.",
+        "why": "Splitting does not evade the aggregate purchase limit. The 30-day total would be 9.05 grams, above 9.00 grams, even though the same-day total would be 3.45 grams."
+      },
+      {
+        "text": "Sell an additional 0.60 grams without a photo ID or logbook signature because a quantity below the 3.60-gram daily ceiling is exempt from the identification requirement.",
+        "why": "The low quantity does not create a general photo-ID and logbook exception; normal CMEA retail identification and recordkeeping apply to this sale."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 U.S.C. §§830(d)–(e), 844(a); 21 CFR 1314.20, 1314.25: retail pseudoephedrine base limits and sales records",
+    "url": "https://www.fda.gov/drugs/fda-drug-info-rounds-video/combat-methamphetamine-epidemic-act-march-2017",
+    "verified": "2026-11-13"
+  },
+  {
+    "id": "E30-045",
+    "set": 9,
+    "area": 4,
+    "kind": "multi",
+    "topic": "USP <800>: hazardous antineoplastic drug storage and environmental controls",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts institutional pharmacy handles a NIOSH Table 1 ANTINEOPLASTIC hazardous drug that must be crushed or otherwise manipulated for compounding. A portion of the same hazardous antineoplastic inventory requires refrigeration. The facility is reviewing compliant hazardous-drug storage under USP <800>; assume no other exemption applies. Which requirements or conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The Table 1 antineoplastic stock requiring manipulation must be stored separately from nonhazardous inventory in an externally ventilated negative-pressure room with at least 12 air changes per hour.",
+        "why": "USP <800> storage requirements, summarized in USP's January 2026 FAQs, apply to NIOSH Table 1 antineoplastic drugs requiring manipulation beyond counting/repackaging final dosage forms. Such stock requires separation and externally vented negative-pressure storage with at least 12 ACPH."
+      },
+      {
+        "text": "All sterile and nonsterile hazardous drugs must always be stored in separate rooms, regardless of their other storage or compounding conditions.",
+        "why": "USP <800> permits storage of sterile and nonsterile hazardous drugs together, although hazardous inventory for nonsterile compounding should not be stored inside the sterile compounding area to avoid unnecessary traffic."
+      },
+      {
+        "text": "Refrigerated NIOSH Table 1 antineoplastic drugs must be kept in a dedicated hazardous-drug refrigerator located in a negative-pressure area with at least 12 air changes per hour.",
+        "why": "USP <800> requires refrigerated Table 1 antineoplastic hazardous drugs to be kept in a dedicated refrigerator in an appropriate negative-pressure storage or containment area with at least 12 ACPH."
+      },
+      {
+        "text": "Negative pressure may be shut off overnight when the hazardous-drug storage room is unoccupied, provided the ventilation is restored before handling resumes.",
+        "why": "USP <800> requires the negative-pressure condition of the hazardous-drug storage room to be maintained at all times; reducing or turning it off during nonuse is not permitted."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "USP <800> §5.2 Storage; USP <800> FAQs (Jan. 21, 2026), questions 25, 26 and 28; NIOSH 2024 HD list classification",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+    "verified": "2026-11-13"
   }
 ];
