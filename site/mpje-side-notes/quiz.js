@@ -191,7 +191,7 @@
     { slug: 'open-register', title: 'Open Legal Register' },
     { slug: 'cumulative-practice', title: 'Cumulative Practice (1,080 available)' },
     { slug: 'drug-memorization', title: 'Drug Memorization Lab (151 entries)' },
-    { slug: 'exam-simulation-30', title: 'Exam-Level MA MPJE Practice (40 questions)' }
+    { slug: 'exam-simulation-30', title: 'Exam-Level MA MPJE Practice (45 questions)' }
   ];
   window.MPJE_CHAPTERS = CHAPTERS.map(chapter => ({ ...chapter }));
 
