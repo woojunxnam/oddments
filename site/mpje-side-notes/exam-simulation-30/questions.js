@@ -2021,5 +2021,173 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "Massachusetts Board Policy 2023-07 §§II(B),III(B)–(E),V(B),VI(A)–(C) (revised Feb. 6, 2025)",
     "url": "https://www.mass.gov/doc/2023-07-non-sterile-compounding-pdf/download",
     "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-061",
+    "set": 13,
+    "area": 1,
+    "kind": "multi",
+    "topic": "CDTM agreement: biennial renewal, original records, and continuity of care",
+    "topicKey": "cdtm",
+    "stem": "A qualified Massachusetts community pharmacist and supervising physician signed a compliant collaborative drug therapy management (CDTM) agreement on November 1, 2024. The pharmacist maintains the required professional qualifications, annual CDTM continuing education, and written patient referrals and consent. As of November 15, 2026, neither professional has reviewed or renewed the agreement, and they are considering ending the collaborative service. No replacement agreement has been executed. Which statements accurately describe the obligations under 247 CMR 16.04? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist may continue initiating and modifying therapy under the original agreement indefinitely because both professionals remain licensed and no written termination has been issued.",
+        "why": "Maintaining individual qualifications does not extend an unrenewed agreement indefinitely. Section 16.04(4) requires the pharmacist and supervising physician to review and renew the agreement at least every two years; an expired agreement is not a current basis to exercise CDTM authority."
+      },
+      {
+        "text": "The authorized pharmacist and supervising physician must review and renew their collaborative practice agreement at least every two years; the original referral and consent do not replace this renewal duty.",
+        "why": "247 CMR 16.04(4) imposes biennial review and renewal on the agreement itself. A valid prior patient referral, consent, and current licensure are separate prerequisites and cannot automatically extend the expired agreement."
+      },
+      {
+        "text": "The pharmacist must keep the originals of the agreement, the patient referral, and consent exclusively at the pharmacy, while the supervising physician may retain copies instead.",
+        "why": "This reverses 247 CMR 16.04(6): the pharmacist maintains readily retrievable copies at the primary practice site, while the supervising physician retains the originals of the current agreement, referral, and consent in the patient's medical record."
+      },
+      {
+        "text": "Before nonrenewal or termination, the pharmacist and supervising physician must arrange uninterrupted continuation of the patient's drug therapy and inform the patient in writing of the termination and how therapy will continue.",
+        "why": "247 CMR 16.04(5) requires an uninterrupted-care arrangement before termination or nonrenewal and written patient notification describing the termination and procedures for continuation of drug therapy; simply ending the agreement without transition planning is insufficient."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 16.04(4)–(6): biennial renewal, termination, written patient notice, and original-versus-copy records",
+    "url": "https://www.mass.gov/doc/247-cmr-16-collaborative-drug-therapy-management/download",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-062",
+    "set": 13,
+    "area": 2,
+    "kind": "single",
+    "topic": "2025 Massachusetts vaccination policy: noncertified technician with 500 post-license hours",
+    "topicKey": "immunization",
+    "stem": "A Massachusetts community pharmacy plans to administer an indicated routine influenza vaccine to an eligible FIVE-year-old under a valid standing order. The supervising pharmacist is properly immunization-trained, has current CPR certification, will assess and counsel the patient, and will select the vaccine. All otherwise applicable documentation, VIS, storage, consent, and reporting rules are satisfied. Which proposed vaccinator is permitted by Board/DPH Policy 2023-02, revised September 4, 2025?",
+    "choices": [
+      {
+        "text": "A licensed pharmacy technician trainee with 650 hours of trainee employment, the required immunization coursework, current CPR certification, and direct pharmacist supervision.",
+        "why": "Policy 2023-02 explicitly prohibits pharmacy technician trainees (PTTs) from administering vaccines, regardless of training, experience, direct supervision, or the age of the patient."
+      },
+      {
+        "text": "A Massachusetts-licensed but non-nationally-certified pharmacy technician with 400 hours worked after receiving the technician license, an ACPE-accredited six-hour training program, two documented hours of on-the-job training, and current CPR certification.",
+        "why": "A pharmacy technician must be nationally certified OR have at least 500 hours worked after obtaining the technician license. This technician is not nationally certified and has only 400 qualifying post-license hours, so completing the other training does not cure the shortfall."
+      },
+      {
+        "text": "A Massachusetts-licensed but non-nationally-certified pharmacy technician with 600 hours worked after licensure, the ACPE-accredited six-hour course including at least two hours of live hands-on training, two additional documented on-the-job training hours, current CPR, and the directly supervising pharmacist's approval.",
+        "why": "Under Policy 2023-02 Section III(D), a licensed technician may qualify through national certification OR at least 500 post-license hours. The additional six-hour ACPE course (including two live hands-on hours), two documented on-the-job hours, CPR, pharmacist approval and direct supervision satisfy the described qualifications; the pharmacist, not the technician, performs assessment, counseling and vaccine selection."
+      },
+      {
+        "text": "A fully trained licensed pharmacist may administer the indicated routine influenza vaccine to a FOUR-year-old under this pharmacy policy whenever the child's parent gives informed consent.",
+        "why": "Policy 2023-02 Section II and 105 CMR 700.004(B)(6) establish a five-years-and-older age limit for pharmacy vaccine administration under this authority. Parental consent does not itself waive that minimum."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "Massachusetts Board/DPH Policy 2023-02, revised Sept. 4, 2025, §§I–III; 105 CMR 700.004(B)(6)",
+    "url": "https://www.mass.gov/doc/2023-02-vaccine-administration-pdf/download",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-063",
+    "set": 13,
+    "area": 2,
+    "kind": "single",
+    "topic": "iPLEDGE isotretinoin: REMS authorization, 30-day limit, no refills, and 7-day window",
+    "topicKey": "rems",
+    "stem": "A Massachusetts REMS-certified pharmacy receives a first-treatment isotretinoin prescription for a patient who can become pregnant. The prescriber is certified, the patient has completed both required pre-treatment pregnancy tests in medical settings, the latest negative test specimen was collected five days ago, and the iPLEDGE system currently confirms the patient is authorized for dispensing. The otherwise valid prescription specifies a 90-day supply with two authorized refills. Assume no other state-law or clinical concern. Which action BEST complies with the iPLEDGE REMS?",
+    "choices": [
+      {
+        "text": "Ask the prescriber to issue or correct the order to a compliant prescription with no refills and no more than a 30-day supply; dispense only with REMS authorization, the Medication Guide, and within the patient's valid seven-day prescription window.",
+        "why": "FDA-approved isotretinoin labeling requires certified-pharmacy authorization for each dispensing, a maximum 30-day supply, a Medication Guide and no refills. A patient who can become pregnant must obtain the medication within the seven-day prescription window tied to the pregnancy-test specimen collection. A corrected compliant order addresses the inappropriate 90-day quantity and refills."
+      },
+      {
+        "text": "Dispense the first 30 days from the 90-day prescription and keep both authorized refills available for the next two months, provided the pharmacist rechecks iPLEDGE at each refill.",
+        "why": "The iPLEDGE requirements explicitly prohibit dispensing refills. A subsequent treatment cycle needs its own appropriately authorized prescription; splitting a 90-day prescription into repeated refills does not make the order compliant."
+      },
+      {
+        "text": "Dispense the full 90-day supply immediately because the two negative pretreatment tests and a current REMS authorization cover the entire initial treatment course.",
+        "why": "Even with documented pretreatment testing and a positive authorization-to-dispense result, the maximum supply per dispensing is 30 days. A REMS authorization does not override that per-fill limit or allow the two refills."
+      },
+      {
+        "text": "Hold the prescription until at least 30 days after the most recent pregnancy-test collection because the REMS prohibits dispensing within the first week after a negative test.",
+        "why": "For a patient who can become pregnant, the REMS provides a seven-day dispensing window linked to pregnancy-test collection, not a mandatory 30-day waiting period after the latest negative test. Waiting would risk missing the valid window; the pharmacy should obtain a corrected, compliant prescription and proceed if authorization remains valid."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "FDA iPLEDGE REMS, current FDA isotretinoin prescribing information (DailyMed), §5.2: certified pharmacy/authorization, seven-day window, 30-day supply, Medication Guide, no refills",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f1c8971-c6dc-4708-848b-5cee50b6c32a",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-064",
+    "set": 13,
+    "area": 3,
+    "kind": "multi",
+    "topic": "LTCF Schedule II partial fills: federal 60-day option versus Massachusetts 30-day prescription validity",
+    "topicKey": "cii-partial-fills",
+    "stem": "A Massachusetts retail pharmacy receives an otherwise valid WRITTEN Schedule II prescription for 30 morphine tablets for a documented resident of a long-term care facility (LTCF). The prescription was issued October 1, 2026. The pharmacist made properly documented unit-dose partial dispensings on October 3 and October 20; the remaining authorized balance has not been dispensed and treatment has not been discontinued. On November 4, the LTCF asks for another partial dispensing under the ORIGINAL prescription. There is no stock shortage, patient-requested partial-fill pathway, or other special exception. Under federal law AND Massachusetts law, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The federal LTCF provision permits Schedule II prescriptions to be dispensed in partial quantities, including individual dosage units, if the pharmacist notes LTCF status and meets the applicable recordkeeping requirements.",
+        "why": "21 CFR 1306.13(c) permits unit-dose partial fillings for LTCF patients and requires the prescription to be designated 'LTCF patient.' It is a separate mechanism from the 72-hour shortage or patient-requested 30-day partial-fill pathways."
+      },
+      {
+        "text": "The November 4 installment is permitted because federal law allows LTCF Schedule II prescriptions to remain valid up to 60 days and therefore overrides Massachusetts' 30-day expiration rule.",
+        "why": "The federal 60-day period is a maximum permission, not preemption of a more restrictive state law. Massachusetts M.G.L. c.94C §23(a) invalidates written or electronic Schedule II prescriptions 30 days after issuance. November 4 is beyond 30 days after October 1; the original prescription cannot be used for that installment."
+      },
+      {
+        "text": "For each authorized partial dispensing, the pharmacist must record the date, quantity dispensed, remaining authorized quantity, and dispenser identity; the sum of the installments may not exceed the prescribed amount.",
+        "why": "21 CFR 1306.13(c) requires a readily retrievable partial-fill record with date, quantity, remaining quantity and pharmacist identification; all partial quantities together must stay at or below the original total prescribed."
+      },
+      {
+        "text": "Despite the federal LTCF provision's maximum 60-day validity, Massachusetts' 30-day expiration rule prevents a further partial dispensing on November 4 under this October 1 written prescription.",
+        "why": "Massachusetts M.G.L. c.94C §23(a) imposes a 30-day expiration on written or electronic Schedule II prescriptions. A federal regulation allowing up to 60 days for LTCF partial filling does not eliminate the stricter Massachusetts expiration; a new lawful prescription is needed for further dispensing after it becomes invalid."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "21 CFR 1306.13(c)–(d) LTCF/terminal-illness partial fills; M.G.L. c.94C §23(a) 30-day Massachusetts Schedule II expiration",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section23",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-065",
+    "set": 13,
+    "area": 4,
+    "kind": "single",
+    "topic": "Pharmacy change of ownership: new license versus MOR continuity and 14/45-day deadlines",
+    "topicKey": "pharmacy-operations",
+    "stem": "An operating Massachusetts retail pharmacy is being purchased by a different parent company, and the pharmacy's federal employer identification number (FEIN) will change. The location, pharmacy name, and Massachusetts-licensed Manager of Record will remain unchanged. The parties plan to transfer ownership in six weeks and can prepare the controlled-substance inventory, an official bill of sale, and all other required records. No waiver applies. Which approach BEST meets 247 CMR 6.11 and the Board's July 2026 Pharmacy Application Checklist?",
+    "choices": [
+      {
+        "text": "Continue dispensing under the current pharmacy license after the sale because retaining the pharmacy address and Manager of Record means the Board regards the change only as an administrative update.",
+        "why": "The Board's July 2026 checklist treats changes to direct or parent-company ownership or to the FEIN as ownership changes requiring closure of the current pharmacy license and a new application. The same location, name, and MOR do not make the old license transferable to the new owner."
+      },
+      {
+        "text": "Have the outgoing licensee notify the Board at least 14 days before the proposed transfer and address the required closure and controlled-substance transfer steps; the incoming owner must apply for a new pharmacy license at least 14 days in advance, with approval before operating under the new ownership.",
+        "why": "247 CMR 6.11 requires advance notification by the outgoing licensee and a new application by the proposed new licensee at least 14 days before ownership transfer, supported by controlled-substance transfer/inventory documentation and bill of sale. The Board's July 2026 checklist clarifies that the old license closes and recommends filing at least 45 days early for review, but 45 days is not the minimum mandated by §6.11."
+      },
+      {
+        "text": "Submit an application for a change of Manager of Record at least 45 days before the sale; a new pharmacy license is unnecessary because the pharmacy name and dispensing staff will stay the same.",
+        "why": "Changing the manager is not the same as transferring the pharmacy license to a new owner. The question states that the MOR remains unchanged; ownership/FEIN changes instead trigger the new-license process under §6.11 and the Board checklist."
+      },
+      {
+        "text": "Transfer ownership first and have the buyer apply for a new pharmacy license within 14 calendar days afterward, while continuing to use the seller's license during application processing.",
+        "why": "Section 6.11 calls for the proposed new licensee's application at least 14 days BEFORE ownership transfer, not after. The incoming owner does not gain authority to operate under the seller's former license merely because an application is pending."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 6.11(1)–(3); Massachusetts Board Pharmacy Application Checklist (revised July 15, 2026), Ownership Changes",
+    "url": "https://www.mass.gov/doc/pharmacy-application-checklist/download",
+    "verified": "2026-11-15"
   }
 ];
