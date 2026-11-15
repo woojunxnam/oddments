@@ -1852,5 +1852,174 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "MA Board Policy 2021-02, revised Feb. 6, 2025, §§III(k)–(l), IV(b)(i)–(v), Shared Pharmacy Service Models",
     "url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
     "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-056",
+    "set": 12,
+    "area": 1,
+    "kind": "single",
+    "topic": "Intern supervision: four-intern vaccination-clinic exception and 12-hour credit limit",
+    "topicKey": "intern-education",
+    "stem": "A Massachusetts pharmacist preceptor is comparing staffing plans for an institutional pharmacy's dispensing area and a separate, exclusively immunization-focused outreach clinic. Unless otherwise stated, every pharmacy intern holds an active Massachusetts intern license, is properly qualified for the proposed activities, and will be directly supervised; there is no separate Board waiver. Under 247 CMR 8.01 and Board Policy 2026-02, which arrangement is permissible?",
+    "choices": [
+      {
+        "text": "One pharmacist directly supervises three licensed pharmacy interns concurrently filling and dispensing prescriptions in the institutional pharmacy, because the Board permits four interns whenever a pharmacist stays on the premises.",
+        "why": "247 CMR 8.01(16) ordinarily limits a pharmacist preceptor to directly supervising two pharmacy interns at a time. Policy 2026-02 allows up to four only under specifically limited conditions, including an exclusive immunization clinic, not three interns concurrently filling prescriptions."
+      },
+      {
+        "text": "One pharmacist preceptor directly supervises four appropriately licensed and qualified pharmacy interns exclusively conducting an immunization clinic, with all applicable immunization requirements satisfied.",
+        "why": "Policy 2026-02, Section II(B), expressly permits a preceptor to directly supervise up to four pharmacy interns at one time when exclusively conducting immunization clinics. Their active Massachusetts intern licenses, appropriate qualifications, and continuing direct supervision remain necessary."
+      },
+      {
+        "text": "An unlicensed PharmD student may begin a hospital internship under close preceptor supervision as long as the student does not handle Schedule II medications before obtaining a Massachusetts intern license.",
+        "why": "Policy 2026-02, Section II(E), requires pharmacy students, including foreign pharmacy students, to be licensed as Massachusetts pharmacy interns before starting an internship in any practice setting, including hospitals. Avoiding Schedule II products does not replace intern licensure."
+      },
+      {
+        "text": "A licensed intern who works 14 hours in one day during an emergency may receive all 14 hours as Massachusetts pharmacy internship credit when the pharmacist documents the emergency.",
+        "why": "247 CMR 8.01(4) limits pharmacy internship credit to no more than 12 hours per day. An exception permitting extended work in certain circumstances does not change the independent 12-hour daily internship-credit limit."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 8.01(3)–(4),(16); Board Policy 2026-02, Section II(A)–(E) (adopted Sept. 3, 2026)",
+    "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-057",
+    "set": 12,
+    "area": 2,
+    "kind": "single",
+    "topic": "Buprenorphine prescriptions after the DATA/X-waiver repeal and MATE Act",
+    "topicKey": "opioid-oud",
+    "stem": "A Massachusetts community pharmacist receives a buprenorphine/naloxone sublingual prescription for opioid use disorder from a Massachusetts-authorized practitioner with a current DEA registration that includes Schedule III authority. The pharmacist confirms a legitimate medical purpose, proper prescription elements, and compliance with all applicable state requirements. The practitioner treats more than 275 patients with OUD, has no former DATA/X-waiver number, and has satisfied the applicable federal training or alternative-qualification attestation at DEA registration renewal. Which conclusion is MOST accurate in November 2026?",
+    "choices": [
+      {
+        "text": "The pharmacist must reject the prescription until the practitioner obtains a new X-waiver identifier, because the repeal applies only to patients who began treatment before 2023.",
+        "why": "The Consolidated Appropriations Act of 2023 eliminated the federal DATA-waiver requirement effective December 29, 2022, for authorized practitioners. This change is not limited to patients already receiving treatment, and an X-waiver number is no longer a prescription requirement."
+      },
+      {
+        "text": "The pharmacist may dispense only after confirming that the practitioner treats no more than 275 OUD patients, because the former federal patient-cap system is still enforced for office-based treatment.",
+        "why": "The former federal DATA-waiver patient caps were removed along with the waiver requirement. The pharmacist must still evaluate an otherwise valid controlled-substance prescription and applicable state law, but the old numerical patient cap is not a federal reason to reject this prescription."
+      },
+      {
+        "text": "Before dispensing any buprenorphine prescription, federal law requires the pharmacist to obtain and retain the prescriber's eight-hour MATE Act course certificate for that individual patient.",
+        "why": "The MATE Act training, credentialing, or education attestation is a condition associated with the qualified practitioner's first applicable DEA registration or renewal, not a requirement that the dispensing pharmacy collect a training certificate for each prescription. Recognized alternative qualification pathways also exist."
+      },
+      {
+        "text": "The pharmacist may dispense after the usual Schedule III validity and corresponding-responsibility checks; no X-waiver number or former federal patient cap is required, and MATE Act attestation is handled through the practitioner’s DEA registration process.",
+        "why": "DEA and SAMHSA confirm that the DATA/X-waiver identifier and associated federal patient caps were eliminated. The qualified practitioner must maintain ordinary Schedule III prescribing authority, comply with applicable registration/training obligations, and issue prescriptions for a legitimate medical purpose. The pharmacist retains normal corresponding responsibility."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "Consolidated Appropriations Act of 2023 §§1262–1263; 21 U.S.C. §823(l); 21 CFR 1306.04(a); DEA Buprenorphine (MOUD) Q&A (Nov. 28, 2023)",
+    "url": "https://www.deadiversion.usdoj.gov/faq/buprenorphine-faq.html",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-058",
+    "set": 12,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Massachusetts ePrescribing outage: oral Schedule IV follow-up and pharmacist verification duties",
+    "topicKey": "controlled-prescriptions",
+    "stem": "A Massachusetts-authorized practitioner has a temporary electrical failure that disables the electronic prescribing system. The practitioner issues an otherwise valid ORAL Schedule IV lorazepam prescription directly to a community pharmacist, who appropriately verifies the prescriber and prescription, assesses the legitimate medical purpose, and documents the oral order. There is no effort to circumvent electronic prescribing, and no other waiver or emergency exception is involved. Under 105 CMR 721.070 and applicable federal law, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A temporary technological or electrical failure can justify a non-electronic prescription under Massachusetts ePrescribing exceptions; an otherwise lawful oral Schedule IV prescription may be accepted.",
+        "why": "105 CMR 721.070(A)(2) provides a temporary technology/electrical-failure exception to the state electronic prescribing mandate. Schedule IV prescriptions may otherwise be issued orally under federal law, including 21 CFR 1306.21, provided all applicable prescription requirements are met."
+      },
+      {
+        "text": "Because federal rules permit oral Schedule IV prescriptions, the practitioner has no obligation to send written or electronic documentation afterward under Massachusetts law.",
+        "why": "105 CMR 721.070(B) separately obligates a practitioner issuing an oral Schedule II–V prescription under an ePrescribing exception to cause a written or electronic prescription to be delivered within seven business days or any shorter period required by federal law. The absence of a general federal Schedule IV follow-up requirement does not erase this Massachusetts requirement."
+      },
+      {
+        "text": "The practitioner must arrange a written or electronic follow-up within seven business days, or a shorter applicable federal deadline; a written follow-up must identify that it documents the earlier oral prescription.",
+        "why": "105 CMR 721.070(B) requires the timely confirming written/electronic prescription. For a written confirmation, the practitioner must indicate that it is being issued to document an oral prescription. The seven-business-day Massachusetts period yields to any shorter applicable federal deadline."
+      },
+      {
+        "text": "A pharmacist receiving an otherwise valid oral prescription does not have to independently establish that the prescriber qualified for an ePrescribing exception, although the pharmacist remains responsible for the prescription's authenticity, legality, and proper dispensing.",
+        "why": "105 CMR 721.070(C) expressly states that the pharmacist need not verify whether an otherwise valid written or oral prescription properly falls under an ePrescribing exception. This narrow rule does not eliminate corresponding responsibility or other identity and prescription-validity checks."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "105 CMR 721.070(A)(2),(B),(C); 21 CFR 1306.21 (Schedule III–V oral prescriptions)",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-059",
+    "set": 12,
+    "area": 3,
+    "kind": "single",
+    "topic": "Out-of-state controlled prescriptions: 30-day limit, mandatory verification and Schedule II narcotic geography",
+    "topicKey": "controlled-quantity",
+    "stem": "A Massachusetts walk-in retail pharmacist evaluates FOUR unrelated prescriptions written by practitioners who are not registered in Massachusetts but are properly licensed, authorized, and DEA-registered in the states where they reside or practice. Assume every prescription otherwise satisfies federal and Massachusetts requirements, no special M.G.L. c.94C §18A exception applies, and the pharmacy is not acting as a mail-order pharmacy. Under M.G.L. c.94C §18, which prescription may the pharmacist legally fill?",
+    "choices": [
+      {
+        "text": "A Rhode Island prescriber's Schedule IV temazepam prescription issued 24 days ago, after the pharmacist independently verifies the prescription with the prescriber and confirms its validity.",
+        "why": "Under M.G.L. c.94C §18(c), a Massachusetts retail pharmacist may fill an otherwise valid out-of-state Schedule III–VI prescription issued within the preceding 30 days. For Schedule III–V drugs, the pharmacist must verify the prescription by telephone or other means. This 24-day-old, verified Schedule IV prescription satisfies those stated conditions."
+      },
+      {
+        "text": "A Connecticut prescriber's Schedule IV zolpidem prescription issued 33 days ago, after the pharmacist directly verifies the prescription and confirms it was valid when issued.",
+        "why": "Verification does not extend M.G.L. c.94C §18(c)'s requirement that an out-of-state Schedule III–VI prescription be issued within the preceding 30 days. At 33 days, it is outside that authorization."
+      },
+      {
+        "text": "A New Hampshire prescriber's Schedule III prescription issued 10 days ago when the pharmacist cannot obtain prescriber verification despite documented, reasonable good-faith efforts.",
+        "why": "Section 18(c) specifically prohibits filling out-of-state Schedule III–V prescriptions when the required prescriber verification cannot be obtained. Documented good-faith attempts protect the pharmacist's refusal; they do not substitute for successful verification."
+      },
+      {
+        "text": "A Florida prescriber's Schedule II narcotic oxycodone prescription issued two days ago and successfully verified, even though the prescriber is not licensed or registered in Maine or a state contiguous with Massachusetts.",
+        "why": "Section 18(d½) generally restricts out-of-state Schedule II narcotic prescriptions filled for Massachusetts patients to authorized practitioners in Maine or a state contiguous with Massachusetts, subject to specified exceptions excluded by the question. Florida does not qualify merely because the prescription is recent and verified."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.94C §18(c),(d½): out-of-state Schedule III–VI prescriptions and Schedule II narcotic limitations",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section18",
+    "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-060",
+    "set": 12,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Nonsterile compounding: manufacturer reconstitution, patient-requested flavoring and premeasured kits",
+    "topicKey": "nonsterile-compounding",
+    "stem": "A Massachusetts community pharmacy without a complex nonsterile-compounding specialty license has appropriate facilities and staff for routine nonhazardous Schedule VI dispensing. For Patient A, staff reconstitute a commercially manufactured antibiotic powder exactly according to its FDA-approved labeling. For Patient B, staff add a flavoring agent to a conventional oral suspension at the patient's request, confirming suitable stability and concentration and recording the change. For Patient C, staff use a premeasured compounding kit to prepare a patient-specific nonsterile drug. No hazardous ingredients, complex technique, or additional restriction applies. Under Massachusetts Board Policy 2023-07 (revised February 6, 2025), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Adding flavor to the conventionally manufactured suspension is treated the same as manufacturer-directed reconstitution; neither activity counts as nonsterile compounding, so no compounding record or special label statement is needed for Patient B.",
+        "why": "Policy 2023-07, Section III(B), excludes simple manufacturer-directed reconstitution from the compounding definition, but Section III(C) explicitly classifies flavoring a conventionally manufactured nonsterile drug as compounding. Compounding records and the appropriate nonsterile-compounded and flavoring label statements remain necessary."
+      },
+      {
+        "text": "Reconstituting the antibiotic exactly in accordance with the manufacturer's labeling does not itself constitute nonsterile compounding; the Board recommends a reconstitution log for such manufactured products.",
+        "why": "Policy 2023-07, Section III(B), excludes straightforward, manufacturer-directed reconstitution from the nonsterile-compounding definition. Section VI(A) recommends a reconstitution log or similar documentation for commercially available products; this recommendation is not equivalent to saying that this activity is a separately compounded preparation."
+      },
+      {
+        "text": "For a Schedule VI preparation, a patient or the patient's agent may request flavoring without a new prescriber order when appropriate; the pharmacy must comply with compounding documentation and add the applicable nonsterile-compounded and flavored labeling.",
+        "why": "Policy 2023-07, Section II(B), permits patient- or agent-requested flavoring of Schedule VI medications, with prescription updates under Board Policy 2018-01. Sections III(C), V(B), and VI(B)–(C) require stability attention, a compounding record, and appropriate compounded-preparation and flavoring label statements."
+      },
+      {
+        "text": "A premeasured kit does not escape the nonsterile-compounding rules merely because its ingredients were measured beforehand; applicable USP requirements and a compounding record still apply.",
+        "why": "Policy 2023-07, Section III(E), states that premeasured compounding kits remain compounding and must meet relevant USP standards. Section VI(C) permits appropriate compounding record and master formulation information to be captured on a retrievable log sheet, rather than waiving it."
+      }
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D"
+    ],
+    "citation": "Massachusetts Board Policy 2023-07 §§II(B),III(B)–(E),V(B),VI(A)–(C) (revised Feb. 6, 2025)",
+    "url": "https://www.mass.gov/doc/2023-07-non-sterile-compounding-pdf/download",
+    "verified": "2026-11-15"
   }
 ];
