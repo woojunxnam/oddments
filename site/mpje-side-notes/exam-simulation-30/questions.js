@@ -1684,5 +1684,173 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "21 CFR 1317.05(a)(2), 1317.60(c), 1317.75(b)-(c),(g); DEA Disposal Q&A",
     "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1317",
     "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-051",
+    "set": 11,
+    "area": 1,
+    "kind": "single",
+    "topic": "Unexpected Manager of Record absence: interim appointment, inventory, and 100-day trigger",
+    "topicKey": "workforce-supervision",
+    "stem": "A Massachusetts resident retail pharmacy's Manager of Record (MOR) is unexpectedly hospitalized. The pharmacy learns that the MOR is likely to be unavailable for 45 days, cannot participate in the controlled-substance inventory, and has not resigned or been terminated. A Massachusetts-registered staff pharmacist is available to help. The absence ultimately lasts 105 days. Under 247 CMR 9.23(5), which response MOST completely satisfies the requirements?",
+    "choices": [
+      {
+        "text": "Appoint a Board-registered Interim Manager within five days of the unplanned absence; have another registered pharmacist perform the required controlled-substance inventory because the MOR is unavailable; submit an application to change the MOR when the absence reaches 100 days.",
+        "why": "247 CMR 9.23(5)(b) requires an Interim Manager within five days of an unplanned absence likely to last at least 30 days. Section 9.23(5)(c) allows another registered pharmacist to perform the controlled-substance inventory if the MOR is unexpectedly unavailable. Section 9.23(5)(d) requires a change-of-MOR application if the absence reaches 100 days."
+      },
+      {
+        "text": "Appoint an Interim Manager within 14 calendar days; have another registered pharmacist complete the required inventory; submit a change-of-MOR application when the absence reaches 100 days.",
+        "why": "The inventory and 100-day elements are appropriate, but the deadline for appointing an Interim Manager for this unplanned absence is five days, not 14. The separate notification period for a resignation or change of MOR is not the interim-appointment deadline."
+      },
+      {
+        "text": "Appoint an Interim Manager within five days and file a change-of-MOR application after 100 days, but postpone the controlled-substance inventory until the hospitalized MOR can sign it.",
+        "why": "An unexpected absence does not waive the inventory requirement. The regulation specifically provides that another registered pharmacist shall perform the controlled-substance inventory if the MOR is unexpectedly unavailable."
+      },
+      {
+        "text": "Appoint an Interim Manager within five days and have another registered pharmacist perform the inventory; a change-of-MOR application is unnecessary after 100 days as long as the Interim Manager remains licensed.",
+        "why": "An Interim Manager's continuing licensure does not erase the separate 100-day threshold in 247 CMR 9.23(5)(d). An application for a change of MOR is required when the original MOR has been away for 100 days or more."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.23(5)(b)–(d); MA Board Information for Managers of Record (unplanned absence guidance)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-052",
+    "set": 11,
+    "area": 2,
+    "kind": "single",
+    "topic": "Mifepristone REMS: delivery after the four-calendar-day window",
+    "topicKey": "rems",
+    "stem": "A specially certified Massachusetts retail pharmacy receives an otherwise valid prescription for mifepristone for medication abortion from a certified prescriber. The required Patient Agreement Form has been completed, the pharmacy has verified prescriber certification, and no clinical or other state-law restriction is present. The pharmacy's tracked shipping service estimates the medication will reach the patient MORE THAN FOUR CALENDAR DAYS after the pharmacy received the prescription. Under the FDA Mifepristone REMS, which action is MOST appropriate?",
+    "choices": [
+      {
+        "text": "Ship without additional contact because using a tracked carrier automatically waives the REMS delivery timeframe.",
+        "why": "Tracking is a separate pharmacy-certification safeguard. When delivery will take more than four calendar days after receipt of the prescription, the REMS also requires confirmation with the certified prescriber that dispensing remains appropriate and documentation of the decision."
+      },
+      {
+        "text": "Require in-person pickup, because a certified retail pharmacy may not dispense mifepristone through a shipping service.",
+        "why": "The current Mifepristone REMS permits dispensing by specially certified retail pharmacies and does not impose a categorical in-person dispensing rule. The pharmacy must follow tracking and other REMS safeguards."
+      },
+      {
+        "text": "Reject the prescription permanently and require a new prescription even if the certified prescriber determines that delayed delivery would still be appropriate.",
+        "why": "The REMS provides a mechanism for delayed delivery: contact and confirm the certified prescriber's clinical determination and document it. It does not universally require a newly issued prescription merely because shipping exceeds four calendar days."
+      },
+      {
+        "text": "Contact the certified prescriber, confirm that dispensing remains appropriate despite delivery taking more than four calendar days, document the prescriber's decision, and use a compliant tracked service if dispensing proceeds.",
+        "why": "The FDA-approved pharmacy-certification requirements specifically direct a certified pharmacy to confirm with the prescriber the appropriateness of dispensing when delivery exceeds four calendar days after receipt of the prescription, and to document that decision. Tracked shipping and all other REMS safeguards still apply."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "FDA Mifepristone REMS Pharmacy Agreement requirements; FDA 2023 REMS modification review, pharmacy certification §2(a)(iv)(b)–(c)",
+    "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/questions-and-answers-mifepristone-medical-termination-pregnancy-through-ten-weeks-gestation",
+    "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-053",
+    "set": 11,
+    "area": 2,
+    "kind": "multi",
+    "topic": "HIPAA: fully self-paid prescription and mandatory restriction on health-plan disclosures",
+    "topicKey": "hipaa-access",
+    "stem": "A HIPAA-covered Massachusetts community pharmacy dispenses a routine Schedule VI medication. The patient pays its entire charge out of pocket and explicitly asks the pharmacy NOT to disclose information solely about that prescription to the patient's health plan for PAYMENT or HEALTH CARE OPERATIONS. No law independently requires such a disclosure. A second, unrelated prescription is only partially paid for by the patient; the health plan pays the rest, and the pharmacy has not voluntarily agreed to a restriction for it. Later, another treating clinician requests relevant prescription history for treatment. Assume no other federal or Massachusetts confidentiality rule applies. Which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy must honor the requested health-plan restriction for the fully self-paid prescription, as long as the contemplated disclosure is for payment or health care operations and is not required by law.",
+        "why": "45 CFR 164.522(a)(1)(vi) requires a covered health care provider to agree to an individual's requested restriction on disclosures to a health plan for payment or health care operations if the individual paid in full for the item or service and disclosure is not otherwise required by law."
+      },
+      {
+        "text": "HIPAA automatically obligates the pharmacy to extend the identical restriction to the second prescription even though the health plan paid part of its cost.",
+        "why": "The mandatory exception turns on full payment of the specific item or service by the individual or someone other than the health plan. The pharmacy may voluntarily agree to other restrictions, but it is not automatically required to extend this one to a different, partly plan-paid prescription."
+      },
+      {
+        "text": "The pharmacy may disclose relevant prescription history to another clinician for the patient's treatment without a separate HIPAA authorization, when otherwise permitted; the stated restriction concerning health-plan payment or operations does not itself prohibit that treatment disclosure.",
+        "why": "The mandatory self-pay restriction concerns specified disclosures to a health plan for payment or health care operations, not all permitted treatment disclosures to another treating provider. HIPAA generally permits provider-to-provider treatment disclosures without a separate patient authorization, subject to other applicable law and any separately agreed restriction."
+      },
+      {
+        "text": "For disclosure of the fully paid prescription to a treating clinician, HIPAA always requires a minimum-necessary determination and an individual authorization before any information may be released.",
+        "why": "Disclosures to, or requests by, a health care provider for treatment are exempt from HIPAA's minimum-necessary requirement under 45 CFR 164.502(b)(2)(i). HIPAA does not ordinarily require a signed authorization for permissible disclosures for treatment."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "45 CFR 164.522(a)(1)(vi) (fully paid health-plan restriction); 45 CFR 164.506 (TPO); 45 CFR 164.502(b)(2)(i) (treatment exemption)",
+    "url": "https://www.hhs.gov/hipaa/for-professionals/faq/under-hipaa-may-an-individual-request-that-a-covered-entity-restrict-how-it-uses-or-discloses-that-individuals-protect-health-information/index.html",
+    "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-054",
+    "set": 11,
+    "area": 3,
+    "kind": "multi",
+    "topic": "Schedule IV partial filling versus a separately authorized refill",
+    "topicKey": "controlled-quantity",
+    "stem": "On May 1, 2026, a Massachusetts prescriber issues an otherwise valid Schedule IV prescription for 90 tablets with ZERO authorized refills. The patient requests and receives 30 tablets on May 3 and another 30 tablets on June 3 as documented PARTIAL FILLS of the same 90-tablet prescription. On November 14, 2026, the patient asks for the last 30 tablets. Assume no change in prescriber authorization, no other restriction, and all relevant pharmacy documentation was made for the earlier installments. Under the federal Schedule III–V partial-filling rule, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The June partial dispensing was automatically unlawful because the prescription authorized zero refills, even though the total dispensed had not reached 90 tablets.",
+        "why": "21 CFR 1306.23 permits a Schedule III–V prescription to be partially filled and requires each partial to be recorded in the same manner as a refill. A partial fill of the original prescribed total is not automatically a new authorized refill merely because the documentation resembles refill records."
+      },
+      {
+        "text": "Each partial filling must be documented in the same manner as a refilling, and the combined quantity from all portions cannot exceed the prescribed 90 tablets.",
+        "why": "21 CFR 1306.23(a) requires refill-style records for each partial filling; subsection (b) prohibits the sum of all partial quantities from exceeding the amount prescribed."
+      },
+      {
+        "text": "The final 30 tablets cannot be supplied on November 14 under the May 1 prescription, because no Schedule III–V partial dispensing is allowed more than six months after the original issue date.",
+        "why": "21 CFR 1306.23(c) bars partial dispensing after six months from the date the prescription was issued. November 14 is well beyond six months from May 1, even though some of the original prescribed quantity remains."
+      },
+      {
+        "text": "A pharmacist cannot reset the six-month clock by documenting the June 3 installment as a refill; the six months are measured from the original prescription issue date.",
+        "why": "The six-month maximum in 21 CFR 1306.23(c) runs from the date the practitioner issued the original prescription, not the date of the most recent partial dispensing or pharmacy record entry."
+      }
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D"
+    ],
+    "citation": "21 CFR 1306.23(a)–(c) (Schedule III–V partial fills); 21 CFR 1306.22(a) (Schedule III–IV refills); DEA Pharmacist's Manual, partial dispensing",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.23",
+    "verified": "2026-11-14"
+  },
+  {
+    "id": "E30-055",
+    "set": 11,
+    "area": 4,
+    "kind": "single",
+    "topic": "Massachusetts central fill: federal controlled drugs versus PMP-reportable Schedule VI",
+    "topicKey": "pharmacy-operations",
+    "stem": "A Massachusetts-licensed originating retail pharmacy uses a properly licensed and DEA-registered central-fill pharmacy. The shared-service records, patient notice and opt-out mechanism, relevant DEA requirements, and all other conditions are satisfied. Three different prescriptions are to be centrally filled: Schedule II oxycodone, Massachusetts Schedule VI gabapentin (reportable to MassPAT), and Massachusetts Schedule VI lisinopril (not reportable to MassPAT). Under the Board's Shared Pharmacy Services Policy 2021-02, as revised February 6, 2025, which delivery plan is MOST appropriate?",
+    "choices": [
+      {
+        "text": "Have the central-fill pharmacy send gabapentin and lisinopril directly to the patient while sending oxycodone to the originating pharmacy, because only federally scheduled drugs need to be routed through the originating pharmacy.",
+        "why": "The central-fill policy specifically excludes Schedule VI products requiring MassPAT reporting, such as gabapentin, from the Schedule VI direct-to-patient shipment exception. Gabapentin's federal nonscheduled status alone does not make direct shipment from central fill permissible."
+      },
+      {
+        "text": "Send centrally filled oxycodone and gabapentin to the originating pharmacy for final dispensing; the non-PMP-reportable lisinopril may instead be shipped directly to the patient by central fill when all other requirements are met.",
+        "why": "Policy 2021-02 IV(b)(iii) requires centrally filled Schedule II–V drugs to be delivered to the originating pharmacy. Section IV(b)(iv) permits direct patient shipment of Schedule VI drugs except those requiring PMP reporting, such as gabapentin. Lisinopril is a Schedule VI example not subject to PMP reporting."
+      },
+      {
+        "text": "Route every Schedule VI prescription through the originating pharmacy, because the Board categorically prohibits all direct-to-patient shipment from central-fill pharmacies regardless of PMP reporting.",
+        "why": "The Board's revised policy expressly allows certain non-PMP-reportable Schedule VI prescriptions to be delivered or shipped directly from central fill to the patient. Therefore this blanket description is incorrect."
+      },
+      {
+        "text": "Send oxycodone and lisinopril directly to the patient while routing gabapentin through the originating pharmacy, because the central-fill pharmacy's DEA registration replaces the originating pharmacy's final-dispensing duty for Schedule II medications.",
+        "why": "Even when the central-fill pharmacy is properly DEA registered, the Board policy expressly directs centrally filled Schedule II–V controlled substances to the pharmacy where the prescription originated for final dispensing, not directly to the patient."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "MA Board Policy 2021-02, revised Feb. 6, 2025, §§III(k)–(l), IV(b)(i)–(v), Shared Pharmacy Service Models",
+    "url": "https://www.mass.gov/doc/2021-02-shared-pharmacy-service-models-including-central-fill-remote-processing-and-telepharmacy-pdf/download",
+    "verified": "2026-11-14"
   }
 ];
