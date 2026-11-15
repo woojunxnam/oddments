@@ -1748,7 +1748,7 @@ window.MPJE_CH30_QUESTIONS = [
       "D"
     ],
     "citation": "FDA Mifepristone REMS Pharmacy Agreement requirements; FDA 2023 REMS modification review, pharmacy certification §2(a)(iv)(b)–(c)",
-    "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/questions-and-answers-mifepristone-medical-termination-pregnancy-through-ten-weeks-gestation",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/020687Orig1s025.pdf",
     "verified": "2026-11-14"
   },
   {
