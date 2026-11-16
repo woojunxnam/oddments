@@ -43,7 +43,7 @@ Owner preference recorded: November 13, 2026. Applies to new questions for
   never-checked questions as available within each Area before filling that
   Area's remaining quota with previously checked questions. **All questions**
   uses uniform random sampling within each Area, independent of attempt
-  history. With fixed 2/3/3/2 Area quotas, the 75 questions do not have
+  history. With fixed 2/3/3/2 Area quotas, questions in different Areas do not have
   an identical selection probability across different Areas.
   If a single unseen-only mix is possible, allowing one previously checked
   question is acceptable to avoid exactly repeating the previous mix. The
