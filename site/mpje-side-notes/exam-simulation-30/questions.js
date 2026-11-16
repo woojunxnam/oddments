@@ -2698,5 +2698,178 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
     "verified": "2026-11-16",
     "note": "MPJE trap: do not confuse the federal biennial inventory with Massachusetts' every-ten-day Schedule II perpetual reconciliation. Certified technician data entry is allowed, but unlicensed entry and unauthorized discrepancy adjustments are not."
+  },
+  {
+    "id": "E30-081",
+    "set": 17,
+    "area": 1,
+    "kind": "single",
+    "topic": "Technician refill authority: unchanged Schedule VI refills versus dose modification",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts community pharmacy employs a Massachusetts-licensed pharmacy technician who is not nationally certified and a separately licensed certified pharmacy technician. The on-duty pharmacist has approved appropriate delegated work and will perform final dispensing validation. A prescriber's authorized agent agrees to add three refills to an existing Schedule VI lisinopril prescription with NO change in drug, strength, directions, or other prescription information. In a separate call, the agent proposes a dose increase on another patient's lisinopril prescription but describes it as 'just a refill.' Assume the communication method is otherwise legally permitted and all prescriptions are legitimate. Which division of responsibility BEST complies with 247 CMR 8.02 and 8.04?",
+    "choices": [
+      {
+        "text": "The noncertified licensed technician may request an unchanged refill authorization but cannot receive it; only a certified technician may accept even an unchanged refill.",
+        "why": "Incorrect. 247 CMR 8.02(6)(c) permits a licensed pharmacy technician, with the on-duty pharmacist's approval, to request AND accept authorizations for refills when no prescription information changes. National certification is not a prerequisite for this limited unchanged-refill activity."
+      },
+      {
+        "text": "Either licensed technician may accept the dose increase as a refill authorization if the prescriber's agent agrees and the pharmacist validates the dispensed product afterward.",
+        "why": "Incorrect. Changing the prescribed dose is therapy modification, not an unchanged refill. 247 CMR 8.02(6)(d) and 8.04(4)(e) prohibit pharmacy technicians, including certified technicians, from contacting prescribers concerning therapy modification. A later pharmacist final check does not grant authority for the prohibited communication."
+      },
+      {
+        "text": "With the on-duty pharmacist's approval, the noncertified licensed technician may request and receive the unchanged refill authorization; the proposed dose modification must be referred to the pharmacist rather than handled independently by either technician.",
+        "why": "Correct. Under 247 CMR 8.02(6)(c), an ordinary licensed technician can request and accept a refill authorization if nothing has changed and the pharmacist approves. Section 8.02(6)(d) and 8.04(4)(e) reserve therapy clarification or modification to the pharmacist, regardless of whether a technician holds national certification."
+      },
+      {
+        "text": "The certified technician may independently clarify or authorize the dose modification because 247 CMR 8.04 permits receipt of new or omitted prescription information, while the noncertified technician must transfer both calls to a pharmacist.",
+        "why": "Incorrect. Although a certified technician has additional limited authority to receive new or omitted prescription details with pharmacist approval, 247 CMR 8.04(4)(e) expressly prohibits therapy clarification or modification. The ordinary licensed technician may handle the unchanged refill under 8.02(6)(c)."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 8.02(6)(c)–(d); 247 CMR 8.04(4)(c),(e)",
+    "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: 'Refill authorization' does not mean a technician can negotiate or accept an altered regimen. Certification increases some technical duties, not permission to modify therapy."
+  },
+  {
+    "id": "E30-082",
+    "set": 17,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Naloxone standing order: third-party access, Schedule II offers and reporting alternative",
+    "topicKey": "naloxone-dispensing",
+    "stem": "A Massachusetts community pharmacy stocks prescription naloxone rescue kits and participates in the statewide naloxone standing order. An adult asks to obtain a kit to help a sibling who is at risk of opioid overdose, but has no patient-specific prescription. That afternoon, the pharmacy dispenses a lawful Schedule II oxycodone prescription to an unrelated patient. For its naloxone dispensings, the pharmacy chooses NOT to submit naloxone data through its daily Massachusetts PMP transmissions. It follows all other applicable counseling, labeling and dispensing requirements. Under M.G.L. c.94C §§19B–19C and Massachusetts Board Policy 2024-01 (revised February 6, 2025), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A licensed pharmacist may dispense a naloxone rescue kit to the person seeking to assist the sibling under the statewide standing order without requiring a separate patient-specific prescription for the sibling.",
+        "why": "Correct. M.G.L. c.94C §19B and the July 2026 statewide standing order permit a licensed pharmacist to supply a naloxone rescue kit to a family member, friend, or other person positioned to help someone at risk of overdose; Board Policy 2024-01, §I(B), allows dispensing under that order rather than requiring an individual prescriber-issued prescription."
+      },
+      {
+        "text": "The pharmacist may omit any offer of naloxone to the unrelated oxycodone patient because federal approval of some OTC naloxone products superseded the Massachusetts Schedule II opioid offer requirement.",
+        "why": "Incorrect. Board Policy 2024-01, §I(C), specifically states that a pharmacy MUST offer to dispense naloxone whenever a Schedule II opioid is dispensed. The separate existence of FDA-approved OTC naloxone does not remove the state standing-order policy's offer requirement."
+      },
+      {
+        "text": "For insurance and cost-sharing under the statewide standing order, the pharmacy must always label the kit and create its prescription profile using the purchasing person's legal name and address; the words 'Naloxone Rescue Kit' cannot replace those fields.",
+        "why": "Incorrect. Policy 2024-01, §I(E), expressly instructs use of 'Naloxone Rescue Kit' in place of the name and address when creating the profile and prescription label for the standing-order insurance transaction. The option reverses the Board's specific labeling direction."
+      },
+      {
+        "text": "Because the pharmacy does not report naloxone through its daily PMP submissions, it must send the required report for the preceding calendar year by January 15, including the total number of naloxone DOSES dispensed and the number of those doses paid for with insurance.",
+        "why": "Correct. Board Policy 2024-01, §II(B), specifies an alternative annual report due January 15 when a pharmacy chooses not to report naloxone through the PMP. It includes pharmacy name/ZIP, total doses (not the number of kits or prescriptions), and the number of doses paid for by insurance."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §§19B–19C; MA Board Policy 2024-01 §§I(B)–(E), II(A)–(B), revised Feb. 6, 2025; 2026 Statewide Standing Order for Pharmacy Naloxone",
+    "url": "https://www.mass.gov/doc/2024-01-naloxone-dispensing-pdf/download",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: OTC naloxone sales and prescription naloxone dispensing under the statewide standing order are distinct. The Schedule II opioid offer, specific profile label, and daily-PMP versus January-15 annual reporting alternatives matter."
+  },
+  {
+    "id": "E30-083",
+    "set": 17,
+    "area": 2,
+    "kind": "single",
+    "topic": "HIPAA amendment: 60-day response, one extension and linked record correction",
+    "topicKey": "hipaa-amendment",
+    "stem": "A HIPAA-covered Massachusetts pharmacy receives an adult patient's valid request to correct a dispensing date in the pharmacy's designated record set. The record was created by the pharmacy, the pharmacy confirms it is inaccurate, and no regulatory ground for denying amendment applies. On day 55 after receipt, the pharmacy knows its records team cannot finish processing by day 60. The patient has received no extension notice. Which proposed plan BEST satisfies the federal HIPAA amendment rule?",
+    "choices": [
+      {
+        "text": "Treat the request like a right-of-access request, which requires action within 30 days; because that date has passed, automatically deny the amendment and ask the patient to submit a new request.",
+        "why": "Incorrect. HIPAA differentiates access under 45 CFR 164.524, generally 30 days, from AMENDMENT under 45 CFR 164.526(b)(2), generally 60 days. Expiration of an unrelated access deadline does not justify denying a valid request to correct inaccurate PHI."
+      },
+      {
+        "text": "Treat the pharmacy software vendor as the sole creator of the record, deny responsibility for correction, and refer the patient to the vendor even though the pharmacy created the inaccurate dispensing entry.",
+        "why": "Incorrect. Section 164.526(a)(2)(i) permits denial in some circumstances when the covered entity did not create the record. Here the covered pharmacy itself created the inaccurate record; using a software vendor does not make that denial ground applicable."
+      },
+      {
+        "text": "Notify the patient orally on day 60 that two successive 30-day extensions will be taken, and silently overwrite the original date without attaching a record of the accepted amendment.",
+        "why": "Incorrect. Section 164.526(b)(2)(ii) permits only ONE extension of no more than 30 days and requires a written explanation and completion date within the original 60-day window. Section 164.526(c)(1) requires identifying affected records and appending or linking the amendment rather than an undocumented silent change."
+      },
+      {
+        "text": "Before the original 60-day deadline, provide written reasons and a completion date for ONE extension of no more than 30 days; upon accepting the correction, identify the affected record, append or link the amendment, notify the patient, and address notification to appropriate recipients.",
+        "why": "Correct. Section 164.526(b)(2) allows one written-notice extension of up to 30 days beyond the 60-day amendment response window. Section 164.526(c)(1)–(3) requires linking or appending the amendment, notifying the individual, obtaining the individual's identification/agreement where relevant, and making reasonable efforts to inform appropriate prior recipients and business associates."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "45 CFR 164.526(a)(1)–(2), (b)(2), (c)(1)–(3); distinction from HIPAA access deadline at 45 CFR 164.524(b)(2)",
+    "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.526",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: HIPAA AMENDMENT is generally 60 days, with one possible written-notice 30-day extension; HIPAA ACCESS is generally 30 days. Accepted amendments must be linked to the designated record set."
+  },
+  {
+    "id": "E30-084",
+    "set": 17,
+    "area": 3,
+    "kind": "single",
+    "topic": "Massachusetts Schedule VI transfer: one-year issuance limit, remaining refills and no fee",
+    "topicKey": "refills-transfers",
+    "stem": "On November 16, 2026, a patient requests that Massachusetts Pharmacy A transfer TWO previously filled Schedule VI maintenance-drug prescriptions to licensed Massachusetts Pharmacy B. Prescription X was issued February 3, 2026 and has TWO authorized refills remaining. Prescription Y was issued October 20, 2025 and also has TWO authorized refills remaining; its most recent dispensing occurred October 10, 2026. Both were legitimate when issued. The patient has requested the transfers, the pharmacies can follow the applicable transfer procedure, and no new prescriber authorization has been issued. Pharmacy A proposes a $12 processing charge. Under 247 CMR 9.14, which response is MOST accurate?",
+    "choices": [
+      {
+        "text": "Transfer both prescriptions because the one-year Schedule VI transfer period is measured from the most recent dispensing date, not the date each original prescription was issued.",
+        "why": "Incorrect. 247 CMR 9.14(4)(c) expressly prohibits transferring a Schedule VI prescription authorizing refills more than one year after the prescription's ISSUE DATE. Prescription Y was issued October 20, 2025; the October 2026 dispensing does not restart that window."
+      },
+      {
+        "text": "Transfer Prescription X in a timely manner without charging a transfer fee, but do not transfer Prescription Y for refills under the original prescription because more than one year has elapsed since issuance.",
+        "why": "Correct. Section 9.14(1) requires timely transfers on patient request, §9.14(3) forbids a transfer fee, §9.14(4)(b) permits transfer of Schedule VI prescriptions with authorized refills remaining, and §9.14(4)(c) establishes the one-year issue-date limit. X qualifies; Y is outside its original time window."
+      },
+      {
+        "text": "Refuse Prescription X because any Schedule VI prescription that has previously been dispensed can no longer be transferred; transfer Prescription Y because its last refill was recent.",
+        "why": "Incorrect. The regulation explicitly permits transferring a Schedule VI prescription with remaining authorized refills. It is not categorically limited to never-filled prescriptions. Prescription Y is too old based on its issuance date, regardless of recent dispensing."
+      },
+      {
+        "text": "Transfer Prescription X but charge the $12 fee if necessary to cover staff time; keep Prescription Y at Pharmacy A until the patient uses the remaining refills there.",
+        "why": "Incorrect. Section 9.14(3) does not permit a processing or labor fee for the transfer. Moreover, the expired one-year issue-date limit cannot be bypassed merely by keeping Prescription Y at the original pharmacy for dispensing under the old authorization."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.14(1)–(4): timely transfer, no fee, Schedule VI remaining refills and one-year issuance limitation",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: for Schedule VI transfer, the one-year restriction is counted from original issuance, not the latest refill. A pharmacy cannot charge for transferring a prescription."
+  },
+  {
+    "id": "E30-085",
+    "set": 17,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Paper and electronic pharmacy record segregation: Massachusetts versus DEA requirements",
+    "topicKey": "pharmacy-recordkeeping",
+    "stem": "A DEA-registered Massachusetts community pharmacy is preparing for a joint federal and state recordkeeping inspection. It has paper Schedule II, paper Schedule III–V, and paper Massachusetts Schedule VI prescriptions, together with electronic controlled-substance prescription records. It also retains purchasing, return, disposal, and destruction records. There is no exception for an institutional sterile-compounding pharmacy. Which proposed practices comply with BOTH applicable Massachusetts and federal requirements? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Keep paper Schedule II prescriptions in a separate Schedule II prescription file at the DEA-registered pharmacy location, rather than mixing them with ordinary Schedule VI paper prescriptions.",
+        "why": "Correct. Federal 21 CFR 1304.04(h)(1)–(2) requires Schedule II pharmacy inventories/records separately and paper Schedule II prescriptions in a separate file at the registered location. Massachusetts 247 CMR 9.16(2) also requires paper Schedule II prescription segregation."
+      },
+      {
+        "text": "Segregate the paper Schedule III–V prescriptions and separately segregate Massachusetts Schedule VI paper prescriptions, even though federal law provides a red-'C' filing method for some readily retrievable Schedule III–V prescriptions.",
+        "why": "Correct. Massachusetts 247 CMR 9.16(3)–(4) expressly requires segregation of paper prescriptions for Schedules III–V and for Massachusetts Schedule VI. Federal 21 CFR 1304.04(h)(4) contains a red-'C' readily-retrievable method, but that federal allowance does not eliminate a more restrictive Massachusetts filing requirement."
+      },
+      {
+        "text": "Store electronic Schedule II–V prescriptions only on a remote vendor system that cannot promptly retrieve or print records at the pharmacy, because off-site electronic storage always removes the DEA registered-location retrieval requirement.",
+        "why": "Incorrect. Under 21 CFR 1304.04(h)(5), electronic controlled prescriptions may reside on computers elsewhere only if they are readily retrievable at the registered location and printable or transferable in a readily understandable format. Massachusetts 247 CMR 9.16(2)–(6) also demands electronic separability and printable records."
+      },
+      {
+        "text": "Keep prescription records plus purchasing, returns, disposal, and destruction records readily retrievable for at least TWO YEARS, and maintain the capacity to print readable electronic prescriptions and stored prescription images.",
+        "why": "Correct. Massachusetts 247 CMR 9.16(1) requires at least two years of readily retrievable prescription, purchasing, return, disposal, and destruction records, while (5)–(6) requires readable printouts of electronic prescriptions and electronically stored images. Federal 21 CFR 1304.04(a) sets a general two-year DEA minimum for records covered by Part 1304."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.16(1)–(6); 21 CFR 1304.04(a), (h)(1)–(5) (paper, electronic, readily retrievable and separately maintained records)",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: DEA's red-'C' federal filing option does not supersede Massachusetts requirements for paper prescription segregation. Electronic records must remain separable, retrievable and printable."
   }
 ];
