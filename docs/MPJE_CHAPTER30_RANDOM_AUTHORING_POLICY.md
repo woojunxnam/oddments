@@ -38,8 +38,22 @@ Owner preference recorded: November 13, 2026. Applies to new questions for
 ## Random ten-question practice
 
 - Draw **2 Area 1 + 3 Area 2 + 3 Area 3 + 2 Area 4**.
-- Sample from **all** validated Chapter 30 questions, not just the most recent batch.
-  The pool automatically grows as new area-tagged questions are appended.
+- Offer two selection modes over **all** validated Chapter 30 questions, not just the most recent batch:
+  **Unanswered first** (default for new sessions) randomly selects as many
+  never-checked questions as available within each Area before filling that
+  Area's remaining quota with previously checked questions. **All questions**
+  uses uniform, area-balanced random sampling, independent of attempt history.
+  If a single unseen-only mix is possible, allowing one previously checked
+  question is acceptable to avoid exactly repeating the previous mix. The
+  bank automatically grows as new area-tagged questions are appended.
+- "Unanswered" means zero submitted *Check Answer* attempts across fixed,
+  random and review modes in this browser, not merely a question being viewed.
+  Count tracked question-level attempts without resetting wrong counts,
+  bookmarks or other study history. Changing the mode must not discard
+  current answers until New Random 10 is deliberately clicked.
+- Do not display a cumulative Random set number; it has no scoring or study
+  meaning. Preserve legacy localStorage question sessions and interpret
+  older sessions without a mode as uniform (all).
 - **No repeated question within a set.** Every New Random 10 action must result
   in a different question combination from the immediately preceding mix while
   another composition is mathematically possible. Different sets may share some
