@@ -3562,5 +3562,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
     "verified": "2026-11-16",
     "note": "Unpack antineoplastic HDs in a neutral/negative-pressure area, not a sterile or positive-pressure room; wear chemotherapy gloves meeting ASTM D6978. USP recommends supplier impervious-plastic packaging but does not require it in every shipment."
+  },
+  {
+    "id": "E30-106",
+    "set": 22,
+    "area": 1,
+    "kind": "single",
+    "topic": "Practicing while impaired and discretionary URAMP license outcomes",
+    "topicKey": "board-discipline",
+    "stem": "A Massachusetts pharmacist is unable to perform final prescription checks safely due to sedation from a legally prescribed medication. No patient has been harmed. An impairment-related Board complaint is pending, and the pharmacist applies to the Unified Recovery and Monitoring Program (URAMP). Which statement accurately describes Massachusetts law?",
+    "choices": [
+      {
+        "text": "The pharmacist cannot be disciplined without proof of a patient injury because the sedating drug was lawfully prescribed.",
+        "why": "Incorrect. 247 CMR 10.03(1)(g) lists practicing while impaired by medication, illness, or another condition as a ground for discipline. A lawful prescription and lack of a known error do not eliminate unsafe impairment. The pharmacist should stop unsafe professional tasks."
+      },
+      {
+        "text": "Impaired practice may warrant discipline; after URAMP admission, the Board may dismiss a related complaint or impose non-disciplinary license conditions.",
+        "why": "Correct. Under 247 CMR 10.03(1)(g), actual impaired professional practice is a possible disciplinary ground even if the medication was legally obtained. M.G.L. c.112 §65G(g) authorizes, but does not require, the Board to dismiss related pending matters after URAMP admission; non-disciplinary license conditions may remain."
+      },
+      {
+        "text": "The pharmacist can be admitted to URAMP only after a final formal disciplinary hearing has resolved the pending complaint.",
+        "why": "Incorrect. Section 65G(f)–(g) expressly provides for applicants or Board referrals and addresses pending complaints upon admission. A final adjudicatory finding is not required before a pharmacist seeks appropriate recovery monitoring."
+      },
+      {
+        "text": "Submitting a URAMP application automatically dismisses the pending complaint and guarantees unrestricted pharmacist practice.",
+        "why": "Incorrect. The statutory discretion arises on admission, not submission of an application, and the Board MAY, rather than MUST, dismiss a related complaint. Section 65G(g) also permits public non-disciplinary restrictions or conditions during monitoring."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 10.03(1)(g) (eff. Jan. 9, 2025); M.G.L. c.112 §65G(f)–(g); Massachusetts DPH URAMP Frequently Asked Questions",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section65G",
+    "verified": "2026-11-16",
+    "note": "Legal use of medication does not excuse impaired pharmacy practice. URAMP admission may offer non-disciplinary monitoring, but dismissal of a related complaint is discretionary."
+  },
+  {
+    "id": "E30-107",
+    "set": 22,
+    "area": 2,
+    "kind": "single",
+    "topic": "Podiatrist Schedule II prescriptions within foot and ankle scope",
+    "topicKey": "prescriber-authority",
+    "stem": "An actively licensed Massachusetts podiatrist has a personal DEA registration and Massachusetts Controlled Substances Registration. The podiatrist writes two otherwise valid Schedule II prescriptions: one for brief postoperative pain after performing foot surgery, and another to treat an unrelated migraine with no connection to any foot or ankle condition. Assume legitimate patient relationships and compliance with all other opioid and electronic-prescribing requirements. Which assessment is correct?",
+    "choices": [
+      {
+        "text": "Both prescriptions are within scope because DEA and Massachusetts registrations allow the podiatrist to prescribe for any medical diagnosis.",
+        "why": "Incorrect. Prescribing registrations are necessary for covered controlled drugs but do not enlarge the podiatrist's authorized clinical scope. Under 249 CMR 4.01–4.02 and 21 CFR 1306.04(a), prescriptions must arise from legitimate medical purpose within lawful professional practice."
+      },
+      {
+        "text": "Neither is within scope because Massachusetts excludes podiatrists from prescribing any Schedule II medications.",
+        "why": "Incorrect. 249 CMR 4.02 expressly permits reasonable prescription and controlled substances in podiatric practice; it does not impose a blanket Schedule II prohibition. Appropriate postoperative foot pain is a podiatric indication."
+      },
+      {
+        "text": "Only the migraine prescription is valid because podiatrists may make systemic diagnoses but cannot prescribe for postoperative foot pain.",
+        "why": "Incorrect. Podiatrists may assess systemic problems affecting the foot but do not thereby acquire unlimited authority to treat unrelated migraine. Foot-surgery pain is connected to the practitioner's authorized podiatric treatment."
+      },
+      {
+        "text": "The postoperative foot-pain prescription can be within the podiatrist's authority, but the unrelated migraine prescription exceeds that professional scope.",
+        "why": "Correct. Under 249 CMR 4.01–4.02, a properly registered podiatrist may prescribe reasonable controlled medication, including Schedule II, within podiatric practice. The unrelated migraine is outside that scope. The pharmacist should verify authority and not dispense a prescription solely because DEA/MCSR numbers are valid."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "249 CMR 4.01–4.02 (eff. Oct. 14, 2022); M.G.L. c.94C §§9,18(a); 247 CMR 9.15(2); 21 CFR 1306.04(a)",
+    "url": "https://www.mass.gov/regulations/249-CMR-400-practice-of-podiatric-medicine",
+    "verified": "2026-11-16",
+    "note": "A podiatrist may prescribe Schedule II controlled substances for care within podiatric scope; DEA/MCSR registration does not authorize unrelated general medical treatment."
+  },
+  {
+    "id": "E30-108",
+    "set": 22,
+    "area": 2,
+    "kind": "multi",
+    "topic": "FD&C Act adulteration versus misbranding: insanitary holding, low potency and false labeling",
+    "topicKey": "drug-integrity",
+    "stem": "A Massachusetts pharmacy evaluates a supplier's quality alert. Lot X was held in insanitary conditions where contamination could occur, though cultures are negative. Compendial lot Y tests materially below its represented strength without an accurately labeled exception. Lot Z has materially false strength information on the label. No patient injury or FDA recall has been reported. Which conclusions are supported by the Federal Food, Drug, and Cosmetic Act? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Lot X may be adulterated even though no finished unit has cultured positive for contamination.",
+        "why": "Correct. 21 U.S.C. §351(a)(2)(A) covers drugs held under insanitary conditions WHEREBY they MAY have been contaminated or rendered injurious. A positive test or actual patient injury is not required. The pharmacy should not return a questionable lot to dispensable inventory without resolving the hazard."
+      },
+      {
+        "text": "Lot Y cannot be adulterated as long as its container is sealed and the manufacturer intended to meet the labeled strength.",
+        "why": "Incorrect. Under 21 U.S.C. §351(b), a compendial drug with strength different from the compendial standard is adulterated absent an applicable plainly labeled difference. The stem excludes such disclosure; an intact seal and a claim of intended potency do not cure a subpotent lot."
+      },
+      {
+        "text": "Lot Z may be misbranded because a materially false label claim is misleading even without proof that a patient was harmed.",
+        "why": "Correct. 21 U.S.C. §352(a)(1) defines a drug as misbranded when labeling is false or misleading in any particular. Patient harm, a broken seal, or a formal FDA recall is not a necessary element of the violation."
+      },
+      {
+        "text": "The pharmacy may dispense the lots normally until FDA formally orders a recall, because adulteration and misbranding have no effect before then.",
+        "why": "Incorrect. 21 U.S.C. §§351–352 define adulteration/misbranding independently of a recall, and federal prohibitions under §331 apply to unlawful distribution and acts affecting products held for sale. Pharmacies must evaluate and segregate unsafe stock rather than assume it may be dispensed until a recall notice."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 U.S.C. §§351(a)(2)(A),351(b),352(a)(1),331(a),(k); 247 CMR 9.01 (pharmacy safety duties)",
+    "url": "https://uscode.house.gov/us/usc/t21/s351/",
+    "verified": "2026-11-16",
+    "note": "Insanitary holding can mean adulteration without proven contamination; material false labeling can mean misbranding without injury. Subpotency can independently make a compendial drug adulterated."
+  },
+  {
+    "id": "E30-109",
+    "set": 22,
+    "area": 3,
+    "kind": "single",
+    "topic": "Required Schedule II opioid partial-fill statement omitted from an otherwise valid e-prescription",
+    "topicKey": "rx-amendments",
+    "stem": "A Massachusetts community pharmacy receives an otherwise complete and authentic electronic prescription for oxycodone (Schedule II). It lacks the mandatory statement that the patient may request a partial fill. The patient presently wants the full quantity, and the pharmacist can reach the prescriber or the prescriber's authorized agent. What should the pharmacist do under Massachusetts law and DPH guidance?",
+    "choices": [
+      {
+        "text": "Confirm the missing statement with the prescriber or authorized agent and document the notation on the prescription in writing or electronically.",
+        "why": "Correct. M.G.L. c.94C §22(c) and 105 CMR 721.020(D)(7) require that notation on Schedule II opioid prescriptions regardless of whether a partial fill is sought. Massachusetts DPH specifically directs pharmacist contact with the prescriber or authorized agent and written/electronic documentation of the confirmed notation."
+      },
+      {
+        "text": "Dispense without a notation because the statutory statement is required only when a patient actually requests a partial fill.",
+        "why": "Incorrect. M.G.L. c.94C §22(c) applies to any Schedule II opioid prescription. The patient's request for the full quantity does not make the missing notation optional. Obtain confirmation and document it."
+      },
+      {
+        "text": "Add the standard partial-fill language through a pharmacy technician without any prescriber or authorized-agent confirmation.",
+        "why": "Incorrect. DPH's clarification does not authorize the pharmacy to fabricate the omitted prescriber statement unilaterally. The pharmacist must contact the prescriber or authorized agent for confirmation before recording the missing notation."
+      },
+      {
+        "text": "Reject the electronic prescription and require a new one because confirmation and documentation of that omission are always forbidden.",
+        "why": "Incorrect. DPH expressly provides the confirmation-and-documentation procedure for this particular omission on an otherwise lawful prescription. Another genuinely invalid aspect might require a new prescription, but this specific omission does not automatically do so."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.94C §22(c) (amended Nov. 5, 2025); 105 CMR 721.020(D)(7) (eff. Sept. 27, 2024); Massachusetts DPH Circular DCP 16-12-665; distinguish current 105 CMR 721.055(B) (remainder)",
+    "url": "https://www.mass.gov/circular-letter/schedule-ii-opioids-prescription-form-requirements-and-patient-requests-for-partial-fill",
+    "verified": "2026-11-16",
+    "note": "A Schedule II opioid prescription needs its patient-request partial-fill notation even if the patient wants all tablets. The pharmacist can document it after prescriber/agent confirmation; do not rely on superseded 2016 'remainder void' guidance."
+  },
+  {
+    "id": "E30-110",
+    "set": 22,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Failed home delivery, cold-chain excursion, and controlled-substance shipping procedures",
+    "topicKey": "medication-delivery-shipping",
+    "stem": "A Massachusetts pharmacy sends prescriptions to patients using a common carrier. A refrigerated noncontrolled biologic comes back unopened after a failed delivery; its temperature logger shows an excursion outside the labeled range, and no product-specific stability assessment has been obtained. The pharmacy also sends Schedule III prescriptions through the carrier. Which conclusions comply with 247 CMR 9.02 and medication-integrity duties? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The returned biologic may be immediately resent, because an intact package seal establishes stability despite the logged temperature excursion.",
+        "why": "Incorrect. A sealed container does not establish product stability after exposure outside the labeled storage range. Under 247 CMR 9.02(2), the pharmacy must ensure transport does not adversely affect integrity or stability. The unresolved excursion requires evaluation before redelivery."
+      },
+      {
+        "text": "Common-carrier dispensing is permitted, but the pharmacy must ensure that packing, shipping and transportation do not undermine medication stability.",
+        "why": "Correct. 247 CMR 9.02(1) allows mail/common-carrier dispensing consistent with applicable law. Section 9.02(2) makes preservation of drug integrity and stability a pharmacy responsibility, not exclusively the carrier's."
+      },
+      {
+        "text": "Every logged temperature excursion mandates immediate destruction under 247 CMR 9.02, even if reliable product-specific stability data support use.",
+        "why": "Incorrect. Section 9.02 does not set a universal automatic-discard threshold. A specific medicine's labeled conditions, temperature history, and scientifically supported stability assessment determine whether it remains suitable; absent such support, keep it from dispensing."
+      },
+      {
+        "text": "The biologic should be held pending a supported stability determination, and the pharmacy must maintain its own policies for transporting and delivering controlled substances.",
+        "why": "Correct. Redelivery before resolving the excursion would not satisfy the pharmacy's §9.02(2) integrity responsibility. Section 9.02(3) separately requires pharmacy policies and procedures for packing, shipping, transportation and delivery of controlled substances, even when a commercial carrier is used."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.02(1)–(3) (Prescriptions by Mail; eff. Dec. 6, 2024); 247 CMR 9.01; relevant manufacturer-labeled storage and product-specific stability data",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A commercial carrier does not shift drug-integrity responsibility away from the pharmacy. Evaluate unresolved cold-chain excursions before redelivery and maintain procedures specific to controlled-substance shipping."
   }
 ];
