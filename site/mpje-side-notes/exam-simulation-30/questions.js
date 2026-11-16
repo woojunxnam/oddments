@@ -3044,5 +3044,178 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
     "verified": "2026-11-16",
     "note": "APS patient pickup is restricted to Schedules IV–VI and no refrigerated or reconstituted drugs. PPA robotic filling has its own mixed-lot recall quarantine rule. Never confuse APS, PPA and healthcare-facility ADD."
+  },
+  {
+    "id": "E30-091",
+    "set": 19,
+    "area": 1,
+    "kind": "single",
+    "topic": "Dedicated training personnel: when a trainer is excluded but the supervised trainee still counts",
+    "topicKey": "workforce-supervision",
+    "stem": "A Massachusetts community pharmacy is NOT providing vaccination services. One pharmacist supervises a prescription-filling team of FOUR licensed support personnel: TWO licensed certified pharmacy technicians, ONE licensed noncertified technician, and ONE licensed pharmacy technician trainee (PTT). The PTT is directly supervised by an ADDITIONAL licensed certified technician assigned exclusively as the PTT's dedicated trainer. The trainer and trainee have appropriate name badges and were designated on the pharmacy's published staffing schedule BEFORE that training day; written training policies are in place. The trainer does not independently fill, process, or otherwise support prescriptions. No separate Board waiver applies. Under Massachusetts Board Policy 2026-02, which staffing conclusion is MOST accurate?",
+    "choices": [
+      {
+        "text": "The pharmacist may count only the two certified technicians and the noncertified technician, because a dedicated trainer and the associated PTT are BOTH excluded from the supervisory ratio.",
+        "why": "Incorrect. Board Policy 2026-02, Section III(A)(2)(c), specifically counts a supervised 'Trainee' in the pharmacist ratio as a pharmacy technician. Excluding the dedicated trainer does not also exempt the trainee while the trainee performs prescription-support duties."
+      },
+      {
+        "text": "The four-person filling team meets the ordinary 1:4 ratio with two certified technicians; the separately designated trainer may be excluded while working solely in the trainer–trainee role, but the PTT remains counted among the four.",
+        "why": "Correct. Policy 2026-02, Section I(A)(1)(b), permits 1:4 with at least two licensed certified technicians. Sections III and III(A)–(B) exclude a properly designated trainer who performs NO independent pharmacy-support duties, while requiring the actively participating trainee to count as a pharmacy technician. The advance schedule, badges, and supervision meet the stated training conditions."
+      },
+      {
+        "text": "The dedicated trainer can remain excluded if the trainer starts independently preparing an additional patient's prescription, as long as another technician checks the work.",
+        "why": "Incorrect. Under Policy 2026-02, Sections III and III(A)(1)(c), a trainer who performs professional support work outside the trainer–trainee relationship must be counted. That would make five counted filling-support personnel here, exceeding the ordinary 1:4 ratio at a pharmacy not providing vaccinations."
+      },
+      {
+        "text": "The pharmacy may use the 1:6 immunization-service ratio regardless of whether it vaccinates anyone, so the number and certification status of the support staff are irrelevant.",
+        "why": "Incorrect. Policy 2026-02, Section I(B), makes the 1:6 provision conditional on a pharmacy providing vaccination services and on the minimum qualifying certified/intern support mix. Neither condition can be presumed at this nonvaccinating pharmacy."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "Massachusetts Board Policy 2026-02, §§I(A)(1)(b), I(B), III(A)–(B) (adopted Sept. 3, 2026); 247 CMR 8.00",
+    "url": "https://www.mass.gov/doc/2026-02-ratios-supervision-and-dedicated-training-personnel/download",
+    "verified": "2026-11-16",
+    "note": "The trainer exemption is conditional. Count the active trainee, not the dedicated trainer who only trains, and do not apply the 1:6 vaccination ratio to a nonvaccinating site."
+  },
+  {
+    "id": "E30-092",
+    "set": 19,
+    "area": 2,
+    "kind": "single",
+    "topic": "HIPAA confidential communications: reasonable alternate-contact request versus proving endangerment",
+    "topicKey": "hipaa-communications",
+    "stem": "A HIPAA-covered Massachusetts community pharmacy routinely calls a household landline and mails refill notices to the patient's home. An adult patient asks that FUTURE prescription-related communications instead be sent only to the patient's personal mobile number because several other people share the household. The pharmacy can reasonably accommodate the request using its existing workflow. The patient supplies the alternate number but refuses to describe the personal reason for confidentiality. No separate disclosure law or unusual operational burden applies. Which response BEST follows the federal HIPAA confidential-communications rule?",
+    "choices": [
+      {
+        "text": "The pharmacy must reject the request until the patient proves that a communication to the household could endanger the patient's safety; this is required for every covered provider.",
+        "why": "Incorrect. Under 45 CFR 164.522(b)(1)(i), a covered HEALTH CARE PROVIDER must accommodate a reasonable alternative-contact request without a required endangerment statement. The express endangerment-statement condition in 164.522(b)(1)(ii) applies to HEALTH PLANS, not automatically to this pharmacy."
+      },
+      {
+        "text": "The pharmacy may require a signed explanation identifying the sensitive diagnosis that motivated the request; without it, the pharmacy has no duty to use the supplied alternate contact method.",
+        "why": "Incorrect. 45 CFR 164.522(b)(2)(iii) explicitly prohibits a covered health care provider from conditioning confidential communications on an explanation of the patient's reason. Requiring a diagnosis disclosure would contradict the rule."
+      },
+      {
+        "text": "The pharmacy must withhold all future prescription counseling, refill reminders and treatment communications until the patient signs a separate HIPAA authorization covering each communication.",
+        "why": "Incorrect. Section 164.522(b) concerns reasonable changes to the means or location of communications. It does not turn routine permitted provider–patient treatment or prescription communications into disclosures requiring individual HIPAA authorizations."
+      },
+      {
+        "text": "The pharmacy must accommodate this reasonable alternate-contact request; it may require the request in writing and an alternate address or contact method, but cannot demand an explanation of the patient's reason as a condition of accommodating it.",
+        "why": "Correct. 45 CFR 164.522(b)(1)(i) obligates covered providers to accommodate reasonable confidential communications requests. Section 164.522(b)(2) permits a written request and information concerning alternate contact or payment when appropriate, but expressly prohibits a provider from demanding a reason."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "45 CFR 164.522(b)(1)(i)–(ii), (b)(2)(i)–(iv); HHS OCR guidance, alternative confidential communications",
+    "url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.522",
+    "verified": "2026-11-16",
+    "note": "Do not confuse a provider with a health plan. A provider must accommodate a reasonable confidentiality request and cannot require the patient to explain why."
+  },
+  {
+    "id": "E30-093",
+    "set": 19,
+    "area": 2,
+    "kind": "multi",
+    "topic": "NCVIA vaccine records: VIS edition and distribution date versus lot and vaccinator identification",
+    "topicKey": "immunization",
+    "stem": "A Massachusetts community pharmacist correctly administers a federally covered inactivated influenza vaccination to an adult under a valid standing order. The pharmacy provided the current Vaccine Information Statement (VIS) before the injection, and all Massachusetts MIIS reporting and clinical requirements have been met. An internal audit finds that the patient's permanent immunization record lacks some federal documentation elements, although the electronic system contains the patient's name and the administered dose. Under the federal National Childhood Vaccine Injury Act (NCVIA) and CDC VIS instructions, which additions or practices are required or permitted as described? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Record the vaccine's administration date, manufacturer, and lot number in the patient's permanent medical record or an authorized permanent office log.",
+        "why": "Correct. 42 U.S.C. 300aa-25(a)(1)–(2) requires the vaccine administration date plus manufacturer and lot number in the patient's permanent record or a qualifying permanent office log, even where the dose is already recorded in the state registry."
+      },
+      {
+        "text": "Omit the name, address and professional title of the vaccinator because the patient is an adult and the pharmacy's name is visible on the retail receipt.",
+        "why": "Incorrect. Section 300aa-25(a)(3) applies to covered vaccinations given to any person, not just children, and requires the vaccinating provider's name, address and, if appropriate, title in the permanent record or qualifying log. A retail receipt without those elements is not a substitute."
+      },
+      {
+        "text": "Document BOTH the edition date of the VIS furnished and the date it was given; recording only the vaccination date does not meet the separate VIS documentation requirement.",
+        "why": "Correct. CDC's Instructions for Using VISs, implementing 42 U.S.C. 300aa-26, require documentation of the specific VIS edition date AND the date the VIS was provided. Those are distinct from the administration date required by §300aa-25."
+      },
+      {
+        "text": "Document the name, address and appropriate title of the vaccinating healthcare provider in the recipient's permanent medical record OR in a permanent office log accessible to the patient's legal representative on request.",
+        "why": "Correct. Section 300aa-25(a) explicitly permits an appropriate permanent office log or file accessible to the legal representative rather than requiring that every field appear exclusively in the main electronic patient chart. The vaccinator identity and address must still be recorded."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "42 U.S.C. §300aa-25(a)(1)–(4); 42 U.S.C. §300aa-26; CDC Instructions for Using VISs, 'Record information for each VIS provided'",
+    "url": "https://www.cdc.gov/vaccines/hcp/about-vis/instructions.html",
+    "verified": "2026-11-16",
+    "note": "Federal vaccine documentation has two linked sets: vaccine administration/manufacturer/lot/vaccinator, plus VIS edition and date provided. An adult recipient is not exempt."
+  },
+  {
+    "id": "E30-094",
+    "set": 19,
+    "area": 3,
+    "kind": "single",
+    "topic": "CMEA pseudoephedrine: mobile retail vendor 7.5-gram limit versus ordinary 9-gram purchaser limit",
+    "topicKey": "otc-pseudoephedrine",
+    "stem": "Four INDEPENDENT prospective purchasers are at different federally compliant, self-certified sellers in Massachusetts, seeking additional over-the-counter pseudoephedrine. All quantities are PSE BASE equivalents, all earlier purchases below are within the relevant 30-day window, all required photo IDs and sales records are available, and no state-specific or other restrictions apply. Each proposed sale would occur in a single transaction. Under the federal Combat Methamphetamine Epidemic Act (CMEA), which proposed sale is permissible?",
+    "choices": [
+      {
+        "text": "A MOBILE retail vendor sells an additional 0.60 gram to a purchaser who has already obtained 7.20 grams from that mobile vendor within the preceding 30 days, with no purchases earlier today.",
+        "why": "Incorrect. 21 U.S.C. 830(e)(1)(A)(ix)(II) and 21 CFR 1314.20(b) limit mobile retail vendor sales to 7.5 grams of pseudoephedrine base per purchaser in any 30-day period. The resulting 7.80 grams exceeds that mobile-vendor limit, despite being below the general 9-gram individual-purchase ceiling."
+      },
+      {
+        "text": "A conventional walk-in retail pharmacy sells another 0.50 gram to a purchaser who already purchased 8.60 grams of pseudoephedrine base at retail in the same 30-day period, with no earlier purchases today.",
+        "why": "Incorrect. Although the calendar-day quantity would be below 3.6 grams, the federal individual retail-purchase limit is 9 grams per 30 days under 21 U.S.C. 844(a). The proposed 9.10 grams exceeds it."
+      },
+      {
+        "text": "A MOBILE retail vendor sells an additional 0.60 gram to a purchaser who previously bought 6.90 grams from that vendor in the current 30-day period and made no other purchases today.",
+        "why": "Correct. A mobile retail vendor's 30-day ceiling is 7.5 grams of pseudoephedrine base, and 6.90 + 0.60 = exactly 7.50 grams. The same calendar day's sale is below the federal 3.6-gram daily limit. The scenario assumes compliance with all other seller and buyer requirements."
+      },
+      {
+        "text": "A conventional walk-in retail pharmacy sells another 0.60 gram to a purchaser who already purchased 3.10 grams from that pharmacy earlier on the SAME calendar day, despite having bought only 3.10 grams in the entire 30-day period.",
+        "why": "Incorrect. Federal 21 U.S.C. 830(d)(1) and 21 CFR 1314.20(a) limit sales to 3.6 grams per purchaser in a single calendar day regardless of how many transactions occur. The combined 3.70 grams exceeds that daily limit despite remaining below the general 30-day ceiling."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 U.S.C. 830(d)(1), (e)(1)(A)(ix), 844(a); 21 CFR 1314.20(a)–(b); DEA CMEA General Information",
+    "url": "https://www.deadiversion.usdoj.gov/meth/cma2005.html",
+    "verified": "2026-11-16",
+    "note": "The 3.6 g/day rule applies to retail sales; a mobile vendor has an additional 7.5 g/30-day sales ceiling, while the individual retail purchase limit is generally 9 g/30 days."
+  },
+  {
+    "id": "E30-095",
+    "set": 19,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Federal compounding: limited 503A anticipatory stock versus 503B outsourcing office-use distribution",
+    "topicKey": "federal-compounding-models",
+    "stem": "Two Massachusetts-based entities are reviewing federal human-drug compounding exemptions. Pharmacy A is a state-licensed community pharmacy whose pharmacists compound under section 503A, NOT an FDA-registered outsourcing facility. Facility B is an FDA-registered 503B outsourcing facility compounding sterile products. Assume all other respective federal and Massachusetts compounding, product-quality, licensure and distribution conditions are met unless a choice expressly violates the cited patient-prescription requirement. Which statements correctly describe these different pathways? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Pharmacy A may compound LIMITED quantities before receiving an identified patient's valid prescription if a documented history of valid orders for that drug arose from established relationships with the patients or the prescribers expected to write those orders; distribution still requires the valid patient-specific prescription.",
+        "why": "Correct. FD&C Act §503A(a)(2) (21 U.S.C. 353a(a)(2)) allows LIMITED anticipatory compounding based on historical valid prescriptions within established pharmacist/patient or pharmacist/prescriber relationships. FDA's final §503A prescription-requirement guidance states that anticipated doses may not be distributed before a valid individual-patient prescription is received."
+      },
+      {
+        "text": "Pharmacy A qualifies for the 503A exemptions by sending a compounded batch to a physician's office for use on unnamed future patients based only on a general 'office stock' purchase order.",
+        "why": "Incorrect. A general office-use purchase order without any patient-specific prescription does not satisfy the federal §503A patient-prescription requirement. FDA distinguishes 503A from the qualified §503B outsourcing pathway, which can supply office stock. State authorization alone cannot replace the federal requirement for the 503A exemptions."
+      },
+      {
+        "text": "Facility B, if compliant with all §503B conditions, may compound and distribute eligible sterile products for office stock without prescriptions identifying individual patients, while remaining subject to applicable current good manufacturing practice (CGMP) requirements.",
+        "why": "Correct. FD&C Act §503B(d)(4)(C) expressly permits an outsourcing facility to obtain or not obtain prescriptions for identified individual patients. FDA explains that qualifying 503B facilities may supply office stock but remain subject to CGMP and other §503B requirements."
+      },
+      {
+        "text": "Facility B is exempt from CGMP merely because its batches are compounded rather than conventionally manufactured, exactly as a qualifying 503A pharmacy is.",
+        "why": "Incorrect. The FD&C Act §503A exemption includes CGMP requirements only when every 503A condition is satisfied, whereas §503B does NOT exempt qualifying outsourcing-facility compounding from CGMP. The two pathways are not interchangeable."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "FD&C Act §§503A(a)(1)–(2), 503B(d)(4)(C) (21 U.S.C. §§353a, 353b); FDA Human Drug Compounding Laws and Prescription-Requirement-Under-503A Final Guidance",
+    "url": "https://www.fda.gov/drugs/human-drug-compounding/human-drug-compounding-laws",
+    "verified": "2026-11-16",
+    "note": "503A anticipatory compounding is limited and tied to historical patient-specific prescription demand; 503B outsourcing facilities may supply office stock but remain subject to CGMP."
   }
 ];
