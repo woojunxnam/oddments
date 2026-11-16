@@ -1,5 +1,5 @@
-/* Chapter 30 Random 10: legacy-area-balanced sampling with independent question checks.
-   Each New Random 10 changes the question combination, with no within-set repetition. */
+/* Chapter 30 Random 10: balanced legacy areas and individually checked answers.
+   Unanswered-first uses question-level attempts; all-mode samples uniformly. */
 (() => {
   'use strict';
   const all = Array.isArray(window.MPJE_CH30_QUESTIONS) ? window.MPJE_CH30_QUESTIONS : [];
@@ -19,9 +19,10 @@
   const poolInfo = $('random-pool');
   const message = $('random-message');
   const retakeButton = $('random-retake');
+  const modePicker = $('random-mode');
   const newButtons = [$('random-new-top'), $('random-new-bottom')];
   if (!root || !summary || !progress || !poolInfo || !message ||
-      !retakeButton || newButtons.some(b => !b)) return;
+      !retakeButton || !modePicker || newButtons.some(b => !b)) return;
 
   function randomIndex(length) {
     if (length < 1) throw new Error('Empty random sampling pool');
@@ -48,26 +49,50 @@
     if (ids.some(id => !byId.has(id))) return false;
     return areaIds.every(a => ids.filter(id => byId.get(id).area === Number(a)).length === quotas[a]);
   }
-  function drawDifferent(previous) {
+  function isUnanswered(id) {
+    // Only submitted checks count, including checks made in fixed sets or reviews.
+    return progressStore.get(id).attempts === 0;
+  }
+  function draw(mode) {
+    const ids = areaIds.flatMap(area => {
+      if (mode === 'all') return shuffle(pool[area]).slice(0, quotas[area]).map(q => q.id);
+      const unanswered = shuffle(pool[area].filter(q => isUnanswered(q.id)));
+      const answered = shuffle(pool[area].filter(q => !isUnanswered(q.id)));
+      return unanswered.slice(0, quotas[area])
+        .concat(answered.slice(0, Math.max(0, quotas[area] - unanswered.length)))
+        .map(q => q.id);
+    });
+    return shuffle(ids);
+  }
+  function drawDifferent(previous, mode) {
     const last = validIds(previous) ? signature(previous) : null;
-    const draw = () => shuffle(areaIds.flatMap(a =>
-      shuffle(pool[a]).slice(0, quotas[a]).map(q => q.id)
-    ));
     for (let i = 0; i < 100; i++) {
-      const ids = draw();
+      const ids = draw(mode);
       if (signature(ids) !== last) return ids;
     }
-    const ids = draw();
+    const ids = draw(mode);
+    // If exactly one unanswered-only mix exists, one previously checked
+    // question may be needed to avoid repeating the previous 10 IDs.
+    const possible = [];
     for (const area of areaIds) {
       const selected = ids.filter(id => byId.get(id).area === Number(area));
-      const alternative = pool[area].find(q => !selected.includes(q.id));
-      if (alternative) {
-        const index = ids.findIndex(id => byId.get(id).area === Number(area));
-        ids[index] = alternative.id;
-        if (signature(ids) !== last) return shuffle(ids);
+      for (const alternative of pool[area]) {
+        if (selected.includes(alternative.id)) continue;
+        for (const selectedId of selected) {
+          const unseenLoss = Number(isUnanswered(selectedId)) -
+            Number(isUnanswered(alternative.id));
+          possible.push({index: ids.indexOf(selectedId), replacement: alternative.id,
+            unseenLoss});
+        }
       }
     }
-    return ids; // Only when no other possible combination exists.
+    if (possible.length) {
+      const smallestLoss = Math.min(...possible.map(option => option.unseenLoss));
+      const best = shuffle(possible.filter(option => option.unseenLoss === smallestLoss))[0];
+      ids[best.index] = best.replacement;
+      return shuffle(ids);
+    }
+    return ids; // Only when no other composition exists.
   }
   function validQuestion(q) {
     return q && Number.isInteger(q.area) && q.area >= 1 && q.area <= 4 &&
@@ -86,8 +111,13 @@
     newButtons.forEach(b => { b.disabled = true; });
     return;
   }
-  poolInfo.textContent = all.length + ' total original questions · ' + areaIds.map(a =>
-    'Area ' + a + ': ' + pool[a].length + ' available').join(' · ');
+  function updatePoolInfo() {
+    poolInfo.textContent = all.length + ' total original questions · ' + areaIds.map(a =>
+      'Area ' + a + ': ' + pool[a].length + ' available').join(' · ') +
+      ' · ' + (all.length - progressStore.count().attempted) +
+      ' not yet checked in this browser';
+  }
+  updatePoolInfo();
 
   let state = null;
   try {
@@ -96,13 +126,14 @@
       state = {
         ids: saved.ids, answers: saved.answers,
         checked: saved.checked && typeof saved.checked === 'object' ? saved.checked : {},
-        number: Number.isInteger(saved.number) && saved.number > 0 ? saved.number : 1,
+        mode: saved.mode === 'unseen' ? 'unseen' : 'all', // Legacy mixes were uniform.
         submitted: !!saved.submitted
       };
     }
   } catch (_) { /* Local storage optional. */ }
-  if (!state) state = {ids: drawDifferent(null), answers: {}, checked: {}, submitted: false, number: 1};
+  if (!state) state = {ids: drawDifferent(null, 'unseen'), answers: {}, checked: {}, submitted: false, mode: 'unseen'};
   if (state.submitted) state.ids.forEach(id => { state.checked[id] = true; });
+  modePicker.value = state.mode;
   function save() { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) {} }
   function questions() { return state.ids.map(id => byId.get(id)); }
   function selected(q) {
@@ -115,7 +146,7 @@
     const qs = questions();
     const finished = qs.filter(checked);
     const right = finished.filter(correct).length;
-    progress.textContent = 'Random set #' + state.number + ' · ' + finished.length + '/10 checked';
+    progress.textContent = finished.length + '/10 checked';
     retakeButton.hidden = !qs.some(q => checked(q) || selected(q).length > 0);
     summary.hidden = finished.length === 0;
     if (finished.length) {
@@ -127,12 +158,15 @@
         ' correct · ' + areaScores.join(' · ') +
         '. Only individually checked questions contribute to this score.';
     } else summary.textContent = '';
+    const remaining = qs.filter(q => isUnanswered(q.id)).length;
+    message.textContent = (state.mode === 'unseen' ? 'Unanswered first' : 'All questions') +
+      ' · ' + remaining + '/10 have never been checked · Area mix: 2 / 3 / 3 / 2.' +
+      ' New mixes may share questions with older sets.';
+    updatePoolInfo();
   }
   function render() {
     root.replaceChildren();
     const qs = questions();
-    message.textContent = 'Random set #' + state.number +
-      ' · 2 Area 1, 3 Area 2, 3 Area 3 and 2 Area 4 questions. Check one question at a time; new mixes may share individual questions.';
     qs.forEach((q, index) => {
       root.append(view.renderCard(q, {
         index, total: qs.length, group: 'random', showArea: true,
@@ -159,12 +193,13 @@
     updateProgress();
   }
   function newRandom() {
-    const ids = drawDifferent(state.ids);
+    const mode = modePicker.value === 'all' ? 'all' : 'unseen';
+    const ids = drawDifferent(state.ids, mode);
     if (signature(ids) === signature(state.ids)) {
       message.textContent = 'No other unique ten-question combination is available yet.';
       return;
     }
-    state = {ids, answers: {}, checked: {}, submitted: false, number: state.number + 1};
+    state = {ids, answers: {}, checked: {}, submitted: false, mode};
     save();
     render();
     $('random-practice').scrollIntoView({block: 'start', behavior: 'auto'});
@@ -177,6 +212,10 @@
     render();
     $('random-practice').scrollIntoView({block: 'start', behavior: 'auto'});
   }
+  modePicker.addEventListener('change', () => {
+    message.textContent = 'Selection mode changed for the NEXT New Random 10.' +
+      ' Current questions and answers are preserved.';
+  });
   newButtons.forEach(button => button.addEventListener('click', newRandom));
   retakeButton.addEventListener('click', retake);
   save();
