@@ -2524,5 +2524,179 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "FDA DSCSA Exemptions for Small Business Dispensers (Aug. 6, 2026), FD&C Act §§582(a)(3), 582(d)(4), 582(g)(1), effective Nov. 27, 2026–Nov. 27, 2027",
     "url": "https://www.fda.gov/media/194424/download",
     "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-076",
+    "set": 16,
+    "area": 1,
+    "kind": "single",
+    "topic": "PGY1 resident: intern licensure, technician supervision and pharmacist-only validation",
+    "topicKey": "intern-education",
+    "stem": "An ACPE-accredited PharmD graduate begins a PGY1 residency in a Massachusetts hospital. The resident has passed the NAPLEX and holds a current Massachusetts pharmacy intern license, but the Board has NOT issued a Massachusetts pharmacist license. A licensed pharmacist preceptor is on the premises, directly supervises the resident, and can complete final dispensing validation. A licensed pharmacy technician also needs supervision. Assume staffing ratios and all other duties are otherwise compliant. Which arrangement is permitted?",
+    "choices": [
+      {
+        "text": "Allow the resident to serve as the only pharmacist on duty during a staff pharmacist's absence because passing the NAPLEX and entering an accredited residency temporarily confer pharmacist authority.",
+        "why": "Incorrect. 247 CMR 8.01(8) requires a Massachusetts residency graduate to hold either a Massachusetts pharmacist license or a Massachusetts intern license with pharmacist supervision. NAPLEX success and residency status alone do not provide pharmacist licensure or permit the resident to replace the pharmacist on duty."
+      },
+      {
+        "text": "Allow the resident to work under direct supervision as a licensed pharmacy intern and supervise the technician in that supervised role, while the licensed pharmacist retains responsibility for final dispensing validation.",
+        "why": "Correct. Under 247 CMR 8.01(8) and (10), an approved PharmD graduate may work as a licensed pharmacy intern during residency until pharmacist licensure. Section 8.01(15) allows an intern acting under direct supervision of a registered pharmacist preceptor to supervise technicians. Section 9.04(1) reserves final dispensing validation to a licensed pharmacist."
+      },
+      {
+        "text": "Have the resident independently perform the final validation of prescriptions because a pharmacist's on-site availability automatically converts an intern's validation into licensed pharmacist validation.",
+        "why": "Incorrect. The resident remains an intern until licensed as a pharmacist. Although the intern may perform supervised functions, 247 CMR 9.04(1) makes a licensed pharmacist responsible for final dispensing-process validation. On-site supervision does not change the resident's license category."
+      },
+      {
+        "text": "Require the resident to stop all pharmacy-intern activities immediately upon graduation, even though the Massachusetts intern license remains active, until the pharmacist license is issued.",
+        "why": "Incorrect. 247 CMR 8.01(10) expressly allows graduates of an approved pharmacy school to continue acting as pharmacy interns until licensed as pharmacists, and 8.01(8) specifically addresses the supervised intern pathway during Massachusetts residencies."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 8.01(8), (10), (15); 247 CMR 9.04(1)",
+    "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: PharmD graduation, passing NAPLEX and starting residency do not by themselves confer Massachusetts pharmacist authority. A licensed intern may supervise technicians only in the permitted supervised arrangement."
+  },
+  {
+    "id": "E30-077",
+    "set": 16,
+    "area": 2,
+    "kind": "multi",
+    "topic": "VAERS: mandatory adverse-event reports versus encouraged vaccination-error reporting",
+    "topicKey": "immunization",
+    "stem": "A Massachusetts retail pharmacy administers routinely recommended, FDA-licensed, NON-COVID, NON-MPOX adult vaccines under appropriate standing orders. Later, the pharmacy learns of four separate events: (1) an event identified in the manufacturer's labeling as a contraindication to later doses; (2) an event in the VAERS Table of Reportable Events Following Vaccination occurring within the specified interval for the vaccine; (3) transient injection-site soreness that is neither in the table nor a labeled contraindication; and (4) a vaccine-administration error with no adverse event. Consider the general federal National Childhood Vaccine Injury Act (NCVIA)/VAERS rules, with no additional vaccine-program reporting condition. Which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The event the manufacturer lists as a contraindication to subsequent doses must be reported to VAERS by the healthcare provider.",
+        "why": "Correct. The NCVIA and VAERS healthcare-provider guidance require a provider to report an adverse event listed by the vaccine manufacturer as a contraindication to further doses. This duty is not erased merely because the clinician has not proved vaccine causation."
+      },
+      {
+        "text": "Transient injection-site soreness that is neither in the applicable reportable-events table nor a labeled contraindication must automatically be reported under the NCVIA's mandatory provider categories.",
+        "why": "Incorrect. Ordinary mild soreness that does not meet a Table of Reportable Events criterion or a manufacturer-listed contraindication is not automatically mandatory under those two federal NCVIA reporting categories. VAERS can accept voluntary reports, and clinically significant events are encouraged for reporting."
+      },
+      {
+        "text": "A VAERS-table event occurring within its specified postvaccination time interval is federally reportable even when a causal relationship has not been conclusively established.",
+        "why": "Correct. The NCVIA/VAERS provider reporting requirement uses the listed event and specified interval, not a requirement to prove causation. VAERS is a safety-monitoring system rather than a determination that a vaccine caused each event."
+      },
+      {
+        "text": "The administration error with no associated adverse event may be reported to VAERS and is encouraged, but an error alone does not automatically meet the two general NCVIA mandatory adverse-event categories under the stated assumptions.",
+        "why": "Correct. VAERS explicitly accepts vaccination-error reports and encourages reporting errors. For the ordinary licensed vaccines and facts stated, the two general NCVIA mandatory categories concern specified adverse events and labeled contraindications, not every error by itself; particular programs or emergency authorizations may impose additional duties."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "42 U.S.C. §300aa-25(b); VAERS Healthcare Provider Guidance and FAQs; Massachusetts DPH Vaccine Administration and Clinical Guidance (reporting recommendations)",
+    "url": "https://vaers.hhs.gov/resources/infoproviders.html",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: distinguish REQUIRED VAERS reports (specified table events or label contraindications) from ENCOURAGED reports of other significant events and vaccination errors. Special vaccines and programs can impose additional reporting requirements."
+  },
+  {
+    "id": "E30-078",
+    "set": 16,
+    "area": 2,
+    "kind": "single",
+    "topic": "42 CFR Part 2: limited disclosure in a bona fide medical emergency and immediate documentation",
+    "topicKey": "privacy-part2",
+    "stem": "An unconscious patient arrives at a Massachusetts emergency department following a suspected overdose. The treating emergency physician contacts a federally assisted substance-use-disorder (SUD) treatment program subject to 42 CFR Part 2 to learn the patient's most recent medication dose before providing emergency treatment. No patient consent is on file, and prior written consent cannot be obtained while the patient is unconscious. The physician reasonably needs this information now to prevent a dangerous dosing error. No other disclosure authority is asserted. Which response BEST complies with 42 CFR 2.51?",
+    "choices": [
+      {
+        "text": "Withhold all identifying SUD treatment information until the patient can sign a consent, because Part 2 has no exception for medical emergencies.",
+        "why": "Incorrect. Section 2.51(a)(1) permits disclosure to medical personnel to the extent necessary for a bona fide medical emergency when prior written consent cannot be obtained. It does not categorically require waiting for the patient to regain consciousness."
+      },
+      {
+        "text": "Provide the patient's entire SUD treatment file to the emergency department's administrative and billing staff because HIPAA treatment/payment/operations permissions automatically override Part 2.",
+        "why": "Incorrect. The specific 42 CFR 2.51 emergency exception permits necessary disclosure to medical personnel. It does not authorize release of an entire record to administrative staff merely because the emergency department may otherwise be a HIPAA-covered entity."
+      },
+      {
+        "text": "Provide the necessary dosing details to the treating physician, but document only that an emergency occurred when the program next performs its routine quarterly privacy audit.",
+        "why": "Incorrect. Although limited disclosure to treating medical personnel can be permissible, 42 CFR 2.51(c) requires WRITTEN documentation immediately following disclosure, including recipient and facility affiliation, person disclosing, date/time, and nature of the emergency. A delayed generic audit entry is insufficient."
+      },
+      {
+        "text": "Disclose only the medication information necessary to the treating emergency physician now, then immediately document the recipient and affiliation, person making disclosure, date/time, and nature of the emergency in the patient's record.",
+        "why": "Correct. A bona fide emergency where prior written consent cannot be obtained meets 42 CFR 2.51(a)(1). The information may be disclosed only to medical personnel and only to the necessary extent. Section 2.51(c) requires specified written documentation in the patient's record immediately after disclosure."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "42 CFR 2.51(a)(1), (c) (medical emergency disclosures and immediate documentation; 2024 rule text, confirmed applicable in November 2026)",
+    "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title42-vol1/pdf/CFR-2024-title42-vol1-sec2-51.pdf",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: Part 2 does allow limited disclosure in a bona fide medical emergency without prior written consent when that consent cannot be obtained. The written documentation must follow immediately—not at the next audit."
+  },
+  {
+    "id": "E30-079",
+    "set": 16,
+    "area": 3,
+    "kind": "single",
+    "topic": "Schedule V: Massachusetts six-month expiration and five-refill maximum",
+    "topicKey": "refills-transfers",
+    "stem": "On November 16, 2026, a Massachusetts community pharmacist reviews FOUR independent prescriptions for substances correctly classified as Schedule V in Massachusetts. Each prescription was otherwise properly issued by an authorized practitioner, has a legitimate medical purpose, has appropriately recorded prior dispensings, and satisfies all other dispensing and identification requirements. No new authorization or exception is available. Under 247 CMR 9.04(13), which request MAY be dispensed under the ORIGINAL prescription?",
+    "choices": [
+      {
+        "text": "A prescription issued May 20, 2026, first dispensed May 21, with FOUR subsequent refills already dispensed and FIVE refills originally authorized; the patient requests the FIFTH refill today.",
+        "why": "Correct. November 16 is within six months of the May 20 issuance date, and the requested dispensing is refill number five (following the original fill and four earlier refills). 247 CMR 9.04(13) permits up to five Schedule V refills within the six-month validity period, assuming all other requirements are met."
+      },
+      {
+        "text": "A prescription issued June 20, 2026, initially dispensed June 21, with FIVE refills already dispensed; the prescriber wrote '7 refills' and the patient requests a SIXTH refill today.",
+        "why": "Incorrect. Even though the date is within six months, 247 CMR 9.04(13) expressly prohibits refilling a Schedule V prescription more than five times. An original prescription authorizing additional refills cannot override the Massachusetts limit."
+      },
+      {
+        "text": "A prescription issued May 1, 2026, initially dispensed May 3, with only TWO refills used; the patient requests the THIRD refill today.",
+        "why": "Incorrect. The November 16 request is more than six months after the May 1 issuance date. Under 247 CMR 9.04(13), unused authorized refills do not extend the Schedule V prescription's six-month expiration window."
+      },
+      {
+        "text": "A prescription issued May 1, 2026, which has NEVER been filled and still has all its authorized refills available; the patient asks for the INITIAL fill today.",
+        "why": "Incorrect. Section 9.04(13) prohibits BOTH an initial fill and a refill more than six months after Schedule V prescription issuance. Having zero earlier fills does not rescue an expired original."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.04(10), (13) (Schedule V fill/refill expiry and limit); comparison: federal 21 CFR 1306.22–1306.23",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: Massachusetts applies its explicit six-month/five-refill rule to Schedule V, not only Schedules III and IV. Count from issuance, not the first dispensing date; initial fills also expire."
+  },
+  {
+    "id": "E30-080",
+    "set": 16,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Massachusetts Schedule II perpetual inventory: ten-day reconciliation, personnel and expired stock",
+    "topicKey": "controlled-inventory",
+    "stem": "A Massachusetts resident retail pharmacy maintains electronic Schedule II perpetual inventory records. Some expired Schedule II tablets remain physically secured on the pharmacy premises pending lawful reverse distribution. Its most recent physical reconciliation was TEN DAYS ago. Today the Manager of Record (MOR) is temporarily absent, a designated licensed pharmacist is present, and a licensed certified pharmacy technician and an unlicensed cashier are available. The pharmacy already performs the federal biennial inventory separately. Under 247 CMR 9.21(8) and (10), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Because the pharmacy completes a federal biennial inventory, electronic Schedule II perpetual records need no separate physical reconciliation until the next federal biennial inventory.",
+        "why": "Incorrect. Federal biennial inventories do not displace Massachusetts' separate 247 CMR 9.21(8)(c) rule requiring a physical reconciliation of EACH Schedule II perpetual inventory at least once every ten days."
+      },
+      {
+        "text": "The pharmacy must perform an accurate physical count and reconcile each Schedule II perpetual record at least every ten days, including Schedule II stock that is expired, quarantined or awaiting reverse distribution.",
+        "why": "Correct. Section 9.21(8)(c) requires reconciliation at least once every ten days using a physical count. Section 9.21(10) explicitly extends the security and inventory provisions to expired, quarantined and pending-reverse-distribution controlled stock; it is not excluded merely because it is unsaleable."
+      },
+      {
+        "text": "The certified technician may make routine entries in the Schedule II perpetual ledger, but a discrepancy adjustment is reserved for the MOR or, during the MOR's absence, a pharmacist designee who reports the adjustment to the MOR.",
+        "why": "Correct. 247 CMR 9.21(8)(f) allows a certified technician to make ledger entries, while (8)(d) restricts discrepancy-based inventory adjustments to the MOR or a pharmacist designee when the MOR is absent, with reporting to the MOR. Ordinary data entry is not the same as discrepancy adjustment."
+      },
+      {
+        "text": "The unlicensed cashier may not enter data into or adjust the Schedule II perpetual inventory, even if a licensed pharmacist intends to review the entry afterward.",
+        "why": "Correct. 247 CMR 9.21(8)(e) expressly prohibits an unlicensed individual from making ANY entry into, or adjustment of, the Schedule II perpetual inventory. A future pharmacist review does not create an exception."
+      }
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D"
+    ],
+    "citation": "247 CMR 9.21(8)(a)–(f), 9.21(10); 21 CFR 1304.11(c) (separate federal biennial inventory)",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "MPJE trap: do not confuse the federal biennial inventory with Massachusetts' every-ten-day Schedule II perpetual reconciliation. Certified technician data entry is allowed, but unlicensed entry and unauthorized discrepancy adjustments are not."
   }
 ];
