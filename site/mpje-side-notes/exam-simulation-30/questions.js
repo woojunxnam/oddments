@@ -4250,5 +4250,521 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-16",
     "note": "Category 3 CSP BUDs beyond Category 2 limits require additional compounding qualifications, controls, testing and stability support; a facility may instead give an individual CSP a shorter Category 2 BUD."
+  },
+  {
+    "id": "E30-126",
+    "set": 26,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "workforce-supervision",
+    "topic": "Retail Manager of Record: planned six-week absence and simultaneous management restriction",
+    "stem": "The Massachusetts pharmacist Manager of Record (MOR) of Retail Pharmacy A plans to be away for six weeks. Before leaving, the MOR proposes that Pharmacy A wait five days to name an interim manager, and that the pharmacist simultaneously become MOR of a separate Retail Pharmacy B. Both retail stores have sufficient staffing. Which approach meets 247 CMR 9.23?",
+    "choices": [
+      {
+        "text": "Appoint the interim MOR five days after departure; that deadline applies to all absences over 30 days, even those planned in advance.",
+        "why": "Incorrect. Section 9.23(5)(a) requires appointment of an Interim Manager registered by the Board BEFORE a planned absence expected to last 30 days or longer. The five-day period in §9.23(5)(b) is for UNPLANNED absences."
+      },
+      {
+        "text": "Appoint a Board-registered interim manager before the planned absence and do not concurrently serve as MOR for the second retail pharmacy.",
+        "why": "Correct. 247 CMR 9.23(5)(a) requires the interim appointment before a planned 30-day-or-longer absence. Section 9.23(3) prohibits a retail pharmacy MOR from being MOR of more than one pharmacy at a time. A controlled-substance inventory and required signatures under §9.23(5)(c) also need appropriate handling before departure."
+      },
+      {
+        "text": "Maintain both MOR titles if the pharmacist averages 30 combined hours per week across the two locations.",
+        "why": "Incorrect. Section 9.23(3) forbids simultaneous retail MOR positions, and §9.23(4) independently requires an MOR to work an average of at least 30 hours PER WEEK at the pharmacy managed; combining hours between pharmacies cannot cure either problem."
+      },
+      {
+        "text": "No interim manager is required as long as the pharmacist intends to return and another pharmacist handles final dispensing.",
+        "why": "Incorrect. When a planned absence is expected to last at least 30 days, §9.23(5)(a) expressly requires a Board-registered Interim Manager before it begins. Staffing a working pharmacist at the counter is not automatically the designated interim appointment."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.23(3)–(5)(a),(c) (effective Dec. 6, 2024); compare 247 CMR 9.23(5)(b),(d) for unplanned absences and 100-day changes",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "For an expected 30-day-or-longer planned MOR absence, name a Board-registered Interim Manager beforehand. A retail pharmacist cannot simultaneously be MOR of two pharmacies."
+  },
+  {
+    "id": "E30-127",
+    "set": 26,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "quality-safety",
+    "topic": "Previously dispensed medication: mandatory acceptance of defective/error returns versus restocking",
+    "stem": "Three people contact the SAME Massachusetts pharmacy about medications it previously dispensed. Patient X received the wrong drug. Patient Y's product is suspected to be contaminated. Patient Z received the correct, nondefective drug but no longer wants it. Assume no other specific legal return exception. Which practices follow 247 CMR 9.01? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Accept X's wrongly dispensed medication and Y's suspected defective or contaminated medication, then quarantine and properly dispose of the returned items.",
+        "why": "Correct. Under 247 CMR 9.01(7)(a)–(b), a pharmacy SHALL accept its previously dispensed drug if it was dispensed in error or is suspected to be defective/contaminated. The accepted item cannot go back to inventory and must be quarantined and properly disposed of."
+      },
+      {
+        "text": "Put Y's returned medication back on the shelf if its bottle is unopened and a pharmacist sees no visible damage.",
+        "why": "Incorrect. Section 9.01(7) specifically prohibits putting medications accepted under its error/defect provision back into inventory, regardless of whether a retail seal appears intact. Visual appearance does not eliminate a possible contamination defect."
+      },
+      {
+        "text": "Accept Z's properly dispensed, nondefective medication as a mandatory return and routinely redispense it to another patient after cleaning the label.",
+        "why": "Incorrect. Section 9.01(7) says a pharmacy is not required to accept a medication that was properly dispensed and not defective, and §9.01(5) generally bars redispensing a previously dispensed medication absent a specific exception."
+      },
+      {
+        "text": "The pharmacy is not required by this regulation to take back Z's properly dispensed, nondefective medication, while X's and Y's returns cannot be restocked.",
+        "why": "Correct. The last sentence of §9.01(7) excludes mandatory acceptance of a properly dispensed nondefective medicine. It mandates quarantine/disposal rather than restoration of returned error/defect stock."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.01(5),(7)(a)–(b) (effective Dec. 6, 2024); distinct from 247 CMR 9.13 undelivered return-to-stock",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A dispensed-in-error or suspected defective product must be accepted back and quarantined/disposed; an otherwise correct, nondefective patient return is not mandatory and is not freely reusable."
+  },
+  {
+    "id": "E30-128",
+    "set": 26,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "controlled-prescriptions",
+    "topic": "Corresponding pharmacist responsibility: authentic controlled Rx without valid patient-practitioner relationship",
+    "stem": "A Massachusetts community pharmacist receives an authentic Schedule IV prescription from a registered, ordinarily authorized physician. The prescriber confirms that the intended patient has never been examined, contacted, or otherwise assessed by the physician or any collaborating practitioner and that no patient–practitioner relationship was established. No standing-order, emergency, or statutory exception applies. Which response follows Massachusetts pharmacy law?",
+    "choices": [
+      {
+        "text": "Dispense after confirming the physician's DEA number because registration and signature establish all required conditions.",
+        "why": "Incorrect. 247 CMR 9.15(2)(a)–(c) requires the pharmacist to determine legitimacy, a VALID patient–practitioner relationship, and authenticity. A valid registration and authentic signature alone do not resolve the missing relationship."
+      },
+      {
+        "text": "Dispense if the patient pays cash because payer type is not relevant to the Board's validation criteria.",
+        "why": "Incorrect. Whether payment is cash or insured does not waive 247 CMR 9.15(2)(b). The issue is the absence of a valid patient–practitioner relationship, not financial coverage."
+      },
+      {
+        "text": "Do not dispense this prescription as described; clarify or obtain appropriate lawful prescribing care rather than rely solely on registration and authentication.",
+        "why": "Correct. Section 9.15(2) prohibits filling unless the pharmacist's professional judgment establishes legitimate purpose, valid patient–practitioner relationship, authenticity and legal compliance. Federal 21 CFR 1306.04(a) also imposes a corresponding dispensing responsibility for legitimate controlled prescriptions."
+      },
+      {
+        "text": "Treat the prescriber confirmation as permission to create a new relationship retroactively in the pharmacy computer and proceed.",
+        "why": "Incorrect. A pharmacist cannot manufacture a clinical relationship from identity verification or a documentation shortcut. The relationship must be real and legally adequate; this case expressly excludes exceptions and any clinician-patient interaction."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.15(2)(a)–(d); 21 CFR 1306.04(a) (legitimate medical purpose and corresponding responsibility)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "An authentic, registered prescriber's controlled prescription still cannot be filled where a valid patient–practitioner relationship and other 247 CMR 9.15(2) criteria are absent."
+  },
+  {
+    "id": "E30-129",
+    "set": 26,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Hydrocodone/acetaminophen rescheduling versus buprenorphine/naloxone and tramadol",
+    "stem": "A Massachusetts pharmacist verifies three separately issued, legitimate prescriptions: hydrocodone/acetaminophen (Vicodin), buprenorphine/naloxone (Suboxone), and tramadol (Ultram). Which federal and corresponding Massachusetts schedule assignments are correct in November 2026?",
+    "choices": [
+      {
+        "text": "Vicodin III, Suboxone III, and tramadol IV; hydrocodone combinations remained Schedule III after 2014.",
+        "why": "Incorrect. DEA moved ALL hydrocodone combination products to Schedule II effective October 6, 2014. Codeine combination exceptions do not apply to hydrocodone/acetaminophen."
+      },
+      {
+        "text": "Vicodin II, Suboxone II, and tramadol IV; all opioid agonists are Schedule II if prescribed for human pain or OUD.",
+        "why": "Incorrect. Buprenorphine, including the named buprenorphine/naloxone combination, is listed in Schedule III under 21 CFR 1308.13(e)(2), regardless of the therapeutic indication. Hydrocodone combinations are Schedule II."
+      },
+      {
+        "text": "Vicodin II, Suboxone III, and tramadol V; the weaker opioid's lower potency makes tramadol Schedule V.",
+        "why": "Incorrect. Tramadol is specifically listed in Schedule IV under 21 CFR 1308.14(b)(3). Subjective opioid potency does not determine a drug's legal schedule."
+      },
+      {
+        "text": "Vicodin II, Suboxone III, and tramadol IV; Massachusetts uses the same II–IV classifications through 105 CMR 700.002.",
+        "why": "Correct. Hydrocodone combination products are Schedule II, buprenorphine is Schedule III and tramadol is Schedule IV. 105 CMR 700.002(B)–(D) adopts the federal corresponding controlled schedules. The pharmacist must use those product-specific categories when applying refills and dispensing limits."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1308.12(c) hydrocodone; 21 CFR 1308.13(e)(2) buprenorphine; 21 CFR 1308.14(b)(3) tramadol; 105 CMR 700.002(B)–(D); DEA 2014 hydrocodone combination rescheduling",
+    "url": "https://www.deadiversion.usdoj.gov/schedules/schedules.html",
+    "verified": "2026-11-16",
+    "note": "Hydrocodone combinations (Vicodin) are Schedule II, buprenorphine/naloxone (Suboxone) III, and tramadol (Ultram) IV federally and in Massachusetts."
+  },
+  {
+    "id": "E30-130",
+    "set": 26,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "nonsterile-compounding",
+    "topic": "USP <795> default BUD distinction: preserved versus nonpreserved aqueous and nonaqueous oral liquids",
+    "stem": "A Massachusetts pharmacy compounds four different NONHAZARDOUS nonsterile preparations. There is no USP–NF compounded preparation monograph, formulation-specific stability study, or shorter component limitation, and all have otherwise compliant packaging. Under currently official USP <795> Section 10, which default beyond-use-date (BUD) statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A nonpreserved aqueous suspension (water activity at least 0.60) generally has a maximum 14-day BUD and requires refrigerated storage.",
+        "why": "Correct. Official revised USP <795> Table 4 classifies nonpreserved aqueous CNSPs with water activity at least 0.60 as 14 days refrigerated unless shorter stability or an applicable authoritative formula imposes otherwise."
+      },
+      {
+        "text": "A preserved aqueous solution with no substantiated specific stability has a default maximum BUD of 90 days at room temperature.",
+        "why": "Incorrect. Under USP <795> Table 4, preserved aqueous CNSPs generally have a 35-day maximum BUD at controlled room temperature or refrigerated, not 90 days. Ninety days is the category for nonaqueous ORAL liquids."
+      },
+      {
+        "text": "A properly preserved aqueous CNSP generally has a 35-day maximum BUD under the stated assumptions and may be stored at controlled room temperature or refrigerated.",
+        "why": "Correct. Revised USP <795> Table 4 specifies preserved aqueous forms with water activity at least 0.60: 35 days, controlled room temperature or refrigerated. Preservative effectiveness and drug-specific stability must still be adequate."
+      },
+      {
+        "text": "A nonaqueous oral liquid can automatically use the 180-day maximum reserved for other nonaqueous preparations such as capsules.",
+        "why": "Incorrect. USP <795> distinguishes nonaqueous ORAL LIQUIDS (90 days) from OTHER nonaqueous preparations (180 days). Category selection depends on dosage form and water activity, not merely the absence of free water."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Current USP <795> Section 10.3/Table 4 (official Nov. 1, 2023); USP General Chapter <795> 2022 Open Forum BUD slide; 247 CMR 9.01(3)",
+    "url": "https://www.usp.org/sites/default/files/usp/document/events-and-training/2022-11-08-gc-795-open-forum-website-posting.pdf",
+    "verified": "2026-11-16",
+    "note": "Under revised USP <795>, nonpreserved aqueous = 14 days refrigerated; preserved aqueous = 35 days at controlled room temp or refrigerated; nonaqueous oral liquid = 90 days, other nonaqueous = 180."
+  },
+  {
+    "id": "E30-131",
+    "set": 27,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "board-reporting",
+    "topic": "Board personal-licensee profile update and changed legal name: separate 14-day compliance",
+    "stem": "A Massachusetts pharmacist updates a personal mailing address and telephone number, and legally changes their surname following a court order. The pharmacist's professional license is otherwise in good standing. Under 247 CMR 20.03(1)–(2), which action is required?",
+    "choices": [
+      {
+        "text": "Notify the Board only at the next biennial renewal; neither a contact change nor name change is reportable earlier.",
+        "why": "Incorrect. Section 20.03(1) requires the online licensing profile to be updated within 14 calendar days of mailing-address, telephone or email changes; subsection (2) independently addresses changes of name within the same 14-day period."
+      },
+      {
+        "text": "Update personal contact information within 30 business days; a name change requires no evidence as long as the online profile was edited.",
+        "why": "Incorrect. Massachusetts uses 14 CALENDAR days rather than 30 business days, and §20.03(2) requires a sworn name-change statement plus a copy of valid picture identification and any other Board-required records."
+      },
+      {
+        "text": "Update the contact details in the DPH online licensing profile within 14 calendar days and submit the required sworn name-change statement and identification within 14 calendar days.",
+        "why": "Correct. These are separate duties imposed by §20.03(1)–(2). Editing the profile addresses changes to mailing address, telephone and email; a legal name change additionally requires the sworn statement, ID and any Board-requested supporting documentation."
+      },
+      {
+        "text": "Submit a sworn statement only for the telephone number, and treat the legal surname change as automatically transferred from court records.",
+        "why": "Incorrect. The sworn-statement procedure attaches to the NAME change under §20.03(2), not merely the phone number. A court order does not by itself update a pharmacist's DPH license profile."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 20.03(1)–(2) (effective Dec. 6, 2024); Massachusetts Board Reporting Requirements Overview",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "verified": "2026-11-16",
+    "note": "Pharmacist mailing/phone/email updates are due within 14 CALENDAR days in the DPH portal; legal name changes have a separate sworn-statement plus photo-ID requirement, also within 14 calendar days."
+  },
+  {
+    "id": "E30-132",
+    "set": 27,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "drug-integrity",
+    "topic": "PDMA-marked drug samples offered to a pharmacy for repackaging and resale",
+    "stem": "A community pharmacy is offered manufacturer-labeled prescription samples bearing 'drug sample—not for resale.' The pharmacist proposes to use the samples to make compounded prescriptions, relabel part of the stock into ordinary pharmacy vials, and bill patients for the resulting medications. No specific exception applies. What does Massachusetts pharmacy law require?",
+    "choices": [
+      {
+        "text": "Allow repackaging but not compounding, because the package label bans sale only in the original sample container.",
+        "why": "Incorrect. 247 CMR 9.01(6) expressly prohibits accepting or purchasing medications designated 'drug samples not for resale' for purposes of compounding, REPACKING or any kind of resale. Removing the sample label does not erase the restriction."
+      },
+      {
+        "text": "Decline the proposal: a pharmacy may not accept or buy these samples for compounding, repacking, or resale, regardless of whether it could charge only for labor.",
+        "why": "Correct. The exact §9.01(6) prohibition attaches to accepting/purchasing samples for compounding, repacking or reselling. The federal PDMA framework in the FD&C Act also restricts drug-sample distribution and sale; a payment characterization does not convert sample stock into saleable prescription inventory."
+      },
+      {
+        "text": "Use the samples as ingredients if the FDA-approved commercial medicine is not being chemically changed.",
+        "why": "Incorrect. The specific ban in §9.01(6) is activity- and product-marking-based; it does not depend on whether the active substance is chemically altered. Samples cannot be accepted for compounding under the proposed activity."
+      },
+      {
+        "text": "Release the sample stock to patients as ordinary saleable prescriptions if the pharmacy adds a manufacturer lot number and expiration date.",
+        "why": "Incorrect. Ordinary stock-labeling completeness does not lift the sample-resale restriction. This differs from a valid commercial product or an uncollected prescription eligible for return to stock under an entirely different rule."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.01(6) (effective Dec. 6, 2024); Federal Food, Drug, and Cosmetic Act §503(c)–(d), 21 U.S.C. §353(c)–(d) (PDMA sample distribution and sale)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A pharmacy must not accept or purchase medicines marked 'drug samples not for resale' for compounding, repacking or resale; relabeling and charging only a service fee do not cure the prohibition."
+  },
+  {
+    "id": "E30-133",
+    "set": 27,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "controlled-prescriptions",
+    "topic": "Prescription format: patient address, veterinary exemption and practitioner registration across schedules",
+    "stem": "A Massachusetts pharmacist reviews otherwise authentic outpatient prescriptions issued by authorized practitioners. None is a standing order, expedited partner therapy, or another special exception except the one expressly identified. Which statements about the required prescription contents under 105 CMR 721.020 are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "For an ordinary Schedule VI human prescription, the issuance date, practitioner registration number, drug identification/strength/quantity, directions, and authorized refill information remain required.",
+        "why": "Correct. Section 721.020(C)–(D)(1)–(6) specifies the prescriber identification, issuance date, drug details, patient information, directions, and refill statement across Massachusetts prescription drugs, including Schedule VI. Schedule VI is not generally exempt from these basic elements."
+      },
+      {
+        "text": "A community prescription for an ordinary adult human patient may omit the patient's address whenever the pharmacist can verify the patient's phone number.",
+        "why": "Incorrect. Section 721.020(D)(4) generally requires patient NAME and ADDRESS. The rule lists limited exemptions such as veterinary orders, specified naloxone/opioid-antagonist prescriptions, and certain specified 721.070 exceptions; a verified phone number alone is not one."
+      },
+      {
+        "text": "A veterinary prescription may omit the patient's name and address under the expressly listed 721.020(D)(4) exception; the other applicable veterinary and controlled-prescription requirements still apply.",
+        "why": "Correct. 105 CMR 721.020(D)(4) expressly lists veterinary prescriptions as an exception to the patient name/address field, without exempting the practitioner, medication, directions, or other requirements. The pharmacist still needs an authentic, lawful veterinary order."
+      },
+      {
+        "text": "The practitioner registration number is a required field only for federal Schedule II products; Schedule III–VI prescriptions have no registration-number requirement.",
+        "why": "Incorrect. Section 721.020(D)(1) requires a practitioner registration number without limiting the field to Schedule II. For Massachusetts Schedule VI the MCSR may satisfy the state identification requirement, while federal Schedules II–V have applicable DEA registration requirements."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "105 CMR 721.020(C),(D)(1)–(6) (effective Sept. 27, 2024); DPH Elements of a Written Prescription; M.G.L. c.94C §22(a)",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts prescriptions generally need prescriber registration, issuance date, drug/strength/quantity, patient address, directions and refill statement. Veterinary prescriptions receive a specific patient name/address exception."
+  },
+  {
+    "id": "E30-134",
+    "set": 27,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "FDA-approved Xyrem (sodium oxybate) versus unapproved gamma-hydroxybutyrate scheduling",
+    "stem": "A Massachusetts pharmacist compares (X) FDA-approved Xyrem (sodium oxybate), issued under all otherwise required special dispensing restrictions, with (Y) a separate unapproved gamma-hydroxybutyric acid (GHB) preparation. Which federal AND Massachusetts controlled schedules apply to these two distinct products?",
+    "choices": [
+      {
+        "text": "Both are Schedule I because they contain chemically related gamma-hydroxybutyric acid.",
+        "why": "Incorrect. Federal 21 CFR 1308.13(c)(6) specifically places FDA-approved drug products containing GHB or its salts in Schedule III; unapproved GHB is separately controlled in Schedule I under 1308.11(e)(1). Massachusetts follows the corresponding federal categories."
+      },
+      {
+        "text": "Xyrem is Schedule III while unapproved GHB is Schedule I; the FDA-approved-drug-product exception does not extend to illicit or unapproved preparations.",
+        "why": "Correct. 21 CFR 1308.13(c)(6) specifically covers FDA-approved products containing gamma-hydroxybutyric acid/sodium oxybate, while §1308.11(e)(1) covers ordinary GHB as Schedule I. Massachusetts 105 CMR 700.002(A),(C) incorporates those respective federal classifications. Applicable REMS and product restrictions also still apply to Xyrem."
+      },
+      {
+        "text": "Xyrem is Schedule IV and unapproved GHB is Schedule II because a medically indicated dose reduces both by one controlled schedule.",
+        "why": "Incorrect. Controlled-substance schedules are set by federal law, not by a pharmacist's dose-dependent inference. The listed categories are Schedule III for approved GHB-containing drug products and Schedule I for unapproved GHB."
+      },
+      {
+        "text": "Xyrem is Massachusetts Schedule VI because it is FDA approved, whereas unapproved GHB is Massachusetts Schedule III.",
+        "why": "Incorrect. Massachusetts Schedule VI does not capture drugs already in federally incorporated Schedules I–V. FDA approval alone does not make a controlled drug Schedule VI; the special §1308.13(c)(6) listing makes the approved product Schedule III."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1308.11(e)(1) (GHB); 21 CFR 1308.13(c)(6) (FDA-approved GHB-containing drug products); 105 CMR 700.002(A),(C); DEA Nov. 2026 GHB fact sheet",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.13",
+    "verified": "2026-11-16",
+    "note": "FDA-approved sodium oxybate products such as Xyrem are federally and Massachusetts Schedule III, but unapproved GHB is Schedule I; the product's FDA-approved status is decisive."
+  },
+  {
+    "id": "E30-135",
+    "set": 27,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "pharmacy-operations",
+    "topic": "Unannounced Board inspection and plan-of-correction deadlines after deficiencies",
+    "stem": "Massachusetts Board pharmacy inspectors visit a licensed community pharmacy without notice and cite deficiencies. The Board's written notice does not specify a shorter or longer plan-of-correction deadline. The first submitted plan is later returned as unacceptable. Under 247 CMR 9.24–9.25, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Board inspectors may make an unannounced visit and inspect staff, activities and relevant pharmacy records; the pharmacy must supply requested inspection documents.",
+        "why": "Correct. 247 CMR 9.24(1),(3) gives the Board or its designees authority to inspect licensed pharmacies at any time without notice and requires provision of requested documents during an inspection or investigation."
+      },
+      {
+        "text": "Inspectors must provide 72 hours' notice unless they first obtain a court order, because prescription records are categorically exempt from Board inspection.",
+        "why": "Incorrect. Section 9.24(1) permits unannounced regulatory inspections, and §9.24(3) requires requested documents; pharmacy confidentiality obligations do not establish the proposed universal advance-notice rule."
+      },
+      {
+        "text": "The pharmacy need submit only one general corrective promise without dates, responsible persons, or MOR signature.",
+        "why": "Incorrect. Section 9.25(2) requires corrective steps for EACH cited violation, projected completion/implementation dates and responsible individuals; §9.25(3) requires the MOR and, where applicable, supervising licensee signatures."
+      },
+      {
+        "text": "The first written plan is due within 21 days unless the Board directs a different period, and an unacceptable plan must be revised within seven days.",
+        "why": "Correct. Section 9.25(1) sets 21 days OR the timeframe directed by the Board; §9.25(5) requires resubmission of a corrected plan within seven days after the Board returns the prior plan as unacceptable."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "247 CMR 9.24(1)–(3) and 9.25(1)–(5) (effective Dec. 6, 2024)",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A Board pharmacy inspection can be unannounced; requested records must be provided. A detailed signed plan of correction is due in 21 days unless otherwise directed, with seven days to revise an unacceptable plan."
+  },
+  {
+    "id": "E30-136",
+    "set": 28,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "workforce-supervision",
+    "topic": "Pharmacy workforce: more than 12 working hours and the eight-hour consecutive rest exception",
+    "stem": "A Massachusetts pharmacy technician has already practiced in a retail pharmacy for 12 hours in the preceding 24-hour period. A last-minute staffing emergency threatens access to urgent patient prescriptions. The technician can work only 45 more minutes, and management is able to document the extenuating circumstances and minimize the extra work. Which statement most accurately applies 247 CMR 9.01(17)?",
+    "choices": [
+      {
+        "text": "An extenuating circumstance may permit the additional minimized, documented work in the patient's best interest; ordinarily eight consecutive hours of rest are required before resuming practice.",
+        "why": "Correct. Section 9.01(17) limits pharmacist, intern and technician practice to 12 hours in a 24-hour period without completing eight consecutive hours' rest prior to resumption. An extenuating circumstance permits extra time to serve a patient's best interests only when minimized and documented. The exception is not routine scheduling permission."
+      },
+      {
+        "text": "The exception is available to licensed pharmacists only; technicians can never work beyond 12 hours, regardless of a documented patient need.",
+        "why": "Incorrect. Section 9.01(17) expressly includes pharmacy technicians as well as pharmacists and interns in both the work/rest provision and the extenuating-circumstance clause."
+      },
+      {
+        "text": "The pharmacy can routinely schedule a 15-hour shift whenever the technician agrees, because a signed employee consent substitutes for a rest period.",
+        "why": "Incorrect. Employee agreement alone is not an enumerated exception. The regulation requires a genuine extenuating circumstance serving patient interests, minimal extra time and documentation."
+      },
+      {
+        "text": "A 30-minute meal break automatically resets the 12-hour limit, so neither a consecutive eight-hour rest period nor any written explanation is needed.",
+        "why": "Incorrect. Section 9.01(17) specifies EIGHT CONSECUTIVE HOURS of rest, not a meal break, before resuming ordinary practice following the limit. A separate meal-break rule does not replace this requirement."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 9.01(17) (effective Dec. 6, 2024); distinguish pharmacy meal-break arrangements from consecutive rest",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "Pharmacists, pharmacy interns and technicians ordinarily need eight consecutive hours' rest after 12 hours of pharmacy practice in a 24-hour period; documented, minimized patient-interest exceptions are narrow."
+  },
+  {
+    "id": "E30-137",
+    "set": 28,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "counseling-dur",
+    "topic": "Offer to counsel versus actual counseling: trained technician and pharmacy intern",
+    "stem": "A Massachusetts retail pharmacy has a trained technician, a pharmacy intern and an on-duty pharmacist. The technician offers counseling to a patient with a newly prescribed drug. The patient accepts and asks how to take the drug with food and what to do after a missed dose. Under 247 CMR 9.18, who may fulfill the requested counseling?",
+    "choices": [
+      {
+        "text": "The trained technician alone may answer the clinical counseling questions because the technician appropriately offered counseling.",
+        "why": "Incorrect. Section 9.18(2) allows a properly trained designee to make the OFFER, but §9.18(3) expressly limits the actual counseling to a pharmacist or pharmacy intern. Asking about food interactions and missed doses requires counseling, not mere administrative intake."
+      },
+      {
+        "text": "Only the pharmacist may counsel, because Massachusetts prohibits even a properly supervised pharmacy intern from advising patients.",
+        "why": "Incorrect. Section 9.18(3) explicitly authorizes counseling by a pharmacist OR pharmacy intern; supervised intern counseling is not categorically forbidden."
+      },
+      {
+        "text": "The pharmacist or the pharmacy intern may provide the counseling; the trained technician's role may be to offer it, but not to provide clinical counseling.",
+        "why": "Correct. Under §9.18(1)–(4), an appropriately trained designee can make the offer, but only a pharmacist or pharmacy intern counsels each new drug therapy. Relevant content in §9.18(5) includes food interactions and missed-dose instructions."
+      },
+      {
+        "text": "No counseling is required once the patient receives a printed drug-information leaflet; the technician may simply mark the offer completed.",
+        "why": "Incorrect. A leaflet does not erase the pharmacist/intern counseling duty for a new drug therapy when counseling is sought. Sections 9.18(3)–(5) require qualified counseling on information needed for safe use."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.18(1)–(5) (effective Dec. 6, 2024); compare 9.18(10) for inpatient practice exclusion",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "A trained technician may OFFER counseling, but only the pharmacist or pharmacy intern may actually counsel the outpatient, including on food interactions and missed doses."
+  },
+  {
+    "id": "E30-138",
+    "set": 28,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "patient-choice-dispensing",
+    "topic": "Bedside discharge prescription delivery: patient consent, pharmacy choice and direct delivery",
+    "stem": "A community pharmacy offers a bedside delivery service at a Massachusetts inpatient healthcare facility for patients being discharged. A hospital discharge planner wants all patients automatically enrolled in the hospital's preferred community pharmacy, with medications dropped at the nurses' station whether or not the patient agrees. Under 247 CMR 9.04(4), which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy may waive individual patient consent because the patient is already hospitalized and an authorized discharge planner selected the pharmacy.",
+        "why": "Incorrect. Section 9.04(4) expressly requires consent from the patient to provide bedside discharge prescription delivery. A hospital's preferred-pharmacy workflow does not create an automatic exemption."
+      },
+      {
+        "text": "The bedside-delivery pharmacy must obtain patient consent to use the service and cannot restrict the patient's freedom to choose a pharmacy.",
+        "why": "Correct. Both duties are expressly stated in 247 CMR 9.04(4). A bedside-delivery program should be opt-in and protect patient choice, not function as an exclusive mandatory hospital arrangement."
+      },
+      {
+        "text": "The pharmacy may leave a patient's discharge medication at the nurses' station for later pickup by anyone available because it has fulfilled the delivery requirement by reaching the building.",
+        "why": "Incorrect. Section 9.04(4) requires bedside-service prescriptions to be delivered DIRECTLY to the patient or patient's agent. Unattended placement at a station is not the prescribed delivery to the intended recipient."
+      },
+      {
+        "text": "For a consenting patient who selects the pharmacy, the bedside service must deliver medications directly to that patient or the patient's authorized agent.",
+        "why": "Correct. Section 9.04(4) couples the consent and freedom-of-choice conditions with direct handoff to the patient or patient's agent. All other controlled, labeling, and counseling rules still apply."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 9.04(4) (bed-side discharge prescription delivery, effective Dec. 6, 2024); 247 CMR 9.02 not a substitute for bedside-delivery consent",
+    "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
+    "verified": "2026-11-16",
+    "note": "For bedside discharge prescription service, obtain the patient's consent, respect the patient's choice of pharmacy, and deliver medication directly to the patient or agent."
+  },
+  {
+    "id": "E30-139",
+    "set": 28,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Vimpat lacosamide, Ketalar ketamine, and Ambien zolpidem: three distinct schedules",
+    "stem": "A Massachusetts community pharmacist reviews otherwise lawful prescriptions for oral lacosamide (Vimpat), ketamine (Ketalar), and zolpidem (Ambien). All products are conventional, non-exempt FDA-approved medicines. Which classification accurately states their federal and Massachusetts controlled schedules?",
+    "choices": [
+      {
+        "text": "Vimpat Schedule V, Ketalar Schedule III, Ambien Schedule IV.",
+        "why": "Correct. Lacosamide is specifically listed in 21 CFR 1308.15(e)(5), ketamine in §1308.13(c)(7), and zolpidem in §1308.14(c)(59). Massachusetts 105 CMR 700.002(C)–(E) adopts these categories. The pharmacist should apply refill and dispensing limits to each product's actual schedule."
+      },
+      {
+        "text": "Vimpat Schedule IV, Ketalar Schedule II, Ambien Schedule IV.",
+        "why": "Incorrect. Lacosamide is Schedule V, not IV, and ketamine is Schedule III, not II. Zolpidem is Schedule IV; the other two classifications make this option invalid."
+      },
+      {
+        "text": "Vimpat Schedule V, Ketalar Schedule IV, Ambien Schedule III.",
+        "why": "Incorrect. Lacosamide is V, but ketamine is III rather than IV and zolpidem is IV rather than III under the federal controlled-substance schedules."
+      },
+      {
+        "text": "All three are Schedule VI in Massachusetts because they are not conventional opioid or stimulant prescriptions.",
+        "why": "Incorrect. Massachusetts Schedule VI covers prescription drugs not in the other incorporated schedules. Lacosamide, ketamine and zolpidem are explicitly federally scheduled and therefore retain the corresponding MA Schedules V, III and IV."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "21 CFR 1308.15(e)(5) (lacosamide); 21 CFR 1308.13(c)(7) (ketamine); 21 CFR 1308.14(c)(59) (zolpidem); 105 CMR 700.002(C)–(E)",
+    "url": "https://www.deadiversion.usdoj.gov/schedules/schedules.html",
+    "verified": "2026-11-16",
+    "note": "Lacosamide/Vimpat = Schedule V, ketamine/Ketalar = Schedule III, zolpidem/Ambien = Schedule IV in federal and Massachusetts law."
+  },
+  {
+    "id": "E30-140",
+    "set": 28,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <800> risk assessments: intact final dosage form versus manipulated antineoplastic and HD API",
+    "stem": "A Massachusetts pharmacy handles NIOSH-listed hazardous drugs (HDs) and considers documented assessments of risk (AOR) to use alternative containment. It receives commercially manufactured, intact Table 1 antineoplastic tablets for counting only; it also crushes a different Table 1 antineoplastic into an oral suspension, and compounds from a hazardous API. Under USP <800> and USP's January 2026 technical FAQs, which conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A documented product- and dosage-form-specific AOR may permit alternative containment when only counting intact commercially manufactured Table 1 antineoplastic tablets, absent manufacturer instructions requiring more.",
+        "why": "Correct. USP <800> and FAQ 14 allow an AOR for final manufactured antineoplastic dosage forms not further manipulated beyond counting or repackaging, unless a manufacturer requires otherwise. The pharmacy must implement and document appropriate alternative controls and assess the individual drug and dosage form."
+      },
+      {
+        "text": "The AOR can replace all required containment when a Table 1 antineoplastic is crushed into a compounded suspension, as long as one technician wears a disposable face mask.",
+        "why": "Incorrect. Crushing Table 1 antineoplastic products is manipulation that triggers the full USP <800> containment strategies and work practices, not a general AOR exception. A face mask alone does not replace required engineering controls and PPE."
+      },
+      {
+        "text": "One single AOR covering all Table 1 products is automatically sufficient, even where dosage forms and handling activities are entirely different.",
+        "why": "Incorrect. USP FAQ 12 explicitly explains that each HD and dosage form must be identified individually in the risk assessment; tablet counting, capsule opening, and crushing involve different exposure risks. Group-wide generic assessment without the drug/dosage-form specifics is inadequate."
+      },
+      {
+        "text": "A hazardous active pharmaceutical ingredient used in compounding remains subject to full USP <800> containment requirements; a pharmacy cannot substitute a reduced-containment AOR for that API.",
+        "why": "Correct. USP <800> and USP FAQ 14, 18 require full containment for hazardous APIs and for manipulated Table 1 antineoplastics. AOR alternatives are available only to eligible dosage forms or other listed hazardous drugs as the standard specifies."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "USP <800> §§2–5 (hazardous drug list, assessment of risk and engineering controls); USP <800> FAQs updated Jan. 21, 2026, Q11–14 and Q18 (technical support, not a formal interpretation); 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "AOR may be considered for intact final HD forms without additional manipulation; crushing Table 1 antineoplastics and compounding from hazardous APIs require full USP <800> containment. Assess each drug and dosage form."
   }
 ];
