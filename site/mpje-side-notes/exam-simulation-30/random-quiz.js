@@ -1,5 +1,5 @@
 /* Chapter 30 Random 10: balanced legacy areas and individually checked answers.
-   Unanswered-first uses question-level attempts; all-mode samples uniformly. */
+   Unanswered-first uses question-level attempts; all-mode samples uniformly within each Area. */
 (() => {
   'use strict';
   const all = Array.isArray(window.MPJE_CH30_QUESTIONS) ? window.MPJE_CH30_QUESTIONS : [];
