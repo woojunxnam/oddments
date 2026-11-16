@@ -3390,5 +3390,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-16",
     "note": "Category 1 may use an ISO Class 5 PEC in a suitable unclassified SCA, but garbing stays rigorous and BUD remains ≤12 h room temperature or ≤24 h refrigerated. Manufacturer chemical stability is not permission for a longer BUD."
+  },
+  {
+    "id": "E30-101",
+    "set": 21,
+    "area": 1,
+    "kind": "single",
+    "topic": "Emergency pharmacist-license suspension: affidavit evidence and seven-day necessity hearing",
+    "topicKey": "board-discipline",
+    "stem": "The Massachusetts Board obtains sworn affidavits and dispensing records indicating that a licensed pharmacist presents an immediate or serious threat to public safety. The allegations have not yet been adjudicated at a final merits hearing. Under 247 CMR 10.07, which action is authorized?",
+    "choices": [
+      {
+        "text": "The Board may issue an advisory letter but cannot suspend the pharmacist's license until a final merits hearing or a criminal conviction.",
+        "why": "Incorrect. An advisory letter is a different, non-disciplinary response under 247 CMR 10.06(2). Section 10.07 specifically permits a prehearing suspension or refusal to renew when affidavits or other documentary evidence establish an immediate or serious public threat; a criminal conviction is not a universal prerequisite."
+      },
+      {
+        "text": "The Board may suspend or refuse to renew the license pending the final merits hearing, but must afford a hearing on the necessity of that summary action within seven days of its action.",
+        "why": "Correct. Section 10.07 allows temporary summary action based on affidavits or other documentary evidence of an immediate or serious threat to public health, safety, or welfare. A separate hearing focused on whether the summary action is needed must be afforded within seven days, even though the full merits hearing may occur later."
+      },
+      {
+        "text": "The Board may suspend the license before a merits hearing, but the pharmacist is entitled to no hearing about that suspension until the final allegations are resolved.",
+        "why": "Incorrect. Although summary action may precede a final merits adjudication, 247 CMR 10.07 expressly guarantees a prompt, limited hearing about its necessity within seven days of the Board's action. A later full hearing does not substitute for the limited summary-action hearing."
+      },
+      {
+        "text": "A Board cease-and-desist notice is the only possible immediate remedy; license suspension or refusal to renew is reserved for matters already finally adjudicated.",
+        "why": "Incorrect. Summary cease-and-desist and quarantine notices are distinct enforcement tools under 247 CMR 10.06(8)–(9), but 10.07 separately permits a license suspension or refusal to renew before the final merits hearing when the stated threat and evidence standards are met."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 10.07 (Suspension Prior to Hearing, effective Jan. 9, 2025); contrast 247 CMR 10.06(2),(8)–(9)",
+    "url": "https://www.mass.gov/doc/247-cmr-10-disciplinary-proceedings/download",
+    "verified": "2026-11-16",
+    "note": "Distinguish a prehearing summary suspension from the final merits proceeding. A limited necessity hearing is due within seven days; there is no automatic requirement to await a criminal conviction."
+  },
+  {
+    "id": "E30-102",
+    "set": 21,
+    "area": 2,
+    "kind": "single",
+    "topic": "Dentist's Schedule II–IV authority: dental purpose, personal use and nonemergency immediate-family restriction",
+    "topicKey": "prescriber-authority",
+    "stem": "A Massachusetts dentist holds a valid license, MCSR and applicable DEA registration. Assume each proposed prescription meets all other state and federal requirements, including ePrescribing and opioid limits. Which prescription is within the dentist's authority under 234 CMR 5.06?",
+    "choices": [
+      {
+        "text": "Schedule II oxycodone for the dentist's spouse after an elective dental procedure, when no emergency exists.",
+        "why": "Incorrect. Although treating genuine dental pain can be within the practice of dentistry, 234 CMR 5.06(3) separately prohibits a dentist from prescribing Schedule II substances to immediate family, including a spouse, except in an emergency. The scenario expressly states that no emergency exists."
+      },
+      {
+        "text": "Schedule IV zolpidem to an unrelated patient for chronic insomnia that has no connection to dental treatment.",
+        "why": "Incorrect. The patient is unrelated, but 234 CMR 5.06(2) limits controlled-substance prescribing by dentists to legitimate DENTAL purposes in the ordinary course of professional practice. An unrelated chronic sleep disorder does not become a dental indication simply because the prescriber has a DEA registration."
+      },
+      {
+        "text": "A properly limited Schedule II oxycodone prescription for an unrelated patient with acute postoperative pain following an extraction performed by the dentist.",
+        "why": "Correct. Under 234 CMR 5.06(1)–(2), a properly registered dentist may prescribe controlled substances for legitimate dental purposes in the usual course of practice. Appropriate acute post-extraction pain in an unrelated patient meets the scope condition on the stipulated facts, unlike self-use, a nonemergency immediate-family Schedule II prescription, or unrelated disease management."
+      },
+      {
+        "text": "Schedule III acetaminophen/codeine for the dentist's own recurring tension headaches because the dentist can independently confirm the diagnosis.",
+        "why": "Incorrect. Section 5.06(2) explicitly prohibits a dentist from prescribing Schedule II–IV controlled substances for PERSONAL use, regardless of professional expertise or a self-diagnosis. Chronic tension headaches unrelated to dental care also fall outside the stated dental-purpose limitation."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "234 CMR 5.06(1)–(3); M.G.L. c.94C §§7, 9 and 18 (otherwise valid practitioner prescribing)",
+    "url": "https://www.mass.gov/files/documents/2017/10/06/234cmr5.pdf",
+    "verified": "2026-11-16",
+    "note": "DEA registration alone does not grant unlimited prescribing scope: dentists prescribe for legitimate dental purposes, cannot prescribe Schedule II–IV for self-use, and generally cannot prescribe Schedule II to immediate family absent an emergency."
+  },
+  {
+    "id": "E30-103",
+    "set": 21,
+    "area": 2,
+    "kind": "multi",
+    "topic": "FDA Medication Guides: refill delivery, patient-agent pickup and prescriber no-guide direction",
+    "topicKey": "medication-guides",
+    "stem": "A Massachusetts community pharmacy dispenses two separate FDA-approved outpatient prescriptions for which a Medication Guide is required under 21 CFR Part 208. One is an ordinary refill collected by a patient's agent. For the other, the practitioner has directed that the Medication Guide not be provided because of significant concerns about its effect, but the patient explicitly requests the Guide at dispensing. No other FDA exemption applies. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Because the manufacturer is responsible for supplying Medication Guides to distributors, the dispensing pharmacy has no independent obligation to provide one to a patient or agent.",
+        "why": "Incorrect. Manufacturer and wholesaler supply duties under 21 CFR 208.24(b)–(c) exist alongside the DISPENSER'S separate duty under 208.24(e) to provide a Medication Guide when a covered prescription drug is dispensed to a patient or agent. Availability from the manufacturer does not remove the pharmacy's delivery obligation."
+      },
+      {
+        "text": "For the refill collected by the patient's agent, the dispenser must provide the Medication Guide directly to that agent, unless a valid exemption applies.",
+        "why": "Correct. Under 21 CFR 208.24(e), the Medication Guide is furnished when a covered product is dispensed to a patient OR the patient's agent. The rule does not provide a routine refill exception merely because an earlier supply was accompanied by a Guide; the scenario excludes other exemptions."
+      },
+      {
+        "text": "A Medication Guide furnished at the first fill automatically satisfies all later outpatient refills of the same product, so no Guide is needed at subsequent dispensings.",
+        "why": "Incorrect. Section 208.24(e) links the dispensing duty to the current dispensing event, not only to the first fill. Without a regulatory exemption or qualifying patient-specific direction, a previous handout does not eliminate the duty at the next refill."
+      },
+      {
+        "text": "Despite the practitioner's direction not to provide the Guide, the dispenser must provide it when the patient affirmatively requests the information at dispensing.",
+        "why": "Correct. Under 21 CFR 208.26(b), the prescriber may direct withholding for a particular patient when significant concerns warrant it, BUT the authorized dispenser SHALL furnish the Medication Guide to any patient who requests the information when the drug is dispensed, notwithstanding that direction."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "21 CFR 208.24(b)–(e) and 208.26(b) (FDA Medication Guide requirements in force November 2026); proposed Patient Medication Information rule not yet effective",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-208/subpart-B/section-208.24",
+    "verified": "2026-11-16",
+    "note": "Separate manufacturer supply duties from dispenser duties. A Guide is normally furnished at each applicable outpatient dispensing, including a refill or pickup by an agent; a patient's request overrides a prescriber's patient-specific no-guide direction."
+  },
+  {
+    "id": "E30-104",
+    "set": 21,
+    "area": 3,
+    "kind": "single",
+    "topic": "Dronabinol formulation-specific schedules: FDA-approved sesame-oil softgel versus oral solution",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacist receives otherwise valid prescriptions for (X) FDA-approved synthetic dronabinol in sesame oil encapsulated as a soft-gel capsule and (Y) FDA-approved dronabinol oral solution. Neither is a different cannabinoid formulation or an unapproved cannabis product. Which federal AND Massachusetts schedule classification and refill consequence is correct?",
+    "choices": [
+      {
+        "text": "X is Schedule II and cannot be refilled; Y is Schedule III and may have otherwise valid authorized refills.",
+        "why": "Incorrect. The schedules are reversed: the FDA-approved synthetic dronabinol sesame-oil soft-gel formulation is specifically in federal Schedule III under 21 CFR 1308.13(g)(1), while the FDA-approved dronabinol oral solution is federal Schedule II under 1308.12(f)(2). Massachusetts 105 CMR 700.002 incorporates those listings."
+      },
+      {
+        "text": "Both are Schedule III, because one active ingredient necessarily carries one DEA schedule across all FDA-approved formulations.",
+        "why": "Incorrect. Federal law schedules these precise FDA-approved preparations in DIFFERENT subsections. The capsules are Schedule III, but the oral solution is Schedule II. Classifying only by active ingredient and ignoring dosage form would produce an invalid dispensing/refill decision."
+      },
+      {
+        "text": "Both are Schedule II, because the active ingredient is related to tetrahydrocannabinol and no FDA-approved preparation is eligible for Schedule III.",
+        "why": "Incorrect. 21 CFR 1308.13(g)(1) explicitly names the FDA-approved synthetic dronabinol in sesame oil and a soft-gel capsule as Schedule III, even though the approved oral solution is Schedule II under 1308.12(f)(2)."
+      },
+      {
+        "text": "X is Schedule III and can have otherwise lawful authorized refills; Y is Schedule II and cannot be refilled under the original prescription.",
+        "why": "Correct. DEA regulations separately list the FDA-approved sesame-oil soft-gel capsule as Schedule III and the approved dronabinol oral solution as Schedule II. Massachusetts follows the corresponding federal Schedules II and III under 105 CMR 700.002(B)–(C). Under 21 CFR 1306.12(a), Schedule II prescriptions cannot be refilled; Schedule III may be refilled if properly authorized within applicable limits."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "21 CFR 1308.12(f)(2), 1308.13(g)(1), 1306.12(a); 105 CMR 700.002(B)–(C); DEA Controlled Substances—Alphabetical Order (updated Nov. 12, 2026)",
+    "url": "https://www.deadiversion.usdoj.gov/schedules/orangebook/c_cs_alpha.pdf",
+    "verified": "2026-11-16",
+    "note": "Two FDA-approved dosage forms of dronabinol have distinct federal and Massachusetts schedules: sesame-oil soft-gel capsule III versus oral solution II. Refills differ accordingly."
+  },
+  {
+    "id": "E30-105",
+    "set": 21,
+    "area": 4,
+    "kind": "multi",
+    "topic": "USP <800> receiving: antineoplastic HD unpacking location, chemotherapy gloves and packaging recommendations",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts institutional pharmacy receives intact external shipping cartons containing NIOSH Table 1 antineoplastic hazardous drugs. It has a designated neutral-pressure receiving zone within an existing room and a positive-pressure ISO 7 sterile compounding room. Appropriate receiving procedures and a trained staff are available. Under USP <800> receiving requirements and USP's January 2026 FAQs, which actions or conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Unpack the external shipping cartons in the designated neutral-pressure receiving zone within the existing room; a separate dedicated room is not required solely for this function.",
+        "why": "Correct. USP <800> §5.1 and the January 2026 USP FAQ #71 require unpacking NIOSH Table 1 antineoplastics in neutral/normal- or negative-pressure areas relative to surroundings. USP states that a designated area WITHIN an existing room is acceptable and a separate room is not mandatory."
+      },
+      {
+        "text": "Unpack the cartons in the positive-pressure ISO 7 sterile compounding room because the classified environment provides superior protection from external contamination.",
+        "why": "Incorrect. USP <800> §5.1 expressly prohibits unpacking antineoplastic HDs from external shipping containers in sterile compounding areas or positive-pressure areas. ISO classification and product protection do not override the occupational contamination-control requirement."
+      },
+      {
+        "text": "Personnel unpacking the Table 1 antineoplastic HD cartons must wear at least one pair of chemotherapy gloves tested to ASTM D6978.",
+        "why": "Correct. USP <800> §10 and official USP FAQ #68 require at least one pair of ASTM D6978-tested chemotherapy gloves when unpacking NIOSH Table 1 antineoplastic HDs. Additional PPE should be determined by facility policy and the risk associated with intact or damaged packages."
+      },
+      {
+        "text": "Reject every shipment lacking an impervious plastic outer bag because USP <800> mandates that all suppliers ship HDs inside impervious plastic.",
+        "why": "Incorrect. USP's January 2026 FAQ #69 describes impervious-plastic shipping as RECOMMENDED for suppliers, not an absolute mandatory packaging requirement. A pharmacy must still use safe receiving procedures and evaluate the condition and containment of the shipment."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "USP <800> §§5.1,10 (receiving and PPE); USP <800> Official FAQs updated Jan. 21, 2026, Questions 68–71 (technical support, not formal interpretation); 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_800_FAQs_January2026.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "Unpack antineoplastic HDs in a neutral/negative-pressure area, not a sterile or positive-pressure room; wear chemotherapy gloves meeting ASTM D6978. USP recommends supplier impervious-plastic packaging but does not require it in every shipment."
   }
 ];
