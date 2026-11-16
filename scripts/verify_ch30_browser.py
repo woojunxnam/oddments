@@ -61,6 +61,105 @@ def verify_latest_set(browser, target: str) -> None:
     print("PASS: newest-set incomplete and overselected SATA rejected; repeated-miss bookmark persisted")
 
 
+def verify_unanswered_mode(browser, target: str) -> None:
+    """Check unanswered prioritization, exact-ten fallback and selection modes."""
+    context = browser.new_context(viewport={"width": 390, "height": 844})
+    page = context.new_page()
+    errors = []
+    page.on("pageerror", lambda exc: errors.append(str(exc)))
+    page.goto(target, wait_until="domcontentloaded", timeout=60000)
+    page.locator("#random-question-grid .ch30-question").first.wait_for(timeout=30000)
+
+    # Across all Areas, leave exactly the 2/3/3/2 quota unanswered.
+    # Every other question has a persisted Check Answer attempt.
+    unseen = page.evaluate("""() => {
+      const quota = {1:2, 2:3, 3:3, 4:2};
+      const all = window.MPJE_CH30_QUESTIONS;
+      const unseen = [1,2,3,4].flatMap(area =>
+        all.filter(q => q.area === area).slice(0, quota[area]).map(q => q.id));
+      const items = {};
+      all.forEach(q => {
+        if (!unseen.includes(q.id)) {
+          items[q.id] = {attempts:1, wrongCount:0, needsReview:false,
+            saved:false, lastCorrect:true};
+        }
+      });
+      localStorage.setItem('mpje-side-notes-ch30-question-progress-v1',
+        JSON.stringify({version:1, items, migratedFixed:true, migratedRandom:true}));
+      localStorage.removeItem('mpje-side-notes-ch30-random10-v1');
+      return unseen;
+    }""")
+    page.reload(wait_until="domcontentloaded")
+    cards = page.locator("#random-question-grid .ch30-question")
+    cards.first.wait_for(timeout=30000)
+    assert page.locator("#random-mode").input_value() == "unseen"
+
+    def ids():
+        values = cards.evaluate_all("(els) => els.map(el => el.dataset.questionId)")
+        assert len(values) == 10 and len(set(values)) == 10
+        areas = cards.evaluate_all("(els) => els.map(el => Number(el.dataset.area))")
+        assert {a: areas.count(a) for a in (1, 2, 3, 4)} == {1:2, 2:3, 3:3, 4:2}
+        return set(values)
+
+    first = ids()
+    assert first == set(unseen), "Unanswered-first failed to select all ten unseen"
+    assert "10/10 have never been checked" in page.locator("#random-message").inner_text()
+    assert "Random set #" not in page.locator("#random-message").inner_text()
+    assert page.locator("#random-progress").inner_text() == "0/10 checked"
+
+    page.locator("#random-new-top").click()
+    second = ids()
+    assert second != first, "An identical set must be avoided"
+    assert len(second & set(unseen)) == 9, "Fallback should sacrifice only one unseen item"
+
+    # Changing the mode must not discard in-progress answer selections.
+    first_card = cards.first
+    first_card.locator('input[value="A"]').check()
+    page.locator("#random-mode").select_option("all")
+    assert ids() == second
+    assert first_card.locator('input[value="A"]').is_checked()
+    page.locator("#random-new-top").click()
+    third = ids()
+    assert third != second
+    assert page.locator("#random-mode").input_value() == "all"
+    page.reload(wait_until="domcontentloaded")
+    assert ids() == third and page.locator("#random-mode").input_value() == "all"
+    assert page.locator("#random-progress").inner_text() == "0/10 checked"
+    assert not errors, "Unanswered-first browser errors: " + "; ".join(errors)
+    context.close()
+    print("PASS: unanswered-first 2/3/3/2 quotas, 10-unseen priority, minimal fallback, all-mode, answer retention and reload")
+
+
+def verify_legacy_random_session(browser, target: str) -> None:
+    """Old random sessions retain their answers without showing set numbers."""
+    context = browser.new_context(viewport={"width": 390, "height": 844})
+    page = context.new_page()
+    page.goto(target, wait_until="domcontentloaded", timeout=60000)
+    page.locator("#random-question-grid .ch30-question").first.wait_for(timeout=30000)
+    legacy_id = page.evaluate("""() => {
+      const raw = JSON.parse(localStorage.getItem('mpje-side-notes-ch30-random10-v1'));
+      raw.number = 42;
+      delete raw.mode;
+      const first = window.MPJE_CH30_QUESTIONS.find(q => q.id === raw.ids[0]);
+      raw.answers = {[first.id]: [first.correct[0]]};
+      raw.checked = {[first.id]: true};
+      localStorage.setItem('mpje-side-notes-ch30-random10-v1', JSON.stringify(raw));
+      return first.id;
+    }""")
+    page.reload(wait_until="domcontentloaded")
+    assert page.locator("#random-mode").input_value() == "all"
+    card = page.locator('#random-question-grid [data-question-id="' + legacy_id + '"]')
+    assert card.locator(".exam-feedback").count() == 1
+    assert card.locator(".exam-explanations > p").count() >= 4
+    assert "Random set #" not in page.locator("#random-progress").inner_text()
+    assert "Random set #" not in page.locator("#random-message").inner_text()
+    state = page.evaluate("""() => JSON.parse(
+      localStorage.getItem('mpje-side-notes-ch30-random10-v1'))""")
+    assert "number" not in state and state["mode"] == "all"
+    context.close()
+    print("PASS: prior random-session answers and checks retained; legacy set counter removed")
+
+
 def verify(base_url: str) -> None:
     target = urljoin(base_url.rstrip("/") + "/", "mpje-side-notes/exam-simulation-30/")
     with sync_playwright() as p:
@@ -131,6 +230,8 @@ def verify(base_url: str) -> None:
         assert page.locator("#review-nav-count").inner_text().find("saved") != -1
         assert not errors, "Browser JavaScript exceptions: " + "; ".join(errors)
         verify_latest_set(browser, target)
+        verify_unanswered_mode(browser, target)
+        verify_legacy_random_session(browser, target)
         browser.close()
         print("PASS: fixed per-question check; two mistakes auto-bookmark; wrong review recovery")
         print("PASS: manual saved questions; Random 10 quotas and new combination; per-item random feedback")
