@@ -3,6 +3,14 @@
 Owner preference recorded: November 13, 2026. Applies to new questions for
 `site/mpje-side-notes/exam-simulation-30/` unless explicitly changed.
 
+## Required priority-coverage reference
+
+Before selecting topics for the next five-question set, read
+[the seven-gap coverage and quality plan](MPJE_CH30_PRIORITY_COVERAGE_PLAN_2026-11-16.md)
+alongside the latest `topic-inventory.json` and the NABP public-source realism
+audit. The coverage plan is a dated editorial snapshot, not a replacement for
+checking live laws, official exam scopes, or the newest question IDs.
+
 ## Authoring each requested five-question batch
 
 - Exactly **one Area 1 (Licensure/Personnel)** question.
@@ -173,3 +181,55 @@ snapshot; topic inventory and latest primary law override its old totals.
   source-linked review. Use a fresh unseen pool and preserve the current
   independent learning/review modes. Do not claim to reproduce NABP's
   confidential item pool, CAT algorithm, psychometric scoring, or Pre-MPJE.
+
+## Seven-gap selection and legal-quality gates (from November 16, 2026)
+
+Apply the seven subject families defined in
+[the coverage plan](MPJE_CH30_PRIORITY_COVERAGE_PLAN_2026-11-16.md):
+(1) prescription validity/prescriber scope; (2) drug schedule identification;
+(3) practical USP <795>/<797>/<800>; (4) shipping/delivery/storage;
+(5) Board discipline/inspections/impairment; (6) drug integrity and required
+patient-facing information; (7) institutional/specialty/nonresident practice.
+
+- **Default topic selection:** Target at least three of the next five items
+  at the highest-priority unresolved subskills, consistent with the existing
+  one Area 1/two Area 2/one Area 3/one Area 4 quota. Prefer an untested legal
+  mechanism to a fourth variation of the same exception. If an Area has no
+  verified candidate in that gap, do not invent a rule to satisfy a quota.
+  Document the reason in editorial review.
+- **No numerical quota claimed for the real MPJE.** The seven categories,
+  their ordering, and proposed five-set roadmap are a study editorial decision,
+  not NABP frequency or candidate-item statistics.
+- **Label each new item:** primary Area, topicKey, specific legal decision,
+  distinct exception/deadline/scope issue, official authority and effective
+  date, neighboring existing question IDs, plus why the correct choice is
+  uniquely defensible. Record outside the question object if the current
+  site schema does not support a field. Do not leak answers in public stems.
+- **Source-first decision:** identify controlling Massachusetts statute/
+  247 CMR/105 CMR/Board policy and relevant federal authority; check which is
+  enforceable, more restrictive, or preemptive as appropriate. Confirm date
+  and status (enacted vs proposed vs guidance), setting (community vs LTCF/
+  hospital vs nonresident), actors, drug, schedule, patient and exception.
+  If a source is paywalled, missing, conflicting, or outdated, replace
+  the problem or flag unresolved; do not guess citations.
+- **Choice-level adversarial check:** independently solve the literal case
+  afresh, then verify EACH option against exact operative text. Single-best-
+  answer must have exactly one defensible key; SATA must have its complete
+  defensible set, with no alternate interpretation. Keep plausible nearby
+  distractors and remove accidental cues from option length, repeated
+  "always"/"never", grammar, or key-position patterns.
+- **Teaching test:** explain A–D individually in clear English and include
+  a practical what-the-pharmacist-does-next interpretation. Each wrong answer
+  must say precisely which law, assumption, or exception makes it wrong.
+- **Coverage test:** compare closest existing problem(s) before publication,
+  including the actual legal mechanism, not merely matching topic titles.
+  Preserve all old items, IDs, quiz records, bookmarked questions and
+  localStorage behavior. Validate fixed 5 and Random 10 regressions.
+- **Format fidelity:** maintain the owner's current 3 SBA/2 SATA and four
+  choices until a *separate tested schema/UI change* is approved. Vary
+  realistic stem length and cognitive task without pretending to match exact
+  confidential NABP item ratios. No secure exam recollections or keys.
+
+Review new-law or new-policy issues again on each batch date; when the
+test date is March 1, 2027 or later, explicitly reassess the blueprint
+rather than quietly reclassifying legacy numeric Area codes.
