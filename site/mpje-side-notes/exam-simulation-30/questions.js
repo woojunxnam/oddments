@@ -2871,5 +2871,178 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
     "verified": "2026-11-16",
     "note": "MPJE trap: DEA's red-'C' federal filing option does not supersede Massachusetts requirements for paper prescription segregation. Electronic records must remain separable, retrievable and printable."
+  },
+  {
+    "id": "E30-086",
+    "set": 18,
+    "area": 1,
+    "kind": "multi",
+    "topic": "CDTM continuing qualifications: insurance, prescribing registrations, annual CE, and Board restrictions",
+    "topicKey": "cdtm",
+    "stem": "A Massachusetts community pharmacist has seven years of licensed practice and participates in a current hypertension collaborative drug therapy management (CDTM) agreement with TWO supervising physicians. The agreement authorizes patient-specific prescribing. The pharmacist's liability policy has a $1 million annual aggregate limit but covers only $250,000 per occurrence, and the Board has just imposed a practice restriction through an agreed disciplinary disposition. The pharmacist is reviewing what must be corrected or reported before continuing CDTM activities. Under 247 CMR 16.02, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist must maintain professional liability insurance specifically covering CDTM with at least $1 million PER OCCURRENCE throughout the agreement; the stated aggregate limit does not cure the inadequate per-occurrence limit.",
+        "why": "Correct. 247 CMR 16.02(1)(b) expressly requires liability insurance of at least $1,000,000 per occurrence, specifically covering drug therapy management, throughout the collaborative practice agreement. The described $250,000 per-occurrence coverage is insufficient even with a $1 million aggregate."
+      },
+      {
+        "text": "Completion of five CDTM-related CE hours during the FIRST year satisfies the additional CDTM education requirement for the full two-year agreement because the ordinary pharmacist license requires continuing education separately.",
+        "why": "Incorrect. Section 16.02(1)(e) requires at least five ADDITIONAL Board-approved contact hours in EACH year of the CDTM agreement, addressing practice areas generally related to that agreement. Completing five hours in only one year does not cover another year."
+      },
+      {
+        "text": "Because prescribing is included, the pharmacist must maintain the applicable Massachusetts controlled-substance registration and meet the prescribing-related training and MassHealth participation/application attestation requirements.",
+        "why": "Correct. Section 16.02(1)(f) adds a current Department-issued MCSR, the applicable initial and biennial training, and a signed MassHealth participation-or-application attestation when prescriptive practices form part of the CDTM agreement. Ordinary licensure or a physician's signature does not replace these obligations."
+      },
+      {
+        "text": "The pharmacist must give WRITTEN notice of the Board-imposed practice restriction to EACH supervising physician, even though the restriction resulted from an agreement rather than a formal Board order.",
+        "why": "Correct. Section 16.02(3) expressly applies to Board discipline by agreement or order and to other practice restrictions, requiring written notification to every supervising physician. Having two physicians does not allow notification of only one."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "247 CMR 16.02(1)(b),(e)–(f), (3); Massachusetts Board of Registration in Pharmacy, Collaborative Drug Therapy Management regulation",
+    "url": "https://www.mass.gov/regulations/247-CMR-1600-collaborative-drug-therapy-management",
+    "verified": "2026-11-16",
+    "note": "Remember PER OCCURRENCE insurance, five ADDITIONAL CDTM CE hours EACH year, extra credentials for CDTM prescribing, and written notice to every supervising physician of Board restrictions."
+  },
+  {
+    "id": "E30-087",
+    "set": 18,
+    "area": 2,
+    "kind": "single",
+    "topic": "Prospective DUR: flagged therapeutic duplication during an anticoagulant switch",
+    "topicKey": "counseling-dur",
+    "stem": "A Massachusetts community pharmacy receives a valid new electronic apixaban prescription from an authorized practitioner. The patient's profile still lists rivaroxaban as active, and the computer flags potentially dangerous therapeutic duplication. The patient says the physician intended a switch but cannot recall exactly when the previous anticoagulant was to be stopped. A certified technician suggests clearing the alert because the new prescription is electronically authenticated. No dispensing has yet occurred. Which action is MOST consistent with 247 CMR 9.17 and the pharmacist's professional responsibility?",
+    "choices": [
+      {
+        "text": "Allow the technician to close the alert and dispense immediately, because electronic prescriber authentication satisfies the pharmacist's prospective review obligation for a clinically significant therapy change.",
+        "why": "Incorrect. An electronically authenticated prescription may still present a clinically significant drug-therapy problem. Section 9.17(1) places the prospective DUR responsibility on the pharmacist and specifically includes therapeutic duplication and significant changes in therapy. Technician or software clearance cannot substitute for the pharmacist's clinical review."
+      },
+      {
+        "text": "Have the pharmacist assess the duplication BEFORE dispensing, obtain sufficient clarification from the patient and/or prescriber as clinically necessary, document the measures taken in response to DUR, and dispense only after the therapy plan is determined appropriate.",
+        "why": "Correct. Under 247 CMR 9.17(1)–(2), the pharmacist must conduct prospective DUR before dispensing, make a reasonable effort to identify therapeutic duplication and significant therapy changes, take appropriate patient-protective measures, and document the measures taken. Contact with the prescriber is a possible means of clarification, not a universal fixed requirement for every alert."
+      },
+      {
+        "text": "Permanently refuse every prescription whenever the computer detects two drugs in the same therapeutic class, even if further investigation confirms that the old drug was discontinued before the new one starts.",
+        "why": "Incorrect. Section 9.17 requires professional assessment and appropriate measures, not categorical refusal whenever an automated duplicate-therapy warning appears. A clinically appropriate transition may be lawful once properly evaluated."
+      },
+      {
+        "text": "Dispense now and perform the pharmacist's prospective DUR at the patient's next refill, because the patient verbally confirmed that a switch was intended.",
+        "why": "Incorrect. The statute and 247 CMR 9.17(1) require prospective DUR BEFORE a new prescription is dispensed or delivered. The patient's uncertain timing does not justify postponing assessment of a potentially significant overlap."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 9.17(1)(b),(i), (2); M.G.L. c.94C §21A (prospective drug review)",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "Computerized flags support—but do not replace—pharmacist judgment. Investigate clinically significant duplication before dispensing and document what you did; there is no automatic mandatory refusal for every alert."
+  },
+  {
+    "id": "E30-088",
+    "set": 18,
+    "area": 2,
+    "kind": "single",
+    "topic": "2026 Massachusetts pharmacist HIV PEP: sexually active minor, 72-hour exposure window, and no baseline-test delay",
+    "topicKey": "public-health-prescribing",
+    "stem": "A properly trained and otherwise authorized Massachusetts pharmacist evaluates a sexually active 17-year-old who weighs 50 kg. Thirty-six hours earlier the patient sustained a percutaneous exposure to a blood-contaminated used syringe of a source with unknown HIV status. The patient reasonably fears HIV exposure, provides informed consent, has no known HIV infection or symptoms suggesting HIV, no relevant hypersensitivity or interacting therapy, and otherwise satisfies the September 2026 statewide pharmacist oral HIV post-exposure prophylaxis (PEP) protocol. A blood-based baseline HIV test is not immediately available at the pharmacy. Which plan is BEST supported by Massachusetts law and the DPH PEP guideline?",
+    "choices": [
+      {
+        "text": "Delay any PEP prescription until a laboratory HIV-negative result is documented, even if testing would push treatment beyond 72 hours after exposure.",
+        "why": "Incorrect. The September 2026 Massachusetts pharmacist PEP guidance states that a baseline HIV test is NOT required before initiating otherwise eligible PEP. A known positive or indeterminate test would require referral rather than PEP, but lack of an immediately available baseline test alone must not automatically delay time-sensitive initiation."
+      },
+      {
+        "text": "Refuse pharmacist-prescribed PEP solely because the patient is under 18, even though the patient is sexually active and meets the other protocol conditions.",
+        "why": "Incorrect. The DPH PEP guideline expressly permits eligible patients younger than 18 who are sexually active and have a reasonable concern about exposure; M.G.L. c.112 §12F permits qualifying minors to consent to HIV-prevention care without parental consent."
+      },
+      {
+        "text": "Treat this as continuous HIV pre-exposure prophylaxis (PrEP), dispense a 90-day course with two refills, and defer follow-up until the second refill.",
+        "why": "Incorrect. The patient presents following a recent potential exposure and needs the distinct PEP pathway. The September 2026 pharmacist PEP protocol calls for a 28-day course, authorizes no more than a 30-day supply with NO refills, and emphasizes prompt medical referral and follow-up testing."
+      },
+      {
+        "text": "Complete the required PEP intake and consent, initiate an appropriate oral PEP regimen promptly within the 72-hour window without waiting solely for a baseline negative HIV test, prescribe no more than a 30-day supply with no refills, and arrange urgent follow-up evaluation and testing.",
+        "why": "Correct. Under DPH's September 2026 statewide pharmacist PEP guidance, eligible sexually active minors may receive timely pharmacist-prescribed oral PEP when they satisfy exposure, weight, clinical, consent, and training conditions. A baseline HIV test is reviewed if available but is not a prerequisite to starting PEP. Treatment is taken for 28 days; authorized dispensing is at most 30 days with no refills, with referral and follow-up."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.94C §19F; M.G.L. c.112 §12F; DPH Statewide Guidance for Pharmacist Prescribing of HIV PEP (Sept. 2026), §§2, 4–6.4; DCP Circular 26-08-125",
+    "url": "https://www.mass.gov/doc/pharmacist-pep-guidelines-9-2026/download",
+    "verified": "2026-11-16",
+    "note": "A sexually active minor may be eligible for pharmacist PEP in Massachusetts. Prompt 72-hour initiation matters; no baseline HIV test is required before starting if otherwise eligible. PEP is a 28-day regimen, with at most a 30-day supply and no refills."
+  },
+  {
+    "id": "E30-089",
+    "set": 18,
+    "area": 3,
+    "kind": "single",
+    "topic": "Return to stock: an uncollected prescription, required container labeling, and lot-specific recall holds",
+    "topicKey": "label-packaging",
+    "stem": "A Massachusetts community pharmacy filled a patient-specific, nonhazardous Schedule VI tablet prescription, but the patient NEVER picked it up and the prescription was NEVER delivered. Staff want to return the tablets to available pharmacy stock for possible later lawful dispensing. The pharmacy also learns that one manufacturer's lot of this medication is being recalled; it is not yet known whether the prepared tablets came from the recalled lot. The pharmacy has a compliant general return-to-stock policy. Which approach BEST complies with 247 CMR 9.13?",
+    "choices": [
+      {
+        "text": "Pour the uncollected tablets into the manufacturer's bulk stock bottle after comparing the NDC; a pharmacist's visual check overcomes the regulation's restriction on refilling bulk bottles.",
+        "why": "Incorrect. Section 9.13(1)(a) expressly states that a pharmacy may NOT return a medication to the manufacturer's stock bottle. NDC matching or pharmacist inspection does not create an exception."
+      },
+      {
+        "text": "Destroy the tablets in all circumstances, because creation of a patient label makes the preparation legally equivalent to a medication already dispensed to a patient.",
+        "why": "Incorrect. Section 9.13(1) expressly allows return to stock when a prescription was PREPARED but the medication was NOT dispensed. This is different from a patient returning medication after it was dispensed under 247 CMR 9.01(5)–(7)."
+      },
+      {
+        "text": "Retain the tablets in the original patient container or an appropriate alternate container labeled with product, strength, manufacturer/supplier or NDC, and the expiration assigned at filling; do not dispense this potentially recalled return-to-stock medication unless its actual lot is confirmed outside the recall.",
+        "why": "Correct. Section 9.13(1)(b) requires the four return-to-stock labeling elements and permits the original patient container or an appropriate alternative. Section 9.13(3) prohibits dispensing returned-to-stock medication potentially subject to a recall until the pharmacy can confirm the specific lot is NOT included. The product cannot simply be poured back into the manufacturer bottle."
+      },
+      {
+        "text": "Place the tablets in an unlabeled internal bag and use them for another patient as soon as a barcode scan matches the product, because recall restrictions apply only to medication remaining in the original manufacturer's packaging.",
+        "why": "Incorrect. Return-to-stock containers require specific identifying information under §9.13(1)(b), and §9.13(3) applies to potentially recalled medication that has been returned to stock, not just to manufacturer's original containers. A matching product barcode is not confirmation that a lot is outside the recall."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 9.13(1)(a)–(b), (2)–(3); compare 247 CMR 9.01(5)–(7) for medication returned AFTER dispensing",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "PREPARED but never dispensed can be returned to stock with a labeled container; never pour it into the manufacturer's stock bottle. A recalled-or-possibly-recalled lot cannot be redispensed until the lot is verified to be excluded."
+  },
+  {
+    "id": "E30-090",
+    "set": 18,
+    "area": 4,
+    "kind": "multi",
+    "topic": "Automated pickup APS versus robotic PPA: schedule restrictions, cold products, and mixed-lot recall controls",
+    "topicKey": "automation-systems",
+    "stem": "A Massachusetts licensed community pharmacy plans TWO separate technologies: a wall-secured Automated Pharmacy System (APS) for patients to collect already filled prescriptions and a Pharmacy Processing Automation (PPA) machine to count and fill prescription containers. The pharmacy maintains the applicable policies and all requirements not explicitly addressed below. Which proposed arrangements are permitted under 247 CMR 9.10–9.11? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Use a continuously video-monitored, technology-verified APS located in the SAME BUILDING as the pharmacy to release an otherwise valid Schedule IV prescription after hours, with patient choice, an identifying electronic audit trail and a pharmacist consultation opportunity whenever it dispenses.",
+        "why": "Correct. 247 CMR 9.10(1)(a)–(h) permits an APS to release Schedule IV–VI medications during or after pharmacy operating hours when, among other conditions, it remains in the same building, is secured and video-monitored, verifies the drug and patient, keeps a traceable audit trail, offers pharmacist consultation whenever dispensing, and permits the patient to decline APS use."
+      },
+      {
+        "text": "Use that same APS to release a Schedule II oxycodone prescription after hours because DEA registration, camera surveillance, and barcode verification make the device eligible for EVERY controlled-substance schedule.",
+        "why": "Incorrect. Section 9.10(1) limits retail APS dispensing to Schedules IV–VI. Added identification technology and DEA registration do not expand the APS's legal scope to Schedule II."
+      },
+      {
+        "text": "If the PPA machine commingles different manufacturing lot numbers in one dispensing cell, maintain a procedure to quarantine ALL commingled lot numbers whenever one lot is recalled.",
+        "why": "Correct. 247 CMR 9.11(1)(b) specifically requires a pharmacy whose PPA commingles lot numbers in a single cell to maintain a policy and procedure to quarantine all the commingled lot numbers if one lot number is recalled. Verification technology remains required under §9.11(1)(a)."
+      },
+      {
+        "text": "Stock insulin that REQUIRES refrigeration in the APS for patient pickup if the appliance incorporates a reliable temperature logger and a pharmacist verifies stability before loading.",
+        "why": "Incorrect. Section 9.10(1)(d) categorically prohibits stocking any medication requiring refrigeration or reconstitution in an APS. Temperature logging cannot override this rule."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 9.10(1)(a)–(h), 9.11(1)(a)–(b); Massachusetts Board of Registration in Pharmacy, Professional Practice Standards",
+    "url": "https://www.mass.gov/regulations/247-CMR-900-professional-practice-standards",
+    "verified": "2026-11-16",
+    "note": "APS patient pickup is restricted to Schedules IV–VI and no refrigerated or reconstituted drugs. PPA robotic filling has its own mixed-lot recall quarantine rule. Never confuse APS, PPA and healthcare-facility ADD."
   }
 ];
