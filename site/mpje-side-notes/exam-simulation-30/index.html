@@ -49,7 +49,7 @@
 </section>
 <section class="panel" id="random-practice">
 <h2>Random 10 — Balanced MPJE Areas</h2>
-<p><strong>Generate a new 10-question mix:</strong> Area 1 (2), Area 2 (3), Area 3 (3), Area 4 (2). Questions never repeat within one mix, and the next mix differs from the immediately previous one whenever another combination exists. Choose whether to prioritize questions not yet checked or sample uniformly from all questions.</p>
+<p><strong>Generate a new 10-question mix:</strong> Area 1 (2), Area 2 (3), Area 3 (3), Area 4 (2). Questions never repeat within one mix, and the next mix differs from the immediately previous one whenever another combination exists. Choose whether to prioritize questions not yet checked or give every question within the same Area an equal chance.</p>
 <div class="random-area-breakdown" aria-label="Random ten question area distribution">
 <span>Area 1 · Licensure/Personnel <strong>2</strong></span>
 <span>Area 2 · Pharmacist Practice <strong>3</strong></span>
@@ -61,10 +61,10 @@
 <label for="random-mode"><strong>Question selection</strong></label>
 <select id="random-mode" aria-describedby="random-mode-help">
 <option value="unseen">Unanswered first (recommended)</option>
-<option value="all">All questions (uniform random)</option>
+<option value="all">All questions (random within each Area)</option>
 </select>
 </div>
-<p id="random-mode-help" class="exam-muted">Unanswered first uses your <strong>Check Answer</strong> history from all Chapter 30 modes in this browser. It draws unseen questions randomly within each Area and fills remaining slots with previously checked questions. If exactly one unseen-only mix is possible, one previously checked question may be needed to avoid repeating the previous ten. Merely viewing a question does not mark it as answered. Select a mode, then click <strong>New Random 10</strong> to apply it.</p>
+<p id="random-mode-help" class="exam-muted">Unanswered first uses your <strong>Check Answer</strong> history from all Chapter 30 modes in this browser. It draws unseen questions randomly within each Area and fills remaining slots with previously checked questions. If exactly one unseen-only mix is possible, one previously checked question may be needed to avoid repeating the previous ten. In All questions mode, every item within an Area has an equal selection chance, but the four Areas have different sampling rates because their quotas are fixed. Merely viewing a question does not mark it as answered. Select a mode, then click <strong>New Random 10</strong> to apply it.</p>
 <p class="exam-muted">This is a custom study mix, not the exact official exam distribution. The area labels follow the <a href="https://nabp.pharmacy/programs/examinations/mpje/competency-statements/">NABP MPJE Competency Statements</a> used for exams before March 1, 2027. The blueprint changes on March 1, 2027; these legacy-area labels are retained for consistency until the study design is updated.</p>
 <div class="exam-actions random-actions-top">
 <button type="button" id="random-new-top" class="primary">New Random 10</button>
