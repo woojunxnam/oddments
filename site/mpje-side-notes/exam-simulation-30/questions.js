@@ -3906,5 +3906,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
     "verified": "2026-11-16",
     "note": "Nonresident pharmacies need Massachusetts-specific licenses. Sterile and complex nonsterile compounded shipments each require the general nonresident Drug Store Pharmacy license PLUS the applicable nonresident specialty compounding license."
+  },
+  {
+    "id": "E30-116",
+    "set": 24,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "board-reporting",
+    "topic": "Individual pharmacist disclosure: an arrest and an out-of-state disciplinary action",
+    "stem": "A Massachusetts-licensed pharmacist is arrested in another state for a misdemeanor. No charge is filed at first, and no conviction has occurred. Separately, a licensing board in another state later imposes formal professional discipline. Under 247 CMR 20.03, what Massachusetts reporting requirement applies?",
+    "choices": [
+      {
+        "text": "Only a conviction must be reported; an arrest with no filed charge and a separate out-of-state license action are not reportable.",
+        "why": "Incorrect. 247 CMR 20.03(3) expressly lists ANY arrest, pending criminal charge, or conviction by an individual licensee. Section 20.03(4) separately requires reporting of disciplinary actions, as defined by 247 CMR 2.00; neither provision is limited to a Massachusetts conviction."
+      },
+      {
+        "text": "Both events must be reported by the individual to the Massachusetts Board within 14 calendar days of each respective event.",
+        "why": "Correct. Section 20.03(3) requires a licensed individual to report an arrest within 14 calendar days even before a conviction or charge; §20.03(4) imposes a 14-calendar-day duty to report the other jurisdiction's disciplinary action. A pending appeal does not change the explicit reporting language."
+      },
+      {
+        "text": "The pharmacist may defer both reports until the next license renewal so that every criminal or disciplinary matter can be resolved.",
+        "why": "Incorrect. The regulation uses prompt 14-calendar-day reporting, not renewal-cycle disclosure. Late reporting would independently risk regulatory noncompliance."
+      },
+      {
+        "text": "Only the pharmacist's employer must report an arrest or personal licensing action, and only within seven business days.",
+        "why": "Incorrect. Sections 20.03(3)–(4) apply directly to licensed INDIVIDUALS; they do not shift that duty to the employer or use a seven-business-day period. Seven business days is separately used for certain serious pharmacy dispensing-event reports under §20.02."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 20.03(3)–(4) (effective Dec. 6, 2024), 247 CMR 2.00 disciplinary-action definition; distinguish 247 CMR 20.02 serious-event reporting",
+    "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts-licensed pharmacists report any arrest, pending charge, conviction and licensing-board disciplinary action within 14 CALENDAR days; separate from seven-BUSINESS-day pharmacy serious-event reporting."
+  },
+  {
+    "id": "E30-117",
+    "set": 24,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "prescriber-authority",
+    "topic": "Hospital DEA registration and unique institutional suffix for otherwise authorized resident prescribers",
+    "stem": "A Massachusetts hospital has a current DEA hospital registration. A physician resident is legally authorized under Massachusetts law to prescribe the relevant Schedule II drug, but lacks an individual DEA registration. The hospital has verified the resident's authority and may grant use of its registration. Assume any necessary state controlled-substance registration and ePrescribing rules are separately met. Which federal DEA conclusions are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The resident may use the hospital DEA registration while prescribing in the usual course of practice within the resident's hospital employment, if the institution authorizes it and assigns a unique internal suffix.",
+        "why": "Correct. 21 CFR 1301.22(c)(1)–(5) allows an individual practitioner who is an agent or employee of a registered hospital to prescribe under the hospital registration if practicing lawfully within employment and the hospital verifies authority, authorizes the use, and assigns a practitioner-specific suffix."
+      },
+      {
+        "text": "The resident may use the hospital's number for unrelated private-office prescriptions because holding hospital privileges is enough, even when acting outside hospital employment.",
+        "why": "Incorrect. Section 1301.22(c)(4) confines the exemption to the scope of the individual's employment at the registered hospital/institution. Privileges alone do not authorize using the institutional registration for a private practice."
+      },
+      {
+        "text": "The institution may use one shared suffix for all residents and has no duty to keep a current list connecting suffixes to individual prescribers.",
+        "why": "Incorrect. Section 1301.22(c)(5) requires an individual code number for EACH authorized practitioner, and §1301.22(c)(6) requires a CURRENT list identifying each authorized practitioner by code available for verification."
+      },
+      {
+        "text": "The hospital must maintain a current roster connecting unique internal codes to prescribers and make the information available to other registrants or law-enforcement agencies on request.",
+        "why": "Correct. This is expressly required by 21 CFR 1301.22(c)(6). The pharmacist receiving such a prescription should verify the specific prescriber's authorization and suffix as appropriate rather than rejecting all institutional identifiers."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "citation": "21 CFR 1301.22(c)(1)–(6); DEA Pharmacist's Manual and DEA Medical Resident Guidance; 21 CFR 1306.04(a); applicable 105 CMR 700 and 721 must also be satisfied",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1301/section-1301.22",
+    "verified": "2026-11-16",
+    "note": "Hospital-employed and state-authorized practitioners can use the hospital DEA registration with unique individual suffixes and a current roster, but only within authorized employment and clinical scope."
+  },
+  {
+    "id": "E30-118",
+    "set": 24,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "controlled-prescriptions",
+    "topic": "Massachusetts prescription formats: multiple drug products on one record in hospital versus other settings",
+    "stem": "A practitioner plans to prescribe two different prescription drug products on one record. In one case the prescriptions are issued for community outpatient dispensing; in a separate case they are issued in the hospital setting with clear use and interchange directions for each product. All other requirements are met. Which decision correctly applies 105 CMR 721.050?",
+    "choices": [
+      {
+        "text": "Both records are valid solely because the practitioner clearly separates the drug names and dosing directions.",
+        "why": "Incorrect. Section 721.050 ordinarily directs practitioners prescribing more than one drug product to place EACH prescription on a separate form or record. Clarity alone does not authorize combining community prescriptions under the hospital exception."
+      },
+      {
+        "text": "Neither record is permitted because Massachusetts never allows more than one drug product on a prescription form or record.",
+        "why": "Incorrect. Section 721.050 explicitly allows more than one drug product in the hospital setting on a single form or record if clear directions for each drug's use and interchange are provided."
+      },
+      {
+        "text": "Separate records are required for the ordinary outpatient case; the hospital record may include multiple drug products if each has clear directions for use and interchange.",
+        "why": "Correct. 105 CMR 721.050 generally requires separate forms or records per drug product, but provides a narrow hospital-setting exception with clear instructions for EACH product. The pharmacist should verify the applicable setting and readable product-specific directions."
+      },
+      {
+        "text": "The separate-record requirement applies only to Schedule II drugs; ordinary Schedule VI prescriptions may always be combined at community pharmacies.",
+        "why": "Incorrect. Section 721.050 uses the broader phrase 'more than one Drug Product' and does not confine its separate-record rule to Schedule II drugs or exempt ordinary Schedule VI community prescriptions."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "105 CMR 721.050 (Prescribing More than One Drug Product); 105 CMR 721.020(A),(D) (effective Sept. 27, 2024)",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-16",
+    "note": "Massachusetts generally uses one prescription form or record per drug product; a hospital setting may combine drugs on one record when each product has clear directions for use and interchange."
+  },
+  {
+    "id": "E30-119",
+    "set": 24,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Diphenoxylate/atropine Lomotil Schedule V threshold versus diphenoxylate itself",
+    "stem": "A Massachusetts pharmacist reviews the schedule of FDA-approved Lomotil tablets containing 2.5 mg diphenoxylate hydrochloride and 25 micrograms atropine sulfate per unit. For comparison, the pharmacist also checks the federal schedule of diphenoxylate itself outside this qualifying combination. Assume no separate exception or rescheduling order. Which classification is correct?",
+    "choices": [
+      {
+        "text": "The qualifying diphenoxylate/atropine combination is Schedule II, as is diphenoxylate by itself.",
+        "why": "Incorrect. The Schedule V exemption for certain combination products is product-specific: 21 CFR 1308.15(c)(4) covers no more than 2.5 mg diphenoxylate AND at least 25 micrograms atropine sulfate per dosage unit. The qualifying combination is not Schedule II."
+      },
+      {
+        "text": "The qualifying diphenoxylate/atropine combination is Schedule V in federal and Massachusetts law, while diphenoxylate itself is federally Schedule II.",
+        "why": "Correct. 21 CFR 1308.15(c)(4) explicitly defines the qualifying Schedule V combination by dosage-unit content; 21 CFR 1308.12(c)(8) separately lists diphenoxylate as Schedule II. Massachusetts adopts the corresponding schedules in 105 CMR 700.002. The pharmacist must classify the actual formulation."
+      },
+      {
+        "text": "Both the qualifying combination and the individual active diphenoxylate ingredient are Schedule V because a low-dose antidiarrheal indication controls scheduling.",
+        "why": "Incorrect. Indication and dose do not automatically reschedule the isolated active substance. The Schedule V provision is limited to qualifying combinations with the specified atropine content; uncombined diphenoxylate is listed under federal Schedule II."
+      },
+      {
+        "text": "The qualifying combination is Schedule III, and diphenoxylate alone is Schedule II, because any mixture with atropine is automatically Schedule III.",
+        "why": "Incorrect. The pertinent federal combination schedule is V, not III. The governing provision uses exact diphenoxylate and atropine quantities, not a class-wide rule for all mixtures."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1308.15(c)(4) (combination threshold); 21 CFR 1308.12(c)(8) (diphenoxylate); 105 CMR 700.002(B),(E) (Massachusetts corresponding schedules)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.15",
+    "verified": "2026-11-16",
+    "note": "Lomotil's qualifying 2.5-mg diphenoxylate/25-mcg atropine product is Schedule V, whereas diphenoxylate alone is Schedule II; never infer an ingredient's schedule from a specific combination."
+  },
+  {
+    "id": "E30-120",
+    "set": 24,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <797> initial garbing versus media-fill competency: distinct assessments and numbers",
+    "stem": "A Massachusetts sterile compounding pharmacy trains a new employee for Category 2 compounded sterile preparations (CSPs). The trainee has no previous sterile-compounding qualification. The facility follows the currently official USP <797> requirements and the USP FAQ explanations of §§2.2–2.3. Which procedures are correct BEFORE the employee begins compounding CSPs? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Complete an initial garbing competency with visual observation and gloved fingertip/thumb sampling successfully on at least three separate occasions in succession.",
+        "why": "Correct. USP <797> §2.2 and official USP FAQ 50 and 57 call for THREE successful initial garbing evaluations (each distinct complete hygiene and garbing with glove fingertip/thumb sampling), consecutively. One garbing session with three plates does not count as three evaluations."
+      },
+      {
+        "text": "Require three separate successful media-fill tests as the initial aseptic manipulation competency because the three-test rule applies identically to garbing and media fill.",
+        "why": "Incorrect. USP FAQ 50 distinguishes the initial three complete GARBlNG competency evaluations from ASEPTIC manipulation competency, which includes one successfully completed initial media-fill test and gloved fingertip/thumb sampling following that media fill."
+      },
+      {
+        "text": "Complete an initial aseptic manipulation competency including a media-fill test and gloved fingertip/thumb sampling after that test.",
+        "why": "Correct. USP <797> §2.3 and USP FAQ 50 identify the media fill plus post-media-fill gloved fingertip/thumb sampling as the initial aseptic manipulation competency; it is separate from initial garbing evaluation."
+      },
+      {
+        "text": "Permit the trainee to compound for patients immediately under observation without initial garbing qualification, because only independent compounding requires successful garbing tests.",
+        "why": "Incorrect. USP FAQ 49 clarifies that personnel must successfully complete initial garbing competency BEFORE any compounding, whether independently or under supervision. Observing the worker is not an exemption."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "Current USP <797> §§2.2–2.3 (official Nov. 1, 2023); USP <797> Official FAQ updated Dec. 11, 2023, Q49–50, 57; 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "Initial garbing qualification takes three separate successful evaluations; initial aseptic manipulation requires one successful media-fill assessment with post-media-fill fingertip/thumb sampling. Both are distinct and prerequisite to assigned CSP work."
   }
 ];
