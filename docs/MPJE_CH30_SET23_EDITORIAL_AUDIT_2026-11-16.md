@@ -1,0 +1,12 @@
+# Chapter 30 Set 23: Source-based editorial audit — 2026-11-16
+New: **E30-111–115**. Prior 110 question objects preserved. Policy: 1/2/1/1 Areas; 3 SBA + 2 SATA; A–D explanations and original educational content.
+
+| ID | Novel legal distinction / nearest prior item | Official verified law | Result |
+| --- | --- | --- | --- |
+| E30-111 | Unlike E30-041 (adult trainee exceeded cap and phone prohibition), age-17 trainee beyond hours/year plus 30-day application on turning 18 | [247 CMR 8.03(5)](https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download), corrected Apr. 2025 | PASS |
+| E30-112 | Clinic practitioner employee-health prescriptions and separate pharmacy-service authorization vs E30-075 (DSCSA) and E30-090 (APS) | [105 CMR 722.091](https://www.mass.gov/doc/105-cmr-722-dispensing-procedures-for-clinic-and-hospital-pharmacies/download), Sept. 2024 | PASS |
+| E30-113 | FDA PPI obligation for oral contraceptives and estrogens, distinct E30-103 Medication Guides | [21 CFR 310.501](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-310/section-310.501), [310.515](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-310/section-310.515), [FDA PPI guidance](https://www.fda.gov/drugs/fdas-labeling-resources-human-prescription-drugs/patient-labeling-resources) | PASS |
+| E30-114 | Drug identification pregabalin/Lyrica V vs lisdexamfetamine/Vyvanse II; distinct E30-099 codeine/gabapentin and E30-104 dronabinol | [21 CFR 1308.15(e)(7)](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.15), [1308.12(d)(5)](https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12), 105 CMR 700.002 | PASS |
+| E30-115 | Nonresident general and specialty compounding combination, not resident ownership/closure E30-017/065 | [247 CMR 6.02(4)–(6)](https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download), Apr. 2025 | PASS |
+
+Primary sources were read as to the precise setting, actors, exceptions, dates, and A–D rationales. FDA PPIs were distinguished from Medication Guides, and nonresident sterile vs complex nonsterile licenses were not combined incorrectly. Independent author re-solve (no external reviewer or psychometrics), 5 unique stems/IDs, all answers matched each rationale. Three new topic families; **115 questions / 23 sets / Areas 22–44–23–26 / 46 topic families**. Run the repository Python inventory --write / --check and public Playwright regressions via Pages workflow after merge; do not conflate merge and deployment.
