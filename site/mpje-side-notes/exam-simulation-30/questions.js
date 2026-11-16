@@ -3217,5 +3217,178 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.fda.gov/drugs/human-drug-compounding/human-drug-compounding-laws",
     "verified": "2026-11-16",
     "note": "503A anticipatory compounding is limited and tied to historical patient-specific prescription demand; 503B outsourcing facilities may supply office stock but remain subject to CGMP."
+  },
+  {
+    "id": "E30-096",
+    "set": 20,
+    "area": 1,
+    "kind": "single",
+    "topic": "Reciprocal discipline: another state's consent probation versus a Massachusetts advisory letter",
+    "topicKey": "board-discipline",
+    "stem": "A Massachusetts-licensed pharmacist also holds a New Hampshire license. The New Hampshire board places that license on probation by a signed consent agreement after finding falsified controlled-substance inventory records; the same conduct would violate Massachusetts pharmacy law. In an unrelated Massachusetts matter, the Massachusetts Board issues only an ADVISORY LETTER, not a reprimand or probation order. Which description BEST reflects the Massachusetts Board's authority and the status of that letter?",
+    "choices": [
+      {
+        "text": "The Massachusetts Board cannot initiate reciprocal discipline because the New Hampshire case was resolved by consent instead of a contested hearing; its advisory letter is non-disciplinary.",
+        "why": "Incorrect. Under 247 CMR 10.06(6)–(7), a consent agreement can impose discipline, and out-of-state discipline may support a Massachusetts proceeding when the conduct violates Massachusetts law. A contested hearing in New Hampshire is not an absolute prerequisite to initiating Massachusetts action."
+      },
+      {
+        "text": "The New Hampshire probation automatically suspends the Massachusetts pharmacist license, and the Massachusetts advisory letter is itself a formal reprimand.",
+        "why": "Incorrect. Section 10.06(7) makes out-of-state action a possible basis for INITIATING Massachusetts discipline, not an automatic Massachusetts suspension. Section 10.06(2) explicitly says an advisory letter is not formal disciplinary action."
+      },
+      {
+        "text": "The Massachusetts Board must immediately impose identical probation whenever any state disciplines a pharmacist, regardless of whether the underlying conduct would violate Massachusetts law.",
+        "why": "Incorrect. Section 10.06(7) uses MAY and conditions reciprocal action on conduct that constitutes a Massachusetts-law violation. Disciplinary action is not automatically identical or mandatory, and statutory protections can also restrict particular reciprocal discipline."
+      },
+      {
+        "text": "The Massachusetts Board MAY initiate its own proceeding based on the New Hampshire discipline because the underlying conduct would violate Massachusetts law; the Massachusetts advisory letter itself is not formal discipline.",
+        "why": "Correct. Section 10.06(7) permits, rather than automatically imposes, disciplinary proceedings based on another state's action when the underlying conduct would violate Massachusetts law. Section 10.06(2) states that an advisory letter identifies concerns but does NOT constitute formal disciplinary action; probation and reprimand are different formal sanctions under 10.06(3)–(4)."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 10.06(2)–(4),(6)–(7); 247 CMR 10.03(1)(t); M.G.L. c.112 §32 (protected-services limitation where applicable)",
+    "url": "https://www.mass.gov/regulations/247-CMR-1000-disciplinary-proceedings",
+    "verified": "2026-11-16",
+    "note": "A Board advisory letter is not a reprimand. Out-of-state probation under a consent agreement can support a new MA proceeding, but does not automatically suspend a Massachusetts license; the underlying conduct must meet the MA-law test."
+  },
+  {
+    "id": "E30-097",
+    "set": 20,
+    "area": 2,
+    "kind": "multi",
+    "topic": "Physician assistant prescriptive scope: full versus temporary license, DEA number, and CII review",
+    "topicKey": "prescriber-authority",
+    "stem": "A Massachusetts pharmacy receives prescriptions prepared by physician assistants (PAs). For the fully licensed PA, current Massachusetts controlled-substance registration (MCSR), individual DEA registration for the appropriate schedules, mutually approved written prescribing guidelines, supervising-physician arrangements and other prescription formalities are in place. A second PA holds only a TEMPORARY Massachusetts PA license. No emergency or other exception changes the stated licensing rules. Which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The fully licensed PA may issue a Schedule II prescription using ONLY the supervising physician's DEA number when the physician has approved the written prescribing guidelines.",
+        "why": "Incorrect. The Massachusetts PA practice FAQ and M.G.L. c.94C require a PA who prescribes federally controlled Schedules II–V to have the PA's OWN appropriate DEA registration, in addition to the required MCSR; a physician's DEA number is not interchangeable with the PA's registration."
+      },
+      {
+        "text": "The fully licensed PA may issue a Schedule III prescription within the PA's authorized scope using the PA's own registrations; Massachusetts does not universally require the supervising physician's name to appear on the PA's prescription.",
+        "why": "Correct. 263 CMR 5.06(1),(4),(7) permits an appropriately registered, fully licensed PA to prescribe within the agreed guidelines and applicable law. Massachusetts PA Board FAQs state that the supervising physician's name is NOT required on a PA prescription, while the PA must possess the PA's own MCSR and DEA authorization for Schedules II–V."
+      },
+      {
+        "text": "A PA holding only a temporary license may issue an otherwise permitted WRITTEN prescription in the temporary PA's own name and signature, provided the supervising physician cosigns it after the patient receives the prescription.",
+        "why": "Incorrect. Under 263 CMR 5.06(2)(a),(c), a temporarily licensed PA may PREPARE a written prescription, but the supervising or designated physician must sign it BEFORE issuance and it must be issued in that physician's name. After-the-fact cosignature is not sufficient."
+      },
+      {
+        "text": "A Schedule II prescription issued by a fully licensed PA is subject to the supervising or designated physician's review within 96 hours after issuance, even when the PA was authorized to issue it.",
+        "why": "Correct. 263 CMR 5.06(3) specifically requires the supervising physician (or designated temporary supervisor) to review the PA's Schedule II prescription or medication order WITHIN 96 HOURS after issuance. This is a distinct follow-up duty from an improperly delayed countersignature for a temporary PA."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "263 CMR 5.06(1)–(4),(7); M.G.L. c.94C §§7,9,20; Massachusetts PA Board FAQs on DEA numbers and supervisor name",
+    "url": "https://www.mass.gov/info-details/frequently-asked-questions-about-physician-assistants-practice",
+    "verified": "2026-11-16",
+    "note": "A fully licensed PA needs independent MCSR/DEA authority for Schedule II–V drugs; the supervising MD's DEA number cannot be borrowed. Temporary PA prescriptions require prior MD authorization; a fully licensed PA's Schedule II order gets physician review within 96 hours."
+  },
+  {
+    "id": "E30-098",
+    "set": 20,
+    "area": 2,
+    "kind": "single",
+    "topic": "Independent nurse practitioner: supervisor-name omission and pharmacist verification",
+    "topicKey": "prescriber-authority",
+    "stem": "A Massachusetts-licensed nurse practitioner (NP) has obtained independent prescriptive-practice authority after completing the required supervised experience. The NP transmits an otherwise valid, properly signed electronic Schedule IV prescription using the NP's own current appropriate MCSR and DEA registrations. The prescription does NOT identify a supervising physician, and the pharmacist has no clinical or authenticity concerns. Under Massachusetts law and DPH Circular DCP 21-10-111, which conclusion is BEST?",
+    "choices": [
+      {
+        "text": "The pharmacist may dispense without independently obtaining proof of the NP's independent-practice status solely because the supervisor's name is absent, while continuing ordinary validity and patient-safety checks.",
+        "why": "Correct. M.G.L. c.112 §80E permits independent prescriptive practice after the relevant experience and authorization. 105 CMR 721.020(E) requires a supervisor name for certain nurse prescribers UNLESS they have independent authority; Circular DCP 21-10-111 says a pharmacist is NOT required to verify that status solely because the name is missing on an otherwise valid prescription."
+      },
+      {
+        "text": "The pharmacist must always reject any NP-controlled prescription that lacks a supervising physician's name, even when the NP has valid independent prescriptive authority.",
+        "why": "Incorrect. Massachusetts explicitly exempts independently authorized NPs from the supervising-professional-name requirement. A blanket rejection would ignore 105 CMR 721.020(E), M.G.L. c.112 §80E and DPH's pharmacist-specific clarification."
+      },
+      {
+        "text": "The pharmacist must contact the NP's former supervising physician to authorize this prescription, because two years of supervised experience never permits independent Schedule IV prescriptive practice.",
+        "why": "Incorrect. M.G.L. c.112 §80E provides an independent-practice pathway after the required supervised experience and authorization. Under the facts stated, there is no current supervising physician from whom patient-specific permission is required."
+      },
+      {
+        "text": "The pharmacist may fill this Schedule IV order only if the NP substitutes a supervising physician's DEA number, because nurse practitioners may hold MCSRs but not their own DEA registrations.",
+        "why": "Incorrect. Properly authorized nurse practitioners may hold their own appropriate MCSR and DEA registrations for federally controlled drugs. Using another practitioner's DEA number would not cure a problem and contradicts the NP's individual registration."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.112 §80E; 105 CMR 721.020(E); DPH Circular DCP 21-10-111 (supervised versus independent prescribers); MA Board of Nursing APRN prescriptive-authority guidance",
+    "url": "https://www.mass.gov/circular-letter/circular-letter-dcp-21-10-111-out-of-state-schedule-ii-prescriptions-and-supervised-prescribing-2",
+    "verified": "2026-11-16",
+    "note": "Independent NP prescribers need no supervisor's name on the Rx. An otherwise valid prescription does not become automatically invalid because that field is absent, and a pharmacist need not separately prove independent status for that reason alone."
+  },
+  {
+    "id": "E30-099",
+    "set": 20,
+    "area": 3,
+    "kind": "multi",
+    "topic": "Codeine dosage forms and gabapentin: Federal Schedules II/III/V versus MA Schedule VI",
+    "topicKey": "drug-schedule-identification",
+    "stem": "A Massachusetts pharmacist is classifying four products in November 2026. Each named codeine product is a lawfully marketed prescription product in the stated strength; combination products contain their nonnarcotic ingredients in recognized therapeutic quantities. The gabapentin product is conventional prescription-only oral gabapentin. Under current federal DEA schedules and Massachusetts 105 CMR 700.002 and PMP rules, which statements are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A single-ingredient codeine sulfate 30-mg oral tablet is a Schedule II controlled substance, rather than a Schedule III product solely because its unit dose is below 90 mg.",
+        "why": "Correct. Codeine alone is generally Schedule II under 21 CFR 1308.12. The Schedule III allowance for codeine doses up to 90 mg per unit requires a qualifying COMBINATION with recognized nonnarcotic active ingredient(s), which the single-ingredient tablet lacks. 105 CMR 700.002 incorporates the federal schedule."
+      },
+      {
+        "text": "An acetaminophen 300 mg/codeine 30 mg oral tablet is Schedule II merely because codeine appears in its ingredient list, so the qualifying combination-drug rules do not apply.",
+        "why": "Incorrect. Under 21 CFR 1308.13 and DEA's classification guidance, a qualifying codeine 30 mg/acetaminophen 300 mg combination meets Schedule III requirements (no more than 90 mg codeine per dosage unit with a recognized therapeutic nonnarcotic ingredient). Massachusetts 105 CMR 700.002 generally tracks this federal Schedule III designation."
+      },
+      {
+        "text": "A promethazine/codeine syrup containing 10 mg of codeine per 5 mL (200 mg per 100 mL) with qualifying nonnarcotic promethazine is Schedule V, not Schedule III solely because it contains codeine.",
+        "why": "Correct. The codeine concentration is exactly 200 mg per 100 mL, within the Schedule V ceiling for qualifying codeine combination cough preparations under 21 CFR 1308.15. Under 105 CMR 700.002(E), Massachusetts includes federally Schedule V products in its Schedule V."
+      },
+      {
+        "text": "Prescription gabapentin is NOT a federally scheduled controlled substance, but remains Massachusetts Schedule VI and must be reported to MassPAT under the state's additional-drug reporting rule.",
+        "why": "Correct. Gabapentin is not listed as federally controlled in DEA Schedules II–V. Massachusetts 105 CMR 700.002(F) defines unscheduled prescription medicines as Schedule VI, and the DPH PMP reporting guidance specifically includes gabapentin as an additional reportable drug without changing its schedule."
+      }
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "citation": "21 CFR 1308.12(c), 1308.13(e), 1308.15(c); 105 CMR 700.002(B),(C),(E),(F); MA DPH MassPAT pharmacy reporting and data submission",
+    "url": "https://www.mass.gov/regulations/105-CMR-70000-implementation-of-mgl-c94c",
+    "verified": "2026-11-16",
+    "note": "Classify the actual product and formulation, not just the ingredient: single-ingredient codeine II; qualifying codeine/APAP III; qualifying low-dose codeine cough product V; gabapentin is MA VI but still PMP-reportable."
+  },
+  {
+    "id": "E30-100",
+    "set": 20,
+    "area": 4,
+    "kind": "single",
+    "topic": "USP <797> Category 1: ISO 5 PEC in an SCA, garbing and short refrigerated BUD",
+    "topicKey": "sterile-hazardous-compounding",
+    "stem": "A Massachusetts pharmacy prepares a NONHAZARDOUS Category 1 compounded sterile preparation (CSP) from sterile ingredients in an ISO Class 5 primary engineering control inside an otherwise suitable UNCLASSIFIED segregated compounding area (SCA). Personnel meet applicable USP <797> aseptic training, garbing and environmental requirements; manufacturer stability supports at least 48 hours refrigerated, with no additional shorter limiting factor. Which BUD/facility decision is permitted under the currently applicable USP <797>?",
+    "choices": [
+      {
+        "text": "Assign a 24-hour controlled-room-temperature BUD because ISO Class 5 air quality allows a Category 1 CSP to exceed the usual 12-hour controlled-room-temperature maximum.",
+        "why": "Incorrect. ISO Class 5 PECs are required for Category 1 sterile compounding but do not independently extend the Category 1 beyond-use limit. Under USP <797>, Category 1 CSPs are limited to no more than 12 hours at controlled room temperature or 24 hours refrigerated, assuming no shorter restriction."
+      },
+      {
+        "text": "Assign a BUD no longer than 24 hours when refrigerated (or 12 hours at controlled room temperature), using the ISO Class 5 PEC in the SCA and the same minimum compounding-garb requirements applicable to Category 2.",
+        "why": "Correct. USP <797> §§3–4, 14 permits Category 1 compounding in an ISO Class 5 PEC within a qualifying unclassified SCA. The current Category 1 BUD ceilings are 12 hours at controlled room temperature and 24 hours refrigerated. USP's December 2023 official FAQ explains that minimum garbing, including sterile gloves, is not relaxed merely because the PEC is in an SCA."
+      },
+      {
+        "text": "Assign the Category 2 four-day controlled-room-temperature BUD in the same SCA merely by performing extra sterility testing, without relocating the ISO Class 5 PEC to a compliant cleanroom suite.",
+        "why": "Incorrect. Category 2 CSPs require the applicable cleanroom suite and other Category 2 controls under USP <797>; a Category 1 SCA is not automatically upgraded into a Category 2 compounding environment through supplemental testing."
+      },
+      {
+        "text": "Assign a 48-hour refrigerated BUD because the ingredients are sterile and the manufacturer supports at least 48 hours of chemical stability, regardless of Category 1's microbiological limits.",
+        "why": "Incorrect. Chemical stability data do not override USP <797>'s Category 1 microbiological BUD ceilings. When using Category 1 conditions, the shorter Category 1 limit remains controlling even if physical or chemical stability extends beyond it."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "USP <797> §§3–4, 14 (Category 1 CSP environment and BUD limits); USP <797> Official FAQs (Dec. 11, 2023), Questions 31, 74 and 93; 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "Category 1 may use an ISO Class 5 PEC in a suitable unclassified SCA, but garbing stays rigorous and BUD remains ≤12 h room temperature or ≤24 h refrigerated. Manufacturer chemical stability is not permission for a longer BUD."
   }
 ];
