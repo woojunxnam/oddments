@@ -119,3 +119,57 @@ its drug or statute name.
 Keep the owner's fixed 1/2/1/1 Area quota for each new five-question batch. Within those slots, compare the concise inventory and choose **different tested topic families and legal mechanisms**, using high-priority topics more often over time but not repeating the same rule under cosmetic name changes. Review source law and the nearest overlapping existing question(s) when a candidate topic is already represented. The catalog's high/medium priorities are qualitative editorial labels inferred from the syllabus and public study reports—not measured Massachusetts exam-item frequencies.
 
 The inventory is a count/coverage aid; source verification, distractor uniqueness, historical-date checking and review of substantive overlap remain compulsory for every new item.
+
+## NABP style calibration for future sets (reviewed November 16, 2026)
+
+Read [Chapter 30's public-source realism audit](MPJE_CH30_REALISM_AUDIT_2026-11-16.md)
+before new authoring work or mock-exam UX changes. The audit is a historical
+snapshot; topic inventory and latest primary law override its old totals.
+
+- Use only NABP's **public** sample items, current Candidate Bulletin/tutorial,
+  current MA Board review list, enacted laws/policies and non-confidential,
+  firsthand reports **about exam difficulty and broad topic categories**.
+  Do NOT request, collect, reproduce, or reverse-engineer recalled secured
+  MPJE/Pre-MPJE items, exact stems, keyed choices or private practice-exam content;
+  NABP expressly prohibits AI interaction with the confidential Pre-MPJE.
+- Do not optimize every item for length. Vary short direct lawful/unlawful
+  judgment, medium case application, and complex multi-rule scenarios.
+  Each stem must be no longer than necessary to distinguish one defensible
+  answer and identify its governing jurisdiction and effective date.
+  Contrasts such as MAY versus MUST, dispense versus administer, initial
+  versus refill, pharmacist versus intern, and MA versus federal must emerge
+  from the legal scenario, not arbitrary wording tricks.
+- No invented 'real exam' SATA percentage, exact topic frequency, or question
+  length distribution. One public 2025 candidate described mostly multiple
+  choice; another reported many SATA. Both are anecdotal. Maintain the
+  existing owner-specified per-five set 3 SBA/2 SATA and 1/2/1/1 Areas
+  unless the owner changes it. A separate realistic mock should avoid
+  predictable five-item templates and report only internal practice results,
+  not an NABP passing probability or scaled score.
+- Current Chapter 30 rendering and validation assume exactly FOUR choices
+  and every SATA has multiple correct choices. The free public NABP examples
+  show FIVE choices and explain that multiple-response may have ONE OR MORE
+  correct answers. These are **known compatibility gaps**, not authorization
+  to silently add a fifth choice or a one-key SATA to the live bank.
+  Before introducing these richer formats, extend question-ui.js, fixed/random
+  validation, score calculation, inventory checks and Playwright tests
+  in a dedicated backwards-compatible PR. Do not rewrite old questions.
+- Prioritize currently under-tested Board-review topics before producing more
+  lookalike scenarios: prescriber authority and valid prescription elements,
+  Massachusetts versus federal drug scheduling, delivery/shipping/storage,
+  advanced USP <795>/<797>/<800>, 105 CMR 700–722, recalls, adulteration/
+  misbranding, Medication Guides, PDMA, and institutional pharmacy duties.
+  Compare nearest existing stems and original notes; verify applicable rules
+  from primary legal sources and explicit effective dates.
+- For every newly authored choice, re-solve the case without seeing the
+  intended key. Reject an item with another defensible answer, unsupported
+  deadlines/exemptions, length cues, 'always/never' throwaway distractors
+  unrelated to the tested authority, or obvious A–D answer-position patterns.
+  Keep detailed legal explanations visible only AFTER practice submission.
+- Future **free timed simulation** proposal (not yet implemented): 40 original
+  questions / 50 minutes (Pre-MPJE-style pacing), followed if useful by
+  120 / 150 minutes (MPJE pacing). Show one item at a time; no back navigation
+  after submission; hide all solutions until session completion; then provide
+  source-linked review. Use a fresh unseen pool and preserve the current
+  independent learning/review modes. Do not claim to reproduce NABP's
+  confidential item pool, CAT algorithm, psychometric scoring, or Pre-MPJE.
