@@ -4078,5 +4078,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-16",
     "note": "Initial garbing qualification takes three separate successful evaluations; initial aseptic manipulation requires one successful media-fill assessment with post-media-fill fingertip/thumb sampling. Both are distinct and prerequisite to assigned CSP work."
+  },
+  {
+    "id": "E30-121",
+    "set": 25,
+    "area": 1,
+    "kind": "multi",
+    "topicKey": "technician-scope",
+    "topic": "A nationally certified technician's certification lapse while Massachusetts technician license remains active",
+    "stem": "A Massachusetts community pharmacy has an employee with a current Massachusetts pharmacy technician license whose certification from a Board-approved national certifying body expired yesterday. The pharmacist is reviewing the employee's duties, name badge, and supervisory-ratio roster. Under 247 CMR 8.04(3), which changes or conclusions are required? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The worker remains eligible to perform ordinary licensed pharmacy technician functions under 247 CMR 8.02, assuming the Massachusetts license remains valid.",
+        "why": "Correct. 247 CMR 8.04(3)(a) expressly limits a formerly certified person with lapsed certification to the duties of an ordinary pharmacy technician; it does not automatically revoke the person's separately valid Massachusetts pharmacy technician license. The pharmacist still performs required clinical checks and final validation."
+      },
+      {
+        "text": "The worker may continue to use the 'Certified Pharmacy Technician' title and expanded certified duties indefinitely because state technician licensure is active.",
+        "why": "Incorrect. Section 8.04(3)(a)–(b) explicitly requires a downgrade to ordinary technician duties and title after national certification lapses. The manager should revise the worker's badge and assignments instead of using the expired credential."
+      },
+      {
+        "text": "For the supervisory-ratio calculation the employee must be counted as an ordinary pharmacy technician, not a certified pharmacy technician.",
+        "why": "Correct. Section 8.04(3)(c) expressly directs that a person whose national certification lapses be counted as a pharmacy technician under §8.06(3). Scheduling decisions must reflect that reclassification."
+      },
+      {
+        "text": "The worker must cease all pharmacy technician duties and apply for an entirely new Massachusetts technician license, even though the existing Massachusetts license is current.",
+        "why": "Incorrect. The specific §8.04(3) rule permits ordinary technician duties and requires proper title and ratio treatment while state licensure remains valid. A lapsed national certification alone does not imply that a new state license is necessary."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "247 CMR 8.04(3)(a)–(c); 247 CMR 8.02(6); 247 CMR 8.06(3) (corrected Apr. 25, 2025)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-16",
+    "note": "When national technician certification lapses but the Massachusetts technician license remains active, the worker may perform ordinary technician duties but must change title and be counted as ordinary in staffing ratios."
+  },
+  {
+    "id": "E30-122",
+    "set": 25,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "institutional-pharmacy-practice",
+    "topic": "Hospital ED/discharge patient outpatient dispensing: 14-day supply and no hospital refill",
+    "stem": "A Massachusetts hospital pharmacy receives an otherwise valid prescription for an emergency department patient who has completed treatment and is leaving the hospital. The prescribed medication is routinely stocked by community retail pharmacies and is available in quantities that permit dispensing exactly a 14-day supply. The prescriber orders 30 days plus two refills. No waiver applies. What may the hospital pharmacy dispense under 105 CMR 722.090?",
+    "choices": [
+      {
+        "text": "The full prescribed 30-day supply and two refills, because the emergency department is part of the hospital.",
+        "why": "Incorrect. Section 722.090(B) allows a hospital pharmacy to fill an emergency room or discharge patient's prescription for no more than a 14-day supply, and §722.090(B)(1) specifically forbids that hospital pharmacy from refilling those prescriptions. The ordinary retail-available drug has none of the stated exceptions."
+      },
+      {
+        "text": "At most an initial 14-day supply without refills at the hospital pharmacy; the remaining continuing therapy needs an appropriate lawful outpatient dispensing arrangement.",
+        "why": "Correct. 105 CMR 722.090(B) limits ED and discharge patient prescriptions to a 14-day supply, and (B)(1) bars hospital-pharmacy refills of those prescriptions. The manufacturer's smallest-package and unavailable-in-retail exceptions are inapplicable under the stated facts."
+      },
+      {
+        "text": "A 72-hour emergency supply only, regardless of the prescriber's authorization, because no outpatient hospital pharmacy may dispense more than three days.",
+        "why": "Incorrect. Section 722.090(B) normally establishes a 14-day limit, not a general 72-hour emergency supply limit. The pharmacist must not import an unrelated controlled-substance emergency rule into institutional pharmacy dispensing."
+      },
+      {
+        "text": "No take-home supply at all, because hospital pharmacies may dispense only to admitted inpatients and never to emergency department patients.",
+        "why": "Incorrect. Section 722.090(B) expressly authorizes eligible prescriptions for emergency room and discharge patients, subject to the 14-day cap, no-refills rule, and stated exceptions. The pharmacist should follow the specific patient category rather than reject all discharge prescriptions."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "105 CMR 722.090(A)–(C), especially (B)(1)–(2) (regulation published Sept. 27, 2024; substantive §722.090(B) text dates May 5, 2017)",
+    "url": "https://www.mass.gov/doc/105-cmr-722-dispensing-procedures-for-clinic-and-hospital-pharmacies/download",
+    "verified": "2026-11-16",
+    "note": "Hospital ED and discharge take-home prescriptions normally have a 14-day initial supply maximum and NO hospital-pharmacy refills. Manufacturer minimum package and unavailable-at-retail exceptions are separate."
+  },
+  {
+    "id": "E30-123",
+    "set": 25,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "controlled-prescriptions",
+    "topic": "ePrescribing exemption duties: pharmacist verification versus invalid electronic-to-fax transmissions",
+    "stem": "A Massachusetts retail pharmacist receives several otherwise authentic prescriptions in November 2026. A prescriber may rely on an enumerated exception from electronic prescribing, but the pharmacist did not personally witness the underlying reason. In another case, a purported electronic prescription arrived only as a fax (not a verified technical failover). Which legal conclusions follow 105 CMR 721.040 and 721.070? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacist is not required to independently verify that an otherwise valid written or oral prescription falls within a prescriber's ePrescribing exception, though other validity and safety checks remain required.",
+        "why": "Correct. Section 721.070(C) expressly says a pharmacist receiving an otherwise valid Written or Oral Prescription is not required to verify that the issuance properly falls under an enumerated exception, including waiver status. This does not excuse verification of the prescription's authenticity, prescriber authority, or clinical appropriateness."
+      },
+      {
+        "text": "Any purported electronic prescription that arrives by ordinary facsimile is valid because the sending prescriber signed it electronically, even when no qualifying failover occurred.",
+        "why": "Incorrect. Section 721.040(C) declares an Electronic Prescription transmitted by a means other than compliant Electronic Transmission invalid, except for a verified Failover under §721.020(G). A routine fax is not automatically a valid electronic prescription."
+      },
+      {
+        "text": "A properly issued Massachusetts Schedule VI prescription falls under an express state ePrescribing exception, so it need not be transmitted electronically solely because it is a prescription drug.",
+        "why": "Correct. Section 721.070(A)(9) expressly lists prescriptions for controlled substances in Massachusetts Schedule VI as an exception to mandatory ePrescribing. Oral/written prescriptions must still meet all other applicable legal conditions."
+      },
+      {
+        "text": "Massachusetts permits a prescriber to choose paper or telephone for any Schedule II–V prescription merely for convenience, and the pharmacist must accept it as valid without further checks.",
+        "why": "Incorrect. Section 721.070(A) limits exceptions and prohibits use of them to circumvent ePrescribing. Section 721.070(C)'s no-duty-to-verify-the-exception rule does not legalize a nonauthentic or otherwise invalid controlled prescription or remove federal requirements."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "105 CMR 721.040(C), 721.020(G), 721.070(A)(2),(9) and 721.070(C) (effective Sept. 27, 2024); M.G.L. c.94C §§20,22",
+    "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
+    "verified": "2026-11-16",
+    "note": "The pharmacist need not audit the prescriber's ePrescribing-exception basis for an otherwise valid paper/oral Rx. Schedule VI is excepted, but faxing an electronic Rx is invalid unless it qualifies as verified failover."
+  },
+  {
+    "id": "E30-124",
+    "set": 25,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "schedule-ii-fax-exceptions",
+    "topic": "DEA Schedule II fax-as-original exceptions: LTCF residents, hospice narcotics and ordinary outpatients",
+    "stem": "A Massachusetts pharmacist receives practitioner-signed PAPER Schedule II prescriptions transmitted by fax for three patients: (1) a current long-term care facility resident, (2) a patient in an eligible hospice program whose narcotic prescription bears the required hospice notation, and (3) an ordinary community outpatient with no listed federal fax exception. Assume each paper prescription is otherwise lawful under a Massachusetts ePrescribing exception and meets federal requirements. Which federal dispensing determination is correct?",
+    "choices": [
+      {
+        "text": "The fax is the original signed prescription for all three, because an authenticated fax has the same federal legal status as an electronic controlled-substance prescription.",
+        "why": "Incorrect. Under 21 CFR 1306.11(a), a fax of an ordinary paper Schedule II prescription generally does NOT replace the manually signed original; it may be transmitted for advance review, but the original must be presented before dispensing unless a specific exception applies. Fax is not DEA-compliant EPCS."
+      },
+      {
+        "text": "The ordinary outpatient qualifies for a fax-as-original exception, but the LTCF and hospice prescriptions require paper originals at the pharmacy.",
+        "why": "Incorrect. This reverses the federal exceptions. Section 1306.11(f) allows fax to serve as original for a resident of a Long Term Care Facility; §1306.11(g) permits it for qualifying narcotic hospice prescriptions with the required notation. An ordinary outpatient without an exception requires the original."
+      },
+      {
+        "text": "The fax may serve as the original for the LTCF resident and for the appropriately noted hospice narcotic prescription, but not for the ordinary outpatient's nonexceptional Schedule II prescription.",
+        "why": "Correct. Federal 21 CFR 1306.11(f) and (g) create two fax-as-original exceptions. Under §1306.11(a), the ordinary outpatient fax is not sufficient by itself; the pharmacist must obtain and review the original signed paper prescription before filling unless another legitimate exception applies. This assumes the separate Massachusetts issuance/format rules are already satisfied."
+      },
+      {
+        "text": "Only the hospice case qualifies if the pharmacist gets a verbal confirmation; all LTCF Schedule II medications are excluded from fax-as-original status.",
+        "why": "Incorrect. Section 1306.11(f) expressly covers any Schedule II prescription for a qualifying LTCF resident without a narcotic-only limitation, whereas §1306.11(g) is specific to hospice narcotics. Oral confirmation alone does not replace a missing original in an ordinary nonexceptional case."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1306.11(a),(e)–(g); 21 CFR 1306.05; 105 CMR 721.020(F),721.070(A),(C) (assumed valid MA ePrescribing exception)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1306/section-1306.11",
+    "verified": "2026-11-16",
+    "note": "A signed Schedule II fax is normally NOT the original. Federal exceptions permit fax-as-original for LTCF residents and appropriately documented hospice Schedule II narcotics (also qualifying direct parenteral infusion)."
+  },
+  {
+    "id": "E30-125",
+    "set": 25,
+    "area": 4,
+    "kind": "single",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "USP <797> Category 3 extended BUD: additional sterility testing and ongoing facility requirements",
+    "stem": "A Massachusetts sterile compounding pharmacy wants to assign a beyond-use date longer than the Category 2 BUD limit to one nonhazardous compounded sterile preparation. It has a compliant cleanroom suite and trained staff but has not implemented Category 3 additional qualifications or sterility testing. Manufacturer component expiration does not limit the proposed date. Which approach is consistent with the currently official USP <797> standard?",
+    "choices": [
+      {
+        "text": "Assign the longer Category 3 BUD because working in an ISO 5 primary engineering control is the only extra condition for Category 3 classification.",
+        "why": "Incorrect. USP <797> §14.4 and USP FAQ Q12 require additional Category 3 quality assurance, including sterility testing, applicable endotoxin testing, more stringent personnel and environmental controls, and stability evidence. ISO 5 airflow alone is not sufficient."
+      },
+      {
+        "text": "Assign the Category 3 BUD as long as a compounder signs a policy waiver, even if sterility and applicable endotoxin tests are omitted.",
+        "why": "Incorrect. A facility's internal policy cannot waive the compendial Category 3 requirements. USP FAQ Q12 describes the additional testing and other requirements; an authorized shorter BUD may be used rather than labeling a noncompliant CSP Category 3."
+      },
+      {
+        "text": "Treat every CSP manufactured in a facility that meets Category 3 requirements as a Category 3 product and never use a shorter Category 2 BUD.",
+        "why": "Incorrect. USP FAQ Q174 explicitly permits a facility otherwise capable of Category 3 compounding to assign a shorter Category 2 BUD to a particular CSP. The qualification level of the facility does not force every product to take the extended date."
+      },
+      {
+        "text": "Do not assign the extended Category 3 BUD until all additional Category 3 requirements and required testing for that CSP are met; a suitable shorter BUD may be chosen.",
+        "why": "Correct. USP <797> §§14.3–14.4 and USP FAQ Q12, Q174 and Q182 condition longer-than-Category-2 BUDs on additional Category 3 safeguards including sterility testing and, where indicated, endotoxin testing and supportable stability. The pharmacy must apply those requirements rather than extrapolate from cleanroom classification alone."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "Official USP <797> §§14.3–14.4 (revision official Nov. 1, 2023); USP <797> FAQs Dec. 11, 2023, Q12, 174, 182; 247 CMR 9.01(3)",
+    "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
+    "verified": "2026-11-16",
+    "note": "Category 3 CSP BUDs beyond Category 2 limits require additional compounding qualifications, controls, testing and stability support; a facility may instead give an individual CSP a shorter Category 2 BUD."
   }
 ];
