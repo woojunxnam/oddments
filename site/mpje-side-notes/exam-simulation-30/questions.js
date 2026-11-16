@@ -3734,5 +3734,177 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/doc/247-cmr-9-professional-practice-standards/download",
     "verified": "2026-11-16",
     "note": "A commercial carrier does not shift drug-integrity responsibility away from the pharmacy. Evaluate unresolved cold-chain excursions before redelivery and maintain procedures specific to controlled-substance shipping."
+  },
+  {
+    "id": "E30-111",
+    "set": 23,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "technician-scope",
+    "topic": "Underage pharmacy technician trainee: one-year/1,500-hour exemption and age-18 application",
+    "stem": "A Massachusetts-licensed pharmacy technician trainee started employment at age 16, has worked 1,620 cumulative trainee hours in 15 months, and is still 17. The Board has not granted an extension. The trainee turns 18 next week. Under 247 CMR 8.03(5), which statement is accurate?",
+    "choices": [
+      {
+        "text": "Because the trainee is not yet 18, the hours/one-year employment cap has an exception; a technician-license application must be submitted within 30 days of turning 18.",
+        "why": "Correct. 247 CMR 8.03(5)(b) expressly excepts a person who has not yet reached age 18 from the earlier of one year or 1,500 hours. A person who exceeded either threshold before turning 18 must submit an application for a pharmacy technician license within 30 days of the eighteenth birthday. The pharmacy should plan the timely application and verify continuing lawful licensure."
+      },
+      {
+        "text": "The trainee's license automatically ends at the 1,500th hour, even while age 17; a Board extension is the only possible exception.",
+        "why": "Incorrect. The regulation lists alternative exceptions, including the person not yet having reached age 18. A Board extension is not the sole exception; the pharmacy must still follow the post-eighteenth-birthday application requirement."
+      },
+      {
+        "text": "The trainee can continue indefinitely under the trainee license after turning 18 because the excess hours were accrued before the birthday.",
+        "why": "Incorrect. The under-18 exception does not permanently remove the ordinary employment limitation. Section 8.03(5) specifically requires the person who previously exceeded the limit to apply for a technician license within 30 days of turning 18."
+      },
+      {
+        "text": "The trainee must immediately obtain a pharmacist-intern license on the eighteenth birthday, because technician applicants are not eligible until age 21.",
+        "why": "Incorrect. Section 8.02(3)(a) generally sets 18 as the age for pharmacy technician licensure; pharmacy intern licensure is a different educational pathway under §8.01. The required application here is for a pharmacy technician license, not a pharmacist-intern license."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "247 CMR 8.03(5)(a)–(c), final sentence; 247 CMR 8.02(3)(a) (Board corrected text Apr. 25, 2025; effective 2018)",
+    "url": "https://www.mass.gov/doc/247-cmr-8-pharmacy-interns-and-technicians/download",
+    "verified": "2026-11-16",
+    "note": "The under-18 exception can extend trainee employment beyond one year or 1,500 hours, but a trainee who already exceeded the cap must apply for a technician license within 30 days after turning 18."
+  },
+  {
+    "id": "E30-112",
+    "set": 23,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "institutional-pharmacy-practice",
+    "topic": "Clinic pharmacy dispensing: current clinic patients/employee health versus outside retail prescriptions",
+    "stem": "A Massachusetts licensed clinic maintains a clinic pharmacy that is not registered as a retail drug business. It has no pharmacy-services authorization on the facility license and no separate M.G.L. c.94C §9(e) authorization to dispense take-home controlled substances. A clinic practitioner legally authorized to prescribe issues several orders. Which proposed dispensing fits 105 CMR 722.091?",
+    "choices": [
+      {
+        "text": "Fill a take-home Schedule III prescription for a clinic employee because an employee health benefit overrides the facility-license requirement.",
+        "why": "Incorrect. Although §722.091(A) permits lawful prescriptions for clinic employees under employee health policies, §722.091(B) separately prohibits dispensing controlled substances other than for immediate administration unless the facility has the specified pharmacy-services licensing or §9(e) authorization."
+      },
+      {
+        "text": "Fill an otherwise lawful noncontrolled prescription for a current clinic employee pursuant to the clinic's employee health policy.",
+        "why": "Correct. Section 722.091(A) expressly allows prescriptions for current clinic patients and employees under employee health policies when issued by a legally authorized clinic practitioner. The case assumes no additional obstacle, and no take-home controlled substance is involved."
+      },
+      {
+        "text": "Fill a noncontrolled prescription for any unrelated walk-in customer who chooses the clinic pharmacy for convenience.",
+        "why": "Incorrect. Clinic pharmacies under §722.091(A) are not unrestricted retail pharmacies; dispensing is tied to current clinic patients, employees within the described policies, or medication orders for immediate administration by clinic practitioners."
+      },
+      {
+        "text": "Fill a take-home Schedule IV prescription for anyone on the clinic's payroll because it is less restricted than Schedule II.",
+        "why": "Incorrect. Section 722.091(B)'s facility-authorization condition covers controlled substances dispensed for take-home use, not only Schedule II medications. A payroll relationship does not itself supply the missing authorization."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "105 CMR 722.020 (Clinic Pharmacy, Clinic Employee, Clinic Patient); 105 CMR 722.091(A)–(B) (effective Sept. 27, 2024)",
+    "url": "https://www.mass.gov/doc/105-cmr-722-dispensing-procedures-for-clinic-and-hospital-pharmacies/download",
+    "verified": "2026-11-16",
+    "note": "A non-retail clinic pharmacy may supply authorized medication orders or eligible clinic patients/employees; take-home controlled-substance dispensing requires the separate facility authorization in §722.091(B)."
+  },
+  {
+    "id": "E30-113",
+    "set": 23,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "patient-package-inserts",
+    "topic": "FDA patient package inserts for contraceptives and estrogen products versus voluntary labeling",
+    "stem": "A Massachusetts pharmacy handles FDA-regulated patient labeling. It dispenses outpatient oral contraceptives and prescription estrogen products, plus a third medication whose FDA-approved Patient Information leaflet is voluntary under federal regulations. No acute-care or long-term-care institutional schedule applies. Which statements about Patient Package Inserts (PPIs) are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A required oral-contraceptive PPI must accompany each outpatient package dispensed to the patient or appropriate agent.",
+        "why": "Correct. 21 CFR 310.501(a) requires a patient package insert in or accompanying each package of an oral contraceptive drug product supplied to patients or their agents. Providing an insert at only the first fill does not satisfy the ordinary outpatient requirement."
+      },
+      {
+        "text": "An FDA-approved PPI for every prescription medicine is federally required to accompany every refill merely because the manufacturer authored patient information.",
+        "why": "Incorrect. FDA states that PPIs for non-estrogen, non-oral-contraceptive drugs may be voluntarily submitted and FDA-approved without the special mandatory distribution rule. The pharmacist must distinguish specific federally required PPIs from voluntary patient labeling and from 21 CFR Part 208 Medication Guides."
+      },
+      {
+        "text": "Prescription estrogen products covered by 21 CFR 310.515 generally require a PPI to accompany dispensing; oral contraceptives with estrogen and progestogen are instead addressed under §310.501.",
+        "why": "Correct. Section 310.515(a),(e) requires estrogen product patient inserts and expressly excepts estrogen-progestogen oral contraceptives because §310.501 governs those contraceptives. The practitioner and pharmacist must apply the correct drug-class rule."
+      },
+      {
+        "text": "An outpatient pharmacy may replace each mandatory PPI with a generic verbal counseling offer because written instructions are not required once a pharmacist offers counseling.",
+        "why": "Incorrect. Counseling requirements and the federal package-insert mandate serve different purposes. Sections 310.501(a) and 310.515(a) impose patient-facing written labeling obligations not displaced by offering verbal counseling."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 310.501(a),(b)(2); 21 CFR 310.515(a),(b),(e); FDA Patient Labeling Resources (mandatory versus voluntary PPIs)",
+    "url": "https://www.fda.gov/drugs/fdas-labeling-resources-human-prescription-drugs/patient-labeling-resources",
+    "verified": "2026-11-16",
+    "note": "Oral contraceptives and covered estrogen products require FDA PPIs at outpatient dispensing. Other FDA-approved patient-information leaflets may be voluntary; PPI mandates are separate from Medication Guides."
+  },
+  {
+    "id": "E30-114",
+    "set": 23,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Brand and generic schedule identification: pregabalin Lyrica versus lisdexamfetamine Vyvanse",
+    "stem": "A Massachusetts pharmacist receives valid prescriptions for Lyrica (pregabalin) capsules and Vyvanse (lisdexamfetamine) capsules. Both prescriptions were written by an authorized prescriber for a legitimate purpose. Which statement correctly identifies both federal and Massachusetts schedules and their basic refill implications?",
+    "choices": [
+      {
+        "text": "Lyrica is Schedule IV in both systems and may be refilled within applicable limits; Vyvanse is Schedule II with no refills.",
+        "why": "Incorrect. Lisdexamfetamine is Schedule II, but pregabalin is expressly listed in federal Schedule V, not IV, at 21 CFR 1308.15(e)(7). Massachusetts Schedule V follows the applicable Schedule V classification. The pharmacist must use the schedule of the actual molecule, not the broad therapeutic class."
+      },
+      {
+        "text": "Lyrica is Schedule V in both systems and may have properly authorized refills; Vyvanse is Schedule III and may have five refills.",
+        "why": "Incorrect. Pregabalin is Schedule V, but lisdexamfetamine is specifically listed in 21 CFR 1308.12(d)(5) as Schedule II. Schedule II prescriptions cannot be refilled under 21 CFR 1306.12(a), regardless of an otherwise routine ADHD treatment."
+      },
+      {
+        "text": "Lyrica is Schedule V in both systems and may have lawfully authorized refills; Vyvanse is Schedule II in both systems and cannot be refilled.",
+        "why": "Correct. Pregabalin is in 21 CFR 1308.15(e)(7) and the corresponding Massachusetts Schedule V; lisdexamfetamine is in 21 CFR 1308.12(d)(5) and Massachusetts Schedule II. Valid Schedule V refills are possible within federal/state limits; an original Schedule II prescription may not be refilled."
+      },
+      {
+        "text": "Lyrica is unscheduled federally and only Schedule VI in Massachusetts; Vyvanse is Schedule II in both systems.",
+        "why": "Incorrect. This wrongly treats pregabalin like gabapentin. Pregabalin is federally controlled in Schedule V and is classified as Schedule V in Massachusetts, while lisdexamfetamine is Schedule II."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "21 CFR 1308.15(e)(7) (pregabalin), 1308.12(d)(5) (lisdexamfetamine), 1306.12(a); 105 CMR 700.002(B),(E); 21 CFR 1306.22 (Schedule III–V refills)",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.15",
+    "verified": "2026-11-16",
+    "note": "Pregabalin (Lyrica) is a controlled Schedule V drug; lisdexamfetamine (Vyvanse) is Schedule II. Brand name and indication do not determine the schedule by themselves."
+  },
+  {
+    "id": "E30-115",
+    "set": 23,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "nonresident-pharmacy-licensing",
+    "topic": "Massachusetts nonresident pharmacy license combinations for shipment of sterile and complex nonsterile compounds",
+    "stem": "Three out-of-state pharmacies want to mail prescriptions to Massachusetts residents. Each holds a valid license in its own state and is otherwise compliant. Pharmacy A ships conventional prescription products; B ships compounded sterile preparations; C ships complex nonsterile compounded preparations. Which Massachusetts licensure statements are correct under 247 CMR 6.02? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A nonresident pharmacy shipping prescription controlled substances into Massachusetts must hold the Massachusetts nonresident Drug Store Pharmacy license; its home-state license alone does not replace this requirement.",
+        "why": "Correct. 247 CMR 6.02(4) expressly requires a nonresident Drug Store Pharmacy license to dispense or ship controlled substances into Massachusetts. This includes Massachusetts Schedule VI prescription drugs as defined by M.G.L. c.94C; other state licensure alone is not an exemption."
+      },
+      {
+        "text": "Shipping sterile compounded prescriptions into Massachusetts requires both a Massachusetts nonresident Drug Store Pharmacy license and a Massachusetts nonresident sterile compounding pharmacy license.",
+        "why": "Correct. Section 6.02(5) expressly requires the combination of those two nonresident licenses before an out-of-state pharmacy dispenses or ships a sterile compounded preparation into Massachusetts."
+      },
+      {
+        "text": "Shipping complex nonsterile compounded prescriptions requires only a nonresident complex nonsterile compounding license; a nonresident Drug Store Pharmacy license is optional.",
+        "why": "Incorrect. Section 6.02(6) expressly requires BOTH the nonresident Drug Store Pharmacy license and the nonresident complex nonsterile compounding pharmacy license for that shipment category."
+      },
+      {
+        "text": "A nonresident Drug Store Pharmacy license automatically authorizes shipment of compounded sterile doses without any additional specialty license.",
+        "why": "Incorrect. Sections 6.02(4) and (5) separate the baseline nonresident Drug Store Pharmacy license from the distinct nonresident sterile compounding pharmacy authorization. The specialty license is not supplied automatically."
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "citation": "247 CMR 6.02(4)–(6); 247 CMR 6.09 (nonresident pharmacy applications); M.G.L. c.94C §1 Schedule VI definition (247 CMR 6.00 effective Apr. 25, 2025)",
+    "url": "https://www.mass.gov/doc/247-cmr-6-licensure-of-pharmacies/download",
+    "verified": "2026-11-16",
+    "note": "Nonresident pharmacies need Massachusetts-specific licenses. Sterile and complex nonsterile compounded shipments each require the general nonresident Drug Store Pharmacy license PLUS the applicable nonresident specialty compounding license."
   }
 ];
