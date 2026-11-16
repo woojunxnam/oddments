@@ -2189,5 +2189,173 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "247 CMR 6.11(1)–(3); Massachusetts Board Pharmacy Application Checklist (revised July 15, 2026), Ownership Changes",
     "url": "https://www.mass.gov/doc/pharmacy-application-checklist/download",
     "verified": "2026-11-15"
+  },
+  {
+    "id": "E30-066",
+    "set": 14,
+    "area": 1,
+    "kind": "single",
+    "topic": "Schedule II handling: ordinary versus certified technicians and the hydrocodone-ER prohibition",
+    "topicKey": "technician-scope",
+    "stem": "A Massachusetts community pharmacy is preparing valid Schedule II prescriptions. The on-duty pharmacist directly supervises a licensed pharmacy technician and a licensed certified pharmacy technician, has approved permitted Schedule II handling under written pharmacy policies, and will personally complete final dispensing validation. The pharmacy has immediate-release oxycodone tablets and a hydrocodone-only extended-release product that is NOT abuse-deterrent. Which staff assignment is permissible?",
+    "choices": [
+      {
+        "text": "Assign the licensed, noncertified pharmacy technician to COUNT the oxycodone tablets, because a technician may assist with transporting Schedule II stock.",
+        "why": "Incorrect. Under 247 CMR 8.05(2), a licensed pharmacy technician may assist in TRANSPORTING Schedule II controlled substances under supervision and approved written procedures; that permission does not extend to handling or counting the stock. Counting is not merely transport."
+      },
+      {
+        "text": "Assign the licensed certified pharmacy technician to COUNT the oxycodone tablets under the pharmacist's supervision and documented approval.",
+        "why": "Correct. 247 CMR 8.05(2)(b) permits a licensed certified pharmacy technician to assist in transporting AND HANDLING Schedule II controlled substances under pharmacist supervision when the pharmacist has approved the role as reflected in the pharmacy's written policies. The pharmacist remains accountable and performs final validation."
+      },
+      {
+        "text": "Assign the licensed certified pharmacy technician to COUNT the non-abuse-deterrent hydrocodone-only extended-release product because certification removes all Schedule II handling exclusions.",
+        "why": "Incorrect. 247 CMR 8.05(3) specifically prohibits certified pharmacy technicians, pharmacy technicians, and technician trainees from handling hydrocodone-only extended-release medication that is not abuse-deterrent. Certification does not override that product-specific exception."
+      },
+      {
+        "text": "Assign the licensed pharmacy technician to perform the FINAL patient dispensing validation of the oxycodone after the computer's barcode verification.",
+        "why": "Incorrect. 247 CMR 8.02(6)(d) prohibits pharmacy technicians from performing final dispensing-process validation. Computer checks or later pharmacist review do not transfer that professional task to a technician."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "247 CMR 8.02(6)(d); 247 CMR 8.05(1)–(3) (technician Schedule II handling and product-specific exclusion)",
+    "url": "https://www.mass.gov/regulations/247-CMR-800-pharmacy-interns-and-technicians",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-067",
+    "set": 14,
+    "area": 2,
+    "kind": "multi",
+    "topic": "CQI annual education, written on-site program, and off-site quality-event records",
+    "topicKey": "quality-safety",
+    "stem": "A Massachusetts community pharmacy has confirmed several quality-related events (QREs). The pharmacist has already addressed immediate patient needs and made each required initial event report on time. A corporate quality team offers centralized electronic storage of QRE records, while the pharmacy's Manager of Record revises the local continuous quality improvement (CQI) program. Under 247 CMR 15.02–15.04, which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The pharmacy must keep a written description of its CQI program ON THE PREMISES and make that description readily available to pharmacy personnel.",
+        "why": "Correct. 247 CMR 15.04(1) requires the written CQI program description to be maintained on the pharmacy premises and readily available to pharmacy personnel. This differs from the location allowed for individual QRE records."
+      },
+      {
+        "text": "QRE records may be maintained off-site if they are kept in an orderly manner, filed by date, and retained for at least TWO YEARS from the QRE REPORT date.",
+        "why": "Correct. 247 CMR 15.04(2)–(4) sets a minimum two-year period from the date of the QRE report, requires orderly date filing, and expressly permits off-site storage. The on-premises program DESCRIPTION requirement does not require every event record to be on-site."
+      },
+      {
+        "text": "Once all personnel finish onboarding, annual CQI education may be discontinued if no QRE caused documented patient injury that year.",
+        "why": "Incorrect. 247 CMR 15.02(1)(f) requires ongoing CQI education for pharmacy personnel at least annually. The duty does not depend on whether any patient was harmed or how many events occurred."
+      },
+      {
+        "text": "The CQI process must analyze system and workflow contributors and inform pharmacy personnel about policy or process changes resulting from CQI recommendations.",
+        "why": "Correct. 247 CMR 15.02(1)(d)–(e) requires cause analysis and improvements; 247 CMR 15.03(3)(a)–(b) requires consideration of systemic factors and communicating resulting changes to personnel."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 15.02(1)(d)–(f); 15.03(3); 15.04(1)–(4)",
+    "url": "https://www.mass.gov/regulations/247-CMR-1500-continuous-quality-improvement-program",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-068",
+    "set": 14,
+    "area": 2,
+    "kind": "single",
+    "topic": "2026 Part 2 public-health disclosure: de-identified records versus identifiable patient data",
+    "topicKey": "privacy-part2",
+    "stem": "A federally assisted Massachusetts substance-use-disorder treatment program with an on-site pharmacy is subject to 42 CFR Part 2. The local public-health authority requests data to plan overdose-prevention services. The program can provide either (1) patient records fully de-identified under the HIPAA standard, with no reasonable basis to identify a patient, or (2) a named list linking patients to SUD diagnoses and prescriptions. No affected patient has consented; no Part 2 court order or other disclosure exception applies. Under the Part 2 rules applicable in November 2026, which approach is permissible?",
+    "choices": [
+      {
+        "text": "Release both datasets, because HIPAA's public-health disclosure permission automatically overrides the stricter Part 2 protections.",
+        "why": "Incorrect. HIPAA's general public-health disclosure permissions do not automatically authorize a Part 2 program to release identifiable Part 2 records. Part 2's specific limits still apply."
+      },
+      {
+        "text": "Release the named list only if the recipient promises confidentiality; the de-identified dataset still requires each patient's consent.",
+        "why": "Incorrect. The public-health authority's confidentiality promise is not itself Part 2 consent or another lawful exception. Conversely, 42 CFR 2.54 expressly permits qualifying de-identified disclosure without patient consent."
+      },
+      {
+        "text": "Release the properly de-identified records to the public-health authority without patient consent, but do not release the named list solely under the Part 2 public-health exception.",
+        "why": "Correct. 42 CFR 2.54 permits disclosure to a defined public-health authority WITHOUT consent only where record content meets 45 CFR 164.514(b)'s de-identification standard and there is no reasonable basis to identify any patient. Identifiable SUD records require some other valid authorization or exception, none of which is present here."
+      },
+      {
+        "text": "Withhold both datasets, because Part 2 always requires written patient consent even when information is properly de-identified for a public-health authority.",
+        "why": "Incorrect. This ignores the express exception in 42 CFR 2.54, added by the 2024 rule with required compliance as of February 16, 2026, for records de-identified to the HIPAA standard."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "42 CFR 2.54(a)–(b); 45 CFR 164.514(b); HHS 2024 Part 2 Final Rule (compliance February 16, 2026)",
+    "url": "https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2/section-2.54",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-069",
+    "set": 14,
+    "area": 3,
+    "kind": "multi",
+    "topic": "Schedule II/III consumer pamphlet: ordinary pain, LTCF, and OUD exceptions",
+    "topicKey": "label-packaging",
+    "stem": "A Massachusetts RETAIL pharmacy dispenses four separate, otherwise lawful prescriptions. All required prescription labeling, counseling, and clinical checks have been completed. Under M.G.L. c.94C §21, for which dispensings is the pharmacy REQUIRED to give the consumer pamphlet addressing narcotic risks and non-opioid pain-treatment alternatives? SELECT ALL THAT APPLY. Assume no exception other than those stated.",
+    "choices": [
+      {
+        "text": "Schedule II oxycodone for routine postoperative pain in a community-dwelling adult who is not receiving outpatient palliative care.",
+        "why": "Correct. Section 21 requires the pamphlet when a retail pharmacy dispenses a Schedule II or III narcotic or controlled substance, absent a listed exception. Routine outpatient postoperative pain does not qualify for the palliative-care, LTCF, or SUD-treatment exceptions."
+      },
+      {
+        "text": "Schedule II oxycodone prescribed to a patient who is a resident of a long-term care facility.",
+        "why": "Incorrect as a REQUIRED-pamphlet choice. Section 21 expressly says pharmacists are not required to distribute the pamphlet when the patient resides in a long-term care facility. Optional provision is different from a legal requirement."
+      },
+      {
+        "text": "Schedule III transdermal buprenorphine prescribed for CHRONIC PAIN, not for opioid use disorder or opioid dependence, to a community-dwelling adult.",
+        "why": "Correct. The Schedule III controlled-substance pamphlet rule applies and the special exception for medication prescribed to treat SUD or opioid dependence does NOT apply when buprenorphine is prescribed for chronic pain. Drug name alone does not establish the exception."
+      },
+      {
+        "text": "Schedule III buprenorphine/naloxone prescribed specifically for treatment of opioid use disorder to a community-dwelling adult.",
+        "why": "Incorrect as a REQUIRED-pamphlet choice. M.G.L. c.94C §21 expressly removes the distribution requirement when the controlled substance is prescribed for treatment of SUD or opioid dependence. The indication, not simply the Schedule, determines this exception."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §21, third paragraph (Schedule II/III consumer pamphlet and palliative-care, LTCF, OUD exceptions)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section21",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-070",
+    "set": 14,
+    "area": 4,
+    "kind": "single",
+    "topic": "Interchangeable biologic substitution: permissive authority, dual notice, and records",
+    "topicKey": "interchange",
+    "stem": "A Massachusetts retail pharmacy receives a valid prescription for a biological medication identified by its BRAND name. The prescriber has not given a patient-specific written 'no substitution' instruction. The proposed alternative is FDA-designated INTERCHANGEABLE with the prescribed reference biologic, and the pharmacist judges substitution appropriate. The pharmacy cannot enter a note in the prescriber's interoperable EHR, but it maintains a patient record accessible to the prescriber upon request. Which procedure BEST complies with M.G.L. c.112 §12EE?",
+    "choices": [
+      {
+        "text": "Substitution is mandatory whenever the interchangeable biologic costs less, and no patient or prescriber notice is necessary if the original prescription remains in the file.",
+        "why": "Incorrect. Section 12EE(b) says a pharmacist MAY substitute an interchangeable biologic, not that every eligible substitution is mandatory. Sections 12EE(d)–(f) also impose notification and recordkeeping duties after substitution."
+      },
+      {
+        "text": "The pharmacist must obtain a new, individually signed prescriber authorization before every substitution because the pharmacy cannot enter data directly into the prescriber's interoperable EHR.",
+        "why": "Incorrect. When no patient-specific written prohibition applies, §12EE(b) permits substitution; §12EE(d) provides alternative prescriber notification methods when the pharmacy cannot annotate an interoperable EHR. Prior affirmative authorization is not universally required by this section."
+      },
+      {
+        "text": "The pharmacist may substitute and give only a verbal notice to the patient, provided that the pharmacy destroys the interchange record after the next refill is completed.",
+        "why": "Incorrect. Section 12EE(e) requires WRITTEN patient notification, and §12EE(f) requires a substitution record retained for at least one year from the last entry in the profile record. Verbal notice alone and early destruction do not meet those obligations."
+      },
+      {
+        "text": "The pharmacist may substitute, notify the prescriber within a reasonable time through the accessible pharmacy-record route, notify the patient in writing, and retain the substitution record for at least one year from the last profile entry.",
+        "why": "Correct. Under §12EE(b)–(f), FDA interchangeability and absence of a patient-specific written no-substitution instruction permit the switch. Where an interoperable-EHR notation is not possible, a pharmacy-record notation accessible by the prescriber on request is a permitted notice method; the patient receives written notice, and records are retained at least one year from the last profile entry."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "M.G.L. c.112 §12EE(b)–(f) (interchangeable biologics, prescriber/patient notices, minimum retention)",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE",
+    "verified": "2026-11-16"
   }
 ];
