@@ -2357,5 +2357,172 @@ window.MPJE_CH30_QUESTIONS = [
     "citation": "M.G.L. c.112 §12EE(b)–(f) (interchangeable biologics, prescriber/patient notices, minimum retention)",
     "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12EE",
     "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-071",
+    "set": 15,
+    "area": 1,
+    "kind": "single",
+    "topic": "Late-year license transfer: October 1 CE grace period versus permanent exemption",
+    "topicKey": "licensure-ce",
+    "stem": "Two pharmacists who graduated from ACPE-accredited PharmD programs in 2019 receive their FIRST Massachusetts pharmacist licenses by license transfer in 2026. Pharmacist X is licensed on September 30; Pharmacist Y is licensed on October 1. Neither performs immunization, compounding, or CDTM duties, and neither qualifies for another waiver. Both are reviewing their 2026 continuing education obligations before the December 2026 renewal. Under Massachusetts Board Policy 2021-04, as revised September 4, 2025, which statement is MOST accurate?",
+    "choices": [
+      {
+        "text": "Both pharmacists have until April 30, 2027 to complete their 2026 CE because their first Massachusetts licenses were issued in the final four months of 2026.",
+        "why": "Incorrect. Board Policy 2021-04, §II sets a specific cutoff of ON OR AFTER OCTOBER 1 for initial licensure through exam or transfer. September 30 does not satisfy that cutoff, even though it is late in the calendar year."
+      },
+      {
+        "text": "Neither pharmacist qualifies for a grace period because 247 CMR 4.03 imposes the standard annual CE requirement regardless of the date of first Massachusetts licensure.",
+        "why": "Incorrect. Although 247 CMR 4.03 sets the general annual CE requirement, Board Policy 2021-04, §II specifically grants qualifying late-year examination and transfer licensees a grace period through April 30 of the following year."
+      },
+      {
+        "text": "Only Pharmacist Y qualifies for a grace period through April 30, 2027 to obtain the required 2026 CE; it is not a permanent exemption and does not eliminate the separate 2027 CE requirement.",
+        "why": "Correct. Board Policy 2021-04, §II covers licenses obtained by examination or transfer on or after October 1. Y qualifies on October 1; X does not on September 30. Both graduated in 2019, so the separate graduation-year exception in 247 CMR 4.03(8) does not apply. Annual CE obligations remain separate."
+      },
+      {
+        "text": "Pharmacist Y is exempt from all 2026 CE because receiving a license on October 1 is equivalent to graduating from an accredited pharmacy school in that calendar year.",
+        "why": "Incorrect. The graduation-year CE exemption in 247 CMR 4.03(8) depends on the actual year of graduation, here 2019. A late-year license TRANSFER creates a deadline extension under Board policy, not a graduation-year exemption."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "247 CMR 4.03(4),(5),(8); Massachusetts Board Policy 2021-04 §II (revised Sept. 4, 2025)",
+    "url": "https://www.mass.gov/doc/2021-04-continuing-education-ce-requirements-pdf/download",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-072",
+    "set": 15,
+    "area": 2,
+    "kind": "single",
+    "topic": "Chlamydia EPT stock-out referral and disease-specific scope",
+    "topicKey": "expedited-partner-therapy",
+    "stem": "At a Massachusetts retail pharmacy, a patient being treated for laboratory-confirmed chlamydia presents a separate, otherwise valid prescription for the patient's unexamined partner. The partner prescription properly identifies the recipient as 'EPT' rather than by name. The pharmacy cannot obtain the prescribed medication in time to dispense it. Later, another patient asks the pharmacist to process a similar EPT prescription for a partner exposed ONLY to gonorrhea, relying solely on Massachusetts Board/DCP Policy 2020-08. No other independent prescribing or dispensing authorization has been established. Which response BEST follows that policy?",
+    "choices": [
+      {
+        "text": "Keep the unfilled chlamydia EPT prescription without referring the patient elsewhere, because stock shortages relieve pharmacists of all EPT-related responsibilities.",
+        "why": "Incorrect. Joint Board/DCP Policy 2020-08, §II requires a pharmacist who is unable or unwilling to fill a qualifying EPT prescription to REFER the patient to an alternate pharmacy. A stock-out is not an exception to that obligation."
+      },
+      {
+        "text": "Process the gonorrhea-only EPT request under Policy 2020-08 because every sexually transmitted infection is covered whenever a partner cannot attend an appointment.",
+        "why": "Incorrect. Policy 2020-08 expressly applies ONLY to chlamydia treatment. Its specific authority cannot be extended to gonorrhea merely because it is another STI; a separate applicable authority would have to be established."
+      },
+      {
+        "text": "Require the chlamydia partner to undergo an examination and provide a legal name before giving a referral, because EPT prescriptions without a name are invalid.",
+        "why": "Incorrect. Section I of Policy 2020-08 explicitly allows a separate chlamydia EPT prescription to substitute 'EPT', 'E.P.T.' or 'Expedited Partner Therapy' for the partner's name and address without an exam."
+      },
+      {
+        "text": "Refer the patient with the unfilled CHLAMYDIA EPT prescription to another pharmacy, while recognizing that Policy 2020-08 alone does not authorize a GONORRHEA-only EPT prescription.",
+        "why": "Correct. Under Board/DCP Policy 2020-08, §II(2), an unable or unwilling pharmacist must refer the patient to an alternate pharmacy. The policy states that it applies only to chlamydia; the gonorrhea request requires its own independent legal basis rather than an assumed extension."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "Massachusetts Board/Drug Control Program Joint Policy 2020-08 §§I–II (Expedited Partner Therapy Prescriptions; May 25, 2023)",
+    "url": "https://www.mass.gov/policy-statement/expedited-partner-therapy-prescriptions",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-073",
+    "set": 15,
+    "area": 2,
+    "kind": "multi",
+    "topic": "HIPAA breach triage: encryption, compromised keys and risk assessment",
+    "topicKey": "hipaa-breach",
+    "stem": "A HIPAA-covered Massachusetts retail pharmacy examines four separate possible privacy incidents. Consider ONLY the federal HIPAA Breach Notification Rule; there is no applicable law-enforcement delay, and no exception beyond the facts stated should be assumed. Which conclusions are accurate? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "A hard drive containing ePHI encrypted in accordance with HHS guidance is stolen, but the separate decryption key is not compromised; theft of that drive alone does not trigger federal breach notification.",
+        "why": "Correct. 45 CFR 164.402 defines unsecured PHI, and HHS encryption guidance recognizes qualifying encrypted ePHI with uncompromised decryption keys as secured. The federal breach-notification obligation does not arise solely because such secured data were stolen."
+      },
+      {
+        "text": "An unencrypted USB drive with identifiable prescription records is stolen; no one can prove the thief opened the files, so the pharmacy can automatically close the incident without risk assessment or notification.",
+        "why": "Incorrect. An impermissible disclosure or acquisition of unsecured PHI is presumed a breach unless an exception applies or a documented assessment shows low probability of compromise. Lack of proof of actual viewing is relevant but is not automatically conclusive."
+      },
+      {
+        "text": "For an impermissible disclosure of unsecured PHI, a documented four-factor assessment supporting a low probability of compromise can rebut the presumption of breach and make federal notification unnecessary.",
+        "why": "Correct. Under 45 CFR 164.402, the assessment considers the nature and extent of PHI, the recipient, actual acquisition/viewing, and mitigation. A supportable low-probability finding may mean notification is not required; without it, the breach presumption applies."
+      },
+      {
+        "text": "If an appropriately encrypted laptop and its accessible decryption key are stolen together, the original encryption always guarantees the HIPAA notification safe harbor without further analysis.",
+        "why": "Incorrect. Under HHS guidance, a confidential key or decryption process enabling access must not have been breached. When the key is stolen with the device, encryption does not automatically establish the safe harbor; further assessment is needed."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "45 CFR 164.402; HHS HIPAA Breach Notification Rule, Definitions and Guidance to Render PHI Unusable, Unreadable, or Indecipherable",
+    "url": "https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-074",
+    "set": 15,
+    "area": 3,
+    "kind": "multi",
+    "topic": "New prescription corrections: earliest-fill dates, DEA number and PMP-sensitive Schedule VI days' supply",
+    "topicKey": "rx-amendments",
+    "stem": "A Massachusetts pharmacist evaluates FOUR separate, otherwise authorized NEW prescriptions before initial dispensing. Assume any added identifier is verified, the authorized overall quantity remains unchanged, all modifications are documented, and there are no separate clinical safety concerns. Under Massachusetts Board/DCP Policy 2018-01, revised January 11, 2024, which actions are permitted as stated? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "After consulting the prescriber by telephone, change the 'earliest date to be filled' on a Schedule II prescription instead of requiring a new prescription.",
+        "why": "Incorrect. Policy 2018-01, §II(E) lists a Schedule II EARLIEST FILL DATE among elements that may never be changed or added. Prescriber consultation does not cure the restriction; a new prescription is required."
+      },
+      {
+        "text": "Verify and add a missing prescriber's DEA registration number to a Schedule II prescription WITHOUT contacting the prescriber, recording the modification.",
+        "why": "Correct. Policy 2018-01, §III(A)(i)(d) permits adding the DEA number without consultation. Section IV requires recording the date, the change and the pharmacist, while the prescription must remain otherwise valid."
+      },
+      {
+        "text": "Convert a PMP-reportable Massachusetts Schedule VI gabapentin prescription from a 30-day supply with 11 refills to a 90-day supply with three refills WITHOUT consulting the prescriber because it is Schedule VI.",
+        "why": "Incorrect. Policy 2018-01, §III(C)(iii)(a) only permits independent days'-supply conversion for Schedule VI drugs NOT subject to PMP reporting. Gabapentin is a Massachusetts PMP additional drug, so the premise does not meet the exception."
+      },
+      {
+        "text": "For a non-PMP-reportable Schedule VI amlodipine prescription, use professional judgment to convert a 30-day supply with 11 refills into a 90-day supply with three refills WITHOUT prescriber consultation, preserving the overall amount and documenting the change.",
+        "why": "Correct. Policy 2018-01, §III(C)(iii) explicitly recognizes this conversion for non-PMP-reportable Schedule VI drugs where professionally appropriate. Section IV requires documentation. The case rules out separate clinical concerns."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "MA Board/DCP Policy 2018-01 §§II(E), III(A)(i)(d), III(C)(iii)(a), IV (revised Jan. 11, 2024)",
+    "url": "https://www.mass.gov/doc/2018-01-permitted-prescription-changes-and-additions-pdf/download",
+    "verified": "2026-11-16"
+  },
+  {
+    "id": "E30-075",
+    "set": 15,
+    "area": 4,
+    "kind": "single",
+    "topic": "2026 FDA DSCSA small dispenser exemption: corporate employee count and residual duties",
+    "topicKey": "dscsa",
+    "stem": "A corporate entity owns THREE Massachusetts retail pharmacies. As of November 27, 2026, across the ENTIRE company it has 16 full-time licensed pharmacists, nine full-time qualified pharmacy technicians, and 20 full-time cashiers who are not pharmacists or pharmacy technicians. On December 1, 2026, one location identifies a SUSPECT prescription-drug package while management is implementing FDA's August 6, 2026 DSCSA exemption. No other waiver or exemption applies. Which interpretation is MOST accurate?",
+    "choices": [
+      {
+        "text": "The company qualifies for the specified small-dispenser exemptions until November 27, 2027 because it has 25 qualifying full-time pharmacists/technicians across the corporation; suspect-product quarantine, investigation and other non-exempt DSCSA requirements remain.",
+        "why": "Correct. FDA's August 6, 2026 notice counts full-time LICENSED PHARMACISTS and QUALIFIED PHARMACY TECHNICIANS across the corporate entity as of November 27, 2026. Sixteen plus nine equals 25; cashiers do not count under this exemption definition. The specified enhanced tracing and product-identifier verification exemptions do not waive other section 582 obligations."
+      },
+      {
+        "text": "The company is ineligible because FDA counts all 45 full-time employees, including cashiers, toward the 25-person exemption threshold.",
+        "why": "Incorrect. FDA's August 2026 notice expressly limits the qualifying employee count to licensed pharmacists and qualified pharmacy technicians across the owning company. Non-pharmacy cashiers are excluded from that count."
+      },
+      {
+        "text": "The company qualifies, but the pharmacies must obtain individual FDA approval of a special exemption application before using their existing transaction-information methods.",
+        "why": "Incorrect. The FDA's August 2026 notice announces a class-wide exemption; small dispensers and their trading partners utilizing it do NOT have to submit extra information to FDA or await individual approval."
+      },
+      {
+        "text": "Each store is counted separately regardless of corporate ownership, and the exemption suspends all suspect-product investigation and quarantine obligations for stores under the threshold.",
+        "why": "Incorrect. The notice uses corporate-entity-wide counting, not store-by-store headcounts. It also retains non-exempt section 582 requirements; suspect-product quarantine and investigation obligations are not automatically erased."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "FDA DSCSA Exemptions for Small Business Dispensers (Aug. 6, 2026), FD&C Act §§582(a)(3), 582(d)(4), 582(g)(1), effective Nov. 27, 2026–Nov. 27, 2027",
+    "url": "https://www.fda.gov/media/194424/download",
+    "verified": "2026-11-16"
   }
 ];
