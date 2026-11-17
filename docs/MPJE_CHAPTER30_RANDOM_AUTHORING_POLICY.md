@@ -11,6 +11,15 @@ alongside the latest `topic-inventory.json` and the NABP public-source realism
 audit. The coverage plan is a dated editorial snapshot, not a replacement for
 checking live laws, official exam scopes, or the newest question IDs.
 
+For the **next eight planned Sets 36–43** (not yet authored), also follow
+[the 40-question source-first micro-skill roadmap](MPJE_CH30_SETS36-43_40Q_ROADMAP_2026-11-17.md).
+It reserves candidate decisions E30-176–215 only while the current main count
+remains 175; verify the actual latest main before assigning IDs. Each candidate
+must still pass current-law, non-duplication and independent-answer review,
+and may be replaced when its legal premise cannot be verified. After all 40
+are actually published and browser-verified, perform the roadmap's formal
+coverage, legal-error and exam-realism re-evaluation **before further expansion**.
+
 ## Authoring each requested five-question batch
 
 - Exactly **one Area 1 (Licensure/Personnel)** question.
