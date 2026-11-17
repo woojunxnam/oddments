@@ -7002,5 +7002,349 @@ window.MPJE_CH30_QUESTIONS = [
     "url": "https://www.mass.gov/doc/247-cmr-21-registration-of-outsourcing-facilities/download",
     "verified": "2026-11-17",
     "note": "503B facility registration with FDA does not constitute product approval or substitute for 247 CMR 21 nonresident registration. CGMP and FDA adverse-event reporting still apply."
+  },
+  {
+    "id": "E30-206",
+    "set": 42,
+    "area": 1,
+    "kind": "multi",
+    "topicKey": "licensure-ce",
+    "topic": "License transfer: NABP preliminary approval is not Board licensure",
+    "stem": "A Connecticut pharmacist, originally licensed there by examination and in good standing in every state where licensed, is applying to Massachusetts by reciprocity. NABP approved the preliminary transfer eight months ago; the applicant has submitted internship documentation and has passed the Massachusetts MPJE. The Massachusetts Board has not yet approved/issued the actual pharmacist license. Which statements are true? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The applicant may practice in a Massachusetts pharmacy as a licensed pharmacist immediately because NABP has approved the transfer.",
+        "why": "Incorrect. NABP conducts preliminary evaluation; Board-issued Massachusetts licensure, not preliminary NABP approval, is required to practice as a Massachusetts pharmacist."
+      },
+      {
+        "text": "The Massachusetts Board retains final authority to determine eligibility for pharmacist licensure by reciprocity.",
+        "why": "Correct. 247 CMR 3.02(1)(b) expressly assigns final eligibility determination to the Board notwithstanding NABP's initial screening."
+      },
+      {
+        "text": "An applicant licensed by examination elsewhere must always pass NAPLEX again to use the Massachusetts reciprocity pathway.",
+        "why": "Incorrect. 247 CMR 3.02(2)(a) for ACPE graduates requires NABP approval, appropriate internship documentation and an MPJE passing result; it does not universally require repeat NAPLEX."
+      },
+      {
+        "text": "A NABP-approved reciprocity application is valid for one year after NABP approval, and good standing in all licensing jurisdictions is required.",
+        "why": "Correct. 247 CMR 3.02 opening paragraphs and (1)(c) state both the across-jurisdictions good-standing condition and one-year validity of NABP approval."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "247 CMR 3.02 (2025 revision), introductory paragraphs, (1)(b)–(c), (2)(a); Massachusetts Board pharmacist license application guidance",
+    "url": "https://www.mass.gov/doc/247-cmr-3-pharmacist-licensure-requirements/download",
+    "verified": "2026-11-17",
+    "note": "NABP approval is PRELIMINARY, Board decision final. Even an MPJE pass is not permission to practice pending MA license issuance; NABP-approved reciprocity application has a 1-year window."
+  },
+  {
+    "id": "E30-207",
+    "set": 42,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "public-health-prescribing",
+    "topic": "Contraceptive return visit: new migraine with aura",
+    "stem": "A Massachusetts pharmacist prescribed a combined estrogen/progestin oral contraceptive after screening an eligible adult eight months ago. Today the patient requests a NEW pharmacist-issued prescription for the same pills, but a newly completed self-screen identifies newly diagnosed migraine WITH visual aura. The pharmacist is properly trained; no emergency override or separate valid prescription is presented. What is the best action under 2026 Massachusetts guidance and current U.S. MEC?",
+    "choices": [
+      {
+        "text": "Prescribe the same combined pill for 12 months because the original pharmacist assessment remains valid indefinitely.",
+        "why": "Incorrect. DPH's prescribing authority requires current self-screen; a prior normal screen does not override a new contraindication. The 12-month supply maximum is not a safety exemption."
+      },
+      {
+        "text": "Refuse any hormonal birth control permanently because migraine aura makes every progestin-only contraceptive medically ineligible.",
+        "why": "Incorrect. U.S. MEC gives combined hormonal contraception Category 4 with migraine aura, but it does not assign that contraindication to every other hormonal method. An individualized alternative evaluation is appropriate."
+      },
+      {
+        "text": "Decline to issue a new estrogen-containing combined-pill prescription, explain the newly identified risk, document the assessment, and facilitate appropriate alternative-method evaluation or referral.",
+        "why": "Correct. CDC U.S. MEC makes migraine WITH aura Category 4 (unacceptable health risk) for combined hormonal contraception. DPH Circular DCP 26-08-125 requires risk-based screening and appropriate counseling/clinical referral."
+      },
+      {
+        "text": "Require all repeat oral-contraception patients to show a primary care visit solely because pharmacist-originated refills are never allowed without one.",
+        "why": "Incorrect. Circular DCP 26-08-125 states absence of a clinical visit does not itself preclude pharmacist prescriptions with refills. This specific case turns on the new clinical contraindication."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §19F; DPH Circular DCP 26-08-125, August 25, 2026; CDC U.S. MEC 2024 combined hormonal contraception, migraine with aura Category 4",
+    "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+    "verified": "2026-11-17",
+    "note": "Re-screen before each new pharmacist-issued hormonal Rx. Migraine WITH aura: combined hormonal contraception is CDC Category 4; new safety data outweigh previous eligibility."
+  },
+  {
+    "id": "E30-208",
+    "set": 42,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "prescriber-authority",
+    "topic": "Veterinary Schedule VI prescription: no NPI or DEA needed",
+    "stem": "A duly licensed Massachusetts veterinarian holding an MCSR examines a dog and sends an otherwise valid Schedule VI prescription for oral amoxicillin to a Massachusetts community pharmacy. The clinic has an established veterinarian-client-patient relationship. The software blocks dispensing because the veterinarian has neither a human-health NPI nor a federal DEA registration number. No federally controlled Schedule II–V medication is involved. Which action is legally appropriate?",
+    "choices": [
+      {
+        "text": "Confirm the veterinarian's license/MCSR and animal-patient order, then use the veterinary processing workflow; neither NPI nor DEA registration is required for this Schedule VI prescription.",
+        "why": "Correct. The Board's January 2025 Veterinary Prescriptions recommendations specifically note that veterinarians do not have NPIs, DEA numbers are not required for Schedule VI, and MCSR is the pertinent identifier. A software field cannot add a legal prerequisite."
+      },
+      {
+        "text": "Demand an NPI because every electronically processed Massachusetts prescription must list one, including all veterinary animal orders.",
+        "why": "Incorrect. NPIs identify human health providers, not veterinarians as animal-only prescribers; the Board specifically cautions pharmacies about software configurations."
+      },
+      {
+        "text": "Demand a DEA number because Massachusetts Schedule VI is identical to the federal DEA-controlled Schedule V.",
+        "why": "Incorrect. MA Schedule VI covers ordinary prescription-only drugs not in federal Schedules I–V; this amoxicillin order requires an MCSR rather than a DEA number."
+      },
+      {
+        "text": "Rewrite the order in the dog's owner's name for treatment of the owner's own infection because a veterinarian can prescribe for an animal's immediate household.",
+        "why": "Incorrect. Veterinary prescribing privileges relate to animal patients; an animal prescription cannot become a lawful human prescription for the owner."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "M.G.L. c.94C §22(a) veterinary exception; 105 CMR 700.002(F); Board Best Practice Recommendations, 'Veterinary Prescriptions,' January 9, 2025, p.6",
+    "url": "https://www.mass.gov/doc/best-practice-recommendations-pdf/download",
+    "verified": "2026-11-17",
+    "note": "Animal Schedule VI Rx: verify vet MCSR/license but do not demand NPI or DEA. Never transfer veterinary prescriber authority to human patients."
+  },
+  {
+    "id": "E30-209",
+    "set": 42,
+    "area": 3,
+    "kind": "single",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Federal retail no-Rx Schedule V exception versus Massachusetts law",
+    "stem": "At a Massachusetts pharmacy, a 35-year-old asks to purchase a codeine-containing cough product. Assume this EXACT, lawfully marketed product is federally Schedule V and qualifies as NONPRESCRIPTION under federal FDA rules, and the requested amount, identification, age and logbook satisfy every condition of 21 CFR 1306.26. However, NO prescription has been issued, and no applicable Massachusetts emergency or other exception exists. Can the pharmacist sell it without a prescription?",
+    "choices": [
+      {
+        "text": "Yes; the federal 21 CFR 1306.26 retail exception overrides any state prescription requirement when purchaser conditions are met.",
+        "why": "Incorrect. Section 1306.26(f) expressly conditions federal nonprescription dispensing on the absence of a prescription requirement under any other federal, state or local law."
+      },
+      {
+        "text": "No; Massachusetts M.G.L. c.94C §17 requires a practitioner prescription for Schedule V outside authorized exceptions, and the federal allowance does not displace the stricter state rule.",
+        "why": "Correct. Massachusetts §17(c) expressly requires a prescription for Schedule V. Federal §1306.26(f) is conditional on state law permitting nonprescription sale; the buyer's otherwise compliant status does not create an exception."
+      },
+      {
+        "text": "Yes; a manufacturer-sealed single bottle is automatically exempt from state Schedule V dispensing requirements.",
+        "why": "Incorrect. Manufacturer packaging does not constitute a prescriber's order or an exception to Massachusetts §17(c)."
+      },
+      {
+        "text": "Yes; if the pharmacist signs the federal logbook, that signature counts as the Massachusetts practitioner prescription.",
+        "why": "Incorrect. An OTC purchaser log entry is separate from a prescription lawfully issued by a prescriber. The federal logbook cannot satisfy a missing state prescription."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "21 CFR 1306.26(f), conditional federal retail dispensing; M.G.L. c.94C §17(b)–(c), MA electronic prescription requirement; 21 CFR 1308.15 Schedule V formulation threshold",
+    "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94C/Section17",
+    "verified": "2026-11-17",
+    "note": "Federal Schedule V OTC sale is permitted ONLY where other law does not require a prescription. Massachusetts Schedule V prescription requirement controls in the stated no-exception case; no specific marketed codeine NDC is claimed."
+  },
+  {
+    "id": "E30-210",
+    "set": 42,
+    "area": 4,
+    "kind": "multi",
+    "topicKey": "controlled-inventory",
+    "topic": "DEA CSOS: personal certificate and linked receipt record",
+    "stem": "A Massachusetts pharmacy uses DEA-approved CSOS to buy Schedule II stock from a DEA-registered wholesaler. An authorized purchaser has a current personal DEA CSOS certificate, and both parties can archive electronic orders. Which statements about lawful order execution and receipt are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "The authorized person's valid DEA-certificate digital signature may serve for a compliant electronic Schedule II order without an additional paper DEA Form 222.",
+        "why": "Correct. 21 CFR 1305.21(a) authorizes a personally signed electronic order; DEA confirms CSOS is the compliant electronic alternative to paper Form 222."
+      },
+      {
+        "text": "The PIC may lend an individual CSOS private-signing certificate to any technician whenever the pharmacist is absent.",
+        "why": "Incorrect. DEA CSOS certificates are issued to specific authorized individuals and cannot be shared as a generic pharmacy credential."
+      },
+      {
+        "text": "On receipt, the purchaser records actual quantity for each item and the date received, electronically links those details to the initial order, and archives the record.",
+        "why": "Correct. 21 CFR 1305.22(g) requires precisely this purchaser receipt record. A signed order by itself does not establish quantities received."
+      },
+      {
+        "text": "The supplier is exempt from checking the certificate's expiration and revocation because only the purchaser is responsible for authentication.",
+        "why": "Incorrect. 21 CFR 1305.22(c) directs supplier validation of signature integrity, certificate expiry/revocation, and eligibility before fulfilling."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "21 CFR 1305.21(a) and 1305.22(c),(g); DEA CSOS Ordering and FAQ, current 2026",
+    "url": "https://www.deadiversion.usdoj.gov/faq/csos-faq.html",
+    "verified": "2026-11-17",
+    "note": "CSOS replaces paper 222, not individual certificate control or actual-receipt recordkeeping. Electronically attach quantity/date received to original order."
+  },
+  {
+    "id": "E30-211",
+    "set": 43,
+    "area": 1,
+    "kind": "single",
+    "topicKey": "board-waivers",
+    "topic": "Board waiver expired while renewal petition pending",
+    "stem": "A Massachusetts pharmacy received a Board-approved waiver of a specific 247 CMR requirement on November 15, 2021. The fifth anniversary passed on November 15, 2026. The manager of record submitted a complete petition for a successor waiver before expiration, but as of November 17, 2026 the Board has not granted another waiver. What must the pharmacy do now?",
+    "choices": [
+      {
+        "text": "Continue using the old waiver because any renewal petition automatically extends a previously approved waiver.",
+        "why": "Incorrect. 247 CMR 14.01(5)(c) permits requesting another waiver but does not create an automatic bridge or extension."
+      },
+      {
+        "text": "Treat the first waiver as permanent unless the Board explicitly cancels it in a disciplinary decision.",
+        "why": "Incorrect. The regulation sets automatic fifth-anniversary expiration for waivers granted after June 30, 2013."
+      },
+      {
+        "text": "Have the PIC approve the submitted waiver petition as an internal pharmacy policy without waiting for the Board.",
+        "why": "Incorrect. Petition submission and PIC management do not confer the Board's express waiver-granting authority."
+      },
+      {
+        "text": "Return to compliance with the underlying 247 CMR rule unless and until the Board grants a subsequent waiver.",
+        "why": "Correct. Under 247 CMR 14.01(5)(d), compliance with all applicable regulations resumes after an approved waiver expires unless the Board has granted a subsequent waiver."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "citation": "247 CMR 14.01(1),(2),(5)(b)–(d), Petition for Waiver, effective September 22, 2017",
+    "url": "https://www.mass.gov/doc/247-cmr-14-petition-for-waiver/download",
+    "verified": "2026-11-17",
+    "note": "A post-2013 Board waiver expires after FIVE years; petition filed before expiration does not extend it without Board approval."
+  },
+  {
+    "id": "E30-212",
+    "set": 43,
+    "area": 2,
+    "kind": "multi",
+    "topicKey": "controlled-prescriptions",
+    "topic": "CT-issued alprazolam and gabapentin: separate authenticity and reporting duties",
+    "stem": "A Connecticut doctor with active Connecticut license and DEA registration examined the patient IN CONNECTICUT and, with legitimate medical purpose and no red flags, issued two otherwise valid electronic prescriptions four days ago for Massachusetts dispensing: alprazolam (Schedule IV federal/MA) and gabapentin (MA Schedule VI and separately MassPAT-reportable). The MA pharmacist can verify the doctor's basic licensing data but has NOT completed telephone-or-other-means verification of the out-of-state Schedule IV order. Neither prescription involves a Massachusetts telehealth encounter. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Gabapentin may be dispensed after ordinary legal/clinical authenticity review without the special §18(c) Schedule III–V verification step, but its MA PMP reporting duty still applies.",
+        "why": "Correct. M.G.L. c.94C §18(c) requires special telephone/other verification for out-of-state Schedules III–V, not VI. Gabapentin still is a separately reportable state Schedule VI drug of concern."
+      },
+      {
+        "text": "A Connecticut practitioner must hold a Massachusetts MCSR for every otherwise eligible prescription issued in Connecticut to be dispensed in Massachusetts.",
+        "why": "Incorrect. §18(c) supplies an out-of-state prescriber pathway if authorized in the prescriber's state and appropriately DEA-registered; it is not a blanket MA-MCSR requirement."
+      },
+      {
+        "text": "The pharmacist must not dispense the out-of-state Schedule IV alprazolam until required additional verification by telephone or other means succeeds, despite the secure electronic transmission.",
+        "why": "Correct. §18(c) expressly requires separate out-of-state verification for Schedules III–V and directs that an Rx whose verification cannot be obtained may not be filled."
+      },
+      {
+        "text": "Gabapentin is exempt from all MassPAT submissions solely because its Massachusetts designation is Schedule VI.",
+        "why": "Incorrect. DPH states the opposite: pharmacies report Schedule II–V dispenses AND gabapentin, which is a special additional Schedule VI drug of concern."
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "citation": "M.G.L. c.94C §18(c); 105 CMR 700.002(F), 700.012; Massachusetts DPH Pharmacy Reporting and Data Submission (gabapentin)",
+    "url": "https://www.mass.gov/info-details/mass-general-laws-c94c-ss-18",
+    "verified": "2026-11-17",
+    "note": "One CT prescriber, two controls: out-of-state SIV alprazolam demands special authenticity verification; SVI gabapentin does not, but MUST be reported to MassPAT."
+  },
+  {
+    "id": "E30-213",
+    "set": 43,
+    "area": 2,
+    "kind": "single",
+    "topicKey": "public-health-prescribing",
+    "topic": "Injectable cabotegravir: dispensing by administration is not authority to prescribe",
+    "stem": "A 28-year-old brings a valid prescriber-issued order for FDA-approved cabotegravir long-acting IM injection to prevent HIV. A Massachusetts pharmacist has appropriate training and CPR certification and can meet all screening, consent, documentation and product handling rules. The patient also asks the pharmacist to prescribe future injectable cabotegravir doses independently, citing pharmacists' separate authority to initiate ORAL PrEP. What is the best response under current 2026 DPH circulars?",
+    "choices": [
+      {
+        "text": "Refuse to administer cabotegravir because pharmacists can give vaccines but never injectable HIV-prevention drugs.",
+        "why": "Incorrect. DCP 26-03-124 specifically includes cabotegravir as a pharmacy-administered HIV-prevention drug for eligible adults under a valid prescription."
+      },
+      {
+        "text": "Administer the already-prescribed eligible dose if all DCP 26-03-124 safeguards are met, but do not assume the ORAL-PrEP independent prescribing guidance authorizes new pharmacist-originated injectable orders.",
+        "why": "Correct. DCP 26-03-124 independently permits properly trained pharmacist or intern IM administration under a lawful prescription. DCP 26-08-125 and the statewide ORAL PrEP guideline are different prescribing authority; administration does not confer carte-blanche injectable prescribing."
+      },
+      {
+        "text": "Authorize all future injections because any patient's valid first prescription delegates all future prescribing authority to the administering pharmacy.",
+        "why": "Incorrect. A valid prescription permits the stated administration subject to the order and safeguards; it does not transfer general independent prescribing authority."
+      },
+      {
+        "text": "Replace the IM injection with an IV infusion at the patient's request, since injection route does not matter under the 2026 DPH policy.",
+        "why": "Incorrect. Circular DCP 26-03-124 restricts authorized administration to prescribed subcutaneous or intramuscular routes consistent with product labeling; intravenous administration is excluded."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "citation": "DPH Circular DCP 26-03-124 March 11, 2026, pp.1–3 (administration/eligible cabotegravir/valid Rx); DCP 26-08-125 Aug. 25, 2026 (prescribing); Statewide Pharmacist Oral PrEP Guidelines 8-2026",
+    "url": "https://www.mass.gov/doc/pharmacist-administration-of-medications-pdf/download",
+    "verified": "2026-11-17",
+    "note": "Prescribing and administering are different authorities. A pharmacist may administer prescribed adult IM cabotegravir under circular 26-03; oral PrEP prescribing guidance does not automatically authorize issuing future injectable Rx."
+  },
+  {
+    "id": "E30-214",
+    "set": 43,
+    "area": 3,
+    "kind": "multi",
+    "topicKey": "drug-schedule-identification",
+    "topic": "Xcopri versus Keppra: federal/MA scheduling, original refill expiration and MassPAT",
+    "stem": "A Massachusetts pharmacist receives requests for refills under two otherwise lawful outpatient prescriptions, each issued EIGHT MONTHS AGO with unused refills. Product X is regular XCOPRI (cenobamate) oral tablets and Product Y is regular KEPPRA (levetiracetam) oral tablets. No updated Rx, emergency authority or other exception applies. Which statements are correct? SELECT ALL THAT APPLY.",
+    "choices": [
+      {
+        "text": "Xcopri is Massachusetts Schedule VI because all antiseizure medicines follow the same state classification; its eight-month-old Rx is usable for a year.",
+        "why": "Incorrect. Cenobamate is expressly DEA Schedule V under 21 CFR 1308.15; Massachusetts adopts that Schedule V designation, which has a six-month refill expiration."
+      },
+      {
+        "text": "Xcopri is federal and MA Schedule V; its original eight-month-old Rx cannot be used for refills, and a new lawful outpatient dispensing is MassPAT-reportable.",
+        "why": "Correct. 21 CFR 1308.15 lists cenobamate; MA 105 CMR 700.002(E) adopts federal V, 247 CMR 9.04(13) limits the Rx to six months, and PMP reporting covers Schedules II–V."
+      },
+      {
+        "text": "Keppra must also be federal Schedule V because levetiracetam and cenobamate both treat seizures.",
+        "why": "Incorrect. Drug indication or class does not determine DEA schedule. Levetiracetam is not DEA-scheduled; as a prescription drug it is Massachusetts Schedule VI."
+      },
+      {
+        "text": "Keppra is federal nonscheduled and MA Schedule VI; its unchanged eight-month-old Rx can be refilled under the one-year rule when other conditions are met, and it is not routinely reported to MassPAT.",
+        "why": "Correct. 105 CMR 700.002(F) places unscheduled Rx levetiracetam in MA VI, and 247 CMR 9.04(12) allows one year. DPH additionally reports gabapentin, not ordinary levetiracetam, among Schedule VI drugs."
+      }
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "citation": "21 CFR 1308.15 (cenobamate); 105 CMR 700.002(E),(F); 247 CMR 9.04(12)–(13); DPH Pharmacy Reporting and Data Submission; FDA Keppra Rx labeling",
+    "url": "https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.15",
+    "verified": "2026-11-17",
+    "note": "Same epilepsy indication, different control: cenobamate federal/MA V 6-month Rx + PMP; levetiracetam federal nonscheduled/MA VI 1-year Rx and no usual PMP reporting."
+  },
+  {
+    "id": "E30-215",
+    "set": 43,
+    "area": 4,
+    "kind": "single",
+    "topicKey": "sterile-hazardous-compounding",
+    "topic": "ISO5 18-CFU viable action result: 2026-03 Board recall and reporting response",
+    "stem": "On November 17, 2026 a Massachusetts licensed sterile-compounding pharmacy receives a completed microbiology report showing 18 colony-forming units (CFU) in a viable air sample from its ISO Class 5 primary engineering control. Some CSPs compounded there have been dispensed and remain WITHIN their BUDs. The site has not completed remediation. What is the MOST appropriate response under current Board Policy 2026-03?",
+    "choices": [
+      {
+        "text": "Immediately investigate and stop affected ordinary compounding, notify the Board within one business day of the report, engage a microbiologist, recall CSPs still within BUDs, contact prescribers, monitor for adverse events, and perform appropriate remediation/risk assessment.",
+        "why": "Correct. Policy 2026-03 §II requires one-business-day report; §III(C) defines ISO5 >15 CFU as significant loss of control requiring within-BUD recall, prescriber contact, adverse-event surveillance and microbiologist. Affected production remains restricted pending remediation per §§III–V."
+      },
+      {
+        "text": "Release normal Category 2 CSPs because 18 CFU is below a 20-CFU ISO5 action level and does not require further investigation.",
+        "why": "Incorrect. ISO5 viable-air action level is >1 CFU and significant loss-of-control criterion is >15 CFU; 18 exceeds both."
+      },
+      {
+        "text": "Continue sterile compounding after a routine wipe-down; report to the Board in the next annual renewal instead of making an immediate notification.",
+        "why": "Incorrect. Immediate investigation/remediation and notification within one business day of microbiology report receipt are mandatory under the 2026 Board policy."
+      },
+      {
+        "text": "Permanently shut down every other clean ISO5 PEC in the building regardless of a risk assessment, even if only one PEC had an action result.",
+        "why": "Incorrect. The 2026 policy permits continued operation in unaffected ISO5 PECs when a documented risk assessment deems it appropriate and all other requirements are met; an automatic permanent facility-wide closure is not the rule."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "citation": "Massachusetts Board Policy 2026-03 Action Level Environmental Monitoring Results (adopted Sep. 3, 2026), §§I–V; 247 CMR 9.01(3); USP <797> EM",
+    "url": "https://www.mass.gov/doc/2026-03-action-level-environmental-monitoring-results/download",
+    "verified": "2026-11-17",
+    "note": "18CFU at ISO5 meets both action level >1 and significant loss of control >15. Notify Board in 1 business day, microbiologist, recall within-BUD CSPs, contact prescribers and adverse surveillance."
   }
 ];
