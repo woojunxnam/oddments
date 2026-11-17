@@ -1927,23 +1927,23 @@ window.MPJE_CH30_QUESTIONS = [
     "kind": "multi",
     "topic": "Massachusetts ePrescribing outage: oral Schedule IV follow-up and pharmacist verification duties",
     "topicKey": "controlled-prescriptions",
-    "stem": "A Massachusetts-authorized practitioner has a temporary electrical failure that disables the electronic prescribing system. The practitioner issues an otherwise valid ORAL Schedule IV lorazepam prescription directly to a community pharmacist, who appropriately verifies the prescriber and prescription, assesses the legitimate medical purpose, and documents the oral order. There is no effort to circumvent electronic prescribing, and no other waiver or emergency exception is involved. Under 105 CMR 721.070 and applicable federal law, which statements are correct? SELECT ALL THAT APPLY.",
+    "stem": "A Massachusetts-authorized practitioner cannot use ePrescribing because of a temporary electrical failure. The practitioner telephones an otherwise valid Schedule IV lorazepam prescription to a community pharmacist. The pharmacist verifies the order, its legitimate medical purpose, and the prescriber's identity and records the oral prescription. No effort to circumvent ePrescribing and no other exception is involved. Which conclusions are supported by Massachusetts and federal law? SELECT ALL THAT APPLY.",
     "choices": [
       {
-        "text": "A temporary technological or electrical failure can justify a non-electronic prescription under Massachusetts ePrescribing exceptions; an otherwise lawful oral Schedule IV prescription may be accepted.",
-        "why": "105 CMR 721.070(A)(2) provides a temporary technology/electrical-failure exception to the state electronic prescribing mandate. Schedule IV prescriptions may otherwise be issued orally under federal law, including 21 CFR 1306.21, provided all applicable prescription requirements are met."
+        "text": "The temporary electrical failure can qualify as an ePrescribing exception; the pharmacist may accept an otherwise lawful oral Schedule IV prescription.",
+        "why": "Correct. 105 CMR 721.070(A)(2) expressly permits an oral or written prescription during temporary technological or electrical failure. Federal 21 CFR 1306.21 generally allows lawful Schedule IV oral orders when ordinary authenticity and prescription requirements are satisfied."
       },
       {
-        "text": "Because federal rules permit oral Schedule IV prescriptions, the practitioner has no obligation to send written or electronic documentation afterward under Massachusetts law.",
-        "why": "105 CMR 721.070(B) separately obligates a practitioner issuing an oral Schedule II–V prescription under an ePrescribing exception to cause a written or electronic prescription to be delivered within seven business days or any shorter period required by federal law. The absence of a general federal Schedule IV follow-up requirement does not erase this Massachusetts requirement."
+        "text": "Because federal law permits oral Schedule IV prescriptions, Massachusetts never requires the prescriber to send a follow-up prescription documenting the oral order.",
+        "why": "Incorrect. M.G.L. c.94C §20(c) imposes a subsequent prescription duty for oral Schedule II–V prescriptions, and 105 CMR 721.070(B) implements follow-up for oral prescriptions issued under ePrescribing exceptions. No universal absence of follow-up can be inferred from federal Schedule IV rules."
       },
       {
-        "text": "The practitioner must arrange a written or electronic follow-up within seven business days, or a shorter applicable federal deadline; a written follow-up must identify that it documents the earlier oral prescription.",
-        "why": "105 CMR 721.070(B) requires the timely confirming written/electronic prescription. For a written confirmation, the practitioner must indicate that it is being issued to document an oral prescription. The seven-business-day Massachusetts period yields to any shorter applicable federal deadline."
+        "text": "A separate written or electronic follow-up documenting the earlier oral order is required under Massachusetts law, and the dispensing pharmacy must associate the follow-up with its written record of the oral prescription.",
+        "why": "Correct. The follow-up and pharmacy record-attachment duties are supported by M.G.L. c.94C §20(c) and 105 CMR 721.070(B). The statute describes a two-day electronic default or seven-calendar-day written exception, whereas the DPH implementing rule uses seven BUSINESS days for an ePrescribing exception. Because these differ, this question deliberately does not assert one universal deadline; practitioners should comply with applicable requirements and obtain agency clarification when necessary."
       },
       {
-        "text": "A pharmacist receiving an otherwise valid oral prescription does not have to independently establish that the prescriber qualified for an ePrescribing exception, although the pharmacist remains responsible for the prescription's authenticity, legality, and proper dispensing.",
-        "why": "105 CMR 721.070(C) expressly states that the pharmacist need not verify whether an otherwise valid written or oral prescription properly falls under an ePrescribing exception. This narrow rule does not eliminate corresponding responsibility or other identity and prescription-validity checks."
+        "text": "The pharmacist is not required to independently verify that the prescriber qualifies for an ePrescribing exception when the oral prescription is otherwise valid, but must still establish authenticity and legal dispensing requirements.",
+        "why": "Correct. 105 CMR 721.070(C) specifically relieves the pharmacist from verifying the qualifying ePrescribing exception. That narrow exception does not excuse pharmacist verification of an oral prescription's lawful source or medical legitimacy."
       }
     ],
     "correct": [
@@ -1951,9 +1951,11 @@ window.MPJE_CH30_QUESTIONS = [
       "C",
       "D"
     ],
-    "citation": "105 CMR 721.070(A)(2),(B),(C); 21 CFR 1306.21 (Schedule III–V oral prescriptions)",
+    "citation": "M.G.L. c.94C §20(a)-(c); 105 CMR 721.070(A)(2),(B),(C); 21 CFR 1306.21; DPH DCP 19-12-108 (statute/regulation follow-up day-count discrepancy noted; not resolved)",
     "url": "https://www.mass.gov/doc/105-cmr-721-standards-for-prescription-format-and-security-in-massachusetts/download",
-    "verified": "2026-11-15"
+    "verified": "2026-11-17",
+    "note": "Revision 2 removes an unresolvable numeric 7 BUSINESS-day distractor: M.G.L. c.94C §20(c) refers to two days (ordinary electronic follow-up) or seven DAYS (commissioner exception), but 105 CMR 721.070(B) says seven BUSINESS days for qualifying eRx exceptions. This rewritten question tests only common, independently supported oral-Rx follow-up and record linkage requirements. A/C/D remain correct. Agency reconciliation is still required for real deadline calculations.",
+    "revision": 2
   },
   {
     "id": "E30-059",
@@ -2951,32 +2953,33 @@ window.MPJE_CH30_QUESTIONS = [
     "kind": "single",
     "topic": "2026 Massachusetts pharmacist HIV PEP: sexually active minor, 72-hour exposure window, and no baseline-test delay",
     "topicKey": "public-health-prescribing",
-    "stem": "A properly trained and otherwise authorized Massachusetts pharmacist evaluates a sexually active 17-year-old who weighs 50 kg. Thirty-six hours earlier the patient sustained a percutaneous exposure to a blood-contaminated used syringe of a source with unknown HIV status. The patient reasonably fears HIV exposure, provides informed consent, has no known HIV infection or symptoms suggesting HIV, no relevant hypersensitivity or interacting therapy, and otherwise satisfies the September 2026 statewide pharmacist oral HIV post-exposure prophylaxis (PEP) protocol. A blood-based baseline HIV test is not immediately available at the pharmacy. Which plan is BEST supported by Massachusetts law and the DPH PEP guideline?",
+    "stem": "In November 2026, a properly trained Massachusetts pharmacist who is otherwise qualified under the applicable statewide oral HIV PEP prescribing guidance evaluates a clinically eligible 25-year-old adult. Thirty-six hours earlier, the patient shared injection equipment with someone whose HIV status is unknown; the pharmacist has assessed the exposure and documented a sufficiently substantial risk to warrant PEP after individualized clinical evaluation. The patient gives consent and has no known HIV infection, symptoms suggesting acute HIV, interacting medicines, or other protocol exclusion. A baseline blood-based HIV test has been ordered urgently, but the result is not yet available; no appropriate rapid test is immediately accessible. What is the BEST next action?",
     "choices": [
       {
-        "text": "Delay any PEP prescription until a laboratory HIV-negative result is documented, even if testing would push treatment beyond 72 hours after exposure.",
-        "why": "Incorrect. The September 2026 Massachusetts pharmacist PEP guidance states that a baseline HIV test is NOT required before initiating otherwise eligible PEP. A known positive or indeterminate test would require referral rather than PEP, but lack of an immediately available baseline test alone must not automatically delay time-sensitive initiation."
+        "text": "Defer all PEP until the laboratory HIV-negative result arrives even if the delay causes initiation to occur more than 72 hours after exposure.",
+        "why": "Incorrect. CDC 2025 nPEP recommendations emphasize starting indicated PEP as soon as possible, no later than 72 hours, without delaying the first dose for pending laboratory results. Baseline HIV testing should still be obtained promptly and interpreted."
       },
       {
-        "text": "Refuse pharmacist-prescribed PEP solely because the patient is under 18, even though the patient is sexually active and meets the other protocol conditions.",
-        "why": "Incorrect. The DPH PEP guideline expressly permits eligible patients younger than 18 who are sexually active and have a reasonable concern about exposure; M.G.L. c.112 §12F permits qualifying minors to consent to HIV-prevention care without parental consent."
+        "text": "Decline because Massachusetts pharmacist HIV PEP prescribing always requires a patient-specific physician-signed CDTM agreement, even when all applicable statewide prescribing criteria are satisfied.",
+        "why": "Incorrect. M.G.L. c.94C §19F and Massachusetts DPH Circular DCP 26-08-125 independently authorize appropriately qualified pharmacists to prescribe specified HIV prevention medications under statewide guidance. A separate patient-specific CDTM agreement is not inherently required for that distinct authority."
       },
       {
-        "text": "Treat this as continuous HIV pre-exposure prophylaxis (PrEP), dispense a 90-day course with two refills, and defer follow-up until the second refill.",
-        "why": "Incorrect. The patient presents following a recent potential exposure and needs the distinct PEP pathway. The September 2026 pharmacist PEP protocol calls for a 28-day course, authorizes no more than a 30-day supply with NO refills, and emphasizes prompt medical referral and follow-up testing."
+        "text": "Issue a 90-day PrEP prescription with two refills as a substitute for urgent PEP and postpone follow-up HIV testing until a refill is requested.",
+        "why": "Incorrect. An exposure that occurred 36 hours ago calls for the PEP pathway when clinically indicated. PEP is a 28-day course with baseline and follow-up testing; it is not interchangeable with routine PrEP, which is intended for prospective prevention."
       },
       {
-        "text": "Complete the required PEP intake and consent, initiate an appropriate oral PEP regimen promptly within the 72-hour window without waiting solely for a baseline negative HIV test, prescribe no more than a 30-day supply with no refills, and arrange urgent follow-up evaluation and testing.",
-        "why": "Correct. Under DPH's September 2026 statewide pharmacist PEP guidance, eligible sexually active minors may receive timely pharmacist-prescribed oral PEP when they satisfy exposure, weight, clinical, consent, and training conditions. A baseline HIV test is reviewed if available but is not a prerequisite to starting PEP. Treatment is taken for 28 days; authorized dispensing is at most 30 days with no refills, with referral and follow-up."
+        "text": "Arrange timely baseline HIV testing and follow-up, initiate an appropriate 28-day oral PEP regimen promptly without awaiting a pending laboratory result, and coordinate the medical evaluation and monitoring required by the statewide protocol.",
+        "why": "Correct. CDC 2025 nPEP recommendations support starting eligible patients' 28-day PEP as soon as possible within 72 hours without waiting for pending laboratory test results, while still performing baseline and follow-up HIV evaluation. M.G.L. c.94C §19F and DPH Circular DCP 26-08-125 authorize appropriately qualified Massachusetts pharmacists to prescribe covered HIV-prevention medications under statewide guidance. The stem explicitly assumes other state-protocol eligibility requirements are met."
       }
     ],
     "correct": [
       "D"
     ],
-    "citation": "M.G.L. c.94C §19F; M.G.L. c.112 §12F; DPH Statewide Guidance for Pharmacist Prescribing of HIV PEP (Sept. 2026), §§2, 4–6.4; DCP Circular 26-08-125",
-    "url": "https://www.mass.gov/doc/pharmacist-pep-guidelines-9-2026/download",
-    "verified": "2026-11-16",
-    "note": "A sexually active minor may be eligible for pharmacist PEP in Massachusetts. Prompt 72-hour initiation matters; no baseline HIV test is required before starting if otherwise eligible. PEP is a 28-day regimen, with at most a 30-day supply and no refills."
+    "citation": "M.G.L. c.94C §19F; Massachusetts DPH Circular DCP 26-08-125 (Aug. 25, 2026); CDC MMWR 2025 nPEP recommendations (72 hours, baseline testing and 28-day treatment); Massachusetts statewide oral PEP protocol exists (Sept. 2026 DOCX), details not independently authenticated",
+    "url": "https://www.mass.gov/doc/pharmacist-prescribing-of-certain-medications/download",
+    "verified": "2026-11-17",
+    "note": "Revision 2 replaces original adolescent eligibility/50-kg/no-refills case because the September 2026 DPH pharmacist PEP DOCX was confirmed on the agency site but could not be read to authenticate exact minor/weight/quantity rules. This case instead explicitly assumes eligible adult, established pharmacist qualifications and applicable statewide guidance, and tests CDC-verified PEP timing, baseline testing and 28-day course. Do not infer this validates pediatric pharmacist-prescribing rules. Key D retained.",
+    "revision": 2
   },
   {
     "id": "E30-089",
@@ -3916,32 +3919,33 @@ window.MPJE_CH30_QUESTIONS = [
     "kind": "single",
     "topicKey": "board-reporting",
     "topic": "Individual pharmacist disclosure: an arrest and an out-of-state disciplinary action",
-    "stem": "A Massachusetts-licensed pharmacist is arrested in another state for a misdemeanor. No charge is filed at first, and no conviction has occurred. Separately, a licensing board in another state later imposes formal professional discipline. Under 247 CMR 20.03, what Massachusetts reporting requirement applies?",
+    "stem": "A Massachusetts-licensed pharmacist is arrested in another state for a misdemeanor, before any criminal charge or conviction. In an independent later event, another state's licensing board formally disciplines the pharmacist's professional license. The pharmacist reviews BOTH 247 CMR 20.03 and the grounds for discipline in 247 CMR 10.03. Which reporting approach is BEST supported by the two published regulations?",
     "choices": [
       {
-        "text": "Only a conviction must be reported; an arrest with no filed charge and a separate out-of-state license action are not reportable.",
-        "why": "Incorrect. 247 CMR 20.03(3) expressly lists ANY arrest, pending criminal charge, or conviction by an individual licensee. Section 20.03(4) separately requires reporting of disciplinary actions, as defined by 247 CMR 2.00; neither provision is limited to a Massachusetts conviction."
+        "text": "Neither event requires a report until the pharmacist has a final criminal conviction in Massachusetts.",
+        "why": "Incorrect. 247 CMR 20.03(3) separately requires reporting any arrest, pending charge, or conviction. Out-of-state professional discipline is also reportable under §20.03(4) and can trigger the additional reporting provisions in §10.03."
       },
       {
-        "text": "Both events must be reported by the individual to the Massachusetts Board within 14 calendar days of each respective event.",
-        "why": "Correct. Section 20.03(3) requires a licensed individual to report an arrest within 14 calendar days even before a conviction or charge; §20.03(4) imposes a 14-calendar-day duty to report the other jurisdiction's disciplinary action. A pending appeal does not change the explicit reporting language."
+        "text": "Report the arrest within 14 calendar days under §20.03(3); report the out-of-state disciplinary action within the 14-calendar-day §20.03(4) period AND meet any independently applicable, shorter seven-business-day §10.03(1)(y)-(z) reporting obligation.",
+        "why": "Correct. 247 CMR 20.03(3)-(4) expressly provides 14 calendar days for arrests and reportable discipline. Separately, §10.03(1)(y)-(z) lists failure to report qualifying discipline or governmental final actions within seven business days as a possible disciplinary ground. A pharmacist must not assume that the 14-day provision universally overrides this potentially earlier duty; the exact action and deadlines should be assessed together."
       },
       {
-        "text": "The pharmacist may defer both reports until the next license renewal so that every criminal or disciplinary matter can be resolved.",
-        "why": "Incorrect. The regulation uses prompt 14-calendar-day reporting, not renewal-cycle disclosure. Late reporting would independently risk regulatory noncompliance."
+        "text": "Defer both reports until the next biennial pharmacist renewal, as §10.03 governs only discipline imposed by the Massachusetts Board itself.",
+        "why": "Incorrect. Neither §20.03 nor §10.03 authorizes waiting for renewal, and the §10.03 reporting duties may extend to acts of other licensing authorities."
       },
       {
-        "text": "Only the pharmacist's employer must report an arrest or personal licensing action, and only within seven business days.",
-        "why": "Incorrect. Sections 20.03(3)–(4) apply directly to licensed INDIVIDUALS; they do not shift that duty to the employer or use a seven-business-day period. Seven business days is separately used for certain serious pharmacy dispensing-event reports under §20.02."
+        "text": "Only the employer reports these individual matters, and seven business days is automatically the sole deadline for both the arrest and the disciplinary action.",
+        "why": "Incorrect. §§20.03(3)-(4) address individual licensee duties directly. The separate §10.03 seven-business-day requirement concerns qualifying disciplinary and governmental actions, not a generic seven-day arrest rule. §10.03(1)(aa) also addresses pending charges or convictions on a different clock."
       }
     ],
     "correct": [
       "B"
     ],
-    "citation": "247 CMR 20.03(3)–(4) (effective Dec. 6, 2024), 247 CMR 2.00 disciplinary-action definition; distinguish 247 CMR 20.02 serious-event reporting",
+    "citation": "247 CMR 20.03(3)-(4); 247 CMR 10.03(1)(y)-(aa); Massachusetts Board Mandatory Disclosure Form, revised Dec. 6, 2024; concurrent triggers, not claimed supersession",
     "url": "https://www.mass.gov/doc/247-cmr-20-reporting/download",
-    "verified": "2026-11-16",
-    "note": "Massachusetts-licensed pharmacists report any arrest, pending charge, conviction and licensing-board disciplinary action within 14 CALENDAR days; separate from seven-BUSINESS-day pharmacy serious-event reporting."
+    "verified": "2026-11-17",
+    "note": "Revision 2 expressly distinguishes the 14-calendar-day §20.03 report from the potentially sooner seven-business-day §10.03(1)(y)-(z) discipline/final governmental action requirements. The Board disclosure form confirms 14 calendar days but does not expressly repeal §10.03. Option B remains correct; never advise that 14 calendar days is automatically sufficient for qualifying reciprocal discipline. §10.03(1)(aa) concerns pending criminal charge/conviction separately.",
+    "revision": 2
   },
   {
     "id": "E30-117",
@@ -6485,10 +6489,10 @@ window.MPJE_CH30_QUESTIONS = [
       "A",
       "C"
     ],
-    "citation": "Official USP <797> §§4.1 and 14.3/Table 12 (revision official Nov. 1, 2023); USP <797> official FAQs updated Dec. 11, 2023, Q181 and room-classification guidance; 247 CMR 9.01(3)",
+    "citation": "Official USP <797> §§4.1 and 14.3/Table 13 (revision official Nov. 1, 2023); USP <797> official FAQs updated Dec. 11, 2023, Q181 and room-classification guidance; 247 CMR 9.01(3)",
     "url": "https://pages.usp.org/rs/711-SXF-172/images/USP_HQS_797_FAQs_December2023_V6__002.pdf?version=0",
     "verified": "2026-11-17",
-    "note": "Category 2 nonhazardous sterile CSPs require a properly classified cleanroom suite and ISO 5 PEC. From sterile components without sterility testing, maxima are four days at room temperature or ten days refrigerated when stability supports them."
+    "note": "Category 2 nonhazardous sterile CSPs require a properly classified cleanroom suite and ISO 5 PEC. From sterile components without sterility testing, maxima are four days at room temperature or ten days refrigerated when stability supports them. Citation corrected from Table 12 to Table 13 (Category 2 BUDs), confirmed by official Massachusetts Board sterile compounding inspection template, item 73.4 and 73.5; Table 12 applies to Category 1. No stem, choice, key, or practice revision changed."
   },
   {
     "id": "E30-191",
